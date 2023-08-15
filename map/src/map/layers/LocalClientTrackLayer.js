@@ -8,7 +8,7 @@ import MarkerOptions from '../markers/MarkerOptions';
 import _ from 'lodash';
 import EditablePolyline from '../EditablePolyline';
 import EditableMarker from '../EditableMarker';
-import Utils from '../../util/Utils';
+import Utils, { effectDebouncer } from '../../util/Utils';
 import WptMapDialog from '../components/WptMapDialog';
 import AddRoutingToTrackDialog from '../components/AddRoutingToTrackDialog';
 import TracksRoutingCache, {
@@ -18,13 +18,25 @@ import TracksRoutingCache, {
     debouncer,
 } from '../../context/TracksRoutingCache';
 
+const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
+const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
+
 export default function LocalClientTrackLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
 
     const [localLayers, setLocalLayers] = useState({});
     const [selectedPointMarker, setSelectedPointMarker] = useState(null);
+
+    const debouncerTimer = useRef(null);
+
+    const timerControlRouterRequests = useRef(null);
+    const timerRefreshTrackWithRouting = useRef(null);
+    const [triggerControlRouterRequests, setTriggerControlRouterRequests] = useState(0);
+    const [triggerRefreshTrackWithRouting, setTriggerRefreshTrackWithRouting] = useState(0);
+
     const [startedRouterJobs, setStartedRouterJobs] = useState(0);
+
     // const [queueForRouting, setQueueForRouting] = useState({
     //     isProcessing: false,
     //     objs: [],
@@ -34,8 +46,6 @@ export default function LocalClientTrackLayer() {
     const [newPoint, setNewPoint] = useState(null);
 
     // const routingCacheRef = useRef(ctx.routingCache);
-
-    const debouncerTimer = useRef(null);
 
     // useEffect(() => {
     //     routingCacheRef.current = ctx.routingCache;
@@ -71,7 +81,6 @@ export default function LocalClientTrackLayer() {
         const trusted = ctx.selectedGpxFile;
         const unverified = ctx.unverifiedGpxFile;
 
-        // FIXME add geoProfile compare
         function isPointsHaveSameGeo(p1, p2) {
             if (!p1 || !p2 || p1.length !== p2.length) {
                 return false;
@@ -428,14 +437,30 @@ export default function LocalClientTrackLayer() {
     // get-routing
     useEffect(() => {
         // console.log('get-routing');
-        effectControlRouterRequests({ ctx, startedRouterJobs, setStartedRouterJobs });
-    }, [ctx.routingCache, startedRouterJobs]);
+        effectDebouncer({
+            effect: () => effectControlRouterRequests({ ctx, startedRouterJobs, setStartedRouterJobs }),
+            timerRef: timerControlRouterRequests,
+            setTrigger: setTriggerControlRouterRequests,
+            delay: CONTROL_ROUTER_REQUEST_DEBOUNCER_MS,
+        });
+    }, [ctx.routingCache, startedRouterJobs, triggerControlRouterRequests]);
 
     // after-routing
     useEffect(() => {
         // console.log('after-routing');
-        effectRefreshTrackWithRouting({ ctx, saveChanges, geoRouter, debouncerTimer });
-    }, [ctx.routingCache]);
+        effectDebouncer({
+            effect: () =>
+                effectRefreshTrackWithRouting({
+                    ctx,
+                    geoRouter,
+                    saveChanges,
+                    debouncerTimer,
+                }),
+            timerRef: timerRefreshTrackWithRouting,
+            setTrigger: setTriggerRefreshTrackWithRouting,
+            delay: REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS,
+        });
+    }, [ctx.routingCache, triggerRefreshTrackWithRouting]);
 
     // useEffect(() => {
     //     let added = 0;
@@ -533,7 +558,7 @@ export default function LocalClientTrackLayer() {
     //                     }
     //                     setQueueForRouting((prev) => ({
     //                         isProcessing: false,
-    //                         objs: prev.objs, // fuck is not actual objects FIXME
+    //                         objs: prev.objs, // shit.... is not actual objects???
     //                     }));
     //                 })
     //         );

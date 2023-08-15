@@ -3,6 +3,31 @@ import { apiGet } from '../util/HttpApi';
 import { useState } from 'react';
 
 /**
+ * effectDebouncer() used to release render-ticks in UI-thread
+ *
+ * Example:
+ *
+ * const timer = useRef(null);
+ * const [trigger, setTrigger] = useState(0);
+ * useEffect(effectDebouncer(...), [..., trigger]);
+ *
+ * trigger will be activated by setTimeout to invoke useEffect
+ *
+ * effect() should return false if there is nothing done
+ * timer/setTrigger won't be activated if effect() return false
+ */
+export function effectDebouncer({ delay, timerRef, setTrigger, effect }) {
+    if (timerRef.current <= 0) {
+        if (effect()) {
+            timerRef.current = setTimeout(() => {
+                timerRef.current = null; // reset timer for next run
+                setTrigger((o) => o + 1); // increase trigger (invoke useEffect)
+            }, delay);
+        }
+    }
+}
+
+/**
  * Mutation-compatible wrapper over useState(object)
  * Create object copy -> Apply callback() -> Call setter()
  *

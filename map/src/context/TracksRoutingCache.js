@@ -4,28 +4,15 @@ import TrackLayerProvider from '../map/TrackLayerProvider';
 import EditablePolyline from '../map/EditablePolyline';
 
 const STOP_CALC_ROUTING = 'stop';
-const MAX_STARTED_ROUTER_JOBS = 4;
+const MAX_STARTED_ROUTER_JOBS = 6;
 export const GET_ANALYSIS_DEBOUNCE_MS = 1000; // don't flood get-analysis
 
-export function debouncer(f, timerRef, ms) {
-    if (timerRef.current) {
-        clearTimeout(timerRef.current);
-        timerRef.current = null;
-    }
-    if (timerRef.current === null) {
-        timerRef.current = setTimeout(() => {
-            timerRef.current = null;
-            f();
-        }, ms);
-    }
-}
-
-export async function effectControlRouterRequests({ ctx, startedRouterJobs, setStartedRouterJobs }) {
+export function effectControlRouterRequests({ ctx, startedRouterJobs, setStartedRouterJobs }) {
     if (startedRouterJobs > MAX_STARTED_ROUTER_JOBS) {
-        console.log('max-jobs', startedRouterJobs);
         return false;
     }
 
+    let started = 0;
     const cache = ctx.routingCache;
 
     for (const key in cache) {
@@ -49,16 +36,22 @@ export async function effectControlRouterRequests({ ctx, startedRouterJobs, setS
                 )
             );
 
-            return true; // 1 effect run = 1 job started
+            if (++started >= MAX_STARTED_ROUTER_JOBS - startedRouterJobs) {
+                break;
+            }
         }
     }
 
-    ctx.setProcessRouting(false); // all done but a few Promises might still be active
+    if (started > 0) {
+        // console.log('started', started);
+        return true;
+    }
 
-    return true;
+    ctx.setProcessRouting(false); // all done but a few Promises might still be active
+    return false;
 }
 
-export async function effectRefreshTrackWithRouting({ ctx, saveChanges, geoRouter, debouncerTimer }) {
+export function effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges, debouncerTimer }) {
     let updated = 0;
     const cache = ctx.routingCache;
     const track = ctx.selectedGpxFile;
@@ -73,16 +66,18 @@ export async function effectRefreshTrackWithRouting({ ctx, saveChanges, geoRoute
             const geoProfile = startPoint.geoProfile;
             const key = createRoutingKey(startPoint, endPoint, geoProfile);
 
-            const geometry = cache[key].geometry;
-            const tempLine = cache[key].tempLine;
+            if (cache[key]) {
+                const geometry = cache[key].geometry;
+                const tempLine = cache[key].tempLine;
 
-            validKeys[key] = true;
+                validKeys[key] = true;
 
-            if (geometry && tempLine) {
-                updated++;
-                endPoint.geometry = geometry; // mutate ref
-                refreshTempLine({ ctx, geometry, track, tempLine, color: geoRouter.getColor(startPoint) });
-                ctx.mutateRoutingCache((o) => o[key] && (o[key].tempLine = null)); // update tempLine only once
+                if (geometry && tempLine) {
+                    updated++;
+                    endPoint.geometry = geometry; // mutate ref
+                    refreshTempLine({ ctx, geometry, track, tempLine, color: geoRouter.getColor(startPoint) });
+                    ctx.mutateRoutingCache((o) => o[key] && (o[key].tempLine = null)); // update tempLine only once
+                }
             }
         }
     }
@@ -90,9 +85,24 @@ export async function effectRefreshTrackWithRouting({ ctx, saveChanges, geoRoute
     dropOutdatedCache({ ctx, validKeys });
 
     if (updated > 0) {
-        console.log('updated', updated);
+        // console.log('updated', updated);
         requestAnalytics({ ctx, track, debouncerTimer });
         saveChanges(null, null, null, track); // mutate track with more data and call setSelectedGpxFile({...})
+    }
+
+    return updated > 0;
+}
+
+export function debouncer(f, timerRef, ms) {
+    if (timerRef.current) {
+        clearTimeout(timerRef.current);
+        timerRef.current = null;
+    }
+    if (timerRef.current === null) {
+        timerRef.current = setTimeout(() => {
+            timerRef.current = null;
+            f();
+        }, ms);
     }
 }
 
@@ -128,7 +138,7 @@ function dropOutdatedCache({ ctx, validKeys }) {
                 continue; // valid
             }
             ctx.mutateRoutingCache((o) => delete o[key]);
-            console.log('outdated-cache');
+            // console.log('drop-outdated-cache');
         }
     }
 }
@@ -140,10 +150,10 @@ function addRoutingToCache(startPoint, endPoint, tempLine, ctx) {
     ctx.mutateRoutingCache(
         (o) =>
             (o[routingKey] = {
+                tempLine: tempLine,
                 startPoint: _.cloneDeep(startPoint),
                 endPoint: _.cloneDeep(endPoint),
                 geoProfile: startPoint.geoProfile,
-                tempLine: tempLine,
                 geometry: cachedGeometry,
                 busy: false,
             })
