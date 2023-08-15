@@ -237,19 +237,22 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
             <ListItemText>
                 <Box display="flex" alignItems="end">
                     <Typography
-                        component={'span'}
+                        // component={'span'}
                         variant="inherit"
                         sx={{
-                            mt: -2,
-                            maxHeight: 200,
-                            maxWidth: 350,
+                            maxHeight: 150,
+                            maxWidth: Number(width.replace('px', '')) - 100,
                             fontSize: '0.875rem',
                             display: 'inline-block',
-                            textOverflow: 'ellipsis',
-                            overflow: 'hidden !important',
+                            overflowY: 'auto',
+                            overflowX: 'hidden',
+                            direction: 'rtl',
                         }}
                     >
-                        <div dangerouslySetInnerHTML={{ __html: html }} />
+                        <div
+                            style={{ direction: 'ltr', marginLeft: '10px', marginTop: '-15px' }}
+                            dangerouslySetInnerHTML={{ __html: html }}
+                        />
                     </Typography>
                     {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
                         <IconButton onClick={() => setOpenDescDialog(true)}>

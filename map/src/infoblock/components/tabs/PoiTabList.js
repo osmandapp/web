@@ -7,12 +7,11 @@ export default class PoiTabList {
         tabs: null,
         tabList: [],
         defaultTab: 'poiInfo',
-        graphWidth: 600,
     };
 
     create() {
         const tabs = {
-            Info: <PoiInfoTab key="poiInfo" width={this.state.graphWidth} />,
+            Info: <PoiInfoTab key="poiInfo" />,
         };
 
         const list = Object.keys(tabs).map((item) => (

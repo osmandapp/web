@@ -377,6 +377,7 @@ export const AppContextProvider = (props) => {
     });
 
     const [develFeatures, setDevelFeatures] = useState(process.env.REACT_APP_DEVEL_FEATURES === 'yes');
+    const [infoBlockWidth, setInfoBlockWidth] = useState(0);
 
     routeRouter.initSetter({ setter: setRouteRouter });
     trackRouter.initSetter({ setter: setTrackRouter });
@@ -584,6 +585,8 @@ export const AppContextProvider = (props) => {
                 setPoiCategories,
                 develFeatures,
                 setDevelFeatures,
+                infoBlockWidth,
+                setInfoBlockWidth,
             }}
         >
             {props.children}

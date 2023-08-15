@@ -33,7 +33,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default function PoiInfoTab({ width }) {
+export default function PoiInfoTab() {
     const styles = contextMenuStyles();
     const classes = useStyles();
     const ctx = useContext(AppContext);
@@ -70,7 +70,7 @@ export default function PoiInfoTab({ width }) {
     }, [ctx.selectedGpxFile]);
 
     return (
-        <Box className={styles.item} maxWidth={width}>
+        <Box className={styles.item} maxWidth={ctx.infoBlockWidth}>
             <Typography sx={{ position: 'relative' }} className={styles.info} variant="subtitle1" color="inherit">
                 <Grid container spacing={2}>
                     <Grid className={styles.name} item xs={10}>
