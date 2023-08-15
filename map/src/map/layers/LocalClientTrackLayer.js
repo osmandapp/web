@@ -996,7 +996,7 @@ export default function LocalClientTrackLayer() {
     useEffect(() => {
         if (!_.isEmpty(ctx.routingNewSegments)) {
             ctx.routingNewSegments.forEach((s) => {
-                TracksRoutingCache.validateRoutingCache(s.oldPoint, ctx); // , ctx.routingCache);
+                // TracksRoutingCache.validateRoutingCache(s.oldPoint, ctx); // , ctx.routingCache);
                 TracksRoutingCache.addRoutingToCache(s.start, s.end, s.tempPolyline, ctx);
                 // TracksRoutingCache.addRoutingToCache(s.start, s.end, s.tempPolyline, ctx, routingCacheRef.current);
             });

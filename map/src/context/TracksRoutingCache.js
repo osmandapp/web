@@ -210,21 +210,21 @@ function updateSelectedRouting(routingKey, polylineTemp, ctx) {
 // }
 
 // function validateRoutingCache(point, ctx, routingCacheRef) {
-function validateRoutingCache(point, ctx) {
-    // let routingList = routingCacheRef ? routingCacheRef : ctx.routingCache;
-    let routingList = ctx.routingCache;
-    Object.keys(routingList).forEach((k) => {
-        if (segmentHasPoint(routingList[k], point) && routingList[k].geometry === null) {
-            routingList[k].geometry = 'stop';
-        }
-    });
-}
+// function validateRoutingCache(point, ctx) {
+//     // let routingList = routingCacheRef ? routingCacheRef : ctx.routingCache;
+//     let routingList = ctx.routingCache;
+//     Object.keys(routingList).forEach((k) => {
+//         if (segmentHasPoint(routingList[k], point) && routingList[k].geometry === null) {
+//             routingList[k].geometry = 'stop';
+//         }
+//     });
+// }
 
-function segmentHasPoint(segment, point) {
-    return (
-        TracksManager.isEqualPoints(segment.startPoint, point) || TracksManager.isEqualPoints(segment.endPoint, point)
-    );
-}
+// function segmentHasPoint(segment, point) {
+//     return (
+//         TracksManager.isEqualPoints(segment.startPoint, point) || TracksManager.isEqualPoints(segment.endPoint, point)
+//     );
+// }
 
 // key looks like query string but never used as it
 function createRoutingKey(startPoint, endPoint, geoProfile) {
@@ -254,7 +254,7 @@ function addSegmentToRouting(start, end, oldPoint, tempPolyline, segments) {
 const TracksRoutingCache = {
     addRoutingToCache,
     getRoutingFromCache,
-    validateRoutingCache,
+    // validateRoutingCache,
     addSegmentToRouting,
 };
 
