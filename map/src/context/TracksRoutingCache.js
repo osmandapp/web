@@ -5,6 +5,20 @@ import EditablePolyline from '../map/EditablePolyline';
 
 const STOP_CALC_ROUTING = 'stop';
 const MAX_STARTED_ROUTER_JOBS = 4;
+export const GET_ANALYSIS_DEBOUNCE_MS = 1000; // don't flood get-analysis
+
+export function debouncer(f, timerRef, ms) {
+    if (timerRef.current) {
+        clearTimeout(timerRef.current);
+        timerRef.current = null;
+    }
+    if (timerRef.current === null) {
+        timerRef.current = setTimeout(() => {
+            timerRef.current = null;
+            f();
+        }, ms);
+    }
+}
 
 export async function effectControlRouterRequests({ ctx, startedRouterJobs, setStartedRouterJobs }) {
     if (startedRouterJobs > MAX_STARTED_ROUTER_JOBS) {
@@ -44,7 +58,7 @@ export async function effectControlRouterRequests({ ctx, startedRouterJobs, setS
     return true;
 }
 
-export async function effectRefreshTrackWithRouting({ ctx, saveChanges, geoRouter }) {
+export async function effectRefreshTrackWithRouting({ ctx, saveChanges, geoRouter, debouncerTimer }) {
     let updated = 0;
     const cache = ctx.routingCache;
     const track = ctx.selectedGpxFile;
@@ -77,8 +91,24 @@ export async function effectRefreshTrackWithRouting({ ctx, saveChanges, geoRoute
 
     if (updated > 0) {
         console.log('updated', updated);
+        requestAnalytics({ ctx, track, debouncerTimer });
         saveChanges(null, null, null, track); // mutate track with more data and call setSelectedGpxFile({...})
     }
+}
+
+function requestAnalytics({ ctx, track, debouncerTimer }) {
+    const analysis = () => {
+        TracksManager.getTrackWithAnalysis(
+            TracksManager.GET_ANALYSIS,
+            ctx,
+            ctx.setLoadingContextMenu,
+            track.points
+        ).then((res) => {
+            if (res) ctx.setUnverifiedGpxFile(() => ({ ...res }));
+        });
+    };
+
+    debouncer(analysis, debouncerTimer, GET_ANALYSIS_DEBOUNCE_MS);
 }
 
 // refresh fresh data to previously created "temp-line" layer

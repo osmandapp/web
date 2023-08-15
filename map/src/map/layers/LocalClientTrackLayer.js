@@ -14,9 +14,9 @@ import AddRoutingToTrackDialog from '../components/AddRoutingToTrackDialog';
 import TracksRoutingCache, {
     effectControlRouterRequests,
     effectRefreshTrackWithRouting,
+    GET_ANALYSIS_DEBOUNCE_MS,
+    debouncer,
 } from '../../context/TracksRoutingCache';
-
-const GET_ANALYSIS_DEBOUNCE_MS = 1000; // don't flood get-analysis
 
 export default function LocalClientTrackLayer() {
     const ctx = useContext(AppContext);
@@ -36,19 +36,6 @@ export default function LocalClientTrackLayer() {
     // const routingCacheRef = useRef(ctx.routingCache);
 
     const debouncerTimer = useRef(null);
-
-    function debouncer(f, timerRef, ms) {
-        if (timerRef.current) {
-            clearTimeout(timerRef.current);
-            timerRef.current = null;
-        }
-        if (timerRef.current === null) {
-            timerRef.current = setTimeout(() => {
-                timerRef.current = null;
-                f();
-            }, ms);
-        }
-    }
 
     // useEffect(() => {
     //     routingCacheRef.current = ctx.routingCache;
@@ -447,7 +434,7 @@ export default function LocalClientTrackLayer() {
     // after-routing
     useEffect(() => {
         // console.log('after-routing');
-        effectRefreshTrackWithRouting({ ctx, saveChanges, geoRouter });
+        effectRefreshTrackWithRouting({ ctx, saveChanges, geoRouter, debouncerTimer });
     }, [ctx.routingCache]);
 
     // useEffect(() => {
