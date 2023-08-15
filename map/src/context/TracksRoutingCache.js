@@ -6,7 +6,7 @@ import EditablePolyline from '../map/EditablePolyline';
 const STOP_CALC_ROUTING = 'stop';
 const MAX_STARTED_ROUTER_JOBS = 4;
 
-export async function controlRouterRequests({ ctx, startedRouterJobs, setStartedRouterJobs }) {
+export async function effectControlRouterRequests({ ctx, startedRouterJobs, setStartedRouterJobs }) {
     if (startedRouterJobs > MAX_STARTED_ROUTER_JOBS) {
         console.log('max-jobs', startedRouterJobs);
         return false;
@@ -35,16 +35,16 @@ export async function controlRouterRequests({ ctx, startedRouterJobs, setStarted
                 )
             );
 
-            return true; // 1 run = 1 job
+            return true; // 1 effect run = 1 job started
         }
     }
 
-    ctx.setProcessRouting(false); // all done but a few Promises might be active
+    ctx.setProcessRouting(false); // all done but a few Promises might still be active
 
     return true;
 }
 
-export async function refreshTrackWithRouting({ ctx, map, geoRouter }) {
+export async function effectRefreshTrackWithRouting({ ctx, saveChanges, geoRouter }) {
     let updated = 0;
     const cache = ctx.routingCache;
     const track = ctx.selectedGpxFile;
@@ -66,28 +66,27 @@ export async function refreshTrackWithRouting({ ctx, map, geoRouter }) {
 
             if (geometry && tempLine) {
                 updated++;
-                endPoint.geometry = geometry;
-                const polyline = new EditablePolyline(map, ctx, geometry, null, track).create();
-                tempLine.setLatLngs(polyline._latlngs);
-                tempLine.options.name = undefined;
-                tempLine.setStyle({
-                    color: geoRouter.getColor(startPoint),
-                    dashArray: null,
-                });
-                ctx.mutateRoutingCache((o) => o[key] && (o[key].tempLine = null)); // update only once
-                console.log('update', i, geometry.length, polyline._latlngs);
+                endPoint.geometry = geometry; // mutate ref
+                refreshTempLine({ ctx, geometry, track, tempLine, color: geoRouter.getColor(startPoint) });
+                ctx.mutateRoutingCache((o) => o[key] && (o[key].tempLine = null)); // update tempLine only once
             }
-
-            // const newGeometryJSON = JSON.stringify(newGeometry);
-            // const oldGeometryJSON = JSON.stringify(endPoint.geometry);
         }
     }
 
     dropOutdatedCache({ ctx, validKeys });
 
     if (updated > 0) {
-        ctx.setSelectedGpxFile({ ...track });
+        console.log('updated', updated);
+        saveChanges(null, null, null, track); // mutate track with more data and call setSelectedGpxFile({...})
     }
+}
+
+// refresh fresh data to previously created "temp-line" layer
+function refreshTempLine({ ctx, geometry, track, tempLine, color }) {
+    const polyline = new EditablePolyline(null, ctx, geometry, null, track).create();
+    tempLine.setStyle({ color, dashArray: null });
+    tempLine.setLatLngs(polyline._latlngs);
+    tempLine.options.name = undefined;
 }
 
 // keep cache by validKeys or filled geometry
@@ -96,11 +95,10 @@ function dropOutdatedCache({ ctx, validKeys }) {
     if (Object.keys(validKeys).length > 0) {
         for (const key in cache) {
             if (validKeys[key] || cache[key].geometry || cache[key].busy) {
-                // console.log('valid', key);
                 continue; // valid
             }
-            console.log('outdated-cache', key);
             ctx.mutateRoutingCache((o) => delete o[key]);
+            console.log('outdated-cache');
         }
     }
 }

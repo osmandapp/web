@@ -9,9 +9,12 @@ import _ from 'lodash';
 import EditablePolyline from '../EditablePolyline';
 import EditableMarker from '../EditableMarker';
 import Utils from '../../util/Utils';
-import TracksRoutingCache, { controlRouterRequests, refreshTrackWithRouting } from '../../context/TracksRoutingCache';
 import WptMapDialog from '../components/WptMapDialog';
 import AddRoutingToTrackDialog from '../components/AddRoutingToTrackDialog';
+import TracksRoutingCache, {
+    effectControlRouterRequests,
+    effectRefreshTrackWithRouting,
+} from '../../context/TracksRoutingCache';
 
 const GET_ANALYSIS_DEBOUNCE_MS = 1000; // don't flood get-analysis
 
@@ -437,14 +440,14 @@ export default function LocalClientTrackLayer() {
 
     // get-routing
     useEffect(() => {
-        console.log('get-routing');
-        controlRouterRequests({ ctx, startedRouterJobs, setStartedRouterJobs });
+        // console.log('get-routing');
+        effectControlRouterRequests({ ctx, startedRouterJobs, setStartedRouterJobs });
     }, [ctx.routingCache, startedRouterJobs]);
 
     // after-routing
     useEffect(() => {
-        console.log('after-routing');
-        refreshTrackWithRouting({ ctx, map, geoRouter });
+        // console.log('after-routing');
+        effectRefreshTrackWithRouting({ ctx, saveChanges, geoRouter });
     }, [ctx.routingCache]);
 
     // useEffect(() => {
