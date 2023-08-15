@@ -103,7 +103,7 @@ To read about the capabilities of Android Auto within the OsmAnd application, se
 
 ### Display language
 
-Display language is the setting of the language of the entire application, pop-up prompts, internal text, messages, etc. For Android system this can be done in the application, for iOS system - through the iOS settings. You can use the language installed on your device or select any other language from the list. 
+Display language option is used to change the language of the entire app, including pop-up prompts, internal text, messages, etc. Up to Android 12, OsmAnd allows you to customize the display language according to your preferences directly within the app. Starting from Android 13 and for iOS devices, display language can be only changed in the system settings (see how to change per-app language preferences in [Android](https://developer.android.com/guide/topics/resources/app-languages) and [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
 
 <Tabs groupId="operating-systems">
 
@@ -125,6 +125,9 @@ Display language is the setting of the language of the entire application, pop-u
 
 </Tabs>
 
+:::note
+On some Android devices (Xiaomi with Muiu 14), there is no way to set app languages individually in the system settings, so the language of OsmAnd can only be changed together with the language of the whole system. You may consider referring to the [GitHub discussion](https://github.com/osmandapp/OsmAnd/issues/16990) for additional information.
+:::
 
 ### Data storage folder
 

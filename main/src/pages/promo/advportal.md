@@ -14,7 +14,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 import SotmScreenshots from './carousel/sotmscreenshots.js';
 import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock";
 
-![Configure map screen](@site/static/img/promo/advportal/advportal.png)
+![Map screen during navigation](@site/static/img/promo/advportal/advportal.png)
 
 ## Polska wersija
 
