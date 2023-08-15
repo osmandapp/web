@@ -143,7 +143,6 @@ function dropOutdatedCache({ ctx, validKeys }) {
     }
 }
 
-// function addRoutingToCache(startPoint, endPoint, tempLine, ctx, routingCacheRef) {
 function addRoutingToCache(startPoint, endPoint, tempLine, ctx) {
     const routingKey = createRoutingKey(startPoint, endPoint, startPoint.geoProfile);
     const cachedGeometry = ctx.routingCache[routingKey]?.geometry ?? null;
@@ -158,19 +157,6 @@ function addRoutingToCache(startPoint, endPoint, tempLine, ctx) {
                 busy: false,
             })
     );
-    // // let routingList = routingCacheRef ? routingCacheRef : ctx.routingCache;
-    // let routingList = ctx.routingCache;
-
-    // routingList[routingKey] = {
-    //     startPoint: _.cloneDeep(startPoint),
-    //     endPoint: _.cloneDeep(endPoint),
-    //     geoProfile: startPoint.geoProfile,
-    //     tempLine: tempLine,
-    //     geometry: null,
-    //     busy: false,
-    // };
-    // ctx.setRoutingCache({ ...routingList });
-    // return routingList;
 }
 
 function getRoutingFromCache(track, ctx, map) {
@@ -209,23 +195,6 @@ function updateSelectedRouting(routingKey, polylineTemp, ctx) {
 //     ctx.setRoutingCache({ ...ctx.routingCache });
 // }
 
-// function validateRoutingCache(point, ctx, routingCacheRef) {
-// function validateRoutingCache(point, ctx) {
-//     // let routingList = routingCacheRef ? routingCacheRef : ctx.routingCache;
-//     let routingList = ctx.routingCache;
-//     Object.keys(routingList).forEach((k) => {
-//         if (segmentHasPoint(routingList[k], point) && routingList[k].geometry === null) {
-//             routingList[k].geometry = 'stop';
-//         }
-//     });
-// }
-
-// function segmentHasPoint(segment, point) {
-//     return (
-//         TracksManager.isEqualPoints(segment.startPoint, point) || TracksManager.isEqualPoints(segment.endPoint, point)
-//     );
-// }
-
 // key looks like query string but never used as it
 function createRoutingKey(startPoint, endPoint, geoProfile) {
     if (!startPoint || !endPoint || !geoProfile) {
@@ -233,8 +202,6 @@ function createRoutingKey(startPoint, endPoint, geoProfile) {
     }
 
     const ll = `startLat=${startPoint?.lat},startLng=${startPoint?.lng},endLat=${endPoint?.lat},endLng=${endPoint?.lng},`;
-
-    // const geo = TracksManager.formatRouteMode(geoProfile); // this is not enough
     const geo = JSON.stringify(geoProfile); // include all of type/router/profile/params
 
     return ll + geo; // Reminder: to keep property creation order, keys must be String
@@ -254,7 +221,6 @@ function addSegmentToRouting(start, end, oldPoint, tempPolyline, segments) {
 const TracksRoutingCache = {
     addRoutingToCache,
     getRoutingFromCache,
-    // validateRoutingCache,
     addSegmentToRouting,
 };
 
