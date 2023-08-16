@@ -1,5 +1,5 @@
 import contextMenuStyles from '../../styles/ContextMenuStyles';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { toHHMMSS } from '../../../context/AppContext';
 import TracksManager, { isEmptyTrack } from '../../../context/TracksManager';
 import { prepareFileName } from '../../../util/Utils';
@@ -61,6 +61,15 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     const [elevation, setElevation] = useState('');
     const [elevationSRTM, setElevationSRTM] = useState('');
     const [loadingSrtm, setLoadingSrtm] = useState(false);
+
+    const DESC_MAX_HEIGHT = 150;
+    const [descHeight, setDescHeight] = useState(0);
+    const ref = useRef(null);
+    useEffect(() => {
+        if (ref?.current) {
+            setDescHeight(ref.current.clientHeight);
+        }
+    });
 
     useEffect(() => {
         const track = ctx.selectedGpxFile;
@@ -237,10 +246,11 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
             <ListItemText>
                 <Box display="flex" alignItems="end">
                     <Typography
+                        ref={ref}
                         component={'span'}
                         variant="inherit"
                         sx={{
-                            maxHeight: 150,
+                            maxHeight: DESC_MAX_HEIGHT,
                             maxWidth: Number(width.replace('px', '')) - 100,
                             fontSize: '0.875rem',
                             display: 'inline-block',
@@ -255,11 +265,26 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                         />
                     </Typography>
                     {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
-                        <IconButton onClick={() => setOpenDescDialog(true)}>
+                        <IconButton
+                            sx={{ alignSelf: 'flex-start', mt: '-10px' }}
+                            onClick={() => setOpenDescDialog(true)}
+                        >
                             <Edit fontSize="small" />
                         </IconButton>
                     )}
                 </Box>
+                {descHeight === DESC_MAX_HEIGHT && (
+                    <Link
+                        href="#"
+                        color="inherit"
+                        sx={{ fontSize: '0.875rem' }}
+                        onClick={() => {
+                            setOpenDescDialog(true);
+                        }}
+                    >
+                        Show more...
+                    </Link>
+                )}
                 <Divider sx={{ mt: '6px', mb: '12px' }} light />
             </ListItemText>
         );

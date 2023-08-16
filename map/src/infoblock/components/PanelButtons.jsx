@@ -9,7 +9,7 @@ import _ from 'lodash';
 import TracksManager, { isEmptyTrack } from '../../context/TracksManager';
 import useUndoRedo from '../useUndoRedo';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
-import { downloadGpx } from '../../infoblock/components/track/GeneralInfo';
+import { downloadGpx } from './track/GeneralInfo';
 
 const PanelButtons = ({
     orientation,
