@@ -31,9 +31,10 @@ const PanelButtons = ({
 
     const { state, setState, undo, redo, clear, isUndoPossible, isRedoPossible, pastStates } = useUndoRedo();
 
-    const isUndoDisabled = !isUndoPossible || (pastStates.length === 1 && _.isEmpty(pastStates[0])); // || ctx.processRouting
-    const isRedoDisabled = !isRedoPossible; // || ctx.processRouting
-    const isProfileDisabled = false; // ctx.processRouting;
+    const isUndoDisabled =
+        !isUndoPossible || (pastStates.length === 1 && _.isEmpty(pastStates[0])) || ctx.selectedGpxFile.syncRouting;
+    const isRedoDisabled = !isRedoPossible || ctx.selectedGpxFile.syncRouting;
+    const isProfileProgress = ctx.processRouting;
 
     useEffect(() => {
         if (clearState) {
@@ -154,13 +155,11 @@ const PanelButtons = ({
                                     variant="contained"
                                     type="button"
                                     onClick={() => {
-                                        if (!isProfileDisabled) {
-                                            ctx.trackProfileManager.change = TracksManager.CHANGE_PROFILE_ALL;
-                                            ctx.setTrackProfileManager({ ...ctx.trackProfileManager });
-                                        }
+                                        ctx.trackProfileManager.change = TracksManager.CHANGE_PROFILE_ALL;
+                                        ctx.setTrackProfileManager({ ...ctx.trackProfileManager });
                                     }}
                                 >
-                                    {isProfileDisabled ? (
+                                    {isProfileProgress ? (
                                         <CircularProgress size={40 - 16} />
                                     ) : (
                                         ctx.trackRouter.getProfile()?.icon
