@@ -4,7 +4,7 @@ import _ from 'lodash';
 import TracksManager from '../context/TracksManager';
 import EditablePolyline from './EditablePolyline';
 
-const TEMP_LAYER_FLAG = 'temp';
+export const TEMP_LAYER_FLAG = 'temp';
 const TEMP_LINE_STYLE = {
     color: '#fbc73a',
     dashArray: '5, 5',
@@ -12,11 +12,11 @@ const TEMP_LINE_STYLE = {
     name: TEMP_LAYER_FLAG,
 };
 
-function createLayersByTrackData(data, ctx) {
+function createLayersByTrackData(data, ctx, map) {
     let layers = [];
     data.tracks?.forEach((track) => {
         if (track.points?.length > 0) {
-            let res = parsePoints({ ctx, points: track.points, layers, hidden: true });
+            let res = parsePoints({ map, ctx, points: track.points, layers, hidden: true });
             addStartEnd(track.points, layers, res.coordsTrk, res.coordsAll);
         }
     });
@@ -27,13 +27,12 @@ function createLayersByTrackData(data, ctx) {
     }
 }
 
-function parsePoints({ ctx, points, layers, draggable = false, hidden = false }) {
+function parsePoints({ map, ctx, points, layers, draggable = false, hidden = false }) {
     let coordsTrk = [];
     let coordsAll = [];
     points.forEach((point, index) => {
-        // geometry might be defined but []
-        if (point.geometry !== undefined) {
-            coordsAll = drawRoutePoints({ points, point, coordsAll, layers, ctx, draggable, index });
+        if (point.geometry !== undefined && point.geometry !== null) {
+            coordsAll = drawRoutePoints({ map, points, point, coordsAll, layers, ctx, draggable, index });
         } else {
             coordsTrk.push(new L.LatLng(point.lat, point.lng));
             if (point.profile === TracksManager.PROFILE_GAP && coordsTrk.length > 0) {
@@ -87,18 +86,29 @@ function addStartEnd(points, layers, coordsTrk, coordsAll) {
     }
 }
 
-function drawRoutePoints({ points, point, coordsAll, layers, ctx, draggable, index }) {
+function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable, index }) {
     let coords = [];
 
-    // catch case when geometry exists but empty
-    if (point.geometry.length === 0 && index > 0) {
-        const start = points[index - 1];
-        const end = point;
-        coords.push(new L.LatLng(start.lat, start.lng));
-        coords.push(new L.LatLng(end.lat, end.lng));
-        coordsAll = coordsAll.concat(Object.assign([], coords));
-        layers.push(createTempPolyline(start, end));
-        return coordsAll;
+    // draw tempLine for orphaned empty geo
+    if (ctx && map && point.geometry.length === 0 && index > 0) {
+        let pointLayersFound = 0;
+        const trackLayers = ctx.selectedGpxFile.layers;
+        if (trackLayers && map.hasLayer(trackLayers)) {
+            trackLayers.eachLayer((l) => {
+                if (l.point && TracksManager.isEqualPoints(l.point, point)) {
+                    pointLayersFound++;
+                }
+            });
+        }
+        if (pointLayersFound === 0) {
+            const start = points[index - 1];
+            const end = point;
+            coords.push(new L.LatLng(start.lat, start.lng));
+            coords.push(new L.LatLng(end.lat, end.lng));
+            coordsAll = coordsAll.concat(Object.assign([], coords));
+            layers.push(createTempPolyline(start, end));
+            return coordsAll;
+        }
     }
 
     point.geometry.forEach((p) => {
@@ -260,7 +270,7 @@ function getPolylineByStartEnd(startPoint, endPoint, polylines) {
 
 function updatePolylineToTemp(startPoint, endPoint, polyline) {
     if (polyline) {
-        const polylineTemp = createTempPolyline(startPoint, endPoint);
+        const polylineTemp = createTempPolyline(startPoint, endPoint); // coordinates only
         polyline.setLatLngs(polylineTemp._latlngs);
         polyline.setStyle(TEMP_LINE_STYLE);
         polyline.point = endPoint;
@@ -323,7 +333,11 @@ function updatePolyline(startPoint, endPoint, polylines, oldStartPoint, oldEndPo
 function createTempPolyline(start, end) {
     const startPoint = new L.LatLng(start.lat, start.lng);
     const endPoint = new L.LatLng(end.lat, end.lng);
-    return new L.Polyline([startPoint, endPoint], TEMP_LINE_STYLE);
+
+    const polyline = new L.Polyline([startPoint, endPoint], TEMP_LINE_STYLE);
+    polyline.point = end; // always store end-point ref inside layer
+
+    return polyline;
 }
 
 function createEditableTempLPolyline(start, end, map, ctx) {

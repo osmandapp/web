@@ -63,19 +63,18 @@ const PanelButtons = ({
         ctx.setTrackState({ update: false });
     }
 
-    function getState(currentState) {
-        getTrack(currentState);
+    function getState(nextState) {
+        getTrack(nextState);
         setUseSavedState(false);
     }
 
-    function getTrack(currentState) {
-        let oldLayers = _.cloneDeep(ctx.selectedGpxFile.layers);
-        let objFromState = _.cloneDeep(currentState);
-        objFromState.updateLayers = true;
-        objFromState.layers = oldLayers;
-        objFromState.getRouting = true;
-
-        ctx.setSelectedGpxFile({ ...objFromState });
+    function getTrack(nextState) {
+        const currentLayers = _.cloneDeep(ctx.selectedGpxFile.layers);
+        const objFromState = _.cloneDeep(nextState);
+        objFromState.syncRouting = true; // will be 1st effect
+        objFromState.updateLayers = true; // will be 2nd effect
+        objFromState.layers = currentLayers; // use actual layers
+        ctx.setSelectedGpxFile(objFromState);
     }
 
     function getMarginTop() {

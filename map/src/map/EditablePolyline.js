@@ -223,7 +223,6 @@ export default class EditablePolyline {
                 },
                 currentPoint
             );
-            polylineTempCurrent.point = currentPoint;
             polylineTempCurrent.addTo(this.map);
 
             let polylineTempNext = TrackLayerProvider.createTempPolyline(
@@ -233,7 +232,7 @@ export default class EditablePolyline {
                 },
                 nextPoint
             );
-            polylineTempNext.point = nextPoint;
+            // polylineTempNext.point = nextPoint; // alread defined
             polylineTempNext.addTo(this.map);
 
             segments = TracksRoutingCache.addSegmentToRouting(

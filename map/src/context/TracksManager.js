@@ -799,6 +799,7 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         Object.keys(data.data).forEach((t) => {
             newGpxFile[`${t}`] = data.data[t];
         });
+
         newGpxFile.update = true;
         newGpxFile.wpts = wpts;
         newGpxFile.pointsGroups = pointsGroups;

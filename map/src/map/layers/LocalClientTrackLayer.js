@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
-import TrackLayerProvider from '../TrackLayerProvider';
+import TrackLayerProvider, { TEMP_LAYER_FLAG } from '../TrackLayerProvider';
 import TracksManager, { isEmptyTrack } from '../../context/TracksManager';
 import MarkerOptions from '../markers/MarkerOptions';
 import _ from 'lodash';
@@ -12,6 +12,7 @@ import Utils, { effectDebouncer } from '../../util/Utils';
 import WptMapDialog from '../components/WptMapDialog';
 import AddRoutingToTrackDialog from '../components/AddRoutingToTrackDialog';
 import TracksRoutingCache, {
+    syncTrackWithCache,
     effectControlRouterRequests,
     effectRefreshTrackWithRouting,
     GET_ANALYSIS_DEBOUNCE_MS,
@@ -100,7 +101,9 @@ export default function LocalClientTrackLayer() {
                 (isPointsHaveSameGeo(unverified.points, trusted.points) ||
                     isPointsHaveSameGeo(unverified.tracks[0]?.points, trusted.tracks[0]?.points))
             ) {
-                // console.debug('verified');
+                // cleanup some triggers
+                unverified.syncRouting = false;
+                unverified.updateLayers = false;
                 ctx.setSelectedGpxFile(unverified);
             } else {
                 console.debug('unverified-gpx-file', unverified.name);
@@ -122,8 +125,8 @@ export default function LocalClientTrackLayer() {
      */
     useEffect(() => {
         if (ctxTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK) {
-            if (ctxTrack.getRouting) {
-                getRouting();
+            if (ctxTrack.syncRouting) {
+                syncRouting();
             } else {
                 // checkDeleteSelected();
                 if (ctx.createTrack?.enable && isEmptyTrack(ctxTrack) === false) {
@@ -292,12 +295,11 @@ export default function LocalClientTrackLayer() {
         }
     }
 
-    function getRouting() {
-        if (ctxTrack.getRouting) {
-            let trackWithRouting = TracksRoutingCache.getRoutingFromCache(ctxTrack, ctx, map);
-            trackWithRouting.getRouting = false;
-            ctx.setSelectedGpxFile({ ...trackWithRouting });
-        }
+    function syncRouting() {
+        const track = { ...ctxTrack };
+        track.syncRouting = false;
+        syncTrackWithCache({ ctx, track, debouncerTimer }); // mutate track
+        ctx.setSelectedGpxFile(track);
     }
 
     // function checkDeleteSelected() {
@@ -333,7 +335,7 @@ export default function LocalClientTrackLayer() {
         if (track.updated) {
             track.updated = false; // reset
         }
-        let layer = TrackLayerProvider.createLayersByTrackData(track, ctx);
+        let layer = TrackLayerProvider.createLayersByTrackData(track, ctx, map);
         if (layer) {
             if (fitBounds) {
                 if (!_.isEmpty(layer.getBounds())) {
@@ -544,7 +546,7 @@ export default function LocalClientTrackLayer() {
         TracksManager.prepareTrack(file);
 
         file.tracks = [{ points, wpts }];
-        file.layers = TrackLayerProvider.createLayersByTrackData(file, ctx);
+        file.layers = TrackLayerProvider.createLayersByTrackData(file, ctx, map);
 
         ctx.localTracks.push(file);
         ctx.setLocalTracks([...ctx.localTracks]);
@@ -603,14 +605,14 @@ export default function LocalClientTrackLayer() {
     }
 
     function isTempLayer(layer) {
-        return layer.options.name === 'temp';
+        return layer.options.name === TEMP_LAYER_FLAG;
     }
 
     function updateLayers(points, wpts, trackLayers, deleteOld) {
         if (trackLayers) {
             let layers = [];
             if (points?.length > 0) {
-                TrackLayerProvider.parsePoints({ ctx, points, layers, draggable: true });
+                TrackLayerProvider.parsePoints({ map, ctx, points, layers, draggable: true });
             }
             if (wpts?.length > 0) {
                 TrackLayerProvider.parseWpt(wpts, layers);
