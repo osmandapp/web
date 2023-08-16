@@ -9,23 +9,19 @@ function addTrackToMap({ ctx, file, map, fit = true } = {}) {
     const layer = TrackLayerProvider.createLayersByTrackData(file, ctx);
 
     layer.on('click', () => {
-        file.analysis = TracksManager.prepareAnalysis(file.analysis);
-        ctx.setSelectedGpxFile(Object.assign({}, file));
-        const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
-        ctx.setCurrentObjectType(type);
-        ctx.setUpdateContextMenu(true);
+        if (file.name !== ctx.selectedGpxFile.name) {
+            file.analysis = TracksManager.prepareAnalysis(file.analysis);
+            ctx.setSelectedGpxFile(Object.assign({}, file));
+            const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
+            ctx.setCurrentObjectType(type);
+            ctx.setUpdateContextMenu(true);
+        }
     });
-    // file.gpx = layer; // better modify state by parent (closer to setState)
-
     if (fit) {
         map.fitBounds(layer.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
     }
-
     layer.addTo(map);
-
     return layer;
-    // ctx.setGpxFiles(ctx.gpxFiles); // not here, better call once, after parent's full cycle
-    // ctx.setSelectedGpxFile(Object.assign({}, file)); // not now, because this is view-layer init
 }
 
 function removeLayerFromMap(file, map) {
