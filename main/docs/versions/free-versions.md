@@ -17,6 +17,30 @@ You can get the latest version of OsmAnd free from listed app stores.
 Direct links to free OsmAnd versions.
 ## Version 4 
 
+### Version 4.5 
+Release date: 08/2023
+* BLE/ANT+ sensors: reworked connection, writing and viewing received data to GPX
+* Free backup for favorites and settings to OsmAnd Cloud
+* New format for Terrain maps with 3D Relief support
+* Tracks management: updated UI, added sorting, support of nested folders
+* Android Auto: new start menu for access favorites, tracks and poi categories
+* One list of widgets for Top/Bottom panel
+* New "Train" profile, allows to calculate railways routes
+* Contour lines works with any "Map source"
+* Expanded list of default actions for external keyboards
+* Custom routing files, added options to delete or overwrite
+* Added option to "Announce deviation from the route"
+* Start screen: added option restore OsmAnd state from file
+* Added "Hazardous Materials" classes Truck navigation in North America
+* Added support of "Via ferrata" for pedestrian routing
+* Added "CAI" scale for difficulty classification of the routes
+* Fixed per-app language selection
+* Added support for themed icons
+* OsmAnd Cloud: added option to delete account
+* Accessibility: touch target size for  buttons changed to 48 dp; fixed issue with map UI visible for screen readers
+
+<DownloadRelease blog="osmand-android-4-5-released" release="net.osmand-4.5.10.apk" />
+
 ### Version 4.4 
 Release date: 03/2023
 * Improved "Tracks" menu in "Configure Map"
@@ -35,7 +59,7 @@ Release date: 03/2023
 * "Display position" added new option "Automatic"
 * Fixed map gestures for tilt, zoom and rotation
 
-<DownloadRelease blog="osmand-android-4-4-released" release="net.osmand-4.4.7-4407.apk" />
+<DownloadRelease blog="osmand-android-4-4-released" release="net.osmand-4.4.7.apk" />
 
 
 ### Version 4.3 
@@ -52,7 +76,7 @@ Release date: 12/2022
 * Added support for ANT+ sensors
 * Added option to disable download UUID
 
-<DownloadRelease blog="osmand-android-4-3-released" release="net.osmand-4.3.12-4312.apk" />
+<DownloadRelease blog="osmand-android-4-3-released" release="net.osmand-4.3.12.apk" />
 
 ### Version 4.2 
 Release date: 06/2022
@@ -62,7 +86,7 @@ Release date: 06/2022
 * Favorite groups: set default appearance for new points in the group
 * Fixes: online tile-maps auto-update
 
-<DownloadRelease blog="osmand-android-4-2-released" release="net.osmand-4.2.7-4207.apk" />
+<DownloadRelease blog="osmand-android-4-2-released" release="net.osmand-4.2.7.apk" />
 
 ### Version 4.1 
 Release date: 12/2021
@@ -132,7 +156,7 @@ Release date: 09/2020
 * Improved "Follow track" options in Navigation
 * Fixed issues with import/export of profile settings
 
-<DownloadRelease blog="osmand-3-8" release="net.osmand-3.8.3-383.apk" />
+<DownloadRelease blog="osmand-3-8" release="net.osmand-3.8.3.apk" />
 
 
 ### Version 3.7 
@@ -148,7 +172,7 @@ Release date: 05/2020
 * Fix UI sizes on tablets
 * Fix bugs with RTL
 
-<DownloadRelease blog="osmand-3-7" release="net.osmand-3.7.4-374.apk" />
+<DownloadRelease blog="osmand-3-7" release="net.osmand-3.7.4.apk" />
 
 
 ### Version 3.6 
@@ -167,7 +191,7 @@ Release date: 02/2020
 * Added correct transliteration into the map of Japan
 * Added Antarctica map
 
-<DownloadRelease blog="osmand-3-6" release="net.osmand-3.6.3-363.apk" />
+<DownloadRelease blog="osmand-3-6" release="net.osmand-3.6.3.apk" />
 
 
 
@@ -183,7 +207,7 @@ Release date: 11/2019
 * Ski routing: added height profile and route complexity to the route details
 * Bug fixes
 
-<DownloadRelease blog="osmand-3-5" release="net.osmand-3.5.5-355.apk" />
+<DownloadRelease blog="osmand-3-5" release="net.osmand-3.5.5.apk" />
 
 
 
@@ -200,7 +224,7 @@ Release date: 07/2019
 * Fixed compass button behavior during navigation
 * Bug fixes
 
-<DownloadRelease blog="osmand-3-4" release="net.osmand-3.4.8-348.apk" />
+<DownloadRelease blog="osmand-3-4" release="net.osmand-3.4.8.apk" />
 
 
 
@@ -229,7 +253,7 @@ Release date: 09/2018
 * Measure distance: add Measure button to Actions in the context menu
 
 
-<DownloadRelease blog="blog" release="net.osmand-3.2.7-327.apk" />
+<DownloadRelease blog="blog" release="net.osmand-3.2.7.apk" />
 
 
 
@@ -243,7 +267,7 @@ Release date: 08/2018
 * Context menu: fix transport shields color in the night mode, fix additional menu sizes
 * Boat navigation: support for waterway fairway
 
-<DownloadRelease blog="osmand-3-1" release="net.osmand-3.1.6-316.apk" />
+<DownloadRelease blog="osmand-3-1" release="net.osmand-3.1.6.apk" />
 
 
 ### Version 3.0
@@ -255,7 +279,7 @@ Release date: 05/2018
 * Map markers: import of selected groups from GPX files, coordinate input new look
 * OsmAnd Live subscription now includes all OsmAnd features
 
-<DownloadRelease blog="osmand-3-0" release="net.osmand-3.0.4-304.apk" />
+<DownloadRelease blog="osmand-3-0" release="net.osmand-3.0.4.apk" />
 
 
 <hr></hr>
@@ -312,7 +336,7 @@ Release date: 04/2017
 * Driving style settings for cyclists
 * New map style
 
-<DownloadRelease blog="osmand-2-6" release="net.osmand-2.6.5-265.apk" />
+<DownloadRelease blog="osmand-2-6" release="net.osmand-2.6.5.apk" />
 
 
 
@@ -327,7 +351,7 @@ Release date: 11/2016
 * Topo map style. A completely new style for hikers and tourists
 * Better trip recording and other improvements
 
-<DownloadRelease blog="osmand-2-5" release="net.osmand-2.5.3-253.apk" />
+<DownloadRelease blog="osmand-2-5" release="net.osmand-2.5.3.apk" />
 
 
   
@@ -396,7 +420,7 @@ Release date: 04/2015
 * Redesigned My Places and Tracks
 * Simplified OSM Edits and OSM Notes for offline usage
 
-<DownloadRelease blog="osmand-2-0" release="net.osmand-2.0.4-207.apk" />
+<DownloadRelease blog="osmand-2-0" release="net.osmand-2.0.4.apk" />
 
 <hr></hr>
 

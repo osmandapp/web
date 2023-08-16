@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Configure map screen
+title: Map screen during navigation
 ---
 
 import Tabs from '@theme/Tabs';
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-This article describes how the mapping behavior in the OsmAnd app changes during navigation. This includes [animated location changes](#animate-my-location), the display of [POIs along the route](#show-points-along-the-route), the use of [screen alerts](#screen-alerts), the [appearance of the route line](#route-line-appearance) including color and width, and turn arrows. These features are closely related to the [route navigation settings](../setup/route-navigation.md#settings).
+This article describes how to configure the map appearance for the navigation case. This includes things like [animated location changes](#animate-my-location), the display of [POIs along the route](#show-points-along-the-route), the use of [screen alerts](#screen-alerts), the [appearance of the route line](#route-line-appearance) including color and width, and turn arrows. These features are closely related to the [route navigation settings](../setup/route-navigation.md#settings).
 
 
 ## Map during navigation
@@ -29,7 +29,7 @@ This article describes how the mapping behavior in the OsmAnd app changes during
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,map_during_navigation"/>*  
 
-![Configure map screen](@site/static/img/navigation/configure_map-during-navigation_andr.png)
+![Map screen during navigation](@site/static/img/navigation/configure_map-during-navigation_andr.png)
 
 </TabItem>
 
@@ -37,24 +37,23 @@ This article describes how the mapping behavior in the OsmAnd app changes during
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
-![Configure map screen](@site/static/img/navigation/configure_map-during-navigation_ios.png)
+![Map screen during navigation](@site/static/img/navigation/configure_map-during-navigation_ios.png)
 
 </TabItem>
 
 </Tabs>
 
+The map during navigation serves as a visual tool to locate your position, to locate your destination and plan your route, and to see the navigation directions. To do this, you can use zooming, and drag and rotate the map as needed. The map can also display road information, street names, buildings, and other objects to help you fine the way easily.  
 
-The map during navigation serves as a visual tool for positioning, route planning, and orientation when navigating. You use the map to determine your current location as well as where you want to go. To do this, he can use zooming, drag and rotate the map to get a better view of his surroundings and determine the best route. The map can also display information about roads, streets, buildings, and other objects to help the user find his way easily.  
-
-During navigation, the location, distance from the surface, and map view change depending on the settings. Before you start a route, you need to check whether the settings correspond to the way you want the OsmAnd map to behave while you are driving.   
+During navigation, the map appearance changes to that of the app profile used for the navigation. Before you start a navigation, check whether appearance matches how you want the map to behave while driving.   
 
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
 | *"<Translate android="true" ids="choose_auto_follow_route"/>"* |  The time until the map view is synced with your current position after moving.  |  *Value:* <br /> Never, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
 | *"<Translate android="true" ids="auto_zoom_map"/>"*  |  Automatically scale the map according to your speed (as long as the map is in sync with your current position). | *Value:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manually zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom is 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom is 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom is 5 m. |
-| *"<Translate android="true" ids="snap_to_road"/>"*  |  The current position icon will be associated with the current navigation route.   | This option can be turned off, but then all road-related options, such as lane display, will also not be visible during navigation.   |
-| *"<Translate android="true" ids="approximate_bearing"/>"*  |  Determines the bearing based on the navigational route you are following.    | The setting is visibled only if OsmAnd [Development plugin](../../plugins/development.md) is enabled. <br /> This option should be enabled if the orientation of the directional map is flipped or jiggles when using [Android Auto](../auto-car.md#issues).   |
+| *"<Translate android="true" ids="snap_to_road"/>"*  | The current position icon will be associated with the current navigation route.  | This option can be turned off, but then all road-related options, such as lane display, will also not be visible during navigation.  |
+| *"<Translate android="true" ids="approximate_bearing"/>"* | Determines the bearing based on the navigational route you are following.    | The setting is visible only if the OsmAnd [Development plugin](../../plugins/development.md) is enabled. <br /> This option should be enabled if the orientation of the directional map is flipped or jiggles when using [Android Auto](../auto-car.md#issues).   |
 
 
 ### Animate my location
@@ -62,7 +61,7 @@ During navigation, the location, distance from the surface, and map view change 
 This setting provides a smooth animation of the "My location" point moving on the map during navigation. Note that the animation takes about 1 second, which creates a slight delay for the "My location" position to display on the map relative to your location.
 For Android, this item named **Animate own position** is located in the "Other" section of the General Settings menu.
 
-**POI Types**. You can select one or many from standard OsmAnd POI types or make your own [POI filter](../../search/custom-poi-search.md) and select it to display POI on the map.
+**POI Types**. You can select one or many from standard OsmAnd POI types or make your own [POI filter](../../search/search-poi.md) and select it to display POI on the map.
 **Map style POI**. Each POI type in OsmAnd assigned a specific icon and color. POIs' [zoom level](../../map/vector-maps.md#details) and design could be different in some [map styles](../../map/vector-maps.md#default-map-styles).  
 
 
@@ -204,7 +203,7 @@ Changes the shades of the colors of the route lines, and their overall coloring 
 ![custom](@site/static/img/navigation/route/custom.png) |
 | *<Translate android="true" id="altitude"/>* – It shows the height on the route point as **green**-**yellow**-**red** gradient. Where **green** represents lowest point of the route, **yellow** - median height points and **red** the highest points. If the route altitude difference is < 100 m, gradient is applied partially or not applied i.e. for a simple uphill route from 100 m to 150 m - the gradient will be **green**-**yellow**. Please note that the color doesn't represent the absolute height value.    |  
 ![Altitude](@site/static/img/navigation/route/Altitude_rl.png) |
-|*<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>* – The route line will be colored in different colors depending on the elevation profile of the route. A detailed description in the article Contour lines and Terrain plugin, point [Slope map](../../plugins/contour-lines.md#slope-map). |
+|*<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>* – The route line will be colored in different colors depending on the elevation profile of the route. A detailed description is in the article on the Topography plugin, section [Slope](../../plugins/contour-lines.md#slope). |
 ![Altitude](@site/static/img/navigation/route/Slope.png)  |
 |*<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_roadClass_name"/>"* – Colour the route or the track line according to the road classification. [Road style](../../map/vector-maps.md#road-style)|
 ![Altitude](@site/static/img/navigation/route/Roud_type.png)  |

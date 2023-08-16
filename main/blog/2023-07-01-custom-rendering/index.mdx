@@ -1,0 +1,71 @@
+---
+slug: rendering
+title: Custom map styles
+authors: eugene
+tags: [marketing,map,android,ios]
+
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
+import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+
+Hello everybody!
+
+In this article, we want to show you how OsmAnd users create their own map styles.
+
+
+## OsmAnd map styles
+
+At first about Map styles by default.
+
+OsmAnd contains own [10 map rendring styles](https://osmand.net/docs/user/map/vector-maps#default-map-styles): _OsmAnd, Touring view, UniRS and LightRS, Nautical, Winter and ski, Topo, OSM-carto, Desert, Offroad, Snowmobile_.  
+
+Android version: _Menu → Configure map → Map rendering → Map style_
+
+iOS version: _Menu → Configure map → Styles for offline maps_
+
+![OsmAnd Map styles](./map_styles.png)
+
+<!--truncate-->
+
+All of these map styles contain one type of data from [OpenStreetMap](https://www.openstreetmap.org/). [Rendering.xml](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles) contains rules on how to display (draw) the map on a device screen.
+
+Read more about settings for OsmAnd rendering vector maps, and how to switch on/off additional details on the map [here](https://osmand.net/docs/user/map/vector-maps#configure-map-style).
+
+## Custom rendering styles
+
+OsmAnd is a powerful customised application. Each user can create your own _Map style_. Documentation about it is [here](https://osmand.net/docs/technical/osmand-file-formats/osmand-rendering-style).
+
+## Examples
+
+Here we added examples of users rendering styles.
+
+### Osmand-Rendering
+
+By our vision, it's [the most advanced project](https://github.com/OsmAnd-Rendering) with map styles for OsmAnd from the free authors' team. Here you can find styles for motorcycle, cycling, and hiking activities, and a manual for rendering creation. 
+
+You can always discuss rendering in [the telegram](https://t.me/OsmandRendering).
+
+![Louis](./louis.png)
+
+On the GitHub page, you find not only custom Map styles but the list of [Online maps for OsmAnd](https://github.com/OsmAnd-Rendering/Online-Maps) too.
+
+### Outdoor Explorer
+
+It's one more user map style for OsmAnd. This style was created for enduro, MTB and hiking activities.
+
+[Here](https://github.com/cmoffroad/osmand-outdoor-explorer-plugin) you can download Custom plugin and use new map styles.
+
+![Outdoor](./outdoor.png)
+
+______________________
+
+<LinksSocial/>
+<LinksTelegram/>

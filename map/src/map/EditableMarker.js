@@ -1,9 +1,9 @@
-import L from "leaflet";
-import MarkerOptions from "./markers/MarkerOptions";
-import TrackLayerProvider from "./TrackLayerProvider";
-import _ from "lodash";
-import TracksManager from "../context/TracksManager";
-import RoutingManager from "../context/RoutingManager";
+import L from 'leaflet';
+import MarkerOptions from './markers/MarkerOptions';
+import TrackLayerProvider from './TrackLayerProvider';
+import _ from 'lodash';
+import TracksManager from '../context/TracksManager';
+import TracksRoutingCache from '../context/TracksRoutingCache';
 
 export default class EditableMarker {
     stopclick;
@@ -30,8 +30,8 @@ export default class EditableMarker {
             marker = new L.Marker(point, {
                 icon: MarkerOptions.options.route,
                 draggable: true,
-                ...options
-            })
+                ...options,
+            });
         }
 
         if (marker) {
@@ -46,13 +46,14 @@ export default class EditableMarker {
             this.dragStartPoint(e, track);
         });
         marker.on('dragend', (e) => {
-            this.dragEndPoint(e, track)
+            this.ctx.setPointContextMenu({});
+            this.dragEndPoint(e, track);
             if (e.target.options.wpt) {
                 e.target.dragging.disable();
                 this.stopclick = true;
             }
         });
-        marker.on('contextmenu', (e) => this.createPointContextMenu(e))
+        marker.on('contextmenu', (e) => this.createPointContextMenu(e));
         marker.on('click', (e) => {
             e.originalEvent.stopPropagation();
             if (e.target.options.wpt) {
@@ -66,44 +67,32 @@ export default class EditableMarker {
     }
 
     createPointContextMenu(e) {
-        let coord = e.latlng;
-        this.ctx.pointContextMenu.ref = {
-            getBoundingClientRect() {
-                return {
-                    width: 0,
-                    height: 0,
-                    top: e.containerPoint.y,
-                    right: e.containerPoint.x,
-                    bottom: e.containerPoint.y,
-                    left: e.containerPoint.x,
-                }
-            }
-        };
-        this.ctx.pointContextMenu.left = e.containerPoint.x;
-        this.ctx.pointContextMenu.top = e.containerPoint.y;
-        this.ctx.pointContextMenu.coord = coord;
-        this.ctx.setPointContextMenu({...this.ctx.pointContextMenu});
+        if (e.latlng) {
+            this.ctx.pointContextMenu.coord = e.latlng;
+            this.ctx.pointContextMenu.element = e.originalEvent.target;
+            this.ctx.setPointContextMenu({ ...this.ctx.pointContextMenu });
+        }
     }
 
     dragStartPoint(e, track) {
         let lat = e.target._latlng.lat;
         let lng = e.target._latlng.lng;
-        let indPoint = track.points.findIndex(point => point.lat === lat && point.lng === lng);
+        let indPoint = track.points.findIndex((point) => point.lat === lat && point.lng === lng);
         if (indPoint !== -1) {
             track.dragPoint = {
                 indPoint: indPoint,
                 lat: lat,
-                lng: lng
+                lng: lng,
             };
         } else {
-            let indWpt = track?.wpts.findIndex(point => {
-                return point.lat === lat && point.lon === lng
+            let indWpt = track?.wpts.findIndex((point) => {
+                return point.lat === lat && point.lon === lng;
             });
             if (indWpt !== -1) {
                 track.dragPoint = {
                     indWpt: indWpt,
                     lat: lat,
-                    lng: lng
+                    lng: lng,
                 };
             }
         }
@@ -124,21 +113,24 @@ export default class EditableMarker {
             let currentPolyline;
             let indPointInPolyline;
 
-            polylines.forEach(p => {
+            polylines.forEach((p) => {
                 let pp = p._latlngs;
-                let fp = pp.find(point => point.lat === currentPoint.lat && point.lng === currentPoint.lng);
+                let fp = pp.find((point) => point.lat === currentPoint.lat && point.lng === currentPoint.lng);
                 if (fp !== -1) {
                     currentPolyline = p;
                     indPointInPolyline = _.indexOf(pp, fp, 0);
                 }
-            })
+            });
 
             const oldPoint = _.cloneDeep(currentPoint);
 
             currentPoint.lat = lat;
             currentPoint.lng = lng;
 
-            if (currentPoint.profile === TracksManager.PROFILE_LINE && (!currentPoint.geometry || !currentPoint.profile)) {
+            if (
+                currentPoint.profile === TracksManager.PROFILE_LINE &&
+                (!currentPoint.geometry || !currentPoint.profile)
+            ) {
                 currentPolyline._latlngs[indPointInPolyline] = currentPoint;
                 currentPolyline.setLatLngs(currentPolyline._latlngs);
             } else {
@@ -155,8 +147,20 @@ export default class EditableMarker {
                             newGeo[newGeo.length - 1] = currentPoint;
                             currentPoint.geometry = newGeo;
                         } else {
-                            currentPolyline = TrackLayerProvider.updatePolyline(prevPoint, currentPoint, polylines, null, oldPoint);
-                            segments = RoutingManager.addSegmentToRouting(prevPoint, currentPoint, oldPoint, currentPolyline, segments);
+                            currentPolyline = TrackLayerProvider.updatePolyline(
+                                prevPoint,
+                                currentPoint,
+                                polylines,
+                                null,
+                                oldPoint
+                            );
+                            segments = TracksRoutingCache.addSegmentToRouting(
+                                prevPoint,
+                                currentPoint,
+                                oldPoint,
+                                currentPolyline,
+                                segments
+                            );
                         }
                     }
                 }
@@ -168,8 +172,20 @@ export default class EditableMarker {
                             newGeo[0] = currentPoint;
                             nextPoint.geometry = newGeo;
                         } else {
-                            nextPolyline = TrackLayerProvider.updatePolyline(currentPoint, nextPoint, polylines, oldPoint, null);
-                            segments = RoutingManager.addSegmentToRouting(currentPoint, nextPoint, oldPoint, nextPolyline, segments);
+                            nextPolyline = TrackLayerProvider.updatePolyline(
+                                currentPoint,
+                                nextPoint,
+                                polylines,
+                                oldPoint,
+                                null
+                            );
+                            segments = TracksRoutingCache.addSegmentToRouting(
+                                currentPoint,
+                                nextPoint,
+                                oldPoint,
+                                nextPolyline,
+                                segments
+                            );
                         }
                     }
                 }
@@ -182,8 +198,8 @@ export default class EditableMarker {
                 currentWpt.lon = lng;
             }
         }
-        this.ctx.setRoutingNewSegments([...segments])
+        this.ctx.setRoutingNewSegments([...segments]);
         this.ctx.trackState.update = true;
-        this.ctx.setTrackState({...this.ctx.trackState});
+        this.ctx.setTrackState({ ...this.ctx.trackState });
     }
 }

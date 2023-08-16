@@ -1,96 +1,106 @@
-import React, {useContext, useState} from "react";
-import AppContext from "../../../context/AppContext";
-import {ListItemText, MenuItem, Switch, Tooltip, Typography} from "@mui/material";
-import _ from "lodash";
-import TracksManager from "../../../context/TracksManager";
+import React, { useContext } from 'react';
+import AppContext from '../../../context/AppContext';
+import { ListItemText, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
+import _ from 'lodash';
+import TracksManager from '../../../context/TracksManager';
 
-export default function LocalTrackItem({track, index}) {
-
+export default function LocalTrackItem({ track }) {
     const ctx = useContext(AppContext);
-    const [indexTrack, setIndexTrack] = useState(index);
 
-    function enableLayer(visible) {
-        if (!visible) {
-            deleteTrackFromMap();
-        } else {
+    const ref = ctx.localTracks.find((t) => t.name === track.name);
+
+    if (!ref) {
+        // console.debug('LocalTrackItem track not found (removed)', track.name);
+        return null;
+    }
+
+    function onSwitchChanged(visible) {
+        if (visible) {
             addTrackToMap();
+        } else {
+            deleteTrackFromMap();
         }
     }
 
-    function cleanSelectedTrackIfNeed(currentTrack) {
-        if (ctx.selectedGpxFile && ctx.selectedGpxFile.name === currentTrack.name) {
+    function cleanSelectedTrackIfNeed() {
+        if (isAlreadyEdit()) {
             if (ctx.createTrack) {
-                ctx.createTrack.enable = false;
+                ctx.createTrack.enable = false; // stop-editor
                 ctx.createTrack.clear = true;
-                ctx.setCreateTrack({...ctx.createTrack});
+                ctx.setCreateTrack({ ...ctx.createTrack });
             }
         }
     }
 
     function deleteTrackFromMap() {
-        let currentTrack = ctx.localTracks[track.index];
-        currentTrack.selected = false;
-        cleanSelectedTrackIfNeed(currentTrack);
+        ref.selected = false;
+        cleanSelectedTrackIfNeed();
         ctx.setLocalTracks([...ctx.localTracks]);
     }
 
     function addTrackToMap() {
-        if (indexTrack !== undefined) {
-            updateLocalTrack(track);
-            updateTrackInfoBlock();
+        if (isAlreadyEdit() === false) {
             startEdit();
+            updateLocalTrack();
+            updateTrackInfoBlock();
         }
     }
 
-    function updateLocalTrack(selectedTrack) {
-        track.index = indexTrack;
-        setIndexTrack(indexTrack);
-        selectedTrack.selected = true;
-        selectedTrack.zoom = true;
-        selectedTrack.analysis = TracksManager.prepareAnalysis(selectedTrack.analysis);
-        ctx.setSelectedGpxFile(selectedTrack);
+    function updateLocalTrack() {
+        ref.selected = true;
+        ref.zoom = true;
+        ref.analysis = TracksManager.prepareAnalysis(ref.analysis);
         ctx.setLocalTracks([...ctx.localTracks]);
+        ctx.setSelectedGpxFile({ ...track });
     }
 
     function updateTrackInfoBlock() {
-        let type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
+        const type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
         ctx.setCurrentObjectType(type);
         ctx.setUpdateContextMenu(true);
     }
 
     function startEdit() {
-        if (ctx.createTrack?.enable) {
+        if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
             ctx.setCreateTrack({
-                enable: true,
+                enable: true, // start-editor
                 edit: true,
                 closePrev: {
-                    file: _.cloneDeep(ctx.selectedGpxFile)
-                }
-            })
+                    file: _.cloneDeep(ctx.selectedGpxFile), // call startEdit() before modifications
+                },
+            });
         } else {
             ctx.setCreateTrack({
-                enable: true,
-                edit: true
-            })
+                enable: true, // start-editor
+                edit: true,
+            });
         }
     }
 
-    return <div>
-        <MenuItem key={'track._leaflet_id' + indexTrack} onClick={() => addTrackToMap()}>
-            <Tooltip title={<div>
-                {track.name}
-            </div>}>
-                <ListItemText inset>
-                    <Typography variant="inherit" noWrap>
-                        {"* " + track.name}
-                    </Typography>
-                </ListItemText>
-            </Tooltip>
-            <Switch checked={track.selected === true || ctx.selectedGpxFile?.name === track.name}
+    function isAlreadyEdit() {
+        return !!(
+            ctx.createTrack?.enable &&
+            ctx.selectedGpxFile?.name === track.name &&
+            ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK
+        );
+    }
+
+    return (
+        <div>
+            <MenuItem key={'track._leaflet_id' + track.name} onClick={() => addTrackToMap()}>
+                <Tooltip title={<div>{track.name}</div>}>
+                    <ListItemText inset>
+                        <Typography variant="inherit" noWrap>
+                            {'* ' + track.name}
+                        </Typography>
+                    </ListItemText>
+                </Tooltip>
+                <Switch
+                    checked={track.selected === true || isAlreadyEdit()}
+                    onChange={(e) => onSwitchChanged(e.target.checked)}
                     onClick={(e) => e.stopPropagation()}
-                    onChange={(e) => {
-                        enableLayer(e.target.checked);
-                    }}/>
-        </MenuItem>
-    </div>
+                />
+            </MenuItem>
+        </div>
+    );
 }

@@ -14,6 +14,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
+## Overview
+
 Information widgets are needed for quick access to information important to the user. This can be data on speed, weather, parking position, data from external sensors, and much more. Widgets can be configured according to the user's specific requirements, enabling their visibility on the application screen or disabling them if necessary.
 
 ![Informational widgets](@site/static/img/widgets/informational_widgets_all.png)
@@ -27,7 +30,7 @@ Altitude widgets display the height above the sea level of the current geolocati
 ### Altitude: current location  
   
 :::note  
-Altitude may not be displayed correctly on some Android devices. To resolve this problem, download an altitude correction map: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.  
+Altitude can not be displayed correctly on some Android devices. To resolve this problem, download an altitude correction map: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.  
 :::
 
 <Tabs groupId="operating-systems">
@@ -35,34 +38,27 @@ Altitude may not be displayed correctly on some Android devices. To resolve this
 <TabItem value="android" label="Android">
 
 ![Altitude widget Android](@site/static/img/widgets/altitude_widget_andr.png)  
-  
-| | |
-|------------|------------|
-| Enable | Menu → Configure screen → Left / Right panel → Altitude |  
-| By tapping | No changes.|
-| Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length |  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Altitude widget iOS](@site/static/img/widgets/altitude_widget_ios.png)  
-  
-| | |
-|------------|------------|
-| Enable | Menu → Configure screen → Right panel → Altitude widget |
-| By tapping | No changes.|
-| Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length |  
 
 </TabItem>
 
 </Tabs>  
 
-### * Elevation: map center
 
-To display Elevation widget among *Altitude widgets*:
-- enable the [Development plugin](../plugins/development.md)
-- switch on heightmap option in the [Development plugin settings](../plugins/development.md#plugin-settings)
+| | |
+|------------|------------|
+| Enable | **Android** *Menu → Configure screen → Left / Right panel → Altitude* |
+|  | **iOS** *Menu → Configure screen → Right panel → Altitude widget* |
+| By tapping | No changes |
+| Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* |  
+
+
+### * Elevation: map center
 
 <Tabs groupId="operating-systems">
 
@@ -70,32 +66,30 @@ To display Elevation widget among *Altitude widgets*:
 
 ![Elevation widget Android](@site/static/img/widgets/elevation_widget_andr.png)  
 
-| | |
-|------------|------------|
-| Enable | Menu → Configure screen → Left / Right panel → Altitude | 
-| By tapping | No changes. |
-| Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length | 
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Elevation widget iOS](@site/static/img/widgets/elevation_widget_ios.png) 
 
-| | |
-|------------|------------|
-| Enable | Menu → Configure screen → Right panel → Elevation: map center | 
-| By tapping | No changes. |
-| Format | Menu → Settings → App profiles → General settings → Units & formats → Units of length | 
-
 </TabItem>
 
 </Tabs>  
-    
 
-:::caution
-Elevation widget will display information only when the hightmaps of the required area are downloaded.  
-:::
+To display *Elevation: map center* widget:  
+
+- Enable [Development plugin](../plugins/development.md).
+- Turn on *Terrain / Heightmap* options in the [Development plugin settings](../plugins/development.md#terrain--heightmap).
+- For iOS the widget works only if the **Use 3D relief heightmaps option** is enabled in the OsmAnd Development plugin.
+- Download hightmaps of the required area to display information in the Elevation widget.
+
+| | |
+|------------|------------|
+| Enable | **Android** *Menu → Configure screen → Left / Right panel → Altitude* |
+|  | **iOS** *Menu → Configure screen → Right panel → Elevation: map center* | 
+| By tapping | No changes |
+| Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* | 
+
 
 ## Current time
 
@@ -169,7 +163,7 @@ There are 2 coordinates widgets:
 - *Coordinates: map center* - shows the geographic coordinates of the current map center.
 - *Coordinates: current location* (Android) or *Coordinates widget* (iOS) - shows the geographic coordinates of current geolocation.
 
-Coordinates widgets are displayed at the top of the screen. Icons with a green background show the latitude and longitude of the point in the center of the visible part of the map, and those with a blue background show the coordinates of your current location.Ы
+Coordinates widgets are displayed at the top of the screen. Icons with a green background show the latitude and longitude of the point in the center of the visible part of the map, and those with a blue background show the coordinates of your current location. Information about supported *Сoordinates formats* can be found in the *[Search coordinates article](../search/search-coordinates.md#coordinate-format)*.
 
 <Tabs groupId="operating-systems">
 
@@ -215,7 +209,7 @@ GPS (Global Positioning System) info widget shows a number of satellites that de
 
 ## Sunset and sunrise widgets
 
-Sunset and sunrise widgets show the time of the next sunrise or sunset for the center of the map. Widgets can also display the remaining time ("time left") until the expected sunset/sunrise (also for the center of the map). In both cases "time" or "time left" is indicated by the device time.  
+Sunset and sunrise widgets show the time of the next sunrise or sunset for the center of the map. Widgets can also display the remaining time (*time left*) until the expected sunset/sunrise (also for the center of the map). In both cases *time* or *time left* is indicated by the device time.  
 
 
 <Tabs groupId="operating-systems">
@@ -224,35 +218,30 @@ Sunset and sunrise widgets show the time of the next sunrise or sunset for the c
 
 ![Sunset and sunrise widgets](@site/static/img/widgets/sunset_rise_widgets.png)
 
-| | |
-|------------|------------|
-| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_group_sunrise_sunset"/> |
-| By tapping | Changes between "Time left" and time of next sunrise / sunset and vice versa.|  
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Sunset and sunrise widgets](@site/static/img/widgets/sunset_rise_widgets_ios.png)
+ 
+</TabItem>
+
+</Tabs>  
 
 | | |
 |------------|------------|
-| Enable | <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_sunrise"/> / <Translate ios="true" ids="map_widget_sunset"/> |
-| By tapping | Changes between "Time left" and time of next sunrise / sunset and vice versa.|  
-
-
-</TabItem>
-
-</Tabs>
+| Enable | **Android** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_group_sunrise_sunset"/>* |
+|   |  **iOS** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_sunrise"/> / <Translate ios="true" ids="map_widget_sunset"/>* |
+| By tapping | Switch between *Time left* and the Time of the next sunrise/sunset.| 
 
 
 ## * Trip recording widgets  
 
 :::note  
-You can read a more detailed description here: [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md).  
+You can read a more detailed description here: **[<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md)**.  
 :::  
 
-Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#widgets). You can use them to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill* for the Android version and for **iOS version only *Distance/Start-Stop*.**   
+Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#widgets). You can use widgets to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill*.    
 
 <Tabs groupId="operating-systems">
 
@@ -260,29 +249,21 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 
 ![trip_recording_widget](@site/static/img/widgets/wid_trip_rec.png) 
 
-| | |
-|------------|------------|
-| Enable | Menu → Configure screen → Widgets → Left / Right panel → Trip recording |
-| By tapping | Starts/Stop track recording or View the graph. |
-
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS">   
 
-:::note
-**Widgets**: *Duration*, *Uphill*, *Downhill* doesn't exist for iOS version of OsmAnd.  
-:::  
-
-![trip_recording_widget](@site/static/img/widgets/widget_trip-recording-rec.png)
-
-| | |
-|------------|------------|
-| Enable | <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,track_recording"/> |
-| By tapping | Starts / Stop track recording |
+![trip_recording_widget](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
 
 </TabItem>
 
 </Tabs>  
+
+| | |
+|------------|------------|
+| Enable | **Android** *Menu → Configure screen → Widgets → Left / Right panel → Trip recording* |
+|   |  **iOS** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,track_recording"/>* |
+| By tapping | Starts/Stop track recording or View the graph. |
 
 
 ## * External sensors widgets
@@ -290,7 +271,7 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 <InfoAndroidOnly />
 
 :::note 
-External sensors widgets can be added to the map screen only when OsmAnd External sensors plugin is enabled.  
+To add External sensor widgets to the map screen, **enable the OsmAnd External sensors plugin**.
 :::  
 
 External sensors widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from your external sensors, such as: *<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>, <Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/> and <Translate android="true" ids="map_widget_ant_bicycle_dist"/>*.  
@@ -299,8 +280,8 @@ External sensors widgets refer to [External sensors plugin](../plugins/external-
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="external_sensor_widgets"/>|
-| By tapping | No changes.|   
+| Enable | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="external_sensor_widgets"/>* |
+| By tapping | No changes |   
 
 
 ## * Weather widgets

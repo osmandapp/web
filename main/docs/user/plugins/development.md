@@ -33,14 +33,16 @@ To activate special features for developers and testers:
 
 :::info info  
 Development plugin settings are global and apply to all profiles.  
-:::
+:::  
+
+Use one of the following paths to open the plugin settings:  
+
+- *Main menu → Plugins → OsmAnd development → Settings*. 
+- *Main menu → [Global Settings](../personal/global-settings.md) → Profile → OsmAnd development plugin settings*.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
-
-- *Main menu → Plugins → OsmAnd development → Settings*. 
-- *Main menu → [Global Settings](../personal/global-settings.md) → Profile → OsmAnd development plugin settings*.  
 
 ![Development Settings Android](@site/static/img/plugins/development/development_android_settings_1.png) ![Development Settings 2 Android](@site/static/img/plugins/development/development_android_settings_2.png)
 
@@ -48,36 +50,36 @@ Development plugin settings are global and apply to all profiles.
 
 <TabItem value="ios" label="iOS">  
 
-- *Main menu → [Global Settings](../personal/global-settings.md) → Profile → OsmAnd development plugin settings*.  
-
 ![Development Settings iOS](@site/static/img/plugins/development/development_ios_1.png)
 
 </TabItem>
 
 </Tabs>  
 
-:::caution NOTE
-The options listed below are only available in the Android version of OsmAnd
-:::
 
-### Pre-beta features
+### Terrain / Heightmap
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-- **Transparent status bar** - The map becomes visible under the status bar.  
-- **Heightmap** option adds the ability to load Heightmaps and Altitude widgets (they display the altitude of the current geolocation or the elevation of the current map center).
+- **Heightmap** adds the ability to download [Altitude: current location](../widgets/info-widgets.md#altitude-current-location) and [Elevation: map center](../widgets/info-widgets.md#-elevation-map-center) widgets. These widgets display the elevation of the current geolocation or the elevation of the current map center.
+- **Use raster sqliteddb for hillshade and slope**
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-- **Use 3D relief heightmaps** option adds the ability to load Heightmaps and Altitude widgets (they display the altitude of the current geolocation or the elevation of the current map center).
+- **Test heightmap**
+- **Use 3D relief heightmaps** adds the ability to download [Altitude: current location](../widgets/info-widgets.md#altitude-current-location) and [Elevation: map center](../widgets/info-widgets.md#-elevation-map-center) widgets. These widgets display the elevation of the current geolocation or the elevation of the current map center.
+- **Disable vertex hillshade in 3D**
+- **Generate slope raster maps from 3D maps**
+- **Generate hillshade raster maps from 3D maps**
 
 </TabItem>
 
 </Tabs> 
+
 
 ### Troubleshotting
 
@@ -100,7 +102,6 @@ The options listed below are only available in the Android version of OsmAnd
 </Tabs>  
 
 
-
 ### Application Testing
 
 <Tabs groupId="operating-systems">
@@ -109,6 +110,7 @@ The options listed below are only available in the Android version of OsmAnd
 
 - **Simulate first app start** - Sets the flag indicating first app startup, keeps all other settings unchanged.  
 - **Test voice prompts** - Select a voice and test by playing announcements.  
+- **Transparent status bar** - The map becomes visible under the status bar.  
 - **Show free version banner** - Display the free version banner even in the paid version.  
 
 </TabItem>
@@ -120,7 +122,6 @@ The options listed below are only available in the Android version of OsmAnd
 </TabItem>
 
 </Tabs>  
-
 
 
 ### Internal Algorithms
@@ -197,17 +198,36 @@ The [FPS Widget](../widgets/info-widgets.md#fps-widget) shows how fast the map a
 
 </Tabs>  
 
+
 ### Elevation: map center Widget  
 
-<InfoAndroidOnly/>
+With Elevation widget you can find out the elevation above sea level of the current map center. To display elevation data:
 
-With [Elevation Widget](../widgets/info-widgets.md#-elevation-map-center) you can find out the elevation above sea level of the current map center. To display elevation data:
+- Enable *Heightmap* or *Use 3D relief heightmapsoption* in the OsmAnd Development plugin [settings](#plugin-settings).
+- [Download](../start-with/download-maps.md) heightmaps of the required area 
+- Turn on [Elevation: map center](../widgets/info-widgets.md#-elevation-map-center) in *Menu → Configure screen*.  
 
-- Enable *Heightmap* option in the OsmAnd Development plugin [settings](#plugin-settings)
-- [Download](../start-with/download-maps.md) heightmaps of the desired area are  
-- Put on *Elevation: map center widget* on the screen *Menu → Configure screen → Left / Right panel → Altitude*  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+*Menu → Configure screen → Left / Right panel → Developer Widgets*  
 
 ![Elevation Widget 1](@site/static/img/plugins/development/dev_widgets_altitude_1.png) ![Elevation Widget 2](@site/static/img/plugins/development/dev_widgets_altitude_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*Menu → Configure screen → Right panel*  
+
+![Development widget iOS](@site/static/img/plugins/development/dev_widgets_ios_elevation_1.png) ![Development widget iOS 2](@site/static/img/plugins/development/dev_widgets_ios_elevation_2.png)
+
+</TabItem>
+
+</Tabs> 
+
 
 ## Camera position Widgets
 
@@ -305,7 +325,20 @@ Each next zoom level reduces the imaginary distance to the ground by about 2 tim
 
 ### Distance to target
 
-![Distance to target widget 1](@site/static/img/plugins/development/developer_widg_distance_to_target_1.png) ![Distance to target widget 2](@site/static/img/plugins/development/developer_widg_distance_to_target_2.png)  
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Distance to target widget 1 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_1.png) ![Distance to target widget 2 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_2.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Distance to target widget 1 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_1.png) ![Distance to target widget 2 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_2.png)  
+</TabItem>
+
+</Tabs>  
 
 The Distance from camera to target widget shows the distance between the camera (viewer) and the center of the map. This distance is displayed in meters / kilometers.  
 
@@ -341,9 +374,9 @@ Incline |Latitude |Max Zoom |Height, km |Distortion
 
 ## GPX-track simulation
 
-OsmAnd provides an opportunity to simulate the location and movement of your device using a GPX track. For these purposes, use **simulate your position** option in the OsmAnd development plugin [settings](#plugin-settings):  
+OsmAnd provides an opportunity to simulate the location and movement of your device using a GPX track. For these purposes, use *<Translate android="true" ids="simulate_location_by_gpx"/>* option in the OsmAnd development plugin [settings](#plugin-settings):  
 
-- Tap **Simulate your position**.  
+- Tap *<Translate android="true" ids="simulate_location_by_gpx"/>*.  
 - Select a track to simulate the location and movement of the device.
 - Select movement simulation speed.
 - Tap Start buton.  
@@ -364,9 +397,9 @@ OsmAnd provides an opportunity to simulate the location and movement of your dev
 
 </Tabs>  
 
-
 :::tip Note
-The location movement speed during the simulation can be set equal to the recorded speed (1), or faster (x2, x3, x4).
+- *<Translate android="true" ids="simulate_location_by_gpx"/>* can be also accessed through **[Quick action menu](../widgets/quick-action.md#navigation)**.
+- The location movement speed during the simulation can be set equal to the recorded speed (1), or faster (x2, x3, x4).
 :::
 
 After running the simulation, you will see on the main screen of the app that navigation mark is moving according to GPX track. Tap on [my location button](../map/interact-with-map#my-location--zoom) to synchronize "my location" (simulated geolocation of the device) with the center of the map.  

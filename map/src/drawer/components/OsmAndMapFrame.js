@@ -1,106 +1,171 @@
-import React, {useContext, useState} from 'react';
-import {Drawer, Toolbar, Box, SnackbarContent, Button} from "@mui/material";
-import {
-    IconButton, AppBar
-} from "@mui/material";
-import {Close, KeyboardDoubleArrowLeft, KeyboardDoubleArrowRight, Menu} from '@mui/icons-material';
+import React, { useContext, useEffect, useState } from 'react';
+import { Drawer, Toolbar, Box, Alert } from '@mui/material';
+import { IconButton, AppBar } from '@mui/material';
+import { Menu } from '@mui/icons-material';
 import OsmAndMap from '../../map/components/OsmAndMap';
 import OsmAndDrawer from './OsmAndDrawer';
-import {Outlet} from 'react-router-dom';
-import HeaderInfo from "./header/HeaderInfo";
-import InformationBlock from "../../infoblock/components/InformationBlock";
-import AppContext from "../../context/AppContext";
-import GeneralPanelButtons from "./GeneralPanelButtons";
+import { Outlet } from 'react-router-dom';
+import HeaderInfo from './header/HeaderInfo';
+import InformationBlock from '../../infoblock/components/InformationBlock';
+import AppContext from '../../context/AppContext';
+import GeneralPanelButtons from './GeneralPanelButtons';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
+import { GlobalConfirmationDialog } from '../../dialogs/GlobalConfirmationDialog';
 
 const OsmAndMapFrame = () => {
     const ctx = useContext(AppContext);
 
-    const [drawerOpen, setDrawerOpen] = useState(false);
-    const [hideContextMenu, setHideContextMenu] = useState(false);
-    const toggleDrawer = () => {
-        setDrawerOpen(!drawerOpen);
+    const MOBILE_SCREEN_SIZE = 1000;
+    const MAIN_MENU_OPEN_SCREEN_SIZE = 1200;
+    const MAIN_MENU_SIZE = 320;
+
+    const [mainMenuOpen, setMainMenuOpen] = useState(false);
+    const [mainMenuWidth, setMainMenuWidth] = useState(0);
+    const [showInfoBlock, setShowInfoBlock] = useState(false);
+    const [infoBlockOpen, setInfoBlockOpen] = useState(true);
+    const [clearState, setClearState] = useState(false);
+    const [resizing, setResizing] = useState(false);
+    const [drawerRightHeight, setDrawerRightHeight] = useState(0);
+    const [drawerRightWidth, setDrawerRightWidth] = useState(0);
+    const [mobile, setMobile] = useState(false);
+    const [width, height] = useWindowSize();
+
+    const toggleMainMenu = () => {
+        setMainMenuOpen(!mainMenuOpen);
     };
 
-    const toggleContextMenu = () => {
-        setHideContextMenu(!hideContextMenu);
-    };
+    // screen version
+    useEffect(() => {
+        setMobile(!!(width && width < MOBILE_SCREEN_SIZE));
+        setMainMenuOpen(!!(width && width >= MAIN_MENU_OPEN_SCREEN_SIZE));
+    }, [width]);
 
-
-    const drawerWidth = 320;
+    // main menu size
+    useEffect(() => {
+        if (mainMenuOpen && !mobile) {
+            setMainMenuWidth(MAIN_MENU_SIZE);
+        } else {
+            setMainMenuWidth(0);
+        }
+    }, [mainMenuOpen]);
 
     return (
         <>
-            <div style={{display: 'flex', flexDirection: "row"}}>
+            <div>
                 <Box
                     sx={{
-                        width: {sm: `calc(100%)`, xs: `calc(100%)`},
-                        ml: {md: `${drawerWidth}px`},
-                        height: "100vh",
-                        display: "flex",
-                        flexDirection: "column",
-                    }}>
-                    <Box sx={{flexGrow: 1}}>
-                    <AppBar position="static">
+                        width: { xs: `calc(100%)` },
+                        mr: drawerRightWidth,
+                    }}
+                >
+                    <Box>
+                        <AppBar position="static">
                             <Toolbar variant="dense">
-                                <IconButton onClick={toggleDrawer}
-                                            edge="start"
-                                            sx={{mr: 2, display: {md: "none"}}}>
-                                    <Menu/>
+                                <IconButton onClick={toggleMainMenu} edge="start" sx={{ mr: 2 }}>
+                                    <Menu />
                                 </IconButton>
-                                <HeaderInfo/>
-                                {ctx.currentObjectType && hideContextMenu &&
-                                    <IconButton onClick={toggleContextMenu}
-                                                edge="start"
-                                                sx={{ml: 2, display: {xl: "none"}}}>
-                                        <KeyboardDoubleArrowLeft/>
-                                    </IconButton>}
-                                {ctx.currentObjectType && !hideContextMenu &&
-                                    <IconButton onClick={toggleContextMenu}
-                                                edge="start"
-                                                sx={{ml: 2, display: {xl: "none"}}}>
-                                        <KeyboardDoubleArrowRight/>
-                                    </IconButton>}
+                                <HeaderInfo mainMenuWidth={mainMenuWidth} />
                             </Toolbar>
-                    </AppBar>
+                        </AppBar>
                     </Box>
-                    {ctx.routingErrorMsg &&
-                        <SnackbarContent sx={{backgroundColor: "#1976d2", marginTop: "3px"}}
-                                         message={ctx.routingErrorMsg}
-                                         action={
-                                             <Button key='close' onClick={() => {
-                                                 ctx.setRoutingErrorMsg(null);
-                                             }}>
-                                                 <Close sx={{color: "#ffffff"}}/>
-                                             </Button>
-                                         }/>}
-                    <OsmAndMap/>
-                    <GeneralPanelButtons drawerWidth={drawerWidth}/>
+                    {ctx.routingErrorMsg && (
+                        <Alert severity="warning" onClose={() => ctx.setRoutingErrorMsg(null)}>
+                            {ctx.routingErrorMsg}
+                        </Alert>
+                    )}
+                    <GlobalConfirmationDialog />
+                    <OsmAndMap
+                        mobile={mobile}
+                        drawerRightHeight={drawerRightHeight}
+                        mainMenuWidth={mainMenuWidth}
+                        drawerRightWidth={drawerRightWidth}
+                    />
+                    <GeneralPanelButtons
+                        mainMenuWidth={mainMenuWidth}
+                        showInfoBlock={showInfoBlock}
+                        setShowInfoBlock={setShowInfoBlock}
+                        infoBlockOpen={infoBlockOpen}
+                        setInfoBlockOpen={setInfoBlockOpen}
+                        clearState={clearState}
+                        mobile={mobile}
+                    />
                 </Box>
-                <InformationBlock hideContextMenu={hideContextMenu} drawerWidth={drawerWidth}/>
             </div>
-            <Drawer
-                variant="temporary"
-                open={drawerOpen}
-                onClose={toggleDrawer}
-                sx={{
-                    display: {xs: 'block', md: 'none'},
-                    '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
-                }}
-            >
-                <OsmAndDrawer mobile={true} toggleDrawer={toggleDrawer}/>
-            </Drawer>
-            <Drawer
-                variant="permanent"
-                sx={{
-                    display: {xs: 'none', md: 'block'},
-                    '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
-                }}
-                open>
-                <OsmAndDrawer mobile={false}/>
-            </Drawer>
-            <Outlet/>
+            {!mobile && (
+                <Drawer
+                    variant="temporary"
+                    PaperProps={{
+                        sx: {
+                            width: `${drawerRightWidth}`,
+                        },
+                    }}
+                    open={true}
+                    hideBackdrop
+                    sx={{ mr: 500 }}
+                    anchor={'right'}
+                    disableEnforceFocus
+                >
+                    <InformationBlock
+                        mobile={mobile}
+                        setDrawerWidth={setDrawerRightWidth}
+                        infoBlockOpen={infoBlockOpen}
+                        showInfoBlock={showInfoBlock}
+                        setShowInfoBlock={setShowInfoBlock}
+                        setClearState={setClearState}
+                        heightScreen={height}
+                    />
+                </Drawer>
+            )}
+            {mobile && (
+                <Drawer
+                    variant="temporary"
+                    PaperProps={{
+                        sx: {
+                            height: `${drawerRightHeight}px`,
+                            overflow: 'visible',
+                        },
+                    }}
+                    sx={{ mt: 500 }}
+                    hideBackdrop
+                    open={true}
+                    anchor={'bottom'}
+                    disableEnforceFocus
+                >
+                    <InformationBlock
+                        mobile={mobile}
+                        setDrawerWidth={setDrawerRightWidth}
+                        infoBlockOpen={infoBlockOpen}
+                        showInfoBlock={showInfoBlock}
+                        setShowInfoBlock={setShowInfoBlock}
+                        setClearState={setClearState}
+                        heightScreen={height}
+                        resizing={resizing}
+                        setResizing={setResizing}
+                        setDrawerHeight={setDrawerRightHeight}
+                        drawerHeight={drawerRightHeight}
+                    />
+                </Drawer>
+            )}
+            {
+                <Drawer
+                    variant="temporary"
+                    open={mainMenuOpen}
+                    onClose={toggleMainMenu}
+                    hideBackdrop={!mobile}
+                    disableEnforceFocus
+                    PaperProps={{
+                        sx: {
+                            boxSizing: 'border-box',
+                            width: MAIN_MENU_SIZE,
+                        },
+                    }}
+                    sx={{ ml: 500 }}
+                >
+                    <OsmAndDrawer toggleDrawer={toggleMainMenu} />
+                </Drawer>
+            }
+            <Outlet />
         </>
-
     );
 };
 

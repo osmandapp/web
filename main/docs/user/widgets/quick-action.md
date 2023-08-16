@@ -196,8 +196,8 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 | [<Translate ios="true" ids="map_settings_under"/>](../map/raster-maps.md) |  Create a list of map sources as map underlay and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="quick_action_map_source_title"/>** (see above)  |
 | [<Translate android="true" ids="quick_action_map_style"/>](../map/vector-maps.md#default-map-styles) | Create a list of map styles for vector maps and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="quick_action_map_source_title"/>** (see above) |
 | <Translate ios="true" ids="quick_action_showhide_mapillary_title"/> <br /> [Plugin](../plugins/mapillary.md) | Display or hide Mapillary layer on the map |
-| <Translate ios="true" ids="toggle_contour_lines"/> <br /> [Plugin](../plugins/contour-lines.md) | Display or hide contour lines on the map |
-| <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="shared_string_terrain"/> <br /> [Plugin](../plugins/contour-lines.md) | Display and hide terrain layer on the map |
+| <Translate ios="true" ids="toggle_contour_lines"/> <br /> [Plugin](../plugins/contour-lines.md) | Display or hide Contour lines on the map |
+| <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="shared_string_terrain"/> <br /> [Plugin](../plugins/contour-lines.md) | Display and hide the Terrain (Hillshade / Slope) layer on the map |
 | <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="osm_notes"/> <br /> [Plugin](../plugins/osm-editing.md) | Allows to display on the map all OSM notes |
 
 ### Navigation
@@ -210,12 +210,12 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 | <Translate android="true" ids="quick_action_add_destination"/> | Add a selected (center) map location as a destination. Previous destination becomes last intermediate point.  |
 | <Translate android="true" ids="quick_action_add_first_intermediate"/> | Add a selected (center) map location as first intermediate point. Previous destination stays the same. |
 | <Translate android="true" ids="quick_action_replace_destination"/> | Set / Replace a selected (center) map location as a destination. Previous destination is deleted. |
-| <Translate android="true" ids="quick_action_remove_next_destination"/> | Remove next intermediate point, if present, otherwise removes destination and displays finish navigation dialog. Action is inactive if you don't have any destination. |
 | <Translate android="true" ids="quick_action_auto_zoom"/> | Enable or disable map auto zoom during navigation |
 | <Translate android="true" ids="quick_action_start_stop_navigation"/> | Start navigation (if there is a destination point present) or stop navigation |
 | <Translate android="true" ids="quick_action_resume_pause_navigation"/> | Pause / Resume navigation |
 | <Translate android="true" ids="change_application_profile"/> | Create a list of application profiles and cycle through them.  <br /> - **Show an interim dialog**: displays dialog with profiles list <br /> - **Do not show an interim dialog**: profiles will be changed by defined order. <br /> - **Note**: you could have 1 action with multiple profiles or many actions with 1 profile. |
-
+| <Translate android="true" ids="quick_action_remove_next_destination"/> | Removes next intermediate point, if present, otherwise removes destination and displays finish navigation dialog. Action is inactive if you don't have any destination. |
+| <Translate android="true" ids="simulate_location_by_gpx"/> | Simulates the location and movement of your device using a GPX track. |
 
 ### Configure screen
 

@@ -1,11 +1,12 @@
-import React, {useContext, useEffect, useRef, useState} from 'react';
-import AppContext from "../../context/AppContext";
-import "../../assets/css/gpx.css";
-import {useMap} from "react-leaflet";
-import TrackLayerProvider from "../TrackLayerProvider";
-import AddFavoriteDialog from "../../infoblock/components/favorite/AddFavoriteDialog";
-import FavoritesManager from "../../context/FavoritesManager";
-import _ from "lodash";
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import AppContext from '../../context/AppContext';
+import '../../assets/css/gpx.css';
+import { useMap } from 'react-leaflet';
+import TrackLayerProvider from '../TrackLayerProvider';
+import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
+import FavoritesManager from '../../context/FavoritesManager';
+import TracksManager from '../../context/TracksManager';
+import _ from 'lodash';
 
 const FavoriteLayer = () => {
     const ctx = useContext(AppContext);
@@ -16,8 +17,8 @@ const FavoriteLayer = () => {
     const selectedGpxFileRef = useRef(ctx.selectedGpxFile);
 
     useEffect(() => {
-        selectedGpxFileRef.current = ctx.selectedGpxFile
-    },[ctx.selectedGpxFile])
+        selectedGpxFileRef.current = ctx.selectedGpxFile;
+    }, [ctx.selectedGpxFile]);
 
     //add favorites groups
     useEffect(() => {
@@ -34,22 +35,32 @@ const FavoriteLayer = () => {
                     if (file.addToMap && file.markers) {
                         file.markers.addTo(map).on('click', onClick);
                     }
-                    if (ctx.selectedGpxFile && file.name === ctx.selectedGpxFile.file?.name && !ctx.selectedGpxFile.editFavorite) {
-                        map.fitBounds(file.markers.getBounds());
+                    if (
+                        ctx.selectedGpxFile &&
+                        file.name === ctx.selectedGpxFile.file?.name &&
+                        !ctx.selectedGpxFile.editFavorite
+                    ) {
+                        map.fitBounds(file.markers.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
                     }
                 }
             } else if (!file.url && file.markers) {
                 map.removeLayer(file.markers);
             }
             deleteOldMarkers(file);
-        })
+        });
     }, [ctx.favorites, ctx.setFavorites]);
 
     useEffect(() => {
         if (ctx.selectedGpxFile?.markerCurrent && ctx.selectedGpxFile.markerCurrent.layer) {
             ctx.selectedGpxFile.markerCurrent.layer.addTo(map).on('click', onClick);
             if (ctx.selectedGpxFile.zoom) {
-                map.setView([ctx.selectedGpxFile.markerCurrent.layer._latlng.lat, ctx.selectedGpxFile.markerCurrent.layer._latlng.lng], 17);
+                map.setView(
+                    [
+                        ctx.selectedGpxFile.markerCurrent.layer._latlng.lat,
+                        ctx.selectedGpxFile.markerCurrent.layer._latlng.lng,
+                    ],
+                    17
+                );
                 delete ctx.selectedGpxFile.zoom;
             }
         }
@@ -67,30 +78,32 @@ const FavoriteLayer = () => {
         ctx.selectedGpxFile.markerCurrent = {
             title: e.sourceTarget.options.title,
             icon: e.sourceTarget.options.icon.options.html,
-            layer: e.sourceTarget
+            layer: e.sourceTarget,
         };
         ctx.selectedGpxFile.name = ctx.selectedGpxFile.markerCurrent.title;
-        ctx.selectedGpxFile.nameGroup = e.sourceTarget.options.category ? e.sourceTarget.options.category : FavoritesManager.DEFAULT_GROUP_NAME;
-        ctx.selectedGpxFile.file =  Object.assign({}, ctx.favorites[e.sourceTarget.options.category]);
-        ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+        ctx.selectedGpxFile.nameGroup = e.sourceTarget.options.category
+            ? e.sourceTarget.options.category
+            : FavoritesManager.DEFAULT_GROUP_NAME;
+        ctx.selectedGpxFile.file = Object.assign({}, ctx.favorites[e.sourceTarget.options.category]);
+        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
         ctx.setUpdateContextMenu(true);
     }
 
     function updateSelectedFavoriteOnMap(file) {
-        Object.values(file?.markers._layers).forEach(marker => {
+        Object.values(file?.markers._layers).forEach((marker) => {
             if (marker.options.title === ctx.selectedGpxFile.markerCurrent.title) {
                 ctx.selectedGpxFile.markerPrev = Object.assign({}, ctx.selectedGpxFile.markerCurrent);
                 ctx.selectedGpxFile.markerCurrent.layer = marker;
-                ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+                ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
             }
-        })
+        });
     }
 
     useEffect(() => {
         if (ctx.addFavorite.location && !openAddDialog) {
             setOpenAddDialog(true);
         }
-    },[ctx.addFavorite]);
+    }, [ctx.addFavorite]);
 
     function deleteOldMarkers(file) {
         if (file.oldMarkers) {
@@ -99,9 +112,7 @@ const FavoriteLayer = () => {
         }
     }
 
-    return <AddFavoriteDialog
-        dialogOpen={openAddDialog}
-        setDialogOpen={setOpenAddDialog}/>
+    return <AddFavoriteDialog dialogOpen={openAddDialog} setDialogOpen={setOpenAddDialog} />;
 };
 
 export default FavoriteLayer;

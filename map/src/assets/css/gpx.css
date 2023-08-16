@@ -9,13 +9,14 @@
 }
 .icon {
     position: absolute;
-    z-index:201;
+    z-index: 201;
     display: block;
     width: 20px;
     height: 20px;
-    top: -6px; left: -6px
+    top: -6px;
+    left: -6px;
 }
-.leaflet-div-icon{
+.leaflet-div-icon {
     background: none !important;
     border: 0 !important;
 }

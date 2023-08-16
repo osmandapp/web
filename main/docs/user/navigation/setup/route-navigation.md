@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-The Navigation by route option provides you with simple step-by-step instructions, that help you easily reach your destination. Like other [navigation options](../index.md), *Navigation by route* can be used with different [types of routing](./../routing/index.md) (or profiles). No matter whether you drive a [car](./../routing/car-based-routing.md), ride a [horse](./../routing/horse-routing.md), [ski](./../routing/ski-routing.md) or [walk](./../routing/pedestrian-routing.md).  
+The Navigation by route option provides you with simple step-by-step instructions, that help you easily reach your destination. *Navigation by route* can be used with different [types of routing](./../routing/index.md) (or profiles): no matter whether you drive a [car](./../routing/car-based-routing.md), ride a [horse](./../routing/horse-routing.md), [ski](./../routing/ski-routing.md) or [walk](./../routing/pedestrian-routing.md).  
 By default, OsmAnd has offline navigation enabled. Although you can also use [online routing engines](./../routing/online-routing.md).  
 
 :::tip
@@ -49,11 +49,12 @@ To use the offline navigation, you first need to [download maps](../../start-wit
 1. Configure profiles you intend to use for navigation according to your needs:  
 
     - Set your [vehicle parameters](../guidance/navigation-settings.md#size-parameters) (important for truck drivers), select the [engine type](../guidance/navigation-settings.md#fuel-used-by-motor) (optional).
-    - Configure [route line appearance](../guidance/map-during-navigation#route-line-appearance) (optional, only for Pro users).  
+    - Configure [route line appearance](../guidance/map-during-navigation#route-line-appearance) (optional, only for [Pro users](../../purchases/index.md#purchases)).  
     - Choose whether to provide [notifications](../guidance/voice-navigation.md) during your route or not. If you need voice prompts, [configure](../guidance/voice-navigation.md#settings-of-voice-prompts) them.
  
 2. Go to the [Navigation menu](#navigation-menu):
     - Specify the [destination point](#set-target-point).
+    - Wait until the route is calculated. After that you will be able to obtain additional information about your route in *[Details section](./route-details.md#overview)*.
     - You can switch between different [routing types](./../routing/index.md) (profiles) to get the best result.
     - Add [intermediate destinations](#intermediate-destinations) (optional).
     - You can also change the departure point from the [current location](../../map/interact-with-map#my-location--zoom) to the required one.
@@ -64,12 +65,17 @@ To use the offline navigation, you first need to [download maps](../../start-wit
 
 5. While on the route you can [Pause/Resume](#pause--resume-navigation) navigation and [Stop](#start--stop-navigation) it.
 
+:::note
+- Route calculation for long distances (longer than 200 km for [driving](../routing/car-based-routing.md)) may take few minutes. 
+- If the route is not displayed on the map after 5-7 minutes of calculation, follow the recommendations in the [Troubleshooting section](../../troubleshooting/navigation.md#how-to-calculate-routes-longer-than-250km).
+:::
+
 ### Navigation menu  
 
 There are 3 ways to reach the navigation menu:
 
 - [The navigation button](../../widgets/map-buttons.md#directions) on the map screen.  
-- *Direction to/from* in a [map context menu](../../map/map-context-menu#directions-to--from).  
+- *Direction to/from* in a [map context menu](../../map/map-context-menu.md#directions-to--from).  
 - Navigation section in the Main menu  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
 <Tabs groupId="operating-systems">
@@ -183,7 +189,7 @@ In this menu, you can find additional options for managing destinations points:
 
 ### Use Home / Work points
 
-_Home_ and _Work_ tabs (or [Special points](../../personal/favorites.md#special-favorites-personal) of Favorites)  can be used to quickly set destination point in the navigation menu. If you have not entered addresses of the Special favorites, these cells will remain empty. If you tap this field, you will be prompted to create these POIs.  
+*Home* and *Work* tabs (or [Special points](../../personal/favorites.md#special-favorites-personal) of Favorites)  can be used to quickly set destination point in the navigation menu. If you have not entered addresses of the Special favorites, these cells will remain empty. If you tap this field, you will be prompted to create these POIs.  
 
 <Tabs groupId="operating-systems">
 
@@ -228,15 +234,17 @@ If  [Navigation History](../../personal/global-settings.md#history) recording is
 
 ## Start / stop navigation
 
-Once your destination point is selected, the app will create a route to it. To begin navigation, you need to use "Start" button. To stop navigation mode, tap on the "Stop" button and confirm your choice.  
+Once start and end points are selected, the app will create a route between them using active profile. During the route calculation process (which can take up to 1-2 minutes) OsmAnd searches for roads, that best match the *[Navigation settings](../guidance/navigation-settings.md)*. You will also see a blue progress line at the bottom of the screen, signaling that the calculation is still not complete.  
 
-After the route is created, in the *[Details](../setup/route-details.md)* section you can find additional information (altitude, uphill, downhill, road type, turn-by-turn instructions, etc.), analyze your route on the map, print the route plan, save the route and share it.  
+- To begin navigation, you should tap on **Start** button.
+- To stop navigation mode, tap the *[Navigation](../../widgets/map-buttons.md#directions)* button at the bottom of the screen, than choose **Dismiss** (*Android*) or **Cansel** (*iOS*) and confirm your choice.
+- In the Android version of the app, when you reach your destination, OsmAnd proposes to finish navigation, recalculate the route or find parking. In the iOS version Osmand only announces the end of the route.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Navigation screen start Android](@site/static/img/navigation/route/navigation_start_android.png)
+![Navigation screen start Android](@site/static/img/navigation/route/navigation_start_android.png) ![Navigation screen finish Android](@site/static/img/navigation/route/navigation_finish_android.png)  
 
 </TabItem>
 
@@ -248,19 +256,49 @@ After the route is created, in the *[Details](../setup/route-details.md)* sectio
 
 </Tabs>
 
+:::note
+- After the route is created, in the *[Details](../setup/route-details.md)* section you can find additional information (altitude, uphill, downhill, road type, turn-by-turn instructions, etc.), analyze your route on the map, print the route plan, save the route and share it.  
+- If the route calculation lasts more then 2 minutes you may need to see our *[troubleshouting guide](../../troubleshooting/navigation.md#route-calculation-is-slow)*.
+:::
+
 ### Route recalculation
 
-The route can be recalculated automatically in case of deviation from it. You can change the parameters of the recalculation in the [Navigation settings](../guidance/navigation-settings.md#recalculate-route). You can also disable notification about route recalculationn in the 
+The route can be recalculated automatically in case of deviation from it. You can change the parameters of the recalculation in the [Navigation settings](../guidance/navigation-settings.md#recalculate-route). You can also disable notification about route recalculationn in the settings of [Voice prompts](../guidance/voice-navigation.md).
 
 ### Pause / Resume navigation
 
-Sometimes if you want to stop by for a break and want to go off the route for a short period of the trip, you might want to use Pause / Resume navigation in order to pause voice prompts and stop oroute recalculation.
+<InfoAndroidOnly/>
+
+If you want to stop for a break and deviate from the route for a short time, you can use the *Pause/Resume* navigation function to pause voice prompts and stop recalculating the route.  
+This option is availible in Android version of the app in *[Notification list](../guidance/voice-navigation.md#text-notifications)* or from the *[Quick actions menu](../../widgets/quick-action.md)*.
+
+![Notification screen Android](@site/static/img/navigation/route/navigation_pause_android.png)
+
+To resume navigation, you can use the previously mentioned message from OsmAnd in the notification bar or dialog, that appears when you tap on the *[Navigation button](../../widgets/map-buttons.md#directions)* (see screenshot).  
+Please note, that when you tap on the *Navigation button* while your route, navigation doesn't stop, voice prompts continue to be voiced, although proposed options (*Resume* (for Android) or *Start* (for iOS)) may be confusing.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Resume navigation Android](@site/static/img/navigation/route/navigation_menu_start_pause_andr_1.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Resume navigation ios](@site/static/img/navigation/route/navigation_menu_start_pause_ios_1.png)
+
+</TabItem>
+
+</Tabs>
 
 ### Save Power during navigation
 
-Navigation consumes lots of power because continuous GPS, Screen is on, route computation. So to save your device battery you might want to try following advices: 
-- Even if you turn off the screen or exit the OsmAnd app, you'll still get voice prompts.  
-- While navigation you can use [“Screen control”](../guidance/voice-navigation.md#screen-control) options (<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>).  
+Navigation consumes a lot of power due to the continuous use of GPS, Screen is on, route calculation. So to save your device's battery, you can try using the following tips:
+
+- Even if you turn off the screen or exit the OsmAnd app, you'll still get voice prompts (it will run in the background).  
+- While navigation you can use *[Screen control](../guidance/voice-navigation.md#screen-control)* options (<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>).  
 
 ## Settings
 

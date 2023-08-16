@@ -1,19 +1,36 @@
-import MarkerOptions from "../map/markers/MarkerOptions";
-import Utils from "../util/Utils";
-import _ from "lodash";
+import MarkerOptions from '../map/markers/MarkerOptions';
+import Utils from '../util/Utils';
+import _ from 'lodash';
 import { apiPost } from '../util/HttpApi';
-import { quickNaNfix } from "../util/Utils";
+import { quickNaNfix } from '../util/Utils';
 
 const FAVORITE_FILE_TYPE = 'FAVOURITES';
 const DEFAULT_GROUP_NAME = 'favorites';
-const DEFAULT_TAB_ICONS = "used";
-const FAVORITE_GROUP_FOLDER = "/map/images/poi_categories";
+const DEFAULT_TAB_ICONS = 'used';
+const FAVORITE_GROUP_FOLDER = '/map/images/poi_categories';
 const DEFAULT_GROUP_WPT_COLOR = '#eecc22';
-const FAV_FILE_PREFIX = "favorites-";
-const DEFAULT_GROUP_NAME_POINTS_GROUPS = "";
+const FAV_FILE_PREFIX = 'favorites-';
+const DEFAULT_GROUP_NAME_POINTS_GROUPS = '';
 const FAVORITE_LOCAL_STORAGE = 'visibleFav';
-const colors = ['#10c0f0', '#1010a0', '#eecc22', '#88e030', '#eeee10', '#00842b', '#ff5020', '#8e2512', '#e044bb', '#000001', '#d00d0d', '#a71de1'];
-const shapes = [MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE, MarkerOptions.BACKGROUND_WPT_SHAPE_OCTAGON, MarkerOptions.BACKGROUND_WPT_SHAPE_SQUARE];
+const colors = [
+    '#10c0f0',
+    '#1010a0',
+    '#eecc22',
+    '#88e030',
+    '#eeee10',
+    '#00842b',
+    '#ff5020',
+    '#8e2512',
+    '#e044bb',
+    '#000001',
+    '#d00d0d',
+    '#a71de1',
+];
+const shapes = [
+    MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE,
+    MarkerOptions.BACKGROUND_WPT_SHAPE_OCTAGON,
+    MarkerOptions.BACKGROUND_WPT_SHAPE_SQUARE,
+];
 
 function GroupResult(clienttimems, updatetimems, data) {
     this.clienttimems = clienttimems;
@@ -23,21 +40,19 @@ function GroupResult(clienttimems, updatetimems, data) {
 
 function getShapesSvg(color) {
     let res = {};
-    shapes.forEach(shape => {
+    shapes.forEach((shape) => {
         res[`${shape}`] = MarkerOptions.getSvgBackground(color, shape);
-    })
+    });
     return res;
 }
 
 async function addFavorite(data, fileName, updatetime) {
-    let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add`, data,
-        {
-            params: {
-                fileName: fileName,
-                updatetime: updatetime
-            }
-        }
-    );
+    let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add`, data, {
+        params: {
+            fileName: fileName,
+            updatetime: updatetime,
+        },
+    });
     if (resp.data) {
         let data = prepareTrackData(resp.data.details.trackData);
         return new GroupResult(resp.data.clienttime, resp.data.updatetime, data);
@@ -45,14 +60,12 @@ async function addFavorite(data, fileName, updatetime) {
 }
 
 async function deleteFavorite(data, fileName, updatetime) {
-    let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/delete`, data,
-        {
-            params: {
-                fileName: fileName,
-                updatetime: updatetime
-            }
-        }
-    );
+    let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/delete`, data, {
+        params: {
+            fileName: fileName,
+            updatetime: updatetime,
+        },
+    });
     if (resp.data) {
         let data = prepareTrackData(resp.data.details.trackData);
         return new GroupResult(resp.data.clienttime, resp.data.updatetime, data);
@@ -60,18 +73,16 @@ async function deleteFavorite(data, fileName, updatetime) {
 }
 
 async function updateFavorite(data, wptName, oldGroupName, newGroupName, oldGroupUpdatetime, newGroupUpdatetime, ind) {
-    let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update`, data,
-        {
-            params: {
-                wptName: wptName,
-                oldGroupName: oldGroupName,
-                newGroupName: newGroupName,
-                oldGroupUpdatetime: oldGroupUpdatetime,
-                newGroupUpdatetime: newGroupUpdatetime,
-                ind: ind
-            }
-        }
-    );
+    let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update`, data, {
+        params: {
+            wptName: wptName,
+            oldGroupName: oldGroupName,
+            newGroupName: newGroupName,
+            oldGroupUpdatetime: oldGroupUpdatetime,
+            newGroupUpdatetime: newGroupUpdatetime,
+            ind: ind,
+        },
+    });
     if (resp.data) {
         let newGroupResp = null;
         let oldGroupResp = null;
@@ -89,13 +100,13 @@ async function updateFavorite(data, wptName, oldGroupName, newGroupName, oldGrou
         return {
             newGroupResp: newGroupResp,
             oldGroupResp: oldGroupResp,
-        }
+        };
     }
 }
 
 function prepareTrackData(data) {
     if (data) {
-        if (typeof data === "string") {
+        if (typeof data === 'string') {
             return JSON.parse(quickNaNfix(data));
         } else {
             return data;
@@ -106,15 +117,16 @@ function prepareTrackData(data) {
 function orderList(items, defaultItem) {
     let list = [];
     let hiddenList = [];
-    items && items.forEach(i => {
-        if (i.name === defaultItem) {
-            list.unshift(i);
-        } else if (i.hidden) {
-            hiddenList.push(i);
-        } else {
-            list.push(i);
-        }
-    })
+    items &&
+        items.forEach((i) => {
+            if (i.name === defaultItem) {
+                list.unshift(i);
+            } else if (i.hidden) {
+                hiddenList.push(i);
+            } else {
+                list.push(i);
+            }
+        });
     return list.concat(hiddenList);
 }
 
@@ -124,13 +136,15 @@ function getColorGroup(ctx, groupName, wpt) {
         groupName = DEFAULT_GROUP_NAME_POINTS_GROUPS;
     }
     if (wpt) {
-        const currentGroup = ctx.selectedGpxFile?.pointsGroups
-            && !_.isEmpty(ctx.selectedGpxFile?.pointsGroups) && ctx.selectedGpxFile.pointsGroups[groupName];
+        const currentGroup =
+            ctx.selectedGpxFile?.pointsGroups &&
+            !_.isEmpty(ctx.selectedGpxFile?.pointsGroups) &&
+            ctx.selectedGpxFile.pointsGroups[groupName];
         if (currentGroup) {
             color = currentGroup.color;
         }
     } else {
-        const currentGroup = ctx.favorites.groups.find(g => g.name === groupName);
+        const currentGroup = ctx.favorites.groups.find((g) => g.name === groupName);
         if (currentGroup && currentGroup.pointsGroups[groupName]) {
             color = currentGroup.pointsGroups[groupName].color;
         }
@@ -141,22 +155,22 @@ function getColorGroup(ctx, groupName, wpt) {
 }
 
 function createGroup(file) {
-    file.folder = file.name.split(".")[0].replace(FavoritesManager.FAV_FILE_PREFIX, '');
+    file.folder = file.name.split('.')[0].replace(FavoritesManager.FAV_FILE_PREFIX, '');
     let pointsGroups = FavoritesManager.prepareTrackData(file.details.pointGroups);
     return {
         name: file.folder,
         updatetimems: file.updatetimems,
         file: file,
         pointsGroups: pointsGroups,
-        hidden: isHidden(pointsGroups, file.folder)
-    }
+        hidden: pointsGroups.hidden !== undefined ? pointsGroups.hidden : isHidden(pointsGroups, file.folder),
+    };
 }
 
 function isHidden(pointsGroups, name) {
     let group = pointsGroups[name];
-    if (group) {
+    if (group && group.points) {
         for (let point of group.points) {
-            if (point.ext.extensions.hidden === "true") {
+            if (point.ext.extensions.hidden === 'true') {
                 return true;
             }
         }
@@ -168,9 +182,23 @@ function createDefaultWptGroup(wptGroup) {
     if (!wptGroup) {
         return {
             name: FavoritesManager.DEFAULT_GROUP_NAME,
-        }
+        };
     } else {
         return wptGroup;
+    }
+}
+
+function getGroupSize(group) {
+    if (group?.pointsGroups[group.name]?.groupSize) {
+        return Number(group?.pointsGroups[group.name].groupSize);
+    } else {
+        const wpts =
+            group?.pointsGroups[group.name === DEFAULT_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : group.name]
+                ?.points;
+        if (wpts) {
+            return wpts.length > 0 ? wpts.length : 0;
+        }
+        return 0;
     }
 }
 
@@ -184,6 +212,7 @@ const FavoritesManager = {
     getColorGroup,
     createGroup,
     createDefaultWptGroup,
+    getGroupSize,
     DEFAULT_TAB_ICONS: DEFAULT_TAB_ICONS,
     FAVORITE_GROUP_FOLDER: FAVORITE_GROUP_FOLDER,
     DEFAULT_GROUP_NAME: DEFAULT_GROUP_NAME,
@@ -193,7 +222,7 @@ const FavoritesManager = {
     DEFAULT_GROUP_NAME_POINTS_GROUPS: DEFAULT_GROUP_NAME_POINTS_GROUPS,
     FAVORITE_LOCAL_STORAGE: FAVORITE_LOCAL_STORAGE,
     colors: colors,
-    shapes: shapes
-}
+    shapes: shapes,
+};
 
 export default FavoritesManager;

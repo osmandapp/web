@@ -18,19 +18,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Voice prompts and text notifications are features used to help you while [navigating a selected route](../setup/route-navigation.md). With their help, you can easily know where you are or in which direction you should go next. The main function of these features is to provide you with comfortable and, most importantly, safe movement on the route. And also their use significantly [reduces battery consumption](#screen-control), which can be useful for different [types of routes](../routing/index.md), where saving battery power is important.  
+Voice prompts and text notifications are features helping to follow a [calculated route](../setup/route-navigation.md). With their help, you can see where you are and where to go next. These features are meant to comfortably, and most importantly safely, facilitate following the route.
 
+Voice  prompts also work while your device screen is turned off, i.e. you can use them to [reduce battery consumption](#screen-control). Similarly, while following an OsmAnd navigation, you can use other apps on your device.  
 
-## Voice prompts
 
 :::note
-<Translate android="true" ids="voice_announces_info"/>
+- <Translate android="true" ids="voice_announces_info"/>
+- Text notifications fully reflect trigger time and messages of the voice prompts messages
 :::  
 
-Voice prompts help you move in the right direction without distracting you from the road, or help you enjoy the surroundings while walking or hiking. While using OsmAnd, you can use other apps on your device or keep the screen turned off, listening in the background for prompts about what's ahead of you on the route.  
 
 
-## Settings of voice prompts
+## Setup voice prompts
 
 OsmAnd offers different types of settings for voice prompts to help you follow your route. To set up voice prompts, you need to go to the appropriate section of the application.  
 
@@ -39,10 +39,9 @@ OsmAnd offers different types of settings for voice prompts to help you follow y
 
 Read more about under what conditions, when, and which voice prompts are activated in the [Navigation Voice Prompt Triggering](../../../technical/algorithms/voice-prompt-triggering.md) documentation.  
 
-:::info For Android version
-You can set up voice prompts for the selected profile or for all available profiles in the app except for the *Browse map*. When you change each setting, a menu appears briefly with the text "Changes applied to the profile" and an "Apply to all profiles" button. Tap the button if it will be useful for you.
-:::
 
+
+### Voice Settings
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -66,23 +65,24 @@ You can set up voice prompts for the selected profile or for all available profi
 </Tabs>  
 
 1. **[Language](#language)** - select preferred language and type.
-2. **Announcement group** - allows you to voice the following types of prompts: 
+2. **Announcement** - allows you to configure the following types of prompts: 
     - *Street names (TTS), Exit number, Traffic warnings, Pedestrian crosswalks* and *Tunnels.*
     - *[Speed cameras](#speed-cameras)*. 
- 
-:::note
-You can turn on the **[Alert widget](../../widgets/nav-widgets.md#alert-widget)** for added convenience when using the voice prompts of an *Announcement group*.
-:::  
+    - Also configure the **[Alert widget](../../widgets/nav-widgets.md#alert-widget)** to use with announcements.
+3. **User points**:
+    - Enable voice prompts for the pre-set and added [Waypoints](../../personal/tracks.md#add-waypoint), [Favorites](../../personal/favorites.md) or [POIs](../../map/point-layers-on-map.md#points-of-interest-poi). While driving, the selected points will be announced when you approach or pass them.    
 
-3. **[User points group](#user-points-group)**:
-    - *Track waypoints, Nearby Favorites* and *Nearby POI*.  
-4. **Speed limit group**:
+| Prompt Type | Lead Time [s]:<br/>Corresponding<br/>Lead Distance @ Default Speed [m] | Limit |
+| - | - | - | 
+| Approaching  | **60 s:**<br/>Driving: 750 m<br/>Cycling: 167 m<br/>Walking: 67 m  |  No more than 1 point at a time |
+| Passing | **15 s:**<br/>Driving: 188 m<br/>Cycling: 42 m<br/>Walking: 17 m | No more than 3 points at a time | 
+4. **Speed limit**:
     - *Announce when exceeded* - allows you to announce when you exceed the allowed speed limit.
     - *Speed limit tolerance* (from -10 km/h to 20 km/h) - select the speed limit above which you will receive a voice warning.
 5. **Other**: 
-    - *Announce GPS signal loss and recovery* - OsmAnd will announce if your device loses the gps signal.  
-    - *Announce route recalculation* - OsmAnd will report a recalculation of the route in case of a [deviation or movement in reverse direction](./navigation-settings#recalculate-route).
-    - *Announce deviation from the route* - you will be informed about deviation from the route according to the [set parameters](./navigation-settings#recalculate-route).
+    - *Announce GPS signal loss and recovery* - OsmAnd announces if the GPS signal on the device is lost.  
+    - *Announce route recalculation* - OsmAnd reports route recalculation in case of a [deviation or movement in reverse direction](./navigation-settings.md#recalculate-route).
+    - *Announce deviation from the route* - you receive information about deviations from the route according to the [set parameters](./navigation-settings.md#recalculate-route).
 6. **Options**:
     - *Repeat navigation instructions* - allows you to repeat the navigation instructions at regular intervals from 1 min to 30 min. Or manually - if you miss a voice prompt, you can listen to it again by simply tapping [the current turn arrow](../../widgets/nav-widgets.md#next-turns) on the application screen.
     - *[Announcement time](#announcement-time)*.  
@@ -90,14 +90,70 @@ You can turn on the **[Alert widget](../../widgets/nav-widgets.md#alert-widget)*
     - *[Voice guidance output](#voice-guidance-output)*.
     - *Pause music* - voice prompts stop music playback for a while.
 
-### Language
 
-You can select your preferred language and type of voice guidance for voice prompts from the list.
+### Speed cameras
+
+[Speed cameras alerts](../../personal/global-settings.md#uninstall-speed-camera) allow you to activate or deactivate POIs with speed cameras. You will need to restart the OsmAnd application to apply the changes.   
+  
+In some countries or regions, using speed camera warning applications is illegal. You must make a choice depending on the laws in your country. Select **Keep active**, and you will receive speed camera alerts and notifications. Select **Uninstall** and all data related to speed cameras, such as warnings, notifications, and POIs, will be deleted until you completely reinstall OsmAnd.  
+
+![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
+
+
+### Announcement time
+
+The announcement time of the different voice prompts depends on the selected profile, the type of prompt, the current navigation speed, and the default navigation speed. With this setting, you can change the distance before the voice prompts are activated by applying a distance multiplier: *<Translate android="true" ids="arrival_distance_factor_normally" />* - 1.0, *<Translate android="true" ids="arrival_distance_factor_early" />* - 1.5, *<Translate android="true" ids="arrival_distance_factor_late" />* - 0.5, *<Translate android="true" ids="arrival_distance_factor_at_last" />* - 0.25.  
+In the *Time and Distance Intervals* drop-down list, you can view detailed information about the activation of prompts for the different distance multipliers. For more information, see the [Navigation Voice Prompt Triggering](../../../technical/algorithms/voice-prompt-triggering.md).  
+
+![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)   
+
+### Voice guidance output
+
+To avoid playing audio in the same output stream at the same time, the audio focus is implemented in Android. OsmAnd will use the loudspeaker selected from the list in this setting to audio output. Other applications will pause playback or turn down the volume to make it easier for you to hear OsmAnd's voice prompts.  
+   - Media/navigation audio.
+   - Notification audio.
+   - Phone call audio (to interrupt Bluetooth [car stereos](../auto-car.md)).
+
+![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-1.png)
+
+### Testing of voice prompts
+
+For testing voice promopts, you can run [Simulate Navigation](../../navigation//setup/route-navigation.md#simulate-navigation) or use  ["Test voice prompts"](../../plugins/development.md#application-testing) on Android.
+
+
+### Common problems
+<!-- 
+Troubleshooting  
+Fixes issues with voice prompts -->
+
+When using voice prompts, you may have issues with their playback. Here are some solutions to fix these issues.  
+
+1. Make sure that the volume of your device is on and not off. Once you start navigating, increase the volume.
+2. Make sure that the sound is turned on during navigation.  You can turn the sound on or off in Menu → Navigation → On/Off button or Menu → Navigation → Settings icon → Sound.  
+3. Select which [speakers](#voice-guidance-output) to use. 
+4. Check which [voice guidance](#language) are selected. 
+
+
+
+## TTS (Text-to-Speech)
+
+TTS voices are the preferred voices to use in OsmAnd. They are bundled with the application, but require the system to have a [Text-to-speech engine](https://en.wikipedia.org/wiki/Speech_synthesis) installed. The engines are often included in Android and iOS, or can be installed separately. A list of engines and supported languages for Android may be found [here](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
+
+To configure your device's TTS, go to your device settings([Android ](https://support.google.com/accessibility/android/answer/6006983) or [iOS](https://support.apple.com/en-gb/guide/iphone/iph96b214f0/ios#:~:text=Go%20to%20Settings%20%3E%20Accessibility%20%3E%20Spoken,the%20top%20of%20the%20screen.)), find the Language & Keyboard section, Text-to-speech, or similar. Select, activate or install it, then configure it to support your ppreferred language, which may just be a setting or require you to download an additional file.  
+
+Check if your Android TTS is working properly by using the "Listen to example" or a similar test button. You can also check if OsmAnd voice prompts are selected correctly: To do this, go to *Settings → Plugins → OsmAnd development → Test voice prompts* (to see this setting, the OsmAnd development plugin must be activated).   
+
+Additional information can be found in the [Troubleshooting](../../troubleshooting/navigation.md#voice-navigation) section.  
+
+### Voice prompt language
+
+In OsmAnd you can select your preferred language and prompt style from the list
 - *<Translate android="true" ids="tts_title"/>* (for Android) - <Translate android="true" ids="tts_description"/>
 - *<Translate android="true" ids="shared_string_recorded"/>* (for Android) - <Translate android="true" ids="recorded_description"/>
 
 :::note
-Not all listed languages may be supported by the TTS engine. You can change the voice and playback speed only in the system settings of the device.
+- Not all listed languages may be supported by every TTS engine. See e.g. [here](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/)
+- You can change the voice and playback speed only in the system settings of the device. not in OsmAnd.
 :::  
 
 <Tabs groupId="operating-systems">
@@ -119,69 +175,6 @@ Not all listed languages may be supported by the TTS engine. You can change the 
 </TabItem>
 
 </Tabs>  
-
-### User points group
-
-In this group you can set whether the voice prompts for the pre-set and added [Waypoints](../../personal/tracks.md#add-waypoint), [Favorites](../../personal/favorites.md) or [POIs](../../map/point-layers-on-map.md#points-of-interest-poi) are audible. While driving, the selected points will be announced when you approach or pass them.    
-
-| Prompt type | Response time | Response distance in meters | Limit |
-| - | - | - | - | 
-| Approaching  | 60 seconds | Driving: 750 m  /  Cycling: 167 m  /  Walking: 67 m  |  No more than 1 point at a time |
-| Passing | 15 seconds | Driving: 188 m  /  Cycling: 42 m  /  Walking: 17 m | No more than 3 points at a time | 
-
-
-### Speed cameras
-
-[Speed cameras alerts](../../personal/global-settings.md#uninstall-speed-camera) allow you to activate or deactivate POIs with speed cameras. You will need to restart the OsmAnd application to apply the changes.   
-  
-In some countries or regions, using speed camera warning applications is illegal. You must make a choice depending on the laws in your country. Select **Keep active**, and you will receive speed camera alerts and notifications. Select **Uninstall** and all data related to speed cameras, such as warnings, notifications, and POIs, will be deleted until you completely reinstall OsmAnd.  
-
-![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
-
-
-### Announcement time
-
-The announcement time of the different voice prompts depends on the selected profile, the type of prompt, the current navigation speed, and the default navigation speed. With this setting, you can change the distance before the voice prompts are activated by applying a distance multiplier: *<Translate android="true" ids="arrival_distance_factor_normally" />* - 1.0, *<Translate android="true" ids="arrival_distance_factor_early" />* - 1.5, *<Translate android="true" ids="arrival_distance_factor_late" />* - 0.5, *<Translate android="true" ids="arrival_distance_factor_at_last" />* - 0.25.  
-In the *Time and Distance Intervals* drop-down list, you can view detailed information about the activation of prompts for the different distance multipliers. For more information, see the [Voice Prompts in Navigation](../../../technical/algorithms/voice-prompt-triggering.md).  
-
-![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)   
-
-### Voice guidance output
-
-To avoid playing audio in the same output stream at the same time, the audio focus is implemented in Android. OsmAnd will use the loudspeaker selected from the list in this setting to audio output. Other applications will pause playback or turn down the volume to make it easier for you to hear OsmAnd's voice prompts.  
-   - Media/navigation audio.
-   - Notification audio.
-   - Phone call audio (to interrupt Bluetooth [car stereos](../auto-car.md)).
-
-![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-1.png)
-
-
-## Additional details about voice prompts
-
-### Download voice prompts
-
-<InfoAndroidOnly />  
-
-You can download voice prompts from two different sets from the list.  
-- The first type, these are the recommended ones:  
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,other_location,index_name_tts_voice"/>*
-
-![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-1.png)  ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-2.png)  
-
-- The second type is recorded voice prompts, with an incomplete set of features:  
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,index_name_voice"/>*  
-
-![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-recorded.png)  
-
-### TTS (Text-to-Speech)
-
-If you choose TTS-voice, you need to have a [text-to-speech](https://en.wikipedia.org/wiki/Speech_synthesis) converter directly in your operating system. These are partially included in Android and iOS or can be installed separately. Go to your device's settings([Android ](https://support.google.com/accessibility/android/answer/6006983) or [iOS](https://support.apple.com/en-gb/guide/iphone/iph96b214f0/ios#:~:text=Go%20to%20Settings%20%3E%20Accessibility%20%3E%20Spoken,the%20top%20of%20the%20screen.)), find the Language & Keyboard section, Text-to-speech, or similar. Select or install it, then also set up support for the language you want, this may be an additional setting or require you to download an additional file.  
-
-Check if your Android TTS is working properly by using the "Listen to example" or a similar test button. You can also check if OsmAnd voice prompts are selected correctly, to do this go to *Settings → Plugins → OsmAnd development → Test voice prompts* (to see this setting, the OsmAnd development plugin must be activated).   
-
-Additional information can be found in the [Troubleshooting](../../troubleshooting/navigation#voice-navigation) section.  
-
-### List of available TTS
 
 There are currently a total of 45 languages.  
 
@@ -206,27 +199,38 @@ There are currently a total of 45 languages.
 | **T** | Turkish  |
 | **U** | Ukrainian  |
 
-### Testing of voice prompts
+
+## Recorded voice prompts
 
 <InfoAndroidOnly />  
 
-For testing Voice prompts, you need to activate [OsmAnd development plugin](../../plugins/development.md) and start the function ["Test voice prompts"](../../plugins/development.md#application-testing).  
+### Download voice packages
+
+Using recorded voices in OsmAnd should be a fallback only: They are rather limited, cannot pronaounce street names, place names, etc. You can download voice prompts from two different sets from the list.  
+- The first type, these are the recommended ones:  
+*<Translate android="true" ids="shared_string_menu,welmode_download_maps,other_location,index_name_tts_voice"/>*
+
+![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-1.png)  ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-2.png)  
+
+- The second type are recorded voice prompts, with an incomplete set of features:  
+*<Translate android="true" ids="shared_string_menu,welmode_download_maps,index_name_voice"/>*  
+
+![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-recorded.png)  
+
+### Beep modes
+
+You can configure an OsmAnd profile to beep instead of speaking, in a similar way to a cycle computer. There are three basic patterns: *minimal*, *simple*, and *complex*. The simple and complex patterns have *loud* variants, which will be considerably easier to hear in a loud environment but may sound unpleasantly harsh. 
+  
+*<Translate android="true" ids="shared_string_menu,welmode_download_maps,index_name_voice"/>*  
+
+- **Minimal** - suitable for following a known route on foot with minimal distractions, this pattern will alert you when passing intermediate destinations, favourites and POIs, and when you have deviated from or returned to the route. It will not provide any audio warnings for turns.
+- **Simple** - in addition to alerts for destinations, favourites and POIs etc., the simple pattern alerts you with a longer beep when you need to turn.
+- **Complex** - suitable for road cycling, the complex pattern uses beeps of different lengths and pitches to inform you about upcoming turns.
+
+    A low beep means left turn, while a high beep means right. A series of middle pitched beeps represents the exit to take on a roundabout (traffic circle). All three pitches in sequence represents a U-turn. In all these cases short beeps mean prepare to do something, while long beeps mean do something now.
 
 
-## Common problems with voice prompts
-<!-- 
-Troubleshooting  
-Fixes issues with voice prompts -->
-
-When using voice prompts, you may have issues with their playback. Here are some solutions to fix these issues.  
-
-1. Make sure that the volume of your device is on and not off. Once you start navigating, increase the volume.
-2. Make sure that the sound is turned on during navigation.  You can turn the sound on or off in Menu → Navigation → On/Off button or Menu → Navigation → Settings icon → Sound.  
-3. Select which [speakers](#voice-guidance-output) to use. 
-4. Check which [voice guidance](#language) are selected. 
-
-
-## Text Notifications
+## Text notifications
 
 Once you start a route, you can view the information in the drop-down system menu in the notification list. OsmAnd's silent notifications contain information such as turn-by-turn instructions, turn directions arrows, arrival time and time to go, current speed and distance to destination.  
 

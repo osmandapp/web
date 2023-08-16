@@ -1,11 +1,10 @@
-import {useContext, useEffect, useState} from "react";
-import L from "leaflet";
-import AppContext from "../../context/AppContext";
-import {useMap} from "react-leaflet";
-import TracksManager from "../../context/TracksManager";
+import { useContext, useEffect, useState } from 'react';
+import L from 'leaflet';
+import AppContext from '../../context/AppContext';
+import { useMap } from 'react-leaflet';
+import TracksManager from '../../context/TracksManager';
 
 export default function GraphLayer() {
-
     const ctx = useContext(AppContext);
     const map = useMap();
 
@@ -13,19 +12,21 @@ export default function GraphLayer() {
 
     useEffect(() => {
         if (ctx.trackRange) {
-            let trackPoints = ctx.selectedGpxFile.points ? ctx.selectedGpxFile.points : TracksManager.getTrackPoints(ctx.selectedGpxFile);
+            let trackPoints = ctx.selectedGpxFile.points
+                ? ctx.selectedGpxFile.points
+                : TracksManager.getTrackPoints(ctx.selectedGpxFile);
             let points = [];
             if (ctx.selectedGpxFile.hasGeo) {
-                trackPoints.forEach(p => {
+                trackPoints.forEach((p) => {
                     points = points.concat(p.geometry);
-                })
+                });
             } else {
                 points = trackPoints;
             }
             let selectedPoints = points.slice(ctx.trackRange[0], ctx.trackRange[1]);
             let polyline = new L.Polyline(selectedPoints, {
                 color: '#ffc939',
-                weight: 5
+                weight: 5,
             });
             if (trackRangeLine) {
                 trackRangeLine.setLatLngs(polyline._latlngs);
@@ -36,28 +37,32 @@ export default function GraphLayer() {
         } else {
             removeTrackRangeLine();
         }
-    }, [ctx.trackRange])
+    }, [ctx.trackRange]);
 
     useEffect(() => {
         if (ctx.selectedGpxFile.layers) {
             checkShowPoints(ctx.showPoints.points, false);
             checkShowPoints(ctx.showPoints.wpts, true);
         }
-    }, [ctx.showPoints.points, ctx.showPoints.wpts])
+    }, [ctx.showPoints.points, ctx.showPoints.wpts, ctx.selectedGpxFile]);
 
     function checkShowPoints(showPoints, isWpts) {
         if (!showPoints) {
-            ctx.selectedGpxFile.layers.getLayers().forEach(l => {
+            ctx.selectedGpxFile.layers.getLayers().forEach((l) => {
                 if (l instanceof L.Marker && checkWpts(isWpts, l)) {
-                    l._icon.style.display = 'none';
+                    if (l._icon) {
+                        l._icon.style.display = 'none';
+                    }
                 }
-            })
+            });
         } else {
-            ctx.selectedGpxFile.layers.getLayers().forEach(l => {
+            ctx.selectedGpxFile.layers.getLayers().forEach((l) => {
                 if (l instanceof L.Marker && checkWpts(isWpts, l)) {
-                    l._icon.style.display = null;
+                    if (l._icon) {
+                        l._icon.style.display = null;
+                    }
                 }
-            })
+            });
         }
     }
 

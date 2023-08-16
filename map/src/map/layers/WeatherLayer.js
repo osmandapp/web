@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from 'react';
-import { useMap } from "react-leaflet";
-import AppContext from "../../context/AppContext";
-import {TileLayer, LayersControl} from "react-leaflet";
+import React, { useContext, useEffect, useState } from 'react';
+import { useMap } from 'react-leaflet';
+import AppContext from '../../context/AppContext';
+import { TileLayer, LayersControl } from 'react-leaflet';
 
 function getWeatherTime(weatherDateObj) {
     let h = weatherDateObj.getUTCHours();
@@ -16,62 +16,95 @@ function getWeatherTime(weatherDateObj) {
     if (d < 10) {
         d = '0' + d;
     }
-    return weatherDateObj.getUTCFullYear() + '' + m + '' + d + "_" + h + "00";
+    return weatherDateObj.getUTCFullYear() + '' + m + '' + d + '_' + h + '00';
 }
 
 const WeatherLayer = () => {
     const map = useMap();
     const ctx = useContext(AppContext);
-    useEffect(() => {
-        if (map) {
-            const enableFunc = updateLayerFunc(ctx.weatherLayers, ctx.updateWeatherLayers, true);
-            const disableFunc = updateLayerFunc(ctx.weatherLayers, ctx.updateWeatherLayers, false);
-            map.on('overlayadd', enableFunc);
-            map.on('overlayremove', disableFunc);
-            return () => {
-                map.off('overlayadd', enableFunc);
-                map.off('overlayremove', disableFunc);
-            };
-        }
-    }, [map, ctx.weatherLayers, ctx.updateWeatherLayers])
 
-    const updateLayerFunc = (layers, updateLayers, enable) => (event) => {
-        const ind = layers.findIndex(l => l.name === event.name);
-        if (ind >= 0) {
-            let newlayers = [...layers];
-            newlayers[ind].checked = enable;
-            updateLayers(newlayers);
-        }
-    }
+    const [time, setTime] = useState(null);
 
     useEffect(() => {
         if (map) {
             map.eachLayer((layer) => {
-                if (layer.options.tms) {
-                    layer.options.time = getWeatherTime(ctx.weatherDate);
-                    layer.redraw();
+                if (layer.options?.name?.match(/^weather-/) && layer.options.time) {
+                    const newTime = getWeatherTime(ctx.weatherDate);
+                    const key = layer.options.name.split('-')[1];
+                    map.eachLayer((fade) => {
+                        if (fade.options?.name === 'fade-' + key) {
+                            const FADE_INTERVAL_MS = 100;
+                            let tries = 10; // maximum 1 second
+
+                            const tryFade = () => {
+                                if (layer.isLoading() === false || tries === 0) {
+                                    if (fade.options.time !== newTime) {
+                                        fade.options.time = newTime;
+                                        fade.redraw();
+                                    }
+                                } else {
+                                    tries--;
+                                    setTimeout(tryFade, FADE_INTERVAL_MS);
+                                }
+                            };
+
+                            setTimeout(tryFade, FADE_INTERVAL_MS);
+                        }
+                    });
+                    if (layer.options.time !== newTime) {
+                        layer.options.time = newTime;
+                        layer.redraw();
+                    }
                 }
             });
         }
+        setTime(getWeatherTime(ctx.weatherDate));
     }, [ctx.weatherDate]);
 
-    return <>
-        <LayersControl>
-            {ctx.weatherLayers.map((item) => (
-                <LayersControl.Overlay name={item.name} checked={item.checked} key={'overlay_' + item.key}>
-                    <TileLayer
-                        url={item.url}
-                        time={getWeatherTime(ctx.weatherDate)}
-                        tms={true}
-                        minZoom={1}
-                        opacity={item.opacity}
-                        maxNativeZoom={item.maxNativeZoom}
-                        maxZoom={item.maxZoom}
-                    />
-                </LayersControl.Overlay>
-            ))}
-        </LayersControl>
-    </>;
+    const opacityDivider = 0.6; // main+fade layers (*0.5 + *0.5) result less opacity than 1 layer *1.0
+
+    return (
+        <>
+            <LayersControl>
+                {Object.keys(ctx.weatherLayers).map((k) => {
+                    return ctx.weatherLayers[k].map((item) => (
+                        <React.Fragment key={'weather_fader_' + item.key}>
+                            <LayersControl.Overlay
+                                key={'weather_main_' + item.key + item.checked}
+                                checked={item.checked}
+                            >
+                                <TileLayer
+                                    name={'weather-' + item.key}
+                                    url={item.url}
+                                    time={time}
+                                    tms={true}
+                                    minZoom={1}
+                                    opacity={item.opacity * opacityDivider}
+                                    maxNativeZoom={item.maxNativeZoom}
+                                    maxZoom={item.maxZoom}
+                                />
+                            </LayersControl.Overlay>
+                            <LayersControl.Overlay
+                                key={'weather_fade_' + item.key + item.checked}
+                                checked={item.checked}
+                            >
+                                <TileLayer
+                                    name={'fade-' + item.key}
+                                    url={item.url}
+                                    time={time}
+                                    tms={true}
+                                    minZoom={1}
+                                    opacity={item.opacity * opacityDivider}
+                                    maxNativeZoom={item.maxNativeZoom}
+                                    maxZoom={item.maxZoom}
+                                />
+                            </LayersControl.Overlay>
+                        </React.Fragment>
+                    ));
+                })}
+            </LayersControl>
+        </>
+    );
 };
 
 export default WeatherLayer;

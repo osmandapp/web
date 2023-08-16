@@ -1,5 +1,5 @@
-import React, {useContext, useEffect, useRef, useState} from 'react';
-import {Chart} from 'react-chartjs-2';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import { Chart } from 'react-chartjs-2';
 import {
     Tooltip,
     Legend,
@@ -9,25 +9,29 @@ import {
     PointElement,
     LineController,
     LineElement,
-    Filler
-} from "chart.js";
-import {Slider, SliderThumb, Typography} from "@mui/material";
-import AppContext from "../../../context/AppContext";
-import TracksManager from "../../../context/TracksManager";
-import zoomPlugin from "chartjs-plugin-zoom";
-import annotationsPlugin from "chartjs-plugin-annotation";
-import _ from "lodash";
-import {makeStyles} from "@material-ui/core/styles";
-import clsx from "clsx";
+    Filler,
+} from 'chart.js';
+import { Box, Slider, SliderThumb } from '@mui/material';
+import AppContext from '../../../context/AppContext';
+import TracksManager from '../../../context/TracksManager';
+import zoomPlugin from 'chartjs-plugin-zoom';
+import annotationsPlugin from 'chartjs-plugin-annotation';
+import _ from 'lodash';
+import { makeStyles } from '@material-ui/core/styles';
+import clsx from 'clsx';
 
 const mouseLine = {
     id: 'mouseLine',
     afterEvent: function (chart, e) {
         const chartArea = chart.chartArea;
         chart.options.mouseLine = {};
-        if (e.event.x >= chartArea.left && e.event.y >= chartArea.top &&
-            e.event.x <= chartArea.right && e.event.y <= chartArea.bottom &&
-            chart._active.length > 0) {
+        if (
+            e.event.x >= chartArea.left &&
+            e.event.y >= chartArea.top &&
+            e.event.x <= chartArea.right &&
+            e.event.y <= chartArea.bottom &&
+            chart._active.length > 0
+        ) {
             chart.options.mouseLine = {};
             chart.options.mouseLine.x = chart._active[0].element.x;
         } else {
@@ -41,16 +45,15 @@ const mouseLine = {
         const x = chart.options.mouseLine?.x;
         if (!isNaN(x)) {
             ctx.save();
-            ctx.lineWidth = 1
+            ctx.lineWidth = 1;
             ctx.moveTo(chart.options.mouseLine.x, chartArea.bottom);
             ctx.lineTo(chart.options.mouseLine.x, chartArea.top);
             ctx.strokeStyle = '#757575';
             ctx.stroke();
             ctx.restore();
         }
-    }
-}
-
+    },
+};
 
 ChartJS.register(
     Tooltip,
@@ -69,22 +72,20 @@ ChartJS.register(
 const useStyles = makeStyles({
     slider: {
         '& .MuiSlider-thumb': {
-            "&.first-thumb": {
+            '&.first-thumb': {
                 backgroundImage: `url('/map/images/map_icons/map_track_point_start.svg')`,
-                backgroundPosition: 'center'
+                backgroundPosition: 'center',
             },
-            "&.second-thumb ": {
+            '&.second-thumb ': {
                 backgroundImage: `url('/map/images/map_icons/map_track_point_finish.svg')`,
-                backgroundPosition: 'center'
-            }
+                backgroundPosition: 'center',
+            },
         },
-        '& .MuiSlider-valueLabel': {fontSize: "8px"}
-    }
-})
+        '& .MuiSlider-valueLabel': { fontSize: '8px' },
+    },
+});
 
-
-export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, minEle, maxEle, minSpeed, maxSpeed}) {
-
+export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width, minEle, maxEle, minSpeed, maxSpeed }) {
     const ctx = useContext(AppContext);
     const styles = useStyles();
 
@@ -111,7 +112,7 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
             if (showData[y1Axis[0]]) {
                 addMaxMinMarkers(minEle, maxEle, y1Axis[0]);
             }
-            setDistRangeValue([0, data.length])
+            setDistRangeValue([0, data.length]);
             ctx.setTrackRange(null);
         }
     }, [data, showData]);
@@ -119,7 +120,7 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
     function addMaxMinMarkers(min, max, dataSet) {
         let res = {
             min: null,
-            max: null
+            max: null,
         };
         data.forEach((value, index) => {
             if (value[dataSet] === min && !res.min) {
@@ -128,12 +129,12 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
             if (value[dataSet] === max && !res.max) {
                 res.max = index;
             }
-        })
+        });
         if (res.min && res.max) {
             res = {
-                min: {x: res.min, y: data[res.min][dataSet]},
-                max: {x: res.max, y: data[res.max][dataSet]}
-            }
+                min: { x: res.min, y: data[res.min][dataSet] },
+                max: { x: res.max, y: data[res.max][dataSet] },
+            };
             let newMaxMin = Object.assign({}, maxMinData);
             newMaxMin[dataSet] = res;
             setMaxMinData(newMaxMin);
@@ -183,7 +184,7 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
         spanGaps: true,
         interaction: {
             intersect: false,
-            mode: 'index'
+            mode: 'index',
         },
         plugins: {
             annotation: {
@@ -202,16 +203,16 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                         display: showMaxMin(y1Axis[0]),
                         type: 'label',
                         xValue: maxMinData[y1Axis[0]]?.min?.x,
-                        yValue: "center",
+                        yValue: 'center',
                         backgroundColor: '#ebf3f2',
                         content: [Math.round(maxMinData[y1Axis[0]]?.min?.y)],
                         font: {
-                            size: 9
+                            size: 9,
                         },
                         borderRadius: 5,
                         color: 'green',
                         borderWidth: 1,
-                        padding: 2
+                        padding: 2,
                     },
                     label3: {
                         display: showMaxMin(y1Axis[0]),
@@ -227,35 +228,35 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                         display: showMaxMin(y1Axis[0]),
                         type: 'label',
                         xValue: maxMinData[y1Axis[0]]?.max?.x,
-                        yValue: "center",
+                        yValue: 'center',
                         backgroundColor: '#ebf3f2',
                         content: [Math.round(maxMinData[y1Axis[0]]?.max?.y)],
                         font: {
-                            size: 9
+                            size: 9,
                         },
                         borderRadius: 5,
                         color: 'red',
                         borderWidth: 1,
-                        padding: 2
+                        padding: 2,
                     },
                     box1: {
                         display: showRange(),
                         type: 'box',
                         xMin: distRangeValue[0],
                         xMax: distRangeValue[1],
-                        backgroundColor: 'rgba(245, 208, 39, 0.34)'
-                    }
-                }
+                        backgroundColor: 'rgba(245, 208, 39, 0.34)',
+                    },
+                },
             },
             tooltip: {
                 enabled: true,
-                mode: "index",
+                mode: 'index',
                 intersect: false,
                 backgroundColor: '#757575',
                 displayColors: false,
                 callbacks: {
                     title: (context) => {
-                        return `${xAxis}: ${context[0].label} km`
+                        return `${xAxis}: ${context[0].label} km`;
                     },
                     label: (context) => {
                         let label = context.dataset.label || '';
@@ -263,33 +264,33 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                         if (label) {
                             label += ': ';
                         }
-                        const dimension = context.dataset.yAxisID === 'y1' ? 'm' : 'm/s'
+                        const dimension = context.dataset.yAxisID === 'y1' ? 'm' : 'm/s';
                         if (context.parsed.y !== null) {
                             label += `${context.parsed.y} ${dimension}`;
                         }
                         return label;
-                    }
-                }
+                    },
+                },
             },
             hover: {
                 mode: 'nearest',
                 intersect: false,
-                includeInvisible: true
+                includeInvisible: true,
             },
             legend: {
-                display: false
+                display: false,
             },
             zoom: {
                 limits: {
-                    y1: {min: minEle - 10, max: maxEle + 10},
-                    y2: {min: minSpeed - 10, max: maxSpeed + 10},
+                    y1: { min: minEle - 10, max: maxEle + 10 },
+                    y2: { min: minSpeed - 10, max: maxSpeed + 10 },
                 },
                 zoom: {
                     wheel: {
                         enabled: true,
                         rangeMax: {
-                            y: maxEle
-                        }
+                            y: maxEle,
+                        },
                     },
                     mode: 'xy',
                     speed: 100,
@@ -297,9 +298,9 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                 pan: {
                     enabled: true,
                     mode: 'xy',
-                    speed: 100
-                }
-            }
+                    speed: 100,
+                },
+            },
         },
         scales: {
             x: {
@@ -315,8 +316,8 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                     font: {
                         size: 10,
                         lineHeight: 1.2,
-                    }
-                }
+                    },
+                },
             },
             y1: {
                 display: showY1Scale(),
@@ -328,8 +329,8 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                     font: {
                         size: 10,
                         lineHeight: 1.2,
-                    }
-                }
+                    },
+                },
             },
             y2: {
                 display: showY2Scale(),
@@ -342,14 +343,14 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                     font: {
                         size: 10,
                         lineHeight: 1.2,
-                    }
-                }
+                    },
+                },
             },
-        }
+        },
     };
 
     const graphData = {
-        labels: data.map((d) => d[xAxis]!==0 ? d[xAxis].toFixed(2) : 0),
+        labels: data.map((d) => (d[xAxis] !== 0 ? d[xAxis].toFixed(2) : 0)),
         datasets: [
             {
                 label: y1Axis[0],
@@ -361,7 +362,7 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                 max: maxEle,
                 fill: true,
                 yAxisID: 'y1',
-                pointRadius: 0
+                pointRadius: 0,
             },
             {
                 label: y1Axis[1],
@@ -373,7 +374,7 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                 max: maxEle,
                 fill: true,
                 yAxisID: 'y1',
-                pointRadius: 0
+                pointRadius: 0,
             },
             {
                 label: y2Axis,
@@ -383,15 +384,14 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                 min: minSpeed,
                 max: maxSpeed,
                 yAxisID: 'y2',
-                pointRadius: 0
+                pointRadius: 0,
             },
         ],
     };
 
     function ThumbComponent(props) {
-        const {children, className, ...other} = props;
-        const extraClassName =
-            other["data-index"] === 0 ? "first-thumb" : "second-thumb";
+        const { children, className, ...other } = props;
+        const extraClassName = other['data-index'] === 0 ? 'first-thumb' : 'second-thumb';
         return (
             <SliderThumb {...other} className={clsx(className, extraClassName)}>
                 {children}
@@ -400,23 +400,24 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
     }
 
     function valueLabelFormat(value) {
-        return `${(data[value][xAxis]).toFixed(1)}  km`;
+        return `${data[value][xAxis].toFixed(1)}  km`;
     }
 
-    return (<>
-            <Typography component={'span'} type="title" color="inherit" sx={{p: 0}}>
+    return (
+        <>
+            <Box sx={{ p: 0, maxWidth: width - 40 }}>
                 <Chart
                     ref={chartRef}
-                    width={width}
+                    width={width - 40}
                     height={150}
-                    margin={{top: 0, right: 0, left: -20, bottom: 0}}
-                    style={{fontSize: 10}}
+                    margin={{ top: 0, right: 0, left: -20, bottom: 0 }}
+                    style={{ fontSize: 10 }}
                     data={graphData}
                     options={options}
                     onMouseMove={(e) => onMouseMoveGraph(e, chartRef)}
                     onMouseLeave={() => ctx.mapMarkerListener(null)}
                 />
-            </Typography>
+            </Box>
             <Slider
                 className={styles.slider}
                 valueLabelDisplay="auto"
@@ -428,8 +429,8 @@ export default function GpxGraph({data, showData, xAxis, y1Axis, y2Axis, width, 
                 min={0}
                 step={1}
                 max={data.length - 1}
-                components={{Thumb: ThumbComponent}}
+                components={{ Thumb: ThumbComponent }}
             />
         </>
     );
-};
+}

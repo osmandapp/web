@@ -218,6 +218,23 @@ All waypoints of the route are stored in the folders you selected for them when 
 
 ## My Places menu
 
+The **My Places** menu allows you to organize and manage your personal points of interest, and provides convenient tools for saving, editing and using this data.  
+
+Main features of the My Places menu:
+
+- **Create Points of Interest.** In this menu, you can create new points of interest by marking places you are interested in. It can be a meeting place, vacation, travel, restaurant, store and more. You can add title, description, photos and even choose an icon for each point.
+- **Edit and Delete.** The My Places menu provides the ability to edit information about saved points of interest. Users can update names, descriptions, photos and coordinates. There is also a delete function if the point is no longer relevant.
+- **Categories and Hashtags.** You can organize your points of interest into different categories such as Restaurants, Parks, Attractions, and other. Hashtags can also be used for easier searching and filtering of places.
+- **Export & Import.** The My Places menu allows you to export and import point of interest data. This is useful if you want to share your places with friends or save them on another device.
+- **Navigation and Route Management.** Saved points of interest can be used as intermediate waypoints. You can include them in trip planning and navigation, making the process more convenient and customizable.  
+
+My Places menu benefits:
+
+- **Personalization.** The menu allows you to create your own places and organize them as you see prefer.
+- **Integration with navigation.** Points of interest can be used in route planning to help you find places of interest quickly.
+- **Ease of use.** With categories, hashtags and editing capabilities, you can easily manage your POI data.
+- **Synchronization.** The optional data export and import feature allows you to save and use your points of interest information across devices.
+
 ### Actions
 
 <Tabs groupId="operating-systems">

@@ -13,31 +13,29 @@ import Translate from '@site/src/components/Translate.js';
 
 ### Overview
 
-The tool provides the searching features for any use-cases: address search, POi search, custom search, history search, coordinate search.
+**Search** is an important tool of OsmAnd that allows you to find required places, objects, or addresses. The available search options provide different ways to find objects. You can use search by address for precise navigation, search by POI categories to find the nearest objects, search by history for quick access to previous requests, and search by coordinates for precise location.
 
-In the Search option there are three tabs (from left to right):
 
-History – shows all your search history
+### [Search All](./search-all.md)
 
-Categories – used for finding specific places of interest (museums, landmarks, etc.)
+This article describes the main features and available options of the Search tool.
 
-Address - for searching by an address. This tab for Android version offers 4 more options, for iOS version offers 2 options:
-
-Street and City (you can enter city, street and building number step by step).
-
-Postcode – for finding your location by a zipcode.
-
-Coordinate search – offers different coordinate formats.
 
 ### [Search Address](./search-address.md)
-The search address helps you to find your needed address from OpenStreetMap data.
 
-### [Search POI](./search-poi.md)
+The Search tool has options such as sequential search by address, with already prepared data for quick selection and search by postcode. These options are described in this article. 
+
 
 ### [Search History](./search-history.md)
 
-Search History
+This article discusses the search capabilities of query history in detail.
 
-### [Custom POI Search](./custom-poi-search.md)
 
-Configure custom poi search
+### [Search POI](./search-poi.md)
+ 
+Searching through all POI categories and setting up a custom POI search is described in this article.
+
+
+### [Search Coordinates](./search-coordinates.md)
+
+In this article, you will learn how to search for the correct locations using coordinates.

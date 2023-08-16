@@ -53,27 +53,23 @@ Currently, OsmAnd can only make use of the elements that consists of a single no
 
 ## Voice navigation
 
-### What is the difference between TTS (text to speech) and recorded voices?
+### Why should I use a TTS voice, not a recorded voice?
 
-TTS (text to speech) synthesizes any voice prompt just from a specified text "on the fly", while recorded voices depend on combining every command from a set of snippets pre-recorded from a human voice.
+TTS (text to speech) synthesizes a voice prompt from any specified text "on the fly", recorded voices can only play combinations of prereconrded voice snippets. Pre-recorded voices can hence not pronounce street names, place names, highway numbers, etc.
 
-In OsmAnd, we recommend using a synthesized (TTS) voice. They are better maintained by the project developers to provide the latest feature set. Since they are more flexible, they are e.g. able to also pronounce street names or highway numbers (OsmAnd version 1.5.1 and newer), which pre-recorded voices can not. TTS prompts may on some devices sound a bit more "robotic", and the selection of languages actually supported on your device is more limited. Both what languages are supported and their voice quality strictly depend on the TTS engine installed on your device, not on OsmAnd. See also next section "TTS does not function
-properly".
+In OsmAnd, we therefore recommend using a synthesized (TTS) voice. They are also better maintained by the project developers to provide the latest feature set.
 
-We suggest that recorded voices should only be a fallback if you **really** like a particular voice, or if you cannot find a TTS engine supporting your language. Many 'recorded' voices have significant shortcomings like gaps and unnatural intonation, and some phrases may be missing entirely, where for a maintenance like adding new commands we could not get access to the original speakers any more.
+In order to use TTS, your system needs to have TTS engine installed. TTS engines often come pre-installed, and can also be installed explicitly. [Here](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/) is a compilation of supported engines and languages for Android.
 
-Read more about Voice prompts:
-- [Voice guidance](../navigation/guidance/voice-navigation.md)
-- [Adjusting voice prompts](../navigation/guidance/voice-navigation.md#settings-of-voice-prompts)
-- [TTS does not function properly](../troubleshooting/navigation.md#tts-does-not-function-properly)
+Read more about setting up and adjusting Voice prompts [here](../navigation/guidance/voice-navigation.md).
 
 ### TTS does not function properly
 
-Text-to-Speech (TTS) issues will usually have to be fixed in your **Android configuration and settings**, not within the OsmAnd app!
+Text-to-Speech (TTS) issues will usually have to be fixed in your **Android configuration and settings**, not within the OsmAnd app.
 
-Which TTS languages are supported on your device and the sound quality of each TTS voice strictly depends on the TTS engine you select (or install) via your **Android device settings**. There is usually one TTS engine pre-installed on each device (e.g. google, Samsung, Pico). An additional 3rd party engine (see below) can be installed if needed.
+In order to use TTS, your device needs to have TTS engine installed. Select or install a TTS engine via your **Android device settings**. Often, one TTS engine is already pre-installed on each device (e.g. google, Samsung, Pico), but another engine can be installed if needed. [Here](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/) is a compilation of supported engines and languages for Android.
 
-A TTS engine often supports several languages, but one needs to be selected as the one to be used. To improve the voice quality: Some TTS engines come pre-installed with only a set of basic-quality pronunciation packages for the languages they support, and then faciliate downloading a high-quality package for the very language you actually select to be used.
+A TTS engine often supports several languages, so one must be selected to be used. Also, to improve the voice quality: Some TTS engines come pre-installed with only a set of basic-quality pronunciation packages, and then faciliate downloading higher quality voices per language language.
 
 If you have issues with the TTS voice guidance:
 
@@ -82,12 +78,6 @@ If you have issues with the TTS voice guidance:
 -   Once this works, finally go to OsmAnd's [General settings / Voice guidance and there select the corresponding TTS language](../navigation/guidance/voice-navigation.md#settings-of-voice-prompts).
 	(Please note that the language list OsmAnd initially displays can be extended by tapping the "Install more..." option.)
 
-It is a known issue that many pre-installed TTS engines may not support less widely spoken languages (even though the number of languages supported is growing). You can always try to find a 3rd party TTS engine
-supporting the language you are looking for: Install it on your device, and follow the above procedure. This should then provide TTS support for this language. Some of the more prominent TTS engines are:
-
--   [SVOX](https://play.google.com/store/apps/details?id=com.svox.classic)
--   [IVONA](https://play.google.com/store/apps/developer?id=IVONA+Text-to-Speech)
--   [eSpeak](https://play.google.com/store/apps/details?id=com.googlecode.eyesfree.espeak)
 
 ## Other
 

@@ -103,7 +103,7 @@ To read about the capabilities of Android Auto within the OsmAnd application, se
 
 ### Display language
 
-Display language is the setting of the language of the entire application, pop-up prompts, internal text, messages, etc. For Android system this can be done in the application, for iOS system - through the iOS settings. You can use the language installed on your device or select any other language from the list. 
+Display language option is used to change the language of the entire app, including pop-up prompts, internal text, messages, etc. Up to Android 12, OsmAnd allows you to customize the display language according to your preferences directly within the app. Starting from Android 13 and for iOS devices, display language can be only changed in the system settings (see how to change per-app language preferences in [Android](https://developer.android.com/guide/topics/resources/app-languages) and [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
 
 <Tabs groupId="operating-systems">
 
@@ -125,6 +125,9 @@ Display language is the setting of the language of the entire application, pop-u
 
 </Tabs>
 
+:::note
+On some Android devices (Xiaomi with Muiu 14), there is no way to set app languages individually in the system settings, so the language of OsmAnd can only be changed together with the language of the whole system. You may consider referring to the [GitHub discussion](https://github.com/osmandapp/OsmAnd/issues/16990) for additional information.
+:::
 
 ### Data storage folder
 
@@ -166,17 +169,18 @@ More info about data storage settings read [here](../personal/storage.md#data-st
 
 ![General Settings engine rendering Android](@site/static/img/personal/global-settings/rendering_engine_andr.png)  
 
-For the **Android** version of the app, it is available to switch between the map rendering version number 1 that was originally implemented in the OsmAnd app and version number 2, which uses OpenGL, Open Graphics Library programming interface for rendering 2D and 3D graphical objects.  
-For the **iOS** version uses only OpenGL for map rendering.        
+In the **Android** version of the app, you can switch between map rendering Version 1, originally implemented in the OsmAnd app, and Version 2, which uses the OpenGL (Open Graphics Library) programming interface for rendering two- and three-dimensional graphical objects.
+The **iOS** version uses only OpenGL for map rendering.
 
 
 | Features | Version 1 | Version 2 (OpenGl) |
 |:---|:--- |:--- |
 | Cross-platform | Not used in iOS version. | Fits both versions. |
 | GPU / CPU dependent | Recommended for low-performance or outdated devices. | Powerful rendering engine. <br /> Only available for OsmAnd 4.3 and later versions, and in test mode for OsmAnd 4.2. |
-| 3D view | Not available | It is possible to view the map in 2D, and you can change the viewing angle to get a [3D view](../widgets/map-buttons.md#3d-mode). |
+| 3D mode | Not available | It is possible to view the map in 2D, and you can change the viewing angle to get a [3D view](../widgets/map-buttons.md#3d-mode). |
 | Map display | The whole map is rendered as a set of tiles, and markers, lines and text are already inside these tiles. | First, the entire tile pack is rendered, and then the available symbols are applied to the map, [layer by layer](../../technical/algorithms/map-rendering-layers.md). |
 | Transparent symbols overlay / underlay | Supports all settings. | Does not support raster layer on top of vector text. |
+| [Online map](../plugins/online-map.md) | It does not support the display of Сontour lines if the map source is any online tile map. | When the map source is an online map, 3D maps are also used, and the display of Сontour lines on the map is supported. |
 | [Weather plugin](../plugins/weather.md) | You cannot use this plugin. | Convenient to use with the plugin. |  
 
 The image for the 3D view of the map is loaded tile by tile, then all the symbols. The rendering speed of the map depends on the number of 2D and 3D graphical objects on it, and directly on the performance of your hardware.  Therefore, Version 2 (OpenGL) cannot be used on low-performance devices.
@@ -245,7 +249,7 @@ You can read more information in the [Terms of use (ToS)](../../legal/terms-of-u
 
 ### History
 
-You can enable/disable history logging and view, edit, and share previously entered data (*history*) in the following categories: [Search](../search/search-history.md), [Navigation](../navigation/setup/route-navigation.md#previous-route--history), [Map markers](../personal/markers.md#history).  
+The application records the history of previously entered data (history) in the following categories: [Search](../search/search-history.md), [Navigation](../navigation/setup/route-navigation.md#previous-route--history), [Map markers](../personal/markers.md#history). Using the switch on the appropriate tab (*Search history, Navigation history, Map markers history*), you can enable/disable logging for this category of entries. You can also [manage](#history-options) (view, delete, and share) previously recorded data.  
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
@@ -253,24 +257,25 @@ You can enable/disable history logging and view, edit, and share previously ente
 
 <TabItem value="android" label="Android"> 
 
-![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png)  
+![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png) ![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android_new_2.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios.png)  
+![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios.png) ![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios_4.png)  
 
 </TabItem>
 
 </Tabs>
 
-- *Backup as file* (Android) or *Export* (iOS) - is used to make [a backup file](../personal/import-export.md#export) of your Search / Navigation / Map markers history.
-- *Clear all history* (Android) or *Delete all history* (iOS) - is used to delete all history entries recorded untill now.  
+- ***Backup as file*** (*Android*) or ***Export*** (*iOS*) - is used to make [a backup file](../personal/import-export.md#export) of your Search / Navigation / Map markers history.
+- ***Clear all history*** (*Android*) or ***Delete all history*** (*iOS*) - is used to delete all history entries recorded untill now.  
 
 #### History options
 
-Using the switch on the appropriate tab (*Search history, Navigation history, Map markers history*), you can enable/disable logging for this category of entries. You can also delete one or more items from the list or share them as a file (to access these functions in iOS, tap *Edit* button).  
+You can delete one or more items from the history list or share them as a file (to access these functions *in iOS*, tap ***Edit*** button).  
+To delete or export multiple records at once, mark checkboxes in front of the desired records and then tap **Export** or **Delete** buttons.  
 
 <Tabs groupId="operating-systems">
 

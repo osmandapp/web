@@ -77,12 +77,14 @@ The table shows all the features that are included in the paid and free packages
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 | Ad-free access | ✔ | ✔ | ✔ |
 | [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | - | - | ✔ |
+| [3D Relief](../plugins/contour-lines.md#3d-relief) | - | - | ✔ |
 | [Pro Features](#pro-features) | - | - | ✔ |
 | [Unlimited map downloads](../start-with/download-maps.md) | <details><summary>**7 map downloads**</summary>  - Map download or update is meant only download-update of a country (region) map. <br/> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 7 possibilities to download. </details> | ✔ | ✔ |
 | [Monthly map updates](../personal/maps.md#update-maps)<br/>Once a month (15 days delay) | <details><summary>**7 map downloads**</summary> Map update counts as download.</details> | ✔ | ✔ |
 | [Hourly map updates](../personal/maps.md#osmand-live)<br/> (1 hour delay) | - | - | ✔ |
-| [Android Auto](../navigation/auto-car.md) | - | ✔ | ✔ |
+| **[Android Auto](../navigation/auto-car.md) | - | ✔ | ✔ |
 | [Topo data (Contour lines and Terrain)](../plugins/contour-lines.md) | - | ✔ | ✔ |
+| [3D Relief](https://osmand.net/docs/user/plugins/contour-lines/#3d-relief) | - | - | ✔ |
 | [Nautical depths](../plugins/nautical-charts.md) | - | ✔ | ✔ |
 | [Offline Wikipedia](../plugins/wikipedia.md) | - | ✔ | ✔ |
 | [Offline Wikivoyage - Travel guides](../plan-route/travel-guides.md)| - | ✔ | ✔ |
@@ -100,6 +102,9 @@ The table shows all the features that are included in the paid and free packages
 | [OsmAnd Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
 | [Export/import app profile](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
 
+** - [Android Auto](https://www.android.com/auto/) function works only for OsmAnd apps from [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023). (If you buy OsmAnd Pro for OsmAnd from [Amazon store](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd) you can [activate it](https://osmand.net/docs/user/troubleshooting/setup#osmand-pro) for [OsmAnd Free from Google Play](https://play.google.com/store/apps/details?id=net.osmand). After that, you can have Android Auto function by OsmAnd Pro subscription bought from another app store.)
+
+
 ### Pro Features
 
 Pro Features are available for [OsmAnd Pro subscription](#prices).
@@ -108,13 +113,16 @@ At the moment, the Pro subscription has the following features:
 
 |  Pro Feature  | Description   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | backing up and restoring your data, synch data with [OsmAnd web portal](https://www.osmand.net/map) |
-| [Cross-platform](../personal/osmand-cloud.md#cross-platform) | allowing to use OsmAnd Pro on all platforms (Android ← → iOS → Web) with one purchase |
-| [OsmAnd Live](../personal/maps.md#osmand-live) | updating OsmAnd maps every 15 minutes after improving [OpenStreetMap](https://www.openstreetmap.org/) |
+| [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | backup and restore your data, synchronize data with [OsmAnd web portal](https://www.osmand.net/map) |
+| [Cross-platform](../personal/osmand-cloud.md#cross-platform) | possibility to use OsmAnd Pro on all platforms (Android ← → iOS → Web) with one purchase |
+| [3D Relief](../plugins/contour-lines.md#3d-relief) | allows you to own and observe a scale model of your neighborhood or an whole continent |
+| [OsmAnd Live](../personal/maps.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement |
 | [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map |
-| [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | changing color and width for the route line during navigation |
+| [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | changing the color and width of the route line during navigation |
 | [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | shows your location on the Elevation graph of the navigation route with additional info  |
-| [Online Elevation profile](../map/track-context-menu.md#online-elevation-profile) | allows to calculate altitude graph for your track (needed internet connection) |
+| [Elevation correction(offline)](../map/track-context-menu.md#calculate-offline) | allows you to calculate an altitude graph for your track ([Terrain map](../plugins/contour-lines.md#how-to-download) required for chosen region) |
+
+
 
 ### How to buy
 
@@ -128,7 +136,7 @@ or
 
 _<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continue with OsmAnd Pro_
 
-![Pro Plan](@site/static/img/purchases/pro.png)
+![Pro Plan](@site/static/img/purchases/android_subscription_plan.png)
 
 
 **Maps+** subscription / in-app plan. Here you can choose annual subscription or one-time payment.:
@@ -140,7 +148,7 @@ _<Translate android="true" ids="shared_string_menu,shared_string_settings,purcha
 
 ## Legacy subscriptions (prior 4.0)
 
-New subscriptions became active from OsmAnd 4.0 (August 2021). All earlier subscriptions are legacy and techncically equal to "Maps subscription", though legacy subscriptions are entitled for Hourly Map updates. Users can't buy legacy subscriptions but old subscriptions are automatically renewed until the user unsubscribes (the price for them might change in the future).
+New subscriptions start with OsmAnd version 4.0 (August 2021). All previous subscriptions are obsolete and technically equate to a *Map Subscription*, although older subscriptions are eligible for hourly map updates. Users cannot buy old subscriptions, but old subscriptions are automatically renewed until the user unsubscribes (the price may change in the future).
 
 
 ## Restore purchases
@@ -178,8 +186,6 @@ To restore the purchase, please check what OsmAnd plan you bought.
  1. Clear the cache for Google Play (Huawei AppGallery).
  2. Clear the cache for OsmAnd.
  3. Restart the device and try to restore again.
-
-
 
 ## Giftcards
 

@@ -1,13 +1,13 @@
-import {IconButton, ListItemText, TextField} from "@mui/material";
-import {Delete} from "@mui/icons-material";
-import React from "react";
-import contextMenuStyles from "../../../styles/ContextMenuStyles";
+import { IconButton, ListItemText, TextField } from '@mui/material';
+import { Delete } from '@mui/icons-material';
+import React from 'react';
+import contextMenuStyles from '../../../styles/ContextMenuStyles';
 
-export default function FavoriteAddress({favoriteAddress, setFavoriteAddress, setClose}) {
-
+export default function FavoriteAddress({ favoriteAddress, setFavoriteAddress, setClose, widthDialog }) {
     const menuStyles = contextMenuStyles();
 
-    return (<ListItemText>
+    return (
+        <ListItemText sx={{ maxWidth: `${widthDialog}px` }}>
             <TextField
                 className={menuStyles.favouriteLineInfo}
                 id="address"
@@ -17,18 +17,20 @@ export default function FavoriteAddress({favoriteAddress, setFavoriteAddress, se
                 value={favoriteAddress}
                 autoFocus={true}
             />
-            <IconButton
-                variant="contained"
-                type="button"
-                onClick={() => {
-                    if (setClose) {
-                        setClose(false);
-                    }
-                    setFavoriteAddress('');
-                }}
-            >
-                <Delete fontSize="small"/>
-            </IconButton>
+            {favoriteAddress && favoriteAddress !== '' && (
+                <IconButton
+                    variant="contained"
+                    type="button"
+                    onClick={() => {
+                        if (setClose) {
+                            setClose(false);
+                        }
+                        setFavoriteAddress('');
+                    }}
+                >
+                    <Delete fontSize="small" />
+                </IconButton>
+            )}
         </ListItemText>
-    )
+    );
 }
