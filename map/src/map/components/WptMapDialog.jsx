@@ -63,7 +63,7 @@ export default function WptMapDialog() {
     };
 
     useEffect(() => {
-        if (ctx.selectedWpt) {
+        if (ctx.selectedGpxFile?.wpts && ctx.selectedWpt) {
             ctx.addFavorite.editTrack = true;
             ctx.setAddFavorite({ ...ctx.addFavorite });
             const lat = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lat : ctx.selectedWpt.wpt.lat;

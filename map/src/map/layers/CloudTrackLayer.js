@@ -9,7 +9,7 @@ function addTrackToMap({ ctx, file, map, fit = true } = {}) {
     const layer = TrackLayerProvider.createLayersByTrackData(file, ctx);
 
     layer.on('click', () => {
-        if (file.name !== ctx.selectedGpxFile.name) {
+        if (file.name !== ctx.selectedGpxFile.name && ctx.infoBlockWidth === '0px') {
             file.analysis = TracksManager.prepareAnalysis(file.analysis);
             ctx.setSelectedGpxFile(Object.assign({}, file));
             const type = ctx.OBJECT_TYPE_CLOUD_TRACK;

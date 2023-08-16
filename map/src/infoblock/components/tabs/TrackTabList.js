@@ -18,7 +18,7 @@ export default class TrackTabList {
         let list = [];
 
         tabs.Info = <GeneralInfoTab key="general" setShowInfoBlock={setShowInfoBlock} />;
-        if (ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK) {
+        if (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK) {
             tabs.Track = <PointsTab key="points" />;
         }
 

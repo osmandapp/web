@@ -177,6 +177,7 @@ const PanelButtons = ({
                                         type="button"
                                         disabled={isEmptyTrack(ctx.selectedGpxFile, true)}
                                         onClick={() => {
+                                            ctx.setUpdateContextMenu(true);
                                             ctx.selectedGpxFile.save = true;
                                             ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
                                         }}
