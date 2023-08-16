@@ -31,7 +31,7 @@ export default function WaypointsTab() {
 
     function getLayers() {
         if (ctx.selectedGpxFile?.layers && !_.isEmpty(ctx.selectedGpxFile.layers)) {
-            ctx.selectedGpxFile.layers.getLayers();
+            return ctx.selectedGpxFile.layers.getLayers();
         }
         if (ctx.selectedGpxFile?.gpx) {
             return ctx.selectedGpxFile.gpx.getLayers();

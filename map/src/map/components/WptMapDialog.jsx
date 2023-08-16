@@ -131,7 +131,7 @@ export default function WptMapDialog() {
                             </MenuItem>
                             {wpt.desc && wpt.desc !== '' && (
                                 <ListItemText>
-                                    <Typography component={'span'} variant="inherit">
+                                    <Typography component={'span'} variant="inherit" style={{ whiteSpace: 'pre-line' }}>
                                         {descriptionOpen ? wpt.desc : wpt.desc.substring(0, 150)}
                                         {wpt.desc.length > 150 && (
                                             <ListItemIcon onClick={toggleDescriptionOpen}>
