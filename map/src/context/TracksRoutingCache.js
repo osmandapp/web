@@ -123,10 +123,13 @@ function requestAnalytics({ ctx, track, debouncerTimer }) {
 
 // refresh fresh data to previously created "temp-line" layer
 function refreshTempLine({ ctx, geometry, track, tempLine, color }) {
-    const polyline = new EditablePolyline(null, ctx, geometry, null, track).create();
-    tempLine.setStyle({ color, dashArray: null });
-    tempLine.setLatLngs(polyline._latlngs);
-    tempLine.options.name = undefined;
+    // don't destroy tempLine by empty geometry
+    if (geometry && geometry.length > 0) {
+        const polyline = new EditablePolyline(null, ctx, geometry, null, track).create();
+        tempLine.setStyle({ color, dashArray: null });
+        tempLine.setLatLngs(polyline._latlngs);
+        tempLine.options.name = undefined;
+    }
 }
 
 // keep cache by validKeys or filled geometry

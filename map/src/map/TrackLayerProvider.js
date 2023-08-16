@@ -30,9 +30,10 @@ function createLayersByTrackData(data, ctx) {
 function parsePoints({ ctx, points, layers, draggable = false, hidden = false }) {
     let coordsTrk = [];
     let coordsAll = [];
-    points.forEach((point) => {
+    points.forEach((point, index) => {
+        // geometry might be defined but []
         if (point.geometry !== undefined) {
-            coordsAll = drawRoutePoints(points, point, coordsAll, layers, ctx, draggable);
+            coordsAll = drawRoutePoints({ points, point, coordsAll, layers, ctx, draggable, index });
         } else {
             coordsTrk.push(new L.LatLng(point.lat, point.lng));
             if (point.profile === TracksManager.PROFILE_GAP && coordsTrk.length > 0) {
@@ -86,8 +87,20 @@ function addStartEnd(points, layers, coordsTrk, coordsAll) {
     }
 }
 
-function drawRoutePoints(points, point, coordsAll, layers, ctx, draggable) {
+function drawRoutePoints({ points, point, coordsAll, layers, ctx, draggable, index }) {
     let coords = [];
+
+    // catch case when geometry exists but empty
+    if (point.geometry.length === 0 && index > 0) {
+        const start = points[index - 1];
+        const end = point;
+        coords.push(new L.LatLng(start.lat, start.lng));
+        coords.push(new L.LatLng(end.lat, end.lng));
+        coordsAll = coordsAll.concat(Object.assign([], coords));
+        layers.push(createTempPolyline(start, end));
+        return coordsAll;
+    }
+
     point.geometry.forEach((p) => {
         if (p.profile === TracksManager.PROFILE_GAP && coords.length > 0) {
             addStartEndGap(point, points, layers, draggable);
@@ -99,10 +112,12 @@ function drawRoutePoints(points, point, coordsAll, layers, ctx, draggable) {
             coords.push(new L.LatLng(p.lat, p.lng));
         }
     });
-    coordsAll = coordsAll.concat(Object.assign([], coords));
+
     if (coords.length > 0) {
+        coordsAll = coordsAll.concat(Object.assign([], coords));
         layers.push(createPolyline(coords, ctx, point, points));
     }
+
     return coordsAll;
 }
 
@@ -226,7 +241,7 @@ function getPolylineByPoints(point, polylines) {
         });
         return res;
     } else {
-        console.error('getPolylineByPoints empty geometry', point);
+        console.error('getPolylineByPoints empty geometry');
     }
 }
 
@@ -251,7 +266,7 @@ function updatePolylineToTemp(startPoint, endPoint, polyline) {
         polyline.point = endPoint;
         return polyline;
     } else {
-        console.error('updatePolylineToTemp empty polyline', startPoint, endPoint);
+        console.error('updatePolylineToTemp empty polyline');
     }
 }
 
@@ -291,10 +306,14 @@ function getPolylines(layers) {
 
 function updatePolyline(startPoint, endPoint, polylines, oldStartPoint, oldEndPoint) {
     const point2 = oldEndPoint ? oldEndPoint : endPoint;
+
     let polyline = getPolylineByPoints(point2, polylines);
     if (!polyline) {
         const point1 = oldStartPoint ? oldStartPoint : startPoint;
         polyline = getPolylineByStartEnd(point1, point2, polylines);
+    }
+    if (!polyline) {
+        console.error('updatePolyline empty polylines');
     }
     polyline = updatePolylineToTemp(startPoint, endPoint, polyline);
 
