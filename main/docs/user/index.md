@@ -2,7 +2,7 @@
 
 OsmAnd provides global offline map browsing and offline navigation with many special tools for Android and iOS.
 
-### [MAP](./map/index.md)
+### [Map](./map/index.md)
 
 The map is a core element of OsmAnd. This section explains how to interact with map, how to configure additional POI layers, how to customize map for trekking, cycling or navigating offroad, how to add terrain information, how to enable street level imagery etc.
 
