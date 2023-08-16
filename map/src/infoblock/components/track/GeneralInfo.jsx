@@ -237,7 +237,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
             <ListItemText>
                 <Box display="flex" alignItems="end">
                     <Typography
-                        // component={'span'}
+                        component={'span'}
                         variant="inherit"
                         sx={{
                             maxHeight: 150,
@@ -450,7 +450,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                 </div>
                 {ctx.loginUser &&
                     ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
-                    isEmptyTrack(ctx.selectedGpxFile) === false && (
+                    isEmptyTrack(ctx.selectedGpxFile, true) === false && (
                         <Button
                             variant="contained"
                             sx={{ ml: '-0.5px !important' }}
@@ -475,22 +475,24 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                         Edit Track
                     </Button>
                 )}
-                {isEmptyTrack(ctx.selectedGpxFile) === false && (
+                {isEmptyTrack(ctx.selectedGpxFile, true) === false && (
                     <Button variant="contained" className={styles.button} onClick={() => downloadGpx(ctx)}>
                         <Download fontSize="small" sx={{ mr: '3px' }} />
                         Download GPX
                     </Button>
                 )}
-                <MenuItem sx={{ ml: -2 }}>
-                    <ListItemIcon>
-                        <RouteOutlined fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText>
-                        <Typography sx={{ ml: 1 }} variant="body2" noWrap>
-                            {`Distance: ${distance} km`}
-                        </Typography>
-                    </ListItemText>
-                </MenuItem>
+                {distance > 0 && (
+                    <MenuItem sx={{ ml: -2 }}>
+                        <ListItemIcon>
+                            <RouteOutlined fontSize="small" />
+                        </ListItemIcon>
+                        <ListItemText>
+                            <Typography sx={{ ml: 1 }} variant="body2" noWrap>
+                                {`Distance: ${distance} km`}
+                            </Typography>
+                        </ListItemText>
+                    </MenuItem>
+                )}
                 {points !== 0 && (
                     <MenuItem sx={{ ml: -2, mt: -1 }}>
                         <ListItemIcon>
@@ -541,9 +543,9 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                     </MenuItem>
                 )}
             </Typography>
-            {(ctx.selectedGpxFile?.points?.length > 1 || ctx.selectedGpxFile?.url) && (
+            {!isEmptyTrack(ctx.selectedGpxFile, false) && (
                 <>
-                    <Divider sx={{ mt: '6px', mb: '12px' }} />
+                    <Divider sx={{ mt: '13px', mb: '12px' }} />
                     <Elevation />
                 </>
             )}

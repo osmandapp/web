@@ -27,10 +27,14 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
         <>
             <Box>
                 <GeneralInfo width={ctx.infoBlockWidth} setOpenDescDialog={setOpenDescDialog} />
-                <Divider sx={{ mt: '3px', mb: '12px' }} />
-                <GpxGraphProvider width={ctx.infoBlockWidth} />
-                <Divider sx={{ mt: '3px', mb: '12px' }} />
-                {isEmptyTrack(ctx.selectedGpxFile) === false && (
+                {!isEmptyTrack(ctx.selectedGpxFile, false) && (
+                    <>
+                        <Divider sx={{ mt: '3px', mb: '12px' }} />
+                        <GpxGraphProvider width={ctx.infoBlockWidth} />
+                    </>
+                )}
+                <Divider sx={{ mt: '13px', mb: '12px' }} />
+                {isEmptyTrack(ctx.selectedGpxFile, true) === false && (
                     <Button
                         variant="contained"
                         sx={{ ml: '-0.5px !important' }}

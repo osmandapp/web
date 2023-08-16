@@ -141,7 +141,7 @@ export default function LocalClientTrackLayer() {
                 getRouting();
             } else {
                 // checkDeleteSelected();
-                if (ctx.createTrack?.enable && isEmptyTrack(ctxTrack) === false) {
+                if (ctx.createTrack?.enable && isEmptyTrack(ctxTrack, true) === false) {
                     saveLocal();
                 }
                 checkZoom();
@@ -198,7 +198,7 @@ export default function LocalClientTrackLayer() {
         Object.values(ctx.localTracks).forEach((track) => {
             let currLayer = localLayers[track.name];
             if (track.selected && !currLayer) {
-                const needFitBounds = isEmptyTrack(track) === false;
+                const needFitBounds = isEmptyTrack(track, true) === false;
                 addTrackToMap(track, needFitBounds, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;
