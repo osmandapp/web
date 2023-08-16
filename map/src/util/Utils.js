@@ -155,6 +155,7 @@ export function prepareFileName(filename) {
         return new TextDecoder().decode(truncated);
     };
 
+    const newlineRe = /\n/g;
     // eslint-disable-next-line no-useless-escape
     const illegalRe = /[\/\?<>\\:\*\|"]/g;
     // eslint-disable-next-line no-control-regex
@@ -165,10 +166,12 @@ export function prepareFileName(filename) {
     const windowsReservedRe = /^(con|prn|aux|nul|com[0-9]|lpt[0-9])(\..*)?$/i;
     const spacesRe = / +/g;
 
+    const empty = '';
     const space = ' ';
 
     return truncate(
         filename
+            .replace(newlineRe, empty)
             .replace(illegalRe, space)
             .replace(controlRe, space)
             .replace(reservedRe, space)
