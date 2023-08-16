@@ -215,7 +215,7 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 | <Translate android="true" ids="quick_action_resume_pause_navigation"/> | Pause / Resume navigation |
 | <Translate android="true" ids="change_application_profile"/> | Create a list of application profiles and cycle through them.  <br /> - **Show an interim dialog**: displays dialog with profiles list <br /> - **Do not show an interim dialog**: profiles will be changed by defined order. <br /> - **Note**: you could have 1 action with multiple profiles or many actions with 1 profile. |
 | <Translate android="true" ids="quick_action_remove_next_destination"/> | Removes next intermediate point, if present, otherwise removes destination and displays finish navigation dialog. Action is inactive if you don't have any destination. |
-| <Translate android="true" ids="simulate_location_by_gpx"/> | Simulates the location and movement of your device using a GPX track. |
+| [<Translate android="true" ids="simulate_location_by_gpx"/>](../plugins/development.md#gpx-track-simulation) | Simulates the location and movement of your device using a GPX track. |
 
 ### Configure screen
 
