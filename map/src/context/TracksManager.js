@@ -4,6 +4,8 @@ import _ from 'lodash';
 import { apiGet, apiPost } from '../util/HttpApi';
 import { compressFromJSON, decompressToJSON } from '../util/GzipBase64.mjs';
 import { confirm } from '../dialogs/GlobalConfirmationDialog';
+import L from 'leaflet';
+import MarkerOptions from '../map/markers/MarkerOptions';
 
 const GPX_FILE_TYPE = 'GPX';
 const GET_SRTM_DATA = 'get-srtm-data';
@@ -891,6 +893,30 @@ export function isEmptyTrack(track, checkWpt) {
     return true;
 }
 
+function showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker) {
+    if (ctxTrack?.showPoint?.layer) {
+        map.setView([ctxTrack.showPoint.layer._latlng.lat, ctxTrack.showPoint.layer._latlng.lng], 17);
+    } else {
+        if (selectedPointMarker) {
+            map.removeLayer(selectedPointMarker.marker);
+        }
+        let marker = createPointMarkerOnMap(ctxTrack, map);
+        setSelectedPointMarker({ marker: marker, trackName: ctxTrack.name });
+    }
+}
+
+function createPointMarkerOnMap(ctxTrack, map) {
+    return new L.marker(
+        {
+            lng: ctxTrack.showPoint.lng,
+            lat: ctxTrack.showPoint.lat,
+        },
+        {
+            icon: MarkerOptions.options.pointerIcons,
+        }
+    ).addTo(map);
+}
+
 const TracksManager = {
     loadTracks,
     saveTracks: saveLocalTrack,
@@ -924,6 +950,7 @@ const TracksManager = {
     isEqualPoints,
     updateState,
     prepareAnalysis,
+    showSelectedPointOnMap,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,

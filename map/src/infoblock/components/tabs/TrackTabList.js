@@ -4,6 +4,7 @@ import { Tab } from '@mui/material';
 import PointsTab from './PointsTab';
 import SettingsTab from './SettingsTab';
 import WaypointsTab from './WaypointsTab';
+import { isEmptyTrack } from '../../../context/TracksManager';
 
 export default class TrackTabList {
     state = {
@@ -16,20 +17,19 @@ export default class TrackTabList {
         let tabs = {};
         let list = [];
 
-        let isTrack =
-            ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK ||
-            ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
-
         tabs.Info = <GeneralInfoTab key="general" setShowInfoBlock={setShowInfoBlock} />;
         if (ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK) {
             tabs.Track = <PointsTab key="points" />;
         }
 
-        if (isTrack) {
+        if (
+            (ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && !isEmptyTrack(ctx.selectedGpxFile, true)) ||
+            ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK
+        ) {
             tabs.Waypoints = <WaypointsTab key="waypoints" />;
         }
 
-        if (ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK) {
+        if (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK) {
             tabs.Settings = <SettingsTab key="settings" />;
         }
 

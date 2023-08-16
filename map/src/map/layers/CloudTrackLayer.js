@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../TrackLayerProvider';
@@ -38,6 +38,7 @@ const CloudTrackLayer = () => {
     const ctxTrack = ctx.selectedGpxFile;
 
     const [allLayers, mutateAllLayers] = useMutator({});
+    const [selectedPointMarker, setSelectedPointMarker] = useState(null);
 
     const map = useMap();
 
@@ -45,6 +46,8 @@ const CloudTrackLayer = () => {
     useEffect(() => {
         if (ctxTrack && ctxTrack.zoom && ctxTrack.gpx && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK) {
             map.fitBounds(ctxTrack.gpx.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
+        } else if (ctxTrack.showPoint) {
+            TracksManager.showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker);
         }
     }, [ctxTrack]);
 
@@ -95,6 +98,11 @@ const CloudTrackLayer = () => {
             if (file.url && !file.gpx) {
                 processed++;
                 file.gpx = addTrackToMap({ ctx, file, map });
+                if (file.name === ctxTrack.name) {
+                    const newGpxFiles = Object.assign({}, ctxTrack);
+                    newGpxFiles.gpx = file.gpx;
+                    ctx.setSelectedGpxFile(newGpxFiles);
+                }
                 registerCleanupFileLayer(file);
             } else if (!file.url && file.gpx) {
                 processed++;

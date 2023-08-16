@@ -336,7 +336,7 @@ export default function LocalClientTrackLayer() {
             // local-track-zoom
             showSelectedTrackOnMap();
         } else if (ctxTrack.showPoint) {
-            showSelectedPointOnMap();
+            TracksManager.showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker);
         }
     }
 
@@ -377,34 +377,10 @@ export default function LocalClientTrackLayer() {
         }
     }
 
-    function createPointMarkerOnMap() {
-        return new L.marker(
-            {
-                lng: ctxTrack.showPoint.lng,
-                lat: ctxTrack.showPoint.lat,
-            },
-            {
-                icon: MarkerOptions.options.pointerIcons,
-            }
-        ).addTo(map);
-    }
-
     function showSelectedTrackOnMap() {
         let currLayer = localLayers[ctxTrack.name];
         if (currLayer) {
             map.fitBounds(currLayer.layer.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
-        }
-    }
-
-    function showSelectedPointOnMap() {
-        if (ctxTrack?.showPoint?.layer) {
-            map.setView([ctxTrack.showPoint.layer._latlng.lat, ctxTrack.showPoint.layer._latlng.lng], 17);
-        } else {
-            if (selectedPointMarker) {
-                map.removeLayer(selectedPointMarker.marker);
-            }
-            let marker = createPointMarkerOnMap();
-            setSelectedPointMarker({ marker: marker, trackName: ctxTrack.name });
         }
     }
 

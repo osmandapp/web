@@ -42,6 +42,7 @@ export default function CloudTrackItem({ file, customIcon = null }) {
         }
         // Watch out for file.url because this component was called using different data sources.
         // CloudTrackGroup uses ctx.tracksGroups (no-url) but VisibleGroup uses ctx.gpxFiles (url exists)
+        console.log(file);
         if (file.url || ctx.gpxFiles[file.name]?.url) {
             // if (file.name !== ctx.selectedGpxFile.name) { ...
             ctx.setCurrentObjectType(ctx.OBJECT_TYPE_CLOUD_TRACK);

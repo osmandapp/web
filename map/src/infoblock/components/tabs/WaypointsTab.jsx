@@ -30,13 +30,11 @@ export default function WaypointsTab() {
     const NAME_SIZE = 30;
 
     function getLayers() {
-        if (ctx.selectedGpxFile?.layers) {
-            if (!_.isEmpty(ctx.selectedGpxFile.layers)) {
-                return ctx.selectedGpxFile.layers.getLayers();
-            }
-            if (ctx.selectedGpxFile?.gpx?.layers) {
-                return ctx.selectedGpxFile.gpx.layers.getLayers();
-            }
+        if (ctx.selectedGpxFile?.layers && !_.isEmpty(ctx.selectedGpxFile.layers)) {
+            ctx.selectedGpxFile.layers.getLayers();
+        }
+        if (ctx.selectedGpxFile?.gpx) {
+            return ctx.selectedGpxFile.gpx.getLayers();
         }
         return [];
     }
@@ -173,15 +171,17 @@ export default function WaypointsTab() {
             <MenuItem key={'marker' + index} divider onClick={() => showPoint(point)}>
                 {hasInfo(point) ? showWithInfo(point) : showOnlyName(point)}
                 <ListItemAvatar>
-                    <IconButton
-                        sx={{ mr: 1 }}
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            PointManager.deleteWpt(index, ctx);
-                        }}
-                    >
-                        <Cancel fontSize="small" />
-                    </IconButton>
+                    {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                        <IconButton
+                            sx={{ mr: 1 }}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                PointManager.deleteWpt(index, ctx);
+                            }}
+                        >
+                            <Cancel fontSize="small" />
+                        </IconButton>
+                    )}
                 </ListItemAvatar>
             </MenuItem>
         );
