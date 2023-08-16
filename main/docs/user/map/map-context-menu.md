@@ -574,7 +574,14 @@ Requires [Parking position plugin](../plugins/parking.md).
 
 </Tabs> 
 
-It is possible to [add waypoints](../personal/tracks.md#add-waypoint) to any track at selected location via Map Context menu - <Translate android="true" ids="context_menu_item_add_waypoint"/> . By default waypoint is added to [currently recording track](../plugins/trip-recording.md#from-widget). Though if there are many [visible tracks](../map/tracks-on-map.md#tracks-on-the-map-layers) on the map, it will be suggested to select the track waypoint will be added to.
+You can add waypoints to a recorded track or to the current track recording using the Map Context Menu.  
+
+- Select a location on the map with a [long-tap](../map/map-context-menu.md#select-any-point-long-tap). 
+- In the *Map Context Menu* that opens, choose *Actions → Add track waypoint*.
+- The list displays the [tracks](../map/tracks-on-map.md#display-tracks-on-the-map) recorded and shown on the map, as well as the [current track recording](../plugins/trip-recording.md#from-widget), to which you can add the selected waypoint.
+- You can add waypoints to a track that is not yet active for recording, in which case the inactive track switches from the *Start state* to the *Resume state*.
+- [Fill in](../personal/tracks.md#add-waypoint) the required data and save the waypoint. 
+- You can configure the [Quick Actions](../widgets/quick-action.md) by adding a waypoint to the *Add track waypoint*. 
 
 Requires [Trip recording plugin](../plugins/trip-recording.md).
 
