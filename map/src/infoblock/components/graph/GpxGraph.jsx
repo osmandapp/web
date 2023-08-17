@@ -406,9 +406,11 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
 
     return (
         <>
-            <Box sx={{ p: 0, width: width - 40, height: 200 }}>
+            <Box sx={{ p: 0, maxWidth: width - 40 }}>
                 <Chart
                     ref={chartRef}
+                    width={width - 40}
+                    height={150}
                     margin={{ top: 0, right: 0, left: -20, bottom: 0 }}
                     style={{ fontSize: 10 }}
                     data={graphData}
