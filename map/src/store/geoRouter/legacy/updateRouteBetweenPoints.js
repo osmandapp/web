@@ -24,11 +24,12 @@ export async function updateRouteBetweenPoints(ctx, start, end, geoProfile = thi
 
         const result = await routers[type].call(this, { ctx, start, end, geoProfile });
 
-        if (result) {
+        // don't allow empty geometry
+        if (result && result.length > 0) {
             return result;
         } else {
-            console.error('Router error, Line used');
-            // ctx.setRoutingErrorMsg('Router error, Line used');
+            // console.error('Router error, Line used');
+            ctx.setRoutingErrorMsg('Router error, Line used');
             return routers[PROFILE_LINE]({ ctx, start, end, geoProfile });
         }
     }
