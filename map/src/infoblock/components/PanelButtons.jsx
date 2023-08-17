@@ -13,7 +13,7 @@ import { downloadGpx } from '../../infoblock/components/track/GeneralInfo';
 
 const PanelButtons = ({
     orientation,
-                          tooltipOrientation,
+    tooltipOrientation,
     setShowInfoBlock,
     infoBlockOpen,
     setInfoBlockOpen,
