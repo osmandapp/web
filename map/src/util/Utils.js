@@ -171,14 +171,14 @@ export function prepareFileName(filename) {
 
     return truncate(
         filename
-            .replace(newlineRe, empty)
-            .replace(illegalRe, space)
-            .replace(controlRe, space)
-            .replace(reservedRe, space)
-            .replace(unixRe, space)
-            .replace(windowsReservedRe, space)
-            .replace(spacesRe, space)
-            .trim(),
+            .replace(newlineRe, empty) // newline -> empty (better handle Enter key in inputs)
+            .replace(illegalRe, space) // illegal chars in filename such as: / ? < > : * | "
+            .replace(controlRe, space) // control chars (0x00-0x1F + second part of ASCII)
+            .replace(reservedRe, space) // dot-only reserved names such as: . ..
+            .replace(unixRe, space) // Unix better-to-avoid chars (' ` $, etc)
+            .replace(windowsReservedRe, space) // Windows reserved filenames
+            .replace(spacesRe, space) // finally, remove double-spaces
+            .trim(), // drop start/finish spaces
         255
     );
 }
