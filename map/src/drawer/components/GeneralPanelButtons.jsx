@@ -66,7 +66,7 @@ export default function GeneralPanelButtons({
     }
 
     function getTooltipOrientation() {
-        return getButtonOrientation() === 'vertical' ? 'right' : 'bottom';
+        return orientation === 'vertical' ? 'right' : 'bottom';
     }
 
     return (
