@@ -298,7 +298,7 @@ export default function LocalClientTrackLayer() {
     function syncRouting() {
         const track = { ...ctxTrack };
         track.syncRouting = false;
-        syncTrackWithCache({ ctx, track, debouncerTimer }); // mutate track
+        syncTrackWithCache({ ctx, track, geoRouter, debouncerTimer }); // mutate track
         ctx.setSelectedGpxFile(track);
     }
 

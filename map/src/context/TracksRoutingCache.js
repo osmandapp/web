@@ -59,7 +59,7 @@ export function effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges, deb
         for (let i = 1; i < points.length; i++) {
             const startPoint = points[i - 1];
             const endPoint = points[i];
-            const geoProfile = startPoint.geoProfile;
+            const geoProfile = geoRouter.getGeoProfile(startPoint);
             const key = createRoutingKey(startPoint, endPoint, geoProfile);
 
             if (cache[key]) {
@@ -149,7 +149,8 @@ function dropOutdatedCache({ ctx, validKeys, killLayers = false }) {
 
 // add start-end segment to cache, re-use cached geometry
 function addRoutingToCache(startPoint, endPoint, tempLine, ctx) {
-    const routingKey = createRoutingKey(startPoint, endPoint, startPoint.geoProfile);
+    const geoProfile = ctx.trackRouter.getGeoProfile(startPoint);
+    const routingKey = createRoutingKey(startPoint, endPoint, geoProfile);
     const cachedGeometry = ctx.routingCache[routingKey]?.geometry ?? null;
     ctx.mutateRoutingCache(
         (o) =>
@@ -157,7 +158,7 @@ function addRoutingToCache(startPoint, endPoint, tempLine, ctx) {
                 tempLine: tempLine,
                 startPoint: _.cloneDeep(startPoint),
                 endPoint: _.cloneDeep(endPoint),
-                geoProfile: startPoint.geoProfile,
+                geoProfile: geoProfile,
                 geometry: cachedGeometry,
                 busy: false,
             })
@@ -165,7 +166,7 @@ function addRoutingToCache(startPoint, endPoint, tempLine, ctx) {
 }
 
 // undo/redo: one-directional sync (cache -> track)
-export function syncTrackWithCache({ ctx, track, debouncerTimer }) {
+export function syncTrackWithCache({ ctx, track, geoRouter, debouncerTimer }) {
     const cache = ctx.routingCache;
     const points = track.points; // ref
 
@@ -173,7 +174,7 @@ export function syncTrackWithCache({ ctx, track, debouncerTimer }) {
         for (let i = 1; i < points.length; i++) {
             const startPoint = points[i - 1];
             const endPoint = points[i];
-            const geoProfile = startPoint.geoProfile;
+            const geoProfile = geoRouter.getGeoProfile(startPoint);
             const key = createRoutingKey(startPoint, endPoint, geoProfile);
 
             if (cache[key] && cache[key].geometry) {
