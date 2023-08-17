@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../TrackLayerProvider';
@@ -6,26 +6,22 @@ import TracksManager from '../../context/TracksManager';
 import { useMutator } from '../../util/Utils';
 
 function addTrackToMap({ ctx, file, map, fit = true } = {}) {
-    const layer = TrackLayerProvider.createLayersByTrackData(file, ctx);
+    const layer = TrackLayerProvider.createLayersByTrackData(file, ctx, map);
 
     layer.on('click', () => {
-        file.analysis = TracksManager.prepareAnalysis(file.analysis);
-        ctx.setSelectedGpxFile(Object.assign({}, file));
-        const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
-        ctx.setCurrentObjectType(type);
-        ctx.setUpdateContextMenu(true);
+        if (file.name !== ctx.selectedGpxFile.name && ctx.infoBlockWidth === '0px') {
+            file.analysis = TracksManager.prepareAnalysis(file.analysis);
+            ctx.setSelectedGpxFile(Object.assign({}, file));
+            const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
+            ctx.setCurrentObjectType(type);
+            ctx.setUpdateInfoBlock(true);
+        }
     });
-    // file.gpx = layer; // better modify state by parent (closer to setState)
-
     if (fit) {
         map.fitBounds(layer.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
     }
-
     layer.addTo(map);
-
     return layer;
-    // ctx.setGpxFiles(ctx.gpxFiles); // not here, better call once, after parent's full cycle
-    // ctx.setSelectedGpxFile(Object.assign({}, file)); // not now, because this is view-layer init
 }
 
 function removeLayerFromMap(file, map) {
@@ -38,6 +34,7 @@ const CloudTrackLayer = () => {
     const ctxTrack = ctx.selectedGpxFile;
 
     const [allLayers, mutateAllLayers] = useMutator({});
+    const [selectedPointMarker, setSelectedPointMarker] = useState(null);
 
     const map = useMap();
 
@@ -45,6 +42,8 @@ const CloudTrackLayer = () => {
     useEffect(() => {
         if (ctxTrack && ctxTrack.zoom && ctxTrack.gpx && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK) {
             map.fitBounds(ctxTrack.gpx.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
+        } else if (ctxTrack.showPoint) {
+            TracksManager.showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker);
         }
     }, [ctxTrack]);
 
@@ -95,6 +94,11 @@ const CloudTrackLayer = () => {
             if (file.url && !file.gpx) {
                 processed++;
                 file.gpx = addTrackToMap({ ctx, file, map });
+                if (file.name === ctxTrack.name) {
+                    const newGpxFiles = Object.assign({}, ctxTrack);
+                    newGpxFiles.gpx = file.gpx;
+                    ctx.setSelectedGpxFile(newGpxFiles);
+                }
                 registerCleanupFileLayer(file);
             } else if (!file.url && file.gpx) {
                 processed++;

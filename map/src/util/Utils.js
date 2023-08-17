@@ -3,6 +3,31 @@ import { apiGet } from '../util/HttpApi';
 import { useState } from 'react';
 
 /**
+ * effectDebouncer() used to release render-ticks in UI-thread
+ *
+ * Example:
+ *
+ * const timer = useRef(null);
+ * const [trigger, setTrigger] = useState(0);
+ * useEffect(effectDebouncer(...), [..., trigger]);
+ *
+ * trigger will be activated by setTimeout to invoke useEffect
+ *
+ * effect() should return false if there is nothing done
+ * timer/setTrigger won't be activated if effect() return false
+ */
+export function effectDebouncer({ delay, timerRef, setTrigger, effect }) {
+    if (timerRef.current <= 0) {
+        if (effect()) {
+            timerRef.current = setTimeout(() => {
+                timerRef.current = null; // reset timer for next run
+                setTrigger((o) => o + 1); // increase trigger (invoke useEffect)
+            }, delay);
+        }
+    }
+}
+
+/**
  * Mutation-compatible wrapper over useState(object)
  * Create object copy -> Apply callback() -> Call setter()
  *
@@ -130,6 +155,7 @@ export function prepareFileName(filename) {
         return new TextDecoder().decode(truncated);
     };
 
+    const newlineRe = /\n/g;
     // eslint-disable-next-line no-useless-escape
     const illegalRe = /[\/\?<>\\:\*\|"]/g;
     // eslint-disable-next-line no-control-regex
@@ -140,17 +166,19 @@ export function prepareFileName(filename) {
     const windowsReservedRe = /^(con|prn|aux|nul|com[0-9]|lpt[0-9])(\..*)?$/i;
     const spacesRe = / +/g;
 
+    const empty = '';
     const space = ' ';
 
     return truncate(
         filename
-            .replace(illegalRe, space)
-            .replace(controlRe, space)
-            .replace(reservedRe, space)
-            .replace(unixRe, space)
-            .replace(windowsReservedRe, space)
-            .replace(spacesRe, space)
-            .trim(),
+            .replace(newlineRe, empty) // newline -> empty (better handle Enter key in inputs)
+            .replace(illegalRe, space) // illegal chars in filename such as: / ? < > : * | "
+            .replace(controlRe, space) // control chars (0x00-0x1F + second part of ASCII)
+            .replace(reservedRe, space) // dot-only reserved names such as: . ..
+            .replace(unixRe, space) // Unix better-to-avoid chars (' ` $, etc)
+            .replace(windowsReservedRe, space) // Windows reserved filenames
+            .replace(spacesRe, space) // finally, remove double-spaces
+            .trim(), // drop start/finish spaces
         255
     );
 }

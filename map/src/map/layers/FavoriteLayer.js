@@ -26,7 +26,7 @@ const FavoriteLayer = () => {
         Object.entries(filesMap).forEach(([key, file]) => {
             if (file.url) {
                 if (!file.markers) {
-                    file.markers = TrackLayerProvider.createLayersByTrackData(file);
+                    file.markers = TrackLayerProvider.createLayersByTrackData(file, ctx, map);
                     if (ctx.selectedGpxFile?.markerCurrent && key === ctx.selectedGpxFile.nameGroup) {
                         updateSelectedFavoriteOnMap(file);
                     }
@@ -86,7 +86,7 @@ const FavoriteLayer = () => {
             : FavoritesManager.DEFAULT_GROUP_NAME;
         ctx.selectedGpxFile.file = Object.assign({}, ctx.favorites[e.sourceTarget.options.category]);
         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-        ctx.setUpdateContextMenu(true);
+        ctx.setUpdateInfoBlock(true);
     }
 
     function updateSelectedFavoriteOnMap(file) {

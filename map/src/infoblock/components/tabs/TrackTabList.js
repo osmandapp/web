@@ -4,34 +4,33 @@ import { Tab } from '@mui/material';
 import PointsTab from './PointsTab';
 import SettingsTab from './SettingsTab';
 import WaypointsTab from './WaypointsTab';
+import { isEmptyTrack } from '../../../context/TracksManager';
 
 export default class TrackTabList {
     state = {
         tabs: null,
         tabList: [],
         defaultTab: 'general',
-        graphWidth: document.body.offsetWidth / 3 >= 400 ? 400 : document.body.offsetWidth,
     };
 
     create(ctx, setShowInfoBlock) {
         let tabs = {};
         let list = [];
 
-        let isTrack =
-            ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK ||
-            ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
-
-        tabs.Info = <GeneralInfoTab key="general" width={this.state.graphWidth} setShowInfoBlock={setShowInfoBlock} />;
-        if (ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK) {
-            tabs.Track = <PointsTab key="points" width={this.state.graphWidth} />;
+        tabs.Info = <GeneralInfoTab key="general" setShowInfoBlock={setShowInfoBlock} />;
+        if (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK) {
+            tabs.Track = <PointsTab key="points" />;
         }
 
-        if (isTrack) {
-            tabs.Waypoints = <WaypointsTab key="waypoints" width={this.state.graphWidth} />;
+        if (
+            (ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && !isEmptyTrack(ctx.selectedGpxFile, true)) ||
+            ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK
+        ) {
+            tabs.Waypoints = <WaypointsTab key="waypoints" />;
         }
 
-        if (ctx.currentObjectType !== ctx.OBJECT_TYPE_CLOUD_TRACK) {
-            tabs.Settings = <SettingsTab key="settings" width={this.state.graphWidth} />;
+        if (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK) {
+            tabs.Settings = <SettingsTab key="settings" />;
         }
 
         list = list.concat(

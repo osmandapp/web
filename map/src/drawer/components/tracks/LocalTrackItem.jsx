@@ -57,7 +57,7 @@ export default function LocalTrackItem({ track }) {
     function updateTrackInfoBlock() {
         const type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
         ctx.setCurrentObjectType(type);
-        ctx.setUpdateContextMenu(true);
+        ctx.setUpdateInfoBlock(true);
     }
 
     function startEdit() {

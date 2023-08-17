@@ -9,10 +9,11 @@ import _ from 'lodash';
 import TracksManager, { isEmptyTrack } from '../../context/TracksManager';
 import useUndoRedo from '../useUndoRedo';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
-import { downloadGpx } from '../../infoblock/components/track/GeneralInfo';
+import { downloadGpx } from './track/GeneralInfo';
 
 const PanelButtons = ({
     orientation,
+    tooltipOrientation,
     setShowInfoBlock,
     infoBlockOpen,
     setInfoBlockOpen,
@@ -31,9 +32,10 @@ const PanelButtons = ({
 
     const { state, setState, undo, redo, clear, isUndoPossible, isRedoPossible, pastStates } = useUndoRedo();
 
-    const isUndoDisabled = !isUndoPossible || (pastStates.length === 1 && _.isEmpty(pastStates[0])); // || ctx.processRouting
-    const isRedoDisabled = !isRedoPossible; // || ctx.processRouting
-    const isProfileDisabled = false; // ctx.processRouting;
+    const isUndoDisabled =
+        !isUndoPossible || (pastStates.length === 1 && _.isEmpty(pastStates[0])) || ctx.selectedGpxFile.syncRouting;
+    const isRedoDisabled = !isRedoPossible || ctx.selectedGpxFile.syncRouting;
+    const isProfileProgress = ctx.processRouting;
 
     useEffect(() => {
         if (clearState) {
@@ -63,26 +65,25 @@ const PanelButtons = ({
         ctx.setTrackState({ update: false });
     }
 
-    function getState(currentState) {
-        getTrack(currentState);
+    function getState(nextState) {
+        getTrack(nextState);
         setUseSavedState(false);
     }
 
-    function getTrack(currentState) {
-        let oldLayers = _.cloneDeep(ctx.selectedGpxFile.layers);
-        let objFromState = _.cloneDeep(currentState);
-        objFromState.updateLayers = true;
-        objFromState.layers = oldLayers;
-        objFromState.getRouting = true;
-
-        ctx.setSelectedGpxFile({ ...objFromState });
+    function getTrack(nextState) {
+        const currentLayers = _.cloneDeep(ctx.selectedGpxFile.layers);
+        const objFromState = _.cloneDeep(nextState);
+        objFromState.syncRouting = true; // will be 1st effect
+        objFromState.updateLayers = true; // will be 2nd effect
+        objFromState.layers = currentLayers; // use actual layers
+        ctx.setSelectedGpxFile(objFromState);
     }
 
     function getMarginTop() {
         if (mobile) {
             return orientation === 'vertical' ? `${bsize * 3.5}px` : 0;
         } else {
-            return orientation === 'vertical' ? `-${bsize * 3}px` : 0;
+            return orientation === 'vertical' ? `-${bsize * 0.2}px` : 0;
         }
     }
 
@@ -122,7 +123,7 @@ const PanelButtons = ({
                     >
                         {ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && (
                             <>
-                                <Tooltip title="Cloud track" arrow placement="right">
+                                <Tooltip title="Cloud track" arrow placement={tooltipOrientation}>
                                     <IconButton
                                         variant="contained"
                                         type="button"
@@ -137,7 +138,7 @@ const PanelButtons = ({
                                         <Cloud fontSize="medium" color="primary" />
                                     </IconButton>
                                 </Tooltip>
-                                <Tooltip title="Edit" arrow placement="right">
+                                <Tooltip title="Edit" arrow placement={tooltipOrientation}>
                                     <IconButton
                                         variant="contained"
                                         type="button"
@@ -149,19 +150,17 @@ const PanelButtons = ({
                             </>
                         )}
                         {ctx.createTrack && (
-                            <Tooltip title="Change profile" arrow placement="right">
+                            <Tooltip title="Change profile" arrow placement={tooltipOrientation}>
                                 <IconButton
                                     sx={{ width: 40, height: 40 }}
                                     variant="contained"
                                     type="button"
                                     onClick={() => {
-                                        if (!isProfileDisabled) {
-                                            ctx.trackProfileManager.change = TracksManager.CHANGE_PROFILE_ALL;
-                                            ctx.setTrackProfileManager({ ...ctx.trackProfileManager });
-                                        }
+                                        ctx.trackProfileManager.change = TracksManager.CHANGE_PROFILE_ALL;
+                                        ctx.setTrackProfileManager({ ...ctx.trackProfileManager });
                                     }}
                                 >
-                                    {isProfileDisabled ? (
+                                    {isProfileProgress ? (
                                         <CircularProgress size={40 - 16} />
                                     ) : (
                                         ctx.trackRouter.getProfile()?.icon
@@ -170,13 +169,14 @@ const PanelButtons = ({
                             </Tooltip>
                         )}
                         {ctx.loginUser && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
-                            <Tooltip title="Save to cloud" arrow placement="right">
+                            <Tooltip title="Save to cloud" arrow placement={tooltipOrientation}>
                                 <span style={styleSpan}>
                                     <IconButton
                                         variant="contained"
                                         type="button"
-                                        disabled={isEmptyTrack(ctx.selectedGpxFile)}
+                                        disabled={isEmptyTrack(ctx.selectedGpxFile, true)}
                                         onClick={() => {
+                                            ctx.setUpdateInfoBlock(true);
                                             ctx.selectedGpxFile.save = true;
                                             ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
                                         }}
@@ -187,7 +187,7 @@ const PanelButtons = ({
                             </Tooltip>
                         )}
                         {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
-                            <Tooltip title="Undo" arrow placement="right">
+                            <Tooltip title="Undo" arrow placement={tooltipOrientation}>
                                 <span style={styleSpan}>
                                     <IconButton
                                         variant="contained"
@@ -205,7 +205,7 @@ const PanelButtons = ({
                             </Tooltip>
                         )}
                         {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
-                            <Tooltip title="Redo" arrow placement="right">
+                            <Tooltip title="Redo" arrow placement={tooltipOrientation}>
                                 <span style={styleSpan}>
                                     <IconButton
                                         variant="contained"
@@ -224,12 +224,12 @@ const PanelButtons = ({
                         )}
                         {ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER &&
                             ctx.currentObjectType !== ctx.OBJECT_TYPE_POI && (
-                                <Tooltip title="Download GPX" arrow placement="right">
+                                <Tooltip title="Download GPX" arrow placement={tooltipOrientation}>
                                     <span style={styleSpan}>
                                         <IconButton
                                             variant="contained"
                                             type="button"
-                                            disabled={isEmptyTrack(ctx.selectedGpxFile)}
+                                            disabled={isEmptyTrack(ctx.selectedGpxFile, true)}
                                             onClick={() => downloadGpx(ctx)}
                                         >
                                             <Download fontSize="small" />
@@ -239,7 +239,7 @@ const PanelButtons = ({
                             )}
                         {ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER &&
                             ctx.currentObjectType !== ctx.OBJECT_TYPE_POI && (
-                                <Tooltip title="Delete" arrow placement="right">
+                                <Tooltip title="Delete" arrow placement={tooltipOrientation}>
                                     <IconButton
                                         sx={{ mb: '1px' }}
                                         variant="contained"
@@ -251,20 +251,20 @@ const PanelButtons = ({
                                 </Tooltip>
                             )}
                         {ctx.currentObjectType && !infoBlockOpen && !mobile && (
-                            <Tooltip title="Open info" arrow placement="right">
+                            <Tooltip title="Open info" arrow placement={tooltipOrientation}>
                                 <IconButton onClick={toggleInfoBlock} sx={{ transform: 'scaleX(1)' }}>
                                     <MenuOpen fontSize="small" />
                                 </IconButton>
                             </Tooltip>
                         )}
                         {ctx.currentObjectType && infoBlockOpen && !mobile && (
-                            <Tooltip title="Close info" arrow placement="right">
+                            <Tooltip title="Close info" arrow placement={tooltipOrientation}>
                                 <IconButton onClick={toggleInfoBlock} sx={{ transform: 'scaleX(-1)' }}>
                                     <MenuOpen fontSize="small" />
                                 </IconButton>
                             </Tooltip>
                         )}
-                        <Tooltip title="Close" arrow placement="right">
+                        <Tooltip title="Close" arrow placement={tooltipOrientation}>
                             <IconButton
                                 variant="contained"
                                 type="button"

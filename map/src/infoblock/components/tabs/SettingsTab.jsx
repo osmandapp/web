@@ -3,14 +3,14 @@ import { useContext } from 'react';
 import SelectTrackProfile from '../track/SelectTrackProfile';
 import AppContext from '../../../context/AppContext';
 
-const SettingsTab = ({ width }) => {
+const SettingsTab = () => {
     const ctx = useContext(AppContext);
 
     const geoRouter = ctx.trackRouter;
     const { type } = geoRouter.getProfile();
 
     return (
-        <Box width={width}>
+        <Box width={ctx.infoBlockWidth}>
             <SelectTrackProfile geoRouter={geoRouter} label={`Next segment profile (${type})`} />
         </Box>
     );
