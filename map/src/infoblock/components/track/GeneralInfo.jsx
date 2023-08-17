@@ -69,7 +69,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
         if (ref?.current) {
             setDescHeight(ref.current.clientHeight);
         }
-    });
+    }, [ctx.selectedGpxFile?.metaData?.desc]);
 
     useEffect(() => {
         const track = ctx.selectedGpxFile;

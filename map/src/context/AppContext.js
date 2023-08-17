@@ -346,7 +346,7 @@ export const AppContextProvider = (props) => {
     const [createTrack, setCreateTrack] = useState(null);
     const [gpxCollection, setGpxCollection] = useState([]);
     const [loadingContextMenu, setLoadingContextMenu] = useState(false);
-    const [updateContextMenu, setUpdateContextMenu] = useState(false);
+    const [updateInfoBlock, setUpdateInfoBlock] = useState(false);
     const [trackProfileManager, setTrackProfileManager] = useState({});
     const [pointContextMenu, setPointContextMenu] = useState({});
     const [routingErrorMsg, setRoutingErrorMsg] = useState(null);
@@ -553,8 +553,8 @@ export const AppContextProvider = (props) => {
                 setGpxCollection,
                 loadingContextMenu,
                 setLoadingContextMenu,
-                updateContextMenu,
-                setUpdateContextMenu,
+                updateInfoBlock,
+                setUpdateInfoBlock,
                 trackProfileManager,
                 setTrackProfileManager,
                 routingErrorMsg,

@@ -4,7 +4,6 @@ import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import TrackLayerProvider from '../TrackLayerProvider';
 import TracksManager, { isEmptyTrack } from '../../context/TracksManager';
-import MarkerOptions from '../markers/MarkerOptions';
 import _ from 'lodash';
 import EditablePolyline from '../EditablePolyline';
 import EditableMarker from '../EditableMarker';
@@ -364,7 +363,7 @@ export default function LocalClientTrackLayer() {
                     ctx.setSelectedGpxFile(track);
                     let type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
                     ctx.setCurrentObjectType(type);
-                    ctx.setUpdateContextMenu(true);
+                    ctx.setUpdateInfoBlock(true);
                 }
             });
             layer.addTo(map);
@@ -847,7 +846,7 @@ export default function LocalClientTrackLayer() {
         ctxTrack.layers = createFirstLayers(newPoint, ctxTrack.layers);
         ctxTrack.updateLayers = true;
         ctxTrack.addPoint = true;
-        ctx.setUpdateContextMenu(true);
+        ctx.setUpdateInfoBlock(true);
 
         TracksManager.updateState(ctx);
     }

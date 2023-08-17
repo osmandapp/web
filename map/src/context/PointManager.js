@@ -102,7 +102,7 @@ async function deletePointByIndex(currentTrack, index, ctx) {
         res = await deleteByIndex(currentTrack.points, index, lengthSum, ctx).then((result) => {
             if (currentTrack.points.length > 0) {
                 if (currentTrack.points.length === 1) {
-                    ctx.setUpdateContextMenu(true);
+                    ctx.setUpdateInfoBlock(true);
                 }
 
                 ctx.selectedGpxFile.updateLayers = true;
@@ -122,7 +122,7 @@ async function deletePointByIndex(currentTrack, index, ctx) {
             } else {
                 let emptyFile = TracksManager.clearTrack(ctx.selectedGpxFile, currentTrack.points);
                 ctx.setSelectedGpxFile({ ...emptyFile });
-                ctx.setUpdateContextMenu(true);
+                ctx.setUpdateInfoBlock(true);
             }
         });
     }

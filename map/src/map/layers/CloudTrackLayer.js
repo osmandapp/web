@@ -14,7 +14,7 @@ function addTrackToMap({ ctx, file, map, fit = true } = {}) {
             ctx.setSelectedGpxFile(Object.assign({}, file));
             const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
             ctx.setCurrentObjectType(type);
-            ctx.setUpdateContextMenu(true);
+            ctx.setUpdateInfoBlock(true);
         }
     });
     if (fit) {

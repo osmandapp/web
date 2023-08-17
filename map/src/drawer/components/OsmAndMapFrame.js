@@ -95,7 +95,7 @@ const OsmAndMapFrame = () => {
                     variant="temporary"
                     PaperProps={{
                         sx: {
-                            width: `${ctx.infoBlockWidth}`,
+                            width: ctx.infoBlockWidth,
                         },
                     }}
                     open={true}

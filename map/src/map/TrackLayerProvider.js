@@ -151,7 +151,7 @@ function getPointGeoProfile(point, points) {
     }
 }
 
-function parseWpt(points, layers, ctx) {
+function parseWpt(points, layers, ctx = null) {
     points &&
         points.forEach((point) => {
             let opt;
@@ -181,9 +181,11 @@ function parseWpt(points, layers, ctx) {
             opt.draggable = false;
             opt.wpt = true;
             let marker = new L.Marker(new L.LatLng(lat, lon), opt);
-            marker.on('click', (e) => {
-                ctx.setSelectedWpt(e);
-            });
+            if (ctx) {
+                marker.on('click', (e) => {
+                    ctx.setSelectedWpt(e);
+                });
+            }
             layers.push(marker);
         });
 }

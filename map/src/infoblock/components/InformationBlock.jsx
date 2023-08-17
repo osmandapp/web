@@ -81,10 +81,10 @@ export default function InformationBlock({
             if (!ctx.currentObjectType) {
                 setTabsObj(null);
                 setShowInfoBlock(false);
-            } else if (ctx.updateContextMenu || !prevTrack || Object.keys(prevTrack).length === 0 || !showInfoBlock) {
+            } else if (ctx.updateInfoBlock || !prevTrack || Object.keys(prevTrack).length === 0 || !showInfoBlock) {
                 let obj;
                 setPrevTrack(ctx.selectedGpxFile);
-                ctx.setUpdateContextMenu(false);
+                ctx.setUpdateInfoBlock(false);
                 if (ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && ctx.selectedGpxFile?.tracks) {
                     obj = new TrackTabList().create(ctx, setShowInfoBlock);
                 } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_WEATHER && ctx.weatherPoint) {
@@ -107,7 +107,7 @@ export default function InformationBlock({
                 }
             }
         }
-    }, [ctx.currentObjectType, ctx.selectedGpxFile, ctx.weatherPoint, ctx.updateContextMenu]);
+    }, [ctx.currentObjectType, ctx.selectedGpxFile, ctx.weatherPoint, ctx.updateInfoBlock]);
 
     function clearStateIfObjChange() {
         if (

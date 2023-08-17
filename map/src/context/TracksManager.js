@@ -257,7 +257,7 @@ function handleEditCloudTrack(ctx) {
 
     function proceed() {
         addTrack({ ctx, track, overwrite: true });
-        ctx.setUpdateContextMenu(true);
+        ctx.setUpdateInfoBlock(true);
     }
 
     confirm({
@@ -586,7 +586,7 @@ async function downloadAfterUpload(ctx, file) {
     const track = await TracksManager.getTrackData(gpxfile);
     if (isEmptyTrack(track, true) === false) {
         const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
-        ctx.setUpdateContextMenu(true);
+        ctx.setUpdateInfoBlock(true);
         ctx.setCurrentObjectType(type);
         track.name = file.name;
         Object.keys(track).forEach((t) => {
