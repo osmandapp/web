@@ -359,7 +359,7 @@ export const AppContextProvider = (props) => {
     const [showPoiCategories, setShowPoiCategories] = useState([]);
     const [poiCategory, setPoiCategories] = useState(null);
 
-    const [routingCache, setRoutingCache] = useState([]);
+    const [routingCache, mutateRoutingCache] = useMutator({});
     const [routingNewSegments, setRoutingNewSegments] = useState([]);
     const [processRouting, setProcessRouting] = useState(false);
     const [selectedWpt, setSelectedWpt] = useState(null);
@@ -568,7 +568,7 @@ export const AppContextProvider = (props) => {
                 openedPopper,
                 setOpenedPopper,
                 routingCache,
-                setRoutingCache,
+                mutateRoutingCache,
                 routingNewSegments,
                 setRoutingNewSegments,
                 processRouting,

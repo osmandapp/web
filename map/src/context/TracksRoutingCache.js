@@ -1,64 +1,190 @@
 import _ from 'lodash';
 import TracksManager from './TracksManager';
-import TrackLayerProvider from '../map/TrackLayerProvider';
+import EditablePolyline from '../map/EditablePolyline';
 
-const STOP_CALC_ROUTING = 'stop';
+const MAX_STARTED_ROUTER_JOBS = 6;
+export const GET_ANALYSIS_DEBOUNCE_MS = 1000; // don't flood get-analysis
 
-function addRoutingToCache(startPoint, endPoint, tempLine, ctx, routingCacheRef) {
-    const routingKey = createRoutingKey(startPoint, endPoint, startPoint.geoProfile);
-    let routingList = routingCacheRef ? routingCacheRef : ctx.routingCache;
+export function effectControlRouterRequests({ ctx, startedRouterJobs, setStartedRouterJobs }) {
+    if (startedRouterJobs > MAX_STARTED_ROUTER_JOBS) {
+        return false;
+    }
 
-    routingList[routingKey] = {
-        startPoint: _.cloneDeep(startPoint),
-        endPoint: _.cloneDeep(endPoint),
-        geoProfile: startPoint.geoProfile,
-        tempLine: tempLine,
-        geometry: null,
-    };
-    ctx.setRoutingCache({ ...routingList });
-    return routingList;
-}
+    let started = 0;
+    const cache = ctx.routingCache;
 
-function getRoutingFromCache(track, ctx, map) {
-    for (let i = 0; i < track.points.length - 1; i++) {
-        const start = track.points[i];
-        const end = track.points[i + 1];
-        if (end.geoProfile) {
-            const routingKey = createRoutingKey(start, end, end.geoProfile);
-            const geoCache = ctx.routingCache[routingKey]?.geometry;
-            if (geoCache === STOP_CALC_ROUTING) {
-                let polylineTemp = TrackLayerProvider.createEditableTempLPolyline(start, end, map, ctx);
-                track.layers.addLayer(polylineTemp);
-                track.updateLayers = true;
-                end.geometry = [];
-                updateSelectedRouting(ctx.routingCache[routingKey], polylineTemp, ctx);
-            } else if (geoCache) {
-                end.geometry = geoCache;
+    for (const key in cache) {
+        if (cache[key].geometry === null && cache[key].busy !== true) {
+            setStartedRouterJobs((x) => x + 1);
+            ctx.mutateRoutingCache((o) => o[key] && (o[key].busy = true));
+
+            const { startPoint, endPoint, geoProfile } = cache[key];
+
+            Promise.resolve(
+                ctx.trackRouter.updateRouteBetweenPoints(ctx, startPoint, endPoint, geoProfile).then(
+                    (success) => {
+                        setStartedRouterJobs((x) => x - 1);
+                        ctx.mutateRoutingCache((o) => o[key] && (o[key].geometry = success));
+                    },
+                    (error) => {
+                        // keep busy=true till next init
+                        setStartedRouterJobs((x) => x - 1);
+                        console.debug('updateRouteBeetwenPoints failed', error);
+                    }
+                )
+            );
+
+            if (++started >= MAX_STARTED_ROUTER_JOBS - startedRouterJobs) {
+                break;
             }
         }
     }
-    return track;
+
+    if (started > 0) {
+        return true;
+    }
+
+    ctx.setProcessRouting(false); // all done but a few Promises might still be active
+    return false;
 }
 
-function updateSelectedRouting(segment, polylineTemp, ctx) {
-    segment.geometry = null;
-    segment.tempLine = polylineTemp;
-    ctx.setRoutingCache({ ...ctx.routingCache });
-}
+export function effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges, debouncerTimer }) {
+    let updated = 0;
+    const validKeys = {};
+    const cache = ctx.routingCache;
+    const track = ctx.selectedGpxFile; // ref
+    const points = ctx.selectedGpxFile.points; // ref
 
-function validateRoutingCache(point, ctx, routingCacheRef) {
-    let routingList = routingCacheRef ? routingCacheRef : ctx.routingCache;
-    Object.keys(routingList).forEach((k) => {
-        if (segmentHasPoint(routingList[k], point) && routingList[k].geometry === null) {
-            routingList[k].geometry = 'stop';
+    if (points && points.length >= 2) {
+        for (let i = 1; i < points.length; i++) {
+            const startPoint = points[i - 1];
+            const endPoint = points[i];
+            const geoProfile = geoRouter.getGeoProfile(startPoint);
+            const key = createRoutingKey(startPoint, endPoint, geoProfile);
+
+            if (cache[key]) {
+                const geometry = cache[key].geometry;
+                const tempLine = cache[key].tempLine;
+
+                validKeys[key] = true;
+
+                if (geometry && tempLine) {
+                    // used when tempLine exist (segment recalculation, new points, etc)
+                    refreshTempLine({ ctx, geometry, track, tempLine, color: geoRouter.getColor(startPoint) });
+                    ctx.mutateRoutingCache((o) => o[key] && (o[key].tempLine = null)); // use tempLine only once
+                    endPoint.geometry = geometry; // mutate
+                    updated++;
+                }
+            }
         }
-    });
+    }
+
+    dropOutdatedCache({ ctx, validKeys, killLayers: false });
+
+    if (updated > 0) {
+        requestAnalytics({ ctx, track, debouncerTimer });
+        saveChanges(null, null, null, track); // mutate track with more data and call setSelectedGpxFile({...})
+    }
+
+    return updated > 0;
 }
 
-function segmentHasPoint(segment, point) {
-    return (
-        TracksManager.isEqualPoints(segment.startPoint, point) || TracksManager.isEqualPoints(segment.endPoint, point)
+export function debouncer(f, timerRef, ms) {
+    if (timerRef.current) {
+        clearTimeout(timerRef.current);
+        timerRef.current = null;
+    }
+    if (timerRef.current === null) {
+        timerRef.current = setTimeout(() => {
+            timerRef.current = null;
+            f();
+        }, ms);
+    }
+}
+
+function requestAnalytics({ ctx, track, debouncerTimer }) {
+    const analysis = () => {
+        TracksManager.getTrackWithAnalysis(
+            TracksManager.GET_ANALYSIS,
+            ctx,
+            ctx.setLoadingContextMenu,
+            track.points
+        ).then((res) => {
+            if (res) ctx.setUnverifiedGpxFile(() => ({ ...res }));
+        });
+    };
+
+    debouncer(analysis, debouncerTimer, GET_ANALYSIS_DEBOUNCE_MS);
+}
+
+// refresh fresh data to previously created "temp-line" layer
+function refreshTempLine({ ctx, geometry, track, tempLine, color }) {
+    // don't destroy tempLine (empty geo)
+    if (geometry && geometry.length > 0) {
+        const polyline = new EditablePolyline(null, ctx, geometry, null, track).create();
+        tempLine.setStyle({ color, dashArray: null });
+        tempLine.setLatLngs(polyline._latlngs);
+        tempLine.options.name = undefined;
+    } else {
+        tempLine.setStyle({ color });
+    }
+}
+
+// cleanup but keep: by validKeys or if geometry finished
+function dropOutdatedCache({ ctx, validKeys, killLayers = false }) {
+    const cache = ctx.routingCache;
+    for (const key in cache) {
+        if (validKeys[key]) {
+            continue;
+        }
+        if (cache[key].geometry && cache[key].tempLine === null) {
+            continue;
+        }
+        if (killLayers && cache[key].tempLine && ctx.selectedGpxFile.layers) {
+            cache[key].tempLine.removeFrom(ctx.selectedGpxFile.layers);
+        }
+        ctx.mutateRoutingCache((o) => delete o[key]);
+    }
+}
+
+// add start-end segment to cache, re-use cached geometry
+function addRoutingToCache(startPoint, endPoint, tempLine, ctx) {
+    const geoProfile = ctx.trackRouter.getGeoProfile(startPoint);
+    const routingKey = createRoutingKey(startPoint, endPoint, geoProfile);
+    const cachedGeometry = ctx.routingCache[routingKey]?.geometry ?? null;
+    ctx.mutateRoutingCache(
+        (o) =>
+            (o[routingKey] = {
+                tempLine: tempLine,
+                startPoint: _.cloneDeep(startPoint),
+                endPoint: _.cloneDeep(endPoint),
+                geoProfile: geoProfile,
+                geometry: cachedGeometry,
+                busy: false,
+            })
     );
+}
+
+// undo/redo: one-directional sync (cache -> track)
+export function syncTrackWithCache({ ctx, track, geoRouter, debouncerTimer }) {
+    const cache = ctx.routingCache;
+    const points = track.points; // ref
+
+    if (points && points.length >= 2) {
+        for (let i = 1; i < points.length; i++) {
+            const startPoint = points[i - 1];
+            const endPoint = points[i];
+            const geoProfile = geoRouter.getGeoProfile(startPoint);
+            const key = createRoutingKey(startPoint, endPoint, geoProfile);
+
+            if (cache[key] && cache[key].geometry) {
+                endPoint.geometry = cache[key].geometry; // mutate
+            }
+        }
+    }
+
+    setTimeout(() => requestAnalytics({ ctx, track, debouncerTimer }), GET_ANALYSIS_DEBOUNCE_MS); // delayed
+    dropOutdatedCache({ ctx, validKeys: {}, killLayers: true });
 }
 
 // key looks like query string but never used as it
@@ -68,11 +194,9 @@ function createRoutingKey(startPoint, endPoint, geoProfile) {
     }
 
     const ll = `startLat=${startPoint?.lat},startLng=${startPoint?.lng},endLat=${endPoint?.lat},endLng=${endPoint?.lng},`;
-
-    // const geo = TracksManager.formatRouteMode(geoProfile); // this is not enough
     const geo = JSON.stringify(geoProfile); // include all of type/router/profile/params
 
-    return ll + geo;
+    return ll + geo; // Reminder: to keep property creation order, keys must be String
 }
 
 function addSegmentToRouting(start, end, oldPoint, tempPolyline, segments) {
@@ -88,8 +212,6 @@ function addSegmentToRouting(start, end, oldPoint, tempPolyline, segments) {
 
 const TracksRoutingCache = {
     addRoutingToCache,
-    getRoutingFromCache,
-    validateRoutingCache,
     addSegmentToRouting,
 };
 

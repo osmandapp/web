@@ -26,7 +26,7 @@ const FavoriteLayer = () => {
         Object.entries(filesMap).forEach(([key, file]) => {
             if (file.url) {
                 if (!file.markers) {
-                    file.markers = TrackLayerProvider.createLayersByTrackData(file);
+                    file.markers = TrackLayerProvider.createLayersByTrackData(file, ctx, map);
                     if (ctx.selectedGpxFile?.markerCurrent && key === ctx.selectedGpxFile.nameGroup) {
                         updateSelectedFavoriteOnMap(file);
                     }

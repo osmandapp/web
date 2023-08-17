@@ -31,9 +31,10 @@ const PanelButtons = ({
 
     const { state, setState, undo, redo, clear, isUndoPossible, isRedoPossible, pastStates } = useUndoRedo();
 
-    const isUndoDisabled = !isUndoPossible || (pastStates.length === 1 && _.isEmpty(pastStates[0])); // || ctx.processRouting
-    const isRedoDisabled = !isRedoPossible; // || ctx.processRouting
-    const isProfileDisabled = false; // ctx.processRouting;
+    const isUndoDisabled =
+        !isUndoPossible || (pastStates.length === 1 && _.isEmpty(pastStates[0])) || ctx.selectedGpxFile.syncRouting;
+    const isRedoDisabled = !isRedoPossible || ctx.selectedGpxFile.syncRouting;
+    const isProfileProgress = ctx.processRouting;
 
     useEffect(() => {
         if (clearState) {
@@ -63,19 +64,18 @@ const PanelButtons = ({
         ctx.setTrackState({ update: false });
     }
 
-    function getState(currentState) {
-        getTrack(currentState);
+    function getState(nextState) {
+        getTrack(nextState);
         setUseSavedState(false);
     }
 
-    function getTrack(currentState) {
-        let oldLayers = _.cloneDeep(ctx.selectedGpxFile.layers);
-        let objFromState = _.cloneDeep(currentState);
-        objFromState.updateLayers = true;
-        objFromState.layers = oldLayers;
-        objFromState.getRouting = true;
-
-        ctx.setSelectedGpxFile({ ...objFromState });
+    function getTrack(nextState) {
+        const currentLayers = _.cloneDeep(ctx.selectedGpxFile.layers);
+        const objFromState = _.cloneDeep(nextState);
+        objFromState.syncRouting = true; // will be 1st effect
+        objFromState.updateLayers = true; // will be 2nd effect
+        objFromState.layers = currentLayers; // use actual layers
+        ctx.setSelectedGpxFile(objFromState);
     }
 
     function getMarginTop() {
@@ -155,13 +155,11 @@ const PanelButtons = ({
                                     variant="contained"
                                     type="button"
                                     onClick={() => {
-                                        if (!isProfileDisabled) {
-                                            ctx.trackProfileManager.change = TracksManager.CHANGE_PROFILE_ALL;
-                                            ctx.setTrackProfileManager({ ...ctx.trackProfileManager });
-                                        }
+                                        ctx.trackProfileManager.change = TracksManager.CHANGE_PROFILE_ALL;
+                                        ctx.setTrackProfileManager({ ...ctx.trackProfileManager });
                                     }}
                                 >
-                                    {isProfileDisabled ? (
+                                    {isProfileProgress ? (
                                         <CircularProgress size={40 - 16} />
                                     ) : (
                                         ctx.trackRouter.getProfile()?.icon

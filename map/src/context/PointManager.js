@@ -161,10 +161,8 @@ async function deleteByIndex(points, index, lengthSum, ctx) {
                     } else {
                         let tempLine = TrackLayerProvider.createTempPolyline(points[i - 1], points[i + 1]);
                         deleteOldTempLayer(ctx, points[i + 1]);
-                        tempLine.point = points[i + 1];
                         ctx.selectedGpxFile.layers.addLayer(tempLine);
                         ctx.selectedGpxFile.updateLayers = true;
-                        TracksRoutingCache.validateRoutingCache(points[i], ctx);
                         TracksRoutingCache.addRoutingToCache(points[i - 1], points[i + 1], tempLine, ctx);
                         points[i + 1].geometry = [];
                     }

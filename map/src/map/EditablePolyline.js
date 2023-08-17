@@ -30,7 +30,11 @@ export default class EditablePolyline {
                 title: 'poly',
                 draggable: true,
             });
-            this.addEvents(polyline, marker);
+            if (this.map) {
+                // don't set events if no map
+                // used by cache refreshTempLine
+                this.addEvents(polyline, marker);
+            }
         }
         return polyline;
     }
@@ -219,7 +223,6 @@ export default class EditablePolyline {
                 },
                 currentPoint
             );
-            polylineTempCurrent.point = currentPoint;
             polylineTempCurrent.addTo(this.map);
 
             let polylineTempNext = TrackLayerProvider.createTempPolyline(
@@ -229,7 +232,7 @@ export default class EditablePolyline {
                 },
                 nextPoint
             );
-            polylineTempNext.point = nextPoint;
+            // polylineTempNext.point = nextPoint; // alread defined
             polylineTempNext.addTo(this.map);
 
             segments = TracksRoutingCache.addSegmentToRouting(

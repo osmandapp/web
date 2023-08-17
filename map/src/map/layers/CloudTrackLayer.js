@@ -6,7 +6,7 @@ import TracksManager from '../../context/TracksManager';
 import { useMutator } from '../../util/Utils';
 
 function addTrackToMap({ ctx, file, map, fit = true } = {}) {
-    const layer = TrackLayerProvider.createLayersByTrackData(file, ctx);
+    const layer = TrackLayerProvider.createLayersByTrackData(file, ctx, map);
 
     layer.on('click', () => {
         if (file.name !== ctx.selectedGpxFile.name && ctx.infoBlockWidth === '0px') {
