@@ -4,6 +4,8 @@ import _ from 'lodash';
 import { apiGet, apiPost } from '../util/HttpApi';
 import { compressFromJSON, decompressToJSON } from '../util/GzipBase64.mjs';
 import { confirm } from '../dialogs/GlobalConfirmationDialog';
+import L from 'leaflet';
+import MarkerOptions from '../map/markers/MarkerOptions';
 
 const GPX_FILE_TYPE = 'GPX';
 const GET_SRTM_DATA = 'get-srtm-data';
@@ -255,7 +257,7 @@ function handleEditCloudTrack(ctx) {
 
     function proceed() {
         addTrack({ ctx, track, overwrite: true });
-        ctx.setUpdateContextMenu(true);
+        ctx.setUpdateInfoBlock(true);
     }
 
     confirm({
@@ -582,8 +584,9 @@ async function downloadAfterUpload(ctx, file) {
         type: 'text/plain',
     });
     const track = await TracksManager.getTrackData(gpxfile);
-    if (isEmptyTrack(track) === false) {
+    if (isEmptyTrack(track, true) === false) {
         const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
+        ctx.setUpdateInfoBlock(true);
         ctx.setCurrentObjectType(type);
         track.name = file.name;
         Object.keys(track).forEach((t) => {
@@ -881,14 +884,38 @@ function updateState(ctx) {
 }
 
 // check: geo-points, way-points, gpx-trkpt
-export function isEmptyTrack(track) {
-    if (track?.points?.length > 0 || track?.wpts?.length > 0) {
+export function isEmptyTrack(track, checkWpt) {
+    if (track?.points?.length > 0 || (checkWpt && track?.wpts?.length > 0)) {
         return false;
     }
     if (track?.tracks?.length > 0 && track.tracks[0].points?.length > 0) {
         return false;
     }
     return true;
+}
+
+function showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker) {
+    if (ctxTrack?.showPoint?.layer) {
+        map.setView([ctxTrack.showPoint.layer._latlng.lat, ctxTrack.showPoint.layer._latlng.lng], 17);
+    } else {
+        if (selectedPointMarker) {
+            map.removeLayer(selectedPointMarker.marker);
+        }
+        let marker = createPointMarkerOnMap(ctxTrack, map);
+        setSelectedPointMarker({ marker: marker, trackName: ctxTrack.name });
+    }
+}
+
+function createPointMarkerOnMap(ctxTrack, map) {
+    return new L.marker(
+        {
+            lng: ctxTrack.showPoint.lng,
+            lat: ctxTrack.showPoint.lat,
+        },
+        {
+            icon: MarkerOptions.options.pointerIcons,
+        }
+    ).addTo(map);
 }
 
 const TracksManager = {
@@ -924,6 +951,7 @@ const TracksManager = {
     isEqualPoints,
     updateState,
     prepareAnalysis,
+    showSelectedPointOnMap,
     GPX_FILE_TYPE: GPX_FILE_TYPE,
     GET_SRTM_DATA: GET_SRTM_DATA,
     GET_ANALYSIS: GET_ANALYSIS,

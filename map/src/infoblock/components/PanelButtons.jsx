@@ -9,7 +9,7 @@ import _ from 'lodash';
 import TracksManager, { isEmptyTrack } from '../../context/TracksManager';
 import useUndoRedo from '../useUndoRedo';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
-import { downloadGpx } from '../../infoblock/components/track/GeneralInfo';
+import { downloadGpx } from './track/GeneralInfo';
 
 const PanelButtons = ({
     orientation,
@@ -175,8 +175,9 @@ const PanelButtons = ({
                                     <IconButton
                                         variant="contained"
                                         type="button"
-                                        disabled={isEmptyTrack(ctx.selectedGpxFile)}
+                                        disabled={isEmptyTrack(ctx.selectedGpxFile, true)}
                                         onClick={() => {
+                                            ctx.setUpdateInfoBlock(true);
                                             ctx.selectedGpxFile.save = true;
                                             ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
                                         }}
@@ -229,7 +230,7 @@ const PanelButtons = ({
                                         <IconButton
                                             variant="contained"
                                             type="button"
-                                            disabled={isEmptyTrack(ctx.selectedGpxFile)}
+                                            disabled={isEmptyTrack(ctx.selectedGpxFile, true)}
                                             onClick={() => downloadGpx(ctx)}
                                         >
                                             <Download fontSize="small" />

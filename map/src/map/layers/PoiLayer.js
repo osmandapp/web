@@ -154,7 +154,7 @@ export default function PoiLayer() {
             latlng: e.sourceTarget._latlng,
         };
         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile, poi });
-        ctx.setUpdateContextMenu(true);
+        ctx.setUpdateInfoBlock(true);
     }
 
     function createPoiLayer(poiList = []) {

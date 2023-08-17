@@ -346,7 +346,7 @@ export const AppContextProvider = (props) => {
     const [createTrack, setCreateTrack] = useState(null);
     const [gpxCollection, setGpxCollection] = useState([]);
     const [loadingContextMenu, setLoadingContextMenu] = useState(false);
-    const [updateContextMenu, setUpdateContextMenu] = useState(false);
+    const [updateInfoBlock, setUpdateInfoBlock] = useState(false);
     const [trackProfileManager, setTrackProfileManager] = useState({});
     const [pointContextMenu, setPointContextMenu] = useState({});
     const [routingErrorMsg, setRoutingErrorMsg] = useState(null);
@@ -377,6 +377,7 @@ export const AppContextProvider = (props) => {
     });
 
     const [develFeatures, setDevelFeatures] = useState(process.env.REACT_APP_DEVEL_FEATURES === 'yes');
+    const [infoBlockWidth, setInfoBlockWidth] = useState(0);
 
     routeRouter.initSetter({ setter: setRouteRouter });
     trackRouter.initSetter({ setter: setTrackRouter });
@@ -552,8 +553,8 @@ export const AppContextProvider = (props) => {
                 setGpxCollection,
                 loadingContextMenu,
                 setLoadingContextMenu,
-                updateContextMenu,
-                setUpdateContextMenu,
+                updateInfoBlock,
+                setUpdateInfoBlock,
                 trackProfileManager,
                 setTrackProfileManager,
                 routingErrorMsg,
@@ -584,6 +585,8 @@ export const AppContextProvider = (props) => {
                 setPoiCategories,
                 develFeatures,
                 setDevelFeatures,
+                infoBlockWidth,
+                setInfoBlockWidth,
             }}
         >
             {props.children}

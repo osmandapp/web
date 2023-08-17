@@ -63,7 +63,7 @@ export default function WptMapDialog() {
     };
 
     useEffect(() => {
-        if (ctx.selectedWpt) {
+        if (ctx.selectedGpxFile?.wpts && ctx.selectedWpt) {
             ctx.addFavorite.editTrack = true;
             ctx.setAddFavorite({ ...ctx.addFavorite });
             const lat = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lat : ctx.selectedWpt.wpt.lat;
@@ -89,7 +89,7 @@ export default function WptMapDialog() {
                 <Dialog sx={{ maxWidth: `${widthDialog}px` }} disableEnforceFocus open={ctx.selectedWpt !== null}>
                     <DialogContent sx={{ overflowX: 'hidden', overflowY: 'hidden' }}>
                         <IconButton
-                            sx={{ float: 'right', mb: -1, mt: -1, mr: -2 }}
+                            sx={{ float: 'right', mb: -1, mt: -1, mr: -2, zIndex: 1000 }}
                             variant="contained"
                             type="button"
                             onClick={() => {
@@ -131,7 +131,7 @@ export default function WptMapDialog() {
                             </MenuItem>
                             {wpt.desc && wpt.desc !== '' && (
                                 <ListItemText>
-                                    <Typography component={'span'} variant="inherit">
+                                    <Typography component={'span'} variant="inherit" style={{ whiteSpace: 'pre-line' }}>
                                         {descriptionOpen ? wpt.desc : wpt.desc.substring(0, 150)}
                                         {wpt.desc.length > 150 && (
                                             <ListItemIcon onClick={toggleDescriptionOpen}>
@@ -139,7 +139,7 @@ export default function WptMapDialog() {
                                             </ListItemIcon>
                                         )}
                                     </Typography>
-                                    <Divider light />
+                                    {wpt.address && wpt.address !== '' && <Divider light />}
                                 </ListItemText>
                             )}
                             {wpt.address && wpt.address !== '' && (
@@ -156,27 +156,29 @@ export default function WptMapDialog() {
                             )}
                         </Typography>
                     </DialogContent>
-                    <DialogActions sx={{ display: 'inline' }}>
-                        <Link sx={{ fontSize: '10pt', mx: 2 }} href="#" color="inherit" onClick={enableWptDragging}>
-                            Move this waypoint
-                        </Link>
-                        <div style={{ float: 'right' }}>
-                            <Button
-                                variant="contained"
-                                sx={{ backgroundColor: '#ff595e !important' }}
-                                onClick={toggleDeleteFavoritesDialogOpen}
-                            >
-                                Delete
-                            </Button>
-                            <Button
-                                variant="contained"
-                                sx={{ backgroundColor: '#fbc73a', ml: 1 }}
-                                onClick={toggleEditFavoritesDialogOpen}
-                            >
-                                Edit
-                            </Button>
-                        </div>
-                    </DialogActions>
+                    {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                        <DialogActions sx={{ display: 'inline' }}>
+                            <Link sx={{ fontSize: '10pt', mx: 2 }} href="#" color="inherit" onClick={enableWptDragging}>
+                                Move this waypoint
+                            </Link>
+                            <div style={{ float: 'right' }}>
+                                <Button
+                                    variant="contained"
+                                    sx={{ backgroundColor: '#ff595e !important' }}
+                                    onClick={toggleDeleteFavoritesDialogOpen}
+                                >
+                                    Delete
+                                </Button>
+                                <Button
+                                    variant="contained"
+                                    sx={{ backgroundColor: '#fbc73a', ml: 1 }}
+                                    onClick={toggleEditFavoritesDialogOpen}
+                                >
+                                    Edit
+                                </Button>
+                            </div>
+                        </DialogActions>
+                    )}
                 </Dialog>
             )}
             {editFavoritesDialogOpen && (

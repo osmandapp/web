@@ -161,10 +161,10 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen }) {
         if (result) {
             let type = ctx.OBJECT_TYPE_FAVORITE;
             ctx.setCurrentObjectType(type);
-            ctx.setUpdateContextMenu(true);
+            ctx.setUpdateInfoBlock(true);
             updateGroupMarkers(result, selectedGroup).then();
             closeDialog();
-            ctx.setUpdateContextMenu(true);
+            ctx.setUpdateInfoBlock(true);
         }
     }
 

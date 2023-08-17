@@ -27,7 +27,7 @@ const useStyles = makeStyles({
     },
 });
 
-const FavoriteInfoTab = ({ width }) => {
+const FavoriteInfoTab = () => {
     const styles = contextMenuStyles();
     const classes = useStyles();
     const ctx = useContext(AppContext);
@@ -87,7 +87,7 @@ const FavoriteInfoTab = ({ width }) => {
     }
 
     return (
-        <Box className={styles.item} maxWidth={width}>
+        <Box className={styles.item} maxWidth={ctx.infoBlockWidth}>
             <Typography className={styles.info} variant="subtitle1" color="inherit">
                 <Grid container spacing={2}>
                     <Grid className={styles.name} item xs={10}>

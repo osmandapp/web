@@ -20,7 +20,7 @@ function createLayersByTrackData(data, ctx) {
             addStartEnd(track.points, layers, res.coordsTrk, res.coordsAll);
         }
     });
-    parseWpt(data.wpts, layers);
+    parseWpt(data.wpts, layers, ctx);
 
     if (layers.length > 0) {
         return new L.FeatureGroup(layers);
@@ -151,7 +151,7 @@ function getPointGeoProfile(point, points) {
     }
 }
 
-function parseWpt(points, layers) {
+function parseWpt(points, layers, ctx = null) {
     points &&
         points.forEach((point) => {
             let opt;
@@ -181,6 +181,11 @@ function parseWpt(points, layers) {
             opt.draggable = false;
             opt.wpt = true;
             let marker = new L.Marker(new L.LatLng(lat, lon), opt);
+            if (ctx) {
+                marker.on('click', (e) => {
+                    ctx.setSelectedWpt(e);
+                });
+            }
             layers.push(marker);
         });
 }
