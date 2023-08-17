@@ -41,6 +41,7 @@ const useStyles = makeStyles(() => ({
         },
         '& .leaflet-bar': {
             border: '4px !important',
+            width: '41px !important',
         },
         '& .leaflet-bar a': {
             width: '41px !important',

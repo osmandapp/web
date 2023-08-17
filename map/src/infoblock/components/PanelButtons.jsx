@@ -82,7 +82,7 @@ const PanelButtons = ({
         if (mobile) {
             return orientation === 'vertical' ? `${bsize * 3.5}px` : 0;
         } else {
-            return orientation === 'vertical' ? `-${bsize * 3}px` : 0;
+            return orientation === 'vertical' ? `-${bsize * 0.2}px` : 0;
         }
     }
 

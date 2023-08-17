@@ -49,7 +49,7 @@ export default function GeneralPanelButtons({
 
     function getButtonOrientation() {
         // desktop
-        if (height > 600) {
+        if (height >= 666) {
             return 'vertical';
         } else {
             // mobile
