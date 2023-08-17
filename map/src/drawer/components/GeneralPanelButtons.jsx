@@ -28,6 +28,7 @@ export default function GeneralPanelButtons({
     const [openPoiDialog, setOpenPoiDialog] = useState(false);
     const [width, height] = useWindowSize();
     const orientation = getButtonOrientation();
+    const tooltipOrientation = getTooltipOrientation();
 
     const GPS_CONTROL_HEIGHT = 70 + 40; // margin + button
     const HEADER_HEIGHT = 68;
@@ -101,7 +102,7 @@ export default function GeneralPanelButtons({
                         orientation={orientation}
                         color="primary"
                     >
-                        <Tooltip title="Create track" arrow placement={getTooltipOrientation()}>
+                        <Tooltip title="Create track" arrow placement={tooltipOrientation}>
                             <IconButton
                                 sx={{ mt: orientation === 'vertical' ? '3px' : 0 }}
                                 variant="contained"
@@ -118,7 +119,7 @@ export default function GeneralPanelButtons({
                                 <Insights fontSize="small" />
                             </IconButton>
                         </Tooltip>
-                        <Tooltip title="Upload track" arrow placement={getTooltipOrientation()}>
+                        <Tooltip title="Upload track" arrow placement={tooltipOrientation}>
                             <label htmlFor="contained-button-file">
                                 <StyledInput
                                     accept=".gpx"
@@ -136,7 +137,7 @@ export default function GeneralPanelButtons({
                                 </IconButton>
                             </label>
                         </Tooltip>
-                        <Tooltip title="POI" arrow placement={getTooltipOrientation()}>
+                        <Tooltip title="POI" arrow placement={tooltipOrientation}>
                             <IconButton
                                 variant="contained"
                                 type="button"
@@ -153,7 +154,7 @@ export default function GeneralPanelButtons({
             {showInfoBlock && (
                 <PanelButtons
                     orientation={orientation}
-                    tooltipOrientation={getTooltipOrientation()}
+                    tooltipOrientation={tooltipOrientation}
                     setShowInfoBlock={setShowInfoBlock}
                     infoBlockOpen={infoBlockOpen}
                     setInfoBlockOpen={setInfoBlockOpen}
