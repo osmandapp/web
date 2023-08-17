@@ -13,6 +13,7 @@ import { downloadGpx } from './track/GeneralInfo';
 
 const PanelButtons = ({
     orientation,
+    tooltipOrientation,
     setShowInfoBlock,
     infoBlockOpen,
     setInfoBlockOpen,
@@ -122,7 +123,7 @@ const PanelButtons = ({
                     >
                         {ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && (
                             <>
-                                <Tooltip title="Cloud track" arrow placement="right">
+                                <Tooltip title="Cloud track" arrow placement={tooltipOrientation}>
                                     <IconButton
                                         variant="contained"
                                         type="button"
@@ -137,7 +138,7 @@ const PanelButtons = ({
                                         <Cloud fontSize="medium" color="primary" />
                                     </IconButton>
                                 </Tooltip>
-                                <Tooltip title="Edit" arrow placement="right">
+                                <Tooltip title="Edit" arrow placement={tooltipOrientation}>
                                     <IconButton
                                         variant="contained"
                                         type="button"
@@ -149,7 +150,7 @@ const PanelButtons = ({
                             </>
                         )}
                         {ctx.createTrack && (
-                            <Tooltip title="Change profile" arrow placement="right">
+                            <Tooltip title="Change profile" arrow placement={tooltipOrientation}>
                                 <IconButton
                                     sx={{ width: 40, height: 40 }}
                                     variant="contained"
@@ -168,7 +169,7 @@ const PanelButtons = ({
                             </Tooltip>
                         )}
                         {ctx.loginUser && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
-                            <Tooltip title="Save to cloud" arrow placement="right">
+                            <Tooltip title="Save to cloud" arrow placement={tooltipOrientation}>
                                 <span style={styleSpan}>
                                     <IconButton
                                         variant="contained"
@@ -186,7 +187,7 @@ const PanelButtons = ({
                             </Tooltip>
                         )}
                         {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
-                            <Tooltip title="Undo" arrow placement="right">
+                            <Tooltip title="Undo" arrow placement={tooltipOrientation}>
                                 <span style={styleSpan}>
                                     <IconButton
                                         variant="contained"
@@ -204,7 +205,7 @@ const PanelButtons = ({
                             </Tooltip>
                         )}
                         {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
-                            <Tooltip title="Redo" arrow placement="right">
+                            <Tooltip title="Redo" arrow placement={tooltipOrientation}>
                                 <span style={styleSpan}>
                                     <IconButton
                                         variant="contained"
@@ -223,7 +224,7 @@ const PanelButtons = ({
                         )}
                         {ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER &&
                             ctx.currentObjectType !== ctx.OBJECT_TYPE_POI && (
-                                <Tooltip title="Download GPX" arrow placement="right">
+                                <Tooltip title="Download GPX" arrow placement={tooltipOrientation}>
                                     <span style={styleSpan}>
                                         <IconButton
                                             variant="contained"
@@ -238,7 +239,7 @@ const PanelButtons = ({
                             )}
                         {ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER &&
                             ctx.currentObjectType !== ctx.OBJECT_TYPE_POI && (
-                                <Tooltip title="Delete" arrow placement="right">
+                                <Tooltip title="Delete" arrow placement={tooltipOrientation}>
                                     <IconButton
                                         sx={{ mb: '1px' }}
                                         variant="contained"
@@ -250,20 +251,20 @@ const PanelButtons = ({
                                 </Tooltip>
                             )}
                         {ctx.currentObjectType && !infoBlockOpen && !mobile && (
-                            <Tooltip title="Open info" arrow placement="right">
+                            <Tooltip title="Open info" arrow placement={tooltipOrientation}>
                                 <IconButton onClick={toggleInfoBlock} sx={{ transform: 'scaleX(1)' }}>
                                     <MenuOpen fontSize="small" />
                                 </IconButton>
                             </Tooltip>
                         )}
                         {ctx.currentObjectType && infoBlockOpen && !mobile && (
-                            <Tooltip title="Close info" arrow placement="right">
+                            <Tooltip title="Close info" arrow placement={tooltipOrientation}>
                                 <IconButton onClick={toggleInfoBlock} sx={{ transform: 'scaleX(-1)' }}>
                                     <MenuOpen fontSize="small" />
                                 </IconButton>
                             </Tooltip>
                         )}
-                        <Tooltip title="Close" arrow placement="right">
+                        <Tooltip title="Close" arrow placement={tooltipOrientation}>
                             <IconButton
                                 variant="contained"
                                 type="button"
