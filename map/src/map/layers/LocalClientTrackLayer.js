@@ -115,7 +115,7 @@ export default function LocalClientTrackLayer() {
                 (isPointsHaveSameGeo(unverified.points, trusted.points) ||
                     isPointsHaveSameGeo(unverified.tracks[0]?.points, trusted.tracks[0]?.points))
             ) {
-                // console.debug('verified');
+                console.debug('verified', unverified.name);
                 ctx.setSelectedGpxFile(unverified);
             } else {
                 console.debug('unverified-gpx-file', unverified.name);

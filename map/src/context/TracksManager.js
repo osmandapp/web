@@ -158,6 +158,7 @@ function prepareAnalysis(analysis) {
     newAnalysis.avgElevationSrtm = -1;
     newAnalysis.maxElevationSrtm = -1;
     newAnalysis.minElevationSrtm = -1;
+    newAnalysis.isSrtmApplied = false;
     newAnalysis.srtmAnalysis = false;
     return newAnalysis;
 }
@@ -768,6 +769,126 @@ function getEle(point, elevation, array) {
     return ele;
 }
 
+export function eligibleToApplySrtm({ track }) {
+    function isEmptyEle(ele) {
+        return ele === NAN_MARKER || isNaN(ele) || ele === null || ele === undefined;
+    }
+
+    function isNonZeroEle(ele) {
+        return ele > 0.01 || ele < -0.01;
+    }
+
+    /**
+     * 1) Apply SRTM if any geometry or any point have empty elevation #2156
+     * 2) Apply SRTM if all points have exactly zero elevaton (gpx-bug) #2136
+     */
+    function detectNoElevation(track) {
+        function checkPoints(points) {
+            let nonZeroPoints = 0;
+            if (points && points.length >= 2) {
+                for (let p = 1; p < points.length; p++) {
+                    const geometry = points[p].geometry;
+                    if (geometry && geometry.length > 0) {
+                        for (let g = 0; g < geometry.length; g++) {
+                            if (isEmptyEle(geometry[g].ele)) {
+                                console.log('no-geo-ele', p, g, geometry[g].ele);
+                                return true; // check empty geometry
+                            }
+                            if (isNonZeroEle(geometry[g].ele)) {
+                                nonZeroPoints++; // count non-zero elevation (gpx bug)
+                            }
+                        }
+                    } else {
+                        // check points if empty geo
+                        if (isEmptyEle(points[p].ele)) {
+                            console.log('no-point-ele', p, points[p].ele);
+                            return true;
+                        }
+                        if (isNonZeroEle(points[p].ele)) {
+                            nonZeroPoints++;
+                        }
+                    }
+                }
+            }
+            return nonZeroPoints === 0 ? true : false; // fix all-zero-elevation gpx problem
+        }
+
+        if (track.points) {
+            return checkPoints(track.points);
+        }
+
+        if (track.tracks && track.tracks.length > 0) {
+            for (let t = 0; t < track.tracks.length; t++) {
+                if (checkPoints(track.tracks[t].points)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    function checkMaxTotalPoints(track) {
+        let totalPoints = 0;
+        function countPointsAndGeo(points) {
+            totalPoints += points?.length ?? 0;
+            points?.forEach((p) => (totalPoints += p.geometry?.length ?? 0));
+        }
+
+        countPointsAndGeo(track.points); // count points
+
+        if (totalPoints === 0) {
+            // count all tracks[].points if no track.points
+            track.tracks?.forEach((t) => countPointsAndGeo(t.points));
+        }
+
+        console.log('total-points', totalPoints);
+        return totalPoints <= AUTO_SRTM_MAX_POINTS;
+    }
+
+    const analysis = track.analysis;
+
+    if (!track || isEmptyTrack(track, false)) {
+        console.log('eligible-empty-track');
+        return false; // empty track w/o points
+    }
+
+    if (analysis && analysis.isSrtmApplied) {
+        console.log('eligible-already-applied');
+        return false; // already implied
+    }
+
+    if (analysis && checkMaxTotalPoints(track) && detectNoElevation(track)) {
+        console.log('eligible-ok');
+        return true; // ok - apply
+    }
+
+    console.log('eligible-false', track);
+    return false; // no apply
+}
+
+export async function applySrtmElevation({ track, setLoading }) {
+    const fakeCtx = { selectedGpxFile: track };
+    const newGpxFile = await getTrackWithAnalysis(GET_SRTM_DATA, fakeCtx, setLoading, track.points);
+    if (newGpxFile.analysis) {
+        newGpxFile.analysis.isSrtmApplied = true; // mark already implied
+        // newGpxFile.analysis.srtmAnalysis = false; // allow manual srtm request later
+
+        // add hasElevationData = true ! FIXME
+        /*
+          "srtmAnalysis": false
+          "avgElevationSrtm": -1,
+          "maxElevationSrtm": -1,
+          "minElevationSrtm": -1,
+
+          "avgElevation": 0,
+          "maxElevation": -100,
+          "minElevation": 99999,
+        */
+    }
+    return newGpxFile;
+}
+
 async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     setLoading(true);
     const wpts = _.cloneDeep(ctx.selectedGpxFile.wpts);
@@ -803,13 +924,11 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         newGpxFile.wpts = wpts;
         newGpxFile.pointsGroups = pointsGroups;
 
-        // automatic SRTM request
+        // auto-srtm
         if (path === GET_ANALYSIS) {
-            if (data.data.analysis?.hasElevationData) {
-                newGpxFile.analysis.srtmAnalysis = false;
-            } else {
-                const fakeCtx = { selectedGpxFile: newGpxFile };
-                return getTrackWithAnalysis(GET_SRTM_DATA, fakeCtx, setLoading, points); // auto-srtm-this
+            const track = newGpxFile;
+            if (eligibleToApplySrtm({ track })) {
+                return applySrtmElevation({ track, setLoading });
             }
         }
 
@@ -935,7 +1054,6 @@ const TracksManager = {
     CHANGE_PROFILE_AFTER: CHANGE_PROFILE_AFTER,
     CHANGE_PROFILE_ALL: CHANGE_PROFILE_ALL,
     TRACK_VISIBLE_FLAG: TRACK_VISIBLE_FLAG,
-    AUTO_SRTM_MAX_POINTS: AUTO_SRTM_MAX_POINTS,
     FIT_BOUNDS_OPTIONS: FIT_BOUNDS_OPTIONS,
 };
 
