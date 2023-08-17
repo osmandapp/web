@@ -89,7 +89,7 @@ export default function DescTrackDialog({ dialogOpen, setDialogOpen }) {
         <>
             <Dialog disableEnforceFocus open={dialogOpen} onClose={toggleShowDialog}>
                 <DialogTitle>Description</DialogTitle>
-                <DialogContent sx={{ minWidth: 300, minHeight: editDescription ? 300 : 0 }}>
+                <DialogContent sx={{ minHeight: editDescription ? 300 : 0 }}>
                     {!editDescription ? (
                         <>
                             {link ? (
@@ -118,7 +118,7 @@ export default function DescTrackDialog({ dialogOpen, setDialogOpen }) {
                                     Click EDIT to add a description...
                                 </Alert>
                             )}
-                            <DialogContentText component={'span'}>
+                            <DialogContentText sx={{ width: '100%' }}>
                                 <div dangerouslySetInnerHTML={{ __html: description }} />
                             </DialogContentText>
                         </>
@@ -129,7 +129,9 @@ export default function DescTrackDialog({ dialogOpen, setDialogOpen }) {
                 <DialogActions>
                     <Button onClick={toggleShowDialog}>Close</Button>
                     {!editDescription ? (
-                        <Button onClick={() => setEditDescription(true)}>Edit</Button>
+                        ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                            <Button onClick={() => setEditDescription(true)}>Edit</Button>
+                        )
                     ) : (
                         <Button
                             onClick={() => {

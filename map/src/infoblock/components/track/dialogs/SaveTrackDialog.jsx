@@ -150,7 +150,7 @@ export default function SaveTrackDialog() {
         <div>
             <Dialog open={true} onClose={() => cloudAutoSave === false && closeDialog({ uploaded: false })}>
                 {process ? <LinearProgress /> : <></>}
-                {cloudAutoSave && <DialogTitle>Uploading to cloud...</DialogTitle>}
+                {cloudAutoSave && <DialogContent>Uploading to cloud...</DialogContent>}
                 {cloudAutoSave === false && (
                     <>
                         <DialogUpdateTrack open={existTrack} onClose={!existTrack} />

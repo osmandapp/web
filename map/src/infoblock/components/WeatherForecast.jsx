@@ -20,7 +20,7 @@ function createData(name, label, index, mult = 1, fixed = 2) {
     };
 }
 
-export default function WeatherForecast({ width, data, loc }) {
+export default function WeatherForecast({ data, loc }) {
     const ctx = useContext(AppContext);
 
     const ECWMF_WEATHER_TYPE = 'ecmwf';
@@ -41,7 +41,7 @@ export default function WeatherForecast({ width, data, loc }) {
     ];
 
     return (
-        <TableContainer component={Paper} style={{ width: width, overflowX: 'auto' }}>
+        <TableContainer component={Paper} style={{ width: ctx.infoBlockWidth, overflowX: 'auto' }}>
             <Table size="small">
                 <TableHead>
                     <TableRow>

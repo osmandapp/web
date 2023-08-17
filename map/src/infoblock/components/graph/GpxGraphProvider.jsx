@@ -143,36 +143,6 @@ const GpxGraphProvider = ({ width }) => {
 
     return (
         <>
-            {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
-                <div style={{ marginLeft: '15px', marginTop: '-10px' }}>
-                    <FormControlLabel
-                        className={classes.checkbox}
-                        key={'show_points'}
-                        label={'Show track points'}
-                        control={
-                            <Checkbox
-                                sx={{ marginLeft: '-30px' }}
-                                checked={ctx.showPoints.points}
-                                disabled={!ctx.selectedGpxFile.points || _.isEmpty(ctx.selectedGpxFile.points)}
-                                onChange={() => ctx.mutateShowPoints((o) => (o.points = !o.points))}
-                            />
-                        }
-                    ></FormControlLabel>
-                    <FormControlLabel
-                        className={classes.checkbox}
-                        key={'show_wpts'}
-                        label={'Show track wpts'}
-                        control={
-                            <Checkbox
-                                sx={{ marginLeft: '-30px' }}
-                                checked={ctx.showPoints.wpts}
-                                disabled={!ctx.selectedGpxFile.wpts || _.isEmpty(ctx.selectedGpxFile.wpts)}
-                                onChange={() => ctx.mutateShowPoints((o) => (o.wpts = !o.wpts))}
-                            />
-                        }
-                    ></FormControlLabel>
-                </div>
-            )}
             {showData && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
                 <Divider sx={{ mt: '3px', mb: '12px' }} />
             )}

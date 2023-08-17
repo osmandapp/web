@@ -4,7 +4,6 @@ import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import TrackLayerProvider from '../TrackLayerProvider';
 import TracksManager, { isEmptyTrack } from '../../context/TracksManager';
-import MarkerOptions from '../markers/MarkerOptions';
 import _ from 'lodash';
 import EditablePolyline from '../EditablePolyline';
 import EditableMarker from '../EditableMarker';
@@ -141,7 +140,7 @@ export default function LocalClientTrackLayer() {
                 getRouting();
             } else {
                 // checkDeleteSelected();
-                if (ctx.createTrack?.enable && isEmptyTrack(ctxTrack) === false) {
+                if (ctx.createTrack?.enable && isEmptyTrack(ctxTrack, true) === false) {
                     saveLocal();
                 }
                 checkZoom();
@@ -198,7 +197,7 @@ export default function LocalClientTrackLayer() {
         Object.values(ctx.localTracks).forEach((track) => {
             let currLayer = localLayers[track.name];
             if (track.selected && !currLayer) {
-                const needFitBounds = isEmptyTrack(track) === false;
+                const needFitBounds = isEmptyTrack(track, true) === false;
                 addTrackToMap(track, needFitBounds, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;
@@ -336,7 +335,7 @@ export default function LocalClientTrackLayer() {
             // local-track-zoom
             showSelectedTrackOnMap();
         } else if (ctxTrack.showPoint) {
-            showSelectedPointOnMap();
+            TracksManager.showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker);
         }
     }
 
@@ -364,7 +363,7 @@ export default function LocalClientTrackLayer() {
                     ctx.setSelectedGpxFile(track);
                     let type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
                     ctx.setCurrentObjectType(type);
-                    ctx.setUpdateContextMenu(true);
+                    ctx.setUpdateInfoBlock(true);
                 }
             });
             layer.addTo(map);
@@ -377,34 +376,10 @@ export default function LocalClientTrackLayer() {
         }
     }
 
-    function createPointMarkerOnMap() {
-        return new L.marker(
-            {
-                lng: ctxTrack.showPoint.lng,
-                lat: ctxTrack.showPoint.lat,
-            },
-            {
-                icon: MarkerOptions.options.pointerIcons,
-            }
-        ).addTo(map);
-    }
-
     function showSelectedTrackOnMap() {
         let currLayer = localLayers[ctxTrack.name];
         if (currLayer) {
             map.fitBounds(currLayer.layer.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
-        }
-    }
-
-    function showSelectedPointOnMap() {
-        if (ctxTrack?.showPoint?.layer) {
-            map.setView([ctxTrack.showPoint.layer._latlng.lat, ctxTrack.showPoint.layer._latlng.lng], 17);
-        } else {
-            if (selectedPointMarker) {
-                map.removeLayer(selectedPointMarker.marker);
-            }
-            let marker = createPointMarkerOnMap();
-            setSelectedPointMarker({ marker: marker, trackName: ctxTrack.name });
         }
     }
 
@@ -871,7 +846,7 @@ export default function LocalClientTrackLayer() {
         ctxTrack.layers = createFirstLayers(newPoint, ctxTrack.layers);
         ctxTrack.updateLayers = true;
         ctxTrack.addPoint = true;
-        ctx.setUpdateContextMenu(true);
+        ctx.setUpdateInfoBlock(true);
 
         TracksManager.updateState(ctx);
     }

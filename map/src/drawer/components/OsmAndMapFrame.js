@@ -26,7 +26,6 @@ const OsmAndMapFrame = () => {
     const [clearState, setClearState] = useState(false);
     const [resizing, setResizing] = useState(false);
     const [drawerRightHeight, setDrawerRightHeight] = useState(0);
-    const [drawerRightWidth, setDrawerRightWidth] = useState(0);
     const [mobile, setMobile] = useState(false);
     const [width, height] = useWindowSize();
 
@@ -55,7 +54,7 @@ const OsmAndMapFrame = () => {
                 <Box
                     sx={{
                         width: { xs: `calc(100%)` },
-                        mr: drawerRightWidth,
+                        mr: ctx.infoBlockWidth,
                     }}
                 >
                     <Box>
@@ -78,7 +77,7 @@ const OsmAndMapFrame = () => {
                         mobile={mobile}
                         drawerRightHeight={drawerRightHeight}
                         mainMenuWidth={mainMenuWidth}
-                        drawerRightWidth={drawerRightWidth}
+                        drawerRightWidth={ctx.infoBlockWidth}
                     />
                     <GeneralPanelButtons
                         mainMenuWidth={mainMenuWidth}
@@ -96,7 +95,7 @@ const OsmAndMapFrame = () => {
                     variant="temporary"
                     PaperProps={{
                         sx: {
-                            width: `${drawerRightWidth}`,
+                            width: ctx.infoBlockWidth,
                         },
                     }}
                     open={true}
@@ -107,7 +106,6 @@ const OsmAndMapFrame = () => {
                 >
                     <InformationBlock
                         mobile={mobile}
-                        setDrawerWidth={setDrawerRightWidth}
                         infoBlockOpen={infoBlockOpen}
                         showInfoBlock={showInfoBlock}
                         setShowInfoBlock={setShowInfoBlock}
@@ -133,7 +131,6 @@ const OsmAndMapFrame = () => {
                 >
                     <InformationBlock
                         mobile={mobile}
-                        setDrawerWidth={setDrawerRightWidth}
                         infoBlockOpen={infoBlockOpen}
                         showInfoBlock={showInfoBlock}
                         setShowInfoBlock={setShowInfoBlock}
