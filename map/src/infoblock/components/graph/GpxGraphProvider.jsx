@@ -143,9 +143,6 @@ const GpxGraphProvider = ({ width }) => {
 
     return (
         <>
-            {showData && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
-                <Divider sx={{ mt: '3px', mb: '12px' }} />
-            )}
             <div style={{ marginLeft: '20px' }}>
                 {showData &&
                     Object.entries(showData).map(([key, value]) => (

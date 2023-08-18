@@ -175,7 +175,7 @@ const PanelButtons = ({
                                     <IconButton
                                         variant="contained"
                                         type="button"
-                                        disabled={isEmptyTrack(ctx.selectedGpxFile, true)}
+                                        disabled={isEmptyTrack(ctx.selectedGpxFile)}
                                         onClick={() => {
                                             ctx.setUpdateInfoBlock(true);
                                             ctx.selectedGpxFile.save = true;
@@ -230,7 +230,7 @@ const PanelButtons = ({
                                         <IconButton
                                             variant="contained"
                                             type="button"
-                                            disabled={isEmptyTrack(ctx.selectedGpxFile, true)}
+                                            disabled={isEmptyTrack(ctx.selectedGpxFile)}
                                             onClick={() => downloadGpx(ctx)}
                                         >
                                             <Download fontSize="small" />
