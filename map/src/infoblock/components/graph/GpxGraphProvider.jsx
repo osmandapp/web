@@ -3,7 +3,7 @@ import GpxGraph from './GpxGraph';
 import AppContext from '../../../context/AppContext';
 import TracksManager from '../../../context/TracksManager';
 import _ from 'lodash';
-import { Checkbox, Divider, FormControlLabel } from '@mui/material';
+import { Checkbox, FormControlLabel } from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
