@@ -79,12 +79,12 @@ export default function InformationBlock({
     }, []);
 
     useEffect(() => {
-        if (resizing) {
+        if (resizing && mobile) {
             document.addEventListener('mouseup', onMouseUp, false);
         } else {
             document.removeEventListener('mouseup', onMouseUp, false);
         }
-    }, [resizing]);
+    }, [resizing, mobile]);
 
     useEffect(() => {
         if (!showInfoBlock) {
@@ -210,7 +210,7 @@ export default function InformationBlock({
                                                         if (!resizing) {
                                                             return;
                                                         }
-                                                        resize(e.changedTouches[0].clientY);
+                                                        resize(e.changedTouches[0].clientY, 0);
                                                     }}
                                                     onMouseDown={() => {
                                                         setMoveEnd(false);

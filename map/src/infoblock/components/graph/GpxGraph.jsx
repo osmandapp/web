@@ -97,6 +97,9 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
 
     const chartRef = useRef(null);
 
+    const showY1 = showY1Scale();
+    const showY2 = showY2Scale();
+
     const handleRangeChange = (event, newValue) => {
         setDistRangeValue(newValue);
         if (showRange) {
@@ -307,8 +310,9 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
             x: {
                 display: true,
                 ticks: {
+                    maxTicksLimit: 10,
+                    stepSize: (data[data.length - 1][xAxis] / 10).toFixed(0),
                     beginAtZero: true,
-                    maxTicksLimit: width === 400 && 10,
                 },
                 title: {
                     display: true,
@@ -321,7 +325,7 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
                 },
             },
             y1: {
-                display: showY1Scale(),
+                display: showY1,
                 position: 'left',
                 title: {
                     display: true,
@@ -334,8 +338,7 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
                 },
             },
             y2: {
-                display: showY2Scale(),
-                type: 'linear',
+                display: showY2,
                 position: 'right',
                 title: {
                     display: true,
@@ -345,6 +348,9 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
                         size: 10,
                         lineHeight: 1.2,
                     },
+                },
+                grid: {
+                    display: !showY1,
                 },
             },
         },
