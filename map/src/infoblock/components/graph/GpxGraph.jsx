@@ -293,12 +293,6 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
                             y: maxEle,
                         },
                     },
-                    drag: {
-                        enabled: true,
-                        rangeMax: {
-                            y: maxEle,
-                        },
-                    },
                     mode: 'x',
                     speed: 100,
                 },
