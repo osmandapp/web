@@ -471,7 +471,9 @@ function addDistanceToPoints(points) {
                 geo[0].distance = 0;
                 if (geo.length > 1) {
                     for (let i = 1; i < geo.length; i++) {
-                        geo[i].distance = Utils.getDistance(geo[i - 1].lat, geo[i - 1].lng, geo[i].lat, geo[i].lng);
+                        const dist = Utils.getDistance(geo[i - 1].lat, geo[i - 1].lng, geo[i].lat, geo[i].lng);
+                        geo[i].distance = dist;
+                        point.dist += dist;
                     }
                 }
             }
