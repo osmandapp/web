@@ -64,7 +64,7 @@ export default function CloudTrackItem({ file, customIcon = null }) {
             });
             const track = await TracksManager.getTrackData(gpxfile);
             setProgressVisible(false);
-            if (isEmptyTrack(track, true) === false) {
+            if (isEmptyTrack(track) === false) {
                 const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
                 ctx.setCurrentObjectType(type);
                 track.name = file.name;

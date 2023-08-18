@@ -3,7 +3,7 @@ import GpxGraph from './GpxGraph';
 import AppContext from '../../../context/AppContext';
 import TracksManager from '../../../context/TracksManager';
 import _ from 'lodash';
-import { Checkbox, Divider, FormControlLabel } from '@mui/material';
+import { Checkbox, FormControlLabel } from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -143,9 +143,6 @@ const GpxGraphProvider = ({ width }) => {
 
     return (
         <>
-            {showData && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
-                <Divider sx={{ mt: '3px', mb: '12px' }} />
-            )}
             <div style={{ marginLeft: '20px' }}>
                 {showData &&
                     Object.entries(showData).map(([key, value]) => (

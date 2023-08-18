@@ -97,6 +97,9 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
 
     const chartRef = useRef(null);
 
+    const showY1 = showY1Scale();
+    const showY2 = showY2Scale();
+
     const handleRangeChange = (event, newValue) => {
         setDistRangeValue(newValue);
         if (showRange) {
@@ -106,9 +109,9 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
 
     useEffect(() => {
         if (data) {
-            setSpeedData(showData[y2Axis] ? data.map((d) => d[y2Axis]) : null);
-            setEleData(showData[y1Axis[0]] ? data.map((d) => d[y1Axis[0]]) : null);
-            setEleSRTMData(showData[y1Axis[1]] ? data.map((d) => d[y1Axis[1]]) : null);
+            setSpeedData(showData[y2Axis] ? data.map((d) => ({ x: d[xAxis], y: d[y2Axis] })) : null);
+            setEleData(showData[y1Axis[0]] ? data.map((d) => ({ x: d[xAxis], y: d[y1Axis[0]] })) : null);
+            setEleSRTMData(showData[y1Axis[1]] ? data.map((d) => ({ x: d[xAxis], y: d[y1Axis[1]] })) : null);
             if (showData[y1Axis[0]]) {
                 addMaxMinMarkers(minEle, maxEle, y1Axis[0]);
             }
@@ -181,6 +184,7 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
 
     const options = {
         responsive: true,
+        maintainAspectRatio: false,
         spanGaps: true,
         interaction: {
             intersect: false,
@@ -292,12 +296,12 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
                             y: maxEle,
                         },
                     },
-                    mode: 'xy',
+                    mode: 'x',
                     speed: 100,
                 },
                 pan: {
                     enabled: true,
-                    mode: 'xy',
+                    mode: 'x',
                     speed: 100,
                 },
             },
@@ -306,8 +310,9 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
             x: {
                 display: true,
                 ticks: {
+                    maxTicksLimit: 10,
+                    stepSize: (data[data.length - 1][xAxis] / 10).toFixed(0),
                     beginAtZero: true,
-                    maxTicksLimit: 7,
                 },
                 title: {
                     display: true,
@@ -320,7 +325,7 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
                 },
             },
             y1: {
-                display: showY1Scale(),
+                display: showY1,
                 position: 'left',
                 title: {
                     display: true,
@@ -333,8 +338,7 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
                 },
             },
             y2: {
-                display: showY2Scale(),
-                type: 'linear',
+                display: showY2,
                 position: 'right',
                 title: {
                     display: true,
@@ -345,12 +349,15 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
                         lineHeight: 1.2,
                     },
                 },
+                grid: {
+                    display: !showY1,
+                },
             },
         },
     };
 
     const graphData = {
-        labels: data.map((d) => (d[xAxis] !== 0 ? d[xAxis].toFixed(2) : 0)),
+        labels: data.map((d) => (d[xAxis] !== 0 ? d[xAxis].toFixed(1) : 0)),
         datasets: [
             {
                 label: y1Axis[0],
@@ -405,11 +412,9 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
 
     return (
         <>
-            <Box sx={{ p: 0, maxWidth: Number(width.replace('px', '')) - 40 }}>
+            <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 40, height: 220 }}>
                 <Chart
                     ref={chartRef}
-                    width={Number(width.replace('px', '')) - 40}
-                    height={150}
                     margin={{ top: 0, right: 0, left: -20, bottom: 0 }}
                     style={{ fontSize: 10 }}
                     data={graphData}

@@ -467,7 +467,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                 </div>
                 {ctx.loginUser &&
                     ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
-                    isEmptyTrack(ctx.selectedGpxFile, true) === false && (
+                    isEmptyTrack(ctx.selectedGpxFile) === false && (
                         <Button
                             variant="contained"
                             sx={{ ml: '-0.5px !important' }}
@@ -492,7 +492,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                         Edit Track
                     </Button>
                 )}
-                {isEmptyTrack(ctx.selectedGpxFile, true) === false && (
+                {isEmptyTrack(ctx.selectedGpxFile) === false && (
                     <Button variant="contained" className={styles.button} onClick={() => downloadGpx(ctx)}>
                         <Download fontSize="small" sx={{ mr: '3px' }} />
                         Download GPX

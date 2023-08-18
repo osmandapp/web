@@ -585,7 +585,7 @@ async function downloadAfterUpload(ctx, file) {
         type: 'text/plain',
     });
     const track = await TracksManager.getTrackData(gpxfile);
-    if (isEmptyTrack(track, true) === false) {
+    if (isEmptyTrack(track) === false) {
         const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
         ctx.setUpdateInfoBlock(true);
         ctx.setCurrentObjectType(type);
@@ -1041,14 +1041,22 @@ function updateState(ctx) {
 }
 
 // check: geo-points, way-points, gpx-trkpt
-export function isEmptyTrack(track, checkWpt) {
-    if (track?.points?.length > 0 || (checkWpt && track?.wpts?.length > 0)) {
-        return false;
+export function isEmptyTrack(track, checkWpts = true, checkPoints = true) {
+    let hasPoints;
+    let hasWpts;
+    if (checkPoints) {
+        hasPoints = track?.points?.length > 0 || (track?.tracks?.length > 0 && track.tracks[0].points?.length > 0);
+        if (!checkWpts) {
+            return !hasPoints;
+        }
     }
-    if (track?.tracks?.length > 0 && track.tracks[0].points?.length > 0) {
-        return false;
+    if (checkWpts) {
+        hasWpts = track?.wpts?.length > 0 || (track?.tracks?.length > 0 && track.tracks[0].wpts?.length > 0);
+        if (!checkPoints) {
+            return !hasWpts;
+        }
     }
-    return true;
+    return !hasPoints && !hasWpts;
 }
 
 function showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker) {
