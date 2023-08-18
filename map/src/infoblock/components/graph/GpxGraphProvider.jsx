@@ -3,7 +3,7 @@ import GpxGraph from './GpxGraph';
 import AppContext from '../../../context/AppContext';
 import TracksManager from '../../../context/TracksManager';
 import _ from 'lodash';
-import { Checkbox, FormControlLabel } from '@mui/material';
+import { Checkbox, Divider, FormControlLabel } from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -59,11 +59,17 @@ const GpxGraphProvider = ({ width }) => {
 
     useEffect(() => {
         if (data) {
-            setShowData({
-                [ELEVATION]: data.ele ? data.ele : '',
-                [ELEVATION_SRTM]: data.srtm ? data.srtm : '',
-                [SPEED]: data.speed ? data.speed : '',
-            });
+            let newShowData = {};
+            if (data.ele) {
+                newShowData[ELEVATION] = data.ele;
+            }
+            if (data.srtm) {
+                newShowData[ELEVATION_SRTM] = data.ele;
+            }
+            if (data.speed) {
+                newShowData[SPEED] = data.ele;
+            }
+            setShowData(newShowData);
         }
     }, [data]);
 
@@ -143,18 +149,18 @@ const GpxGraphProvider = ({ width }) => {
 
     return (
         <>
+            {graphData && showData && <Divider sx={{ mt: '3px', mb: '12px' }} />}
             <div style={{ marginLeft: '20px' }}>
                 {showData &&
                     Object.entries(showData).map(([key, value]) => (
                         <FormControlLabel
                             className={classes.checkbox}
                             key={key}
-                            label={key}
+                            label={key === ELEVATION_SRTM ? 'Elevation (Satellite)' : key}
                             control={
                                 <Checkbox
                                     sx={{ marginLeft: '-30px' }}
                                     checked={checkShowData(value)}
-                                    disabled={value === ''}
                                     onChange={() => {
                                         let updatedShowData = Object.assign({}, showData);
                                         updatedShowData[key] = !value;

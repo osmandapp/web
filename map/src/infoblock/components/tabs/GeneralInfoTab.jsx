@@ -76,11 +76,10 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                 )}
                 {!isEmptyTrack(ctx.selectedGpxFile, false) && (
                     <>
-                        <Divider sx={{ mt: '3px', mb: '12px' }} />
                         <GpxGraphProvider width={ctx.infoBlockWidth} />
                     </>
                 )}
-                <Divider sx={{ mt: '13px', mb: '12px' }} />
+                <Divider sx={{ mt: '3px', mb: '12px' }} />
                 {isEmptyTrack(ctx.selectedGpxFile) === false && (
                     <Button
                         variant="contained"
