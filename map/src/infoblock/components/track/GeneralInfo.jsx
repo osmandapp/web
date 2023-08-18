@@ -1,7 +1,7 @@
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { toHHMMSS } from '../../../context/AppContext';
-import TracksManager, { isEmptyTrack } from '../../../context/TracksManager';
+import TracksManager, { isEmptyTrack, applySrtmElevation, eligibleToApplySrtm } from '../../../context/TracksManager';
 import { prepareFileName } from '../../../util/Utils';
 import {
     Box,
@@ -14,6 +14,7 @@ import {
     ListItemText,
     MenuItem,
     TextField,
+    Tooltip,
     Typography,
 } from '@mui/material';
 import {
@@ -71,22 +72,14 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
         }
     }, [ctx.selectedGpxFile?.metaData?.desc]);
 
+    // auto-srtm
     useEffect(() => {
-        const track = ctx.selectedGpxFile;
-        const analysis = track.analysis;
-        if (analysis && analysis.hasElevationData !== true && !analysis.srtmAnalysis) {
-            let totalPoints = track.points?.length ?? 0;
-            track.points?.forEach((p) => (totalPoints += p.geometry?.length ?? 0));
-            if (totalPoints <= TracksManager.AUTO_SRTM_MAX_POINTS) {
-                TracksManager.getTrackWithAnalysis(TracksManager.GET_SRTM_DATA, ctx, setLoadingSrtm, track.points).then(
-                    (result) => {
-                        if (result) {
-                            // getSRTMEle(result); // set by distinct Effect
-                            ctx.setUnverifiedGpxFile(() => ({ ...result })); // auto-srtm
-                        }
-                    }
-                );
-            }
+        if (eligibleToApplySrtm({ track: ctx.selectedGpxFile })) {
+            const setLoading = setLoadingSrtm;
+            const track = { ...ctx.selectedGpxFile };
+            track.analysis = { ...track.analysis, isSrtmApplied: true };
+            ctx.setSelectedGpxFile(track); // mark now as already-implied (to skip dupe effects)
+            applySrtmElevation({ track, setLoading }).then((success) => ctx.setUnverifiedGpxFile(success));
         }
     }, [ctx.selectedGpxFile.name, ctx.selectedGpxFile.analysis]);
 
@@ -390,8 +383,9 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     const Elevation = () => {
         return (
             <>
+                {upDownHill !== '' || elevation !== '-' || (points > 1 && <Divider sx={{ mt: '13px', mb: '12px' }} />)}
                 <Typography className={styles.info} variant="subtitle1" color="inherit">
-                    {upDownHill && (
+                    {upDownHill !== '' && (
                         <MenuItem sx={{ ml: -2, mt: -1 }}>
                             <ListItemIcon>
                                 <ImportExport fontSize="small" />
@@ -403,48 +397,54 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                             </ListItemText>
                         </MenuItem>
                     )}
-                    <MenuItem sx={{ ml: -2, mt: -1 }}>
-                        <ListItemIcon>
-                            <Terrain fontSize="small" />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography sx={{ ml: 1 }} variant="body2" noWrap>
-                                {`Elevation (min/avg/max): ${elevation}`}
-                            </Typography>
-                        </ListItemText>
-                    </MenuItem>
-                    <MenuItem sx={{ ml: -2, mt: -1, mb: 0 }}>
-                        <ListItemIcon>
-                            <Terrain fontSize="small" />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography sx={{ ml: 1 }} variant="body2" noWrap>
-                                {`Elevation SRTM: ${elevationSRTM}`}
-                                {elevationSRTM === '' && loadingSrtm === false && (
-                                    <Link
-                                        href="#"
-                                        color="inherit"
-                                        onClick={() => {
-                                            TracksManager.getTrackWithAnalysis(
-                                                TracksManager.GET_SRTM_DATA,
-                                                ctx,
-                                                setLoadingSrtm,
-                                                ctx.selectedGpxFile.points
-                                            ).then((track) => {
-                                                if (track) {
-                                                    // getSRTMEle(track); // set by distinct Effect
-                                                    ctx.setUnverifiedGpxFile(() => ({ ...track }));
-                                                }
-                                            });
-                                        }}
-                                    >
-                                        recalculate
-                                    </Link>
-                                )}
-                                {loadingSrtm ? <CircularProgress size={13} sx={{ ml: 1 }} /> : <></>}
-                            </Typography>
-                        </ListItemText>
-                    </MenuItem>
+                    {elevation !== '-' && (
+                        <MenuItem sx={{ ml: -2, mt: -1 }}>
+                            <ListItemIcon>
+                                <Terrain fontSize="small" />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography sx={{ ml: 1 }} variant="body2" noWrap>
+                                    {`Elevation (min/avg/max): ${elevation}`}
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    )}
+                    {points > 1 && (
+                        <MenuItem sx={{ ml: -2, mt: -1, mb: 0 }}>
+                            <ListItemIcon>
+                                <Terrain fontSize="small" />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Tooltip title="Elevation is calculated based on Satellite imagery of points" arrow>
+                                    <Typography sx={{ ml: 1 }} variant="body2" noWrap>
+                                        {`Elevation (Satellite): ${elevationSRTM}`}
+                                        {elevationSRTM === '' && loadingSrtm === false && (
+                                            <Link
+                                                href="#"
+                                                color="inherit"
+                                                onClick={() => {
+                                                    TracksManager.getTrackWithAnalysis(
+                                                        TracksManager.GET_SRTM_DATA,
+                                                        ctx,
+                                                        setLoadingSrtm,
+                                                        ctx.selectedGpxFile.points
+                                                    ).then((track) => {
+                                                        if (track) {
+                                                            // getSRTMEle(track); // set by distinct Effect
+                                                            ctx.setUnverifiedGpxFile(() => ({ ...track }));
+                                                        }
+                                                    });
+                                                }}
+                                            >
+                                                recalculate
+                                            </Link>
+                                        )}
+                                        {loadingSrtm ? <CircularProgress size={13} sx={{ ml: 1 }} /> : <></>}
+                                    </Typography>
+                                </Tooltip>
+                            </ListItemText>
+                        </MenuItem>
+                    )}
                 </Typography>
             </>
         );
@@ -506,20 +506,8 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                         Download GPX
                     </Button>
                 )}
-                {distance > 0 && (
-                    <MenuItem sx={{ ml: -2 }}>
-                        <ListItemIcon>
-                            <RouteOutlined fontSize="small" />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography sx={{ ml: 1 }} variant="body2" noWrap>
-                                {`Distance: ${distance} km`}
-                            </Typography>
-                        </ListItemText>
-                    </MenuItem>
-                )}
                 {points !== 0 && (
-                    <MenuItem sx={{ ml: -2, mt: -1 }}>
+                    <MenuItem sx={{ ml: -2 }}>
                         <ListItemIcon>
                             <Commit fontSize="small" />
                         </ListItemIcon>
@@ -527,6 +515,18 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                             <Typography sx={{ ml: 1 }} variant="body2" noWrap>
                                 {`Points: ${points}`}
                                 {ctx.processRouting ? <CircularProgress size={13} sx={{ ml: 1 }} /> : <></>}
+                            </Typography>
+                        </ListItemText>
+                    </MenuItem>
+                )}
+                {distance > 0 && (
+                    <MenuItem sx={{ ml: -2, mt: -1 }}>
+                        <ListItemIcon>
+                            <RouteOutlined fontSize="small" />
+                        </ListItemIcon>
+                        <ListItemText>
+                            <Typography sx={{ ml: 1 }} variant="body2" noWrap>
+                                {`Distance: ${distance} km`}
                             </Typography>
                         </ListItemText>
                     </MenuItem>
@@ -570,7 +570,6 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
             </Typography>
             {!isEmptyTrack(ctx.selectedGpxFile, false) && (
                 <>
-                    <Divider sx={{ mt: '13px', mb: '12px' }} />
                     <Elevation />
                 </>
             )}

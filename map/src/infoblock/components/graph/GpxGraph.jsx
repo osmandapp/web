@@ -173,13 +173,14 @@ export default function GpxGraph({ data, showData, xAxis, y1Axis, y2Axis, width,
     }
 
     function showY1Scale() {
-        const hasEle = showData[y1Axis[0]] !== '' && showData[y1Axis[0]] !== false;
-        const hasEleSRTM = showData[y1Axis[1]] !== '' && showData[y1Axis[1]] !== false;
+        const hasEle = showData[y1Axis[0]] !== '' && showData[y1Axis[0]] !== false && showData[y1Axis[0]] !== undefined;
+        const hasEleSRTM =
+            showData[y1Axis[1]] !== '' && showData[y1Axis[1]] !== false && showData[y1Axis[1]] !== undefined;
         return hasEle || hasEleSRTM;
     }
 
     function showY2Scale() {
-        return showData[y2Axis] !== '' && showData[y2Axis] !== false;
+        return showData[y2Axis] !== '' && showData[y2Axis] !== false && showData[y2Axis] !== undefined;
     }
 
     const options = {
