@@ -225,6 +225,34 @@ function getGroup(name, local) {
     }
 }
 
+function deduplicateTrackTracksPointsGeometryPoints(track) {
+    if (track && track.tracks) {
+        track.tracks?.forEach((t) =>
+            t.points?.forEach((p) => {
+                /**
+                 * Check distinct point's geometry for duplicates.
+                 * Overwrite this geometry with newly created points.
+                 */
+                if (p.geometry) {
+                    const newGeo = [];
+                    let lastLat = null;
+                    let lastLng = null;
+                    const oldGeo = p.geometry;
+                    for (let i = 0; i < oldGeo.length; i++) {
+                        if (oldGeo[i].lat === lastLat && oldGeo[i].lng === lastLng) {
+                            continue;
+                        }
+                        newGeo.push(oldGeo[i]);
+                        lastLat = oldGeo[i].lat;
+                        lastLng = oldGeo[i].lng;
+                    }
+                    p.geometry = newGeo; // mutate
+                }
+            })
+        );
+    }
+}
+
 async function getTrackData(file) {
     let formData = new FormData();
     formData.append('file', file);
@@ -242,6 +270,7 @@ async function getTrackData(file) {
             let data = JSON.parse(quickNaNfix(resp));
             if (data) {
                 track = data.gpx_data;
+                deduplicateTrackTracksPointsGeometryPoints(track);
             }
         }
     }
