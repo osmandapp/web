@@ -219,7 +219,10 @@ export default function InformationBlock({
                                                     }}
                                                     onMouseUp={() => {
                                                         setResizing(false);
-                                                        if (drawerHeight === drawerHeightTemp) {
+                                                        if (
+                                                            drawerHeight === drawerHeightTemp &&
+                                                            drawerHeight === DRAWER_MIN_HEIGHT_OPEN
+                                                        ) {
                                                             setDrawerHeight(DRAWER_MAX_HEIGHT_OPEN);
                                                         }
                                                     }}
