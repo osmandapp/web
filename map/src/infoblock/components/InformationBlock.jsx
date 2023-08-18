@@ -1,6 +1,6 @@
 import { AppBar, LinearProgress, Box } from '@mui/material';
 import AppContext from '../../context/AppContext';
-import React, { useState, useContext, useEffect, useCallback } from 'react';
+import React, { useState, useContext, useEffect, useCallback, useRef } from 'react';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import TrackTabList from './tabs/TrackTabList';
 import WeatherTabList from './tabs/WeatherTabList';
@@ -21,12 +21,26 @@ export default function InformationBlock({
     drawerHeight,
 }) {
     const DRAWER_SIZE = 400;
+    const DRAWER_MIN_HEIGHT_OPEN = 50;
+    const DRAWER_MAX_HEIGHT_OPEN = 600;
 
     const ctx = useContext(AppContext);
 
     const [value, setValue] = useState('general');
     const [tabsObj, setTabsObj] = useState(null);
     const [prevTrack, setPrevTrack] = useState(null);
+    const [drawerHeightTemp, setDrawerHeightTemp] = useState(null);
+    const [moveEnd, setMoveEnd] = useState(true);
+
+    const moveEndRef = useRef(moveEnd);
+    useEffect(() => {
+        moveEndRef.current = moveEnd;
+    }, [moveEnd]);
+
+    const resizingRef = useRef(resizing);
+    useEffect(() => {
+        resizingRef.current = resizing;
+    }, [resizing]);
 
     /**
      * Handle Escape key to close PointContextMenu.
@@ -44,6 +58,33 @@ export default function InformationBlock({
             window.addEventListener('keydown', escapePointMenu);
         }
     }, [ctx.pointContextMenu]);
+
+    function resize(coord, coef) {
+        let offsetTop = heightScreen - coord;
+        if (offsetTop + coef < DRAWER_MIN_HEIGHT_OPEN) {
+            setDrawerHeight(DRAWER_MIN_HEIGHT_OPEN);
+        } else if (offsetTop + coef > DRAWER_MAX_HEIGHT_OPEN) {
+            setDrawerHeight(DRAWER_MAX_HEIGHT_OPEN);
+        } else {
+            setDrawerHeight(offsetTop + coef);
+        }
+    }
+
+    const onMouseUp = useCallback((e) => {
+        if (!moveEndRef.current && resizingRef.current) {
+            resize(e.clientY, DRAWER_MIN_HEIGHT_OPEN / 2);
+            setMoveEnd(true);
+            setResizing(false);
+        }
+    }, []);
+
+    useEffect(() => {
+        if (resizing) {
+            document.addEventListener('mouseup', onMouseUp, false);
+        } else {
+            document.removeEventListener('mouseup', onMouseUp, false);
+        }
+    }, [resizing]);
 
     useEffect(() => {
         if (!showInfoBlock) {
@@ -169,40 +210,24 @@ export default function InformationBlock({
                                                         if (!resizing) {
                                                             return;
                                                         }
-                                                        let offsetTop = heightScreen - e.changedTouches[0].clientY;
-                                                        let minHeight = 50;
-                                                        let maxHeight = 600;
-                                                        if (offsetTop < minHeight) {
-                                                            setDrawerHeight(minHeight);
-                                                        } else if (offsetTop > maxHeight) {
-                                                            setDrawerHeight(maxHeight);
-                                                        } else {
-                                                            setDrawerHeight(offsetTop);
-                                                        }
+                                                        resize(e.changedTouches[0].clientY);
                                                     }}
                                                     onMouseDown={() => {
+                                                        setMoveEnd(false);
+                                                        setDrawerHeightTemp(drawerHeight);
                                                         setResizing(true);
                                                     }}
                                                     onMouseUp={() => {
                                                         setResizing(false);
-                                                    }}
-                                                    onMouseOut={() => {
-                                                        setResizing(false);
+                                                        if (drawerHeight === drawerHeightTemp) {
+                                                            setDrawerHeight(DRAWER_MAX_HEIGHT_OPEN);
+                                                        }
                                                     }}
                                                     onMouseMove={(e) => {
                                                         if (!resizing) {
                                                             return;
                                                         }
-                                                        let offsetTop = heightScreen - e.clientY;
-                                                        let minHeight = 50;
-                                                        let maxHeight = 600;
-                                                        if (offsetTop + minHeight / 2 < minHeight) {
-                                                            setDrawerHeight(minHeight);
-                                                        } else if (offsetTop + minHeight / 2 > maxHeight) {
-                                                            setDrawerHeight(maxHeight);
-                                                        } else {
-                                                            setDrawerHeight(offsetTop + minHeight / 2);
-                                                        }
+                                                        resize(e.clientY, DRAWER_MIN_HEIGHT_OPEN / 2);
                                                     }}
                                                     variant="scrollable"
                                                     scrollButtons
