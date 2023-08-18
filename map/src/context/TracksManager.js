@@ -772,15 +772,15 @@ function getEle(point, elevation, array) {
     return Number(ele);
 }
 
+function isEmptyEle(ele) {
+    return ele === NAN_MARKER || isNaN(ele) || ele === null || ele === undefined;
+}
+
+function isNonZeroEle(ele) {
+    return ele !== NAN_MARKER && (ele > 0.01 || ele < -0.01);
+}
+
 export function eligibleToApplySrtm({ track }) {
-    function isEmptyEle(ele) {
-        return ele === NAN_MARKER || isNaN(ele) || ele === null || ele === undefined;
-    }
-
-    function isNonZeroEle(ele) {
-        return ele > 0.01 || ele < -0.01;
-    }
-
     /**
      * 1) Apply SRTM if any geometry or any point have empty elevation #2156
      * 2) Apply SRTM if all points have exactly zero elevaton (gpx-bug) #2136
@@ -794,7 +794,6 @@ export function eligibleToApplySrtm({ track }) {
                     if (geometry && geometry.length > 0) {
                         for (let g = 0; g < geometry.length; g++) {
                             if (isEmptyEle(geometry[g].ele)) {
-                                console.log('no-geo-ele', p, g, geometry[g].ele);
                                 return true; // check empty geometry
                             }
                             if (isNonZeroEle(geometry[g].ele)) {
@@ -804,7 +803,6 @@ export function eligibleToApplySrtm({ track }) {
                     } else {
                         // check points if empty geo
                         if (isEmptyEle(points[p].ele)) {
-                            console.log('no-point-ele', p, points[p].ele);
                             return true;
                         }
                         if (isNonZeroEle(points[p].ele)) {
@@ -845,49 +843,87 @@ export function eligibleToApplySrtm({ track }) {
             track.tracks?.forEach((t) => countPointsAndGeo(t.points));
         }
 
-        console.log('total-points', totalPoints);
         return totalPoints <= AUTO_SRTM_MAX_POINTS;
     }
 
     const analysis = track.analysis;
 
     if (!track || isEmptyTrack(track, false)) {
-        console.log('eligible-empty-track');
         return false; // empty track w/o points
     }
 
     if (analysis && analysis.isSrtmApplied) {
-        console.log('eligible-already-applied');
-        return false; // already implied
+        return false; // already applied
     }
 
     if (analysis && checkMaxTotalPoints(track) && detectNoElevation(track)) {
-        console.log('eligible-ok');
         return true; // ok - apply
     }
 
-    console.log('eligible-false', track);
     return false; // no apply
 }
 
 export async function applySrtmElevation({ track, setLoading }) {
+    function latlngKey(point) {
+        return Number(point.lat).toFixed(4) + ',' + Number(point.lng).toFixed(4); // ~11m (<30m SRTM precision)
+    }
+    function parseSrtmPoints(track) {
+        const cache = {};
+        function parse(p) {
+            if (p && p.lat && p.lng && (isNonZeroEle(p.srtmEle) || isNonZeroEle(p.ele))) {
+                const key = latlngKey(p);
+                // additionally, try to keep original gpx elevation
+                const val = Number(Number(isNonZeroEle(p.ele) ? p.ele : p.srtmEle).toFixed(2)); // =1cm precision
+                cache[key] = val;
+            }
+        }
+        track.points?.forEach((p) => parse(p));
+        track.points?.forEach((p) => p.geometry?.forEach((g) => parse(g)));
+        track.tracks?.forEach((t) => t.points?.forEach((p) => parse(p)));
+        track.tracks?.forEach((t) => t.points?.forEach((p) => p.geometry?.forEach((g) => parse(g))));
+        return cache;
+    }
+    function applySrtmPoints({ track, cache }) {
+        function apply(p) {
+            if (p && p.lat && p.lng) {
+                const key = latlngKey(p);
+                if (cache[key]) {
+                    p.ele = cache[key];
+                }
+            }
+        }
+        track.points?.forEach((p) => apply(p));
+        track.points?.forEach((p) => p.geometry?.forEach((g) => apply(g)));
+        track.tracks?.forEach((t) => t.points?.forEach((p) => apply(p)));
+        track.tracks?.forEach((t) => t.points?.forEach((p) => p.geometry?.forEach((g) => apply(g))));
+    }
     const fakeCtx = { selectedGpxFile: track };
     const newGpxFile = await getTrackWithAnalysis(GET_SRTM_DATA, fakeCtx, setLoading, track.points);
     if (newGpxFile.analysis) {
-        newGpxFile.analysis.isSrtmApplied = true; // mark already implied
-        // newGpxFile.analysis.srtmAnalysis = false; // allow manual srtm request later
+        const analysis = newGpxFile.analysis; // ref
 
-        // add hasElevationData = true ! FIXME
-        /*
-          "srtmAnalysis": false
-          "avgElevationSrtm": -1,
-          "maxElevationSrtm": -1,
-          "minElevationSrtm": -1,
+        // convert srtm-to-main
+        if (analysis.srtmAnalysis) {
+            // swap flags
+            analysis.hasElevationData = true;
+            analysis.srtmAnalysis = false; // allow recalc by user
 
-          "avgElevation": 0,
-          "maxElevation": -100,
-          "minElevation": 99999,
-        */
+            // swap min/avg/max
+            analysis.minElevation = analysis.minElevationSrtm;
+            analysis.avgElevation = analysis.avgElevationSrtm;
+            analysis.maxElevation = analysis.maxElevationSrtm;
+            analysis.minElevationSrtm = -1;
+            analysis.avgElevationSrtm = -1;
+            analysis.maxElevationSrtm = -1;
+
+            // swap points and geometry
+            const cache = parseSrtmPoints(newGpxFile);
+            applySrtmPoints({ track: newGpxFile, cache });
+        }
+
+        analysis.isSrtmApplied = true; // mark as already applied
+
+        // let updated = 0;
     }
     return newGpxFile;
 }
@@ -914,9 +950,12 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
             'Content-Type': 'application/json',
         },
     });
+
     if (resp.data) {
         setLoading(false);
-        const data = FavoritesManager.prepareTrackData(resp.data);
+
+        // data will be mutated, use cloneDeep to avoid apiCache mutations
+        const data = FavoritesManager.prepareTrackData(_.cloneDeep(resp.data));
 
         const newGpxFile = { ...ctx.selectedGpxFile }; // don't modify state
 
