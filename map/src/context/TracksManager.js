@@ -757,7 +757,7 @@ function getEle(point, elevation, array) {
         if (array && ind !== 0) {
             let prevP = array[ind - 1];
             if (prevP && !isNaN(prevP[elevation]) && prevP[elevation] !== NAN_MARKER) {
-                return prevP[elevation];
+                return Number(prevP[elevation]);
             } else {
                 if (ind - array.indexOf(point) > 2) {
                     return undefined;
@@ -769,7 +769,7 @@ function getEle(point, elevation, array) {
             ele = 0;
         }
     }
-    return ele;
+    return Number(ele);
 }
 
 export function eligibleToApplySrtm({ track }) {
