@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-The External sensors plugin allows you to read and record data from [wireless external sensors](https://en.wikipedia.org/wiki/Wireless_sensor_network) running on [**ANT+**](https://en.wikipedia.org/wiki/ANT_(network)) and [**BLE (Bluetooth Low Energy)**](https://www.wikiwand.com/en/Bluetooth_Low_Energy) technologies and display this data using widgets in the OsmAnd application. This managed network is capable of collecting, transmitting, and storing sensor data.  
+The External sensors plugin allows you to read and record data from [wireless external sensors](https://en.wikipedia.org/wiki/Wireless_sensor_network) running on [**ANT+**](https://en.wikipedia.org/wiki/ANT_(network)) and [**BLE (Bluetooth Low Energy)**](https://www.wikiwand.com/en/Bluetooth_Low_Energy) technologies and display this data using [widgets](#widgets) in the OsmAnd application. This managed network is capable of collecting, transmitting, and storing sensor data.  
 
 The OsmAnd External sensors plugin accesses external sensors and can read data such as *Heart Rate*, *Bicycle Power*, *Bicycle Cadence*, *Bicycle Speed* and *Bicycle Distance*. For the plugin to work correctly, make sure that your device [is connected](#pair-new-sensor) to the appropriate sensors.
 
@@ -62,11 +62,20 @@ With the plugin, for each external sensor available to the OsmAnd app, you can u
 
 | Parameter | Description |
 | --- | --- |
-| **<Translate android="true" ids="map_widget_ant_heart_rate"/>** | Indicates the user's heart rate data in real time. |
-| **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** | Indicates how much power the cyclist exerts when riding. |
-| **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** | Indicates the speed at which the cyclist pedals. |
-| **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** | Indicates the speed at which the bicycle is moving. |
-| **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** | Indicates the distance traveled. |  
+| **<Translate android="true" ids="map_widget_ant_heart_rate"/>** | The heart rate sensor can transmit your heart rate in real time. This is useful for cycling training when you want to track your heart rate to optimize your training efforts. |
+| **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** | Your bike's power sensors measure the power you exert when you pedal. This allows you to analyze and optimize your workouts to improve efficiency and performance. |
+| **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** | Cadence is the number of pedal turns per minute. Cadence sensors help you maintain optimal pedaling speed for efficient cycling. |
+| **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** | Speed sensors provide information about your current speed while cycling. |
+| **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** | Distance sensors measure the distance you travel when you're driving. | 
+
+
+## Data analyze
+
+![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze.png)
+
+Data from external sensors can be transmitted to the device and displayed in OsmAnd during the trip as additional information. If you want to analyze this information, you need to record the trip, and only after you save it, in the *Track context menu → Analyze on map*, additional items for the recorded data appear.  
+
+OsmAnd allows you to select a 2nd axis for data analysis: *Heart rate*, *Speed*, *Cadence*, *Bicycle power*, and *Temperature*. *Distance* and *Battery* are not used in [Analyze on map](../map/tracks-on-map.md#analyze-track-on-map).
 
 
 ## Widgets

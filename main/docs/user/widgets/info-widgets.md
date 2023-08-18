@@ -274,13 +274,19 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 To add External sensor widgets to the map screen, **enable the OsmAnd External sensors plugin**.
 :::  
 
-External sensors widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from your external sensors, such as: *<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>, <Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/> and <Translate android="true" ids="map_widget_ant_bicycle_dist"/>*.  
+Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from your external sensors, such as: *<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>, <Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/> and <Translate android="true" ids="map_widget_ant_bicycle_dist"/>*.  
+
+- Widgets are visible only if *External sensors* plugin is enable.
+- Widgets remain visible and can be added regardless of whether any detector is connected.
+- Each added widget has a *Settings* button where you can customize the data source.  
+
+
 
 ![External sensor widgets Android](@site/static/img/widgets/external-sensors-widgets.png) 
 
 | | |
 |------------|------------|
-| Enable | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="external_sensor_widgets"/>* |
+| Enable | **Android** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="external_sensor_widgets"/>* |
 | By tapping | No changes |   
 
 
