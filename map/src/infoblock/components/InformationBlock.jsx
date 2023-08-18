@@ -78,11 +78,19 @@ export default function InformationBlock({
         }
     }, []);
 
+    const onMouseMove = useCallback((e) => {
+        if (resizingRef.current) {
+            resize(e.clientY, DRAWER_MIN_HEIGHT_OPEN / 2);
+        }
+    }, []);
+
     useEffect(() => {
         if (resizing && mobile) {
             document.addEventListener('mouseup', onMouseUp, false);
+            document.addEventListener('mousemove', onMouseMove, false);
         } else {
             document.removeEventListener('mouseup', onMouseUp, false);
+            document.removeEventListener('mousemove', onMouseMove, false);
         }
     }, [resizing, mobile]);
 
