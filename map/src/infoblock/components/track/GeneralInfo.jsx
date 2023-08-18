@@ -383,9 +383,9 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     const Elevation = () => {
         return (
             <>
-                {upDownHill || elevation !== '-' || (points > 1 && <Divider sx={{ mt: '13px', mb: '12px' }} />)}
+                {upDownHill !== '' || elevation !== '-' || (points > 1 && <Divider sx={{ mt: '13px', mb: '12px' }} />)}
                 <Typography className={styles.info} variant="subtitle1" color="inherit">
-                    {upDownHill && (
+                    {upDownHill !== '' && (
                         <MenuItem sx={{ ml: -2, mt: -1 }}>
                             <ListItemIcon>
                                 <ImportExport fontSize="small" />
