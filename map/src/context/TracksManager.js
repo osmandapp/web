@@ -160,8 +160,8 @@ function prepareAnalysis(analysis) {
     newAnalysis.avgElevationSrtm = -1;
     newAnalysis.maxElevationSrtm = -1;
     newAnalysis.minElevationSrtm = -1;
-    newAnalysis.isSrtmApplied = false;
     newAnalysis.srtmAnalysis = false;
+    newAnalysis.isSrtmApplied = false; // additionally this flag is absent after GET_ANALYSIS request
     return newAnalysis;
 }
 
