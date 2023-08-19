@@ -316,22 +316,27 @@ function prepareTrack(track, localName = null, originalName = null) {
     track.id = track.name;
 
     track.hasGeo = hasGeo(track);
+    console.log(hasGeo(track));
+    console.log(track.hasGeo);
     addDistance(track);
 }
 
 function hasGeo(track) {
+    let hasGeo;
     if (!_.isEmpty(track.points)) {
         track.points.forEach((p) => {
-            if (p.geometry?.length > 0) {
+            if (p.geometry?.length > 0 && !hasGeo) {
+                hasGeo = true;
                 return true;
             }
         });
     } else {
         if (track.tracks) {
             track.tracks.forEach((t) => {
-                if (t.points) {
+                if (t.points && !hasGeo) {
                     t.points.forEach((p) => {
-                        if (p.geometry?.length > 0) {
+                        if (p.geometry?.length > 0 && !hasGeo) {
+                            hasGeo = true;
                             return true;
                         }
                     });
@@ -339,7 +344,7 @@ function hasGeo(track) {
             });
         }
     }
-    return false;
+    return hasGeo;
 }
 
 // set copy of track with .overwrite <bool> and .selected = true
