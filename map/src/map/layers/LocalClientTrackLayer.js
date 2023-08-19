@@ -560,10 +560,7 @@ export default function LocalClientTrackLayer() {
             ctxTrack.wpts = wpts;
             ctxTrack.layers = layers;
         }
-        TracksManager.addDistance(ctxTrack);
-        if (ctxTrack.points) {
-            TracksManager.addDistanceToPoints(ctxTrack.points);
-        }
+        TracksManager.addDistance(ctxTrack); // recalc-distance-local-save
         saveCreatedLayers(ctxTrack.layers);
         ctxTrack.zoom = false;
         ctx.setSelectedGpxFile({ ...ctxTrack });

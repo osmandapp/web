@@ -104,11 +104,8 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     }
 
     function getPoints() {
-        if (ctx.selectedGpxFile.points) {
-            setPoints(ctx.selectedGpxFile.points.length);
-        } else {
-            setPoints(TracksManager.getEditablePoints(ctx.selectedGpxFile).length);
-        }
+        const points = ctx.selectedGpxFile.points ?? TracksManager.getEditablePoints(ctx.selectedGpxFile);
+        setPoints(points?.length ?? 0);
     }
 
     function getTimeRange(info) {

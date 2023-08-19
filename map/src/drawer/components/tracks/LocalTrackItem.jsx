@@ -50,6 +50,7 @@ export default function LocalTrackItem({ track }) {
         ref.selected = true;
         ref.zoom = true;
         ref.analysis = TracksManager.prepareAnalysis(ref.analysis);
+        TracksManager.addDistance(ref); // recalc-distance-local
         ctx.setLocalTracks([...ctx.localTracks]);
         ctx.setSelectedGpxFile({ ...track });
     }
