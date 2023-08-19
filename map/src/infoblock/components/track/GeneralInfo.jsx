@@ -104,10 +104,8 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     }
 
     function getPoints() {
-        let geoPoints = 0;
         const points = ctx.selectedGpxFile.points ?? TracksManager.getEditablePoints(ctx.selectedGpxFile);
-        points?.forEach((p) => (geoPoints += p.geometry?.length ?? 0));
-        setPoints(`${points?.length ?? 0} (${geoPoints})`);
+        setPoints(points?.length ?? 0);
     }
 
     function getTimeRange(info) {
