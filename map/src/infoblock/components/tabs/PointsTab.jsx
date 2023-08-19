@@ -54,7 +54,7 @@ const PointsTab = ({ width }) => {
     });
 
     function getPoints() {
-        return ctx.selectedGpxFile.points ?? []; // distance already exists
+        return ctx.selectedGpxFile.points ?? []; // distance is already exist
     }
 
     function deleteAllPoints() {
