@@ -423,9 +423,21 @@ function addDistanceToPoints(points) {
         if (point.geometry) {
             point.dist = 0;
 
-            point.geometry.forEach((p) => {
-                point.dist += p.distance; // p.distance is set by API process-track-data
-            });
+            if (point.geometry.length > 0) {
+                const geo = point.geometry; // ref
+                geo[0].distance = 0;
+                if (geo.length > 1) {
+                    for (let i = 1; i < geo.length; i++) {
+                        // keep original if possible
+                        if (geo[i].distance === 0) {
+                            const current = geo[i];
+                            const previous = geo[i - 1];
+                            geo[i].distance = Utils.getDistance(current.lat, current.lng, previous.lat, previous.lng);
+                        }
+                        point.dist += geo[i].distance;
+                    }
+                }
+            }
 
             distanceTotal += point.dist;
             distanceSegment += point.dist;
