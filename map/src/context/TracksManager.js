@@ -321,21 +321,14 @@ function prepareTrack(track, localName = null, originalName = null) {
 
 function hasGeo(track) {
     if (!_.isEmpty(track.points)) {
-        track.points.forEach((p) => {
-            if (p.geometry?.length > 0) {
-                return true;
-            }
-        });
+        return track.points.some((p) => p.geometry?.length > 0);
     } else {
         if (track.tracks) {
-            track.tracks.forEach((t) => {
+            return track.tracks.some((t) => {
                 if (t.points) {
-                    t.points.forEach((p) => {
-                        if (p.geometry?.length > 0) {
-                            return true;
-                        }
-                    });
+                    return t.points.some((p) => p.geometry?.length > 0);
                 }
+                return false;
             });
         }
     }
