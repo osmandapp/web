@@ -54,11 +54,7 @@ const PointsTab = ({ width }) => {
     });
 
     function getPoints() {
-        let points = ctx.selectedGpxFile?.points;
-        if (points) {
-            TracksManager.addDistanceToPoints(points);
-            return points;
-        }
+        return ctx.selectedGpxFile.points ?? []; // distance already exists
     }
 
     function deleteAllPoints() {

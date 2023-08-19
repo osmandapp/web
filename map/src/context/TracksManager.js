@@ -71,7 +71,7 @@ function openVisibleTracks(localTracks) {
             for (let f of localTracks) {
                 if (f.name === local.name) {
                     if (Date.now() - local.addTime < HOURS_24_MS) {
-                        addDistance(f); // recalc-distance-visible
+                        addDistance(f); // recalc-distance-local-visible
                         f.selected = true;
                     } else {
                         f.selected = false;
@@ -145,7 +145,7 @@ function prepareLocalTrack(track) {
         id: prepareTrack.id,
         metaData: prepareTrack.metaData,
         points: prepareTrack.points,
-        tracks: prepareTrack.tracks,
+        // tracks: prepareTrack.tracks, // now tracks[] is not needed for localTracks
         wpts: prepareTrack.wpts,
         pointsGroups: prepareTrack.pointsGroups,
         ext: prepareTrack.ext,
@@ -226,34 +226,34 @@ function getGroup(name, local) {
     }
 }
 
-// TODO fix bug: repeat (redunant) trkpt/last geometry points (process-track-data/save-track-data?)
-function deduplicateTrackTracksPointsGeometryPoints(track) {
-    if (track && track.tracks) {
-        track.tracks?.forEach((t) =>
-            t.points?.forEach((p) => {
-                /**
-                 * Check distinct point's geometry for duplicates.
-                 * Overwrite this geometry with newly created points.
-                 */
-                if (p.geometry) {
-                    const newGeo = [];
-                    let lastLat = null;
-                    let lastLng = null;
-                    const oldGeo = p.geometry;
-                    for (let i = 0; i < oldGeo.length; i++) {
-                        if (oldGeo[i].lat === lastLat && oldGeo[i].lng === lastLng) {
-                            continue;
-                        }
-                        newGeo.push(oldGeo[i]);
-                        lastLat = oldGeo[i].lat;
-                        lastLng = oldGeo[i].lng;
-                    }
-                    p.geometry = newGeo; // mutate
-                }
-            })
-        );
-    }
-}
+// function deduplicateTrackTracksPointsGeometryPoints(track) {
+//     // was used temporarily in getTrackData()
+//     if (track && track.tracks) {
+//         track.tracks?.forEach((t) =>
+//             t.points?.forEach((p) => {
+//                 /**
+//                  * Check distinct point's geometry for duplicates.
+//                  * Overwrite this geometry with newly created points.
+//                  */
+//                 if (p.geometry) {
+//                     const newGeo = [];
+//                     let lastLat = null;
+//                     let lastLng = null;
+//                     const oldGeo = p.geometry;
+//                     for (let i = 0; i < oldGeo.length; i++) {
+//                         if (oldGeo[i].lat === lastLat && oldGeo[i].lng === lastLng) {
+//                             continue;
+//                         }
+//                         newGeo.push(oldGeo[i]);
+//                         lastLat = oldGeo[i].lat;
+//                         lastLng = oldGeo[i].lng;
+//                     }
+//                     p.geometry = newGeo; // mutate
+//                 }
+//             })
+//         );
+//     }
+// }
 
 async function getTrackData(file) {
     let formData = new FormData();
@@ -272,8 +272,7 @@ async function getTrackData(file) {
             let data = JSON.parse(quickNaNfix(resp));
             if (data) {
                 track = data.gpx_data;
-                deduplicateTrackTracksPointsGeometryPoints(track);
-                addDistance(track); // recalc-distance-cloud (after deduplication)
+                addDistance(track); // recalc-distance-cloud-download
             }
         }
     }
@@ -348,7 +347,7 @@ function prepareTrack(track, localName = null, originalName = null) {
     track.id = track.name;
 
     track.hasGeo = hasGeo(track);
-    addDistance(track);
+    addDistance(track); // recalc-distance-local-initial
 }
 
 function hasGeo(track) {
@@ -440,12 +439,12 @@ function getEditablePoints(track) {
 }
 
 function addDistance(track) {
-    if (track.points && track.points.length >= 2) {
+    if (track.points && track.points.length > 0) {
         addDistanceToPoints(track.points);
     }
     if (track.tracks) {
         track.tracks.forEach((t) => {
-            if (!_.isEmpty(t.points)) {
+            if (t.points && t.points.length > 0) {
                 addDistanceToPoints(t.points);
             }
         });
@@ -460,23 +459,22 @@ function addDistanceToPoints(points) {
         if (point.geometry) {
             point.dist = 0;
 
-            // TODO fix bug: zero geometry distance (process-track-data)
-            // point.geometry.forEach((p) => {
-            //     point.dist += p.distance;
-            // });
+            point.geometry.forEach((p) => {
+                point.dist += p.distance;
+            });
 
-            // temporary workaround until bug fixed
-            if (point.geometry.length > 0) {
-                const geo = point.geometry; // ref
-                geo[0].distance = 0;
-                if (geo.length > 1) {
-                    for (let i = 1; i < geo.length; i++) {
-                        const dist = Utils.getDistance(geo[i - 1].lat, geo[i - 1].lng, geo[i].lat, geo[i].lng);
-                        geo[i].distance = dist;
-                        point.dist += dist;
-                    }
-                }
-            }
+            // if (point.geometry.length > 0) {
+            //     // recalc geometry distance (tmp)
+            //     const geo = point.geometry; // ref
+            //     geo[0].distance = 0;
+            //     if (geo.length > 1) {
+            //         for (let i = 1; i < geo.length; i++) {
+            //             const dist = Utils.getDistance(geo[i - 1].lat, geo[i - 1].lng, geo[i].lat, geo[i].lng);
+            //             geo[i].distance = dist;
+            //             point.dist += dist;
+            //         }
+            //     }
+            // }
 
             distanceTotal += point.dist;
             distanceSegment += point.dist;
@@ -1155,7 +1153,6 @@ const TracksManager = {
     getTrackWithAnalysis,
     prepareTrack,
     addDistance,
-    addDistanceToPoints,
     createTrack,
     createGpxTracks,
     clearTrack,
