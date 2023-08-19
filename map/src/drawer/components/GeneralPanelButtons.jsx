@@ -1,7 +1,7 @@
 import { ButtonGroup, IconButton, Paper, Tooltip } from '@mui/material';
 import TracksManager from '../../context/TracksManager';
 import { Insights, Info, Upload } from '@mui/icons-material';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import AppContext from '../../context/AppContext';
 import { styled } from '@mui/material/styles';
 import PoiTypesDialog from './poi/PoiTypesDialog';
@@ -10,6 +10,7 @@ import ChangeProfileTrackDialog from '../../infoblock/components/track/dialogs/C
 import PointContextMenu from '../../infoblock/components/PointContextMenu';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
+import { useMutator } from '../../util/Utils';
 
 export default function GeneralPanelButtons({
     mainMenuWidth,
@@ -34,14 +35,30 @@ export default function GeneralPanelButtons({
     const HEADER_HEIGHT = 68;
     const BUTTON_SIZE = 41;
 
+    const [uploadedFiles, mutateUploadedFiles] = useMutator({});
+
+    useEffect(() => {
+        for (const file in uploadedFiles) {
+            TracksManager.addTrack({
+                ctx,
+                overwrite: false,
+                track: uploadedFiles[file].track,
+                selected: uploadedFiles[file].selected,
+            });
+            mutateUploadedFiles((o) => delete o[file]);
+            break; // limit 1 file per 1 render
+        }
+    }, [uploadedFiles]);
+
     const fileSelected = () => async (e) => {
+        const selected = e.target.files.length === 1;
         Array.from(e.target.files).forEach((file) => {
             const reader = new FileReader();
             reader.addEventListener('load', async () => {
                 const track = await TracksManager.getTrackData(file);
                 if (track) {
                     track.name = file.name;
-                    TracksManager.addTrack({ ctx, track, overwrite: false });
+                    mutateUploadedFiles((o) => (o[file.name] = { track, selected }));
                 }
             });
             reader.readAsText(file);

@@ -271,7 +271,7 @@ function handleEditCloudTrack(ctx) {
     });
 }
 
-function addTrack({ ctx, track, overwrite = false } = {}) {
+function addTrack({ ctx, track, selected = true, overwrite = false } = {}) {
     const newLocalTracks = [...ctx.localTracks];
 
     const originalName = track.name;
@@ -296,7 +296,16 @@ function addTrack({ ctx, track, overwrite = false } = {}) {
     prepareTrack(track, localName, originalName);
 
     closeCloudTrack(ctx, track);
-    openNewLocalTrack(ctx, track, overwrite);
+
+    if (selected === true) {
+        // upload 1 gpx - edit instantly
+        openNewLocalTrack(ctx, track, overwrite);
+    } else {
+        // used when multi-gpx uploaded
+        // generate points and save track
+        track.points = getEditablePoints(track);
+        saveLocalTrack({ ctx, track });
+    }
 
     if (overwrite) {
         const foundIndex = newLocalTracks?.findIndex((t) => t.name === localName);
