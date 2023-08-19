@@ -320,29 +320,19 @@ function prepareTrack(track, localName = null, originalName = null) {
 }
 
 function hasGeo(track) {
-    let hasGeo;
     if (!_.isEmpty(track.points)) {
-        track.points.forEach((p) => {
-            if (p.geometry?.length > 0 && !hasGeo) {
-                hasGeo = true;
-                return true;
-            }
-        });
+        return track.points.some((p) => p.geometry?.length > 0);
     } else {
         if (track.tracks) {
-            track.tracks.forEach((t) => {
-                if (t.points && !hasGeo) {
-                    t.points.forEach((p) => {
-                        if (p.geometry?.length > 0 && !hasGeo) {
-                            hasGeo = true;
-                            return true;
-                        }
-                    });
+            return track.tracks.some((t) => {
+                if (t.points) {
+                    return t.points.some((p) => p.geometry?.length > 0);
                 }
+                return false;
             });
         }
     }
-    return hasGeo;
+    return false;
 }
 
 // set copy of track with .overwrite <bool> and .selected = true
