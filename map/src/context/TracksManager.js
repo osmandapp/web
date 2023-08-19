@@ -226,35 +226,6 @@ function getGroup(name, local) {
     }
 }
 
-// function deduplicateTrackTracksPointsGeometryPoints(track) {
-//     // was used temporarily in getTrackData()
-//     if (track && track.tracks) {
-//         track.tracks?.forEach((t) =>
-//             t.points?.forEach((p) => {
-//                 /**
-//                  * Check distinct point's geometry for duplicates.
-//                  * Overwrite this geometry with newly created points.
-//                  */
-//                 if (p.geometry) {
-//                     const newGeo = [];
-//                     let lastLat = null;
-//                     let lastLng = null;
-//                     const oldGeo = p.geometry;
-//                     for (let i = 0; i < oldGeo.length; i++) {
-//                         if (oldGeo[i].lat === lastLat && oldGeo[i].lng === lastLng) {
-//                             continue;
-//                         }
-//                         newGeo.push(oldGeo[i]);
-//                         lastLat = oldGeo[i].lat;
-//                         lastLng = oldGeo[i].lng;
-//                     }
-//                     p.geometry = newGeo; // mutate
-//                 }
-//             })
-//         );
-//     }
-// }
-
 async function getTrackData(file) {
     let formData = new FormData();
     formData.append('file', file);
@@ -460,21 +431,8 @@ function addDistanceToPoints(points) {
             point.dist = 0;
 
             point.geometry.forEach((p) => {
-                point.dist += p.distance;
+                point.dist += p.distance; // p.distance is set by API process-track-data
             });
-
-            // if (point.geometry.length > 0) {
-            //     // recalc geometry distance (tmp)
-            //     const geo = point.geometry; // ref
-            //     geo[0].distance = 0;
-            //     if (geo.length > 1) {
-            //         for (let i = 1; i < geo.length; i++) {
-            //             const dist = Utils.getDistance(geo[i - 1].lat, geo[i - 1].lng, geo[i].lat, geo[i].lng);
-            //             geo[i].distance = dist;
-            //             point.dist += dist;
-            //         }
-            //     }
-            // }
 
             distanceTotal += point.dist;
             distanceSegment += point.dist;
@@ -729,74 +687,6 @@ function updateGapProfileOneSegment(routePoint, points) {
         points[points.length - 1].profile = PROFILE_GAP;
     }
 }
-
-// function updateStat(track) {
-//     addDistance(track);
-//     let activePoints = track.points;
-//     if (track.analysis?.totalDistance) {
-//         track.analysis.totalDistance = activePoints[activePoints.length - 1].distanceTotal;
-//     }
-//     track.analysis.timeMoving = null;
-//     track.analysis.diffElevationUp = null;
-//     track.analysis.diffElevationDown = null;
-//     if (track.analysis.hasSpeedData) {
-//         let totalSpeedSum = 0;
-//         let speedCount = 0;
-//         for (let t of track.tracks) {
-//             for (let p of t.points) {
-//                 if (p.geometry) {
-//                     for (let g of p.geometry) {
-//                         let speed = g.ext.speed;
-//                         track.analysis.minSpeed = Math.min(speed, track.analysis.minSpeed);
-//                         if (speed > 0) {
-//                             totalSpeedSum += speed;
-//                             track.analysis.maxSpeed = Math.max(speed, track.analysis.maxSpeed);
-//                             speedCount++;
-//                         }
-//                     }
-//                 } else {
-//                     let speed = p.ext.speed;
-//                     track.analysis.minSpeed = Math.min(speed, track.analysis.minSpeed);
-//                     if (speed > 0) {
-//                         totalSpeedSum += speed;
-//                         track.analysis.maxSpeed = Math.max(speed, track.analysis.maxSpeed);
-//                         speedCount++;
-//                     }
-//                 }
-//             }
-//         }
-//         track.analysis.avgSpeed = totalSpeedSum / speedCount;
-//     }
-
-//     if (track.analysis.hasElevationData) {
-//         let totalEleSum = 0;
-//         let eleCount = 0;
-//         for (let t of track.tracks) {
-//             for (let p of t.points) {
-//                 if (p.geometry) {
-//                     for (let g of p.geometry) {
-//                         let ele = getEle(g, 'ele', p.geometry);
-//                         track.analysis.minElevation = Math.min(ele, track.analysis.minElevation);
-//                         if (ele > 0) {
-//                             totalEleSum += ele;
-//                             track.analysis.maxElevation = Math.max(ele, track.analysis.maxElevation);
-//                             eleCount++;
-//                         }
-//                     }
-//                 } else {
-//                     let ele = getEle(p, 'ele', t.points);
-//                     track.analysis.minElevation = Math.min(ele, track.analysis.minElevation);
-//                     if (ele > 0) {
-//                         totalEleSum += ele;
-//                         track.analysis.maxElevation = Math.max(ele, track.analysis.maxElevation);
-//                         eleCount++;
-//                     }
-//                 }
-//             }
-//         }
-//         track.analysis.avgElevation = totalEleSum / eleCount;
-//     }
-// }
 
 function getEle(point, elevation, array) {
     let ele = point[elevation];
@@ -1146,7 +1036,6 @@ const TracksManager = {
     getEditablePoints,
     updateGapProfileOneSegment,
     updateRoute,
-    // updateStat,
     getEle,
     deleteLocalTrack,
     createName,
