@@ -145,7 +145,7 @@ function prepareLocalTrack(track) {
         id: prepareTrack.id,
         metaData: prepareTrack.metaData,
         points: prepareTrack.points,
-        // tracks: prepareTrack.tracks, // now tracks[] is not needed for localTracks
+        // tracks: prepareTrack.tracks, // tracks[] will be back
         wpts: prepareTrack.wpts,
         pointsGroups: prepareTrack.pointsGroups,
         ext: prepareTrack.ext,
