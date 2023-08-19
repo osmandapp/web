@@ -316,8 +316,6 @@ function prepareTrack(track, localName = null, originalName = null) {
     track.id = track.name;
 
     track.hasGeo = hasGeo(track);
-    console.log(hasGeo(track));
-    console.log(track.hasGeo);
     addDistance(track);
 }
 
