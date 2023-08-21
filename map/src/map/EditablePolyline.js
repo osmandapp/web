@@ -33,15 +33,27 @@ export default class EditablePolyline {
             if (this.map) {
                 // don't set events if no map
                 // used by cache refreshTempLine
-                this.addEvents(polyline, marker);
+                this.addEvents(this.map, polyline, marker);
             }
         }
         return polyline;
     }
 
-    addEvents(polyline, marker) {
+    addEvents(map, polyline, marker) {
+        function mousemoveMap(e) {
+            let coordinates = map.mouseEventToLatLng(e.originalEvent);
+            const closest = GeometryUtil.closest(map, polyline, coordinates);
+            if (closest?.distance > polyline.options.weight / 2 + 1) {
+                if (marker._icon) {
+                    marker._icon.style.display = 'none';
+                    map.off('mousemove', mousemoveMap);
+                }
+            }
+        }
+
         polyline.on('mousemove', (e) => {
             this.mousemovePolyline(e, marker);
+            this.map.on('mousemove', mousemoveMap);
         });
 
         marker.on('dragstart', (e) => {
@@ -53,11 +65,10 @@ export default class EditablePolyline {
             this.ctx.setPointContextMenu({});
             this.dragEndNewPoint(e, this.ctx.setGpxLoading, this.track).then(() => {
                 this.ctx.setGpxLoading(false);
+                if (this.map.hasLayer(marker)) {
+                    marker.removeFrom(this.map);
+                }
             });
-        });
-
-        this.map.on('mousemove', (e) => {
-            this.mousemoveMap(e, marker, polyline);
         });
     }
 
@@ -273,16 +284,6 @@ export default class EditablePolyline {
                 color: this.ctx.trackRouter.getColor(startPoint),
             });
             this.ctx.selectedGpxFile.layers.addLayer(polyline);
-        }
-    }
-
-    mousemoveMap(e, marker, polyline) {
-        let coordinates = this.map.mouseEventToLatLng(e.originalEvent);
-        const closest = GeometryUtil.closest(this.map, polyline, coordinates);
-        if (closest?.distance > polyline.options.weight / 2 + 1) {
-            if (marker._icon) {
-                marker._icon.style.display = 'none';
-            }
         }
     }
 }
