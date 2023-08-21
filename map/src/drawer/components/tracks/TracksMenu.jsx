@@ -102,6 +102,8 @@ export default function TracksMenu() {
             if (item.local !== true && item.analysis && item.url) {
                 if (item.analysis.totalTracks) {
                     tracks += item.analysis.totalTracks;
+                } else {
+                    tracks++;
                 }
                 if (item.analysis.points) {
                     seg += item.analysis.points - 1;
@@ -126,6 +128,8 @@ export default function TracksMenu() {
             if (item.local === true && item.analysis && item.url) {
                 if (item.analysis.totalTracks) {
                     tracks += item.analysis.totalTracks;
+                } else {
+                    tracks++;
                 }
                 if (item.analysis.wptPoints) {
                     wpts += item.analysis.wptPoints;

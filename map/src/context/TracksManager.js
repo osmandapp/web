@@ -71,6 +71,7 @@ function openVisibleTracks(localTracks) {
             for (let f of localTracks) {
                 if (f.name === local.name) {
                     if (Date.now() - local.addTime < HOURS_24_MS) {
+                        addDistance(f); // recalc-distance-local-visible
                         f.selected = true;
                     } else {
                         f.selected = false;
@@ -144,7 +145,7 @@ function prepareLocalTrack(track) {
         id: prepareTrack.id,
         metaData: prepareTrack.metaData,
         points: prepareTrack.points,
-        tracks: prepareTrack.track,
+        // tracks: prepareTrack.tracks, // tracks[] will be back
         wpts: prepareTrack.wpts,
         pointsGroups: prepareTrack.pointsGroups,
         ext: prepareTrack.ext,
@@ -161,6 +162,7 @@ function prepareAnalysis(analysis) {
     newAnalysis.maxElevationSrtm = -1;
     newAnalysis.minElevationSrtm = -1;
     newAnalysis.srtmAnalysis = false;
+    newAnalysis.isSrtmApplied = false; // additionally this flag is absent after GET_ANALYSIS request
     return newAnalysis;
 }
 
@@ -241,6 +243,7 @@ async function getTrackData(file) {
             let data = JSON.parse(quickNaNfix(resp));
             if (data) {
                 track = data.gpx_data;
+                addDistance(track); // recalc-distance-cloud-download
             }
         }
     }
@@ -315,26 +318,19 @@ function prepareTrack(track, localName = null, originalName = null) {
     track.id = track.name;
 
     track.hasGeo = hasGeo(track);
-    addDistance(track);
+    addDistance(track); // recalc-distance-local-initial
 }
 
 function hasGeo(track) {
     if (!_.isEmpty(track.points)) {
-        track.points.forEach((p) => {
-            if (p.geometry?.length > 0) {
-                return true;
-            }
-        });
+        return track.points.some((p) => p.geometry?.length > 0);
     } else {
         if (track.tracks) {
-            track.tracks.forEach((t) => {
+            return track.tracks.some((t) => {
                 if (t.points) {
-                    t.points.forEach((p) => {
-                        if (p.geometry?.length > 0) {
-                            return true;
-                        }
-                    });
+                    return t.points.some((p) => p.geometry?.length > 0);
                 }
+                return false;
             });
         }
     }
@@ -407,9 +403,12 @@ function getEditablePoints(track) {
 }
 
 function addDistance(track) {
+    if (track.points && track.points.length > 0) {
+        addDistanceToPoints(track.points);
+    }
     if (track.tracks) {
         track.tracks.forEach((t) => {
-            if (!_.isEmpty(t.points)) {
+            if (t.points && t.points.length > 0) {
                 addDistanceToPoints(t.points);
             }
         });
@@ -423,9 +422,23 @@ function addDistanceToPoints(points) {
     for (let point of points) {
         if (point.geometry) {
             point.dist = 0;
-            point.geometry.forEach((p) => {
-                point.dist += p.distance;
-            });
+
+            if (point.geometry.length > 0) {
+                const geo = point.geometry; // ref
+                geo[0].distance = 0;
+                if (geo.length > 1) {
+                    for (let i = 1; i < geo.length; i++) {
+                        // keep original if possible
+                        if (geo[i].distance === 0) {
+                            const current = geo[i];
+                            const previous = geo[i - 1];
+                            geo[i].distance = Utils.getDistance(current.lat, current.lng, previous.lat, previous.lng);
+                        }
+                        point.dist += geo[i].distance;
+                    }
+                }
+            }
+
             distanceTotal += point.dist;
             distanceSegment += point.dist;
             point.distanceTotal = distanceTotal;
@@ -680,74 +693,6 @@ function updateGapProfileOneSegment(routePoint, points) {
     }
 }
 
-function updateStat(track) {
-    addDistance(track);
-    let activePoints = track.points;
-    if (track.analysis?.totalDistance) {
-        track.analysis.totalDistance = activePoints[activePoints.length - 1].distanceTotal;
-    }
-    track.analysis.timeMoving = null;
-    track.analysis.diffElevationUp = null;
-    track.analysis.diffElevationDown = null;
-    if (track.analysis.hasSpeedData) {
-        let totalSpeedSum = 0;
-        let speedCount = 0;
-        for (let t of track.tracks) {
-            for (let p of t.points) {
-                if (p.geometry) {
-                    for (let g of p.geometry) {
-                        let speed = g.ext.speed;
-                        track.analysis.minSpeed = Math.min(speed, track.analysis.minSpeed);
-                        if (speed > 0) {
-                            totalSpeedSum += speed;
-                            track.analysis.maxSpeed = Math.max(speed, track.analysis.maxSpeed);
-                            speedCount++;
-                        }
-                    }
-                } else {
-                    let speed = p.ext.speed;
-                    track.analysis.minSpeed = Math.min(speed, track.analysis.minSpeed);
-                    if (speed > 0) {
-                        totalSpeedSum += speed;
-                        track.analysis.maxSpeed = Math.max(speed, track.analysis.maxSpeed);
-                        speedCount++;
-                    }
-                }
-            }
-        }
-        track.analysis.avgSpeed = totalSpeedSum / speedCount;
-    }
-
-    if (track.analysis.hasElevationData) {
-        let totalEleSum = 0;
-        let eleCount = 0;
-        for (let t of track.tracks) {
-            for (let p of t.points) {
-                if (p.geometry) {
-                    for (let g of p.geometry) {
-                        let ele = getEle(g, 'ele', p.geometry);
-                        track.analysis.minElevation = Math.min(ele, track.analysis.minElevation);
-                        if (ele > 0) {
-                            totalEleSum += ele;
-                            track.analysis.maxElevation = Math.max(ele, track.analysis.maxElevation);
-                            eleCount++;
-                        }
-                    }
-                } else {
-                    let ele = getEle(p, 'ele', t.points);
-                    track.analysis.minElevation = Math.min(ele, track.analysis.minElevation);
-                    if (ele > 0) {
-                        totalEleSum += ele;
-                        track.analysis.maxElevation = Math.max(ele, track.analysis.maxElevation);
-                        eleCount++;
-                    }
-                }
-            }
-        }
-        track.analysis.avgElevation = totalEleSum / eleCount;
-    }
-}
-
 function getEle(point, elevation, array) {
     let ele = point[elevation];
     let ind = array.indexOf(point);
@@ -756,7 +701,7 @@ function getEle(point, elevation, array) {
         if (array && ind !== 0) {
             let prevP = array[ind - 1];
             if (prevP && !isNaN(prevP[elevation]) && prevP[elevation] !== NAN_MARKER) {
-                return prevP[elevation];
+                return Number(prevP[elevation]);
             } else {
                 if (ind - array.indexOf(point) > 2) {
                     return undefined;
@@ -768,7 +713,161 @@ function getEle(point, elevation, array) {
             ele = 0;
         }
     }
-    return ele;
+    return Number(ele);
+}
+
+function isEmptyEle(ele) {
+    return ele === NAN_MARKER || isNaN(ele) || ele === null || ele === undefined;
+}
+
+function isNonZeroEle(ele) {
+    return ele !== NAN_MARKER && (ele > 0.01 || ele < -0.01);
+}
+
+export function eligibleToApplySrtm({ track }) {
+    /**
+     * 1) Apply SRTM if any geometry or any point have empty elevation #2156
+     * 2) Apply SRTM if all points have exactly zero elevaton (gpx-bug) #2136
+     */
+    function detectNoElevation(track) {
+        function checkPoints(points) {
+            let nonZeroPoints = 0;
+            if (points && points.length >= 2) {
+                for (let p = 1; p < points.length; p++) {
+                    const geometry = points[p].geometry;
+                    if (geometry && geometry.length > 0) {
+                        for (let g = 0; g < geometry.length; g++) {
+                            if (isEmptyEle(geometry[g].ele)) {
+                                return true; // check empty geometry
+                            }
+                            if (isNonZeroEle(geometry[g].ele)) {
+                                nonZeroPoints++; // count non-zero elevation (gpx bug)
+                            }
+                        }
+                    } else {
+                        // check points if empty geo
+                        if (isEmptyEle(points[p].ele)) {
+                            return true;
+                        }
+                        if (isNonZeroEle(points[p].ele)) {
+                            nonZeroPoints++;
+                        }
+                    }
+                }
+            }
+            return nonZeroPoints === 0 ? true : false; // fix all-zero-elevation gpx problem
+        }
+
+        if (track.points) {
+            return checkPoints(track.points);
+        }
+
+        if (track.tracks && track.tracks.length > 0) {
+            for (let t = 0; t < track.tracks.length; t++) {
+                if (checkPoints(track.tracks[t].points)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    function checkMaxTotalPoints(track) {
+        let totalPoints = 0;
+        function countPointsAndGeo(points) {
+            totalPoints += points?.length ?? 0;
+            points?.forEach((p) => (totalPoints += p.geometry?.length ?? 0));
+        }
+
+        countPointsAndGeo(track.points); // count points
+
+        if (totalPoints === 0) {
+            // count all tracks[].points if no track.points
+            track.tracks?.forEach((t) => countPointsAndGeo(t.points));
+        }
+
+        return totalPoints <= AUTO_SRTM_MAX_POINTS;
+    }
+
+    const analysis = track.analysis;
+
+    if (!track || isEmptyTrack(track, false)) {
+        return false; // empty track w/o points
+    }
+
+    if (analysis && analysis.isSrtmApplied) {
+        return false; // already applied
+    }
+
+    if (analysis && checkMaxTotalPoints(track) && detectNoElevation(track)) {
+        return true; // ok - apply
+    }
+
+    return false; // no apply
+}
+
+export async function applySrtmElevation({ track, setLoading }) {
+    function latlngKey(point) {
+        return Number(point.lat).toFixed(4) + ',' + Number(point.lng).toFixed(4); // ~11m (<30m SRTM precision)
+    }
+    function parseSrtmPoints(track) {
+        const cache = {};
+        function parse(p) {
+            if (p && p.lat && p.lng && (isNonZeroEle(p.srtmEle) || isNonZeroEle(p.ele))) {
+                const key = latlngKey(p);
+                // additionally, try to keep original gpx elevation
+                const val = Number(Number(isNonZeroEle(p.ele) ? p.ele : p.srtmEle).toFixed(2)); // =1cm precision
+                cache[key] = val;
+            }
+        }
+        track.points?.forEach((p) => parse(p));
+        track.points?.forEach((p) => p.geometry?.forEach((g) => parse(g)));
+        track.tracks?.forEach((t) => t.points?.forEach((p) => parse(p)));
+        track.tracks?.forEach((t) => t.points?.forEach((p) => p.geometry?.forEach((g) => parse(g))));
+        return cache;
+    }
+    function applySrtmPoints({ track, cache }) {
+        function apply(p) {
+            if (p && p.lat && p.lng) {
+                const key = latlngKey(p);
+                if (cache[key]) {
+                    p.ele = cache[key];
+                }
+            }
+        }
+        track.points?.forEach((p) => apply(p));
+        track.points?.forEach((p) => p.geometry?.forEach((g) => apply(g)));
+        track.tracks?.forEach((t) => t.points?.forEach((p) => apply(p)));
+        track.tracks?.forEach((t) => t.points?.forEach((p) => p.geometry?.forEach((g) => apply(g))));
+    }
+    const fakeCtx = { selectedGpxFile: track };
+    const newGpxFile = await getTrackWithAnalysis(GET_SRTM_DATA, fakeCtx, setLoading, track.points);
+    if (newGpxFile.analysis) {
+        const analysis = newGpxFile.analysis; // ref
+
+        // convert srtm-to-main
+        if (analysis.srtmAnalysis) {
+            // swap flags
+            analysis.hasElevationData = true;
+            analysis.srtmAnalysis = false; // allow recalc by user
+
+            // swap min/avg/max
+            analysis.minElevation = analysis.minElevationSrtm;
+            analysis.avgElevation = analysis.avgElevationSrtm;
+            analysis.maxElevation = analysis.maxElevationSrtm;
+            analysis.minElevationSrtm = -1;
+            analysis.avgElevationSrtm = -1;
+            analysis.maxElevationSrtm = -1;
+
+            // swap points and geometry
+            const cache = parseSrtmPoints(newGpxFile);
+            applySrtmPoints({ track: newGpxFile, cache });
+        }
+
+        analysis.isSrtmApplied = true; // mark as already applied
+    }
+    return newGpxFile;
 }
 
 async function getTrackWithAnalysis(path, ctx, setLoading, points) {
@@ -793,9 +892,12 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
             'Content-Type': 'application/json',
         },
     });
+
     if (resp.data) {
         setLoading(false);
-        const data = FavoritesManager.prepareTrackData(resp.data);
+
+        // data will be mutated, use cloneDeep to avoid apiCache mutations
+        const data = FavoritesManager.prepareTrackData(_.cloneDeep(resp.data));
 
         const newGpxFile = { ...ctx.selectedGpxFile }; // don't modify state
 
@@ -807,13 +909,11 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         newGpxFile.wpts = wpts;
         newGpxFile.pointsGroups = pointsGroups;
 
-        // automatic SRTM request
+        // auto-srtm
         if (path === GET_ANALYSIS) {
-            if (data.data.analysis?.hasElevationData) {
-                newGpxFile.analysis.srtmAnalysis = false;
-            } else {
-                const fakeCtx = { selectedGpxFile: newGpxFile };
-                return getTrackWithAnalysis(GET_SRTM_DATA, fakeCtx, setLoading, points); // auto-srtm-this
+            const track = newGpxFile;
+            if (eligibleToApplySrtm({ track })) {
+                return applySrtmElevation({ track, setLoading });
             }
         }
 
@@ -941,14 +1041,12 @@ const TracksManager = {
     getEditablePoints,
     updateGapProfileOneSegment,
     updateRoute,
-    updateStat,
     getEle,
     deleteLocalTrack,
     createName,
     getTrackWithAnalysis,
     prepareTrack,
     addDistance,
-    addDistanceToPoints,
     createTrack,
     createGpxTracks,
     clearTrack,
@@ -972,7 +1070,6 @@ const TracksManager = {
     CHANGE_PROFILE_AFTER: CHANGE_PROFILE_AFTER,
     CHANGE_PROFILE_ALL: CHANGE_PROFILE_ALL,
     TRACK_VISIBLE_FLAG: TRACK_VISIBLE_FLAG,
-    AUTO_SRTM_MAX_POINTS: AUTO_SRTM_MAX_POINTS,
     FIT_BOUNDS_OPTIONS: FIT_BOUNDS_OPTIONS,
 };
 
