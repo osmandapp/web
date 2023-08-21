@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Toolbar, Typography } from '@mui/material';
+import { Button, Toolbar } from '@mui/material';
 import { Divider, MenuList, Box, IconButton } from '@mui/material';
 import { ArrowBack, Person } from '@mui/icons-material';
 import AppContext from '../../context/AppContext';
@@ -10,9 +10,26 @@ import RouteMenu from './route/RouteMenu';
 import { useNavigate } from 'react-router-dom';
 import FavoritesMenu from './favorite/FavoritesMenu';
 import SearchResultMenu from './search/SearchResultMenu';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+    btn: {
+        width: '100%',
+        justifyContent: 'left !important',
+        wordWrap: 'break-word',
+        display: 'block !important',
+        textOverflow: 'ellipsis !important',
+        overflow: 'hidden !important',
+        textAlign: 'left',
+        whiteSpace: 'nowrap',
+        fontSize: '0.80rem !important',
+        textTransform: 'none !important',
+    },
+});
 
 export default function OsmAndDrawer({ toggleDrawer }) {
     const ctx = useContext(AppContext);
+    const classes = useStyles();
 
     const navigate = useNavigate();
     const openLogin = () => {
@@ -34,13 +51,11 @@ export default function OsmAndDrawer({ toggleDrawer }) {
                         <ArrowBack />
                     </IconButton>
                     {ctx.loginUser ? (
-                        <Typography onClick={openLogin} color="inherit">
+                        <Button className={classes.btn} onClick={openLogin}>
                             {ctx.loginUser}
-                        </Typography>
+                        </Button>
                     ) : (
-                        <Typography onClick={openLogin} variant="h6" color="inherit">
-                            Login
-                        </Typography>
+                        <Button onClick={openLogin}>Login</Button>
                     )}
                     <Box>
                         <IconButton size="large" onClick={openLogin} color="inherit">
