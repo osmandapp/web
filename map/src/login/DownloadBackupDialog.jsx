@@ -332,8 +332,10 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
             open={openDownloadBackupDialog}
             onClose={() => setOpenDownloadBackupDialog(false)}
         >
-            {loadingBackup && !stopProgress && <LinearProgress variant="determinate" value={progress} size={20} />}
-            {loadingBackup && stopProgress && <LinearProgress size={20} />}
+            {loadingBackup && !stopProgress && (
+                <LinearProgress sx={{ height: '8px' }} variant="determinate" value={progress} size={20} />
+            )}
+            {loadingBackup && stopProgress && <LinearProgress sx={{ height: '8px' }} size={20} />}
             <Grid container spacing={2}>
                 <Grid item xs={11} sx={{ mb: -3 }}>
                     <DialogTitle>Select the data to be exported</DialogTitle>
@@ -408,8 +410,10 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
                 <ToggleButton value={BACKUP_TYPE_OSF}>OSF</ToggleButton>
             </ToggleButtonGroup>
             <DialogActions style={{ justifyContent: 'space-between' }}>
-                <Alert severity="info">{backupData && getBackupTime()}</Alert>
-                <Button disabled={!backupData} onClick={() => downloadBackup()}>
+                <Alert sx={{ backgroundColor: 'transparent !important' }} severity="info">
+                    {backupData && getBackupTime()}
+                </Alert>
+                <Button variant="contained" disabled={!backupData} onClick={() => downloadBackup()}>
                     {`Download backup`}
                     {backupData && ` (${getTypeSize(backupData?.size)})`}
                 </Button>
