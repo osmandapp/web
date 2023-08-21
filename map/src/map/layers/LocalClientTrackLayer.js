@@ -663,10 +663,10 @@ export default function LocalClientTrackLayer() {
         let res = [];
         layers.forEach((layer) => {
             if (layer instanceof L.Marker) {
-                let editableMarker = new EditableMarker(map, ctx, null, layer, ctxTrack).create();
+                let editableMarker = new EditableMarker(map, ctx, null, layer, ctxTrack).create(); // re-create
                 res.push(editableMarker);
             } else if (layer instanceof L.Polyline) {
-                let editablePolyline = new EditablePolyline(map, ctx, null, layer, ctxTrack).create();
+                let editablePolyline = new EditablePolyline(map, ctx, null, layer, ctxTrack).create(); // re-create
                 res.push(editablePolyline);
             }
         });

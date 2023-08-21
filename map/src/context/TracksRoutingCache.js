@@ -121,7 +121,7 @@ function requestAnalytics({ ctx, track, debouncerTimer }) {
 function refreshTempLine({ ctx, geometry, track, tempLine, color }) {
     // don't destroy tempLine (empty geo)
     if (geometry && geometry.length > 0) {
-        const polyline = new EditablePolyline(null, ctx, geometry, null, track).create();
+        const polyline = new EditablePolyline(null, ctx, geometry, null, track).create(); // latlngs-only
         tempLine.setStyle({ color, dashArray: null });
         tempLine.setLatLngs(polyline._latlngs);
         tempLine.options.name = undefined;
