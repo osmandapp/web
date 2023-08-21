@@ -1,5 +1,6 @@
 import Dialog from '@mui/material/Dialog';
 import {
+    Alert,
     Button,
     Collapse,
     Grid,
@@ -51,6 +52,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
     const FILE_TYPE = 'FILE';
     const BACKUP_TYPE_ZIP = '.zip';
     const BACKUP_TYPE_OSF = '.osf';
+    const LOADING_TIME_ONE_FILE = 80;
 
     const [openedList, setOpenedList] = useState('');
     const [selectedCategories, setSelectedCategories] = useState([]);
@@ -59,6 +61,8 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
     const [loadingBackup, setLoadingBackup] = useState(false);
     const [errorBackup, setErrorBackup] = useState(null);
     const [backupType, setBackupType] = useState(BACKUP_TYPE_OSF);
+    const [progress, setProgress] = useState(0);
+    const [stopProgress, setStopProgress] = useState(false);
 
     const handleBackupType = (event, selectedType) => {
         setBackupType(selectedType);
@@ -83,11 +87,13 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
         if (!_.isEmpty(selectedCategories)) {
             let data = [];
             let size = 0;
+            let count = 0;
             Object.keys(categories).forEach((k) => {
                 Object.keys(categories[k]).forEach((sk) => {
                     if (selectedCategories.includes(sk)) {
                         data.push(sk);
                         size += categories[k][sk].size;
+                        count += categories[k][sk].count;
                     }
                 });
             });
@@ -100,6 +106,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
             setBackupData({
                 data: data,
                 size: size,
+                count: count,
             });
         } else {
             setBackupData(null);
@@ -127,9 +134,11 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
             if (!groups[type]) {
                 groups[type] = {
                     size: 0,
+                    count: 0,
                 };
             }
             groups[type].size += file.filesize;
+            groups[type].count++;
         });
         return groups;
     }
@@ -286,13 +295,45 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
         }
     }
 
+    useEffect(() => {
+        if (loadingBackup && !stopProgress) {
+            const timer = setInterval(() => {
+                const maxTime = backupData?.count * LOADING_TIME_ONE_FILE;
+                setProgress((oldProgress) => {
+                    if (oldProgress === 100) {
+                        setStopProgress(true);
+                        return 0;
+                    }
+                    const diff = 100;
+                    let oldTime = (oldProgress * maxTime) / 100;
+                    let newTime = Math.min(oldTime + diff, maxTime);
+                    return (newTime * 100) / maxTime;
+                });
+            }, 100);
+
+            return () => {
+                clearInterval(timer);
+            };
+        }
+    }, [loadingBackup]);
+
+    function getBackupTime() {
+        const time = (backupData?.count * LOADING_TIME_ONE_FILE) / 60000;
+        if (time < 1) {
+            return ` Download time less than 1 minutes`;
+        } else {
+            return ` Download time ${time.toFixed(1)} minutes`;
+        }
+    }
+
     return (
         <Dialog
             classes={{ paper: classes.paper }}
             open={openDownloadBackupDialog}
             onClose={() => setOpenDownloadBackupDialog(false)}
         >
-            {loadingBackup && <LinearProgress size={20} />}
+            {loadingBackup && !stopProgress && <LinearProgress variant="determinate" value={progress} size={20} />}
+            {loadingBackup && stopProgress && <LinearProgress size={20} />}
             <Grid container spacing={2}>
                 <Grid item xs={11} sx={{ mb: -3 }}>
                     <DialogTitle>Select the data to be exported</DialogTitle>
@@ -366,7 +407,8 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
                 <ToggleButton value={BACKUP_TYPE_ZIP}>ZIP</ToggleButton>
                 <ToggleButton value={BACKUP_TYPE_OSF}>OSF</ToggleButton>
             </ToggleButtonGroup>
-            <DialogActions>
+            <DialogActions style={{ justifyContent: 'space-between' }}>
+                <Alert severity="info">{backupData && getBackupTime()}</Alert>
                 <Button disabled={!backupData} onClick={() => downloadBackup()}>
                     {`Download backup`}
                     {backupData && ` (${getTypeSize(backupData?.size)})`}
