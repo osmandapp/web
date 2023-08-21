@@ -9,7 +9,7 @@ const TEMP_LINE_STYLE = {
     color: '#fbc73a',
     dashArray: '5, 5',
     dashOffset: '0',
-    name: TEMP_LAYER_FLAG,
+    // name: TEMP_LAYER_FLAG, // style.name was not used, instead of actual layer.options.name
 };
 
 function createLayersByTrackData(data, ctx, map) {
@@ -275,7 +275,7 @@ function getPolylineByStartEnd(startPoint, endPoint, polylines) {
 
 function updatePolylineToTemp(startPoint, endPoint, polyline) {
     if (polyline) {
-        const polylineTemp = createTempPolyline(startPoint, endPoint); // coordinates only
+        const polylineTemp = createTempPolyline(startPoint, endPoint);
         polyline.setLatLngs(polylineTemp._latlngs);
         polyline.setStyle(TEMP_LINE_STYLE);
         polyline.point = endPoint;

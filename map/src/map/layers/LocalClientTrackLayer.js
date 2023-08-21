@@ -101,7 +101,8 @@ export default function LocalClientTrackLayer() {
                 (isPointsHaveSameGeo(unverified.points, trusted.points) ||
                     isPointsHaveSameGeo(unverified.tracks[0]?.points, trusted.tracks[0]?.points))
             ) {
-                // cleanup some triggers
+                // cleanup triggers
+                unverified.zoom = false;
                 unverified.syncRouting = false;
                 unverified.updateLayers = false;
                 ctx.setSelectedGpxFile(unverified);
@@ -379,6 +380,8 @@ export default function LocalClientTrackLayer() {
         let currLayer = localLayers[ctxTrack.name];
         if (currLayer) {
             map.fitBounds(currLayer.layer.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
+            ctxTrack.zoom = false;
+            ctx.setSelectedGpxFile({ ...ctxTrack });
         }
     }
 
@@ -881,6 +884,7 @@ export default function LocalClientTrackLayer() {
             ctx.routingNewSegments.forEach((s) => {
                 TracksRoutingCache.addRoutingToCache(s.start, s.end, s.tempPolyline, ctx);
             });
+            ctx.setRoutingNewSegments([]); // reset new segments queue
         }
     }, [ctx.routingNewSegments]);
 

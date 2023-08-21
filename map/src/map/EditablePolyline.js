@@ -31,8 +31,7 @@ export default class EditablePolyline {
                 draggable: true,
             });
             if (this.map) {
-                // don't set events if no map
-                // used by cache refreshTempLine
+                // map=null used by refreshTempLine()
                 this.addEvents(this.map, polyline, marker);
             }
         }
