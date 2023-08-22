@@ -662,6 +662,7 @@ export default function LocalClientTrackLayer() {
         }
     }
 
+    // change layers view->editable
     function createEditableLayers(layers) {
         let res = [];
         layers.forEach((layer) => {
