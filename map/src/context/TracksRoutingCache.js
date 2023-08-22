@@ -201,7 +201,7 @@ function createRoutingKey(startPoint, endPoint, geoProfile) {
 
 function addSegmentToRouting(start, end, oldPoint, tempPolyline, segments) {
     const segment = {
-        oldPoint: oldPoint, // purpose of oldPoint here?
+        oldPoint, // purpose of oldPoint here?
         start: start,
         end: end,
         tempPolyline: tempPolyline,
