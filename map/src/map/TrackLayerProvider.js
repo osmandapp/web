@@ -89,25 +89,27 @@ function addStartEnd(points, layers, coordsTrk, coordsAll) {
 function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable, index }) {
     let coords = [];
 
-    // draw tempLine for orphaned empty geo
+    // draw tempLine for orphaned empty geo but not for gap
     if (ctx && map && point.geometry.length === 0 && index > 0) {
-        let pointLayersFound = 0;
-        const trackLayers = ctx.selectedGpxFile.layers;
-        if (trackLayers && map.hasLayer(trackLayers)) {
-            trackLayers.eachLayer((l) => {
-                if (l.point && TracksManager.isEqualPoints(l.point, point)) {
-                    pointLayersFound++;
-                }
-            });
-        }
-        if (pointLayersFound === 0) {
-            const start = points[index - 1];
-            const end = point;
-            coords.push(new L.LatLng(start.lat, start.lng));
-            coords.push(new L.LatLng(end.lat, end.lng));
-            coordsAll = coordsAll.concat(Object.assign([], coords));
-            layers.push(createTempPolyline(start, end));
-            return coordsAll;
+        if (points[index - 1].profile !== TracksManager.PROFILE_GAP) {
+            let pointLayersFound = 0;
+            const trackLayers = ctx.selectedGpxFile.layers;
+            if (trackLayers && map.hasLayer(trackLayers)) {
+                trackLayers.eachLayer((l) => {
+                    if (l.point && TracksManager.isEqualPoints(l.point, point)) {
+                        pointLayersFound++;
+                    }
+                });
+            }
+            if (pointLayersFound === 0) {
+                const start = points[index - 1];
+                const end = point;
+                coords.push(new L.LatLng(start.lat, start.lng));
+                coords.push(new L.LatLng(end.lat, end.lng));
+                coordsAll = coordsAll.concat(Object.assign([], coords));
+                layers.push(createTempPolyline(start, end));
+                return coordsAll;
+            }
         }
     }
 
