@@ -107,7 +107,9 @@ function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable
                 coords.push(new L.LatLng(start.lat, start.lng));
                 coords.push(new L.LatLng(end.lat, end.lng));
                 coordsAll = coordsAll.concat(Object.assign([], coords));
-                layers.push(createTempPolyline(start, end));
+                const orphan = createTempPolyline(start, end);
+                orphan.options.name = undefined;
+                layers.push(orphan);
                 return coordsAll;
             }
         }
@@ -344,6 +346,7 @@ function createTempPolyline(start, end) {
 
     const polyline = new L.Polyline([startPoint, endPoint], TEMP_LINE_STYLE);
     polyline.point = end; // always store end-point ref inside layer
+    polyline.options.name = TEMP_LAYER_FLAG; // use temp-flag
 
     return polyline;
 }
