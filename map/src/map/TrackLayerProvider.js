@@ -5,7 +5,7 @@ import TracksManager from '../context/TracksManager';
 import EditablePolyline from './EditablePolyline';
 
 export const TEMP_LAYER_FLAG = 'temp';
-const TEMP_LINE_STYLE = {
+export const TEMP_LINE_STYLE = {
     color: '#fbc73a',
     dashArray: '5, 5',
     dashOffset: '0',
@@ -277,6 +277,7 @@ function updatePolylineToTemp(startPoint, endPoint, polyline) {
     if (polyline) {
         const polylineTemp = createTempPolyline(startPoint, endPoint);
         polyline.setLatLngs(polylineTemp._latlngs);
+        polyline.options.name = TEMP_LAYER_FLAG;
         polyline.setStyle(TEMP_LINE_STYLE);
         polyline.point = endPoint;
         return polyline;
@@ -373,7 +374,8 @@ const TrackLayerProvider = {
     getPolylines,
     updatePolyline,
     createEditableTempLPolyline,
-    TEMP_LINE_STYLE: TEMP_LINE_STYLE,
+    TEMP_LINE_STYLE,
+    TEMP_LAYER_FLAG,
 };
 
 export default TrackLayerProvider;
