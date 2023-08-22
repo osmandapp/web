@@ -58,6 +58,7 @@ const config = {
           },
           { to: '/blog', label: 'Blog', position: 'left'},
           { to: '/docs/user/purchases', label: '💳 Purchases', position: 'left' },
+          { to: 'https://osmand.net/map', label: '🌍 Map', position: 'left' },
           { to: '/docs/hiring', label: '🚵‍♂️ Join us', position: 'left' },
 //          { href: 'https://osmand.net/map', label: 'Map', position: 'left' },
           {
@@ -76,6 +77,10 @@ const config = {
               {
                 label: 'Purchases 💳',
                 to: '/docs/user/purchases',
+              },
+              {
+                label: 'Map 🌍',
+                to: 'https://osmand.net/map',
               },
               {
                 label: 'Docs',
@@ -184,10 +189,6 @@ const config = {
               {
                 label: 'Blog',
                 to: '/blog',
-              },
-              {
-                label: 'Map',
-                to: 'https://osmand.net/map',
               },
               {
                 label: 'GitHub',
