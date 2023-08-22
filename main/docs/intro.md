@@ -13,6 +13,10 @@ User guide about the OsmAnd application describing main features & settings.
 
 Key map elements used in OsmAnd Map.
 
+### 🌍 [Map](https://osmand.net/map)
+
+Use the OsmAnd route planner, look at the weather forecast, find interesting places on the map, and work with your OsmAnd Cloud account (tracks, favorites, account data). 
+
 ### 📚 [Technical Documentation](/docs/technical/)
 
 Technical documentation related 
