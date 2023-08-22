@@ -102,7 +102,7 @@ export default class EditableMarker {
         let lat = e.target._latlng.lat;
         let lng = e.target._latlng.lng;
 
-        let trackPoints = track.points;
+        let trackPoints = track.points; // ref
         let indPoint = track.dragPoint.indPoint;
         let segments = [];
         if (indPoint !== undefined && indPoint !== -1) {
@@ -144,7 +144,7 @@ export default class EditableMarker {
                     if (prevPoint.geometry) {
                         if (prevPoint.profile === TracksManager.PROFILE_LINE) {
                             let newGeo = _.cloneDeep(currentPoint.geometry);
-                            newGeo[newGeo.length - 1] = currentPoint;
+                            newGeo[newGeo.length - 1] = { lat: currentPoint.lat, lng: currentPoint.lng };
                             currentPoint.geometry = newGeo;
                         } else {
                             currentPolyline = TrackLayerProvider.updatePolyline(
@@ -169,7 +169,7 @@ export default class EditableMarker {
                     if (nextPoint.geometry) {
                         if (currentPoint.profile === TracksManager.PROFILE_LINE) {
                             let newGeo = _.cloneDeep(nextPoint.geometry);
-                            newGeo[0] = currentPoint;
+                            newGeo[0] = { lat: currentPoint.lat, lng: currentPoint.lng };
                             nextPoint.geometry = newGeo;
                         } else {
                             nextPolyline = TrackLayerProvider.updatePolyline(
