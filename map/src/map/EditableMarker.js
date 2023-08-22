@@ -99,23 +99,24 @@ export default class EditableMarker {
     }
 
     dragEndPoint(e, track) {
-        let lat = e.target._latlng.lat;
-        let lng = e.target._latlng.lng;
+        const lat = e.target._latlng.lat;
+        const lng = e.target._latlng.lng;
 
-        let trackPoints = track.points; // ref
-        let indPoint = track.dragPoint.indPoint;
+        const trackPoints = track.points; // ref
+        const indPoint = track.dragPoint.indPoint;
         let segments = [];
-        if (indPoint !== undefined && indPoint !== -1) {
-            let currentPoint = trackPoints[indPoint];
-            let layers = track.layers.getLayers();
-            let polylines = TrackLayerProvider.getPolylines(layers);
 
-            let currentPolyline;
-            let indPointInPolyline;
+        if (indPoint !== undefined && indPoint !== -1) {
+            const currentPoint = trackPoints[indPoint]; // ref
+            const layers = track.layers.getLayers();
+            const polylines = TrackLayerProvider.getPolylines(layers);
+
+            let currentPolyline = null;
+            let indPointInPolyline = -1;
 
             polylines.forEach((p) => {
-                let pp = p._latlngs;
-                let fp = pp.find((point) => point.lat === currentPoint.lat && point.lng === currentPoint.lng);
+                const pp = p._latlngs;
+                const fp = pp.find((point) => point.lat === currentPoint.lat && point.lng === currentPoint.lng);
                 if (fp !== -1) {
                     currentPolyline = p;
                     indPointInPolyline = _.indexOf(pp, fp, 0);
@@ -127,26 +128,33 @@ export default class EditableMarker {
             currentPoint.lat = lat;
             currentPoint.lng = lng;
 
-            if (
-                currentPoint.profile === TracksManager.PROFILE_LINE &&
-                (!currentPoint.geometry || !currentPoint.profile)
-            ) {
-                currentPolyline._latlngs[indPointInPolyline] = currentPoint;
-                currentPolyline.setLatLngs(currentPolyline._latlngs);
-            } else {
-                let currentPolyline;
-                let nextPolyline;
+            const prevPoint = indPoint > 0 ? trackPoints[indPoint - 1] : null;
+            const nextPoint = trackPoints[indPoint + 1];
 
-                let prevPoint = trackPoints[indPoint - 1];
-                let nextPoint = trackPoints[indPoint + 1];
+            const isUnroutedZeroGeo =
+                !currentPoint.profile ||
+                !currentPoint.geometry ||
+                (indPoint > 0 && currentPoint.geometry.length === 0 && prevPoint.profile !== TracksManager.PROFILE_GAP);
+
+            if (isUnroutedZeroGeo) {
+                if (currentPolyline && indPointInPolyline !== -1) {
+                    currentPolyline._latlngs[indPointInPolyline] = currentPoint;
+                    currentPolyline.setLatLngs(currentPolyline._latlngs);
+                } else {
+                    console.error('EditableMarker drag-drop unrouted-zero-geo failed');
+                }
+            } else {
+                let currentPolyline = null;
+                let nextPolyline = null;
 
                 if (prevPoint && prevPoint.profile !== TracksManager.PROFILE_GAP) {
                     if (prevPoint.geometry) {
                         if (prevPoint.profile === TracksManager.PROFILE_LINE) {
-                            let newGeo = _.cloneDeep(currentPoint.geometry);
+                            const newGeo = _.cloneDeep(currentPoint.geometry);
                             newGeo[newGeo.length - 1] = { lat: currentPoint.lat, lng: currentPoint.lng };
                             currentPoint.geometry = newGeo;
                         } else {
+                            currentPoint.geometry = []; // ready for updateLayers
                             currentPolyline = TrackLayerProvider.updatePolyline(
                                 prevPoint,
                                 currentPoint,
@@ -157,7 +165,7 @@ export default class EditableMarker {
                             segments = TracksRoutingCache.addSegmentToRouting(
                                 prevPoint,
                                 currentPoint,
-                                oldPoint,
+                                null, // oldPoint,
                                 currentPolyline,
                                 segments
                             );
@@ -166,23 +174,25 @@ export default class EditableMarker {
                 }
 
                 if (nextPoint && currentPoint.profile !== TracksManager.PROFILE_GAP) {
+                    const oldNextPoint = _.cloneDeep(nextPoint);
                     if (nextPoint.geometry) {
                         if (currentPoint.profile === TracksManager.PROFILE_LINE) {
-                            let newGeo = _.cloneDeep(nextPoint.geometry);
+                            const newGeo = _.cloneDeep(nextPoint.geometry);
                             newGeo[0] = { lat: currentPoint.lat, lng: currentPoint.lng };
                             nextPoint.geometry = newGeo;
                         } else {
+                            nextPoint.geometry = []; // ready for updateLayers
                             nextPolyline = TrackLayerProvider.updatePolyline(
                                 currentPoint,
                                 nextPoint,
                                 polylines,
                                 oldPoint,
-                                null
+                                oldNextPoint
                             );
                             segments = TracksRoutingCache.addSegmentToRouting(
                                 currentPoint,
                                 nextPoint,
-                                oldPoint,
+                                null, // oldPoint,
                                 nextPolyline,
                                 segments
                             );
@@ -191,14 +201,25 @@ export default class EditableMarker {
                 }
             }
         } else {
-            let indWpt = track.dragPoint.indWpt;
+            const indWpt = track.dragPoint.indWpt;
             if (indWpt !== undefined && indWpt !== -1) {
-                let currentWpt = track.wpts[indWpt];
+                const currentWpt = track.wpts[indWpt];
                 currentWpt.lat = lat;
                 currentWpt.lon = lng;
             }
         }
-        this.ctx.setRoutingNewSegments([...segments]);
+
+        if (segments.length > 0) {
+            this.ctx.setRoutingNewSegments([...segments]);
+        }
+
+        // finally
+        track.zoom = false;
+        track.addPoint = false;
+        track.dragPoint = false;
+        track.updateLayers = true;
+        this.ctx.setSelectedGpxFile({ ...track });
+
         this.ctx.trackState.update = true;
         this.ctx.setTrackState({ ...this.ctx.trackState });
     }
