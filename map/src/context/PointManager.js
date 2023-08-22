@@ -1,4 +1,4 @@
-import TracksManager from './TracksManager';
+import TracksManager, { isPointUnrouted } from './TracksManager';
 import Utils from '../util/Utils';
 import TrackLayerProvider from '../map/TrackLayerProvider';
 import TracksRoutingCache from './TracksRoutingCache';
@@ -150,7 +150,9 @@ async function deleteByIndex(points, index, lengthSum, ctx) {
             if (i + lengthSum === index) {
                 if (points[i].geometry) {
                     let newGeometry;
-                    if (points[i].profile === TracksManager.PROFILE_LINE) {
+                    if (isPointUnrouted({ point: points[i], pointIndex: i, prevPoint: points[i - 1] })) {
+                        // FIXME this if is never happened
+                        // FIXME need to process PROFILE_GAP
                         let currentNewGeo = points[i].geometry;
                         currentNewGeo.pop();
                         let nextNewGeo = points[i + 1].geometry;

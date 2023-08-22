@@ -1007,7 +1007,7 @@ export function isPointUnrouted({ point, pointIndex, prevPoint }) {
     return (
         !point.profile || // empty profile is Unrouted but PROFILE_LINE is Routed
         !point.geometry || // undefined geometry (null, undefined) is always Unrouted
-        // empty geometry is Unrouted, but fist point or previous PROFILE_GAP is Routed
+        // empty geometry is Unrouted, but first point or previous PROFILE_GAP is Routed
         (pointIndex > 0 && point.geometry?.length === 0 && prevPoint.profile !== PROFILE_GAP)
     );
 }
