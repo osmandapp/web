@@ -2,7 +2,7 @@ import L from 'leaflet';
 import MarkerOptions from './markers/MarkerOptions';
 import TrackLayerProvider from './TrackLayerProvider';
 import _ from 'lodash';
-import TracksManager from '../context/TracksManager';
+import TracksManager, { isPointUnrouted } from '../context/TracksManager';
 import TracksRoutingCache from '../context/TracksRoutingCache';
 
 export default class EditableMarker {
@@ -131,12 +131,7 @@ export default class EditableMarker {
             const prevPoint = indPoint > 0 ? trackPoints[indPoint - 1] : null;
             const nextPoint = trackPoints[indPoint + 1];
 
-            const isUnroutedZeroGeo =
-                !currentPoint.profile ||
-                !currentPoint.geometry ||
-                (indPoint > 0 && currentPoint.geometry.length === 0 && prevPoint.profile !== TracksManager.PROFILE_GAP);
-
-            if (isUnroutedZeroGeo) {
+            if (isPointUnrouted({ point: currentPoint, pointIndex: indPoint, prevPoint })) {
                 if (currentPolyline && indPointInPolyline !== -1) {
                     currentPolyline._latlngs[indPointInPolyline] = currentPoint;
                     currentPolyline.setLatLngs(currentPolyline._latlngs);

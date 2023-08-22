@@ -1003,6 +1003,15 @@ export function isEmptyTrack(track, checkWpts = true, checkPoints = true) {
     return !hasPoints && !hasWpts;
 }
 
+export function isPointUnrouted({ point, pointIndex, prevPoint }) {
+    return (
+        !point.profile || // empty profile is Unrouted but PROFILE_LINE is Routed
+        !point.geometry || // undefined geometry (null, undefined) is always Unrouted
+        // empty geometry is Unrouted, but fist point or previous PROFILE_GAP is Routed
+        (pointIndex > 0 && point.geometry?.length === 0 && prevPoint.profile !== PROFILE_GAP)
+    );
+}
+
 function showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker) {
     if (ctxTrack?.showPoint?.layer) {
         map.setView([ctxTrack.showPoint.layer._latlng.lat, ctxTrack.showPoint.layer._latlng.lng], 17);
