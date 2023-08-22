@@ -15,6 +15,7 @@ export function effectControlRouterRequests({ ctx, startedRouterJobs, setStarted
 
     for (const key in cache) {
         if (cache[key].geometry === null && cache[key].busy !== true) {
+            ctx.setProcessRouting(true);
             setStartedRouterJobs((x) => x + 1);
             ctx.mutateRoutingCache((o) => o[key] && (o[key].busy = true));
 

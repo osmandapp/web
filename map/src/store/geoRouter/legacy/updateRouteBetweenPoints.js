@@ -20,8 +20,6 @@ export async function updateRouteBetweenPoints(ctx, start, end, geoProfile = thi
     const type = geoProfile?.profile === PROFILE_LINE ? PROFILE_LINE : geoProfile?.type;
 
     if (type && routers[type] && start && end && geoProfile) {
-        ctx.setProcessRouting(true);
-
         const result = await routers[type].call(this, { ctx, start, end, geoProfile });
 
         // don't allow empty geometry
