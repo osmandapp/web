@@ -44,7 +44,7 @@ export default class EditablePolyline {
             const closest = GeometryUtil.closest(map, polyline, coordinates);
             if (closest?.distance > polyline.options.weight / 2 + 1) {
                 if (marker._icon) {
-                    marker._icon.style.display = 'none';
+                    marker._icon.style.display = 'none'; // invisible
                     map.off('mousemove', mousemoveMap);
                 }
             }
@@ -55,13 +55,26 @@ export default class EditablePolyline {
             this.map.on('mousemove', mousemoveMap);
         });
 
+        marker.on('drag', () => {
+            /**
+             * When marker's icon style is set to 'none' (see mousemoveMap),
+             * mouse events will propagate to the parent (parent is map).
+             *
+             * This leads to the glitch: both marker and map will get mouse
+             * events at the same moment: 'dragend' to marker and 'click' to map.
+             *
+             * To solve the problem, just keep marker icon visible during dragging.
+             */
+            marker._icon.style.display = ''; // visible
+        });
+
         marker.on('dragstart', (e) => {
+            marker._icon.style.display = ''; // visible
             this.ctx.setPointContextMenu({});
             this.dragStartNewPoint(e, this.track);
         });
 
         marker.on('dragend', (e) => {
-            console.log('end');
             this.ctx.setPointContextMenu({});
             this.dragEndNewPoint(e, this.ctx.setGpxLoading, this.track).then(() => {
                 this.ctx.setGpxLoading(false);
