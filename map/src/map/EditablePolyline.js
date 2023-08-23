@@ -140,32 +140,6 @@ export default class EditablePolyline {
                 lat: lat,
                 lng: lng,
             };
-            // let index = _.indexOf(points, nextPoint, 0);
-            // let trackInd = index;
-            // if (points[trackInd - 1].profile === TracksManager.PROFILE_LINE) {
-            //     console.log('oops-1');
-            //     currentLayer._latlngs.forEach((p) => {
-            //         let currentInd = _.indexOf(currentLayerPoints, p, 0);
-            //         if (currentInd < currentLayerPoints.length - 1) {
-            //             let next = currentLayerPoints[currentInd + 1];
-            //             if (GeometryUtil.belongsSegment(new L.LatLng(lat, lng), new L.LatLng(p.lat, p.lng), next)) {
-            //                 index = currentInd + 1;
-            //             }
-            //         }
-            //     });
-            //     dragPoint = {
-            //         trackInd: trackInd,
-            //         ind: index,
-            //         lat: lat,
-            //         lng: lng,
-            //     };
-            // } else {
-            //     dragPoint = {
-            //         ind: index,
-            //         lat: lat,
-            //         lng: lng,
-            //     };
-            // }
         } else {
             const findPoint = new L.LatLng(lat, lng);
             const layerPoints = currentLayer._latlngs;
@@ -176,20 +150,12 @@ export default class EditablePolyline {
 
             if (deepIndexOf !== -1) {
                 this.dragPoint = {
-                    // trackInd: trackInd + 1,
-                    // ind: index,
                     index: deepIndexOf,
                     lat: lat,
                     lng: lng,
                 };
             }
         }
-        // if (dragPoint) {
-        //     track.zoom = false;
-        //     track.addPoint = false;
-        //     track.dragPoint = dragPoint;
-        //     this.ctx.setSelectedGpxFile({ ...track }); // no-more-need
-        // }
     }
 
     async dragEndNewPoint(e, setLoading, track) {
@@ -209,44 +175,6 @@ export default class EditablePolyline {
         const trackPoints = track.points; // ref
         const index = this.dragPoint.index;
 
-        // const ind = -1;
-
-        // const prevPoint = trackPoints[track.dragPoint.trackInd - 1];
-        // const nextPoint = trackPoints[track.dragPoint.trackInd];
-
-        // const isLine = prevPoint && (prevPoint.profile === TracksManager.PROFILE_LINE || !prevPoint.profile);
-
-        // if (isLine) {
-        //     let newPoint = {
-        //         lat: lat,
-        //         lng: lng,
-        //         profile: prevPoint.profile,
-        //         geoProfile: prevPoint.geoProfile,
-        //     };
-        //     if (nextPoint.geometry && nextPoint.geometry.length > 0) {
-        //         this.map.removeLayer(currentLayer);
-        //         let oldGeo = nextPoint.geometry;
-        //         let newGeo = oldGeo.splice(0, ind);
-        //         newGeo.push({
-        //             lat: lat,
-        //             lng: lng,
-        //         });
-        //         oldGeo.unshift({
-        //             lat: lat,
-        //             lng: lng,
-        //         });
-        //         nextPoint.geometry = oldGeo;
-        //         newPoint.geometry = newGeo;
-
-        //         this.activatePolyline({ start: prevPoint, end: newPoint });
-        //         this.activatePolyline({ start: newPoint, end: nextPoint });
-        //     } else {
-        //         currentLayer._latlngs.splice(ind, 0, newPoint);
-        //         currentLayer.setLatLngs(currentLayer._latlngs);
-        //     }
-        //     trackPoints.splice(track.dragPoint.trackInd, 0, newPoint);
-        // } else {
-
         const prevPoint = trackPoints[index - 1];
 
         if (isPointUnrouted({ point: trackPoints[index], pointIndex: index, prevPoint })) {
@@ -254,36 +182,8 @@ export default class EditablePolyline {
             currentLayer._latlngs.splice(index, 0, newPoint);
             currentLayer.setLatLngs(currentLayer._latlngs);
             trackPoints.splice(index, 0, newPoint);
-            // const newPoint = { lat, lng };
-            // const nextPoint = trackPoints[index];
-            // if (nextPoint.geometry && nextPoint.geometry.length > 0) {
-            //     console.log('unrouted-1'); // XXX when this happens?
-            //     this.map.removeLayer(currentLayer);
-            //     let oldGeo = nextPoint.geometry;
-            //     let newGeo = oldGeo.splice(0, index); // XXX test index or index -1 ???
-            //     newGeo.push({
-            //         lat: lat,
-            //         lng: lng,
-            //     });
-            //     oldGeo.unshift({
-            //         lat: lat,
-            //         lng: lng,
-            //     });
-            //     nextPoint.geometry = oldGeo;
-            //     newPoint.geometry = newGeo;
-
-            //     this.activatePolyline({ start: prevPoint, end: newPoint, temp: false });
-            //     this.activatePolyline({ start: newPoint, end: nextPoint, temp: false });
-            // } else {
-            //     // unrouted-no-geometry (gpx)
-            //     console.log('unrouted-2');
-            //     currentLayer._latlngs.splice(index, 0, newPoint);
-            //     currentLayer.setLatLngs(currentLayer._latlngs);
-            // }
-            // trackPoints.splice(index, 0, newPoint);
         } else {
             const newPoint = _.cloneDeep(track.points[index]);
-            // const oldPoint = _.cloneDeep(newPoint);
 
             newPoint.lat = lat;
             newPoint.lng = lng;
@@ -358,22 +258,6 @@ export default class EditablePolyline {
 
         return polyline;
     }
-
-    // createPolyline(startPoint, endPoint) {
-    //     let polyline = null;
-    //     if (startPoint.profile === TracksManager.PROFILE_LINE) {
-    //         if (endPoint.geometry) {
-    //             polyline = new EditablePolyline(this.map, this.ctx, endPoint.geometry).create();
-    //         } else {
-    //             polyline = new EditablePolyline(this.map, this.ctx, [startPoint, endPoint]).create();
-    //         }
-    //         polyline.setStyle({
-    //             color: this.ctx.trackRouter.getColor(startPoint),
-    //         });
-    //         this.ctx.selectedGpxFile.layers.addLayer(polyline);
-    //     }
-    //     return polyline;
-    // }
 
     findPointInPoints({ point, points }) {
         const found = {
