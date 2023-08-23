@@ -15,6 +15,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 :::caution Android only
 This plugin is available only for the **Android version** of OsmAnd app.
+The project has been discontinued at June 2023.
 :::
 
 
