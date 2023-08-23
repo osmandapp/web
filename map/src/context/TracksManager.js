@@ -658,34 +658,34 @@ function decodeRouteMode({ routeMode, params }) {
     return draft;
 }
 
-async function updateRoute(points) {
-    let result;
-    if (points?.length > 0) {
-        result = await apiGet(`${process.env.REACT_APP_GPX_API}/routing/get-route`, {
-            method: 'POST',
-            data: points,
-        });
-    }
-    if (result && result.data) {
-        let data = result.data; // points
-        if (typeof result.data === 'string') {
-            data = JSON.parse(quickNaNfix(result.data));
-        }
-        updateGapProfileAllSegments(data.points);
-        return data.points;
-    } else {
-        console.error('updateRoute fallback');
-        return points;
-    }
-}
+// async function updateRoute(points) {
+//     let result;
+//     if (points?.length > 0) {
+//         result = await apiGet(`${process.env.REACT_APP_GPX_API}/routing/get-route`, {
+//             method: 'POST',
+//             data: points,
+//         });
+//     }
+//     if (result && result.data) {
+//         let data = result.data; // points
+//         if (typeof result.data === 'string') {
+//             data = JSON.parse(quickNaNfix(result.data));
+//         }
+//         updateGapProfileAllSegments(data.points);
+//         return data.points;
+//     } else {
+//         console.error('updateRoute fallback');
+//         return points;
+//     }
+// }
 
-function updateGapProfileAllSegments(points) {
-    if (points) {
-        points.forEach((p) => {
-            updateGapProfileOneSegment(p, p.geometry);
-        });
-    }
-}
+// function updateGapProfileAllSegments(points) {
+//     if (points) {
+//         points.forEach((p) => {
+//             updateGapProfileOneSegment(p, p.geometry);
+//         });
+//     }
+// }
 
 function updateGapProfileOneSegment(routePoint, points) {
     if (routePoint.profile === PROFILE_GAP) {
@@ -1049,7 +1049,7 @@ const TracksManager = {
     saveTrack,
     getEditablePoints,
     updateGapProfileOneSegment,
-    updateRoute,
+    // updateRoute,
     getEle,
     deleteLocalTrack,
     createName,
