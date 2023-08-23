@@ -101,7 +101,7 @@ This widget shows current time from your device.
 |------------|------------|
 | Enable |  *<Translate android="true" ids="android_button_seq"/>:* <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_plain_time"/> |
 |  | *<Translate ios="true" ids="ios_button_seq"/>:*  <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_plain_time"/> |
-| By tapping | No changes. |
+| By tapping | No changes |
 | Format | Time & Format is configured by device settings. |
 
 
@@ -113,8 +113,8 @@ Speed widget shows your current speed detected by GPS-sensor.
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_speed"/> |
-| By tapping  | No changes.|
+| Enable | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_speed"/>* |
+| By tapping  | No changes |
 | Format | *<Translate android="true" ids="android_button_seq"/>:* <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,default_speed_system"/> |
 |        | *<Translate ios="true" ids="ios_button_seq"/>:*  <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,default_speed_system"/> |
 
@@ -140,8 +140,8 @@ The average speed is calculated for the set interval of time, according to your 
 
 | | |
 |------------|------------|
-| Enable |  Menu → Configure screen → Left / Right panel → Average speed |
-| By tapping | No changes. |   
+| Enable |  *Menu → Configure screen → Left / Right panel → Average speed* |
+| By tapping | No changes |   
 
 
 ## Battery level
@@ -152,8 +152,8 @@ This widget shows the battery level of your device.
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_battery"/> |
-| By tapping |No changes.|
+| Enable | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_battery"/>* |
+| By tapping | No changes |
 
 
 ## Coordinates widget
@@ -183,7 +183,7 @@ Coordinates widgets are displayed at the top of the screen. Icons with a green b
 
 | | |
 |------------|------------|
-| Enable | <Translate ios="true" ids="shared_string_menu,layer_map_appearance,top_widgets_panel"/> |
+| Enable | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,top_widgets_panel"/>* |
 | By tapping | Copies the coordinates to the clipboard |
 | Format | <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) or <Translate android="true" ids="configure_profile"/> (Android) →<br/><Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/> |
 
@@ -203,7 +203,7 @@ GPS (Global Positioning System) info widget shows a number of satellites that de
 
 | | |
 |------------|------------|
-| Enable | Menu → Configure screen → Left / Right panel → GPS info |  
+| Enable | **Android**: *Menu → Configure screen → Left / Right panel → GPS info* |  
 | By tapping | Opens GPS status menu with 3rd party tools for tuning onboard GPS device. |  
 
 
@@ -261,8 +261,8 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 
 | | |
 |------------|------------|
-| Enable | **Android** *Menu → Configure screen → Widgets → Left / Right panel → Trip recording* |
-|   |  **iOS** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,track_recording"/>* |
+| Enable | **Android**: *Menu → Configure screen → Widgets → Left / Right panel → Trip recording* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,track_recording"/>* |
 | By tapping | Starts/Stop track recording or View the graph. |
 
 
@@ -270,23 +270,19 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 
 <InfoAndroidOnly />
 
-:::note 
-To add External sensor widgets to the map screen, **enable the OsmAnd External sensors plugin**.
-:::  
+Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from your external sensors, such as: *<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>, <Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>* and *<Translate android="true" ids="external_device_characteristic_temperature"/>*.  
 
-Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from your external sensors, such as: *<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>, <Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/> and <Translate android="true" ids="map_widget_ant_bicycle_dist"/>*.  
-
-- Widgets are visible only if *External sensors* plugin is enable.
-- Widgets remain visible and can be added regardless of whether any detector is connected.
-- Each added widget has a *Settings* button where you can customize the data source.  
-
-
+- To add External sensor widgets to the left/right side of the map screen, [enable](../plugins/index.md#enable--disable) **OsmAnd External sensors plugin**.
+- Widgets can be added even if there is no external sensor connected.
+- All added widgets are visible even if no external sensor is connected.
+- If a sensor has not been added or you need to edit the widget, tap the required widget field in the list and then on *Settings*, or directly on the *Settings icon* in the list.
+- The data displayed in widgets can be recorded using the [Trip recording plugin](../plugins/trip-recording.md#recording-settings).
 
 ![External sensor widgets Android](@site/static/img/widgets/external-sensors-widgets.png) 
 
 | | |
 |------------|------------|
-| Enable | **Android** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="external_sensor_widgets"/>* |
+| Enable | **Android**: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="external_sensor_widgets"/>* |
 | By tapping | No changes |   
 
 
@@ -306,9 +302,9 @@ The Weather widgets display the current weather information for the central poin
 
 | | |
 |------------|------------|
-| Enable | Menu → Configure screen → Left / Right panel → Weather |  
+| Enable | *Menu → Configure screen → Left / Right panel → Weather* |  
 | By tapping | When the development plugin is enabled, weather forecast information is displayed in a pop-up notification.|
-| Format | Menu → Plugins → Weather → Settings or *Menu → Settings → App Profile → Weather* |  
+| Format | *Menu → Plugins → Weather → Settings or *Menu → Settings → App Profile → Weather* |  
 
 </TabItem>
 
@@ -318,9 +314,9 @@ The Weather widgets display the current weather information for the central poin
 
 | | |
 |------------|------------|
-| Enable | Menu → Configure screen → Right panel → Temperature (Pressure, Wind, Cloud, Precipitation) |
+| Enable | *Menu → Configure screen → Right panel → Temperature (Pressure, Wind, Cloud, Precipitation*)* |
 | By tapping | No changes.|
-| Format | Main menu → Global Settings → Profile → Weather |
+| Format | *Main menu → Global Settings → Profile → Weather* |
 
 </TabItem>
 
@@ -357,8 +353,8 @@ This is a Mapillary plugin widget that provides quick access to Mapillary app to
 
 | | |
 |------------|------------|
-| Enable | *Android*: Menu → Configure screen → Left / Right panel → Mapillary |
-|  | *iOS*: Menu → Configure screen → Right panel → Mapillary |
+| Enable | **Android**: Menu → Configure screen → Left / Right panel → Mapillary |
+|  | **iOS**: Menu → Configure screen → Right panel → Mapillary |
 | By tapping | Opens Mapillary application. |
 
 
@@ -380,7 +376,7 @@ You can configure which action can be selected by default:
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_av_notes"/>  |
+| Enable | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_av_notes"/>*  |
 | By tapping | Start / stops taking a note  |
 
 
@@ -436,8 +432,8 @@ The [FPS Widget](../plugins/development.md#fps-widget) shows how fast the map an
 
 | | |
 |------------|------------|
-| Enable | Menu → Configure screen → Right panel → FPS widget |
-| By tapping | No changes.|
+| Enable | *Menu → Configure screen → Right panel → FPS widget* |
+| By tapping | No changes |
 
 </TabItem>
 
@@ -457,8 +453,8 @@ Camera widgets can be used to compare the OsmAnd map and the earth's surface. Th
 
 | | |
 |------------|------------|
-| Enable | Menu → Configure screen → Left / Right panel → Developer widgets |
-| By tapping | No changes.|  
+| Enable | *Menu → Configure screen → Left / Right panel → Developer widgets* |
+| By tapping | No changes |  
 
 </TabItem>
 
@@ -469,8 +465,8 @@ Camera widgets can be used to compare the OsmAnd map and the earth's surface. Th
 
 | | |
 |------------|------------|
-| Enable | Menu → Configure screen → Right panel → Developer widgets |
-| By tapping | No changes.|  
+| Enable | *Menu → Configure screen → Right panel → Developer widgets* |
+| By tapping | No changes |  
 
 </TabItem>
 

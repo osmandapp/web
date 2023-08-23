@@ -56,6 +56,7 @@ Other routing settings:
 - *[<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (iOS) should be set according to your vehicle parameters. They are used for the unknown roads without speed limits. Mostly it happens, if you navigate by track or online routing.
 - In the [Development section](../routing/index.md#development-settings) of the Route parameters (**Android only**), you can try new routing features, that are under testing now. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
 
+
 ## Route parameters - Truck
 
 :::note
@@ -68,7 +69,7 @@ Truck routing is similar to car routing, but is designed specifically for driver
 
 <TabItem value="android" label="Android">  
 
-![Truck routing settings Android 2](@site/static/img/navigation/routing/routing_truck_settings_andr_2.png)
+![Truck routing settings Android 2](@site/static/img/navigation/routing/routing_truck_andr.png)
 
 </TabItem>
 
@@ -80,10 +81,12 @@ Truck routing is similar to car routing, but is designed specifically for driver
 
 </Tabs>
 
+
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-|*<Translate android="true" ids="transport_hazmat_title"/>* | <details><summary> The transportation of hazardous materials on certain roads or tunnels may be prohibited by local authorities. </summary> ![Transporting of hazardous materials Android](@site/static/img/navigation/routing/hazards_andr.png) </details> | When enabled, the truck routing mechanism takes into account the OSM tag *[hazmat](https://wiki.openstreetmap.org/wiki/Key:hazmat)*. You can choose one of the five categories (A, B, C, D, E) of dangerous materials according to EU restrictions. |
-|*<Translate android="true" ids="routing_attr_hazmat_category_name"/>* | <details><summary> Hazardous materials transportation rules in the USA differ from the EU. You can also consider them on the route. </summary> ![Transporting of hazardous materials Android](@site/static/img/navigation/routing/truck_hazmat_andr.png) </details> | Select one of the types (from 1 to 9) of dangerous materials according to the USA restrictions.  |
+|*<Translate android="true" ids="transport_hazmat_title"/>* | <details><summary> Local authorities may forbid the transportation of hazardous materials on some roads or tunnels. </summary> ![Transporting of hazardous materials Android](@site/static/img/navigation/routing/routing_truck_hazmat_andr.png) </details> | When enabled, the truck routing mechanism takes into account the OSM tag *[hazmat](https://wiki.openstreetmap.org/wiki/Key:hazmat)*. You can choose one of the five categories (A, B, C, D, E) of dangerous materials according to EU restrictions. |
+|*<Translate android="true" ids="dangerous_goods"/>* | <details><summary> Hazardous materials transportation rules in the USA differ from the EU. Displayed only if the Driving Region is set to US. You can select multiple classes. </summary> ![Transporting of hazardous materials Android](@site/static/img/navigation/routing/routing_truck_dangerous_goods_andr.png) </details> | Select one of the types (from 1 to 9) of dangerous materials according to the [USA restrictions](https://www.iafc.org/topics-and-tools/hazmat/fusion-center/transportation-commodities/dot-hazard-classification-system). Transportation of hazardous materials is forbidden on some roads and tunnels. <ul><li>1. Explosives </li><li> 2. Gases </li><li> 3. Flammable Liquids </li><li> 4. Flammable Solids </li><li> 5. Oxidizing Agents and Organic Peroxides </li><li> 6. Toxic and Infectious Substances </li><li> 7. Radioactive Substances </li><li> 8. Corrosive Substances </li><li> 9. Miscellaneous </li></ul> |
+
 
 ## Route parameters - Motorcycle
 
@@ -91,7 +94,7 @@ Truck routing is similar to car routing, but is designed specifically for driver
 By default, *Motorcycle profile* is deactivated. In order to use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-Motorcycle routing is designed to create the best possible route for motorcycle riders, taking into account their preferences (for example, you can prefer or avoid roads with poor road conditions).
+Motorcycle routing is designed to create an optimal route for motorcyclists considering their preferences. For example, roads with poor road conditions can be preferred or avoided.  
 
 <Tabs groupId="operating-systems">
 
