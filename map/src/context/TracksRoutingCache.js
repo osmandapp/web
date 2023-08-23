@@ -69,8 +69,8 @@ export function effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges, deb
 
                 validKeys[key] = true;
 
-                if (geometry && tempLine) {
-                    // used when tempLine exist (segment recalculation, new points, etc)
+                if (geometry && tempLine && startPoint.profile !== TracksManager.PROFILE_GAP) {
+                    // used when tempLine exist (segment recalculation, new points, etc), skip PROFILE_GAP
                     refreshTempLine({ ctx, geometry, track, tempLine, color: geoRouter.getColor(startPoint) });
                     ctx.mutateRoutingCache((o) => o[key] && (o[key].tempLine = null)); // use tempLine only once
                     endPoint.geometry = geometry; // mutate
@@ -178,8 +178,8 @@ export function syncTrackWithCache({ ctx, track, geoRouter, debouncerTimer }) {
             const geoProfile = geoRouter.getGeoProfile(startPoint);
             const key = createRoutingKey(startPoint, endPoint, geoProfile);
 
-            if (cache[key] && cache[key].geometry) {
-                endPoint.geometry = cache[key].geometry; // mutate
+            if (cache[key] && cache[key].geometry && startPoint.profile !== TracksManager.PROFILE_GAP) {
+                endPoint.geometry = cache[key].geometry; // mutate (but skip PROFILE_GAP profile)
             }
         }
     }
