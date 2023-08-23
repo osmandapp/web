@@ -127,9 +127,9 @@ export default class EditablePolyline {
         const lng = e.target._latlng.lng;
 
         const currentLayer = track.layers._layers[this.currentPolyline];
-        const currentLayerPoints = currentLayer._latlngs;
         const points = track.points;
 
+        // find exact point which has the same geometry with the current layer (OK for routable)
         const nextPoint = TrackLayerProvider.getPointByPolyline(currentLayer, points);
         const indexOf = nextPoint ? _.indexOf(points, nextPoint, 0) : -1;
 
@@ -167,36 +167,13 @@ export default class EditablePolyline {
             //     };
             // }
         } else {
-            // let index;
-            // let trackInd;
-            let deepIndexOf = -1;
             const findPoint = new L.LatLng(lat, lng);
-            // const currentLayer = track.layers._layers[this.currentPolyline];
-            // const currentLayerPoints = currentLayer._latlngs;
-            currentLayer._latlngs.forEach((p, currentIndex) => {
-                // let currentInd = _.indexOf(currentLayerPoints, p, 0);
-                if (deepIndexOf === -1) {
-                    if (currentIndex < currentLayerPoints.length - 1) {
-                        const thisPoint = new L.LatLng(p.lat, p.lng);
-                        const nextPoint = currentLayerPoints[currentIndex + 1];
-                        if (GeometryUtil.belongsSegment(findPoint, thisPoint, nextPoint)) {
-                            if (deepIndexOf === -1) {
-                                deepIndexOf = currentIndex + 1; // try to keep found-in-segment point
-                            }
-                            // index = currentIndex + 1;
-                            track.points.forEach((tp, tpIndex) => {
-                                if (tp.lat === p.lat && tp.lng === p.lng) {
-                                    const theDeepest = _.indexOf(track.points, tp, 0); // try the deepest
-                                    deepIndexOf = theDeepest !== -1 ? theDeepest + 1 : deepIndexOf; // next to the deepest
-                                    console.log('the-deepest', deepIndexOf, currentIndex, tpIndex);
-                                    // trackInd = _.indexOf(track.points, tp, 0);
-                                }
-                            });
-                        }
-                    }
-                }
-            });
-            console.log('deep', deepIndexOf);
+            const layerPoints = currentLayer._latlngs;
+
+            // process Unrouted Line points: first by the nearest segment, then by points
+            const { end } = this.findTheNearestSegment({ point: findPoint, segments: layerPoints });
+            const { index: deepIndexOf } = this.findPointInPoints({ point: end, points: track.points });
+
             if (deepIndexOf !== -1) {
                 this.dragPoint = {
                     // trackInd: trackInd + 1,
@@ -270,38 +247,40 @@ export default class EditablePolyline {
         //     trackPoints.splice(track.dragPoint.trackInd, 0, newPoint);
         // } else {
 
-        console.log('index', index);
-
         const prevPoint = trackPoints[index - 1];
 
         if (isPointUnrouted({ point: trackPoints[index], pointIndex: index, prevPoint })) {
             const newPoint = { lat, lng };
-            const nextPoint = trackPoints[index];
-            if (nextPoint.geometry && nextPoint.geometry.length > 0) {
-                console.log('unrouted-1'); // FIXME when this happens?
-                this.map.removeLayer(currentLayer);
-                let oldGeo = nextPoint.geometry;
-                let newGeo = oldGeo.splice(0, index); // FIXME test index or index -1 ???
-                newGeo.push({
-                    lat: lat,
-                    lng: lng,
-                });
-                oldGeo.unshift({
-                    lat: lat,
-                    lng: lng,
-                });
-                nextPoint.geometry = oldGeo;
-                newPoint.geometry = newGeo;
-
-                this.activatePolyline({ start: prevPoint, end: newPoint, temp: false });
-                this.activatePolyline({ start: newPoint, end: nextPoint, temp: false });
-            } else {
-                // unrouted-no-geometry (gpx)
-                console.log('unrouted-2');
-                currentLayer._latlngs.splice(index, 0, newPoint);
-                currentLayer.setLatLngs(currentLayer._latlngs);
-            }
+            currentLayer._latlngs.splice(index, 0, newPoint);
+            currentLayer.setLatLngs(currentLayer._latlngs);
             trackPoints.splice(index, 0, newPoint);
+            // const newPoint = { lat, lng };
+            // const nextPoint = trackPoints[index];
+            // if (nextPoint.geometry && nextPoint.geometry.length > 0) {
+            //     console.log('unrouted-1'); // XXX when this happens?
+            //     this.map.removeLayer(currentLayer);
+            //     let oldGeo = nextPoint.geometry;
+            //     let newGeo = oldGeo.splice(0, index); // XXX test index or index -1 ???
+            //     newGeo.push({
+            //         lat: lat,
+            //         lng: lng,
+            //     });
+            //     oldGeo.unshift({
+            //         lat: lat,
+            //         lng: lng,
+            //     });
+            //     nextPoint.geometry = oldGeo;
+            //     newPoint.geometry = newGeo;
+
+            //     this.activatePolyline({ start: prevPoint, end: newPoint, temp: false });
+            //     this.activatePolyline({ start: newPoint, end: nextPoint, temp: false });
+            // } else {
+            //     // unrouted-no-geometry (gpx)
+            //     console.log('unrouted-2');
+            //     currentLayer._latlngs.splice(index, 0, newPoint);
+            //     currentLayer.setLatLngs(currentLayer._latlngs);
+            // }
+            // trackPoints.splice(index, 0, newPoint);
         } else {
             const newPoint = _.cloneDeep(track.points[index]);
             // const oldPoint = _.cloneDeep(newPoint);
@@ -357,20 +336,16 @@ export default class EditablePolyline {
         let polyline = null;
 
         if (end.geometry && end.geometry.length > 0) {
-            console.log('geo-yes');
             polyline = new EditablePolyline(this.map, this.ctx, end.geometry, null, this.track).create();
         } else {
-            console.log('geo-no');
             polyline = new EditablePolyline(this.map, this.ctx, [start, end], null, this.track).create();
         }
 
         if (temp) {
-            console.log('temp-yes');
             polyline.setStyle(TrackLayerProvider.TEMP_LINE_STYLE);
             polyline.options.name = TrackLayerProvider.TEMP_LAYER_FLAG;
             polyline.point = end; // used in drawRoutePoints() and updateLayers()
         } else {
-            console.log('temp-no');
             const color = this.ctx.trackRouter.getColor(
                 // use PROFILE_LINE color for unrouted segments
                 start.profile ? start : { profile: TracksManager.PROFILE_LINE }
@@ -379,7 +354,7 @@ export default class EditablePolyline {
         }
 
         polyline.addTo(this.track.layers);
-        // FIXME register layers (but check is still really need)
+        // XXX register layers (but check is it still really need)
 
         return polyline;
     }
@@ -399,4 +374,49 @@ export default class EditablePolyline {
     //     }
     //     return polyline;
     // }
+
+    findPointInPoints({ point, points }) {
+        const found = {
+            index: -1,
+            point: null,
+        };
+
+        found.index = points.findIndex((p) => TracksManager.isEqualPoints(point, p));
+
+        if (found.index !== -1) {
+            found.point = points[found.index];
+        }
+
+        return found;
+    }
+
+    findTheNearestSegment({ point, segments }) {
+        const nearest = {
+            start: null,
+            end: null,
+            index: -1,
+            min: -1,
+        };
+
+        const find = new L.LatLng(point.lat, point.lng);
+
+        for (let i = 0; i < segments.length - 1; i++) {
+            const A = new L.LatLng(segments[i].lat, segments[i].lng);
+            const B = new L.LatLng(segments[i + 1].lat, segments[i + 1].lng);
+
+            const hypotenuse = A.distanceTo(B);
+            const delta = A.distanceTo(find) + find.distanceTo(B) - hypotenuse;
+
+            const factor = delta / hypotenuse;
+
+            if (nearest.min === -1 || factor < nearest.min) {
+                nearest.index = i;
+                nearest.min = factor;
+                nearest.start = A;
+                nearest.end = B;
+            }
+        }
+
+        return nearest;
+    }
 }
