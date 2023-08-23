@@ -217,7 +217,7 @@ export default class EditablePolyline {
 
     async dragEndNewPoint(e, setLoading, track) {
         if (!this.dragPoint) {
-            console.debug('dragEndNewPoint empty dragPoint');
+            console.error('dragEndNewPoint empty dragPoint');
             return;
         }
 

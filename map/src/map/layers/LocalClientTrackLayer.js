@@ -206,7 +206,7 @@ export default function LocalClientTrackLayer() {
                     if (ctxTrack.layers) {
                         map.removeLayer(ctxTrack.layers);
                     } else {
-                        console.debug('layers-cleanup got empty layer', ctxTrack.name);
+                        console.error('layers-cleanup got empty layer', ctxTrack.name);
                     }
                     ctx.setSelectedGpxFile({});
                 }

@@ -30,7 +30,7 @@ export function effectControlRouterRequests({ ctx, startedRouterJobs, setStarted
                     (error) => {
                         // keep busy=true till next init
                         setStartedRouterJobs((x) => x - 1);
-                        console.debug('updateRouteBeetwenPoints failed', error);
+                        console.error('updateRouteBeetwenPoints failed', error);
                     }
                 )
             );
