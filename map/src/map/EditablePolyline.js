@@ -27,7 +27,7 @@ export default class EditablePolyline {
             polyline = this.createBasePolyline();
         }
         if (polyline) {
-            let marker = new L.Marker(new L.LatLng(null, null), {
+            const marker = new L.Marker(new L.LatLng(null, null), {
                 icon: MarkerOptions.options.route,
                 title: 'poly',
                 draggable: true,
@@ -52,9 +52,22 @@ export default class EditablePolyline {
             }
         }
 
+        // on mobile, DOM send mousemove
+        // together with click/touchstart
         polyline.on('mousemove', (e) => {
             this.mousemovePolyline(e, marker);
             this.map.on('mousemove', mousemoveMap);
+        });
+
+        // avoid map's click
+        marker.on('click', (e) => {
+            e.originalEvent.stopPropagation();
+        });
+
+        // avoid map's context menu
+        // actually works from 2nd event
+        marker.on('contextmenu', (e) => {
+            e.originalEvent.stopPropagation();
         });
 
         marker.on('drag', () => {
