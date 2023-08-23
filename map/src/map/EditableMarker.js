@@ -7,6 +7,7 @@ import TracksRoutingCache from '../context/TracksRoutingCache';
 
 export default class EditableMarker {
     stopclick;
+    dragPoint;
 
     constructor(map, ctx, point, layer, track) {
         this.map = map;
@@ -14,6 +15,8 @@ export default class EditableMarker {
         this.point = point;
         this.layer = layer;
         this.track = track;
+        this.dragPoint = null;
+        this.stopclick = false;
     }
 
     create() {
@@ -79,7 +82,7 @@ export default class EditableMarker {
         let lng = e.target._latlng.lng;
         let indPoint = track.points.findIndex((point) => point.lat === lat && point.lng === lng);
         if (indPoint !== -1) {
-            track.dragPoint = {
+            this.dragPoint = {
                 indPoint: indPoint,
                 lat: lat,
                 lng: lng,
@@ -89,7 +92,7 @@ export default class EditableMarker {
                 return point.lat === lat && point.lon === lng;
             });
             if (indWpt !== -1) {
-                track.dragPoint = {
+                this.dragPoint = {
                     indWpt: indWpt,
                     lat: lat,
                     lng: lng,
@@ -103,7 +106,7 @@ export default class EditableMarker {
         const lng = e.target._latlng.lng;
 
         const trackPoints = track.points; // ref
-        const indPoint = track.dragPoint.indPoint;
+        const indPoint = this.dragPoint.indPoint;
         let segments = [];
 
         if (indPoint !== undefined && indPoint !== -1) {
@@ -196,7 +199,7 @@ export default class EditableMarker {
                 }
             }
         } else {
-            const indWpt = track.dragPoint.indWpt;
+            const indWpt = this.dragPoint.indWpt;
             if (indWpt !== undefined && indWpt !== -1) {
                 const currentWpt = track.wpts[indWpt];
                 currentWpt.lat = lat;
@@ -211,11 +214,12 @@ export default class EditableMarker {
         // finally
         track.zoom = false;
         track.addPoint = false;
-        track.dragPoint = false;
         track.updateLayers = true;
         this.ctx.setSelectedGpxFile({ ...track });
 
         this.ctx.trackState.update = true;
         this.ctx.setTrackState({ ...this.ctx.trackState });
+
+        this.dragPoint = null;
     }
 }

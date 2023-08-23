@@ -9,6 +9,7 @@ import TracksRoutingCache from '../context/TracksRoutingCache';
 
 export default class EditablePolyline {
     currentPolyline;
+    dragPoint;
 
     constructor(map, ctx, points, layer, track, style) {
         this.map = map;
@@ -17,6 +18,7 @@ export default class EditablePolyline {
         this.layer = layer;
         this.track = track;
         this.style = style;
+        this.dragPoint = null;
     }
 
     create() {
@@ -108,7 +110,6 @@ export default class EditablePolyline {
     }
 
     dragStartNewPoint(e, track) {
-        let dragPoint = null;
         const lat = e.target._latlng.lat;
         const lng = e.target._latlng.lng;
 
@@ -121,7 +122,7 @@ export default class EditablePolyline {
 
         if (nextPoint && indexOf !== -1) {
             // 100% found
-            dragPoint = {
+            this.dragPoint = {
                 index: indexOf,
                 lat: lat,
                 lng: lng,
@@ -184,7 +185,7 @@ export default class EditablePolyline {
             });
             console.log('deep', deepIndexOf);
             if (deepIndexOf !== -1) {
-                dragPoint = {
+                this.dragPoint = {
                     // trackInd: trackInd + 1,
                     // ind: index,
                     index: deepIndexOf,
@@ -193,17 +194,16 @@ export default class EditablePolyline {
                 };
             }
         }
-
-        if (dragPoint) {
-            track.zoom = false;
-            track.addPoint = false;
-            track.dragPoint = dragPoint;
-            this.ctx.setSelectedGpxFile({ ...track });
-        }
+        // if (dragPoint) {
+        //     track.zoom = false;
+        //     track.addPoint = false;
+        //     track.dragPoint = dragPoint;
+        //     this.ctx.setSelectedGpxFile({ ...track }); // no-more-need
+        // }
     }
 
     async dragEndNewPoint(e, setLoading, track) {
-        if (!track.dragPoint) {
+        if (!this.dragPoint) {
             console.debug('dragEndNewPoint empty dragPoint');
             return;
         }
@@ -217,7 +217,7 @@ export default class EditablePolyline {
 
         const currentLayer = track.layers._layers[this.currentPolyline];
         const trackPoints = track.points; // ref
-        const index = track.dragPoint.index;
+        const index = this.dragPoint.index;
 
         // const ind = -1;
 
@@ -331,12 +331,13 @@ export default class EditablePolyline {
         // finally
         track.zoom = false;
         track.addPoint = false;
-        track.dragPoint = false;
         track.updateLayers = true;
         this.ctx.setSelectedGpxFile({ ...track });
 
         this.ctx.trackState.update = true;
         this.ctx.setTrackState({ ...this.ctx.trackState });
+
+        this.dragPoint = null;
     }
 
     activatePolyline({ start, end, temp }) {
