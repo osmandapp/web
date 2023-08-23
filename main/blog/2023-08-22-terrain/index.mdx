@@ -29,7 +29,11 @@ Go
 
 At first, look at this screenshots: 
 
-![terrain](./img/terrain_screen.png) ![terrain](./img/terrain_screen_2.png)
+|||
+|------|-------|
+|![terrain](./img/terrain_screen.png)|![terrain](./img/terrain_screen_2.png)|
+
+
 
 At this images you can see 3D relief, Slopes with vector and raster maps. Widget shows Elevation on the screen center. 
 
@@ -43,16 +47,91 @@ This is an example of the possibilities of terrain data and that's not all.
 
 ## Terrain map data
 
+
+At first you need to buy OsmAnd package and download Terrain map data. It is available in [Download maps menu](https://osmand.net/docs/user/plugins/contour-lines#how-to-download): _OsmAnd menu → Download maps → Regions → Chosen country → Terrain map (3D)_. Here you can find Terrain map for each country.
+
+:::note
+**Terrain map data is [a paid function](https://osmand.net/docs/user/purchases/android#free-and-paid-features)**:
+- Hillshades/Slopes are available for OsmAnd+, OsmAnd Maps+ packages
+- 3D Relief is available for [OsmAnd Pro subscription](https://osmand.net/docs/user/purchases/android#pro-features).
+:::
+
+
 ## Topography menu
+
+When you download Terrain data, next step is activate it for your map. 
+Go to _OsmAnd menu → Configure map → Topography_
+
+![Menu](./img/topography_menu.png)
+
+Terrain map data is used for two menu items: [_Terrain_](#terrain) and [_3D Relief_](#3d-relief). Read more about it below.
 
 ### Terrain 
 
+The Terrain menu enables and configures two parameters: [_Hillshade_](https://osmand.net/docs/user/plugins/contour-lines#hillshade) and [_Slope_](https://osmand.net/docs/user/plugins/contour-lines#slope).
+
+Viewing of Terrain (Hillshade and Slope) on the map:
+
+|Hillshade|Slope|
+|------|-------|
+|![Hillshade](./img/hillshade.png)|![Slope](./img/slope.png)|
+
+
+How to choose colour scheme and other parameters for layers read below.
+
+Choose your terrain parameter _OsmAnd menu → Configure map → Topography → Terrain → **Colour scheme**_:
+
+- _Hillshade_ allows you to explore the topography by illuminating it with hypothetical lighting which simulates shading, thus revealing relief.
+
+- _Slope_ allows you to explore the steepness (incline) of slopes expressed in degrees of deviation from the horizontal.
+
+|Colour scheme - Hillshade|Colour scheme - Slope|
+|------|-------|
+|![Hillshade](./img/hillshade_menu.png)|![Slope](./img/slope_menu.png)|
+
+**_Visibility_** is a parameter for transparency of the colors used to display the angle (Slope) and the shading (Hillshade). 
+
+|Visibility 31%|Visibility 74%|
+|------|-------|
+|![Visibility ](./img/31.png)|![Visibility ](./img/74.png)|
+
+
+**_Zoom levels_** is a parameter for setting the minimum and maximum zoom levels at which the layr will be displayed.
+
+![Zoom](./img/zoom.png)
+
+**_Cache size_** is a parameter that shows the size of the cache. Each time you view terrain info on the map (hillshade or slope), all this data is cached for quick use in the future.
+
+Clear the cache: _System settings → Apps → OsmAnd → Storage → Clear cache_
+
+|Before|After|
+|------|-------|
+|![Cache](./img/cache.png)|![Cache](./img/cache2.png)|
+
 ### 3D relief
 
+The [3D Relief feature](https://osmand.net/docs/user/plugins/contour-lines#3d-relief) produces a raised relief and provides a three-dimensional representation of the landscape. 3D Relief works offline and can be used with [OsmAnd vector maps](https://osmand.net/docs/user/map/vector-maps.md) or any  [raster maps](https://osmand.net/docs/user/map/raster-maps.md#select-raster-maps) as a [Map Source](https://osmand.net/docs/user/map/raster-maps.md#main) or as an [Underlay/Overlay](https://osmand.net/docs/user/map/raster-maps.md#overlay-layer).
+
+To enable 3D Relief, go to _Menu → Configure map → Topography → 3D Relief_ and toggle on.
+
+![Menu](./img/topography_menu.png)
+
+Now, you can see 3D Relief on the map with any map layers:
+
+|Vectom map layer|Raster map layer|
+|------|-------|
+|![3D](./img/3d.png)|![3D](./img/3d_2.png)|
 
 ## Widget
 
+With Terrain map data you can view the altitude for each point on the map.
+
+To display [_Elevation: map center widget_](https://osmand.net/docs/user/widgets/info-widgets#-elevation-map-center):
+
+_OsmAnd Menu → Configure screen → Left / Right panel → Altitude_
+
 ## Elevation calculation
 
+This feature allows to calculate elevation for any GPX tracks without altitude data: [Altitude menu](https://osmand.net/docs/user/map/track-context-menu#altitude)
 
 
