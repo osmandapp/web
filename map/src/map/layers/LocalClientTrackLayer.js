@@ -147,14 +147,7 @@ export default function LocalClientTrackLayer() {
             - Re-setup new event handler with refreshed context.
          */
         if (ctx.createTrack && ctxTrack) {
-            if (ctxTrack?.dragPoint === false) {
-                delete ctxTrack?.dragPoint;
-                ctx.setSelectedGpxFile({ ...ctxTrack });
-            } else if (
-                ctx.createTrack?.enable &&
-                _.isEmpty(ctx.pointContextMenu) &&
-                ctxTrack?.dragPoint === undefined
-            ) {
+            if (ctx.createTrack?.enable && _.isEmpty(ctx.pointContextMenu)) {
                 setupClickOnMap();
             } else {
                 deleteClickOnMap();
@@ -678,14 +671,9 @@ export default function LocalClientTrackLayer() {
     }
 
     function setupClickOnMap() {
-        if (ctxTrack?.dragPoint === false) {
-            delete ctxTrack?.dragPoint;
-            ctx.setSelectedGpxFile({ ...ctxTrack });
-        } else if (ctxTrack?.dragPoint === undefined) {
-            map.getContainer().style.cursor = 'crosshair';
-            map.off('click'); // !!!
-            map.on('click', clickMap);
-        }
+        map.getContainer().style.cursor = 'crosshair';
+        map.off('click'); // !!!
+        map.on('click', clickMap);
     }
 
     function deleteClickOnMap() {
