@@ -66,8 +66,8 @@ To use the offline navigation, you first need to [download maps](../../start-wit
 5. While on the route you can [Pause/Resume](#pause--resume-navigation) navigation and [Stop](#start--stop-navigation) it.
 
 :::note
-- Route calculation for long distances (longer than 200 km for [driving](../routing/car-based-routing.md)) may take few minutes. 
-- If the route is not displayed on the map after 5-7 minutes of calculation, follow the recommendations in the [Troubleshooting section](../../troubleshooting/navigation.md#how-to-calculate-routes-longer-than-250km).
+- Route cannot be build when *[Online map](../../map/raster-maps.md#select-raster-maps)* is selected as map source.
+- Route calculation for long distances (longer than 200 km for [driving](../routing/car-based-routing.md)) may take few minutes.
 :::
 
 ### Navigation menu  
@@ -274,7 +274,7 @@ This option is availible in Android version of the app in *[Notification list](.
 
 ![Notification screen Android](@site/static/img/navigation/route/navigation_pause_android.png)
 
-To resume navigation, you can use the previously mentioned message from OsmAnd in the notification bar or dialog, that appears when you tap on the *[Navigation button](../../widgets/map-buttons.md#directions)* (see screenshot).  
+To resume navigation, you can use the previously mentioned message from OsmAnd in the notification bar, *Quick actions menu* or dialog, that appears when you tap on the *[Navigation button](../../widgets/map-buttons.md#directions)* (see screenshot).  
 Please note, that when you tap on the *Navigation button* while your route, navigation doesn't stop, voice prompts continue to be voiced, although proposed options (*Resume* (for Android) or *Start* (for iOS)) may be confusing.
 
 <Tabs groupId="operating-systems">
@@ -390,3 +390,32 @@ To adjust the speed of a simulation go to: *<Translate android="true" ids="share
 - &nbsp;_<Translate android="true" ids="simulation_preview_mode_title"/>_ - <Translate android="true" ids="simulation_preview_mode_desc"/>
 - &nbsp;_<Translate android="true" ids="simulation_constant_mode_title"/>_ - <Translate android="true" ids="simulation_constant_mode_desc"/>
 - &nbsp;_<Translate android="true" ids="simulation_real_mode_title"/>_ - <Translate android="true" ids="simulation_real_mode_desc"/>
+
+## Troubleshouting
+
+If you encounter any difficulties while building the route, please consult the troubleshooting instructions in the *[special documentation section](../../troubleshooting/navigation.md)*. There you can find information about possible reasons for *[slow route calculation](../../troubleshooting/navigation.md#route-calculation-is-slow)*, what to do if the route is *[longer than 250 kilometers](../../troubleshooting/navigation.md#how-to-calculate-routes-longer-than-250km)* or the  proposed route *[does not seem correct](../../troubleshooting/navigation.md#the-calculated-route-does-not-seem-correct)*.  
+Below you can find out how to resolve situations when navigation is not possible due to the lack of necessary maps.  
+### No maps 
+
+<InfoAndroidOnly/>
+
+When you try to build a route to a place whose map is not loaded, the progress line indicating that the route is being calculated does not appear, and the Start button also remains gray.  
+Please note, that at some zoom levels the reason for the absence of the route can not be obvious, as it may seem that the necessary maps are present. In that case see *[Additional information in Navigation menu](#additional-information-in-navigation-menu)*.
+
+![Message no maps when building navigation Android 4](@site/static/img/navigation/route/navigation_by_route_no_maps_4.png) 
+
+#### Additional information in Navigation menu
+
+If you pull the navigation menu up, you will see possible reasons why your route cannot be completed: 
+
+![Message no maps when building navigation Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png) ![Message no maps when building navigation Android 1](@site/static/img/navigation/route/navigation_by_route_no_maps_3.png) 
+
+- the first screenshot shows a message when the map of the destination area is not downloaded.  
+- on the second screenshot you can see, that OsmAnd tryes to calculate the route when there are no maps for its middle section. To resolve that situation online checking may be needed.
+
+#### Download maps using Navigation menu
+
+After online verification of the maps required for route calculation, OsmAnd offers to download them without leaving the navigation section. Unfortunately, once the necessary maps are loaded, you will need to enter the start and end points again.
+
+![Message no maps when building navigation Android](@site/static/img/navigation/route/navigation_by_route_no_maps_1.png) ![Message no maps when building navigation Android](@site/static/img/navigation/route/navigation_by_route_no_maps_2.png)
+
