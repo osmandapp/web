@@ -54,6 +54,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     const [fileName, setFileName] = useState((ctx.selectedGpxFile && ctx.selectedGpxFile.name) ?? '');
     const [fileNameError, setFileNameError] = useState('');
     const [points, setPoints] = useState(0);
+    const [pointsTotal, setPointsTotal] = useState(0);
     const [distance, setDistance] = useState(0);
     const [timeRange, setTimeRange] = useState('');
     const [timeMoving, setTimeMoving] = useState('');
@@ -88,6 +89,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
             const info = ctx.selectedGpxFile?.analysis;
             getName();
             getPoints();
+            getPointsTotal();
             getTimeRange(info);
             getDistance(info);
             getTimeMoving(info);
@@ -106,6 +108,32 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     function getPoints() {
         const points = ctx.selectedGpxFile.points ?? TracksManager.getEditablePoints(ctx.selectedGpxFile);
         setPoints(points?.length ?? 0);
+    }
+
+    function getPointsTotal() {
+        function countPoints(points) {
+            let count = 0;
+            points?.forEach((p) => (count += p.geometry?.length ?? 1));
+            return count;
+        }
+        if (ctx.develFeatures) {
+            let total = 0;
+            const track = ctx.selectedGpxFile;
+            total += countPoints(track.points);
+            if (total === 0) {
+                track.tracks?.forEach((t) => (total += countPoints(t.points)));
+            }
+            setPointsTotal(total);
+        } else {
+            setPointsTotal(0);
+        }
+    }
+
+    function develRefreshLayers() {
+        if (ctx.develFeatures) {
+            ctx.selectedGpxFile.updateLayers = true;
+            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+        }
     }
 
     function getTimeRange(info) {
@@ -508,9 +536,10 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                         <ListItemIcon>
                             <Commit fontSize="small" />
                         </ListItemIcon>
-                        <ListItemText>
+                        <ListItemText onClick={develRefreshLayers}>
                             <Typography sx={{ ml: 1 }} variant="body2" noWrap>
                                 {`Points: ${points}`}
+                                {pointsTotal > 0 && pointsTotal !== points && ` (${pointsTotal})`}
                                 {ctx.processRouting ? <CircularProgress size={13} sx={{ ml: 1 }} /> : <></>}
                             </Typography>
                         </ListItemText>
