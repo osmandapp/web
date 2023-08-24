@@ -429,12 +429,14 @@ function addDistanceToPoints(points) {
                 if (geo.length > 1) {
                     for (let i = 1; i < geo.length; i++) {
                         // keep original if possible
-                        if (geo[i].distance === 0) {
+                        if (geo[i].distance === 0 || geo[i].distance === undefined) {
                             const current = geo[i];
                             const previous = geo[i - 1];
                             geo[i].distance = Utils.getDistance(current.lat, current.lng, previous.lat, previous.lng);
                         }
-                        point.dist += geo[i].distance;
+                        if (geo[i].distance > 0) {
+                            point.dist += geo[i].distance;
+                        }
                     }
                 }
             }
