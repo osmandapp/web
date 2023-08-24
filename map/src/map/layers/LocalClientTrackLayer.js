@@ -439,66 +439,31 @@ export default function LocalClientTrackLayer() {
             return null;
         });
 
-        /**
-         * block was removed because get-analytics requires more data (even for Line-segment)
-         * updateRouteBetweenPoints() will do it better (add ext.extensions, etc)
-         * trackHasRouting() is now checked by the parent
-         */
-        /*
-        // if (trackHasRouting()) {
-        //     newPoint.geometry = Utils.getPointsDist([
-        //         {
-        //             lat: prevPoint.lat,
-        //             lng: prevPoint.lng,
-        //         },
-        //         { lat: newPoint.lat, lng: newPoint.lng },
-        //     ]);
-        //     let polyline = new EditablePolyline(
-        //         map,
-        //         ctx,
-        //         [
-        //             prevPoint,
-        //             {
-        //                 lat: newPoint.lat,
-        //                 lng: newPoint.lng,
-        //             },
-        //         ],
-        //         null,
-        //         ctxTrack
-        //     ).create();
-        //     polyline.setStyle({
-        //         color: geoRouter.getColor(),
-        //     });
-        //     layers.addLayer(polyline);
-        // } else {
-        */
-        {
-            delete newPoint.geometry;
-            if (prevPoint.geometry?.length === 0) {
-                delete prevPoint.geometry;
-            }
-            if (currentPolyline) {
-                currentPolyline._latlngs.push(newPoint);
-                currentPolyline.setLatLngs(currentPolyline._latlngs);
-            } else {
-                let polyline = new EditablePolyline(
-                    map,
-                    ctx,
-                    [
-                        prevPoint,
-                        {
-                            lat: newPoint.lat,
-                            lng: newPoint.lng,
-                        },
-                    ],
-                    null,
-                    ctxTrack
-                ).create();
-                polyline.setStyle({
-                    color: geoRouter.getColor(),
-                });
-                layers.addLayer(polyline);
-            }
+        delete newPoint.geometry;
+        if (prevPoint.geometry?.length === 0) {
+            delete prevPoint.geometry;
+        }
+        if (currentPolyline) {
+            currentPolyline._latlngs.push(newPoint);
+            currentPolyline.setLatLngs(currentPolyline._latlngs);
+        } else {
+            let polyline = new EditablePolyline(
+                map,
+                ctx,
+                [
+                    prevPoint,
+                    {
+                        lat: newPoint.lat,
+                        lng: newPoint.lng,
+                    },
+                ],
+                null,
+                ctxTrack
+            ).create();
+            polyline.setStyle({
+                color: geoRouter.getColor(),
+            });
+            layers.addLayer(polyline);
         }
 
         const analysis = () => {
