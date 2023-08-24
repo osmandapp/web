@@ -231,8 +231,8 @@ const GpxGraphProvider = ({ width }) => {
                 dist: dist !== undefined ? dist / 1000 : 0,
             });
         }
-        res.min = Math.min(...calculatedSlope);
-        res.max = Math.max(...calculatedSlope);
+        res.min = Math.trunc(Math.min(...calculatedSlope) * 100) / 100;
+        res.max = Math.trunc(Math.max(...calculatedSlope) * 100) / 100;
         return res;
     }
 

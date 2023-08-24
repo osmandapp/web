@@ -126,34 +126,56 @@ export default function GpxGraph({
             setEleSRTMData(showData[y1Axis[1]] ? data.map((d) => ({ x: d[xAxis], y: d[y1Axis[1]] })) : null);
             setSlopeData(showData[y1Axis[2]] ? slopes.map((d) => ({ x: d.dist, y: d.slope })) : null);
             if (showData[y1Axis[0]]) {
-                addMaxMinMarkers(minEle, maxEle, y1Axis[0]);
+                addMaxMinMarkers(y1Axis[0], minEle, maxEle);
+            } else {
+                const activeData = Object.keys(showData).filter((k) => showData[k] === true);
+                if (activeData.length === 1) {
+                    addMaxMinMarkers(activeData[0]);
+                }
             }
             setDistRangeValue([0, data.length]);
             ctx.setTrackRange(null);
         }
     }, [data, showData, slopes]);
 
-    function addMaxMinMarkers(min, max, dataSet) {
+    function addMaxMinMarkers(dataSet, min = null, max = null) {
         let res = {
-            min: null,
-            max: null,
+            minInd: null,
+            maxInd: null,
         };
-        data.forEach((value, index) => {
-            if (value[dataSet] === min && !res.min) {
-                res.min = index;
+        if (dataSet === 'Slope' && slopes?.length > 0) {
+            slopes.forEach((value, index) => {
+                if (value.slope === slopes.min && !res.minInd) {
+                    res.minInd = index;
+                }
+                if (value.slope === slopes.max && !res.maxInd) {
+                    res.maxInd = index;
+                }
+            });
+        } else {
+            if (min && max) {
+                data.forEach((value, index) => {
+                    if (value[dataSet] === min && !res.minInd) {
+                        res.minInd = index;
+                    }
+                    if (value[dataSet] === max && !res.maxInd) {
+                        res.maxInd = index;
+                    }
+                });
             }
-            if (value[dataSet] === max && !res.max) {
-                res.max = index;
-            }
-        });
-        if (res.min && res.max) {
+        }
+        if (res.minInd && res.maxInd) {
             res = {
-                min: { x: data[res.min][xAxis], y: data[res.min][dataSet] },
-                max: { x: data[res.max][xAxis], y: data[res.max][dataSet] },
+                min:
+                    dataSet === 'Slope'
+                        ? { x: slopes[res.minInd].dist, y: slopes[res.minInd].slope }
+                        : { x: data[res.minInd][xAxis], y: data[res.minInd][dataSet] },
+                max:
+                    dataSet === 'Slope'
+                        ? { x: slopes[res.maxInd].dist, y: slopes[res.maxInd].slope }
+                        : { x: data[res.maxInd][xAxis], y: data[res.maxInd][dataSet] },
             };
-            let newMaxMin = Object.assign({}, maxMinData);
-            newMaxMin[dataSet] = res;
-            setMaxMinData(newMaxMin);
+            setMaxMinData(res);
         }
     }
 
@@ -176,8 +198,8 @@ export default function GpxGraph({
         }
     }
 
-    function showMaxMin(dataSet) {
-        return showData[dataSet] && !_.isEmpty(maxMinData) && maxMinData[dataSet];
+    function showMaxMin() {
+        return !_.isEmpty(maxMinData);
     }
 
     function showRange() {
@@ -212,22 +234,22 @@ export default function GpxGraph({
             annotation: {
                 annotations: {
                     label1: {
-                        display: showMaxMin(y1Axis[0]),
+                        display: showMaxMin(),
                         type: 'line',
-                        id: 'vline' + maxMinData[y1Axis[0]]?.min?.x,
+                        id: 'vline' + maxMinData?.min?.x,
                         mode: 'vertical',
                         scaleID: 'x',
-                        value: maxMinData[y1Axis[0]]?.min?.x,
+                        value: maxMinData?.min?.x,
                         borderColor: '#757575',
                         borderWidth: 1,
                     },
                     label2: {
-                        display: showMaxMin(y1Axis[0]),
+                        display: showMaxMin(),
                         type: 'label',
-                        xValue: maxMinData[y1Axis[0]]?.min?.x,
+                        xValue: maxMinData?.min?.x,
                         yValue: 'center',
                         backgroundColor: '#ebf3f2',
-                        content: [Math.round(maxMinData[y1Axis[0]]?.min?.y)],
+                        content: [Math.round(maxMinData?.min?.y)],
                         font: {
                             size: 9,
                         },
@@ -237,22 +259,22 @@ export default function GpxGraph({
                         padding: 2,
                     },
                     label3: {
-                        display: showMaxMin(y1Axis[0]),
+                        display: showMaxMin(),
                         type: 'line',
-                        id: 'vline' + maxMinData[y1Axis[0]]?.max?.x,
+                        id: 'vline' + maxMinData?.max?.x,
                         mode: 'vertical',
                         scaleID: 'x',
-                        value: maxMinData[y1Axis[0]]?.max?.x,
+                        value: maxMinData?.max?.x,
                         borderColor: '#757575',
                         borderWidth: 1,
                     },
                     label4: {
-                        display: showMaxMin(y1Axis[0]),
+                        display: showMaxMin(),
                         type: 'label',
-                        xValue: maxMinData[y1Axis[0]]?.max?.x,
+                        xValue: maxMinData?.max?.x,
                         yValue: 'center',
                         backgroundColor: '#ebf3f2',
-                        content: [Math.round(maxMinData[y1Axis[0]]?.max?.y)],
+                        content: [Math.round(maxMinData?.max?.y)],
                         font: {
                             size: 9,
                         },
@@ -335,8 +357,6 @@ export default function GpxGraph({
         scales: {
             ['y1Slope']: {
                 display: !showY1 && showSlope,
-                min: -slopes.max,
-                max: slopes.max,
                 title: {
                     display: !showY1 && showSlope,
                     text: 'slope in %',
