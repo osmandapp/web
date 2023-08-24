@@ -29,9 +29,9 @@ The OsmAnd External sensors plugin accesses external sensors and can read data s
 To start using data from external sensors, you need to make the following settings:  
  
 1. [Enable](../plugins/index.md#enable--disable) External sensors plugin in the Plugins section of the Main menu.    
-2. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).
+2. Make the necessary settings in the [sensors settings](#sensors-settings).
 3. If needed, add [External sensors widgets](#widgets) to the screen.
-4. You can use the tips here [ANT+ connect](https://www.thisisant.com/consumer/ant-101/ant-in-phones) and here [Bluetooth connected devices](https://developer.android.com/guide/topics/connectivity/bluetooth/ble-overview) to set up your sensors.
+4. You can use the tips for [ANT+ connect](https://www.thisisant.com/consumer/ant-101/ant-in-phones) to set up this type of sensors.
 5. To configure which sensor data can be recorded to a track in the [Trip recording plugin](#trip-recording).
 
 

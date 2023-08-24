@@ -20,57 +20,66 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 Hello everybody!
 
-In the [OsmAnd 4.5 release](https://osmand.net/blog/osmand-android-4-5-released#terrain-maps-updates), a new type of terrain map has been added. This is a new type of data in our application, which is needed for terrain rendering, as well as for some additional functions related to elevations. All the information is in our [documentation](https://osmand.net/docs/user/), but in this article, we will describe how and what can be seen and received on the screen with a new data type.
+In the [OsmAnd 4.5 release](https://osmand.net/blog/osmand-android-4-5-released#terrain-maps-updates), a new terrain map type has been added. This is a new data type in our application, which is needed for terrain rendering, and for some additional functions related to elevations. All the information is in our [documentation](https://osmand.net/docs/user/), but in this article, we will describe how and what you can see and get on the screen with a new data type.
 
-Go
+   &#9755;  Let's go!
 
-<!--truncate-->
+<!--truncate - ?-->
 
 
-At first, look at this screenshots: 
+<!-- alternative text
+Let us introduce you to a useful and informative solution for working with these data types.  
+First, take a look at these screenshots:
+-->
+
+First, take a look at these screenshots: 
+
 
 |||
 |------|-------|
 |![terrain](./img/terrain_screen.png)|![terrain](./img/terrain_screen_2.png)|
 
 
+On them, you can see 3D relief and slopes using vector and raster maps. The widget shows Elevation in the center of the screen. 
 
-In these images, you can see 3D relief and slopes with vector and raster maps. The widget shows Elevation on the screen center. 
+This is an example of the *possibilities* of terrain data, and that's not all.
 
-This is an example of the possibilities of terrain data and that's not all.
+<!-- alternative text
+The following are the benefits that make this solution an excellent choice:
 
-**Advantages**:
-- small download size.
-- possibility of different displays for data: hillshades, slopes, 3D relief.
-- offline using.
+- 🌟 Compact file size. Does not require a lot of space on your device. 
+- 🌄 Variety of data displays.  OsmAnd allows you to choose several display options. Imagine the realism of data display as if you were exploring different worlds - from spectacular hills to steep slopes and exciting 3D relief.
+- 🔌 Autonomous use. This is one of the important features. No dependence on internet connection, no restrictions wherever you are.
+-->
+
+**Benefits**:
+
+- The download file has a **small size**.
+- Ability to display different **types of data** on the map: *Hillshades*, *Slopes*, and *3D relief*.
+- You can use this in **offline mode**.
 
 
 ## Terrain map data
 
+The Terrain map data is [a paid function](https://osmand.net/docs/user/purchases/android#free-and-paid-features), to get it you need:
 
-At first, you need to buy OsmAnd package and download Terrain map data. It is available in [Download maps menu](https://osmand.net/docs/user/plugins/contour-lines#how-to-download): _OsmAnd menu → Download maps → Regions → Chosen country → Terrain map (3D)_. Here you can find the Terrain map for each country.
-
-:::note
-**Terrain map data is [a paid function](https://osmand.net/docs/user/purchases/android#free-and-paid-features)**:
-- Hillshades/Slopes are available for OsmAnd+, OsmAnd Maps+ packages
-- 3D Relief is available for [OsmAnd Pro subscription](https://osmand.net/docs/user/purchases/android#pro-features).
-:::
+- Purchase one of the OsmAnd paid packages available: Hillshades/Slopes for *OsmAnd+*, *OsmAnd Maps+*, and 3D Relief with [OsmAnd Pro subscription](https://osmand.net/docs/user/purchases/android#pro-features).
+- [Download](https://osmand.net/docs/user/plugins/contour-lines#how-to-download) Terrain map data from *Menu → Download maps → Regions → Selected country → Terrain map (3D)*. 
 
 
 ## Topography menu
 
-When you download Terrain data, the next step is to activate it for your map. 
-Go to _OsmAnd menu → Configure map → Topography_
+After downloading the Terrain map data, the next step is to activate [*Terrain*](#terrain) and [*3D Relief*](#3d-relief) for your map.   
+Go to: *Menu → Configure map → Topography*
 
-![Menu](./img/topography_menu.png)
+![Menu](./img/topography_menu.png)  
 
-Terrain map data is used for two menu items: [_Terrain_](#terrain) and [_3D Relief_](#3d-relief). Read more about it below.
 
 ### Terrain 
 
 The Terrain menu enables and configures two parameters: [_Hillshade_](https://osmand.net/docs/user/plugins/contour-lines#hillshade) and [_Slope_](https://osmand.net/docs/user/plugins/contour-lines#slope).
 
-Viewing of Terrain (Hillshade and Slope) on the map:
+This is how the two types of terrain, Hillshade and Slope, look on the map:  
 
 |Hillshade|Slope|
 |------|-------|
@@ -108,6 +117,7 @@ Clear the cache: _System settings → Apps → OsmAnd → Storage → Clear cach
 |------|-------|
 |![Cache](./img/cache.png)|![Cache](./img/cache2.png)|
 
+
 ### 3D relief
 
 The [3D Relief feature](https://osmand.net/docs/user/plugins/contour-lines#3d-relief) produces a raised relief and provides a three-dimensional representation of the landscape. 3D Relief works offline and can be used with [OsmAnd vector maps](https://osmand.net/docs/user/map/vector-maps.md) or any  [raster maps](https://osmand.net/docs/user/map/raster-maps.md#select-raster-maps) as a [Map Source](https://osmand.net/docs/user/map/raster-maps.md#main) or as an [Underlay/Overlay](https://osmand.net/docs/user/map/raster-maps.md#overlay-layer).
@@ -122,13 +132,13 @@ Now, you can see 3D Relief (offline) on the map with any map layers:
 |------|-------|
 |![3D](./img/3d.png)|![3D](./img/3d_2.png)|
 
+
 ## Widget
 
-With Terrain map data you can view the altitude for each point on the map.
+With **Terrain map data** you can view the altitude for *each point* on the map.
 
-To display [_Elevation: map center_](https://osmand.net/docs/user/widgets/info-widgets#-elevation-map-center) widget, add it on the device screen:
-
-_OsmAnd Menu → Configure screen → Left / Right panel → Altitude_
+To display [*Elevation: map center*](https://osmand.net/docs/user/widgets/info-widgets#-elevation-map-center) widget, add it on the device screen:  
+*Menu → Configure screen → Left / Right panel → Altitude*.
 
 |Widget settings screen|Widgets on the screen|
 |------|-------|
@@ -136,16 +146,21 @@ _OsmAnd Menu → Configure screen → Left / Right panel → Altitude_
 
 
 ## Calculation elevation
-
-The next feature (_Calculation elevation_) allows to calculate (offline) elevation by using Terrain map data for any GPX tracks without elevation data for any points on the map: [_Track Context menu → Track → Altitude → Calculate elevation → Calculate offline_](https://osmand.net/docs/user/map/track-context-menu#altitude). 
+The next function, *Calculation elevation*, allows you to offline calculate terrain elevation from Terrain map data for any GPX tracks that do not contain elevation data for any points on the map:  
+[*Track Context menu → Track → Altitude → Calculate elevation → Calculate offline*](https://osmand.net/docs/user/map/track-context-menu#altitude). 
 
 |Before|After|
 |------|-------|
 |![Elevation](./img/elevation0.png)|![Elevation](./img/elevation1.png)|
 
 ______________________________________________
+
+<!-- alternative text
+We appreciate your interest in us and thank you for taking the time to read this article. Join us on social media to keep up to date with the latest news and share your experiences. Your opinion is important to us.
+-->
+
 **Thank you for reading this article and familiarizing yourself with the new features of our application. Join our social networks for communication and feedback.**
-_______________________________________________
+
 
 <LinksSocial/>
 <LinksTelegram/>
