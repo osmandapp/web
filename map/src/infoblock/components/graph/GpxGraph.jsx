@@ -313,7 +313,7 @@ export default function GpxGraph({
                                 ? 'm'
                                 : context.dataset.yAxisID === 'y1Slope'
                                 ? '%'
-                                : 'm/s';
+                                : 'km/h';
                         if (
                             context.parsed.y !== null &&
                             !(context.dataset.xAxisID === 'x2' && context.dataset.yAxisID !== 'y1Slope')
@@ -403,7 +403,7 @@ export default function GpxGraph({
                 position: 'right',
                 title: {
                     display: true,
-                    text: 'speed in m/s',
+                    text: 'speed in km/h',
                     color: '#757575',
                     font: {
                         size: 10,
