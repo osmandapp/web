@@ -138,6 +138,9 @@ export default class EditableMarker {
                 if (currentPolyline && indPointInPolyline !== -1) {
                     currentPolyline._latlngs[indPointInPolyline] = currentPoint;
                     currentPolyline.setLatLngs(currentPolyline._latlngs);
+                    // reset elevation/analytics when unrouted point was moved
+                    currentPoint.ele = TracksManager.NAN_MARKER;
+                    track.refreshAnalytics = true;
                 } else {
                     console.error('EditableMarker drag-drop unrouted-zero-geo failed');
                 }

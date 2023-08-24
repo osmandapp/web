@@ -181,7 +181,10 @@ export default class EditablePolyline {
             const newPoint = { lat, lng };
             currentLayer._latlngs.splice(index, 0, newPoint);
             currentLayer.setLatLngs(currentLayer._latlngs);
+            // set zero elevation and refresh analytics
+            newPoint.ele = TracksManager.NAN_MARKER;
             trackPoints.splice(index, 0, newPoint);
+            track.refreshAnalytics = true;
         } else {
             const newPoint = _.cloneDeep(track.points[index]);
 

@@ -15,6 +15,7 @@ import TracksRoutingCache, {
     effectControlRouterRequests,
     effectRefreshTrackWithRouting,
     GET_ANALYSIS_DEBOUNCE_MS,
+    requestAnalytics,
     debouncer,
 } from '../../context/TracksRoutingCache';
 
@@ -105,6 +106,7 @@ export default function LocalClientTrackLayer() {
                 unverified.zoom = false;
                 unverified.syncRouting = false;
                 unverified.updateLayers = false;
+                unverified.refreshAnalytics = false;
                 ctx.setSelectedGpxFile(unverified);
             } else {
                 console.debug('unverified-gpx-file', unverified.name);
@@ -120,6 +122,7 @@ export default function LocalClientTrackLayer() {
      * Actions:
      *
      * - check/get routing from cache
+     * - refresh analytics (used after unrouted Line-segment changes)
      * - save Local tracks (when editor enabled)
      * - check/set Zoom (fitBounds) for Local tracks
      * - .updateLayers processing (?)
@@ -128,6 +131,8 @@ export default function LocalClientTrackLayer() {
         if (ctxTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK) {
             if (ctxTrack.syncRouting) {
                 syncRouting();
+            } else if (ctxTrack.refreshAnalytics) {
+                refreshAnalytics();
             } else {
                 // checkDeleteSelected();
                 if (ctx.createTrack?.enable && isEmptyTrack(ctxTrack) === false) {
@@ -297,6 +302,11 @@ export default function LocalClientTrackLayer() {
         if (layers) {
             map.removeLayer(layers);
         }
+    }
+
+    function refreshAnalytics() {
+        requestAnalytics({ ctx, track: ctxTrack, debouncerTimer });
+        ctx.setSelectedGpxFile({ ...ctxTrack, refreshAnalytics: false });
     }
 
     function syncRouting() {
