@@ -1,7 +1,7 @@
 import L from 'leaflet';
 import MarkerOptions from './markers/MarkerOptions';
 import _ from 'lodash';
-import TracksManager from '../context/TracksManager';
+import TracksManager, { isProtectedSegment } from '../context/TracksManager';
 import EditablePolyline from './EditablePolyline';
 
 export const TEMP_LAYER_FLAG = 'temp';
@@ -324,12 +324,22 @@ function getPolylines(layers) {
     return res;
 }
 
+// return null on protected segments (null must be processed by parent)
 function updatePolyline(startPoint, endPoint, polylines, oldStartPoint, oldEndPoint) {
     const point2 = oldEndPoint ? oldEndPoint : endPoint;
+
+    if (isProtectedSegment({ startPoint, endPoint: point2 })) {
+        return null;
+    }
 
     let polyline = getPolylineByPoints(point2, polylines);
     if (!polyline) {
         const point1 = oldStartPoint ? oldStartPoint : startPoint;
+
+        if (isProtectedSegment({ startPoint: point1, endPoint: point2 })) {
+            return null;
+        }
+
         polyline = getPolylineByStartEnd(point1, point2, polylines);
     }
     if (!polyline) {

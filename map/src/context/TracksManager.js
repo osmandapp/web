@@ -1012,6 +1012,33 @@ export function isPointUnrouted({ point, pointIndex, prevPoint }) {
     );
 }
 
+export function isProtectedSegment({ startPoint, endPoint }) {
+    if (!startPoint || !endPoint) {
+        console.error('isProtectedSegment got empty point');
+        return true;
+    }
+
+    // gpx (just loaded)
+    if (!endPoint.geometry && !startPoint.profile) {
+        // console.debug('protect-gpx-plain');
+        return true;
+    }
+
+    // gpx (after routing): protect Line-segments with more-than-line geometry
+    if (startPoint.profile === PROFILE_LINE && endPoint.geometry?.length > 2) {
+        // console.debug('protect-gpx-geometry');
+        return true;
+    }
+
+    // gap-profile should be protected
+    if (startPoint.profile === PROFILE_GAP) {
+        // console.debug('protect-gap-profile');
+        return true;
+    }
+
+    return false;
+}
+
 function showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker) {
     if (ctxTrack?.showPoint?.layer) {
         map.setView([ctxTrack.showPoint.layer._latlng.lat, ctxTrack.showPoint.layer._latlng.lng], 17);

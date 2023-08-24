@@ -150,6 +150,9 @@ function dropOutdatedCache({ ctx, validKeys, killLayers = false }) {
 
 // add start-end segment to cache, re-use cached geometry
 function addRoutingToCache(startPoint, endPoint, tempLine, ctx) {
+    if (tempLine === null) {
+        return; // protected segment
+    }
     const geoProfile = ctx.trackRouter.getGeoProfile(startPoint);
     const routingKey = createRoutingKey(startPoint, endPoint, geoProfile);
     const cachedGeometry = ctx.routingCache[routingKey]?.geometry ?? null;
