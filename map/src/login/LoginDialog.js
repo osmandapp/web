@@ -57,6 +57,13 @@ export default function LoginDialog() {
             navigate('/map/' + window.location.search + window.location.hash);
         }
     };
+
+    const сloseDialog = () => {
+        setEmailError('');
+        setPwd('');
+        setCode('');
+        navigate('/map/' + window.location.search + window.location.hash);
+    };
     const handleLogin = () => {
         if (state === 'register') {
             AccountManager.userRegister(userEmail, setEmailError, setState).then();
@@ -330,7 +337,7 @@ export default function LoginDialog() {
                 )}
             </DialogContent>
             <DialogActions>
-                <Button onClick={handleClose}>Cancel</Button>
+                <Button onClick={сloseDialog}>Cancel</Button>
                 <Button onClick={handleLogin}>
                     {state === 'register' ? 'Register' : state === 'register-verify' ? 'Activate' : 'Login'}
                 </Button>

@@ -46,6 +46,7 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
         if (setDeleteAccountFlag) {
             setDeleteAccountFlag(false);
         } else {
+            ctx.setWantDeleteAcc(false);
             navigate('/map/' + window.location.search + window.location.hash);
         }
     }
