@@ -706,7 +706,7 @@ export function eligibleToApplySrtm({ track }) {
         function checkPoints(points) {
             let nonZeroPoints = 0;
             if (points && points.length >= 2) {
-                for (let p = 1; p < points.length; p++) {
+                for (let p = 0; p < points.length; p++) {
                     const geometry = points[p].geometry;
                     if (geometry && geometry.length > 0) {
                         for (let g = 0; g < geometry.length; g++) {

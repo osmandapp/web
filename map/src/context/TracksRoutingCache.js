@@ -103,7 +103,7 @@ export function debouncer(f, timerRef, ms) {
     }
 }
 
-function requestAnalytics({ ctx, track, debouncerTimer }) {
+export function requestAnalytics({ ctx, track, debouncerTimer }) {
     const analysis = () => {
         TracksManager.getTrackWithAnalysis(
             TracksManager.GET_ANALYSIS,

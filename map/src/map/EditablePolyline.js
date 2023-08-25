@@ -196,11 +196,14 @@ export default class EditablePolyline {
             const newPoint = { lat, lng };
             currentLayer._latlngs.splice(index, 0, newPoint);
             currentLayer.setLatLngs(currentLayer._latlngs);
+            // refresh analytics (newPoint ele is undefined)
             trackPoints.splice(index, 0, newPoint);
+            track.refreshAnalytics = true;
         } else if (isProtectedSegment({ startPoint: prevPoint, endPoint: segmentEndPoint })) {
             const newPoint = { lat, lng };
             const geometryIndex = this.dragPoint.geometryIndex;
             splitProtectedSegment({ newPoint, trackPoints, geometryIndex, endPointIndex: index });
+            track.refreshAnalytics = true;
         } else {
             const newPoint = _.cloneDeep(track.points[index]);
 
