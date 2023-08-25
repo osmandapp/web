@@ -31,7 +31,7 @@ export default function LoginDialog() {
     const [userEmail, setUserEmail] = useState(ctx.userEmail);
     const [pwd, setPwd] = useState();
     const [code, setCode] = useState();
-    const [emailError, setEmailError] = useState('');
+    const [emailError, setEmailError] = useState(ctx.wantDeleteAcc ? 'Need to login for delete account!' : '');
     const [state, setState] = useState('login'); // login, register, register-verify
     const [openDangerousArea, setOpenDangerousArea] = useState(false);
     const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
@@ -51,7 +51,11 @@ export default function LoginDialog() {
         setEmailError('');
         setPwd('');
         setCode('');
-        navigate('/map/' + window.location.search + window.location.hash);
+        if (ctx.wantDeleteAcc) {
+            navigate('/map/delete-account' + window.location.search + window.location.hash);
+        } else {
+            navigate('/map/' + window.location.search + window.location.hash);
+        }
     };
     const handleLogin = () => {
         if (state === 'register') {

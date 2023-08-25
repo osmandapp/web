@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 import OsmAndMapFrame from './drawer/components/OsmAndMapFrame';
 import LoginDialog from './login/LoginDialog';
 import { AppContextProvider } from './context/AppContext';
+import DeleteAccountDialog from './login/DeleteAccountDialog';
 
 export let globalNavigate = () => null;
 
@@ -21,6 +22,7 @@ const App = () => {
                 <Routes>
                     <Route path="/map" element={<OsmAndMapFrame />}>
                         <Route path="loginForm" element={<LoginDialog />}></Route>
+                        <Route path="delete-account" element={<DeleteAccountDialog setDeleteAccountFlag={null} />} />
                     </Route>
                 </Routes>
             </BrowserRouter>
