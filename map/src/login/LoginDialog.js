@@ -31,7 +31,7 @@ export default function LoginDialog() {
     const [userEmail, setUserEmail] = useState(ctx.userEmail);
     const [pwd, setPwd] = useState();
     const [code, setCode] = useState();
-    const [emailError, setEmailError] = useState(ctx.wantDeleteAcc ? 'Need to login for delete account!' : '');
+    const [emailError, setEmailError] = useState(ctx.wantDeleteAcc ? 'Please log in to delete your account.' : '');
     const [state, setState] = useState('login'); // login, register, register-verify
     const [openDangerousArea, setOpenDangerousArea] = useState(false);
     const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
