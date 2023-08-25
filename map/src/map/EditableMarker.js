@@ -155,6 +155,7 @@ export default class EditableMarker {
                             const newGeo = _.cloneDeep(currentPoint.geometry);
                             newGeo[newGeo.length - 1] = { lat: currentPoint.lat, lng: currentPoint.lng };
                             currentPoint.geometry = newGeo;
+                            track.refreshAnalytics = true;
                         } else {
                             currentPolyline = TrackLayerProvider.updatePolyline(
                                 prevPoint,
@@ -184,6 +185,7 @@ export default class EditableMarker {
                             const newGeo = _.cloneDeep(nextPoint.geometry);
                             newGeo[0] = { lat: currentPoint.lat, lng: currentPoint.lng };
                             nextPoint.geometry = newGeo;
+                            track.refreshAnalytics = true;
                         } else {
                             nextPolyline = TrackLayerProvider.updatePolyline(
                                 currentPoint,
