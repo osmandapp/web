@@ -229,7 +229,7 @@ const GpxGraphProvider = ({ width }) => {
             if (current) {
                 let dist = current[DISTANCE];
                 let ind = calculatedSlopeDist.findIndex((d) => d / 1000 > dist - 0.005 && d / 1000 < dist + 0.005);
-                if (ind) {
+                if (ind !== -1 && ind >= 0) {
                     result[i][SLOPE] = Math.trunc(calculatedSlope[ind] * 100) / 100;
                 }
             }
