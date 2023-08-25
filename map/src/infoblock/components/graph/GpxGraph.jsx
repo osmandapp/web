@@ -362,16 +362,11 @@ export default function GpxGraph({
             },
             zoom: {
                 limits: {
-                    y1: { min: minEle - 10, max: maxEle + 10 },
-                    y2: { min: minSpeed - 10, max: maxSpeed + 10 },
                     x: { min: data[0][xAxis], max: data[data.length - 1][xAxis] },
                 },
                 zoom: {
                     wheel: {
                         enabled: true,
-                        rangeMax: {
-                            y: maxEle,
-                        },
                     },
                     mode: 'x',
                     speed: 100,
