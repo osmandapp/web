@@ -1012,6 +1012,34 @@ export function isProtectedSegment({ startPoint, endPoint }) {
     return false;
 }
 
+export function splitProtectedSegment({ newPoint, trackPoints, geometryIndex, endPointIndex }) {
+    if (geometryIndex !== -1 && endPointIndex >= 1 && newPoint && trackPoints && trackPoints.length >= 2) {
+        // newPoint should have previous geometry (up to geometryIndex) + newPoint at the end
+        newPoint.geometry = trackPoints[endPointIndex].geometry.slice(0, geometryIndex + 1);
+        newPoint.geometry.push({ lat: newPoint.lat, lng: newPoint.lng });
+        if (newPoint.geometry.length <= 2) {
+            // in case when new segment becomes Line "point-to-point"
+            // duplicate newPoint geometry to keep the segment protected
+            // dupe-geometry tested: GPX, Cloud, Android OsmAnd app, Garmin
+            newPoint.geometry.push({ lat: newPoint.lat, lng: newPoint.lng });
+        }
+
+        // endPoint should have newPoint at the begin and the rest of previous geometry (next to geometryIndex)
+        trackPoints[endPointIndex].geometry = trackPoints[endPointIndex].geometry.slice(geometryIndex + 1);
+        trackPoints[endPointIndex].geometry.unshift({ lat: newPoint.lat, lng: newPoint.lng });
+        if (trackPoints[endPointIndex].geometry.length <= 2) {
+            // keep the segment protected (see comment for similar case before)
+            trackPoints[endPointIndex].geometry.unshift({ lat: newPoint.lat, lng: newPoint.lng });
+        }
+
+        // duplicate profile string (from previous to endPoint)
+        newPoint.profile = trackPoints[endPointIndex - 1].profile;
+
+        // insert newPoint into trackPoints
+        trackPoints.splice(endPointIndex, 0, newPoint);
+    }
+}
+
 function showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker) {
     if (ctxTrack?.showPoint?.layer) {
         map.setView([ctxTrack.showPoint.layer._latlng.lat, ctxTrack.showPoint.layer._latlng.lng], 17);
