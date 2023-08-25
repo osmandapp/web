@@ -10,6 +10,7 @@ import {
     LineController,
     LineElement,
     Filler,
+    Interaction,
 } from 'chart.js';
 import { Box, Slider, SliderThumb } from '@mui/material';
 import AppContext from '../../../context/AppContext';
@@ -19,6 +20,7 @@ import annotationsPlugin from 'chartjs-plugin-annotation';
 import _ from 'lodash';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
+import { getRelativePosition } from 'chart.js/helpers';
 
 const mouseLine = {
     id: 'mouseLine',
@@ -133,7 +135,7 @@ export default function GpxGraph({
                     addMaxMinMarkers(activeData[0]);
                 }
             }
-            setDistRangeValue([0, data.length]);
+            setDistRangeValue([0, data.length - 1]);
             ctx.setTrackRange(null);
         }
     }, [data, showData, slopes]);
@@ -184,14 +186,19 @@ export default function GpxGraph({
             return;
         }
         if (ctx.mapMarkerListener && ctx.selectedGpxFile && chartRef.current._active?.length > 0) {
-            let pointList = TracksManager.getTrackPoints(ctx.selectedGpxFile);
-            const ind = chartRef.current._active[0].element.$context.index;
-            if (ind && chartRef.current._active[0].datasetIndex !== 0) {
-                const lat = Object.values(pointList)[ind].lat;
-                const lng = Object.values(pointList)[ind].lng;
-                ctx.mapMarkerListener(lat, lng);
-            } else {
-                ctx.mapMarkerListener(null);
+            //filter slope points
+            let selected = chartRef.current._active.find((data) => data.datasetIndex !== 2);
+            if (selected) {
+                let pointList = TracksManager.getTrackPoints(ctx.selectedGpxFile);
+                const ind = selected.element.$context.index;
+                // add marker to map
+                if (ind) {
+                    const lat = Object.values(pointList)[ind].lat;
+                    const lng = Object.values(pointList)[ind].lng;
+                    ctx.mapMarkerListener(lat, lng);
+                } else {
+                    ctx.mapMarkerListener(null);
+                }
             }
         } else {
             ctx.mapMarkerListener(null);
@@ -203,7 +210,7 @@ export default function GpxGraph({
     }
 
     function showRange() {
-        const defaultPos = distRangeValue[0] === 0 && distRangeValue[1] === data.length;
+        const defaultPos = distRangeValue[0] === 0 && distRangeValue[1] === data.length - 1;
         return !defaultPos;
     }
 
@@ -222,13 +229,33 @@ export default function GpxGraph({
         return showData[y1Axis[2]] !== '' && showData[y1Axis[2]] !== false && showData[y1Axis[2]] !== undefined;
     }
 
+    Interaction.modes.myCustomMode = function (chart, e, options, useFinalPosition) {
+        const position = getRelativePosition(e, chart);
+        const items = [];
+        Interaction.evaluateInteractionItems(chart, 'x', position, (element, datasetIndex, index) => {
+            //filter slope points and duplicates
+            if (
+                element.inXRange(position.x, useFinalPosition) &&
+                datasetIndex !== 2 &&
+                !items.some((i) => i.datasetIndex === datasetIndex)
+            ) {
+                items.push({ element, datasetIndex, index });
+            }
+        });
+        return items;
+    };
+
+    function getMode() {
+        return !showY1 && !showY2 && showSlope ? 'index' : 'myCustomMode';
+    }
+
     const options = {
         responsive: true,
         maintainAspectRatio: false,
         spanGaps: true,
         interaction: {
             intersect: false,
-            mode: 'index',
+            mode: getMode(),
         },
         plugins: {
             annotation: {
@@ -286,15 +313,15 @@ export default function GpxGraph({
                     box1: {
                         display: showRange(),
                         type: 'box',
-                        xMin: distRangeValue[0],
-                        xMax: distRangeValue[1],
+                        xMin: data[distRangeValue[0]] && data[distRangeValue[0]][xAxis],
+                        xMax: data[distRangeValue[1]] && data[distRangeValue[1]][xAxis],
                         backgroundColor: 'rgba(245, 208, 39, 0.34)',
                     },
                 },
             },
             tooltip: {
                 enabled: true,
-                mode: 'index',
+                mode: getMode(),
                 intersect: false,
                 backgroundColor: '#757575',
                 displayColors: false,
@@ -304,7 +331,7 @@ export default function GpxGraph({
                     },
                     label: (context) => {
                         let label = context.dataset.label || '';
-
+                        let ind = data.findIndex((d) => d[xAxis] === Number(context.label));
                         if (label) {
                             label += ': ';
                         }
@@ -314,18 +341,19 @@ export default function GpxGraph({
                                 : context.dataset.yAxisID === 'y1Slope'
                                 ? '%'
                                 : 'km/h';
-                        if (
-                            context.parsed.y !== null &&
-                            !(context.dataset.xAxisID === 'x2' && context.dataset.yAxisID !== 'y1Slope')
-                        ) {
+                        if (context.parsed.y !== null) {
                             label += `${context.parsed.y} ${dimension}`;
                         }
-                        return label;
+                        let res = [];
+                        res.push(label);
+                        if (data[ind] && context.dataset.yAxisID !== 'y1Slope' && showSlope) {
+                            res.push(`Slope: ${data[ind]['Slope']}`);
+                        }
+                        return res;
                     },
                 },
             },
             hover: {
-                mode: 'nearest',
                 intersect: false,
                 includeInvisible: true,
             },
@@ -336,6 +364,7 @@ export default function GpxGraph({
                 limits: {
                     y1: { min: minEle - 10, max: maxEle + 10 },
                     y2: { min: minSpeed - 10, max: maxSpeed + 10 },
+                    x: { min: data[0][xAxis], max: data[data.length - 1][xAxis] },
                 },
                 zoom: {
                     wheel: {
@@ -355,18 +384,6 @@ export default function GpxGraph({
             },
         },
         scales: {
-            ['y1Slope']: {
-                display: !showY1 && showSlope,
-                title: {
-                    display: !showY1 && showSlope,
-                    text: 'slope in %',
-                    color: '#757575',
-                    font: {
-                        size: 10,
-                        lineHeight: 1.2,
-                    },
-                },
-            },
             x: {
                 display: true,
                 type: 'linear',
@@ -414,34 +431,28 @@ export default function GpxGraph({
                     display: !showY1,
                 },
             },
+            ['y1Slope']: {
+                display: !showY2 && showSlope,
+                position: 'right',
+                title: {
+                    display: !showY2 && showSlope,
+                    text: 'slope in %',
+                    color: '#757575',
+                    font: {
+                        size: 10,
+                        lineHeight: 1.2,
+                    },
+                },
+                grid: {
+                    display: !showY1,
+                },
+            },
         },
     };
 
     const graphData = {
         labels: data.map((d) => (d[xAxis] !== 0 ? d[xAxis].toFixed(1) : 0)),
         datasets: [
-            {
-                label: y1Axis[2],
-                type: 'line',
-                data: slopeData,
-                borderColor: 'rgba(145, 217, 255, 0.79)',
-                backgroundColor: 'rgba(145, 217, 255, 0.79)',
-                borderWidth: 1,
-                fill: true,
-                yAxisID: 'y1Slope',
-                pointRadius: 0,
-            },
-            {
-                label: y2Axis,
-                type: 'line',
-                data: speedData,
-                borderColor: '#ff595e',
-                borderWidth: 1,
-                min: minSpeed,
-                max: maxSpeed,
-                yAxisID: 'y2',
-                pointRadius: 0,
-            },
             {
                 label: y1Axis[0],
                 type: 'line',
@@ -454,6 +465,7 @@ export default function GpxGraph({
                 fill: true,
                 yAxisID: 'y1',
                 pointRadius: 0,
+                order: 2,
             },
             {
                 label: y1Axis[1],
@@ -467,6 +479,33 @@ export default function GpxGraph({
                 fill: true,
                 yAxisID: 'y1',
                 pointRadius: 0,
+                order: 3,
+            },
+            {
+                label: y1Axis[2],
+                type: 'line',
+                data: slopeData,
+                borderColor: 'rgba(145, 217, 255, 0.79)',
+                backgroundColor: 'rgba(145, 217, 255, 0.79)',
+                borderWidth: 1,
+                min: slopes.min,
+                max: slopes.max,
+                fill: true,
+                yAxisID: 'y1Slope',
+                pointRadius: 0,
+                order: 0,
+            },
+            {
+                label: y2Axis,
+                type: 'line',
+                data: speedData,
+                borderColor: '#ff595e',
+                borderWidth: 1,
+                min: minSpeed,
+                max: maxSpeed,
+                yAxisID: 'y2',
+                pointRadius: 0,
+                order: 1,
             },
         ],
     };

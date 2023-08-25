@@ -185,7 +185,6 @@ const GpxGraphProvider = ({ width }) => {
 
             calculatedY[k] = py + ((getY(nextW) - py) / (getX(nextW) - px)) * (calculatedX[k] - px);
         }
-
         return { calculatedX, calculatedY };
     }
 
@@ -195,7 +194,9 @@ const GpxGraphProvider = ({ width }) => {
         while (l > 0 && ctx.selectedGpxFile.analysis.totalDistance / STEP > 10000) {
             STEP = Math.max(STEP, ctx.selectedGpxFile.analysis.totalDistance / (result.length * l--));
         }
+        // interpolate
         const interpolatorResult = interpolate(ctx.selectedGpxFile.analysis.totalDistance, STEP, result);
+
         const calculatedDist = interpolatorResult.calculatedX;
         const calculatedH = interpolatorResult.calculatedY;
         const SLOPE_PROXIMITY = Math.max(20, STEP * 2);
@@ -222,8 +223,20 @@ const GpxGraphProvider = ({ width }) => {
                 calculatedSlope[k] = 0;
             }
         }
-        let res = [];
+        // add slopes to points
+        for (let i = 0; i < result.length; i++) {
+            let current = result[i];
+            if (current) {
+                let dist = current[DISTANCE];
+                let ind = calculatedSlopeDist.findIndex((d) => d / 1000 > dist - 0.005 && d / 1000 < dist + 0.005);
+                if (ind) {
+                    result[i][SLOPE] = Math.trunc(calculatedSlope[ind] * 100) / 100;
+                }
+            }
+        }
 
+        // create array slopes
+        let res = [];
         for (let i = 0; i < calculatedSlope.length; i++) {
             let dist = calculatedSlopeDist[i];
             res.push({

@@ -23,16 +23,20 @@ export default function GraphLayer() {
             } else {
                 points = trackPoints;
             }
-            let selectedPoints = points.slice(ctx.trackRange[0], ctx.trackRange[1]);
-            let polyline = new L.Polyline(selectedPoints, {
-                color: '#ffc939',
-                weight: 5,
-            });
-            if (trackRangeLine) {
-                trackRangeLine.setLatLngs(polyline._latlngs);
+            let selectedPoints = points.slice(ctx.trackRange[0], ctx.trackRange[1] + 1);
+            if (selectedPoints.length === points.length) {
+                removeTrackRangeLine();
             } else {
-                setTrackRangeLine(polyline);
-                polyline.addTo(map);
+                let polyline = new L.Polyline(selectedPoints, {
+                    color: '#ffc939',
+                    weight: 5,
+                });
+                if (trackRangeLine) {
+                    trackRangeLine.setLatLngs(polyline._latlngs);
+                } else {
+                    setTrackRangeLine(polyline);
+                    polyline.addTo(map);
+                }
             }
         } else {
             removeTrackRangeLine();
