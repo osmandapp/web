@@ -149,8 +149,10 @@ export default function ChangeProfileTrackDialog({ open }) {
                     updateLastPointProfile();
                     return true;
                 } else {
-                    ctx.selectedGpxFile.points[0].geoProfile = geoProfile;
-                    ctx.selectedGpxFile.points[0].profile = geoProfile.profile;
+                    if (ctx.selectedGpxFile.points?.length > 0) {
+                        ctx.selectedGpxFile.points[0].geoProfile = geoProfile;
+                        ctx.selectedGpxFile.points[0].profile = geoProfile.profile;
+                    }
                     return true;
                 }
             } else {
