@@ -453,11 +453,11 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                               </>
                           )}
                 </div>
-                <Divider light sx={{ mt: 1, mb: 2 }} />
                 {ctx.loginUser &&
                     ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
                     isEmptyTrack(ctx.selectedGpxFile) === false && (
                         <>
+                            <Divider light sx={{ mt: 1, mb: 2 }} />
                             <Button
                                 variant="contained"
                                 sx={{ ml: '-0.5px !important' }}
@@ -484,20 +484,24 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                                     Save as
                                 </Button>
                             )}
+                            <Divider light sx={{ mt: 2, mb: 1 }} />
                         </>
                     )}
                 {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && (
-                    <Button
-                        variant="contained"
-                        sx={{ ml: '-0.5px !important' }}
-                        className={styles.button}
-                        onClick={() => TracksManager.handleEditCloudTrack(ctx)}
-                    >
-                        <Create fontSize="small" sx={{ mr: '7px' }} />
-                        Edit Track
-                    </Button>
+                    <>
+                        <Divider light sx={{ mt: 1, mb: 2 }} />
+                        <Button
+                            variant="contained"
+                            sx={{ ml: '-0.5px !important' }}
+                            className={styles.button}
+                            onClick={() => TracksManager.handleEditCloudTrack(ctx)}
+                        >
+                            <Create fontSize="small" sx={{ mr: '7px' }} />
+                            Edit Track
+                        </Button>
+                        <Divider light sx={{ mt: 2, mb: 1 }} />
+                    </>
                 )}
-                <Divider light sx={{ mt: 2, mb: 1 }} />
                 {points !== 0 && (
                     <MenuItem sx={{ ml: -2 }}>
                         <ListItemIcon>

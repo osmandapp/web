@@ -57,7 +57,7 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                 <GeneralInfo width={ctx.infoBlockWidth} setOpenDescDialog={setOpenDescDialog} />
                 {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
                     <>
-                        <Divider sx={{ mt: '3px', mb: '12px' }} />
+                        {!isEmptyTrack(ctx.selectedGpxFile) && <Divider sx={{ mt: '3px', mb: '12px' }} />}
                         <div style={{ marginLeft: '15px', marginTop: '-10px' }}>
                             {!isEmptyTrack(ctx.selectedGpxFile, false, true) && (
                                 <FormControlLabel
@@ -95,23 +95,23 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                         <GpxGraphProvider width={ctx.infoBlockWidth} />
                     </>
                 )}
-                <Divider sx={{ mt: '3px', mb: '12px' }} />
                 {isEmptyTrack(ctx.selectedGpxFile) === false && (
-                    <Button
-                        sx={{ ml: '-0.5px !important' }}
-                        variant="contained"
-                        className={styles.button}
-                        onClick={() => downloadGpx(ctx)}
-                    >
-                        <Download fontSize="small" sx={{ mr: '3px' }} />
-                        Download GPX
-                    </Button>
-                )}
-                {isEmptyTrack(ctx.selectedGpxFile) === false && (
-                    <Button variant="contained" className={styles.button} onClick={addToCollection}>
-                        <Add fontSize="small" sx={{ mr: '3px' }} />
-                        Collection (OBF MAP)
-                    </Button>
+                    <>
+                        <Divider sx={{ mt: '3px', mb: '12px' }} />
+                        <Button
+                            sx={{ ml: '-0.5px !important' }}
+                            variant="contained"
+                            className={styles.button}
+                            onClick={() => downloadGpx(ctx)}
+                        >
+                            <Download fontSize="small" sx={{ mr: '3px' }} />
+                            Download GPX
+                        </Button>
+                        <Button variant="contained" className={styles.button} onClick={addToCollection}>
+                            <Add fontSize="small" sx={{ mr: '3px' }} />
+                            Collection (OBF MAP)
+                        </Button>
+                    </>
                 )}
                 <Divider sx={{ mt: 2, mb: 2 }} />
                 <Button
