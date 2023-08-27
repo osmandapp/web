@@ -23,28 +23,12 @@ import {
     CloudUpload,
     Commit,
     Create,
-    Download,
     Edit,
     ImportExport,
     RouteOutlined,
     Speed,
     Terrain,
 } from '@mui/icons-material';
-
-export const downloadGpx = async (ctx) => {
-    const gpx = await TracksManager.getGpxTrack(ctx.selectedGpxFile);
-    if (gpx) {
-        const data = gpx.data;
-        const url = document.createElement('a');
-        url.href = URL.createObjectURL(new Blob([data]));
-        const name = TracksManager.prepareName(
-            ctx.selectedGpxFile.name,
-            ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK
-        );
-        url.download = `${name}.gpx`;
-        url.click();
-    }
-};
 
 export default function GeneralInfo({ width, setOpenDescDialog }) {
     const styles = contextMenuStyles();
@@ -495,12 +479,6 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                     >
                         <Create fontSize="small" sx={{ mr: '7px' }} />
                         Edit Track
-                    </Button>
-                )}
-                {isEmptyTrack(ctx.selectedGpxFile) === false && (
-                    <Button variant="contained" className={styles.button} onClick={() => downloadGpx(ctx)}>
-                        <Download fontSize="small" sx={{ mr: '3px' }} />
-                        Download GPX
                     </Button>
                 )}
                 {points !== 0 && (

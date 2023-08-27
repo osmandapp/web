@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Box, Button, Divider } from '@mui/material';
 import AppContext from '../../../context/AppContext';
-import { Add } from '@mui/icons-material';
+import { Add, Download } from '@mui/icons-material';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import DeleteTrackDialog from '../track/dialogs/DeleteTrackDialog';
 import GpxGraphProvider from '../graph/GpxGraphProvider';
@@ -10,6 +10,7 @@ import DescTrackDialog from '../track/dialogs/DescTrackDialog';
 import { isEmptyTrack } from '../../../context/TracksManager';
 import { Checkbox, FormControlLabel } from '@mui/material/';
 import { makeStyles } from '@material-ui/core/styles';
+import TracksManager from '../../../context/TracksManager';
 
 const useStyles = makeStyles({
     checkbox: {
@@ -19,6 +20,21 @@ const useStyles = makeStyles({
         transform: 'scale(0.8)',
     },
 });
+
+export const downloadGpx = async (ctx) => {
+    const gpx = await TracksManager.getGpxTrack(ctx.selectedGpxFile);
+    if (gpx) {
+        const data = gpx.data;
+        const url = document.createElement('a');
+        url.href = URL.createObjectURL(new Blob([data]));
+        const name = TracksManager.prepareName(
+            ctx.selectedGpxFile.name,
+            ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK
+        );
+        url.download = `${name}.gpx`;
+        url.click();
+    }
+};
 
 export default function GeneralInfoTab({ setShowInfoBlock }) {
     const styles = contextMenuStyles();
@@ -82,15 +98,30 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                 <Divider sx={{ mt: '3px', mb: '12px' }} />
                 {isEmptyTrack(ctx.selectedGpxFile) === false && (
                     <Button
-                        variant="contained"
                         sx={{ ml: '-0.5px !important' }}
+                        variant="contained"
                         className={styles.button}
-                        onClick={addToCollection}
+                        onClick={() => downloadGpx(ctx)}
                     >
-                        <Add fontSize="small" sx={{ mr: '3px' }} />
-                        Collection
+                        <Download fontSize="small" sx={{ mr: '3px' }} />
+                        Download GPX
                     </Button>
                 )}
+                {isEmptyTrack(ctx.selectedGpxFile) === false && (
+                    <Button variant="contained" className={styles.button} onClick={addToCollection}>
+                        <Add fontSize="small" sx={{ mr: '3px' }} />
+                        Collection (OBF MAP)
+                    </Button>
+                )}
+                <Divider sx={{ mt: 2, mb: 2 }} />
+                <Button
+                    variant="contained"
+                    sx={{ ml: '-0.5px !important' }}
+                    className={styles.button}
+                    onClick={() => setShowInfoBlock(false)}
+                >
+                    Close Editor
+                </Button>
                 <Button
                     variant="contained"
                     sx={{ backgroundColor: '#ff595e !important' }}
@@ -99,7 +130,7 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                         setOpenDeleteDialog(true);
                     }}
                 >
-                    Delete
+                    Delete Track
                 </Button>
             </Box>
             {openDeleteDialog && (
