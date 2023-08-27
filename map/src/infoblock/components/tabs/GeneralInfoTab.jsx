@@ -120,7 +120,7 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                     className={styles.button}
                     onClick={() => setShowInfoBlock(false)}
                 >
-                    Close Editor
+                    Close Track
                 </Button>
                 <Button
                     variant="contained"

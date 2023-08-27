@@ -450,25 +450,41 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                                   >
                                       • Add description
                                   </Link>
-                                  <Divider sx={{ mt: '6px', mb: '12px' }} light />
                               </>
                           )}
                 </div>
+                <Divider light sx={{ mt: 1, mb: 2 }} />
                 {ctx.loginUser &&
                     ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
                     isEmptyTrack(ctx.selectedGpxFile) === false && (
-                        <Button
-                            variant="contained"
-                            sx={{ ml: '-0.5px !important' }}
-                            className={styles.button}
-                            onClick={() => {
-                                ctx.selectedGpxFile.save = true;
-                                ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-                            }}
-                        >
-                            <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
-                            Save to cloud
-                        </Button>
+                        <>
+                            <Button
+                                variant="contained"
+                                sx={{ ml: '-0.5px !important' }}
+                                className={styles.button}
+                                onClick={() => {
+                                    ctx.selectedGpxFile.save = true;
+                                    ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+                                }}
+                            >
+                                <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
+                                Save to Cloud
+                            </Button>
+                            {ctx.createTrack?.cloudAutoSave && (
+                                <Button
+                                    variant="contained"
+                                    className={styles.button}
+                                    onClick={() => {
+                                        ctx.selectedGpxFile.save = true;
+                                        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+                                        ctx.setCreateTrack({ ...ctx.createTrack, cloudAutoSave: false });
+                                    }}
+                                >
+                                    <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
+                                    Save as
+                                </Button>
+                            )}
+                        </>
                     )}
                 {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && (
                     <Button
@@ -481,6 +497,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                         Edit Track
                     </Button>
                 )}
+                <Divider light sx={{ mt: 2, mb: 1 }} />
                 {points !== 0 && (
                     <MenuItem sx={{ ml: -2 }}>
                         <ListItemIcon>

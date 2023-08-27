@@ -130,7 +130,7 @@ const PanelButtons = ({
                                         onClick={() =>
                                             confirm({
                                                 ctx,
-                                                text: 'This is Cloud track. Open Local editor?',
+                                                text: 'Open Cloud track in Local editor?',
                                                 callback: () => TracksManager.handleEditCloudTrack(ctx),
                                             })
                                         }

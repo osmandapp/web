@@ -34,7 +34,7 @@ export function GlobalConfirmationDialog() {
             {confirmation && (
                 <Dialog open={!!confirmation} onClose={() => setConfirmation(null)}>
                     <DialogContent>{confirmation.text}</DialogContent>
-                    <DialogActions>
+                    <DialogActions sx={{ mb: 1, mr: 1 }}>
                         <Button
                             variant="contained"
                             size="small"
