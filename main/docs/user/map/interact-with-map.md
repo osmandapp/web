@@ -165,11 +165,14 @@ You can not change Camera tilt when old [map rendering engine](../personal/globa
 
 <InfoAndroidOnly/>  
 
-### Disable all animations
+### No animations
 
 You can turn off all map animations during map changes, such as gestures and buttons.    
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,do_not_use_animations"/>*
 
+### Animate own position
+
+Creates a smooth map panning effect when in motion. Introduces a slight delay versus ground truth of about 1 second. Has been reported to create some pronounced lag issues under some circumstances, disable if such issues arise.
 
 ### Extra compass settings  
 
