@@ -272,8 +272,7 @@ export default function LoginDialog() {
                 <DialogContentText>
                     {state === 'register-verify'
                         ? `Please check your email, enter new strong password and enter verification code`
-                        : `You can login to the website only if you have OsmAnd Pro subscription.
-                         Please enter your email below.`}
+                        : `You can login to the website only if you have registered OsmAnd cloud account: "OsmAnd Pro" or "OsmAnd start". Please enter your email below.`}
                 </DialogContentText>
                 <TextField
                     autoFocus
