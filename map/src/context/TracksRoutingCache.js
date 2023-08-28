@@ -15,6 +15,7 @@ export function effectControlRouterRequests({ ctx, startedRouterJobs, setStarted
 
     for (const key in cache) {
         if (cache[key].geometry === null && cache[key].busy !== true) {
+            ctx.setProcessRouting(true);
             setStartedRouterJobs((x) => x + 1);
             ctx.mutateRoutingCache((o) => o[key] && (o[key].busy = true));
 
@@ -29,7 +30,7 @@ export function effectControlRouterRequests({ ctx, startedRouterJobs, setStarted
                     (error) => {
                         // keep busy=true till next init
                         setStartedRouterJobs((x) => x - 1);
-                        console.debug('updateRouteBeetwenPoints failed', error);
+                        console.error('updateRouteBeetwenPoints failed', error);
                     }
                 )
             );
@@ -68,8 +69,8 @@ export function effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges, deb
 
                 validKeys[key] = true;
 
-                if (geometry && tempLine) {
-                    // used when tempLine exist (segment recalculation, new points, etc)
+                if (geometry && tempLine && startPoint.profile !== TracksManager.PROFILE_GAP) {
+                    // used when tempLine exist (segment recalculation, new points, etc), skip PROFILE_GAP
                     refreshTempLine({ ctx, geometry, track, tempLine, color: geoRouter.getColor(startPoint) });
                     ctx.mutateRoutingCache((o) => o[key] && (o[key].tempLine = null)); // use tempLine only once
                     endPoint.geometry = geometry; // mutate
@@ -102,7 +103,7 @@ export function debouncer(f, timerRef, ms) {
     }
 }
 
-function requestAnalytics({ ctx, track, debouncerTimer }) {
+export function requestAnalytics({ ctx, track, debouncerTimer }) {
     const analysis = () => {
         TracksManager.getTrackWithAnalysis(
             TracksManager.GET_ANALYSIS,
@@ -121,7 +122,7 @@ function requestAnalytics({ ctx, track, debouncerTimer }) {
 function refreshTempLine({ ctx, geometry, track, tempLine, color }) {
     // don't destroy tempLine (empty geo)
     if (geometry && geometry.length > 0) {
-        const polyline = new EditablePolyline(null, ctx, geometry, null, track).create();
+        const polyline = new EditablePolyline(null, ctx, geometry, null, track).create(); // latlngs-only
         tempLine.setStyle({ color, dashArray: null });
         tempLine.setLatLngs(polyline._latlngs);
         tempLine.options.name = undefined;
@@ -177,8 +178,8 @@ export function syncTrackWithCache({ ctx, track, geoRouter, debouncerTimer }) {
             const geoProfile = geoRouter.getGeoProfile(startPoint);
             const key = createRoutingKey(startPoint, endPoint, geoProfile);
 
-            if (cache[key] && cache[key].geometry) {
-                endPoint.geometry = cache[key].geometry; // mutate
+            if (cache[key] && cache[key].geometry && startPoint.profile !== TracksManager.PROFILE_GAP) {
+                endPoint.geometry = cache[key].geometry; // mutate (but skip PROFILE_GAP profile)
             }
         }
     }
@@ -201,7 +202,7 @@ function createRoutingKey(startPoint, endPoint, geoProfile) {
 
 function addSegmentToRouting(start, end, oldPoint, tempPolyline, segments) {
     const segment = {
-        oldPoint: oldPoint,
+        oldPoint, // purpose of oldPoint here?
         start: start,
         end: end,
         tempPolyline: tempPolyline,

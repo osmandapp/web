@@ -658,34 +658,34 @@ function decodeRouteMode({ routeMode, params }) {
     return draft;
 }
 
-async function updateRoute(points) {
-    let result;
-    if (points?.length > 0) {
-        result = await apiGet(`${process.env.REACT_APP_GPX_API}/routing/get-route`, {
-            method: 'POST',
-            data: points,
-        });
-    }
-    if (result && result.data) {
-        let data = result.data; // points
-        if (typeof result.data === 'string') {
-            data = JSON.parse(quickNaNfix(result.data));
-        }
-        updateGapProfileAllSegments(data.points);
-        return data.points;
-    } else {
-        console.error('updateRoute fallback');
-        return points;
-    }
-}
+// async function updateRoute(points) {
+//     let result;
+//     if (points?.length > 0) {
+//         result = await apiGet(`${process.env.REACT_APP_GPX_API}/routing/get-route`, {
+//             method: 'POST',
+//             data: points,
+//         });
+//     }
+//     if (result && result.data) {
+//         let data = result.data; // points
+//         if (typeof result.data === 'string') {
+//             data = JSON.parse(quickNaNfix(result.data));
+//         }
+//         updateGapProfileAllSegments(data.points);
+//         return data.points;
+//     } else {
+//         console.error('updateRoute fallback');
+//         return points;
+//     }
+// }
 
-function updateGapProfileAllSegments(points) {
-    if (points) {
-        points.forEach((p) => {
-            updateGapProfileOneSegment(p, p.geometry);
-        });
-    }
-}
+// function updateGapProfileAllSegments(points) {
+//     if (points) {
+//         points.forEach((p) => {
+//             updateGapProfileOneSegment(p, p.geometry);
+//         });
+//     }
+// }
 
 function updateGapProfileOneSegment(routePoint, points) {
     if (routePoint.profile === PROFILE_GAP) {
@@ -733,7 +733,7 @@ export function eligibleToApplySrtm({ track }) {
         function checkPoints(points) {
             let nonZeroPoints = 0;
             if (points && points.length >= 2) {
-                for (let p = 1; p < points.length; p++) {
+                for (let p = 0; p < points.length; p++) {
                     const geometry = points[p].geometry;
                     if (geometry && geometry.length > 0) {
                         for (let g = 0; g < geometry.length; g++) {
@@ -1003,6 +1003,15 @@ export function isEmptyTrack(track, checkWpts = true, checkPoints = true) {
     return !hasPoints && !hasWpts;
 }
 
+export function isPointUnrouted({ point, pointIndex, prevPoint }) {
+    return (
+        !point.profile || // empty profile is Unrouted but PROFILE_LINE is Routed
+        !point.geometry || // undefined geometry (null, undefined) is always Unrouted
+        // empty geometry is Unrouted, but first point or previous PROFILE_GAP is Routed
+        (pointIndex > 0 && point.geometry?.length === 0 && prevPoint.profile !== PROFILE_GAP)
+    );
+}
+
 function showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker) {
     if (ctxTrack?.showPoint?.layer) {
         map.setView([ctxTrack.showPoint.layer._latlng.lat, ctxTrack.showPoint.layer._latlng.lng], 17);
@@ -1040,7 +1049,7 @@ const TracksManager = {
     saveTrack,
     getEditablePoints,
     updateGapProfileOneSegment,
-    updateRoute,
+    // updateRoute,
     getEle,
     deleteLocalTrack,
     createName,

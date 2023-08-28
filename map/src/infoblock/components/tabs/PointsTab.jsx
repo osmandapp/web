@@ -17,6 +17,7 @@ import TracksManager from '../../../context/TracksManager';
 import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd';
 import PointManager from '../../../context/PointManager';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
+import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import _ from 'lodash';
 
 const PointsTab = ({ width }) => {
@@ -58,17 +59,23 @@ const PointsTab = ({ width }) => {
     }
 
     function deleteAllPoints() {
-        if (ctx.selectedGpxFile) {
-            if (ctx.selectedGpxFile.points) {
-                ctx.selectedGpxFile.points = [];
-            }
-            if (ctx.selectedGpxFile.tracks) {
-                ctx.selectedGpxFile.tracks = [];
-            }
-            ctx.selectedGpxFile.updateLayers = true;
-            ctx.selectedGpxFile.analysis = null;
-            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-        }
+        confirm({
+            ctx,
+            text: 'Delete all track points?',
+            callback: () => {
+                if (ctx.selectedGpxFile) {
+                    if (ctx.selectedGpxFile.points) {
+                        ctx.selectedGpxFile.points = [];
+                    }
+                    if (ctx.selectedGpxFile.tracks) {
+                        ctx.selectedGpxFile.tracks = [];
+                    }
+                    ctx.selectedGpxFile.updateLayers = true;
+                    ctx.selectedGpxFile.analysis = null;
+                    ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+                }
+            },
+        });
     }
 
     const PointRow = ({ point, index }) => {
@@ -132,8 +139,8 @@ const PointsTab = ({ width }) => {
                     </Alert>
                 )}
             {ctx.createTrack && ctx.selectedGpxFile?.points?.length > 0 && (
-                <Button variant="contained" className={styles.button} onClick={() => deleteAllPoints()}>
-                    Clear
+                <Button variant="contained" className={styles.button} onClick={deleteAllPoints}>
+                    Clear points
                 </Button>
             )}
             {ctx.selectedGpxFile?.points && (

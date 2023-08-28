@@ -17,6 +17,7 @@ import { Cancel } from '@mui/icons-material';
 import PointManager from '../../../context/PointManager';
 import TracksManager from '../../../context/TracksManager';
 import wptTabStyle from '../../styles/WptTabStyle';
+import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import _ from 'lodash';
 
 export default function WaypointsTab() {
@@ -160,10 +161,16 @@ export default function WaypointsTab() {
     }
 
     function deleteAllWpts() {
-        ctx.selectedGpxFile.wpts = [];
-        ctx.selectedGpxFile.updateLayers = true;
-        TracksManager.updateState(ctx);
-        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+        confirm({
+            ctx,
+            text: 'Delete all waypoints?',
+            callback: () => {
+                ctx.selectedGpxFile.wpts = [];
+                ctx.selectedGpxFile.updateLayers = true;
+                TracksManager.updateState(ctx);
+                ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+            },
+        });
     }
 
     const WaypointRow = ({ point, index }) => {
@@ -190,8 +197,8 @@ export default function WaypointsTab() {
     return (
         <>
             {ctx.createTrack && ctx.selectedGpxFile?.wpts && !_.isEmpty(ctx.selectedGpxFile.wpts) && (
-                <Button variant="contained" className={stylesMenu.button} onClick={() => deleteAllWpts()}>
-                    Clear
+                <Button variant="contained" className={stylesMenu.button} onClick={deleteAllWpts} sx={{ mb: 2 }}>
+                    Clear waypoints
                 </Button>
             )}
 

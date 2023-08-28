@@ -5,11 +5,11 @@ import TracksManager from '../context/TracksManager';
 import EditablePolyline from './EditablePolyline';
 
 export const TEMP_LAYER_FLAG = 'temp';
-const TEMP_LINE_STYLE = {
+export const TEMP_LINE_STYLE = {
     color: '#fbc73a',
     dashArray: '5, 5',
     dashOffset: '0',
-    name: TEMP_LAYER_FLAG,
+    // name: TEMP_LAYER_FLAG, // style.name was not used, instead of actual layer.options.name
 };
 
 function createLayersByTrackData(data, ctx, map) {
@@ -89,25 +89,29 @@ function addStartEnd(points, layers, coordsTrk, coordsAll) {
 function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable, index }) {
     let coords = [];
 
-    // draw tempLine for orphaned empty geo
+    // draw tempLine for orphaned empty geo but not for gap
     if (ctx && map && point.geometry.length === 0 && index > 0) {
-        let pointLayersFound = 0;
-        const trackLayers = ctx.selectedGpxFile.layers;
-        if (trackLayers && map.hasLayer(trackLayers)) {
-            trackLayers.eachLayer((l) => {
-                if (l.point && TracksManager.isEqualPoints(l.point, point)) {
-                    pointLayersFound++;
-                }
-            });
-        }
-        if (pointLayersFound === 0) {
-            const start = points[index - 1];
-            const end = point;
-            coords.push(new L.LatLng(start.lat, start.lng));
-            coords.push(new L.LatLng(end.lat, end.lng));
-            coordsAll = coordsAll.concat(Object.assign([], coords));
-            layers.push(createTempPolyline(start, end));
-            return coordsAll;
+        if (points[index - 1].profile !== TracksManager.PROFILE_GAP) {
+            let pointLayersFound = 0;
+            const trackLayers = ctx.selectedGpxFile.layers;
+            if (trackLayers && map.hasLayer(trackLayers)) {
+                trackLayers.eachLayer((l) => {
+                    if (l.point && TracksManager.isEqualPoints(l.point, point)) {
+                        pointLayersFound++;
+                    }
+                });
+            }
+            if (pointLayersFound === 0) {
+                const start = points[index - 1];
+                const end = point;
+                coords.push(new L.LatLng(start.lat, start.lng));
+                coords.push(new L.LatLng(end.lat, end.lng));
+                coordsAll = coordsAll.concat(Object.assign([], coords));
+                const orphan = createTempPolyline(start, end);
+                orphan.options.name = undefined;
+                layers.push(orphan);
+                return coordsAll;
+            }
         }
     }
 
@@ -275,8 +279,9 @@ function getPolylineByStartEnd(startPoint, endPoint, polylines) {
 
 function updatePolylineToTemp(startPoint, endPoint, polyline) {
     if (polyline) {
-        const polylineTemp = createTempPolyline(startPoint, endPoint); // coordinates only
+        const polylineTemp = createTempPolyline(startPoint, endPoint);
         polyline.setLatLngs(polylineTemp._latlngs);
+        polyline.options.name = TEMP_LAYER_FLAG;
         polyline.setStyle(TEMP_LINE_STYLE);
         polyline.point = endPoint;
         return polyline;
@@ -341,6 +346,7 @@ function createTempPolyline(start, end) {
 
     const polyline = new L.Polyline([startPoint, endPoint], TEMP_LINE_STYLE);
     polyline.point = end; // always store end-point ref inside layer
+    polyline.options.name = TEMP_LAYER_FLAG; // use temp-flag
 
     return polyline;
 }
@@ -373,7 +379,8 @@ const TrackLayerProvider = {
     getPolylines,
     updatePolyline,
     createEditableTempLPolyline,
-    TEMP_LINE_STYLE: TEMP_LINE_STYLE,
+    TEMP_LINE_STYLE,
+    TEMP_LAYER_FLAG,
 };
 
 export default TrackLayerProvider;
