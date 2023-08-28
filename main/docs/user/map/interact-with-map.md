@@ -163,25 +163,6 @@ You can not change Camera tilt when old [map rendering engine](../personal/globa
 
 ## Settings
 
-<InfoAndroidOnly/>  
-
-### No animations
-
-You can turn off all map animations during map changes, such as gestures and buttons.    
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,do_not_use_animations"/>*
-
-### Animate own position
-
-Creates a smooth map panning effect when in motion. Introduces a slight delay versus ground truth of about 1 second. Has been reported to create some pronounced lag issues under some circumstances, disable if such issues arise.
-
-### Extra compass settings  
-
-- **<Translate android="true" ids="use_kalman_filter_compass"/>** - <Translate android="true" ids="use_kalman_filter_compass_descr"/> Smoothes the rotation of the card with a slower rotation animation, although this introduces a slight delay, not more than 1 second.   
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_kalman_filter_compass"/>*
-
-- **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Smoothes the rotation of the card with a slower rotation animation, although this introduces a slight delay, not more than 1 second.   
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
-
 
 ## External input device buttons
 
@@ -251,4 +232,23 @@ You can read more about the actions of external input devices on GitHub in the [
 </TabItem>
 
 </Tabs>  
+
+### Extra compass settings  
+
+- **<Translate android="true" ids="use_kalman_filter_compass"/>** - <Translate android="true" ids="use_kalman_filter_compass_descr"/> Smoothes the rotation of the card with a slower rotation animation, although this introduces a slight delay, not more than 1 second.   
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_kalman_filter_compass"/>*
+
+- **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Smoothes the rotation of the card with a slower rotation animation, although this introduces a slight delay, not more than 1 second.   
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
+
+### No animations
+
+You can turn off all map animations during map changes, such as gestures and buttons.    
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,do_not_use_animations"/>*
+
+<InfoAndroidOnly/>  
+
+### Animate own position
+
+Creates a smooth map panning effect when in motion. Introduces a slight delay versus ground truth of about 1 second. Has been reported to create some pronounced lag issues under some circumstances, disable if such issues arise.
 
