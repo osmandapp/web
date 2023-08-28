@@ -3,7 +3,7 @@ import TrackLayerProvider from './TrackLayerProvider';
 import MarkerOptions from './markers/MarkerOptions';
 import GeometryUtil from 'leaflet-geometryutil';
 import _ from 'lodash';
-import TracksManager, { isPointUnrouted } from '../context/TracksManager';
+import TracksManager, { isPointUnrouted, isProtectedSegment, splitProtectedSegment } from '../context/TracksManager';
 import EditableMarker from './EditableMarker';
 import TracksRoutingCache from '../context/TracksRoutingCache';
 
@@ -133,15 +133,29 @@ export default class EditablePolyline {
         const nextPoint = TrackLayerProvider.getPointByPolyline(currentLayer, points);
         const indexOf = nextPoint ? _.indexOf(points, nextPoint, 0) : -1;
 
+        const findPoint = new L.LatLng(lat, lng);
+
         if (nextPoint && indexOf !== -1) {
-            // 100% found
+            /**
+             * index is 100% found (layer-to-points match)
+             * additionally, find the nearest geometryIndex
+             * it will be used to split GPX-protected segment
+             */
+            let geometryIndex = -1;
+            if (nextPoint.geometry) {
+                const { index } = this.findTheNearestSegment({
+                    point: findPoint,
+                    segments: nextPoint.geometry,
+                });
+                geometryIndex = index;
+            }
             this.dragPoint = {
-                index: indexOf,
                 lat: lat,
                 lng: lng,
+                geometryIndex,
+                index: indexOf,
             };
         } else {
-            const findPoint = new L.LatLng(lat, lng);
             const layerPoints = currentLayer._latlngs;
 
             // process Unrouted Line points: first by the nearest segment, then by points
@@ -176,6 +190,7 @@ export default class EditablePolyline {
         const index = this.dragPoint.index;
 
         const prevPoint = trackPoints[index - 1];
+        const segmentEndPoint = trackPoints[index];
 
         if (isPointUnrouted({ point: trackPoints[index], pointIndex: index, prevPoint })) {
             const newPoint = { lat, lng };
@@ -183,6 +198,11 @@ export default class EditablePolyline {
             currentLayer.setLatLngs(currentLayer._latlngs);
             // refresh analytics (newPoint ele is undefined)
             trackPoints.splice(index, 0, newPoint);
+            track.refreshAnalytics = true;
+        } else if (isProtectedSegment({ startPoint: prevPoint, endPoint: segmentEndPoint })) {
+            const newPoint = { lat, lng };
+            const geometryIndex = this.dragPoint.geometryIndex;
+            splitProtectedSegment({ newPoint, trackPoints, geometryIndex, endPointIndex: index });
             track.refreshAnalytics = true;
         } else {
             const newPoint = _.cloneDeep(track.points[index]);

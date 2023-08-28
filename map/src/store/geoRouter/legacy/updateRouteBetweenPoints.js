@@ -58,7 +58,7 @@ function osrmToPoints(osrm) {
 
 async function updateRouteBetweenPointsOSRM({ start, end, geoProfile, ctx }) {
     const url = this.getURL(geoProfile);
-    const tail = '?geometries=geojson&overview=simplified&steps=false';
+    const tail = '?geometries=geojson&overview=full&steps=false';
 
     const geo = (point) => point.lng.toFixed(6) + ',' + point.lat.toFixed(6); // OSRM lng+lat
     const points = [geo(start), geo(end)];

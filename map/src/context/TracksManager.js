@@ -429,12 +429,14 @@ function addDistanceToPoints(points) {
                 if (geo.length > 1) {
                     for (let i = 1; i < geo.length; i++) {
                         // keep original if possible
-                        if (geo[i].distance === 0) {
+                        if (geo[i].distance === 0 || geo[i].distance === undefined) {
                             const current = geo[i];
                             const previous = geo[i - 1];
                             geo[i].distance = Utils.getDistance(current.lat, current.lng, previous.lat, previous.lng);
                         }
-                        point.dist += geo[i].distance;
+                        if (geo[i].distance > 0) {
+                            point.dist += geo[i].distance;
+                        }
                     }
                 }
             }
@@ -657,35 +659,6 @@ function decodeRouteMode({ routeMode, params }) {
 
     return draft;
 }
-
-// async function updateRoute(points) {
-//     let result;
-//     if (points?.length > 0) {
-//         result = await apiGet(`${process.env.REACT_APP_GPX_API}/routing/get-route`, {
-//             method: 'POST',
-//             data: points,
-//         });
-//     }
-//     if (result && result.data) {
-//         let data = result.data; // points
-//         if (typeof result.data === 'string') {
-//             data = JSON.parse(quickNaNfix(result.data));
-//         }
-//         updateGapProfileAllSegments(data.points);
-//         return data.points;
-//     } else {
-//         console.error('updateRoute fallback');
-//         return points;
-//     }
-// }
-
-// function updateGapProfileAllSegments(points) {
-//     if (points) {
-//         points.forEach((p) => {
-//             updateGapProfileOneSegment(p, p.geometry);
-//         });
-//     }
-// }
 
 function updateGapProfileOneSegment(routePoint, points) {
     if (routePoint.profile === PROFILE_GAP) {
@@ -1012,6 +985,61 @@ export function isPointUnrouted({ point, pointIndex, prevPoint }) {
     );
 }
 
+export function isProtectedSegment({ startPoint, endPoint }) {
+    if (!startPoint || !endPoint) {
+        console.error('isProtectedSegment got empty point');
+        return true;
+    }
+
+    // gpx (just loaded)
+    if (!endPoint.geometry && !startPoint.profile) {
+        // console.debug('protect-gpx-plain');
+        return true;
+    }
+
+    // gpx (after routing): protect Line-segments with more-than-line geometry
+    if (startPoint.profile === PROFILE_LINE && endPoint.geometry?.length > 2) {
+        // console.debug('protect-gpx-geometry');
+        return true;
+    }
+
+    // gap-profile should be protected
+    if (startPoint.profile === PROFILE_GAP) {
+        // console.debug('protect-gap-profile');
+        return true;
+    }
+
+    return false;
+}
+
+export function splitProtectedSegment({ newPoint, trackPoints, geometryIndex, endPointIndex }) {
+    if (geometryIndex !== -1 && endPointIndex >= 1 && newPoint && trackPoints && trackPoints.length >= 2) {
+        // newPoint should have previous geometry (up to geometryIndex) + newPoint at the end
+        newPoint.geometry = trackPoints[endPointIndex].geometry.slice(0, geometryIndex + 1);
+        newPoint.geometry.push({ lat: newPoint.lat, lng: newPoint.lng });
+        if (newPoint.geometry.length <= 2) {
+            // in case when new segment becomes Line "point-to-point"
+            // duplicate newPoint geometry to keep the segment protected
+            // dupe-geometry tested: GPX, Cloud, Android OsmAnd app, Garmin
+            newPoint.geometry.push({ lat: newPoint.lat, lng: newPoint.lng });
+        }
+
+        // endPoint should have newPoint at the begin and the rest of previous geometry (next to geometryIndex)
+        trackPoints[endPointIndex].geometry = trackPoints[endPointIndex].geometry.slice(geometryIndex + 1);
+        trackPoints[endPointIndex].geometry.unshift({ lat: newPoint.lat, lng: newPoint.lng });
+        if (trackPoints[endPointIndex].geometry.length <= 2) {
+            // keep the segment protected (see comment for similar case before)
+            trackPoints[endPointIndex].geometry.unshift({ lat: newPoint.lat, lng: newPoint.lng });
+        }
+
+        // duplicate profile string (from previous to endPoint)
+        newPoint.profile = trackPoints[endPointIndex - 1].profile;
+
+        // insert newPoint into trackPoints
+        trackPoints.splice(endPointIndex, 0, newPoint);
+    }
+}
+
 function showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker) {
     if (ctxTrack?.showPoint?.layer) {
         map.setView([ctxTrack.showPoint.layer._latlng.lat, ctxTrack.showPoint.layer._latlng.lng], 17);
@@ -1049,7 +1077,6 @@ const TracksManager = {
     saveTrack,
     getEditablePoints,
     updateGapProfileOneSegment,
-    // updateRoute,
     getEle,
     deleteLocalTrack,
     createName,

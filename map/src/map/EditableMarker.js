@@ -155,8 +155,8 @@ export default class EditableMarker {
                             const newGeo = _.cloneDeep(currentPoint.geometry);
                             newGeo[newGeo.length - 1] = { lat: currentPoint.lat, lng: currentPoint.lng };
                             currentPoint.geometry = newGeo;
+                            track.refreshAnalytics = true;
                         } else {
-                            currentPoint.geometry = []; // ready for updateLayers
                             currentPolyline = TrackLayerProvider.updatePolyline(
                                 prevPoint,
                                 currentPoint,
@@ -164,13 +164,16 @@ export default class EditableMarker {
                                 null,
                                 oldPoint
                             );
-                            segments = TracksRoutingCache.addSegmentToRouting(
-                                prevPoint,
-                                currentPoint,
-                                null, // oldPoint,
-                                currentPolyline,
-                                segments
-                            );
+                            if (currentPolyline) {
+                                currentPoint.geometry = []; // ready for updateLayers
+                                segments = TracksRoutingCache.addSegmentToRouting(
+                                    prevPoint,
+                                    currentPoint,
+                                    null, // oldPoint,
+                                    currentPolyline,
+                                    segments
+                                );
+                            }
                         }
                     }
                 }
@@ -182,8 +185,8 @@ export default class EditableMarker {
                             const newGeo = _.cloneDeep(nextPoint.geometry);
                             newGeo[0] = { lat: currentPoint.lat, lng: currentPoint.lng };
                             nextPoint.geometry = newGeo;
+                            track.refreshAnalytics = true;
                         } else {
-                            nextPoint.geometry = []; // ready for updateLayers
                             nextPolyline = TrackLayerProvider.updatePolyline(
                                 currentPoint,
                                 nextPoint,
@@ -191,13 +194,16 @@ export default class EditableMarker {
                                 oldPoint,
                                 oldNextPoint
                             );
-                            segments = TracksRoutingCache.addSegmentToRouting(
-                                currentPoint,
-                                nextPoint,
-                                null, // oldPoint,
-                                nextPolyline,
-                                segments
-                            );
+                            if (nextPolyline) {
+                                nextPoint.geometry = []; // ready for updateLayers
+                                segments = TracksRoutingCache.addSegmentToRouting(
+                                    currentPoint,
+                                    nextPoint,
+                                    null, // oldPoint,
+                                    nextPolyline,
+                                    segments
+                                );
+                            }
                         }
                     }
                 }
