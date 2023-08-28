@@ -30,7 +30,6 @@ import {
     Speed,
     Terrain,
 } from '@mui/icons-material';
-import _ from 'lodash';
 
 export const downloadGpx = async (ctx) => {
     const gpx = await TracksManager.getGpxTrack(ctx.selectedGpxFile);
@@ -247,13 +246,15 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                 currentTrack.name = newName;
             }
 
-            // cleanup (close) previous selectedGpxFile because the name was changed and we have a new file
-            ctx.setCreateTrack({ ...ctx.createTrack, closePrev: { file: _.cloneDeep(ctx.selectedGpxFile) } });
-
             ctx.selectedGpxFile.name = newName;
 
+            // track rename have to be finished correctly in the editor component
+            ctx.selectedGpxFile.oldName = oldName; // used by effect in LocalClientTrackLayer
+
             TracksManager.saveTracks({ ctx, track: ctx.selectedGpxFile }); // ctx.localTracks might be modified there
+
             ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+
             ctx.setLocalTracks([...ctx.localTracks]);
 
             setEnableEditName(false);

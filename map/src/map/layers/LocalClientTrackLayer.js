@@ -121,7 +121,8 @@ export default function LocalClientTrackLayer() {
      *
      * Actions:
      *
-     * - check/get routing from cache
+     * - finish track rename (oldName)
+     * - check/get routing from cache (syncRouting)
      * - refresh analytics (used after unrouted Line-segment changes)
      * - save Local tracks (when editor enabled)
      * - check/set Zoom (fitBounds) for Local tracks
@@ -129,7 +130,9 @@ export default function LocalClientTrackLayer() {
      */
     useEffect(() => {
         if (ctxTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK) {
-            if (ctxTrack.syncRouting) {
+            if (ctxTrack.oldName) {
+                finishTrackRename();
+            } else if (ctxTrack.syncRouting) {
                 syncRouting();
             } else if (ctxTrack.refreshAnalytics) {
                 refreshAnalytics();
@@ -192,6 +195,7 @@ export default function LocalClientTrackLayer() {
             let currLayer = localLayers[track.name];
             if (track.selected && !currLayer) {
                 const needFitBounds = isEmptyTrack(track) === false;
+                console.log('add-1 lt.name', track.name);
                 addTrackToMap(track, needFitBounds, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;
@@ -313,6 +317,24 @@ export default function LocalClientTrackLayer() {
         const track = { ...ctxTrack };
         track.syncRouting = false;
         syncTrackWithCache({ ctx, track, geoRouter, debouncerTimer }); // mutate track
+        ctx.setSelectedGpxFile(track);
+    }
+
+    function finishTrackRename() {
+        const track = { ...ctxTrack };
+
+        const newName = track.name;
+        const oldName = track.oldName;
+
+        // when GeneralInfo's changeFileName() is done
+        // additionally need to change localLayers locally
+        if (newName && oldName && localLayers[oldName]) {
+            localLayers[newName] = localLayers[oldName];
+            delete localLayers[oldName];
+            setLocalLayers({ ...localLayers });
+        }
+
+        track.oldName = null;
         ctx.setSelectedGpxFile(track);
     }
 
