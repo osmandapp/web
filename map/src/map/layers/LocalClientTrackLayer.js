@@ -195,7 +195,6 @@ export default function LocalClientTrackLayer() {
             let currLayer = localLayers[track.name];
             if (track.selected && !currLayer) {
                 const needFitBounds = isEmptyTrack(track) === false;
-                console.log('add-1 lt.name', track.name);
                 addTrackToMap(track, needFitBounds, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;
