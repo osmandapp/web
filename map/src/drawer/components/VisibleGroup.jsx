@@ -85,11 +85,38 @@ export default function VisibleGroup({ visibleTracks, setVisibleTracks }) {
     }
 
     function clear() {
-        let empty = {
+        // clear Visible Local Tracks
+        if (visibleTracks.local.length > 0) {
+            visibleTracks.local.forEach((file) =>
+                ctx.localTracks.forEach((track) => {
+                    if (track.name === file.name) {
+                        track.selected = false; // unselect
+                    }
+                })
+            );
+            ctx.setLocalTracks([...ctx.localTracks]);
+        }
+
+        // clear Visible Cloud Tracks
+        // close currently open Cloud track
+        if (visibleTracks.cloud.length > 0) {
+            visibleTracks.cloud.forEach((file) => {
+                if (ctx.selectedGpxFile.name === file.name) {
+                    ctx.setCurrentObjectType(null);
+                    ctx.setSelectedGpxFile({});
+                }
+            });
+            visibleTracks.cloud.forEach((file) => (ctx.gpxFiles[file.name].url = null)); // unselect
+            ctx.setGpxFiles({ ...ctx.gpxFiles });
+        }
+
+        const empty = {
             local: [],
             cloud: [],
         };
         setVisibleTracks({ ...empty });
+
+        localStorage.removeItem(TracksManager.TRACK_VISIBLE_FLAG); // clear saved list finally
     }
 
     useEffect(() => {

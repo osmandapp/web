@@ -45,7 +45,7 @@ export default function TracksMenu() {
         setVisibleTracks({ ...visibleTracks });
     }, [ctx.localTracks]);
 
-    //get gpx files and create groups
+    // get gpx files and create groups
     useEffect(() => {
         if (!_.isEmpty(ctx.listFiles)) {
             let tg = [];
