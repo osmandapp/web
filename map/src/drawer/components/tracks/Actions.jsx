@@ -72,17 +72,19 @@ export default function Actions({ files, setSortFiles }) {
 
     const icons = [];
 
-    for (let m in allMethods) {
-        const method = allMethods[m];
-        const isCurrent = method.alt === currentMethod.alt;
-        const reverse = isCurrent ? currentMethod.reverse : method.reverse;
-        const icon = reverse ? method.reverseIcon : method.directIcon;
-        const color = isCurrent ? 'primary' : '';
-        icons.push(
-            <IconButton key={m} color={color} onClick={() => select(method)}>
-                {icon}
-            </IconButton>
-        );
+    if (files && files.length > 1) {
+        for (let m in allMethods) {
+            const method = allMethods[m];
+            const isCurrent = method.alt === currentMethod.alt;
+            const reverse = isCurrent ? currentMethod.reverse : method.reverse;
+            const icon = reverse ? method.reverseIcon : method.directIcon;
+            const color = isCurrent ? 'primary' : '';
+            icons.push(
+                <IconButton key={m} color={color} onClick={() => select(method)}>
+                    {icon}
+                </IconButton>
+            );
+        }
     }
 
     return <Box sx={{ ml: 4 }}>{icons}</Box>;
