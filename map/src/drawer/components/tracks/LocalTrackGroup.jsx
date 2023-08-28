@@ -120,13 +120,13 @@ export default function LocalTrackGroup() {
                 <div style={{ maxHeight: '41vh', overflow: 'auto' }}>
                     <Actions files={ctx.localTracks} setSortFiles={setSortFiles} />
                     {!_.isEmpty(sortFiles) &&
-                        sortFiles.map((track, index) => {
-                            return <LocalTrackItem key={'sortedtrack-' + index} track={track} />;
+                        sortFiles.map((track) => {
+                            return <LocalTrackItem key={'sortedtrack-' + track.name} track={track} />;
                         })}
                     {_.isEmpty(sortFiles) &&
                         ctx.localTracks.length > 0 &&
-                        ctx.localTracks.map((track, index) => {
-                            return <LocalTrackItem key={'localtrack-' + index} track={track} />;
+                        ctx.localTracks.map((track) => {
+                            return <LocalTrackItem key={'localtrack-' + track.name} track={track} />;
                         })}
                 </div>
                 <MenuItem disableRipple={true}>

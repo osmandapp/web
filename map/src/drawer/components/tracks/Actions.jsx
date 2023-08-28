@@ -4,8 +4,14 @@ import { SortByAlpha, Update, History, CallMade, CallReceived } from '@mui/icons
 import { useState, useEffect } from 'react';
 
 function byAlpha(files, reverse) {
-    console.log('alpha', reverse);
-    return files;
+    const sortedCopy = [...files].sort((f, s) => {
+        if (reverse) {
+            return f.name < s.name ? 1 : -1;
+        } else {
+            return f.name > s.name ? 1 : -1;
+        }
+    });
+    return sortedCopy;
 }
 
 function byTime(files, reverse) {
@@ -56,13 +62,11 @@ export default function Actions({ files, setSortFiles }) {
     const [currentMethod, setCurrentMethod] = useState(defaultMethod);
 
     useEffect(() => {
-        console.log('refresh', files);
         setSortFiles(currentMethod.callback(files, currentMethod.reverse));
     }, [files, currentMethod]);
 
     function select(method) {
         const isCurrent = method.alt === currentMethod.alt;
-        console.log('current', isCurrent);
         setCurrentMethod({ ...method, reverse: isCurrent ? !currentMethod.reverse : method.reverse });
     }
 

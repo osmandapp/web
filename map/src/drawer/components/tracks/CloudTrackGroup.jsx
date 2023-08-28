@@ -107,8 +107,8 @@ export default function CloudTrackGroup({ index, group }) {
             <Collapse in={showTracks.includes(index)} timeout="auto">
                 <div style={{ maxHeight: '41vh', overflow: 'auto' }}>
                     <Actions files={group.files} setSortFiles={setSortFiles} />
-                    {(sortFiles.length > 0 ? sortFiles : group.files).map((file, index) => {
-                        return <CloudTrackItem key={'cloudtrack-' + index} file={file} />;
+                    {(sortFiles.length > 0 ? sortFiles : group.files).map((file) => {
+                        return <CloudTrackItem key={'cloudtrack-' + file.name} file={file} />;
                     })}
                 </div>
             </Collapse>
