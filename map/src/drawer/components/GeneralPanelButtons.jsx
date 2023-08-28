@@ -110,6 +110,7 @@ export default function GeneralPanelButtons({
                                 onClick={() =>
                                     confirm({
                                         ctx,
+                                        title: 'Plan Route: new track',
                                         text: 'Stop editing the current track?',
                                         skip: ctx.createTrack?.enable !== true,
                                         callback: () => TracksManager.createTrack(ctx),

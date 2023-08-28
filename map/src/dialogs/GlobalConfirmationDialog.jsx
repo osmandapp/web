@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import AppContext from '../context/AppContext';
-import { Button, Dialog, DialogActions, DialogContent } from '@mui/material';
+import { Button, Dialog, DialogActions, DialogTitle, DialogContent } from '@mui/material';
 
 /*
     Example:
@@ -15,11 +15,11 @@ import { Button, Dialog, DialogActions, DialogContent } from '@mui/material';
     }
 */
 
-export function confirm({ ctx, skip, text, callback }) {
+export function confirm({ ctx, skip, title = null, text, callback }) {
     if (skip) {
         callback();
     } else {
-        ctx.setGlobalConfirmation({ text, callback });
+        ctx.setGlobalConfirmation({ title, text, callback });
     }
     return true;
 }
@@ -33,8 +33,9 @@ export function GlobalConfirmationDialog() {
         <>
             {confirmation && (
                 <Dialog open={!!confirmation} onClose={() => setConfirmation(null)}>
+                    {confirmation.title && <DialogTitle>{confirmation.title}</DialogTitle>}
                     <DialogContent>{confirmation.text}</DialogContent>
-                    <DialogActions>
+                    <DialogActions sx={{ mb: 1, mr: 1 }}>
                         <Button
                             variant="contained"
                             size="small"

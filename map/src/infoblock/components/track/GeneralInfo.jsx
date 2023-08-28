@@ -23,28 +23,12 @@ import {
     CloudUpload,
     Commit,
     Create,
-    Download,
     Edit,
     ImportExport,
     RouteOutlined,
     Speed,
     Terrain,
 } from '@mui/icons-material';
-
-export const downloadGpx = async (ctx) => {
-    const gpx = await TracksManager.getGpxTrack(ctx.selectedGpxFile);
-    if (gpx) {
-        const data = gpx.data;
-        const url = document.createElement('a');
-        url.href = URL.createObjectURL(new Blob([data]));
-        const name = TracksManager.prepareName(
-            ctx.selectedGpxFile.name,
-            ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK
-        );
-        url.download = `${name}.gpx`;
-        url.click();
-    }
-};
 
 export default function GeneralInfo({ width, setOpenDescDialog }) {
     const styles = contextMenuStyles();
@@ -499,42 +483,57 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                                   >
                                       • Add description
                                   </Link>
-                                  <Divider sx={{ mt: '6px', mb: '12px' }} light />
                               </>
                           )}
                 </div>
                 {ctx.loginUser &&
                     ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
                     isEmptyTrack(ctx.selectedGpxFile) === false && (
+                        <>
+                            <Divider light sx={{ mt: 1, mb: 2 }} />
+                            <Button
+                                variant="contained"
+                                sx={{ ml: '-0.5px !important' }}
+                                className={styles.button}
+                                onClick={() => {
+                                    ctx.selectedGpxFile.save = true;
+                                    ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+                                }}
+                            >
+                                <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
+                                Save to Cloud
+                            </Button>
+                            {ctx.createTrack?.cloudAutoSave && (
+                                <Button
+                                    variant="contained"
+                                    className={styles.button}
+                                    onClick={() => {
+                                        ctx.selectedGpxFile.save = true;
+                                        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+                                        ctx.setCreateTrack({ ...ctx.createTrack, cloudAutoSave: false });
+                                    }}
+                                >
+                                    <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
+                                    Save as
+                                </Button>
+                            )}
+                            <Divider light sx={{ mt: 2, mb: 1 }} />
+                        </>
+                    )}
+                {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && (
+                    <>
+                        <Divider light sx={{ mt: 1, mb: 2 }} />
                         <Button
                             variant="contained"
                             sx={{ ml: '-0.5px !important' }}
                             className={styles.button}
-                            onClick={() => {
-                                ctx.selectedGpxFile.save = true;
-                                ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-                            }}
+                            onClick={() => TracksManager.handleEditCloudTrack(ctx)}
                         >
-                            <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
-                            Save to cloud
+                            <Create fontSize="small" sx={{ mr: '7px' }} />
+                            Edit Track
                         </Button>
-                    )}
-                {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && (
-                    <Button
-                        variant="contained"
-                        sx={{ ml: '-0.5px !important' }}
-                        className={styles.button}
-                        onClick={() => TracksManager.handleEditCloudTrack(ctx)}
-                    >
-                        <Create fontSize="small" sx={{ mr: '7px' }} />
-                        Edit Track
-                    </Button>
-                )}
-                {isEmptyTrack(ctx.selectedGpxFile) === false && (
-                    <Button variant="contained" className={styles.button} onClick={() => downloadGpx(ctx)}>
-                        <Download fontSize="small" sx={{ mr: '3px' }} />
-                        Download GPX
-                    </Button>
+                        <Divider light sx={{ mt: 2, mb: 1 }} />
+                    </>
                 )}
                 {points !== 0 && (
                     <MenuItem sx={{ ml: -2 }}>

@@ -9,7 +9,7 @@ import _ from 'lodash';
 import TracksManager, { isEmptyTrack } from '../../context/TracksManager';
 import useUndoRedo from '../useUndoRedo';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
-import { downloadGpx } from './track/GeneralInfo';
+import { downloadGpx } from './tabs/GeneralInfoTab';
 
 const PanelButtons = ({
     orientation,
@@ -130,7 +130,7 @@ const PanelButtons = ({
                                         onClick={() =>
                                             confirm({
                                                 ctx,
-                                                text: 'This is Cloud track. Open Local editor?',
+                                                text: 'Open Cloud track in Local editor?',
                                                 callback: () => TracksManager.handleEditCloudTrack(ctx),
                                             })
                                         }
