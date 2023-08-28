@@ -31,7 +31,7 @@ export default function LoginDialog() {
     const [userEmail, setUserEmail] = useState(ctx.userEmail);
     const [pwd, setPwd] = useState();
     const [code, setCode] = useState();
-    const [emailError, setEmailError] = useState('');
+    const [emailError, setEmailError] = useState(ctx.wantDeleteAcc ? 'Please log in to delete your account.' : '');
     const [state, setState] = useState('login'); // login, register, register-verify
     const [openDangerousArea, setOpenDangerousArea] = useState(false);
     const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
@@ -48,6 +48,17 @@ export default function LoginDialog() {
     };
 
     const handleClose = () => {
+        setEmailError('');
+        setPwd('');
+        setCode('');
+        if (ctx.wantDeleteAcc) {
+            navigate('/map/delete-account' + window.location.search + window.location.hash);
+        } else {
+            navigate('/map/' + window.location.search + window.location.hash);
+        }
+    };
+
+    const сloseDialog = () => {
         setEmailError('');
         setPwd('');
         setCode('');
@@ -261,8 +272,7 @@ export default function LoginDialog() {
                 <DialogContentText>
                     {state === 'register-verify'
                         ? `Please check your email, enter new strong password and enter verification code`
-                        : `You can login to the website only if you have OsmAnd Pro subscription.
-                         Please enter your email below.`}
+                        : `You can login to the website only if you have registered OsmAnd cloud account: "OsmAnd Pro" or "OsmAnd start". Please enter your email below.`}
                 </DialogContentText>
                 <TextField
                     autoFocus
@@ -326,7 +336,7 @@ export default function LoginDialog() {
                 )}
             </DialogContent>
             <DialogActions>
-                <Button onClick={handleClose}>Cancel</Button>
+                <Button onClick={сloseDialog}>Cancel</Button>
                 <Button onClick={handleLogin}>
                     {state === 'register' ? 'Register' : state === 'register-verify' ? 'Activate' : 'Login'}
                 </Button>

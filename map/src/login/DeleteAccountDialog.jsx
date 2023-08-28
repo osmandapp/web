@@ -27,72 +27,99 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
         }
     }, [accountDeleted]);
 
+    function checkLogin() {
+        if (ctx.loginUser) {
+            return true;
+        } else {
+            if (ctx.loginUser !== 'noCheck') {
+                ctx.setWantDeleteAcc(true);
+                navigate('/map/loginForm' + window.location.search + window.location.hash);
+            }
+        }
+    }
+
+    useEffect(() => {
+        checkLogin();
+    }, [ctx.loginUser]);
+
+    function close() {
+        if (setDeleteAccountFlag) {
+            setDeleteAccountFlag(false);
+        } else {
+            ctx.setWantDeleteAcc(false);
+            navigate('/map/' + window.location.search + window.location.hash);
+        }
+    }
+
     return (
-        <Dialog open={true} onClose={() => setDeleteAccountFlag(false)}>
-            <Grid container spacing={2}>
-                <Grid item xs={11} sx={{ mb: -3 }}>
-                    <DialogTitle>Are you sure you want to do this?</DialogTitle>
+        ctx.loginUser &&
+        ctx.loginUser !== 'noCheck' && (
+            <Dialog open={true} onClose={close}>
+                <Grid container spacing={2}>
+                    <Grid item xs={11} sx={{ mb: -3 }}>
+                        <DialogTitle>Are you sure you want to do this?</DialogTitle>
+                    </Grid>
+                    <Grid item xs={1} sx={{ ml: -2, mt: 1 }}>
+                        <IconButton
+                            variant="contained"
+                            type="button"
+                            onClick={() => {
+                                setEmailError('');
+                                close();
+                            }}
+                        >
+                            <Close fontSize="small" />
+                        </IconButton>
+                    </Grid>
                 </Grid>
-                <Grid item xs={1} sx={{ ml: -2, mt: 1 }}>
-                    <IconButton
-                        variant="contained"
-                        type="button"
-                        onClick={() => {
-                            setEmailError('');
-                            setDeleteAccountFlag(false);
+                <DialogContent>
+                    <DialogContentText>
+                        Deletes all your data and account details from OsmAnd Cloud. Secondary devices will lose access
+                        to paid features.
+                    </DialogContentText>
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        onChange={(e) => {
+                            if (emailError !== '') {
+                                setEmailError('');
+                            }
+                            setUserEmail(e.target.value);
                         }}
-                    >
-                        <Close fontSize="small" />
-                    </IconButton>
-                </Grid>
-            </Grid>
-            <DialogContent>
-                <DialogContentText>
-                    Deletes all your data and account details from OsmAnd Cloud. Secondary devices will lose access to
-                    paid features.
-                </DialogContentText>
-                <TextField
-                    autoFocus
-                    margin="dense"
-                    onChange={(e) => {
-                        if (emailError !== '') {
+                        id="username-delete"
+                        label="Your email address"
+                        type="email"
+                        fullWidth
+                        variant="standard"
+                        helperText={emailError ? emailError : ''}
+                        error={emailError.length > 0}
+                        value={userEmail ? userEmail : ''}
+                    ></TextField>
+                    <TextField
+                        margin="dense"
+                        onChange={(e) => {
                             setEmailError('');
-                        }
-                        setUserEmail(e.target.value);
-                    }}
-                    id="username-delete"
-                    label="Your email address"
-                    type="email"
-                    fullWidth
-                    variant="standard"
-                    helperText={emailError ? emailError : ''}
-                    error={emailError.length > 0}
-                    value={userEmail ? userEmail : ''}
-                ></TextField>
-                <TextField
-                    margin="dense"
-                    onChange={(e) => {
-                        setEmailError('');
-                        setCode(e.target.value);
-                    }}
-                    id="code"
-                    label="Code from Email"
-                    type="text"
-                    fullWidth
-                    variant="standard"
-                    value={code ?? ''}
-                ></TextField>
-            </DialogContent>
-            <DialogActions>
-                <Button
-                    variant="contained"
-                    component="span"
-                    sx={{ backgroundColor: '#ff595e !important', ml: 2 }}
-                    onClick={() => AccountManager.deleteAccount(userEmail, code, setEmailError, setAccountDeleted)}
-                >
-                    Delete this account
-                </Button>
-            </DialogActions>
-        </Dialog>
+                            setCode(e.target.value);
+                        }}
+                        id="code"
+                        label="Code from Email"
+                        type="text"
+                        fullWidth
+                        variant="standard"
+                        value={code ?? ''}
+                    ></TextField>
+                </DialogContent>
+                <DialogActions>
+                    <Button
+                        variant="contained"
+                        component="span"
+                        sx={{ backgroundColor: '#ff595e !important', ml: 2 }}
+                        onClick={() => AccountManager.deleteAccount(userEmail, code, setEmailError, setAccountDeleted)}
+                    >
+                        Delete this account
+                    </Button>
+                </DialogActions>
+            </Dialog>
+        )
     );
 }

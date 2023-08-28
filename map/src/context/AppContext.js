@@ -230,6 +230,8 @@ async function checkUserLogin(loginUser, setLoginUser, userEmail, setUserEmail) 
             }
             setLoginUser(newUser);
         }
+    } else {
+        setLoginUser(null);
     }
 }
 
@@ -270,7 +272,8 @@ export const AppContextProvider = (props) => {
     // cookie to store email logged in
     const [userEmail, setUserEmail] = useCookie('email', '');
     // server state of login
-    const [loginUser, setLoginUser] = useState(null);
+    const [loginUser, setLoginUser] = useState('noCheck');
+    const [wantDeleteAcc, setWantDeleteAcc] = useState(false);
     const [listFiles, setListFiles] = useState({});
     const [gpxFiles, setGpxFiles] = useState({});
     const [searchCtx, setSearchCtx] = useState({});
@@ -473,7 +476,9 @@ export const AppContextProvider = (props) => {
     }, [loginUser]);
 
     useEffect(() => {
-        loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, gpxFiles, setGpxFiles, setFavorites);
+        if (loginUser !== 'noCheck') {
+            loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, gpxFiles, setGpxFiles, setFavorites);
+        }
     }, [loginUser]);
 
     return (
@@ -587,6 +592,8 @@ export const AppContextProvider = (props) => {
                 setDevelFeatures,
                 infoBlockWidth,
                 setInfoBlockWidth,
+                wantDeleteAcc,
+                setWantDeleteAcc,
             }}
         >
             {props.children}
