@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Android 4.6 
+# Android 4.6 (beta)
 
 OsmAnd produces multiple Ready-To-Use builds every day, allowing you to track new features and participate in the OsmAnd contributions (translation process).
 
@@ -16,5 +16,8 @@ You can participate in testing the OsmAnd beta build through Google Play.
 
 ## What's new
 
-* Glide Ratio widget
-* New help screen
+• Glide Ratio Widget
+• Added ANT+ temperature widget
+• New help screen with offline support
+• Better memory management for large GPX tracks
+
