@@ -864,7 +864,12 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         analysis: ctx.selectedGpxFile.analysis,
     };
 
+    // time vs better cache
+    let saveStartTime = null;
+    let saveEndTime = null;
     if (postData.analysis) {
+        saveStartTime = postData.analysis.startTime;
+        saveEndTime = postData.analysis.endTime;
         // zero every-time-unique variables for better caching
         postData.analysis.startTime = postData.analysis.endTime = 0;
     }
@@ -883,6 +888,16 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         const data = FavoritesManager.prepareTrackData(_.cloneDeep(resp.data));
 
         const newGpxFile = { ...ctx.selectedGpxFile }; // don't modify state
+
+        // restore previously saved time
+        if (data.data && data.data.analysis) {
+            if (saveStartTime) {
+                data.data.analysis.startTime = saveStartTime;
+            }
+            if (saveEndTime) {
+                data.data.analysis.endTime = saveEndTime;
+            }
+        }
 
         Object.keys(data.data).forEach((t) => {
             newGpxFile[`${t}`] = data.data[t];
