@@ -1,4 +1,4 @@
-import { Box, IconButton } from '@mui/material';
+import { Box, IconButton, Tooltip } from '@mui/material';
 // import { getGpxTime } from '../../../context/AppContext';
 import { SortByAlpha, Update, History, CallMade, CallReceived } from '@mui/icons-material';
 import { useState, useEffect } from 'react';
@@ -84,9 +84,11 @@ export default function Actions({ files, setSortFiles }) {
             const icon = reverse ? method.reverseIcon : method.directIcon;
             const color = isCurrent ? 'primary' : '';
             icons.push(
-                <IconButton key={m} color={color} onClick={() => select(method)}>
-                    {icon}
-                </IconButton>
+                <Tooltip key={m} title={method.alt} placement="top" arrow>
+                    <IconButton color={color} onClick={() => select(method)}>
+                        {icon}
+                    </IconButton>
+                </Tooltip>
             );
         }
     }
