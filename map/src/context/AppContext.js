@@ -101,14 +101,14 @@ async function loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, 
                     res.uniqueFiles.forEach((f) => {
                         res.totalUniqueZipSize += f.zipSize;
                     });
-                    res.uniqueFiles = res.uniqueFiles.sort((f, s) => {
-                        let ftime = getGpxTime(f);
-                        let stime = getGpxTime(s);
-                        if (ftime !== stime) {
-                            return ftime > stime ? -1 : 1;
-                        }
-                        return 0;
-                    });
+                    // res.uniqueFiles = res.uniqueFiles.sort((f, s) => {
+                    //     let ftime = getGpxTime(f);
+                    //     let stime = getGpxTime(s);
+                    //     if (ftime !== stime) {
+                    //         return ftime > stime ? -1 : 1;
+                    //     }
+                    //     return 0;
+                    // });
                     setListFiles(res);
                     setGpxLoading(false);
 
