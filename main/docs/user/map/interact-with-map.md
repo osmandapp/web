@@ -248,7 +248,6 @@ You can turn off all map animations during map changes, such as gestures and but
 
 <InfoAndroidOnly/>  
 
-### Animate own position
+### Animate own position (iOS: Animate own position) 
 
-Creates a smooth map panning effect when in motion. Introduces a slight delay versus ground truth of about 1 second. Has been reported to create some pronounced lag issues under some circumstances, disable if such issues arise.
-
+Creates a smooth map panning effect versus the "My Position" icon when in motion. The effect introduces a slight delay versus ground truth of about 1 second. Enabling this has been reported to create some pronounced lag issues under some circumstances, disable if such issues arise.
