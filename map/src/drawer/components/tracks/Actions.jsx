@@ -67,7 +67,7 @@ export default function Actions({ files, setSortFiles }) {
 
     useEffect(() => {
         setSortFiles(currentMethod.callback(files, currentMethod.reverse));
-    }, [files, currentMethod]);
+    }, [files, currentMethod]); // ensure that files[] is modified for Object.is() check
 
     function select(method) {
         const isCurrent = method.alt === currentMethod.alt;
