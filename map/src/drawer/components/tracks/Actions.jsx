@@ -4,12 +4,10 @@ import { SortByAlpha, Update, History, CallMade, CallReceived } from '@mui/icons
 import { useState, useEffect } from 'react';
 
 function byAlpha(files, reverse) {
-    const sortedCopy = [...files].sort((f, s) => {
-        if (reverse) {
-            return f.name < s.name ? 1 : -1;
-        } else {
-            return f.name > s.name ? 1 : -1;
-        }
+    const sortedCopy = [...files].sort((a, b) => {
+        const A = a.name;
+        const B = b.name;
+        return reverse ? (B > A) - (B < A) : (A > B) - (A < B);
     });
     return sortedCopy;
 }

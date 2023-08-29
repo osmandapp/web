@@ -190,7 +190,7 @@ export default function TracksMenu() {
                 <LocalTrackGroup />
                 {ctx.tracksGroups &&
                     ctx.tracksGroups
-                        .sort((a, b) => a.name > b.name)
+                        .sort((a, b) => (a.name > b.name) - (a.name < b.name))
                         .map((group, index) => {
                             return <CloudTrackGroup key={group.name + index} index={index} group={group} />;
                         })}

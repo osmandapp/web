@@ -178,7 +178,7 @@ export default function VisibleGroup({ visibleTracks, setVisibleTracks }) {
                 <div style={{ maxHeight: '41vh', overflow: 'auto' }}>
                     {visibleTracks.local.length > 0 &&
                         visibleTracks.local
-                            .sort((a, b) => a.name > b.name)
+                            .sort((a, b) => (a.name > b.name) - (a.name < b.name))
                             .map((track, index) => {
                                 return (
                                     <LocalTrackItem className={classes.item} key={'vis-local-' + index} track={track} />
@@ -186,7 +186,7 @@ export default function VisibleGroup({ visibleTracks, setVisibleTracks }) {
                             })}
                     {visibleTracks.cloud.length > 0 &&
                         visibleTracks.cloud
-                            .sort((a, b) => a.name > b.name)
+                            .sort((a, b) => (a.name > b.name) - (a.name < b.name))
                             .map((track, index) => {
                                 return (
                                     <CloudTrackItem
