@@ -20,8 +20,12 @@ function byTime(files, reverse) {
 }
 
 function byDistance(files, reverse) {
-    console.log('distance', reverse);
-    return files;
+    const sortedCopy = [...files].sort((a, b) => {
+        const A = a.analysis?.totalDistance ?? a.details?.analysis?.totalDistance ?? 0;
+        const B = b.analysis?.totalDistance ?? b.details?.analysis?.totalDistance ?? 0;
+        return reverse ? B - A : A - B;
+    });
+    return sortedCopy;
 }
 
 const allMethods = {
