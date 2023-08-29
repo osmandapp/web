@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext, useMemo } from 'react';
 import AppContext from '../../../context/AppContext';
 import { ListItemText, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
 import _ from 'lodash';
@@ -10,6 +10,8 @@ export default function LocalTrackItem({ track }) {
     const ctx = useContext(AppContext);
 
     const [, , mobile] = useWindowSize();
+
+    const info = useMemo(() => <TrackInfo file={track} />, [track]);
 
     const ref = ctx.localTracks.find((t) => t.name === track.name);
 
@@ -92,7 +94,7 @@ export default function LocalTrackItem({ track }) {
 
     return (
         <div>
-            <Tooltip title={<TrackInfo file={track} />} arrow placement={mobile ? 'bottom' : 'right'}>
+            <Tooltip title={info} arrow placement={mobile ? 'bottom' : 'right'}>
                 <MenuItem key={'track._leaflet_id' + track.name} onClick={() => addTrackToMap()}>
                     <ListItemText inset>
                         <Typography variant="inherit" noWrap>

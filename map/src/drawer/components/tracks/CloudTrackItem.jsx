@@ -1,6 +1,6 @@
 import AppContext from '../../../context/AppContext';
 import { Alert, LinearProgress, ListItemText, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
-import React, { useContext, useState } from 'react';
+import { useContext, useState, useMemo } from 'react';
 import Utils from '../../../util/Utils';
 import TrackInfo from './TrackInfo';
 import TracksManager, { isEmptyTrack } from '../../../context/TracksManager';
@@ -14,6 +14,8 @@ export default function CloudTrackItem({ file, customIcon = null }) {
 
     const [loadingTrack, setLoadingTrack] = useState(false);
     const [error, setError] = useState(false);
+
+    const info = useMemo(() => <TrackInfo file={file} />, [file]);
 
     async function enableLayer(setProgressVisible, visible) {
         if (!visible) {
@@ -86,7 +88,7 @@ export default function CloudTrackItem({ file, customIcon = null }) {
 
     return (
         <>
-            <Tooltip title={<TrackInfo file={file} />} arrow placement={mobile ? 'bottom' : 'right'}>
+            <Tooltip title={info} arrow placement={mobile ? 'bottom' : 'right'}>
                 <MenuItem key={file.name} onClick={() => addTrackToMap(ctx.setGpxLoading)}>
                     <ListItemText inset>
                         <Typography variant="inherit" noWrap>
