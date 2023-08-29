@@ -86,37 +86,37 @@ export default function CloudTrackItem({ file, customIcon = null }) {
         }
     }
 
-    return (
-        <>
-            <Tooltip title={info} arrow placement={mobile ? 'bottom' : 'right'}>
-                <MenuItem key={file.name} onClick={() => addTrackToMap(ctx.setGpxLoading)}>
-                    <ListItemText inset>
-                        <Typography variant="inherit" noWrap>
-                            {customIcon}
-                            {TracksManager.getFileName(file)}
-                        </Typography>
-                    </ListItemText>
-                    <Switch
-                        disabled={loadingTrack}
-                        checked={!!ctx.gpxFiles[file.name]?.url}
-                        onClick={(e) => e.stopPropagation()}
-                        onChange={(e) => {
-                            !file.local && enableLayer(setLoadingTrack, e.target.checked);
-                        }}
-                    />
-                </MenuItem>
-            </Tooltip>
-            {loadingTrack ? <LinearProgress /> : <></>}
-            {error && (
-                <Alert
-                    onClose={() => {
-                        setError(false);
-                    }}
-                    severity="warning"
-                >
-                    Something went wrong!
-                </Alert>
-            )}
-        </>
+    const rendered = useMemo(
+        () => (
+            <>
+                <Tooltip title={info} arrow placement={mobile ? 'bottom' : 'right'}>
+                    <MenuItem onClick={() => addTrackToMap(ctx.setGpxLoading)}>
+                        <ListItemText inset>
+                            <Typography variant="inherit" noWrap>
+                                {customIcon}
+                                {TracksManager.getFileName(file)}
+                            </Typography>
+                        </ListItemText>
+                        <Switch
+                            disabled={loadingTrack}
+                            checked={!!ctx.gpxFiles[file.name]?.url}
+                            onClick={(e) => e.stopPropagation()}
+                            onChange={(e) => {
+                                !file.local && enableLayer(setLoadingTrack, e.target.checked);
+                            }}
+                        />
+                    </MenuItem>
+                </Tooltip>
+                {loadingTrack ? <LinearProgress /> : <></>}
+                {error && (
+                    <Alert onClose={() => setError(false)} severity="warning">
+                        Something went wrong!
+                    </Alert>
+                )}
+            </>
+        ),
+        [info, mobile, customIcon, file, loadingTrack, ctx.gpxFiles[file.name]?.url, error]
     );
+
+    return rendered;
 }
