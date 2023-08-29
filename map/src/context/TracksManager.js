@@ -1089,6 +1089,76 @@ function createPointMarkerOnMap(ctxTrack, map) {
     ).addTo(map);
 }
 
+let monthNames = {};
+
+function evaluateMonthNames() {
+    if (Object.keys(monthNames).length > 0) {
+        return monthNames;
+    }
+    for (var i = 0; i < 12; i++) {
+        var objDate = new Date();
+        objDate.setDate(1);
+        objDate.setMonth(i);
+        monthNames[objDate.toLocaleString('en-us', { month: 'short' })] = i + 1;
+        monthNames[
+            objDate.toLocaleString(window.navigator.userLanguage || window.navigator.language, { month: 'short' })
+        ] = i + 1;
+    }
+    return monthNames;
+}
+
+export const getGpxTime = (f) => {
+    const existing =
+        f?.details?.analysis?.startTime || // cloud track
+        f?.analysis?.startTime || // local track
+        f?.details?.metadata?.time || // gpx
+        f?.metaData?.ext?.time || // gpx
+        f?.clienttimems || // upload
+        0;
+
+    if (existing > 0) {
+        return existing;
+    }
+
+    try {
+        const date = new Date();
+
+        const yyyymmdd =
+            f.name.match(/(20\d\d)-(\d\d)-(\d\d)/) ?? // 2023-08-29
+            f.name.match(/(20\d\d)(\d\d)(\d\d)/); // 2023 08 29
+        if (yyyymmdd) {
+            date.setFullYear(parseInt(yyyymmdd[1]));
+            date.setMonth(parseInt(yyyymmdd[2]) - 1);
+            date.setDate(parseInt(yyyymmdd[3]));
+            date.setHours(0, 0, 0);
+            return date.getTime();
+        }
+
+        const monthNames = evaluateMonthNames();
+
+        const ddMMMyyyy = f.name.match(/(\d\d) (...) (20\d\d)/); // 28 Aug 2023
+        if (ddMMMyyyy && monthNames[ddMMMyyyy[2]]) {
+            date.setFullYear(parseInt(ddMMMyyyy[3]));
+            date.setMonth(monthNames[ddMMMyyyy[2]] - 1);
+            date.setDate(parseInt(ddMMMyyyy[1]));
+            date.setHours(0, 0, 0);
+            return date.getTime();
+        }
+
+        const MMMddyyyy = f.name.match(/(...) (\d\d) (20\d\d)/); // Aug 28 2023
+        if (MMMddyyyy && monthNames[MMMddyyyy[1]]) {
+            date.setFullYear(parseInt(MMMddyyyy[3]));
+            date.setMonth(monthNames[MMMddyyyy[1]] - 1);
+            date.setDate(parseInt(MMMddyyyy[2]));
+            date.setHours(0, 0, 0);
+            return date.getTime();
+        }
+    } catch (e) {
+        console.error('getGpxTime', e);
+    }
+    return 0;
+};
+
 const TracksManager = {
     loadTracks,
     saveTracks: saveLocalTrack,
