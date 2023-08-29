@@ -629,6 +629,16 @@ function deleteLocalTrack(ctx) {
     }
 }
 
+export function clearAllLocalTracks(ctx) {
+    if (ctx.localTracks.find((t) => t.name === ctx.selectedGpxFile.name)) {
+        ctx.setSelectedGpxFile({});
+    }
+    ctx.setLocalTracks([]);
+    localStorage.removeItem(DATA_SIZE_KEY);
+    localStorage.removeItem(TRACK_VISIBLE_FLAG);
+    deleteLocalTracks(); // delete from localStorage
+}
+
 function formatRouteMode({ profile = 'car', params }) {
     let routeModeStr = profile ?? 'car';
     if (params) {
