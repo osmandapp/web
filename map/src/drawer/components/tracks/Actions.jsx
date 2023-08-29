@@ -40,7 +40,6 @@ function byDistance(files, reverse) {
 
 const allMethods = {
     alpha: {
-        default: true,
         reverse: false,
         callback: byAlpha,
         directIcon: <SortByAlpha fontSize="small" />,
@@ -48,6 +47,7 @@ const allMethods = {
         alt: 'Sort alphabetically',
     },
     time: {
+        default: true,
         reverse: true,
         callback: byTime,
         directIcon: <Update fontSize="small" />,
