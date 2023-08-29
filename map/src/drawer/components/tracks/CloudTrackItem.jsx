@@ -5,9 +5,12 @@ import Utils from '../../../util/Utils';
 import TrackInfo from './TrackInfo';
 import TracksManager, { isEmptyTrack } from '../../../context/TracksManager';
 import _ from 'lodash';
+import { useWindowSize } from '../../../util/hooks/useWindowSize';
 
 export default function CloudTrackItem({ file, customIcon = null }) {
     const ctx = useContext(AppContext);
+
+    const [, , mobile] = useWindowSize();
 
     const [loadingTrack, setLoadingTrack] = useState(false);
     const [error, setError] = useState(false);
@@ -83,24 +86,24 @@ export default function CloudTrackItem({ file, customIcon = null }) {
 
     return (
         <>
-            <MenuItem key={file.name} onClick={() => addTrackToMap(ctx.setGpxLoading)}>
-                <Tooltip title={<TrackInfo file={file} />}>
+            <Tooltip title={<TrackInfo file={file} />} arrow placement={mobile ? 'bottom' : 'right'}>
+                <MenuItem key={file.name} onClick={() => addTrackToMap(ctx.setGpxLoading)}>
                     <ListItemText inset>
                         <Typography variant="inherit" noWrap>
                             {customIcon}
                             {TracksManager.getFileName(file)}
                         </Typography>
                     </ListItemText>
-                </Tooltip>
-                <Switch
-                    disabled={loadingTrack}
-                    checked={!!ctx.gpxFiles[file.name]?.url}
-                    onClick={(e) => e.stopPropagation()}
-                    onChange={(e) => {
-                        !file.local && enableLayer(setLoadingTrack, e.target.checked);
-                    }}
-                />
-            </MenuItem>
+                    <Switch
+                        disabled={loadingTrack}
+                        checked={!!ctx.gpxFiles[file.name]?.url}
+                        onClick={(e) => e.stopPropagation()}
+                        onChange={(e) => {
+                            !file.local && enableLayer(setLoadingTrack, e.target.checked);
+                        }}
+                    />
+                </MenuItem>
+            </Tooltip>
             {loadingTrack ? <LinearProgress /> : <></>}
             {error && (
                 <Alert
