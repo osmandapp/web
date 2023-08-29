@@ -116,7 +116,7 @@ export default function LocalTrackGroup() {
                 </Box>
                 {localGpxOpen ? <ExpandLess /> : <ExpandMore />}
             </MenuItem>
-            <Collapse in={localGpxOpen} timeout="auto" unmountOnExit>
+            <Collapse in={localGpxOpen} timeout="auto">
                 <div style={{ maxHeight: '41vh', overflow: 'auto' }}>
                     <Actions files={ctx.localTracks} setSortFiles={setSortFiles} />
                     {!_.isEmpty(sortFiles) &&

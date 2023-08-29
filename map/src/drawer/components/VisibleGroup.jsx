@@ -174,7 +174,7 @@ export default function VisibleGroup({ visibleTracks, setVisibleTracks }) {
                 </Box>
                 {visibleTracksOpen ? <ExpandLess /> : <ExpandMore />}
             </MenuItem>
-            <Collapse in={visibleTracksOpen} timeout="auto" unmountOnExit>
+            <Collapse in={visibleTracksOpen} timeout="auto">
                 <div style={{ maxHeight: '41vh', overflow: 'auto' }}>
                     {visibleTracks.local.length > 0 &&
                         visibleTracks.local

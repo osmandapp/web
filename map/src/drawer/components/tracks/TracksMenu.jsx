@@ -182,7 +182,7 @@ export default function TracksMenu() {
                 {tracksGroupsOpen ? <ExpandLess /> : <ExpandMore />}
             </MenuItem>
             {(ctx.gpxLoading || ctx.localTracksLoading) && !ctx.createTrack ? <LinearProgress /> : <></>}
-            <Collapse in={tracksGroupsOpen} timeout="auto" unmountOnExit>
+            <Collapse in={tracksGroupsOpen} timeout="auto">
                 {ctx.gpxCollection?.length > 0 && <GpxCollection />}
                 {visibleTracksOpen() && (
                     <VisibleGroup visibleTracks={visibleTracks} setVisibleTracks={setVisibleTracks} />
