@@ -27,9 +27,7 @@ export default function CloudTrackItem({ file, customIcon = null }) {
     }
 
     function deleteTrackFromMap() {
-        const newGpxFiles = Object.assign({}, ctx.gpxFiles);
-        newGpxFiles[file.name].url = null;
-        ctx.setGpxFiles(newGpxFiles);
+        ctx.mutateGpxFiles((o) => (o[file.name].url = null));
         if (ctx.selectedGpxFile?.name === file.name) {
             ctx.setCurrentObjectType(null);
         }
@@ -55,15 +53,14 @@ export default function CloudTrackItem({ file, customIcon = null }) {
             setProgressVisible(true);
             const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
             const qs = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
-            const newGpxFiles = Object.assign({}, ctx.gpxFiles);
-            newGpxFiles[file.name] = {
+            const oneGpxFile = {
                 url: URL + qs,
                 clienttimems: file.clienttimems,
                 updatetimems: file.updatetimems,
                 name: file.name,
                 type: 'GPX',
             };
-            const f = await Utils.getFileData(newGpxFiles[file.name]);
+            const f = await Utils.getFileData(oneGpxFile);
             const gpxfile = new File([f], file.name, {
                 type: 'text/plain',
             });
@@ -74,11 +71,13 @@ export default function CloudTrackItem({ file, customIcon = null }) {
                 ctx.setCurrentObjectType(type);
                 track.name = file.name;
                 Object.keys(track).forEach((t) => {
-                    newGpxFiles[file.name][`${t}`] = track[t];
+                    oneGpxFile[t] = track[t];
                 });
-                newGpxFiles[file.name].analysis = TracksManager.prepareAnalysis(newGpxFiles[file.name].analysis);
-                ctx.setSelectedGpxFile(Object.assign({}, newGpxFiles[file.name]));
-                ctx.setGpxFiles(newGpxFiles); // finally, success
+                oneGpxFile.analysis = TracksManager.prepareAnalysis(oneGpxFile.analysis);
+
+                ctx.mutateGpxFiles((o) => (o[file.name] = oneGpxFile));
+                ctx.setSelectedGpxFile(Object.assign({}, oneGpxFile));
+
                 setError(false);
             } else {
                 setError(true);
