@@ -215,7 +215,7 @@ export const AppContextProvider = (props) => {
     const [loginUser, setLoginUser] = useState('noCheck');
     const [wantDeleteAcc, setWantDeleteAcc] = useState(false);
     const [listFiles, setListFiles] = useState({});
-    const [gpxFiles, setGpxFiles] = useState({});
+    const [gpxFiles, mutateGpxFiles, setGpxFiles] = useMutator({});
     const [searchCtx, setSearchCtx] = useState({});
 
     const [selectedGpxFile, reactSetSelectedGpxFile] = useState({});
@@ -440,6 +440,7 @@ export const AppContextProvider = (props) => {
                 setLoginUser,
                 gpxFiles,
                 setGpxFiles,
+                mutateGpxFiles,
                 gpxLoading,
                 setGpxLoading,
                 selectedGpxFile,
