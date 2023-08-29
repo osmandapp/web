@@ -56,13 +56,17 @@ During navigation, the map appearance changes to that of the app profile used fo
 | *"<Translate android="true" ids="approximate_bearing"/>"* | Determines the bearing based on the navigational route you are following.    | The setting is visible only if the OsmAnd [Development plugin](../../plugins/development.md) is enabled. <br /> This option should be enabled if the orientation of the directional map is flipped or jiggles when using [Android Auto](../auto-car.md#issues).   |
 
 
-### Animate my location
+### Animate my location (Android: Animate own position)
 
-This setting provides a smooth animation of the "My location" point moving on the map during navigation. Note that the animation takes about 1 second, which creates a slight delay for the "My location" position to display on the map relative to your location.
-For Android, this item named **Animate own position** is located in the "Other" section of the General Settings menu.
+Creates a smooth map panning effect versus the "My Position" icon when in motion. The effect introduces a slight delay versus ground truth of about 1 second. For Android, this item is named **Animate own position** and located in the "Other" section of the each profile's General settings menu. Enabling this has been reported to create some pronounced lag issues under some circumstances, disable if such issues arise.
 
-**POI Types**. You can select one or many from standard OsmAnd POI types or make your own [POI filter](../../search/search-poi.md) and select it to display POI on the map.
-**Map style POI**. Each POI type in OsmAnd assigned a specific icon and color. POIs' [zoom level](../../map/vector-maps.md#details) and design could be different in some [map styles](../../map/vector-maps.md#default-map-styles).  
+### POI Types
+
+You can select one or many from standard OsmAnd POI types or make your own [POI filter](../../search/search-poi.md) and select it to display POI on the map.
+
+### Map style POI
+
+Each POI type in OsmAnd assigned a specific icon and color. POIs' [zoom level](../../map/vector-maps.md#details) and design could be different in some [map styles](../../map/vector-maps.md#default-map-styles).  
 
 
 
