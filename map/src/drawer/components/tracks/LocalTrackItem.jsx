@@ -3,9 +3,13 @@ import AppContext from '../../../context/AppContext';
 import { ListItemText, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
 import _ from 'lodash';
 import TracksManager from '../../../context/TracksManager';
+import { useWindowSize } from '../../../util/hooks/useWindowSize';
+import TrackInfo from './TrackInfo';
 
 export default function LocalTrackItem({ track }) {
     const ctx = useContext(AppContext);
+
+    const [, , mobile] = useWindowSize();
 
     const ref = ctx.localTracks.find((t) => t.name === track.name);
 
@@ -88,20 +92,20 @@ export default function LocalTrackItem({ track }) {
 
     return (
         <div>
-            <MenuItem key={'track._leaflet_id' + track.name} onClick={() => addTrackToMap()}>
-                <Tooltip title={<div>{track.name}</div>}>
+            <Tooltip title={<TrackInfo file={track} />} arrow placement={mobile ? 'bottom' : 'right'}>
+                <MenuItem key={'track._leaflet_id' + track.name} onClick={() => addTrackToMap()}>
                     <ListItemText inset>
                         <Typography variant="inherit" noWrap>
                             {'* ' + track.name}
                         </Typography>
                     </ListItemText>
-                </Tooltip>
-                <Switch
-                    checked={track.selected === true || isAlreadyEdit()}
-                    onChange={(e) => onSwitchChanged(e.target.checked)}
-                    onClick={(e) => e.stopPropagation()}
-                />
-            </MenuItem>
+                    <Switch
+                        checked={track.selected === true || isAlreadyEdit()}
+                        onChange={(e) => onSwitchChanged(e.target.checked)}
+                        onClick={(e) => e.stopPropagation()}
+                    />
+                </MenuItem>
+            </Tooltip>
         </div>
     );
 }

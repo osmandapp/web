@@ -12,7 +12,7 @@ export default function TrackInfo({ file }) {
     let timeMoving = '';
     let updownhill = '';
     let speed = '';
-    let summary = item.details?.analysis ? item.details?.analysis : localLayer?.summary;
+    let summary = item.details?.analysis ?? item.analysis ?? localLayer?.summary;
     if (item.clienttimems) {
         clienttime =
             'Upload time: ' +
