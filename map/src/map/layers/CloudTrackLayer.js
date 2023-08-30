@@ -102,6 +102,9 @@ const CloudTrackLayer = () => {
                 processed++;
                 unregisterCleanupFileLayer(file);
                 file.gpx = removeLayerFromMap(file, map);
+            } else if (file.delete) {
+                processed++;
+                delete newGpxFiles[file.name];
             }
         });
         if (processed > 0) {
