@@ -10,7 +10,7 @@ export default function CloudTrackItem({ file, customIcon = null }) {
     const ctx = useContext(AppContext);
 
     const [loadingTrack, setLoadingTrack] = useState(false);
-    const [error, setError] = useState(false);
+    const [error, setError] = useState('');
 
     async function enableLayer(setProgressVisible, visible) {
         if (!visible) {
@@ -64,7 +64,9 @@ export default function CloudTrackItem({ file, customIcon = null }) {
             });
             const track = await TracksManager.getTrackData(gpxfile);
             setProgressVisible(false);
-            if (isEmptyTrack(track) === false) {
+            if (!track) {
+                setError('Something went wrong!');
+            } else if (isEmptyTrack(track) === false) {
                 const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
                 ctx.setCurrentObjectType(type);
                 track.name = file.name;
@@ -74,9 +76,9 @@ export default function CloudTrackItem({ file, customIcon = null }) {
                 newGpxFiles[file.name].analysis = TracksManager.prepareAnalysis(newGpxFiles[file.name].analysis);
                 ctx.setSelectedGpxFile(Object.assign({}, newGpxFiles[file.name]));
                 ctx.setGpxFiles(newGpxFiles); // finally, success
-                setError(false);
+                setError('');
             } else {
-                setError(true);
+                setError('Empty track is not supported!');
             }
         }
     }
@@ -102,14 +104,14 @@ export default function CloudTrackItem({ file, customIcon = null }) {
                 />
             </MenuItem>
             {loadingTrack ? <LinearProgress /> : <></>}
-            {error && (
+            {error !== '' && (
                 <Alert
                     onClose={() => {
                         setError(false);
                     }}
                     severity="warning"
                 >
-                    Something went wrong!
+                    {error}
                 </Alert>
             )}
         </>
