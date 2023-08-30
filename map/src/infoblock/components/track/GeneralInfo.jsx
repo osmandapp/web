@@ -177,7 +177,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     }
 
     function getElevation(info) {
-        if (info?.hasElevationData) {
+        if (info?.hasElevationData && info.minElevation !== TracksManager.NAN_MARKER) {
             setElevation(
                 info.minElevation.toFixed(1) +
                     ' / ' +
