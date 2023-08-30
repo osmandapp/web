@@ -14,21 +14,24 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-My Places' is a core place within OsmAnd application that allows you to manage all your personally owned information i.e. [Favorite points](../personal/favorites.md), [Tracks](../personal/tracks.md) (imported, recorded and created GPX files), [OpenStreetMap Edits](../plugins/osm-editing.md), [Audio / Video Notes (Android)](../plugins/audio-video-notes.md)
+## Overview
 
+My Places is the primary place in the OsmAnd app that allows you to manage all your personal information: [Favorite points](../personal/favorites.md), [Tracks](../personal/tracks.md) (imported, recorded, and created GPX files), [OpenStreetMap Edits](../plugins/osm-editing.md), [Audio / Video Notes (*for Android*)](../plugins/audio-video-notes.md).  
 
-In order to manage saved information, you need to go to the [<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu.md) → [<Translate android="true" ids="shared_string_my_places"/>](../personal/myplaces.md)
 
 <Tabs groupId="operating-systems">
 
-
 <TabItem value="android" label="Android">
+
+*[<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu.md) → My Places*  
 
 ![My Places android](@site/static/img/personal/my_places_android.png) ![My places menu Android](@site/static/img/personal/my_places_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+*[<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu.md) → My Places*  
 
 ![My Places ios](@site/static/img/personal/my_places_ios.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios.png)
 
@@ -37,8 +40,9 @@ In order to manage saved information, you need to go to the [<Translate android=
 </Tabs>
 
 
- ## 'My Places' section includes:
+ ## My Places section includes:  
+ 
 - [Favorites](../personal/favorites.md)
-- [GPX tracks](../personal/tracks.md)
-- [OpenStreetMap editing](../plugins/osm-editing.md)
+- [Tracks](../personal/tracks.md)
+- [OpenStreetMap edits](../plugins/osm-editing.md)
 - [Audio/video notes](../plugins/audio-video-notes.md)
