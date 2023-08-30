@@ -90,7 +90,7 @@ export default function CloudTrackItem({ file, customIcon = null }) {
     const rendered = useMemo(
         () => (
             <>
-                <Tooltip title={info} arrow placement={mobile ? 'bottom' : 'right'}>
+                <Tooltip title={info} arrow placement={mobile ? 'bottom' : 'right'} disableInteractive>
                     <MenuItem onClick={() => addTrackToMap(ctx.setGpxLoading)}>
                         <ListItemText inset>
                             <Typography variant="inherit" noWrap>
