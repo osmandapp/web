@@ -42,7 +42,7 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowIn
                 newGpxFiles[ctx.selectedGpxFile.name].url = null;
                 ctx.setGpxFiles(newGpxFiles);
 
-                // delete track from menu
+                // delete track ctx.tracksGroups (used in CloudTrackGroup menu)
                 const newTracksGroups = [...ctx.tracksGroups];
                 newTracksGroups?.forEach((group) => {
                     const currentFile = group.files.findIndex((file) => file.name === ctx.selectedGpxFile.name);
@@ -52,6 +52,17 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowIn
                     }
                 });
                 ctx.setTracksGroups(newTracksGroups);
+
+                // delete track from ctx.listFiles.uniqueFiles
+                // used to refresh list-files in TracksManager.saveTrack
+                ctx.setListFiles((o) => {
+                    const index = o.uniqueFiles.findIndex((file) => file.name === ctx.selectedGpxFile.name);
+                    if (index !== -1) {
+                        o.uniqueFiles.splice(index, 1);
+                        o.uniqueFiles = [...o.uniqueFiles];
+                    }
+                    return { ...o };
+                });
 
                 cleanContextMenu();
             }
