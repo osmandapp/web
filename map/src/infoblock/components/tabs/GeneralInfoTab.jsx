@@ -7,7 +7,7 @@ import DeleteTrackDialog from '../track/dialogs/DeleteTrackDialog';
 import GpxGraphProvider from '../graph/GpxGraphProvider';
 import GeneralInfo from '../track/GeneralInfo';
 import DescTrackDialog from '../track/dialogs/DescTrackDialog';
-import { isEmptyTrack } from '../../../context/TracksManager';
+import { hasSegments, isEmptyTrack } from '../../../context/TracksManager';
 import { Checkbox, FormControlLabel } from '@mui/material/';
 import { makeStyles } from '@material-ui/core/styles';
 import TracksManager from '../../../context/TracksManager';
@@ -90,7 +90,7 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                         </div>
                     </>
                 )}
-                {!isEmptyTrack(ctx.selectedGpxFile, false) && (
+                {hasSegments(ctx.selectedGpxFile) && (
                     <>
                         <GpxGraphProvider width={ctx.infoBlockWidth} />
                     </>

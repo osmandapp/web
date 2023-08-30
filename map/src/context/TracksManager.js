@@ -1018,6 +1018,10 @@ export function isEmptyTrack(track, checkWpts = true, checkPoints = true) {
     return !hasPoints && !hasWpts;
 }
 
+export function hasSegments(track) {
+    return track?.points?.length >= 2 || (track?.tracks?.length > 0 && track.tracks[0].points?.length >= 2);
+}
+
 export function isPointUnrouted({ point, pointIndex, prevPoint }) {
     return (
         !point.profile || // empty profile is Unrouted but PROFILE_LINE is Routed

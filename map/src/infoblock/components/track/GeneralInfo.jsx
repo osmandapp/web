@@ -1,7 +1,12 @@
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { toHHMMSS } from '../../../context/AppContext';
-import TracksManager, { isEmptyTrack, applySrtmElevation, eligibleToApplySrtm } from '../../../context/TracksManager';
+import TracksManager, {
+    hasSegments,
+    isEmptyTrack,
+    applySrtmElevation,
+    eligibleToApplySrtm,
+} from '../../../context/TracksManager';
 import { prepareFileName } from '../../../util/Utils';
 import {
     Box,
@@ -598,7 +603,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                     </MenuItem>
                 )}
             </Typography>
-            {!isEmptyTrack(ctx.selectedGpxFile, false) && (
+            {hasSegments(ctx.selectedGpxFile) && (
                 <>
                     <Elevation />
                 </>
