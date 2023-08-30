@@ -126,17 +126,33 @@ The compass icon on the button always points to the North. You can select how th
 
 ## 3D mode
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
 *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,map_3d_mode_action"/>*  
 
 ![3D mode](@site/static/img/widgets/map_butt_3D_mode_andr.png)
 
-- *<Translate android="true" ids="shared_string_hidden"/>* - If this mode is selected for a button, you have to use a gesture to change the map view. Tap the map with two fingers and move them up and down to adjust the map tilt.  
-- *<Translate android="true" ids="shared_string_visible"/>* - The button is always displayed on the map screen.
-- *<Translate android="true" ids="visible_in_3d_mode"/>* - The button is displayed on the map screen when you change the map view with a [*two-finger and move*](../map/interact-with-map.md#gestures) gesture.   
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,map_3d_mode_action"/>*  
+
+![3D mode](@site/static/img/widgets/map_butt_3D_mode_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+- *<Translate android="true" ids="shared_string_hidden"/>* - if this mode is selected for a button, you have to use a gesture to change the map view. Tap the map with two fingers and move them up and down to adjust the map's tilt.  
+- *<Translate android="true" ids="shared_string_visible"/>* - the button is always displayed on the map screen.
+- *<Translate android="true" ids="visible_in_3d_mode"/>* - the button is displayed on the map screen when you change the map view with a [*two-finger and move*](../map/interact-with-map.md#gestures) gesture.   
 
 Additional settings for 3D Mode.  
 
-1. **Display the button**. The setting for the *3D Mode* button appears in the Configure screen list only if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.  
+1. **Display the button**. (*For Android*) The setting for the *3D Mode* button appears in the Configure screen list only if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.  
 2. **Saves the angle**. After switching to 3D mode and changing the angle manually with a gesture, the angle is saved and used the next time 3D mode is activated. This option is only saved for the profile selected at the time.
 3. **Moving**. You can place the button anywhere on the screen of your device. To do this, hold down the button and without taking your finger off, drag it to the required place.  
 4. **Button position**. The position of the button on the map on the application screen is saved separately for each profile.

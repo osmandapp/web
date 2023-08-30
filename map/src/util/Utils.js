@@ -53,7 +53,7 @@ export function useMutator(init) {
             setter(() => update);
         }
     };
-    return [state, mutator];
+    return [state, mutator, setter];
 }
 
 async function getFileData(file) {

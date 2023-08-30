@@ -365,11 +365,27 @@ Exporting track file or files to any massengers, email, file managers, Drive , a
 
 ## Manage tracks
 
-After recording and saving, the tracks can be managed as follows:  
+After recording and saving, tracks can be managed as follows:    
 
-- In [*My Places*](../personal/myplaces.md), so that to view all ever recorded data pieces in the [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format). 
-- In [*Configure map*](../map/tracks-on-map.md), so that to select a specific track and display it on the map.
+- In [*My Places*](../personal/myplaces.md), you can view all [GPX data](https://en.wikipedia.org/wiki/GPS_Exchange_Format) that has ever been recorded.
+- In [*Configure map*](../map/tracks-on-map.md), select a specific track and display it on the map.
 - With the [*Context menu*](../map/track-context-menu.md) of the track on the map, so that to adjust the appearance, to update points on the route, to view segments, to start navigation along the track/segment, and/or other options. 
+
+
+### Dashboard Android
+
+*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>* 
+
+![My Places with tracks in Android](@site/static/img/personal/tracks/dashboard_andr.png)
+
+Information section that allows you to view the overall statistics for all tracks in the selected folder.  
+
+- The number of tracks in the folder.
+- Total sum of distances.
+- Sum of uphills.
+- Sum of downhills.
+- Sum of duration time.
+- Total size of downloaded files in MB.
 
 
 ### View all tracks 

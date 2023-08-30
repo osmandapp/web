@@ -45,7 +45,7 @@ export default function TracksMenu() {
         setVisibleTracks({ ...visibleTracks });
     }, [ctx.localTracks]);
 
-    //get gpx files and create groups
+    // get gpx files and create groups
     useEffect(() => {
         if (!_.isEmpty(ctx.listFiles)) {
             let tg = [];
@@ -182,16 +182,18 @@ export default function TracksMenu() {
                 {tracksGroupsOpen ? <ExpandLess /> : <ExpandMore />}
             </MenuItem>
             {(ctx.gpxLoading || ctx.localTracksLoading) && !ctx.createTrack ? <LinearProgress /> : <></>}
-            <Collapse in={tracksGroupsOpen} timeout="auto" unmountOnExit>
+            <Collapse in={tracksGroupsOpen} timeout="auto">
                 {ctx.gpxCollection?.length > 0 && <GpxCollection />}
                 {visibleTracksOpen() && (
                     <VisibleGroup visibleTracks={visibleTracks} setVisibleTracks={setVisibleTracks} />
                 )}
                 <LocalTrackGroup />
                 {ctx.tracksGroups &&
-                    ctx.tracksGroups.map((group, index) => {
-                        return <CloudTrackGroup key={group + index} index={index} group={group} />;
-                    })}
+                    ctx.tracksGroups
+                        .sort((a, b) => (a.name > b.name) - (a.name < b.name))
+                        .map((group, index) => {
+                            return <CloudTrackGroup key={group.name + index} index={index} group={group} />;
+                        })}
             </Collapse>
         </>
     );

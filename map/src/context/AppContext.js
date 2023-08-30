@@ -16,24 +16,6 @@ const osmandTileURL = {
     url: 'https://tile.osmand.net/hd/{z}/{x}/{y}.png',
 };
 
-let monthNames = {};
-
-function evaluateMonthNames() {
-    if (Object.keys(monthNames).length > 0) {
-        return monthNames;
-    }
-    for (var i = 0; i < 12; i++) {
-        var objDate = new Date();
-        objDate.setDate(1);
-        objDate.setMonth(i);
-        monthNames[objDate.toLocaleString('en-us', { month: 'short' })] = i + 1;
-        monthNames[
-            objDate.toLocaleString(window.navigator.userLanguage || window.navigator.language, { month: 'short' })
-        ] = i + 1;
-    }
-    return monthNames;
-}
-
 export const toHHMMSS = function (time) {
     var sec_num = time / 1000;
     var hours = Math.floor(sec_num / 3600);
@@ -52,40 +34,6 @@ export const toHHMMSS = function (time) {
     return hours + ':' + minutes + ':' + seconds;
 };
 
-export const getGpxTime = (f) => {
-    if (f?.details?.analysis?.startTime) {
-        return f.details.analysis.startTime;
-    }
-    let dt = f.name.match(/(20\d\d)-(\d\d)-(\d\d)/);
-    if (!dt) {
-        dt = f.name.match(/(20\d\d)(\d\d)(\d\d)/);
-    }
-    try {
-        if (dt) {
-            let date = new Date();
-            date.setFullYear(parseInt(dt[1]));
-            date.setMonth(parseInt(dt[2]) - 1);
-            date.setDate(parseInt(dt[3]));
-            return date.getTime();
-        } else {
-            dt = f.name.match(/(\d\d) (...) (20\d\d)/);
-            if (dt) {
-                let monthNames = evaluateMonthNames();
-                if (monthNames[dt[2]]) {
-                    let date = new Date();
-                    date.setFullYear(parseInt(dt[3]));
-                    date.setMonth(monthNames[dt[2]] - 1);
-                    date.setDate(parseInt(dt[1]));
-                    return date.getTime();
-                }
-            }
-        }
-    } catch (e) {
-        console.error('getGpxTime', e);
-    }
-    return 0;
-};
-
 async function loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, gpxFiles, setGpxFiles, setFavorites) {
     if (loginUser !== listFiles.loginUser) {
         if (!loginUser) {
@@ -100,14 +48,6 @@ async function loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, 
                     res.totalUniqueZipSize = 0;
                     res.uniqueFiles.forEach((f) => {
                         res.totalUniqueZipSize += f.zipSize;
-                    });
-                    res.uniqueFiles = res.uniqueFiles.sort((f, s) => {
-                        let ftime = getGpxTime(f);
-                        let stime = getGpxTime(s);
-                        if (ftime !== stime) {
-                            return ftime > stime ? -1 : 1;
-                        }
-                        return 0;
                     });
                     setListFiles(res);
                     setGpxLoading(false);
@@ -275,7 +215,7 @@ export const AppContextProvider = (props) => {
     const [loginUser, setLoginUser] = useState('noCheck');
     const [wantDeleteAcc, setWantDeleteAcc] = useState(false);
     const [listFiles, setListFiles] = useState({});
-    const [gpxFiles, setGpxFiles] = useState({});
+    const [gpxFiles, mutateGpxFiles, setGpxFiles] = useMutator({});
     const [searchCtx, setSearchCtx] = useState({});
 
     const [selectedGpxFile, reactSetSelectedGpxFile] = useState({});
@@ -500,6 +440,7 @@ export const AppContextProvider = (props) => {
                 setLoginUser,
                 gpxFiles,
                 setGpxFiles,
+                mutateGpxFiles,
                 gpxLoading,
                 setGpxLoading,
                 selectedGpxFile,

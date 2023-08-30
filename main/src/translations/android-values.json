@@ -2370,7 +2370,7 @@
   "shared_string_paste": "Paste",
   "go_to_next_field": "Next field",
   "rename_marker": "Rename marker",
-  "tap_on_map_to_hide_interface_descr": "A tap on the map toggles the control buttons and widgets.",
+  "tap_on_map_to_hide_interface_descr": "Tapping an empty space on the map hides control buttons and widgets.",
   "tap_on_map_to_hide_interface": "Fullscreen mode",
   "mark_passed": "Mark passed",
   "import_gpx_file_description": "can be imported as Favorites or a GPX file.",
