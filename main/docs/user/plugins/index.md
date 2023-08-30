@@ -11,7 +11,7 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
@@ -96,20 +96,20 @@ Only the development plugin and the OSM editing plugin change settings for all p
 
 Most plugins provide specific profile or global settings, which can be accessed via: 
 
-- *Main menu → Plugins → Plugin name → Settings*  or  
+- *Main menu → Plugins → Plugin name → Settings (&#x2699 for ios)* or  
 - *Main menu → Settings → Profile → [Plugin settings](../personal/profiles.md#plugin-settings)*.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Settings plugin Android 1](@site/static/img/plugins/development/plugin_settings_android_1.png) ![Settings plugin Android 2](@site/static/img/plugins/development/plugin_settings_android_2.png) ![Settings plugin Android 3](@site/static/img/plugins/development/plugin_settings_android_3.png)  
+![Settings plugin Android 1](@site/static/img/plugins/development/access_plugin_settings_andr_2.png) ![Settings plugin Android 2](@site/static/img/plugins/development/access_plugin_settings_andr_1.png)   
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Settings plugin iOS 1](@site/static/img/plugins/development/plugin_settings_ios_1.png) ![Settings plugin iOS 2](@site/static/img/plugins/development/plugin_settings_ios_2.png) ![Settings plugin iOS 3](@site/static/img/plugins/development/plugin_settings_ios_3.png)  
+![Settings plugin iOS 1](@site/static/img/plugins/development/access_plugin_settings_ios_2.png) ![Settings plugin iOS 2](@site/static/img/plugins/development/access_plugin_settings_ios_1.png) 
 
 </TabItem>
 
@@ -130,6 +130,13 @@ The following plugins provide their own settings:
 |🤖 [Accessibility](#accessibility) | [Settings](../plugins/accessibility.md#plugin-settings) allow you to use Accessibility [Android features](https://www.android.com/accessibility/) inside OsmAnd. |
 | [OsmAnd development](#osmand-development) | [Plugin settings](../plugins/development.md#plugin-settings) allow you to enable special features for developers or experienced users |
 |🤖 [OsmAnd Tracker](#osmand-tracker) | All settings are configurable in a separate app |
+
+#### Plugin settings - actions
+
+<InfoAndroidOnly/>
+
+**<Translate android="true" ids="reset_plugin_to_default"/>** - *using this option plugin settings can be reset to default values*.  
+**<Translate android="true" ids="copy_from_other_profile"/>** - *plugin settings can be copied from another profile*.
 
 ## List
 

@@ -293,7 +293,7 @@ In OsmAnd you can highlight official routes (present on OpenStreetMap) and hikin
 
 *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>* 
 
-![Configure Map Routes section](@site/static/img/map/routes_1.png)
+![Configure Map Routes section](@site/static/img/map/settings_routes_andr_1.png)
 
 </TabItem>
 
@@ -301,7 +301,7 @@ In OsmAnd you can highlight official routes (present on OpenStreetMap) and hikin
 
 *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Configure Map Routes section](@site/static/img/map/routs_ios.png)
+![Configure Map Routes section](@site/static/img/map/settings_routes_ios_1.png)
 
 </TabItem>
 
@@ -326,7 +326,7 @@ In OsmAnd you can highlight official routes (present on OpenStreetMap) and hikin
 |![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)|
 |*<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>*. [<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_description"/>](https://wiki.openstreetmap.org/wiki/Node_Networks) |
 |![Map routes - hiking node networks](@site/static/img/map/map-routes-hiking-node-networks.png)|
-|**<Translate android="true" ids="rendering_attr_alpineHiking_name"/>**. Showing  [classified hiking trails](https://wiki.openstreetmap.org/wiki/Key:sac_scale) in mountainous areas with regard to the difficulties to be expected by colour.|
+|**<Translate android="true" ids="rendering_attr_alpineHiking_name"/>**. Showing  classified hiking trails ([SAC scale](https://wiki.openstreetmap.org/wiki/Key:sac_scale) or [CAI scale](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)) in mountainous areas with regard to the difficulties to be expected by colour.|
 |![Map routes - alpine hiking](@site/static/img/map/map-routes-alpine-hiking.png)|
 |**<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>**. Showing colored routes of ski slopes. This setting is provided by map style ["Winter and ski"](../map/vector-maps.md#winter-and-ski). |
 |![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)|
