@@ -94,8 +94,7 @@ In this section of the General settings menu, you can set parameters for the cur
   - *<Translate android="true" ids="rotate_map_north_opt"/>*
   - *<Translate android="true" ids="rotate_map_bearing_opt"/>*
   - *<Translate android="true" ids="rotate_map_compass_opt"/>*
-  - *<Translate android="true" ids="rotate_map_manual_opt"/>*
-- *2.5D view* - (placed on [*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_left,map_widget_compass"/>*](../widgets/map-buttons.md#3d-mode))If enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
+  - *<Translate android="true" ids="rotate_map_manual_opt"/>* 
 - *<Translate android="true" ids="display_position"/>* - Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:
   - *<Translate android="true" ids="position_on_map_center"/>* - The cursor is always positioned in the center of the screen.
   - *<Translate android="true" ids="position_on_map_bottom"/>* - *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
@@ -112,14 +111,13 @@ In this section of the General settings menu, you can set parameters for the cur
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_appearance"/>*
 
-![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profiles_appearance_ios.png)
+![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profile_sett_appearance_ios.png)
 
 - *<Translate ios="true" ids="rotate_map_to"/>* - Allows you to choose [the map orientation mode](../map/interact-with-map.md#map-orientation-modes) for the selected profile.
   - *<Translate ios="true" ids="rotate_map_north_opt"/>*
   - *<Translate ios="true" ids="rotate_map_bearing_opt"/>*
   - *<Translate ios="true" ids="rotate_map_compass_opt"/>*
   - *<Translate ios="true" ids="rotate_map_manual_opt"/>*
-- *<Translate ios="true" ids="allow_3D_view"/>* - If enabled, you can change the viewing angle using the [gesture Tilt](../map/interact-with-map.md#gestures) or the ["My Location button"](../map/interact-with-map.md#my-location--zoom) for 3D viewing.  
 - *<Translate ios="true" ids="position_on_map"/>* - Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:
   - *<Translate ios="true" ids="position_on_map_center"/>* - The cursor is always positioned in the center of the screen.
   - *<Translate ios="true" ids="position_on_map_bottom"/>* - *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
@@ -214,7 +212,7 @@ In this section you can set parameters of units & formats for chosen application
 
 ### Other
 
-Additional settings for profile (like external devices and etc.)
+Additional settings for profile.You can switch buttons and input devices for OsmAnd, enable or disable animation for navigation mode, use or not the fullscreen mode, magnetic sensor, and Kalman filter. Not everything is available for iOS.    
 
 <Tabs groupId="operating-systems">
 
@@ -222,17 +220,15 @@ Additional settings for profile (like external devices and etc.)
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_other"/>*
 
-You can enable/disable buttons and input devices for OsmAnd, on or off animations for navigation mode, use or not fullscreen mode, magnetic sensor, Kalman filter.
-
 ![Profiles General Settings Other Android](@site/static/img/personal/profiles/profile_gs_other_android.png)
 
 - *<Translate android="true" ids="use_volume_buttons_as_zoom"/>* - allows to use or not volume buttons of a device as [zoom](../map/interact-with-map.md#my-location--zoom).
 - *[<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings)* - allows to use or not [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
 - *[<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings)* - allows to use or not [Magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
-- *<Translate android="true" ids="tap_on_map_to_hide_interface"/>* - use or not fullscreen mode of OsmAnd app on the device.
+- *<Translate android="true" ids="tap_on_map_to_hide_interface"/>* - tapping an empty space on the map hides control buttons and widgets.
 - *[<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#disable-all-animations)* - allows to switch on/off animation for navigation mode.
 - *<Translate android="true" ids="animate_my_location"/>* - <Translate android="true" ids="animate_my_location_desc"/> Note that the animation takes about 1 second, which creates a slight delay for the "my location" position to display on the map relative to your location.  
-- *[<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-device-buttons)* - allows adding external input devices for control OsmAnd app by buttons of these devices. External input devices: <Translate android="true" ids="sett_wunderlinq_ext_input"/>, <Translate android="true" ids="sett_generic_ext_input"/>, <Translate android="true" ids="sett_parrot_ext_input"/>.
+- *[<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-device-buttons)* - allow you to add other devices, such as <Translate ios="true" ids="sett_wunderlinq_ext_input"/>, <Translate ios="true" ids="sett_generic_ext_input"/>, or <Translate android="true" ids="sett_parrot_ext_input"/>, to control the OsmAnd program using the existing buttons.  
 
 </TabItem>
 
@@ -240,9 +236,9 @@ You can enable/disable buttons and input devices for OsmAnd, on or off animation
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_others"/>*
 
-You can enable/disable buttons and input devices for OsmAnd.
+![Profiles General Settings Other Android](@site/static/img/personal/profiles/profile_gs_other_android.png)  
 
-- *[<Translate ios="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-device-buttons)* - allows adding external input devices for control OsmAnd app by buttons of these devices. External input devices: <Translate ios="true" ids="sett_wunderlinq_ext_input"/>, <Translate ios="true" ids="sett_generic_ext_input"/>.
+- *[<Translate ios="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-device-buttons)* - allow you to add other devices, such as <Translate ios="true" ids="sett_wunderlinq_ext_input"/> or <Translate ios="true" ids="sett_generic_ext_input"/>, to control the OsmAnd program using the existing buttons.  
 
 </TabItem>
 
