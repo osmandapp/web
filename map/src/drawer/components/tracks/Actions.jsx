@@ -16,8 +16,8 @@ function byAlpha(files, reverse) {
 
 function byTime(files, reverse) {
     const sortedCopy = [...files].sort((a, b) => {
-        const A = getGpxTime(a);
-        const B = getGpxTime(b);
+        const A = getGpxTime(a, reverse);
+        const B = getGpxTime(b, reverse);
         if (A === B) {
             return az(a.name, b.name);
         }

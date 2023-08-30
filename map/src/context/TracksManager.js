@@ -1107,19 +1107,27 @@ function evaluateMonthNames() {
     return monthNames;
 }
 
-export const getGpxTime = (f) => {
-    const existing =
-        f?.details?.analysis?.startTime || // cloud track
-        f?.analysis?.startTime || // local track
-        f?.details?.metadata?.time || // gpx
-        f?.metaData?.ext?.time || // gpx
-        f?.clienttimems || // upload
-        0;
+export const getGpxTime = (f, reverse = false) => {
+    const raw = [];
+    // fill in raw timestamps (unixtime * 1000) (incl. undefined)
+    raw.push(f?.details?.analysis?.startTime); // cloud track
+    raw.push(f?.analysis?.startTime); // local track
+    raw.push(f?.details?.metadata?.time); // gpx
+    raw.push(f?.metaData?.ext?.time); // gpx
+    raw.push(f?.clienttimems); // uploaded
+    // raw.push(f?.updatetimems); // skip
 
-    if (existing > 0) {
-        return existing;
+    // validate raw to avoid using illegal values
+    const minAllowed = new Date(2002, 1, 1).getTime(); // GPX was initiated
+    const maxAllowed = Date.now() + 365 * 86400 * 1000; // now plus add 1 year
+    const valid = raw.filter((t) => t > 0 && t > minAllowed && t < maxAllowed);
+
+    if (valid.length > 0) {
+        // use MAX for reversed sorting and MIN for direct
+        return reverse ? Math.max(...valid) : Math.min(...valid);
     }
 
+    // parse by filename
     try {
         const date = new Date();
 
