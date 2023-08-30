@@ -531,6 +531,9 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
                 name: type === FavoritesManager.FAVORITE_FILE_TYPE ? currentFolder : currentFolder + fileName + '.gpx',
             };
 
+            // close possibly loaded Cloud track (clean up layers)
+            ctx.mutateGpxFiles((o) => o[params.name] && (o[params.name].url = null));
+
             const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data, { params });
 
             if (res && res?.data?.status === 'ok') {
