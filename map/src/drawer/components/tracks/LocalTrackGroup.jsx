@@ -6,9 +6,10 @@ import Actions from './Actions';
 import LocalTrackItem from './LocalTrackItem';
 import { styled } from '@mui/material/styles';
 import drawerStyles from '../../styles/DrawerStyles';
-import TracksManager from '../../../context/TracksManager';
+import TracksManager, { clearAllLocalTracks } from '../../../context/TracksManager';
 import PopperMenu from './PopperMenu';
 import _ from 'lodash';
+import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 
 export default function LocalTrackGroup() {
     const styles = drawerStyles();
@@ -28,12 +29,11 @@ export default function LocalTrackGroup() {
     };
 
     function clearLocalTracks() {
-        let selectedLocalFile = ctx.localTracks.find((t) => t.name === ctx.selectedGpxFile.name);
-        if (selectedLocalFile) {
-            ctx.setSelectedGpxFile({});
-        }
-        ctx.setLocalTracks([]);
-        localStorage.clear();
+        confirm({
+            ctx,
+            text: 'Remove all Local tracks?',
+            callback: () => clearAllLocalTracks(ctx),
+        });
     }
 
     const fileSelected = () => async (e) => {
@@ -116,17 +116,17 @@ export default function LocalTrackGroup() {
                 </Box>
                 {localGpxOpen ? <ExpandLess /> : <ExpandMore />}
             </MenuItem>
-            <Collapse in={localGpxOpen} timeout="auto" unmountOnExit>
+            <Collapse in={localGpxOpen} timeout="auto">
                 <div style={{ maxHeight: '41vh', overflow: 'auto' }}>
                     <Actions files={ctx.localTracks} setSortFiles={setSortFiles} />
                     {!_.isEmpty(sortFiles) &&
-                        sortFiles.map((track, index) => {
-                            return <LocalTrackItem key={'sortedtrack-' + index} track={track} />;
+                        sortFiles.map((track) => {
+                            return <LocalTrackItem key={'sortedtrack-' + track.name} track={track} />;
                         })}
                     {_.isEmpty(sortFiles) &&
                         ctx.localTracks.length > 0 &&
-                        ctx.localTracks.map((track, index) => {
-                            return <LocalTrackItem key={'localtrack-' + index} track={track} />;
+                        ctx.localTracks.map((track) => {
+                            return <LocalTrackItem key={'localtrack-' + track.name} track={track} />;
                         })}
                 </div>
                 <MenuItem disableRipple={true}>

@@ -546,6 +546,20 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
                     if (resJson && resJson.uniqueFiles) {
                         ctx.setListFiles(resJson);
                     }
+                } else {
+                    // refresh updatetimems locally to resort track list
+                    // real data will be refreshed after list-files reloaded
+                    ctx.setTracksGroups((o) => {
+                        o.forEach((g) => {
+                            g.files.forEach((f) => {
+                                if (f.name === params.name) {
+                                    f.updatetimems = Date.now();
+                                }
+                            });
+                            g.files = [...g.files]; // useMemo deep dep (group.files) in CloudTrackGroup
+                        });
+                        return [...o];
+                    });
                 }
 
                 return true;
@@ -627,6 +641,16 @@ function deleteLocalTrack(ctx) {
     } else {
         // console.debug('deleteLocalTrack unable to find track');
     }
+}
+
+export function clearAllLocalTracks(ctx) {
+    if (ctx.localTracks.find((t) => t.name === ctx.selectedGpxFile.name)) {
+        ctx.setSelectedGpxFile({});
+    }
+    ctx.setLocalTracks([]);
+    localStorage.removeItem(DATA_SIZE_KEY);
+    localStorage.removeItem(TRACK_VISIBLE_FLAG);
+    deleteLocalTracks(); // delete from localStorage
 }
 
 function formatRouteMode({ profile = 'car', params }) {
@@ -854,7 +878,12 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         analysis: ctx.selectedGpxFile.analysis,
     };
 
+    // time vs better cache
+    let saveStartTime = null;
+    let saveEndTime = null;
     if (postData.analysis) {
+        saveStartTime = postData.analysis.startTime;
+        saveEndTime = postData.analysis.endTime;
         // zero every-time-unique variables for better caching
         postData.analysis.startTime = postData.analysis.endTime = 0;
     }
@@ -873,6 +902,16 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
         const data = FavoritesManager.prepareTrackData(_.cloneDeep(resp.data));
 
         const newGpxFile = { ...ctx.selectedGpxFile }; // don't modify state
+
+        // restore previously saved time
+        if (data.data && data.data.analysis) {
+            if (data.data.analysis.startTime === 0 && saveStartTime > 0) {
+                data.data.analysis.startTime = saveStartTime;
+            }
+            if (data.data.analysis.endTime === 0 && saveEndTime > 0) {
+                data.data.analysis.endTime = saveEndTime;
+            }
+        }
 
         Object.keys(data.data).forEach((t) => {
             newGpxFile[`${t}`] = data.data[t];
@@ -1063,6 +1102,84 @@ function createPointMarkerOnMap(ctxTrack, map) {
         }
     ).addTo(map);
 }
+
+let monthNames = {};
+
+function evaluateMonthNames() {
+    if (Object.keys(monthNames).length > 0) {
+        return monthNames;
+    }
+    for (var i = 0; i < 12; i++) {
+        var objDate = new Date();
+        objDate.setDate(1);
+        objDate.setMonth(i);
+        monthNames[objDate.toLocaleString('en-us', { month: 'short' })] = i + 1;
+        monthNames[
+            objDate.toLocaleString(window.navigator.userLanguage || window.navigator.language, { month: 'short' })
+        ] = i + 1;
+    }
+    return monthNames;
+}
+
+export const getGpxTime = (f, reverse = false) => {
+    const raw = [];
+    // fill in raw timestamps (unixtime * 1000), including undefined values
+    raw.push(f?.details?.analysis?.startTime); // cloud - stored analysis
+    raw.push(f?.analysis?.startTime); // local track - fresh analysis
+    raw.push(f?.details?.metadata?.time); // gpx - meta (cloud track)
+    raw.push(f?.metaData?.ext?.time); // gpx - meta (local track)
+    raw.push(f?.clienttimems); // uploaded (cloud timestamp?)
+    raw.push(f?.updatetimems); // updated (cloud timestamp?)
+
+    // validate raw to avoid using illegal values
+    const minAllowed = new Date(2002, 1, 1).getTime(); // GPX was initiated
+    const maxAllowed = Date.now() + 365 * 86400 * 1000; // now plus add 1 year
+    const valid = raw.filter((t) => t > 0 && t > minAllowed && t < maxAllowed);
+
+    if (valid.length > 0) {
+        // use MAX for reversed sorting and MIN for direct
+        return reverse ? Math.max(...valid) : Math.min(...valid);
+    }
+
+    // parse by filename
+    try {
+        const date = new Date();
+
+        const yyyymmdd =
+            f.name.match(/(20\d\d)-(\d\d)-(\d\d)/) ?? // 2023-08-29
+            f.name.match(/(20\d\d)(\d\d)(\d\d)/); // 2023 08 29
+        if (yyyymmdd) {
+            date.setFullYear(parseInt(yyyymmdd[1]));
+            date.setMonth(parseInt(yyyymmdd[2]) - 1);
+            date.setDate(parseInt(yyyymmdd[3]));
+            date.setHours(0, 0, 0);
+            return date.getTime();
+        }
+
+        const monthNames = evaluateMonthNames();
+
+        const ddMMMyyyy = f.name.match(/(\d\d) (...) (20\d\d)/); // 28 Aug 2023
+        if (ddMMMyyyy && monthNames[ddMMMyyyy[2]]) {
+            date.setFullYear(parseInt(ddMMMyyyy[3]));
+            date.setMonth(monthNames[ddMMMyyyy[2]] - 1);
+            date.setDate(parseInt(ddMMMyyyy[1]));
+            date.setHours(0, 0, 0);
+            return date.getTime();
+        }
+
+        const MMMddyyyy = f.name.match(/(...) (\d\d) (20\d\d)/); // Aug 28 2023
+        if (MMMddyyyy && monthNames[MMMddyyyy[1]]) {
+            date.setFullYear(parseInt(MMMddyyyy[3]));
+            date.setMonth(monthNames[MMMddyyyy[1]] - 1);
+            date.setDate(parseInt(MMMddyyyy[2]));
+            date.setHours(0, 0, 0);
+            return date.getTime();
+        }
+    } catch (e) {
+        console.error('getGpxTime', e);
+    }
+    return 0;
+};
 
 const TracksManager = {
     loadTracks,
