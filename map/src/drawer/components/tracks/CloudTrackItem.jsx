@@ -110,7 +110,7 @@ export default function CloudTrackItem({ file, customIcon = null }) {
                 </Tooltip>
                 {loadingTrack ? <LinearProgress /> : <></>}
                 {error !== '' && (
-                    <Alert onClose={() => setError(false)} severity="warning">
+                    <Alert onClose={() => setError('')} severity="warning">
                         {error}
                     </Alert>
                 )}
