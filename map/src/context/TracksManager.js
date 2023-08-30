@@ -729,6 +729,7 @@ export function eligibleToApplySrtm({ track }) {
     function detectNoElevation(track) {
         function checkPoints(points) {
             let nonZeroPoints = 0;
+            let checkedPoints = 0;
             if (points && points.length >= 2) {
                 for (let p = 0; p < points.length; p++) {
                     const geometry = points[p].geometry;
@@ -740,6 +741,7 @@ export function eligibleToApplySrtm({ track }) {
                             if (isNonZeroEle(geometry[g].ele)) {
                                 nonZeroPoints++; // count non-zero elevation (gpx bug)
                             }
+                            checkedPoints++;
                         }
                     } else {
                         // check points if empty geo
@@ -749,10 +751,11 @@ export function eligibleToApplySrtm({ track }) {
                         if (isNonZeroEle(points[p].ele)) {
                             nonZeroPoints++;
                         }
+                        checkedPoints++;
                     }
                 }
             }
-            return nonZeroPoints === 0 ? true : false; // fix all-zero-elevation gpx problem
+            return checkedPoints > 0 && nonZeroPoints === 0 ? true : false; // fix all-zero-elevation gpx problem
         }
 
         if (track.points) {
