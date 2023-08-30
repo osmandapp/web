@@ -891,10 +891,10 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
 
         // restore previously saved time
         if (data.data && data.data.analysis) {
-            if (saveStartTime) {
+            if (data.data.analysis.startTime === 0 && saveStartTime > 0) {
                 data.data.analysis.startTime = saveStartTime;
             }
-            if (saveEndTime) {
+            if (data.data.analysis.endTime === 0 && saveEndTime > 0) {
                 data.data.analysis.endTime = saveEndTime;
             }
         }
