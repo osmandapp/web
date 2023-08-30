@@ -546,6 +546,20 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
                     if (resJson && resJson.uniqueFiles) {
                         ctx.setListFiles(resJson);
                     }
+                } else {
+                    // refresh updatetimems locally to resort track list
+                    // real data will be refreshed after list-files reloaded
+                    ctx.setTracksGroups((o) => {
+                        o.forEach((g) => {
+                            g.files.forEach((f) => {
+                                if (f.name === params.name) {
+                                    f.updatetimems = Date.now();
+                                }
+                            });
+                            g.files = [...g.files]; // useMemo deep dep (group.files) in CloudTrackGroup
+                        });
+                        return [...o];
+                    });
                 }
 
                 return true;
