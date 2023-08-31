@@ -31,7 +31,7 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
         if (ctx.loginUser) {
             return true;
         } else {
-            if (ctx.loginUser !== 'noCheck') {
+            if (ctx.loginUser !== 'INIT') {
                 ctx.setWantDeleteAcc(true);
                 navigate('/map/loginForm' + window.location.search + window.location.hash);
             }
@@ -53,7 +53,7 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
 
     return (
         ctx.loginUser &&
-        ctx.loginUser !== 'noCheck' && (
+        ctx.loginUser !== 'INIT' && (
             <Dialog open={true} onClose={close}>
                 <Grid container spacing={2}>
                     <Grid item xs={11} sx={{ mb: -3 }}>

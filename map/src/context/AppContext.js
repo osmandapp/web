@@ -212,7 +212,7 @@ export const AppContextProvider = (props) => {
     // cookie to store email logged in
     const [userEmail, setUserEmail] = useCookie('email', '');
     // server state of login
-    const [loginUser, setLoginUser] = useState('noCheck');
+    const [loginUser, setLoginUser] = useState('INIT');
     const [wantDeleteAcc, setWantDeleteAcc] = useState(false);
     const [listFiles, setListFiles] = useState({});
     const [gpxFiles, mutateGpxFiles, setGpxFiles] = useMutator({});
@@ -416,7 +416,7 @@ export const AppContextProvider = (props) => {
     }, [loginUser]);
 
     useEffect(() => {
-        if (loginUser !== 'noCheck') {
+        if (loginUser !== 'INIT') {
             loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, gpxFiles, setGpxFiles, setFavorites);
         }
     }, [loginUser]);
