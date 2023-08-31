@@ -294,6 +294,7 @@ export default function LoginDialog() {
                         }
                         setUserEmail(e.target.value);
                     }}
+                    onKeyPress={(e) => e.key === 'Enter' && handleLogin()}
                     id="username"
                     label="Email Address"
                     type="email"
@@ -310,6 +311,7 @@ export default function LoginDialog() {
                     <TextField
                         margin="dense"
                         onChange={(e) => setPwd(e.target.value)}
+                        onKeyPress={(e) => e.key === 'Enter' && handleLogin()}
                         id="pwd"
                         label={state === 'register-verify' ? 'New Password' : 'Password'}
                         type="password"
