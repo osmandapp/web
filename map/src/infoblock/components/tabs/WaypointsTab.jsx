@@ -125,7 +125,7 @@ export default function WaypointsTab() {
                                 : point.layer.options?.address?.substring(0, getLength(point))}
                             {point.layer.options?.address?.length > getLength(point) && (
                                 <ListItemIcon onClick={() => setShowMore(!showMore)}>
-                                    {showMore ? '...less' : '...more'}
+                                    {showMore ? ' ...less' : ' ...more'}
                                 </ListItemIcon>
                             )}
                         </Typography>

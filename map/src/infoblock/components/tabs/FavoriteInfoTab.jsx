@@ -132,7 +132,7 @@ const FavoriteInfoTab = () => {
                             {descriptionOpen ? favorite.desc : favorite.desc.substring(0, 140)}
                             {favorite.desc.length > 70 && (
                                 <ListItemIcon onClick={toggleDescriptionOpen}>
-                                    {descriptionOpen ? '...less' : '...more'}
+                                    {descriptionOpen ? ' ...less' : ' ...more'}
                                 </ListItemIcon>
                             )}
                         </Typography>

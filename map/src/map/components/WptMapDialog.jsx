@@ -135,7 +135,7 @@ export default function WptMapDialog() {
                                         {descriptionOpen ? wpt.desc : wpt.desc.substring(0, 150)}
                                         {wpt.desc.length > 150 && (
                                             <ListItemIcon onClick={toggleDescriptionOpen}>
-                                                {descriptionOpen ? '...less' : '...more'}
+                                                {descriptionOpen ? ' ...less' : ' ...more'}
                                             </ListItemIcon>
                                         )}
                                     </Typography>
