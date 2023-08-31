@@ -747,14 +747,17 @@ export function eligibleToApplySrtm({ track }) {
                             checkedPoints++;
                         }
                     } else {
-                        // check points if empty geo
-                        if (isEmptyEle(points[p].ele)) {
-                            return true;
+                        // is geometry empty or undefined (p>0)
+                        // is geometry strictly undefined (p==0)
+                        if (geometry === undefined || p > 0) {
+                            if (isEmptyEle(points[p].ele)) {
+                                return true;
+                            }
+                            if (isNonZeroEle(points[p].ele)) {
+                                nonZeroPoints++;
+                            }
+                            checkedPoints++;
                         }
-                        if (isNonZeroEle(points[p].ele)) {
-                            nonZeroPoints++;
-                        }
-                        checkedPoints++;
                     }
                 }
             }
