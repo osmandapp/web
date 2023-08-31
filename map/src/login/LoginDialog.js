@@ -72,7 +72,9 @@ export default function LoginDialog() {
         } else if (state === 'register-verify') {
             AccountManager.userActivate(ctx, userEmail, pwd, code, setEmailError, handleClose).then();
         } else {
-            AccountManager.userLogin(ctx, userEmail, pwd, setEmailError, handleClose).then();
+            if (userEmail) {
+                AccountManager.userLogin(ctx, userEmail, pwd, setEmailError, handleClose).then();
+            }
         }
     };
 
