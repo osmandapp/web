@@ -12,7 +12,6 @@ const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     const [mounted, setMounted] = useState(false);
 
     if (tabId === selectedTabId || mounted) {
-        console.log('mounted', tabId);
         mounted || setMounted(true);
         const hidden = tabId !== selectedTabId;
         return (
