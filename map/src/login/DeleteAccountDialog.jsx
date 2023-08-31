@@ -21,7 +21,7 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
 
     useEffect(() => {
         if (accountDeleted) {
-            ctx.setUserEmail('');
+            ctx.setEmailCookie('');
             ctx.setLoginUser(null);
             navigate('/map/loginForm' + window.location.search + window.location.hash);
         }

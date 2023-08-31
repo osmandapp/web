@@ -28,7 +28,7 @@ export default function LoginDialog() {
 
     const classes = useStyles();
 
-    const [userEmail, setUserEmail] = useState(ctx.userEmail);
+    const [userEmail, setUserEmail] = useState('');
     const [pwd, setPwd] = useState();
     const [code, setCode] = useState();
     const [emailError, setEmailError] = useState(ctx.wantDeleteAcc ? 'Please log in to delete your account.' : '');
@@ -89,8 +89,9 @@ export default function LoginDialog() {
         if (ctx.loginUser && ctx.loginUser !== '') {
             getAccountInfo().then();
         } else {
-            if (ctx.userEmail) {
-                setUserEmail(ctx.userEmail);
+            console.log('email-set', ctx.emailCookie);
+            if (ctx.emailCookie) {
+                setUserEmail(ctx.emailCookie);
             }
         }
     }, [ctx.loginUser]);
@@ -281,6 +282,7 @@ export default function LoginDialog() {
                         if (emailError !== '') {
                             setEmailError('');
                         }
+                        console.log('set', e.target.value);
                         setUserEmail(e.target.value);
                     }}
                     id="username"
@@ -290,7 +292,7 @@ export default function LoginDialog() {
                     variant="standard"
                     helperText={emailError ? emailError : ''}
                     error={emailError.length > 0}
-                    value={userEmail ? userEmail : ctx.userEmail}
+                    value={userEmail}
                 ></TextField>
 
                 {state === 'register' ? (
