@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Map Widgets
 
-Widgets are User Interface elements that are displayed over the map screen & not attached to the map location. They provide additional information about the current route, speed, altitude, recorded track, etc. & also allow to quickly interact with the application.
+Widgets are user interface elements that are displayed on the map screen and are not tied to the map location. They provide additional information about your current route, speed, altitude, recorded track and other data and allow you to quickly interact with the application.
 
 ### [Configure Screen](./configure-screen.md)
 
@@ -24,12 +24,12 @@ Navigational widgets are enabled during navigation to display information such a
 
 ### [Radius-ruler and Ruler](./radius-ruler.md)
 
-All ruler tools help to understand scale of the map and measure distances. Radius-ruler tool helps to determine the radius around the selected point on the map via displaying distance-circles on the map. Distance by tap tool helps to calculate the distance between selected points or to find the distance to a specific point.
+All ruler tools help you understand the scale of the map and measure distances. The Radius Ruler tool lets you define a radius around a selected point on the map, displaying distance circles on the map. The Touch Distance tool lets you calculate the distance between selected points or find the distance to a specific point.
 
 ### [Marker widgets](./markers.md)
 
-Map markers are selected points marked as flags on the map. They provide useful information for direct-point-navigation on the map screen.
+Map markers are selected points marked on the map as flags. They provide useful information for direct-to-point navigation on the map screen.
 
 ### [Quick Action](./quick-action.md)
 
-Quick Action Widget is a configurable quick access button on the map with selected actions accessible 'just in 2 clicks'.
+Quick Action widget is a customizable quick action button on the map, with which selected actions are available *in just two clicks*.

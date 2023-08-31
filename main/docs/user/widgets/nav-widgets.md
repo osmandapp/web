@@ -223,7 +223,7 @@ Speed limit widget shows a speed limit for a current driving road. It works in p
 | On  Click | - |
 
 
-## Next turns
+## Route maneuvers
 
 The widget shows information about your next turn with a picture of maneuver and distance to it. There are 2 variants of **next turn** widget (small and big) and **2nd next turn** which is enabled if turn within approaching distance.
 
@@ -278,6 +278,7 @@ Most of alerts are displayed and announced within 15 seconds, same as [Passing w
 |------------|------------|
 | Enable | **<Translate android="true" ids="android_button_seq"/>** *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>* |
 |  | **<Translate ios="true" ids="ios_button_seq"/>** *<Translate ios="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,screen_alerts"/>* |
+
 
 ### Alert types 
 
