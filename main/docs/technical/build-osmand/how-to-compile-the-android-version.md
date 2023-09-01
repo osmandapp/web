@@ -77,7 +77,7 @@ Opengl library is needed for targets like assembleNightlyFree**Opengl**FatDebug 
     - Android SDK - 29.
     - Android NDK - 23.
     - CMake > 3.6 (cmake -version).
-    - SWIG - 3.0.*
+    - SWIG - 4.1.1 (or compatible).
     - Local c++ compiler (preferrable clang).
     - Bash tools: wget, curl, python ...
 3. **Gradle** (command line):
