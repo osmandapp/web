@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState, useMemo } from 'react';
 import AppContext from '../../../context/AppContext';
 import {
     Alert,
@@ -21,47 +21,16 @@ import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 // import { measure } from '../../../util/Utils';
 import _ from 'lodash';
 
-export default function WaypointsTab() {
-    const ctx = useContext(AppContext);
-
+// distinct component
+const WaypointRow = ({ point, index, ctx }) => {
+    const NAME_SIZE = 30;
     const stylesWpt = wptTabStyle();
-    const stylesMenu = contextMenuStyles();
 
     const [showMore, setShowMore] = useState(false);
-    const [openWptAlert, setOpenWptAlert] = useState(true);
-    const NAME_SIZE = 30;
-
-    function getLayers() {
-        if (ctx.selectedGpxFile?.layers && !_.isEmpty(ctx.selectedGpxFile.layers)) {
-            return ctx.selectedGpxFile.layers.getLayers();
-        }
-        if (ctx.selectedGpxFile?.gpx) {
-            return ctx.selectedGpxFile.gpx.getLayers();
-        }
-        return [];
-    }
-
-    function getPoints() {
-        const wpts = [];
-        const layers = getLayers();
-        const wptsMap = Object.fromEntries(ctx.selectedGpxFile.wpts.map((p) => [p.lat + ',' + p.lon, p]));
-
-        layers.forEach((layer) => {
-            if (layer instanceof L.Marker) {
-                const coord = layer.getLatLng();
-                const key = coord.lat + ',' + coord.lng;
-                const wpt = wptsMap[key];
-                wpt && wpts.push({ wpt, layer });
-            }
-        });
-
-        return wpts;
-    }
 
     function showPoint(point) {
         ctx.setSelectedWpt(point);
-        ctx.selectedGpxFile.showPoint = point;
-        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+        ctx.setSelectedGpxFile((o) => ({ ...o, showPoint: point }));
     }
 
     function getLength(point) {
@@ -79,11 +48,9 @@ export default function WaypointsTab() {
         }
     }
 
-    // TODO
-    // function addWaypoint() {
-    //     ctx.selectedGpxFile.addWpt = true;
-    //     ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
-    // }
+    function hasInfo(wpt) {
+        return wpt.layer.options?.desc !== undefined || wpt.layer.options?.address !== undefined || wpt.wpt.category;
+    }
 
     function showWithInfo(point) {
         return (
@@ -155,25 +122,8 @@ export default function WaypointsTab() {
         );
     }
 
-    function hasInfo(wpt) {
-        return wpt.layer.options?.desc !== undefined || wpt.layer.options?.address !== undefined || wpt.wpt.category;
-    }
-
-    function deleteAllWpts() {
-        confirm({
-            ctx,
-            text: 'Delete all waypoints?',
-            callback: () => {
-                ctx.selectedGpxFile.wpts = [];
-                ctx.selectedGpxFile.updateLayers = true;
-                TracksManager.updateState(ctx);
-                ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-            },
-        });
-    }
-
-    const WaypointRow = ({ point, index }) => {
-        return (
+    const row = useMemo(
+        () => (
             <MenuItem key={'marker' + index} divider onClick={() => showPoint(point)}>
                 {hasInfo(point) ? showWithInfo(point) : showOnlyName(point)}
                 <ListItemAvatar>
@@ -190,8 +140,95 @@ export default function WaypointsTab() {
                     )}
                 </ListItemAvatar>
             </MenuItem>
-        );
-    };
+        ),
+        [
+            index,
+            point.wpt?.lat,
+            point.wpt?.lon,
+            point.wpt?.category,
+            point.layer?.options?.desc,
+            point.layer?.options?.title,
+            point.layer?.options?.address,
+            point.layer?.options?.icon?.options?.html,
+            ctx.currentObjectType,
+        ]
+    );
+
+    return row;
+};
+
+export default function WaypointsTab() {
+    const ctx = useContext(AppContext);
+
+    const stylesMenu = contextMenuStyles();
+
+    const [openWptAlert, setOpenWptAlert] = useState(true);
+
+    function getLayers() {
+        if (ctx.selectedGpxFile?.layers && !_.isEmpty(ctx.selectedGpxFile.layers)) {
+            return ctx.selectedGpxFile.layers.getLayers();
+        }
+        if (ctx.selectedGpxFile?.gpx) {
+            return ctx.selectedGpxFile.gpx.getLayers();
+        }
+        return [];
+    }
+
+    function getPoints() {
+        const wpts = [];
+
+        if (ctx.selectedGpxFile.wpts) {
+            const layers = getLayers();
+            const wptsMap = Object.fromEntries(ctx.selectedGpxFile.wpts.map((p) => [p.lat + ',' + p.lon, p]));
+
+            layers.forEach((layer) => {
+                if (layer instanceof L.Marker) {
+                    const coord = layer.getLatLng();
+                    const key = coord.lat + ',' + coord.lng;
+                    const wpt = wptsMap[key];
+                    wpt && wpts.push({ wpt, layer });
+                }
+            });
+        }
+
+        return wpts;
+    }
+
+    // TODO
+    // function addWaypoint() {
+    //     ctx.selectedGpxFile.addWpt = true;
+    //     ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+    // }
+
+    function deleteAllWpts() {
+        confirm({
+            ctx,
+            text: 'Delete all waypoints?',
+            callback: () => {
+                ctx.selectedGpxFile.wpts = [];
+                ctx.selectedGpxFile.updateLayers = true;
+                TracksManager.updateState(ctx);
+                ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+            },
+        });
+    }
+
+    function pointsChangedString() {
+        const dep = getPoints().map((p) => [p.wpt, p.layer.options]);
+        return dep ? JSON.stringify(dep) : null;
+    }
+
+    const waypoints = useMemo(
+        () => (
+            <Box className={stylesMenu.item} minWidth={ctx.infoBlockWidth}>
+                {ctx.selectedGpxFile.wpts &&
+                    getPoints().map((point, index) => (
+                        <WaypointRow key={'wpt' + index} point={point} index={index} ctx={ctx} />
+                    ))}
+            </Box>
+        ),
+        [pointsChangedString(), ctx.currentObjectType]
+    );
 
     return (
         <>
@@ -209,15 +246,10 @@ export default function WaypointsTab() {
                         setOpenWptAlert(false);
                     }}
                 >
-                    Use the right menu to add a waypoint...
+                    Use the context menu to add a waypoint...
                 </Alert>
             )}
-            <Box className={stylesMenu.item} minWidth={ctx.infoBlockWidth}>
-                {ctx.selectedGpxFile.wpts &&
-                    getPoints().map((point, index) => {
-                        return WaypointRow({ point: point, index: index });
-                    })}
-            </Box>
+            {waypoints}
         </>
     );
 }
