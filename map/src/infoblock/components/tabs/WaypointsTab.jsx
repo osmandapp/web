@@ -18,7 +18,7 @@ import PointManager from '../../../context/PointManager';
 import TracksManager from '../../../context/TracksManager';
 import wptTabStyle from '../../styles/WptTabStyle';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
-import { measure } from '../../../util/Utils';
+// import { measure } from '../../../util/Utils';
 import _ from 'lodash';
 
 export default function WaypointsTab() {
@@ -42,21 +42,19 @@ export default function WaypointsTab() {
     }
 
     function getPoints() {
-        let wpts = [];
-        let layers = getLayers();
+        const wpts = [];
+        const layers = getLayers();
+        const wptsMap = Object.fromEntries(ctx.selectedGpxFile.wpts.map((p) => [p.lat + ',' + p.lon, p]));
+
         layers.forEach((layer) => {
             if (layer instanceof L.Marker) {
-                let coord = layer.getLatLng();
-                ctx.selectedGpxFile.wpts.forEach((wpt) => {
-                    if (wpt.lat === coord.lat && wpt.lon === coord.lng) {
-                        wpts.push({
-                            wpt: wpt,
-                            layer: layer,
-                        });
-                    }
-                });
+                const coord = layer.getLatLng();
+                const key = coord.lat + ',' + coord.lng;
+                const wpt = wptsMap[key];
+                wpt && wpts.push({ wpt, layer });
             }
         });
+
         return wpts;
     }
 
@@ -216,7 +214,7 @@ export default function WaypointsTab() {
             )}
             <Box className={stylesMenu.item} minWidth={ctx.infoBlockWidth}>
                 {ctx.selectedGpxFile.wpts &&
-                    measure(getPoints).map((point, index) => {
+                    getPoints().map((point, index) => {
                         return WaypointRow({ point: point, index: index });
                     })}
             </Box>
