@@ -18,6 +18,7 @@ import PointManager from '../../../context/PointManager';
 import TracksManager from '../../../context/TracksManager';
 import wptTabStyle from '../../styles/WptTabStyle';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
+import { measure } from '../../../util/Utils';
 import _ from 'lodash';
 
 export default function WaypointsTab() {
@@ -215,7 +216,7 @@ export default function WaypointsTab() {
             )}
             <Box className={stylesMenu.item} minWidth={ctx.infoBlockWidth}>
                 {ctx.selectedGpxFile.wpts &&
-                    getPoints().map((point, index) => {
+                    measure(getPoints).map((point, index) => {
                         return WaypointRow({ point: point, index: index });
                     })}
             </Box>

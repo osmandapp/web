@@ -189,6 +189,19 @@ export function prepareFileName(filename) {
     );
 }
 
+export function measure(f, ms = 1000) {
+    let counter = 0;
+    let result = null;
+    const started = Date.now();
+    do {
+        counter++;
+        result = f();
+    } while (Date.now() < started + ms);
+    const delta = Date.now() - started;
+    console.log(f.name, '~', counter * (ms / delta) * (1000 / ms), 'per second');
+    return result;
+}
+
 const Utils = {
     getFileData,
     getDistance,
