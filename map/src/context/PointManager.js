@@ -13,9 +13,11 @@ const deletePoint = async (index, ctx) => {
 };
 
 function deleteWpt(ind, ctx) {
-    ctx.selectedGpxFile.wpts.splice(ind, 1);
-    ctx.selectedGpxFile.updateLayers = true;
-    ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+    ctx.setSelectedGpxFile((o) => {
+        o.wpts.splice(ind, 1);
+        o.updateLayers = true;
+        return { ...o };
+    });
 
     TracksManager.updateState(ctx);
 }
