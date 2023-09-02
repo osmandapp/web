@@ -198,7 +198,7 @@ export function measure(f, ms = 1000) {
         result = f();
     } while (Date.now() < started + ms);
     const delta = Date.now() - started;
-    console.log(f.name, '~', counter * (ms / delta) * (1000 / ms), 'per second');
+    console.debug(f.name, '~', counter * (ms / delta) * (1000 / ms), 'per second');
     return result;
 }
 
