@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const wptTabStyle = makeStyles({
     icon: {
         '& .icon': {
-            top: '22px',
+            top: '20px',
             left: '20px',
         },
         '& .background': {
@@ -15,7 +15,7 @@ const wptTabStyle = makeStyles({
     },
     iconOnlyName: {
         '& .icon': {
-            top: '16px',
+            top: '14px',
             left: '20px',
         },
         '& .background': {
