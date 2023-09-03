@@ -98,7 +98,7 @@ export default function WptMapDialog() {
                         >
                             <Close fontSize="small" />
                         </IconButton>
-                        <Typography className={styles.info} variant="subtitle1" color="inherit">
+                        <Typography className={styles.info} variant="subtitle1" color="inherit" component="span">
                             <div
                                 style={{ position: 'relative' }}
                                 className={classes.icon}

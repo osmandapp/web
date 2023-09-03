@@ -55,12 +55,10 @@ const WaypointRow = ({ point, index, ctx }) => {
     function showWithInfo(point) {
         return (
             <>
-                <ListItemIcon>
-                    <div
-                        className={stylesWpt.icon}
-                        dangerouslySetInnerHTML={{ __html: point.layer.options.icon.options.html + '' }}
-                    />
-                </ListItemIcon>
+                <ListItemIcon
+                    className={stylesWpt.icon}
+                    dangerouslySetInnerHTML={{ __html: point.layer.options.icon.options.html + '' }}
+                />
                 <ListItemText sx={{ ml: '-35px !important' }}>
                     <Typography component={'span'} variant="inherit" noWrap>
                         {getName(point)}
@@ -104,14 +102,12 @@ const WaypointRow = ({ point, index, ctx }) => {
     function showOnlyName(point) {
         return (
             <>
-                <ListItemIcon>
-                    <div
-                        className={stylesWpt.iconOnlyName}
-                        dangerouslySetInnerHTML={{ __html: point.layer.options.icon.options.html + '' }}
-                    />
-                </ListItemIcon>
+                <ListItemIcon
+                    className={stylesWpt.iconOnlyName}
+                    dangerouslySetInnerHTML={{ __html: point.layer.options.icon.options.html + '' }}
+                />
                 <ListItemText sx={{ ml: '-35px !important' }}>
-                    <Typography variant="inherit" noWrap>
+                    <Typography variant="inherit" noWrap component="span">
                         {getName(point)}
                         {point.layer.options?.title?.length > NAME_SIZE && (
                             <ListItemIcon style={{ marginRight: ' -25px' }}>{'...'}</ListItemIcon>
