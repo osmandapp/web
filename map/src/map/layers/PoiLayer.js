@@ -196,13 +196,10 @@ export default function PoiLayer() {
         );
         if (iconWpt) {
             return L.divIcon({
-                html: `
-                              <div>
-                                  ${svg}
-                                  <img alt="iconWpt" class="icon" src="/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${iconWpt}.svg">
-                                  </div>
-                              </div>
-                              `,
+                html:
+                    `<div>${svg}` +
+                    `<img alt="iconWpt" class="icon" src="/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${iconWpt}.svg">` +
+                    `</div>`,
             });
         }
     }
