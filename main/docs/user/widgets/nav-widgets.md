@@ -104,24 +104,25 @@ Bearing is the direction to a target outside your vehicle, such as a destination
 
 | | |
 |------------|------------|
-| Enable | [Menu → Configure screen → Widgets → Left / Right panel → Bearing](https://osmand.net/docs/user/widgets/nav-widgets#bearing)|
-| Format | You can change the data display format for angular units: <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> |
+| Enable | **Android:** *Menu → Configure screen → Widgets → Left / Right panel → Bearing* |
+| Format | You can change the data display format for angular units: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/>* |
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_1.png) ![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_3.png)  
-<!--![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_2.png)-->
+![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_3.png)   
+
 
 | | |
 |------------|------------|
-| Enable | <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_magnetic_bearing"/> or <Translate ios="true" ids="map_widget_bearing"/>|
-| Format | You can change the data display format for angular units: <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,angular_units"/> |  
+| Enable | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_magnetic_bearing"/> or <Translate ios="true" ids="map_widget_bearing"/>* |
+| Format | You can change the data display format for angular units: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,angular_units"/>* |  
 
 </TabItem>
 
 </Tabs>  
+
 
 ### How it works 
 
@@ -150,7 +151,7 @@ In order to display the bearing, a **target point** must be selected. If a **des
 
 ![Destination widget](@site/static/img/widgets/destination_widget.png)  
 
-The Destination widget displays the distance remaining to the last destination point when following a calculated route.
+The widget displays the distance left to the last destination point when following a calculated route.  
 
 | | |
 |------------|------------|
@@ -160,15 +161,15 @@ The Destination widget displays the distance remaining to the last destination p
 
 ### Distance to intermediate
 
-The Distance to Intermediate Destination widget shows the distance remaining to the first intermediate point along the calculated route. After passing intermediate points, the distance will be updated to the next intermediate point. If there are no intermediate points, the widget is not displayed.
-
 ![Intermediate destination widget](@site/static/img/widgets/intermediate_destination_widget.png)
+
+The widget shows the distance to the first intermediate point along the calculated route. After passing intermediate points, the space will be updated to the next intermediate point. If there are no intermediate points, the widget is not displayed.  
 
 | | |
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/>* *→ Left / Right panel →* *<Translate android="true" ids="map_widget_distance_to_intermediate"/>* |
 |  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Left / Right panel →* <Translate ios="true" ids="map_widget_distance_to_intermediate"/> |
-| By tapping | 1 intermediate point - move the map to the intermediate point, <br /> 2 or more intermediate points - opens Destinations list menu. |
+| By tapping | **One intermediate point** - move the map to the intermediate point. <br /> **Two or more intermediate points** - opens Destinations list menu. |
 
 ### Time to intermediate
 
@@ -176,54 +177,65 @@ The Distance to Intermediate Destination widget shows the distance remaining to 
 
 <TabItem value="android" label="Android">  
 
-The widget shows *<Translate android="true" ids="access_arrival_time"/>* or *<Translate android="true" ids="map_widget_time"/>* to complete navigation. Time is constantly updated during navigation and it is equal to the route time from the current location. For example, if you stop moving, "Time to go" will stay constant and "Arrival time" = "Time to go" + "Current time".
-
-![Arrival time Time to go widget](@site/static/img/widgets/arrival_time_widget_android.png) ![Arrival time Time to go widget](@site/static/img/widgets/time_to_go_widget_android.png)
-
-| | |
-|------------|------------|
-| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,access_arrival_time"/> or <Translate android="true" ids="map_widget_time"/> |
-| By tapping | Changes between "Arrival time" to "Time to go" and vice versa. |  
+![Arrival time Time to go widget](@site/static/img/widgets/arrival_time_widget_android.png)  ![Arrival time Time to go widget](@site/static/img/widgets/time_to_go_widget_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-The widget shows *<Translate android="true" ids="access_arrival_time"/>* or *<Translate android="true" ids="map_widget_time"/>* to complete navigation. Time is constantly updated during navigation and it is equal to the route time from the current location. For example, if you stop moving, "Time to go" will stay constant and "Arrival time" = "Time to go" + "Current time".
-
-![Arrival time Time to go widget](@site/static/img/widgets/arrival_time_widget_ios.png) ![Arrival time Time to go widget](@site/static/img/widgets/time_to_go_widget_ios.png)
-
-| | |
-|------------|------------|
-| Enable |<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,access_arrival_time"/> or <Translate ios="true" ids="map_widget_time"/>|
-| By tapping | Changes between "Arrival time" to "Time to go" and vice versa. |  
+![Arrival time Time to go widget](@site/static/img/widgets/arrival_time_widget_ios.png)  ![Arrival time Time to go widget](@site/static/img/widgets/time_to_go_widget_ios.png)  
 
 </TabItem>
 
 </Tabs>  
 
-### Time to destination
-
-Intermediate arrival time or Intermediate time widget shows <Translate android="true" ids="access_intermediate_arrival_time"/> or <Translate android="true" ids="map_widget_intermediate_time"/> of navigation to the first intermediate point. Once intermediate points is passed, the time will be updated to the next intermediate point. If there is no intermediate points, widget is not displayed.
-
-![Intermediate Arrival time Time widget](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
+The widget shows the *Arrival time* or *Time to go* to the first intermediate point. During navigation, the time is constantly updated, and as soon as an intermediate point is passed, the time will be updated to the next one.  For example, if you stop navigation, the *Time to go* will remain unchanged and the *Arrival Time* will be equal to the *Time to go* plus the *Current Time*.
 
 | | |
 |------------|------------|
-| Enable |  <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,access_intermediate_arrival_time"/> or <Translate android="true" ids="map_widget_intermediate_time"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,access_intermediate_arrival_time"/> or <Translate ios="true" ids="map_widget_intermediate_time"/>|
-| On  Click | Changes between "Intermediate arrival time" to "Intermediate time" and vice versa. |  
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
+| By tapping | Changes between *Arrival time* to *Time to go* and the reverse. |  
+
+
+### Time to destination
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Intermediate Arrival time Time widget](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Intermediate Arrival time Time widget](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
+
+</TabItem>
+
+</Tabs> 
+
+The widget shows the *Arrival time* or *Time to go* to the last destination point. The time is constantly updated during navigation and is equal to the route time from your current location.  
+
+| | |
+|------------|------------|
+| Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_time_to_destination"/>* |
+|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_time_to_destination"/>* |
+| By tapping | Changes between *Arrival time* to *Time to go* and the reverse. |  
 
 
 ## Speed limit
 
-Speed limit widget shows a speed limit for a current driving road. It works in passive and active navigation mode. The data is taken from [OpenStreetMap project](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
+Widget displays the speed limit on the current road you are traveling on. It works in passive and active navigation mode. Data is taken from [OpenStreetMap project](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
 
-![Speed limit widget](@site/static/img/widgets/speed_limit_widget.png)
+![Speed limit widget](@site/static/img/widgets/speed_limit_widget_2.png)
 
 | |
 |------------|------------|
-| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,map_widget_max_speed"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_max_speed"/> or <Translate ios="true" ids="map_widget_intermediate_time"/>|
-| On  Click | - |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_max_speed"/>* |
+|  |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_max_speed"/> or <Translate ios="true" ids="map_widget_intermediate_time"/>* |
+| By tapping | No changes |
 
 
 ## Route maneuvers

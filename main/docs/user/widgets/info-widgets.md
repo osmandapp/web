@@ -52,13 +52,13 @@ Altitude can not be displayed correctly on some Android devices. To resolve this
 
 | | |
 |------------|------------|
-| Enable | **Android** *Menu → Configure screen → Left / Right panel → Altitude* |
-|  | **iOS** *Menu → Configure screen → Right panel → Altitude widget* |
+| Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_altitude_current_location"/>* |
+|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_altitude_current_location"/>* |
 | By tapping | No changes |
 | Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* |  
 
 
-### * Elevation: map center
+### Elevation: map center
 
 <Tabs groupId="operating-systems">
 
@@ -74,73 +74,71 @@ Altitude can not be displayed correctly on some Android devices. To resolve this
 
 </TabItem>
 
-</Tabs>  
+</Tabs>   
 
-To display *Elevation: map center* widget:  
-
-- Enable [Development plugin](../plugins/development.md).
-- Turn on *Terrain / Heightmap* options in the [Development plugin settings](../plugins/development.md#terrain--heightmap).
-- For iOS the widget works only if the **Use 3D relief heightmaps option** is enabled in the OsmAnd Development plugin.
-- Download hightmaps of the required area to display information in the Elevation widget.
+You can use the widget to find out the elevation of the current map center above sea level.
+[Download](../start-with/download-maps.md) height maps of the required area to display information in the Elevation: map center widget.  
 
 | | |
 |------------|------------|
-| Enable | **Android:** *Menu → Configure screen → Left / Right panel → Altitude* |
-|  | **iOS:** *Menu → Configure screen → Right panel → Elevation: map center* | 
+| Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_altitude_map_center"/>* |
+|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_altitude_map_center"/>* | 
 | By tapping | No changes |
 | Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* | 
 
 
 ## Current time
 
-This widget shows current time from your device.
+![Current time widget](@site/static/img/widgets/current_time_widget.png)    
 
-![Current time widget](@site/static/img/widgets/current_time_widget.png)  
+widget displays the current time taken from your device.  
 
 | | |
 |------------|------------|
-| Enable |  *<Translate android="true" ids="android_button_seq"/>:* <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_plain_time"/> |
-|  | *<Translate ios="true" ids="ios_button_seq"/>:*  <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_plain_time"/> |
+| Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_plain_time"/>* |
+|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_plain_time"/>* |
 | By tapping | No changes |
 | Format | Time & Format is configured by device settings. |
 
 
 ## Current speed
 
-Speed widget shows your current speed detected by GPS-sensor.
+![Speed widget](@site/static/img/widgets/current_speed_widget.png)  
 
-![Speed widget](@site/static/img/widgets/speed_widget.png)
+The widget shows the current speed detected by the GPS sensor.  
 
 | | |
 |------------|------------|
-| Enable | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_speed"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_current_speed"/>* |
+|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_current_speed"/>* |
 | By tapping  | No changes |
-| Format | *<Translate android="true" ids="android_button_seq"/>:* <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,default_speed_system"/> |
-|        | *<Translate ios="true" ids="ios_button_seq"/>:*  <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,default_speed_system"/> |
+| Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,default_speed_system"/>* |
 
 
-## Average speed widget  
+## Average speed 
 
 <InfoAndroidOnly />
 
-This widget shows your average speed in the past for a selected time interval and doesn't require any other features such as recording track or navigation. And you can easily use it for validating your average speed against speed limits on highways, for recording last 5-15 min average speed riding a bicycle.  
+![Average speed widgets](@site/static/img/widgets/average_speed_widget.png)  
 
-Click on the **Settings** button of the Average Speed widget to select the time interval and the stop on/off option: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,available_widgets,map_widget_average_speed"/>*   
+This widget shows your average speed for a selected time interval and does not require any other features such as track recording or navigation. You can easily use it to check if your average speed is in line with highway speed limits, or record your average speed for the last 5-15 minutes of cycling.    
 
-**Time interval.**  
-The average speed is calculated for the set interval of time, according to your choice. Thus, you can set the interval for calculating your average speed from 15 seconds to 60 minutes. In general, the average speed is taken from recorded points by GPS: ```Average Speed = AVERAGE(GPS_LOCATION.speed)```.  
+Tap the **Settings** button of the Average Speed widget to select the time interval and the stop on/off option.   
+
+**Time interval**  
+The average speed is calculated for a given time interval according to your selection. Thus, you can set the average speed calculation interval from 15 seconds to 60 minutes. In general, the average speed is taken from the recorded GPS points: ```Average Speed = AVERAGE(GPS_LOCATION.speed)```.  
 
 
-**Take stops into account.**  
-***Off*** *setting*: If you stop for a while, zeroes will also be added to the average speed calculation, which can significantly change the overall value. ***On*** *setting*: If your average speed is less than 1 speed unit per hour, this value will not be added to the average speed calculation. This allows your average speed not to change much when you stop, for example, at a traffic light or want to take a break from cycling.  
+**Take stops into account**  
+***Off*** *setting*. A long stop will also add zeros to the average speed calculation, which can significantly change the overall value.   
+***On*** *setting*. If your average speed is less than 1 speed unit per hour, this value will not be added to the average speed calculation. This allows your average speed to not change much when you stop, for example at a traffic light or want to take a break from cycling.    
 
-![Average speed](@site/static/img/widgets/avera_speed_2.png) ![Average speed](@site/static/img/widgets/avera_speed_option.png)
+![Average speed](@site/static/img/widgets/average_speed_widget_2.png) ![Average speed](@site/static/img/widgets/average_speed_widget_3.png)  
 
-![Average speed widgets](@site/static/img/widgets/aver_widg_1.png)  
 
 | | |
 |------------|------------|
-| Enable |  *Menu → Configure screen → Left / Right panel → Average speed* |
+| Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_average_speed"/>* |
 | By tapping | No changes |   
 
 
@@ -192,19 +190,17 @@ Coordinates widgets are displayed at the top of the screen. Icons with a green b
 
 <InfoAndroidOnly /> 
 
-:::note
-You can reset the current GPS-cache via: 
-*<Translate android="true" ids="shared_string_menu,open_settings,rendering_value_browse_map_name,configure_profile,debugging_and_development,agps_info"/>*  
-:::  
+![GPS Info Android widget](@site/static/img/widgets/gps_info_widget.png)     
 
-GPS (Global Positioning System) info widget shows a number of satellites that device detects and uses at that moment. It could be used to check GPS-status in case of a bad GPS-signal.   
+The GPS (Global Positioning System) information widget shows the number of satellites that the device is currently detecting and using. You can use it to check the GPS status in case of a poor signal.  
 
-![GPS Info Android widget](@site/static/img/widgets/gps_info_widget.png)
+You can reset the current GPS cache through: 
+*<Translate android="true" ids="shared_string_menu,open_settings,rendering_value_browse_map_name,configure_profile,debugging_and_development,agps_info"/>*.  
 
 | | |
 |------------|------------|
-| Enable | **Android**: *Menu → Configure screen → Left / Right panel → GPS info* |  
-| By tapping | Opens GPS status menu with 3rd party tools for tuning onboard GPS device. |  
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_gps_info"/>* |  
+| By tapping | Opens the GPS status menu with third-party tools to configure the on-board GPS device. |  
 
 
 ## Sunset and sunrise widgets
@@ -241,8 +237,6 @@ Sunset and sunrise widgets show the time of the next sunrise or sunset for the c
 You can read a more detailed description here: **[<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md)**.  
 :::  
 
-Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#widgets). You can use widgets to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill*.    
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
@@ -257,12 +251,14 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 
 </TabItem>
 
-</Tabs>  
+</Tabs>   
+
+Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#widgets). You can use widgets to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill*.    
 
 | | |
 |------------|------------|
 | Enable | **Android**: *Menu → Configure screen → Widgets → Left / Right panel → Trip recording* |
-|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,track_recording"/>* |
+|   |  **iOS**: *Menu → Configure screen → Widgets → Left / Right panel → Trip recording* |
 | By tapping | Starts/Stop track recording or View the graph. |
 
 

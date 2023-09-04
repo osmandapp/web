@@ -57,21 +57,20 @@ Use one of the following paths to open the plugin settings:
 </Tabs>  
 
 
-### Terrain / Heightmap
+### Terrain
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-- **Heightmap** adds the ability to download [Altitude: current location](../widgets/info-widgets.md#altitude-current-location) and [Elevation: map center](../widgets/info-widgets.md#-elevation-map-center) widgets. These widgets display the elevation of the current geolocation or the elevation of the current map center.
-- **Use raster sqliteddb for hillshade and slope**
+**Use raster [SQLIte format](../../technical/osmand-file-formats/osmand-sqlite.md/) for hillshade and slope** - Ability to load old format raster maps.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
 - **Test heightmap**
-- **Use 3D relief heightmaps** adds the ability to download [Altitude: current location](../widgets/info-widgets.md#altitude-current-location) and [Elevation: map center](../widgets/info-widgets.md#-elevation-map-center) widgets. These widgets display the elevation of the current geolocation or the elevation of the current map center.
+- **Use 3D relief heightmaps** 
 - **Disable vertex hillshade in 3D**
 - **Generate slope raster maps from 3D maps**
 - **Generate hillshade raster maps from 3D maps**
@@ -197,36 +196,6 @@ The [FPS Widget](../widgets/info-widgets.md#fps-widget) shows how fast the map a
 </TabItem>
 
 </Tabs>  
-
-
-### Elevation: map center Widget  
-
-With Elevation widget you can find out the elevation above sea level of the current map center. To display elevation data:
-
-- Enable *Heightmap* or *Use 3D relief heightmapsoption* in the OsmAnd Development plugin [settings](#plugin-settings).
-- [Download](../start-with/download-maps.md) heightmaps of the required area 
-- Turn on [Elevation: map center](../widgets/info-widgets.md#-elevation-map-center) in *Menu → Configure screen*.  
-
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-*Menu → Configure screen → Left / Right panel → Developer Widgets*  
-
-![Elevation Widget 1](@site/static/img/plugins/development/dev_widgets_altitude_1.png) ![Elevation Widget 2](@site/static/img/plugins/development/dev_widgets_altitude_2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-*Menu → Configure screen → Right panel*  
-
-![Development widget iOS](@site/static/img/plugins/development/dev_widgets_ios_elevation_1.png) ![Development widget iOS 2](@site/static/img/plugins/development/dev_widgets_ios_elevation_2.png)
-
-</TabItem>
-
-</Tabs> 
 
 
 ## Camera position Widgets
