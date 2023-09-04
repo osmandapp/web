@@ -112,9 +112,9 @@ const WaypointRow = ({ point, index, ctx }) => {
                 </Box>
             );
         const lines = [];
-        lines.push(line({ key: 'name', font: 1.0, str: point.wpt?.name ?? 'unknown' }));
-        lines.push(line({ key: 'desc', font: 0.75, str: point.layer?.options?.desc }));
-        lines.push(line({ key: 'addr', font: 0.75, str: point.layer?.options?.address }));
+        lines.push(line({ key: 'name', font: 1.0, str: point.wpt.name ?? 'unknown' }));
+        lines.push(line({ key: 'desc', font: 0.75, str: point.wpt.desc }));
+        lines.push(line({ key: 'addr', font: 0.75, str: point.wpt.address }));
         return lines;
     }
 
@@ -126,9 +126,9 @@ const WaypointRow = ({ point, index, ctx }) => {
                 </Box>
             );
         const lines = [];
-        lines.push(line({ key: 'name', font: 1.0, str: point.wpt?.name ?? 'unknown' }));
-        lines.push(line({ key: 'desc', font: 0.75, str: point.layer?.options?.desc }));
-        lines.push(line({ key: 'addr', font: 0.75, str: point.layer?.options?.address }));
+        lines.push(line({ key: 'name', font: 1.0, str: point.wpt.name ?? 'unknown' }));
+        lines.push(line({ key: 'desc', font: 0.75, str: point.wpt.desc }));
+        lines.push(line({ key: 'addr', font: 0.75, str: point.wpt.address }));
         return lines;
     }
 
@@ -171,10 +171,10 @@ const WaypointRow = ({ point, index, ctx }) => {
         index,
         point.wpt?.lat,
         point.wpt?.lon,
+        point.wpt?.name,
+        point.wpt?.desc,
+        point.wpt?.address,
         point.wpt?.category,
-        point.layer?.options?.desc,
-        point.layer?.options?.title,
-        point.layer?.options?.address,
         point.layer?.options?.icon?.options?.html,
         ctx.currentObjectType,
         mobile,
