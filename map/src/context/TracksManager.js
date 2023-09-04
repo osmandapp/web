@@ -653,14 +653,16 @@ export function clearAllLocalTracks(ctx) {
     deleteLocalTracks(); // delete from localStorage
 }
 
-function formatRouteMode({ profile = 'car', params }) {
+function formatRouteMode({ profile = 'car', params, includeFalse = false }) {
     let routeModeStr = profile ?? 'car';
     if (params) {
         Object.keys(params).forEach((o) => {
             if (params[o]?.value === true) {
                 routeModeStr += ',' + o;
             } else if (params[o]?.value === false) {
-                // skip
+                if (includeFalse) {
+                    routeModeStr += ',' + o + '=' + params[o].value;
+                }
             } else {
                 routeModeStr += ',' + o + '=' + params[o].value;
             }
@@ -675,8 +677,10 @@ function decodeRouteMode({ routeMode, params }) {
 
     routeMode.split(',').forEach((p) => {
         // assume empty as true (see formatRouteMode)
-        const [key, val = true] = p.split('=');
+        let [key, val = true] = p.split('=');
         if (draft[key]) {
+            val === 'false' && (val = false);
+            val === 'true' && (val = true);
             draft[key].value = val;
         }
     });
