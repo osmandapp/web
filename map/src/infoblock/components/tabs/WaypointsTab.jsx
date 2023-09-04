@@ -160,17 +160,36 @@ export default function WaypointsTab() {
 
     const [openWptAlert, setOpenWptAlert] = useState(true);
 
+    function deleteAllWpts() {
+        confirm({
+            ctx,
+            text: 'Delete all waypoints?',
+            callback: () => {
+                ctx.selectedGpxFile.wpts = [];
+                ctx.selectedGpxFile.updateLayers = true;
+                TracksManager.updateState(ctx);
+                ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+            },
+        });
+    }
+
+    // TODO
+    // function addWaypoint() {
+    //     ctx.selectedGpxFile.addWpt = true;
+    //     ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
+    // }
+
     function getLayers() {
-        if (ctx.selectedGpxFile?.layers && !_.isEmpty(ctx.selectedGpxFile.layers)) {
+        if (ctx.selectedGpxFile.layers && Object.keys(ctx.selectedGpxFile.layers).length > 0) {
             return ctx.selectedGpxFile.layers.getLayers();
         }
-        if (ctx.selectedGpxFile?.gpx) {
+        if (ctx.selectedGpxFile.gpx) {
             return ctx.selectedGpxFile.gpx.getLayers();
         }
         return [];
     }
 
-    function getPoints() {
+    function getSortedPoints() {
         const wpts = [];
 
         if (ctx.selectedGpxFile.wpts) {
@@ -187,44 +206,56 @@ export default function WaypointsTab() {
             });
         }
 
-        return wpts;
-    }
+        const az = (a, b) => (a > b) - (a < b);
 
-    // TODO
-    // function addWaypoint() {
-    //     ctx.selectedGpxFile.addWpt = true;
-    //     ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
-    // }
+        return wpts.sort((a, b) => {
+            const aName = a.wpt.name;
+            const bName = b.wpt.name;
 
-    function deleteAllWpts() {
-        confirm({
-            ctx,
-            text: 'Delete all waypoints?',
-            callback: () => {
-                ctx.selectedGpxFile.wpts = [];
-                ctx.selectedGpxFile.updateLayers = true;
-                TracksManager.updateState(ctx);
-                ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-            },
+            const aCat = a.wpt.category;
+            const bCat = b.wpt.category;
+
+            if (aCat !== bCat) {
+                return az(aCat, bCat);
+            }
+
+            return az(aName, bName);
         });
     }
 
-    function pointsChangedString() {
-        const dep = getPoints().map((p) => [p.wpt, p.layer.options]);
-        return dep ? JSON.stringify(dep) : null;
-    }
+    /**
+     * wpt.icon (direct process is better)
+     * wpt.category (1st key)
+     * wpt.name (2nd key)
+     * wpt.desc
+     */
 
-    const waypoints = useMemo(
-        () => (
+    // function getSortedGroups(points) {
+
+    // }
+
+    // 1st level of speedup
+    // avoid JSON.stringify on every render
+    // use track.name/wpts as dependence key
+    const pointsChangedString = useMemo(() => {
+        // Note: run of JSON.stringify is ~2x times slower than getSortedPoints
+        return ctx.selectedGpxFile.name + JSON.stringify(ctx.selectedGpxFile.wpts);
+    }, [ctx.selectedGpxFile, ctx.currentObjectType]);
+
+    // 2nd level of speedup
+    // avoid re-creation of group/rows
+    // depends on previosly memoized key
+    const waypoints = useMemo(() => {
+        const allPoints = getSortedPoints();
+        return (
             <Box className={stylesMenu.item} minWidth={ctx.infoBlockWidth}>
                 {ctx.selectedGpxFile.wpts &&
-                    getPoints().map((point, index) => (
+                    allPoints.map((point, index) => (
                         <WaypointRow key={'wpt' + index} point={point} index={index} ctx={ctx} />
                     ))}
             </Box>
-        ),
-        [pointsChangedString(), ctx.currentObjectType]
-    );
+        );
+    }, [pointsChangedString]);
 
     return (
         <>
