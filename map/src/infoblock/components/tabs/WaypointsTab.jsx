@@ -1,19 +1,6 @@
 import { useContext, useState, useMemo, useEffect } from 'react';
 import AppContext from '../../../context/AppContext';
-import {
-    Alert,
-    Box,
-    Button,
-    IconButton,
-    ListItemAvatar,
-    ListItemIcon,
-    ListItemText,
-    MenuItem,
-    Typography,
-    Collapse,
-    Switch,
-    Grid,
-} from '@mui/material';
+import { Alert, Box, Button, IconButton, MenuItem, Typography, Collapse, Switch, Grid } from '@mui/material';
 import L from 'leaflet';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import { Cancel, ExpandLess, ExpandMore } from '@mui/icons-material';
@@ -22,11 +9,22 @@ import TracksManager from '../../../context/TracksManager';
 import wptTabStyle from '../../styles/WptTabStyle';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 // import { measure } from '../../../util/Utils';
+import { makeStyles } from '@material-ui/core/styles';
 import _ from 'lodash';
+
+const useStyles = makeStyles({
+    boxNoOverflow: {
+        maxWidth: '100%',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        // whiteSpace: 'pre-line', // pre-line is multiline
+    },
+});
 
 // distinct component
 const WaypointGroup = ({ group, points, defaultOpen, ctx }) => {
     const stylesWpt = wptTabStyle();
+    const stylesMenu = contextMenuStyles();
 
     const [open, setOpen] = useState(defaultOpen);
     const switchOpen = () => setOpen(!open);
@@ -41,20 +39,20 @@ const WaypointGroup = ({ group, points, defaultOpen, ctx }) => {
     useEffect(() => setMounted(true), []);
 
     useEffect(() => {
-        mounted && console.log('switch');
+        mounted && console.log('switch'); // FIXME
     }, [visible]);
 
     const iconHTML = points[0]?.layer?.options?.icon?.options?.html ?? '';
 
     return (
         <>
-            <MenuItem onClick={switchOpen} divider>
+            <MenuItem divider sx={{ px: 1, py: 1 }} onClick={switchOpen}>
                 <Grid container alignItems="center">
                     <Grid item xs={2}>
                         <div className={stylesWpt.iconGroup} dangerouslySetInnerHTML={{ __html: iconHTML }} />
                     </Grid>
-                    <Grid item xs={5}>
-                        {group || 'Waypoints'}
+                    <Grid item xs={6}>
+                        <Typography>{group || 'Waypoints'}</Typography>
                     </Grid>
                     <Grid item xs={1}>
                         <Button sx={{ borderRadius: 28, minWidth: '30px !important' }} size="small">
@@ -68,162 +66,91 @@ const WaypointGroup = ({ group, points, defaultOpen, ctx }) => {
                             <Switch checked={visible} />
                         </IconButton>
                     </Grid>
-                    <Grid item xs={2}>
+                    <Grid item xs={1}>
                         <IconButton>{open ? <ExpandLess /> : <ExpandMore />}</IconButton>
                     </Grid>
                 </Grid>
             </MenuItem>
             <Collapse in={open}>
-                {points.map((point, keyIndex) => (
-                    <WaypointRow key={'wpt' + point.index + keyIndex} point={point} index={point.index} ctx={ctx} />
-                ))}
+                <Box className={stylesMenu.item}>
+                    {points.map((point, keyIndex) => (
+                        <WaypointRow key={'wpt' + point.index + keyIndex} point={point} index={point.index} ctx={ctx} />
+                    ))}
+                </Box>
             </Collapse>
         </>
     );
-    // dangerouslySetInnerHTML={{ __html: point.layer.options.icon.options.html + '' }}
-    // const allPoints = getSortedPoints();
-    // return (
-    //     <Box className={stylesMenu.item} minWidth={ctx.infoBlockWidth}>
-    //         {ctx.selectedGpxFile.wpts &&
-    //             allPoints.map((point, keyIndex) => (
-    //                 <WaypointRow key={'wpt' + point.index + keyIndex} point={point} index={point.index} ctx={ctx} />
-    //             ))}
-    //     </Box>
-    // );
 };
 
 // distinct component
 const WaypointRow = ({ point, index, ctx }) => {
-    const NAME_SIZE = 30;
-    const stylesWpt = wptTabStyle();
-
-    const [showMore, setShowMore] = useState(false);
+    const styles = useStyles();
 
     function showPoint(point) {
         ctx.setSelectedWpt(point);
         ctx.setSelectedGpxFile((o) => ({ ...o, showPoint: point }));
     }
 
-    function getLength(point) {
-        return point.layer.options?.desc && point.layer.options.address ? 15 : 30;
+    /**
+     * wpt.icon (direct process is better)
+     * wpt.category (1st key)
+     * wpt.name (2nd key)
+     * wpt.desc
+     */
+
+    function showDetails(point) {
+        const line = ({ key, font, str }) =>
+            str && (
+                <Box key={'box' + key} className={styles.boxNoOverflow} sx={{ fontSize: font + 'rem' }}>
+                    {str.replace(/\n/g, ' ')}
+                </Box>
+            );
+        const lines = [];
+        lines.push(line({ key: 'name', font: 1.0, str: point.wpt?.name ?? 'unknown' }));
+        lines.push(line({ key: 'desc', font: 0.75, str: point.layer?.options?.desc }));
+        lines.push(line({ key: 'addr', font: 0.75, str: point.layer?.options?.address }));
+        return lines;
     }
 
-    function getName(point) {
-        let name = point.layer.options?.title;
-        if (name) {
-            if (name.length > NAME_SIZE) {
-                return point.layer.options?.title.substring(0, NAME_SIZE);
-            } else {
-                return name;
-            }
-        }
-    }
-
-    function hasInfo(wpt) {
-        return wpt.layer.options?.desc !== undefined || wpt.layer.options?.address !== undefined || wpt.wpt.category;
-    }
-
-    function showWithInfo(point) {
+    const row = useMemo(() => {
+        const allowDelete = ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
         return (
-            <>
-                <ListItemIcon
-                    className={stylesWpt.icon}
-                    dangerouslySetInnerHTML={{ __html: point.layer.options.icon.options.html + '' }}
-                />
-                <ListItemText sx={{ ml: '-35px !important' }}>
-                    <Typography component={'span'} variant="inherit" noWrap>
-                        {getName(point)}
-                        {point.layer.options?.title?.length > NAME_SIZE && (
-                            <ListItemIcon style={{ marginRight: ' -25px' }}>{'...'}</ListItemIcon>
-                        )}
-                        <br />
-                        <Typography component={'span'} variant="caption">
-                            {point.wpt.category}
-                        </Typography>
-                        {point.wpt.category && (point.layer.options?.address || point.layer.options?.desc) && (
-                            <ListItemIcon style={{ marginLeft: '5px', marginRight: ' -25px' }}>{' • '}</ListItemIcon>
-                        )}
-                        <Typography component={'span'} variant="caption" style={{ wordWrap: 'break-word' }}>
-                            {showMore
-                                ? point.layer.options?.desc
-                                : point.layer.options?.desc?.substring(0, getLength(point))}
-                            {point.layer.options?.desc?.length > getLength(point) && (
-                                <ListItemIcon style={{ marginRight: ' -25px' }}>{'...'}</ListItemIcon>
-                            )}
-                        </Typography>
-                        {point.layer.options?.address && point.layer.options?.desc && (
-                            <ListItemIcon style={{ marginLeft: '5px', marginRight: ' -25px' }}>{' • '}</ListItemIcon>
-                        )}
-                        <Typography component={'span'} variant="caption" style={{ wordWrap: 'break-word' }}>
-                            {showMore
-                                ? point.layer.options?.address
-                                : point.layer.options?.address?.substring(0, getLength(point))}
-                            {point.layer.options?.address?.length > getLength(point) && (
-                                <ListItemIcon onClick={() => setShowMore(!showMore)}>
-                                    {showMore ? ' ...less' : ' ...more'}
-                                </ListItemIcon>
-                            )}
-                        </Typography>
-                    </Typography>
-                </ListItemText>
-            </>
-        );
-    }
-
-    function showOnlyName(point) {
-        return (
-            <>
-                <ListItemIcon
-                    className={stylesWpt.iconOnlyName}
-                    dangerouslySetInnerHTML={{ __html: point.layer.options.icon.options.html + '' }}
-                />
-                <ListItemText sx={{ ml: '-35px !important' }}>
-                    <Typography variant="inherit" noWrap component="span">
-                        {getName(point)}
-                        {point.layer.options?.title?.length > NAME_SIZE && (
-                            <ListItemIcon style={{ marginRight: ' -25px' }}>{'...'}</ListItemIcon>
-                        )}
-                    </Typography>
-                </ListItemText>
-            </>
-        );
-    }
-
-    const row = useMemo(
-        () => (
-            <MenuItem key={'marker' + index} divider onClick={() => showPoint(point)}>
-                {hasInfo(point) ? showWithInfo(point) : showOnlyName(point)}
-                <ListItemAvatar>
-                    {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
-                        <IconButton
-                            sx={{ mr: 1 }}
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                confirm({
-                                    ctx,
-                                    text: 'Delete this waypoint?',
-                                    callback: () => PointManager.deleteWpt(index, ctx),
-                                });
-                            }}
-                        >
-                            <Cancel fontSize="small" />
-                        </IconButton>
+            <MenuItem key={'marker' + index} divider sx={{ px: 1, py: 1 }} onClick={() => showPoint(point)}>
+                <Grid container alignItems="center" warp="nowrap">
+                    <Grid item xs={allowDelete ? 11 : 12}>
+                        {showDetails(point)}
+                    </Grid>
+                    {allowDelete && (
+                        <Grid item xs={1}>
+                            <IconButton
+                                sx={{ p: 0 }}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    confirm({
+                                        ctx,
+                                        text: 'Delete this waypoint?',
+                                        callback: () => PointManager.deleteWpt(index, ctx),
+                                    });
+                                }}
+                            >
+                                <Cancel fontSize="small" />
+                            </IconButton>
+                        </Grid>
                     )}
-                </ListItemAvatar>
+                </Grid>
             </MenuItem>
-        ),
-        [
-            index,
-            point.wpt?.lat,
-            point.wpt?.lon,
-            point.wpt?.category,
-            point.layer?.options?.desc,
-            point.layer?.options?.title,
-            point.layer?.options?.address,
-            point.layer?.options?.icon?.options?.html,
-            ctx.currentObjectType,
-        ]
-    );
+        );
+    }, [
+        index,
+        point.wpt?.lat,
+        point.wpt?.lon,
+        point.wpt?.category,
+        point.layer?.options?.desc,
+        point.layer?.options?.title,
+        point.layer?.options?.address,
+        point.layer?.options?.icon?.options?.html,
+        ctx.currentObjectType,
+    ]);
 
     return row;
 };
@@ -299,13 +226,6 @@ export default function WaypointsTab() {
         });
     }
 
-    /**
-     * wpt.icon (direct process is better)
-     * wpt.category (1st key)
-     * wpt.name (2nd key)
-     * wpt.desc
-     */
-
     function getSortedGroups() {
         const groups = {};
         const points = getSortedPoints();
@@ -338,7 +258,7 @@ export default function WaypointsTab() {
         const groups = getSortedGroups();
         const keys = Object.keys(groups);
         return (
-            <Box className={stylesMenu.item} minWidth={ctx.infoBlockWidth}>
+            <Box>
                 {keys.map((g) => (
                     <WaypointGroup
                         key={'wpg' + g}
@@ -350,22 +270,13 @@ export default function WaypointsTab() {
                 ))}
             </Box>
         );
-        // const allPoints = getSortedPoints();
-        // return (
-        //     <Box className={stylesMenu.item} minWidth={ctx.infoBlockWidth}>
-        //         {ctx.selectedGpxFile.wpts &&
-        //             allPoints.map((point, keyIndex) => (
-        //                 <WaypointRow key={'wpt' + point.index + keyIndex} point={point} index={point.index} ctx={ctx} />
-        //             ))}
-        //     </Box>
-        // );
     }, [pointsChangedString]);
 
     return (
         <>
             {ctx.createTrack && ctx.selectedGpxFile?.wpts && !_.isEmpty(ctx.selectedGpxFile.wpts) && (
                 <Button variant="contained" className={stylesMenu.button} onClick={deleteAllWpts} sx={{ mb: 2 }}>
-                    Clear waypoints
+                    Clear all waypoints
                 </Button>
             )}
 
