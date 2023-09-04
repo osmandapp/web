@@ -1,6 +1,6 @@
 import { useContext, useState, useMemo, useEffect } from 'react';
 import AppContext from '../../../context/AppContext';
-import { Alert, Box, Button, IconButton, MenuItem, Typography, Collapse, Switch, Grid } from '@mui/material';
+import { Alert, Box, Button, IconButton, MenuItem, Typography, Collapse, Switch, Grid, Tooltip } from '@mui/material';
 import L from 'leaflet';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import { Cancel, ExpandLess, ExpandMore } from '@mui/icons-material';
@@ -10,6 +10,7 @@ import wptTabStyle from '../../styles/WptTabStyle';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 // import { measure } from '../../../util/Utils';
 import { makeStyles } from '@material-ui/core/styles';
+import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import _ from 'lodash';
 
 const useStyles = makeStyles({
@@ -17,7 +18,10 @@ const useStyles = makeStyles({
         maxWidth: '100%',
         overflow: 'hidden',
         textOverflow: 'ellipsis',
-        // whiteSpace: 'pre-line', // pre-line is multiline
+    },
+    boxPreLine: {
+        marginTop: '4px',
+        whiteSpace: 'pre-line', // pre-line is multiline
     },
 });
 
@@ -86,6 +90,8 @@ const WaypointGroup = ({ group, points, defaultOpen, ctx }) => {
 const WaypointRow = ({ point, index, ctx }) => {
     const styles = useStyles();
 
+    const [, , mobile] = useWindowSize();
+
     function showPoint(point) {
         ctx.setSelectedWpt(point);
         ctx.setSelectedGpxFile((o) => ({ ...o, showPoint: point }));
@@ -98,11 +104,25 @@ const WaypointRow = ({ point, index, ctx }) => {
      * wpt.desc
      */
 
-    function showDetails(point) {
+    function pointLines(point) {
         const line = ({ key, font, str }) =>
             str && (
                 <Box key={'box' + key} className={styles.boxNoOverflow} sx={{ fontSize: font + 'rem' }}>
                     {str.replace(/\n/g, ' ')}
+                </Box>
+            );
+        const lines = [];
+        lines.push(line({ key: 'name', font: 1.0, str: point.wpt?.name ?? 'unknown' }));
+        lines.push(line({ key: 'desc', font: 0.75, str: point.layer?.options?.desc }));
+        lines.push(line({ key: 'addr', font: 0.75, str: point.layer?.options?.address }));
+        return lines;
+    }
+
+    function pointTooltip(point) {
+        const line = ({ key, font, str }) =>
+            str && (
+                <Box key={'box' + key} className={styles.boxPreLine} sx={{ fontSize: font + 'rem' }}>
+                    {str}
                 </Box>
             );
         const lines = [];
@@ -117,9 +137,16 @@ const WaypointRow = ({ point, index, ctx }) => {
         return (
             <MenuItem key={'marker' + index} divider sx={{ px: 1, py: 1 }} onClick={() => showPoint(point)}>
                 <Grid container alignItems="center" warp="nowrap">
-                    <Grid item xs={allowDelete ? 11 : 12}>
-                        {showDetails(point)}
-                    </Grid>
+                    <Tooltip
+                        arrow
+                        disableInteractive={true}
+                        placement={mobile ? 'top' : 'left'}
+                        title={pointTooltip(point)}
+                    >
+                        <Grid item xs={allowDelete ? 11 : 12}>
+                            {pointLines(point)}
+                        </Grid>
+                    </Tooltip>
                     {allowDelete && (
                         <Grid item xs={1}>
                             <IconButton
@@ -150,6 +177,7 @@ const WaypointRow = ({ point, index, ctx }) => {
         point.layer?.options?.address,
         point.layer?.options?.icon?.options?.html,
         ctx.currentObjectType,
+        mobile,
     ]);
 
     return row;
