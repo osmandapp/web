@@ -144,29 +144,33 @@ In order to display the bearing, a **target point** must be selected. If a **des
 
 ## Navigation points
 
-### Destination
+*Navigation point* widgets show the remaining distance to a destination, intermediate point, arrival time to an intermediate point, or travel time for a calculated route.  
 
-Destination widget shows the distance left to the last destination point by following the calculated route. 
+### Distance to destination
 
-![Destination widget](@site/static/img/widgets/destination_widget.png)
+![Destination widget](@site/static/img/widgets/destination_widget.png)  
+
+The Destination widget displays the distance remaining to the last destination point when following a calculated route.
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,route_descr_destination"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_distance"/>|
-| By tapping | Moves the map to a destination point. |    
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/>* *→ Left / Right panel →* *<Translate android="true" ids="map_widget_distance_to_destination"/>* |
+|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Left / Right panel →* <Translate ios="true" ids="map_widget_distance_to_destination"/> |
+| By tapping | Moves the map to the destination point. |    
 
-### Intermediate destination
+### Distance to intermediate
 
-Intermediate Destination widget shows the distance left to the first intermediate point by following the calculated route. Once intermediate points is passed, the distance will be updated to the next intermediate point. If there is no intermediate points, widget is not displayed.
+The Distance to Intermediate Destination widget shows the distance remaining to the first intermediate point along the calculated route. After passing intermediate points, the distance will be updated to the next intermediate point. If there are no intermediate points, the widget is not displayed.
 
 ![Intermediate destination widget](@site/static/img/widgets/intermediate_destination_widget.png)
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,map_widget_intermediate_distance"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_intermediate_distance"/>|
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/>* *→ Left / Right panel →* *<Translate android="true" ids="map_widget_distance_to_intermediate"/>* |
+|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Left / Right panel →* <Translate ios="true" ids="map_widget_distance_to_intermediate"/> |
 | By tapping | 1 intermediate point - move the map to the intermediate point, <br /> 2 or more intermediate points - opens Destinations list menu. |
 
-### Arrival time or Time to go
+### Time to intermediate
 
 <Tabs groupId="operating-systems">
 
@@ -180,7 +184,6 @@ The widget shows *<Translate android="true" ids="access_arrival_time"/>* or *<Tr
 |------------|------------|
 | Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,access_arrival_time"/> or <Translate android="true" ids="map_widget_time"/> |
 | By tapping | Changes between "Arrival time" to "Time to go" and vice versa. |  
-
 
 </TabItem>
 
@@ -199,7 +202,7 @@ The widget shows *<Translate android="true" ids="access_arrival_time"/>* or *<Tr
 
 </Tabs>  
 
-### Intermediate arrival time
+### Time to destination
 
 Intermediate arrival time or Intermediate time widget shows <Translate android="true" ids="access_intermediate_arrival_time"/> or <Translate android="true" ids="map_widget_intermediate_time"/> of navigation to the first intermediate point. Once intermediate points is passed, the time will be updated to the next intermediate point. If there is no intermediate points, widget is not displayed.
 
@@ -225,23 +228,26 @@ Speed limit widget shows a speed limit for a current driving road. It works in p
 
 ## Route maneuvers
 
-The widget shows information about your next turn with a picture of maneuver and distance to it. There are 2 variants of **next turn** widget (small and big) and **2nd next turn** which is enabled if turn within approaching distance.
-
 ![Next turns widget](@site/static/img/widgets/next_turns_widget.png)
+
+Widgets display information about the next turn with maneuvers. There are two types of **Next turn** widgets, small and large, and a **Second next turn** which is enabled if the turn is in the approach distance.  
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left,map_widget_next_turn"/>, <Translate android="true" ids="map_widget_next_turn_small"/>, <Translate android="true" ids="map_widget_next_next_turn"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_left,map_widget_next_turn"/>, <Translate ios="true" ids="map_widget_next_turn_small"/>, <Translate ios="true" ids="map_widget_next_next_turn"/>|
-| On  Click | Speaks out next maneuver and distance to it, if voice guidance is turned on |
+| Enable | **Android:** *Menu → Configure screen → Left / Right panel → Next turn, Next turn (small), Second next turn*  |
+|   | **iOS:** *Menu → Configure screen → Left / Right panel → Next turn, Next turn (small), Second next turn* |
+| By tapping | If [voice prompts](../navigation/guidance/voice-navigation.md) are enabled, the next maneuver and the distance to it are pronounced. |
 
 
-Trigger display time, color is related to the voice navigation prompts and related to the time left to reach maneuvre. So color indication, distance & turn visualization could be used instead of voice navigation.
+### Displayed time on widgets
 
-| Distance |  Prompt type | Color | ~ Trigger Time | 
-|-----|----|-------|------| 
-| Close by | [Turn now](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Green | 5 seconds | 
-| Approaching| [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Yellow | 20 seconds |
-| Distant | [Prepare to turn](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Grey | > 100 seconds | 
+The table shows the approximate times for activating the prompts, read more [here](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) or in the article [Voice prompts](../navigation/guidance/voice-navigation.md). The color of the arrows indicates the remaining time to make the maneuver. The appearance of the arrows can be used if you do not want to use voice prompts.
+
+| ~ Trigger Time | Distance | Prompt type | Color | 
+| ----- | ---- | ------- | ------ | 
+| 5 seconds | Close by | Turn now | 🟢 Green | 
+| 20 seconds | Approaching| Turn in X m | 🟡 Yellow  |
+| > 100 seconds | Distant | Prepare to turn | ⚪ Grey | 
 
 
 ## Lanes

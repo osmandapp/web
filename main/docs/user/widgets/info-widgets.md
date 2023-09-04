@@ -85,8 +85,8 @@ To display *Elevation: map center* widget:
 
 | | |
 |------------|------------|
-| Enable | **Android** *Menu → Configure screen → Left / Right panel → Altitude* |
-|  | **iOS** *Menu → Configure screen → Right panel → Elevation: map center* | 
+| Enable | **Android:** *Menu → Configure screen → Left / Right panel → Altitude* |
+|  | **iOS:** *Menu → Configure screen → Right panel → Elevation: map center* | 
 | By tapping | No changes |
 | Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* | 
 

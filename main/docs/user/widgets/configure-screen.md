@@ -65,21 +65,21 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 
 </Tabs> 
 
-- [Route maneuvers](../widgets/nav-widgets.md#next-turns) - shows info about next maneuvers and distance to it.
-- [Navigation point](../widgets/nav-widgets#navigation-points) (4 widgets inside) - shows the distance remaining to the last destination point or first intermediate point, the arrival time or the travel time for the calculated route. Subwidgets: *Distance to destination*, *Distance to intermediate*, *Time to intermediate*, *Time to destination*.
-- [Map markers](../map/point-layers-on-map#markers) (2 widgets inside) - show special points marked as flags on the map. Subwidgets: *First marker*, *Second marker*.
-- [Bearing](../widgets/nav-widgets.md#bearing) (3 widgets inside) - shows relative, magnetic or true bearing.
+- [Route maneuvers](../widgets/nav-widgets.md#next-turns) (3 widgets included). These **navigational** widgets are activated during navigation and display information about the distance to the next maneuver. Next turn, Next turn (small)
+- [Navigation point](../widgets/nav-widgets#navigation-points) (4 widgets included). **Navigational** widgets *Navigation point* show the remaining distance to a destination, intermediate point, arrival time to an intermediate point, or travel time for a calculated route. Widgets: [Distance to destination](../widgets/nav-widgets.md#distance-to-destination), [Distance to intermediate](../widgets/nav-widgets.md#distance-to-intermediate), [Time to intermediate](../widgets/nav-widgets.md#time-to-intermediate), [Time to destination](../widgets/nav-widgets.md#time-to-destination).
+- [Map markers](../map/point-layers-on-map#markers) (2 widgets included) - show special points marked as flags on the map. Subwidgets: *First marker*, *Second marker*.
+- [Bearing](../widgets/nav-widgets.md#bearing) (3 widgets included) - shows relative, magnetic or true bearing.
 - [Current Speed](../widgets/info-widgets.md#speed) - shows your current speed detected by GPS-sensor. Subwidgets: *Relative bearing*, *Magnetic bearing*, *True bearing*.
 - [Average speed](../widgets/info-widgets#average-speed-widget) - shows what your average speed is.
 - [Speed limit](../widgets/nav-widgets.md#speed-limit) - shows speed limit for the current following road.
 - [Altitude of current location](../widgets/info-widgets.md#altitude) - shows the height above sea level of current geolocation.
 - [GPS info](../widgets/info-widgets.md#gps-info-android) (Android) - shows a number of satellites that device detects and uses at that moment.
-- [* Trip recording](../widgets/info-widgets#-trip-recording-widgets) (4 widgets inside) - provides quick access to start / stop track recording. Subwidgets: *Distance*, *Duration*, *Uphill*, *Downhill*.
+- [* Trip recording](../widgets/info-widgets#-trip-recording-widgets) (4 widgets included) - provides quick access to start / stop track recording. Subwidgets: *Distance*, *Duration*, *Uphill*, *Downhill*.
 - [Current time](../widgets/info-widgets.md#current-time) - shows current time from your device.
 - [Battery level](../widgets/info-widgets.md#battery-level) - shows battery level of your device.
 - [Radius ruler](../widgets/radius-ruler.md) - shows distance between users location and inner point of the 'Radius-ruler' tool distance-circles on the map.
 - [* FPS debug info](../widgets/info-widgets.md#-fps-info-android) (Android) - investigate how fast map & map elements are showed & refreshed.
-- [Audio/video notes](../widgets/info-widgets#-audio-video-notes-widget) (4 widgets inside) - provides quick access to start / stop taking a recording (audio / video or photo). Subwidgets: *On request*, *Record audio*, *Take a photo*.
+- [Audio/video notes](../widgets/info-widgets#-audio-video-notes-widget) (4 widgets included) - provides quick access to start / stop taking a recording (audio / video or photo). Subwidgets: *On request*, *Record audio*, *Take a photo*.
 - [* Parking](../widgets/info-widgets.md#-parking-widget) - shows distance from the current position to the parking place.
 - [* Mapillary](../widgets/info-widgets.md#-mapillary-widget) - provides quick access to Mapillary app to add Street-Level-Imagery.  
 
