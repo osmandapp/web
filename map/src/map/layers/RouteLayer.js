@@ -85,6 +85,7 @@ const RouteLayer = ({ geocodingData, region }) => {
 
                 if (ctx.routeRouter.isParamsChanged()) {
                     const mode = TracksManager.formatRouteMode({
+                        includeFalse: true,
                         profile: profile,
                         params: ctx.routeRouter.getChangedParams(),
                     });
