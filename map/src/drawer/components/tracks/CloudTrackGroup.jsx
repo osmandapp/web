@@ -1,7 +1,7 @@
 import { Box, Button, Collapse, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import CloudOutlinedIcon from '@mui/icons-material/CloudOutlined';
-import React, { useContext, useEffect, useState } from 'react';
+import { useRef, useContext, useEffect, useState, useMemo } from 'react';
 import CloudTrackItem from './CloudTrackItem';
 
 import Actions from './Actions';
@@ -17,7 +17,7 @@ export default function CloudTrackGroup({ index, group }) {
     const [tracksOpen, setTracksOpen] = useState(false);
     const [showTracks, setShowTracks] = useState([]);
     const [sortFiles, setSortFiles] = useState([]);
-    const anchorEl = React.useRef(null);
+    const anchorEl = useRef(null);
     const [open, setOpen] = useState(false);
 
     const handleToggle = () => {
@@ -65,8 +65,16 @@ export default function CloudTrackGroup({ index, group }) {
         );
     };
 
+    const trackItems = useMemo(() => {
+        const items = [];
+        (sortFiles.length > 0 ? sortFiles : group.files).map((file) => {
+            items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} />);
+        });
+        return items;
+    }, [sortFiles, group.files, group.files.length]);
+
     return (
-        <div className={styles.drawerItem} key={'group' + index}>
+        <div className={styles.drawerItem} key={'group' + group.name + index}>
             <MenuItem
                 sx={{ ml: 3 }}
                 divider
@@ -107,9 +115,7 @@ export default function CloudTrackGroup({ index, group }) {
             <Collapse in={showTracks.includes(index)} timeout="auto">
                 <div style={{ maxHeight: '41vh', overflow: 'auto' }}>
                     <Actions files={group.files} setSortFiles={setSortFiles} />
-                    {(sortFiles.length > 0 ? sortFiles : group.files).map((file, index) => {
-                        return <CloudTrackItem key={'cloudtrack-' + index} file={file} />;
-                    })}
+                    {trackItems}
                 </div>
             </Collapse>
         </div>

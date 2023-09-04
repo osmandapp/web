@@ -1,6 +1,6 @@
 import { Box, Button, Collapse, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import { ExpandLess, ExpandMore, Visibility } from '@mui/icons-material';
-import React, { useContext, useEffect, useState } from 'react';
+import { useRef, useContext, useEffect, useState, useMemo } from 'react';
 import CloudTrackItem from './tracks/CloudTrackItem';
 import { makeStyles } from '@material-ui/core/styles';
 import LocalTrackItem from './tracks/LocalTrackItem';
@@ -24,7 +24,7 @@ export default function VisibleGroup({ visibleTracks, setVisibleTracks }) {
 
     const classes = useStyles();
     const [visibleTracksOpen, setVisibleTracksOpen] = useState(false);
-    const anchorEl = React.useRef(null);
+    const anchorEl = useRef(null);
     const [open, setOpen] = useState(false);
 
     const handleToggle = () => {
@@ -85,11 +85,38 @@ export default function VisibleGroup({ visibleTracks, setVisibleTracks }) {
     }
 
     function clear() {
-        let empty = {
+        // clear Visible Local Tracks
+        if (visibleTracks.local.length > 0) {
+            visibleTracks.local.forEach((file) =>
+                ctx.localTracks.forEach((track) => {
+                    if (track.name === file.name) {
+                        track.selected = false; // unselect
+                    }
+                })
+            );
+            ctx.setLocalTracks([...ctx.localTracks]);
+        }
+
+        // clear Visible Cloud Tracks
+        // close currently open Cloud track
+        if (visibleTracks.cloud.length > 0) {
+            visibleTracks.cloud.forEach((file) => {
+                if (ctx.selectedGpxFile.name === file.name) {
+                    ctx.setCurrentObjectType(null);
+                    ctx.setSelectedGpxFile({});
+                }
+            });
+            visibleTracks.cloud.forEach((file) => (ctx.gpxFiles[file.name].url = null)); // unselect
+            ctx.setGpxFiles({ ...ctx.gpxFiles });
+        }
+
+        const empty = {
             local: [],
             cloud: [],
         };
         setVisibleTracks({ ...empty });
+
+        localStorage.removeItem(TracksManager.TRACK_VISIBLE_FLAG); // clear saved list finally
     }
 
     useEffect(() => {
@@ -122,6 +149,35 @@ export default function VisibleGroup({ visibleTracks, setVisibleTracks }) {
         );
     }, [visibleTracks]);
 
+    const localItems = useMemo(
+        () =>
+            visibleTracks.local.length > 0 &&
+            visibleTracks.local
+                .sort((a, b) => (a.name > b.name) - (a.name < b.name))
+                .map((track, index) => {
+                    return <LocalTrackItem className={classes.item} key={'vis-local-' + index} track={track} />;
+                }),
+        [visibleTracks.local, visibleTracks.local.length]
+    );
+
+    const cloudItems = useMemo(
+        () =>
+            visibleTracks.cloud.length > 0 &&
+            visibleTracks.cloud
+                .sort((a, b) => (a.name > b.name) - (a.name < b.name))
+                .map((track, index) => {
+                    return (
+                        <CloudTrackItem
+                            key={'vis-cloud-' + index}
+                            className={classes.item}
+                            customIcon={<CloudOutlinedIcon fontSize="small" sx={{ mb: '-3px', mr: 1 }} />}
+                            file={track}
+                        />
+                    );
+                }),
+        [visibleTracks.cloud, visibleTracks.cloud.length]
+    );
+
     return (
         <div>
             <MenuItem sx={{ ml: 3 }} className={classes.group} onClick={() => setVisibleTracksOpen(!visibleTracksOpen)}>
@@ -147,23 +203,10 @@ export default function VisibleGroup({ visibleTracks, setVisibleTracks }) {
                 </Box>
                 {visibleTracksOpen ? <ExpandLess /> : <ExpandMore />}
             </MenuItem>
-            <Collapse in={visibleTracksOpen} timeout="auto" unmountOnExit>
+            <Collapse in={visibleTracksOpen} timeout="auto">
                 <div style={{ maxHeight: '41vh', overflow: 'auto' }}>
-                    {visibleTracks.local.length > 0 &&
-                        visibleTracks.local.map((track, index) => {
-                            return <LocalTrackItem className={classes.item} key={'vis-local-' + index} track={track} />;
-                        })}
-                    {visibleTracks.cloud.length > 0 &&
-                        visibleTracks.cloud.map((track, index) => {
-                            return (
-                                <CloudTrackItem
-                                    key={'vis-cloud-' + index}
-                                    className={classes.item}
-                                    customIcon={<CloudOutlinedIcon fontSize="small" sx={{ mb: '-3px', mr: 1 }} />}
-                                    file={track}
-                                />
-                            );
-                        })}
+                    {localItems}
+                    {cloudItems}
                 </div>
             </Collapse>
         </div>

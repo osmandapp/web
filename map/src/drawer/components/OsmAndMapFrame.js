@@ -145,11 +145,10 @@ const OsmAndMapFrame = () => {
             )}
             {
                 <Drawer
-                    variant="temporary"
+                    variant="persistent"
                     open={mainMenuOpen}
                     onClose={toggleMainMenu}
                     hideBackdrop={!mobile}
-                    disableEnforceFocus
                     PaperProps={{
                         sx: {
                             boxSizing: 'border-box',

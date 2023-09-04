@@ -1,10 +1,14 @@
 import { useLayoutEffect, useState, useCallback } from 'react';
 
+const MOBILE_SCREEN_SIZE = 1000;
+
 export function useWindowSize() {
-    const [size, setSize] = useState([0, 0]);
+    const [size, setSize] = useState([0, 0, false]);
 
     const updateSize = useCallback(() => {
-        setSize([window.innerWidth, window.innerHeight]);
+        const width = window.innerWidth;
+        const mobile = !!(width && width < MOBILE_SCREEN_SIZE);
+        setSize([window.innerWidth, window.innerHeight, mobile]);
     }, []);
 
     useLayoutEffect(() => {
