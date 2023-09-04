@@ -11,6 +11,7 @@ import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 // import { measure } from '../../../util/Utils';
 import { makeStyles } from '@material-ui/core/styles';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
+import MarkerOptions from '../../../map/markers/MarkerOptions';
 import _ from 'lodash';
 
 const useStyles = makeStyles({
@@ -46,7 +47,8 @@ const WaypointGroup = ({ group, points, defaultOpen, ctx }) => {
         mounted && console.log('switch'); // FIXME
     }, [visible]);
 
-    const iconHTML = points[0]?.layer?.options?.icon?.options?.html ?? '';
+    const point = points[0].wpt;
+    const iconHTML = MarkerOptions.getWptIcon(point, point.color, point.background, point.icon).options.html;
 
     return (
         <>
@@ -175,7 +177,6 @@ const WaypointRow = ({ point, index, ctx }) => {
         point.wpt?.desc,
         point.wpt?.address,
         point.wpt?.category,
-        point.layer?.options?.icon?.options?.html,
         ctx.currentObjectType,
         mobile,
     ]);
@@ -228,6 +229,9 @@ export default function WaypointsTab() {
                 ctx.selectedGpxFile.wpts.map((wpt, index) => [wpt.lat + ',' + wpt.lon, { wpt, index }])
             );
 
+            // FIXME
+            // is layer necessary?
+            // what to do with invisible wpts?
             layers.forEach((layer) => {
                 if (layer instanceof L.Marker) {
                     const coord = layer.getLatLng();
