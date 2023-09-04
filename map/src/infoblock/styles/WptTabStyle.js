@@ -1,9 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const wptTabStyle = makeStyles({
-    icon: {
+    iconGroup: {
         '& .icon': {
-            top: '20px',
+            top: '22px',
             left: '20px',
         },
         '& .background': {
@@ -13,18 +13,30 @@ const wptTabStyle = makeStyles({
             filter: 'drop-shadow(0 0 0 gray)',
         },
     },
-    iconOnlyName: {
-        '& .icon': {
-            top: '14px',
-            left: '20px',
-        },
-        '& .background': {
-            marginBottom: '-40px',
-            marginRight: '20px',
-            marginLeft: '10px',
-            filter: 'drop-shadow(0 0 0 gray)',
-        },
-    },
+    // icon: {
+    //     '& .icon': {
+    //         top: '20px',
+    //         left: '20px',
+    //     },
+    //     '& .background': {
+    //         marginBottom: '-40px',
+    //         marginRight: '20px',
+    //         marginLeft: '10px',
+    //         filter: 'drop-shadow(0 0 0 gray)',
+    //     },
+    // },
+    // iconOnlyName: {
+    //     '& .icon': {
+    //         top: '14px',
+    //         left: '20px',
+    //     },
+    //     '& .background': {
+    //         marginBottom: '-40px',
+    //         marginRight: '20px',
+    //         marginLeft: '10px',
+    //         filter: 'drop-shadow(0 0 0 gray)',
+    //     },
+    // },
     text: {
         '& .MuiTypography-root': {
             whiteSpace: 'nowrap',

@@ -1,4 +1,4 @@
-import { useContext, useState, useMemo } from 'react';
+import { useContext, useState, useMemo, useEffect } from 'react';
 import AppContext from '../../../context/AppContext';
 import {
     Alert,
@@ -10,16 +10,87 @@ import {
     ListItemText,
     MenuItem,
     Typography,
+    Collapse,
+    Switch,
+    Grid,
 } from '@mui/material';
 import L from 'leaflet';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
-import { Cancel } from '@mui/icons-material';
+import { Cancel, ExpandLess, ExpandMore } from '@mui/icons-material';
 import PointManager from '../../../context/PointManager';
 import TracksManager from '../../../context/TracksManager';
 import wptTabStyle from '../../styles/WptTabStyle';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 // import { measure } from '../../../util/Utils';
 import _ from 'lodash';
+
+// distinct component
+const WaypointGroup = ({ group, points, defaultOpen, ctx }) => {
+    const stylesWpt = wptTabStyle();
+
+    const [open, setOpen] = useState(defaultOpen);
+    const switchOpen = () => setOpen(!open);
+
+    const [visible, setVisible] = useState(true);
+    const switchVisible = (e) => {
+        e.stopPropagation();
+        setVisible(!visible);
+    };
+
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => setMounted(true), []);
+
+    useEffect(() => {
+        mounted && console.log('switch');
+    }, [visible]);
+
+    const iconHTML = points[0]?.layer?.options?.icon?.options?.html ?? '';
+
+    return (
+        <>
+            <MenuItem onClick={switchOpen} divider>
+                <Grid container alignItems="center">
+                    <Grid item xs={2}>
+                        <div className={stylesWpt.iconGroup} dangerouslySetInnerHTML={{ __html: iconHTML }} />
+                    </Grid>
+                    <Grid item xs={5}>
+                        {group || 'Waypoints'}
+                    </Grid>
+                    <Grid item xs={1}>
+                        <Button sx={{ borderRadius: 28, minWidth: '30px !important' }} size="small">
+                            <Typography variant="body2" color="textSecondary">
+                                {points.length}
+                            </Typography>
+                        </Button>
+                    </Grid>
+                    <Grid item xs={2}>
+                        <IconButton onClick={switchVisible}>
+                            <Switch checked={visible} />
+                        </IconButton>
+                    </Grid>
+                    <Grid item xs={2}>
+                        <IconButton>{open ? <ExpandLess /> : <ExpandMore />}</IconButton>
+                    </Grid>
+                </Grid>
+            </MenuItem>
+            <Collapse in={open}>
+                {points.map((point, keyIndex) => (
+                    <WaypointRow key={'wpt' + point.index + keyIndex} point={point} index={point.index} ctx={ctx} />
+                ))}
+            </Collapse>
+        </>
+    );
+    // dangerouslySetInnerHTML={{ __html: point.layer.options.icon.options.html + '' }}
+    // const allPoints = getSortedPoints();
+    // return (
+    //     <Box className={stylesMenu.item} minWidth={ctx.infoBlockWidth}>
+    //         {ctx.selectedGpxFile.wpts &&
+    //             allPoints.map((point, keyIndex) => (
+    //                 <WaypointRow key={'wpt' + point.index + keyIndex} point={point} index={point.index} ctx={ctx} />
+    //             ))}
+    //     </Box>
+    // );
+};
 
 // distinct component
 const WaypointRow = ({ point, index, ctx }) => {
@@ -235,12 +306,24 @@ export default function WaypointsTab() {
      * wpt.desc
      */
 
-    // function getSortedGroups(points) {
-    // }
+    function getSortedGroups() {
+        const groups = {};
+        const points = getSortedPoints();
+
+        points.forEach((p) => {
+            const g = p.wpt?.category ?? '';
+            if (!groups[g]) {
+                groups[g] = [];
+            }
+            groups[g].push(p);
+        });
+
+        return groups;
+    }
 
     // 1st level of speedup
     // avoid JSON.stringify on every render
-    // use track.name/wpts as dependence key
+    // use track.name/wpts as a dependence key
     const pointsChangedString = useMemo(() => {
         const name = ctx.selectedGpxFile.name;
         const nLayers = getLayers().length; // used to react to undo/redo
@@ -250,17 +333,32 @@ export default function WaypointsTab() {
 
     // 2nd level of speedup
     // avoid re-creation of group/rows
-    // depends on previosly memoized key
+    // depends on the previosly memoized key
     const waypoints = useMemo(() => {
-        const allPoints = getSortedPoints();
+        const groups = getSortedGroups();
+        const keys = Object.keys(groups);
         return (
             <Box className={stylesMenu.item} minWidth={ctx.infoBlockWidth}>
-                {ctx.selectedGpxFile.wpts &&
-                    allPoints.map((point, keyIndex) => (
-                        <WaypointRow key={'wpt' + point.index + keyIndex} point={point} index={point.index} ctx={ctx} />
-                    ))}
+                {keys.map((g) => (
+                    <WaypointGroup
+                        key={'wpg' + g}
+                        ctx={ctx}
+                        group={g}
+                        points={groups[g]}
+                        defaultOpen={keys.length === 1}
+                    />
+                ))}
             </Box>
         );
+        // const allPoints = getSortedPoints();
+        // return (
+        //     <Box className={stylesMenu.item} minWidth={ctx.infoBlockWidth}>
+        //         {ctx.selectedGpxFile.wpts &&
+        //             allPoints.map((point, keyIndex) => (
+        //                 <WaypointRow key={'wpt' + point.index + keyIndex} point={point} index={point.index} ctx={ctx} />
+        //             ))}
+        //     </Box>
+        // );
     }, [pointsChangedString]);
 
     return (
