@@ -194,14 +194,15 @@ export default function WaypointsTab() {
 
         if (ctx.selectedGpxFile.wpts) {
             const layers = getLayers();
-            const wptsMap = Object.fromEntries(ctx.selectedGpxFile.wpts.map((p) => [p.lat + ',' + p.lon, p]));
+            const wptsMap = Object.fromEntries(
+                ctx.selectedGpxFile.wpts.map((wpt, index) => [wpt.lat + ',' + wpt.lon, { wpt, index }])
+            );
 
             layers.forEach((layer) => {
                 if (layer instanceof L.Marker) {
                     const coord = layer.getLatLng();
-                    const key = coord.lat + ',' + coord.lng;
-                    const wpt = wptsMap[key];
-                    wpt && wpts.push({ wpt, layer });
+                    const mapped = wptsMap[coord.lat + ',' + coord.lng];
+                    mapped && wpts.push({ wpt: mapped.wpt, index: mapped.index, layer });
                 }
             });
         }
@@ -231,15 +232,16 @@ export default function WaypointsTab() {
      */
 
     // function getSortedGroups(points) {
-
     // }
 
     // 1st level of speedup
     // avoid JSON.stringify on every render
     // use track.name/wpts as dependence key
     const pointsChangedString = useMemo(() => {
-        // Note: run of JSON.stringify is ~2x times slower than getSortedPoints
-        return ctx.selectedGpxFile.name + JSON.stringify(ctx.selectedGpxFile.wpts);
+        const name = ctx.selectedGpxFile.name;
+        const nLayers = getLayers().length; // used to react to undo/redo
+        const wptsString = JSON.stringify(ctx.selectedGpxFile.wpts); // slow
+        return name + nLayers + wptsString;
     }, [ctx.selectedGpxFile, ctx.currentObjectType]);
 
     // 2nd level of speedup
@@ -250,8 +252,8 @@ export default function WaypointsTab() {
         return (
             <Box className={stylesMenu.item} minWidth={ctx.infoBlockWidth}>
                 {ctx.selectedGpxFile.wpts &&
-                    allPoints.map((point, index) => (
-                        <WaypointRow key={'wpt' + index} point={point} index={index} ctx={ctx} />
+                    allPoints.map((point, keyIndex) => (
+                        <WaypointRow key={'wpt' + point.index + keyIndex} point={point} index={point.index} ctx={ctx} />
                     ))}
             </Box>
         );
