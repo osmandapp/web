@@ -128,7 +128,11 @@ const WaypointRow = ({ point, index, ctx }) => {
                             sx={{ mr: 1 }}
                             onClick={(e) => {
                                 e.stopPropagation();
-                                PointManager.deleteWpt(index, ctx);
+                                confirm({
+                                    ctx,
+                                    text: 'Delete this waypoint?',
+                                    callback: () => PointManager.deleteWpt(index, ctx),
+                                });
                             }}
                         >
                             <Cancel fontSize="small" />
