@@ -107,6 +107,11 @@ export default function LocalClientTrackLayer() {
                 unverified.syncRouting = false;
                 unverified.updateLayers = false;
                 unverified.refreshAnalytics = false;
+
+                // keep layers
+                unverified.gpx = trusted.gpx;
+                unverified.layers = trusted.layers;
+
                 ctx.setSelectedGpxFile(unverified);
             } else {
                 console.debug('unverified-gpx-file', unverified.name);

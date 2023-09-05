@@ -95,9 +95,7 @@ const CloudTrackLayer = () => {
                 processed++;
                 file.gpx = addTrackToMap({ ctx, file, map });
                 if (file.name === ctxTrack.name) {
-                    const newGpxFiles = Object.assign({}, ctxTrack);
-                    newGpxFiles.gpx = file.gpx;
-                    ctx.setSelectedGpxFile(newGpxFiles);
+                    ctx.setSelectedGpxFile((o) => ({ ...o, gpx: file.gpx }));
                 }
                 registerCleanupFileLayer(file);
             } else if (!file.url && file.gpx) {
