@@ -42,6 +42,30 @@ const CloudTrackLayer = () => {
 
     const map = useMap();
 
+    function cleanupZombieLayers({ id, name }) {
+        for (let x in allLayers) {
+            if (x !== id && allLayers[x].name === name) {
+                map.removeLayer(allLayers[x].layer);
+                mutateAllLayers((o) => delete o[x]);
+            }
+        }
+    }
+
+    function registerCleanupFileLayer(file) {
+        const name = file.name;
+        const layer = file.gpx;
+        const id = file.gpx._leaflet_id;
+        cleanupZombieLayers({ id, name });
+        mutateAllLayers((o) => (o[id] = { name, layer }));
+    }
+
+    function unregisterCleanupFileLayer(file) {
+        const name = file.name;
+        const id = file.gpx._leaflet_id;
+        cleanupZombieLayers({ id, name });
+        mutateAllLayers((o) => delete o[id]);
+    }
+
     // update all click handlers with fresh context
     useEffect(() => {
         for (const l in ctx.gpxFiles) {
@@ -70,6 +94,7 @@ const CloudTrackLayer = () => {
                 if (ctx.gpxFiles[l].gpx && map.hasLayer(ctx.gpxFiles[l].gpx) === false) {
                     restored++;
                     ctx.gpxFiles[l].gpx = addTrackToMap({ ctx, file: ctx.gpxFiles[l], map, fit: false });
+                    registerCleanupFileLayer(ctx.gpxFiles[l]);
                 }
             }
             if (restored > 0) {
@@ -79,30 +104,6 @@ const CloudTrackLayer = () => {
     }, [ctx.createTrack?.enable]); // think about dep on ctx.gpxFiles
 
     useEffect(() => {
-        function cleanupZombieLayers({ id, name }) {
-            for (let x in allLayers) {
-                if (x !== id && allLayers[x].name === name) {
-                    map.removeLayer(allLayers[x].layer);
-                    mutateAllLayers((o) => delete o[x]);
-                }
-            }
-        }
-
-        function registerCleanupFileLayer(file) {
-            const name = file.name;
-            const layer = file.gpx;
-            const id = file.gpx._leaflet_id;
-            cleanupZombieLayers({ id, name });
-            mutateAllLayers((o) => (o[id] = { name, layer }));
-        }
-
-        function unregisterCleanupFileLayer(file) {
-            const name = file.name;
-            const id = file.gpx._leaflet_id;
-            cleanupZombieLayers({ id, name });
-            mutateAllLayers((o) => delete o[id]);
-        }
-
         let processed = 0;
         const newGpxFiles = { ...ctx.gpxFiles } ?? {};
         Object.values(newGpxFiles).forEach((file) => {
