@@ -81,6 +81,7 @@ const CloudTrackLayer = () => {
     useEffect(() => {
         if (ctxTrack && ctxTrack.zoom && ctxTrack.gpx && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK) {
             map.fitBounds(ctxTrack.gpx.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
+            ctx.setSelectedGpxFile((o) => ({ ...o, zoom: false }));
         } else if (ctxTrack.showPoint) {
             TracksManager.showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker);
         }
