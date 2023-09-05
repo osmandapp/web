@@ -15,19 +15,15 @@ iOS beta builds (TestFlight) are usually provided weekly (after the team sprint 
 
 **What's new**
 
-* Redesigned Configure Screen
 * Free account for favorites Backup (iOS) – OsmAnd Cloud
-* Difficulty classification - Configure Map
 * New Relief format
   * Contour lines plugin renamed to Topography
   * Added support for the new Terrain map format
   * Added 3D Relief 
   * Added separate button to switch 2D/3D Mode
+* Difficulty classification - Configure Map
+* Redesigned Configure Screen
 * Added OpenStreetMap authorization through OAuth 
-
-### New Configure Screen
-
-![Configure Screen](@site/blog/2023-09-25-ios-4-5/img/screen.png)
 
 ### OsmAnd Start
 
@@ -40,14 +36,6 @@ After that, you can [backup](https://osmand.net/docs/user/personal/osmand-cloud#
 ![OsmAnd Start](@site/blog/2023-09-25-ios-4-5/img/start.png)
 
 Read more about OsmAnd Start in [our article](https://osmand.net/blog/start) for OsmAnd Start in OsmAnd for Android.
-
-### Updates for Configure Map 
-
-Added [CAI (Club Alpino Italiano)](https://www.cai.it/) scale for routes [difficulty classification](https://montanarilife.com/2016/07/03/hiking-trail-rating-systems-italy/):
-
-_OsmAnd Menu → Configure map → Routes → Difficulty classification_
-
-![Class](@site/blog/2023-09-25-ios-4-5/img/class.png)
 
 ### New Relief format
 
@@ -75,6 +63,18 @@ Read more about Terrain maps in our [Blog article](https://osmand.net/blog/terra
 | Slope | 3D relief|
 |------|------|
 |![Slope](@site/blog/2023-09-25-ios-4-5/img/slope.png)|![3D](@site/blog/2023-09-25-ios-4-5/img/3d_ref.png)|
+
+### Updates for Configure Map 
+
+Added [CAI (Club Alpino Italiano)](https://www.cai.it/) scale for routes [difficulty classification](https://montanarilife.com/2016/07/03/hiking-trail-rating-systems-italy/):
+
+_OsmAnd Menu → Configure map → Routes → Difficulty classification_
+
+![Class](@site/blog/2023-09-25-ios-4-5/img/class.png)
+
+### New Configure Screen
+
+![Configure Screen](@site/blog/2023-09-25-ios-4-5/img/screen.png)
 
 ### OSM authorization through OAuth
 
