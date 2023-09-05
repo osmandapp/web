@@ -47,6 +47,7 @@ export default function CloudTrackItem({ file, customIcon = null }) {
         // CloudTrackGroup uses ctx.tracksGroups (no-url) but VisibleGroup uses ctx.gpxFiles (url exists)
         if (file.url || ctx.gpxFiles[file.name]?.url) {
             // if (file.name !== ctx.selectedGpxFile.name) { ...
+            ctx.setUpdateInfoBlock(true);
             ctx.setCurrentObjectType(ctx.OBJECT_TYPE_CLOUD_TRACK);
             ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoom: true });
         } else {
@@ -69,6 +70,7 @@ export default function CloudTrackItem({ file, customIcon = null }) {
             if (isEmptyTrack(track) === false) {
                 const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
                 ctx.setCurrentObjectType(type);
+
                 track.name = file.name;
                 Object.keys(track).forEach((t) => {
                     oneGpxFile[t] = track[t];
@@ -77,6 +79,8 @@ export default function CloudTrackItem({ file, customIcon = null }) {
 
                 ctx.mutateGpxFiles((o) => (o[file.name] = oneGpxFile));
                 ctx.setSelectedGpxFile(Object.assign({}, oneGpxFile));
+
+                ctx.setUpdateInfoBlock(true);
 
                 setError(false);
             } else {
