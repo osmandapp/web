@@ -40,7 +40,7 @@ async function userLogin(ctx, username, pwd, setEmailError, handleClose) {
     if (await isRequestOk(response, setEmailError)) {
         setEmailError('');
         ctx.setLoginUser(username);
-        ctx.setUserEmail(username, { days: 30, SameSite: 'Strict' }); // for next login
+        ctx.setEmailCookie(username, { days: 30, SameSite: 'Strict' }); // for next login
         handleClose();
     }
 }
