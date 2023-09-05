@@ -43,8 +43,13 @@ const WaypointGroup = ({ group, points, defaultOpen, ctx }) => {
     const [mounted, setMounted] = useState(false);
     useEffect(() => setMounted(true), []);
 
+    // visibility control
     useEffect(() => {
-        mounted && console.log('switch'); // FIXME
+        if (mounted) {
+            points.forEach((p) => {
+                p.layer._icon.style.display = visible ? '' : 'none';
+            });
+        }
     }, [visible]);
 
     const point = points[0].wpt;
@@ -229,9 +234,6 @@ export default function WaypointsTab() {
                 ctx.selectedGpxFile.wpts.map((wpt, index) => [wpt.lat + ',' + wpt.lon, { wpt, index }])
             );
 
-            // FIXME
-            // is layer necessary?
-            // what to do with invisible wpts?
             layers.forEach((layer) => {
                 if (layer instanceof L.Marker) {
                     const coord = layer.getLatLng();
@@ -286,7 +288,7 @@ export default function WaypointsTab() {
     // 2nd level of speedup
     // avoid re-creation of group/rows
     // depends on the previosly memoized key
-    const waypoints = useMemo(() => {
+    const allGroups = useMemo(() => {
         const groups = getSortedGroups();
         const keys = Object.keys(groups);
         return (
@@ -323,7 +325,7 @@ export default function WaypointsTab() {
                     Use the context menu to add a waypoint...
                 </Alert>
             )}
-            {waypoints}
+            {allGroups}
         </>
     );
 }
