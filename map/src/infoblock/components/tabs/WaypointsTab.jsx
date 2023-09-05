@@ -3,7 +3,7 @@ import AppContext from '../../../context/AppContext';
 import { Alert, Box, Button, IconButton, MenuItem, Typography, Collapse, Switch, Grid, Tooltip } from '@mui/material';
 import L from 'leaflet';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
-import { Cancel, ExpandLess, ExpandMore } from '@mui/icons-material';
+import { Cancel, ExpandLess, ExpandMore, KeyboardDoubleArrowDown, KeyboardDoubleArrowUp } from '@mui/icons-material';
 import PointManager from '../../../context/PointManager';
 import TracksManager from '../../../context/TracksManager';
 import wptTabStyle from '../../styles/WptTabStyle';
@@ -27,7 +27,7 @@ const useStyles = makeStyles({
 });
 
 // distinct component
-const WaypointGroup = ({ group, points, defaultOpen, ctx }) => {
+const WaypointGroup = ({ ctx, group, points, defaultOpen, bulkOpen, bulkVisible }) => {
     const stylesWpt = wptTabStyle();
     const stylesMenu = contextMenuStyles();
 
@@ -45,12 +45,21 @@ const WaypointGroup = ({ group, points, defaultOpen, ctx }) => {
 
     // visibility control
     useEffect(() => {
-        if (mounted) {
+        mounted &&
             points.forEach((p) => {
-                p.layer._icon.style.display = visible ? '' : 'none';
+                if (p.layer?._icon?.style) {
+                    p.layer._icon.style.display = visible ? '' : 'none';
+                }
             });
-        }
     }, [visible]);
+
+    useEffect(() => {
+        mounted && setOpen(bulkOpen);
+    }, [bulkOpen]);
+
+    useEffect(() => {
+        mounted && setVisible(bulkVisible);
+    }, [bulkVisible]);
 
     const point = points[0].wpt;
     const iconHTML = MarkerOptions.getWptIcon(point, point.color, point.background, point.icon).options.html;
@@ -285,12 +294,22 @@ export default function WaypointsTab() {
         return name + nLayers + wptsString;
     }, [ctx.selectedGpxFile, ctx.currentObjectType]);
 
+    const [showBulk, setShowBulk] = useState(false);
+    const [bulkOpen, setBulkOpen] = useState(false);
+    const [bulkVisible, setBulkVisible] = useState(true);
+
+    const switchBulkOpen = () => setBulkOpen(!bulkOpen);
+    const switchBulkVisible = () => setBulkVisible(!bulkVisible);
+
     // 2nd level of speedup
     // avoid re-creation of group/rows
     // depends on the previosly memoized key
     const allGroups = useMemo(() => {
         const groups = getSortedGroups();
         const keys = Object.keys(groups);
+
+        keys.length > 1 && showBulk === false && setShowBulk(true);
+
         return (
             <Box>
                 {keys.map((g) => (
@@ -300,18 +319,40 @@ export default function WaypointsTab() {
                         group={g}
                         points={groups[g]}
                         defaultOpen={keys.length === 1}
+                        bulkVisible={bulkVisible}
+                        bulkOpen={bulkOpen}
                     />
                 ))}
             </Box>
         );
-    }, [pointsChangedString]);
+    }, [pointsChangedString, bulkOpen, bulkVisible]);
 
     return (
         <>
             {ctx.createTrack && ctx.selectedGpxFile?.wpts && !_.isEmpty(ctx.selectedGpxFile.wpts) && (
-                <Button variant="contained" className={stylesMenu.button} onClick={deleteAllWpts} sx={{ mb: 2 }}>
-                    Clear all waypoints
-                </Button>
+                <MenuItem divider sx={{ px: 1, py: 1 }}>
+                    <Grid container alignItems="center">
+                        <Grid item xs={9}>
+                            <Button variant="contained" className={stylesMenu.button} onClick={deleteAllWpts}>
+                                Clear all waypoints
+                            </Button>
+                        </Grid>
+                        <Grid item xs={2}>
+                            {showBulk && (
+                                <IconButton onClick={switchBulkVisible}>
+                                    <Switch checked={bulkVisible} />
+                                </IconButton>
+                            )}
+                        </Grid>
+                        <Grid item xs={1}>
+                            {showBulk && (
+                                <IconButton onClick={switchBulkOpen}>
+                                    {bulkOpen ? <KeyboardDoubleArrowUp /> : <KeyboardDoubleArrowDown />}
+                                </IconButton>
+                            )}
+                        </Grid>
+                    </Grid>
+                </MenuItem>
             )}
 
             {openWptAlert && ctx.createTrack && (!ctx.selectedGpxFile.wpts || _.isEmpty(ctx.selectedGpxFile.wpts)) && (
