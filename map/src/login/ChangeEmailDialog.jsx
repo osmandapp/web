@@ -152,7 +152,7 @@ export default function ChangeEmailDialog({ setChangeEmailFlag }) {
                                     setChangeEmailFlag(false);
                                     setEmailChanged(false);
                                     ctx.setLoginUser(null);
-                                    ctx.setUserEmail('');
+                                    ctx.setEmailCookie('');
                                     navigate('/map/' + window.location.search + window.location.hash);
                                 }}
                             >
@@ -172,7 +172,7 @@ export default function ChangeEmailDialog({ setChangeEmailFlag }) {
                         <Button
                             onClick={() => {
                                 ctx.setLoginUser(null);
-                                ctx.setUserEmail(newEmail, { days: 30, SameSite: 'Strict' });
+                                ctx.setEmailCookie(newEmail, { days: 30, SameSite: 'Strict' });
                             }}
                         >
                             Login using new credentials

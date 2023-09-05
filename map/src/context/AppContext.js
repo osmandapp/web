@@ -157,7 +157,7 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles) {
     });
 }
 
-async function checkUserLogin(loginUser, setLoginUser, userEmail, setUserEmail) {
+async function checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCookie) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/info`, {
         method: 'GET',
     });
@@ -166,7 +166,7 @@ async function checkUserLogin(loginUser, setLoginUser, userEmail, setUserEmail) 
         let newUser = user?.username;
         if (loginUser !== newUser) {
             if (newUser) {
-                setUserEmail(newUser, { days: 30, SameSite: 'Strict' });
+                setEmailCookie(newUser, { days: 30, SameSite: 'Strict' });
             }
             setLoginUser(newUser);
         }
@@ -210,9 +210,9 @@ export const AppContextProvider = (props) => {
     const [gpxLoading, setGpxLoading] = useState(false);
     const [localTracksLoading, setLocalTracksLoading] = useState(false);
     // cookie to store email logged in
-    const [userEmail, setUserEmail] = useCookie('email', '');
+    const [emailCookie, setEmailCookie] = useCookie('email', '');
     // server state of login
-    const [loginUser, setLoginUser] = useState('noCheck');
+    const [loginUser, setLoginUser] = useState('INIT');
     const [wantDeleteAcc, setWantDeleteAcc] = useState(false);
     const [listFiles, setListFiles] = useState({});
     const [gpxFiles, mutateGpxFiles, setGpxFiles] = useMutator({});
@@ -412,11 +412,11 @@ export const AppContextProvider = (props) => {
     }, []);
 
     useEffect(() => {
-        checkUserLogin(loginUser, setLoginUser, userEmail, setUserEmail);
+        checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCookie);
     }, [loginUser]);
 
     useEffect(() => {
-        if (loginUser !== 'noCheck') {
+        if (loginUser !== 'INIT') {
             loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, gpxFiles, setGpxFiles, setFavorites);
         }
     }, [loginUser]);
@@ -432,8 +432,8 @@ export const AppContextProvider = (props) => {
                 setWeatherDate,
                 weatherType,
                 setWeatherType,
-                userEmail,
-                setUserEmail,
+                emailCookie,
+                setEmailCookie,
                 listFiles,
                 setListFiles,
                 loginUser,

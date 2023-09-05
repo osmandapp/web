@@ -28,7 +28,9 @@ export default function LoginDialog() {
 
     const classes = useStyles();
 
-    const [userEmail, setUserEmail] = useState(ctx.userEmail);
+    const [userEmail, setUserEmail] = useState(''); // first, use empty to allow browser to use auto-login
+    const [tryCookie, setTryCookie] = useState(null); // then try cookie if userEmail is still not set by browser
+
     const [pwd, setPwd] = useState();
     const [code, setCode] = useState();
     const [emailError, setEmailError] = useState(ctx.wantDeleteAcc ? 'Please log in to delete your account.' : '');
@@ -70,7 +72,9 @@ export default function LoginDialog() {
         } else if (state === 'register-verify') {
             AccountManager.userActivate(ctx, userEmail, pwd, code, setEmailError, handleClose).then();
         } else {
-            AccountManager.userLogin(ctx, userEmail, pwd, setEmailError, handleClose).then();
+            if (userEmail) {
+                AccountManager.userLogin(ctx, userEmail, pwd, setEmailError, handleClose).then();
+            }
         }
     };
 
@@ -89,11 +93,18 @@ export default function LoginDialog() {
         if (ctx.loginUser && ctx.loginUser !== '') {
             getAccountInfo().then();
         } else {
-            if (ctx.userEmail) {
-                setUserEmail(ctx.userEmail);
+            if (ctx.emailCookie) {
+                setTimeout(() => setTryCookie(ctx.emailCookie), 500); // delay to allow browser auto-login
             }
         }
     }, [ctx.loginUser]);
+
+    useEffect(() => {
+        if (tryCookie && userEmail === '') {
+            setUserEmail(tryCookie);
+            setTryCookie(null);
+        }
+    }, [tryCookie]);
 
     async function getAccountInfo() {
         const resp = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-account-info`);
@@ -283,6 +294,7 @@ export default function LoginDialog() {
                         }
                         setUserEmail(e.target.value);
                     }}
+                    onKeyPress={(e) => e.key === 'Enter' && handleLogin()}
                     id="username"
                     label="Email Address"
                     type="email"
@@ -290,7 +302,7 @@ export default function LoginDialog() {
                     variant="standard"
                     helperText={emailError ? emailError : ''}
                     error={emailError.length > 0}
-                    value={userEmail ? userEmail : ctx.userEmail}
+                    value={userEmail}
                 ></TextField>
 
                 {state === 'register' ? (
@@ -299,6 +311,7 @@ export default function LoginDialog() {
                     <TextField
                         margin="dense"
                         onChange={(e) => setPwd(e.target.value)}
+                        onKeyPress={(e) => e.key === 'Enter' && handleLogin()}
                         id="pwd"
                         label={state === 'register-verify' ? 'New Password' : 'Password'}
                         type="password"
