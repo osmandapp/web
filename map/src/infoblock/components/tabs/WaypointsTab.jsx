@@ -300,7 +300,7 @@ export default function WaypointsTab() {
         const groups = getSortedGroups();
         const keys = Object.keys(groups);
 
-        keys.length > 1 && showBulk === false && setShowBulk(true);
+        setShowBulk(keys.length > 1);
 
         return (
             <Box>
@@ -321,31 +321,31 @@ export default function WaypointsTab() {
 
     return (
         <>
-            {ctx.createTrack && ctx.selectedGpxFile?.wpts && !_.isEmpty(ctx.selectedGpxFile.wpts) && (
-                <MenuItem divider sx={{ px: 1, py: 1 }}>
-                    <Grid container alignItems="center">
-                        <Grid item xs={9}>
+            <MenuItem divider sx={{ px: 1, py: 1 }}>
+                <Grid container alignItems="center">
+                    <Grid item xs={9}>
+                        {ctx.createTrack && ctx.selectedGpxFile?.wpts && !_.isEmpty(ctx.selectedGpxFile.wpts) && (
                             <Button variant="contained" className={stylesMenu.button} onClick={deleteAllWpts}>
                                 Clear all waypoints
                             </Button>
-                        </Grid>
-                        <Grid item xs={2}>
-                            {showBulk && (
-                                <IconButton onClick={switchBulkVisible}>
-                                    <Switch checked={bulkVisible} />
-                                </IconButton>
-                            )}
-                        </Grid>
-                        <Grid item xs={1}>
-                            {showBulk && (
-                                <IconButton onClick={switchBulkOpen}>
-                                    {bulkOpen ? <KeyboardDoubleArrowUp /> : <KeyboardDoubleArrowDown />}
-                                </IconButton>
-                            )}
-                        </Grid>
+                        )}
                     </Grid>
-                </MenuItem>
-            )}
+                    <Grid item xs={2}>
+                        {showBulk && (
+                            <IconButton onClick={switchBulkVisible}>
+                                <Switch checked={bulkVisible} />
+                            </IconButton>
+                        )}
+                    </Grid>
+                    <Grid item xs={1}>
+                        {showBulk && (
+                            <IconButton onClick={switchBulkOpen}>
+                                {bulkOpen ? <KeyboardDoubleArrowUp /> : <KeyboardDoubleArrowDown />}
+                            </IconButton>
+                        )}
+                    </Grid>
+                </Grid>
+            </MenuItem>
 
             {openWptAlert && ctx.createTrack && (!ctx.selectedGpxFile.wpts || _.isEmpty(ctx.selectedGpxFile.wpts)) && (
                 <Alert
