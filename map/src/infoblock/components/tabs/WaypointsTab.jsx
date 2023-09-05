@@ -276,6 +276,13 @@ export default function WaypointsTab() {
         return groups;
     }
 
+    const [showBulk, setShowBulk] = useState(false);
+    const [bulkOpen, setBulkOpen] = useState(false);
+    const [bulkVisible, setBulkVisible] = useState(true);
+
+    const switchBulkOpen = () => setBulkOpen(!bulkOpen);
+    const switchBulkVisible = () => setBulkVisible(!bulkVisible);
+
     // 1st level of speedup
     // avoid JSON.stringify on every render
     // use track.name/wpts as a dependence key
@@ -286,19 +293,13 @@ export default function WaypointsTab() {
         return name + nLayers + wptsString;
     }, [ctx.selectedGpxFile, ctx.currentObjectType]);
 
-    const [showBulk, setShowBulk] = useState(false);
-    const [bulkOpen, setBulkOpen] = useState(false);
-    const [bulkVisible, setBulkVisible] = useState(true);
-
-    const switchBulkOpen = () => setBulkOpen(!bulkOpen);
-    const switchBulkVisible = () => setBulkVisible(!bulkVisible);
-
     // 2nd level of speedup
     // avoid re-creation of group/rows
     // depends on the previosly memoized key
     const allGroups = useMemo(() => {
         const groups = getSortedGroups();
         const keys = Object.keys(groups);
+        const trackName = ctx.selectedGpxFile.name;
 
         setShowBulk(keys.length > 1);
 
@@ -306,7 +307,7 @@ export default function WaypointsTab() {
             <Box>
                 {keys.map((g) => (
                     <WaypointGroup
-                        key={'wpg' + g}
+                        key={'wpg' + trackName + g}
                         ctx={ctx}
                         group={g}
                         points={groups[g]}
