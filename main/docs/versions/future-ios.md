@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# iOS 4.4.5 (June 2023)
+# iOS 4.5 (September 2023)
 
  Join Beta
 
@@ -15,101 +15,67 @@ iOS beta builds (TestFlight) are usually provided weekly (after the team sprint 
 
 **What's new**
 
-* Added widget ["Elevation: map center"](#elevation-map-center).
-* Added widgets ["Track recording"](#new-track-recording-widgets).
-* Added new ["Train" profile](#train-profile).
-* [External keyboard](#external-keyboard-updates): added support for new keys.
-* Added option [to disable announcing for deviation](#disable-announcing) from the route.
-* [Added search](#search-updates) for Favorites, Tracks, and OSM Edits.
-* [CarPlay](#carplay-updates): history includes points that were used in navigation.
-* [Emoji](#emoji-for-names) can now be used as favorites or waypoint name.
-* [Track appearance](#custom-color-for-tracks): added ability to set any custom color.
-* **[Bugs fixs](#bugs-fixs):**
-  * Fixed issues with the import of custom routing and rendering files.
-  * Fixed transition between offline Wikipedia articles.
+* Redesigned Configure Screen
+* Free account for favorites Backup (iOS) – OsmAnd Cloud
+* Difficulty classification - Configure Map
+* New Relief format
+  * Contour lines plugin renamed to Topography
+  * Added support for the new Terrain map format
+  * Added 3D Relief 
+  * Added separate button to switch 2D/3D Mode
+* Added OpenStreetMap authorization through OAuth 
 
-:::info
-The previous release notes for OsmAnd 4.4 you can read [here](https://osmand.net/blog/osmand-ios-4-4-released).
-:::
+### New Configure Screen
 
-### Elevation: map center
+![Configure Screen](@site/blog/2023-09-25-ios-4-5/img/screen.png)
 
-With [Elevation Widget](https://osmand.net/docs/user/widgets/info-widgets#-elevation-map-center) you can find out the elevation above sea level of the current map center. 
+### OsmAnd Start
 
-You need to subscribe [OsmAnd Pro](https://osmand.net/docs/user/purchases) and download [Heightmaps](https://osmand.net/blog/Elevation#3d-heightmap) of the desired area.
+For OsmAnd 4.5 was added OsmAnd Start plan. A user should register an email for the [OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud) and then activate _OsmAnd Start_.
 
-Put on _"Elevation: map center widget"_ on the screen: _Menu → Configure screen →  Right panel → Elevation: map center_
+_OsmAnd Menu → Settings → OsmAnd Cloud_
 
-![Elevation - Map center](@site/blog/2023-06-03-ios-4-45/elevation.png)
+After that, you can [backup](https://osmand.net/docs/user/personal/osmand-cloud#select-data-to-back-up) your [favorites](https://osmand.net/docs/user/personal/favorites), [OSM Edits and Notes](https://osmand.net/docs/user/plugins/osm-editing#create--modify-osm-note), and [OsmAnd settings](https://osmand.net/docs/user/personal/profiles) for free. 
 
+![OsmAnd Start](@site/blog/2023-09-25-ios-4-5/img/start.png)
 
-### New Track recording widgets
+Read more about OsmAnd Start in [our article](https://osmand.net/blog/start) for OsmAnd Start in OsmAnd for Android.
 
-Added new [trip recording widgets](https://osmand.net/docs/user/plugins/trip-recording#widgets) to _Track recording - Distance_: 
+### Updates for Configure Map 
 
-_Track recording - Duration, Uphill, Downhill_
+Added [CAI (Club Alpino Italiano)](https://www.cai.it/) scale for routes [difficulty classification](https://montanarilife.com/2016/07/03/hiking-trail-rating-systems-italy/):
 
-_Menu → Configure screen → Right panel → Track recording_
+_OsmAnd Menu → Configure map → Routes → Difficulty classification_
 
-![Track recording widgets](@site/blog/2023-06-03-ios-4-45/track-recording-widgets.png) ![Track recording widgets](@site/blog/2023-06-03-ios-4-45/track-recording-widgets_1.png)
+![Class](@site/blog/2023-09-25-ios-4-5/img/class.png)
 
+### New Relief format
 
+We have added _Terrain map_ for countries in [Download maps](https://osmand.net/docs/user/start-with/download-maps) menu. This data type can be used to generate [Slopes, Hillshades (paid)](https://osmand.net/docs/user/purchases/android#free-and-paid-features), and 3D maps ([OsmAnd Pro](https://osmand.net/docs/user/purchases/android#pro-features)).
 
-### Train profile
+_OsmAnd menu → Download maps_
 
-Added the new [base Train profile](https://osmand.net/docs/user/personal/profiles). Enable it by: 
+Our updates:
+- [Slope](https://osmand.net/docs/user/plugins/contour-lines#slope-map) and [Hillshades](https://osmand.net/docs/user/plugins/contour-lines#hillshade-map) can be generated from _Terrain map_ data
 
-_Menu → Settings → App Profiles (Train) → Enable_
+- Redesigned [_Terrain menu_](https://osmand.net/docs/user/map/configure-map-menu): _OsmAnd menu → Configure map → Terrain_
 
-After than you can make routing by using train roads.
+- Added ["3D Relief"](https://osmand.net/docs/user/plugins/contour-lines#3d-relief) button ([OsmAnd Pro](https://osmand.net/docs/user/purchases/android#pro-features)) for Terrain menu. It allows you to activate 3D view for relief (offline): _OsmAnd menu → Configure map → Terrain → 3D Relief_
 
-![Train profile](@site/blog/2023-06-03-ios-4-45/train.png)
+- The new "3D/2D Mode" button for the map screen was added. Now you can make a map tilt not only with [two fingers](https://osmand.net/docs/user/map/interact-with-map#gestures). "3D/2D Mode" button acts differently with menus and on map screens if _3D Mode_ in Configure Screen is set to Visible in 3D Mode.
+_OsmAnd Menu → Configure Screen → Buttons → 3D Mode_:
+  - Hidden
+  - Visible
+  - VIsible in 3D mode
 
-### External keyboard updates
+  ** **map tilt angle by button is the last tilt angle by two-finger gestures**
 
-We added more buttons for [External keyboards](https://osmand.net/docs/user/map/interact-with-map#external-input-device-buttons):
+Read more about Terrain maps in our [Blog article](https://osmand.net/blog/terrain).
 
-_Menu → Settings → App Profile → General settings → External input devices → Generic Keyboard_.
--  Zoom in, bind to two keys, `+` and `=`. _(- make '=' equals '+')_
--  Bind `Esc` to back _(to close **Context menu** and **Modal views**)_
--  Bind `N` to open **Navigation** view 
--  Bind `S` to open **Search** view
--  Bind `P` to switch to the next app profile. Show toast like message _**App profile: Name**_. 
--  Bind `O` to switch to the previous app profile.
+| Slope | 3D relief|
+|------|------|
+|![Slope](@site/blog/2023-09-25-ios-4-5/img/slope.png)|![3D](@site/blog/2023-09-25-ios-4-5/img/3d_ref.png)|
 
-### Disable announcing
+### OSM authorization through OAuth
 
-Added [option to disable announcing](https://osmand.net/docs/user/navigation/guidance/voice-navigation/) for deviation from the route:
-
-_OsmAnd Menu → Settings → App profile → Navigation settings → Vioce prompts → Other (Announce deviation from the route)_
-
-### Search updates
-
-Added the search line for _My Places menu_: Favorites, Tracks, OSM Edits
-
-Added allowing to use Emoji in user points name.
-
-![Search for My Places](@site/blog/2023-06-03-ios-4-45/search.png)
-
-### CarPlay updates
-
-Added the [option for CarPlay](https://osmand.net/docs/user/navigation/car-play#history): history includes points that were used in navigation.
-
-### Emoji for names
-
-Added allowing to use Emoji in user points name.
-
-![Emoji](@site/blog/2023-06-03-ios-4-45/emoji.png)
-
-
-### Custom color for tracks
-
-Added extended palette for coloring [GPX tracks](https://osmand.net/docs/user/map/track-context-menu), [Favorites](https://osmand.net/docs/user/personal/favorites) and [Waypoints](https://osmand.net/docs/user/personal/tracks#add-waypoint).
-
-![Colors GPX](@site/blog/2023-06-03-ios-4-45/colors.png) ![Colors GPX](@site/blog/2023-06-03-ios-4-45/colors_1.png)
-
-
-### Bugs fixs
-
-  * Fixed issues with the import of custom routing and rendering files.
-  * Fixed transition between offline Wikipedia articles.
+Read more about Login settings [here](https://osmand.net/docs/user/plugins/osm-editing#settings).
