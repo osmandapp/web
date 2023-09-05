@@ -63,7 +63,7 @@ Use one of the following paths to open the plugin settings:
 
 <TabItem value="android" label="Android">  
 
-**Use raster [SQLIte format](../../technical/osmand-file-formats/osmand-sqlite.md/) for hillshade and slope** - Ability to load old format raster maps.
+**Use raster [SQLIte format](../../technical/osmand-file-formats/osmand-sqlite.md/) for hillshade and slope** - allow you to load old format raster maps.
 
 </TabItem>
 

@@ -77,7 +77,7 @@ Altitude can not be displayed correctly on some Android devices. To resolve this
 </Tabs>   
 
 You can use the widget to find out the elevation of the current map center above sea level.
-[Download](../start-with/download-maps.md) height maps of the required area to display information in the Elevation: map center widget.  
+[Download](../start-with/download-maps.md) heightmaps of the required area to display information in the *Elevation: map center widget*.  
 
 | | |
 |------------|------------|
@@ -91,7 +91,7 @@ You can use the widget to find out the elevation of the current map center above
 
 ![Current time widget](@site/static/img/widgets/current_time_widget.png)    
 
-widget displays the current time taken from your device.  
+This widget displays the current time taken from your device.  
 
 | | |
 |------------|------------|
@@ -142,15 +142,28 @@ The average speed is calculated for a given time interval according to your sele
 | By tapping | No changes |   
 
 
-## Battery level
+## Glide ratio
 
-This widget shows the battery level of your device.
+<InfoAndroidOnly />  
 
-![Battery level widget](@site/static/img/widgets/battery_level_widget.png)
+The widgets show the glide ratio to the target or the average glide ratio for the current flight.   
 
 | | |
 |------------|------------|
-| Enable | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_battery"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → Glide ratio* |
+| By tapping | No changes |
+
+
+## Battery level
+
+![Battery level widget](@site/static/img/widgets/battery_level_widget.png)  
+
+This widget shows the battery level of your device.
+
+| | |
+|------------|------------|
+Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_battery"/>* |
+|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_battery"/>* |
 | By tapping | No changes |
 
 
@@ -203,10 +216,7 @@ You can reset the current GPS cache through:
 | By tapping | Opens the GPS status menu with third-party tools to configure the on-board GPS device. |  
 
 
-## Sunset and sunrise widgets
-
-Sunset and sunrise widgets show the time of the next sunrise or sunset for the center of the map. Widgets can also display the remaining time (*time left*) until the expected sunset/sunrise (also for the center of the map). In both cases *time* or *time left* is indicated by the device time.  
-
+## Sunset and sunrise
 
 <Tabs groupId="operating-systems">
 
@@ -224,11 +234,52 @@ Sunset and sunrise widgets show the time of the next sunrise or sunset for the c
 
 </Tabs>  
 
+Sunset and sunrise widgets show the time of the next sunrise or sunset for the center of the map. Widgets can also display the remaining time (*time left*) until the expected sunset/sunrise (also for the center of the map). In both cases *time* or *time left* is indicated by the device time.    
+
 | | |
 |------------|------------|
 | Enable | **Android** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_group_sunrise_sunset"/>* |
 |   |  **iOS** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_sunrise"/> / <Translate ios="true" ids="map_widget_sunset"/>* |
-| By tapping | Switch between *Time left* and the Time of the next sunrise/sunset.| 
+| By tapping | Switch between *Time left* and the Time of the next sunrise/sunset.|  
+
+
+## Radius ruler
+
+:::note  
+You can read a more detailed description here: **[Radius ruler and Ruler](../widgets/radius-ruler.md)**.  
+:::  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<table class="blogimage">
+    <tr>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Radius-ruler"/></td>
+    </tr>
+</table> 
+
+
+</TabItem>
+
+</Tabs>
+
+The Radius Ruler widget shows the distance between your location and the center point of the Radius Ruler. The radius of the first circle is equal to [the map scale](../widgets/radius-ruler.md#ruler).
+
+| | |
+|------------|------------|
+Enable | **Android**: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_ruler_control"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,map_widget_ruler_control"/>* |
+| By tapping | Сhanges widget state between the black scale, the grey one and non-visible modes. |
+| Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
 
 ## * Trip recording widgets  
@@ -322,19 +373,19 @@ The Weather widgets display the current weather information for the central poin
 ## * Parking widget
 
 :::note  
-Parking widget can be added to the map screen only when OsmAnd [Parking plugin](../plugins/parking.md) is enabled.  
+Parking widget can be added to the map screen only when OsmAnd [**Parking position plugin**](../plugins/parking.md) is enabled.  
 :::  
 
-This is a Parking plugin widget that shows distance from your screen center to the parking place.  
+![Parking widget](@site/static/img/plugins/parking/parking_widget.png)  
 
-![Parking widget](@site/static/img/plugins/parking/parking_widget.png)
+This is a Parking plugin widget that shows the distance from the center of the screen to the parking location.    
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_parking"/> |
-| By tapping | Moves map view to the parking position |
-| Format | *<Translate android="true" ids="android_button_seq"/>:* <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/> |
-|        | *<Translate ios="true" ids="ios_button_seq"/>:*  <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/> |
+| Enable | **Android**: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_parking"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,map_widget_parking"/>* |
+| By tapping | Moves map view to the parking position. |
+| Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
 ## * Mapillary widget
@@ -357,22 +408,23 @@ This is a Mapillary plugin widget that provides quick access to Mapillary app to
 ## * Audio/video notes widget
 
 :::note  
-Audio/video notes widget can be added to the map screen only when OsmAnd [<Translate android="true" ids="audionotes_plugin_name"/> plugin](../plugins/audio-video-notes.md) is enabled.  
-:::  
-
-This is an Audio/video notes plugin widget that provides quick access to start or stop recording (audio/video or photo).
-
-You can configure which action can be selected by default:
-- On request – every time dialog to choose aciton is displayed. (default state).
-- Record audio – takes an audio note by default.
-- Record video – records a video by default.
-- Take a photo – takes a photo by default.  
+Widgets can only be added to the map screen when the OsmAnd [**Audio/video notes plugin**](../plugins/audio-video-notes.md) is enabled. 
+:::   
 
 ![Audio-video notes widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
+These are Audio/video notes plugin widgets that provide quick access to start/stop taking audio, video, or photo notes.  
+
+You can configure which action is selected by default:    
+
+- *On request*. Default state. Every time the action selection dialog is displayed. 
+- *Record audio* - records an audio note.
+- *Record video* - allows you to record a video.
+- *Take a photo* - allows you to take a photo.  
+
 | | |
 |------------|------------|
-| Enable | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_av_notes"/>*  |
+| Enable | **Android**: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_av_notes"/>*  |
 | By tapping | Start / stops taking a note  |
 
 
@@ -437,7 +489,6 @@ The [FPS Widget](../plugins/development.md#fps-widget) shows how fast the map an
 
 
 ### Camera widgets  
-
 
 Camera widgets can be used to compare the OsmAnd map and the earth's surface. There are four Camera widgets: [Camera tilt widget](../plugins/development.md#camera-tilt), [Camera Elevation widget](../plugins/development.md#camera-elevation), [Zoom level widget](../plugins/development.md#zoom-level) and [Distance from camera to target widget](../plugins/development.md#distance-to-target).  
 
