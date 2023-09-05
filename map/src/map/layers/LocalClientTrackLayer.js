@@ -194,7 +194,7 @@ export default function LocalClientTrackLayer() {
         Object.values(ctx.localTracks).forEach((track) => {
             let currLayer = localLayers[track.name];
             if (track.selected && !currLayer) {
-                const needFitBounds = isEmptyTrack(track) === false;
+                const needFitBounds = track.name === ctxTrack.name && isEmptyTrack(track) === false;
                 addTrackToMap(track, needFitBounds, true);
             } else if (currLayer) {
                 currLayer.active = track.selected;

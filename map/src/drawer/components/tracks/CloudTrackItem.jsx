@@ -1,6 +1,6 @@
 import AppContext from '../../../context/AppContext';
 import { Alert, LinearProgress, ListItemText, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
-import { useContext, useState, useMemo } from 'react';
+import { useContext, useState, useMemo, useEffect } from 'react';
 import Utils from '../../../util/Utils';
 import TrackInfo from './TrackInfo';
 import TracksManager, { isEmptyTrack } from '../../../context/TracksManager';
@@ -17,14 +17,23 @@ export default function CloudTrackItem({ file, customIcon = null }) {
 
     const info = useMemo(() => <TrackInfo file={file} />, [file]);
 
-    async function enableLayer(setProgressVisible, visible) {
+    const [displayTrack, setDisplayTrack] = useState(null); // null -> true/false -> null
+
+    async function processDisplayTrack({ visible, setLoading }) {
         if (!visible) {
             deleteTrackFromMap();
-            setProgressVisible(false);
+            setLoading(false);
         } else {
-            await addTrackToMap(setProgressVisible);
+            await addTrackToMap(setLoading);
         }
     }
+
+    useEffect(() => {
+        if (displayTrack === true || displayTrack === false) {
+            processDisplayTrack({ setLoading: setLoadingTrack, visible: displayTrack });
+            setDisplayTrack(null);
+        }
+    }, [displayTrack]);
 
     function deleteTrackFromMap() {
         ctx.mutateGpxFiles((o) => (o[file.name].url = null));
@@ -93,7 +102,7 @@ export default function CloudTrackItem({ file, customIcon = null }) {
         () => (
             <>
                 <Tooltip title={info} arrow placement={mobile ? 'bottom' : 'right'}>
-                    <MenuItem onClick={() => addTrackToMap(ctx.setGpxLoading)}>
+                    <MenuItem onClick={() => setDisplayTrack(true)}>
                         <ListItemText inset>
                             <Typography variant="inherit" noWrap>
                                 {customIcon}
@@ -102,11 +111,9 @@ export default function CloudTrackItem({ file, customIcon = null }) {
                         </ListItemText>
                         <Switch
                             disabled={loadingTrack}
-                            checked={!!ctx.gpxFiles[file.name]?.url}
                             onClick={(e) => e.stopPropagation()}
-                            onChange={(e) => {
-                                !file.local && enableLayer(setLoadingTrack, e.target.checked);
-                            }}
+                            checked={!!ctx.gpxFiles[file.name]?.url}
+                            onChange={(e) => !file.local && setDisplayTrack(e.target.checked)}
                         />
                     </MenuItem>
                 </Tooltip>
