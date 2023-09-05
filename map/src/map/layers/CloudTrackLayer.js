@@ -5,18 +5,22 @@ import TrackLayerProvider from '../TrackLayerProvider';
 import TracksManager from '../../context/TracksManager';
 import { useMutator } from '../../util/Utils';
 
+function clickHandler({ ctx, file, layer }) {
+    if (file.name !== ctx.selectedGpxFile.name || ctx.infoBlockWidth === '0px') {
+        file.analysis = TracksManager.prepareAnalysis(file.analysis);
+        ctx.setSelectedGpxFile(Object.assign({}, file));
+        const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
+        ctx.setCurrentObjectType(type);
+        ctx.setUpdateInfoBlock(true);
+        layer.off('click'); // once
+    }
+}
+
 function addTrackToMap({ ctx, file, map, fit = true } = {}) {
     const layer = TrackLayerProvider.createLayersByTrackData(file, ctx, map);
 
-    layer.on('click', () => {
-        if (file.name !== ctx.selectedGpxFile.name && ctx.infoBlockWidth === '0px') {
-            file.analysis = TracksManager.prepareAnalysis(file.analysis);
-            ctx.setSelectedGpxFile(Object.assign({}, file));
-            const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
-            ctx.setCurrentObjectType(type);
-            ctx.setUpdateInfoBlock(true);
-        }
-    });
+    layer.on('click', () => clickHandler({ ctx, file, layer }));
+
     if (fit) {
         map.fitBounds(layer.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
     }
@@ -37,6 +41,17 @@ const CloudTrackLayer = () => {
     const [selectedPointMarker, setSelectedPointMarker] = useState(null);
 
     const map = useMap();
+
+    // update all click handlers with fresh context
+    useEffect(() => {
+        for (const l in ctx.gpxFiles) {
+            const file = ctx.gpxFiles[l];
+            if (file && file.url && file.gpx && map.hasLayer(file.gpx)) {
+                file.gpx.off('click');
+                file.gpx.on('click', () => clickHandler({ ctx, file, layer: file.gpx }));
+            }
+        }
+    }, [ctx.selectedGpxFile.name, ctx.infoBlockWidth]);
 
     // control zoom-fit for cloud tracks
     useEffect(() => {
@@ -102,6 +117,9 @@ const CloudTrackLayer = () => {
                 processed++;
                 unregisterCleanupFileLayer(file);
                 file.gpx = removeLayerFromMap(file, map);
+            } else if (file.delete) {
+                processed++;
+                delete newGpxFiles[file.name];
             }
         });
         if (processed > 0) {

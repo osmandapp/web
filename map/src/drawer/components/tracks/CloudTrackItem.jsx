@@ -13,7 +13,7 @@ export default function CloudTrackItem({ file, customIcon = null }) {
     const [, , mobile] = useWindowSize();
 
     const [loadingTrack, setLoadingTrack] = useState(false);
-    const [error, setError] = useState(false);
+    const [error, setError] = useState('');
 
     const info = useMemo(() => <TrackInfo file={file} />, [file]);
 
@@ -76,7 +76,9 @@ export default function CloudTrackItem({ file, customIcon = null }) {
             });
             const track = await TracksManager.getTrackData(gpxfile);
             setProgressVisible(false);
-            if (isEmptyTrack(track) === false) {
+            if (!track) {
+                setError('Something went wrong!');
+            } else if (isEmptyTrack(track) === false) {
                 const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
                 ctx.setCurrentObjectType(type);
 
@@ -91,9 +93,9 @@ export default function CloudTrackItem({ file, customIcon = null }) {
 
                 ctx.setUpdateInfoBlock(true);
 
-                setError(false);
+                setError('');
             } else {
-                setError(true);
+                setError('Empty track is not supported!');
             }
         }
     }
@@ -101,7 +103,7 @@ export default function CloudTrackItem({ file, customIcon = null }) {
     const rendered = useMemo(
         () => (
             <>
-                <Tooltip title={info} arrow placement={mobile ? 'bottom' : 'right'}>
+                <Tooltip title={info} arrow placement={mobile ? 'bottom' : 'right'} disableInteractive>
                     <MenuItem onClick={() => setDisplayTrack(true)}>
                         <ListItemText inset>
                             <Typography variant="inherit" noWrap>
@@ -118,9 +120,9 @@ export default function CloudTrackItem({ file, customIcon = null }) {
                     </MenuItem>
                 </Tooltip>
                 {loadingTrack ? <LinearProgress /> : <></>}
-                {error && (
-                    <Alert onClose={() => setError(false)} severity="warning">
-                        Something went wrong!
+                {error !== '' && (
+                    <Alert onClose={() => setError('')} severity="warning">
+                        {error}
                     </Alert>
                 )}
             </>

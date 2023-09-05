@@ -531,6 +531,9 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
                 name: type === FavoritesManager.FAVORITE_FILE_TYPE ? currentFolder : currentFolder + fileName + '.gpx',
             };
 
+            // close possibly loaded Cloud track (clean up layers)
+            ctx.mutateGpxFiles((o) => o[params.name] && (o[params.name].url = null));
+
             const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data, { params });
 
             if (res && res?.data?.status === 'ok') {
@@ -653,14 +656,16 @@ export function clearAllLocalTracks(ctx) {
     deleteLocalTracks(); // delete from localStorage
 }
 
-function formatRouteMode({ profile = 'car', params }) {
+function formatRouteMode({ profile = 'car', params, includeFalse = false }) {
     let routeModeStr = profile ?? 'car';
     if (params) {
         Object.keys(params).forEach((o) => {
             if (params[o]?.value === true) {
                 routeModeStr += ',' + o;
             } else if (params[o]?.value === false) {
-                // skip
+                if (includeFalse) {
+                    routeModeStr += ',' + o + '=' + params[o].value;
+                }
             } else {
                 routeModeStr += ',' + o + '=' + params[o].value;
             }
@@ -675,8 +680,10 @@ function decodeRouteMode({ routeMode, params }) {
 
     routeMode.split(',').forEach((p) => {
         // assume empty as true (see formatRouteMode)
-        const [key, val = true] = p.split('=');
+        let [key, val = true] = p.split('=');
         if (draft[key]) {
+            val === 'false' && (val = false);
+            val === 'true' && (val = true);
             draft[key].value = val;
         }
     });
@@ -729,6 +736,7 @@ export function eligibleToApplySrtm({ track }) {
     function detectNoElevation(track) {
         function checkPoints(points) {
             let nonZeroPoints = 0;
+            let checkedPoints = 0;
             if (points && points.length >= 2) {
                 for (let p = 0; p < points.length; p++) {
                     const geometry = points[p].geometry;
@@ -740,19 +748,24 @@ export function eligibleToApplySrtm({ track }) {
                             if (isNonZeroEle(geometry[g].ele)) {
                                 nonZeroPoints++; // count non-zero elevation (gpx bug)
                             }
+                            checkedPoints++;
                         }
                     } else {
-                        // check points if empty geo
-                        if (isEmptyEle(points[p].ele)) {
-                            return true;
-                        }
-                        if (isNonZeroEle(points[p].ele)) {
-                            nonZeroPoints++;
+                        // is geometry empty or undefined (p>0)
+                        // is geometry strictly undefined (p==0)
+                        if (geometry === undefined || p > 0) {
+                            if (isEmptyEle(points[p].ele)) {
+                                return true;
+                            }
+                            if (isNonZeroEle(points[p].ele)) {
+                                nonZeroPoints++;
+                            }
+                            checkedPoints++;
                         }
                     }
                 }
             }
-            return nonZeroPoints === 0 ? true : false; // fix all-zero-elevation gpx problem
+            return checkedPoints > 0 && nonZeroPoints === 0 ? true : false; // fix all-zero-elevation gpx problem
         }
 
         if (track.points) {
@@ -1017,6 +1030,10 @@ export function isEmptyTrack(track, checkWpts = true, checkPoints = true) {
         }
     }
     return !hasPoints && !hasWpts;
+}
+
+export function hasSegments(track) {
+    return track?.points?.length >= 2 || (track?.tracks?.length > 0 && track.tracks[0].points?.length >= 2);
 }
 
 export function isPointUnrouted({ point, pointIndex, prevPoint }) {

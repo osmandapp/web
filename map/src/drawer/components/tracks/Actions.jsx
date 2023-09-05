@@ -94,7 +94,7 @@ export default function Actions({ files, setSortFiles }) {
             const icon = reverse ? method.reverseIcon : method.directIcon;
             const color = isCurrent ? 'primary' : '';
             icons.push(
-                <Tooltip key={m} title={method.alt} placement="top" arrow>
+                <Tooltip key={m} title={method.alt} placement="top" arrow disableInteractive>
                     <IconButton color={color} onClick={() => select(method)}>
                         {icon}
                     </IconButton>

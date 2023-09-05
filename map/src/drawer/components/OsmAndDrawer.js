@@ -50,7 +50,7 @@ export default function OsmAndDrawer({ toggleDrawer }) {
                     >
                         <ArrowBack />
                     </IconButton>
-                    {ctx.loginUser ? (
+                    {ctx.loginUser && ctx.loginUser != 'INIT' ? (
                         <Button className={classes.btn} onClick={openLogin}>
                             {ctx.loginUser}
                         </Button>
