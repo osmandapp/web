@@ -1,14 +1,14 @@
 import { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
-import TrackLayerProvider from '../TrackLayerProvider';
+import TrackLayerProvider, { redrawWptsOnLayer } from '../TrackLayerProvider';
 import TracksManager from '../../context/TracksManager';
 import { useMutator } from '../../util/Utils';
 
 function clickHandler({ ctx, file, layer }) {
     if (file.name !== ctx.selectedGpxFile.name || ctx.infoBlockWidth === '0px') {
         file.analysis = TracksManager.prepareAnalysis(file.analysis);
-        ctx.setSelectedGpxFile(Object.assign({}, file));
+        ctx.setSelectedGpxFile({ ...file, cloudRedrawWpts: true });
         const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
         ctx.setCurrentObjectType(type);
         ctx.setUpdateInfoBlock(true);
@@ -79,11 +79,17 @@ const CloudTrackLayer = () => {
 
     // control zoom-fit for cloud tracks
     useEffect(() => {
-        if (ctxTrack && ctxTrack.zoom && ctxTrack.gpx && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK) {
-            map.fitBounds(ctxTrack.gpx.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
-            ctx.setSelectedGpxFile((o) => ({ ...o, zoom: false }));
-        } else if (ctxTrack.showPoint) {
-            TracksManager.showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker);
+        if (ctxTrack && ctxTrack.gpx && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK) {
+            if (ctxTrack.zoom) {
+                map.fitBounds(ctxTrack.gpx.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
+                ctx.setSelectedGpxFile((o) => ({ ...o, zoom: false }));
+            } else if (ctxTrack.cloudRedrawWpts) {
+                redrawWptsOnLayer({ layer: ctxTrack.gpx });
+                ctx.setSelectedGpxFile((o) => ({ ...o, cloudRedrawWpts: false }));
+            } else if (ctxTrack.showPoint) {
+                TracksManager.showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker);
+                ctx.setSelectedGpxFile((o) => ({ ...o, showPoint: false }));
+            }
         }
     }, [ctxTrack]);
 
@@ -112,7 +118,7 @@ const CloudTrackLayer = () => {
                 processed++;
                 file.gpx = addTrackToMap({ ctx, file, map });
                 if (file.name === ctxTrack.name) {
-                    ctx.setSelectedGpxFile((o) => ({ ...o, gpx: file.gpx }));
+                    ctx.setSelectedGpxFile((o) => ({ ...o, gpx: file.gpx, cloudRedrawWpts: true }));
                 }
                 registerCleanupFileLayer(file);
             } else if (!file.url && file.gpx) {

@@ -58,7 +58,7 @@ export default function CloudTrackItem({ file, customIcon = null }) {
             // if (file.name !== ctx.selectedGpxFile.name) { ...
             ctx.setUpdateInfoBlock(true);
             ctx.setCurrentObjectType(ctx.OBJECT_TYPE_CLOUD_TRACK);
-            ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoom: true });
+            ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoom: true, cloudRedrawWpts: true });
         } else {
             setProgressVisible(true);
             const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;

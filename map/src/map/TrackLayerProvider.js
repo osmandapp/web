@@ -378,6 +378,16 @@ function createEditableTempLPolyline(start, end, map, ctx) {
     return polylineTemp;
 }
 
+export function redrawWptsOnLayer({ layer }) {
+    layer.getLayers().forEach((l) => {
+        if (l instanceof L.Marker && l.options?.wpt) {
+            if (l._icon?.style) {
+                l._icon.style.display = null; // visible
+            }
+        }
+    });
+}
+
 const TrackLayerProvider = {
     createLayersByTrackData,
     parsePoints,
