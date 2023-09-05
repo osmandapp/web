@@ -8,7 +8,6 @@ import PointManager from '../../../context/PointManager';
 import TracksManager from '../../../context/TracksManager';
 import wptTabStyle from '../../styles/WptTabStyle';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
-// import { measure } from '../../../util/Utils';
 import { makeStyles } from '@material-ui/core/styles';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import MarkerOptions from '../../../map/markers/MarkerOptions';
@@ -112,13 +111,6 @@ const WaypointRow = ({ point, index, ctx }) => {
         ctx.setSelectedWpt(point);
         ctx.setSelectedGpxFile((o) => ({ ...o, showPoint: point }));
     }
-
-    /**
-     * wpt.icon (direct process is better)
-     * wpt.category (1st key)
-     * wpt.name (2nd key)
-     * wpt.desc
-     */
 
     function pointLines(point) {
         const line = ({ key, font, str }) =>
