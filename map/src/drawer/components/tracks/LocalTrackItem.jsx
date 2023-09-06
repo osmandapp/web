@@ -53,8 +53,9 @@ export default function LocalTrackItem({ track }) {
     }
 
     function updateLocalTrack() {
-        ref.selected = true;
         ref.zoom = true;
+        ref.selected = true;
+        ref.wpts?.length > 0 && (ref.localRedrawWpts = true);
         ref.analysis = TracksManager.prepareAnalysis(ref.analysis);
         TracksManager.addDistance(ref); // recalc-distance-local
         ctx.setLocalTracks([...ctx.localTracks]);

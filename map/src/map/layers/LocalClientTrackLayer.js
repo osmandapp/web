@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
-import TrackLayerProvider, { TEMP_LAYER_FLAG } from '../TrackLayerProvider';
+import TrackLayerProvider, { TEMP_LAYER_FLAG, redrawWptsOnLayer } from '../TrackLayerProvider';
 import TracksManager, { isEmptyTrack } from '../../context/TracksManager';
 import _ from 'lodash';
 import EditablePolyline from '../EditablePolyline';
@@ -106,6 +106,8 @@ export default function LocalClientTrackLayer() {
                 unverified.zoom = false;
                 unverified.syncRouting = false;
                 unverified.updateLayers = false;
+                unverified.localRedrawWpts = false;
+                unverified.cloudRedrawWpts = false;
                 unverified.refreshAnalytics = false;
 
                 // keep layers
@@ -128,6 +130,7 @@ export default function LocalClientTrackLayer() {
      *
      * - finish track rename (oldName)
      * - check/get routing from cache (syncRouting)
+     * - redraw (force visible) track waypoints (localRedrawWpts)
      * - refresh analytics (used after unrouted Line-segment changes)
      * - save Local tracks (when editor enabled)
      * - check/set Zoom (fitBounds) for Local tracks
@@ -139,6 +142,8 @@ export default function LocalClientTrackLayer() {
                 finishTrackRename();
             } else if (ctxTrack.syncRouting) {
                 syncRouting();
+            } else if (ctxTrack.localRedrawWpts) {
+                localRedrawWpts();
             } else if (ctxTrack.refreshAnalytics) {
                 refreshAnalytics();
             } else {
@@ -322,6 +327,11 @@ export default function LocalClientTrackLayer() {
         track.syncRouting = false;
         syncTrackWithCache({ ctx, track, geoRouter, debouncerTimer }); // mutate track
         ctx.setSelectedGpxFile(track);
+    }
+
+    function localRedrawWpts() {
+        redrawWptsOnLayer({ layer: ctxTrack.layers });
+        ctx.setSelectedGpxFile((o) => ({ ...o, localRedrawWpts: false }));
     }
 
     function finishTrackRename() {
