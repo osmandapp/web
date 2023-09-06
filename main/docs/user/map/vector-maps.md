@@ -285,7 +285,8 @@ The map is displayed according to the day or night mode selected from the list. 
 
 ### Routes
 
-In OsmAnd you can highlight official routes (present on OpenStreetMap) and hiking symbol overlay for your activities. It is very useful for your cycling, hiking, etc. You can select multiple routes at once though they will be displayed as layers and if the road has multiple routes over it only top colour will be visible. If you have some specific rendering styles enabled, you could have a bigger routes variety i.e. for ***Snowmobile style*** you could select ***Snowmobile routes***.  
+In OsmAnd it is possible to highlight GPX routes from Openstreetmap related to different outdoor activities (hiking, cycling, running, etc.). You can select one or multiple routes layers at once. However, it is important to note that if different routes meet at the same point, only the color of the uppermost layer will be visible (see [map legend](../map-legend/osmand.md#routes)).  
+The main purpose of this option is to make journey planning easier. When you click on the shield icon with a route number or flag, a context menu with available options is displayed. In some cases, you may find several routes intersecting at a certain place. When you select one of the routes, the *[Track context menu](../map/track-context-menu.md)* appears. In this menu there is an option to save the route in the device memory in GPX format, which will allow you to use it later for [GPX navigation](../navigation/setup/gpx-navigation.md).
 
 <Tabs groupId="operating-systems">
 
