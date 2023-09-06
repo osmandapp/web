@@ -37,12 +37,16 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowIn
                 },
             });
             if (response.status === 200) {
-                // delete layer
-                const newGpxFiles = Object.assign({}, ctx.gpxFiles);
-                newGpxFiles[ctx.selectedGpxFile.name].url = null;
-                ctx.setGpxFiles(newGpxFiles);
+                // delete track in ctx.gpxFiles (processed by CloudTrackLayer)
+                const name = ctx.selectedGpxFile.name;
+                ctx.mutateGpxFiles((o) => {
+                    if (o[name]) {
+                        o[name].url = null; // remove layer
+                        o[name].delete = true; // remove file
+                    }
+                });
 
-                // delete track ctx.tracksGroups (used in CloudTrackGroup menu)
+                // delete track from ctx.tracksGroups (used in CloudTrackGroup menu)
                 const newTracksGroups = [...ctx.tracksGroups];
                 newTracksGroups?.forEach((group) => {
                     const currentFile = group.files.findIndex((file) => file.name === ctx.selectedGpxFile.name);

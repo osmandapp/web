@@ -16,8 +16,8 @@ You can participate in testing the OsmAnd beta build through Google Play.
 
 ## What's new
 
-• Glide Ratio Widget
-• Added ANT+ temperature widget
-• New help screen with offline support
-• Better memory management for large GPX tracks
+* Glide Ratio Widget
+* Added ANT+ temperature widget
+* New help screen with offline support
+* Better memory management for large GPX tracks
 

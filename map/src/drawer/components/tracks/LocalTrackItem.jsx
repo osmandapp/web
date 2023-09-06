@@ -94,7 +94,7 @@ export default function LocalTrackItem({ track }) {
 
     return (
         <div>
-            <Tooltip title={info} arrow placement={mobile ? 'bottom' : 'right'}>
+            <Tooltip title={info} arrow placement={mobile ? 'bottom' : 'right'} disableInteractive>
                 <MenuItem key={'track._leaflet_id' + track.name} onClick={() => addTrackToMap()}>
                     <ListItemText inset>
                         <Typography variant="inherit" noWrap>
