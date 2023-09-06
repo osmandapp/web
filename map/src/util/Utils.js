@@ -189,6 +189,21 @@ export function prepareFileName(filename) {
     );
 }
 
+/**
+ * Measure performance of f() function.
+ * Used internally for developing purposes only.
+ *
+ * By default, run f() in a cycle within 1000 ms duration.
+ * Finally, calculate and log performance (runs per 1 second).
+ *
+ * Return result of the latest run of f()
+ *
+ * Example:
+ *
+ * getPoints.forEach(...) // usual call
+ *
+ * measure(getPoints).forEach(...) // measure performance
+ */
 export function measure(f, ms = 1000) {
     let counter = 0;
     let result = null;
