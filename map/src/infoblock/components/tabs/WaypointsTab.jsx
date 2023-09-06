@@ -26,7 +26,7 @@ const useStyles = makeStyles({
 });
 
 // distinct component
-const WaypointGroup = ({ ctx, group, points, defaultOpen, bulkOpen, bulkVisible }) => {
+const WaypointGroup = ({ ctx, group, points, defaultOpen, massOpen, massVisible }) => {
     const stylesWpt = wptTabStyle();
     const stylesMenu = contextMenuStyles();
 
@@ -53,12 +53,12 @@ const WaypointGroup = ({ ctx, group, points, defaultOpen, bulkOpen, bulkVisible 
     }, [visible]);
 
     useEffect(() => {
-        mounted && setOpen(bulkOpen);
-    }, [bulkOpen]);
+        mounted && setOpen(massOpen);
+    }, [massOpen]);
 
     useEffect(() => {
-        mounted && setVisible(bulkVisible);
-    }, [bulkVisible]);
+        mounted && setVisible(massVisible);
+    }, [massVisible]);
 
     const point = points[0].wpt;
     const iconHTML = MarkerOptions.getWptIcon(point, point.color, point.background, point.icon).options.html;
@@ -276,12 +276,12 @@ export default function WaypointsTab() {
         return groups;
     }
 
-    const [showBulk, setShowBulk] = useState(false);
-    const [bulkOpen, setBulkOpen] = useState(false);
-    const [bulkVisible, setBulkVisible] = useState(true);
+    const [showMass, setShowMass] = useState(false);
+    const [massOpen, setMassOpen] = useState(false);
+    const [massVisible, setMassVisible] = useState(true);
 
-    const switchBulkOpen = () => setBulkOpen(!bulkOpen);
-    const switchBulkVisible = () => setBulkVisible(!bulkVisible);
+    const switchMassOpen = () => setMassOpen(!massOpen);
+    const switchMassVisible = () => setMassVisible(!massVisible);
 
     // 1st level of speedup
     // avoid JSON.stringify on every render
@@ -301,7 +301,7 @@ export default function WaypointsTab() {
         const keys = Object.keys(groups);
         const trackName = ctx.selectedGpxFile.name;
 
-        setShowBulk(keys.length > 1);
+        setShowMass(keys.length > 1);
 
         return (
             <Box>
@@ -312,13 +312,13 @@ export default function WaypointsTab() {
                         group={g}
                         points={groups[g]}
                         defaultOpen={keys.length === 1}
-                        bulkVisible={bulkVisible}
-                        bulkOpen={bulkOpen}
+                        massVisible={massVisible}
+                        massOpen={massOpen}
                     />
                 ))}
             </Box>
         );
-    }, [pointsChangedString, bulkOpen, bulkVisible]);
+    }, [pointsChangedString, massOpen, massVisible]);
 
     return (
         <>
@@ -332,16 +332,16 @@ export default function WaypointsTab() {
                         )}
                     </Grid>
                     <Grid item xs={2}>
-                        {showBulk && (
-                            <IconButton onClick={switchBulkVisible}>
-                                <Switch checked={bulkVisible} />
+                        {showMass && (
+                            <IconButton onClick={switchMassVisible}>
+                                <Switch checked={massVisible} />
                             </IconButton>
                         )}
                     </Grid>
                     <Grid item xs={1}>
-                        {showBulk && (
-                            <IconButton onClick={switchBulkOpen}>
-                                {bulkOpen ? <KeyboardDoubleArrowUp /> : <KeyboardDoubleArrowDown />}
+                        {showMass && (
+                            <IconButton onClick={switchMassOpen}>
+                                {massOpen ? <KeyboardDoubleArrowUp /> : <KeyboardDoubleArrowDown />}
                             </IconButton>
                         )}
                     </Grid>
