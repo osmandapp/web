@@ -1,7 +1,7 @@
 import { AppBar, LinearProgress, Box, Typography } from '@mui/material';
 import AppContext from '../../context/AppContext';
 import { useState, useContext, useEffect, useCallback, useRef } from 'react';
-import { TabContext, TabList, TabPanel } from '@mui/lab';
+import { TabContext, TabList } from '@mui/lab';
 import TrackTabList from './tabs/TrackTabList';
 import WeatherTabList from './tabs/WeatherTabList';
 import FavoritesTabList from './tabs/FavoritesTabList';
@@ -269,13 +269,14 @@ export default function InformationBlock({
                                         </AppBar>
                                         <div style={{ height: `${drawerHeight}px`, overflowX: 'auto' }}>
                                             {Object.values(tabsObj.tabs).map((item) => (
-                                                <TabPanel
+                                                <PersistentTabPanel
+                                                    key={'tabpanel-mobile:' + item.key}
                                                     sx={{ paddingBottom: '70px' }}
-                                                    value={item.key + ''}
-                                                    key={'tabpanel:' + item.key}
+                                                    selectedTabId={value}
+                                                    tabId={item.key}
                                                 >
                                                     {item}
-                                                </TabPanel>
+                                                </PersistentTabPanel>
                                             ))}
                                         </div>
                                     </TabContext>
@@ -295,9 +296,9 @@ export default function InformationBlock({
                                         <div>
                                             {Object.values(tabsObj.tabs).map((item) => (
                                                 <PersistentTabPanel
-                                                    tabId={item.key}
+                                                    key={'tabpanel-desktop:' + item.key}
                                                     selectedTabId={value}
-                                                    key={'tabpanel:' + item.key}
+                                                    tabId={item.key}
                                                 >
                                                     {item}
                                                 </PersistentTabPanel>
