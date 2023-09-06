@@ -1,0 +1,11 @@
+{
+  "name": "osmand-tests-selenium",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.12.0"
+  }
+}
