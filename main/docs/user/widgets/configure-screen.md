@@ -83,7 +83,7 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
     4 widgets included: *Distance*, *Duration*, *Uphill*, *Downhill*.
 11. [Current time](../widgets/info-widgets.md#current-time). *Informational* widget displays the current time taken from your device.
 12. [Battery level](../widgets/info-widgets.md#battery-level). *Informational* widget shows battery level of your device.
-13. [Radius ruler](../widgets/info-widgets.md#radius-ruler.md). The widget displays on a map the distance between the user's location and the inner point of the distance circles of the [Radius ruler tool](../widgets/radius-ruler.md).
+13. [Radius ruler](../widgets/info-widgets.md#radius-ruler). The widget displays on a map the distance between the user's location and the inner point of the distance circles of the [Radius ruler tool](../widgets/radius-ruler.md).
 14. [* Audio/video notes](../widgets/info-widgets.md#-audiovideo-notes-widget). *Informational* widget provides quick access to start/stop taking an audio, video or photo notes.      
     4 widgets included: *On request*, *Record audio*, *Record video*, *Take a photo*.
 15. [* Parking](../widgets/info-widgets.md#-parking-widget). *Informational* widget shows the distance from the center of the screen to the parking location.
