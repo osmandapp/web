@@ -246,7 +246,7 @@ Sunset and sunrise widgets show the time of the next sunrise or sunset for the c
 ## Radius ruler
 
 :::note  
-You can read a more detailed description here: **[Radius ruler and Ruler](../widgets/radius-ruler.md)**.  
+You can read a more detailed description here: **[Radius ruler and Ruler](../widgets/radius-ruler)**.  
 :::  
 
 <Tabs groupId="operating-systems">

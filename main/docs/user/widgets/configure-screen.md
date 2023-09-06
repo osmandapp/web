@@ -124,51 +124,40 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 ![elevation profile](@site/static/img/widgets/elevation_prof_and.png)  
 
 
-### Pages for widgets
-
-Widgets in the <Translate android="true" id="map_widget_left" /> and <Translate android="true" id="map_widget_right" /> can be grouped into **Pages**. To find options, follow these steps: *OsmAnd menu → Configure screen → Widgets (Left / Right panel) → Change order → Add pages*.
-
-![Widget page](@site/static/img/widgets/widget_page.png) ![Widget page](@site/static/img/widgets/widget_page_1.png)  
-
-
-### Quick action
-
-[Quick action](../widgets/quick-action.md) - is a button that gives quick access to frequently used actions.  
-
-![Configure screen menu](@site/static/img/widgets/quick_act_ios.png)  
-
-
-### Buttons (Android) and Remaining elements (iOS)
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
+### Buttons
 
 - [Compass](../widgets/map-buttons.md#compass) - indicates how the map is oriented on the device.
 - [3D mode](../widgets/map-buttons.md#3d-mode) - appears in the list and is available for setting if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected. 
 - [Distance by tap](../widgets/radius-ruler.md#distance-by-tap-tool) - gives options to measure the distance from your position to the selected point.  
 - [Quick action](../widgets/quick-action.md) - is a button that gives quick access to frequently used actions.  
 
+
+### Pages for widgets
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left"/> → Edit → Add page*  
+
+![Widget page](@site/static/img/widgets/widget_page_1_andr.png) ![Widget page](@site/static/img/widgets/widget_page_2_andr.png)    
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-- [**Distance by tap**](../widgets/radius-ruler.md#distance-by-tap-tool) - gives options to measure the distance from your position to the selected point.
-- **Transparent widgets** - makes transparent the background of the navigation and information widgets.  
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left"/> → Edit → Add page*
 
-<!--
-- [Street name](../widgets/nav-widgets.md#street-name) combined with [Approach POI](../widgets/nav-widgets.md#approach-poisfavorites) - displays street name of the current or next following road, displays information about approaching POI / favourites along the road.
-- [**Coordinates widget**](../widgets/info-widgets.md#coordinates-widget) -  shows the geographic coordinates of current geolocation (appears on the top bar).
-- [**Map markers**](../widgets/markers.md) - shows a directional line from your position to the active marker locations (could be on the top bar or on the right widget panel).
-- [**Lanes**](../widgets/nav-widgets.md#lanes) - shows the lanes you have to drive during a navigation with distance to a maneuver.
--->
+![Widget page](@site/static/img/widgets/widget_page_1_ios.png) ![Widget page](@site/static/img/widgets/widget_page_2_ios.png)  
 
 </TabItem>
 
 </Tabs> 
 
+Widgets in the right and left panels can be grouped into **Pages**. To do this, select a panel, tap *Edit*, and then tap *Add Page*. This helps you interact with the map more easily and without distractions when navigating, as well as having multiple sets of widgets for different cases.
 
-### Actions panel (Android)
+
+### Actions panel (Android) / Three-button menu (iOS)
 
 - **Reset to default** - return to preset settings.
 - **Copy from another profile** - allows you to copy settings made for another profile
