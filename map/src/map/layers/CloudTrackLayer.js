@@ -1,14 +1,14 @@
 import { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
-import TrackLayerProvider from '../TrackLayerProvider';
+import TrackLayerProvider, { redrawWptsOnLayer } from '../TrackLayerProvider';
 import TracksManager from '../../context/TracksManager';
 import { useMutator } from '../../util/Utils';
 
 function clickHandler({ ctx, file, layer }) {
     if (file.name !== ctx.selectedGpxFile.name || ctx.infoBlockWidth === '0px') {
         file.analysis = TracksManager.prepareAnalysis(file.analysis);
-        ctx.setSelectedGpxFile(Object.assign({}, file));
+        ctx.setSelectedGpxFile({ ...file, cloudRedrawWpts: true });
         const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
         ctx.setCurrentObjectType(type);
         ctx.setUpdateInfoBlock(true);
@@ -42,6 +42,30 @@ const CloudTrackLayer = () => {
 
     const map = useMap();
 
+    function cleanupZombieLayers({ id, name }) {
+        for (let x in allLayers) {
+            if (x !== id && allLayers[x].name === name) {
+                map.removeLayer(allLayers[x].layer);
+                mutateAllLayers((o) => delete o[x]);
+            }
+        }
+    }
+
+    function registerCleanupFileLayer(file) {
+        const name = file.name;
+        const layer = file.gpx;
+        const id = file.gpx._leaflet_id;
+        cleanupZombieLayers({ id, name });
+        mutateAllLayers((o) => (o[id] = { name, layer }));
+    }
+
+    function unregisterCleanupFileLayer(file) {
+        const name = file.name;
+        const id = file.gpx._leaflet_id;
+        cleanupZombieLayers({ id, name });
+        mutateAllLayers((o) => delete o[id]);
+    }
+
     // update all click handlers with fresh context
     useEffect(() => {
         for (const l in ctx.gpxFiles) {
@@ -55,10 +79,20 @@ const CloudTrackLayer = () => {
 
     // control zoom-fit for cloud tracks
     useEffect(() => {
-        if (ctxTrack && ctxTrack.zoom && ctxTrack.gpx && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK) {
-            map.fitBounds(ctxTrack.gpx.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
-        } else if (ctxTrack.showPoint) {
-            TracksManager.showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker);
+        if (ctxTrack && ctxTrack.gpx && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK) {
+            if (ctxTrack.zoom) {
+                map.fitBounds(ctxTrack.gpx.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
+                ctx.setSelectedGpxFile((o) => ({ ...o, zoom: false }));
+            } else if (ctxTrack.cloudRedrawWpts) {
+                // skip processing if layer is removed
+                if (ctxTrack.gpx && map.hasLayer(ctxTrack.gpx)) {
+                    redrawWptsOnLayer({ layer: ctxTrack.gpx });
+                    ctx.setSelectedGpxFile((o) => ({ ...o, cloudRedrawWpts: false }));
+                }
+            } else if (ctxTrack.showPoint) {
+                TracksManager.showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker);
+                ctx.setSelectedGpxFile((o) => ({ ...o, showPoint: false }));
+            }
         }
     }, [ctxTrack]);
 
@@ -66,43 +100,26 @@ const CloudTrackLayer = () => {
     useEffect(() => {
         if (ctx.createTrack?.enable === false) {
             let restored = 0;
-            for (const l in ctx.gpxFiles) {
-                if (ctx.gpxFiles[l].gpx && map.hasLayer(ctx.gpxFiles[l].gpx) === false) {
+            const newGpxFiles = { ...ctx.gpxFiles } ?? {};
+            for (const l in newGpxFiles) {
+                if (newGpxFiles[l].gpx && map.hasLayer(newGpxFiles[l].gpx) === false) {
                     restored++;
-                    ctx.gpxFiles[l].gpx = addTrackToMap({ ctx, file: ctx.gpxFiles[l], map, fit: false });
+                    newGpxFiles[l].gpx = addTrackToMap({ ctx, file: newGpxFiles[l], map, fit: false });
+                    registerCleanupFileLayer(newGpxFiles[l]);
+
+                    // update setSelectedGpxFile cloud layer
+                    if (ctxTrack.name === newGpxFiles[l].name) {
+                        ctx.setSelectedGpxFile((o) => ({ ...o, gpx: newGpxFiles[l].gpx }));
+                    }
                 }
             }
             if (restored > 0) {
-                ctx.setGpxFiles({ ...ctx.gpxFiles });
+                ctx.setGpxFiles(newGpxFiles); // finally
             }
         }
     }, [ctx.createTrack?.enable]); // think about dep on ctx.gpxFiles
 
     useEffect(() => {
-        function cleanupZombieLayers({ id, name }) {
-            for (let x in allLayers) {
-                if (x !== id && allLayers[x].name === name) {
-                    map.removeLayer(allLayers[x].layer);
-                    mutateAllLayers((o) => delete o[x]);
-                }
-            }
-        }
-
-        function registerCleanupFileLayer(file) {
-            const name = file.name;
-            const layer = file.gpx;
-            const id = file.gpx._leaflet_id;
-            cleanupZombieLayers({ id, name });
-            mutateAllLayers((o) => (o[id] = { name, layer }));
-        }
-
-        function unregisterCleanupFileLayer(file) {
-            const name = file.name;
-            const id = file.gpx._leaflet_id;
-            cleanupZombieLayers({ id, name });
-            mutateAllLayers((o) => delete o[id]);
-        }
-
         let processed = 0;
         const newGpxFiles = { ...ctx.gpxFiles } ?? {};
         Object.values(newGpxFiles).forEach((file) => {
@@ -110,9 +127,7 @@ const CloudTrackLayer = () => {
                 processed++;
                 file.gpx = addTrackToMap({ ctx, file, map });
                 if (file.name === ctxTrack.name) {
-                    const newGpxFiles = Object.assign({}, ctxTrack);
-                    newGpxFiles.gpx = file.gpx;
-                    ctx.setSelectedGpxFile(newGpxFiles);
+                    ctx.setSelectedGpxFile((o) => ({ ...o, gpx: file.gpx, cloudRedrawWpts: true }));
                 }
                 registerCleanupFileLayer(file);
             } else if (!file.url && file.gpx) {
@@ -125,7 +140,6 @@ const CloudTrackLayer = () => {
             }
         });
         if (processed > 0) {
-            ctx.gpxFiles = newGpxFiles;
             ctx.setGpxFiles(newGpxFiles); // finally
         }
     }, [ctx.gpxFiles]);

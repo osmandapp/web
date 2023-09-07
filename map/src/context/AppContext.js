@@ -218,8 +218,7 @@ export const AppContextProvider = (props) => {
     const [gpxFiles, mutateGpxFiles, setGpxFiles] = useMutator({});
     const [searchCtx, setSearchCtx] = useState({});
 
-    const [selectedGpxFile, reactSetSelectedGpxFile] = useState({});
-    const setSelectedGpxFile = (s) => reactSetSelectedGpxFile(() => s); // wrap setter to queue-style
+    const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
 
     const [mapMarkerListener, setMapMarkerListener] = useState(null);

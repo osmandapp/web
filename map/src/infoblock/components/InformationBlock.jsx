@@ -1,12 +1,30 @@
-import { AppBar, LinearProgress, Box } from '@mui/material';
+import { AppBar, LinearProgress, Box, Typography } from '@mui/material';
 import AppContext from '../../context/AppContext';
-import React, { useState, useContext, useEffect, useCallback, useRef } from 'react';
-import { TabContext, TabList, TabPanel } from '@mui/lab';
+import { useState, useContext, useEffect, useCallback, useRef } from 'react';
+import { TabContext, TabList } from '@mui/lab';
 import TrackTabList from './tabs/TrackTabList';
 import WeatherTabList from './tabs/WeatherTabList';
 import FavoritesTabList from './tabs/FavoritesTabList';
 import _ from 'lodash';
 import PoiTabList from './tabs/PoiTabList';
+
+const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
+    const [mounted, setMounted] = useState(false);
+
+    if (tabId === selectedTabId || mounted) {
+        mounted || setMounted(true);
+        const hidden = tabId !== selectedTabId;
+        return (
+            <Typography hidden={hidden} component="span">
+                <Box p={3}>{children}</Box>
+            </Typography>
+        );
+    } else {
+        // mounted || setTimeout(() => setMounted(true), 1000); // mount not-selected tabs with delay
+    }
+
+    return null;
+};
 
 export default function InformationBlock({
     mobile,
@@ -251,13 +269,14 @@ export default function InformationBlock({
                                         </AppBar>
                                         <div style={{ height: `${drawerHeight}px`, overflowX: 'auto' }}>
                                             {Object.values(tabsObj.tabs).map((item) => (
-                                                <TabPanel
+                                                <PersistentTabPanel
+                                                    key={'tabpanel-mobile:' + item.key}
                                                     sx={{ paddingBottom: '70px' }}
-                                                    value={item.key + ''}
-                                                    key={'tabpanel:' + item.key}
+                                                    selectedTabId={value}
+                                                    tabId={item.key}
                                                 >
                                                     {item}
-                                                </TabPanel>
+                                                </PersistentTabPanel>
                                             ))}
                                         </div>
                                     </TabContext>
@@ -276,9 +295,13 @@ export default function InformationBlock({
                                         </AppBar>
                                         <div>
                                             {Object.values(tabsObj.tabs).map((item) => (
-                                                <TabPanel value={item.key + ''} key={'tabpanel:' + item.key}>
+                                                <PersistentTabPanel
+                                                    key={'tabpanel-desktop:' + item.key}
+                                                    selectedTabId={value}
+                                                    tabId={item.key}
+                                                >
                                                     {item}
-                                                </TabPanel>
+                                                </PersistentTabPanel>
                                             ))}
                                         </div>
                                     </TabContext>
