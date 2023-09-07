@@ -2,10 +2,22 @@
   "name": "osmand-tests-selenium",
   "version": "0.0.1",
   "main": "index.js",
+  "license": "ISC",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint src/**/*.js",
+    "test": "node src/main.js http://localhost:3000/map/",
+    "test:main": "node src/main.js https://osmand.net/map/",
+    "test:test": "node src/main.js https://test.osmand.net/map/"
   },
   "dependencies": {
+    "resemblejs": "^5.0.0",
     "selenium-webdriver": "^4.12.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "prettier": "^3.0.3"
   }
 }
