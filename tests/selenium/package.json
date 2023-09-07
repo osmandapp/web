@@ -1,23 +1,25 @@
 {
   "name": "osmand-tests-selenium",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "main.js",
   "license": "ISC",
   "scripts": {
-    "lint": "eslint src/**/*.js",
-    "test": "node src/main.js http://localhost:3000/map/",
-    "test:main": "node src/main.js https://osmand.net/map/",
-    "test:test": "node src/main.js https://test.osmand.net/map/"
+    "lint": "eslint src/**/*.mjs",
+    "test": "node src/main.mjs http://localhost:3000/map/",
+    "test:main": "node src/main.mjs https://osmand.net/map/",
+    "test:test": "node src/main.mjs https://test.osmand.net/map/",
+    "#USAGE": "echo options: [--stop] [--debug] [--mobile] [--headless] [tests]"
   },
   "dependencies": {
+    "chalk": "^5.3.0",
     "resemblejs": "^5.0.0",
     "selenium-webdriver": "^4.12.0"
   },
   "devDependencies": {
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "prettier": "^3.0.3"
   }
 }
