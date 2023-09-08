@@ -47,7 +47,14 @@ async function cycleTests() {
     }
 }
 
+async function timer(callback) {
+    const started = Date.now();
+    await callback(); // async
+    return Date.now() - started;
+}
+
 async function runTest({ file, info }) {
+    let runtime = 0;
     await (async function () {
         let driver = null;
         try {
@@ -57,7 +64,7 @@ async function runTest({ file, info }) {
             const { default: test } = await import('./tests/' + file);
 
             try {
-                await test({ driver, url, mobile, headless });
+                runtime += await timer(() => test({ driver, url, mobile, headless }));
             } catch (e) {
                 error = e;
             }
@@ -65,7 +72,7 @@ async function runTest({ file, info }) {
             try {
                 await manageScreenshot({ driver, file });
             } catch (e) {
-                error === null && (error = e);
+                error === null && (error = e); // test's error is more important
             }
 
             if (error) {
@@ -77,11 +84,11 @@ async function runTest({ file, info }) {
     })().then(
         () => {
             successful++;
-            console.log(info, file, chalk.bgGreenBright('OK'));
+            console.log(info, file, chalk.bgGreenBright('OK'), Number(runtime / 1000).toFixed(2) + 's');
         },
         (error) => {
             failed++;
-            const message = verbose ? error : error.message.replace(/\n.*/, '');
+            const message = verbose ? error : error.message.replace(/\n.*/, ''); // keep 1st line
             console.log(info, file, chalk.bgRedBright('FAILED'), message);
         }
     );
