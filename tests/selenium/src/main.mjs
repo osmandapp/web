@@ -18,6 +18,7 @@
 
 import { Builder /*, By, Key, until*/ } from 'selenium-webdriver';
 import { Options } from 'selenium-webdriver/chrome.js';
+import compareImages from 'resemblejs/compareImages.js';
 import chalk from 'chalk';
 
 import { existsSync, readdirSync, mkdirSync, writeFileSync } from 'node:fs';
@@ -50,11 +51,27 @@ async function runTest({ file, info }) {
     await (async function () {
         let driver = null;
         try {
+            let error = null;
+
             driver = await prepareDriver();
             const { default: test } = await import('./tests/' + file);
-            await test({ driver, url, mobile, headless });
+
+            try {
+                await test({ driver, url, mobile, headless });
+            } catch (e) {
+                error = e;
+            }
+
+            try {
+                await manageScreenshot({ driver, file });
+            } catch (e) {
+                error === null && (error = e);
+            }
+
+            if (error) {
+                throw error;
+            }
         } finally {
-            await manageScreenshot({ driver, file });
             (await driver) && driver.quit();
         }
     })().then(
@@ -75,14 +92,39 @@ async function manageScreenshot({ driver, file }) {
     mkdirSync('screenshots/latest', { recursive: true });
     mkdirSync('screenshots/trusted', { recursive: true });
 
-    const data = await driver.takeScreenshot();
-    const base64 = data.replace(/^data:image\/png;base64,/, '');
+    const ss = await driver.takeScreenshot();
 
-    const tag = (process.env.npm_lifecycle_event ?? 'test').replace(/[^a-z]/g, '-') + '-';
+    const tag = (process.env.npm_lifecycle_event ?? 'test').replace(/[^a-z]/g, '-') + '-'; // yarn command as tag
     const name = tag + (mobile ? 'mobile-' : '') + (headless ? 'headless-' : '') + file.replaceAll('.mjs', '') + '.png';
 
+    const diff = 'screenshots/diff/' + name;
     const latest = 'screenshots/latest/' + name;
-    writeFileSync(latest, base64, { encoding: 'base64' });
+    const trusted = 'screenshots/trusted/' + name;
+
+    writeFileSync(latest, ss, { encoding: 'base64' });
+
+    if (existsSync(trusted)) {
+        const options = {
+            output: {
+                largeImageThreshold: 0,
+                outputDiff: true,
+                errorColor: {
+                    red: 255,
+                    green: 0,
+                    blue: 255,
+                },
+                // errorType: 'movement',
+                // transparency: 0.5,
+            },
+            scaleToSameSize: true,
+            ignore: 'antialiasing',
+        };
+        const resemble = await compareImages(latest, trusted, options);
+        if (resemble.misMatchPercentage > 0) {
+            writeFileSync(diff, resemble.getBuffer());
+            throw new Error('screenshot mismatch ' + resemble.misMatchPercentage + '%');
+        }
+    }
 }
 
 async function prepareDriver() {
