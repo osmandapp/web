@@ -78,14 +78,11 @@ async function manageScreenshot({ driver, file }) {
     const data = await driver.takeScreenshot();
     const base64 = data.replace(/^data:image\/png;base64,/, '');
 
-    const path =
-        'screenshots/latest/' +
-        file.replaceAll('.mjs', '') +
-        (mobile ? '.mobile' : '') +
-        (headless ? '.headless' : '') +
-        '.png';
+    const tag = (process.env.npm_lifecycle_event ?? 'test').replace(/[^a-z]/g, '-') + '-';
+    const name = tag + (mobile ? 'mobile-' : '') + (headless ? 'headless-' : '') + file.replaceAll('.mjs', '') + '.png';
 
-    writeFileSync(path, base64, { encoding: 'base64' });
+    const latest = 'screenshots/latest/' + name;
+    writeFileSync(latest, base64, { encoding: 'base64' });
 }
 
 async function prepareDriver() {
