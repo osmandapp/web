@@ -1,0 +1,122 @@
+import { Box, Divider, Grid, Icon, Typography } from '@mui/material';
+import CircleIcon from '@mui/icons-material/Circle';
+import { Chart } from 'react-chartjs-2';
+import {
+    Tooltip,
+    Legend,
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineController,
+    BarElement,
+    Filler,
+} from 'chart.js';
+import React from 'react';
+import zoomPlugin from 'chartjs-plugin-zoom';
+import annotationsPlugin from 'chartjs-plugin-annotation';
+
+ChartJS.register(
+    Tooltip,
+    Legend,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineController,
+    BarElement,
+    Filler,
+    zoomPlugin,
+    annotationsPlugin
+);
+
+export default function RoadAttributesGraph({ name, data, width }) {
+    const options = {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false,
+            },
+            tooltip: {
+                enabled: true,
+                intersect: false,
+                backgroundColor: '#757575',
+                displayColors: false,
+                callbacks: {
+                    label: (context) => {
+                        let label = context.dataset?.label || '';
+                        if (label) {
+                            label += ': ';
+                        }
+                        if (context.parsed.x !== null) {
+                            label += `${context.parsed.x} km`;
+                        }
+                        return label;
+                    },
+                },
+            },
+        },
+        scales: {
+            x: {
+                stacked: true,
+                display: false,
+            },
+            y: {
+                stacked: true,
+                display: false,
+            },
+        },
+    };
+
+    const graphData = {
+        labels: [name],
+        datasets: data.datasets,
+    };
+
+    return (
+        <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 40 }}>
+            <Divider sx={{ mt: '15px', mb: '12px' }} />
+            <Typography variant="inherit" sx={{ color: '#666666', fontWeight: 'bold', mb: 2 }}>
+                {name}
+            </Typography>
+            <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 40, height: 50 }}>
+                <Chart
+                    margin={{ top: 0, right: 0, left: -20, bottom: 0 }}
+                    style={{ fontSize: 10 }}
+                    data={graphData}
+                    options={options}
+                    type={'bar'}
+                />
+            </Box>
+            <Grid sx={{ mt: 1, ml: '-8px' }} container spacing={2}>
+                {data &&
+                    Object.entries(data.legend).map(([type, color]) => {
+                        return (
+                            <Grid
+                                item
+                                key={type}
+                                sx={{ display: 'flex', paddingTop: '0px !important' }}
+                                xs={Object.entries(data.legend).length > 5 ? 6 : 12}
+                            >
+                                <Icon>
+                                    <CircleIcon sx={{ color: color, fontSize: '0.8rem' }} />
+                                </Icon>
+                                <Typography
+                                    variant="inherit"
+                                    sx={{
+                                        color: '#666666',
+                                        fontWeight: 'bold',
+                                        fontSize: 8,
+                                        margin: '12px 0px 0px 0px !important',
+                                    }}
+                                >
+                                    {type}
+                                </Typography>
+                            </Grid>
+                        );
+                    })}
+            </Grid>
+        </Box>
+    );
+}

@@ -11,6 +11,7 @@ import { hasSegments, isEmptyTrack } from '../../../context/TracksManager';
 import { Checkbox, FormControlLabel } from '@mui/material/';
 import { makeStyles } from '@material-ui/core/styles';
 import TracksManager from '../../../context/TracksManager';
+import RoadAttributesGraphProvider from '../graph/RoadAttributesGraphProvider';
 
 const useStyles = makeStyles({
     checkbox: {
@@ -132,6 +133,7 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                 >
                     Delete Track
                 </Button>
+                <RoadAttributesGraphProvider width={ctx.infoBlockWidth} />
             </Box>
             {openDeleteDialog && (
                 <DeleteTrackDialog

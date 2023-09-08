@@ -370,7 +370,7 @@ function closeCloudTrack(ctx, track) {
     }
 }
 
-function getTrackPoints(track) {
+export function getTrackPoints(track) {
     let points = [];
     if (track.tracks) {
         track.tracks.forEach((track) => {
@@ -415,7 +415,7 @@ function addDistance(track) {
     }
 }
 
-function addDistanceToPoints(points) {
+export function addDistanceToPoints(points) {
     let distanceTotal = 0;
     let distanceSegment = 0;
     let prevGapInd = 0;
