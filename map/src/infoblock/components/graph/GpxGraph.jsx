@@ -11,6 +11,7 @@ import {
     LineElement,
     Filler,
     Interaction,
+    BarElement,
 } from 'chart.js';
 import { Box, Slider, SliderThumb } from '@mui/material';
 import AppContext from '../../../context/AppContext';
@@ -63,6 +64,7 @@ ChartJS.register(
     CategoryScale,
     LinearScale,
     PointElement,
+    BarElement,
     LineController,
     LineElement,
     Filler,
