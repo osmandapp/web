@@ -1,35 +1,11 @@
 import { Box, Divider, Grid, Icon, Typography } from '@mui/material';
 import CircleIcon from '@mui/icons-material/Circle';
-import { Chart } from 'react-chartjs-2';
-import {
-    Tooltip,
-    Legend,
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineController,
-    LineElement,
-    Filler,
-    BarElement,
-} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+import { Tooltip, Legend, Chart as ChartJS, BarElement } from 'chart.js';
 import React from 'react';
-import zoomPlugin from 'chartjs-plugin-zoom';
 import annotationsPlugin from 'chartjs-plugin-annotation';
 
-ChartJS.register(
-    Tooltip,
-    Legend,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    BarElement,
-    LineController,
-    LineElement,
-    Filler,
-    zoomPlugin,
-    annotationsPlugin
-);
+ChartJS.register(Tooltip, Legend, BarElement, annotationsPlugin);
 
 export default function RoadAttributesGraph({ name, data, width }) {
     const options = {
@@ -83,12 +59,11 @@ export default function RoadAttributesGraph({ name, data, width }) {
                 {name}
             </Typography>
             <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 40, height: 50 }}>
-                <Chart
+                <Bar
                     margin={{ top: 0, right: 0, left: -20, bottom: 0 }}
                     style={{ fontSize: 10 }}
                     data={graphData}
                     options={options}
-                    type="bar"
                 />
             </Box>
             <Grid sx={{ mt: 1, ml: '-8px' }} container spacing={2}>
