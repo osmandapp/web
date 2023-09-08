@@ -882,13 +882,17 @@ export async function applySrtmElevation({ track, setLoading }) {
 
 async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     setLoading(true);
-    const wpts = _.cloneDeep(ctx.selectedGpxFile.wpts);
-    const pointsGroups = _.cloneDeep(ctx.selectedGpxFile.pointsGroups);
+
+    const clone = _.cloneDeep(ctx.selectedGpxFile);
+
+    const wpts = clone.wpts;
+    const pointsGroups = clone.pointsGroups;
+
     const postData = {
-        tracks: points ? [{ points: points }] : ctx.selectedGpxFile.tracks,
-        metaData: ctx.selectedGpxFile.metaData,
-        ext: ctx.selectedGpxFile.ext,
-        analysis: ctx.selectedGpxFile.analysis,
+        tracks: points ? [{ points: points }] : clone.tracks,
+        analysis: clone.analysis,
+        metaData: clone.metaData,
+        ext: clone.ext,
     };
 
     // time vs better cache

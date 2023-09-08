@@ -9,17 +9,13 @@ const DEFAULT_WPT_COLOR = '#eecc22';
 const POI_ICONS_FOLDER = 'poi-icons-svg';
 
 const MarkerIcon = ({ iconType = 'default-marker', bg = 'blue' }) => {
-    let svg = ` <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="24" cy="24" r="15" fill='${bg}'/>
-                        </svg>`;
+    let svg =
+        `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">` +
+        `<circle cx="24" cy="24" r="15" fill='${bg}'/>` +
+        `</svg>`;
 
     return L.divIcon({
-        html: `
-                              <div>
-                                  ${svg}
-                                  <img class="icon" src="/map/images/map_icons/${iconType}.svg">
-                              </div>
-                              `,
+        html: `<div>${svg}<img class="icon" src="/map/images/map_icons/${iconType}.svg"></div>`,
     });
 };
 
@@ -70,21 +66,11 @@ function getWptIcon(point, color, background, icon, folder) {
     let part = point ? 'mx_' : '';
     if (iconWpt) {
         return L.divIcon({
-            html: `
-                              <div>
-                                  ${svg}
-                                  <img class="icon" src="/map/images/${iconsFolder}/${part}${iconWpt}.svg">
-                              </div>
-                              `,
+            html: `<div>${svg}<img class="icon" src="/map/images/${iconsFolder}/${part}${iconWpt}.svg"></div>`,
         });
     } else {
         return L.divIcon({
-            html: `
-                              <div>
-                                  ${svg}
-                                  <img class="icon" src="/map/images/${POI_ICONS_FOLDER}/mx_${DEFAULT_WPT_ICON}.svg">
-                              </div>
-                              `,
+            html: `<div>${svg}<img class="icon" src="/map/images/${POI_ICONS_FOLDER}/mx_${DEFAULT_WPT_ICON}.svg"></div>`,
         });
     }
 }
@@ -101,24 +87,28 @@ function getSvgBackground(colorBackground, shape) {
     let svg;
     if (shape) {
         if (shape === BACKGROUND_WPT_SHAPE_CIRCLE || isStrangeShape(shape)) {
-            svg = ` <svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="24" cy="24" r="12" fill="${colorBackground}"/>
-                        </svg>`;
+            svg =
+                `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">` +
+                `<circle cx="24" cy="24" r="12" fill="${colorBackground}"/>` +
+                `</svg>`;
         }
         if (shape === BACKGROUND_WPT_SHAPE_OCTAGON) {
-            svg = `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                           <path d="M13 19L19 13H29L35 19V29L29 35H19L13 29V19Z" fill="${colorBackground}"/>
-                        </svg>`;
+            svg =
+                `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">` +
+                `<path d="M13 19L19 13H29L35 19V29L29 35H19L13 29V19Z" fill="${colorBackground}"/>` +
+                `</svg>`;
         }
         if (shape === BACKGROUND_WPT_SHAPE_SQUARE) {
-            svg = `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="13" y="13" width="22" height="22" rx="3" fill="${colorBackground}"/>
-                        </svg>`;
+            svg =
+                `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">` +
+                `<rect x="13" y="13" width="22" height="22" rx="3" fill="${colorBackground}"/>` +
+                `</svg>`;
         }
     } else {
-        svg = `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                         <circle cx="24" cy="24" r="12" fill="${colorBackground}"/>
-                        </svg>`;
+        svg =
+            `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">` +
+            `<circle cx="24" cy="24" r="12" fill="${colorBackground}"/>` +
+            `</svg>`;
     }
     return svg;
 }

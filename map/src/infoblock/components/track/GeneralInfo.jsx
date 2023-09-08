@@ -67,8 +67,8 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
         if (eligibleToApplySrtm({ track: ctx.selectedGpxFile })) {
             const setLoading = setLoadingSrtm;
             const track = { ...ctx.selectedGpxFile };
-            track.analysis = { ...track.analysis, isSrtmApplied: true };
-            ctx.setSelectedGpxFile(track); // mark now as already-implied (to skip dupe effects)
+            // mark now as already-implied (to skip dupe effects)
+            ctx.setSelectedGpxFile((o) => ({ ...o, isSrtmApplied: true }));
             applySrtmElevation({ track, setLoading }).then((success) => ctx.setUnverifiedGpxFile(success));
         }
     }, [ctx.selectedGpxFile.name, ctx.selectedGpxFile.analysis]);

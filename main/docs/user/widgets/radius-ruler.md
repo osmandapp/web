@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title:  Radius-ruler and Ruler
+title:  Radius ruler and Ruler
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,10 +15,12 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
+## Overview
 
-All ruler tools help to understand [scale of the map](https://en.wikipedia.org/wiki/Scale_(map)) and measure distances. Radius-ruler tool helps to determine the radius around the selected point on the map via displaying distance-circles on the map. Distance by tap tool helps to calculate the distance between selected points or to find the distance to a specific point.
+All ruler tools help you understand the current [map scale](https://en.wikipedia.org/wiki/Scale_(map)) and help you measure distances. The Radius ruler tool allows you to determine the radius around the selected point on the map by displaying distance circles on the map. Distance by tap tool helps you calculate the distance between selected points or to find the distance to a specific point.
 
 ![Radius-ruler screen](@site/static/img/widgets/radius_ruler_screen.png)
+
 
 ## Ruler
 

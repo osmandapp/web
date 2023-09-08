@@ -285,7 +285,8 @@ The map is displayed according to the day or night mode selected from the list. 
 
 ### Routes
 
-In OsmAnd you can highlight official routes (present on OpenStreetMap) and hiking symbol overlay for your activities. It is very useful for your cycling, hiking, etc. You can select multiple routes at once though they will be displayed as layers and if the road has multiple routes over it only top colour will be visible. If you have some specific rendering styles enabled, you could have a bigger routes variety i.e. for ***Snowmobile style*** you could select ***Snowmobile routes***.  
+In OsmAnd it is possible to highlight GPX routes from Openstreetmap related to different outdoor activities (hiking, cycling, running, etc.). You can select one or multiple routes layers at once. However, it is important to note that if different routes meet at the same point, only the color of the uppermost layer will be visible (see [map legend](../map-legend/osmand.md#routes)).  
+The main purpose of this option is to make journey planning easier. When you click on the shield icon with a route number or flag, a context menu with available options is displayed. In some cases, you may find several routes intersecting at a certain place. When you select one of the routes, the *[Track context menu](../map/track-context-menu.md)* appears. In this menu there is an option to save the route in the device memory in GPX format, which will allow you to use it later for [GPX navigation](../navigation/setup/gpx-navigation.md).
 
 <Tabs groupId="operating-systems">
 
@@ -293,7 +294,7 @@ In OsmAnd you can highlight official routes (present on OpenStreetMap) and hikin
 
 *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>* 
 
-![Configure Map Routes section](@site/static/img/map/routes_1.png)
+![Configure Map Routes section](@site/static/img/map/settings_routes_andr_1.png)
 
 </TabItem>
 
@@ -301,7 +302,7 @@ In OsmAnd you can highlight official routes (present on OpenStreetMap) and hikin
 
 *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Configure Map Routes section](@site/static/img/map/routs_ios.png)
+![Configure Map Routes section](@site/static/img/map/settings_routes_ios_1.png)
 
 </TabItem>
 
@@ -326,7 +327,7 @@ In OsmAnd you can highlight official routes (present on OpenStreetMap) and hikin
 |![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)|
 |*<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>*. [<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_description"/>](https://wiki.openstreetmap.org/wiki/Node_Networks) |
 |![Map routes - hiking node networks](@site/static/img/map/map-routes-hiking-node-networks.png)|
-|**<Translate android="true" ids="rendering_attr_alpineHiking_name"/>**. Showing  [classified hiking trails](https://wiki.openstreetmap.org/wiki/Key:sac_scale) in mountainous areas with regard to the difficulties to be expected by colour.|
+|**<Translate android="true" ids="rendering_attr_alpineHiking_name"/>**. Showing  classified hiking trails ([SAC scale](https://wiki.openstreetmap.org/wiki/Key:sac_scale) or [CAI scale](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)) in mountainous areas with regard to the difficulties to be expected by colour.|
 |![Map routes - alpine hiking](@site/static/img/map/map-routes-alpine-hiking.png)|
 |**<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>**. Showing colored routes of ski slopes. This setting is provided by map style ["Winter and ski"](../map/vector-maps.md#winter-and-ski). |
 |![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)|

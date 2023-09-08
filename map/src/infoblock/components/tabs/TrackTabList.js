@@ -23,10 +23,11 @@ export default class TrackTabList {
         }
 
         if (
-            (ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && !isEmptyTrack(ctx.selectedGpxFile)) ||
+            (ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK &&
+                !isEmptyTrack(ctx.selectedGpxFile, true, false)) ||
             ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK
         ) {
-            tabs.Waypoints = <WaypointsTab key="waypoints" />;
+            tabs.Waypoints = <WaypointsTab key={'waypoints' + ctx.selectedGpxFile.name} />;
         }
 
         if (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK) {
