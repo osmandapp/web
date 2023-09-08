@@ -14,6 +14,8 @@ export default function RoadAttributesGraphProvider({ width }) {
             let points = _.cloneDeep(getTrackPoints(ctx.selectedGpxFile));
             if (points[0].segment) {
                 setRoadPoints(points);
+            } else {
+                setRoadPoints(null);
             }
         } else {
             setRoadPoints(null);
