@@ -225,6 +225,8 @@ export async function apiGet(url, options = null) {
         cache[cacheKey] = cached;
     }
 
+    window.seLastHttpApiTimestamp = Date.now();
+
     return Object.assign(response, {
         data, // data is for axios lovers :)
         blob: response.blob, // original

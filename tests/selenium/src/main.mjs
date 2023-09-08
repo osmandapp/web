@@ -6,7 +6,7 @@
  * DONE 3) real/headless mode
  * DONE 4) use private window (always reset cookies)
  *
- * a) ONE test = SEQUENCE of actions (each action may fail = whole test failed)
+ * DONE a) ONE test = SEQUENCE of actions (each action may fail = whole test failed)
  *
  * DONE - local chromium correct startup
  * - how to store login/password
@@ -16,7 +16,7 @@
  * test chains: login, upload-gpx
  */
 
-import { Builder /*, By, Key, until*/ } from 'selenium-webdriver';
+import { Builder } from 'selenium-webdriver';
 import { Options } from 'selenium-webdriver/chrome.js';
 import compareImages from 'resemblejs/compareImages.js';
 import chalk from 'chalk';
