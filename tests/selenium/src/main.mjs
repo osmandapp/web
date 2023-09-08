@@ -1,14 +1,14 @@
 'use strict';
 
 /**
- * 1) urls (local, test, main)
- * 2) desktop/mobile tests
- * 3) real/headless
- * 4) use private window (always reset cookies)
+ * DONE 1) urls (local, test, main)
+ * DONE 2) desktop/mobile mode
+ * DONE 3) real/headless mode
+ * DONE 4) use private window (always reset cookies)
  *
  * a) ONE test = SEQUENCE of actions (each action may fail = whole test failed)
  *
- * - local chromium correct startup
+ * DONE - local chromium correct startup
  * - how to store login/password
  * - where to store gpx
  * - report png via tg
@@ -16,15 +16,15 @@
  * test chains: login, upload-gpx
  */
 
-import { Builder, By, Key, until } from 'selenium-webdriver';
+import { Builder /*, By, Key, until*/ } from 'selenium-webdriver';
 import { Options } from 'selenium-webdriver/chrome.js';
 import chalk from 'chalk';
 
-import { existsSync, readdirSync, writeFile } from 'node:fs';
+import { existsSync, readdirSync, mkdirSync, writeFileSync } from 'node:fs';
 
-console.debug = () => {}; // suppress selenium console.debug
+console.debug = () => {}; // suppress selenium's console.debug
 
-const { url, stop, debug, mobile, headless, tests } = parseArgs();
+const { url, stop, verbose, mobile, headless, tests } = parseArgs();
 
 let failed = 0;
 let successful = 0;
@@ -39,14 +39,14 @@ process.exitCode = failed > 0 ? 1 : 0;
 
 async function cycleTests() {
     for (let i = 0; i < tests.length; i++) {
-        await runTest(tests[i], `[${i + 1}/${tests.length}]`);
+        await runTest({ file: tests[i], info: `[${i + 1}/${tests.length}]` });
         if (failed > 0 && stop) {
             break;
         }
     }
 }
 
-async function runTest(file, info) {
+async function runTest({ file, info }) {
     await (async function () {
         let driver = null;
         try {
@@ -54,17 +54,7 @@ async function runTest(file, info) {
             const { default: test } = await import('./tests/' + file);
             await test({ driver, url, mobile, headless });
         } finally {
-            driver.takeScreenshot().then(function (data) {
-                const base64Data = data.replace(/^data:image\/png;base64,/, '');
-                writeFile(
-                    'tmp/' + file + (mobile ? '.mobile' : '') + (headless ? '.headless' : '') + '.png',
-                    base64Data,
-                    'base64',
-                    function (err) {
-                        if (err) console.log(err);
-                    }
-                );
-            });
+            await manageScreenshot({ driver, file });
             (await driver) && driver.quit();
         }
     })().then(
@@ -74,10 +64,28 @@ async function runTest(file, info) {
         },
         (error) => {
             failed++;
-            const message = debug ? error : error.message.replace(/\n.*/, '');
+            const message = verbose ? error : error.message.replace(/\n.*/, '');
             console.log(info, file, chalk.bgRedBright('FAILED'), message);
         }
     );
+}
+
+async function manageScreenshot({ driver, file }) {
+    mkdirSync('screenshots/diff', { recursive: true });
+    mkdirSync('screenshots/latest', { recursive: true });
+    mkdirSync('screenshots/trusted', { recursive: true });
+
+    const data = await driver.takeScreenshot();
+    const base64 = data.replace(/^data:image\/png;base64,/, '');
+
+    const path =
+        'screenshots/latest/' +
+        file.replaceAll('.mjs', '') +
+        (mobile ? '.mobile' : '') +
+        (headless ? '.headless' : '') +
+        '.png';
+
+    writeFileSync(path, base64, { encoding: 'base64' });
 }
 
 async function prepareDriver() {
@@ -106,7 +114,7 @@ function parseArgs() {
     let url = null;
     const tests = [];
     let stop = false;
-    let debug = false;
+    let verbose = false;
     let mobile = false;
     let headless = false;
 
@@ -114,10 +122,10 @@ function parseArgs() {
         if (a.match(/^(http:|https:)/)) {
             url = a;
         } else if (a.match(/^--/)) {
-            a === '--stop' && (stop = true);
-            a === '--debug' && (debug = true);
             a === '--mobile' && (mobile = true);
             a === '--headless' && (headless = true);
+            a === '--verbose' && (verbose = true);
+            a === '--stop' && (stop = true);
         } else {
             if (existsSync('src/tests/' + a + '.mjs')) {
                 tests.push(a + '.mjs');
@@ -131,5 +139,5 @@ function parseArgs() {
             dir.match(/\.mjs$/) && tests.push(dir);
         });
     }
-    return { url, tests, stop, debug, mobile, headless };
+    return { url, tests, stop, verbose, mobile, headless };
 }

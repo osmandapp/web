@@ -5,10 +5,10 @@
   "license": "ISC",
   "scripts": {
     "lint": "eslint src/**/*.mjs",
-    "test": "node src/main.mjs http://localhost:3000/map/",
-    "test:main": "node src/main.mjs https://osmand.net/map/",
-    "test:test": "node src/main.mjs https://test.osmand.net/map/",
-    "#USAGE": "echo options: [--stop] [--debug] [--mobile] [--headless] [tests]"
+    "test": "node src/main.mjs 'http://localhost:3000/map/#17/50.45009/30.52340'",
+    "test:main": "node src/main.mjs 'https://osmand.net/map/#17/50.45009/30.52340'",
+    "test:test": "node src/main.mjs 'https://test.osmand.net/map/#17/50.45009/30.52340'",
+    "#USAGE": "echo options: [--stop] [--verbose] [--mobile] [--headless] [tests]"
   },
   "dependencies": {
     "chalk": "^5.3.0",
