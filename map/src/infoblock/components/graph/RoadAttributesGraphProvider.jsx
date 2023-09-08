@@ -62,13 +62,13 @@ export default function RoadAttributesGraphProvider({ width }) {
         let typesColors = {};
         let surfacesColors = {};
         data.forEach((seg) => {
-            types.push(createDataSet(seg, 'highway', typesColors));
-            types.push(createDataSet(seg, 'route', typesColors));
-            types.push(createDataSet(seg, 'railway', typesColors));
-            types.push(createDataSet(seg, 'aeroway', typesColors));
-            types.push(createDataSet(seg, 'aerialway', typesColors));
-            types.push(createDataSet(seg, 'piste:type', typesColors));
-            surfaces.push(createDataSet(seg, 'surface', surfacesColors));
+            addDataSet(types, seg, 'highway', typesColors);
+            addDataSet(types, seg, 'route', typesColors);
+            addDataSet(types, seg, 'railway', typesColors);
+            addDataSet(types, seg, 'aeroway', typesColors);
+            addDataSet(types, seg, 'aerialway', typesColors);
+            addDataSet(types, seg, 'piste:type', typesColors);
+            addDataSet(surfaces, seg, 'surface', surfacesColors);
         });
         return {
             types: {
@@ -80,6 +80,13 @@ export default function RoadAttributesGraphProvider({ width }) {
                 legend: surfacesColors,
             },
         };
+    }
+
+    function addDataSet(arr, seg, tag, colors) {
+        let res = createDataSet(seg, tag, colors);
+        if (res) {
+            arr.push(res);
+        }
     }
 
     function createDataSet(seg, tagName, colors) {
@@ -116,8 +123,8 @@ export default function RoadAttributesGraphProvider({ width }) {
         <>
             {roadPoints && data && (
                 <div>
-                    <RoadAttributesGraph name={'Waytypes'} data={data.types} width={width} />
-                    <RoadAttributesGraph name={'Surfaces'} data={data.surfaces} width={width} />
+                    {data.types && <RoadAttributesGraph name={'Waytypes'} data={data.types} width={width} />}
+                    {data.surfaces && <RoadAttributesGraph name={'Surfaces'} data={data.surfaces} width={width} />}
                 </div>
             )}
         </>

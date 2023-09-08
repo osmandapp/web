@@ -99,7 +99,7 @@ export default function RoadAttributesGraph({ name, data, width }) {
                                 sx={{ display: 'flex', paddingTop: '0px !important' }}
                                 xs={Object.entries(data.legend).length > 5 ? 6 : 12}
                             >
-                                <Icon>
+                                <Icon sx={{overflow: 'visible'}}>
                                     <CircleIcon sx={{ color: color, fontSize: '0.8rem' }} />
                                 </Icon>
                                 <Typography
@@ -108,7 +108,7 @@ export default function RoadAttributesGraph({ name, data, width }) {
                                         color: '#666666',
                                         fontWeight: 'bold',
                                         fontSize: 8,
-                                        margin: '12px 0px 0px 0px !important',
+                                        margin: '13px 0px 0px 0px !important',
                                     }}
                                 >
                                     {type}
