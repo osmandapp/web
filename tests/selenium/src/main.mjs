@@ -9,11 +9,9 @@
  * DONE a) ONE test = SEQUENCE of actions (each action may fail = whole test failed)
  *
  * DONE - local chromium correct startup
- * - how to store login/password
- * - where to store gpx
- * - report png via tg
- *
- * test chains: login, upload-gpx
+ * DONE - test login/password -- settings.js
+ * DONE - where/how to store gpx -- tests/gpx
+ * TODO - report tests/png via tg -- later
  */
 
 import { Builder } from 'selenium-webdriver';
@@ -30,12 +28,14 @@ const { url, stop, verbose, mobile, headless, tests } = parseArgs();
 let failed = 0;
 let successful = 0;
 
+console.log();
 await cycleTests();
 
 console.log();
 failed > 0 && console.log(chalk.red('failed', failed));
 successful > 0 && console.log(chalk.green('successful', successful));
 
+console.log();
 process.exitCode = failed > 0 ? 1 : 0;
 
 async function cycleTests() {
@@ -88,7 +88,7 @@ async function runTest({ file, info }) {
         },
         (error) => {
             failed++;
-            const message = verbose ? error : error.message.replace(/\n.*/, ''); // keep 1st line
+            const message = verbose ? error : error.message.replace(/\n.*/g, ''); // keep 1st line
             console.log(info, file, chalk.bgRedBright('FAILED'), message);
         }
     );
