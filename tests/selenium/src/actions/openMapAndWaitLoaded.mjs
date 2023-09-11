@@ -1,7 +1,13 @@
-import { until, Condition } from 'selenium-webdriver';
-
+import { until } from 'selenium-webdriver';
+import waitForIdle from './waitForIdle.mjs';
 import { TIMEOUT_WAIT } from '../settings.mjs';
 
+/**
+ * Action: openMapAndWaitLoaded(props)
+ *
+ * test: check site's title
+ * test: wait-for-idle (external action)
+ */
 export default async function test(props) {
     const { driver, url } = props;
 
@@ -9,19 +15,5 @@ export default async function test(props) {
 
     await driver.wait(until.titleIs('OsmAnd Map'), TIMEOUT_WAIT);
 
-    await driver.wait(
-        new Condition('One Second after httpApi', async (driver) => {
-            const ts = await driver.executeScript('return window.seLastHttpApiTimestamp');
-            return ts > 0 && ts + 1000 < Date.now();
-        }),
-        TIMEOUT_WAIT
-    );
-
-    await driver.wait(
-        new Condition(
-            'Leaflet Tiles Loaded',
-            async (driver) => (await driver.executeScript('return window.seIsTilesLoaded')) === true
-        ),
-        TIMEOUT_WAIT
-    );
+    await waitForIdle(props);
 }
