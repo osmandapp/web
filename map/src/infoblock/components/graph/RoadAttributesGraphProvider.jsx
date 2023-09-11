@@ -129,9 +129,6 @@ export default function RoadAttributesGraphProvider({ width }) {
             newColor = colors[label];
         } else {
             newColor = generatePastelColor(Object.keys(colors).length);
-            while (Object.values(colors).includes(newColor)) {
-                newColor = generatePastelColor(Object.keys(colors).length);
-            }
         }
         return newColor;
     }
