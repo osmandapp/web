@@ -21,6 +21,8 @@ import chalk from 'chalk';
 
 import { existsSync, readdirSync, mkdirSync, writeFileSync } from 'node:fs';
 
+import { IMPICIT_WAIT } from './settings.mjs';
+
 console.debug = () => {}; // suppress selenium's console.debug
 
 const { url, stop, verbose, mobile, headless, tests } = parseArgs();
@@ -61,6 +63,8 @@ async function runTest({ file, info }) {
             let error = null;
 
             driver = await prepareDriver();
+            await driver.manage().setTimeouts({ implicit: IMPICIT_WAIT });
+
             const { default: test } = await import('./tests/' + file);
 
             try {

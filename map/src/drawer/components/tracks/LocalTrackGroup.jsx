@@ -140,7 +140,13 @@ export default function LocalTrackGroup() {
                                     type="file"
                                     onChange={fileSelected(ctx)}
                                 />
-                                <Button className={styles.button} variant="contained" component="span" sx={{ ml: 3 }}>
+                                <Button
+                                    id="se-button-upload-gpx"
+                                    className={styles.button}
+                                    variant="contained"
+                                    component="span"
+                                    sx={{ ml: 3 }}
+                                >
                                     Upload
                                 </Button>
                             </label>
