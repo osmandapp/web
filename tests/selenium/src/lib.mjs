@@ -1,6 +1,46 @@
+import { Condition } from 'selenium-webdriver';
 import { strict as assert } from 'node:assert';
+import { TIMEOUT_WAIT } from './settings.mjs';
 
-export async function click({ driver }, by) {
+/**
+ * Lib: waitBy(props, by)
+ *
+ * Wait (by) for any visible element.
+ * Return: element
+ *
+ * test: failed if no visible element found
+ */
+export async function waitBy({ driver }, by) {
+    const result = await driver.wait(
+        new Condition('waitBy' + by.value, async (driver) => {
+            const found = await driver.findElements(by);
+            if (found && found.length > 0) {
+                for (let i = 0; i < found.length; i++) {
+                    const element = found[i];
+                    if ((await element.getCssValue('visibility')) === 'hidden') {
+                        continue;
+                    }
+                    return element; // found (don't check with element.isDisplayer() due to wrong result)
+                }
+            }
+            return false;
+        }),
+        TIMEOUT_WAIT
+    );
+
+    return result;
+}
+
+/**
+ * Lib: clickBy(props, by)
+ *
+ * Find (by), check visible, delay until transition, click.
+ * Works with non-interactive elements such as MenuItem.
+ * Return: element
+ *
+ * test: failed if not found or not visible element
+ */
+export async function clickBy({ driver }, by) {
     const element = await driver.findElement(by);
 
     assert.notEqual('hidden', await element.getCssValue('visibility'), 'click-element is hidden');
@@ -8,9 +48,11 @@ export async function click({ driver }, by) {
     await transitionDelay({ driver }, element); // wait for CSS transition finish
 
     await driver.actions().move({ origin: element }).click().perform();
+
+    return element;
 }
 
-// sleep by max(CSS transition delay) before click
+// sleep by max(CSS-transition-delay) before click
 async function transitionDelay({ driver }, element) {
     let delayMs = 0;
     const extend = 1.15; // +15% to finish transition

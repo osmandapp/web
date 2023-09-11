@@ -15,7 +15,7 @@
  */
 
 import { Builder } from 'selenium-webdriver';
-import { Options } from 'selenium-webdriver/chrome.js';
+import { Options, ServiceBuilder } from 'selenium-webdriver/chrome.js';
 import compareImages from 'resemblejs/compareImages.js';
 import chalk from 'chalk';
 
@@ -157,6 +157,10 @@ async function prepareDriver() {
 
     driver.setChromeOptions(options);
 
+    if (verbose) {
+        driver.setChromeService(new ServiceBuilder().loggingTo('/tmp/log').enableVerboseLogging());
+    }
+
     return driver.build();
 }
 
@@ -185,8 +189,8 @@ function parseArgs() {
         }
     });
     if (tests.length === 0) {
-        readdirSync('src/tests/').forEach((dir) => {
-            dir.match(/\.mjs$/) && tests.push(dir);
+        readdirSync('src/tests/').forEach((file) => {
+            file.match(/\.mjs$/) && tests.push(file);
         });
     }
     return { url, tests, stop, verbose, mobile, headless };
