@@ -35,7 +35,7 @@ const GpxGraphProvider = ({ width }) => {
     useEffect(() => {
         if (ctx.selectedGpxFile) {
             let trackData = {};
-            let points = _.cloneDeep(TracksManager.getTrackPoints(ctx.selectedGpxFile));
+            let points = TracksManager.getTrackPoints(ctx.selectedGpxFile);
             if (!_.isEmpty(points) && !equalsPoints(points, data?.data)) {
                 if (ctx.selectedGpxFile.analysis?.hasElevationData) {
                     trackData.ele = true;

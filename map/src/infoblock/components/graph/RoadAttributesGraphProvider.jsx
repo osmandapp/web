@@ -13,7 +13,7 @@ export default function RoadAttributesGraphProvider({ width }) {
         if (ctx.selectedGpxFile) {
             let points = !_.isEmpty(ctx.selectedGpxFile.points)
                 ? getAllPoints(ctx.selectedGpxFile.points)
-                : _.cloneDeep(getTrackPoints(ctx.selectedGpxFile));
+                : getTrackPoints(ctx.selectedGpxFile);
             if (!_.isEmpty(points) && points[0].segment && !equalsPoints(points, roadPoints)) {
                 setRoadPoints(points);
             } else if (_.isEmpty(points) || points[0].segment === undefined) {
