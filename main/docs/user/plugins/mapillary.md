@@ -12,9 +12,10 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-To get around faster, in OsmAnd you can use street-level views of your routes or places of interest provided by [Mapillary](https://www.mapillary.com/) (an internet connection is required).
 
 ## Overview
+
+To get around faster, in OsmAnd you can use street-level views of your routes or places of interest provided by [Mapillary](https://www.mapillary.com/) (an internet connection is required).  
 
 [The Mapillary layer](https://www.mapillary.com/) brings street-level imagery straight into the OsmAnd app. So you can easily overview the surroundings of any place of interest or along the route you have planned. If imagery is missing, you can add it by yourself and others can make use of it. This feature has emerged from our collaboration with [the Mapillary team](https://www.mapillary.com/about) uniting the benefits of both apps.
 
@@ -144,7 +145,7 @@ In order to add photos you will need to register in the [Mapillary application](
 
 </Tabs>
 
-### Mapillary Widget
+## Mapillary Widget
 
 The [Mapillary widget](../widgets/info-widgets.md#-mapillary-widget) is used to get quick access to the Mapillary application. The widget is added to the main screen automatically when the Mapillary plugin enabled. You can enable or disable the Mapillary widget and other widgets in the [Configure screen](../widgets/configure-screen.md) section of the Main Menu.
 
@@ -152,22 +153,17 @@ The [Mapillary widget](../widgets/info-widgets.md#-mapillary-widget) is used to 
 
 <TabItem value="android" label="Android">
 
-To enable/disable widget demonstration on the main screen go to
-*<Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_right,mapillary"/>*
-
-or *<Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left,mapillary"/>*
+*<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,mapillary"/>*  
 
 ![Mapillary plugin Android](@site/static/img/plugins/mapillary/mapillary_widget_disable_android.png)  ![Mapillary plugin Map Conntext menu Android](@site/static/img/plugins/mapillary/mapillary_app_activation_android.png)
-
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-To enable/disable widget demonstration on the main screen go to 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,mapillary"/>*
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,mapillary"/>*
 
-![Mapillary plugin iOS](@site/static/img/plugins/mapillary/mapillary_widget_disable_ios.png) ![Mapillary plugin Map Conntext menu iOS](@site/static/img/plugins/mapillary/mapillary_app_activation_ios.png)
+![Mapillary plugin Map Conntext menu iOS](@site/static/img/plugins/mapillary/mapillary_app_activation_ios.png)
 
 </TabItem>
 

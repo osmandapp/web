@@ -13,13 +13,14 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-  
-  
-Test functions of the app are collected in the OsmAnd development plugin. Use them at your own risk.  
+
 
 ## Overview
 
+Test functions of the app are collected in the OsmAnd development plugin. Use them at your own risk.    
+
 The OsmAnd development plugin allows you to try new features of the app or to configure OsmAnd for testing: simulate navigation routes, check the screen rendering performance, etc. Plugin is designed for *developers and experienced users* and not required for daily use of the application.  
+
 
 ## Setup  
 
@@ -167,11 +168,11 @@ Higher memory allocation may impact the performance of other apps.
 
 ## Widgets  
 
-You can use OsmAnd developer [Widgets](../widgets/info-widgets.md#-developer-widgets) to get information about zoom level, map rendering speed, elevation of the map center above sea level, distance to map center, camera elevation and incline.  
-
 :::info  Important
 OsmAnd developer Widgets can be added to the screen only when OsmAnd development plugin is enabled.  
-:::
+:::  
+
+You can use OsmAnd developer [Widgets](../widgets/info-widgets.md#-developer-widgets) to get information about zoom level, map rendering speed, elevation of the map center above sea level, distance to map center, camera elevation and incline.  
 
 ### FPS Widget
 
@@ -181,7 +182,7 @@ The [FPS Widget](../widgets/info-widgets.md#fps-widget) shows how fast the map a
 
 <TabItem value="android" label="Android">  
 
-*Menu → Configure screen → Left / Right panel → Developer Widgets*  
+*<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*    
 
 ![Development widget fps 1](@site/static/img/plugins/development/dev_widgets_fps_1.png) ![Development widget fps 2](@site/static/img/plugins/development/dev_widgets_fps_2.png)
 
@@ -189,9 +190,9 @@ The [FPS Widget](../widgets/info-widgets.md#fps-widget) shows how fast the map a
 
 <TabItem value="ios" label="iOS">  
 
-*Menu → Configure screen → Right panel*  
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*  
 
-![Development widget iOS](@site/static/img/plugins/development/dev_widgets_ios_fps.png) ![Development widget iOS 2](@site/static/img/plugins/development/dev_widgets_ios_fps_2.png)
+![Development widget iOS 2](@site/static/img/plugins/development/dev_widgets_ios_fps_2.png)
 
 </TabItem>
 
@@ -200,13 +201,13 @@ The [FPS Widget](../widgets/info-widgets.md#fps-widget) shows how fast the map a
 
 ## Camera position Widgets
 
-In order to make sure that the OsmAnd map is realistic and corresponds to photos of the Earth made from a height (as well as from space), you can use [Camera position Widgets](../widgets/info-widgets.md#camera-widgets).
+You can use [Camera position widgets](../widgets/info-widgets.md#camera-widgets) to give the OsmAnd map a realistic look and match photos of the Earth taken both from above and from space.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-*Menu → Configure screen → Left / Right panel → Developer Widgets*  
+*<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets"/>*  
 
 ![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
 
@@ -214,7 +215,7 @@ In order to make sure that the OsmAnd map is realistic and corresponds to photos
 
 <TabItem value="ios" label="iOS">  
 
-*Menu → Configure screen →  Right panel*  
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets"/>* 
 
 ![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera_ios.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2_ios.png)
 

@@ -12,6 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+<InfoIncompleteArticle/>
 
 ## Overview  
 
@@ -65,35 +66,38 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 
 </Tabs> 
 
-1. [Route maneuvers](../widgets/nav-widgets.md#next-turns). These *navigational* widgets are activated during navigation and display information about the distance to the next maneuver.  
+1. [Route maneuvers](../widgets/nav-widgets.md#next-turns). This set of *navigational* widgets is activated during navigation and display information about the distance to the next maneuver.  
     3 widgets included: *Next turn*, *Next turn (small)*, *Second next turn*.
-2. [Navigation point](../widgets/nav-widgets.md#navigation-points). *Navigational* widgets *Navigation point* show the remaining distance to a destination, intermediate point, arrival time to an intermediate point, or travel time for a calculated route.  
+2. [Navigation point](../widgets/nav-widgets.md#navigation-points). A set of *navigation widgets* shows the remaining distance to a destination, intermediate point, arrival time to an intermediate point, or travel time for a calculated route.  
     4 widgets included: [Distance to destination](../widgets/nav-widgets.md#distance-to-destination), [Distance to intermediate](../widgets/nav-widgets.md#distance-to-intermediate), [Time to intermediate](../widgets/nav-widgets.md#time-to-intermediate), [Time to destination](../widgets/nav-widgets.md#time-to-destination).
-3. [Map markers](../widgets/markers.md). Widget shows the distance or estimated time of arrival (ETA) for the first two markers in the list of map markers. show special points marked as flags on the map.  
+3. [Map markers](../widgets/markers.md). A set of widgets shows the distance or estimated time of arrival (ETA) for the first two markers in the list of map markers. show special points marked as flags on the map.  
     2 widgets included: *First marker*, *Second marker*.
-4. [Bearing](../widgets/nav-widgets.md#bearing). *Navigational* widgets show the absolute or relative bearing to a target in angular units (in 180 degrees, 360 degrees, or milliradians mode).  
+4. [Bearing](../widgets/nav-widgets.md#bearing). This set of *navigational* widgets shows the absolute or relative bearing to a target in angular units (in 180 degrees, 360 degrees, or milliradians mode).  
     3 widgets included: *Relative bearing*, *Magnetic bearing*, *True bearing*.
 5. [Current Speed](../widgets/info-widgets.md#speed). *Informational* widget shows the current speed detected by the GPS sensor. 
 6. [Average speed  (*Android only*)](../widgets/info-widgets.md#average-speed-widget). *Informational* widget shows the average speed of the current trip.
-7. [Speed limit](../widgets/nav-widgets.md#speed-limit). *Informational* widget displays the speed limit on the current road you are traveling on.
-8. [Altitude](../widgets/info-widgets.md#altitude-widgets). *Informational* widget displays the altitude above sea level for the current geolocation or the altitude above sea level for the current map center.  
+7. [Speed limit](../widgets/nav-widgets.md#speed-limit). A set of *informational* widgets displays the speed limit on the current road you are traveling on.
+8. [Altitude](../widgets/info-widgets.md#altitude-widgets). A set of *informational* widgets displays the altitude above sea level for the current geolocation or the altitude above sea level for the current map center.  
     2 widgets included: *Altitude: current location*, *Elevation: map center*.
 9. [GPS info (*Android only*)](../widgets/info-widgets.md#gps-info). *Informational* widget shows the number of satellites the device is currently detecting and using.
-10. [* Trip recording](../widgets/info-widgets.md#-trip-recording-widgets). *Informational* widget provides quick access to start and stop track recording.  
+10. [* Trip recording](../widgets/info-widgets.md#-trip-recording-widgets). A set of *informational* widgets provides quick access to start and stop track recording.  
     4 widgets included: *Distance*, *Duration*, *Uphill*, *Downhill*.
 11. [Current time](../widgets/info-widgets.md#current-time). *Informational* widget displays the current time taken from your device.
 12. [Battery level](../widgets/info-widgets.md#battery-level). *Informational* widget shows battery level of your device.
 13. [Radius ruler](../widgets/info-widgets.md#radius-ruler). The widget displays on a map the distance between the user's location and the inner point of the distance circles of the [Radius ruler tool](../widgets/radius-ruler.md).
-14. [* Audio/video notes](../widgets/info-widgets.md#-audiovideo-notes-widget). *Informational* widget provides quick access to start/stop taking an audio, video or photo notes.      
+14. [* Audio/video notes](../widgets/info-widgets.md#-audiovideo-notes-widget). This set of *informational* widgets provides quick access to start/stop taking an audio, video or photo notes.      
     4 widgets included: *On request*, *Record audio*, *Record video*, *Take a photo*.
 15. [* Parking](../widgets/info-widgets.md#-parking-widget). *Informational* widget shows the distance from the center of the screen to the parking location.
-16. Wheather
-17. [* Mapillary](../widgets/info-widgets.md#-mapillary-widget) - provides quick access to Mapillary app to add Street-Level-Imagery. 
-18. [Glide ratio](../widgets/info-widgets.md#glide-ratio)  
+16. [* Wheather](../widgets/info-widgets.md#-weather-widgets). A set of *informational* widgets displays detailed weather data.    
+    5 widgets included: *Temperature*, *Air Pressure*, *Wind*, *Cloud*, *Precipitation*.
+17. [* Mapillary](../widgets/info-widgets.md#-mapillary-widget). *Informational* widget provides quick access to Mapillary app to add street images. 
+18. [Glide ratio](../widgets/info-widgets.md#glide-ratio). The widgets show the glide ratio to the target and the average glide ratio for the current flight.  
     2 widgets included: *Glide ratio to target*, *Average glide ratio*.
-19. [Sunrise, sunset](../widgets/info-widgets.md#sunset-and-sunrise-widgets) 
-20. [* Developer widgets](../widgets/info-widgets.md#-developer-widgets)
-    4 widgets included.
+19. [Sunrise, sunset](../widgets/info-widgets.md#sunset-and-sunrise). A set of *informational* widgets shows the time of the next sunrise or sunset for the center of the map.  
+    2 widgets included: *Sunrise*, *Sunset*.
+20. [* Developer widgets](../widgets/info-widgets.md#-developer-widgets). A set of *informational* widgets provides information about zoom level, map rendering speed, map center elevation above sea level, distance to the map center, camera height and tilt.  
+    4 widgets included: *Map rendering FPS*, *Camera tilt*, *Camera elevation*, *Zoom level*, *Distance from camera to target*.
+21. [OsmAnd Tracker status](../widgets/info-widgets.md#-tracker-widget). This *informational* widget is used to quickly access the [OsmAnd Tracker application](https://play.google.com/store/apps/details?id=net.osmand.telegram) to share your location with other users.  
 
 
 ### Top / Bottom panel widgets
@@ -102,26 +106,27 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 
 <TabItem value="android" label="Android">  
 
-![top panel](@site/static/img/widgets/top_panel_andr.png)   
+![top panel](@site/static/img/widgets/top_bottom_panel_1_andr.png)   
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![top panel](@site/static/img/widgets/top_panel_andr.png)    
+![top panel](@site/static/img/widgets/top_bottom_panel_1_ios.png)    
 
 </TabItem>
 
 </Tabs> 
 
-- [Coordinates widget](../widgets/info-widgets#coordinates-widget) - shows the geographic coordinates of current geo-location.
-- [Street name](../widgets/nav-widgets#street-name) - shows current street name with straight location arrow or next street name with the maneuver has to be completed.
-- [Map markers bar](../widgets/markers#top-bar-widget-markers) - show the distance and direction to the marker from current location.
-- [Lanes](../widgets/nav-widgets#lanes) - shows the current road lanes layout and highlights lanes to drive with active navigation.  
+1. [Coordinates widgets](../widgets/info-widgets#coordinates-widget) This set of *informational* widgets displays the geographic coordinates of the current geolocation.      
+    2 widgets included: *Coordinates: map center (Android only)*, *Coordinates: current location*.
+2. [Street name](../widgets/nav-widgets#street-name). The Street name widget shows the current street name with a straight location arrow, or the next street name with an arrow indicating an upcoming turn.
+shows current street name with straight location arrow or next street name with the maneuver has to be completed.
+3. [Map markers bar](../widgets/markers#top-bar-widget-markers) - show the distance and direction to the marker from current location.
+4. [Lanes](../widgets/nav-widgets#lanes) - shows the current road lanes layout and highlights lanes to drive with active navigation. 
+5. [Elevation profile](../widgets/nav-widgets#elevation-widget) - shows the elevation and slope profile of the current route.  
 
-- [Elevation profile](../widgets/nav-widgets#elevation-widget) - shows the elevation and slope profile of the current route.  
-
-![elevation profile](@site/static/img/widgets/elevation_prof_and.png)  
+    ![elevation profile](@site/static/img/widgets/elevation_prof_and.png)  
 
 
 ### Buttons

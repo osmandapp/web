@@ -59,20 +59,13 @@ The Ruler gives a visual estimate of the objects on the map and distance between
 </Tabs>
 
 
-## Radius-ruler widget
-
+## Radius ruler widget
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Radius-ruler widget shows distance between your location and center point of the 'Radius-ruler'. Radius of the first circle is equal to [the map scale](#ruler).
-
-| | |
-|------------|------------|
-| Enable | _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,radius_ruler_item"/>_  |
-| Click | Сhanges widget state between the black scale, the grey one and non-visible modes. |
-| Units Format | _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>_  |
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="radius_ruler_item"/>*
 
 ![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget.png)
 
@@ -80,22 +73,24 @@ Radius-ruler widget shows distance between your location and center point of the
 
 <TabItem value="ios" label="iOS">
 
-Radius-ruler widget shows distance between your location and center point of the 'Radius-ruler'. Radius of the first circle is equal to [the map scale](#ruler).
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="radius_ruler_item"/>*
 
-| | |
-|------------|------------|
-| Enable | _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_ruler_control"/>_ |
-| Click | Сhanges widget state between the black scale, the grey one and non-visible modes. |
-| Units Format | _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>_  |
-
-![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget_ios.png) ![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget_ios_1.png) ![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget_ios_2.png)
+<table class="blogimage">
+    <tr>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Radius-ruler"/></td>
+    </tr>
+</table> 
 
 </TabItem>
 
 </Tabs>
 
+[Radius ruler widget](../widgets/info-widgets.md#radius-ruler) shows distance between your location and center point of the *Radius-ruler*. Radius of the first circle is equal to [the map scale](#ruler).
 
-## Compass for Radius-ruler
+
+## Compass for Radius ruler
 
 <Tabs groupId="operating-systems">
 
