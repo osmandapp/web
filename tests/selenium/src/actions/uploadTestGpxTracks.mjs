@@ -30,18 +30,18 @@ export default async function test(props, { mask = '*.gpx', multiple = false } =
     if (multiple) {
         const files = tracks.map((t) => t.path).join('\n');
         const upload = await getUpload(props);
-        await upload.sendKeys(files);
+        await upload.sendKeys(files); // upload
     } else {
         for (let i = 0; i < tracks.length; i++) {
             const { name, path } = tracks[i];
             const upload = await getUpload(props);
-            await upload.sendKeys(path); // upload by sendKeys()
+            await upload.sendKeys(path); // upload
             await waitForTrack(props, { name });
             await waitForIdle(props);
         }
     }
 
-    // finally, all filed should be loaded
+    // finally, all files should be loaded
     for (let i = 0; i < tracks.length; i++) {
         const { name } = tracks[i];
         await waitForTrack(props, { name });
