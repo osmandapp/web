@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import _ from 'lodash';
 import AppContext from '../../../context/AppContext';
-import { addDistanceToPoints, getTrackPoints } from '../../../context/TracksManager';
+import { addDistanceToPoints, equalsPoints, getAllPoints, getTrackPoints } from '../../../context/TracksManager';
 import RoadAttributesGraph from './RoadAttributesGraph';
 
 export default function RoadAttributesGraphProvider({ width }) {
@@ -10,11 +10,13 @@ export default function RoadAttributesGraphProvider({ width }) {
     const [roadPoints, setRoadPoints] = useState(null);
 
     useEffect(() => {
-        if (ctx.selectedGpxFile && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK) {
-            let points = _.cloneDeep(getTrackPoints(ctx.selectedGpxFile));
-            if (points[0].segment) {
+        if (ctx.selectedGpxFile) {
+            let points = !_.isEmpty(ctx.selectedGpxFile.points)
+                ? getAllPoints(ctx.selectedGpxFile.points)
+                : _.cloneDeep(getTrackPoints(ctx.selectedGpxFile));
+            if (!_.isEmpty(points) && points[0].segment && !equalsPoints(points, roadPoints)) {
                 setRoadPoints(points);
-            } else {
+            } else if (_.isEmpty(points) || points[0].segment === undefined) {
                 setRoadPoints(null);
             }
         } else {
@@ -35,11 +37,13 @@ export default function RoadAttributesGraphProvider({ width }) {
                     seg['surface'] = 'unknown';
                     p.segment.ext.types.split(',').forEach((t) => {
                         const type = routeTypes[t];
-                        if (type.tag === 'highway') {
-                            seg['highway'] = type.value;
-                        }
-                        if (type.tag === 'surface') {
-                            seg['surface'] = type.value;
+                        if (type) {
+                            if (type.tag === 'highway') {
+                                seg['highway'] = type.value;
+                            }
+                            if (type.tag === 'surface') {
+                                seg['surface'] = type.value;
+                            }
                         }
                     });
                     segments.push(seg);
@@ -49,11 +53,10 @@ export default function RoadAttributesGraphProvider({ width }) {
         }
     }, [roadPoints]);
 
-    function generatePastelColor() {
-        let R = Math.floor(Math.random() * 127 + 127);
-        let G = Math.floor(Math.random() * 127 + 127);
-        let B = Math.floor(Math.random() * 127 + 127);
-
+    function generatePastelColor(seed) {
+        const R = 127 + (((seed + 1) * 111) % 127);
+        const G = 127 + (((seed + 1) * 222) % 127);
+        const B = 127 + (((seed + 1) * 333) % 127);
         let rgb = (R << 16) + (G << 8) + B;
         return `#${rgb.toString(16)}`;
     }
@@ -113,9 +116,9 @@ export default function RoadAttributesGraphProvider({ width }) {
         if (colors[label]) {
             newColor = colors[label];
         } else {
-            newColor = generatePastelColor();
+            newColor = generatePastelColor(Object.keys(colors).length);
             while (Object.values(colors).includes(newColor)) {
-                newColor = generatePastelColor();
+                newColor = generatePastelColor(Object.keys(colors).length);
             }
         }
         return newColor;
