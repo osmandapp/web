@@ -29,10 +29,12 @@ export default function RoadAttributesGraphProvider({ width }) {
             addDistanceToPoints(roadPoints);
             let segments = [];
             const routeTypes = roadPoints[0].segment.routeTypes;
+            let prevSegPoint;
             roadPoints.forEach((p) => {
                 if (p.segment && p.segment.ext.types) {
                     let seg = p;
                     seg.ind = _.indexOf(roadPoints, p);
+                    seg.distance = prevSegPoint ? seg.distanceTotal - prevSegPoint.distanceTotal : seg.distanceTotal;
                     seg['highway'] = 'unknown';
                     seg['surface'] = 'unknown';
                     p.segment.ext.types.split(',').forEach((t) => {
@@ -46,6 +48,7 @@ export default function RoadAttributesGraphProvider({ width }) {
                             }
                         }
                     });
+                    prevSegPoint = seg;
                     segments.push(seg);
                 }
             });
@@ -97,8 +100,17 @@ export default function RoadAttributesGraphProvider({ width }) {
     function createDataSet(seg, tagName, colors) {
         const label = seg[tagName];
         if (label) {
-            const currentColor = getColor(label, colors);
-            colors[label] = currentColor;
+            let currentColor;
+            if (colors[label]) {
+                colors[label].distance += seg.distance;
+                currentColor = colors[label].color;
+            } else {
+                currentColor = getColor(label, colors);
+                colors[label] = {
+                    color: currentColor,
+                    distance: seg.distance,
+                };
+            }
             return {
                 label: label,
                 type: 'bar',

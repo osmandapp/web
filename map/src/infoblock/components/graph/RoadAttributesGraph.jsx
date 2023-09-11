@@ -52,6 +52,14 @@ export default function RoadAttributesGraph({ name, data, width }) {
         datasets: data.datasets,
     };
 
+    function prepareType(type) {
+        if (type) {
+            type = type.replaceAll('_', ' ');
+            type = type.charAt(0).toUpperCase() + type.slice(1);
+        }
+        return type;
+    }
+
     return (
         <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 40 }}>
             <Divider sx={{ mt: '15px', mb: '12px' }} />
@@ -68,31 +76,43 @@ export default function RoadAttributesGraph({ name, data, width }) {
             </Box>
             <Grid sx={{ mt: 1, ml: '-8px' }} container spacing={2}>
                 {data &&
-                    Object.entries(data.legend).map(([type, color]) => {
-                        return (
-                            <Grid
-                                item
-                                key={type}
-                                sx={{ display: 'flex', paddingTop: '0px !important' }}
-                                xs={Object.entries(data.legend).length > 5 ? 6 : 12}
-                            >
-                                <Icon sx={{ overflow: 'visible' }}>
-                                    <CircleIcon sx={{ color: color, fontSize: '0.8rem' }} />
-                                </Icon>
-                                <Typography
-                                    variant="inherit"
-                                    sx={{
-                                        color: '#666666',
-                                        fontWeight: 'bold',
-                                        fontSize: 8,
-                                        margin: '13px 0px 0px 0px !important',
-                                    }}
+                    Object.entries(data.legend)
+                        .sort((a, b) => b[1].distance - a[1].distance)
+                        .map(([type, values]) => {
+                            return (
+                                <Grid
+                                    item
+                                    key={type}
+                                    sx={{ display: 'flex', paddingTop: '0px !important' }}
+                                    xs={Object.entries(data.legend).length > 5 ? 6 : 12}
                                 >
-                                    {type}
-                                </Typography>
-                            </Grid>
-                        );
-                    })}
+                                    <Icon sx={{ overflow: 'visible' }}>
+                                        <CircleIcon sx={{ color: values.color, fontSize: '0.8rem' }} />
+                                    </Icon>
+                                    <Typography
+                                        variant="inherit"
+                                        sx={{
+                                            color: '#666666',
+                                            fontWeight: 'bold',
+                                            fontSize: 8,
+                                            margin: '14px 0px 0px 0px !important',
+                                        }}
+                                    >
+                                        {prepareType(type)}
+                                    </Typography>
+                                    <Typography
+                                        variant="inherit"
+                                        sx={{
+                                            color: '#666666',
+                                            fontSize: 8,
+                                            margin: '14px 0px 0px 0px !important',
+                                        }}
+                                    >
+                                        : {(values.distance / 1000).toFixed(2)} km
+                                    </Typography>
+                                </Grid>
+                            );
+                        })}
             </Grid>
         </Box>
     );
