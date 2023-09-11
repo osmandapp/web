@@ -32,7 +32,7 @@ export default function RoadAttributesGraphProvider({ width }) {
             let prevSegPoint;
             roadPoints.forEach((p) => {
                 if (p.segment && p.segment.ext.types) {
-                    let seg = p;
+                    let seg = _.cloneDeep(p);
                     seg.ind = _.indexOf(roadPoints, p);
                     seg.distance = prevSegPoint ? seg.distanceTotal - prevSegPoint.distanceTotal : seg.distanceTotal;
                     seg['highway'] = 'unknown';

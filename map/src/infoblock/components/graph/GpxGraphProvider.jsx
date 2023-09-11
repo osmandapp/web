@@ -86,7 +86,7 @@ const GpxGraphProvider = ({ width }) => {
         if (!_.isEmpty(data?.data)) {
             let elevation = data.ele ? 'ele' : null;
             let elevationSRTM = data.srtm ? 'srtmEle' : null;
-            let points = data.data;
+            let points = _.cloneDeep(data.data);
             let result = [];
             let minEle = elevation ? points[0][elevation] : elevationSRTM ? points[0][elevationSRTM] : null;
             let maxEle = elevation ? points[0][elevation] : elevationSRTM ? points[0][elevationSRTM] : null;
