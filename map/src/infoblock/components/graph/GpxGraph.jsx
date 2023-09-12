@@ -255,6 +255,9 @@ export default function GpxGraph({
         responsive: true,
         maintainAspectRatio: false,
         spanGaps: true,
+        animation: {
+            duration: 400,
+        },
         interaction: {
             intersect: false,
             mode: getMode(),

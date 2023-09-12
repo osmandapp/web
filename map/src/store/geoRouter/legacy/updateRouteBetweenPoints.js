@@ -80,8 +80,9 @@ async function updateRouteBetweenPointsOSRM({ start, end, geoProfile, ctx }) {
                     'Content-Type': 'application/json',
                 },
             });
-
-            return approximateResult ? approximateResult.data.points : points;
+            return approximateResult && approximateResult.data?.points?.length >= 2
+                ? approximateResult.data.points
+                : points;
         }
         if (points.message) {
             ctx.setRoutingErrorMsg(points.message);
