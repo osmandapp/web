@@ -12,6 +12,7 @@ export default function RoadAttributesGraph({ name, data, width }) {
         indexAxis: 'y',
         responsive: true,
         maintainAspectRatio: false,
+        animation: false,
         plugins: {
             legend: {
                 display: false,
