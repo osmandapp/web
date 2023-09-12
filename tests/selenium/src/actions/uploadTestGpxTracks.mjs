@@ -19,13 +19,15 @@ export default async function test(props, { mask = '*.gpx', multiple = false } =
     // convert mask (support only * as wildcard, eg *wiki*.gpx)
     const regexp = mask.replaceAll('.', '\\.').replaceAll('*', '.*');
 
-    readdirSync('gpx').forEach((file) => {
-        if (file.match(/\.gpx$/i) && (!mask || file.match(regexp))) {
-            const name = file.replace(/\.gpx$/i, '');
-            const path = resolve('gpx', file);
-            tracks.push({ file, name, path });
-        }
-    });
+    readdirSync('gpx')
+        .sort()
+        .forEach((file) => {
+            if (file.match(/\.gpx$/i) && (!mask || file.match(regexp))) {
+                const name = file.replace(/\.gpx$/i, '');
+                const path = resolve('gpx', file);
+                tracks.push({ file, name, path });
+            }
+        });
 
     if (multiple) {
         const files = tracks.map((t) => t.path).join('\n');

@@ -183,15 +183,19 @@ function parseArgs() {
         } else {
             if (existsSync('src/tests/' + a + '.mjs')) {
                 tests.push(a + '.mjs');
+            } else if (existsSync('src/tests/' + a)) {
+                tests.push(a);
             } else {
                 throw Error('unknown test:', a);
             }
         }
     });
     if (tests.length === 0) {
-        readdirSync('src/tests/').forEach((file) => {
-            file.match(/\.mjs$/) && tests.push(file);
-        });
+        readdirSync('src/tests/')
+            .sort()
+            .forEach((file) => {
+                file.match(/\.mjs$/) && tests.push(file);
+            });
     }
     return { url, tests, stop, verbose, mobile, headless };
 }
