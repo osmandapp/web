@@ -75,7 +75,7 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 4. [Bearing](../widgets/nav-widgets.md#bearing). This set of *navigational* widgets shows the absolute or relative bearing to a target in angular units (in 180 degrees, 360 degrees, or milliradians mode).  
     3 widgets included: *Relative bearing*, *Magnetic bearing*, *True bearing*.
 5. [Current Speed](../widgets/info-widgets.md#speed). *Informational* widget shows the current speed detected by the GPS sensor. 
-6. [Average speed  (*Android only*)](../widgets/info-widgets.md#average-speed-widget). *Informational* widget shows the average speed of the current trip.
+6. [Average speed (*Android only*)](../widgets/info-widgets.md#average-speed-widget). *Informational* widget shows the average speed of the current trip.
 7. [Speed limit](../widgets/nav-widgets.md#speed-limit). A set of *informational* widgets displays the speed limit on the current road you are traveling on.
 8. [Altitude](../widgets/info-widgets.md#altitude-widgets). A set of *informational* widgets displays the altitude above sea level for the current geolocation or the altitude above sea level for the current map center.  
     2 widgets included: *Altitude: current location*, *Elevation: map center*.
@@ -118,23 +118,24 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 
 </Tabs> 
 
-1. [Coordinates widgets](../widgets/info-widgets#coordinates-widget) This set of *informational* widgets displays the geographic coordinates of the current geolocation.      
-    2 widgets included: *Coordinates: map center (Android only)*, *Coordinates: current location*.
-2. [Street name](../widgets/nav-widgets#street-name). The Street name widget shows the current street name with a straight location arrow, or the next street name with an arrow indicating an upcoming turn.
-shows current street name with straight location arrow or next street name with the maneuver has to be completed.
-3. [Map markers bar](../widgets/markers#top-bar-widget-markers) - show the distance and direction to the marker from current location.
-4. [Lanes](../widgets/nav-widgets#lanes) - shows the current road lanes layout and highlights lanes to drive with active navigation. 
-5. [Elevation profile](../widgets/nav-widgets#elevation-widget) - shows the elevation and slope profile of the current route.  
+
+1. [Coordinates widgets](../widgets/info-widgets#coordinates-widget). This set of *informational* widgets displays the geographic coordinates of the current geolocation.  
+    2 widgets included: *Coordinates: map center*, *Coordinates: current location*.
+2. [Street name](../widgets/nav-widgets#street-name). *Navigational* widget shows the current street name with a straight arrow or the next street name with an arrow pointing to an upcoming turn.
+3. [Lanes](../widgets/nav-widgets#lanes). *Navigational* widget shows the current road lanes layout and highlights lanes for traffic with active navigation.
+4. [Map markers bar (*Android only*)](../widgets/markers.md#configure-marker-widgets-android). The widget displays the distance and direction to the next Map marker from your current location. The widget can be configured to show 1 or 2 markers.
+5. [Elevation profile (*Android only*)](../widgets/nav-widgets#elevation-widget). *Navigational* widget shows the elevation and slope profile of the current route.  
 
     ![elevation profile](@site/static/img/widgets/elevation_prof_and.png)  
 
 
 ### Buttons
 
-- [Compass](../widgets/map-buttons.md#compass) - indicates how the map is oriented on the device.
-- [3D mode](../widgets/map-buttons.md#3d-mode) - appears in the list and is available for setting if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected. 
-- [Distance by tap](../widgets/radius-ruler.md#distance-by-tap-tool) - gives options to measure the distance from your position to the selected point.  
-- [Quick action](../widgets/quick-action.md) - is a button that gives quick access to frequently used actions.  
+1. [Compass](../widgets/map-buttons.md#display-options). Indicates how the map is oriented on the device.  
+    3 views: *Always visible*, *Always hidden*, *Visible if map is rotated*.
+2. [3D mode](../widgets/map-buttons.md#3d-mode) - appears in the list and is available for setting if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected. 
+3. [Distance by tap](../widgets/radius-ruler.md#distance-by-tap-tool) - gives options to measure the distance from your position to the selected point.  
+4. [Quick action](../widgets/quick-action.md) - is a button that gives quick access to frequently used actions.  
 
 
 ### Pages for widgets

@@ -165,17 +165,17 @@ This widget shows the battery level of your device.
 
 | | |
 |------------|------------|
-Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_battery"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_battery"/>* |
 |   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_battery"/>* |
 | By tapping | No changes |
 
 
 ## Coordinates widget
 
-There are 2 coordinates widgets:
+OsmAnd offers two types of coordinate widgets:
 
-- *Coordinates: map center* - shows the geographic coordinates of the current map center.
-- *Coordinates: current location* (Android) or *Coordinates widget* (iOS) - shows the geographic coordinates of current geolocation.
+- **Coordinates: map center** - shows the geographic coordinates of the current map center.
+- **Coordinates: current location** - shows the geographic coordinates of current geolocation.
 
 Coordinates widgets are displayed at the top of the screen. Icons with a green background show the latitude and longitude of the point in the center of the visible part of the map, and those with a blue background show the coordinates of your current location. Information about supported *Сoordinates formats* can be found in the *[Search coordinates article](../search/search-coordinates.md#coordinate-format)*.
 
@@ -189,7 +189,7 @@ Coordinates widgets are displayed at the top of the screen. Icons with a green b
 
 <TabItem value="ios" label="iOS">
 
-![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_ios.png) ![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
+![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
 
 </TabItem>
 
@@ -197,9 +197,10 @@ Coordinates widgets are displayed at the top of the screen. Icons with a green b
 
 | | |
 |------------|------------|
-| Enable | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,top_widgets_panel"/>* |
-| By tapping | Copies the coordinates to the clipboard |
-| Format | <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) or <Translate android="true" ids="configure_profile"/> (Android) →<br/><Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/> |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="coordinates_widget"/>* |
+|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="coordinates_widget"/>* |
+| By tapping | Copies the coordinates to the clipboard. |
+| Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) or <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
 
 
 ## GPS Info  
