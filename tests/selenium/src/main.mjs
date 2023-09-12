@@ -74,9 +74,11 @@ async function runTest({ file, info }) {
             }
 
             try {
-                await manageScreenshot({ driver, file });
+                // don't validate screenshot if test was failed with error
+                await manageScreenshot({ driver, file, validate: error === null });
             } catch (e) {
-                error === null && (error = e); // test's error is more important
+                // test's error is more important than screenshot's
+                error === null && (error = e);
             }
 
             if (error) {
@@ -98,7 +100,7 @@ async function runTest({ file, info }) {
     );
 }
 
-async function manageScreenshot({ driver, file }) {
+async function manageScreenshot({ driver, file, validate = true }) {
     mkdirSync('screenshots/diff', { recursive: true });
     mkdirSync('screenshots/latest', { recursive: true });
     mkdirSync('screenshots/trusted', { recursive: true });
@@ -114,7 +116,7 @@ async function manageScreenshot({ driver, file }) {
 
     writeFileSync(latest, ss, { encoding: 'base64' });
 
-    if (existsSync(trusted)) {
+    if (validate && existsSync(trusted)) {
         const options = {
             output: {
                 largeImageThreshold: 0,

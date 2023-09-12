@@ -7,9 +7,7 @@ import { TIMEOUT_WAIT } from '../settings.mjs';
  * Params: idle <Number> wait after last httpApi (ms)
  *
  * test: wait for all leaflet tiles loaded
- * test: wait 1 second after last httpApi request doneA
- *
- * TODO: add other kind of idle conditions (wait for GpxGraph, etc)
+ * test: wait a second after seActivityTimestamp
  */
 export default async function test(props, { idle = 1000 } = {}) {
     const { driver } = props;

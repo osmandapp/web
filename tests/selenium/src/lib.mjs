@@ -2,6 +2,37 @@ import { Condition } from 'selenium-webdriver';
 import { strict as assert } from 'node:assert';
 import { TIMEOUT_WAIT } from './settings.mjs';
 
+function isStaleError(e) {
+    return e && e.toString().match(/StaleElementReferenceError/);
+}
+
+/**
+ * Lib: enclose(props, tag, callback)
+ *
+ * Wrap callback(driver) into driver.wait/Condition.
+ * Restart callback() in case of "StaleElementReferenceError".
+ * Used to enclose (findBy/waitBy ... actions) against stale element errors.
+ *
+ * Return: callback result (should be truthy to finish Condition positively).
+ *
+ * test: failed on other errors, including callback() errors or wait timed out
+ */
+export async function enclose({ driver }, tag, callback) {
+    return await driver.wait(
+        new Condition(tag, async (d) => {
+            try {
+                return callback(d); // awaiting for truthy
+            } catch (e) {
+                if (isStaleError(e)) {
+                    return false;
+                }
+                throw e;
+            }
+        }),
+        TIMEOUT_WAIT
+    );
+}
+
 /**
  * Lib: waitBy(props, by)
  *
@@ -17,10 +48,17 @@ export async function waitBy({ driver }, by) {
             if (found && found.length > 0) {
                 for (let i = 0; i < found.length; i++) {
                     const element = found[i];
-                    if ((await element.getCssValue('visibility')) === 'hidden') {
-                        continue;
+                    try {
+                        // don't check with element.isDisplayed() = wrong result
+                        if ((await element.getCssValue('visibility')) === 'hidden') {
+                            continue; // hidden - continue
+                        }
+                    } catch (e) {
+                        if (isStaleError(e)) {
+                            continue; // stale - continue
+                        }
                     }
-                    return element; // found (don't check with element.isDisplayer() due to wrong result)
+                    return element; // found - success
                 }
             }
             return false;
@@ -40,16 +78,15 @@ export async function waitBy({ driver }, by) {
  *
  * test: failed if not found or not visible element
  */
-export async function clickBy({ driver }, by) {
-    const element = await driver.findElement(by);
-
-    assert.notEqual('hidden', await element.getCssValue('visibility'), 'click-element is hidden');
-
-    await transitionDelay({ driver }, element); // wait for CSS transition finish
-
-    await driver.actions().move({ origin: element }).click().perform();
-
-    return element;
+export async function clickBy(props, by) {
+    const clicker = async (driver) => {
+        const element = await driver.findElement(by);
+        assert.notEqual('hidden', await element.getCssValue('visibility'), 'click-element is hidden');
+        await transitionDelay({ driver }, element); // wait for CSS transition finish
+        await driver.actions().move({ origin: element }).click().perform();
+        return element;
+    };
+    return await enclose(props, 'clickBy', clicker);
 }
 
 // sleep by max(CSS-transition-delay) before click
