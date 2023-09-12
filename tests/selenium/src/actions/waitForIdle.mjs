@@ -23,8 +23,8 @@ export default async function test(props, { idle = 1000 } = {}) {
     );
 
     await driver.wait(
-        new Condition('One Second after httpApi', async (driver) => {
-            const ts = await driver.executeScript('return window.seLastHttpApiTimestamp');
+        new Condition('Idle after Activity Timestamp', async (driver) => {
+            const ts = await driver.executeScript('return window.seActivityTimestamp');
             return ts > 0 && ts + idle < Date.now();
         }),
         TIMEOUT_WAIT

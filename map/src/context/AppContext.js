@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useCookie from 'react-use-cookie';
-import Utils, { useMutator } from '../util/Utils';
+import Utils, { useMutator, seleniumUpdateActivity } from '../util/Utils';
 import TracksManager from './TracksManager';
 import _ from 'lodash';
 import FavoritesManager from './FavoritesManager';
@@ -200,6 +200,8 @@ export const AppContextProvider = (props) => {
     const OBJECT_TYPE_LOCAL_CLIENT_TRACK = 'local_client_track';
     const OBJECT_TYPE_WEATHER = 'weather';
     const OBJECT_TYPE_POI = 'poi';
+
+    seleniumUpdateActivity();
 
     const [globalConfirmation, setGlobalConfirmation] = useState(null);
 

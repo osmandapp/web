@@ -5,6 +5,7 @@ import TracksManager from '../../../context/TracksManager';
 import _ from 'lodash';
 import { Checkbox, Divider, FormControlLabel } from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
+import { seleniumUpdateActivity } from '../../../util/Utils';
 
 const useStyles = makeStyles({
     checkbox: {
@@ -75,6 +76,7 @@ const GpxGraphProvider = ({ width }) => {
                 newShowData[SLOPE] = showData && showData[SLOPE] ? true : '';
             }
             setShowData(newShowData);
+            seleniumUpdateActivity();
         }
     }, [data]);
 

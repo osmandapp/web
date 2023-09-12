@@ -1,4 +1,4 @@
-export const FINAL_IDLE = 5000; // final httpApi idle wait - used for complex actions such as upload-tracks (ms)
+export const FINAL_IDLE = 3000; // final httpApi idle wait - used for complex actions such as upload-tracks (ms)
 
 export const IMPICIT_WAIT = 1000; // driver.implicitlyWait - used for quick-look driver.findElement() (ms)
 
