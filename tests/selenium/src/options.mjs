@@ -7,9 +7,11 @@ import { Options, ServiceBuilder } from 'selenium-webdriver/chrome.js';
 export const TEST_LOGIN = 'osmand@grr.la';
 export const TEST_PASSWORD = '0xDEADBEEF';
 
-export const TIMEOUT_WAIT = 10000; // driver.wait() timeout - used to wait for loading-conditions (ms)
-export const IMPICIT_WAIT = 1000; // driver.implicitlyWait - used for quick-look driver.findElement() (ms)
-export const FINAL_IDLE = 3000; // final httpApi idle wait - used after complex actions such as upload-tracks (ms)
+export const TIMEOUT_OPTIONAL = 1000; // optional element timeout and driver.implicitlyWait() (1000)
+export const TIMEOUT_REQUIRED = 10000; // required element timeout (waitBy / clickBy / enclose defaults) (10000)
+
+export const IDLE_DELAY = 1000; // additional delay after global window.seActivityTimestamp (1000)
+export const FINAL_DELAY = 3000; // increased final idle delay - used after complex actions such as upload-tracks (3000)
 
 export let driver = null;
 
@@ -17,6 +19,7 @@ export let url = null;
 export let stop = false;
 export let verbose = false;
 export let mobile = false;
+export let noexit = false;
 export let headless = false;
 
 export const tests = []; // used by main
@@ -29,6 +32,7 @@ export function parseArgs() {
             a === '--mobile' && (mobile = true);
             a === '--headless' && (headless = true);
             a === '--verbose' && (verbose = true);
+            a === '--noexit' && (noexit = true);
             a === '--stop' && (stop = true);
         } else {
             if (existsSync('src/tests/' + a + '.mjs')) {
@@ -75,7 +79,7 @@ export async function prepareDriver() {
 
     driver = builder.build();
 
-    await driver.manage().setTimeouts({ implicit: IMPICIT_WAIT });
+    await driver.manage().setTimeouts({ implicit: TIMEOUT_OPTIONAL });
 
     return driver;
 }
