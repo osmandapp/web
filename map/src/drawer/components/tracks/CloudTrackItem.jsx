@@ -87,15 +87,16 @@ export default function CloudTrackItem({ file, customIcon = null }) {
         }
     }
 
-    const rendered = useMemo(
-        () => (
+    const rendered = useMemo(() => {
+        const trackName = TracksManager.getFileName(file);
+        return (
             <>
                 <Tooltip title={info} arrow placement={mobile ? 'bottom' : 'right'} disableInteractive>
-                    <MenuItem onClick={() => addTrackToMap(ctx.setGpxLoading)}>
+                    <MenuItem id={'se-cloud-track-' + trackName} onClick={() => addTrackToMap(ctx.setGpxLoading)}>
                         <ListItemText inset>
                             <Typography variant="inherit" noWrap>
                                 {customIcon}
-                                {TracksManager.getFileName(file)}
+                                {trackName}
                             </Typography>
                         </ListItemText>
                         <Switch
@@ -115,9 +116,8 @@ export default function CloudTrackItem({ file, customIcon = null }) {
                     </Alert>
                 )}
             </>
-        ),
-        [info, mobile, customIcon, file, loadingTrack, ctx.gpxFiles[file.name]?.url, error]
-    );
+        );
+    }, [info, mobile, customIcon, file, loadingTrack, ctx.gpxFiles[file.name]?.url, error]);
 
     return rendered;
 }

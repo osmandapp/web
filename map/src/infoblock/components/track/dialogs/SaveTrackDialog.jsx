@@ -134,6 +134,7 @@ export default function SaveTrackDialog() {
                         No
                     </Button>
                     <Button
+                        id="se-overwrite-cloud-track"
                         onClick={() => {
                             setExistTrack(false);
                             confirmedSaveTrack();
@@ -232,6 +233,7 @@ export default function SaveTrackDialog() {
                         <DialogActions>
                             <Button onClick={() => closeDialog({ uploaded: false })}>Cancel</Button>
                             <Button
+                                id="se-submit-save-to-cloud"
                                 disabled={getFolderName(folder) === null || fileName === '' || error}
                                 onClick={saveTrack}
                             >

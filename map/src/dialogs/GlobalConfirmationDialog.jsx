@@ -45,6 +45,7 @@ export function GlobalConfirmationDialog() {
                             Cancel
                         </Button>
                         <Button
+                            id="se-global-confirmation-ok"
                             variant="contained"
                             size="small"
                             onClick={() => {
