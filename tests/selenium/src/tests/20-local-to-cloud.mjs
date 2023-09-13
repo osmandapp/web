@@ -11,12 +11,10 @@ import actionLocalToCloud from '../actions/actionLocalToCloud.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 
 export default async function test() {
-    await clickBy(By.id('se-global-confirm-ok'), { optional: true }); // overwrite
-
     await actionOpenMap();
     await actionLogIn();
 
-    // open tracks menu before gpx upload
+    // open tracks menu before gpx upload TODO move inside action
     await clickBy(By.id('se-menu-tracks'));
 
     await actionUploadGpx({ mask: 'test-routed-osrm.gpx' });
