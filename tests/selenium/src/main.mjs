@@ -4,7 +4,7 @@ import chalk from 'chalk';
 import compareImages from 'resemblejs/compareImages.js';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 
-import { driver, stop, verbose, mobile, headless, tests, parseArgs, prepareDriver } from './options.mjs';
+import { driver, stop, verbose, mobile, headless, noexit, tests, parseArgs, prepareDriver } from './options.mjs';
 
 parseArgs();
 
@@ -66,7 +66,7 @@ async function runTest({ file, info }) {
                 throw error;
             }
         } finally {
-            (await driver) && driver.quit();
+            noexit === false && (await driver) && driver.quit();
         }
     })().then(
         () => {
