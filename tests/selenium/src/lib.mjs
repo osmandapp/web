@@ -1,15 +1,18 @@
+'use strict';
+
 import { Condition } from 'selenium-webdriver';
 import { strict as assert } from 'node:assert';
-import { TIMEOUT_WAIT } from './settings.mjs';
+
+import { driver, TIMEOUT_WAIT } from './options.mjs';
 
 function isStaleError(e) {
     return e && e.toString().match(/StaleElementReferenceError/);
 }
 
 /**
- * Lib: enclose(props, tag, callback)
+ * Lib: enclose(tag, callback)
  *
- * Wrap callback(driver) into driver.wait/Condition.
+ * Wrap callback([driver]) into driver.wait/Condition.
  * Restart callback() in case of "StaleElementReferenceError".
  * Used to enclose (findBy/waitBy ... actions) against stale element errors.
  *
@@ -17,11 +20,11 @@ function isStaleError(e) {
  *
  * test: failed on other errors, including callback() errors or wait timed out
  */
-export async function enclose({ driver }, tag, callback) {
+export async function enclose(tag, callback) {
     return await driver.wait(
         new Condition(tag, async (d) => {
             try {
-                return callback(d); // awaiting for truthy
+                return callback(d); // awaiting for truthy, using (d) is optional
             } catch (e) {
                 if (isStaleError(e)) {
                     return false;
@@ -34,16 +37,16 @@ export async function enclose({ driver }, tag, callback) {
 }
 
 /**
- * Lib: waitBy(props, by)
+ * Lib: waitBy(by)
  *
  * Wait (by) for any visible element.
  * Return: element
  *
  * test: failed if no visible element found
  */
-export async function waitBy({ driver }, by) {
+export async function waitBy(by) {
     const result = await driver.wait(
-        new Condition('waitBy' + by.value, async (driver) => {
+        new Condition('waitBy' + by.value, async () => {
             const found = await driver.findElements(by);
             if (found && found.length > 0) {
                 for (let i = 0; i < found.length; i++) {
@@ -70,7 +73,7 @@ export async function waitBy({ driver }, by) {
 }
 
 /**
- * Lib: clickBy(props, by)
+ * Lib: clickBy(by)
  *
  * Find (by), check visible, delay until transition, click.
  * Works with non-interactive elements such as MenuItem.
@@ -78,19 +81,19 @@ export async function waitBy({ driver }, by) {
  *
  * test: failed if not found or not visible element
  */
-export async function clickBy(props, by) {
-    const clicker = async (driver) => {
+export async function clickBy(by) {
+    const clicker = async () => {
         const element = await driver.findElement(by);
         assert.notEqual('hidden', await element.getCssValue('visibility'), 'click-element is hidden');
-        await transitionDelay({ driver }, element); // wait for CSS transition finish
+        await transitionDelay(element); // wait for CSS transition finish
         await driver.actions().move({ origin: element }).click().perform();
         return element;
     };
-    return await enclose(props, 'clickBy', clicker);
+    return await enclose('clickBy', clicker);
 }
 
 // sleep by max(CSS-transition-delay) before click
-async function transitionDelay({ driver }, element) {
+async function transitionDelay(element) {
     let delayMs = 0;
     const extend = 1.15; // +15% to finish transition
     const transition = await element.getCssValue('transition');
