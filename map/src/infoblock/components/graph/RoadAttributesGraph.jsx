@@ -2,12 +2,17 @@ import { Box, Divider, Grid, Icon, Typography } from '@mui/material';
 import CircleIcon from '@mui/icons-material/Circle';
 import { Bar } from 'react-chartjs-2';
 import { Tooltip, Legend, Chart as ChartJS, BarElement } from 'chart.js';
-import React from 'react';
+import React, { useContext, useRef } from 'react';
 import annotationsPlugin from 'chartjs-plugin-annotation';
+import TracksManager from '../../../context/TracksManager';
+import AppContext from '../../../context/AppContext';
 
 ChartJS.register(Tooltip, Legend, BarElement, annotationsPlugin);
 
 export default function RoadAttributesGraph({ name, data, width }) {
+    const ctx = useContext(AppContext);
+    const chartRef = useRef(null);
+
     const options = {
         indexAxis: 'y',
         responsive: true,
@@ -61,6 +66,28 @@ export default function RoadAttributesGraph({ name, data, width }) {
         return type;
     }
 
+    function onMouseMoveGraph(e, chartRef) {
+        if (!chartRef) {
+            return;
+        }
+        if (ctx.mapMarkerListener && ctx.selectedGpxFile && chartRef.current._active?.length > 0) {
+            let selected = chartRef.current._active[0];
+            if (selected) {
+                let pointList = TracksManager.getTrackPoints(ctx.selectedGpxFile);
+                const ind = data.datasets[selected.datasetIndex].index;
+                if (ind) {
+                    const lat = Object.values(pointList)[ind].lat;
+                    const lng = Object.values(pointList)[ind].lng;
+                    ctx.mapMarkerListener(lat, lng);
+                } else {
+                    ctx.mapMarkerListener(null);
+                }
+            }
+        } else {
+            ctx.mapMarkerListener(null);
+        }
+    }
+
     return (
         <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 40 }}>
             <Divider sx={{ mt: '15px', mb: '12px' }} />
@@ -73,6 +100,8 @@ export default function RoadAttributesGraph({ name, data, width }) {
                     style={{ fontSize: 10 }}
                     data={graphData}
                     options={options}
+                    onMouseMove={(e) => onMouseMoveGraph(e, chartRef)}
+                    ref={chartRef}
                 />
             </Box>
             <Grid sx={{ mt: 1, ml: '-8px' }} container spacing={2}>
@@ -84,7 +113,7 @@ export default function RoadAttributesGraph({ name, data, width }) {
                                 <Grid
                                     item
                                     key={type}
-                                    sx={{ display: 'flex', paddingTop: '0px !important' }}
+                                    sx={{ display: 'flex', paddingTop: '0px !important', ml: '-16px !important' }}
                                     xs={Object.entries(data.legend).length > 5 ? 6 : 12}
                                 >
                                     <Icon sx={{ overflow: 'visible' }}>
@@ -95,7 +124,7 @@ export default function RoadAttributesGraph({ name, data, width }) {
                                         sx={{
                                             color: '#666666',
                                             fontWeight: 'bold',
-                                            fontSize: 8,
+                                            fontSize: 11,
                                             margin: '14px 0px 0px 0px !important',
                                         }}
                                     >
@@ -105,7 +134,7 @@ export default function RoadAttributesGraph({ name, data, width }) {
                                         variant="inherit"
                                         sx={{
                                             color: '#666666',
-                                            fontSize: 8,
+                                            fontSize: 11,
                                             margin: '14px 0px 0px 0px !important',
                                         }}
                                     >
