@@ -119,7 +119,7 @@ export default function RoadAttributesGraphProvider({ width }) {
                 data: [Number((Math.round(seg.distanceTotal) / 1000).toFixed(1))],
                 barPercentage: 1.0,
                 categoryPercentage: 1.0,
-                index: seg.ind
+                index: seg.ind,
             };
         }
     }
