@@ -324,12 +324,15 @@ export default function WaypointsTab() {
         <>
             <MenuItem divider sx={{ px: 1, py: 1 }}>
                 <Grid container alignItems="center">
-                    <Grid item xs={9}>
+                    <Grid item xs={7}>
                         {ctx.createTrack && ctx.selectedGpxFile?.wpts && !_.isEmpty(ctx.selectedGpxFile.wpts) && (
                             <Button variant="contained" className={stylesMenu.button} onClick={deleteAllWpts}>
                                 Clear all waypoints
                             </Button>
                         )}
+                    </Grid>
+                    <Grid item xs={2} sx={{ mb: '-4px' }} onClick={switchMassVisible}>
+                        {showMass && (massVisible ? 'Hide All' : 'Show All')}
                     </Grid>
                     <Grid item xs={2}>
                         {showMass && (
