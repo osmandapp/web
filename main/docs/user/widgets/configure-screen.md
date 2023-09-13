@@ -36,12 +36,12 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 
 </Tabs> 
 
-- [Left panel](#rightleft-panel-widgets)
-- [Right panel](#rightleft-panel-widgets) 
-- [Top panel](#top-panel-widgets)
-- [Bottom panel](#bottom-panel-widgets)
+- [Left panel](#right--left-panel-widgets)
+- [Right panel](#right--left-panel-widgets) 
+- [Top panel](#top--bottom-panel-widgets)
+- [Bottom panel](#top--bottom-panel-widgets)
 - [Buttons](#buttons-android-and-remaining-elements-ios)
-- [Actions](#actions-panel-android) (*Android*)  
+- [Actions](#actions-panel-android--three-button-menu)  
 - **Transparent widgets** - makes transparent the background of the navigation and information widgets.  
 
 
@@ -75,7 +75,7 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 4. [Bearing](../widgets/nav-widgets.md#bearing). This set of *navigational* widgets shows the absolute or relative bearing to a target in angular units (in 180 degrees, 360 degrees, or milliradians mode).  
     3 widgets included: *Relative bearing*, *Magnetic bearing*, *True bearing*.
 5. [Current Speed](../widgets/info-widgets.md#speed). *Informational* widget shows the current speed detected by the GPS sensor. 
-6. [Average speed (*Android only*)](../widgets/info-widgets.md#average-speed-widget). *Informational* widget shows the average speed of the current trip.
+6. [Average speed](../widgets/info-widgets.md#average-speed-widget). *Informational* widget shows the average speed of the current trip.
 7. [Speed limit](../widgets/nav-widgets.md#speed-limit). A set of *informational* widgets displays the speed limit on the current road you are traveling on.
 8. [Altitude](../widgets/info-widgets.md#altitude-widgets). A set of *informational* widgets displays the altitude above sea level for the current geolocation or the altitude above sea level for the current map center.  
     2 widgets included: *Altitude: current location*, *Elevation: map center*.
@@ -163,7 +163,7 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 Widgets in the right and left panels can be grouped into **Pages**. To do this, select a panel, tap *Edit*, and then tap *Add Page*. This helps you interact with the map more easily and without distractions when navigating, as well as having multiple sets of widgets for different cases.
 
 
-### Actions panel (Android) / Three-button menu (iOS)
+### Actions panel (Android) / Three-button menu
 
 - **Reset to default** - return to preset settings.
 - **Copy from another profile** - allows you to copy settings made for another profile
