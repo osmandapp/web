@@ -2,7 +2,7 @@
 
 import { until } from 'selenium-webdriver';
 
-import { driver, url, TIMEOUT_WAIT } from '../options.mjs';
+import { driver, url, TIMEOUT_REQUIRED } from '../options.mjs';
 
 import actionIdleWait from './actionIdleWait.mjs';
 
@@ -15,7 +15,7 @@ import actionIdleWait from './actionIdleWait.mjs';
 export default async function test() {
     await driver.get(url);
 
-    await driver.wait(until.titleIs('OsmAnd Map'), TIMEOUT_WAIT);
+    await driver.wait(until.titleIs('OsmAnd Map'), TIMEOUT_REQUIRED);
 
     await actionIdleWait();
 }

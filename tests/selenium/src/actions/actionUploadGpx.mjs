@@ -62,5 +62,5 @@ async function uploadTracks({ files }) {
         return true;
     };
 
-    await enclose('Upload Track', uploader);
+    await enclose(uploader, { tag: 'Upload Track' });
 }
