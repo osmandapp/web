@@ -16,7 +16,7 @@ const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
         const hidden = tabId !== selectedTabId;
         return (
             <Typography hidden={hidden} component="span">
-                <Box sx={{ padding: '24px 24px 64px 24px' }}>{children}</Box>
+                <Box sx={{ px: 3, pt: 3, pb: 8 }}>{children}</Box>
             </Typography>
         );
     } else {
