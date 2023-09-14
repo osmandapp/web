@@ -28,13 +28,15 @@ export default function RoadAttributesGraphProvider({ width }) {
         if (roadPoints) {
             addDistanceToPoints(roadPoints);
             let segments = [];
-            const routeTypes = roadPoints[0].segment.routeTypes;
             let prevSegPoint;
             roadPoints.forEach((p) => {
                 if (p.segment && p.segment.ext.types) {
+                    const routeTypes = p.segment.routeTypes;
                     let seg = _.cloneDeep(p);
                     seg.ind = _.indexOf(roadPoints, p);
-                    seg.distance = prevSegPoint ? seg.distanceTotal - prevSegPoint.distanceTotal : seg.distanceTotal;
+                    seg.distance = prevSegPoint
+                        ? roadPoints[seg.ind + Number(seg.segment.ext.length) - 1].distanceTotal - seg.distanceTotal
+                        : roadPoints[seg.ind + Number(seg.segment.ext.length) - 1].distanceTotal;
                     seg['highway'] = 'unknown';
                     seg['surface'] = 'unknown';
                     p.segment.ext.types.split(',').forEach((t) => {
@@ -116,7 +118,7 @@ export default function RoadAttributesGraphProvider({ width }) {
                 type: 'bar',
                 backgroundColor: currentColor,
                 borderWidth: -1,
-                data: [Number((Math.round(seg.distanceTotal) / 1000).toFixed(1))],
+                data: [Number(Math.round(seg.distance) / 1000)],
                 barPercentage: 1.0,
                 categoryPercentage: 1.0,
                 index: seg.ind,

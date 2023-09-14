@@ -44,7 +44,18 @@ export default function RoadAttributesGraph({ name, data, width }) {
         scales: {
             x: {
                 stacked: true,
-                display: false,
+                display: true,
+                type: 'linear',
+                max: Object.values(data.legend).reduce((a, b) => a + b, 0),
+                title: {
+                    display: true,
+                    text: 'distance in km',
+                    color: '#757575',
+                    font: {
+                        size: 10,
+                        lineHeight: 1.2,
+                    },
+                },
             },
             y: {
                 stacked: true,
@@ -94,7 +105,7 @@ export default function RoadAttributesGraph({ name, data, width }) {
             <Typography variant="inherit" sx={{ color: '#666666', fontWeight: 'bold', mb: 2 }}>
                 {name}
             </Typography>
-            <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 40, height: 50 }}>
+            <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 40, height: 100 }}>
                 <Bar
                     margin={{ top: 0, right: 0, left: -20, bottom: 0 }}
                     style={{ fontSize: 10 }}
