@@ -1,22 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const wptTabStyle = makeStyles({
-    icon: {
+    iconGroup: {
         '& .icon': {
-            top: '22px',
-            left: '20px',
-        },
-        '& .background': {
-            marginBottom: '-40px',
-            marginRight: '20px',
-            marginLeft: '10px',
-            filter: 'drop-shadow(0 0 0 gray)',
-        },
-    },
-    iconOnlyName: {
-        '& .icon': {
-            top: '16px',
-            left: '20px',
+            top: '24px',
+            left: '12px',
         },
         '& .background': {
             marginBottom: '-40px',

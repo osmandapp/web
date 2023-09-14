@@ -146,7 +146,10 @@ The average speed is calculated for a given time interval according to your sele
 
 <InfoAndroidOnly />  
 
-The widgets show the glide ratio to the target or the average glide ratio for the current flight.   
+The glide ratio is the horizontal distance divided by the change in altitude. For example, if your hand glider has a glide ratio of 7 to 1, then for every foot of altitude lost, you will be able to move forward 7 feet. You can read more about it [here](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).  
+
+- *Glide ratio to the target*. Displays the glide ratio required to reach the target point.
+- *Average glide ratio*. Shows the average value of the glide ratio over the specified time interval.   
 
 | | |
 |------------|------------|
@@ -162,17 +165,17 @@ This widget shows the battery level of your device.
 
 | | |
 |------------|------------|
-Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_battery"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_battery"/>* |
 |   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_battery"/>* |
 | By tapping | No changes |
 
 
 ## Coordinates widget
 
-There are 2 coordinates widgets:
+OsmAnd offers two types of coordinate widgets:
 
-- *Coordinates: map center* - shows the geographic coordinates of the current map center.
-- *Coordinates: current location* (Android) or *Coordinates widget* (iOS) - shows the geographic coordinates of current geolocation.
+- **Coordinates: map center** - shows the geographic coordinates of the current map center.
+- **Coordinates: current location** - shows the geographic coordinates of current geolocation.
 
 Coordinates widgets are displayed at the top of the screen. Icons with a green background show the latitude and longitude of the point in the center of the visible part of the map, and those with a blue background show the coordinates of your current location. Information about supported *Сoordinates formats* can be found in the *[Search coordinates article](../search/search-coordinates.md#coordinate-format)*.
 
@@ -186,7 +189,7 @@ Coordinates widgets are displayed at the top of the screen. Icons with a green b
 
 <TabItem value="ios" label="iOS">
 
-![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_ios.png) ![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
+![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
 
 </TabItem>
 
@@ -194,9 +197,10 @@ Coordinates widgets are displayed at the top of the screen. Icons with a green b
 
 | | |
 |------------|------------|
-| Enable | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,top_widgets_panel"/>* |
-| By tapping | Copies the coordinates to the clipboard |
-| Format | <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) or <Translate android="true" ids="configure_profile"/> (Android) →<br/><Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/> |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="coordinates_widget"/>* |
+|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="coordinates_widget"/>* |
+| By tapping | Copies the coordinates to the clipboard. |
+| Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) or <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
 
 
 ## GPS Info  
@@ -234,13 +238,13 @@ You can reset the current GPS cache through:
 
 </Tabs>  
 
-Sunset and sunrise widgets show the time of the next sunrise or sunset for the center of the map. Widgets can also display the remaining time (*time left*) until the expected sunset/sunrise (also for the center of the map). In both cases *time* or *time left* is indicated by the device time.    
+The Sunset and Sunrise widgets show the time of the next sunrise or sunset for the center of the map. When tapped, they can also display the time remaining until the expected sunset or sunrise. In both cases, the time is based on the configured time of your device.      
 
 | | |
 |------------|------------|
-| Enable | **Android** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_group_sunrise_sunset"/>* |
-|   |  **iOS** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_sunrise"/> / <Translate ios="true" ids="map_widget_sunset"/>* |
-| By tapping | Switch between *Time left* and the Time of the next sunrise/sunset.|  
+| Enable | **Android**: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_group_sunrise_sunset"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,map_widget_group_sunrise_sunset"/>* |
+| By tapping | Switch between the remaining time and the time of the next sunrise/sunset. |  
 
 
 ## Radius ruler
@@ -276,9 +280,9 @@ The Radius Ruler widget shows the distance between your location and the center 
 
 | | |
 |------------|------------|
-Enable | **Android**: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_ruler_control"/>* |
+| Enable | **Android**: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_ruler_control"/>* |
 |   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,map_widget_ruler_control"/>* |
-| By tapping | Сhanges widget state between the black scale, the grey one and non-visible modes. |
+| By tapping | Changes the state of the widget between black scale, gray scale, and invisible modes. |
 | Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
 
@@ -336,10 +340,8 @@ Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widget
 ## * Weather widgets
 
 :::note  
-Weather widgets can be added to the map screen only when OsmAnd [Weather plugin](../plugins/weather.md) is enabled.  
+Weather widgets can only be added to the map screen when the OsmAnd [**Weather plugin**](../plugins/weather.md) is enabled.  
 :::
-
-The Weather widgets display the current weather information for the central point on the map. The Weather widgets are automatically enabled on the [Weather screen](../plugins/weather.md#weather-forecast-screen). They can also be placed on the main screen for everyday use ([see](../plugins/weather#weather-widgets)).  
 
 <Tabs groupId="operating-systems">
 
@@ -347,27 +349,30 @@ The Weather widgets display the current weather information for the central poin
 
 ![Weather widget Android](@site/static/img/widgets/weather_widgets_andr.png) 
 
-| | |
-|------------|------------|
-| Enable | *Menu → Configure screen → Left / Right panel → Weather* |  
-| By tapping | When the development plugin is enabled, weather forecast information is displayed in a pop-up notification.|
-| Format | *Menu → Plugins → Weather → Settings or *Menu → Settings → App Profile → Weather* |  
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Weather widget iOS](@site/static/img/widgets/weather_widgets_ios.png)
 
-| | |
-|------------|------------|
-| Enable | *Menu → Configure screen → Right panel → Temperature (Pressure, Wind, Cloud, Precipitation*)* |
-| By tapping | No changes.|
-| Format | *Main menu → Global Settings → Profile → Weather* |
-
 </TabItem>
 
-</Tabs>
+</Tabs>  
+
+Weather widgets display current weather information for a central point on the map. They are automatically enabled on the screen when viewed with the plugin (*Menu → Weather*), and you can choose which ones to put on the home screen for everyday use (*Menu → Customize Screen*). You can read more about this in the article [Weather plugin](../plugins/weather.md).   
+
+- **Temperature**. <Translate android="true" ids="temperature_widget_desc"/>
+- **Air Pressure**. <Translate android="true" ids="air_pressure_widget_desc"/>
+- **Wind**. <Translate android="true" ids="wind_widget_desc"/>
+- **Cloud**. <Translate android="true" ids="clouds_widget_desc"/>
+- **Precipitation**. <Translate android="true" ids="precipitation_widget_desc"/>
+
+| | |
+|------------|------------|
+| Enable | **Android**: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,shared_string_weather"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,shared_string_weather"/>* |  
+| By tapping | Shows in a pop-up dialog box the date and time when the weather information is relevant. |
+| Format | *Menu → Plugins → Weather → Settings* or *Menu → Settings → App Profile → Weather* |  
 
 
 ## * Parking widget
@@ -391,18 +396,18 @@ This is a Parking plugin widget that shows the distance from the center of the s
 ## * Mapillary widget
 
 :::note  
-Mapillary widget can be added to the map screen only when OsmAnd [Mapillary plugin](../plugins/mapillary.md) is enabled.  
+Mapillary widget can be added to the map screen only when OsmAnd [**Mapillary plugin**](../plugins/mapillary.md) is enabled.  
 :::  
 
-This is a Mapillary plugin widget that provides quick access to Mapillary app to add Street-Level-Imagery.
+![Mapillary widget](@site/static/img/widgets/mapillary_widget.png)   
 
-![Mapillary widget](@site/static/img/widgets/mapillary_widget.png) 
+This is a Mapillary plugin widget that provides quick access to Mapillary app to add [*Street-Level imagery*](../plugins/mapillary.md#enable-layer).  
 
 | | |
 |------------|------------|
-| Enable | **Android**: Menu → Configure screen → Left / Right panel → Mapillary |
-|  | **iOS**: Menu → Configure screen → Right panel → Mapillary |
-| By tapping | Opens Mapillary application. |
+| Enable | **Android**: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,mapillary"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,mapillary"/>* |
+| By tapping | Opens [Mapillary](https://www.mapillary.com/) application. |
 
 
 ## * Audio/video notes widget
@@ -433,25 +438,25 @@ You can configure which action is selected by default:
 <InfoAndroidOnly />
 
 :::note  
-Tracker widget can be added to the map screen only when [OsmAnd Tracker plugin](../plugins/osmand-tracker.md) is enabled.  
+Tracker widget can be added to the map screen only when [**OsmAnd Tracker plugin**](../plugins/osmand-tracker.md) is enabled.  
 :::  
 
-For the plugin and widget to work, you need to install [OsmAnd Online GPS Tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram)** from Google Play or other sources.  
+For the plugin and widget to work, you need to install [**OsmAnd Online GPS Tracker**](https://play.google.com/store/apps/details?id=net.osmand.telegram) from Google Play or other sources.  
 
-This OsmAnd Tracker plugin widget is used to quickly access the OsmAnd Tracker app and share your location information with other users. It shows whether connection is online or offline and if sharing location is enabled, then the time since last successful sending is dispalyed.
+This OsmAnd Tracker plugin widget is used to quickly access the OsmAnd Tracker app and share your location information with other users. The app sends *Live Location* messages to selected chats within a certain time, displays a list of contacts and groups, and checks chats for messages with your location, which are then displayed on a map in OsmAnd.  
 
 ![Tracker widget](@site/static/img/plugins/online-tracker/tracker_widget.png)
 
 | | |
 |------------|------------|
-| Enable | <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,tracker_item"/> |
-| By tapping | Opens OsmAnd Tracker app. |
+| Enable | **Android**: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="tracker_item"/>* |
+| By tapping | Opens OsmAnd Online GPS Tracker app. |
 
 
 ## * Developer widgets
 
 :::note  
-Developer Widgets can be added to the map screen only when OsmAnd [Development plugin](../plugins/development.md) is enabled.  
+Developer Widgets can be added to the map screen only when OsmAnd [**Development plugin**](../plugins/development.md) is enabled.  
 :::
 
 Developer Widgets are used to get information about map [rendering speed](../plugins/development.md#fps-widget) and virtual camera position: [zoom level](../plugins/development.md#zoom-level), [distance](../plugins/development.md#distance-to-target) to map center, camera [elevation](../plugins/development.md#camera-elevation) and [incline](../plugins/development.md#camera-tilt).  
@@ -459,7 +464,7 @@ Developer Widgets are used to get information about map [rendering speed](../plu
 
 ### FPS widget
 
-The [FPS Widget](../plugins/development.md#fps-widget) shows how fast the map and map elements are displayed and refreshed: the higher the rendering speed, the greater the quantitative values in frames per second.  
+The [Map rendering FPS](../plugins/development.md#fps-widget) shows how fast the map and its elements are rendered and updated. The higher the rendering speed, the higher the quantitative values in frames per second.  
 
 <Tabs groupId="operating-systems">
 
@@ -467,41 +472,37 @@ The [FPS Widget](../plugins/development.md#fps-widget) shows how fast the map an
 
 ![FPS widget Android](@site/static/img/widgets/fps_widgets_andr.png)  
 
-| | |
-|------------|------------|
-| Enable | Menu → Configure screen → Left / Right panel → Developer widgets |  
-| By tapping | No changes.|
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![FPS widget iOS](@site/static/img/widgets/fps_widget_ios.png)
 
-| | |
-|------------|------------|
-| Enable | *Menu → Configure screen → Right panel → FPS widget* |
-| By tapping | No changes |
-
 </TabItem>
 
 </Tabs>
 
+| | |
+|------------|------------|
+| Enable | **Android**: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>* |
+| By tapping | No changes |
+
 
 ### Camera widgets  
 
-Camera widgets can be used to compare the OsmAnd map and the earth's surface. There are four Camera widgets: [Camera tilt widget](../plugins/development.md#camera-tilt), [Camera Elevation widget](../plugins/development.md#camera-elevation), [Zoom level widget](../plugins/development.md#zoom-level) and [Distance from camera to target widget](../plugins/development.md#distance-to-target).  
+Camera widgets can be used to compare the OsmAnd map and the earth's surface.  
+There are four Camera widgets:  
+- [Camera tilt](../plugins/development.md#camera-tilt). <Translate android="true" ids="map_widget_camera_tilt_desc"/>
+- [Camera Elevation](../plugins/development.md#camera-elevation). <Translate android="true" ids="map_widget_camera_distance_desc"/>
+- [Zoom level](../plugins/development.md#zoom-level). <Translate android="true" ids="map_widget_zoom_level_desc"/>
+- [Distance from camera to target](../plugins/development.md#distance-to-target). <Translate android="true" ids="map_widget_target_distance_desc"/> 
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Camera position widgets](@site/static/img/widgets/camera_position_widgets.png)
-
-| | |
-|------------|------------|
-| Enable | *Menu → Configure screen → Left / Right panel → Developer widgets* |
-| By tapping | No changes |  
+![Camera position widgets](@site/static/img/widgets/camera_position_widgets_andr.png)
 
 </TabItem>
 
@@ -509,13 +510,13 @@ Camera widgets can be used to compare the OsmAnd map and the earth's surface. Th
 
 ![Camera position Widgets 2](@site/static/img/widgets/camera_position_widgets_ios.png)
 
-
-| | |
-|------------|------------|
-| Enable | *Menu → Configure screen → Right panel → Developer widgets* |
-| By tapping | No changes |  
-
 </TabItem>
 
 </Tabs>
+
+| | |
+|------------|------------|
+| Enable | **Android**: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets"/>* |
+| By tapping | No changes | 
  

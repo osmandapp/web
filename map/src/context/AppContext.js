@@ -42,20 +42,22 @@ async function loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, 
         } else {
             setGpxLoading(true);
             const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
-            await response.json().then((res) => {
-                if (res) {
-                    res.loginUser = loginUser;
-                    res.totalUniqueZipSize = 0;
-                    res.uniqueFiles.forEach((f) => {
-                        res.totalUniqueZipSize += f.zipSize;
-                    });
-                    setListFiles(res);
-                    setGpxLoading(false);
+            if (response.ok) {
+                await response.json().then((res) => {
+                    if (res) {
+                        res.loginUser = loginUser;
+                        res.totalUniqueZipSize = 0;
+                        res.uniqueFiles.forEach((f) => {
+                            res.totalUniqueZipSize += f.zipSize;
+                        });
+                        setListFiles(res);
+                        setGpxLoading(false);
 
-                    addOpenedTracks(TracksManager.getTracks(res), gpxFiles, setGpxFiles).then();
-                    addOpenedFavoriteGroups(TracksManager.getFavoriteGroups(res), setFavorites);
-                }
-            });
+                        addOpenedTracks(TracksManager.getTracks(res), gpxFiles, setGpxFiles).then();
+                        addOpenedFavoriteGroups(TracksManager.getFavoriteGroups(res), setFavorites);
+                    }
+                });
+            }
         }
     }
 }
@@ -220,8 +222,7 @@ export const AppContextProvider = (props) => {
     const [gpxFiles, mutateGpxFiles, setGpxFiles] = useMutator({});
     const [searchCtx, setSearchCtx] = useState({});
 
-    const [selectedGpxFile, reactSetSelectedGpxFile] = useState({});
-    const setSelectedGpxFile = (s) => reactSetSelectedGpxFile(() => s); // wrap setter to queue-style
+    const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
 
     const [mapMarkerListener, setMapMarkerListener] = useState(null);

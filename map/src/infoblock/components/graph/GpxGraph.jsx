@@ -11,6 +11,7 @@ import {
     LineElement,
     Filler,
     Interaction,
+    BarElement,
 } from 'chart.js';
 import { Box, Slider, SliderThumb } from '@mui/material';
 import AppContext from '../../../context/AppContext';
@@ -63,6 +64,7 @@ ChartJS.register(
     CategoryScale,
     LinearScale,
     PointElement,
+    BarElement,
     LineController,
     LineElement,
     Filler,
@@ -253,6 +255,9 @@ export default function GpxGraph({
         responsive: true,
         maintainAspectRatio: false,
         spanGaps: true,
+        animation: {
+            duration: 400,
+        },
         interaction: {
             intersect: false,
             mode: getMode(),
@@ -480,8 +485,8 @@ export default function GpxGraph({
                 label: y1Axis[2],
                 type: 'line',
                 data: slopeData,
-                borderColor: 'rgba(145, 217, 255, 0.79)',
-                backgroundColor: 'rgba(145, 217, 255, 0.79)',
+                borderColor: 'rgba(145, 217, 255, 0.80)',
+                backgroundColor: 'rgba(145, 217, 255, 0.46)',
                 borderWidth: 1,
                 min: slopes.min,
                 max: slopes.max,

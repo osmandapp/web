@@ -28,7 +28,7 @@ OsmAnd et ["Florian Veks"](https://www.youtube.com/channel/UCQE5EG-9M1E-E_hkcQoh
 
 1. **Saisissez votre e-mail** pour l'inscription :
 
-<RegisterUserPromoBlock  promoKey='florian'/>
+<RegisterUserPromoBlock  promoKey='florian2'/>
 
 <p> </p>
 
@@ -55,7 +55,7 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 
 1. **Input your e-mail** for registration:
    
-<RegisterUserPromoBlock  promoKey='florian'/>
+<RegisterUserPromoBlock  promoKey='florian2'/>
 
 <p> </p>
 

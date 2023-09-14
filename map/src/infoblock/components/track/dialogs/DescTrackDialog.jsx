@@ -118,7 +118,7 @@ export default function DescTrackDialog({ dialogOpen, setDialogOpen }) {
                                     Click EDIT to add a description...
                                 </Alert>
                             )}
-                            <DialogContentText sx={{ width: '100%' }}>
+                            <DialogContentText sx={{ width: '100%' }} component="span">
                                 <div dangerouslySetInnerHTML={{ __html: description }} />
                             </DialogContentText>
                         </>

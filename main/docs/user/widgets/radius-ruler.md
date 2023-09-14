@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-All ruler tools help you understand the current [map scale](https://en.wikipedia.org/wiki/Scale_(map)) and help you measure distances. The Radius ruler tool allows you to determine the radius around the selected point on the map by displaying distance circles on the map. Distance by tap tool helps you calculate the distance between selected points or to find the distance to a specific point.
+All ruler tools help you understand the current [map scale](https://en.wikipedia.org/wiki/Scale_(map)) and measure distances. The Ruler's Radius tool allows you to set a radius around a selected point on the map, displaying distance circles on the map. The Tangent Distance tool allows you to calculate the distance between selected points or find the distance to a specific point.  
 
 ![Radius-ruler screen](@site/static/img/widgets/radius_ruler_screen.png)
 
@@ -28,51 +28,34 @@ All ruler tools help you understand the current [map scale](https://en.wikipedia
 
 <TabItem value="android" label="Android">
 
-The Ruler displays a map scale and shows the number of meters / feet (other units of measure) in a segment. It can be seen at the bottom of the screen. On average map scale is a round number that could fit a size of thumb. 
-
-The Ruler gives a visual estimate of the objects on the map and distance between them and it will change the displayed value during map zooming.
-
 ![Ruler tool](@site/static/img/widgets/ruler_tool_map.png)
-
-
-| | |
-|------------|------------|
-| Units Format | _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>_  |
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-The Ruler displays a map scale and shows the number of meters / feet (other units of measure) in a segment. It can be seen at the bottom of the screen. On average map scale is a round number that could fit a size of thumb. 
-
-The Ruler gives a visual estimate of the objects on the map and distance between them and it will change the displayed value during map zooming.
-
 ![Ruler tool](@site/static/img/widgets/ruler_tool_map_ios.png)
-
-
-| | |
-|------------|------------|
-| Units Format  | _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>_ |
 
 </TabItem>
 
 </Tabs>
 
+The Ruler displays a map scale and shows the number of meters / feet (other units of measure) in a segment. It can be seen at the bottom of the screen. On average map scale is a round number that could fit a size of thumb. 
 
-## Radius-ruler widget
+The Ruler allows you to visually assess objects on the map and the distance between them and changes the displayed value as you zoom in on the map.   
 
+| | |
+|------------|------------|
+| Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>*  |
+
+
+## Radius ruler widget
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Radius-ruler widget shows distance between your location and center point of the 'Radius-ruler'. Radius of the first circle is equal to [the map scale](#ruler).
-
-| | |
-|------------|------------|
-| Enable | _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets,radius_ruler_item"/>_  |
-| Click | Сhanges widget state between the black scale, the grey one and non-visible modes. |
-| Units Format | _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>_  |
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="radius_ruler_item"/>*
 
 ![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget.png)
 
@@ -80,40 +63,30 @@ Radius-ruler widget shows distance between your location and center point of the
 
 <TabItem value="ios" label="iOS">
 
-Radius-ruler widget shows distance between your location and center point of the 'Radius-ruler'. Radius of the first circle is equal to [the map scale](#ruler).
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="radius_ruler_item"/>*
 
-| | |
-|------------|------------|
-| Enable | _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_ruler_control"/>_ |
-| Click | Сhanges widget state between the black scale, the grey one and non-visible modes. |
-| Units Format | _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>_  |
-
-![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget_ios.png) ![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget_ios_1.png) ![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget_ios_2.png)
+<table class="blogimage">
+    <tr>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Radius-ruler"/></td>
+        <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Radius-ruler"/></td>
+    </tr>
+</table> 
 
 </TabItem>
 
 </Tabs>
 
+[Radius ruler widget](../widgets/info-widgets.md#radius-ruler) shows distance between your location and center point of the *Radius-ruler*. Radius of the first circle is equal to [the map scale](#ruler).
 
-## Compass for Radius-ruler
+
+## Compass for Radius ruler
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-
 ![Compass ruler](@site/static/img/widgets/compass_ruler.png)
-
-By default [Map orientation](../map/interact-with-map.md#map-orientation--compass) information is displayed on radius-ruler circles. It displays how the Map North is oriented to the Head of device. 
-
-In addition to that, you could see **blue triangle** as a Compass direction. This option requires to have **GPS-compass** present & enabled on your device. Keep your device flat, so you could see where head of device is pointing out. 
-
-**Hint**: if you rotate your device such as blue and red arrow pointing up, your device head will be pointing to North. If you rotate the map or device to match blue and red arrows, then you could see the map properly oriented to the physical landscape.
-
-| | |
-|------------|------------|
-| Enable | _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,radius_ruler_item,hide_compass_ruler"/>_ |
-| Units Format | _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/>_ |
 
 </TabItem>
 
@@ -121,20 +94,22 @@ In addition to that, you could see **blue triangle** as a Compass direction. Thi
 
 ![Compass ruler](@site/static/img/widgets/compass_ruler_ios.png)
 
-By default [Map orientation](../map/interact-with-map.md#map-orientation--compass) information is displayed on radius-ruler circles. It displays how the Map North is oriented to the Head of device. 
-
-In addition to that, you could see **blue triangle** as a Compass direction. This option requires to have **GPS-compass** present & enabled on your device. Keep your device flat, so you could see where head of device is pointing out. 
-
-**Hint**: if you rotate your device such as blue and red arrow pointing up, your device head will be pointing to North. If you rotate the map or device to match blue and red arrows, then you could see the map properly oriented to the physical landscape.
-
-| | |
-|------------|------------|
-| Enable | _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_ruler_control,shared_string_ellipsis,show_compass_ruler"/> / <Translate ios="true" ids="hide_compass_ruler"/>_ |
-| Units Format | _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,angular_units"/>_|
-
 </TabItem>
 
 </Tabs>
+
+By default, [Map orientation](../map/interact-with-map.md#map-orientation--compass) information is displayed as circles with a radius ruler. It displays how North of the map is oriented in relation top of the device.  
+
+You may also see a **blue triangle** as the compass direction. This option requires the **GPS compass** on the device to be present and enabled. Hold the device horizontally to see where the device head is pointing.  
+
+**Hint**. 
+If you rotate the device so that the blue and red arrows are pointing up, the head of the device is pointing north. If you rotate the map or device so that the blue and red arrows are aligned, you can see that the map is correctly oriented to the physical landscape.  
+
+| | |
+|------------|------------|
+| Enable | **Android**: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_ruler_control"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,map_widget_ruler_control"/>* |
+| Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/> (Android)* → *<Translate ios="true" ids="angular_units"/> (iOS)* |  
 
 
 ### Center / Bottom position

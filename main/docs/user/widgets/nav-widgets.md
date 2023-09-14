@@ -264,22 +264,22 @@ The table shows the approximate times for activating the prompts, read more [her
 
 ## Lanes
 
-Lanes widget shows the current road lanes layout and highlights lanes to drive with active navigation. With passive navigation, the widget displays lanes layout for current driving road. The data is taken from [OpenStreetMap project](https://wiki.openstreetmap.org/wiki/Key:turn).
+![Lanes widgets](@site/static/img/widgets/lanes_widget.png) 
 
-![Lanes widgets](@site/static/img/widgets/lanes_widget.png)
-
-| | |
-|------------|------------|
-| Enable | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_appearance_rem,show_lanes"/> |
-|  | <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_appearance_rem,show_lanes"/> |
-| On  Click | - |
-
-Display time, color is related to the voice navigation prompts and related to the time left to reach maneuvre.
+The Lanes widget displays the lane layout for the current road and highlights lanes for driving when navigation is active. In passive navigation the widget displays lanes layout for the current road. The data is taken from [OpenStreetMap project](https://wiki.openstreetmap.org/wiki/Key:turn).  
 
 |  Name |  Prompt type | Color | ~ Trigger Time | 
 |-----|----|-------|------| 
 | Close by | [Turn now](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Green | 5 seconds | 
-| Approaching | [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Yellow | 20 seconds |
+| Approaching | [Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior) | Yellow | 20 seconds |  
+
+Displays a widget by approach time settings. Lanes color is associated with [voice prompts](../navigation/guidance/voice-navigation.md) and time remaining to perform the maneuver.
+
+| | |
+|------------|------------|
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="show_lanes"/>* |
+|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="show_lanes"/>* |
+| By tapping | No changes |
 
 
 ## Alert widget
@@ -319,7 +319,7 @@ Alert types have different visuals that depends on **<Translate android="true" i
 
 ## Street name
 
-The Street name widget shows **the current street name** with a straight arrow or **the next street name** with the maneuver to be performed. The street name usually consists of a highway shield, a [name](https://wiki.openstreetmap.org/wiki/Key:name), a [ref](https://wiki.openstreetmap.org/wiki/Key:ref), an [internation ref](https://wiki.openstreetmap.org/wiki/Key:int_ref), and a [destination](https://wiki.openstreetmap.org/wiki/Key:destination). Switching between the current street name and the next street name happens when you approach the place where you want to perform the maneuver (~20 seconds), similar to the voice prompt "[Turn in X m](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior)".
+The Street name widget shows **the current street name** with a straight arrow or **the next street name** with the maneuver to be performed. The street name usually consists of a highway shield, a [name](https://wiki.openstreetmap.org/wiki/Key:name), a [ref](https://wiki.openstreetmap.org/wiki/Key:ref), an [internation ref](https://wiki.openstreetmap.org/wiki/Key:int_ref), and a [destination](https://wiki.openstreetmap.org/wiki/Key:destination). Switching between the current street name and the next street name happens when you approach the place where you want to perform the maneuver (~20 seconds), similar to the voice prompt [*Turn in X m*](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 
 - When driving along a street or highway, the widget shows the name or designation of the current street (road) with a blue arrow.
 
@@ -331,8 +331,9 @@ The Street name widget shows **the current street name** with a straight arrow o
 
 | | |
 |------------|------------|
-| Enable | *<Translate android="true" ids="android_button_seq"/>:* <Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_appearance_rem,map_widget_top_text"/> <br /> *<Translate ios="true" ids="ios_button_seq"/>:* - always active |
-| By tapping | Open *Map Context menu* | 
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="map_widget_top_text"/>* |
+|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="map_widget_top_text"/>* |
+| By tapping | No changes | 
 
 
 ## Approach POIs/Favorites

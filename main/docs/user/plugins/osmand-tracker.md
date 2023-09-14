@@ -13,14 +13,11 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-:::caution Android only
-This plugin is available only for the **Android version** of OsmAnd app.
-:::
-
-OsmAnd Tracker is a modified Telegram client created for flexible monitoring and sending messages with GPS locations in real-time.  
-
+<InfoAndroidOnly />
 
 ## Overview
+
+OsmAnd Tracker is a modified Telegram client created for flexible monitoring and sending messages with GPS locations in real-time.   
 
 [OsmAnd tracker](https://play.google.com/store/apps/details?id=net.osmand.telegram) helps you see your contacts on a map in OsmAnd. It has a social aspect to it, meaning that to use it, you need to provide access to your contacts for the platform OsmAnd chooses.  
 
@@ -187,21 +184,22 @@ If there is no data collected on the selected date, a special notification will 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/7.jpg)
 
 
-## OsmAnd Tracker Widget
+## Tracker Widget
 
-To view [the Widget](../widgets/info-widgets.md#-tracker-widget-android), you need to first enable the OsmAnd Tracker plugin on first. After that, the Widget will be in the upper-right corner of the OsmAnd screen with the word _"Start"_ on it.  
+To view the [widget](../widgets/info-widgets.md#-tracker-widget-android), you need to first enable the OsmAnd Tracker plugin. After that, a widget with the word *Start* will appear in the upper right corner of the OsmAnd screen.  
 
-To switch off it, you can go to _the General menu → Configure screen_ (from OsmAnd version 3.6).
+To disable it, you can go to *General menu → Configure screen*.
 
-![OsmAnd Tracker](@site/static/img/plugins/online-tracker/10.jpg)     ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/14.jpg)
+![OsmAnd Tracker](@site/static/img/plugins/online-tracker/tracker_widget_1.png)   ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/tracker_widget_2.png)
 
 The widget has several views.  
 
-- The first is Start. When you tap _"Start"_, you go to Online OsmAnd Tracker, where you can select any contacts or tap Suggested Contacts.  
-- Second, when you start sharing your location, the widget changes its appearance.  
+1. The first is *Start*.  
+   When you tap *Start*, you go to [**OsmAnd Online GPS Tracker**](https://play.google.com/store/apps/details?id=net.osmand.telegram), where you can select any contacts or tap Suggested Contacts.
+2. Second, when you start sharing your location, the widget changes its appearance.  
 
-   - The green _"OK"_ emoji icon means that your location is now being shared. Everything is normal, the sharing is running without errors.  
-   - An orange _"OK"_ emoji icon means your location cannot be sent. There is a problem with the Internet or GPS connection.  
+   - The green *OK* emoji icon means that your location is now being shared. Everything is normal, the sharing is running without errors.  
+   - An orange *OK* emoji icon means your location cannot be sent. There is a problem with the Internet or GPS connection.  
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/11.jpg)     ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/13.jpg)
 
@@ -209,11 +207,11 @@ The widget has several views.
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/15.jpg)     ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/16.jpg)
 
-- As soon as your internet connection is restored, the location points from the buffer will start unloading. The OsmAnd widget will change its appearance and the minutes in it will begin to decrease. When all the location points from the buffer are sent to Telegram, the widget will appear as _"OK"_ emoji icon.  
+3. As soon as the Internet connection is restored, it will start uploading location points from the buffer. The OsmAnd widget will change its appearance and the number of minutes in it will start decreasing. When all location points from the buffer are uploaded to Telegram, the emoji *OK* icon will appear on the widget.    
 
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/18.jpg)     ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/23.jpg)
 
-- If you see widget as _"OK"_ emoji icon, it means that everything is fine. The exchange process does not have any problems.
+4. If you see widget as *OK* emoji icon, it means that everything is fine. The exchange process is going on without any problems.  
 
 
 ## OsmAnd Assistant

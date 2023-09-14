@@ -170,7 +170,7 @@ OsmAnd generates a new forecast every 6 hours.
 
 ## Weather Widgets
 
-The [Weather widgets](../widgets/info-widgets.md#-weather-widgets) show the current weather data for the central point on the map. Weather widgets are always displayed when the Weather screen is on. They also can be placed on the main screen for the chosen profile. To activate Weather widgets, use the following path:
+The [Weather widgets](../widgets/info-widgets.md#-weather-widgets) such as Temperature, Air Pressure, Wind, Cloud, and Precipitation show the current weather data for the central point on the map. Weather widgets are always displayed when the [Weather screen](#weather-forecast-screen) is on. They also can be placed on the main screen for the chosen profile. To activate Weather widgets, use the following path.
 
 <Tabs groupId="operating-systems">
 
@@ -184,9 +184,9 @@ The [Weather widgets](../widgets/info-widgets.md#-weather-widgets) show the curr
 
 <TabItem value="ios" label="iOS">
 
-*Menu → Configure screen → Right panel*
+*Menu → Configure screen → Right panel / Left panel → Weather*
 
-![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_ios.png) ![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
+![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
 
 </TabItem>
 

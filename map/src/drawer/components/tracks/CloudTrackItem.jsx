@@ -1,6 +1,6 @@
 import AppContext from '../../../context/AppContext';
 import { Alert, LinearProgress, ListItemText, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
-import { useContext, useState, useMemo } from 'react';
+import { useContext, useState, useMemo, useEffect } from 'react';
 import Utils from '../../../util/Utils';
 import TrackInfo from './TrackInfo';
 import TracksManager, { isEmptyTrack } from '../../../context/TracksManager';
@@ -17,14 +17,23 @@ export default function CloudTrackItem({ file, customIcon = null }) {
 
     const info = useMemo(() => <TrackInfo file={file} />, [file]);
 
-    async function enableLayer(setProgressVisible, visible) {
+    const [displayTrack, setDisplayTrack] = useState(null); // null -> true/false -> null
+
+    async function processDisplayTrack({ visible, setLoading }) {
         if (!visible) {
             deleteTrackFromMap();
-            setProgressVisible(false);
+            setLoading(false);
         } else {
-            await addTrackToMap(setProgressVisible);
+            await addTrackToMap(setLoading);
         }
     }
+
+    useEffect(() => {
+        if (displayTrack === true || displayTrack === false) {
+            processDisplayTrack({ setLoading: setLoadingTrack, visible: displayTrack });
+            setDisplayTrack(null);
+        }
+    }, [displayTrack]);
 
     function deleteTrackFromMap() {
         ctx.mutateGpxFiles((o) => (o[file.name].url = null));
@@ -47,8 +56,9 @@ export default function CloudTrackItem({ file, customIcon = null }) {
         // CloudTrackGroup uses ctx.tracksGroups (no-url) but VisibleGroup uses ctx.gpxFiles (url exists)
         if (file.url || ctx.gpxFiles[file.name]?.url) {
             // if (file.name !== ctx.selectedGpxFile.name) { ...
+            ctx.setUpdateInfoBlock(true);
             ctx.setCurrentObjectType(ctx.OBJECT_TYPE_CLOUD_TRACK);
-            ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoom: true });
+            ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoom: true, cloudRedrawWpts: true });
         } else {
             setProgressVisible(true);
             const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
@@ -71,6 +81,7 @@ export default function CloudTrackItem({ file, customIcon = null }) {
             } else if (isEmptyTrack(track) === false) {
                 const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
                 ctx.setCurrentObjectType(type);
+
                 track.name = file.name;
                 Object.keys(track).forEach((t) => {
                     oneGpxFile[t] = track[t];
@@ -79,6 +90,8 @@ export default function CloudTrackItem({ file, customIcon = null }) {
 
                 ctx.mutateGpxFiles((o) => (o[file.name] = oneGpxFile));
                 ctx.setSelectedGpxFile(Object.assign({}, oneGpxFile));
+
+                ctx.setUpdateInfoBlock(true);
 
                 setError('');
             } else {
@@ -92,7 +105,7 @@ export default function CloudTrackItem({ file, customIcon = null }) {
         return (
             <>
                 <Tooltip title={info} arrow placement={mobile ? 'bottom' : 'right'} disableInteractive>
-                    <MenuItem id={'se-cloud-track-' + trackName} onClick={() => addTrackToMap(ctx.setGpxLoading)}>
+                    <MenuItem id={'se-cloud-track-' + trackName} onClick={() => setDisplayTrack(true)}>
                         <ListItemText inset>
                             <Typography variant="inherit" noWrap>
                                 {customIcon}
@@ -101,11 +114,9 @@ export default function CloudTrackItem({ file, customIcon = null }) {
                         </ListItemText>
                         <Switch
                             disabled={loadingTrack}
-                            checked={!!ctx.gpxFiles[file.name]?.url}
                             onClick={(e) => e.stopPropagation()}
-                            onChange={(e) => {
-                                !file.local && enableLayer(setLoadingTrack, e.target.checked);
-                            }}
+                            checked={!!ctx.gpxFiles[file.name]?.url}
+                            onChange={(e) => !file.local && setDisplayTrack(e.target.checked)}
                         />
                     </MenuItem>
                 </Tooltip>

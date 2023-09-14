@@ -13,7 +13,9 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-Quick Action Widget is a configurable quick access button on the map with selected actions accessible 'just in 2 clicks'.
+## Overview
+
+Quick Action widget is an interactive user interface element that provides quick access to key functions or actions without having to open additional settings. This widget is placed on the main map screen and allows you to simplify and speed up interaction with the application, making it more convenient and efficient.  
 
 ![Quick action widget](@site/static/img/widgets/quick_action_widget.png)
 
