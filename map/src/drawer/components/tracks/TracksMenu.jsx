@@ -171,7 +171,11 @@ export default function TracksMenu() {
 
     return (
         <>
-            <MenuItem id="se-menu-tracks" sx={{ mb: 1 }} onClick={() => setTracksGroupsOpen(!tracksGroupsOpen)}>
+            <MenuItem
+                id={tracksGroupsOpen ? 'se-hide-menu-tracks' : 'se-show-menu-tracks'}
+                sx={{ mb: 1 }}
+                onClick={() => setTracksGroupsOpen(!tracksGroupsOpen)}
+            >
                 <ListItemIcon>
                     <DirectionsWalk fontSize="small" />
                 </ListItemIcon>

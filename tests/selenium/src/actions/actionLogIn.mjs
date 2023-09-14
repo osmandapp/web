@@ -3,13 +3,13 @@
 import { By } from 'selenium-webdriver';
 
 import { clickBy, waitBy, enclose } from '../lib.mjs';
-import { mobile, TEST_LOGIN, TEST_PASSWORD } from '../options.mjs';
+import { TEST_LOGIN, TEST_PASSWORD } from '../options.mjs';
 
 /**
  * Action: actionLogIn({ login, password })
  */
 export default async function test({ login = TEST_LOGIN, password = TEST_PASSWORD } = {}) {
-    mobile && (await clickBy(By.id('se-main-menu')));
+    await clickBy(By.id('se-show-main-menu'), { optional: true });
 
     await clickBy(By.id('se-login-button'));
 

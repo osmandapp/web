@@ -23,11 +23,13 @@ export default async function test({ mask = '*' } = {}) {
 export async function saveToCloud(name) {
     await clickBy(By.id('se-local-track-' + name));
 
+    await clickBy(By.id('se-hide-main-menu'));
     await clickBy(By.id('se-panel-button-save-to-cloud'));
     await clickBy(By.id('se-submit-save-to-cloud'));
     await clickBy(By.id('se-overwrite-cloud-track'), { optional: true });
-
     await waitBy(By.id('se-panel-button-edit-cloud-track'));
+
+    await clickBy(By.id('se-show-main-menu'));
     await clickBy(By.id('se-menu-cloud-Tracks'));
     await waitBy(By.id('se-cloud-track-' + name));
 }

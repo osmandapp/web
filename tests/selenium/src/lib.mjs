@@ -7,7 +7,6 @@ import { driver, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED } from './options.mjs';
 
 // helper
 function isStaleError(e) {
-    console.log('CHECK', e.toString());
     return e && e.toString().match(/StaleElementReferenceError/);
 }
 
@@ -31,7 +30,6 @@ export async function enclose(callback, { tag = 'enclose', optional = false } = 
                     return await callback(d); // awaiting for truthy, using (d) is optional
                 } catch (e) {
                     if (isStaleError(e)) {
-                        console.log('ENCLOSE-STALE', optional);
                         return false;
                     }
                     throw e;
@@ -40,7 +38,6 @@ export async function enclose(callback, { tag = 'enclose', optional = false } = 
             optional ? TIMEOUT_OPTIONAL : TIMEOUT_REQUIRED
         );
     } catch (error) {
-        console.log('ENCLOSE-FINISH', optional, error);
         if (optional === true) {
             return null;
         }
@@ -72,7 +69,6 @@ export async function waitBy(by, { optional = false } = {}) {
                             }
                         } catch (e) {
                             if (isStaleError(e)) {
-                                console.log('WB-STALE', optional);
                                 continue; // stale - continue
                             }
                         }
@@ -84,7 +80,6 @@ export async function waitBy(by, { optional = false } = {}) {
             optional ? TIMEOUT_OPTIONAL : TIMEOUT_REQUIRED
         );
     } catch (error) {
-        console.log('WB-FINISH', optional, error);
         if (optional === true) {
             return null;
         }

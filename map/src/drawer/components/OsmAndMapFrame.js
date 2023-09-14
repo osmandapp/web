@@ -60,7 +60,12 @@ const OsmAndMapFrame = () => {
                     <Box>
                         <AppBar position="static">
                             <Toolbar variant="dense">
-                                <IconButton id="se-main-menu" onClick={toggleMainMenu} edge="start" sx={{ mr: 2 }}>
+                                <IconButton
+                                    id={mainMenuOpen ? 'se-hide-main-menu' : 'se-show-main-menu'}
+                                    onClick={toggleMainMenu}
+                                    edge="start"
+                                    sx={{ mr: 2 }}
+                                >
                                     <Menu />
                                 </IconButton>
                                 <HeaderInfo mainMenuWidth={mainMenuWidth} />

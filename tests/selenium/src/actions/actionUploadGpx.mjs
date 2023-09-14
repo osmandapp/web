@@ -4,7 +4,7 @@ import { By } from 'selenium-webdriver';
 import { resolve } from 'node:path';
 import { readdirSync } from 'node:fs';
 
-import { waitBy, enclose } from '../lib.mjs';
+import { waitBy, clickBy, enclose } from '../lib.mjs';
 
 import actionIdleWait from './actionIdleWait.mjs';
 
@@ -31,6 +31,9 @@ export default async function test({ mask = '*.gpx', multiple = false } = {}) {
                 tracks.push({ file, name, path });
             }
         });
+
+    await clickBy(By.id('se-show-main-menu'), { optional: true });
+    await clickBy(By.id('se-show-menu-tracks'), { optional: true });
 
     if (multiple) {
         const files = tracks.map((t) => t.path).join('\n');
