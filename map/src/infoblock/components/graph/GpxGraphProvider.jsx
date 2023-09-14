@@ -228,7 +228,9 @@ const GpxGraphProvider = ({ width }) => {
             let current = result[i];
             if (current) {
                 let dist = current[DISTANCE];
-                let ind = calculatedSlopeDist.findIndex((d) => d / 1000 > dist - 0.005 && d / 1000 < dist + 0.005);
+                let ind = calculatedSlopeDist.findIndex(
+                    (d) => d / 1000 > dist - STEP / 1000 && d / 1000 < dist + STEP / 1000
+                );
                 if (ind !== -1 && ind >= 0) {
                     result[i][SLOPE] = Math.trunc(calculatedSlope[ind] * 100) / 100;
                 }
@@ -244,9 +246,26 @@ const GpxGraphProvider = ({ width }) => {
                 dist: dist !== undefined ? dist / 1000 : 0,
             });
         }
+        if (STEP > 5) {
+            res = smoothSlopes(res, 0.3);
+        }
         res.min = Math.trunc(Math.min(...calculatedSlope) * 100) / 100;
         res.max = Math.trunc(Math.max(...calculatedSlope) * 100) / 100;
         return res;
+    }
+    function smoothSlopes(data, alpha) {
+        const smoothedData = [];
+        let previousValue = data[0].slope;
+        for (let i = 0; i < data.length; i++) {
+            const currentSlope = data[i].slope;
+            const smoothedSlope = alpha * currentSlope + (1 - alpha) * previousValue;
+            smoothedData.push({
+                slope: smoothedSlope,
+                dist: data[i].dist,
+            });
+            previousValue = smoothedSlope;
+        }
+        return smoothedData;
     }
 
     function checkShowData(value) {
