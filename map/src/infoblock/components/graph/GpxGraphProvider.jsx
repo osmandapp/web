@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import GpxGraph from './GpxGraph';
 import AppContext from '../../../context/AppContext';
-import TracksManager from '../../../context/TracksManager';
+import TracksManager, { equalsPoints } from '../../../context/TracksManager';
 import _ from 'lodash';
 import { Checkbox, Divider, FormControlLabel } from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
@@ -33,29 +33,33 @@ const GpxGraphProvider = ({ width }) => {
     }
 
     useEffect(() => {
-        let trackData = {};
         if (ctx.selectedGpxFile) {
-            let points = _.cloneDeep(TracksManager.getTrackPoints(ctx.selectedGpxFile));
-            if (ctx.selectedGpxFile.analysis?.hasElevationData) {
-                trackData.ele = true;
-                trackData.slope = true;
-                trackData.data = points;
-            }
-            if (ctx.selectedGpxFile.analysis?.srtmAnalysis) {
-                trackData.srtm = true;
-                if (!trackData.data) {
+            let trackData = {};
+            let points = TracksManager.getTrackPoints(ctx.selectedGpxFile);
+            if (!_.isEmpty(points) && !equalsPoints(points, data?.data)) {
+                if (ctx.selectedGpxFile.analysis?.hasElevationData) {
+                    trackData.ele = true;
+                    trackData.slope = true;
                     trackData.data = points;
                 }
-            }
-            if (ctx.selectedGpxFile?.analysis?.hasSpeedData) {
-                trackData.speed = true;
-                if (!trackData.data) {
-                    trackData.data = points;
+                if (ctx.selectedGpxFile.analysis?.srtmAnalysis) {
+                    trackData.srtm = true;
+                    if (!trackData.data) {
+                        trackData.data = points;
+                    }
                 }
+                if (ctx.selectedGpxFile?.analysis?.hasSpeedData) {
+                    trackData.speed = true;
+                    if (!trackData.data) {
+                        trackData.data = points;
+                    }
+                }
+                setData({ ...trackData });
+            } else if (_.isEmpty(points)) {
+                setData(null);
             }
-        }
-        if (trackData) {
-            setData({ ...trackData });
+        } else {
+            setData(null);
         }
     }, [ctx.selectedGpxFile]);
 
@@ -82,7 +86,7 @@ const GpxGraphProvider = ({ width }) => {
         if (!_.isEmpty(data?.data)) {
             let elevation = data.ele ? 'ele' : null;
             let elevationSRTM = data.srtm ? 'srtmEle' : null;
-            let points = data.data;
+            let points = _.cloneDeep(data.data);
             let result = [];
             let minEle = elevation ? points[0][elevation] : elevationSRTM ? points[0][elevationSRTM] : null;
             let maxEle = elevation ? points[0][elevation] : elevationSRTM ? points[0][elevationSRTM] : null;

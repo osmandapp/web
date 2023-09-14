@@ -70,8 +70,19 @@ async function updateRouteBetweenPointsOSRM({ start, end, geoProfile, ctx }) {
         const points = osrmToPoints(await response.json());
         if (points.length >= 2) {
             TracksManager.updateGapProfileOneSegment(end, points);
-            ctx.setRoutingErrorMsg(null);
-            return points;
+
+            const approximateResult = await apiPost(`${process.env.REACT_APP_GPX_API}/routing/approximate`, points, {
+                apiCache: true,
+                params: {
+                    routeMode: geoProfile.profile,
+                },
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            return approximateResult && approximateResult.data?.points?.length >= 2
+                ? approximateResult.data.points
+                : points;
         }
         if (points.message) {
             ctx.setRoutingErrorMsg(points.message);

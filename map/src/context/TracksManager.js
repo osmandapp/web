@@ -370,20 +370,12 @@ function closeCloudTrack(ctx, track) {
     }
 }
 
-function getTrackPoints(track) {
+export function getTrackPoints(track) {
     let points = [];
     if (track.tracks) {
         track.tracks.forEach((track) => {
             if (track.points) {
-                track.points.forEach((point) => {
-                    if (point.geometry) {
-                        point.geometry.forEach((trk) => {
-                            points.push(trk);
-                        });
-                    } else {
-                        points.push(point);
-                    }
-                });
+                points = getAllPoints(track.points);
             }
         });
     }
@@ -402,6 +394,24 @@ function getEditablePoints(track) {
     return points;
 }
 
+export function getAllPoints(points) {
+    let res = [];
+    points.forEach((point) => {
+        if (point.geometry) {
+            point.geometry.forEach((trk) => {
+                res.push(trk);
+            });
+        } else {
+            res.push(point);
+        }
+    });
+    return res;
+}
+
+export function equalsPoints(arr1, arr2) {
+    return arr1?.length === arr2?.length && JSON.stringify(arr1) === JSON.stringify(arr2);
+}
+
 function addDistance(track) {
     if (track.points && track.points.length > 0) {
         addDistanceToPoints(track.points);
@@ -415,7 +425,7 @@ function addDistance(track) {
     }
 }
 
-function addDistanceToPoints(points) {
+export function addDistanceToPoints(points) {
     let distanceTotal = 0;
     let distanceSegment = 0;
     let prevGapInd = 0;
