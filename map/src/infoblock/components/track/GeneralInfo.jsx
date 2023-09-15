@@ -253,7 +253,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     }
 
     const Description = ({ desc }) => {
-        let html = desc.replaceAll('target="_self"', 'target="_blank"').replace(/\n/g, '<br />');
+        const html = desc.replaceAll('target="_self"', 'target="_blank"').replace(/\n/g, '<br />');
         return (
             <ListItemText>
                 <Box display="flex" alignItems="end">
