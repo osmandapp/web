@@ -14,14 +14,14 @@ import {
 import { Close, Folder, LocationOn } from '@mui/icons-material';
 import DialogActions from '@mui/material/DialogActions';
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext from '../../context/AppContext';
-import MarkerOptions from '../markers/MarkerOptions';
-import FavoritesManager from '../../context/FavoritesManager';
-import contextMenuStyles from '../../infoblock/styles/ContextMenuStyles';
+import AppContext from '../context/AppContext';
+import FavoritesManager from '../context/FavoritesManager';
+import contextMenuStyles from '../infoblock/styles/ContextMenuStyles';
 import { makeStyles } from '@material-ui/core/styles';
-import EditFavoriteDialog from '../../infoblock/components/favorite/EditFavoriteDialog';
-import DeleteFavoriteDialog from '../../infoblock/components/favorite/DeleteFavoriteDialog';
-import { useWindowSize } from '../../util/hooks/useWindowSize';
+import EditFavoriteDialog from '../infoblock/components/favorite/EditFavoriteDialog';
+import DeleteFavoriteDialog from '../infoblock/components/favorite/DeleteFavoriteDialog';
+import { useWindowSize } from '../util/hooks/useWindowSize';
+import { getWptIcon } from '../map/markers/MarkerOptions';
 
 const useStyles = makeStyles({
     icon: {
@@ -103,9 +103,7 @@ export default function WptMapDialog() {
                                 style={{ position: 'relative' }}
                                 className={classes.icon}
                                 dangerouslySetInnerHTML={{
-                                    __html:
-                                        MarkerOptions.getWptIcon(wpt, wpt?.color, wpt?.background, wpt?.icon).options
-                                            .html + '',
+                                    __html: getWptIcon(wpt, wpt?.color, wpt?.background, wpt?.icon).options.html + '',
                                 }}
                             />
                             <Typography

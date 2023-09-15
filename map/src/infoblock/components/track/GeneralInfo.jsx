@@ -253,7 +253,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     }
 
     const Description = ({ desc }) => {
-        const html = desc.replaceAll('target="_self"', 'target="_blank"');
+        let html = desc.replaceAll('target="_self"', 'target="_blank"').replace(/\n/g, '<br />');
         return (
             <ListItemText>
                 <Box display="flex" alignItems="end">
@@ -297,7 +297,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                         Show more...
                     </Link>
                 )}
-                <Divider sx={{ mt: '6px', mb: '12px' }} light />
+                {/*<Divider sx={{ mt: '6px', mb: '12px' }} light />*/}
             </ListItemText>
         );
     };

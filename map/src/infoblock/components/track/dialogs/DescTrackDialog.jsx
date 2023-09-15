@@ -38,8 +38,9 @@ export default function DescTrackDialog({ dialogOpen, setDialogOpen }) {
 
     useEffect(() => {
         if (dialogOpen) {
-            const desc = ctx.selectedGpxFile?.metaData?.desc;
+            let desc = ctx.selectedGpxFile?.metaData?.desc;
             if (desc) {
+                desc = prepare(desc);
                 setDescription(desc);
                 setState(EditorState.createWithContent(ContentState.createFromBlockArray(convertFromHTML(desc))));
             }
@@ -50,6 +51,10 @@ export default function DescTrackDialog({ dialogOpen, setDialogOpen }) {
             }
         }
     }, [dialogOpen]);
+
+    function prepare(desc) {
+        return desc.replace(/\n/g, '<br />');
+    }
 
     function saveImg(newUrl) {
         if (ctx.selectedGpxFile?.metaData) {
