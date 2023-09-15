@@ -3,7 +3,7 @@
 import { resolve } from 'node:path';
 import { By } from 'selenium-webdriver';
 
-import { enclose, waitBy, clickBy, navigateHash } from '../lib.mjs';
+import { enclose, waitBy, clickBy, matchTextBy, matchValueBy, navigateHash } from '../lib.mjs';
 
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 
@@ -26,27 +26,17 @@ export default async function test() {
     await navigateHash(GO_CENTER_HASH);
 
     // validate start, end points, and profiles
-    await enclose(checkStartEndPoints, { tag: 'check start-end points' });
+    await matchValueBy(By.id('se-route-start-point'), CHECK_START);
+    await matchValueBy(By.id('se-route-end-point'), CHECK_END);
     await validateRouteInfo('pedestrian', FOOT);
     await validateRouteInfo('bicycle', BIKE);
     await validateRouteInfo('car', CAR);
 }
 
-const validateRouteInfo = async (profile, grep) => {
-    const validate = async () => {
-        const text = await (await waitBy(By.id('se-route-info'))).getText();
-        return text.toString().includes(grep);
-    };
-
+const validateRouteInfo = async (profile, km) => {
     await clickBy(By.id('se-route-select'));
     await clickBy(By.id('se-route-profile-' + profile));
-    await enclose(validate, { tag: `check ${profile} for ${grep}` });
-};
-
-const checkStartEndPoints = async () => {
-    const start = await (await waitBy(By.id('se-route-start-point'))).getAttribute('value');
-    const end = await (await waitBy(By.id('se-route-end-point'))).getAttribute('value');
-    return start === CHECK_START && end === CHECK_END;
+    await matchTextBy(By.id('se-route-info'), km); // Route: 157.7 km
 };
 
 const uploader = async () => {

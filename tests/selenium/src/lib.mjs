@@ -159,7 +159,7 @@ async function transitionDelay(element) {
  *
  * Param: id <String> xpath starts-with match
  * Return: id's array[] of all visible elements
- * Example: const tracks = enumerateIds('se-local-track-');
+ * Example: const tracks = await enumerateIds('se-local-track-');
  *
  * test: failed if no ids was found and/or timeout was reached
  */
@@ -186,6 +186,58 @@ export async function enumerateIds(match) {
     return await enclose(enumerator, { tag: 'enumerateIds' });
 }
 
+// navigate to #hash (via javascript)
 export async function navigateHash(hash) {
     await driver.executeScript(`window.location.hash = '${hash}'`);
+}
+
+async function getValueBy(by) {
+    const getter = async () => {
+        const element = await waitBy(by);
+        const value = await element.getAttribute('value');
+        return value.toString();
+    };
+    return await enclose(getter, { tag: 'getValueBy' });
+}
+
+async function getTextBy(by) {
+    const getter = async () => {
+        const element = await waitBy(by);
+        const text = await element.getText();
+        return text.toString();
+    };
+    return await enclose(getter, { tag: 'getTextBy' });
+}
+
+/**
+ * Lib: matchBy(by, match, getter)
+ *
+ * Param: by = By.id()
+ * Param: match <String> <Regexp>
+ * Param: getter <Function> [getTextBy, getValueBy, ...]
+ *
+ * Return: text of found and matched element
+ * Example: await matchTextBy(By.id('se-route-info'), '123.45 km')
+ * Example: await matchValueBy(By.id('se-route-start-point'), '50.123, 25.123')
+ *
+ * test-ok: element found (by)
+ * test-ok: text match (match)
+ */
+async function matchBy(by, match, getter) {
+    const validate = async () => {
+        const text = await getter(by);
+        if ((typeof match === 'object' && text.match(match)) || text.includes(match)) {
+            return text;
+        }
+        return null;
+    };
+    return await enclose(validate, { tag: `matchTextBy ${match.toString()}` });
+}
+
+export async function matchTextBy(by, match) {
+    return await matchBy(by, match, getTextBy);
+}
+
+export async function matchValueBy(by, match) {
+    return await matchBy(by, match, getValueBy);
 }
