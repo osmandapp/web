@@ -4382,6 +4382,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"anchorme@npm:^3.0.5":
+  version: 3.0.5
+  resolution: "anchorme@npm:3.0.5"
+  checksum: e4e7d10ffeba1fabb98ed1354f88dcdeea78d983f779f91879da345ad7695d81405617aff4e42bf1888edf2c36bb8f10d0a5fd7a3233cacf586a1b7af5b5cfd7
+  languageName: node
+  linkType: hard
+
 "ansi-align@npm:^2.0.0":
   version: 2.0.0
   resolution: "ansi-align@npm:2.0.0"
@@ -11572,6 +11579,7 @@ __metadata:
     "@testing-library/react": ^13.3.0
     "@testing-library/user-event": ^14.2.0
     "@types/leaflet.awesome-markers": ^2.0.25
+    anchorme: ^3.0.5
     axios: ^0.27.2
     blueimp-md5: ^2.19.0
     chart.js: ^4.3.0

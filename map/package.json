@@ -15,6 +15,7 @@
         "@testing-library/react": "^13.3.0",
         "@testing-library/user-event": "^14.2.0",
         "@types/leaflet.awesome-markers": "^2.0.25",
+        "anchorme": "^3.0.5",
         "axios": "^0.27.2",
         "blueimp-md5": "^2.19.0",
         "chart.js": "^4.3.0",
