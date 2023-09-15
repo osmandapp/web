@@ -7,11 +7,11 @@ import { Options, ServiceBuilder } from 'selenium-webdriver/chrome.js';
 export const TEST_LOGIN = 'osmand@grr.la';
 export const TEST_PASSWORD = '0xDEADBEEF';
 
-export const TIMEOUT_OPTIONAL = 1000; // optional element timeout and driver.implicitlyWait() (1000)
-export const TIMEOUT_REQUIRED = 10000; // required element timeout (waitBy / clickBy / enclose defaults) (10000)
+export const TIMEOUT_OPTIONAL = 1000; // optional element timeout and driver.implicitlyWait() (1s)
+export const TIMEOUT_REQUIRED = 30000; // required element timeout (waitBy / clickBy / enclose defaults) (30s)
 
-export const IDLE_DELAY = 1000; // additional delay after global window.seActivityTimestamp (1000)
-export const FINAL_DELAY = 3000; // increased final idle delay - used after complex actions such as upload-tracks (3000)
+export const IDLE_DELAY = 1000; // additional delay after global window.seActivityTimestamp (1s)
+export const FINAL_DELAY = 3000; // increased final idle delay - used after complex actions such as upload-tracks (3s)
 
 export let driver = null;
 

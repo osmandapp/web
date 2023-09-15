@@ -102,12 +102,34 @@ export async function clickBy(by, { optional = false } = {}) {
         const element = await waitBy(by, { optional });
         if (element) {
             await transitionDelay(element); // wait for CSS transition finish
+            await classDelay(element, delaysBeforeClick); // class-based delay
             await driver.actions().move({ origin: element }).click().perform();
+            await classDelay(element, delaysAfterClick);
             return element;
         }
         return true; // enclose needs truthy
     };
     return await enclose(clicker, { tag: 'clickBy', optional });
+}
+
+const delaysBeforeClick = {
+    'MuiMenuItem-root': 550,
+};
+
+const delaysAfterClick = {
+    'MuiSelect-select': 550,
+};
+
+// sleep by max(element-class in delays{})
+async function classDelay(element, delays) {
+    let delayMs = 0;
+    const classes = await element.getAttribute('class');
+    if (classes) {
+        classes.split(' ').forEach((c) => delays[c] > 0 && delays[c] > delayMs && (delayMs = delays[c]));
+        if (delayMs > 0) {
+            await driver.actions().pause(delayMs).perform();
+        }
+    }
 }
 
 // sleep by max(CSS-transition-delay) before click
@@ -162,4 +184,8 @@ export async function enumerateIds(match) {
     };
 
     return await enclose(enumerator, { tag: 'enumerateIds' });
+}
+
+export async function navigateHash(hash) {
+    await driver.executeScript(`window.location.hash = '${hash}'`);
 }
