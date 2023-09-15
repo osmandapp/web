@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.0" creator="GPSBabel - http://www.gpsbabel.org" xmlns="http://www.topografix.com/GPX/1/0">
+  <time>2016-06-14T08:41:08.206Z</time>
+  <bounds minlat="50.662496000" minlon="29.570159000" maxlat="50.776637000" maxlon="29.597385000"/>
+  <wpt lat="50.776637000" lon="29.570159000">
+    <ele>0.000000</ele>
+    <name>VELO-0</name>
+    <cmt>6/13/2016 9:32:27 PM</cmt>
+    <desc>6/13/2016 9:32:27 PM</desc>
+  </wpt>
+  <wpt lat="50.666385000" lon="29.578281000">
+    <ele>0.000000</ele>
+    <name>VELO-6</name>
+    <cmt>6/13/2016 9:37:59 PM</cmt>
+    <desc>6/13/2016 9:37:59 PM</desc>
+  </wpt>
+  <wpt lat="50.662496000" lon="29.578979000">
+    <ele>0.000000</ele>
+    <name>VELO-7</name>
+    <cmt>6/13/2016 9:38:12 PM</cmt>
+    <desc>6/13/2016 9:38:12 PM</desc>
+  </wpt>
+  <wpt lat="50.718710000" lon="29.588748000">
+    <ele>0.000000</ele>
+    <name>VELO-2</name>
+    <cmt>6/13/2016 10:17:21 PM</cmt>
+    <desc>6/13/2016 10:17:21 PM</desc>
+  </wpt>
+  <wpt lat="50.719135000" lon="29.590175000">
+    <ele>0.000000</ele>
+    <name>VELO-3</name>
+    <cmt>6/13/2016 10:17:33 PM</cmt>
+    <desc>6/13/2016 10:17:33 PM</desc>
+  </wpt>
+  <wpt lat="50.714245000" lon="29.597385000">
+    <ele>0.000000</ele>
+    <name>VELO-4</name>
+    <cmt>6/13/2016 10:18:44 PM</cmt>
+    <desc>6/13/2016 10:18:44 PM</desc>
+  </wpt>
+  <wpt lat="50.679881000" lon="29.580126000">
+    <ele>0.000000</ele>
+    <name>VELO-5</name>
+    <cmt>6/13/2016 10:26:34 PM</cmt>
+    <desc>6/13/2016 10:26:34 PM</desc>
+  </wpt>
+  <wpt lat="50.741291000" lon="29.577927000">
+    <ele>0.000000</ele>
+    <name>VELO-1</name>
+    <cmt>6/13/2016 10:28:10 PM</cmt>
+    <desc>6/13/2016 10:28:10 PM</desc>
+  </wpt>
+  <wpt lat="50.747183000" lon="29.580314000">
+    <ele>0.000000</ele>
+    <name>VELO-BAZA</name>
+    <cmt>6/14/2016 11:20:28 AM</cmt>
+    <desc>6/14/2016 11:20:28 AM</desc>
+  </wpt>
+</gpx>

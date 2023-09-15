@@ -140,6 +140,7 @@ const PanelButtons = ({
                                 </Tooltip>
                                 <Tooltip title="Edit" arrow placement={tooltipOrientation}>
                                     <IconButton
+                                        id="se-panel-button-edit-cloud-track"
                                         variant="contained"
                                         type="button"
                                         onClick={() => TracksManager.handleEditCloudTrack(ctx)}
@@ -172,6 +173,7 @@ const PanelButtons = ({
                             <Tooltip title="Save to cloud" arrow placement={tooltipOrientation}>
                                 <span style={styleSpan}>
                                     <IconButton
+                                        id="se-panel-button-save-to-cloud"
                                         variant="contained"
                                         type="button"
                                         disabled={isEmptyTrack(ctx.selectedGpxFile)}

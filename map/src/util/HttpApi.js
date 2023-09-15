@@ -1,7 +1,7 @@
 import md5 from 'blueimp-md5';
 import { globalNavigate } from '../App';
-import { quickNaNfix } from '../util/Utils';
 import { LOGIN_LOGOUT_URL } from '../context/AccountManager';
+import { quickNaNfix, seleniumUpdateActivity } from '../util/Utils';
 
 /*
     The idea: wrap all API requests and handle auth-failed-to-logout answers
@@ -84,6 +84,8 @@ import { LOGIN_LOGOUT_URL } from '../context/AccountManager';
 */
 
 export async function apiGet(url, options = null) {
+    seleniumUpdateActivity(); // update activity timestamp (before and after apiGet)
+
     // parse axios single-parameter call ({ url, ... })
     // it might be url, get/post, data and other options
     // fetch { url }, then shift url (as options) to options
@@ -224,6 +226,8 @@ export async function apiGet(url, options = null) {
         });
         cache[cacheKey] = cached;
     }
+
+    seleniumUpdateActivity();
 
     return Object.assign(response, {
         data, // data is for axios lovers :)

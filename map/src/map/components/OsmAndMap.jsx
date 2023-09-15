@@ -108,6 +108,13 @@ const OsmAndMap = ({ mobile, drawerRightHeight, mainMenuWidth, drawerRightWidth 
         }
     }, [ctx.tileURL]);
 
+    useEffect(() => {
+        if (tileLayer.current) {
+            tileLayer.current.on('load', () => (window.seIsTilesLoaded = true));
+            tileLayer.current.on('tileload', () => (window.seIsTilesLoaded = false));
+        }
+    }, [tileLayer.current]);
+
     // fix contextmenu of point for mobile device
     useEffect(() => {
         const markerEventHandler = (e) => {

@@ -350,7 +350,7 @@ export default function LoginDialog() {
             </DialogContent>
             <DialogActions>
                 <Button onClick={сloseDialog}>Cancel</Button>
-                <Button onClick={handleLogin}>
+                <Button id="se-submit-login" onClick={handleLogin}>
                     {state === 'register' ? 'Register' : state === 'register-verify' ? 'Activate' : 'Login'}
                 </Button>
             </DialogActions>

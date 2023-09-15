@@ -132,10 +132,10 @@ export default function LocalTrackGroup() {
                 <MenuItem disableRipple={true}>
                     <Grid container spacing={3}>
                         <Grid item xs={6}>
-                            <label htmlFor="contained-button-file">
+                            <label htmlFor="se-upload-gpx">
                                 <StyledInput
                                     accept=".gpx"
-                                    id="contained-button-file"
+                                    id="se-upload-gpx"
                                     multiple
                                     type="file"
                                     onChange={fileSelected(ctx)}

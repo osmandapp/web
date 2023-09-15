@@ -76,6 +76,7 @@ export default function CloudTrackGroup({ index, group }) {
     return (
         <div className={styles.drawerItem} key={'group' + group.name + index}>
             <MenuItem
+                id={'se-menu-cloud-' + group.name}
                 sx={{ ml: 3 }}
                 divider
                 onClick={(e) => {

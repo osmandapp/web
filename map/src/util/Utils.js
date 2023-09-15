@@ -3,6 +3,18 @@ import { apiGet } from '../util/HttpApi';
 import { useState } from 'react';
 
 /**
+ * seleniumUpdateActivity()
+ *
+ * Update global Activity Timestamp for Selenium.
+ * Timestamp is used by Selenium to detect site's idle.
+ * Call this function at begin/end of heavy/long/regular process.
+ * Example: AppContext and httpApi are main candidates to be "timestamped".
+ */
+export function seleniumUpdateActivity() {
+    window.seActivityTimestamp = Date.now();
+}
+
+/**
  * effectDebouncer() used to release render-ticks in UI-thread
  *
  * Example:

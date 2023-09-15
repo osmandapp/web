@@ -51,11 +51,13 @@ export default function OsmAndDrawer({ toggleDrawer }) {
                         <ArrowBack />
                     </IconButton>
                     {ctx.loginUser && ctx.loginUser != 'INIT' ? (
-                        <Button className={classes.btn} onClick={openLogin}>
+                        <Button id="se-logout-button" className={classes.btn} onClick={openLogin}>
                             {ctx.loginUser}
                         </Button>
                     ) : (
-                        <Button onClick={openLogin}>Login</Button>
+                        <Button id="se-login-button" onClick={openLogin}>
+                            LOGIN
+                        </Button>
                     )}
                     <Box>
                         <IconButton size="large" onClick={openLogin} color="inherit">
