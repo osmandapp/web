@@ -165,14 +165,83 @@ After changes go back to map and speed display has disappeared and if you take a
 
 Trip recording in OsmAnd is not activated by default. Feature is available under plugins menu.
 
-
+| |    |    |  |  |
+|----|-----|-----|-----|------|
+|![Trip recording](./img/fin-39.png)|![Trip recording](./img/fin-40.png)| ![Trip recording](./img/fin-41.png)| ![Trip recording](./img/fin-42.png)| ![Trip recording](./img/fin-43.png)|
 
 Once plugin is enabled there is new item in settings menu:
 
-
-
+| |    |    |  |
+|----|-----|-----|-----|
+|![Trip recording](./img/fin-44.png)|![Trip recording](./img/fin-45.png)| ![Trip recording](./img/fin-46.png)| ![Trip recording](./img/fin-47.png)|
 
 Click Start button and once you have done recording select save from notification bar. You can view recorded route in map by selecting show on map and open track.
 
 
 ### Change basemap
+
+You might prefer other basemap than default osmAnd one. You can change suitable map from settings. Select Install more to easily install new maps or select Add if you have specific source for maps.
+
+| |    |    |  |
+|----|-----|-----|-----|
+|![Base map](./img/fin-48.png)|![Base map](./img/fin-49.png)| ![Base map](./img/fin-50.png)| ![Base map](./img/fin-51.png)|
+
+It is also possible to set any map as underlay or overlay map. This allows you to mix good sides in several maps. I recommend to play with these settings to find exactly right settings for you. Usually default is good enough.
+
+
+### Removing automatic centering 
+
+Automatic centering is good to have, but once I purchased Silverfox bluetooth controller I have disabled this feature. While I use controller I don’t want screen to center itself when I look possible routes ahead. I was using default timer that was 15 sec for automatic centering. That can be changed from same place if you don’t want to disable whole feature.
+
+So how to do it? Click menu open and follow screenshot guidance, notice that this is profile based setting so you can enable it for driving mode and disable from Motorbike profiles.
+
+|    |    |    |
+|----|-----|-----|
+|![Centre](./img/fin-52.png)|![Centre](./img/fin-53.png)| ![Centre](./img/fin-54.png)|
+
+|    |    |    |
+|----|-----|-----|
+|![Centre](./img/fin-55.png)|![Centre](./img/fin-56.png)| ![Centre](./img/fin-57.png)|
+
+
+### How soon application should reroute
+
+Many might have noticed that if you follow TET route it is not following roads as it is just a track that should be followed without road navigation. Anyway I like to see where to turn next so I use navigation in TET tracks. Some times OsmAnd wants to start recalculating route if actual Line goes too far away from road that you should ride.
+
+Here we have one example inside of red box When you follow road, but line that you navigate goes away from road OsmAnd might want to recalculate new route to get back to where you dropped from line. This causes quite unneeded updates in UI and if you have navigation commands on to helmet headset you might also get recalculate audio information. 
+
+So to avoid this it is good to add more flex when OsmAnd is thinking that you are in wrong place.
+
+| |
+|----|
+|![Reroute](./img/fin-58.png)| 
+
+You can modify route recalculation settings under profile. Once again it is profile that specifies how OsmAnd works. So you can have different settings when you go with car and different when motorbiking. I have used 500m to trigger recalculation, but you can check what works for you. It is also possible to disable whole recalculation from same place, but I like to keep it on.
+
+|    |    |    |
+|----|-----|-----|
+|![Reroute](./img/fin-59.png)|![Reroute](./img/fin-60.png)| ![Reroute](./img/fin-61.png)|
+
+|    |    |    |
+|----|-----|-----|
+|![Reroute](./img/fin-62.png)|![Reroute](./img/fin-63.png)| ![Reroute](./img/fin-64.png)|
+
+
+### Web Planner
+
+Osmand has also launched web planner that can be found from [www.osmand.net/map](https://osmand.net/map) to get all out of it, pro subscription is needed, but basic are working with free account too. This is still quite simply, but hopefully we see progress on this planner and same filter (prefer gravel roads) to web too what we have in mobile side.
+
+
+### Bonus: Install OsmAnd Outdoor Explorer Plugin
+
+Outdoor explorer Plugin allows you to see road surface. Information is taken from open street map so also contribution to it is pretty easy.
+
+You can find this plugin and setup guide from here: https://github.com/cmoffroad/osmand-outdoor-explorer-plugin
+
+I noticed issue when I was trying to use Samsung own “My files” application to open plugin file, but when I installed total commander installation was ok.
+
+|    |    |
+|----|-----|
+|![Plugin](./img/fin-65.png)|![Plugin](./img/fin-66.png)|
+
+Did I miss something? Let me know and I will add it here!
