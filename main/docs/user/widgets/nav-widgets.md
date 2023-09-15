@@ -43,8 +43,7 @@ The Elevation widget shows a graph with the elevation and slope of your navigati
 
 <TabItem value="android" label="Android">   
 
->The widget can be turned on/off by following this path:
-<Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>  
+*<Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>*    
 
 ![Elevation widget](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
 

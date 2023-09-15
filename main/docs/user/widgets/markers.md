@@ -153,7 +153,7 @@ Configuring the appearance of map markers is available in both the Android and i
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,map_markers,appearance_on_map"/>* 
+*<Translate ios="true" ids="shared_string_menu,map_markers,shared_string_appearance"/>* 
 
 ![Map markers Appearance iOS](@site/static/img/widgets/map_markers_appearance_ios-02.png)  
 

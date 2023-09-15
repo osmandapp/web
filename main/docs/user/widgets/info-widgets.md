@@ -117,13 +117,11 @@ The widget shows the current speed detected by the GPS sensor.
 
 ## Average speed 
 
-<InfoAndroidOnly />
-
 ![Average speed widgets](@site/static/img/widgets/average_speed_widget.png)  
 
 This widget shows your average speed for a selected time interval and does not require any other features such as track recording or navigation. You can easily use it to check if your average speed is in line with highway speed limits, or record your average speed for the last 5-15 minutes of cycling.    
 
-Tap the **Settings** button of the Average Speed widget to select the time interval and the stop on/off option.   
+Tap the Average Speed widget *Settings* button (Android) or tap the added widget field (iOS) to select the time interval and the stop on/off option.   
 
 **Time interval**  
 The average speed is calculated for a given time interval according to your selection. Thus, you can set the average speed calculation interval from 15 seconds to 60 minutes. In general, the average speed is taken from the recorded GPS points: ```Average Speed = AVERAGE(GPS_LOCATION.speed)```.  
@@ -133,12 +131,26 @@ The average speed is calculated for a given time interval according to your sele
 ***Off*** *setting*. A long stop will also add zeros to the average speed calculation, which can significantly change the overall value.   
 ***On*** *setting*. If your average speed is less than 1 speed unit per hour, this value will not be added to the average speed calculation. This allows your average speed to not change much when you stop, for example at a traffic light or want to take a break from cycling.    
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 ![Average speed](@site/static/img/widgets/average_speed_widget_2.png) ![Average speed](@site/static/img/widgets/average_speed_widget_3.png)  
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Average speed widgets](@site/static/img/widgets/average_speed_widget_ios.png) 
+
+</TabItem>
+
+</Tabs>  
 
 | | |
 |------------|------------|
 | Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_average_speed"/>* |
+|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_average_speed"/>* |
 | By tapping | No changes |   
 
 

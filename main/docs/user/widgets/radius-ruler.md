@@ -187,41 +187,23 @@ Video guide how to use Radius ruler:
 
 </Tabs>
 
-## 'Distance by tap' tool
 
+## Distance by tap tool
 
-<Tabs groupId="operating-systems">
+![Distance between two random points on the map](@site/static/img/widgets/distance_between_two_random_points.png)  
 
-<TabItem value="android" label="Android">
+**Distance from your location to a point on the map**  
+If you tap the map once, a line from your current location and the distance to it will be displayed. The line will also be active if you tap the screen repeatedly.  
 
-![Distance between two random points on the map](@site/static/img/widgets/distance_between_two_random_points.png)
-
-**Distance from your location to a point on the map**: after single tap on the map, the line from your current location and distance will be displayed. The line will be active during long touch on the screen as well.
-
-**Distance between 2 points on the map**: touch simultaneously two spots on the map, the line between points and the distance will be displayed.
+**Distance between 2 points on the map**  
+If you touch two points at the same time, the map will show the line between them and the distance.  
 
 | | |
 |------------|------------|
-| Enable |  <Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,map_widget_distance_by_tap"/>|
-| Text size | <Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,map_widget_distance_by_tap,text_size"/>|
-| Units Format |<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>|
+| Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,map_widget_distance_by_tap"/>* |
+|   |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,map_widget_distance_by_tap"/>* |
+| Text size (Android) | *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,map_widget_distance_by_tap,text_size"/>* |
+| Units Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
-</TabItem>
 
-<TabItem value="ios" label="iOS">
-
-![Distance between two random points on the map](@site/static/img/widgets/distance_between_two_random_points.png)
-
-**Distance from your location to a point on the map**: after single tap on the map, the line from your current location and distance will be displayed. The line will be active during long touch on the screen as well.
-
-**Distance between 2 points on the map**: touch simultaneously two spots on the map, the line between points and the distance will be displayed.
-
-| | |
-|------------|------------|
-| Enable |  <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_appearance_rem,map_widget_distance_by_tap"/> |
-| Units Format |<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>|
-
-</TabItem>
-
-</Tabs>
 
