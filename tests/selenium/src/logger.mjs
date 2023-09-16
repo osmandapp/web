@@ -4,9 +4,9 @@ import chalk from 'chalk';
 
 import { url, headless, mobile, debug } from './options.mjs';
 
-let started = 0;
 export let passed = 0;
 export let failed = 0;
+let started = Date.now();
 
 const time = (ms) => Number(ms / 1000).toFixed(2) + 's';
 const sequence = ({ i, total }) => `[${i + 1}/${total}]`;
@@ -36,7 +36,6 @@ export function loggerFail({ i, total, file, runtime, error }) {
 
 export function loggerTitle() {
     const options = [];
-    started = Date.now();
     mobile && options.push('--mobile');
     headless && options.push('--headless');
     const out = `url ${url} ${options.join(' ')}\n\n`;

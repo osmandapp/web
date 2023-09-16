@@ -28,9 +28,9 @@ export default async function test() {
     // validate start, end points, and profiles
     await matchValueBy(By.id('se-route-start-point'), CHECK_START);
     await matchValueBy(By.id('se-route-end-point'), CHECK_END);
-    await validateRouteInfo('pedestrian', FOOT);
-    await validateRouteInfo('bicycle', BIKE);
     await validateRouteInfo('car', CAR);
+    await validateRouteInfo('bicycle', BIKE);
+    await validateRouteInfo('pedestrian', FOOT);
 }
 
 const validateRouteInfo = async (profile, km) => {

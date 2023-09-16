@@ -4,14 +4,22 @@ import compareImages from 'resemblejs/compareImages.js';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 
 import { failed, loggerRun, loggerPass, loggerFail, loggerTitle, loggerReport } from './logger.mjs';
-import { driver, stop, mobile, headless, noexit, tests, parseArgs, prepareDriver } from './options.mjs';
+import { driver, cycle, stop, mobile, headless, noexit, tests, parseArgs, prepareDriver } from './options.mjs';
 
 console.debug = () => {}; // suppress selenium's console.debug
 
 parseArgs();
+
 loggerTitle();
-await cycleTests();
-await loggerReport();
+
+do {
+    await cycleTests();
+    await loggerReport();
+    if (failed > 0 && stop) {
+        break;
+    }
+} while (cycle);
+
 process.exitCode = failed > 0 ? 1 : 0;
 
 async function cycleTests() {

@@ -17,6 +17,7 @@ export let driver = null;
 
 export let url = null;
 export let stop = false;
+export let cycle = false;
 export let debug = false;
 export let mobile = false;
 export let noexit = false;
@@ -36,6 +37,7 @@ export function parseArgs() {
             a === '--mobile' && (mobile = true);
             a === '--noexit' && (noexit = true);
             a === '--debug' && (debug = true);
+            a === '--cycle' && (cycle = true);
             a === '--stop' && (stop = true);
         } else {
             findTestsByMask(a);
@@ -79,6 +81,7 @@ Options:
     --stop          Stop tests after first failure happens
     --noexit        Do not close browser after test done
     --debug         Print debug info and full errors
+    --cycle         Restart cycle of tests forever
     --help          Help and exit
 
 Tests: specify distinct test(s) to run (wildcards are ok)
