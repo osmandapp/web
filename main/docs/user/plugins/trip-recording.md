@@ -127,7 +127,7 @@ Use long press on *Start recording* in the icon context menu to add it as a sepa
 :::  
 
 
-## Сurrent track recording
+## Current track recording
 
 :::tip Stop / Save / Pause
 To stop the recording, tap on the relevant button in the [Distance/Start-Stop widget](#distance-start-stop) widget dialog box, for the Android version you can also stop the recording by tapping the Main menu item *Trip recording*.
