@@ -28,7 +28,7 @@ export function loggerPass({ i, total, file, runtime }) {
 export function loggerFail({ i, total, file, runtime, error }) {
     const seq = sequence({ i, total });
     const status = chalk.bgRedBright('FAILED');
-    const message = debug ? error : error.message.replace(/\n.*/g, '');
+    const message = chalk.red(debug ? error : error.message.replace(/\n.*/g, ''));
     const out = `${seq} ${status} ${file} (${time(runtime)}) ${message}\n`;
     process.stdout.write(out);
     failed++;
