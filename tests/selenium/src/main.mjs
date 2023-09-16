@@ -56,7 +56,7 @@ async function runTest({ file, info }) {
 
             try {
                 // don't validate screenshot if test was failed with error
-                await manageScreenshot({ file, validate: error === null });
+                await manageScreenshot({ file, error });
             } catch (e) {
                 // test's error is more important than screenshot's
                 error === null && (error = e);
@@ -81,8 +81,9 @@ async function runTest({ file, info }) {
     );
 }
 
-async function manageScreenshot({ file, validate = true }) {
+async function manageScreenshot({ file, error = false }) {
     mkdirSync('screenshots/diff', { recursive: true });
+    mkdirSync('screenshots/failed', { recursive: true });
     mkdirSync('screenshots/latest', { recursive: true });
     mkdirSync('screenshots/trusted', { recursive: true });
 
@@ -92,12 +93,13 @@ async function manageScreenshot({ file, validate = true }) {
     const name = tag + (mobile ? 'mobile-' : '') + (headless ? 'headless-' : '') + file.replaceAll('.mjs', '') + '.png';
 
     const diff = 'screenshots/diff/' + name;
+    const failed = 'screenshots/failed/' + name;
     const latest = 'screenshots/latest/' + name;
     const trusted = 'screenshots/trusted/' + name;
 
-    writeFileSync(latest, ss, { encoding: 'base64' });
+    writeFileSync(error === null ? latest : failed, ss, { encoding: 'base64' });
 
-    if (validate && existsSync(trusted)) {
+    if (error === null && existsSync(trusted)) {
         const options = {
             output: {
                 largeImageThreshold: 0,
