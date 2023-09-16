@@ -97,16 +97,19 @@ export async function waitBy(by, { optional = false } = {}) {
  * test: failed if not found or not visible element
  * test-ok: optional===true is processed by enclose()
  */
-export async function clickBy(by, { optional = false } = {}) {
+export async function clickBy(by, { optional = false, move = false } = {}) {
     const clicker = async () => {
         const element = await waitBy(by, { optional });
         if (element) {
             await transitionDelay(element); // wait for CSS transition finish
             await classDelay(element, delaysBeforeClick); // class-based delay
 
-            await element.click(); // the best way to click
-            // worse way, possibly allowed for non-interactive elements only:
-            // await driver.actions().move({ origin: element }).click().perform();
+            if (move) {
+                // worse way, possibly allowed for non-interactive elements only
+                await driver.actions().move({ origin: element }).click().perform();
+            } else {
+                await element.click(); // the best way to click
+            }
 
             await classDelay(element, delaysAfterClick);
             return element;
@@ -117,11 +120,13 @@ export async function clickBy(by, { optional = false } = {}) {
 }
 
 const delaysBeforeClick = {
-    'MuiMenuItem-root': 550,
+    'MuiSelect-select': 550, // <Select> close-transition (after previous click inside Select)
+    // 'MuiMenuItem-root': 550, // <MenuItem>
 };
 
 const delaysAfterClick = {
-    'MuiSelect-select': 550,
+    'MuiSelect-select': 550, // <Select> - open-transition (before next click inside Select)
+    // 'MuiMenuItem-root': 550, // <MenuItem>
 };
 
 // sleep by max(element-class in delays{})
