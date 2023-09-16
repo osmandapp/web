@@ -16,7 +16,7 @@ export default async function test() {
     await enclose(uploader, { tag: 'upload gpx' });
     await actionIdleWait();
     await matchTextBy(By.id('se-infoblock-desc'), DESC);
-    await driver.findElement(By.xpath("//a[@href='http://www.osmand.net']")).click();
+    await driver.findElement(By.xpath("//a[@href='http://www.osmand.net']"));
 }
 
 const uploader = async () => {

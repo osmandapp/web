@@ -483,7 +483,7 @@ export default function GeneralInfo({ width }) {
                         {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK ? EditName() : NoEditName()}
                     </div>
                     <div>
-                        {ctx.selectedGpxFile?.metaData?.desc
+                        {preparedDesc
                             ? Description({ desc: preparedDesc })
                             : ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
                                   <>

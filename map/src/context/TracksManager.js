@@ -1214,7 +1214,16 @@ export const getGpxTime = (f, reverse = false) => {
 };
 
 export function prepareDesc(trackDesc) {
-    return trackDesc ? anchorme(trackDesc.replace(/\n/g, '<br />')) : null;
+    return trackDesc && typeof trackDesc === 'string'
+        ? anchorme({
+              input: trackDesc.replace(/\n/g, '<br />'),
+              options: {
+                  attributes: {
+                      target: '_blank',
+                  },
+              },
+          })
+        : null;
 }
 
 const TracksManager = {
