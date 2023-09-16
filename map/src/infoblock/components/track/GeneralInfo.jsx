@@ -6,6 +6,7 @@ import TracksManager, {
     isEmptyTrack,
     applySrtmElevation,
     eligibleToApplySrtm,
+    prepareDesc,
 } from '../../../context/TracksManager';
 import { prepareFileName } from '../../../util/Utils';
 import {
@@ -34,7 +35,6 @@ import {
     Speed,
     Terrain,
 } from '@mui/icons-material';
-import anchorme from 'anchorme';
 import DescTrackDialog from './dialogs/DescTrackDialog';
 
 export default function GeneralInfo({ width }) {
@@ -255,10 +255,6 @@ export default function GeneralInfo({ width }) {
             setFileNameError('');
             return;
         }
-    }
-
-    function prepareDesc(trackDesc) {
-        return anchorme(trackDesc.replace(/\n/g, '<br />'));
     }
 
     const Description = ({ desc }) => {

@@ -6,6 +6,7 @@ import { compressFromJSON, decompressToJSON } from '../util/GzipBase64.mjs';
 import { confirm } from '../dialogs/GlobalConfirmationDialog';
 import L from 'leaflet';
 import MarkerOptions from '../map/markers/MarkerOptions';
+import anchorme from 'anchorme';
 
 const GPX_FILE_TYPE = 'GPX';
 const GET_SRTM_DATA = 'get-srtm-data';
@@ -1211,6 +1212,10 @@ export const getGpxTime = (f, reverse = false) => {
     }
     return 0;
 };
+
+export function prepareDesc(trackDesc) {
+    return anchorme(trackDesc.replace(/\n/g, '<br />'));
+}
 
 const TracksManager = {
     loadTracks,
