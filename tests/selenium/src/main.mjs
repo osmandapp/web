@@ -1,45 +1,31 @@
 'use strict';
 
-import chalk from 'chalk';
 import compareImages from 'resemblejs/compareImages.js';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 
-import { driver, stop, verbose, mobile, headless, noexit, tests, parseArgs, prepareDriver } from './options.mjs';
-
-parseArgs();
+import { failed, loggerRun, loggerPass, loggerFail, loggerTitle, loggerReport } from './logger.mjs';
+import { driver, stop, mobile, headless, noexit, tests, parseArgs, prepareDriver } from './options.mjs';
 
 console.debug = () => {}; // suppress selenium's console.debug
 
-let failed = 0;
-let successful = 0;
-
-console.log();
+parseArgs();
+loggerTitle();
 await cycleTests();
-
-console.log();
-failed > 0 && console.log(chalk.red('failed', failed));
-successful > 0 && console.log(chalk.green('successful', successful));
-
-console.log();
+await loggerReport();
 process.exitCode = failed > 0 ? 1 : 0;
 
 async function cycleTests() {
     for (let i = 0; i < tests.length; i++) {
-        await runTest({ file: tests[i], info: `[${i + 1}/${tests.length}]` });
+        await runTest({ file: tests[i], i, total: tests.length });
         if (failed > 0 && stop) {
             break;
         }
     }
 }
 
-async function timer(callback) {
-    const started = Date.now();
-    await callback(); // async
-    return Date.now() - started;
-}
-
-async function runTest({ file, info }) {
-    let runtime = 0;
+async function runTest({ file, i, total }) {
+    let started = Date.now();
+    loggerRun({ file, i, total });
     await (async function () {
         try {
             let error = null;
@@ -49,7 +35,7 @@ async function runTest({ file, info }) {
             const { default: test } = await import('./tests/' + file);
 
             try {
-                runtime += await timer(() => test());
+                await test();
             } catch (e) {
                 error = e;
             }
@@ -70,13 +56,10 @@ async function runTest({ file, info }) {
         }
     })().then(
         () => {
-            successful++;
-            console.log(info, file, chalk.bgGreenBright('OK'), Number(runtime / 1000).toFixed(2) + 's');
+            loggerPass({ file, i, total, runtime: Date.now() - started });
         },
         (error) => {
-            failed++;
-            const message = verbose ? error : error.message.replace(/\n.*/g, ''); // keep 1st line
-            console.log(info, file, chalk.bgRedBright('FAILED'), message);
+            loggerFail({ file, i, total, error, runtime: Date.now() - started });
         }
     );
 }

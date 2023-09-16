@@ -3,7 +3,7 @@
 // import { strict as assert } from 'node:assert';
 import { Condition, By } from 'selenium-webdriver';
 
-import { driver, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED } from './options.mjs';
+import { driver, debug, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED } from './options.mjs';
 
 // helper
 function isStaleError(e) {
@@ -233,9 +233,10 @@ async function matchBy(by, match, getter) {
         if ((typeof match === 'object' && text.match(match)) || text.includes(match)) {
             return text;
         }
+        debug && console.log('matchBy (', match, ') NOT IN (', text, ')');
         return null;
     };
-    return await enclose(validate, { tag: `matchTextBy ${match.toString()}` });
+    return await enclose(validate, { tag: `matchTextBy (${match.toString()})` });
 }
 
 export async function matchTextBy(by, match) {
