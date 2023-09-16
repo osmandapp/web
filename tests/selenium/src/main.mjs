@@ -14,11 +14,12 @@ loggerTitle();
 
 do {
     await cycleTests();
-    await loggerReport();
     if (failed > 0 && stop) {
         break;
     }
 } while (cycle);
+
+await loggerReport();
 
 process.exitCode = failed > 0 ? 1 : 0;
 
