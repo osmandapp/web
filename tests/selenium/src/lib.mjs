@@ -103,7 +103,11 @@ export async function clickBy(by, { optional = false } = {}) {
         if (element) {
             await transitionDelay(element); // wait for CSS transition finish
             await classDelay(element, delaysBeforeClick); // class-based delay
-            await driver.actions().move({ origin: element }).click().perform();
+
+            await element.click(); // the best way to click
+            // worse way, possibly allowed for non-interactive elements only:
+            // await driver.actions().move({ origin: element }).click().perform();
+
             await classDelay(element, delaysAfterClick);
             return element;
         }
