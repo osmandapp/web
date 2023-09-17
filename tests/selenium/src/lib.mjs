@@ -54,6 +54,7 @@ export async function enclose(callback, { tag = 'enclose', optional = false } = 
  * test-ok: optional === true enforces return null in case of any error happens
  */
 export async function waitBy(by, { optional = false } = {}) {
+    debug && console.log('waitBy', by.value || by);
     try {
         return await driver.wait(
             new Condition('waitBy' + by.value, async () => {
@@ -120,6 +121,7 @@ export async function clickBy(by, { optional = false } = {}) {
         }
         return true; // enclose needs truthy
     };
+    debug && console.log('clickBy', by.value || by);
     return await enclose(clicker, { tag: 'clickBy', optional });
 }
 
