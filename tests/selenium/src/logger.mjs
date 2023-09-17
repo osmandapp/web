@@ -14,7 +14,7 @@ const sequence = ({ i, total }) => `[${i + 1}/${total}]`;
 
 export function loggerRun({ i, total, file }) {
     const seq = sequence({ i, total });
-    const out = `${seq} ${file} ...\r`;
+    const out = `${seq} ${file} ... `;
     process.stdout.write(out);
 }
 
@@ -27,7 +27,7 @@ export function loggerPass({ i, total, file, runtime }) {
 
     const report = cycle ? getReport() : ''; // add report when --cycle enabled
     const spacer = SPACER - out.length > 0 ? ' '.repeat(SPACER - out.length) : ' ';
-    process.stdout.write(out + spacer + report + '\n');
+    process.stdout.write('\r' + out + spacer + report + '\n');
 }
 
 export function loggerFail({ i, total, file, runtime, error }) {
@@ -40,7 +40,7 @@ export function loggerFail({ i, total, file, runtime, error }) {
 
     const report = cycle ? getReport() : ''; // add report when --cycle enabled
     const spacer = SPACER - out.length > 0 ? ' '.repeat(SPACER - out.length) : ' ';
-    process.stdout.write(out + spacer + report + '\n');
+    process.stdout.write('\r' + out + spacer + report + '\n');
 }
 
 export function loggerTitle() {
