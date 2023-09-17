@@ -33,14 +33,32 @@ export default async function test() {
     await validateRouteInfo('pedestrian', FOOT);
 }
 
-const validateRouteInfo = async (profile, km) => {
-    await clickBy(By.id('se-route-select'));
-    await clickBy(By.id('se-route-profile-' + profile));
-    await matchTextBy(By.id('se-route-info'), km); // Route: 157.7 km
-};
-
 const uploader = async () => {
     const element = await waitBy(By.id('contained-button-route'));
     await element.sendKeys(resolve('gpx', TEST_GPX_FILE));
     return true;
+};
+
+const validateRouteInfo = async (profile, km) => {
+    // clickBy() seems unstable with MUI <Select>
+    // await clickBy(By.id('se-route-select')); // <Select> list is not always open
+    // await clickBy(By.id('se-route-profile-' + profile)); // often failed on waitBy()
+
+    // enclose-wrapper
+    // wait for success click
+    const clicker = async () => {
+        await clickBy(By.id('se-route-select'), { optional: true });
+        const clicked = await clickBy(By.id('se-route-profile-' + profile), { optional: true });
+
+        // clickBy (optional) might return true when the element was not found
+        if (clicked && clicked !== true) {
+            return clicked;
+        }
+
+        return false;
+    };
+
+    await enclose(clicker);
+
+    await matchTextBy(By.id('se-route-info'), km); // Route: 157.7 km
 };
