@@ -209,6 +209,7 @@ export async function enumerateIds(match) {
 // navigate to #hash (via javascript)
 export async function navigateHash(hash) {
     await driver.executeScript(`window.location.hash = '${hash}'`);
+    await driver.actions().pause(500).perform(); // allow leaflet to move map
 }
 
 async function getValueBy(by) {
@@ -261,4 +262,15 @@ export async function matchTextBy(by, match) {
 
 export async function matchValueBy(by, match) {
     return await matchBy(by, match, getValueBy);
+}
+
+export async function sendKeysBy(by, keys) {
+    enclose(
+        async () => {
+            const element = await waitBy(by);
+            await element.sendKeys(keys);
+            return true;
+        },
+        { tag: `sendKeysBy (${by.value || by}) (${keys})` }
+    );
 }
