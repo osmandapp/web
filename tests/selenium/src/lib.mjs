@@ -127,12 +127,12 @@ export async function clickBy(by, { optional = false } = {}) {
 
 const delaysBeforeClick = {
     'MuiSelect-select': 550, // <Select> close-transition (after previous click inside Select)
-    // 'MuiMenuItem-root': 550, // <MenuItem>
+    'MuiMenuItem-root': 550, // <MenuItem> might be located inside <Collapse> but w/o transition css
 };
 
 const delaysAfterClick = {
-    'MuiSelect-select': 550, // <Select> - open-transition (before next click inside Select)
-    // 'MuiMenuItem-root': 550, // <MenuItem>
+    'MuiSelect-select': 550, // <Select> open-transition (before next click inside Select)
+    'MuiMenuItem-root': 550, // <MenuItem> might be located inside <Collapse> but w/o transition css
 };
 
 // sleep by max(element-class in delays{})
@@ -156,8 +156,13 @@ async function transitionDelay(element) {
         transition.split(',').forEach((t) => {
             // background-color 0.25s cubic-bezier(0.4 ...
             if (t.trim().match(/^(color|background-color|border-color|box-shadow)/)) {
-                const [, seconds] = t.trim().split(' '); // 'color 0.25s' -> '0.25s'
-                const ms = seconds.replace('s', '') * 1000; // '0.25s' -> 250
+                let ms = 0;
+                const [, delay] = t.trim().split(' '); // '... 0.25s' -> '0.25s'
+                if (delay.includes('ms')) {
+                    ms = delay.replace('ms', ''); // 150ms -> 150
+                } else if (delay.includes('s')) {
+                    ms = delay.replace('s', '') * 1000; // '0.25s' -> 250
+                }
                 ms > 0 && ms > delayMs && (delayMs = ms); // max
             }
         });
