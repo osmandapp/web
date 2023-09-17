@@ -6,9 +6,8 @@ import { Condition, By } from 'selenium-webdriver';
 import { driver, debug, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED } from './options.mjs';
 
 // helper
-function isStaleError(e) {
-    return e && e.toString().match(/StaleElementReferenceError/);
-}
+const isStaleError = (e) => e.toString().match(/StaleElementReferenceError/);
+const isNotInteractableError = (e) => e.toString().match(/ElementNotInteractableError/);
 
 /**
  * Lib: enclose(callback, { tag, optional })
@@ -97,18 +96,23 @@ export async function waitBy(by, { optional = false } = {}) {
  * test: failed if not found or not visible element
  * test-ok: optional===true is processed by enclose()
  */
-export async function clickBy(by, { optional = false, move = false } = {}) {
+export async function clickBy(by, { optional = false } = {}) {
     const clicker = async () => {
         const element = await waitBy(by, { optional });
         if (element) {
-            await transitionDelay(element); // wait for CSS transition finish
             await classDelay(element, delaysBeforeClick); // class-based delay
+            await transitionDelay(element); // wait for CSS transition finish <Collapse>
 
-            if (move) {
-                // worse way, possibly allowed for non-interactive elements only
-                await driver.actions().move({ origin: element }).click().perform();
-            } else {
+            try {
                 await element.click(); // the best way to click
+            } catch (e) {
+                if (isNotInteractableError(e)) {
+                    // worse way, used for non-interactive elements only
+                    console.log('clickBy', by.value || by, 'retry with move');
+                    await driver.actions().move({ origin: element }).click().perform();
+                } else {
+                    throw e;
+                }
             }
 
             await classDelay(element, delaysAfterClick);
