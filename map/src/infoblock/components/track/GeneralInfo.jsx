@@ -278,7 +278,7 @@ export default function GeneralInfo({ width }) {
                     >
                         <div
                             id="se-infoblock-desc"
-                            style={{ direction: 'ltr', marginLeft: '10px', marginTop: '-15px' }}
+                            style={{ direction: 'ltr', marginLeft: '10px' }}
                             dangerouslySetInnerHTML={{ __html: html }}
                         />
                     </Typography>
