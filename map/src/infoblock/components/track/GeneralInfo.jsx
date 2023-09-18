@@ -504,7 +504,6 @@ export default function GeneralInfo({ width }) {
                         ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
                         isEmptyTrack(ctx.selectedGpxFile) === false && (
                             <>
-                                <Divider light sx={{ mt: 1, mb: 2 }} />
                                 <Button
                                     variant="contained"
                                     sx={{ ml: '-0.5px !important' }}
@@ -531,12 +530,10 @@ export default function GeneralInfo({ width }) {
                                         Save as
                                     </Button>
                                 )}
-                                <Divider light sx={{ mt: 2, mb: 1 }} />
                             </>
                         )}
                     {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && (
                         <>
-                            <Divider light sx={{ mt: 1, mb: 2 }} />
                             <Button
                                 variant="contained"
                                 sx={{ ml: '-0.5px !important' }}
