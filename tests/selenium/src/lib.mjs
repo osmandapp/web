@@ -5,7 +5,7 @@ import { Condition, By } from 'selenium-webdriver';
 
 import { driver, debug, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED } from './options.mjs';
 
-// helper
+// helpers
 const isStaleError = (e) => e.toString().match(/StaleElementReferenceError/);
 const isNotInteractableError = (e) => e.toString().match(/ElementNotInteractableError/);
 
@@ -212,30 +212,21 @@ export async function navigateHash(hash) {
     await driver.actions().pause(500).perform(); // allow leaflet to move map
 }
 
-async function getValueBy(by) {
-    const getter = async () => {
-        const element = await waitBy(by);
-        const value = await element.getAttribute('value');
-        return value.toString();
-    };
-    return await enclose(getter, { tag: 'getValueBy' });
-}
+const getAttributeBy = async (by, attr) =>
+    await enclose(async () => (await (await waitBy(by)).getAttribute(attr)).toString());
 
-async function getTextBy(by) {
-    const getter = async () => {
-        const element = await waitBy(by);
-        const text = await element.getText();
-        return text.toString();
-    };
-    return await enclose(getter, { tag: 'getTextBy' });
-}
+const getValueBy = async (by) => await getAttributeBy(by, 'value');
+const getInnerHtmlBy = async (by) => await getAttributeBy(by, 'innerHTML');
+const getInnerTextBy = async (by) => await getAttributeBy(by, 'innerText');
+
+const getTextBy = async (by) => await enclose(async () => (await (await waitBy(by)).getText()).toString());
 
 /**
  * Lib: matchBy(by, match, getter)
  *
  * Param: by = By.id()
  * Param: match <String> <Regexp>
- * Param: getter <Function> [getTextBy, getValueBy, ...]
+ * Param: getter <Function> [getTextBy, getValueBy, getInnerHtmlBy, getInnerTextBy]
  *
  * Return: text of found and matched element
  * Example: await matchTextBy(By.id('se-route-info'), '123.45 km')
@@ -247,7 +238,7 @@ async function getTextBy(by) {
 async function matchBy(by, match, getter) {
     const validate = async () => {
         const text = await getter(by);
-        if ((typeof match === 'object' && text.match(match)) || text.includes(match)) {
+        if ((typeof match === 'object' && text.match(match)) || (typeof match !== 'object' && text.includes(match))) {
             return text;
         }
         debug && console.log('matchBy (', match, ') NOT IN (', text, ')');
@@ -256,13 +247,10 @@ async function matchBy(by, match, getter) {
     return await enclose(validate, { tag: `matchTextBy (${match.toString()})` });
 }
 
-export async function matchTextBy(by, match) {
-    return await matchBy(by, match, getTextBy);
-}
-
-export async function matchValueBy(by, match) {
-    return await matchBy(by, match, getValueBy);
-}
+export const matchTextBy = async (by, match) => await matchBy(by, match, getTextBy);
+export const matchValueBy = async (by, match) => await matchBy(by, match, getValueBy);
+export const matchInnerHtmlBy = async (by, match) => await matchBy(by, match, getInnerHtmlBy);
+export const matchInnerTextBy = async (by, match) => await matchBy(by, match, getInnerTextBy);
 
 export async function sendKeysBy(by, keys) {
     enclose(
