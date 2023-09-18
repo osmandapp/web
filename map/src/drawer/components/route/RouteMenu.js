@@ -63,7 +63,7 @@ function formatRouteInfo(props) {
         res.push(' Cost: ');
         res.push(props.overall.routingTime.toFixed(0));
     }
-    return <>{res}</>;
+    return <span id="se-route-info">{res}</span>;
 }
 
 function formatLatLon(pnt) {
@@ -144,7 +144,12 @@ export default function RouteMenu() {
             {openSettings && (
                 <RouteProfileSettingsDialog key="routesettingsdialog" setOpenSettings={setOpenSettings} useDev={true} />
             )}
-            <MenuItem key="routeTop" sx={{ mb: 1 }} onClick={() => setOpen(!open)}>
+            <MenuItem
+                id={open ? 'se-hide-menu-route' : 'se-show-menu-route'}
+                key="routeTop"
+                sx={{ mb: 1 }}
+                onClick={() => setOpen(!open)}
+            >
                 <ListItemIcon>
                     <Directions fontSize="small" />
                 </ListItemIcon>
@@ -157,13 +162,14 @@ export default function RouteMenu() {
                     <FormControl fullWidth>
                         <InputLabel id="route-mode-label">{`Route profile (${type})`}</InputLabel>
                         <Select
+                            id="se-route-select"
                             labelid="route-mode-label"
                             label={`Route profile (${type})`}
                             value={profile}
                             onChange={(e) => ctx.routeRouter.onRouterProfileSelected({ profile: e.target.value })}
                         >
                             {ctx.routeRouter.listProfiles().map(({ key, name, icon }) => (
-                                <MenuItem key={key} value={key}>
+                                <MenuItem id={'se-route-profile-' + key} key={key} value={key}>
                                     <Box display="flex" width="100%" alignItems="center">
                                         <Box display="flex" width={25} justifyContent="center" alignItems="center">
                                             {icon}
@@ -213,6 +219,7 @@ export default function RouteMenu() {
                             onChange={(e) => {
                                 setStart(e.target.value);
                             }}
+                            id="se-route-start-point"
                             labelid="start-point-label"
                             variant="filled"
                             label="Start"
@@ -222,6 +229,7 @@ export default function RouteMenu() {
                     </FormControl>
                     <IconButton
                         sx={{ ml: 1 }}
+                        id="se-clear-route-start-point"
                         onClick={() => {
                             setStart('');
                             ctx.setStartPoint(null);
@@ -265,6 +273,7 @@ export default function RouteMenu() {
                             onChange={(e) => {
                                 setEnd(e.target.value);
                             }}
+                            id="se-route-end-point"
                             labelid="end-point-label"
                             variant="filled"
                             label="End"
@@ -274,6 +283,7 @@ export default function RouteMenu() {
                     </FormControl>
                     <IconButton
                         sx={{ ml: 1 }}
+                        id="se-clear-route-end-point"
                         onClick={() => {
                             setEnd('');
                             ctx.setEndPoint(null);

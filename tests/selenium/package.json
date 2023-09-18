@@ -4,11 +4,12 @@
   "main": "main.js",
   "license": "ISC",
   "scripts": {
+    "#USAGE": "echo yarn test --help",
     "lint": "eslint src/*.mjs src/**/*.mjs",
+    "format": "prettier --write './**/*.mjs' --config ./.prettierrc",
     "test": "node src/main.mjs 'http://localhost:3000/map/#17/50.45009/30.52340'",
     "test:main": "node src/main.mjs 'https://osmand.net/map/#17/50.45009/30.52340'",
-    "test:test": "node src/main.mjs 'https://test.osmand.net/map/#17/50.45009/30.52340'",
-    "#USAGE": "echo options: [--mobile] [--headless] [--stop] [--verbose] [--noexit] [tests]"
+    "test:test": "node src/main.mjs 'https://test.osmand.net/map/#17/50.45009/30.52340'"
   },
   "dependencies": {
     "canvas": "^2.11.2",

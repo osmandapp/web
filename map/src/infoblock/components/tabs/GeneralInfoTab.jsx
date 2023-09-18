@@ -6,7 +6,6 @@ import contextMenuStyles from '../../styles/ContextMenuStyles';
 import DeleteTrackDialog from '../track/dialogs/DeleteTrackDialog';
 import GpxGraphProvider from '../graph/GpxGraphProvider';
 import GeneralInfo from '../track/GeneralInfo';
-import DescTrackDialog from '../track/dialogs/DescTrackDialog';
 import { hasSegments, isEmptyTrack } from '../../../context/TracksManager';
 import { Checkbox, FormControlLabel } from '@mui/material/';
 import { makeStyles } from '@material-ui/core/styles';
@@ -43,7 +42,6 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
     const classes = useStyles();
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
-    const [openDescDialog, setOpenDescDialog] = useState(false);
 
     function addToCollection() {
         if (!ctx.gpxCollection.find((name) => name === ctx.selectedGpxFile.name)) {
@@ -55,7 +53,7 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
     return (
         <>
             <Box>
-                <GeneralInfo width={ctx.infoBlockWidth} setOpenDescDialog={setOpenDescDialog} />
+                <GeneralInfo width={ctx.infoBlockWidth} />
                 {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
                     <>
                         {!isEmptyTrack(ctx.selectedGpxFile) && <Divider sx={{ mt: '3px', mb: '12px' }} />}
@@ -142,7 +140,6 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                     setShowInfoBlock={setShowInfoBlock}
                 />
             )}
-            {openDescDialog && <DescTrackDialog dialogOpen={openDescDialog} setDialogOpen={setOpenDescDialog} />}
         </>
     );
 }

@@ -1,45 +1,40 @@
 'use strict';
 
-import chalk from 'chalk';
 import compareImages from 'resemblejs/compareImages.js';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 
-import { driver, stop, verbose, mobile, headless, noexit, tests, parseArgs, prepareDriver } from './options.mjs';
-
-parseArgs();
+import { failed, loggerRun, loggerPass, loggerFail, loggerTitle, loggerReport } from './logger.mjs';
+import { driver, cycle, stop, mobile, headless, noexit, tests, parseArgs, prepareDriver } from './options.mjs';
 
 console.debug = () => {}; // suppress selenium's console.debug
 
-let failed = 0;
-let successful = 0;
+parseArgs();
 
-console.log();
-await cycleTests();
+loggerTitle();
 
-console.log();
-failed > 0 && console.log(chalk.red('failed', failed));
-successful > 0 && console.log(chalk.green('successful', successful));
+do {
+    await cycleTests();
+    if (failed > 0 && stop) {
+        break;
+    }
+} while (cycle);
 
-console.log();
+await loggerReport();
+
 process.exitCode = failed > 0 ? 1 : 0;
 
 async function cycleTests() {
     for (let i = 0; i < tests.length; i++) {
-        await runTest({ file: tests[i], info: `[${i + 1}/${tests.length}]` });
+        await runTest({ file: tests[i], i, total: tests.length });
         if (failed > 0 && stop) {
             break;
         }
     }
 }
 
-async function timer(callback) {
-    const started = Date.now();
-    await callback(); // async
-    return Date.now() - started;
-}
-
-async function runTest({ file, info }) {
-    let runtime = 0;
+async function runTest({ file, i, total }) {
+    let started = Date.now();
+    loggerRun({ file, i, total });
     await (async function () {
         try {
             let error = null;
@@ -49,14 +44,14 @@ async function runTest({ file, info }) {
             const { default: test } = await import('./tests/' + file);
 
             try {
-                runtime += await timer(() => test());
+                await test();
             } catch (e) {
                 error = e;
             }
 
             try {
                 // don't validate screenshot if test was failed with error
-                await manageScreenshot({ file, validate: error === null });
+                await manageScreenshot({ file, error });
             } catch (e) {
                 // test's error is more important than screenshot's
                 error === null && (error = e);
@@ -70,19 +65,17 @@ async function runTest({ file, info }) {
         }
     })().then(
         () => {
-            successful++;
-            console.log(info, file, chalk.bgGreenBright('OK'), Number(runtime / 1000).toFixed(2) + 's');
+            loggerPass({ file, i, total, runtime: Date.now() - started });
         },
         (error) => {
-            failed++;
-            const message = verbose ? error : error.message.replace(/\n.*/g, ''); // keep 1st line
-            console.log(info, file, chalk.bgRedBright('FAILED'), message);
+            loggerFail({ file, i, total, error, runtime: Date.now() - started });
         }
     );
 }
 
-async function manageScreenshot({ file, validate = true }) {
+async function manageScreenshot({ file, error = false }) {
     mkdirSync('screenshots/diff', { recursive: true });
+    mkdirSync('screenshots/failed', { recursive: true });
     mkdirSync('screenshots/latest', { recursive: true });
     mkdirSync('screenshots/trusted', { recursive: true });
 
@@ -92,12 +85,13 @@ async function manageScreenshot({ file, validate = true }) {
     const name = tag + (mobile ? 'mobile-' : '') + (headless ? 'headless-' : '') + file.replaceAll('.mjs', '') + '.png';
 
     const diff = 'screenshots/diff/' + name;
+    const failed = 'screenshots/failed/' + name;
     const latest = 'screenshots/latest/' + name;
     const trusted = 'screenshots/trusted/' + name;
 
-    writeFileSync(latest, ss, { encoding: 'base64' });
+    writeFileSync(error === null ? latest : failed, ss, { encoding: 'base64' });
 
-    if (validate && existsSync(trusted)) {
+    if (error === null && existsSync(trusted)) {
         const options = {
             output: {
                 largeImageThreshold: 0,

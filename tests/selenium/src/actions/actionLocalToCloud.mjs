@@ -2,7 +2,7 @@
 
 import { By } from 'selenium-webdriver';
 
-import { enumerateIds, waitBy, clickBy } from '../lib.mjs';
+import { enclose, waitBy, clickBy, enumerateIds } from '../lib.mjs';
 
 /**
  * Action: actionLocalToCloud({mask = '*'})
@@ -30,6 +30,11 @@ export async function saveToCloud(name) {
     await waitBy(By.id('se-panel-button-edit-cloud-track'));
 
     await clickBy(By.id('se-show-main-menu'));
-    await clickBy(By.id('se-menu-cloud-Tracks'));
-    await waitBy(By.id('se-cloud-track-' + name));
+
+    // se-menu-cloud-Tracks click is unstable
+    // try to chain together inside enclose()
+    await enclose(async () => {
+        await clickBy(By.id('se-menu-cloud-Tracks'), { optional: true });
+        return await waitBy(By.id('se-cloud-track-' + name), { optional: true });
+    });
 }

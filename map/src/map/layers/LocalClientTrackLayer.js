@@ -8,7 +8,6 @@ import _ from 'lodash';
 import EditablePolyline from '../EditablePolyline';
 import EditableMarker from '../EditableMarker';
 import { effectDebouncer, useMutator } from '../../util/Utils';
-import WptMapDialog from '../components/WptMapDialog';
 import AddRoutingToTrackDialog from '../components/AddRoutingToTrackDialog';
 import TracksRoutingCache, {
     syncTrackWithCache,
@@ -18,6 +17,7 @@ import TracksRoutingCache, {
     requestAnalytics,
     debouncer,
 } from '../../context/TracksRoutingCache';
+import WptMapDialog from '../../dialogs/WptMapDialog';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;

@@ -46,7 +46,7 @@ const options = {
     }),
 };
 
-function getWptIcon(point, color, background, icon, folder) {
+export function getWptIcon(point, color, background, icon, folder) {
     let colorBackground =
         color && color !== 'null'
             ? color
