@@ -41,6 +41,7 @@ export default function OsmAndDrawer({ toggleDrawer }) {
             <Toolbar variant="dense">
                 <>
                     <IconButton
+                        id="se-hide-main-menu"
                         size="large"
                         edge="start"
                         color="inherit"

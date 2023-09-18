@@ -61,7 +61,7 @@ const OsmAndMapFrame = () => {
                         <AppBar position="static">
                             <Toolbar variant="dense">
                                 <IconButton
-                                    id={mainMenuOpen ? 'se-hide-main-menu' : 'se-show-main-menu'}
+                                    id={mainMenuOpen ? 'se-main-menu-already-open' : 'se-show-main-menu'}
                                     onClick={toggleMainMenu}
                                     edge="start"
                                     sx={{ mr: 2 }}

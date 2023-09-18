@@ -3,12 +3,11 @@
 // import { strict as assert } from 'node:assert';
 import { Condition, By } from 'selenium-webdriver';
 
-import { driver, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED } from './options.mjs';
+import { driver, debug, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED } from './options.mjs';
 
 // helper
-function isStaleError(e) {
-    return e && e.toString().match(/StaleElementReferenceError/);
-}
+const isStaleError = (e) => e.toString().match(/StaleElementReferenceError/);
+const isNotInteractableError = (e) => e.toString().match(/ElementNotInteractableError/);
 
 /**
  * Lib: enclose(callback, { tag, optional })
@@ -55,6 +54,7 @@ export async function enclose(callback, { tag = 'enclose', optional = false } = 
  * test-ok: optional === true enforces return null in case of any error happens
  */
 export async function waitBy(by, { optional = false } = {}) {
+    debug && console.log('waitBy', by.value || by);
     try {
         return await driver.wait(
             new Condition('waitBy' + by.value, async () => {
@@ -101,23 +101,38 @@ export async function clickBy(by, { optional = false } = {}) {
     const clicker = async () => {
         const element = await waitBy(by, { optional });
         if (element) {
-            await transitionDelay(element); // wait for CSS transition finish
             await classDelay(element, delaysBeforeClick); // class-based delay
-            await driver.actions().move({ origin: element }).click().perform();
+            await transitionDelay(element); // wait for CSS transition finish <Collapse>
+
+            try {
+                await element.click(); // the best way to click
+            } catch (e) {
+                if (isNotInteractableError(e)) {
+                    // worse way, used for non-interactive elements only
+                    console.log('clickBy', by.value || by, 'retry with move');
+                    await driver.actions().move({ origin: element }).click().perform();
+                } else {
+                    throw e;
+                }
+            }
+
             await classDelay(element, delaysAfterClick);
             return element;
         }
         return true; // enclose needs truthy
     };
+    debug && console.log('clickBy', by.value || by);
     return await enclose(clicker, { tag: 'clickBy', optional });
 }
 
 const delaysBeforeClick = {
-    'MuiMenuItem-root': 550,
+    'MuiSelect-select': 550, // <Select> close-transition (after previous click inside Select)
+    'MuiMenuItem-root': 550, // <MenuItem> might be located inside <Collapse> but w/o transition css
 };
 
 const delaysAfterClick = {
-    'MuiSelect-select': 550,
+    'MuiSelect-select': 550, // <Select> open-transition (before next click inside Select)
+    'MuiMenuItem-root': 550, // <MenuItem> might be located inside <Collapse> but w/o transition css
 };
 
 // sleep by max(element-class in delays{})
@@ -141,8 +156,13 @@ async function transitionDelay(element) {
         transition.split(',').forEach((t) => {
             // background-color 0.25s cubic-bezier(0.4 ...
             if (t.trim().match(/^(color|background-color|border-color|box-shadow)/)) {
-                const [, seconds] = t.trim().split(' '); // 'color 0.25s' -> '0.25s'
-                const ms = seconds.replace('s', '') * 1000; // '0.25s' -> 250
+                let ms = 0;
+                const [, delay] = t.trim().split(' '); // '... 0.25s' -> '0.25s'
+                if (delay.includes('ms')) {
+                    ms = delay.replace('ms', ''); // 150ms -> 150
+                } else if (delay.includes('s')) {
+                    ms = delay.replace('s', '') * 1000; // '0.25s' -> 250
+                }
                 ms > 0 && ms > delayMs && (delayMs = ms); // max
             }
         });
@@ -189,6 +209,7 @@ export async function enumerateIds(match) {
 // navigate to #hash (via javascript)
 export async function navigateHash(hash) {
     await driver.executeScript(`window.location.hash = '${hash}'`);
+    await driver.actions().pause(500).perform(); // allow leaflet to move map
 }
 
 async function getValueBy(by) {
@@ -229,9 +250,10 @@ async function matchBy(by, match, getter) {
         if ((typeof match === 'object' && text.match(match)) || text.includes(match)) {
             return text;
         }
+        debug && console.log('matchBy (', match, ') NOT IN (', text, ')');
         return null;
     };
-    return await enclose(validate, { tag: `matchTextBy ${match.toString()}` });
+    return await enclose(validate, { tag: `matchTextBy (${match.toString()})` });
 }
 
 export async function matchTextBy(by, match) {
@@ -240,4 +262,15 @@ export async function matchTextBy(by, match) {
 
 export async function matchValueBy(by, match) {
     return await matchBy(by, match, getValueBy);
+}
+
+export async function sendKeysBy(by, keys) {
+    enclose(
+        async () => {
+            const element = await waitBy(by);
+            await element.sendKeys(keys);
+            return true;
+        },
+        { tag: `sendKeysBy (${by.value || by}) (${keys})` }
+    );
 }

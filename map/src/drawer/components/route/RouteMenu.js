@@ -229,6 +229,7 @@ export default function RouteMenu() {
                     </FormControl>
                     <IconButton
                         sx={{ ml: 1 }}
+                        id="se-clear-route-start-point"
                         onClick={() => {
                             setStart('');
                             ctx.setStartPoint(null);
@@ -282,6 +283,7 @@ export default function RouteMenu() {
                     </FormControl>
                     <IconButton
                         sx={{ ml: 1 }}
+                        id="se-clear-route-end-point"
                         onClick={() => {
                             setEnd('');
                             ctx.setEndPoint(null);
