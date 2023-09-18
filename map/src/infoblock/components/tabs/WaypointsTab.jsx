@@ -1,6 +1,6 @@
-import { useContext, useState, useMemo, useEffect } from 'react';
+import { useContext, useEffect, useMemo, useState } from 'react';
 import AppContext from '../../../context/AppContext';
-import { Alert, Box, Button, IconButton, MenuItem, Typography, Collapse, Switch, Grid, Tooltip } from '@mui/material';
+import { Alert, Box, Button, Collapse, Grid, IconButton, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
 import L from 'leaflet';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import { Cancel, ExpandLess, ExpandMore, KeyboardDoubleArrowDown, KeyboardDoubleArrowUp } from '@mui/icons-material';
@@ -140,7 +140,7 @@ const WaypointRow = ({ point, index, ctx }) => {
         return lines;
     }
 
-    const row = useMemo(() => {
+    return useMemo(() => {
         const allowDelete = ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
         return (
             <MenuItem key={'marker' + index} divider sx={{ px: 1, py: 1 }} onClick={() => showPoint(point)}>
@@ -186,8 +186,6 @@ const WaypointRow = ({ point, index, ctx }) => {
         ctx.currentObjectType,
         mobile,
     ]);
-
-    return row;
 };
 
 export default function WaypointsTab() {
