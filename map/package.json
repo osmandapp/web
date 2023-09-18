@@ -15,6 +15,7 @@
         "@testing-library/react": "^13.3.0",
         "@testing-library/user-event": "^14.2.0",
         "@types/leaflet.awesome-markers": "^2.0.25",
+        "anchorme": "^3.0.5",
         "axios": "^0.27.2",
         "blueimp-md5": "^2.19.0",
         "chart.js": "^4.3.0",
@@ -57,7 +58,7 @@
         "start:fallback": "USE_MAIN_API=yes react-scripts start",
         "build": "react-scripts build",
         "build:staging": "env-cmd -f .env.staging react-scripts build",
-        "test": "react-scripts test",
+        "test": "jest",
         "eject": "react-scripts eject",
         "postinstall": "patch-package",
         "generate:poiicons": "ls public/images/poi-icons-svg | jq -R -s -c 'split(\"\\n\")[:-1]'\n\n > src/generated/poiicons.json",
@@ -79,14 +80,25 @@
     "devDependencies": {
         "@babel/eslint-parser": "^7.22.9",
         "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+        "@babel/preset-env": "^7.22.15",
+        "@babel/preset-react": "^7.22.15",
         "@mui/lab": "^5.0.0-alpha.85",
+        "babel-jest": "^29.7.0",
         "eslint": "^8.44.0",
         "eslint-config-prettier": "^8.8.0",
         "eslint-plugin-prettier": "^5.0.0",
         "eslint-plugin-react": "^7.32.2",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
         "prettier": "^3.0.0",
         "react-devtools": "^4.28.0",
+        "react-test-renderer": "^18.2.0",
         "yarn-upgrade-all": "^0.7.1"
+    },
+    "jest": {
+        "transformIgnorePatterns": [
+            "!node_modules/"
+        ]
     },
     "packageManager": "yarn@3.2.1"
 }

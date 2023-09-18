@@ -16,7 +16,7 @@ import _ from 'lodash';
 import contextMenuStyles from '../../../styles/ContextMenuStyles';
 import { AddPhotoAlternate } from '@mui/icons-material';
 
-export default function DescTrackDialog({ dialogOpen, setDialogOpen }) {
+export default function DescTrackDialog({ dialogOpen, setDialogOpen, desc }) {
     const ctx = useContext(AppContext);
     const styles = contextMenuStyles();
 
@@ -38,7 +38,6 @@ export default function DescTrackDialog({ dialogOpen, setDialogOpen }) {
 
     useEffect(() => {
         if (dialogOpen) {
-            const desc = ctx.selectedGpxFile?.metaData?.desc;
             if (desc) {
                 setDescription(desc);
                 setState(EditorState.createWithContent(ContentState.createFromBlockArray(convertFromHTML(desc))));
