@@ -43,10 +43,13 @@ export default async function test() {
 
 async function validatePanelButtons(ids) {
     await clickBy(By.id('se-hide-main-menu'));
-    await enclose(async () => {
-        const buttons = await enumerateIds('se-panel-button-');
-        return JSON.stringify(ids.sort()) === JSON.stringify(buttons.sort());
-    });
+    await enclose(
+        async () => {
+            const buttons = await enumerateIds('se-panel-button-');
+            return JSON.stringify(ids.sort()) === JSON.stringify(buttons.sort());
+        },
+        { tag: 'validatePanelButtons' }
+    );
     await clickBy(By.id('se-show-main-menu'));
 }
 
