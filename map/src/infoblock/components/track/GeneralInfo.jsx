@@ -6,6 +6,7 @@ import TracksManager, {
     isEmptyTrack,
     applySrtmElevation,
     eligibleToApplySrtm,
+    prepareDesc,
 } from '../../../context/TracksManager';
 import { prepareFileName } from '../../../util/Utils';
 import {
@@ -34,8 +35,9 @@ import {
     Speed,
     Terrain,
 } from '@mui/icons-material';
+import DescTrackDialog from './dialogs/DescTrackDialog';
 
-export default function GeneralInfo({ width, setOpenDescDialog }) {
+export default function GeneralInfo({ width }) {
     const styles = contextMenuStyles();
     const ctx = useContext(AppContext);
 
@@ -52,10 +54,13 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     const [elevation, setElevation] = useState('');
     const [elevationSRTM, setElevationSRTM] = useState('');
     const [loadingSrtm, setLoadingSrtm] = useState(false);
+    const [openDescDialog, setOpenDescDialog] = useState(false);
 
     const DESC_MAX_HEIGHT = 150;
     const [descHeight, setDescHeight] = useState(0);
     const ref = useRef(null);
+    const preparedDesc = prepareDesc(ctx.selectedGpxFile?.metaData?.desc);
+
     useEffect(() => {
         if (ref?.current) {
             setDescHeight(ref.current.clientHeight);
@@ -272,7 +277,8 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                         }}
                     >
                         <div
-                            style={{ direction: 'ltr', marginLeft: '10px', marginTop: '-15px' }}
+                            id="se-infoblock-desc"
+                            style={{ direction: 'ltr', marginLeft: '10px' }}
                             dangerouslySetInnerHTML={{ __html: html }}
                         />
                     </Typography>
@@ -297,7 +303,7 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
                         Show more...
                     </Link>
                 )}
-                <Divider sx={{ mt: '6px', mb: '12px' }} light />
+                {/*<Divider sx={{ mt: '6px', mb: '12px' }} light />*/}
             </ListItemText>
         );
     };
@@ -470,146 +476,153 @@ export default function GeneralInfo({ width, setOpenDescDialog }) {
     };
 
     return (
-        <Box minWidth={width} maxWidth={width}>
-            <Typography className={styles.info} variant="subtitle1" color="inherit">
-                <div>{ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK ? EditName() : NoEditName()}</div>
-                <div>
-                    {ctx.selectedGpxFile?.metaData?.desc
-                        ? Description({ desc: ctx.selectedGpxFile?.metaData?.desc })
-                        : ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
-                              <>
-                                  <Link
-                                      href="#"
-                                      color="inherit"
-                                      sx={{ fontSize: '0.875rem' }}
-                                      onClick={() => {
-                                          setOpenDescDialog(true);
-                                      }}
-                                  >
-                                      • Add description
-                                  </Link>
-                              </>
-                          )}
-                </div>
-                {ctx.loginUser &&
-                    ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
-                    isEmptyTrack(ctx.selectedGpxFile) === false && (
-                        <>
-                            <Divider light sx={{ mt: 1, mb: 2 }} />
-                            <Button
-                                id="se-infoblock-button-save-to-cloud"
-                                variant="contained"
-                                sx={{ ml: '-0.5px !important' }}
-                                className={styles.button}
-                                onClick={() => {
-                                    ctx.selectedGpxFile.save = true;
-                                    ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-                                }}
-                            >
-                                <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
-                                Save to Cloud
-                            </Button>
-                            {ctx.createTrack?.cloudAutoSave && (
+        <>
+            <Box minWidth={width} maxWidth={width}>
+                <Typography className={styles.info} variant="subtitle1" color="inherit">
+                    <div>
+                        {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK ? EditName() : NoEditName()}
+                    </div>
+                    <div>
+                        {preparedDesc
+                            ? Description({ desc: preparedDesc })
+                            : ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                                  <>
+                                      <Link
+                                          href="#"
+                                          color="inherit"
+                                          sx={{ fontSize: '0.875rem' }}
+                                          onClick={() => {
+                                              setOpenDescDialog(true);
+                                          }}
+                                      >
+                                          • Add description
+                                      </Link>
+                                  </>
+                              )}
+                    </div>
+                    {ctx.loginUser &&
+                        ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
+                        isEmptyTrack(ctx.selectedGpxFile) === false && (
+                            <>
+                                <Divider light sx={{ mt: 1, mb: 2 }} />
                                 <Button
+                                    id="se-infoblock-button-save-to-cloud"
                                     variant="contained"
+                                    sx={{ ml: '-0.5px !important' }}
                                     className={styles.button}
                                     onClick={() => {
                                         ctx.selectedGpxFile.save = true;
                                         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-                                        ctx.setCreateTrack({ ...ctx.createTrack, cloudAutoSave: false });
                                     }}
                                 >
                                     <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
-                                    Save as
+                                    Save to Cloud
                                 </Button>
-                            )}
+                                {ctx.createTrack?.cloudAutoSave && (
+                                    <Button
+                                        variant="contained"
+                                        className={styles.button}
+                                        onClick={() => {
+                                            ctx.selectedGpxFile.save = true;
+                                            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+                                            ctx.setCreateTrack({ ...ctx.createTrack, cloudAutoSave: false });
+                                        }}
+                                    >
+                                        <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
+                                        Save as
+                                    </Button>
+                                )}
+                                <Divider light sx={{ mt: 2, mb: 1 }} />
+                            </>
+                        )}
+                    {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && (
+                        <>
+                            <Divider light sx={{ mt: 1, mb: 2 }} />
+                            <Button
+                                id="se-infoblock-button-edit-cloud-track"
+                                variant="contained"
+                                sx={{ ml: '-0.5px !important' }}
+                                className={styles.button}
+                                onClick={() => TracksManager.handleEditCloudTrack(ctx)}
+                            >
+                                <Create fontSize="small" sx={{ mr: '7px' }} />
+                                Edit Track
+                            </Button>
                             <Divider light sx={{ mt: 2, mb: 1 }} />
                         </>
                     )}
-                {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && (
+                    {points !== 0 && (
+                        <MenuItem sx={{ ml: -2 }}>
+                            <ListItemIcon>
+                                <Commit fontSize="small" />
+                            </ListItemIcon>
+                            <ListItemText onClick={develRefreshLayers}>
+                                <Typography sx={{ ml: 1 }} variant="body2" noWrap>
+                                    {`Points: ${points}`}
+                                    {pointsTotal > 0 && pointsTotal !== points && ` (${pointsTotal})`}
+                                    {ctx.processRouting ? <CircularProgress size={13} sx={{ ml: 1 }} /> : <></>}
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    )}
+                    {distance > 0 && (
+                        <MenuItem sx={{ ml: -2, mt: -1 }}>
+                            <ListItemIcon>
+                                <RouteOutlined fontSize="small" />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography sx={{ ml: 1 }} variant="body2" noWrap>
+                                    {`Distance: ${distance} km`}
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    )}
+                    {timeRange && (
+                        <MenuItem sx={{ ml: -2, mt: -1 }}>
+                            <ListItemIcon>
+                                <AccessTime fontSize="small" />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography sx={{ ml: 1 }} variant="body2" noWrap>
+                                    {`Time: ${timeRange}`}
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    )}
+                    {speed && (
+                        <MenuItem sx={{ ml: -2, mt: -1 }}>
+                            <ListItemIcon>
+                                <Speed fontSize="small" />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography sx={{ ml: 1 }} variant="body2" noWrap>
+                                    {`Speed (min/avg/max): ${speed}`}
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    )}
+                    {timeMoving && (
+                        <MenuItem sx={{ ml: -2, mt: -1 }}>
+                            <ListItemIcon>
+                                <AvTimer fontSize="small" />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography sx={{ ml: 1 }} variant="body2" noWrap>
+                                    {`Time moving: ${timeMoving}`}
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    )}
+                </Typography>
+                {hasSegments(ctx.selectedGpxFile) && (
                     <>
-                        <Divider light sx={{ mt: 1, mb: 2 }} />
-                        <Button
-                            id="se-infoblock-button-edit-cloud-track"
-                            variant="contained"
-                            sx={{ ml: '-0.5px !important' }}
-                            className={styles.button}
-                            onClick={() => TracksManager.handleEditCloudTrack(ctx)}
-                        >
-                            <Create fontSize="small" sx={{ mr: '7px' }} />
-                            Edit Track
-                        </Button>
-                        <Divider light sx={{ mt: 2, mb: 1 }} />
+                        <Elevation />
                     </>
                 )}
-                {points !== 0 && (
-                    <MenuItem sx={{ ml: -2 }}>
-                        <ListItemIcon>
-                            <Commit fontSize="small" />
-                        </ListItemIcon>
-                        <ListItemText onClick={develRefreshLayers}>
-                            <Typography sx={{ ml: 1 }} variant="body2" noWrap>
-                                {`Points: ${points}`}
-                                {pointsTotal > 0 && pointsTotal !== points && ` (${pointsTotal})`}
-                                {ctx.processRouting ? <CircularProgress size={13} sx={{ ml: 1 }} /> : <></>}
-                            </Typography>
-                        </ListItemText>
-                    </MenuItem>
-                )}
-                {distance > 0 && (
-                    <MenuItem sx={{ ml: -2, mt: -1 }}>
-                        <ListItemIcon>
-                            <RouteOutlined fontSize="small" />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography sx={{ ml: 1 }} variant="body2" noWrap>
-                                {`Distance: ${distance} km`}
-                            </Typography>
-                        </ListItemText>
-                    </MenuItem>
-                )}
-                {timeRange && (
-                    <MenuItem sx={{ ml: -2, mt: -1 }}>
-                        <ListItemIcon>
-                            <AccessTime fontSize="small" />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography sx={{ ml: 1 }} variant="body2" noWrap>
-                                {`Time: ${timeRange}`}
-                            </Typography>
-                        </ListItemText>
-                    </MenuItem>
-                )}
-                {speed && (
-                    <MenuItem sx={{ ml: -2, mt: -1 }}>
-                        <ListItemIcon>
-                            <Speed fontSize="small" />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography sx={{ ml: 1 }} variant="body2" noWrap>
-                                {`Speed (min/avg/max): ${speed}`}
-                            </Typography>
-                        </ListItemText>
-                    </MenuItem>
-                )}
-                {timeMoving && (
-                    <MenuItem sx={{ ml: -2, mt: -1 }}>
-                        <ListItemIcon>
-                            <AvTimer fontSize="small" />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography sx={{ ml: 1 }} variant="body2" noWrap>
-                                {`Time moving: ${timeMoving}`}
-                            </Typography>
-                        </ListItemText>
-                    </MenuItem>
-                )}
-            </Typography>
-            {hasSegments(ctx.selectedGpxFile) && (
-                <>
-                    <Elevation />
-                </>
+            </Box>
+            {openDescDialog && (
+                <DescTrackDialog dialogOpen={openDescDialog} setDialogOpen={setOpenDescDialog} desc={preparedDesc} />
             )}
-        </Box>
+        </>
     );
 }
