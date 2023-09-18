@@ -129,7 +129,7 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                         setOpenDeleteDialog(true);
                     }}
                 >
-                    Delete Track
+                    {ctx.createTrack?.cloudAutoSave ? 'Discard changes' : 'Delete Track'}
                 </Button>
                 <RoadAttributesGraphProvider width={ctx.infoBlockWidth} />
             </Box>
