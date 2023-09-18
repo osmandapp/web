@@ -367,7 +367,11 @@ export default function GpxGraph({
             },
             zoom: {
                 limits: {
-                    x: { min: data[0][xAxis], max: data[data.length - 1][xAxis] },
+                    x: {
+                        min: data[0][xAxis],
+                        max: data[data.length - 1][xAxis],
+                        minRange: 0.1,
+                    },
                 },
                 zoom: {
                     wheel: {
