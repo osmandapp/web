@@ -19,13 +19,13 @@
 
 arch -arm64 brew install pkg-config cairo pango libpng jpeg giflib librsvg
 
-2) Install canvas package (now it refers to just installed packages):
+2) Install base packages with yarn (incl. broken canvas):
 
-cd tests/selenium && npm install canvas
+yarn
 
-3) Install rest of dependences:
+3) Rebuild canvas with npm (using installed brew-libs):
 
-yarn && yarn lint
+npm rebuild canvas
 
 4) Play with tests:
 
@@ -33,3 +33,21 @@ yarn test
 yarn test --mobile
 yarn test --headless
 yarn test --headless --mobile
+
+# Jenkins setup @ creator (proposal)
+
+1) bind jenkins' home directory within /home (original directory kept as is)
+
+mkdir -p /home/jenkins
+mount --bind /var/lib/jenkins /home/jenkins
+usermod -d /home/jenkins jenkins # change home directory
+
+2) test jenkins jobs, if success, modify /etc/fstab:
+
+/var/lib/jenkins /home/jenkins none defaults,bind 0 0
+
+3) if failed, get back changes:
+
+usermod -d /var/lib/jenkins jenkins
+umount /home/jenkins
+rmdir /home/jenkins
