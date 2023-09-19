@@ -9,7 +9,7 @@ async function userRegister(username, setEmailError, setState) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: username }),
+        body: JSON.stringify({ username: username.toLowerCase() }),
     });
     if (await isRequestOk(response, setEmailError)) {
         setState('register-verify');
@@ -21,7 +21,7 @@ async function userActivate(ctx, username, pwd, token, setEmailError, handleClos
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/activate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: username, password: pwd, token: token }),
+        body: JSON.stringify({ username: username.toLowerCase(), password: pwd, token: token }),
     });
     if (await isRequestOk(response, setEmailError)) {
         ctx.setLoginUser(username);
@@ -35,7 +35,7 @@ async function userLogin(ctx, username, pwd, setEmailError, handleClose) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: username, password: pwd }),
+        body: JSON.stringify({ username: username.toLowerCase(), password: pwd }),
     });
     if (await isRequestOk(response, setEmailError)) {
         setEmailError('');
@@ -49,7 +49,7 @@ async function userLogout(ctx, username, setEmailError, handleClose, setState) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/logout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: username }),
+        body: JSON.stringify({ username: username.toLowerCase() }),
     });
     if (await isRequestOk(response, setEmailError)) {
         setState('login');
@@ -62,7 +62,7 @@ async function userLogout(ctx, username, setEmailError, handleClose, setState) {
 async function deleteAccount(userEmail, code, setEmailError, setAccountDeleted) {
     if (isValidEmail(userEmail)) {
         const data = {
-            username: userEmail,
+            username: userEmail.toLowerCase(),
             password: null,
             token: code,
         };
@@ -110,7 +110,7 @@ async function isRequestOk(response, setEmailError) {
 
 async function sendCode(email, action, setEmailError) {
     const data = {
-        email: email,
+        email: email.toLowerCase(),
         action: action,
     };
     const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/send-code`, data, {
@@ -142,7 +142,7 @@ async function confirmCode(email, code, setEmailError) {
 
 async function changeEmail(email, token, setEmailError) {
     const data = {
-        username: email,
+        username: email.toLowerCase(),
         password: null,
         token: token,
     };
