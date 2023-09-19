@@ -88,7 +88,7 @@ export default function LocalTrackGroup() {
 
     return (
         <div className={styles.drawerItem}>
-            <MenuItem sx={{ ml: 3 }} divider onClick={() => setLocalGpxOpen(!localGpxOpen)}>
+            <MenuItem sx={{ ml: 3, mb: 1 }} divider onClick={() => setLocalGpxOpen(!localGpxOpen)}>
                 <ListItemIcon>
                     <Folder fontSize="small" sx={{ mb: '4px' }} />
                 </ListItemIcon>
@@ -129,36 +129,40 @@ export default function LocalTrackGroup() {
                             return <LocalTrackItem key={'localtrack-' + track.name} track={track} />;
                         })}
                 </div>
-                <MenuItem disableRipple={true}>
-                    <Grid container spacing={3}>
-                        <Grid item xs={6}>
-                            <label htmlFor="se-upload-gpx">
-                                <StyledInput
-                                    accept=".gpx"
-                                    id="se-upload-gpx"
-                                    multiple
-                                    type="file"
-                                    onChange={fileSelected(ctx)}
-                                />
-                                <Button className={styles.button} variant="contained" component="span" sx={{ ml: 3 }}>
-                                    Upload
-                                </Button>
-                            </label>
-                        </Grid>
-                        <Grid item xs={6}>
-                            {
-                                <Button
-                                    className={styles.button}
-                                    variant="contained"
-                                    component="span"
-                                    onClick={() => TracksManager.createTrack(ctx)}
-                                >
-                                    Create
-                                </Button>
-                            }
-                        </Grid>
+                <Grid container spacing={3}>
+                    <Grid item xs={6}>
+                        {
+                            <Button
+                                className={styles.button}
+                                sx={{ ml: 3, fontSize: 11, textAlign: 'center' }}
+                                variant="contained"
+                                component="span"
+                                onClick={() => TracksManager.createTrack(ctx)}
+                            >
+                                Create new route
+                            </Button>
+                        }
                     </Grid>
-                </MenuItem>
+                    <Grid item xs={6}>
+                        <label htmlFor="se-upload-gpx">
+                            <StyledInput
+                                accept=".gpx"
+                                id="se-upload-gpx"
+                                multiple
+                                type="file"
+                                onChange={fileSelected(ctx)}
+                            />
+                            <Button
+                                className={styles.button}
+                                variant="contained"
+                                component="span"
+                                sx={{ fontSize: 11 }}
+                            >
+                                Import track
+                            </Button>
+                        </label>
+                    </Grid>
+                </Grid>
             </Collapse>
         </div>
     );
