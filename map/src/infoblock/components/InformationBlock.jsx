@@ -217,7 +217,7 @@ export default function InformationBlock({
             {showInfoBlock && openInfoBlock() && (
                 <>
                     <Box anchor={'right'} sx={{ alignContent: 'flex-end', height: 'auto', width: getWidth() }}>
-                        <div>
+                        <div id="se-infoblock-all">
                             {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
                             {tabsObj &&
                                 tabsObj.tabList.length > 0 &&

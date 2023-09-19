@@ -125,6 +125,7 @@ const PanelButtons = ({
                             <>
                                 <Tooltip title="Cloud track" arrow placement={tooltipOrientation}>
                                     <IconButton
+                                        id="se-panel-button-edit-cloud-icon"
                                         variant="contained"
                                         type="button"
                                         onClick={() =>
@@ -153,6 +154,7 @@ const PanelButtons = ({
                         {ctx.createTrack && (
                             <Tooltip title="Change profile" arrow placement={tooltipOrientation}>
                                 <IconButton
+                                    id="se-panel-button-change-profile"
                                     sx={{ width: 40, height: 40 }}
                                     variant="contained"
                                     type="button"
@@ -192,6 +194,7 @@ const PanelButtons = ({
                             <Tooltip title="Undo" arrow placement={tooltipOrientation}>
                                 <span style={styleSpan}>
                                     <IconButton
+                                        id="se-panel-button-undo"
                                         variant="contained"
                                         type="button"
                                         disabled={isUndoDisabled}
@@ -210,6 +213,7 @@ const PanelButtons = ({
                             <Tooltip title="Redo" arrow placement={tooltipOrientation}>
                                 <span style={styleSpan}>
                                     <IconButton
+                                        id="se-panel-button-redo"
                                         variant="contained"
                                         type="button"
                                         disabled={isRedoDisabled}
@@ -229,6 +233,7 @@ const PanelButtons = ({
                                 <Tooltip title="Download GPX" arrow placement={tooltipOrientation}>
                                     <span style={styleSpan}>
                                         <IconButton
+                                            id="se-panel-button-download-gpx"
                                             variant="contained"
                                             type="button"
                                             disabled={isEmptyTrack(ctx.selectedGpxFile)}
@@ -243,6 +248,7 @@ const PanelButtons = ({
                             ctx.currentObjectType !== ctx.OBJECT_TYPE_POI && (
                                 <Tooltip title="Delete" arrow placement={tooltipOrientation}>
                                     <IconButton
+                                        id="se-panel-button-delete-track"
                                         sx={{ mb: '1px' }}
                                         variant="contained"
                                         type="button"
@@ -268,6 +274,7 @@ const PanelButtons = ({
                         )}
                         <Tooltip title="Close" arrow placement={tooltipOrientation}>
                             <IconButton
+                                id="se-panel-button-close-track"
                                 variant="contained"
                                 type="button"
                                 onClick={() => {

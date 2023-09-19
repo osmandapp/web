@@ -506,6 +506,7 @@ export default function GeneralInfo({ width }) {
                             <>
                                 <Divider light sx={{ mt: 1, mb: 2 }} />
                                 <Button
+                                    id="se-infoblock-button-save-to-cloud"
                                     variant="contained"
                                     sx={{ ml: '-0.5px !important' }}
                                     className={styles.button}
@@ -538,6 +539,7 @@ export default function GeneralInfo({ width }) {
                         <>
                             <Divider light sx={{ mt: 1, mb: 2 }} />
                             <Button
+                                id="se-infoblock-button-edit-cloud-track"
                                 variant="contained"
                                 sx={{ ml: '-0.5px !important' }}
                                 className={styles.button}

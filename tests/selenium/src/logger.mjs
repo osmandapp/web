@@ -10,7 +10,8 @@ let started = Date.now();
 
 const SPACER = 70;
 const time = (ms) => Number(ms / 1000).toFixed(2) + 's';
-const sequence = ({ i, total }) => `[${i + 1}/${total}]`;
+const sequence = ({ i, total }) => `[${pad(i + 1, total)}/${total}]`;
+const pad = (n, max) => n.toString().padStart(max.toString().length - n.toString().length + 1, '0');
 
 export function loggerRun({ i, total, file }) {
     const seq = sequence({ i, total });
