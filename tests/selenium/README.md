@@ -34,20 +34,12 @@ yarn test --mobile
 yarn test --headless
 yarn test --headless --mobile
 
-# Jenkins setup @ creator (proposal)
+# Ubuntu 22.04 Chromium setup without snap
 
-1) bind jenkins' home directory within /home (original directory kept as is)
+*https://www.linuxcapable.com/install-chromium-browser-on-ubuntu-linux/#Section-2-Install-Chromium-with-Flatpak-and-Flathub
 
-mkdir -p /home/jenkins
-mount --bind /var/lib/jenkins /home/jenkins
-usermod -d /home/jenkins jenkins # change home directory
+sudo add-apt-repository ppa:xtradeb/apps -y
 
-2) test jenkins jobs, if success, modify /etc/fstab:
+sudo apt update
 
-/var/lib/jenkins /home/jenkins none defaults,bind 0 0
-
-3) if failed, get back changes:
-
-usermod -d /var/lib/jenkins jenkins
-umount /home/jenkins
-rmdir /home/jenkins
+sudo apt install chromium
