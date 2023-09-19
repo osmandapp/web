@@ -55,7 +55,7 @@ export default function Render() {
         'Watermill' : 'manmade/manmade_man_made_watermill',
         'Water tap' : 'manmade/manmade_man_made_water_tap',
         'Water tower' : 'manmade/manmade_man_made_water_tower',
-        'Weightbridge' : 'manmade/manmade_amenity_weightbridge',
+        'Weighbridge' : 'manmade/manmade_amenity_weighbridge',
         'Windmill' : 'manmade/manmade_man_made_windmill',
         'Water point' : 'manmade/manmade_amenity_water_point',
         'Windsock' : 'manmade/manmade_aeroway_windsock',

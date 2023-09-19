@@ -28,6 +28,7 @@ export default function Render() {
         'Siren' : 'emergency/emergency_emergency_siren',
         'Lifeguard base' : 'emergency/emergency_emergency_lifeguard',
         'Lifeguard tower' : 'emergency/emergency_emergency_lifeguard_lifeguard_tower',
+        'Emergency bay' : 'emergency/emergency_highway_emergency_bay',
     }});
 
 }
