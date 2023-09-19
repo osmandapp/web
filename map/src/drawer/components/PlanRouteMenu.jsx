@@ -1,10 +1,11 @@
 import { Button, Collapse, Grid, ListItemIcon, ListItemText, MenuItem } from '@mui/material';
 import { ExpandLess, ExpandMore, Insights } from '@mui/icons-material';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import TracksManager from '../../context/TracksManager';
 import drawerStyles from '../styles/DrawerStyles';
 import { styled } from '@mui/material/styles';
 import AppContext from '../../context/AppContext';
+import { useMutator } from '../../util/Utils';
 
 export default function PlanRouteMenu() {
     const styles = drawerStyles();
@@ -15,15 +16,30 @@ export default function PlanRouteMenu() {
     const ctx = useContext(AppContext);
 
     const [open, setOpen] = useState(false);
+    const [uploadedFiles, mutateUploadedFiles] = useMutator({});
+
+    useEffect(() => {
+        for (const file in uploadedFiles) {
+            TracksManager.addTrack({
+                ctx,
+                overwrite: false,
+                track: uploadedFiles[file].track,
+                selected: uploadedFiles[file].selected,
+            });
+            mutateUploadedFiles((o) => delete o[file]);
+            break; // limit 1 file per 1 render
+        }
+    }, [uploadedFiles]);
 
     const fileSelected = () => async (e) => {
+        const selected = e.target.files.length === 1;
         Array.from(e.target.files).forEach((file) => {
             const reader = new FileReader();
             reader.addEventListener('load', async () => {
                 const track = await TracksManager.getTrackData(file);
                 if (track) {
                     track.name = file.name;
-                    TracksManager.addTrack({ ctx, track, overwrite: false });
+                    mutateUploadedFiles((o) => (o[file.name] = { track, selected }));
                 }
             });
             reader.readAsText(file);
