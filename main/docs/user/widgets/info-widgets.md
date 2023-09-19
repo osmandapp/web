@@ -117,7 +117,22 @@ The widget shows the current speed detected by the GPS sensor.
 
 ## Average speed 
 
-![Average speed widgets](@site/static/img/widgets/average_speed_widget.png)  
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Average speed widgets](@site/static/img/widgets/average_speed_widget.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Elevation widget iOS](@site/static/img/widgets/average_speed_widget_ios_2.png) 
+
+</TabItem>
+
+</Tabs>   
+  
 
 This widget shows your average speed for a selected time interval and does not require any other features such as track recording or navigation. You can easily use it to check if your average speed is in line with highway speed limits, or record your average speed for the last 5-15 minutes of cycling.    
 
@@ -141,7 +156,7 @@ The average speed is calculated for a given time interval according to your sele
 
 <TabItem value="ios" label="iOS">
 
-![Average speed widgets](@site/static/img/widgets/average_speed_widget_ios.png) 
+![Average speed widgets](@site/static/img/widgets/average_speed_widget_ios_1.png)  ![Average speed widgets](@site/static/img/widgets/average_speed_widget_ios_3.png)
 
 </TabItem>
 
@@ -341,7 +356,7 @@ Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widget
 - If a sensor has not been added or you need to edit the widget, tap the required widget field in the list and then on *Settings*, or directly on the *Settings icon* in the list.
 - The data displayed in widgets can be recorded using the [Trip recording plugin](../plugins/trip-recording.md#recording-settings).
 
-![External sensor widgets Android](@site/static/img/widgets/external-sensors-widgets.png) 
+![External sensor widgets Android](@site/static/img/widgets/external-sensors-widgets_1.png) 
 
 | | |
 |------------|------------|

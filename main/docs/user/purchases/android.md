@@ -47,6 +47,9 @@ For Android devices you can download the free and paid application on the follow
 #### Maps+
 - ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) _Maps+_ is an in-app purchase or a subscription for OsmAnd free version on [Google Play](https://play.google.com/store/apps/details?id=net.osmand), [on Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). All features and the price is the same as for **OsmAnd+**.
 
+#### OsmAnd Start
+- This plan gives you free use of [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) for Favorites, Settings and OSM editing/notes.
+
 #### OsmAnd Pro
 - ![Pro](@site/static/img/svg/pro_icon.svg) _OsmAnd Pro_ is a subscription, available for OsmAnd applications on [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), on [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545), on [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd).
 
@@ -76,7 +79,8 @@ The table shows all the features that are included in the paid and free packages
 | :------ | :------------- | :------------------ | :------------------ | 
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 | Ad-free access | ✔ | ✔ | ✔ |
-| [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | - | - | ✔ |
+| [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | ✔ | ✔ | ✔ |
+| [OsmAnd Start](../personal/osmand-cloud.md#osmand-start) | ✔ | ✔ | - |
 | [3D Relief](../plugins/contour-lines.md#3d-relief) | - | - | ✔ |
 | [Pro Features](#pro-features) | - | - | ✔ |
 | [Unlimited map downloads](../start-with/download-maps.md) | <details><summary>**7 map downloads**</summary>  - Map download or update is meant only download-update of a country (region) map. <br/> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 7 possibilities to download. </details> | ✔ | ✔ |
@@ -113,15 +117,14 @@ At the moment, the Pro subscription has the following features:
 
 |  Pro Feature  | Description   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | backup and restore your data, synchronize data with [OsmAnd web portal](https://www.osmand.net/map) |
-| [Cross-platform](../personal/osmand-cloud.md#cross-platform) | possibility to use OsmAnd Pro on all platforms (Android ← → iOS → Web) with one purchase |
-| [3D Relief](../plugins/contour-lines.md#3d-relief) | allows you to own and observe a scale model of your neighborhood or an whole continent |
-| [OsmAnd Live](../personal/maps.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement |
-| [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map |
-| [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | changing the color and width of the route line during navigation |
-| [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | shows your location on the Elevation graph of the navigation route with additional info  |
-| [Elevation correction(offline)](../map/track-context-menu.md#calculate-offline) | allows you to calculate an altitude graph for your track ([Terrain map](../plugins/contour-lines.md#how-to-download) required for chosen region) |
-
+| [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | Backup and restore your data, synchronize data with [OsmAnd web portal](https://www.osmand.net/map). |
+| [Cross-platform](../personal/osmand-cloud.md#cross-platform) | Possibility to use OsmAnd Pro and OsmAnd Start on all platforms (Android ← → iOS → Web).  |
+| [3D Relief](../plugins/contour-lines.md#3d-relief) | Allows you to have and observe a scale model of your neighborhood or an entire continent. |
+| [OsmAnd Live](../personal/maps.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement. |
+| [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map. |
+| [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changing the color and width of the route line during navigation. |
+| [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | Shows your location on the Elevation graph of the navigation route with additional info.  |
+| [Elevation correction(offline)](../map/track-context-menu.md#calculate-offline) | Allows you to calculate an altitude graph for your track ([Terrain map](../plugins/contour-lines.md#how-to-download) required for chosen region). |
 
 
 ### How to buy

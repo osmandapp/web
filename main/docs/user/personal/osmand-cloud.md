@@ -18,11 +18,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Overview
 
 :::tip subscribe
-&nbsp;<ProFeature/> You need to subscribe to OsmAnd Pro for [Android](../purchases/android.md#osmand-pro) or [iOS](../purchases/ios.md#osmand-pro).  
+&nbsp;<ProFeature/> To get all the benefits of OsmAnd Cloud, subscribe to OsmAnd Pro for [Android](../purchases/android.md#osmand-pro) or [iOS](../purchases/ios.md#osmand-pro).  
 :::
 
 :::note cross-platform
-OsmAnd Cloud is a cloud storage service that is not associated with the Android or iOS versions of the app, or the Web platform, but only with your Pro account.
+OsmAnd Cloud is a cloud storage service that is not associated with the Android or iOS versions of the app, or the Web platform.
 :::
 
 OsmAnd Cloud is the resource you need to save your personal settings and app data. You can use this data on any device available to install the OsmAnd app or when using the desktop app. Any changes you make can be synchronized.     
@@ -30,13 +30,14 @@ OsmAnd Cloud is the resource you need to save your personal settings and app dat
 
 ## Cross-platform
 
-OsmAnd Cloud offers you the ability to back up, restore and use your data on Android devices, iOS devices and the web version. The cross-platform capability of Cloud allows you to transfer profile settings, tracks, favorites, and more between Android and iOS devices. And in the web version, you can plan a route and save it for later use on devices connected to OsmAnd Cloud.  
+OsmAnd Cloud provides the ability to backup, restore and utilize data across Android, iOS devices and the web version. Cloud's cross-platform capabilities allow you to transfer profile [settings](../personal/profiles.md), [tracks](../personal/tracks.md), [favorites](../personal/favorites.md) and more from one device to another. In the web version, you can plan a route and save it for later use on devices connected to OsmAnd Cloud.
 
-The cross-platform capability allows you to use OsmAnd Pro on all platforms *([Android](../purchases/android.md)  ← →  [iOS](../purchases/ios.md)  →  [Web](https://www.osmand.net/map))*. To do this you need to:
+The cross-platform capability allows you to use OsmAnd on all platforms *([Android](../purchases/android.md)  ← →  [iOS](../purchases/ios.md)  →  [Web](https://www.osmand.net/map))*. To do this you need to:
 
 1. Subscribe to OsmAnd Pro. Read more about how to do this for [Android here](../purchases/android.md#how-to-buy), and for [iOS here](../purchases/ios.md#how-to-buy).
-2. Register your [account](#login) on the OsmAnd server.
-3. The registered email will be your login to activate OsmAnd Pro on other platforms.  
+2. You can take advantage of free cloud backup with our *OsmAnd Start* plan for favorites, settings and OSM edits/notes. The cloud storage will be 5 MB.
+3. Register your [account](#login) on the OsmAnd server.
+4. The registered email will be your login to activate OsmAnd Pro or OsmAnd Start on other platforms.  
 
 :::note
 OsmAnd Pro is a subscription with all the features of OsmAnd. Its main advantage is that it is **cross-platform**. This means that you can buy it in one store, for example for Android (Google Play, Amazon, Huawei AppGallery), and launch it on iOS.
@@ -45,8 +46,28 @@ OsmAnd Pro is a subscription with all the features of OsmAnd. Its main advantage
 
 ## Login
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,register_opr_create_new_account"/> / <Translate android="true" ids="register_opr_have_account"/>*  
+
+![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_1.png)  ![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_17.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/> → <Translate ios="true" ids="shared_string_get"/> / <Translate ios="true" ids="register_opr_have_account"/>*
+
+![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_1.png)  ![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_2.png)
+
+</TabItem>
+
+</Tabs>
+
 To be able to back up and restore data, it is necessary to log in.
-- To access OsmAnd Cloud registration or log in to your account, you need to have a [Pro](#cross-platform) subscription. You can check its status in the OsmAnd app *Menu→ Settings → Purchases*.  
+- To access OsmAnd Cloud registration or log in to your account, you need to have a [Pro](#cross-platform) subscription or OsmAnd Start. You can check its status in the OsmAnd app *Menu→ Settings → Purchases*.  
 - Your Cloud account absolutely needs to be registered on the device where the purchase was made.  
 - When you register or log in, you will receive a verification code on your email to confirm it.
 - To sign in to OsmAnd Cloud on other devices, use your Cloud account.    
@@ -61,25 +82,12 @@ If you have problems with the registration of your account:
 Access to your OsmAnd Cloud account is available for one more year after your Pro subscription ends.
 :::
 
-<Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+## OsmAnd Start
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,register_opr_create_new_account"/> / <Translate android="true" ids="register_opr_have_account"/>*  
-
-![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_1.png)  ![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_17.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/> → <Translate ios="true" ids="shared_string_get"/> / <Translate ios="true" ids="cloud_existing_account"/>*
-
-![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_1.png)  ![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_2.png)
-
-</TabItem>
-
-</Tabs>
+:::note
+This plan will soon be available for the iOS version of OsmAnd as well.
+:::
 
 
 ## Last sync
@@ -125,7 +133,7 @@ This section is for editing and managing your OsmAnd Cloud.
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_18.png)  
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/deletion_option.png)  
 
 </TabItem>
 
@@ -205,12 +213,7 @@ This section contains information about which of your accounts is connected to O
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_9-1.png)
 
 
-### Danger zone
-
-The actions you can do in this section of the Settings menu are irreversible and therefore require special attention.
-
-1. **Delete all my data** - You have the option to delete all data previously uploaded to OsmAnd Cloud, including all version history. But there is no way you can restore the deleted data.
-2. **Remove old versions** - You can delete the change history for previously uploaded data. In this case, the current version of the data will be saved on the server, but you will not be able to go back to the previously made changes.
+### Deletion option
 
 <Tabs groupId="operating-systems">
 
@@ -218,7 +221,7 @@ The actions you can do in this section of the Settings menu are irreversible and
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_danger_zone"/>*
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_8.png)   ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_7.png)  
+![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_8.png)   ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_7.png)  
 
 </TabItem>
 
@@ -232,6 +235,14 @@ The actions you can do in this section of the Settings menu are irreversible and
 
 </Tabs>  
 
+The actions you can do in **Danger zone** section of the Settings menu are irreversible and therefore require special attention.
+
+1. **Delete all my data**. You have the option to delete all data previously uploaded to OsmAnd Cloud, including all version history. However, it is not possible to restore deleted data.
+2. **Remove old versions**. You can delete the change history for previously uploaded data. In this case, the current data version will be saved on the server, but it will not be possible to return to the previous changes.
+3. **Delete account** (*Android only*). To delete an account, you need to go through a verification process. A one-time password for confirmation will be sent to your e-mail address registered on OsmAnd Cloud.
+    - All data from OsmAnd Cloud will be deleted. Data on the device remains untouched.
+    - Your account and all account details will be deleted.
+    - Secondary devices will be logged off from OsmAnd Cloud and lose access to paid features.
  
 
 ## List of changes

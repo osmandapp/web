@@ -90,17 +90,16 @@ Data from connected external sensors can be added to the GPX file using the [Tri
 
 ## Widgets
 
-![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid1.png)  ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)  
+![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid_1.png)  ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)  
 
 The [External Sensors widget](../widgets/info-widgets.md#-external-sensors-widgets) is automatically added to the list of widgets when you enable the External Sensors plugin. Before you start your trip, make sure that the widgets are on the screen, and if not, add them using the [Configure Screen](../widgets/configure-screen.md) menu. External Sensors widgets help you track data from your external sensors in real time.  
 
 Use the following path to display the widget on the screen:  
 *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="external_sensor_widgets"/>*   
 
-| Parameter | Description |
-| --- | --- |
-| **<Translate android="true" ids="map_widget_ant_heart_rate"/>** | The heart rate sensor can transmit your heart rate in real time. This is useful for cycling training when you want to track your heart rate to optimize your training efforts. |
-| **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** | Your bike's power sensors measure the power you exert when you pedal. This allows you to analyze and optimize your workouts to improve efficiency and performance. |
-| **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** | Cadence is the number of pedal turns per minute. Cadence sensors help you maintain optimal pedaling speed for efficient cycling. |
-| **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** | Speed sensors provide information about your current speed while cycling. |
-| **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** | Distance sensors measure the distance you travel when you're driving. | 
+1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>**. The heart rate sensor can transmit your heart rate in real time. This is useful for cycling training when you want to track your heart rate to optimize your training efforts. 
+2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>**. Your bike's power sensors measure the power you exert when you pedal. This allows you to analyze and optimize your workouts to improve efficiency and performance. 
+3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>**. Cadence is the number of pedal turns per minute. Cadence sensors help you maintain optimal pedaling speed for efficient cycling.
+4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>**. Speed sensors provide information about your current speed while cycling. 
+5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>**. Distance sensors measure the distance you travel when you're driving.
+6. **<Translate android="true" ids="external_device_characteristic_temperature"/>**. The sensor indicates the temperature. 

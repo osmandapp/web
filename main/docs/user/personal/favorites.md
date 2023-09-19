@@ -578,9 +578,10 @@ You can export Favorites backup files using *[Export](../personal/import-export.
 
 </Tabs>
 
+
 ## Export / Import
 
-OsmAnd provides ample opportunities to create [backups](../personal/import-export.md) of important data for future recovery. Favorites can be [stored](#local-folder) as a separate file in internal/external storage, uploaded to OsmAnd [Cloud](../personal/osmand-cloud#backup-and-restore-for-osmand-pro) (only Pro), or [sent](#favorites-share) to friends using instant messaging programs.  
+OsmAnd provides a wide range of options for [backing up](../personal/import-export.md) important data for [restoring](#local-folder) it later. Favorites can be saved as a separate file in internal and external storage, uploaded to [OsmAnd Cloud](../personal/osmand-cloud.md) (Pro or Start only) or [sent](#favorites-share) to friends using instant messaging programs.
 
 
 ### All Favorites

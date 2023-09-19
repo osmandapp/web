@@ -23,6 +23,9 @@ You can download the app via this link - [OsmAnd Maps on Apple App Store](https:
 #### Maps+ 
 - ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) _Maps+_ is an in-app purchase or a subscription for OsmAnd on [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
+#### OsmAnd Start
+- This plan gives you free use of [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) for Favorites, Settings and OSM editing/notes.
+
 #### OsmAnd Pro 
 - ![Pro](@site/static/img/svg/pro_icon.svg) _OsmAnd Pro_ is a subscription, available for OsmAnd application on [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
@@ -51,7 +54,8 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | :------------- | :------------- | :------------- | :------------- |
 |    |  _App_  |_In-App and subscription_ | _Subscription_ |
 | Ad-free access | ✔ | ✔ | ✔ |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | - | - | ✔ |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | ✔ | ✔ | ✔ |
+| [OsmAnd Start](../personal/osmand-cloud.md#osmand-start) | ✔ | ✔ | - |
 | [Map downloads](../start-with/download-maps.md) |  <details><summary>**5 map downloads <br /> (map update counts as download)**:</summary> <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 5 possibilities to download.</details> | ✔ | ✔ |
 | [Monthly map updates](../personal/maps.md#update-maps) |  <details><summary>**Once a month** <br /> (with 2 days delay):</summary> * limited to 5 downloads (map update counts as download) </details> |  ✔ | ✔ |
 | <p>[Hourly map updates](../personal/maps.md#osmand-live)</p> (1 hour delay) | - | - | ✔ | 
@@ -83,12 +87,11 @@ At the moment, the Pro subscription has the following features:
 
 |  Pro Feature  | Description   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | backup and restore your data, synchronize data with [OsmAnd web portal](https://www.osmand.net/map) |
-| [Cross-platform](../personal/osmand-cloud.md#cross-platform) | possibility to use OsmAnd Pro on all platforms (Android ← → iOS → Web) with one purchase |
-| [OsmAnd Live](../personal/maps.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement |
-| [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map |
-| [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | changing the color and width of the route line during navigation
- |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Backup and restore your data, synchronize data with [OsmAnd web portal](https://www.osmand.net/map). |
+| [Cross-platform](../personal/osmand-cloud.md#cross-platform) | Possibility to use OsmAnd Pro and OsmAnd Start on all platforms (Android ← → iOS → Web). |
+| [OsmAnd Live](../personal/maps.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement. |
+| [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map. |
+| [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changing the color and width of the route line during navigation. |
 
 ### How to buy
 
