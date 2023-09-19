@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import FavoritesMenu from './favorite/FavoritesMenu';
 import SearchResultMenu from './search/SearchResultMenu';
 import { makeStyles } from '@material-ui/core/styles';
+import PlanRouteMenu from './PlanRouteMenu';
 
 const useStyles = makeStyles({
     btn: {
@@ -74,6 +75,7 @@ export default function OsmAndDrawer({ toggleDrawer }) {
                 {ctx.favorites?.groups?.length > 0 && <FavoritesMenu />}
                 {ctx.develFeatures && <MapStyle />}
                 <RouteMenu />
+                <PlanRouteMenu />
                 <SearchResultMenu />
             </MenuList>
         </>

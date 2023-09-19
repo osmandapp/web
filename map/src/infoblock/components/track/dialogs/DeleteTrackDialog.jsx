@@ -76,19 +76,23 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowIn
         }
     }
 
+    const discard = !!ctx.createTrack?.cloudAutoSave;
+
     return (
         <Dialog open={true} onClose={toggleShowDialog}>
-            <DialogTitle>Delete track</DialogTitle>
+            <DialogTitle>{discard ? 'Discard changes' : 'Delete track'}</DialogTitle>
             <DialogContent>
                 <DialogContentText>
-                    {`Are you sure you want to delete ${TracksManager.prepareName(
-                        ctx.selectedGpxFile.name
-                    )} track from the ${place} tracks?`}
+                    {discard
+                        ? `Are you sure you want to discard local changes?`
+                        : `Are you sure you want to delete ${TracksManager.prepareName(
+                              ctx.selectedGpxFile.name
+                          )} track from the ${place} tracks?`}
                 </DialogContentText>
             </DialogContent>
             <DialogActions>
                 <Button onClick={toggleShowDialog}>Cancel</Button>
-                <Button onClick={() => deleteCurrentTrack()}>Delete</Button>
+                <Button onClick={() => deleteCurrentTrack()}>{discard ? 'Discard' : 'Delete'}</Button>
             </DialogActions>
         </Dialog>
     );

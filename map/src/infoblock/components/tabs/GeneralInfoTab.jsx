@@ -98,6 +98,7 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                     <>
                         <Divider sx={{ mt: '3px', mb: '12px' }} />
                         <Button
+                            id="se-infoblock-button-download-gpx"
                             sx={{ ml: '-0.5px !important' }}
                             variant="contained"
                             className={styles.button}
@@ -106,7 +107,12 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                             <Download fontSize="small" sx={{ mr: '3px' }} />
                             Download GPX
                         </Button>
-                        <Button variant="contained" className={styles.button} onClick={addToCollection}>
+                        <Button
+                            id="se-infoblock-button-collection"
+                            variant="contained"
+                            className={styles.button}
+                            onClick={addToCollection}
+                        >
                             <Add fontSize="small" sx={{ mr: '3px' }} />
                             Collection (OBF MAP)
                         </Button>
@@ -114,6 +120,7 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                 )}
                 <Divider sx={{ mt: 2, mb: 2 }} />
                 <Button
+                    id="se-infoblock-button-close-track"
                     variant="contained"
                     sx={{ ml: '-0.5px !important' }}
                     className={styles.button}
@@ -122,6 +129,7 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                     Close Track
                 </Button>
                 <Button
+                    id="se-infoblock-button-delete-track"
                     variant="contained"
                     sx={{ backgroundColor: '#ff595e !important' }}
                     className={styles.button}
@@ -129,7 +137,7 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                         setOpenDeleteDialog(true);
                     }}
                 >
-                    Delete Track
+                    {ctx.createTrack?.cloudAutoSave ? 'Discard changes' : 'Delete Track'}
                 </Button>
                 <RoadAttributesGraphProvider width={ctx.infoBlockWidth} />
             </Box>

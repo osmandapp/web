@@ -223,17 +223,26 @@ OpenStreetMap link provides direct link to the OpenStreetMap object where you ca
 
 ![OSM link](@site/static/img/map/context_menu_osm_link.png) ![OSM link](@site/static/img/map/context_menu_osm_link_1.png)
 
+### Online photos
 
-### Online photos 
+In this section, you can view photos of the object from different web sources. Such as [Mapillary](../plugins/mapillary.md) - provides the best and the closest photos from Street-Level view, [Wikimedia](https://www.wikimedia.org/) - displays images from OpenStreetMap with tags **image**, **wikimedia**.  
+Tap the image to open it in full size or [browse](../map/point-layers-on-map.md#street-level-imagery) street level photos.
 
-In this section, you can view photos of the object from different web sources. Such as [Mapillary](../plugins/mapillary.md) - provides the best and the closest photos from Street-Level view, [OpenPlaceReviews](../plugins/openplacereviews) - shows photos associated with this object, [Wikimedia](https://www.wikimedia.org/) - displays images from OpenStreetMap with tags **image**, **wikimedia**. Click on the image to open in full size or [browse](../map/point-layers-on-map.md#street-level-imagery) street level photos.
+<Tabs groupId="operating-systems">
 
-:::note Online photos
-At this moment in iOS are available only images provided by the Mapillari service and Wikimedia.
-:::
+<TabItem value="android" label="Android">  
 
-![Online photos context menu](@site/static/img/map/context_menu_online_photo.png) ![Online photo wikimedia](@site/static/img/map/context_menu_online_photo_1.png)
+![Images nearby context menu Android](@site/static/img/map/images_nearby_andr_1.png) 
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Images nearby context menu iOS](@site/static/img/map/images_nearby_ios_1.png)
+
+</TabItem>
+
+</Tabs>
 
 ### * Audio/Video Note
 

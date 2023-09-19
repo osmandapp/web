@@ -18,16 +18,16 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
         if (map) {
             map.contextmenu.removeAllItems();
             map.contextmenu.addItem({
-                text: 'Route from',
+                text: 'Navigate from',
                 callback: (e) => ctx.setStartPoint(e.latlng),
             });
             map.contextmenu.addItem({
-                text: 'Route to',
+                text: 'Navigate to',
                 callback: (e) => ctx.setEndPoint(e.latlng),
             });
             if (ctx.startPoint && ctx.endPoint) {
                 map.contextmenu.addItem({
-                    text: 'Route via',
+                    text: 'Navigate via',
                     callback: (e) => ctx.routeRouter.newInterPoint({ ctx, ll: e.latlng }),
                 });
             }
@@ -52,7 +52,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                 },
             });
             map.contextmenu.addItem({
-                text: 'Create track',
+                text: 'Plan a route',
                 callback: (e) => TracksManager.createTrack(ctx, e.latlng),
             });
             if (ctx.createTrack?.enable) {
