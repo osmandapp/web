@@ -55,10 +55,10 @@ export default function PlanRouteMenu() {
                         }
                     </Grid>
                     <Grid item xs={6}>
-                        <label htmlFor="se-upload-gpx">
+                        <label htmlFor="planroute-import-gpx">
                             <StyledInput
                                 accept=".gpx"
-                                id="se-upload-gpx"
+                                id="planroute-import-gpx"
                                 multiple
                                 type="file"
                                 onChange={fileSelected(ctx)}
