@@ -153,7 +153,7 @@ export default function RouteMenu() {
                 <ListItemIcon>
                     <Directions fontSize="small" />
                 </ListItemIcon>
-                <ListItemText>Route</ListItemText>
+                <ListItemText>Navigation</ListItemText>
                 {open ? <ExpandLess /> : <ExpandMore />}
             </MenuItem>
 

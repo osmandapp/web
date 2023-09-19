@@ -102,7 +102,7 @@ export default function GeneralPanelButtons({
                         orientation={orientation}
                         color="primary"
                     >
-                        <Tooltip title="Create track" arrow placement={tooltipOrientation}>
+                        <Tooltip title="Create new route" arrow placement={tooltipOrientation}>
                             <IconButton
                                 sx={{ mt: orientation === 'vertical' ? '3px' : 0 }}
                                 variant="contained"
@@ -120,7 +120,7 @@ export default function GeneralPanelButtons({
                                 <Insights fontSize="small" />
                             </IconButton>
                         </Tooltip>
-                        <Tooltip title="Upload track" arrow placement={tooltipOrientation}>
+                        <Tooltip title="Import track" arrow placement={tooltipOrientation}>
                             <label htmlFor="contained-button-file">
                                 <StyledInput
                                     accept=".gpx"
