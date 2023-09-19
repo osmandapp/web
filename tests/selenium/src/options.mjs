@@ -22,6 +22,7 @@ export let debug = false;
 export let mobile = false;
 export let noexit = false;
 export let headless = false;
+export let chromium = false;
 
 export const tests = []; // used by main
 
@@ -39,6 +40,7 @@ export function parseArgs() {
             a === '--debug' && (debug = true);
             a === '--cycle' && (cycle = true);
             a === '--stop' && (stop = true);
+            a === '--chromium' && (chromium = true);
         } else {
             findTestsByMask(a);
         }
@@ -105,7 +107,7 @@ export async function prepareDriver() {
     const tryHomeBinary = process.env.HOME + '/bin/chromium';
     existsSync(tryHomeBinary) && options.setChromeBinaryPath(tryHomeBinary);
 
-    const builder = await new Builder().forBrowser('chrome');
+    const builder = await new Builder().forBrowser(chromium ? 'chromium' : 'chrome');
 
     builder.setChromeOptions(options);
 
