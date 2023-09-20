@@ -9,7 +9,7 @@ import TracksManager, { clearAllLocalTracks } from '../../../context/TracksManag
 import PopperMenu from './PopperMenu';
 import _ from 'lodash';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
-import LocalGpxUploader from '../../../map/components/LocalGpxUploader';
+import LocalGpxUploader from '../LocalGpxUploader';
 
 export default function LocalTrackGroup() {
     const styles = drawerStyles();

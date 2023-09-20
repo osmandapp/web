@@ -9,7 +9,7 @@ import ChangeProfileTrackDialog from '../../infoblock/components/track/dialogs/C
 import PointContextMenu from '../../infoblock/components/PointContextMenu';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
-import LocalGpxUploader from '../../map/components/LocalGpxUploader';
+import LocalGpxUploader from './LocalGpxUploader';
 
 export default function GeneralPanelButtons({
     mainMenuWidth,

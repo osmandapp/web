@@ -4,7 +4,7 @@ import React, { useContext, useState } from 'react';
 import TracksManager from '../../context/TracksManager';
 import drawerStyles from '../styles/DrawerStyles';
 import AppContext from '../../context/AppContext';
-import LocalGpxUploader from '../../map/components/LocalGpxUploader';
+import LocalGpxUploader from './LocalGpxUploader';
 
 export default function PlanRouteMenu() {
     const styles = drawerStyles();
