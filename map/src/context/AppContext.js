@@ -7,6 +7,7 @@ import FavoritesManager from './FavoritesManager';
 import PoiManager from './PoiManager';
 import { apiGet } from '../util/HttpApi';
 import { geoRouter } from '../store/geoRouter/geoRouter.js';
+import { geoObject } from '../store/geoObject/geoObject.js';
 import WeatherManager from './WeatherManager';
 
 const osmandTileURL = {
@@ -227,13 +228,17 @@ export const AppContextProvider = (props) => {
 
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
     const [tracksGroups, setTracksGroups] = useState([]);
-    //
+
     const [tileURL, setTileURL] = useState(osmandTileURL);
     const [allTileURLs, setAllTileURLs] = useState({});
+
     // route
-    const [routeData, setRouteData] = useState(null);
+    const [routeObject, setRouteObject] = useState(() => new geoObject());
+    routeObject.initSetter({ setter: setRouteObject });
+
     const [routeTrackFile, setRouteTrackFile] = useState(null);
     const [routeShowPoints, setRouteShowPoints] = useState(true);
+
     let startInit,
         endInit,
         pinInit,
@@ -361,7 +366,7 @@ export const AppContextProvider = (props) => {
         if (routeRouter.isReady() && routeTrackFile) {
             routeRouter.calculateGpxRoute({
                 routeTrackFile,
-                setRouteData,
+                routeObject,
                 setStartPoint,
                 setEndPoint,
                 setInterPoints,
@@ -369,7 +374,7 @@ export const AppContextProvider = (props) => {
                 setRoutingErrorMsg,
             });
         }
-    }, [routeRouter.getEffectDeps(), routeTrackFile]); // setRouteData, setStartPoint, setEndPoint
+    }, [routeRouter.getEffectDeps(), routeTrackFile]);
 
     useEffect(() => {
         if (routeRouter.isReady() && !routeTrackFile && startPoint && endPoint) {
@@ -378,7 +383,7 @@ export const AppContextProvider = (props) => {
                 endPoint,
                 interPoints,
                 avoidRoads,
-                setRouteData,
+                routeObject,
                 changeRouteText,
                 setRoutingErrorMsg,
             });
@@ -391,16 +396,16 @@ export const AppContextProvider = (props) => {
             }
         }
         // ! routeTrackFile is not part of dependency ! really? :)
-    }, [routeRouter.getEffectDeps(), startPoint, endPoint, interPoints, routeTrackFile, avoidRoads]); // ,setRouteData
+    }, [routeRouter.getEffectDeps(), startPoint, endPoint, interPoints, routeTrackFile, avoidRoads]);
 
-    function changeRouteText(processRoute, data) {
+    function changeRouteText(processRoute, props) {
         let resultText = ``;
         if (processRoute) {
             resultText = `Route calculating…`;
         } else {
-            if (data) {
+            if (props) {
                 const { name } = routeRouter.getProfile();
-                const dist = data.props.overall?.distance ? data.props.overall?.distance : data.props.distance;
+                const dist = props.overall?.distance ? props.overall?.distance : props.distance;
                 resultText = `Route ${Math.round(dist / 100) / 10.0} km for ${name} is found.`;
             }
         }
@@ -463,8 +468,6 @@ export const AppContextProvider = (props) => {
                 setPinPoint,
                 interPoints,
                 setInterPoints,
-                routeData,
-                setRouteData,
                 routeRouter,
                 trackRouter,
                 afterPointRouter,
@@ -538,6 +541,7 @@ export const AppContextProvider = (props) => {
                 setInfoBlockWidth,
                 wantDeleteAcc,
                 setWantDeleteAcc,
+                routeObject,
             }}
         >
             {props.children}

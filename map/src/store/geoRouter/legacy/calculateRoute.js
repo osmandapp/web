@@ -92,7 +92,7 @@ export async function calculateRoute({
     endPoint,
     interPoints,
     avoidRoads,
-    setRouteData,
+    routeObject,
     changeRouteText,
     setRoutingErrorMsg,
 }) {
@@ -103,7 +103,7 @@ export async function calculateRoute({
             startPoint,
             endPoint,
             interPoints,
-            setRouteData,
+            routeObject,
             changeRouteText,
             setRoutingErrorMsg,
             style,
@@ -112,7 +112,7 @@ export async function calculateRoute({
 
     const waitingStyle = LINE_WAITING_STYLE;
     const waitingLines = makeLineFeaturesCollection({ startPoint, endPoint, interPoints, style: waitingStyle });
-    setRouteData(waitingLines);
+    routeObject.putRoute(waitingLines.geojson);
 
     if (this.preview) {
         return;
@@ -123,7 +123,7 @@ export async function calculateRoute({
             startPoint,
             endPoint,
             interPoints,
-            setRouteData,
+            routeObject,
             changeRouteText,
             setRoutingErrorMsg,
             style,
@@ -142,7 +142,7 @@ export async function calculateRoute({
             endPoint,
             interPoints,
             avoidRoads,
-            setRouteData,
+            routeObject,
             changeRouteText,
             setRoutingErrorMsg,
             style,
@@ -156,7 +156,7 @@ async function calculateRouteOSRM({
     startPoint,
     endPoint,
     interPoints,
-    setRouteData,
+    routeObject,
     changeRouteText,
     setRoutingErrorMsg,
     style,
@@ -182,12 +182,10 @@ async function calculateRouteOSRM({
 
     if (response.ok) {
         const data = osrmToFeaturesCollection(await response.json(), style);
-        const props = data.features[0]?.properties ?? {};
-        const allData = { geojson: data, id: new Date().getTime(), props: props };
-        setRouteData(allData);
-        changeRouteText(false, allData);
+        routeObject.putRoute(data);
+        changeRouteText(false, routeObject.getRouteProps(data));
     } else {
-        setRouteData(null);
+        routeObject.reset();
         changeRouteText(false, null);
         try {
             const json = JSON.parse(response.data);
@@ -206,7 +204,7 @@ async function calculateRouteOsmAnd({
     interPoints,
     avoidRoads,
     geoProfile,
-    setRouteData,
+    routeObject,
     changeRouteText,
     setRoutingErrorMsg,
     style,
@@ -240,24 +238,21 @@ async function calculateRouteOsmAnd({
     );
     if (response.ok && response.data?.features) {
         let data = await response.json();
-        let props = {};
         if (data.msg) {
             setRoutingErrorMsg(data.msg);
             data = data.features;
         }
         if (data.features.length > 0) {
-            props = data.features[0]?.properties;
             data.features.forEach((f) => {
                 if (f.geometry?.type === 'LineString') {
                     f.style = style;
                 }
             });
         }
-        let allData = { geojson: data, id: new Date().getTime(), props: props };
-        setRouteData(allData);
-        changeRouteText(false, allData);
+        routeObject.putRoute(data);
+        changeRouteText(false, routeObject.getRouteProps(data));
     } else {
-        setRouteData(null);
+        routeObject.reset();
         changeRouteText(false, null);
         setRoutingErrorMsg(`Router error. Please open settings and choose another provider/profile.`);
     }
@@ -267,15 +262,15 @@ async function calculateRouteLine({
     startPoint,
     endPoint,
     interPoints,
-    setRouteData,
+    routeObject,
     changeRouteText,
     setRoutingErrorMsg,
     style,
 }) {
     const route = makeLineFeaturesCollection({ startPoint, endPoint, interPoints, style });
-    changeRouteText(false, route);
+    changeRouteText(false, routeObject.getRouteProps(route.geojson));
+    routeObject.putRoute(route.geojson);
     setRoutingErrorMsg(null);
-    setRouteData(route);
     return route;
 }
 
@@ -290,6 +285,7 @@ function makeLineFeaturesCollection({ startPoint, endPoint, interPoints, style =
     let distance = 0,
         latPrev = null,
         lonPrev = null;
+
     coordinates.forEach((ll) => {
         let [lon, lat] = ll; // vice-versa
         if (latPrev !== null && lonPrev !== null) {

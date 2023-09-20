@@ -259,7 +259,7 @@ const RouteLayer = ({ geocodingData, region }) => {
     };
 
     // GeoJSON requires dynamic key to refresh (used for re-filtering)
-    const routeDataKey = () => ctx.routeData.id + ':' + ctx.routeShowPoints;
+    const routeDataKey = () => ctx.routeObject.getRouteId() + ':' + ctx.routeShowPoints;
 
     const pointToLayer = (feature, latlng) => {
         let opts = Object.assign({}, geojsonMarkerOptions);
@@ -311,10 +311,10 @@ const RouteLayer = ({ geocodingData, region }) => {
 
     return (
         <>
-            {ctx.routeData && (
+            {ctx.routeObject.getRoute() && (
                 <GeoJSON
                     key={routeDataKey()}
-                    data={ctx.routeData.geojson}
+                    data={ctx.routeObject.getRoute()}
                     style={passStyle}
                     pointToLayer={pointToLayer}
                     onEachFeature={onEachFeature}

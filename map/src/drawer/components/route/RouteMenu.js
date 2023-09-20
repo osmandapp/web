@@ -191,12 +191,12 @@ export default function RouteMenu() {
                         <Settings fontSize="small" />
                     </IconButton>
                 </MenuItem>
-                {ctx?.routeData?.props && (
+                {ctx.routeObject.getRouteProps() && (
                     <MenuItem key="routeinfo" sx={{ ml: 1, mr: 1 }} disableRipple={true}>
-                        <Typography>{formatRouteInfo(ctx?.routeData?.props)}</Typography>
+                        <Typography>{formatRouteInfo(ctx.routeObject.getRouteProps())}</Typography>
                     </MenuItem>
                 )}
-                {ctx?.routeData && (
+                {ctx.routeObject.getRoute() && (
                     <MenuItem key="routeshowdetails" sx={{ ml: 1, mr: 1 }} disableRipple={true}>
                         <FormControlLabel
                             label="Show route points"
@@ -233,7 +233,7 @@ export default function RouteMenu() {
                         onClick={() => {
                             setStart('');
                             ctx.setStartPoint(null);
-                            ctx.setRouteData(null);
+                            ctx.routeObject.reset();
                         }}
                     >
                         <Clear fontSize="small" />
@@ -287,7 +287,7 @@ export default function RouteMenu() {
                         onClick={() => {
                             setEnd('');
                             ctx.setEndPoint(null);
-                            ctx.setRouteData(null);
+                            ctx.routeObject.reset();
                         }}
                     >
                         <Clear fontSize="small" />
@@ -322,7 +322,7 @@ export default function RouteMenu() {
                             sx={{ ml: 1 }}
                             onClick={() => {
                                 ctx.setRouteTrackFile(null);
-                                ctx.setRouteData(null);
+                                ctx.routeObject.reset();
                                 ctx.setEndPoint(null);
                                 ctx.setStartPoint(null);
                             }}
