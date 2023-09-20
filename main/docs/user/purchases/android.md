@@ -54,7 +54,8 @@ For Android devices you can download the free and paid application on the follow
 - ![Pro](@site/static/img/svg/pro_icon.svg) _OsmAnd Pro_ is a subscription, available for OsmAnd applications on [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), on [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545), on [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd).
 
 :::tip Note
-OsmAnd Pro subscription is a cross-platform purchase. It means that you can buy it in Google Play and [you can use](../personal/storage.md#backup-and-restore-for-osmand-pro) it for Amazon or for Huawei AppGallery and vice versa.
+- Android Auto only works with versions of the app from Google Play. Android Auto is not available for OsmAnd+, purchased from Amazon or Maps+ subscription from Huawei AppGallery.
+- OsmAnd Pro subscription is a cross-platform purchase. You can buy it from Amazon or Huawei AppGallery and then [restore](../personal/storage.md#backup-and-restore-for-osmand-pro) on OsmAnd from Google Play and vice versa.
 :::
 
 

@@ -19,6 +19,7 @@ export let url = null;
 export let stop = false;
 export let cycle = false;
 export let debug = false;
+export let ignore = false;
 export let mobile = false;
 export let noexit = false;
 export let headless = false;
@@ -35,6 +36,7 @@ export function parseArgs() {
         } else if (a.match(/^--/)) {
             a === '--headless' && (headless = true);
             a === '--mobile' && (mobile = true);
+            a === '--ignore' && (ignore = true);
             a === '--noexit' && (noexit = true);
             a === '--debug' && (debug = true);
             a === '--cycle' && (cycle = true);
@@ -78,6 +80,7 @@ Target:
 Options:
     --headless      Run browser in headless (background) mode
     --mobile        Run browser in smartphone emulation mode
+    --ignore        Ignore failed tests (exit with success)
     --stop          Stop tests after first failure happens
     --noexit        Do not close browser after test done
     --debug         Print debug info and full errors

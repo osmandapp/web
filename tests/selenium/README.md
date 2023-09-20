@@ -19,13 +19,13 @@
 
 arch -arm64 brew install pkg-config cairo pango libpng jpeg giflib librsvg
 
-2) Install canvas package (now it refers to just installed packages):
+2) Install base packages with yarn (incl. broken canvas):
 
-cd tests/selenium && npm install canvas
+yarn
 
-3) Install rest of dependences:
+3) Rebuild canvas with npm (using installed brew-libs):
 
-yarn && yarn lint
+npm rebuild canvas
 
 4) Play with tests:
 
@@ -33,3 +33,13 @@ yarn test
 yarn test --mobile
 yarn test --headless
 yarn test --headless --mobile
+
+# Ubuntu 22.04 Chromium setup without snap
+
+*https://www.linuxcapable.com/install-chromium-browser-on-ubuntu-linux/#Section-2-Install-Chromium-with-Flatpak-and-Flathub
+
+sudo add-apt-repository ppa:xtradeb/apps -y
+
+sudo apt update
+
+sudo apt install chromium

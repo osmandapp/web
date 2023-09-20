@@ -1,12 +1,13 @@
 import { Box, Button, Collapse, Grid, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import { ExpandLess, ExpandMore, Folder } from '@mui/icons-material';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import AppContext from '../../../context/AppContext';
 import Actions from './Actions';
 import LocalTrackItem from './LocalTrackItem';
 import { styled } from '@mui/material/styles';
 import drawerStyles from '../../styles/DrawerStyles';
 import TracksManager, { clearAllLocalTracks } from '../../../context/TracksManager';
+import { useMutator } from '../../../util/Utils';
 import PopperMenu from './PopperMenu';
 import _ from 'lodash';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
@@ -36,14 +37,30 @@ export default function LocalTrackGroup() {
         });
     }
 
+    const [uploadedFiles, mutateUploadedFiles] = useMutator({});
+
+    useEffect(() => {
+        for (const file in uploadedFiles) {
+            TracksManager.addTrack({
+                ctx,
+                overwrite: false,
+                track: uploadedFiles[file].track,
+                selected: uploadedFiles[file].selected,
+            });
+            mutateUploadedFiles((o) => delete o[file]);
+            break; // limit 1 file per 1 render
+        }
+    }, [uploadedFiles]);
+
     const fileSelected = () => async (e) => {
+        const selected = e.target.files.length === 1;
         Array.from(e.target.files).forEach((file) => {
             const reader = new FileReader();
             reader.addEventListener('load', async () => {
                 const track = await TracksManager.getTrackData(file);
                 if (track) {
                     track.name = file.name;
-                    TracksManager.addTrack({ ctx, track, overwrite: false });
+                    mutateUploadedFiles((o) => (o[file.name] = { track, selected }));
                 }
             });
             reader.readAsText(file);
