@@ -33,11 +33,15 @@ const GpxGraphProvider = ({ width }) => {
         return showData[ELEVATION] || showData[ELEVATION_SRTM] || showData[SPEED] || showData[SLOPE];
     }
 
+    function callSrtmCalc(trackData) {
+        return !trackData.srtm && ctx.selectedGpxFile.analysis?.srtmAnalysis;
+    }
+
     useEffect(() => {
         if (ctx.selectedGpxFile) {
             let trackData = {};
             let points = TracksManager.getTrackPoints(ctx.selectedGpxFile);
-            if (!_.isEmpty(points) && !equalsPoints(points, data?.data)) {
+            if (!_.isEmpty(points) && (callSrtmCalc(trackData) || !equalsPoints(points, data?.data))) {
                 if (ctx.selectedGpxFile.analysis?.hasElevationData) {
                     trackData.ele = true;
                     trackData.slope = true;
@@ -71,7 +75,7 @@ const GpxGraphProvider = ({ width }) => {
                 newShowData[ELEVATION] = data.ele;
             }
             if (data.srtm) {
-                newShowData[ELEVATION_SRTM] = showData && showData[ELEVATION_SRTM] ? true : '';
+                newShowData[ELEVATION_SRTM] = data.srtm;
             }
             if (data.speed) {
                 newShowData[SPEED] = showData && showData[SPEED] ? true : '';
