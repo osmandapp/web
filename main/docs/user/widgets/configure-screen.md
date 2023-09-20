@@ -97,7 +97,9 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
     2 widgets included: *Sunrise*, *Sunset*.
 20. [* Developer widgets](../widgets/info-widgets.md#-developer-widgets). A set of *informational* widgets provides information about zoom level, map rendering speed, map center elevation above sea level, distance to the map center, camera height and tilt.  
     4 widgets included: *Map rendering FPS*, *Camera tilt*, *Camera elevation*, *Zoom level*, *Distance from camera to target*.
-21. [OsmAnd Tracker status](../widgets/info-widgets.md#-tracker-widget). This *informational* widget is used to quickly access the [OsmAnd Tracker application](https://play.google.com/store/apps/details?id=net.osmand.telegram) to share your location with other users.  
+21. [OsmAnd Tracker status](../widgets/info-widgets.md#-tracker-widget). This *informational* widget is used to quickly access the [OsmAnd Tracker application](https://play.google.com/store/apps/details?id=net.osmand.telegram) to share your location with other users. 
+22. [* External Sensors widgets](../widgets/info-widgets.md#-external-sensors-widgets). A set of *informational* widgets help you track data from your external sensors in real time.
+    6 widgets included: *Heart Rate*, *Bicycle Power*, *Bicycle Cadence*, *Bicycle Speed*, *Bicycle Distance*, *Temperature*.
 
 
 ### Top / Bottom panel widgets
