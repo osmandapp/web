@@ -1,8 +1,8 @@
 import { initSetter, nextState, flushState } from '../geoRouter/state.js'; // reuse geoRouter module
 
-import { reset, putRoute } from './setters.js';
-
 import { getRoute, getTrack, getRouteId, getRouteProps } from './getters.js';
+
+import { reset, putRoute, putRouteOsrm } from './setters.js';
 
 export class geoObject {
     id = null;
@@ -20,6 +20,7 @@ export class geoObject {
     // setters
     reset = reset;
     putRoute = putRoute;
+    putRouteOsrm = putRouteOsrm;
 
     // getters
     getTrack = getTrack;
