@@ -147,7 +147,7 @@ export default function RoadAttributesGraphProvider({ width }) {
         <>
             {roadPoints && data && (
                 <div>
-                    {data.types && <RoadAttributesGraph name={'Waytypes'} data={data.types} width={width} />}
+                    {data.types && <RoadAttributesGraph name={'Road types'} data={data.types} width={width} />}
                     {data.surfaces && <RoadAttributesGraph name={'Surfaces'} data={data.surfaces} width={width} />}
                 </div>
             )}
