@@ -1,8 +1,10 @@
 import { initSetter, nextState, flushState } from '../geoRouter/state.js'; // reuse geoRouter module
 
-import { getRoute, getTrack, getRouteId, getRouteProps } from './getters.js';
+import { getOption, setOption, getOptionText } from './options.js';
 
 import { reset, putRoute, putRouteOsrm } from './setters.js';
+
+import { getRoute, getTrack, getRouteId, getRouteProps } from './getters.js';
 
 export class geoObject {
     id = null;
@@ -10,6 +12,21 @@ export class geoObject {
     // gpx = null; // later
     route = null; // GeoJSON FeatureCollection
     track = null; // selectedGpxFile format (LocalClientTrackLayer compatible)
+
+    options = {
+        route: {
+            geoProfile: null,
+            hidePoints: false,
+            useApproximate: false,
+        },
+    };
+
+    optionsText = {
+        route: {
+            hidePoints: 'Hide route points',
+            useApproximate: 'Advanced details',
+        },
+    };
 
     constructor({ route = null } = {}) {
         // gpx && this.putGpx(gpx);
@@ -21,12 +38,15 @@ export class geoObject {
     reset = reset;
     putRoute = putRoute;
     putRouteOsrm = putRouteOsrm;
+    setOption = setOption;
 
     // getters
     getTrack = getTrack;
     getRoute = getRoute;
     getRouteId = getRouteId;
     getRouteProps = getRouteProps;
+    getOption = getOption;
+    getOptionText = getOptionText;
 
     // state
     setter = null;

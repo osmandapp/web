@@ -7,7 +7,6 @@ export function reset() {
 }
 
 export function putRoute(route) {
-    console.log(route);
     const id = md5(JSON.stringify(route)); // calc once at init (stringify+md5 is slow)
     this.flushState((o) => {
         o.route = route;
