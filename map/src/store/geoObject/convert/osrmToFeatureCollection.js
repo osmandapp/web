@@ -24,7 +24,7 @@ export function osrmToFeatureCollection({ osrm, style = {} }) {
         const distance = s?.distance ?? '';
 
         const imperative = type + ' ' + modifier;
-        const target = name ? 'to ' + name + ' ' + ref : '';
+        const target = name ? 'to ' + name + ref : '';
         const go = distance > 0 ? 'and go ' + distance + ' meters' : '';
 
         return `${imperative} ${target} ${go}`; // Turn Left to Street and go 621 meters
