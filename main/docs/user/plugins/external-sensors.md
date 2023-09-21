@@ -102,4 +102,4 @@ Use the following path to display the widget on the screen:
 3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>**. Cadence is the number of pedal turns per minute. Cadence sensors help you maintain optimal pedaling speed for efficient cycling.
 4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>**. Speed sensors provide information about your current speed while cycling. 
 5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>**. Distance sensors measure the distance you travel when you're driving.
-6. **<Translate android="true" ids="external_device_characteristic_temperature"/>**. The sensor indicates the temperature. 
+6. **<Translate android="true" ids="external_device_characteristic_temperature"/>**. The widget displays the ambient temperature, which can be very useful if you don't want to overheat or freeze on your bike or motorcycle. 
