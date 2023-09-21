@@ -92,6 +92,7 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                 {hasSegments(ctx.selectedGpxFile) && (
                     <>
                         <GpxGraphProvider width={ctx.infoBlockWidth} />
+                        <RoadAttributesGraphProvider width={ctx.infoBlockWidth} />
                     </>
                 )}
                 {isEmptyTrack(ctx.selectedGpxFile) === false && (
@@ -139,7 +140,6 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                 >
                     {ctx.createTrack?.cloudAutoSave ? 'Discard changes' : 'Delete Track'}
                 </Button>
-                <RoadAttributesGraphProvider width={ctx.infoBlockWidth} />
             </Box>
             {openDeleteDialog && (
                 <DeleteTrackDialog

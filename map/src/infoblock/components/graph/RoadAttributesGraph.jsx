@@ -1,17 +1,20 @@
-import { Box, Divider, Grid, Icon, Typography } from '@mui/material';
+import { Box, Button, Collapse, Divider, Grid, Icon, Typography } from '@mui/material';
 import CircleIcon from '@mui/icons-material/Circle';
 import { Bar } from 'react-chartjs-2';
 import { Tooltip, Legend, Chart as ChartJS, BarElement } from 'chart.js';
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import annotationsPlugin from 'chartjs-plugin-annotation';
 import TracksManager from '../../../context/TracksManager';
 import AppContext from '../../../context/AppContext';
+import { ExpandLess, ExpandMore } from '@mui/icons-material';
 
 ChartJS.register(Tooltip, Legend, BarElement, annotationsPlugin);
 
 export default function RoadAttributesGraph({ name, data, width }) {
     const ctx = useContext(AppContext);
     const chartRef = useRef(null);
+
+    const [open, setOpen] = useState(false);
 
     const options = {
         indexAxis: 'y',
@@ -113,10 +116,20 @@ export default function RoadAttributesGraph({ name, data, width }) {
     return (
         <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 40 }}>
             <Divider sx={{ mt: '15px', mb: '12px' }} />
-            <Typography variant="inherit" sx={{ color: '#666666', fontWeight: 'bold', mb: 2 }}>
-                {name}
-            </Typography>
-            <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 40, height: 100 }}>
+            <Grid container spacing={2}>
+                <Grid item xs={9}>
+                    <Typography variant="inherit" sx={{ color: '#666666', fontWeight: 'bold', mb: 2 }}>
+                        {name}
+                    </Typography>
+                </Grid>
+                <Grid item xs={3}>
+                    <Button size="small" sx={{ color: '#f8931d', mt: '-1px' }} onClick={() => setOpen(!open)}>
+                        Details
+                        {open ? <ExpandLess /> : <ExpandMore />}
+                    </Button>
+                </Grid>
+            </Grid>
+            <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 40, height: 60 }}>
                 <Bar
                     margin={{ top: 0, right: 0, left: -20, bottom: 0 }}
                     style={{ fontSize: 10 }}
@@ -126,46 +139,48 @@ export default function RoadAttributesGraph({ name, data, width }) {
                     ref={chartRef}
                 />
             </Box>
-            <Grid sx={{ mt: 1, ml: '-8px' }} container spacing={2}>
-                {data &&
-                    Object.entries(data.legend)
-                        .sort((a, b) => b[1].distance - a[1].distance)
-                        .map(([type, value]) => {
-                            return (
-                                <Grid
-                                    item
-                                    key={type}
-                                    sx={{ display: 'flex', paddingTop: '0px !important', ml: '-16px !important' }}
-                                    xs={Object.entries(data.legend).length > 5 ? 6 : 12}
-                                >
-                                    <Icon sx={{ overflow: 'visible' }}>
-                                        <CircleIcon sx={{ color: value.color, fontSize: '0.8rem' }} />
-                                    </Icon>
-                                    <Typography
-                                        variant="inherit"
-                                        sx={{
-                                            color: '#666666',
-                                            fontWeight: 'bold',
-                                            fontSize: 11,
-                                            margin: '14px 0px 0px 0px !important',
-                                        }}
+            <Collapse in={open} timeout="auto" unmountOnExit>
+                <Grid sx={{ mt: 1, ml: '-8px' }} container spacing={2}>
+                    {data &&
+                        Object.entries(data.legend)
+                            .sort((a, b) => b[1].distance - a[1].distance)
+                            .map(([type, value]) => {
+                                return (
+                                    <Grid
+                                        item
+                                        key={type}
+                                        sx={{ display: 'flex', paddingTop: '0px !important', ml: '-16px !important' }}
+                                        xs={Object.entries(data.legend).length > 5 ? 6 : 12}
                                     >
-                                        {prepareType(type)}
-                                    </Typography>
-                                    <Typography
-                                        variant="inherit"
-                                        sx={{
-                                            color: '#666666',
-                                            fontSize: 11,
-                                            margin: '14px 0px 0px 0px !important',
-                                        }}
-                                    >
-                                        : {prepareDistance(value)}
-                                    </Typography>
-                                </Grid>
-                            );
-                        })}
-            </Grid>
+                                        <Icon sx={{ overflow: 'visible' }}>
+                                            <CircleIcon sx={{ color: value.color, fontSize: '0.8rem' }} />
+                                        </Icon>
+                                        <Typography
+                                            variant="inherit"
+                                            sx={{
+                                                color: '#666666',
+                                                fontWeight: 'bold',
+                                                fontSize: 11,
+                                                margin: '14px 0px 0px 0px !important',
+                                            }}
+                                        >
+                                            {prepareType(type)}
+                                        </Typography>
+                                        <Typography
+                                            variant="inherit"
+                                            sx={{
+                                                color: '#666666',
+                                                fontSize: 11,
+                                                margin: '14px 0px 0px 0px !important',
+                                            }}
+                                        >
+                                            : {prepareDistance(value)}
+                                        </Typography>
+                                    </Grid>
+                                );
+                            })}
+                </Grid>
+            </Collapse>
         </Box>
     );
 }

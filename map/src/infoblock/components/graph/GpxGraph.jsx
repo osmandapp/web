@@ -530,7 +530,7 @@ export default function GpxGraph({
 
     return (
         <>
-            <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 40, height: 220 }}>
+            <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 40, height: 180 }}>
                 <Chart
                     ref={chartRef}
                     margin={{ top: 0, right: 0, left: -20, bottom: 0 }}
