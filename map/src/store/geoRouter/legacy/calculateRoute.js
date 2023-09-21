@@ -32,7 +32,7 @@ export async function calculateRoute({
     }
 
     const waitingStyle = LINE_WAITING_STYLE;
-    const waitingLines = makeLineFeaturesCollection({ startPoint, endPoint, interPoints, style: waitingStyle });
+    const waitingLines = makeLineFeatureCollection({ startPoint, endPoint, interPoints, style: waitingStyle });
     routeObject.putRoute(waitingLines.geojson);
 
     if (this.preview) {
@@ -188,14 +188,14 @@ async function calculateRouteLine({
     setRoutingErrorMsg,
     style,
 }) {
-    const draft = makeLineFeaturesCollection({ startPoint, endPoint, interPoints, style });
+    const draft = makeLineFeatureCollection({ startPoint, endPoint, interPoints, style });
     const { route } = routeObject.putRoute(draft.geojson);
     changeRouteText(false, routeObject.getRouteProps(route));
     setRoutingErrorMsg(null);
     return draft;
 }
 
-function makeLineFeaturesCollection({ startPoint, endPoint, interPoints, style = {} } = {}) {
+function makeLineFeatureCollection({ startPoint, endPoint, interPoints, style = {} } = {}) {
     const coordinates = [];
     coordinates.push([startPoint.lng, startPoint.lat]);
     interPoints?.forEach((i) => coordinates.push([i.lng, i.lat]));
@@ -227,7 +227,7 @@ function makeLineFeaturesCollection({ startPoint, endPoint, interPoints, style =
             },
         },
         geojson: {
-            type: 'FeaturesCollection',
+            type: 'FeatureCollection',
             features: [
                 {
                     type: 'Feature',

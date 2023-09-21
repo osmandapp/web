@@ -8,7 +8,7 @@ export class geoObject {
     id = null;
 
     // gpx = null; // later
-    route = null; // GeoJSON FeaturesCollection
+    route = null; // GeoJSON FeatureCollection
     track = null; // selectedGpxFile format (LocalClientTrackLayer compatible)
 
     constructor({ route = null } = {}) {
@@ -51,9 +51,9 @@ export class geoObject {
             },
         },
 
-        // GeoJSON data (FeaturesCollection format)
+        // GeoJSON data (FeatureCollection format)
         geojson: {
-            type: 'FeaturesCollection',
+            type: 'FeatureCollection',
             features: [
                 {
                     type: 'Feature',

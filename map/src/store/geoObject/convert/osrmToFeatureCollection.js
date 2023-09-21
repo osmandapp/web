@@ -1,4 +1,4 @@
-export function osrmToFeaturesCollection({ osrm, style = {} }) {
+export function osrmToFeatureCollection({ osrm, style = {} }) {
     /*
         convert OSRM routes[] to features[] "LineString"
         convert OSRM legs[].steps[] to features[] "Point" (OSRM's turns)
