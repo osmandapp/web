@@ -1,0 +1,94 @@
+{
+    "motorway": {
+        "class": "motorway",
+        "color": "#DF653C"
+    },
+    "motorway_link": {
+        "class": "motorway",
+        "color": "#DF653C"
+    },
+    "trunk": {
+        "class": "state road",
+        "color": "#ffa347"
+    },
+    "trunk_link": {
+        "class": "state road",
+        "color": "#ffa347"
+    },
+    "primary": {
+        "class": "state road",
+        "color": "#ffa347"
+    },
+    "primary_link": {
+        "class": "state road",
+        "color": "#ffa347"
+    },
+    "secondary": {
+        "class": "road",
+        "color": "#ffffff"
+    },
+    "secondary_link": {
+        "class": "road",
+        "color": "#ffffff"
+    },
+    "tertiary": {
+        "class": "road",
+        "color": "#ffffff"
+    },
+    "tertiary_link": {
+        "class": "road",
+        "color": "#ffffff"
+    },
+    "unclassified": {
+        "class": "road",
+        "color": "#ffffff"
+    },
+    "residential": {
+        "class": "street",
+        "color": "#C1B9D1"
+    },
+    "living_street": {
+        "class": "street",
+        "color": "#C1B9D1"
+    },
+    "service": {
+        "class": "service",
+        "color": "#E3DAF6"
+    },
+    "pedestrian": {
+        "class": "footway",
+        "color": "#33000000"
+    },
+    "road": {
+        "class": "undefined",
+        "color": "#ececec"
+    },
+    "footway": {
+        "class": "footway",
+        "color": "#33000000"
+    },
+    "bridleway": {
+        "class": "bridleway",
+        "color": "#339900"
+    },
+    "steps": {
+        "class": "steps",
+        "color": "#77000000"
+    },
+    "path": {
+        "class": "path",
+        "color": "#77000000"
+    },
+    "cycleway": {
+        "class": "cycleway",
+        "color": "#178fe5"
+    },
+    "unmatched": {
+        "class": "undefined",
+        "color": "#e8e8e8"
+    },
+    "undefined": {
+        "class": "undefined",
+        "color": "#e8e8e8"
+    }
+}

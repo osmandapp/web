@@ -3,9 +3,15 @@ import _ from 'lodash';
 import AppContext from '../../../context/AppContext';
 import { addDistanceToPoints, equalsPoints, getAllPoints, getTrackPoints } from '../../../context/TracksManager';
 import RoadAttributesGraph from './RoadAttributesGraph';
+import roadTypes from '../../../store/road-types.json';
+import surfaces from '../../../store/surfaces.json';
 
 export default function RoadAttributesGraphProvider({ width }) {
     const ctx = useContext(AppContext);
+
+    const HIGHWAY = 'highway';
+    const SURFACE = 'surface';
+    const UNDEFINED_DATA = 'undefined';
 
     const [roadPoints, setRoadPoints] = useState(null);
 
@@ -37,16 +43,16 @@ export default function RoadAttributesGraphProvider({ width }) {
                     seg.distance = prevSegPoint
                         ? roadPoints[seg.ind + Number(seg.segment.ext.length) - 1].distanceTotal - seg.distanceTotal
                         : roadPoints[seg.ind + Number(seg.segment.ext.length) - 1].distanceTotal;
-                    seg['highway'] = 'unknown';
-                    seg['surface'] = 'unknown';
+                    seg[HIGHWAY] = UNDEFINED_DATA;
+                    seg[SURFACE] = UNDEFINED_DATA;
                     p.segment.ext.types.split(',').forEach((t) => {
                         const type = routeTypes[t];
                         if (type) {
-                            if (type.tag === 'highway') {
-                                seg['highway'] = type.value;
+                            if (type.tag === HIGHWAY) {
+                                seg[HIGHWAY] = roadTypes[type.value] ? roadTypes[type.value].class : type.value;
                             }
-                            if (type.tag === 'surface') {
-                                seg['surface'] = type.value;
+                            if (type.tag === SURFACE) {
+                                seg[SURFACE] = type.value;
                             }
                         }
                     });
@@ -107,7 +113,7 @@ export default function RoadAttributesGraphProvider({ width }) {
                 colors[label].distance += seg.distance;
                 currentColor = colors[label].color;
             } else {
-                currentColor = getColor(label, colors);
+                currentColor = getColor(label, colors, tagName);
                 colors[label] = {
                     color: currentColor,
                     distance: seg.distance,
@@ -126,12 +132,13 @@ export default function RoadAttributesGraphProvider({ width }) {
         }
     }
 
-    function getColor(label, colors) {
+    function getColor(label, colors, tagName) {
         let newColor;
+        const data = tagName === SURFACE ? surfaces : roadTypes;
         if (colors[label]) {
             newColor = colors[label];
         } else {
-            newColor = generatePastelColor(Object.keys(colors).length);
+            newColor = data[label] ? data[label].color : generatePastelColor(Object.keys(colors).length);
         }
         return newColor;
     }
