@@ -77,6 +77,17 @@ export default function RoadAttributesGraph({ name, data, width }) {
         return type;
     }
 
+    function prepareDistance(value) {
+        if (value?.distance) {
+            if (value.distance > 0.01) {
+                return `${(value.distance / 1000).toFixed(2)} km`;
+            } else {
+                return '< 10 m';
+            }
+        }
+        return '0 m';
+    }
+
     function onMouseMoveGraph(e, chartRef) {
         if (!chartRef) {
             return;
@@ -119,7 +130,7 @@ export default function RoadAttributesGraph({ name, data, width }) {
                 {data &&
                     Object.entries(data.legend)
                         .sort((a, b) => b[1].distance - a[1].distance)
-                        .map(([type, values]) => {
+                        .map(([type, value]) => {
                             return (
                                 <Grid
                                     item
@@ -128,7 +139,7 @@ export default function RoadAttributesGraph({ name, data, width }) {
                                     xs={Object.entries(data.legend).length > 5 ? 6 : 12}
                                 >
                                     <Icon sx={{ overflow: 'visible' }}>
-                                        <CircleIcon sx={{ color: values.color, fontSize: '0.8rem' }} />
+                                        <CircleIcon sx={{ color: value.color, fontSize: '0.8rem' }} />
                                     </Icon>
                                     <Typography
                                         variant="inherit"
@@ -149,7 +160,7 @@ export default function RoadAttributesGraph({ name, data, width }) {
                                             margin: '14px 0px 0px 0px !important',
                                         }}
                                     >
-                                        : {(values.distance / 1000).toFixed(2)} km
+                                        : {prepareDistance(value)}
                                     </Typography>
                                 </Grid>
                             );

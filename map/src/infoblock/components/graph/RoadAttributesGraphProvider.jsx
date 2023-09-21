@@ -113,11 +113,13 @@ export default function RoadAttributesGraphProvider({ width }) {
                 colors[label].distance += seg.distance;
                 currentColor = colors[label].color;
             } else {
-                currentColor = getColor(label, colors, tagName);
-                colors[label] = {
-                    color: currentColor,
-                    distance: seg.distance,
-                };
+                if (seg.distance) {
+                    currentColor = getColor(label, colors, tagName);
+                    colors[label] = {
+                        color: currentColor,
+                        distance: seg.distance,
+                    };
+                }
             }
             return {
                 label: label,
