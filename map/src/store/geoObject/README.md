@@ -54,3 +54,42 @@ const defaultPointExtras = {
     ele: TracksManager.NAN_MARKER,
     ext: { ele: TracksManager.NAN_MARKER, extensions: {} }, // getTrackWithAnalysis requires ext.extensions
 };
+
+# route format (minimum required) TODO old section - remove
+
+geoObject.route = {
+    // route id (used as a part of the key for GeoJSON)
+    id, // unique: new Date().getTime() or md5(coordinates)
+
+    // route props (statistics)
+    // filled from data.features[0].properties || {}
+    // used in formatRouteInfo() and changeRouteText()
+    props: {
+        overall: {
+            time, // overall time
+            distance, // overall distance
+            routingTime, // overall routing time (cost)
+        },
+    },
+
+    // GeoJSON data (FeatureCollection format)
+    geojson: {
+        type: 'FeatureCollection',
+        features: [
+            {
+                type: 'Feature',
+                geometry: {
+                    type: 'LineString', // type of segment (LineString always)
+                    coordinates, // array of points [lon, lat] Note: sequence lon-lat !
+                },
+                properties: {
+                    overall: {
+                        time,
+                        distance,
+                    },
+                },
+                style,
+            },
+        ],
+    },
+};

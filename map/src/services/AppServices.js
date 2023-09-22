@@ -1,9 +1,9 @@
-import { RouteServices } from './RouteServices';
+import { RouteService } from './RouteService';
 
 export function AppServices() {
     return (
         <>
-            <RouteServices />
+            <RouteService />
         </>
     );
 }
