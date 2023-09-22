@@ -605,6 +605,42 @@ OsmAnd provides a wide range of options for [backing up](../personal/import-expo
 
 </Tabs>
 
+Free Favorites Backup is a special purchase plan to back up your favorite points (locations) for Android, iOS, or Web versions in the OsmAnd application and restore them from OsmAnd Cloud. You can use this special plan if you have [OsmAnd Free or Maps+](../purchases/index.md).  
+
+Free Favorites Backup has the following benefits:
+
+- No payment is required. You do not need to purchase paid subscriptions.
+- Saving your favorite points. You can regularly backup your favorite points in OsmAnd so you don't lose them if your device crashes or you delete the app.
+- Transferring favorite points. If you use OsmAnd on multiple devices, Free Favorites Backup helps you quickly import your favorite points to a new device.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
+
+![Favorites folder functions android](@site/static/img/personal/favorites_free_backup_purch_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+
+![Favorites actions ios](@site/static/img/personal/favorites_free_backup_purch_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+You need to have an OsmAnd Cloud account to use the Free Settings Backup. If you have an account in *OsmAnd Pro* or an active account in OsmAnd Cloud, you will not see the promotion banner.  
+
+- Tap the Free Favorites Backup banner.
+- Go through the [registration step](../personal/osmand-cloud.md#login).
+- Then go to the OsmAnd Purchases menu (*Menu → Settings → Purchases*).
+- Select the [OsmAnd Start package](../personal/osmand-cloud.md#osmand-start).
+- Create a backup.
+
 
 ### All Favorites
 
