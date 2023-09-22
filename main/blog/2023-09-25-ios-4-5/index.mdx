@@ -1,9 +1,9 @@
 ---
-slug: osmand-ios-5-released
+slug: osmand-ios-4-5-released
 title: OsmAnd 4.5 (iOS)
 authors: eugene
 tags: [release, ios]
-draft: true
+unlisted: true
 
 ---
 
@@ -89,15 +89,19 @@ Read more about Terrain maps in our [Blog article](https://osmand.net/blog/terra
 
 ### New Configure Screen
 
-Two sections: _Widgets_ and _Buttons_
+Configure Screen menu was devided on Two sections: _Widgets_ and _Buttons_
 
+- On [_Widgets_](https://osmand.net/docs/user/widgets/configure-screen#widget-panels) section, you can add or remove widgets on a screen device and switch on/off _Transparent_ function for them. Read more about new widget updates [on this article](#widget-updates).
+- On [_Buttons_](https://osmand.net/docs/user/widgets/configure-screen#buttons) section, you add on a device screen and set parameters for Compass, Quick Action, 3D mode buttons  and switch on/off _Distance by tap_ function.
 
-![Configure Screen](./img/screen.png)
+|Configure screen menu| Widgets and buttons on a screen|
+|------|------|
+|![Configure Screen](./img/screen.png)| ![Configure Screen](./img/screen_2.png)|
 
 
 ### Widget updates
 
-We've done a lot of work on the widgets and interface of the Configure screen:
+We've done a lot of work on the widgets and interface of [the Configure screen](#new-configure-screen):
 - We redesigned the Configure screen, separating the widgets from the buttons, and spacing the different widget panels more clearly.
 - Added pages for widgets.
 - Duplicates.
@@ -105,11 +109,20 @@ We've done a lot of work on the widgets and interface of the Configure screen:
 
 #### Pages and Duplicates for widgets 
 
-Widgets in the Left panel and Right panel can be grouped into Pages.
-_OsmAnd menu → Configure screen → Widgets (Left / Right panel) → Edit → Add pages_
+Widgets in the _Left_ panel and _Right_ panel can be grouped into Pages.
 
 You can show Duplicates for the right/left panels at the same time, as well as for each page of widgets.
-_OsmAnd menu → Configure screen → Widgets (Left / Right panel) → Edit → Add widget_
+
+_OsmAnd menu → Configure screen → Widgets (Left / Right panel) → Edit → Add widget/Add page_
+
+
+|Configure screen menu| Widgets and buttons on a screen|
+|------|------|
+|![Widgets](./img/widget-1.png)| ![Widgets](./img/widget-2.png)|
+
+Additional settings menu for widget panels:
+
+_OsmAnd menu → Configure screen → Widgets (panels) → "..." button → Reset to default/Copy from another profile/Help_
 
 
 #### Average speed widget
@@ -119,21 +132,11 @@ The new Average speed widget shows the average speed of the current ride:
 _Menu → Configure screen → Widgets → Left / Right panel → Average speed_
 
 
-The average speed is calculated for the specified time interval. Click on the "Settings" button of the Average Speed widget to select the time interval for which the average speed will be measured:
+The average speed is calculated for the specified time interval. Click on the "Average speed" button to select the time interval for which the average speed will be measured:
 
 _Menu → Configure screen → Widgets → Left / Right panel → Average speed → Interval/Take stops into account_
 
-#### Trip recording widgets
-
-Added new widgets for "Trip recording". Trip recording now consists of 4 separate widgets:
-
-_Menu → Configure screen → Widgets → Left / Right panel → Trip recording_
-
-* **Distance/Start-Stop**: starts or stops trip recording and shows distance of the currently recorded trip. Clickable widget.
-* **Duration**: shows the duration in minutes/hours of the currently recorded trip.
-* **Uphill**: shows the sum of all climbs of the current recorded trip.
-* **Downhill**: shows the sum of all descents of the current recorded trip.
-
+![Average speed](./img/average_speed.png)
 
 #### True bearing widget
 
@@ -159,9 +162,10 @@ _OsmAnd Menu → Configure map → Routes → Difficulty classification_
 Read more about Login settings [here](https://osmand.net/docs/user/plugins/osm-editing#settings).
 
 
-### Fixed
+### More
 
-Fixed issue with favorites export, that could lead to data loss
+- Fixed issue with favorites export, that could lead to data loss
+- Added "Announce deviation from the route" for [Voice prompts](https://osmand.net/docs/user/navigation/guidance/navigation-settings#voice-prompts)
 _________________________________________________
 
 <LinksSocial/>
