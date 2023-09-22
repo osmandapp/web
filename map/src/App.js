@@ -6,6 +6,7 @@ import OsmAndMapFrame from './drawer/components/OsmAndMapFrame';
 import LoginDialog from './login/LoginDialog';
 import { AppContextProvider } from './context/AppContext';
 import DeleteAccountDialog from './login/DeleteAccountDialog';
+import { AppServices } from './services/AppServices';
 
 export let globalNavigate = () => null;
 
@@ -18,6 +19,7 @@ const App = () => {
     return (
         <AppContextProvider>
             <BrowserRouter>
+                <AppServices />
                 <NavigateGlobal />
                 <Routes>
                     <Route path="/map" element={<OsmAndMapFrame />}>
