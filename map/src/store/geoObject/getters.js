@@ -13,5 +13,16 @@ export function getRouteKey() {
 }
 
 export function getRouteProps(route = this.route) {
-    return route?.features[0]?.properties ?? null;
+    return (route && route.length > 0 && route[0].properties) ?? null;
+}
+
+export function getRouteEffectDeps() {
+    return JSON.stringify({
+        allPoints: this.getOption('route.points'),
+        useApproximate: this.getOption('route.useApproximate'),
+    });
+}
+
+export function isRouteReadyToCalc() {
+    return this.getOption('route.points.start') && this.getOption('route.points.finish');
 }

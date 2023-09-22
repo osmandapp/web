@@ -4,7 +4,7 @@ import { getOption, setOption, getOptionText } from './options.js';
 
 import { reset, putRoute, putRouteOsrm } from './setters.js';
 
-import { getRoute, getTrack, getRouteKey, getRouteProps } from './getters.js';
+import { getRoute, getTrack, getRouteKey, getRouteProps, getRouteEffectDeps, isRouteReadyToCalc } from './getters.js';
 
 export class geoObject {
     id = null;
@@ -18,6 +18,12 @@ export class geoObject {
             geoProfile: null,
             hidePoints: false,
             useApproximate: false,
+            points: {
+                start: null,
+                finish: null,
+                viaPoints: [],
+                avoidRoads: [],
+            },
         },
     };
 
@@ -43,10 +49,14 @@ export class geoObject {
     // getters
     getTrack = getTrack;
     getRoute = getRoute;
-    getRouteKey = getRouteKey;
-    getRouteProps = getRouteProps;
     getOption = getOption;
     getOptionText = getOptionText;
+
+    // route-getters
+    getRouteKey = getRouteKey;
+    getRouteProps = getRouteProps;
+    getRouteEffectDeps = getRouteEffectDeps;
+    isRouteReadyToCalc = isRouteReadyToCalc;
 
     // state
     setter = null;
