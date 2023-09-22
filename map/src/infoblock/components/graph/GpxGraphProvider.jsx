@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     },
 });
 
-const GpxGraphProvider = ({ width }) => {
+const GpxGraphProvider = ({ width, setSelectedPoint, pointTypes }) => {
     const ctx = useContext(AppContext);
     const classes = useStyles();
 
@@ -319,6 +319,8 @@ const GpxGraphProvider = ({ width }) => {
                     minSpeed={graphData?.minSpeed}
                     maxSpeed={graphData?.maxSpeed}
                     slopes={graphData?.slopes}
+                    setSelectedPoint={setSelectedPoint}
+                    pointTypes={pointTypes}
                 />
             )}
         </>

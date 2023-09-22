@@ -4,13 +4,12 @@ import AppContext from '../../../context/AppContext';
 import { Add, Download } from '@mui/icons-material';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import DeleteTrackDialog from '../track/dialogs/DeleteTrackDialog';
-import GpxGraphProvider from '../graph/GpxGraphProvider';
 import GeneralInfo from '../track/GeneralInfo';
 import { hasSegments, isEmptyTrack } from '../../../context/TracksManager';
 import { Checkbox, FormControlLabel } from '@mui/material/';
 import { makeStyles } from '@material-ui/core/styles';
 import TracksManager from '../../../context/TracksManager';
-import RoadAttributesGraphProvider from '../graph/RoadAttributesGraphProvider';
+import Graphs from '../graph/Graphs';
 
 const useStyles = makeStyles({
     checkbox: {
@@ -89,12 +88,7 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                         </div>
                     </>
                 )}
-                {hasSegments(ctx.selectedGpxFile) && (
-                    <>
-                        <GpxGraphProvider width={ctx.infoBlockWidth} />
-                        <RoadAttributesGraphProvider width={ctx.infoBlockWidth} />
-                    </>
-                )}
+                {hasSegments(ctx.selectedGpxFile) && <Graphs />}
                 {isEmptyTrack(ctx.selectedGpxFile) === false && (
                     <>
                         <Divider sx={{ mt: '3px', mb: '12px' }} />

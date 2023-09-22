@@ -1,17 +1,17 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Chart } from 'react-chartjs-2';
 import {
-    Tooltip,
-    Legend,
-    Chart as ChartJS,
+    BarElement,
     CategoryScale,
-    LinearScale,
-    PointElement,
-    LineController,
-    LineElement,
+    Chart as ChartJS,
     Filler,
     Interaction,
-    BarElement,
+    Legend,
+    LinearScale,
+    LineController,
+    LineElement,
+    PointElement,
+    Tooltip,
 } from 'chart.js';
 import { Box, Slider, SliderThumb } from '@mui/material';
 import AppContext from '../../../context/AppContext';
@@ -42,16 +42,16 @@ const mouseLine = {
             chart.options.mouseLine.x = NaN;
         }
     },
-    afterDraw: function (chart) {
+    beforeTooltipDraw: function (chart) {
         const ctx = chart.ctx;
         const chartArea = chart.chartArea;
         const x = chart.options.mouseLine?.x;
         if (!isNaN(x)) {
             ctx.save();
-            ctx.lineWidth = 1;
+            ctx.lineWidth = 2;
             ctx.moveTo(chart.options.mouseLine.x, chartArea.bottom);
             ctx.lineTo(chart.options.mouseLine.x, chartArea.top);
-            ctx.strokeStyle = '#757575';
+            ctx.strokeStyle = '#f8931c';
             ctx.stroke();
             ctx.restore();
         }
@@ -69,7 +69,6 @@ ChartJS.register(
     LineElement,
     Filler,
     zoomPlugin,
-    mouseLine,
     annotationsPlugin
 );
 
@@ -101,6 +100,8 @@ export default function GpxGraph({
     minSpeed,
     maxSpeed,
     slopes,
+    setSelectedPoint,
+    pointTypes,
 }) {
     const ctx = useContext(AppContext);
     const styles = useStyles();
@@ -111,6 +112,7 @@ export default function GpxGraph({
     const [slopeData, setSlopeData] = useState(null);
     const [maxMinData, setMaxMinData] = useState({});
     const [distRangeValue, setDistRangeValue] = useState([0, data.length - 1]);
+    const [lastPointInd, setLastPointInd] = useState(null);
 
     const chartRef = useRef(null);
 
@@ -185,6 +187,7 @@ export default function GpxGraph({
 
     function onMouseMoveGraph(e, chartRef) {
         if (!chartRef) {
+            setSelectedPoint(null);
             return;
         }
         if (ctx.mapMarkerListener && ctx.selectedGpxFile && chartRef.current._active?.length > 0) {
@@ -199,11 +202,11 @@ export default function GpxGraph({
                     const lng = Object.values(pointList)[ind].lng;
                     ctx.mapMarkerListener(lat, lng);
                 } else {
-                    ctx.mapMarkerListener(null);
+                    hideSelectedPoint();
                 }
             }
         } else {
-            ctx.mapMarkerListener(null);
+            hideSelectedPoint();
         }
     }
 
@@ -342,6 +345,13 @@ export default function GpxGraph({
                     label: (context) => {
                         let label = context.dataset.label || '';
                         let ind = data.findIndex((d) => d[xAxis] === Number(context.label));
+                        if (!lastPointInd || lastPointInd !== ind) {
+                            setSelectedPoint({
+                                ind: ind,
+                                dist: data[ind][xAxis],
+                            });
+                        }
+                        setLastPointInd(ind);
                         if (label) {
                             label += ': ';
                         }
@@ -357,7 +367,12 @@ export default function GpxGraph({
                         let res = [];
                         res.push(label);
                         if (data[ind] && context.dataset.yAxisID !== 'y1Slope' && showSlope) {
-                            res.push(`Slope: ${data[ind]['Slope']}`);
+                            res.push(`Slope: ${data[ind]['Slope']} %`);
+                        }
+                        res.push('-------------------------');
+                        if (pointTypes) {
+                            res.push(`Road type: ${pointTypes.type}`);
+                            res.push(`Surface: ${pointTypes.surface}`);
                         }
                         return res;
                     },
@@ -549,6 +564,11 @@ export default function GpxGraph({
         return `${data[value][xAxis].toFixed(1)}  km`;
     }
 
+    function hideSelectedPoint() {
+        ctx.mapMarkerListener(null);
+        setSelectedPoint(null);
+    }
+
     return (
         <>
             <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 42, height: 180 }}>
@@ -557,8 +577,9 @@ export default function GpxGraph({
                     style={{ fontSize: 10 }}
                     data={graphData}
                     options={options}
+                    plugins={[mouseLine]}
                     onMouseMove={(e) => onMouseMoveGraph(e, chartRef)}
-                    onMouseLeave={() => ctx.mapMarkerListener(null)}
+                    onMouseLeave={() => hideSelectedPoint()}
                 />
             </Box>
             <Slider

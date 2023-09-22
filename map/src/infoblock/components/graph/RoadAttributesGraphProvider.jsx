@@ -6,7 +6,7 @@ import RoadAttributesGraph from './RoadAttributesGraph';
 import roadTypes from '../../../store/road-types.json';
 import surfaces from '../../../store/surfaces.json';
 
-export default function RoadAttributesGraphProvider({ width }) {
+export default function RoadAttributesGraphProvider({ width, selectedPoint, setPointTypes }) {
     const ctx = useContext(AppContext);
 
     const HIGHWAY = 'highway';
@@ -29,6 +29,21 @@ export default function RoadAttributesGraphProvider({ width }) {
             setRoadPoints(null);
         }
     }, [ctx.selectedGpxFile]);
+
+    useEffect(() => {
+        if (selectedPoint) {
+            const resType = data.types.datasets.find(
+                (d, ind) => d.index <= selectedPoint.ind && data.types.datasets[ind + 1].index >= selectedPoint.ind
+            );
+            const resSurface = data.surfaces.datasets.find(
+                (d, ind) => d.index <= selectedPoint.ind && data.types.datasets[ind + 1].index >= selectedPoint.ind
+            );
+            setPointTypes({
+                type: resType.label,
+                surface: resSurface.label,
+            });
+        }
+    }, [selectedPoint]);
 
     const data = useMemo(() => {
         if (roadPoints) {
@@ -149,8 +164,22 @@ export default function RoadAttributesGraphProvider({ width }) {
         <>
             {roadPoints && data && (
                 <div>
-                    {data.types && <RoadAttributesGraph name={'Road types'} data={data.types} width={width} />}
-                    {data.surfaces && <RoadAttributesGraph name={'Surfaces'} data={data.surfaces} width={width} />}
+                    {data.types && (
+                        <RoadAttributesGraph
+                            name={'Road types'}
+                            data={data.types}
+                            width={width}
+                            selectedPoint={selectedPoint}
+                        />
+                    )}
+                    {data.surfaces && (
+                        <RoadAttributesGraph
+                            name={'Surfaces'}
+                            data={data.surfaces}
+                            width={width}
+                            selectedPoint={selectedPoint}
+                        />
+                    )}
                 </div>
             )}
         </>

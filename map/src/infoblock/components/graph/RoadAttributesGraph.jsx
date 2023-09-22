@@ -10,7 +10,7 @@ import { ExpandLess, ExpandMore } from '@mui/icons-material';
 
 ChartJS.register(Tooltip, Legend, BarElement, annotationsPlugin);
 
-export default function RoadAttributesGraph({ name, data, width }) {
+export default function RoadAttributesGraph({ name, data, width, selectedPoint }) {
     const ctx = useContext(AppContext);
     const chartRef = useRef(null);
 
@@ -48,6 +48,20 @@ export default function RoadAttributesGraph({ name, data, width }) {
                     },
                 },
             },
+            annotation: {
+                annotations: {
+                    label1: {
+                        display: selectedPoint !== null,
+                        type: 'line',
+                        id: 'selectedPoint',
+                        mode: 'vertical',
+                        scaleID: 'x',
+                        value: selectedPoint?.dist,
+                        borderColor: '#f8931c',
+                        borderWidth: 2,
+                    },
+                },
+            },
         },
         scales: {
             x: {
@@ -64,15 +78,6 @@ export default function RoadAttributesGraph({ name, data, width }) {
                     },
                     autoSkip: true,
                 },
-                // title: {
-                //     display: true,
-                //     text: 'distance in km',
-                //     color: '#757575',
-                //     font: {
-                //         size: 10,
-                //         lineHeight: 1.2,
-                //     },
-                // },
             },
             y: {
                 stacked: true,
