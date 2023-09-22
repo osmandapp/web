@@ -2,11 +2,9 @@ import Utils from '../../../util/Utils';
 
 /**
  * Add (Shift/Push/Insert) new Inter-point.
- * Temporarly use ctx to access variables/setters.
- * Later, startPoint, endPoint, interPoints, etc will be moved into class.
  */
 
-export function newInterPoint({ ctx, ll } = {}) {
+export function routeAddViaPoint({ ll } = {}) {
     /*
 
     TODO:
@@ -26,13 +24,17 @@ export function newInterPoint({ ctx, ll } = {}) {
                 if inter is closer to end, add before inter
     */
 
-    let newInterPoints = Object.assign([], ctx.interPoints);
+    const startPoint = this.getOption('route.points.start');
+    const finishPoint = this.getOption('route.points.finish');
+    const viaPoints = this.getOption('route.points.viaPoints');
+
+    let newViaPoints = Object.assign([], viaPoints);
     let minInd = -1;
 
-    if (ctx.interPoints.length > 0) {
-        let minDist = dist(ctx.endPoint, ll) + dist(ctx.interPoints[ctx.interPoints.length - 1], ll);
-        for (let i = 0; i < ctx.interPoints.length; i++) {
-            let dst = dist(i === 0 ? ctx.startPoint : ctx.interPoints[i - 1], ll) + dist(ctx.interPoints[i], ll);
+    if (viaPoints.length > 0) {
+        let minDist = dist(finishPoint, ll) + dist(viaPoints[viaPoints.length - 1], ll);
+        for (let i = 0; i < viaPoints.length; i++) {
+            let dst = dist(i === 0 ? startPoint : viaPoints[i - 1], ll) + dist(viaPoints[i], ll);
             if (dst < minDist) {
                 minInd = i;
                 minDist = dst;
@@ -40,16 +42,14 @@ export function newInterPoint({ ctx, ll } = {}) {
         }
     }
     if (minInd < 0) {
-        newInterPoints.push(ll);
+        newViaPoints.push(ll);
     } else {
-        newInterPoints.splice(minInd, 0, ll);
+        newViaPoints.splice(minInd, 0, ll);
     }
-    ctx.setInterPoints(newInterPoints);
+
+    this.setOption('route.points.viaPoints', newViaPoints);
 }
 
 function dist(a1, a2) {
     return Utils.getDistance(a1.lat, a1.lon, a2.lat, a2.lon);
-    // // distance is not correct
-    // return (a1.lat - a2.lat) * (a1.lat - a2.lat) +
-    //     (a1.lng - a2.lng) * (a1.lng - a2.lng);
 }
