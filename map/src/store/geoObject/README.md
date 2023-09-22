@@ -2,6 +2,7 @@
 
 - optimize point.ext (skip default values such as 0, false, etc)
 - optimize segments' dictionary (make it one-global and append-only)
+- optimize approximate API: reduce coordinates precision to 5-6 decimal digits (now is ~15 digits)
 
 # track format
 
