@@ -4,7 +4,7 @@ import { getOption, setOption, getOptionText } from './options.js';
 
 import { reset, putRoute, putRouteOsrm } from './setters.js';
 
-import { getRoute, getTrack, getRouteId, getRouteProps } from './getters.js';
+import { getRoute, getTrack, getRouteKey, getRouteProps } from './getters.js';
 
 export class geoObject {
     id = null;
@@ -43,7 +43,7 @@ export class geoObject {
     // getters
     getTrack = getTrack;
     getRoute = getRoute;
-    getRouteId = getRouteId;
+    getRouteKey = getRouteKey;
     getRouteProps = getRouteProps;
     getOption = getOption;
     getOptionText = getOptionText;

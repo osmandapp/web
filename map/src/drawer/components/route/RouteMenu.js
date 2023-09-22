@@ -199,12 +199,12 @@ export default function RouteMenu() {
                 {ctx.routeObject.getRoute() && (
                     <MenuItem key="routeshowdetails" sx={{ ml: 1, mr: 1 }} disableRipple={true}>
                         <FormControlLabel
-                            label="Show route points"
+                            label={ctx.routeObject.getOptionText('route.hidePoints')}
                             labelPlacement="start"
                             control={
                                 <Switch
-                                    checked={ctx.routeShowPoints}
-                                    onChange={(e) => ctx.setRouteShowPoints(e.target.checked)}
+                                    checked={ctx.routeObject.getOption('route.hidePoints')}
+                                    onChange={(e) => ctx.routeObject.setOption('route.hidePoints', e.target.checked)}
                                 />
                             }
                         />

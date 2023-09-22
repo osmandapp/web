@@ -10,6 +10,10 @@ export function getOptionText(key) {
     return text;
 }
 
+/**
+ * Param: key <String> path to option, fox example 'route.hidePoints'
+ * Param: val <Function>|<Any> new value or function (oldVal) => return newVal
+ */
 export function setOption(key, val) {
     const exist = key.split('.').reduce((a, k) => a !== undefined && a[k], this.options);
     if (exist === undefined) {
@@ -17,7 +21,13 @@ export function setOption(key, val) {
         return undefined;
     }
     this.flushState((o) =>
-        key.split('.').reduce((a, k, i, path) => (i === path.length - 1 ? (a[k] = val) : a[k]), o.options)
+        key
+            .split('.')
+            .reduce(
+                (a, k, i, path) =>
+                    i === path.length - 1 ? (a[k] = typeof val === 'function' ? val(a[k]) : val) : a[k],
+                o.options
+            )
     );
     return val;
 }

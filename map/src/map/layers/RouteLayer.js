@@ -252,14 +252,14 @@ const RouteLayer = ({ geocodingData, region }) => {
 
     // filter features for GeoJSON
     const routeFilter = (feature /*, layer*/) => {
-        if (feature?.geometry?.type === 'Point' && ctx.routeShowPoints === false) {
+        if (feature?.geometry?.type === 'Point' && ctx.routeObject.getOption('route.hidePoints') === true) {
             return false;
         }
         return true;
     };
 
-    // GeoJSON requires dynamic key to refresh (used for re-filtering)
-    const routeDataKey = () => ctx.routeObject.getRouteId() + ':' + ctx.routeShowPoints;
+    // GeoJSON requires dynamic key to refresh/refilter
+    const routeDataKey = () => ctx.routeObject.getRouteKey();
 
     const pointToLayer = (feature, latlng) => {
         let opts = Object.assign({}, geojsonMarkerOptions);

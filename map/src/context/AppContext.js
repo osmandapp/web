@@ -237,7 +237,6 @@ export const AppContextProvider = (props) => {
     routeObject.initSetter({ setter: setRouteObject });
 
     const [routeTrackFile, setRouteTrackFile] = useState(null);
-    const [routeShowPoints, setRouteShowPoints] = useState(true);
 
     let startInit,
         endInit,
@@ -472,8 +471,6 @@ export const AppContextProvider = (props) => {
                 trackRouter,
                 afterPointRouter,
                 beforePointRouter,
-                routeShowPoints,
-                setRouteShowPoints,
                 weatherPoint,
                 setWeatherPoint,
                 routeTrackFile,
