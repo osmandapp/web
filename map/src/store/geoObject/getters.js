@@ -13,9 +13,11 @@ export function getRouteKey() {
 }
 
 export function getRouteProps(route = this.route) {
-    return (route && route.length > 0 && route[0].properties) ?? null;
+    return (route?.features && route.features[0].properties) ?? null;
 }
 
+// deps for re-routing effects
+// use options affecting route-calc
 export function getRouteEffectDeps() {
     return JSON.stringify({
         allPoints: this.getOption('route.points'),

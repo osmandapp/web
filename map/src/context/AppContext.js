@@ -238,45 +238,13 @@ export const AppContextProvider = (props) => {
 
     const [routeTrackFile, setRouteTrackFile] = useState(null);
 
-    let startInit,
-        endInit,
-        pinInit,
-        interInit = [],
-        avoidInit = [];
-    if (searchParams.get('start')) {
-        let arr = searchParams.get('start').split(',');
-        startInit = { lat: parseFloat(arr[0]), lng: parseFloat(arr[1]) };
-    }
-    if (searchParams.get('end')) {
-        let arr = searchParams.get('end').split(',');
-        endInit = { lat: parseFloat(arr[0]), lng: parseFloat(arr[1]) };
-    }
+    let pinInit;
     if (searchParams.get('pin')) {
         let arr = searchParams.get('pin').split(',');
         pinInit = { lat: parseFloat(arr[0]), lng: parseFloat(arr[1]) };
     }
-    if (searchParams.get('inter')) {
-        searchParams
-            .get('inter')
-            .split(';')
-            .forEach((ll) => {
-                const [lat, lng] = ll.split(',');
-                interInit.push({ lat: parseFloat(lat), lng: parseFloat(lng) });
-            });
-    }
-    if (searchParams.get('avoid')) {
-        searchParams
-            .get('avoid')
-            .split(';')
-            .forEach((id) => {
-                avoidInit.push({ id, name: 'Way ' + Math.trunc(id / 64) });
-            });
-    }
-    const [startPoint, setStartPoint] = useState(startInit);
-    const [endPoint, setEndPoint] = useState(endInit);
     const [pinPoint, setPinPoint] = useState(pinInit);
-    const [interPoints, setInterPoints] = useState(interInit);
-    const [avoidRoads, setAvoidRoads] = useState(avoidInit);
+
     const [weatherPoint, setWeatherPoint] = useState(null);
     const [favorites, setFavorites] = useState({});
     const [addFavorite, setAddFavorite] = useState({
@@ -362,59 +330,6 @@ export const AppContextProvider = (props) => {
     }, []);
 
     useEffect(() => {
-        if (routeRouter.isReady() && routeTrackFile) {
-            routeRouter.calculateGpxRoute({
-                routeTrackFile,
-                routeObject,
-                setStartPoint,
-                setEndPoint,
-                setInterPoints,
-                changeRouteText,
-                setRoutingErrorMsg,
-            });
-        }
-    }, [routeRouter.getEffectDeps(), routeTrackFile]);
-
-    useEffect(() => {
-        if (routeRouter.isReady() && !routeTrackFile && startPoint && endPoint) {
-            routeRouter.calculateRoute({
-                startPoint,
-                endPoint,
-                interPoints,
-                avoidRoads,
-                routeObject,
-                changeRouteText,
-                setRoutingErrorMsg,
-            });
-        } else {
-            if (!routeTrackFile) {
-                setHeaderText((prevState) => ({
-                    ...prevState,
-                    route: { text: `` },
-                }));
-            }
-        }
-        // ! routeTrackFile is not part of dependency ! really? :)
-    }, [routeRouter.getEffectDeps(), startPoint, endPoint, interPoints, routeTrackFile, avoidRoads]);
-
-    function changeRouteText(processRoute, props) {
-        let resultText = ``;
-        if (processRoute) {
-            resultText = `Route calculating…`;
-        } else {
-            if (props) {
-                const { name } = routeRouter.getProfile();
-                const dist = props.overall?.distance ? props.overall?.distance : props.distance;
-                resultText = `Route ${Math.round(dist / 100) / 10.0} km for ${name} is found.`;
-            }
-        }
-        setHeaderText((prevState) => ({
-            ...prevState,
-            route: { text: resultText },
-        }));
-    }
-
-    useEffect(() => {
         loadTileUrls(setAllTileURLs);
     }, []);
 
@@ -459,14 +374,8 @@ export const AppContextProvider = (props) => {
                 tileURL,
                 setTileURL,
                 allTileURLs,
-                startPoint,
-                setStartPoint,
-                endPoint,
-                setEndPoint,
                 pinPoint,
                 setPinPoint,
-                interPoints,
-                setInterPoints,
                 routeRouter,
                 trackRouter,
                 afterPointRouter,
@@ -481,8 +390,6 @@ export const AppContextProvider = (props) => {
                 setFavorites,
                 addFavorite,
                 setAddFavorite,
-                avoidRoads,
-                setAvoidRoads,
                 localTracks,
                 setLocalTracks,
                 currentObjectType,

@@ -6,15 +6,7 @@ import TracksManager from '../../../context/TracksManager';
     OSRM profiles car/bicycle/pedestrian are compatible and supported by API
     OsmAnd profiles (ex-routeMode) are supported as is
 */
-export async function calculateGpxRoute({
-    routeTrackFile,
-    routeObject,
-    setStartPoint,
-    setEndPoint,
-    setInterPoints,
-    changeRouteText,
-    setRoutingErrorMsg,
-}) {
+export async function calculateGpxRoute({ routeObject, routeTrackFile, changeRouteText, setRoutingErrorMsg }) {
     const geoProfile = {
         profile: this.profile,
         params: this.getParams() ?? {},
@@ -39,19 +31,24 @@ export async function calculateGpxRoute({
 
     if (response.ok) {
         let data = await response.json();
-        let start, end;
+        let start, finish;
         if (data?.features?.length > 0) {
             let coords = data?.features[0].geometry.coordinates;
             if (coords.length > 0) {
                 start = { lat: coords[0][1], lng: coords[0][0] };
-                end = { lat: coords[coords.length - 1][1], lng: coords[coords.length - 1][0] };
+                finish = { lat: coords[coords.length - 1][1], lng: coords[coords.length - 1][0] };
             }
+            const { route } = routeObject.putRoute(data);
+            routeObject.setOption('route.points.start', start);
+            routeObject.setOption('route.points.finish', finish);
+            routeObject.setOption('route.points.viaPoints', []);
+            routeObject.setOption('route.geoProfile', geoProfile);
+            changeRouteText(false, routeObject.getRouteProps(route));
+        } else {
+            routeObject.reset();
+            changeRouteText(false, null);
+            setRoutingErrorMsg('gpx-approximate error');
         }
-        setStartPoint(start);
-        setEndPoint(end);
-        setInterPoints([]);
-        routeObject.putRoute(data);
-        changeRouteText(false, routeObject.getRouteProps(data));
     } else {
         const message = await response.text();
         routeObject.reset();
