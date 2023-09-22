@@ -21,6 +21,11 @@ export default function RoadAttributesGraph({ name, data, width }) {
         responsive: true,
         maintainAspectRatio: false,
         animation: false,
+        layout: {
+            padding: {
+                left: -100,
+            },
+        },
         plugins: {
             legend: {
                 display: false,
@@ -50,15 +55,24 @@ export default function RoadAttributesGraph({ name, data, width }) {
                 display: true,
                 type: 'linear',
                 max: Object.values(data.legend).reduce((a, b) => a + b, 0),
-                title: {
-                    display: true,
-                    text: 'distance in km',
-                    color: '#757575',
+                ticks: {
+                    maxTicksLimit: 10,
+                    beginAtZero: true,
+                    align: 'inner',
                     font: {
-                        size: 10,
-                        lineHeight: 1.2,
+                        size: 8,
                     },
+                    autoSkip: true,
                 },
+                // title: {
+                //     display: true,
+                //     text: 'distance in km',
+                //     color: '#757575',
+                //     font: {
+                //         size: 10,
+                //         lineHeight: 1.2,
+                //     },
+                // },
             },
             y: {
                 stacked: true,
@@ -129,7 +143,7 @@ export default function RoadAttributesGraph({ name, data, width }) {
                     </Button>
                 </Grid>
             </Grid>
-            <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 40, height: 60 }}>
+            <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 42, height: 60 }}>
                 <Bar
                     margin={{ top: 0, right: 0, left: -20, bottom: 0 }}
                     style={{ fontSize: 10 }}

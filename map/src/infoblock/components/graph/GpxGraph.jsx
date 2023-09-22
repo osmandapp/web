@@ -262,6 +262,11 @@ export default function GpxGraph({
             intersect: false,
             mode: getMode(),
         },
+        layout: {
+            padding: {
+                left: -100,
+            },
+        },
         plugins: {
             annotation: {
                 annotations: {
@@ -391,10 +396,15 @@ export default function GpxGraph({
             x: {
                 display: true,
                 type: 'linear',
-                max: data[data.length - 1][xAxis],
+                max: data[data.length - 1][xAxis].toFixed(1),
                 ticks: {
                     maxTicksLimit: 10,
                     beginAtZero: true,
+                    align: 'inner',
+                    font: {
+                        size: 8,
+                    },
+                    autoSkip: true,
                 },
                 title: {
                     display: true,
@@ -409,26 +419,33 @@ export default function GpxGraph({
             y1: {
                 display: showY1,
                 position: 'left',
-                title: {
-                    display: true,
-                    text: 'ele in m',
-                    color: '#757575',
+                ticks: {
+                    mirror: true,
+                    align: 'end',
+                    z: 1000,
                     font: {
-                        size: 10,
-                        lineHeight: 1.2,
+                        size: 8,
+                    },
+                    maxTicksLimit: 6,
+                    callback: (val) => {
+                        return val + ' m';
                     },
                 },
             },
             y2: {
                 display: showY2,
                 position: 'right',
-                title: {
-                    display: true,
-                    text: 'speed in km/h',
-                    color: '#757575',
+                ticks: {
+                    mirror: true,
+                    align: 'end',
+                    z: 1000,
                     font: {
-                        size: 10,
-                        lineHeight: 1.2,
+                        size: 8,
+                    },
+                    padding: -5,
+                    maxTicksLimit: 6,
+                    callback: (val) => {
+                        return val + ' km/h';
                     },
                 },
                 grid: {
@@ -438,13 +455,17 @@ export default function GpxGraph({
             ['y1Slope']: {
                 display: !showY2 && showSlope,
                 position: 'right',
-                title: {
-                    display: !showY2 && showSlope,
-                    text: 'slope in %',
-                    color: '#757575',
+                ticks: {
+                    mirror: true,
+                    align: 'end',
+                    z: 1000,
                     font: {
-                        size: 10,
-                        lineHeight: 1.2,
+                        size: 8,
+                    },
+                    padding: -5,
+                    maxTicksLimit: 6,
+                    callback: (val) => {
+                        return val + '  %';
                     },
                 },
                 grid: {
@@ -530,10 +551,9 @@ export default function GpxGraph({
 
     return (
         <>
-            <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 40, height: 180 }}>
+            <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 42, height: 180 }}>
                 <Chart
                     ref={chartRef}
-                    margin={{ top: 0, right: 0, left: -20, bottom: 0 }}
                     style={{ fontSize: 10 }}
                     data={graphData}
                     options={options}
