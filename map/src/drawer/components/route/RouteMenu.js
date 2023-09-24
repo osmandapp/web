@@ -77,7 +77,6 @@ export default function RouteMenu() {
     const ctx = useContext(AppContext);
 
     const routeObject = ctx.routeObject;
-    const routeRouter = ctx.routeRouter;
 
     const startPoint = routeObject.getOption('route.points.start');
     const finishPoint = routeObject.getOption('route.points.finish');
@@ -93,7 +92,7 @@ export default function RouteMenu() {
     const btnFile = useRef();
 
     useEffect(() => {
-        openSettings ? routeRouter.onOpenSettings() : routeRouter.onCloseSettings();
+        openSettings ? routeObject.onOpenSettings() : routeObject.onCloseSettings();
     }, [openSettings]);
 
     useEffect(() => {
@@ -145,7 +144,7 @@ export default function RouteMenu() {
         }
     }
 
-    const { type, profile } = routeRouter.getProfile();
+    const { type, profile } = routeObject.getProfile();
 
     const routeOptions = ['useApproximate', 'hidePoints'];
 
@@ -176,9 +175,9 @@ export default function RouteMenu() {
                             labelid="route-mode-label"
                             label={`Route profile (${type})`}
                             value={profile}
-                            onChange={(e) => routeRouter.onRouterProfileSelected({ profile: e.target.value })}
+                            onChange={(e) => routeObject.onRouterProfileSelected({ profile: e.target.value })}
                         >
-                            {routeRouter.listProfiles().map(({ key, name, icon }) => (
+                            {routeObject.listProfiles().map(({ key, name, icon }) => (
                                 <MenuItem id={'se-route-profile-' + key} key={key} value={key}>
                                     <Box display="flex" width="100%" alignItems="center">
                                         <Box display="flex" width={25} justifyContent="center" alignItems="center">

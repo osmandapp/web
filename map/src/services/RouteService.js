@@ -10,7 +10,6 @@ export function RouteService() {
     const pinPoint = context.pinPoint;
 
     const routeObject = context.routeObject;
-    const routeRouter = context.routeRouter;
     const routeTrackFile = context.routeTrackFile;
 
     const setHeaderText = context.setHeaderText;
@@ -22,7 +21,7 @@ export function RouteService() {
             resultText = 'Route calculating…';
         } else {
             if (props) {
-                const { name } = routeRouter.getProfile();
+                const { name } = routeObject.getProfile();
                 const dist = props.overall?.distance ? props.overall?.distance : props.distance;
                 resultText = `Route ${Math.round(dist / 100) / 10.0} km for ${name} is found.`;
             }
@@ -40,7 +39,7 @@ export function RouteService() {
 
     // set query-string
     useEffect(() => {
-        if (routeRouter.isReady()) {
+        if (routeObject.isReady()) {
             let obj = {};
 
             const startPoint = routeObject.getOption('route.points.start');
@@ -64,15 +63,15 @@ export function RouteService() {
             const qs = new URLSearchParams(window.location.search);
 
             if (Object.keys(obj).length > 0 || (qs.get('type') && qs.get('profile'))) {
-                const { type, profile } = routeRouter.getProfile();
+                const { type, profile } = routeObject.getProfile();
                 obj.type = type;
                 obj.profile = profile;
 
-                if (routeRouter.isParamsChanged()) {
+                if (routeObject.isParamsChanged()) {
                     const mode = TracksManager.formatRouteMode({
                         includeFalse: true,
                         profile: profile,
-                        params: routeRouter.getChangedParams(),
+                        params: routeObject.getChangedParams(),
                     });
                     obj['params'] = mode.toString().replaceAll('=', ':'); // pretty-url
                 }
@@ -88,11 +87,11 @@ export function RouteService() {
                 setRouteQueryStringParams(obj);
             }
         }
-    }, [pinPoint, routeObject.getRouteEffectDeps(), routeRouter.getEffectDeps()]);
+    }, [pinPoint, routeObject.getRouteEffectDeps(), routeObject.getEffectDeps()]);
 
     // navigate to query-string
     useEffect(() => {
-        if (routeRouter.isReady() && (Object.keys(routeQueryStringParams).length > 0 || routeQueryStringCleanup)) {
+        if (routeObject.isReady() && (Object.keys(routeQueryStringParams).length > 0 || routeQueryStringCleanup)) {
             if (Object.keys(routeQueryStringParams).length === 0) {
                 setRouteQueryStringCleanup(false); // only once
             }
@@ -106,7 +105,7 @@ export function RouteService() {
                 search: '?' + pretty,
             });
         }
-    }, [routeQueryStringParams, routeRouter.isReady()]);
+    }, [routeQueryStringParams, routeObject.isReady()]);
 
     // parse query-string
     useEffect(() => {
@@ -147,20 +146,20 @@ export function RouteService() {
 
     // route-by-gpx
     useEffect(() => {
-        if (routeTrackFile && routeRouter.isReady()) {
-            routeRouter.calculateGpxRoute({
+        if (routeTrackFile && routeObject.isReady()) {
+            routeObject.calculateGpxRoute({
                 routeObject,
                 routeTrackFile,
                 changeRouteText,
                 setRoutingErrorMsg,
             });
         }
-    }, [routeRouter.getEffectDeps(), routeTrackFile]);
+    }, [routeObject.getEffectDeps(), routeTrackFile]);
 
     // route-by-start-finish
     useEffect(() => {
-        if (!routeTrackFile && routeRouter.isReady() && routeObject.isRouteReadyToCalc()) {
-            routeRouter.calculateRoute({
+        if (!routeTrackFile && routeObject.isReady() && routeObject.isRouteReadyToCalc()) {
+            routeObject.calculateRoute({
                 routeObject,
                 changeRouteText,
                 setRoutingErrorMsg,
@@ -173,7 +172,15 @@ export function RouteService() {
                 }));
             }
         }
-    }, [routeRouter.getEffectDeps(), routeObject.getRouteEffectDeps(), routeTrackFile]);
+    }, [routeObject.getEffectDeps(), routeObject.getRouteEffectDeps(), routeTrackFile]);
+
+    // refresh selectedGpxFile with routeObject
+    // FIXME do it only when Navigation menu is open?
+    useEffect(() => {
+        if (routeObject.track) {
+            console.log('track-effect', routeObject.track);
+        }
+    }, [routeObject.track]);
 
     return null;
 }

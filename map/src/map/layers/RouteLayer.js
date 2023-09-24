@@ -37,7 +37,6 @@ const RouteLayer = ({ geocodingData, region }) => {
     const ctx = useContext(AppContext);
 
     const routeObject = ctx.routeObject;
-    const routeRouter = ctx.routeRouter;
 
     const startPoint = routeObject.getOption('route.points.start');
     const finishPoint = routeObject.getOption('route.points.finish');
@@ -67,10 +66,10 @@ const RouteLayer = ({ geocodingData, region }) => {
                 }
             },
             dragstart() {
-                routeRouter.onDragStart();
+                routeObject.onDragStart();
             },
             dragend() {
-                routeRouter.onDragEnd();
+                routeObject.onDragEnd();
                 const marker = startPointRef.current;
                 if (marker != null) {
                     routeObject.setOption('route.points.start', marker.getLatLng());
@@ -90,10 +89,10 @@ const RouteLayer = ({ geocodingData, region }) => {
                 }
             },
             dragstart() {
-                routeRouter.onDragStart();
+                routeObject.onDragStart();
             },
             dragend() {
-                routeRouter.onDragEnd();
+                routeObject.onDragEnd();
                 const marker = finishPointRef.current;
                 if (marker != null) {
                     routeObject.setOption('route.points.finish', marker.getLatLng());
@@ -128,10 +127,10 @@ const RouteLayer = ({ geocodingData, region }) => {
                 });
             },
             dragstart() {
-                routeRouter.onDragStart();
+                routeObject.onDragStart();
             },
             dragend(event) {
-                routeRouter.onDragEnd();
+                routeObject.onDragEnd();
                 const ind = event.target.options['data-index'];
                 const newViaPoints = Object.assign([], viaPoints);
                 newViaPoints[ind] = event.target.getLatLng();

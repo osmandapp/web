@@ -1,4 +1,4 @@
-import { initSetter, nextState, flushState } from '../geoRouter/state.js'; // reuse geoRouter module
+import { geoRouter } from '../geoRouter/geoRouter.js';
 
 import { routeAddViaPoint } from './legacy/routeAddViaPoint.js';
 import { getOption, setOption, getOptionText } from './options.js';
@@ -6,7 +6,7 @@ import { getOption, setOption, getOptionText } from './options.js';
 import { getRoute, getTrack, getRouteKey, getRouteProps, getRouteEffectDeps, isRouteReadyToCalc } from './getters.js';
 import { reset, putRoute, putRouteOsrm } from './setters.js';
 
-export class geoObject {
+export class geoObject extends geoRouter {
     id = null;
 
     // gpx = null; // later
@@ -34,12 +34,6 @@ export class geoObject {
         },
     };
 
-    constructor({ route = null } = {}) {
-        // gpx && this.putGpx(gpx);
-        // track && this.putTrack(track);
-        route && this.putRoute(route);
-    }
-
     // setters
     reset = reset;
     putRoute = putRoute;
@@ -60,10 +54,4 @@ export class geoObject {
 
     // route-methods
     routeAddViaPoint = routeAddViaPoint;
-
-    // state
-    setter = null;
-    nextState = nextState;
-    flushState = flushState;
-    initSetter = initSetter;
 }

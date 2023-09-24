@@ -232,12 +232,6 @@ export const AppContextProvider = (props) => {
     const [tileURL, setTileURL] = useState(osmandTileURL);
     const [allTileURLs, setAllTileURLs] = useState({});
 
-    // route
-    const [routeObject, setRouteObject] = useState(() => new geoObject());
-    routeObject.initSetter({ setter: setRouteObject });
-
-    const [routeTrackFile, setRouteTrackFile] = useState(null);
-
     let pinInit;
     if (searchParams.get('pin')) {
         let arr = searchParams.get('pin').split(',');
@@ -282,10 +276,17 @@ export const AppContextProvider = (props) => {
     const [processRouting, setProcessRouting] = useState(false);
     const [selectedWpt, setSelectedWpt] = useState(null);
 
-    const [routeRouter, setRouteRouter] = useState(() => new geoRouter());
+    const [routeTrackFile, setRouteTrackFile] = useState(null);
+
+    const [routeObject, setRouteObject] = useState(() => new geoObject());
     const [trackRouter, setTrackRouter] = useState(() => new geoRouter());
     const [afterPointRouter, setAfterPointRouter] = useState(() => new geoRouter());
     const [beforePointRouter, setBeforePointRouter] = useState(() => new geoRouter());
+
+    routeObject.initSetter({ setter: setRouteObject });
+    trackRouter.initSetter({ setter: setTrackRouter });
+    afterPointRouter.initSetter({ setter: setAfterPointRouter });
+    beforePointRouter.initSetter({ setter: setBeforePointRouter });
 
     const [trackRange, setTrackRange] = useState(null);
 
@@ -296,11 +297,6 @@ export const AppContextProvider = (props) => {
 
     const [develFeatures, setDevelFeatures] = useState(process.env.REACT_APP_DEVEL_FEATURES === 'yes');
     const [infoBlockWidth, setInfoBlockWidth] = useState(0);
-
-    routeRouter.initSetter({ setter: setRouteRouter });
-    trackRouter.initSetter({ setter: setTrackRouter });
-    afterPointRouter.initSetter({ setter: setAfterPointRouter });
-    beforePointRouter.initSetter({ setter: setBeforePointRouter });
 
     useEffect(() => {
         TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
@@ -321,7 +317,7 @@ export const AppContextProvider = (props) => {
 
     useEffect(() => {
         const sequentialLoad = async () => {
-            await routeRouter.loadProviders({ parseQueryString: true });
+            await routeObject.loadProviders({ parseQueryString: true });
             await trackRouter.loadProviders();
             await afterPointRouter.loadProviders();
             await beforePointRouter.loadProviders();
@@ -376,7 +372,6 @@ export const AppContextProvider = (props) => {
                 allTileURLs,
                 pinPoint,
                 setPinPoint,
-                routeRouter,
                 trackRouter,
                 afterPointRouter,
                 beforePointRouter,
