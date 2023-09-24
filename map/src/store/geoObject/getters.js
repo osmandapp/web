@@ -22,6 +22,7 @@ export function getRouteEffectDeps() {
     return JSON.stringify({
         allPoints: this.getOption('route.points'),
         useApproximate: this.getOption('route.useApproximate'),
+        // hidePoints: this.getOption('route.hidePoints'), // might be used later for conversion-methods
     });
 }
 

@@ -4,7 +4,7 @@ import { routeAddViaPoint } from './legacy/routeAddViaPoint.js';
 import { getOption, setOption, getOptionText } from './options.js';
 
 import { getRoute, getTrack, getRouteKey, getRouteProps, getRouteEffectDeps, isRouteReadyToCalc } from './getters.js';
-import { reset, putRoute, putRouteOsrm } from './setters.js';
+import { resetRoute, putRoute, putRouteOsrm } from './setters.js';
 
 export class geoObject extends geoRouter {
     id = null;
@@ -15,7 +15,6 @@ export class geoObject extends geoRouter {
 
     options = {
         route: {
-            geoProfile: null,
             hidePoints: false,
             useApproximate: false,
             points: {
@@ -35,9 +34,9 @@ export class geoObject extends geoRouter {
     };
 
     // setters
-    reset = reset;
     putRoute = putRoute;
     putRouteOsrm = putRouteOsrm;
+    resetRoute = resetRoute;
     setOption = setOption;
 
     // getters

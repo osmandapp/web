@@ -6,7 +6,7 @@ import TracksManager from '../../../context/TracksManager';
     OSRM profiles car/bicycle/pedestrian are compatible and supported by API
     OsmAnd profiles (ex-routeMode) are supported as is
 */
-export async function calculateGpxRoute({ routeObject, routeTrackFile, changeRouteText, setRoutingErrorMsg }) {
+export async function calculateGpxRoute({ routeTrackFile, changeRouteText, setRoutingErrorMsg }) {
     const geoProfile = {
         profile: this.profile,
         params: this.getParams() ?? {},
@@ -38,20 +38,19 @@ export async function calculateGpxRoute({ routeObject, routeTrackFile, changeRou
                 start = { lat: coords[0][1], lng: coords[0][0] };
                 finish = { lat: coords[coords.length - 1][1], lng: coords[coords.length - 1][0] };
             }
-            const { route } = routeObject.putRoute(data);
-            routeObject.setOption('route.points.start', start);
-            routeObject.setOption('route.points.finish', finish);
-            routeObject.setOption('route.points.viaPoints', []);
-            routeObject.setOption('route.geoProfile', geoProfile);
-            changeRouteText(false, routeObject.getRouteProps(route));
+            const { route } = this.putRoute({ route: data });
+            this.setOption('route.points.start', start);
+            this.setOption('route.points.finish', finish);
+            this.setOption('route.points.viaPoints', []);
+            changeRouteText(false, this.getRouteProps(route));
         } else {
-            routeObject.reset();
+            this.resetRoute();
             changeRouteText(false, null);
             setRoutingErrorMsg('gpx-approximate error');
         }
     } else {
         const message = await response.text();
-        routeObject.reset();
+        this.resetRoute();
         changeRouteText(false, null);
         setRoutingErrorMsg(message);
     }

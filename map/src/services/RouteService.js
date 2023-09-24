@@ -148,7 +148,6 @@ export function RouteService() {
     useEffect(() => {
         if (routeTrackFile && routeObject.isReady()) {
             routeObject.calculateGpxRoute({
-                routeObject,
                 routeTrackFile,
                 changeRouteText,
                 setRoutingErrorMsg,
@@ -160,7 +159,6 @@ export function RouteService() {
     useEffect(() => {
         if (!routeTrackFile && routeObject.isReady() && routeObject.isRouteReadyToCalc()) {
             routeObject.calculateRoute({
-                routeObject,
                 changeRouteText,
                 setRoutingErrorMsg,
             });

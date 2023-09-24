@@ -8,12 +8,11 @@ const PROFILE_LINE = TracksManager.PROFILE_LINE;
 
 const LINE_WAITING_STYLE = TrackLayerProvider.TEMP_LINE_STYLE;
 
-export async function calculateRoute({ routeObject, changeRouteText, setRoutingErrorMsg }) {
+export async function calculateRoute({ changeRouteText, setRoutingErrorMsg }) {
     const style = { color: this.colors[this.profile] ?? 'blue' };
 
     if (this.profile === PROFILE_LINE) {
-        return calculateRouteLine({
-            routeObject,
+        return calculateRouteLine.call(this, {
             changeRouteText,
             setRoutingErrorMsg,
             style,
@@ -21,8 +20,8 @@ export async function calculateRoute({ routeObject, changeRouteText, setRoutingE
     }
 
     const waitingStyle = LINE_WAITING_STYLE;
-    const waitingLines = makeLineFeatureCollection({ routeObject, style: waitingStyle });
-    routeObject.putRoute(waitingLines.geojson);
+    const waitingLines = makeLineFeatureCollection.call(this, { style: waitingStyle });
+    this.putRoute({ route: waitingLines.geojson, skipConversion: true });
 
     if (this.preview) {
         return;
@@ -30,7 +29,6 @@ export async function calculateRoute({ routeObject, changeRouteText, setRoutingE
 
     if (this.type === 'osrm') {
         return calculateRouteOSRM.call(this, {
-            routeObject,
             changeRouteText,
             setRoutingErrorMsg,
             style,
@@ -43,9 +41,8 @@ export async function calculateRoute({ routeObject, changeRouteText, setRoutingE
             profile: this.profile,
             params: this.getParams() ?? {},
         };
-        return calculateRouteOsmAnd({
+        return calculateRouteOsmAnd.call(this, {
             geoProfile,
-            routeObject,
             changeRouteText,
             setRoutingErrorMsg,
             style,
@@ -55,7 +52,7 @@ export async function calculateRoute({ routeObject, changeRouteText, setRoutingE
     console.error('unknown calculateRoute() call');
 }
 
-async function calculateRouteOSRM({ routeObject, changeRouteText, setRoutingErrorMsg, style }) {
+async function calculateRouteOSRM({ changeRouteText, setRoutingErrorMsg, style }) {
     // OSRM
     const url = this.getURL();
     const tail = '?geometries=geojson&overview=full&steps=true';
@@ -64,9 +61,9 @@ async function calculateRouteOSRM({ routeObject, changeRouteText, setRoutingErro
 
     const geo = (point) => point.lng.toFixed(6) + ',' + point.lat.toFixed(6); // OSRM: lng first, lat second !
 
-    const startPoint = routeObject.getOption('route.points.start');
-    const finishPoint = routeObject.getOption('route.points.finish');
-    const viaPoints = routeObject.getOption('route.points.viaPoints');
+    const startPoint = this.getOption('route.points.start');
+    const finishPoint = this.getOption('route.points.finish');
+    const viaPoints = this.getOption('route.points.viaPoints');
 
     points.push(geo(startPoint));
     viaPoints?.forEach((i) => points.push(geo(i)));
@@ -81,10 +78,10 @@ async function calculateRouteOSRM({ routeObject, changeRouteText, setRoutingErro
 
     if (response.ok) {
         const osrm = await response.json();
-        const { route } = routeObject.putRouteOsrm({ osrm, style });
-        changeRouteText(false, routeObject.getRouteProps(route));
+        const { route } = this.putRouteOsrm({ osrm, style });
+        changeRouteText(false, this.getRouteProps(route));
     } else {
-        routeObject.reset();
+        this.resetRoute();
         changeRouteText(false, null);
         try {
             const json = JSON.parse(response.data);
@@ -97,13 +94,13 @@ async function calculateRouteOSRM({ routeObject, changeRouteText, setRoutingErro
     }
 }
 
-async function calculateRouteOsmAnd({ geoProfile, routeObject, changeRouteText, setRoutingErrorMsg, style }) {
+async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErrorMsg, style }) {
     setRoutingErrorMsg(null);
 
-    const startPoint = routeObject.getOption('route.points.start');
-    const finishPoint = routeObject.getOption('route.points.finish');
-    const viaPoints = routeObject.getOption('route.points.viaPoints');
-    const avoidRoads = routeObject.getOption('route.points.avoidRoads');
+    const startPoint = this.getOption('route.points.start');
+    const finishPoint = this.getOption('route.points.finish');
+    const viaPoints = this.getOption('route.points.viaPoints');
+    const avoidRoads = this.getOption('route.points.avoidRoads');
 
     const starturl = `points=${startPoint.lat.toFixed(6)},${startPoint.lng.toFixed(6)}`;
     let inter = '';
@@ -144,27 +141,27 @@ async function calculateRouteOsmAnd({ geoProfile, routeObject, changeRouteText, 
                 }
             });
         }
-        const { route } = routeObject.putRoute(data);
-        changeRouteText(false, routeObject.getRouteProps(route));
+        const { route } = this.putRoute({ route: data });
+        changeRouteText(false, this.getRouteProps(route));
     } else {
-        routeObject.reset();
+        this.resetRoute();
         changeRouteText(false, null);
         setRoutingErrorMsg(`Router error. Please open settings and choose another provider/profile.`);
     }
 }
 
-async function calculateRouteLine({ routeObject, changeRouteText, setRoutingErrorMsg, style }) {
-    const draft = makeLineFeatureCollection({ routeObject, style });
-    const { route } = routeObject.putRoute(draft.geojson);
-    changeRouteText(false, routeObject.getRouteProps(route));
+async function calculateRouteLine({ changeRouteText, setRoutingErrorMsg, style }) {
+    const draft = makeLineFeatureCollection.call(this, { style });
+    const { route } = this.putRoute({ route: draft.geojson });
+    changeRouteText(false, this.getRouteProps(route));
     setRoutingErrorMsg(null);
     return draft;
 }
 
-function makeLineFeatureCollection({ routeObject, style = {} } = {}) {
-    const startPoint = routeObject.getOption('route.points.start');
-    const finishPoint = routeObject.getOption('route.points.finish');
-    const viaPoints = routeObject.getOption('route.points.viaPoints');
+function makeLineFeatureCollection({ style = {} } = {}) {
+    const startPoint = this.getOption('route.points.start');
+    const finishPoint = this.getOption('route.points.finish');
+    const viaPoints = this.getOption('route.points.viaPoints');
 
     const coordinates = [];
     coordinates.push([startPoint.lng, startPoint.lat]);

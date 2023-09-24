@@ -230,7 +230,7 @@ export default function RouteMenu() {
                         onClick={() => {
                             setStart('');
                             routeObject.setOption('route.points.start', null);
-                            routeObject.reset();
+                            routeObject.resetRoute();
                         }}
                     >
                         <Clear fontSize="small" />
@@ -286,7 +286,7 @@ export default function RouteMenu() {
                         onClick={() => {
                             setFinish('');
                             routeObject.setOption('route.points.finish', null);
-                            routeObject.reset();
+                            routeObject.resetRoute();
                         }}
                     >
                         <Clear fontSize="small" />
@@ -320,7 +320,7 @@ export default function RouteMenu() {
                         <IconButton
                             sx={{ ml: 1 }}
                             onClick={() => {
-                                routeObject.reset();
+                                routeObject.resetRoute();
                                 ctx.setRouteTrackFile(null);
                                 routeObject.setOption('route.points.start', null);
                                 routeObject.setOption('route.points.finish', null);
