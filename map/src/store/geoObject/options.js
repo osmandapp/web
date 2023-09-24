@@ -13,6 +13,9 @@ export function getOptionText(key) {
 /**
  * Param: key <String> path to option, fox example 'route.hidePoints'
  * Param: val <Function>|<Any> new value or function (oldVal) => return newVal
+ *
+ * Note: setOption() would never set val as a *new* Object|Array
+ * Please take care when using useEffect() with Object|Array option as dep
  */
 export function setOption(key, val) {
     const exist = key.split('.').reduce((a, k) => a !== undefined && a[k], this.options);
