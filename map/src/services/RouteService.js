@@ -175,9 +175,9 @@ export function RouteService() {
     // refresh selectedGpxFile with routeObject
     // FIXME do it only when Navigation menu is open?
     useEffect(() => {
-        if (routeObject.track) {
-            console.log('track-effect', routeObject.track);
-        }
+        // if (routeObject.track) {
+        // console.log('track-effect', routeObject.track);
+        // }
     }, [routeObject.track]);
 
     return null;
