@@ -125,9 +125,9 @@ export default function RoadAttributesGraphProvider({ width, selectedPoint, setP
         if (label) {
             let currentColor;
             const type = tagName === SURFACE ? label : getRoadType(label);
-            if (colors[label]) {
-                colors[label].distance += seg.distance;
-                currentColor = colors[label].color;
+            if (colors[type]) {
+                colors[type].distance += seg.distance;
+                currentColor = colors[type].color;
             } else {
                 if (seg.distance) {
                     currentColor = getColor(label, colors, tagName);
@@ -171,7 +171,7 @@ export default function RoadAttributesGraphProvider({ width, selectedPoint, setP
                 <div>
                     {data.types && (
                         <RoadAttributesGraph
-                            name={'Road types'}
+                            name={'Road type'}
                             data={data.types}
                             width={width}
                             selectedPoint={selectedPoint}
@@ -179,7 +179,7 @@ export default function RoadAttributesGraphProvider({ width, selectedPoint, setP
                     )}
                     {data.surfaces && (
                         <RoadAttributesGraph
-                            name={'Surfaces'}
+                            name={'Surface'}
                             data={data.surfaces}
                             width={width}
                             selectedPoint={selectedPoint}

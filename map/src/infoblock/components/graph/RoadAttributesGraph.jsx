@@ -36,15 +36,12 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                 backgroundColor: '#757575',
                 displayColors: false,
                 callbacks: {
+                    title: () => null,
                     label: (context) => {
                         let label = context.dataset?.label || '';
                         if (label) {
-                            label += ': ';
+                            return `${label[0].toUpperCase() + label.slice(1).toLowerCase()}: ${context.parsed.x} km`;
                         }
-                        if (context.parsed.x !== null) {
-                            label += `${context.parsed.x} km`;
-                        }
-                        return label;
                     },
                 },
             },
@@ -57,7 +54,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                         mode: 'vertical',
                         scaleID: 'x',
                         value: selectedPoint?.dist,
-                        borderColor: name === 'Surfaces' ? '#f8931c' : '#1976d2',
+                        borderColor: name === 'Surface' ? '#f8931c' : '#1976d2',
                         borderWidth: 2,
                     },
                 },
@@ -101,7 +98,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
 
     function prepareDistance(value) {
         if (value?.distance) {
-            if (value.distance > 0.01) {
+            if (value.distance > 10) {
                 return `${(value.distance / 1000).toFixed(2)} km`;
             } else {
                 return '< 10 m';
@@ -158,7 +155,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                     data={graphData}
                     options={options}
                     onMouseMove={(e) => onMouseMoveGraph(e, chartRef)}
-                    onMouseLeave={() => hideSelectedPointSegment()}
+                    onMouseLeave={hideSelectedPointSegment}
                     ref={chartRef}
                 />
             </Box>

@@ -187,7 +187,6 @@ export default function GpxGraph({
 
     function onMouseMoveGraph(e, chartRef) {
         if (!chartRef) {
-            setSelectedPoint(null);
             return;
         }
         if (ctx.mapMarkerListener && ctx.selectedGpxFile && chartRef.current._active?.length > 0) {
@@ -346,12 +345,12 @@ export default function GpxGraph({
                 displayColors: false,
                 callbacks: {
                     title: (context) => {
-                        return `${xAxis}: ${context[0].label} km`;
+                        return `${xAxis}: ${Number(context[0].label).toFixed(2)} km`;
                     },
                     label: (context) => {
                         let label = context.dataset.label || '';
                         let ind = data.findIndex((d) => d[xAxis] === Number(context.label));
-                        if (!lastPointInd || lastPointInd !== ind) {
+                        if ((!lastPointInd || lastPointInd !== ind) && context.dataset.yAxisID !== 'y1Slope') {
                             setSelectedPoint({
                                 ind: ind,
                                 dist: data[ind][xAxis],
@@ -368,17 +367,17 @@ export default function GpxGraph({
                                 ? '%'
                                 : 'km/h';
                         if (context.parsed.y !== null) {
-                            label += `${context.parsed.y} ${dimension}`;
+                            label += `${context.parsed.y.toFixed(0)} ${dimension}`;
                         }
                         let res = [];
                         res.push(label);
                         if (data[ind] && context.dataset.yAxisID !== 'y1Slope' && showSlope) {
-                            res.push(`Slope: ${data[ind]['Slope']} %`);
+                            res.push(`Slope: ${data[ind]['Slope'].toFixed(0)} %`);
                         }
                         res.push('-------------------------');
                         if (pointTypes) {
-                            res.push(`Road type: ${pointTypes.type}`);
-                            res.push(`Surface: ${pointTypes.surface}`);
+                            res.push(pointTypes.type);
+                            res.push(pointTypes.surface);
                         }
                         return res;
                     },
@@ -417,7 +416,7 @@ export default function GpxGraph({
             x: {
                 display: true,
                 type: 'linear',
-                max: Number(data[data.length - 1][xAxis].toFixed(1)),
+                max: Number(data[data.length - 1][xAxis]).toFixed(1),
                 ticks: {
                     maxTicksLimit: 10,
                     beginAtZero: true,
