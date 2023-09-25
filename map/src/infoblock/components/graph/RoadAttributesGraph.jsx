@@ -57,7 +57,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                         mode: 'vertical',
                         scaleID: 'x',
                         value: selectedPoint?.dist,
-                        borderColor: '#f8931c',
+                        borderColor: name === 'Surfaces' ? '#f8931c' : '#1976d2',
                         borderWidth: 2,
                     },
                 },
@@ -114,22 +114,25 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
         if (!chartRef) {
             return;
         }
-        if (ctx.mapMarkerListener && ctx.selectedGpxFile && chartRef.current._active?.length > 0) {
+        if (ctx.selectedGpxFile && chartRef.current._active?.length > 0) {
             let selected = chartRef.current._active[0];
             if (selected) {
                 let pointList = TracksManager.getTrackPoints(ctx.selectedGpxFile);
                 const ind = data.datasets[selected.datasetIndex].index;
                 if (ind) {
-                    const lat = Object.values(pointList)[ind].lat;
-                    const lng = Object.values(pointList)[ind].lng;
-                    ctx.mapMarkerListener(lat, lng);
+                    const range = [ind, ind + Number(pointList[ind].segment.ext.length)];
+                    ctx.setTrackRange(range);
                 } else {
-                    ctx.mapMarkerListener(null);
+                    hideSelectedPointSegment();
                 }
             }
         } else {
-            ctx.mapMarkerListener(null);
+            hideSelectedPointSegment();
         }
+    }
+
+    function hideSelectedPointSegment() {
+        ctx.setTrackRange([]);
     }
 
     return (
@@ -155,6 +158,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                     data={graphData}
                     options={options}
                     onMouseMove={(e) => onMouseMoveGraph(e, chartRef)}
+                    onMouseLeave={() => hideSelectedPointSegment()}
                     ref={chartRef}
                 />
             </Box>
@@ -169,7 +173,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                                         item
                                         key={type}
                                         sx={{ display: 'flex', paddingTop: '0px !important', ml: '-16px !important' }}
-                                        xs={Object.entries(data.legend).length > 5 ? 6 : 12}
+                                        xs={Object.entries(data.legend).length > 3 ? 6 : 12}
                                     >
                                         <Icon sx={{ overflow: 'visible' }}>
                                             <CircleIcon sx={{ color: value.color, fontSize: '0.8rem' }} />

@@ -9,11 +9,13 @@ export default function Graphs() {
     const [selectedPoint, setSelectedPoint] = useState(null);
     const [pointTypes, setPointTypes] = useState(null);
 
+    const graphWidth = ctx.infoBlockWidth;
+
     return (
         <>
-            <GpxGraphProvider width={ctx.infoBlockWidth} setSelectedPoint={setSelectedPoint} pointTypes={pointTypes} />
+            <GpxGraphProvider width={graphWidth} setSelectedPoint={setSelectedPoint} pointTypes={pointTypes} />
             <RoadAttributesGraphProvider
-                width={ctx.infoBlockWidth}
+                width={graphWidth}
                 selectedPoint={selectedPoint}
                 setPointTypes={setPointTypes}
             />

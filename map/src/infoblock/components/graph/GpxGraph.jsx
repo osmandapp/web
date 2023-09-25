@@ -51,7 +51,7 @@ const mouseLine = {
             ctx.lineWidth = 2;
             ctx.moveTo(chart.options.mouseLine.x, chartArea.bottom);
             ctx.lineTo(chart.options.mouseLine.x, chartArea.top);
-            ctx.strokeStyle = '#f8931c';
+            ctx.strokeStyle = '#1976d2';
             ctx.stroke();
             ctx.restore();
         }
@@ -140,7 +140,7 @@ export default function GpxGraph({
                 }
             }
             setDistRangeValue([0, data.length - 1]);
-            ctx.setTrackRange(null);
+            ctx.setTrackRange([]);
         }
     }, [data, showData, slopes]);
 
@@ -215,7 +215,8 @@ export default function GpxGraph({
     }
 
     function showRange() {
-        const defaultPos = distRangeValue[0] === 0 && distRangeValue[1] === data.length - 1;
+        const defaultPos =
+            _.isEmpty(ctx.trackRange) || (ctx.trackRange[0] === 0 && ctx.trackRange[1] === data.length - 1);
         return !defaultPos;
     }
 
@@ -252,6 +253,10 @@ export default function GpxGraph({
 
     function getMode() {
         return !showY1 && !showY2 && showSlope ? 'index' : 'myCustomMode';
+    }
+
+    function getSelectedBoxPosition(ind) {
+        return !_.isEmpty(ctx.trackRange) && data[ctx.trackRange[ind]] && data[ctx.trackRange[ind]][xAxis];
     }
 
     const options = {
@@ -326,9 +331,10 @@ export default function GpxGraph({
                     box1: {
                         display: showRange(),
                         type: 'box',
-                        xMin: data[distRangeValue[0]] && data[distRangeValue[0]][xAxis],
-                        xMax: data[distRangeValue[1]] && data[distRangeValue[1]][xAxis],
-                        backgroundColor: 'rgba(245, 208, 39, 0.34)',
+                        xMin: getSelectedBoxPosition(0),
+                        xMax: getSelectedBoxPosition(1),
+                        backgroundColor: 'rgb(169,169,169, 0.34)',
+                        borderWidth: 0,
                     },
                 },
             },
@@ -411,7 +417,7 @@ export default function GpxGraph({
             x: {
                 display: true,
                 type: 'linear',
-                max: data[data.length - 1][xAxis].toFixed(1),
+                max: Number(data[data.length - 1][xAxis].toFixed(1)),
                 ticks: {
                     maxTicksLimit: 10,
                     beginAtZero: true,

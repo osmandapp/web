@@ -64,7 +64,7 @@ export default function RoadAttributesGraphProvider({ width, selectedPoint, setP
                         const type = routeTypes[t];
                         if (type) {
                             if (type.tag === HIGHWAY) {
-                                seg[HIGHWAY] = roadTypes[type.value] ? roadTypes[type.value].class : type.value;
+                                seg[HIGHWAY] = type.value;
                             }
                             if (type.tag === SURFACE) {
                                 seg[SURFACE] = type.value;
@@ -124,20 +124,21 @@ export default function RoadAttributesGraphProvider({ width, selectedPoint, setP
         const label = seg[tagName];
         if (label) {
             let currentColor;
+            const type = tagName === SURFACE ? label : getRoadType(label);
             if (colors[label]) {
                 colors[label].distance += seg.distance;
                 currentColor = colors[label].color;
             } else {
                 if (seg.distance) {
                     currentColor = getColor(label, colors, tagName);
-                    colors[label] = {
+                    colors[type] = {
                         color: currentColor,
                         distance: seg.distance,
                     };
                 }
             }
             return {
-                label: label,
+                label: type,
                 type: 'bar',
                 backgroundColor: currentColor,
                 borderWidth: -1,
@@ -147,6 +148,10 @@ export default function RoadAttributesGraphProvider({ width, selectedPoint, setP
                 index: seg.ind,
             };
         }
+    }
+
+    function getRoadType(value) {
+        return roadTypes[value] ? roadTypes[value].class : value;
     }
 
     function getColor(label, colors, tagName) {

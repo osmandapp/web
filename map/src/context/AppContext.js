@@ -315,7 +315,7 @@ export const AppContextProvider = (props) => {
     const [afterPointRouter, setAfterPointRouter] = useState(() => new geoRouter());
     const [beforePointRouter, setBeforePointRouter] = useState(() => new geoRouter());
 
-    const [trackRange, setTrackRange] = useState(null);
+    const [trackRange, setTrackRange] = useState([]);
 
     const [showPoints, mutateShowPoints] = useMutator({
         points: true,

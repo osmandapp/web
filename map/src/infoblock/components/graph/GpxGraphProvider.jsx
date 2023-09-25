@@ -285,7 +285,7 @@ const GpxGraphProvider = ({ width, setSelectedPoint, pointTypes }) => {
     return (
         <>
             {graphData && showData && <Divider sx={{ mt: '3px', mb: '12px' }} />}
-            <div style={{ marginLeft: '20px' }}>
+            <div style={{ marginLeft: '8px' }}>
                 {showData &&
                     Object.entries(showData).map(([key, value]) => (
                         <FormControlLabel

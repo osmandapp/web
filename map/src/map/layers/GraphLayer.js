@@ -3,6 +3,7 @@ import L from 'leaflet';
 import AppContext from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import TracksManager from '../../context/TracksManager';
+import _ from 'lodash';
 
 export default function GraphLayer() {
     const ctx = useContext(AppContext);
@@ -11,7 +12,7 @@ export default function GraphLayer() {
     const [trackRangeLine, setTrackRangeLine] = useState(null);
 
     useEffect(() => {
-        if (ctx.trackRange) {
+        if (!_.isEmpty(ctx.trackRange)) {
             let trackPoints = ctx.selectedGpxFile.points
                 ? ctx.selectedGpxFile.points
                 : TracksManager.getTrackPoints(ctx.selectedGpxFile);
