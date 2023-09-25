@@ -68,6 +68,9 @@
     "compacted": {
         "color": "#cbcbe8"
     },
+    "pebblestone": {
+        "color": "#a7cdf8"
+    },
     "undefined": {
         "color": "#e8e8e8"
     }

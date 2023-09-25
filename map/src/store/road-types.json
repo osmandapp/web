@@ -25,23 +25,23 @@
     },
     "secondary": {
         "class": "road",
-        "color": "#ffffff"
+        "color": "#FED086"
     },
     "secondary_link": {
         "class": "road",
-        "color": "#ffffff"
+        "color": "#FED086"
     },
     "tertiary": {
         "class": "road",
-        "color": "#ffffff"
+        "color": "#FED086"
     },
     "tertiary_link": {
         "class": "road",
-        "color": "#ffffff"
+        "color": "#FED086"
     },
     "unclassified": {
         "class": "road",
-        "color": "#ffffff"
+        "color": "#FED086"
     },
     "residential": {
         "class": "street",
@@ -73,11 +73,11 @@
     },
     "steps": {
         "class": "steps",
-        "color": "#77000000"
+        "color": "#33000000"
     },
     "path": {
         "class": "path",
-        "color": "#77000000"
+        "color": "#33000000"
     },
     "cycleway": {
         "class": "cycleway",
