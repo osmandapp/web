@@ -57,7 +57,7 @@
     },
     "pedestrian": {
         "class": "footway",
-        "color": "#33000000"
+        "color": "#cccccc"
     },
     "road": {
         "class": "undefined",
@@ -65,7 +65,7 @@
     },
     "footway": {
         "class": "footway",
-        "color": "#33000000"
+        "color": "#cccccc"
     },
     "bridleway": {
         "class": "bridleway",
@@ -73,11 +73,11 @@
     },
     "steps": {
         "class": "steps",
-        "color": "#33000000"
+        "color": "#cccccc"
     },
     "path": {
         "class": "path",
-        "color": "#33000000"
+        "color": "#cccccc"
     },
     "cycleway": {
         "class": "cycleway",
