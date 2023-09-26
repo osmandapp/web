@@ -68,7 +68,7 @@ sidebar_position: 6
 10. Troubleshooting (m1 mac)
   - In case of ```ld: library not found for -lOsmAndCore_static_standalone```:
   - Project Navigator -> OsmAnd_projects -> OsmAnd_projects (in Project/Targets list) -> Build settings -> All -> Architectures -> Excluded Architectures -> Debug
-  - Add  ```arm64``` string field.
+  - Add  ```arm64``` string field. (you will need to add it after each prepare.sh run)
   - Build project. In case of errors, delete folders ```Baked``` and ```Binaries``` and run ```prepare.sh``` once again.
     
 
