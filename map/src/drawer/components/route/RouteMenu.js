@@ -146,7 +146,7 @@ export default function RouteMenu() {
 
     const { type, profile } = routeObject.getProfile();
 
-    const routeOptions = ['useApproximate', 'hidePoints'];
+    const routeOptions = ['hidePoints'];
 
     return (
         <>
