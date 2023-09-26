@@ -156,7 +156,7 @@ const GpxGraphProvider = ({ width }) => {
                 maxEle: maxEle,
                 minSpeed: minSpeed,
                 maxSpeed: maxSpeed,
-                slopes: getSlopes(result),
+                slopes: getSlopes(result, sumDist),
             };
         }
     }, [data]);
@@ -194,14 +194,15 @@ const GpxGraphProvider = ({ width }) => {
         return { calculatedX, calculatedY };
     }
 
-    function getSlopes(result) {
+    function getSlopes(result, sumDist) {
+        const totalDistance = ctx?.selectedGpxFile?.analysis?.totalDistance || sumDist;
         let STEP = 5;
         let l = 10;
-        while (l > 0 && ctx.selectedGpxFile.analysis.totalDistance / STEP > 10000) {
-            STEP = Math.max(STEP, ctx.selectedGpxFile.analysis.totalDistance / (result.length * l--));
+        while (l > 0 && totalDistance / STEP > 10000) {
+            STEP = Math.max(STEP, totalDistance / (result.length * l--));
         }
         // interpolate
-        const interpolatorResult = interpolate(ctx.selectedGpxFile.analysis.totalDistance, STEP, result);
+        const interpolatorResult = interpolate(totalDistance, STEP, result);
 
         const calculatedDist = interpolatorResult.calculatedX;
         const calculatedH = interpolatorResult.calculatedY;
