@@ -15,6 +15,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+
 ## Overview
 
 The **Plan a route** tool is a powerful feature of the OsmAnd application that allows you to [create new routes](#create-new-route) as GPX tracks, [edit and add new segments](#segments) to already saved tracks, [measure distances](#distance-measurement) on the map, and [attach track](#attach-to-the-roads) segments to the nearest available road using different navigation profiles. The feature is designed to work in *offline mode*.
