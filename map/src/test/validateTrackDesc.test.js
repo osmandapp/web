@@ -5,7 +5,7 @@ jest.mock('../util/Utils', () => ({
     default: jest.fn(),
 }));
 
-jest.mock('../context/FavoritesManager', () => ({
+jest.mock('../manager/FavoritesManager', () => ({
     __esModule: true,
     default: jest.fn(),
 }));
