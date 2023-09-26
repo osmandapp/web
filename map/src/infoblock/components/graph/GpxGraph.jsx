@@ -128,9 +128,11 @@ export default function GpxGraph({
     };
     useEffect(() => {
         if (data) {
-            setSpeedData(showData[y2Axis] ? data.map((d) => ({ x: d[xAxis], y: d[y2Axis] })) : null);
-            setEleData(showData[y1Axis[0]] ? data.map((d) => ({ x: d[xAxis], y: d[y1Axis[0]] })) : null);
-            setEleSRTMData(showData[y1Axis[1]] ? data.map((d) => ({ x: d[xAxis], y: d[y1Axis[1]] })) : null);
+            setSpeedData(showData[y2Axis] ? data.map((d) => ({ x: d[xAxis], y: parseFloat(d[y2Axis]) })) : null);
+            setEleData(showData[y1Axis[0]] ? data.map((d) => ({ x: d[xAxis], y: parseFloat(d[y1Axis[0]]) })) : null);
+            setEleSRTMData(
+                showData[y1Axis[1]] ? data.map((d) => ({ x: d[xAxis], y: parseFloat(d[y1Axis[1]]) })) : null
+            );
             setSlopeData(showData[y1Axis[2]] ? slopes.map((d) => ({ x: d.dist, y: d.slope })) : null);
             if (showData[y1Axis[0]]) {
                 addMaxMinMarkers(y1Axis[0], minEle, maxEle);
