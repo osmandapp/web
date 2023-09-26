@@ -13,7 +13,7 @@ import {
     MyLocation,
     Phone,
 } from '@mui/icons-material';
-import PoiManager from '../../../context/PoiManager';
+import PoiManager from '../../../manager/PoiManager';
 
 const useStyles = makeStyles({
     icon: {

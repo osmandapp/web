@@ -1,5 +1,5 @@
 import { apiGet } from '../../../util/HttpApi';
-import TracksManager from '../../../context/TracksManager';
+import TracksManager from '../../../manager/TracksManager';
 
 /*
     calculateGpxRoute() processes GPX-data via API-request /routing/gpx-approximate

@@ -15,7 +15,7 @@ import { Close, Folder, LocationOn } from '@mui/icons-material';
 import DialogActions from '@mui/material/DialogActions';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../context/AppContext';
-import FavoritesManager from '../context/FavoritesManager';
+import FavoritesManager from '../manager/FavoritesManager';
 import contextMenuStyles from '../infoblock/styles/ContextMenuStyles';
 import { makeStyles } from '@material-ui/core/styles';
 import EditFavoriteDialog from '../infoblock/components/favorite/EditFavoriteDialog';

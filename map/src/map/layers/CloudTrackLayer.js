@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider, { redrawWptsOnLayer } from '../TrackLayerProvider';
-import TracksManager from '../../context/TracksManager';
+import TracksManager from '../../manager/TracksManager';
 import { useMutator } from '../../util/Utils';
 
 function clickHandler({ ctx, file, layer }) {

@@ -5,7 +5,7 @@ import AppContext from '../../../context/AppContext';
 import Actions from './Actions';
 import LocalTrackItem from './LocalTrackItem';
 import drawerStyles from '../../styles/DrawerStyles';
-import TracksManager, { clearAllLocalTracks } from '../../../context/TracksManager';
+import TracksManager, { clearAllLocalTracks } from '../../../manager/TracksManager';
 import PopperMenu from './PopperMenu';
 import _ from 'lodash';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';

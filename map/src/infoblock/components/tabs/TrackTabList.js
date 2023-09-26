@@ -4,7 +4,7 @@ import { Tab } from '@mui/material';
 import PointsTab from './PointsTab';
 import SettingsTab from './SettingsTab';
 import WaypointsTab from './WaypointsTab';
-import { isEmptyTrack } from '../../../context/TracksManager';
+import { isEmptyTrack } from '../../../manager/TracksManager';
 
 export default class TrackTabList {
     state = {

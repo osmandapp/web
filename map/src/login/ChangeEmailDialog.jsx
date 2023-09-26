@@ -5,7 +5,7 @@ import { Close } from '@mui/icons-material';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
-import AccountManager from '../context/AccountManager';
+import AccountManager from '../manager/AccountManager';
 import React, { useContext, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppContext from '../context/AppContext';

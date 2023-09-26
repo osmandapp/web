@@ -1,4 +1,4 @@
-import TracksManager from '../../context/TracksManager';
+import TracksManager from '../../manager/TracksManager';
 
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
 

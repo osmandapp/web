@@ -12,7 +12,7 @@ import FavoriteName from './structure/FavoriteName';
 import FavoriteIcon from './structure/FavoriteIcon';
 import FavoriteColor from './structure/FavoriteColor';
 import FavoriteShape from './structure/FavoriteShape';
-import FavoritesManager from '../../../context/FavoritesManager';
+import FavoritesManager from '../../../manager/FavoritesManager';
 import { apiGet, apiPost } from '../../../util/HttpApi';
 
 export default function AddNewGroupDialog({ dialogOpen, setDialogOpen, setFavoriteGroup }) {

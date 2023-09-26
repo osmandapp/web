@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { Chart } from 'react-chartjs-2';
 import {
     BarElement,
@@ -15,13 +15,14 @@ import {
 } from 'chart.js';
 import { Box, Slider, SliderThumb } from '@mui/material';
 import AppContext from '../../../context/AppContext';
-import TracksManager from '../../../context/TracksManager';
+import TracksManager from '../../../manager/TracksManager';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import annotationsPlugin from 'chartjs-plugin-annotation';
 import _ from 'lodash';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import { getRelativePosition } from 'chart.js/helpers';
+import RoadAttributesGraph from './RoadAttributesGraph';
 
 const mouseLine = {
     id: 'mouseLine',
@@ -42,16 +43,16 @@ const mouseLine = {
             chart.options.mouseLine.x = NaN;
         }
     },
-    beforeTooltipDraw: function (chart) {
+    afterTooltipDraw: function (chart) {
         const ctx = chart.ctx;
         const chartArea = chart.chartArea;
         const x = chart.options.mouseLine?.x;
         if (!isNaN(x)) {
             ctx.save();
-            ctx.lineWidth = 2;
+            //ctx.lineWidth = 2;
             ctx.moveTo(chart.options.mouseLine.x, chartArea.bottom);
             ctx.lineTo(chart.options.mouseLine.x, chartArea.top);
-            ctx.strokeStyle = '#1976d2';
+            ctx.strokeStyle = '#f8931c';
             ctx.stroke();
             ctx.restore();
         }
@@ -90,6 +91,7 @@ const useStyles = makeStyles({
 
 export default function GpxGraph({
     data,
+    attrGraphData,
     showData,
     xAxis,
     y1Axis,
@@ -100,8 +102,6 @@ export default function GpxGraph({
     minSpeed,
     maxSpeed,
     slopes,
-    setSelectedPoint,
-    pointTypes,
 }) {
     const ctx = useContext(AppContext);
     const styles = useStyles();
@@ -112,7 +112,7 @@ export default function GpxGraph({
     const [slopeData, setSlopeData] = useState(null);
     const [maxMinData, setMaxMinData] = useState({});
     const [distRangeValue, setDistRangeValue] = useState([0, data.length - 1]);
-    const [lastPointInd, setLastPointInd] = useState(null);
+    const [selectedPoint, setSelectedPoint] = useState(null);
 
     const chartRef = useRef(null);
 
@@ -200,6 +200,10 @@ export default function GpxGraph({
                     const lat = Object.values(pointList)[ind].lat;
                     const lng = Object.values(pointList)[ind].lng;
                     ctx.mapMarkerListener(lat, lng);
+                    setSelectedPoint({
+                        ind: ind,
+                        dist: data[ind][xAxis],
+                    });
                 } else {
                     hideSelectedPoint();
                 }
@@ -258,242 +262,253 @@ export default function GpxGraph({
         return !_.isEmpty(ctx.trackRange) && data[ctx.trackRange[ind]] && data[ctx.trackRange[ind]][xAxis];
     }
 
-    const options = {
-        responsive: true,
-        maintainAspectRatio: false,
-        spanGaps: true,
-        animation: {
-            duration: 400,
-        },
-        interaction: {
-            intersect: false,
-            mode: getMode(),
-        },
-        layout: {
-            padding: {
-                left: -100,
+    const options = useMemo(
+        () => ({
+            responsive: true,
+            maintainAspectRatio: false,
+            spanGaps: true,
+            animation: {
+                duration: 400,
             },
-        },
-        plugins: {
-            annotation: {
-                annotations: {
-                    label1: {
-                        display: showMaxMin(),
-                        type: 'line',
-                        id: 'vline' + maxMinData?.min?.x,
-                        mode: 'vertical',
-                        scaleID: 'x',
-                        value: maxMinData?.min?.x,
-                        borderColor: '#757575',
-                        borderWidth: 1,
-                    },
-                    label2: {
-                        display: showMaxMin(),
-                        type: 'label',
-                        xValue: maxMinData?.min?.x,
-                        yValue: 'center',
-                        backgroundColor: '#ebf3f2',
-                        content: [Math.round(maxMinData?.min?.y)],
-                        font: {
-                            size: 9,
-                        },
-                        borderRadius: 5,
-                        color: 'green',
-                        borderWidth: 1,
-                        padding: 2,
-                    },
-                    label3: {
-                        display: showMaxMin(),
-                        type: 'line',
-                        id: 'vline' + maxMinData?.max?.x,
-                        mode: 'vertical',
-                        scaleID: 'x',
-                        value: maxMinData?.max?.x,
-                        borderColor: '#757575',
-                        borderWidth: 1,
-                    },
-                    label4: {
-                        display: showMaxMin(),
-                        type: 'label',
-                        xValue: maxMinData?.max?.x,
-                        yValue: 'center',
-                        backgroundColor: '#ebf3f2',
-                        content: [Math.round(maxMinData?.max?.y)],
-                        font: {
-                            size: 9,
-                        },
-                        borderRadius: 5,
-                        color: 'red',
-                        borderWidth: 1,
-                        padding: 2,
-                    },
-                    box1: {
-                        display: showRange(),
-                        type: 'box',
-                        xMin: getSelectedBoxPosition(0),
-                        xMax: getSelectedBoxPosition(1),
-                        backgroundColor: 'rgb(169,169,169, 0.34)',
-                        borderWidth: 0,
-                    },
-                },
-            },
-            tooltip: {
-                enabled: true,
+            interaction: {
+                intersect: false,
                 mode: getMode(),
-                intersect: false,
-                backgroundColor: '#757575',
-                displayColors: false,
-                callbacks: {
-                    title: (context) => {
-                        return `${xAxis}: ${Number(context[0].label).toFixed(2)} km`;
-                    },
-                    label: (context) => {
-                        let label = context.dataset.label || '';
-                        let ind = data.findIndex((d) => d[xAxis] === Number(context.label));
-                        if ((!lastPointInd || lastPointInd !== ind) && context.dataset.yAxisID !== 'y1Slope') {
-                            setSelectedPoint({
-                                ind: ind,
-                                dist: data[ind][xAxis],
-                            });
-                        }
-                        setLastPointInd(ind);
-                        if (label) {
-                            label += ': ';
-                        }
-                        const dimension =
-                            context.dataset.yAxisID === 'y1'
-                                ? 'm'
-                                : context.dataset.yAxisID === 'y1Slope'
-                                ? '%'
-                                : 'km/h';
-                        if (context.parsed.y !== null) {
-                            label += `${context.parsed.y.toFixed(0)} ${dimension}`;
-                        }
-                        let res = [];
-                        res.push(label);
-                        if (data[ind] && context.dataset.yAxisID !== 'y1Slope' && showSlope) {
-                            res.push(`Slope: ${data[ind]['Slope'].toFixed(0)} %`);
-                        }
-                        res.push('-------------------------');
-                        if (pointTypes) {
-                            res.push(pointTypes.type);
-                            res.push(pointTypes.surface);
-                        }
-                        return res;
-                    },
+            },
+            layout: {
+                padding: {
+                    left: -100,
                 },
             },
-            hover: {
-                intersect: false,
-                includeInvisible: true,
-            },
-            legend: {
-                display: false,
-            },
-            zoom: {
-                limits: {
-                    x: {
-                        min: data[0][xAxis],
-                        max: data[data.length - 1][xAxis],
-                        minRange: 0.1,
+            plugins: {
+                annotation: {
+                    annotations: {
+                        label1: {
+                            display: showMaxMin(),
+                            type: 'line',
+                            id: 'vline' + maxMinData?.min?.x,
+                            mode: 'vertical',
+                            scaleID: 'x',
+                            value: maxMinData?.min?.x,
+                            borderColor: '#757575',
+                            borderWidth: 1,
+                        },
+                        label2: {
+                            display: showMaxMin(),
+                            type: 'label',
+                            xValue: maxMinData?.min?.x,
+                            yValue: 'center',
+                            backgroundColor: '#ebf3f2',
+                            content: [Math.round(maxMinData?.min?.y)],
+                            font: {
+                                size: 9,
+                            },
+                            borderRadius: 5,
+                            color: 'green',
+                            borderWidth: 1,
+                            padding: 2,
+                        },
+                        label3: {
+                            display: showMaxMin(),
+                            type: 'line',
+                            id: 'vline' + maxMinData?.max?.x,
+                            mode: 'vertical',
+                            scaleID: 'x',
+                            value: maxMinData?.max?.x,
+                            borderColor: '#757575',
+                            borderWidth: 1,
+                        },
+                        label4: {
+                            display: showMaxMin(),
+                            type: 'label',
+                            xValue: maxMinData?.max?.x,
+                            yValue: 'center',
+                            backgroundColor: '#ebf3f2',
+                            content: [Math.round(maxMinData?.max?.y)],
+                            font: {
+                                size: 9,
+                            },
+                            borderRadius: 5,
+                            color: 'red',
+                            borderWidth: 1,
+                            padding: 2,
+                        },
+                        box1: {
+                            display: showRange(),
+                            type: 'box',
+                            xMin: getSelectedBoxPosition(0),
+                            xMax: getSelectedBoxPosition(1),
+                            backgroundColor: 'rgb(169,169,169, 0.34)',
+                            borderWidth: 0,
+                        },
                     },
+                },
+                tooltip: {
+                    enabled: true,
+                    mode: getMode(),
+                    intersect: false,
+                    backgroundColor: '#757575',
+                    displayColors: false,
+                    callbacks: {
+                        title: (context) => {
+                            return `${xAxis}: ${Number(context[0].label).toFixed(2)} km`;
+                        },
+                        label: (context) => {
+                            let label = context.dataset.label || '';
+                            let ind = data.findIndex((d) => d[xAxis] === Number(context.label));
+                            if (label) {
+                                label += ': ';
+                            }
+                            const dimension =
+                                context.dataset.yAxisID === 'y1'
+                                    ? 'm'
+                                    : context.dataset.yAxisID === 'y1Slope'
+                                    ? '%'
+                                    : 'km/h';
+                            if (context.parsed.y !== null) {
+                                label += `${context.parsed.y.toFixed(0)} ${dimension}`;
+                            }
+                            let res = [];
+                            res.push(label);
+                            if (data[ind] && context.dataset.yAxisID !== 'y1Slope' && showSlope) {
+                                res.push(`Slope: ${data[ind]['Slope'].toFixed(0)} %`);
+                            }
+                            if (ind) {
+                                res.push('-----------------------');
+                                const resType = attrGraphData.types.datasets.find((d, i) => {
+                                    return ind >= d.index && ind < attrGraphData.types.datasets[i + 1].index;
+                                });
+                                const resSurface = attrGraphData.surfaces.datasets.find(
+                                    (d, i) => ind >= d.index && ind < attrGraphData.types.datasets[i + 1].index
+                                );
+                                if (resType) {
+                                    res.push(
+                                        resType.label.charAt(0).toUpperCase() + resType.label.slice(1).toLowerCase()
+                                    );
+                                }
+                                if (resSurface) {
+                                    res.push(
+                                        resSurface.label.charAt(0).toUpperCase() +
+                                            resSurface.label.slice(1).toLowerCase()
+                                    );
+                                }
+                            }
+                            return res;
+                        },
+                    },
+                },
+                hover: {
+                    intersect: false,
+                    includeInvisible: true,
+                },
+                legend: {
+                    display: false,
                 },
                 zoom: {
-                    wheel: {
+                    limits: {
+                        x: {
+                            min: data[0][xAxis],
+                            max: data[data.length - 1][xAxis],
+                            minRange: 0.1,
+                        },
+                    },
+                    zoom: {
+                        wheel: {
+                            enabled: true,
+                        },
+                        mode: 'x',
+                        speed: 100,
+                    },
+                    pan: {
                         enabled: true,
+                        mode: 'x',
+                        speed: 100,
                     },
-                    mode: 'x',
-                    speed: 100,
-                },
-                pan: {
-                    enabled: true,
-                    mode: 'x',
-                    speed: 100,
                 },
             },
-        },
-        scales: {
-            x: {
-                display: true,
-                type: 'linear',
-                max: Number(data[data.length - 1][xAxis]).toFixed(1),
-                ticks: {
-                    maxTicksLimit: 10,
-                    beginAtZero: true,
-                    align: 'inner',
-                    font: {
-                        size: 8,
-                    },
-                    autoSkip: true,
-                },
-                title: {
+            scales: {
+                x: {
                     display: true,
-                    text: 'distance in km',
-                    color: '#757575',
-                    font: {
-                        size: 10,
-                        lineHeight: 1.2,
+                    type: 'linear',
+                    max: Number(data[data.length - 1][xAxis]).toFixed(1),
+                    ticks: {
+                        maxTicksLimit: 10,
+                        beginAtZero: true,
+                        align: 'inner',
+                        font: {
+                            size: 8,
+                        },
+                        autoSkip: true,
+                    },
+                    title: {
+                        display: true,
+                        text: 'distance in km',
+                        color: '#757575',
+                        font: {
+                            size: 10,
+                            lineHeight: 1.2,
+                        },
+                    },
+                },
+                y1: {
+                    display: showY1,
+                    position: 'left',
+                    ticks: {
+                        mirror: true,
+                        align: 'end',
+                        z: 1000,
+                        font: {
+                            size: 8,
+                        },
+                        maxTicksLimit: 6,
+                        callback: (val) => {
+                            return val + ' m';
+                        },
+                    },
+                },
+                y2: {
+                    display: showY2,
+                    position: 'right',
+                    ticks: {
+                        mirror: true,
+                        align: 'end',
+                        z: 1000,
+                        font: {
+                            size: 8,
+                        },
+                        padding: -5,
+                        maxTicksLimit: 6,
+                        callback: (val) => {
+                            return val + ' km/h';
+                        },
+                    },
+                    grid: {
+                        display: !showY1,
+                    },
+                },
+                ['y1Slope']: {
+                    display: !showY2 && showSlope,
+                    position: 'right',
+                    ticks: {
+                        mirror: true,
+                        align: 'end',
+                        z: 1000,
+                        font: {
+                            size: 8,
+                        },
+                        padding: -5,
+                        maxTicksLimit: 6,
+                        callback: (val) => {
+                            return val + '  %';
+                        },
+                    },
+                    grid: {
+                        display: !showY1,
                     },
                 },
             },
-            y1: {
-                display: showY1,
-                position: 'left',
-                ticks: {
-                    mirror: true,
-                    align: 'end',
-                    z: 1000,
-                    font: {
-                        size: 8,
-                    },
-                    maxTicksLimit: 6,
-                    callback: (val) => {
-                        return val + ' m';
-                    },
-                },
-            },
-            y2: {
-                display: showY2,
-                position: 'right',
-                ticks: {
-                    mirror: true,
-                    align: 'end',
-                    z: 1000,
-                    font: {
-                        size: 8,
-                    },
-                    padding: -5,
-                    maxTicksLimit: 6,
-                    callback: (val) => {
-                        return val + ' km/h';
-                    },
-                },
-                grid: {
-                    display: !showY1,
-                },
-            },
-            ['y1Slope']: {
-                display: !showY2 && showSlope,
-                position: 'right',
-                ticks: {
-                    mirror: true,
-                    align: 'end',
-                    z: 1000,
-                    font: {
-                        size: 8,
-                    },
-                    padding: -5,
-                    maxTicksLimit: 6,
-                    callback: (val) => {
-                        return val + '  %';
-                    },
-                },
-                grid: {
-                    display: !showY1,
-                },
-            },
-        },
-    };
+        }),
+        [data, ctx.trackRange]
+    );
 
     const graphData = {
         labels: data.map((d) => (d[xAxis] !== 0 ? d[xAxis].toFixed(1) : 0)),
@@ -600,6 +615,22 @@ export default function GpxGraph({
                 max={data.length - 1}
                 components={{ Thumb: ThumbComponent }}
             />
+            {attrGraphData.types && (
+                <RoadAttributesGraph
+                    name={'Road type'}
+                    data={attrGraphData.types}
+                    width={width}
+                    selectedPoint={selectedPoint}
+                />
+            )}
+            {attrGraphData.surfaces && (
+                <RoadAttributesGraph
+                    name={'Surface'}
+                    data={attrGraphData.surfaces}
+                    width={width}
+                    selectedPoint={selectedPoint}
+                />
+            )}
         </>
     );
 }

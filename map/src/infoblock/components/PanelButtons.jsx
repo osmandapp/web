@@ -6,7 +6,7 @@ import SaveTrackDialog from './track/dialogs/SaveTrackDialog';
 import DeleteTrackDialog from './track/dialogs/DeleteTrackDialog';
 import DeleteFavoriteDialog from './favorite/DeleteFavoriteDialog';
 import _ from 'lodash';
-import TracksManager, { isEmptyTrack } from '../../context/TracksManager';
+import TracksManager, { isEmptyTrack } from '../../manager/TracksManager';
 import useUndoRedo from '../useUndoRedo';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 import { downloadGpx } from './tabs/GeneralInfoTab';

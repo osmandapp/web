@@ -1,7 +1,7 @@
 import { Box, Grid, IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material';
 import { Add, Folder } from '@mui/icons-material';
 import React, { useContext, useState } from 'react';
-import FavoritesManager from '../../../../context/FavoritesManager';
+import FavoritesManager from '../../../../manager/FavoritesManager';
 import Utils from '../../../../util/Utils';
 import AddNewGroupDialog from '../AddNewGroupDialog';
 import _ from 'lodash';

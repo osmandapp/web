@@ -3,7 +3,7 @@ import AppContext from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import TrackLayerProvider, { TEMP_LAYER_FLAG, redrawWptsOnLayer } from '../TrackLayerProvider';
-import TracksManager, { isEmptyTrack } from '../../context/TracksManager';
+import TracksManager, { isEmptyTrack } from '../../manager/TracksManager';
 import _ from 'lodash';
 import EditablePolyline from '../EditablePolyline';
 import EditableMarker from '../EditableMarker';

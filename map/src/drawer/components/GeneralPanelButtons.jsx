@@ -1,5 +1,5 @@
 import { ButtonGroup, IconButton, Paper, Tooltip } from '@mui/material';
-import TracksManager from '../../context/TracksManager';
+import TracksManager from '../../manager/TracksManager';
 import { Insights, Info, Upload } from '@mui/icons-material';
 import React, { useContext, useState } from 'react';
 import AppContext from '../../context/AppContext';

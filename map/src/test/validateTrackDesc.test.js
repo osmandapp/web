@@ -1,4 +1,4 @@
-import { prepareDesc } from '../context/TracksManager';
+import { prepareDesc } from '../manager/TracksManager';
 
 jest.mock('../util/Utils', () => ({
     __esModule: true,

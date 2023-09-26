@@ -3,7 +3,7 @@ import { Alert, LinearProgress, ListItemText, MenuItem, Switch, Tooltip, Typogra
 import { useContext, useState, useMemo, useEffect } from 'react';
 import Utils from '../../../util/Utils';
 import TrackInfo from './TrackInfo';
-import TracksManager, { isEmptyTrack } from '../../../context/TracksManager';
+import TracksManager, { isEmptyTrack } from '../../../manager/TracksManager';
 import _ from 'lodash';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 

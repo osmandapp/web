@@ -1,5 +1,5 @@
 import L from 'leaflet';
-import FavoritesManager from '../../../context/FavoritesManager';
+import FavoritesManager from '../../../manager/FavoritesManager';
 
 function updateSelectedFile(ctx, favorites, result, favoriteName, groupName, deleted) {
     let newSelectedFile = Object.assign({}, ctx.selectedGpxFile);

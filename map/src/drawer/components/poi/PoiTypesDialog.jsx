@@ -9,7 +9,7 @@ import AppContext from '../../../context/AppContext';
 import MarkerOptions from '../../../map/markers/MarkerOptions';
 import { makeStyles } from '@material-ui/core/styles';
 import drawerStyles from '../../styles/DrawerStyles';
-import PoiManager from '../../../context/PoiManager';
+import PoiManager from '../../../manager/PoiManager';
 import _ from 'lodash';
 
 const useStyles = makeStyles({

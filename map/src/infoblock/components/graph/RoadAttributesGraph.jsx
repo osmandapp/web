@@ -4,7 +4,7 @@ import { Bar } from 'react-chartjs-2';
 import { Tooltip, Legend, Chart as ChartJS, BarElement } from 'chart.js';
 import React, { useContext, useRef, useState } from 'react';
 import annotationsPlugin from 'chartjs-plugin-annotation';
-import TracksManager from '../../../context/TracksManager';
+import TracksManager from '../../../manager/TracksManager';
 import AppContext from '../../../context/AppContext';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 
@@ -54,8 +54,8 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                         mode: 'vertical',
                         scaleID: 'x',
                         value: selectedPoint?.dist,
-                        borderColor: name === 'Surface' ? '#f8931c' : '#1976d2',
-                        borderWidth: 2,
+                        borderColor: '#ffffff',
+                        borderWidth: 1,
                     },
                 },
             },
