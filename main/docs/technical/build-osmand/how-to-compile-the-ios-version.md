@@ -25,8 +25,13 @@ sidebar_position: 6
   ```
   $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   $ brew install svn
-  $ sudo gem install cocoapods
   $ brew install cmake # tested on 3.25.2, 3.19, 3.11
+
+  # for intel
+  $ sudo gem install cocoapods
+
+  # for m1
+  $ brew install cocoapods
   ```
 6. Run `prepare.sh` to compile Qt library and download external dependencies
   ```
@@ -61,7 +66,11 @@ sidebar_position: 6
   - Then run `$ ./prepare.sh` and try to build the project again.
   
 10. Troubleshooting (m1 mac)
-  - In case of ```ld: library not found for -lOsmAndCore_static_standalone``` add ```arm64``` to **Excluded Architectures** of ```OsmAnd_projects```.
+  - In case of ```ld: library not found for -lOsmAndCore_static_standalone```:
+  - Project Navigator -> OsmAnd_projects -> OsmAnd_projects (in Project/Targets list) -> Build settings -> All -> Architectures -> Excluded Architectures -> Debug
+  - Add  ```arm64``` string field.
+  - Build project. In case of errors, delete folders ```Baked``` and ```Binaries``` and run ```prepare.sh``` once again.
+    
 
 11. Debug Qt (optional). If you want to see Qt values in debug mode run this:
   ```
