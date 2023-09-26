@@ -22,12 +22,24 @@ export function putRoute({ route, skipConversion = false }) {
             o.id = id;
         });
     } else {
+        // generate track name
+        const { name } = this.getProfile();
+        const cap = (s) => s && s[0].toUpperCase() + s.slice(1);
+        const yyyymmdd = () => new Date().toISOString().substring(0, 10);
+        const km = parseFloat(Number((this.getRouteProps(route)?.overall?.distance ?? 0) / 1000).toFixed(2));
+        const trackName = `${yyyymmdd()} ${cap(name)} ${km} km`; // Example: 2023-09-26 Foot 2.14 km
+
         const track = convertRouteToTrack({
             id,
             route,
+            trackName,
             geoProfile: this.getGeoProfile(),
-            hidePoints: this.getOption('route.hidePoints'),
+            start: this.getOption('route.points.start'),
+            finish: this.getOption('route.points.finish'),
+            viaPoints: this.getOption('route.points.viaPoints'),
+            // hidePoints: this.getOption('route.hidePoints'),
         });
+
         this.flushState((o) => {
             o.route = route;
             o.track = track;
