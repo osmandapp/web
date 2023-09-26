@@ -11,10 +11,10 @@ import anchorme from 'anchorme';
 const GPX_FILE_TYPE = 'GPX';
 const GET_SRTM_DATA = 'get-srtm-data';
 const GET_ANALYSIS = 'get-analysis';
-const PROFILE_LINE = 'line';
+export const PROFILE_LINE = 'line';
 const PROFILE_CAR = 'car';
 const PROFILE_GAP = 'gap';
-const NAN_MARKER = 99999;
+export const NAN_MARKER = 99999;
 const CHANGE_PROFILE_BEFORE = 'before';
 const CHANGE_PROFILE_AFTER = 'after';
 const CHANGE_PROFILE_ALL = 'all';
@@ -139,7 +139,7 @@ async function updateLocalTracks(tracks) {
     }
 }
 
-function prepareLocalTrack(track) {
+export function prepareLocalTrack(track) {
     const prepareTrack = _.cloneDeep(track);
     return {
         name: prepareTrack.name,
@@ -329,6 +329,24 @@ function prepareTrack(track, localName = null, originalName = null) {
 
     track.hasGeo = hasGeo(track);
     addDistance(track); // recalc-distance-local-initial
+}
+
+// prepare internal structures including distance
+export function prepareNavigationTrack(track) {
+    track.analysis = prepareAnalysis({});
+    track.hasGeo = hasGeo(track);
+    addDistance(track);
+    return track;
+}
+
+export async function getApproximatePoints({ points, profile }) {
+    console.log('approx-profile', profile);
+    const approximateResult = await apiPost(`${process.env.REACT_APP_GPX_API}/routing/approximate`, points, {
+        apiCache: true,
+        params: { routeMode: profile },
+        headers: { 'Content-Type': 'application/json' },
+    });
+    return approximateResult && approximateResult.data?.points?.length >= 2 ? approximateResult.data.points : points;
 }
 
 function hasGeo(track) {
