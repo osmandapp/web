@@ -1,7 +1,7 @@
 'use strict';
 
 import { By } from 'selenium-webdriver';
-import { enclose, enumerateIds, matchInnerTextBy } from '../lib.mjs';
+import {clickBy, enclose, enumerateIds, matchInnerTextBy} from '../lib.mjs';
 
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
@@ -71,10 +71,12 @@ export default async function test() {
         const name = gpx.replace('.gpx', '');
 
         await actionUploadGpx({ mask: gpx });
+        await clickBy(By.id('se-open-attr-legend-Road type'));
         await validateInfoBlockStrings(strings);
         await validateInfoBlockButtons(localTrackButtons);
 
         await actionLocalToCloud({ mask: name });
+        await clickBy(By.id('se-open-attr-legend-Surface'));
         await validateInfoBlockStrings(strings);
         await validateInfoBlockButtons(cloudTrackButtons);
     }

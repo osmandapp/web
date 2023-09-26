@@ -142,7 +142,12 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                     </Typography>
                 </Grid>
                 <Grid item xs={3}>
-                    <Button size="small" sx={{ color: '#f8931d', mt: '-1px' }} onClick={() => setOpen(!open)}>
+                    <Button
+                        size="small"
+                        sx={{ color: '#f8931d', mt: '-1px' }}
+                        onClick={() => setOpen(!open)}
+                        id={'se-open-attr-legend-' + name}
+                    >
                         Details
                         {open ? <ExpandLess /> : <ExpandMore />}
                     </Button>
