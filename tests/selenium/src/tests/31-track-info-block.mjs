@@ -42,7 +42,7 @@ const TRACKS = [
             'Points: 5',
             'Distance: 6.4 km',
             '173.2 / 184.5 / 191.0 m', // ele
-            /Residential.*?: 6.08 km/s, // Waytypes stats
+            /Street.*?: 6.08 km/s, // Waytypes stats
             /Asphalt.*?: 3.28 km/s, // Surfaces stats
         ],
     },
@@ -71,12 +71,12 @@ export default async function test() {
         const name = gpx.replace('.gpx', '');
 
         await actionUploadGpx({ mask: gpx });
-        await clickBy(By.id('se-open-attr-legend-Road type'));
+        await clickBy(By.id('se-open-attr-legend-Road type-hide'), {optional: true});
+        await clickBy(By.id('se-open-attr-legend-Surface-hide'), {optional: true});
         await validateInfoBlockStrings(strings);
         await validateInfoBlockButtons(localTrackButtons);
 
         await actionLocalToCloud({ mask: name });
-        await clickBy(By.id('se-open-attr-legend-Surface'));
         await validateInfoBlockStrings(strings);
         await validateInfoBlockButtons(cloudTrackButtons);
     }

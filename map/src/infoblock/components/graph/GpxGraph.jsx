@@ -23,6 +23,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import { getRelativePosition } from 'chart.js/helpers';
 import RoadAttributesGraph from './RoadAttributesGraph';
+import { cap, UNDEFINED_DATA } from '../../../manager/GraphManager';
 
 const mouseLine = {
     id: 'mouseLine',
@@ -372,24 +373,21 @@ export default function GpxGraph({
                             if (data[ind] && context.dataset.yAxisID !== 'y1Slope' && showSlope) {
                                 res.push(`Slope: ${data[ind]['Slope'].toFixed(0)} %`);
                             }
-                            if (ind) {
-                                res.push('-----------------------');
+                            if (ind && attrGraphData) {
                                 const resType = attrGraphData.types.datasets.find((d, i) => {
                                     return ind >= d.index && ind < attrGraphData.types.datasets[i + 1].index;
                                 });
                                 const resSurface = attrGraphData.surfaces.datasets.find(
                                     (d, i) => ind >= d.index && ind < attrGraphData.types.datasets[i + 1].index
                                 );
-                                if (resType) {
-                                    res.push(
-                                        resType.label.charAt(0).toUpperCase() + resType.label.slice(1).toLowerCase()
-                                    );
+                                if (resType?.label !== UNDEFINED_DATA || resSurface?.label !== UNDEFINED_DATA) {
+                                    res.push('-----------------------');
                                 }
-                                if (resSurface) {
-                                    res.push(
-                                        resSurface.label.charAt(0).toUpperCase() +
-                                            resSurface.label.slice(1).toLowerCase()
-                                    );
+                                if (resType?.label !== UNDEFINED_DATA) {
+                                    res.push(cap(resType.label));
+                                }
+                                if (resSurface?.label !== UNDEFINED_DATA) {
+                                    res.push(cap(resSurface.label));
                                 }
                             }
                             return res;
@@ -429,7 +427,7 @@ export default function GpxGraph({
                 x: {
                     display: true,
                     type: 'linear',
-                    max: Number(data[data.length - 1][xAxis]).toFixed(1),
+                    max: parseFloat(Number(data[data.length - 1][xAxis]).toFixed(1)),
                     ticks: {
                         maxTicksLimit: 10,
                         beginAtZero: true,
@@ -615,7 +613,7 @@ export default function GpxGraph({
                 max={data.length - 1}
                 components={{ Thumb: ThumbComponent }}
             />
-            {attrGraphData.types && (
+            {attrGraphData?.types && (
                 <RoadAttributesGraph
                     name={'Road type'}
                     data={attrGraphData.types}
@@ -623,7 +621,7 @@ export default function GpxGraph({
                     selectedPoint={selectedPoint}
                 />
             )}
-            {attrGraphData.surfaces && (
+            {attrGraphData?.surfaces && (
                 <RoadAttributesGraph
                     name={'Surface'}
                     data={attrGraphData.surfaces}

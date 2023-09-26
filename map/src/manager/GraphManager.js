@@ -40,6 +40,10 @@ export function checkShowData(value) {
     return value === '' ? false : value;
 }
 
+export function cap(s) {
+    return s && s[0].toUpperCase() + s.slice(1);
+}
+
 export function getSlopes(result, ctx) {
     let STEP = 5;
     let l = 10;

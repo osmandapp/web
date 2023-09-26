@@ -7,6 +7,7 @@ import annotationsPlugin from 'chartjs-plugin-annotation';
 import TracksManager from '../../../manager/TracksManager';
 import AppContext from '../../../context/AppContext';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
+import { cap } from '../../../manager/GraphManager';
 
 ChartJS.register(Tooltip, Legend, BarElement, annotationsPlugin);
 
@@ -40,7 +41,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                     label: (context) => {
                         let label = context.dataset?.label || '';
                         if (label) {
-                            return `${label[0].toUpperCase() + label.slice(1).toLowerCase()}: ${context.parsed.x} km`;
+                            return `${cap(label)}: ${context.parsed.x} km`;
                         }
                     },
                 },
@@ -91,7 +92,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
     function prepareType(type) {
         if (type) {
             type = type.replaceAll('_', ' ');
-            type = type.charAt(0).toUpperCase() + type.slice(1);
+            type = cap(type);
         }
         return type;
     }
@@ -146,7 +147,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                         size="small"
                         sx={{ color: '#f8931d', mt: '-1px' }}
                         onClick={() => setOpen(!open)}
-                        id={'se-open-attr-legend-' + name}
+                        id={'se-open-attr-legend-' + name + (open ? '-open' : '-hide')}
                     >
                         Details
                         {open ? <ExpandLess /> : <ExpandMore />}
