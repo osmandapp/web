@@ -21,17 +21,11 @@
         }
         "desc": <String> // optional track description
     }
-    // optional Cloud-kind of track storage (track[0].points equals to points)
-    track: [
-    ]
-    // route/gpx points array TODO details
-    "points": [
-    ]
-    // optional waypoints array TODO details
-    "wpts": [
-    ]
-    "analysis": {} // filled by get-analysis API request
+    "wpts": [WPT, ...] // optional waypoints array TODO details
+    "points": [POINT, ...] // route/gpx points array TODO details
+    "track": [TRACKS, ...] // optional Cloud-kind of track storage (track[0].points equals to points) TODO details
     "newPoint": {} // lastly added point (including all calculated details)
+    "analysis": {} // filled by get-analysis API request
     "pointsGroups": {} // dynamically created ???
     "zoom": <Boolean> // internal
     "hasGeo": <Boolean> // internal
@@ -42,7 +36,12 @@
     "localRedrawWpts": <Boolean> // internal
     "cloudRedwarWpts": <Boolean> // internal
     "refreshAnalytics": <Boolean> // internal
+    "layers": [] // leaflet layers (cyclic value)
 }
+
+# POINT format
+
+see convertRouteToTrack.js for details of conversion route points to track points
 
 # minimum required track point geometry and structure
 
@@ -55,41 +54,25 @@ const defaultPointExtras = {
     ext: { ele: TracksManager.NAN_MARKER, extensions: {} }, // getTrackWithAnalysis requires ext.extensions
 };
 
-# route format (minimum required) TODO old section - remove
+# route format (minimum required - w/o maneuvers/turns)
 
+// GeoJSON data (FeatureCollection format)
 geoObject.route = {
-    // route id (used as a part of the key for GeoJSON)
-    id, // unique: new Date().getTime() or md5(coordinates)
-
-    // route props (statistics)
-    // filled from data.features[0].properties || {}
-    // used in formatRouteInfo() and changeRouteText()
-    props: {
-        overall: {
-            time, // overall time
-            distance, // overall distance
-            routingTime, // overall routing time (cost)
-        },
-    },
-
-    // GeoJSON data (FeatureCollection format)
-    geojson: {
-        type: 'FeatureCollection',
-        features: [
-            {
-                type: 'Feature',
-                geometry: {
-                    type: 'LineString', // type of segment (LineString always)
-                    coordinates, // array of points [lon, lat] Note: sequence lon-lat !
-                },
-                properties: {
-                    overall: {
-                        time,
-                        distance,
-                    },
-                },
-                style,
+    type: 'FeatureCollection',
+    features: [
+        {
+            type: 'Feature',
+            geometry: {
+                type: 'LineString', // type of segment (LineString always)
+                coordinates, // array of points [lon, lat] Note: sequence lon-lat !
             },
-        ],
-    },
+            properties: {
+                overall: {
+                    time,
+                    distance,
+                },
+            },
+            style,
+        },
+    ],
 };
