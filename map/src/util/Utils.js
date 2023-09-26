@@ -84,17 +84,14 @@ async function getFileData(file) {
     return trackData;
 }
 
-const getDistance = (lat1, lon1, lat2, lon2) => {
+export const getDistance = (lat1, lon1, lat2, lon2) => {
     const R = 6372.8; // for haversine use R = 6372.8 km instead of 6371 km
     const dLat = toRadians(lat2 - lat1);
     const dLon = toRadians(lon2 - lon1);
     const a =
         Math.sin(dLat / 2) * Math.sin(dLat / 2) +
         Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
-    //double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-    //return R * c * 1000;
-    // simplyfy haversine:
-    return 2 * R * 1000 * Math.asin(Math.sqrt(a));
+    return parseFloat(Number(2 * R * 1000 * Math.asin(Math.sqrt(a))).toFixed(2)); // precision 1 cm is enough
 };
 
 const toRadians = (angdeg) => {
