@@ -1,6 +1,7 @@
 'use strict';
 
 import { By } from 'selenium-webdriver';
+import { mobile } from '../options.mjs';
 import { clickBy, enclose, enumerateIds, matchInnerTextBy } from '../lib.mjs';
 
 import actionOpenMap from '../actions/actionOpenMap.mjs';
@@ -48,6 +49,8 @@ const TRACKS = [
     },
 ];
 
+const MOBILE_SKIP = /(Path|Gravel|Street|Asphalt)/; // bye-bye mobile version
+
 const localTrackButtons = [
     'se-infoblock-button-save-to-cloud',
     'se-infoblock-button-download-gpx',
@@ -86,6 +89,9 @@ export default async function test() {
 
 async function validateInfoBlockStrings(strings) {
     for await (const match of strings) {
+        if (mobile && match.toString().match(MOBILE_SKIP)) {
+            continue;
+        }
         await matchInnerTextBy(By.id('se-infoblock-all'), match);
     }
 }
