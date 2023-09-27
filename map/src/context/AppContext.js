@@ -17,6 +17,10 @@ export const OBJECT_TYPE_FAVORITE = 'favorite'; //
 export const OBJECT_TYPE_WEATHER = 'weather'; //
 export const OBJECT_TYPE_POI = 'poi'; //
 
+export const isLocalTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK;
+export const isCloudTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK;
+export const isRouteTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_ROUTE_TRACK;
+
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
     key: 'mapniktile',
