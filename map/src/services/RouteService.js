@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 import AppContext from '../context/AppContext';
-import TracksManager, { prepareNavigationTrack, getApproximatePoints } from '../context/TracksManager';
+import TracksManager, { prepareNavigationTrack, getApproximatePoints } from '../manager/TracksManager';
 
 export function RouteService() {
     const context = useContext(AppContext);
@@ -189,6 +189,14 @@ export function RouteService() {
                         track.points[i].geometry = await getApproximatePoints({ points: geometry, profile });
                     }
                 }
+
+                // auto-srtm - keep it to GeneralInfo
+                // if (eligibleToApplySrtm({ track })) {
+                //     applySrtmElevation({ track, setLoading: context.setLoadingContextMenu }).then((success) =>
+                //         context.setUnverifiedGpxFile(success)
+                //     );
+                //     track.analysis.isSrtmApplied = true; // avoid duplicate auto-srtm
+                // }
 
                 // get-analytics - no more need
                 // getTrackWithAnalysis(GET_ANALYSIS, { selectedGpxFile: track }, ctx.setLoadingContextMenu, track.points).then(

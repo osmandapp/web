@@ -345,7 +345,9 @@ export async function getApproximatePoints({ points, profile }) {
         params: { routeMode: profile },
         headers: { 'Content-Type': 'application/json' },
     });
-    return approximateResult && approximateResult.data?.points?.length >= 2 ? approximateResult.data.points : points;
+    return approximateResult && approximateResult.data?.points?.length >= 2
+        ? _.cloneDeep(approximateResult.data.points) // avoid poisoning cache
+        : points;
 }
 
 function hasGeo(track) {

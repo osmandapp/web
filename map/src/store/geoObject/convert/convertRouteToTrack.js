@@ -1,5 +1,5 @@
 import { getDistance } from '../../../util/Utils';
-import { NAN_MARKER, PROFILE_LINE } from '../../../context/TracksManager'; // jest: 99999, 'line'
+import { NAN_MARKER, PROFILE_LINE } from '../../../manager/TracksManager'; // jest: 99999, 'line'
 
 export const defaultPointExtras = {
     srtmEle: null,
