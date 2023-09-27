@@ -1,6 +1,6 @@
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_LOCAL_TRACK } from '../../../context/AppContext';
+import AppContext, { isLocalTrack, isCloudTrack, isRouteTrack } from '../../../context/AppContext';
 import TracksManager, {
     hasSegments,
     isEmptyTrack,
@@ -36,6 +36,8 @@ import {
     Terrain,
 } from '@mui/icons-material';
 import DescTrackDialog from './dialogs/DescTrackDialog';
+import RouteIcon from '@mui/icons-material/Route';
+import { formatRouteInfo } from '../../../drawer/components/route/RouteMenu';
 
 export default function GeneralInfo({ width }) {
     const styles = contextMenuStyles();
@@ -282,7 +284,7 @@ export default function GeneralInfo({ width }) {
                             dangerouslySetInnerHTML={{ __html: html }}
                         />
                     </Typography>
-                    {ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK && (
+                    {isLocalTrack(ctx) && (
                         <IconButton
                             sx={{ alignSelf: 'flex-start', mt: '-10px' }}
                             onClick={() => setOpenDescDialog(true)}
@@ -479,11 +481,11 @@ export default function GeneralInfo({ width }) {
         <>
             <Box minWidth={width} maxWidth={width}>
                 <Typography className={styles.info} variant="subtitle1" color="inherit">
-                    <div>{ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK ? EditName() : NoEditName()}</div>
+                    <div>{isLocalTrack(ctx) ? EditName() : NoEditName()}</div>
                     <div>
                         {preparedDesc
                             ? Description({ desc: preparedDesc })
-                            : ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK && (
+                            : isLocalTrack(ctx) && (
                                   <>
                                       <Link
                                           href="#"
@@ -498,40 +500,38 @@ export default function GeneralInfo({ width }) {
                                   </>
                               )}
                     </div>
-                    {ctx.loginUser &&
-                        ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK &&
-                        isEmptyTrack(ctx.selectedGpxFile) === false && (
-                            <>
+                    {ctx.loginUser && isLocalTrack(ctx) && isEmptyTrack(ctx.selectedGpxFile) === false && (
+                        <>
+                            <Button
+                                id="se-infoblock-button-save-to-cloud"
+                                variant="contained"
+                                sx={{ ml: '-0.5px !important' }}
+                                className={styles.button}
+                                onClick={() => {
+                                    ctx.selectedGpxFile.save = true;
+                                    ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+                                }}
+                            >
+                                <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
+                                Save to Cloud
+                            </Button>
+                            {ctx.createTrack?.cloudAutoSave && (
                                 <Button
-                                    id="se-infoblock-button-save-to-cloud"
                                     variant="contained"
-                                    sx={{ ml: '-0.5px !important' }}
                                     className={styles.button}
                                     onClick={() => {
                                         ctx.selectedGpxFile.save = true;
                                         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+                                        ctx.setCreateTrack({ ...ctx.createTrack, cloudAutoSave: false });
                                     }}
                                 >
                                     <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
-                                    Save to Cloud
+                                    Save as
                                 </Button>
-                                {ctx.createTrack?.cloudAutoSave && (
-                                    <Button
-                                        variant="contained"
-                                        className={styles.button}
-                                        onClick={() => {
-                                            ctx.selectedGpxFile.save = true;
-                                            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-                                            ctx.setCreateTrack({ ...ctx.createTrack, cloudAutoSave: false });
-                                        }}
-                                    >
-                                        <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
-                                        Save as
-                                    </Button>
-                                )}
-                            </>
-                        )}
-                    {!ctx.createTrack && ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK && (
+                            )}
+                        </>
+                    )}
+                    {!ctx.createTrack && (isCloudTrack(ctx) || isRouteTrack(ctx)) && (
                         <>
                             <Button
                                 id="se-infoblock-button-edit-cloud-track"
@@ -541,7 +541,7 @@ export default function GeneralInfo({ width }) {
                                 onClick={() => TracksManager.handleEditCloudTrack(ctx)}
                             >
                                 <Create fontSize="small" sx={{ mr: '7px' }} />
-                                Edit Track
+                                {isCloudTrack(ctx) ? 'Edit Track' : 'Edit as track'}
                             </Button>
                             <Divider light sx={{ mt: 2, mb: 1 }} />
                         </>
@@ -556,6 +556,18 @@ export default function GeneralInfo({ width }) {
                                     {`Points: ${points}`}
                                     {pointsTotal > 0 && pointsTotal !== points && ` (${pointsTotal})`}
                                     {ctx.processRouting ? <CircularProgress size={13} sx={{ ml: 1 }} /> : <></>}
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    )}
+                    {isRouteTrack(ctx) && (
+                        <MenuItem sx={{ ml: -2, mt: -1 }}>
+                            <ListItemIcon>
+                                <RouteIcon fontSize="small" />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography sx={{ ml: 1 }} variant="body2" noWrap>
+                                    {formatRouteInfo(ctx.routeObject.getRouteProps())}
                                 </Typography>
                             </ListItemText>
                         </MenuItem>

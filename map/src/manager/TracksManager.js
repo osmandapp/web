@@ -3,7 +3,7 @@ import FavoritesManager from './FavoritesManager';
 import _ from 'lodash';
 import { apiGet, apiPost } from '../util/HttpApi';
 import { compressFromJSON, decompressToJSON } from '../util/GzipBase64.mjs';
-import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_LOCAL_TRACK } from '../context/AppContext';
+import { isCloudTrack, isRouteTrack, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_LOCAL_TRACK } from '../context/AppContext';
 import { confirm } from '../dialogs/GlobalConfirmationDialog';
 import L from 'leaflet';
 import MarkerOptions from '../map/markers/MarkerOptions';
@@ -261,7 +261,15 @@ function handleEditCloudTrack(ctx) {
     const localTrackNotFound = !ctx.localTracks.find((t) => t.name === name);
 
     function proceed() {
-        addTrack({ ctx, track, overwrite: true });
+        if (isRouteTrack(ctx)) {
+            ctx.routeObject.resetRoute();
+            ctx.routeObject.setOption('route.points.start', null);
+            ctx.routeObject.setOption('route.points.finish', null);
+            ctx.routeObject.setOption('route.points.viaPoints', []);
+            ctx.routeObject.setOption('route.points.avoidRoads', []);
+            ctx.setCurrentObjectType(OBJECT_TYPE_LOCAL_TRACK);
+        }
+        addTrack({ ctx, track, overwrite: isCloudTrack(ctx) });
         ctx.setUpdateInfoBlock(true);
     }
 
