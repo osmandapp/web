@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-This article describes how to configure the map appearance for the navigation case. This includes things like [animated location changes](#animate-my-location), the display of [POIs along the route](#show-points-along-the-route), the use of [screen alerts](#screen-alerts), the [appearance of the route line](#route-line-appearance) including color and width, and turn arrows. These features are closely related to the [route navigation settings](../setup/route-navigation.md#settings).
+This article describes how to configure the map appearance for the navigation case. This includes things like [animated location changes](#animate-my-location-android-animate-own-position), the display of [POIs along the route](#show-points-along-the-route), the use of [screen alerts](#screen-alerts), the [appearance of the route line](#route-line-appearance) including color and width, and turn arrows. These features are closely related to the [route navigation settings](../setup/route-navigation.md#settings).
 
 
 ## Map during navigation
@@ -58,7 +58,10 @@ During navigation, the map appearance changes to that of the app profile used fo
 
 ### Animate my location (Android: Animate own position)
 
-Creates a smooth map panning effect versus the "My Position" icon when in motion. The effect introduces a slight delay versus ground truth of about 1 second. For Android, this item is named **Animate own position** and located in the "Other" section of the each profile's General settings menu. Enabling this has been reported to create some pronounced lag issues under some circumstances, disable if such issues arise.
+**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
+**iOS**: *<Translate ios="true" ids="shared_string_menu,routing_settings,routing_settings_2,animate_my_location"/>*  
+
+Creates a smooth map panning effect versus the *[My Position](../../personal/profiles/#profile-appearance)* icon when in motion. The effect introduces a slight delay versus ground truth of about 1 second. For Android, this item is named *Animate own position* and located in the *[Other](../../personal/profiles.md#other)* section of the each profile's General settings menu. Enabling this has been reported to create some pronounced lag issues under some circumstances, disable if such issues arise.
 
 
 ## Show points along the route
