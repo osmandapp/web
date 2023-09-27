@@ -348,15 +348,15 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 
 <InfoAndroidOnly />
 
+![External sensor widgets Android](@site/static/img/widgets/external-sensors-widgets_1.png) 
+
 Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from your external sensors, such as: *<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>, <Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>* and *<Translate android="true" ids="external_device_characteristic_temperature"/>*.  
 
 - To add External sensor widgets to the left/right side of the map screen, [enable](../plugins/index.md#enable--disable) **OsmAnd External sensors plugin**.
 - Widgets can be added even if there is no external sensor connected.
 - All added widgets are visible even if no external sensor is connected.
 - If a sensor has not been added or you need to edit the widget, tap the required widget field in the list and then on *Settings*, or directly on the *Settings icon* in the list.
-- The data displayed in widgets can be recorded using the [Trip recording plugin](../plugins/trip-recording.md#recording-settings).
-
-![External sensor widgets Android](@site/static/img/widgets/external-sensors-widgets_1.png) 
+- The data displayed in widgets can be recorded using the [Trip recording plugin](../plugins/trip-recording.md#recording-settings).  
 
 | | |
 |------------|------------|

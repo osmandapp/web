@@ -69,6 +69,38 @@ All settings affect the selected application profile only.
 
 </Tabs>
 
+### Free Cloud backup
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,configure_profile"/>*
+
+![Favorites folder functions android](@site/static/img/personal/profile_settings_free_backup_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
+
+![Favorites actions ios](@site/static/img/personal/profile_settings_free_backup_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+OsmAnd provides the ability to backup your application profile settings and save them in OsmAnd Cloud. Thus, your settings will be safely and conveniently saved for Android, iOS, or Web versions and restored in case of device failure or reinstallation of OsmAnd app. You can use this special plan if you have [OsmAnd Free or Maps+](../purchases/index.md).  
+
+You need to have an OsmAnd Cloud account to use the Free Settings Backup. If you have an account in *OsmAnd Pro* or an active account in OsmAnd Cloud, you will not see the promotion banner.  
+
+- Tap the Free Settings Backup banner.
+- Go through the [registration step](../personal/osmand-cloud.md#login).
+- Then go to the OsmAnd Purchases menu (*Menu → Settings → Purchases*).
+- Select the [OsmAnd Start package](../personal/osmand-cloud.md#osmand-start).
+- Create a backup.
+
 
 ## General settings
 

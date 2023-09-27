@@ -235,6 +235,7 @@ My Places menu benefits:
 - **Ease of use.** With categories, hashtags and editing capabilities, you can easily manage your POI data.
 - **Synchronization.** The optional data export and import feature allows you to save and use your points of interest information across devices.
 
+
 ### Actions
 
 <Tabs groupId="operating-systems">
@@ -243,14 +244,16 @@ My Places menu benefits:
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>*  
 
-![My places tracks Android](@site/static/img/personal/tracks/my_places_tracks_android.png) 
+![My places tracks Android](@site/static/img/personal/tracks/my_places_tracks_actions_3_andr.png) 
 
+<!--
 - "+" button  - allows [to import](./tracks.md#import-track) GPX track from device storage.
 - "earth" button - opens [Add point menu](../plan-route/coordinate-input.md) for adding points by inputting coordinates.
 - "map" button - allows to choose tracks for showing its on the map.
 - "&#x1F5D1;" button - allows to choose tracks for deleting.
 - "&#10227;" button - allows to refresh tracks list.
 - "OSM editing" button - allows you to upload the selected [track to the OSM](../plugins/osm-editing.md).
+-->
 
 </TabItem>
 
@@ -258,13 +261,17 @@ My Places menu benefits:
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_ios.png) ![My places tracks Actions iOS](@site/static/img/personal/tracks/my_places_tracks_actions_ios.png)  
+![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_ios.png) 
 
 ACTIONS  
-- **<Translate ios="true" ids="import_tracks"/>**  - open tab "<Translate ios="true" ids="import_from_docs"/>" and next description "<Translate ios="true" ids="gpx_import_desc"/>", [My files](../plan-route/create-route.md).
-- **<Translate ios="true" ids="create_new_trip"/>** - opens ["Plan route tool"](../personal/tracks.md#edit-mode-ios) for creating a new track.
+
+- **<Translate ios="true" ids="import_tracks"/>**  - open tab *<Translate ios="true" ids="import_from_docs"/>* and next description <Translate ios="true" ids="gpx_import_desc"/>, [My files](../plan-route/create-route.md).
+- **<Translate ios="true" ids="create_new_trip"/>** - opens [*Plan route tool*](../personal/tracks.md#edit-mode-ios) for creating a new track.
 
 Buttons in "&#8230;" menu  
+
+When you go to this menu, the ability to import or create tracks is not available.  
+
 - "export" button - allows to export choosing GPX file or files by anyways (messengers, email) or save to [My files](../plan-route/create-route.md).
 - "map" button - allows to choose tracks for showing its on the map.
 - "OSM editing" button - allows you to upload the selected [track to the OSM](../plugins/osm-editing.md).

@@ -12,6 +12,8 @@
 
 # Apple MacOS (m1/arm64) install fix for node-canvas
 
+The problem: yarn can not install canvas package
+
 *https://github.com/Automattic/node-canvas/issues/1733
 *https://github.com/Automattic/node-canvas/issues/1662
 
@@ -34,9 +36,23 @@ yarn test --mobile
 yarn test --headless
 yarn test --headless --mobile
 
-# Ubuntu 22.04 Chromium setup without snap
+# Ubuntu 22.04 Chromium setup without Snap
+
+The problem:
+
+- By default, Chromium is installed as Snap package (both by apt/snap)
+- Snap Chromium failed to start when HOME located not in /home
+- Our Jenkins installed with /var/lib/jenkins as its HOME
+
+The solution:
+
+- Don't install (or remove) Chromium as Snap package
+- Add special repository (ppa:xtradeb/apps)
+- Install usual Chromium
 
 *https://www.linuxcapable.com/install-chromium-browser-on-ubuntu-linux/#Section-2-Install-Chromium-with-Flatpak-and-Flathub
+
+Linux commands:
 
 sudo add-apt-repository ppa:xtradeb/apps -y
 

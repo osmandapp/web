@@ -15,6 +15,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 <InfoIncompleteArticle/>
 
 ## Route calculation
+
 ### Route calculation is slow 
 
 **Android**: Please be aware that there are 2 offline routing engines in the app: a Java based approach and a "Native" (C++) routing. The Java based approach is used in ['Safe Mode'](../plugins/development.md#safe), it is 10 times slower than native mode and it has strict memory limitations. If you experience it and you see messages 'Not enough memory to compute', please go to Plugins → OsmAnd development → Settings → ['Safe Mode'](../plugins/development.md#safe) and make sure the option is disabled.
@@ -28,6 +29,16 @@ For native routing there are different limitations for different phones, dependi
 2. For Top-end devices you can increase memory up to 512 MB or 1024 MB - [Memory allocated devices](../plugins/development.md#memory-allocated-for-routing).
 
 3. For Android version you can create a Navigation Profile with Online or Third-party routing (BRouter). Read more about it [here](../navigation/routing/brouter.md).
+
+### Calculation of 50 km routes for pedestrians
+
+If you select *Walking* profile, the app may crash. There may be causes for this:
+- If you have created a route longer than 50 km.
+- The number of direct points on the route exceeds 1 million.
+- You are using a mobile device to process a 50 km long route (not recommended, but you can use the Web version to calculate such a route).  
+
+If you need to create a route of a similar distance, use other profile types, such as *Bicycle*.
+
 
 ## The calculated route does not seem correct
 

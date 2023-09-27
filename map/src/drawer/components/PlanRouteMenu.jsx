@@ -1,50 +1,17 @@
 import { Button, Collapse, Grid, ListItemIcon, ListItemText, MenuItem } from '@mui/material';
 import { ExpandLess, ExpandMore, Insights } from '@mui/icons-material';
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import TracksManager from '../../context/TracksManager';
 import drawerStyles from '../styles/DrawerStyles';
-import { styled } from '@mui/material/styles';
 import AppContext from '../../context/AppContext';
-import { useMutator } from '../../util/Utils';
+import LocalGpxUploader from './LocalGpxUploader';
 
 export default function PlanRouteMenu() {
     const styles = drawerStyles();
-    const StyledInput = styled('input')({
-        display: 'none',
-    });
 
     const ctx = useContext(AppContext);
 
     const [open, setOpen] = useState(false);
-    const [uploadedFiles, mutateUploadedFiles] = useMutator({});
-
-    useEffect(() => {
-        for (const file in uploadedFiles) {
-            TracksManager.addTrack({
-                ctx,
-                overwrite: false,
-                track: uploadedFiles[file].track,
-                selected: uploadedFiles[file].selected,
-            });
-            mutateUploadedFiles((o) => delete o[file]);
-            break; // limit 1 file per 1 render
-        }
-    }, [uploadedFiles]);
-
-    const fileSelected = () => async (e) => {
-        const selected = e.target.files.length === 1;
-        Array.from(e.target.files).forEach((file) => {
-            const reader = new FileReader();
-            reader.addEventListener('load', async () => {
-                const track = await TracksManager.getTrackData(file);
-                if (track) {
-                    track.name = file.name;
-                    mutateUploadedFiles((o) => (o[file.name] = { track, selected }));
-                }
-            });
-            reader.readAsText(file);
-        });
-    };
 
     return (
         <>
@@ -71,14 +38,7 @@ export default function PlanRouteMenu() {
                         }
                     </Grid>
                     <Grid item xs={6}>
-                        <label htmlFor="planroute-import-gpx">
-                            <StyledInput
-                                accept=".gpx"
-                                id="planroute-import-gpx"
-                                multiple
-                                type="file"
-                                onChange={fileSelected(ctx)}
-                            />
+                        <LocalGpxUploader>
                             <Button
                                 className={styles.button}
                                 variant="contained"
@@ -87,7 +47,7 @@ export default function PlanRouteMenu() {
                             >
                                 Import track
                             </Button>
-                        </label>
+                        </LocalGpxUploader>
                     </Grid>
                 </Grid>
             </Collapse>
