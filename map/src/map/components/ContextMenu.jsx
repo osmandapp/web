@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react';
 import AppContext from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import { useNavigate } from 'react-router-dom';
-import TracksManager from '../../context/TracksManager';
+import TracksManager from '../../manager/TracksManager';
 import { apiGet } from '../../util/HttpApi';
 
 export default function ContextMenu({ setGeocodingData, setRegionData }) {
@@ -22,12 +22,12 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
         if (map) {
             map.contextmenu.removeAllItems();
             map.contextmenu.addItem({
-                text: 'Navigate from',
-                callback: (e) => routeObject.setOption('route.points.start', e.latlng),
+                text: 'Create new route',
+                callback: (e) => TracksManager.createTrack(ctx, e.latlng),
             });
             map.contextmenu.addItem({
-                text: 'Navigate to',
-                callback: (e) => routeObject.setOption('route.points.finish', e.latlng),
+                text: 'Navigate from',
+                callback: (e) => routeObject.setOption('route.points.start', e.latlng),
             });
             if (startPoint && finishPoint) {
                 map.contextmenu.addItem({
@@ -35,6 +35,10 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                     callback: (e) => routeObject.routeAddViaPoint({ ll: e.latlng }),
                 });
             }
+            map.contextmenu.addItem({
+                text: 'Navigate to',
+                callback: (e) => routeObject.setOption('route.points.finish', e.latlng),
+            });
             map.contextmenu.addItem({
                 text: 'Add pin',
                 callback: (e) => ctx.setPinPoint(e.latlng),
@@ -54,10 +58,6 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                 callback: (e) => {
                     ctx.loginUser ? addFavorite(e) : openLogin();
                 },
-            });
-            map.contextmenu.addItem({
-                text: 'Plan a route',
-                callback: (e) => TracksManager.createTrack(ctx, e.latlng),
             });
             if (ctx.createTrack?.enable) {
                 map.contextmenu.addItem({

@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import TracksManager from './TracksManager';
+import TracksManager from '../manager/TracksManager';
 import EditablePolyline from '../map/EditablePolyline';
 
 const MAX_STARTED_ROUTER_JOBS = 6;

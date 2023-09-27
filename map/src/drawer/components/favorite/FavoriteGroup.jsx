@@ -4,8 +4,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import FavoriteItem from './FavoriteItem';
 import AppContext from '../../../context/AppContext';
 import Utils from '../../../util/Utils';
-import TracksManager from '../../../context/TracksManager';
-import FavoritesManager from '../../../context/FavoritesManager';
+import TracksManager from '../../../manager/TracksManager';
+import FavoritesManager from '../../../manager/FavoritesManager';
 
 export default function FavoriteGroup({ index, group, enableGroups, setEnableGroups }) {
     const ctx = useContext(AppContext);

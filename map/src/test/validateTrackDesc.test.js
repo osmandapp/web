@@ -1,11 +1,11 @@
-import { prepareDesc } from '../context/TracksManager';
+import { prepareDesc } from '../manager/TracksManager';
 
 jest.mock('../util/Utils', () => ({
     __esModule: true,
     default: jest.fn(),
 }));
 
-jest.mock('../context/FavoritesManager', () => ({
+jest.mock('../manager/FavoritesManager', () => ({
     __esModule: true,
     default: jest.fn(),
 }));

@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import LocalTrackItem from './tracks/LocalTrackItem';
 import PopperMenu from './tracks/PopperMenu';
 import AppContext from '../../context/AppContext';
-import TracksManager from '../../context/TracksManager';
+import TracksManager from '../../manager/TracksManager';
 import CloudOutlinedIcon from '@mui/icons-material/CloudOutlined';
 
 const useStyles = makeStyles({

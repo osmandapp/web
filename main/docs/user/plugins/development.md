@@ -152,7 +152,8 @@ Use one of the following paths to open the plugin settings:
 - **Memory allocated for routing** option allows you to determine the amount of memory allocated for calculating long routes.  
 
 :::note
-Higher memory allocation may impact the performance of other apps.  
+- Higher memory allocation may impact the performance of other apps. 
+- [Calculation of 50 km routes for pedestrians](../troubleshooting/navigation.md#calculation-of-50-km-routes-for-pedestrians) 
 :::
 
 </TabItem>

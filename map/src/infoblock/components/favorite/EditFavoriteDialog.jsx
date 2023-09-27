@@ -15,7 +15,7 @@ import FavoriteGroup from './structure/FavoriteGroup';
 import FavoriteIcon from './structure/FavoriteIcon';
 import FavoriteColor from './structure/FavoriteColor';
 import FavoriteShape from './structure/FavoriteShape';
-import FavoritesManager from '../../../context/FavoritesManager';
+import FavoritesManager from '../../../manager/FavoritesManager';
 import FavoriteHelper from './FavoriteHelper';
 import { apiGet } from '../../../util/HttpApi';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';

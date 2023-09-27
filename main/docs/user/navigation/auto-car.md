@@ -215,17 +215,11 @@ The OsmAnd app can be opened and used to navigate in Android Auto on the vehicle
 
 ## Issues
 
-### Map orientation issue
+1. [Map orientation issue](../troubleshooting/android_auto.md#map-orientation-issue)
 
-Movement direction map orientation is [flipped and jiggles](https://github.com/osmandapp/OsmAnd/issues/16041). Resolved by switching on ["Approximate bearing"](../navigation/guidance/map-during-navigation.md#map-during-navigation) option:
+2. [Volume control issue](../troubleshooting/android_auto.md#volume-control-issue) 
 
-- Visible only if [OsmAnd Development](../plugins/development.md) is enabled.
-- Placed in *Menu → Settings → Profile → Navigation settings → [Map during navigation](../navigation/guidance/map-during-navigation.md) → Approximate bearing*.
+3. [Location delays (ANR crashes)](../troubleshooting/android_auto.md#location-delays-anr-crashes)
 
 
-### Volume control issue
-
-In most cases, all types of **signals** remain at constant full volume, which is not affected by the simultaneous audio playback settings. To change the volume of the OsmAnd navigation prompts when using Android Auto, go to *Setup → Voice → Voice volume* on the vehicle multimedia system screen.  
-
-If this method does not work, there is another option. To adjust the notification volume, you need to turn on Google Assistant during a call. Hold down the button on the steering wheel that turns on Google Assistant, and during the call, adjust the volume using the dashboard or steering wheel.  
 

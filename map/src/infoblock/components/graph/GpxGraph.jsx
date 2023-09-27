@@ -1,27 +1,29 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { Chart } from 'react-chartjs-2';
 import {
-    Tooltip,
-    Legend,
-    Chart as ChartJS,
+    BarElement,
     CategoryScale,
-    LinearScale,
-    PointElement,
-    LineController,
-    LineElement,
+    Chart as ChartJS,
     Filler,
     Interaction,
-    BarElement,
+    Legend,
+    LinearScale,
+    LineController,
+    LineElement,
+    PointElement,
+    Tooltip,
 } from 'chart.js';
 import { Box, Slider, SliderThumb } from '@mui/material';
 import AppContext from '../../../context/AppContext';
-import TracksManager from '../../../context/TracksManager';
+import TracksManager from '../../../manager/TracksManager';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import annotationsPlugin from 'chartjs-plugin-annotation';
 import _ from 'lodash';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import { getRelativePosition } from 'chart.js/helpers';
+import RoadAttributesGraph from './RoadAttributesGraph';
+import { cap, UNDEFINED_DATA } from '../../../manager/GraphManager';
 
 const mouseLine = {
     id: 'mouseLine',
@@ -42,16 +44,16 @@ const mouseLine = {
             chart.options.mouseLine.x = NaN;
         }
     },
-    afterDraw: function (chart) {
+    afterTooltipDraw: function (chart) {
         const ctx = chart.ctx;
         const chartArea = chart.chartArea;
         const x = chart.options.mouseLine?.x;
         if (!isNaN(x)) {
             ctx.save();
-            ctx.lineWidth = 1;
+            //ctx.lineWidth = 2;
             ctx.moveTo(chart.options.mouseLine.x, chartArea.bottom);
             ctx.lineTo(chart.options.mouseLine.x, chartArea.top);
-            ctx.strokeStyle = '#757575';
+            ctx.strokeStyle = '#f8931c';
             ctx.stroke();
             ctx.restore();
         }
@@ -69,7 +71,6 @@ ChartJS.register(
     LineElement,
     Filler,
     zoomPlugin,
-    mouseLine,
     annotationsPlugin
 );
 
@@ -91,6 +92,7 @@ const useStyles = makeStyles({
 
 export default function GpxGraph({
     data,
+    attrGraphData,
     showData,
     xAxis,
     y1Axis,
@@ -111,6 +113,8 @@ export default function GpxGraph({
     const [slopeData, setSlopeData] = useState(null);
     const [maxMinData, setMaxMinData] = useState({});
     const [distRangeValue, setDistRangeValue] = useState([0, data.length - 1]);
+    const [selectedPoint, setSelectedPoint] = useState(null);
+    const [activeIndex, setActiveIndex] = useState(null);
 
     const chartRef = useRef(null);
 
@@ -125,9 +129,11 @@ export default function GpxGraph({
     };
     useEffect(() => {
         if (data) {
-            setSpeedData(showData[y2Axis] ? data.map((d) => ({ x: d[xAxis], y: d[y2Axis] })) : null);
-            setEleData(showData[y1Axis[0]] ? data.map((d) => ({ x: d[xAxis], y: d[y1Axis[0]] })) : null);
-            setEleSRTMData(showData[y1Axis[1]] ? data.map((d) => ({ x: d[xAxis], y: d[y1Axis[1]] })) : null);
+            setSpeedData(showData[y2Axis] ? data.map((d) => ({ x: d[xAxis], y: parseFloat(d[y2Axis]) })) : null);
+            setEleData(showData[y1Axis[0]] ? data.map((d) => ({ x: d[xAxis], y: parseFloat(d[y1Axis[0]]) })) : null);
+            setEleSRTMData(
+                showData[y1Axis[1]] ? data.map((d) => ({ x: d[xAxis], y: parseFloat(d[y1Axis[1]]) })) : null
+            );
             setSlopeData(showData[y1Axis[2]] ? slopes.map((d) => ({ x: d.dist, y: d.slope })) : null);
             if (showData[y1Axis[0]]) {
                 addMaxMinMarkers(y1Axis[0], minEle, maxEle);
@@ -138,7 +144,7 @@ export default function GpxGraph({
                 }
             }
             setDistRangeValue([0, data.length - 1]);
-            ctx.setTrackRange(null);
+            ctx.setTrackRange([]);
         }
     }, [data, showData, slopes]);
 
@@ -198,12 +204,16 @@ export default function GpxGraph({
                     const lat = Object.values(pointList)[ind].lat;
                     const lng = Object.values(pointList)[ind].lng;
                     ctx.mapMarkerListener(lat, lng);
+                    setSelectedPoint({
+                        ind: ind,
+                        dist: data[ind][xAxis],
+                    });
                 } else {
-                    ctx.mapMarkerListener(null);
+                    hideSelectedPoint();
                 }
             }
         } else {
-            ctx.mapMarkerListener(null);
+            hideSelectedPoint();
         }
     }
 
@@ -212,7 +222,8 @@ export default function GpxGraph({
     }
 
     function showRange() {
-        const defaultPos = distRangeValue[0] === 0 && distRangeValue[1] === data.length - 1;
+        const defaultPos =
+            _.isEmpty(ctx.trackRange) || (ctx.trackRange[0] === 0 && ctx.trackRange[1] === data.length - 1);
         return !defaultPos;
     }
 
@@ -248,211 +259,257 @@ export default function GpxGraph({
     };
 
     function getMode() {
-        return !showY1 && !showY2 && showSlope ? 'index' : 'myCustomMode';
+        return !showY1 && !showY2 && showSlope ? 'nearest' : 'myCustomMode';
     }
 
-    const options = {
-        responsive: true,
-        maintainAspectRatio: false,
-        spanGaps: true,
-        animation: {
-            duration: 400,
-        },
-        interaction: {
-            intersect: false,
-            mode: getMode(),
-        },
-        plugins: {
-            annotation: {
-                annotations: {
-                    label1: {
-                        display: showMaxMin(),
-                        type: 'line',
-                        id: 'vline' + maxMinData?.min?.x,
-                        mode: 'vertical',
-                        scaleID: 'x',
-                        value: maxMinData?.min?.x,
-                        borderColor: '#757575',
-                        borderWidth: 1,
-                    },
-                    label2: {
-                        display: showMaxMin(),
-                        type: 'label',
-                        xValue: maxMinData?.min?.x,
-                        yValue: 'center',
-                        backgroundColor: '#ebf3f2',
-                        content: [Math.round(maxMinData?.min?.y)],
-                        font: {
-                            size: 9,
-                        },
-                        borderRadius: 5,
-                        color: 'green',
-                        borderWidth: 1,
-                        padding: 2,
-                    },
-                    label3: {
-                        display: showMaxMin(),
-                        type: 'line',
-                        id: 'vline' + maxMinData?.max?.x,
-                        mode: 'vertical',
-                        scaleID: 'x',
-                        value: maxMinData?.max?.x,
-                        borderColor: '#757575',
-                        borderWidth: 1,
-                    },
-                    label4: {
-                        display: showMaxMin(),
-                        type: 'label',
-                        xValue: maxMinData?.max?.x,
-                        yValue: 'center',
-                        backgroundColor: '#ebf3f2',
-                        content: [Math.round(maxMinData?.max?.y)],
-                        font: {
-                            size: 9,
-                        },
-                        borderRadius: 5,
-                        color: 'red',
-                        borderWidth: 1,
-                        padding: 2,
-                    },
-                    box1: {
-                        display: showRange(),
-                        type: 'box',
-                        xMin: data[distRangeValue[0]] && data[distRangeValue[0]][xAxis],
-                        xMax: data[distRangeValue[1]] && data[distRangeValue[1]][xAxis],
-                        backgroundColor: 'rgba(245, 208, 39, 0.34)',
-                    },
-                },
+    function getSelectedBoxPosition(ind) {
+        return !_.isEmpty(ctx.trackRange) && data[ctx.trackRange[ind]] && data[ctx.trackRange[ind]][xAxis];
+    }
+
+    const options = useMemo(
+        () => ({
+            responsive: true,
+            maintainAspectRatio: false,
+            spanGaps: true,
+            animation: {
+                duration: 400,
             },
-            tooltip: {
-                enabled: true,
+            interaction: {
+                intersect: false,
                 mode: getMode(),
-                intersect: false,
-                backgroundColor: '#757575',
-                displayColors: false,
-                callbacks: {
-                    title: (context) => {
-                        return `${xAxis}: ${context[0].label} km`;
-                    },
-                    label: (context) => {
-                        let label = context.dataset.label || '';
-                        let ind = data.findIndex((d) => d[xAxis] === Number(context.label));
-                        if (label) {
-                            label += ': ';
-                        }
-                        const dimension =
-                            context.dataset.yAxisID === 'y1'
-                                ? 'm'
-                                : context.dataset.yAxisID === 'y1Slope'
-                                ? '%'
-                                : 'km/h';
-                        if (context.parsed.y !== null) {
-                            label += `${context.parsed.y} ${dimension}`;
-                        }
-                        let res = [];
-                        res.push(label);
-                        if (data[ind] && context.dataset.yAxisID !== 'y1Slope' && showSlope) {
-                            res.push(`Slope: ${data[ind]['Slope']}`);
-                        }
-                        return res;
-                    },
+            },
+            layout: {
+                padding: {
+                    left: -100,
                 },
             },
-            hover: {
-                intersect: false,
-                includeInvisible: true,
-            },
-            legend: {
-                display: false,
-            },
-            zoom: {
-                limits: {
-                    x: {
-                        min: data[0][xAxis],
-                        max: data[data.length - 1][xAxis],
-                        minRange: 0.1,
+            plugins: {
+                annotation: {
+                    annotations: {
+                        label1: {
+                            display: showMaxMin(),
+                            type: 'line',
+                            id: 'vline' + maxMinData?.min?.x,
+                            mode: 'vertical',
+                            scaleID: 'x',
+                            value: maxMinData?.min?.x,
+                            borderColor: '#757575',
+                            borderWidth: 1,
+                        },
+                        label2: {
+                            display: showMaxMin(),
+                            type: 'label',
+                            xValue: maxMinData?.min?.x,
+                            yValue: 'center',
+                            backgroundColor: '#ebf3f2',
+                            content: [Math.round(maxMinData?.min?.y)],
+                            font: {
+                                size: 9,
+                            },
+                            borderRadius: 5,
+                            color: 'green',
+                            borderWidth: 1,
+                            padding: 2,
+                        },
+                        label3: {
+                            display: showMaxMin(),
+                            type: 'line',
+                            id: 'vline' + maxMinData?.max?.x,
+                            mode: 'vertical',
+                            scaleID: 'x',
+                            value: maxMinData?.max?.x,
+                            borderColor: '#757575',
+                            borderWidth: 1,
+                        },
+                        label4: {
+                            display: showMaxMin(),
+                            type: 'label',
+                            xValue: maxMinData?.max?.x,
+                            yValue: 'center',
+                            backgroundColor: '#ebf3f2',
+                            content: [Math.round(maxMinData?.max?.y)],
+                            font: {
+                                size: 9,
+                            },
+                            borderRadius: 5,
+                            color: 'red',
+                            borderWidth: 1,
+                            padding: 2,
+                        },
+                        box1: {
+                            display: showRange(),
+                            type: 'box',
+                            xMin: getSelectedBoxPosition(0),
+                            xMax: getSelectedBoxPosition(1),
+                            backgroundColor: 'rgb(169,169,169, 0.34)',
+                            borderWidth: 0,
+                        },
                     },
+                },
+                tooltip: {
+                    enabled: true,
+                    mode: getMode(),
+                    intersect: false,
+                    backgroundColor: '#757575',
+                    displayColors: false,
+                    callbacks: {
+                        title: (context) => {
+                            return `${xAxis}: ${Number(context[0].label).toFixed(2)} km`;
+                        },
+                        label: (context) => {
+                            let label = context.dataset.label || '';
+                            let ind = data.findIndex((d) => d[xAxis] === Number(context.label));
+                            if (label) {
+                                label += ': ';
+                            }
+                            const dimension =
+                                context.dataset.yAxisID === 'y1'
+                                    ? 'm'
+                                    : context.dataset.yAxisID === 'y1Slope'
+                                    ? '%'
+                                    : 'km/h';
+                            if (context.parsed.y !== null) {
+                                label += `${context.parsed.y.toFixed(0)} ${dimension}`;
+                            }
+                            let res = [];
+                            res.push(label);
+                            if (data[ind] && context.dataset.yAxisID !== 'y1Slope' && showSlope) {
+                                res.push(`Slope: ${data[ind]['Slope'].toFixed(0)} %`);
+                            }
+                            if (ind && attrGraphData) {
+                                const resType = attrGraphData.types.datasets.find((d, i) => {
+                                    return ind >= d.index && ind < attrGraphData.types.datasets[i + 1].index;
+                                });
+                                const resSurface = attrGraphData.surfaces.datasets.find(
+                                    (d, i) => ind >= d.index && ind < attrGraphData.types.datasets[i + 1].index
+                                );
+                                if (resType?.label !== UNDEFINED_DATA || resSurface?.label !== UNDEFINED_DATA) {
+                                    res.push('-----------------------');
+                                }
+                                if (resType && resType.label !== UNDEFINED_DATA) {
+                                    res.push(cap(resType.label));
+                                }
+                                if (resSurface && resSurface.label !== UNDEFINED_DATA) {
+                                    res.push(cap(resSurface.label));
+                                }
+                            }
+                            return res;
+                        },
+                    },
+                },
+                hover: {
+                    intersect: false,
+                    includeInvisible: true,
+                },
+                legend: {
+                    display: false,
                 },
                 zoom: {
-                    wheel: {
+                    limits: {
+                        x: {
+                            min: data[0][xAxis],
+                            max: data[data.length - 1][xAxis],
+                            minRange: 0.1,
+                        },
+                    },
+                    zoom: {
+                        wheel: {
+                            enabled: true,
+                        },
+                        mode: 'x',
+                        speed: 100,
+                    },
+                    pan: {
                         enabled: true,
+                        mode: 'x',
+                        speed: 100,
                     },
-                    mode: 'x',
-                    speed: 100,
-                },
-                pan: {
-                    enabled: true,
-                    mode: 'x',
-                    speed: 100,
                 },
             },
-        },
-        scales: {
-            x: {
-                display: true,
-                type: 'linear',
-                max: data[data.length - 1][xAxis],
-                ticks: {
-                    maxTicksLimit: 10,
-                    beginAtZero: true,
-                },
-                title: {
+            scales: {
+                x: {
                     display: true,
-                    text: 'distance in km',
-                    color: '#757575',
-                    font: {
-                        size: 10,
-                        lineHeight: 1.2,
+                    type: 'linear',
+                    max: parseFloat(Number(data[data.length - 1][xAxis]).toFixed(1)),
+                    ticks: {
+                        maxTicksLimit: 10,
+                        beginAtZero: true,
+                        align: 'inner',
+                        font: {
+                            size: 8,
+                        },
+                        autoSkip: true,
+                    },
+                    title: {
+                        display: true,
+                        text: 'distance in km',
+                        color: '#757575',
+                        font: {
+                            size: 10,
+                            lineHeight: 1.2,
+                        },
                     },
                 },
-            },
-            y1: {
-                display: showY1,
-                position: 'left',
-                title: {
-                    display: true,
-                    text: 'ele in m',
-                    color: '#757575',
-                    font: {
-                        size: 10,
-                        lineHeight: 1.2,
+                y1: {
+                    display: showY1,
+                    position: 'left',
+                    ticks: {
+                        mirror: true,
+                        align: 'end',
+                        z: 1000,
+                        font: {
+                            size: 8,
+                        },
+                        maxTicksLimit: 6,
+                        callback: (val) => {
+                            return val + ' m';
+                        },
                     },
                 },
-            },
-            y2: {
-                display: showY2,
-                position: 'right',
-                title: {
-                    display: true,
-                    text: 'speed in km/h',
-                    color: '#757575',
-                    font: {
-                        size: 10,
-                        lineHeight: 1.2,
+                y2: {
+                    display: showY2,
+                    position: 'right',
+                    ticks: {
+                        mirror: true,
+                        align: 'end',
+                        z: 1000,
+                        font: {
+                            size: 8,
+                        },
+                        padding: -5,
+                        maxTicksLimit: 6,
+                        callback: (val) => {
+                            return val + ' km/h';
+                        },
+                    },
+                    grid: {
+                        display: !showY1,
                     },
                 },
-                grid: {
-                    display: !showY1,
-                },
-            },
-            ['y1Slope']: {
-                display: !showY2 && showSlope,
-                position: 'right',
-                title: {
+                ['y1Slope']: {
                     display: !showY2 && showSlope,
-                    text: 'slope in %',
-                    color: '#757575',
-                    font: {
-                        size: 10,
-                        lineHeight: 1.2,
+                    position: 'right',
+                    ticks: {
+                        mirror: true,
+                        align: 'end',
+                        z: 1000,
+                        font: {
+                            size: 8,
+                        },
+                        padding: -5,
+                        maxTicksLimit: 6,
+                        callback: (val) => {
+                            return val + '  %';
+                        },
+                    },
+                    grid: {
+                        display: !showY1,
                     },
                 },
-                grid: {
-                    display: !showY1,
-                },
             },
-        },
-    };
+        }),
+        [data, ctx.trackRange]
+    );
 
     const graphData = {
         labels: data.map((d) => (d[xAxis] !== 0 ? d[xAxis].toFixed(1) : 0)),
@@ -528,17 +585,22 @@ export default function GpxGraph({
         return `${data[value][xAxis].toFixed(1)}  km`;
     }
 
+    function hideSelectedPoint() {
+        ctx.mapMarkerListener(null);
+        setSelectedPoint(null);
+    }
+
     return (
         <>
-            <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 40, height: 220 }}>
+            <Box sx={{ p: 0, width: Number(width.replace('px', '')) - 42, height: 180 }}>
                 <Chart
                     ref={chartRef}
-                    margin={{ top: 0, right: 0, left: -20, bottom: 0 }}
                     style={{ fontSize: 10 }}
                     data={graphData}
                     options={options}
+                    plugins={[mouseLine]}
                     onMouseMove={(e) => onMouseMoveGraph(e, chartRef)}
-                    onMouseLeave={() => ctx.mapMarkerListener(null)}
+                    onMouseLeave={() => hideSelectedPoint()}
                 />
             </Box>
             <Slider
@@ -554,6 +616,26 @@ export default function GpxGraph({
                 max={data.length - 1}
                 components={{ Thumb: ThumbComponent }}
             />
+            {attrGraphData?.types && (
+                <RoadAttributesGraph
+                    name={'Road type'}
+                    data={attrGraphData.types}
+                    width={width}
+                    selectedPoint={selectedPoint}
+                    activeIndex={activeIndex}
+                    setActiveIndex={setActiveIndex}
+                />
+            )}
+            {attrGraphData?.surfaces && (
+                <RoadAttributesGraph
+                    name={'Surface'}
+                    data={attrGraphData.surfaces}
+                    width={width}
+                    selectedPoint={selectedPoint}
+                    activeIndex={activeIndex}
+                    setActiveIndex={setActiveIndex}
+                />
+            )}
         </>
     );
 }

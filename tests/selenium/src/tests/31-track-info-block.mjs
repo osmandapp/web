@@ -1,7 +1,7 @@
 'use strict';
 
 import { By } from 'selenium-webdriver';
-import { enclose, enumerateIds, matchInnerTextBy } from '../lib.mjs';
+import { clickBy, enclose, enumerateIds, matchInnerTextBy } from '../lib.mjs';
 
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
@@ -42,7 +42,7 @@ const TRACKS = [
             'Points: 5',
             'Distance: 6.4 km',
             '173.2 / 184.5 / 191.0 m', // ele
-            /Residential.*?: 6.08 km/s, // Waytypes stats
+            /Street.*?: 6.08 km/s, // Waytypes stats
             /Asphalt.*?: 3.28 km/s, // Surfaces stats
         ],
     },
@@ -71,6 +71,8 @@ export default async function test() {
         const name = gpx.replace('.gpx', '');
 
         await actionUploadGpx({ mask: gpx });
+        await clickBy(By.id('se-show-attr-legend-Road type'), { optional: true });
+        await clickBy(By.id('se-show-attr-legend-Surface'), { optional: true });
         await validateInfoBlockStrings(strings);
         await validateInfoBlockButtons(localTrackButtons);
 

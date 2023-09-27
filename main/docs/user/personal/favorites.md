@@ -205,7 +205,7 @@ All information about a Favourite is stored and described using tags. When creat
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites"/>*
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
 ![my_places_ios](@site/static/img/personal/my_places_ios.png)
 
@@ -581,36 +581,94 @@ You can export Favorites backup files using *[Export](../personal/import-export.
 
 ## Export / Import
 
-OsmAnd provides a wide range of options for [backing up](../personal/import-export.md) important data for [restoring](#local-folder) it later. Favorites can be saved as a separate file in internal and external storage, uploaded to [OsmAnd Cloud](../personal/osmand-cloud.md) (Pro or Start only) or [sent](#favorites-share) to friends using instant messaging programs.
+OsmAnd provides a wide range of options for [backing up](../personal/import-export.md) important data for [restoring](#local-folder) it later. Favorites can be saved as a separate file in internal and external storage, uploaded to [OsmAnd Cloud](../personal/osmand-cloud.md) (only if you have an [OsmAnd Pro or OsmAnd Start subscription](../purchases/index.md)) or [sent](#favorites-share) to friends using instant messaging programs.
 
-
-### All Favorites
-
-You can export and import Favorites using the Actions buttons at the bottom of the Favorites screen. Favorites.gpx file can be sent to Dropbox, Email, messengers, etc.  
-Favorites also can be imported from Favorites.gpx file using *Import favorites* or *Open In OsmAnd* function.  
+### Free Cloud backup 
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Favorites actions android](@site/static/img/personal/favorites_actions_android.png)
+*<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-Actions:
-- &#43; - allows to import Favorites (favorite.gpx) from the device storage.
-- &#60; - allows to export (share) all your Favorites as "favorite.gpx" file.  
+![Favorites folder functions android](@site/static/img/personal/favorites_free_backup_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorites export import ios](@site/static/img/personal/favorites_export_import_ios.png)  
+*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-- *<Translate ios="true" ids="fav_import_title"/>* - allows to import Favorites as waypoints from GPX file (common GPS data format).  
-- *<Translate ios="true" ids="fav_export_title"/>* - is used to export all your favorites as Favourites.gpx file.  
+![Favorites actions ios](@site/static/img/personal/favorites_free_backup_ios.png)
 
 </TabItem>
 
 </Tabs>
+
+Free Favorites Backup is a special purchase plan to back up your favorite points (locations) for Android, iOS, or Web versions in the OsmAnd application and restore them from OsmAnd Cloud. You can use this special plan if you have [OsmAnd Free or Maps+](../purchases/index.md).  
+
+Free Favorites Backup has the following benefits:
+
+- No payment is required. You do not need to purchase paid subscriptions.
+- Saving your favorite points. You can regularly backup your favorite points in OsmAnd so you don't lose them if your device crashes or you delete the app.
+- Transferring favorite points. If you use OsmAnd on multiple devices, Free Favorites Backup helps you quickly import your favorite points to a new device.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
+
+![Favorites folder functions android](@site/static/img/personal/favorites_free_backup_purch_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+
+![Favorites actions ios](@site/static/img/personal/favorites_free_backup_purch_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+You need to have an OsmAnd Cloud account to use the Free Settings Backup. If you have an account in *OsmAnd Pro* or an active account in OsmAnd Cloud, you will not see the promotion banner.  
+
+- Tap the Free Favorites Backup banner.
+- Go through the [registration step](../personal/osmand-cloud.md#login).
+- Then go to the OsmAnd Purchases menu (*Menu → Settings → Purchases*).
+- Select the [OsmAnd Start package](../personal/osmand-cloud.md#osmand-start).
+- Create a backup.
+
+
+### All Favorites
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Favorites actions android](@site/static/img/personal/favorites_export_import_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Favorites export import ios](@site/static/img/personal/favorites_export_import_2_ios.png)  
+
+</TabItem>
+
+</Tabs>
+
+You can export and import your favorites using the special buttons at the bottom of the Favorites screen. A [.gpx file](../../technical/osmand-file-formats/osmand-gpx.md) (favorites.gpx) can be sent to Dropbox, email, messengers, and other applications that support this feature installed on your device.  
+
+Android:
+- **&#43;** - allows to import Favorites (favorite.gpx) from the device storage.
+- **&#60;** - allows to export (share) all your Favorites as "favorite.gpx" file.  
+
+iOS:
+- **<Translate ios="true" ids="fav_import_title"/>** - allows to import Favorites as waypoints from GPX file (common GPS data format).  
+- **<Translate ios="true" ids="fav_export_title"/>** - is used to export all your favorites as Favourites.gpx file.  
 
 ### Favorite Group
 
