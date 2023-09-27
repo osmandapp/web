@@ -4,8 +4,8 @@ import '../../assets/css/gpx.css';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../TrackLayerProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
-import FavoritesManager from '../../context/FavoritesManager';
-import TracksManager from '../../context/TracksManager';
+import FavoritesManager from '../../manager/FavoritesManager';
+import TracksManager from '../../manager/TracksManager';
 import _ from 'lodash';
 
 const FavoriteLayer = () => {

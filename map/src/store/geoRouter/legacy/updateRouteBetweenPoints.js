@@ -1,6 +1,6 @@
 import { apiGet, apiPost } from '../../../util/HttpApi';
 import Utils, { quickNaNfix } from '../../../util/Utils';
-import TracksManager from '../../../context/TracksManager';
+import TracksManager from '../../../manager/TracksManager';
 
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
 

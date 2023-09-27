@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import useCookie from 'react-use-cookie';
 import Utils, { useMutator, seleniumUpdateActivity } from '../util/Utils';
-import TracksManager from './TracksManager';
+import TracksManager from '../manager/TracksManager';
 import _ from 'lodash';
-import FavoritesManager from './FavoritesManager';
-import PoiManager from './PoiManager';
+import FavoritesManager from '../manager/FavoritesManager';
+import PoiManager from '../manager/PoiManager';
 import { apiGet } from '../util/HttpApi';
 import { geoRouter } from '../store/geoRouter/geoRouter.js';
-import WeatherManager from './WeatherManager';
+import WeatherManager from '../manager/WeatherManager';
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -315,7 +315,7 @@ export const AppContextProvider = (props) => {
     const [afterPointRouter, setAfterPointRouter] = useState(() => new geoRouter());
     const [beforePointRouter, setBeforePointRouter] = useState(() => new geoRouter());
 
-    const [trackRange, setTrackRange] = useState(null);
+    const [trackRange, setTrackRange] = useState([]);
 
     const [showPoints, mutateShowPoints] = useMutator({
         points: true,

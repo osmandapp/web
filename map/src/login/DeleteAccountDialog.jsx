@@ -6,7 +6,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import Dialog from '@mui/material/Dialog';
 import React, { useContext, useEffect, useState } from 'react';
-import AccountManager from '../context/AccountManager';
+import AccountManager from '../manager/AccountManager';
 import AppContext from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 

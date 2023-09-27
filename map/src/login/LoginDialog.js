@@ -10,7 +10,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { Box, Divider, Link, ListItemText, MenuItem, Typography } from '@mui/material';
 import { apiGet } from '../util/HttpApi';
 import DeleteAccountDialog from './DeleteAccountDialog';
-import AccountManager from '../context/AccountManager';
+import AccountManager from '../manager/AccountManager';
 import ChangeEmailDialog from './ChangeEmailDialog';
 import DownloadBackupDialog from './DownloadBackupDialog';
 import { useWindowSize } from '../util/hooks/useWindowSize';

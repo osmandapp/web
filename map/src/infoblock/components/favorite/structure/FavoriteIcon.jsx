@@ -5,7 +5,7 @@ import { History } from '@mui/icons-material';
 import Paper from '@mui/material/Paper';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import favoriteEditMenuStyles from '../../../styles/FavoriteEditMenuStyles';
-import FavoritesManager from '../../../../context/FavoritesManager';
+import FavoritesManager from '../../../../manager/FavoritesManager';
 
 export default function FavoriteIcon({
     favoriteIcon,

@@ -4,7 +4,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import { Button } from '@mui/material';
 import AppContext from '../../../../context/AppContext';
-import TracksManager from '../../../../context/TracksManager';
+import TracksManager from '../../../../manager/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContentText from '@mui/material/DialogContentText';
 import { apiPost } from '../../../../util/HttpApi';

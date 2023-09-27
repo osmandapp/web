@@ -2,14 +2,14 @@ import { Dialog } from '@material-ui/core';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
-import TracksManager from '../../../context/TracksManager';
+import TracksManager from '../../../manager/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
 import { Button } from '@mui/material';
 import React, { useContext } from 'react';
 import AppContext from '../../../context/AppContext';
-import FavoritesManager from '../../../context/FavoritesManager';
+import FavoritesManager from '../../../manager/FavoritesManager';
 import FavoriteHelper from './FavoriteHelper';
-import PointManager from '../../../context/PointManager';
+import PointManager from '../../../manager/PointManager';
 
 export default function DeleteFavoriteDialog({ dialogOpen, setDialogOpen, wpt }) {
     const ctx = useContext(AppContext);

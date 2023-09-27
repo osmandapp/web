@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Avatar, Box, ListItem, ListItemButton, ListItemText, Typography } from '@mui/material';
-import FavoritesManager from '../../../../context/FavoritesManager';
+import FavoritesManager from '../../../../manager/FavoritesManager';
 
 export default function FavoriteColor({ favoriteColor, setFavoriteColor, defaultColor, widthDialog }) {
     const [selectFavoriteColor, setSelectFavoriteColor] = useState(false);

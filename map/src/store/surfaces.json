@@ -1,0 +1,77 @@
+{
+    "unpaved": {
+        "color": "#cc9900"
+    },
+    "sand": {
+        "color": "#ffd700"
+    },
+    "grass": {
+        "color": "#1fbe1f"
+    },
+    "grass_paver": {
+        "color": "#a7bef8"
+    },
+    "ground": {
+        "color": "#cc9900"
+    },
+    "dirt": {
+        "color": "#a9820f"
+    },
+    "mud": {
+        "color": "#765902"
+    },
+    "ice": {
+        "color": "#9feeef"
+    },
+    "salt": {
+        "color": "#7eded8"
+    },
+    "snow": {
+        "color": "#9feeef"
+    },
+    "asphalt": {
+        "color": "#6f687e"
+    },
+    "paved": {
+        "color": "#a7cdf8"
+    },
+    "chipseal": {
+        "color": "#a7cdf8"
+    },
+    "concrete": {
+        "color": "#a7cdf8"
+    },
+    "sett": {
+        "color": "#a7cdf8"
+    },
+    "cobblestone": {
+        "color": "#a7cdf8"
+    },
+    "paving_stones": {
+        "color": "#a7cdf8"
+    },
+    "stone": {
+        "color": "#a7cdf8"
+    },
+    "metal": {
+        "color": "#a7cdf8"
+    },
+    "wood": {
+        "color": "#a7cdf8"
+    },
+    "gravel": {
+        "color": "#cbcbe8"
+    },
+    "fine_gravel": {
+        "color": "#cbcbe8"
+    },
+    "compacted": {
+        "color": "#cbcbe8"
+    },
+    "pebblestone": {
+        "color": "#a7cdf8"
+    },
+    "undefined": {
+        "color": "#e8e8e8"
+    }
+}

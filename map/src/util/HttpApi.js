@@ -1,6 +1,6 @@
 import md5 from 'blueimp-md5';
 import { globalNavigate } from '../App';
-import { LOGIN_LOGOUT_URL } from '../context/AccountManager';
+import { LOGIN_LOGOUT_URL } from '../manager/AccountManager';
 import { quickNaNfix, seleniumUpdateActivity } from '../util/Utils';
 
 /*

@@ -5,7 +5,7 @@ import _ from 'lodash';
 import L from 'leaflet';
 import MarkerOptions from '../markers/MarkerOptions';
 import 'leaflet-spin';
-import PoiManager from '../../context/PoiManager';
+import PoiManager from '../../manager/PoiManager';
 import 'leaflet.markercluster';
 import { Alert } from '@mui/material';
 import { apiPost } from '../../util/HttpApi';

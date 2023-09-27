@@ -1,11 +1,30 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import GpxGraph from './GpxGraph';
 import AppContext from '../../../context/AppContext';
-import TracksManager, { equalsPoints } from '../../../context/TracksManager';
+import TracksManager, {
+    addDistanceToPoints,
+    equalsPoints,
+    getAllPoints,
+    getTrackPoints,
+} from '../../../manager/TracksManager';
 import _ from 'lodash';
 import { Checkbox, Divider, FormControlLabel } from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
 import { seleniumUpdateActivity } from '../../../util/Utils';
+import {
+    checkShowData,
+    DISTANCE,
+    ELEVATION,
+    ELEVATION_SRTM,
+    generateDataSets,
+    getSlopes,
+    HIGHWAY,
+    isSrtmAppeared,
+    SLOPE,
+    SPEED,
+    SURFACE,
+    UNDEFINED_DATA,
+} from '../../../manager/GraphManager';
 
 const useStyles = makeStyles({
     checkbox: {
@@ -20,28 +39,31 @@ const GpxGraphProvider = ({ width }) => {
     const ctx = useContext(AppContext);
     const classes = useStyles();
 
-    const ELEVATION = 'Elevation';
-    const ELEVATION_SRTM = 'ElevationSRTM';
-    const SPEED = 'Speed';
-    const DISTANCE = 'Distance';
-    const SLOPE = 'Slope';
-
     const [data, setData] = useState(null);
     const [showData, setShowData] = useState(null);
+    const [roadPoints, setRoadPoints] = useState(null);
 
     function hasData() {
         return showData[ELEVATION] || showData[ELEVATION_SRTM] || showData[SPEED] || showData[SLOPE];
     }
 
-    function isSrtmAppeared(trackData) {
-        return !trackData.srtm && ctx.selectedGpxFile.analysis?.srtmAnalysis;
+    function getPoints() {
+        let points = !_.isEmpty(ctx.selectedGpxFile.points)
+            ? getAllPoints(ctx.selectedGpxFile.points)
+            : getTrackPoints(ctx.selectedGpxFile);
+        if (!_.isEmpty(points) && points[0].segment && !equalsPoints(points, roadPoints)) {
+            setRoadPoints(points);
+        } else if (_.isEmpty(points) || points[0].segment === undefined) {
+            setRoadPoints(null);
+        }
+        return points ? points : [];
     }
 
     useEffect(() => {
         if (ctx.selectedGpxFile) {
             let trackData = {};
-            let points = TracksManager.getTrackPoints(ctx.selectedGpxFile);
-            if (!_.isEmpty(points) && (isSrtmAppeared(trackData) || !equalsPoints(points, data?.data))) {
+            let points = getPoints();
+            if (!_.isEmpty(points) && (isSrtmAppeared(trackData, ctx) || !equalsPoints(points, data?.data))) {
                 if (ctx.selectedGpxFile.analysis?.hasElevationData) {
                     trackData.ele = true;
                     trackData.slope = true;
@@ -65,6 +87,7 @@ const GpxGraphProvider = ({ width }) => {
             }
         } else {
             setData(null);
+            setRoadPoints(null);
         }
     }, [ctx.selectedGpxFile]);
 
@@ -88,7 +111,7 @@ const GpxGraphProvider = ({ width }) => {
         }
     }, [data]);
 
-    const graphData = useMemo(() => {
+    const mainGraphData = useMemo(() => {
         if (!_.isEmpty(data?.data)) {
             let elevation = data.ele ? 'ele' : null;
             let elevationSRTM = data.srtm ? 'srtmEle' : null;
@@ -160,132 +183,49 @@ const GpxGraphProvider = ({ width }) => {
                 maxEle: maxEle,
                 minSpeed: minSpeed,
                 maxSpeed: maxSpeed,
-                slopes: getSlopes(result),
+                slopes: getSlopes(result, ctx),
             };
         }
     }, [data]);
 
-    function interpolate(totalLength, step, result) {
-        const calculatedPointsCount = Math.floor(totalLength / step) + 1;
-        const calculatedX = [];
-        const calculatedY = [];
-        const lastIndex = result.length - 1;
-        let nextW = 0;
-
-        function getY(index) {
-            return result[index][ELEVATION];
-        }
-
-        function getX(index) {
-            return result[index][DISTANCE] * 1000;
-        }
-
-        for (let k = 0; k < calculatedPointsCount; k++) {
-            if (k > 0) {
-                calculatedX[k] = (calculatedX[k - 1] ? calculatedX[k - 1] : 0) + step;
-            } else {
-                calculatedY[k] = getY(0);
-                continue;
-            }
-            while (nextW < lastIndex && calculatedX[k] > getX(nextW)) {
-                nextW++;
-            }
-            const px = nextW === 0 ? 0 : getX(nextW - 1);
-            const py = nextW === 0 ? getY(0) : getY(nextW - 1);
-
-            calculatedY[k] = py + ((getY(nextW) - py) / (getX(nextW) - px)) * (calculatedX[k] - px);
-        }
-        return { calculatedX, calculatedY };
-    }
-
-    function getSlopes(result) {
-        let STEP = 5;
-        let l = 10;
-        while (l > 0 && ctx.selectedGpxFile.analysis.totalDistance / STEP > 10000) {
-            STEP = Math.max(STEP, ctx.selectedGpxFile.analysis.totalDistance / (result.length * l--));
-        }
-        // interpolate
-        const interpolatorResult = interpolate(ctx.selectedGpxFile.analysis.totalDistance, STEP, result);
-
-        const calculatedDist = interpolatorResult.calculatedX;
-        const calculatedH = interpolatorResult.calculatedY;
-        const SLOPE_PROXIMITY = Math.max(20, STEP * 2);
-        const calculatedSlopeDist = [];
-        const calculatedSlope = [];
-
-        const threshold = Math.max(2, Math.floor(SLOPE_PROXIMITY / STEP / 2));
-
-        for (let k = 0; k < calculatedDist.length; k++) {
-            calculatedSlopeDist[k] = calculatedDist[k];
-
-            if (k < threshold) {
-                calculatedSlope[k] =
-                    ((-1.5 * calculatedH[k] + 2.0 * calculatedH[k + 1] - 0.5 * calculatedH[k + 2]) * 100) / STEP;
-            } else if (k >= calculatedSlopeDist.length - threshold) {
-                calculatedSlope[k] =
-                    ((0.5 * calculatedH[k - 2] - 2.0 * calculatedH[k - 1] + 1.5 * calculatedH[k]) * 100) / STEP;
-            } else {
-                calculatedSlope[k] =
-                    ((calculatedH[threshold + k] - calculatedH[k - threshold]) * 100) / SLOPE_PROXIMITY;
-            }
-
-            if (isNaN(calculatedSlope[k])) {
-                calculatedSlope[k] = 0;
-            }
-        }
-        // add slopes to points
-        for (let i = 0; i < result.length; i++) {
-            let current = result[i];
-            if (current) {
-                let dist = current[DISTANCE];
-                let ind = calculatedSlopeDist.findIndex(
-                    (d) => d / 1000 > dist - STEP / 1000 && d / 1000 < dist + STEP / 1000
-                );
-                if (ind !== -1 && ind >= 0) {
-                    result[i][SLOPE] = Math.trunc(calculatedSlope[ind] * 100) / 100;
+    const attrGraphData = useMemo(() => {
+        if (roadPoints) {
+            addDistanceToPoints(roadPoints);
+            let segments = [];
+            let prevSegPoint;
+            roadPoints.forEach((p) => {
+                if (p.segment && p.segment.ext.types) {
+                    const routeTypes = p.segment.routeTypes;
+                    let seg = _.cloneDeep(p);
+                    seg.ind = _.indexOf(roadPoints, p);
+                    seg.distance = prevSegPoint
+                        ? roadPoints[seg.ind + Number(seg.segment.ext.length) - 1].distanceTotal - seg.distanceTotal
+                        : roadPoints[seg.ind + Number(seg.segment.ext.length) - 1].distanceTotal;
+                    seg[HIGHWAY] = UNDEFINED_DATA;
+                    seg[SURFACE] = UNDEFINED_DATA;
+                    p.segment.ext.types.split(',').forEach((t) => {
+                        const type = routeTypes[t];
+                        if (type) {
+                            if (type.tag === HIGHWAY) {
+                                seg[HIGHWAY] = type.value;
+                            }
+                            if (type.tag === SURFACE) {
+                                seg[SURFACE] = type.value;
+                            }
+                        }
+                    });
+                    prevSegPoint = seg;
+                    segments.push(seg);
                 }
-            }
-        }
-
-        // create array slopes
-        let res = [];
-        for (let i = 0; i < calculatedSlope.length; i++) {
-            let dist = calculatedSlopeDist[i];
-            res.push({
-                slope: Math.trunc(calculatedSlope[i] * 100) / 100,
-                dist: dist !== undefined ? dist / 1000 : 0,
             });
+            return generateDataSets(segments);
         }
-        if (STEP > 5) {
-            res = smoothSlopes(res, 0.3);
-        }
-        res.min = Math.trunc(Math.min(...calculatedSlope) * 100) / 100;
-        res.max = Math.trunc(Math.max(...calculatedSlope) * 100) / 100;
-        return res;
-    }
-    function smoothSlopes(data, alpha) {
-        const smoothedData = [];
-        let previousValue = data[0].slope;
-        for (let i = 0; i < data.length; i++) {
-            const currentSlope = data[i].slope;
-            const smoothedSlope = alpha * currentSlope + (1 - alpha) * previousValue;
-            smoothedData.push({
-                slope: smoothedSlope,
-                dist: data[i].dist,
-            });
-            previousValue = smoothedSlope;
-        }
-        return smoothedData;
-    }
-
-    function checkShowData(value) {
-        return value === '' ? false : value;
-    }
+    }, [roadPoints]);
 
     return (
         <>
-            {graphData && showData && <Divider sx={{ mt: '3px', mb: '12px' }} />}
-            <div style={{ marginLeft: '20px' }}>
+            {mainGraphData && showData && <Divider sx={{ mt: '3px', mb: '12px' }} />}
+            <div style={{ marginLeft: '8px' }}>
                 {showData &&
                     Object.entries(showData).map(([key, value]) => (
                         <FormControlLabel
@@ -306,19 +246,20 @@ const GpxGraphProvider = ({ width }) => {
                         ></FormControlLabel>
                     ))}
             </div>
-            {graphData && showData && hasData() && (
+            {mainGraphData && showData && hasData() && (
                 <GpxGraph
-                    data={graphData?.res}
+                    data={mainGraphData?.res}
+                    attrGraphData={attrGraphData}
                     showData={showData}
                     xAxis={DISTANCE}
                     y1Axis={[ELEVATION, ELEVATION_SRTM, SLOPE]}
                     y2Axis={SPEED}
                     width={width}
-                    minEle={graphData?.minEle}
-                    maxEle={graphData?.maxEle}
-                    minSpeed={graphData?.minSpeed}
-                    maxSpeed={graphData?.maxSpeed}
-                    slopes={graphData?.slopes}
+                    minEle={mainGraphData?.minEle}
+                    maxEle={mainGraphData?.maxEle}
+                    minSpeed={mainGraphData?.minSpeed}
+                    maxSpeed={mainGraphData?.maxSpeed}
+                    slopes={mainGraphData?.slopes}
                 />
             )}
         </>

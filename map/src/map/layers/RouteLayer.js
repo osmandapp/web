@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useContext, useState, useCallback } from 'rea
 import { Marker, GeoJSON, useMap, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import AppContext from '../../context/AppContext';
-import TracksManager from '../../context/TracksManager';
+import TracksManager from '../../manager/TracksManager';
 import { useNavigate, useLocation } from 'react-router-dom';
 import MarkerOptions from '../markers/MarkerOptions';
 

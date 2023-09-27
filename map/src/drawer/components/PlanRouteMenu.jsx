@@ -1,7 +1,7 @@
 import { Button, Collapse, Grid, ListItemIcon, ListItemText, MenuItem } from '@mui/material';
 import { ExpandLess, ExpandMore, Insights } from '@mui/icons-material';
 import React, { useContext, useState } from 'react';
-import TracksManager from '../../context/TracksManager';
+import TracksManager from '../../manager/TracksManager';
 import drawerStyles from '../styles/DrawerStyles';
 import AppContext from '../../context/AppContext';
 import LocalGpxUploader from './LocalGpxUploader';

@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 
-import TracksManager from '../../context/TracksManager';
+import TracksManager from '../../manager/TracksManager';
 import AppContext from '../../context/AppContext';
 import { useMutator } from '../../util/Utils';
 

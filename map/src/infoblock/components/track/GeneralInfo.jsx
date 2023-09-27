@@ -7,7 +7,7 @@ import TracksManager, {
     applySrtmElevation,
     eligibleToApplySrtm,
     prepareDesc,
-} from '../../../context/TracksManager';
+} from '../../../manager/TracksManager';
 import { prepareFileName } from '../../../util/Utils';
 import {
     Box,
