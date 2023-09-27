@@ -190,25 +190,6 @@ export function RouteService() {
                     }
                 }
 
-                // auto-srtm - keep it to GeneralInfo
-                // if (eligibleToApplySrtm({ track })) {
-                //     applySrtmElevation({ track, setLoading: context.setLoadingContextMenu }).then((success) =>
-                //         context.setUnverifiedGpxFile(success)
-                //     );
-                //     track.analysis.isSrtmApplied = true; // avoid duplicate auto-srtm
-                // }
-
-                // get-analytics - no more need
-                // getTrackWithAnalysis(GET_ANALYSIS, { selectedGpxFile: track }, ctx.setLoadingContextMenu, track.points).then(
-                //     (res) => {
-                //         if (res) {
-                //             console.log('res', res);
-                //             if (res) ctx.setUnverifiedGpxFile(() => ({ ...res }));
-                //         }
-                //     }
-                // );
-                // track.analysis.isSrtmApplied = true; // avoid duplicate auto-srtm
-
                 const type = context.OBJECT_TYPE_CLOUD_TRACK; // FIXME add new type
                 context.setUpdateInfoBlock(true);
                 context.setSelectedGpxFile(track);
