@@ -17,24 +17,6 @@ const osmandTileURL = {
     url: 'https://tile.osmand.net/hd/{z}/{x}/{y}.png',
 };
 
-export const toHHMMSS = function (time) {
-    var sec_num = time / 1000;
-    var hours = Math.floor(sec_num / 3600);
-    var minutes = Math.floor((sec_num - hours * 3600) / 60);
-    var seconds = sec_num - hours * 3600 - minutes * 60;
-
-    if (hours < 10) {
-        hours = '0' + hours;
-    }
-    if (minutes < 10) {
-        minutes = '0' + minutes;
-    }
-    if (seconds < 10) {
-        seconds = '0' + Math.round(seconds);
-    }
-    return hours + ':' + minutes + ':' + seconds;
-};
-
 async function loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, gpxFiles, setGpxFiles, setFavorites) {
     if (loginUser !== listFiles.loginUser) {
         if (!loginUser) {

@@ -1,6 +1,6 @@
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { toHHMMSS } from '../../../context/AppContext';
+import AppContext from '../../../context/AppContext';
 import TracksManager, {
     hasSegments,
     isEmptyTrack,
@@ -8,7 +8,7 @@ import TracksManager, {
     eligibleToApplySrtm,
     prepareDesc,
 } from '../../../manager/TracksManager';
-import { prepareFileName } from '../../../util/Utils';
+import { prepareFileName, toHHMMSS } from '../../../util/Utils';
 import {
     Box,
     Button,

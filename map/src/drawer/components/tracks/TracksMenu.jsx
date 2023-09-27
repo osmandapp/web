@@ -1,7 +1,8 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Typography, ListItemText, Collapse, MenuItem, ListItemIcon, LinearProgress } from '@mui/material';
 import { DirectionsWalk, ExpandLess, ExpandMore } from '@mui/icons-material';
-import AppContext, { toHHMMSS } from '../../../context/AppContext';
+import AppContext from '../../../context/AppContext';
+import { toHHMMSS } from '../../../util/Utils';
 import CloudTrackGroup from './CloudTrackGroup';
 import LocalTrackGroup from './LocalTrackGroup';
 import GpxCollection from './GpxCollection';
