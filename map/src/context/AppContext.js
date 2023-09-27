@@ -10,6 +10,13 @@ import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import { geoObject } from '../store/geoObject/geoObject.js';
 import WeatherManager from '../manager/WeatherManager';
 
+export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; //
+export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; //
+export const OBJECT_TYPE_ROUTE_TRACK = 'route_track'; //
+export const OBJECT_TYPE_FAVORITE = 'favorite'; //
+export const OBJECT_TYPE_WEATHER = 'weather'; //
+export const OBJECT_TYPE_POI = 'poi'; //
+
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
     key: 'mapniktile',
@@ -180,13 +187,6 @@ async function loadTileUrls(setAllTileURLs) {
 const AppContext = React.createContext();
 
 export const AppContextProvider = (props) => {
-    const OBJECT_TYPE_LOCAL_TRACK = 'local_track';
-    const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track';
-    const OBJECT_TYPE_ROUTE_TRACK = 'route_track';
-    const OBJECT_TYPE_FAVORITE = 'favorite';
-    const OBJECT_TYPE_WEATHER = 'weather';
-    const OBJECT_TYPE_POI = 'poi';
-
     seleniumUpdateActivity();
 
     const [globalConfirmation, setGlobalConfirmation] = useState(null);
@@ -376,12 +376,6 @@ export const AppContextProvider = (props) => {
                 setHeaderText,
                 tracksGroups,
                 setTracksGroups,
-                OBJECT_TYPE_FAVORITE,
-                OBJECT_TYPE_LOCAL_TRACK,
-                OBJECT_TYPE_CLOUD_TRACK,
-                OBJECT_TYPE_ROUTE_TRACK,
-                OBJECT_TYPE_WEATHER,
-                OBJECT_TYPE_POI,
                 createTrack,
                 setCreateTrack,
                 gpxCollection,
