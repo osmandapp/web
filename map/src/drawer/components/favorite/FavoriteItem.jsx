@@ -1,6 +1,6 @@
 import { ListItemText, MenuItem, Tooltip, Typography } from '@mui/material';
 import React, { useContext } from 'react';
-import AppContext from '../../../context/AppContext';
+import AppContext, { OBJECT_TYPE_FAVORITE } from '../../../context/AppContext';
 import { makeStyles } from '@material-ui/core/styles';
 import drawerStyles from '../../styles/DrawerStyles';
 
@@ -34,7 +34,7 @@ export default function FavoriteItem({ index, marker, group }) {
     const ctx = useContext(AppContext);
 
     function addFavoriteToMap(marker) {
-        let type = ctx.OBJECT_TYPE_FAVORITE;
+        let type = OBJECT_TYPE_FAVORITE;
         ctx.setCurrentObjectType(type);
         let newSelectedGpxFile = {};
         newSelectedGpxFile.markerCurrent = marker;

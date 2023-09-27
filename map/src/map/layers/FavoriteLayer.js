@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import '../../assets/css/gpx.css';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../TrackLayerProvider';
@@ -71,7 +71,7 @@ const FavoriteLayer = () => {
     }, [ctx.selectedGpxFile, ctx.setSelectedGpxFile]);
 
     function onClick(e) {
-        let type = ctx.OBJECT_TYPE_FAVORITE;
+        let type = OBJECT_TYPE_FAVORITE;
         ctx.setCurrentObjectType(type);
         ctx.selectedGpxFile = {};
         ctx.selectedGpxFile.prevState = _.cloneDeep(selectedGpxFileRef.current);

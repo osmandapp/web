@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import AppContext from '../context/AppContext';
+import AppContext, { OBJECT_TYPE_ROUTE_TRACK } from '../context/AppContext';
 import TracksManager, { prepareNavigationTrack, getApproximatePoints } from '../manager/TracksManager';
 
 export function RouteService() {
@@ -190,7 +190,7 @@ export function RouteService() {
                     }
                 }
 
-                const type = context.OBJECT_TYPE_CLOUD_TRACK; // FIXME add new type
+                const type = OBJECT_TYPE_ROUTE_TRACK; // FIXME add new type
                 context.setUpdateInfoBlock(true);
                 context.setSelectedGpxFile(track);
                 context.setCurrentObjectType(type);

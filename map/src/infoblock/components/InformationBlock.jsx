@@ -1,5 +1,11 @@
 import { AppBar, LinearProgress, Box, Typography } from '@mui/material';
-import AppContext from '../../context/AppContext';
+import AppContext, {
+    OBJECT_TYPE_LOCAL_TRACK,
+    OBJECT_TYPE_CLOUD_TRACK,
+    OBJECT_TYPE_FAVORITE,
+    OBJECT_TYPE_WEATHER,
+    OBJECT_TYPE_POI,
+} from '../../context/AppContext';
 import { useState, useContext, useEffect, useCallback, useRef } from 'react';
 import { TabContext, TabList } from '@mui/lab';
 import TrackTabList from './tabs/TrackTabList';
@@ -131,16 +137,13 @@ export default function InformationBlock({
     }, [mobile, showInfoBlock, infoBlockOpen]);
 
     useEffect(() => {
-        if (ctx.currentObjectType && ctx.currentObjectType !== ctx.OBJECT_TYPE_LOCAL_TRACK && ctx.createTrack) {
+        if (ctx.currentObjectType && ctx.currentObjectType !== OBJECT_TYPE_LOCAL_TRACK && ctx.createTrack) {
             stopCreatedTrack(true);
         }
     }, [ctx.currentObjectType]);
 
     useEffect(() => {
-        if (
-            (!ctx.selectedGpxFile || _.isEmpty(ctx.selectedGpxFile)) &&
-            ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER
-        ) {
+        if ((!ctx.selectedGpxFile || _.isEmpty(ctx.selectedGpxFile)) && ctx.currentObjectType !== OBJECT_TYPE_WEATHER) {
             setPrevTrack(null);
             setTabsObj(null);
             setShowInfoBlock(false);
@@ -152,13 +155,13 @@ export default function InformationBlock({
                 let obj;
                 setPrevTrack(ctx.selectedGpxFile);
                 ctx.setUpdateInfoBlock(false);
-                if (ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && ctx.selectedGpxFile?.tracks) {
+                if (ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK && ctx.selectedGpxFile?.tracks) {
                     obj = new TrackTabList().create(ctx, setShowInfoBlock);
-                } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_WEATHER && ctx.weatherPoint) {
+                } else if (ctx.currentObjectType === OBJECT_TYPE_WEATHER && ctx.weatherPoint) {
                     obj = new WeatherTabList().create(ctx);
-                } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_FAVORITE) {
+                } else if (ctx.currentObjectType === OBJECT_TYPE_FAVORITE) {
                     obj = new FavoritesTabList().create(ctx);
-                } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_POI) {
+                } else if (ctx.currentObjectType === OBJECT_TYPE_POI) {
                     obj = new PoiTabList().create();
                 } else if (ctx.selectedGpxFile) {
                     obj = new TrackTabList().create(ctx, setShowInfoBlock);

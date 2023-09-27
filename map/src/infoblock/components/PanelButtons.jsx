@@ -1,7 +1,13 @@
 import { ButtonGroup, IconButton, Paper, Tooltip, CircularProgress } from '@mui/material';
 import { Close, Delete, Cloud, CloudUpload, Redo, Undo, Create, MenuOpen, Download } from '@mui/icons-material';
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext, {
+    OBJECT_TYPE_LOCAL_TRACK,
+    OBJECT_TYPE_CLOUD_TRACK,
+    OBJECT_TYPE_FAVORITE,
+    OBJECT_TYPE_WEATHER,
+    OBJECT_TYPE_POI,
+} from '../../context/AppContext';
 import SaveTrackDialog from './track/dialogs/SaveTrackDialog';
 import DeleteTrackDialog from './track/dialogs/DeleteTrackDialog';
 import DeleteFavoriteDialog from './favorite/DeleteFavoriteDialog';
@@ -121,7 +127,7 @@ const PanelButtons = ({
                         orientation={orientation}
                         color="primary"
                     >
-                        {ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && (
+                        {ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK && (
                             <>
                                 <Tooltip title="Cloud track" arrow placement={tooltipOrientation}>
                                     <IconButton
@@ -171,7 +177,7 @@ const PanelButtons = ({
                                 </IconButton>
                             </Tooltip>
                         )}
-                        {ctx.loginUser && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK && (
+                        {ctx.loginUser && ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK && (
                             <Tooltip title="Save to cloud" arrow placement={tooltipOrientation}>
                                 <span style={styleSpan}>
                                     <IconButton
@@ -190,7 +196,7 @@ const PanelButtons = ({
                                 </span>
                             </Tooltip>
                         )}
-                        {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK && (
+                        {ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK && (
                             <Tooltip title="Undo" arrow placement={tooltipOrientation}>
                                 <span style={styleSpan}>
                                     <IconButton
@@ -209,7 +215,7 @@ const PanelButtons = ({
                                 </span>
                             </Tooltip>
                         )}
-                        {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK && (
+                        {ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK && (
                             <Tooltip title="Redo" arrow placement={tooltipOrientation}>
                                 <span style={styleSpan}>
                                     <IconButton
@@ -228,36 +234,34 @@ const PanelButtons = ({
                                 </span>
                             </Tooltip>
                         )}
-                        {ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER &&
-                            ctx.currentObjectType !== ctx.OBJECT_TYPE_POI && (
-                                <Tooltip title="Download GPX" arrow placement={tooltipOrientation}>
-                                    <span style={styleSpan}>
-                                        <IconButton
-                                            id="se-panel-button-download-gpx"
-                                            variant="contained"
-                                            type="button"
-                                            disabled={isEmptyTrack(ctx.selectedGpxFile)}
-                                            onClick={() => downloadGpx(ctx)}
-                                        >
-                                            <Download fontSize="small" />
-                                        </IconButton>
-                                    </span>
-                                </Tooltip>
-                            )}
-                        {ctx.currentObjectType !== ctx.OBJECT_TYPE_WEATHER &&
-                            ctx.currentObjectType !== ctx.OBJECT_TYPE_POI && (
-                                <Tooltip title="Delete" arrow placement={tooltipOrientation}>
+                        {ctx.currentObjectType !== OBJECT_TYPE_WEATHER && ctx.currentObjectType !== OBJECT_TYPE_POI && (
+                            <Tooltip title="Download GPX" arrow placement={tooltipOrientation}>
+                                <span style={styleSpan}>
                                     <IconButton
-                                        id="se-panel-button-delete-track"
-                                        sx={{ mb: '1px' }}
+                                        id="se-panel-button-download-gpx"
                                         variant="contained"
                                         type="button"
-                                        onClick={() => setOpenDeleteDialog(true)}
+                                        disabled={isEmptyTrack(ctx.selectedGpxFile)}
+                                        onClick={() => downloadGpx(ctx)}
                                     >
-                                        <Delete fontSize="small" />
+                                        <Download fontSize="small" />
                                     </IconButton>
-                                </Tooltip>
-                            )}
+                                </span>
+                            </Tooltip>
+                        )}
+                        {ctx.currentObjectType !== OBJECT_TYPE_WEATHER && ctx.currentObjectType !== OBJECT_TYPE_POI && (
+                            <Tooltip title="Delete" arrow placement={tooltipOrientation}>
+                                <IconButton
+                                    id="se-panel-button-delete-track"
+                                    sx={{ mb: '1px' }}
+                                    variant="contained"
+                                    type="button"
+                                    onClick={() => setOpenDeleteDialog(true)}
+                                >
+                                    <Delete fontSize="small" />
+                                </IconButton>
+                            </Tooltip>
+                        )}
                         {ctx.currentObjectType && !infoBlockOpen && !mobile && (
                             <Tooltip title="Open info" arrow placement={tooltipOrientation}>
                                 <IconButton onClick={toggleInfoBlock} sx={{ transform: 'scaleX(1)' }}>
@@ -289,15 +293,15 @@ const PanelButtons = ({
                 </Paper>
                 {ctx.selectedGpxFile.save && <SaveTrackDialog />}
                 {openDeleteDialog &&
-                    (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK ||
-                        ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK) && (
+                    (ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK ||
+                        ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK) && (
                         <DeleteTrackDialog
                             dialogOpen={openDeleteDialog}
                             setDialogOpen={setOpenDeleteDialog}
                             setShowInfoBlock={setShowInfoBlock}
                         />
                     )}
-                {openDeleteDialog && ctx.currentObjectType === ctx.OBJECT_TYPE_FAVORITE && (
+                {openDeleteDialog && ctx.currentObjectType === OBJECT_TYPE_FAVORITE && (
                     <DeleteFavoriteDialog dialogOpen={openDeleteDialog} setDialogOpen={setOpenDeleteDialog} />
                 )}
             </div>

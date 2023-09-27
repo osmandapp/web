@@ -5,6 +5,7 @@ import PointsTab from './PointsTab';
 import SettingsTab from './SettingsTab';
 import WaypointsTab from './WaypointsTab';
 import { isEmptyTrack } from '../../../manager/TracksManager';
+import { OBJECT_TYPE_LOCAL_TRACK, OBJECT_TYPE_CLOUD_TRACK } from '../../../context/AppContext';
 
 export default class TrackTabList {
     state = {
@@ -18,19 +19,18 @@ export default class TrackTabList {
         let list = [];
 
         tabs.Info = <GeneralInfoTab key="general" setShowInfoBlock={setShowInfoBlock} />;
-        if (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK) {
+        if (ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK) {
             tabs.Track = <PointsTab key="points" />;
         }
 
         if (
-            (ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK &&
-                !isEmptyTrack(ctx.selectedGpxFile, true, false)) ||
-            ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK
+            (ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK && !isEmptyTrack(ctx.selectedGpxFile, true, false)) ||
+            ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK
         ) {
             tabs.Waypoints = <WaypointsTab key={'waypoints' + ctx.selectedGpxFile.name} />;
         }
 
-        if (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK) {
+        if (ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK) {
             tabs.Settings = <SettingsTab key="settings" />;
         }
 

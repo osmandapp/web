@@ -1,6 +1,6 @@
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import AppContext from '../../../context/AppContext';
+import AppContext, { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_LOCAL_TRACK } from '../../../context/AppContext';
 import TracksManager, {
     hasSegments,
     isEmptyTrack,
@@ -282,7 +282,7 @@ export default function GeneralInfo({ width }) {
                             dangerouslySetInnerHTML={{ __html: html }}
                         />
                     </Typography>
-                    {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK && (
+                    {ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK && (
                         <IconButton
                             sx={{ alignSelf: 'flex-start', mt: '-10px' }}
                             onClick={() => setOpenDescDialog(true)}
@@ -479,11 +479,11 @@ export default function GeneralInfo({ width }) {
         <>
             <Box minWidth={width} maxWidth={width}>
                 <Typography className={styles.info} variant="subtitle1" color="inherit">
-                    <div>{ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK ? EditName() : NoEditName()}</div>
+                    <div>{ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK ? EditName() : NoEditName()}</div>
                     <div>
                         {preparedDesc
                             ? Description({ desc: preparedDesc })
-                            : ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK && (
+                            : ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK && (
                                   <>
                                       <Link
                                           href="#"
@@ -499,7 +499,7 @@ export default function GeneralInfo({ width }) {
                               )}
                     </div>
                     {ctx.loginUser &&
-                        ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK &&
+                        ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK &&
                         isEmptyTrack(ctx.selectedGpxFile) === false && (
                             <>
                                 <Button
@@ -531,7 +531,7 @@ export default function GeneralInfo({ width }) {
                                 )}
                             </>
                         )}
-                    {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && (
+                    {!ctx.createTrack && ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK && (
                         <>
                             <Button
                                 id="se-infoblock-button-edit-cloud-track"

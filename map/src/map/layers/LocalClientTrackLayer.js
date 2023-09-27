@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext, { OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import TrackLayerProvider, { TEMP_LAYER_FLAG, redrawWptsOnLayer } from '../TrackLayerProvider';
@@ -137,7 +137,7 @@ export default function LocalClientTrackLayer() {
      * - .updateLayers processing (?)
      */
     useEffect(() => {
-        if (ctxTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK) {
+        if (ctxTrack && ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK) {
             if (ctxTrack.oldName) {
                 finishTrackRename();
             } else if (ctxTrack.syncRouting) {
@@ -267,7 +267,7 @@ export default function LocalClientTrackLayer() {
                 editCurrentTrack();
             } else {
                 deleteOldLayers();
-                let type = ctx.OBJECT_TYPE_LOCAL_TRACK;
+                let type = OBJECT_TYPE_LOCAL_TRACK;
                 ctx.setCurrentObjectType(type);
                 initNewTrack();
             }
@@ -400,7 +400,7 @@ export default function LocalClientTrackLayer() {
                     });
                     track.analysis = TracksManager.prepareAnalysis(track.analysis);
                     ctx.setSelectedGpxFile(track);
-                    let type = ctx.OBJECT_TYPE_LOCAL_TRACK;
+                    let type = OBJECT_TYPE_LOCAL_TRACK;
                     ctx.setCurrentObjectType(type);
                     ctx.setUpdateInfoBlock(true);
                 }

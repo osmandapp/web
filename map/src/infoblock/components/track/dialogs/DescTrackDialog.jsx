@@ -6,7 +6,7 @@ import TracksManager from '../../../../manager/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
 import { Alert, Box, Button, TextField } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext from '../../../../context/AppContext';
+import AppContext, { OBJECT_TYPE_LOCAL_TRACK } from '../../../../context/AppContext';
 import { Editor } from 'react-draft-wysiwyg';
 import { ContentState, convertFromHTML, convertToRaw, EditorState } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
@@ -128,7 +128,7 @@ export default function DescTrackDialog({ dialogOpen, setDialogOpen, desc }) {
                 <DialogActions>
                     <Button onClick={toggleShowDialog}>Close</Button>
                     {!editDescription ? (
-                        ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK && (
+                        ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK && (
                             <Button onClick={() => setEditDescription(true)}>Edit</Button>
                         )
                     ) : (

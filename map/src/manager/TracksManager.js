@@ -3,6 +3,7 @@ import FavoritesManager from './FavoritesManager';
 import _ from 'lodash';
 import { apiGet, apiPost } from '../util/HttpApi';
 import { compressFromJSON, decompressToJSON } from '../util/GzipBase64.mjs';
+import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_LOCAL_TRACK } from '../context/AppContext';
 import { confirm } from '../dialogs/GlobalConfirmationDialog';
 import L from 'leaflet';
 import MarkerOptions from '../map/markers/MarkerOptions';
@@ -389,7 +390,7 @@ function openNewLocalTrack(ctx, track, overwrite = false) {
     track.selected = true; // track is ref
     ctx.setSelectedGpxFile({ ...track });
 
-    ctx.setCurrentObjectType(ctx.OBJECT_TYPE_LOCAL_TRACK);
+    ctx.setCurrentObjectType(OBJECT_TYPE_LOCAL_TRACK);
 }
 
 function closeCloudTrack(ctx, track) {
@@ -656,7 +657,7 @@ async function downloadAfterUpload(ctx, file) {
     });
     const track = await TracksManager.getTrackData(gpxfile);
     if (isEmptyTrack(track) === false) {
-        const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
+        const type = OBJECT_TYPE_CLOUD_TRACK;
         ctx.setUpdateInfoBlock(true);
         ctx.setCurrentObjectType(type);
         track.name = file.name;

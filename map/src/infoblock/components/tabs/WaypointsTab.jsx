@@ -1,5 +1,5 @@
 import { useContext, useEffect, useMemo, useState } from 'react';
-import AppContext from '../../../context/AppContext';
+import AppContext, { OBJECT_TYPE_LOCAL_TRACK } from '../../../context/AppContext';
 import { Alert, Box, Button, Collapse, Grid, IconButton, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
 import L from 'leaflet';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
@@ -141,7 +141,7 @@ const WaypointRow = ({ point, index, ctx }) => {
     }
 
     return useMemo(() => {
-        const allowDelete = ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK;
+        const allowDelete = ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK;
         return (
             <MenuItem key={'marker' + index} divider sx={{ px: 1, py: 1 }} onClick={() => showPoint(point)}>
                 <Grid container alignItems="center" warp="nowrap">
