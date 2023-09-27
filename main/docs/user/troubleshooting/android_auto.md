@@ -17,6 +17,15 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Location delays (ANR crashes)
 
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_troubleshooting_1.png)
+
+Android Auto and OsmAnd may simultaneously detect the vehicle's location, which may cause a 3-5 second delay in displaying information in the related widgets or freeze. To avoid this, it is necessary to:
+
+1. Open the Android Auto settings.
+2. Under Settings, find Location permissions.
+3. This section displays a list of apps that are allowed to use location in Android Auto. Find the OsmAnd app and allow the use of location.
+4. Location will now only be detected by the OsmAnd app in Android Auto, avoiding delays in displaying location information.
+
 
 ## Map orientation issue
 

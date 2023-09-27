@@ -215,11 +215,11 @@ The OsmAnd app can be opened and used to navigate in Android Auto on the vehicle
 
 ## Issues
 
-1. Map orientation issue
+1. [Map orientation issue](../troubleshooting/android_auto.md#map-orientation-issue)
 
-2. Volume control issue 
+2. [Volume control issue](../troubleshooting/android_auto.md#volume-control-issue) 
 
-3. Location delays (ANR crashes)
+3. [Location delays (ANR crashes)](../troubleshooting/android_auto.md#location-delays-anr-crashes)
 
 
 

@@ -103,6 +103,8 @@ To create a new track in GPX format, use the main function of the *Plan a route*
 
 By default, the routing type will match the previously selected profile, click on the routing icon to select how the application should calculate the segment to connect points. The available profile should be configured [separately](../navigation/routing/index.md).  
 
+You can **zoom in and out** for easy placement of points when creating or editing a track. When you **zoom out**, the points on the track become invisible for a better view of the entire length of the track and the map as a whole. Only the last added point and the pointer for adding the next point remain visible.
+
 
 #### Modify GPX track
 
