@@ -282,7 +282,7 @@ export default function GeneralInfo({ width }) {
                             dangerouslySetInnerHTML={{ __html: html }}
                         />
                     </Typography>
-                    {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                    {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK && (
                         <IconButton
                             sx={{ alignSelf: 'flex-start', mt: '-10px' }}
                             onClick={() => setOpenDescDialog(true)}
@@ -479,13 +479,11 @@ export default function GeneralInfo({ width }) {
         <>
             <Box minWidth={width} maxWidth={width}>
                 <Typography className={styles.info} variant="subtitle1" color="inherit">
-                    <div>
-                        {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK ? EditName() : NoEditName()}
-                    </div>
+                    <div>{ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK ? EditName() : NoEditName()}</div>
                     <div>
                         {preparedDesc
                             ? Description({ desc: preparedDesc })
-                            : ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                            : ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK && (
                                   <>
                                       <Link
                                           href="#"
@@ -501,7 +499,7 @@ export default function GeneralInfo({ width }) {
                               )}
                     </div>
                     {ctx.loginUser &&
-                        ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
+                        ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK &&
                         isEmptyTrack(ctx.selectedGpxFile) === false && (
                             <>
                                 <Button

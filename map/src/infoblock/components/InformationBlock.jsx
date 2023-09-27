@@ -131,7 +131,7 @@ export default function InformationBlock({
     }, [mobile, showInfoBlock, infoBlockOpen]);
 
     useEffect(() => {
-        if (ctx.currentObjectType && ctx.currentObjectType !== ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && ctx.createTrack) {
+        if (ctx.currentObjectType && ctx.currentObjectType !== ctx.OBJECT_TYPE_LOCAL_TRACK && ctx.createTrack) {
             stopCreatedTrack(true);
         }
     }, [ctx.currentObjectType]);

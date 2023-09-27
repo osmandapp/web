@@ -128,7 +128,7 @@ export default function DescTrackDialog({ dialogOpen, setDialogOpen, desc }) {
                 <DialogActions>
                     <Button onClick={toggleShowDialog}>Close</Button>
                     {!editDescription ? (
-                        ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                        ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK && (
                             <Button onClick={() => setEditDescription(true)}>Edit</Button>
                         )
                     ) : (

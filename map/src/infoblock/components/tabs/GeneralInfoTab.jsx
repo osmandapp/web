@@ -28,7 +28,7 @@ export const downloadGpx = async (ctx) => {
         url.href = URL.createObjectURL(new Blob([data]));
         const name = TracksManager.prepareName(
             ctx.selectedGpxFile.name,
-            ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK
+            ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK
         );
         url.download = `${name}.gpx`;
         url.click();
@@ -53,7 +53,7 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
         <>
             <Box>
                 <GeneralInfo width={ctx.infoBlockWidth} />
-                {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK && (
                     <>
                         {!isEmptyTrack(ctx.selectedGpxFile) && <Divider sx={{ mt: '3px', mb: '12px' }} />}
                         <div style={{ marginLeft: '15px', marginTop: '-10px' }}>

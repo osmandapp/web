@@ -389,7 +389,7 @@ function openNewLocalTrack(ctx, track, overwrite = false) {
     track.selected = true; // track is ref
     ctx.setSelectedGpxFile({ ...track });
 
-    ctx.setCurrentObjectType(ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK);
+    ctx.setCurrentObjectType(ctx.OBJECT_TYPE_LOCAL_TRACK);
 }
 
 function closeCloudTrack(ctx, track) {

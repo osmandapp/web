@@ -15,7 +15,7 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowIn
     const place =
         ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK
             ? 'cloud'
-            : ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK
+            : ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK
             ? 'local'
             : '';
 
@@ -70,7 +70,7 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowIn
 
                 cleanContextMenu();
             }
-        } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK) {
+        } else if (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK) {
             TracksManager.deleteLocalTrack(ctx);
             cleanContextMenu();
         }

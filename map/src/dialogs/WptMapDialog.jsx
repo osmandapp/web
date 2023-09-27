@@ -154,7 +154,7 @@ export default function WptMapDialog() {
                             )}
                         </Typography>
                     </DialogContent>
-                    {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                    {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK && (
                         <DialogActions sx={{ display: 'inline' }}>
                             <Link sx={{ fontSize: '10pt', mx: 2 }} href="#" color="inherit" onClick={enableWptDragging}>
                                 Move this waypoint

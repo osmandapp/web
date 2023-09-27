@@ -198,9 +198,10 @@ async function loadTileUrls(setAllTileURLs) {
 const AppContext = React.createContext();
 
 export const AppContextProvider = (props) => {
-    const OBJECT_TYPE_FAVORITE = 'favorite';
+    const OBJECT_TYPE_LOCAL_TRACK = 'local_track';
     const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track';
-    const OBJECT_TYPE_LOCAL_CLIENT_TRACK = 'local_client_track';
+    const OBJECT_TYPE_ROUTE_TRACK = 'route_track';
+    const OBJECT_TYPE_FAVORITE = 'favorite';
     const OBJECT_TYPE_WEATHER = 'weather';
     const OBJECT_TYPE_POI = 'poi';
 
@@ -394,8 +395,9 @@ export const AppContextProvider = (props) => {
                 tracksGroups,
                 setTracksGroups,
                 OBJECT_TYPE_FAVORITE,
+                OBJECT_TYPE_LOCAL_TRACK,
                 OBJECT_TYPE_CLOUD_TRACK,
-                OBJECT_TYPE_LOCAL_CLIENT_TRACK,
+                OBJECT_TYPE_ROUTE_TRACK,
                 OBJECT_TYPE_WEATHER,
                 OBJECT_TYPE_POI,
                 createTrack,

@@ -171,7 +171,7 @@ const PanelButtons = ({
                                 </IconButton>
                             </Tooltip>
                         )}
-                        {ctx.loginUser && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                        {ctx.loginUser && ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK && (
                             <Tooltip title="Save to cloud" arrow placement={tooltipOrientation}>
                                 <span style={styleSpan}>
                                     <IconButton
@@ -190,7 +190,7 @@ const PanelButtons = ({
                                 </span>
                             </Tooltip>
                         )}
-                        {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                        {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK && (
                             <Tooltip title="Undo" arrow placement={tooltipOrientation}>
                                 <span style={styleSpan}>
                                     <IconButton
@@ -209,7 +209,7 @@ const PanelButtons = ({
                                 </span>
                             </Tooltip>
                         )}
-                        {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                        {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK && (
                             <Tooltip title="Redo" arrow placement={tooltipOrientation}>
                                 <span style={styleSpan}>
                                     <IconButton
@@ -289,7 +289,7 @@ const PanelButtons = ({
                 </Paper>
                 {ctx.selectedGpxFile.save && <SaveTrackDialog />}
                 {openDeleteDialog &&
-                    (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK ||
+                    (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK ||
                         ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK) && (
                         <DeleteTrackDialog
                             dialogOpen={openDeleteDialog}

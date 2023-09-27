@@ -63,7 +63,7 @@ export default function LocalTrackItem({ track }) {
     }
 
     function updateTrackInfoBlock() {
-        const type = ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
+        const type = ctx.OBJECT_TYPE_LOCAL_TRACK;
         ctx.setCurrentObjectType(type);
         ctx.setUpdateInfoBlock(true);
     }
@@ -89,7 +89,7 @@ export default function LocalTrackItem({ track }) {
         return !!(
             ctx.createTrack?.enable &&
             ctx.selectedGpxFile?.name === track.name &&
-            ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK
+            ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK
         );
     }
 

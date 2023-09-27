@@ -18,19 +18,19 @@ export default class TrackTabList {
         let list = [];
 
         tabs.Info = <GeneralInfoTab key="general" setShowInfoBlock={setShowInfoBlock} />;
-        if (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK) {
+        if (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK) {
             tabs.Track = <PointsTab key="points" />;
         }
 
         if (
             (ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK &&
                 !isEmptyTrack(ctx.selectedGpxFile, true, false)) ||
-            ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK
+            ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK
         ) {
             tabs.Waypoints = <WaypointsTab key={'waypoints' + ctx.selectedGpxFile.name} />;
         }
 
-        if (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK) {
+        if (ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK) {
             tabs.Settings = <SettingsTab key="settings" />;
         }
 

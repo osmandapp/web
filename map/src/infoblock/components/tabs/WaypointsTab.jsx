@@ -141,7 +141,7 @@ const WaypointRow = ({ point, index, ctx }) => {
     }
 
     return useMemo(() => {
-        const allowDelete = ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK;
+        const allowDelete = ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_TRACK;
         return (
             <MenuItem key={'marker' + index} divider sx={{ px: 1, py: 1 }} onClick={() => showPoint(point)}>
                 <Grid container alignItems="center" warp="nowrap">
