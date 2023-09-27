@@ -340,7 +340,6 @@ export function prepareNavigationTrack(track) {
 }
 
 export async function getApproximatePoints({ points, profile }) {
-    console.log('approx-profile', profile);
     const approximateResult = await apiPost(`${process.env.REACT_APP_GPX_API}/routing/approximate`, points, {
         apiCache: true,
         params: { routeMode: profile },
