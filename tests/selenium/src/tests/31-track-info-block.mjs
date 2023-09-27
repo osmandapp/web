@@ -71,8 +71,8 @@ export default async function test() {
         const name = gpx.replace('.gpx', '');
 
         await actionUploadGpx({ mask: gpx });
-        await clickBy(By.id('se-open-attr-legend-Road type-hide'), {optional: true});
-        await clickBy(By.id('se-open-attr-legend-Surface-hide'), {optional: true});
+        await clickBy(By.id('se-show-attr-legend-Road type'), {optional: true});
+        await clickBy(By.id('se-show-attr-legend-Surface'), {optional: true});
         await validateInfoBlockStrings(strings);
         await validateInfoBlockButtons(localTrackButtons);
 

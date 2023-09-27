@@ -91,15 +91,13 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint, 
 
     useEffect(() => {
         if (activeIndex) {
-            if (activeIndex) {
-                chartRef.current.setActiveElements([
-                    {
-                        datasetIndex: activeIndex,
-                        index: 0,
-                    },
-                ]);
-                chartRef.current.update();
-            }
+            chartRef.current.setActiveElements([
+                {
+                    datasetIndex: activeIndex,
+                    index: 0,
+                },
+            ]);
+            chartRef.current.update();
         }
     }, [activeIndex]);
 
@@ -162,7 +160,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint, 
                         size="small"
                         sx={{ color: '#f8931d', mt: '-1px' }}
                         onClick={() => setOpen(!open)}
-                        id={'se-open-attr-legend-' + name + (open ? '-open' : '-hide')}
+                        id={'se-' + (open ? 'hide' : 'show') + '-attr-legend-' + name}
                     >
                         Details
                         {open ? <ExpandLess /> : <ExpandMore />}
