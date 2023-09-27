@@ -2,7 +2,7 @@ import { Box, Button, Collapse, Divider, Grid, Icon, Typography } from '@mui/mat
 import CircleIcon from '@mui/icons-material/Circle';
 import { Bar } from 'react-chartjs-2';
 import { Tooltip, Legend, Chart as ChartJS, BarElement } from 'chart.js';
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import annotationsPlugin from 'chartjs-plugin-annotation';
 import TracksManager from '../../../manager/TracksManager';
 import AppContext from '../../../context/AppContext';
@@ -17,77 +17,83 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint, 
 
     const [open, setOpen] = useState(false);
 
-    const options = {
-        indexAxis: 'y',
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: false,
-        layout: {
-            padding: {
-                left: -100,
+    const options = useMemo(
+        () => ({
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: false,
+            layout: {
+                padding: {
+                    left: -100,
+                },
             },
-        },
-        plugins: {
-            legend: {
-                display: false,
-            },
-            tooltip: {
-                enabled: true,
-                intersect: false,
-                backgroundColor: '#757575',
-                displayColors: false,
-                callbacks: {
-                    title: () => null,
-                    label: (context) => {
-                        let label = context.dataset?.label || '';
-                        if (label) {
-                            return `${cap(label)}: ${context.parsed.x} km`;
-                        }
+            plugins: {
+                legend: {
+                    display: false,
+                },
+                tooltip: {
+                    enabled: true,
+                    intersect: false,
+                    backgroundColor: '#757575',
+                    displayColors: false,
+                    callbacks: {
+                        title: () => null,
+                        label: (context) => {
+                            let label = context.dataset?.label || '';
+                            if (label) {
+                                return `${cap(label)}: ${context.parsed.x} km`;
+                            }
+                        },
+                    },
+                },
+                annotation: {
+                    annotations: {
+                        label1: {
+                            display: selectedPoint !== null,
+                            type: 'line',
+                            id: 'selectedPoint',
+                            mode: 'vertical',
+                            scaleID: 'x',
+                            value: selectedPoint?.dist,
+                            borderColor: '#ffffff',
+                            borderWidth: 1,
+                        },
                     },
                 },
             },
-            annotation: {
-                annotations: {
-                    label1: {
-                        display: selectedPoint !== null,
-                        type: 'line',
-                        id: 'selectedPoint',
-                        mode: 'vertical',
-                        scaleID: 'x',
-                        value: selectedPoint?.dist,
-                        borderColor: '#ffffff',
-                        borderWidth: 1,
+            scales: {
+                x: {
+                    stacked: true,
+                    display: true,
+                    type: 'linear',
+                    max: Object.values(data.legend).reduce((a, b) => a + b, 0),
+                    ticks: {
+                        maxTicksLimit: 10,
+                        beginAtZero: true,
+                        align: 'inner',
+                        font: {
+                            size: 8,
+                        },
+                        autoSkip: true,
                     },
                 },
-            },
-        },
-        scales: {
-            x: {
-                stacked: true,
-                display: true,
-                type: 'linear',
-                max: Object.values(data.legend).reduce((a, b) => a + b, 0),
-                ticks: {
-                    maxTicksLimit: 10,
-                    beginAtZero: true,
-                    align: 'inner',
-                    font: {
-                        size: 8,
-                    },
-                    autoSkip: true,
+                y: {
+                    stacked: true,
+                    display: false,
                 },
             },
-            y: {
-                stacked: true,
-                display: false,
-            },
-        },
-    };
+        }),
+        [data, selectedPoint]
+    );
 
-    const graphData = {
-        labels: [name],
-        datasets: data.datasets,
-    };
+    const graphData = useMemo(
+        () => ({
+            labels: [name],
+            datasets: data.datasets,
+        }),
+        [data]
+    );
 
     useEffect(() => {
         if (activeIndex) {

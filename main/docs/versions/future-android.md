@@ -20,4 +20,13 @@ You can participate in testing the OsmAnd beta build through Google Play.
 * Added ANT+ temperature widget
 * New help screen with offline support
 * Better memory management for large GPX tracks
+* Redesigned "Local" - Maps & Resources
+* New documentation for mobile
+* Filters for tracks search
+* Custom Quick Action buttons*
+* Simple widgets for top/bottom panel
+* Add row support for Top / Bottom panels – Configure Screen
+* Redesign weather screen
+* Smart Folder - Tracks
+* Trash - OsmAnd Cloud
 
