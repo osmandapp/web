@@ -2,7 +2,7 @@ import { Box, Button, Collapse, Divider, Grid, Icon, Typography } from '@mui/mat
 import CircleIcon from '@mui/icons-material/Circle';
 import { Bar } from 'react-chartjs-2';
 import { Tooltip, Legend, Chart as ChartJS, BarElement } from 'chart.js';
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import annotationsPlugin from 'chartjs-plugin-annotation';
 import TracksManager from '../../../manager/TracksManager';
 import AppContext from '../../../context/AppContext';
@@ -11,7 +11,7 @@ import { cap } from '../../../manager/GraphManager';
 
 ChartJS.register(Tooltip, Legend, BarElement, annotationsPlugin);
 
-export default function RoadAttributesGraph({ name, data, width, selectedPoint }) {
+export default function RoadAttributesGraph({ name, data, width, selectedPoint, activeIndex, setActiveIndex }) {
     const ctx = useContext(AppContext);
     const chartRef = useRef(null);
 
@@ -89,6 +89,20 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
         datasets: data.datasets,
     };
 
+    useEffect(() => {
+        if (activeIndex) {
+            if (activeIndex) {
+                chartRef.current.setActiveElements([
+                    {
+                        datasetIndex: activeIndex,
+                        index: 0,
+                    },
+                ]);
+                chartRef.current.update();
+            }
+        }
+    }, [activeIndex]);
+
     function prepareType(type) {
         if (type) {
             type = type.replaceAll('_', ' ');
@@ -120,6 +134,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                 if (ind) {
                     const range = [ind, ind + Number(pointList[ind].segment.ext.length)];
                     ctx.setTrackRange(range);
+                    setActiveIndex(selected.datasetIndex);
                 } else {
                     hideSelectedPointSegment();
                 }

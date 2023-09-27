@@ -114,6 +114,7 @@ export default function GpxGraph({
     const [maxMinData, setMaxMinData] = useState({});
     const [distRangeValue, setDistRangeValue] = useState([0, data.length - 1]);
     const [selectedPoint, setSelectedPoint] = useState(null);
+    const [activeIndex, setActiveIndex] = useState(null);
 
     const chartRef = useRef(null);
 
@@ -258,7 +259,7 @@ export default function GpxGraph({
     };
 
     function getMode() {
-        return !showY1 && !showY2 && showSlope ? 'index' : 'myCustomMode';
+        return !showY1 && !showY2 && showSlope ? 'nearest' : 'myCustomMode';
     }
 
     function getSelectedBoxPosition(ind) {
@@ -385,10 +386,10 @@ export default function GpxGraph({
                                 if (resType?.label !== UNDEFINED_DATA || resSurface?.label !== UNDEFINED_DATA) {
                                     res.push('-----------------------');
                                 }
-                                if (resType?.label !== UNDEFINED_DATA) {
+                                if (resType && resType.label !== UNDEFINED_DATA) {
                                     res.push(cap(resType.label));
                                 }
-                                if (resSurface?.label !== UNDEFINED_DATA) {
+                                if (resSurface && resSurface.label !== UNDEFINED_DATA) {
                                     res.push(cap(resSurface.label));
                                 }
                             }
@@ -621,6 +622,8 @@ export default function GpxGraph({
                     data={attrGraphData.types}
                     width={width}
                     selectedPoint={selectedPoint}
+                    activeIndex={activeIndex}
+                    setActiveIndex={setActiveIndex}
                 />
             )}
             {attrGraphData?.surfaces && (
@@ -629,6 +632,8 @@ export default function GpxGraph({
                     data={attrGraphData.surfaces}
                     width={width}
                     selectedPoint={selectedPoint}
+                    activeIndex={activeIndex}
+                    setActiveIndex={setActiveIndex}
                 />
             )}
         </>
