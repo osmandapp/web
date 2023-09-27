@@ -89,3 +89,53 @@ export function convertRouteToTrack({ id, route, trackName, geoProfile, start, f
 
     return track; // bare points
 }
+
+// function getRoutePointsMap(route) {
+//     const pointsMap = {};
+//     route.features
+//         .filter((f) => f.geometry?.type === 'Point' && f.geometry?.coordinates?.length > 0)
+//         .forEach((f) => {
+//             const [lng, lat] = f.geometry.coordinates; // Point has [ll]
+//             pointsMap[llRoundedKey({ lat, lng })] = true;
+//         });
+//     return pointsMap;
+// }
+
+// if (hidePoints) {
+//     // process whole route = 1 segment (gpx-trkpt)
+//     routeGeometry.forEach((ll) => points.push({ ...ll, ...defaultPointExtras }));
+// } else {
+//     // route Points are acutally turn (maneuver) points
+//     // finish points is not turn point (absent here)
+//     // PROFILE_LINE has no turns (zero turns)
+//     const routePointsMap = getRoutePointsMap(route);
+
+//     // just turns aren't enough:
+//     // re-map start/finish points
+//     const start = llRoundedKey(routeGeometry[0]);
+//     const finish = llRoundedKey(routeGeometry[routeGeometry.length - 1]);
+//     // routePointsMap[start] || console.log('add START');
+//     // routePointsMap[finish] || console.log('add FINISH');
+//     routePointsMap[start] || (routePointsMap[start] = true);
+//     routePointsMap[finish] || (routePointsMap[finish] = true);
+
+//     // split by route points = N segments (gpx-rtept)
+//     let lastIndex = 0;
+//     // console.log('map', routePointsMap);
+//     routeGeometry.forEach((ll, index) => {
+//         if (routePointsMap[llRoundedKey(ll)]) {
+//             const geometry = [];
+//             if (index !== lastIndex) {
+//                 for (let i = lastIndex; i <= index; i++) {
+//                     // console.log('found', index, 'last', lastIndex, 'i', i);
+//                     geometry.push({ ...routeGeometry[i], ...defaultPointExtras });
+//                 }
+//             }
+//             points.push({ ...ll, ...defaultPointExtras, profile, geoProfile, geometry });
+//             lastIndex = index;
+//             // console.log('done');
+//         } else {
+//             // console.log('skip-index', index);
+//         }
+//     });
+// }
