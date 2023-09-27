@@ -179,7 +179,7 @@ Interaction with the graph:
 
 ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation.png) 
 
-Here we can calculate elevation for a track:
+To calculate elevation:
 
 _Calculate elevation_ button → [_Attach to the roads_](../navigation/setup/gpx-navigation.md#attach-to-roads) (Free function) or [_Calculate offline_](#calculate-offline) (Paid function <ProFeature/>):
 
@@ -188,10 +188,10 @@ _Calculate elevation_ button → [_Attach to the roads_](../navigation/setup/gpx
 #### Calculate offline
 
 :::note
-<ProFeature/> _Calculate offline_ feature you can use only with Pro feature <a href="https://osmand.net/docs/user/purchases/android#pro-features">OsmAnd Pro subscribers</a>.
+<ProFeature/> Calculate offline feature is only available for <a href="https://osmand.net/docs/user/purchases/android#pro-features"> OsmAnd Pro subscribers</a>.
 :::
 
-This feature allows to calculate Elevation profile for GPX track offline for any places, based on [Terrain map data](../plugins/contour-lines.md#how-to-download)):  
+This feature allows you to calculate Elevation profile for GPX track offline for any area between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../plugins/contour-lines.md#how-to-download) (Terrain maps (3D) should be predownloaded):  
 
 _Track Context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,calculating_altitude,calculate_offline"/>_
 

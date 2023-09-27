@@ -4,8 +4,8 @@ import { Alert, Box, Button, Collapse, Grid, IconButton, MenuItem, Switch, Toolt
 import L from 'leaflet';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import { Cancel, ExpandLess, ExpandMore, KeyboardDoubleArrowDown, KeyboardDoubleArrowUp } from '@mui/icons-material';
-import PointManager from '../../../context/PointManager';
-import TracksManager from '../../../context/TracksManager';
+import PointManager from '../../../manager/PointManager';
+import TracksManager from '../../../manager/TracksManager';
 import wptTabStyle from '../../styles/WptTabStyle';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import { makeStyles } from '@material-ui/core/styles';

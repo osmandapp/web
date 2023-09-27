@@ -13,9 +13,9 @@ import {
 import React, { useContext, useState, useCallback } from 'react';
 import { Cancel, ViewHeadline } from '@mui/icons-material';
 import AppContext from '../../../context/AppContext';
-import TracksManager from '../../../context/TracksManager';
+import TracksManager from '../../../manager/TracksManager';
 import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd';
-import PointManager from '../../../context/PointManager';
+import PointManager from '../../../manager/PointManager';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import _ from 'lodash';

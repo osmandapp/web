@@ -5,8 +5,8 @@ import AppContext from '../../../context/AppContext';
 import FavoriteAllGroups from './FavoriteAllGroups';
 import FavoriteGroup from './FavoriteGroup';
 import Utils from '../../../util/Utils';
-import TracksManager from '../../../context/TracksManager';
-import FavoritesManager from '../../../context/FavoritesManager';
+import TracksManager from '../../../manager/TracksManager';
+import FavoritesManager from '../../../manager/FavoritesManager';
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);

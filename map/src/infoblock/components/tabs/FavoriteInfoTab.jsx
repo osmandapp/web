@@ -7,7 +7,7 @@ import MarkerOptions from '../../../map/markers/MarkerOptions';
 import { makeStyles } from '@material-ui/core/styles';
 import EditFavoriteDialog from '../favorite/EditFavoriteDialog';
 import DeleteFavoriteDialog from '../favorite/DeleteFavoriteDialog';
-import FavoritesManager from '../../../context/FavoritesManager';
+import FavoritesManager from '../../../manager/FavoritesManager';
 
 const useStyles = makeStyles({
     icon: {

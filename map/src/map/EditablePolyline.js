@@ -3,7 +3,7 @@ import TrackLayerProvider from './TrackLayerProvider';
 import MarkerOptions from './markers/MarkerOptions';
 import GeometryUtil from 'leaflet-geometryutil';
 import _ from 'lodash';
-import TracksManager, { isPointUnrouted, isProtectedSegment, splitProtectedSegment } from '../context/TracksManager';
+import TracksManager, { isPointUnrouted, isProtectedSegment, splitProtectedSegment } from '../manager/TracksManager';
 import EditableMarker from './EditableMarker';
 import TracksRoutingCache from '../context/TracksRoutingCache';
 

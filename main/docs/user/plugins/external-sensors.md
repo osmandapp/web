@@ -87,6 +87,10 @@ Data from connected external sensors can be added to the GPX file using the [Tri
 - If none of the sensor types are paired, you can use the [*Pair new sensor*](#pair-new-sensor) button in the Trip recording plugin *Settings* menu.
 - OsmAnd records data from selected sensors to the [track](../plugins/trip-recording.md#recorded-gpx-file) while recording a trip.
 
+:::note
+OsmAnd uses [**track recording**](../plugins/trip-recording.md#recorded-gpx-file) with such [**tag names**](https://github.com/osmandapp/Osmand/blob/a3b5c637955a5914421d391206c2efb6ee2dff47/OsmAnd-java/src/main/java/net/osmand/GPXUtilities.java#L2476-L2500) for external sensors, with which your file can be easily read by the sports applications you use.  For example Strava or Runkeeper.
+:::
+
 
 ## Widgets
 
@@ -102,4 +106,4 @@ Use the following path to display the widget on the screen:
 3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>**. Cadence is the number of pedal turns per minute. Cadence sensors help you maintain optimal pedaling speed for efficient cycling.
 4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>**. Speed sensors provide information about your current speed while cycling. 
 5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>**. Distance sensors measure the distance you travel when you're driving.
-6. **<Translate android="true" ids="external_device_characteristic_temperature"/>**. The sensor indicates the temperature. 
+6. **<Translate android="true" ids="external_device_characteristic_temperature"/>**. The widget displays the ambient temperature, which can be very useful if you don't want to overheat or freeze on your bike or motorcycle. 

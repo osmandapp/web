@@ -1,22 +1,18 @@
 import { Box, Button, Collapse, Grid, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import { ExpandLess, ExpandMore, Folder } from '@mui/icons-material';
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import AppContext from '../../../context/AppContext';
 import Actions from './Actions';
 import LocalTrackItem from './LocalTrackItem';
-import { styled } from '@mui/material/styles';
 import drawerStyles from '../../styles/DrawerStyles';
-import TracksManager, { clearAllLocalTracks } from '../../../context/TracksManager';
-import { useMutator } from '../../../util/Utils';
+import TracksManager, { clearAllLocalTracks } from '../../../manager/TracksManager';
 import PopperMenu from './PopperMenu';
 import _ from 'lodash';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
+import LocalGpxUploader from '../LocalGpxUploader';
 
 export default function LocalTrackGroup() {
     const styles = drawerStyles();
-    const StyledInput = styled('input')({
-        display: 'none',
-    });
 
     const ctx = useContext(AppContext);
 
@@ -36,36 +32,6 @@ export default function LocalTrackGroup() {
             callback: () => clearAllLocalTracks(ctx),
         });
     }
-
-    const [uploadedFiles, mutateUploadedFiles] = useMutator({});
-
-    useEffect(() => {
-        for (const file in uploadedFiles) {
-            TracksManager.addTrack({
-                ctx,
-                overwrite: false,
-                track: uploadedFiles[file].track,
-                selected: uploadedFiles[file].selected,
-            });
-            mutateUploadedFiles((o) => delete o[file]);
-            break; // limit 1 file per 1 render
-        }
-    }, [uploadedFiles]);
-
-    const fileSelected = () => async (e) => {
-        const selected = e.target.files.length === 1;
-        Array.from(e.target.files).forEach((file) => {
-            const reader = new FileReader();
-            reader.addEventListener('load', async () => {
-                const track = await TracksManager.getTrackData(file);
-                if (track) {
-                    track.name = file.name;
-                    mutateUploadedFiles((o) => (o[file.name] = { track, selected }));
-                }
-            });
-            reader.readAsText(file);
-        });
-    };
 
     function addToCollection() {
         ctx.localTracks.forEach((file) => {
@@ -161,14 +127,7 @@ export default function LocalTrackGroup() {
                         }
                     </Grid>
                     <Grid item xs={6}>
-                        <label htmlFor="se-upload-gpx">
-                            <StyledInput
-                                accept=".gpx"
-                                id="se-upload-gpx"
-                                multiple
-                                type="file"
-                                onChange={fileSelected(ctx)}
-                            />
+                        <LocalGpxUploader>
                             <Button
                                 className={styles.button}
                                 variant="contained"
@@ -177,7 +136,7 @@ export default function LocalTrackGroup() {
                             >
                                 Import track
                             </Button>
-                        </label>
+                        </LocalGpxUploader>
                     </Grid>
                 </Grid>
             </Collapse>

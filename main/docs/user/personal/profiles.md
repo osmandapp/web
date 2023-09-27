@@ -69,6 +69,38 @@ All settings affect the selected application profile only.
 
 </Tabs>
 
+### Free Cloud backup
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,configure_profile"/>*
+
+![Favorites folder functions android](@site/static/img/personal/profile_settings_free_backup_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
+
+![Favorites actions ios](@site/static/img/personal/profile_settings_free_backup_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+OsmAnd provides the ability to backup your application profile settings and save them in OsmAnd Cloud. Thus, your settings will be safely and conveniently saved for Android, iOS, or Web versions and restored in case of device failure or reinstallation of OsmAnd app. You can use this special plan if you have [OsmAnd Free or Maps+](../purchases/index.md).  
+
+You need to have an OsmAnd Cloud account to use the Free Settings Backup. If you have an account in *OsmAnd Pro* or an active account in OsmAnd Cloud, you will not see the promotion banner.  
+
+- Tap the Free Settings Backup banner.
+- Go through the [registration step](../personal/osmand-cloud.md#login).
+- Then go to the OsmAnd Purchases menu (*Menu → Settings → Purchases*).
+- Select the [OsmAnd Start package](../personal/osmand-cloud.md#osmand-start).
+- Create a backup.
+
 
 ## General settings
 
@@ -227,7 +259,7 @@ Additional settings for profile.You can switch buttons and input devices for Osm
 - *[<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings)* - allows to use or not [Magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
 - *<Translate android="true" ids="tap_on_map_to_hide_interface"/>* - tapping an empty space on the map hides control buttons and widgets.
 - *[<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#disable-all-animations)* - allows to switch on/off animation for navigation mode.
-- *<Translate android="true" ids="animate_my_location"/>* - <Translate android="true" ids="animate_my_location_desc"/> Note that the animation takes about 1 second, which creates a slight delay for the "my location" position to display on the map relative to your location.  
+- *[<Translate android="true" ids="animate_my_location"/>](../navigation/guidance/map-during-navigation.md#animate-my-location-android-animate-own-position)* - <Translate android="true" ids="animate_my_location_desc"/> Note that the animation takes about 1 second, which creates a slight delay for the *[My location](../map/interact-with-map.md#my-location--zoom)* position to display on the map relative to your location.  
 - *[<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-device-buttons)* - allow you to add other devices, such as <Translate ios="true" ids="sett_wunderlinq_ext_input"/>, <Translate ios="true" ids="sett_generic_ext_input"/>, or <Translate android="true" ids="sett_parrot_ext_input"/>, to control the OsmAnd program using the existing buttons.  
 
 </TabItem>

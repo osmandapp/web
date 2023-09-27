@@ -2,7 +2,7 @@ import { useContext, useMemo } from 'react';
 import AppContext from '../../../context/AppContext';
 import { ListItemText, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
 import _ from 'lodash';
-import TracksManager from '../../../context/TracksManager';
+import TracksManager from '../../../manager/TracksManager';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import TrackInfo from './TrackInfo';
 

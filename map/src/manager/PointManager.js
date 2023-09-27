@@ -1,7 +1,7 @@
 import TracksManager, { isPointUnrouted } from './TracksManager';
 import Utils from '../util/Utils';
 import TrackLayerProvider from '../map/TrackLayerProvider';
-import TracksRoutingCache from './TracksRoutingCache';
+import TracksRoutingCache from '../context/TracksRoutingCache';
 
 const deletePoint = async (index, ctx) => {
     let currentTrack = ctx.localTracks.find((t) => t.name === ctx.selectedGpxFile.name);

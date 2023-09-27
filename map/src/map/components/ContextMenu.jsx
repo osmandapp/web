@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react';
 import AppContext from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import { useNavigate } from 'react-router-dom';
-import TracksManager from '../../context/TracksManager';
+import TracksManager from '../../manager/TracksManager';
 import { apiGet } from '../../util/HttpApi';
 
 export default function ContextMenu({ setGeocodingData, setRegionData }) {

@@ -225,8 +225,8 @@ OpenStreetMap link provides direct link to the OpenStreetMap object where you ca
 
 ### Online photos
 
-In this section, you can view photos of the object from different web sources. Such as [Mapillary](../plugins/mapillary.md) - provides the best and the closest photos from Street-Level view, [Wikimedia](https://www.wikimedia.org/) - displays images from OpenStreetMap with tags **image**, **wikimedia**.  
-Tap the image to open it in full size or [browse](../map/point-layers-on-map.md#street-level-imagery) street level photos.
+In *Online photos* (iOS *Images nearby*) section of map context menu, you can view POI photos from various web sources. Such as [Mapillary](../plugins/mapillary.md) - provides the best and the closest photos from Street-Level view, [Wikimedia](https://www.wikimedia.org/) - displays images from OpenStreetMap with tags **image**, **wikimedia**.  
+You can swipe photos to the left to see more items. Tap the image to open it in full size or [browse](../map/point-layers-on-map.md#street-level-imagery) street level photos on the map.
 
 <Tabs groupId="operating-systems">
 

@@ -1,7 +1,7 @@
 import { copyObj } from '../../util/Utils';
 import LinearScaleIcon from '@mui/icons-material/LinearScale';
 import BusAlertIcon from '@mui/icons-material/BusAlert';
-import TracksManager from '../../context/TracksManager';
+import TracksManager from '../../manager/TracksManager';
 
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
 
