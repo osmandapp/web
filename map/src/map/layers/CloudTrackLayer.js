@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import AppContext, { OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
+import AppContext, { isCloudTrack, OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider, { redrawWptsOnLayer } from '../TrackLayerProvider';
 import TracksManager from '../../manager/TracksManager';
@@ -79,7 +79,7 @@ const CloudTrackLayer = () => {
 
     // control zoom-fit for cloud tracks
     useEffect(() => {
-        if (ctxTrack && ctxTrack.gpx && ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK) {
+        if (ctxTrack && ctxTrack.gpx && isCloudTrack(ctx)) {
             if (ctxTrack.zoom) {
                 map.fitBounds(ctxTrack.gpx.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
                 ctx.setSelectedGpxFile((o) => ({ ...o, zoom: false }));

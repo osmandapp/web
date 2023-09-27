@@ -1,5 +1,5 @@
 import { useContext, useMemo } from 'react';
-import AppContext, { OBJECT_TYPE_LOCAL_TRACK } from '../../../context/AppContext';
+import AppContext, { OBJECT_TYPE_LOCAL_TRACK, isLocalTrack } from '../../../context/AppContext';
 import { ListItemText, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
 import _ from 'lodash';
 import TracksManager from '../../../manager/TracksManager';
@@ -86,11 +86,7 @@ export default function LocalTrackItem({ track }) {
     }
 
     function isAlreadyEdit() {
-        return !!(
-            ctx.createTrack?.enable &&
-            ctx.selectedGpxFile?.name === track.name &&
-            ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK
-        );
+        return !!(ctx.createTrack?.enable && ctx.selectedGpxFile?.name === track.name && isLocalTrack(ctx));
     }
 
     return (

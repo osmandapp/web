@@ -3,7 +3,7 @@ import { Dialog } from '@material-ui/core';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import { Button } from '@mui/material';
-import AppContext, { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_LOCAL_TRACK } from '../../../../context/AppContext';
+import AppContext, { isCloudTrack, isLocalTrack } from '../../../../context/AppContext';
 import TracksManager from '../../../../manager/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContentText from '@mui/material/DialogContentText';
@@ -12,12 +12,7 @@ import { apiPost } from '../../../../util/HttpApi';
 export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
 
-    const place =
-        ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK
-            ? 'cloud'
-            : ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK
-            ? 'local'
-            : '';
+    const place = isCloudTrack(ctx) ? 'cloud' : isLocalTrack(ctx) ? 'local' : '';
 
     const toggleShowDialog = () => {
         setDialogOpen(!dialogOpen);
@@ -29,7 +24,7 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowIn
     }
 
     async function deleteCurrentTrack() {
-        if (ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK && ctx.loginUser) {
+        if (isCloudTrack(ctx) && ctx.loginUser) {
             const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/delete-file`, '', {
                 params: {
                     name: ctx.selectedGpxFile.name,
@@ -70,7 +65,7 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowIn
 
                 cleanContextMenu();
             }
-        } else if (ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK) {
+        } else if (isLocalTrack(ctx)) {
             TracksManager.deleteLocalTrack(ctx);
             cleanContextMenu();
         }
