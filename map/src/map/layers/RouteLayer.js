@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useContext, useCallback } from 'react';
 import { Marker, GeoJSON, useMap, Popup } from 'react-leaflet';
 import L from 'leaflet';
-import AppContext from '../../context/AppContext';
+import AppContext, { isRouteTrack } from '../../context/AppContext';
 import MarkerOptions from '../markers/MarkerOptions';
 import { fitBoundsOptions } from '../../manager/TracksManager';
 
@@ -181,7 +181,8 @@ const RouteLayer = ({ geocodingData, region }) => {
     };
 
     // GeoJSON requires dynamic key to refresh/refilter
-    const routeDataKey = () => routeObject.getRouteKey();
+    // isRouteTrack is used to trigger refresh layer killed after Local Track Editor
+    const routeDataKey = () => routeObject.getRouteKey() + isRouteTrack(ctx).toString();
 
     const pointToLayer = (feature, latlng) => {
         let opts = Object.assign({}, geojsonMarkerOptions);
