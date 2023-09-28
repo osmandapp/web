@@ -59,7 +59,7 @@ const localTrackButtons = [
     'se-infoblock-button-delete-track',
 ];
 const cloudTrackButtons = [
-    'se-infoblock-button-edit-cloud-track',
+    'se-infoblock-button-edit-track',
     'se-infoblock-button-download-gpx',
     'se-infoblock-button-collection',
     'se-infoblock-button-close-track',
