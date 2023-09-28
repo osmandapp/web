@@ -3,7 +3,7 @@ import { Marker, GeoJSON, useMap, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import AppContext from '../../context/AppContext';
 import MarkerOptions from '../markers/MarkerOptions';
-import { FIT_BOUNDS_OPTIONS } from '../../manager/TracksManager';
+import { fitBoundsOptions } from '../../manager/TracksManager';
 
 const DRAG_DEBOUNCE_MS = 10;
 
@@ -237,7 +237,7 @@ const RouteLayer = ({ geocodingData, region }) => {
     useEffect(() => {
         if (routeLayer && routeZoom) {
             routeObject.setOption('route.map.zoom', false);
-            map.fitBounds(routeLayer.getBounds(), { ...FIT_BOUNDS_OPTIONS, padding: [100, 100] }); // FIXME padding global
+            map.fitBounds(routeLayer.getBounds(), fitBoundsOptions(ctx));
         }
     }, [routeZoom, routeLayer]);
 

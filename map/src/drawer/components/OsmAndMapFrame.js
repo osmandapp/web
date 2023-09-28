@@ -43,8 +43,10 @@ const OsmAndMapFrame = () => {
     useEffect(() => {
         if (mainMenuOpen && !mobile) {
             setMainMenuWidth(MAIN_MENU_SIZE);
+            ctx.mutateFitBoundsPadding((o) => (o.left = MAIN_MENU_SIZE));
         } else {
             setMainMenuWidth(0);
+            ctx.mutateFitBoundsPadding((o) => (o.left = 0));
         }
     }, [mainMenuOpen]);
 

@@ -10,12 +10,12 @@ import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import { geoObject } from '../store/geoObject/geoObject.js';
 import WeatherManager from '../manager/WeatherManager';
 
-export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; //
-export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; //
-export const OBJECT_TYPE_ROUTE_TRACK = 'route_track'; //
-export const OBJECT_TYPE_FAVORITE = 'favorite'; //
-export const OBJECT_TYPE_WEATHER = 'weather'; //
-export const OBJECT_TYPE_POI = 'poi'; //
+export const OBJECT_TYPE_LOCAL_TRACK = 'local_track';
+export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track';
+export const OBJECT_TYPE_ROUTE_TRACK = 'route_track';
+export const OBJECT_TYPE_FAVORITE = 'favorite';
+export const OBJECT_TYPE_WEATHER = 'weather';
+export const OBJECT_TYPE_POI = 'poi';
 
 export const isLocalTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK;
 export const isCloudTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK;
@@ -194,6 +194,7 @@ export const AppContextProvider = (props) => {
     seleniumUpdateActivity();
 
     const [globalConfirmation, setGlobalConfirmation] = useState(null);
+    const [fitBoundsPadding, mutateFitBoundsPadding] = useMutator({ left: 0, top: 0, right: 0, bottom: 0 });
 
     const searchParams = new URLSearchParams(window.location.search);
     const [weatherLayers, setWeatherLayers] = useState(WeatherManager.getLayers());
@@ -423,6 +424,8 @@ export const AppContextProvider = (props) => {
                 wantDeleteAcc,
                 setWantDeleteAcc,
                 routeObject,
+                fitBoundsPadding,
+                mutateFitBoundsPadding,
             }}
         >
             {props.children}

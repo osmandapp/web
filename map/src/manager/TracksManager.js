@@ -24,7 +24,15 @@ const DATA_SIZE_KEY = 'dataSize';
 const TRACK_VISIBLE_FLAG = 'visible';
 const HOURS_24_MS = 86400000;
 const AUTO_SRTM_MAX_POINTS = 10000;
-export const FIT_BOUNDS_OPTIONS = { maxZoom: 17 }; // don't fitBounds closer
+const FIT_BOUNDS_MAX_ZOOM = 17;
+
+export function fitBoundsOptions(ctx) {
+    return {
+        maxZoom: FIT_BOUNDS_MAX_ZOOM,
+        paddingTopLeft: [ctx.fitBoundsPadding.left, ctx.fitBoundsPadding.top],
+        paddingBottomRight: [ctx.fitBoundsPadding.right, ctx.fitBoundsPadding.bottom],
+    };
+}
 
 async function loadTracks(setLoading) {
     let localTracks = [];
@@ -1305,7 +1313,6 @@ const TracksManager = {
     CHANGE_PROFILE_AFTER: CHANGE_PROFILE_AFTER,
     CHANGE_PROFILE_ALL: CHANGE_PROFILE_ALL,
     TRACK_VISIBLE_FLAG: TRACK_VISIBLE_FLAG,
-    FIT_BOUNDS_OPTIONS: FIT_BOUNDS_OPTIONS,
 };
 
 export default TracksManager;

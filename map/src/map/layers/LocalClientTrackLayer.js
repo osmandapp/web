@@ -3,7 +3,7 @@ import AppContext, { OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import TrackLayerProvider, { TEMP_LAYER_FLAG, redrawWptsOnLayer } from '../TrackLayerProvider';
-import TracksManager, { isEmptyTrack } from '../../manager/TracksManager';
+import TracksManager, { isEmptyTrack, fitBoundsOptions } from '../../manager/TracksManager';
 import _ from 'lodash';
 import EditablePolyline from '../EditablePolyline';
 import EditableMarker from '../EditableMarker';
@@ -389,7 +389,7 @@ export default function LocalClientTrackLayer() {
         if (layer) {
             if (fitBounds) {
                 if (!_.isEmpty(layer.getBounds())) {
-                    map.fitBounds(layer.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
+                    map.fitBounds(layer.getBounds(), fitBoundsOptions(ctx));
                 }
             }
             layer.on('click', () => {
@@ -418,7 +418,7 @@ export default function LocalClientTrackLayer() {
     function showSelectedTrackOnMap() {
         let currLayer = localLayers[ctxTrack.name];
         if (currLayer) {
-            map.fitBounds(currLayer.layer.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
+            map.fitBounds(currLayer.layer.getBounds(), fitBoundsOptions(ctx));
             ctxTrack.zoom = false;
             ctx.setSelectedGpxFile({ ...ctxTrack });
         }

@@ -133,7 +133,11 @@ export default function InformationBlock({
     }, [showInfoBlock]);
 
     useEffect(() => {
-        ctx.setInfoBlockWidth(getWidth());
+        const width = getWidth();
+        ctx.setInfoBlockWidth(width);
+        const px = parseFloat(width) || 0; // 100px -> 100, auto -> 0
+        const padding = mobile ? px : px || DRAWER_SIZE + 24; // always apply right padding on desktop
+        ctx.mutateFitBoundsPadding((o) => (o.right = padding));
     }, [mobile, showInfoBlock, infoBlockOpen]);
 
     useEffect(() => {
