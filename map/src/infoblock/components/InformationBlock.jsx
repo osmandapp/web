@@ -1,7 +1,7 @@
 import { AppBar, LinearProgress, Box, Typography } from '@mui/material';
 import AppContext, {
-    OBJECT_TYPE_LOCAL_TRACK,
-    OBJECT_TYPE_CLOUD_TRACK,
+    isLocalTrack,
+    isCloudTrack,
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_WEATHER,
     OBJECT_TYPE_POI,
@@ -140,8 +140,9 @@ export default function InformationBlock({
         ctx.mutateFitBoundsPadding((o) => (o.right = padding));
     }, [mobile, showInfoBlock, infoBlockOpen]);
 
+    // detect leaving from Local Track Editor when another kind of object type is activated
     useEffect(() => {
-        if (ctx.currentObjectType && ctx.currentObjectType !== OBJECT_TYPE_LOCAL_TRACK && ctx.createTrack) {
+        if (ctx.currentObjectType && isLocalTrack(ctx) === false && ctx.createTrack) {
             stopCreatedTrack(true);
         }
     }, [ctx.currentObjectType]);
@@ -159,7 +160,7 @@ export default function InformationBlock({
                 let obj;
                 setPrevTrack(ctx.selectedGpxFile);
                 ctx.setUpdateInfoBlock(false);
-                if (ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK && ctx.selectedGpxFile?.tracks) {
+                if (isCloudTrack(ctx) && ctx.selectedGpxFile?.tracks) {
                     obj = new TrackTabList().create(ctx, setShowInfoBlock);
                 } else if (ctx.currentObjectType === OBJECT_TYPE_WEATHER && ctx.weatherPoint) {
                     obj = new WeatherTabList().create(ctx);
@@ -168,6 +169,7 @@ export default function InformationBlock({
                 } else if (ctx.currentObjectType === OBJECT_TYPE_POI) {
                     obj = new PoiTabList().create();
                 } else if (ctx.selectedGpxFile) {
+                    // finally assume that default selectedGpxFile is a track
                     obj = new TrackTabList().create(ctx, setShowInfoBlock);
                 }
                 if (obj) {
