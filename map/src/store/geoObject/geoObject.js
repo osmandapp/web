@@ -17,6 +17,7 @@ export class geoObject extends geoRouter {
         route: {
             map: {
                 zoom: false,
+                conceal: false,
                 hidePoints: false,
             },
             points: {
