@@ -536,7 +536,7 @@ export default function GeneralInfo({ width }) {
                     {!ctx.createTrack && (isCloudTrack(ctx) || isRouteTrack(ctx)) && (
                         <>
                             <Button
-                                id="se-infoblock-button-edit-cloud-track"
+                                id="se-infoblock-button-edit-track"
                                 variant="contained"
                                 sx={{ ml: isRouteTrack(ctx) ? 0 : '-0.5px !important' }}
                                 className={styles.button}

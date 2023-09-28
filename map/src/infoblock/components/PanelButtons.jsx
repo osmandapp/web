@@ -2,8 +2,9 @@ import { ButtonGroup, IconButton, Paper, Tooltip, CircularProgress } from '@mui/
 import { Close, Delete, Cloud, CloudUpload, Redo, Undo, Create, MenuOpen, Download } from '@mui/icons-material';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext, {
-    OBJECT_TYPE_LOCAL_TRACK,
-    OBJECT_TYPE_CLOUD_TRACK,
+    isRouteTrack,
+    isLocalTrack,
+    isCloudTrack,
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_WEATHER,
     OBJECT_TYPE_POI,
@@ -16,6 +17,7 @@ import TracksManager, { isEmptyTrack } from '../../manager/TracksManager';
 import useUndoRedo from '../useUndoRedo';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 import { downloadGpx } from './tabs/GeneralInfoTab';
+import RouteIcon from '@mui/icons-material/Route';
 
 const PanelButtons = ({
     orientation,
@@ -127,27 +129,38 @@ const PanelButtons = ({
                         orientation={orientation}
                         color="primary"
                     >
-                        {ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK && (
+                        {(isCloudTrack(ctx) || isRouteTrack(ctx)) && (
                             <>
-                                <Tooltip title="Cloud track" arrow placement={tooltipOrientation}>
+                                <Tooltip
+                                    title={isCloudTrack(ctx) ? 'Cloud track' : 'Route track'}
+                                    placement={tooltipOrientation}
+                                    arrow
+                                >
                                     <IconButton
-                                        id="se-panel-button-edit-cloud-icon"
+                                        id="se-panel-button-edit-icon"
                                         variant="contained"
                                         type="button"
                                         onClick={() =>
                                             confirm({
                                                 ctx,
-                                                text: 'Open Cloud track in Local editor?',
+                                                text:
+                                                    'Open ' +
+                                                    (isCloudTrack(ctx) ? 'Cloud' : 'Route') +
+                                                    ' track in Local editor?',
                                                 callback: () => TracksManager.handleEditCloudTrack(ctx),
                                             })
                                         }
                                     >
-                                        <Cloud fontSize="medium" color="primary" />
+                                        {isCloudTrack(ctx) ? (
+                                            <Cloud fontSize="medium" color="primary" />
+                                        ) : (
+                                            <RouteIcon fontSize="medium" color="primary" />
+                                        )}
                                     </IconButton>
                                 </Tooltip>
-                                <Tooltip title="Edit" arrow placement={tooltipOrientation}>
+                                <Tooltip title="Edit locally" arrow placement={tooltipOrientation}>
                                     <IconButton
-                                        id="se-panel-button-edit-cloud-track"
+                                        id="se-panel-button-edit-track"
                                         variant="contained"
                                         type="button"
                                         onClick={() => TracksManager.handleEditCloudTrack(ctx)}
@@ -177,7 +190,7 @@ const PanelButtons = ({
                                 </IconButton>
                             </Tooltip>
                         )}
-                        {ctx.loginUser && ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK && (
+                        {ctx.loginUser && (isLocalTrack(ctx) || isRouteTrack(ctx)) && (
                             <Tooltip title="Save to cloud" arrow placement={tooltipOrientation}>
                                 <span style={styleSpan}>
                                     <IconButton
@@ -196,7 +209,7 @@ const PanelButtons = ({
                                 </span>
                             </Tooltip>
                         )}
-                        {ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK && (
+                        {isLocalTrack(ctx) && (
                             <Tooltip title="Undo" arrow placement={tooltipOrientation}>
                                 <span style={styleSpan}>
                                     <IconButton
@@ -215,7 +228,7 @@ const PanelButtons = ({
                                 </span>
                             </Tooltip>
                         )}
-                        {ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK && (
+                        {isLocalTrack(ctx) && (
                             <Tooltip title="Redo" arrow placement={tooltipOrientation}>
                                 <span style={styleSpan}>
                                     <IconButton
@@ -249,19 +262,21 @@ const PanelButtons = ({
                                 </span>
                             </Tooltip>
                         )}
-                        {ctx.currentObjectType !== OBJECT_TYPE_WEATHER && ctx.currentObjectType !== OBJECT_TYPE_POI && (
-                            <Tooltip title="Delete" arrow placement={tooltipOrientation}>
-                                <IconButton
-                                    id="se-panel-button-delete-track"
-                                    sx={{ mb: '1px' }}
-                                    variant="contained"
-                                    type="button"
-                                    onClick={() => setOpenDeleteDialog(true)}
-                                >
-                                    <Delete fontSize="small" />
-                                </IconButton>
-                            </Tooltip>
-                        )}
+                        {ctx.currentObjectType !== OBJECT_TYPE_WEATHER &&
+                            ctx.currentObjectType !== OBJECT_TYPE_POI &&
+                            isRouteTrack(ctx) === false && (
+                                <Tooltip title="Delete" arrow placement={tooltipOrientation}>
+                                    <IconButton
+                                        id="se-panel-button-delete-track"
+                                        sx={{ mb: '1px' }}
+                                        variant="contained"
+                                        type="button"
+                                        onClick={() => setOpenDeleteDialog(true)}
+                                    >
+                                        <Delete fontSize="small" />
+                                    </IconButton>
+                                </Tooltip>
+                            )}
                         {ctx.currentObjectType && !infoBlockOpen && !mobile && (
                             <Tooltip title="Open info" arrow placement={tooltipOrientation}>
                                 <IconButton onClick={toggleInfoBlock} sx={{ transform: 'scaleX(1)' }}>
@@ -276,31 +291,31 @@ const PanelButtons = ({
                                 </IconButton>
                             </Tooltip>
                         )}
-                        <Tooltip title="Close" arrow placement={tooltipOrientation}>
-                            <IconButton
-                                id="se-panel-button-close-track"
-                                variant="contained"
-                                type="button"
-                                onClick={() => {
-                                    doClear();
-                                    setShowInfoBlock(false);
-                                }}
-                            >
-                                <Close fontSize="small" />
-                            </IconButton>
-                        </Tooltip>
+                        {isRouteTrack(ctx) === false && (
+                            <Tooltip title="Close" arrow placement={tooltipOrientation}>
+                                <IconButton
+                                    id="se-panel-button-close-track"
+                                    variant="contained"
+                                    type="button"
+                                    onClick={() => {
+                                        doClear();
+                                        setShowInfoBlock(false);
+                                    }}
+                                >
+                                    <Close fontSize="small" />
+                                </IconButton>
+                            </Tooltip>
+                        )}
                     </ButtonGroup>
                 </Paper>
                 {ctx.selectedGpxFile.save && <SaveTrackDialog />}
-                {openDeleteDialog &&
-                    (ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK ||
-                        ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK) && (
-                        <DeleteTrackDialog
-                            dialogOpen={openDeleteDialog}
-                            setDialogOpen={setOpenDeleteDialog}
-                            setShowInfoBlock={setShowInfoBlock}
-                        />
-                    )}
+                {openDeleteDialog && (isLocalTrack(ctx) || isCloudTrack(ctx)) && (
+                    <DeleteTrackDialog
+                        dialogOpen={openDeleteDialog}
+                        setDialogOpen={setOpenDeleteDialog}
+                        setShowInfoBlock={setShowInfoBlock}
+                    />
+                )}
                 {openDeleteDialog && ctx.currentObjectType === OBJECT_TYPE_FAVORITE && (
                     <DeleteFavoriteDialog dialogOpen={openDeleteDialog} setDialogOpen={setOpenDeleteDialog} />
                 )}
