@@ -24,7 +24,7 @@ export default function GraphLayer() {
             } else {
                 points = trackPoints;
             }
-            let selectedPoints = points.slice(ctx.trackRange[0], ctx.trackRange[1] + 1);
+            let selectedPoints = points.slice(ctx.trackRange.range[0], ctx.trackRange.range[1] + 1);
             if (selectedPoints.length === points.length) {
                 removeTrackRangeLine();
             } else {

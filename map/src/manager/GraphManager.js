@@ -1,5 +1,6 @@
 import roadTypes from '../store/road-types.json';
 import surfaces from '../store/surfaces.json';
+import _ from 'lodash';
 
 export const HIGHWAY = 'highway';
 export const SURFACE = 'surface';
@@ -17,13 +18,9 @@ export function generateDataSets(data) {
     let surfacesColors = {};
     data.forEach((seg) => {
         addDataSet(types, seg, 'highway', typesColors);
-        addDataSet(types, seg, 'route', typesColors);
-        addDataSet(types, seg, 'railway', typesColors);
-        addDataSet(types, seg, 'aeroway', typesColors);
-        addDataSet(types, seg, 'aerialway', typesColors);
-        addDataSet(types, seg, 'piste:type', typesColors);
         addDataSet(surfaces, seg, 'surface', surfacesColors);
     });
+    console.log(typesColors);
     return {
         types: {
             datasets: types,
@@ -162,13 +159,33 @@ function smoothSlopes(data, alpha) {
 }
 
 function addDataSet(arr, seg, tag, colors) {
-    let res = createDataSet(seg, tag, colors);
+    const label = seg[tag];
+    let res;
+    if (label) {
+        const type = tag === SURFACE ? label : getRoadType(label);
+        if (!_.isEmpty(arr)) {
+            const prev = arr[arr.length - 1];
+            if (prev.label === type) {
+                arr.pop();
+                colors[type].distance += seg.distance;
+                const dist = Number(Math.round(seg.distance) / 1000);
+                prev.totalDist = (Number(prev.totalDist) + dist).toFixed(1);
+                prev.data = [(Number(prev.data) + dist).toFixed(1)];
+                prev.size += Number(seg.segment.ext.length - 1);
+                res = prev;
+            } else {
+                res = createDataSet(seg, tag, colors, arr);
+            }
+        } else {
+            res = createDataSet(seg, tag, colors, arr);
+        }
+    }
     if (res) {
         arr.push(res);
     }
 }
 
-function createDataSet(seg, tagName, colors) {
+function createDataSet(seg, tagName, colors, arr) {
     const label = seg[tagName];
     if (label) {
         let currentColor;
@@ -185,15 +202,19 @@ function createDataSet(seg, tagName, colors) {
                 };
             }
         }
+        const dist = Number(Math.round(seg.distance) / 1000);
+        const totalDist = !_.isEmpty(arr) ? Number(arr[arr.length - 1].totalDist) + dist : dist;
         return {
             label: type,
             type: 'bar',
             backgroundColor: currentColor,
             borderWidth: -1,
-            data: [Number(Math.round(seg.distance) / 1000)],
+            totalDist: totalDist,
+            data: [dist],
             barPercentage: 1.0,
             categoryPercentage: 1.0,
             index: seg.ind,
+            size: Number(seg.segment.ext.length - 1),
         };
     }
 }

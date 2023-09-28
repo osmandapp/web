@@ -114,7 +114,6 @@ export default function GpxGraph({
     const [maxMinData, setMaxMinData] = useState({});
     const [distRangeValue, setDistRangeValue] = useState([0, data.length - 1]);
     const [selectedPoint, setSelectedPoint] = useState(null);
-    const [activeIndex, setActiveIndex] = useState(null);
 
     const chartRef = useRef(null);
 
@@ -223,7 +222,7 @@ export default function GpxGraph({
 
     function showRange() {
         const defaultPos =
-            _.isEmpty(ctx.trackRange) || (ctx.trackRange[0] === 0 && ctx.trackRange[1] === data.length - 1);
+            _.isEmpty(ctx.trackRange) || (ctx.trackRange.range[0] === 0 && ctx.trackRange.range[1] === data.length - 1);
         return !defaultPos;
     }
 
@@ -260,10 +259,6 @@ export default function GpxGraph({
 
     function getMode() {
         return !showY1 && !showY2 && showSlope ? 'nearest' : 'myCustomMode';
-    }
-
-    function getSelectedBoxPosition(ind) {
-        return !_.isEmpty(ctx.trackRange) && data[ctx.trackRange[ind]] && data[ctx.trackRange[ind]][xAxis];
     }
 
     const options = useMemo(
@@ -339,8 +334,8 @@ export default function GpxGraph({
                         box1: {
                             display: showRange(),
                             type: 'box',
-                            xMin: getSelectedBoxPosition(0),
-                            xMax: getSelectedBoxPosition(1),
+                            xMin: !_.isEmpty(ctx.trackRange) && ctx.trackRange.dist[0],
+                            xMax: !_.isEmpty(ctx.trackRange) && ctx.trackRange.dist[1],
                             backgroundColor: 'rgb(169,169,169, 0.34)',
                             borderWidth: 0,
                         },
@@ -622,8 +617,6 @@ export default function GpxGraph({
                     data={attrGraphData.types}
                     width={width}
                     selectedPoint={selectedPoint}
-                    activeIndex={activeIndex}
-                    setActiveIndex={setActiveIndex}
                 />
             )}
             {attrGraphData?.surfaces && (
@@ -632,8 +625,6 @@ export default function GpxGraph({
                     data={attrGraphData.surfaces}
                     width={width}
                     selectedPoint={selectedPoint}
-                    activeIndex={activeIndex}
-                    setActiveIndex={setActiveIndex}
                 />
             )}
         </>
