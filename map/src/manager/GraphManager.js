@@ -17,10 +17,10 @@ export function generateDataSets(data) {
     let typesColors = {};
     let surfacesColors = {};
     data.forEach((seg) => {
-        addDataSet(types, seg, 'highway', typesColors);
-        addDataSet(surfaces, seg, 'surface', surfacesColors);
+        addDataSet(types, seg, HIGHWAY, typesColors);
+        addDataSet(surfaces, seg, SURFACE, surfacesColors);
     });
-    console.log(typesColors);
+
     return {
         types: {
             datasets: types,

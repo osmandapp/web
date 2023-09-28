@@ -897,6 +897,7 @@ export async function applySrtmElevation({ track, setLoading }) {
 
         analysis.isSrtmApplied = true; // mark as already applied
     }
+    console.log(newGpxFile);
     return newGpxFile;
 }
 

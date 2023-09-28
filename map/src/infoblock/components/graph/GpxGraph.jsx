@@ -353,7 +353,6 @@ export default function GpxGraph({
                         },
                         label: (context) => {
                             let label = context.dataset.label || '';
-                            let ind = data.findIndex((d) => d[xAxis] === Number(context.label));
                             if (label) {
                                 label += ': ';
                             }
@@ -366,17 +365,22 @@ export default function GpxGraph({
                             if (context.parsed.y !== null) {
                                 label += `${context.parsed.y.toFixed(0)} ${dimension}`;
                             }
+                            return label;
+                        },
+                        afterBody: (context) => {
                             let res = [];
-                            res.push(label);
-                            if (data[ind] && context.dataset.yAxisID !== 'y1Slope' && showSlope) {
+                            const ind = data.findIndex((d) => d[xAxis] === Number(context[0].label));
+                            //add slopes
+                            if (data[ind] && context[0].dataset.yAxisID !== 'y1Slope' && showSlope) {
                                 res.push(`Slope: ${data[ind]['Slope'].toFixed(0)} %`);
                             }
-                            if (ind && attrGraphData) {
+                            //add road attributes
+                            if (attrGraphData) {
                                 const resType = attrGraphData.types.datasets.find((d, i) => {
                                     return ind >= d.index && ind < attrGraphData.types.datasets[i + 1].index;
                                 });
                                 const resSurface = attrGraphData.surfaces.datasets.find(
-                                    (d, i) => ind >= d.index && ind < attrGraphData.types.datasets[i + 1].index
+                                    (d, i) => ind >= d.index && ind < attrGraphData.surfaces.datasets[i + 1].index
                                 );
                                 if (resType?.label !== UNDEFINED_DATA || resSurface?.label !== UNDEFINED_DATA) {
                                     res.push('-----------------------');
@@ -503,7 +507,7 @@ export default function GpxGraph({
                 },
             },
         }),
-        [data, ctx.trackRange]
+        [data, ctx.trackRange, showData]
     );
 
     const graphData = {
