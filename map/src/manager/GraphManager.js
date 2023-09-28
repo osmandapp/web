@@ -33,6 +33,10 @@ export function generateDataSets(data) {
     };
 }
 
+export function checkNextSegment(arr, arrI, selectedInd) {
+    return arrI > arr.length - 1 ? true : selectedInd < arr[arrI + 1]?.index;
+}
+
 export function checkShowData(value) {
     return value === '' ? false : value;
 }
@@ -169,8 +173,8 @@ function addDataSet(arr, seg, tag, colors) {
                 arr.pop();
                 colors[type].distance += seg.distance;
                 const dist = Number(Math.round(seg.distance) / 1000);
-                prev.totalDist = (Number(prev.totalDist) + dist).toFixed(1);
-                prev.data = [(Number(prev.data) + dist).toFixed(1)];
+                prev.totalDist = Number(prev.totalDist) + dist;
+                prev.data = [Number(prev.data) + dist];
                 prev.size += Number(seg.segment.ext.length - 1);
                 res = prev;
             } else {

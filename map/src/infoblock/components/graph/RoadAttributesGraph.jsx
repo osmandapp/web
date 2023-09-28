@@ -43,7 +43,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                         label: (context) => {
                             let label = context.dataset?.label || '';
                             if (label) {
-                                return `${cap(label)}: ${context.dataset.data} km`;
+                                return `${cap(label)}: ${Number(context.dataset.data).toFixed(1)} km`;
                             }
                         },
                     },

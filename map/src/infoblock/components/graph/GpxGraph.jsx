@@ -23,7 +23,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import { getRelativePosition } from 'chart.js/helpers';
 import RoadAttributesGraph from './RoadAttributesGraph';
-import { cap, UNDEFINED_DATA } from '../../../manager/GraphManager';
+import { cap, checkNextSegment, UNDEFINED_DATA } from '../../../manager/GraphManager';
 
 const mouseLine = {
     id: 'mouseLine',
@@ -376,19 +376,23 @@ export default function GpxGraph({
                             }
                             //add road attributes
                             if (attrGraphData) {
-                                const resType = attrGraphData.types.datasets.find((d, i) => {
-                                    return ind >= d.index && ind < attrGraphData.types.datasets[i + 1].index;
-                                });
-                                const resSurface = attrGraphData.surfaces.datasets.find(
-                                    (d, i) => ind >= d.index && ind < attrGraphData.surfaces.datasets[i + 1].index
+                                const resType = attrGraphData.types.datasets.find(
+                                    (d, i) => ind >= d.index && checkNextSegment(attrGraphData.types.datasets, i, ind)
                                 );
-                                if (resType?.label !== UNDEFINED_DATA || resSurface?.label !== UNDEFINED_DATA) {
+                                const resSurface = attrGraphData.surfaces.datasets.find(
+                                    (d, i) =>
+                                        ind >= d.index && checkNextSegment(attrGraphData.surfaces.datasets, i, ind)
+                                );
+                                const hasTypes = resType && resType.label !== UNDEFINED_DATA;
+                                const hasSurfaces = resSurface && resSurface.label !== UNDEFINED_DATA;
+
+                                if (hasTypes || hasSurfaces) {
                                     res.push('-----------------------');
                                 }
-                                if (resType && resType.label !== UNDEFINED_DATA) {
+                                if (hasTypes) {
                                     res.push(cap(resType.label));
                                 }
-                                if (resSurface && resSurface.label !== UNDEFINED_DATA) {
+                                if (hasSurfaces) {
                                     res.push(cap(resSurface.label));
                                 }
                             }
@@ -524,7 +528,7 @@ export default function GpxGraph({
                 max: maxEle,
                 fill: true,
                 yAxisID: 'y1',
-                pointRadius: 0,
+                pointRadius: data.length < 66 ? 2 : 0,
                 order: 2,
             },
             {
