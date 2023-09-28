@@ -538,7 +538,7 @@ export default function GeneralInfo({ width }) {
                             <Button
                                 id="se-infoblock-button-edit-cloud-track"
                                 variant="contained"
-                                sx={{ ml: '-0.5px !important' }}
+                                sx={{ ml: isRouteTrack(ctx) ? 0 : '-0.5px !important' }}
                                 className={styles.button}
                                 onClick={() => TracksManager.handleEditCloudTrack(ctx)}
                             >
