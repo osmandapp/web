@@ -24,7 +24,7 @@ const DATA_SIZE_KEY = 'dataSize';
 const TRACK_VISIBLE_FLAG = 'visible';
 const HOURS_24_MS = 86400000;
 const AUTO_SRTM_MAX_POINTS = 10000;
-const FIT_BOUNDS_OPTIONS = { maxZoom: 17 }; // don't fitBounds closer
+export const FIT_BOUNDS_OPTIONS = { maxZoom: 17 }; // don't fitBounds closer
 
 async function loadTracks(setLoading) {
     let localTracks = [];

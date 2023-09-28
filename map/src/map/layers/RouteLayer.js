@@ -3,6 +3,7 @@ import { Marker, GeoJSON, useMap, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import AppContext from '../../context/AppContext';
 import MarkerOptions from '../markers/MarkerOptions';
+import { FIT_BOUNDS_OPTIONS } from '../../manager/TracksManager';
 
 const DRAG_DEBOUNCE_MS = 10;
 
@@ -173,7 +174,7 @@ const RouteLayer = ({ geocodingData, region }) => {
 
     // filter features for GeoJSON
     const routeFilter = (feature /*, layer*/) => {
-        if (feature?.geometry?.type === 'Point' && routeObject.getOption('route.hidePoints') === true) {
+        if (feature?.geometry?.type === 'Point' && routeObject.getOption('route.map.hidePoints') === true) {
             return false;
         }
         return true;
@@ -228,12 +229,25 @@ const RouteLayer = ({ geocodingData, region }) => {
         }
     }, [ctx.searchCtx]);
 
+    // fitBounds (route)
+    // activated on route.map.zoom
+    const routeLayerRef = useRef(null);
+    const routeLayer = routeLayerRef.current;
+    const routeZoom = routeObject.getOption('route.map.zoom');
+    useEffect(() => {
+        if (routeLayer && routeZoom) {
+            routeObject.setOption('route.map.zoom', false);
+            map.fitBounds(routeLayer.getBounds(), { ...FIT_BOUNDS_OPTIONS, padding: [100, 100] }); // FIXME padding global
+        }
+    }, [routeZoom, routeLayer]);
+
     const passStyle = (f) => f.style; // pass geojson.features.style to set colors/etc
 
     return (
         <>
             {routeObject.getRoute() && (
                 <GeoJSON
+                    ref={routeLayerRef}
                     key={routeDataKey()}
                     data={routeObject.getRoute()}
                     style={passStyle}

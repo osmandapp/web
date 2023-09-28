@@ -93,13 +93,29 @@ export default function RouteMenu() {
     const btnFile = useRef();
 
     // auto switch between Navigation/Tracks menu
+    // additionally, trigger fitBounds (zoom) on route track open
     useEffect(() => {
         if (isRouteTrack(ctx)) {
             setOpen(true);
+            routeObject.setOption('route.map.zoom', true);
         } else if (isLocalTrack(ctx) || isCloudTrack(ctx)) {
             setOpen(false);
         }
     }, [ctx.currentObjectType]);
+
+    // auto zoom once Navigation menu open
+    // additionally, trigger fitBounds (zoom) always on menu open
+    // optionally, re-convert (get->put) to switch to route object type
+    useEffect(() => {
+        const route = routeObject.getRoute();
+        if (open && route) {
+            if (isRouteTrack(ctx) === false) {
+                routeObject.putRoute({ route: routeObject.getRoute() });
+            } else {
+                routeObject.setOption('route.map.zoom', true);
+            }
+        }
+    }, [open]);
 
     useEffect(() => {
         openSettings ? routeObject.onOpenSettings() : routeObject.onCloseSettings();
@@ -156,7 +172,7 @@ export default function RouteMenu() {
 
     const { type, profile } = routeObject.getProfile();
 
-    const routeOptions = ['hidePoints'];
+    const routeOptions = ['route.map.hidePoints'];
 
     return (
         <>
@@ -364,11 +380,11 @@ export default function RouteMenu() {
                                     sx={{ mt: '4px' }}
                                     onClick={() => routeObject.setOption('route.' + opt, (o) => !o)}
                                 >
-                                    {routeObject.getOptionText('route.' + opt)}
+                                    {routeObject.getOptionText(opt)}
                                 </Grid>
                                 <Grid item xs={2}>
                                     <Switch
-                                        checked={routeObject.getOption('route.' + opt)}
+                                        checked={routeObject.getOption(opt)}
                                         onChange={(e) => routeObject.setOption('route.' + opt, e.target.checked)}
                                     />
                                 </Grid>

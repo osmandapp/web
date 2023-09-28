@@ -37,7 +37,6 @@ export function putRoute({ route, skipConversion = false }) {
             start: this.getOption('route.points.start'),
             finish: this.getOption('route.points.finish'),
             viaPoints: this.getOption('route.points.viaPoints'),
-            // hidePoints: this.getOption('route.hidePoints'),
         });
 
         this.flushState((o) => {

@@ -9,7 +9,7 @@ export function getRoute() {
 }
 
 export function getRouteKey() {
-    return md5(this.id + JSON.stringify(this.options.route));
+    return md5(this.id + this.getOption('route.points') + this.getOption('route.map.hidePoints'));
 }
 
 export function getRouteProps(route = this.route) {
@@ -21,8 +21,7 @@ export function getRouteProps(route = this.route) {
 export function getRouteEffectDeps() {
     return JSON.stringify({
         allPoints: this.getOption('route.points'),
-        // hidePoints: this.getOption('route.hidePoints'),
-        // useApproximate: this.getOption('route.useApproximate'),
+        // hidePoints: this.getOption('route.map.hidePoints'),
     });
 }
 
