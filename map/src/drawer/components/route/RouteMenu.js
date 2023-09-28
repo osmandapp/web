@@ -378,14 +378,14 @@ export default function RouteMenu() {
                                     item
                                     xs={10}
                                     sx={{ mt: '4px' }}
-                                    onClick={() => routeObject.setOption('route.' + opt, (o) => !o)}
+                                    onClick={() => routeObject.setOption(opt, (o) => !o)}
                                 >
                                     {routeObject.getOptionText(opt)}
                                 </Grid>
                                 <Grid item xs={2}>
                                     <Switch
                                         checked={routeObject.getOption(opt)}
-                                        onChange={(e) => routeObject.setOption('route.' + opt, e.target.checked)}
+                                        onChange={(e) => routeObject.setOption(opt, e.target.checked)}
                                     />
                                 </Grid>
                             </Grid>
