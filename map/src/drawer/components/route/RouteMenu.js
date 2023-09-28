@@ -19,7 +19,7 @@ import {
     Grid,
 } from '@mui/material';
 import { ExpandLess, ExpandMore, Directions } from '@mui/icons-material';
-import AppContext from '../../../context/AppContext';
+import AppContext, { isLocalTrack, isCloudTrack, isRouteTrack } from '../../../context/AppContext';
 import RouteProfileSettingsDialog from '../../../dialogs/RouteProfileSettingsDialog';
 import { TextField } from '@mui/material/';
 import { LatLng } from 'leaflet';
@@ -91,6 +91,15 @@ export default function RouteMenu() {
     const [finish, setFinish] = useState('');
     const [openSettings, setOpenSettings] = useState(false);
     const btnFile = useRef();
+
+    // auto switch between Navigation/Tracks menu
+    useEffect(() => {
+        if (isRouteTrack(ctx)) {
+            setOpen(true);
+        } else if (isLocalTrack(ctx) || isCloudTrack(ctx)) {
+            setOpen(false);
+        }
+    }, [ctx.currentObjectType]);
 
     useEffect(() => {
         openSettings ? routeObject.onOpenSettings() : routeObject.onCloseSettings();

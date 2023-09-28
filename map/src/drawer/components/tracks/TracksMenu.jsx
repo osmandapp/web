@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Typography, ListItemText, Collapse, MenuItem, ListItemIcon, LinearProgress } from '@mui/material';
 import { DirectionsWalk, ExpandLess, ExpandMore } from '@mui/icons-material';
-import AppContext from '../../../context/AppContext';
+import AppContext, { isLocalTrack, isCloudTrack, isRouteTrack } from '../../../context/AppContext';
 import { toHHMMSS } from '../../../util/Utils';
 import CloudTrackGroup from './CloudTrackGroup';
 import LocalTrackGroup from './LocalTrackGroup';
@@ -19,6 +19,15 @@ export default function TracksMenu() {
     function visibleTracksOpen() {
         return visibleTracks.local.length > 0 || visibleTracks.cloud.length > 0;
     }
+
+    // auto switch between Navigation/Tracks menu
+    useEffect(() => {
+        if (isLocalTrack(ctx) || isCloudTrack(ctx)) {
+            setTracksGroupsOpen(true);
+        } else if (isRouteTrack(ctx)) {
+            setTracksGroupsOpen(false);
+        }
+    }, [ctx.currentObjectType]);
 
     useEffect(() => {
         if (ctx.gpxFiles) {
