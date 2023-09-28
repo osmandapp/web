@@ -3,7 +3,7 @@ import FavoritesManager from './FavoritesManager';
 import _ from 'lodash';
 import { apiGet, apiPost } from '../util/HttpApi';
 import { compressFromJSON, decompressToJSON } from '../util/GzipBase64.mjs';
-import { isRouteTrack, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_LOCAL_TRACK } from '../context/AppContext';
+import { isCloudTrack, isRouteTrack, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_LOCAL_TRACK } from '../context/AppContext';
 import { confirm } from '../dialogs/GlobalConfirmationDialog';
 import L from 'leaflet';
 import MarkerOptions from '../map/markers/MarkerOptions';
@@ -273,7 +273,7 @@ function handleEditCloudTrack(ctx) {
             ctx.setCurrentObjectType(OBJECT_TYPE_LOCAL_TRACK);
             ctx.routeObject.setOption('route.map.conceal', true);
         }
-        addTrack({ ctx, track, overwrite: true });
+        addTrack({ ctx, track, overwrite: true, cloudAutoSave: isCloudTrack(ctx) });
         ctx.setUpdateInfoBlock(true);
     }
 
@@ -285,7 +285,7 @@ function handleEditCloudTrack(ctx) {
     });
 }
 
-function addTrack({ ctx, track, selected = true, overwrite = false } = {}) {
+function addTrack({ ctx, track, selected = true, overwrite = false, cloudAutoSave = false } = {}) {
     const newLocalTracks = [...ctx.localTracks];
 
     const originalName = track.name;
@@ -313,7 +313,7 @@ function addTrack({ ctx, track, selected = true, overwrite = false } = {}) {
 
     if (selected === true) {
         // upload 1 gpx - edit instantly
-        openNewLocalTrack(ctx, track, overwrite);
+        openNewLocalTrack({ ctx, track, cloudAutoSave });
     } else {
         // used when multi-gpx uploaded
         // generate points and save track
@@ -382,11 +382,11 @@ function hasGeo(track) {
 // set copy of track with .overwrite <bool> and .selected = true
 // overwrite flag used later when re-uploading (save to cloud)
 // set type of current object, enable editor with "edit" flag
-function openNewLocalTrack(ctx, track, overwrite = false) {
+function openNewLocalTrack({ ctx, track, cloudAutoSave = false }) {
     const createState = {
         enable: true, // start-editor
         edit: true,
-        cloudAutoSave: overwrite,
+        cloudAutoSave,
     };
 
     // cleanup

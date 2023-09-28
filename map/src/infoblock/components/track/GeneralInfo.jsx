@@ -500,37 +500,39 @@ export default function GeneralInfo({ width }) {
                                   </>
                               )}
                     </div>
-                    {ctx.loginUser && isLocalTrack(ctx) && isEmptyTrack(ctx.selectedGpxFile) === false && (
-                        <>
-                            <Button
-                                id="se-infoblock-button-save-to-cloud"
-                                variant="contained"
-                                sx={{ ml: '-0.5px !important' }}
-                                className={styles.button}
-                                onClick={() => {
-                                    ctx.selectedGpxFile.save = true;
-                                    ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-                                }}
-                            >
-                                <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
-                                Save to Cloud
-                            </Button>
-                            {ctx.createTrack?.cloudAutoSave && (
+                    {ctx.loginUser &&
+                        (isLocalTrack(ctx) || isRouteTrack(ctx)) &&
+                        isEmptyTrack(ctx.selectedGpxFile) === false && (
+                            <>
                                 <Button
+                                    id="se-infoblock-button-save-to-cloud"
                                     variant="contained"
+                                    sx={{ ml: '-0.5px !important' }}
                                     className={styles.button}
                                     onClick={() => {
                                         ctx.selectedGpxFile.save = true;
                                         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-                                        ctx.setCreateTrack({ ...ctx.createTrack, cloudAutoSave: false });
                                     }}
                                 >
                                     <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
-                                    Save as
+                                    Save to Cloud
                                 </Button>
-                            )}
-                        </>
-                    )}
+                                {ctx.createTrack?.cloudAutoSave && (
+                                    <Button
+                                        variant="contained"
+                                        className={styles.button}
+                                        onClick={() => {
+                                            ctx.selectedGpxFile.save = true;
+                                            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+                                            ctx.setCreateTrack({ ...ctx.createTrack, cloudAutoSave: false });
+                                        }}
+                                    >
+                                        <CloudUpload fontSize="small" sx={{ mr: '7px' }} />
+                                        Save as
+                                    </Button>
+                                )}
+                            </>
+                        )}
                     {!ctx.createTrack && (isCloudTrack(ctx) || isRouteTrack(ctx)) && (
                         <>
                             <Button
