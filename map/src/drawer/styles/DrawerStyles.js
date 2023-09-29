@@ -13,14 +13,6 @@ const drawerStyles = makeStyles({
         minWidth: '120px !important',
         minHeight: '40px',
     },
-    logo: {
-        '& .MuiSvgIcon-root': {
-            width: '32px !important',
-            height: '32px !important',
-        },
-        ml: -1,
-        mt: -0.5,
-    },
 });
 
 export default drawerStyles;
