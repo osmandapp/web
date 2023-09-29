@@ -23,21 +23,93 @@ Revolutionary changes we made in 4.6 OsmAnd release for Android devices. Go ahea
 <!--truncate-->
 
 
-* Glide Ratio Widget
-* Added ANT+ temperature widget
-* New help screen with offline support
-* Better memory management for large GPX tracks
+* Widget updates
+   * Updates for top/bottom panels
+   * Glide Ratio Widget
+   * Added Temperature widget
 * Redesigned "Local" - Maps & Resources
-* New documentation for mobile
-* Filters for tracks search
-* Custom Quick Action buttons*
-* Simple widgets for top/bottom panel
-* Add row support for Top / Bottom panels – Configure Screen
-* Redesign weather screen
+* Better memory management for large GPX tracks
 * Smart Folder - Tracks
+* Filters for tracks search
+* Better memory management for large GPX tracks
+* Custom Quick Action buttons
 * Trash - OsmAnd Cloud
+* New help screen with offline support
+* Redesign weather screen
 
-_______________________________________________
+
+## Widget updates
+
+We've done a lot work on the widgets and it interface.
+
+
+###  Updates for Top/Bottom panel
+
+1. Added ability to add/remove rows for top/bottom panel: 
+
+_OsmAnd menu → Configure screen → [Widgets (Top / Bottom panel)](https://osmand.net/docs/user/widgets/configure-screen#top--bottom-panel-widgets) → Edit → Add row_
+
+| View mode  | Edit mode   |
+|-----|------|
+| ![Row](./img/row.png)|![Row](./img/row_1.png)
+
+
+2. Added support 3 size simple widgets: L / M / S. There is ability to add more then one widget in a row.
+
+|  |   |
+|-----|------|
+| ![Row](./img/row_2.png)|![Row](./img/row_3.png)
+
+### Added Glide Ratio Widgets
+
+![Glide ratio](./img/glide_ratio.png)
+
+Simple _[Glide Ration](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio)_ widgets were added for Aircraft usage. Widgets show the glide ration to the target or avearge glide for the current trip:
+
+ _OsmAnd menu → Configure screen → Widgets (Left / Right panel) → [Glide ratio to target](https://osmand.net/docs/user/widgets/info-widgets/#glide-ratio)_ and [_Average glide ratio_](https://osmand.net/docs/user/widgets/info-widgets/#glide-ratio)
+
+- _Glide ratio to target_ shows the glide ration needed to reach the target point.
+- _Average glide ratio_ shows the average glide ratio for the set interval. For this widget you can specify the time interval for glide averaging.
+
+|Glide ration widgets| Widgets on the screen|
+|--------|---------|
+|![Glide ratio](./img/glide_ratio_1.png)|![Glide ratio](./img/glide_ratio_2.png)|
+
+### Added Temperature widget
+
+We added the new external widget ([External sensor plugin](https://osmand.net/docs/user/plugins/external-sensors/#overview)) which show the tempetarute sensor data. Read more how to connect a sensor to OsmAnd [here](https://osmand.net/docs/user/plugins/external-sensors/#setup).
+
+Next you need [to add the temperature widget](https://osmand.net/docs/user/widgets/configure-screen/#right--left-panel-widgets) to the OsmAnd screen:
+
+_Menu → Configure screen → [Left panel /Right panel](https://osmand.net/docs/user/widgets/configure-screen/#right--left-panel-widgets) → External sensors → Temperature_
+
+|   |   |
+|--------|---------|
+|![Temperature](./img/temp.png)|![Temperature](./img/temp_1.png)|
+
+
+## Redesigned "Local" menu
+
+_Local menu_ contains more info about OsmAnd data:
+_Menu → Download maps (Maps & Resources) → Local_. 
+
+- _Resources_: Standart Maps; Terrain maps; Wikipedia and Travel maps; Nautical Maps; Weather; Map sources; Rendering styles; Routing; Cache.
+- _My Places_: Favorites; Tracks; OSM Notes; OSM Edits; A/V Notes; Map markers; History; Itinerary.
+- _Settings_: Profiles; Other.
+
+| Resources  | My places  |  Settings   |
+|--------|---------|---------|
+|![Local](./img/local.png)|![Local](./img/local_1.png)|![Local](./img/local_2.png)|
+
+
+You can choose each item subcategories for opening subcategories screen and it options:
+
+| Terrain maps  | Tracks  |
+|--------|---------|
+|![Local](./img/local_3.png)|![Local](./img/local_4.png)|
+
+
+________________________________________
 
 <LinksSocial/>
 <LinksTelegram/>
