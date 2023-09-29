@@ -1,15 +1,15 @@
 import { useContext, useEffect, useState } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext, { isCloudTrack, OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider, { redrawWptsOnLayer } from '../TrackLayerProvider';
-import TracksManager from '../../manager/TracksManager';
+import TracksManager, { fitBoundsOptions } from '../../manager/TracksManager';
 import { useMutator } from '../../util/Utils';
 
 function clickHandler({ ctx, file, layer }) {
     if (file.name !== ctx.selectedGpxFile.name || ctx.infoBlockWidth === '0px') {
         file.analysis = TracksManager.prepareAnalysis(file.analysis);
         ctx.setSelectedGpxFile({ ...file, cloudRedrawWpts: true });
-        const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
+        const type = OBJECT_TYPE_CLOUD_TRACK;
         ctx.setCurrentObjectType(type);
         ctx.setUpdateInfoBlock(true);
         layer.off('click'); // once
@@ -22,7 +22,7 @@ function addTrackToMap({ ctx, file, map, fit = true } = {}) {
     layer.on('click', () => clickHandler({ ctx, file, layer }));
 
     if (fit) {
-        map.fitBounds(layer.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
+        map.fitBounds(layer.getBounds(), fitBoundsOptions(ctx));
     }
     layer.addTo(map);
     return layer;
@@ -79,9 +79,9 @@ const CloudTrackLayer = () => {
 
     // control zoom-fit for cloud tracks
     useEffect(() => {
-        if (ctxTrack && ctxTrack.gpx && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK) {
+        if (ctxTrack && ctxTrack.gpx && isCloudTrack(ctx)) {
             if (ctxTrack.zoom) {
-                map.fitBounds(ctxTrack.gpx.getBounds(), TracksManager.FIT_BOUNDS_OPTIONS);
+                map.fitBounds(ctxTrack.gpx.getBounds(), fitBoundsOptions(ctx));
                 ctx.setSelectedGpxFile((o) => ({ ...o, zoom: false }));
             } else if (ctxTrack.cloudRedrawWpts) {
                 // skip processing if layer is removed

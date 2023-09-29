@@ -15,8 +15,11 @@ export class geoObject extends geoRouter {
 
     options = {
         route: {
-            hidePoints: false,
-            useApproximate: false,
+            map: {
+                zoom: false,
+                conceal: false,
+                hidePoints: false,
+            },
             points: {
                 start: null,
                 finish: null,
@@ -28,8 +31,9 @@ export class geoObject extends geoRouter {
 
     optionsText = {
         route: {
-            hidePoints: 'Hide navigation points',
-            useApproximate: 'Generate advanced details',
+            map: {
+                hidePoints: 'Hide navigation points',
+            },
         },
     };
 

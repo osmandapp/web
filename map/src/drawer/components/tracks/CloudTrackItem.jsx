@@ -1,4 +1,4 @@
-import AppContext from '../../../context/AppContext';
+import AppContext, { OBJECT_TYPE_CLOUD_TRACK } from '../../../context/AppContext';
 import { Alert, LinearProgress, ListItemText, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
 import { useContext, useState, useMemo, useEffect } from 'react';
 import Utils from '../../../util/Utils';
@@ -57,7 +57,7 @@ export default function CloudTrackItem({ file, customIcon = null }) {
         if (file.url || ctx.gpxFiles[file.name]?.url) {
             // if (file.name !== ctx.selectedGpxFile.name) { ...
             ctx.setUpdateInfoBlock(true);
-            ctx.setCurrentObjectType(ctx.OBJECT_TYPE_CLOUD_TRACK);
+            ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
             ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoom: true, cloudRedrawWpts: true });
         } else {
             setProgressVisible(true);
@@ -79,7 +79,7 @@ export default function CloudTrackItem({ file, customIcon = null }) {
             if (!track) {
                 setError('Something went wrong!');
             } else if (isEmptyTrack(track) === false) {
-                const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
+                const type = OBJECT_TYPE_CLOUD_TRACK;
                 ctx.setCurrentObjectType(type);
 
                 track.name = file.name;

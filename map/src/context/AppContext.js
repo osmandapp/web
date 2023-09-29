@@ -10,29 +10,22 @@ import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import { geoObject } from '../store/geoObject/geoObject.js';
 import WeatherManager from '../manager/WeatherManager';
 
+export const OBJECT_TYPE_LOCAL_TRACK = 'local_track';
+export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track';
+export const OBJECT_TYPE_ROUTE_TRACK = 'route_track';
+export const OBJECT_TYPE_FAVORITE = 'favorite';
+export const OBJECT_TYPE_WEATHER = 'weather';
+export const OBJECT_TYPE_POI = 'poi';
+
+export const isLocalTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK;
+export const isCloudTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK;
+export const isRouteTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_ROUTE_TRACK;
+
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
     key: 'mapniktile',
     tileSize: 512,
     url: 'https://tile.osmand.net/hd/{z}/{x}/{y}.png',
-};
-
-export const toHHMMSS = function (time) {
-    var sec_num = time / 1000;
-    var hours = Math.floor(sec_num / 3600);
-    var minutes = Math.floor((sec_num - hours * 3600) / 60);
-    var seconds = sec_num - hours * 3600 - minutes * 60;
-
-    if (hours < 10) {
-        hours = '0' + hours;
-    }
-    if (minutes < 10) {
-        minutes = '0' + minutes;
-    }
-    if (seconds < 10) {
-        seconds = '0' + Math.round(seconds);
-    }
-    return hours + ':' + minutes + ':' + seconds;
 };
 
 async function loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, gpxFiles, setGpxFiles, setFavorites) {
@@ -198,15 +191,10 @@ async function loadTileUrls(setAllTileURLs) {
 const AppContext = React.createContext();
 
 export const AppContextProvider = (props) => {
-    const OBJECT_TYPE_FAVORITE = 'favorite';
-    const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track';
-    const OBJECT_TYPE_LOCAL_CLIENT_TRACK = 'local_client_track';
-    const OBJECT_TYPE_WEATHER = 'weather';
-    const OBJECT_TYPE_POI = 'poi';
-
     seleniumUpdateActivity();
 
     const [globalConfirmation, setGlobalConfirmation] = useState(null);
+    const [fitBoundsPadding, mutateFitBoundsPadding] = useMutator({ left: 0, top: 0, right: 0, bottom: 0 });
 
     const searchParams = new URLSearchParams(window.location.search);
     const [weatherLayers, setWeatherLayers] = useState(WeatherManager.getLayers());
@@ -393,11 +381,6 @@ export const AppContextProvider = (props) => {
                 setHeaderText,
                 tracksGroups,
                 setTracksGroups,
-                OBJECT_TYPE_FAVORITE,
-                OBJECT_TYPE_CLOUD_TRACK,
-                OBJECT_TYPE_LOCAL_CLIENT_TRACK,
-                OBJECT_TYPE_WEATHER,
-                OBJECT_TYPE_POI,
                 createTrack,
                 setCreateTrack,
                 gpxCollection,
@@ -441,6 +424,8 @@ export const AppContextProvider = (props) => {
                 wantDeleteAcc,
                 setWantDeleteAcc,
                 routeObject,
+                fitBoundsPadding,
+                mutateFitBoundsPadding,
             }}
         >
             {props.children}

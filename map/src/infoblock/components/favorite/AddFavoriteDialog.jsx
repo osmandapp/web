@@ -5,7 +5,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import React, { useContext, useEffect, useState } from 'react';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
-import AppContext from '../../../context/AppContext';
+import AppContext, { OBJECT_TYPE_FAVORITE } from '../../../context/AppContext';
 import { Add, Close } from '@mui/icons-material';
 import MarkerOptions from '../../../map/markers/MarkerOptions';
 import FavoriteName from './structure/FavoriteName';
@@ -159,7 +159,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen }) {
         }
         let result = await FavoritesManager.addFavorite(favorite, selectedGroup.file.name, selectedGroup.updatetimems);
         if (result) {
-            let type = ctx.OBJECT_TYPE_FAVORITE;
+            let type = OBJECT_TYPE_FAVORITE;
             ctx.setCurrentObjectType(type);
             ctx.setUpdateInfoBlock(true);
             updateGroupMarkers(result, selectedGroup).then();

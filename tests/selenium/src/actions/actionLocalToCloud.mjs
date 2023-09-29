@@ -27,7 +27,7 @@ export async function saveToCloud(name) {
     await clickBy(By.id('se-panel-button-save-to-cloud'));
     await clickBy(By.id('se-submit-save-to-cloud'));
     await clickBy(By.id('se-overwrite-cloud-track'), { optional: true });
-    await waitBy(By.id('se-panel-button-edit-cloud-track'));
+    await waitBy(By.id('se-panel-button-edit-track'));
 
     await clickBy(By.id('se-show-main-menu'));
 

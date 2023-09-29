@@ -11,7 +11,7 @@ export function getOptionText(key) {
 }
 
 /**
- * Param: key <String> path to option, fox example 'route.hidePoints'
+ * Param: key <String> path to option, fox example 'route.map.hidePoints'
  * Param: val <Function>|<Any> new value or function (oldVal) => return newVal
  *
  * Note: setOption() would never set val as a *new* Object|Array

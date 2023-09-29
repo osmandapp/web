@@ -14,7 +14,7 @@ import {
 import { Close, Folder, LocationOn } from '@mui/icons-material';
 import DialogActions from '@mui/material/DialogActions';
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext from '../context/AppContext';
+import AppContext, { isLocalTrack } from '../context/AppContext';
 import FavoritesManager from '../manager/FavoritesManager';
 import contextMenuStyles from '../infoblock/styles/ContextMenuStyles';
 import { makeStyles } from '@material-ui/core/styles';
@@ -154,7 +154,7 @@ export default function WptMapDialog() {
                             )}
                         </Typography>
                     </DialogContent>
-                    {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                    {isLocalTrack(ctx) && (
                         <DialogActions sx={{ display: 'inline' }}>
                             <Link sx={{ fontSize: '10pt', mx: 2 }} href="#" color="inherit" onClick={enableWptDragging}>
                                 Move this waypoint

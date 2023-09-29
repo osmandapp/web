@@ -84,17 +84,14 @@ async function getFileData(file) {
     return trackData;
 }
 
-const getDistance = (lat1, lon1, lat2, lon2) => {
+export const getDistance = (lat1, lon1, lat2, lon2) => {
     const R = 6372.8; // for haversine use R = 6372.8 km instead of 6371 km
     const dLat = toRadians(lat2 - lat1);
     const dLon = toRadians(lon2 - lon1);
     const a =
         Math.sin(dLat / 2) * Math.sin(dLat / 2) +
         Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
-    //double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-    //return R * c * 1000;
-    // simplyfy haversine:
-    return 2 * R * 1000 * Math.asin(Math.sqrt(a));
+    return parseFloat(Number(2 * R * 1000 * Math.asin(Math.sqrt(a))).toFixed(2)); // precision 1 cm is enough
 };
 
 const toRadians = (angdeg) => {
@@ -135,6 +132,24 @@ function hexToArgb(hex) {
     const alphaString = alpha === 1 ? '' : ` / ${Number((alpha * 100).toFixed(2))}%`;
     return `rgb(${red} ${green} ${blue}${alphaString})`;
 }
+
+export const toHHMMSS = function (time) {
+    var sec_num = time / 1000;
+    var hours = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - hours * 3600) / 60);
+    var seconds = sec_num - hours * 3600 - minutes * 60;
+
+    if (hours < 10) {
+        hours = '0' + hours;
+    }
+    if (minutes < 10) {
+        minutes = '0' + minutes;
+    }
+    if (seconds < 10) {
+        seconds = '0' + Math.round(seconds);
+    }
+    return hours + ':' + minutes + ':' + seconds;
+};
 
 /*
     Prepare string with NaN/Infinity before JSON.parse()
@@ -225,7 +240,7 @@ export function measure(f, ms = 1000) {
         result = f();
     } while (Date.now() < started + ms);
     const delta = Date.now() - started;
-    console.debug(f.name, '~', counter * (ms / delta) * (1000 / ms), 'per second');
+    console.debug(f.name, '~', parseFloat(Number(counter * (ms / delta) * (1000 / ms)).toFixed(2)), 'per second');
     return result;
 }
 

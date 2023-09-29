@@ -1,6 +1,7 @@
 import { Air, Cloud, Compress, Shower, Thermostat } from '@mui/icons-material';
 import React from 'react';
 import { apiGet } from '../util/HttpApi';
+import { OBJECT_TYPE_WEATHER } from '../context/AppContext';
 
 function getLayers() {
     let allLayers = {};
@@ -57,7 +58,7 @@ async function displayWeatherForecast(ctx, setWeatherPoint, weatherType) {
         data.week = await responseWeek.json();
     }
     setWeatherPoint(data);
-    let type = ctx.OBJECT_TYPE_WEATHER;
+    let type = OBJECT_TYPE_WEATHER;
     ctx.setCurrentObjectType(type);
 }
 

@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useContext, useCallback } from 'react';
 import { Marker, GeoJSON, useMap, Popup } from 'react-leaflet';
 import L from 'leaflet';
-import AppContext from '../../context/AppContext';
+import AppContext, { isRouteTrack } from '../../context/AppContext';
 import MarkerOptions from '../markers/MarkerOptions';
+import { fitBoundsOptions } from '../../manager/TracksManager';
 
 const DRAG_DEBOUNCE_MS = 10;
 
@@ -173,14 +174,11 @@ const RouteLayer = ({ geocodingData, region }) => {
 
     // filter features for GeoJSON
     const routeFilter = (feature /*, layer*/) => {
-        if (feature?.geometry?.type === 'Point' && routeObject.getOption('route.hidePoints') === true) {
+        if (feature?.geometry?.type === 'Point' && routeObject.getOption('route.map.hidePoints') === true) {
             return false;
         }
         return true;
     };
-
-    // GeoJSON requires dynamic key to refresh/refilter
-    const routeDataKey = () => routeObject.getRouteKey();
 
     const pointToLayer = (feature, latlng) => {
         let opts = Object.assign({}, geojsonMarkerOptions);
@@ -228,13 +226,60 @@ const RouteLayer = ({ geocodingData, region }) => {
         }
     }, [ctx.searchCtx]);
 
+    // GeoJSON requires dynamic key to refresh/refilter
+    // used to redraw layer(s) killed after Local Track Editor
+    const refreshKey = isRouteTrack(ctx).toString();
+    const routeDataKey = routeObject.getRouteKey() + refreshKey;
+
+    const routeLayerRef = useRef(null);
+    const routeLayer = routeLayerRef.current;
+
+    const viaLayersRef = useRef([]);
+
+    // fitBounds (route)
+    // activated on route.map.zoom
+    const routeZoom = routeObject.getOption('route.map.zoom');
+    useEffect(() => {
+        if (routeLayer && routeZoom) {
+            routeObject.setOption('route.map.zoom', false);
+            map.fitBounds(routeLayer.getBounds(), fitBoundsOptions(ctx));
+        }
+    }, [routeZoom, routeLayer]);
+
+    // conceal (remove layer)
+    // activated on route.map.conceal
+    // dep on routeLayer to concel refreshed layer again
+    const routeConceal = routeObject.getOption('route.map.conceal');
+    useEffect(() => {
+        if (routeLayer && routeConceal) {
+            // stop conceal only when isRouteTrack mode started
+            if (isRouteTrack(ctx)) {
+                routeObject.setOption('route.map.conceal', false);
+            }
+
+            // avoid conceal if zoom is requested
+            if (routeZoom === false) {
+                map.removeLayer(routeLayer);
+
+                // remove start, finish
+                map.removeLayer(startPointRef.current);
+                map.removeLayer(finishPointRef.current);
+
+                // remove viaPoints (ref array) and reset the array
+                viaLayersRef.current.forEach((m) => m && map.removeLayer(m));
+                viaLayersRef.current = [];
+            }
+        }
+    }, [routeConceal, routeLayer]);
+
     const passStyle = (f) => f.style; // pass geojson.features.style to set colors/etc
 
     return (
         <>
             {routeObject.getRoute() && (
                 <GeoJSON
-                    key={routeDataKey()}
+                    ref={routeLayerRef}
+                    key={routeDataKey}
                     data={routeObject.getRoute()}
                     style={passStyle}
                     pointToLayer={pointToLayer}
@@ -244,7 +289,7 @@ const RouteLayer = ({ geocodingData, region }) => {
             )}
             {geocodingData && (
                 <GeoJSON
-                    key={geocodingData.id}
+                    key={geocodingData.id + refreshKey}
                     data={geocodingData.geojson}
                     pointToLayer={pointToLayerGeoData}
                     onEachFeature={onEachFeature}
@@ -252,7 +297,7 @@ const RouteLayer = ({ geocodingData, region }) => {
             )}
             {ctx.searchCtx.geojson && (
                 <GeoJSON
-                    key={ctx.searchCtx.id}
+                    key={ctx.searchCtx.id + refreshKey}
                     data={ctx.searchCtx.geojson}
                     pointToLayer={pointToLayerSearch}
                     onEachFeature={onEachFeature}
@@ -260,6 +305,7 @@ const RouteLayer = ({ geocodingData, region }) => {
             )}
             {startPoint && (
                 <Marker
+                    key={'mark-start' + refreshKey}
                     position={startPoint}
                     icon={MarkerOptions.options.startIcon}
                     ref={startPointRef}
@@ -269,7 +315,8 @@ const RouteLayer = ({ geocodingData, region }) => {
             )}
             {viaPoints.map((it, ind) => (
                 <Marker
-                    key={'mark' + ind}
+                    ref={(m) => m && viaLayersRef.current.push(m)}
+                    key={'mark-via' + ind + refreshKey}
                     data-index={ind}
                     position={it}
                     icon={MarkerOptions.options.interIcon}
@@ -279,6 +326,7 @@ const RouteLayer = ({ geocodingData, region }) => {
             ))}
             {finishPoint && (
                 <Marker
+                    key={'mark-finish' + refreshKey}
                     position={finishPoint}
                     icon={MarkerOptions.options.endIcon}
                     ref={finishPointRef}
@@ -288,6 +336,7 @@ const RouteLayer = ({ geocodingData, region }) => {
             )}
             {ctx.pinPoint && (
                 <Marker
+                    key={'pin-point' + refreshKey}
                     position={ctx.pinPoint}
                     icon={MarkerOptions.options.pointerIcons}
                     ref={pinPointRef}

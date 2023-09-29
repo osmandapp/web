@@ -1,14 +1,9 @@
 import { apiGet, apiPost } from '../../../util/HttpApi';
 import Utils, { quickNaNfix } from '../../../util/Utils';
 import TracksManager from '../../../manager/TracksManager';
+import { defaultPointExtras } from '../../geoObject/convert/convertRouteToTrack';
 
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
-
-const defaultPointExtras = {
-    srtmEle: null,
-    ele: TracksManager.NAN_MARKER,
-    ext: { ele: TracksManager.NAN_MARKER, extensions: {} }, // getTrackWithAnalysis requires ext.extensions
-};
 
 export async function updateRouteBetweenPoints(ctx, start, end, geoProfile = this?.getGeoProfile()) {
     const routers = {

@@ -3,6 +3,7 @@ import FavoritesManager from './FavoritesManager';
 import _ from 'lodash';
 import { apiGet, apiPost } from '../util/HttpApi';
 import { compressFromJSON, decompressToJSON } from '../util/GzipBase64.mjs';
+import { isCloudTrack, isRouteTrack, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_LOCAL_TRACK } from '../context/AppContext';
 import { confirm } from '../dialogs/GlobalConfirmationDialog';
 import L from 'leaflet';
 import MarkerOptions from '../map/markers/MarkerOptions';
@@ -11,10 +12,10 @@ import anchorme from 'anchorme';
 const GPX_FILE_TYPE = 'GPX';
 const GET_SRTM_DATA = 'get-srtm-data';
 const GET_ANALYSIS = 'get-analysis';
-const PROFILE_LINE = 'line';
+export const PROFILE_LINE = 'line';
 const PROFILE_CAR = 'car';
 const PROFILE_GAP = 'gap';
-const NAN_MARKER = 99999;
+export const NAN_MARKER = 99999;
 const CHANGE_PROFILE_BEFORE = 'before';
 const CHANGE_PROFILE_AFTER = 'after';
 const CHANGE_PROFILE_ALL = 'all';
@@ -23,7 +24,15 @@ const DATA_SIZE_KEY = 'dataSize';
 const TRACK_VISIBLE_FLAG = 'visible';
 const HOURS_24_MS = 86400000;
 const AUTO_SRTM_MAX_POINTS = 10000;
-const FIT_BOUNDS_OPTIONS = { maxZoom: 17 }; // don't fitBounds closer
+const FIT_BOUNDS_MAX_ZOOM = 17;
+
+export function fitBoundsOptions(ctx) {
+    return {
+        maxZoom: FIT_BOUNDS_MAX_ZOOM,
+        paddingTopLeft: [ctx.fitBoundsPadding.left, ctx.fitBoundsPadding.top],
+        paddingBottomRight: [ctx.fitBoundsPadding.right, ctx.fitBoundsPadding.bottom],
+    };
+}
 
 async function loadTracks(setLoading) {
     let localTracks = [];
@@ -139,7 +148,7 @@ async function updateLocalTracks(tracks) {
     }
 }
 
-function prepareLocalTrack(track) {
+export function prepareLocalTrack(track) {
     const prepareTrack = _.cloneDeep(track);
     return {
         name: prepareTrack.name,
@@ -260,7 +269,11 @@ function handleEditCloudTrack(ctx) {
     const localTrackNotFound = !ctx.localTracks.find((t) => t.name === name);
 
     function proceed() {
-        addTrack({ ctx, track, overwrite: true });
+        if (isRouteTrack(ctx)) {
+            ctx.setCurrentObjectType(OBJECT_TYPE_LOCAL_TRACK);
+            ctx.routeObject.setOption('route.map.conceal', true);
+        }
+        addTrack({ ctx, track, overwrite: true, cloudAutoSave: isCloudTrack(ctx) });
         ctx.setUpdateInfoBlock(true);
     }
 
@@ -272,7 +285,7 @@ function handleEditCloudTrack(ctx) {
     });
 }
 
-function addTrack({ ctx, track, selected = true, overwrite = false } = {}) {
+function addTrack({ ctx, track, selected = true, overwrite = false, cloudAutoSave = false } = {}) {
     const newLocalTracks = [...ctx.localTracks];
 
     const originalName = track.name;
@@ -300,7 +313,7 @@ function addTrack({ ctx, track, selected = true, overwrite = false } = {}) {
 
     if (selected === true) {
         // upload 1 gpx - edit instantly
-        openNewLocalTrack(ctx, track, overwrite);
+        openNewLocalTrack({ ctx, track, cloudAutoSave });
     } else {
         // used when multi-gpx uploaded
         // generate points and save track
@@ -331,6 +344,25 @@ function prepareTrack(track, localName = null, originalName = null) {
     addDistance(track); // recalc-distance-local-initial
 }
 
+// prepare internal structures including distance
+export function prepareNavigationTrack(track) {
+    track.analysis = prepareAnalysis({});
+    track.hasGeo = hasGeo(track);
+    addDistance(track);
+    return track;
+}
+
+export async function getApproximatePoints({ points, profile }) {
+    const approximateResult = await apiPost(`${process.env.REACT_APP_GPX_API}/routing/approximate`, points, {
+        apiCache: true,
+        params: { routeMode: profile },
+        headers: { 'Content-Type': 'application/json' },
+    });
+    return approximateResult && approximateResult.data?.points?.length >= 2
+        ? _.cloneDeep(approximateResult.data.points) // avoid poisoning cache
+        : points;
+}
+
 function hasGeo(track) {
     if (!_.isEmpty(track.points)) {
         return track.points.some((p) => p.geometry?.length > 0);
@@ -350,11 +382,11 @@ function hasGeo(track) {
 // set copy of track with .overwrite <bool> and .selected = true
 // overwrite flag used later when re-uploading (save to cloud)
 // set type of current object, enable editor with "edit" flag
-function openNewLocalTrack(ctx, track, overwrite = false) {
+function openNewLocalTrack({ ctx, track, cloudAutoSave = false }) {
     const createState = {
         enable: true, // start-editor
         edit: true,
-        cloudAutoSave: overwrite,
+        cloudAutoSave,
     };
 
     // cleanup
@@ -370,7 +402,7 @@ function openNewLocalTrack(ctx, track, overwrite = false) {
     track.selected = true; // track is ref
     ctx.setSelectedGpxFile({ ...track });
 
-    ctx.setCurrentObjectType(ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK);
+    ctx.setCurrentObjectType(OBJECT_TYPE_LOCAL_TRACK);
 }
 
 function closeCloudTrack(ctx, track) {
@@ -637,7 +669,7 @@ async function downloadAfterUpload(ctx, file) {
     });
     const track = await TracksManager.getTrackData(gpxfile);
     if (isEmptyTrack(track) === false) {
-        const type = ctx.OBJECT_TYPE_CLOUD_TRACK;
+        const type = OBJECT_TYPE_CLOUD_TRACK;
         ctx.setUpdateInfoBlock(true);
         ctx.setCurrentObjectType(type);
         track.name = file.name;
@@ -1277,7 +1309,6 @@ const TracksManager = {
     CHANGE_PROFILE_AFTER: CHANGE_PROFILE_AFTER,
     CHANGE_PROFILE_ALL: CHANGE_PROFILE_ALL,
     TRACK_VISIBLE_FLAG: TRACK_VISIBLE_FLAG,
-    FIT_BOUNDS_OPTIONS: FIT_BOUNDS_OPTIONS,
 };
 
 export default TracksManager;

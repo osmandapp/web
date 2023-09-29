@@ -3,7 +3,7 @@ import { Dialog } from '@material-ui/core';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import { Alert, Autocomplete, Button, createFilterOptions, LinearProgress, TextField } from '@mui/material';
-import AppContext from '../../../../context/AppContext';
+import AppContext, { isRouteTrack, OBJECT_TYPE_CLOUD_TRACK } from '../../../../context/AppContext';
 import TracksManager from '../../../../manager/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContentText from '@mui/material/DialogContentText';
@@ -36,6 +36,10 @@ export default function SaveTrackDialog() {
         setProcess(false);
         if (uploaded) {
             // ctx.selectedGpxFile.clear = true; // no-more-need
+            if (isRouteTrack(ctx)) {
+                ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
+                ctx.routeObject.setOption('route.map.conceal', true);
+            }
         }
         ctx.selectedGpxFile.save = false;
         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });

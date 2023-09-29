@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
-import AppContext, { toHHMMSS } from '../../../context/AppContext';
+import { toHHMMSS } from '../../../util/Utils';
+import AppContext from '../../../context/AppContext';
 
 export default function TrackInfo({ file }) {
     const ctx = useContext(AppContext);

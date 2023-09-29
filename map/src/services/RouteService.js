@@ -1,8 +1,8 @@
 import { useContext, useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import AppContext from '../context/AppContext';
-import TracksManager from '../context/TracksManager';
+import AppContext, { OBJECT_TYPE_ROUTE_TRACK } from '../context/AppContext';
+import TracksManager, { prepareNavigationTrack, getApproximatePoints } from '../manager/TracksManager';
 
 export function RouteService() {
     const context = useContext(AppContext);
@@ -10,6 +10,7 @@ export function RouteService() {
     const pinPoint = context.pinPoint;
 
     const routeObject = context.routeObject;
+    const routeTrack = routeObject.getTrack();
     const routeTrackFile = context.routeTrackFile;
 
     const setHeaderText = context.setHeaderText;
@@ -172,13 +173,31 @@ export function RouteService() {
         }
     }, [routeObject.getEffectDeps(), routeObject.getRouteEffectDeps(), routeTrackFile]);
 
-    // refresh selectedGpxFile with routeObject
-    // FIXME do it only when Navigation menu is open?
+    // routeTrack: approximate segments
+    // routeTrack: refresh selectedGpxFile
+    // routeTrack: auto-srtm will be applied by GeneralInfo
     useEffect(() => {
-        // if (routeObject.track) {
-        // console.log('track-effect', routeObject.track);
-        // }
-    }, [routeObject.track]);
+        async function setNavigationTrack() {
+            if (routeTrack) {
+                const { profile } = routeObject.getGeoProfile();
+                const track = prepareNavigationTrack(routeTrack);
+
+                // approximate each segment separately
+                for (let i = 0; i < track.points.length; i++) {
+                    const geometry = track.points[i].geometry;
+                    if (geometry.length > 0) {
+                        track.points[i].geometry = await getApproximatePoints({ points: geometry, profile });
+                    }
+                }
+
+                const type = OBJECT_TYPE_ROUTE_TRACK;
+                // context.setUpdateInfoBlock(true);
+                context.setSelectedGpxFile(track);
+                context.setCurrentObjectType(type);
+            }
+        }
+        setNavigationTrack();
+    }, [routeTrack]);
 
     return null;
 }

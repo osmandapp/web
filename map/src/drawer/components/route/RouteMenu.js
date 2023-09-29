@@ -19,7 +19,7 @@ import {
     Grid,
 } from '@mui/material';
 import { ExpandLess, ExpandMore, Directions } from '@mui/icons-material';
-import AppContext from '../../../context/AppContext';
+import AppContext, { isLocalTrack, isCloudTrack, isRouteTrack } from '../../../context/AppContext';
 import RouteProfileSettingsDialog from '../../../dialogs/RouteProfileSettingsDialog';
 import { TextField } from '@mui/material/';
 import { LatLng } from 'leaflet';
@@ -42,11 +42,11 @@ const useStyles = makeStyles({
     },
 });
 
-function formatRouteInfo(props) {
+export function formatRouteInfo(props) {
     let res = ['Route: '];
     if (props?.overall?.distance) {
         let dst = (props.overall.distance / 1000).toFixed(1);
-        res.push(<b key="info-dst">{dst + ' km'}</b>);
+        res.push(<span key="info-dst">{dst + ' km'}</span>);
         res.push(', ');
     }
     if (props?.overall?.time) {
@@ -55,11 +55,12 @@ function formatRouteInfo(props) {
         if (min < 10) {
             min = '0' + min;
         }
-        res.push(<b key="info-time">{Math.floor(hours).toFixed(0) + ':' + min}</b>);
+        res.push(<span key="info-time">{Math.floor(hours).toFixed(0) + ':' + min + ' min'}</span>);
         res.push(', ');
     }
-    res[res.length - 1] = '.';
+    res[res.length - 1] = '';
     if (props?.overall?.routingTime) {
+        res[res.length - 1] = '.';
         res.push(' Cost: ');
         res.push(props.overall.routingTime.toFixed(0));
     }
@@ -90,6 +91,33 @@ export default function RouteMenu() {
     const [finish, setFinish] = useState('');
     const [openSettings, setOpenSettings] = useState(false);
     const btnFile = useRef();
+
+    // auto switch between Navigation/Tracks menu
+    // additionally, conceal route track from the map
+    // additionally, trigger fitBounds (zoom) on route track open
+    useEffect(() => {
+        if (isRouteTrack(ctx)) {
+            setOpen(true);
+            routeObject.setOption('route.map.zoom', true);
+        } else if (isLocalTrack(ctx) || isCloudTrack(ctx)) {
+            setOpen(false);
+            ctx.routeObject.setOption('route.map.conceal', true);
+        }
+    }, [ctx.currentObjectType]);
+
+    // auto zoom once Navigation menu open
+    // additionally, trigger fitBounds (zoom) always on menu open
+    // optionally, re-convert (get->put) to switch to route object type
+    useEffect(() => {
+        const route = routeObject.getRoute();
+        if (open && route) {
+            if (isRouteTrack(ctx) === false) {
+                routeObject.putRoute({ route: routeObject.getRoute() });
+            } else {
+                routeObject.setOption('route.map.zoom', true);
+            }
+        }
+    }, [open]);
 
     useEffect(() => {
         openSettings ? routeObject.onOpenSettings() : routeObject.onCloseSettings();
@@ -146,7 +174,7 @@ export default function RouteMenu() {
 
     const { type, profile } = routeObject.getProfile();
 
-    const routeOptions = ['useApproximate', 'hidePoints'];
+    const routeOptions = ['route.map.hidePoints'];
 
     return (
         <>
@@ -352,14 +380,14 @@ export default function RouteMenu() {
                                     item
                                     xs={10}
                                     sx={{ mt: '4px' }}
-                                    onClick={() => routeObject.setOption('route.' + opt, (o) => !o)}
+                                    onClick={() => routeObject.setOption(opt, (o) => !o)}
                                 >
-                                    {routeObject.getOptionText('route.' + opt)}
+                                    {routeObject.getOptionText(opt)}
                                 </Grid>
                                 <Grid item xs={2}>
                                     <Switch
-                                        checked={routeObject.getOption('route.' + opt)}
-                                        onChange={(e) => routeObject.setOption('route.' + opt, e.target.checked)}
+                                        checked={routeObject.getOption(opt)}
+                                        onChange={(e) => routeObject.setOption(opt, e.target.checked)}
                                     />
                                 </Grid>
                             </Grid>

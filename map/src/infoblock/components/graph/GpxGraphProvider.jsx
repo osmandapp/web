@@ -184,7 +184,7 @@ const GpxGraphProvider = ({ width }) => {
                 maxEle: maxEle,
                 minSpeed: minSpeed,
                 maxSpeed: maxSpeed,
-                slopes: getSlopes(result, ctx),
+                slopes: getSlopes(result, ctx, sumDist),
             };
         }
     }, [data]);

@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Typography, ListItemText, Switch, Collapse, Button, ToggleButton, ToggleButtonGroup } from '@mui/material';
 import { IconButton, Divider, MenuItem, ListItemIcon } from '@mui/material';
 import { Air, ExpandLess, ExpandMore, Thermostat, NavigateNext, NavigateBefore, RestartAlt } from '@mui/icons-material';
-import AppContext from '../../../context/AppContext';
+import AppContext, { OBJECT_TYPE_WEATHER } from '../../../context/AppContext';
 import _ from 'lodash';
 import WeatherManager from '../../../manager/WeatherManager';
 
@@ -48,7 +48,7 @@ export default function Weather() {
     }
 
     useEffect(() => {
-        if (ctx.currentObjectType === ctx.OBJECT_TYPE_WEATHER) {
+        if (ctx.currentObjectType === OBJECT_TYPE_WEATHER) {
             WeatherManager.displayWeatherForecast(ctx, ctx.setWeatherPoint, ctx.weatherType).then();
         }
         if (ctx.weatherType) {
@@ -60,7 +60,7 @@ export default function Weather() {
     }, [ctx.weatherType]);
 
     useEffect(() => {
-        if (ctx.currentObjectType === ctx.OBJECT_TYPE_WEATHER) {
+        if (ctx.currentObjectType === OBJECT_TYPE_WEATHER) {
             WeatherManager.displayWeatherForecast(ctx, ctx.setWeatherPoint, ctx.weatherType).then();
         }
         let newLayers = { ...ctx.weatherLayers };
