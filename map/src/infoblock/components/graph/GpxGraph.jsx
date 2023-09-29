@@ -23,7 +23,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import { getRelativePosition } from 'chart.js/helpers';
 import RoadAttributesGraph from './RoadAttributesGraph';
-import { cap, UNDEFINED_DATA } from '../../../manager/GraphManager';
+import { cap, checkNextSegment, UNDEFINED_DATA } from '../../../manager/GraphManager';
 
 const mouseLine = {
     id: 'mouseLine',
@@ -114,7 +114,6 @@ export default function GpxGraph({
     const [maxMinData, setMaxMinData] = useState({});
     const [distRangeValue, setDistRangeValue] = useState([0, data.length - 1]);
     const [selectedPoint, setSelectedPoint] = useState(null);
-    const [activeIndex, setActiveIndex] = useState(null);
 
     const chartRef = useRef(null);
 
@@ -223,7 +222,7 @@ export default function GpxGraph({
 
     function showRange() {
         const defaultPos =
-            _.isEmpty(ctx.trackRange) || (ctx.trackRange[0] === 0 && ctx.trackRange[1] === data.length - 1);
+            _.isEmpty(ctx.trackRange) || (ctx.trackRange.range[0] === 0 && ctx.trackRange.range[1] === data.length - 1);
         return !defaultPos;
     }
 
@@ -260,10 +259,6 @@ export default function GpxGraph({
 
     function getMode() {
         return !showY1 && !showY2 && showSlope ? 'nearest' : 'myCustomMode';
-    }
-
-    function getSelectedBoxPosition(ind) {
-        return !_.isEmpty(ctx.trackRange) && data[ctx.trackRange[ind]] && data[ctx.trackRange[ind]][xAxis];
     }
 
     const options = useMemo(
@@ -339,8 +334,8 @@ export default function GpxGraph({
                         box1: {
                             display: showRange(),
                             type: 'box',
-                            xMin: getSelectedBoxPosition(0),
-                            xMax: getSelectedBoxPosition(1),
+                            xMin: !_.isEmpty(ctx.trackRange) && ctx.trackRange.dist[0],
+                            xMax: !_.isEmpty(ctx.trackRange) && ctx.trackRange.dist[1],
                             backgroundColor: 'rgb(169,169,169, 0.34)',
                             borderWidth: 0,
                         },
@@ -358,7 +353,6 @@ export default function GpxGraph({
                         },
                         label: (context) => {
                             let label = context.dataset.label || '';
-                            let ind = data.findIndex((d) => d[xAxis] === Number(context.label));
                             if (label) {
                                 label += ': ';
                             }
@@ -371,25 +365,34 @@ export default function GpxGraph({
                             if (context.parsed.y !== null) {
                                 label += `${context.parsed.y.toFixed(0)} ${dimension}`;
                             }
+                            return label;
+                        },
+                        afterBody: (context) => {
                             let res = [];
-                            res.push(label);
-                            if (data[ind] && context.dataset.yAxisID !== 'y1Slope' && showSlope) {
+                            const ind = data.findIndex((d) => d[xAxis] === Number(context[0].label));
+                            //add slopes
+                            if (data[ind] && context[0].dataset.yAxisID !== 'y1Slope' && showSlope) {
                                 res.push(`Slope: ${data[ind]['Slope'].toFixed(0)} %`);
                             }
-                            if (ind && attrGraphData) {
-                                const resType = attrGraphData.types.datasets.find((d, i) => {
-                                    return ind >= d.index && ind < attrGraphData.types.datasets[i + 1].index;
-                                });
-                                const resSurface = attrGraphData.surfaces.datasets.find(
-                                    (d, i) => ind >= d.index && ind < attrGraphData.types.datasets[i + 1].index
+                            //add road attributes
+                            if (attrGraphData) {
+                                const resType = attrGraphData.types.datasets.find(
+                                    (d, i) => ind >= d.index && checkNextSegment(attrGraphData.types.datasets, i, ind)
                                 );
-                                if (resType?.label !== UNDEFINED_DATA || resSurface?.label !== UNDEFINED_DATA) {
+                                const resSurface = attrGraphData.surfaces.datasets.find(
+                                    (d, i) =>
+                                        ind >= d.index && checkNextSegment(attrGraphData.surfaces.datasets, i, ind)
+                                );
+                                const hasTypes = resType && resType.label !== UNDEFINED_DATA;
+                                const hasSurfaces = resSurface && resSurface.label !== UNDEFINED_DATA;
+
+                                if (hasTypes || hasSurfaces) {
                                     res.push('-----------------------');
                                 }
-                                if (resType && resType.label !== UNDEFINED_DATA) {
+                                if (hasTypes) {
                                     res.push(cap(resType.label));
                                 }
-                                if (resSurface && resSurface.label !== UNDEFINED_DATA) {
+                                if (hasSurfaces) {
                                     res.push(cap(resSurface.label));
                                 }
                             }
@@ -508,7 +511,7 @@ export default function GpxGraph({
                 },
             },
         }),
-        [data, ctx.trackRange]
+        [data, ctx.trackRange, showData]
     );
 
     const graphData = {
@@ -525,7 +528,7 @@ export default function GpxGraph({
                 max: maxEle,
                 fill: true,
                 yAxisID: 'y1',
-                pointRadius: 0,
+                pointRadius: data.length < 66 ? 2 : 0,
                 order: 2,
             },
             {
@@ -622,8 +625,6 @@ export default function GpxGraph({
                     data={attrGraphData.types}
                     width={width}
                     selectedPoint={selectedPoint}
-                    activeIndex={activeIndex}
-                    setActiveIndex={setActiveIndex}
                 />
             )}
             {attrGraphData?.surfaces && (
@@ -632,8 +633,6 @@ export default function GpxGraph({
                     data={attrGraphData.surfaces}
                     width={width}
                     selectedPoint={selectedPoint}
-                    activeIndex={activeIndex}
-                    setActiveIndex={setActiveIndex}
                 />
             )}
         </>
