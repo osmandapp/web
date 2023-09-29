@@ -73,10 +73,8 @@ const GpxGraphProvider = ({ width }) => {
                 if (ctx.selectedGpxFile.analysis?.srtmAnalysis) {
                     trackData.srtm = true;
                     if (!trackData.data) {
-                        console.log(true);
                         trackData.data = points;
                     }
-                    console.log(trackData.data);
                 }
                 if (ctx.selectedGpxFile?.analysis?.hasSpeedData) {
                     trackData.speed = true;
