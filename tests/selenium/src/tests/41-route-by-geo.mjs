@@ -52,12 +52,12 @@ export default async function test() {
         await goCenter({ A, B, zoom });
 
         await clickBy(By.id('se-clear-route-start-point'));
-        await clickBy(By.id('se-clear-route-end-point'));
+        await clickBy(By.id('se-clear-route-finish-point'));
 
         await selectProfile({ type, profile });
 
         await sendKeysBy(By.id('se-route-start-point'), A + '\n');
-        await sendKeysBy(By.id('se-route-end-point'), B + '\n');
+        await sendKeysBy(By.id('se-route-finish-point'), B + '\n');
 
         await matchTextBy(By.id('se-route-info'), check);
 
