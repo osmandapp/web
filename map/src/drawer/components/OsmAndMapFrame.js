@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Drawer, Toolbar, Box, Alert, SvgIcon, Typography, Button } from '@mui/material';
+import { Drawer, Toolbar, Box, Alert, SvgIcon, Button } from '@mui/material';
 import { AppBar } from '@mui/material';
 import OsmAndMap from '../../map/components/OsmAndMap';
 import OsmAndDrawer from './OsmAndDrawer';
@@ -46,9 +46,9 @@ const useStyles = makeStyles({
         paddingLeft: '12px !important',
         minWidth: '10px !important',
         '&:hover': {
-            color: '#237bff',
-            backgroundColor: '#ffffff',
-            boxShadow: 'none',
+            color: '#237bff !important',
+            backgroundColor: '#ffffff !important',
+            boxShadow: 'none !important',
         },
     },
 });
@@ -109,9 +109,15 @@ const OsmAndMapFrame = () => {
             >
                 <Toolbar>
                     <SvgIcon component={Logo} inheritViewBox className={classes.logo} />
-                    <Typography variant="h6" className={classes.name}>
+                    <Button
+                        target="_blank"
+                        component={Link}
+                        to={'/'}
+                        className={classes.menuItem}
+                        sx={{ fontWeight: '700 !important', ml: -0.5, mt: -0.5, mr: -0.77 }}
+                    >
                         OsmAnd
-                    </Typography>
+                    </Button>
                     <Box className={classes.menu}>
                         {pages.map((page) => (
                             <Button
