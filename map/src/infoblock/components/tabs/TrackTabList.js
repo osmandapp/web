@@ -2,10 +2,11 @@ import GeneralInfoTab from './GeneralInfoTab';
 import React from 'react';
 import { Tab } from '@mui/material';
 import PointsTab from './PointsTab';
+import TurnsTab from './TurnsTab';
 // import SettingsTab from './SettingsTab';
 import WaypointsTab from './WaypointsTab';
-import { isEmptyTrack } from '../../../manager/TracksManager';
-import { isLocalTrack, isCloudTrack } from '../../../context/AppContext';
+import { isEmptyTrack, hasTurns } from '../../../manager/TracksManager';
+import { isLocalTrack, isCloudTrack, isRouteTrack } from '../../../context/AppContext';
 
 export default class TrackTabList {
     state = {
@@ -25,6 +26,10 @@ export default class TrackTabList {
 
         if ((isCloudTrack(ctx) && !isEmptyTrack(ctx.selectedGpxFile, true, false)) || isLocalTrack(ctx)) {
             tabs.Waypoints = <WaypointsTab key={'waypoints' + ctx.selectedGpxFile.name} />;
+        }
+
+        if (isRouteTrack(ctx) || hasTurns(ctx.selectedGpxFile)) {
+            tabs.Turns = <TurnsTab key="turns" />;
         }
 
         // if (isLocalTrack(ctx)) {

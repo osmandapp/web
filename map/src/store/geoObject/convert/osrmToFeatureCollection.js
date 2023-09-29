@@ -10,11 +10,12 @@ export function osrmToFeatureCollection({ osrm, style = {} }) {
     const features = [];
 
     const cap = (s) => s && s[0].toUpperCase() + s.slice(1);
+    const trim = (s) => s.replace(/ +/g, ' ').replace(/^ +/g, '').replace(/ +$/g, '');
 
     const maneuver = (s) => {
         // imperative
         const type = cap(s?.maneuver?.type ?? ''); // Turn
-        const modifier = cap(s?.maneuver?.modifier ?? ''); // Left
+        const modifier = type.match(/(Depart|Arrive)/) ? '' : cap(s?.maneuver?.modifier ?? ''); // Left (for turns)
 
         // target
         const name = s?.name ?? ''; // Street
@@ -22,12 +23,17 @@ export function osrmToFeatureCollection({ osrm, style = {} }) {
 
         // go
         const distance = s?.distance ?? '';
+        const duration = s?.duration ?? '';
 
         const imperative = type + ' ' + modifier;
         const target = name ? 'to ' + name + ref : '';
         const go = distance > 0 ? 'and go ' + distance + ' meters' : '';
 
-        return `${imperative} ${target} ${go}`; // Turn Left to Street and go 621 meters
+        const description = trim(`${imperative} ${target} ${go}`); // Turn Left to Street and go 621 meters
+
+        const out = { description, type, modifier, distance: distance || 0, duration: duration || 0 };
+
+        return out;
     };
 
     osrm?.routes?.forEach((r) => {
@@ -52,9 +58,7 @@ export function osrmToFeatureCollection({ osrm, style = {} }) {
                         type: 'Point',
                         coordinates: s.maneuver?.location,
                     },
-                    properties: {
-                        description: maneuver(s),
-                    },
+                    properties: maneuver(s),
                 });
             });
         });
