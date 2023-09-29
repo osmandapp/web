@@ -29,7 +29,7 @@ const useStyles = makeStyles(() => ({
             left: `${props.mainMenuWidth}px`,
         },
         '& .leaflet-bottom ': {
-            bottom: `${props.mobile ? 50 + props.drawerRightHeight : 50}px`,
+            //bottom: `${props.mobile ? 50 + props.drawerRightHeight : 50}px`,
             right: `${props.mobile ? 0 : props.drawerRightWidth}`,
         },
         '& .leaflet-control-scale-line': {

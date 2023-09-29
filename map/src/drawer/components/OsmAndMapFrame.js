@@ -1,26 +1,88 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Drawer, Toolbar, Box, Alert } from '@mui/material';
-import { IconButton, AppBar } from '@mui/material';
-import { Menu } from '@mui/icons-material';
+import { Drawer, Toolbar, Box, Alert, SvgIcon, Typography, Button } from '@mui/material';
+import { AppBar } from '@mui/material';
 import OsmAndMap from '../../map/components/OsmAndMap';
 import OsmAndDrawer from './OsmAndDrawer';
-import { Outlet } from 'react-router-dom';
-import HeaderInfo from './header/HeaderInfo';
+import { Outlet, Link } from 'react-router-dom';
 import InformationBlock from '../../infoblock/components/InformationBlock';
 import AppContext from '../../context/AppContext';
 import GeneralPanelButtons from './GeneralPanelButtons';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { GlobalConfirmationDialog } from '../../dialogs/GlobalConfirmationDialog';
+import { ReactComponent as Logo } from '../../static/logo.svg';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+    logo: {
+        width: '32px !important',
+        height: '32px !important',
+        marginLeft: -8,
+        marginTop: -4,
+    },
+    name: {
+        color: '#1c1e21',
+        fontSize: '16px !important',
+        fontWeight: '700 !important',
+        fontFamily: 'system-ui, -apple-system, "Segoe UI" !important',
+        marginLeft: '8px !important',
+        marginTop: '-3px !important',
+        paddingRight: '6px',
+        letterSpacing: '0px !important',
+    },
+    menu: {
+        flexGrow: 1,
+        display: { xs: 'none', md: 'flex' },
+        marginTop: -4,
+        marginLeft: 10,
+    },
+    menuItem: {
+        color: '#1c1e21 !important',
+        fontWeight: '500px !important',
+        fontSize: '16px !important',
+        textTransform: 'none !important',
+        fontFamily: 'system-ui, -apple-system, "Segoe UI" !important',
+        letterSpacing: '0px !important',
+        paddingRight: '12px !important',
+        paddingLeft: '12px !important',
+        minWidth: '10px !important',
+        '&:hover': {
+            color: '#237bff',
+            backgroundColor: '#ffffff',
+            boxShadow: 'none',
+        },
+    },
+});
+
+const pages = [
+    {
+        name: 'Docs',
+        url: '/docs/intro',
+    },
+    {
+        name: 'Blog',
+        url: '/blog',
+    },
+    {
+        name: '💳 Purchases',
+        url: '/docs/user/purchases',
+    },
+    {
+        name: '🌍 Map',
+        url: '/map',
+    },
+    {
+        name: '🚵‍ Join us',
+        url: '/docs/hiring',
+    },
+];
 
 const OsmAndMapFrame = () => {
     const ctx = useContext(AppContext);
+    const classes = useStyles();
 
     const MOBILE_SCREEN_SIZE = 1000;
-    const MAIN_MENU_OPEN_SCREEN_SIZE = 1200;
     const MAIN_MENU_SIZE = 320;
 
-    const [mainMenuOpen, setMainMenuOpen] = useState(false);
-    const [mainMenuWidth, setMainMenuWidth] = useState(0);
     const [showInfoBlock, setShowInfoBlock] = useState(false);
     const [infoBlockOpen, setInfoBlockOpen] = useState(true);
     const [clearState, setClearState] = useState(false);
@@ -29,72 +91,71 @@ const OsmAndMapFrame = () => {
     const [mobile, setMobile] = useState(false);
     const [width, height] = useWindowSize();
 
-    const toggleMainMenu = () => {
-        setMainMenuOpen(!mainMenuOpen);
-    };
+    const toggleMainMenu = () => {};
 
     // screen version
     useEffect(() => {
         setMobile(!!(width && width < MOBILE_SCREEN_SIZE));
-        setMainMenuOpen(!!(width && width >= MAIN_MENU_OPEN_SCREEN_SIZE));
     }, [width]);
 
-    // main menu size
-    useEffect(() => {
-        if (mainMenuOpen && !mobile) {
-            setMainMenuWidth(MAIN_MENU_SIZE);
-        } else {
-            setMainMenuWidth(0);
-        }
-    }, [mainMenuOpen]);
-
     return (
-        <>
-            <div>
-                <Box
-                    sx={{
-                        width: { xs: `calc(100%)` },
-                        mr: ctx.infoBlockWidth,
-                    }}
-                >
-                    <Box>
-                        <AppBar position="static">
-                            <Toolbar variant="dense">
-                                <IconButton
-                                    id={mainMenuOpen ? 'se-main-menu-already-open' : 'se-show-main-menu'}
-                                    onClick={toggleMainMenu}
-                                    edge="start"
-                                    sx={{ mr: 2 }}
-                                >
-                                    <Menu />
-                                </IconButton>
-                                <HeaderInfo mainMenuWidth={mainMenuWidth} />
-                            </Toolbar>
-                        </AppBar>
+        <Box sx={{ display: 'flex' }}>
+            <AppBar
+                position="fixed"
+                sx={{
+                    zIndex: (theme) => theme.zIndex.drawer + 1,
+                    height: '60px',
+                    background: '#ffffff',
+                }}
+            >
+                <Toolbar>
+                    <SvgIcon component={Logo} inheritViewBox className={classes.logo} />
+                    <Typography variant="h6" className={classes.name}>
+                        OsmAnd
+                    </Typography>
+                    <Box className={classes.menu}>
+                        {pages.map((page) => (
+                            <Button
+                                target="_blank"
+                                component={Link}
+                                to={page.url}
+                                key={page.name}
+                                className={classes.menuItem}
+                            >
+                                {page.name}
+                            </Button>
+                        ))}
                     </Box>
-                    {ctx.routingErrorMsg && (
-                        <Alert severity="warning" onClose={() => ctx.setRoutingErrorMsg(null)}>
-                            {ctx.routingErrorMsg}
-                        </Alert>
-                    )}
-                    <GlobalConfirmationDialog />
-                    <OsmAndMap
-                        mobile={mobile}
-                        drawerRightHeight={drawerRightHeight}
-                        mainMenuWidth={mainMenuWidth}
-                        drawerRightWidth={ctx.infoBlockWidth}
-                    />
-                    <GeneralPanelButtons
-                        mainMenuWidth={mainMenuWidth}
-                        showInfoBlock={showInfoBlock}
-                        setShowInfoBlock={setShowInfoBlock}
-                        infoBlockOpen={infoBlockOpen}
-                        setInfoBlockOpen={setInfoBlockOpen}
-                        clearState={clearState}
-                        mobile={mobile}
-                    />
-                </Box>
-            </div>
+                </Toolbar>
+            </AppBar>
+            <Box
+                sx={{
+                    width: { xs: `calc(100%)` },
+                    mr: ctx.infoBlockWidth,
+                }}
+            >
+                {ctx.routingErrorMsg && (
+                    <Alert severity="warning" onClose={() => ctx.setRoutingErrorMsg(null)}>
+                        {ctx.routingErrorMsg}
+                    </Alert>
+                )}
+                <GlobalConfirmationDialog />
+                <OsmAndMap
+                    mobile={mobile}
+                    drawerRightHeight={drawerRightHeight}
+                    mainMenuWidth={MAIN_MENU_SIZE}
+                    drawerRightWidth={ctx.infoBlockWidth}
+                />
+                <GeneralPanelButtons
+                    mainMenuWidth={MAIN_MENU_SIZE}
+                    showInfoBlock={showInfoBlock}
+                    setShowInfoBlock={setShowInfoBlock}
+                    infoBlockOpen={infoBlockOpen}
+                    setInfoBlockOpen={setInfoBlockOpen}
+                    clearState={clearState}
+                    mobile={mobile}
+                />
+            </Box>
             {!mobile && (
                 <Drawer
                     variant="temporary"
@@ -107,7 +168,6 @@ const OsmAndMapFrame = () => {
                     hideBackdrop
                     sx={{ mr: 500 }}
                     anchor={'right'}
-                    disableEnforceFocus
                 >
                     <InformationBlock
                         mobile={mobile}
@@ -132,7 +192,6 @@ const OsmAndMapFrame = () => {
                     hideBackdrop
                     open={true}
                     anchor={'bottom'}
-                    disableEnforceFocus
                 >
                     <InformationBlock
                         mobile={mobile}
@@ -151,9 +210,7 @@ const OsmAndMapFrame = () => {
             {
                 <Drawer
                     variant="persistent"
-                    open={mainMenuOpen}
-                    onClose={toggleMainMenu}
-                    hideBackdrop={!mobile}
+                    open={true}
                     PaperProps={{
                         sx: {
                             boxSizing: 'border-box',
@@ -162,11 +219,12 @@ const OsmAndMapFrame = () => {
                     }}
                     sx={{ ml: 500 }}
                 >
+                    <Toolbar />
                     <OsmAndDrawer toggleDrawer={toggleMainMenu} />
                 </Drawer>
             }
             <Outlet />
-        </>
+        </Box>
     );
 };
 
