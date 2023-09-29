@@ -55,7 +55,7 @@ export function RouteService() {
                 obj['finish'] = finishPoint.lat.toFixed(6) + ',' + finishPoint.lng.toFixed(6);
             }
             if (viaPoints?.length > 0) {
-                obj['inter'] = viaPoints.map((i) => i.lat.toFixed(6) + ',' + i.lng.toFixed(6)).join(';');
+                obj['via'] = viaPoints.map((i) => i.lat.toFixed(6) + ',' + i.lng.toFixed(6)).join(';');
             }
             if (avoidRoads?.length > 0) {
                 obj['avoid'] = avoidRoads.map(({ id }) => id).join(';');
