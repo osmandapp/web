@@ -15,7 +15,7 @@ export function osrmToFeatureCollection({ osrm, style = {} }) {
     const maneuver = (s) => {
         // imperative
         const type = cap(s?.maneuver?.type ?? ''); // Turn
-        const modifier = type.match(/(Depart|Arrive)/) ? '' : cap(s?.maneuver?.modifier ?? ''); // Left (for turns)
+        const modifier = cap(s?.maneuver?.modifier ?? ''); // Left
 
         // target
         const name = s?.name ?? ''; // Street
