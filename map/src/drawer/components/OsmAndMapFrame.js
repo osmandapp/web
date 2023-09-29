@@ -80,7 +80,6 @@ const OsmAndMapFrame = () => {
     const ctx = useContext(AppContext);
     const classes = useStyles();
 
-    const MOBILE_SCREEN_SIZE = 1000;
     const MAIN_MENU_SIZE = 320;
 
     const [showInfoBlock, setShowInfoBlock] = useState(false);
@@ -95,7 +94,7 @@ const OsmAndMapFrame = () => {
 
     // screen version
     useEffect(() => {
-        setMobile(!!(width && width < MOBILE_SCREEN_SIZE));
+        setMobile(false);
     }, [width]);
 
     return (
