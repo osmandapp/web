@@ -47,10 +47,10 @@ const GpxGraphProvider = ({ width }) => {
         return showData[ELEVATION] || showData[ELEVATION_SRTM] || showData[SPEED] || showData[SLOPE];
     }
 
-    function getPoints() {
+    function getRoadPoints(pointsFromTracks) {
         let points = !_.isEmpty(ctx.selectedGpxFile.points)
             ? getAllPoints(ctx.selectedGpxFile.points)
-            : getTrackPoints(ctx.selectedGpxFile);
+            : pointsFromTracks;
         if (!_.isEmpty(points) && points[0].segment && !equalsPoints(points, roadPoints)) {
             setRoadPoints(points);
         } else if (_.isEmpty(points) || points[0].segment === undefined) {
@@ -62,7 +62,8 @@ const GpxGraphProvider = ({ width }) => {
     useEffect(() => {
         if (ctx.selectedGpxFile) {
             let trackData = {};
-            let points = getPoints();
+            let points = getTrackPoints(ctx.selectedGpxFile);
+            getRoadPoints(points);
             if (!_.isEmpty(points) && (isSrtmAppeared(trackData, ctx) || !equalsPoints(points, data?.data))) {
                 if (ctx.selectedGpxFile.analysis?.hasElevationData) {
                     trackData.ele = true;

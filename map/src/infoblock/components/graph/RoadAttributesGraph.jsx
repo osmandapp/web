@@ -2,20 +2,21 @@ import { Box, Button, Collapse, Divider, Grid, Icon, Typography } from '@mui/mat
 import CircleIcon from '@mui/icons-material/Circle';
 import { Bar } from 'react-chartjs-2';
 import { Tooltip, Legend, Chart as ChartJS, BarElement } from 'chart.js';
-import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useContext, useMemo, useRef, useState } from 'react';
 import annotationsPlugin from 'chartjs-plugin-annotation';
-import TracksManager from '../../../manager/TracksManager';
 import AppContext from '../../../context/AppContext';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { cap } from '../../../manager/GraphManager';
+import _ from 'lodash';
 
 ChartJS.register(Tooltip, Legend, BarElement, annotationsPlugin);
 
-export default function RoadAttributesGraph({ name, data, width, selectedPoint, activeIndex, setActiveIndex }) {
+export default function RoadAttributesGraph({ name, data, width, selectedPoint }) {
     const ctx = useContext(AppContext);
     const chartRef = useRef(null);
 
     const [open, setOpen] = useState(false);
+    const [prevInd, setPrevInd] = useState(null);
 
     const options = useMemo(
         () => ({
@@ -42,7 +43,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint, 
                         label: (context) => {
                             let label = context.dataset?.label || '';
                             if (label) {
-                                return `${cap(label)}: ${context.parsed.x} km`;
+                                return `${cap(label)}: ${Number(context.dataset.data).toFixed(1)} km`;
                             }
                         },
                     },
@@ -58,6 +59,14 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint, 
                             value: selectedPoint?.dist,
                             borderColor: '#ffffff',
                             borderWidth: 1,
+                        },
+                        box1: {
+                            display: !_.isEmpty(ctx.trackRange),
+                            type: 'box',
+                            xMin: !_.isEmpty(ctx.trackRange) && ctx.trackRange.dist[0],
+                            xMax: !_.isEmpty(ctx.trackRange) && ctx.trackRange.dist[1],
+                            backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                            borderWidth: 0,
                         },
                     },
                 },
@@ -84,7 +93,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint, 
                 },
             },
         }),
-        [data, selectedPoint]
+        [data, selectedPoint, ctx.trackRange]
     );
 
     const graphData = useMemo(
@@ -94,18 +103,6 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint, 
         }),
         [data]
     );
-
-    useEffect(() => {
-        if (activeIndex) {
-            chartRef.current.setActiveElements([
-                {
-                    datasetIndex: activeIndex,
-                    index: 0,
-                },
-            ]);
-            chartRef.current.update();
-        }
-    }, [activeIndex]);
 
     function prepareType(type) {
         if (type) {
@@ -133,14 +130,15 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint, 
         if (ctx.selectedGpxFile && chartRef.current._active?.length > 0) {
             let selected = chartRef.current._active[0];
             if (selected) {
-                let pointList = TracksManager.getTrackPoints(ctx.selectedGpxFile);
-                const ind = data.datasets[selected.datasetIndex].index;
-                if (ind) {
-                    const range = [ind, ind + Number(pointList[ind].segment.ext.length)];
-                    ctx.setTrackRange(range);
-                    setActiveIndex(selected.datasetIndex);
-                } else {
-                    hideSelectedPointSegment();
+                let selectedSegment = data.datasets[selected.datasetIndex];
+                if (selectedSegment && selectedSegment.index !== undefined && selectedSegment.index !== prevInd) {
+                    setPrevInd(selectedSegment.index);
+                    const startDist = Number(selectedSegment?.totalDist) - Number(selectedSegment?.data[0]);
+                    const endDist = Number(selectedSegment?.totalDist);
+                    ctx.setTrackRange({
+                        dist: [startDist, endDist],
+                        range: [selectedSegment.index, selectedSegment.index + selectedSegment.size],
+                    });
                 }
             }
         } else {
@@ -150,6 +148,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint, 
 
     function hideSelectedPointSegment() {
         ctx.setTrackRange([]);
+        setPrevInd(null);
     }
 
     return (
