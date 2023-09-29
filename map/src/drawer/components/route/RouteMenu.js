@@ -93,6 +93,7 @@ export default function RouteMenu() {
     const btnFile = useRef();
 
     // auto switch between Navigation/Tracks menu
+    // additionally, conceal route track from the map
     // additionally, trigger fitBounds (zoom) on route track open
     useEffect(() => {
         if (isRouteTrack(ctx)) {
@@ -100,6 +101,7 @@ export default function RouteMenu() {
             routeObject.setOption('route.map.zoom', true);
         } else if (isLocalTrack(ctx) || isCloudTrack(ctx)) {
             setOpen(false);
+            ctx.routeObject.setOption('route.map.conceal', true);
         }
     }, [ctx.currentObjectType]);
 
