@@ -1,5 +1,5 @@
-// import { Alert, Box, Button, IconButton, MenuItem, Typography } from '@mui/material';
-import { useContext } from 'react';
+import { useContext, Fragment } from 'react';
+import { Grid, IconButton, Typography } from '@mui/material';
 import AppContext, { isRouteTrack } from '../../../context/AppContext';
 // import contextMenuStyles from '../../styles/ContextMenuStyles';
 
@@ -15,7 +15,7 @@ import TurnSharpRight from '@mui/icons-material/TurnSharpRightOutlined';
 import TurnSharpLeft from '@mui/icons-material/TurnSharpLeftOutlined';
 
 import Pause from '@mui/icons-material/PauseOutlined';
-// import Finish from '@mui/icons-material/SportsScoreOutlined';
+import Finish from '@mui/icons-material/SportsScoreOutlined';
 import RoundaboutLeft from '@mui/icons-material/RoundaboutLeftOutlined';
 import UTurnLeft from '@mui/icons-material/UTurnLeftOutlined';
 
@@ -28,51 +28,95 @@ const SH = '(Sharp|sharply)';
 const R = '(Right|right)';
 const L = '(Left|left)';
 
-const icons = [
-    [new RegExp(`${TURN} ${SH} ${R}`), TurnSharpRight],
-    [new RegExp(`${TURN} ${SH} ${L}`), TurnSharpLeft],
-    [new RegExp(`${TURN} ${SL} ${R}`), TurnSlightRight],
-    [new RegExp(`${TURN} ${SL} ${L}`), TurnSlightLeft],
-    [new RegExp(`${TURN} ${R}`), TurnRight],
-    [new RegExp(`${TURN} ${L}`), TurnLeft],
+const STRAIGHT = '(Depart|Straight|Go ahead)';
+
+const ICONS = [
+    [new RegExp(`${TURN} ${SH} ${R}`), <TurnSharpRight key="TSHR" />],
+    [new RegExp(`${TURN} ${SH} ${L}`), <TurnSharpLeft key="TSHL" />],
+    [new RegExp(`${TURN} ${SL} ${R}`), <TurnSlightRight key="TSLR" />],
+    [new RegExp(`${TURN} ${SL} ${L}`), <TurnSlightLeft key="TSLL" />],
+    [new RegExp(`${TURN} ${R}`), <TurnRight key="TR" />],
+    [new RegExp(`${TURN} ${L}`), <TurnLeft key="TL" />],
+
+    [new RegExp(`${STRAIGHT}`), <Straight key="C" />],
 
     // OsmAnd
-    [/^Keep right/, KeepRight],
-    [/^Keep left/, KeepLeft],
+    [/^Keep right/, <KeepRight key="KR" />],
+    [/^Keep left/, <KeepLeft key="KL" />],
 
-    // OsmAnd
-    [/^Make uturn/, UTurnLeft],
-    [/^Take/, RoundaboutLeft],
+    // OsmAnd/OSRM
+    [/^Make uturn/, <UTurnLeft key="TU" />],
+    [/^(Take|Rotary|Exit rotary)/, <RoundaboutLeft key="RNLB" />],
 
     // viaPoints
-    [/^Arrive/, Pause],
+    [/^Arrive/, <Pause key="ARRIVE" />],
 
-    [/./, Straight], // Straight is default
-    // <Finish> is enforced for the last point
+    // enforced on last point
+    [/^FINISH/, <Finish key="FINISH" />],
+
+    // Straight as default
+    [/./, <Straight key="DEFAULT" />],
 ];
 
-// const MUTE = '[MUTE]';
+const MUTE = '[MUTE]';
+
+function getIconByTurnDescription({ description, finish }) {
+    const muted = description.includes(MUTE);
+    muted && (description = description.replace(MUTE + ' ', ''));
+    const found = ICONS.find(([r]) => (finish ? 'FINISH' : description).match(r));
+    if (found) {
+        const [, icon] = found; // [regexp, icon]
+        const color = muted ? '' : 'primary';
+        return { icon, color };
+    }
+    return { icon: null, color: null };
+}
 
 export default function TurnsTab() {
     const ctx = useContext(AppContext);
     // const styles = contextMenuStyles();
 
-    const out = [];
+    const route = isRouteTrack(ctx) && ctx.routeObject.getRoute();
 
-    if (icons && isRouteTrack(ctx)) {
-        // FIXME
-        const route = ctx.routeObject.getRoute();
-        if (route) {
-            route.features
-                .filter((f) => f.geometry.type === 'Point')
-                .map((f) => f.properties.description)
-                .forEach((d) => out.push(d));
-        }
+    if (route) {
+        const items = route.features
+            .filter((f) => f.geometry.type === 'Point')
+            .map((f) => {
+                return f.properties.description;
+            })
+            .map((description, i, all) => {
+                const { icon, color } = getIconByTurnDescription({ description, finish: i === all.length - 1 });
+                return (
+                    <Fragment key={i}>
+                        <Grid item xs={1} textAlign="right" sx={{ border: 0 }}>
+                            <Typography variant="body2" noWrap>
+                                {i + 1}
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={2} textAlign="center" sx={{ mb: '4px', border: 0 }}>
+                            {icon && (
+                                <IconButton size="small" color={color}>
+                                    {icon}
+                                </IconButton>
+                            )}
+                        </Grid>
+                        <Grid item xs={9} sx={{ border: 0 }}>
+                            <Typography variant="body2" noWrap>
+                                {description}
+                            </Typography>
+                        </Grid>
+                    </Fragment>
+                );
+            });
+
+        return (
+            <>
+                <Grid container alignItems="center" spacing={0}>
+                    {items}
+                </Grid>
+            </>
+        );
     }
 
-    return out.map((s, i) => (
-        <p key={i}>
-            {i}: {s}
-        </p>
-    ));
+    return null;
 }
