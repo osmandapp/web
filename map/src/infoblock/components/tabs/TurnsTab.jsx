@@ -1,5 +1,5 @@
-import { useContext, Fragment } from 'react';
-import { Grid, IconButton, Typography } from '@mui/material';
+import { useContext } from 'react';
+import { Grid, IconButton, Typography, MenuItem } from '@mui/material';
 import AppContext, { isRouteTrack } from '../../../context/AppContext';
 // import contextMenuStyles from '../../styles/ContextMenuStyles';
 
@@ -78,44 +78,48 @@ export default function TurnsTab() {
 
     const route = isRouteTrack(ctx) && ctx.routeObject.getRoute();
 
+    // setTimeout is used to prevent marker flickering on the map (on fast mouse enter/leave)
+    const showPointOnMap = (lat, lng) => setTimeout(() => ctx.mapMarkerListener(lat, lng), 100);
+    const hidePointOnMap = () => ctx.mapMarkerListener(null);
+
     if (route) {
         const items = route.features
-            .filter((f) => f.geometry.type === 'Point')
-            .map((f) => {
-                return f.properties.description;
-            })
-            .map((description, i, all) => {
+            .filter((f) => f.geometry?.type === 'Point' && f.properties?.description && f.geometry?.coordinates)
+            .map((f, i, all) => {
+                const [lng, lat] = f.geometry.coordinates;
+                const description = f.properties.description;
                 const { icon, color } = getIconByTurnDescription({ description, finish: i === all.length - 1 });
                 return (
-                    <Fragment key={i}>
-                        <Grid item xs={1} textAlign="right" sx={{ border: 0 }}>
-                            <Typography variant="body2" noWrap>
-                                {i + 1}
-                            </Typography>
+                    <MenuItem
+                        key={i}
+                        sx={{ p: 0 }}
+                        onMouseEnter={() => showPointOnMap(lat, lng)}
+                        onMouseLeave={() => hidePointOnMap()}
+                    >
+                        <Grid container alignItems="center" spacing={0}>
+                            <Grid item xs={1} textAlign="right">
+                                <Typography variant="body2" noWrap>
+                                    {i + 1}
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={2} textAlign="center" sx={{ mb: '4px' }}>
+                                {icon && (
+                                    <IconButton size="small" color={color}>
+                                        {icon}
+                                    </IconButton>
+                                )}
+                            </Grid>
+                            <Grid item xs={9}>
+                                <Typography variant="body2" noWrap>
+                                    {description}
+                                </Typography>
+                            </Grid>
                         </Grid>
-                        <Grid item xs={2} textAlign="center" sx={{ mb: '4px', border: 0 }}>
-                            {icon && (
-                                <IconButton size="small" color={color}>
-                                    {icon}
-                                </IconButton>
-                            )}
-                        </Grid>
-                        <Grid item xs={9} sx={{ border: 0 }}>
-                            <Typography variant="body2" noWrap>
-                                {description}
-                            </Typography>
-                        </Grid>
-                    </Fragment>
+                    </MenuItem>
                 );
             });
 
-        return (
-            <>
-                <Grid container alignItems="center" spacing={0}>
-                    {items}
-                </Grid>
-            </>
-        );
+        return <>{items}</>;
     }
 
     return null;
