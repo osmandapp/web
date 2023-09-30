@@ -31,9 +31,7 @@ export function osrmToFeatureCollection({ osrm, style = {} }) {
 
         const description = trim(`${imperative} ${target} ${go}`); // Turn Left to Street and go 621 meters
 
-        const out = { description, type, modifier, distance: distance || 0, duration: duration || 0 };
-
-        return out;
+        return { description, type, modifier, distance: distance || 0, duration: duration || 0 };
     };
 
     osrm?.routes?.forEach((r) => {
@@ -65,18 +63,20 @@ export function osrmToFeatureCollection({ osrm, style = {} }) {
     });
 
     // parse points (really need?)
-    osrm?.waypoints?.forEach((w) => {
-        features.push({
-            type: 'Feature',
-            geometry: {
-                type: 'Point',
-                coordinates: w.location,
-            },
-            properties: {
-                description: w.name,
-            },
-        });
-    });
+    // osrm?.waypoints?.forEach((w) => {
+    //     if (w.name) {
+    //         features.push({
+    //             type: 'Feature',
+    //             geometry: {
+    //                 type: 'Point',
+    //                 coordinates: w.location,
+    //             },
+    //             properties: {
+    //                 description: w.name,
+    //             },
+    //         });
+    //     }
+    // });
 
     return { type: 'FeatureCollection', features };
 }
