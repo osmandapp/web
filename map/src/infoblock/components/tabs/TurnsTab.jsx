@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import { Grid, IconButton, Typography, MenuItem } from '@mui/material';
 import AppContext, { isRouteTrack } from '../../../context/AppContext';
 // import contextMenuStyles from '../../styles/ContextMenuStyles';
@@ -78,9 +78,13 @@ export default function TurnsTab() {
 
     const route = isRouteTrack(ctx) && ctx.routeObject.getRoute();
 
+    const hideTimerRef = useRef(0);
+    const showPointOnMap = (lat, lng) => {
+        clearTimeout(hideTimerRef.current);
+        ctx.mapMarkerListener(lat, lng);
+    };
     // setTimeout is used to prevent marker flickering on the map (on fast mouse enter/leave)
-    const showPointOnMap = (lat, lng) => setTimeout(() => ctx.mapMarkerListener(lat, lng), 100);
-    const hidePointOnMap = () => ctx.mapMarkerListener(null);
+    const hidePointOnMap = () => (hideTimerRef.current = setTimeout(() => ctx.mapMarkerListener(null), 500));
 
     if (route) {
         const items = route.features
