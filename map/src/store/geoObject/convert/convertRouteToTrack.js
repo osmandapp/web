@@ -39,9 +39,12 @@ export function convertRouteToTrack({ id, route, trackName, geoProfile, start, f
      * The Map-object `theNearestMap` is used to find connections between geometry and points.
      */
     const theNearestMap = {}; // [geoPoint] = routePoint
-    // start, finish - fast
-    theNearestMap[llRoundedKey(routeGeometry[0])] = start;
-    theNearestMap[llRoundedKey(routeGeometry[routeGeometry.length - 1])] = finish;
+
+    // start, finish - fast (use geometry[1st,last] if where is no start/finish specified)
+    theNearestMap[llRoundedKey(routeGeometry[0])] = start ?? routeGeometry[0];
+    theNearestMap[llRoundedKey(routeGeometry[routeGeometry.length - 1])] =
+        finish || routeGeometry[routeGeometry.length - 1];
+
     // viaPoints (measured ~10 RPS on a big 2500 km route with 10 via-points)
     viaPoints.forEach((via) => {
         let closest = null;
