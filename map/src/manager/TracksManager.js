@@ -1088,8 +1088,33 @@ export function hasSegments(track) {
     return track?.points?.length >= 2 || (track?.tracks?.length > 0 && track.tracks[0].points?.length >= 2);
 }
 
-export function hasTurns(track) {
-    return track && true; // FIXME
+export function hasSegmentTurns({ track = null }) {
+    // Unknown: tracks[0].segments[0] - for cloud tracks (only)
+    // Good: points[].geometry[].segment.ext.turnType - for local tracks
+    // Good: track.tracks[0].points[].geometry[].segment.ext.turnType - for cloud tracks
+    function checkPointsGeometrySegments(points) {
+        return points.some((p) => {
+            if (p.geometry && p.geometry.length > 0) {
+                return p.geometry.some((g) => {
+                    return !!g.segment?.ext?.turnType;
+                });
+            }
+            return false;
+        });
+    }
+    if (track && track.points && track.points.length > 0) {
+        return checkPointsGeometrySegments(track.points);
+    }
+    if (
+        track &&
+        track.tracks &&
+        track.tracks.length > 0 &&
+        track.tracks[0].points &&
+        track.tracks[0].points.length > 0
+    ) {
+        return checkPointsGeometrySegments(track.tracks[0].points);
+    }
+    return false;
 }
 
 export function isPointUnrouted({ point, pointIndex, prevPoint }) {
