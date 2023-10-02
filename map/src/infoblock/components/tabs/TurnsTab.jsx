@@ -127,13 +127,14 @@ export default function TurnsTab() {
         function getPointsGeometrySegments(points) {
             const turns = [];
             points.forEach((p) => {
-                p.geometry.forEach((g, i, all) => {
+                p.geometry.forEach((g /*, i, all*/) => {
                     if (g.segment?.ext?.turnType) {
                         const { lat, lng } = g;
                         const turnType = g.segment.ext.turnType;
-                        const meters =
-                            i === all.length - 1 ? 0 : Number(all[i + 1].distanceTotal - g.distanceTotal).toFixed(0);
-                        const description = `${codeToString(turnType)} and go ${meters > 0 ? meters + ' meters' : ''}`;
+                        // const meters =
+                        //     i === all.length - 1 ? 0 : Number(all[i + 1].distanceTotal - g.distanceTotal).toFixed(0);
+                        // const description = `${codeToString(turnType)} and go ${meters > 0 ? meters + ' meters' : ''}`;
+                        const description = codeToString(turnType);
                         turns.push({ lat, lng, description, turnType });
                     }
                 });
