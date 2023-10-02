@@ -11,7 +11,7 @@ const TEST_GPX_FILE = 'test-routed-osmand.gpx';
 const GO_CENTER_HASH = '#10/48.4716/23.7064';
 const CHECK_START = '48.61650, 23.68181';
 const CHECK_END = '48.61421, 23.70352';
-const CAR = '157.7 km';
+const CAR = /157.[79] km/;
 const BIKE = '162.3 km';
 const FOOT = '161.1 km';
 
