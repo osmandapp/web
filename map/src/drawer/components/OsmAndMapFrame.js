@@ -1,84 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Drawer, Toolbar, Box, Alert, SvgIcon, Button } from '@mui/material';
-import { AppBar } from '@mui/material';
+import { Drawer, Toolbar, Box, Alert } from '@mui/material';
 import OsmAndMap from '../../map/components/OsmAndMap';
 import OsmAndDrawer from './OsmAndDrawer';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import InformationBlock from '../../infoblock/components/InformationBlock';
 import AppContext from '../../context/AppContext';
 import GeneralPanelButtons from './GeneralPanelButtons';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { GlobalConfirmationDialog } from '../../dialogs/GlobalConfirmationDialog';
-import { ReactComponent as Logo } from '../../static/logo.svg';
-import { makeStyles } from '@material-ui/core/styles';
-
-const useStyles = makeStyles({
-    logo: {
-        width: '32px !important',
-        height: '32px !important',
-        marginLeft: -8,
-        marginTop: -4,
-    },
-    name: {
-        color: '#1c1e21',
-        fontSize: '16px !important',
-        fontWeight: '700 !important',
-        fontFamily: 'system-ui, -apple-system, "Segoe UI" !important',
-        marginLeft: '8px !important',
-        marginTop: '-3px !important',
-        paddingRight: '6px',
-        letterSpacing: '0px !important',
-    },
-    menu: {
-        flexGrow: 1,
-        display: { xs: 'none', md: 'flex' },
-        marginTop: -4,
-        marginLeft: 10,
-    },
-    menuItem: {
-        color: '#1c1e21 !important',
-        fontWeight: '500px !important',
-        fontSize: '16px !important',
-        textTransform: 'none !important',
-        fontFamily: 'system-ui, -apple-system, "Segoe UI" !important',
-        letterSpacing: '0px !important',
-        paddingRight: '12px !important',
-        paddingLeft: '12px !important',
-        minWidth: '10px !important',
-        '&:hover': {
-            color: '#237bff !important',
-            backgroundColor: '#ffffff !important',
-            boxShadow: 'none !important',
-        },
-    },
-});
-
-const pages = [
-    {
-        name: 'Docs',
-        url: '/docs/intro',
-    },
-    {
-        name: 'Blog',
-        url: '/blog',
-    },
-    {
-        name: '💳 Purchases',
-        url: '/docs/user/purchases',
-    },
-    {
-        name: '🌍 Map',
-        url: '/map',
-    },
-    {
-        name: '🚵‍ Join us',
-        url: '/docs/hiring',
-    },
-];
+import HeaderMenu from './header/HeaderMenu';
 
 const OsmAndMapFrame = () => {
     const ctx = useContext(AppContext);
-    const classes = useStyles();
 
     const MAIN_MENU_SIZE = 320;
 
@@ -99,40 +32,7 @@ const OsmAndMapFrame = () => {
 
     return (
         <Box sx={{ display: 'flex' }}>
-            <AppBar
-                position="fixed"
-                sx={{
-                    zIndex: (theme) => theme.zIndex.drawer + 1,
-                    height: '60px',
-                    background: '#ffffff',
-                }}
-            >
-                <Toolbar>
-                    <SvgIcon component={Logo} inheritViewBox className={classes.logo} />
-                    <Button
-                        target="_blank"
-                        component={Link}
-                        to={'/'}
-                        className={classes.menuItem}
-                        sx={{ fontWeight: '700 !important', ml: -0.5, mt: -0.5, mr: -0.77 }}
-                    >
-                        OsmAnd
-                    </Button>
-                    <Box className={classes.menu}>
-                        {pages.map((page) => (
-                            <Button
-                                target="_blank"
-                                component={Link}
-                                to={page.url}
-                                key={page.name}
-                                className={classes.menuItem}
-                            >
-                                {page.name}
-                            </Button>
-                        ))}
-                    </Box>
-                </Toolbar>
-            </AppBar>
+            <HeaderMenu />
             <Box
                 sx={{
                     width: { xs: `calc(100%)` },
