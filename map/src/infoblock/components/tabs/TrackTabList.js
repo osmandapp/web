@@ -5,7 +5,7 @@ import PointsTab from './PointsTab';
 import TurnsTab from './TurnsTab';
 // import SettingsTab from './SettingsTab';
 import WaypointsTab from './WaypointsTab';
-import { isEmptyTrack, hasTurns } from '../../../manager/TracksManager';
+import { isEmptyTrack, hasSegmentTurns } from '../../../manager/TracksManager';
 import { isLocalTrack, isCloudTrack, isRouteTrack } from '../../../context/AppContext';
 
 export default class TrackTabList {
@@ -28,7 +28,7 @@ export default class TrackTabList {
             tabs.Waypoints = <WaypointsTab key={'waypoints' + ctx.selectedGpxFile.name} />;
         }
 
-        if (isRouteTrack(ctx) || hasTurns(ctx.selectedGpxFile)) {
+        if (isRouteTrack(ctx) || hasSegmentTurns({ track: ctx.selectedGpxFile })) {
             tabs.Turns = <TurnsTab key="turns" />;
         }
 
