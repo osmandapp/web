@@ -16,6 +16,7 @@ export const FINAL_DELAY = 3000; // increased final idle delay - used after comp
 export let driver = null;
 
 export let url = null;
+
 export let stop = false;
 export let cycle = false;
 export let debug = false;
@@ -30,6 +31,9 @@ export function parseArgs() {
     process.argv.slice(2).forEach((a) => {
         if (a === '-h' || a === '--help') {
             showUsage();
+            process.kill(process.pid);
+        } else if (a === '--ls' || a === '--list') {
+            showList();
             process.kill(process.pid);
         } else if (a.match(/^(http:|https:)/)) {
             url = a;
@@ -69,6 +73,12 @@ export function mask2regexp(mask) {
     return new RegExp('^' + regexp); // '^' + regexp to behave as filesystem wildcards
 }
 
+function showList() {
+    readdirSync('src/tests/')
+        .sort()
+        .forEach((file) => file.match(/\.mjs$/) && console.log(file));
+}
+
 function showUsage() {
     console.log(`Usage: yarn [test|test:test|test:main] [options] [tests]
 
@@ -85,6 +95,7 @@ Options:
     --noexit        Do not close browser after test done
     --debug         Print debug info and full errors
     --cycle         Restart cycle of tests forever
+    --list (--ls)   List tests and exit
     --help          Help and exit
 
 Tests: specify distinct test(s) to run (wildcards are ok)

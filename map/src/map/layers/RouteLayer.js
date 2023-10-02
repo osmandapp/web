@@ -1,26 +1,19 @@
-import React, { useEffect, useRef, useContext, useState, useCallback } from 'react';
+import React, { useEffect, useRef, useContext, useCallback } from 'react';
 import { Marker, GeoJSON, useMap, Popup } from 'react-leaflet';
 import L from 'leaflet';
-import AppContext from '../../context/AppContext';
-import TracksManager from '../../manager/TracksManager';
-import { useNavigate, useLocation } from 'react-router-dom';
+import AppContext, { isRouteTrack } from '../../context/AppContext';
 import MarkerOptions from '../markers/MarkerOptions';
+import { fitBoundsOptions } from '../../manager/TracksManager';
 
 const DRAG_DEBOUNCE_MS = 10;
 
-function moveableMarker(ctx, map, marker) {
+function moveableMarker(routeObject, map, marker) {
     let moved;
     let mv;
 
     function trackCursor(evt) {
         marker.setLatLng(evt.latlng);
     }
-
-    // marker.on("mousemove", () => {
-    //     if (moved) {
-    //         console.debug('drag...');
-    //     }
-    // })
 
     marker.on('mousedown', () => {
         moved = marker._point;
@@ -33,7 +26,7 @@ function moveableMarker(ctx, map, marker) {
         map.dragging.enable();
         map.off('mousemove', trackCursor);
         if (moved && Math.abs(moved.x - marker._point.x) + Math.abs(moved.y - marker._point.y) > 10) {
-            ctx.routeRouter.newInterPoint({ ctx, ll: marker.getLatLng(), old: mv });
+            routeObject.routeAddViaPoint({ ll: marker.getLatLng(), old: mv });
         }
     });
 
@@ -43,8 +36,13 @@ function moveableMarker(ctx, map, marker) {
 const RouteLayer = ({ geocodingData, region }) => {
     const map = useMap();
     const ctx = useContext(AppContext);
-    const navigate = useNavigate();
-    const url = useLocation();
+
+    const routeObject = ctx.routeObject;
+
+    const startPoint = routeObject.getOption('route.points.start');
+    const finishPoint = routeObject.getOption('route.points.finish');
+    const viaPoints = routeObject.getOption('route.points.viaPoints');
+    const avoidRoads = routeObject.getOption('route.points.avoidRoads');
 
     let timer = null;
     function debouncer(f) {
@@ -57,122 +55,53 @@ const RouteLayer = ({ geocodingData, region }) => {
         }
     }
 
-    const [routeQueryStringParams, setRouteQueryStringParams] = useState({});
-    const [routeQueryStringCleanup, setQueryStringCleanup] = useState(false);
-
-    useEffect(() => {
-        if (ctx.routeRouter.isReady()) {
-            let obj = {};
-
-            if (ctx.startPoint) {
-                obj['start'] = ctx.startPoint.lat.toFixed(6) + ',' + ctx.startPoint.lng.toFixed(6);
-            }
-            if (ctx.endPoint) {
-                obj['end'] = ctx.endPoint.lat.toFixed(6) + ',' + ctx.endPoint.lng.toFixed(6);
-            }
-            if (ctx.interPoints?.length > 0) {
-                obj['inter'] = ctx.interPoints.map((i) => i.lat.toFixed(6) + ',' + i.lng.toFixed(6)).join(';');
-            }
-            if (ctx.avoidRoads?.length > 0) {
-                obj['avoid'] = ctx.avoidRoads.map(({ id }) => id).join(';');
-            }
-
-            const qs = new URLSearchParams(window.location.search);
-            if (Object.keys(obj).length > 0 || (qs.get('type') && qs.get('profile'))) {
-                const { type, profile } = ctx.routeRouter.getProfile();
-                obj.type = type;
-                obj.profile = profile;
-
-                if (ctx.routeRouter.isParamsChanged()) {
-                    const mode = TracksManager.formatRouteMode({
-                        includeFalse: true,
-                        profile: profile,
-                        params: ctx.routeRouter.getChangedParams(),
-                    });
-                    obj['params'] = mode.toString().replaceAll('=', ':'); // pretty-url
-                }
-            }
-
-            // allow-alone-pin
-            if (ctx.pinPoint) {
-                obj['pin'] = ctx.pinPoint.lat.toFixed(6) + ',' + ctx.pinPoint.lng.toFixed(6);
-            }
-
-            if (Object.keys(obj).length > 0 || routeQueryStringCleanup) {
-                setQueryStringCleanup(true);
-                setRouteQueryStringParams(obj);
-            }
-        }
-    }, [ctx.startPoint, ctx.endPoint, ctx.pinPoint, ctx.interPoints, ctx.avoidRoads, ctx.routeRouter.getEffectDeps()]);
-
-    useEffect(() => {
-        if (ctx.routeRouter.isReady() && (Object.keys(routeQueryStringParams).length > 0 || routeQueryStringCleanup)) {
-            if (Object.keys(routeQueryStringParams).length === 0) {
-                setQueryStringCleanup(false); // only once
-            }
-            const pretty = new URLSearchParams(Object.entries(routeQueryStringParams))
-                .toString()
-                .replaceAll('%2C', ',')
-                .replaceAll('%3A', ':')
-                .replaceAll('%3B', ';');
-            navigate({
-                hash: url.hash,
-                search: '?' + pretty,
-            });
-        }
-    }, [routeQueryStringParams, ctx.routeRouter.isReady()]); // setRouteQueryStringParams
-
     const startPointRef = useRef(null);
-    const endPointRef = useRef(null);
+    const finishPointRef = useRef(null);
     const pinPointRef = useRef(null);
     const startEventHandlers = useCallback(
         {
             drag() {
                 const marker = startPointRef.current;
                 if (marker != null) {
-                    debouncer(() => ctx.setStartPoint(marker.getLatLng()));
+                    debouncer(() => routeObject.setOption('route.points.start', marker.getLatLng()));
                 }
             },
             dragstart() {
-                ctx.routeRouter.onDragStart();
+                routeObject.onDragStart();
             },
             dragend() {
-                ctx.routeRouter.onDragEnd();
+                routeObject.onDragEnd();
                 const marker = startPointRef.current;
                 if (marker != null) {
-                    ctx.setStartPoint(marker.getLatLng());
+                    routeObject.setOption('route.points.start', marker.getLatLng());
                     ctx.setRouteTrackFile(null);
                 }
             },
-            // click() {
-            //     // ctx.setStartPoint(null);
-            //     // ctx.setRouteData(null);
-            // }
         },
-        [ctx.setStartPoint, startPointRef]
+        [startPointRef]
     );
 
     const endEventHandlers = useCallback(
         {
             drag() {
-                const marker = endPointRef.current;
+                const marker = finishPointRef.current;
                 if (marker != null) {
-                    debouncer(() => ctx.setEndPoint(marker.getLatLng()));
+                    debouncer(() => routeObject.setOption('route.points.finish', marker.getLatLng()));
                 }
             },
             dragstart() {
-                ctx.routeRouter.onDragStart();
+                routeObject.onDragStart();
             },
             dragend() {
-                ctx.routeRouter.onDragEnd();
-                const marker = endPointRef.current;
+                routeObject.onDragEnd();
+                const marker = finishPointRef.current;
                 if (marker != null) {
-                    ctx.setEndPoint(marker.getLatLng());
+                    routeObject.setOption('route.points.finish', marker.getLatLng());
                     ctx.setRouteTrackFile(null);
                 }
             },
         },
-        [ctx.setEndPoint, endPointRef]
+        [finishPointRef]
     );
 
     const pinEventHandlers = useCallback(
@@ -185,38 +114,31 @@ const RouteLayer = ({ geocodingData, region }) => {
                 }
             },
         },
-        [ctx.setPinPoint, pinPointRef]
+        [pinPointRef]
     );
 
-    const intermediatEventHandlers = useCallback(
+    const intermediateEventHandlers = useCallback(
         {
-            // click called after dragend
-            // clicknotworking(event) {
-            //     let ind = event.target.options['data-index'];
-            //     let newinter = Object.assign([], ctx.interPoints);
-            //     newinter.splice(ind, 1);
-            //     ctx.setInterPoints(newinter);
-            // },
             drag(event) {
                 debouncer(() => {
-                    let ind = event.target.options['data-index'];
-                    let newinter = Object.assign([], ctx.interPoints);
-                    newinter[ind] = event.target.getLatLng();
-                    ctx.setInterPoints(newinter);
+                    const ind = event.target.options['data-index'];
+                    const newViaPoints = Object.assign([], viaPoints);
+                    newViaPoints[ind] = event.target.getLatLng();
+                    routeObject.setOption('route.points.viaPoints', newViaPoints);
                 });
             },
             dragstart() {
-                ctx.routeRouter.onDragStart();
+                routeObject.onDragStart();
             },
             dragend(event) {
-                ctx.routeRouter.onDragEnd();
-                let ind = event.target.options['data-index'];
-                let newinter = Object.assign([], ctx.interPoints);
-                newinter[ind] = event.target.getLatLng();
-                ctx.setInterPoints(newinter);
+                routeObject.onDragEnd();
+                const ind = event.target.options['data-index'];
+                const newViaPoints = Object.assign([], viaPoints);
+                newViaPoints[ind] = event.target.getLatLng();
+                routeObject.setOption('route.points.viaPoints', newViaPoints);
             },
         },
-        [ctx.setInterPoints, ctx.interPoints]
+        [viaPoints]
     );
 
     const geojsonMarkerOptions = {
@@ -237,9 +159,9 @@ const RouteLayer = ({ geocodingData, region }) => {
                 const osm = id / 64;
 
                 window['addAvoidRoadId' + id] = () => {
-                    const newAvoidRoads = Object.assign([], ctx.avoidRoads);
+                    const newAvoidRoads = Object.assign([], avoidRoads);
                     newAvoidRoads.push({ id, name });
-                    ctx.setAvoidRoads(newAvoidRoads);
+                    routeObject.setOption('route.points.avoidRoads', newAvoidRoads);
                 };
 
                 desc = `${desc}.
@@ -252,21 +174,18 @@ const RouteLayer = ({ geocodingData, region }) => {
 
     // filter features for GeoJSON
     const routeFilter = (feature /*, layer*/) => {
-        if (feature?.geometry?.type === 'Point' && ctx.routeShowPoints === false) {
+        if (feature?.geometry?.type === 'Point' && routeObject.getOption('route.map.hidePoints') === true) {
             return false;
         }
         return true;
     };
-
-    // GeoJSON requires dynamic key to refresh (used for re-filtering)
-    const routeDataKey = () => ctx.routeData.id + ':' + ctx.routeShowPoints;
 
     const pointToLayer = (feature, latlng) => {
         let opts = Object.assign({}, geojsonMarkerOptions);
         if (feature.properties && feature.properties.description && feature.properties.description.includes('[MUTE]')) {
             opts.fillColor = '#777';
         }
-        return moveableMarker(ctx, map, L.circleMarker(latlng, opts));
+        return moveableMarker(routeObject, map, L.circleMarker(latlng, opts));
     };
 
     const pointToLayerGeoData = (feature, latlng) => {
@@ -305,16 +224,63 @@ const RouteLayer = ({ geocodingData, region }) => {
         if (searchRes) {
             map.flyTo([searchRes[1], searchRes[0]], 17);
         }
-    }, [ctx.searchCtx, ctx.setSearchCtx]);
+    }, [ctx.searchCtx]);
+
+    // GeoJSON requires dynamic key to refresh/refilter
+    // used to redraw layer(s) killed after Local Track Editor
+    const refreshKey = isRouteTrack(ctx).toString();
+    const routeDataKey = routeObject.getRouteKey() + refreshKey;
+
+    const routeLayerRef = useRef(null);
+    const routeLayer = routeLayerRef.current;
+
+    const viaLayersRef = useRef([]);
+
+    // fitBounds (route)
+    // activated on route.map.zoom
+    const routeZoom = routeObject.getOption('route.map.zoom');
+    useEffect(() => {
+        if (routeLayer && routeZoom) {
+            routeObject.setOption('route.map.zoom', false);
+            map.fitBounds(routeLayer.getBounds(), fitBoundsOptions(ctx));
+        }
+    }, [routeZoom, routeLayer]);
+
+    // conceal (remove layer)
+    // activated on route.map.conceal
+    // dep on routeLayer to concel refreshed layer again
+    const routeConceal = routeObject.getOption('route.map.conceal');
+    useEffect(() => {
+        if (routeLayer && routeConceal) {
+            // stop conceal only when isRouteTrack mode started
+            if (isRouteTrack(ctx)) {
+                routeObject.setOption('route.map.conceal', false);
+            }
+
+            // avoid conceal if zoom is requested
+            if (routeZoom === false) {
+                map.removeLayer(routeLayer);
+
+                // remove start, finish
+                map.removeLayer(startPointRef.current);
+                map.removeLayer(finishPointRef.current);
+
+                // remove viaPoints (ref array) and reset the array
+                viaLayersRef.current.forEach((m) => m && map.removeLayer(m));
+                viaLayersRef.current = [];
+            }
+        }
+    }, [routeConceal, routeLayer]);
 
     const passStyle = (f) => f.style; // pass geojson.features.style to set colors/etc
 
     return (
         <>
-            {ctx.routeData && (
+            {routeObject.getRoute() && (
                 <GeoJSON
-                    key={routeDataKey()}
-                    data={ctx.routeData.geojson}
+                    ref={routeLayerRef}
+                    key={routeDataKey}
+                    data={routeObject.getRoute()}
                     style={passStyle}
                     pointToLayer={pointToLayer}
                     onEachFeature={onEachFeature}
@@ -323,7 +289,7 @@ const RouteLayer = ({ geocodingData, region }) => {
             )}
             {geocodingData && (
                 <GeoJSON
-                    key={geocodingData.id}
+                    key={geocodingData.id + refreshKey}
                     data={geocodingData.geojson}
                     pointToLayer={pointToLayerGeoData}
                     onEachFeature={onEachFeature}
@@ -331,42 +297,46 @@ const RouteLayer = ({ geocodingData, region }) => {
             )}
             {ctx.searchCtx.geojson && (
                 <GeoJSON
-                    key={ctx.searchCtx.id}
+                    key={ctx.searchCtx.id + refreshKey}
                     data={ctx.searchCtx.geojson}
                     pointToLayer={pointToLayerSearch}
                     onEachFeature={onEachFeature}
                 />
             )}
-            {ctx.startPoint && (
+            {startPoint && (
                 <Marker
-                    position={ctx.startPoint}
+                    key={'mark-start' + refreshKey}
+                    position={startPoint}
                     icon={MarkerOptions.options.startIcon}
                     ref={startPointRef}
                     draggable={true}
                     eventHandlers={startEventHandlers}
                 />
             )}
-            {ctx.interPoints.map((it, ind) => (
+            {viaPoints.map((it, ind) => (
                 <Marker
-                    key={'mark' + ind}
+                    ref={(m) => m && viaLayersRef.current.push(m)}
+                    key={'mark-via' + ind + refreshKey}
                     data-index={ind}
                     position={it}
                     icon={MarkerOptions.options.interIcon}
                     draggable={true}
-                    eventHandlers={intermediatEventHandlers}
+                    eventHandlers={intermediateEventHandlers}
                 />
             ))}
-            {ctx.endPoint && (
+            {finishPoint && (
                 <Marker
-                    position={ctx.endPoint}
+                    key={'mark-finish' + refreshKey}
+                    position={finishPoint}
                     icon={MarkerOptions.options.endIcon}
-                    ref={endPointRef}
+                    ref={finishPointRef}
                     draggable={true}
                     eventHandlers={endEventHandlers}
                 />
             )}
             {ctx.pinPoint && (
                 <Marker
+                    key={'pin-point' + refreshKey}
                     position={ctx.pinPoint}
                     icon={MarkerOptions.options.pointerIcons}
                     ref={pinPointRef}

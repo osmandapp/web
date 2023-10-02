@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Box, Button, Divider } from '@mui/material';
-import AppContext from '../../../context/AppContext';
+import AppContext, { isLocalTrack, isRouteTrack } from '../../../context/AppContext';
 import { Add, Download } from '@mui/icons-material';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import DeleteTrackDialog from '../track/dialogs/DeleteTrackDialog';
@@ -26,10 +26,7 @@ export const downloadGpx = async (ctx) => {
         const data = gpx.data;
         const url = document.createElement('a');
         url.href = URL.createObjectURL(new Blob([data]));
-        const name = TracksManager.prepareName(
-            ctx.selectedGpxFile.name,
-            ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK
-        );
+        const name = TracksManager.prepareName(ctx.selectedGpxFile.name, isLocalTrack(ctx));
         url.download = `${name}.gpx`;
         url.click();
     }
@@ -53,7 +50,7 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
         <>
             <Box>
                 <GeneralInfo width={ctx.infoBlockWidth} />
-                {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                {isLocalTrack(ctx) && (
                     <>
                         {!isEmptyTrack(ctx.selectedGpxFile) && <Divider sx={{ mt: '3px', mb: '12px' }} />}
                         <div style={{ marginLeft: '15px', marginTop: '-10px' }}>
@@ -102,38 +99,44 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                             <Download fontSize="small" sx={{ mr: '3px' }} />
                             Download GPX
                         </Button>
-                        <Button
-                            id="se-infoblock-button-collection"
-                            variant="contained"
-                            className={styles.button}
-                            onClick={addToCollection}
-                        >
-                            <Add fontSize="small" sx={{ mr: '3px' }} />
-                            Collection (OBF MAP)
-                        </Button>
+                        {isRouteTrack(ctx) === false && (
+                            <Button
+                                id="se-infoblock-button-collection"
+                                variant="contained"
+                                className={styles.button}
+                                onClick={addToCollection}
+                            >
+                                <Add fontSize="small" sx={{ mr: '3px' }} />
+                                Collection (OBF MAP)
+                            </Button>
+                        )}
                     </>
                 )}
                 <Divider sx={{ mt: 2, mb: 2 }} />
-                <Button
-                    id="se-infoblock-button-close-track"
-                    variant="contained"
-                    sx={{ ml: '-0.5px !important' }}
-                    className={styles.button}
-                    onClick={() => setShowInfoBlock(false)}
-                >
-                    Close Track
-                </Button>
-                <Button
-                    id="se-infoblock-button-delete-track"
-                    variant="contained"
-                    sx={{ backgroundColor: '#ff595e !important' }}
-                    className={styles.button}
-                    onClick={() => {
-                        setOpenDeleteDialog(true);
-                    }}
-                >
-                    {ctx.createTrack?.cloudAutoSave ? 'Discard changes' : 'Delete Track'}
-                </Button>
+                {isRouteTrack(ctx) === false && (
+                    <>
+                        <Button
+                            id="se-infoblock-button-close-track"
+                            variant="contained"
+                            sx={{ ml: '-0.5px !important' }}
+                            className={styles.button}
+                            onClick={() => setShowInfoBlock(false)}
+                        >
+                            Close Track
+                        </Button>
+                        <Button
+                            id="se-infoblock-button-delete-track"
+                            variant="contained"
+                            sx={{ backgroundColor: '#ff595e !important' }}
+                            className={styles.button}
+                            onClick={() => {
+                                setOpenDeleteDialog(true);
+                            }}
+                        >
+                            {ctx.createTrack?.cloudAutoSave ? 'Discard changes' : 'Delete Track'}
+                        </Button>
+                    </>
+                )}
             </Box>
             {openDeleteDialog && (
                 <DeleteTrackDialog

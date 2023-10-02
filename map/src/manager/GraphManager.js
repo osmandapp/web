@@ -45,14 +45,15 @@ export function cap(s) {
     return s && s[0].toUpperCase() + s.slice(1);
 }
 
-export function getSlopes(result, ctx) {
+export function getSlopes(result, ctx, sumDist) {
+    const totalDistance = ctx?.selectedGpxFile?.analysis?.totalDistance || sumDist;
     let STEP = 5;
     let l = 10;
-    while (l > 0 && ctx.selectedGpxFile.analysis.totalDistance / STEP > 10000) {
-        STEP = Math.max(STEP, ctx.selectedGpxFile.analysis.totalDistance / (result.length * l--));
+    while (l > 0 && totalDistance / STEP > 10000) {
+        STEP = Math.max(STEP, totalDistance / (result.length * l--));
     }
     // interpolate
-    const interpolatorResult = interpolate(ctx.selectedGpxFile.analysis.totalDistance, STEP, result);
+    const interpolatorResult = interpolate(totalDistance, STEP, result);
 
     const calculatedDist = interpolatorResult.calculatedX;
     const calculatedH = interpolatorResult.calculatedY;

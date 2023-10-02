@@ -21,8 +21,8 @@ const localTrackButtons = [
     'se-panel-button-close-track',
 ];
 const cloudTrackButtons = [
-    'se-panel-button-edit-cloud-icon',
-    'se-panel-button-edit-cloud-track',
+    'se-panel-button-edit-icon',
+    'se-panel-button-edit-track',
     'se-panel-button-download-gpx',
     'se-panel-button-delete-track',
     'se-panel-button-close-track',

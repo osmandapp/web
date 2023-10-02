@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState, useRef } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext, { OBJECT_TYPE_POI } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import _ from 'lodash';
 import L from 'leaflet';
@@ -146,7 +146,7 @@ export default function PoiLayer() {
     }, [poiList]);
 
     function onClick(e) {
-        const type = ctx.OBJECT_TYPE_POI;
+        const type = OBJECT_TYPE_POI;
         ctx.setCurrentObjectType(type);
 
         const poi = {

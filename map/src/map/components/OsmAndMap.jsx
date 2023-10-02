@@ -139,7 +139,7 @@ const OsmAndMap = ({ mobile, drawerRightHeight, mainMenuWidth, drawerRightWidth 
         document.addEventListener('touchend', markerEventHandler, { passive: false });
     }, []);
 
-    const routersReady = ctx.trackRouter.isReady() && ctx.routeRouter.isReady();
+    const routersReady = ctx.trackRouter.isReady() && ctx.routeObject.isReady();
 
     return (
         <MapContainer

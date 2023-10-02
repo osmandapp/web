@@ -24,7 +24,7 @@ import AppContext from '../context/AppContext';
 export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenSettings }) {
     const ctx = useContext(AppContext);
 
-    geoRouter = geoRouter || ctx.routeRouter; // trackRouter callers specify distinct geoRouter
+    geoRouter = geoRouter || ctx.routeObject; // trackRouter callers specify distinct geoRouter
 
     // Close = Accept
     const handleCloseAccept = () => {

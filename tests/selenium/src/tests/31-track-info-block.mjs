@@ -1,7 +1,8 @@
 'use strict';
 
 import { By } from 'selenium-webdriver';
-import {clickBy, enclose, enumerateIds, matchInnerTextBy} from '../lib.mjs';
+import { mobile } from '../options.mjs';
+import { clickBy, enclose, enumerateIds, matchInnerTextBy } from '../lib.mjs';
 
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
@@ -48,6 +49,8 @@ const TRACKS = [
     },
 ];
 
+const MOBILE_SKIP = /(Path|Gravel|Street|Asphalt)/; // bye-bye mobile version
+
 const localTrackButtons = [
     'se-infoblock-button-save-to-cloud',
     'se-infoblock-button-download-gpx',
@@ -56,7 +59,7 @@ const localTrackButtons = [
     'se-infoblock-button-delete-track',
 ];
 const cloudTrackButtons = [
-    'se-infoblock-button-edit-cloud-track',
+    'se-infoblock-button-edit-track',
     'se-infoblock-button-download-gpx',
     'se-infoblock-button-collection',
     'se-infoblock-button-close-track',
@@ -71,8 +74,8 @@ export default async function test() {
         const name = gpx.replace('.gpx', '');
 
         await actionUploadGpx({ mask: gpx });
-        await clickBy(By.id('se-show-attr-legend-Road type'), {optional: true});
-        await clickBy(By.id('se-show-attr-legend-Surface'), {optional: true});
+        await clickBy(By.id('se-show-attr-legend-Road type'), { optional: true });
+        await clickBy(By.id('se-show-attr-legend-Surface'), { optional: true });
         await validateInfoBlockStrings(strings);
         await validateInfoBlockButtons(localTrackButtons);
 
@@ -86,6 +89,9 @@ export default async function test() {
 
 async function validateInfoBlockStrings(strings) {
     for await (const match of strings) {
+        if (mobile && match.toString().match(MOBILE_SKIP)) {
+            continue;
+        }
         await matchInnerTextBy(By.id('se-infoblock-all'), match);
     }
 }

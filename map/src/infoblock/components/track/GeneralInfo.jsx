@@ -1,6 +1,6 @@
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { toHHMMSS } from '../../../context/AppContext';
+import AppContext, { isLocalTrack, isCloudTrack, isRouteTrack } from '../../../context/AppContext';
 import TracksManager, {
     hasSegments,
     isEmptyTrack,
@@ -8,7 +8,7 @@ import TracksManager, {
     eligibleToApplySrtm,
     prepareDesc,
 } from '../../../manager/TracksManager';
-import { prepareFileName } from '../../../util/Utils';
+import { prepareFileName, toHHMMSS } from '../../../util/Utils';
 import {
     Box,
     Button,
@@ -36,6 +36,8 @@ import {
     Terrain,
 } from '@mui/icons-material';
 import DescTrackDialog from './dialogs/DescTrackDialog';
+import RouteIcon from '@mui/icons-material/Route';
+import { formatRouteInfo } from '../../../drawer/components/route/RouteMenu';
 
 export default function GeneralInfo({ width }) {
     const styles = contextMenuStyles();
@@ -282,7 +284,7 @@ export default function GeneralInfo({ width }) {
                             dangerouslySetInnerHTML={{ __html: html }}
                         />
                     </Typography>
-                    {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                    {isLocalTrack(ctx) && (
                         <IconButton
                             sx={{ alignSelf: 'flex-start', mt: '-10px' }}
                             onClick={() => setOpenDescDialog(true)}
@@ -479,13 +481,11 @@ export default function GeneralInfo({ width }) {
         <>
             <Box minWidth={width} maxWidth={width}>
                 <Typography className={styles.info} variant="subtitle1" color="inherit">
-                    <div>
-                        {ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK ? EditName() : NoEditName()}
-                    </div>
+                    <div>{isLocalTrack(ctx) ? EditName() : NoEditName()}</div>
                     <div>
                         {preparedDesc
                             ? Description({ desc: preparedDesc })
-                            : ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK && (
+                            : isLocalTrack(ctx) && (
                                   <>
                                       <Link
                                           href="#"
@@ -501,7 +501,7 @@ export default function GeneralInfo({ width }) {
                               )}
                     </div>
                     {ctx.loginUser &&
-                        ctx.currentObjectType === ctx.OBJECT_TYPE_LOCAL_CLIENT_TRACK &&
+                        (isLocalTrack(ctx) || isRouteTrack(ctx)) &&
                         isEmptyTrack(ctx.selectedGpxFile) === false && (
                             <>
                                 <Button
@@ -533,17 +533,17 @@ export default function GeneralInfo({ width }) {
                                 )}
                             </>
                         )}
-                    {!ctx.createTrack && ctx.currentObjectType === ctx.OBJECT_TYPE_CLOUD_TRACK && (
+                    {!ctx.createTrack && (isCloudTrack(ctx) || isRouteTrack(ctx)) && (
                         <>
                             <Button
-                                id="se-infoblock-button-edit-cloud-track"
+                                id="se-infoblock-button-edit-track"
                                 variant="contained"
-                                sx={{ ml: '-0.5px !important' }}
+                                sx={{ ml: isRouteTrack(ctx) ? 0 : '-0.5px !important' }}
                                 className={styles.button}
                                 onClick={() => TracksManager.handleEditCloudTrack(ctx)}
                             >
                                 <Create fontSize="small" sx={{ mr: '7px' }} />
-                                Edit Track
+                                {isCloudTrack(ctx) ? 'Edit Track' : 'Edit as track'}
                             </Button>
                             <Divider light sx={{ mt: 2, mb: 1 }} />
                         </>
@@ -558,6 +558,18 @@ export default function GeneralInfo({ width }) {
                                     {`Points: ${points}`}
                                     {pointsTotal > 0 && pointsTotal !== points && ` (${pointsTotal})`}
                                     {ctx.processRouting ? <CircularProgress size={13} sx={{ ml: 1 }} /> : <></>}
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    )}
+                    {isRouteTrack(ctx) && (
+                        <MenuItem sx={{ ml: -2, mt: -1 }}>
+                            <ListItemIcon>
+                                <RouteIcon fontSize="small" />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography sx={{ ml: 1 }} variant="body2" noWrap>
+                                    {formatRouteInfo(ctx.routeObject.getRouteProps())}
                                 </Typography>
                             </ListItemText>
                         </MenuItem>

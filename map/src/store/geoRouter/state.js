@@ -53,7 +53,7 @@ export function nextState() {
  * next.profile = profile;
  * next.flushState(next);
  *
- * this.paused = !!pause; // bad mutate (you don't allowed to mutate this)
+ * this.paused = !!pause; // bad mutate (you aren't allowed to mutate context)
  * this.flushState();
  */
 

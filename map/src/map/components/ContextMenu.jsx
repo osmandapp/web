@@ -10,6 +10,10 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
     const map = useMap();
     const navigate = useNavigate();
 
+    const routeObject = ctx.routeObject;
+    const startPoint = routeObject.getOption('route.points.start');
+    const finishPoint = routeObject.getOption('route.points.finish');
+
     const openLogin = () => {
         navigate('/map/loginForm' + window.location.search + window.location.hash);
     };
@@ -18,19 +22,23 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
         if (map) {
             map.contextmenu.removeAllItems();
             map.contextmenu.addItem({
-                text: 'Navigate from',
-                callback: (e) => ctx.setStartPoint(e.latlng),
+                text: 'Create new route',
+                callback: (e) => TracksManager.createTrack(ctx, e.latlng),
             });
             map.contextmenu.addItem({
-                text: 'Navigate to',
-                callback: (e) => ctx.setEndPoint(e.latlng),
+                text: 'Navigate from',
+                callback: (e) => routeObject.setOption('route.points.start', e.latlng),
             });
-            if (ctx.startPoint && ctx.endPoint) {
+            if (startPoint && finishPoint) {
                 map.contextmenu.addItem({
                     text: 'Navigate via',
-                    callback: (e) => ctx.routeRouter.newInterPoint({ ctx, ll: e.latlng }),
+                    callback: (e) => routeObject.routeAddViaPoint({ ll: e.latlng }),
                 });
             }
+            map.contextmenu.addItem({
+                text: 'Navigate to',
+                callback: (e) => routeObject.setOption('route.points.finish', e.latlng),
+            });
             map.contextmenu.addItem({
                 text: 'Add pin',
                 callback: (e) => ctx.setPinPoint(e.latlng),
@@ -51,10 +59,6 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                     ctx.loginUser ? addFavorite(e) : openLogin();
                 },
             });
-            map.contextmenu.addItem({
-                text: 'Plan a route',
-                callback: (e) => TracksManager.createTrack(ctx, e.latlng),
-            });
             if (ctx.createTrack?.enable) {
                 map.contextmenu.addItem({
                     text: 'Add waypoint',
@@ -70,16 +74,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                 callback: copyCoordinates,
             });
         }
-    }, [
-        map,
-        ctx.startPoint,
-        ctx.endPoint,
-        ctx.interPoints,
-        ctx.pinPoint,
-        ctx.loginUser,
-        ctx.createTrack,
-        ctx.selectedGpxFile,
-    ]);
+    }, [routeObject.getRouteEffectDeps(), ctx.pinPoint, ctx.loginUser, ctx.createTrack, ctx.selectedGpxFile]);
 
     const whereAmI = async (e) => {
         setGeocodingData(null);

@@ -6,15 +6,7 @@ import TracksManager from '../../../manager/TracksManager';
     OSRM profiles car/bicycle/pedestrian are compatible and supported by API
     OsmAnd profiles (ex-routeMode) are supported as is
 */
-export async function calculateGpxRoute({
-    routeTrackFile,
-    setRouteData,
-    setStartPoint,
-    setEndPoint,
-    setInterPoints,
-    changeRouteText,
-    setRoutingErrorMsg,
-}) {
+export async function calculateGpxRoute({ routeTrackFile, changeRouteText, setRoutingErrorMsg }) {
     const geoProfile = {
         profile: this.profile,
         params: this.getParams() ?? {},
@@ -39,25 +31,26 @@ export async function calculateGpxRoute({
 
     if (response.ok) {
         let data = await response.json();
-        let start, end;
-        let props = {};
+        let start, finish;
         if (data?.features?.length > 0) {
             let coords = data?.features[0].geometry.coordinates;
             if (coords.length > 0) {
                 start = { lat: coords[0][1], lng: coords[0][0] };
-                end = { lat: coords[coords.length - 1][1], lng: coords[coords.length - 1][0] };
+                finish = { lat: coords[coords.length - 1][1], lng: coords[coords.length - 1][0] };
             }
-            props = data.features[0]?.properties;
+            const { route } = this.putRoute({ route: data });
+            this.setOption('route.points.start', start);
+            this.setOption('route.points.finish', finish);
+            this.setOption('route.points.viaPoints', []);
+            changeRouteText(false, this.getRouteProps(route));
+        } else {
+            this.resetRoute();
+            changeRouteText(false, null);
+            setRoutingErrorMsg('gpx-approximate error');
         }
-        setStartPoint(start);
-        setEndPoint(end);
-        setInterPoints([]);
-        const allData = { geojson: data, id: new Date().getTime(), props: props };
-        setRouteData(allData);
-        changeRouteText(false, allData);
     } else {
         const message = await response.text();
-        setRouteData(null);
+        this.resetRoute();
         changeRouteText(false, null);
         setRoutingErrorMsg(message);
     }

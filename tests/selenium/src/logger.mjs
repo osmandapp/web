@@ -14,7 +14,7 @@ const sequence = ({ i, total }) => `[${pad(i + 1, total)}/${total}]`;
 const pad = (n, max) => n.toString().padStart(max.toString().length - n.toString().length + 1, '0');
 
 export function loggerRun({ i, total, file }) {
-    if (process.stdout.isTTY) {
+    if (process.stdout.isTTY && debug === false) {
         const seq = sequence({ i, total });
         const out = `${seq} ${file} ... `;
         process.stdout.write(out);
