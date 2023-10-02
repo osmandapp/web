@@ -1,5 +1,6 @@
+import { styled } from '@mui/material/styles';
 import { useContext, useState, useRef, useMemo } from 'react';
-import { Divider, Grid, IconButton, Typography, MenuItem } from '@mui/material';
+import { Box, Grid, IconButton, Typography, MenuItem, Switch } from '@mui/material';
 import AppContext, { isRouteTrack } from '../../../context/AppContext';
 import { hasSegmentTurns } from '../../../manager/TracksManager';
 
@@ -21,6 +22,34 @@ import UTurnLeft from '@mui/icons-material/UTurnLeftOutlined';
 
 import KeepRight from '@mui/icons-material/RampRightOutlined';
 import KeepLeft from '@mui/icons-material/RampLeftOutlined';
+
+const DoubleSwitch = styled(Switch)(() => ({
+    width: 88,
+    height: 34,
+    padding: 9,
+    '& .MuiSwitch-switchBase': {
+        margin: 1,
+        padding: 0,
+        color: '#1769aa',
+        transform: 'translateX(6px)',
+        '&.Mui-checked': {
+            color: '#fff',
+            transform: 'translateX(54px)',
+        },
+    },
+    '&.MuiSwitch-root .MuiSwitch-switchBase': {
+        color: '#1769aa',
+    },
+    '& .MuiSwitch-thumb': {
+        width: 24,
+        height: 24,
+        marginTop: 4,
+    },
+    '& .MuiSwitch-track': {
+        borderRadius: 20 / 2,
+        backgroundColor: '#1976d2',
+    },
+}));
 
 // TurnType.java toString()
 const CODES = {
@@ -94,10 +123,6 @@ function getIconByTurnDescription({ description, finish }) {
 
 export default function TurnsTab() {
     const ctx = useContext(AppContext);
-
-    !ctx && useState(true); // FIXME
-    // const [showRouteTurns, setShowRouteTurns] = useState(true);
-    // const [showTrackTurns, setShowTrackTurns] = useState(true);
 
     const hideTimerRef = useRef(0);
     const showPointOnMap = (lat, lng) => {
@@ -203,11 +228,51 @@ export default function TurnsTab() {
         );
     }
 
+    const [showRouteTurns, setShowRouteTurns] = useState(true);
+    const [showTrackTurns, setShowTrackTurns] = useState(false);
+
+    function handleSwitch() {
+        setShowRouteTurns(!showRouteTurns);
+        setShowTrackTurns(!showTrackTurns);
+    }
+
+    const alone = trackHasTurns === false || routeHasTurns === false;
+
     return (
         <>
-            {routeTurnItems}
-            <Divider />
-            {trackTurnItems}
+            {alone === false && (
+                <>
+                    <MenuItem onClick={handleSwitch}>
+                        <Grid container alignItems="center" spacing={0}>
+                            <Grid item xs={4} textAlign="right">
+                                Navigation
+                            </Grid>
+                            <Grid item xs={4} textAlign="center">
+                                <DoubleSwitch checked={!showRouteTurns} />
+                            </Grid>
+                            <Grid item xs={4} textAlign="left">
+                                Segments
+                            </Grid>
+                        </Grid>
+                    </MenuItem>
+                </>
+            )}
+            {routeHasTurns && (alone || showRouteTurns) && (
+                <Box>
+                    <Typography sx={{ color: '#666666', fontWeight: 'bold', ml: 2, my: 2 }}>
+                        Navigation turns (accurate)
+                    </Typography>
+                    {routeTurnItems}
+                </Box>
+            )}
+            {trackHasTurns && (alone || showTrackTurns) && (
+                <Box>
+                    <Typography sx={{ color: '#666666', fontWeight: 'bold', ml: 2, my: 2 }}>
+                        Segment turns (approximate)
+                    </Typography>
+                    {trackTurnItems}
+                </Box>
+            )}
         </>
     );
 }
