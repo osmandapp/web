@@ -1,7 +1,7 @@
-import { useContext, useRef } from 'react';
-import { Grid, IconButton, Typography, MenuItem } from '@mui/material';
+import { useContext, useState, useRef, useMemo } from 'react';
+import { Divider, Grid, IconButton, Typography, MenuItem } from '@mui/material';
 import AppContext, { isRouteTrack } from '../../../context/AppContext';
-// import contextMenuStyles from '../../styles/ContextMenuStyles';
+import { hasSegmentTurns } from '../../../manager/TracksManager';
 
 import Straight from '@mui/icons-material/StraightOutlined';
 
@@ -21,6 +21,26 @@ import UTurnLeft from '@mui/icons-material/UTurnLeftOutlined';
 
 import KeepRight from '@mui/icons-material/RampRightOutlined';
 import KeepLeft from '@mui/icons-material/RampLeftOutlined';
+
+// TurnType.java toString()
+const CODES = {
+    C: 'Go ahead',
+    KL: 'Keep left',
+    KR: 'Keep right',
+    TRU: 'Make uturn',
+    TU: 'Make uturn',
+    OFFR: 'Off route',
+    RNDB: 'Take exit',
+    RNLB: 'Take exit',
+    TL: 'Turn left',
+    TR: 'Turn right',
+    TSHL: 'Turn sharply left',
+    TSHR: 'Turn sharply right',
+    TSLL: 'Turn slightly left',
+    TSLR: 'Turn slightly right',
+};
+
+const codeToString = (code) => CODES[code] ?? code;
 
 const TURN = '^(Turn|Depart|Go ahead|Arrive|End of road|New name|Continue|Merge|On ramp|Fork)';
 const SL = '(Slight|slightly)';
@@ -74,9 +94,10 @@ function getIconByTurnDescription({ description, finish }) {
 
 export default function TurnsTab() {
     const ctx = useContext(AppContext);
-    // const styles = contextMenuStyles();
 
-    const route = isRouteTrack(ctx) && ctx.routeObject.getRoute();
+    !ctx && useState(true); // FIXME
+    // const [showRouteTurns, setShowRouteTurns] = useState(true);
+    // const [showTrackTurns, setShowTrackTurns] = useState(true);
 
     const hideTimerRef = useRef(0);
     const showPointOnMap = (lat, lng) => {
@@ -86,45 +107,106 @@ export default function TurnsTab() {
     // setTimeout is used to prevent marker flickering on the map (on fast mouse enter/leave)
     const hidePointOnMap = () => (hideTimerRef.current = setTimeout(() => ctx.mapMarkerListener(null), 500));
 
-    if (route) {
+    const route = isRouteTrack(ctx) && ctx.routeObject.getRoute();
+    const routeHasTurns =
+        route &&
+        route.features &&
+        route.features.some(
+            (f) => f.geometry?.type === 'Point' && f.properties?.description && f.geometry?.coordinates
+        );
+    const routeTurnItems = useMemo(
+        () => (routeHasTurns ? getRouteTurnItems({ route }) : null),
+        [routeHasTurns, ctx.routeObject.getTrack()]
+    ); // dep to getTrack not getRoute
+
+    const track = ctx.selectedGpxFile;
+    const trackHasTurns = hasSegmentTurns({ track });
+    const trackTurnItems = useMemo(() => (trackHasTurns ? getTrackTurnItems({ track }) : null), [trackHasTurns, track]);
+
+    function getTrackTurnItems({ track }) {
+        function getPointsGeometrySegments(points) {
+            const turns = [];
+            points.forEach((p) => {
+                p.geometry.forEach((g, i, all) => {
+                    if (g.segment?.ext?.turnType) {
+                        const { lat, lng } = g;
+                        const turnType = g.segment.ext.turnType;
+                        const meters =
+                            i === all.length - 1 ? 0 : Number(all[i + 1].distanceTotal - g.distanceTotal).toFixed(0);
+                        const description = `${codeToString(turnType)} and go ${meters > 0 ? meters + ' meters' : ''}`;
+                        turns.push({ lat, lng, description, turnType });
+                    }
+                });
+            });
+            const items = turns.map((t, i, all) => {
+                const { lat, lng, description } = t;
+                return turnItem({ n: i + 1, max: all.length, description, lat, lng });
+            });
+            return items;
+        }
+        if (track && track.points && track.points.length > 0) {
+            return getPointsGeometrySegments(track.points);
+        }
+        if (
+            track &&
+            track.tracks &&
+            track.tracks.length > 0 &&
+            track.tracks[0].points &&
+            track.tracks[0].points.length > 0
+        ) {
+            return getPointsGeometrySegments(track.tracks[0].points);
+        }
+        return null;
+    }
+
+    function getRouteTurnItems({ route }) {
         const items = route.features
             .filter((f) => f.geometry?.type === 'Point' && f.properties?.description && f.geometry?.coordinates)
             .map((f, i, all) => {
                 const [lng, lat] = f.geometry.coordinates;
                 const description = f.properties.description;
-                const { icon, color } = getIconByTurnDescription({ description, finish: i === all.length - 1 });
-                return (
-                    <MenuItem
-                        key={i}
-                        sx={{ p: 0 }}
-                        onMouseEnter={() => showPointOnMap(lat, lng)}
-                        onMouseLeave={() => hidePointOnMap()}
-                    >
-                        <Grid container alignItems="center" spacing={0}>
-                            <Grid item xs={1} textAlign="right">
-                                <Typography variant="body2" noWrap>
-                                    {i + 1}
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={2} textAlign="center" sx={{ mb: '4px' }}>
-                                {icon && (
-                                    <IconButton size="small" color={color}>
-                                        {icon}
-                                    </IconButton>
-                                )}
-                            </Grid>
-                            <Grid item xs={9}>
-                                <Typography variant="body2" noWrap>
-                                    {description}
-                                </Typography>
-                            </Grid>
-                        </Grid>
-                    </MenuItem>
-                );
+                return turnItem({ n: i + 1, max: all.length, description, lat, lng });
             });
-
-        return <>{items}</>;
+        return items;
     }
 
-    return null;
+    function turnItem({ n, max, lat, lng, description }) {
+        const { icon, color } = getIconByTurnDescription({ description, finish: n === max });
+        return (
+            <MenuItem
+                key={n}
+                sx={{ p: 0 }}
+                onMouseEnter={() => showPointOnMap(lat, lng)}
+                onMouseLeave={() => hidePointOnMap()}
+            >
+                <Grid container alignItems="center" spacing={0}>
+                    <Grid item xs={1} textAlign="right">
+                        <Typography variant="body2" noWrap>
+                            {n}
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={2} textAlign="center" sx={{ mb: '4px' }}>
+                        {icon && (
+                            <IconButton size="small" color={color}>
+                                {icon}
+                            </IconButton>
+                        )}
+                    </Grid>
+                    <Grid item xs={9}>
+                        <Typography variant="body2" noWrap>
+                            {description}
+                        </Typography>
+                    </Grid>
+                </Grid>
+            </MenuItem>
+        );
+    }
+
+    return (
+        <>
+            {routeTurnItems}
+            <Divider />
+            {trackTurnItems}
+        </>
+    );
 }
