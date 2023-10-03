@@ -3,6 +3,7 @@ import { useContext, useState, useRef, useMemo } from 'react';
 import { Box, Grid, IconButton, Typography, MenuItem, Switch } from '@mui/material';
 import AppContext, { isRouteTrack } from '../../../context/AppContext';
 import { hasSegmentTurns } from '../../../manager/TracksManager';
+import { formatMeters } from '../../../util/Utils';
 
 import Straight from '@mui/icons-material/StraightOutlined';
 
@@ -121,6 +122,16 @@ function getIconByTurnDescription({ description, finish }) {
     return { icon: null, color: null };
 }
 
+function reformatMeters(d) {
+    const found = d.match(/and go ([\d.]+) meters/);
+    const meters = (found && found[1]) ?? 0;
+    if (meters > 0) {
+        return d.replace(found[0], `and go ${formatMeters(meters)}`);
+    } else {
+        return d;
+    }
+}
+
 export default function TurnsTab() {
     const ctx = useContext(AppContext);
 
@@ -198,6 +209,7 @@ export default function TurnsTab() {
 
     function turnItem({ n, max, lat, lng, description }) {
         const { icon, color } = getIconByTurnDescription({ description, finish: n === max });
+        const prettyDescription = reformatMeters(description);
         return (
             <MenuItem
                 key={n}
@@ -220,7 +232,7 @@ export default function TurnsTab() {
                     </Grid>
                     <Grid item xs={9}>
                         <Typography variant="body2" noWrap>
-                            {description}
+                            {prettyDescription}
                         </Typography>
                     </Grid>
                 </Grid>
