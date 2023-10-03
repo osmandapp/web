@@ -1,3 +1,5 @@
+import { formatMeters } from '../../../util/Utils';
+
 export function osrmToFeatureCollection({ osrm, style = {} }) {
     /*
         convert OSRM routes[] to features[] "LineString"
@@ -27,7 +29,7 @@ export function osrmToFeatureCollection({ osrm, style = {} }) {
 
         const imperative = type + ' ' + modifier;
         const target = name ? 'to ' + name + ref : '';
-        const go = distance > 0 ? 'and go ' + distance + ' meters' : '';
+        const go = distance > 0 ? 'and go ' + formatMeters(distance) : '';
 
         const description = trim(`${imperative} ${target} ${go}`); // Turn Left to Street and go 621 meters
 
