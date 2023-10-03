@@ -114,7 +114,7 @@ const ICONS = [
 
     // OsmAnd/OSRM
     [/^Make uturn/, <UTurnLeft key="TU" />],
-    [/^(Take|Rotary|Exit rotary)/, <RoundaboutLeft key="RNLB" />],
+    [/^(Take|Rotary|Exit rotary|Roundabout|Exit roundabout)/, <RoundaboutLeft key="RNLB" />],
 
     // viaPoints
     [/^Arrive/, <Pause key="ARRIVE" />],
@@ -140,7 +140,8 @@ function getIconByTurnDescription({ description, finish }) {
     return { icon: null, color: null };
 }
 
-function reformatMeters(d) {
+function reformatDescription(description) {
+    const d = description.replace(MUTE + ' ', '');
     const found = d.match(/and go ([\d.]+) meters/);
     const meters = (found && found[1]) ?? 0;
     if (meters > 0) {
@@ -227,7 +228,7 @@ export default function TurnsTab() {
 
     function turnItem({ n, max, lat, lng, description }) {
         const { icon, color } = getIconByTurnDescription({ description, finish: n === max });
-        const prettyDescription = reformatMeters(description);
+        const prettyDescription = reformatDescription(description);
         return (
             <MenuItem
                 key={n}
