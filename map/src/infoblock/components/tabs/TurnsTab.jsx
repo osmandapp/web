@@ -25,7 +25,7 @@ import KeepRight from '@mui/icons-material/RampRightOutlined';
 import KeepLeft from '@mui/icons-material/RampLeftOutlined';
 
 const DoubleSwitch = styled(Switch)(() => ({
-    width: 88,
+    width: 68,
     height: 34,
     padding: 9,
     '& .MuiSwitch-switchBase': {
@@ -35,7 +35,7 @@ const DoubleSwitch = styled(Switch)(() => ({
         transform: 'translateX(6px)',
         '&.Mui-checked': {
             color: '#fff',
-            transform: 'translateX(54px)',
+            transform: 'translateX(34px)',
         },
     },
     '&.MuiSwitch-root .MuiSwitch-switchBase': {
@@ -275,13 +275,15 @@ export default function TurnsTab() {
                     <MenuItem onClick={handleSwitch}>
                         <Grid container alignItems="center" spacing={0}>
                             <Grid item xs={4} textAlign="right">
-                                Navigation
+                                <Typography sx={showRouteTurns ? { color: '#1769aa' } : {}}>Router turns</Typography>
                             </Grid>
-                            <Grid item xs={4} textAlign="center">
+                            <Grid item xs={3} textAlign="center">
                                 <DoubleSwitch checked={!showRouteTurns} />
                             </Grid>
-                            <Grid item xs={4} textAlign="left">
-                                Segments
+                            <Grid item xs={5} textAlign="left">
+                                <Typography sx={showTrackTurns ? { color: '#1769aa' } : {}}>
+                                    Approximate turns
+                                </Typography>
                             </Grid>
                         </Grid>
                     </MenuItem>
