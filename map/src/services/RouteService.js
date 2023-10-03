@@ -182,11 +182,18 @@ export function RouteService() {
                 const { profile } = routeObject.getGeoProfile();
                 const track = prepareNavigationTrack(routeTrack);
 
-                // approximate each segment separately
-                for (let i = 0; i < track.points.length; i++) {
-                    const geometry = track.points[i].geometry;
-                    if (geometry.length > 0) {
-                        track.points[i].geometry = await getApproximatePoints({ points: geometry, profile });
+                // limit auto-approximate
+                const props = routeObject.getRouteProps();
+                if (
+                    routeObject.getOption('route.map.forceApproximation') ||
+                    props?.overall?.distance <= process.env.REACT_APP_MAX_APPROXIMATE_KM * 1000
+                ) {
+                    // approximate each segment separately
+                    for (let i = 0; i < track.points.length; i++) {
+                        const geometry = track.points[i].geometry;
+                        if (geometry.length > 0) {
+                            track.points[i].geometry = await getApproximatePoints({ points: geometry, profile });
+                        }
                     }
                 }
 

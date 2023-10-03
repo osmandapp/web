@@ -353,9 +353,15 @@ export function prepareNavigationTrack(track) {
 }
 
 export async function getApproximatePoints({ points, profile }) {
+    const totalDistance = parseFloat(points.reduce((a, p) => a + p.distance, 0)).toFixed(0);
     const approximateResult = await apiPost(`${process.env.REACT_APP_GPX_API}/routing/approximate`, points, {
         apiCache: true,
-        params: { routeMode: profile },
+        params: {
+            routeMode: profile,
+            nPoints: points.length,
+            totalDistance,
+            src: 'route',
+        },
         headers: { 'Content-Type': 'application/json' },
     });
     return approximateResult && approximateResult.data?.points?.length >= 2
