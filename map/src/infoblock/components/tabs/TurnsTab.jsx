@@ -271,7 +271,7 @@ export default function TurnsTab() {
 
     return (
         <>
-            {alone === false && (
+            {alone === false && ctx.develFeatures && (
                 <>
                     <MenuItem onClick={handleSwitch}>
                         <Grid container alignItems="center" spacing={0}>
