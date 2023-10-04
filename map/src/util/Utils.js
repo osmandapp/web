@@ -235,11 +235,13 @@ export function prepareFileName(filename) {
  *
  * Return result of the latest run of f()
  *
- * Example:
+ * Examples:
  *
- * getPoints.forEach(...) // usual call
- *
+ * getPoints().forEach(...) // usual call
  * measure(getPoints).forEach(...) // measure performance
+ *
+ * const md5 = digest(string) // usual
+ * const md5 = measure(() => digest(string), 'md5-test') // measure
  */
 export function measure(f, tag, ms = 1000) {
     let counter = 0;
