@@ -465,7 +465,7 @@ export default function GpxGraph({
                         },
                         maxTicksLimit: 6,
                         callback: (val) => {
-                            return val + ' m';
+                            return parseFloat(val.toFixed(2)) + ' m';
                         },
                     },
                 },
