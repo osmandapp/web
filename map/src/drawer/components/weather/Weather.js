@@ -152,6 +152,7 @@ export default function Weather() {
     return (
         <>
             <MenuItem
+                id={weatherOpen ? 'se-hide-menu-weather' : 'se-show-menu-weather'}
                 sx={{ mb: 1 }}
                 onClick={() => {
                     setWeatherOpen(!weatherOpen);
