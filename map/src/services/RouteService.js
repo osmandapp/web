@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import AppContext, { OBJECT_TYPE_ROUTE_TRACK } from '../context/AppContext';
+import AppContext, { isRouteTrack, OBJECT_TYPE_ROUTE_TRACK } from '../context/AppContext';
 import TracksManager, { prepareNavigationTrack, getApproximatePoints } from '../manager/TracksManager';
 
 export function RouteService() {
@@ -55,7 +55,7 @@ export function RouteService() {
                 obj['finish'] = finishPoint.lat.toFixed(6) + ',' + finishPoint.lng.toFixed(6);
             }
             if (viaPoints?.length > 0) {
-                obj['inter'] = viaPoints.map((i) => i.lat.toFixed(6) + ',' + i.lng.toFixed(6)).join(';');
+                obj['via'] = viaPoints.map((i) => i.lat.toFixed(6) + ',' + i.lng.toFixed(6)).join(';');
             }
             if (avoidRoads?.length > 0) {
                 obj['avoid'] = avoidRoads.map(({ id }) => id).join(';');
@@ -182,11 +182,18 @@ export function RouteService() {
                 const { profile } = routeObject.getGeoProfile();
                 const track = prepareNavigationTrack(routeTrack);
 
-                // approximate each segment separately
-                for (let i = 0; i < track.points.length; i++) {
-                    const geometry = track.points[i].geometry;
-                    if (geometry.length > 0) {
-                        track.points[i].geometry = await getApproximatePoints({ points: geometry, profile });
+                // limit auto-approximate
+                const props = routeObject.getRouteProps();
+                if (
+                    routeObject.getOption('route.map.forceApproximation') ||
+                    props?.overall?.distance <= process.env.REACT_APP_MAX_APPROXIMATE_KM * 1000
+                ) {
+                    // approximate each segment separately
+                    for (let i = 0; i < track.points.length; i++) {
+                        const geometry = track.points[i].geometry;
+                        if (geometry.length > 0) {
+                            track.points[i].geometry = await getApproximatePoints({ points: geometry, profile });
+                        }
                     }
                 }
 
@@ -194,6 +201,10 @@ export function RouteService() {
                 // context.setUpdateInfoBlock(true);
                 context.setSelectedGpxFile(track);
                 context.setCurrentObjectType(type);
+            } else {
+                if (isRouteTrack(context)) {
+                    context.setSelectedGpxFile({}); // close-route-track
+                }
             }
         }
         setNavigationTrack();

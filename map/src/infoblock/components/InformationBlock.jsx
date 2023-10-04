@@ -13,6 +13,7 @@ import WeatherTabList from './tabs/WeatherTabList';
 import FavoritesTabList from './tabs/FavoritesTabList';
 import _ from 'lodash';
 import PoiTabList from './tabs/PoiTabList';
+import { hasSegmentTurns } from '../../manager/TracksManager';
 
 const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     const [mounted, setMounted] = useState(false);
@@ -146,6 +147,11 @@ export default function InformationBlock({
             stopCreatedTrack(true);
         }
     }, [ctx.currentObjectType]);
+
+    // used to add Turns tab when the turns appeared
+    useEffect(() => {
+        isLocalTrack(ctx) && ctx.setUpdateInfoBlock(true);
+    }, [hasSegmentTurns({ track: ctx.selectedGpxFile })]);
 
     useEffect(() => {
         if ((!ctx.selectedGpxFile || _.isEmpty(ctx.selectedGpxFile)) && ctx.currentObjectType !== OBJECT_TYPE_WEATHER) {

@@ -33,8 +33,8 @@ const poiFilters = {
 
 async function getPoiCategories() {
     let categories = JSON.parse(localStorage.getItem(POI_CATEGORIES));
-    if (categories?.length > 0) {
-        return categories;
+    if (typeof categories === 'object' && Object.keys(categories).length > 0 && categories.entertainment?.length > 0) {
+        return categories; // thoroughly verified categories from localStorage
     } else {
         let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/get-poi-categories`);
         if (response.data) {
