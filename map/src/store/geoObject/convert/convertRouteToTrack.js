@@ -30,6 +30,10 @@ export function convertRouteToTrack({ id, route, trackName, geoProfile, start, f
 
     const routeGeometry = getRouteGeometry(route);
 
+    if (routeGeometry.length === 0) {
+        return null;
+    }
+
     /**
      * Route points include: start, finish, and viaPoints
      *
