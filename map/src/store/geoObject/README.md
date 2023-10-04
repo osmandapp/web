@@ -54,7 +54,7 @@ const defaultPointExtras = {
     ext: { ele: TracksManager.NAN_MARKER, extensions: {} }, // getTrackWithAnalysis requires ext.extensions
 };
 
-# route format (minimum required - w/o maneuvers/turns)
+# route format (minimum required - w/o maneuvers/turns details)
 
 // GeoJSON data (FeatureCollection format)
 geoObject.route = {

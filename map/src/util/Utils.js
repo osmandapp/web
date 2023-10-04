@@ -133,6 +133,16 @@ function hexToArgb(hex) {
     return `rgb(${red} ${green} ${blue}${alphaString})`;
 }
 
+export function formatMeters(m) {
+    if (m < 1000) {
+        const meters = Number(m).toFixed(0);
+        return `${meters} m`;
+    } else {
+        const km = Number(m / 1000).toFixed(2);
+        return `${km} km`;
+    }
+}
+
 export const toHHMMSS = function (time) {
     var sec_num = time / 1000;
     var hours = Math.floor(sec_num / 3600);

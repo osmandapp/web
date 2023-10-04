@@ -32,6 +32,7 @@ export async function updateRouteBetweenPoints(ctx, start, end, geoProfile = thi
 
 function osrmToPoints(osrm) {
     const points = [];
+    let totalDistance = 0;
     osrm?.routes?.forEach((r) => {
         let distance = 0; // 1st point = 0
         const coordinates = r.geometry?.coordinates;
@@ -39,6 +40,7 @@ function osrmToPoints(osrm) {
             if (i > 0) {
                 const [prevLng, prevLat] = coordinates[i - 1];
                 distance = Utils.getDistance(lat, lng, prevLat, prevLng);
+                totalDistance += distance;
             }
             points.push({
                 lat,
@@ -48,7 +50,7 @@ function osrmToPoints(osrm) {
             });
         });
     });
-    return points;
+    return { points, totalDistance: parseFloat(totalDistance).toFixed(0) };
 }
 
 async function updateRouteBetweenPointsOSRM({ start, end, geoProfile, ctx }) {
@@ -62,19 +64,27 @@ async function updateRouteBetweenPointsOSRM({ start, end, geoProfile, ctx }) {
     const response = await apiGet(url + coordinates + tail, { apiCache: true, dataOnErrors: true });
 
     if (response.ok) {
-        const points = osrmToPoints(await response.json());
+        const { points, totalDistance } = osrmToPoints(await response.json());
         if (points.length >= 2) {
             TracksManager.updateGapProfileOneSegment(end, points);
+
+            if (totalDistance > process.env.REACT_APP_MAX_APPROXIMATE_KM * 1000) {
+                return points;
+            }
 
             const approximateResult = await apiPost(`${process.env.REACT_APP_GPX_API}/routing/approximate`, points, {
                 apiCache: true,
                 params: {
                     routeMode: geoProfile.profile,
+                    nPoints: points.length,
+                    totalDistance,
+                    src: 'track',
                 },
                 headers: {
                     'Content-Type': 'application/json',
                 },
             });
+
             return approximateResult && approximateResult.data?.points?.length >= 2
                 ? approximateResult.data.points
                 : points;
