@@ -5,16 +5,16 @@ import AppContext, { isRouteTrack, OBJECT_TYPE_ROUTE_TRACK } from '../context/Ap
 import TracksManager, { prepareNavigationTrack, getApproximatePoints } from '../manager/TracksManager';
 
 export function RouteService() {
-    const context = useContext(AppContext);
+    const ctx = useContext(AppContext);
 
-    const pinPoint = context.pinPoint;
+    const pinPoint = ctx.pinPoint;
 
-    const routeObject = context.routeObject;
+    const routeObject = ctx.routeObject;
     const routeTrack = routeObject.getTrack();
-    const routeTrackFile = context.routeTrackFile;
+    const routeTrackFile = ctx.routeTrackFile;
 
-    const setHeaderText = context.setHeaderText;
-    const setRoutingErrorMsg = context.setRoutingErrorMsg;
+    const setHeaderText = ctx.setHeaderText;
+    const setRoutingErrorMsg = ctx.setRoutingErrorMsg;
 
     function changeRouteText(processRoute, props) {
         let resultText = '';
@@ -198,12 +198,12 @@ export function RouteService() {
                 }
 
                 const type = OBJECT_TYPE_ROUTE_TRACK;
-                context.setUpdateInfoBlock(true);
-                context.setSelectedGpxFile(track);
-                context.setCurrentObjectType(type);
+                ctx.setUpdateInfoBlock(true);
+                ctx.setSelectedGpxFile(track);
+                ctx.setCurrentObjectType(type);
             } else {
-                if (isRouteTrack(context)) {
-                    context.setSelectedGpxFile({}); // close-route-track
+                if (isRouteTrack(ctx)) {
+                    ctx.setSelectedGpxFile({}); // close-route-track
                 }
             }
         }
