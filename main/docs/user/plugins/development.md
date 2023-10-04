@@ -90,6 +90,8 @@ Use one of the following paths to open the plugin settings:
 - **Simulate your position** - [Simulate](#gpx-track-simulation) your position using a recorded GPX track.  
 - **Rendering debug info** - Display the rendering performance (only available for version 1 rendering engine).  
 - **Logcat buffer** - Check and share detailed logs of the app.  
+- **<Translate android="true" ids="write_bearing"/>** - <Translate android="true" ids="write_bearing_description"/>. Bearing is the compass direction from your current position to your intended destination. Affects *[track recording](../plugins/trip-recording.md)*.  
+- **<Translate android="true" ids="write_heading"/>** - <Translate android="true" ids="write_heading_description"/>. Heading is the compass direction from your current position towards true north. This option is enabled by default. Affects *[track recording](../plugins/trip-recording.md)*.  
 
 </TabItem>
 
