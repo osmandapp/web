@@ -198,7 +198,7 @@ export function RouteService() {
                 }
 
                 const type = OBJECT_TYPE_ROUTE_TRACK;
-                // context.setUpdateInfoBlock(true);
+                context.setUpdateInfoBlock(true);
                 context.setSelectedGpxFile(track);
                 context.setCurrentObjectType(type);
             } else {
