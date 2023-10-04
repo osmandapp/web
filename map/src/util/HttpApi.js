@@ -121,10 +121,10 @@ export async function apiGet(url, options = null) {
     const qs = '?' + new URLSearchParams(options?.params || {}).toString();
     const fullURL = url + (qs === '?' ? '' : qs);
 
-    let cacheKey = options?.apiCache ? await generateCacheKey(fullURL, options, options?.body) : null;
+    let cacheKey = options?.apiCache ? await generateCacheKey(fullURL, options) : null;
 
     if (cacheKey && cache[cacheKey]) {
-        // console.debug('cache-hit'); //, cacheKey);
+        // console.debug('cache-hit', url, cacheKey);
         return cache[cacheKey]; // TODO think about cloneDeep() here
     }
 
@@ -296,23 +296,39 @@ function isFormData(data) {
 
 const cache = {};
 
+// use native digest
+export async function digest(string) {
+    let hash = null;
+    try {
+        const encoder = new TextEncoder();
+        const data = encoder.encode(string);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+        const hashArray = Array.from(new Uint8Array(hashBuffer)); // convert buffer to byte array
+        hash = hashArray.map((b) => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
+    } catch {
+        hash = md5(string);
+    }
+    return hash;
+}
+
 // hash deeply through FormData and File objects
-async function generateCacheKey(url, options = null, body = null) {
-    const opts = options ? md5(JSON.stringify(options)) : '';
+async function generateCacheKey(url, options = null) {
+    const opts = options ? await digest(JSON.stringify(options)) : '';
 
-    let data = body ?? '';
+    let form = '';
+    const body = options?.body;
 
-    if (isFormData(body)) {
+    if (body && isFormData(body)) {
         for (const [k, v] of body.entries()) {
-            data = md5(data + k);
+            form = await digest(form + k);
             if (v.toString() === '[object File]') {
-                data = md5(data + v.name + v.size);
-                data = md5(data + (await v.text()));
+                form = await digest(form + v.name + v.size);
+                form = await digest(form + (await v.text()));
             } else {
-                data = md5(data + JSON.stringify(v));
+                form = await digest(form + JSON.stringify(v));
             }
         }
     }
 
-    return md5(url + opts + data);
+    return await digest(url + opts + form);
 }
