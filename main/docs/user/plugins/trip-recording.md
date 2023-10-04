@@ -300,7 +300,7 @@ To start using *Trip recording widgets*, you need to make all of the following s
 
 ### Add Recording widget
 
-The [Trip recording widget](../widgets/info-widgets.md#-trip-recording-widgets) is used to quickly check if you are recording or not, and for quick access to the recording settings and information about it. The widget is added automatically when the Trip recording plugin is enabled.  
+The [Trip recording widget](../widgets/info-widgets.md#trip-recording-widgets) is used to quickly check if you are recording or not, and for quick access to the recording settings and information about it. The widget is added automatically when the Trip recording plugin is enabled.  
 
 You can delete or add the Trip recording widgets and [other widgets](../plugins/trip-recording#duration-uphill-downhill) by following:
 

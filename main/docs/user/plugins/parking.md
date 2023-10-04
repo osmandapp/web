@@ -212,7 +212,7 @@ If there are any reminders, they will also be deleted from the calendar applicat
 
 ## Parking widget
 
-The [Parking widget](../widgets/info-widgets.md#-parking-widget) is added automatically to widgets list when you enable the Parking plugin. Before setting up a parking spot, make sure the widget is on the screen, and if not, add it in the [Configure Screen](../widgets/configure-screen.md) menu. The Parking widget will help you quickly find a parking spot on the map.
+The [Parking widget](../widgets/info-widgets.md#parking-widget) is added automatically to widgets list when you enable the Parking plugin. Before setting up a parking spot, make sure the widget is on the screen, and if not, add it in the [Configure Screen](../widgets/configure-screen.md) menu. The Parking widget will help you quickly find a parking spot on the map.
 
 
 <Tabs groupId="operating-systems">
@@ -220,8 +220,7 @@ The [Parking widget](../widgets/info-widgets.md#-parking-widget) is added automa
 
 <TabItem value="android" label="Android">
 
-You can add or delete the **<Translate android="true" ids="map_widget_parking"/> widget** by following this path:  
-*<Translate android="true" ids="shared_string_menu,map_widget_config,map_widget_left,map_widget_right,map_widget_parking"/>*.  
+*<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,map_widget_parking"/>*  
 
 ![Adding Parking widget in Android](@site/static/img/plugins/parking/and_adding_parking_widget-2.png)
 
@@ -229,8 +228,7 @@ You can add or delete the **<Translate android="true" ids="map_widget_parking"/>
 
 <TabItem value="ios" label="iOS">
 
-You can add or delete the **<Translate ios="true" ids="product_title_parking"/> widget** by following this path:  
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,product_title_parking"/>*
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,map_widget_parking"/>*
 
 
 ![Adding Parking widget in iOS](@site/static/img/plugins/parking/ios_adding_parking_widget-2.png)

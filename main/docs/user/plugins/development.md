@@ -343,6 +343,10 @@ Incline |Latitude |Max Zoom |Height, km |Distortion
 |20| 50|11|30|10%|
 |20| 66|11|30|10%|
 
+## Available RAM Widget
+
+This widget is designed specifically for you when using OsmAnd to provide a more convenient and informative interaction with the available RAM on your device. It allows you to easily and quickly monitor the available RAM, which is especially useful when using OsmAnd for navigation. Read more about the widget in the [Information widgets](../widgets/info-widgets.md#available-ram) article.
+
 ## GPX-track simulation
 
 OsmAnd provides an opportunity to simulate the location and movement of your device using a GPX track. For these purposes, use *<Translate android="true" ids="simulate_location_by_gpx"/>* option in the OsmAnd development plugin [settings](#plugin-settings):  

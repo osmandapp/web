@@ -173,15 +173,28 @@ The average speed is calculated for a given time interval according to your sele
 
 <InfoAndroidOnly />  
 
-The glide ratio is the horizontal distance divided by the change in altitude. For example, if your hand glider has a glide ratio of 7 to 1, then for every foot of altitude lost, you will be able to move forward 7 feet. You can read more about it [here](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).  
+![Glide ratio widget](@site/static/img/widgets/glide_ratio_widget.png)  
 
-- *Glide ratio to the target*. Displays the glide ratio required to reach the target point.
-- *Average glide ratio*. Shows the average value of the glide ratio over the specified time interval.   
+The Glide Ratio widget is an innovative tool designed to meet the needs of pilots. The widget provides valuable glide ratio information to help make informed decisions when planning air routes. You can read more about this [here](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).  
+
+- **Glide ratio to the target**. This widget provides information about the required glide ratio to reach the target point. The widget calculates this coefficient as the ratio of the distance to the target to the change in altitude. For example, if the glide ratio is 7 : 1 (7 to 1), it means that for each unit of descent, you advance 7 units of distance. This widget is particularly useful for pilots who can optimize their route for the conditions on the way to the target.  
+
+- **Average glide ratio**. This widget provides information about the average glide ratio for a specified time interval (customizable by the user). The average glide ratio is calculated as the ratio of distance traveled to the change in elevation over the specified time interval. This allows you to analyze historical data and plan long-term routes taking into account the change in glide ratio.    
+
+Widget use: 
+
+- **Planning soaring flights.** For soaring pilots, the *Glide ratio to the target* widget becomes an indispensable tool when planning and executing soaring flights. Pilots can estimate how far they can fly to their target given the current conditions and the required glide ratio.
+- **Optimize climbs and descents.** The average glide ratio allows pilots to optimize climbs and descents based on current conditions. Pilots can choose the optimal timing for climbs to maximize flight time or for descents to reach a target point.
+- **Reacting to changing conditions.** The widget provides continuous glide ratio updates, allowing pilots to react instantly to changes in atmospheric conditions or route. They can adjust their flight plan to ensure safety and efficiency.
+- **Maximum use of horizontal distance.** Knowing the glide ratio allows pilots to maximize the use of horizontal distance to move to the target, which is especially important when planning long flights.
+- **Risk reduction**. The *Glide ratio to the target* widget helps pilots avoid situations where reaching the target becomes impossible due to insufficient glide ratio. This helps to reduce risks and improve flight safety.
+
+For pilots, especially those involved in hovering, the glide ratio widget in the OsmAnd app with the *Glide ratio to the target* and *Average glide ratio* widgets becomes an important tool for successful and safe hovering flights. It helps pilots to make informed decisions, optimize their route and maximize horizontal movement, which significantly improves flight quality and minimizes risks.  
 
 | | |
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → Glide ratio* |
-| By tapping | No changes |
+| By tapping | Displays the height of the target. |
 
 
 ## Battery level
@@ -313,7 +326,11 @@ The Radius Ruler widget shows the distance between your location and the center 
 | Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
 
-## * Trip recording widgets  
+## Plugins widgets
+
+These widgets are enabled and work in combination with their corresponding plugins.
+
+### Trip recording widgets  
 
 :::note  
 You can read a more detailed description here: **[<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md)**.  
@@ -344,7 +361,7 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 | By tapping | Starts/Stop track recording or View the graph. |
 
 
-## * External sensors widgets
+### External sensors widgets
 
 <InfoAndroidOnly />
 
@@ -364,7 +381,7 @@ Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widget
 | By tapping | No changes |   
 
 
-## * Weather widgets
+### Weather widgets
 
 :::note  
 Weather widgets can only be added to the map screen when the OsmAnd [**Weather plugin**](../plugins/weather.md) is enabled.  
@@ -402,7 +419,7 @@ Weather widgets display current weather information for a central point on the m
 | Format | *Menu → Plugins → Weather → Settings* or *Menu → Settings → App Profile → Weather* |  
 
 
-## * Parking widget
+### Parking widget
 
 :::note  
 Parking widget can be added to the map screen only when OsmAnd [**Parking position plugin**](../plugins/parking.md) is enabled.  
@@ -420,7 +437,7 @@ This is a Parking plugin widget that shows the distance from the center of the s
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
-## * Mapillary widget
+### Mapillary widget
 
 :::note  
 Mapillary widget can be added to the map screen only when OsmAnd [**Mapillary plugin**](../plugins/mapillary.md) is enabled.  
@@ -437,7 +454,7 @@ This is a Mapillary plugin widget that provides quick access to Mapillary app to
 | By tapping | Opens [Mapillary](https://www.mapillary.com/) application. |
 
 
-## * Audio/video notes widget
+### Audio/video notes widget
 
 :::note  
 Widgets can only be added to the map screen when the OsmAnd [**Audio/video notes plugin**](../plugins/audio-video-notes.md) is enabled. 
@@ -460,7 +477,7 @@ You can configure which action is selected by default:
 | By tapping | Start / stops taking a note  |
 
 
-## * Tracker widget
+### Tracker widget
 
 <InfoAndroidOnly />
 
@@ -480,16 +497,16 @@ This OsmAnd Tracker plugin widget is used to quickly access the OsmAnd Tracker a
 | By tapping | Opens OsmAnd Online GPS Tracker app. |
 
 
-## * Developer widgets
+### Developer widgets
 
 :::note  
-Developer Widgets can be added to the map screen only when OsmAnd [**Development plugin**](../plugins/development.md) is enabled.  
+Developer widgets can be added to the map screen only when OsmAnd [**Development plugin**](../plugins/development.md) is enabled.  
 :::
 
-Developer Widgets are used to get information about map [rendering speed](../plugins/development.md#fps-widget) and virtual camera position: [zoom level](../plugins/development.md#zoom-level), [distance](../plugins/development.md#distance-to-target) to map center, camera [elevation](../plugins/development.md#camera-elevation) and [incline](../plugins/development.md#camera-tilt).  
+Developer widgets are used to get information about map [rendering speed](../plugins/development.md#fps-widget) and virtual camera position: [zoom level](../plugins/development.md#zoom-level), [distance](../plugins/development.md#distance-to-target) to map center, camera [elevation](../plugins/development.md#camera-elevation) and [incline](../plugins/development.md#camera-tilt).  
 
 
-### FPS widget
+#### FPS widget
 
 The [Map rendering FPS](../plugins/development.md#fps-widget) shows how fast the map and its elements are rendered and updated. The higher the rendering speed, the higher the quantitative values in frames per second.  
 
@@ -516,7 +533,7 @@ The [Map rendering FPS](../plugins/development.md#fps-widget) shows how fast the
 | By tapping | No changes |
 
 
-### Camera widgets  
+#### Camera widgets  
 
 Camera widgets can be used to compare the OsmAnd map and the earth's surface.  
 There are four Camera widgets:  
@@ -546,4 +563,17 @@ There are four Camera widgets:
 | Enable | **Android**: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets"/>* |
 |   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets"/>* |
 | By tapping | No changes | 
- 
+
+
+#### Available RAM
+
+![Average speed widgets](@site/static/img/widgets/available_RAM_andr.png)
+
+This widget is a useful tool for you to monitor the amount of available RAM on your device. It provides information about how much RAM is available to run OsmAnd, which allows you to manage the application performance more accurately.   
+
+To use this widget, make sure you have the OsmAnd Development plugin enabled.
+
+| | |
+|------------|------------|
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → Available RAM* |
+| By tapping | No changes |

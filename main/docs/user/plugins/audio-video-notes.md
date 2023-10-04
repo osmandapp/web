@@ -168,30 +168,31 @@ To manage a note in My Places, tap the vertical triple points of the note in the
 
 ## Recording Widget
 
-The <Translate android="true" ids="map_widget_av_notes"/> widget makes records (i.e. photo, audio, video) and ties them to the current position of the user. The widget has several options that can be set up as the default action performed by the widget on tap. 
+![The widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
-![The widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)
+The [Audio/Video Notes widget](../widgets/info-widgets.md#audiovideo-notes-widget) creates notes, photos, audio and video files and links them to the user's current position. The widget has several options that can be set as the default action performed by the widget when the screen is touched.  
 
-Adding the widget to the screen is needed when you would rather skip looking for a geolocation on the map and by default link the notes to your current position. To add, and/or configure the widget, do the following:
+Adding a widget to the screen is necessary if you prefer to avoid searching for geolocation on the map and link notes to your current default location. To add or customize a widget, follow the steps below:  
 
-1. Open <Translate android="true" ids="shared_string_menu,map_widget_config"/>
+1. Go to:  
+    *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
 2. Select  **<Translate android="true" ids="map_widget_left"/>** or **<Translate android="true" ids="map_widget_right"/>**.
 
-3. Tap **<Translate android="true" ids="map_widget_av_notes"/>** and the context menu of the widget opens. 
+3. Tap **<Translate android="true" ids="map_widget_av_notes"/>**, and the context menu of the widget opens. 
 
-4. Select an option you prefer to do by default by tapping the widget:
+4. Select the option you prefer to use by default by tapping on the widget:
 
-    - **<Translate android="true" ids="av_def_action_choose"/>** - to open a choice of options;
+    - **<Translate android="true" ids="av_def_action_choose"/>** - open a selection of options.
 
-    - **<Translate android="true" ids="av_def_action_audio"/>** - to immediately start to record an audio message;
+    - **<Translate android="true" ids="av_def_action_audio"/>** - start recording an audio message.
 
-    - **<Translate android="true" ids="av_def_action_video"/>** - to immediately start to record a video;
+    - **<Translate android="true" ids="av_def_action_video"/>** - start recording video.
 
-    - **<Translate android="true" ids="av_def_action_picture"/>** - to immediately start taking a photo.  
+    - **<Translate android="true" ids="av_def_action_picture"/>** - start taking photos.    
 
 
-![The widget](@site/static/img/plugins/audio-video-notes/widget.png)
+![The widget](@site/static/img/plugins/audio-video-notes/widget.png)  
 
 
 ## Manage multiple notes

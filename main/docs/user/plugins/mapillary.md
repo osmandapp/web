@@ -147,7 +147,7 @@ In order to add photos you will need to register in the [Mapillary application](
 
 ## Mapillary Widget
 
-The [Mapillary widget](../widgets/info-widgets.md#-mapillary-widget) is used to get quick access to the Mapillary application. The widget is added to the main screen automatically when the Mapillary plugin enabled. You can enable or disable the Mapillary widget and other widgets in the [Configure screen](../widgets/configure-screen.md) section of the Main Menu.
+The [Mapillary widget](../widgets/info-widgets.md#mapillary-widget) is used to get quick access to the Mapillary application. The widget is added to the main screen automatically when the Mapillary plugin enabled. You can enable or disable the Mapillary widget and other widgets in the [Configure screen](../widgets/configure-screen.md) section of the Main Menu.
 
 <Tabs groupId="operating-systems">
 
