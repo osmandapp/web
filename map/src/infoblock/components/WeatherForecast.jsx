@@ -41,7 +41,10 @@ export default function WeatherForecast({ data, loc }) {
     ];
 
     return (
-        <TableContainer component={Paper} style={{ width: ctx.infoBlockWidth, overflowX: 'auto' }}>
+        <TableContainer
+            component={Paper}
+            style={{ width: `${Number(ctx.infoBlockWidth?.replace('px', '')) - 50}px`, overflowX: 'auto' }}
+        >
             <Table size="small">
                 <TableHead>
                     <TableRow>

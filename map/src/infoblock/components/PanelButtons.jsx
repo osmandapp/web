@@ -26,7 +26,6 @@ const PanelButtons = ({
     infoBlockOpen,
     setInfoBlockOpen,
     clearState,
-    mobile,
     bsize,
 }) => {
     const ctx = useContext(AppContext);
@@ -88,19 +87,11 @@ const PanelButtons = ({
     }
 
     function getMarginTop() {
-        if (mobile) {
-            return orientation === 'vertical' ? `${bsize * 3.5}px` : 0;
-        } else {
-            return orientation === 'vertical' ? `-${bsize * 0.2}px` : 0;
-        }
+        return orientation === 'vertical' ? `-${bsize * 0.2}px` : 0;
     }
 
     function getMarginLeft() {
-        if (mobile) {
-            return orientation === 'vertical' ? `-${bsize}px` : `${bsize}px`;
-        } else {
-            return orientation === 'vertical' ? 0 : `${bsize}px`;
-        }
+        return orientation === 'vertical' ? 0 : `${bsize}px`;
     }
 
     // little align elements with "disabled" attr, which must be covered with <span>, due to Tooltip warnings
@@ -115,7 +106,7 @@ const PanelButtons = ({
                 style={{
                     marginTop: getMarginTop(),
                     marginLeft: getMarginLeft(),
-                    marginBottom: !mobile && 'auto',
+                    marginBottom: 'auto',
                 }}
             >
                 <Paper>
@@ -277,14 +268,14 @@ const PanelButtons = ({
                                     </IconButton>
                                 </Tooltip>
                             )}
-                        {ctx.currentObjectType && !infoBlockOpen && !mobile && (
+                        {ctx.currentObjectType && !infoBlockOpen && (
                             <Tooltip title="Open info" arrow placement={tooltipOrientation}>
                                 <IconButton onClick={toggleInfoBlock} sx={{ transform: 'scaleX(1)' }}>
                                     <MenuOpen fontSize="small" />
                                 </IconButton>
                             </Tooltip>
                         )}
-                        {ctx.currentObjectType && infoBlockOpen && !mobile && (
+                        {ctx.currentObjectType && infoBlockOpen && (
                             <Tooltip title="Close info" arrow placement={tooltipOrientation}>
                                 <IconButton onClick={toggleInfoBlock} sx={{ transform: 'scaleX(-1)' }}>
                                     <MenuOpen fontSize="small" />

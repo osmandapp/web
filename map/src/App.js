@@ -2,7 +2,7 @@ import { React } from 'react';
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 
 // components
-import OsmAndMapFrame from './drawer/components/OsmAndMapFrame';
+import GlobalFrame from './drawer/components/GlobalFrame';
 import LoginDialog from './login/LoginDialog';
 import { AppContextProvider } from './context/AppContext';
 import DeleteAccountDialog from './login/DeleteAccountDialog';
@@ -22,7 +22,7 @@ const App = () => {
                 <AppServices />
                 <NavigateGlobal />
                 <Routes>
-                    <Route path="/map" element={<OsmAndMapFrame />}>
+                    <Route path="/map" element={<GlobalFrame />}>
                         <Route path="loginForm" element={<LoginDialog />}></Route>
                         <Route path="delete-account" element={<DeleteAccountDialog setDeleteAccountFlag={null} />} />
                     </Route>

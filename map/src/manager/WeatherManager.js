@@ -26,7 +26,7 @@ function getWeatherDate() {
     return weatherDateObj;
 }
 
-async function displayWeatherForecast(ctx, setWeatherPoint, weatherType) {
+async function displayWeatherForecast(ctx, setWeatherPoint, weatherType, setLoadingWeatherForecast = null) {
     let lat = 0;
     let lon = 0;
     if (window.location.hash) {
@@ -36,6 +36,7 @@ async function displayWeatherForecast(ctx, setWeatherPoint, weatherType) {
             lat = parseFloat(spl[spl.length - 2]);
         }
     }
+    setLoadingWeatherForecast && setLoadingWeatherForecast(true);
     let data = { lat: lat, lon: lon };
     const response = await apiGet(
         `${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info?lat=${data.lat}&lon=${data.lon}&weatherType=${weatherType}&week=false`,
@@ -54,6 +55,9 @@ async function displayWeatherForecast(ctx, setWeatherPoint, weatherType) {
             headers: { 'Content-Type': 'application/json' },
         }
     );
+    if (responseWeek) {
+        setLoadingWeatherForecast && setLoadingWeatherForecast(false);
+    }
     if (responseWeek.ok) {
         data.week = await responseWeek.json();
     }
