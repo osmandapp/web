@@ -171,7 +171,9 @@ export default function RouteMenu() {
 
     const { type, profile } = routeObject.getProfile();
 
-    const routeOptions = ['route.map.hidePoints'];
+    const routeOptions = ctx.develFeatures
+        ? ['route.map.hidePoints', 'route.map.forceApproximation']
+        : ['route.map.hidePoints'];
 
     function openInfoBlock() {
         const route = routeObject.getRoute();
