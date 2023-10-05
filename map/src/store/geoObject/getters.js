@@ -14,7 +14,7 @@ export function getRouteKey() {
 }
 
 export function getRouteProps(route = this.route) {
-    return (route?.features && route.features[0].properties) ?? null;
+    return (route?.features?.length > 0 && route.features[0].properties) ?? null;
 }
 
 // deps for re-routing effects

@@ -861,17 +861,21 @@ export function eligibleToApplySrtm({ track }) {
     const analysis = track.analysis;
 
     if (!track || isEmptyTrack(track, false)) {
+        // console.debug('eligible-srtm-empty');
         return false; // empty track w/o points
     }
 
     if (analysis && analysis.isSrtmApplied) {
+        // console.debug('eligible-srtm-already');
         return false; // already applied
     }
 
     if (analysis && checkMaxTotalPoints(track) && detectNoElevation(track)) {
+        // console.debug('eligible-srtm-OK-apply');
         return true; // ok - apply
     }
 
+    // console.debug('eligible-srtm-false');
     return false; // no apply
 }
 

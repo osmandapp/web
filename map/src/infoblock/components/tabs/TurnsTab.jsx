@@ -290,22 +290,24 @@ export default function TurnsTab() {
                     </MenuItem>
                 </>
             )}
-            {routeHasTurns && (alone || showRouteTurns) && (
-                <Box>
-                    <Typography sx={{ color: '#666666', fontWeight: 'bold', ml: 2, my: 2 }}>
-                        Navigation turns (accurate)
-                    </Typography>
-                    {routeTurnItems}
-                </Box>
-            )}
-            {trackHasTurns && (alone || showTrackTurns) && (
-                <Box>
-                    <Typography sx={{ color: '#666666', fontWeight: 'bold', ml: 2, my: 2 }}>
-                        Segment turns (approximate)
-                    </Typography>
-                    {trackTurnItems}
-                </Box>
-            )}
+            <div id="se-turns-all">
+                {routeHasTurns && (alone || showRouteTurns) && (
+                    <Box>
+                        <Typography sx={{ color: '#666666', fontWeight: 'bold', ml: 2, my: 2 }}>
+                            Navigation turns (accurate)
+                        </Typography>
+                        {routeTurnItems}
+                    </Box>
+                )}
+                {trackHasTurns && (alone || showTrackTurns) && (
+                    <Box>
+                        <Typography sx={{ color: '#666666', fontWeight: 'bold', ml: 2, my: 2 }}>
+                            Segment turns (approximate)
+                        </Typography>
+                        {trackTurnItems}
+                    </Box>
+                )}
+            </div>
         </>
     );
 }
