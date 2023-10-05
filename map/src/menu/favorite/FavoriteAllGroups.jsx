@@ -1,8 +1,8 @@
 import { ListItemIcon, ListItemText, MenuItem, Switch } from '@mui/material';
 import { ViewHeadline } from '@mui/icons-material';
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext from '../../../../context/AppContext';
-import FavoritesManager from '../../../../manager/FavoritesManager';
+import AppContext from '../../context/AppContext';
+import FavoritesManager from '../../manager/FavoritesManager';
 
 export default function FavoriteAllGroups({ setEnableGroups, favoritesGroups }) {
     const ctx = useContext(AppContext);

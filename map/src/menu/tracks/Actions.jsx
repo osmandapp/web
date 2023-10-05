@@ -1,5 +1,5 @@
 import { Box, IconButton, Tooltip } from '@mui/material';
-import { getGpxTime } from '../../../../manager/TracksManager';
+import { getGpxTime } from '../../manager/TracksManager';
 import { SortByAlpha, Update, History, CallMade, CallReceived } from '@mui/icons-material';
 import { useState, useEffect } from 'react';
 

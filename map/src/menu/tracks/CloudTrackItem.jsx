@@ -1,11 +1,11 @@
-import AppContext, { OBJECT_TYPE_CLOUD_TRACK } from '../../../../context/AppContext';
+import AppContext, { OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
 import { Alert, LinearProgress, ListItemText, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
 import { useContext, useState, useMemo, useEffect } from 'react';
-import Utils from '../../../../util/Utils';
+import Utils from '../../util/Utils';
 import TrackInfo from './TrackInfo';
-import TracksManager, { isEmptyTrack } from '../../../../manager/TracksManager';
+import TracksManager, { isEmptyTrack } from '../../manager/TracksManager';
 import _ from 'lodash';
-import { useWindowSize } from '../../../../util/hooks/useWindowSize';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
 
 export default function CloudTrackItem({ file, customIcon = null }) {
     const ctx = useContext(AppContext);

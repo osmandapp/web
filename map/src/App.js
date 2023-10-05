@@ -2,7 +2,7 @@ import { React } from 'react';
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 
 // components
-import GlobalFrame from './drawer/components/GlobalFrame';
+import GlobalFrame from './frame/components/GlobalFrame';
 import LoginDialog from './login/LoginDialog';
 import { AppContextProvider } from './context/AppContext';
 import DeleteAccountDialog from './login/DeleteAccountDialog';

@@ -16,8 +16,8 @@ import {
     Grid,
     ButtonGroup,
 } from '@mui/material';
-import AppContext, { isLocalTrack, isCloudTrack, isRouteTrack } from '../../../../context/AppContext';
-import RouteProfileSettingsDialog from '../../../../dialogs/RouteProfileSettingsDialog';
+import AppContext, { isLocalTrack, isCloudTrack, isRouteTrack } from '../../context/AppContext';
+import RouteProfileSettingsDialog from '../../dialogs/RouteProfileSettingsDialog';
 import { TextField } from '@mui/material/';
 import { LatLng } from 'leaflet';
 import { makeStyles } from '@material-ui/core/styles';

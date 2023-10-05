@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
-import AppContext from '../../../../context/AppContext';
-import { toHHMMSS } from '../../../../util/Utils';
+import AppContext from '../../context/AppContext';
+import { toHHMMSS } from '../../util/Utils';
 import CloudTrackGroup from './CloudTrackGroup';
 import LocalTrackGroup from './LocalTrackGroup';
 import GpxCollection from './GpxCollection';

@@ -5,8 +5,8 @@ import { useRef, useContext, useEffect, useState, useMemo } from 'react';
 import CloudTrackItem from './CloudTrackItem';
 
 import Actions from './Actions';
-import drawerStyles from '../../../styles/DrawerStyles';
-import AppContext from '../../../../context/AppContext';
+import drawerStyles from '../../frame/styles/DrawerStyles';
+import AppContext from '../../context/AppContext';
 import PopperMenu from './PopperMenu';
 
 export default function CloudTrackGroup({ index, group }) {

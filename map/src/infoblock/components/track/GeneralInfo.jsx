@@ -37,7 +37,7 @@ import {
 } from '@mui/icons-material';
 import DescTrackDialog from './dialogs/DescTrackDialog';
 import RouteIcon from '@mui/icons-material/Route';
-import { formatRouteInfo } from '../../../drawer/components/menu/route/RouteMenu';
+import { formatRouteInfo } from '../../../menu/route/RouteMenu';
 
 export default function GeneralInfo({ width }) {
     const styles = contextMenuStyles();

@@ -1,8 +1,8 @@
 import { ListItemText, MenuItem, Tooltip, Typography } from '@mui/material';
 import React, { useContext } from 'react';
-import AppContext, { OBJECT_TYPE_FAVORITE } from '../../../../context/AppContext';
+import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import { makeStyles } from '@material-ui/core/styles';
-import drawerStyles from '../../../styles/DrawerStyles';
+import drawerStyles from '../../frame/styles/DrawerStyles';
 
 const useStyles = makeStyles({
     icon: {

@@ -1,9 +1,9 @@
 import { Button, ButtonGroup } from '@mui/material';
 import React, { useContext } from 'react';
-import TracksManager from '../../../../manager/TracksManager';
-import drawerStyles from '../../../styles/DrawerStyles';
-import AppContext from '../../../../context/AppContext';
-import LocalGpxUploader from '../../util/LocalGpxUploader';
+import TracksManager from '../../manager/TracksManager';
+import drawerStyles from '../../frame/styles/DrawerStyles';
+import AppContext from '../../context/AppContext';
+import LocalGpxUploader from '../../frame/components/util/LocalGpxUploader';
 
 export default function PlanRouteMenu() {
     const styles = drawerStyles();

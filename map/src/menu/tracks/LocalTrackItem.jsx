@@ -1,9 +1,9 @@
 import { useContext, useMemo } from 'react';
-import AppContext, { OBJECT_TYPE_LOCAL_TRACK, isLocalTrack } from '../../../../context/AppContext';
+import AppContext, { OBJECT_TYPE_LOCAL_TRACK, isLocalTrack } from '../../context/AppContext';
 import { ListItemText, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
 import _ from 'lodash';
-import TracksManager from '../../../../manager/TracksManager';
-import { useWindowSize } from '../../../../util/hooks/useWindowSize';
+import TracksManager from '../../manager/TracksManager';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
 import TrackInfo from './TrackInfo';
 
 export default function LocalTrackItem({ track }) {

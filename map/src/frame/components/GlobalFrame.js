@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Box, Alert } from '@mui/material';
 import OsmAndMap from '../../map/components/OsmAndMap';
-import MainMenu from './menu/MainMenu';
+import MainMenu from '../../menu/MainMenu';
 import { Outlet } from 'react-router-dom';
 import AppContext from '../../context/AppContext';
 import GeneralPanelButtons from './panelbuttons/GeneralPanelButtons';

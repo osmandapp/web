@@ -1,7 +1,7 @@
 import { ClickAwayListener, MenuList, Paper, Popper } from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
 import React, { useContext, useEffect } from 'react';
-import AppContext from '../../../../context/AppContext';
+import AppContext from '../../context/AppContext';
 
 const useStyles = makeStyles({
     drawerItem: {

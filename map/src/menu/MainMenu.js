@@ -8,19 +8,19 @@ import AppContext, {
     OBJECT_TYPE_LOCAL_TRACK,
     OBJECT_TYPE_ROUTE_TRACK,
     OBJECT_TYPE_WEATHER,
-} from '../../../context/AppContext';
+} from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import MapStyle from './mapstyle/MapStyle';
 import RouteMenu from './route/RouteMenu';
 import { useNavigate } from 'react-router-dom';
 import FavoritesMenu from './favorite/FavoritesMenu';
 import PlanRouteMenu from './planroute/PlanRouteMenu';
-import { ReactComponent as FavoritesIcon } from '../../../assets/menu/ic_action_favorite.svg';
-import { ReactComponent as WeatherIcon } from '../../../assets/menu/ic_action_umbrella.svg';
-import { ReactComponent as TracksIcon } from '../../../assets/menu/ic_action_track.svg';
-import { ReactComponent as NavigationIcon } from '../../../assets/menu/ic_action_navigation.svg';
-import { ReactComponent as PlanRouteIcon } from '../../../assets/menu/ic_action_plan_route.svg';
-import InformationBlock from '../../../infoblock/components/InformationBlock';
+import { ReactComponent as FavoritesIcon } from '../assets/menu/ic_action_favorite.svg';
+import { ReactComponent as WeatherIcon } from '../assets/menu/ic_action_umbrella.svg';
+import { ReactComponent as TracksIcon } from '../assets/menu/ic_action_track.svg';
+import { ReactComponent as NavigationIcon } from '../assets/menu/ic_action_navigation.svg';
+import { ReactComponent as PlanRouteIcon } from '../assets/menu/ic_action_plan_route.svg';
+import InformationBlock from '../infoblock/components/InformationBlock';
 import Weather from './weather/Weather';
 
 export default function MainMenu({

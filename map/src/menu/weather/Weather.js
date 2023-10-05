@@ -11,9 +11,9 @@ import {
 } from '@mui/material';
 import { IconButton, Divider, MenuItem, ListItemIcon } from '@mui/material';
 import { Thermostat, NavigateNext, NavigateBefore, RestartAlt } from '@mui/icons-material';
-import AppContext, { OBJECT_TYPE_WEATHER } from '../../../../context/AppContext';
+import AppContext, { OBJECT_TYPE_WEATHER } from '../../context/AppContext';
 import _ from 'lodash';
-import WeatherManager from '../../../../manager/WeatherManager';
+import WeatherManager from '../../manager/WeatherManager';
 
 export default function Weather() {
     const ctx = useContext(AppContext);

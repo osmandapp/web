@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { MenuItem, IconButton, FormControl, InputLabel, Select } from '@mui/material';
 import { Settings } from '@mui/icons-material';
-import AppContext from '../../../../context/AppContext';
+import AppContext from '../../context/AppContext';
 import RenderingSettingsDialog from '../route/RenderingSettingsDialog';
 
 export default function MapStyle() {

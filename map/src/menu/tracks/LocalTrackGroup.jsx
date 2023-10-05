@@ -1,15 +1,15 @@
 import { Box, Button, ButtonGroup, Collapse, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import { ExpandLess, ExpandMore, Folder } from '@mui/icons-material';
 import React, { useContext, useState } from 'react';
-import AppContext from '../../../../context/AppContext';
+import AppContext from '../../context/AppContext';
 import Actions from './Actions';
 import LocalTrackItem from './LocalTrackItem';
-import drawerStyles from '../../../styles/DrawerStyles';
-import TracksManager, { clearAllLocalTracks } from '../../../../manager/TracksManager';
+import drawerStyles from '../../frame/styles/DrawerStyles';
+import TracksManager, { clearAllLocalTracks } from '../../manager/TracksManager';
 import PopperMenu from './PopperMenu';
 import _ from 'lodash';
-import { confirm } from '../../../../dialogs/GlobalConfirmationDialog';
-import LocalGpxUploader from '../../util/LocalGpxUploader';
+import { confirm } from '../../dialogs/GlobalConfirmationDialog';
+import LocalGpxUploader from '../../frame/components/util/LocalGpxUploader';
 
 export default function LocalTrackGroup() {
     const styles = drawerStyles();
