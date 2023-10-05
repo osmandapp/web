@@ -90,6 +90,8 @@ Use one of the following paths to open the plugin settings:
 - **Simulate your position** - [Simulate](#gpx-track-simulation) your position using a recorded GPX track.  
 - **Rendering debug info** - Display the rendering performance (only available for version 1 rendering engine).  
 - **Logcat buffer** - Check and share detailed logs of the app.  
+- **<Translate android="true" ids="write_bearing"/>** - <Translate android="true" ids="write_bearing_description"/>. Bearing is the compass direction from your current position to your intended destination. Affects *[track recording](../plugins/trip-recording.md)*.  
+- **<Translate android="true" ids="write_heading"/>** - <Translate android="true" ids="write_heading_description"/>. Heading is the compass direction from your current position towards true north. This option is enabled by default. Affects *[track recording](../plugins/trip-recording.md)*.  
 
 </TabItem>
 
@@ -173,7 +175,7 @@ Use one of the following paths to open the plugin settings:
 OsmAnd developer Widgets can be added to the screen only when OsmAnd development plugin is enabled.  
 :::  
 
-You can use OsmAnd developer [Widgets](../widgets/info-widgets.md#-developer-widgets) to get information about zoom level, map rendering speed, elevation of the map center above sea level, distance to map center, camera elevation and incline.  
+You can use OsmAnd developer [Widgets](../widgets/info-widgets.md#developer-widgets) to get information about zoom level, map rendering speed, elevation of the map center above sea level, distance to map center, camera elevation and incline.  
 
 ### FPS Widget
 
@@ -342,6 +344,10 @@ Incline |Latitude |Max Zoom |Height, km |Distortion
 |20| 26|12|30|10%|
 |20| 50|11|30|10%|
 |20| 66|11|30|10%|
+
+## Available RAM Widget
+
+This widget is designed specifically for you when using OsmAnd to provide a more convenient and informative interaction with the available RAM on your device. It allows you to easily and quickly monitor the available RAM, which is especially useful when using OsmAnd for navigation. Read more about the widget in the [Information widgets](../widgets/info-widgets.md#available-ram) article.
 
 ## GPX-track simulation
 

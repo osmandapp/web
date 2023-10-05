@@ -353,9 +353,15 @@ export function prepareNavigationTrack(track) {
 }
 
 export async function getApproximatePoints({ points, profile }) {
+    const totalDistance = parseFloat(points.reduce((a, p) => a + p.distance, 0)).toFixed(0);
     const approximateResult = await apiPost(`${process.env.REACT_APP_GPX_API}/routing/approximate`, points, {
         apiCache: true,
-        params: { routeMode: profile },
+        params: {
+            routeMode: profile,
+            nPoints: points.length,
+            totalDistance,
+            src: 'route',
+        },
         headers: { 'Content-Type': 'application/json' },
     });
     return approximateResult && approximateResult.data?.points?.length >= 2
@@ -855,17 +861,21 @@ export function eligibleToApplySrtm({ track }) {
     const analysis = track.analysis;
 
     if (!track || isEmptyTrack(track, false)) {
+        // console.debug('eligible-srtm-empty');
         return false; // empty track w/o points
     }
 
     if (analysis && analysis.isSrtmApplied) {
+        // console.debug('eligible-srtm-already');
         return false; // already applied
     }
 
     if (analysis && checkMaxTotalPoints(track) && detectNoElevation(track)) {
+        // console.debug('eligible-srtm-OK-apply');
         return true; // ok - apply
     }
 
+    // console.debug('eligible-srtm-false');
     return false; // no apply
 }
 
@@ -1086,6 +1096,35 @@ export function isEmptyTrack(track, checkWpts = true, checkPoints = true) {
 
 export function hasSegments(track) {
     return track?.points?.length >= 2 || (track?.tracks?.length > 0 && track.tracks[0].points?.length >= 2);
+}
+
+export function hasSegmentTurns({ track = null }) {
+    // Unknown: tracks[0].segments[0] - for cloud tracks (only)
+    // Good: points[].geometry[].segment.ext.turnType - for local tracks
+    // Good: track.tracks[0].points[].geometry[].segment.ext.turnType - for cloud tracks
+    function checkPointsGeometrySegments(points) {
+        return points.some((p) => {
+            if (p.geometry && p.geometry.length > 0) {
+                return p.geometry.some((g) => {
+                    return !!g.segment?.ext?.turnType;
+                });
+            }
+            return false;
+        });
+    }
+    if (track && track.points && track.points.length > 0) {
+        return checkPointsGeometrySegments(track.points);
+    }
+    if (
+        track &&
+        track.tracks &&
+        track.tracks.length > 0 &&
+        track.tracks[0].points &&
+        track.tracks[0].points.length > 0
+    ) {
+        return checkPointsGeometrySegments(track.tracks[0].points);
+    }
+    return false;
 }
 
 export function isPointUnrouted({ point, pointIndex, prevPoint }) {

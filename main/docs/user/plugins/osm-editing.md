@@ -138,7 +138,7 @@ You can easily add OSM [tags](https://wiki.openstreetmap.org/wiki/Tags) to the P
 
 <TabItem value="android" label="Android">  
 
-![Add POI tag Android 1](@site/static/img/plugins/osm-editing/add_poi_tag_andr_1.png) ![Add POI tag Android](@site/static/img/plugins/osm-editing/add_poi_tag_andr.png)  
+![Add POI tag Android](@site/static/img/plugins/osm-editing/add_poi_tag_3_andr.png) ![Add POI tag Android](@site/static/img/plugins/osm-editing/add_poi_tag_4_andr.png)  
 
 </TabItem>
 
@@ -153,6 +153,23 @@ You can easily add OSM [tags](https://wiki.openstreetmap.org/wiki/Tags) to the P
 #### Offline modifications  
 
 You can view, upload to OSM or delete POIs in *My Places → OSM Edits*. You can also export your OSM POIs changes to an [OSC file](https://wiki.openstreetmap.org/wiki/OsmChange) and import it into [JOSM](https://wiki.openstreetmap.org/wiki/JOSM).  
+
+#### Add unsupported POI types
+
+On the Advanced tab, you have the ability to add unsupported POI types that may be useful for your specific task. This allows you to enter POI data manually and extend the functionality of your application.
+
+One example of unsupported POI types you can add is *amenity=freeshops*. This type can be useful if you want to mark free stores or places that provide free products.
+
+To add unsupported POI types, follow these steps:
+
+1. open the Advanced tab.
+2. Tap the *POI Type*.
+3. Enter the *amenity* key and the *freeshops* value in the appropriate fields.
+4. Fill in the rest of the required data for this POI.
+5. Click *Add Tag* to add the new POI to your database.
+
+Remember that when adding unsupported POI types, it is important to make sure that the data is entered correctly to ensure the correct functioning of the application and subsequent processing of the information.
+
 
 ## Create / Modify OSM Note
 

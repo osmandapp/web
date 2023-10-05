@@ -1,20 +1,20 @@
 import { useContext, useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import AppContext, { OBJECT_TYPE_ROUTE_TRACK } from '../context/AppContext';
+import AppContext, { isRouteTrack, OBJECT_TYPE_ROUTE_TRACK } from '../context/AppContext';
 import TracksManager, { prepareNavigationTrack, getApproximatePoints } from '../manager/TracksManager';
 
 export function RouteService() {
-    const context = useContext(AppContext);
+    const ctx = useContext(AppContext);
 
-    const pinPoint = context.pinPoint;
+    const pinPoint = ctx.pinPoint;
 
-    const routeObject = context.routeObject;
+    const routeObject = ctx.routeObject;
     const routeTrack = routeObject.getTrack();
-    const routeTrackFile = context.routeTrackFile;
+    const routeTrackFile = ctx.routeTrackFile;
 
-    const setHeaderText = context.setHeaderText;
-    const setRoutingErrorMsg = context.setRoutingErrorMsg;
+    const setHeaderText = ctx.setHeaderText;
+    const setRoutingErrorMsg = ctx.setRoutingErrorMsg;
 
     function changeRouteText(processRoute, props) {
         let resultText = '';
@@ -55,7 +55,7 @@ export function RouteService() {
                 obj['finish'] = finishPoint.lat.toFixed(6) + ',' + finishPoint.lng.toFixed(6);
             }
             if (viaPoints?.length > 0) {
-                obj['inter'] = viaPoints.map((i) => i.lat.toFixed(6) + ',' + i.lng.toFixed(6)).join(';');
+                obj['via'] = viaPoints.map((i) => i.lat.toFixed(6) + ',' + i.lng.toFixed(6)).join(';');
             }
             if (avoidRoads?.length > 0) {
                 obj['avoid'] = avoidRoads.map(({ id }) => id).join(';');
@@ -182,18 +182,29 @@ export function RouteService() {
                 const { profile } = routeObject.getGeoProfile();
                 const track = prepareNavigationTrack(routeTrack);
 
-                // approximate each segment separately
-                for (let i = 0; i < track.points.length; i++) {
-                    const geometry = track.points[i].geometry;
-                    if (geometry.length > 0) {
-                        track.points[i].geometry = await getApproximatePoints({ points: geometry, profile });
+                // limit auto-approximate
+                const props = routeObject.getRouteProps();
+                if (
+                    routeObject.getOption('route.map.forceApproximation') ||
+                    props?.overall?.distance <= process.env.REACT_APP_MAX_APPROXIMATE_KM * 1000
+                ) {
+                    // approximate each segment separately
+                    for (let i = 0; i < track.points.length; i++) {
+                        const geometry = track.points[i].geometry;
+                        if (geometry.length > 0) {
+                            track.points[i].geometry = await getApproximatePoints({ points: geometry, profile });
+                        }
                     }
                 }
 
                 const type = OBJECT_TYPE_ROUTE_TRACK;
-                // context.setUpdateInfoBlock(true);
-                context.setSelectedGpxFile(track);
-                context.setCurrentObjectType(type);
+                ctx.setUpdateInfoBlock(true);
+                ctx.setSelectedGpxFile(track);
+                ctx.setCurrentObjectType(type);
+            } else {
+                if (isRouteTrack(ctx)) {
+                    ctx.setSelectedGpxFile({}); // close-route-track
+                }
             }
         }
         setNavigationTrack();

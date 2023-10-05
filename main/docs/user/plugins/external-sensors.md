@@ -96,7 +96,7 @@ OsmAnd uses [**track recording**](../plugins/trip-recording.md#recorded-gpx-file
 
 ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid_1.png)  ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)  
 
-The [External Sensors widget](../widgets/info-widgets.md#-external-sensors-widgets) is automatically added to the list of widgets when you enable the External Sensors plugin. Before you start your trip, make sure that the widgets are on the screen, and if not, add them using the [Configure Screen](../widgets/configure-screen.md) menu. External Sensors widgets help you track data from your external sensors in real time.  
+The [External Sensors widget](../widgets/info-widgets.md#external-sensors-widgets) is automatically added to the list of widgets when you enable the External Sensors plugin. Before you start your trip, make sure that the widgets are on the screen, and if not, add them using the [Configure Screen](../widgets/configure-screen.md) menu. External Sensors widgets help you track data from your external sensors in real time.  
 
 Use the following path to display the widget on the screen:  
 *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="external_sensor_widgets"/>*   

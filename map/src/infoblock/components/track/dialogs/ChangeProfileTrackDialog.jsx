@@ -127,7 +127,7 @@ export default function ChangeProfileTrackDialog({ open }) {
         if (!partialEdit) {
             if (changeAll) {
                 // whole track - all segments
-                if (ctx.selectedGpxFile.points.length > 1) {
+                if (ctx.selectedGpxFile.points?.length > 1) {
                     for (let i = 0; i < ctx.selectedGpxFile.points.length - 1; i++) {
                         const start = ctx.selectedGpxFile.points[i];
                         const end = ctx.selectedGpxFile.points[i + 1];

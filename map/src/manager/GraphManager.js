@@ -172,7 +172,11 @@ function addDataSet(arr, seg, tag, colors) {
             const prev = arr[arr.length - 1];
             if (prev.label === type) {
                 arr.pop();
-                colors[type].distance += seg.distance;
+                if (colors[type]) {
+                    colors[type].distance += seg.distance;
+                } else {
+                    colors[type] = { distance: seg.distance };
+                }
                 const dist = Number(Math.round(seg.distance) / 1000);
                 prev.totalDist = Number(prev.totalDist) + dist;
                 prev.data = [Number(prev.data) + dist];

@@ -11,20 +11,20 @@ const LINE_WAITING_STYLE = TrackLayerProvider.TEMP_LINE_STYLE;
 export async function calculateRoute({ changeRouteText, setRoutingErrorMsg }) {
     const style = { color: this.colors[this.profile] ?? 'blue' };
 
-    if (this.profile === PROFILE_LINE) {
-        return calculateRouteLine.call(this, {
-            changeRouteText,
-            setRoutingErrorMsg,
-            style,
-        });
-    }
-
     const waitingStyle = LINE_WAITING_STYLE;
     const waitingLines = makeLineFeatureCollection.call(this, { style: waitingStyle });
     this.putRoute({ route: waitingLines.geojson, skipConversion: true });
 
     if (this.preview) {
         return;
+    }
+
+    if (this.profile === PROFILE_LINE) {
+        return calculateRouteLine.call(this, {
+            changeRouteText,
+            setRoutingErrorMsg,
+            style,
+        });
     }
 
     if (this.type === 'osrm') {

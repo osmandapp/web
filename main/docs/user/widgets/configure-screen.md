@@ -68,37 +68,54 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 
 1. [Route maneuvers](../widgets/nav-widgets.md#next-turns). This set of *navigational* widgets is activated during navigation and display information about the distance to the next maneuver.  
     3 widgets included: *Next turn*, *Next turn (small)*, *Second next turn*.
+
 2. [Navigation point](../widgets/nav-widgets.md#navigation-points). A set of *navigation widgets* shows the remaining distance to a destination, intermediate point, arrival time to an intermediate point, or travel time for a calculated route.  
     4 widgets included: [Distance to destination](../widgets/nav-widgets.md#distance-to-destination), [Distance to intermediate](../widgets/nav-widgets.md#distance-to-intermediate), [Time to intermediate](../widgets/nav-widgets.md#time-to-intermediate), [Time to destination](../widgets/nav-widgets.md#time-to-destination).
+
 3. [Map markers](../widgets/markers.md). A set of widgets shows the distance or estimated time of arrival (ETA) for the first two markers in the list of map markers. show special points marked as flags on the map.  
     2 widgets included: *First marker*, *Second marker*.
+
 4. [Bearing](../widgets/nav-widgets.md#bearing). This set of *navigational* widgets shows the absolute or relative bearing to a target in angular units (in 180 degrees, 360 degrees, or milliradians mode).  
     3 widgets included: *Relative bearing*, *Magnetic bearing*, *True bearing*.
+
 5. [Current Speed](../widgets/info-widgets.md#speed). *Informational* widget shows the current speed detected by the GPS sensor. 
 6. [Average speed](../widgets/info-widgets.md#average-speed-widget). *Informational* widget shows the average speed of the current trip.
 7. [Speed limit](../widgets/nav-widgets.md#speed-limit). A set of *informational* widgets displays the speed limit on the current road you are traveling on.
 8. [Altitude](../widgets/info-widgets.md#altitude-widgets). A set of *informational* widgets displays the altitude above sea level for the current geolocation or the altitude above sea level for the current map center.  
     2 widgets included: *Altitude: current location*, *Elevation: map center*.
-9. [GPS info (*Android only*)](../widgets/info-widgets.md#gps-info). *Informational* widget shows the number of satellites the device is currently detecting and using.
-10. [* Trip recording](../widgets/info-widgets.md#-trip-recording-widgets). A set of *informational* widgets provides quick access to start and stop track recording.  
-    4 widgets included: *Distance*, *Duration*, *Uphill*, *Downhill*.
-11. [Current time](../widgets/info-widgets.md#current-time). *Informational* widget displays the current time taken from your device.
-12. [Battery level](../widgets/info-widgets.md#battery-level). *Informational* widget shows battery level of your device.
-13. [Radius ruler](../widgets/info-widgets.md#radius-ruler). The widget displays on a map the distance between the user's location and the inner point of the distance circles of the [Radius ruler tool](../widgets/radius-ruler.md).
-14. [* Audio/video notes](../widgets/info-widgets.md#-audiovideo-notes-widget). This set of *informational* widgets provides quick access to start/stop taking an audio, video or photo notes.      
-    4 widgets included: *On request*, *Record audio*, *Record video*, *Take a photo*.
-15. [* Parking](../widgets/info-widgets.md#-parking-widget). *Informational* widget shows the distance from the center of the screen to the parking location.
-16. [* Wheather](../widgets/info-widgets.md#-weather-widgets). A set of *informational* widgets displays detailed weather data.    
-    5 widgets included: *Temperature*, *Air Pressure*, *Wind*, *Cloud*, *Precipitation*.
-17. [* Mapillary](../widgets/info-widgets.md#-mapillary-widget). *Informational* widget provides quick access to Mapillary app to add street images. 
-18. [Glide ratio](../widgets/info-widgets.md#glide-ratio). The widgets show the glide ratio to the target and the average glide ratio for the current flight.  
+
+9. [Current time](../widgets/info-widgets.md#current-time). *Informational* widget displays the current time taken from your device.
+10. [Battery level](../widgets/info-widgets.md#battery-level). *Informational* widget shows battery level of your device.
+11. [Radius ruler](../widgets/info-widgets.md#radius-ruler). The widget displays on a map the distance between the user's location and the inner point of the distance circles of the [Radius ruler tool](../widgets/radius-ruler.md).
+
+12. [Glide ratio](../widgets/info-widgets.md#glide-ratio). The widgets show the glide ratio to the target and the average glide ratio for the current flight.  
     2 widgets included: *Glide ratio to target*, *Average glide ratio*.
-19. [Sunrise, sunset](../widgets/info-widgets.md#sunset-and-sunrise). A set of *informational* widgets shows the time of the next sunrise or sunset for the center of the map.  
+
+13. [Sunrise, sunset](../widgets/info-widgets.md#sunset-and-sunrise). A set of *informational* widgets shows the time of the next sunrise or sunset for the center of the map.  
     2 widgets included: *Sunrise*, *Sunset*.
-20. [* Developer widgets](../widgets/info-widgets.md#-developer-widgets). A set of *informational* widgets provides information about zoom level, map rendering speed, map center elevation above sea level, distance to the map center, camera height and tilt.  
-    4 widgets included: *Map rendering FPS*, *Camera tilt*, *Camera elevation*, *Zoom level*, *Distance from camera to target*.
-21. [OsmAnd Tracker status](../widgets/info-widgets.md#-tracker-widget). This *informational* widget is used to quickly access the [OsmAnd Tracker application](https://play.google.com/store/apps/details?id=net.osmand.telegram) to share your location with other users. 
-22. [* External Sensors widgets](../widgets/info-widgets.md#-external-sensors-widgets). A set of *informational* widgets help you track data from your external sensors in real time.
+
+14. [OsmAnd Tracker status](../widgets/info-widgets.md#-tracker-widget). This *informational* widget is used to quickly access the [OsmAnd Tracker application](https://play.google.com/store/apps/details?id=net.osmand.telegram) to share your location with other users. 
+
+15. [GPS info (*Android only*)](../widgets/info-widgets.md#gps-info). *Informational* widget shows the number of satellites the device is currently detecting and using.
+
+16. [Available RAM (*Android only*)](../widgets/info-widgets#available-ram). *Informational* widget
+
+17. [Developer widgets (from *Development plugin*)](../widgets/info-widgets.md#developer-widgets). A set of *informational* widgets provides information about zoom level, map rendering speed, map center elevation above sea level, distance to the map center, camera height and tilt and available RAM on your device.  
+    5 widgets included: *Map rendering FPS*, *Camera tilt*, *Camera elevation*, *Zoom level*, *Distance from camera to target*, *Available RAM*.
+
+18. [Mapillary (from *Mapillary plugin*)](../widgets/info-widgets.md#mapillary-widget). *Informational* widget provides quick access to Mapillary app to add street images. 
+19. [Parking (from *Parking position plugin*)](../widgets/info-widgets.md#parking-widget). *Informational* widget shows the distance from the center of the screen to the parking location.  
+
+20. [Wheather (from *Weather plugin*)](../widgets/info-widgets.md#weather-widgets). A set of *informational* widgets displays detailed weather data.    
+    5 widgets included: *Temperature*, *Air Pressure*, *Wind*, *Cloud*, *Precipitation*.  
+
+21. [Trip recording (from *Trip recording plugin*)](../widgets/info-widgets.md#trip-recording-widgets). A set of *informational* widgets provides quick access to start and stop track recording.  
+    4 widgets included: *Distance*, *Duration*, *Uphill*, *Downhill*.
+
+21. [Audio/video notes (from *Audio/video notes plugin*)](../widgets/info-widgets.md#audiovideo-notes-widget). This set of *informational* widgets provides quick access to start/stop taking an audio, video or photo notes.      
+    4 widgets included: *On request*, *Record audio*, *Record video*, *Take a photo*.
+
+22. [External Sensors widgets (from *External sensors plugin*)](../widgets/info-widgets.md#external-sensors-widgets). A set of *informational* widgets help you track data from your external sensors in real time.
     6 widgets included: *Heart Rate*, *Bicycle Power*, *Bicycle Cadence*, *Bicycle Speed*, *Bicycle Distance*, *Temperature*.
 
 
@@ -175,13 +192,19 @@ Widgets in the right and left panels can be grouped into **Pages**. To do this, 
 
 ### Duplicates for widgets
 
-You can show **Duplicates** for the right and left panels at the same time, as well as for each page of widgets. To find options, follow these steps: *OsmAnd menu → Configure screen → Widgets (Left / Right panel) → Change order → "+" chosen widget*.
+![Widget dublicate](@site/static/img/widgets/widget_dublicate.png)  
 
-![Widget dublicate](@site/static/img/widgets/widget_dublicate.png)
+**Duplicates** can be shown simultaneously for the all panels, as well as for each page of the widget. To find the desired options, follow the steps below:  
+*OsmAnd menu → Configure screen → Widgets → **Add** chosen widget*.  
 
 
 ### Remove / Delete
 
+![Configure screen menu](@site/static/img/widgets/configure_screen_remove_andr.png)     
+
+To remove or delete a widget from the application screen, you need to select the required panel and then press the **Edit** button. 
+- To move a widget to the desired location or page, long press the icon on the right and select a position in the widget list. 
+- To no longer see the widget, tap the minus icon to the left of its name.
 
 ## Switch profile
 
@@ -189,11 +212,7 @@ You can show **Duplicates** for the right and left panels at the same time, as w
 
 <TabItem value="android" label="Android">  
 
-![Configure screen menu](@site/static/img/widgets/configure_screen_switch_andr.png)   
-
-On the home screen in the Android version, the ability to change profiles is presented as their previously added icons at the top of the screen.  
-
-Not all existing profiles are displayed.  
+![Configure screen menu](@site/static/img/widgets/configure_screen_switch_2_andr.png)   
 
 </TabItem>
 
@@ -204,4 +223,7 @@ Not all existing profiles are displayed.
 </TabItem>
 
 </Tabs> 
+
+For Android, the ability to change profiles is presented as their previously added icons at the top of the screen. For iOS, you need to go to the three dots menu.  
+Note that not all existing profiles are displayed, but only the ones you selected earlier.  
 

@@ -133,6 +133,16 @@ function hexToArgb(hex) {
     return `rgb(${red} ${green} ${blue}${alphaString})`;
 }
 
+export function formatMeters(m) {
+    if (m < 1000) {
+        const meters = Number(m).toFixed(0);
+        return `${meters} m`;
+    } else {
+        const km = Number(m / 1000).toFixed(2);
+        return `${km} km`;
+    }
+}
+
 export const toHHMMSS = function (time) {
     var sec_num = time / 1000;
     var hours = Math.floor(sec_num / 3600);
@@ -225,13 +235,15 @@ export function prepareFileName(filename) {
  *
  * Return result of the latest run of f()
  *
- * Example:
+ * Examples:
  *
- * getPoints.forEach(...) // usual call
- *
+ * getPoints().forEach(...) // usual call
  * measure(getPoints).forEach(...) // measure performance
+ *
+ * const md5 = digest(string) // usual
+ * const md5 = measure(() => digest(string), 'md5-test') // measure
  */
-export function measure(f, ms = 1000) {
+export function measure(f, tag, ms = 1000) {
     let counter = 0;
     let result = null;
     const started = Date.now();
@@ -240,7 +252,12 @@ export function measure(f, ms = 1000) {
         result = f();
     } while (Date.now() < started + ms);
     const delta = Date.now() - started;
-    console.debug(f.name, '~', parseFloat(Number(counter * (ms / delta) * (1000 / ms)).toFixed(2)), 'per second');
+    console.debug(
+        tag ?? f.name,
+        '~',
+        parseFloat(Number(counter * (ms / delta) * (1000 / ms)).toFixed(2)),
+        'per second'
+    );
     return result;
 }
 

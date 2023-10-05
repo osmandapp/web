@@ -50,18 +50,14 @@ export default function LocalClientTrackLayer() {
     /*
         unverifiedGpxFile is a kind of selectedGpxFile
 
-        They're calculated by async get-analytics calls. Due to delayed/async
+        They're calculated by async get-analysis calls. Due to delayed/async
         nature, user might have already choosen another selectedGpxFile when
-        we've got get-analytics results. This is the reason why we can't
+        we've got get-analysis results. This is the reason why we can't
         directly update unverifiedGpxFile to selectedGpxFile.
 
         To avoid mis-overwriting selectedGpxFile with unverifiedGpxFile, we
         have to compare name, description, 'selected', and points before
         setting selectedGpxFile.
-
-        Optionally, in case when unverifiedGpxFile is stale, we could try to
-        find corresponding file in localTracks/gpxTracks and update there if we
-        have found actual file to update (TODO).
     */
     useEffect(() => {
         const trusted = ctx.selectedGpxFile;
@@ -100,7 +96,9 @@ export default function LocalClientTrackLayer() {
                 unverified.selected === trusted.selected &&
                 unverified.metaData?.desc === trusted.metaData?.desc &&
                 (isPointsHaveSameGeo(unverified.points, trusted.points) ||
-                    isPointsHaveSameGeo(unverified.tracks[0]?.points, trusted.tracks[0]?.points))
+                    (unverified.tracks &&
+                        trusted.tracks &&
+                        isPointsHaveSameGeo(unverified.tracks[0]?.points, trusted.tracks[0]?.points)))
             ) {
                 // cleanup triggers
                 unverified.zoom = false;

@@ -19,6 +19,7 @@ export class geoObject extends geoRouter {
                 zoom: false,
                 conceal: false,
                 hidePoints: false,
+                forceApproximation: false,
             },
             points: {
                 start: null,
@@ -33,6 +34,7 @@ export class geoObject extends geoRouter {
         route: {
             map: {
                 hidePoints: 'Hide navigation points',
+                forceApproximation: 'Override approximation limit',
             },
         },
     };
