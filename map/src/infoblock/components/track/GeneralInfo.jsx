@@ -315,7 +315,7 @@ export default function GeneralInfo({ width }) {
         const nUpperCaseLetters = fileName.split('').filter((c) => isLetterUpperCase(c)).length;
         const inputLength = fileName.length + nUpperCaseLetters + 3; // add extra space
         return (
-            <div style={{ display: 'flex', maxWidth: '400px', flexWrap: 'wrap' }}>
+            <div id={'se-track-' + fileName} style={{ display: 'flex', maxWidth: '400px', flexWrap: 'wrap' }}>
                 {enableEditName && (
                     <div style={{ display: 'inline-block' }}>
                         <TextField

@@ -53,6 +53,7 @@ export default function MainMenu({
             component: <Weather />,
             type: OBJECT_TYPE_WEATHER,
             show: true,
+            id: 'se-show-menu-weather',
         },
         {
             name: 'Tracks',
@@ -60,6 +61,7 @@ export default function MainMenu({
             component: <TracksMenu />,
             type: OBJECT_TYPE_LOCAL_TRACK || OBJECT_TYPE_CLOUD_TRACK,
             show: true,
+            id: 'se-show-menu-tracks',
         },
         {
             name: 'Favorites',
@@ -67,6 +69,7 @@ export default function MainMenu({
             component: <FavoritesMenu />,
             type: OBJECT_TYPE_FAVORITE,
             show: true,
+            id: 'se-show-menu-favorites',
         },
         {
             name: 'Navigation',
@@ -74,6 +77,7 @@ export default function MainMenu({
             component: <RouteMenu />,
             type: OBJECT_TYPE_ROUTE_TRACK,
             show: true,
+            id: 'se-show-menu-navigation',
         },
         {
             name: 'Map Style',
@@ -81,6 +85,7 @@ export default function MainMenu({
             component: <MapStyle />,
             type: null,
             show: ctx.develFeatures,
+            id: 'se-show-menu-mapstyle',
         },
         {
             name: 'Plan a route',
@@ -88,6 +93,7 @@ export default function MainMenu({
             component: <PlanRouteMenu />,
             type: null,
             show: true,
+            id: 'se-show-menu-planroute',
         },
     ];
 
@@ -233,6 +239,7 @@ export default function MainMenu({
                         (item, index) =>
                             item.show && (
                                 <MenuItem
+                                    id={item.id}
                                     key={index}
                                     className={setMenuStyles(item)}
                                     onClick={() => {

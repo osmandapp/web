@@ -169,6 +169,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                         <div id="se-infoblock-all">
                             {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
                             <IconButton
+                                id={'se-button-back'}
                                 size="small"
                                 edge="start"
                                 color="inherit"
