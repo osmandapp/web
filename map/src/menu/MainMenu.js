@@ -290,13 +290,15 @@ export default function MainMenu({
                 </div>
                 <div style={{ position: 'absolute', bottom: 0, right: 0, left: 0 }}>
                     <Divider sx={{ my: '0px !important' }} />
-                    <div style={{ display: 'flex', justifyContent: 'center', height: '77px' }}>
+                    <div style={{ height: '77px' }}>
                         <MenuItem key={'Menu'}>
                             <ListItemButton
                                 sx={{
                                     '&:hover': {
                                         backgroundColor: 'transparent',
                                     },
+                                    display: 'flex',
+                                    justifyContent: 'center',
                                 }}
                                 onClick={handleDrawer}
                             >
