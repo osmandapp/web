@@ -123,11 +123,11 @@ export default function MainMenu({
     function setMenuStyles(item) {
         let res = [];
         //close
-        res.push(!openMainMenu && styles.menuItemClose);
+        !openMainMenu && res.push(styles.menuItemClose);
         //open
-        res.push(openMainMenu && styles.menuItemOpen);
+        openMainMenu && res.push(styles.menuItemOpen);
         //selected
-        res.push(isSelectedMenuItem(item) && styles.menuItemSelected);
+        isSelectedMenuItem(item) && res.push(styles.menuItemSelected);
 
         return res.join(' ');
     }
@@ -135,9 +135,9 @@ export default function MainMenu({
     function setMenuIconStyles(item) {
         let res = [];
         //open
-        res.push(openMainMenu && styles.menuItemOpen);
+        openMainMenu && res.push(styles.menuItemOpen);
         //selected
-        res.push(isSelectedMenuItem(item) && styles.menuItemSelected);
+        isSelectedMenuItem(item) && res.push(styles.menuItemSelected);
 
         return res.join(' ');
     }

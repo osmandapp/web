@@ -102,6 +102,13 @@ export default function RouteMenu() {
         }
     }, [ctx.currentObjectType]);
 
+    // This block was used for 2 actions:
+    // restore Navigation layer on the map (because Track Editor kills all "foreign" layers) -
+    // restoration was done by "reset" currentGpxFile with putRoute() -- please check is Navigation track (layer) really
+    // back when you switch back to Navigation menu after editing Local track
+    // second action is Zoom-on map Navigation track when you open Navigation menu
+    // Commenting this block breaks previously accepted task (Navigation menu changes).
+
     // // auto zoom once Navigation menu open
     // // additionally, trigger fitBounds (zoom) always on menu open
     // // optionally, re-convert (get->put) to switch to route object type
@@ -359,7 +366,7 @@ export default function RouteMenu() {
                     </Button>
                 </label>
                 <Button variant="contained" component="span" sx={{ ml: 2 }} onClick={openInfoBlock}>
-                    Open details
+                    Show details
                 </Button>
             </ButtonGroup>
             {routeObject.getRoute() &&
