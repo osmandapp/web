@@ -16,8 +16,6 @@ export default function GeneralPanelButtons({
     menuInfoWidth,
     showInfoBlock,
     setShowInfoBlock,
-    infoBlockOpen,
-    setInfoBlockOpen,
     clearState,
 }) {
     const ctx = useContext(AppContext);
@@ -141,8 +139,6 @@ export default function GeneralPanelButtons({
                     orientation={orientation}
                     tooltipOrientation={tooltipOrientation}
                     setShowInfoBlock={setShowInfoBlock}
-                    infoBlockOpen={infoBlockOpen}
-                    setInfoBlockOpen={setInfoBlockOpen}
                     clearState={clearState}
                     bsize={BUTTON_SIZE}
                 />

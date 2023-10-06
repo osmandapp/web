@@ -1,5 +1,5 @@
 import { ButtonGroup, IconButton, Paper, Tooltip, CircularProgress } from '@mui/material';
-import { Close, Delete, Cloud, CloudUpload, Redo, Undo, Create, MenuOpen, Download } from '@mui/icons-material';
+import { Close, Delete, Cloud, CloudUpload, Redo, Undo, Create, Download } from '@mui/icons-material';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext, {
     isRouteTrack,
@@ -19,23 +19,11 @@ import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import { downloadGpx } from '../../../infoblock/components/tabs/GeneralInfoTab';
 import RouteIcon from '@mui/icons-material/Route';
 
-const PanelButtons = ({
-    orientation,
-    tooltipOrientation,
-    setShowInfoBlock,
-    infoBlockOpen,
-    setInfoBlockOpen,
-    clearState,
-    bsize,
-}) => {
+const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clearState, bsize }) => {
     const ctx = useContext(AppContext);
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const [useSavedState, setUseSavedState] = useState(false);
-
-    const toggleInfoBlock = () => {
-        setInfoBlockOpen(!infoBlockOpen);
-    };
 
     const { state, setState, undo, redo, clear, isUndoPossible, isRedoPossible, pastStates } = useUndoRedo();
 
@@ -268,20 +256,6 @@ const PanelButtons = ({
                                     </IconButton>
                                 </Tooltip>
                             )}
-                        {ctx.currentObjectType && !infoBlockOpen && (
-                            <Tooltip title="Open info" arrow placement={tooltipOrientation}>
-                                <IconButton onClick={toggleInfoBlock} sx={{ transform: 'scaleX(1)' }}>
-                                    <MenuOpen fontSize="small" />
-                                </IconButton>
-                            </Tooltip>
-                        )}
-                        {ctx.currentObjectType && infoBlockOpen && (
-                            <Tooltip title="Close info" arrow placement={tooltipOrientation}>
-                                <IconButton onClick={toggleInfoBlock} sx={{ transform: 'scaleX(-1)' }}>
-                                    <MenuOpen fontSize="small" />
-                                </IconButton>
-                            </Tooltip>
-                        )}
                         {isRouteTrack(ctx) === false && (
                             <Tooltip title="Close" arrow placement={tooltipOrientation}>
                                 <IconButton

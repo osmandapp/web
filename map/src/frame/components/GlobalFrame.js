@@ -12,7 +12,6 @@ const GlobalFrame = () => {
     const ctx = useContext(AppContext);
 
     const [showInfoBlock, setShowInfoBlock] = useState(false);
-    const [infoBlockOpen, setInfoBlockOpen] = useState(true);
     const [clearState, setClearState] = useState(false);
     const [openMainMenu, setOpenMainMenu] = useState(false);
     const [menuInfo, setMenuInfo] = useState(null);
@@ -41,8 +40,6 @@ const GlobalFrame = () => {
                     menuInfoWidth={MENU_INFO_SIZE}
                     showInfoBlock={showInfoBlock}
                     setShowInfoBlock={setShowInfoBlock}
-                    infoBlockOpen={infoBlockOpen}
-                    setInfoBlockOpen={setInfoBlockOpen}
                     clearState={clearState}
                 />
             </Box>
@@ -53,7 +50,6 @@ const GlobalFrame = () => {
                 setOpenMainMenu={setOpenMainMenu}
                 menuInfo={menuInfo}
                 setMenuInfo={setMenuInfo}
-                infoBlockOpen={infoBlockOpen}
                 showInfoBlock={showInfoBlock}
                 setShowInfoBlock={setShowInfoBlock}
                 setClearState={setClearState}

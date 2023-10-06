@@ -31,7 +31,6 @@ export default function MainMenu({
     setOpenMainMenu,
     menuInfo,
     setMenuInfo,
-    infoBlockOpen,
     showInfoBlock,
     setShowInfoBlock,
     setClearState,
@@ -316,7 +315,6 @@ export default function MainMenu({
                 <Toolbar />
                 {!showInfoBlock && menuInfo}
                 <InformationBlock
-                    infoBlockOpen={infoBlockOpen}
                     showInfoBlock={showInfoBlock}
                     setShowInfoBlock={setShowInfoBlock}
                     setClearState={setClearState}
