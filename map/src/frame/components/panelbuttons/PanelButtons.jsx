@@ -8,15 +8,15 @@ import AppContext, {
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_WEATHER,
     OBJECT_TYPE_POI,
-} from '../../context/AppContext';
-import SaveTrackDialog from './track/dialogs/SaveTrackDialog';
-import DeleteTrackDialog from './track/dialogs/DeleteTrackDialog';
-import DeleteFavoriteDialog from './favorite/DeleteFavoriteDialog';
+} from '../../../context/AppContext';
+import SaveTrackDialog from '../../../infoblock/components/track/dialogs/SaveTrackDialog';
+import DeleteTrackDialog from '../../../infoblock/components/track/dialogs/DeleteTrackDialog';
+import DeleteFavoriteDialog from '../../../infoblock/components/favorite/DeleteFavoriteDialog';
 import _ from 'lodash';
-import TracksManager, { isEmptyTrack } from '../../manager/TracksManager';
-import useUndoRedo from '../useUndoRedo';
-import { confirm } from '../../dialogs/GlobalConfirmationDialog';
-import { downloadGpx } from './tabs/GeneralInfoTab';
+import TracksManager, { isEmptyTrack } from '../../../manager/TracksManager';
+import useUndoRedo from '../../../infoblock/useUndoRedo';
+import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
+import { downloadGpx } from '../../../infoblock/components/tabs/GeneralInfoTab';
 import RouteIcon from '@mui/icons-material/Route';
 
 const PanelButtons = ({

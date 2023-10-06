@@ -34,7 +34,13 @@ const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     return null;
 };
 
-export default function InformationBlock({ infoBlockOpen, showInfoBlock, setShowInfoBlock, setClearState }) {
+export default function InformationBlock({
+    infoBlockOpen,
+    showInfoBlock,
+    setShowInfoBlock,
+    setClearState,
+    mainMenuSize,
+}) {
     const DRAWER_SIZE = 400;
 
     const ctx = useContext(AppContext);
@@ -75,8 +81,8 @@ export default function InformationBlock({ infoBlockOpen, showInfoBlock, setShow
         const width = getWidth();
         ctx.setInfoBlockWidth(width);
         const px = parseFloat(width) || 0; // 100px -> 100, auto -> 0
-        const padding = px || DRAWER_SIZE + 24; // always apply right padding on desktop
-        ctx.mutateFitBoundsPadding((o) => (o.right = padding));
+        const padding = px || DRAWER_SIZE + Number(mainMenuSize.replace('px', '')) + 24; // always apply right padding on desktop
+        ctx.mutateFitBoundsPadding((o) => (o.left = padding));
     }, [showInfoBlock, infoBlockOpen]);
 
     // detect leaving from Local Track Editor when another kind of object type is activated

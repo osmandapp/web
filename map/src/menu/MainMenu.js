@@ -22,6 +22,7 @@ import { ReactComponent as NavigationIcon } from '../assets/menu/ic_action_navig
 import { ReactComponent as PlanRouteIcon } from '../assets/menu/ic_action_plan_route.svg';
 import InformationBlock from '../infoblock/components/InformationBlock';
 import Weather from './weather/Weather';
+import styles from './mainmenu.module.css';
 
 export default function MainMenu({
     size,
@@ -96,10 +97,7 @@ export default function MainMenu({
     useEffect(() => {
         if (showInfoBlock && !menuInfo) {
             setOpenMainMenu(true);
-            const currentMenu = items.find((item) => item.type === ctx.currentObjectType);
-            if (currentMenu) {
-                setMenuInfo(currentMenu.component);
-            }
+            selectMenuInfo();
         }
     }, [showInfoBlock]);
 
@@ -107,16 +105,52 @@ export default function MainMenu({
     useEffect(() => {
         if (ctx.currentObjectType) {
             if (menuInfo?.type.name !== ctx.currentObjectType) {
-                const currentMenu = items.find((item) => item.type === ctx.currentObjectType);
-                if (currentMenu) {
-                    setMenuInfo(currentMenu.component);
-                }
+                selectMenuInfo();
             }
         }
     }, [ctx.currentObjectType]);
 
+    function selectMenuInfo() {
+        const currentMenu = items.find((item) => item.type === ctx.currentObjectType);
+        if (currentMenu) {
+            setMenuInfo(currentMenu.component);
+        }
+    }
+
+    function isSelectedMenuItem(item) {
+        return menuInfo?.type.name === item?.component?.type.name;
+    }
+
+    function setMenuStyles(item) {
+        let res = [];
+        //close
+        res.push(!openMainMenu && styles.menuItemClose);
+        //open
+        res.push(openMainMenu && styles.menuItemOpen);
+        //selected
+        res.push(isSelectedMenuItem(item) && styles.menuItemSelected);
+
+        return res.join(' ');
+    }
+
+    function setMenuIconStyles(item) {
+        let res = [];
+        //open
+        res.push(openMainMenu && styles.menuItemOpen);
+        //selected
+        res.push(isSelectedMenuItem(item) && styles.menuItemSelected);
+
+        return res.join(' ');
+    }
+
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box
+            sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'absolute',
+            }}
+        >
             <Drawer
                 variant="permanent"
                 PaperProps={{
@@ -131,17 +165,18 @@ export default function MainMenu({
                 <Toolbar />
                 <MenuItem
                     key={'Profile'}
+                    sx={{
+                        minHeight: '77px',
+                        maxHeight: '77px',
+                    }}
                     onClick={() => {
-                        handleDrawer();
+                        setOpenMainMenu(true);
                         openLogin();
                     }}
                 >
                     <ListItemButton
+                        className={styles.profileButton}
                         sx={{
-                            minWidth: '40px',
-                            maxWidth: '40px',
-                            ml: '-5px',
-                            minHeight: '77px',
                             justifyContent: openMainMenu ? 'initial' : 'center',
                         }}
                     >
@@ -154,7 +189,7 @@ export default function MainMenu({
                             <Person />
                         </ListItemIcon>
                         {openMainMenu && (
-                            <div style={{}}>
+                            <div>
                                 <ListItemText
                                     sx={{
                                         opacity: openMainMenu ? 1 : 0,
@@ -168,10 +203,16 @@ export default function MainMenu({
                                 </ListItemText>
                                 {ctx.loginUser && ctx.loginUser !== 'INIT' && (
                                     <ListItemText
+                                        className={styles.profileLogin}
                                         sx={{
                                             opacity: openMainMenu ? 1 : 0,
                                             pl: openMainMenu ? 1 : 0,
-                                            fontSize: 14,
+                                            '& .MuiTypography-root': {
+                                                fontSize: '14px',
+                                                textOverflow: 'ellipsis !important',
+                                                whiteSpace: 'nowrap',
+                                                overflow: 'hidden !important',
+                                            },
                                         }}
                                     >
                                         {ctx.loginUser}
@@ -181,57 +222,71 @@ export default function MainMenu({
                         )}
                     </ListItemButton>
                 </MenuItem>
-                <Divider />
-                {items.map(
-                    (item, index) =>
-                        item.show && (
-                            <MenuItem
-                                key={index}
-                                onClick={() => {
-                                    if (openMainMenu) {
-                                        setShowInfoBlock(false);
-                                        setMenuInfo(
-                                            menuInfo?.type.name !== item?.component?.type.name ? item.component : null
-                                        );
-                                    } else {
-                                        setOpenMainMenu(true);
-                                        setMenuInfo(item.component);
-                                    }
-                                }}
-                            >
-                                <ListItemButton
-                                    sx={{
-                                        minWidth: '40px',
-                                        maxWidth: '40px',
-                                        ml: '-5px',
-                                        justifyContent: openMainMenu ? 'initial' : 'center',
+                <Divider sx={{ my: '0px !important' }} />
+                <div className={styles.menu}>
+                    {items.map(
+                        (item, index) =>
+                            item.show && (
+                                <MenuItem
+                                    key={index}
+                                    className={setMenuStyles(item)}
+                                    onClick={() => {
+                                        if (openMainMenu) {
+                                            setShowInfoBlock(false);
+                                            setMenuInfo(!isSelectedMenuItem(item) ? item.component : null);
+                                        } else {
+                                            setOpenMainMenu(true);
+                                            setMenuInfo(item.component);
+                                        }
                                     }}
                                 >
-                                    <ListItemIcon
+                                    <ListItemButton
+                                        className={setMenuIconStyles(item)}
                                         sx={{
-                                            justifyContent: 'center',
-                                            ml: openMainMenu ? '-14px' : 0,
+                                            minWidth: '40px',
+                                            maxWidth: '40px',
+                                            ml: '-5px',
+                                            justifyContent: openMainMenu ? 'initial' : 'center',
                                         }}
                                     >
-                                        <SvgIcon component={item.icon} inheritViewBox />
-                                    </ListItemIcon>
-                                    <ListItemText
-                                        primary={item.name}
-                                        sx={{
-                                            opacity: openMainMenu ? 1 : 0,
-                                            pl: openMainMenu ? 1 : 0,
-                                            fontSize: 14,
-                                        }}
-                                    />
-                                </ListItemButton>
-                            </MenuItem>
-                        )
-                )}
+                                        <ListItemIcon
+                                            sx={{
+                                                justifyContent: 'center',
+                                                ml: openMainMenu ? '-14px' : 0,
+                                            }}
+                                        >
+                                            <SvgIcon
+                                                className={styles.customIconPath}
+                                                component={item.icon}
+                                                sx={{ fill: '#727272' }}
+                                                inheritViewBox
+                                            />
+                                        </ListItemIcon>
+                                        <ListItemText
+                                            primary={item.name}
+                                            sx={{
+                                                opacity: openMainMenu ? 1 : 0,
+                                                pl: openMainMenu ? 1 : 0,
+                                                fontSize: 14,
+                                            }}
+                                        />
+                                    </ListItemButton>
+                                </MenuItem>
+                            )
+                    )}
+                </div>
                 <div style={{ position: 'absolute', bottom: 0, right: 0, left: 0 }}>
-                    <Divider />
+                    <Divider sx={{ my: '0px !important' }} />
                     <div style={{ display: 'flex', justifyContent: 'center', height: '77px' }}>
                         <MenuItem key={'Menu'}>
-                            <ListItemButton onClick={handleDrawer}>
+                            <ListItemButton
+                                sx={{
+                                    '&:hover': {
+                                        backgroundColor: 'transparent',
+                                    },
+                                }}
+                                onClick={handleDrawer}
+                            >
                                 <div style={{ alignItems: 'center' }}>
                                     <ListItemIcon sx={{ ml: '13px' }}>
                                         <Menu />
@@ -251,6 +306,7 @@ export default function MainMenu({
                     sx: {
                         width: infoSize,
                         ml: size,
+                        boxShadow: !menuInfo && 'none',
                     },
                 }}
                 sx={{ left: 'auto !important' }}
@@ -264,6 +320,7 @@ export default function MainMenu({
                     showInfoBlock={showInfoBlock}
                     setShowInfoBlock={setShowInfoBlock}
                     setClearState={setClearState}
+                    mainMenuSize={size}
                 />
             </Drawer>
         </Box>

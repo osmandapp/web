@@ -1,0 +1,48 @@
+.menuItemClose {
+    &:hover {
+        background-color: #ffffff !important;
+        box-shadow: none !important;
+    }
+}
+.menuItemOpen {
+    &:hover {
+        color: #237bff !important;
+        background-color: #ffffff !important;
+        .customIconPath {
+            fill: #237bff !important;
+        }
+    }
+}
+.menuItemSelected {
+    background-color: #f5f5f5 !important;
+    &:hover {
+        color: #237bff !important;
+        background-color: #f5f5f5 !important;
+    }
+}
+.profileButton {
+    min-width: 40px !important;
+    max-width: 40px !important;
+    margin-left: -5px !important;
+    min-height: 77px !important;
+    max-height: 77px !important;
+    &:hover {
+        background-color: transparent !important;
+    }
+}
+.profileLogin {
+    width: 90%;
+    word-wrap: break-word;
+    display: block !important;
+    text-align: left;
+    text-transform: none !important;
+}
+.menu {
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: calc(100vh - 220px);
+    position: sticky;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
