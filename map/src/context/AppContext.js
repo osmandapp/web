@@ -276,7 +276,7 @@ export const AppContextProvider = (props) => {
     afterPointRouter.initSetter({ setter: setAfterPointRouter });
     beforePointRouter.initSetter({ setter: setBeforePointRouter });
 
-    const [trackRange, setTrackRange] = useState([]);
+    const [trackRange, setTrackRange] = useState(null);
 
     const [showPoints, mutateShowPoints] = useMutator({
         points: true,
