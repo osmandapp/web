@@ -66,7 +66,7 @@ export default function MainMenu({
             icon: FavoritesIcon,
             component: <FavoritesMenu />,
             type: OBJECT_TYPE_FAVORITE,
-            show: ctx.favorites?.groups?.length > 0,
+            show: true,
         },
         {
             name: 'Navigation',
@@ -241,14 +241,6 @@ export default function MainMenu({
                                         } else {
                                             setMenuInfo(item.component);
                                         }
-
-                                        // if (openMainMenu) {
-                                        //     setShowInfoBlock(false);
-                                        //     setMenuInfo(!isSelectedMenuItem(item) ? item.component : null);
-                                        // } else {
-                                        //     setOpenMainMenu(true);
-                                        //     setMenuInfo(item.component);
-                                        // }
                                     }}
                                 >
                                     <ListItemButton

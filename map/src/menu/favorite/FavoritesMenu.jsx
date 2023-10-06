@@ -128,7 +128,7 @@ export default function FavoritesMenu() {
     return (
         <>
             <FavoriteAllGroups setEnableGroups={setEnableGroups} favoritesGroups={openFavoritesGroups} />
-            {ctx.favorites.groups &&
+            {ctx.favorites.groups.length > 0 &&
                 ctx.favorites.groups.map((group, index) => {
                     return (
                         <FavoriteGroup
