@@ -196,6 +196,9 @@ export default function MainMenu({
                                         fontSize: 14,
                                         color: '#237bff',
                                         textTransform: 'none !important',
+                                        '& .MuiTypography-root': {
+                                            fontSize: '14px',
+                                        },
                                     }}
                                 >
                                     {ctx.loginUser && ctx.loginUser !== 'INIT' ? 'Account' : 'Login'}
@@ -266,7 +269,9 @@ export default function MainMenu({
                                             sx={{
                                                 opacity: openMainMenu ? 1 : 0,
                                                 pl: openMainMenu ? 1 : 0,
-                                                fontSize: 14,
+                                                '& .MuiTypography-root': {
+                                                    fontSize: '14px',
+                                                },
                                             }}
                                         />
                                     </ListItemButton>
@@ -290,7 +295,16 @@ export default function MainMenu({
                                     <ListItemIcon sx={{ ml: '13px' }}>
                                         <Menu />
                                     </ListItemIcon>
-                                    <ListItemText sx={{ ml: '5px', color: '#237bff', fontWeight: '500 !important' }}>
+                                    <ListItemText
+                                        sx={{
+                                            ml: '7px',
+                                            color: '#237bff',
+                                            fontWeight: '500 !important',
+                                            '& .MuiTypography-root': {
+                                                fontSize: '14px',
+                                            },
+                                        }}
+                                    >
                                         Menu
                                     </ListItemText>
                                 </div>
