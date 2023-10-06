@@ -26,7 +26,7 @@ const useStyles = makeStyles(() => ({
             border: '0px !important',
         },
         '& .leaflet-control-zoom': {
-            left: `${props.mainMenuWidth}px`,
+            left: `${(parseFloat(props.mainMenuWidth) || 0) + (parseFloat(props.menuInfoWidth) || 0)}px`,
         },
         '& .leaflet-control-scale-line': {
             marginBottom: `${props.mobile ? -6 : 0}px`,
@@ -73,8 +73,8 @@ const updateMarker = (lat, lng, setHoverPoint, hoverPointRef) => {
     }
 };
 
-const OsmAndMap = ({ mainMenuWidth, drawerRightWidth }) => {
-    const classes = useStyles({ mainMenuWidth, drawerRightWidth });
+const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
+    const classes = useStyles({ mainMenuWidth, menuInfoWidth });
     const mapRef = useRef(null);
     const tileLayer = useRef(null);
     const hoverPointRef = useRef(null);

@@ -16,8 +16,9 @@ const GlobalFrame = () => {
     const [openMainMenu, setOpenMainMenu] = useState(false);
     const [menuInfo, setMenuInfo] = useState(null);
 
-    let MAIN_MENU_SIZE = openMainMenu ? '240px' : '64px';
-    let MENU_INFO_SIZE = menuInfo ? '424px' : '0px';
+    const MAIN_MENU_MIN_SIZE = '64px';
+    const MAIN_MENU_SIZE = openMainMenu ? '240px' : MAIN_MENU_MIN_SIZE;
+    const MENU_INFO_SIZE = menuInfo ? '424px' : '0px';
 
     return (
         <Box sx={{ display: 'flex' }}>
@@ -34,9 +35,9 @@ const GlobalFrame = () => {
                     </Alert>
                 )}
                 <GlobalConfirmationDialog />
-                <OsmAndMap mainMenuWidth={MAIN_MENU_SIZE} drawerRightWidth={ctx.infoBlockWidth} />
+                <OsmAndMap mainMenuWidth={MAIN_MENU_MIN_SIZE} menuInfoWidth={MENU_INFO_SIZE} />
                 <GeneralPanelButtons
-                    mainMenuWidth={MAIN_MENU_SIZE}
+                    mainMenuWidth={MAIN_MENU_MIN_SIZE}
                     menuInfoWidth={MENU_INFO_SIZE}
                     showInfoBlock={showInfoBlock}
                     setShowInfoBlock={setShowInfoBlock}
