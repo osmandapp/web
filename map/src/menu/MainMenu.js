@@ -134,6 +134,8 @@ export default function MainMenu({
 
     function setMenuIconStyles(item) {
         let res = [];
+        //close
+        !openMainMenu && res.push(styles.menuIconClose);
         //open
         openMainMenu && res.push(styles.menuItemOpen);
         //selected

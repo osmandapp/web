@@ -20,6 +20,11 @@
         background-color: #f5f5f5 !important;
     }
 }
+.menuIconClose {
+    &:hover {
+        border-radius: 3px;
+    }
+}
 .profileButton {
     min-width: 40px !important;
     max-width: 40px !important;
