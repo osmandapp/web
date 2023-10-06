@@ -19,10 +19,16 @@
         color: #237bff !important;
         background-color: #f5f5f5 !important;
     }
+    .customIconPath {
+        fill: #237bff !important;
+    }
 }
 .menuIconClose {
     &:hover {
         border-radius: 3px;
+        .customIconPath {
+            fill: #237bff !important;
+        }
     }
 }
 .profileButton {
