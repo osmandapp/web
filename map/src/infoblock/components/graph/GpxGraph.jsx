@@ -123,7 +123,10 @@ export default function GpxGraph({
     const handleRangeChange = (event, newValue) => {
         setDistRangeValue(newValue);
         if (showRange) {
-            ctx.setTrackRange(newValue);
+            ctx.setTrackRange({
+                range: newValue,
+                dist: [data[newValue[0]][xAxis], data[newValue[1]][xAxis]],
+            });
         }
     };
     useEffect(() => {
@@ -143,7 +146,7 @@ export default function GpxGraph({
                 }
             }
             setDistRangeValue([0, data.length - 1]);
-            ctx.setTrackRange([]);
+            ctx.setTrackRange(null);
         }
     }, [data, showData, slopes]);
 
@@ -222,7 +225,8 @@ export default function GpxGraph({
 
     function showRange() {
         const defaultPos =
-            _.isEmpty(ctx.trackRange) || (ctx.trackRange.range[0] === 0 && ctx.trackRange.range[1] === data.length - 1);
+            _.isEmpty(ctx.trackRange?.range) ||
+            (ctx.trackRange.range[0] === 0 && ctx.trackRange.range[1] === data.length - 1);
         return !defaultPos;
     }
 
@@ -334,8 +338,8 @@ export default function GpxGraph({
                         box1: {
                             display: showRange(),
                             type: 'box',
-                            xMin: !_.isEmpty(ctx.trackRange) && ctx.trackRange.dist[0],
-                            xMax: !_.isEmpty(ctx.trackRange) && ctx.trackRange.dist[1],
+                            xMin: ctx.trackRange && !_.isEmpty(ctx.trackRange.dist) && ctx.trackRange.dist[0],
+                            xMax: ctx.trackRange && !_.isEmpty(ctx.trackRange.dist) && ctx.trackRange.dist[1],
                             backgroundColor: 'rgb(169,169,169, 0.34)',
                             borderWidth: 0,
                         },
