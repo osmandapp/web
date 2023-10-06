@@ -176,6 +176,7 @@ export default function MainMenu({
                     onClick={openLogin}
                 >
                     <ListItemButton
+                        id={ctx.loginUser && ctx.loginUser !== 'INIT' ? 'se-logout-button' : 'se-login-button'}
                         className={styles.profileButton}
                         sx={{
                             justifyContent: openMainMenu ? 'initial' : 'center',
