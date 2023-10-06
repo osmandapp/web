@@ -12,7 +12,7 @@ export default function GraphLayer() {
     const [trackRangeLine, setTrackRangeLine] = useState(null);
 
     useEffect(() => {
-        if (!_.isEmpty(ctx.trackRange)) {
+        if (!_.isEmpty(ctx.trackRange?.range)) {
             let trackPoints = ctx.selectedGpxFile.points
                 ? ctx.selectedGpxFile.points
                 : TracksManager.getTrackPoints(ctx.selectedGpxFile);
