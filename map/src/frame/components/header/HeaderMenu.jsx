@@ -31,7 +31,7 @@ export default function HeaderMenu() {
         <AppBar
             position="fixed"
             sx={{
-                zIndex: (theme) => theme.zIndex.drawer + 1,
+                zIndex: 3000,
                 height: '60px',
                 background: '#ffffff',
             }}

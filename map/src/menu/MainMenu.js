@@ -39,7 +39,6 @@ export default function MainMenu({
 
     const handleDrawer = () => {
         setOpenMainMenu(!openMainMenu);
-        setMenuInfo(null);
     };
 
     const navigate = useNavigate();
@@ -159,6 +158,10 @@ export default function MainMenu({
                         boxSizing: 'border-box',
                         width: size,
                         overflow: 'hidden',
+                        zIndex: 2000,
+                        boxShadow: openMainMenu
+                            ? '0px 8px 10px -5px rgba(0,0,0,0.2), 0px 16px 24px 2px rgba(0,0,0,0.14), 0px 6px 30px 5px rgba(0,0,0,0.12);'
+                            : 'none',
                     },
                 }}
                 open={openMainMenu}
@@ -170,10 +173,7 @@ export default function MainMenu({
                         minHeight: '77px',
                         maxHeight: '77px',
                     }}
-                    onClick={() => {
-                        setOpenMainMenu(true);
-                        openLogin();
-                    }}
+                    onClick={openLogin}
                 >
                     <ListItemButton
                         className={styles.profileButton}
@@ -235,13 +235,20 @@ export default function MainMenu({
                                     key={index}
                                     className={setMenuStyles(item)}
                                     onClick={() => {
-                                        if (openMainMenu) {
+                                        if (menuInfo) {
                                             setShowInfoBlock(false);
                                             setMenuInfo(!isSelectedMenuItem(item) ? item.component : null);
                                         } else {
-                                            setOpenMainMenu(true);
                                             setMenuInfo(item.component);
                                         }
+
+                                        // if (openMainMenu) {
+                                        //     setShowInfoBlock(false);
+                                        //     setMenuInfo(!isSelectedMenuItem(item) ? item.component : null);
+                                        // } else {
+                                        //     setOpenMainMenu(true);
+                                        //     setMenuInfo(item.component);
+                                        // }
                                     }}
                                 >
                                     <ListItemButton
@@ -320,8 +327,9 @@ export default function MainMenu({
                 PaperProps={{
                     sx: {
                         width: infoSize,
-                        ml: size,
-                        boxShadow: !menuInfo && 'none',
+                        ml: '64px',
+                        boxShadow: 'none',
+                        zIndex: 1000,
                     },
                 }}
                 sx={{ left: 'auto !important' }}
