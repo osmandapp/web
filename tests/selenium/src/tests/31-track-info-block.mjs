@@ -8,7 +8,6 @@ import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
 import actionUploadGpx from '../actions/actionUploadGpx.mjs';
 import actionLocalToCloud from '../actions/actionLocalToCloud.mjs';
-import actionFinish from '../actions/actionFinish.mjs';
 
 const TRACKS = [
     {
@@ -74,17 +73,19 @@ export default async function test() {
         const name = gpx.replace('.gpx', '');
 
         await actionUploadGpx({ mask: gpx });
+        await clickBy(By.id('se-local-track-' + name));
         await clickBy(By.id('se-show-attr-legend-Road type'), { optional: true });
         await clickBy(By.id('se-show-attr-legend-Surface'), { optional: true });
         await validateInfoBlockStrings(strings);
         await validateInfoBlockButtons(localTrackButtons);
-
+        await clickBy(By.id('se-button-back'));
         await actionLocalToCloud({ mask: name });
+        await clickBy(By.id('se-cloud-track-' + name));
+        await clickBy(By.id('se-show-attr-legend-Road type'), { optional: true });
+        await clickBy(By.id('se-show-attr-legend-Surface'), { optional: true });
         await validateInfoBlockStrings(strings);
         await validateInfoBlockButtons(cloudTrackButtons);
     }
-
-    await actionFinish();
 }
 
 async function validateInfoBlockStrings(strings) {
