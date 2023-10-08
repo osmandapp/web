@@ -101,7 +101,9 @@ export async function clickBy(by, { optional = false } = {}) {
     const clicker = async () => {
         const element = await waitBy(by, { optional });
         if (element) {
-            await classDelay(element, delaysBeforeClick); // class-based delay
+            const classes = await element.getAttribute('class');
+
+            await classDelay(classes, delaysBeforeClick); // class-based delay
             await transitionDelay(element); // wait for CSS transition finish <Collapse>
 
             try {
@@ -116,7 +118,7 @@ export async function clickBy(by, { optional = false } = {}) {
                 }
             }
 
-            await classDelay(element, delaysAfterClick);
+            await classDelay(classes, delaysAfterClick);
             return element;
         }
         return true; // enclose needs truthy
@@ -136,9 +138,8 @@ const delaysAfterClick = {
 };
 
 // sleep by max(element-class in delays{})
-async function classDelay(element, delays) {
+async function classDelay(classes, delays) {
     let delayMs = 0;
-    const classes = await element.getAttribute('class');
     if (classes) {
         classes.split(' ').forEach((c) => delays[c] > 0 && delays[c] > delayMs && (delayMs = delays[c]));
         if (delayMs > 0) {
