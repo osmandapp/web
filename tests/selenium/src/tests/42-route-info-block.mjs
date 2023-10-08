@@ -6,7 +6,6 @@ import { enclose, clickBy, sendKeysBy, matchInnerTextBy, enumerateIds } from '..
 
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
-import actionFinish from '../actions/actionFinish.mjs';
 
 const routes = [
     {
@@ -93,11 +92,8 @@ const routeTrackInfoBlockButtons = ['se-infoblock-button-edit-track', 'se-infobl
 
 export default async function test() {
     await actionOpenMap();
-
+    await clickBy(By.id('se-show-menu-navigation'));
     for await (const { type, profile, strings, turns, A, B, hasAttributes } of routes) {
-        await clickBy(By.id('se-show-main-menu'), { optional: true });
-        await clickBy(By.id('se-show-menu-route'), { optional: true });
-
         await clickBy(By.id('se-clear-route-start-point'));
         await clickBy(By.id('se-clear-route-finish-point'));
 
@@ -112,16 +108,9 @@ export default async function test() {
         await validateInfoBlockStrings(strings, hasAttributes);
         await validateInfoBlockTurns(turns);
 
-        // funny way to close mobile info-block after turns tab open
-        if (mobile) {
-            await clickBy(By.id('se-show-menu-weather'));
-            await clickBy(By.id('se-hide-menu-weather'));
-        }
-
+        await clickBy(By.id('se-button-back'));
         await actionIdleWait();
     }
-
-    await actionFinish();
 }
 
 // { type, profile } note: type support later
@@ -152,7 +141,6 @@ async function validateInfoBlockButtons(ids) {
 }
 
 async function validatePanelButtons(ids) {
-    await clickBy(By.id('se-hide-main-menu'));
     await enclose(
         async () => {
             const buttons = await enumerateIds('se-panel-button-');
@@ -160,7 +148,7 @@ async function validatePanelButtons(ids) {
         },
         { tag: 'validatePanelButtons' }
     );
-    await clickBy(By.id('se-show-main-menu'));
+    //await clickBy(By.id('se-button-back'));
 }
 
 async function validateInfoBlockStrings(strings, hasAttributes) {

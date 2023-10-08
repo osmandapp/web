@@ -18,13 +18,13 @@ const FOOT = '161.1 km';
 export default async function test() {
     await actionOpenMap();
 
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
-    await clickBy(By.id('se-show-menu-route'), { optional: true });
+    await clickBy(By.id('se-show-menu-navigation'));
 
     // upload and move map to the center of gpx track
     await enclose(uploader, { tag: 'upload gpx' });
     await navigateHash(GO_CENTER_HASH);
 
+    await clickBy(By.id('se-button-back'));
     // validate start, end points, and profiles
     await matchValueBy(By.id('se-route-start-point'), CHECK_START);
     await matchValueBy(By.id('se-route-finish-point'), CHECK_END);
@@ -59,6 +59,6 @@ const validateRouteInfo = async (profile, km) => {
     };
 
     await enclose(clicker);
-
+    await clickBy(By.id('se-button-back'), { optional: true });
     await matchTextBy(By.id('se-route-info'), km); // Route: 157.7 km
 };
