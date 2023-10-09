@@ -107,7 +107,7 @@ Defaults: run all tests using foreground desktop mode
 export async function prepareDriver() {
     const width = 1280;
     const height = 720;
-    const deviceName = 'Samsung Galaxy S20 Ultra';
+    const deviceName = 'iPad Air';
 
     const options = new Options();
 

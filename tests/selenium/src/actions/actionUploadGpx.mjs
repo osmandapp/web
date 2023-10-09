@@ -42,16 +42,22 @@ export default async function test({ mask = '*.gpx', multiple = false } = {}) {
         for (let i = 0; i < tracks.length; i++) {
             const { name, path } = tracks[i];
             await uploadTracks({ files: path });
-            await waitForTrack({ name });
+            await waitForNameTrack({ name });
             await actionIdleWait();
         }
     }
+
+    await clickBy(By.id('se-button-back'), { optional: true });
 
     // finally, all files should be loaded
     for (let i = 0; i < tracks.length; i++) {
         const { name } = tracks[i];
         await waitForTrack({ name });
     }
+}
+
+async function waitForNameTrack({ name }) {
+    await waitBy(By.id('se-track-' + name));
 }
 
 async function waitForTrack({ name }) {

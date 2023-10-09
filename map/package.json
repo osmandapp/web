@@ -63,7 +63,7 @@
         "postinstall": "patch-package",
         "generate:poiicons": "ls public/images/poi-icons-svg | jq -R -s -c 'split(\"\\n\")[:-1]'\n\n > src/generated/poiicons.json",
         "lint": "eslint src/**/*.js src/**/*.jsx src/**/*.mjs",
-        "format": "prettier --write './**/*.{js,jsx,mjs,ts,tsx,css,md,json}' --config ./.prettierrc"
+        "format": "prettier --write './**/*.{js,jsx,mjs,ts,tsx,css,json}' --config ./.prettierrc"
     },
     "browserslist": {
         "production": [

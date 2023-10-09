@@ -7,7 +7,6 @@ import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
 import actionUploadGpx from '../actions/actionUploadGpx.mjs';
 import actionLocalToCloud from '../actions/actionLocalToCloud.mjs';
-import actionFinish from '../actions/actionFinish.mjs';
 
 const TRACK = 'test-routed-osrm';
 
@@ -33,16 +32,15 @@ export default async function test() {
     await actionLogIn();
 
     await actionUploadGpx({ mask: TRACK + '.gpx' });
+    await clickBy(By.id('se-local-track-' + TRACK));
     await validatePanelButtons(localTrackButtons);
 
     await actionLocalToCloud({ mask: TRACK });
+    await clickBy(By.id('se-cloud-track-' + TRACK));
     await validatePanelButtons(cloudTrackButtons);
-
-    await actionFinish();
 }
 
 async function validatePanelButtons(ids) {
-    await clickBy(By.id('se-hide-main-menu'));
     await enclose(
         async () => {
             const buttons = await enumerateIds('se-panel-button-');
@@ -50,7 +48,7 @@ async function validatePanelButtons(ids) {
         },
         { tag: 'validatePanelButtons' }
     );
-    await clickBy(By.id('se-show-main-menu'));
+    await clickBy(By.id('se-button-back'));
 }
 
 // async function openCloudTrack(name) {

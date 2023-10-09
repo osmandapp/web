@@ -37,7 +37,7 @@ import {
 } from '@mui/icons-material';
 import DescTrackDialog from './dialogs/DescTrackDialog';
 import RouteIcon from '@mui/icons-material/Route';
-import { formatRouteInfo } from '../../../drawer/components/route/RouteMenu';
+import { formatRouteInfo } from '../../../menu/route/RouteMenu';
 
 export default function GeneralInfo({ width }) {
     const styles = contextMenuStyles();
@@ -315,7 +315,7 @@ export default function GeneralInfo({ width }) {
         const nUpperCaseLetters = fileName.split('').filter((c) => isLetterUpperCase(c)).length;
         const inputLength = fileName.length + nUpperCaseLetters + 3; // add extra space
         return (
-            <div style={{ display: 'flex', maxWidth: '400px', flexWrap: 'wrap' }}>
+            <div id={'se-track-' + fileName} style={{ display: 'flex', maxWidth: '400px', flexWrap: 'wrap' }}>
                 {enableEditName && (
                     <div style={{ display: 'inline-block' }}>
                         <TextField

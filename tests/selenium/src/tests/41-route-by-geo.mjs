@@ -46,8 +46,7 @@ const routes = [
 export default async function test() {
     await actionOpenMap();
 
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
-    await clickBy(By.id('se-show-menu-route'), { optional: true });
+    await clickBy(By.id('se-show-menu-navigation'));
 
     for await (const { zoom, type, profile, check, A, B } of routes) {
         await goCenter({ A, B, zoom });
@@ -59,7 +58,7 @@ export default async function test() {
 
         await sendKeysBy(By.id('se-route-start-point'), A + '\n');
         await sendKeysBy(By.id('se-route-finish-point'), B + '\n');
-
+        await clickBy(By.id('se-button-back'));
         await matchTextBy(By.id('se-route-info'), check);
 
         await actionIdleWait();

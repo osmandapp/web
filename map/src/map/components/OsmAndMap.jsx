@@ -26,11 +26,7 @@ const useStyles = makeStyles(() => ({
             border: '0px !important',
         },
         '& .leaflet-control-zoom': {
-            left: `${props.mainMenuWidth}px`,
-        },
-        '& .leaflet-bottom ': {
-            bottom: `${props.mobile ? 50 + props.drawerRightHeight : 50}px`,
-            right: `${props.mobile ? 0 : props.drawerRightWidth}`,
+            left: `${(parseFloat(props.mainMenuWidth) || 0) + (parseFloat(props.menuInfoWidth) || 0)}px`,
         },
         '& .leaflet-control-scale-line': {
             marginBottom: `${props.mobile ? -6 : 0}px`,
@@ -77,8 +73,8 @@ const updateMarker = (lat, lng, setHoverPoint, hoverPointRef) => {
     }
 };
 
-const OsmAndMap = ({ mobile, drawerRightHeight, mainMenuWidth, drawerRightWidth }) => {
-    const classes = useStyles({ mobile, drawerRightHeight, mainMenuWidth, drawerRightWidth });
+const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
+    const classes = useStyles({ mainMenuWidth, menuInfoWidth });
     const mapRef = useRef(null);
     const tileLayer = useRef(null);
     const hoverPointRef = useRef(null);
@@ -172,9 +168,9 @@ const OsmAndMap = ({ mobile, drawerRightHeight, mainMenuWidth, drawerRightWidth 
             {hoverPoint && (
                 <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerGraph} />
             )}
-            <ZoomControl position={mobile ? 'topright' : 'bottomleft'} />
-            <LocationControl position={mobile ? 'topright' : 'bottomleft'} />
-            <ScaleControl position={mobile ? 'bottomleft' : 'bottomright'} imperial={false} />
+            <ZoomControl position={'bottomleft'} />
+            <LocationControl position={'bottomleft'} />
+            <ScaleControl position={'bottomright'} imperial={false} />
             <ContextMenu setGeocodingData={setGeocodingData} setRegionData={setRegionData} />
         </MapContainer>
     );
