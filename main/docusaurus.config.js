@@ -58,9 +58,8 @@ const config = {
           },
           { to: '/blog', label: 'Blog', position: 'left'},
           { to: '/docs/user/purchases', label: '💳 Purchases', position: 'left' },
-          { to: 'https://osmand.net/map', label: '🌍 Map', position: 'left' },
+          { to: 'pathname:///map', target: '_self', label: '🌍 Map', position: 'left' },
           { to: '/docs/hiring', label: '🚵‍♂️ Join us', position: 'left' },
-//          { href: 'https://osmand.net/map', label: 'Map', position: 'left' },
           {
             href: 'https://github.com/osmandapp/',
             label: 'GitHub',
@@ -80,7 +79,8 @@ const config = {
               },
               {
                 label: 'Map 🌍',
-                to: 'https://osmand.net/map',
+                to: 'pathname:///map',
+                target: '_self',
               },
               {
                 label: 'Docs',
@@ -98,7 +98,7 @@ const config = {
                 label: 'Build it',
                 to: '/docs/build-it',
               },
-              
+
               {
                 label: 'Giveaway',
                 to: '/giveaway',
@@ -135,7 +135,7 @@ const config = {
               {
                 label: 'Matrix',
                 href: 'https://matrix.to/#/#osmand:hacklab.fi',
-              }, 
+              },
             ],
           },
           {
@@ -180,7 +180,7 @@ const config = {
               {
                 label: 'Türkçe',
                 href: 'https://t.me/OsmAndTR',
-              },                
+              },
             ],
           },
           {
