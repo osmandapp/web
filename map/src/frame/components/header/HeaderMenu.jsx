@@ -55,7 +55,7 @@ export default function HeaderMenu() {
                             to={page.url}
                             key={page.name}
                             className={styles.menuItem}
-                            sx={page.url === '/map' ? { color: '#237bff' } : { color: '#1c1e21' }}
+                            sx={page.url === '/map' ? { color: '#237bff !important' } : { color: '#1c1e21 !important' }}
                         >
                             {page.name}
                         </Button>
