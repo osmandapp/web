@@ -31,7 +31,7 @@ export default function HeaderMenu() {
         <AppBar
             position="fixed"
             sx={{
-                zIndex: 3000,
+                zIndex: 1300,
                 height: '60px',
                 background: '#ffffff',
             }}
@@ -55,6 +55,7 @@ export default function HeaderMenu() {
                             to={page.url}
                             key={page.name}
                             className={styles.menuItem}
+                            sx={page.url === '/map' ? { color: '#237bff' } : { color: '#1c1e21' }}
                         >
                             {page.name}
                         </Button>
