@@ -1,0 +1,23 @@
+{
+  "popularArticles" : {
+     "Purchases" : "/docs/user/purchases/ios",
+     "Raster Maps (Online / Offline)" : "/docs/user/map/raster-maps/",
+     "Tracks" : "/docs/user/personal/tracks/",
+     "Configure Screen" : "/docs/user/widgets/configure-screen/",
+     "Download maps" : "/docs/user/start-with/download-maps/",
+     "Plan route" : "/docs/user/plan-route/create-route/",
+     "Trip recording" : "/docs/user/plugins/trip-recording/"
+  },
+  "telegramChats" : {
+     "Telegram English (en)": "https://t.me/OsmAndMaps",
+     "Telegram German (de)": "https://t.me/deosmand",
+     "Telegram Italian (it)": "https://t.me/itosmand",
+     "Telegram French (fr)": "https://t.me/frosmand",
+     "Telegram Poland (pl)": "https://t.me/osmand_pl",
+     "Telegram Ukraine (uk)": "https://t.me/uaosmand",
+     "Telegram Türkçe (tr)": "https://t.me/OsmAndTR",
+     "Telegram Russian (ru)": "https://t.me/ruosmand",
+     "Telegram Spanish (es)": "https://t.me/osmand_es",
+     "Telegram Brazilian Portuguese (pt_br)": "https://t.me/brosmand"
+ }
+}
