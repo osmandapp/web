@@ -1,0 +1,37 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+
+<g transform="translate(0.000000, 0.000000) scale(2.000000 2.000000) "> 
+
+<g clip-path="url(#clip0)">
+<path opacity="0.953" d="M9.99934 0C15.514 0 20 4.44646 20 10C20 15.5172 15.514 20 9.99934 20C4.48599 20 0 15.5172 0 10C0 4.44646 4.48599 0 9.99934 0V0Z" fill="#878787"/>
+<path opacity="0.95" fill-rule="evenodd" clip-rule="evenodd" d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19ZM10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="#404040"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<path d="M0 0H20V20H0V0Z" fill="white"/>
+</clipPath>
+</defs>
+
+</g>
+
+
+<g transform="translate(8.000000, 8.000000) scale(0.500000 0.500000) "> 
+
+<path d="M4 4H8V44H4V4Z" fill="#ffffff"/>
+<path d="M16 4H20V44H16V4Z" fill="#ffffff"/>
+<path d="M4 4H20V8H4V4Z" fill="#ffffff"/>
+<path d="M4 36H20V44H4V36Z" fill="#ffffff"/>
+<path d="M4 12H20V16H4V12Z" fill="#ffffff"/>
+<path d="M4 20H20V28H4V20Z" fill="#ffffff"/>
+<path d="M12 24H16V40H12V24Z" fill="#ffffff"/>
+<path d="M28 4H32V44H28V4Z" fill="#ffffff"/>
+<path d="M40 4H44V44H40V4Z" fill="#ffffff"/>
+<path d="M28 4H44V8H28V4Z" fill="#ffffff"/>
+<path d="M28 36H44V44H28V36Z" fill="#ffffff"/>
+<path d="M28 12H44V16H28V12Z" fill="#ffffff"/>
+<path d="M28 20H44V28H28V20Z" fill="#ffffff"/>
+<path d="M36 24H40V40H36V24Z" fill="#ffffff"/>
+
+</g>
+
+</svg>

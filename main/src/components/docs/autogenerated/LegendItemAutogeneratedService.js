@@ -25,6 +25,7 @@ export default function Render() {
         'Parcel locker' : 'service/service_amenity_parcel_locker',
         'Toilets' : 'service/service_amenity_toilets',
         'Shower' : 'service/service_amenity_shower',
+        'Dressing room' : 'service/service_amenity_dressing_room',
         'Public bath' : 'service/service_amenity_public_bath',
         'Telephone' : 'service/service_amenity_telephone',
         'Bench' : 'service/service_amenity_bench',
