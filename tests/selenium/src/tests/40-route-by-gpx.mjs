@@ -47,6 +47,7 @@ const validateRouteInfo = async (profile, km) => {
     // enclose-wrapper
     // wait for success click
     const clicker = async () => {
+        await clickBy(By.id('se-button-back'), { optional: true });
         await clickBy(By.id('se-route-select'), { optional: true });
         const clicked = await clickBy(By.id('se-route-profile-' + profile), { optional: true });
 
@@ -58,7 +59,6 @@ const validateRouteInfo = async (profile, km) => {
         return false;
     };
 
-    await enclose(clicker);
-    await clickBy(By.id('se-button-back'), { optional: true });
+    await enclose(clicker, { tag: 'clicker ' });
     await matchTextBy(By.id('se-route-info'), km); // Route: 157.7 km
 };
