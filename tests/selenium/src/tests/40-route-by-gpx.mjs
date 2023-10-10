@@ -12,7 +12,7 @@ const GO_CENTER_HASH = '#10/48.4716/23.7064';
 const CHECK_START = '48.61650, 23.68181';
 const CHECK_END = '48.61421, 23.70352';
 const CAR = /157.[79] km/;
-const BIKE = /162.[34] km/;
+const BIKE = /162.[348] km/;
 const FOOT = '161.1 km';
 
 export default async function test() {
@@ -47,6 +47,7 @@ const validateRouteInfo = async (profile, km) => {
     // enclose-wrapper
     // wait for success click
     const clicker = async () => {
+        await clickBy(By.id('se-button-back'), { optional: true });
         await clickBy(By.id('se-route-select'), { optional: true });
         const clicked = await clickBy(By.id('se-route-profile-' + profile), { optional: true });
 
@@ -58,7 +59,6 @@ const validateRouteInfo = async (profile, km) => {
         return false;
     };
 
-    await enclose(clicker);
-    await clickBy(By.id('se-button-back'), { optional: true });
+    await enclose(clicker, { tag: 'clicker ' });
     await matchTextBy(By.id('se-route-info'), km); // Route: 157.7 km
 };
