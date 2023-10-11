@@ -593,11 +593,19 @@ There are four Camera widgets:
 
 #### Available RAM
 
-![Average speed widgets](@site/static/img/widgets/available_RAM_andr.png)
+![Average speed widgets](@site/static/img/widgets/available_RAM_2_andr.png)
 
-This widget is a useful tool for you to monitor the amount of available RAM on your device. It provides information about how much RAM is available to run OsmAnd, which allows you to manage the application performance more accurately.   
+This widget is a useful tool for you to monitor the amount of available RAM on your device. It provides information about how much RAM is available to run OsmAnd, which allows you to manage the application performance more accurately.  
 
-To use this widget, make sure you have the OsmAnd Development plugin enabled.
+1. **Application RAM Available:** This value displays how much RAM is available for use by your OsmAnd application at the moment. It shows how much memory the application can use without problems or lag.
+
+2. **Application RAM Usage:** This value displays how much RAM is currently being used by your OsmAnd application. It shows the current RAM usage by the application.
+
+3. **Total Application RAM:** This value indicates the total amount of RAM allocated to your OsmAnd application. This includes used and available memory.
+
+**Total available* can be caused by various factors, such as background device processes or other applications that may be temporarily using RAM. It's important to remember that RAM is dynamic and can change depending on what apps and tasks are running on your device. These values are useful for tracking and optimizing the memory usage of your OsmAnd application to ensure it runs more consistently and efficiently.
+
+To use this widget, make sure you have the OsmAnd **Development plugin** enabled.
 
 | | |
 |------------|------------|
