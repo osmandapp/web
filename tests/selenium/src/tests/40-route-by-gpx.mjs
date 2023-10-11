@@ -7,13 +7,13 @@ import { enclose, waitBy, clickBy, matchTextBy, matchValueBy, navigateHash } fro
 
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 
-const TEST_GPX_FILE = 'test-routed-osmand.gpx';
-const GO_CENTER_HASH = '#10/48.4716/23.7064';
-const CHECK_START = '48.61650, 23.68181';
-const CHECK_END = '48.61421, 23.70352';
-const CAR = /157.[79] km/;
-const BIKE = /162.[348] km/;
-const FOOT = '161.1 km';
+const TEST_GPX_FILE = 'test-routed-osrm.gpx';
+const GO_CENTER_HASH = '#14/50.3837/30.4944';
+const CHECK_START = '50.39743, 30.50983';
+const CHECK_END = '50.36917, 30.52727';
+const CAR = '12.7 km, 0:22 min';
+const BIKE = '12.6 km, 0:45 min';
+const FOOT = '13.4 km, 3:21 min';
 
 export default async function test() {
     await actionOpenMap();
@@ -24,13 +24,23 @@ export default async function test() {
     await enclose(uploader, { tag: 'upload gpx' });
     await navigateHash(GO_CENTER_HASH);
 
-    await clickBy(By.id('se-button-back'));
     // validate start, end points, and profiles
-    await matchValueBy(By.id('se-route-start-point'), CHECK_START);
-    await matchValueBy(By.id('se-route-finish-point'), CHECK_END);
     await validateRouteInfo('car', CAR);
     await validateRouteInfo('bicycle', BIKE);
     await validateRouteInfo('pedestrian', FOOT);
+
+    // wait for and close info-block (optional)
+    // match coordinates of start/finish points
+    await enclose(
+        async () => {
+            await clickBy(By.id('se-button-back'), { optional: true });
+            return (
+                (await matchValueBy(By.id('se-route-start-point'), CHECK_START)) &&
+                (await matchValueBy(By.id('se-route-finish-point'), CHECK_END))
+            );
+        },
+        { tag: 'check-start-finish' }
+    );
 }
 
 const uploader = async () => {
@@ -60,5 +70,6 @@ const validateRouteInfo = async (profile, km) => {
     };
 
     await enclose(clicker, { tag: 'clicker ' });
+
     await matchTextBy(By.id('se-route-info'), km); // Route: 157.7 km
 };
