@@ -175,7 +175,9 @@ The average speed is calculated for a given time interval according to your sele
 
 ![Glide ratio widget](@site/static/img/widgets/glide_ratio_widget.png)  
 
-The Glide Ratio widget is an innovative tool designed to meet the needs of pilots. The widget provides valuable glide ratio information to help make informed decisions when planning air routes. You can read more about this [here](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).  
+The Glide Ratio widget is an innovative tool designed to meet the needs of pilots. The widget provides valuable glide ratio information to help make informed decisions when planning air routes. The *Glide Ratio* widget in OsmAnd helps you assess the efficiency of your descent or ascent when navigating to a specific location. It calculates the glide ratio as the ratio of the distance to the difference in altitude between your current position and your intended destination. 
+
+You can read more about this [here](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
 
 - **Glide ratio to the target**. This widget provides information about the required glide ratio to reach the target point. The widget calculates this coefficient as the ratio of the distance to the target to the change in altitude. For example, if the glide ratio is 7 : 1 (7 to 1), it means that for each unit of descent, you advance 7 units of distance. This widget is particularly useful for pilots who can optimize their route for the conditions on the way to the target.  
 
@@ -189,7 +191,31 @@ Widget use:
 - **Maximum use of horizontal distance.** Knowing the glide ratio allows pilots to maximize the use of horizontal distance to move to the target, which is especially important when planning long flights.
 - **Risk reduction**. The *Glide ratio to the target* widget helps pilots avoid situations where reaching the target becomes impossible due to insufficient glide ratio. This helps to reduce risks and improve flight safety.
 
-For pilots, especially those involved in hovering, the glide ratio widget in the OsmAnd app with the *Glide ratio to the target* and *Average glide ratio* widgets becomes an important tool for successful and safe hovering flights. It helps pilots to make informed decisions, optimize their route and maximize horizontal movement, which significantly improves flight quality and minimizes risks.  
+
+**Glide Ratio Calculation**  
+The Glide Ratio is calculated by dividing the distance by the difference in altitude. This means that if the widget displays a value like "90:1," it signifies that for every 1 kilometer of descent, you will cover a distance of 90 kilometers.
+
+**Positive and Negative Values**  
+- Positive values indicate that your destination is at a lower altitude than your current position, requiring descent.
+- Negative values indicate that your destination is at a higher altitude, necessitating ascent. For example, "-90:1" means that after covering a distance of 90 kilometers, you need to ascend by 1 kilometer to reach your destination.
+
+**Capping Ratio**  
+Glide ratios greater than "150:1" are displayed as "1:0" or "-1:0," indicating that the altitude change is insignificant relative to the distance. 
+
+**"0:1" Display**  
+When the distance to be covered is minimal compared to the altitude change, the display is "0:1," indicating that you can disregard the distance.
+
+**"0:0" Display**  
+If both the distance and altitude change are less than 0.1 meters, the display is "0:0," signifying that both values are negligible.
+
+**Rounding**
+Before displaying, data is rounded to "0" if it is less than 0.1 meters. If the distance is greater than or equal to 0.1 meters but the altitude change is less than 0.1 meters, the display is "1:0."
+
+**Decimal Formatting**  
+For glide ratios between 0.1 and 100, we show a single decimal place. For example, a glide ratio of 50.7643 is displayed as "50.8:1." For values greater than 100, decimals are ignored. For instance, "102.35" is displayed as "102:1."
+
+In summary, the Glide Ratio widget in OsmAnd provides valuable information about your descent or ascent efficiency. Understanding its display conventions will help you make informed navigation decisions based on distance and altitude differences.
+
 
 | | |
 |------------|------------|

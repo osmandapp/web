@@ -18,6 +18,28 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Track on the map](@site/static/img/personal/tracks/track_on_map_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Track on the map iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
+
+</TabItem>
+ 
+</Tabs>
+
+All tracks in OsmAnd are stored in a folder:    
+*[<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu.md) → [<Translate android="true" ids="shared_string_my_places"/>](../personal/myplaces.md) → [<Translate android="true" ids="shared_string_gpx_tracks"/>](../personal/tracks.md)*  
+
+
+The Tracks tab in the OsmAnd app provides a convenient way to manage and interact with your saved tracks. This feature allows users to record and save the tracks they have traveled during their travels or outdoor activities.  
+
 Track on the map is user [recorded trip](../plugins/trip-recording.md) or [plan route](../plan-route/create-route.md) with makred points on it or not. OsmAnd track file has [gpx-format](../plugins/trip-recording.md#gpx-file-details).
 
 You can add / create tracks to / in OsmAnd in these ways: 
@@ -42,22 +64,6 @@ There are three options to display Tracks on the map:
 Formats: OsmAnd uses [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format) format for tracks and points.  
 Import: the app can import [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language), [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) formats of tracks and points.
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Track on the map](@site/static/img/personal/tracks/track_on_map_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Track on the map iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
-
-</TabItem>
- 
-</Tabs>
-
 
 ## Create / Edit Track
 
@@ -65,10 +71,32 @@ Import: the app can import [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Form
 
 <InfoAndroidOnly /> 
 
-A simple and fast tool for creating points by specifying geographic coordinates. Read how to add points by coordinates: [By Coordinate input](../plan-route/coordinate-input.md) 
+- *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → Earth button at the bottom of the screen*
+- *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*  
+
+![Coordinate input Options menu Android](@site/static/img/plan-route/coordinates_input/coordinates_input_options.png)  
+
+A simple and fast tool for creating points by specifying geographic coordinates. Read how to add points by coordinates:  
+[By Coordinate input](../plan-route/coordinate-input.md). 
 
 
-### Record track
+### Currently recording track
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Track on the map](@site/static/img/personal/tracks/tracks_recording_1_andr.png)  ![Track on the map](@site/static/img/personal/tracks/tracks_recording_2_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Track on the map iOS](@site/static/img/personal/tracks/tracks_recording_1_ios.png)
+
+</TabItem>
+ 
+</Tabs>
 
 Use the OsmAnd [Trip recording Plugin](../plugins/trip-recording.md) and special widgets to record your tracks. Trip recording (Android) or Track recording (iOS) plugin is a special tool designed to record your routes, movements, and workouts. This feature allows you to reuse, modify, update, and share your tracks with friends.    
 
@@ -246,14 +274,13 @@ My Places menu benefits:
 
 ![My places tracks Android](@site/static/img/personal/tracks/my_places_tracks_actions_3_andr.png) 
 
-<!--
+
 - "+" button  - allows [to import](./tracks.md#import-track) GPX track from device storage.
 - "earth" button - opens [Add point menu](../plan-route/coordinate-input.md) for adding points by inputting coordinates.
 - "map" button - allows to choose tracks for showing its on the map.
 - "&#x1F5D1;" button - allows to choose tracks for deleting.
 - "&#10227;" button - allows to refresh tracks list.
 - "OSM editing" button - allows you to upload the selected [track to the OSM](../plugins/osm-editing.md).
--->
 
 </TabItem>
 
@@ -263,7 +290,7 @@ My Places menu benefits:
 
 ![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_ios.png) 
 
-ACTIONS  
+Actions  
 
 - **<Translate ios="true" ids="import_tracks"/>**  - open tab *<Translate ios="true" ids="import_from_docs"/>* and next description <Translate ios="true" ids="gpx_import_desc"/>, [My files](../plan-route/create-route.md).
 - **<Translate ios="true" ids="create_new_trip"/>** - opens [*Plan route tool*](../personal/tracks.md#edit-mode-ios) for creating a new track.
@@ -302,6 +329,10 @@ Sort menu:
 - <Translate android="true" ids="sort_last_modified"/> - sorting tracks in the list by last modified.
 - <Translate android="true" ids="sort_name_ascending"/> - sorting tracks in the list by name A → Z.
 - <Translate android="true" ids="sort_name_descending"/> - sorting tracks in the list by name Z → A.
+
+### Filter
+
+![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png) 
 
 
 ## Import / Export track
@@ -348,26 +379,11 @@ There are two variants for importing a track file in OsmAnd. The first is import
 
 ### Export track
 
-<Tabs groupId="operating-systems">
+Exporting one or more track files to any messenger, email, file managers, Drive or app is possible in several ways.  
 
-<TabItem value="android" label="Android">
-
-Exporting track file or files to any massengers, email, file managers, Drive , apps. There are two general ways:
-1. By [Track Context menu → Share](../map/track-context-menu.md#options).
-2. By [Local backup file](../personal/storage.md#local-backup). Exporting GPX-tracks as OSF-file.
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-Exporting track file or files to any massengers, email, file managers, Drive , apps. There are two general ways:
 1. By [Track Context menu → Share](../map/track-context-menu.md#options).
 2. By [My Places menu → Tracks → … → "export" button](../personal/tracks.md#actions). Exporting more than one track by a bundle (It's the case of Local Backup).
 3. By [Local backup file](../personal/storage.md#local-backup). Exporting GPX-tracks as OSF-file.
-
-</TabItem>
- 
-</Tabs>
 
 
 ## Manage tracks
@@ -548,6 +564,8 @@ You can then move the track to any other preferred folder in My Places and/or ex
 
 #### MOVE TRACK WITHIN MY PLACES
 
+![More options in iOS](@site/static/img/plugins/trip-recording/change_folder_ios_1.png) ![Change folder in iOS](@site/static/img/plugins/trip-recording/change_folder_ios_2.png)  
+
 To move a track from the default folder to another folder in My Places, do the following:
 
 - Open the [Context menu](../map/track-context-menu.md) of a track on the map in one of the following ways:  
@@ -558,10 +576,10 @@ To move a track from the default folder to another folder in My Places, do the f
 - Tap **<Translate ios="true" ids="plan_route_change_folder"/>** from the opened *<Translate ios="true" ids="actions"/> list*.
 - Select a folder to move the track to.   
 
-![More options in iOS](@site/static/img/plugins/trip-recording/change_folder_ios_1.png) ![Change folder in iOS](@site/static/img/plugins/trip-recording/change_folder_ios_2.png)  
 
+### Export a GPX file to an external storage device
 
-#### EXPORT GPX FILE TO EXTERNAL STORAGE
+![Export with Context menu in iOS](@site/static/img/plugins/trip-recording/cont_menu_in_myplaces_ios.png) 
 
 To export a GPX file to an external storage, do the following: 
 
@@ -572,7 +590,6 @@ To export a GPX file to an external storage, do the following:
 - Tap **<Translate ios="true" ids="shared_string_export"/>**.
 - Select the required storage to export the GPX file to.   
 
-![Export with Context menu in iOS](@site/static/img/plugins/trip-recording/cont_menu_in_myplaces_ios.png) 
 
 </TabItem>
 

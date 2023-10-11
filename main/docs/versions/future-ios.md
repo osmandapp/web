@@ -4,19 +4,19 @@ sidebar_position: 5
 
 # iOS 4.5 (September 2023)
 
- Join Beta
+## Join Beta
 
-iOS beta builds (TestFlight) are usually provided weekly (after the team sprint demo). They don't contain descriptions and may have continuous versioning. They are assumed to be stable and ready to use.  
+iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint demo). They do not contain descriptions and may have continuous versioning. They are assumed to be stable and ready to use.  
 
 <div>
   <a class="button button--active" href="https://testflight.apple.com/join/7poGNCKy">Join TestFlight</a>
 </div>
 
 
-**What's new**
+## What's new
 
-* Free account for favorites Backup (iOS) – OsmAnd Cloud
-* New Relief format
+* [Free account for favorites Backup – OsmAnd Cloud](#osmand-start)
+* [New Relief format](#new-relief-format)
   * Contour lines plugin renamed to Topography
   * Added support for the new Terrain map format
   * Added 3D Relief 
@@ -29,13 +29,14 @@ iOS beta builds (TestFlight) are usually provided weekly (after the team sprint 
 
 For OsmAnd 4.5 was added OsmAnd Start plan. A user should register an email for the [OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud) and then activate _OsmAnd Start_.
 
-_OsmAnd Menu → Settings → OsmAnd Cloud_
+*OsmAnd Menu → Settings → OsmAnd Cloud*
 
 After that, you can [backup](https://osmand.net/docs/user/personal/osmand-cloud#select-data-to-back-up) your [favorites](https://osmand.net/docs/user/personal/favorites), [OSM Edits and Notes](https://osmand.net/docs/user/plugins/osm-editing#create--modify-osm-note), and [OsmAnd settings](https://osmand.net/docs/user/personal/profiles) for free. 
 
 ![OsmAnd Start](@site/blog/2023-09-25-ios-4-5/img/start.png)
 
 Read more about OsmAnd Start in [our article](https://osmand.net/blog/start) for OsmAnd Start in OsmAnd for Android.
+
 
 ### New Relief format
 

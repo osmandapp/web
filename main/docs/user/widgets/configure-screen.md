@@ -98,7 +98,7 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 
 15. [GPS info (*Android only*)](../widgets/info-widgets.md#gps-info). *Informational* widget shows the number of satellites the device is currently detecting and using.
 
-16. [Available RAM (*Android only*)](../widgets/info-widgets#available-ram). *Informational* widget
+16. [Available RAM (*Android only*)](../widgets/info-widgets#available-ram). *Informational* widget shows the amount of available RAM on your device.
 
 17. [Developer widgets (from *Development plugin*)](../widgets/info-widgets.md#developer-widgets). A set of *informational* widgets provides information about zoom level, map rendering speed, map center elevation above sea level, distance to the map center, camera height and tilt and available RAM on your device.  
     5 widgets included: *Map rendering FPS*, *Camera tilt*, *Camera elevation*, *Zoom level*, *Distance from camera to target*, *Available RAM*.
