@@ -11,16 +11,6 @@ import actionLocalToCloud from '../actions/actionLocalToCloud.mjs';
 
 const TRACKS = [
     {
-        gpx: 'test-routed-osmand.gpx',
-        strings: [
-            'Points: 16',
-            'Distance: 152.1 km',
-            '312.0 / 883.8 / 1730.8 m', // ele
-            /Path.*?: 20.96 km/s, // Waytypes stats
-            /Gravel.*?: 16.00 km/s, // Surfaces stats
-        ],
-    },
-    {
         gpx: 'test-routed-osrm.gpx',
         strings: [
             'Points: 29',
@@ -44,6 +34,16 @@ const TRACKS = [
             '173.2 / 184.5 / 191.0 m', // ele
             /Street.*?: 6.08 km/s, // Waytypes stats
             /Asphalt.*?: 3.28 km/s, // Surfaces stats
+        ],
+    },
+    {
+        gpx: 'test-routed-osmand.gpx',
+        strings: [
+            'Points: 16',
+            'Distance: 152.1 km',
+            '312.0 / 883.8 / 1730.8 m', // ele
+            /Path.*?: 20.96 km/s, // Waytypes stats
+            /Gravel.*?: 16.00 km/s, // Surfaces stats
         ],
     },
 ];
