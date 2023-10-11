@@ -35,7 +35,7 @@ You can take part in testing the beta version of OsmAnd using Google Play.
 * Better memory management for large GPX tracks
 * Redesigned *Local* - Maps & Resources
 * New documentation for mobile
-* Filters for tracks search
+* [Filters for tracks search](#filters-for-tracks-search)
 * Custom Quick Action buttons
 * Simple widgets for top/bottom panel
 * Add row support for Top / Bottom panels – Configure Screen
@@ -67,6 +67,12 @@ The Glide Ratio widget is an innovative tool designed to meet the needs of pilot
 
 ![Help screen](@site/static/img/widgets/help_screen.png)  
 
+
+## Filters for Tracks search
+
+![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png)   
+
+In addition to navigation and track creation, the Osmand app provides handy tools for managing your track recordings. With the latest update to the app, new features have been added to the Tracks section to better search and filter your tracks. These new filters provide more detailed and customizable options to search for tracks based on various parameters, allowing you to quickly find tracks that meet your specific requirements and preferences.   
 
 
 
