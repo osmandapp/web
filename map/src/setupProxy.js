@@ -5,7 +5,7 @@ module.exports = function (app) {
 
     const localProxy = createProxyMiddleware(prepare('http://localhost:8080'));
 
-    const testProxy = createProxyMiddleware(prepare('http://localhost:8080'));
+    const testProxy = createProxyMiddleware(prepare('https://test.osmand.net'));
 
     const mainProxy = createProxyMiddleware(prepare('https://osmand.net'));
     const maptileProxy = createProxyMiddleware(prepare('https://maptile.osmand.net'));
