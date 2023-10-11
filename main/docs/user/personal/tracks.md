@@ -320,7 +320,7 @@ Tap the "&#x1F50D;" button at the top of the device screen to open the track lis
 
 <InfoAndroidOnly/>
 
-Tap the "sort" button at the top of the device screen to open the track list sorting menu tool.
+Tap the *Sort* button at the top of the device screen to open the track list sorting menu tool.
 
 ![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_android.png) ![My places tracks sort 1 function Android](@site/static/img/personal/tracks/my_places_tracks_sort_1_android.png) 
 
@@ -330,9 +330,84 @@ Sort menu:
 - <Translate android="true" ids="sort_name_ascending"/> - sorting tracks in the list by name A → Z.
 - <Translate android="true" ids="sort_name_descending"/> - sorting tracks in the list by name Z → A.
 
+
 ### Filter
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png) 
+![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_2_andr.png) 
+
+Osmand provides convenient tools for managing track recordings. The **Tracks** tab provides options for more efficient track search and filtering. Filters provide a more detailed and customizable way to search for tracks by various parameters, allowing you to quickly find tracks that meet specific requirements and preferences.  
+
+![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png)  
+
+#### Duration
+
+![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_duration_andr.png)  
+
+- This filter allows you to customize your search by the duration of the recorded tracks.
+- You can select a duration range in hours and minutes to find tracks matching your time limit.
+
+
+#### Time in motion
+
+![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_time_in_motion_andr.png)  
+
+- This filter helps you find tracks during which you were in motion.
+- Select a range of time in motion to display tracks that match your criteria.
+
+#### Length
+
+![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_length_andr.png)  
+
+- This filter allows you to customize your search by track length in kilometers or miles.
+- Specify the desired length range to find tracks of a specific length.
+
+#### Average speed
+
+![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_average_speed_andr.png)   
+
+- This filter helps you sort tracks by average speed.
+- Select the average speed range (in km/h or mph) to search for tracks.
+
+#### Max speed
+
+![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_max_speed_andr.png)     
+
+- This filter allows you to search for tracks with a specific maximum speed.
+- Select the maximum speed range (in km/h or mph) to find tracks that meet this criterion.
+
+#### Average altitude
+
+![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_average_altitude_andr.png)     
+
+- This filter helps you find tracks based on average altitude.
+- Specify a range of average altitude to find tracks with specific characteristics.
+
+#### Date of creation
+
+![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_date_of_reation_andr.png)  
+
+- This filter allows you to filter tracks by date and time of creation.
+- Specify the desired time period to search for tracks created during that period.
+
+#### Country
+
+![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_country_andr.png)  
+
+- This filter allows you to search for tracks recorded in a specific country or region.
+- Select a specific country or region to find tracks related to that location.  
+
+#### Other
+
+![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_other_andr.png)  
+
+The filter provides additional options for finding and filtering tracks that have special characteristics.  
+
+- *Visible on Map*. With this option you can find tracks that are currently visible on the map when using the Osmand app. This is useful for quickly locating and displaying tracks when you are in a specific area.
+- *With Waypoints*. This filter will help you find tracks that contain waypoints - places that you have marked or labeled while recording a track. You can use this filter to easily find tracks with important points of interest, like vacation spots or notable events on your trip.
+
+
+
+New search filters in the Tracks tab of the OsmAnd app will help you more accurately find and manage routes and tracks according to your needs.  
 
 
 ## Import / Export track
