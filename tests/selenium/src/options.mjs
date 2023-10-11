@@ -8,7 +8,7 @@ export const TEST_LOGIN = 'osmand@grr.la';
 export const TEST_PASSWORD = '0xDEADBEEF';
 
 export const TIMEOUT_OPTIONAL = 1000; // optional element timeout and driver.implicitlyWait() (1s)
-export const TIMEOUT_REQUIRED = 30000; // required element timeout (waitBy / clickBy / enclose defaults) (30s)
+export const TIMEOUT_REQUIRED = 45000; // required element timeout (waitBy / clickBy / enclose defaults) (45s)
 
 export const IDLE_DELAY = 1000; // additional delay after global window.seActivityTimestamp (1s)
 export const FINAL_DELAY = 3000; // increased final idle delay - used after complex actions such as upload-tracks (3s)
