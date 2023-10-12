@@ -189,12 +189,11 @@ function createDefaultWptGroup(wptGroup) {
 }
 
 function getGroupSize(group) {
-    if (group?.pointsGroups[group.name]?.groupSize) {
-        return Number(group?.pointsGroups[group.name].groupSize);
+    const name = group.name === DEFAULT_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : group.name;
+    if (group?.pointsGroups[name]?.groupSize) {
+        return Number(group?.pointsGroups[name].groupSize);
     } else {
-        const wpts =
-            group?.pointsGroups[group.name === DEFAULT_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : group.name]
-                ?.points;
+        const wpts = group?.pointsGroups[name]?.points;
         if (wpts) {
             return wpts.length > 0 ? wpts.length : 0;
         }
