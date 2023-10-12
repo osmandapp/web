@@ -5,8 +5,8 @@ import { Tooltip, Legend, Chart as ChartJS, BarElement } from 'chart.js';
 import React, { useContext, useMemo, useRef, useState } from 'react';
 import annotationsPlugin from 'chartjs-plugin-annotation';
 import AppContext from '../../../context/AppContext';
-import { ExpandLess, ExpandMore } from '@mui/icons-material';
-import { cap } from '../../../manager/GraphManager';
+import { ExpandLess, ExpandMore, RadioButtonUnchecked } from '@mui/icons-material';
+import { cap, prepareType } from '../../../manager/GraphManager';
 import _ from 'lodash';
 
 ChartJS.register(Tooltip, Legend, BarElement, annotationsPlugin);
@@ -104,14 +104,6 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
         [data]
     );
 
-    function prepareType(type) {
-        if (type) {
-            type = type.replaceAll('_', ' ');
-            type = cap(type);
-        }
-        return type;
-    }
-
     function prepareDistance(value) {
         if (value?.distance) {
             if (value.distance > 10) {
@@ -197,7 +189,11 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                                         xs={Object.entries(data.legend).length > 3 ? 6 : 12}
                                     >
                                         <Icon sx={{ overflow: 'visible' }}>
-                                            <CircleIcon sx={{ color: value.color, fontSize: '0.8rem' }} />
+                                            {type === 'Undefined' && name === 'Surface' ? (
+                                                <RadioButtonUnchecked sx={{ color: '#666666', fontSize: '0.8rem' }} />
+                                            ) : (
+                                                <CircleIcon sx={{ color: value.color, fontSize: '0.8rem' }} />
+                                            )}
                                         </Icon>
                                         <Typography
                                             variant="inherit"
