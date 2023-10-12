@@ -342,7 +342,7 @@ export default function MainMenu({
                 </Drawer>
             </ClickAwayListener>
             <Drawer
-                variant="temporary"
+                variant="persistent"
                 PaperProps={{
                     sx: {
                         width: infoSize,
