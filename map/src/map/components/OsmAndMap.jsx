@@ -17,6 +17,7 @@ import PoiLayer from '../layers/PoiLayer';
 import GraphLayer from '../layers/GraphLayer';
 import { initialZoom, initialPosition, detectGeoByIp, LocationControl } from './LocationControl';
 import CustomZoomControl from './CustomZoomControl';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
 
 const useStyles = makeStyles(() => ({
     root: (props) => ({
@@ -27,17 +28,14 @@ const useStyles = makeStyles(() => ({
             border: '0px !important',
         },
         '& .leaflet-control-scale': {
-            position: 'relative',
             left: `${(parseFloat(props.mainMenuWidth) || 0) + (parseFloat(props.menuInfoWidth) || 0)}px`,
-        },
-        '& .leaflet-control-zoom': {
-            display: 'inline-block',
-            float: 'none',
+            marginLeft: '12px',
+            marginBottom: '20px',
         },
         '& .leaflet-control-attribution': {
             display: 'inline-block',
             float: 'none',
-            left: `${(parseFloat(props.mainMenuWidth) || 0) + (parseFloat(props.menuInfoWidth) || 0)}px`,
+            left: `${props.marginLeftAttr}px`,
             borderRadius: '4px !important',
         },
         '& .leaflet-control-layers-toggle': {
@@ -76,18 +74,22 @@ const updateMarker = (lat, lng, setHoverPoint, hoverPointRef) => {
     }
 };
 
+const ATTRIBUTION_CONTROL_SIZE = 200;
+
 const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
-    const classes = useStyles({ mainMenuWidth, menuInfoWidth });
     const mapRef = useRef(null);
     const tileLayer = useRef(null);
     const hoverPointRef = useRef(null);
 
     const [geocodingData, setGeocodingData] = useState(null);
     const [regionData, setRegionData] = useState(null);
+    const [width] = useWindowSize();
 
     const ctx = useContext(AppContext);
     const [hoverPoint, setHoverPoint] = useState(null);
 
+    const marginLeftAttr = width / 2 - ATTRIBUTION_CONTROL_SIZE;
+    const classes = useStyles({ mainMenuWidth, menuInfoWidth, marginLeftAttr });
     const whenReadyHandler = (event) => {
         const { target: map } = event;
         if (map) {
@@ -172,7 +174,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerGraph} />
             )}
             <ScaleControl position={'bottomleft'} imperial={false} />
-            <AttributionControl position={'bottomleft'} prefix={false} sx={{ mr: '300px' }} />
+            <AttributionControl position={'bottomleft'} prefix={false} />
             <LocationControl position={'bottomright'} />
             <CustomZoomControl position={'bottomright'} />
             <ContextMenu setGeocodingData={setGeocodingData} setRegionData={setRegionData} />
