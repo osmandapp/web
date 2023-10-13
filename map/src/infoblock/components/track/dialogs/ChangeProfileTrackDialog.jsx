@@ -9,7 +9,7 @@ import TracksManager from '../../../../manager/TracksManager';
 import { Button, IconButton, ToggleButton, ToggleButtonGroup, Box } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { makeStyles } from '@material-ui/core/styles';
-import TrackLayerProvider from '../../../../map/TrackLayerProvider';
+import TrackLayerProvider from '../../../../map/util/TrackLayerProvider';
 import TracksRoutingCache from '../../../../context/TracksRoutingCache';
 import RouteProfileSettingsDialog from '../../../../dialogs/RouteProfileSettingsDialog';
 import { Settings } from '@mui/icons-material';

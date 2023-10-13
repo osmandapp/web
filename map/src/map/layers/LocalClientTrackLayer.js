@@ -2,11 +2,11 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { isLocalTrack, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
-import TrackLayerProvider, { TEMP_LAYER_FLAG, redrawWptsOnLayer } from '../TrackLayerProvider';
+import TrackLayerProvider, { TEMP_LAYER_FLAG, redrawWptsOnLayer } from '../util/TrackLayerProvider';
 import TracksManager, { isEmptyTrack, fitBoundsOptions } from '../../manager/TracksManager';
 import _ from 'lodash';
-import EditablePolyline from '../EditablePolyline';
-import EditableMarker from '../EditableMarker';
+import EditablePolyline from '../util/EditablePolyline';
+import EditableMarker from '../util/EditableMarker';
 import { effectDebouncer, useMutator } from '../../util/Utils';
 import AddRoutingToTrackDialog from '../components/AddRoutingToTrackDialog';
 import TracksRoutingCache, {

@@ -1,13 +1,15 @@
 import L from 'leaflet';
 
 import { useMap } from 'react-leaflet';
-import { useRef, useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useRef, useState, useEffect, useMemo, useCallback } from 'react';
 
-import { Paper, Tooltip, IconButton, CircularProgress } from '@mui/material';
-import GpsFixedIcon from '@mui/icons-material/GpsFixed';
-import GpsOffIcon from '@mui/icons-material/GpsOff';
+import { Paper, Tooltip, IconButton, CircularProgress, SvgIcon } from '@mui/material';
+import { ReactComponent as LocationIcon } from '../../assets/icons/ic_map_get_location.svg';
+import { ReactComponent as LocationOffIcon } from '../../assets/icons/ic_action_location_off.svg';
 
-import { apiGet } from '../util/HttpApi';
+import { apiGet } from '../../util/HttpApi';
+import styles from './map.module.css';
+import { POSITION_CLASSES, TOOLTIP_PLACEMENT } from '../util/MapStylesManager';
 
 const flyZoom = 9;
 const locationZoom = 17;
@@ -45,36 +47,6 @@ export async function detectGeoByIp({ map, hash }) {
     }
 }
 
-const POSITION_CLASSES = {
-    topleft: 'leaflet-top leaflet-left',
-    topright: 'leaflet-top leaflet-right',
-    bottomleft: 'leaflet-bottom leaflet-left',
-    bottomright: 'leaflet-bottom leaflet-right',
-};
-
-const POSITION_STYLES = {
-    topleft: { marginTop: 80 },
-    topright: { marginTop: 80 },
-    bottomleft: { marginBottom: 70 },
-    bottomright: { marginBottom: 70 },
-};
-
-const TOOLTIP_PLACEMENT = {
-    topleft: 'right',
-    topright: 'left',
-    bottomleft: 'right',
-    bottomright: 'left',
-};
-
-const icons = {
-    new: <GpsFixedIcon />,
-    loading: <CircularProgress size={40 - 16} />,
-    found: <GpsFixedIcon color="primary" />,
-    errorDenied: <GpsOffIcon color="error" />,
-    errorUnavailable: <GpsOffIcon color="warning" />,
-    errorTimeout: <GpsOffIcon />,
-};
-
 const circleStyle = {
     className: 'leaflet-control-locate-circle',
     fillColor: '#1166EE',
@@ -97,7 +69,6 @@ export const LocationControl = ({ position = 'bottomright' } = {}) => {
     const map = useMap();
     const element = useRef();
 
-    const positionStyle = POSITION_STYLES[position];
     const positionClass = POSITION_CLASSES[position];
     const tooltipPlacement = TOOLTIP_PLACEMENT[position];
 
@@ -105,6 +76,36 @@ export const LocationControl = ({ position = 'bottomright' } = {}) => {
     const [marker, setMarker] = useState(null);
     const [circle, setCircle] = useState(null);
     const [message, setMessage] = useState('GPS');
+
+    const icons = {
+        new: <SvgIcon className={styles.customIconPath} component={LocationIcon} inheritViewBox />,
+        loading: <CircularProgress size={40 - 16} />,
+        found: (
+            <SvgIcon
+                className={styles.customIconPath}
+                component={LocationIcon}
+                inheritViewBox
+                sx={{ fill: '#237bff' }}
+            />
+        ),
+        errorDenied: (
+            <SvgIcon
+                className={styles.customIconPath}
+                component={LocationOffIcon}
+                inheritViewBox
+                sx={{ fill: '#ff595e' }}
+            />
+        ),
+        errorUnavailable: (
+            <SvgIcon
+                className={styles.customIconPath}
+                component={LocationOffIcon}
+                inheritViewBox
+                sx={{ fill: '#f8931d' }}
+            />
+        ),
+        errorTimeout: <SvgIcon className={styles.customIconPath} component={LocationOffIcon} inheritViewBox />,
+    };
 
     useEffect(() => {
         if (element.current) {
@@ -170,7 +171,7 @@ export const LocationControl = ({ position = 'bottomright' } = {}) => {
 
     const control = useMemo(
         () => (
-            <Paper>
+            <Paper className={styles.button} sx={{ borderRadius: '20px' }}>
                 <Tooltip title={message} placement={tooltipPlacement} arrow>
                     <IconButton onClick={onClick}>{icons[status]}</IconButton>
                 </Tooltip>
@@ -180,8 +181,19 @@ export const LocationControl = ({ position = 'bottomright' } = {}) => {
     );
 
     return (
-        <div ref={element} className={positionClass} style={positionStyle}>
-            <div className="leaflet-control leaflet-bar leaflet-control-zoom">{control}</div>
+        <div ref={element} className={positionClass}>
+            <div
+                className="leaflet-control leaflet-bar"
+                style={{
+                    display: 'inline-block',
+                    float: 'none',
+                    marginRight: '60px',
+                    padding: '8px',
+                    marginBottom: '12px',
+                }}
+            >
+                {control}
+            </div>
         </div>
     );
 };

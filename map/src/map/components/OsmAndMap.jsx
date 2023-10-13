@@ -1,6 +1,6 @@
 import { useEffect, useRef, useContext, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { MapContainer, TileLayer, ZoomControl, Marker, ScaleControl } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, ScaleControl, AttributionControl } from 'react-leaflet';
 import AppContext from '../../context/AppContext';
 import RouteLayer from '../layers/RouteLayer';
 import WeatherLayer from '../layers/WeatherLayer';
@@ -15,7 +15,8 @@ import MarkerOptions from '../markers/MarkerOptions';
 import ContextMenu from './ContextMenu';
 import PoiLayer from '../layers/PoiLayer';
 import GraphLayer from '../layers/GraphLayer';
-import { initialZoom, initialPosition, detectGeoByIp, LocationControl } from '../LocationControl';
+import { initialZoom, initialPosition, detectGeoByIp, LocationControl } from './LocationControl';
+import CustomZoomControl from './CustomZoomControl';
 
 const useStyles = makeStyles(() => ({
     root: (props) => ({
@@ -25,11 +26,19 @@ const useStyles = makeStyles(() => ({
         '& .leaflet-control-layers': {
             border: '0px !important',
         },
-        '& .leaflet-control-zoom': {
+        '& .leaflet-control-scale': {
+            position: 'relative',
             left: `${(parseFloat(props.mainMenuWidth) || 0) + (parseFloat(props.menuInfoWidth) || 0)}px`,
         },
-        '& .leaflet-control-scale-line': {
-            marginBottom: `${props.mobile ? -6 : 0}px`,
+        '& .leaflet-control-zoom': {
+            display: 'inline-block',
+            float: 'none',
+        },
+        '& .leaflet-control-attribution': {
+            display: 'inline-block',
+            float: 'none',
+            left: `${(parseFloat(props.mainMenuWidth) || 0) + (parseFloat(props.menuInfoWidth) || 0)}px`,
+            borderRadius: '4px !important',
         },
         '& .leaflet-control-layers-toggle': {
             width: '0px !important',
@@ -37,10 +46,10 @@ const useStyles = makeStyles(() => ({
         },
         '& .leaflet-bar': {
             border: '4px !important',
-            width: '41px !important',
+            width: '40px !important',
         },
         '& .leaflet-bar a': {
-            width: '41px !important',
+            width: '40px !important',
             color: '#757575',
             border: '4px !important',
         },
@@ -51,12 +60,6 @@ const useStyles = makeStyles(() => ({
         '& .leaflet-bar a:last-child': {
             borderBottomLeftRadius: '4px !important',
             borderBottomRightRadius: '4px !important',
-        },
-        '& .leaflet-control': {
-            boxShadow: '0 1px 5px rgba(0,0,0,0.65)',
-            transition: 'box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
-            color: 'black',
-            borderRadius: '4px',
         },
     }),
 }));
@@ -89,7 +92,6 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
         const { target: map } = event;
         if (map) {
             const hash = new L.Hash(map);
-            map.attributionControl.setPrefix('');
             mapRef.current = map;
             if (!ctx.mapMarkerListener) {
                 ctx.setMapMarkerListener(() => (lat, lng) => updateMarker(lat, lng, setHoverPoint, hoverPointRef));
@@ -149,6 +151,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             contextmenu={true}
             contextmenuItems={[]}
             editable={true}
+            attributionControl={false}
         >
             {routersReady && <CloudTrackLayer />}
             {routersReady && <LocalClientTrackLayer />}
@@ -168,9 +171,10 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             {hoverPoint && (
                 <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerGraph} />
             )}
-            <ZoomControl position={'bottomleft'} />
-            <LocationControl position={'bottomleft'} />
-            <ScaleControl position={'bottomright'} imperial={false} />
+            <ScaleControl position={'bottomleft'} imperial={false} />
+            <AttributionControl position={'bottomleft'} prefix={false} sx={{ mr: '300px' }} />
+            <LocationControl position={'bottomright'} />
+            <CustomZoomControl position={'bottomright'} />
             <ContextMenu setGeocodingData={setGeocodingData} setRegionData={setRegionData} />
         </MapContainer>
     );

@@ -1,9 +1,9 @@
 import L from 'leaflet';
-import MarkerOptions from './markers/MarkerOptions';
+import MarkerOptions from '../markers/MarkerOptions';
 import TrackLayerProvider from './TrackLayerProvider';
 import _ from 'lodash';
-import TracksManager, { isPointUnrouted } from '../manager/TracksManager';
-import TracksRoutingCache from '../context/TracksRoutingCache';
+import TracksManager, { isPointUnrouted } from '../../manager/TracksManager';
+import TracksRoutingCache from '../../context/TracksRoutingCache';
 
 export default class EditableMarker {
     stopclick;
