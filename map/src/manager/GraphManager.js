@@ -1,6 +1,7 @@
-import roadTypes from '../store/road-types.json';
-import surfaces from '../store/surfaces.json';
+import styles from '../../src/generated/styles.json';
+import andValues from '../../src/store/android-values.json';
 import _ from 'lodash';
+import Utils from '../util/Utils';
 
 export const HIGHWAY = 'highway';
 export const SURFACE = 'surface';
@@ -10,6 +11,56 @@ export const ELEVATION_SRTM = 'ElevationSRTM';
 export const SPEED = 'Speed';
 export const DISTANCE = 'Distance';
 export const SLOPE = 'Slope';
+export const DEFAULT_STYLE = 'default.render.xml';
+
+const ROAD_TYPES = parseRoadTypes(styles);
+const SURFACES = parseSurfaces(styles);
+
+function parseRoadTypes(styles, style = DEFAULT_STYLE) {
+    const types = styles[style]['routeInfo_roadClass'];
+    let res = [];
+    Object.values(types).map((data) => {
+        const value = data.attrStringValue === 'highway_class_undefined' ? UNDEFINED_DATA : data.attrStringValue;
+        let name = andValues[`rendering_attr_${value}_name`];
+        if (!name) {
+            name = prepareType(value.replace('highway_class_', ''));
+        }
+        res[data.value] = {
+            class: name,
+            color: Utils.hexToArgb(data.attrColorValue),
+        };
+    });
+    res[UNDEFINED_DATA] = {
+        class: res.road.class,
+        color: res.road.color,
+    };
+    return res;
+}
+
+function parseSurfaces(styles, style = DEFAULT_STYLE) {
+    const types = styles[style]['routeInfo_surface'];
+    let res = [];
+    Object.values(types).map((data) => {
+        const value = data.attrStringValue === 'surface_undefined' ? UNDEFINED_DATA : data.attrStringValue;
+        let name = andValues[`rendering_attr_${value}_name`];
+        if (!name) {
+            name = prepareType(value.replace('surface_', ''));
+        }
+        res[data.attrStringValue?.replace('surface_', '')] = {
+            class: name,
+            color: Utils.hexToArgb(data.attrColorValue),
+        };
+    });
+    return res;
+}
+
+export function prepareType(type) {
+    if (type) {
+        type = type.replaceAll('_', ' ');
+        type = cap(type);
+    }
+    return type;
+}
 
 export function generateDataSets(data) {
     let types = [];
@@ -167,7 +218,7 @@ function addDataSet(arr, seg, tag, colors) {
     const label = seg[tag];
     let res;
     if (label) {
-        const type = tag === SURFACE ? label : getRoadType(label);
+        const type = getType(tag === SURFACE ? SURFACES : ROAD_TYPES, label);
         if (!_.isEmpty(arr)) {
             const prev = arr[arr.length - 1];
             if (prev.label === type) {
@@ -195,10 +246,11 @@ function addDataSet(arr, seg, tag, colors) {
 }
 
 function createDataSet(seg, tagName, colors, arr) {
-    const label = seg[tagName];
+    let label = seg[tagName];
     if (label) {
+        label = label === 'unmatched' ? UNDEFINED_DATA : label;
         let currentColor;
-        const type = tagName === SURFACE ? label : getRoadType(label);
+        const type = getType(tagName === SURFACE ? SURFACES : ROAD_TYPES, label);
         if (colors[type]) {
             colors[type].distance += seg.distance;
             currentColor = colors[type].color;
@@ -228,13 +280,13 @@ function createDataSet(seg, tagName, colors, arr) {
     }
 }
 
-function getRoadType(value) {
-    return roadTypes[value] ? roadTypes[value].class : value;
+function getType(arr, value) {
+    return arr[value] ? arr[value].class : prepareType(value);
 }
 
 function getColor(label, colors, tagName) {
     let newColor;
-    const data = tagName === SURFACE ? surfaces : roadTypes;
+    const data = tagName === SURFACE ? SURFACES : ROAD_TYPES;
     if (colors[label]) {
         newColor = colors[label];
     } else {
