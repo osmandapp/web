@@ -61,7 +61,7 @@
         "test": "jest",
         "eject": "react-scripts eject",
         "postinstall": "patch-package",
-        "generate:poiicons": "cd public/images/poi-icons-svg && ls -1|perl -e 'foreach(<>) { chomp; push(@a,\"\\\"$_\\\"\") } print \"[\\n\".join(\",\\n\",@a).\"\\n]\"' >../../../src/generated/poiicons.json",
+        "generate:poiicons": "ls public/images/poi-icons-svg | jq -R -s -c 'split(\"\\n\")[:-1]'\n\n > src/generated/poiicons.json",
         "generate:get-styles": "cd src/generated && (curl -sk 'https://osmand.net/gpx/get-styles?styles=default.render.xml&attributes=routeInfo_roadClass%2CrouteInfo_surface' | sed 's/\\\\u003d/=/g' > styles.tmp && grep -q 'default.render.xml' styles.tmp && mv -f styles.tmp styles.json; rm -f styles.tmp )",
         "lint": "eslint src/**/*.js src/**/*.jsx src/**/*.mjs",
         "format": "prettier --write './**/*.{js,jsx,mjs,ts,tsx,css,json}' --config ./.prettierrc"
