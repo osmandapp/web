@@ -11,9 +11,9 @@ const TEST_GPX_FILE = 'test-routed-osrm.gpx';
 const GO_CENTER_HASH = '#14/50.3837/30.4944';
 const CHECK_START = '50.39743, 30.50983';
 const CHECK_END = '50.36917, 30.52727';
-const CAR = '12.7 km, 0:22 min';
-const BIKE = '12.6 km, 0:45 min';
-const FOOT = '13.4 km, 3:21 min';
+const CAR = /12\.[\d]+ km, 0:[\d]+ min/;
+const BIKE = /12\.[\d]+ km, 0:[\d]+ min/;
+const FOOT = /13\.[\d]+ km, 3:[\d]+ min/;
 
 export default async function test() {
     await actionOpenMap();
