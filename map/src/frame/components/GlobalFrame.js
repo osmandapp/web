@@ -42,6 +42,7 @@ const GlobalFrame = () => {
                     showInfoBlock={showInfoBlock}
                     setShowInfoBlock={setShowInfoBlock}
                     clearState={clearState}
+                    setMenuInfo={setMenuInfo}
                 />
             </Box>
             <MainMenu

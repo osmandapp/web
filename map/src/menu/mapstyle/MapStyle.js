@@ -10,7 +10,7 @@ export default function MapStyle() {
 
     return (
         <>
-            <MenuItem sx={{ ml: 1, mr: 2 }} disableRipple={true}>
+            <MenuItem sx={{ ml: 1, mr: 2, mt: 2 }} disableRipple={true}>
                 <FormControl fullWidth>
                     <InputLabel id="rendering-style-selector-label">Map Style</InputLabel>
                     <Select

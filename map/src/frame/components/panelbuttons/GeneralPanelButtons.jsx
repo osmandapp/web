@@ -13,6 +13,7 @@ import LocalGpxUploader from '../util/LocalGpxUploader';
 import styles from '../../../map/components/map.module.css';
 import { ReactComponent as ConfigureMapIcon } from '../../../assets/icons/ic_map_configure_map.svg';
 import SearchInfo from '../search/SearchInfo';
+import MapStyle from '../../../menu/mapstyle/MapStyle';
 
 export default function GeneralPanelButtons({
     mainMenuWidth,
@@ -20,6 +21,7 @@ export default function GeneralPanelButtons({
     showInfoBlock,
     setShowInfoBlock,
     clearState,
+    setMenuInfo,
 }) {
     const ctx = useContext(AppContext);
 
@@ -59,6 +61,10 @@ export default function GeneralPanelButtons({
         return `${menuWidth + infoWidth + 20}px`;
     }
 
+    function openMapStyle() {
+        setMenuInfo(<MapStyle />);
+    }
+
     return (
         <>
             <div
@@ -70,7 +76,7 @@ export default function GeneralPanelButtons({
                 }}
             >
                 <Paper className={styles.button}>
-                    <IconButton>
+                    <IconButton onClick={openMapStyle}>
                         <SvgIcon className={styles.customIconPath} component={ConfigureMapIcon} inheritViewBox />
                     </IconButton>
                 </Paper>
