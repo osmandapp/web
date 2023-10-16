@@ -7,6 +7,7 @@ import LoginDialog from './login/LoginDialog';
 import { AppContextProvider } from './context/AppContext';
 import DeleteAccountDialog from './login/DeleteAccountDialog';
 import { AppServices } from './services/AppServices';
+import './variables.css';
 
 export let globalNavigate = () => null;
 

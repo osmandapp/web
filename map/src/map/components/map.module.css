@@ -4,7 +4,7 @@
     &:hover {
         background-color: #deebff;
         .customIconPath {
-            fill: #237bff !important;
+            fill: var(--selected-color) !important;
         }
     }
     & .MuiTouchRipple-root .MuiTouchRipple-child {
