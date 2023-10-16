@@ -8,8 +8,16 @@ import styles from './map.module.css';
 
 export default function CustomZoomControl({ position = 'bottomright' }) {
     const map = useMap();
-
+    map.doubleClickZoom.disable();
     const positionClass = POSITION_CLASSES[position];
+
+    function zoom(inout) {
+        if (inout) {
+            map.doubleClickZoom.disable();
+            inout === 'in' ? map.zoomIn() : map.zoomOut();
+            setTimeout(() => map.doubleClickZoom.enable(), 1000);
+        }
+    }
 
     return (
         <div className={positionClass}>
@@ -18,12 +26,12 @@ export default function CustomZoomControl({ position = 'bottomright' }) {
                 style={{ padding: '8px', marginBottom: '12px', marginRight: '12px' }}
             >
                 <Paper className={styles.button} sx={{ mb: 1 }}>
-                    <IconButton onClick={() => map.zoomIn()}>
+                    <IconButton onClick={() => zoom('in')}>
                         <SvgIcon className={styles.customIconPath} component={ZoomInIcon} inheritViewBox />
                     </IconButton>
                 </Paper>
                 <Paper className={styles.button}>
-                    <IconButton onClick={() => map.zoomOut()}>
+                    <IconButton onClick={() => zoom('out')}>
                         <SvgIcon className={styles.customIconPath} component={ZoomOutIcon} inheritViewBox />
                     </IconButton>
                 </Paper>
