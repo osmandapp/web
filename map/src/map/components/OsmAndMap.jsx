@@ -28,14 +28,14 @@ const useStyles = makeStyles(() => ({
             border: '0px !important',
         },
         '& .leaflet-control-scale': {
-            left: `${(parseFloat(props.mainMenuWidth) || 0) + (parseFloat(props.menuInfoWidth) || 0)}px`,
-            marginLeft: '12px',
+            marginLeft: `${props.marginLeft}px`,
+            display: 'inline-block',
+            float: 'none',
             marginBottom: '20px',
         },
         '& .leaflet-control-attribution': {
-            display: 'inline-block',
-            float: 'none',
-            left: `${props.marginLeftAttr}px`,
+            left: `${(parseFloat(props.mainMenuWidth) || 0) + (parseFloat(props.menuInfoWidth) || 0)}px`,
+            marginLeft: '20px',
             borderRadius: '4px !important',
         },
         '& .leaflet-control-layers-toggle': {
@@ -74,8 +74,6 @@ const updateMarker = (lat, lng, setHoverPoint, hoverPointRef) => {
     }
 };
 
-const ATTRIBUTION_CONTROL_SIZE = 200;
-
 const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const mapRef = useRef(null);
     const tileLayer = useRef(null);
@@ -88,8 +86,8 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const ctx = useContext(AppContext);
     const [hoverPoint, setHoverPoint] = useState(null);
 
-    const marginLeftAttr = width / 2 - ATTRIBUTION_CONTROL_SIZE;
-    const classes = useStyles({ mainMenuWidth, menuInfoWidth, marginLeftAttr });
+    const marginLeft = width / 2 - 350;
+    const classes = useStyles({ mainMenuWidth, menuInfoWidth, marginLeft });
     const whenReadyHandler = (event) => {
         const { target: map } = event;
         if (map) {
