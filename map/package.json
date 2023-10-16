@@ -61,7 +61,7 @@
         "test": "jest",
         "eject": "react-scripts eject",
         "postinstall": "patch-package",
-        "generate-json": "node scripts/generate-json.mjs",
+        "generate-resources": "node scripts/generate-resources.mjs",
         "lint": "eslint src/**/*.js src/**/*.jsx src/**/*.mjs scripts/*.mjs",
         "format": "prettier --write './**/*.{js,jsx,mjs,ts,tsx,css,json}' --config ./.prettierrc"
     },
