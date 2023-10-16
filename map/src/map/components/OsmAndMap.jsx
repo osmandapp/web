@@ -162,7 +162,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             <PoiLayer />
             <TileLayer
                 ref={tileLayer}
-                attribution='WEB OsmAnd 0.1 &amp;copy <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+                attribution='OsmAnd Web Beta &amp;copy <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
                 minZoom={1}
                 maxZoom={20}
                 maxNativeZoom={18}
