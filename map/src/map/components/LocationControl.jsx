@@ -75,7 +75,7 @@ export const LocationControl = ({ position = 'bottomright' } = {}) => {
     const [status, setStatus] = useState('new');
     const [marker, setMarker] = useState(null);
     const [circle, setCircle] = useState(null);
-    const [message, setMessage] = useState('GPS');
+    const [message, setMessage] = useState('Find my position');
 
     const icons = {
         new: <SvgIcon className={styles.customIconPath} component={LocationIcon} inheritViewBox />,
