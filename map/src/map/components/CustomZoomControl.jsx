@@ -8,7 +8,7 @@ import styles from './map.module.css';
 
 export default function CustomZoomControl({ position = 'bottomright' }) {
     const map = useMap();
-    map.doubleClickZoom.disable();
+
     const positionClass = POSITION_CLASSES[position];
 
     function zoom(inout) {
