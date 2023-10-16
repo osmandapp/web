@@ -55,16 +55,6 @@ const circleStyle = {
     weight: 1,
 };
 
-const markerStyle = {
-    className: 'leaflet-control-locate-marker',
-    color: '#fff',
-    fillColor: '#3399EE',
-    fillOpacity: 1,
-    weight: 3,
-    opacity: 1,
-    radius: 7,
-};
-
 export const LocationControl = ({ position = 'bottomright' } = {}) => {
     const map = useMap();
     const element = useRef();
@@ -138,9 +128,15 @@ export const LocationControl = ({ position = 'bottomright' } = {}) => {
     const onLocationFound = useCallback((e) => {
         // console.debug('gps-found', e);
         if (e.latlng && e.accuracy) {
-            setMarker(L.circleMarker(e.latlng).setStyle(markerStyle));
             setCircle(L.circle(e.latlng, { radius: e.accuracy }).setStyle(circleStyle));
-
+            setMarker(
+                new L.Marker(e.latlng, {
+                    icon: L.icon({
+                        iconUrl: '/map/images/map_icons/circle.svg',
+                        iconSize: [15, 15],
+                    }),
+                })
+            );
             setMessage(e.latlng.lat + ', ' + e.latlng.lng);
             setTimeout(() => setMessage(''), 3000);
 
