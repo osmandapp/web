@@ -29,7 +29,7 @@ export default function GeneralPanelButtons({
     const tooltipOrientation = getTooltipOrientation();
 
     const GPS_CONTROL_HEIGHT = 70 + 40; // margin + button
-    const HEADER_HEIGHT = 68;
+    const HEADER_HEIGHT = 61;
     const BUTTON_SIZE = 41;
 
     function getButtonOrientation() {
@@ -56,7 +56,7 @@ export default function GeneralPanelButtons({
     function getMarginFromMenu() {
         const menuWidth = mainMenuWidth && Number(mainMenuWidth.replace('px', ''));
         const infoWidth = menuInfoWidth && Number(menuInfoWidth.replace('px', ''));
-        return `${menuWidth + infoWidth + 10}px`;
+        return `${menuWidth + infoWidth + 20}px`;
     }
 
     return (
@@ -64,7 +64,7 @@ export default function GeneralPanelButtons({
             <div
                 style={{
                     marginLeft: getMarginFromMenu(),
-                    marginTop: `${HEADER_HEIGHT}px`,
+                    marginTop: `${HEADER_HEIGHT + 20}px`,
                     display: 'flex',
                     flexDirection: 'row',
                 }}
