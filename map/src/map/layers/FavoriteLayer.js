@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import '../../assets/css/gpx.css';
 import { useMap } from 'react-leaflet';
-import TrackLayerProvider from '../TrackLayerProvider';
+import TrackLayerProvider from '../util/TrackLayerProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
 import FavoritesManager from '../../manager/FavoritesManager';
 import { fitBoundsOptions } from '../../manager/TracksManager';

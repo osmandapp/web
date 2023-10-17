@@ -1,8 +1,10 @@
-import { IconButton, Input } from '@mui/material';
-import { Close, Search } from '@mui/icons-material';
+import { Box, IconButton, Input, SvgIcon, Typography } from '@mui/material';
+import { Close } from '@mui/icons-material';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../../context/AppContext';
 import { apiGet } from '../../../util/HttpApi';
+import styles from '../../../map/components/map.module.css';
+import { ReactComponent as SearchIcon } from '../../../assets/icons/ic_action_search_dark.svg';
 
 export default function SearchInfo() {
     const ctx = useContext(AppContext);
@@ -81,11 +83,17 @@ export default function SearchInfo() {
     }, [ctx.searchCtx, ctx.setSearchCtx, processSearch, setProcessSearch]);
 
     return (
-        <>
+        <Box
+            sx={{
+                mt: ctx.searchCtx.query === undefined && '8px',
+                px: '8px',
+                ml: ctx.searchCtx.query !== undefined && '15px',
+            }}
+        >
             {ctx.searchCtx.query !== undefined && (
                 <>
                     <Input
-                        inputProps={{ style: { color: 'white' } }}
+                        // inputProps={{ style: { color: 'white' } }}
                         label="Search Results"
                         inputRef={(input) => {
                             if (input != null) {
@@ -95,18 +103,22 @@ export default function SearchInfo() {
                         onChange={updateSearch}
                         onKeyPress={searchRun}
                     ></Input>
-                    <IconButton onClick={cancelSearch} color="inherit">
+                    <IconButton onClick={cancelSearch} className={styles.customIconPath}>
                         <Close />
                     </IconButton>
                 </>
             )}
             {ctx.searchCtx.query === undefined && (
-                <>
-                    <IconButton onClick={searchEnable} color="inherit">
-                        <Search />
-                    </IconButton>
-                </>
+                <Box
+                    onClick={searchEnable}
+                    sx={{ display: 'flex', flexDirection: 'row', backgroundColor: 'transparent' }}
+                >
+                    <SvgIcon className={styles.customIconPath} component={SearchIcon} inheritViewBox />
+                    <Typography variant="inherit" className={styles.searchTitle}>
+                        Search
+                    </Typography>
+                </Box>
             )}
-        </>
+        </Box>
     );
 }

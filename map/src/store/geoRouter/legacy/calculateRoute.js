@@ -2,7 +2,7 @@ import md5 from 'blueimp-md5';
 import Utils from '../../../util/Utils';
 import { apiGet } from '../../../util/HttpApi';
 import TracksManager from '../../../manager/TracksManager';
-import TrackLayerProvider from '../../../map/TrackLayerProvider';
+import TrackLayerProvider from '../../../map/util/TrackLayerProvider';
 
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
 

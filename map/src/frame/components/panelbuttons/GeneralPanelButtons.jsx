@@ -1,4 +1,4 @@
-import { ButtonGroup, IconButton, Paper, Tooltip } from '@mui/material';
+import { ButtonGroup, IconButton, Paper, SvgIcon, Tooltip } from '@mui/material';
 import TracksManager from '../../../manager/TracksManager';
 import { Insights, Info, Upload } from '@mui/icons-material';
 import React, { useContext, useState } from 'react';
@@ -10,6 +10,10 @@ import PointContextMenu from '../../../infoblock/components/PointContextMenu';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import LocalGpxUploader from '../util/LocalGpxUploader';
+import styles from '../../../map/components/map.module.css';
+import { ReactComponent as ConfigureMapIcon } from '../../../assets/icons/ic_map_configure_map.svg';
+import SearchInfo from '../search/SearchInfo';
+import MapStyle from '../../../menu/mapstyle/MapStyle';
 
 export default function GeneralPanelButtons({
     mainMenuWidth,
@@ -17,6 +21,7 @@ export default function GeneralPanelButtons({
     showInfoBlock,
     setShowInfoBlock,
     clearState,
+    setMenuInfo,
 }) {
     const ctx = useContext(AppContext);
 
@@ -26,7 +31,7 @@ export default function GeneralPanelButtons({
     const tooltipOrientation = getTooltipOrientation();
 
     const GPS_CONTROL_HEIGHT = 70 + 40; // margin + button
-    const HEADER_HEIGHT = 68;
+    const HEADER_HEIGHT = 61;
     const BUTTON_SIZE = 41;
 
     function getButtonOrientation() {
@@ -53,101 +58,124 @@ export default function GeneralPanelButtons({
     function getMarginFromMenu() {
         const menuWidth = mainMenuWidth && Number(mainMenuWidth.replace('px', ''));
         const infoWidth = menuInfoWidth && Number(menuInfoWidth.replace('px', ''));
-        return `${menuWidth + infoWidth + 10}px`;
+        return `${menuWidth + infoWidth + 20}px`;
+    }
+
+    function openMapStyle() {
+        setMenuInfo(<MapStyle />);
     }
 
     return (
-        <div
-            style={{
-                left: getMarginFromMenu(),
-                top: `${HEADER_HEIGHT}px`,
-                bottom: useFlexButtons() && `${HEADER_HEIGHT}px`,
-                zIndex: 1000,
-                position: 'absolute',
-                display: 'flex',
-                height: useFlexButtons() && height - 2 * HEADER_HEIGHT - GPS_CONTROL_HEIGHT,
-                alignItems: useFlexButtons() && 'center',
-                flexDirection: useFlexButtons() && 'column',
-            }}
-        >
+        <>
             <div
-                className="padding-container"
                 style={{
+                    marginLeft: getMarginFromMenu(),
+                    marginTop: `${HEADER_HEIGHT + 20}px`,
                     display: 'flex',
-                    flexDirection: orientation === 'vertical' ? 'column' : 'row',
-                    marginBottom: useFlexButtons() && 'auto',
+                    flexDirection: 'row',
                 }}
             >
-                <Paper>
-                    <ButtonGroup
-                        sx={{
-                            boxShadow: '0 1px 5px rgba(0,0,0,0.65)',
-                            borderRadius: '4px',
-                            width: orientation === 'vertical' ? BUTTON_SIZE : 'auto',
-                            height: orientation === 'vertical' ? 'auto' : BUTTON_SIZE,
-                        }}
-                        orientation={orientation}
-                        color="primary"
-                    >
-                        <Tooltip title="Create new route" arrow placement={tooltipOrientation}>
-                            <IconButton
-                                sx={{ mt: orientation === 'vertical' ? '3px' : 0 }}
-                                variant="contained"
-                                type="button"
-                                onClick={() =>
-                                    confirm({
-                                        ctx,
-                                        title: 'Plan Route: new track',
-                                        text: 'Stop editing the current track?',
-                                        skip: ctx.createTrack?.enable !== true,
-                                        callback: () => TracksManager.createTrack(ctx),
-                                    })
-                                }
-                            >
-                                <Insights fontSize="small" />
-                            </IconButton>
-                        </Tooltip>
-                        <Tooltip title="Import track" arrow placement={tooltipOrientation}>
-                            <span>
-                                <LocalGpxUploader>
-                                    <IconButton
-                                        sx={{ ml: '2px', mt: orientation === 'vertical' ? 0 : '3px' }}
-                                        variant="contained"
-                                        component="span"
-                                    >
-                                        <Upload fontSize="small" />
-                                    </IconButton>
-                                </LocalGpxUploader>
-                            </span>
-                        </Tooltip>
-                        <Tooltip title="POI" arrow placement={tooltipOrientation}>
-                            <IconButton
-                                variant="contained"
-                                type="button"
-                                onClick={() => {
-                                    setOpenPoiDialog(true);
-                                }}
-                            >
-                                <Info fontSize="small" />
-                            </IconButton>
-                        </Tooltip>
-                    </ButtonGroup>
+                <Paper className={styles.button}>
+                    <IconButton onClick={openMapStyle}>
+                        <SvgIcon className={styles.customIconPath} component={ConfigureMapIcon} inheritViewBox />
+                    </IconButton>
+                </Paper>
+                <Paper sx={{ ml: '8px', maxHeight: '40px' }} className={styles.button}>
+                    <SearchInfo />
                 </Paper>
             </div>
-            {showInfoBlock && (
-                <PanelButtons
-                    orientation={orientation}
-                    tooltipOrientation={tooltipOrientation}
-                    setShowInfoBlock={setShowInfoBlock}
-                    clearState={clearState}
-                    bsize={BUTTON_SIZE}
-                />
-            )}
-            {openPoiDialog && (
-                <PoiTypesDialog dialogOpen={openPoiDialog} setDialogOpen={setOpenPoiDialog} width={width} />
-            )}
-            {ctx.trackProfileManager?.change && <ChangeProfileTrackDialog open={true} />}
-            {ctx.pointContextMenu.element && <PointContextMenu anchorEl={ctx.pointContextMenu.element} />}
-        </div>
+            <div
+                style={{
+                    left: getMarginFromMenu(),
+                    top: `${HEADER_HEIGHT + 100}px`,
+                    bottom: useFlexButtons() && `${HEADER_HEIGHT}px`,
+                    zIndex: 1000,
+                    position: 'absolute',
+                    display: 'flex',
+                    height: useFlexButtons() && height - 2 * HEADER_HEIGHT - GPS_CONTROL_HEIGHT,
+                    alignItems: useFlexButtons() && 'center',
+                    flexDirection: useFlexButtons() && 'column',
+                }}
+            >
+                <div
+                    className="padding-container"
+                    style={{
+                        display: 'flex',
+                        flexDirection: orientation === 'vertical' ? 'column' : 'row',
+                        marginBottom: useFlexButtons() && 'auto',
+                    }}
+                >
+                    <Paper>
+                        <ButtonGroup
+                            sx={{
+                                boxShadow: '0 1px 5px rgba(0,0,0,0.65)',
+                                borderRadius: '4px',
+                                width: orientation === 'vertical' ? BUTTON_SIZE : 'auto',
+                                height: orientation === 'vertical' ? 'auto' : BUTTON_SIZE,
+                            }}
+                            orientation={orientation}
+                            color="primary"
+                        >
+                            <Tooltip title="Create new route" arrow placement={tooltipOrientation}>
+                                <IconButton
+                                    sx={{ mt: orientation === 'vertical' ? '3px' : 0 }}
+                                    variant="contained"
+                                    type="button"
+                                    onClick={() =>
+                                        confirm({
+                                            ctx,
+                                            title: 'Plan Route: new track',
+                                            text: 'Stop editing the current track?',
+                                            skip: ctx.createTrack?.enable !== true,
+                                            callback: () => TracksManager.createTrack(ctx),
+                                        })
+                                    }
+                                >
+                                    <Insights fontSize="small" />
+                                </IconButton>
+                            </Tooltip>
+                            <Tooltip title="Import track" arrow placement={tooltipOrientation}>
+                                <span>
+                                    <LocalGpxUploader>
+                                        <IconButton
+                                            sx={{ ml: '2px', mt: orientation === 'vertical' ? 0 : '3px' }}
+                                            variant="contained"
+                                            component="span"
+                                        >
+                                            <Upload fontSize="small" />
+                                        </IconButton>
+                                    </LocalGpxUploader>
+                                </span>
+                            </Tooltip>
+                            <Tooltip title="POI" arrow placement={tooltipOrientation}>
+                                <IconButton
+                                    variant="contained"
+                                    type="button"
+                                    onClick={() => {
+                                        setOpenPoiDialog(true);
+                                    }}
+                                >
+                                    <Info fontSize="small" />
+                                </IconButton>
+                            </Tooltip>
+                        </ButtonGroup>
+                    </Paper>
+                </div>
+                {showInfoBlock && (
+                    <PanelButtons
+                        orientation={orientation}
+                        tooltipOrientation={tooltipOrientation}
+                        setShowInfoBlock={setShowInfoBlock}
+                        clearState={clearState}
+                        bsize={BUTTON_SIZE}
+                    />
+                )}
+                {openPoiDialog && (
+                    <PoiTypesDialog dialogOpen={openPoiDialog} setDialogOpen={setOpenPoiDialog} width={width} />
+                )}
+                {ctx.trackProfileManager?.change && <ChangeProfileTrackDialog open={true} />}
+                {ctx.pointContextMenu.element && <PointContextMenu anchorEl={ctx.pointContextMenu.element} />}
+            </div>
+        </>
     );
 }

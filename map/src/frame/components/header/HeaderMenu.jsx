@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, SvgIcon, Toolbar } from '@mui/material';
+import { AppBar, Box, Button, IconButton, SvgIcon, Toolbar } from '@mui/material';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import { ReactComponent as Logo } from '../../../assets/logo.svg';
@@ -37,16 +37,16 @@ export default function HeaderMenu() {
             }}
         >
             <Toolbar>
-                <SvgIcon component={Logo} inheritViewBox className={styles.logo} />
-                <Button
+                <IconButton
                     target="_blank"
                     component={Link}
                     to={'/'}
                     className={styles.menuItem}
-                    sx={{ fontWeight: '700 !important', ml: -0.5, mt: -0.5, mr: -0.77 }}
+                    sx={{ fontWeight: '700 !important', ml: -2, mt: -0.5, mr: -0.77 }}
                 >
+                    <SvgIcon component={Logo} inheritViewBox className={styles.logo} />
                     OsmAnd
-                </Button>
+                </IconButton>
                 <Box className={styles.menu}>
                     {pages.map((page) => (
                         <Button

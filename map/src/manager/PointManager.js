@@ -1,6 +1,6 @@
 import TracksManager, { isPointUnrouted } from './TracksManager';
 import Utils from '../util/Utils';
-import TrackLayerProvider from '../map/TrackLayerProvider';
+import TrackLayerProvider from '../map/util/TrackLayerProvider';
 import TracksRoutingCache from '../context/TracksRoutingCache';
 
 const deletePoint = async (index, ctx) => {

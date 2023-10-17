@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import AppContext, { isCloudTrack, OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
-import TrackLayerProvider, { redrawWptsOnLayer } from '../TrackLayerProvider';
+import TrackLayerProvider, { redrawWptsOnLayer } from '../util/TrackLayerProvider';
 import TracksManager, { fitBoundsOptions } from '../../manager/TracksManager';
 import { useMutator } from '../../util/Utils';
 

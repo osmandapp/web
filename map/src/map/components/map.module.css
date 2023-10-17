@@ -1,0 +1,30 @@
+.button {
+    border-radius: 20px !important;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.35) !important;
+    &:hover {
+        background-color: #deebff;
+        .customIconPath {
+            fill: var(--selected-color) !important;
+        }
+    }
+    & .MuiTouchRipple-root .MuiTouchRipple-child {
+        border-radius: 20px !important;
+    }
+    z-index: 1000 !important;
+}
+
+.searchTitle {
+    color: #4d4d4d !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: 140% !important;
+    letter-spacing: 0.28px !important;
+    margin-top: 2px !important;
+    padding-left: 6px !important;
+    padding-right: 4px !important;
+}
+
+.customIconPath {
+    color: #4d4d4d;
+}

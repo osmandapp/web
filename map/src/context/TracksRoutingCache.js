@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import TracksManager from '../manager/TracksManager';
-import EditablePolyline from '../map/EditablePolyline';
+import EditablePolyline from '../map/util/EditablePolyline';
 
 const MAX_STARTED_ROUTER_JOBS = 6;
 export const GET_ANALYSIS_DEBOUNCE_MS = 1000; // don't flood get-analysis

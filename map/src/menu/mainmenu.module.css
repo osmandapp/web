@@ -6,28 +6,28 @@
 }
 .menuItemOpen {
     &:hover {
-        color: #237bff !important;
+        color: var(--selected-color) !important;
         background-color: #ffffff !important;
         .customIconPath {
-            fill: #237bff !important;
+            fill: var(--selected-color) !important;
         }
     }
 }
 .menuItemSelected {
     background-color: #f5f5f5 !important;
     &:hover {
-        color: #237bff !important;
+        color: var(--selected-color) !important;
         background-color: #f5f5f5 !important;
     }
     .customIconPath {
-        fill: #237bff !important;
+        fill: var(--selected-color) !important;
     }
 }
 .menuIconClose {
     &:hover {
         border-radius: 3px;
         .customIconPath {
-            fill: #237bff !important;
+            fill: var(--selected-color) !important;
         }
     }
 }
