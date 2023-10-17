@@ -91,7 +91,8 @@ function prettyJSON(smth) {
 function ls(dir) {
     try {
         return readdirSync(dir).sort();
-    } catch {
+    } catch (e) {
+        console.warn(e);
         return null;
     }
 }
@@ -101,7 +102,8 @@ function cat(file) {
         const input = readFileSync(file, { encoding: 'utf8' });
         // remove utf8 Byte Order Mark (not supported by JSON.parse)
         return JSON.parse(input.replace(/^\uFEFF/gm, '')); // drop bom
-    } catch {
+    } catch (e) {
+        console.warn(e);
         return null;
     }
 }
@@ -110,7 +112,8 @@ async function get(url) {
     try {
         const response = await fetch(url);
         return await response.json();
-    } catch {
+    } catch (e) {
+        console.warn(e);
         return null;
     }
 }
