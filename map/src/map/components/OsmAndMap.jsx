@@ -28,8 +28,8 @@ const useStyles = makeStyles(() => ({
             border: '0px !important',
         },
         '& .leaflet-control-scale': {
-            marginLeft: `${props.marginLeft}px`,
-            display: 'inline-block',
+            marginLeft: props.width > 500 ? `${props.marginLeft}px` : `${(parseFloat(props.mainMenuWidth) || 0) + (parseFloat(props.menuInfoWidth) || 0) + 20}px`,
+            display: props.width > 500 ? 'inline-block' : 'flex',
             float: 'none',
             marginBottom: '20px',
         },
@@ -86,8 +86,8 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     const ctx = useContext(AppContext);
     const [hoverPoint, setHoverPoint] = useState(null);
 
-    const marginLeft = width / 2 - 350;
-    const classes = useStyles({ mainMenuWidth, menuInfoWidth, marginLeft });
+    const marginLeft = width / 2 - 280;
+    const classes = useStyles({ mainMenuWidth, menuInfoWidth, marginLeft, width });
     const whenReadyHandler = (event) => {
         const { target: map } = event;
         if (map) {
