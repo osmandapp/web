@@ -1,13 +1,13 @@
 .menuItemClose {
     &:hover {
-        background-color: #ffffff !important;
+        background-color: var(--background-color-menu) !important;
         box-shadow: none !important;
     }
 }
 .menuItemOpen {
     &:hover {
         color: var(--selected-color) !important;
-        background-color: #ffffff !important;
+        background-color: var(--background-color-menu) !important;
         .customIconPath {
             fill: var(--selected-color) !important;
         }
@@ -35,8 +35,8 @@
     min-width: 40px !important;
     max-width: 40px !important;
     margin-left: -5px !important;
-    min-height: 77px !important;
-    max-height: 77px !important;
+    min-height: var(--profile-menu-button-height) !important;
+    max-height: var(--profile-menu-button-height) !important;
     &:hover {
         background-color: transparent !important;
     }
@@ -51,9 +51,16 @@
 .menu {
     overflow-x: hidden;
     overflow-y: auto;
-    max-height: calc(100vh - 220px);
+    margin-bottom: var(--menu-button-height);
     position: sticky;
     bottom: 0;
     right: 0;
     left: 0;
+}
+.menuButton {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--background-color-menu);
 }

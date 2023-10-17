@@ -192,8 +192,8 @@ export default function MainMenu({
                     <MenuItem
                         key={'Profile'}
                         sx={{
-                            minHeight: '77px',
-                            maxHeight: '77px',
+                            minHeight: 'var(--profile-menu-button-height)',
+                            maxHeight: 'var(--profile-menu-button-height)',
                         }}
                         onClick={openLogin}
                     >
@@ -304,9 +304,9 @@ export default function MainMenu({
                                 )
                         )}
                     </div>
-                    <div style={{ position: 'absolute', bottom: 0, right: 0, left: 0 }}>
+                    <div className={styles.menuButton}>
                         <Divider sx={{ my: '0px !important' }} />
-                        <div style={{ height: '77px' }}>
+                        <div style={{ height: 'var(--profile-menu-button-height)' }}>
                             <MenuItem key={'Menu'}>
                                 <ListItemButton
                                     sx={{

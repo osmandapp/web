@@ -18,10 +18,12 @@
     letter-spacing: 0 !important;
 }
 .menu {
-    flex-grow: 1;
-    /*& display { xs: none; md: flex };*/
     margin-top: -4px;
     margin-left: 10px;
+    display: inline-block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
 .menuItem {
     color: #1c1e21 !important;
@@ -37,8 +39,8 @@
     padding-left: 12px !important;
     min-width: 10px !important;
     &:hover {
-        color: #237bff !important;
-        background-color: #ffffff !important;
+        color: var(--selected-color) !important;
+        background-color: var(--background-color-menu) !important;
         box-shadow: none !important;
     }
 }
