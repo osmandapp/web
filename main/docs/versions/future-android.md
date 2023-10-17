@@ -29,20 +29,14 @@ You can take part in testing the beta version of OsmAnd using Google Play.
 
 ## What's new
 
-* [Glide Ratio Widget](#glide-ratio-widget)
-* [ANT+ temperature widget](#ant-temperature-widget)
-* [Introduce new Help screen with offline support](#help-screen)
-* Better memory management for large GPX tracks
-* Redesigned *Local* - Maps & Resources
-* New documentation for mobile
-* [Filters for tracks search](#filters-for-tracks-search)
-* Custom Quick Action buttons
-* Simple widgets for top/bottom panel
-* Add row support for Top / Bottom panels – Configure Screen
-* Redesign weather screen
-* Smart Folder - Tracks
-* Trash - OsmAnd Cloud
-
+- [Android 4.6 (beta)](#android-46-beta)
+  - [Join Beta](#join-beta)
+  - [What's new](#whats-new)
+  - [Glide Ratio Widget](#glide-ratio-widget)
+  - [ANT+ temperature widget](#ant-temperature-widget)
+  - [Help screen](#help-screen)
+  - [Filters for Tracks search](#filters-for-tracks-search)
+  - [Share point coordinates by an OSM link](#share-point-coordinates-by-an-osm-link)
 
 ## Glide Ratio Widget
 
@@ -74,5 +68,8 @@ The Glide Ratio widget is an innovative tool designed to meet the needs of pilot
 
 In addition to navigation and track creation, the Osmand app provides handy tools for managing your track recordings. With the latest update to the app, new features have been added to the Tracks section to better search and filter your tracks. These new filters provide more detailed and customizable options to search for tracks based on various parameters, allowing you to quickly find tracks that meet your specific requirements and preferences.   
 
+## Share point coordinates by an OSM link
 
+Now in the Context menu of a point, you can find not only geographical coordinates in various formats, but also a shareable [OpenStreetMap Link with location marker](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker).  
 
+![Osm Location pin 1](@site/static/img/map/osm_location_pin_1.png) ![Osm Location pin 2](@site/static/img/map/osm_location_pin_2.png)
