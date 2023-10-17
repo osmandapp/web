@@ -21,6 +21,7 @@ export default function GeneralPanelButtons({
     showInfoBlock,
     setShowInfoBlock,
     clearState,
+    menuInfo,
     setMenuInfo,
 }) {
     const ctx = useContext(AppContext);
@@ -62,7 +63,7 @@ export default function GeneralPanelButtons({
     }
 
     function openMapStyle() {
-        setMenuInfo(<MapStyle />);
+        setMenuInfo(menuInfo ? null : <MapStyle />);
     }
 
     return (
@@ -75,12 +76,14 @@ export default function GeneralPanelButtons({
                     flexDirection: 'row',
                 }}
             >
-                <Paper className={styles.button}>
-                    <IconButton onClick={openMapStyle}>
-                        <SvgIcon className={styles.customIconPath} component={ConfigureMapIcon} inheritViewBox />
-                    </IconButton>
-                </Paper>
-                <Paper sx={{ ml: '8px', maxHeight: '40px' }} className={styles.button}>
+                {ctx.develFeatures && (
+                    <Paper sx={{ mr: '8px' }} className={styles.button}>
+                        <IconButton onClick={openMapStyle}>
+                            <SvgIcon className={styles.customIconPath} component={ConfigureMapIcon} inheritViewBox />
+                        </IconButton>
+                    </Paper>
+                )}
+                <Paper sx={{ height: '40px' }} className={styles.button}>
                     <SearchInfo />
                 </Paper>
             </div>

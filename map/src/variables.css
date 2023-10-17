@@ -1,3 +1,6 @@
 :root {
     --selected-color: #237bff;
+    --background-color-menu: #ffffff;
+    --menu-button-height: 77px;
+    --profile-menu-button-height: 77px;
 }
