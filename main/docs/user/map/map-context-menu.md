@@ -151,7 +151,7 @@ In the Context menu, you can find [geographical coordinates](../search/search-co
 
 |Coordinates format||
 |:------|:------|
-|DDD.DDDDD (Plain Decimal Degress)   <br /> DDD.DDDDD (N/S, E/W comma)   <br /> DDD MM.MMM   <br /> DDD MM SS.S   <br /> [UTM Standard](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)    <br /> [Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)   <br /> [MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)   <br /> [Swiss Grid CH1903 and CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)   <br /> [OsmAnd Web Link](https://osmand.net/map)   <br /> [OpenStreetMap Web Link](https://openstreetmap.org)|![Coordinates](@site/static/img/map/map_context_menu_coordinates.png)|
+|DDD.DDDDD (Plain Decimal Degress)   <br /> DDD.DDDDD (N/S, E/W comma)   <br /> DDD MM.MMM   <br /> DDD MM SS.S   <br /> [UTM Standard](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)    <br /> [Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)   <br /> [MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)   <br /> [Swiss Grid CH1903 and CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)   <br /> [OsmAnd Web Link](https://osmand.net/map)   <br /> [OpenStreetMap Web Link](https://openstreetmap.org)|![Coordinates](@site/static/img/map/map_context_menu_Coordinates.png)|
 
 OsmAnd Web Link can be automatically recognized by OsmAnd (example: https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771). Both OsmAnd and [Openstreetmap links](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) are opened with a pin mark to that location.  
 
