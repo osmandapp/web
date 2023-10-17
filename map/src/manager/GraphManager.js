@@ -1,5 +1,5 @@
 import styles from '../../src/generated/styles.json';
-import andValues from '../../src/store/android-values.json';
+import andValues from '../../src/generated/android-values.json';
 import _ from 'lodash';
 import Utils from '../util/Utils';
 
