@@ -34,38 +34,36 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
  
 </Tabs>
 
-All tracks in OsmAnd are stored in a folder:    
-*[<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu.md) → [<Translate android="true" ids="shared_string_my_places"/>](../personal/myplaces.md) → [<Translate android="true" ids="shared_string_gpx_tracks"/>](../personal/tracks.md)*  
+1. **Main Features**  
+- All tracks in OsmAnd are stored in the folder:    
+*[<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu.md) → [<Translate android="true" ids="shared_string_my_places"/>](../personal/myplaces.md) → [<Translate android="true" ids="shared_string_gpx_tracks"/>](../personal/tracks.md)*.   
+- The Tracks tab in the OsmAnd app provides a convenient way to manage and interact with your saved tracks. This feature allows users to record and save the tracks. they have traveled during their travels or outdoor activities.  
+- Track on the map is user Trip recording or Plan a route with makred points on it or not. OsmAnd track file has [GPX format](../plugins/trip-recording.md#recorded-gpx-file).
 
-
-The Tracks tab in the OsmAnd app provides a convenient way to manage and interact with your saved tracks. This feature allows users to record and save the tracks they have traveled during their travels or outdoor activities.  
-
-Track on the map is user [recorded trip](../plugins/trip-recording.md) or [plan route](../plan-route/create-route.md) with makred points on it or not. OsmAnd track file has [gpx-format](../plugins/trip-recording.md#gpx-file-details).
-
-You can add / create tracks to / in OsmAnd in these ways: 
+2. **You can add or create tracks in OsmAnd in the following ways**  
 - [Import](./tracks.md#import-track) from the external source.
-- Create in the application using [Plan route](../plan-route/index.md) tool.
+- Create in the application using [Plan a route](../plan-route/create-route.md) tool.
 - Record in the application using [Trip recording](../plugins/trip-recording.md) plugin. 
 
-All tracks in the application are stored in the *[<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu.md) → [<Translate android="true" ids="shared_string_my_places"/>](../personal/myplaces.md) → [<Translate android="true" ids="shared_string_gpx_tracks"/>](../personal/tracks.md)*.
+3. **Tracks management special features in OsmAnd**
+- Enabling and disabling tracks on the map.
+- Customizing the appearance, editing and analyzing tracks.
+- Use for navigation.
 
-Abilities to manage tracks in OsmAnd:
-- Enable and disable tracks on the map.
-- Configuring track appearance, editing and analyzing.
-- Using for navigation.
+4. **OsmAnd has no limit on the number of tracks to store and display.**
 
-OsmAnd has no limit on the number of tracks to store and display.
-
-There are three options to display Tracks on the map:
+5. **There are three options to display Tracks on the map**
 - [Configure map](../map/tracks-on-map.md#display-via-configure-map-menu) menu.
 - [My places](../map/tracks-on-map.md#display-via-my-places-menu) menu.
 - [Track Context menu](../map/track-context-menu.md).  
 
-Formats: OsmAnd uses [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format) format for tracks and points.  
-Import: the app can import [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language), [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) formats of tracks and points.
+**Formats**: OsmAnd uses [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format) format for tracks and points.  
+**Import**: the app can import [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language), [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) formats of tracks and points.
 
 
 ## Create / Edit Track
+
+Tracks is a powerful tool for tracking journeys, recording routes and points of interest (POIs) in real-time, and for later analyzing and sharing data.  
 
 ### Coordinate input
 
@@ -75,9 +73,10 @@ Import: the app can import [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Form
 - *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*  
 
 ![Coordinate input Options menu Android](@site/static/img/plan-route/coordinates_input/coordinates_input_options.png)  
-
-A simple and fast tool for creating points by specifying geographic coordinates. Read how to add points by coordinates:  
-[By Coordinate input](../plan-route/coordinate-input.md). 
+In the pop-up menu, you can enter your own track name or save it by default.  
+Tap <Translate android="true" ids="shared_string_save"/> to save the added points as a new track.  
+You will find your track in [My places menu](../personal/myplaces.md) *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>*. Read how to add points by coordinates:  
+[Coordinate input](../plan-route/coordinate-input.md) article. 
 
 
 ### Currently recording track
@@ -100,10 +99,40 @@ A simple and fast tool for creating points by specifying geographic coordinates.
 
 Use the OsmAnd [Trip recording Plugin](../plugins/trip-recording.md) and special widgets to record your tracks. Trip recording (Android) or Track recording (iOS) plugin is a special tool designed to record your routes, movements, and workouts. This feature allows you to reuse, modify, update, and share your tracks with friends.    
 
+**Three-dot menu**
 
-### Edit tracks with Plan a route
+- Show on map.  
 
-[**Plan a route** tool](../plan-route/create-route.md#modify-existing-gpx-track).  
+![Track on the map iOS](@site/static/img/personal/tracks/tracks_show_on_map_andr.png)
+
+- Analyze on map.
+- Share.
+- Export.
+
+### Modify GPX track
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,plan_a_route,plan_route_open_existing_track"/> / <Translate android="true" ids="plan_route_import_track"/>*
+
+![Plan a route modify-track-android](@site/static/img/plan-route/plan-route-modify-track-android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,plan_route,plan_route_open_existing_track"/>*
+
+![Plan a route modify-track-ios](@site/static/img/plan-route/plan-route-modify-track-ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+*Plan a Route* tool enables users to modify both [pre-existing GPX](../personal/tracks.md#my-places-menu) tracks and [imported tracks](../personal/tracks.md#import-track).  
+Read more in the article [**Plan a route** tool](../plan-route/create-route.md#modify-existing-gpx-track).  
 
 
 ## Add waypoint
@@ -137,6 +166,7 @@ To create a waypoint use a [long-tap](../map/map-context-menu.md#select-any-poin
 - Color of the icon.
 - Shape of the icon: *Circle, Octagon, Square*.
 4. **Replace** another point with this, if you need to.  
+
 
 #### Quick action  
 You can also add a waypoint as a Quick action. Follow the [*Add track waypoint*](../widgets/quick-action.md#create-items) to configure.
@@ -311,24 +341,84 @@ When you go to this menu, the ability to import or create tracks is not availabl
 
 ### Search
 
-Tap the "&#x1F50D;" button at the top of the device screen to open the track list sorting menu.
+![My places tracks seaching function Android](@site/static/img/personal/tracks/my_places_tracks_search_andr.png)
 
-![My places tracks seaching function Android](@site/static/img/personal/tracks/my_places_tracks_seaching_android.png) 
+Tap the "&#x1F50D;" button at the top of the device screen to open the track list sorting menu. 
 
+Available:
+- Search by track name.
+- **Sort by** for better search if you can't remember the title.
+- **Filter** if you remember the specific characteristics of the track.
 
-### Sort
+### Sort by
 
 <InfoAndroidOnly/>
 
-Tap the *Sort* button at the top of the device screen to open the track list sorting menu tool.
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)   
 
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_android.png) ![My places tracks sort 1 function Android](@site/static/img/personal/tracks/my_places_tracks_sort_1_android.png) 
+OsmAnd provides a convenient option to sort tracks. This is especially useful if you have a lot of them or if you are searching by certain features.  
+Tap the *Sort by* button at the top of the list to open the track list sorting menu tool.  
 
 Sort menu: 
 
-- <Translate android="true" ids="sort_last_modified"/> - sorting tracks in the list by last modified.
-- <Translate android="true" ids="sort_name_ascending"/> - sorting tracks in the list by name A → Z.
-- <Translate android="true" ids="sort_name_descending"/> - sorting tracks in the list by name Z → A.
+- **Nearest**. Shows tracks that are close to your location.
+- **Last modified**. The tracks in the list are sorted by which ones have been changed recently.
+- **Name: A - Z**. Sorting tracks in the list by name from A to Z.
+- **<Translate android="true" ids="sort_name_descending"/>**. Sorting tracks in the list by name from Z to A.
+- **Newest date first**. The tracks in the list are sorted by the date they were created. The newest ones first.
+- **OLdest date first**. The tracks in the list are displayed so that the oldest created tracks are at the beginning.
+- **Longest distance first**. The tracks are sorted so that the longest by distance are at the top of the list.
+- **Shortest distance first**. At the top of the list are the shortest tracks.
+- **Longest duration first**. Tracks are sorted so that the ones that took the longest are listed first.
+- **Shorted duration first**. At the top of the list are the tracks that took the least amount of time to complete.
+
+
+
+### Smart folder
+
+<InfoAndroidOnly/>
+
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_andr.png)
+
+*Smart Folder* is a special type of folder that provides intelligent and automated features for organizing and managing tracks.  
+
+1. **Automated organization.** "Smart folder" can automatically sort files within itself based on specified rules or criteria. For example, you can set up a "smart folder" so that all tracks created on a certain date are automatically moved to that folder.
+2. **Filtering and searching.** This folder can provide options to quickly search for tracks within itself using various filters and keywords. These help users to quickly find the tracks they are looking for.
+3. **Dynamic Refresh.** "Smart folder" can dynamically update its contents based on Refresh function. This allows you to always have up-to-date information inside the folder.
+4. **Customize Rules:** You can customize rules that determine which files should be included in the "smart folder". 
+
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_2_andr.png)  
+
+We have two options for interacting with the tracks in this folder. Once it is created, you can tap on the standard three-dot menu and get the following options:
+
+- *Details*. Opens the entire list of tracks in this folder.
+- *Show all tracks on the map*. If there are many tracks in a folder, it is not recommended to map them all, it may take a long time.
+- *Edit name*. Changing the folder name.
+- *Refresh*. Allows you to update the track list.
+- [*Change default appearance*](../map/tracks-on-map.md#track-appearance). You can change the appearance of the track. 
+- [*Export*](../personal/import-export.md). You will go to *Menu → Settings → Actions* tab, where you can export all tracks from the folder.
+- *Delete folder*. You can delete a folder. A warning message will appear on the display. The deletion will be irreversible.  
+
+By going into the smart folder itself and clicking on the three-dot menu, you can perform the following actions:  
+
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)  
+
+- Add the necessary [filter](#filter).
+- Refresh.
+- [Select](#select-in-smart-folder).
+
+#### Select in Smart folder
+
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_4_andr.png)  
+
+This screen allows you to select the tracks you want, as well as a list of suggested actions:  
+
+- *Show on map*. Unlike *Show all tracks on the map*, this function allows you to customize the display of tracks selectively.
+- *Share*. Allows you to export tracks.
+- *Upload to [OpenStreetMap](../plugins/osm-editing.md#create--modify-osm-note)*. 
+- *Move*. Moving selected tracks to another folder.
+- [Change appearance](../map/tracks-on-map.md#track-appearance).
+- Delete.
 
 
 ### Filter
@@ -405,8 +495,6 @@ The filter provides additional options for finding and filtering tracks that hav
 - *Visible on Map*. With this option you can find tracks that are currently visible on the map when using the Osmand app. This is useful for quickly locating and displaying tracks when you are in a specific area.
 - *With Waypoints*. This filter will help you find tracks that contain waypoints - places that you have marked or labeled while recording a track. You can use this filter to easily find tracks with important points of interest, like vacation spots or notable events on your trip.
 
-
-
 New search filters in the Tracks tab of the OsmAnd app will help you more accurately find and manage routes and tracks according to your needs.  
 
 
@@ -414,13 +502,18 @@ New search filters in the Tracks tab of the OsmAnd app will help you more accura
 
 ### Import track
 
-There are two variants for importing a track file in OsmAnd. The first is importing by clicking on a track file, the second is by My Places menu action.
+There are two options for importing a track file into OsmAnd. The first is importing by clicking on the track file, the second is importing by the My Places menu action.  
 
-1. Importing track by clicking to GPX (KML, KMZ) track file (massengers, email, Drive, File managers..). It suggests to open it by OsmAnd app. Importing tracks save in "Import" folder of [My places menu](../personal/myplaces.md): _clicking to the chosen GPX file → opening it by OsmAnd_.
-2. Importing button in _[My places menu → Tracks](../personal/tracks.md#actions)_.
+1. Importing track by taping to GPX (KML, KMZ) track file (massengers, email, Drive, File managers). It suggests to open it by OsmAnd app. Importing tracks save in "Import" folder of [My places menu](../personal/myplaces.md):  
+*taping to the chosen GPX file → opening it by OsmAnd*.
+2. Importing button in *[My places menu → Tracks](../personal/tracks.md#actions)*.
 
-- Track GPX file:
+- Track GPX file.
 - Multitrack GPX file: saving as one GPX track or selected tracks.
+- Tracks added manually to the OsmAnd folder are imported without restarting the application.  
+
+
+### Export track
 
 <Tabs groupId="operating-systems">
 
@@ -446,19 +539,29 @@ There are two variants for importing a track file in OsmAnd. The first is import
     </tr>
 </table> 
 
-
 </TabItem>
  
 </Tabs>
-
-
-### Export track
 
 Exporting one or more track files to any messenger, email, file managers, Drive or app is possible in several ways.  
 
 1. By [Track Context menu → Share](../map/track-context-menu.md#options).
 2. By [My Places menu → Tracks → … → "export" button](../personal/tracks.md#actions). Exporting more than one track by a bundle (It's the case of Local Backup).
 3. By [Local backup file](../personal/storage.md#local-backup). Exporting GPX-tracks as OSF-file.
+
+### Export a GPX file to an external storage device (iOS)
+
+![Export with Context menu in iOS](@site/static/img/plugins/trip-recording/cont_menu_in_myplaces_ios.png) 
+
+To export a GPX file to an external storage, do the following: 
+
+- Open the [Context menu](../map/track-context-menu.md) of a track on the map in one of the following ways:
+    - By tapping a track in My Places, the map shows up with the context menu opened for the track.
+    - By tapping a track directly on the map.  
+    In any case, make certain the track is visible on the map. 
+- Tap **<Translate ios="true" ids="shared_string_export"/>**.
+- Select the required storage to export the GPX file to.   
+
 
 
 ## Manage tracks
@@ -488,21 +591,13 @@ Information section that allows you to view the overall statistics for all track
 
 ### View all tracks 
 
-All tracks ever recorded are automatically displayed in [**My Places**](../personal/myplaces.md). This is the central storage of all user-generated information, organized in tabs according to the main criterion of saved data. There are favourites, notes, and tracks. Browse through [**Tracks**](../personal/tracks.md) tab to find any trip recordings. 
-
-More information about [My Places](../personal/myplaces.md), and/or [Tracks](../personal/tracks.md) stored in it can be found in the relevant sections of the current documentation. However, it makes sense to underscore here that:
-
-- The internal organization of the Tracks tab in My Places can be managed with the Trip recording plugin settings described above.
-- This is a useful place to consult with in case of doubts, for example, on what/if something is recorded, what/if something is visible right now on the map, and so forth.
-- My Places is perfect for any inventory work: tap the triple points/arrow at the right side of a track to manage it with any of the options, such as Move, Rename, Share, etc. 
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*
 
-![My Places with tracks in Android](@site/static/img/plugins/trip-recording/view_all_tr_andr.png)
+![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
 </TabItem>
 
@@ -515,6 +610,14 @@ More information about [My Places](../personal/myplaces.md), and/or [Tracks](../
 </TabItem>
 
 </Tabs>
+
+All tracks ever recorded are automatically displayed in [**My Places**](../personal/myplaces.md). This is the central storage of all user-generated information, organized in tabs according to the main criterion of saved data. There are favourites, notes, and tracks. Browse through [**Tracks**](../personal/tracks.md) tab to find any trip recordings. 
+
+More information about [My Places](../personal/myplaces.md), and/or [Tracks](../personal/tracks.md) stored in it can be found in the relevant sections of the current documentation. However, it makes sense to underscore here that:
+
+- The internal organization of the Tracks tab in My Places can be managed with the Trip recording plugin settings described above.
+- This is a useful place to consult with in case of doubts, for example, on what/if something is recorded, what/if something is visible right now on the map, and so forth.
+- My Places is perfect for any inventory work: tap the triple points/arrow at the right side of a track to manage it with any of the options, such as Move, Rename, Share, etc. 
 
 
 ### Show tracks on map
@@ -602,7 +705,7 @@ Then you can move the track to any other preferred folder in the My Places using
 - [Context menu of a track in My Places](../personal/tracks.md#my-places-menu).  
 
 
-#### CONTEXT MENU ON THE MAP
+#### Context menu on the map 
 
 To move a track to another folder inside My Places, you can use [Context menu of a track on the map](../map/track-context-menu.md) as follows: 
 
@@ -617,16 +720,16 @@ To move a track to another folder inside My Places, you can use [Context menu of
 ![More options in Android](@site/static/img/plugins/trip-recording/change_folder_andr_1.png) ![Change folder in Android](@site/static/img/plugins/trip-recording/change_folder_andr_2.png)  
 
 
-#### CONTEXT MENU IN MY PLACES
+#### Context menu in my places
 
-To move a track to another folder inside My Places, you can use [Context menu of a track in My Places](../personal/tracks.md#manage-tracks) as follows: 
+To move a track to another folder in My Places, you can use [Context menu of a track in My Places](../personal/tracks.md#manage-tracks) as follows: 
 
 - Open: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.
 - Tap the triple points on the right of the required track.
 - Tap **<Translate android="true" ids="shared_string_move"/>** from the opened context menu.
-- Select a folder to move the track to. 
+- Select the folder to which you want to move the track. 
 
-![Move with My Places in Android](@site/static/img/plugins/trip-recording/cont_menu_in_myplaces_and.png)
+![Move with My Places in Android](@site/static/img/personal/tracks/context_menu_in_myplaces_andr.png)
 
 </TabItem>
 
@@ -637,39 +740,35 @@ Default folder in My Places for saved new tracks: *<Translate ios="true" ids="sh
 You can then move the track to any other preferred folder in My Places and/or export the GPX file to an external storage device.   
 
 
-#### MOVE TRACK WITHIN MY PLACES
+#### Move track in the My places
 
 ![More options in iOS](@site/static/img/plugins/trip-recording/change_folder_ios_1.png) ![Change folder in iOS](@site/static/img/plugins/trip-recording/change_folder_ios_2.png)  
 
-To move a track from the default folder to another folder in My Places, do the following:
+To move a track from the default folder to another folder in My Places, follow these steps:
 
 - Open the [Context menu](../map/track-context-menu.md) of a track on the map in one of the following ways:  
-    - By tapping a track in My Places, the map shows up with the context menu opened for the track.
-    - By tapping a track directly on the map.  
-    In any case, make certain the track is visible on the map. 
-- Tap the triple points on the extreme right of the bottom panel.
-- Tap **<Translate ios="true" ids="plan_route_change_folder"/>** from the opened *<Translate ios="true" ids="actions"/> list*.
-- Select a folder to move the track to.   
-
-
-### Export a GPX file to an external storage device
-
-![Export with Context menu in iOS](@site/static/img/plugins/trip-recording/cont_menu_in_myplaces_ios.png) 
-
-To export a GPX file to an external storage, do the following: 
-
-- Open the [Context menu](../map/track-context-menu.md) of a track on the map in one of the following ways:
-    - By tapping a track in My Places, the map shows up with the context menu opened for the track;
-    - By tapping a track directly on the map.  
-    In any case, make certain the track is visible on the map. 
-- Tap **<Translate ios="true" ids="shared_string_export"/>**.
-- Select the required storage to export the GPX file to.   
-
+    - When you tap a track in My Places on the map, the context menu open for that track appears.
+    - When you tap a track directly on the map.  
+    - In either case, make sure that the track is visible on the map.
+- Tap the triple dot at the far right of the bottom panel.
+- Tap **<Translate ios="true" ids="change_folder"/>** from the opened *<Translate ios="true" ids="select_folder"/> list*.
+- Select the folder to which the track will be moved.
 
 </TabItem>
 
 </Tabs>
 
+###  Delete folder
+
+<InfoAndroidOnly /> 
+
+![My Places with tracks in Android](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
+
+You can delete a folder with all the tracks contained in it. To do this:
+- Go to Menu → My Places → Tracks tab.
+- Tab the three dots menu of the folder you want to delete.
+- At the bottom of the menu, find the Delete Folder option.
+- Note that this action is irreversible.
 
 ## Read more
 
