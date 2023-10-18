@@ -1,5 +1,106 @@
 {
   "default.render.xml": {
+    "routeInfo_winter_ice_road": [
+      {
+        "attrStringValue": "winter_road",
+        "additional": "winter_road=yes",
+        "attrColorValue": "#995f5fff"
+      },
+      {
+        "attrStringValue": "ice_road",
+        "additional": "ice_road=yes",
+        "attrColorValue": "#995fbcff"
+      }
+    ],
+    "routeInfo_steepness": [
+      {
+        "attrStringValue": "-100_-20",
+        "additional": "steepness=-100_-20",
+        "attrColorValue": "#028306"
+      },
+      {
+        "attrStringValue": "-19_-16",
+        "additional": "steepness=-19_-16",
+        "attrColorValue": "#2c8f1e"
+      },
+      {
+        "attrStringValue": "-15_-12",
+        "additional": "steepness=-15_-12",
+        "attrColorValue": "#559b36"
+      },
+      {
+        "attrStringValue": "-11_-8",
+        "additional": "steepness=-11_-8",
+        "attrColorValue": "#7fa74e"
+      },
+      {
+        "attrStringValue": "-7_-4",
+        "additional": "steepness=-7_-4",
+        "attrColorValue": "#aab467"
+      },
+      {
+        "attrStringValue": "-3_0",
+        "additional": "steepness=-3_0",
+        "attrColorValue": "#d3c07f"
+      },
+      {
+        "attrStringValue": "1_4",
+        "additional": "steepness=1_4",
+        "attrColorValue": "#ffcc99"
+      },
+      {
+        "attrStringValue": "5_8",
+        "additional": "steepness=5_8",
+        "attrColorValue": "#f2ad82"
+      },
+      {
+        "attrStringValue": "9_12",
+        "additional": "steepness=9_12",
+        "attrColorValue": "#e48e6a"
+      },
+      {
+        "attrStringValue": "13_16",
+        "additional": "steepness=13_16",
+        "attrColorValue": "#d76e53"
+      },
+      {
+        "attrStringValue": "17_20",
+        "additional": "steepness=17_20",
+        "attrColorValue": "#c94e3b"
+      },
+      {
+        "attrStringValue": "21_100",
+        "additional": "steepness=21_100",
+        "attrColorValue": "#bb2e23"
+      }
+    ],
+    "routeInfo_tracktype": [
+      {
+        "attrStringValue": "tracktype_grade1",
+        "additional": "tracktype=grade1",
+        "attrColorValue": "#628f59"
+      },
+      {
+        "attrStringValue": "tracktype_grade2",
+        "additional": "tracktype=grade2",
+        "attrColorValue": "#bb628f59"
+      },
+      {
+        "attrStringValue": "tracktype_grade3",
+        "additional": "tracktype=grade3",
+        "attrColorValue": "#88628f59"
+      },
+      {
+        "attrStringValue": "tracktype_grade4",
+        "additional": "tracktype=grade4",
+        "attrColorValue": "#66628f59"
+      },
+      {
+        "attrStringValue": "tracktype_grade5",
+        "additional": "tracktype=grade5",
+        "attrColorValue": "#44628f59"
+      }
+    ],
     "routeInfo_surface": [
       {
         "attrStringValue": "surface_unpaved",
@@ -130,6 +231,44 @@
         "attrColorValue": "#00000000"
       }
     ],
+    "routeInfo_horse_scale": [
+      {
+        "attrStringValue": "horse_scale_common",
+        "attrColorValue": "#008feb",
+        "tag": "horse_scale",
+        "value": "common"
+      },
+      {
+        "attrStringValue": "horse_scale_demanding",
+        "attrColorValue": "#007fd1",
+        "tag": "horse_scale",
+        "value": "demanding"
+      },
+      {
+        "attrStringValue": "horse_scale_difficult",
+        "attrColorValue": "#0074bf",
+        "tag": "horse_scale",
+        "value": "difficult"
+      },
+      {
+        "attrStringValue": "horse_scale_critical",
+        "attrColorValue": "#0065a6",
+        "tag": "horse_scale",
+        "value": "critical"
+      },
+      {
+        "attrStringValue": "horse_scale_dangerous",
+        "attrColorValue": "#005a94",
+        "tag": "horse_scale",
+        "value": "dangerous"
+      },
+      {
+        "attrStringValue": "horse_scale_impossible",
+        "attrColorValue": "#e94d00",
+        "tag": "horse_scale",
+        "value": "impossible"
+      }
+    ],
     "routeInfo_roadClass": [
       {
         "attrStringValue": "highway_class_motorway",
@@ -256,6 +395,53 @@
         "attrColorValue": "#178fe5",
         "tag": "highway",
         "value": "cycleway"
+      }
+    ],
+    "routeInfo_smoothness": [
+      {
+        "attrStringValue": "smoothness_excellent",
+        "additional": "smoothness=excellent",
+        "attrColorValue": "#00d8ff"
+      },
+      {
+        "attrStringValue": "smoothness_good",
+        "additional": "smoothness=good",
+        "attrColorValue": "#7debff"
+      },
+      {
+        "attrStringValue": "smoothness_intermediate",
+        "additional": "smoothness=intermediate",
+        "attrColorValue": "#b1f3ff"
+      },
+      {
+        "attrStringValue": "smoothness_bad",
+        "additional": "smoothness=bad",
+        "attrColorValue": "#febcbc"
+      },
+      {
+        "attrStringValue": "smoothness_very_bad",
+        "additional": "smoothness=very_bad",
+        "attrColorValue": "#fea9a9"
+      },
+      {
+        "attrStringValue": "smoothness_horrible",
+        "additional": "smoothness=horrible",
+        "attrColorValue": "#ff7f7f"
+      },
+      {
+        "attrStringValue": "smoothness_very_horrible",
+        "additional": "smoothness=very_horrible",
+        "attrColorValue": "#fe5050"
+      },
+      {
+        "attrStringValue": "smoothness_impassable",
+        "additional": "smoothness=impassable",
+        "attrColorValue": "#ff1111"
+      },
+      {
+        "attrStringValue": "smoothness_undefined",
+        "additional": "smoothness=undefined",
+        "attrColorValue": "#e8e8e8"
       }
     ]
   }
