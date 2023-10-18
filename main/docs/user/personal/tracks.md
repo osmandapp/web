@@ -73,10 +73,11 @@ Tracks is a powerful tool for tracking journeys, recording routes and points of 
 - *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*  
 
 ![Coordinate input Options menu Android](@site/static/img/plan-route/coordinates_input/coordinates_input_options.png)  
-In the pop-up menu, you can enter your own track name or save it by default.  
-Tap <Translate android="true" ids="shared_string_save"/> to save the added points as a new track.  
-You will find your track in [My places menu](../personal/myplaces.md) *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>*. Read how to add points by coordinates:  
-[Coordinate input](../plan-route/coordinate-input.md) article. 
+
+- In the pop-up menu, you can enter your own track name or save it by default.  
+- Tap <Translate android="true" ids="shared_string_save"/> to save the added points as a new track.  
+- You will find your track in [My places menu](../personal/myplaces.md) *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>*. Read how to add points by coordinates:  
+- [Coordinate input](../plan-route/coordinate-input.md) article. 
 
 
 ### Currently recording track
@@ -304,13 +305,9 @@ My Places menu benefits:
 
 ![My places tracks Android](@site/static/img/personal/tracks/my_places_tracks_actions_3_andr.png) 
 
-
-- "+" button  - allows [to import](./tracks.md#import-track) GPX track from device storage.
-- "earth" button - opens [Add point menu](../plan-route/coordinate-input.md) for adding points by inputting coordinates.
-- "map" button - allows to choose tracks for showing its on the map.
-- "&#x1F5D1;" button - allows to choose tracks for deleting.
-- "&#10227;" button - allows to refresh tracks list.
-- "OSM editing" button - allows you to upload the selected [track to the OSM](../plugins/osm-editing.md).
+- **Search** button. Takes you to a screen with a list of tracks, search by title, and filters.
+- **...* menu button. Opens the action [menu](#appbar-menu).
+- **Sort by**. [Sort tracks](#sort-by) by various parameters.
 
 </TabItem>
 
@@ -325,14 +322,12 @@ Actions
 - **<Translate ios="true" ids="import_tracks"/>**  - open tab *<Translate ios="true" ids="import_from_docs"/>* and next description <Translate ios="true" ids="gpx_import_desc"/>, [My files](../plan-route/create-route.md).
 - **<Translate ios="true" ids="create_new_trip"/>** - opens [*Plan route tool*](../personal/tracks.md#edit-mode-ios) for creating a new track.
 
-Buttons in "&#8230;" menu  
+Buttons in "&#8230;" menu. **When you go to this menu, the ability to import or create tracks is not available.**  
 
-When you go to this menu, the ability to import or create tracks is not available.  
-
-- "export" button - allows to export choosing GPX file or files by anyways (messengers, email) or save to [My files](../plan-route/create-route.md).
-- "map" button - allows to choose tracks for showing its on the map.
-- "OSM editing" button - allows you to upload the selected [track to the OSM](../plugins/osm-editing.md).
-- "&#x1F5D1;" button - allows to choose tracks for deleting.
+- **Export** button. Allows you to export selected GPX files using a method available on your device, messengers, email, or save to a folder on your device.
+- **Map** button. The selected tracks are displayed on the map.
+- **OSM editing** button. Allows you to upload the selected [track to the OSM](../plugins/osm-editing.md).
+- &#x1F5D1; button. Deletes the selected tracks.
 
 </TabItem>
  
@@ -349,6 +344,41 @@ Available:
 - Search by track name.
 - **Sort by** for better search if you can't remember the title.
 - **Filter** if you remember the specific characteristics of the track.
+
+
+### AppBar menu
+
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_appbar_menu_andr.png)   
+
+- [**Select**](#selection-mode). This menu item allows you to select the folders and routes you need to manage them further.  
+
+- **Add new folder**. If you need to organize your routes and tracks into logical categories, the app provides the ability to quickly create a new folder and name it. This helps to structure your navigation information.  
+
+- [**Add smart folder**](#smart-folder). This is a tool for automating data organization. Folders automatically sort routes and tracks according to specified criteria. 
+
+- **Import**. If you have tracks you want to add to OsmAnd, you can use the import function to upload files from your device.
+
+
+### Selection mode
+
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_selection_andr.png)
+
+The **Select** menu item provides options for managing folders and tracks. This feature allows you to select multiple tracks or track folders. You can also select all tracks and folders by tapping the special *Select All* button at the top of the screen.
+
+Once you have made your choice, the following steps are provided:  
+
+- **Show on map**. With this feature you can display the selected tracks on the map to better understand their location and relationship to each other.
+
+- **Share**. If you want to share selected data with other users or save it to a cloud service, the *Share* feature allows you to send tracks and folders using different sharing methods.
+
+- **Upload to OpenStreetMap**. You can submit selected tracks to OpenStreetMap, contributing to the development and improvement of the data.
+
+- **Move**. You can organize your data by moving selected tracks and folders to other folders.
+
+-**Change appearance**. This option allows you to customize the appearance of selected tracks, making them more visible and recognizable on the map.
+
+- **Delete**. If the selected tracks or folders are no longer needed, the Delete function allows you to delete them, with the app providing confirmation options to avoid accidental deletion.
+
 
 ### Sort by
 
@@ -548,6 +578,7 @@ Exporting one or more track files to any messenger, email, file managers, Drive 
 2. By [My Places menu → Tracks → … → "export" button](../personal/tracks.md#actions). Exporting more than one track by a bundle (It's the case of Local Backup).
 3. By [Local backup file](../personal/storage.md#local-backup). Exporting GPX-tracks as OSF-file.
 
+
 ### Export a GPX file to an external storage device (iOS)
 
 ![Export with Context menu in iOS](@site/static/img/plugins/trip-recording/cont_menu_in_myplaces_ios.png) 
@@ -630,7 +661,6 @@ More information about [My Places](../personal/myplaces.md), and/or [Tracks](../
 - [*Change default appearance*](../map/tracks-on-map.md#track-appearance). You can change the appearance of all tracks in a folder.
 - [*Export*](../personal/import-export.md). You go to the *Menu → Settings → Actions* tab, where you can export all the tracks in the folder.
 - [*Delete folder*](#delete-folder). You can delete a folder. A warning message will appear on the display. The deletion will be irreversible. 
-
 
 
 ### Show tracks on map
