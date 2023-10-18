@@ -248,20 +248,7 @@ const GpxGraphProvider = ({ width }) => {
                     ))}
             </div>
             {mainGraphData && showData && hasData() && (
-                <GpxGraph
-                    data={mainGraphData?.res}
-                    attrGraphData={attrGraphData}
-                    showData={showData}
-                    xAxis={DISTANCE}
-                    y1Axis={[ELEVATION, ELEVATION_SRTM, SLOPE]}
-                    y2Axis={SPEED}
-                    width={width}
-                    minEle={mainGraphData?.minEle}
-                    maxEle={mainGraphData?.maxEle}
-                    minSpeed={mainGraphData?.minSpeed}
-                    maxSpeed={mainGraphData?.maxSpeed}
-                    slopes={mainGraphData?.slopes}
-                />
+                <GpxGraph mainData={mainGraphData} attrGraphData={attrGraphData} showData={showData} width={width} />
             )}
         </>
     );

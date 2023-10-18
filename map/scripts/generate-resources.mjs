@@ -43,9 +43,7 @@ function filterAndroidValues(json) {
 function getUrlStyles() {
     let url = new URL('https://osmand.net/gpx/get-styles');
     const params = {
-        styles: [
-            'default.render.xml'
-        ],
+        styles: ['default.render.xml'],
         attributes: [
             'routeInfo_roadClass',
             'routeInfo_surface',
@@ -53,9 +51,9 @@ function getUrlStyles() {
             'routeInfo_steepness',
             'routeInfo_winter_ice_road',
             'routeInfo_tracktype',
-            'routeInfo_horse_scale'
+            'routeInfo_horse_scale',
         ],
-    }
+    };
     url.search = new URLSearchParams(params).toString();
     return url;
 }
