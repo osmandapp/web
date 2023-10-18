@@ -373,7 +373,6 @@ Sort menu:
 - **Shorted duration first**. At the top of the list are the tracks that took the least amount of time to complete.
 
 
-
 ### Smart folder
 
 <InfoAndroidOnly/>
@@ -563,7 +562,6 @@ To export a GPX file to an external storage, do the following:
 - Select the required storage to export the GPX file to.   
 
 
-
 ## Manage tracks
 
 After recording and saving, tracks can be managed as follows:    
@@ -618,6 +616,21 @@ More information about [My Places](../personal/myplaces.md), and/or [Tracks](../
 - The internal organization of the Tracks tab in My Places can be managed with the Trip recording plugin settings described above.
 - This is a useful place to consult with in case of doubts, for example, on what/if something is recorded, what/if something is visible right now on the map, and so forth.
 - My Places is perfect for any inventory work: tap the triple points/arrow at the right side of a track to manage it with any of the options, such as Move, Rename, Share, etc. 
+
+
+### Folder menu
+
+<InfoAndroidOnly /> 
+
+![import multitrack](@site/static/img/personal/tracks/tracks_folder_menu.png)
+
+- *Name*. Displays the selected folder name, creation date and the number of tracks it contains.
+- *Show all tracks on the map*. Shows all tracks in the folder on the map. It is not recommended, if there are a lot of tracks, the device may freeze.
+- *Edit name*. Changing the folder name.
+- [*Change default appearance*](../map/tracks-on-map.md#track-appearance). You can change the appearance of all tracks in a folder.
+- [*Export*](../personal/import-export.md). You go to the *Menu → Settings → Actions* tab, where you can export all the tracks in the folder.
+- [*Delete folder*](#delete-folder). You can delete a folder. A warning message will appear on the display. The deletion will be irreversible. 
+
 
 
 ### Show tracks on map
