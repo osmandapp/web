@@ -264,6 +264,7 @@ export default function MainMenu({
                                                 setMenuInfo(!isSelectedMenuItem(item) ? item.component : null);
                                             } else {
                                                 setMenuInfo(item.component);
+                                                setOpenMainMenu(false);
                                             }
                                         }}
                                     >
