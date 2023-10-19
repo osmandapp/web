@@ -18,11 +18,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Configure screen is a menu that allows you to customize the widgets that will be displayed on the map. On this screen, you can enable [information](../widgets/info-widgets.md) and [navigation](../widgets/nav-widgets.md) widgets, [buttons](../widgets/map-buttons.md), [marker widgets](../widgets/markers.md), a [ruler](../widgets/radius-ruler.md), and add [quick actions](../widgets/quick-action.md).   
  
-All widgets are [profile dependent](../personal/profiles.md), so if you change the order, visibility, or state for one profile, they will not apply to other profiles. Each profile has its own predefined list of widgets based on the navigation screen design. It can be configured and used with or without navigation.
+All widgets are [profile dependent](../personal/profiles.md), so if you change the order, visibility, or state for one profile, they will not apply to other profiles. Each profile has its own predefined list of widgets based on the navigation screen design. It can be configured and used with or without navigation.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_2_andr.png)  
 
@@ -30,14 +32,16 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 
 <TabItem value="ios" label="iOS">  
 
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
+
 ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_2.png)   
 
 </TabItem>
 
 </Tabs> 
 
-- [Left panel](#right--left-panel-widgets)
-- [Right panel](#right--left-panel-widgets) 
+- [Left panel](#widgets-in-all-panels)
+- [Right panel](#widgets-in-all-panels) 
 - [Top panel](#top--bottom-panel-widgets)
 - [Bottom panel](#top--bottom-panel-widgets)
 - [Buttons](#buttons-android-and-remaining-elements-ios)
@@ -45,10 +49,7 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 - **Transparent widgets** - makes transparent the background of the navigation and information widgets.  
 
 
-## Widget panels
-
-
-### Right / Left panel widgets  
+## Widgets in all panels  
 
 <Tabs groupId="operating-systems">
 
@@ -119,7 +120,7 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
     6 widgets included: *Heart Rate*, *Bicycle Power*, *Bicycle Cadence*, *Bicycle Speed*, *Bicycle Distance*, *Temperature*.
 
 
-### Top / Bottom panel widgets
+## Top / Bottom panel widgets
 
 <Tabs groupId="operating-systems">
 
@@ -137,18 +138,54 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 
 </Tabs> 
 
-
-1. [Coordinates widgets](../widgets/info-widgets#coordinates-widget). This set of *informational* widgets displays the geographic coordinates of the current geolocation.  
+1. [All widgets](#all-panel-widgets) from other panels.  
+2. [Coordinates widgets](../widgets/info-widgets#coordinates-widget). This set of *informational* widgets displays the geographic coordinates of the current geolocation.  
     2 widgets included: *Coordinates: map center*, *Coordinates: current location*.
-2. [Street name](../widgets/nav-widgets#street-name). *Navigational* widget shows the current street name with a straight arrow or the next street name with an arrow pointing to an upcoming turn.
-3. [Lanes](../widgets/nav-widgets#lanes). *Navigational* widget shows the current road lanes layout and highlights lanes for traffic with active navigation.
-4. [Map markers bar (*Android only*)](../widgets/markers.md#configure-marker-widgets-android). The widget displays the distance and direction to the next Map marker from your current location. The widget can be configured to show 1 or 2 markers.
-5. [Elevation profile (*Android only*)](../widgets/nav-widgets#elevation-widget). *Navigational* widget shows the elevation and slope profile of the current route.  
+3. [Street name](../widgets/nav-widgets#street-name). *Navigational* widget shows the current street name with a straight arrow or the next street name with an arrow pointing to an upcoming turn.
+4. [Lanes](../widgets/nav-widgets#lanes). *Navigational* widget shows the current road lanes layout and highlights lanes for traffic with active navigation.
+5. [Map markers bar (*Android only*)](../widgets/markers.md#configure-marker-widgets-android). The widget displays the distance and direction to the next Map marker from your current location. The widget can be configured to show 1 or 2 markers.
+6. [Elevation profile (*Android only*)](../widgets/nav-widgets#elevation-widget). *Navigational* widget shows the elevation and slope profile of the current route.  
 
     ![elevation profile](@site/static/img/widgets/elevation_prof_and.png)  
 
 
-### Buttons
+### Rows for panels
+
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_andr.png)
+
+There is a **Row mode** for the top and bottom panels, which can be used to add as many rows as you need to the application screen to place widgets on them.
+
+How to do it:   
+- Add the required widgets from the list of *Available widgets*.
+- Tap the *Change order* button below the list of added widgets. 
+- Find the *Add row* button at the bottom of the list. 
+- Widgets can be moved between rows.
+- Tap the *Apply* button.
+
+The mode allows you to add **more than one widgets in a single row** on the top and bottom panels to display as many information as needed. Restrictions:    
+
+- A row can contain only one **Complex** widget that has a unique display. These widgets include:
+    - [Map markers bar (*Android only*)](../widgets/markers.md#configure-marker-widgets-android)
+    - [Street name](../widgets/nav-widgets#street-name)
+    - [Coordinates widgets](../widgets/info-widgets#coordinates-widget)
+    - [Lanes](../widgets/nav-widgets#lanes)
+    - [Elevation profile (*Android only*)](../widgets/nav-widgets#elevation-widget)
+
+- For all rest **Simple** widgets that only display information such as *Widget Name*, *Units of measurement*, *Value*, and *Icon*, there is a function to add several to one panel at once. 
+
+
+### Settings
+
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
+
+
+## Actions panel (Android) / Three-button menu
+
+- **Reset to default** - return to preset settings.
+- **Copy from another profile** - allows you to copy settings made for another profile
+
+
+## Buttons
 
 1. [Compass](../widgets/map-buttons.md#display-options). Indicates how the map is oriented on the device.  
     3 views: *Always visible*, *Always hidden*, *Visible if map is rotated*.
@@ -156,6 +193,8 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 3. [Distance by tap](../widgets/radius-ruler.md#distance-by-tap-tool) - gives options to measure the distance from your position to the selected point.  
 4. [Quick action](../widgets/quick-action.md) - is a button that gives quick access to frequently used actions.  
 
+
+## Actions with added widgets
 
 ### Pages for widgets
 
@@ -182,28 +221,24 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 Widgets in the right and left panels can be grouped into **Pages**. To do this, select a panel, tap *Edit*, and then tap *Add Page*. This helps you interact with the map more easily and without distractions when navigating, as well as having multiple sets of widgets for different cases.
 
 
-### Actions panel (Android) / Three-button menu
-
-- **Reset to default** - return to preset settings.
-- **Copy from another profile** - allows you to copy settings made for another profile
-
-
-## Actions with added widgets
-
 ### Duplicates for widgets
+
+*OsmAnd menu → Configure screen → Widgets → **Add** chosen widget*  
 
 ![Widget dublicate](@site/static/img/widgets/widget_dublicate.png)  
 
 **Duplicates** can be shown simultaneously for the all panels, as well as for each page of the widget. To find the desired options, follow the steps below:  
-*OsmAnd menu → Configure screen → Widgets → **Add** chosen widget*.  
+- Add the required widget and tap on it.
+- In the list of actions, select the *Duplicate* button.
+- Another option. Select the same widget in the *Available widgets* list and tap the *Add* button.
 
 
-### Remove / Delete
+### Move / Delete
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_remove_andr.png)     
 
 To remove or delete a widget from the application screen, you need to select the required panel and then press the **Edit** button. 
-- To move a widget to the desired location or page, long press the icon on the right and select a position in the widget list. 
+- To move a widget to the required location or page, long tap the icon on the right and select a position in the widget list. 
 - To no longer see the widget, tap the minus icon to the left of its name.
 
 ## Switch profile
