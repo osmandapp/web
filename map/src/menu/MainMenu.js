@@ -64,7 +64,7 @@ export default function MainMenu({
             name: 'Weather',
             icon: WeatherIcon,
             component: <Weather />,
-            type: OBJECT_TYPE_WEATHER,
+            type: [OBJECT_TYPE_WEATHER],
             show: true,
             id: 'se-show-menu-weather',
         },
@@ -72,7 +72,7 @@ export default function MainMenu({
             name: 'Tracks',
             icon: TracksIcon,
             component: <TracksMenu />,
-            type: OBJECT_TYPE_LOCAL_TRACK || OBJECT_TYPE_CLOUD_TRACK,
+            type: [OBJECT_TYPE_LOCAL_TRACK, OBJECT_TYPE_CLOUD_TRACK],
             show: true,
             id: 'se-show-menu-tracks',
         },
@@ -80,7 +80,7 @@ export default function MainMenu({
             name: 'Favorites',
             icon: FavoritesIcon,
             component: <FavoritesMenu />,
-            type: OBJECT_TYPE_FAVORITE,
+            type: [OBJECT_TYPE_FAVORITE],
             show: true,
             id: 'se-show-menu-favorites',
         },
@@ -88,7 +88,7 @@ export default function MainMenu({
             name: 'Navigation',
             icon: NavigationIcon,
             component: <RouteMenu />,
-            type: OBJECT_TYPE_ROUTE_TRACK,
+            type: [OBJECT_TYPE_ROUTE_TRACK],
             show: true,
             id: 'se-show-menu-navigation',
         },
@@ -96,7 +96,7 @@ export default function MainMenu({
             name: 'Map Style',
             icon: Map,
             component: <MapStyle />,
-            type: null,
+            type: [],
             show: ctx.develFeatures,
             id: 'se-show-menu-mapstyle',
         },
@@ -104,7 +104,7 @@ export default function MainMenu({
             name: 'Plan a route',
             icon: PlanRouteIcon,
             component: <PlanRouteMenu />,
-            type: null,
+            type: [],
             show: true,
             id: 'se-show-menu-planroute',
         },
@@ -128,7 +128,9 @@ export default function MainMenu({
     }, [ctx.currentObjectType]);
 
     function selectMenuInfo() {
-        const currentMenu = items.find((item) => item.type === ctx.currentObjectType);
+        const currentMenu = items.find((item) => {
+            return item.type.find((t) => t === ctx.currentObjectType);
+        });
         if (currentMenu) {
             setMenuInfo(currentMenu.component);
         }
