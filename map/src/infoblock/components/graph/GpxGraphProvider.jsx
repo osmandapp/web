@@ -19,11 +19,16 @@ import {
     generateDataSets,
     getSlopes,
     HIGHWAY,
+    HORSE_SCALE,
+    ICE_ROAD,
     isSrtmAppeared,
     SLOPE,
+    SMOOTHNESS,
     SPEED,
     SURFACE,
+    TRACK_TYPE,
     UNDEFINED_DATA,
+    WINTER_ROAD,
 } from '../../../manager/GraphManager';
 
 const useStyles = makeStyles({
@@ -43,6 +48,8 @@ const GpxGraphProvider = ({ width }) => {
     const [showData, setShowData] = useState(null);
     const [roadPoints, setRoadPoints] = useState(null);
 
+    const attributesTags = [HIGHWAY, SURFACE, SMOOTHNESS, WINTER_ROAD, ICE_ROAD, TRACK_TYPE, HORSE_SCALE];
+
     function hasData() {
         return showData[ELEVATION] || showData[ELEVATION_SRTM] || showData[SPEED] || showData[SLOPE];
     }
@@ -59,6 +66,7 @@ const GpxGraphProvider = ({ width }) => {
         return points ? points : [];
     }
 
+    //get changed track data
     useEffect(() => {
         if (ctx.selectedGpxFile) {
             let trackData = {};
@@ -202,26 +210,29 @@ const GpxGraphProvider = ({ width }) => {
                     seg.distance = prevSegPoint
                         ? roadPoints[seg.ind + Number(seg.segment.ext.length) - 1].distanceTotal - seg.distanceTotal
                         : roadPoints[seg.ind + Number(seg.segment.ext.length) - 1].distanceTotal;
-                    seg[HIGHWAY] = UNDEFINED_DATA;
-                    seg[SURFACE] = UNDEFINED_DATA;
+                    attributesTags.forEach((a) => (seg[a] = UNDEFINED_DATA));
                     p.segment.ext.types.split(',').forEach((t) => {
                         const type = routeTypes[t];
                         if (type) {
-                            if (type.tag === HIGHWAY) {
-                                seg[HIGHWAY] = type.value;
-                            }
-                            if (type.tag === SURFACE) {
-                                seg[SURFACE] = type.value;
-                            }
+                            seg = getTags(type, seg);
                         }
                     });
                     prevSegPoint = seg;
                     segments.push(seg);
                 }
             });
-            return generateDataSets(segments);
+            return generateDataSets(segments, attributesTags);
         }
     }, [roadPoints]);
+
+    function getTags(type, seg) {
+        attributesTags.forEach((a) => {
+            if (type.tag === a) {
+                seg[a] = type.value;
+            }
+        });
+        return seg;
+    }
 
     return (
         <>

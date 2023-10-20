@@ -36,7 +36,9 @@ generate({
 // Filter Android Values which are really required by Web Map
 function filterAndroidValues(json) {
     const filtered = {};
-    Object.keys(json).forEach((k) => k.match(/^rendering_attr_/) && (filtered[k] = json[k]));
+    Object.keys(json).forEach(
+        (k) => (k.match(/^rendering_attr_/) || k.match(/^routeInfo_/)) && (filtered[k] = json[k])
+    );
     return filtered;
 }
 

@@ -387,25 +387,21 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                             }
                             //add road attributes
                             if (attrGraphData) {
-                                const resType = attrGraphData.types.datasets.find(
-                                    (d, i) => ind >= d.index && checkNextSegment(attrGraphData.types.datasets, i, ind)
-                                );
-                                const resSurface = attrGraphData.surfaces.datasets.find(
-                                    (d, i) =>
-                                        ind >= d.index && checkNextSegment(attrGraphData.surfaces.datasets, i, ind)
-                                );
-                                const hasTypes = resType && resType.label !== UNDEFINED_DATA;
-                                const hasSurfaces = resSurface && resSurface.label !== UNDEFINED_DATA;
-
-                                if (hasTypes || hasSurfaces) {
+                                let resArr = [];
+                                Object.keys(attrGraphData).forEach((k) => {
+                                    const res = attrGraphData[k].datasets.find(
+                                        (d, i) => ind >= d.index && checkNextSegment(attrGraphData[k].datasets, i, ind)
+                                    );
+                                    if (res && res.label !== cap(UNDEFINED_DATA)) {
+                                        resArr.push(res);
+                                    }
+                                });
+                                if (resArr.length > 0) {
                                     res.push('-----------------------');
                                 }
-                                if (hasTypes) {
-                                    res.push(cap(resType.label));
-                                }
-                                if (hasSurfaces) {
-                                    res.push(cap(resSurface.label));
-                                }
+                                resArr.forEach((r) => {
+                                    res.push(cap(r.label));
+                                });
                             }
                             return res;
                         },
