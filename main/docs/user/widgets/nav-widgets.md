@@ -97,14 +97,8 @@ Bearing is the direction to a target outside your vehicle, such as a destination
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">   
-  
 
 ![Trip recording widget](@site/static/img/widgets/bearing_widget.png) ![Trip recording widget](@site/static/img/widgets/bearing_widget_1.png)  
-
-| | |
-|------------|------------|
-| Enable | **Android:** *Menu → Configure screen → Widgets → Left / Right panel → Bearing* |
-| Format | You can change the data display format for angular units: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/>* |
 
 </TabItem>
 
@@ -112,15 +106,16 @@ Bearing is the direction to a target outside your vehicle, such as a destination
 
 ![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_3.png)   
 
-
-| | |
-|------------|------------|
-| Enable | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_magnetic_bearing"/> or <Translate ios="true" ids="map_widget_bearing"/>* |
-| Format | You can change the data display format for angular units: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,angular_units"/>* |  
-
 </TabItem>
 
 </Tabs>  
+
+| | |
+|------------|------------|
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="shared_string_bearing"/>* |
+|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_magnetic_bearing"/> or <Translate ios="true" ids="map_widget_bearing"/>* |
+| Format | **Android:** You can change the data display format for angular units: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/>* |
+|  | **iOS:** You can change the data display format for angular units: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,angular_units"/>* |  
 
 
 ### How it works 
@@ -154,7 +149,7 @@ The widget displays the distance left to the last destination point when followi
 
 | | |
 |------------|------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/>* *→ Left / Right panel →* *<Translate android="true" ids="map_widget_distance_to_destination"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → *<Translate android="true" ids="map_widget_distance_to_destination"/>* |
 |  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Left / Right panel →* <Translate ios="true" ids="map_widget_distance_to_destination"/> |
 | By tapping | Moves the map to the destination point. |    
 
@@ -166,7 +161,7 @@ The widget shows the distance to the first intermediate point along the calculat
 
 | | |
 |------------|------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/>* *→ Left / Right panel →* *<Translate android="true" ids="map_widget_distance_to_intermediate"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → *<Translate android="true" ids="map_widget_distance_to_intermediate"/>* |
 |  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Left / Right panel →* <Translate ios="true" ids="map_widget_distance_to_intermediate"/> |
 | By tapping | **One intermediate point** - move the map to the intermediate point. <br /> **Two or more intermediate points** - opens Destinations list menu. |
 
@@ -192,7 +187,7 @@ The widget shows the *Arrival time* or *Time to go* to the first intermediate po
 
 | | |
 |------------|------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
 |   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
 | By tapping | Changes between *Arrival time* to *Time to go* and the reverse. |  
 
@@ -219,7 +214,7 @@ The widget shows the *Arrival time* or *Time to go* to the last destination poin
 
 | | |
 |------------|------------|
-| Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_time_to_destination"/>* |
+| Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_time_to_destination"/>* |
 |   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_time_to_destination"/>* |
 | By tapping | Changes between *Arrival time* to *Time to go* and the reverse. |  
 
@@ -232,7 +227,7 @@ Widget displays the speed limit on the current road you are traveling on. It wor
 
 | |
 |------------|------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_max_speed"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_max_speed"/>* |
 |  |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_max_speed"/> or <Translate ios="true" ids="map_widget_intermediate_time"/>* |
 | By tapping | No changes |
 
@@ -333,6 +328,7 @@ The Street name widget shows **the current street name** with a straight arrow o
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="map_widget_top_text"/>* |
 |   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="map_widget_top_text"/>* |
 | By tapping | No changes | 
+
 
 
 ## Approach POIs/Favorites

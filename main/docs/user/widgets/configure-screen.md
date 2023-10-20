@@ -49,7 +49,7 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 - **Transparent widgets** - makes transparent the background of the navigation and information widgets.  
 
 
-## Widgets in all panels  
+## Widgets for all panels  
 
 <Tabs groupId="operating-systems">
 
@@ -67,7 +67,7 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 
 </Tabs> 
 
-1. [Route maneuvers](../widgets/nav-widgets.md#next-turns). This set of *navigational* widgets is activated during navigation and display information about the distance to the next maneuver.  
+1. [Route maneuvers](../widgets/nav-widgets.md#next-turns) (*only for Left/Right panel*). This set of *navigational* widgets is activated during navigation and display information about the distance to the next maneuver.  
     3 widgets included: *Next turn*, *Next turn (small)*, *Second next turn*.
 
 2. [Navigation point](../widgets/nav-widgets.md#navigation-points). A set of *navigation widgets* shows the remaining distance to a destination, intermediate point, arrival time to an intermediate point, or travel time for a calculated route.  
@@ -80,13 +80,18 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
     3 widgets included: *Relative bearing*, *Magnetic bearing*, *True bearing*.
 
 5. [Current Speed](../widgets/info-widgets.md#speed). *Informational* widget shows the current speed detected by the GPS sensor. 
+
 6. [Average speed](../widgets/info-widgets.md#average-speed-widget). *Informational* widget shows the average speed of the current trip.
+
 7. [Speed limit](../widgets/nav-widgets.md#speed-limit). A set of *informational* widgets displays the speed limit on the current road you are traveling on.
+
 8. [Altitude](../widgets/info-widgets.md#altitude-widgets). A set of *informational* widgets displays the altitude above sea level for the current geolocation or the altitude above sea level for the current map center.  
     2 widgets included: *Altitude: current location*, *Elevation: map center*.
 
 9. [Current time](../widgets/info-widgets.md#current-time). *Informational* widget displays the current time taken from your device.
+
 10. [Battery level](../widgets/info-widgets.md#battery-level). *Informational* widget shows battery level of your device.
+
 11. [Radius ruler](../widgets/info-widgets.md#radius-ruler). The widget displays on a map the distance between the user's location and the inner point of the distance circles of the [Radius ruler tool](../widgets/radius-ruler.md).
 
 12. [Glide ratio](../widgets/info-widgets.md#glide-ratio). The widgets show the glide ratio to the target and the average glide ratio for the current flight.  
@@ -99,18 +104,17 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 
 15. [GPS info (*Android only*)](../widgets/info-widgets.md#gps-info). *Informational* widget shows the number of satellites the device is currently detecting and using.
 
-16. [Available RAM (*Android only*)](../widgets/info-widgets#available-ram). *Informational* widget shows the amount of available RAM on your device.
-
-17. [Developer widgets (from *Development plugin*)](../widgets/info-widgets.md#developer-widgets). A set of *informational* widgets provides information about zoom level, map rendering speed, map center elevation above sea level, distance to the map center, camera height and tilt and available RAM on your device.  
+16. [Developer widgets (from *Development plugin*)](../widgets/info-widgets.md#developer-widgets). A set of *informational* widgets provides information about zoom level, map rendering speed, map center elevation above sea level, distance to the map center, camera height and tilt and available RAM on your device.  
     5 widgets included: *Map rendering FPS*, *Camera tilt*, *Camera elevation*, *Zoom level*, *Distance from camera to target*, *Available RAM*.
 
-18. [Mapillary (from *Mapillary plugin*)](../widgets/info-widgets.md#mapillary-widget). *Informational* widget provides quick access to Mapillary app to add street images. 
-19. [Parking (from *Parking position plugin*)](../widgets/info-widgets.md#parking-widget). *Informational* widget shows the distance from the center of the screen to the parking location.  
+17. [Mapillary (from *Mapillary plugin*)](../widgets/info-widgets.md#mapillary-widget). *Informational* widget provides quick access to Mapillary app to add street images. 
 
-20. [Wheather (from *Weather plugin*)](../widgets/info-widgets.md#weather-widgets). A set of *informational* widgets displays detailed weather data.    
+18. [Parking (from *Parking position plugin*)](../widgets/info-widgets.md#parking-widget). *Informational* widget shows the distance from the center of the screen to the parking location.  
+
+19. [Wheather (from *Weather plugin*)](../widgets/info-widgets.md#weather-widgets). A set of *informational* widgets displays detailed weather data.    
     5 widgets included: *Temperature*, *Air Pressure*, *Wind*, *Cloud*, *Precipitation*.  
 
-21. [Trip recording (from *Trip recording plugin*)](../widgets/info-widgets.md#trip-recording-widgets). A set of *informational* widgets provides quick access to start and stop track recording.  
+20. [Trip recording (from *Trip recording plugin*)](../widgets/info-widgets.md#trip-recording-widgets). A set of *informational* widgets provides quick access to start and stop track recording.  
     4 widgets included: *Distance*, *Duration*, *Uphill*, *Downhill*.
 
 21. [Audio/video notes (from *Audio/video notes plugin*)](../widgets/info-widgets.md#audiovideo-notes-widget). This set of *informational* widgets provides quick access to start/stop taking an audio, video or photo notes.      
@@ -170,19 +174,39 @@ The mode allows you to add **more than one widgets in a single row** on the top 
     - [Coordinates widgets](../widgets/info-widgets#coordinates-widget)
     - [Lanes](../widgets/nav-widgets#lanes)
     - [Elevation profile (*Android only*)](../widgets/nav-widgets#elevation-widget)
+    - [Route maneuvers](../widgets/nav-widgets.md#next-turns)
 
-- For all rest **Simple** widgets that only display information such as *Widget Name*, *Units of measurement*, *Value*, and *Icon*, there is a function to add several to one panel at once. 
+- For all rest **Simple** widgets that only display information such as *Widget Name*, *Units of measurement*, *Value*, and *Icon*, there is a option to add several to one panel at once. 
 
 
 ### Settings
 
-![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_1_andr.png)   ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)
+
+**Change widget size**  
+Size customization is available for all **Simple** widgets in the Top and Bottom panels. You can choose the size that best suits your needs:
+
+- *Small*. This size is suitable for narrow widget display, saving more screen space for maps and widgets on other panels, especially if you have a small device.
+- *Medium*. This is the default widget size. It provides a balance between information visibility and screen space usage.
+- *Large*. The size is suitable for you if you need larger and more visual information in the widget.  
+
+**Hiding  widget icons**  
+For all widgets belonging to *Simple*, you can hide the icons located on the widget fields. This makes it possible to free up space for useful information. For example, if there are several widgets in the Row, the information is better visible.  
+
+**Individual size for different rows**  
+The size of each widget can be customized individually, which means that you can set different sizes of widgets by changing the size of the row. However, it is important to take into account that if there are several widgets in one row, then changing the size of one of them automatically applies to all widgets in this row and, accordingly, to the size of the row as a whole.  
+
+To change the widget size and icon visibility:
+- Select a widget that you have already added to the panel.  
+- Tap the *Settings* icon on the right side of the widget field.
+- Tap the *Size* setting and select one of the available sizes.
+- Switch to the Off position, in the *Show icon* field.
 
 
 ## Actions panel (Android) / Three-button menu
 
-- **Reset to default** - return to preset settings.
-- **Copy from another profile** - allows you to copy settings made for another profile
+- **Reset to default**. This feature allows you to reset all settings to default values if you want to start over, or use only the preset ones when starting OsmAnd.
+- **Copy from another profile**. This feature allows you to quickly import settings from another profile, select the required ones from the list, and copy. 
 
 
 ## Buttons
@@ -259,6 +283,9 @@ To remove or delete a widget from the application screen, you need to select the
 
 </Tabs> 
 
-For Android, the ability to change profiles is presented as their previously added icons at the top of the screen. For iOS, you need to go to the three dots menu.  
-Note that not all existing profiles are displayed, but only the ones you selected earlier.  
+- For **Android** devices, you can change profiles at the top of the Configure Screen home screen using the profile icons that are available.  
+- If you are using an **iOS** device, tap the profile icon in the top corner of the Configure Screen home screen and select the required profile from the list to activate it.  
+
+**Note**  
+The Switch profile option does not display all existing profiles, but only those that have been switched on in the Settings menu. 
 
