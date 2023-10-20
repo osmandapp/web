@@ -383,7 +383,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                             const ind = dataGraph.findIndex((d) => d[xAxis] === Number(context[0].label));
                             //add slopes
                             if (dataGraph[ind] && context[0].dataset.yAxisID !== 'y1Slope' && showSlope) {
-                                res.push(`Slope: ${data[ind]['Slope'].toFixed(0)} %`);
+                                res.push(`Slope: ${dataGraph[ind]['Slope'].toFixed(0)} %`);
                             }
                             //add road attributes
                             if (attrGraphData) {
