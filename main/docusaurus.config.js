@@ -200,7 +200,7 @@ const config = {
               },
               {
                 label: 'Get OsmAnd Merchandise',
-                href: 'https://www.redbubble.com/people/osmand/works/26426633-osmand',
+                href: 'https://www.redbubble.com/people/osmand/explore?asc=u&page=1&sortOrder=recent',
               },
               {
                 label: 'support@osmand.net',
