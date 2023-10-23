@@ -22,9 +22,12 @@ import {
     HORSE_SCALE,
     ICE_ROAD,
     isSrtmAppeared,
+    PISTE_DIFFICULTY,
+    PISTE_TYPE,
     SLOPE,
     SMOOTHNESS,
     SPEED,
+    STEEPNESS,
     SURFACE,
     TRACK_TYPE,
     UNDEFINED_DATA,
@@ -47,8 +50,20 @@ const GpxGraphProvider = ({ width }) => {
     const [data, setData] = useState(null);
     const [showData, setShowData] = useState(null);
     const [roadPoints, setRoadPoints] = useState(null);
+    const [slopes, setSlopes] = useState(null);
 
-    const attributesTags = [HIGHWAY, SURFACE, SMOOTHNESS, WINTER_ROAD, ICE_ROAD, TRACK_TYPE, HORSE_SCALE];
+    const attributesTags = [
+        HIGHWAY,
+        SURFACE,
+        STEEPNESS,
+        SMOOTHNESS,
+        WINTER_ROAD,
+        ICE_ROAD,
+        TRACK_TYPE,
+        HORSE_SCALE,
+        PISTE_DIFFICULTY,
+        PISTE_TYPE,
+    ];
 
     function hasData() {
         return showData[ELEVATION] || showData[ELEVATION_SRTM] || showData[SPEED] || showData[SLOPE];
@@ -186,13 +201,16 @@ const GpxGraphProvider = ({ width }) => {
                 };
                 result.push(dataTab);
             });
+
+            const newSlopes = getSlopes(result, ctx, sumDist);
+            setSlopes(newSlopes);
             return {
                 res: result,
                 minEle: minEle,
                 maxEle: maxEle,
                 minSpeed: minSpeed,
                 maxSpeed: maxSpeed,
-                slopes: getSlopes(result, ctx, sumDist),
+                slopes: newSlopes,
             };
         }
     }, [data]);
@@ -221,9 +239,9 @@ const GpxGraphProvider = ({ width }) => {
                     segments.push(seg);
                 }
             });
-            return generateDataSets(segments, attributesTags);
+            return generateDataSets(segments, roadPoints, attributesTags, slopes);
         }
-    }, [roadPoints]);
+    }, [roadPoints, slopes]);
 
     function getTags(type, seg) {
         attributesTags.forEach((a) => {

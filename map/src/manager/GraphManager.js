@@ -13,6 +13,11 @@ export const WINTER_ICE_ROAD = 'winter_ice_road';
 export const ROAD_CLASS = 'roadClass';
 export const TRACK_TYPE = 'tracktype';
 export const HORSE_SCALE = 'horse_scale';
+export const STEEPNESS = 'steepness';
+export const PISTE_DIFFICULTY = 'piste:difficulty';
+export const PISTE_DIFFICULTY_NAME = 'piste_difficulty';
+export const PISTE_TYPE = 'piste:type';
+export const PISTE_TYPE_NAME = 'piste_type';
 
 //graph
 export const UNDEFINED_DATA = 'undefined';
@@ -22,6 +27,9 @@ export const SPEED = 'Speed';
 export const DISTANCE = 'Distance';
 export const SLOPE = 'Slope';
 export const DEFAULT_STYLE = 'default.render.xml';
+export const SKI_STYLE = 'skimap.render.xml';
+
+export const SLOPE_STEP = 10; //m
 
 const data_parser = {
     [ROAD_CLASS]: parse(styles, ROAD_CLASS),
@@ -30,41 +38,35 @@ const data_parser = {
     [WINTER_ICE_ROAD]: parse(styles, WINTER_ICE_ROAD),
     [TRACK_TYPE]: parse(styles, TRACK_TYPE),
     [HORSE_SCALE]: parse(styles, HORSE_SCALE),
+    [STEEPNESS]: parse(styles, STEEPNESS),
+    [PISTE_DIFFICULTY_NAME]: parse(styles, PISTE_DIFFICULTY_NAME, SKI_STYLE),
+    [PISTE_TYPE_NAME]: parse(styles, PISTE_TYPE_NAME, SKI_STYLE),
+};
+
+const graphsNames = {
+    [HIGHWAY]: [ROAD_CLASS],
+    [SURFACE]: [SURFACE],
+    [SMOOTHNESS]: [SMOOTHNESS],
+    [WINTER_ROAD]: [WINTER_ICE_ROAD],
+    [ICE_ROAD]: [WINTER_ICE_ROAD],
+    [TRACK_TYPE]: [TRACK_TYPE],
+    [HORSE_SCALE]: [HORSE_SCALE],
+    [STEEPNESS]: [STEEPNESS],
+    [PISTE_DIFFICULTY]: [PISTE_DIFFICULTY_NAME],
+    [PISTE_TYPE]: [PISTE_TYPE_NAME],
 };
 
 function parse(styles, attribute, style = DEFAULT_STYLE) {
     const types = styles[style][`routeInfo_${attribute}`];
     if (types && types.length > 0) {
         if (types[0].attrStringValue && types[0].attrColorValue) {
-            if (types[0].value) {
-                return parse2Type(styles, attribute, style);
-            } else {
-                return parse1Type(styles, attribute, style);
-            }
+            return parseType(styles, attribute, style);
         }
     }
     return null;
 }
 
-function parse1Type(styles, tag, style = DEFAULT_STYLE) {
-    const types = styles[style][`routeInfo_${tag}`];
-    let res = [];
-    Object.values(types).map((data) => {
-        const value = data.attrStringValue === `${tag}_undefined` ? UNDEFINED_DATA : data.attrStringValue;
-        let name = andValues[`rendering_attr_${value}_name`];
-        const attr = value && value.replace(`${tag}_`, '');
-        if (!name) {
-            name = prepareType(attr);
-        }
-        res[attr] = {
-            name: name,
-            color: Utils.hexToArgb(data.attrColorValue),
-        };
-    });
-    return res;
-}
-
-function parse2Type(styles, tag, style = DEFAULT_STYLE) {
+function parseType(styles, tag, style = DEFAULT_STYLE) {
     const types = styles[style][`routeInfo_${tag}`];
     tag = tag === ROAD_CLASS ? 'highway_class' : tag;
     let res = [];
@@ -75,7 +77,7 @@ function parse2Type(styles, tag, style = DEFAULT_STYLE) {
         if (!name) {
             name = prepareType(attr);
         }
-        res[data.value] = {
+        res[data.value ? data.value : attr] = {
             name: name,
             color: Utils.hexToArgb(data.attrColorValue),
         };
@@ -94,25 +96,18 @@ export function prepareType(type) {
     return type;
 }
 
-export function generateDataSets(data, attributesTags) {
+export function generateDataSets(data, roadPoints, attributesTags, slopes) {
     let graphAttrArr = [];
     let res = {};
 
     attributesTags.forEach((a) => {
-        if (a === HIGHWAY) {
-            graphAttrArr.push({
-                graphName: ROAD_CLASS,
-                tagNames: [a],
-                datasets: [],
-                legend: {},
-            });
-        } else if (a === WINTER_ROAD || a === ICE_ROAD) {
+        if (a === WINTER_ROAD || a === ICE_ROAD) {
             const ind = graphAttrArr.findIndex((a) => a.graphName === WINTER_ICE_ROAD);
             if (ind > 0) {
                 graphAttrArr[ind].tagNames.push(a);
             } else {
                 graphAttrArr.push({
-                    graphName: WINTER_ICE_ROAD,
+                    graphName: graphsNames[a],
                     tagNames: [a],
                     datasets: [],
                     legend: {},
@@ -120,17 +115,25 @@ export function generateDataSets(data, attributesTags) {
             }
         } else {
             graphAttrArr.push({
-                graphName: a,
+                graphName: graphsNames[a],
                 tagNames: [a],
                 datasets: [],
                 legend: {},
             });
         }
     });
-
+    if (slopes) {
+        addSteepnessDataSet(
+            graphAttrArr.find((a) => a.graphName[0] === STEEPNESS),
+            slopes,
+            roadPoints
+        );
+    }
     data.forEach((seg) => {
         graphAttrArr.forEach((tag) => {
-            addDataSet(tag, seg);
+            if (tag.graphName[0] !== STEEPNESS) {
+                addDataSet(tag, seg);
+            }
         });
     });
     graphAttrArr.forEach((tag) => {
@@ -156,7 +159,7 @@ export function cap(s) {
 
 export function getSlopes(result, ctx, sumDist) {
     const totalDistance = ctx?.selectedGpxFile?.analysis?.totalDistance || sumDist;
-    let STEP = 5;
+    let STEP = SLOPE_STEP;
     let l = 10;
     while (l > 0 && totalDistance / STEP > 10000) {
         STEP = Math.max(STEP, totalDistance / (result.length * l--));
@@ -270,6 +273,114 @@ function smoothSlopes(data, alpha) {
         previousValue = smoothedSlope;
     }
     return smoothedData;
+}
+
+function addSteepnessDataSet(tag, slopes, roadPoints) {
+    const data = createRangeArr(data_parser[STEEPNESS]);
+    Object.values(slopes).forEach((slope) => {
+        const currentRange = Object.entries(data).find((arr) => {
+            const d = arr[1];
+            if (slope.slope) {
+                let s = Number(slope.slope.toFixed(0));
+                return s >= d.range[0] && s <= d.range[1];
+            }
+        });
+        if (currentRange) {
+            const type = currentRange[1].name;
+            let res;
+            if (!_.isEmpty(tag.datasets)) {
+                const prev = tag.datasets[tag.datasets.length - 1];
+                if (prev.label === type) {
+                    tag.datasets.pop();
+                    if (tag.legend[type]) {
+                        tag.legend[type].distance += SLOPE_STEP;
+                    } else {
+                        tag.legend[type] = { distance: SLOPE_STEP };
+                    }
+                    const dist = SLOPE_STEP / 1000;
+                    prev.totalDist = Number(prev.totalDist) + dist;
+                    prev.data = [Number(prev.data) + dist];
+                    res = prev;
+                } else {
+                    res = createSteepnessDataSet(tag, type, roadPoints, slope);
+                }
+            } else {
+                res = createSteepnessDataSet(tag, type, roadPoints, slope);
+            }
+            if (res) {
+                tag.datasets.push(res);
+            }
+        }
+    });
+    tag = prepareLegend(tag);
+}
+
+function prepareLegend(tag) {
+    tag.legend = _.mapKeys(tag.legend, function (value, key) {
+        let range = prepareRange(key, '_');
+        return `${range[0]}% ➞ ${range[1]}%`;
+    });
+    return tag;
+}
+
+function createSteepnessDataSet(tag, type, roadPoints, slope) {
+    let currentColor;
+    if (tag.legend[type]) {
+        tag.legend[type].distance += SLOPE_STEP;
+        currentColor = tag.legend[type].color;
+    } else {
+        currentColor = getColor(type, tag.legend, tag.graphName);
+        tag.legend[type] = {
+            color: currentColor,
+            distance: SLOPE_STEP,
+        };
+    }
+    const dist = SLOPE_STEP / 1000;
+    const totalDist = !_.isEmpty(tag.datasets) ? Number(tag.datasets[tag.datasets.length - 1].totalDist) + dist : dist;
+    const ind = roadPoints.findIndex((p, i) => {
+        return (
+            slope.dist >= p.distanceTotal / 1000 &&
+            i + 1 < roadPoints.length - 1 &&
+            slope.dist <= roadPoints[i + 1].distanceTotal / 1000
+        );
+    });
+
+    return {
+        label: type,
+        type: 'bar',
+        backgroundColor: currentColor,
+        borderWidth: -1,
+        totalDist: totalDist,
+        data: [dist],
+        barPercentage: 1.0,
+        categoryPercentage: 1.0,
+        index: ind,
+        size: undefined,
+    };
+}
+
+function createRangeArr(data) {
+    let res = [];
+    Object.entries(data).forEach((d) => {
+        res.push({
+            name: d[0],
+            range: prepareRange(d[1].name, ' '),
+        });
+    });
+    return res;
+}
+
+function prepareRange(data, delimiter) {
+    const range = data.split(delimiter);
+    let r1 = Number(range[0]);
+    let r2 = Number(range[1]);
+    if (r1 % 2 !== 0) {
+        r1 += -1;
+    }
+    if (r1 !== 100 && r2 !== 100) {
+        r2 = r1 + 4;
+    }
+    return [r1, r2];
 }
 
 function addDataSet(tag, seg) {

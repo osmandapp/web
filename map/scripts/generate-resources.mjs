@@ -4,27 +4,27 @@ import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 
 const ALLOW_STALE_FILES = true; // do not fail on invalid fresh json but valid old file (default)
 
-// 1. OSRM routing providers (file copy + validate)
-generate({
-    file: 'src/generated/online-routing-providers.json',
-    json: cat('../main/static/online-routing-providers.json'),
-    validate: (json) => json.providers[0].type === 'osrm',
-});
-
-// 2. POI icons array based on list of svg-files
-generate({
-    file: 'src/generated/poiicons.json',
-    json: ls('public/images/poi-icons-svg'),
-    validate: (json) => json.some((x) => x === 'mx_service.svg'),
-});
-
-// 3. Android Values (filter from file + validate)
-generate({
-    file: 'src/generated/android-values.json',
-    json: cat('../main/src/translations/android-values.json'),
-    filter: filterAndroidValues, // keys -> rendering_attr_*
-    validate: (json) => json['rendering_attr_highway_class_track_name'] === 'Track',
-});
+// // 1. OSRM routing providers (file copy + validate)
+// generate({
+//     file: 'src/generated/online-routing-providers.json',
+//     json: cat('../main/static/online-routing-providers.json'),
+//     validate: (json) => json.providers[0].type === 'osrm',
+// });
+//
+// // 2. POI icons array based on list of svg-files
+// generate({
+//     file: 'src/generated/poiicons.json',
+//     json: ls('public/images/poi-icons-svg'),
+//     validate: (json) => json.some((x) => x === 'mx_service.svg'),
+// });
+//
+// // 3. Android Values (filter from file + validate)
+// generate({
+//     file: 'src/generated/android-values.json',
+//     json: cat('../main/src/translations/android-values.json'),
+//     filter: filterAndroidValues, // keys -> rendering_attr_*
+//     validate: (json) => json['rendering_attr_highway_class_track_name'] === 'Track',
+// });
 
 // 4. Parsed Road-Styles (TODO call external Java-util instead of URL get)
 generate({
@@ -43,9 +43,18 @@ function filterAndroidValues(json) {
 }
 
 function getUrlStyles() {
-    let url = new URL('https://osmand.net/gpx/get-styles');
+    let url = new URL('http://localhost:8080/gpx/get-styles');
     const params = {
-        styles: ['default.render.xml'],
+        styles: [
+            'default.render.xml',
+            'skimap.render.xml',
+            'topo.render.xml',
+            'nautical.render.xml',
+            'regions.render.xml',
+            'offroad.render.xml',
+            'mapnik.render.xml',
+            'desert.render.xml',
+        ],
         attributes: [
             'routeInfo_roadClass',
             'routeInfo_surface',
@@ -54,6 +63,8 @@ function getUrlStyles() {
             'routeInfo_winter_ice_road',
             'routeInfo_tracktype',
             'routeInfo_horse_scale',
+            'routeInfo_piste_difficulty',
+            'routeInfo_piste_type',
         ],
     };
     url.search = new URLSearchParams(params).toString();

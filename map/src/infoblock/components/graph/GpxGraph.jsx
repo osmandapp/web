@@ -10,7 +10,7 @@ export default function GpxGraph({ mainData, attrGraphData, showData, width }) {
     function isEmptyAttrData(attrName) {
         return (
             attrGraphData[attrName].datasets.length < 2 &&
-            attrGraphData[attrName].datasets[0].label === cap(UNDEFINED_DATA)
+            attrGraphData[attrName].datasets[0]?.label === cap(UNDEFINED_DATA)
         );
     }
 
