@@ -53,6 +53,9 @@ sidebar_position: 6
   ```
   https://cmake.org/download/
   ```
+
+  Solution 4: If you've got error like this: ```Failed to configure 'qtbase-ios' for 'ios.simulator.clang.static', aborting...```. Go to folded ```core/external/qtbase-ios/``` and delete all folders starting with ```upstream```.  And run `$ ./prepare.sh` again.
+  
   
 7. Open `osmand.xcworkspace` in Xcode
 8. First build.
@@ -70,7 +73,6 @@ sidebar_position: 6
   - Project Navigator -> OsmAnd_projects -> OsmAnd_projects (in Project/Targets list) -> Build settings -> All -> Architectures -> Excluded Architectures -> Debug
   - Add string field of type ```Any IOS Simulator SDK``` with value ```arm64```. (you will need to add it after each prepare.sh run)
   - Build project. In case of errors, delete folders ```Baked``` and ```Binaries``` and run ```prepare.sh``` once again.
-    
 
 11. Debug Qt (optional). If you want to see Qt values in debug mode run this:
   ```
