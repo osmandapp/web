@@ -63,7 +63,7 @@
         "postinstall": "patch-package",
         "generate-resources": "node scripts/generate-resources.mjs",
         "lint": "eslint src/**/*.js src/**/*.jsx src/**/*.mjs scripts/*.mjs",
-        "format": "prettier --write './**/*.{js,jsx,mjs,ts,tsx,css,json}' --config ./.prettierrc"
+        "format": "prettier --write './**/*.{js,jsx,mjs,ts,tsx,css}' --config ./.prettierrc"
     },
     "browserslist": {
         "production": [

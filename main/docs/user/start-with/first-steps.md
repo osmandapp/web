@@ -10,6 +10,7 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## Overview
@@ -405,7 +406,6 @@ Before it you might need to do the following, otherwise, OsmAnd will work in the
 
 </Tabs>
 
-
 ## App shortcuts
 
 [App shortcuts](https://support.google.com/android/answer/9450271) are available for the OsmAnd icon. Just long tap the OsmAnd icon on your device screen to open App shortcuts menu.
@@ -415,10 +415,23 @@ Tapping to the action icon allows starting this action immediately.
 
 ![Shortcuts](@site/static/img/shortcuts/shortcuts1.png) ![Shortcuts](@site/static/img/shortcuts/shortcuts2.png)
 
+## Offline Help
+
+<InfoAndroidOnly />
+
+In Help menu you can find articles from our site [www.osmand.net/docs](https://osmand.net/docs/intro/). After initial download (Internet connection required), help articles become available offline.  
+The first subsection of *Offline Help* groups the  **Most viewed** (or popular) articles among our users. **User guide** and **Troubleshooting** sections completely replicate the structure of the site.  
+In Help menu you can also find useful links to OsmAnd social networks, information about the version of your app, release notes, and support contacts. Through Help you can also send [logcat and crash logs](../troubleshooting/crash-logs.md#crash-and-logcat-logs).  
+
+![Offline help Android screenshot](@site/static/img/settings/offline_help_andr.png)
+
+:::note
+To clear Offline help cash go to the Settings app on your Android device. Scroll down and select *Apps*, find OsmAnd and tap on it. Select *Storage* and then tap on *Clear cache*.
+:::
 
 ## Privacy
 
-It is an [open source](https://github.com/osmandapp/osmand), ads-free / tracker-free privacy focused application. In order to preserve maximum privacy, OsmAnd offers Offline maps as a first place, so no interaction, geo information is leaked from your device. We are very attentive to what data is collected and what data is transferred by network, you can read more in our [Privacy policy](https://osmand.net/help-online/privacy-policy). 
+It is an [open source](https://github.com/osmandapp/osmand), ads-free / tracker-free privacy focused application. In order to preserve maximum privacy, OsmAnd offers Offline maps as a first place, so no interaction, geo information is leaked from your device. We are very attentive to what data is collected and what data is transferred by network, you can read more in our [Privacy policy](https://osmand.net/help-online/privacy-policy).  
 
 
 ## Permissions

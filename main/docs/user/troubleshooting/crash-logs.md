@@ -38,7 +38,7 @@ Be careful when sending logcat log files, while they may contain some sort of pr
 2. In the pop-up menu, choose Gmail or your mailing app. The letter will be generated automatically.
 3. Tap send button.
 
-![Send crash logs from Android 1](@site/static/img/troubleshooting/send_logs_andr_1.png)  ![Send crash logs from Android 2](@site/static/img/troubleshooting/send_logs_andr_2.png)
+![Send crash logs from Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Send crash logs from Android 2](@site/static/img/troubleshooting/send_logs_andr_2.png)
 
 ### Send logs from iOS devices
 
