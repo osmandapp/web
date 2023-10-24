@@ -6,7 +6,7 @@ import React, { useContext, useMemo, useRef, useState } from 'react';
 import annotationsPlugin from 'chartjs-plugin-annotation';
 import AppContext from '../../../context/AppContext';
 import { ExpandLess, ExpandMore, RadioButtonUnchecked } from '@mui/icons-material';
-import { cap, prepareType } from '../../../manager/GraphManager';
+import { cap, formattingSteepnessLabel, prepareType } from '../../../manager/GraphManager';
 import _ from 'lodash';
 
 ChartJS.register(Tooltip, Legend, BarElement, annotationsPlugin);
@@ -43,6 +43,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                         label: (context) => {
                             let label = context.dataset?.label || '';
                             if (label) {
+                                label = formattingSteepnessLabel(label);
                                 return `${cap(label)}: ${Number(context.dataset.data).toFixed(1)} km`;
                             }
                         },

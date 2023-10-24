@@ -10,6 +10,7 @@ import {
     ELEVATION_SRTM,
     SLOPE,
     SPEED,
+    STEEPNESS,
     UNDEFINED_DATA,
 } from '../../../manager/GraphManager';
 import TracksManager from '../../../manager/TracksManager';
@@ -392,7 +393,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                                     const res = attrGraphData[k].datasets.find(
                                         (d, i) => ind >= d.index && checkNextSegment(attrGraphData[k].datasets, i, ind)
                                     );
-                                    if (res && res.label !== cap(UNDEFINED_DATA)) {
+                                    if (res && res.label !== cap(UNDEFINED_DATA) && k !== STEEPNESS) {
                                         resArr.push(res);
                                     }
                                 });

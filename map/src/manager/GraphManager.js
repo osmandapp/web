@@ -312,15 +312,18 @@ function addSteepnessDataSet(tag, slopes, roadPoints) {
             }
         }
     });
-    tag = prepareLegend(tag);
+    tag.legend = prepareLegend(tag.legend);
 }
 
-function prepareLegend(tag) {
-    tag.legend = _.mapKeys(tag.legend, function (value, key) {
-        let range = prepareRange(key, '_');
-        return `${range[0]}% ➞ ${range[1]}%`;
+function prepareLegend(legend) {
+    return _.mapKeys(legend, function (value, key) {
+        return formattingSteepnessLabel(key);
     });
-    return tag;
+}
+
+export function formattingSteepnessLabel(name) {
+    let range = prepareRange(name, '_');
+    return `${range[0]}% ➞ ${range[1]}%`;
 }
 
 function createSteepnessDataSet(tag, type, roadPoints, slope) {
