@@ -14,6 +14,10 @@ export default function GpxGraph({ mainData, attrGraphData, showData, width }) {
         );
     }
 
+    function isBigData(attrName) {
+        return attrGraphData[attrName].datasets.length > 500;
+    }
+
     return (
         <>
             <MainGraph
@@ -26,7 +30,8 @@ export default function GpxGraph({ mainData, attrGraphData, showData, width }) {
             {attrGraphData &&
                 Object.keys(attrGraphData).map(
                     (attrName) =>
-                        !isEmptyAttrData(attrName) && (
+                        !isEmptyAttrData(attrName) &&
+                        !isBigData(attrName) && (
                             <RoadAttributesGraph
                                 key={attrName}
                                 name={andValues[`routeInfo_${attrName}_name`]}
