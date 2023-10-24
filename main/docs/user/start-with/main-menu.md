@@ -51,7 +51,7 @@ The [Main menu](../widgets/map-buttons.md#main-menu) icon '&#8801;' is located o
 * [Configure screen](../widgets/configure-screen.md) is a menu that allows configuring displaying widgets on the Map.
 * [Plugins](../plugins/index.md) is a list of additional functionality and advanced settings.
 * [Settings](../personal/global-settings.md) is a menu that allows configuring main app parameters.
-- Help is a menu that provides quick access to a detailed explanation of the feature,  information about the app version and allows to fast contact the development team.
+- [Help](./first-steps.md#offline-help) provides quick access to the user guide, information about the app version and allows to quickly contact the development team.
 
 ### Active Profile (Android)
 
