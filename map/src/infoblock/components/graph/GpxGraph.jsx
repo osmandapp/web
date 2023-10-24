@@ -23,18 +23,19 @@ export default function GpxGraph({ mainData, attrGraphData, showData, width }) {
                 setSelectedPoint={setSelectedPoint}
                 width={width}
             />
-            {Object.keys(attrGraphData).map(
-                (attrName) =>
-                    !isEmptyAttrData(attrName) && (
-                        <RoadAttributesGraph
-                            key={attrName}
-                            name={andValues[`routeInfo_${attrName}_name`]}
-                            data={attrGraphData[attrName]}
-                            width={width}
-                            selectedPoint={selectedPoint}
-                        />
-                    )
-            )}
+            {attrGraphData &&
+                Object.keys(attrGraphData).map(
+                    (attrName) =>
+                        !isEmptyAttrData(attrName) && (
+                            <RoadAttributesGraph
+                                key={attrName}
+                                name={andValues[`routeInfo_${attrName}_name`]}
+                                data={attrGraphData[attrName]}
+                                width={width}
+                                selectedPoint={selectedPoint}
+                            />
+                        )
+                )}
         </>
     );
 }
