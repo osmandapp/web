@@ -6,7 +6,7 @@ import React, { useContext, useMemo, useRef, useState } from 'react';
 import annotationsPlugin from 'chartjs-plugin-annotation';
 import AppContext from '../../../context/AppContext';
 import { ExpandLess, ExpandMore, RadioButtonUnchecked } from '@mui/icons-material';
-import { cap, prepareType } from '../../../manager/GraphManager';
+import { cap, formattingSteepnessLabel, prepareType, STEEPNESS } from '../../../manager/GraphManager';
 import _ from 'lodash';
 
 ChartJS.register(Tooltip, Legend, BarElement, annotationsPlugin);
@@ -43,6 +43,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                         label: (context) => {
                             let label = context.dataset?.label || '';
                             if (label) {
+                                label = name === cap(STEEPNESS) && formattingSteepnessLabel(label);
                                 return `${cap(label)}: ${Number(context.dataset.data).toFixed(1)} km`;
                             }
                         },
@@ -127,15 +128,24 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                     setPrevInd(selectedSegment.index);
                     const startDist = Number(selectedSegment?.totalDist) - Number(selectedSegment?.data[0]);
                     const endDist = Number(selectedSegment?.totalDist);
+                    const lastInd = selectedSegment.size
+                        ? selectedSegment.index + selectedSegment.size
+                        : getIndByPrevDataSet(selected);
                     ctx.setTrackRange({
                         dist: [startDist, endDist],
-                        range: [selectedSegment.index, selectedSegment.index + selectedSegment.size],
+                        range: [selectedSegment.index, lastInd],
                     });
                 }
             }
         } else {
             hideSelectedPointSegment();
         }
+    }
+
+    function getIndByPrevDataSet(selected) {
+        return selected.datasetIndex + 1 <= data.datasets.length - 1
+            ? data.datasets[selected.datasetIndex + 1].index
+            : data.datasets[data.datasets.length - 1].index;
     }
 
     function hideSelectedPointSegment() {
