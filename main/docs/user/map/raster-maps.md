@@ -76,9 +76,6 @@ be more visible, especially useful for satellite imagery.
 
 ## Select Raster maps
 
-Raster maps can be used as map sources in OsmAnd (vector maps that work offline are enabled by default).  
-You can add one or two online tiles to the base layer maps, and all three will appear on the screen. For example, you can open OsmAnd's base vector maps offline, then add a satellite view as an overlay, and place a map of bike paths below the base map as an underlay. You can set the transparency of the base map for your layer, and you can choose whether or not to display the transparency slider on the main screen.  
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
@@ -94,6 +91,13 @@ You can add one or two online tiles to the base layer maps, and all three will a
 </TabItem>
 
 </Tabs>
+
+Raster maps can be used as map sources in OsmAnd (vector maps that work offline are enabled by default).  
+
+You can add one or two online tiles to the base layer maps, and all three will appear on the screen.  
+For example, you can open OsmAnd's base vector maps offline, then add a satellite view as an overlay, and place a map of bike paths below the base map as an underlay.  
+
+You can set the transparency of the base map for your layer, and you can choose whether or not to display the transparency slider on the main screen.  
 
 
 ### Main  
@@ -195,11 +199,33 @@ You can choose a map style from the list or [add](#add-new-online-raster-map-sou
 
 ## Hillshade / Slope
 
-Hillshade / Slope are raster offline maps that are displayed as a special (terrain) map layer (2nd overlay). These maps are created from 1 source (global planet file) and divided into regions, but it is not needed to switch between maps because they are merged automatically. You can only select the Hillshade or the Slope layer (though you could combine them both if you use [as underlay or overlay](#select-map-as-main--underlay--overlay-layer)).
-
 ![Terrain layers](@site/static/img/plugins/online-maps/terrain_two_layers.png)
 
-To download and install Hillshade / Slope Maps, you need to [purchase](../purchases/index.md) / enable the [Topography plugin](../plugins/contour-lines.md).  
+**Hillshade** and **Slope** are offline raster maps that show terrain relief. They are displayed as a special map layer, a second overlay on the base map. The maps contain additional elevation information to help you more accurately understand the slope and shadows of the landscape. *Hillshade* and *Slope* information is based on data from a single source, the *Global planet file*, and is divided into regions.  
+
+You don't need to switch between Hillshade and Slope layers, as they are merged automatically. You can select only one of these layers to display on the map, but you also have the option to combine them both [as a underlay or overlay](#select-raster-maps) on other layers for a more visual representation of the terrain.
+
+To get started with Hillshade and Slope you need to:
+
+1. Purchase the Topography plugin: 
+    - [Android purchases](../purchases/android.md)
+    - [iOS purchases](../purchases/ios.md)
+2. Enable the [Topography plugin](../plugins/contour-lines.md):  
+    *Menu → Plugins → ︙ → Enable*
+3. Select your required region, and download **Terrain map (3D)**.
+4. The download process may take some time, depending on the size of the selected region and the speed of your Internet connection.
+
+
+### Hillshade and 3D Relief
+
+![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png)  ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png)
+
+**Hillshade** is a raster map that displays terrain using shadows, creating a visual representation of the slope and shape of the earth's surface.  
+**3D Relief** is a feature that adds three-dimensional effects to the map.  
+
+If you **disable** *Hillshade* and **enable** *3D Relief*, relief shadows will still be visible because *Hillshade* and *3D Relief* are two different ways of visualizing a map. *Hillshade* creates shadows based on the terrain and adds them to the map, while *3D Relief* models 3D elements to show the depth and shape of the terrain, and the shadows are part of the visualization. These features can work in parallel, and disabling *Hillshade* does not affect how 3D effects are displayed.  
+
+When **Hillshade** is **enabled**, an image with relief shadows appears more detailed, darker, and more stepped than a *3D Relief* image. The explanation is that *Hillshade* emphasizes the gradients and contrasts of the terrain, creating a sharper and more detailed image. Whereas *3D Relief* gives the map a more plastic and smooth look, which can soften the terrain and remove some detail.  
 
 
 ### Configure display options
@@ -222,6 +248,8 @@ To download and install Hillshade / Slope Maps, you need to [purchase](../purcha
 
 ![Terrain layers](@site/static/img/plugins/online-maps/terrain_layers.png)
 
+You can customize the zoom level to display and the transparency for Hillshade and Slope. You can read more in the [Topography article](../plugins/contour-lines.md#configure-map-view).
+
 
 ## 3D Relief
 
@@ -230,7 +258,8 @@ To download and install Hillshade / Slope Maps, you need to [purchase](../purcha
 The **3D Relief** feature is a mapping technology that allows the visualization of terrain on a map using three-dimensional models. This feature adds elevation information to a normal two-dimensional map, which creates a 3D and depth effect and allows you to better visualize the terrain.  
 
 *To start using 3D Relief*:  
-You need to purchase [OsmAnd Pro](../purchases/index.md), enable the [Topography plugin](../plugins/contour-lines.md), and switch on the [*3D Relief*](../plugins/contour-lines.md#3d-relief) item in *Menu →  Configure map*.
+You need to purchase [OsmAnd+, OsmAnd Maps+, or OsmAnd Pro purchase plan](../plugins/index.md#purchase), enable the [Topography plugin](../plugins/contour-lines.md), and switch on the [*3D Relief*](../plugins/contour-lines.md#3d-relief) item in *Menu →  Configure map*.
+
 
 *How the 3D Relief feature works*:  
 *1.* To create a 3D relief, OsmAnd receives information about the terrain elevation.  

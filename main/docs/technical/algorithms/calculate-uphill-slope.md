@@ -13,6 +13,7 @@ So in the end **uphill** should be a parameter taken into account by Elevation b
 
 Main goal to calculate **slope** is to have visual indication which steep roads needs to be avoided.
 
+
 ## Uphill / downhill 
 
 There are lots of issues to calculate **uphill** cause there is no standard and cause it depends on way of transportation and 
@@ -20,14 +21,16 @@ many other parameters, it's hard to provide reasonable control to user so it's n
 but there is no program that has a golden standard. 
 
 OsmAnd uses 3 steps algorithm: 
-- Filter noisy data 
-- Find local extremums (minimums and maximums)
-- Calculate sum of differences between min and max
+- Filter noisy data. 
+- Find local extremums (minimums and maximums).
+- Calculate sum of differences between min and max.
 
 Some tracks contains lots of noisy data which needs to be filtered first. For now we apply filtering to all tracks but prepared tracks such as built by 
 Plan Route tool, Navigation tool or after SRTM correction, filtering shouldn't have any effect.
 
+
 ### Filter 70% slope
+
 Filtering is based on finding **extreme points** that are significantly higher or lower then 1 neighbor point on the left and 1 neighbor point on the right on the graph. 
 Those **extreme points** are excluded from further caclulation. The ```threshold``` is [70% slope](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L11) -  [code](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationApproximator.java#L72).
 
@@ -45,10 +48,10 @@ Points that represent local hills ```/\``` are filtered, it leads to an issue th
 
 **Example 3**. Elevation - [5, 2, 3, 4, 5] -> [5, 3, 4, 5].
 
+
 ### Finding extremums
 
-To find extremums [Rames-Dougals-Peucker](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) algorithm is used. It's not absolutely good to find exactly extremums on the random graph
-but in altitude calculation it avoids lots of random small peaks that could happen during 1 long uphill and some unnoticeably short downhills in between.
+To find extremums [Rames-Dougals-Peucker](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) algorithm is used. It's not absolutely good to find exactly extremums on the random graph, but in altitude calculation it avoids lots of random small peaks that could happen during 1 long uphill and some unnoticeably short downhills in between.
 
 The main purpose of the algorithm is to find minimum number of straight lines that could represent the altitude graph. The ```threshold``` is **[7 meters](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationDiffsCalculator.java#L13)**. So all peaks higher than 7 meters difference will be detected on a flat surfaces and won't be detected if they are less.
 
@@ -66,8 +69,14 @@ For example, if you have a simple track that goes up and down, you have only 1 m
   Start ele diff = <start elevation> - <Extremum elevation>    : 
   End   ele diff = <Extremum elevation> - <end elevation>      : if positive - **uphill**, if negative - **downhill**
   ```
-If *Start ele diff* > 0 - **uphill** = *start ele diff**, **downhill** = *end ele diff**.
-If *End ele diff* > 0 - **uphill** = *end ele diff**, **downhill** = *start ele diff**
+
+1. If *Start ele diff* > 0
+  - **uphill** = *start ele diff*  
+  - **downhill** = *end ele diff*  
+
+2. If *End ele diff* > 0
+  - **uphill** = *end ele diff*   
+  - **downhill** = *start ele diff*  
 
 
 More examples will be added.
@@ -76,10 +85,11 @@ More examples will be added.
 ## Altitude SRTM correction
 
 There are 2 alternatives that's possible to use in OsmAnd to get altitude correction. 
-1. Open track in OsmAnd Android and find -> Edit Track -> Options -> Altiude Correction 
-1.1 **Online**  will process track via OsmAnd server and data
-1.2 **Offline**  will process track on device if 3D geotifs files are downloaded
-2. Open website https://osmand.net/map and upload track and see SRTM elevation
+1. Open track in OsmAnd Android and find, *Edit Track → Options → Altiude Correction* 
+1.1 **Online**  will process track via OsmAnd server and data.
+1.2 **Offline**  will process track on device if 3D geotifs files are downloaded.
+2. Open website https://osmand.net/map and upload track and see SRTM elevation.
+
 
 ## Slope
 
