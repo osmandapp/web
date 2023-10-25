@@ -771,7 +771,7 @@ function getEle(point, elevation, array) {
     let ele = point[elevation];
     let ind = array.indexOf(point);
     //value smoothing
-    while (isNaN(ele) || ele === NAN_MARKER || !ele) {
+    while (isNaN(ele) || ele === NAN_MARKER || ele === null || ele === undefined) {
         if (array && ind !== 0) {
             let prevP = array[ind - 1];
             if (prevP && prevP[elevation] && !isNaN(prevP[elevation]) && prevP[elevation] !== NAN_MARKER) {
