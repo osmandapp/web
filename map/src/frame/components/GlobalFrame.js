@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Box, Alert } from '@mui/material';
 import OsmAndMap from '../../map/components/OsmAndMap';
 import MainMenu from '../../menu/MainMenu';
@@ -19,6 +19,10 @@ const GlobalFrame = () => {
     const MAIN_MENU_MIN_SIZE = '64px';
     const MAIN_MENU_SIZE = openMainMenu ? '240px' : MAIN_MENU_MIN_SIZE;
     const MENU_INFO_SIZE = menuInfo ? '424px' : '0px';
+
+    useEffect(() => {
+        ctx.setInfoBlockWidth(MENU_INFO_SIZE);
+    });
 
     return (
         <Box sx={{ display: 'flex' }}>
