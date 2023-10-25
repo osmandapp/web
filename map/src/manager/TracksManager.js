@@ -44,6 +44,7 @@ async function loadTracks(setLoading) {
             try {
                 const json = await decompressToJSON(localStorage.getItem(name));
                 if (json) {
+                    fixNanEleWpt(json);
                     localTracks[ind] = json;
                 } else {
                     console.error('loadTracks empty track: ' + name);
@@ -61,6 +62,17 @@ async function loadTracks(setLoading) {
 
     setLoading(false);
     return localTracks;
+}
+
+function fixNanEleWpt(obj) {
+    obj.wpts?.forEach((wpt) => {
+        if (wpt?.ele === NAN_MARKER) {
+            wpt.ele = null;
+        }
+        if (wpt?.ext?.ele === NAN_MARKER) {
+            wpt.ext.ele = null;
+        }
+    });
 }
 
 function fixLocalTracks(localTracks) {
@@ -759,10 +771,10 @@ function getEle(point, elevation, array) {
     let ele = point[elevation];
     let ind = array.indexOf(point);
     //value smoothing
-    while (isNaN(ele) || ele === NAN_MARKER) {
+    while (isNaN(ele) || ele === NAN_MARKER || !ele) {
         if (array && ind !== 0) {
             let prevP = array[ind - 1];
-            if (prevP && !isNaN(prevP[elevation]) && prevP[elevation] !== NAN_MARKER) {
+            if (prevP && prevP[elevation] && !isNaN(prevP[elevation]) && prevP[elevation] !== NAN_MARKER) {
                 return Number(prevP[elevation]);
             } else {
                 if (ind - array.indexOf(point) > 2) {
