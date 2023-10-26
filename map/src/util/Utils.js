@@ -1,4 +1,4 @@
-import TracksManager from '../manager/TracksManager';
+import { NAN_MARKER } from '../manager/TracksManager';
 import { apiGet } from '../util/HttpApi';
 import { useState } from 'react';
 
@@ -164,18 +164,19 @@ export const toHHMMSS = function (time) {
 /*
     Prepare string with NaN/Infinity before JSON.parse()
 
-    1) "ele":NaN is converted to "ele":NAN_MARKER
-    2) all others NaN are converted to null
+    1) convert "ele":99999(.0)? (NAN_MARKER) to "ele":null
+    2) convert all the :NaN to :null (incl."ele":NaN)
     3) *speed-Infinity is converted to null
 
     NaN and Infinity aren't supported by JSON standard
 */
 export function quickNaNfix(badString) {
-    const ele = '"ele":' + TracksManager.NAN_MARKER; // "ele" to NAN_MARKER (99999)
-    const nil = ':null'; // other NaN(s) to null (think about srtmEle)
+    const eleFixNaN = new RegExp('"ele": ?' + NAN_MARKER + '(.0)?\\b', 'g');
+    const ele = '"ele":null'; // "ele":NAN_MARKER -> "ele":null
+    const nil = ':null'; // all NaN(s) incl "ele":NaN -> null
 
     return badString
-        .replace(/"ele": ?NaN\b/g, ele)
+        .replace(eleFixNaN, ele)
         .replace(/: ?NaN\b/g, nil)
         .replace(/"speed": ?Infinity\b/g, '"speed":null')
         .replace(/"avgSpeed": ?Infinity\b/g, '"avgSpeed":null')
