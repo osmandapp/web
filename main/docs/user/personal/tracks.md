@@ -338,12 +338,12 @@ Buttons in "&#8230;" menu. **When you go to this menu, the ability to import or 
 
 ![My places tracks seaching function Android](@site/static/img/personal/tracks/my_places_tracks_search_andr.png)
 
-Tap the "&#x1F50D;" button at the top of the device screen to open the track list sorting menu. 
+Tap the &#x1F50D; button at the top of the device screen to open the track list sorting menu. 
 
 Available:
 - Search by track name.
-- **Sort by** for better search if you can't remember the title.
-- **Filter** if you remember the specific characteristics of the track.
+- [**Sort by**](#sort-by) for better search if you can't remember the title.
+- [**Filter**](#filter) if you need the specific characteristics of the track.
 
 
 ### AppBar menu
@@ -375,7 +375,7 @@ Once you have made your choice, the following steps are provided:
 
 - **Move**. You can organize your data by moving selected tracks and folders to other folders.
 
--**Change appearance**. This option allows you to customize the appearance of selected tracks, making them more visible and recognizable on the map.
+- **Change appearance**. This option allows you to customize the appearance of selected tracks, making them more visible and recognizable on the map.
 
 - **Delete**. If the selected tracks or folders are no longer needed, the Delete function allows you to delete them, with the app providing confirmation options to avoid accidental deletion.
 
@@ -396,67 +396,31 @@ Sort menu:
 - **Name: A - Z**. Sorting tracks in the list by name from A to Z.
 - **<Translate android="true" ids="sort_name_descending"/>**. Sorting tracks in the list by name from Z to A.
 - **Newest date first**. The tracks in the list are sorted by the date they were created. The newest ones first.
-- **OLdest date first**. The tracks in the list are displayed so that the oldest created tracks are at the beginning.
+- **Oldest date first**. The tracks in the list are displayed so that the oldest created tracks are at the beginning.
 - **Longest distance first**. The tracks are sorted so that the longest by distance are at the top of the list.
 - **Shortest distance first**. At the top of the list are the shortest tracks.
 - **Longest duration first**. Tracks are sorted so that the ones that took the longest are listed first.
 - **Shorted duration first**. At the top of the list are the tracks that took the least amount of time to complete.
 
 
-### Smart folder
-
-<InfoAndroidOnly/>
-
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_andr.png)
-
-*Smart Folder* is a special type of folder that provides intelligent and automated features for organizing and managing tracks.  
-
-1. **Automated organization.** "Smart folder" can automatically sort files within itself based on specified rules or criteria. For example, you can set up a "smart folder" so that all tracks created on a certain date are automatically moved to that folder.
-2. **Filtering and searching.** This folder can provide options to quickly search for tracks within itself using various filters and keywords. These help users to quickly find the tracks they are looking for.
-3. **Dynamic Refresh.** "Smart folder" can dynamically update its contents based on Refresh function. This allows you to always have up-to-date information inside the folder.
-4. **Customize Rules:** You can customize rules that determine which files should be included in the "smart folder". 
-
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_2_andr.png)  
-
-We have two options for interacting with the tracks in this folder. Once it is created, you can tap on the standard three-dot menu and get the following options:
-
-- *Details*. Opens the entire list of tracks in this folder.
-- *Show all tracks on the map*. If there are many tracks in a folder, it is not recommended to map them all, it may take a long time.
-- *Edit name*. Changing the folder name.
-- *Refresh*. Allows you to update the track list.
-- [*Change default appearance*](../map/tracks-on-map.md#track-appearance). You can change the appearance of the track. 
-- [*Export*](../personal/import-export.md). You will go to *Menu → Settings → Actions* tab, where you can export all tracks from the folder.
-- *Delete folder*. You can delete a folder. A warning message will appear on the display. The deletion will be irreversible.  
-
-By going into the smart folder itself and clicking on the three-dot menu, you can perform the following actions:  
-
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)  
-
-- Add the necessary [filter](#filter).
-- Refresh.
-- [Select](#select-in-smart-folder).
-
-#### Select in Smart folder
-
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_4_andr.png)  
-
-This screen allows you to select the tracks you want, as well as a list of suggested actions:  
-
-- *Show on map*. Unlike *Show all tracks on the map*, this function allows you to customize the display of tracks selectively.
-- *Share*. Allows you to export tracks.
-- *Upload to [OpenStreetMap](../plugins/osm-editing.md#create--modify-osm-note)*. 
-- *Move*. Moving selected tracks to another folder.
-- [Change appearance](../map/tracks-on-map.md#track-appearance).
-- Delete.
-
-
 ### Filter
 
 ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_2_andr.png) 
 
-Osmand provides convenient tools for managing track recordings. The **Tracks** tab provides options for more efficient track search and filtering. Filters provide a more detailed and customizable way to search for tracks by various parameters, allowing you to quickly find tracks that meet specific requirements and preferences.  
+Osmand provides convenient tools for track management. The **Tracks** tab contains options for efficient track search and filtering. Filters provide a more detailed and customizable search for tracks based on various parameters, allowing you to quickly find tracks that meet specific requirements.   
+
+- To get to the Filter screen, tap the Search icon &#x1F50D;, in the *Sort by* row on the right, tap *Filter*. 
+- After selecting the required filters, tap the Show button in the lower right corner of the screen. The number of filtered tracks is displayed in brackets.
+- You can clear all configured filters using the *Reset all* button.
+- The configured filter set can be saved as a new Smart folder using the button in the upper right corner of the screen.
 
 ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png)  
+
+#### Filter by name
+
+#### Folder
+
+![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_folder_andr.png) 
 
 #### Duration
 
@@ -464,7 +428,6 @@ Osmand provides convenient tools for managing track recordings. The **Tracks** t
 
 - This filter allows you to customize your search by the duration of the recorded tracks.
 - You can select a duration range in hours and minutes to find tracks matching your time limit.
-
 
 #### Time in motion
 
@@ -494,12 +457,18 @@ Osmand provides convenient tools for managing track recordings. The **Tracks** t
 - This filter allows you to search for tracks with a specific maximum speed.
 - Select the maximum speed range (in km/h or mph) to find tracks that meet this criterion.
 
+#### Uphill
+
+#### Downhill
+
 #### Average altitude
 
 ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_average_altitude_andr.png)     
 
 - This filter helps you find tracks based on average altitude.
 - Specify a range of average altitude to find tracks with specific characteristics.
+
+#### Max altitude
 
 #### Date of creation
 
@@ -508,12 +477,22 @@ Osmand provides convenient tools for managing track recordings. The **Tracks** t
 - This filter allows you to filter tracks by date and time of creation.
 - Specify the desired time period to search for tracks created during that period.
 
+#### Nearest cities
+
 #### Country
 
 ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_country_andr.png)  
 
 - This filter allows you to search for tracks recorded in a specific country or region.
 - Select a specific country or region to find tracks related to that location.  
+
+#### Color
+
+![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_folder_color_andr.png)
+
+#### Width
+
+![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_folder_width_andr.png)
 
 #### Other
 
@@ -525,6 +504,76 @@ The filter provides additional options for finding and filtering tracks that hav
 - *With Waypoints*. This filter will help you find tracks that contain waypoints - places that you have marked or labeled while recording a track. You can use this filter to easily find tracks with important points of interest, like vacation spots or notable events on your trip.
 
 New search filters in the Tracks tab of the OsmAnd app will help you more accurately find and manage routes and tracks according to your needs.  
+
+
+## Smart folder
+
+<InfoAndroidOnly/>
+
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_andr.png)
+
+*Smart Folder* is a special type of folder that provides intelligent and automated features for organizing and managing tracks.  
+
+1. **Automated organization.** *Smart folder* can automatically sort files within itself based on specified rules or criteria. For example, you can set up a *Smart folder* so that all tracks created on a certain date are automatically moved to that folder.
+2. **Filtering and searching.** This folder can provide options to quickly search for tracks within itself using various filters and keywords. These help users to quickly find the tracks they are looking for.
+3. **Dynamic Refresh.** *Smart folder* can dynamically update its contents based on Refresh function. This allows you to always have up-to-date information inside the folder.
+4. **Customize Rules.** You can customize rules that determine which files should be included in the *Smart folder*. 
+
+
+### Actions for Smart folder
+
+We have two options for interacting with the tracks in this folder.  
+1. Once it is created, you can tap on the standard three-dot menu and get the following options:
+
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_2_andr.png)  
+
+- *Details*. Opens the entire list of tracks in this folder.
+- *Show all tracks on the map*. If there are many tracks in a folder, it is not recommended to map them all, it may take a long time.
+- *Edit name*. Changing the folder name.
+- *Refresh*. Allows you to update the track list.
+- [*Change default appearance*](../map/tracks-on-map.md#track-appearance). You can change the appearance of the track. 
+- [*Export*](../personal/import-export.md). You will go to *Menu → Settings → Actions* tab, where you can export all tracks from the folder.
+- *Delete folder*. You can delete a folder. A warning message will appear on the display. The deletion will be irreversible.  
+
+2. By going into the smart folder itself and clicking on the three-dot menu, you can perform the following actions:  
+
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)  
+
+- Add the necessary [filter](#filters-for-smart-folder).
+- Refresh.
+- [Select](#select-in-smart-folder).
+
+
+### Filters for Smart folder
+
+![My places tracks](@site/static/img/personal/tracks/my_places_smart_folder_filters_1_andr.png)   
+
+
+#### Standard filters
+
+- [Duration](#duration)
+- [Time in motion](#time-in-motion)
+- [Length](#length)
+- [Average speed](#average-speed)
+- [Max speed](#max-speed)
+- [Average altitude](#average-altitude)
+- [Date of creation](#date-of-creation)
+- [Country](#country)
+- [Other](#other)
+
+
+### Select in Smart folder
+
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_4_andr.png)  
+
+This screen allows you to select the tracks you want, as well as a list of suggested actions:  
+
+- *Show on map*. Unlike *Show all tracks on the map*, this function allows you to customize the display of tracks selectively.
+- *Share*. Allows you to export tracks.
+- *Upload to [OpenStreetMap](../plugins/osm-editing.md#create--modify-osm-note)*. 
+- *Move*. Moving selected tracks to another folder.
+- [Change appearance](../map/tracks-on-map.md#track-appearance).
+- Delete.
 
 
 ## Import / Export track

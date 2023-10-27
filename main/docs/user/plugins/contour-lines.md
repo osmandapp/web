@@ -58,6 +58,7 @@ The Topography plugin provides access to the following map types:
 The altitude data on the map - between 70 degrees north latitude and 70 degrees south latitude - was obtained as a result of measurements carried out by the Shuttle Radar Topography Mission (*SRTM*). It used the Advanced Spaceborne Thermal Emission and Reflection Radiometer (*ASTER*), the primary imaging tool in NASA's Earth Observation System.  
 For full information see [License](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
+
 <details><summary>DEM (DSM) data</summary> 
     - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>: The original data used for this product have been supplied by JAXA’s AW3D.<br/>
 	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM</a><br/>
@@ -119,13 +120,15 @@ Download **Contour lines**, **Hillshade**, **Slope**, **Terrain map (3D)** (Andr
 **Contour Lines** mountain maps may be large in size, over 2 GB, and may not be supported properly on older devices. You have the option to download individual areas of the region rather than the entire region. The size of all maps is indicated under their name.  
 
 
-:::tip NOTE
-For the **Hillshade** or **Slope** functionality,
-- if you are using Map rendering engine v1, you need to use the conventional Hillshade or Slope raster downloads,
-- if you are using Map rendering engine v2,
+### Interaction with Rendering version
+
+For the **Hillshade** or **Slope** functionality
+
+- If you are using Map rendering engine v1, you need to use the conventional Hillshade or Slope raster downloads,
+- If you are using Map rendering engine v2,
    - you can continue to use the old Hillshade or Slope raster downloads, but need activate the Development and enable its setting "_Use raster sqlite for Hillshade / slope_.
    - Alternatively, you can use the new "Terrain map (3D)" downloads (saving a bit of storage space), and the Hillshade/Slope/3D Relief effects can be produced from that on the device.
-:::
+
 
  
 ## Contour lines
