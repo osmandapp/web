@@ -14,3 +14,16 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 
 
 ## What's new
+
+
+- CarPlay dashboard support
+- External sensors
+- Trash for Cloud
+- Simple widget for Top / Bottom panel
+- Travel Guides
+- Night theme
+- Redesign OSM plugin for uploading POI/Note
+- Add OSM link with pin into the Context menu
+- Fixed bugs with CarPlay
+
+
