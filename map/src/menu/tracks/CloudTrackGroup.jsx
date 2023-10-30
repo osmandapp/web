@@ -3,8 +3,6 @@ import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import CloudOutlinedIcon from '@mui/icons-material/CloudOutlined';
 import { useRef, useContext, useEffect, useState, useMemo } from 'react';
 import CloudTrackItem from './CloudTrackItem';
-
-import Actions from './Actions';
 import drawerStyles from '../../frame/styles/DrawerStyles';
 import AppContext from '../../context/AppContext';
 import PopperMenu from './PopperMenu';
@@ -16,7 +14,6 @@ export default function CloudTrackGroup({ index, group }) {
     const [indexGroup, setIndexGroup] = useState(-1);
     const [tracksOpen, setTracksOpen] = useState(false);
     const [showTracks, setShowTracks] = useState([]);
-    const [sortFiles, setSortFiles] = useState([]);
     const anchorEl = useRef(null);
     const [open, setOpen] = useState(false);
 
@@ -67,11 +64,11 @@ export default function CloudTrackGroup({ index, group }) {
 
     const trackItems = useMemo(() => {
         const items = [];
-        (sortFiles.length > 0 ? sortFiles : group.files).map((file) => {
+        group.files.map((file) => {
             items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} />);
         });
         return items;
-    }, [sortFiles, group.files, group.files.length]);
+    }, [group.files, group.files.length]);
 
     return (
         <div className={styles.drawerItem} key={'group' + group.name + index}>
@@ -114,10 +111,7 @@ export default function CloudTrackGroup({ index, group }) {
                 {group.files.length === 0 ? <></> : showTracks.length > 0 ? <ExpandLess /> : <ExpandMore />}
             </MenuItem>
             <Collapse in={showTracks.includes(index)} timeout="auto">
-                <div style={{ maxHeight: '41vh', overflow: 'auto' }}>
-                    <Actions files={group.files} setSortFiles={setSortFiles} />
-                    {trackItems}
-                </div>
+                <div style={{ maxHeight: '41vh', overflow: 'auto' }}>{trackItems}</div>
             </Collapse>
         </div>
     );

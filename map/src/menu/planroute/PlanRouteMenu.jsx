@@ -4,6 +4,7 @@ import TracksManager from '../../manager/TracksManager';
 import drawerStyles from '../../frame/styles/DrawerStyles';
 import AppContext from '../../context/AppContext';
 import LocalGpxUploader from '../../frame/components/util/LocalGpxUploader';
+import LocalTrackGroup from '../tracks/LocalTrackGroup';
 
 export default function PlanRouteMenu() {
     const styles = drawerStyles();
@@ -11,6 +12,7 @@ export default function PlanRouteMenu() {
 
     return (
         <>
+            <LocalTrackGroup />
             <ButtonGroup variant="text" sx={{ mt: 1 }}>
                 <Button
                     className={styles.button}

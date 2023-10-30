@@ -32,6 +32,7 @@ import { ReactComponent as PlanRouteIcon } from '../assets/menu/ic_action_plan_r
 import InformationBlock from '../infoblock/components/InformationBlock';
 import Weather from './weather/Weather';
 import styles from './mainmenu.module.css';
+import { MENU_INFO_CLOSE_SIZE } from '../manager/GlobalManager';
 
 export default function MainMenu({
     size,
@@ -288,7 +289,6 @@ export default function MainMenu({
                                                 <SvgIcon
                                                     className={styles.customIconPath}
                                                     component={item.icon}
-                                                    sx={{ fill: '#727272' }}
                                                     inheritViewBox
                                                 />
                                             </ListItemIcon>
@@ -344,29 +344,31 @@ export default function MainMenu({
                     </div>
                 </Drawer>
             </ClickAwayListener>
-            <Drawer
-                variant="persistent"
-                PaperProps={{
-                    sx: {
-                        width: infoSize,
-                        ml: '64px',
-                        boxShadow: 'none',
-                        zIndex: 1000,
-                    },
-                }}
-                sx={{ left: 'auto !important' }}
-                open={true}
-                hideBackdrop
-            >
-                <Toolbar />
-                {!showInfoBlock && menuInfo}
-                <InformationBlock
-                    showInfoBlock={showInfoBlock}
-                    setShowInfoBlock={setShowInfoBlock}
-                    setClearState={setClearState}
-                    mainMenuSize={size}
-                />
-            </Drawer>
+            {ctx.infoBlockWidth !== MENU_INFO_CLOSE_SIZE && (
+                <Drawer
+                    variant="persistent"
+                    PaperProps={{
+                        sx: {
+                            width: infoSize,
+                            ml: '64px',
+                            boxShadow: 'none',
+                            zIndex: 1000,
+                        },
+                    }}
+                    sx={{ left: 'auto !important' }}
+                    open={true}
+                    hideBackdrop
+                >
+                    <Toolbar />
+                    {!showInfoBlock && menuInfo}
+                    <InformationBlock
+                        showInfoBlock={showInfoBlock}
+                        setShowInfoBlock={setShowInfoBlock}
+                        setClearState={setClearState}
+                        mainMenuSize={size}
+                    />
+                </Drawer>
+            )}
         </Box>
     );
 }

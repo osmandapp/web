@@ -1,17 +1,30 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, useMemo, useRef } from 'react';
 import AppContext from '../../context/AppContext';
 import { toHHMMSS } from '../../util/Utils';
 import CloudTrackGroup from './CloudTrackGroup';
-import LocalTrackGroup from './LocalTrackGroup';
 import GpxCollection from './GpxCollection';
 import VisibleGroup from './VisibleGroup';
 import _ from 'lodash';
+import { AppBar, Box, ClickAwayListener, IconButton, Popper, Toolbar, Tooltip, Typography } from '@mui/material';
+import { ReactComponent as ImportIcon } from '../../assets/icons/ic_action_folder_import_outlined.svg';
+import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
+import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import styles from './trackmenu.module.css';
+import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
+import LocalGpxUploader from '../../frame/components/util/LocalGpxUploader';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
+import CloudTrackItem from './CloudTrackItem';
+import Actions from './Actions';
 
 export default function TracksMenu() {
     const ctx = useContext(AppContext);
-
     const [visibleTracks, setVisibleTracks] = useState({ local: [], cloud: [] });
-
+    const [defaultGroup, setDefaultGroup] = useState(null);
+    const [openSort, setOpenSort] = useState(false);
+    const [sortFiles, setSortFiles] = useState([]);
+    const [sortGroups, setSortGroups] = useState([]);
+    const anchorEl = useRef(null);
+    const [, height] = useWindowSize();
     function visibleTracksOpen() {
         return visibleTracks.local.length > 0 || visibleTracks.cloud.length > 0;
     }
@@ -75,7 +88,7 @@ export default function TracksMenu() {
                 });
                 if (defGroup) {
                     tg.splice(tg.indexOf(defGroup), 1);
-                    tg.unshift(defGroup);
+                    setDefaultGroup(defGroup);
                 }
             }
             ctx.setTracksGroups(tg);
@@ -162,17 +175,90 @@ export default function TracksMenu() {
         }));
     }, [visibleTracks, ctx.selectedGpxFile]);
 
+    function closeTrackMenu() {
+        ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
+    }
+
+    const defaultGroupItems = useMemo(() => {
+        if (defaultGroup) {
+            const items = [];
+            (sortFiles.length > 0 ? sortFiles : defaultGroup.files).map((file) => {
+                items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} />);
+            });
+            return items;
+        }
+    }, [defaultGroup?.files, defaultGroup?.files.length, sortFiles]);
+
+    function openSortDialog() {
+        setOpenSort(true);
+    }
+
+    const handleClickAway = () => {
+        setOpenSort(false);
+    };
+
     return (
-        <>
-            {ctx.gpxCollection?.length > 0 && <GpxCollection />}
-            {visibleTracksOpen() && <VisibleGroup visibleTracks={visibleTracks} setVisibleTracks={setVisibleTracks} />}
-            <LocalTrackGroup />
-            {ctx.tracksGroups &&
-                ctx.tracksGroups
-                    .sort((a, b) => (a.name > b.name) - (a.name < b.name))
-                    .map((group, index) => {
+        <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+            <AppBar position="static" className={styles.appbar}>
+                <Toolbar className={styles.toolbar}>
+                    <IconButton variant="contained" type="button" className={styles.icon} onClick={closeTrackMenu}>
+                        <CloseIcon />
+                    </IconButton>
+                    <Typography component="div" className={styles.title}>
+                        Tracks
+                    </Typography>
+                    <Tooltip key={'sort_tracks'} title="Sort tracks" arrow placement="bottom-end">
+                        <IconButton
+                            variant="contained"
+                            type="button"
+                            className={styles.icon}
+                            onClick={openSortDialog}
+                            ref={anchorEl}
+                        >
+                            <TimeIcon />
+                        </IconButton>
+                    </Tooltip>
+                    <Tooltip key={'import_track'} title="Import track" arrow placement="bottom-end">
+                        <span>
+                            <LocalGpxUploader>
+                                <IconButton component="span" variant="contained" type="button" className={styles.icon}>
+                                    <ImportIcon />
+                                </IconButton>
+                            </LocalGpxUploader>
+                        </span>
+                    </Tooltip>
+                </Toolbar>
+            </AppBar>
+            <Box
+                minWidth={ctx.infoBlockWidth}
+                maxWidth={ctx.infoBlockWidth}
+                sx={{ overflowX: 'hidden', overflow: 'auto !important', maxHeight: `${height - 120}px` }}
+            >
+                {ctx.gpxCollection?.length > 0 && <GpxCollection />}
+                {visibleTracksOpen() && (
+                    <VisibleGroup visibleTracks={visibleTracks} setVisibleTracks={setVisibleTracks} />
+                )}
+                {ctx.tracksGroups &&
+                    (sortGroups.length > 0 ? sortGroups : ctx.tracksGroups).map((group, index) => {
                         return <CloudTrackGroup key={group.name + index} index={index} group={group} />;
                     })}
-        </>
+                {defaultGroupItems}
+            </Box>
+            <Popper
+                sx={{ zIndex: 2000, mt: '-35px !important', ml: '-5px !important' }}
+                open={openSort}
+                anchorEl={anchorEl.current}
+                disablePortal={true}
+            >
+                <ClickAwayListener onClickAway={handleClickAway}>
+                    <Actions
+                        files={defaultGroup?.files}
+                        setSortFiles={setSortFiles}
+                        groups={ctx.tracksGroups}
+                        setSortGroups={setSortGroups}
+                    />
+                </ClickAwayListener>
+            </Popper>
+        </Box>
     );
 }

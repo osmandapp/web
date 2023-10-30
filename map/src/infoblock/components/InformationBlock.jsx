@@ -15,6 +15,7 @@ import _ from 'lodash';
 import PoiTabList from './tabs/PoiTabList';
 import { hasSegmentTurns } from '../../manager/TracksManager';
 import { ArrowBack } from '@mui/icons-material';
+import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 
 const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     const [mounted, setMounted] = useState(false);
@@ -154,7 +155,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
         if (showInfoBlock) {
             return `${DRAWER_SIZE + 24}px`;
         } else {
-            return '0px';
+            return MENU_INFO_CLOSE_SIZE;
         }
     }
 
