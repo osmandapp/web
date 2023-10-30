@@ -25,5 +25,3 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 - Redesign OSM plugin for uploading POI/Note
 - Add OSM link with pin into the Context menu
 - Fixed bugs with CarPlay
-
-
