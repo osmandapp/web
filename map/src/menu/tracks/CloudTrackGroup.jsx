@@ -22,7 +22,7 @@ export default function CloudTrackGroup({ index, group }) {
                 }
             }}
         >
-            <ListItemIcon className={styles.groupIcon}>
+            <ListItemIcon className={styles.icon}>
                 <FolderIcon />
             </ListItemIcon>
             <ListItemText>

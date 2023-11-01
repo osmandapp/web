@@ -1,11 +1,24 @@
 import AppContext, { OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
-import { Alert, LinearProgress, ListItemText, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
-import { useContext, useState, useMemo, useEffect } from 'react';
-import Utils from '../../util/Utils';
+import {
+    Alert,
+    IconButton,
+    LinearProgress,
+    ListItemIcon,
+    ListItemText,
+    MenuItem,
+    Tooltip,
+    Typography,
+} from '@mui/material';
+import { useContext, useEffect, useMemo, useState } from 'react';
+import Utils, { toHHMMSS } from '../../util/Utils';
 import TrackInfo from './TrackInfo';
 import TracksManager, { isEmptyTrack } from '../../manager/TracksManager';
 import _ from 'lodash';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
+import { ReactComponent as TrackIcon } from '../../assets/icons/ic_action_polygom_dark.svg';
+import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
+import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
+import styles from './trackmenu.module.css';
 
 export default function CloudTrackItem({ file, customIcon = null }) {
     const ctx = useContext(AppContext);
@@ -14,8 +27,13 @@ export default function CloudTrackItem({ file, customIcon = null }) {
 
     const [loadingTrack, setLoadingTrack] = useState(false);
     const [error, setError] = useState('');
+    const [hoverIconInfo, setHoverIconInfo] = useState(false);
 
     const info = useMemo(() => <TrackInfo file={file} />, [file]);
+
+    const dist = file.details?.analysis?.totalDistance ? (file.details?.analysis?.totalDistance / 1000).toFixed(2) : 0;
+    const time = file.details?.analysis?.timeMoving ? toHHMMSS(file.details?.analysis?.timeMoving) : '0:00';
+    const points = file.details?.analysis?.points ? file.details?.analysis?.points : 0;
 
     const [displayTrack, setDisplayTrack] = useState(null); // null -> true/false -> null
 
@@ -100,24 +118,37 @@ export default function CloudTrackItem({ file, customIcon = null }) {
         }
     }
 
-    const rendered = useMemo(() => {
+    return useMemo(() => {
         const trackName = TracksManager.getFileName(file);
         return (
             <>
                 <Tooltip title={info} arrow placement={mobile ? 'bottom' : 'right'} disableInteractive>
-                    <MenuItem id={'se-cloud-track-' + trackName} onClick={() => setDisplayTrack(true)}>
-                        <ListItemText inset>
-                            <Typography variant="inherit" noWrap>
-                                {customIcon}
+                    <MenuItem
+                        className={styles.item}
+                        divider
+                        id={'se-cloud-track-' + trackName}
+                        onClick={() => setDisplayTrack(true)}
+                    >
+                        <ListItemIcon className={styles.icon}>
+                            <TrackIcon />
+                        </ListItemIcon>
+                        <ListItemText>
+                            <Typography variant="inherit" className={styles.groupName} noWrap>
                                 {trackName}
                             </Typography>
+                            <Typography variant="body2" className={styles.groupInfo} noWrap>
+                                {dist && `${dist} km · `}
+                                {time && `${time}`}
+                                {points && ` · ${points}`}
+                            </Typography>
                         </ListItemText>
-                        <Switch
-                            disabled={loadingTrack}
-                            onClick={(e) => e.stopPropagation()}
-                            checked={!!ctx.gpxFiles[file.name]?.url}
-                            onChange={(e) => !file.local && setDisplayTrack(e.target.checked)}
-                        />
+                        <IconButton
+                            className={styles.icon}
+                            onMouseEnter={() => setHoverIconInfo(true)}
+                            onMouseLeave={() => setHoverIconInfo(false)}
+                        >
+                            {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
+                        </IconButton>
                     </MenuItem>
                 </Tooltip>
                 {loadingTrack ? <LinearProgress /> : <></>}
@@ -128,7 +159,5 @@ export default function CloudTrackItem({ file, customIcon = null }) {
                 )}
             </>
         );
-    }, [info, mobile, customIcon, file, loadingTrack, ctx.gpxFiles[file.name]?.url, error]);
-
-    return rendered;
+    }, [info, mobile, customIcon, file, loadingTrack, ctx.gpxFiles[file.name]?.url, error, hoverIconInfo]);
 }
