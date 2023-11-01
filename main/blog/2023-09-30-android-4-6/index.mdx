@@ -17,7 +17,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-Good news, everybody!  
+Good news for everyone!  
 Version 4.6 of the OsmAnd program for Android devices has undergone revolutionary changes. Go and read what has been added and improved.  
 
 
@@ -30,7 +30,7 @@ Version 4.6 of the OsmAnd program for Android devices has undergone revolutionar
    - Updates for [Top/Bottom panels](#updates-for-topbottom-panels) in the Configure screen menu.
    - Added [Glide Ratio](#added-glide-ratio-widgets) Widget.
    - Added [Temperature widget](#added-temperature-widget) for External sensors.
-- New [Local tab](#redesigned-local-menu) in Maps & Resources menu.
+- New [Local tab](#local-menu-redesign) in Maps & Resources menu.
 - New feature [Smart Folder](#smart-folders) in Tracks menu.
 - [Filters](#filters-for-tracks) for Tracks search.
 - Adding a [screen Trash](#trash-feature-in-osmand-cloud) to view and manage files deleted from OsmAnd Cloud.
@@ -44,23 +44,30 @@ Version 4.6 of the OsmAnd program for Android devices has undergone revolutionar
 
 ## Widgets update
 
-We've done a lot work on the widgets and it interface.
+We are happy to inform you about the latest updates to the widgets in the app. 
+We have made significant improvements and added new features that will make your user experience more informative and convenient.
 
 
 ### Updates for Top/Bottom panels
 
-1. Added ability to add/remove rows for top/bottom panel: 
+Our top and bottom panels have been redesigned with all our users' needs in mind. 
+Now you can customize the widgets on your home screen the way you want, giving you more freedom to display important data.
 
-_OsmAnd menu → Configure screen → [Widgets (Top / Bottom panel)](https://osmand.net/docs/user/widgets/configure-screen#top--bottom-panel-widgets) → Edit → Add row_
+**1.** Added ability to add and remove rows for *Top / Bottom panel*: 
+
+_OsmAnd menu → Configure screen → Widgets → Edit → [Add row](https://docs.osmand.net/docs/user/widgets/configure-screen#rows-for-panels)_
 
 | View mode  | Edit mode   |
 |-----|------|
 | ![Row](./img/row.png)|![Row](./img/row_1.png)
 
 
-2. Added support 3 size simple widgets: L / M / S.
+**2.** Added support to change [widget size](https://docs.osmand.net/docs/user/widgets/configure-screen#settings). You can choose the size that best suits your needs: Small, Medium, Large.  
+
+![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)  
+
  
-There is ability to add more then one widget in a row.
+**3.** You have the ability to add more than one [Simple widget](https://docs.osmand.net/docs/user/widgets/configure-screen#rows-for-panels) in a single row.
 
 |  |   |
 |-----|------|
@@ -73,7 +80,7 @@ There is ability to add more then one widget in a row.
 
 Simple _[Glide Ration](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio)_ widgets were added for Aircraft usage. Widgets show the glide ration to the target or avearge glide for the current trip:
 
- _OsmAnd menu → Configure screen → Widgets (Left / Right panel) → [Glide ratio to target](https://osmand.net/docs/user/widgets/info-widgets/#glide-ratio)_ and [_Average glide ratio_](https://osmand.net/docs/user/widgets/info-widgets/#glide-ratio)
+ _OsmAnd menu → Configure screen → Widgets (All panels) → [Glide ratio to target](https://osmand.net/docs/user/widgets/info-widgets/#glide-ratio)_ and [_Average glide ratio_](https://osmand.net/docs/user/widgets/info-widgets/#glide-ratio)
 
 - _Glide ratio to target_ shows the glide ration needed to reach the target point (You need to use [Map marker](https://osmand.net/docs/user/personal/markers) as a target point).
 - _Average glide ratio_ shows the average glide ratio for the set interval. For this widget you can specify the time interval for glide averaging.
@@ -95,7 +102,7 @@ _Menu → Configure screen → [Left panel /Right panel](https://osmand.net/docs
 |![Temperature](./img/temp.png)|![Temperature](./img/temp_1.png)|
 
 
-## Redesigned "Local" menu
+## Local menu redesign
 
 _Local menu_ contains more info about OsmAnd data:
 _Menu → Download maps (Maps & Resources) → Local_. 
@@ -127,6 +134,7 @@ _OsmAnd menu → My Places → Tracks → &#8942; → Add smart folder_
 |![Smart folder](./img/smart_folder.png)|![Local](./img/smart_folder_1.png)|
 
 Now, you can add filters for Smart folders.
+
 
 ## Filters for tracks
 
@@ -168,6 +176,7 @@ Each item from _Trash_ can be _Restore_ or _Delete_.
 |-------|
 |![Trash](./img/trash_2.png)|
 
+
 ## New help screen
 
 We redesigned _Help_ menu with added articles from [www.osmand.net/docs](https://osmand.net/docs/intro/) with next menu sections and offline (saved to cache) new documentation:
@@ -187,6 +196,7 @@ Added the convenient time scale.
 |-------|
 |![Weather](./img/weather.png)|
 
+
 ## Share point coordinates by an OSM link
 
 Now in the Context menu of a point, you can find not only geographical coordinates in various formats, but also a shareable [OpenStreetMap Link with location marker](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker).  
@@ -194,6 +204,7 @@ Now in the Context menu of a point, you can find not only geographical coordinat
 | | |
 |-------|-------|
 |![Osm Location pin 1](./img/osm_location_pin_1.png) |![Osm Location pin 2](./img/osm_location_pin_2.png)|
+
 
 ## Custom actions for buttons of external controllers
 
@@ -214,7 +225,7 @@ Actions and Map iteracions for Key bindings
 |-------|
 |![External Devices](./img/external_2.png) |
 
-## Update Plan a route
+## Update Plan a route tool
 
 Added "Import from track" function allows to import to current track from another existing trask (waypoints, segments, all data) 
 
@@ -236,7 +247,6 @@ _[Plan a route](https://osmand.net/docs/user/plan-route/create-route) →  Optio
 - Fixed _North fixed_ mode for [Compass](https://osmand.net/docs/user/map/interact-with-map#map-orientation-modes)
 - Added widget _Available RAM_ for [OsmAnd Development plugin](https://osmand.net/docs/user/plugins/development)
 - Added paragliding / baby carriage / stroller / buggy [icons](https://osmand.net/docs/user/personal/profiles#profile-appearance) for profiles
-- Added [ANT+ temperature widget](https://osmand.net/docs/user/plugins/external-sensors) for Garmin tempe device
 - [_"Destination is reached"_](https://osmand.net/docs/user/navigation/guidance/map-during-navigation), the location moves to map center
 
 
