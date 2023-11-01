@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useRef, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import CloudTrackItem from './CloudTrackItem';
 import CloudTrackGroup from './CloudTrackGroup';
 import { AppBar, Box, ClickAwayListener, IconButton, Popper, Toolbar, Tooltip, Typography } from '@mui/material';
@@ -20,6 +20,13 @@ export default function TrackGroupFolder({ folder }) {
     const anchorEl = useRef(null);
     const [, height] = useWindowSize();
 
+    useEffect(() => {
+        if (folder) {
+            setSortFiles([]);
+            setSortGroups([]);
+        }
+    }, [folder]);
+
     const trackItems = useMemo(() => {
         const items = [];
         (sortFiles.length > 0 ? sortFiles : folder.groupFiles).map((file) => {
@@ -34,7 +41,7 @@ export default function TrackGroupFolder({ folder }) {
             items.push(<CloudTrackGroup key={group.name + index} index={index} group={group} />);
         });
         return items;
-    }, [folder.subfolders, folder.subfolders.length, sortFiles]);
+    }, [folder.subfolders, folder.subfolders.length, sortGroups]);
 
     function prevTrackMenu() {
         ctx.openTrackGroups.pop();
