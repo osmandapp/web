@@ -230,7 +230,8 @@ function getFileName(currentFile) {
 function prepareName(name, local) {
     const result = name.replace(/.gpx/, '');
     if (result.includes('/')) {
-        return result.split('/')[1];
+        const groups = result.split('/');
+        return groups[groups.length - 1];
     } else if (local && result.includes(':')) {
         return result.split(':')[1];
     } else {

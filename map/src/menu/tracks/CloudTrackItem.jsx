@@ -6,6 +6,7 @@ import {
     ListItemIcon,
     ListItemText,
     MenuItem,
+    Switch,
     Tooltip,
     Typography,
 } from '@mui/material';
@@ -20,7 +21,7 @@ import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import styles from './trackmenu.module.css';
 
-export default function CloudTrackItem({ file, customIcon = null }) {
+export default function CloudTrackItem({ file, customIcon = null, visible = null }) {
     const ctx = useContext(AppContext);
 
     const [, , mobile] = useWindowSize();
@@ -31,11 +32,26 @@ export default function CloudTrackItem({ file, customIcon = null }) {
 
     const info = useMemo(() => <TrackInfo file={file} />, [file]);
 
-    const dist = file.details?.analysis?.totalDistance ? (file.details?.analysis?.totalDistance / 1000).toFixed(2) : 0;
-    const time = file.details?.analysis?.timeMoving ? toHHMMSS(file.details?.analysis?.timeMoving) : '0:00';
-    const points = file.details?.analysis?.points ? file.details?.analysis?.points : 0;
+    const dist = getDist(file);
+    const time = getTime(file);
+    const points = getPoints(file);
 
     const [displayTrack, setDisplayTrack] = useState(null); // null -> true/false -> null
+
+    function getDist(file) {
+        let f = file.details ? file.details : file;
+        return f?.analysis?.totalDistance ? (f?.analysis?.totalDistance / 1000).toFixed(2) : 0;
+    }
+
+    function getTime(file) {
+        let f = file.details ? file.details : file;
+        return f?.analysis?.timeMoving ? toHHMMSS(f?.analysis?.timeMoving) : '0:00';
+    }
+
+    function getPoints(file) {
+        let f = file.details ? file.details : file;
+        return f?.analysis?.points ? f?.analysis?.points : 0;
+    }
 
     async function processDisplayTrack({ visible, setLoading }) {
         if (!visible) {
@@ -142,13 +158,21 @@ export default function CloudTrackItem({ file, customIcon = null }) {
                                 {points && ` · ${points}`}
                             </Typography>
                         </ListItemText>
-                        <IconButton
-                            className={styles.icon}
-                            onMouseEnter={() => setHoverIconInfo(true)}
-                            onMouseLeave={() => setHoverIconInfo(false)}
-                        >
-                            {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
-                        </IconButton>
+                        {visible ? (
+                            <Switch
+                                onClick={(e) => e.stopPropagation()}
+                                checked={!!ctx.gpxFiles[file.name]?.url}
+                                onChange={(e) => !file.local && setDisplayTrack(e.target.checked)}
+                            />
+                        ) : (
+                            <IconButton
+                                className={styles.icon}
+                                onMouseEnter={() => setHoverIconInfo(true)}
+                                onMouseLeave={() => setHoverIconInfo(false)}
+                            >
+                                {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
+                            </IconButton>
+                        )}
                     </MenuItem>
                 </Tooltip>
                 {loadingTrack ? <LinearProgress /> : <></>}

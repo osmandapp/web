@@ -1,5 +1,5 @@
-import { Box, Button, Collapse, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
-import { ExpandLess, ExpandMore, Visibility } from '@mui/icons-material';
+import { Box, Button, Collapse, IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
+import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { useRef, useContext, useEffect, useState, useMemo } from 'react';
 import CloudTrackItem from './CloudTrackItem';
 import { makeStyles } from '@material-ui/core/styles';
@@ -8,6 +8,8 @@ import PopperMenu from './PopperMenu';
 import AppContext from '../../context/AppContext';
 import TracksManager from '../../manager/TracksManager';
 import CloudOutlinedIcon from '@mui/icons-material/CloudOutlined';
+import styles from './trackmenu.module.css';
+import { ReactComponent as VisibleIcon } from '../../assets/icons/ic_show_on_map.svg';
 
 const useStyles = makeStyles({
     group: {
@@ -172,6 +174,7 @@ export default function VisibleGroup({ visibleTracks, setVisibleTracks }) {
                             className={classes.item}
                             customIcon={<CloudOutlinedIcon fontSize="small" sx={{ mb: '-3px', mr: 1 }} />}
                             file={track}
+                            visible={true}
                         />
                     );
                 }),
@@ -180,11 +183,11 @@ export default function VisibleGroup({ visibleTracks, setVisibleTracks }) {
 
     return (
         <div>
-            <MenuItem sx={{ ml: 3 }} className={classes.group} onClick={() => setVisibleTracksOpen(!visibleTracksOpen)}>
-                <ListItemIcon>
-                    <Visibility fontSize="small" sx={{ mb: '3px' }} />
+            <MenuItem className={styles.item} onClick={() => setVisibleTracksOpen(!visibleTracksOpen)}>
+                <ListItemIcon className={styles.icon}>
+                    <VisibleIcon />
                 </ListItemIcon>
-                <ListItemText> Visible </ListItemText>
+                <ListItemText> Visible on map</ListItemText>
                 <Button
                     sx={{ borderRadius: 28, minWidth: '30px !important' }}
                     size="small"
@@ -198,10 +201,12 @@ export default function VisibleGroup({ visibleTracks, setVisibleTracks }) {
                         {getVisibleTracksLength() > 0 ? `${getVisibleTracksLength()}` : ''}
                     </Typography>
                 </Button>
+                <IconButton className={styles.icon} sx={{ mr: -3 }}>
+                    {visibleTracksOpen ? <ExpandLess /> : <ExpandMore />}
+                </IconButton>
                 <Box>
                     <PopperMenu anchorEl={anchorEl} open={open} setOpen={setOpen} Buttons={Buttons} />
                 </Box>
-                {visibleTracksOpen ? <ExpandLess /> : <ExpandMore />}
             </MenuItem>
             <Collapse in={visibleTracksOpen} timeout="auto">
                 <div style={{ maxHeight: '41vh', overflow: 'auto' }}>
