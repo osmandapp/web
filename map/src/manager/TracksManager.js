@@ -25,6 +25,7 @@ const TRACK_VISIBLE_FLAG = 'visible';
 const HOURS_24_MS = 86400000;
 const AUTO_SRTM_MAX_POINTS = 10000;
 const FIT_BOUNDS_MAX_ZOOM = 17;
+export const DEFAULT_GROUP_NAME = 'Tracks';
 
 export function fitBoundsOptions(ctx) {
     return {

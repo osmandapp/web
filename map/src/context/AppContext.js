@@ -327,6 +327,8 @@ export const AppContextProvider = (props) => {
         }
     }, [loginUser]);
 
+    const [openTrackGroups, setOpenTrackGroups] = useState([]);
+
     return (
         <AppContext.Provider
             value={{
@@ -426,6 +428,8 @@ export const AppContextProvider = (props) => {
                 routeObject,
                 fitBoundsPadding,
                 mutateFitBoundsPadding,
+                openTrackGroups,
+                setOpenTrackGroups,
             }}
         >
             {props.children}

@@ -33,6 +33,8 @@ import InformationBlock from '../infoblock/components/InformationBlock';
 import Weather from './weather/Weather';
 import styles from './mainmenu.module.css';
 import { MENU_INFO_CLOSE_SIZE } from '../manager/GlobalManager';
+import TrackGroupFolder from './tracks/TrackGroupFolder';
+import _ from 'lodash';
 
 export default function MainMenu({
     size,
@@ -360,7 +362,10 @@ export default function MainMenu({
                     hideBackdrop
                 >
                     <Toolbar />
-                    {!showInfoBlock && menuInfo}
+                    {!showInfoBlock && _.isEmpty(ctx.openTrackGroups) && menuInfo}
+                    {ctx.openTrackGroups.length > 0 && !showInfoBlock && (
+                        <TrackGroupFolder folder={ctx.openTrackGroups[ctx.openTrackGroups.length - 1]} />
+                    )}
                     <InformationBlock
                         showInfoBlock={showInfoBlock}
                         setShowInfoBlock={setShowInfoBlock}

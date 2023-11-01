@@ -34,3 +34,24 @@
     margin-left: 12px !important;
     margin-right: 20px !important;
 }
+.group {
+    min-height: 68px !important;
+    max-height: 68px !important;
+    width: 360px !important;
+    padding: 12px 16px !important;
+    gap: 24px !important;
+}
+.groupIcon {
+    min-width: 24px !important;
+    fill: var(--svg-icon-color) !important;
+    &:hover {
+        fill: var(--selected-color) !important;
+        background-color: #f5f5f5 !important;
+    }
+}
+.groupName {
+    color: var(--text-primary) !important;
+}
+.groupInfo {
+    color: var(--text-secondary) !important;
+}

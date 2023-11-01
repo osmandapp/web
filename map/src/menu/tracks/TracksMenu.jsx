@@ -15,6 +15,7 @@ import LocalGpxUploader from '../../frame/components/util/LocalGpxUploader';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import CloudTrackItem from './CloudTrackItem';
 import Actions from './Actions';
+import { DEFAULT_GROUP_NAME } from '../../manager/TracksManager';
 
 export default function TracksMenu() {
     const ctx = useContext(AppContext);
@@ -55,10 +56,100 @@ export default function TracksMenu() {
         setVisibleTracks({ ...visibleTracks });
     }, [ctx.localTracks]);
 
+    function calculateLastModified(group) {
+        if (!group.files || group.files.length === 0) {
+            group.lastModifiedMs = null;
+            group.lastModifiedData = null;
+            return;
+        }
+
+        let minMs = Infinity;
+        let minData = null;
+        for (const file of group.files) {
+            if (file.updatetimems < minMs) {
+                minMs = file.updatetimems;
+                minData = file.updatetime;
+            }
+        }
+        group.lastModifiedMs = minMs;
+        group.lastModifiedData = minData;
+    }
+
+    function addFilesAndCalculateLastModified(groups) {
+        groups.forEach((group) => {
+            group.files = group.files || [];
+            group.groupFiles = group.groupFiles || [];
+            group.subfolders = group.subfolders || [];
+
+            if (group.subfolders.length > 0) {
+                addFilesAndCalculateLastModified(group.subfolders);
+
+                // remove files from group.groupFiles if they belong to subfolders
+                group.groupFiles = group.groupFiles.filter((file) => {
+                    return !group.subfolders.some((subfolder) =>
+                        subfolder.files.some((subfile) => subfile.name === file.name)
+                    );
+                });
+
+                group.files.push(...group.subfolders.reduce((acc, subfolder) => acc.concat(subfolder.files), []));
+            }
+            group.files.push(...group.groupFiles);
+            calculateLastModified(group);
+        });
+    }
+
+    function createTrackGroups(files) {
+        const trackGroups = [];
+        const tracks = [];
+
+        files.forEach((file) => {
+            const parts = file.name.split('/');
+            const isFile = parts.length === 1;
+
+            if (isFile) {
+                tracks.push(file);
+            } else {
+                let currentGroups = trackGroups;
+                for (let i = 0; i < parts.length - 1; i++) {
+                    const folder = parts[i];
+
+                    // find existing group by name or create a new one
+                    let existingGroup = currentGroups.find((group) => group.name === folder);
+                    if (!existingGroup) {
+                        existingGroup = {
+                            name: folder,
+                            subfolders: [],
+                            groupFiles: [],
+                            lastModifiedMs: null,
+                            lastModifiedData: null,
+                        };
+                        currentGroups.push(existingGroup);
+                    }
+
+                    currentGroups = existingGroup.subfolders;
+                    existingGroup.groupFiles.push(file);
+                }
+            }
+        });
+
+        if (tracks.length > 0) {
+            trackGroups.push({
+                name: DEFAULT_GROUP_NAME,
+                files: tracks,
+                lastModifiedMs: null,
+                lastModifiedData: null,
+            });
+        }
+
+        addFilesAndCalculateLastModified(trackGroups);
+
+        return trackGroups;
+    }
+
     // get gpx files and create groups
     useEffect(() => {
         if (!_.isEmpty(ctx.listFiles)) {
-            let tg = [];
+            //get gpx files
             let files = (!ctx.listFiles || !ctx.listFiles.uniqueFiles ? [] : ctx.listFiles.uniqueFiles).filter(
                 (item) => {
                     return (
@@ -67,31 +158,16 @@ export default function TracksMenu() {
                     );
                 }
             );
-            files.forEach((f) => {
-                f.folder = f.name.includes('/') ? f.name.split('/')[0] : 'Tracks';
-            });
+            //get groups
+            let trackGroups = createTrackGroups(files);
 
-            files.forEach((f) => {
-                let group = tg.find((g) => {
-                    return g.name === f.folder;
-                });
-                if (group) {
-                    group.files.push(f);
-                } else {
-                    tg.push({ name: f.folder, files: [f] });
-                }
-            });
-
-            if (tg.length > 0) {
-                let defGroup = tg.find((g) => {
-                    return g.name === 'Tracks';
-                });
+            if (trackGroups.length > 0) {
+                let defGroup = trackGroups.find((g) => g.name === DEFAULT_GROUP_NAME);
                 if (defGroup) {
-                    tg.splice(tg.indexOf(defGroup), 1);
                     setDefaultGroup(defGroup);
                 }
             }
-            ctx.setTracksGroups(tg);
+            ctx.setTracksGroups(trackGroups);
         } else {
             ctx.setTracksGroups([]);
         }
@@ -189,14 +265,6 @@ export default function TracksMenu() {
         }
     }, [defaultGroup?.files, defaultGroup?.files.length, sortFiles]);
 
-    function openSortDialog() {
-        setOpenSort(true);
-    }
-
-    const handleClickAway = () => {
-        setOpenSort(false);
-    };
-
     return (
         <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
             <AppBar position="static" className={styles.appbar}>
@@ -205,14 +273,14 @@ export default function TracksMenu() {
                         <CloseIcon />
                     </IconButton>
                     <Typography component="div" className={styles.title}>
-                        Tracks
+                        {DEFAULT_GROUP_NAME}
                     </Typography>
                     <Tooltip key={'sort_tracks'} title="Sort tracks" arrow placement="bottom-end">
                         <IconButton
                             variant="contained"
                             type="button"
                             className={styles.icon}
-                            onClick={openSortDialog}
+                            onClick={() => setOpenSort(true)}
                             ref={anchorEl}
                         >
                             <TimeIcon />
@@ -232,7 +300,7 @@ export default function TracksMenu() {
             <Box
                 minWidth={ctx.infoBlockWidth}
                 maxWidth={ctx.infoBlockWidth}
-                sx={{ overflowX: 'hidden', overflow: 'auto !important', maxHeight: `${height - 120}px` }}
+                sx={{ overflowX: 'hidden !important', overflowY: 'auto !important', maxHeight: `${height - 120}px` }}
             >
                 {ctx.gpxCollection?.length > 0 && <GpxCollection />}
                 {visibleTracksOpen() && (
@@ -250,7 +318,7 @@ export default function TracksMenu() {
                 anchorEl={anchorEl.current}
                 disablePortal={true}
             >
-                <ClickAwayListener onClickAway={handleClickAway}>
+                <ClickAwayListener onClickAway={() => setOpenSort(false)}>
                     <Actions
                         files={defaultGroup?.files}
                         setSortFiles={setSortFiles}
