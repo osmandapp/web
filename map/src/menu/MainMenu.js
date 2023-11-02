@@ -35,6 +35,7 @@ import styles from './mainmenu.module.css';
 import { MENU_INFO_CLOSE_SIZE } from '../manager/GlobalManager';
 import TrackGroupFolder from './tracks/TrackGroupFolder';
 import _ from 'lodash';
+import Empty from './errors/Empty';
 
 export default function MainMenu({
     size,
