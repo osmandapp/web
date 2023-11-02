@@ -297,7 +297,7 @@ export default function TracksMenu() {
                     </Tooltip>
                 </Toolbar>
             </AppBar>
-            {ctx.tracksGroups ? (
+            {ctx.tracksGroups?.length > 0 || defaultGroup?.length > 0 ? (
                 <Box
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}

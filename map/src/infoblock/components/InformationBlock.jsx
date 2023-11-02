@@ -36,7 +36,7 @@ const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
 };
 
 export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setClearState, mainMenuSize }) {
-    const DRAWER_SIZE = 400;
+    const DRAWER_SIZE = 360;
 
     const ctx = useContext(AppContext);
 
