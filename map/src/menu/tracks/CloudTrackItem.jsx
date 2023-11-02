@@ -1,16 +1,18 @@
 import AppContext, { OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
 import {
     Alert,
+    ClickAwayListener,
     IconButton,
     LinearProgress,
     ListItemIcon,
     ListItemText,
     MenuItem,
+    Popper,
     Switch,
     Tooltip,
     Typography,
 } from '@mui/material';
-import { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import Utils, { toHHMMSS } from '../../util/Utils';
 import TrackInfo from './TrackInfo';
 import TracksManager, { isEmptyTrack } from '../../manager/TracksManager';
@@ -20,6 +22,7 @@ import { ReactComponent as TrackIcon } from '../../assets/icons/ic_action_polygo
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import styles from './trackmenu.module.css';
+import TrackActions from './actions/TrackActions';
 
 export default function CloudTrackItem({ file, customIcon = null, visible = null }) {
     const ctx = useContext(AppContext);
@@ -29,6 +32,9 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
     const [loadingTrack, setLoadingTrack] = useState(false);
     const [error, setError] = useState('');
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
+    const [showTrack, setShowTrack] = useState(false);
+    const [openActions, setOpenActions] = useState(false);
+    const anchorEl = useRef(null);
 
     const info = useMemo(() => <TrackInfo file={file} />, [file]);
 
@@ -68,6 +74,10 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
             setDisplayTrack(null);
         }
     }, [displayTrack]);
+
+    useEffect(() => {
+        showTrack && addTrackToMap(setLoadingTrack);
+    }, [showTrack]);
 
     function deleteTrackFromMap() {
         ctx.mutateGpxFiles((o) => (o[file.name].url = null));
@@ -134,6 +144,12 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
         }
     }
 
+    useEffect(() => {
+        if (ctx.openedPopper && ctx.openedPopper !== anchorEl) {
+            setOpenActions(false);
+        }
+    }, [ctx.openedPopper]);
+
     return useMemo(() => {
         const trackName = TracksManager.getFileName(file);
         return (
@@ -169,12 +185,28 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                                 className={styles.icon}
                                 onMouseEnter={() => setHoverIconInfo(true)}
                                 onMouseLeave={() => setHoverIconInfo(false)}
+                                onClick={(e) => {
+                                    setOpenActions(true);
+                                    ctx.setOpenedPopper(anchorEl);
+                                    e.stopPropagation();
+                                }}
+                                ref={anchorEl}
                             >
                                 {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
                             </IconButton>
                         )}
                     </MenuItem>
                 </Tooltip>
+                <Popper
+                    sx={{ zIndex: 2000, mt: '-35px !important', ml: '-5px !important' }}
+                    open={openActions}
+                    anchorEl={anchorEl.current}
+                    disablePortal={true}
+                >
+                    <ClickAwayListener onClickAway={() => setOpenActions(false)}>
+                        <TrackActions track={file} setShowTrack={setShowTrack} />
+                    </ClickAwayListener>
+                </Popper>
                 {loadingTrack ? <LinearProgress /> : <></>}
                 {error !== '' && (
                     <Alert onClose={() => setError('')} severity="warning">
@@ -183,5 +215,16 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                 )}
             </>
         );
-    }, [info, mobile, customIcon, file, loadingTrack, ctx.gpxFiles[file.name]?.url, error, hoverIconInfo]);
+    }, [
+        info,
+        mobile,
+        customIcon,
+        file,
+        loadingTrack,
+        ctx.gpxFiles[file.name]?.url,
+        error,
+        hoverIconInfo,
+        openActions,
+        ctx.openedPopper,
+    ]);
 }

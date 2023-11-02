@@ -9,10 +9,21 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContentText from '@mui/material/DialogContentText';
 import { apiPost } from '../../../../util/HttpApi';
 
-export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowInfoBlock }) {
+export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowInfoBlock = null, file = null }) {
     const ctx = useContext(AppContext);
 
-    const place = isCloudTrack(ctx) ? 'cloud' : isLocalTrack(ctx) ? 'local' : '';
+    function getPlace() {
+        if (isCloudTrack(ctx)) {
+            return 'cloud';
+        }
+        if (isLocalTrack(ctx)) {
+            return 'local';
+        }
+        if (file && ctx.loginUser) {
+            return 'cloud';
+        }
+        return '';
+    }
 
     const toggleShowDialog = () => {
         setDialogOpen(!dialogOpen);
@@ -20,20 +31,23 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowIn
 
     function cleanContextMenu() {
         setDialogOpen(false);
-        setShowInfoBlock(false);
+        if (setShowInfoBlock) {
+            setShowInfoBlock(false);
+        }
     }
 
     async function deleteCurrentTrack() {
-        if (isCloudTrack(ctx) && ctx.loginUser) {
+        if ((isCloudTrack(ctx) || file) && ctx.loginUser) {
+            const trackName = file ? file?.name : ctx.selectedGpxFile?.name;
             const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/delete-file`, '', {
                 params: {
-                    name: ctx.selectedGpxFile.name,
+                    name: trackName,
                     type: 'GPX',
                 },
             });
             if (response.status === 200) {
                 // delete track in ctx.gpxFiles (processed by CloudTrackLayer)
-                const name = ctx.selectedGpxFile.name;
+                const name = trackName;
                 ctx.mutateGpxFiles((o) => {
                     if (o[name]) {
                         o[name].url = null; // remove layer
@@ -44,7 +58,7 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowIn
                 // delete track from ctx.tracksGroups (used in CloudTrackGroup menu)
                 const newTracksGroups = [...ctx.tracksGroups];
                 newTracksGroups?.forEach((group) => {
-                    const currentFile = group.files.findIndex((file) => file.name === ctx.selectedGpxFile.name);
+                    const currentFile = group.files.findIndex((file) => file.name === trackName);
                     if (currentFile !== -1) {
                         group.files.splice(currentFile, 1);
                         group.files = [...group.files]; // copy group.files for CloudTrackGroups/SortActions deps
@@ -55,7 +69,7 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowIn
                 // delete track from ctx.listFiles.uniqueFiles
                 // used to refresh list-files in TracksManager.saveTrack
                 ctx.setListFiles((o) => {
-                    const index = o.uniqueFiles.findIndex((file) => file.name === ctx.selectedGpxFile.name);
+                    const index = o.uniqueFiles.findIndex((file) => file.name === trackName);
                     if (index !== -1) {
                         o.uniqueFiles.splice(index, 1);
                         o.uniqueFiles = [...o.uniqueFiles];
@@ -71,6 +85,15 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowIn
         }
     }
 
+    function getName() {
+        if (ctx.selectedGpxFile?.name) {
+            return TracksManager.prepareName(ctx.selectedGpxFile.name);
+        }
+        if (file) {
+            return file.name;
+        }
+    }
+
     const discard = !!ctx.createTrack?.cloudAutoSave;
 
     return (
@@ -80,9 +103,7 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowIn
                 <DialogContentText>
                     {discard
                         ? `Are you sure you want to discard local changes?`
-                        : `Are you sure you want to delete ${TracksManager.prepareName(
-                              ctx.selectedGpxFile.name
-                          )} track from the ${place} tracks?`}
+                        : `Are you sure you want to delete ${getName()} track from the ${getPlace()} tracks?`}
                 </DialogContentText>
             </DialogContent>
             <DialogActions>

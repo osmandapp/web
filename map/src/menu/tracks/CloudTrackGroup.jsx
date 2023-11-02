@@ -1,5 +1,5 @@
 import { ClickAwayListener, IconButton, ListItemIcon, ListItemText, MenuItem, Popper, Typography } from '@mui/material';
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
@@ -9,9 +9,16 @@ import GroupActions from './actions/GroupActions';
 
 export default function CloudTrackGroup({ index, group }) {
     const ctx = useContext(AppContext);
+
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const [openActions, setOpenActions] = useState(false);
     const anchorEl = useRef(null);
+
+    useEffect(() => {
+        if (ctx.openedPopper && ctx.openedPopper !== anchorEl) {
+            setOpenActions(false);
+        }
+    }, [ctx.openedPopper]);
 
     return (
         <>
@@ -43,6 +50,7 @@ export default function CloudTrackGroup({ index, group }) {
                     onMouseLeave={() => setHoverIconInfo(false)}
                     onClick={(e) => {
                         setOpenActions(true);
+                        ctx.setOpenedPopper(anchorEl);
                         e.stopPropagation();
                     }}
                     ref={anchorEl}
