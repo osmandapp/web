@@ -244,7 +244,6 @@ export const AppContextProvider = (props) => {
         welcome: { text: process.env.REACT_APP_WEBSITE_NAME },
     });
     const [createTrack, setCreateTrack] = useState(null);
-    const [gpxCollection, setGpxCollection] = useState([]);
     const [loadingContextMenu, setLoadingContextMenu] = useState(false);
     const [updateInfoBlock, setUpdateInfoBlock] = useState(false);
     const [trackProfileManager, setTrackProfileManager] = useState({});
@@ -385,8 +384,6 @@ export const AppContextProvider = (props) => {
                 setTracksGroups,
                 createTrack,
                 setCreateTrack,
-                gpxCollection,
-                setGpxCollection,
                 loadingContextMenu,
                 setLoadingContextMenu,
                 updateInfoBlock,

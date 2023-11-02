@@ -10,14 +10,14 @@ import {
     Radio,
     RadioGroup,
 } from '@mui/material';
-import { getGpxTime } from '../../manager/TracksManager';
+import { getGpxTime } from '../../../manager/TracksManager';
 import React, { forwardRef, useEffect, useState } from 'react';
-import { ReactComponent as AscendingIcon } from '../../assets/icons/ic_action_sort_by_name_ascending.svg';
-import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
-import { ReactComponent as DescendingIcon } from '../../assets/icons/ic_action_sort_by_name_descending.svg';
-import { ReactComponent as LongToShortIcon } from '../../assets/icons/ic_action_sort_duration_long_to_short.svg';
-import { ReactComponent as ShortToLongIcon } from '../../assets/icons/ic_action_sort_duration_short_to_long.svg';
-import styles from './trackmenu.module.css';
+import { ReactComponent as AscendingIcon } from '../../../assets/icons/ic_action_sort_by_name_ascending.svg';
+import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_time.svg';
+import { ReactComponent as DescendingIcon } from '../../../assets/icons/ic_action_sort_by_name_descending.svg';
+import { ReactComponent as LongToShortIcon } from '../../../assets/icons/ic_action_sort_duration_long_to_short.svg';
+import { ReactComponent as ShortToLongIcon } from '../../../assets/icons/ic_action_sort_duration_short_to_long.svg';
+import styles from '../trackmenu.module.css';
 
 const az = (a, b) => (a > b) - (a < b);
 
@@ -94,7 +94,7 @@ const defaultMethod = () => {
     return Object.keys(allMethods)[0];
 };
 
-const Actions = forwardRef(({ files, setSortFiles, groups, setSortGroups }, ref) => {
+const SortActions = forwardRef(({ files, setSortFiles, groups, setSortGroups }, ref) => {
     const [currentMethod, setCurrentMethod] = useState(defaultMethod);
 
     useEffect(() => {
@@ -166,5 +166,5 @@ const Actions = forwardRef(({ files, setSortFiles, groups, setSortGroups }, ref)
     );
 });
 
-Actions.displayName = 'Actions';
-export default Actions;
+SortActions.displayName = 'SortActions';
+export default SortActions;

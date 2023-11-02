@@ -4,7 +4,7 @@ import CloudTrackGroup from './CloudTrackGroup';
 import { AppBar, Box, ClickAwayListener, IconButton, Popper, Toolbar, Tooltip, Typography } from '@mui/material';
 import styles from './trackmenu.module.css';
 import LocalGpxUploader from '../../frame/components/util/LocalGpxUploader';
-import Actions from './Actions';
+import SortActions from './actions/SortActions';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as ImportIcon } from '../../assets/icons/ic_action_folder_import_outlined.svg';
@@ -95,7 +95,7 @@ export default function TrackGroupFolder({ folder }) {
                 disablePortal={true}
             >
                 <ClickAwayListener onClickAway={() => setOpenSort(false)}>
-                    <Actions
+                    <SortActions
                         files={folder.groupFiles}
                         setSortFiles={setSortFiles}
                         groups={folder.subfolders}

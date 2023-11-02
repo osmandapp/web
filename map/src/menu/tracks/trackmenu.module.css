@@ -41,7 +41,11 @@
     padding: 12px 16px !important;
     gap: 24px !important;
 }
-.icon {
+.groupAction {
+    padding: 10px 16px !important;
+    gap: 20px !important;
+}
+.iconGroupActions {
     min-width: 24px !important;
     fill: var(--svg-icon-color) !important;
     &:hover {

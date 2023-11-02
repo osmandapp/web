@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect, useMemo, useRef } from 'react';
 import AppContext from '../../context/AppContext';
 import { toHHMMSS } from '../../util/Utils';
 import CloudTrackGroup from './CloudTrackGroup';
-import GpxCollection from './GpxCollection';
 import VisibleGroup from './VisibleGroup';
 import _ from 'lodash';
 import { AppBar, Box, ClickAwayListener, IconButton, Popper, Toolbar, Tooltip, Typography } from '@mui/material';
@@ -14,7 +13,7 @@ import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import LocalGpxUploader from '../../frame/components/util/LocalGpxUploader';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import CloudTrackItem from './CloudTrackItem';
-import Actions from './Actions';
+import SortActions from './actions/SortActions';
 import { DEFAULT_GROUP_NAME } from '../../manager/TracksManager';
 
 export default function TracksMenu() {
@@ -302,7 +301,6 @@ export default function TracksMenu() {
                 maxWidth={ctx.infoBlockWidth}
                 sx={{ overflowX: 'hidden !important', overflowY: 'auto !important', maxHeight: `${height - 120}px` }}
             >
-                {ctx.gpxCollection?.length > 0 && <GpxCollection />}
                 {visibleTracksOpen() && (
                     <VisibleGroup visibleTracks={visibleTracks} setVisibleTracks={setVisibleTracks} />
                 )}
@@ -319,7 +317,7 @@ export default function TracksMenu() {
                 disablePortal={true}
             >
                 <ClickAwayListener onClickAway={() => setOpenSort(false)}>
-                    <Actions
+                    <SortActions
                         files={defaultGroup?.files}
                         setSortFiles={setSortFiles}
                         groups={ctx.tracksGroups}

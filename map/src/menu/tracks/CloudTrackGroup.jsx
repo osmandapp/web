@@ -1,45 +1,65 @@
-import { IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
-import { useContext, useState } from 'react';
+import { ClickAwayListener, IconButton, ListItemIcon, ListItemText, MenuItem, Popper, Typography } from '@mui/material';
+import React, { useContext, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import styles from './trackmenu.module.css';
+import GroupActions from './actions/GroupActions';
 
 export default function CloudTrackGroup({ index, group }) {
     const ctx = useContext(AppContext);
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
+    const [openActions, setOpenActions] = useState(false);
+    const anchorEl = useRef(null);
 
     return (
-        <MenuItem
-            className={styles.group}
-            key={'group' + group.name + index}
-            id={'se-menu-cloud-' + group.name}
-            divider
-            onClick={(e) => {
-                if (e.target !== 'path') {
-                    ctx.setOpenTrackGroups((prevState) => [...prevState, group]);
-                }
-            }}
-        >
-            <ListItemIcon className={styles.icon}>
-                <FolderIcon />
-            </ListItemIcon>
-            <ListItemText>
-                <Typography variant="inherit" className={styles.groupName} noWrap>
-                    {group.name}
-                </Typography>
-                <Typography variant="body2" className={styles.groupInfo} noWrap>
-                    {`${group.lastModifiedData.split(',')[0]}, tracks ${group.files.length}`}
-                </Typography>
-            </ListItemText>
-            <IconButton
-                className={styles.icon}
-                onMouseEnter={() => setHoverIconInfo(true)}
-                onMouseLeave={() => setHoverIconInfo(false)}
+        <>
+            <MenuItem
+                className={styles.group}
+                key={'group' + group.name + index}
+                id={'se-menu-cloud-' + group.name}
+                divider
+                onClick={(e) => {
+                    if (e.target !== 'path') {
+                        ctx.setOpenTrackGroups((prevState) => [...prevState, group]);
+                    }
+                }}
             >
-                {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
-            </IconButton>
-        </MenuItem>
+                <ListItemIcon className={styles.icon}>
+                    <FolderIcon />
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography variant="inherit" className={styles.groupName} noWrap>
+                        {group.name}
+                    </Typography>
+                    <Typography variant="body2" className={styles.groupInfo} noWrap>
+                        {`${group.lastModifiedData.split(',')[0]}, tracks ${group.files.length}`}
+                    </Typography>
+                </ListItemText>
+                <IconButton
+                    className={styles.icon}
+                    onMouseEnter={() => setHoverIconInfo(true)}
+                    onMouseLeave={() => setHoverIconInfo(false)}
+                    onClick={(e) => {
+                        setOpenActions(true);
+                        e.stopPropagation();
+                    }}
+                    ref={anchorEl}
+                >
+                    {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
+                </IconButton>
+            </MenuItem>
+            <Popper
+                sx={{ zIndex: 2000, mt: '-35px !important', ml: '-5px !important' }}
+                open={openActions}
+                anchorEl={anchorEl.current}
+                disablePortal={true}
+            >
+                <ClickAwayListener onClickAway={() => setOpenActions(false)}>
+                    <GroupActions group={group} />
+                </ClickAwayListener>
+            </Popper>
+        </>
     );
 }

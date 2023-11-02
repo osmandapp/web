@@ -47,7 +47,7 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowIn
                     const currentFile = group.files.findIndex((file) => file.name === ctx.selectedGpxFile.name);
                     if (currentFile !== -1) {
                         group.files.splice(currentFile, 1);
-                        group.files = [...group.files]; // copy group.files for CloudTrackGroups/Actions deps
+                        group.files = [...group.files]; // copy group.files for CloudTrackGroups/SortActions deps
                     }
                 });
                 ctx.setTracksGroups(newTracksGroups);

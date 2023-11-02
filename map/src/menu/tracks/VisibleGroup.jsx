@@ -47,16 +47,6 @@ export default function VisibleGroup({ visibleTracks, setVisibleTracks }) {
     const Buttons = () => {
         return (
             <div>
-                {
-                    <MenuItem
-                        onClick={(e) => {
-                            addToCollection();
-                            e.stopPropagation();
-                        }}
-                    >
-                        To Collection
-                    </MenuItem>
-                }
                 {getVisibleTracksLength() !== 0 && (
                     <MenuItem
                         className={classes.popper}
@@ -71,20 +61,6 @@ export default function VisibleGroup({ visibleTracks, setVisibleTracks }) {
             </div>
         );
     };
-
-    function addToCollection() {
-        visibleTracks.local.forEach((file) => {
-            if (!ctx.gpxCollection.find((name) => name === file.name)) {
-                ctx.gpxCollection.push(file.name);
-            }
-        });
-        visibleTracks.cloud.forEach((file) => {
-            if (!ctx.gpxCollection.find((name) => name === file.name)) {
-                ctx.gpxCollection.push(file.name);
-            }
-        });
-        ctx.setGpxCollection([...ctx.gpxCollection]);
-    }
 
     function clear() {
         // clear Visible Local Tracks
