@@ -16,6 +16,7 @@ import CloudTrackItem from './CloudTrackItem';
 import SortActions from './actions/SortActions';
 import { DEFAULT_GROUP_NAME } from '../../manager/TracksManager';
 import Empty from '../errors/Empty';
+import Loading from '../errors/Loading';
 
 export default function TracksMenu() {
     const ctx = useContext(AppContext);
@@ -297,30 +298,36 @@ export default function TracksMenu() {
                     </Tooltip>
                 </Toolbar>
             </AppBar>
-            {ctx.tracksGroups?.length > 0 || defaultGroup?.length > 0 ? (
-                <Box
-                    minWidth={ctx.infoBlockWidth}
-                    maxWidth={ctx.infoBlockWidth}
-                    sx={{
-                        overflowX: 'hidden !important',
-                        overflowY: 'auto !important',
-                        maxHeight: `${height - 120}px`,
-                    }}
-                >
-                    {visibleTracksOpen() && (
-                        <VisibleGroup visibleTracks={visibleTracks} setVisibleTracks={setVisibleTracks} />
-                    )}
-                    {ctx.tracksGroups &&
-                        (sortGroups.length > 0 ? sortGroups : ctx.tracksGroups).map((group, index) => {
-                            return <CloudTrackGroup key={group.name + index} index={index} group={group} />;
-                        })}
-                    {defaultGroupItems}
-                </Box>
+            {ctx.gpxLoading ? (
+                <Loading />
             ) : (
-                <Empty
-                    title={'You don’t have track files'}
-                    text={'You can import, create or record track files using OsmAnd App.'}
-                />
+                <>
+                    {ctx.tracksGroups?.length > 0 || defaultGroup?.length > 0 ? (
+                        <Box
+                            minWidth={ctx.infoBlockWidth}
+                            maxWidth={ctx.infoBlockWidth}
+                            sx={{
+                                overflowX: 'hidden !important',
+                                overflowY: 'auto !important',
+                                maxHeight: `${height - 120}px`,
+                            }}
+                        >
+                            {visibleTracksOpen() && (
+                                <VisibleGroup visibleTracks={visibleTracks} setVisibleTracks={setVisibleTracks} />
+                            )}
+                            {ctx.tracksGroups &&
+                                (sortGroups.length > 0 ? sortGroups : ctx.tracksGroups).map((group, index) => {
+                                    return <CloudTrackGroup key={group.name + index} index={index} group={group} />;
+                                })}
+                            {defaultGroupItems}
+                        </Box>
+                    ) : (
+                        <Empty
+                            title={'You don’t have track files'}
+                            text={'You can import, create or record track files using OsmAnd App.'}
+                        />
+                    )}
+                </>
             )}
             <Popper
                 sx={{ zIndex: 2000, mt: '-35px !important', ml: '-5px !important' }}
