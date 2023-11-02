@@ -7,6 +7,15 @@
 }
 .icon {
     fill: var(--svg-icon-color) !important;
+    min-width: 24px !important;
+    max-width: 24px !important;
+    &:hover {
+        fill: var(--selected-color) !important;
+        background-color: #f5f5f5 !important;
+    }
+}
+.sortIcon {
+    fill: var(--svg-icon-color) !important;
     padding: 8px;
     &:hover {
         fill: var(--selected-color) !important;

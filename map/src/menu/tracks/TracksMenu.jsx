@@ -270,7 +270,7 @@ export default function TracksMenu() {
         <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
             <AppBar position="static" className={styles.appbar}>
                 <Toolbar className={styles.toolbar}>
-                    <IconButton variant="contained" type="button" className={styles.icon} onClick={closeTrackMenu}>
+                    <IconButton variant="contained" type="button" className={styles.sortIcon} onClick={closeTrackMenu}>
                         <CloseIcon />
                     </IconButton>
                     <Typography component="div" className={styles.title}>
@@ -280,7 +280,7 @@ export default function TracksMenu() {
                         <IconButton
                             variant="contained"
                             type="button"
-                            className={styles.icon}
+                            className={styles.sortIcon}
                             onClick={() => setOpenSort(true)}
                             ref={anchorEl}
                         >
@@ -290,7 +290,12 @@ export default function TracksMenu() {
                     <Tooltip key={'import_track'} title="Import track" arrow placement="bottom-end">
                         <span>
                             <LocalGpxUploader>
-                                <IconButton component="span" variant="contained" type="button" className={styles.icon}>
+                                <IconButton
+                                    component="span"
+                                    variant="contained"
+                                    type="button"
+                                    className={styles.sortIcon}
+                                >
                                     <ImportIcon />
                                 </IconButton>
                             </LocalGpxUploader>
