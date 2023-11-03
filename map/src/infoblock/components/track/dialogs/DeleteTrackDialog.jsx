@@ -56,15 +56,10 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowIn
                 });
 
                 // delete track from ctx.tracksGroups (used in CloudTrackGroup menu)
-                const newTracksGroups = [...ctx.tracksGroups];
-                newTracksGroups?.forEach((group) => {
-                    const currentFile = group.files.findIndex((file) => file.name === trackName);
-                    if (currentFile !== -1) {
-                        group.files.splice(currentFile, 1);
-                        group.files = [...group.files]; // copy group.files for CloudTrackGroups/SortActions deps
-                    }
-                });
-                ctx.setTracksGroups(newTracksGroups);
+                deleteTracksFromGroups(trackName);
+
+                // delete track from ctx.openTrackGroups
+                deleteTracksFromLastGroup(trackName);
 
                 // delete track from ctx.listFiles.uniqueFiles
                 // used to refresh list-files in TracksManager.saveTrack
@@ -82,6 +77,41 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowIn
         } else if (isLocalTrack(ctx)) {
             TracksManager.deleteLocalTrack(ctx);
             cleanContextMenu();
+        }
+    }
+
+    function deleteTracksFromGroups(trackName) {
+        const parts = trackName.split('/');
+        if (parts.length > 1) {
+            const pathToGroup = parts.slice(0, -1).join('/');
+            const group = ctx.tracksGroups.find((group) => group.name === pathToGroup);
+            if (group) {
+                const fileWithoutGroup = parts[parts.length - 1];
+                const fileIndexInGroupFiles = group.groupFiles.findIndex((file) => file.name === fileWithoutGroup);
+                if (fileIndexInGroupFiles !== -1) {
+                    group.groupFiles.splice(fileIndexInGroupFiles, 1);
+                }
+                const fileIndexInFiles = group.files.findIndex((file) => file.name === fileWithoutGroup);
+                if (fileIndexInFiles !== -1) {
+                    group.files.splice(fileIndexInFiles, 1);
+                }
+                ctx.setTracksGroups([...ctx.tracksGroups]);
+            }
+        }
+    }
+
+    function deleteTracksFromLastGroup(trackName) {
+        if (ctx.openTrackGroups.length > 0) {
+            const lastGroup = ctx.openTrackGroups[ctx.openTrackGroups.length - 1];
+            const fileIndexInGroupFiles = lastGroup.groupFiles.findIndex((file) => file.name === trackName);
+            if (fileIndexInGroupFiles !== -1) {
+                lastGroup.groupFiles.splice(fileIndexInGroupFiles, 1);
+            }
+            const fileIndexInFiles = lastGroup.files.findIndex((file) => file.name === trackName);
+            if (fileIndexInFiles !== -1) {
+                lastGroup.files.splice(fileIndexInFiles, 1);
+            }
+            ctx.setTracksGroups([...ctx.tracksGroups]);
         }
     }
 
