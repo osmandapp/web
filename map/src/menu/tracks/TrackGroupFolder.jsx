@@ -65,6 +65,7 @@ export default function TrackGroupFolder({ folder }) {
                             type="button"
                             className={styles.appBarIcon}
                             onClick={() => setOpenSort(true)}
+                            disabled={!folder}
                             ref={anchorEl}
                         >
                             <TimeIcon />

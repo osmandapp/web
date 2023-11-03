@@ -283,15 +283,18 @@ export default function TracksMenu() {
                         {DEFAULT_GROUP_NAME}
                     </Typography>
                     <Tooltip key={'sort_tracks'} title="Sort tracks" arrow placement="bottom-end">
+                        <span>
                         <IconButton
                             variant="contained"
                             type="button"
                             className={styles.appBarIcon}
                             onClick={() => setOpenSort(true)}
                             ref={anchorEl}
+                            disabled={!defaultGroup || defaultGroup.files?.length === 0}
                         >
                             <TimeIcon />
                         </IconButton>
+                            </span>
                     </Tooltip>
                     <Tooltip key={'import_track'} title="Import track" arrow placement="bottom-end">
                         <span>
