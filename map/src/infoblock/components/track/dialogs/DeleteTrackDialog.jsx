@@ -86,11 +86,11 @@ export default function DeleteTrackDialog({ dialogOpen, setDialogOpen, setShowIn
     }
 
     function getName() {
-        if (ctx.selectedGpxFile?.name) {
-            return TracksManager.prepareName(ctx.selectedGpxFile.name);
-        }
         if (file) {
             return file.name;
+        }
+        if (ctx.selectedGpxFile?.name) {
+            return TracksManager.prepareName(ctx.selectedGpxFile.name);
         }
     }
 
