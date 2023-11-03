@@ -9,7 +9,7 @@ const GroupActions = forwardRef(({ group }, ref) => {
 
     return (
         <>
-            <Box sx={{ width: '297px' }} ref={ref}>
+            <Box className={styles.actions} ref={ref}>
                 <Paper>
                     <MenuItem className={styles.groupAction} onClick={() => setNewCollection(group.files)}>
                         <ListItemIcon className={styles.iconGroupActions}>

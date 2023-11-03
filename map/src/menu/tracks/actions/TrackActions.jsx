@@ -31,7 +31,7 @@ const TrackActions = forwardRef(({ track, setShowTrack }, ref) => {
 
     return (
         <>
-            <Box sx={{ width: '297px' }} ref={ref}>
+            <Box className={styles.actions} ref={ref}>
                 <Paper>
                     <MenuItem divider className={styles.groupAction} onClick={() => setShowTrack(true)}>
                         <ListItemIcon className={styles.iconGroupActions}>

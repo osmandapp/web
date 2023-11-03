@@ -127,7 +127,7 @@ const SortActions = forwardRef(
         };
 
         return (
-            <Box className={styles.sort} ref={ref}>
+            <Box className={styles.actions} ref={ref}>
                 <Paper>
                     <FormControl>
                         <RadioGroup value={currentMethod} onChange={handleChange}>
