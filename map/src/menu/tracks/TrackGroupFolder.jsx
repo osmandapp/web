@@ -52,7 +52,7 @@ export default function TrackGroupFolder({ folder }) {
         <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
             <AppBar position="static" className={styles.appbar}>
                 <Toolbar className={styles.toolbar}>
-                    <IconButton variant="contained" type="button" className={styles.icon} onClick={prevTrackMenu}>
+                    <IconButton variant="contained" type="button" className={styles.appBarIcon} onClick={prevTrackMenu}>
                         <BackIcon />
                     </IconButton>
                     <Typography component="div" className={styles.title}>
@@ -62,7 +62,7 @@ export default function TrackGroupFolder({ folder }) {
                         <IconButton
                             variant="contained"
                             type="button"
-                            className={styles.icon}
+                            className={styles.appBarIcon}
                             onClick={() => setOpenSort(true)}
                             ref={anchorEl}
                         >
@@ -72,7 +72,12 @@ export default function TrackGroupFolder({ folder }) {
                     <Tooltip key={'import_track'} title="Import track" arrow placement="bottom-end">
                         <span>
                             <LocalGpxUploader>
-                                <IconButton component="span" variant="contained" type="button" className={styles.icon}>
+                                <IconButton
+                                    component="span"
+                                    variant="contained"
+                                    type="button"
+                                    className={styles.appBarIcon}
+                                >
                                     <ImportIcon />
                                 </IconButton>
                             </LocalGpxUploader>

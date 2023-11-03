@@ -22,6 +22,14 @@
         background-color: #f5f5f5 !important;
     }
 }
+.appBarIcon {
+    fill: var(--svg-icon-color) !important;
+    padding: 8px;
+    &:hover {
+        fill: var(--selected-color) !important;
+        background-color: #f5f5f5 !important;
+    }
+}
 .title {
     flex-grow: 1;
     color: var(--text-primary) !important;
@@ -33,15 +41,19 @@
     margin-left: 16px !important;
     margin-right: 16px !important;
 }
-.sortItem {
+.sortText {
     color: var(--text-primary) !important;
     font-size: 16px !important;
     font-style: normal !important;
     font-weight: 400 !important;
     line-height: 150% !important;
     letter-spacing: 0.16px !important;
-    margin-left: 12px !important;
-    margin-right: 20px !important;
+}
+.sortItem {
+    padding: 0px 4px 0px 16px !important;
+    align-items: center !important;
+    gap: 20px !important;
+    align-self: stretch !important;
 }
 .group {
     min-height: 68px !important;
@@ -74,4 +86,30 @@
     width: 360px !important;
     padding: 10px 16px !important;
     gap: 24px !important;
+}
+.sort {
+    width: 297px;
+    box-shadow:
+        0px 5px 5px 0px rgba(0, 0, 0, 0.2),
+        0px 3px 14px 0px rgba(0, 0, 0, 0.12),
+        0px 8px 10px 0px rgba(0, 0, 0, 0.14),
+        0px -3px 30px 0px rgba(0, 0, 0, 0.09) !important;
+}
+.control {
+    display: flex !important;
+    padding: 14px !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    margin-left: -10px !important;
+}
+.dividerSort {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    align-self: stretch !important;
+}
+.controlLabel {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
 }

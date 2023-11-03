@@ -270,7 +270,12 @@ export default function TracksMenu() {
         <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
             <AppBar position="static" className={styles.appbar}>
                 <Toolbar className={styles.toolbar}>
-                    <IconButton variant="contained" type="button" className={styles.sortIcon} onClick={closeTrackMenu}>
+                    <IconButton
+                        variant="contained"
+                        type="button"
+                        className={styles.appBarIcon}
+                        onClick={closeTrackMenu}
+                    >
                         <CloseIcon />
                     </IconButton>
                     <Typography component="div" className={styles.title}>
@@ -280,7 +285,7 @@ export default function TracksMenu() {
                         <IconButton
                             variant="contained"
                             type="button"
-                            className={styles.sortIcon}
+                            className={styles.appBarIcon}
                             onClick={() => setOpenSort(true)}
                             ref={anchorEl}
                         >
@@ -294,7 +299,7 @@ export default function TracksMenu() {
                                     component="span"
                                     variant="contained"
                                     type="button"
-                                    className={styles.sortIcon}
+                                    className={styles.appBarIcon}
                                 >
                                     <ImportIcon />
                                 </IconButton>

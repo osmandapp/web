@@ -45,7 +45,7 @@ export default function CloudTrackGroup({ index, group }) {
                     </Typography>
                 </ListItemText>
                 <IconButton
-                    className={styles.icon}
+                    className={styles.sortIcon}
                     onMouseEnter={() => setHoverIconInfo(true)}
                     onMouseLeave={() => setHoverIconInfo(false)}
                     onClick={(e) => {

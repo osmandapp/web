@@ -15,8 +15,8 @@ import React, { forwardRef, useEffect, useState } from 'react';
 import { ReactComponent as AscendingIcon } from '../../../assets/icons/ic_action_sort_by_name_ascending.svg';
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_time.svg';
 import { ReactComponent as DescendingIcon } from '../../../assets/icons/ic_action_sort_by_name_descending.svg';
-import { ReactComponent as LongToShortIcon } from '../../../assets/icons/ic_action_sort_duration_long_to_short.svg';
-import { ReactComponent as ShortToLongIcon } from '../../../assets/icons/ic_action_sort_duration_short_to_long.svg';
+import { ReactComponent as LongToShortIcon } from '../../../assets/icons/ic_action_sort_long_to_short.svg';
+import { ReactComponent as ShortToLongIcon } from '../../../assets/icons/ic_action_sort_short_to_long.svg';
 import styles from '../trackmenu.module.css';
 
 const az = (a, b) => (a > b) - (a < b);
@@ -57,7 +57,7 @@ const allMethods = {
         reverse: true,
         callback: byTime,
         icon: <TimeIcon />,
-        name: 'Sort by time',
+        name: 'Last modified',
     },
     az: {
         reverse: false,
@@ -110,53 +110,63 @@ const SortActions = forwardRef(({ files, setSortFiles, groups, setSortGroups }, 
 
     const Label = ({ item }) => {
         return (
-            <ListItem sx={{ ml: '-24px' }}>
+            <ListItem className={styles.sortItem}>
                 <Icon className={styles.icon}>{item.icon}</Icon>
-                <ListItemText className={styles.sortItem}>{item.name}</ListItemText>
+                <ListItemText className={styles.sortText}>{item.name}</ListItemText>
             </ListItem>
         );
     };
 
     return (
-        <Box sx={{ width: '297px' }} ref={ref}>
+        <Box className={styles.sort} ref={ref}>
             <Paper>
                 <FormControl>
                     <RadioGroup value={currentMethod} onChange={handleChange}>
                         <FormControlLabel
+                            className={styles.controlLabel}
                             disableTypography={true}
                             labelPlacement="start"
                             value="time"
-                            control={<Radio />}
+                            sx={{ mb: '8px', mt: '8px' }}
+                            control={<Radio className={styles.control} size="small" />}
                             label={<Label item={allMethods.time} />}
                         />
-                        <Divider />
+                        <Divider sx={{ width: '297px' }} className={styles.dividerSort} />
                         <FormControlLabel
+                            className={styles.controlLabel}
                             disableTypography={true}
                             labelPlacement="start"
                             value="az"
-                            control={<Radio />}
+                            sx={{ mt: '8px' }}
+                            control={<Radio className={styles.control} size="small" />}
                             label={<Label item={allMethods.az} />}
                         />
                         <FormControlLabel
+                            className={styles.controlLabel}
                             disableTypography={true}
                             labelPlacement="start"
                             value="za"
-                            control={<Radio />}
+                            sx={{ mb: '8px' }}
+                            control={<Radio className={styles.control} size="small" />}
                             label={<Label item={allMethods.za} />}
                         />
-                        <Divider />
+                        <Divider sx={{ width: '297px' }} className={styles.dividerSort} />
                         <FormControlLabel
+                            className={styles.controlLabel}
                             disableTypography={true}
                             labelPlacement="start"
                             value="longest"
-                            control={<Radio />}
+                            sx={{ mt: '8px' }}
+                            control={<Radio className={styles.control} size="small" />}
                             label={<Label item={allMethods.longest} />}
                         />
                         <FormControlLabel
+                            className={styles.controlLabel}
                             disableTypography={true}
                             labelPlacement="start"
                             value="shortest"
-                            control={<Radio />}
+                            sx={{ mb: '8px' }}
+                            control={<Radio className={styles.control} size="small" />}
                             label={<Label item={allMethods.shortest} />}
                         />
                     </RadioGroup>

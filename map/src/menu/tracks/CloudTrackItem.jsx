@@ -182,7 +182,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                             />
                         ) : (
                             <IconButton
-                                className={styles.icon}
+                                className={styles.sortIcon}
                                 onMouseEnter={() => setHoverIconInfo(true)}
                                 onMouseLeave={() => setHoverIconInfo(false)}
                                 onClick={(e) => {
