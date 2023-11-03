@@ -10,7 +10,7 @@ import { apiGet } from '../../util/HttpApi';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
 import styles from './trackmenu.module.css';
 
-export default function GpxCollection({ tracks }) {
+export default function GpxCollection({ tracks, setOpenActions }) {
     const [openMenu, setOpenMenu] = useState(false);
     const [processDownload, setProcessDownload] = useState(false);
     const [openDialog, setOpenDialog] = useState(false);
@@ -86,8 +86,18 @@ export default function GpxCollection({ tracks }) {
                             return CollectionRow({ track: track, index: index });
                         })}
                 </DialogContent>
-                {collection.length > 0 && (
-                    <DialogActions>
+                <DialogActions>
+                    <Button
+                        variant="contained"
+                        component="span"
+                        onClick={(e) => {
+                            setOpenActions(false);
+                            e.stopPropagation();
+                        }}
+                    >
+                        Cancel
+                    </Button>
+                    {collection.length > 0 && (
                         <Button
                             variant="contained"
                             component="span"
@@ -98,8 +108,8 @@ export default function GpxCollection({ tracks }) {
                         >
                             Get Map
                         </Button>
-                    </DialogActions>
-                )}
+                    )}
+                </DialogActions>
             </Dialog>
             <Dialog open={openDialog} onClose={toggleShowDialog}>
                 <DialogTitle>Get Map</DialogTitle>

@@ -4,7 +4,7 @@ import styles from '../trackmenu.module.css';
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_gsave_dark.svg';
 import GpxCollection from '../GpxCollection';
 
-const GroupActions = forwardRef(({ group }, ref) => {
+const GroupActions = forwardRef(({ group, setOpenActions }, ref) => {
     const [newCollection, setNewCollection] = useState([]);
 
     return (
@@ -23,7 +23,7 @@ const GroupActions = forwardRef(({ group }, ref) => {
                     </MenuItem>
                 </Paper>
             </Box>
-            {newCollection.length > 0 && <GpxCollection tracks={newCollection} />}
+            {newCollection.length > 0 && <GpxCollection tracks={newCollection} setOpenActions={setOpenActions} />}
         </>
     );
 });

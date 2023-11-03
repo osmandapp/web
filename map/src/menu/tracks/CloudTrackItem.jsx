@@ -204,7 +204,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                     disablePortal={true}
                 >
                     <ClickAwayListener onClickAway={() => setOpenActions(false)}>
-                        <TrackActions track={file} setShowTrack={setShowTrack} />
+                        <TrackActions track={file} setShowTrack={setShowTrack} setOpenActions={setOpenActions} />
                     </ClickAwayListener>
                 </Popper>
                 {loadingTrack ? <LinearProgress /> : <></>}

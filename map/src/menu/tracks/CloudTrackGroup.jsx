@@ -65,7 +65,7 @@ export default function CloudTrackGroup({ index, group }) {
                 disablePortal={true}
             >
                 <ClickAwayListener onClickAway={() => setOpenActions(false)}>
-                    <GroupActions group={group} />
+                    <GroupActions group={group} setOpenActions={setOpenActions} />
                 </ClickAwayListener>
             </Popper>
         </>

@@ -8,7 +8,7 @@ import DeleteTrackDialog from '../../../infoblock/components/track/dialogs/Delet
 import Utils from '../../../util/Utils';
 import TracksManager from '../../../manager/TracksManager';
 
-const TrackActions = forwardRef(({ track, setShowTrack }, ref) => {
+const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) => {
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const downloadGpx = async () => {
         const urlFile = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
@@ -33,7 +33,14 @@ const TrackActions = forwardRef(({ track, setShowTrack }, ref) => {
         <>
             <Box className={styles.actions} ref={ref}>
                 <Paper>
-                    <MenuItem divider className={styles.groupAction} onClick={() => setShowTrack(true)}>
+                    <MenuItem
+                        divider
+                        className={styles.groupAction}
+                        onClick={() => {
+                            setShowTrack(true);
+                            setOpenActions(false);
+                        }}
+                    >
                         <ListItemIcon className={styles.iconGroupActions}>
                             <ShowOnMapIcon />
                         </ListItemIcon>
@@ -43,7 +50,14 @@ const TrackActions = forwardRef(({ track, setShowTrack }, ref) => {
                             </Typography>
                         </ListItemText>
                     </MenuItem>
-                    <MenuItem divider className={styles.groupAction} onClick={() => downloadGpx()}>
+                    <MenuItem
+                        divider
+                        className={styles.groupAction}
+                        onClick={() => {
+                            downloadGpx();
+                            setOpenActions(false);
+                        }}
+                    >
                         <ListItemIcon className={styles.iconGroupActions}>
                             <DownloadIcon />
                         </ListItemIcon>
@@ -66,7 +80,12 @@ const TrackActions = forwardRef(({ track, setShowTrack }, ref) => {
                 </Paper>
             </Box>
             {openDeleteDialog && (
-                <DeleteTrackDialog dialogOpen={openDeleteDialog} setDialogOpen={setOpenDeleteDialog} file={track} />
+                <DeleteTrackDialog
+                    dialogOpen={openDeleteDialog}
+                    setDialogOpen={setOpenDeleteDialog}
+                    file={track}
+                    setOpenActions={setOpenActions}
+                />
             )}
         </>
     );
