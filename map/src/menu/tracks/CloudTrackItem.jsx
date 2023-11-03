@@ -24,6 +24,10 @@ import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_
 import styles from './trackmenu.module.css';
 import TrackActions from './actions/TrackActions';
 
+const DEFAULT_DIST = 0;
+const DEFAULT_TIME = '0:00';
+const DEFAULT_POINTS = 0;
+
 export default function CloudTrackItem({ file, customIcon = null, visible = null }) {
     const ctx = useContext(AppContext);
 
@@ -46,17 +50,17 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
 
     function getDist(file) {
         let f = file.details ? file.details : file;
-        return f?.analysis?.totalDistance ? (f?.analysis?.totalDistance / 1000).toFixed(2) : 0;
+        return f?.analysis?.totalDistance ? (f?.analysis?.totalDistance / 1000).toFixed(2) : DEFAULT_DIST;
     }
 
     function getTime(file) {
         let f = file.details ? file.details : file;
-        return f?.analysis?.timeMoving ? toHHMMSS(f?.analysis?.timeMoving) : '0:00';
+        return f?.analysis?.timeMoving ? toHHMMSS(f?.analysis?.timeMoving) : DEFAULT_TIME;
     }
 
     function getPoints(file) {
         let f = file.details ? file.details : file;
-        return f?.analysis?.points ? f?.analysis?.points : 0;
+        return f?.analysis?.points ? f?.analysis?.points : DEFAULT_POINTS;
     }
 
     async function processDisplayTrack({ visible, setLoading }) {
@@ -169,9 +173,11 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                                 {trackName}
                             </Typography>
                             <Typography variant="body2" className={styles.groupInfo} noWrap>
-                                {dist && `${dist} km · `}
+                                {dist && `${dist} km`}
+                                {' · '}
                                 {time && `${time}`}
-                                {points && ` · ${points}`}
+                                {' · '}
+                                {points && `${points}`}
                             </Typography>
                         </ListItemText>
                         {visible ? (
