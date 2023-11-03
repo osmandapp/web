@@ -21,10 +21,11 @@ export default function GpxCollection({ tracks }) {
 
     const downloadObf = async (name) => {
         setProcessDownload(true);
+        const names = collection.map((obj) => obj.name);
         await apiGet({
             url: `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-obf`,
             method: 'post',
-            data: collection,
+            data: names,
             responseType: 'blob',
         }).then((resp) => {
             setProcessDownload(false);
