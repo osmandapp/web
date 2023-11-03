@@ -94,87 +94,97 @@ const defaultMethod = () => {
     return Object.keys(allMethods)[0];
 };
 
-const SortActions = forwardRef(({ files, setSortFiles, groups, setSortGroups }, ref) => {
-    const [currentMethod, setCurrentMethod] = useState(defaultMethod);
+const SortActions = forwardRef(
+    ({ files, setSortFiles, groups, setSortGroups, setOpenSort, selectedSort, setSelectedSort }, ref) => {
+        const [currentMethod, setCurrentMethod] = useState(selectedSort ? selectedSort : defaultMethod);
 
-    useEffect(() => {
-        setSortFiles(allMethods[currentMethod].callback(files, allMethods[currentMethod].reverse));
-        if (currentMethod === 'az' || currentMethod === 'za') {
-            setSortGroups(allMethods[currentMethod].callback(groups, allMethods[currentMethod].reverse));
+        function sort(method) {
+            setSortFiles(allMethods[method].callback(files, allMethods[method].reverse));
+            if (method === 'az' || method === 'za') {
+                setSortGroups(allMethods[method].callback(groups, allMethods[method].reverse));
+            }
         }
-    }, [files, currentMethod]);
 
-    const handleChange = (event) => {
-        setCurrentMethod(event.target.value);
-    };
+        useEffect(() => {
+            sort(currentMethod);
+        }, [files, selectedSort]);
 
-    const Label = ({ item }) => {
+        const handleChange = (event) => {
+            const method = event.target.value;
+            sort(method);
+            setOpenSort(false);
+            setSelectedSort(method);
+            setCurrentMethod(method);
+        };
+
+        const Label = ({ item }) => {
+            return (
+                <ListItem className={styles.sortItem}>
+                    <Icon className={styles.icon}>{item.icon}</Icon>
+                    <ListItemText className={styles.sortText}>{item.name}</ListItemText>
+                </ListItem>
+            );
+        };
+
         return (
-            <ListItem className={styles.sortItem}>
-                <Icon className={styles.icon}>{item.icon}</Icon>
-                <ListItemText className={styles.sortText}>{item.name}</ListItemText>
-            </ListItem>
+            <Box className={styles.sort} ref={ref}>
+                <Paper>
+                    <FormControl>
+                        <RadioGroup value={currentMethod} onChange={handleChange}>
+                            <FormControlLabel
+                                className={styles.controlLabel}
+                                disableTypography={true}
+                                labelPlacement="start"
+                                value="time"
+                                sx={{ mb: '8px', mt: '8px' }}
+                                control={<Radio className={styles.control} size="small" />}
+                                label={<Label item={allMethods.time} />}
+                            />
+                            <Divider sx={{ width: '297px' }} className={styles.dividerSort} />
+                            <FormControlLabel
+                                className={styles.controlLabel}
+                                disableTypography={true}
+                                labelPlacement="start"
+                                value="az"
+                                sx={{ mt: '8px' }}
+                                control={<Radio className={styles.control} size="small" />}
+                                label={<Label item={allMethods.az} />}
+                            />
+                            <FormControlLabel
+                                className={styles.controlLabel}
+                                disableTypography={true}
+                                labelPlacement="start"
+                                value="za"
+                                sx={{ mb: '8px' }}
+                                control={<Radio className={styles.control} size="small" />}
+                                label={<Label item={allMethods.za} />}
+                            />
+                            <Divider sx={{ width: '297px' }} className={styles.dividerSort} />
+                            <FormControlLabel
+                                className={styles.controlLabel}
+                                disableTypography={true}
+                                labelPlacement="start"
+                                value="longest"
+                                sx={{ mt: '8px' }}
+                                control={<Radio className={styles.control} size="small" />}
+                                label={<Label item={allMethods.longest} />}
+                            />
+                            <FormControlLabel
+                                className={styles.controlLabel}
+                                disableTypography={true}
+                                labelPlacement="start"
+                                value="shortest"
+                                sx={{ mb: '8px' }}
+                                control={<Radio className={styles.control} size="small" />}
+                                label={<Label item={allMethods.shortest} />}
+                            />
+                        </RadioGroup>
+                    </FormControl>
+                </Paper>
+            </Box>
         );
-    };
-
-    return (
-        <Box className={styles.sort} ref={ref}>
-            <Paper>
-                <FormControl>
-                    <RadioGroup value={currentMethod} onChange={handleChange}>
-                        <FormControlLabel
-                            className={styles.controlLabel}
-                            disableTypography={true}
-                            labelPlacement="start"
-                            value="time"
-                            sx={{ mb: '8px', mt: '8px' }}
-                            control={<Radio className={styles.control} size="small" />}
-                            label={<Label item={allMethods.time} />}
-                        />
-                        <Divider sx={{ width: '297px' }} className={styles.dividerSort} />
-                        <FormControlLabel
-                            className={styles.controlLabel}
-                            disableTypography={true}
-                            labelPlacement="start"
-                            value="az"
-                            sx={{ mt: '8px' }}
-                            control={<Radio className={styles.control} size="small" />}
-                            label={<Label item={allMethods.az} />}
-                        />
-                        <FormControlLabel
-                            className={styles.controlLabel}
-                            disableTypography={true}
-                            labelPlacement="start"
-                            value="za"
-                            sx={{ mb: '8px' }}
-                            control={<Radio className={styles.control} size="small" />}
-                            label={<Label item={allMethods.za} />}
-                        />
-                        <Divider sx={{ width: '297px' }} className={styles.dividerSort} />
-                        <FormControlLabel
-                            className={styles.controlLabel}
-                            disableTypography={true}
-                            labelPlacement="start"
-                            value="longest"
-                            sx={{ mt: '8px' }}
-                            control={<Radio className={styles.control} size="small" />}
-                            label={<Label item={allMethods.longest} />}
-                        />
-                        <FormControlLabel
-                            className={styles.controlLabel}
-                            disableTypography={true}
-                            labelPlacement="start"
-                            value="shortest"
-                            sx={{ mb: '8px' }}
-                            control={<Radio className={styles.control} size="small" />}
-                            label={<Label item={allMethods.shortest} />}
-                        />
-                    </RadioGroup>
-                </FormControl>
-            </Paper>
-        </Box>
-    );
-});
+    }
+);
 
 SortActions.displayName = 'SortActions';
 export default SortActions;

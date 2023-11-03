@@ -17,6 +17,7 @@ export default function TrackGroupFolder({ folder }) {
     const [openSort, setOpenSort] = useState(false);
     const [sortFiles, setSortFiles] = useState([]);
     const [sortGroups, setSortGroups] = useState([]);
+    const [selectedSort, setSelectedSort] = useState(null);
     const anchorEl = useRef(null);
     const [, height] = useWindowSize();
 
@@ -105,6 +106,9 @@ export default function TrackGroupFolder({ folder }) {
                         setSortFiles={setSortFiles}
                         groups={folder.subfolders}
                         setSortGroups={setSortGroups}
+                        setOpenSort={setOpenSort}
+                        selectedSort={selectedSort}
+                        setSelectedSort={setSelectedSort}
                     />
                 </ClickAwayListener>
             </Popper>
