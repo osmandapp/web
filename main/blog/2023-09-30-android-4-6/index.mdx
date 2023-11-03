@@ -25,21 +25,22 @@ Version 4.6 of the OsmAnd program for Android devices has undergone revolutionar
 
 <!--truncate-->
 
+## What's new
 
 - [Updates for widgets](#widgets-update):
    - Updates for [Top/Bottom panels](#updates-for-topbottom-panels) in the Configure screen menu.
-   - Added [Glide Ratio](#added-glide-ratio-widgets) Widget.
-   - Added [Temperature widget](#added-temperature-widget) for External sensors.
+   - Added [Glide Ratio](#glide-ratio-widget) Widget.
+   - Added [Temperature widget](#temperature-widget) for External sensors.
 - New [Local tab](#local-menu-redesign) in Maps & Resources menu.
-- New feature [Smart Folder](#smart-folders) in Tracks menu.
+- Added a new option to create and customize [Smart Folder](#smart-folders) in the *Tracks* tab of the *My Places* menu. 
 - [Filters](#filters-for-tracks) for Tracks search.
 - Adding a [screen Trash](#trash-feature-in-osmand-cloud) to view and manage files deleted from OsmAnd Cloud.
 - New [Help screen](#new-help-screen) with offline support.
 - [Redesigned Weather screen](#redesign-weather-screen).
 - Added share [point coordinates](#share-point-coordinates-by-an-osm-link) by OSM link.
-- [Custom actions](#custom-actions-for-buttons-of-external-controllers) for buttons of external controllers.
-- Update for [Plan a route](#update-plan-a-route).
-- [More](#more) updates for the release.
+- [Custom actions](#custom-actions-for-external-controller-buttons) for external controller buttons.
+- Updates to [Plan a route](#updates-to-plan-a-route-tool) tool.
+- [Additional](#more-updates-in-this-release) updates in this release.
 
 
 ## Widgets update
@@ -53,7 +54,7 @@ We have made significant improvements and added new features that will make your
 Our top and bottom panels have been redesigned with all our users' needs in mind. 
 Now you can customize the widgets on your home screen the way you want, giving you more freedom to display important data.
 
-**1.** Added ability to add and remove rows for *Top / Bottom panel*: 
+**1.** Added ability to add and remove rows for *Top / Bottom panel*. 
 
 _OsmAnd menu → Configure screen → Widgets → Edit → [Add row](https://docs.osmand.net/docs/user/widgets/configure-screen#rows-for-panels)_
 
@@ -62,7 +63,7 @@ _OsmAnd menu → Configure screen → Widgets → Edit → [Add row](https://doc
 | ![Row](./img/row.png)|![Row](./img/row_1.png)
 
 
-**2.** Added support to change [widget size](https://docs.osmand.net/docs/user/widgets/configure-screen#settings). You can choose the size that best suits your needs: Small, Medium, Large.  
+**2.** Added support to change [widget size](https://docs.osmand.net/docs/user/widgets/configure-screen#settings). You can choose the size that best suits your needs: *Small, Medium, Large*.  
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_settings_2_andr.png)  
 
@@ -74,28 +75,27 @@ _OsmAnd menu → Configure screen → Widgets → Edit → [Add row](https://doc
 | ![Row](./img/row_2.png)|![Row](./img/row_3.png)
 
 
-### Added Glide Ratio Widgets
+### Glide Ratio Widgets
 
 ![Glide ratio](./img/glide_ratio.png)
 
-Simple _[Glide Ration](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio)_ widgets were added for Aircraft usage. Widgets show the glide ration to the target or avearge glide for the current trip:
+Simple _[Glide Ration](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio)_ widgets have been added for Aircraft usage. The widgets show the ratio of glide to target or average glide for the current flight.  
 
- _OsmAnd menu → Configure screen → Widgets (All panels) → [Glide ratio to target](https://osmand.net/docs/user/widgets/info-widgets/#glide-ratio)_ and [_Average glide ratio_](https://osmand.net/docs/user/widgets/info-widgets/#glide-ratio)
+_OsmAnd menu → Configure screen → Widgets (All panels) → [Glide ratio to target](https://osmand.net/docs/user/widgets/info-widgets/#glide-ratio)_ and [_Average glide ratio_](https://osmand.net/docs/user/widgets/info-widgets/#glide-ratio)
 
-- _Glide ratio to target_ shows the glide ration needed to reach the target point (You need to use [Map marker](https://osmand.net/docs/user/personal/markers) as a target point).
-- _Average glide ratio_ shows the average glide ratio for the set interval. For this widget you can specify the time interval for glide averaging.
+- _Glide ratio to target_ shows the glide ration required to reach the target point. The [Map marker](https://osmand.net/docs/user/personal/markers) should be used as the target point.  
+- _Average glide ratio_ shows the average glide ratio for a specified time interval. You can set the time interval for this widget from 15 seconds to 60 minutes.
 
 |Glide ration widgets| Widgets on the screen|
 |--------|---------|
 |![Glide ratio](./img/glide_ratio_1.png)|![Glide ratio](./img/glide_ratio_2.png)|
 
-### Added Temperature widget
+### Temperature widget
 
-We added the new external widget ([External sensor plugin](https://osmand.net/docs/user/plugins/external-sensors/#overview)) which show the tempetarute sensor data. Read more how to connect a sensor to OsmAnd [here](https://osmand.net/docs/user/plugins/external-sensors/#setup).
-
-Next you need [to add the temperature widget](https://osmand.net/docs/user/widgets/configure-screen/#right--left-panel-widgets) to the OsmAnd screen:
-
-_Menu → Configure screen → [Left panel /Right panel](https://osmand.net/docs/user/widgets/configure-screen/#right--left-panel-widgets) → External sensors → Temperature_
+We have added a new widget for the [External sensor plugin](https://osmand.net/docs/user/plugins/external-sensors/#overview). **<Translate android="true" ids="external_device_characteristic_temperature"/>** widget displays the ambient temperature, which can be very useful if you don't want to overheat or freeze on your bike or motorcycle.  
+- Read more about how to connect sensors to OsmAnd app [here](https://osmand.net/docs/user/plugins/external-sensors/#setup).  
+- Next you need [to add the temperature widget](https://osmand.net/docs/user/widgets/info-widgets#external-sensors-widgets) to the OsmAnd screen:  
+_Menu → Configure screen → [Any panels](https://docs.osmand.net/docs/user/widgets/configure-screen.md#top--bottom-panel-widgets) → External sensors → Temperature_
 
 |   |   |
 |--------|---------|
@@ -104,19 +104,22 @@ _Menu → Configure screen → [Left panel /Right panel](https://osmand.net/docs
 
 ## Local menu redesign
 
-_Local menu_ contains more info about OsmAnd data:
-_Menu → Download maps (Maps & Resources) → Local_. 
+When working with maps, additional resources are always important. Android 4.6 redesigns the *Local* tab in the *Maps & Resources* menu, making access to local maps and data more convenient and, with new graphs, more visual.  
 
-- _Resources_: Standart Maps; Terrain maps; Wikipedia and Travel maps; Nautical Maps; Weather; Map sources; Rendering styles; Routing; Cache.
-- _My Places_: Favorites; Tracks; OSM Notes; OSM Edits; A/V Notes; Map markers; History; Itinerary.
-- _Settings_: Profiles; Other.
+The **Local** menu now contains all necessary additional information about the OsmAnd data:    
+*Menu → Download maps (Maps & Resources) → Local*
+
+- **Resources**: *Standart Maps, Terrain maps, Wikipedia and Travel maps, Nautical Maps, Weather, Map sources, Rendering styles, Routing, Cache*.
+- **My Places**: *Favorites, Tracks, OSM Notes, OSM Edits, A/V Notes, Map markers, History, Itinerary*.
+- **Settings**:
+  - *Other*. Data that does not fit into other categories, such as logcat.
+  - *Profiles*. All settings for created profiles and default profiles.
 
 | Resources  | My places  |  Settings   |
 |--------|---------|---------|
-|![Local](./img/local.png)|![Local](./img/local_1.png)|![Local](./img/local_2.png)|
+|![Local](./img/local.png)|![Local](./img/local_1.png)|![Local](./img/local_2.png)|  
 
-
-You can choose each item subcategories for opening subcategories screen and it options:
+You can select any item from the main list of categories on the Local tab, tap it, and go to a screen with a detailed list of that item and additional options.  
 
 | Terrain maps  | Tracks  |
 |--------|---------|
@@ -125,24 +128,26 @@ You can choose each item subcategories for opening subcategories screen and it o
 
 ## Smart folders
 
-Smart Folders allow you to specify a set of criteria for GPX tracks to be contained in the folder, to make keeping way of files even easier:
+The new [*Smart Folder*](https://docs.osmand.net/docs/user/personal/tracks#smart-folder) feature in the Tracks menu provides additional options for organizing tracks. This feature automatically sorts tracks according to the specified filter parameters and provides advanced settings to manage them.  
 
+*Smart Folder* allows you to specify a set of parameters for GPX tracks to be contained in a folder, making it even easier to keep track of files.    
 _OsmAnd menu → My Places → Tracks → &#8942; → Add smart folder_
 
 | Tracks menu  | Settings  |
 |--------|---------|
 |![Smart folder](./img/smart_folder.png)|![Local](./img/smart_folder_1.png)|
 
-Now, you can add filters for Smart folders.
-
 
 ## Filters for tracks
 
-Filters for tracks can be used for tracks Search function and for Smart folders.
+[Filter](https://docs.osmand.net/docs/user/personal/tracks#filter) for tracks can be used for tracks Search function and for Smart folders.  
 
-_OsmAnd menu → My Places → Tracks → 🔍 → Filter_
+- _OsmAnd menu → My Places → Tracks → 🔍 → Filter_
+- _OsmAnd menu → My Places → Smart folder → Filter_  
 
-_OsmAnd menu → My Places → Smart folder → Filter_
+![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png)  
+
+In addition to navigation and track creation, the Osmand app provides handy tools for managing your track recordings. With the latest update to the app, new features have been added to the Tracks section to better search and filter your tracks. These new filters provide more detailed and customizable options to search for tracks based on various parameters, allowing you to quickly find tracks that meet your specific requirements and preferences.   
 
 **Filters**: _Duration, Time in motion, Length, Average speed, Uphill, Downhill, Average altitude, Max altitude, Date of creation, Nearest cities, Other_.
 
@@ -153,33 +158,30 @@ _OsmAnd menu → My Places → Smart folder → Filter_
 
 ## Trash feature in OsmAnd Cloud
 
-Trash feature was added for OsmAnd Cloud:
+[Trash](https://docs.osmand.net/docs/user/personal/osmand-cloud#trash) feature has been added for OsmAnd Cloud:  
+*OsmAnd menu → Settings → OsmAnd Cloud → Trash*
 
-_OsmAnd menu → Settings → OsmAnd Cloud → Trash_
+With the *Trash* feature, you can easily view and restore files deleted from OsmAnd Cloud. This allows you to gain more control over your data and avoid accidental irreversible deletion.  
 
-_Trash_ is the screen to view and manage files deleted from OsmAnd Cloud.
-
-_Empty trash_ button deletes all items. 
-
-:::note
-Items in trash will be erased after 30 days.
-:::
-
+- *Empty trash* button deletes all items. 
+- **Items in trash will be erased after 30 days**.
 
 | OsmAnd Cloud menu| Trash menu|
 |-------|-------|
 |![Trash](./img/trash.png)|![Trash](./img/trash_1.png)|
 
-Each item from _Trash_ can be _Restore_ or _Delete_. 
+- Each item from Trash can be *Restore* or *Delete*. 
 
 | Item's acitons|
 |-------|
 |![Trash](./img/trash_2.png)|
 
 
-## New help screen
+## New Help screen
 
-We redesigned _Help_ menu with added articles from [www.osmand.net/docs](https://osmand.net/docs/intro/) with next menu sections and offline (saved to cache) new documentation:
+This is an important new feature for users who often travel in regions with limited internet access. The application now has an offline (saved to cache) help screen that helps you solve questions and find information without a network connection.  
+
+In addition, the Help menu has been completely redesigned, adding articles from [www.osmand.net/docs](https://osmand.net/docs/intro/) with additional menu sections:  
 
 _Most viewed_, [_User guide_](https://osmand.net/docs/user/), [_Troubleshooting_](https://osmand.net/docs/user/troubleshooting/), _Contact us_, _Report issues_, _About OsmAnd_.
 
@@ -190,7 +192,7 @@ _Most viewed_, [_User guide_](https://osmand.net/docs/user/), [_Troubleshooting_
 
 ## Redesign weather screen
 
-Added the convenient time scale.
+The [Weather](https://docs.osmand.net/docs/user/plugins/weather) screen has been redesigned and improved, allowing users to get more accurate and up-to-date weather information on their route, such as a time scale. This is useful when planning trips and choosing the right time for outdoor activities.  
 
 | |
 |-------|
@@ -199,35 +201,37 @@ Added the convenient time scale.
 
 ## Share point coordinates by an OSM link
 
-Now in the Context menu of a point, you can find not only geographical coordinates in various formats, but also a shareable [OpenStreetMap Link with location marker](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker).  
+You now have the ability to customize actions for buttons or custom buttons for [External controllers](https://osmand.net/docs/user/map/interact-with-map#external-input-device-buttons). This allows you to customize the control of the application according to your preferences and makes it easier to use OsmAnd in different situations.  
 
 | | |
 |-------|-------|
 |![Osm Location pin 1](./img/osm_location_pin_1.png) |![Osm Location pin 2](./img/osm_location_pin_2.png)|
 
 
-## Custom actions for buttons of external controllers
+## Custom actions for external controller buttons
 
 Now, you can create your custom buttoons for [external controllers](https://osmand.net/docs/user/map/interact-with-map#external-input-device-buttons).
 
-Menu → Settings → Profiles → General settings → External input devices
+*Menu → Settings → Profiles → General settings → External input devices*
 
-Choose your external input devices (Keyboard, for example) and make Key bindings.
+- Select external input devices, such as a Keyboard, and create a Key binding.
 
 | Add new type| Add key binding|
 |-------|-------|
 |![External Devices](./img/external.png) |![External devices](./img/external_1.png)|
 
-Actions and Map iteracions for Key bindings
-
+- Additional Actions and Map iterations for key binding are also available.  
 
 | Key bindings|
 |-------|
 |![External Devices](./img/external_2.png) |
 
-## Update Plan a route tool
 
-Added "Import from track" function allows to import to current track from another existing trask (waypoints, segments, all data) 
+## Update in Plan a route tool
+
+Route planning has become even more convenient with an update. A new feature helps you create optimal routes for your trips.  
+
+This is the *Import from Track* feature, which allows you to import waypoints, segments, and additional data from any other existing track into the current track. 
 
 _[Plan a route](https://osmand.net/docs/user/plan-route/create-route) →  Options → Import from track_
 
@@ -236,19 +240,22 @@ _[Plan a route](https://osmand.net/docs/user/plan-route/create-route) →  Optio
 |![Import from track](./img/planroute.png) |
 
 
-## More
+## More updates in this release
 
-- Improved memory management for large GPX tracks
-- Shutdown [OpenPlaceRevies project](https://osmand.net/docs/user/plugins/openplacereviews)
-- Updated Search screen for Android Auto
-- Fixed map freezes for Android Auto
-- Renamed _Terrain_ to [_Topography_](https://osmand.net/docs/user/plugins/contour-lines#configure-map-view) menu
-- _Select all_ / _Deselect all_ actions for [Track menu](https://osmand.net/docs/user/personal/tracks#my-places-menu)
-- Fixed _North fixed_ mode for [Compass](https://osmand.net/docs/user/map/interact-with-map#map-orientation-modes)
-- Added widget _Available RAM_ for [OsmAnd Development plugin](https://osmand.net/docs/user/plugins/development)
-- Added paragliding / baby carriage / stroller / buggy [icons](https://osmand.net/docs/user/personal/profiles#profile-appearance) for profiles
-- [_"Destination is reached"_](https://osmand.net/docs/user/navigation/guidance/map-during-navigation), the location moves to map center
+The new release also contains a number of other significant updates:
 
+- Improved memory management for large GPX tracks for smoother operation when working with large files.
+- The [OpenPlaceReviews](https://osmand.net/docs/user/plugins/openplacereviews) project has been permanently finalized and is only available now up to Android 4.5. 
+- Updated the *Search screen* for Android Auto, which improves the user experience with the app in the car.
+- Fixed map freezing for Android Auto, improving the stability of the app.
+- Renamed the *Terrain* menu to [*Topography*](https://osmand.net/docs/user/plugins/contour-lines#configure-map-view) for better understanding and matching terminology.
+- Added *Select All* and *Deselect All* actions to the [Track menu](https://osmand.net/docs/user/personal/tracks#my-places-menu) to provide more options for data management.
+- Fixed *North fix* mode for [Compass](https://osmand.net/docs/user/map/interact-with-map#map-orientation-modes) to improve navigation accuracy.
+- Added *Available RAM* widget for [OsmAnd Development plugin](https://osmand.net/docs/user/plugins/development), providing users with more accurate information about device resources and allowing to control memory usage.
+- [Icons](https://osmand.net/docs/user/personal/profiles#profile-appearance) for paraglider, baby carriage, stroller, and buggy stroller have been added to the Profiles, making the profile appearance more informative and diverse.
+- When [_Destination is reached_](https://osmand.net/docs/user/navigation/guidance/map-during-navigation) appears, the location is moved to the center of the map for the user's convenience.
+
+The release of the OsmAnd app for Android 4.6 offers users a wide range of improvements, new features, more powerful navigation and data management tools, making the use of the app more convenient, informative and adapted to different usage situations.  
 
 ________________________________________
 

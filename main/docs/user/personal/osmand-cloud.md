@@ -174,6 +174,17 @@ Sync now combines the *Upload all* and *Download all* buttons in the Changes men
 :::
 
 
+## Trash
+
+![Trash](../../../blog/2023-09-30-android-4-6/img/trash.png)  ![Trash](../../../blog/2023-09-30-android-4-6/img/trash_2.png)  
+
+With the *Trash* feature, you can easily view and restore files deleted from OsmAnd Cloud. This allows you to gain more control over your data and avoid accidental irreversible deletion.  
+
+- *Empty trash* button deletes all items. 
+- **Items in trash will be erased after 30 days**.
+- Each item from Trash can be *Restore* or *Delete*. 
+
+
 ## Settings
 
 This section is for editing and managing your OsmAnd Cloud.  
