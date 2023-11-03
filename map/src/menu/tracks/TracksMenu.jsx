@@ -330,9 +330,11 @@ export default function TracksMenu() {
                                 <VisibleGroup visibleTracks={visibleTracks} setVisibleTracks={setVisibleTracks} />
                             )}
                             {ctx.tracksGroups &&
-                                (sortGroups.length > 0 ? sortGroups : ctx.tracksGroups).map((group, index) => {
-                                    return <CloudTrackGroup key={group.name + index} index={index} group={group} />;
-                                })}
+                                (sortGroups.length > 0 ? sortGroups : ctx.tracksGroups)
+                                    .filter((g) => g.name !== DEFAULT_GROUP_NAME)
+                                    .map((group, index) => {
+                                        return <CloudTrackGroup key={group.name + index} index={index} group={group} />;
+                                    })}
                             {defaultGroupItems}
                         </Box>
                     ) : (
