@@ -17,6 +17,8 @@ import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_time
 import { ReactComponent as DescendingIcon } from '../../../assets/icons/ic_action_sort_by_name_descending.svg';
 import { ReactComponent as LongToShortIcon } from '../../../assets/icons/ic_action_sort_long_to_short.svg';
 import { ReactComponent as ShortToLongIcon } from '../../../assets/icons/ic_action_sort_short_to_long.svg';
+import { ReactComponent as NewDateIcon } from '../../../assets/icons/ic_action_sort_date_1.svg';
+import { ReactComponent as OldDateIcon } from '../../../assets/icons/ic_action_sort_date_31.svg';
 import styles from '../trackmenu.module.css';
 
 const az = (a, b) => (a > b) - (a < b);
@@ -44,6 +46,17 @@ function byDistance(files, reverse) {
     return [...files].sort((a, b) => {
         const A = a.analysis?.totalDistance ?? a.details?.analysis?.totalDistance ?? 0;
         const B = b.analysis?.totalDistance ?? b.details?.analysis?.totalDistance ?? 0;
+        if (A === B) {
+            return az(a.name, b.name);
+        }
+        return reverse ? B - A : A - B;
+    });
+}
+
+function byCreationTime(files, reverse) {
+    return [...files].sort((a, b) => {
+        const A = getGpxTime(a, reverse, true);
+        const B = getGpxTime(b, reverse, true);
         if (A === B) {
             return az(a.name, b.name);
         }
@@ -82,6 +95,18 @@ const allMethods = {
         callback: byDistance,
         icon: <ShortToLongIcon />,
         name: 'Shortest distance first',
+    },
+    newDate: {
+        reverse: true,
+        callback: byCreationTime,
+        icon: <NewDateIcon />,
+        name: 'Newest date first',
+    },
+    oldDate: {
+        reverse: false,
+        callback: byCreationTime,
+        icon: <OldDateIcon />,
+        name: 'Oldest date first',
     },
 };
 
@@ -178,6 +203,25 @@ const SortActions = forwardRef(
                                 sx={{ mb: '8px' }}
                                 control={<Radio className={styles.control} size="small" />}
                                 label={<Label item={allMethods.shortest} />}
+                            />
+                            <Divider sx={{ width: '297px' }} className={styles.dividerSort} />
+                            <FormControlLabel
+                                className={styles.controlLabel}
+                                disableTypography={true}
+                                labelPlacement="start"
+                                value="newDate"
+                                sx={{ mt: '8px' }}
+                                control={<Radio className={styles.control} size="small" />}
+                                label={<Label item={allMethods.newDate} />}
+                            />
+                            <FormControlLabel
+                                className={styles.controlLabel}
+                                disableTypography={true}
+                                labelPlacement="start"
+                                value="oldDate"
+                                sx={{ mb: '8px' }}
+                                control={<Radio className={styles.control} size="small" />}
+                                label={<Label item={allMethods.oldDate} />}
                             />
                         </RadioGroup>
                     </FormControl>

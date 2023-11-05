@@ -1247,15 +1247,21 @@ function evaluateMonthNames() {
     return monthNames;
 }
 
-export const getGpxTime = (f, reverse = false) => {
+export const getGpxTime = (f, reverse = false, creationTime = false) => {
     const raw = [];
     // fill in raw timestamps (unixtime * 1000), including undefined values
-    raw.push(f?.details?.analysis?.startTime); // cloud - stored analysis
-    raw.push(f?.analysis?.startTime); // local track - fresh analysis
-    raw.push(f?.details?.metadata?.time); // gpx - meta (cloud track)
-    raw.push(f?.metaData?.ext?.time); // gpx - meta (local track)
-    raw.push(f?.clienttimems); // uploaded (cloud timestamp?)
-    raw.push(f?.updatetimems); // updated (cloud timestamp?)
+    if (creationTime) {
+        raw.push(f?.details?.metadata?.time); // gpx - meta (cloud track)
+        raw.push(f?.metaData?.ext?.time); // gpx - meta (local track)
+        raw.push(f?.clienttimems); // uploaded (cloud timestamp?)
+    } else {
+        raw.push(f?.details?.analysis?.startTime); // cloud - stored analysis
+        raw.push(f?.analysis?.startTime); // local track - fresh analysis
+        raw.push(f?.details?.metadata?.time); // gpx - meta (cloud track)
+        raw.push(f?.metaData?.ext?.time); // gpx - meta (local track)
+        raw.push(f?.clienttimems); // uploaded (cloud timestamp?)
+        raw.push(f?.updatetimems); // updated (cloud timestamp?)
+    }
 
     // validate raw to avoid using illegal values
     const minAllowed = new Date(2002, 1, 1).getTime(); // GPX was initiated
