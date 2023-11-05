@@ -95,7 +95,7 @@ const defaultMethod = () => {
 };
 
 const SortActions = forwardRef(
-    ({ files, setSortFiles, groups, setSortGroups, setOpenSort, selectedSort, setSelectedSort }, ref) => {
+    ({ files, setSortFiles, groups, setSortGroups, setOpenSort, selectedSort, setSelectedSort, setSortIcon }, ref) => {
         const [currentMethod, setCurrentMethod] = useState(selectedSort ? selectedSort : defaultMethod);
 
         function sort(method) {
@@ -114,6 +114,7 @@ const SortActions = forwardRef(
             sort(method);
             setOpenSort(false);
             setSelectedSort(method);
+            setSortIcon(allMethods[method].icon);
             setCurrentMethod(method);
         };
 

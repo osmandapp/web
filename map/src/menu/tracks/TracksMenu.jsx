@@ -26,6 +26,7 @@ export default function TracksMenu() {
     const [sortFiles, setSortFiles] = useState([]);
     const [sortGroups, setSortGroups] = useState([]);
     const [selectedSort, setSelectedSort] = useState(null);
+    const [sortIcon, setSortIcon] = useState(<TimeIcon />);
     const anchorEl = useRef(null);
     const [, height] = useWindowSize();
     function visibleTracksOpen() {
@@ -292,7 +293,7 @@ export default function TracksMenu() {
                                 ref={anchorEl}
                                 disabled={!defaultGroup || defaultGroup.files?.length === 0}
                             >
-                                <TimeIcon />
+                                {sortIcon}
                             </IconButton>
                         </span>
                     </Tooltip>
@@ -360,6 +361,7 @@ export default function TracksMenu() {
                         setOpenSort={setOpenSort}
                         selectedSort={selectedSort}
                         setSelectedSort={setSelectedSort}
+                        setSortIcon={setSortIcon}
                     />
                 </ClickAwayListener>
             </Popper>

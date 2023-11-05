@@ -17,6 +17,7 @@ export default function TrackGroupFolder({ folder }) {
     const [openSort, setOpenSort] = useState(false);
     const [sortFiles, setSortFiles] = useState([]);
     const [sortGroups, setSortGroups] = useState([]);
+    const [sortIcon, setSortIcon] = useState(<TimeIcon />);
     const [selectedSort, setSelectedSort] = useState(null);
     const anchorEl = useRef(null);
     const [, height] = useWindowSize();
@@ -68,7 +69,7 @@ export default function TrackGroupFolder({ folder }) {
                             disabled={!folder}
                             ref={anchorEl}
                         >
-                            <TimeIcon />
+                            {sortIcon}
                         </IconButton>
                     </Tooltip>
                     <Tooltip key={'import_track'} title="Import track" arrow placement="bottom-end">
@@ -110,6 +111,7 @@ export default function TrackGroupFolder({ folder }) {
                         setOpenSort={setOpenSort}
                         selectedSort={selectedSort}
                         setSelectedSort={setSelectedSort}
+                        setSortIcon={setSortIcon}
                     />
                 </ClickAwayListener>
             </Popper>
