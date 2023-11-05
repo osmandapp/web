@@ -341,7 +341,7 @@ export default function TracksMenu() {
                     ) : (
                         <Empty
                             title={'You don’t have track files'}
-                            text={'You can import, create or record track files using OsmAnd App.'}
+                            text={'You can import, create track files using OsmAnd App.'}
                         />
                     )}
                 </>

@@ -1,4 +1,4 @@
-import { Box, Icon, Typography } from '@mui/material';
+import { Box, Icon, ListItemText } from '@mui/material';
 import { ReactComponent as EmptyIcon } from '../../assets/icons/ic_action_folder_open.svg';
 import styles from './errors.module.css';
 
@@ -9,8 +9,12 @@ export default function Empty({ title, text }) {
                 <EmptyIcon className={styles.icon} />
             </Icon>
             <Box className={styles.info}>
-                <Typography className={styles.title}>{title}</Typography>
-                <Typography className={styles.text}>{text}</Typography>
+                <ListItemText disableTypography={true} className={styles.title}>
+                    {title}
+                </ListItemText>
+                <ListItemText disableTypography={true} className={styles.text}>
+                    {text}
+                </ListItemText>
             </Box>
             {/*<Button className={styles.button}>*/}
             {/*    Import*/}
