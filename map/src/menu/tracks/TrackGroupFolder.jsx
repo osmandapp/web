@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import CloudTrackItem from './CloudTrackItem';
 import CloudTrackGroup from './CloudTrackGroup';
-import { AppBar, Box, ClickAwayListener, IconButton, Popper, Toolbar, Tooltip, Typography } from '@mui/material';
+import { AppBar, Box, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
 import styles from './trackmenu.module.css';
 import LocalGpxUploader from '../../frame/components/util/LocalGpxUploader';
 import SortActions from './actions/SortActions';
@@ -10,6 +10,7 @@ import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg
 import { ReactComponent as ImportIcon } from '../../assets/icons/ic_action_folder_import_outlined.svg';
 import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
+import SortMenu from './actions/SortMenu';
 
 export default function TrackGroupFolder({ folder }) {
     const ctx = useContext(AppContext);
@@ -96,13 +97,11 @@ export default function TrackGroupFolder({ folder }) {
                 {groupItems}
                 {trackItems}
             </Box>
-            <Popper
-                sx={{ zIndex: 2000, mt: '-35px !important', ml: '-5px !important' }}
-                open={openSort}
-                anchorEl={anchorEl.current}
-                disablePortal={true}
-            >
-                <ClickAwayListener onClickAway={() => setOpenSort(false)}>
+            <SortMenu
+                openSort={openSort}
+                setOpenSort={setOpenSort}
+                anchorEl={anchorEl}
+                actions={
                     <SortActions
                         files={folder.groupFiles}
                         setSortFiles={setSortFiles}
@@ -113,8 +112,8 @@ export default function TrackGroupFolder({ folder }) {
                         setSelectedSort={setSelectedSort}
                         setSortIcon={setSortIcon}
                     />
-                </ClickAwayListener>
-            </Popper>
+                }
+            />
         </Box>
     );
 }

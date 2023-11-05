@@ -1,4 +1,4 @@
-import { ClickAwayListener, IconButton, ListItemIcon, ListItemText, MenuItem, Popper, Typography } from '@mui/material';
+import { IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
@@ -6,6 +6,7 @@ import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import styles from './trackmenu.module.css';
 import GroupActions from './actions/GroupActions';
+import ActionsMenu from './actions/ActionsMenu';
 
 export default function CloudTrackGroup({ index, group }) {
     const ctx = useContext(AppContext);
@@ -58,16 +59,12 @@ export default function CloudTrackGroup({ index, group }) {
                     {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
                 </IconButton>
             </MenuItem>
-            <Popper
-                sx={{ zIndex: 2000, mt: '-35px !important', ml: '-5px !important' }}
+            <ActionsMenu
                 open={openActions}
-                anchorEl={anchorEl.current}
-                disablePortal={true}
-            >
-                <ClickAwayListener onClickAway={() => setOpenActions(false)}>
-                    <GroupActions group={group} setOpenActions={setOpenActions} />
-                </ClickAwayListener>
-            </Popper>
+                setOpen={setOpenActions}
+                anchorEl={anchorEl}
+                actions={<GroupActions group={group} setOpenActions={setOpenActions} />}
+            />
         </>
     );
 }

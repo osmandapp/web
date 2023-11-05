@@ -153,8 +153,8 @@ const SortActions = forwardRef(
         };
 
         return (
-            <Box className={styles.actions} ref={ref}>
-                <Paper>
+            <Box ref={ref}>
+                <Paper className={styles.actions}>
                     <FormControl>
                         <RadioGroup value={currentMethod} onChange={handleChange}>
                             <FormControlLabel
@@ -162,17 +162,15 @@ const SortActions = forwardRef(
                                 disableTypography={true}
                                 labelPlacement="start"
                                 value="time"
-                                sx={{ mb: '8px', mt: '8px' }}
                                 control={<Radio className={styles.control} size="small" />}
                                 label={<Label item={allMethods.time} />}
                             />
-                            <Divider sx={{ width: '297px' }} className={styles.dividerSort} />
+                            <Divider className={styles.dividerSort} />
                             <FormControlLabel
                                 className={styles.controlLabel}
                                 disableTypography={true}
                                 labelPlacement="start"
                                 value="az"
-                                sx={{ mt: '8px' }}
                                 control={<Radio className={styles.control} size="small" />}
                                 label={<Label item={allMethods.az} />}
                             />
@@ -181,17 +179,15 @@ const SortActions = forwardRef(
                                 disableTypography={true}
                                 labelPlacement="start"
                                 value="za"
-                                sx={{ mb: '8px' }}
                                 control={<Radio className={styles.control} size="small" />}
                                 label={<Label item={allMethods.za} />}
                             />
-                            <Divider sx={{ width: '297px' }} className={styles.dividerSort} />
+                            <Divider className={styles.dividerSort} />
                             <FormControlLabel
                                 className={styles.controlLabel}
                                 disableTypography={true}
                                 labelPlacement="start"
                                 value="longest"
-                                sx={{ mt: '8px' }}
                                 control={<Radio className={styles.control} size="small" />}
                                 label={<Label item={allMethods.longest} />}
                             />
@@ -200,17 +196,15 @@ const SortActions = forwardRef(
                                 disableTypography={true}
                                 labelPlacement="start"
                                 value="shortest"
-                                sx={{ mb: '8px' }}
                                 control={<Radio className={styles.control} size="small" />}
                                 label={<Label item={allMethods.shortest} />}
                             />
-                            <Divider sx={{ width: '297px' }} className={styles.dividerSort} />
+                            <Divider className={styles.dividerSort} />
                             <FormControlLabel
                                 className={styles.controlLabel}
                                 disableTypography={true}
                                 labelPlacement="start"
                                 value="newDate"
-                                sx={{ mt: '8px' }}
                                 control={<Radio className={styles.control} size="small" />}
                                 label={<Label item={allMethods.newDate} />}
                             />
@@ -219,7 +213,6 @@ const SortActions = forwardRef(
                                 disableTypography={true}
                                 labelPlacement="start"
                                 value="oldDate"
-                                sx={{ mb: '8px' }}
                                 control={<Radio className={styles.control} size="small" />}
                                 label={<Label item={allMethods.oldDate} />}
                             />

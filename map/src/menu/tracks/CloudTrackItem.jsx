@@ -1,13 +1,11 @@
 import AppContext, { OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
 import {
     Alert,
-    ClickAwayListener,
     IconButton,
     LinearProgress,
     ListItemIcon,
     ListItemText,
     MenuItem,
-    Popper,
     Switch,
     Tooltip,
     Typography,
@@ -23,6 +21,7 @@ import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import styles from './trackmenu.module.css';
 import TrackActions from './actions/TrackActions';
+import ActionsMenu from './actions/ActionsMenu';
 
 const DEFAULT_DIST = 0;
 const DEFAULT_TIME = '0:00';
@@ -203,16 +202,12 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                         )}
                     </MenuItem>
                 </Tooltip>
-                <Popper
-                    sx={{ zIndex: 2000, mt: '-35px !important', ml: '-5px !important' }}
+                <ActionsMenu
                     open={openActions}
-                    anchorEl={anchorEl.current}
-                    disablePortal={true}
-                >
-                    <ClickAwayListener onClickAway={() => setOpenActions(false)}>
-                        <TrackActions track={file} setShowTrack={setShowTrack} setOpenActions={setOpenActions} />
-                    </ClickAwayListener>
-                </Popper>
+                    setOpen={setOpenActions}
+                    anchorEl={anchorEl}
+                    actions={<TrackActions track={file} setShowTrack={setShowTrack} setOpenActions={setOpenActions} />}
+                />
                 {loadingTrack ? <LinearProgress /> : <></>}
                 {error !== '' && (
                     <Alert onClose={() => setError('')} severity="warning">

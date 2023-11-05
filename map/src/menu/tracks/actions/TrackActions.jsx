@@ -1,5 +1,5 @@
 import React, { forwardRef, useState } from 'react';
-import { Box, ListItemIcon, ListItemText, MenuItem, Paper, Typography } from '@mui/material';
+import { Box, Divider, ListItemIcon, ListItemText, MenuItem, Paper, Typography } from '@mui/material';
 import styles from '../trackmenu.module.css';
 import { ReactComponent as ShowOnMapIcon } from '../../../assets/icons/ic_show_on_map_outlined.svg';
 import { ReactComponent as DownloadIcon } from '../../../assets/icons/ic_action_gsave_dark.svg';
@@ -31,10 +31,9 @@ const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) =
 
     return (
         <>
-            <Box className={styles.actions} ref={ref}>
-                <Paper>
+            <Box ref={ref}>
+                <Paper className={styles.actions}>
                     <MenuItem
-                        divider
                         className={styles.groupAction}
                         onClick={() => {
                             setShowTrack(true);
@@ -50,11 +49,11 @@ const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) =
                             </Typography>
                         </ListItemText>
                     </MenuItem>
+                    <Divider className={styles.dividerSort} />
                     <MenuItem
-                        divider
                         className={styles.groupAction}
                         onClick={() => {
-                            downloadGpx();
+                            downloadGpx().then();
                             setOpenActions(false);
                         }}
                     >
@@ -67,7 +66,8 @@ const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) =
                             </Typography>
                         </ListItemText>
                     </MenuItem>
-                    <MenuItem divider className={styles.groupAction} onClick={() => setOpenDeleteDialog(true)}>
+                    <Divider className={styles.dividerSort} />
+                    <MenuItem className={styles.groupAction} onClick={() => setOpenDeleteDialog(true)}>
                         <ListItemIcon className={styles.iconGroupActions}>
                             <DeleteIcon />
                         </ListItemIcon>

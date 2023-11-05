@@ -4,7 +4,7 @@ import { toHHMMSS } from '../../util/Utils';
 import CloudTrackGroup from './CloudTrackGroup';
 import VisibleGroup from './VisibleGroup';
 import _ from 'lodash';
-import { AppBar, Box, ClickAwayListener, IconButton, Popper, Toolbar, Tooltip, Typography } from '@mui/material';
+import { AppBar, Box, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
 import { ReactComponent as ImportIcon } from '../../assets/icons/ic_action_folder_import_outlined.svg';
 import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
@@ -17,6 +17,7 @@ import SortActions from './actions/SortActions';
 import { DEFAULT_GROUP_NAME } from '../../manager/TracksManager';
 import Empty from '../errors/Empty';
 import Loading from '../errors/Loading';
+import SortMenu from './actions/SortMenu';
 
 export default function TracksMenu() {
     const ctx = useContext(AppContext);
@@ -346,13 +347,11 @@ export default function TracksMenu() {
                     )}
                 </>
             )}
-            <Popper
-                sx={{ zIndex: 2000, mt: '-35px !important', ml: '-5px !important' }}
-                open={openSort}
-                anchorEl={anchorEl.current}
-                disablePortal={true}
-            >
-                <ClickAwayListener onClickAway={() => setOpenSort(false)}>
+            <SortMenu
+                openSort={openSort}
+                setOpenSort={setOpenSort}
+                anchorEl={anchorEl}
+                actions={
                     <SortActions
                         files={defaultGroup?.files}
                         setSortFiles={setSortFiles}
@@ -363,8 +362,8 @@ export default function TracksMenu() {
                         setSelectedSort={setSelectedSort}
                         setSortIcon={setSortIcon}
                     />
-                </ClickAwayListener>
-            </Popper>
+                }
+            />
         </Box>
     );
 }
