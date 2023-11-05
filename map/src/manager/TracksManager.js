@@ -242,7 +242,10 @@ function prepareName(name, local) {
 function getGroup(name, local) {
     const result = name.replace(/.gpx/, '');
     if (result.includes('/')) {
-        return result.split('/')[0];
+        const groups = result.split('/');
+        //remove name
+        groups.splice(-1);
+        return groups.join('/');
     } else if (local && result.includes(':')) {
         return result.split(':')[0];
     } else {
