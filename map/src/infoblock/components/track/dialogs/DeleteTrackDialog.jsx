@@ -20,13 +20,13 @@ export default function DeleteTrackDialog({
 
     function getPlace() {
         if (isCloudTrack(ctx)) {
-            return 'cloud';
+            return 'OsmAnd Cloud';
         }
         if (isLocalTrack(ctx)) {
-            return 'local';
+            return 'local tracks';
         }
         if (file && ctx.loginUser) {
-            return 'cloud';
+            return 'OsmAnd Cloud';
         }
         return '';
     }
@@ -142,7 +142,7 @@ export default function DeleteTrackDialog({
                 <DialogContentText>
                     {discard
                         ? `Are you sure you want to discard local changes?`
-                        : `Are you sure you want to delete ${getName()} track from the ${getPlace()} tracks?`}
+                        : `Are you sure you want to delete "${getName()}" track from the ${getPlace()}?`}
                 </DialogContentText>
             </DialogContent>
             <DialogActions>
