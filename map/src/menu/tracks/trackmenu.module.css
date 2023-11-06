@@ -64,7 +64,6 @@
 }
 .groupAction {
     padding: 10px 16px !important;
-    background-color: transparent !important;
     gap: 20px !important;
 }
 .iconGroupActions {
@@ -118,4 +117,7 @@
 .controlLabel {
     margin-left: 0px !important;
     margin-right: 0px !important;
+    &:hover {
+        background-color: #f5f5f5 !important;
+    }
 }
