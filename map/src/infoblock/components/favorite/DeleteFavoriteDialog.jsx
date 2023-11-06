@@ -69,7 +69,6 @@ export default function DeleteFavoriteDialog({ dialogOpen, setDialogOpen, wpt })
 
     function closeContextMenu() {
         setDialogOpen(false);
-        console.log(true);
         ctx.setCurrentObjectType(null);
     }
 
