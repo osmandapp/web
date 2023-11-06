@@ -15,11 +15,9 @@ export default function TrackInfo({ file }) {
     let speed = '';
     let summary = item.details?.analysis ?? item.analysis ?? localLayer?.summary;
     if (item.clienttimems) {
-        clienttime =
-            'Upload time: ' +
-            new Date(item.clienttimems).toDateString() +
-            +' ' +
-            new Date(item.clienttimems).toLocaleTimeString();
+        clienttime = `Upload time: ${new Date(item.clienttimems).toDateString()} ${new Date(
+            item.clienttimems
+        ).toLocaleTimeString()}`;
     }
     if (summary?.startTime && summary?.startTime !== summary?.endTime) {
         let stdate = new Date(summary.startTime).toDateString();
