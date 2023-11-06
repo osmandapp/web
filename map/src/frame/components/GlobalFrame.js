@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Box, Alert } from '@mui/material';
+import { Box } from '@mui/material';
 import OsmAndMap from '../../map/components/OsmAndMap';
 import MainMenu from '../../menu/MainMenu';
 import { Outlet } from 'react-router-dom';
@@ -7,6 +7,8 @@ import AppContext from '../../context/AppContext';
 import GeneralPanelButtons from './panelbuttons/GeneralPanelButtons';
 import { GlobalConfirmationDialog } from '../../dialogs/GlobalConfirmationDialog';
 import HeaderMenu from './header/HeaderMenu';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
+import Alert from './Alert';
 
 const GlobalFrame = () => {
     const ctx = useContext(AppContext);
@@ -15,6 +17,7 @@ const GlobalFrame = () => {
     const [clearState, setClearState] = useState(false);
     const [openMainMenu, setOpenMainMenu] = useState(false);
     const [menuInfo, setMenuInfo] = useState(null);
+    const [width] = useWindowSize();
 
     const MAIN_MENU_MIN_SIZE = '64px';
     const MAIN_MENU_SIZE = openMainMenu ? '240px' : MAIN_MENU_MIN_SIZE;
@@ -33,13 +36,9 @@ const GlobalFrame = () => {
                     mr: ctx.infoBlockWidth,
                 }}
             >
-                {ctx.routingErrorMsg && (
-                    <Alert severity="warning" onClose={() => ctx.setRoutingErrorMsg(null)}>
-                        {ctx.routingErrorMsg}
-                    </Alert>
-                )}
                 <GlobalConfirmationDialog />
                 <OsmAndMap mainMenuWidth={MAIN_MENU_MIN_SIZE} menuInfoWidth={MENU_INFO_SIZE} />
+                <Alert width={width} />
                 <GeneralPanelButtons
                     mainMenuWidth={MAIN_MENU_MIN_SIZE}
                     menuInfoWidth={MENU_INFO_SIZE}
