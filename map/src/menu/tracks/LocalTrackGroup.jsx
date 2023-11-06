@@ -2,12 +2,10 @@ import { Box, Button, ButtonGroup, Collapse, ListItemIcon, ListItemText, MenuIte
 import { ExpandLess, ExpandMore, Folder } from '@mui/icons-material';
 import React, { useContext, useState } from 'react';
 import AppContext from '../../context/AppContext';
-import Actions from './Actions';
 import LocalTrackItem from './LocalTrackItem';
 import drawerStyles from '../../frame/styles/DrawerStyles';
 import TracksManager, { clearAllLocalTracks } from '../../manager/TracksManager';
 import PopperMenu from './PopperMenu';
-import _ from 'lodash';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 import LocalGpxUploader from '../../frame/components/util/LocalGpxUploader';
 
@@ -17,7 +15,6 @@ export default function LocalTrackGroup() {
     const ctx = useContext(AppContext);
 
     const [localGpxOpen, setLocalGpxOpen] = useState(true);
-    const [sortFiles, setSortFiles] = useState([]);
     const anchorEl = React.useRef(null);
     const [open, setOpen] = useState(false);
 
@@ -33,28 +30,9 @@ export default function LocalTrackGroup() {
         });
     }
 
-    function addToCollection() {
-        ctx.localTracks.forEach((file) => {
-            if (!ctx.gpxCollection.find((name) => name === file.name)) {
-                ctx.gpxCollection.push(file.name);
-            }
-        });
-        ctx.setGpxCollection([...ctx.gpxCollection]);
-    }
-
     const Buttons = () => {
         return (
             <div>
-                {ctx.localTracks.length !== 0 && (
-                    <MenuItem
-                        onClick={(e) => {
-                            addToCollection();
-                            e.stopPropagation();
-                        }}
-                    >
-                        To Collection
-                    </MenuItem>
-                )}
                 {ctx.localTracks.length !== 0 && (
                     <MenuItem
                         onClick={(e) => {
@@ -101,13 +79,7 @@ export default function LocalTrackGroup() {
             </MenuItem>
             <Collapse in={localGpxOpen} timeout="auto">
                 <div style={{ maxHeight: '39vh', overflow: 'auto' }}>
-                    <Actions files={ctx.localTracks} setSortFiles={setSortFiles} />
-                    {!_.isEmpty(sortFiles) &&
-                        sortFiles.map((track) => {
-                            return <LocalTrackItem key={'sortedtrack-' + track.name} track={track} />;
-                        })}
-                    {_.isEmpty(sortFiles) &&
-                        ctx.localTracks.length > 0 &&
+                    {ctx.localTracks.length > 0 &&
                         ctx.localTracks.map((track) => {
                             return <LocalTrackItem key={'localtrack-' + track.name} track={track} />;
                         })}

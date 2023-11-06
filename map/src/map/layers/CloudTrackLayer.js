@@ -4,9 +4,10 @@ import { useMap } from 'react-leaflet';
 import TrackLayerProvider, { redrawWptsOnLayer } from '../util/TrackLayerProvider';
 import TracksManager, { fitBoundsOptions } from '../../manager/TracksManager';
 import { useMutator } from '../../util/Utils';
+import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 
 function clickHandler({ ctx, file, layer }) {
-    if (file.name !== ctx.selectedGpxFile.name || ctx.infoBlockWidth === '0px') {
+    if (file.name !== ctx.selectedGpxFile.name || ctx.infoBlockWidth === MENU_INFO_CLOSE_SIZE) {
         file.analysis = TracksManager.prepareAnalysis(file.analysis);
         ctx.setSelectedGpxFile({ ...file, cloudRedrawWpts: true });
         const type = OBJECT_TYPE_CLOUD_TRACK;
