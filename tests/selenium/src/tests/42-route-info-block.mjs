@@ -48,7 +48,7 @@ const routes = [
             'Points: 2',
             'Bike 28.18 km', // was 28.18
             'Route: 28.2 km, 4:37 min', // was 28.2
-            '-2.0 / 0.5 / 4.0 m', // ele
+            '-2 / 0 / 4 m', // ele
             /Track.*?: 26.80 km/s, // Road
             /Sand.*?: 8.93 km/s, // Surface
         ],
@@ -69,7 +69,7 @@ const routes = [
             'Points: 2',
             'Car 334.74 km',
             'Route: 334.7 km, 6:55 min',
-            '3.0 / 55.3 / 115.0 m', // ele
+            '3 / 55 / 115 m', // ele
         ],
         turns: [
             'Exit roundabout Right and go 117 m',

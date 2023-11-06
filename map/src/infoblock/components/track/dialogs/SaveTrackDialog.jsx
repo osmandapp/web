@@ -120,21 +120,22 @@ export default function SaveTrackDialog() {
     }
 
     function hasExistTrack(name, folder) {
-        const isFolderFound = isFolderInTracksGroups(folder.title ? folder.title : folder, ctx.tracksGroups);
+        const folderName = folder.title ? folder.title : folder;
+        const isFolderFound = isFolderInTracksGroups(folderName, ctx.tracksGroups);
         return isFolderFound ? isFolderFound.files.find((f) => TracksManager.prepareName(f.name) === name) : false;
     }
 
     function isFolderInTracksGroups(folderName, groups) {
         for (const group of groups) {
             if (group.name === folderName) {
-                return true;
+                return group;
             } else if (group.subfolders) {
                 if (isFolderInTracksGroups(folderName, group.subfolders)) {
-                    return true;
+                    return group;
                 }
             }
         }
-        return false;
+        return null;
     }
 
     useEffect(() => {

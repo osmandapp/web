@@ -176,7 +176,6 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                                 aria-label="menu"
                                 onClick={() => {
                                     setShowInfoBlock(false);
-                                    ctx.setSelectedGpxFile({});
                                     ctx.setCurrentObjectType(null);
                                 }}
                             >
