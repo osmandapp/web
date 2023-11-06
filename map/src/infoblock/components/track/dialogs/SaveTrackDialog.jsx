@@ -121,16 +121,16 @@ export default function SaveTrackDialog() {
 
     function hasExistTrack(name, folder) {
         const folderName = folder.title ? folder.title : folder;
-        const isFolderFound = isFolderInTracksGroups(folderName, ctx.tracksGroups);
-        return isFolderFound ? isFolderFound.files.find((f) => TracksManager.prepareName(f.name) === name) : false;
+        const foundFolder = findFolder(folderName, ctx.tracksGroups);
+        return foundFolder ? foundFolder.files.find((f) => TracksManager.prepareName(f.name) === name) : false;
     }
 
-    function isFolderInTracksGroups(folderName, groups) {
+    function findFolder(folderName, groups) {
         for (const group of groups) {
             if (group.name === folderName) {
                 return group;
             } else if (group.subfolders) {
-                if (isFolderInTracksGroups(folderName, group.subfolders)) {
+                if (findFolder(folderName, group.subfolders)) {
                     return group;
                 }
             }

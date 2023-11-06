@@ -14,7 +14,7 @@ import {
     MENU_INFO_OPEN_SIZE,
 } from '../../manager/GlobalManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
-import Alert from './Alert';
+import GlobalAlert from './GlobalAlert';
 
 const GlobalFrame = () => {
     const ctx = useContext(AppContext);
@@ -50,7 +50,7 @@ const GlobalFrame = () => {
             >
                 <GlobalConfirmationDialog />
                 <OsmAndMap mainMenuWidth={MAIN_MENU_MIN_SIZE} menuInfoWidth={MENU_INFO_SIZE} />
-                <Alert width={width} />
+                <GlobalAlert width={width} />
                 <GeneralPanelButtons
                     mainMenuWidth={MAIN_MENU_MIN_SIZE}
                     menuInfoWidth={MENU_INFO_SIZE}
