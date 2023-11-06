@@ -1,0 +1,60 @@
+.icon {
+    fill: var(--svg-icon-color) !important;
+    width: 48px !important;
+    height: 48px !important;
+}
+.block {
+    display: flex !important;
+    padding: 48px 24px 16px 24px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+.title {
+    color: var(--text-primary) !important;
+    text-align: center !important;
+    font-feature-settings: 'liga' off !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: 120% !important;
+    letter-spacing: 0.16px !important;
+}
+.text {
+    color: var(--text-secondary) !important;
+    text-align: center !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 140% !important;
+    letter-spacing: 0.28px !important;
+}
+.button {
+    display: flex !important;
+    padding: 6px 0px !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    align-self: stretch !important;
+    border-radius: 3px !important;
+    background-color: var(--button) !important;
+    color: var(--selected-color) !important;
+    text-align: center !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: 140% !important;
+    letter-spacing: 0.28px !important;
+    text-transform: none !important;
+}
+.info {
+    display: flex !important;
+    padding: 24px 0px 16px 0px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 6px !important;
+    align-self: stretch !important;
+}
+.progress {
+    width: 48px !important;
+    height: 48px !important;
+}

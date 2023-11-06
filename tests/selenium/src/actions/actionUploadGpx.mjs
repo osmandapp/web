@@ -33,7 +33,7 @@ export default async function test({ mask = '*.gpx', multiple = false } = {}) {
         });
 
     await clickBy(By.id('se-show-main-menu'), { optional: true });
-    await clickBy(By.id('se-show-menu-tracks'), { optional: true });
+    await clickBy(By.id('se-show-menu-planroute'), { optional: true });
 
     if (multiple) {
         const files = tracks.map((t) => t.path).join('\n');

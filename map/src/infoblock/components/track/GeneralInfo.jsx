@@ -160,11 +160,11 @@ export default function GeneralInfo({ width }) {
     function getSRTMEle(track) {
         if (track?.analysis?.srtmAnalysis) {
             setElevationSRTM(
-                track.analysis.minElevationSrtm.toFixed(1) +
+                track.analysis.minElevationSrtm.toFixed(0) +
                     ' / ' +
-                    track.analysis.avgElevationSrtm.toFixed(1) +
+                    track.analysis.avgElevationSrtm.toFixed(0) +
                     ' / ' +
-                    track.analysis.maxElevationSrtm.toFixed(1) +
+                    track.analysis.maxElevationSrtm.toFixed(0) +
                     ' m'
             );
         } else {
@@ -191,11 +191,11 @@ export default function GeneralInfo({ width }) {
     function getElevation(info) {
         if (info?.hasElevationData && info.minElevation !== TracksManager.NAN_MARKER) {
             setElevation(
-                info.minElevation.toFixed(1) +
+                info.minElevation.toFixed(0) +
                     ' / ' +
-                    info.avgElevation?.toFixed(1) +
+                    info.avgElevation?.toFixed(0) +
                     ' / ' +
-                    info.maxElevation.toFixed(1) +
+                    info.maxElevation.toFixed(0) +
                     ' m'
             );
         } else {

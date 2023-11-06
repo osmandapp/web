@@ -7,6 +7,12 @@ import AppContext from '../../context/AppContext';
 import GeneralPanelButtons from './panelbuttons/GeneralPanelButtons';
 import { GlobalConfirmationDialog } from '../../dialogs/GlobalConfirmationDialog';
 import HeaderMenu from './header/HeaderMenu';
+import {
+    MAIN_MENU_MIN_SIZE,
+    MAIN_MENU_OPEN_SIZE,
+    MENU_INFO_CLOSE_SIZE,
+    MENU_INFO_OPEN_SIZE,
+} from '../../manager/GlobalManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import Alert from './Alert';
 
@@ -19,13 +25,19 @@ const GlobalFrame = () => {
     const [menuInfo, setMenuInfo] = useState(null);
     const [width] = useWindowSize();
 
-    const MAIN_MENU_MIN_SIZE = '64px';
-    const MAIN_MENU_SIZE = openMainMenu ? '240px' : MAIN_MENU_MIN_SIZE;
-    const MENU_INFO_SIZE = menuInfo ? '424px' : '0px';
+    const MAIN_MENU_SIZE = openMainMenu ? MAIN_MENU_OPEN_SIZE : MAIN_MENU_MIN_SIZE;
+    const MENU_INFO_SIZE = menuInfo ? MENU_INFO_OPEN_SIZE : MENU_INFO_CLOSE_SIZE;
 
     useEffect(() => {
         ctx.setInfoBlockWidth(MENU_INFO_SIZE);
     });
+
+    useEffect(() => {
+        if (ctx.infoBlockWidth === MENU_INFO_CLOSE_SIZE) {
+            setShowInfoBlock(false);
+            setMenuInfo(null);
+        }
+    }, [ctx.infoBlockWidth]);
 
     return (
         <Box sx={{ display: 'flex' }}>

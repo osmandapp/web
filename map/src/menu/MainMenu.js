@@ -32,6 +32,9 @@ import { ReactComponent as PlanRouteIcon } from '../assets/menu/ic_action_plan_r
 import InformationBlock from '../infoblock/components/InformationBlock';
 import Weather from './weather/Weather';
 import styles from './mainmenu.module.css';
+import { MENU_INFO_CLOSE_SIZE } from '../manager/GlobalManager';
+import TrackGroupFolder from './tracks/TrackGroupFolder';
+import _ from 'lodash';
 
 export default function MainMenu({
     size,
@@ -72,7 +75,7 @@ export default function MainMenu({
             name: 'Tracks',
             icon: TracksIcon,
             component: <TracksMenu />,
-            type: [OBJECT_TYPE_LOCAL_TRACK, OBJECT_TYPE_CLOUD_TRACK],
+            type: [OBJECT_TYPE_CLOUD_TRACK],
             show: true,
             id: 'se-show-menu-tracks',
         },
@@ -104,7 +107,7 @@ export default function MainMenu({
             name: 'Plan a route',
             icon: PlanRouteIcon,
             component: <PlanRouteMenu />,
-            type: [],
+            type: [OBJECT_TYPE_LOCAL_TRACK],
             show: true,
             id: 'se-show-menu-planroute',
         },
@@ -288,7 +291,6 @@ export default function MainMenu({
                                                 <SvgIcon
                                                     className={styles.customIconPath}
                                                     component={item.icon}
-                                                    sx={{ fill: '#727272' }}
                                                     inheritViewBox
                                                 />
                                             </ListItemIcon>
@@ -344,29 +346,34 @@ export default function MainMenu({
                     </div>
                 </Drawer>
             </ClickAwayListener>
-            <Drawer
-                variant="persistent"
-                PaperProps={{
-                    sx: {
-                        width: infoSize,
-                        ml: '64px',
-                        boxShadow: 'none',
-                        zIndex: 1000,
-                    },
-                }}
-                sx={{ left: 'auto !important' }}
-                open={true}
-                hideBackdrop
-            >
-                <Toolbar />
-                {!showInfoBlock && menuInfo}
-                <InformationBlock
-                    showInfoBlock={showInfoBlock}
-                    setShowInfoBlock={setShowInfoBlock}
-                    setClearState={setClearState}
-                    mainMenuSize={size}
-                />
-            </Drawer>
+            {ctx.infoBlockWidth !== MENU_INFO_CLOSE_SIZE && (
+                <Drawer
+                    variant="persistent"
+                    PaperProps={{
+                        sx: {
+                            width: infoSize,
+                            ml: '64px',
+                            boxShadow: 'none',
+                            zIndex: 1000,
+                        },
+                    }}
+                    sx={{ left: 'auto !important' }}
+                    open={true}
+                    hideBackdrop
+                >
+                    <Toolbar />
+                    {!showInfoBlock && _.isEmpty(ctx.openTrackGroups) && menuInfo}
+                    {ctx.openTrackGroups.length > 0 && !showInfoBlock && (
+                        <TrackGroupFolder folder={ctx.openTrackGroups[ctx.openTrackGroups.length - 1]} />
+                    )}
+                    <InformationBlock
+                        showInfoBlock={showInfoBlock}
+                        setShowInfoBlock={setShowInfoBlock}
+                        setClearState={setClearState}
+                        mainMenuSize={size}
+                    />
+                </Drawer>
+            )}
         </Box>
     );
 }

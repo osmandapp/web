@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Box, Button, Divider } from '@mui/material';
 import AppContext, { isLocalTrack, isRouteTrack } from '../../../context/AppContext';
-import { Add, Download } from '@mui/icons-material';
+import { Download } from '@mui/icons-material';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import DeleteTrackDialog from '../track/dialogs/DeleteTrackDialog';
 import GeneralInfo from '../track/GeneralInfo';
@@ -38,13 +38,6 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
     const classes = useStyles();
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
-
-    function addToCollection() {
-        if (!ctx.gpxCollection.find((name) => name === ctx.selectedGpxFile.name)) {
-            ctx.gpxCollection.push(ctx.selectedGpxFile.name);
-            ctx.setGpxCollection([...ctx.gpxCollection]);
-        }
-    }
 
     return (
         <>
@@ -99,17 +92,6 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                             <Download fontSize="small" sx={{ mr: '3px' }} />
                             Download GPX
                         </Button>
-                        {isRouteTrack(ctx) === false && (
-                            <Button
-                                id="se-infoblock-button-collection"
-                                variant="contained"
-                                className={styles.button}
-                                onClick={addToCollection}
-                            >
-                                <Add fontSize="small" sx={{ mr: '3px' }} />
-                                Collection (OBF MAP)
-                            </Button>
-                        )}
                     </>
                 )}
                 <Divider sx={{ mt: 2, mb: 2 }} />

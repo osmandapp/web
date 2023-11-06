@@ -124,7 +124,7 @@ export default function LocalClientTrackLayer() {
      *
      * Depends: every change of ctx.selectedGpxFile
      *
-     * Actions:
+     * SortActions:
      *
      * - finish track rename (oldName)
      * - check/get routing from cache (syncRouting)
