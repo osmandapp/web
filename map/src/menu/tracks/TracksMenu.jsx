@@ -10,14 +10,14 @@ import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.sv
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import styles from './trackmenu.module.css';
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
-import LocalGpxUploader from '../../frame/components/util/LocalGpxUploader';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import CloudTrackItem from './CloudTrackItem';
 import SortActions from './actions/SortActions';
-import { DEFAULT_GROUP_NAME } from '../../manager/TracksManager';
+import { createTrackGroups, DEFAULT_GROUP_NAME } from '../../manager/TracksManager';
 import Empty from '../errors/Empty';
 import Loading from '../errors/Loading';
 import SortMenu from './actions/SortMenu';
+import CloudGpxUploader from '../../frame/components/util/CloudGpxUploader';
 
 export default function TracksMenu() {
     const ctx = useContext(AppContext);
@@ -59,96 +59,6 @@ export default function TracksMenu() {
         }
         setVisibleTracks({ ...visibleTracks });
     }, [ctx.localTracks]);
-
-    function calculateLastModified(group) {
-        if (!group.files || group.files.length === 0) {
-            group.lastModifiedMs = null;
-            group.lastModifiedData = null;
-            return;
-        }
-
-        let minMs = Infinity;
-        let minData = null;
-        for (const file of group.files) {
-            if (file.updatetimems < minMs) {
-                minMs = file.updatetimems;
-                minData = file.updatetime;
-            }
-        }
-        group.lastModifiedMs = minMs;
-        group.lastModifiedData = minData;
-    }
-
-    function addFilesAndCalculateLastModified(groups) {
-        groups.forEach((group) => {
-            group.files = group.files || [];
-            group.groupFiles = group.groupFiles || [];
-            group.subfolders = group.subfolders || [];
-
-            if (group.subfolders.length > 0) {
-                addFilesAndCalculateLastModified(group.subfolders);
-
-                // remove files from group.groupFiles if they belong to subfolders
-                group.groupFiles = group.groupFiles.filter((file) => {
-                    return !group.subfolders.some((subfolder) =>
-                        subfolder.files.some((subfile) => subfile.name === file.name)
-                    );
-                });
-
-                group.files.push(...group.subfolders.reduce((acc, subfolder) => acc.concat(subfolder.files), []));
-            }
-            group.files.push(...group.groupFiles);
-            calculateLastModified(group);
-        });
-    }
-
-    function createTrackGroups(files) {
-        const trackGroups = [];
-        const tracks = [];
-
-        files.forEach((file) => {
-            const parts = file.name.split('/');
-            const isFile = parts.length === 1;
-
-            if (isFile) {
-                tracks.push(file);
-            } else {
-                let currentGroups = trackGroups;
-                for (let i = 0; i < parts.length - 1; i++) {
-                    const folder = parts[i];
-
-                    // find existing group by name or create a new one
-                    let existingGroup = currentGroups.find((group) => group.name === folder);
-                    if (!existingGroup) {
-                        existingGroup = {
-                            name: folder,
-                            subfolders: [],
-                            groupFiles: [],
-                            lastModifiedMs: null,
-                            lastModifiedData: null,
-                        };
-                        currentGroups.push(existingGroup);
-                    }
-
-                    currentGroups = existingGroup.subfolders;
-                    existingGroup.groupFiles.push(file);
-                }
-            }
-        });
-
-        if (tracks.length > 0) {
-            trackGroups.push({
-                name: DEFAULT_GROUP_NAME,
-                files: tracks,
-                lastModifiedMs: null,
-                lastModifiedData: null,
-            });
-        }
-
-        addFilesAndCalculateLastModified(trackGroups);
-
-        return trackGroups;
-    }
 
     // get gpx files and create groups
     useEffect(() => {
@@ -300,7 +210,7 @@ export default function TracksMenu() {
                     </Tooltip>
                     <Tooltip key={'import_track'} title="Import track" arrow placement="bottom-end">
                         <span>
-                            <LocalGpxUploader>
+                            <CloudGpxUploader folder={DEFAULT_GROUP_NAME}>
                                 <IconButton
                                     component="span"
                                     variant="contained"
@@ -309,7 +219,7 @@ export default function TracksMenu() {
                                 >
                                     <ImportIcon />
                                 </IconButton>
-                            </LocalGpxUploader>
+                            </CloudGpxUploader>
                         </span>
                     </Tooltip>
                 </Toolbar>

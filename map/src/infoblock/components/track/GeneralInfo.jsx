@@ -247,7 +247,7 @@ export default function GeneralInfo({ width }) {
             // track rename have to be finished correctly in the editor component
             ctx.selectedGpxFile.oldName = oldName; // used by effect in LocalClientTrackLayer
 
-            TracksManager.saveTracks({ ctx, track: ctx.selectedGpxFile }); // ctx.localTracks might be modified there
+            TracksManager.saveTrackToLocal({ ctx, track: ctx.selectedGpxFile }); // ctx.localTracks might be modified there
 
             ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
 

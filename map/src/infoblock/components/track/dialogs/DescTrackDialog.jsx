@@ -80,7 +80,7 @@ export default function DescTrackDialog({ dialogOpen, setDialogOpen, desc }) {
     }
 
     function saveState() {
-        TracksManager.saveTracks({ ctx, track: ctx.selectedGpxFile });
+        TracksManager.saveTrackToLocal({ ctx, track: ctx.selectedGpxFile });
         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
     }
 

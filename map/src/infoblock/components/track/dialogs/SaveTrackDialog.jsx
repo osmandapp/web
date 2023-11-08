@@ -81,7 +81,7 @@ export default function SaveTrackDialog() {
         if (validName(preparedName)) {
             setProcess(true);
             if (!hasExistTrack(preparedName, folder)) {
-                const uploaded = !!(await TracksManager.saveTrack(
+                const uploaded = !!(await TracksManager.saveTrackToCloud(
                     ctx,
                     getFolderName(folder),
                     preparedName,
@@ -103,7 +103,7 @@ export default function SaveTrackDialog() {
         }
         if (validName(preparedName)) {
             setProcess(true);
-            const uploaded = !!(await TracksManager.saveTrack(
+            const uploaded = !!(await TracksManager.saveTrackToCloud(
                 ctx,
                 getFolderName(folder),
                 preparedName,

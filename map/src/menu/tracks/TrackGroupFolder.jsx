@@ -3,7 +3,6 @@ import CloudTrackItem from './CloudTrackItem';
 import CloudTrackGroup from './CloudTrackGroup';
 import { AppBar, Box, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
 import styles from './trackmenu.module.css';
-import LocalGpxUploader from '../../frame/components/util/LocalGpxUploader';
 import SortActions from './actions/SortActions';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
@@ -11,10 +10,13 @@ import { ReactComponent as ImportIcon } from '../../assets/icons/ic_action_folde
 import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import SortMenu from './actions/SortMenu';
+import CloudGpxUploader from '../../frame/components/util/CloudGpxUploader';
+import { findGroupByName } from '../../manager/TracksManager';
 
 export default function TrackGroupFolder({ folder }) {
     const ctx = useContext(AppContext);
 
+    const [group, setGroup] = useState(folder);
     const [openSort, setOpenSort] = useState(false);
     const [sortFiles, setSortFiles] = useState([]);
     const [sortGroups, setSortGroups] = useState([]);
@@ -24,7 +26,19 @@ export default function TrackGroupFolder({ folder }) {
     const [, height] = useWindowSize();
 
     useEffect(() => {
+        if (ctx.tracksGroups) {
+            let found = findGroupByName(ctx.tracksGroups, group.fullName);
+            ctx.openTrackGroups[ctx.openTrackGroups.length - 1] = found;
+            ctx.setOpenTrackGroups([...ctx.openTrackGroups]);
+            if (folder) {
+                setGroup({ ...found });
+            }
+        }
+    }, [ctx.tracksGroups]);
+
+    useEffect(() => {
         if (folder) {
+            setGroup({ ...folder });
             setSortFiles([]);
             setSortGroups([]);
         }
@@ -32,19 +46,19 @@ export default function TrackGroupFolder({ folder }) {
 
     const trackItems = useMemo(() => {
         const items = [];
-        (sortFiles.length > 0 ? sortFiles : folder.groupFiles).map((file) => {
+        (sortFiles.length > 0 ? sortFiles : group.groupFiles).map((file) => {
             items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} />);
         });
         return items;
-    }, [folder.groupFiles, folder.groupFiles.length, sortFiles]);
+    }, [group.groupFiles, group.groupFiles.length, sortFiles]);
 
     const groupItems = useMemo(() => {
         const items = [];
-        (sortGroups.length > 0 ? sortGroups : folder.subfolders).map((group, index) => {
-            items.push(<CloudTrackGroup key={group.name + index} index={index} group={group} />);
+        (sortGroups.length > 0 ? sortGroups : group.subfolders).map((g, index) => {
+            items.push(<CloudTrackGroup key={g.name + index} index={index} group={g} />);
         });
         return items;
-    }, [folder.subfolders, folder.subfolders.length, sortGroups]);
+    }, [group.subfolders, group.subfolders.length, sortGroups]);
 
     function prevTrackMenu() {
         ctx.openTrackGroups.pop();
@@ -59,7 +73,7 @@ export default function TrackGroupFolder({ folder }) {
                         <BackIcon />
                     </IconButton>
                     <Typography component="div" className={styles.title}>
-                        {folder.name}
+                        {group.name}
                     </Typography>
                     <Tooltip key={'sort_tracks'} title="Sort tracks" arrow placement="bottom-end">
                         <IconButton
@@ -75,7 +89,7 @@ export default function TrackGroupFolder({ folder }) {
                     </Tooltip>
                     <Tooltip key={'import_track'} title="Import track" arrow placement="bottom-end">
                         <span>
-                            <LocalGpxUploader>
+                            <CloudGpxUploader folder={group.fullName}>
                                 <IconButton
                                     component="span"
                                     variant="contained"
@@ -84,7 +98,7 @@ export default function TrackGroupFolder({ folder }) {
                                 >
                                     <ImportIcon />
                                 </IconButton>
-                            </LocalGpxUploader>
+                            </CloudGpxUploader>
                         </span>
                     </Tooltip>
                 </Toolbar>
@@ -103,9 +117,9 @@ export default function TrackGroupFolder({ folder }) {
                 anchorEl={anchorEl}
                 actions={
                     <SortActions
-                        files={folder.groupFiles}
+                        files={group.groupFiles}
                         setSortFiles={setSortFiles}
-                        groups={folder.subfolders}
+                        groups={group.subfolders}
                         setSortGroups={setSortGroups}
                         setOpenSort={setOpenSort}
                         selectedSort={selectedSort}

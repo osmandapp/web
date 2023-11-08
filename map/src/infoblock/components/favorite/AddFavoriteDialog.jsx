@@ -124,7 +124,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen }) {
             TracksManager.prepareTrack(ctx.selectedGpxFile);
             ctx.localTracks.push(ctx.selectedGpxFile);
         }
-        TracksManager.saveTracks({ ctx, track: ctx.selectedGpxFile }); // ctx.localTracks might be modified there
+        TracksManager.saveTrackToLocal({ ctx, track: ctx.selectedGpxFile }); // ctx.localTracks might be modified there
         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
         ctx.setLocalTracks([...ctx.localTracks]);
     }

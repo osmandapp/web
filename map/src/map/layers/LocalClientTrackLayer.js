@@ -299,7 +299,7 @@ export default function LocalClientTrackLayer() {
                     ctx.localTracks[ind].selected = true;
                 }
             }
-            TracksManager.saveTracks({ ctx, track: file }); // ctx.localTracks might be modified there
+            TracksManager.saveTrackToLocal({ ctx, track: file }); // ctx.localTracks might be modified there
             ctx.setLocalTracks([...ctx.localTracks]); // save our mutations which were made before
 
             if (ctx.createTrack.clear) {
@@ -359,7 +359,7 @@ export default function LocalClientTrackLayer() {
     function saveLocal() {
         if (ctx.localTracks.length > 0) {
             // localTracks exist: do update/append into localStorage
-            TracksManager.saveTracks({ ctx, track: ctx.selectedGpxFile });
+            TracksManager.saveTrackToLocal({ ctx, track: ctx.selectedGpxFile });
         } else {
             // localTracks empty: add gpx as 1st track (points and/or wpts are included)
             createLocalTrack(ctxTrack, ctxTrack.points, ctxTrack.wpts);

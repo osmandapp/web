@@ -106,7 +106,7 @@ function openVisibleTracks(localTracks) {
     return localTracks;
 }
 
-function saveLocalTrack({ ctx, track }) {
+function saveTrackToLocal({ ctx, track }) {
     const localTracks = ctx.localTracks;
 
     let currentTrackIndex = localTracks.findIndex((t) => t.name === track.name);
@@ -227,7 +227,7 @@ function getFileName(currentFile) {
     return prepareName(file.name, file.local);
 }
 
-function prepareName(name, local) {
+function prepareName(name, local = false) {
     const result = name.replace(/.gpx/, '');
     if (result.includes('/')) {
         const groups = result.split('/');
@@ -335,7 +335,7 @@ function addTrack({ ctx, track, selected = true, overwrite = false, cloudAutoSav
         // used when multi-gpx uploaded
         // generate points and save track
         track.points = getEditablePoints(track);
-        saveLocalTrack({ ctx, track });
+        saveTrackToLocal({ ctx, track });
     }
 
     if (overwrite) {
@@ -578,7 +578,7 @@ async function getGpxTrack(file) {
     });
 }
 
-async function saveTrack(ctx, currentFolder, fileName, type, file) {
+async function saveTrackToCloud(ctx, currentFolder, fileName, type, file) {
     if (type !== FavoritesManager.FAVORITE_FILE_TYPE) {
         if (currentFolder === 'Tracks') {
             currentFolder = '';
@@ -624,40 +624,168 @@ async function saveTrack(ctx, currentFolder, fileName, type, file) {
                     if (resJson && resJson.uniqueFiles) {
                         ctx.setListFiles(resJson);
                     }
+                    updateTrackGroups(resJson, ctx);
                 } else {
-                    // refresh updatetimems locally to resort track list
-                    // real data will be refreshed after list-files reloaded
-                    ctx.setTracksGroups((o) => {
-                        o.forEach((g) => {
-                            g.files.forEach((f) => {
-                                if (f.name === params.name) {
-                                    f.updatetimems = Date.now();
-                                }
-                            });
-                            g.files = [...g.files]; // useMemo deep dep (group.files) in CloudTrackGroup
-                        });
-                        return [...o];
-                    });
+                    const updatedTrackGroups = updateUpdatetimemsInGroups(ctx.tracksGroups, params.name, Date.now());
+                    ctx.setTracksGroups(updatedTrackGroups);
                 }
-
                 return true;
-
-                // API request /list-files is too slow for this moment... commented!
-                // const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
-                // const resJson = await respGetFiles.json();
-                // if (resJson && resJson.uniqueFiles) {
-                //     ctx.setListFiles(resJson);
-                //     const file = resJson.uniqueFiles.find((f) => f.name === fileName + '.gpx');
-                //     if (file) {
-                //         downloadAfterUpload(ctx, file);
-                //         deleteLocalTrack(ctx);
-                //         return true;
-                //     }
-                // }
             }
         }
     }
     return false;
+}
+
+function updateUpdatetimemsInGroups(groups, fileName, newUpdatetimems) {
+    return groups.map((group) => {
+        if (group.subfolders.length > 0) {
+            const updatedSubfolders = updateUpdatetimemsInGroups(group.subfolders, fileName, newUpdatetimems);
+
+            return {
+                ...group,
+                subfolders: updatedSubfolders,
+                groupFiles: group.groupFiles.map((file) =>
+                    file.name === fileName ? { ...file, updatetimems: newUpdatetimems } : file
+                ),
+                files: group.files.map((file) =>
+                    file.name === fileName ? { ...file, updatetimems: newUpdatetimems } : file
+                ),
+            };
+        } else {
+            return {
+                ...group,
+                groupFiles: group.groupFiles.map((file) =>
+                    file.name === fileName ? { ...file, updatetimems: newUpdatetimems } : file
+                ),
+                files: group.files.map((file) =>
+                    file.name === fileName ? { ...file, updatetimems: newUpdatetimems } : file
+                ),
+            };
+        }
+    });
+}
+
+function updateTrackGroups(listFiles, ctx) {
+    if (!_.isEmpty(listFiles)) {
+        //get gpx files
+        let files = (!listFiles || !listFiles.uniqueFiles ? [] : listFiles.uniqueFiles).filter((item) => {
+            return (
+                (item.type === 'gpx' || item.type === 'GPX') &&
+                (item.name.slice(-4) === '.gpx' || item.name.slice(-4) === '.GPX')
+            );
+        });
+        //get groups
+        let trackGroups = createTrackGroups(files);
+        ctx.setTracksGroups(trackGroups, ctx);
+    } else {
+        ctx.setTracksGroups([]);
+    }
+}
+
+export function createTrackGroups(files) {
+    const trackGroups = [];
+    const tracks = [];
+
+    files.forEach((file) => {
+        const parts = file.name.split('/');
+        const isFile = parts.length === 1;
+
+        if (isFile) {
+            tracks.push(file);
+        } else {
+            let currentGroups = trackGroups;
+            let fullName = '';
+            for (let i = 0; i < parts.length - 1; i++) {
+                const folder = parts[i];
+                fullName += folder + '/';
+                // find existing group by name or create a new one
+                let existingGroup = currentGroups.find((group) => group.name === folder);
+                if (!existingGroup) {
+                    existingGroup = {
+                        name: folder,
+                        subfolders: [],
+                        groupFiles: [],
+                        lastModifiedMs: null,
+                        lastModifiedData: null,
+                    };
+                    currentGroups.push(existingGroup);
+                }
+
+                currentGroups = existingGroup.subfolders;
+                existingGroup.fullName = fullName.substring(0, fullName.length - 1);
+                existingGroup.groupFiles.push(file);
+            }
+        }
+    });
+
+    if (tracks.length > 0) {
+        trackGroups.push({
+            name: DEFAULT_GROUP_NAME,
+            files: tracks,
+            lastModifiedMs: null,
+            lastModifiedData: null,
+        });
+    }
+
+    addFilesAndCalculateLastModified(trackGroups);
+    return trackGroups;
+}
+
+function addFilesAndCalculateLastModified(groups) {
+    groups.forEach((group) => {
+        group.files = group.files || [];
+        group.groupFiles = group.groupFiles || [];
+        group.subfolders = group.subfolders || [];
+
+        if (group.subfolders.length > 0) {
+            addFilesAndCalculateLastModified(group.subfolders);
+
+            // remove files from group.groupFiles if they belong to subfolders
+            group.groupFiles = group.groupFiles.filter((file) => {
+                return !group.subfolders.some((subfolder) =>
+                    subfolder.files.some((subfile) => subfile.name === file.name)
+                );
+            });
+
+            group.files.push(...group.subfolders.reduce((acc, subfolder) => acc.concat(subfolder.files), []));
+        }
+        group.files.push(...group.groupFiles);
+        calculateLastModified(group);
+    });
+}
+
+function calculateLastModified(group) {
+    if (!group.files || group.files.length === 0) {
+        group.lastModifiedMs = null;
+        group.lastModifiedData = null;
+        return;
+    }
+
+    let minMs = Infinity;
+    let minData = null;
+    for (const file of group.files) {
+        if (file.updatetimems < minMs) {
+            minMs = file.updatetimems;
+            minData = file.updatetime;
+        }
+    }
+    group.lastModifiedMs = minMs;
+    group.lastModifiedData = minData;
+}
+
+export function findGroupByName(groups, groupName) {
+    for (const group of groups) {
+        if (group.fullName === groupName) {
+            return group;
+        }
+        if (group.subfolders && group.subfolders.length > 0) {
+            const foundInSubfolders = findGroupByName(group.subfolders, groupName);
+            if (foundInSubfolders) {
+                return foundInSubfolders;
+            }
+        }
+    }
+    return null;
 }
 
 // after success upload from Local to Cloud
@@ -1331,7 +1459,7 @@ export function prepareDesc(trackDesc) {
 
 const TracksManager = {
     loadTracks,
-    saveTracks: saveLocalTrack,
+    saveTrackToLocal,
     getFileName,
     prepareName,
     getTrackData,
@@ -1339,7 +1467,7 @@ const TracksManager = {
     addTrack,
     getTrackPoints,
     getGpxTrack,
-    saveTrack,
+    saveTrackToCloud,
     getEditablePoints,
     updateGapProfileOneSegment,
     getEle,

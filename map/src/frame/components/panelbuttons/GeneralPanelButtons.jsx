@@ -9,11 +9,11 @@ import ChangeProfileTrackDialog from '../../../infoblock/components/track/dialog
 import PointContextMenu from '../../../infoblock/components/PointContextMenu';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
-import LocalGpxUploader from '../util/LocalGpxUploader';
 import styles from '../../../map/components/map.module.css';
 import { ReactComponent as ConfigureMapIcon } from '../../../assets/icons/ic_map_configure_map.svg';
 import SearchInfo from '../search/SearchInfo';
 import MapStyle from '../../../menu/mapstyle/MapStyle';
+import LocalGpxUploader from '../util/LocalGpxUploader';
 
 export default function GeneralPanelButtons({
     mainMenuWidth,
