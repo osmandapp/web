@@ -36,6 +36,7 @@ The Topography plugin provides access to the following map types:
 - [**Hillshade**](#hillshade). [Raster map](../map/raster-maps.md) with shading of hills and slopes, which makes the relief more visible and helps to visually interpret the terrain. 
 - [**Slope**](#slope). Another [raster](../map/raster-maps.md) layer that provides information about the steepness of slopes, which can be important for route planning and safety. 
 - [**Terrain map (3D)**](#3d-relief). It is a [vector map](../map/vector-maps.md) that provides a three-dimensional representation of the terrain, available only for Android users. 
+- [**Combine layer types**](#combine-layer-types)
 
 <Tabs groupId="operating-systems">
 
@@ -75,8 +76,7 @@ To display **Contour lines** and **Terrain (Hillshade, Slope)** data on the map:
 1. Purchase: [OsmAnd+, OsmAnd Maps+, or OsmAnd Pro purchase plan](../plugins/index.md#purchase) and [Enable](../plugins/index.md#enable--disable) the Topography plugin in the Plugins section of the Main menu.
 2. [Download](#download-maps) Contour lines, Hillshade, Slope, or Terrain map (3D) maps.
 3. [Enable and adjust](#configure-map-view) Contour lines and/or Hillshade or Slope for the map view.
-
-You can also watch [Youtube Tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
+4. You can also watch [Youtube Tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
 
 To display **3D Relief** (Android only):
 
@@ -256,8 +256,9 @@ Then download the [Terrain map (3D)](../plugins/contour-lines.md#how-to-download
 <InfoAndroidOnly />
 
 </TabItem>
-
+ 
 </Tabs>
+
 
 ## Combine layer types
 

@@ -14,6 +14,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
+## Overview
+
 The Maps screen allows you to perform basic operations with online and offline maps used in OsmAnd. These are loading, deleting, renaming, clearing the cache for online maps, updating, and checking the map size.
 
 OsmAnd deals with 2 type of maps: [Vector maps](../map/vector-maps.md) and  [Raster maps](../map/raster-maps.md). All maps are stored in one place of the [Storage](../personal/storage.md) and it is accessible with external tools. 
