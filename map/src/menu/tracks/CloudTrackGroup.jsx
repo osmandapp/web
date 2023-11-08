@@ -1,124 +1,70 @@
-import { Box, Button, Collapse, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
-import { ExpandLess, ExpandMore } from '@mui/icons-material';
-import CloudOutlinedIcon from '@mui/icons-material/CloudOutlined';
-import { useRef, useContext, useEffect, useState, useMemo } from 'react';
-import CloudTrackItem from './CloudTrackItem';
-
-import Actions from './Actions';
-import drawerStyles from '../../frame/styles/DrawerStyles';
+import { IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
-import PopperMenu from './PopperMenu';
+import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
+import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
+import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
+import styles from './trackmenu.module.css';
+import GroupActions from './actions/GroupActions';
+import ActionsMenu from './actions/ActionsMenu';
 
 export default function CloudTrackGroup({ index, group }) {
-    const styles = drawerStyles();
     const ctx = useContext(AppContext);
 
-    const [indexGroup, setIndexGroup] = useState(-1);
-    const [tracksOpen, setTracksOpen] = useState(false);
-    const [showTracks, setShowTracks] = useState([]);
-    const [sortFiles, setSortFiles] = useState([]);
+    const [hoverIconInfo, setHoverIconInfo] = useState(false);
+    const [openActions, setOpenActions] = useState(false);
     const anchorEl = useRef(null);
-    const [open, setOpen] = useState(false);
-
-    const handleToggle = () => {
-        setOpen((prevOpen) => !prevOpen);
-    };
-
-    const toggleTracksOpen = () => {
-        setTracksOpen(!tracksOpen);
-    };
-
-    function addToCollection() {
-        group.files.forEach((file) => {
-            if (!ctx.gpxCollection.find((name) => name === file.name)) {
-                ctx.gpxCollection.push(file.name);
-            }
-        });
-        ctx.setGpxCollection([...ctx.gpxCollection]);
-    }
 
     useEffect(() => {
-        if (indexGroup !== -1) {
-            if (showTracks.includes(indexGroup)) {
-                showTracks.splice(showTracks.indexOf(indexGroup), 1);
-            } else {
-                showTracks.push(indexGroup);
-            }
-            setShowTracks([...showTracks]);
+        if (ctx.openedPopper && ctx.openedPopper !== anchorEl) {
+            setOpenActions(false);
         }
-    }, [tracksOpen, setTracksOpen]);
-
-    const Buttons = () => {
-        return (
-            <div>
-                {
-                    <MenuItem
-                        onClick={(e) => {
-                            addToCollection();
-                            e.stopPropagation();
-                        }}
-                    >
-                        To Collection
-                    </MenuItem>
-                }
-            </div>
-        );
-    };
-
-    const trackItems = useMemo(() => {
-        const items = [];
-        (sortFiles.length > 0 ? sortFiles : group.files).map((file) => {
-            items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} />);
-        });
-        return items;
-    }, [sortFiles, group.files, group.files.length]);
+    }, [ctx.openedPopper]);
 
     return (
-        <div className={styles.drawerItem} key={'group' + group.name + index}>
+        <>
             <MenuItem
+                className={styles.group}
+                key={'group' + group.name + index}
                 id={'se-menu-cloud-' + group.name}
-                sx={{ ml: 3 }}
                 divider
                 onClick={(e) => {
                     if (e.target !== 'path') {
-                        setIndexGroup(index);
-                        toggleTracksOpen();
+                        ctx.setOpenTrackGroups((prevState) => [...prevState, group]);
                     }
                 }}
             >
-                <ListItemIcon>
-                    <CloudOutlinedIcon fontSize="small" sx={{ mb: '4px' }} />
+                <ListItemIcon className={styles.icon}>
+                    <FolderIcon />
                 </ListItemIcon>
                 <ListItemText>
-                    <Typography variant="inherit" noWrap>
+                    <Typography variant="inherit" className={styles.groupName} noWrap>
                         {group.name}
                     </Typography>
+                    <Typography variant="body2" className={styles.groupInfo} noWrap>
+                        {`${group.lastModifiedData.split(',')[0]}, tracks ${group.files.length}`}
+                    </Typography>
                 </ListItemText>
-                <Button
-                    sx={{ borderRadius: 28, minWidth: '30px !important' }}
-                    size="small"
-                    ref={anchorEl}
+                <IconButton
+                    className={styles.sortIcon}
+                    onMouseEnter={() => setHoverIconInfo(true)}
+                    onMouseLeave={() => setHoverIconInfo(false)}
                     onClick={(e) => {
-                        handleToggle();
+                        setOpenActions(true);
                         ctx.setOpenedPopper(anchorEl);
                         e.stopPropagation();
                     }}
+                    ref={anchorEl}
                 >
-                    <Typography variant="body2" color="textSecondary">
-                        {group.files.length > 0 ? `${group.files.length}` : ''}
-                    </Typography>
-                </Button>
-                <Box>
-                    <PopperMenu anchorEl={anchorEl} open={open} setOpen={setOpen} Buttons={Buttons} />
-                </Box>
-                {group.files.length === 0 ? <></> : showTracks.length > 0 ? <ExpandLess /> : <ExpandMore />}
+                    {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
+                </IconButton>
             </MenuItem>
-            <Collapse in={showTracks.includes(index)} timeout="auto">
-                <div style={{ maxHeight: '41vh', overflow: 'auto' }}>
-                    <Actions files={group.files} setSortFiles={setSortFiles} />
-                    {trackItems}
-                </div>
-            </Collapse>
-        </div>
+            <ActionsMenu
+                open={openActions}
+                setOpen={setOpenActions}
+                anchorEl={anchorEl}
+                actions={<GroupActions group={group} setOpenActions={setOpenActions} />}
+            />
+        </>
     );
 }

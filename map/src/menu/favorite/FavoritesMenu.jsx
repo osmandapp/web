@@ -5,6 +5,7 @@ import FavoriteGroup from './FavoriteGroup';
 import Utils from '../../util/Utils';
 import TracksManager from '../../manager/TracksManager';
 import FavoritesManager from '../../manager/FavoritesManager';
+import Empty from '../errors/Empty';
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
@@ -127,19 +128,28 @@ export default function FavoritesMenu() {
 
     return (
         <>
-            <FavoriteAllGroups setEnableGroups={setEnableGroups} favoritesGroups={openFavoritesGroups} />
-            {ctx.favorites?.groups?.length > 0 &&
-                ctx.favorites.groups.map((group, index) => {
-                    return (
-                        <FavoriteGroup
-                            key={group + index}
-                            index={index}
-                            group={group}
-                            enableGroups={enableGroups}
-                            setEnableGroups={setEnableGroups}
-                        />
-                    );
-                })}
+            {openFavoritesGroups?.length > 0 || ctx.favorites?.groups?.length > 0 ? (
+                <>
+                    <FavoriteAllGroups setEnableGroups={setEnableGroups} favoritesGroups={openFavoritesGroups} />
+                    {ctx.favorites?.groups?.length > 0 &&
+                        ctx.favorites.groups.map((group, index) => {
+                            return (
+                                <FavoriteGroup
+                                    key={group + index}
+                                    index={index}
+                                    group={group}
+                                    enableGroups={enableGroups}
+                                    setEnableGroups={setEnableGroups}
+                                />
+                            );
+                        })}
+                </>
+            ) : (
+                <Empty
+                    title={'You don’t have favorite files'}
+                    text={'You can import or create favorite files using OsmAnd App.'}
+                />
+            )}
         </>
     );
 }

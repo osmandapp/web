@@ -261,18 +261,21 @@ function interpolate(totalLength, step, result) {
 }
 
 function smoothSlopes(data, alpha) {
-    const smoothedData = [];
-    let previousValue = data[0].slope;
-    for (let i = 0; i < data.length; i++) {
-        const currentSlope = data[i].slope;
-        const smoothedSlope = alpha * currentSlope + (1 - alpha) * previousValue;
-        smoothedData.push({
-            slope: smoothedSlope,
-            dist: data[i].dist,
-        });
-        previousValue = smoothedSlope;
+    if (data?.length > 0) {
+        const smoothedData = [];
+        let previousValue = data[0].slope;
+        for (let i = 0; i < data.length; i++) {
+            const currentSlope = data[i].slope;
+            const smoothedSlope = alpha * currentSlope + (1 - alpha) * previousValue;
+            smoothedData.push({
+                slope: smoothedSlope,
+                dist: data[i].dist,
+            });
+            previousValue = smoothedSlope;
+        }
+        return smoothedData;
     }
-    return smoothedData;
+    return data;
 }
 
 function addSteepnessDataSet(tag, slopes, roadPoints) {

@@ -15,6 +15,7 @@ import _ from 'lodash';
 import PoiTabList from './tabs/PoiTabList';
 import { hasSegmentTurns } from '../../manager/TracksManager';
 import { ArrowBack } from '@mui/icons-material';
+import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 
 const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     const [mounted, setMounted] = useState(false);
@@ -35,7 +36,7 @@ const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
 };
 
 export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setClearState, mainMenuSize }) {
-    const DRAWER_SIZE = 400;
+    const DRAWER_SIZE = 360;
 
     const ctx = useContext(AppContext);
 
@@ -67,7 +68,6 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
             ctx.mutateShowPoints({ points: true, wpts: true });
             ctx.setTrackRange(null);
             setClearState(true);
-            ctx.setCurrentObjectType(null);
         }
     }, [showInfoBlock]);
 
@@ -154,7 +154,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
         if (showInfoBlock) {
             return `${DRAWER_SIZE + 24}px`;
         } else {
-            return '0px';
+            return MENU_INFO_CLOSE_SIZE;
         }
     }
 

@@ -20,16 +20,28 @@ export default function SaveTrackDialog() {
     const [process, setProcess] = useState(false);
 
     const cloudAutoSave = !!ctx.createTrack?.cloudAutoSave;
-
-    const folders =
-        ctx.tracksGroups?.map((group) => ({
-            title: group.name,
-        })) ?? [];
+    const folders = getAllGroupNames(ctx.tracksGroups);
 
     function getOldGroup() {
         return ctx.selectedGpxFile.originalName
             ? TracksManager.getGroup(ctx.selectedGpxFile.originalName, false)
             : 'Tracks';
+    }
+
+    function getAllGroupNames(groups, parentName = '') {
+        const groupTitles = [];
+
+        groups.forEach((group) => {
+            const groupName = parentName ? `${parentName}/${group.name}` : group.name;
+            groupTitles.push({ title: groupName });
+
+            if (group.subfolders) {
+                const subGroupTitles = getAllGroupNames(group.subfolders, groupName);
+                groupTitles.push(...subGroupTitles);
+            }
+        });
+
+        return groupTitles;
     }
 
     const closeDialog = ({ uploaded }) => {
@@ -108,19 +120,27 @@ export default function SaveTrackDialog() {
     }
 
     function hasExistTrack(name, folder) {
-        const selectedGroup = ctx.tracksGroups?.find((g) => {
-            if (folder.title) {
-                return g.name === folder.title;
-            } else {
-                return g.name === folder;
+        const folderName = folder.title ? folder.title : folder;
+        const foundFolder = findFolder(folderName, ctx.tracksGroups);
+        return foundFolder ? foundFolder.files.find((f) => TracksManager.prepareName(f.name) === name) : false;
+    }
+
+    function findFolder(folderName, groups) {
+        for (const group of groups) {
+            if (group.name === folderName) {
+                return group;
+            } else if (group.subfolders) {
+                if (findFolder(folderName, group.subfolders)) {
+                    return group;
+                }
             }
-        });
-        return selectedGroup ? selectedGroup.files.find((f) => TracksManager.prepareName(f.name) === name) : false;
+        }
+        return null;
     }
 
     useEffect(() => {
         if (cloudAutoSave) {
-            confirmedSaveTrack();
+            confirmedSaveTrack().then();
         }
     }, []);
 
@@ -141,7 +161,7 @@ export default function SaveTrackDialog() {
                         id="se-overwrite-cloud-track"
                         onClick={() => {
                             setExistTrack(false);
-                            confirmedSaveTrack();
+                            confirmedSaveTrack().then();
                         }}
                     >
                         Yes

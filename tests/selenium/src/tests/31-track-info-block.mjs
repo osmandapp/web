@@ -15,7 +15,7 @@ const TRACKS = [
         strings: [
             'Points: 29',
             'Distance: 12.0 km',
-            '113.1 / 150.9 / 184.9 m', // ele
+            '113 / 151 / 185 m', // ele
         ],
     },
     {
@@ -23,7 +23,7 @@ const TRACKS = [
         strings: [
             'Points: 1460',
             'Distance: 25.6 km',
-            '195.4 / 215.6 / 257.0 m', // ele
+            '195 / 216 / 257 m', // ele
         ],
     },
     {
@@ -31,7 +31,7 @@ const TRACKS = [
         strings: [
             'Points: 5',
             'Distance: 6.4 km',
-            '173.2 / 184.5 / 191.0 m', // ele
+            '173 / 184 / 191 m', // ele
             /Street.*?: 6.08 km/s, // Waytypes stats
             /Asphalt.*?: 3.28 km/s, // Surfaces stats
         ],
@@ -41,7 +41,7 @@ const TRACKS = [
         strings: [
             'Points: 16',
             'Distance: 152.1 km',
-            '312.0 / 883.8 / 1730.8 m', // ele
+            '312 / 884 / 1731 m', // ele
             /Path.*?: 20.96 km/s, // Waytypes stats
             /Gravel.*?: 16.00 km/s, // Surfaces stats
         ],
@@ -53,14 +53,12 @@ const MOBILE_SKIP = /(Path|Gravel|Street|Asphalt)/; // bye-bye mobile version
 const localTrackButtons = [
     'se-infoblock-button-save-to-cloud',
     'se-infoblock-button-download-gpx',
-    'se-infoblock-button-collection',
     'se-infoblock-button-close-track',
     'se-infoblock-button-delete-track',
 ];
 const cloudTrackButtons = [
     'se-infoblock-button-edit-track',
     'se-infoblock-button-download-gpx',
-    'se-infoblock-button-collection',
     'se-infoblock-button-close-track',
     'se-infoblock-button-delete-track',
 ];

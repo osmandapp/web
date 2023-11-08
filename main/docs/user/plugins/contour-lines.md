@@ -253,7 +253,13 @@ Then download the [Terrain map (3D)](../plugins/contour-lines.md#how-to-download
 
 <TabItem value="ios" label="iOS">
 
-<InfoAndroidOnly />
+To enable 3D Relief, go to [*<Translate ios="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), scroll to *<Translate ios="true" ids="srtm_plugin_name"/> → <Translate ios="true" ids="shared_string_terrain,shared_string_relief_3d"/>*, and toggle on.
+
+![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios.png) 
+
+Then download the [Terrain map (3D)](../plugins/contour-lines.md#how-to-download) of the regions as needed. The feature will produce map visualizations like these:
+
+![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png) ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png)
 
 </TabItem>
  
