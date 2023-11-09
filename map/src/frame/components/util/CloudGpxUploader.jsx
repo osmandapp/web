@@ -1,19 +1,27 @@
-import { useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import AppContext from '../../../context/AppContext';
 import { useMutator } from '../../../util/Utils';
-import TracksManager from '../../../manager/TracksManager';
+import TracksManager from '../../../manager/track/TracksManager';
 import { styled } from '@mui/material/styles';
+import { createTrackFreeName, saveTrackToCloud } from '../../../manager/track/SaveTrackManager';
 
 export default function CloudGpxUploader({ children, folder = null }) {
     const ctx = useContext(AppContext);
     const [uploadedFiles, mutateUploadedFiles] = useMutator({});
 
+    function validName(name) {
+        return name !== '' && name.trim().length > 0;
+    }
+
     useEffect(() => {
         for (const file in uploadedFiles) {
-            const fileName = TracksManager.prepareName(uploadedFiles[file].track.name);
-            TracksManager.saveTrackToCloud(ctx, folder, fileName, 'GPX', uploadedFiles[file].track).then();
-            mutateUploadedFiles((o) => delete o[file]);
-            break; // process 1 file per 1 render
+            let fileName = TracksManager.prepareName(uploadedFiles[file].track.name);
+            if (validName(fileName)) {
+                fileName = createTrackFreeName(fileName, ctx.tracksGroups, folder);
+                saveTrackToCloud(ctx, folder, fileName, 'GPX', uploadedFiles[file].track).then();
+                mutateUploadedFiles((o) => delete o[file]);
+                break; // process 1 file per 1 render
+            }
         }
     }, [uploadedFiles]);
 

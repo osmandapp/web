@@ -5,7 +5,7 @@ import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../util/TrackLayerProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
 import FavoritesManager from '../../manager/FavoritesManager';
-import { fitBoundsOptions } from '../../manager/TracksManager';
+import { fitBoundsOptions } from '../../manager/track/TracksManager';
 import _ from 'lodash';
 
 const FavoriteLayer = () => {

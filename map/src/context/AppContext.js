@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useCookie from 'react-use-cookie';
 import Utils, { useMutator, seleniumUpdateActivity } from '../util/Utils';
-import TracksManager from '../manager/TracksManager';
+import TracksManager from '../manager/track/TracksManager';
 import _ from 'lodash';
 import FavoritesManager from '../manager/FavoritesManager';
 import PoiManager from '../manager/PoiManager';

@@ -2,7 +2,7 @@ import { Dialog } from '@material-ui/core';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
-import TracksManager from '../../../../manager/TracksManager';
+import TracksManager from '../../../../manager/track/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
 import { Alert, Box, Button, TextField } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
@@ -15,6 +15,7 @@ import 'draft-js/dist/Draft.css';
 import _ from 'lodash';
 import contextMenuStyles from '../../../styles/ContextMenuStyles';
 import { AddPhotoAlternate } from '@mui/icons-material';
+import { saveTrackToLocalStorage } from '../../../../manager/track/SaveTrackManager';
 
 export default function DescTrackDialog({ dialogOpen, setDialogOpen, desc }) {
     const ctx = useContext(AppContext);
@@ -80,7 +81,7 @@ export default function DescTrackDialog({ dialogOpen, setDialogOpen, desc }) {
     }
 
     function saveState() {
-        TracksManager.saveTrackToLocal({ ctx, track: ctx.selectedGpxFile });
+        saveTrackToLocalStorage({ ctx, track: ctx.selectedGpxFile });
         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
     }
 

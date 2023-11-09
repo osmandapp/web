@@ -7,7 +7,7 @@ import TracksManager, {
     applySrtmElevation,
     eligibleToApplySrtm,
     prepareDesc,
-} from '../../../manager/TracksManager';
+} from '../../../manager/track/TracksManager';
 import { prepareFileName, toHHMMSS } from '../../../util/Utils';
 import {
     Box,
@@ -38,6 +38,7 @@ import {
 import DescTrackDialog from './dialogs/DescTrackDialog';
 import RouteIcon from '@mui/icons-material/Route';
 import { formatRouteInfo } from '../../../menu/route/RouteMenu';
+import { saveTrackToLocalStorage } from '../../../manager/track/SaveTrackManager';
 
 export default function GeneralInfo({ width }) {
     const styles = contextMenuStyles();
@@ -247,7 +248,7 @@ export default function GeneralInfo({ width }) {
             // track rename have to be finished correctly in the editor component
             ctx.selectedGpxFile.oldName = oldName; // used by effect in LocalClientTrackLayer
 
-            TracksManager.saveTrackToLocal({ ctx, track: ctx.selectedGpxFile }); // ctx.localTracks might be modified there
+            saveTrackToLocalStorage({ ctx, track: ctx.selectedGpxFile }); // ctx.localTracks might be modified there
 
             ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
 

@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import LocalTrackItem from './LocalTrackItem';
 import PopperMenu from './PopperMenu';
 import AppContext from '../../context/AppContext';
-import TracksManager from '../../manager/TracksManager';
+import TracksManager from '../../manager/track/TracksManager';
 import CloudOutlinedIcon from '@mui/icons-material/CloudOutlined';
 import styles from './trackmenu.module.css';
 import { ReactComponent as VisibleIcon } from '../../assets/icons/ic_show_on_map.svg';

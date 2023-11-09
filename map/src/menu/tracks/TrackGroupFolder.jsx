@@ -11,7 +11,7 @@ import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.sv
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import SortMenu from './actions/SortMenu';
 import CloudGpxUploader from '../../frame/components/util/CloudGpxUploader';
-import { findGroupByName } from '../../manager/TracksManager';
+import { findGroupByName } from '../../manager/track/TracksManager';
 
 export default function TrackGroupFolder({ folder }) {
     const ctx = useContext(AppContext);
@@ -27,7 +27,7 @@ export default function TrackGroupFolder({ folder }) {
 
     useEffect(() => {
         if (ctx.tracksGroups) {
-            let found = findGroupByName(ctx.tracksGroups, group.fullName);
+            let found = findGroupByName(ctx.tracksGroups, group.fullName, 'fullName');
             ctx.openTrackGroups[ctx.openTrackGroups.length - 1] = found;
             ctx.setOpenTrackGroups([...ctx.openTrackGroups]);
             if (folder) {

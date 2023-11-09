@@ -10,7 +10,7 @@ import {
     Radio,
     RadioGroup,
 } from '@mui/material';
-import { getGpxTime } from '../../../manager/TracksManager';
+import { getGpxTime } from '../../../manager/track/TracksManager';
 import React, { forwardRef, useEffect, useState } from 'react';
 import { ReactComponent as AscendingIcon } from '../../../assets/icons/ic_action_sort_by_name_ascending.svg';
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_time.svg';

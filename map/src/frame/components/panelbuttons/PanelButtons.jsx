@@ -13,7 +13,7 @@ import SaveTrackDialog from '../../../infoblock/components/track/dialogs/SaveTra
 import DeleteTrackDialog from '../../../infoblock/components/track/dialogs/DeleteTrackDialog';
 import DeleteFavoriteDialog from '../../../infoblock/components/favorite/DeleteFavoriteDialog';
 import _ from 'lodash';
-import TracksManager, { isEmptyTrack } from '../../../manager/TracksManager';
+import TracksManager, { isEmptyTrack } from '../../../manager/track/TracksManager';
 import useUndoRedo from '../../../infoblock/useUndoRedo';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import { downloadGpx } from '../../../infoblock/components/tabs/GeneralInfoTab';

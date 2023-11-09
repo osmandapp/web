@@ -3,7 +3,7 @@ import AppContext from '../../context/AppContext';
 import FavoriteAllGroups from './FavoriteAllGroups';
 import FavoriteGroup from './FavoriteGroup';
 import Utils from '../../util/Utils';
-import TracksManager from '../../manager/TracksManager';
+import TracksManager from '../../manager/track/TracksManager';
 import FavoritesManager from '../../manager/FavoritesManager';
 import Empty from '../errors/Empty';
 

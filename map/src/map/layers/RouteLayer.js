@@ -3,7 +3,7 @@ import { Marker, GeoJSON, useMap, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import AppContext, { isRouteTrack } from '../../context/AppContext';
 import MarkerOptions from '../markers/MarkerOptions';
-import { fitBoundsOptions } from '../../manager/TracksManager';
+import { fitBoundsOptions } from '../../manager/track/TracksManager';
 
 const DRAG_DEBOUNCE_MS = 10;
 

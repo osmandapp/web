@@ -13,7 +13,7 @@ import {
     STEEPNESS,
     UNDEFINED_DATA,
 } from '../../../manager/GraphManager';
-import TracksManager from '../../../manager/TracksManager';
+import TracksManager from '../../../manager/track/TracksManager';
 import AppContext from '../../../context/AppContext';
 import {
     BarElement,

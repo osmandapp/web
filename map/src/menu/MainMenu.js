@@ -264,6 +264,7 @@ export default function MainMenu({
                                         key={index}
                                         className={setMenuStyles(item)}
                                         onClick={() => {
+                                            ctx.setOpenTrackGroups([]);
                                             if (menuInfo) {
                                                 setShowInfoBlock(false);
                                                 setMenuInfo(!isSelectedMenuItem(item) ? item.component : null);

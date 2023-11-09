@@ -13,7 +13,7 @@ import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import CloudTrackItem from './CloudTrackItem';
 import SortActions from './actions/SortActions';
-import { createTrackGroups, DEFAULT_GROUP_NAME } from '../../manager/TracksManager';
+import { createTrackGroups, DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 import Empty from '../errors/Empty';
 import Loading from '../errors/Loading';
 import SortMenu from './actions/SortMenu';

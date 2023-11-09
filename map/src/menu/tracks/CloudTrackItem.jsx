@@ -13,7 +13,7 @@ import {
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import Utils, { toHHMMSS } from '../../util/Utils';
 import TrackInfo from './TrackInfo';
-import TracksManager, { isEmptyTrack } from '../../manager/TracksManager';
+import TracksManager, { isEmptyTrack } from '../../manager/track/TracksManager';
 import _ from 'lodash';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { ReactComponent as TrackIcon } from '../../assets/icons/ic_action_polygom_dark.svg';

@@ -17,9 +17,10 @@ import FavoriteColor from './structure/FavoriteColor';
 import FavoriteShape from './structure/FavoriteShape';
 import FavoritesManager from '../../../manager/FavoritesManager';
 import FavoriteHelper from './FavoriteHelper';
-import TracksManager from '../../../manager/TracksManager';
+import TracksManager from '../../../manager/track/TracksManager';
 import { apiGet } from '../../../util/HttpApi';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
+import { saveTrackToLocalStorage } from '../../../manager/track/SaveTrackManager';
 
 export default function AddFavoriteDialog({ dialogOpen, setDialogOpen }) {
     const menuStyles = contextMenuStyles();
@@ -124,7 +125,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen }) {
             TracksManager.prepareTrack(ctx.selectedGpxFile);
             ctx.localTracks.push(ctx.selectedGpxFile);
         }
-        TracksManager.saveTrackToLocal({ ctx, track: ctx.selectedGpxFile }); // ctx.localTracks might be modified there
+        saveTrackToLocalStorage({ ctx, track: ctx.selectedGpxFile }); // ctx.localTracks might be modified there
         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
         ctx.setLocalTracks([...ctx.localTracks]);
     }
