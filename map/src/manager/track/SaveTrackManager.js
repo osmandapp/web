@@ -54,7 +54,7 @@ export function saveTrackToLocal({ ctx, track, selected = true, overwrite = fals
 }
 
 //save to cloud
-export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file) {
+export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file, open = true) {
     if (type !== FavoritesManager.FAVORITE_FILE_TYPE) {
         if (currentFolder === 'Tracks') {
             currentFolder = '';
@@ -90,7 +90,9 @@ export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file)
             if (res && res?.data?.status === 'ok') {
                 // re-download gpx
                 const downloadFile = { ...gpxFile, ...params };
-                downloadAfterUpload(ctx, downloadFile).then();
+                if (open) {
+                    downloadAfterUpload(ctx, downloadFile).then();
+                }
                 TracksManager.deleteLocalTrack(ctx);
 
                 // refresh list-files but skip if uploaded file is already there

@@ -15,10 +15,11 @@ export default function CloudGpxUploader({ children, folder = null }) {
 
     useEffect(() => {
         for (const file in uploadedFiles) {
+            let open = uploadedFiles[file].selected;
             let fileName = TracksManager.prepareName(uploadedFiles[file].track.name);
             if (validName(fileName)) {
                 fileName = createTrackFreeName(fileName, ctx.tracksGroups, folder);
-                saveTrackToCloud(ctx, folder, fileName, 'GPX', uploadedFiles[file].track).then();
+                saveTrackToCloud(ctx, folder, fileName, 'GPX', uploadedFiles[file].track, open).then();
                 mutateUploadedFiles((o) => delete o[file]);
                 break; // process 1 file per 1 render
             }
