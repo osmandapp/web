@@ -4,7 +4,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import { Alert, Autocomplete, Button, createFilterOptions, LinearProgress, TextField } from '@mui/material';
 import AppContext, { isRouteTrack, OBJECT_TYPE_CLOUD_TRACK } from '../../../../context/AppContext';
-import TracksManager, { hasExistTrack, validName } from '../../../../manager/track/TracksManager';
+import TracksManager, { isTrackExists, validName } from '../../../../manager/track/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContentText from '@mui/material/DialogContentText';
 import { prepareFileName } from '../../../../util/Utils';
@@ -81,7 +81,7 @@ export default function SaveTrackDialog() {
         }
         if (validName(preparedName)) {
             setProcess(true);
-            if (!hasExistTrack(preparedName, folder, ctx.tracksGroups)) {
+            if (!isTrackExists(preparedName, folder, ctx.tracksGroups)) {
                 const uploaded = !!(await saveTrackToCloud(
                     ctx,
                     getFolderName(folder),

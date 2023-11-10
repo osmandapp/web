@@ -565,10 +565,10 @@ export function validName(name) {
     return name !== '' && name.trim().length > 0;
 }
 
-export function hasExistTrack(name, folder, tracks) {
+export function isTrackExists(name, folder, tracks) {
     const folderName = folder.title ? folder.title : folder;
     const foundFolder = findGroupByName(tracks, folderName);
-    return foundFolder ? foundFolder.files.find((f) => TracksManager.prepareName(f.name) === name) : false;
+    return foundFolder ? foundFolder.groupFiles.some((f) => TracksManager.prepareName(f.name) === name) : false;
 }
 
 function deleteLocalTrack(ctx) {

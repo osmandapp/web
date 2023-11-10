@@ -4,7 +4,7 @@ import { apiGet, apiPost } from '../../util/HttpApi';
 import TracksManager, {
     createTrackGroups,
     DATA_SIZE_KEY,
-    hasExistTrack,
+    isTrackExists,
     isEmptyTrack,
     LOCAL_COMPRESSED_TRACK_KEY,
     prepareLocalTrack,
@@ -120,10 +120,10 @@ export function createTrackFreeName(name, otherTracks, folder = null) {
     for (let i = 1; i < 100; i++) {
         if (folder) {
             //check cloud
-            occupied = hasExistTrack(newName, folder, otherTracks);
+            occupied = isTrackExists(newName, folder, otherTracks);
         } else {
             //check local
-            occupied = otherTracks?.find((t) => t.name === newName);
+            occupied = otherTracks?.some((t) => t.name === newName);
         }
         if (!occupied) {
             return newName;
