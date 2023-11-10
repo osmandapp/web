@@ -2,7 +2,6 @@ import { Dialog } from '@material-ui/core';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
-import TracksManager from '../../../../manager/track/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
 import { Alert, Box, Button, TextField } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';

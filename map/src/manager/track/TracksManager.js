@@ -5,6 +5,7 @@ import { apiGet, apiPost } from '../../util/HttpApi';
 import { compressFromJSON, decompressToJSON } from '../../util/GzipBase64.mjs';
 import { isCloudTrack, isRouteTrack, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
+import { saveTrackToLocal } from './SaveTrackManager';
 import L from 'leaflet';
 import MarkerOptions from '../../map/markers/MarkerOptions';
 import anchorme from 'anchorme';
