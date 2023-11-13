@@ -81,12 +81,12 @@ Our top and bottom panels have been redesigned with all our users' needs in mind
 
 The Glide Ratio widget is an innovative tool designed to meet the needs of pilots. The widget provides valuable glide ratio information to help make informed decisions when planning air routes.  
 
-Simple *[Glide Ration](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio)* widgets were added for Aircraft usage. Widgets show the glide ration to the target or avearge glide for the current trip:
+Simple *[Glide Ratio](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio)* widgets were added for Aircraft usage. Widgets show the glide ratio to the target or avearge glide for the current trip:
 
-- *Glide ratio to target* shows the glide ration needed to reach the target point. You need to use [Map marker](https://osmand.net/docs/user/personal/markers) as a target point.
+- *Glide ratio to target* shows the glide ratio needed to reach the target point. You need to use [Map marker](https://osmand.net/docs/user/personal/markers) as a target point.
 - *Average glide ratio* shows the average glide ratio for the set interval. For this widget you can specify the time interval for glide averaging.
 
-| Glide ration widgets | Widgets on the screen |
+| Glide ratio widgets | Widgets on the screen |
 |--------|---------|
 | ![Glide ratio](../../blog/2023-09-30-android-4-6/img/glide_ratio_1.png) | ![Glide ratio](../../blog/2023-09-30-android-4-6/img/glide_ratio_2.png) |
 
@@ -253,13 +253,6 @@ Added the convenient time scale.
 | |
 |-------|
 |![Weather](../../blog/2023-09-30-android-4-6/img/weather.png)|
-
-
-## Share point coordinates by an OSM link
-
-Now in the Context menu of a point, you can find not only geographical coordinates in various formats, but also a shareable [OpenStreetMap Link with location marker](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker).  
-
-![Osm Location pin 1](@site/static/img/map/osm_location_pin_1.png) ![Osm Location pin 2](@site/static/img/map/osm_location_pin_2.png)
 
 
 ## More

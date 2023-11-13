@@ -179,7 +179,7 @@ The Glide Ratio widget is an innovative tool designed to meet the needs of pilot
 
 You can read more about this [here](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
 
-- **Glide ratio to the target**. This widget provides information about the required glide ratio to reach the target point. The widget calculates this coefficient as the ratio of the distance to the target to the change in altitude. For example, if the glide ratio is 7 : 1 (7 to 1), it means that for each unit of descent, you advance 7 units of distance. This widget is particularly useful for pilots who can optimize their route for the conditions on the way to the target.  
+- **Glide ratio to the target**. This widget provides information about the required glide ratio to reach the target point ([Map marker](../personal/markers.md) position). The widget calculates this coefficient as the ratio of the distance to the target to the change in altitude. For example, if the glide ratio is 7 : 1 (7 to 1), it means that for each unit of descent, you advance 7 units of distance. This widget is particularly useful for pilots who can optimize their route for the conditions on the way to the target.  
 
 - **Average glide ratio**. This widget provides information about the average glide ratio for a specified time interval (customizable by the user). The average glide ratio is calculated as the ratio of distance traveled to the change in elevation over the specified time interval. This allows you to analyze historical data and plan long-term routes taking into account the change in glide ratio.    
 
