@@ -68,9 +68,9 @@ Our top and bottom panels have been redesigned with all our users' needs in mind
 
 **3.** You have the ability to add more than one [Simple widget](../user/widgets/configure-screen.md#rows-for-panels) in a single row.
 
-|  |   |
-|-----|------|
-| ![Row](../../blog/2023-09-30-android-4-6/img/row_2.png) | ![Row](../../blog/2023-09-30-android-4-6/img/row_3.png) |
+|  |
+|-----|
+| ![Row](../../blog/2023-09-30-android-4-6/img/row_4.png) |
 
 
 ### Glide Ratio Widget
