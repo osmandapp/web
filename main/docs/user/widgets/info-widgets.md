@@ -175,7 +175,7 @@ The average speed is calculated for a given time interval according to your sele
 
 ![Glide ratio widget](@site/static/img/widgets/glide_ratio_widget.png)  
 
-The Glide Ratio widget is an innovative tool designed to meet the needs of pilots. The widget provides valuable glide ratio information to help make informed decisions when planning air routes. The *Glide Ratio* widget in OsmAnd helps you assess the efficiency of your descent or ascent when navigating to a specific location. It calculates the glide ratio as the ratio of the distance to the difference in altitude between your current position and your intended destination. 
+The widget provides valuable glide ratio information to help make informed decisions when planning air routes. The *Glide Ratio* widget in OsmAnd helps you assess the efficiency of your descent or ascent when navigating to a specific location ([Map marker](../personal/markers.md) position). It calculates the glide ratio as the ratio of the distance to the difference in altitude between your current position and your intended destination. 
 
 You can read more about this [here](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
 
