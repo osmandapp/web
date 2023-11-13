@@ -494,6 +494,7 @@ export function createTrackGroups(files) {
     if (tracks.length > 0) {
         trackGroups.push({
             name: DEFAULT_GROUP_NAME,
+            fullName: DEFAULT_GROUP_NAME,
             files: tracks,
             lastModifiedMs: null,
             lastModifiedData: null,
@@ -523,6 +524,9 @@ function addFilesAndCalculateLastModified(groups) {
             group.files.push(...group.subfolders.reduce((acc, subfolder) => acc.concat(subfolder.files), []));
         }
         group.files.push(...group.groupFiles);
+        group.realSize = group.files.filter(
+            (file) => !(file.name.endsWith('empty.ignore') && file.filesize === 0)
+        ).length;
         calculateLastModified(group);
     });
 }
@@ -934,15 +938,6 @@ function clearTrack(file, points) {
     return emptyFile;
 }
 
-function getTracks(allFiles) {
-    return (!allFiles || !allFiles.uniqueFiles ? [] : allFiles.uniqueFiles).filter((item) => {
-        return (
-            (item.type === 'gpx' || item.type === 'GPX') &&
-            (item.name.slice(-4) === '.gpx' || item.name.slice(-4) === '.GPX')
-        );
-    });
-}
-
 function getFavoriteGroups(allFiles) {
     return (!allFiles || !allFiles.uniqueFiles ? [] : allFiles.uniqueFiles).filter((item) => {
         return item.type === FavoritesManager.FAVORITE_FILE_TYPE && item.name.slice(-4) === '.gpx';
@@ -1195,6 +1190,15 @@ export function prepareDesc(trackDesc) {
         : null;
 }
 
+export function getGpxFiles(listFiles) {
+    return (!listFiles || !listFiles.uniqueFiles ? [] : listFiles.uniqueFiles).filter((item) => {
+        return (
+            (item.type === 'gpx' || item.type === 'GPX' || item.type === 'ignore') &&
+            (item.name.slice(-4) === '.gpx' || item.name.slice(-4) === '.GPX' || item.name.slice(-7) === '.ignore')
+        );
+    });
+}
+
 const TracksManager = {
     loadTracks,
     getFileName,
@@ -1217,7 +1221,6 @@ const TracksManager = {
     getGroup,
     formatRouteMode,
     decodeRouteMode,
-    getTracks,
     getFavoriteGroups,
     isEqualPoints,
     updateState,

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useCookie from 'react-use-cookie';
 import Utils, { useMutator, seleniumUpdateActivity } from '../util/Utils';
-import TracksManager from '../manager/track/TracksManager';
+import TracksManager, { getGpxFiles } from '../manager/track/TracksManager';
 import _ from 'lodash';
 import FavoritesManager from '../manager/FavoritesManager';
 import PoiManager from '../manager/PoiManager';
@@ -47,7 +47,7 @@ async function loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, 
                         setListFiles(res);
                         setGpxLoading(false);
 
-                        addOpenedTracks(TracksManager.getTracks(res), gpxFiles, setGpxFiles).then();
+                        addOpenedTracks(getGpxFiles(res), gpxFiles, setGpxFiles).then();
                         addOpenedFavoriteGroups(TracksManager.getFavoriteGroups(res), setFavorites);
                     }
                 });

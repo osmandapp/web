@@ -4,20 +4,16 @@ import { toHHMMSS } from '../../util/Utils';
 import CloudTrackGroup from './CloudTrackGroup';
 import VisibleGroup from './VisibleGroup';
 import _ from 'lodash';
-import { AppBar, Box, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
-import { ReactComponent as ImportIcon } from '../../assets/icons/ic_action_folder_import_outlined.svg';
+import { Box } from '@mui/material';
 import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
-import styles from './trackmenu.module.css';
-import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import CloudTrackItem from './CloudTrackItem';
 import SortActions from './actions/SortActions';
-import { createTrackGroups, DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
+import { createTrackGroups, DEFAULT_GROUP_NAME, getGpxFiles } from '../../manager/track/TracksManager';
 import Empty from '../errors/Empty';
 import Loading from '../errors/Loading';
 import SortMenu from './actions/SortMenu';
-import CloudGpxUploader from '../../frame/components/util/CloudGpxUploader';
+import TracksHeader from './actions/TracksHeader';
 
 export default function TracksMenu() {
     const ctx = useContext(AppContext);
@@ -64,14 +60,7 @@ export default function TracksMenu() {
     useEffect(() => {
         if (!_.isEmpty(ctx.listFiles)) {
             //get gpx files
-            let files = (!ctx.listFiles || !ctx.listFiles.uniqueFiles ? [] : ctx.listFiles.uniqueFiles).filter(
-                (item) => {
-                    return (
-                        (item.type === 'gpx' || item.type === 'GPX') &&
-                        (item.name.slice(-4) === '.gpx' || item.name.slice(-4) === '.GPX')
-                    );
-                }
-            );
+            let files = getGpxFiles(ctx.listFiles);
             //get groups
             let trackGroups = createTrackGroups(files);
 
@@ -165,10 +154,6 @@ export default function TracksMenu() {
         }));
     }, [visibleTracks, ctx.selectedGpxFile]);
 
-    function closeTrackMenu() {
-        ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
-    }
-
     const defaultGroupItems = useMemo(() => {
         if (defaultGroup) {
             const items = [];
@@ -181,49 +166,14 @@ export default function TracksMenu() {
 
     return (
         <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
-            <AppBar position="static" className={styles.appbar}>
-                <Toolbar className={styles.toolbar}>
-                    <IconButton
-                        variant="contained"
-                        type="button"
-                        className={styles.appBarIcon}
-                        onClick={closeTrackMenu}
-                    >
-                        <CloseIcon />
-                    </IconButton>
-                    <Typography component="div" className={styles.title}>
-                        {DEFAULT_GROUP_NAME}
-                    </Typography>
-                    <Tooltip key={'sort_tracks'} title="Sort tracks" arrow placement="bottom-end">
-                        <span>
-                            <IconButton
-                                variant="contained"
-                                type="button"
-                                className={styles.appBarIcon}
-                                onClick={() => setOpenSort(true)}
-                                ref={anchorEl}
-                                disabled={!defaultGroup || defaultGroup.files?.length === 0}
-                            >
-                                {sortIcon}
-                            </IconButton>
-                        </span>
-                    </Tooltip>
-                    <Tooltip key={'import_track'} title="Import track" arrow placement="bottom-end">
-                        <span>
-                            <CloudGpxUploader folder={DEFAULT_GROUP_NAME}>
-                                <IconButton
-                                    component="span"
-                                    variant="contained"
-                                    type="button"
-                                    className={styles.appBarIcon}
-                                >
-                                    <ImportIcon />
-                                </IconButton>
-                            </CloudGpxUploader>
-                        </span>
-                    </Tooltip>
-                </Toolbar>
-            </AppBar>
+            {defaultGroup && (
+                <TracksHeader
+                    trackGroup={defaultGroup}
+                    sortIcon={sortIcon}
+                    setOpenSort={setOpenSort}
+                    anchorEl={anchorEl}
+                />
+            )}
             {ctx.gpxLoading ? (
                 <Loading />
             ) : (
@@ -253,6 +203,7 @@ export default function TracksMenu() {
                         <Empty
                             title={'You don’t have track files'}
                             text={'You can import, create track files using OsmAnd App.'}
+                            folder={DEFAULT_GROUP_NAME}
                         />
                     )}
                 </>

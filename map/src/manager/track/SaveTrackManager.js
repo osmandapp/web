@@ -8,6 +8,7 @@ import TracksManager, {
     isEmptyTrack,
     LOCAL_COMPRESSED_TRACK_KEY,
     prepareLocalTrack,
+    getGpxFiles,
 } from './TracksManager';
 import _ from 'lodash';
 import { compressFromJSON } from '../../util/GzipBase64.mjs';
@@ -94,19 +95,7 @@ export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file,
                     downloadAfterUpload(ctx, downloadFile).then();
                 }
                 TracksManager.deleteLocalTrack(ctx);
-
-                // refresh list-files but skip if uploaded file is already there
-                if (!ctx.listFiles.uniqueFiles?.find((f) => f.name === params.name)) {
-                    const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
-                    const resJson = await respGetFiles.json();
-                    if (resJson && resJson.uniqueFiles) {
-                        ctx.setListFiles(resJson);
-                    }
-                    updateTrackGroups(resJson, ctx);
-                } else {
-                    const updatedTrackGroups = updateUpdatetimemsInGroups(ctx.tracksGroups, params.name, Date.now());
-                    ctx.setTracksGroups(updatedTrackGroups);
-                }
+                refreshGlobalFiles(ctx, params).then();
                 return true;
             }
         }
@@ -164,6 +153,43 @@ export function saveTrackToLocalStorage({ ctx, track }) {
             localStorage.setItem(DATA_SIZE_KEY, totalSize);
         }
     });
+}
+
+export async function saveEmptyTrack(folderName, ctx) {
+    //create empty file
+    const convertedData = new TextEncoder().encode('');
+    const zippedResult = require('pako').gzip(convertedData, { to: 'Uint8Array' });
+    const convertedZipped = zippedResult.buffer;
+    const oMyBlob = new Blob([convertedZipped], { type: 'gpx' });
+
+    //create data
+    const data = new FormData();
+    data.append('file', oMyBlob, 'empty');
+    const params = {
+        type: 'GPX',
+        name: folderName + '/empty' + '.ignore',
+    };
+    //save empty file with new folder's name
+    const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data, { params });
+    if (res && res?.data?.status === 'ok') {
+        refreshGlobalFiles(ctx, params).then();
+        return true;
+    }
+}
+
+async function refreshGlobalFiles(ctx, params) {
+    // refresh list-files but skip if uploaded file is already there
+    if (!ctx.listFiles.uniqueFiles?.find((f) => f.name === params.name)) {
+        const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
+        const resJson = await respGetFiles.json();
+        if (resJson && resJson.uniqueFiles) {
+            ctx.setListFiles(resJson);
+        }
+        updateTrackGroups(resJson, ctx);
+    } else {
+        const updatedTrackGroups = updateUpdatetimemsInGroups(ctx.tracksGroups, params.name, Date.now());
+        ctx.setTracksGroups(updatedTrackGroups);
+    }
 }
 
 function getOldSizeTrack(currentTrackIndex) {
@@ -224,12 +250,7 @@ async function downloadAfterUpload(ctx, file) {
 function updateTrackGroups(listFiles, ctx) {
     if (!_.isEmpty(listFiles)) {
         //get gpx files
-        let files = (!listFiles || !listFiles.uniqueFiles ? [] : listFiles.uniqueFiles).filter((item) => {
-            return (
-                (item.type === 'gpx' || item.type === 'GPX') &&
-                (item.name.slice(-4) === '.gpx' || item.name.slice(-4) === '.GPX')
-            );
-        });
+        let files = getGpxFiles(listFiles);
         //get groups
         let trackGroups = createTrackGroups(files);
         ctx.setTracksGroups(trackGroups, ctx);

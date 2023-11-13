@@ -1,8 +1,13 @@
-import { Box, Icon, ListItemText } from '@mui/material';
+import { Box, Button, Icon, ListItemText } from '@mui/material';
 import { ReactComponent as EmptyIcon } from '../../assets/icons/ic_action_folder_open.svg';
 import styles from './errors.module.css';
+import CloudGpxUploader from '../../frame/components/util/CloudGpxUploader';
+import { useContext } from 'react';
+import AppContext from '../../context/AppContext';
 
-export default function Empty({ title, text }) {
+export default function Empty({ title, text, folder = null }) {
+    const ctx = useContext(AppContext);
+
     return (
         <Box className={styles.block}>
             <Icon className={styles.icon}>
@@ -16,9 +21,13 @@ export default function Empty({ title, text }) {
                     {text}
                 </ListItemText>
             </Box>
-            {/*<Button className={styles.button}>*/}
-            {/*    Import*/}
-            {/*</Button>*/}
+            {ctx.loginUser && folder && (
+                <CloudGpxUploader folder={folder} style={styles.label}>
+                    <Button className={styles.button} component="span">
+                        Import
+                    </Button>
+                </CloudGpxUploader>
+            )}
         </Box>
     );
 }

@@ -42,7 +42,7 @@ export default function CloudTrackGroup({ index, group }) {
                         {group.name}
                     </Typography>
                     <Typography variant="body2" className={styles.groupInfo} noWrap>
-                        {`${group.lastModifiedData.split(',')[0]}, tracks ${group.files.length}`}
+                        {`${group.lastModifiedData.split(',')[0]}, tracks ${group.realSize}`}
                     </Typography>
                 </ListItemText>
                 <IconButton

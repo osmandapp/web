@@ -5,7 +5,7 @@ import TracksManager from '../../../manager/track/TracksManager';
 import { styled } from '@mui/material/styles';
 import { createTrackFreeName, saveTrackToCloud } from '../../../manager/track/SaveTrackManager';
 
-export default function CloudGpxUploader({ children, folder = null }) {
+export default function CloudGpxUploader({ children, folder = null, style = null }) {
     const ctx = useContext(AppContext);
     const [uploadedFiles, mutateUploadedFiles] = useMutator({});
 
@@ -44,7 +44,7 @@ export default function CloudGpxUploader({ children, folder = null }) {
     const HiddenInput = styled('input')({ display: 'none' });
 
     return (
-        <label htmlFor="se-upload-cloud-gpx">
+        <label className={style} htmlFor="se-upload-cloud-gpx">
             <HiddenInput id="se-upload-cloud-gpx" accept=".gpx" multiple type="file" onChange={fileSelected} />
             {children}
         </label>

@@ -1,17 +1,15 @@
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import CloudTrackItem from './CloudTrackItem';
 import CloudTrackGroup from './CloudTrackGroup';
-import { AppBar, Box, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
-import styles from './trackmenu.module.css';
+import { Box } from '@mui/material';
 import SortActions from './actions/SortActions';
 import AppContext from '../../context/AppContext';
-import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
-import { ReactComponent as ImportIcon } from '../../assets/icons/ic_action_folder_import_outlined.svg';
 import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import SortMenu from './actions/SortMenu';
-import CloudGpxUploader from '../../frame/components/util/CloudGpxUploader';
 import { findGroupByName } from '../../manager/track/TracksManager';
+import TracksHeader from './actions/TracksHeader';
+import Empty from '../errors/Empty';
 
 export default function TrackGroupFolder({ folder }) {
     const ctx = useContext(AppContext);
@@ -47,7 +45,9 @@ export default function TrackGroupFolder({ folder }) {
     const trackItems = useMemo(() => {
         const items = [];
         (sortFiles.length > 0 ? sortFiles : group.groupFiles).map((file) => {
-            items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} />);
+            if (!file.name.endsWith('empty.ignore') && file.filesize !== 0) {
+                items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} />);
+            }
         });
         return items;
     }, [group.groupFiles, group.groupFiles.length, sortFiles]);
@@ -60,74 +60,46 @@ export default function TrackGroupFolder({ folder }) {
         return items;
     }, [group.subfolders, group.subfolders.length, sortGroups]);
 
-    function prevTrackMenu() {
-        ctx.openTrackGroups.pop();
-        ctx.setOpenTrackGroups([...ctx.openTrackGroups]);
-    }
-
     return (
-        <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
-            <AppBar position="static" className={styles.appbar}>
-                <Toolbar className={styles.toolbar}>
-                    <IconButton variant="contained" type="button" className={styles.appBarIcon} onClick={prevTrackMenu}>
-                        <BackIcon />
-                    </IconButton>
-                    <Typography component="div" className={styles.title}>
-                        {group.name}
-                    </Typography>
-                    <Tooltip key={'sort_tracks'} title="Sort tracks" arrow placement="bottom-end">
-                        <IconButton
-                            variant="contained"
-                            type="button"
-                            className={styles.appBarIcon}
-                            onClick={() => setOpenSort(true)}
-                            disabled={!folder}
-                            ref={anchorEl}
-                        >
-                            {sortIcon}
-                        </IconButton>
-                    </Tooltip>
-                    <Tooltip key={'import_track'} title="Import track" arrow placement="bottom-end">
-                        <span>
-                            <CloudGpxUploader folder={group.fullName}>
-                                <IconButton
-                                    component="span"
-                                    variant="contained"
-                                    type="button"
-                                    className={styles.appBarIcon}
-                                >
-                                    <ImportIcon />
-                                </IconButton>
-                            </CloudGpxUploader>
-                        </span>
-                    </Tooltip>
-                </Toolbar>
-            </AppBar>
-            <Box
-                minWidth={ctx.infoBlockWidth}
-                maxWidth={ctx.infoBlockWidth}
-                sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 120}px` }}
-            >
-                {groupItems}
-                {trackItems}
-            </Box>
-            <SortMenu
-                openSort={openSort}
-                setOpenSort={setOpenSort}
-                anchorEl={anchorEl}
-                actions={
-                    <SortActions
-                        files={group.groupFiles}
-                        setSortFiles={setSortFiles}
-                        groups={group.subfolders}
-                        setSortGroups={setSortGroups}
+        <>
+            <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+                {group && (
+                    <TracksHeader
+                        trackGroup={group}
+                        sortIcon={sortIcon}
                         setOpenSort={setOpenSort}
-                        selectedSort={selectedSort}
-                        setSelectedSort={setSelectedSort}
-                        setSortIcon={setSortIcon}
+                        anchorEl={anchorEl}
                     />
-                }
-            />
-        </Box>
+                )}
+                <Box
+                    minWidth={ctx.infoBlockWidth}
+                    maxWidth={ctx.infoBlockWidth}
+                    sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 120}px` }}
+                >
+                    {groupItems}
+                    {trackItems}
+                </Box>
+                <SortMenu
+                    openSort={openSort}
+                    setOpenSort={setOpenSort}
+                    anchorEl={anchorEl}
+                    actions={
+                        <SortActions
+                            files={group.groupFiles}
+                            setSortFiles={setSortFiles}
+                            groups={group.subfolders}
+                            setSortGroups={setSortGroups}
+                            setOpenSort={setOpenSort}
+                            selectedSort={selectedSort}
+                            setSelectedSort={setSelectedSort}
+                            setSortIcon={setSortIcon}
+                        />
+                    }
+                />
+            </Box>
+            {group.realSize === 0 && (
+                <Empty title={'Empty folder'} text={"This folder doesn't have any track yet"} folder={group.fullName} />
+            )}
+        </>
     );
 }

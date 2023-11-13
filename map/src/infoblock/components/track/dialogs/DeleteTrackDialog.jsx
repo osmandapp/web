@@ -99,6 +99,7 @@ export default function DeleteTrackDialog({
                 const fileIndexInGroupFiles = group.groupFiles.findIndex((file) => file.name === fileWithoutGroup);
                 if (fileIndexInGroupFiles !== -1) {
                     group.groupFiles.splice(fileIndexInGroupFiles, 1);
+                    group.realSize--;
                 }
                 const fileIndexInFiles = group.files.findIndex((file) => file.name === fileWithoutGroup);
                 if (fileIndexInFiles !== -1) {
@@ -115,6 +116,7 @@ export default function DeleteTrackDialog({
             const fileIndexInGroupFiles = lastGroup.groupFiles.findIndex((file) => file.name === trackName);
             if (fileIndexInGroupFiles !== -1) {
                 lastGroup.groupFiles.splice(fileIndexInGroupFiles, 1);
+                lastGroup.realSize--;
             }
             const fileIndexInFiles = lastGroup.files.findIndex((file) => file.name === trackName);
             if (fileIndexInFiles !== -1) {
