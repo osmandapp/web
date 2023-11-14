@@ -61,6 +61,13 @@ export default function TracksHeader({ trackGroup, sortIcon, setOpenSort, anchor
             setOpenAddFolderDialog(false);
         }
 
+        const handleKeyPress = (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                addFolder().then();
+            }
+        };
+
         return (
             <Dialog open={true} onClose={() => setOpenAddFolderDialog(false)}>
                 <DialogTitle className={dialogStyles.title}>Add new folder</DialogTitle>
@@ -79,6 +86,7 @@ export default function TracksHeader({ trackGroup, sortIcon, setOpenSort, anchor
                         helperText={folderNameError !== '' ? folderNameError : ' '}
                         variant="filled"
                         value={folderName ? folderName : ''}
+                        onKeyDown={(e) => handleKeyPress(e)}
                     ></TextField>
                 </DialogContent>
                 <DialogActions>
