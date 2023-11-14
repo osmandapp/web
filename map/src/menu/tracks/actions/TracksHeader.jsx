@@ -73,7 +73,16 @@ export default function TracksHeader({ trackGroup, sortIcon, setOpenSort, anchor
                 <DialogTitle className={dialogStyles.title}>Add new folder</DialogTitle>
                 <DialogContent className={dialogStyles.content}>
                     <TextField
+                        sx={{
+                            '& label.Mui-focused': {
+                                color: 'var(--svg-icon-color)',
+                            },
+                            '& .MuiFilledInput-underline:after': {
+                                borderBottomColor: 'var(--svg-icon-color)',
+                            },
+                        }}
                         autoFocus
+                        label={'Name:'}
                         onChange={(e) => {
                             const name = e.target.value;
                             validationFolderName(name);
