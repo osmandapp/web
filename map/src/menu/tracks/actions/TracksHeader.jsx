@@ -141,20 +141,6 @@ export default function TracksHeader({ trackGroup, sortIcon, setOpenSort, anchor
                             </IconButton>
                         </span>
                     </Tooltip>
-                    <Tooltip key={'import_track'} title="Import track" arrow placement="bottom-end">
-                        <span>
-                            <CloudGpxUploader folder={trackGroup.fullName}>
-                                <IconButton
-                                    component="span"
-                                    variant="contained"
-                                    type="button"
-                                    className={styles.appBarIcon}
-                                >
-                                    <ImportIcon />
-                                </IconButton>
-                            </CloudGpxUploader>
-                        </span>
-                    </Tooltip>
                     <Tooltip key={'add_folder'} title="Add folder" arrow placement="bottom-end">
                         <span>
                             <IconButton
@@ -167,6 +153,20 @@ export default function TracksHeader({ trackGroup, sortIcon, setOpenSort, anchor
                             >
                                 <AddFolderIcon />
                             </IconButton>
+                        </span>
+                    </Tooltip>
+                    <Tooltip key={'import_track'} title="Import track" arrow placement="bottom-end">
+                        <span>
+                            <CloudGpxUploader folder={trackGroup.fullName}>
+                                <IconButton
+                                    component="span"
+                                    variant="contained"
+                                    type="button"
+                                    className={styles.appBarIcon}
+                                >
+                                    <ImportIcon />
+                                </IconButton>
+                            </CloudGpxUploader>
                         </span>
                     </Tooltip>
                 </Toolbar>
