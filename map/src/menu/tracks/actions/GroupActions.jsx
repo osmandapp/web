@@ -12,6 +12,7 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownloadObf 
             <Box ref={ref}>
                 <Paper className={styles.actions}>
                     <MenuItem
+                        disabled={group.realSize === 0}
                         className={styles.groupAction}
                         onClick={() => {
                             setNewCollection(group.files);
