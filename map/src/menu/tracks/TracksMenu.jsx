@@ -24,6 +24,7 @@ export default function TracksMenu() {
     const [sortGroups, setSortGroups] = useState([]);
     const [selectedSort, setSelectedSort] = useState(null);
     const [sortIcon, setSortIcon] = useState(<TimeIcon />);
+    const [sortName, setSortName] = useState('Last modified');
     const anchorEl = useRef(null);
     const [, height] = useWindowSize();
     function visibleTracksOpen() {
@@ -170,6 +171,7 @@ export default function TracksMenu() {
                 <TracksHeader
                     trackGroup={defaultGroup}
                     sortIcon={sortIcon}
+                    sortName={sortName}
                     setOpenSort={setOpenSort}
                     anchorEl={anchorEl}
                 />
@@ -222,6 +224,7 @@ export default function TracksMenu() {
                         selectedSort={selectedSort}
                         setSelectedSort={setSelectedSort}
                         setSortIcon={setSortIcon}
+                        setSortName={setSortName}
                     />
                 }
             />

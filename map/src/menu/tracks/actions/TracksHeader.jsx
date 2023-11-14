@@ -17,7 +17,7 @@ import { prepareFileName } from '../../../util/Utils';
 import { saveEmptyTrack } from '../../../manager/track/SaveTrackManager';
 import { DEFAULT_GROUP_NAME } from '../../../manager/track/TracksManager';
 
-export default function TracksHeader({ trackGroup, sortIcon, setOpenSort, anchorEl }) {
+export default function TracksHeader({ trackGroup, sortIcon, sortName, setOpenSort, anchorEl }) {
     const ctx = useContext(AppContext);
 
     const [openAddFolderDialog, setOpenAddFolderDialog] = useState(false);
@@ -136,7 +136,7 @@ export default function TracksHeader({ trackGroup, sortIcon, setOpenSort, anchor
                     <Typography component="div" className={styles.title}>
                         {trackGroup.name === DEFAULT_GROUP_NAME ? 'Tracks' : trackGroup.name}
                     </Typography>
-                    <Tooltip key={'sort_tracks'} title="Sort tracks" arrow placement="bottom-end">
+                    <Tooltip key={'sort_tracks'} title={`Sort by: ${sortName}`} arrow placement="bottom-end">
                         <span>
                             <IconButton
                                 variant="contained"

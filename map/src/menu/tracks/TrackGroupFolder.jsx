@@ -20,6 +20,7 @@ export default function TrackGroupFolder({ folder }) {
     const [sortFiles, setSortFiles] = useState([]);
     const [sortGroups, setSortGroups] = useState([]);
     const [sortIcon, setSortIcon] = useState(<TimeIcon />);
+    const [sortName, setSortName] = useState('Last modified');
     const [selectedSort, setSelectedSort] = useState(null);
     const anchorEl = useRef(null);
     const [, height] = useWindowSize();
@@ -68,6 +69,7 @@ export default function TrackGroupFolder({ folder }) {
                     <TracksHeader
                         trackGroup={group}
                         sortIcon={sortIcon}
+                        sortName={sortName}
                         setOpenSort={setOpenSort}
                         anchorEl={anchorEl}
                     />
@@ -94,6 +96,7 @@ export default function TrackGroupFolder({ folder }) {
                             selectedSort={selectedSort}
                             setSelectedSort={setSelectedSort}
                             setSortIcon={setSortIcon}
+                            setSortName={setSortName}
                         />
                     }
                 />
