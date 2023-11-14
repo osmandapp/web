@@ -56,7 +56,7 @@ export default function TracksHeader({ trackGroup, sortIcon, setOpenSort, anchor
             } else {
                 folderPart = `${trackGroup.fullName}/`;
             }
-            const newFolderName = `${folderPart}${folderName}`;
+            const newFolderName = `${folderPart}${prepareFileName(folderName)}`;
             saveEmptyTrack(newFolderName, ctx).then();
             setOpenAddFolderDialog(false);
         }
@@ -68,7 +68,7 @@ export default function TracksHeader({ trackGroup, sortIcon, setOpenSort, anchor
                     <TextField
                         autoFocus
                         onChange={(e) => {
-                            const name = prepareFileName(e.target.value);
+                            const name = e.target.value;
                             validationFolderName(name);
                             setFolderName(name);
                         }}
@@ -117,7 +117,7 @@ export default function TracksHeader({ trackGroup, sortIcon, setOpenSort, anchor
                         </IconButton>
                     )}
                     <Typography component="div" className={styles.title}>
-                        {trackGroup.name}
+                        {trackGroup.name === DEFAULT_GROUP_NAME ? 'Tracks' : trackGroup.name}
                     </Typography>
                     <Tooltip key={'sort_tracks'} title="Sort tracks" arrow placement="bottom-end">
                         <span>
