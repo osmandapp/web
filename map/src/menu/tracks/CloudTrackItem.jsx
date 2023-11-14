@@ -25,7 +25,6 @@ import ActionsMenu from './actions/ActionsMenu';
 
 const DEFAULT_DIST = 0;
 const DEFAULT_TIME = '0:00';
-const DEFAULT_POINTS = 0;
 
 export default function CloudTrackItem({ file, customIcon = null, visible = null }) {
     const ctx = useContext(AppContext);
@@ -43,7 +42,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
 
     const dist = getDist(file);
     const time = getTime(file);
-    const points = getPoints(file);
+    const wptPoints = getWptPoints(file);
 
     const [displayTrack, setDisplayTrack] = useState(null); // null -> true/false -> null
 
@@ -57,9 +56,9 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
         return f?.analysis?.timeMoving ? toHHMMSS(f?.analysis?.timeMoving) : DEFAULT_TIME;
     }
 
-    function getPoints(file) {
+    function getWptPoints(file) {
         let f = file.details ? file.details : file;
-        return f?.analysis?.points ? f?.analysis?.points : DEFAULT_POINTS;
+        return f?.analysis?.wptPoints ? f?.analysis?.wptPoints : null;
     }
 
     async function processDisplayTrack({ visible, setLoading }) {
@@ -175,8 +174,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                                 {dist && `${dist} km`}
                                 {' · '}
                                 {time && `${time}`}
-                                {' · '}
-                                {points && `${points}`}
+                                {wptPoints && ` · ${wptPoints}`}
                             </Typography>
                         </ListItemText>
                         {visible ? (
