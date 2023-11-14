@@ -41,9 +41,9 @@ export default function TracksHeader({ trackGroup, sortIcon, setOpenSort, anchor
 
         function validationFolderName(name) {
             if (!name || name === '' || name.trim().length === 0) {
-                setFolderNameError('Empty folder name!');
+                setFolderNameError('Empty folder name.');
             } else if (isFolderExist(name)) {
-                setFolderNameError('Folder with same name already exist!');
+                setFolderNameError('Folder already exists.');
             } else {
                 setFolderNameError('');
             }

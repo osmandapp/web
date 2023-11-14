@@ -492,13 +492,16 @@ export function createTrackGroups(files) {
     });
 
     if (tracks.length > 0) {
-        trackGroups.push({
+        const defaultGroup = {
             name: DEFAULT_GROUP_NAME,
             fullName: DEFAULT_GROUP_NAME,
             files: tracks,
+            groupFiles: tracks,
             lastModifiedMs: null,
             lastModifiedData: null,
-        });
+        };
+        defaultGroup.subfolders = trackGroups.filter((group) => group.name !== DEFAULT_GROUP_NAME);
+        trackGroups.push(defaultGroup);
     }
 
     addFilesAndCalculateLastModified(trackGroups);

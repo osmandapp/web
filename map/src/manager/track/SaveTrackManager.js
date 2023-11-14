@@ -15,6 +15,8 @@ import { compressFromJSON } from '../../util/GzipBase64.mjs';
 import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import Utils from '../../util/Utils';
 
+export const EMPTY_FILE_NAME = 'empty.ignore';
+
 export function saveTrackToLocal({ ctx, track, selected = true, overwrite = false, cloudAutoSave = false } = {}) {
     const newLocalTracks = [...ctx.localTracks];
 
@@ -95,7 +97,7 @@ export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file,
                     downloadAfterUpload(ctx, downloadFile).then();
                 }
                 TracksManager.deleteLocalTrack(ctx);
-                refreshGlobalFiles(ctx, params).then();
+                refreshGlobalFiles(ctx, params.name).then();
                 return true;
             }
         }
@@ -167,19 +169,19 @@ export async function saveEmptyTrack(folderName, ctx) {
     data.append('file', oMyBlob, 'empty');
     const params = {
         type: 'GPX',
-        name: folderName + '/empty' + '.ignore',
+        name: `${folderName}/${EMPTY_FILE_NAME}`,
     };
     //save empty file with new folder's name
     const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data, { params });
     if (res && res?.data?.status === 'ok') {
-        refreshGlobalFiles(ctx, params).then();
+        refreshGlobalFiles(ctx, params.name).then();
         return true;
     }
 }
 
-async function refreshGlobalFiles(ctx, params) {
+async function refreshGlobalFiles(ctx, currentFileName) {
     // refresh list-files but skip if uploaded file is already there
-    if (!ctx.listFiles.uniqueFiles?.find((f) => f.name === params.name)) {
+    if (!ctx.listFiles.uniqueFiles?.find((f) => f.name === currentFileName)) {
         const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
         const resJson = await respGetFiles.json();
         if (resJson && resJson.uniqueFiles) {
@@ -187,7 +189,7 @@ async function refreshGlobalFiles(ctx, params) {
         }
         updateTrackGroups(resJson, ctx);
     } else {
-        const updatedTrackGroups = updateUpdatetimemsInGroups(ctx.tracksGroups, params.name, Date.now());
+        const updatedTrackGroups = updateUpdatetimemsInGroups(ctx.tracksGroups, currentFileName, Date.now());
         ctx.setTracksGroups(updatedTrackGroups);
     }
 }

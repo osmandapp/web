@@ -157,7 +157,7 @@ export default function TracksMenu() {
     const defaultGroupItems = useMemo(() => {
         if (defaultGroup) {
             const items = [];
-            (sortFiles.length > 0 ? sortFiles : defaultGroup.files).map((file) => {
+            (sortFiles.length > 0 ? sortFiles : defaultGroup.groupFiles).map((file) => {
                 items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} />);
             });
             return items;
