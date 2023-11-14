@@ -10,6 +10,7 @@ import SortMenu from './actions/SortMenu';
 import { findGroupByName } from '../../manager/track/TracksManager';
 import TracksHeader from './actions/TracksHeader';
 import Empty from '../errors/Empty';
+import { EMPTY_FILE_NAME } from '../../manager/track/SaveTrackManager';
 
 export default function TrackGroupFolder({ folder }) {
     const ctx = useContext(AppContext);
@@ -45,7 +46,7 @@ export default function TrackGroupFolder({ folder }) {
     const trackItems = useMemo(() => {
         const items = [];
         (sortFiles.length > 0 ? sortFiles : group.groupFiles).map((file) => {
-            if (!file.name.endsWith('empty.ignore') && file.filesize !== 0) {
+            if (!file.name.endsWith(EMPTY_FILE_NAME) && file.filesize !== 0) {
                 items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} />);
             }
         });

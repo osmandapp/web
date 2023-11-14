@@ -5,7 +5,7 @@ import { apiGet, apiPost } from '../../util/HttpApi';
 import { compressFromJSON, decompressToJSON } from '../../util/GzipBase64.mjs';
 import { isCloudTrack, isRouteTrack, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
-import { saveTrackToLocal } from './SaveTrackManager';
+import { EMPTY_FILE_NAME, saveTrackToLocal } from './SaveTrackManager';
 import L from 'leaflet';
 import MarkerOptions from '../../map/markers/MarkerOptions';
 import anchorme from 'anchorme';
@@ -526,9 +526,13 @@ function addFilesAndCalculateLastModified(groups) {
 
             group.files.push(...group.subfolders.reduce((acc, subfolder) => acc.concat(subfolder.files), []));
         }
-        group.files.push(...group.groupFiles);
+        group.groupFiles.forEach((file) => {
+            if (!group.files.some((groupFile) => groupFile.name === file.name)) {
+                group.files.push(file);
+            }
+        });
         group.realSize = group.files.filter(
-            (file) => !(file.name.endsWith('empty.ignore') && file.filesize === 0)
+            (file) => !(file.name.endsWith(EMPTY_FILE_NAME) && file.filesize === 0)
         ).length;
         calculateLastModified(group);
     });
