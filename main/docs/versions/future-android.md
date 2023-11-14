@@ -258,7 +258,7 @@ Added the convenient time scale.
 ## More
 
 - Improved memory management for large GPX tracks
-- Shutdown [OpenPlaceRevies project](https://osmand.net/docs/user/plugins/openplacereviews)
+- Shutdown [the OpenPlaceReviews project](https://osmand.net/docs/user/plugins/openplacereviews)
 - Updated Search screen for Android Auto
 - Fixed map freezes for Android Auto
 - Renamed _Terrain_ to [_Topography_](https://osmand.net/docs/user/plugins/contour-lines#configure-map-view) menu
@@ -266,5 +266,5 @@ Added the convenient time scale.
 - Fixed _North fixed_ mode for [Compass](https://osmand.net/docs/user/map/interact-with-map#map-orientation-modes)
 - Added widget _Available RAM_ for [OsmAnd Development plugin](https://osmand.net/docs/user/plugins/development)
 - Added paragliding / baby carriage / stroller / buggy [icons](https://osmand.net/docs/user/personal/profiles#profile-appearance) for profiles
-- Added [ANT+ temperature widget](https://osmand.net/docs/user/plugins/external-sensors) for Garmin tempe device
+- Added [ANT+ temperature widget](https://osmand.net/docs/user/plugins/external-sensors) for Garmin temperature sensor device
 - [_"Destination is reached"_](https://osmand.net/docs/user/navigation/guidance/map-during-navigation), the location moves to map center
