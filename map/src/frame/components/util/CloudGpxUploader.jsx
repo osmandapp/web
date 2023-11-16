@@ -35,6 +35,11 @@ export default function CloudGpxUploader({ children, folder = null, style = null
                 if (track) {
                     track.name = file.name;
                     mutateUploadedFiles((o) => (o[file.name] = { track, selected }));
+                } else {
+                    ctx.setTrackErrorMsg({
+                        title: 'Import error',
+                        msg: `Unable to import ${file.name}`,
+                    });
                 }
             });
             reader.readAsText(file);

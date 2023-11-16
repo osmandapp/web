@@ -249,6 +249,7 @@ export const AppContextProvider = (props) => {
     const [trackProfileManager, setTrackProfileManager] = useState({});
     const [pointContextMenu, setPointContextMenu] = useState({});
     const [routingErrorMsg, setRoutingErrorMsg] = useState(null);
+    const [trackErrorMsg, setTrackErrorMsg] = useState(null);
     const [trackState, setTrackState] = useState({
         update: false, // push track to undo/redo
         // pastStates: [], // was used for logs
@@ -427,6 +428,8 @@ export const AppContextProvider = (props) => {
                 mutateFitBoundsPadding,
                 openTrackGroups,
                 setOpenTrackGroups,
+                trackErrorMsg,
+                setTrackErrorMsg,
             }}
         >
             {props.children}
