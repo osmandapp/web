@@ -34,7 +34,7 @@ export default async function test() {
     await actionUploadGpx({ mask: TRACK + '.gpx' });
     await clickBy(By.id('se-local-track-' + TRACK));
     await validatePanelButtons(localTrackButtons);
-
+    await clickBy(By.id('se-show-menu-planroute'));
     await actionLocalToCloud({ mask: TRACK });
     await clickBy(By.id('se-cloud-track-' + TRACK));
     await validatePanelButtons(cloudTrackButtons);

@@ -40,6 +40,7 @@ export default async function test({ mask = '*.gpx', multiple = false } = {}) {
         await uploadTracks({ files });
     } else {
         for (let i = 0; i < tracks.length; i++) {
+            await clickBy(By.id('se-button-back'), { optional: true });
             const { name, path } = tracks[i];
             await uploadTracks({ files: path });
             await waitForNameTrack({ name });
