@@ -154,7 +154,9 @@ async function validatePanelButtons(ids) {
 async function validateInfoBlockStrings(strings, hasAttributes) {
     // don't check Road/Surface on dying-mobile version
     if (hasAttributes && mobile === false) {
+        await actionIdleWait({ idle: 3000 });
         await clickBy(By.id('se-show-attr-legend-Road type'));
+        await actionIdleWait({ idle: 3000 });
         await clickBy(By.id('se-show-attr-legend-Surface'));
     }
     for await (const match of strings) {
