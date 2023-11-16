@@ -1206,6 +1206,18 @@ export function getGpxFiles(listFiles) {
     });
 }
 
+export function updateLoadingTracks(ctx, group) {
+    ctx.setTrackLoading([
+        ...ctx.trackLoading.filter(
+            (name) =>
+                !group.some((file) => {
+                    let parts = file.name.split('/');
+                    return parts[parts.length - 1] === name;
+                })
+        ),
+    ]);
+}
+
 const TracksManager = {
     loadTracks,
     getFileName,

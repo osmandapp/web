@@ -9,11 +9,17 @@ import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.sv
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import CloudTrackItem from './CloudTrackItem';
 import SortActions from './actions/SortActions';
-import { createTrackGroups, DEFAULT_GROUP_NAME, getGpxFiles } from '../../manager/track/TracksManager';
+import {
+    createTrackGroups,
+    DEFAULT_GROUP_NAME,
+    getGpxFiles,
+    updateLoadingTracks,
+} from '../../manager/track/TracksManager';
 import Empty from '../errors/Empty';
 import Loading from '../errors/Loading';
 import SortMenu from './actions/SortMenu';
 import TracksHeader from './actions/TracksHeader';
+import TrackLoading from './TrackLoading';
 
 export default function TracksMenu() {
     const ctx = useContext(AppContext);
@@ -157,6 +163,7 @@ export default function TracksMenu() {
 
     const defaultGroupItems = useMemo(() => {
         if (defaultGroup) {
+            updateLoadingTracks(ctx, defaultGroup.groupFiles);
             const items = [];
             (sortFiles.length > 0 ? sortFiles : defaultGroup.groupFiles).map((file) => {
                 items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} />);
@@ -199,6 +206,10 @@ export default function TracksMenu() {
                                     .map((group, index) => {
                                         return <CloudTrackGroup key={group.name + index} index={index} group={group} />;
                                     })}
+                            {ctx.trackLoading?.length > 0 &&
+                                ctx.trackLoading.map((lt) => {
+                                    return <TrackLoading key={lt} name={lt} />;
+                                })}
                             {defaultGroupItems}
                         </Box>
                     ) : (

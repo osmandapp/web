@@ -100,14 +100,14 @@ export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file,
                 TracksManager.deleteLocalTrack(ctx);
                 refreshGlobalFiles(ctx, params.name).then();
                 return true;
-            } else {
-                ctx.setTrackErrorMsg({
-                    title: 'Save error',
-                    msg: `Unable to save ${params.name}`,
-                });
             }
         }
     }
+    ctx.setTrackErrorMsg({
+        title: 'Save error',
+        msg: `Unable to save ${file.name}`,
+    });
+    ctx.setTrackLoading([...ctx.trackLoading.filter((n) => n !== file.name)]);
     return false;
 }
 

@@ -7,10 +7,11 @@ import AppContext from '../../context/AppContext';
 import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import SortMenu from './actions/SortMenu';
-import { findGroupByName } from '../../manager/track/TracksManager';
+import { findGroupByName, updateLoadingTracks } from '../../manager/track/TracksManager';
 import TracksHeader from './actions/TracksHeader';
 import Empty from '../errors/Empty';
 import { EMPTY_FILE_NAME } from '../../manager/track/SaveTrackManager';
+import TrackLoading from './TrackLoading';
 
 export default function TrackGroupFolder({ folder }) {
     const ctx = useContext(AppContext);
@@ -46,6 +47,7 @@ export default function TrackGroupFolder({ folder }) {
 
     const trackItems = useMemo(() => {
         const items = [];
+        updateLoadingTracks(ctx, group.groupFiles);
         (sortFiles.length > 0 ? sortFiles : group.groupFiles).map((file) => {
             if (!file.name.endsWith(EMPTY_FILE_NAME) && file.filesize !== 0) {
                 items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} />);
@@ -80,6 +82,10 @@ export default function TrackGroupFolder({ folder }) {
                     sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 120}px` }}
                 >
                     {groupItems}
+                    {ctx.trackLoading?.length > 0 &&
+                        ctx.trackLoading.map((lt) => {
+                            return <TrackLoading key={lt} name={lt} />;
+                        })}
                     {trackItems}
                 </Box>
                 <SortMenu
@@ -101,7 +107,7 @@ export default function TrackGroupFolder({ folder }) {
                     }
                 />
             </Box>
-            {group.realSize === 0 && (
+            {group.realSize === 0 && ctx.trackLoading?.length === 0 && (
                 <Empty title={'Empty folder'} text={"This folder doesn't have any track yet"} folder={group.fullName} />
             )}
         </>

@@ -266,6 +266,8 @@ export const AppContextProvider = (props) => {
 
     const [routeTrackFile, setRouteTrackFile] = useState(null);
 
+    const [trackLoading, setTrackLoading] = useState([]);
+
     const [routeObject, setRouteObject] = useState(() => new geoObject());
     const [trackRouter, setTrackRouter] = useState(() => new geoRouter());
     const [afterPointRouter, setAfterPointRouter] = useState(() => new geoRouter());
@@ -430,6 +432,8 @@ export const AppContextProvider = (props) => {
                 setOpenTrackGroups,
                 trackErrorMsg,
                 setTrackErrorMsg,
+                trackLoading,
+                setTrackLoading,
             }}
         >
             {props.children}

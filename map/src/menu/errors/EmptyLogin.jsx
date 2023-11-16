@@ -1,13 +1,8 @@
-import { useContext } from 'react';
-import AppContext from '../../context/AppContext';
 import { Box, Button, Icon, ListItemText } from '@mui/material';
 import styles from './errors.module.css';
-import CloudGpxUploader from '../../frame/components/util/CloudGpxUploader';
 import { ReactComponent as UserAccountIcon } from '../../assets/icons/ic_action_user_account.svg';
 import { useNavigate } from 'react-router-dom';
 export default function EmptyLogin() {
-    const ctx = useContext(AppContext);
-
     const navigate = useNavigate();
     const openLogin = () => {
         navigate('/map/loginForm' + window.location.search + window.location.hash);

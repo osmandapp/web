@@ -28,6 +28,7 @@ export default function CloudGpxUploader({ children, folder = null, style = null
 
     const fileSelected = async (e) => {
         const selected = e.target.files.length === 1;
+        ctx.setTrackLoading(Array.from(e.target.files).map((track) => track.name));
         Array.from(e.target.files).forEach((file) => {
             const reader = new FileReader();
             reader.addEventListener('load', async () => {
@@ -40,6 +41,7 @@ export default function CloudGpxUploader({ children, folder = null, style = null
                         title: 'Import error',
                         msg: `Unable to import ${file.name}`,
                     });
+                    ctx.setTrackLoading([...ctx.trackLoading.filter((n) => n !== file.name)]);
                 }
             });
             reader.readAsText(file);
