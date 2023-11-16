@@ -9,6 +9,7 @@ import TracksManager, {
     LOCAL_COMPRESSED_TRACK_KEY,
     prepareLocalTrack,
     getGpxFiles,
+    DEFAULT_GROUP_NAME,
 } from './TracksManager';
 import _ from 'lodash';
 import { compressFromJSON } from '../../util/GzipBase64.mjs';
@@ -59,7 +60,7 @@ export function saveTrackToLocal({ ctx, track, selected = true, overwrite = fals
 //save to cloud
 export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file, open = true) {
     if (type !== FavoritesManager.FAVORITE_FILE_TYPE) {
-        if (currentFolder === 'Tracks') {
+        if (currentFolder === DEFAULT_GROUP_NAME) {
             currentFolder = '';
         } else {
             currentFolder = currentFolder + '/';
