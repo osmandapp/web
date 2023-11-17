@@ -47,7 +47,6 @@ export default function TrackGroupFolder({ folder }) {
 
     const trackItems = useMemo(() => {
         const items = [];
-        updateLoadingTracks(ctx, group.groupFiles);
         (sortFiles.length > 0 ? sortFiles : group.groupFiles).map((file) => {
             if (!file.name.endsWith(EMPTY_FILE_NAME) && file.filesize !== 0) {
                 items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} />);
@@ -55,6 +54,12 @@ export default function TrackGroupFolder({ folder }) {
         });
         return items;
     }, [group.groupFiles, group.groupFiles.length, sortFiles]);
+
+    useEffect(() => {
+        if (group) {
+            updateLoadingTracks(ctx, group.groupFiles);
+        }
+    }, [group?.groupFiles]);
 
     const groupItems = useMemo(() => {
         const items = [];

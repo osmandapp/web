@@ -163,7 +163,6 @@ export default function TracksMenu() {
 
     const defaultGroupItems = useMemo(() => {
         if (defaultGroup) {
-            updateLoadingTracks(ctx, defaultGroup.groupFiles);
             const items = [];
             (sortFiles.length > 0 ? sortFiles : defaultGroup.groupFiles).map((file) => {
                 items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} />);
@@ -171,6 +170,12 @@ export default function TracksMenu() {
             return items;
         }
     }, [defaultGroup?.files, defaultGroup?.files.length, sortFiles]);
+
+    useEffect(() => {
+        if (defaultGroup) {
+            updateLoadingTracks(ctx, defaultGroup.groupFiles);
+        }
+    }, [defaultGroup?.groupFiles]);
 
     return (
         <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
