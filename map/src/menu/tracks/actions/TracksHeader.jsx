@@ -16,6 +16,7 @@ import dialogStyles from '../../../dialogs/dialog.module.css';
 import { prepareFileName } from '../../../util/Utils';
 import { saveEmptyTrack } from '../../../manager/track/SaveTrackManager';
 import { DEFAULT_GROUP_NAME } from '../../../manager/track/TracksManager';
+import { FREE_ACCOUNT } from '../../../manager/LoginManager';
 
 export default function TracksHeader({ trackGroup, sortIcon, sortName, setOpenSort, anchorEl }) {
     const ctx = useContext(AppContext);
@@ -159,7 +160,11 @@ export default function TracksHeader({ trackGroup, sortIcon, sortName, setOpenSo
                                 className={styles.appBarIcon}
                                 onClick={() => setOpenAddFolderDialog(true)}
                                 ref={anchorEl}
-                                disabled={!trackGroup || trackGroup.files?.length === 0}
+                                disabled={
+                                    !trackGroup ||
+                                    trackGroup.files?.length === 0 ||
+                                    ctx.accountInfo?.account === FREE_ACCOUNT
+                                }
                             >
                                 <AddFolderIcon />
                             </IconButton>
@@ -173,6 +178,7 @@ export default function TracksHeader({ trackGroup, sortIcon, sortName, setOpenSo
                                     component="span"
                                     variant="contained"
                                     type="button"
+                                    disabled={ctx.accountInfo?.account === FREE_ACCOUNT}
                                     className={styles.appBarIcon}
                                 >
                                     <ImportIcon />

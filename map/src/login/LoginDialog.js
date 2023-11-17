@@ -8,13 +8,13 @@ import DialogTitle from '@mui/material/DialogTitle';
 import AppContext from '../context/AppContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Box, Divider, Link, ListItemText, MenuItem, Typography } from '@mui/material';
-import { apiGet } from '../util/HttpApi';
 import DeleteAccountDialog from './DeleteAccountDialog';
 import AccountManager from '../manager/AccountManager';
 import ChangeEmailDialog from './ChangeEmailDialog';
 import DownloadBackupDialog from './DownloadBackupDialog';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import { makeStyles } from '@material-ui/core/styles';
+import { getAccountInfo } from '../manager/LoginManager';
 
 export default function LoginDialog() {
     const ctx = useContext(AppContext);
@@ -38,7 +38,6 @@ export default function LoginDialog() {
     const [openDangerousArea, setOpenDangerousArea] = useState(false);
     const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
     const [changeEmailFlag, setChangeEmailFlag] = useState(false);
-    const [accountInfo, setAccountInfo] = useState(null);
     const [openDownloadBackupDialog, setOpenDownloadBackupDialog] = useState(false);
 
     const navigate = useNavigate();
@@ -91,7 +90,7 @@ export default function LoginDialog() {
 
     useEffect(() => {
         if (ctx.loginUser && ctx.loginUser !== '') {
-            getAccountInfo().then();
+            getAccountInfo(ctx.setAccountInfo).then();
         } else {
             if (ctx.emailCookie) {
                 setTimeout(() => setTryCookie(ctx.emailCookie), 500); // delay to allow browser auto-login
@@ -105,13 +104,6 @@ export default function LoginDialog() {
             setTryCookie(null);
         }
     }, [tryCookie]);
-
-    async function getAccountInfo() {
-        const resp = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-account-info`);
-        if (resp.data) {
-            setAccountInfo(resp.data.info);
-        }
-    }
 
     const clickHandler = (event) => {
         if (event.detail % 3 === 0) {
@@ -161,7 +153,7 @@ export default function LoginDialog() {
                                                 1024 /
                                                 1024.0
                                             ).toFixed(1)} MB ${
-                                                accountInfo && `of ${accountInfo.maxAccSize / (1024 * 1024)} MB`
+                                                ctx.accountInfo && `of ${ctx.accountInfo.maxAccSize / (1024 * 1024)} MB`
                                             }`}
                                         </Typography>
                                     </ListItemText>
@@ -170,7 +162,7 @@ export default function LoginDialog() {
                             </>
                         )}
                         <Divider sx={{ mt: 1 }} />
-                        {accountInfo && (
+                        {ctx.accountInfo && (
                             <>
                                 <Typography component={'span'} variant="h6" noWrap>
                                     {`Account info:`}
@@ -178,24 +170,24 @@ export default function LoginDialog() {
                                 <MenuItem>
                                     <ListItemText>
                                         <Typography component={'span'} sx={{ ml: 1 }} variant="body2" noWrap>
-                                            {`Subscription: ${accountInfo.account} `}
-                                            {accountInfo.type && `(type: ${accountInfo.type})`}
+                                            {`Subscription: ${ctx.accountInfo.account} `}
+                                            {ctx.accountInfo.type && `(type: ${ctx.accountInfo.type})`}
                                         </Typography>
                                     </ListItemText>
                                 </MenuItem>
-                                {accountInfo.startTime && accountInfo.expireTime && (
+                                {ctx.accountInfo.startTime && ctx.accountInfo.expireTime && (
                                     <>
                                         <MenuItem sx={{ mt: -1 }}>
                                             <ListItemText>
                                                 <Typography component={'span'} sx={{ ml: 1 }} variant="body2" noWrap>
-                                                    {`Start time: ${accountInfo.startTime}`}
+                                                    {`Start time: ${ctx.accountInfo.startTime}`}
                                                 </Typography>
                                             </ListItemText>
                                         </MenuItem>
                                         <MenuItem sx={{ mt: -1 }}>
                                             <ListItemText>
                                                 <Typography component={'span'} sx={{ ml: 1 }} variant="body2" noWrap>
-                                                    {`Expire time: ${accountInfo.expireTime}`}
+                                                    {`Expire time: ${ctx.accountInfo.expireTime}`}
                                                 </Typography>
                                             </ListItemText>
                                         </MenuItem>

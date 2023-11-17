@@ -9,6 +9,7 @@ import { apiGet } from '../util/HttpApi';
 import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import { geoObject } from '../store/geoObject/geoObject.js';
 import WeatherManager from '../manager/WeatherManager';
+import { getAccountInfo } from '../manager/LoginManager';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track';
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track';
@@ -153,11 +154,12 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles) {
     });
 }
 
-async function checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCookie) {
+async function checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCookie, setAccountInfo) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/info`, {
         method: 'GET',
     });
     if (response.ok) {
+        await getAccountInfo(setAccountInfo);
         const user = await response.json();
         let newUser = user?.username;
         if (loginUser !== newUser) {
@@ -206,6 +208,7 @@ export const AppContextProvider = (props) => {
     const [emailCookie, setEmailCookie] = useCookie('email', '');
     // server state of login
     const [loginUser, setLoginUser] = useState('INIT');
+    const [accountInfo, setAccountInfo] = useState(null);
     const [wantDeleteAcc, setWantDeleteAcc] = useState(false);
     const [listFiles, setListFiles] = useState({});
     const [gpxFiles, mutateGpxFiles, setGpxFiles] = useMutator({});
@@ -320,7 +323,7 @@ export const AppContextProvider = (props) => {
     }, []);
 
     useEffect(() => {
-        checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCookie);
+        checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCookie, setAccountInfo);
     }, [loginUser]);
 
     useEffect(() => {
@@ -434,6 +437,8 @@ export const AppContextProvider = (props) => {
                 setTrackErrorMsg,
                 trackLoading,
                 setTrackLoading,
+                accountInfo,
+                setAccountInfo,
             }}
         >
             {props.children}
