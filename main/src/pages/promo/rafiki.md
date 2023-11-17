@@ -1,5 +1,5 @@
 ---
-title: OsmAnd Pro for SpeedoX
+title: OsmAnd Pro for Rafiki on Tour
 ---
 
 import Tabs from '@theme/Tabs';
@@ -16,21 +16,21 @@ import SotmScreenshots from './carousel/sotmscreenshots.js';
 
 
 
-![SpeedoX and OsmAnd](@site/static/img/promo/speedox/speedox.png)
+![Rafikiontour and OsmAnd](@site/static/img/promo/rafiki/rafiki.png)
 
-# Get OsmAnd Pro free for 3 months 
+# Get OsmAnd Pro free for 1 year 
 
-Each user [SpeedoX app](https://www.speedox.it/speedox-myride) can receive OsmAnd Pro subscription.
+Each user [Rafiki on Tour](https://rafikiontour.com/) can receive OsmAnd Pro subscription.
 
 Please, input your e-mail for registration:
 
-<RegisterUserPromoBlock  promoKey='speedox'/>
+<RegisterUserPromoBlock  promoKey='rafiki'/>
 
 **Full manual** is [**HERE**](https://osmand.net/promo/manual#english-version).
 
 OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use).
 
-"SpeedoX" links: [Website](https://www.speedox.it/speedox-myride), [Youtube](https://www.youtube.com/@speedox_it)
+"Rafiki on Tour" links: [Website](https://rafikiontour.com/), [Youtube](https://www.youtube.com/@rafikiontour), [Faceebook](https://www.facebook.com/rafikiontour/), [Instagram](https://www.instagram.com/rafikiontour/).
 
 _________________
 
