@@ -26,7 +26,7 @@ export default function Empty({ title, text, folder = null }) {
                     </Box>
                     {folder && (
                         <CloudGpxUploader folder={folder} style={styles.label}>
-                            <Button className={styles.button} component="span">
+                            <Button id="se-import-first-track" className={styles.button} component="span">
                                 Import
                             </Button>
                         </CloudGpxUploader>

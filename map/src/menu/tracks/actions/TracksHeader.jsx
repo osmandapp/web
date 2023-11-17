@@ -88,7 +88,7 @@ export default function TracksHeader({ trackGroup, sortIcon, sortName, setOpenSo
                             validationFolderName(name);
                             setFolderName(name);
                         }}
-                        id="folderName"
+                        id="se-add-folder-input"
                         type="folderName"
                         fullWidth
                         error={folderNameError !== ''}
@@ -102,7 +102,7 @@ export default function TracksHeader({ trackGroup, sortIcon, sortName, setOpenSo
                     <Button className={dialogStyles.button} onClick={() => setOpenAddFolderDialog(false)}>
                         Cancel
                     </Button>
-                    <Button className={dialogStyles.button} onClick={() => addFolder()}>
+                    <Button id="se-add-folder-submit" className={dialogStyles.button} onClick={() => addFolder()}>
                         Add
                     </Button>
                 </DialogActions>
@@ -153,6 +153,7 @@ export default function TracksHeader({ trackGroup, sortIcon, sortName, setOpenSo
                     <Tooltip key={'add_folder'} title="Add folder" arrow placement="bottom-end">
                         <span>
                             <IconButton
+                                id="se-add-folder"
                                 variant="contained"
                                 type="button"
                                 className={styles.appBarIcon}
@@ -168,6 +169,7 @@ export default function TracksHeader({ trackGroup, sortIcon, sortName, setOpenSo
                         <span>
                             <CloudGpxUploader folder={trackGroup.fullName}>
                                 <IconButton
+                                    id="se-import-cloud-track"
                                     component="span"
                                     variant="contained"
                                     type="button"
