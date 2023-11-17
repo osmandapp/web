@@ -159,7 +159,9 @@ async function checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCook
         method: 'GET',
     });
     if (response.data) {
-        await getAccountInfo(setAccountInfo);
+        if (loginUser !== 'INIT') {
+            await getAccountInfo(setAccountInfo);
+        }
         const user = await response.json();
         let newUser = user?.username;
         if (loginUser !== newUser) {
