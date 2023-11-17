@@ -158,7 +158,7 @@ async function checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCook
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/info`, {
         method: 'GET',
     });
-    if (response.ok) {
+    if (response.data) {
         await getAccountInfo(setAccountInfo);
         const user = await response.json();
         let newUser = user?.username;

@@ -89,7 +89,7 @@ export default function LoginDialog() {
     }, [location.hash]);
 
     useEffect(() => {
-        if (ctx.loginUser && ctx.loginUser !== '') {
+        if (ctx.loginUser && ctx.loginUser !== '' && ctx.loginUser !== 'INIT') {
             getAccountInfo(ctx.setAccountInfo).then();
         } else {
             if (ctx.emailCookie) {
