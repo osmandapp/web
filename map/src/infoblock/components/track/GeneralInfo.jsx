@@ -39,6 +39,7 @@ import DescTrackDialog from './dialogs/DescTrackDialog';
 import RouteIcon from '@mui/icons-material/Route';
 import { formatRouteInfo } from '../../../menu/route/RouteMenu';
 import { saveTrackToLocalStorage } from '../../../manager/track/SaveTrackManager';
+import { FREE_ACCOUNT } from '../../../manager/LoginManager';
 
 export default function GeneralInfo({ width }) {
     const styles = contextMenuStyles();
@@ -502,6 +503,7 @@ export default function GeneralInfo({ width }) {
                               )}
                     </div>
                     {ctx.loginUser &&
+                        ctx.accountInfo?.account !== FREE_ACCOUNT &&
                         (isLocalTrack(ctx) || isRouteTrack(ctx)) &&
                         isEmptyTrack(ctx.selectedGpxFile) === false && (
                             <>
