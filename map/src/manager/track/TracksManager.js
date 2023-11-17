@@ -1,12 +1,13 @@
-import Utils, { quickNaNfix } from '../util/Utils';
-import FavoritesManager from './FavoritesManager';
+import Utils, { quickNaNfix } from '../../util/Utils';
+import FavoritesManager from '../FavoritesManager';
 import _ from 'lodash';
-import { apiGet, apiPost } from '../util/HttpApi';
-import { compressFromJSON, decompressToJSON } from '../util/GzipBase64.mjs';
-import { isCloudTrack, isRouteTrack, OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_LOCAL_TRACK } from '../context/AppContext';
-import { confirm } from '../dialogs/GlobalConfirmationDialog';
+import { apiGet, apiPost } from '../../util/HttpApi';
+import { compressFromJSON, decompressToJSON } from '../../util/GzipBase64.mjs';
+import { isCloudTrack, isRouteTrack, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
+import { confirm } from '../../dialogs/GlobalConfirmationDialog';
+import { EMPTY_FILE_NAME, saveTrackToLocal } from './SaveTrackManager';
 import L from 'leaflet';
-import MarkerOptions from '../map/markers/MarkerOptions';
+import MarkerOptions from '../../map/markers/MarkerOptions';
 import anchorme from 'anchorme';
 
 const GPX_FILE_TYPE = 'GPX';
@@ -19,13 +20,13 @@ export const NAN_MARKER = 99999;
 const CHANGE_PROFILE_BEFORE = 'before';
 const CHANGE_PROFILE_AFTER = 'after';
 const CHANGE_PROFILE_ALL = 'all';
-const LOCAL_COMPRESSED_TRACK_KEY = 'localTrack_';
-const DATA_SIZE_KEY = 'dataSize';
+export const LOCAL_COMPRESSED_TRACK_KEY = 'localTrack_';
+export const DATA_SIZE_KEY = 'dataSize';
 const TRACK_VISIBLE_FLAG = 'visible';
 const HOURS_24_MS = 86400000;
 const AUTO_SRTM_MAX_POINTS = 10000;
 const FIT_BOUNDS_MAX_ZOOM = 17;
-export const DEFAULT_GROUP_NAME = 'Tracks';
+export const DEFAULT_GROUP_NAME = '';
 
 export function fitBoundsOptions(ctx) {
     return {
@@ -104,47 +105,6 @@ function openVisibleTracks(localTracks) {
         }
     }
     return localTracks;
-}
-
-function saveLocalTrack({ ctx, track }) {
-    const localTracks = ctx.localTracks;
-
-    let currentTrackIndex = localTracks.findIndex((t) => t.name === track.name);
-
-    if (currentTrackIndex === -1) {
-        currentTrackIndex = localTracks.push(track) - 1; // mutate state, get new index
-        ctx.setLocalTracks([...localTracks]); // instant call setState if you don't sure about parent
-    }
-
-    let tracksSize;
-    let totalSize = JSON.parse(localStorage.getItem(DATA_SIZE_KEY));
-    if (!totalSize) {
-        totalSize = 0;
-    }
-    compressFromJSON(prepareLocalTrack(track)).then((res) => {
-        tracksSize = res.length;
-        let oldSize = getOldSizeTrack(currentTrackIndex);
-        totalSize = totalSize - oldSize + tracksSize;
-        if (((oldSize === 0 && tracksSize + totalSize) || totalSize - oldSize + tracksSize) > 5000000) {
-            ctx.setRoutingErrorMsg(
-                "Local tracks are too big to save! Last and all next changes won't be saved and will disappear after the page is reloaded! Please clear local tracks or delete old local tracks to save new changes."
-            );
-        } else {
-            // ctx.setRoutingErrorMsg(null); // don't reset error message here (lose previous message)
-            localStorage.setItem(LOCAL_COMPRESSED_TRACK_KEY + currentTrackIndex, res);
-            localStorage.setItem(DATA_SIZE_KEY, totalSize);
-        }
-    });
-}
-
-function getOldSizeTrack(currentTrackIndex) {
-    if (currentTrackIndex !== -1) {
-        let old = localStorage.getItem(LOCAL_COMPRESSED_TRACK_KEY + currentTrackIndex);
-        if (old) {
-            return old.length;
-        }
-    }
-    return 0;
 }
 
 async function updateLocalTracks(tracks) {
@@ -227,7 +187,7 @@ function getFileName(currentFile) {
     return prepareName(file.name, file.local);
 }
 
-function prepareName(name, local) {
+function prepareName(name, local = false) {
     const result = name.replace(/.gpx/, '');
     if (result.includes('/')) {
         const groups = result.split('/');
@@ -290,7 +250,7 @@ function handleEditCloudTrack(ctx) {
             ctx.setCurrentObjectType(OBJECT_TYPE_LOCAL_TRACK);
             ctx.routeObject.setOption('route.map.conceal', true);
         }
-        addTrack({ ctx, track, overwrite: true, cloudAutoSave: isCloudTrack(ctx) });
+        saveTrackToLocal({ ctx, track, overwrite: true, cloudAutoSave: isCloudTrack(ctx) });
         ctx.setUpdateInfoBlock(true);
     }
 
@@ -300,56 +260,6 @@ function handleEditCloudTrack(ctx) {
         skip: localTrackNotFound,
         text: name + ' - Local track found. Overwrite?',
     });
-}
-
-function addTrack({ ctx, track, selected = true, overwrite = false, cloudAutoSave = false } = {}) {
-    const newLocalTracks = [...ctx.localTracks];
-
-    const originalName = track.name;
-    const firstName = prepareName(originalName, true);
-    let localName = firstName;
-
-    // find free name
-    if (overwrite === false) {
-        let occupied = null;
-        for (let i = 1; i < 100; i++) {
-            occupied = newLocalTracks?.find((t) => t.name === localName);
-            if (!occupied) {
-                break; // found
-            }
-            localName = firstName + ' - ' + i; // try with "Track - X"
-        }
-        if (occupied) {
-            throw new Error('TracksManager addTrack() too many same-tracks');
-        }
-    }
-
-    prepareTrack(track, localName, originalName);
-
-    closeCloudTrack(ctx, track);
-
-    if (selected === true) {
-        // upload 1 gpx - edit instantly
-        openNewLocalTrack({ ctx, track, cloudAutoSave });
-    } else {
-        // used when multi-gpx uploaded
-        // generate points and save track
-        track.points = getEditablePoints(track);
-        saveLocalTrack({ ctx, track });
-    }
-
-    if (overwrite) {
-        const foundIndex = newLocalTracks?.findIndex((t) => t.name === localName);
-        if (foundIndex !== -1) {
-            newLocalTracks[foundIndex] = track;
-        } else {
-            newLocalTracks.push(track);
-        }
-    } else {
-        newLocalTracks.push(track);
-    }
-
-    ctx.setLocalTracks(newLocalTracks); // finally
 }
 
 function prepareTrack(track, localName = null, originalName = null) {
@@ -400,39 +310,6 @@ function hasGeo(track) {
         }
     }
     return false;
-}
-
-// set copy of track with .overwrite <bool> and .selected = true
-// overwrite flag used later when re-uploading (save to cloud)
-// set type of current object, enable editor with "edit" flag
-function openNewLocalTrack({ ctx, track, cloudAutoSave = false }) {
-    const createState = {
-        enable: true, // start-editor
-        edit: true,
-        cloudAutoSave,
-    };
-
-    // cleanup
-    if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
-        createState.closePrev = {
-            file: _.cloneDeep(ctx.selectedGpxFile),
-        };
-    }
-
-    ctx.setCreateTrack(createState);
-
-    // parent needs our track.selected = true
-    track.selected = true; // track is ref
-    ctx.setSelectedGpxFile({ ...track });
-
-    ctx.setCurrentObjectType(OBJECT_TYPE_LOCAL_TRACK);
-}
-
-function closeCloudTrack(ctx, track) {
-    if (ctx.gpxFiles[track.originalName]) {
-        ctx.gpxFiles[track.originalName].url = null;
-        ctx.setGpxFiles({ ...ctx.gpxFiles });
-    }
 }
 
 export function getTrackPoints(track) {
@@ -578,131 +455,131 @@ async function getGpxTrack(file) {
     });
 }
 
-async function saveTrack(ctx, currentFolder, fileName, type, file) {
-    if (type !== FavoritesManager.FAVORITE_FILE_TYPE) {
-        if (currentFolder === 'Tracks') {
-            currentFolder = '';
+export function createTrackGroups(files) {
+    const trackGroups = [];
+    const tracks = [];
+
+    files.forEach((file) => {
+        const parts = file.name.split('/');
+        const isFile = parts.length === 1;
+
+        if (isFile) {
+            tracks.push(file);
         } else {
-            currentFolder = currentFolder + '/';
-        }
-    }
-    if (ctx.loginUser) {
-        const gpxFile = file ? file : ctx.selectedGpxFile.file ? ctx.selectedGpxFile.file : ctx.selectedGpxFile;
-        if (gpxFile.points) {
-            gpxFile.tracks = [{ points: gpxFile.points }];
-        }
-        const gpx = await getGpxTrack(gpxFile);
-        if (gpx) {
-            const convertedData = new TextEncoder().encode(gpx.data);
-            const zippedResult = require('pako').gzip(convertedData, { to: 'Uint8Array' });
-            const convertedZipped = zippedResult.buffer;
-            const oMyBlob = new Blob([convertedZipped], { type: 'gpx' });
-            const data = new FormData();
-
-            data.append('file', oMyBlob, gpxFile.name);
-
-            const params = {
-                type: type,
-                name: type === FavoritesManager.FAVORITE_FILE_TYPE ? currentFolder : currentFolder + fileName + '.gpx',
-            };
-
-            // close possibly loaded Cloud track (clean up layers)
-            ctx.mutateGpxFiles((o) => o[params.name] && (o[params.name].url = null));
-
-            const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data, { params });
-
-            if (res && res?.data?.status === 'ok') {
-                // re-download gpx
-                const downloadFile = { ...gpxFile, ...params };
-                downloadAfterUpload(ctx, downloadFile);
-                deleteLocalTrack(ctx);
-
-                // refresh list-files but skip if uploaded file is already there
-                if (!ctx.listFiles.uniqueFiles?.find((f) => f.name === params.name)) {
-                    const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
-                    const resJson = await respGetFiles.json();
-                    if (resJson && resJson.uniqueFiles) {
-                        ctx.setListFiles(resJson);
-                    }
-                } else {
-                    // refresh updatetimems locally to resort track list
-                    // real data will be refreshed after list-files reloaded
-                    ctx.setTracksGroups((o) => {
-                        o.forEach((g) => {
-                            g.files.forEach((f) => {
-                                if (f.name === params.name) {
-                                    f.updatetimems = Date.now();
-                                }
-                            });
-                            g.files = [...g.files]; // useMemo deep dep (group.files) in CloudTrackGroup
-                        });
-                        return [...o];
-                    });
+            let currentGroups = trackGroups;
+            let fullName = '';
+            for (let i = 0; i < parts.length - 1; i++) {
+                const folder = parts[i];
+                fullName += folder + '/';
+                // find existing group by name or create a new one
+                let existingGroup = currentGroups.find((group) => group.name === folder);
+                if (!existingGroup) {
+                    existingGroup = {
+                        name: folder,
+                        subfolders: [],
+                        groupFiles: [],
+                        lastModifiedMs: null,
+                        lastModifiedData: null,
+                    };
+                    currentGroups.push(existingGroup);
                 }
 
-                return true;
+                currentGroups = existingGroup.subfolders;
+                existingGroup.fullName = fullName.substring(0, fullName.length - 1);
+                existingGroup.groupFiles.push(file);
+            }
+        }
+    });
 
-                // API request /list-files is too slow for this moment... commented!
-                // const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
-                // const resJson = await respGetFiles.json();
-                // if (resJson && resJson.uniqueFiles) {
-                //     ctx.setListFiles(resJson);
-                //     const file = resJson.uniqueFiles.find((f) => f.name === fileName + '.gpx');
-                //     if (file) {
-                //         downloadAfterUpload(ctx, file);
-                //         deleteLocalTrack(ctx);
-                //         return true;
-                //     }
-                // }
+    if (tracks.length > 0) {
+        const defaultGroup = {
+            name: DEFAULT_GROUP_NAME,
+            fullName: DEFAULT_GROUP_NAME,
+            files: tracks,
+            groupFiles: tracks,
+            lastModifiedMs: null,
+            lastModifiedData: null,
+        };
+        defaultGroup.subfolders = trackGroups.filter((group) => group.name !== DEFAULT_GROUP_NAME);
+        trackGroups.push(defaultGroup);
+    }
+
+    addFilesAndCalculateLastModified(trackGroups);
+    return trackGroups;
+}
+
+function addFilesAndCalculateLastModified(groups) {
+    groups.forEach((group) => {
+        group.files = group.files || [];
+        group.groupFiles = group.groupFiles || [];
+        group.subfolders = group.subfolders || [];
+
+        if (group.subfolders.length > 0) {
+            addFilesAndCalculateLastModified(group.subfolders);
+
+            // remove files from group.groupFiles if they belong to subfolders
+            group.groupFiles = group.groupFiles.filter((file) => {
+                return !group.subfolders.some((subfolder) =>
+                    subfolder.files.some((subfile) => subfile.name === file.name)
+                );
+            });
+
+            group.files.push(...group.subfolders.reduce((acc, subfolder) => acc.concat(subfolder.files), []));
+        }
+        group.groupFiles.forEach((file) => {
+            if (!group.files.some((groupFile) => groupFile.name === file.name)) {
+                group.files.push(file);
+            }
+        });
+        group.realSize = group.files.filter(
+            (file) => !(file.name.endsWith(EMPTY_FILE_NAME) && file.filesize === 0)
+        ).length;
+        calculateLastModified(group);
+    });
+}
+
+function calculateLastModified(group) {
+    if (!group.files || group.files.length === 0) {
+        group.lastModifiedMs = null;
+        group.lastModifiedData = null;
+        return;
+    }
+
+    let minMs = Infinity;
+    let minData = null;
+    for (const file of group.files) {
+        if (file.updatetimems < minMs) {
+            minMs = file.updatetimems;
+            minData = file.updatetime;
+        }
+    }
+    group.lastModifiedMs = minMs;
+    group.lastModifiedData = minData;
+}
+
+export function findGroupByName(groups, groupName) {
+    for (const group of groups) {
+        if (group.fullName === groupName) {
+            return group;
+        }
+        if (group.subfolders && group.subfolders.length > 0) {
+            const foundInSubfolders = findGroupByName(group.subfolders, groupName);
+            if (foundInSubfolders) {
+                return foundInSubfolders;
             }
         }
     }
-    return false;
+    return null;
 }
 
-// after success upload from Local to Cloud
-// download it and use as current Cloud track
-async function downloadAfterUpload(ctx, file) {
-    const createState = {
-        enable: false, // stop-editor
-    };
+export function validName(name) {
+    return name !== '' && name.trim().length > 0;
+}
 
-    // cleanup
-    if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
-        createState.closePrev = {
-            file: _.cloneDeep(ctx.selectedGpxFile),
-        };
-    }
-
-    ctx.setCreateTrack({ ...createState });
-
-    const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
-    const qs = `?type=${encodeURIComponent(file.type)}&name=${encodeURIComponent(file.name)}`;
-    const newGpxFiles = Object.assign({}, ctx.gpxFiles);
-    newGpxFiles[file.name] = {
-        url: URL + qs,
-        clienttimems: file.clienttimems,
-        updatetimems: file.updatetimems,
-        name: file.name,
-        type: 'GPX',
-    };
-    const f = await Utils.getFileData(newGpxFiles[file.name]);
-    const gpxfile = new File([f], file.name, {
-        type: 'text/plain',
-    });
-    const track = await TracksManager.getTrackData(gpxfile);
-    if (isEmptyTrack(track) === false) {
-        const type = OBJECT_TYPE_CLOUD_TRACK;
-        ctx.setUpdateInfoBlock(true);
-        ctx.setCurrentObjectType(type);
-        track.name = file.name;
-        Object.keys(track).forEach((t) => {
-            newGpxFiles[file.name][`${t}`] = track[t];
-        });
-        newGpxFiles[file.name].analysis = TracksManager.prepareAnalysis(newGpxFiles[file.name].analysis);
-        ctx.setGpxFiles(newGpxFiles);
-        ctx.setSelectedGpxFile(Object.assign({}, newGpxFiles[file.name]));
-    }
+export function isTrackExists(name, folder, tracks) {
+    const folderName = folder.title ? folder.title : folder;
+    const foundFolder = findGroupByName(tracks, folderName);
+    return foundFolder ? foundFolder.groupFiles.some((f) => TracksManager.prepareName(f.name) === name) : false;
 }
 
 function deleteLocalTrack(ctx) {
@@ -1068,15 +945,6 @@ function clearTrack(file, points) {
     return emptyFile;
 }
 
-function getTracks(allFiles) {
-    return (!allFiles || !allFiles.uniqueFiles ? [] : allFiles.uniqueFiles).filter((item) => {
-        return (
-            (item.type === 'gpx' || item.type === 'GPX') &&
-            (item.name.slice(-4) === '.gpx' || item.name.slice(-4) === '.GPX')
-        );
-    });
-}
-
 function getFavoriteGroups(allFiles) {
     return (!allFiles || !allFiles.uniqueFiles ? [] : allFiles.uniqueFiles).filter((item) => {
         return item.type === FavoritesManager.FAVORITE_FILE_TYPE && item.name.slice(-4) === '.gpx';
@@ -1329,17 +1197,35 @@ export function prepareDesc(trackDesc) {
         : null;
 }
 
+export function getGpxFiles(listFiles) {
+    return (!listFiles || !listFiles.uniqueFiles ? [] : listFiles.uniqueFiles).filter((item) => {
+        return (
+            (item.type === 'gpx' || item.type === 'GPX' || item.type === 'ignore') &&
+            (item.name.slice(-4) === '.gpx' || item.name.slice(-4) === '.GPX' || item.name.slice(-7) === '.ignore')
+        );
+    });
+}
+
+export function updateLoadingTracks(ctx, group) {
+    ctx.setTrackLoading([
+        ...ctx.trackLoading.filter(
+            (name) =>
+                !group.some((file) => {
+                    let parts = file.name.split('/');
+                    return parts[parts.length - 1] === name;
+                })
+        ),
+    ]);
+}
+
 const TracksManager = {
     loadTracks,
-    saveTracks: saveLocalTrack,
     getFileName,
     prepareName,
     getTrackData,
     handleEditCloudTrack,
-    addTrack,
     getTrackPoints,
     getGpxTrack,
-    saveTrack,
     getEditablePoints,
     updateGapProfileOneSegment,
     getEle,
@@ -1354,7 +1240,6 @@ const TracksManager = {
     getGroup,
     formatRouteMode,
     decodeRouteMode,
-    getTracks,
     getFavoriteGroups,
     isEqualPoints,
     updateState,

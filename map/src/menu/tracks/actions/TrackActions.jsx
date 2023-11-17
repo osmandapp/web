@@ -6,7 +6,7 @@ import { ReactComponent as DownloadIcon } from '../../../assets/icons/ic_action_
 import { ReactComponent as DeleteIcon } from '../../../assets/icons/ic_action_delete_outlined.svg';
 import DeleteTrackDialog from '../../../infoblock/components/track/dialogs/DeleteTrackDialog';
 import Utils from '../../../util/Utils';
-import TracksManager from '../../../manager/TracksManager';
+import TracksManager from '../../../manager/track/TracksManager';
 
 const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) => {
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);

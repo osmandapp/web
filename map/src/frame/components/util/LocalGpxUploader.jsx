@@ -1,9 +1,10 @@
 import { useContext, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 
-import TracksManager from '../../../manager/TracksManager';
+import TracksManager from '../../../manager/track/TracksManager';
 import AppContext from '../../../context/AppContext';
 import { useMutator } from '../../../util/Utils';
+import { saveTrackToLocal } from '../../../manager/track/SaveTrackManager';
 
 /**
  * If you need to forward ref (for example, with <Toolip>),
@@ -19,7 +20,7 @@ export default function LocalGpxUploader({ children }) {
 
     useEffect(() => {
         for (const file in uploadedFiles) {
-            TracksManager.addTrack({
+            saveTrackToLocal({
                 ctx,
                 overwrite: false,
                 track: uploadedFiles[file].track,

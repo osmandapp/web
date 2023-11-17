@@ -1,0 +1,8 @@
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<g id="ic_action_folder_add_outlined">
+<g id="Union">
+<path d="M11.1716 8L9.17157 6L4 6V18H10V20H4C2.89543 20 2 19.1046 2 18V6C2 4.89543 2.89543 4 4 4H10L12 6H20C21.1046 6 22 6.89543 22 8V10H20V8H11.1716Z" />
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22 17C22 19.7614 19.7614 22 17 22C14.2386 22 12 19.7614 12 17C12 14.2386 14.2386 12 17 12C19.7614 12 22 14.2386 22 17ZM18 16V14H16V16H14V18H16V20H18V18H20V16H18Z"/>
+</g>
+</g>
+</svg>

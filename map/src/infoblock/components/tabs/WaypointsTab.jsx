@@ -5,7 +5,7 @@ import L from 'leaflet';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import { Cancel, ExpandLess, ExpandMore, KeyboardDoubleArrowDown, KeyboardDoubleArrowUp } from '@mui/icons-material';
 import PointManager from '../../../manager/PointManager';
-import TracksManager from '../../../manager/TracksManager';
+import TracksManager from '../../../manager/track/TracksManager';
 import wptTabStyle from '../../styles/WptTabStyle';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import { makeStyles } from '@material-ui/core/styles';

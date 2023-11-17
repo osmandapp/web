@@ -1,6 +1,6 @@
 import { apiGet, apiPost } from '../../../util/HttpApi';
 import Utils, { quickNaNfix } from '../../../util/Utils';
-import TracksManager from '../../../manager/TracksManager';
+import TracksManager from '../../../manager/track/TracksManager';
 import { defaultPointExtras } from '../../geoObject/convert/convertRouteToTrack';
 
 const PROFILE_LINE = TracksManager.PROFILE_LINE;

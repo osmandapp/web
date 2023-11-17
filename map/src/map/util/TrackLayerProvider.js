@@ -1,7 +1,7 @@
 import L from 'leaflet';
 import MarkerOptions from '../markers/MarkerOptions';
 import _ from 'lodash';
-import TracksManager, { isProtectedSegment } from '../../manager/TracksManager';
+import TracksManager, { isProtectedSegment } from '../../manager/track/TracksManager';
 import EditablePolyline from './EditablePolyline';
 
 export const TEMP_LAYER_FLAG = 'temp';

@@ -80,6 +80,7 @@ export default async function test() {
         await validateInfoBlockStrings(strings);
         await validateInfoBlockButtons(localTrackButtons);
         await clickBy(By.id('se-button-back'));
+        await clickBy(By.id('se-show-menu-planroute'));
         await actionLocalToCloud({ mask: name });
         await clickBy(By.id('se-cloud-track-' + name));
         await actionIdleWait({ idle: 3000 });

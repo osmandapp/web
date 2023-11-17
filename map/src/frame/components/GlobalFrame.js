@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Box } from '@mui/material';
+import { Box, Button, Dialog } from '@mui/material';
 import OsmAndMap from '../../map/components/OsmAndMap';
 import MainMenu from '../../menu/MainMenu';
 import { Outlet } from 'react-router-dom';
@@ -15,6 +15,10 @@ import {
 } from '../../manager/GlobalManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import GlobalAlert from './GlobalAlert';
+import DialogTitle from '@mui/material/DialogTitle';
+import dialogStyles from '../../dialogs/dialog.module.css';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
 
 const GlobalFrame = () => {
     const ctx = useContext(AppContext);
@@ -22,6 +26,7 @@ const GlobalFrame = () => {
     const [showInfoBlock, setShowInfoBlock] = useState(false);
     const [clearState, setClearState] = useState(false);
     const [openMainMenu, setOpenMainMenu] = useState(false);
+    const [openErrorDialog, setOpenErrorDialog] = useState(false);
     const [menuInfo, setMenuInfo] = useState(null);
     const [width] = useWindowSize();
 
@@ -38,6 +43,10 @@ const GlobalFrame = () => {
             setMenuInfo(null);
         }
     }, [ctx.infoBlockWidth]);
+
+    useEffect(() => {
+        setOpenErrorDialog(!!ctx.trackErrorMsg);
+    }, [ctx.trackErrorMsg]);
 
     return (
         <Box sx={{ display: 'flex' }}>
@@ -73,6 +82,15 @@ const GlobalFrame = () => {
                 setClearState={setClearState}
             />
             <Outlet />
+            <Dialog open={openErrorDialog} onClose={() => setOpenErrorDialog(false)}>
+                <DialogTitle className={dialogStyles.title}>{ctx.trackErrorMsg?.title}</DialogTitle>
+                <DialogContent className={dialogStyles.content}>{ctx.trackErrorMsg?.msg}</DialogContent>
+                <DialogActions>
+                    <Button className={dialogStyles.button} onClick={() => ctx.setTrackErrorMsg(null)}>
+                        Ok
+                    </Button>
+                </DialogActions>
+            </Dialog>
         </Box>
     );
 };

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useCookie from 'react-use-cookie';
 import Utils, { useMutator, seleniumUpdateActivity } from '../util/Utils';
-import TracksManager from '../manager/TracksManager';
+import TracksManager, { getGpxFiles } from '../manager/track/TracksManager';
 import _ from 'lodash';
 import FavoritesManager from '../manager/FavoritesManager';
 import PoiManager from '../manager/PoiManager';
@@ -47,7 +47,7 @@ async function loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, 
                         setListFiles(res);
                         setGpxLoading(false);
 
-                        addOpenedTracks(TracksManager.getTracks(res), gpxFiles, setGpxFiles).then();
+                        addOpenedTracks(getGpxFiles(res), gpxFiles, setGpxFiles).then();
                         addOpenedFavoriteGroups(TracksManager.getFavoriteGroups(res), setFavorites);
                     }
                 });
@@ -249,6 +249,7 @@ export const AppContextProvider = (props) => {
     const [trackProfileManager, setTrackProfileManager] = useState({});
     const [pointContextMenu, setPointContextMenu] = useState({});
     const [routingErrorMsg, setRoutingErrorMsg] = useState(null);
+    const [trackErrorMsg, setTrackErrorMsg] = useState(null);
     const [trackState, setTrackState] = useState({
         update: false, // push track to undo/redo
         // pastStates: [], // was used for logs
@@ -264,6 +265,8 @@ export const AppContextProvider = (props) => {
     const [selectedWpt, setSelectedWpt] = useState(null);
 
     const [routeTrackFile, setRouteTrackFile] = useState(null);
+
+    const [trackLoading, setTrackLoading] = useState([]);
 
     const [routeObject, setRouteObject] = useState(() => new geoObject());
     const [trackRouter, setTrackRouter] = useState(() => new geoRouter());
@@ -427,6 +430,10 @@ export const AppContextProvider = (props) => {
                 mutateFitBoundsPadding,
                 openTrackGroups,
                 setOpenTrackGroups,
+                trackErrorMsg,
+                setTrackErrorMsg,
+                trackLoading,
+                setTrackLoading,
             }}
         >
             {props.children}

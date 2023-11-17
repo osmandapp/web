@@ -5,7 +5,7 @@ import React, { useContext, useEffect, useState, useRef } from 'react';
 import SelectTrackProfile from '../SelectTrackProfile';
 import DialogActions from '@mui/material/DialogActions';
 import AppContext from '../../../../context/AppContext';
-import TracksManager from '../../../../manager/TracksManager';
+import TracksManager from '../../../../manager/track/TracksManager';
 import { Button, IconButton, ToggleButton, ToggleButtonGroup, Box } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { makeStyles } from '@material-ui/core/styles';

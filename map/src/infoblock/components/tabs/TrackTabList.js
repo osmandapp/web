@@ -5,7 +5,7 @@ import PointsTab from './PointsTab';
 import TurnsTab from './TurnsTab';
 // import SettingsTab from './SettingsTab';
 import WaypointsTab from './WaypointsTab';
-import { isEmptyTrack, hasSegmentTurns } from '../../../manager/TracksManager';
+import { isEmptyTrack, hasSegmentTurns } from '../../../manager/track/TracksManager';
 import { isLocalTrack, isCloudTrack, isRouteTrack } from '../../../context/AppContext';
 
 export default class TrackTabList {

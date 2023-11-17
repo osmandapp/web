@@ -1,6 +1,6 @@
 import { ClickAwayListener, Grid, IconButton, MenuItem, MenuList, Paper, Popper } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
-import TracksManager from '../../manager/TracksManager';
+import TracksManager from '../../manager/track/TracksManager';
 import AppContext from '../../context/AppContext';
 import { makeStyles } from '@material-ui/core/styles';
 import PointManager from '../../manager/PointManager';

@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 import AppContext, { isRouteTrack, OBJECT_TYPE_ROUTE_TRACK } from '../context/AppContext';
-import TracksManager, { prepareNavigationTrack, getApproximatePoints } from '../manager/TracksManager';
+import TracksManager, { prepareNavigationTrack, getApproximatePoints } from '../manager/track/TracksManager';
 
 export function RouteService() {
     const ctx = useContext(AppContext);

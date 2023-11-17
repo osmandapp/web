@@ -13,7 +13,7 @@ import {
 import React, { useContext, useState, useCallback } from 'react';
 import { Cancel, ViewHeadline } from '@mui/icons-material';
 import AppContext from '../../../context/AppContext';
-import TracksManager from '../../../manager/TracksManager';
+import TracksManager from '../../../manager/track/TracksManager';
 import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd';
 import PointManager from '../../../manager/PointManager';
 import contextMenuStyles from '../../styles/ContextMenuStyles';

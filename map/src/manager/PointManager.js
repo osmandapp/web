@@ -1,4 +1,4 @@
-import TracksManager, { isPointUnrouted } from './TracksManager';
+import TracksManager, { isPointUnrouted } from './track/TracksManager';
 import Utils from '../util/Utils';
 import TrackLayerProvider from '../map/util/TrackLayerProvider';
 import TracksRoutingCache from '../context/TracksRoutingCache';

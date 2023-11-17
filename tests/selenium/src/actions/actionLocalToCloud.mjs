@@ -9,7 +9,7 @@ import { enclose, waitBy, clickBy, enumerateIds } from '../lib.mjs';
  */
 export default async function test({ mask = '*' } = {}) {
     const regexp = mask.replaceAll('.', '\\.').replaceAll('*', '.*');
-
+    await clickBy(By.id('se-show-menu-planroute'));
     const locals = await enumerateIds('se-local-track-');
 
     for (let i = 0; i < locals.length; i++) {

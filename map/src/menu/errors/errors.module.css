@@ -46,6 +46,12 @@
     letter-spacing: 0.28px !important;
     text-transform: none !important;
 }
+.label {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-self: stretch !important;
+}
 .info {
     display: flex !important;
     padding: 24px 0px 16px 0px !important;
