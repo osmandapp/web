@@ -23,6 +23,13 @@ export default function Empty({ title, text, folder = null, menu = null }) {
         return false;
     }
 
+    function getText() {
+        if (menu !== OBJECT_TYPE_FAVORITE && ctx.accountInfo?.account === FREE_ACCOUNT) {
+            return 'OsmAnd Pro subscription is required to import or create tracks in OsmAnd Cloud.';
+        }
+        return text;
+    }
+
     return (
         <>
             {ctx.loginUser ? (
@@ -35,7 +42,7 @@ export default function Empty({ title, text, folder = null, menu = null }) {
                             {title}
                         </ListItemText>
                         <ListItemText disableTypography={true} className={styles.text}>
-                            {text}
+                            {getText()}
                         </ListItemText>
                     </Box>
                     {showImportBtn() && (
