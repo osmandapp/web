@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import FavoriteAllGroups from './FavoriteAllGroups';
 import FavoriteGroup from './FavoriteGroup';
 import Utils from '../../util/Utils';
@@ -148,6 +148,7 @@ export default function FavoritesMenu() {
                 <Empty
                     title={'You don’t have favorite files'}
                     text={'You can import or create favorite files using OsmAnd App.'}
+                    menu={OBJECT_TYPE_FAVORITE}
                 />
             )}
         </>
