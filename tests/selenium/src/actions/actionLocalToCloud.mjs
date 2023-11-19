@@ -31,8 +31,11 @@ export async function saveToCloud(name) {
 
     // se-menu-cloud-Tracks click is unstable
     // try to chain together inside enclose()
-    await enclose(async () => {
-        await clickBy(By.id('se-menu-cloud-Tracks'), { optional: true });
-        return await waitBy(By.id('se-cloud-track-' + name), { optional: true });
-    });
+    await enclose(
+        async () => {
+            await clickBy(By.id('se-menu-cloud-Tracks'), { optional: true });
+            return await waitBy(By.id('se-cloud-track-' + name), { optional: true });
+        },
+        { tag: 'saveToCloud' }
+    );
 }
