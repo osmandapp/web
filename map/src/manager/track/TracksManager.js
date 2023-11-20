@@ -187,7 +187,7 @@ function getFileName(currentFile) {
     return prepareName(file.name, file.local);
 }
 
-function prepareName(name, local = false) {
+export function prepareName(name, local = false) {
     const result = name.replace(/.gpx/, '');
     if (result.includes('/')) {
         const groups = result.split('/');

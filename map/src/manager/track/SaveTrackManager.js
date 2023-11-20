@@ -163,6 +163,23 @@ export function saveTrackToLocalStorage({ ctx, track }) {
     });
 }
 
+export async function renameTrack(oldName, folder, newName, ctx) {
+    const newFileName = folder + newName + '.gpx';
+    if (newFileName !== oldName) {
+        const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/rename-file`, {
+            params: {
+                oldName: oldName,
+                newName: newFileName,
+                type: 'GPX',
+            },
+        });
+        if (res && res?.data?.status === 'ok') {
+            refreshGlobalFiles(ctx, newFileName).then();
+            return true;
+        }
+    }
+}
+
 export async function saveEmptyTrack(folderName, ctx) {
     //create empty file
     const convertedData = new TextEncoder().encode('');

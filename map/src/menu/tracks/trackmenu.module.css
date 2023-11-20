@@ -62,11 +62,11 @@
     padding: 12px 16px !important;
     gap: 24px !important;
 }
-.groupAction {
+.action {
     padding: 10px 16px !important;
     gap: 20px !important;
 }
-.iconGroupActions {
+.iconAction {
     min-width: 24px !important;
     fill: var(--svg-icon-color) !important;
     &:hover {
@@ -75,6 +75,9 @@
     }
 }
 .groupName {
+    color: var(--text-primary) !important;
+}
+.actionName {
     color: var(--text-primary) !important;
 }
 .groupInfo {
@@ -104,7 +107,7 @@
     gap: 10px !important;
     margin-left: -10px !important;
 }
-.dividerSort {
+.dividerActions {
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;

@@ -13,17 +13,17 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownloadObf 
                 <Paper className={styles.actions}>
                     <MenuItem
                         disabled={group.realSize === 0}
-                        className={styles.groupAction}
+                        className={styles.action}
                         onClick={() => {
                             setNewCollection(group.files);
                             setOpenActions(false);
                         }}
                     >
-                        <ListItemIcon className={styles.iconGroupActions}>
+                        <ListItemIcon className={styles.iconAction}>
                             <TimeIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            <Typography variant="inherit" className={styles.groupName} noWrap>
+                            <Typography variant="inherit" className={styles.actionName} noWrap>
                                 Download as OBF Collection
                             </Typography>
                         </ListItemText>

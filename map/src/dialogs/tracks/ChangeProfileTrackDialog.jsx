@@ -2,18 +2,18 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import { Dialog } from '@material-ui/core';
 import React, { useContext, useEffect, useState, useRef } from 'react';
-import SelectTrackProfile from '../SelectTrackProfile';
+import SelectTrackProfile from '../../infoblock/components/track/SelectTrackProfile';
 import DialogActions from '@mui/material/DialogActions';
-import AppContext from '../../../../context/AppContext';
-import TracksManager from '../../../../manager/track/TracksManager';
+import AppContext from '../../context/AppContext';
+import TracksManager from '../../manager/track/TracksManager';
 import { Button, IconButton, ToggleButton, ToggleButtonGroup, Box } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { makeStyles } from '@material-ui/core/styles';
-import TrackLayerProvider from '../../../../map/util/TrackLayerProvider';
-import TracksRoutingCache from '../../../../context/TracksRoutingCache';
-import RouteProfileSettingsDialog from '../../../../dialogs/RouteProfileSettingsDialog';
+import TrackLayerProvider from '../../map/util/TrackLayerProvider';
+import TracksRoutingCache from '../../context/TracksRoutingCache';
+import RouteProfileSettingsDialog from '../RouteProfileSettingsDialog';
 import { Settings } from '@mui/icons-material';
-import { useWindowSize } from '../../../../util/hooks/useWindowSize';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
 
 const useStyles = makeStyles({
     dialog: {
