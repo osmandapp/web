@@ -55,6 +55,7 @@ ____________
 | [Offline Wikivoyage - Travel guides](https://osmand.net/docs/user/plan-route/travel-guides.md)| - | ✔ | ✔ |
 | [Offline and online navigation](https://osmand.net/docs/user/navigation/index.md)<br/>with turn-by-turn directions | ✔ | ✔ | ✔ |
 | [Offline instant search](https://osmand.net/docs/user/search/index.md) | ✔ | ✔ | ✔ |
+| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud.md#osmand-start) | ✔ | ✔ | - |
 | [Trip recording](https://osmand.net/docs/user/plugins/trip-recording.md) | ✔ | ✔ | ✔ |
 | [Export GPX tracks](https://osmand.net/docs/user/personal/tracks.md#export-track) | ✔ | ✔ | ✔ |
 | [Import GPX/KML tracks](https://osmand.net/docs/user/personal/tracks.md#import-track) | ✔ | ✔ | ✔ |
