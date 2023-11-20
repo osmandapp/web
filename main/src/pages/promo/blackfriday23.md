@@ -33,12 +33,14 @@ ____________
 
 ____________
 
+[test link](../../../docs/user/personal/maps.md)
+
 
 ||OsmAnd Free| 1.[OsmAnd+](@site/docs/user/purchases/android.md#osmand)(app) <br/> 2.[Maps+](@site/docs/user/purchases/android.md#maps) (in&#8209;app, subscription) | [OsmAnd Pro](@site/docs/user/purchases/android.md#osmand-pro)|
 | :------ | :------------- | :------------------ | :------------------ | 
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 | Ad-free access | ✔ | ✔ | ✔ |
-| [OsmAnd Cloud](@site/docs/user/personal/storage.md#backup-and-restore-for-osmand-pro) | ✔ | ✔ | ✔ |
+| [OsmAnd Cloud](@site/docs/user/personal/storage.md#backup-and-restore-for-osmand-pro) | -  | -  | ✔ |
 | [Cross-platform](@site/docs/user/personal/osmand-cloud.md#cross-platform) | - | - | ✔ |
 | [3D Relief](@site/docs/user/plugins/contour-lines.md#3d-relief) | - | - | ✔ |
 | [Hourly map updates](@site/docs/user/personal/maps.md#osmand-live)<br/> (1 hour delay) | - | - | ✔ |
