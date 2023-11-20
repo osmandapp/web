@@ -9,7 +9,7 @@ import { enclose, waitBy, clickBy, enumerateIds } from '../lib.mjs';
  */
 export default async function test({ mask = '*' } = {}) {
     const regexp = mask.replaceAll('.', '\\.').replaceAll('*', '.*');
-
+    await clickBy(By.id('se-show-menu-planroute'));
     const locals = await enumerateIds('se-local-track-');
 
     for (let i = 0; i < locals.length; i++) {
@@ -31,8 +31,11 @@ export async function saveToCloud(name) {
 
     // se-menu-cloud-Tracks click is unstable
     // try to chain together inside enclose()
-    await enclose(async () => {
-        await clickBy(By.id('se-menu-cloud-Tracks'), { optional: true });
-        return await waitBy(By.id('se-cloud-track-' + name), { optional: true });
-    });
+    await enclose(
+        async () => {
+            await clickBy(By.id('se-menu-cloud-Tracks'), { optional: true });
+            return await waitBy(By.id('se-cloud-track-' + name), { optional: true });
+        },
+        { tag: 'saveToCloud' }
+    );
 }

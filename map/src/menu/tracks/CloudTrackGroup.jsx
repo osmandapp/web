@@ -1,4 +1,4 @@
-import { IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
+import { CircularProgress, IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
@@ -13,6 +13,7 @@ export default function CloudTrackGroup({ index, group }) {
 
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const [openActions, setOpenActions] = useState(false);
+    const [processDownloadObf, setProcessDownloadObf] = useState(false);
     const anchorEl = useRef(null);
 
     useEffect(() => {
@@ -42,7 +43,7 @@ export default function CloudTrackGroup({ index, group }) {
                         {group.name}
                     </Typography>
                     <Typography variant="body2" className={styles.groupInfo} noWrap>
-                        {`${group.lastModifiedData.split(',')[0]}, tracks ${group.files.length}`}
+                        {`${group.lastModifiedData.split(',')[0]}, tracks ${group.realSize}`}
                     </Typography>
                 </ListItemText>
                 <IconButton
@@ -56,14 +57,26 @@ export default function CloudTrackGroup({ index, group }) {
                     }}
                     ref={anchorEl}
                 >
-                    {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
+                    {processDownloadObf ? (
+                        <CircularProgress size={24} />
+                    ) : hoverIconInfo ? (
+                        <MenuIconHover />
+                    ) : (
+                        <MenuIcon />
+                    )}
                 </IconButton>
             </MenuItem>
             <ActionsMenu
                 open={openActions}
                 setOpen={setOpenActions}
                 anchorEl={anchorEl}
-                actions={<GroupActions group={group} setOpenActions={setOpenActions} />}
+                actions={
+                    <GroupActions
+                        group={group}
+                        setOpenActions={setOpenActions}
+                        setProcessDownloadObf={setProcessDownloadObf}
+                    />
+                }
             />
         </>
     );

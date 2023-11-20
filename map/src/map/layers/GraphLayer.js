@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import L from 'leaflet';
 import AppContext from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
-import TracksManager from '../../manager/TracksManager';
+import TracksManager from '../../manager/track/TracksManager';
 import _ from 'lodash';
 
 export default function GraphLayer() {

@@ -4,20 +4,22 @@ import { toHHMMSS } from '../../util/Utils';
 import CloudTrackGroup from './CloudTrackGroup';
 import VisibleGroup from './VisibleGroup';
 import _ from 'lodash';
-import { AppBar, Box, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
-import { ReactComponent as ImportIcon } from '../../assets/icons/ic_action_folder_import_outlined.svg';
+import { Box } from '@mui/material';
 import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
-import styles from './trackmenu.module.css';
-import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
-import LocalGpxUploader from '../../frame/components/util/LocalGpxUploader';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import CloudTrackItem from './CloudTrackItem';
 import SortActions from './actions/SortActions';
-import { DEFAULT_GROUP_NAME } from '../../manager/TracksManager';
+import {
+    createTrackGroups,
+    DEFAULT_GROUP_NAME,
+    getGpxFiles,
+    updateLoadingTracks,
+} from '../../manager/track/TracksManager';
 import Empty from '../errors/Empty';
 import Loading from '../errors/Loading';
 import SortMenu from './actions/SortMenu';
+import TracksHeader from './actions/TracksHeader';
+import TrackLoading from './TrackLoading';
 
 export default function TracksMenu() {
     const ctx = useContext(AppContext);
@@ -28,6 +30,7 @@ export default function TracksMenu() {
     const [sortGroups, setSortGroups] = useState([]);
     const [selectedSort, setSelectedSort] = useState(null);
     const [sortIcon, setSortIcon] = useState(<TimeIcon />);
+    const [sortName, setSortName] = useState('Last modified');
     const anchorEl = useRef(null);
     const [, height] = useWindowSize();
     function visibleTracksOpen() {
@@ -60,108 +63,11 @@ export default function TracksMenu() {
         setVisibleTracks({ ...visibleTracks });
     }, [ctx.localTracks]);
 
-    function calculateLastModified(group) {
-        if (!group.files || group.files.length === 0) {
-            group.lastModifiedMs = null;
-            group.lastModifiedData = null;
-            return;
-        }
-
-        let minMs = Infinity;
-        let minData = null;
-        for (const file of group.files) {
-            if (file.updatetimems < minMs) {
-                minMs = file.updatetimems;
-                minData = file.updatetime;
-            }
-        }
-        group.lastModifiedMs = minMs;
-        group.lastModifiedData = minData;
-    }
-
-    function addFilesAndCalculateLastModified(groups) {
-        groups.forEach((group) => {
-            group.files = group.files || [];
-            group.groupFiles = group.groupFiles || [];
-            group.subfolders = group.subfolders || [];
-
-            if (group.subfolders.length > 0) {
-                addFilesAndCalculateLastModified(group.subfolders);
-
-                // remove files from group.groupFiles if they belong to subfolders
-                group.groupFiles = group.groupFiles.filter((file) => {
-                    return !group.subfolders.some((subfolder) =>
-                        subfolder.files.some((subfile) => subfile.name === file.name)
-                    );
-                });
-
-                group.files.push(...group.subfolders.reduce((acc, subfolder) => acc.concat(subfolder.files), []));
-            }
-            group.files.push(...group.groupFiles);
-            calculateLastModified(group);
-        });
-    }
-
-    function createTrackGroups(files) {
-        const trackGroups = [];
-        const tracks = [];
-
-        files.forEach((file) => {
-            const parts = file.name.split('/');
-            const isFile = parts.length === 1;
-
-            if (isFile) {
-                tracks.push(file);
-            } else {
-                let currentGroups = trackGroups;
-                for (let i = 0; i < parts.length - 1; i++) {
-                    const folder = parts[i];
-
-                    // find existing group by name or create a new one
-                    let existingGroup = currentGroups.find((group) => group.name === folder);
-                    if (!existingGroup) {
-                        existingGroup = {
-                            name: folder,
-                            subfolders: [],
-                            groupFiles: [],
-                            lastModifiedMs: null,
-                            lastModifiedData: null,
-                        };
-                        currentGroups.push(existingGroup);
-                    }
-
-                    currentGroups = existingGroup.subfolders;
-                    existingGroup.groupFiles.push(file);
-                }
-            }
-        });
-
-        if (tracks.length > 0) {
-            trackGroups.push({
-                name: DEFAULT_GROUP_NAME,
-                files: tracks,
-                lastModifiedMs: null,
-                lastModifiedData: null,
-            });
-        }
-
-        addFilesAndCalculateLastModified(trackGroups);
-
-        return trackGroups;
-    }
-
     // get gpx files and create groups
     useEffect(() => {
         if (!_.isEmpty(ctx.listFiles)) {
             //get gpx files
-            let files = (!ctx.listFiles || !ctx.listFiles.uniqueFiles ? [] : ctx.listFiles.uniqueFiles).filter(
-                (item) => {
-                    return (
-                        (item.type === 'gpx' || item.type === 'GPX') &&
-                        (item.name.slice(-4) === '.gpx' || item.name.slice(-4) === '.GPX')
-                    );
-                }
-            );
+            let files = getGpxFiles(ctx.listFiles);
             //get groups
             let trackGroups = createTrackGroups(files);
 
@@ -255,65 +161,33 @@ export default function TracksMenu() {
         }));
     }, [visibleTracks, ctx.selectedGpxFile]);
 
-    function closeTrackMenu() {
-        ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
-    }
-
     const defaultGroupItems = useMemo(() => {
         if (defaultGroup) {
             const items = [];
-            (sortFiles.length > 0 ? sortFiles : defaultGroup.files).map((file) => {
+            (sortFiles.length > 0 ? sortFiles : defaultGroup.groupFiles).map((file) => {
                 items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} />);
             });
             return items;
         }
     }, [defaultGroup?.files, defaultGroup?.files.length, sortFiles]);
 
+    useEffect(() => {
+        if (defaultGroup) {
+            updateLoadingTracks(ctx, defaultGroup.groupFiles);
+        }
+    }, [defaultGroup?.groupFiles]);
+
     return (
         <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
-            <AppBar position="static" className={styles.appbar}>
-                <Toolbar className={styles.toolbar}>
-                    <IconButton
-                        variant="contained"
-                        type="button"
-                        className={styles.appBarIcon}
-                        onClick={closeTrackMenu}
-                    >
-                        <CloseIcon />
-                    </IconButton>
-                    <Typography component="div" className={styles.title}>
-                        {DEFAULT_GROUP_NAME}
-                    </Typography>
-                    <Tooltip key={'sort_tracks'} title="Sort tracks" arrow placement="bottom-end">
-                        <span>
-                            <IconButton
-                                variant="contained"
-                                type="button"
-                                className={styles.appBarIcon}
-                                onClick={() => setOpenSort(true)}
-                                ref={anchorEl}
-                                disabled={!defaultGroup || defaultGroup.files?.length === 0}
-                            >
-                                {sortIcon}
-                            </IconButton>
-                        </span>
-                    </Tooltip>
-                    <Tooltip key={'import_track'} title="Import track" arrow placement="bottom-end">
-                        <span>
-                            <LocalGpxUploader>
-                                <IconButton
-                                    component="span"
-                                    variant="contained"
-                                    type="button"
-                                    className={styles.appBarIcon}
-                                >
-                                    <ImportIcon />
-                                </IconButton>
-                            </LocalGpxUploader>
-                        </span>
-                    </Tooltip>
-                </Toolbar>
-            </AppBar>
+            {defaultGroup && (
+                <TracksHeader
+                    trackGroup={defaultGroup}
+                    sortIcon={sortIcon}
+                    sortName={sortName}
+                    setOpenSort={setOpenSort}
+                    anchorEl={anchorEl}
+                />
+            )}
             {ctx.gpxLoading ? (
                 <Loading />
             ) : (
@@ -337,12 +211,17 @@ export default function TracksMenu() {
                                     .map((group, index) => {
                                         return <CloudTrackGroup key={group.name + index} index={index} group={group} />;
                                     })}
+                            {ctx.trackLoading?.length > 0 &&
+                                ctx.trackLoading.map((lt) => {
+                                    return <TrackLoading key={lt} name={lt} />;
+                                })}
                             {defaultGroupItems}
                         </Box>
                     ) : (
                         <Empty
                             title={'You don’t have track files'}
-                            text={'You can import, create track files using OsmAnd App.'}
+                            text={'You can import, create track files using OsmAnd.'}
+                            folder={DEFAULT_GROUP_NAME}
                         />
                     )}
                 </>
@@ -361,6 +240,7 @@ export default function TracksMenu() {
                         selectedSort={selectedSort}
                         setSelectedSort={setSelectedSort}
                         setSortIcon={setSortIcon}
+                        setSortName={setSortName}
                     />
                 }
             />

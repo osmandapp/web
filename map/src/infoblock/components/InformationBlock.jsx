@@ -13,7 +13,7 @@ import WeatherTabList from './tabs/WeatherTabList';
 import FavoritesTabList from './tabs/FavoritesTabList';
 import _ from 'lodash';
 import PoiTabList from './tabs/PoiTabList';
-import { hasSegmentTurns } from '../../manager/TracksManager';
+import { hasSegmentTurns } from '../../manager/track/TracksManager';
 import { ArrowBack } from '@mui/icons-material';
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 

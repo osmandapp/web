@@ -4,7 +4,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import { Button } from '@mui/material';
 import AppContext, { isCloudTrack, isLocalTrack } from '../../../../context/AppContext';
-import TracksManager from '../../../../manager/TracksManager';
+import TracksManager from '../../../../manager/track/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContentText from '@mui/material/DialogContentText';
 import { apiPost } from '../../../../util/HttpApi';
@@ -99,6 +99,7 @@ export default function DeleteTrackDialog({
                 const fileIndexInGroupFiles = group.groupFiles.findIndex((file) => file.name === fileWithoutGroup);
                 if (fileIndexInGroupFiles !== -1) {
                     group.groupFiles.splice(fileIndexInGroupFiles, 1);
+                    group.realSize--;
                 }
                 const fileIndexInFiles = group.files.findIndex((file) => file.name === fileWithoutGroup);
                 if (fileIndexInFiles !== -1) {
@@ -115,6 +116,7 @@ export default function DeleteTrackDialog({
             const fileIndexInGroupFiles = lastGroup.groupFiles.findIndex((file) => file.name === trackName);
             if (fileIndexInGroupFiles !== -1) {
                 lastGroup.groupFiles.splice(fileIndexInGroupFiles, 1);
+                lastGroup.realSize--;
             }
             const fileIndexInFiles = lastGroup.files.findIndex((file) => file.name === trackName);
             if (fileIndexInFiles !== -1) {

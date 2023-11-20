@@ -2,7 +2,7 @@ import { styled } from '@mui/material/styles';
 import { useContext, useState, useRef, useMemo } from 'react';
 import { Box, Grid, IconButton, Typography, MenuItem, Switch } from '@mui/material';
 import AppContext, { isRouteTrack } from '../../../context/AppContext';
-import { hasSegmentTurns } from '../../../manager/TracksManager';
+import { hasSegmentTurns } from '../../../manager/track/TracksManager';
 import { formatMeters } from '../../../util/Utils';
 
 import Straight from '@mui/icons-material/StraightOutlined';

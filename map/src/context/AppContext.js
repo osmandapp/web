@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useCookie from 'react-use-cookie';
 import Utils, { useMutator, seleniumUpdateActivity } from '../util/Utils';
-import TracksManager from '../manager/TracksManager';
+import TracksManager, { getGpxFiles } from '../manager/track/TracksManager';
 import _ from 'lodash';
 import FavoritesManager from '../manager/FavoritesManager';
 import PoiManager from '../manager/PoiManager';
@@ -9,6 +9,7 @@ import { apiGet } from '../util/HttpApi';
 import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import { geoObject } from '../store/geoObject/geoObject.js';
 import WeatherManager from '../manager/WeatherManager';
+import { getAccountInfo } from '../manager/LoginManager';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track';
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track';
@@ -47,7 +48,7 @@ async function loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, 
                         setListFiles(res);
                         setGpxLoading(false);
 
-                        addOpenedTracks(TracksManager.getTracks(res), gpxFiles, setGpxFiles).then();
+                        addOpenedTracks(getGpxFiles(res), gpxFiles, setGpxFiles).then();
                         addOpenedFavoriteGroups(TracksManager.getFavoriteGroups(res), setFavorites);
                     }
                 });
@@ -153,11 +154,14 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles) {
     });
 }
 
-async function checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCookie) {
+async function checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCookie, setAccountInfo) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/info`, {
         method: 'GET',
     });
-    if (response.ok) {
+    if (response.data) {
+        if (loginUser !== 'INIT') {
+            await getAccountInfo(setAccountInfo);
+        }
         const user = await response.json();
         let newUser = user?.username;
         if (loginUser !== newUser) {
@@ -206,6 +210,7 @@ export const AppContextProvider = (props) => {
     const [emailCookie, setEmailCookie] = useCookie('email', '');
     // server state of login
     const [loginUser, setLoginUser] = useState('INIT');
+    const [accountInfo, setAccountInfo] = useState(null);
     const [wantDeleteAcc, setWantDeleteAcc] = useState(false);
     const [listFiles, setListFiles] = useState({});
     const [gpxFiles, mutateGpxFiles, setGpxFiles] = useMutator({});
@@ -249,6 +254,7 @@ export const AppContextProvider = (props) => {
     const [trackProfileManager, setTrackProfileManager] = useState({});
     const [pointContextMenu, setPointContextMenu] = useState({});
     const [routingErrorMsg, setRoutingErrorMsg] = useState(null);
+    const [trackErrorMsg, setTrackErrorMsg] = useState(null);
     const [trackState, setTrackState] = useState({
         update: false, // push track to undo/redo
         // pastStates: [], // was used for logs
@@ -264,6 +270,8 @@ export const AppContextProvider = (props) => {
     const [selectedWpt, setSelectedWpt] = useState(null);
 
     const [routeTrackFile, setRouteTrackFile] = useState(null);
+
+    const [trackLoading, setTrackLoading] = useState([]);
 
     const [routeObject, setRouteObject] = useState(() => new geoObject());
     const [trackRouter, setTrackRouter] = useState(() => new geoRouter());
@@ -317,7 +325,7 @@ export const AppContextProvider = (props) => {
     }, []);
 
     useEffect(() => {
-        checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCookie);
+        checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCookie, setAccountInfo);
     }, [loginUser]);
 
     useEffect(() => {
@@ -427,6 +435,12 @@ export const AppContextProvider = (props) => {
                 mutateFitBoundsPadding,
                 openTrackGroups,
                 setOpenTrackGroups,
+                trackErrorMsg,
+                setTrackErrorMsg,
+                trackLoading,
+                setTrackLoading,
+                accountInfo,
+                setAccountInfo,
             }}
         >
             {props.children}

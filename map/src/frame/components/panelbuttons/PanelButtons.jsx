@@ -13,11 +13,12 @@ import SaveTrackDialog from '../../../infoblock/components/track/dialogs/SaveTra
 import DeleteTrackDialog from '../../../infoblock/components/track/dialogs/DeleteTrackDialog';
 import DeleteFavoriteDialog from '../../../infoblock/components/favorite/DeleteFavoriteDialog';
 import _ from 'lodash';
-import TracksManager, { isEmptyTrack } from '../../../manager/TracksManager';
+import TracksManager, { isEmptyTrack } from '../../../manager/track/TracksManager';
 import useUndoRedo from '../../../infoblock/useUndoRedo';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import { downloadGpx } from '../../../infoblock/components/tabs/GeneralInfoTab';
 import RouteIcon from '@mui/icons-material/Route';
+import { FREE_ACCOUNT } from '../../../manager/LoginManager';
 
 const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clearState, bsize }) => {
     const ctx = useContext(AppContext);
@@ -169,25 +170,27 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
                                 </IconButton>
                             </Tooltip>
                         )}
-                        {ctx.loginUser && (isLocalTrack(ctx) || isRouteTrack(ctx)) && (
-                            <Tooltip title="Save to cloud" arrow placement={tooltipOrientation}>
-                                <span style={styleSpan}>
-                                    <IconButton
-                                        id="se-panel-button-save-to-cloud"
-                                        variant="contained"
-                                        type="button"
-                                        disabled={isEmptyTrack(ctx.selectedGpxFile)}
-                                        onClick={() => {
-                                            ctx.setUpdateInfoBlock(true);
-                                            ctx.selectedGpxFile.save = true;
-                                            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-                                        }}
-                                    >
-                                        <CloudUpload fontSize="small" />
-                                    </IconButton>
-                                </span>
-                            </Tooltip>
-                        )}
+                        {ctx.loginUser &&
+                            ctx.accountInfo?.account !== FREE_ACCOUNT &&
+                            (isLocalTrack(ctx) || isRouteTrack(ctx)) && (
+                                <Tooltip title="Save to cloud" arrow placement={tooltipOrientation}>
+                                    <span style={styleSpan}>
+                                        <IconButton
+                                            id="se-panel-button-save-to-cloud"
+                                            variant="contained"
+                                            type="button"
+                                            disabled={isEmptyTrack(ctx.selectedGpxFile)}
+                                            onClick={() => {
+                                                ctx.setUpdateInfoBlock(true);
+                                                ctx.selectedGpxFile.save = true;
+                                                ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+                                            }}
+                                        >
+                                            <CloudUpload fontSize="small" />
+                                        </IconButton>
+                                    </span>
+                                </Tooltip>
+                            )}
                         {isLocalTrack(ctx) && (
                             <Tooltip title="Undo" arrow placement={tooltipOrientation}>
                                 <span style={styleSpan}>

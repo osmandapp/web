@@ -10,7 +10,7 @@ import {
     Radio,
     RadioGroup,
 } from '@mui/material';
-import { getGpxTime } from '../../../manager/TracksManager';
+import { getGpxTime } from '../../../manager/track/TracksManager';
 import React, { forwardRef, useEffect, useState } from 'react';
 import { ReactComponent as AscendingIcon } from '../../../assets/icons/ic_action_sort_by_name_ascending.svg';
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_time.svg';
@@ -120,7 +120,20 @@ const defaultMethod = () => {
 };
 
 const SortActions = forwardRef(
-    ({ files, setSortFiles, groups, setSortGroups, setOpenSort, selectedSort, setSelectedSort, setSortIcon }, ref) => {
+    (
+        {
+            files,
+            setSortFiles,
+            groups,
+            setSortGroups,
+            setOpenSort,
+            selectedSort,
+            setSelectedSort,
+            setSortIcon,
+            setSortName,
+        },
+        ref
+    ) => {
         const [currentMethod, setCurrentMethod] = useState(selectedSort ? selectedSort : defaultMethod);
 
         function sort(method) {
@@ -140,6 +153,7 @@ const SortActions = forwardRef(
             setOpenSort(false);
             setSelectedSort(method);
             setSortIcon(allMethods[method].icon);
+            setSortName(allMethods[method].name);
             setCurrentMethod(method);
         };
 

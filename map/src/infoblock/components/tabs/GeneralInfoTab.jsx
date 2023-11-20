@@ -5,10 +5,10 @@ import { Download } from '@mui/icons-material';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import DeleteTrackDialog from '../track/dialogs/DeleteTrackDialog';
 import GeneralInfo from '../track/GeneralInfo';
-import { hasSegments, isEmptyTrack } from '../../../manager/TracksManager';
+import { hasSegments, isEmptyTrack } from '../../../manager/track/TracksManager';
 import { Checkbox, FormControlLabel } from '@mui/material/';
 import { makeStyles } from '@material-ui/core/styles';
-import TracksManager from '../../../manager/TracksManager';
+import TracksManager from '../../../manager/track/TracksManager';
 import GpxGraphProvider from '../graph/GpxGraphProvider';
 
 const useStyles = makeStyles({

@@ -3,7 +3,7 @@ import AppContext, { isLocalTrack, OBJECT_TYPE_LOCAL_TRACK } from '../../context
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import TrackLayerProvider, { TEMP_LAYER_FLAG, redrawWptsOnLayer } from '../util/TrackLayerProvider';
-import TracksManager, { isEmptyTrack, fitBoundsOptions } from '../../manager/TracksManager';
+import TracksManager, { isEmptyTrack, fitBoundsOptions } from '../../manager/track/TracksManager';
 import _ from 'lodash';
 import EditablePolyline from '../util/EditablePolyline';
 import EditableMarker from '../util/EditableMarker';
@@ -18,6 +18,7 @@ import TracksRoutingCache, {
     debouncer,
 } from '../../context/TracksRoutingCache';
 import WptMapDialog from '../../dialogs/WptMapDialog';
+import { saveTrackToLocalStorage } from '../../manager/track/SaveTrackManager';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
@@ -299,7 +300,7 @@ export default function LocalClientTrackLayer() {
                     ctx.localTracks[ind].selected = true;
                 }
             }
-            TracksManager.saveTracks({ ctx, track: file }); // ctx.localTracks might be modified there
+            saveTrackToLocalStorage({ ctx, track: file }); // ctx.localTracks might be modified there
             ctx.setLocalTracks([...ctx.localTracks]); // save our mutations which were made before
 
             if (ctx.createTrack.clear) {
@@ -359,7 +360,7 @@ export default function LocalClientTrackLayer() {
     function saveLocal() {
         if (ctx.localTracks.length > 0) {
             // localTracks exist: do update/append into localStorage
-            TracksManager.saveTracks({ ctx, track: ctx.selectedGpxFile });
+            saveTrackToLocalStorage({ ctx, track: ctx.selectedGpxFile });
         } else {
             // localTracks empty: add gpx as 1st track (points and/or wpts are included)
             createLocalTrack(ctxTrack, ctxTrack.points, ctxTrack.wpts);

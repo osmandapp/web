@@ -6,7 +6,7 @@ import TracksManager, {
     equalsPoints,
     getAllPoints,
     getTrackPoints,
-} from '../../../manager/TracksManager';
+} from '../../../manager/track/TracksManager';
 import _ from 'lodash';
 import { Checkbox, Divider, FormControlLabel } from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';

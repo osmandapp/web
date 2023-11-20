@@ -4,7 +4,7 @@ import React, { useContext, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import LocalTrackItem from './LocalTrackItem';
 import drawerStyles from '../../frame/styles/DrawerStyles';
-import TracksManager, { clearAllLocalTracks } from '../../manager/TracksManager';
+import TracksManager, { clearAllLocalTracks } from '../../manager/track/TracksManager';
 import PopperMenu from './PopperMenu';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 import LocalGpxUploader from '../../frame/components/util/LocalGpxUploader';

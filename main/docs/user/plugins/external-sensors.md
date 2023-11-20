@@ -15,7 +15,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-<InfoAndroidOnly/>
+<InfoIncompleteArticle/>
 
 ## Overview
 
@@ -37,11 +37,29 @@ To start using data from external sensors, you need to make the following settin
 
 ## Pair new sensor
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_1.png)  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_2.png)  
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+:::note
+Screens will be added soon.
+:::
+
+</TabItem>
+
+</Tabs>
+ 
 
 Use the *Pair new sensor* button to connect new sensors.  
 
-- Not all devices support ANT+. You can check if your device works with ANT+ by going [here](https://www.thisisant.com/consumer/ant-101/ant-in-phones).  
+- Not all devices support ANT+ (Android only). You can check if your device works with ANT+ by going [here](https://www.thisisant.com/consumer/ant-101/ant-in-phones).  
 - You need Bluetooth turned on to search for sensors. If your Bluetooth is turned off, the app will prompt you to *Open settings* on your device.
 - To add new sensors, tap the required one in the list of found sensors.
 - A pop-up notification is displayed when a paired sensor is connected or disconnected.  

@@ -157,7 +157,7 @@ Every month you will be able to update OsmAnd Maps on Updates screen. Here it's 
 
 <TabItem value="android" label="Android">
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_updates"/>_
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_updates"/>*
 
 ![Maps menu Update maps Android](@site/static/img/personal/maps/maps_menu_update_android.png) 
 
@@ -165,7 +165,7 @@ _<Translate android="true" ids="android_button_seq"/> <Translate android="true" 
 
 <TabItem value="ios" label="iOS">
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,res_mapsres,res_updates"/>_
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,res_mapsres,res_updates"/>*
 
 ![Maps menu Update maps iOS](@site/static/img/personal/maps/maps_menu_update_ios.png)
 

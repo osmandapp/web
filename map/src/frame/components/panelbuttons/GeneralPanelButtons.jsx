@@ -1,6 +1,6 @@
 import { ButtonGroup, IconButton, Paper, SvgIcon, Tooltip } from '@mui/material';
-import TracksManager from '../../../manager/TracksManager';
-import { Insights, Info, Upload } from '@mui/icons-material';
+import TracksManager from '../../../manager/track/TracksManager';
+import { Insights, Info } from '@mui/icons-material';
 import React, { useContext, useState } from 'react';
 import AppContext from '../../../context/AppContext';
 import PoiTypesDialog from '../poi/PoiTypesDialog';
@@ -9,7 +9,6 @@ import ChangeProfileTrackDialog from '../../../infoblock/components/track/dialog
 import PointContextMenu from '../../../infoblock/components/PointContextMenu';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
-import LocalGpxUploader from '../util/LocalGpxUploader';
 import styles from '../../../map/components/map.module.css';
 import { ReactComponent as ConfigureMapIcon } from '../../../assets/icons/ic_map_configure_map.svg';
 import SearchInfo from '../search/SearchInfo';
@@ -136,19 +135,6 @@ export default function GeneralPanelButtons({
                                 >
                                     <Insights fontSize="small" />
                                 </IconButton>
-                            </Tooltip>
-                            <Tooltip title="Import track" arrow placement={tooltipOrientation}>
-                                <span>
-                                    <LocalGpxUploader>
-                                        <IconButton
-                                            sx={{ ml: '2px', mt: orientation === 'vertical' ? 0 : '3px' }}
-                                            variant="contained"
-                                            component="span"
-                                        >
-                                            <Upload fontSize="small" />
-                                        </IconButton>
-                                    </LocalGpxUploader>
-                                </span>
                             </Tooltip>
                             <Tooltip title="POI" arrow placement={tooltipOrientation}>
                                 <IconButton

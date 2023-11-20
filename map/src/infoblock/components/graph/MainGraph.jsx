@@ -13,7 +13,7 @@ import {
     STEEPNESS,
     UNDEFINED_DATA,
 } from '../../../manager/GraphManager';
-import TracksManager from '../../../manager/TracksManager';
+import TracksManager from '../../../manager/track/TracksManager';
 import AppContext from '../../../context/AppContext';
 import {
     BarElement,
@@ -33,6 +33,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import annotationsPlugin from 'chartjs-plugin-annotation';
 import { getRelativePosition } from 'chart.js/helpers';
+import { seleniumUpdateActivity } from '../../../util/Utils';
 
 const useStyles = makeStyles({
     slider: {
@@ -280,6 +281,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
             spanGaps: true,
             animation: {
                 duration: 400,
+                onComplete: () => seleniumUpdateActivity(),
             },
             interaction: {
                 intersect: false,

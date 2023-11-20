@@ -4,10 +4,11 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import { Alert, Autocomplete, Button, createFilterOptions, LinearProgress, TextField } from '@mui/material';
 import AppContext, { isRouteTrack, OBJECT_TYPE_CLOUD_TRACK } from '../../../../context/AppContext';
-import TracksManager from '../../../../manager/TracksManager';
+import TracksManager, { isTrackExists, validName } from '../../../../manager/track/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContentText from '@mui/material/DialogContentText';
 import { prepareFileName } from '../../../../util/Utils';
+import { saveTrackToCloud } from '../../../../manager/track/SaveTrackManager';
 
 export default function SaveTrackDialog() {
     const ctx = useContext(AppContext);
@@ -80,8 +81,8 @@ export default function SaveTrackDialog() {
         }
         if (validName(preparedName)) {
             setProcess(true);
-            if (!hasExistTrack(preparedName, folder)) {
-                const uploaded = !!(await TracksManager.saveTrack(
+            if (!isTrackExists(preparedName, folder, ctx.tracksGroups)) {
+                const uploaded = !!(await saveTrackToCloud(
                     ctx,
                     getFolderName(folder),
                     preparedName,
@@ -103,7 +104,7 @@ export default function SaveTrackDialog() {
         }
         if (validName(preparedName)) {
             setProcess(true);
-            const uploaded = !!(await TracksManager.saveTrack(
+            const uploaded = !!(await saveTrackToCloud(
                 ctx,
                 getFolderName(folder),
                 preparedName,
@@ -113,29 +114,6 @@ export default function SaveTrackDialog() {
         } else {
             setError(true);
         }
-    }
-
-    function validName(name) {
-        return name !== '' && name.trim().length > 0;
-    }
-
-    function hasExistTrack(name, folder) {
-        const folderName = folder.title ? folder.title : folder;
-        const foundFolder = findFolder(folderName, ctx.tracksGroups);
-        return foundFolder ? foundFolder.files.find((f) => TracksManager.prepareName(f.name) === name) : false;
-    }
-
-    function findFolder(folderName, groups) {
-        for (const group of groups) {
-            if (group.name === folderName) {
-                return group;
-            } else if (group.subfolders) {
-                if (findFolder(folderName, group.subfolders)) {
-                    return group;
-                }
-            }
-        }
-        return null;
     }
 
     useEffect(() => {
