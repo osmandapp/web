@@ -33,7 +33,6 @@ ____________
 
 ____________
 
-[test](../../../docs/user/)
 
 ||OsmAnd Free| 1.[OsmAnd+](../../../docs/user/purchases/android.md#osmand)(app) <br/> 2.[Maps+](../../../docs/user/purchases/android.md#maps) (in&#8209;app, subscription) | [OsmAnd Pro](../../../docs/user/purchases/android.md#osmand-pro)|
 | :------ | :------------- | :------------------ | :------------------ | 
