@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Bicycle routing take into account factors such as the availability of bike paths, trails, and roads that are safe and legal for bicyclists. OsmAnd always uses elevation data when calculating the estimated time of arrival (time to cover the distance) according to [Naismith's rule](https://en.wikipedia.org/wiki/Naismith%27s_rule#Scarf's_equivalence_between_distance_and_climb). By default the fastest route is provided.  
 Bicycle routing can also be useful for [mountain biking](#mtb-routing-settings).  
 
-You can configure *Bicycle routing* in the [Route parameters section](../../navigation/guidance/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings.
+You can configure *Bicycle routing* in the [Route parameters section](../guidance/navigation-settings.md/#route-parameters) of the Navigation settings.
 
 ## Route parameters - Bicycle
 

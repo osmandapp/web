@@ -17,7 +17,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Pedestrian routing refers to the process of finding the best route for a pedestrian to travel from one location to another, taking into account factors such as pedestrian-only areas, sidewalks, crosswalks, and pedestrian-friendly intersections. It may also consider other factors such as *stairs*, which may be useful for wheelchair accessibility. OsmAnd always uses elevation data when calculating the estimated time of arrival (time to cover the distance) according to [Naismith's rule](https://en.wikipedia.org/wiki/Naismith%27s_rule#Scarf's_equivalence_between_distance_and_climb).
 
-To configure *Pedestrian routing* go to the [Route parameters section](../guidance/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings.
+To configure *Pedestrian routing* go to the [Route parameters section](../guidance/navigation-settings.md/#route-parameters) of the Navigation settings.
   
 ### Route parameters - Walking
 
