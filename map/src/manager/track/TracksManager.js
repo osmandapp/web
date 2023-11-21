@@ -576,9 +576,11 @@ export function validName(name) {
     return name !== '' && name.trim().length > 0;
 }
 
-export function isTrackExists(name, folder, tracks) {
-    const folderName = folder.title ? folder.title : folder;
-    const foundFolder = findGroupByName(tracks, folderName);
+export function isTrackExists(name, folder, folderName, tracks) {
+    const foundFolder = findGroupByName(
+        tracks,
+        folderName !== null ? folderName : folder?.title ? folder?.title : folder
+    );
     return foundFolder ? foundFolder.groupFiles.some((f) => TracksManager.prepareName(f.name) === name) : false;
 }
 

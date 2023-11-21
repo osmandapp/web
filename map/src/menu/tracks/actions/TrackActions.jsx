@@ -1,16 +1,21 @@
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef, useContext, useState } from 'react';
 import { Box, Divider, ListItemIcon, ListItemText, MenuItem, Paper, Typography } from '@mui/material';
 import styles from '../trackmenu.module.css';
 import { ReactComponent as ShowOnMapIcon } from '../../../assets/icons/ic_show_on_map_outlined.svg';
 import { ReactComponent as DownloadIcon } from '../../../assets/icons/ic_action_gsave_dark.svg';
 import { ReactComponent as DeleteIcon } from '../../../assets/icons/ic_action_delete_outlined.svg';
 import { ReactComponent as RenameIcon } from '../../../assets/icons/ic_action_edit_outlined.svg';
+import { ReactComponent as DuplicateIcon } from '../../../assets/icons/ic_action_copy.svg';
 import DeleteTrackDialog from '../../../dialogs/tracks/DeleteTrackDialog';
 import Utils from '../../../util/Utils';
 import TracksManager from '../../../manager/track/TracksManager';
 import RenameTrackDialog from '../../../dialogs/tracks/RenameTrackDialog';
+import AppContext from '../../../context/AppContext';
+import { duplicateTrack } from '../../../manager/track/SaveTrackManager';
 
 const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) => {
+    const ctx = useContext(AppContext);
+
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const [openRenameDialog, setOpenRenameDialog] = useState(false);
     const downloadGpx = async () => {
@@ -31,6 +36,15 @@ const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) =
             url.click();
         }
     };
+
+    async function createDuplicateTrack() {
+        const parts = track.name.split('/');
+        const newName = parts.pop();
+        await duplicateTrack(track.name, parts.join('/'), TracksManager.prepareName(newName), ctx).then();
+        if (setOpenActions) {
+            setOpenActions(false);
+        }
+    }
 
     return (
         <>
@@ -60,6 +74,17 @@ const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) =
                         <ListItemText>
                             <Typography variant="inherit" className={styles.actionName} noWrap>
                                 Rename
+                            </Typography>
+                        </ListItemText>
+                    </MenuItem>
+                    <Divider className={styles.dividerActions} />
+                    <MenuItem className={styles.action} onClick={() => createDuplicateTrack()}>
+                        <ListItemIcon className={styles.iconAction}>
+                            <DuplicateIcon />
+                        </ListItemIcon>
+                        <ListItemText>
+                            <Typography variant="inherit" className={styles.actionName} noWrap>
+                                Duplicate
                             </Typography>
                         </ListItemText>
                     </MenuItem>

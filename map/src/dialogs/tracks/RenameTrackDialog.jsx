@@ -15,7 +15,7 @@ export default function RenameTrackDialog({ setOpenDialog, track, setOpenActions
     const [trackNameError, setTrackNameError] = useState('');
     const [trackName, setTrackName] = useState(prepareName(track.name));
 
-    const group = getTrackGroupByName(track.name);
+    const group = getTrackGroupByTrackName(track.name);
 
     async function rename() {
         let folder = group.fullName === DEFAULT_GROUP_NAME ? '' : group.fullName + '/';
@@ -39,7 +39,7 @@ export default function RenameTrackDialog({ setOpenDialog, track, setOpenActions
         return group.groupFiles.some((f) => prepareName(f.name) === name);
     }
 
-    function getTrackGroupByName(name) {
+    function getTrackGroupByTrackName(name) {
         const parts = name.split('/');
         if (parts.length > 0) {
             const pathToGroup = parts.slice(0, -1).join('/');

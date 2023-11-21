@@ -111,13 +111,13 @@ export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file,
     return false;
 }
 
-export function createTrackFreeName(name, otherTracks, folder = null) {
+export function createTrackFreeName(name, otherTracks, folder = null, folderName = null) {
     let occupied = null;
     let newName = name;
     for (let i = 1; i < 100; i++) {
-        if (folder) {
+        if (folder !== null || folderName !== null) {
             //check cloud
-            occupied = isTrackExists(newName, folder, otherTracks);
+            occupied = isTrackExists(newName, folder, folderName, otherTracks);
         } else {
             //check local
             occupied = otherTracks?.some((t) => t.name === newName);
@@ -171,11 +171,42 @@ export async function renameTrack(oldName, folder, newName, ctx) {
                 oldName: oldName,
                 newName: newFileName,
                 type: 'GPX',
+                saveCopy: false,
             },
+            dataOnErrors: true,
         });
         if (res && res?.data?.status === 'ok') {
             refreshGlobalFiles(ctx, newFileName).then();
-            return true;
+        } else {
+            ctx.setTrackErrorMsg({
+                title: 'Rename error',
+                msg: res.data,
+            });
+        }
+    }
+}
+
+export async function duplicateTrack(oldName, folderName, newName, ctx) {
+    newName = createTrackFreeName(newName, ctx.tracksGroups, null, folderName);
+    let folder = folderName !== '' ? `${folderName}/` : '';
+    const newFileName = folder + newName + '.gpx';
+    if (newFileName !== oldName) {
+        const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/rename-file`, {
+            params: {
+                oldName: oldName,
+                newName: newFileName,
+                type: 'GPX',
+                saveCopy: true,
+            },
+            dataOnErrors: true,
+        });
+        if (res && res?.data?.status === 'ok') {
+            refreshGlobalFiles(ctx, newFileName).then();
+        } else {
+            ctx.setTrackErrorMsg({
+                title: 'Duplicate error',
+                msg: res.data,
+            });
         }
     }
 }
