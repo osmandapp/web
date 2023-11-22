@@ -4,8 +4,8 @@ import { Builder } from 'selenium-webdriver';
 import { existsSync, readdirSync } from 'node:fs';
 import { Options } from 'selenium-webdriver/chrome.js'; // ServiceBuilder for logging
 
-export const TEST_LOGIN = 'alisa.91150@gmail.com';
-export const TEST_PASSWORD = 'alisa911';
+export const TEST_LOGIN = 'osmand@grr.la';
+export const TEST_PASSWORD = '0xDEADBEEF';
 
 export const TIMEOUT_OPTIONAL = 1000; // optional element timeout and driver.implicitlyWait() (1s)
 export const TIMEOUT_REQUIRED = 45000; // required element timeout (waitBy / clickBy / enclose defaults) (45s)
