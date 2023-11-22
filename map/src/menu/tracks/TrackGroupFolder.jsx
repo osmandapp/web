@@ -29,7 +29,7 @@ export default function TrackGroupFolder({ folder }) {
     useEffect(() => {
         if (ctx.tracksGroups) {
             let found = findGroupByName(ctx.tracksGroups, group.fullName);
-            ctx.openTrackGroups[ctx.openTrackGroups.length - 1] = found;
+            ctx.openTrackGroups[ctx.openTrackGroups?.length - 1] = found;
             ctx.setOpenTrackGroups([...ctx.openTrackGroups]);
             if (folder) {
                 setGroup({ ...found });
@@ -47,7 +47,7 @@ export default function TrackGroupFolder({ folder }) {
 
     const trackItems = useMemo(() => {
         const items = [];
-        (sortFiles.length > 0 ? sortFiles : group.groupFiles).map((file) => {
+        (sortFiles?.length > 0 ? sortFiles : group.groupFiles).map((file) => {
             if (!file.name.endsWith(EMPTY_FILE_NAME) && file.filesize !== 0) {
                 items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} />);
             }
@@ -63,7 +63,7 @@ export default function TrackGroupFolder({ folder }) {
 
     const groupItems = useMemo(() => {
         const items = [];
-        (sortGroups.length > 0 ? sortGroups : group.subfolders).map((g, index) => {
+        (sortGroups?.length > 0 ? sortGroups : group.subfolders).map((g, index) => {
             items.push(<CloudTrackGroup key={g.name + index} index={index} group={g} />);
         });
         return items;

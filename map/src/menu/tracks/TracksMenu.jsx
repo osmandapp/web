@@ -194,6 +194,7 @@ export default function TracksMenu() {
                 <>
                     {ctx.tracksGroups?.length > 0 || defaultGroup?.length > 0 ? (
                         <Box
+                            id={'se-track-menu'}
                             minWidth={ctx.infoBlockWidth}
                             maxWidth={ctx.infoBlockWidth}
                             sx={{

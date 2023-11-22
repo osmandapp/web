@@ -4,7 +4,7 @@
 import { Condition, By } from 'selenium-webdriver';
 
 import { readdirSync } from 'node:fs';
-import { resolve } from 'node:path'
+import { resolve } from 'node:path';
 
 import { driver, debug, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED } from './options.mjs';
 
