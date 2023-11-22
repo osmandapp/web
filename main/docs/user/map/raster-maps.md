@@ -218,14 +218,11 @@ To get started with Hillshade and Slope you need to:
 
 ### Hillshade and 3D Relief
 
-![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png)  ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png)
+| Hillshade | 3D Relief |
+|--------|---------|
+| ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
-**Hillshade** is a raster map that displays terrain using shadows, creating a visual representation of the slope and shape of the earth's surface.  
-**3D Relief** is a feature that adds three-dimensional effects to the map.  
-
-If you **disable** *Hillshade* and **enable** *3D Relief*, relief shadows will still be visible because *Hillshade* and *3D Relief* are two different ways of visualizing a map. *Hillshade* creates shadows based on the terrain and adds them to the map, while *3D Relief* models 3D elements to show the depth and shape of the terrain, and the shadows are part of the visualization. These features can work in parallel, and disabling *Hillshade* does not affect how 3D effects are displayed.  
-
-When **Hillshade** is **enabled**, an image with relief shadows appears more detailed, darker, and more stepped than a *3D Relief* image. The explanation is that *Hillshade* emphasizes the gradients and contrasts of the terrain, creating a sharper and more detailed image. Whereas *3D Relief* gives the map a more plastic and smooth look, which can soften the terrain and remove some detail.  
+The difference of relief display on the map when applying these settings is described in the **Topography** article in the corresponding section [*Hillshade and 3D Relief*](../plugins/contour-lines.md#hillshade-and-3d-relief). 
 
 
 ### Configure display options
