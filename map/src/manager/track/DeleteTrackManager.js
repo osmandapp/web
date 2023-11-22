@@ -1,6 +1,7 @@
 import { isCloudTrack, isLocalTrack } from '../../context/AppContext';
-import { apiPost } from '../../util/HttpApi';
+import { apiGet, apiPost } from '../../util/HttpApi';
 import TracksManager, { findGroupByName } from './TracksManager';
+import { refreshGlobalFiles } from './SaveTrackManager';
 
 export async function deleteTrack(file, ctx) {
     if ((isCloudTrack(ctx) || file) && ctx.loginUser) {
@@ -40,6 +41,24 @@ export async function deleteTrack(file, ctx) {
         }
     } else if (isLocalTrack(ctx)) {
         TracksManager.deleteLocalTrack(ctx);
+    }
+}
+
+export async function deleteTrackFolder(folder, ctx) {
+    const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/delete-folder`, {
+        params: {
+            folderName: folder.fullName,
+            type: 'GPX',
+        },
+        dataOnErrors: true,
+    });
+    if (res && res?.data?.status === 'ok') {
+        refreshGlobalFiles(ctx).then();
+    } else {
+        ctx.setTrackErrorMsg({
+            title: 'Delete error',
+            msg: res.data,
+        });
     }
 }
 

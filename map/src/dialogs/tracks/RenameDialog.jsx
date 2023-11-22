@@ -101,6 +101,13 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
         }
     };
 
+    function closeDialogs() {
+        setOpenDialog(false);
+        if (setOpenActions) {
+            setOpenActions(false);
+        }
+    }
+
     return (
         <Dialog open={true} onClose={() => setOpenDialog(false)} onClick={(e) => e.stopPropagation()}>
             <DialogTitle className={dialogStyles.title}>Rename</DialogTitle>
@@ -132,7 +139,7 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
                 ></TextField>
             </DialogContent>
             <DialogActions>
-                <Button className={dialogStyles.button} onClick={() => setOpenDialog(false)}>
+                <Button className={dialogStyles.button} onClick={closeDialogs}>
                     Cancel
                 </Button>
                 <Button

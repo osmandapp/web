@@ -252,7 +252,7 @@ export async function saveEmptyTrack(folderName, ctx) {
     }
 }
 
-async function refreshGlobalFiles(ctx, currentFileName = null) {
+export async function refreshGlobalFiles(ctx, currentFileName = null) {
     // refresh list-files but skip if uploaded file is already there
     if (currentFileName == null || !ctx.listFiles.uniqueFiles?.find((f) => f.name === currentFileName)) {
         const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
