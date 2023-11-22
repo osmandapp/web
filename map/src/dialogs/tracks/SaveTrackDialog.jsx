@@ -220,7 +220,11 @@ export default function SaveTrackDialog() {
                                 id="folder"
                                 options={folders}
                                 getOptionLabel={(option) => getFolderName(option)}
-                                renderOption={(props, option) => <li {...props}>{option.title}</li>}
+                                renderOption={(props, option) => (
+                                    <li {...props} id={`option-${option.title}`}>
+                                        {option.title}
+                                    </li>
+                                )}
                                 freeSolo
                                 renderInput={(params) => (
                                     <TextField

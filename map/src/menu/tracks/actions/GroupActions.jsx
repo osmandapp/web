@@ -50,7 +50,7 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
     return (
         <>
             <Box ref={ref}>
-                <Paper className={styles.actions}>
+                <Paper id="se-folder-actions" className={styles.actions}>
                     <MenuItem
                         disabled={group.realSize === 0}
                         className={styles.action}
@@ -97,7 +97,11 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
                         </ListItemText>
                     </MenuItem>
                     <Divider className={styles.dividerActions} />
-                    <MenuItem className={styles.action} onClick={() => setOpenDeleteDialog(true)}>
+                    <MenuItem
+                        id="se-folder-actions-delete"
+                        className={styles.action}
+                        onClick={() => setOpenDeleteDialog(true)}
+                    >
                         <ListItemIcon className={styles.iconAction}>
                             <DeleteIcon />
                         </ListItemIcon>

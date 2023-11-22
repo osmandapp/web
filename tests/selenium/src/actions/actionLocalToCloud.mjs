@@ -33,7 +33,6 @@ export async function saveToCloud(name) {
     // try to chain together inside enclose()
     await enclose(
         async () => {
-            await clickBy(By.id('se-menu-cloud-Tracks'), { optional: true });
             return await waitBy(By.id('se-cloud-track-' + name), { optional: true });
         },
         { tag: 'saveToCloud' }

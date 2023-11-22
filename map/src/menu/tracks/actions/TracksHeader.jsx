@@ -33,6 +33,7 @@ export default function TracksHeader({ trackGroup, sortIcon, sortName, setOpenSo
                     {ctx.openTrackGroups.length > 0 ? (
                         <IconButton
                             variant="contained"
+                            id="se-back-folder-button"
                             type="button"
                             className={styles.appBarIcon}
                             onClick={prevTrackMenu}

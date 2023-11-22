@@ -25,7 +25,12 @@ export default function DeleteFolderDialog({ setOpenDialog, folder, setOpenActio
     }
 
     return (
-        <Dialog open={true} onClose={() => setOpenDialog(false)} onClick={(e) => e.stopPropagation()}>
+        <Dialog
+            id="se-delete-folder-dialog"
+            open={true}
+            onClose={() => setOpenDialog(false)}
+            onClick={(e) => e.stopPropagation()}
+        >
             <DialogTitle className={dialogStyles.title}>Delete folder</DialogTitle>
             <DialogContent className={dialogStyles.content}>
                 {`This will delete "${folder?.name}" folder and all tracks (${folder?.realSize}) included.`}

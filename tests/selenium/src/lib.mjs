@@ -3,6 +3,9 @@
 // import { strict as assert } from 'node:assert';
 import { Condition, By } from 'selenium-webdriver';
 
+import { readdirSync } from 'node:fs';
+import { resolve } from 'node:path'
+
 import { driver, debug, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED } from './options.mjs';
 
 // helpers
@@ -53,7 +56,7 @@ export async function enclose(callback, { tag = 'enclose', optional = false } = 
  * test: failed if no visible element found
  * test-ok: optional === true enforces return null in case of any error happens
  */
-export async function waitBy(by, { optional = false } = {}) {
+export async function waitBy(by, { optional = false } = {}, hidden = false) {
     debug && console.log('waitBy', by.value || by);
     try {
         return await driver.wait(
@@ -82,6 +85,9 @@ export async function waitBy(by, { optional = false } = {}) {
     } catch (error) {
         if (optional === true) {
             return null;
+        }
+        if (hidden === true) {
+            return true;
         }
         throw error;
     }
@@ -262,4 +268,31 @@ export async function sendKeysBy(by, keys) {
         },
         { tag: `sendKeysBy (${by.value || by}) (${keys})` }
     );
+}
+
+export function getTracks() {
+    const tracks = [];
+    // convert mask (support only * as wildcard, eg *wiki*.gpx)
+    const regexp = '*.gpx'.replaceAll('.', '\\.').replaceAll('*', '.*');
+
+    readdirSync('gpx')
+        .sort()
+        .forEach((file) => {
+            if (file.match(/\.gpx$/i) && (!'*.gpx' || file.match(regexp))) {
+                const name = file.replace(/\.gpx$/i, '');
+                const path = resolve('gpx', file);
+                tracks.push({ file, name, path });
+            }
+        });
+    return tracks;
+}
+
+export async function uploadCloudTracks({ files }) {
+    const uploader = async () => {
+        const element = await waitBy(By.id('se-upload-cloud-gpx'));
+        await element.sendKeys(files);
+        return true;
+    };
+
+    await enclose(uploader, { tag: 'Upload cloud track' });
 }
