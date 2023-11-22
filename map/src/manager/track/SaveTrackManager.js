@@ -211,6 +211,25 @@ export async function duplicateTrack(oldName, folderName, newName, ctx) {
     }
 }
 
+export async function renameFolder(folder, newName, ctx) {
+    const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/rename-folder`, {
+        params: {
+            folderName: folder.fullName,
+            newFolderName: folder.fullName.replace(folder.name, newName),
+            type: 'GPX',
+        },
+        dataOnErrors: true,
+    });
+    if (res && res?.data?.status === 'ok') {
+        refreshGlobalFiles(ctx).then();
+    } else {
+        ctx.setTrackErrorMsg({
+            title: 'Duplicate error',
+            msg: res.data,
+        });
+    }
+}
+
 export async function saveEmptyTrack(folderName, ctx) {
     //create empty file
     const convertedData = new TextEncoder().encode('');
@@ -233,9 +252,9 @@ export async function saveEmptyTrack(folderName, ctx) {
     }
 }
 
-async function refreshGlobalFiles(ctx, currentFileName) {
+async function refreshGlobalFiles(ctx, currentFileName = null) {
     // refresh list-files but skip if uploaded file is already there
-    if (!ctx.listFiles.uniqueFiles?.find((f) => f.name === currentFileName)) {
+    if (currentFileName == null || !ctx.listFiles.uniqueFiles?.find((f) => f.name === currentFileName)) {
         const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
         const resJson = await respGetFiles.json();
         if (resJson && resJson.uniqueFiles) {

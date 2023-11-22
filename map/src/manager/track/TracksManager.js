@@ -209,7 +209,7 @@ function getGroup(name, local) {
     } else if (local && result.includes(':')) {
         return result.split(':')[0];
     } else {
-        return 'Tracks';
+        return DEFAULT_GROUP_NAME;
     }
 }
 

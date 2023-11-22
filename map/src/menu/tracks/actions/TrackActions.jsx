@@ -9,7 +9,7 @@ import { ReactComponent as DuplicateIcon } from '../../../assets/icons/ic_action
 import DeleteTrackDialog from '../../../dialogs/tracks/DeleteTrackDialog';
 import Utils from '../../../util/Utils';
 import TracksManager from '../../../manager/track/TracksManager';
-import RenameTrackDialog from '../../../dialogs/tracks/RenameTrackDialog';
+import RenameDialog from '../../../dialogs/tracks/RenameDialog';
 import AppContext from '../../../context/AppContext';
 import { duplicateTrack } from '../../../manager/track/SaveTrackManager';
 
@@ -127,7 +127,7 @@ const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) =
                 />
             )}
             {openRenameDialog && (
-                <RenameTrackDialog setOpenDialog={setOpenRenameDialog} track={track} setOpenActions={setOpenActions} />
+                <RenameDialog setOpenDialog={setOpenRenameDialog} track={track} setOpenActions={setOpenActions} />
             )}
         </>
     );
