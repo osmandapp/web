@@ -110,7 +110,7 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
                 </Paper>
             </Box>
             {newCollection.length > 0 && (
-                <GpxCollection tracks={newCollection} setProcessDownload={setProcessDownloadObf} />
+                <GpxCollection tracks={newCollection} setProcessDownload={setProcessDownload} />
             )}
             {openRenameDialog && (
                 <RenameDialog setOpenDialog={setOpenRenameDialog} group={group} setOpenActions={setOpenActions} />
