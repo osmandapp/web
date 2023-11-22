@@ -17,14 +17,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Downloading maps is a necessary action for further use of maps and offline navigation. You can download maps by viewing the list of regions in the main menu or by clicking on the desired area on the map.  
 
-The application can not function normally without offline maps, which are not distributed in the application. Although the application supports [Vector maps](../map/vector-maps.md) and [Raster maps](../map/raster-maps.md), it is highly recommended that you start working with Offline Vector Maps so that all functions such as search, [Search](../search/index.md), [Navigation](../navigation/index.md),  [Context menu](../map/map-context-menu.md).  
+The application can not function normally without offline maps, which are not distributed within the application. Although the application supports [Vector maps](../map/vector-maps.md) and [Raster maps](../map/raster-maps.md), it is highly recommended that you start working with Offline Vector Maps so that all functions such as [Search](../search/index.md), [Navigation](../navigation/index.md), [Context menu](../map/map-context-menu.md) work properlly.  
 
 ## First Screen
 
-When you first launch the app, it suggests downloading a map based on your Internet location. In the case of VPN usage, the app can propose a different (not your geolocation) map region.   
-
-Next, you can restore you data from [OsmAnd Cloud](../personal/osmand-cloud.md).
-
+When you first launch the app, it suggests downloading a map based on your Internet location. In the case of VPN usage, the app can propose a different (not your geolocation) map region.  
+You can skip this step and restore your data from [OsmAnd Cloud](../personal/osmand-cloud.md).
 
 <Tabs groupId="operating-systems">
 
@@ -206,22 +204,23 @@ You can download several types of maps: Standard, Roads-only (lightweight maps w
 </TabItem>
 </Tabs>
 
-## Manage - Downloaded Map
-
+## Local - Downloaded Maps
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-To find out how to manage one or more maps, follow these steps: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local"/>*  
+Local tab *(<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local"/>)* contains all the information about storage usage, split by data type into 3 large sections:  
 
-* Tap on a map folder in the your maps list or the three dots menu.
-* You can choose:
-* * *Deactivate:* Activate, Rename, Delete.
-* * *Rename.*
-* * *Delete.*
+- ***Resources***: [Standard Maps](../map/vector-maps.md), [Wikipedia](../plugins/wikipedia.md) and [Travel maps](../plan-route/travel-guides.md), [Nautical maps](../plugins/nautical-charts.md), [Terrain maps](../plugins/contour-lines.md), [Weather maps](../plugins/weather.md),  [Map sources](../map/raster-maps.md), [Rendering styles](../map/vector-maps.md#default-map-styles), Routing, Cache.
+- ***My Places***: [Favorites](../personal/favorites.md), [Tracks](../personal/tracks.md), [OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), [OSM Edits](../plugins/osm-editing.md#osm-editing-layer), [A/V Notes](../plugins/audio-video-notes.md), [Map markers](../personal/markers.md), [History](../personal/global-settings.md#history), Itinerary.
+- ***Settings***: [Profiles](../personal/profiles.md), Other.
 
-> NOTE. Deactivated maps
+![Local tab Android 1](@site/static/img/settings/new_map_and_resourses_andr_1.png) ![Local tab Android 2](@site/static/img/settings/new_map_and_resourses_andr_2.png)
+
+:::note
+The sections are arranged as the amount of memory they take decreases.
+:::
 
 </TabItem>
 
@@ -236,3 +235,6 @@ To find out how to manage one or more maps, follow these steps: *<Translate andr
 </TabItem>
 
 </Tabs> 
+
+
+> NOTE. Deactivated maps

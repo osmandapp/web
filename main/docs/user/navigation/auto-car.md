@@ -18,10 +18,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-[**Android Auto**](https://www.android.com/auto) is software developed by Google that allows users to connect their Android devices to compatible car multimedia systems. Android Auto provides an adapted and optimized version of the OsmAnd app for safe use while driving, making it easier and more secure to access the app's navigation functions.  
+[**Android Auto**](https://www.android.com/auto)** is software developed by Google that allows users to connect their Android devices to compatible car multimedia systems. Android Auto provides an adapted and optimized version of the OsmAnd app for safe use while driving, making it easier and more secure to access the app's navigation functions.  
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_overview.png)  
 
+** - [Android Auto](https://www.android.com/auto/) function works only for OsmAnd apps from [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023). (If you buy [OsmAnd Pro](../purchases/android.md#osmand-pro) for OsmAnd from [Amazon store](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd) you can [activate it](https://osmand.net/docs/user/troubleshooting/setup#osmand-pro) for [OsmAnd Free from Google Play](https://play.google.com/store/apps/details?id=net.osmand). After that, you can have Android Auto function by OsmAnd Pro subscription bought from another app store.)
 
 ### Landing screen
 
