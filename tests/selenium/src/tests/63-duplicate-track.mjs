@@ -19,6 +19,10 @@ export default async function test() {
     if (!exist) {
         await actionImportCloudTrack(tracks, trackName);
     }
+    const existResult = await actionCheckTrackExist(`${trackName} - 1`);
+    if (existResult) {
+        await deleteTrack(`${trackName} - 1`);
+    }
 
     await clickBy(By.id(`se-actions-${trackName}`));
     await waitBy(By.id('se-track-actions'));

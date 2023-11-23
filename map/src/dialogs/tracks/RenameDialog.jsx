@@ -20,7 +20,7 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
 
     const renameError = {
         title: 'Rename error',
-        msg: 'Folder or track to rename not found!',
+        msg: 'Folder/track is not found.',
     };
 
     async function rename() {

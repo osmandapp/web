@@ -8,7 +8,7 @@ import actionDeleteFolder from '../actions/actionDeleteFolder.mjs';
 
 export default async function test() {
     const folder = 'rename';
-    const substring = '2';
+    const suffix = '-renamed';
     await actionOpenMap();
     await actionLogIn();
 
@@ -24,15 +24,15 @@ export default async function test() {
     await enclose(
         async () => {
             const input = await waitBy(By.id('se-rename-group-input'));
-            await input.sendKeys(substring);
+            await input.sendKeys(suffix);
             return true;
         },
         { tag: 'rename-group' }
     );
     await clickBy(By.id('se-rename-group-submit'));
-    await waitBy(By.id(`se-menu-cloud-${folder}${substring}`));
+    await waitBy(By.id(`se-menu-cloud-${folder}${suffix}`));
 
-    await actionDeleteFolder(`${folder}${substring}`);
+    await actionDeleteFolder(`${folder}${suffix}`);
 
     await actionFinish();
 }

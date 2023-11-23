@@ -33,8 +33,8 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
         }).catch(() => {
             setProcessDownload(false);
             ctx.setTrackErrorMsg({
-                title: 'Get osf error',
-                msg: `We couldn't download osf fo folder ${group.name}. Please contact us at support@osmand.net`,
+                title: 'Get OSF error',
+                msg: `We couldn't download osf for folder ${group.name}. Please contact us at support@osmand.net`,
             });
         });
         if (res.status === 200) {

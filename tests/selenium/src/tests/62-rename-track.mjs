@@ -7,7 +7,7 @@ import actionImportCloudTrack from '../actions/actionImportCloudTrack.mjs';
 import actionCheckTrackExist from '../actions/actionCheckTrackExist.mjs';
 
 export default async function test() {
-    const substring = '2';
+    const suffix = '-renamed';
     const tracks = getTracks();
     let trackName = 'test-routed-osrm';
 
@@ -28,15 +28,15 @@ export default async function test() {
     await enclose(
         async () => {
             const input = await waitBy(By.id('se-rename-track-input'));
-            await input.sendKeys(substring);
+            await input.sendKeys(suffix);
             return true;
         },
         { tag: 'rename-track' }
     );
     await clickBy(By.id('se-rename-track-submit'));
-    await waitBy(By.id(`se-cloud-track-${trackName}${substring}`));
+    await waitBy(By.id(`se-cloud-track-${trackName}${suffix}`));
 
-    await deleteTrack(`${trackName}${substring}`);
+    await deleteTrack(`${trackName}${suffix}`);
 
     await actionFinish();
 }
