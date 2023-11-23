@@ -20,7 +20,7 @@ export default async function test() {
     await clickBy(By.id(`se-folder-actions-button-${folder}`));
     await waitBy(By.id('se-folder-actions'));
     await clickBy(By.id('se-folder-actions-rename'));
-    await waitBy(By.id('se-rename-folder-dialog'));
+    await waitBy(By.id('se-rename-group-dialog'));
     await enclose(
         async () => {
             const input = await waitBy(By.id('se-rename-group-input'));

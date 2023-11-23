@@ -82,7 +82,11 @@ const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) =
                         </ListItemText>
                     </MenuItem>
                     <Divider className={styles.dividerActions} />
-                    <MenuItem className={styles.action} onClick={() => createDuplicateTrack()}>
+                    <MenuItem
+                        id={'se-duplicate-cloud-track'}
+                        className={styles.action}
+                        onClick={() => createDuplicateTrack()}
+                    >
                         <ListItemIcon className={styles.iconAction}>
                             <DuplicateIcon />
                         </ListItemIcon>
