@@ -21,22 +21,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Overview
 
 :::tip NOTE
- <ProFeature/> The Topography plugin is a paid feature of the OsmAnd app.  
+The Topography plugin is a paid feature of the OsmAnd app.  
 :::
 
 Topography is an important feature of cartography that provides information to visually assess the terrain's relief. 
-Topography information like **Contour lines**, **Terrain** (**Hillshade** and **Slope**) and **3D Relief** helps to make a visual assessment of the lay of the land by seeing elevation, relief, extremes, steepness, or points of equal height. 
+Topography information like [*Contour lines*](#contour-lines), [*Terrain*](#terrain) (*Hillshade* and *Slope*) and [*3D Relief*](#3d-relief) helps to make a visual assessment of the lay of the land by seeing elevation, relief, extremes, steepness, or points of equal height. 
 
-Each feature provided by this plugin is an independent map layer that, when enabled, is displayed above or below the main map source depending on the settings.  
-
+Each feature provided by this plugin is an independent map layer that, when enabled, can be displayed above or below the main map source depending on the [settings](../map/raster-maps.md#overlay-layer).  
 
 The Topography plugin provides access to the following map types:  
 
-- [**Contour lines**](#contour-lines). This is a [vector map](../map/vector-maps.md) represented in **feet** or **meters**. Contour lines show elevation levels and help visualize the terrain.
-- [**Hillshade**](#hillshade). [Raster map](../map/raster-maps.md) with shading of hills and slopes, which makes the relief more visible and helps to visually interpret the terrain. 
-- [**Slope**](#slope). Another [raster](../map/raster-maps.md) layer that provides information about the steepness of slopes, which can be important for route planning and safety. 
-- [**Terrain map (3D)**](#3d-relief). It is a [vector map](../map/vector-maps.md) that provides a three-dimensional representation of the terrain, available only for Android users. 
-- [**Combine layer types**](#combine-layer-types)
+- [**Contour lines**](#contour-lines). This is a [vector map](../map/vector-maps.md) represented in [**meters** or **feet**](#meters-or-feet). Contour lines show elevation levels and help visualize the terrain.
+- [**Hillshade**](#hillshade--slope). Types of map with shading of hills and slopes, which makes the relief more visible and helps to visually interpret the terrain. 
+- [**Slope**](#hillshade--slope). [Raster](../map/raster-maps.md) layer that provides information about the steepness of slopes, which can be important for route planning and safety. 
+- [**3D Relief**](#3d-relief). It is a [vector map](../map/vector-maps.md) that provides a three-dimensional representation of the terrain, available only with [OsmAnd Pro subscription](../purchases/index.md). 
+
 
 <Tabs groupId="operating-systems">
 
@@ -49,7 +48,6 @@ The Topography plugin provides access to the following map types:
 <TabItem value="ios" label="iOS">
 
 ![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) 
-
 
 </TabItem>
 
@@ -73,19 +71,18 @@ For full information see [License](https://github.com/osmandapp/OsmAnd/blob/mast
 
 To display **Contour lines** and **Terrain (Hillshade, Slope)** data on the map:
 
-1. Purchase: [OsmAnd+, OsmAnd Maps+, or OsmAnd Pro purchase plan](../plugins/index.md#purchase) and [Enable](../plugins/index.md#enable--disable) the Topography plugin in the Plugins section of the Main menu.
-2. [Download](#download-maps) Contour lines, Hillshade, Slope, or Terrain map (3D) maps.
-3. [Enable and adjust](#configure-map-view) Contour lines and/or Hillshade or Slope for the map view.
-4. You can also watch [Youtube Tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
+1. *Purchase*: [OsmAnd+, OsmAnd Maps+, or OsmAnd Pro purchase plan](../plugins/index.md#purchase)
+2. [*Enable*](../plugins/index.md#enable--disable) Topography plugin in the Plugins section of the Main menu.
+3. [*Download*](#download-maps): Contour lines, Hillshade, Slope, or Terrain map (3D) maps.
+4. *Enable and adjust*: Contour lines, Hillshade, or Slope for the map view.
+5. You can also watch [Youtube Tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
 
-To display **3D Relief** (Android only):
-
-1. Purchase an [OsmAnd Pro plan](../purchases/android.md#free-and-paid-features) that includes the Topography plugin. After purchase, the plugin will appear in the Plugins list in the main Menu. Plans such as [OsmAnd+, OsmAnd Maps+, OsmAnd Pro purchases plans](../plugins/index.md#purchase) are suitable.
-2. [Download](#download-maps) Terrain map (3D) maps.
-3. [Enable and adjust](#configure-map-view) 3D Relief for the map view.
+To display [**3D Relief**](#3d-relief) you need to purchase the *OsmAnd Pro* plan, wich includes Topography plugin. 
 
 
 ## Download Maps
+
+In order to start working with the plugin functionality, you need to download maps of the regions you are interested in.
 
 ### How to download  
 
@@ -208,29 +205,13 @@ Decide in which unit (meters or feet) you want to see the [**Contour lines**](..
 
 </Tabs>  
 
-- Color scheme:  
-    - *Hillshade* uses dark shades to show slopes, peaks, and lowlands.  
-    - *Slope* uses color to visualize the steepness of the terrain. You can read more about it here. 
-- Visibility
-- Zoom levels 
-- Cache size
-
-:::info LEGEND
-
-Each color corresponds to an angle of deviation from the horizontal. 
-
-![Slope color legend](@site/static/img/plugins/contour-lines/Slope_legend.png)
-
-:::
-
-:::caution
-
-- For the **Terrain** feature, only 1 option **Hillshade** or **Slope** can be enabled at a time.
-- If after loading and enabling the corresponding map you do not see the changes, restart the application.
-
-:::
+The Terrain menu includes and customizes two parameters: *Hillshade* and *Slope*. 
 
 ### Hillshade / Slope
+
+| Hillshade | Slope |
+| ------ | ------- |
+| ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **Hillshade** is based on simulating surface lighting using terrain data. This method involves creating shadows and highlights based on the angle of the surface relative to the light source. As a result, you see natural hills, valleys, and other terrain details on the map.  
 
@@ -244,33 +225,105 @@ Each color corresponds to an angle of deviation from the horizontal.
 - *Terrain estimation.* It's convenient for visualizing the landscape, especially if you're walking or biking.
 
 
+#### Color scheme
+
+- *Hillshade* uses dark shades to show slopes, peaks, and lowlands.  
+- *Slope* uses color to visualize the steepness of the terrain. You can read more about it here. 
+
+|Colour scheme - Hillshade|Colour scheme - Slope|
+|------|-------|
+|![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade_menu.png)|![Slope](../../../blog/2023-08-28-terrain/img/slope_menu.png)|
+
+:::info LEGEND
+
+Each color corresponds to an angle of deviation from the horizontal. 
+
+![Slope color legend](@site/static/img/plugins/contour-lines/Slope_legend.png)
+
+:::
+
+
+#### Visibility 
+
+*Visibility* is the transparency parameter of the colors used to display the angle (Slope) and the shading (Hillshade). 
+
+|Visibility 31%|Visibility 74%|
+|------|-------|
+|![Visibility ](../../../blog/2023-08-28-terrain/img/31.png)|![Visibility ](../../../blog/2023-08-28-terrain/img/74.png)|
+
+#### Zoom levels 
+
+***Zoom levels*** is an option that allows you to set the minimum and maximum zoom levels at which the layer will be displayed.
+
+![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)
+
+#### Cache size
+
+*Cache size* is a parameter that shows the size of the cache. Each time you view terrain information on the map (*Hillshade* or *Slope*), all this data is cached for quick use in the future (no additional load on the device's processor).
+
+To **clear the cache**, go here: *System settings → Apps → OsmAnd → Storage → Clear cache*
+
+|Before|After|
+|------|-------|
+|![Cache](../../../blog/2023-08-28-terrain/img/cache.png)|![Cache](../../../blog/2023-08-28-terrain/img/cache2.png)|
+
+
+:::caution
+
+- For the **Terrain** feature, only 1 option **Hillshade** or **Slope** can be enabled at a time.
+- If after loading and enabling the corresponding map you do not see the changes, restart the application.
+
+:::
+
+
 ## 3D Relief
 
-The 3D Relief feature produces a raised relief and provides a three-dimensional representation of the landscape. 3D Relief works offline and can be used with [OsmAnd vector maps](../map/vector-maps.md) or any  [raster maps](../map/raster-maps.md#select-raster-maps) as a [Map Source](../map/raster-maps.md#main) or as an [Underlay/Overlay](../map/raster-maps.md#overlay-layer). 3D Relief is an [OsmAnd Pro](../purchases/android.md#pro-features) paid feature <ProFeature />.
+:::note
+3D Relief is an [**OsmAnd Pro**](../purchases/index.md) paid feature <ProFeature />.
+:::
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">   
+
+![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png) 
+
+</TabItem>
+
+</Tabs>  
+
+The 3D Relief feature produces a raised relief and provides a three-dimensional representation of the landscape. 3D Relief works offline and can be used with [OsmAnd vector maps](../map/vector-maps.md) or any  [raster maps](../map/raster-maps.md#select-raster-maps) as a [Map Source](../map/raster-maps.md#main) or as an [Underlay/Overlay](../map/raster-maps.md#overlay-layer).  
+
+Follow the steps below to display 3D Relief on the OsmAnd map:
+- Purchase [OsmAnd Pro subscription](../purchases/index.md).
+- Go to [*<Translate Android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md):
+    - **Android**: scroll to *<Translate android="true" ids="srtm_plugin_name"/> section → <Translate android="true" ids="relief_3d"/>*.
+    - **iOS**: scroll to *<Translate ios="true" ids="srtm_plugin_name"/> section → <Translate ios="true" ids="shared_string_terrain,shared_string_relief_3d"/>*.
+- Download the [Terrain map (3D)](../plugins/contour-lines.md#how-to-download) of the regions, if necessary.
+
+
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-To enable 3D Relief, go to [*<Translate Android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), scroll to *<Translate android="true" ids="srtm_plugin_name"/> → <Translate android="true" ids="relief_3d"/>*, and toggle on.
-
-![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android.png) 
-
-Then download the [Terrain map (3D)](../plugins/contour-lines.md#how-to-download) of the regions as needed. The feature will produce map visualizations like these:
-
-![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png)
+| Vector map layer | Raster map layer |
+| ------ | ------- |
+| ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-To enable 3D Relief, go to [*<Translate ios="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md), scroll to *<Translate ios="true" ids="srtm_plugin_name"/> → <Translate ios="true" ids="shared_string_terrain,shared_string_relief_3d"/>*, and toggle on.
-
-![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios.png) 
-
-Then download the [Terrain map (3D)](../plugins/contour-lines.md#how-to-download) of the regions as needed. The feature will produce map visualizations like these:
-
-![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png) ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png)
+| Vector map layer | Raster map layer |
+| ------ | ------- |
+| ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
 
 </TabItem>
  
@@ -292,10 +345,6 @@ When **Hillshade** is **enabled**, an image with relief shadows appears more det
 
 ## Combine layer types
 
-If necessary, you can combine contour lines and Hillshade or Slope layers. For example, to estimate the curvature of a mountain slope, a combination of Contour lines and Hillshade is an obvious choice. To estimate slope steepness or to find points with the same height, you can display Contour lines and Slope layers.  
-
-It is best to use a combination of [3D Relief](#3d-relief) and [Hillshade](#hillshade). This allows you to get a more realistic and clear view of the terrain, its relief and landscape features on the map, which makes navigation and orienteering more convenient and reliable. For example, the combination of 3D Relief and Hillshade is best used in mountainous terrain, hilly areas, hiking and biking trails.  
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -311,3 +360,11 @@ It is best to use a combination of [3D Relief](#3d-relief) and [Hillshade](#hill
 </TabItem>
 
 </Tabs>
+
+OsmAnd allows you to combine all three types of map layers: Contour lines, separately or Hillshade or Slope, and 3D Relief.
+
+- The combination of **Contour lines** and **Hillshade** is optimal for visual and numerical estimation of mountain slope steepness. 
+- The combination of **Contour lines** and **Slope** layers is best for estimating slope steepness and finding points with the same height.
+- The combination of **3D Relief** and **Hillshade** layers allows you to get a more realistic and visual representation of the terrain, its relief, and landscape details. This combination is especially suitable for mountainous and hilly terrain.
+
+
