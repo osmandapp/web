@@ -69,6 +69,7 @@ export default function DeleteTrackDialog({
             <DialogActions>
                 <Button onClick={toggleShowDialog}>Cancel</Button>
                 <Button
+                    id={'se-delete-track-dialog'}
                     onClick={() => {
                         deleteTrack(file, ctx).then();
                         cleanContextMenu();

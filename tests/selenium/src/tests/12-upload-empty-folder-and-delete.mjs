@@ -2,7 +2,7 @@
 
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
-import { clickBy, getTracks, uploadCloudTracks, waitBy } from '../lib.mjs';
+import { clickBy, getTracks, uploadCloudTracks } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionLogIn from '../actions/actionLogIn.mjs';
 import actionDeleteFolder from '../actions/actionDeleteFolder.mjs';

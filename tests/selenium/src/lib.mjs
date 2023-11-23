@@ -296,3 +296,23 @@ export async function uploadCloudTracks({ files }) {
 
     await enclose(uploader, { tag: 'Upload cloud track' });
 }
+
+export async function createFolder(name) {
+    await clickBy(By.id('se-add-folder'));
+    const input = await waitBy(By.id('se-add-folder-input'));
+    await input.sendKeys(`${name}`);
+    await clickBy(By.id('se-add-folder-submit'));
+    await waitBy(By.id(`se-menu-cloud-${name}`));
+    await clickBy(By.id(`se-menu-cloud-${name}`));
+}
+
+export async function littleTimeout() {
+    await driver.manage().setTimeouts({ implicit: TIMEOUT_OPTIONAL });
+}
+
+export async function deleteTrack(name) {
+    await clickBy(By.id(`se-actions-${name}`));
+    await clickBy(By.id('se-delete-cloud-track'));
+    await clickBy(By.id('se-delete-track-dialog'));
+    littleTimeout().then();
+}

@@ -106,7 +106,11 @@ const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) =
                         </ListItemText>
                     </MenuItem>
                     <Divider className={styles.dividerActions} />
-                    <MenuItem className={styles.action} onClick={() => setOpenDeleteDialog(true)}>
+                    <MenuItem
+                        id={'se-delete-cloud-track'}
+                        className={styles.action}
+                        onClick={() => setOpenDeleteDialog(true)}
+                    >
                         <ListItemIcon className={styles.iconAction}>
                             <DeleteIcon />
                         </ListItemIcon>

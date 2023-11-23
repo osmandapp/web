@@ -50,7 +50,7 @@ export default function TracksHeader({ trackGroup, sortIcon, sortName, setOpenSo
                             <CloseIcon />
                         </IconButton>
                     )}
-                    <Typography component="div" className={styles.title}>
+                    <Typography id="se-cloud-track-name" component="div" className={styles.title}>
                         {trackGroup.name === DEFAULT_GROUP_NAME ? 'Tracks' : trackGroup.name}
                     </Typography>
                     <Tooltip key={'sort_tracks'} title={`Sort by: ${sortName}`} arrow placement="bottom-end">
