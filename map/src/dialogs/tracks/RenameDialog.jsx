@@ -108,6 +108,10 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
         }
     }
 
+    function disable() {
+        return nameError !== '' || (track && prepareName(track.name) === name) || (group && group.name === name);
+    }
+
     return (
         <Dialog
             id={`se-rename-${state}-dialog`}
@@ -148,7 +152,7 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
                     Cancel
                 </Button>
                 <Button
-                    disabled={nameError !== ''}
+                    disabled={disable()}
                     id={`se-rename-${state}-submit`}
                     className={dialogStyles.button}
                     onClick={() => rename()}

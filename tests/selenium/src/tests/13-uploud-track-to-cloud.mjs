@@ -2,11 +2,11 @@ import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
 import { clickBy, deleteTrack, getTracks, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
-import actionPrepareFolder from '../actions/actionPrepareFolder.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import actionImportCloudTrack from '../actions/actionImportCloudTrack.mjs';
 import actionCheckCloudTracks from '../actions/actionCheckCloudTracks.mjs';
 import actionDeleteCloudTrack from '../actions/actionDeleteCloudTrack.mjs';
+import actionCreateNewFolder from '../actions/actionCreateNewFolder.mjs';
 
 export default async function test() {
     const trackName = 'test-routed-osrm';
@@ -19,7 +19,7 @@ export default async function test() {
     await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-tracks'));
 
-    await actionPrepareFolder(folder);
+    await actionCreateNewFolder(folder);
 
     await clickBy(By.id(`se-menu-cloud-${folder}`), { optional: true });
     await waitBy(By.id(`se-cloud-track-name`));

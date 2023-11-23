@@ -24,9 +24,7 @@ export default function SaveTrackDialog() {
     const folders = getAllGroupNames(ctx.tracksGroups);
 
     function getOldGroup() {
-        return ctx.selectedGpxFile.originalName
-            ? TracksManager.getGroup(ctx.selectedGpxFile.originalName, false)
-            : 'Tracks';
+        return ctx.selectedGpxFile.originalName ? TracksManager.getGroup(ctx.selectedGpxFile.originalName, false) : '';
     }
 
     function getAllGroupNames(groups, parentName = '') {
