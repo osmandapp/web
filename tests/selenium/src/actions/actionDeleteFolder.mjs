@@ -15,6 +15,6 @@ export default async function test(name) {
             const found = await driver.findElements(By.id(`se-menu-cloud-${name}`));
             return !found || found.length === 0;
         },
-        { tag: 'track-menu' }
+        { tag: 'wait-folder-deleted' }
     );
 }

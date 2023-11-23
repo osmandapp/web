@@ -2,7 +2,7 @@
 
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
-import { clickBy, getTracks, uploadCloudTracks } from '../lib.mjs';
+import { clickBy, getTracks, uploadCloudTracks, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionLogIn from '../actions/actionLogIn.mjs';
 import actionDeleteFolder from '../actions/actionDeleteFolder.mjs';
@@ -13,13 +13,13 @@ export default async function test() {
     await actionLogIn();
 
     await clickBy(By.id('se-show-main-menu'), { optional: true });
-    await clickBy(By.id('se-show-menu-tracks'), { optional: true });
+    await clickBy(By.id('se-show-menu-tracks'));
 
     await actionCreateNewFolder('new');
 
     // import first track
     await clickBy(By.id('se-import-first-track'));
-    const { path } = getTracks().find((t) => t.name === 'test-routed-osmand');
+    const { path } = getTracks().find((t) => t.name === 'test-routed-osrm');
     await uploadCloudTracks({ files: path });
     await clickBy(By.id('se-button-back'));
     await clickBy(By.id('se-back-folder-button'));
