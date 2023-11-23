@@ -1,10 +1,11 @@
-import { clickBy, deleteTrack, getTracks, waitBy } from '../lib.mjs';
+import { clickBy, waitBy } from '../lib.mjs';
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
 import { By } from 'selenium-webdriver';
 import actionCheckTrackExist from '../actions/actionCheckTrackExist.mjs';
 import actionImportCloudTrack from '../actions/actionImportCloudTrack.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
+import { deleteTrack, getTracks } from '../util.mjs';
 
 export default async function test() {
     await actionOpenMap();

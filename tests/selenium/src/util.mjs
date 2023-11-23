@@ -1,6 +1,9 @@
-import {By} from "selenium-webdriver";
-import {driver, TIMEOUT_OPTIONAL} from "./options.mjs";
-import {clickBy, enclose, waitBy} from "./lib.mjs";
+import { By } from 'selenium-webdriver';
+import { driver, TIMEOUT_OPTIONAL } from './options.mjs';
+import { clickBy, enclose, waitBy } from './lib.mjs';
+
+import { readdirSync } from 'node:fs';
+import { resolve } from 'node:path';
 
 export function getTracks() {
     const tracks = [];

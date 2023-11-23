@@ -1,6 +1,7 @@
-import { createFolder, waitBy } from '../lib.mjs';
+import { waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionDeleteFolder from '../actions/actionDeleteFolder.mjs';
+import { createFolder } from '../util.mjs';
 
 export default async function test(name) {
     await waitBy(By.id(`se-track-menu`));

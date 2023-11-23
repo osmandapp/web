@@ -1,10 +1,11 @@
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
-import { clickBy, deleteTrack, enclose, getTracks, waitBy } from '../lib.mjs';
+import { clickBy, enclose, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../actions/actionFinish.mjs';
 import actionImportCloudTrack from '../actions/actionImportCloudTrack.mjs';
 import actionCheckTrackExist from '../actions/actionCheckTrackExist.mjs';
+import { deleteTrack, getTracks } from '../util.mjs';
 
 export default async function test() {
     const suffix = '-renamed';

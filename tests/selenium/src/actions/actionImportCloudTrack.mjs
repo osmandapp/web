@@ -1,5 +1,6 @@
-import { clickBy, uploadCloudTracks, waitBy } from '../lib.mjs';
+import { clickBy, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
+import { uploadCloudTracks } from '../util.mjs';
 
 export default async function test(tracks, trackName = null) {
     if (trackName) {

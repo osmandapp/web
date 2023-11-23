@@ -2,11 +2,12 @@
 
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
-import { clickBy, getTracks, uploadCloudTracks } from '../lib.mjs';
+import { clickBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionLogIn from '../actions/actionLogIn.mjs';
 import actionDeleteFolder from '../actions/actionDeleteFolder.mjs';
 import actionCreateNewFolder from '../actions/actionCreateNewFolder.mjs';
+import { getTracks, uploadCloudTracks } from '../util.mjs';
 
 export default async function test() {
     const folder = 'new';

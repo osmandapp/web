@@ -1,12 +1,13 @@
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
-import { clickBy, deleteTrack, getTracks, waitBy } from '../lib.mjs';
+import { clickBy, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../actions/actionFinish.mjs';
 import actionImportCloudTrack from '../actions/actionImportCloudTrack.mjs';
 import actionCheckCloudTracks from '../actions/actionCheckCloudTracks.mjs';
 import actionDeleteCloudTrack from '../actions/actionDeleteCloudTrack.mjs';
 import actionCreateNewFolder from '../actions/actionCreateNewFolder.mjs';
+import { deleteTrack, getTracks } from '../util.mjs';
 
 export default async function test() {
     const trackName = 'test-routed-osrm';
