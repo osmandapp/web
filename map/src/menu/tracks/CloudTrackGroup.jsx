@@ -48,7 +48,7 @@ export default function CloudTrackGroup({ index, group }) {
                 </ListItemText>
                 <IconButton
                     className={styles.sortIcon}
-                    id="se-folder-actions-button"
+                    id={`se-folder-actions-button-${group.name}`}
                     onMouseEnter={() => setHoverIconInfo(true)}
                     onMouseLeave={() => setHoverIconInfo(false)}
                     onClick={(e) => {

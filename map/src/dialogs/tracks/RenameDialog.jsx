@@ -109,7 +109,12 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
     }
 
     return (
-        <Dialog open={true} onClose={() => setOpenDialog(false)} onClick={(e) => e.stopPropagation()}>
+        <Dialog
+            id="se-rename-folder-dialog"
+            open={true}
+            onClose={() => setOpenDialog(false)}
+            onClick={(e) => e.stopPropagation()}
+        >
             <DialogTitle className={dialogStyles.title}>Rename</DialogTitle>
             <DialogContent className={dialogStyles.content}>
                 <TextField

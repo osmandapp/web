@@ -86,7 +86,11 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
                         </ListItemText>
                     </MenuItem>
                     <Divider className={styles.dividerActions} />
-                    <MenuItem className={styles.action} onClick={() => setOpenRenameDialog(true)}>
+                    <MenuItem
+                        id="se-folder-actions-rename"
+                        className={styles.action}
+                        onClick={() => setOpenRenameDialog(true)}
+                    >
                         <ListItemIcon className={styles.iconAction}>
                             <RenameIcon />
                         </ListItemIcon>

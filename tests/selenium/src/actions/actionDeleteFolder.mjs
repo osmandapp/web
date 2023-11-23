@@ -4,7 +4,7 @@ import { driver } from '../options.mjs';
 
 export default async function test(name) {
     await waitBy(By.id(`se-menu-cloud-${name}`));
-    await clickBy(By.id('se-folder-actions-button'));
+    await clickBy(By.id(`se-folder-actions-button-${name}`));
     await waitBy(By.id('se-folder-actions'));
     await clickBy(By.id('se-folder-actions-delete'));
     await waitBy(By.id('se-delete-folder-dialog'));

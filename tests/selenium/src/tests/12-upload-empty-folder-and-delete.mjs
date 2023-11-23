@@ -9,13 +9,15 @@ import actionDeleteFolder from '../actions/actionDeleteFolder.mjs';
 import actionCreateNewFolder from '../actions/actionCreateNewFolder.mjs';
 
 export default async function test() {
+    const folder = 'new';
     await actionOpenMap();
     await actionLogIn();
 
     await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-tracks'));
 
-    await actionCreateNewFolder('new');
+    await actionCreateNewFolder(folder);
+    await clickBy(By.id(`se-menu-cloud-${folder}`));
 
     // import first track
     await clickBy(By.id('se-import-first-track'));
@@ -24,7 +26,7 @@ export default async function test() {
     await clickBy(By.id('se-button-back'));
     await clickBy(By.id('se-back-folder-button'));
 
-    await actionDeleteFolder('new');
+    await actionDeleteFolder(folder);
 
     await actionFinish();
 }

@@ -303,7 +303,6 @@ export async function createFolder(name) {
     await input.sendKeys(`${name}`);
     await clickBy(By.id('se-add-folder-submit'));
     await waitBy(By.id(`se-menu-cloud-${name}`));
-    await clickBy(By.id(`se-menu-cloud-${name}`));
 }
 
 export async function littleTimeout() {
