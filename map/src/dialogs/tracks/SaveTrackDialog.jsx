@@ -4,7 +4,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import { Alert, Autocomplete, Button, createFilterOptions, LinearProgress, TextField } from '@mui/material';
 import AppContext, { isRouteTrack, OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
-import TracksManager, { isTrackExists, validName } from '../../manager/track/TracksManager';
+import TracksManager, { DEFAULT_GROUP_NAME, isTrackExists, validName } from '../../manager/track/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContentText from '@mui/material/DialogContentText';
 import { prepareFileName } from '../../util/Utils';
@@ -24,7 +24,9 @@ export default function SaveTrackDialog() {
     const folders = getAllGroupNames(ctx.tracksGroups);
 
     function getOldGroup() {
-        return ctx.selectedGpxFile.originalName ? TracksManager.getGroup(ctx.selectedGpxFile.originalName, false) : '';
+        return ctx.selectedGpxFile.originalName
+            ? TracksManager.getGroup(ctx.selectedGpxFile.originalName, false)
+            : DEFAULT_GROUP_NAME;
     }
 
     function getAllGroupNames(groups, parentName = '') {
