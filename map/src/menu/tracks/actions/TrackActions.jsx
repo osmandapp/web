@@ -49,7 +49,7 @@ const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) =
     return (
         <>
             <Box ref={ref}>
-                <Paper className={styles.actions}>
+                <Paper id="se-track-actions" className={styles.actions}>
                     <MenuItem
                         className={styles.action}
                         onClick={() => {
@@ -67,7 +67,11 @@ const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) =
                         </ListItemText>
                     </MenuItem>
                     <Divider className={styles.dividerActions} />
-                    <MenuItem className={styles.action} onClick={() => setOpenRenameDialog(true)}>
+                    <MenuItem
+                        id={'se-rename-cloud-track'}
+                        className={styles.action}
+                        onClick={() => setOpenRenameDialog(true)}
+                    >
                         <ListItemIcon className={styles.iconAction}>
                             <RenameIcon />
                         </ListItemIcon>

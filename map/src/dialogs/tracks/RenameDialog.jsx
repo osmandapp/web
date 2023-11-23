@@ -110,7 +110,7 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
 
     return (
         <Dialog
-            id="se-rename-folder-dialog"
+            id={`se-rename-${state}-dialog`}
             open={true}
             onClose={() => setOpenDialog(false)}
             onClick={(e) => e.stopPropagation()}
