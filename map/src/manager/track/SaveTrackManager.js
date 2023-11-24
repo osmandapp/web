@@ -14,7 +14,7 @@ import TracksManager, {
 import _ from 'lodash';
 import { compressFromJSON } from '../../util/GzipBase64.mjs';
 import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
-import Utils, { prepareFileName } from '../../util/Utils';
+import Utils from '../../util/Utils';
 
 export const EMPTY_FILE_NAME = 'empty.ignore';
 
@@ -164,7 +164,6 @@ export function saveTrackToLocalStorage({ ctx, track }) {
 }
 
 export async function renameTrack(oldName, folder, newName, ctx) {
-    newName = prepareFileName(newName);
     const newFileName = folder + newName + '.gpx';
     if (newFileName !== oldName) {
         const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/rename-file`, {
@@ -213,7 +212,6 @@ export async function duplicateTrack(oldName, folderName, newName, ctx) {
 }
 
 export async function renameFolder(folder, newName, ctx) {
-    newName = prepareFileName(newName);
     const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/rename-folder`, {
         params: {
             folderName: folder.fullName,

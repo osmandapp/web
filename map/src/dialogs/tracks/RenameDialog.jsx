@@ -8,6 +8,7 @@ import React, { useContext, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { DEFAULT_GROUP_NAME, findGroupByName, prepareName } from '../../manager/track/TracksManager';
 import { renameFolder, renameTrack } from '../../manager/track/SaveTrackManager';
+import { prepareFileName } from '../../util/Utils';
 
 export default function RenameDialog({ setOpenDialog, track = null, group = null, setOpenActions }) {
     const ctx = useContext(AppContext);
@@ -24,50 +25,60 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
     };
 
     async function rename() {
-        if (track) {
-            let folder = groupByTrack.fullName === DEFAULT_GROUP_NAME ? '' : groupByTrack.fullName + '/';
-            await renameTrack(track.name, folder, name, ctx);
-        } else if (group) {
-            await renameFolder(group, name, ctx);
-        } else {
-            ctx.setTrackErrorMsg(renameError);
-        }
-        if (setOpenActions) {
-            setOpenActions(false);
-        }
-    }
-
-    function validationName(name) {
-        if (track) {
-            validationTrackName(name);
-        } else if (group) {
-            validationFolderName(name);
-        } else {
-            ctx.setTrackErrorMsg(renameError);
-            setOpenDialog(false);
+        const newName = prepareFileName(name);
+        if (validationName(newName)) {
+            if (track) {
+                let folder = groupByTrack.fullName === DEFAULT_GROUP_NAME ? '' : groupByTrack.fullName + '/';
+                await renameTrack(track.name, folder, newName, ctx);
+            } else if (group) {
+                await renameFolder(group, newName, ctx);
+            } else {
+                ctx.setTrackErrorMsg(renameError);
+            }
             if (setOpenActions) {
                 setOpenActions(false);
             }
         }
     }
 
+    function validationName(name) {
+        if (track) {
+            return validationTrackName(name);
+        } else if (group) {
+            return validationFolderName(name);
+        } else {
+            ctx.setTrackErrorMsg(renameError);
+            setOpenDialog(false);
+            if (setOpenActions) {
+                setOpenActions(false);
+            }
+            return false;
+        }
+    }
+
     function validationTrackName(name) {
         if (!name || name === '' || name.trim().length === 0) {
             setNameError('Empty track name.');
+            return false;
         } else if (isTrackExist(name)) {
             setNameError('Track already exists.');
+            return false;
         } else {
             setNameError('');
+            return true;
         }
     }
 
     function validationFolderName(name) {
         if (!name || name === '' || name.trim().length === 0) {
             setNameError('Empty folder name.');
+            return false;
         } else if (isFolderExist(name)) {
             setNameError('Folder already exists.');
+            return false;
         } else {
             setNameError('');
+            return true;
         }
     }
 
@@ -106,10 +117,6 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
         if (setOpenActions) {
             setOpenActions(false);
         }
-    }
-
-    function disable() {
-        return nameError !== '' || (track && prepareName(track.name) === name) || (group && group.name === name);
     }
 
     return (
@@ -152,7 +159,7 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
                     Cancel
                 </Button>
                 <Button
-                    disabled={disable()}
+                    disabled={nameError !== ''}
                     id={`se-rename-${state}-submit`}
                     className={dialogStyles.button}
                     onClick={() => rename()}
