@@ -3,12 +3,12 @@ import { Dialog } from '@material-ui/core';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import { Alert, Autocomplete, Button, createFilterOptions, LinearProgress, TextField } from '@mui/material';
-import AppContext, { isRouteTrack, OBJECT_TYPE_CLOUD_TRACK } from '../../../../context/AppContext';
-import TracksManager, { isTrackExists, validName } from '../../../../manager/track/TracksManager';
+import AppContext, { isRouteTrack, OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
+import TracksManager, { DEFAULT_GROUP_NAME, isTrackExists, validName } from '../../manager/track/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContentText from '@mui/material/DialogContentText';
-import { prepareFileName } from '../../../../util/Utils';
-import { saveTrackToCloud } from '../../../../manager/track/SaveTrackManager';
+import { prepareFileName } from '../../util/Utils';
+import { saveTrackToCloud } from '../../manager/track/SaveTrackManager';
 
 export default function SaveTrackDialog() {
     const ctx = useContext(AppContext);
@@ -26,7 +26,7 @@ export default function SaveTrackDialog() {
     function getOldGroup() {
         return ctx.selectedGpxFile.originalName
             ? TracksManager.getGroup(ctx.selectedGpxFile.originalName, false)
-            : 'Tracks';
+            : DEFAULT_GROUP_NAME;
     }
 
     function getAllGroupNames(groups, parentName = '') {
@@ -81,7 +81,7 @@ export default function SaveTrackDialog() {
         }
         if (validName(preparedName)) {
             setProcess(true);
-            if (!isTrackExists(preparedName, folder, ctx.tracksGroups)) {
+            if (!isTrackExists(preparedName, folder, null, ctx.tracksGroups)) {
                 const uploaded = !!(await saveTrackToCloud(
                     ctx,
                     getFolderName(folder),
@@ -220,7 +220,11 @@ export default function SaveTrackDialog() {
                                 id="folder"
                                 options={folders}
                                 getOptionLabel={(option) => getFolderName(option)}
-                                renderOption={(props, option) => <li {...props}>{option.title}</li>}
+                                renderOption={(props, option) => (
+                                    <li {...props} id={`option-${option.title}`}>
+                                        {option.title}
+                                    </li>
+                                )}
                                 freeSolo
                                 renderInput={(params) => (
                                     <TextField

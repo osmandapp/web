@@ -179,7 +179,7 @@ const SortActions = forwardRef(
                                 control={<Radio className={styles.control} size="small" />}
                                 label={<Label item={allMethods.time} />}
                             />
-                            <Divider className={styles.dividerSort} />
+                            <Divider className={styles.dividerActions} />
                             <FormControlLabel
                                 className={styles.controlLabel}
                                 disableTypography={true}
@@ -196,7 +196,7 @@ const SortActions = forwardRef(
                                 control={<Radio className={styles.control} size="small" />}
                                 label={<Label item={allMethods.za} />}
                             />
-                            <Divider className={styles.dividerSort} />
+                            <Divider className={styles.dividerActions} />
                             <FormControlLabel
                                 className={styles.controlLabel}
                                 disableTypography={true}
@@ -213,7 +213,7 @@ const SortActions = forwardRef(
                                 control={<Radio className={styles.control} size="small" />}
                                 label={<Label item={allMethods.shortest} />}
                             />
-                            <Divider className={styles.dividerSort} />
+                            <Divider className={styles.dividerActions} />
                             <FormControlLabel
                                 className={styles.controlLabel}
                                 disableTypography={true}

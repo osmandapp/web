@@ -5,7 +5,7 @@ import React, { useContext, useState } from 'react';
 import AppContext from '../../../context/AppContext';
 import PoiTypesDialog from '../poi/PoiTypesDialog';
 import PanelButtons from './PanelButtons';
-import ChangeProfileTrackDialog from '../../../infoblock/components/track/dialogs/ChangeProfileTrackDialog';
+import ChangeProfileTrackDialog from '../../../dialogs/tracks/ChangeProfileTrackDialog';
 import PointContextMenu from '../../../infoblock/components/PointContextMenu';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';

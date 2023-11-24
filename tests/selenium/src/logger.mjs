@@ -8,7 +8,7 @@ export let passed = 0;
 export let failed = 0;
 let started = Date.now();
 
-const SPACER = 70;
+const SPACER = 75;
 const time = (ms) => Number(ms / 1000).toFixed(2) + 's';
 const sequence = ({ i, total }) => `[${pad(i + 1, total)}/${total}]`;
 const pad = (n, max) => n.toString().padStart(max.toString().length - n.toString().length + 1, '0');
