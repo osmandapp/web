@@ -40,8 +40,9 @@ export async function createFolder(name) {
 }
 
 export async function deleteTrack(name) {
+    await waitBy(By.id(`se-actions-${name}`));
     await clickBy(By.id(`se-actions-${name}`));
     await clickBy(By.id('se-delete-cloud-track'));
     await clickBy(By.id('se-delete-track-dialog'));
-    await waitBy(By.id(`se-actions-${name}`), true, true);
+    await waitBy(By.id(`se-actions-${name}`), { optional: false, hidden: true });
 }

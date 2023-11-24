@@ -55,7 +55,7 @@ export async function enclose(callback, { tag = 'enclose', optional = false } = 
  * test: failed if no visible element found
  * test-ok: optional === true enforces return null in case of any error happens
  */
-export async function waitBy(by, { optional = false } = {}, hidden = false) {
+export async function waitBy(by, { optional = false, hidden = false } = {}) {
     debug && console.log('waitBy', by.value || by);
     try {
         return await driver.wait(

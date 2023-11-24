@@ -5,9 +5,9 @@ import { By } from 'selenium-webdriver';
 import actionFinish from '../actions/actionFinish.mjs';
 import actionImportCloudTrack from '../actions/actionImportCloudTrack.mjs';
 import actionCheckCloudTracks from '../actions/actionCheckCloudTracks.mjs';
-import actionDeleteCloudTrack from '../actions/actionDeleteCloudTrack.mjs';
 import actionCreateNewFolder from '../actions/actionCreateNewFolder.mjs';
 import { deleteTrack, getTracks } from '../util.mjs';
+import actionIdleWait from '../actions/actionIdleWait.mjs';
 
 export default async function test() {
     const trackName = 'test-routed-osrm';
@@ -22,19 +22,24 @@ export default async function test() {
 
     await actionCreateNewFolder(folder);
 
-    await clickBy(By.id(`se-menu-cloud-${folder}`), { optional: true });
+    await clickBy(By.id(`se-menu-cloud-${folder}`));
     await waitBy(By.id(`se-cloud-track-name`));
 
     await clickBy(By.id('se-import-cloud-track'));
+    // import one track
     await actionImportCloudTrack(tracks, trackName);
+    // import duplicate
+    await actionIdleWait();
+    await actionImportCloudTrack(tracks, trackName);
+    // delete them
+    await deleteTrack(trackName);
+    await actionIdleWait();
+    await deleteTrack(`${trackName} - 1`);
+    // check folder is empty
+    await waitBy(By.id('se-import-first-track'));
+    // import list of tracks
     await actionImportCloudTrack(tracks);
     await actionCheckCloudTracks(tracks);
-    await actionDeleteCloudTrack(tracks);
-
-    //delete last extra track
-    const lastName = `${trackName} - 1`;
-    await deleteTrack(lastName);
-    await waitBy(By.id('se-import-first-track'));
 
     await actionFinish();
 }

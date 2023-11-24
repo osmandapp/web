@@ -10,4 +10,5 @@ export default async function test(tracks) {
 
 async function waitForTrack(name) {
     await waitBy(By.id('se-cloud-track-' + name));
+    await waitBy(By.id(`se-actions-${name}`));
 }
