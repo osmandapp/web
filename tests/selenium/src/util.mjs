@@ -1,5 +1,4 @@
 import { By } from 'selenium-webdriver';
-import { driver, TIMEOUT_OPTIONAL } from './options.mjs';
 import { clickBy, enclose, waitBy } from './lib.mjs';
 
 import { readdirSync } from 'node:fs';
@@ -40,13 +39,9 @@ export async function createFolder(name) {
     await waitBy(By.id(`se-menu-cloud-${name}`));
 }
 
-export async function littleTimeout() {
-    await driver.manage().setTimeouts({ implicit: TIMEOUT_OPTIONAL });
-}
-
 export async function deleteTrack(name) {
     await clickBy(By.id(`se-actions-${name}`));
     await clickBy(By.id('se-delete-cloud-track'));
     await clickBy(By.id('se-delete-track-dialog'));
-    littleTimeout().then();
+    await waitBy(By.id(`se-actions-${name}`), true, true);
 }
