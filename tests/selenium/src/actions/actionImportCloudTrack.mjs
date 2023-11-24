@@ -1,7 +1,7 @@
 import { clickBy, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { uploadCloudTracks } from '../util.mjs';
-import actionIdleWait from "./actionIdleWait.mjs";
+import actionIdleWait from './actionIdleWait.mjs';
 
 export default async function test(tracks, trackName = null) {
     await actionIdleWait();

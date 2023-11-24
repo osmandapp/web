@@ -7,7 +7,6 @@ import actionImportCloudTrack from '../actions/actionImportCloudTrack.mjs';
 import actionCheckCloudTracks from '../actions/actionCheckCloudTracks.mjs';
 import actionCreateNewFolder from '../actions/actionCreateNewFolder.mjs';
 import { deleteTrack, getTracks } from '../util.mjs';
-import actionIdleWait from '../actions/actionIdleWait.mjs';
 
 export default async function test() {
     const trackName = 'test-routed-osrm';

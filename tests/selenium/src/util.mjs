@@ -3,7 +3,7 @@ import { clickBy, enclose, waitBy } from './lib.mjs';
 
 import { readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
-import actionIdleWait from "./actions/actionIdleWait.mjs";
+import actionIdleWait from './actions/actionIdleWait.mjs';
 
 export function getTracks() {
     const tracks = [];
