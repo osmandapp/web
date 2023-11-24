@@ -29,10 +29,10 @@ const useStyles = makeStyles(() => ({
         },
         '& .leaflet-control-scale': {
             marginLeft:
-                props.width > 500
+                props.width > 700
                     ? `${props.marginLeft}px`
                     : `${(parseFloat(props.mainMenuWidth) || 0) + (parseFloat(props.menuInfoWidth) || 0) + 20}px`,
-            display: props.width > 500 ? 'inline-block' : 'flex',
+            display: props.width > 700 ? 'inline-block' : 'flex',
             float: 'none',
             marginBottom: '20px',
         },
