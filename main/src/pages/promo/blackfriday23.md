@@ -24,7 +24,7 @@ Just <s>29,99€</s> 14,99€ for one  year [OsmAnd Pro](https://osmand.net/docs
 
 Just <s>9,99€</s> 4,99€ for one  year [OsmAnd Maps+](https://osmand.net/docs/user/purchases/android#maps) (that’s 0.42€ a month)
 
-Just <s>29,99€</s> 14,99€ for [OsmAnd+](https://play.google.com/store/apps/details?id=net.osmand.plus) and [OsmAnd Maps+ in-app](https://osmand.net/docs/user/purchases/android#maps) (forever)
+Just <s>29,99€</s> 14,99€ for [OsmAnd+](https://play.google.com/store/apps/details?id=net.osmand.plus) and [OsmAnd Maps+ in-app](https://osmand.net/docs/user/purchases/android#maps) (unlimited)
 
 :::
 
