@@ -5,16 +5,16 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import { Alert, Box, Button, TextField } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext, { isLocalTrack } from '../../../../context/AppContext';
+import AppContext, { isLocalTrack } from '../../context/AppContext';
 import { Editor } from 'react-draft-wysiwyg';
 import { ContentState, convertFromHTML, convertToRaw, EditorState } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import 'draft-js/dist/Draft.css';
 import _ from 'lodash';
-import contextMenuStyles from '../../../styles/ContextMenuStyles';
+import contextMenuStyles from '../../infoblock/styles/ContextMenuStyles';
 import { AddPhotoAlternate } from '@mui/icons-material';
-import { saveTrackToLocalStorage } from '../../../../manager/track/SaveTrackManager';
+import { saveTrackToLocalStorage } from '../../manager/track/SaveTrackManager';
 
 export default function DescTrackDialog({ dialogOpen, setDialogOpen, desc }) {
     const ctx = useContext(AppContext);

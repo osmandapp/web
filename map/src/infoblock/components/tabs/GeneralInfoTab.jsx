@@ -3,7 +3,7 @@ import { Box, Button, Divider } from '@mui/material';
 import AppContext, { isLocalTrack, isRouteTrack } from '../../../context/AppContext';
 import { Download } from '@mui/icons-material';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
-import DeleteTrackDialog from '../track/dialogs/DeleteTrackDialog';
+import DeleteTrackDialog from '../../../dialogs/tracks/DeleteTrackDialog';
 import GeneralInfo from '../track/GeneralInfo';
 import { hasSegments, isEmptyTrack } from '../../../manager/track/TracksManager';
 import { Checkbox, FormControlLabel } from '@mui/material/';
