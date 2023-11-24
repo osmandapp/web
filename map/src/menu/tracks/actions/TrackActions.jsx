@@ -1,15 +1,23 @@
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef, useContext, useState } from 'react';
 import { Box, Divider, ListItemIcon, ListItemText, MenuItem, Paper, Typography } from '@mui/material';
 import styles from '../trackmenu.module.css';
 import { ReactComponent as ShowOnMapIcon } from '../../../assets/icons/ic_show_on_map_outlined.svg';
 import { ReactComponent as DownloadIcon } from '../../../assets/icons/ic_action_gsave_dark.svg';
 import { ReactComponent as DeleteIcon } from '../../../assets/icons/ic_action_delete_outlined.svg';
-import DeleteTrackDialog from '../../../infoblock/components/track/dialogs/DeleteTrackDialog';
+import { ReactComponent as RenameIcon } from '../../../assets/icons/ic_action_edit_outlined.svg';
+import { ReactComponent as DuplicateIcon } from '../../../assets/icons/ic_action_copy.svg';
+import DeleteTrackDialog from '../../../dialogs/tracks/DeleteTrackDialog';
 import Utils from '../../../util/Utils';
 import TracksManager from '../../../manager/track/TracksManager';
+import RenameDialog from '../../../dialogs/tracks/RenameDialog';
+import AppContext from '../../../context/AppContext';
+import { duplicateTrack } from '../../../manager/track/SaveTrackManager';
 
 const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) => {
+    const ctx = useContext(AppContext);
+
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
+    const [openRenameDialog, setOpenRenameDialog] = useState(false);
     const downloadGpx = async () => {
         const urlFile = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
         const qs = `?type=${encodeURIComponent(track.type)}&name=${encodeURIComponent(track.name)}`;
@@ -29,50 +37,93 @@ const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) =
         }
     };
 
+    async function createDuplicateTrack() {
+        const parts = track.name.split('/');
+        const newName = parts.pop();
+        await duplicateTrack(track.name, parts.join('/'), TracksManager.prepareName(newName), ctx).then();
+        if (setOpenActions) {
+            setOpenActions(false);
+        }
+    }
+
     return (
         <>
             <Box ref={ref}>
-                <Paper className={styles.actions}>
+                <Paper id="se-track-actions" className={styles.actions}>
                     <MenuItem
-                        className={styles.groupAction}
+                        className={styles.action}
                         onClick={() => {
                             setShowTrack(true);
                             setOpenActions(false);
                         }}
                     >
-                        <ListItemIcon className={styles.iconGroupActions}>
+                        <ListItemIcon className={styles.iconAction}>
                             <ShowOnMapIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            <Typography variant="inherit" className={styles.groupName} noWrap>
+                            <Typography variant="inherit" className={styles.actionName} noWrap>
                                 Show on map
                             </Typography>
                         </ListItemText>
                     </MenuItem>
-                    <Divider className={styles.dividerSort} />
+                    <Divider className={styles.dividerActions} />
                     <MenuItem
-                        className={styles.groupAction}
+                        id={'se-rename-cloud-track'}
+                        className={styles.action}
+                        onClick={() => setOpenRenameDialog(true)}
+                    >
+                        <ListItemIcon className={styles.iconAction}>
+                            <RenameIcon />
+                        </ListItemIcon>
+                        <ListItemText>
+                            <Typography variant="inherit" className={styles.actionName} noWrap>
+                                Rename
+                            </Typography>
+                        </ListItemText>
+                    </MenuItem>
+                    <Divider className={styles.dividerActions} />
+                    <MenuItem
+                        id={'se-duplicate-cloud-track'}
+                        className={styles.action}
+                        onClick={() => createDuplicateTrack()}
+                    >
+                        <ListItemIcon className={styles.iconAction}>
+                            <DuplicateIcon />
+                        </ListItemIcon>
+                        <ListItemText>
+                            <Typography variant="inherit" className={styles.actionName} noWrap>
+                                Duplicate
+                            </Typography>
+                        </ListItemText>
+                    </MenuItem>
+                    <Divider className={styles.dividerActions} />
+                    <MenuItem
+                        className={styles.action}
                         onClick={() => {
                             downloadGpx().then();
                             setOpenActions(false);
                         }}
                     >
-                        <ListItemIcon className={styles.iconGroupActions}>
+                        <ListItemIcon className={styles.iconAction}>
                             <DownloadIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            <Typography variant="inherit" className={styles.groupName} noWrap>
+                            <Typography variant="inherit" className={styles.actionName} noWrap>
                                 Download
                             </Typography>
                         </ListItemText>
                     </MenuItem>
-                    <Divider className={styles.dividerSort} />
-                    <MenuItem className={styles.groupAction} onClick={() => setOpenDeleteDialog(true)}>
-                        <ListItemIcon className={styles.iconGroupActions}>
+                    <Divider className={styles.dividerActions} />
+                    <MenuItem
+                        id={'se-delete-cloud-track'}
+                        className={styles.action}
+                        onClick={() => setOpenDeleteDialog(true)}
+                    >
+                        <ListItemIcon className={styles.iconAction}>
                             <DeleteIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            <Typography variant="inherit" className={styles.groupName} noWrap>
+                            <Typography variant="inherit" className={styles.actionName} noWrap>
                                 Delete
                             </Typography>
                         </ListItemText>
@@ -86,6 +137,9 @@ const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) =
                     file={track}
                     setOpenActions={setOpenActions}
                 />
+            )}
+            {openRenameDialog && (
+                <RenameDialog setOpenDialog={setOpenRenameDialog} track={track} setOpenActions={setOpenActions} />
             )}
         </>
     );

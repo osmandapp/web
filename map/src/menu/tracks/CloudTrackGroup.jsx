@@ -13,7 +13,7 @@ export default function CloudTrackGroup({ index, group }) {
 
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const [openActions, setOpenActions] = useState(false);
-    const [processDownloadObf, setProcessDownloadObf] = useState(false);
+    const [processDownload, setProcessDownload] = useState(false);
     const anchorEl = useRef(null);
 
     useEffect(() => {
@@ -48,6 +48,7 @@ export default function CloudTrackGroup({ index, group }) {
                 </ListItemText>
                 <IconButton
                     className={styles.sortIcon}
+                    id={`se-folder-actions-button-${group.name}`}
                     onMouseEnter={() => setHoverIconInfo(true)}
                     onMouseLeave={() => setHoverIconInfo(false)}
                     onClick={(e) => {
@@ -57,7 +58,7 @@ export default function CloudTrackGroup({ index, group }) {
                     }}
                     ref={anchorEl}
                 >
-                    {processDownloadObf ? (
+                    {processDownload ? (
                         <CircularProgress size={24} />
                     ) : hoverIconInfo ? (
                         <MenuIconHover />
@@ -74,7 +75,7 @@ export default function CloudTrackGroup({ index, group }) {
                     <GroupActions
                         group={group}
                         setOpenActions={setOpenActions}
-                        setProcessDownloadObf={setProcessDownloadObf}
+                        setProcessDownload={setProcessDownload}
                     />
                 }
             />

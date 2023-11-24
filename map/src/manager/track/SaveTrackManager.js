@@ -111,13 +111,13 @@ export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file,
     return false;
 }
 
-export function createTrackFreeName(name, otherTracks, folder = null) {
+export function createTrackFreeName(name, otherTracks, folder = null, folderName = null) {
     let occupied = null;
     let newName = name;
     for (let i = 1; i < 100; i++) {
-        if (folder) {
+        if (folder !== null || folderName !== null) {
             //check cloud
-            occupied = isTrackExists(newName, folder, otherTracks);
+            occupied = isTrackExists(newName, folder, folderName, otherTracks);
         } else {
             //check local
             occupied = otherTracks?.some((t) => t.name === newName);
@@ -163,6 +163,73 @@ export function saveTrackToLocalStorage({ ctx, track }) {
     });
 }
 
+export async function renameTrack(oldName, folder, newName, ctx) {
+    const newFileName = folder + newName + '.gpx';
+    if (newFileName !== oldName) {
+        const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/rename-file`, {
+            params: {
+                oldName: oldName,
+                newName: newFileName,
+                type: 'GPX',
+                saveCopy: false,
+            },
+            dataOnErrors: true,
+        });
+        if (res && res?.data?.status === 'ok') {
+            refreshGlobalFiles(ctx, newFileName).then();
+        } else {
+            ctx.setTrackErrorMsg({
+                title: 'Rename error',
+                msg: res.data,
+            });
+        }
+    }
+}
+
+export async function duplicateTrack(oldName, folderName, newName, ctx) {
+    newName = createTrackFreeName(newName, ctx.tracksGroups, null, folderName);
+    let folder = folderName !== '' ? `${folderName}/` : '';
+    const newFileName = folder + newName + '.gpx';
+    if (newFileName !== oldName) {
+        const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/rename-file`, {
+            params: {
+                oldName: oldName,
+                newName: newFileName,
+                type: 'GPX',
+                saveCopy: true,
+            },
+            dataOnErrors: true,
+        });
+        if (res && res?.data?.status === 'ok') {
+            refreshGlobalFiles(ctx, newFileName).then();
+        } else {
+            ctx.setTrackErrorMsg({
+                title: 'Duplicate error',
+                msg: res.data,
+            });
+        }
+    }
+}
+
+export async function renameFolder(folder, newName, ctx) {
+    const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/rename-folder`, {
+        params: {
+            folderName: folder.fullName,
+            newFolderName: folder.fullName.replace(folder.name, newName),
+            type: 'GPX',
+        },
+        dataOnErrors: true,
+    });
+    if (res && res?.data?.status === 'ok') {
+        refreshGlobalFiles(ctx).then();
+    } else {
+        ctx.setTrackErrorMsg({
+            title: 'Duplicate error',
+            msg: res.data,
+        });
+    }
+}
+
 export async function saveEmptyTrack(folderName, ctx) {
     //create empty file
     const convertedData = new TextEncoder().encode('');
@@ -185,9 +252,9 @@ export async function saveEmptyTrack(folderName, ctx) {
     }
 }
 
-async function refreshGlobalFiles(ctx, currentFileName) {
+export async function refreshGlobalFiles(ctx, currentFileName = null) {
     // refresh list-files but skip if uploaded file is already there
-    if (!ctx.listFiles.uniqueFiles?.find((f) => f.name === currentFileName)) {
+    if (currentFileName == null || !ctx.listFiles.uniqueFiles?.find((f) => f.name === currentFileName)) {
         const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
         const resJson = await respGetFiles.json();
         if (resJson && resJson.uniqueFiles) {

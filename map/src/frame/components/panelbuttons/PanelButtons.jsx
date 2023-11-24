@@ -9,8 +9,8 @@ import AppContext, {
     OBJECT_TYPE_WEATHER,
     OBJECT_TYPE_POI,
 } from '../../../context/AppContext';
-import SaveTrackDialog from '../../../infoblock/components/track/dialogs/SaveTrackDialog';
-import DeleteTrackDialog from '../../../infoblock/components/track/dialogs/DeleteTrackDialog';
+import SaveTrackDialog from '../../../dialogs/tracks/SaveTrackDialog';
+import DeleteTrackDialog from '../../../dialogs/tracks/DeleteTrackDialog';
 import DeleteFavoriteDialog from '../../../infoblock/components/favorite/DeleteFavoriteDialog';
 import _ from 'lodash';
 import TracksManager, { isEmptyTrack } from '../../../manager/track/TracksManager';

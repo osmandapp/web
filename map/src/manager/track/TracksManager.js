@@ -187,7 +187,7 @@ function getFileName(currentFile) {
     return prepareName(file.name, file.local);
 }
 
-function prepareName(name, local = false) {
+export function prepareName(name, local = false) {
     const result = name.replace(/.gpx/, '');
     if (result.includes('/')) {
         const groups = result.split('/');
@@ -209,7 +209,7 @@ function getGroup(name, local) {
     } else if (local && result.includes(':')) {
         return result.split(':')[0];
     } else {
-        return 'Tracks';
+        return DEFAULT_GROUP_NAME;
     }
 }
 
@@ -576,9 +576,11 @@ export function validName(name) {
     return name !== '' && name.trim().length > 0;
 }
 
-export function isTrackExists(name, folder, tracks) {
-    const folderName = folder.title ? folder.title : folder;
-    const foundFolder = findGroupByName(tracks, folderName);
+export function isTrackExists(name, folder, folderName, tracks) {
+    const foundFolder = findGroupByName(
+        tracks,
+        folderName !== null ? folderName : folder?.title ? folder?.title : folder
+    );
     return foundFolder ? foundFolder.groupFiles.some((f) => TracksManager.prepareName(f.name) === name) : false;
 }
 
