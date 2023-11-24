@@ -3,6 +3,7 @@ import { clickBy, enclose, waitBy } from './lib.mjs';
 
 import { readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
+import actionIdleWait from "./actions/actionIdleWait.mjs";
 
 export function getTracks() {
     const tracks = [];
@@ -40,9 +41,11 @@ export async function createFolder(name) {
 }
 
 export async function deleteTrack(name) {
+    await actionIdleWait();
     await waitBy(By.id(`se-actions-${name}`));
     await clickBy(By.id(`se-actions-${name}`));
     await clickBy(By.id('se-delete-cloud-track'));
     await clickBy(By.id('se-delete-track-dialog'));
-    await waitBy(By.id(`se-actions-${name}`), { optional: false, hidden: true });
+    await waitBy(By.id(`se-actions-${name}`), { hidden: true });
+    await actionIdleWait();
 }

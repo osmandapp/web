@@ -29,11 +29,9 @@ export default async function test() {
     // import one track
     await actionImportCloudTrack(tracks, trackName);
     // import duplicate
-    await actionIdleWait();
     await actionImportCloudTrack(tracks, trackName);
     // delete them
     await deleteTrack(trackName);
-    await actionIdleWait();
     await deleteTrack(`${trackName} - 1`);
     // check folder is empty
     await waitBy(By.id('se-import-first-track'));
