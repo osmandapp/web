@@ -16,7 +16,7 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 import SotmScreenshots from './carousel/sotmscreenshots.js';
 
 
-![BlackFriday](@site/static/img/promo/blackfriday/blackfriday_1.png)
+![BlackFriday](@site/static/img/promo/blackfriday/blackfriday_2.png)
 
 :::danger Black Friday prices
 
@@ -27,6 +27,9 @@ Just <s>9,99€</s> 4,99€ for one  year [OsmAnd Maps+](https://osmand.net/docs
 Just <s>29,99€</s> 14,99€ for [OsmAnd+](https://play.google.com/store/apps/details?id=net.osmand.plus) and [OsmAnd Maps+ in-app](https://osmand.net/docs/user/purchases/android#maps) (forever)
 
 :::
+
+_Until November 29 (12pm CET)_
+
 ____________
 
 <AllStores/>
