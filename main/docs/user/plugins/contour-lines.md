@@ -82,17 +82,17 @@ To display [**3D Relief**](#3d-relief) you need to purchase the *OsmAnd Pro* pla
 
 ## Download Maps
 
-In order to start working with the plugin functionality, you need to download maps of the regions you are interested in.
+In order to start working with the plugin functionality, you need to download the maps you are interested in. Some maps, for example, Contour Lines mountain maps, may have a large size, more than 2 GB, and may not be supported on outdated devices. 
+
+For stable work and to save resources, you can download a map not of the entire country, but of its specific regions, if such regions are offered in the application. Information about the size of each map type is listed under their name.
 
 ### How to download  
-
-Download **Contour lines**, **Hillshade**, **Slope**, **Terrain map (3D)** (Android only) for a specific area as follows:
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android"> 
 
-![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_and_1.png)  ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_and_2.png)
+![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
 
 </TabItem>  
 
@@ -104,28 +104,40 @@ Download **Contour lines**, **Hillshade**, **Slope**, **Terrain map (3D)** (Andr
 
 </Tabs>
 
+You can download **Contour lines**, **Terrain map (Hillshade and Slope)**, **Terrain map (3D)** for a specific area as follows:
+
+1. First option.
 - Go to:
     - **Android**: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,regions"/>*
     - **iOS**: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
-- Choose a country.
+- Select the country of your choice.
 - Download packages from sections:
-    - The *<Translate android="true" ids="region_maps"/>*(Android) or *<Translate ios="true" ids="res_region_map"/>*(iOS) section provides available maps for the entire country. Download them if necessary.
-    - The *<Translate android="true" ids="regions"/>*(Android) or *<Translate ios="true" ids="res_mapsres"/>*(iOS) section lists the regions of a country. Tap on the required region to open the map packs available for download. 
-- After you have downloaded the required maps, you can display **Contour lines** and/or **Terrain** (Hillshade/Slope) using the [Configure map](../map/configure-map-menu.md) section of the Main menu.
+    - The *<Translate android="true" ids="region_maps"/>* (Android) or *<Translate ios="true" ids="res_region_map"/>* (iOS) section provides available maps for the entire country. You can download them if you need to.
+    - The *<Translate android="true" ids="regions"/>* (Android) or *<Translate ios="true" ids="res_mapsres"/>* (iOS) section lists the regions of the selected country. Tap on the required region to open the map packs available for download. 
+- After downloading maps, you can display **Contour lines** and/or **Terrain** using the [Configure map](../map/configure-map-menu.md) section of the Main menu.
+2. If the map displayed on the screen is not downloaded, then in *Menu → Configure map → Topography section → Terrain* at the bottom of the list of features the section *Download maps* with suggested additional maps will be displayed.
 
+### Meters or Feet for Contour Line
 
-**Contour Lines** mountain maps may be large in size, over 2 GB, and may not be supported properly on older devices. You have the option to download individual areas of the region rather than the entire region. The size of all maps is indicated under their name.  
+<Tabs groupId="operating-systems">
 
+<TabItem value="android" label="Android">   
 
-### Interaction with Rendering version
+![Contour lines download dialog Android](@site/static/img/plugins/contour-lines/contour_lines_download_dialogue_andr.png)
 
-For the **Hillshade** or **Slope** functionality
+</TabItem>
 
-- If you are using Map rendering engine v1, you need to use the conventional Hillshade or Slope raster downloads,
-- If you are using Map rendering engine v2,
-   - you can continue to use the old Hillshade or Slope raster downloads, but need activate the Development and enable its setting "_Use raster sqlite for Hillshade / slope_.
-   - Alternatively, you can use the new "Terrain map (3D)" downloads (saving a bit of storage space), and the Hillshade/Slope/3D Relief effects can be produced from that on the device.
+<TabItem value="ios" label="iOS">  
 
+![Contour lines download dialog iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png) 
+
+</TabItem>
+
+</Tabs>  
+
+For [**Contour lines**](#contour-lines), you need to determine in which [units](../personal/profiles.md#units--formats) (meters or feet) they will be displayed on the map and download the appropriate version of the map to your device.
+
+**The unit options are not interchangeable**, so if you need to switch from meters to feet or the reverse, you need to delete the previous version of the Contour Lines map in order to download the other version.
 
  
 ## Contour lines
@@ -150,41 +162,18 @@ For the **Hillshade** or **Slope** functionality
 
 </Tabs>  
 
+[Contour lines](../map/vector-maps.md#-contour-lines) are a graphical representation of elevations on a map and are available as vector maps. They form lines corresponding to points with the same altitude, which form contours that allow you to determine in which direction and how much the surface slopes. Specific features:
 
-Contour lines allow you to explore in which direction and how much a surface is sloped. You can customize displaying the [contour lines](../map/vector-maps.md#contour-lines) in terms of color, line widths, density and zoom levels at which contour lines are visible.  
-
-When using Version 1 of the map rendering engine, if the map source is any tiled map from the Internet, the display of contour lines is not supported. In version 2 of the map rendering engine, contour maps are also displayed in 3D view and 3D Relief.  
+- When you use the [Map rendering engine](../personal/global-settings.md#map-rendering-engine) Version 2 (OpenGL), Contour lines are displayed in both 3D view and 3D relief mode.
+- When you use the Map rendering engine Version 1, if the map source is any tile map from the Internet, Contour line display is not supported.  
 
 **Appearance settings**:  
-- *<Translate android="true" ids="download_srtm_maps"/>* - toggle on/off to show or hide Contour lines on the map.
-- *<Translate android="true" ids="show_from_zoom_level"/>* - minimum and maximum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Contour lines are visible on the map.
-- *<Translate android="true" ids="srtm_color_scheme"/>* - selection of color options in which Contour lines are shown on the map. 
-- *<Translate android="true" ids="rendering_attr_contourWidth_name"/>* - selection of width options for displaying  Contour lines on the map. 
-- *<Translate android="true" ids="rendering_attr_contourDensity_name"/>* - selection of options for the density of Contour lines displayed on the map: Low, Medium, High. At higher densities, the map is loaded slower.
-- *<Translate android="true" ids="welmode_download_maps"/>* - shows Contour line maps for the selected area or the nearest areas relative to the current map center to be downloaded.  
-
-
-### Meters or Feet
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">   
-
-![Contour lines download dialog Android](@site/static/img/plugins/contour-lines/contour_lines_plugin_download_dialogue_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Contour lines download dialog iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png) 
-
-</TabItem>
-
-</Tabs>  
-
-Decide in which unit (meters or feet) you want to see the [**Contour lines**](../map/vector-maps.md#contour-lines) and download the corresponding version of the Contour lines map.  
-
-**The unit variants are not interchangeable**, if you need to switch from meters to feet, or vice versa, the previous version of the Contour lines map must be removed in order to download the other version.
+- *<Translate android="true" ids="download_srtm_maps"/>*. Toggle on/off whether to display or hide Contour Lines on the map.
+- *<Translate android="true" ids="show_from_zoom_level"/>*. Minimum and maximum [zoom level](../map/interact-with-map.md#my-location--zoom) at which Contour lines are visible on the map.
+- *<Translate android="true" ids="srtm_color_scheme"/>*. Selection of the color by which Сontour lines are displayed on the map. 
+- *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Selection of width options for displaying  Contour lines on the map. 
+- *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Selection of options for the density of Contour lines displayed on the map: Low, Medium, High. At higher densities, the map is loaded more slowly.
+- *<Translate android="true" ids="welmode_download_maps"/>*. Shows Contour line maps for the selected area nearby areas relative to the current map center to be downloaded.  
 
 
 ## Terrain
@@ -193,11 +182,15 @@ Decide in which unit (meters or feet) you want to see the [**Contour lines**](..
 
 <TabItem value="android" label="Android">   
 
+*<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>* 
+
 ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
 ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios.png) 
 
@@ -205,7 +198,9 @@ Decide in which unit (meters or feet) you want to see the [**Contour lines**](..
 
 </Tabs>  
 
-The Terrain menu includes and customizes two parameters: *Hillshade* and *Slope*. 
+The **Terrain** option enables and allows you to customize two features such as *Hillshade* and *Slope*. Specific features:  
+- Only one option, either Hillshade or Slope, can be enabled at the same time.
+- If you do not see any changes after downloading and enabling the corresponding map, it is recommended to restart the application.
 
 ### Hillshade / Slope
 
@@ -227,53 +222,47 @@ The Terrain menu includes and customizes two parameters: *Hillshade* and *Slope*
 
 #### Color scheme
 
+| Hillshade | Slope | Menu |
+| ------ | ------- | ------- | 
+|![Hillshade](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu.png)|![Slope](@site/static/img/plugins/contour-lines/color_scheme_slope_menu.png)| ![Menu](@site/static/img/plugins/contour-lines/color_scheme_menu.png) |
+
 - *Hillshade* uses dark shades to show slopes, peaks, and lowlands.  
-- *Slope* uses color to visualize the steepness of the terrain. You can read more about it here. 
 
-|Colour scheme - Hillshade|Colour scheme - Slope|
-|------|-------|
-|![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade_menu.png)|![Slope](../../../blog/2023-08-28-terrain/img/slope_menu.png)|
-
-:::info LEGEND
-
-Each color corresponds to an angle of deviation from the horizontal. 
+- *Slope* uses color to visualize the steepness of the terrain. You can read more about it [here](https://www.wikiwand.com/en/Grade_(slope)).  
+Each color corresponds to an angle of deviation from the horizontal.  
 
 ![Slope color legend](@site/static/img/plugins/contour-lines/Slope_legend.png)
-
-:::
 
 
 #### Visibility 
 
-*Visibility* is the transparency parameter of the colors used to display the angle (Slope) and the shading (Hillshade). 
+| Visibility 31% | Visibility 74% |
+| ------ | ------- |
+| ![Visibility ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibility ](../../../blog/2023-08-28-terrain/img/74.png) |
 
-|Visibility 31%|Visibility 74%|
-|------|-------|
-|![Visibility ](../../../blog/2023-08-28-terrain/img/31.png)|![Visibility ](../../../blog/2023-08-28-terrain/img/74.png)|
+The *Visibility* function is used to adjust the transparency of the shadows for Hillshade and the colors used to represent the angle in the Slope parameter.
 
 #### Zoom levels 
 
-***Zoom levels*** is an option that allows you to set the minimum and maximum zoom levels at which the layer will be displayed.
+![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
-![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)
+The *Scale Levels* function allows you to set the minimum and maximum values of map zoom levels, ranging from 4 to 19, at which the Hillshade or Slope map layers will be displayed.
 
 #### Cache size
 
-*Cache size* is a parameter that shows the size of the cache. Each time you view terrain information on the map (*Hillshade* or *Slope*), all this data is cached for quick use in the future (no additional load on the device's processor).
+**Cache size** is an information section that shows the amount of memory on your device that is used for *Terrain*. Each time you view *Hillshade* or *Slope* information on a map, all of this data is temporarily stored in the cache for quick access and later use, avoiding additional load on your device's processor.  
 
-To **clear the cache**, go here: *System settings → Apps → OsmAnd → Storage → Clear cache*
-
-|Before|After|
-|------|-------|
-|![Cache](../../../blog/2023-08-28-terrain/img/cache.png)|![Cache](../../../blog/2023-08-28-terrain/img/cache2.png)|
+**Clearing the cache** is sometimes necessary to free up space on your device or to troubleshoot possible productivity issues. To clear the cache you need to go to the *System Settings* of the device, then the path can be as follows: *Applications → OsmAnd → Storage → Clear cache*.
 
 
-:::caution
+### Interaction with Rendering version
 
-- For the **Terrain** feature, only 1 option **Hillshade** or **Slope** can be enabled at a time.
-- If after loading and enabling the corresponding map you do not see the changes, restart the application.
+**Hillshade** and **Slope** are displayed and adjusted in any selected [Map rendering engine](../personal/global-settings.md#map-rendering-engine).
 
-:::
+- If you use the *Map rendering engine Version 1*, you need to use the normal [downloading](../start-with/download-maps.md) of Hillshade and Slope raster maps.
+- If you use the *Map rendering engine Version 2 (OpenGL)*:
+    - You can continue to use the normal Hillshade and Slope raster map download type, but you need to activate the [*Development plugin*](../plugins/development.md) and enable the [*Use raster SQLIte format for hillshade and slope*](../plugins/development.md#terrain) setting.
+    - Alternatively, you can use the *Terrain Map (3D)* download. This saves memory space on your device, and the Hillshade, Slope, and 3D Relief effects will be generated from them using your device.
 
 
 ## 3D Relief
