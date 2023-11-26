@@ -174,15 +174,28 @@ Sync now combines the *Upload all* and *Download all* buttons in the Changes men
 :::
 
 
-## Trash
 
-![Trash](../../../blog/2023-09-30-android-4-6/img/trash.png)  ![Trash](../../../blog/2023-09-30-android-4-6/img/trash_2.png)  
+## Trash (Android)
 
-With the *Trash* feature, you can easily view and restore files deleted from OsmAnd Cloud. This allows you to gain more control over your data and avoid accidental irreversible deletion.  
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,help_article_personal_storage_name"/> → Trash*
 
-- *Empty trash* button deletes all items. 
-- **Items in trash will be erased after 30 days**.
-- Each item from Trash can be *Restore* or *Delete*. 
+![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_1_andr.png)  ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_2_andr.png)  
+
+The **Trash** feature allows you to view and manage files that have been deleted from OsmAnd Cloud. It is used to prevent accidental deletion of files, and irreversible loss of your data.
+- **View files**. *Trash* contains a list of all previously deleted files from the *Cloud Changes* folder. All files contain information about the date and time they were deleted and are sorted by Month and in order from most recently deleted to oldest files remaining in the Trash.
+- **Empty Trash**.  
+
+    ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_3_andr.png)  
+
+    To free up space from all files deleted from the Cloud, you can use the *Empty Trash* feature. It is available from the three-dots menu in the upper right corner of the Trash screen. The files are deleted permanently, with no possibility of restoring them.
+
+- **Managing separate files**.  
+
+    ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_4_andr.png)  
+
+    - *Restore from Trash*
+    - *Download to device*
+    - *Delete immediately*
 
 
 ## Settings
