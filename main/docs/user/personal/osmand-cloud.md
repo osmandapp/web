@@ -169,10 +169,7 @@ To use OsmAnd Start, do the following steps:
 - *Conflicts* - the total number of inconsistencies between local and cloud changes.
 - *Sync now* - select this option to synchronize all selected data sections in the [settings](#settings) menu that you have changed on this device and in the cloud.  
 
-:::tip
-Sync now combines the *Upload all* and *Download all* buttons in the Changes menu, in the [Local and Cloud](#local-and-cloud) sections. Conflicts are not synchronized in this way.
-:::
-
+**Sync now** combines the *Upload all* and *Download all* buttons in the Changes menu, in the [Local and Cloud](#local-and-cloud) sections. **Conflicts** are not synchronized in this way.
 
 
 ## Trash (Android)
@@ -182,7 +179,7 @@ Sync now combines the *Upload all* and *Download all* buttons in the Changes men
 ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_1_andr.png)  ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_2_andr.png)  
 
 The **Trash** feature allows you to view and manage files that have been deleted from OsmAnd Cloud. It is used to prevent accidental deletion of files, and irreversible loss of your data.
-- **View files**. *Trash* contains a list of all previously deleted files from the *Cloud Changes* folder. All files contain information about the date and time they were deleted and are sorted by Month and in order from most recently deleted to oldest files remaining in the Trash.
+- **View files**. *Trash* contains a list of all previously deleted files from the *Cloud Changes* folder. All files contain information about the date and time they were deleted. . They are grouped by month and sorted in order from the most recently deleted to the oldest files remaining in the Trash.
 - **Empty Trash**.  
 
     ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_3_andr.png)  
@@ -193,9 +190,9 @@ The **Trash** feature allows you to view and manage files that have been deleted
 
     ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_4_andr.png)  
 
-    - *Restore from Trash*
-    - *Download to device*
-    - *Delete immediately*
+    - *Restore from Trash*. With this feature, you can restore files to OsmAnd Cloud. After tapping, the selected file is moved from Trash in the *Changes* section to the *Cloud* folder.
+    - *Download to device*. This feature allows you to download a file to the device. If the selected file with the same name is present in the folder, the *File already exists* dialog box is displayed, in which you can select an action option: *Replace* or *Keep Both*.
+    - *Delete immediately*. This feature allows you to permanently delete the selected file without being able to restore it. Be careful when using this feature as the operation is irreversible.
 
 
 ## Settings
@@ -245,15 +242,13 @@ This section is for editing and managing your OsmAnd Cloud.
 
 </Tabs>
 
-In this menu, you can select which data and folders will be sent to the cloud.
+In this menu, you can select which data and folders to sent to the Cloud.
 
-1. *Settings* - This tab contains a list of information about all your personal settings, such as general, for specific profiles, quick actions, POIs, and avoid road.  
-2. *My Places* - This tab contains a list of information about the data in the [My Places menu](../personal/myplaces), such as favorites, tracks, OSM note, markers, and others.
-3. *Resources* - You can choose to back up resources such as favorites, routing, voice prompts, and some others.
+1. *Settings*. This tab contains a list of information about all your personal settings, such as general, for specific profiles, quick actions, POIs, and avoid road.  
+2. *My Places*. This tab contains a list of information about the data in the [My Places menu](../personal/myplaces), such as favorites, tracks, OSM note, markers, and others.
+3. *Resources*. You can choose to back up resources such as favorites, routing, voice prompts, and some others.
 
-:::note
-All of your maps are stored on the device that you downloaded them to. And the cloud only saves information about which maps you have and the date they were last modified. 
-:::
+All [maps](../start-with/download-maps.md) are stored on the device on which they were previously downloaded. OsmAnd Cloud only stores information about which maps you have and the date they were last modified.
 
 
 ### Manage storage
@@ -342,11 +337,10 @@ The actions you can do in **Danger zone** section of the Settings menu are irrev
 
 In the [Last Sync](#last-sync) section from the drop-down menu, tap any item to go to the Changes section. In this section, three tabs display all the changes available for editing. If the list is empty, it means that there have been no changes since the last synchronization.  
 
-Each item in the Changes list contains information about the date and accurate time of the last synchronization, as well as two items for instantly downloading or uploading the relevant version.  
+- Each item in the Changes list contains information about the date and accurate time of the last synchronization, as well as two items for instantly downloading or uploading the relevant version.   
 
-:::note
-Downloading changes from the cloud storage will override local changes. Accordingly, uploaded local data removes changes in the cloud version.
-:::
+- *Downloading changes from the cloud storage will override local changes*. Accordingly, uploaded local data removes changes in the cloud version.
+
 
 
 ### Local and Cloud
@@ -363,7 +357,7 @@ Downloading changes from the cloud storage will override local changes. Accordin
 
 <TabItem value="ios" label="iOS"> 
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/> / <Translate ios="true" ids="shared_string_file_cloud"/>* 
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/> / <Translate ios="true" ids="shared_string_cloud"/>* 
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_6.png)  
 
@@ -371,8 +365,8 @@ Downloading changes from the cloud storage will override local changes. Accordin
 
 </Tabs>   
 
-- **Local.** You can sync local changes that do not exist in the cloud version all at once using the *Upload All* button. Or you can select any change you need from the list and tap it to select the *Upload local version*.  
-Changes that have been uploaded from the local version to the cloud are removed after a while from the *Changes → Local* tab.  
+- **Local.** You can synchronize local changes that do not exist in the cloud version all at once using the *Upload All* button. Or you can select any change you need from the list and tap it to select the *Upload local version*.  
+Changes that were uploaded from the Local version to the Cloud are removed from the *Changes → Local tab* after a while.  
 - **Cloud.** The Cloud tab displays a list of changes that can be downloaded to your device from the cloud storage. You can download all the changes at once using the button at the bottom of the screen, or separately.  
 
 
@@ -398,6 +392,10 @@ Changes that have been uploaded from the local version to the cloud are removed 
 
 </Tabs>  
 
-Conflicts appear if the local version and the version stored in the cloud do not match. In this case, you can replace the data in the cloud with local changes or download the stored data to the device from the cloud. The resolved conflicts are removed from the list after processing, which usually does not take long.
-Tapping Conflicts displays information about the local and cloud versions in sync. You can choose to upload or download.
+*Conflicts* occur when the Local version and the version stored in the Cloud do not match. 
+- In this case, you can replace the data in the Cloud with Local changes or download the stored data to the device from the Cloud. 
+- The resolved conflicts are removed from the list after processing, which usually does not take much time.
+- When you tap the selected file in the Conflicts folder, information about the Local and Cloud versions being synchronized is displayed. This information shows when the file was modified and when it was uploaded.
+- The actions **Upload local version** or **Download cloud version** are available to you.
+
 
