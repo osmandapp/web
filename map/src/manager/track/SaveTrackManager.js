@@ -102,12 +102,12 @@ export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file,
                 return true;
             }
         }
+        ctx.setTrackErrorMsg({
+            title: 'Save error',
+            msg: `Unable to save ${gpxFile.name}`,
+        });
+        ctx.setTrackLoading([...ctx.trackLoading.filter((n) => n !== gpxFile.name)]);
     }
-    ctx.setTrackErrorMsg({
-        title: 'Save error',
-        msg: `Unable to save ${file.name}`,
-    });
-    ctx.setTrackLoading([...ctx.trackLoading.filter((n) => n !== file.name)]);
     return false;
 }
 
