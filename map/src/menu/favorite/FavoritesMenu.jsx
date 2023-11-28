@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import FavoriteGroup from './FavoriteGroup';
 import Utils from '../../util/Utils';
@@ -16,6 +16,7 @@ export default function FavoritesMenu() {
     const [enableGroups, setEnableGroups] = useState([]);
     const [once, setOnce] = useState(false);
     const [, height] = useWindowSize();
+    const [sortGroups, setSortGroups] = useState([]);
 
     useEffect(() => {
         let res = [];
@@ -129,27 +130,36 @@ export default function FavoritesMenu() {
         }
     }
 
+    const groupItems = useMemo(() => {
+        const items = [];
+        const groups =
+            sortGroups?.length > 0 ? sortGroups : ctx.favorites?.groups?.length > 0 ? ctx.favorites?.groups : null;
+        if (groups) {
+            groups.map((g, index) => {
+                items.push(
+                    <FavoriteGroup
+                        key={g + index}
+                        index={index}
+                        group={g}
+                        enableGroups={enableGroups}
+                        setEnableGroups={setEnableGroups}
+                    />
+                );
+            });
+        }
+        return items;
+    }, [ctx.favorites?.groups, sortGroups]);
+
     return (
         <>
             <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
-                <GroupHeader favoriteGroup={DEFAULT_FAV_GROUP_NAME} />
+                <GroupHeader favoriteGroup={DEFAULT_FAV_GROUP_NAME} setSortGroups={setSortGroups} />
                 <Box
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}
                     sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 120}px` }}
                 >
-                    {ctx.favorites?.groups?.length > 0 &&
-                        ctx.favorites.groups.map((group, index) => {
-                            return (
-                                <FavoriteGroup
-                                    key={group + index}
-                                    index={index}
-                                    group={group}
-                                    enableGroups={enableGroups}
-                                    setEnableGroups={setEnableGroups}
-                                />
-                            );
-                        })}
+                    {groupItems}
                 </Box>
             </Box>
             {ctx.favorites?.groups?.length === 0 && (

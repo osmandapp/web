@@ -31,7 +31,7 @@ export default function CloudTrackGroup({ index, group }) {
                 divider
                 onClick={(e) => {
                     if (e.target !== 'path') {
-                        ctx.setOpenTrackGroups((prevState) => [...prevState, group]);
+                        ctx.setOpenGroups((prevState) => [...prevState, group]);
                     }
                 }}
             >

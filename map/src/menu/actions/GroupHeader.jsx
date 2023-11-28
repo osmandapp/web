@@ -36,8 +36,8 @@ export default function GroupHeader({
     }
 
     function prevTrackMenu() {
-        ctx.openTrackGroups.pop();
-        ctx.setOpenTrackGroups([...ctx.openTrackGroups]);
+        ctx.openGroups.pop();
+        ctx.setOpenGroups([...ctx.openGroups]);
     }
 
     function getTitle() {
@@ -60,7 +60,7 @@ export default function GroupHeader({
         <>
             <AppBar position="static" className={styles.appbar}>
                 <Toolbar className={styles.toolbar}>
-                    {ctx.openTrackGroups.length > 0 ? (
+                    {ctx.openGroups.length > 0 ? (
                         <IconButton
                             variant="contained"
                             id="se-back-folder-button"
@@ -124,7 +124,7 @@ export default function GroupHeader({
                                     component="span"
                                     variant="contained"
                                     type="button"
-                                    disabled={favoriteGroup || ctx.accountInfo?.account === FREE_ACCOUNT}
+                                    disabled={favoriteGroup !== null || ctx.accountInfo?.account === FREE_ACCOUNT}
                                     className={styles.appBarIcon}
                                 >
                                     <ImportIcon />

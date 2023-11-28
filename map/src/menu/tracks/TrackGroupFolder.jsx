@@ -21,9 +21,9 @@ export default function TrackGroupFolder({ folder }) {
     useEffect(() => {
         if (ctx.tracksGroups) {
             let found = findGroupByName(ctx.tracksGroups, group.fullName);
-            if (ctx.openTrackGroups && ctx.openTrackGroups.length > 0) {
-                ctx.openTrackGroups[ctx.openTrackGroups.length - 1] = found;
-                ctx.setOpenTrackGroups([...ctx.openTrackGroups]);
+            if (ctx.openGroups && ctx.openGroups.length > 0) {
+                ctx.openGroups[ctx.openGroups.length - 1] = found;
+                ctx.setOpenGroups([...ctx.openGroups]);
                 if (folder) {
                     setGroup({ ...found });
                 }

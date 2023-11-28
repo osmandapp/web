@@ -25,7 +25,7 @@ export async function deleteTrack(file, ctx) {
             // delete track from ctx.tracksGroups (used in CloudTrackGroup menu)
             deleteTracksFromGroups(trackName, ctx);
 
-            // delete track from ctx.openTrackGroups
+            // delete track from ctx.openGroups
             deleteTracksFromLastGroup(trackName, ctx);
 
             // delete track from ctx.listFiles.uniqueFiles
@@ -84,8 +84,8 @@ function deleteTracksFromGroups(trackName, ctx) {
 }
 
 function deleteTracksFromLastGroup(trackName, ctx) {
-    if (ctx.openTrackGroups.length > 0) {
-        const lastGroup = ctx.openTrackGroups[ctx.openTrackGroups.length - 1];
+    if (ctx.openGroups.length > 0) {
+        const lastGroup = ctx.openGroups[ctx.openGroups.length - 1];
         const fileIndexInGroupFiles = lastGroup.groupFiles.findIndex((file) => file.name === trackName);
         if (fileIndexInGroupFiles !== -1) {
             lastGroup.groupFiles.splice(fileIndexInGroupFiles, 1);
