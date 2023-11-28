@@ -5,8 +5,8 @@ import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folde
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import styles from './trackmenu.module.css';
-import GroupActions from './actions/GroupActions';
-import ActionsMenu from './actions/ActionsMenu';
+import GroupActions from '../actions/GroupActions';
+import ActionsMenu from '../actions/ActionsMenu';
 
 export default function CloudTrackGroup({ index, group }) {
     const ctx = useContext(AppContext);

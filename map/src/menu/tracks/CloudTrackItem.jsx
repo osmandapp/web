@@ -20,8 +20,8 @@ import { ReactComponent as TrackIcon } from '../../assets/icons/ic_action_polygo
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import styles from './trackmenu.module.css';
-import TrackActions from './actions/TrackActions';
-import ActionsMenu from './actions/ActionsMenu';
+import TrackActions from '../actions/TrackActions';
+import ActionsMenu from '../actions/ActionsMenu';
 
 const DEFAULT_DIST = 0;
 const DEFAULT_TIME = '0:00';

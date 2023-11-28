@@ -5,10 +5,8 @@ import CloudTrackGroup from './CloudTrackGroup';
 import VisibleGroup from './VisibleGroup';
 import _ from 'lodash';
 import { Box } from '@mui/material';
-import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import CloudTrackItem from './CloudTrackItem';
-import SortActions from './actions/SortActions';
 import {
     createTrackGroups,
     DEFAULT_GROUP_NAME,
@@ -17,20 +15,15 @@ import {
 } from '../../manager/track/TracksManager';
 import Empty from '../errors/Empty';
 import Loading from '../errors/Loading';
-import SortMenu from './actions/SortMenu';
-import TracksHeader from './actions/TracksHeader';
+import GroupHeader from '../actions/GroupHeader';
 import TrackLoading from './TrackLoading';
 
 export default function TracksMenu() {
     const ctx = useContext(AppContext);
     const [visibleTracks, setVisibleTracks] = useState({ local: [], cloud: [] });
     const [defaultGroup, setDefaultGroup] = useState(null);
-    const [openSort, setOpenSort] = useState(false);
     const [sortFiles, setSortFiles] = useState([]);
     const [sortGroups, setSortGroups] = useState([]);
-    const [selectedSort, setSelectedSort] = useState(null);
-    const [sortIcon, setSortIcon] = useState(<TimeIcon />);
-    const [sortName, setSortName] = useState('Last modified');
     const anchorEl = useRef(null);
     const [, height] = useWindowSize();
     function visibleTracksOpen() {
@@ -180,12 +173,11 @@ export default function TracksMenu() {
     return (
         <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
             {defaultGroup && (
-                <TracksHeader
+                <GroupHeader
                     trackGroup={defaultGroup}
-                    sortIcon={sortIcon}
-                    sortName={sortName}
-                    setOpenSort={setOpenSort}
                     anchorEl={anchorEl}
+                    setSortGroups={setSortGroups}
+                    setSortFiles={setSortFiles}
                 />
             )}
             {ctx.gpxLoading ? (
@@ -227,24 +219,6 @@ export default function TracksMenu() {
                     )}
                 </>
             )}
-            <SortMenu
-                openSort={openSort}
-                setOpenSort={setOpenSort}
-                anchorEl={anchorEl}
-                actions={
-                    <SortActions
-                        files={defaultGroup?.files}
-                        setSortFiles={setSortFiles}
-                        groups={ctx.tracksGroups}
-                        setSortGroups={setSortGroups}
-                        setOpenSort={setOpenSort}
-                        selectedSort={selectedSort}
-                        setSelectedSort={setSelectedSort}
-                        setSortIcon={setSortIcon}
-                        setSortName={setSortName}
-                    />
-                }
-            />
         </Box>
     );
 }

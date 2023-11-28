@@ -1,17 +1,17 @@
 import React, { forwardRef, useContext, useState } from 'react';
 import { Box, Divider, ListItemIcon, ListItemText, MenuItem, Paper, Typography } from '@mui/material';
-import styles from '../trackmenu.module.css';
-import { ReactComponent as ShowOnMapIcon } from '../../../assets/icons/ic_show_on_map_outlined.svg';
-import { ReactComponent as DownloadIcon } from '../../../assets/icons/ic_action_gsave_dark.svg';
-import { ReactComponent as DeleteIcon } from '../../../assets/icons/ic_action_delete_outlined.svg';
-import { ReactComponent as RenameIcon } from '../../../assets/icons/ic_action_edit_outlined.svg';
-import { ReactComponent as DuplicateIcon } from '../../../assets/icons/ic_action_copy.svg';
-import DeleteTrackDialog from '../../../dialogs/tracks/DeleteTrackDialog';
-import Utils from '../../../util/Utils';
-import TracksManager from '../../../manager/track/TracksManager';
-import RenameDialog from '../../../dialogs/tracks/RenameDialog';
-import AppContext from '../../../context/AppContext';
-import { duplicateTrack } from '../../../manager/track/SaveTrackManager';
+import styles from '../tracks/trackmenu.module.css';
+import { ReactComponent as ShowOnMapIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
+import { ReactComponent as DownloadIcon } from '../../assets/icons/ic_action_gsave_dark.svg';
+import { ReactComponent as DeleteIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
+import { ReactComponent as RenameIcon } from '../../assets/icons/ic_action_edit_outlined.svg';
+import { ReactComponent as DuplicateIcon } from '../../assets/icons/ic_action_copy.svg';
+import DeleteTrackDialog from '../../dialogs/tracks/DeleteTrackDialog';
+import Utils from '../../util/Utils';
+import TracksManager from '../../manager/track/TracksManager';
+import RenameDialog from '../../dialogs/tracks/RenameDialog';
+import AppContext from '../../context/AppContext';
+import { duplicateTrack } from '../../manager/track/SaveTrackManager';
 
 const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) => {
     const ctx = useContext(AppContext);

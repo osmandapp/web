@@ -1,21 +1,28 @@
 import { AppBar, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
-import CloudGpxUploader from '../../../frame/components/util/CloudGpxUploader';
+import CloudGpxUploader from '../../frame/components/util/CloudGpxUploader';
 import React, { useContext, useState } from 'react';
-import AppContext from '../../../context/AppContext';
-import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
-import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
-import { ReactComponent as ImportIcon } from '../../../assets/icons/ic_action_folder_import_outlined.svg';
-import { ReactComponent as AddFolderIcon } from '../../../assets/icons/ic_action_folder_add_outlined.svg';
-import { MENU_INFO_CLOSE_SIZE } from '../../../manager/GlobalManager';
-import styles from '../trackmenu.module.css';
-import { DEFAULT_GROUP_NAME } from '../../../manager/track/TracksManager';
-import { FREE_ACCOUNT } from '../../../manager/LoginManager';
-import AddFolderDialog from '../../../dialogs/tracks/AddFolderDialog';
+import AppContext from '../../context/AppContext';
+import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
+import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
+import { ReactComponent as ImportIcon } from '../../assets/icons/ic_action_folder_import_outlined.svg';
+import { ReactComponent as AddFolderIcon } from '../../assets/icons/ic_action_folder_add_outlined.svg';
+import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
+import styles from '../tracks/trackmenu.module.css';
+import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
+import { FREE_ACCOUNT } from '../../manager/LoginManager';
+import AddFolderDialog from '../../dialogs/tracks/AddFolderDialog';
+import SortActions from './SortActions';
+import SortMenu from './SortMenu';
 
-export default function TracksHeader({ trackGroup, sortIcon, sortName, setOpenSort, anchorEl }) {
+export default function GroupHeader({ trackGroup, anchorEl, setSortGroups, setSortFiles }) {
     const ctx = useContext(AppContext);
 
     const [openAddFolderDialog, setOpenAddFolderDialog] = useState(false);
+    const [openSort, setOpenSort] = useState(false);
+    const [sortName, setSortName] = useState('Last modified');
+    const [sortIcon, setSortIcon] = useState(<TimeIcon />);
+    const [selectedSort, setSelectedSort] = useState(null);
 
     function closeTrackMenu() {
         ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
@@ -107,6 +114,24 @@ export default function TracksHeader({ trackGroup, sortIcon, sortName, setOpenSo
             {openAddFolderDialog && (
                 <AddFolderDialog trackGroup={trackGroup} setOpenAddFolderDialog={setOpenAddFolderDialog} />
             )}
+            <SortMenu
+                openSort={openSort}
+                setOpenSort={setOpenSort}
+                anchorEl={anchorEl}
+                actions={
+                    <SortActions
+                        files={trackGroup?.groupFiles}
+                        setSortFiles={setSortFiles}
+                        groups={ctx.tracksGroups}
+                        setSortGroups={setSortGroups}
+                        setOpenSort={setOpenSort}
+                        selectedSort={selectedSort}
+                        setSelectedSort={setSelectedSort}
+                        setSortIcon={setSortIcon}
+                        setSortName={setSortName}
+                    />
+                }
+            />
         </>
     );
 }
