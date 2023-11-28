@@ -5,7 +5,7 @@ import { apiPost } from '../util/HttpApi';
 import { quickNaNfix } from '../util/Utils';
 
 const FAVORITE_FILE_TYPE = 'FAVOURITES';
-const DEFAULT_GROUP_NAME = 'favorites';
+export const DEFAULT_FAV_GROUP_NAME = 'favorites';
 const DEFAULT_TAB_ICONS = 'used';
 const FAVORITE_GROUP_FOLDER = '/map/images/poi_categories';
 const DEFAULT_GROUP_WPT_COLOR = '#eecc22';
@@ -132,7 +132,7 @@ function orderList(items, defaultItem) {
 
 function getColorGroup(ctx, groupName, wpt) {
     let color;
-    if (groupName === DEFAULT_GROUP_NAME) {
+    if (groupName === DEFAULT_FAV_GROUP_NAME) {
         groupName = DEFAULT_GROUP_NAME_POINTS_GROUPS;
     }
     if (wpt) {
@@ -189,7 +189,7 @@ function createDefaultWptGroup(wptGroup) {
 }
 
 function getGroupSize(group) {
-    const name = group.name === DEFAULT_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : group.name;
+    const name = group.name === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : group.name;
     if (group?.pointsGroups[name]?.groupSize) {
         return Number(group?.pointsGroups[name].groupSize);
     } else {
@@ -214,7 +214,7 @@ const FavoritesManager = {
     getGroupSize,
     DEFAULT_TAB_ICONS: DEFAULT_TAB_ICONS,
     FAVORITE_GROUP_FOLDER: FAVORITE_GROUP_FOLDER,
-    DEFAULT_GROUP_NAME: DEFAULT_GROUP_NAME,
+    DEFAULT_GROUP_NAME: DEFAULT_FAV_GROUP_NAME,
     DEFAULT_GROUP_WPT_COLOR: DEFAULT_GROUP_WPT_COLOR,
     FAVORITE_FILE_TYPE: FAVORITE_FILE_TYPE,
     FAV_FILE_PREFIX: FAV_FILE_PREFIX,

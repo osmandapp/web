@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
-import FavoriteAllGroups from './FavoriteAllGroups';
 import FavoriteGroup from './FavoriteGroup';
 import Utils from '../../util/Utils';
 import TracksManager from '../../manager/track/TracksManager';
-import FavoritesManager from '../../manager/FavoritesManager';
+import FavoritesManager, { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
 import Empty from '../errors/Empty';
+import { Box } from '@mui/material';
+import GroupHeader from '../actions/GroupHeader';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
@@ -13,6 +15,7 @@ export default function FavoritesMenu() {
     const [openFavoritesGroups, setOpenFavoritesGroups] = useState([]);
     const [enableGroups, setEnableGroups] = useState([]);
     const [once, setOnce] = useState(false);
+    const [, height] = useWindowSize();
 
     useEffect(() => {
         let res = [];
@@ -128,9 +131,13 @@ export default function FavoritesMenu() {
 
     return (
         <>
-            {openFavoritesGroups?.length > 0 || ctx.favorites?.groups?.length > 0 ? (
-                <>
-                    <FavoriteAllGroups setEnableGroups={setEnableGroups} favoritesGroups={openFavoritesGroups} />
+            <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+                <GroupHeader favoriteGroup={DEFAULT_FAV_GROUP_NAME} />
+                <Box
+                    minWidth={ctx.infoBlockWidth}
+                    maxWidth={ctx.infoBlockWidth}
+                    sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 120}px` }}
+                >
                     {ctx.favorites?.groups?.length > 0 &&
                         ctx.favorites.groups.map((group, index) => {
                             return (
@@ -143,8 +150,9 @@ export default function FavoritesMenu() {
                                 />
                             );
                         })}
-                </>
-            ) : (
+                </Box>
+            </Box>
+            {ctx.favorites?.groups?.length === 0 && (
                 <Empty
                     title={'You don’t have favorite files'}
                     text={'You can import or create favorite files using OsmAnd App.'}

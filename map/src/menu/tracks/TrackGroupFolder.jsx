@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import CloudTrackItem from './CloudTrackItem';
 import CloudTrackGroup from './CloudTrackGroup';
 import { Box } from '@mui/material';
@@ -16,7 +16,6 @@ export default function TrackGroupFolder({ folder }) {
     const [group, setGroup] = useState(folder);
     const [sortFiles, setSortFiles] = useState([]);
     const [sortGroups, setSortGroups] = useState([]);
-    const anchorEl = useRef(null);
     const [, height] = useWindowSize();
 
     useEffect(() => {
@@ -67,14 +66,7 @@ export default function TrackGroupFolder({ folder }) {
     return (
         <>
             <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
-                {group && (
-                    <GroupHeader
-                        trackGroup={group}
-                        anchorEl={anchorEl}
-                        setSortGroups={setSortGroups}
-                        setSortFiles={setSortFiles}
-                    />
-                )}
+                {group && <GroupHeader trackGroup={group} setSortGroups={setSortGroups} setSortFiles={setSortFiles} />}
                 <Box
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}

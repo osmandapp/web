@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useContext, useEffect, useMemo } from 'react';
 import AppContext from '../../context/AppContext';
 import { toHHMMSS } from '../../util/Utils';
 import CloudTrackGroup from './CloudTrackGroup';
@@ -24,7 +24,6 @@ export default function TracksMenu() {
     const [defaultGroup, setDefaultGroup] = useState(null);
     const [sortFiles, setSortFiles] = useState([]);
     const [sortGroups, setSortGroups] = useState([]);
-    const anchorEl = useRef(null);
     const [, height] = useWindowSize();
     function visibleTracksOpen() {
         return visibleTracks.local.length > 0 || visibleTracks.cloud.length > 0;
@@ -173,12 +172,7 @@ export default function TracksMenu() {
     return (
         <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
             {defaultGroup && (
-                <GroupHeader
-                    trackGroup={defaultGroup}
-                    anchorEl={anchorEl}
-                    setSortGroups={setSortGroups}
-                    setSortFiles={setSortFiles}
-                />
+                <GroupHeader trackGroup={defaultGroup} setSortGroups={setSortGroups} setSortFiles={setSortFiles} />
             )}
             {ctx.gpxLoading ? (
                 <Loading />
