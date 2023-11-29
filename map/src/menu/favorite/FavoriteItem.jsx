@@ -41,7 +41,7 @@ export default function FavoriteItem({ marker, group }) {
     }
 
     const CustomIcon = () => {
-        return <div style={{ filter: 'none' }} dangerouslySetInnerHTML={{ __html: marker.icon + '' }} />;
+        return <div style={{ height: '24px' }} dangerouslySetInnerHTML={{ __html: marker.icon + '' }} />;
     };
 
     return useMemo(() => {
