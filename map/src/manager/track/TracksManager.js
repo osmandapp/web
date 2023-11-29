@@ -10,7 +10,7 @@ import L from 'leaflet';
 import MarkerOptions from '../../map/markers/MarkerOptions';
 import anchorme from 'anchorme';
 
-const GPX_FILE_TYPE = 'GPX';
+export const GPX_FILE_TYPE = 'GPX';
 const GET_SRTM_DATA = 'get-srtm-data';
 const GET_ANALYSIS = 'get-analysis';
 export const PROFILE_LINE = 'line';

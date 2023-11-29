@@ -1,8 +1,11 @@
-import MarkerOptions from '../map/markers/MarkerOptions';
+import MarkerOptions, { getSvgBackground } from '../map/markers/MarkerOptions';
 import Utils from '../util/Utils';
 import _ from 'lodash';
 import { apiPost } from '../util/HttpApi';
 import { quickNaNfix } from '../util/Utils';
+import TracksManager from './track/TracksManager';
+import { refreshGlobalFiles } from './track/SaveTrackManager';
+import { OBJECT_TYPE_FAVORITE } from '../context/AppContext';
 
 const FAVORITE_FILE_TYPE = 'FAVOURITES';
 export const DEFAULT_FAV_GROUP_NAME = 'favorites';
@@ -41,7 +44,7 @@ function GroupResult(clienttimems, updatetimems, data) {
 function getShapesSvg(color) {
     let res = {};
     shapes.forEach((shape) => {
-        res[`${shape}`] = MarkerOptions.getSvgBackground(color, shape);
+        res[`${shape}`] = getSvgBackground(color, shape);
     });
     return res;
 }
@@ -166,6 +169,50 @@ function createGroup(file) {
     };
 }
 
+export function prepareFavGroupName(name) {
+    const result = name.replace(/.gpx/, '');
+    return result.replace(FavoritesManager.FAV_FILE_PREFIX, '');
+}
+
+export async function saveFavoriteGroup(data, groupName, ctx) {
+    if (data.pointsGroups[groupName]) {
+        let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add-group`, data, {
+            params: {
+                groupName: groupName,
+            },
+        });
+        if (resp.data) {
+            const res = resp.data;
+            refreshGlobalFiles(ctx, groupName, OBJECT_TYPE_FAVORITE).then();
+            return FavoritesManager.createGroup(res);
+        }
+    }
+}
+
+export function createFavGroupFreeName(name, groups) {
+    let occupied = null;
+    let newName = name;
+    for (let i = 1; i < 100; i++) {
+        if (groups) {
+            occupied = isFavGroupExists(newName, groups);
+        }
+        if (!occupied) {
+            return newName;
+        }
+        newName = name + ' - ' + i; // try with "Track - X"
+    }
+
+    if (occupied) {
+        throw new Error('TracksManager addTrack() too many same-tracks');
+    }
+
+    //return FavoritesManager.FAV_FILE_PREFIX + newName;
+}
+
+export function isFavGroupExists(name, groups) {
+    return groups.some((g) => g.name === name);
+}
+
 function isHidden(pointsGroups, name) {
     let group = pointsGroups[name];
     if (group && group.points) {
@@ -204,6 +251,26 @@ function getGroupSize(group) {
 export function removeShadowFromIconWpt(svgHtml) {
     const filterPattern = /filter=".*?"/g;
     return svgHtml.replace(filterPattern, '');
+}
+
+export function updateFavGroups(listFiles, ctx) {
+    if (!_.isEmpty(listFiles)) {
+        let files = TracksManager.getFavoriteGroups(listFiles);
+        let newFavoritesFiles = {
+            groups: [],
+        };
+        files.forEach((file) => {
+            let group = FavoritesManager.createGroup(file);
+            newFavoritesFiles.groups.push(group);
+        });
+        newFavoritesFiles.groups = FavoritesManager.orderList(
+            newFavoritesFiles.groups,
+            FavoritesManager.DEFAULT_GROUP_NAME
+        );
+        ctx.setFavorites(newFavoritesFiles);
+    } else {
+        ctx.setFavorites([]);
+    }
 }
 
 const FavoritesManager = {

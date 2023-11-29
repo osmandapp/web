@@ -15,6 +15,7 @@ import AddFolderDialog from '../../dialogs/tracks/AddFolderDialog';
 import SortActions from './SortActions';
 import SortMenu from './SortMenu';
 import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
+import FavoriteGroupUploader from '../../frame/components/util/FavoriteGroupUploader';
 
 export default function GroupHeader({
     trackGroup = null,
@@ -116,22 +117,41 @@ export default function GroupHeader({
                             </span>
                         </Tooltip>
                     )}
-                    <Tooltip key={'import_track'} title="Import track" arrow placement="bottom-end">
-                        <span>
-                            <CloudGpxUploader folder={trackGroup?.fullName}>
-                                <IconButton
-                                    id="se-import-cloud-track"
-                                    component="span"
-                                    variant="contained"
-                                    type="button"
-                                    disabled={favoriteGroup !== null || ctx.accountInfo?.account === FREE_ACCOUNT}
-                                    className={styles.appBarIcon}
-                                >
-                                    <ImportIcon />
-                                </IconButton>
-                            </CloudGpxUploader>
-                        </span>
-                    </Tooltip>
+                    {trackGroup && (
+                        <Tooltip key={'import_track'} title="Import track" arrow placement="bottom-end">
+                            <span>
+                                <CloudGpxUploader folder={trackGroup?.fullName}>
+                                    <IconButton
+                                        id="se-import-cloud-track"
+                                        component="span"
+                                        variant="contained"
+                                        type="button"
+                                        disabled={favoriteGroup !== null || ctx.accountInfo?.account === FREE_ACCOUNT}
+                                        className={styles.appBarIcon}
+                                    >
+                                        <ImportIcon />
+                                    </IconButton>
+                                </CloudGpxUploader>
+                            </span>
+                        </Tooltip>
+                    )}
+                    {favoriteGroup === DEFAULT_FAV_GROUP_NAME && (
+                        <Tooltip key={'import_fav_group'} title="Import favorite group" arrow placement="bottom-end">
+                            <span>
+                                <FavoriteGroupUploader>
+                                    <IconButton
+                                        id="se-import-fav-group"
+                                        component="span"
+                                        variant="contained"
+                                        type="button"
+                                        className={styles.appBarIcon}
+                                    >
+                                        <ImportIcon />
+                                    </IconButton>
+                                </FavoriteGroupUploader>
+                            </span>
+                        </Tooltip>
+                    )}
                 </Toolbar>
             </AppBar>
             {openAddFolderDialog && (

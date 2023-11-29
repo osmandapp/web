@@ -8,6 +8,7 @@ import Empty from '../errors/Empty';
 import { Box } from '@mui/material';
 import GroupHeader from '../actions/GroupHeader';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
+import { isEmpty } from 'lodash';
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
@@ -152,17 +153,18 @@ export default function FavoritesMenu() {
 
     return (
         <>
-            <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
-                <GroupHeader favoriteGroup={DEFAULT_FAV_GROUP_NAME} setSortGroups={setSortGroups} />
-                <Box
-                    minWidth={ctx.infoBlockWidth}
-                    maxWidth={ctx.infoBlockWidth}
-                    sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 120}px` }}
-                >
-                    {groupItems}
+            {!isEmpty(ctx.favorites) && ctx.favorites?.groups?.length > 0 ? (
+                <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+                    <GroupHeader favoriteGroup={DEFAULT_FAV_GROUP_NAME} setSortGroups={setSortGroups} />
+                    <Box
+                        minWidth={ctx.infoBlockWidth}
+                        maxWidth={ctx.infoBlockWidth}
+                        sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 120}px` }}
+                    >
+                        {groupItems}
+                    </Box>
                 </Box>
-            </Box>
-            {ctx.favorites?.groups?.length === 0 && (
+            ) : (
                 <Empty
                     title={'You don’t have favorite files'}
                     text={'You can import or create favorite files using OsmAnd App.'}

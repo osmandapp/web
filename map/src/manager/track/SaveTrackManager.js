@@ -1,5 +1,5 @@
 //save to local
-import FavoritesManager from '../FavoritesManager';
+import FavoritesManager, { updateFavGroups } from '../FavoritesManager';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import TracksManager, {
     createTrackGroups,
@@ -10,10 +10,11 @@ import TracksManager, {
     prepareLocalTrack,
     getGpxFiles,
     DEFAULT_GROUP_NAME,
+    GPX_FILE_TYPE,
 } from './TracksManager';
 import _ from 'lodash';
 import { compressFromJSON } from '../../util/GzipBase64.mjs';
-import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
+import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import Utils from '../../util/Utils';
 
 export const EMPTY_FILE_NAME = 'empty.ignore';
@@ -252,7 +253,7 @@ export async function saveEmptyTrack(folderName, ctx) {
     }
 }
 
-export async function refreshGlobalFiles(ctx, currentFileName = null) {
+export async function refreshGlobalFiles(ctx, currentFileName = null, type = GPX_FILE_TYPE) {
     // refresh list-files but skip if uploaded file is already there
     if (currentFileName == null || !ctx.listFiles.uniqueFiles?.find((f) => f.name === currentFileName)) {
         const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
@@ -260,10 +261,16 @@ export async function refreshGlobalFiles(ctx, currentFileName = null) {
         if (resJson && resJson.uniqueFiles) {
             ctx.setListFiles(resJson);
         }
-        updateTrackGroups(resJson, ctx);
+        if (type === OBJECT_TYPE_FAVORITE) {
+            updateFavGroups(resJson, ctx);
+        } else if (type === GPX_FILE_TYPE) {
+            updateTrackGroups(resJson, ctx);
+        }
     } else {
-        const updatedTrackGroups = updateUpdatetimemsInGroups(ctx.tracksGroups, currentFileName, Date.now());
-        ctx.setTracksGroups(updatedTrackGroups);
+        if (type === GPX_FILE_TYPE) {
+            const updatedTrackGroups = updateUpdatetimemsInGroups(ctx.tracksGroups, currentFileName, Date.now());
+            ctx.setTracksGroups(updatedTrackGroups);
+        }
     }
 }
 

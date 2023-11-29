@@ -106,12 +106,13 @@ export default function EditFavoriteDialog({
         let currentWpt = getCurrentWpt(selectedGroupName);
         let ind = ctx.selectedGpxFile.file.wpts.findIndex((wpt) => wpt === currentWpt);
         let newGroup = ctx.favorites.groups.find((g) => g.name === selectedGroupName);
+        let oldGroup = ctx.favorites.groups.find((g) => g.name === ctx.selectedGpxFile.nameGroup);
         let result = await FavoritesManager.updateFavorite(
             currentWpt,
             ctx.selectedGpxFile.name,
             ctx.selectedGpxFile.file.name,
             newGroup.file.name,
-            ctx.favorites[ctx.selectedGpxFile.nameGroup].updatetimems,
+            oldGroup.updatetimems,
             newGroup.updatetimems,
             ind
         );

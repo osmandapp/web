@@ -55,7 +55,7 @@ export function getWptIcon(point, color, background, icon, folder) {
             : DEFAULT_WPT_COLOR;
     colorBackground = Utils.hexToArgb(colorBackground);
     let shapeBackground = background ? background : point.background;
-    let svg = getSvgBackground(colorBackground, shapeBackground);
+    let svg = getBackground(colorBackground, shapeBackground);
     let iconWpt =
         icon && icon !== 'null'
             ? icon
@@ -89,7 +89,7 @@ function isStrangeShape(shape) {
     );
 }
 
-function getSvgBackground(colorBackground, shape) {
+function getBackground(colorBackground, shape) {
     let svg;
     if (shape) {
         if (shape === BACKGROUND_WPT_SHAPE_CIRCLE || isStrangeShape(shape)) {
@@ -107,10 +107,40 @@ function getSvgBackground(colorBackground, shape) {
     return svg;
 }
 
+export function getSvgBackground(colorBackground, shape) {
+    let svg;
+    if (shape) {
+        if (shape === BACKGROUND_WPT_SHAPE_CIRCLE || isStrangeShape(shape)) {
+            svg =
+                `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">` +
+                `<circle cx="24" cy="24" r="12" fill="${colorBackground}"/>` +
+                `</svg>`;
+        }
+        if (shape === BACKGROUND_WPT_SHAPE_OCTAGON) {
+            svg =
+                `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">` +
+                `<path d="M13 19L19 13H29L35 19V29L29 35H19L13 29V19Z" fill="${colorBackground}"/>` +
+                `</svg>`;
+        }
+        if (shape === BACKGROUND_WPT_SHAPE_SQUARE) {
+            svg =
+                `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">` +
+                `<rect x="13" y="13" width="22" height="22" rx="3" fill="${colorBackground}"/>` +
+                `</svg>`;
+        }
+    } else {
+        svg =
+            `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">` +
+            `<circle cx="24" cy="24" r="12" fill="${colorBackground}"/>` +
+            `</svg>`;
+    }
+    return svg;
+}
+
 const MarkerOptions = {
     options,
     getWptIcon,
-    getSvgBackground,
+    getBackground,
     BACKGROUND_WPT_SHAPE_CIRCLE: BACKGROUND_WPT_SHAPE_CIRCLE,
     BACKGROUND_WPT_SHAPE_OCTAGON: BACKGROUND_WPT_SHAPE_OCTAGON,
     BACKGROUND_WPT_SHAPE_SQUARE: BACKGROUND_WPT_SHAPE_SQUARE,

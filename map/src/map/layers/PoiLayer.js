@@ -187,7 +187,7 @@ export default function PoiLayer() {
     }
 
     function getPoiIcon(poi) {
-        const svg = MarkerOptions.getSvgBackground(PoiManager.DEFAULT_POI_COLOR, PoiManager.DEFAULT_SHAPE_COLOR);
+        const svg = MarkerOptions.getBackground(PoiManager.DEFAULT_POI_COLOR, PoiManager.DEFAULT_SHAPE_COLOR);
         const iconWpt = PoiManager.getIconNameForPoiType(
             poi.properties.iconKeyName,
             poi.properties.typeOsmTag,

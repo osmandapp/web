@@ -4,10 +4,10 @@ import AppContext from '../../context/AppContext';
 import FavoritesManager from '../../manager/FavoritesManager';
 import styles from '../tracks/trackmenu.module.css';
 import ActionsMenu from '../actions/ActionsMenu';
-import GroupActions from '../actions/GroupActions';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
+import FavoriteGroupActions from '../actions/FavoriteGroupActions';
 
 export default function FavoriteGroup({ index, group }) {
     const ctx = useContext(AppContext);
@@ -25,7 +25,7 @@ export default function FavoriteGroup({ index, group }) {
     }, [ctx.favorites, ctx.setFavorites]);
 
     function getSize() {
-        return FavoritesManager.getGroupSize(group) > 0 ? FavoritesManager.getGroupSize(group) : '';
+        return FavoritesManager.getGroupSize(group) > 0 ? `${FavoritesManager.getGroupSize(group)} points` : 'empty';
     }
 
     return (
@@ -51,7 +51,7 @@ export default function FavoriteGroup({ index, group }) {
                         {group.name}
                     </Typography>
                     <Typography variant="body2" className={styles.groupInfo} noWrap>
-                        {`${getSize()} points`}
+                        {getSize()}
                     </Typography>
                 </ListItemText>
                 <IconButton
@@ -80,7 +80,7 @@ export default function FavoriteGroup({ index, group }) {
                 setOpen={setOpenActions}
                 anchorEl={anchorEl}
                 actions={
-                    <GroupActions
+                    <FavoriteGroupActions
                         group={group}
                         setOpenActions={setOpenActions}
                         setProcessDownload={setProcessDownload}
