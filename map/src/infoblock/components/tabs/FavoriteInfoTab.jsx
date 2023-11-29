@@ -4,32 +4,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import AppContext from '../../../context/AppContext';
 import MarkerOptions from '../../../map/markers/MarkerOptions';
-import { makeStyles } from '@material-ui/core/styles';
 import EditFavoriteDialog from '../favorite/EditFavoriteDialog';
 import DeleteFavoriteDialog from '../favorite/DeleteFavoriteDialog';
-import FavoritesManager from '../../../manager/FavoritesManager';
-
-const useStyles = makeStyles({
-    icon: {
-        '& .icon': {
-            width: '40px',
-            height: '40px',
-            top: '20px',
-            left: '21px',
-        },
-        '& .background': {
-            left: '-25px',
-            top: '-25px',
-            width: '100px',
-            height: '100px',
-            filter: 'drop-shadow(0 0 0 gray)',
-        },
-    },
-});
+import FavoritesManager, { removeShadowFromIconWpt } from '../../../manager/FavoritesManager';
 
 const FavoriteInfoTab = () => {
     const styles = contextMenuStyles();
-    const classes = useStyles();
     const ctx = useContext(AppContext);
 
     const toggleEditFavoritesDialogOpen = () => {
@@ -98,15 +78,16 @@ const FavoriteInfoTab = () => {
                     {favorite?.marker && (
                         <Grid sx={{ position: 'relative' }} className={styles.name} item xs={2}>
                             <div
-                                className={classes.icon}
                                 dangerouslySetInnerHTML={{
                                     __html:
-                                        MarkerOptions.getWptIcon(
-                                            favorite?.marker,
-                                            favorite?.color,
-                                            favorite?.background,
-                                            favorite?.icon
-                                        ).options.html + '',
+                                        removeShadowFromIconWpt(
+                                            MarkerOptions.getWptIcon(
+                                                favorite?.marker,
+                                                favorite?.color,
+                                                favorite?.background,
+                                                favorite?.icon
+                                            ).options.html
+                                        ) + '',
                                 }}
                             />
                         </Grid>

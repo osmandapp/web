@@ -1,41 +1,20 @@
-import { ListItemText, MenuItem, Tooltip, Typography } from '@mui/material';
-import React, { useContext } from 'react';
+import { IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
+import React, { useContext, useMemo, useRef, useState } from 'react';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
-import { makeStyles } from '@material-ui/core/styles';
-import drawerStyles from '../../frame/styles/DrawerStyles';
+import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
+import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
+import ActionsMenu from '../actions/ActionsMenu';
+import styles from '../tracks/trackmenu.module.css';
 
-const useStyles = makeStyles({
-    icon: {
-        '& .icon': {
-            top: '14px',
-            left: '30px',
-        },
-        '& .background': {
-            left: '0px',
-            top: '2px',
-            filter: 'drop-shadow(0 0 0 gray)',
-        },
-    },
-    text: {
-        '& .MuiTypography-root': {
-            whiteSpace: 'nowrap',
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            width: '100%',
-            paddingRight: '20px',
-        },
-    },
-});
-
-export default function FavoriteItem({ index, marker, group }) {
-    const classes = useStyles();
-    const styles = drawerStyles();
-
+export default function FavoriteItem({ marker, group }) {
     const ctx = useContext(AppContext);
 
+    const [hoverIconInfo, setHoverIconInfo] = useState(false);
+    const [openActions, setOpenActions] = useState(false);
+    const anchorEl = useRef(null);
+
     function addFavoriteToMap(marker) {
-        let type = OBJECT_TYPE_FAVORITE;
-        ctx.setCurrentObjectType(type);
+        ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
         let newSelectedGpxFile = {};
         newSelectedGpxFile.markerCurrent = marker;
         if (!ctx.selectedGpxFile.markerPrev || ctx.selectedGpxFile.markerPrev !== ctx.selectedGpxFile.markerCurrent) {
@@ -61,16 +40,44 @@ export default function FavoriteItem({ index, marker, group }) {
         ctx.setSelectedGpxFile(newSelectedGpxFile);
     }
 
-    return (
-        <div className={styles.drawerItem}>
-            <Tooltip title={marker.title} arrow>
-                <MenuItem key={'marker' + index} sx={{ ml: 2 }} divider onClick={() => addFavoriteToMap(marker)}>
-                    <div className={classes.icon} dangerouslySetInnerHTML={{ __html: marker.icon + '' }} />
-                    <ListItemText className={classes.text}>
-                        <Typography variant="inherit">{marker.title}</Typography>
+    const CustomIcon = () => {
+        return <div style={{ filter: 'none' }} dangerouslySetInnerHTML={{ __html: marker.icon + '' }} />;
+    };
+
+    return useMemo(() => {
+        return (
+            <>
+                <MenuItem
+                    className={styles.item}
+                    divider
+                    id={'se-fav-item-' + marker.title}
+                    onClick={() => addFavoriteToMap(marker)}
+                >
+                    <ListItemIcon className={styles.icon}>
+                        <CustomIcon />
+                    </ListItemIcon>
+                    <ListItemText>
+                        <Typography variant="inherit" className={styles.groupName} noWrap>
+                            {marker.title}
+                        </Typography>
                     </ListItemText>
+                    <IconButton
+                        id={`se-actions-${marker.title}`}
+                        className={styles.sortIcon}
+                        onMouseEnter={() => setHoverIconInfo(true)}
+                        onMouseLeave={() => setHoverIconInfo(false)}
+                        onClick={(e) => {
+                            setOpenActions(true);
+                            ctx.setOpenedPopper(anchorEl);
+                            e.stopPropagation();
+                        }}
+                        ref={anchorEl}
+                    >
+                        {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
+                    </IconButton>
                 </MenuItem>
-            </Tooltip>
-        </div>
-    );
+                <ActionsMenu open={openActions} setOpen={setOpenActions} anchorEl={anchorEl} />
+            </>
+        );
+    }, [marker]);
 }

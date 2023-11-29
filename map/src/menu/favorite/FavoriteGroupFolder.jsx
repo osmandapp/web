@@ -4,7 +4,7 @@ import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import GroupHeader from '../actions/GroupHeader';
 import Empty from '../errors/Empty';
-import FavoritesManager from '../../manager/FavoritesManager';
+import FavoritesManager, { removeShadowFromIconWpt } from '../../manager/FavoritesManager';
 import FavoriteItem from './FavoriteItem';
 import Utils from '../../util/Utils';
 import TracksManager from '../../manager/track/TracksManager';
@@ -24,7 +24,7 @@ export default function FavoriteGroupFolder({ folder }) {
             Object.values(ctx.favorites[group.name].markers._layers).forEach((value) => {
                 let marker = {
                     title: value.options.title,
-                    icon: value.options.icon.options.html,
+                    icon: removeShadowFromIconWpt(value.options.icon.options.html),
                     layer: value,
                 };
                 markerList.push(marker);
@@ -79,7 +79,7 @@ export default function FavoriteGroupFolder({ folder }) {
         const items = [];
         markers?.length > 0 &&
             markers.map((marker, index) => {
-                items.push(<FavoriteItem key={marker + index} index={index} marker={marker} group={group} />);
+                items.push(<FavoriteItem key={marker + index} marker={marker} group={group} />);
             });
         return items;
     }, [markers, sortFiles]);

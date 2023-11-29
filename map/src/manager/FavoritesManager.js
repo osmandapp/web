@@ -201,6 +201,11 @@ function getGroupSize(group) {
     }
 }
 
+export function removeShadowFromIconWpt(svgHtml) {
+    const filterPattern = /filter=".*?"/g;
+    return svgHtml.replace(filterPattern, '');
+}
+
 const FavoritesManager = {
     addFavorite,
     deleteFavorite,
