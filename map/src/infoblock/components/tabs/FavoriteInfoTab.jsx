@@ -4,9 +4,15 @@ import React, { useContext, useEffect, useState } from 'react';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import AppContext from '../../../context/AppContext';
 import MarkerOptions from '../../../map/markers/MarkerOptions';
-import EditFavoriteDialog from '../favorite/EditFavoriteDialog';
-import DeleteFavoriteDialog from '../favorite/DeleteFavoriteDialog';
-import FavoritesManager, { removeShadowFromIconWpt } from '../../../manager/FavoritesManager';
+import EditFavoriteDialog from '../../../dialogs/favorites/EditFavoriteDialog';
+import DeleteFavoriteDialog from '../../../dialogs/favorites/DeleteFavoriteDialog';
+import FavoritesManager, {
+    isNoValue,
+    prepareBackground,
+    prepareColor,
+    prepareIcon,
+    removeShadowFromIconWpt,
+} from '../../../manager/FavoritesManager';
 
 const FavoriteInfoTab = () => {
     const styles = contextMenuStyles();
@@ -49,22 +55,6 @@ const FavoriteInfoTab = () => {
             }
         }
     }, [ctx.selectedGpxFile]);
-
-    function isNoValue(value) {
-        return value === undefined || value === 'null' || value === null;
-    }
-
-    function prepareColor(value) {
-        return isNoValue(value) ? MarkerOptions.DEFAULT_WPT_COLOR : value;
-    }
-
-    function prepareBackground(value) {
-        return isNoValue(value) ? MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE : value;
-    }
-
-    function prepareIcon(value) {
-        return isNoValue(value) ? MarkerOptions.DEFAULT_WPT_ICON : value;
-    }
 
     return (
         <Box className={styles.item} maxWidth={ctx.infoBlockWidth}>

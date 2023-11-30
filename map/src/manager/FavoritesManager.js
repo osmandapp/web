@@ -273,6 +273,22 @@ export function updateFavGroups(listFiles, ctx) {
     }
 }
 
+export function isNoValue(value) {
+    return value === undefined || value === 'null' || value === null;
+}
+
+export function prepareColor(value) {
+    return isNoValue(value) ? MarkerOptions.DEFAULT_WPT_COLOR : value;
+}
+
+export function prepareBackground(value) {
+    return isNoValue(value) ? MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE : value;
+}
+
+export function prepareIcon(value) {
+    return isNoValue(value) ? MarkerOptions.DEFAULT_WPT_ICON : value;
+}
+
 const FavoritesManager = {
     addFavorite,
     deleteFavorite,

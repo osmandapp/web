@@ -5,6 +5,7 @@ import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import ActionsMenu from '../actions/ActionsMenu';
 import styles from '../tracks/trackmenu.module.css';
+import FavoriteItemActions from '../actions/FavoriteItemActions';
 
 export default function FavoriteItem({ marker, group }) {
     const ctx = useContext(AppContext);
@@ -76,8 +77,13 @@ export default function FavoriteItem({ marker, group }) {
                         {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
                     </IconButton>
                 </MenuItem>
-                <ActionsMenu open={openActions} setOpen={setOpenActions} anchorEl={anchorEl} />
+                <ActionsMenu
+                    open={openActions}
+                    setOpen={setOpenActions}
+                    anchorEl={anchorEl}
+                    actions={<FavoriteItemActions marker={marker} group={group} setOpenActions={setOpenActions} />}
+                />
             </>
         );
-    }, [marker]);
+    }, [marker, openActions, hoverIconInfo, ctx.openedPopper]);
 }

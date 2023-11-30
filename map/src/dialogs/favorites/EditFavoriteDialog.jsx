@@ -4,21 +4,22 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import React, { useContext, useEffect, useState } from 'react';
-import contextMenuStyles from '../../styles/ContextMenuStyles';
-import AppContext from '../../../context/AppContext';
+import contextMenuStyles from '../../infoblock/styles/ContextMenuStyles';
+import AppContext from '../../context/AppContext';
 import DeleteFavoriteDialog from './DeleteFavoriteDialog';
 import { Close } from '@mui/icons-material';
-import FavoriteName from './structure/FavoriteName';
-import FavoriteAddress from './structure/FavoriteAddress';
-import FavoriteDescription from './structure/FavoriteDescription';
-import FavoriteGroup from './structure/FavoriteGroup';
-import FavoriteIcon from './structure/FavoriteIcon';
-import FavoriteColor from './structure/FavoriteColor';
-import FavoriteShape from './structure/FavoriteShape';
-import FavoritesManager from '../../../manager/FavoritesManager';
-import FavoriteHelper from './FavoriteHelper';
-import { apiGet } from '../../../util/HttpApi';
-import { useWindowSize } from '../../../util/hooks/useWindowSize';
+import FavoriteName from '../../infoblock/components/favorite/structure/FavoriteName';
+import FavoriteAddress from '../../infoblock/components/favorite/structure/FavoriteAddress';
+import FavoriteDescription from '../../infoblock/components/favorite/structure/FavoriteDescription';
+import FavoriteGroup from '../../infoblock/components/favorite/structure/FavoriteGroup';
+import FavoriteIcon from '../../infoblock/components/favorite/structure/FavoriteIcon';
+import FavoriteColor from '../../infoblock/components/favorite/structure/FavoriteColor';
+import FavoriteShape from '../../infoblock/components/favorite/structure/FavoriteShape';
+import FavoritesManager from '../../manager/FavoritesManager';
+import FavoriteHelper from '../../infoblock/components/favorite/FavoriteHelper';
+import { apiGet } from '../../util/HttpApi';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
+import { isEmpty } from 'lodash';
 
 export default function EditFavoriteDialog({
     favorite,
@@ -26,10 +27,10 @@ export default function EditFavoriteDialog({
     setEditFavoritesDialogOpen,
     deleteFavoritesDialogOpen,
     setDeleteFavoritesDialogOpen,
+    setOpenActions = null,
 }) {
     const menuStyles = contextMenuStyles();
     const ctx = useContext(AppContext);
-
     const [favoriteName, setFavoriteName] = useState(favorite.name);
     const [favoriteAddress, setFavoriteAddress] = useState(favorite.address);
     const [favoriteDescription, setFavoriteDescription] = useState(favorite.desc);
@@ -42,6 +43,8 @@ export default function EditFavoriteDialog({
     const [errorName, setErrorName] = useState(false);
     const [width] = useWindowSize();
     const widthDialog = width / 2 < 450 ? width * 0.75 : 450;
+
+    const useSelected = !isEmpty(ctx.selectedGpxFile);
 
     const toggleDeleteFavoritesDialogOpen = () => {
         setDeleteFavoritesDialogOpen(!deleteFavoritesDialogOpen);
@@ -66,10 +69,17 @@ export default function EditFavoriteDialog({
     }
 
     async function save() {
-        if (ctx.addFavorite.editTrack) {
-            saveTrackWpt();
+        if (favorite) {
+            if (ctx.addFavorite.editTrack) {
+                saveTrackWpt();
+            } else {
+                await saveFavorite();
+            }
         } else {
-            await saveFavorite();
+            setEditFavoritesDialogOpen(false);
+            if (setOpenActions) {
+                setOpenActions(false);
+            }
         }
     }
 
@@ -104,31 +114,47 @@ export default function EditFavoriteDialog({
     async function saveFavorite() {
         let selectedGroupName = favoriteGroup === null ? favorite.category : favoriteGroup.name;
         let currentWpt = getCurrentWpt(selectedGroupName);
-        let ind = ctx.selectedGpxFile.file.wpts.findIndex((wpt) => wpt === currentWpt);
+        const arrWpt = useSelected ? ctx.selectedGpxFile.file.wpts : ctx.favorites[favorite.group.name].wpts;
+
         let newGroup = ctx.favorites.groups.find((g) => g.name === selectedGroupName);
-        let oldGroup = ctx.favorites.groups.find((g) => g.name === ctx.selectedGpxFile.nameGroup);
+        let oldGroup = ctx.favorites.groups.find(
+            (g) => g.name === (useSelected ? ctx.selectedGpxFile.nameGroup : favorite.category)
+        );
+
+        const wptName = useSelected ? ctx.selectedGpxFile.name : favorite.name;
+        const oldGroupName = useSelected ? ctx.selectedGpxFile.file.name : favorite.group.file.name;
+
         let result = await FavoritesManager.updateFavorite(
             currentWpt,
-            ctx.selectedGpxFile.name,
-            ctx.selectedGpxFile.file.name,
+            wptName,
+            oldGroupName,
             newGroup.file.name,
             oldGroup.updatetimems,
             newGroup.updatetimems,
-            ind
+            arrWpt.findIndex((wpt) => wpt.name === currentWpt.name)
         );
+
+        //update favorites groups
         if (result) {
-            updateFavoriteGroups(result, selectedGroupName);
+            updateFavoriteGroups(
+                result,
+                selectedGroupName,
+                useSelected ? ctx.selectedGpxFile.nameGroup : favorite.category
+            );
             setEditFavoritesDialogOpen(false);
+            if (setOpenActions) {
+                setOpenActions(false);
+            }
         }
     }
 
-    function updateFavoriteGroups(result, selectedGroupName) {
-        ctx.favorites.groups = FavoriteHelper.updateGroupAfterChange(ctx, result, selectedGroupName);
+    function updateFavoriteGroups(result, selectedGroupName, oldGroupName) {
+        ctx.favorites.groups = FavoriteHelper.updateGroupAfterChange(ctx, result, selectedGroupName, oldGroupName);
         let selectedGroup = ctx.favorites.groups.find((g) => g.name === selectedGroupName);
 
         if (result.oldGroupResp) {
-            ctx.favorites[ctx.selectedGpxFile.nameGroup] = FavoriteHelper.updateGroupObj(
-                ctx.favorites[ctx.selectedGpxFile.nameGroup],
+            ctx.favorites[oldGroupName] = FavoriteHelper.updateGroupObj(
+                ctx.favorites[oldGroupName],
                 result.oldGroupResp
             );
         }
@@ -141,25 +167,30 @@ export default function EditFavoriteDialog({
                 result.newGroupResp
             );
         }
-        FavoriteHelper.updateSelectedFile(ctx, ctx.favorites, null, favoriteName, selectedGroupName, false);
+        useSelected &&
+            FavoriteHelper.updateSelectedFile(ctx, ctx.favorites, null, favoriteName, selectedGroupName, false);
+
         ctx.setFavorites({ ...ctx.favorites });
     }
 
     function getCurrentWpt(selectedGroupName) {
+        const group = useSelected ? ctx.selectedGpxFile.file : ctx.favorites[favorite.group.name];
         let res = null;
-        let wpts = ctx.selectedGpxFile.file ? ctx.selectedGpxFile.file.wpts : ctx.selectedGpxFile.wpts;
-        wpts.forEach((wpt) => {
-            if (wpt.name === favorite.name) {
-                wpt.name = favoriteName;
-                wpt.address = getAddress();
-                wpt.desc = getDescription();
-                wpt.color = favoriteColor;
-                wpt.background = favoriteShape;
-                wpt.icon = favoriteIcon;
-                wpt.category = getCategory(selectedGroupName);
-                res = wpt;
-            }
-        });
+        let wpts = group ? group.wpts : ctx.selectedGpxFile.wpts;
+        if (wpts) {
+            wpts.forEach((wpt) => {
+                if (wpt.name === favorite.name) {
+                    wpt.name = favoriteName;
+                    wpt.address = getAddress();
+                    wpt.desc = getDescription();
+                    wpt.color = favoriteColor;
+                    wpt.background = favoriteShape;
+                    wpt.icon = favoriteIcon;
+                    wpt.category = getCategory(selectedGroupName);
+                    res = wpt;
+                }
+            });
+        }
         return res;
     }
 
@@ -188,7 +219,7 @@ export default function EditFavoriteDialog({
     }
 
     return (
-        <Dialog open={true}>
+        <Dialog open={true} onClick={(e) => e.stopPropagation()}>
             <Grid container spacing={2}>
                 <Grid className={menuStyles.name} item xs={11} sx={{ mb: -3 }}>
                     <DialogTitle>{getTitleDialog()}</DialogTitle>

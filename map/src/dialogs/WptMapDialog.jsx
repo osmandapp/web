@@ -18,8 +18,8 @@ import AppContext, { isLocalTrack } from '../context/AppContext';
 import FavoritesManager from '../manager/FavoritesManager';
 import contextMenuStyles from '../infoblock/styles/ContextMenuStyles';
 import { makeStyles } from '@material-ui/core/styles';
-import EditFavoriteDialog from '../infoblock/components/favorite/EditFavoriteDialog';
-import DeleteFavoriteDialog from '../infoblock/components/favorite/DeleteFavoriteDialog';
+import EditFavoriteDialog from './favorites/EditFavoriteDialog';
+import DeleteFavoriteDialog from './favorites/DeleteFavoriteDialog';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import { getWptIcon } from '../map/markers/MarkerOptions';
 

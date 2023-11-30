@@ -2,23 +2,27 @@ import { Dialog } from '@material-ui/core';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
-import TracksManager from '../../../manager/track/TracksManager';
+import TracksManager from '../../manager/track/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
 import { Button } from '@mui/material';
 import React, { useContext } from 'react';
-import AppContext from '../../../context/AppContext';
-import FavoritesManager from '../../../manager/FavoritesManager';
-import FavoriteHelper from './FavoriteHelper';
-import PointManager from '../../../manager/PointManager';
+import AppContext from '../../context/AppContext';
+import FavoritesManager from '../../manager/FavoritesManager';
+import FavoriteHelper from '../../infoblock/components/favorite/FavoriteHelper';
+import PointManager from '../../manager/PointManager';
+import { isEmpty } from 'lodash';
 
-export default function DeleteFavoriteDialog({ dialogOpen, setDialogOpen, wpt }) {
+export default function DeleteFavoriteDialog({ dialogOpen, setDialogOpen, wpt = null, setOpenActions = null }) {
     const ctx = useContext(AppContext);
+
+    const useSelected = !isEmpty(ctx.selectedGpxFile);
 
     const toggleShowDialog = () => {
         setDialogOpen(!dialogOpen);
     };
 
     async function deleteWpt() {
+        //delete wpt from track
         if (ctx.addFavorite.editTrack) {
             if (ctx.selectedWpt) {
                 const lat = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lat : ctx.selectedWpt.wpt.lat;
@@ -29,36 +33,40 @@ export default function DeleteFavoriteDialog({ dialogOpen, setDialogOpen, wpt })
                 ctx.setSelectedWpt(null);
             }
         } else {
+            //delete favorite point from group
             deleteFavorite().then();
+            if (setOpenActions) {
+                setOpenActions(false);
+            }
         }
     }
 
     async function deleteFavorite() {
-        for (let i = 0; i < ctx.selectedGpxFile.file.wpts.length; i++) {
-            if (ctx.selectedGpxFile.file.wpts[i].name === ctx.selectedGpxFile.markerCurrent.title) {
+        const arrWpt = useSelected ? ctx.selectedGpxFile.file.wpts : ctx.favorites[wpt.group.name].wpts;
+        const groupName = useSelected ? ctx.selectedGpxFile.nameGroup : wpt.category;
+        const groupFullName = useSelected ? ctx.selectedGpxFile.file.name : wpt.group.file.name;
+        const currentWptName = useSelected ? ctx.selectedGpxFile.markerCurrent.title : wpt.name;
+
+        for (let i = 0; i < arrWpt.length; i++) {
+            if (arrWpt[i].name === currentWptName) {
                 let result = await FavoritesManager.deleteFavorite(
-                    ctx.selectedGpxFile.file.wpts[i],
-                    ctx.selectedGpxFile.file.name,
-                    ctx.favorites[ctx.selectedGpxFile.nameGroup].updatetimems
+                    arrWpt[i],
+                    groupFullName,
+                    ctx.favorites[groupName].updatetimems
                 );
+                //update favorites groups
                 if (result) {
-                    ctx.favorites[ctx.selectedGpxFile.nameGroup] = FavoriteHelper.updateGroupObj(
-                        ctx.favorites[ctx.selectedGpxFile.nameGroup],
-                        result
-                    );
-                    ctx.favorites = FavoriteHelper.updateSelectedGroup(
-                        ctx.favorites,
-                        ctx.selectedGpxFile.nameGroup,
-                        result
-                    );
-                    FavoriteHelper.updateSelectedFile(
-                        ctx,
-                        ctx.favorites,
-                        result,
-                        ctx.selectedGpxFile.markerCurrent.title,
-                        ctx.selectedGpxFile.nameGroup,
-                        true
-                    );
+                    ctx.favorites[groupName] = FavoriteHelper.updateGroupObj(ctx.favorites[groupName], result);
+                    ctx.favorites = FavoriteHelper.updateSelectedGroup(ctx.favorites, groupName, result);
+                    useSelected &&
+                        FavoriteHelper.updateSelectedFile(
+                            ctx,
+                            ctx.favorites,
+                            result,
+                            ctx.selectedGpxFile.markerCurrent.title,
+                            ctx.selectedGpxFile.nameGroup,
+                            true
+                        );
                     ctx.setFavorites({ ...ctx.favorites });
                     closeContextMenu();
                     break;
@@ -79,11 +87,13 @@ export default function DeleteFavoriteDialog({ dialogOpen, setDialogOpen, wpt })
     function getQuestionDialog() {
         return ctx.addFavorite.editTrack
             ? `Are you sure you want to delete ${wpt.name}?`
-            : `Are you sure you want to delete ${TracksManager.prepareName(ctx.selectedGpxFile.markerCurrent.title)}?`;
+            : `Are you sure you want to delete ${TracksManager.prepareName(
+                  useSelected ? ctx.selectedGpxFile.markerCurrent.title : wpt.name
+              )}?`;
     }
 
     return (
-        <Dialog open={true} onClose={toggleShowDialog}>
+        <Dialog open={true} onClose={toggleShowDialog} onClick={(e) => e.stopPropagation()}>
             <DialogTitle>{getTitleDialog()}</DialogTitle>
             <DialogContent>
                 <DialogContentText>{getQuestionDialog()}</DialogContentText>
