@@ -96,10 +96,10 @@ function getBackground(colorBackground, shape) {
             svg = `<circle cx="12" cy="12" r="12" fill="${colorBackground}"/>`;
         }
         if (shape === BACKGROUND_WPT_SHAPE_OCTAGON) {
-            svg = `<path d="M13 19L19 13H29L35 19V29L29 35H19L13 29V19Z" fill="${colorBackground}"/>`;
+            svg = `<path d="M1 7L7 1H17L23 7V17L17 23H7L1 17V7Z" fill="${colorBackground}"/>`;
         }
         if (shape === BACKGROUND_WPT_SHAPE_SQUARE) {
-            svg = `<rect x="13" y="13" width="22" height="22" rx="3" fill="${colorBackground}"/>`;
+            svg = `<rect width="24" height="24" rx="3" fill="${colorBackground}"/>`;
         }
     } else {
         svg = `<circle cx="12" cy="12" r="12" fill="${colorBackground}"/>`;
