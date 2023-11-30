@@ -108,8 +108,6 @@ This section contains settings of the cursor on the map and map view, settings o
 
 ### Appearance
 
-In this section of the General settings menu, you can set parameters for the cursor on the map and map view for the chosen profile.
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -118,46 +116,40 @@ In this section of the General settings menu, you can set parameters for the cur
 
 ![Profiles General Settings Appearance Android](@site/static/img/personal/profiles/profiles_appearance_andr.png)
 
-- *<Translate android="true" ids="choose_osmand_theme"/>* - Allows you to set a day and night theme for the app, which can be applied to one profile or to all at once. This option does not change the [map mode](../map/vector-maps.md#map-mode) settings.
-  - *<Translate android="true" ids="dark_theme"/> theme*
-  - *<Translate android="true" ids="light_theme"/> theme*
-  - *<Translate android="true" ids="system_default_theme"/>* - Applies the system theme. By default and for all new users, the map style corresponds to the light or dark theme selected in your device's system settings.
-- *<Translate android="true" ids="rotate_map_to"/>* - Allows you to choose [the map orientation mode](../map/interact-with-map.md#map-orientation-modes) for the selected profile.
-  - *<Translate android="true" ids="rotate_map_north_opt"/>*
-  - *<Translate android="true" ids="rotate_map_bearing_opt"/>*
-  - *<Translate android="true" ids="rotate_map_compass_opt"/>*
-  - *<Translate android="true" ids="rotate_map_manual_opt"/>* 
-- *<Translate android="true" ids="display_position"/>* - Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:
-  - *<Translate android="true" ids="position_on_map_center"/>* - The cursor is always positioned in the center of the screen.
-  - *<Translate android="true" ids="position_on_map_bottom"/>* - *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
-  - *<Translate android="true" ids="shared_string_automatic"/>* - Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
-- *<Translate android="true" ids="map_screen_orientation"/>* - Sets the screen position for the OsmAnd application. 
-  - *<Translate android="true" ids="map_orientation_portrait"/>* 
-  - *<Translate android="true" ids="map_orientation_landscape"/>* 
-  - *<Translate android="true" ids="map_screen_orientation"/>*
-- *[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)* - Opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_appearance"/>*
 
-![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profile_sett_appearance_ios.png)
-
-- *<Translate ios="true" ids="rotate_map_to"/>* - Allows you to choose [the map orientation mode](../map/interact-with-map.md#map-orientation-modes) for the selected profile.
-  - *<Translate ios="true" ids="rotate_map_north_opt"/>*
-  - *<Translate ios="true" ids="rotate_map_bearing_opt"/>*
-  - *<Translate ios="true" ids="rotate_map_compass_opt"/>*
-  - *<Translate ios="true" ids="rotate_map_manual_opt"/>*
-- *<Translate ios="true" ids="position_on_map"/>* - Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:
-  - *<Translate ios="true" ids="position_on_map_center"/>* - The cursor is always positioned in the center of the screen.
-  - *<Translate ios="true" ids="position_on_map_bottom"/>* - *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
-  - *<Translate ios="true" ids="shared_string_automatic"/>* - Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
+![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profile_sett_appearance_1_ios.png)
 
 </TabItem>
 
 </Tabs>
+
+In this section of the General settings menu, you can set parameters for the cursor on the map and map view for the chosen profile.  
+
+- **<Translate android="true" ids="choose_osmand_theme"/>**. Allows you to set a day and night theme for the app, which can be applied to one profile or to all at once. This option does not change the [map mode](../map/vector-maps.md#map-mode) settings.
+  - *<Translate android="true" ids="dark_theme"/> theme*
+  - *<Translate android="true" ids="light_theme"/> theme*
+  - *<Translate android="true" ids="system_default_theme"/>*. Applies the system theme. By default and for all new users, the map style corresponds to the light or dark theme selected in your device's system settings.
+- **<Translate android="true" ids="rotate_map_to"/>**. Allows you to choose [the map orientation mode](../map/interact-with-map.md#map-orientation-modes) for the selected profile.
+  - *<Translate android="true" ids="rotate_map_north_opt"/>*
+  - *<Translate android="true" ids="rotate_map_bearing_opt"/>*
+  - *<Translate android="true" ids="rotate_map_compass_opt"/>*
+  - *<Translate android="true" ids="rotate_map_manual_opt"/>* 
+- **<Translate android="true" ids="display_position"/>** (*Android only*) / *<Translate ios="true" ids="position_on_map"/>* (*iOS*). Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:
+  - *<Translate android="true" ids="position_on_map_center"/>*. The cursor is always positioned in the center of the screen.
+  - *<Translate android="true" ids="position_on_map_bottom"/>*. *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
+  - *<Translate android="true" ids="shared_string_automatic"/>*. Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
+- **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Android*). Opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.
+- **<Translate android="true" ids="map_screen_orientation"/>**. Sets and locks the screen position in the OsmAnd application. Not supported on iPad.
+  - *<Translate android="true" ids="map_orientation_portrait"/>* 
+  - *<Translate android="true" ids="map_orientation_landscape"/>* 
+  - *<Translate android="true" ids="map_orientation_default"/>*  
+
+  ![Profiles Apperance](@site/static/img/personal/profiles/profile_sett_appearance_orientation_andr.png) 
 
 
 ### Units & formats

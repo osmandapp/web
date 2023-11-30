@@ -24,9 +24,6 @@ The application can not function normally without offline maps, which are not di
 
 ## First Screen
 
-When you first launch the app, it suggests downloading a map based on your Internet location. In the case of VPN usage, the app can propose a different (not your geolocation) map region.  
-You can skip this step and restore your data from [OsmAnd Cloud](../personal/osmand-cloud.md).
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -42,6 +39,9 @@ You can skip this step and restore your data from [OsmAnd Cloud](../personal/osm
 </TabItem>
 
 </Tabs>
+
+When you first launch the app, it suggests downloading a map based on your Internet location. In the case of VPN usage, the app can propose a different (not your geolocation) map region.  
+You can skip this step and restore your data from [OsmAnd Cloud](../personal/osmand-cloud.md).
 
 :::tip Note
 **World overview map**. Versions of OsmAnd prior to 3.8 suggest downloading World map so you can browse the map on the planet-level zoom. In new OsmAnd versions small *Mini world overview map* is packaged inside the app. However afterward, you can download a larger *World Overview map* which contains more detailed information about the world.  

@@ -29,31 +29,33 @@ We are pleased to announce the release of a new version of [OsmAnd for iOS](http
 ### What's new
 
 
-- CarPlay dashboard support
-- External sensors
-- Trash for Cloud
+- [CarPlay dashboard support](#carplay-dashboard-support)
+- [External sensors BLE sensors support](#external-sensors)
 - Simple widget for Top / Bottom panel
-- Travel Guides
+- Wikivoyage Travel Guides
 - Night theme
 - Redesign OSM plugin for uploading POI/Note
 - Add OSM link with pin into the Context menu
 
 
-## CarPlay updates
-
-- added dashboard support
+## CarPlay dashboard support
 
 ![Car Play](./img/car_play_1.png)
 
-- Fixed bugs
+One of the additions in this update is the integration of the OsmAnd map into the CarPlay dashboard.  
+- Added dashboard support.
+- Fixed bugs.
 
 
 ## External sensors
 
-For this release [External BLE sensors](https://osmand.net/docs/user/plugins/external-sensors) were added for OsmAnd. 
+|Sensor connection| Widget on the screen|
+|-------|------|
+|![Sensor](./img/sensor_1.png)|![Sensor](./img/sensor_2.png)|
 
-Now you can add next external sensors to OsmAnd:
+The release introduces support for [Bluetooth Low Energy (BLE) sensors](https://osmand.net/docs/user/plugins/external-sensors), providing compatibility for a range of external sensors such as speed, cadence, distance, bicycle power, and pulse. This inclusion enhances the app’s capability to sync and display data from these external devices, catering to cycling enthusiasts and those using supplementary fitness equipment.   
 
+You can add the following external sensors to the OsmAnd application:
 - **Heart Rate**. The heart rate sensor can transmit your heart rate in real time. This is useful for cycling training when you want to track your heart rate to optimize your training efforts.
 - **Bicycle Power**. Your bike's power sensors measure the power you exert when you pedal. This allows you to analyze and optimize your workouts to improve efficiency and performance.
 - **Bicycle Cadence**. Cadence is the number of pedal turns per minute. Cadence sensors help you maintain optimal pedaling speed for efficient cycling.
@@ -62,21 +64,18 @@ Now you can add next external sensors to OsmAnd:
 - **Temperature**. The widget displays the ambient temperature, which can be very useful if you don't want to overheat or freeze on your bike or motorcycle.
 
 
-|Sensor connection| Widget on the screen|
-|-------|------|
-|![Sensor](./img/sensor_1.png)|![Sensor](./img/sensor_2.png)|
-
 ## Simple widget for Top / Bottom panel
 
 Added _Coordinates_, _Lanes_, _Map markers bar_, _Street name_ widgets for Top and Bottom panels:
 
 ![Widget](./img/widget_top_bottom.png)
 
+
 ## Travel Guides
 
 For this release we added [Wikivoyage Travel Guides](https://osmand.net/docs/user/plan-route/travel-guides). Now you can upload Wikivoyage points and articles for your trip on the OsmAnd map.
 
-_OsmAnd Menu > Travel guides_
+*OsmAnd Menu > Travel guides*
 
 |Download menu| Articles list|
 |-------|------|
@@ -87,6 +86,7 @@ Now, you can add wikivoyage points on the map or find in om _My Places > Tracks 
 |Wikivoyage article| Points on the map|
 |-------|------|
 |![wikivoyage](./img/wikivoyage_3.png)|![wikivoyage](./img/wikivoyage_4.png)|
+
 
 ## Night theme
 
@@ -104,6 +104,7 @@ _iOS Settings > Display & Brightness > Light/Dark or Automatic_
 ## Redesign OSM plugin
 
 Changed [POI/Note upload menu](https://osmand.net/docs/user/plugins/osm-editing#create--modify-poi).
+
 
 ## Share point coordinates by an OSM link
 
