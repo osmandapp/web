@@ -28,6 +28,13 @@ export default function FavoriteGroup({ index, group }) {
         return FavoritesManager.getGroupSize(group) > 0 ? `${FavoritesManager.getGroupSize(group)} points` : 'empty';
     }
 
+    function getLastModificationDate() {
+        const currentDate = new Date(group.file.updatetimems);
+        const month = currentDate.toLocaleString('default', { month: 'short' });
+        const day = currentDate.getDate();
+        return `${month} ${day}`;
+    }
+
     return (
         <>
             <MenuItem
@@ -51,7 +58,7 @@ export default function FavoriteGroup({ index, group }) {
                         {group.name}
                     </Typography>
                     <Typography variant="body2" className={styles.groupInfo} noWrap>
-                        {getSize()}
+                        {`${getLastModificationDate()}, ${getSize()}`}
                     </Typography>
                 </ListItemText>
                 <IconButton
