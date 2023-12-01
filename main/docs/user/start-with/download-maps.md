@@ -200,7 +200,6 @@ You can download several types of maps: Standard, Roads-only (lightweight maps w
 
 ![Download map menu iOS](@site/static/img/settings/download_map_menu_ios.png) ![Regionwide maps Android](@site/static/img/settings/regionwide_maps_menu_ios.png)  
 
-
 </TabItem>
 </Tabs>
 
@@ -210,17 +209,47 @@ You can download several types of maps: Standard, Roads-only (lightweight maps w
 
 <TabItem value="android" label="Android">  
 
-Local tab *(<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local"/>)* contains all the information about storage usage, split by data type into 3 large sections:  
+The Local tab *(<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local"/>)* shows how much space OsmAnd uses in a form of linear diagram and a list with splitting by each data type. All data is grouped into three sections, sorted by largest section on top. The diagram's colors and slice size correspond to the section and amount of memory it uses:  
 
-- ***Resources***: [Standard Maps](../map/vector-maps.md), [Wikipedia](../plugins/wikipedia.md) and [Travel maps](../plan-route/travel-guides.md), [Nautical maps](../plugins/nautical-charts.md), [Terrain maps](../plugins/contour-lines.md), [Weather maps](../plugins/weather.md),  [Map sources](../map/raster-maps.md), [Rendering styles](../map/vector-maps.md#default-map-styles), Routing, Cache.
-- ***My Places***: [Favorites](../personal/favorites.md), [Tracks](../personal/tracks.md), [OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), [OSM Edits](../plugins/osm-editing.md#osm-editing-layer), [A/V Notes](../plugins/audio-video-notes.md), [Map markers](../personal/markers.md), [History](../personal/global-settings.md#history), Itinerary.
-- ***Settings***: [Profiles](../personal/profiles.md), Other.
+- ***Resources*** (blue): [Standard Maps](../map/vector-maps.md), [Wikipedia](../plugins/wikipedia.md) and [Travel maps](../plan-route/travel-guides.md), [Nautical maps](../plugins/nautical-charts.md), [Terrain maps](../plugins/contour-lines.md), [Weather maps](../plugins/weather.md),  [Map sources](../map/raster-maps.md), [Rendering styles](../map/vector-maps.md#default-map-styles), Map fonts, Voice prompts (recorded and TTS), Cache.  
+- ***My Places*** (yellow): [Favorites](../personal/favorites.md), [Tracks](../personal/tracks.md), [OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), [OSM Edits](../plugins/osm-editing.md#osm-editing-layer), [A/V Notes](../plugins/audio-video-notes.md), [Map markers](../personal/markers.md), [History](../personal/global-settings.md#history), Itinerary.
+- ***Settings*** (green): [Profiles](../personal/profiles.md), Other.
 
 ![Local tab Android 1](@site/static/img/settings/new_map_and_resourses_andr_1.png) ![Local tab Android 2](@site/static/img/settings/new_map_and_resourses_andr_2.png)
 
-:::note
-The sections are arranged as the amount of memory they take decreases.
-:::
+### Data type overview and toolbar
+
+If you choose a category from the Local tab and tap it, you will see a diagram, that shows how much space the chosen category uses from the total amount of section space.
+
+![Local category overview Android 1](@site/static/img/settings/local_category_sorting_options_andr_1.png) ![Local category options Android 2](@site/static/img/settings/local_category_sorting_options_andr_2.png)  
+
+Above the graph, there is a toolbar with options available for this type of data. In most cases (except standard maps) there are only two options available:
+
+- **Search** (magnifying glass) - allows searching by name for a specific data only in selected folder
+- **Three dots menu**  
+ 
+After tapping on the three dots in the right corner of the toolbar, you can access additional actions:
+- **Select** - allows selecting items and perform further actions only with them
+- **Import** - redirects to internal storage where you can select a file to import
+
+You can also perform some actions with an item from the list using the tree dots menu, located at the right corner of an every single entry.
+
+![Local category item actions](@site/static/img/settings/local_category_actions.png) ![Local category item actions 2](@site/static/img/settings/local_category_actions_2.png)  
+
+For most data categories, only the *Info* option available. If you tap this option, you will be redirected to the *[Local data item overview](#local-data-item-overview)* screen. For maps there are [additional actions](#local-maps-overview-and-actions).
+
+#### Local data item overview
+
+On the Local data item overview screen you can find information about data type, size, and creation date of a single entry stored by OsmAnd.
+
+![Local data item overview](@site/static/img/settings/local_category_overview_2.png)
+
+### Local maps Overview and actions
+
+![Local data sorting options](@site/static/img/settings/local_sorting_options_andr_1.png)
+
+![Local data item overview 2](@site/static/img/settings/local_category_overview_1.png)
+
 
 </TabItem>
 
