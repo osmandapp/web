@@ -3,6 +3,7 @@ import React, { useContext, useMemo, useRef, useState } from 'react';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
+import { ReactComponent as DirectionIcon } from '../../assets/icons/ic_direction_arrow_16.svg';
 import ActionsMenu from '../actions/ActionsMenu';
 import styles from '../tracks/trackmenu.module.css';
 import FavoriteItemActions from '../actions/FavoriteItemActions';
@@ -45,6 +46,27 @@ export default function FavoriteItem({ marker, group }) {
         return <div style={{ height: '24px' }} dangerouslySetInnerHTML={{ __html: marker.icon + '' }} />;
     };
 
+    const FavInfo = () => {
+        return (
+            <div style={{ display: 'flex', alignItems: 'centre' }}>
+                <ListItemIcon sx={{ mr: '-23px !important' }}>
+                    <DirectionIcon />
+                </ListItemIcon>
+                <Typography variant="body2" className={styles.favLocationInfo}>
+                    {marker.locDist ? `${marker.locDist} km` : ''}
+                </Typography>
+                <Typography variant="body2" className={styles.groupInfo} noWrap>
+                    {getAddress()}
+                </Typography>
+            </div>
+        );
+    };
+
+    function getAddress() {
+        const comma = marker.locDist && marker?.layer?.options?.address ? ',' : '';
+        return marker?.layer?.options?.address ? `${comma} ${marker?.layer?.options?.address}` : '';
+    }
+
     return useMemo(() => {
         return (
             <>
@@ -61,6 +83,7 @@ export default function FavoriteItem({ marker, group }) {
                         <Typography variant="inherit" className={styles.groupName} noWrap>
                             {marker.title}
                         </Typography>
+                        <FavInfo />
                     </ListItemText>
                     <IconButton
                         id={`se-actions-${marker.title}`}

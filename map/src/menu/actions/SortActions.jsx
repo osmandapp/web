@@ -66,7 +66,16 @@ function byCreationTime(files, reverse) {
     });
 }
 
-function byLocation() {}
+function byLocation(files, reverse) {
+    return [...files].sort((a, b) => {
+        const A = a.locDist ?? a.locDist ?? 0;
+        const B = b.locDist ?? b.locDist ?? 0;
+        if (A === B) {
+            return az(a.name, b.name);
+        }
+        return reverse ? B - A : A - B;
+    });
+}
 
 const allMethods = {
     nearest: {
@@ -241,9 +250,9 @@ const SortActions = forwardRef(
                                 control={<Radio className={styles.control} size="small" />}
                                 label={<Label item={allMethods.za} />}
                             />
-                            <Divider className={styles.dividerActions} />
                             {trackGroup && (
                                 <>
+                                    <Divider className={styles.dividerActions} />
                                     <FormControlLabel
                                         className={styles.controlLabel}
                                         disableTypography={true}
@@ -260,11 +269,11 @@ const SortActions = forwardRef(
                                         control={<Radio className={styles.control} size="small" />}
                                         label={<Label item={allMethods.shortest} />}
                                     />
-                                    <Divider className={styles.dividerActions} />
                                 </>
                             )}
                             {favoriteGroup && !setSortFiles && (
                                 <>
+                                    <Divider className={styles.dividerActions} />
                                     <FormControlLabel
                                         className={styles.controlLabel}
                                         disableTypography={true}
