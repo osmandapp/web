@@ -7,7 +7,7 @@ import TracksManager from './track/TracksManager';
 import { refreshGlobalFiles } from './track/SaveTrackManager';
 import { OBJECT_TYPE_FAVORITE } from '../context/AppContext';
 
-const FAVORITE_FILE_TYPE = 'FAVOURITES';
+export const FAVORITE_FILE_TYPE = 'FAVOURITES';
 export const DEFAULT_FAV_GROUP_NAME = 'favorites';
 const DEFAULT_TAB_ICONS = 'used';
 const FAVORITE_GROUP_FOLDER = '/map/images/poi_categories';

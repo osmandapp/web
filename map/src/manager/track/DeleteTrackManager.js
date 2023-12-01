@@ -1,15 +1,16 @@
-import { isCloudTrack, isLocalTrack } from '../../context/AppContext';
+import { isCloudTrack, isLocalTrack, OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import TracksManager, { findGroupByName } from './TracksManager';
 import { refreshGlobalFiles } from './SaveTrackManager';
+import { FAVORITE_FILE_TYPE } from '../FavoritesManager';
 
-export async function deleteTrack(file, ctx) {
+export async function deleteTrack(file, ctx, type = 'GPX') {
     if ((isCloudTrack(ctx) || file) && ctx.loginUser) {
         const trackName = file ? file?.name : ctx.selectedGpxFile?.name;
         const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/delete-file`, '', {
             params: {
                 name: trackName,
-                type: 'GPX',
+                type: type,
             },
         });
         if (response.status === 200) {
@@ -22,22 +23,26 @@ export async function deleteTrack(file, ctx) {
                 }
             });
 
-            // delete track from ctx.tracksGroups (used in CloudTrackGroup menu)
-            deleteTracksFromGroups(trackName, ctx);
+            if (type === FAVORITE_FILE_TYPE) {
+                refreshGlobalFiles(ctx, null, OBJECT_TYPE_FAVORITE).then();
+            } else {
+                // delete track from ctx.tracksGroups (used in CloudTrackGroup menu)
+                deleteTracksFromGroups(trackName, ctx);
 
-            // delete track from ctx.openGroups
-            deleteTracksFromLastGroup(trackName, ctx);
+                // delete track from ctx.openGroups
+                deleteTracksFromLastGroup(trackName, ctx);
 
-            // delete track from ctx.listFiles.uniqueFiles
-            // used to refresh list-files in TracksManager.saveTrack
-            ctx.setListFiles((o) => {
-                const index = o.uniqueFiles.findIndex((file) => file.name === trackName);
-                if (index !== -1) {
-                    o.uniqueFiles.splice(index, 1);
-                    o.uniqueFiles = [...o.uniqueFiles];
-                }
-                return { ...o };
-            });
+                // delete track from ctx.listFiles.uniqueFiles
+                // used to refresh list-files in TracksManager.saveTrack
+                ctx.setListFiles((o) => {
+                    const index = o.uniqueFiles.findIndex((file) => file.name === trackName);
+                    if (index !== -1) {
+                        o.uniqueFiles.splice(index, 1);
+                        o.uniqueFiles = [...o.uniqueFiles];
+                    }
+                    return { ...o };
+                });
+            }
         }
     } else if (isLocalTrack(ctx)) {
         TracksManager.deleteLocalTrack(ctx);

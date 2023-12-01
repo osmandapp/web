@@ -5,9 +5,9 @@ import { ReactComponent as DownloadIcon } from '../../assets/icons/ic_action_gsa
 import { ReactComponent as RenameIcon } from '../../assets/icons/ic_action_edit_outlined.svg';
 import { ReactComponent as DeleteIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
 import { ReactComponent as ShowOnMapIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
-import DeleteFolderDialog from '../../dialogs/tracks/DeleteFolderDialog';
 import Utils from '../../util/Utils';
 import RenameFavDialog from '../../dialogs/favorites/RenameFavDialog';
+import DeleteFavGroupDialog from '../../dialogs/favorites/DeleteFavGroupDialog';
 
 const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, ref) => {
     const [openRenameDialog, setOpenRenameDialog] = useState(false);
@@ -104,9 +104,9 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                 <RenameFavDialog setOpenDialog={setOpenRenameDialog} group={group} setOpenActions={setOpenActions} />
             )}
             {openDeleteDialog && (
-                <DeleteFolderDialog
+                <DeleteFavGroupDialog
                     setOpenDialog={setOpenDeleteDialog}
-                    folder={group}
+                    group={group}
                     setOpenActions={setOpenActions}
                 />
             )}
