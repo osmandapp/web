@@ -77,17 +77,34 @@ export default function FavoriteGroupFolder({ folder }) {
 
     const favItems = useMemo(() => {
         const items = [];
+        let sortMarkers = [];
+        if (sortFiles?.length > 0) {
+            sortMarkers = getMarkersBySortFiles();
+        }
         markers?.length > 0 &&
-            markers.map((marker, index) => {
+            (sortMarkers?.length > 0 ? sortMarkers : markers).map((marker, index) => {
                 items.push(<FavoriteItem key={marker + index} marker={marker} group={group} />);
             });
         return items;
     }, [markers, sortFiles]);
 
+    function getMarkersBySortFiles() {
+        let arr = [];
+        sortFiles.forEach((wpt) => {
+            const marker = markers.find((m) => m.title === wpt.name);
+            if (marker) {
+                arr.push(marker);
+            } else {
+                return [];
+            }
+        });
+        return arr;
+    }
+
     return (
         <>
             <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
-                <GroupHeader favoriteGroup={group} />
+                <GroupHeader favoriteGroup={group} setSortFiles={setSortFiles} />
                 <Box
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}

@@ -57,6 +57,15 @@ export default function GroupHeader({
         }
     }
 
+    function disableSort() {
+        if (trackGroup) {
+            return trackGroup.files?.length === 0;
+        } else if (favoriteGroup) {
+            return ctx.favorites.groups?.length === 0;
+        }
+        return false;
+    }
+
     return (
         <>
             <AppBar position="static" className={styles.appbar}>
@@ -90,7 +99,7 @@ export default function GroupHeader({
                                 className={styles.appBarIcon}
                                 onClick={() => setOpenSort(true)}
                                 ref={anchorEl}
-                                disabled={!trackGroup || trackGroup?.files?.length === 0}
+                                disabled={disableSort()}
                             >
                                 {sortIcon}
                             </IconButton>
@@ -163,9 +172,9 @@ export default function GroupHeader({
                 anchorEl={anchorEl}
                 actions={
                     <SortActions
-                        files={trackGroup?.groupFiles}
+                        trackGroup={trackGroup}
+                        favoriteGroup={favoriteGroup}
                         setSortFiles={setSortFiles}
-                        groups={ctx.tracksGroups}
                         setSortGroups={setSortGroups}
                         setOpenSort={setOpenSort}
                         selectedSort={selectedSort}

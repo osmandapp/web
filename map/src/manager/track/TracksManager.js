@@ -1127,13 +1127,17 @@ export const getGpxTime = (f, reverse = false, creationTime = false) => {
         raw.push(f?.details?.metadata?.time); // gpx - meta (cloud track)
         raw.push(f?.metaData?.ext?.time); // gpx - meta (local track)
         raw.push(f?.clienttimems); // uploaded (cloud timestamp?)
+        raw.push(f?.file?.clienttimems); // uploaded for favorites group(cloud timestamp?)
+        raw.push(f?.ext?.time); // uploaded for favorites group(cloud timestamp?)
     } else {
         raw.push(f?.details?.analysis?.startTime); // cloud - stored analysis
         raw.push(f?.analysis?.startTime); // local track - fresh analysis
         raw.push(f?.details?.metadata?.time); // gpx - meta (cloud track)
         raw.push(f?.metaData?.ext?.time); // gpx - meta (local track)
         raw.push(f?.clienttimems); // uploaded (cloud timestamp?)
+        raw.push(f?.file?.clienttimems); // uploaded for favorites group(cloud timestamp?)
         raw.push(f?.updatetimems); // updated (cloud timestamp?)
+        raw.push(f?.ext?.time); // updated for favorites group(cloud timestamp?)
     }
 
     // validate raw to avoid using illegal values

@@ -11,7 +11,7 @@ import {
     RadioGroup,
 } from '@mui/material';
 import { getGpxTime } from '../../manager/track/TracksManager';
-import React, { forwardRef, useEffect, useState } from 'react';
+import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import { ReactComponent as AscendingIcon } from '../../assets/icons/ic_action_sort_by_name_ascending.svg';
 import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
 import { ReactComponent as DescendingIcon } from '../../assets/icons/ic_action_sort_by_name_descending.svg';
@@ -19,7 +19,9 @@ import { ReactComponent as LongToShortIcon } from '../../assets/icons/ic_action_
 import { ReactComponent as ShortToLongIcon } from '../../assets/icons/ic_action_sort_short_to_long.svg';
 import { ReactComponent as NewDateIcon } from '../../assets/icons/ic_action_sort_date_1.svg';
 import { ReactComponent as OldDateIcon } from '../../assets/icons/ic_action_sort_date_31.svg';
+import { ReactComponent as NearestIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
 import styles from '../tracks/trackmenu.module.css';
+import AppContext from '../../context/AppContext';
 
 const az = (a, b) => (a > b) - (a < b);
 
@@ -64,7 +66,15 @@ function byCreationTime(files, reverse) {
     });
 }
 
+function byLocation() {}
+
 const allMethods = {
+    nearest: {
+        reverse: true,
+        callback: byLocation,
+        icon: <NearestIcon />,
+        name: 'Nearest',
+    },
     time: {
         default: true,
         reverse: true,
@@ -122,9 +132,9 @@ const defaultMethod = () => {
 const SortActions = forwardRef(
     (
         {
-            files,
+            trackGroup = null,
+            favoriteGroup = null,
             setSortFiles,
-            groups,
             setSortGroups,
             setOpenSort,
             selectedSort,
@@ -134,18 +144,40 @@ const SortActions = forwardRef(
         },
         ref
     ) => {
+        const ctx = useContext(AppContext);
+
         const [currentMethod, setCurrentMethod] = useState(selectedSort ? selectedSort : defaultMethod);
 
+        const files = () => {
+            if (trackGroup) {
+                return trackGroup.groupFiles;
+            } else if (favoriteGroup) {
+                return ctx.favorites[favoriteGroup.name]?.wpts;
+            }
+            return null;
+        };
+
+        const groups = () => {
+            if (trackGroup) {
+                return ctx.tracksGroups;
+            } else if (favoriteGroup) {
+                return ctx.favorites.groups;
+            }
+            return null;
+        };
+
         function sort(method) {
-            setSortFiles(allMethods[method].callback(files, allMethods[method].reverse));
-            if (method === 'az' || method === 'za') {
-                setSortGroups(allMethods[method].callback(groups, allMethods[method].reverse));
+            if (setSortFiles) {
+                setSortFiles(allMethods[method].callback(files(), allMethods[method].reverse));
+            }
+            if (setSortGroups && (method === 'az' || method === 'za' || favoriteGroup)) {
+                setSortGroups(allMethods[method].callback(groups(), allMethods[method].reverse));
             }
         }
 
         useEffect(() => {
             sort(currentMethod);
-        }, [files, selectedSort]);
+        }, [files(), selectedSort]);
 
         const handleChange = (event) => {
             const method = event.target.value;
@@ -171,6 +203,19 @@ const SortActions = forwardRef(
                 <Paper className={styles.actions}>
                     <FormControl>
                         <RadioGroup value={currentMethod} onChange={handleChange}>
+                            {favoriteGroup && (
+                                <>
+                                    <FormControlLabel
+                                        className={styles.controlLabel}
+                                        disableTypography={true}
+                                        labelPlacement="start"
+                                        value="nearest"
+                                        control={<Radio className={styles.control} size="small" />}
+                                        label={<Label item={allMethods.nearest} />}
+                                    />
+                                    <Divider className={styles.dividerActions} />
+                                </>
+                            )}
                             <FormControlLabel
                                 className={styles.controlLabel}
                                 disableTypography={true}
@@ -197,39 +242,47 @@ const SortActions = forwardRef(
                                 label={<Label item={allMethods.za} />}
                             />
                             <Divider className={styles.dividerActions} />
-                            <FormControlLabel
-                                className={styles.controlLabel}
-                                disableTypography={true}
-                                labelPlacement="start"
-                                value="longest"
-                                control={<Radio className={styles.control} size="small" />}
-                                label={<Label item={allMethods.longest} />}
-                            />
-                            <FormControlLabel
-                                className={styles.controlLabel}
-                                disableTypography={true}
-                                labelPlacement="start"
-                                value="shortest"
-                                control={<Radio className={styles.control} size="small" />}
-                                label={<Label item={allMethods.shortest} />}
-                            />
-                            <Divider className={styles.dividerActions} />
-                            <FormControlLabel
-                                className={styles.controlLabel}
-                                disableTypography={true}
-                                labelPlacement="start"
-                                value="newDate"
-                                control={<Radio className={styles.control} size="small" />}
-                                label={<Label item={allMethods.newDate} />}
-                            />
-                            <FormControlLabel
-                                className={styles.controlLabel}
-                                disableTypography={true}
-                                labelPlacement="start"
-                                value="oldDate"
-                                control={<Radio className={styles.control} size="small" />}
-                                label={<Label item={allMethods.oldDate} />}
-                            />
+                            {trackGroup && (
+                                <>
+                                    <FormControlLabel
+                                        className={styles.controlLabel}
+                                        disableTypography={true}
+                                        labelPlacement="start"
+                                        value="longest"
+                                        control={<Radio className={styles.control} size="small" />}
+                                        label={<Label item={allMethods.longest} />}
+                                    />
+                                    <FormControlLabel
+                                        className={styles.controlLabel}
+                                        disableTypography={true}
+                                        labelPlacement="start"
+                                        value="shortest"
+                                        control={<Radio className={styles.control} size="small" />}
+                                        label={<Label item={allMethods.shortest} />}
+                                    />
+                                    <Divider className={styles.dividerActions} />
+                                </>
+                            )}
+                            {favoriteGroup && !setSortFiles && (
+                                <>
+                                    <FormControlLabel
+                                        className={styles.controlLabel}
+                                        disableTypography={true}
+                                        labelPlacement="start"
+                                        value="newDate"
+                                        control={<Radio className={styles.control} size="small" />}
+                                        label={<Label item={allMethods.newDate} />}
+                                    />
+                                    <FormControlLabel
+                                        className={styles.controlLabel}
+                                        disableTypography={true}
+                                        labelPlacement="start"
+                                        value="oldDate"
+                                        control={<Radio className={styles.control} size="small" />}
+                                        label={<Label item={allMethods.oldDate} />}
+                                    />
+                                </>
+                            )}
                         </RadioGroup>
                     </FormControl>
                 </Paper>
