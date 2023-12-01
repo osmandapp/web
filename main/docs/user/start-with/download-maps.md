@@ -270,7 +270,7 @@ The sections are arranged as the amount of memory they take decreases.
 > NOTE. Deactivated maps
 
 
-### Build own Map (advanced)
+### Build your own Map (advanced)
 
 There is a possibility to download created by yourself (in OsmAnd Map Creator) map. [Read more](../../technical/map-creation/create-offline-maps-yourself.md)
 
