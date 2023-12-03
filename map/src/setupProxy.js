@@ -10,6 +10,7 @@ module.exports = function (app) {
     const mainProxy = createProxyMiddleware(prepare('https://osmand.net'));
     const maptileProxy = createProxyMiddleware(prepare('https://maptile.osmand.net'));
 
+    // yarn start:local
     let gpx = localProxy;
     let tile = localProxy;
     let mapapi = localProxy;
@@ -18,7 +19,7 @@ module.exports = function (app) {
     let others = localProxy;
 
     // yarn start (test)
-    if (process.env.NODE_ENV === 'development') {
+    if (process.env.NODE_ENV === 'development' && !process.env.USE_LOCAL_API) {
         gpx = testProxy;
         tile = testProxy;
         mapapi = testProxy;
