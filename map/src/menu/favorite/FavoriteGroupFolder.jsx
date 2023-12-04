@@ -10,6 +10,7 @@ import Utils, { getDistance } from '../../util/Utils';
 import TracksManager from '../../manager/track/TracksManager';
 import Loading from '../errors/Loading';
 import { useLocation } from '../../util/hooks/useLocation';
+import {isEmpty} from "../../../.yarn/releases/yarn-3.2.1";
 
 export default function FavoriteGroupFolder({ folder }) {
     const ctx = useContext(AppContext);
@@ -67,6 +68,13 @@ export default function FavoriteGroupFolder({ folder }) {
                     }
                     res.push(w);
                 });
+            }
+        }
+        if (isEmpty(res)) {
+            if (markers) {
+                return markers;
+            } else if (wpts) {
+                return wpts;
             }
         }
         return res;
