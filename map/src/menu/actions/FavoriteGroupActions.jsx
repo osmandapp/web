@@ -1,5 +1,5 @@
-import React, { forwardRef, useState } from 'react';
-import { Box, Divider, ListItemIcon, ListItemText, MenuItem, Paper, Typography } from '@mui/material';
+import React, { forwardRef, useContext, useState } from 'react';
+import { Box, Divider, ListItemIcon, ListItemText, MenuItem, Paper, Switch, Typography } from '@mui/material';
 import styles from '../tracks/trackmenu.module.css';
 import { ReactComponent as DownloadIcon } from '../../assets/icons/ic_action_gsave_dark.svg';
 import { ReactComponent as RenameIcon } from '../../assets/icons/ic_action_edit_outlined.svg';
@@ -8,13 +8,68 @@ import { ReactComponent as ShowOnMapIcon } from '../../assets/icons/ic_show_on_m
 import Utils from '../../util/Utils';
 import RenameFavDialog from '../../dialogs/favorites/RenameFavDialog';
 import DeleteFavGroupDialog from '../../dialogs/favorites/DeleteFavGroupDialog';
+import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
+import { refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
+import TracksManager from '../../manager/track/TracksManager';
+import { apiPost } from '../../util/HttpApi';
 
 const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, ref) => {
+    const ctx = useContext(AppContext);
+
     const [openRenameDialog, setOpenRenameDialog] = useState(false);
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
 
-    function showOnMap() {
-        //show switch, tap on switch Enable or Disable folder visibility on the map
+    function showOnMap(hidden) {
+        updateGroup(group, hidden).then();
+        if (setOpenActions) {
+            setOpenActions(false);
+        }
+    }
+
+    async function updateGroup(group, hidden) {
+        let groupObj;
+        // get track data
+        if (!ctx.favorites[group.name]) {
+            let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(
+                group.file.type
+            )}&name=${encodeURIComponent(group.file.name)}`;
+            let newGroup = {
+                url: url,
+                clienttimems: group.file.clienttimems,
+                updatetimems: group.file.updatetimems,
+                name: group.file.name,
+                addToMap: false,
+            };
+            let f = await Utils.getFileData(newGroup);
+            if (f) {
+                const favoriteFile = new File([f], group.file.name, {
+                    type: 'text/plain',
+                });
+                let favorites = await TracksManager.getTrackData(favoriteFile);
+                if (favorites) {
+                    groupObj = favorites;
+                }
+            }
+        } else {
+            groupObj = ctx.favorites[group.name];
+        }
+
+        //update wpts
+        let data = [];
+        groupObj.wpts.forEach((wpt) => {
+            wpt.hidden = `${!hidden}`;
+            data.push(JSON.stringify(wpt));
+        });
+
+        let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update-all-favorites`, data, {
+            params: {
+                fileName: group.file.name,
+                updatetime: group.updatetimems,
+            },
+        });
+        if (resp.data) {
+            refreshGlobalFiles(ctx, null, OBJECT_TYPE_FAVORITE).then();
+        }
     }
 
     const downloadFavGroup = async () => {
@@ -41,14 +96,21 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
         <>
             <Box ref={ref}>
                 <Paper id="se-favorite-folder-actions" className={styles.actions}>
-                    <MenuItem className={styles.action} onClick={() => showOnMap()}>
+                    <MenuItem className={styles.action}>
                         <ListItemIcon className={styles.iconAction}>
                             <ShowOnMapIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            <Typography variant="inherit" className={styles.actionName} noWrap>
-                                Show on map
-                            </Typography>
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                                <Typography variant="inherit" className={styles.actionName} noWrap>
+                                    Show on map
+                                </Typography>
+                                <Switch
+                                    checked={group.hidden !== 'true'}
+                                    onClick={(e) => e.stopPropagation()}
+                                    onChange={(e) => showOnMap(e.target.checked)}
+                                />
+                            </div>
                         </ListItemText>
                     </MenuItem>
                     <Divider className={styles.dividerActions} />

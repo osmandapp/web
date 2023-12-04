@@ -7,6 +7,7 @@ import ActionsMenu from '../actions/ActionsMenu';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
+import { ReactComponent as FolderHiddenIcon } from '../../assets/icons/ic_action_folder_hidden.svg';
 import FavoriteGroupActions from '../actions/FavoriteGroupActions';
 
 export default function FavoriteGroup({ index, group }) {
@@ -49,9 +50,13 @@ export default function FavoriteGroup({ index, group }) {
                 }}
             >
                 <ListItemIcon className={styles.icon}>
-                    <FolderIcon
-                        style={{ fill: group.name && FavoritesManager.getColorGroup(ctx, group.name, false) }}
-                    />
+                    {group.hidden === 'true' ? (
+                        <FolderHiddenIcon />
+                    ) : (
+                        <FolderIcon
+                            style={{ fill: group.name && FavoritesManager.getColorGroup(ctx, group.name, false) }}
+                        />
+                    )}
                 </ListItemIcon>
                 <ListItemText>
                     <Typography variant="inherit" className={styles.groupName} noWrap>

@@ -13,7 +13,7 @@ const DEFAULT_TAB_ICONS = 'used';
 const FAVORITE_GROUP_FOLDER = '/map/images/poi_categories';
 const DEFAULT_GROUP_WPT_COLOR = '#eecc22';
 const FAV_FILE_PREFIX = 'favorites-';
-const DEFAULT_GROUP_NAME_POINTS_GROUPS = '';
+export const DEFAULT_GROUP_NAME_POINTS_GROUPS = '';
 const FAVORITE_LOCAL_STORAGE = 'visibleFav';
 const colors = [
     '#10c0f0',
@@ -160,12 +160,16 @@ function getColorGroup(ctx, groupName, wpt) {
 function createGroup(file) {
     file.folder = file.name.split('.')[0].replace(FavoritesManager.FAV_FILE_PREFIX, '');
     let pointsGroups = FavoritesManager.prepareTrackData(file.details.pointGroups);
+    const groupName = file.folder === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : file.folder;
     return {
         name: file.folder,
         updatetimems: file.updatetimems,
         file: file,
         pointsGroups: pointsGroups,
-        hidden: pointsGroups.hidden !== undefined ? pointsGroups.hidden : isHidden(pointsGroups, file.folder),
+        hidden:
+            pointsGroups[groupName].hidden !== undefined
+                ? pointsGroups[groupName].hidden
+                : isHidden(pointsGroups, groupName),
     };
 }
 
