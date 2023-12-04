@@ -179,14 +179,15 @@ export function RouteService() {
     useEffect(() => {
         async function setNavigationTrack() {
             if (routeTrack) {
-                const { profile } = routeObject.getGeoProfile();
+                const { type, profile } = routeObject.getGeoProfile();
                 const track = prepareNavigationTrack(routeTrack);
 
-                // limit auto-approximate
+                // auto-approximate after OSRM (limited)
                 const props = routeObject.getRouteProps();
                 if (
-                    routeObject.getOption('route.map.forceApproximation') ||
-                    props?.overall?.distance <= process.env.REACT_APP_MAX_APPROXIMATE_KM * 1000
+                    type === 'osrm' &&
+                    (routeObject.getOption('route.map.forceApproximation') ||
+                        props?.overall?.distance <= process.env.REACT_APP_MAX_APPROXIMATE_KM * 1000)
                 ) {
                     // approximate each segment separately
                     for (let i = 0; i < track.points.length; i++) {
@@ -197,10 +198,10 @@ export function RouteService() {
                     }
                 }
 
-                const type = OBJECT_TYPE_ROUTE_TRACK;
+                const objectType = OBJECT_TYPE_ROUTE_TRACK;
                 ctx.setUpdateInfoBlock(true);
                 ctx.setSelectedGpxFile(track);
-                ctx.setCurrentObjectType(type);
+                ctx.setCurrentObjectType(objectType);
             } else {
                 if (isRouteTrack(ctx)) {
                     ctx.setSelectedGpxFile({}); // close-route-track
