@@ -79,17 +79,10 @@ Our top and bottom panels have been redesigned with all our users' needs in mind
 
 The Glide Ratio widget is an innovative tool designed to meet the needs of pilots. The widget provides valuable glide ratio information to help make informed decisions when planning air routes.  
 
-<<<<<<< HEAD
 Simple *[Glide Ration](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio)* widgets have been added for Aircraft usage. The widgets show the ratio of glide to target or average glide for the current flight.  
 
 - *Glide ratio to target* shows the glide ration required to reach the target point. The [Map marker](../user/personal/markers.md) should be used as the target point. 
 - *Average glide ratio* shows the average glide ratio for a specified time interval. You can set the time interval for this widget from 15 seconds to 60 minutes.
-=======
-Simple *[Glide Ratio](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio)* widgets were added for Aircraft usage. Widgets show the glide ratio to the target or avearge glide for the current trip:
-
-- *Glide ratio to target* shows the glide ratio needed to reach the target point. You need to use [Map marker](https://osmand.net/docs/user/personal/markers) as a target point.
-- *Average glide ratio* shows the average glide ratio for the set interval. For this widget you can specify the time interval for glide averaging.
->>>>>>> a83949ad3750f092373edee47c49ea6d0ad221e8
 
 | Glide ratio widgets | Widgets on the screen |
 |--------|---------|
@@ -247,7 +240,6 @@ The *Import from Track* feature allows you to import waypoints, segments, and ad
 |![Import from track](../../blog/2023-09-30-android-4-6/img/planroute.png) |
 
 
-<<<<<<< HEAD
 ## More updates in this release
 
 The new release also contains a number of other significant updates:  
@@ -264,28 +256,3 @@ The new release also contains a number of other significant updates:
 - When [_Destination is reached_](../user/navigation/guidance/map-during-navigation.md) appears, the location is moved to the center of the map for the user's convenience.
 
 The release of the OsmAnd app for Android 4.6 offers users a wide range of improvements, new features, more powerful navigation and data management tools, making the use of the app more convenient, informative and adapted to different usage situations.  
-=======
-## Redesign weather screen
-
-Added the convenient time scale.
-
-| |
-|-------|
-|![Weather](../../blog/2023-09-30-android-4-6/img/weather.png)|
-
-
-## More
-
-- Improved memory management for large GPX tracks
-- Shutdown [the OpenPlaceReviews project](https://osmand.net/docs/user/plugins/openplacereviews)
-- Updated Search screen for Android Auto
-- Fixed map freezes for Android Auto
-- Added 3D view and button for Android Auto
-- Renamed _Terrain_ to [_Topography_](https://osmand.net/docs/user/plugins/contour-lines#configure-map-view) menu
-- _Select all_ / _Deselect all_ actions for [Track menu](https://osmand.net/docs/user/personal/tracks#my-places-menu)
-- Fixed _North fixed_ mode for [Compass](https://osmand.net/docs/user/map/interact-with-map#map-orientation-modes)
-- Added widget _Available RAM_ for [OsmAnd Development plugin](https://osmand.net/docs/user/plugins/development)
-- Added paragliding / baby carriage / stroller / buggy [icons](https://osmand.net/docs/user/personal/profiles#profile-appearance) for profiles
-- Added [ANT+ temperature widget](https://osmand.net/docs/user/plugins/external-sensors) for Garmin temperature sensor device
-- [_"Destination is reached"_](https://osmand.net/docs/user/navigation/guidance/map-during-navigation), the location moves to map center
->>>>>>> a83949ad3750f092373edee47c49ea6d0ad221e8
