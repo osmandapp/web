@@ -119,14 +119,12 @@ export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenS
                 <InputLabel id="route-provider-label">Provider</InputLabel>
                 <FormControl fullWidth>
                     <Select value={router} onChange={onChangeRouter}>
-                        {geoRouter.listProviders().map(
-                            ({ key, name, type }) =>
-                                geoRouter.isAllowedType({ type, develFeatures: ctx.develFeatures }) && (
-                                    <MenuItem key={key} value={key}>
-                                        {name}
-                                    </MenuItem>
-                                )
-                        )}
+                        {geoRouter.listProviders().map(({ key, name }) => (
+                            // geoRouter.isAllowedType({ type, develFeatures: ctx.develFeatures }) && (...) // map({ key, name, type })
+                            <MenuItem key={key} value={key}>
+                                {name}
+                            </MenuItem>
+                        ))}
                     </Select>
                 </FormControl>
 

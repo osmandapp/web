@@ -30,7 +30,7 @@ import {
     getURL,
     getGeoProfile,
     getColor,
-    isAllowedType,
+    // isAllowedType,
 } from './getters.js';
 
 // fallback
@@ -79,7 +79,7 @@ export class geoRouter {
     getURL = getURL;
     getGeoProfile = getGeoProfile;
     getColor = getColor;
-    isAllowedType = isAllowedType;
+    // isAllowedType = isAllowedType;
 
     // events()
     onOpenSettings = onOpenSettings;
