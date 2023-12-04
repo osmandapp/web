@@ -167,7 +167,9 @@ export default function MainMenu({
         return res.join(' ');
     }
 
+    console.log(ctx.openGroups)
     function getGroup() {
+        console.log(menuInfo.type.name)
         if (menuInfo.type.name === 'FavoritesMenu') {
             return <FavoriteGroupFolder folder={ctx.openGroups[ctx.openGroups.length - 1]} />;
         } else if (menuInfo.type.name === 'TracksMenu') {
