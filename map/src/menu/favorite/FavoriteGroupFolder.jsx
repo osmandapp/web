@@ -10,7 +10,7 @@ import Utils, { getDistance } from '../../util/Utils';
 import TracksManager from '../../manager/track/TracksManager';
 import Loading from '../errors/Loading';
 import { useLocation } from '../../util/hooks/useLocation';
-import {isEmpty} from "lodash";
+import { isEmpty } from 'lodash';
 
 export default function FavoriteGroupFolder({ folder }) {
     const ctx = useContext(AppContext);
