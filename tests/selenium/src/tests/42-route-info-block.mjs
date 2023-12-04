@@ -43,14 +43,14 @@ const routes = [
         profile: 'bicycle',
         A: '46.58083, 31.51220',
         B: '46.42675, 31.71208',
-        hasAttributes: false, // temporarily
+        hasAttributes: false, // temporarily disabled // TODO
         strings: [
             'Points: 2',
             'Bike 28.18 km', // was 28.18
             'Route: 28.2 km, 4:37 min', // was 28.2
             '-2 / 0 / 4 m', // ele
-            // /Track.*?: 26.80 km/s, // Road
-            // /Sand.*?: 8.93 km/s, // Surface
+            // /Track.*?: 26.80 km/s, // Road // temporarily disabled // TODO
+            // /Sand.*?: 8.93 km/s, // Surface // temporarily disabled // TODO
         ],
         turns: [
             'Depart and go 1.93 km',
