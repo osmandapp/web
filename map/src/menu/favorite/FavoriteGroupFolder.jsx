@@ -21,7 +21,13 @@ export default function FavoriteGroupFolder({ folder }) {
     const [markers, setMarkers] = useState([]);
     const currentLoc = useLocation(ctx);
 
+    console.log(folder);
+    console.log(currentLoc);
+    console.log(ctx.favorites);
+
     useEffect(() => {
+        console.log(ctx.favorites);
+        console.log(group);
         let markerList = [];
         if (ctx.favorites[group.name]?.markers) {
             Object.values(ctx.favorites[group.name].markers._layers).forEach((value) => {
