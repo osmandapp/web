@@ -168,7 +168,7 @@ You can use live updates only with [OsmAnd Pro (Android)](../purchases/android.m
 
 :::
 
-OsmAnd Live is a special feature  ([available by subscription](../purchases/index.md) or [free OSM Mappers](#free-for-osm-mappers))  that provides additional small map updates on top of the large complete monthly maps. It is roughly estimated that map updates for 1 month takes only 2-4% of complete map size. These updates are generated approximately every 15 minutes on OsmAnd Servers and could be downloaded hourly / daily or weekly. On Android they could be downloaded in the background though it doesn't work correctly on all devices. The app restart always checks if there are pending updates and downloads them. 
+OsmAnd Live is a special feature  ([available by subscription](../purchases/index.md) or [free for OSM Mappers](#free-for-osm-mappers))  that provides additional small map updates on top of the large complete monthly maps. It is roughly estimated that map updates for 1 month takes only 2-4% of complete map size. These updates are generated approximately every 15 minutes on OsmAnd Servers and could be downloaded hourly / daily or weekly. On Android they could be downloaded in the background though it doesn't work correctly on all devices. The app restart always checks if there are pending updates and downloads them. 
 
 Each map has an independent collection  of tiny map updates, please be careful if you have overlapping map regions. If you want to go back to the original state, you can switch off updates and 'Clear cache'.  
 
