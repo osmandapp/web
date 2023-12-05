@@ -170,7 +170,7 @@ export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenS
                                             }
                                         ></FormControlLabel>
                                     ) : (
-                                        <FormControl sx={{ m: 1, minWidth: 100 }}>
+                                        <FormControl sx={{ m: 1, minWidth: 120 }}>
                                             <InputLabel id={'routing-param-' + opt.key}>{opt.label}</InputLabel>
                                             <Select
                                                 labelId={'routing-param-' + opt.key}
