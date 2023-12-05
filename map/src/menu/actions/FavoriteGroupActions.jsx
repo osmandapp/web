@@ -57,7 +57,8 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
         //update wpts
         let data = [];
         groupObj.wpts.forEach((wpt) => {
-            wpt.hidden = `${!hidden}`;
+            const newHiddenValue = !hidden;
+            wpt.hidden = newHiddenValue ? 'true' : 'false';
             data.push(JSON.stringify(wpt));
         });
 
