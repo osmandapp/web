@@ -51,7 +51,6 @@ function getShapesSvg(color) {
 
 async function addFavorite(data, fileName, updatetime) {
     let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add`, data, {
-        apiCache: true,
         params: {
             fileName: fileName,
             updatetime: updatetime,
@@ -65,7 +64,6 @@ async function addFavorite(data, fileName, updatetime) {
 
 async function deleteFavorite(data, fileName, updatetime) {
     let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/delete`, data, {
-        apiCache: true,
         params: {
             fileName: fileName,
             updatetime: updatetime,
@@ -79,7 +77,6 @@ async function deleteFavorite(data, fileName, updatetime) {
 
 async function updateFavorite(data, wptName, oldGroupName, newGroupName, oldGroupUpdatetime, newGroupUpdatetime, ind) {
     let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update`, data, {
-        apiCache: true,
         params: {
             wptName: wptName,
             oldGroupName: oldGroupName,
@@ -184,7 +181,6 @@ export function prepareFavGroupName(name) {
 export async function saveFavoriteGroup(data, groupName, ctx) {
     if (data.pointsGroups[groupName]) {
         let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add-group`, data, {
-            apiCache: true,
             params: {
                 groupName: groupName,
             },

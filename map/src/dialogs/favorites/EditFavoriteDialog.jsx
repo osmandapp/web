@@ -55,7 +55,9 @@ export default function EditFavoriteDialog({
     }, [editFavoritesDialogOpen]);
 
     async function getIconCategories() {
-        let resp = await apiGet(FavoritesManager.FAVORITE_GROUP_FOLDER);
+        let resp = await apiGet(FavoritesManager.FAVORITE_GROUP_FOLDER, {
+            apiCache: true,
+        });
         const res = await resp.json();
         if (res) {
             Object.entries(res.categories).forEach((category) => {
