@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
     ClickAwayListener,
     Drawer,
@@ -48,6 +48,8 @@ export default function MainMenu({
     setClearState,
 }) {
     const ctx = useContext(AppContext);
+
+    const [selectedType, setSelectedType] = useState(null);
 
     const handleDrawer = () => {
         setOpenMainMenu(!openMainMenu);
@@ -136,6 +138,7 @@ export default function MainMenu({
         });
         if (currentMenu) {
             setMenuInfo(currentMenu.component);
+            setSelectedType(currentMenu.type);
         }
     }
 
@@ -167,13 +170,25 @@ export default function MainMenu({
         return res.join(' ');
     }
 
-    console.log(ctx.openGroups);
     function getGroup() {
-        console.log(menuInfo.type.name);
-        if (menuInfo.type.name === 'FavoritesMenu') {
+        if (selectedType === OBJECT_TYPE_FAVORITE) {
             return <FavoriteGroupFolder folder={ctx.openGroups[ctx.openGroups.length - 1]} />;
-        } else if (menuInfo.type.name === 'TracksMenu') {
+        } else if (selectedType === OBJECT_TYPE_CLOUD_TRACK) {
             return <TrackGroupFolder folder={ctx.openGroups[ctx.openGroups.length - 1]} />;
+        }
+    }
+
+    function selectMenu(item) {
+        ctx.setOpenGroups([]);
+        if (menuInfo) {
+            setShowInfoBlock(false);
+            const menu = !isSelectedMenuItem(item) ? item : null;
+            setMenuInfo(menu?.component);
+            setSelectedType(menu?.type);
+        } else {
+            setMenuInfo(item.component);
+            setSelectedType(item.type);
+            setOpenMainMenu(false);
         }
     }
 
@@ -273,16 +288,7 @@ export default function MainMenu({
                                         id={item.id}
                                         key={index}
                                         className={setMenuStyles(item)}
-                                        onClick={() => {
-                                            ctx.setOpenGroups([]);
-                                            if (menuInfo) {
-                                                setShowInfoBlock(false);
-                                                setMenuInfo(!isSelectedMenuItem(item) ? item.component : null);
-                                            } else {
-                                                setMenuInfo(item.component);
-                                                setOpenMainMenu(false);
-                                            }
-                                        }}
+                                        onClick={() => selectMenu(item)}
                                     >
                                         <ListItemButton
                                             className={setMenuIconStyles(item)}

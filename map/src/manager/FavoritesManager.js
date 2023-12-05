@@ -161,7 +161,7 @@ function createGroup(file) {
     file.folder = file.name.split('.')[0].replace(FavoritesManager.FAV_FILE_PREFIX, '');
     let pointsGroups = FavoritesManager.prepareTrackData(file.details.pointGroups);
     const groupName = file.folder === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : file.folder;
-    console.log(pointsGroups[groupName]);
+
     return {
         name: file.folder,
         updatetimems: file.updatetimems,
