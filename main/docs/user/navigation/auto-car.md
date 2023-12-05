@@ -18,11 +18,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-[**Android Auto**](https://www.android.com/auto)** is software developed by Google that allows users to connect their Android devices to compatible car multimedia systems. Android Auto provides an adapted and optimized version of the OsmAnd app for safe use while driving, making it easier and more secure to access the app's navigation functions.  
-
 ![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_overview.png)  
 
-** - [Android Auto](https://www.android.com/auto/) function works only for OsmAnd apps from [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023). (If you buy [OsmAnd Pro](../purchases/android.md#osmand-pro) for OsmAnd from [Amazon store](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd) you can [activate it](https://osmand.net/docs/user/troubleshooting/setup#osmand-pro) for [OsmAnd Free from Google Play](https://play.google.com/store/apps/details?id=net.osmand). After that, you can have Android Auto function by OsmAnd Pro subscription bought from another app store.)
+[**Android Auto**](https://www.android.com/auto) is software developed by Google that allows users to connect their Android devices to compatible car multimedia systems. Android Auto provides an adapted and optimized version of the OsmAnd app for safe use while driving, making it easier and more secure to access the app's navigation functions.  
+
+- Android Auto function is only supported when using the OsmAnd app available in the [Google Play store](https://play.google.com/store/apps/dev?id=8483587772816822023). 
+- If you have purchased [OsmAnd Pro](../purchases/android.md#osmand-pro) from the [Amazon store](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd), you can [activate it](https://osmand.net/docs/user/troubleshooting/setup#osmand-pro) in the [OsmAnd Free version](https://play.google.com/store/apps/details?id=net.osmand) app downloaded from the Google Play store. 
+- After this activation, you can use the Android Auto function for which you purchased a subscription to OsmAnd Pro in another app store.
 
 ### Landing screen
 
@@ -240,14 +242,22 @@ OsmAnd has [map mode](../map/vector-maps.md#map-mode) options, but when you use 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_alert_widget.png)
 
 
-This information widget combines alert types such as **Pedestrian crosswalks** and **Speed Limit**. The types of alerts have different appearance, which depends on the **<Translate android="true" ids="driving_region"/>**  and can be configured in *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>*. In Android Auto it is not possible to set the display of alerts, you need to configure the widget in the application before starting the navigation and connecting your device to the vehicle. For a detailed description of the alert types, see [this article](../widgets/nav-widgets.md#alert-types). To set up screen alerts for available profiles, see the article [Navigation settings](../navigation/guidance/navigation-settings.md#screen-alerts).  
+This information widget combines alert types such as **Pedestrian crosswalks** and **Speed Limit**. 
+- The types of alerts have different appearance, which depends on the **<Translate android="true" ids="driving_region"/>**  and can be configured in *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>*.
+- In Android Auto it is not possible to set the display of alerts, you need to configure the widget in the application before starting the navigation and connecting your device to the vehicle.
+- For a detailed description of the alert types, see [this article](../widgets/nav-widgets.md#alert-types).
+- To set up screen alerts for available profiles, see the article [Navigation settings](../navigation/guidance/navigation-settings.md#screen-alerts).  
 
 
-### Map appearance  
+### Map appearance (3D)
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_appearance.png)
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_appearance_3d_2.png)
 
-On the screen of your vehicle multimedia system, you can use both the 2D and 3D views of OsmAnd maps to display your route and navigation. For your map to have a 3D view, you need to open the main *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,map_3d_mode_action"/>* in the application directly. This has to be done before connecting to Android Auto. Read more about the setup 3D-view in the article *[Map Buttons](../widgets/map-buttons.md#3d-mode)*.  
+The OsmAnd app allows you to use the 3D map view on the Android Auto screen to display your route and navigation.
+- To enable this feature, you need to select [Map rendering Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine).
+- Open the main *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>* directly in the OsmAnd app.
+- After configuring the settings, the **3D button** will be displayed on the Android Auto screen when the category list for destinations is closed. 
+- You can switch between 3D / 2D map modes by tapping this button.
 
 
 ### Split-screen

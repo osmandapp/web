@@ -15,14 +15,16 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-Downloading maps is a necessary action for further use of maps and offline navigation. You can download maps by viewing the list of regions in the main menu or by clicking on the desired area on the map.  
+## Overview
 
-The application can not function normally without offline maps, which are not distributed within the application. Although the application supports [Vector maps](../map/vector-maps.md) and [Raster maps](../map/raster-maps.md), it is highly recommended that you start working with Offline Vector Maps so that all functions such as [Search](../search/index.md), [Navigation](../navigation/index.md), [Context menu](../map/map-context-menu.md) work properlly.  
+Downloading maps in the OsmAnd app is a key step to ensure smooth operation and use of offline navigation. Without offline maps, the app cannot function fully. Downloading maps gives you access to maps of different regions, allowing you to navigate without an internet connection.
+
+To download maps, you have two main ways: view the list of regions in the main menu or select the required region directly on the map. This gives you the flexibility to select the regions you want and ensures that the maps are customized according to your plans.
+
+Though OsmAnd supports both [Vector](../map/vector-maps.md) and [Raster](../map/raster-maps.md) maps, it is highly recommended to start working with vector maps offline. This type of map ensures that all key features of the app work reliably, including [Search](../search/index.md), [Navigation](../navigation/index.md), and [Context menu](../map/map-context-menu.md). This is especially important if your travels include trips to remote locations or places with limited Internet access. 
+
 
 ## First Screen
-
-When you first launch the app, it suggests downloading a map based on your Internet location. In the case of VPN usage, the app can propose a different (not your geolocation) map region.  
-You can skip this step and restore your data from [OsmAnd Cloud](../personal/osmand-cloud.md).
 
 <Tabs groupId="operating-systems">
 
@@ -40,170 +42,207 @@ You can skip this step and restore your data from [OsmAnd Cloud](../personal/osm
 
 </Tabs>
 
+When you first launch the app, you will be prompted to download a map based on your current online location, or you can skip this step. This is convenient, as you immediately get access to local maps corresponding to your location.
+
+If you're using a VPN, OsmAnd can offer you a regional map, giving you the option to choose a map different from your actual geography. 
+
+It's important to note that you can skip the download step if you already have previous settings from the [OsmAnd Cloud](../personal/osmand-cloud.md). This is useful if you have reinstalled the app or want to restore the previous user experience without having to reselect regions and settings.
+
 
 :::tip Note
-**World overview map**. Versions of OsmAnd prior to 3.8 suggest downloading World map so you can browse the map on the planet-level zoom. In new OsmAnd versions small *Mini world overview map* is packaged inside the app. However afterward, you can download a larger *World Overview map* which contains more detailed information about the world.  
+**World overview map**. 
+Versions of OsmAnd up to 3.8 offer to download a World map so that you can view it on a planetary scale. In newer releases of OsmAnd, a small *Mini world overview map* is supplied with the application. After downloading the app, you can download a larger *World Overview map* with more detailed information.
 :::
 
-## Main menu
+
+## Download 
+
+To start downloading maps, go to the Download maps (Android) / Maps & Resources (iOS) main menu. There you can select the maps you need for offline navigation.  
+
+
+### Map types 
 
 <Tabs groupId="operating-systems">
+
 <TabItem value="android" label="Android">
 
-You can download new maps and manage already downloaded maps through the Main Menu:
+![Download map menu Android](@site/static/img/settings/download_map_menu_android.png) ![Regionwide maps Android](@site/static/img/settings/regionwide_maps_menu.png)
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps"/>_
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Download map menu iOS](@site/static/img/settings/download_map_menu_ios.png) ![Regionwide maps Android](@site/static/img/settings/regionwide_maps_menu_ios.png)  
+
+</TabItem>
+
+</Tabs>
+
+Downloading maps to the OsmAnd application is an important step that determines the functionality and efficiency of navigation.
+
+#### Downloads tab
+
+- **Divice memory**. Visualize the amount of occupied and free space on your device.
+- **Worldwide (Regions)**. List by continent and region of the world.
+- [**World maps**](#world-maps). A list of maps of the entire world.
+- [**Nautical maps**](../plugins/nautical-charts.md) (paid feature). Vector maps with sea depth elevation as points or lines.
+- [**Travel guides (Wikivoyage)**](../plan-route/travel-guides.md) (paid feature). These are vector maps containing a collection of articles in HTML format and additionally GPX files.
+- **Other maps**. Additional maps that cannot be attached to the current map hierarchy are usually obsolete and unsupported maps or maps that will be available in future releases.
+- [**Voice packages**](../navigation/guidance/voice-navigation.md) (only for Android). Voice packages for voicing navigation prompts.
+- [**Map fonts**](../map/vector-maps.md#map-fonts-android) (only for Android). Additional font files used to display text on the map.
 
 
-**This screen has certain features**
+#### Free features for the selected location
+
+- **Standard map**. Provides an overview of the area based on the [OpenStreetMap](https://www.openstreetmap.org/) source and contains a map, routes, addresses, POIs and public transportation information. When you tap opens a screen with a list of regions of the selected country and how much space these maps will take up on your device.
+- **Roads-only** (*Android only*). The map contains only road grid information to focus on routes and road infrastructure. The map is smaller than the standard map due to the removal of map details such as buildings and points of interest. When you tap opens a screen with a list of regions of the selected country and how much space these maps will take up on your device.
+
+#### Paid features for the selected location
+
+- [**Coutour lines**](../plugins/contour-lines.md#contour-lines). A map containing contour elevation lines to help visualize the terrain.
+- [**Terrain map (Hillshade and Slope)**](../plugins/contour-lines.md#hillshade--slope). The maps with shadows or slopes provides additional information about the topography.
+- [**Terrain map (3D)**](../plugins/contour-lines.md#3d-relief). A three-dimensional representation of terrain for a deeper understanding of the environment. [Map rendering engine Version 2(OpenGL)](../personal/global-settings.md#map-rendering-engine) must be enabled.
+- [**Wikipedia**](../plugins/wikipedia.md). Vector map with geo-positioned [Wikipedia](https://wikipedia.org/) articles about Points of Interest or additional information about places.
+- [**Weather forecast**](../plugins/weather.md). Weather information on a map for convenient route planning.
+- [**Online raster maps**](../map/raster-maps.md). Maps available for download online and can be installed as third party maps or OsmAnd Tiles. 
+
+:::note
+For regions, such as Germany, consisting of multiple maps, you can use bulk map loading, which is displayed as double loading arrows next to the map type.
+:::
+
+
+### World maps 
+
+The World maps section provides access to various world maps, complementing the app's functionality.  
+
+- **World Altitude Correction** (*Android only*). Improves navigation accuracy, especially in mountainous terrain.
+- **World overview map**. Provides an extensive view of the earth's surface, useful for long-term route planning.
+- **All world (Weather forecast)**. Allows you to download a map with weather information.
+
+
+### Download Maps
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,welmode_download_maps"/>*
+
+![Download maps regions](@site/static/img/settings/download_maps_regions.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
+
+![Download maps regions](@site/static/img/settings/download_maps_regions_ios.png)
+
+</TabItem>
+
+</Tabs>
+
 
 Top screen buttons:
-- _Refresh button_ &#10227; - checks for available map updates on OsmAnd servers.
-- _Search button_ &#x1F50D; - search the region by names or large cities inside it.
+- *Refresh button* &#10227; - checks for available map updates on OsmAnd servers.
+- *Search button* &#x1F50D; - search the region by names or large cities inside it.
 
 Memory info and map counter:
-- Map counter (Free version) - display how many [Free map downloads](../purchases/android.md#free-and-paid-features) left.
+- **Map counter** (Free version) - display how many [Free map downloads](../purchases/android.md#free-and-paid-features) left.
 - [Device memory](../personal/storage.md#storage-info-in-download-maps-menu) - show available memory to be used on the device.
 
 Map search:
 - &#x1F50D; - search the region by names or large cities inside it.
 
 Screens:
-- _All downloads / Worldwide_ - browse and download maps split by continents / countries / regions / types.
-- _Local / Installed_ - manage already downloaded maps.
-- _Updates_ - check and download monthly map updates.
-  - _[OsmAnd Live](../personal/maps.md#osmand-live)_ - configure hourly map updates for certain regions.
-
-![Download maps regions](@site/static/img/settings/download_maps_regions.png)
-
-</TabItem>
-<TabItem value="ios" label="iOS">
-
-You can download new maps and manage already downloaded maps through the Main Menu:
-
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,res_mapsres"/>_
+- *All downloads / Worldwide* - browse and download maps split by continents / countries / regions / types.
+- *Local / Installed* - manage already downloaded maps.
+- *Updates* - check and download monthly map updates.
+  - *[OsmAnd Live](../personal/maps.md#osmand-live)* - configure hourly map updates for certain regions.
 
 
-**This screen has certain features**
-
-Top screen buttons:
-- _Refresh button_ &#10227; - checks for available map updates on OsmAnd servers.
-- _Search button_ &#x1F50D; - search the region by names or large cities inside it.
 
 Memory info and map counter:  
-- _Map counter (Free version)_ - display how many [Free map downloads](../purchases/android.md#free-and-paid-features) left.
-- _[Device memory](../personal/storage.md#storage-info-in-download-maps-menu)_ - show available memory to be used on the device.
+- *Map counter (Free version)* - display how many [Free map downloads](../purchases/android.md#free-and-paid-features) left.
+- *[Device memory](../personal/storage.md#storage-info-in-download-maps-menu)* - show available memory to be used on the device.
 
 Maps part:
-- _All downloads / Worldwide_ - browse and download maps split by continents / countries / regions.
-- _Local / Installed_ - manage already downloaded maps.
-- _Updates_ - check and download monthly map updates.
-  - _[Live updates](../personal/maps.md#osmand-live)_ - configure hourly map updates for certain regions.
+- *Downloads (Android)/ Worldwide (iOS)* - browse and download maps split by continents / countries / regions.
+- *Local / Installed* - manage already downloaded maps.
+- *Updates* - check and download monthly map updates.
+  - *[Live updates](../personal/maps.md#osmand-live)* - configure hourly map updates for certain regions.
 
-![Download maps regions](@site/static/img/settings/download_maps_regions_ios.png)
 
-</TabItem>
-</Tabs>
-
-## Map Context menu
-
+### Select on World Map
 
 <Tabs groupId="operating-systems">
+
 <TabItem value="android" label="Android">
-
-One of the option to download map is via World map and [Map Context menu](../map/map-context-menu.md). You can open Context menu by clicking on the Label, for example city name, or by long tap on the map, or by searching City via Search. Context menu will have a suggestion of the smallest region to download.
-
-![Tap on the map download region](@site/static/img/settings/tap_on_the_map_download_region.png) 
-
-</TabItem>
-<TabItem value="ios" label="iOS">
-
-One of the option to download map is via World map and [Map Context menu](../map/map-context-menu.md). You can open Context menu by clicking on the Label, for example city name, or by long tap on the map, or by searching City via Search. Context menu will have a suggestion of the smallest region to download.
-
-![Tap on the map download region](@site/static/img/settings/tap_on_the_map_download_region_ios.png) 
-
-</TabItem>
-</Tabs>
-
-## Manage - World Map
-
-
-<Tabs groupId="operating-systems">
-<TabItem value="android" label="Android">
-
-One way to download the map is to zoom out the World map and by short tap select the region to download. This area will be highlighted in yellow and on the bottom will appear a panel with the name of the region and an offer to download it or choose other maps.
 
 ![Short tap on the World map allows to download region map](@site/static/img/map/download_region_map_via_worldmap.png)
 
 </TabItem>
-<TabItem value="ios" label="iOS">
 
-One way to download the map is to zoom out the World map and by short tap select the region to download. This area will be highlighted in yellow and on the bottom will appear a panel with the name of the region and an offer to download it or choose other maps.
+<TabItem value="ios" label="iOS">
 
 ![Short tap on the World map allows to download region map](@site/static/img/settings/download_region_map_via_worldmap_ios.png)
 
 </TabItem>
+
 </Tabs>
+
+One way to download the map is to zoom out the World map and by short tap select the region to download. This area will be highlighted in yellow and on the bottom will appear a panel with the name of the region and an offer to download it or choose other maps.
 
 **Note**: At low zoom level map selected to download will be highlighted in yellow and maps that already downloaded will be highlighted in green, deactivated maps will be highlighted in orange. 'Deactivated' maps allow to speed up program in case you have many downloaded maps.
 
 
-## Search
-
+### Search
 
 <Tabs groupId="operating-systems">
+
 <TabItem value="android" label="Android">
-
-It is possible to find and to download a map from the [search function](../search/index.md).
-
-Just write a country or region name, and you see a map file on the finding list. Click on a country name to start downloading.
 
 ![Search function to download map Android](@site/static/img/settings/search_2_download_map_android.png) ![Search function to download map Android](@site/static/img/settings/search_download_map_android.png) 
 
-
 </TabItem>
+
 <TabItem value="ios" label="iOS">
-
-It is possible to find and to download a map from the [search function](../search/index.md).
-
-Just write a country or region name, and you see a map file on the finding list. Click on a country name and start downloading process from [Map Context menu](#map-context-menu).
 
 ![Search function to download map iOS](@site/static/img/settings/search_download_map_ios.png) ![Search function to download map iOS](@site/static/img/settings/search_2_download_map_ios.png) 
 
 </TabItem>
+
 </Tabs>
 
+It is possible to find and to download a map from the [search function](../search/index.md).  
+
+Just write a country or region name, and you see a map file on the finding list. Click on a country name and start downloading process from [Map Context menu](#map-context-menu).
 
 
-
-## Own map (Advanced)
-
-There is a possibility to download created by yourself (in OsmAnd Map Creator) map. [Read more](../../technical/map-creation/create-offline-maps-yourself.md)
-
-## Type of maps
+### Context Menu
 
 <Tabs groupId="operating-systems">
+
 <TabItem value="android" label="Android">
 
-You can download several types of maps: Standard, Roads-only (lightweight maps without details i.e. buildings), [Contour lines](../map/vector-maps.md#contour-lines), [Hillshade](../map/raster-maps.md#hillshade--slope), [Slope](../map/raster-maps.md#hillshade--slope), [Wikipedia](../plugins/wikipedia.md), [Travel guides (Wikivoyage)](../plan-route/travel-guides.md), [Nautical maps](../plugins/nautical-charts.md), [Voice packages](../navigation/guidance/voice-navigation.md), [Map fonts](../map/vector-maps.md#map-fonts-android), [Altitude correction](../widgets/info-widgets.md#altitude).
-
-**[Read more about types of maps](../personal/maps.md#type-of-maps)**.
-
-![Download map menu Android](@site/static/img/settings/download_map_menu_android.png) ![Regionwide maps Android](@site/static/img/settings/regionwide_maps_menu.png)
+![Tap on the map download region](@site/static/img/settings/tap_on_the_map_download_region.png) 
 
 </TabItem>
+
 <TabItem value="ios" label="iOS">
 
-You can download several types of maps: Standard, Roads-only (lightweight maps without details i.e. buildings), [Contour lines](../map/vector-maps.md#contour-lines), [Hillshade](../map/raster-maps.md#hillshade--slope), [Slope](../map/raster-maps.md#hillshade--slope), [Wikipedia](../plugins/wikipedia.md), [Nautical maps](../plugins/nautical-charts.md).
-
-**[Read more about types of maps](../personal/maps.md#type-of-maps)**.
-
-![Download map menu iOS](@site/static/img/settings/download_map_menu_ios.png) ![Regionwide maps Android](@site/static/img/settings/regionwide_maps_menu_ios.png)  
+![Tap on the map download region](@site/static/img/settings/tap_on_the_map_download_region_ios.png) 
 
 </TabItem>
+
 </Tabs>
 
-## Local - Downloaded Maps
+One of the option to download map is via World map and [Map Context menu](../map/map-context-menu.md). You can open Context menu by clicking on the Label, for example city name, or by long tap on the map, or by searching City via Search. Context menu will have a suggestion of the smallest region to download.
+
+
+## Manage 
+
+### Local Resources
 
 <Tabs groupId="operating-systems">
 
@@ -216,6 +255,7 @@ The Local tab *(<Translate android="true" ids="shared_string_menu,welmode_downlo
 - ***Settings*** (green): [Profiles](../personal/profiles.md), Other.
 
 ![Local tab Android 1](@site/static/img/settings/new_map_and_resourses_andr_1.png) ![Local tab Android 2](@site/static/img/settings/new_map_and_resourses_andr_2.png)
+
 
 ### Data type overview and toolbar
 
@@ -255,7 +295,6 @@ On the Local data item overview screen you can find information about data type,
 
 <TabItem value="ios" label="iOS">  
 
-
 * Tap on a map folder in the your maps list.
 * Delete.
 
@@ -265,5 +304,10 @@ On the Local data item overview screen you can find information about data type,
 
 </Tabs> 
 
-
 > NOTE. Deactivated maps
+
+
+### Build your own Map (advanced)
+
+There is a possibility to download created by yourself (in OsmAnd Map Creator) map. [Read more](../../technical/map-creation/create-offline-maps-yourself.md)
+

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 13
+sidebar_position: 5
 title:  External sensors
 ---
 
@@ -100,7 +100,7 @@ OsmAnd allows you to select a 2nd axis for data analysis: *Heart rate*, *Speed*,
 Data from connected external sensors can be added to the GPX file using the [Trip recording plugin](../plugins/trip-recording.md#recording-settings).  
 
 - Settings for sensors are only available if the External Sensors plugin is enabled.
-- To use data from external sensors, go to *Trip recording plugin → Settings → Data → External sensors*.
+- To use data from external sensors, go to *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*.
 - A list of available sensors for each data type is always available, regardless of whether any sensor is connected.
 - If none of the sensor types are paired, you can use the [*Pair new sensor*](#pair-new-sensor) button in the Trip recording plugin *Settings* menu.
 - OsmAnd records data from selected sensors to the [track](../plugins/trip-recording.md#recorded-gpx-file) while recording a trip.
