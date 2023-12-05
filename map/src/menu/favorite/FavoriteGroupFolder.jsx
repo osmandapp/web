@@ -35,10 +35,14 @@ export default function FavoriteGroupFolder({ folder }) {
         } else if (markers.length === 0 && FavoritesManager.getGroupSize(group) > 0) {
             getFavoritesWithoutLayers().then();
         }
-        if (markerList.length > 0) {
-            markerList = addLocDist({ markers: markerList });
-        }
         setMarkers(markerList);
+    }, [ctx.favorites]);
+
+    useEffect(() => {
+        if (markers.length > 0 && currentLoc) {
+            const updatedMarkers = addLocDist({ markers: markers });
+            setMarkers(updatedMarkers);
+        }
     }, [ctx.favorites, currentLoc]);
 
     async function getFavoritesWithoutLayers() {

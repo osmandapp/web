@@ -49,9 +49,11 @@ export default function FavoriteItem({ marker, group }) {
     const FavInfo = () => {
         return (
             <div style={{ display: 'flex', alignItems: 'centre' }}>
-                <ListItemIcon sx={{ mr: '-23px !important' }}>
-                    <DirectionIcon />
-                </ListItemIcon>
+                {marker.locDist && (
+                    <ListItemIcon sx={{ mr: '-23px !important' }}>
+                        <DirectionIcon />
+                    </ListItemIcon>
+                )}
                 <Typography variant="body2" className={styles.favLocationInfo}>
                     {marker.locDist ? `${marker.locDist} km` : ''}
                 </Typography>
@@ -108,5 +110,5 @@ export default function FavoriteItem({ marker, group }) {
                 />
             </>
         );
-    }, [marker, openActions, hoverIconInfo, ctx.openedPopper]);
+    }, [marker, marker.locDist, openActions, hoverIconInfo, ctx.openedPopper]);
 }
