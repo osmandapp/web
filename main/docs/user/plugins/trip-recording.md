@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 14
 title:  Trip recording
 ---
 
@@ -51,34 +51,17 @@ After setup is complete, you can make new records, display and manage tracks on 
 
 ![Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/create_new_track_and-1.png) ![Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/create_new_track_ios-1.png) 
 
-In the OsmAnd app with the Trip recording plugin, you can start recording your track using several suggested options.
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
+In the OsmAnd app with the Trip recording plugin, you can start recording your track using several suggested options.  
 
 - Usе the [Distance/Start-Stop widget](#distance-start-stop). 
-- Use the **Trip recording** item in the Main menu of the OsmAnd app: *<Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/>*.
-- Use the **RECORD** option in [My Places](../personal/tracks.md#my-places-menu) section of the Main menu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.  
-- Use an [application launcher](#launcher-android).
+- Use the **Trip recording** item (*Android*) in the Main menu of the OsmAnd app: *<Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/>*.
+- Use the **<Translate android="true" ids="start_recording"/>** button (*Android*) / record button in the **<Translate ios="true" ids="shared_string_currently_recording_track"/> field** (*iOS*) in [My Places](../personal/tracks.md#my-places-menu) section of the Main menu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.  
+- Use an [application launcher](#launcher-android) (*Android*).
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-- Use the [Distance/Start-Stop widget](#distance-start-stop).
-- Use the **<Translate ios="true" ids="shared_string_currently_recording_track"/>** option in [My Places](../personal/tracks.md#my-places-menu) section of the Main menu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*.
-
-</TabItem>
-
-</Tabs>
-
-:::tip Note
+**Recommendations:**  
 - For this options to work properly, we recommend that you allow OsmAnd to get the [precise location](../start-with/first-steps.md#permission-to-access-the-location) of your device.  
 - **Troubleshooting**: your *iOS device* may temporarily **suspend or stop apps** from running in the background.  
 For more information about all troubleshooting, read the [*Track recording*](../troubleshooting/track-recording-issues.md#recorded-tracks-have-gaps) in the appropriate documentation section. 
-:::
-
 
 
 ### Start a Dialog
@@ -91,12 +74,6 @@ Start dialog opens, if the **<Translate android="true" ids="show_start_dialog"/>
 
 ![Start recording in Android](@site/static/img/plugins/trip-recording/start_rec_andr_1.png)  
 
-:::note
-- The **Line** icon opens the [Track Appearance options](../map/tracks-on-map.md#track-appearance), which allow you to customize the display of the track on the map. When a track is saved, the selected appearance is saved with the track, and the next time it is turned on, it will start displaying the same way it did the previous time.  
-- **Logging interval** is used to set the frequency of the requests sent to the GPS sensor to detect and place a new point on the track route.
-- The **Settings** menu allows you to adjust the recording parameters. See [Trip recording](#recording-settings) settings for more information.
-:::
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -104,39 +81,35 @@ Start dialog opens, if the **<Translate android="true" ids="show_start_dialog"/>
 Start dialog opens, if the **<Translate ios="true" ids="track_interval_remember"/>** option is not toggled on.
 
 ![Start recording in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_1.png) 
-
-:::note
-- **Logging interval** is used to set the frequency of the requests sent to the GPS sensor to detect and place a new point on the track route.  
-- If **Remember my choice** is toggled on, all following track recordings automatically start, without additional settings or the OK button. Before you record a new track, you need to restart the Trip recording plugin for the settings to start displaying again.
-:::
  
 </TabItem>
 
 </Tabs>
 
+- **Logging interval** (*Android/iOS*) is used to set the frequency of the requests sent to the GPS sensor to detect and place a new point on the track route.
+- The **Line** (*Android*) icon opens the [Track Appearance options](../map/tracks-on-map.md#track-appearance), which allow you to customize the display of the track on the map. When a track is saved, the selected appearance is saved with the track, and the next time it is turned on, it will start displaying the same way it did the previous time.  
+- The **Settings** (*Android*) menu allows you to adjust the recording parameters. See [Trip recording](#recording-settings) settings for more information.
+- If **Remember my choice** (*iOS*) is toggled on, all following track recordings automatically start, without additional settings or the OK button. Before you record a new track, you need to restart the Trip recording plugin for the settings to start displaying again.
+
 
 
 ### Launcher (Android)
 
-To start a new track recording you can use the Start Recording icon on the screen of your Android device, as shown in the screenshots below, for example. A long press on the icon opens a context menu with the Start Recording option.
-
 ![Icon's context menu](@site/static/img/plugins/trip-recording/and_open_from_icon.png) ![Start Recording icon](@site/static/img/plugins/trip-recording/and_trip_rec_icon.png)
 
-:::note
-Use long press on *Start recording* in the icon context menu to add it as a separate icon to the device screen.
-:::  
+To start recording a new track, you can use the Start Recording icon on the screen of your Android device, as shown in the screenshots for an example. Long pressing the icon opens a context menu with Start Recording option.
+
+Use a long press on *Start Recording* in the context menu of the OsmAnd icon to add it as a separate icon on your device screen.
 
 
 ## Current track recording
 
-:::tip Stop / Save / Pause
-To stop the recording, tap on the relevant button in the [Distance/Start-Stop widget](#distance-start-stop) widget dialog box, for the Android version you can also stop the recording by tapping the Main menu item *Trip recording*.
-:::
+For *Stop / Save / Pause*:
+- To stop the recording, tap the corresponding button in the [Distance/Start-Stop widget](#distance-start-stop) widget dialog box.
+- In the *Android version*, you can stop recording by tapping the *Trip recording* Main menu item.
 
 
 ### Overview screen
-
-The Android version of the OsmAnd app has a separate menu for the *Track recording* context menu, the iOS version has a track context menu *Currently recording track*.   
 
 <Tabs groupId="operating-systems">
 
@@ -154,13 +127,15 @@ The Android version of the OsmAnd app has a separate menu for the *Track recordi
 
 </Tabs>
 
-The graphs which are built while recording the current track, show visually the information about the track. All values on the graph are indicated either for the whole route or only for the selected interval (when scaling). The right(Android)/left(iOS) side of the graphs contains data about the highest, average and lowest values. *Overview* - distance and speed, *Altitude* - elevation and grade, *Speed* - speed in current moment.  
+The **Android version** of the OsmAnd app has a separate menu for the *Track recording* context menu, while the **iOS version** has the *Currently recording track* track context menu.   
 
-:::note  
-The graph can be scaled.   
-- You can use [two-finger movement](../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. 
-- If you want to see information at a specific point, you can tap on the graph and a pointer with the values will appear.  
-:::
+The graphs that are built while the current track is being recorded visually display information about the track. All values on the graph are indicated either for the whole route or only for the selected interval (when scaling).  
+
+- The right (*Android*) / left (*iOS*) side of the graphs contains data about the **highest, average and lowest values**.  
+- The tabs contain information: **Overview** - distance and speed, **Altitude** - elevation and grade, **Speed** - speed in current moment.  
+- The graph can be scaled.   
+    - You can use [two-finger movement](../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. 
+    - If you want to see information at a specific point, you can tap on the graph and a pointer with the values will appear.  
 
 | |  
 | ------------- |   
@@ -172,7 +147,7 @@ The graph can be scaled.
 | ![data](@site/static/img/plugins/trip-recording/tr_rec_speed-2.png)  ![data](@site/static/img/plugins/trip-recording/tr_rec_speed-ios.png) |
 
 :::info 
-Here you can find more helpful information about [Tracks context menu](../map/track-context-menu.md#options), about [Appearence](../map/tracks-on-map.md#track-appearance) of the track on map and about adding [track points](../map/track-context-menu.md#waypoints-folder) to the current track. To make the necessary changes to the track, such as *Rename track*, use the [Options](https://osmand.net/docs/user/map/track-context-menu#options) tab of the Tracks Context menu.  
+Tap the links to get more information about the [**Tracks context menu**](../map/track-context-menu.md#options), about the [**Appearence**](../map/tracks-on-map.md#track-appearance) of a track on the map, and about adding [**track points**](../map/track-context-menu.md#waypoints-folder) to the current track. To make necessary changes to the track, for example *Rename track*, use the [**Options**](https://osmand.net/docs/user/map/track-context-menu#options) tab of the Tracks Context menu.  
 :::
 
 
@@ -219,10 +194,11 @@ OsmAnd records tracks in a file in the [GPX format](https://en.wikipedia.org/wik
 | `hdop` | **HDOP** is one of the terms of GPS accuracy, horizontal accuracy, calculated in meters, abbrev. from *Horizontal Dilution of Precision*, determined as the error caused by the relative position of the GPS satellites. |
 | `speed` | **Speed** is the rate, in meters per second, at which the user is detected to be moving. |
 | `heading` | **Heading** is the direction to where the front panel of the vehicle/device is pointing. The heading direction is calculated in degrees and determined with the [angle](https://en.wikipedia.org/wiki/Heading_(navigation)) between the direction the front panel is pointing and the course towards which the vehicle/device is intended to move. In navigation, the difference may exist due to the drift caused by the air, water, skidding, slipping, etc. |
-| `speed_sensor` | **Speed** is used to record data from [external sensors](../plugins/external-sensors.md), provides information about your current speed while cycling. |
-| `cadence` | **Cadence** is used to record data from external sensors, shows the number of pedal turns per minute. |
-| `power` | **Bicycle power** is used to record data from external sensors, measuring the power generated by pedaling. |
-| `temp` | **Temperature** is used to record data from external sensors. |
+| `speed_sensor` | **Speed** is used to record data from [external sensors](../plugins/external-sensors.md), providing information about your current speed while cycling. |
+| `cadence` | **Cadence** is used to record data from [external sensors](../plugins/external-sensors.md), showing the number of pedal turns per minute. |
+| `power` | **Bicycle power** is used to record data from [external sensors](../plugins/external-sensors.md), measuring the power generated by pedaling. |
+| `temp` | **Temperature** is used to record data from [external sensors](../plugins/external-sensors.md), displaying information about the ambient temperature.. |
+| `hr` | **Heart Rate** is used to record data from [external sensors](../plugins/external-sensors.md), showing the number of heart beats per minute. |
 
 
 ## Recording settings

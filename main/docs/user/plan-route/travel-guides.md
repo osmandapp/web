@@ -15,8 +15,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-<InfoAndroidOnly />
-
 :::tip NOTE
 Travel Guides is a paid feature of the OsmAnd app.  
 :::

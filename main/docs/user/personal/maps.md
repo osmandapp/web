@@ -15,6 +15,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
+<InfoIncompleteArticle/>
+
 ## Overview
 
 The Maps screen allows you to perform basic operations with online and offline maps used in OsmAnd. These are loading, deleting, renaming, clearing the cache for online maps, updating, and checking the map size.
@@ -44,26 +46,10 @@ _<Translate ios="true" ids="shared_string_menu,res_mapsres"/>_
 
 ## Map types
 
-There are several map types available to download and manage:
-- Standard - a fully packaged OsmAnd map based on [OpenStreetMap](https://www.openstreetmap.org/) source, they provide map, routing, address, POI, public transport information, . 
-- Roads-only (Android) - a smaller by size map comparing to Standard due to removed map details such as buildings & points on the map.
-- [Coutour lines](../map/vector-maps.md#contour-lines) - a map that contains the elevation contour lines.
-- [Hillshades](../map/raster-maps.md#hillshade--slope) - a raster map with hillshade information.
-- [Slopes](../map/raster-maps.md#hillshade--slope) - a raster map with slopes information. 
-- [Online and cached tile maps](../map/raster-maps.md) - a custom map source for online maps, could be installed as 3rd party map or as OsmAnd Tiles. 
-- [Wikipedia](../plugins/wikipedia.md) - a vector map that provides Geo located Articles as POIs from [Wikipedia](https://wikipedia.org/).
-- [Travel guides / Wikivoyage](../plan-route/travel-guides.md) - a vector map that has a collection of Articles (Text as HTML + GPX file) for example [Wikivoyage](https://www.wikivoyage.org/).
-- [Nautical maps](../plugins/nautical-charts.md) - a vector map that provide sea depth elevation as points or as lines.
-- [Voice packages](../navigation/guidance/voice-navigation.md) - a voice package that provides sounds and configuration how to guide you in the navigation mode.
-- [Map fonts (Android)](../map/vector-maps.md#map-fonts-android) - additional fonts files used to render text on the map.
-- [Altitude correction (Android)](../widgets/info-widgets.md#altitude) - a special map file that provides correction for geoid on Android devices (optional).
-- Other maps - maps that couldn't be attached to current maps hierarchy, typically represents deprecated and not supported maps or maps that will be available next release.
-
-:::note
-For regions like Germany consisted of many maps, you can use bulk map downloads, it is depicted as double download arrows next to the map type.
-:::
-
 ![Download map menu Android](@site/static/img/settings/download_map_menu_android.png) ![Regionwide maps Android](@site/static/img/settings/regionwide_maps_menu.png)
+
+
+Read more in the article [Download maps](../start-with/download-maps.md#map-types).
 
 
 ## Download maps (Maps)
