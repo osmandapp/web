@@ -19,7 +19,7 @@ export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }
 
     const renameError = {
         title: 'Rename error',
-        msg: 'Favorites is not found.',
+        msg: 'Favorites not found.',
     };
 
     async function rename() {

@@ -133,7 +133,7 @@ const FavoriteInfoTab = () => {
             </Button>
             {editFavoritesDialogOpen && (
                 <EditFavoriteDialog
-                    favorite={favorite}
+                    wpt={favorite}
                     editFavoritesDialogOpen={editFavoritesDialogOpen}
                     setEditFavoritesDialogOpen={setEditFavoritesDialogOpen}
                     deleteFavoritesDialogOpen={deleteFavoritesDialogOpen}

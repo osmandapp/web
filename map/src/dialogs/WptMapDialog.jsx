@@ -181,7 +181,7 @@ export default function WptMapDialog() {
             )}
             {editFavoritesDialogOpen && (
                 <EditFavoriteDialog
-                    favorite={wpt}
+                    wpt={wpt}
                     editFavoritesDialogOpen={editFavoritesDialogOpen}
                     setEditFavoritesDialogOpen={setEditFavoritesDialogOpen}
                     deleteFavoritesDialogOpen={deleteFavoritesDialogOpen}

@@ -19,7 +19,9 @@ const FavoriteItemActions = forwardRef(({ marker, group, setOpenActions }, ref) 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const [openEditDialog, setOpenEditDialog] = useState(false);
 
-    const favorite = () => {
+    const favorite = getFavorite();
+
+    function getFavorite() {
         const wptInd = ctx.favorites[group.name].wpts.findIndex((wpt) => wpt.name === marker.title);
         const wpt = ctx.favorites[group.name].wpts[wptInd];
         if (wpt) {
@@ -42,7 +44,7 @@ const FavoriteItemActions = forwardRef(({ marker, group, setOpenActions }, ref) 
         } else {
             return null;
         }
-    };
+    }
 
     return (
         <>
@@ -79,13 +81,13 @@ const FavoriteItemActions = forwardRef(({ marker, group, setOpenActions }, ref) 
                 <DeleteFavoriteDialog
                     dialogOpen={openDeleteDialog}
                     setDialogOpen={setOpenDeleteDialog}
-                    wpt={favorite()}
+                    wpt={favorite}
                     setOpenActions={setOpenActions}
                 />
             )}
             {openEditDialog && (
                 <EditFavoriteDialog
-                    favorite={favorite()}
+                    wpt={favorite}
                     editFavoritesDialogOpen={openEditDialog}
                     setEditFavoritesDialogOpen={setOpenEditDialog}
                     deleteFavoritesDialogOpen={openDeleteDialog}

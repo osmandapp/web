@@ -34,7 +34,7 @@ export default function DeleteFavoriteDialog({ dialogOpen, setDialogOpen, wpt = 
             }
         } else {
             //delete favorite point from group
-            deleteFavorite().then();
+            await deleteFavorite();
             if (setOpenActions) {
                 setOpenActions(false);
             }

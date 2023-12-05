@@ -131,14 +131,14 @@ export default function FavoriteGroupFolder({ folder }) {
 
     function getMarkersBySortFiles() {
         let arr = [];
-        sortFiles.forEach((wpt) => {
+        for (const wpt of sortFiles) {
             const marker = markers.find((m) => m.title === wpt.name);
             if (marker) {
                 arr.push(marker);
             } else {
                 return [];
             }
-        });
+        }
         return arr;
     }
 
@@ -151,7 +151,17 @@ export default function FavoriteGroupFolder({ folder }) {
                     maxWidth={ctx.infoBlockWidth}
                     sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 120}px` }}
                 >
-                    {favItems.length > 0 ? favItems : <Loading />}
+                    {FavoritesManager.getGroupSize(folder) === 0 ? (
+                        <Empty
+                            title={'Empty group'}
+                            text={"This group doesn't have any wpt yet. You can add them using map."}
+                            menu={OBJECT_TYPE_FAVORITE}
+                        />
+                    ) : favItems.length > 0 ? (
+                        favItems
+                    ) : (
+                        <Loading />
+                    )}
                 </Box>
             </Box>
             {ctx.favorites?.groups?.length === 0 && (

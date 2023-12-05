@@ -44,13 +44,14 @@ function GroupResult(clienttimems, updatetimems, data) {
 function getShapesSvg(color) {
     let res = {};
     shapes.forEach((shape) => {
-        res[`${shape}`] = getSvgBackground(color, shape);
+        res[shape] = getSvgBackground(color, shape);
     });
     return res;
 }
 
 async function addFavorite(data, fileName, updatetime) {
     let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add`, data, {
+        apiCache: true,
         params: {
             fileName: fileName,
             updatetime: updatetime,
@@ -64,6 +65,7 @@ async function addFavorite(data, fileName, updatetime) {
 
 async function deleteFavorite(data, fileName, updatetime) {
     let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/delete`, data, {
+        apiCache: true,
         params: {
             fileName: fileName,
             updatetime: updatetime,
@@ -77,6 +79,7 @@ async function deleteFavorite(data, fileName, updatetime) {
 
 async function updateFavorite(data, wptName, oldGroupName, newGroupName, oldGroupUpdatetime, newGroupUpdatetime, ind) {
     let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update`, data, {
+        apiCache: true,
         params: {
             wptName: wptName,
             oldGroupName: oldGroupName,
@@ -158,7 +161,7 @@ function getColorGroup(ctx, groupName, wpt) {
 }
 
 function createGroup(file) {
-    file.folder = file.name.split('.')[0].replace(FavoritesManager.FAV_FILE_PREFIX, '');
+    file.folder = prepareFavGroupName(file.name);
     let pointsGroups = FavoritesManager.prepareTrackData(file.details.pointGroups);
     const groupName = file.folder === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : file.folder;
 
@@ -175,13 +178,13 @@ function createGroup(file) {
 }
 
 export function prepareFavGroupName(name) {
-    const result = name.replace(/.gpx/, '');
-    return result.replace(FavoritesManager.FAV_FILE_PREFIX, '');
+    return name.replace(new RegExp(`^${FavoritesManager.FAV_FILE_PREFIX}`), '').replace(/\.gpx$/, '');
 }
 
 export async function saveFavoriteGroup(data, groupName, ctx) {
     if (data.pointsGroups[groupName]) {
         let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add-group`, data, {
+            apiCache: true,
             params: {
                 groupName: groupName,
             },
@@ -194,25 +197,24 @@ export async function saveFavoriteGroup(data, groupName, ctx) {
     }
 }
 
-export function createFavGroupFreeName(name, groups) {
-    let occupied = null;
-    let newName = name;
-    for (let i = 1; i < 100; i++) {
-        if (groups) {
-            occupied = isFavGroupExists(newName, groups);
-        }
-        if (!occupied) {
-            return newName;
-        }
-        newName = name + ' - ' + i; // try with "Track - X"
-    }
-
-    if (occupied) {
-        throw new Error('TracksManager addTrack() too many same-tracks');
-    }
-
-    //return FavoritesManager.FAV_FILE_PREFIX + newName;
-}
+// export function createFavGroupFreeName(name, groups) {
+//     let occupied = null;
+//     let newName = name;
+//     for (let i = 1; i < 100; i++) {
+//         if (groups) {
+//             occupied = isFavGroupExists(newName, groups);
+//         }
+//         if (!occupied) {
+//             return newName;
+//         }
+//         newName = name + ' - ' + i; // try with "Track - X"
+//     }
+//
+//     if (occupied) {
+//         throw new Error('FavoritesManager addTrack() too many same-tracks');
+//     }
+//     return FavoritesManager.FAV_FILE_PREFIX + newName;
+// }
 
 export function isFavGroupExists(name, groups) {
     return groups.some((g) => g.name === name);
