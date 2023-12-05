@@ -240,7 +240,7 @@ Just write a country or region name, and you see a map file on the finding list.
 One of the option to download map is via World map and [Map Context menu](../map/map-context-menu.md). You can open Context menu by clicking on the Label, for example city name, or by long tap on the map, or by searching City via Search. Context menu will have a suggestion of the smallest region to download.
 
 
-## Manage 
+## Manage
 
 ### Local Resources
 
@@ -274,31 +274,34 @@ After tapping on the three dots in the right corner of the toolbar, you can acce
 
 You can also perform some actions with an item from the list using the tree dots menu, located at the right corner of an every single entry.
 
-![Local category item actions](@site/static/img/settings/local_category_actions.png) ![Local category item actions 2](@site/static/img/settings/local_category_actions_2.png)  
+![Local category item actions 2](@site/static/img/settings/local_category_actions_2.png) ![Local category item actions](@site/static/img/settings/local_category_actions.png)  
 
-For most data categories, only the *Info* option available. If you tap this option, you will be redirected to the *[Local data item overview](#local-data-item-overview)* screen. For maps there are [additional actions](#local-maps-overview-and-actions).
+For most data categories, only the *Info* option available. If you tap this option, you will be redirected to the *[Local data item overview](#local-data-item-overview)* screen. For maps additional actions provided:
+- **Update** - downloads the latest version of the map. 
+- **Rename** - map name can be changed in order to make it more identifiable.
+- **Remove** - delets the map from device's storage.
 
 #### Local data item overview
 
+![Local data item overview](@site/static/img/settings/local_category_overview_2.png) ![Local data item overview 2](@site/static/img/settings/local_category_overview_1.png)
+
 On the Local data item overview screen you can find information about data type, size, and creation date of a single entry stored by OsmAnd.
 
-![Local data item overview](@site/static/img/settings/local_category_overview_2.png)
-
-### Local maps Overview and actions
+#### Standart maps additional option
 
 ![Local data sorting options](@site/static/img/settings/local_sorting_options_andr_1.png)
 
-![Local data item overview 2](@site/static/img/settings/local_category_overview_1.png)
-
+For *Standard maps*, there is an additional option to sort them by:
+- **Map name** (ascending or descending) - is useful if you want to find a specific map quickly.  
+- **Country name** - allows arranging your maps geographically.
+- **Newest or oldest date of modification** - this option may be useful if you would like to see recently updated maps or if you're looking for older versions.
+- **Large or small size** - may help to identify large maps if you are concerned about storage space.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-* Tap on a map folder in the your maps list.
-* Delete.
-
-![Download map menu iOS](@site/static/img/settings/download_map_menu_ios.png)
+![Local tab menu iOS](@site/static/img/settings/Local_tab_ios_1.png)
 
 </TabItem>
 
@@ -307,7 +310,7 @@ On the Local data item overview screen you can find information about data type,
 > NOTE. Deactivated maps
 
 
-### Build your own Map (advanced)
+## Build your own Map (advanced)
 
 There is a possibility to download created by yourself (in OsmAnd Map Creator) map. [Read more](../../technical/map-creation/create-offline-maps-yourself.md)
 
