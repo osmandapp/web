@@ -327,21 +327,17 @@ export function changeIconSizeWpt(svgHtml, iconSize, shapeSize) {
         const newWidth = shapeSize;
         const newHeight = shapeSize;
         const newRx = newWidth / 8;
-        return `<rect ${prefix}width="${newWidth}" ${middle}height="${newHeight}" ${middle2}rx="${newRx}" ${suffix}/>`;
+        return `<rect ${prefix} width="${newWidth}" ${middle} height="${newHeight}" ${middle2} rx="${newRx}" ${suffix}/>`;
     });
 
     svgHtml = svgHtml.replace(
         imagePattern,
         (match, prefix, x, middle, y, middle2, width, middle3, height, middle4, href, suffix) => {
-            // Offset values for positioning (adjust as needed)
-            const offsetX = 3; // Set your desired offset on X
-            const offsetY = 3; // Set your desired offset on Y
-
-            // Update the position and sizes inside <image>
-            const transform = `translate(${(shapeSize - parseFloat(width)) / 2 + offsetX},${
-                (shapeSize - parseFloat(height)) / 2 + offsetY
-            })`;
-            return `<image ${prefix}transform="${transform}" ${middle2}width="${iconSize}" ${middle3}height="${iconSize}" ${middle4}href="${href}" ${suffix}/>`;
+            const newSize = iconSize;
+            const offsetX = (shapeSize - newSize) / 2;
+            const offsetY = (shapeSize - newSize) / 2;
+            const transform = `translate(${offsetX},${offsetY})`;
+            return `<image ${prefix} transform="${transform}" ${middle2} width="${newSize}" ${middle3} height="${newSize}" ${middle4} href="${href}" ${suffix}/>`;
         }
     );
 
