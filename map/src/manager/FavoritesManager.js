@@ -256,6 +256,98 @@ export function removeShadowFromIconWpt(svgHtml) {
     return svgHtml.replace(filterPattern, '');
 }
 
+function replacePathData(pathData, shapeSize, oldShapeSize) {
+    const values = pathData.match(/[-+]?\d*\.?\d+/g);
+
+    if (values && values.length === 14) {
+        const scaleFactor = shapeSize / oldShapeSize;
+        const newValues = values.map((value) => {
+            const shiftedValue = parseFloat(value) * scaleFactor;
+            return Math.round(shiftedValue);
+        });
+
+        return `M${newValues[0]} ${newValues[1]}L${newValues[2]} ${newValues[3]}H${newValues[4]}L${newValues[5]} ${newValues[6]}V${newValues[7]}L${newValues[8]} ${newValues[9]}H${newValues[10]}L${newValues[11]} ${newValues[12]}V${newValues[13]}Z`;
+    }
+
+    return pathData;
+}
+
+export function changeIconSizeWpt(svgHtml, iconSize, shapeSize) {
+    // Update the sizes inside viewBox and for <image>, <circle>, <path>, <rect>
+
+    const viewBoxPattern = /viewBox="0 0 (\d+) (\d+)"/;
+    const widthPattern = /width="(\d+)"/;
+    const heightPattern = /height="(\d+)"/;
+    const circlePattern = /<circle ([^>]*)cx="(\d+\.?\d*)" ([^>]*)cy="(\d+\.?\d*)" ([^>]*)r="(\d+\.?\d*)" ([^>]*)\/>/;
+    const pathPattern = /<path\s[^>]*d="([^"]+)"[^>]*>/g;
+    const rectPattern =
+        /<rect ([^>]*)width="(\d+\.?\d*)" ([^>]*)height="(\d+\.?\d*)" ([^>]*)rx="(\d+\.?\d*)" ([^>]*)\/>/;
+    const imagePattern =
+        /<image ([^>]*)x="(\d+\.?\d*)" ([^>]*)y="(\d+\.?\d*)" ([^>]*)width="(\d+\.?\d*)" ([^>]*)height="(\d+\.?\d*)" ([^>]*)href="([^"]*)" ([^>]*)\/>/;
+
+    const viewBoxMatch = svgHtml.match(viewBoxPattern);
+    const oldShapeSize = viewBoxMatch ? parseFloat(viewBoxMatch[1]) : shapeSize;
+
+    svgHtml = svgHtml.replace(viewBoxPattern, () => {
+        // Update the sizes inside viewBox
+        const newWidth = shapeSize;
+        const newHeight = shapeSize;
+        return `viewBox="0 0 ${newWidth} ${newHeight}"`;
+    });
+
+    svgHtml = svgHtml.replace(widthPattern, () => {
+        // Update width
+        return `width="${shapeSize}"`;
+    });
+
+    svgHtml = svgHtml.replace(heightPattern, () => {
+        // Update height
+        return `height="${shapeSize}"`;
+    });
+
+    svgHtml = svgHtml.replace(circlePattern, (match, prefix, cx, middle, cy, middle2, r, suffix) => {
+        // Update the sizes inside <circle>
+        const newCx = shapeSize / 2;
+        const newCy = shapeSize / 2;
+        const newR = shapeSize / 2;
+        return `<circle ${prefix}cx="${newCx}" ${middle}cy="${newCy}" ${middle2}r="${newR}" ${suffix}/>`;
+    });
+
+    svgHtml = svgHtml.replace(pathPattern, (match, pathData) => {
+        // Update the sizes inside <path>
+        const newPathData = replacePathData(pathData, shapeSize, oldShapeSize);
+        const fillPattern = /fill="([^"]*)"/;
+        const oldFillMatch = match.match(fillPattern);
+        const oldFill = oldFillMatch ? oldFillMatch[1] : '';
+        return `<path d="${newPathData}" fill="${oldFill}"/>`;
+    });
+
+    svgHtml = svgHtml.replace(rectPattern, (match, prefix, width, middle, height, middle2, rx, suffix) => {
+        // Update the sizes inside <rect>
+        const newWidth = shapeSize;
+        const newHeight = shapeSize;
+        const newRx = newWidth / 8;
+        return `<rect ${prefix}width="${newWidth}" ${middle}height="${newHeight}" ${middle2}rx="${newRx}" ${suffix}/>`;
+    });
+
+    svgHtml = svgHtml.replace(
+        imagePattern,
+        (match, prefix, x, middle, y, middle2, width, middle3, height, middle4, href, suffix) => {
+            // Offset values for positioning (adjust as needed)
+            const offsetX = 3; // Set your desired offset on X
+            const offsetY = 3; // Set your desired offset on Y
+
+            // Update the position and sizes inside <image>
+            const transform = `translate(${(shapeSize - parseFloat(width)) / 2 + offsetX},${
+                (shapeSize - parseFloat(height)) / 2 + offsetY
+            })`;
+            return `<image ${prefix}transform="${transform}" ${middle2}width="${iconSize}" ${middle3}height="${iconSize}" ${middle4}href="${href}" ${suffix}/>`;
+        }
+    );
+
+    return svgHtml;
+}
+
 export function updateFavGroups(listFiles, ctx) {
     if (!_.isEmpty(listFiles)) {
         let files = TracksManager.getFavoriteGroups(listFiles);

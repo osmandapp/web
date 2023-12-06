@@ -4,7 +4,7 @@ import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import GroupHeader from '../actions/GroupHeader';
 import Empty from '../errors/Empty';
-import FavoritesManager, { removeShadowFromIconWpt } from '../../manager/FavoritesManager';
+import FavoritesManager, { changeIconSizeWpt, removeShadowFromIconWpt } from '../../manager/FavoritesManager';
 import FavoriteItem from './FavoriteItem';
 import Utils, { getDistance } from '../../util/Utils';
 import TracksManager from '../../manager/track/TracksManager';
@@ -27,7 +27,7 @@ export default function FavoriteGroupFolder({ folder }) {
             Object.values(ctx.favorites[group.name].markers._layers).forEach((value) => {
                 let marker = {
                     title: value.options.title,
-                    icon: removeShadowFromIconWpt(value.options.icon.options.html),
+                    icon: changeIconSizeWpt(removeShadowFromIconWpt(value.options.icon.options.html), 18, 30),
                     layer: value,
                 };
                 markerList.push(marker);
