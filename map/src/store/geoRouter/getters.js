@@ -177,6 +177,18 @@ export function getColor(geoProfile) {
     return this.getProfile(geoProfile)?.color || 'black';
 }
 
+// used to get `maxDist` parameter for API /routing/update-route-between-points and /routing/route
+export function getDistanceLimit({ router = this.router, profile = this.profile } = {}) {
+    if (this.routerDistanceLimits[router]) {
+        return (
+            this.routerDistanceLimits[router][profile] ||
+            this.routerDistanceLimits[router].default ||
+            this.routerDistanceLimits.default
+        );
+    }
+    return this.routerDistanceLimits.default;
+}
+
 // export function isAllowedType({ type, develFeatures }) {
 //     // allow for currently selected type or non-osmand types or when develFeatures
 //     return type === this.type || type !== 'osmand' || develFeatures === true;

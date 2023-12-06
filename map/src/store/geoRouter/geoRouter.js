@@ -30,6 +30,7 @@ import {
     getURL,
     getGeoProfile,
     getColor,
+    getDistanceLimit,
     // isAllowedType,
 } from './getters.js';
 
@@ -49,6 +50,22 @@ const osmand = {
     url: `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route`,
 };
 
+// ex REACT_APP_MAX_ROUTE_DISTANCE now lives here
+
+const routerDistanceLimits = {
+    osmand: {
+        car: 10000,
+        truck: 10000,
+        motorcycle: 10000,
+        bicycle: 5000,
+        pedestrian: 100,
+        rescuetrack: 1000,
+        'rescuetrack-emergency': 1000,
+        default: 100, // other profiles
+    },
+    default: 40000, // other providers (osrm, etc)
+};
+
 export class geoRouter {
     // state
     setter = null;
@@ -65,6 +82,7 @@ export class geoRouter {
     colors = {};
     fallback = osmand;
     providers = [osmand];
+    routerDistanceLimits = routerDistanceLimits;
 
     // getters()
     isReady = isReady;
@@ -79,6 +97,7 @@ export class geoRouter {
     getURL = getURL;
     getGeoProfile = getGeoProfile;
     getColor = getColor;
+    getDistanceLimit = getDistanceLimit;
     // isAllowedType = isAllowedType;
 
     // events()
