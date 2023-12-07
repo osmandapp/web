@@ -45,7 +45,7 @@ export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }
                     oldName: prepareFavGroupName(group.file.name),
                     fullNewName: newGroupName,
                     newName: newName,
-                    oldUpdatetime: group.file.updatetimems,
+                    oldUpdatetime: group.updatetimems,
                 },
                 dataOnErrors: true,
             });
