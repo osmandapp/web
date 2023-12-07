@@ -176,16 +176,16 @@ export default function EditFavoriteDialog({
         let res = null;
         let wpts = group ? group.wpts : ctx.selectedGpxFile.wpts;
         if (wpts) {
-            wpts.forEach((wpt) => {
-                if (wpt.name === wpt.name) {
-                    wpt.name = favoriteName;
-                    wpt.address = getAddress();
-                    wpt.desc = getDescription();
-                    wpt.color = favoriteColor;
-                    wpt.background = favoriteShape;
-                    wpt.icon = favoriteIcon;
-                    wpt.category = getCategory(selectedGroupName);
-                    res = wpt;
+            wpts.forEach((w) => {
+                if (w.name === wpt.name) {
+                    w.name = favoriteName;
+                    w.address = getAddress();
+                    w.desc = getDescription();
+                    w.color = favoriteColor;
+                    w.background = favoriteShape;
+                    w.icon = favoriteIcon;
+                    w.category = getCategory(selectedGroupName);
+                    res = w;
                 }
             });
         }
