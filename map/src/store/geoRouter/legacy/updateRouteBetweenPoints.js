@@ -140,9 +140,10 @@ async function updateRouteBetweenPointsOsmAnd({ ctx, start, end, geoProfile }) {
         }
         if (data?.msg) {
             ctx.setRoutingErrorMsg(data?.msg);
+        } else {
+            ctx.setRoutingErrorMsg(null);
         }
         TracksManager.updateGapProfileOneSegment(end, data?.points);
-        ctx.setRoutingErrorMsg(null);
         return data?.points;
     }
 
