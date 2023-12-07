@@ -40,9 +40,12 @@ export default function FavoriteGroupFolder({ folder }) {
     }, [ctx.favorites]);
 
     useEffect(() => {
-        if (markers.length > 0 && currentLoc) {
-            const updatedMarkers = addLocDist({ markers: markers });
-            setMarkers(updatedMarkers);
+        if (currentLoc) {
+            // update markers location
+            if (markers.length > 0) {
+                const updatedMarkers = addLocDist({ markers: markers });
+                setMarkers(updatedMarkers);
+            }
         }
     }, [currentLoc]);
 
@@ -116,7 +119,6 @@ export default function FavoriteGroupFolder({ folder }) {
     useEffect(() => {
         if (folder) {
             setGroup({ ...folder });
-            setSortFiles([]);
         }
     }, [folder]);
 
@@ -131,7 +133,7 @@ export default function FavoriteGroupFolder({ folder }) {
                 items.push(<FavoriteItem key={marker + index} marker={marker} group={group} />);
             });
         return items;
-    }, [markers, sortFiles]);
+    }, [markers, sortFiles, ctx.favorites]);
 
     function getMarkersBySortFiles() {
         let arr = [];

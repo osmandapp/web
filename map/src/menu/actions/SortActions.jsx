@@ -33,7 +33,7 @@ function byAlpha(files, reverse) {
     });
 }
 
-function byTime(files, reverse) {
+export function byTime(files, reverse) {
     return [...files].sort((a, b) => {
         const A = getGpxTime(a, reverse);
         const B = getGpxTime(b, reverse);
@@ -79,7 +79,7 @@ function byLocation(files, reverse) {
 
 const allMethods = {
     nearest: {
-        reverse: true,
+        reverse: false,
         callback: byLocation,
         icon: <NearestIcon />,
         name: 'Nearest',

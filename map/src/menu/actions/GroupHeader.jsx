@@ -1,6 +1,6 @@
 import { AppBar, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
 import CloudGpxUploader from '../../frame/components/util/CloudGpxUploader';
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
@@ -12,7 +12,7 @@ import styles from '../tracks/trackmenu.module.css';
 import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import AddFolderDialog from '../../dialogs/tracks/AddFolderDialog';
-import SortActions from './SortActions';
+import SortActions, { byTime } from './SortActions';
 import SortMenu from './SortMenu';
 import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
 import FavoriteGroupUploader from '../../frame/components/util/FavoriteGroupUploader';
@@ -31,6 +31,15 @@ export default function GroupHeader({
     const [sortIcon, setSortIcon] = useState(<TimeIcon />);
     const [selectedSort, setSelectedSort] = useState(null);
     const anchorEl = useRef(null);
+
+    useEffect(() => {
+        if (favoriteGroup && !selectedSort && setSortFiles) {
+            const favArr = ctx.favorites[favoriteGroup.name]?.wpts;
+            if (favArr) {
+                setSortFiles(byTime(favArr, true));
+            }
+        }
+    }, [favoriteGroup, ctx.favorites]);
 
     function closeTrackMenu() {
         ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
