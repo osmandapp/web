@@ -181,8 +181,3 @@ export function getColor(geoProfile) {
 export function getDistanceLimit() {
     return process.env.REACT_APP_HH_ONLY_LIMIT;
 }
-
-// export function isAllowedType({ type, develFeatures }) {
-//     // allow for currently selected type or non-osmand types or when develFeatures
-//     return type === this.type || type !== 'osmand' || develFeatures === true;
-// }

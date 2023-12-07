@@ -31,7 +31,6 @@ import {
     getGeoProfile,
     getColor,
     getDistanceLimit,
-    // isAllowedType,
 } from './getters.js';
 
 // fallback
@@ -81,7 +80,6 @@ export class geoRouter {
     getGeoProfile = getGeoProfile;
     getColor = getColor;
     getDistanceLimit = getDistanceLimit;
-    // isAllowedType = isAllowedType;
 
     // events()
     onOpenSettings = onOpenSettings;
