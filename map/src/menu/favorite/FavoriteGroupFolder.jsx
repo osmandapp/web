@@ -35,7 +35,8 @@ export default function FavoriteGroupFolder({ folder }) {
         } else if (markers.length === 0 && FavoritesManager.getGroupSize(group) > 0) {
             getFavoritesWithoutLayers().then();
         }
-        setMarkers(markerList);
+        markerList = addLocDist({ markers: markerList });
+        setMarkers([...markerList]);
     }, [ctx.favorites]);
 
     useEffect(() => {
@@ -43,7 +44,7 @@ export default function FavoriteGroupFolder({ folder }) {
             const updatedMarkers = addLocDist({ markers: markers });
             setMarkers(updatedMarkers);
         }
-    }, [ctx.favorites, currentLoc]);
+    }, [currentLoc]);
 
     async function getFavoritesWithoutLayers() {
         let newFavoriteFiles = await getFavorites(false, Object.assign({}, ctx.favorites)).then();
@@ -116,7 +117,6 @@ export default function FavoriteGroupFolder({ folder }) {
         if (folder) {
             setGroup({ ...folder });
             setSortFiles([]);
-            //setSortGroups([]);
         }
     }, [folder]);
 
