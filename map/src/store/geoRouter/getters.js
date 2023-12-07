@@ -177,16 +177,9 @@ export function getColor(geoProfile) {
     return this.getProfile(geoProfile)?.color || 'black';
 }
 
-// used to get `maxDist` parameter for API /routing/update-route-between-points and /routing/route
-export function getDistanceLimit({ router = this.router, profile = this.profile } = {}) {
-    if (this.routerDistanceLimits[router]) {
-        return (
-            this.routerDistanceLimits[router][profile] ||
-            this.routerDistanceLimits[router].default ||
-            this.routerDistanceLimits.default
-        );
-    }
-    return this.routerDistanceLimits.default;
+// used to get `hOnlyLimit` param for API /routing/update-route-between-points and /routing/route
+export function getDistanceLimit() {
+    return process.env.REACT_APP_HH_ONLY_LIMIT;
 }
 
 // export function isAllowedType({ type, develFeatures }) {
