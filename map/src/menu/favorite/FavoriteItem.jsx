@@ -7,13 +7,16 @@ import { ReactComponent as DirectionIcon } from '../../assets/icons/ic_direction
 import ActionsMenu from '../actions/ActionsMenu';
 import styles from '../tracks/trackmenu.module.css';
 import FavoriteItemActions from '../actions/FavoriteItemActions';
+import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 
-export default function FavoriteItem({ marker, group }) {
+export default function FavoriteItem({ marker, group, currentLoc }) {
     const ctx = useContext(AppContext);
 
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const [openActions, setOpenActions] = useState(false);
     const anchorEl = useRef(null);
+
+    const colorLocation = currentLoc === LOCATION_UNAVAILABLE ? '#ff8800' : '#237bff';
 
     function addFavoriteToMap(marker) {
         ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
@@ -50,11 +53,11 @@ export default function FavoriteItem({ marker, group }) {
         return (
             <div style={{ display: 'flex', alignItems: 'centre' }}>
                 {marker.locDist && (
-                    <ListItemIcon sx={{ mr: '-23px !important' }}>
+                    <ListItemIcon sx={{ mr: '-23px !important', fill: colorLocation }}>
                         <DirectionIcon />
                     </ListItemIcon>
                 )}
-                <Typography variant="body2" className={styles.favLocationInfo}>
+                <Typography variant="body2" className={styles.favLocationInfo} sx={{ color: colorLocation }}>
                     {marker.locDist ? `${marker.locDist} km` : ''}
                 </Typography>
                 <Typography variant="body2" className={styles.groupInfo} noWrap>

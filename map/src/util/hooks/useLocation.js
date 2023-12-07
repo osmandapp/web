@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 
 export function useLocation({ ctx }) {
     const [loc, setLoc] = useState(null);
@@ -24,11 +25,13 @@ export function useLocation({ ctx }) {
                     },
                     () => {
                         ctx.setRoutingErrorMsg('Error getting coordinates.');
+                        resolve(LOCATION_UNAVAILABLE);
                     },
                     { enableHighAccuracy: true }
                 );
             } else {
                 ctx.setRoutingErrorMsg('Geolocation is not supported by your browser.');
+                resolve(LOCATION_UNAVAILABLE);
             }
         });
     }

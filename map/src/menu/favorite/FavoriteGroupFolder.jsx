@@ -4,13 +4,17 @@ import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import GroupHeader from '../actions/GroupHeader';
 import Empty from '../errors/Empty';
-import FavoritesManager, { changeIconSizeWpt, removeShadowFromIconWpt } from '../../manager/FavoritesManager';
+import FavoritesManager, {
+    changeIconSizeWpt,
+    LOCATION_UNAVAILABLE,
+    removeShadowFromIconWpt,
+} from '../../manager/FavoritesManager';
 import FavoriteItem from './FavoriteItem';
 import Utils, { getDistance } from '../../util/Utils';
 import TracksManager from '../../manager/track/TracksManager';
 import Loading from '../errors/Loading';
-import { useLocation } from '../../util/hooks/useLocation';
 import { isEmpty } from 'lodash';
+import { useLocation } from '../../util/hooks/useLocation';
 
 export default function FavoriteGroupFolder({ folder }) {
     const ctx = useContext(AppContext);
@@ -20,6 +24,7 @@ export default function FavoriteGroupFolder({ folder }) {
     const [, height] = useWindowSize();
     const [markers, setMarkers] = useState([]);
     const currentLoc = useLocation(ctx);
+    const hash = window.location.hash;
 
     useEffect(() => {
         let markerList = [];
@@ -35,34 +40,50 @@ export default function FavoriteGroupFolder({ folder }) {
         } else if (markers.length === 0 && FavoritesManager.getGroupSize(group) > 0) {
             getFavoritesWithoutLayers().then();
         }
-        markerList = addLocDist({ markers: markerList });
+        markerList = addLocDist({ location: currentLoc, markers: markerList });
         setMarkers([...markerList]);
     }, [ctx.favorites]);
 
     useEffect(() => {
-        if (currentLoc) {
+        if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
             // update markers location
             if (markers.length > 0) {
-                const updatedMarkers = addLocDist({ markers: markers });
+                const updatedMarkers = addLocDist({ location: currentLoc, markers: markers });
                 setMarkers(updatedMarkers);
             }
+        } else if (currentLoc && currentLoc === LOCATION_UNAVAILABLE && markers.length > 0) {
+            const updatedMarkers = addLocDist({ location: getCenterMapLoc(), markers: markers });
+            setMarkers(updatedMarkers);
         }
-    }, [currentLoc]);
+    }, [currentLoc, hash]);
 
     async function getFavoritesWithoutLayers() {
         let newFavoriteFiles = await getFavorites(false, Object.assign({}, ctx.favorites)).then();
         ctx.setFavorites({ ...newFavoriteFiles });
     }
 
-    function addLocDist({ markers = null, wpts = null }) {
+    function getCenterMapLoc() {
+        const parts = hash.split('/').slice(1);
+        if (parts.length === 2) {
+            const [lat, lng] = parts.map(parseFloat);
+            if (!isNaN(lat) && !isNaN(lng)) {
+                return {
+                    lat: lat,
+                    lng: lng,
+                };
+            }
+        }
+        return null;
+    }
+
+    function addLocDist({ location, markers = null, wpts = null }) {
         let res = [];
-        if (currentLoc) {
+        if (location && location !== LOCATION_UNAVAILABLE) {
             if (markers && markers.length > 0) {
                 markers.forEach((m) => {
                     if (m?.layer?._latlng) {
                         m.locDist = (
-                            getDistance(currentLoc.lat, currentLoc.lng, m?.layer?._latlng.lat, m?.layer?._latlng.lng) /
-                            1000
+                            getDistance(location.lat, location.lng, m?.layer?._latlng.lat, m?.layer?._latlng.lng) / 1000
                         ).toFixed(0);
                     }
                     res.push(m);
@@ -71,7 +92,7 @@ export default function FavoriteGroupFolder({ folder }) {
                 wpts.forEach((w) => {
                     if (w.latlng) {
                         w.locDist = (
-                            getDistance(currentLoc.lat, currentLoc.lng, w.latlng.lat, w.latlng.lng) / 1000
+                            getDistance(location.lat, location.lng, w.latlng.lat, w.latlng.lng) / 1000
                         ).toFixed(0);
                     }
                     res.push(w);
@@ -108,7 +129,7 @@ export default function FavoriteGroupFolder({ folder }) {
             if (favorites) {
                 favorites.name = group.file.name;
             }
-            favorites.wpts = addLocDist({ wpts: favorites.wpts });
+            favorites.wpts = addLocDist({ location: currentLoc, wpts: favorites.wpts });
             Object.keys(favorites).forEach((t) => {
                 newFavoriteFiles[group.name][`${t}`] = favorites[t];
             });
@@ -130,7 +151,7 @@ export default function FavoriteGroupFolder({ folder }) {
         }
         markers?.length > 0 &&
             (sortMarkers?.length > 0 ? sortMarkers : markers).map((marker, index) => {
-                items.push(<FavoriteItem key={marker + index} marker={marker} group={group} />);
+                items.push(<FavoriteItem key={marker + index} marker={marker} group={group} currentLoc={currentLoc} />);
             });
         return items;
     }, [markers, sortFiles, ctx.favorites]);

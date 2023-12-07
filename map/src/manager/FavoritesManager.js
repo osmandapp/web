@@ -13,6 +13,7 @@ const DEFAULT_TAB_ICONS = 'used';
 const FAVORITE_GROUP_FOLDER = '/map/images/poi_categories';
 const DEFAULT_GROUP_WPT_COLOR = '#eecc22';
 const FAV_FILE_PREFIX = 'favorites-';
+export const LOCATION_UNAVAILABLE = 'loc_unavailable';
 export const DEFAULT_GROUP_NAME_POINTS_GROUPS = '';
 const FAVORITE_LOCAL_STORAGE = 'visibleFav';
 const colors = [
