@@ -33,10 +33,17 @@ export default function GroupHeader({
     const anchorEl = useRef(null);
 
     useEffect(() => {
-        if (favoriteGroup && !selectedSort && setSortFiles) {
-            const favArr = ctx.favorites[favoriteGroup.name]?.wpts;
-            if (favArr) {
-                setSortFiles(byTime(favArr, true));
+        if (favoriteGroup && !selectedSort) {
+            if (setSortFiles) {
+                const files = ctx.favorites[favoriteGroup.name]?.wpts;
+                if (files) {
+                    setSortFiles(byTime(files, true));
+                }
+            } else if (setSortGroups) {
+                const files = ctx.favorites.groups;
+                if (files) {
+                    setSortGroups(byTime(files, true));
+                }
             }
         }
     }, [favoriteGroup, ctx.favorites]);

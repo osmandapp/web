@@ -212,7 +212,7 @@ const SortActions = forwardRef(
                 <Paper className={styles.actions}>
                     <FormControl>
                         <RadioGroup value={currentMethod} onChange={handleChange}>
-                            {favoriteGroup && (
+                            {favoriteGroup && setSortFiles && (
                                 <>
                                     <FormControlLabel
                                         className={styles.controlLabel}
