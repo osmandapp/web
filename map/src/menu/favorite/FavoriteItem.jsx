@@ -50,26 +50,41 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
     };
 
     const FavInfo = () => {
+        const maxLines = 2;
+        const locDistText = marker.locDist ? `${marker.locDist} km ` : '';
+        const addressText = getAddress();
+
+        const infoStyle = {
+            fontSize: '0.875rem',
+            display: '-webkit-box',
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+            WebkitLineClamp: maxLines,
+            wordBreak: 'break-word',
+            whiteSpace: 'pre-wrap',
+        };
+
+        const iconStyle = {
+            fill: marker.locDist ? colorLocation : 'inherit',
+            marginRight: marker.locDist ? '-15px !important' : '0',
+        };
+
         return (
-            <div style={{ display: 'flex', alignItems: 'centre' }}>
+            <div style={infoStyle}>
                 {marker.locDist && (
-                    <ListItemIcon sx={{ mr: '-23px !important', fill: colorLocation }}>
+                    <ListItemIcon sx={iconStyle}>
                         <DirectionIcon />
                     </ListItemIcon>
                 )}
-                <Typography variant="body2" className={styles.favLocationInfo} sx={{ color: colorLocation }}>
-                    {marker.locDist ? `${marker.locDist} km` : ''}
-                </Typography>
-                <Typography variant="body2" className={styles.groupInfo} noWrap>
-                    {getAddress()}
-                </Typography>
+                <span style={{ color: marker.locDist ? colorLocation : 'inherit' }}>{locDistText}</span>
+                <span>{addressText}</span>
             </div>
         );
     };
 
     function getAddress() {
-        const comma = marker.locDist && marker?.layer?.options?.address ? ',' : '';
-        return marker?.layer?.options?.address ? `${comma} ${marker?.layer?.options?.address}` : '';
+        const comma = marker.locDist && marker?.layer?.options?.address ? ', ' : '';
+        return marker?.layer?.options?.address ? `${comma}${marker?.layer?.options?.address}` : '';
     }
 
     return useMemo(() => {
