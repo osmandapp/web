@@ -336,6 +336,8 @@ export const AppContextProvider = (props) => {
 
     const [openGroups, setOpenGroups] = useState([]);
 
+    const [stopUseGeoLocation, setStopUseGeoLocation] = useState(false);
+
     return (
         <AppContext.Provider
             value={{
@@ -441,6 +443,8 @@ export const AppContextProvider = (props) => {
                 setTrackLoading,
                 accountInfo,
                 setAccountInfo,
+                stopUseGeoLocation,
+                setStopUseGeoLocation,
             }}
         >
             {props.children}

@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 
-export function useLocation(ctx) {
+export function useGeoLocation(ctx) {
     const [loc, setLoc] = useState(null);
 
     useEffect(() => {
-        const fetchData = async () => {
-            const coord = await getCoordinates();
-            setLoc(coord);
-        };
-
-        fetchData().then();
+        if (ctx.stopUseGeoLocation === false) {
+            const fetchData = async () => {
+                const coord = await getCoordinates();
+                setLoc(coord);
+            };
+            fetchData().then();
+        }
     }, [ctx]);
 
     function getCoordinates() {
@@ -24,9 +25,8 @@ export function useLocation(ctx) {
                         resolve({ lat: latitude, lng: longitude });
                     },
                     () => {
-                        ctx.setRoutingErrorMsg(
-                            'Error getting coordinates. Please allow GeoLocation requests in your browser.'
-                        );
+                        ctx.setRoutingErrorMsg('Enabling browser GeoLocation would improve location-based features.');
+                        ctx.setStopUseGeoLocation(true);
                         resolve(LOCATION_UNAVAILABLE);
                     },
                     { enableHighAccuracy: true }

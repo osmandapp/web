@@ -14,7 +14,7 @@ import Utils, { getDistance } from '../../util/Utils';
 import TracksManager from '../../manager/track/TracksManager';
 import Loading from '../errors/Loading';
 import { isEmpty } from 'lodash';
-import { useLocation } from '../../util/hooks/useLocation';
+import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 
 export default function FavoriteGroupFolder({ folder }) {
     const ctx = useContext(AppContext);
@@ -23,7 +23,7 @@ export default function FavoriteGroupFolder({ folder }) {
     const [sortFiles, setSortFiles] = useState([]);
     const [, height] = useWindowSize();
     const [markers, setMarkers] = useState([]);
-    const currentLoc = useLocation(ctx);
+    const currentLoc = useGeoLocation(ctx);
 
     const hash = window.location.hash;
 
