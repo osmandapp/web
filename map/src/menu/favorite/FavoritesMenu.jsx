@@ -153,9 +153,9 @@ export default function FavoritesMenu() {
 
     return (
         <>
-            {!isEmpty(ctx.favorites) && ctx.favorites?.groups?.length > 0 ? (
-                <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
-                    <GroupHeader favoriteGroup={DEFAULT_FAV_GROUP_NAME} setSortGroups={setSortGroups} />
+            <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+                <GroupHeader favoriteGroup={DEFAULT_FAV_GROUP_NAME} setSortGroups={setSortGroups} />
+                {!isEmpty(ctx.favorites) && ctx.favorites?.groups?.length > 0 ? (
                     <Box
                         minWidth={ctx.infoBlockWidth}
                         maxWidth={ctx.infoBlockWidth}
@@ -163,14 +163,14 @@ export default function FavoritesMenu() {
                     >
                         {groupItems}
                     </Box>
-                </Box>
-            ) : (
-                <Empty
-                    title={'You don’t have favorite files'}
-                    text={'You can import or create favorite files using OsmAnd App.'}
-                    menu={OBJECT_TYPE_FAVORITE}
-                />
-            )}
+                ) : (
+                    <Empty
+                        title={'You don’t have favorite files'}
+                        text={'You can import or create favorite files using OsmAnd App.'}
+                        menu={OBJECT_TYPE_FAVORITE}
+                    />
+                )}
+            </Box>
         </>
     );
 }
