@@ -25,9 +25,23 @@ export default function FavoriteGroupFolder({ folder }) {
     const [markers, setMarkers] = useState([]);
     const currentLoc = useGeoLocation(ctx);
 
-    const hash = window.location.hash;
-
     const refMarkers = useRef(null);
+
+    const hash = window.location.hash;
+    const debouncerTimer = useRef(0);
+    const [delayedHash, setDelayedHash] = useState(hash);
+
+    // debounce map move/scroll
+    useEffect(() => {
+        if (currentLoc === LOCATION_UNAVAILABLE) {
+            const timeout = Math.max(5000, 500 + markers.length * 5); // dynamic delay up to 5 seconds
+            debouncerTimer.current > 0 && clearTimeout(debouncerTimer.current);
+            debouncerTimer.current = setTimeout(() => {
+                debouncerTimer.current = 0;
+                setDelayedHash(hash);
+            }, timeout);
+        }
+    }, [hash]);
 
     useEffect(() => {
         let markerList = [];
@@ -59,7 +73,7 @@ export default function FavoriteGroupFolder({ folder }) {
             const updatedMarkers = addLocDist({ location: getCenterMapLoc(), markers: refMarkers.current });
             setMarkers(updatedMarkers);
         }
-    }, [currentLoc, hash, refMarkers.current]);
+    }, [currentLoc, delayedHash, refMarkers.current]);
 
     async function getFavoritesWithoutLayers() {
         let newFavoriteFiles = await getFavorites(false, Object.assign({}, ctx.favorites)).then();
