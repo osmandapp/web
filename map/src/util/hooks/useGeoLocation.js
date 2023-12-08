@@ -11,6 +11,8 @@ export function useGeoLocation(ctx) {
                 setLoc(coord);
             };
             fetchData().then();
+        } else {
+            setLoc(LOCATION_UNAVAILABLE);
         }
     }, [ctx]);
 
