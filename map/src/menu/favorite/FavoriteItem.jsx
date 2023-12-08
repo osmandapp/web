@@ -1,5 +1,6 @@
-import { IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
+import { IconButton, ListItemIcon, ListItemText, MenuItem, Typography, Skeleton } from '@mui/material';
 import React, { useContext, useMemo, useRef, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
@@ -11,6 +12,8 @@ import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 
 export default function FavoriteItem({ marker, group, currentLoc }) {
     const ctx = useContext(AppContext);
+
+    const { ref, inView } = useInView();
 
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const [openActions, setOpenActions] = useState(false);
@@ -96,41 +99,50 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
     return useMemo(() => {
         return (
             <>
-                <MenuItem
-                    className={styles.item}
-                    divider
-                    id={'se-fav-item-' + marker.title}
-                    onClick={() => addFavoriteToMap(marker)}
-                >
-                    <ListItemIcon className={styles.icon}>
-                        <CustomIcon />
-                    </ListItemIcon>
-                    <ListItemText>
-                        <Title />
-                        <FavInfo />
-                    </ListItemText>
-                    <IconButton
-                        id={`se-actions-${marker.title}`}
-                        className={styles.sortIcon}
-                        onMouseEnter={() => setHoverIconInfo(true)}
-                        onMouseLeave={() => setHoverIconInfo(false)}
-                        onClick={(e) => {
-                            setOpenActions(true);
-                            ctx.setOpenedPopper(anchorEl);
-                            e.stopPropagation();
-                        }}
-                        ref={anchorEl}
-                    >
-                        {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
-                    </IconButton>
-                </MenuItem>
-                <ActionsMenu
-                    open={openActions}
-                    setOpen={setOpenActions}
-                    anchorEl={anchorEl}
-                    actions={<FavoriteItemActions marker={marker} group={group} setOpenActions={setOpenActions} />}
-                />
+                <div ref={ref}>
+                    {inView || <Skeleton variant="rectangular" width={360} height={68} />}
+                    {inView && (
+                        <MenuItem
+                            className={styles.item}
+                            divider
+                            id={'se-fav-item-' + marker.title}
+                            onClick={() => addFavoriteToMap(marker)}
+                        >
+                            <ListItemIcon className={styles.icon}>
+                                <CustomIcon />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Title />
+                                <FavInfo />
+                            </ListItemText>
+                            <IconButton
+                                id={`se-actions-${marker.title}`}
+                                className={styles.sortIcon}
+                                onMouseEnter={() => setHoverIconInfo(true)}
+                                onMouseLeave={() => setHoverIconInfo(false)}
+                                onClick={(e) => {
+                                    setOpenActions(true);
+                                    ctx.setOpenedPopper(anchorEl);
+                                    e.stopPropagation();
+                                }}
+                                ref={anchorEl}
+                            >
+                                {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
+                            </IconButton>
+                        </MenuItem>
+                    )}
+                    {inView && (
+                        <ActionsMenu
+                            open={openActions}
+                            setOpen={setOpenActions}
+                            anchorEl={anchorEl}
+                            actions={
+                                <FavoriteItemActions marker={marker} group={group} setOpenActions={setOpenActions} />
+                            }
+                        />
+                    )}
+                </div>
             </>
         );
-    }, [marker, marker.locDist, openActions, hoverIconInfo, ctx.openedPopper]);
+    }, [inView, marker, marker.locDist, openActions, hoverIconInfo, ctx.openedPopper]);
 }
