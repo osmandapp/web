@@ -194,24 +194,25 @@ export async function saveFavoriteGroup(data, groupName, ctx) {
     }
 }
 
-// export function createFavGroupFreeName(name, groups) {
-//     let occupied = null;
-//     let newName = name;
-//     for (let i = 1; i < 100; i++) {
-//         if (groups) {
-//             occupied = isFavGroupExists(newName, groups);
-//         }
-//         if (!occupied) {
-//             return newName;
-//         }
-//         newName = name + ' - ' + i; // try with "Track - X"
-//     }
-//
-//     if (occupied) {
-//         throw new Error('FavoritesManager addTrack() too many same-tracks');
-//     }
-//     return FavoritesManager.FAV_FILE_PREFIX + newName;
-// }
+export function createFavGroupFreeName(name, groups) {
+    let occupied = null;
+    let newName = name;
+    for (let i = 1; i < 100; i++) {
+        if (groups) {
+            occupied = isFavGroupExists(newName, groups);
+        }
+        if (!occupied) {
+            return newName;
+        }
+        newName = name + ' - ' + i; // try with "Track - X"
+    }
+
+    if (occupied) {
+        throw new Error('FavoritesManager addTrack() too many same-tracks');
+    }
+    console.log(newName);
+    return newName;
+}
 
 export function isFavGroupExists(name, groups) {
     return groups.some((g) => g.name === name);

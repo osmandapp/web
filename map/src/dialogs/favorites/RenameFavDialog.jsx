@@ -87,7 +87,7 @@ export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }
     }
 
     function isFolderExist(name) {
-        return ctx.favorites?.groups.some((g) => g.file.name === name);
+        return ctx.favorites?.groups.some((g) => g.name === name);
     }
 
     const handleKeyPress = (e) => {

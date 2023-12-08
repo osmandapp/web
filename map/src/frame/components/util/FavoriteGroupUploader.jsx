@@ -1,13 +1,22 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../../context/AppContext';
 import { useMutator } from '../../../util/Utils';
 import TracksManager from '../../../manager/track/TracksManager';
 import { styled } from '@mui/material/styles';
-import { isFavGroupExists, prepareFavGroupName, saveFavoriteGroup } from '../../../manager/FavoritesManager';
+import {
+    createFavGroupFreeName,
+    isFavGroupExists,
+    prepareFavGroupName,
+    saveFavoriteGroup,
+} from '../../../manager/FavoritesManager';
+import ImportFavoriteDialog from '../../../dialogs/favorites/ImportFavoriteDialog';
 
 export default function FavoriteGroupUploader({ children }) {
     const ctx = useContext(AppContext);
     const [uploadedFiles, mutateUploadedFiles] = useMutator({});
+    const [importFile, setImportFile] = useState(null);
+    const [openDialog, setOpenDialog] = useState(false);
+    const [importFavoriteGroup, setImportFavoriteGroup] = useState(false);
 
     function validName(name) {
         return name !== '' && name.trim().length > 0;
@@ -15,14 +24,42 @@ export default function FavoriteGroupUploader({ children }) {
 
     useEffect(() => {
         for (const file in uploadedFiles) {
-            let groupName = prepareFavGroupName(uploadedFiles[file].track.name);
+            let track = uploadedFiles[file].track;
+            let groupName = prepareFavGroupName(track.name);
             if (validName(groupName)) {
-                saveFavoriteGroup(uploadedFiles[file].track, groupName, ctx).then();
+                groupName = createFavGroupFreeName(groupName, ctx.favorites?.groups);
+                if (importFavoriteGroup) {
+                    renameGroup(track, groupName, importFile.oldName);
+                }
+                saveFavoriteGroup(track, groupName, ctx).then();
                 mutateUploadedFiles((o) => delete o[file]);
+                setImportFile(null);
                 break; // process 1 file per 1 render
             }
         }
     }, [uploadedFiles]);
+
+    useEffect(() => {
+        if (importFavoriteGroup) {
+            let track = importFile.track;
+            track.name = importFile.name;
+            const selected = true;
+            mutateUploadedFiles((o) => (o[importFile.name] = { track, selected }));
+        }
+    }, [importFavoriteGroup]);
+
+    function renameGroup(track, newName, oldName) {
+        let pointsGroups = track.pointsGroups;
+        let newGroup = pointsGroups[oldName];
+        newGroup.name = newName;
+        newGroup.ext.name = newName;
+        track.wpts.forEach((w) => (w.category = newName));
+
+        delete pointsGroups[oldName];
+        pointsGroups[newName] = newGroup;
+
+        return pointsGroups;
+    }
 
     const fileSelected = async (e) => {
         const selected = e.target.files.length === 1;
@@ -34,10 +71,19 @@ export default function FavoriteGroupUploader({ children }) {
                 if (track) {
                     let groupName = prepareFavGroupName(file.name);
                     if (isFavGroupExists(groupName, ctx.favorites.groups)) {
-                        ctx.setTrackErrorMsg({
-                            title: 'Import error',
-                            msg: `Favorite group ${file.name} already exist`,
-                        });
+                        if (selected) {
+                            setImportFile({
+                                name: file.name,
+                                oldName: groupName,
+                                track: track,
+                            });
+                            setOpenDialog(true);
+                        } else {
+                            ctx.setTrackErrorMsg({
+                                title: 'Import error',
+                                msg: `Favorite group ${file.name} already exist`,
+                            });
+                        }
                         ctx.setTrackLoading([...ctx.trackLoading.filter((n) => n !== file.name)]);
                     } else {
                         track.name = file.name;
@@ -58,9 +104,18 @@ export default function FavoriteGroupUploader({ children }) {
     const HiddenInput = styled('input')({ display: 'none' });
 
     return (
-        <label htmlFor="se-upload-fav-group">
-            <HiddenInput id="se-upload-fav-group" accept=".gpx" multiple type="file" onChange={fileSelected} />
-            {children}
-        </label>
+        <>
+            <label htmlFor="se-upload-fav-group">
+                <HiddenInput id="se-upload-fav-group" accept=".gpx" multiple type="file" onChange={fileSelected} />
+                {children}
+            </label>
+            {openDialog && (
+                <ImportFavoriteDialog
+                    setOpenDialog={setOpenDialog}
+                    setImportFavoriteGroup={setImportFavoriteGroup}
+                    name={importFile.name}
+                />
+            )}
+        </>
     );
 }
