@@ -16,8 +16,8 @@ function getRouteGeometry(route) {
         .forEach((f) =>
             // LineString has [[ll], [ll], ...]
             f.geometry.coordinates.forEach((c) => {
-                const [lng, lat] = c;
-                geometry.push({ lat, lng });
+                const [lng, lat, ele] = c; // ele might be undefined
+                geometry.push({ lat, lng, ele }); // https://www.rfc-editor.org/rfc/rfc7946#section-3.1.1
             })
         );
     return geometry;
@@ -76,10 +76,30 @@ export function convertRouteToTrack({ id, route, trackName, geoProfile, start, f
             if (index !== lastIndex) {
                 for (let i = lastIndex; i <= index; i++) {
                     // console.log('found', index, 'last', lastIndex, 'i', i);
-                    geometry.push({ ...routeGeometry[i], ...defaultPointExtras });
+                    const ele = routeGeometry[i].ele;
+                    if (ele !== undefined) {
+                        const thisPointExtras = {
+                            ele,
+                            srtmEle: null,
+                            ext: { ele, extensions: {} },
+                        };
+                        geometry.push({ ...routeGeometry[i], ...thisPointExtras });
+                    } else {
+                        geometry.push({ ...routeGeometry[i], ...defaultPointExtras });
+                    }
                 }
             }
-            points.push({ ...routeLL, ...defaultPointExtras, profile, geoProfile, geometry });
+            const ele = geoLL.ele;
+            if (ele !== undefined) {
+                const thisPointExtras = {
+                    ele,
+                    srtmEle: null,
+                    ext: { ele, extensions: {} },
+                };
+                points.push({ ...routeLL, ...thisPointExtras, profile, geoProfile, geometry });
+            } else {
+                points.push({ ...routeLL, ...defaultPointExtras, profile, geoProfile, geometry });
+            }
             lastIndex = index;
             // console.log('done');
         } else {
