@@ -129,14 +129,14 @@ export default function FavoriteGroupFolder({ folder }) {
             const favoriteFile = new File([f], group.file.name, {
                 type: 'text/plain',
             });
-            let favorites = await TracksManager.getTrackData(favoriteFile);
+            const favorites = await TracksManager.getTrackData(favoriteFile);
             if (favorites) {
                 favorites.name = group.file.name;
+                favorites.wpts = addLocDist({ location: currentLoc, wpts: favorites.wpts });
+                Object.keys(favorites).forEach((t) => {
+                    newFavoriteFiles[group.name][`${t}`] = favorites[t];
+                });
             }
-            favorites.wpts = addLocDist({ location: currentLoc, wpts: favorites.wpts });
-            Object.keys(favorites).forEach((t) => {
-                newFavoriteFiles[group.name][`${t}`] = favorites[t];
-            });
             return newFavoriteFiles;
         }
     }
