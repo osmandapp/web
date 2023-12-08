@@ -63,7 +63,6 @@ export default function FavoriteGroupUploader({ children }) {
 
     const fileSelected = async (e) => {
         const selected = e.target.files.length === 1;
-        ctx.setTrackLoading(Array.from(e.target.files).map((track) => track.name));
         Array.from(e.target.files).forEach((file) => {
             const reader = new FileReader();
             reader.addEventListener('load', async () => {
@@ -84,7 +83,6 @@ export default function FavoriteGroupUploader({ children }) {
                                 msg: `Favorite group ${file.name} already exist`,
                             });
                         }
-                        ctx.setTrackLoading([...ctx.trackLoading.filter((n) => n !== file.name)]);
                     } else {
                         track.name = file.name;
                         mutateUploadedFiles((o) => (o[file.name] = { track, selected }));
@@ -94,7 +92,6 @@ export default function FavoriteGroupUploader({ children }) {
                         title: 'Import error',
                         msg: `Unable to import ${file.name}`,
                     });
-                    ctx.setTrackLoading([...ctx.trackLoading.filter((n) => n !== file.name)]);
                 }
             });
             reader.readAsText(file);

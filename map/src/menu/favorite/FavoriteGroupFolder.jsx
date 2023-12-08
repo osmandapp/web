@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { Box } from '@mui/material';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
@@ -24,7 +24,10 @@ export default function FavoriteGroupFolder({ folder }) {
     const [, height] = useWindowSize();
     const [markers, setMarkers] = useState([]);
     const currentLoc = useLocation(ctx);
+
     const hash = window.location.hash;
+
+    const refMarkers = useRef(null);
 
     useEffect(() => {
         let markerList = [];
@@ -42,20 +45,21 @@ export default function FavoriteGroupFolder({ folder }) {
         }
         markerList = addLocDist({ location: currentLoc, markers: markerList });
         setMarkers([...markerList]);
+        refMarkers.current = markerList;
     }, [ctx.favorites]);
 
     useEffect(() => {
         if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
             // update markers location
-            if (markers.length > 0) {
-                const updatedMarkers = addLocDist({ location: currentLoc, markers: markers });
+            if (refMarkers.current.length > 0) {
+                const updatedMarkers = addLocDist({ location: currentLoc, markers: refMarkers.current });
                 setMarkers(updatedMarkers);
             }
-        } else if (currentLoc && currentLoc === LOCATION_UNAVAILABLE && markers.length > 0) {
-            const updatedMarkers = addLocDist({ location: getCenterMapLoc(), markers: markers });
+        } else if (currentLoc && currentLoc === LOCATION_UNAVAILABLE && refMarkers.current.length > 0) {
+            const updatedMarkers = addLocDist({ location: getCenterMapLoc(), markers: refMarkers.current });
             setMarkers(updatedMarkers);
         }
-    }, [currentLoc, hash]);
+    }, [currentLoc, hash, refMarkers.current]);
 
     async function getFavoritesWithoutLayers() {
         let newFavoriteFiles = await getFavorites(false, Object.assign({}, ctx.favorites)).then();

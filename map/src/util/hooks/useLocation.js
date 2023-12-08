@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 
-export function useLocation({ ctx }) {
+export function useLocation(ctx) {
     const [loc, setLoc] = useState(null);
 
     useEffect(() => {
@@ -11,7 +11,7 @@ export function useLocation({ ctx }) {
         };
 
         fetchData().then();
-    }, []);
+    }, [ctx]);
 
     function getCoordinates() {
         return new Promise((resolve) => {
