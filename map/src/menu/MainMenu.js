@@ -377,7 +377,7 @@ export default function MainMenu({
                 open={true}
                 hideBackdrop
             >
-                <Toolbar />
+                <Toolbar sx={{ mb: '-3px' }} />
                 {!showInfoBlock && _.isEmpty(ctx.openGroups) && menuInfo}
                 {ctx.openGroups.length > 0 && !showInfoBlock && getGroup()}
                 <InformationBlock

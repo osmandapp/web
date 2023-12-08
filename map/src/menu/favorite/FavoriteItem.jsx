@@ -50,12 +50,28 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
     };
 
     const FavInfo = () => {
-        const maxLines = 2;
-        const locDistText = marker.locDist ? `${marker.locDist} km ` : '';
-        const addressText = getAddress();
+        return (
+            <div style={{ display: 'flex', alignItems: 'centre' }}>
+                {marker.locDist && (
+                    <ListItemIcon sx={{ mr: '-23px !important', fill: colorLocation, mt: '2px' }}>
+                        <DirectionIcon />
+                    </ListItemIcon>
+                )}
+                {marker.locDist && (
+                    <Typography variant="body2" className={styles.favLocationInfo} sx={{ color: colorLocation }}>
+                        {`${marker.locDist} km`}
+                    </Typography>
+                )}
+                <Typography variant="body2" className={styles.groupInfo} noWrap>
+                    {getAddress()}
+                </Typography>
+            </div>
+        );
+    };
 
+    const Title = () => {
+        const maxLines = 2;
         const infoStyle = {
-            fontSize: '0.875rem',
             display: '-webkit-box',
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden',
@@ -63,21 +79,11 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
             wordBreak: 'break-word',
             whiteSpace: 'pre-wrap',
         };
-
-        const iconStyle = {
-            fill: marker.locDist ? colorLocation : 'inherit',
-            marginRight: marker.locDist ? '-15px !important' : '0',
-        };
-
         return (
             <div style={infoStyle}>
-                {marker.locDist && (
-                    <ListItemIcon sx={iconStyle}>
-                        <DirectionIcon />
-                    </ListItemIcon>
-                )}
-                <span style={{ color: marker.locDist ? colorLocation : 'inherit' }}>{locDistText}</span>
-                <span>{addressText}</span>
+                <Typography variant="inherit" className={styles.groupName}>
+                    {marker.title}
+                </Typography>
             </div>
         );
     };
@@ -100,9 +106,7 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
                         <CustomIcon />
                     </ListItemIcon>
                     <ListItemText>
-                        <Typography variant="inherit" className={styles.groupName} noWrap>
-                            {marker.title}
-                        </Typography>
+                        <Title />
                         <FavInfo />
                     </ListItemText>
                     <IconButton
