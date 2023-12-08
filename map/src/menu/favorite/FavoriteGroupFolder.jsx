@@ -151,7 +151,7 @@ export default function FavoriteGroupFolder({ folder }) {
         const items = [];
         let sortMarkers = [];
         if (sortFiles?.length > 0) {
-            sortMarkers = getMarkersBySortFiles();
+            sortMarkers = isWpts(sortFiles) ? getMarkersBySortFiles(sortFiles, markers) : sortFiles;
         }
         markers?.length > 0 &&
             (sortMarkers?.length > 0 ? sortMarkers : markers).map((marker, index) => {
@@ -160,9 +160,13 @@ export default function FavoriteGroupFolder({ folder }) {
         return items;
     }, [markers, sortFiles, ctx.favorites]);
 
-    function getMarkersBySortFiles() {
+    function isWpts(files) {
+        return files?.length > 0 && !files[0].layer;
+    }
+
+    function getMarkersBySortFiles(wpts, markers) {
         let arr = [];
-        for (const wpt of sortFiles) {
+        for (const wpt of wpts) {
             const marker = markers.find((m) => m.title === wpt.name);
             if (marker) {
                 arr.push(marker);
@@ -176,7 +180,7 @@ export default function FavoriteGroupFolder({ folder }) {
     return (
         <>
             <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
-                <GroupHeader favoriteGroup={group} setSortFiles={setSortFiles} />
+                <GroupHeader favoriteGroup={group} setSortFiles={setSortFiles} markers={markers} />
                 <Box
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}

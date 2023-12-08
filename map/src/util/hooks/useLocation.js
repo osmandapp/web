@@ -24,7 +24,9 @@ export function useLocation(ctx) {
                         resolve({ lat: latitude, lng: longitude });
                     },
                     () => {
-                        ctx.setRoutingErrorMsg('Error getting coordinates.');
+                        ctx.setRoutingErrorMsg(
+                            'Error getting coordinates. Please allow GeoLocation requests in your browser.'
+                        );
                         resolve(LOCATION_UNAVAILABLE);
                     },
                     { enableHighAccuracy: true }

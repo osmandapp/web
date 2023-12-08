@@ -66,12 +66,13 @@ function byCreationTime(files, reverse) {
     });
 }
 
-function byLocation(files, reverse) {
+function byLocation(files, reverse, markers = null) {
+    files = markers ? markers : files;
     return [...files].sort((a, b) => {
         const A = a.locDist ?? a.locDist ?? 0;
         const B = b.locDist ?? b.locDist ?? 0;
         if (A === B) {
-            return az(a.name, b.name);
+            return markers ? az(a.title, b.title) : az(a.name, b.name);
         }
         return reverse ? B - A : A - B;
     });
@@ -150,6 +151,7 @@ const SortActions = forwardRef(
             setSelectedSort,
             setSortIcon,
             setSortName,
+            markers = null,
         },
         ref
     ) => {
@@ -177,7 +179,11 @@ const SortActions = forwardRef(
 
         function sort(method) {
             if (setSortFiles) {
-                setSortFiles(allMethods[method].callback(files(), allMethods[method].reverse));
+                if (method === 'nearest' && markers) {
+                    setSortFiles(allMethods[method].callback(files(), allMethods[method].reverse, markers));
+                } else {
+                    setSortFiles(allMethods[method].callback(files(), allMethods[method].reverse));
+                }
             }
             if (setSortGroups && (method === 'az' || method === 'za' || favoriteGroup)) {
                 setSortGroups(allMethods[method].callback(groups(), allMethods[method].reverse));

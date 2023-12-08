@@ -22,6 +22,7 @@ export default function GroupHeader({
     favoriteGroup = null,
     setSortGroups = null,
     setSortFiles = null,
+    markers = null,
 }) {
     const ctx = useContext(AppContext);
 
@@ -197,6 +198,7 @@ export default function GroupHeader({
                         setSelectedSort={setSelectedSort}
                         setSortIcon={setSortIcon}
                         setSortName={setSortName}
+                        markers={markers}
                     />
                 }
             />
