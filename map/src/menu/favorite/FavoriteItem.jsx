@@ -84,7 +84,7 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
 
     function getAddress() {
         const comma = marker.locDist && marker?.layer?.options?.address ? ', ' : '';
-        return marker?.layer?.options?.address ? `${comma}${marker?.layer?.options?.address}` : '';
+        return marker?.layer?.options?.address ? `${comma}${marker.layer.options.address}` : '';
     }
 
     return useMemo(() => {

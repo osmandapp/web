@@ -210,7 +210,6 @@ export function createFavGroupFreeName(name, groups) {
     if (occupied) {
         throw new Error('FavoritesManager addTrack() too many same-tracks');
     }
-    console.log(newName);
     return newName;
 }
 
@@ -259,6 +258,8 @@ export function removeShadowFromIconWpt(svgHtml) {
 }
 
 function replacePathData(pathData, shapeSize, oldShapeSize) {
+    // ex. oldShapeSize = 24 and old path = d="M1 7L7 1H17L23 7V17L17 23H7L1 17V7Z"
+    // for shapeSize = 30 new path = d="M1 9L9 1H21L29 9V21L21 29H9L1 21V9Z"
     const values = pathData.match(/[-+]?\d*\.?\d+/g);
 
     if (values && values.length === 14) {
