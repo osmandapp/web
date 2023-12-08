@@ -201,7 +201,7 @@ export default function FavoriteGroupFolder({ folder }) {
             </Box>
             {ctx.favorites?.groups?.length === 0 && (
                 <Empty
-                    title={'You don’t have favorite files'}
+                    title={"You don't have favorite files"}
                     text={'You can import or create favorite files using OsmAnd App.'}
                     menu={OBJECT_TYPE_FAVORITE}
                 />
