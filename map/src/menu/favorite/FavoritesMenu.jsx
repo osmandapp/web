@@ -9,6 +9,7 @@ import { Box } from '@mui/material';
 import GroupHeader from '../actions/GroupHeader';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { isEmpty } from 'lodash';
+import Loading from '../errors/Loading';
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
@@ -163,6 +164,8 @@ export default function FavoritesMenu() {
                     >
                         {groupItems}
                     </Box>
+                ) : ctx.gpxLoading ? (
+                    <Loading />
                 ) : (
                     <Empty
                         title={'You don’t have favorite files'}
