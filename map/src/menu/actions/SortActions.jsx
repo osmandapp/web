@@ -69,8 +69,8 @@ function byCreationTime(files, reverse) {
 function byLocation(files, reverse, markers = null) {
     files = markers ? markers : files;
     return [...files].sort((a, b) => {
-        const A = a.locDist ?? a.locDist ?? 0;
-        const B = b.locDist ?? b.locDist ?? 0;
+        const A = a.locDist ? a.locDist : 0;
+        const B = b.locDist ? b.locDist : 0;
         if (A === B) {
             return markers ? az(a.title, b.title) : az(a.name, b.name);
         }
