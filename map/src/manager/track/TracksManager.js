@@ -273,7 +273,7 @@ function prepareTrack(track, localName = null, originalName = null) {
 
 // prepare internal structures including distance
 export function prepareNavigationTrack(track) {
-    track.analysis = prepareAnalysis({});
+    track.analysis = prepareAnalysis(track.analysis ?? {});
     track.hasGeo = hasGeo(track);
     addDistance(track);
     return track;
@@ -320,6 +320,8 @@ export function getTrackPoints(track) {
                 points = getAllPoints(track.points);
             }
         });
+    } else if (track.points) {
+        points = getAllPoints(track.points);
     }
     return points;
 }
