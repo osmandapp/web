@@ -20,7 +20,7 @@ import { ReactComponent as ShortToLongIcon } from '../../assets/icons/ic_action_
 import { ReactComponent as NewDateIcon } from '../../assets/icons/ic_action_sort_date_1.svg';
 import { ReactComponent as OldDateIcon } from '../../assets/icons/ic_action_sort_date_31.svg';
 import { ReactComponent as NearestIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
-import styles from '../tracks/trackmenu.module.css';
+import styles from '../trackfavmenu.module.css';
 import AppContext from '../../context/AppContext';
 
 const az = (a, b) => (a > b) - (a < b);

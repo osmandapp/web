@@ -8,7 +8,7 @@ import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg
 import { ReactComponent as ImportIcon } from '../../assets/icons/ic_action_folder_import_outlined.svg';
 import { ReactComponent as AddFolderIcon } from '../../assets/icons/ic_action_folder_add_outlined.svg';
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
-import styles from '../tracks/trackmenu.module.css';
+import styles from '../trackfavmenu.module.css';
 import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import AddFolderDialog from '../../dialogs/tracks/AddFolderDialog';

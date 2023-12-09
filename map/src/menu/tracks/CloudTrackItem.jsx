@@ -1,6 +1,7 @@
 import AppContext, { OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
 import {
     Alert,
+    Divider,
     IconButton,
     LinearProgress,
     ListItemIcon,
@@ -19,7 +20,7 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { ReactComponent as TrackIcon } from '../../assets/icons/ic_action_polygom_dark.svg';
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
-import styles from './trackmenu.module.css';
+import styles from '../trackfavmenu.module.css';
 import TrackActions from '../actions/TrackActions';
 import ActionsMenu from '../actions/ActionsMenu';
 
@@ -159,7 +160,6 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                 <Tooltip title={info} arrow placement={mobile ? 'bottom' : 'right'} disableInteractive>
                     <MenuItem
                         className={styles.item}
-                        divider
                         id={'se-cloud-track-' + trackName}
                         onClick={() => setDisplayTrack(true)}
                     >
@@ -201,6 +201,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                         )}
                     </MenuItem>
                 </Tooltip>
+                <Divider className={styles.dividerItem} />
                 <ActionsMenu
                     open={openActions}
                     setOpen={setOpenActions}

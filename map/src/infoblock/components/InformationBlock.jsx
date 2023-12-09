@@ -16,7 +16,7 @@ import PoiTabList from './tabs/PoiTabList';
 import { hasSegmentTurns } from '../../manager/track/TracksManager';
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
-import styles from '../../menu/tracks/trackmenu.module.css';
+import styles from '../../menu/trackfavmenu.module.css';
 
 const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     const [mounted, setMounted] = useState(false);

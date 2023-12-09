@@ -87,16 +87,14 @@
     margin-left: 5px !important;
 }
 .item {
-    min-height: 68px !important;
-    max-height: 68px !important;
     width: 360px !important;
     padding: 10px 16px !important;
     gap: 24px !important;
 }
 .actions {
-    padding: 8px 0px !important;
+    padding: 6px 0px !important;
     border-radius: 3px !important;
-    width: 297px;
+    min-height: 44px !important;
     box-shadow:
         0px 5px 5px 0px rgba(0, 0, 0, 0.2),
         0px 3px 14px 0px rgba(0, 0, 0, 0.12),
@@ -116,7 +114,6 @@
     justify-content: center !important;
     align-items: flex-start !important;
     align-self: stretch !important;
-    width: 297px !important;
     margin-bottom: 8px !important;
     margin-top: 8px !important;
 }
@@ -126,4 +123,9 @@
     &:hover {
         background-color: #f5f5f5 !important;
     }
+}
+.dividerItem {
+    margin-left: 64px !important;
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
 }

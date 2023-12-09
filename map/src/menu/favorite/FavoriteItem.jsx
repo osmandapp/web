@@ -1,4 +1,4 @@
-import { IconButton, ListItemIcon, ListItemText, MenuItem, Typography, Skeleton } from '@mui/material';
+import { IconButton, ListItemIcon, ListItemText, MenuItem, Typography, Skeleton, Divider } from '@mui/material';
 import React, { useContext, useMemo, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
@@ -6,7 +6,7 @@ import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import { ReactComponent as DirectionIcon } from '../../assets/icons/ic_direction_arrow_16.svg';
 import ActionsMenu from '../actions/ActionsMenu';
-import styles from '../tracks/trackmenu.module.css';
+import styles from '../trackfavmenu.module.css';
 import FavoriteItemActions from '../actions/FavoriteItemActions';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 
@@ -104,7 +104,6 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
                     {inView && (
                         <MenuItem
                             className={styles.item}
-                            divider
                             id={'se-fav-item-' + marker.title}
                             onClick={() => addFavoriteToMap(marker)}
                         >
@@ -131,6 +130,7 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
                             </IconButton>
                         </MenuItem>
                     )}
+                    <Divider className={styles.dividerItem} />
                     {inView && (
                         <ActionsMenu
                             open={openActions}

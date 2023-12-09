@@ -1,8 +1,8 @@
-import { CircularProgress, IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
+import { CircularProgress, Divider, IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import FavoritesManager from '../../manager/FavoritesManager';
-import styles from '../tracks/trackmenu.module.css';
+import styles from '../trackfavmenu.module.css';
 import ActionsMenu from '../actions/ActionsMenu';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
@@ -42,7 +42,6 @@ export default function FavoriteGroup({ index, group }) {
                 className={styles.group}
                 key={'group' + group.name + index}
                 id={'se-menu-fav-' + group.name}
-                divider
                 onClick={(e) => {
                     if (e.target !== 'path') {
                         ctx.setOpenGroups((prevState) => [...prevState, group]);
@@ -87,6 +86,7 @@ export default function FavoriteGroup({ index, group }) {
                     )}
                 </IconButton>
             </MenuItem>
+            <Divider className={styles.dividerItem} />
             <ActionsMenu
                 open={openActions}
                 setOpen={setOpenActions}
