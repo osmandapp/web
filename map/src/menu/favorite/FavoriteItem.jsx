@@ -9,6 +9,7 @@ import ActionsMenu from '../actions/ActionsMenu';
 import styles from '../trackfavmenu.module.css';
 import FavoriteItemActions from '../actions/FavoriteItemActions';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
+import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
 
 export default function FavoriteItem({ marker, group, currentLoc }) {
     const ctx = useContext(AppContext);
@@ -100,14 +101,16 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
         return (
             <>
                 <div ref={ref}>
-                    {inView || <Skeleton variant="rectangular" width={360} height={68} />}
+                    {inView || (
+                        <Skeleton variant="rectangular" width={MENU_INFO_OPEN_SIZE} height={'var(--menu-item-size)'} />
+                    )}
                     {inView && (
                         <MenuItem
                             className={styles.item}
                             id={'se-fav-item-' + marker.title}
                             onClick={() => addFavoriteToMap(marker)}
                         >
-                            <ListItemIcon className={styles.icon}>
+                            <ListItemIcon sx={{ ml: `${styles.item.minHeight} !important` }} className={styles.icon}>
                                 <CustomIcon />
                             </ListItemIcon>
                             <ListItemText>
