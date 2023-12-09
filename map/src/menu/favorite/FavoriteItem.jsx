@@ -110,7 +110,7 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
                             id={'se-fav-item-' + marker.title}
                             onClick={() => addFavoriteToMap(marker)}
                         >
-                            <ListItemIcon sx={{ ml: `${styles.item.minHeight} !important` }} className={styles.icon}>
+                            <ListItemIcon className={styles.icon}>
                                 <CustomIcon />
                             </ListItemIcon>
                             <ListItemText>
