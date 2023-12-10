@@ -176,8 +176,3 @@ function getProfileIcon({ color, profile } = {}) {
 export function getColor(geoProfile) {
     return this.getProfile(geoProfile)?.color || 'black';
 }
-
-// used to get `hhOnlyLimit` param for API /routing/update-route-between-points and /routing/route
-export function getDistanceLimit() {
-    return process.env.REACT_APP_HH_ONLY_LIMIT;
-}

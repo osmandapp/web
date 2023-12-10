@@ -117,12 +117,12 @@ async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErr
         avoidRoadsUrl = '&avoidRoads=' + avoidRoadsUrl.substring(1);
     }
     changeRouteText(true, null);
-    const hhOnlyLimit = '&hhOnlyLimit=' + this.getDistanceLimit(); // km
-    const maxDist = '&maxDist=' + this.getDistanceLimit() * 10; // compatibility
+    const maxDist = '&maxDist=100'; // compatibility-only
+    const limits = '&limits=' + process.env.REACT_APP_API_LIMITS;
     const routeModeStr = TracksManager.formatRouteMode(geoProfile);
     const response = await apiGet(
         `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?` +
-            `routeMode=${routeModeStr}&${starturl}${inter}&${endurl}${avoidRoadsUrl}${hhOnlyLimit}${maxDist}`,
+            `routeMode=${routeModeStr}&${starturl}${inter}&${endurl}${avoidRoadsUrl}${maxDist}${limits}`,
         {
             apiCache: true,
             method: 'GET',
