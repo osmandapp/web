@@ -112,14 +112,14 @@ export function convertRouteToTrack({ id, route, trackName, geoProfile, start, f
         points,
         name: trackName,
         // metaData: { desc: trackDesc },
-        analysis: calcMinAvgMaxElevation(points),
+        analysis: pointsGeometryMinAvgMaxElevation(points),
     };
     // console.log('track', track);
 
     return track; // bare points
 }
 
-export function calcMinAvgMaxElevation(points) {
+function pointsGeometryMinAvgMaxElevation(points) {
     let elevationSum = 0;
     let elevationPoints = 0;
     let avgElevation = Number.NaN;
@@ -127,16 +127,18 @@ export function calcMinAvgMaxElevation(points) {
     let maxElevation = Number.NEGATIVE_INFINITY;
     points &&
         points.length > 0 &&
-        points.forEach((p) => {
-            if (isNonZeroEle(p?.ele) || isNonZeroEle(p?.ext?.ele)) {
-                const ele = isNonZeroEle(p?.ele) ? p.ele : p.ext.ele;
-                minElevation = Math.min(minElevation, ele);
-                maxElevation = Math.max(maxElevation, ele);
-                elevationPoints++;
-                elevationSum += ele;
-                avgElevation = elevationSum / elevationPoints;
-            }
-        });
+        points.forEach((p) =>
+            p.geometry?.forEach((g) => {
+                if (isNonZeroEle(g?.ele) || isNonZeroEle(g?.ext?.ele)) {
+                    const ele = isNonZeroEle(g?.ele) ? g.ele : g.ext.ele;
+                    minElevation = Math.min(minElevation, ele);
+                    maxElevation = Math.max(maxElevation, ele);
+                    elevationPoints++;
+                    elevationSum += ele;
+                    avgElevation = elevationSum / elevationPoints;
+                }
+            })
+        );
     if (elevationPoints > 0) {
         return {
             minElevation,
