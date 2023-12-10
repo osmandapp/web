@@ -1,5 +1,5 @@
 import { getDistance } from '../../../util/Utils';
-import { NAN_MARKER, PROFILE_LINE } from '../../../manager/track/TracksManager'; // jest: 99999, 'line'
+import { NAN_MARKER, PROFILE_LINE, isNonZeroEle } from '../../../manager/track/TracksManager'; // jest: 99999, 'line'
 
 export const defaultPointExtras = {
     srtmEle: null,
@@ -112,7 +112,39 @@ export function convertRouteToTrack({ id, route, trackName, geoProfile, start, f
         points,
         name: trackName,
         // metaData: { desc: trackDesc },
+        analysis: calcMinAvgMaxElevation(points),
     };
+    // console.log('track', track);
 
     return track; // bare points
+}
+
+export function calcMinAvgMaxElevation(points) {
+    let elevationSum = 0;
+    let elevationPoints = 0;
+    let avgElevation = Number.NaN;
+    let minElevation = Number.POSITIVE_INFINITY;
+    let maxElevation = Number.NEGATIVE_INFINITY;
+    points &&
+        points.length > 0 &&
+        points.forEach((p) => {
+            if (isNonZeroEle(p?.ele) || isNonZeroEle(p?.ext?.ele)) {
+                const ele = isNonZeroEle(p?.ele) ? p.ele : p.ext.ele;
+                minElevation = Math.min(minElevation, ele);
+                maxElevation = Math.max(maxElevation, ele);
+                elevationPoints++;
+                elevationSum += ele;
+                avgElevation = elevationSum / elevationPoints;
+            }
+        });
+    if (elevationPoints > 0) {
+        return {
+            minElevation,
+            maxElevation,
+            avgElevation,
+            hasElevationData: true,
+        };
+    } else {
+        return {};
+    }
 }

@@ -680,7 +680,7 @@ function isEmptyEle(ele) {
     return ele === NAN_MARKER || isNaN(ele) || ele === null || ele === undefined;
 }
 
-function isNonZeroEle(ele) {
+export function isNonZeroEle(ele) {
     return ele !== NAN_MARKER && (ele > 0.01 || ele < -0.01);
 }
 
