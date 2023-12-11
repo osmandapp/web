@@ -6,7 +6,7 @@ import AppContext, {
     OBJECT_TYPE_WEATHER,
     OBJECT_TYPE_POI,
 } from '../../context/AppContext';
-import { useState, useContext, useEffect, useCallback } from 'react';
+import React, { useState, useContext, useEffect, useCallback } from 'react';
 import { TabContext, TabList } from '@mui/lab';
 import TrackTabList from './tabs/TrackTabList';
 import WeatherTabList from './tabs/WeatherTabList';
@@ -14,8 +14,9 @@ import FavoritesTabList from './tabs/FavoritesTabList';
 import _ from 'lodash';
 import PoiTabList from './tabs/PoiTabList';
 import { hasSegmentTurns } from '../../manager/track/TracksManager';
-import { ArrowBack } from '@mui/icons-material';
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
+import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
+import styles from '../../menu/trackfavmenu.module.css';
 
 const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     const [mounted, setMounted] = useState(false);
@@ -174,12 +175,14 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                                 edge="start"
                                 color="inherit"
                                 aria-label="menu"
+                                className={styles.appBarIcon}
+                                sx={{ mx: '11px', my: '11px' }}
                                 onClick={() => {
                                     setShowInfoBlock(false);
                                     ctx.setCurrentObjectType(null);
                                 }}
                             >
-                                <ArrowBack sx={{ color: '#ff8800' }} />
+                                <BackIcon />
                             </IconButton>
                             {tabsObj && tabsObj.tabList.length > 0 && (
                                 <TabContext value={value}>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
     ClickAwayListener,
     Drawer,
@@ -34,6 +34,7 @@ import Weather from './weather/Weather';
 import styles from './mainmenu.module.css';
 import TrackGroupFolder from './tracks/TrackGroupFolder';
 import _ from 'lodash';
+import FavoriteGroupFolder from './favorite/FavoriteGroupFolder';
 
 export default function MainMenu({
     size,
@@ -47,6 +48,8 @@ export default function MainMenu({
     setClearState,
 }) {
     const ctx = useContext(AppContext);
+
+    const [selectedType, setSelectedType] = useState(null);
 
     const handleDrawer = () => {
         setOpenMainMenu(!openMainMenu);
@@ -66,7 +69,7 @@ export default function MainMenu({
             name: 'Weather',
             icon: WeatherIcon,
             component: <Weather />,
-            type: [OBJECT_TYPE_WEATHER],
+            type: OBJECT_TYPE_WEATHER,
             show: true,
             id: 'se-show-menu-weather',
         },
@@ -74,7 +77,7 @@ export default function MainMenu({
             name: 'Tracks',
             icon: TracksIcon,
             component: <TracksMenu />,
-            type: [OBJECT_TYPE_CLOUD_TRACK],
+            type: OBJECT_TYPE_CLOUD_TRACK,
             show: true,
             id: 'se-show-menu-tracks',
         },
@@ -82,7 +85,7 @@ export default function MainMenu({
             name: 'Favorites',
             icon: FavoritesIcon,
             component: <FavoritesMenu />,
-            type: [OBJECT_TYPE_FAVORITE],
+            type: OBJECT_TYPE_FAVORITE,
             show: true,
             id: 'se-show-menu-favorites',
         },
@@ -90,7 +93,7 @@ export default function MainMenu({
             name: 'Navigation',
             icon: NavigationIcon,
             component: <RouteMenu />,
-            type: [OBJECT_TYPE_ROUTE_TRACK],
+            type: OBJECT_TYPE_ROUTE_TRACK,
             show: true,
             id: 'se-show-menu-navigation',
         },
@@ -98,7 +101,7 @@ export default function MainMenu({
             name: 'Map Style',
             icon: Map,
             component: <MapStyle />,
-            type: [],
+            type: null,
             show: ctx.develFeatures,
             id: 'se-show-menu-mapstyle',
         },
@@ -106,7 +109,7 @@ export default function MainMenu({
             name: 'Plan a route',
             icon: PlanRouteIcon,
             component: <PlanRouteMenu />,
-            type: [OBJECT_TYPE_LOCAL_TRACK],
+            type: OBJECT_TYPE_LOCAL_TRACK,
             show: true,
             id: 'se-show-menu-planroute',
         },
@@ -131,10 +134,11 @@ export default function MainMenu({
 
     function selectMenuInfo() {
         const currentMenu = items.find((item) => {
-            return item.type.find((t) => t === ctx.currentObjectType);
+            return item.type === ctx.currentObjectType;
         });
         if (currentMenu) {
             setMenuInfo(currentMenu.component);
+            setSelectedType(currentMenu.type);
         }
     }
 
@@ -164,6 +168,28 @@ export default function MainMenu({
         isSelectedMenuItem(item) && res.push(styles.menuItemSelected);
 
         return res.join(' ');
+    }
+
+    function getGroup() {
+        if (selectedType === OBJECT_TYPE_FAVORITE) {
+            return <FavoriteGroupFolder folder={ctx.openGroups[ctx.openGroups.length - 1]} />;
+        } else if (selectedType === OBJECT_TYPE_CLOUD_TRACK) {
+            return <TrackGroupFolder folder={ctx.openGroups[ctx.openGroups.length - 1]} />;
+        }
+    }
+
+    function selectMenu(item) {
+        ctx.setOpenGroups([]);
+        if (menuInfo) {
+            setShowInfoBlock(false);
+            const menu = !isSelectedMenuItem(item) ? item : null;
+            setMenuInfo(menu?.component);
+            setSelectedType(menu?.type);
+        } else {
+            setMenuInfo(item.component);
+            setSelectedType(item.type);
+            setOpenMainMenu(false);
+        }
     }
 
     return (
@@ -262,16 +288,7 @@ export default function MainMenu({
                                         id={item.id}
                                         key={index}
                                         className={setMenuStyles(item)}
-                                        onClick={() => {
-                                            ctx.setOpenTrackGroups([]);
-                                            if (menuInfo) {
-                                                setShowInfoBlock(false);
-                                                setMenuInfo(!isSelectedMenuItem(item) ? item.component : null);
-                                            } else {
-                                                setMenuInfo(item.component);
-                                                setOpenMainMenu(false);
-                                            }
-                                        }}
+                                        onClick={() => selectMenu(item)}
                                     >
                                         <ListItemButton
                                             className={setMenuIconStyles(item)}
@@ -360,11 +377,9 @@ export default function MainMenu({
                 open={true}
                 hideBackdrop
             >
-                <Toolbar />
-                {!showInfoBlock && _.isEmpty(ctx.openTrackGroups) && menuInfo}
-                {ctx.openTrackGroups.length > 0 && !showInfoBlock && (
-                    <TrackGroupFolder folder={ctx.openTrackGroups[ctx.openTrackGroups.length - 1]} />
-                )}
+                <Toolbar sx={{ mb: '-3px' }} />
+                {!showInfoBlock && _.isEmpty(ctx.openGroups) && menuInfo}
+                {ctx.openGroups.length > 0 && !showInfoBlock && getGroup()}
                 <InformationBlock
                     showInfoBlock={showInfoBlock}
                     setShowInfoBlock={setShowInfoBlock}

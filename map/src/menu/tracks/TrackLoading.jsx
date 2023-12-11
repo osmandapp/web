@@ -1,4 +1,4 @@
-import styles from './trackmenu.module.css';
+import styles from '../trackfavmenu.module.css';
 import { CircularProgress, IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import React from 'react';
 import { ReactComponent as TrackIcon } from '../../assets/icons/ic_action_polygom_dark.svg';

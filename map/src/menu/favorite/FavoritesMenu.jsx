@@ -1,11 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
-import FavoriteAllGroups from './FavoriteAllGroups';
 import FavoriteGroup from './FavoriteGroup';
 import Utils from '../../util/Utils';
 import TracksManager from '../../manager/track/TracksManager';
-import FavoritesManager from '../../manager/FavoritesManager';
+import FavoritesManager, { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
 import Empty from '../errors/Empty';
+import { Box } from '@mui/material';
+import GroupHeader from '../actions/GroupHeader';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
+import { isEmpty } from 'lodash';
+import Loading from '../errors/Loading';
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
@@ -13,6 +17,8 @@ export default function FavoritesMenu() {
     const [openFavoritesGroups, setOpenFavoritesGroups] = useState([]);
     const [enableGroups, setEnableGroups] = useState([]);
     const [once, setOnce] = useState(false);
+    const [, height] = useWindowSize();
+    const [sortGroups, setSortGroups] = useState([]);
 
     useEffect(() => {
         let res = [];
@@ -126,31 +132,48 @@ export default function FavoritesMenu() {
         }
     }
 
+    const groupItems = useMemo(() => {
+        const items = [];
+        const groups =
+            sortGroups?.length > 0 ? sortGroups : ctx.favorites?.groups?.length > 0 ? ctx.favorites?.groups : null;
+        if (groups) {
+            groups.map((g, index) => {
+                items.push(
+                    <FavoriteGroup
+                        key={g + index}
+                        index={index}
+                        group={g}
+                        enableGroups={enableGroups}
+                        setEnableGroups={setEnableGroups}
+                    />
+                );
+            });
+        }
+        return items;
+    }, [ctx.favorites?.groups, sortGroups]);
+
     return (
         <>
-            {openFavoritesGroups?.length > 0 || ctx.favorites?.groups?.length > 0 ? (
-                <>
-                    <FavoriteAllGroups setEnableGroups={setEnableGroups} favoritesGroups={openFavoritesGroups} />
-                    {ctx.favorites?.groups?.length > 0 &&
-                        ctx.favorites.groups.map((group, index) => {
-                            return (
-                                <FavoriteGroup
-                                    key={group + index}
-                                    index={index}
-                                    group={group}
-                                    enableGroups={enableGroups}
-                                    setEnableGroups={setEnableGroups}
-                                />
-                            );
-                        })}
-                </>
-            ) : (
-                <Empty
-                    title={'You don’t have favorite files'}
-                    text={'You can import or create favorite files using OsmAnd App.'}
-                    menu={OBJECT_TYPE_FAVORITE}
-                />
-            )}
+            <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+                <GroupHeader favoriteGroup={DEFAULT_FAV_GROUP_NAME} setSortGroups={setSortGroups} />
+                {!isEmpty(ctx.favorites) && ctx.favorites?.groups?.length > 0 ? (
+                    <Box
+                        minWidth={ctx.infoBlockWidth}
+                        maxWidth={ctx.infoBlockWidth}
+                        sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 120}px` }}
+                    >
+                        {groupItems}
+                    </Box>
+                ) : ctx.gpxLoading ? (
+                    <Loading />
+                ) : (
+                    <Empty
+                        title={'You don’t have favorite files'}
+                        text={'You can import or create favorite files using OsmAnd App.'}
+                        menu={OBJECT_TYPE_FAVORITE}
+                    />
+                )}
+            </Box>
         </>
     );
 }

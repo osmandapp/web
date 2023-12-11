@@ -334,7 +334,9 @@ export const AppContextProvider = (props) => {
         }
     }, [loginUser]);
 
-    const [openTrackGroups, setOpenTrackGroups] = useState([]);
+    const [openGroups, setOpenGroups] = useState([]);
+
+    const [stopUseGeoLocation, setStopUseGeoLocation] = useState(false);
 
     return (
         <AppContext.Provider
@@ -433,14 +435,16 @@ export const AppContextProvider = (props) => {
                 routeObject,
                 fitBoundsPadding,
                 mutateFitBoundsPadding,
-                openTrackGroups,
-                setOpenTrackGroups,
+                openGroups,
+                setOpenGroups,
                 trackErrorMsg,
                 setTrackErrorMsg,
                 trackLoading,
                 setTrackLoading,
                 accountInfo,
                 setAccountInfo,
+                stopUseGeoLocation,
+                setStopUseGeoLocation,
             }}
         >
             {props.children}

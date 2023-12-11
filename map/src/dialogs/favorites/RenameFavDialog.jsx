@@ -5,33 +5,28 @@ import DialogContent from '@mui/material/DialogContent';
 import { Button, TextField } from '@mui/material';
 import DialogActions from '@mui/material/DialogActions';
 import React, { useContext, useState } from 'react';
-import AppContext from '../../context/AppContext';
-import { DEFAULT_GROUP_NAME, findGroupByName, prepareName } from '../../manager/track/TracksManager';
-import { renameFolder, renameTrack } from '../../manager/track/SaveTrackManager';
+import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import { prepareFileName } from '../../util/Utils';
+import { apiGet } from '../../util/HttpApi';
+import { refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
+import FavoritesManager, { prepareFavGroupName } from '../../manager/FavoritesManager';
 
-export default function RenameDialog({ setOpenDialog, track = null, group = null, setOpenActions }) {
+export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }) {
     const ctx = useContext(AppContext);
 
     const [nameError, setNameError] = useState('');
-    const [name, setName] = useState(track ? prepareName(track.name) : group.name);
-
-    const groupByTrack = track && getTrackGroupByTrackName(track.name);
-    const state = `${track ? 'track' : group ? 'group' : 'error'}`;
+    const [name, setName] = useState(prepareFavGroupName(group.file.name));
 
     const renameError = {
         title: 'Rename error',
-        msg: 'Folder/track is not found.',
+        msg: 'Favorites not found.',
     };
 
     async function rename() {
         const newName = prepareFileName(name);
         if (validationName(newName)) {
-            if (track) {
-                let folder = groupByTrack.fullName === DEFAULT_GROUP_NAME ? '' : groupByTrack.fullName + '/';
-                await renameTrack(track.name, folder, newName, ctx);
-            } else if (group) {
-                await renameFolder(group, newName, ctx);
+            if (group) {
+                await renameFavGroup(group, newName, ctx);
             } else {
                 ctx.setTrackErrorMsg(renameError);
             }
@@ -41,10 +36,32 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
         }
     }
 
+    async function renameFavGroup(group, newName, ctx) {
+        const newGroupName = FavoritesManager.FAV_FILE_PREFIX + newName + '.gpx';
+        if (newGroupName !== group.file.name) {
+            const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/rename-fav-group`, {
+                params: {
+                    fullOldName: group.file.name,
+                    oldName: prepareFavGroupName(group.file.name),
+                    fullNewName: newGroupName,
+                    newName: newName,
+                    oldUpdatetime: group.updatetimems,
+                },
+                dataOnErrors: true,
+            });
+            if (res && res?.data?.status === 'ok') {
+                refreshGlobalFiles(ctx, newGroupName, OBJECT_TYPE_FAVORITE).then();
+            } else {
+                ctx.setTrackErrorMsg({
+                    title: 'Rename error',
+                    msg: res.data,
+                });
+            }
+        }
+    }
+
     function validationName(name) {
-        if (track) {
-            return validationTrackName(name);
-        } else if (group) {
+        if (group) {
             return validationFolderName(name);
         } else {
             ctx.setTrackErrorMsg(renameError);
@@ -56,53 +73,21 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
         }
     }
 
-    function validationTrackName(name) {
-        if (!name || name === '' || name.trim().length === 0) {
-            setNameError('Empty track name.');
-            return false;
-        } else if (isTrackExist(name)) {
-            setNameError('Track already exists.');
-            return false;
-        } else {
-            setNameError('');
-            return true;
-        }
-    }
-
     function validationFolderName(name) {
         if (!name || name === '' || name.trim().length === 0) {
-            setNameError('Empty folder name.');
+            setNameError('Empty favorite group name.');
             return false;
         } else if (isFolderExist(name)) {
-            setNameError('Folder already exists.');
+            setNameError('Favorite group already exists.');
             return false;
         } else {
             setNameError('');
             return true;
         }
-    }
-
-    function isTrackExist(name) {
-        return groupByTrack.groupFiles.some((f) => prepareName(f.name) === name);
     }
 
     function isFolderExist(name) {
-        return getParentFolder(group).subfolders.some((f) => f.name === name);
-    }
-
-    function getParentFolder(folder) {
-        let parentName = folder.fullName.split('/').slice(0, -1).join('/');
-        return findGroupByName(ctx.tracksGroups, parentName);
-    }
-
-    function getTrackGroupByTrackName(name) {
-        const parts = name.split('/');
-        if (parts.length > 0) {
-            const pathToGroup = parts.slice(0, -1).join('/');
-            return findGroupByName(ctx.tracksGroups, pathToGroup);
-        } else {
-            return ctx.tracksGroups[DEFAULT_GROUP_NAME];
-        }
+        return ctx.favorites?.groups.some((g) => g.name === name);
     }
 
     const handleKeyPress = (e) => {
@@ -121,7 +106,7 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
 
     return (
         <Dialog
-            id={`se-rename-${state}-dialog`}
+            id={`se-rename-fav-dialog`}
             open={true}
             onClose={() => setOpenDialog(false)}
             onClick={(e) => e.stopPropagation()}
@@ -144,8 +129,8 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
                         validationName(name);
                         setName(name);
                     }}
-                    id={`se-rename-${state}-input`}
-                    type={`${state}Name`}
+                    id={`se-rename-fav-input`}
+                    type={`fav-name`}
                     fullWidth
                     error={nameError !== ''}
                     helperText={nameError !== '' ? nameError : ' '}
@@ -155,12 +140,12 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
                 ></TextField>
             </DialogContent>
             <DialogActions>
-                <Button className={dialogStyles.button} onClick={closeDialogs}>
+                <Button id={`se-rename-fav-cancel`} className={dialogStyles.button} onClick={closeDialogs}>
                     Cancel
                 </Button>
                 <Button
                     disabled={nameError !== ''}
-                    id={`se-rename-${state}-submit`}
+                    id={`se-rename-fav-submit`}
                     className={dialogStyles.button}
                     onClick={() => rename()}
                 >

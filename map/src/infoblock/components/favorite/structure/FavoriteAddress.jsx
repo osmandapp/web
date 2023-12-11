@@ -10,7 +10,7 @@ export default function FavoriteAddress({ favoriteAddress, setFavoriteAddress, s
         <ListItemText sx={{ maxWidth: `${widthDialog}px` }}>
             <TextField
                 className={menuStyles.favouriteLineInfo}
-                id="address"
+                id="se-edit-fav-dialog-address"
                 label="Address"
                 fullWidth
                 onChange={(e) => setFavoriteAddress(e.target.value)}

@@ -13270,6 +13270,7 @@ __metadata:
     react-devtools: ^4.28.0
     react-dom: ^18.1.0
     react-draft-wysiwyg: ^1.15.0
+    react-intersection-observer: ^9.5.3
     react-leaflet: ^4.0.0
     react-leaflet-markercluster: ^3.0.0-rc1
     react-router-dom: ^6.3.0
@@ -14919,6 +14920,15 @@ __metadata:
   version: 6.0.11
   resolution: "react-error-overlay@npm:6.0.11"
   checksum: ce7b44c38fadba9cedd7c095cf39192e632daeccf1d0747292ed524f17dcb056d16bc197ddee5723f9dd888f0b9b19c3b486c430319e30504289b9296f2d2c42
+  languageName: node
+  linkType: hard
+
+"react-intersection-observer@npm:^9.5.3":
+  version: 9.5.3
+  resolution: "react-intersection-observer@npm:9.5.3"
+  peerDependencies:
+    react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: 2281912a9fe7a52bb1237c1b5299873beee358f79325eb9ba80fc0e4b7640963c1b27528f873453746e93981c503f880fdea9f786ebeae2e6a4216b50d180941
   languageName: node
   linkType: hard
 

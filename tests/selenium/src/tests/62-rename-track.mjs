@@ -4,12 +4,12 @@ import { clickBy, enclose, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../actions/actionFinish.mjs';
 import actionImportCloudTrack from '../actions/actionImportCloudTrack.mjs';
-import actionCheckTrackExist from '../actions/actionCheckTrackExist.mjs';
-import { deleteTrack, getTracks } from '../util.mjs';
+import actionCheckFileExist from '../actions/actionCheckFileExist.mjs';
+import { deleteTrack, getFiles } from '../util.mjs';
 
 export default async function test() {
     const suffix = '-renamed';
-    const tracks = getTracks();
+    const tracks = getFiles({ folder: 'gpx' });
     let trackName = 'test-routed-osrm';
 
     await actionOpenMap();
@@ -17,7 +17,7 @@ export default async function test() {
 
     await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-tracks'));
-    const exist = await actionCheckTrackExist(trackName);
+    const exist = await actionCheckFileExist({ id: `se-cloud-track-${trackName}` });
     if (!exist) {
         await actionImportCloudTrack(tracks, trackName);
     }
