@@ -5,10 +5,10 @@
   </metadata>
   <wpt lat="52.3554606" lon="4.8929554">
     <time>2023-04-01T08:12:01Z</time>
-    <name>Albert Cuyp-markt</name>
+    <name>Test wpt</name>
     <type>shops</type>
     <extensions>
-      <osmand:address>Albert Cuypstraat (De Pijp) 130, Zuid</osmand:address>
+      <osmand:address>test address</osmand:address>
       <osmand:icon>shop_department_store</osmand:icon>
       <osmand:background>circle</osmand:background>
       <osmand:amenity_origin>Amenity:Albert Cuyp market: shop:marketplace</osmand:amenity_origin>

@@ -217,7 +217,7 @@ export default function EditFavoriteDialog({
     }
 
     return (
-        <Dialog open={true} onClick={(e) => e.stopPropagation()}>
+        <Dialog id="se-edit-fav-dialog" open={true} onClick={(e) => e.stopPropagation()}>
             <Grid container spacing={2}>
                 <Grid className={menuStyles.name} item xs={11} sx={{ mb: -3 }}>
                     <DialogTitle>{getTitleDialog()}</DialogTitle>
@@ -301,7 +301,7 @@ export default function EditFavoriteDialog({
                             wpt={wpt}
                         />
                     )}
-                    <Button disabled={errorName} onClick={() => save()}>
+                    <Button id="se-edit-fav-item-submit" disabled={errorName} onClick={() => save()}>
                         Save
                     </Button>
                 </div>

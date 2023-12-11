@@ -67,7 +67,7 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
                         {`${marker.locDist} km`}
                     </Typography>
                 )}
-                <Typography variant="body2" className={styles.groupInfo} noWrap>
+                <Typography id={'se-fav-item-address'} variant="body2" className={styles.groupInfo} noWrap>
                     {getAddress()}
                 </Typography>
             </div>
