@@ -1,6 +1,6 @@
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
-import { clickBy, enclose, matchTextBy, waitBy } from '../lib.mjs';
+import { clickBy, waitBy } from '../lib.mjs';
 import actionCheckFileExist from '../actions/actionCheckFileExist.mjs';
 import { By } from 'selenium-webdriver';
 import { deleteFavGroup, getFiles, uploadFavorites } from '../util.mjs';
@@ -13,7 +13,6 @@ export default async function test() {
     const favGroupName = 'favorites-shops';
     const shortFavGroupName = 'shops';
     const wptName = 'Test wpt';
-    const suffix = '-edited';
 
     // open favorite menu
     await clickBy(By.id('se-show-main-menu'), { optional: true });
@@ -34,9 +33,9 @@ export default async function test() {
     await waitBy(By.id(`se-opened-fav-group-${shortFavGroupName}`));
 
     await clickBy(By.id(`se-actions-${wptName}`));
-    await waitBy(By.id(`se-fav-item-actions`));
-    await clickBy(By.id(`se-delete-fav-item`));
-    await waitBy(By.id(`se-delete-fav-dialog`));
+    await waitBy(By.id('se-fav-item-actions'));
+    await clickBy(By.id('se-delete-fav-item'));
+    await waitBy(By.id('se-delete-fav-dialog'));
 
     // delete favorite item
     await clickBy(By.id('se-delete-fav-dialog-submit'));
@@ -46,8 +45,8 @@ export default async function test() {
     await clickBy(By.id('se-back-folder-button'));
     await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
 
-    await deleteFavGroup(`${shortFavGroupName}`);
-    await waitBy(By.id(`se-empty-page`));
+    await deleteFavGroup(shortFavGroupName);
+    await waitBy(By.id('se-empty-page'));
 
     await actionFinish();
 }

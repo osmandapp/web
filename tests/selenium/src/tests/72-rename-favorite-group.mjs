@@ -40,9 +40,9 @@ export default async function test() {
     //rename folder
     await waitBy(By.id(`se-folder-actions-button-${shortFavGroupName}`));
     await clickBy(By.id(`se-folder-actions-button-${shortFavGroupName}`));
-    await waitBy(By.id(`se-favorite-folder-actions`));
+    await waitBy(By.id('se-favorite-folder-actions'));
     await clickBy(By.id('se-folder-actions-rename'));
-    await waitBy(By.id(`se-rename-fav-dialog`));
+    await waitBy(By.id('se-rename-fav-dialog'));
     await enclose(
         async () => {
             const input = await waitBy(By.id('se-rename-fav-input'));
@@ -56,16 +56,16 @@ export default async function test() {
 
     // check error "Favorite group already exists"
     await clickBy(By.id(`se-folder-actions-button-${shortFavGroupName}${suffix}`));
-    await waitBy(By.id(`se-favorite-folder-actions`));
+    await waitBy(By.id('se-favorite-folder-actions'));
     await clickBy(By.id('se-folder-actions-rename'));
-    await waitBy(By.id(`se-rename-fav-dialog`));
+    await waitBy(By.id('se-rename-fav-dialog'));
     await clickBy(By.id('se-rename-fav-submit'));
-    await waitBy(By.id(`se-rename-fav-input-helper-text`));
+    await waitBy(By.id('se-rename-fav-input-helper-text'));
 
     await clickBy(By.id('se-rename-fav-cancel'));
 
     await deleteFavGroup(`${shortFavGroupName}${suffix}`);
-    await waitBy(By.id(`se-empty-page`));
+    await waitBy(By.id('se-empty-page'));
 
     await actionFinish();
 }

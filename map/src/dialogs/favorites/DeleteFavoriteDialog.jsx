@@ -99,7 +99,7 @@ export default function DeleteFavoriteDialog({ dialogOpen, setDialogOpen, wpt = 
                 <DialogContentText>{getQuestionDialog()}</DialogContentText>
             </DialogContent>
             <DialogActions>
-                <Button id="se-delete-fav-dialog-submit" onClick={() => deleteWpt()}>
+                <Button id="se-delete-fav-dialog-submit" onClick={deleteWpt}>
                     Delete
                 </Button>
                 <Button onClick={toggleShowDialog}>Cancel</Button>

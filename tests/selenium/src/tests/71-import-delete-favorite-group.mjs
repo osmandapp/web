@@ -24,7 +24,7 @@ export default async function test() {
     const exist = await actionCheckFileExist({ id: `se-menu-fav-${shortFavGroupName}` });
     if (exist) {
         await deleteFavGroup(shortFavGroupName);
-        await waitBy(By.id(`se-empty-page`));
+        await waitBy(By.id('se-empty-page'));
     }
 
     // import new group
@@ -34,7 +34,7 @@ export default async function test() {
 
     // delete group
     await deleteFavGroup(shortFavGroupName);
-    await waitBy(By.id(`se-empty-page`));
+    await waitBy(By.id('se-empty-page'));
 
     await actionFinish();
 }

@@ -64,9 +64,9 @@ export async function deleteFavGroup(name) {
     await actionIdleWait();
     await waitBy(By.id(`se-folder-actions-button-${name}`));
     await clickBy(By.id(`se-folder-actions-button-${name}`));
-    await waitBy(By.id(`se-favorite-folder-actions`));
+    await waitBy(By.id('se-favorite-folder-actions'));
     await clickBy(By.id('se-favorite-folder-actions-delete'));
-    await waitBy(By.id(`se-delete-fav-group-dialog`));
+    await waitBy(By.id('se-delete-fav-group-dialog'));
     await clickBy(By.id('se-delete-fav-group-submit'));
     await waitBy(By.id(`se-actions-${name}`), { hidden: true });
     await actionIdleWait();
