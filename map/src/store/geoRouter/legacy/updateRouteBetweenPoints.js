@@ -116,7 +116,6 @@ async function updateRouteBetweenPointsLine({ start, end }) {
 
 async function updateRouteBetweenPointsOsmAnd({ ctx, start, end, geoProfile }) {
     const routeMode = TracksManager.formatRouteMode(geoProfile ?? this.getGeoProfile());
-    const limits = process.env.REACT_APP_API_LIMITS;
 
     const result = await apiPost(`${process.env.REACT_APP_GPX_API}/routing/update-route-between-points`, '', {
         apiCache: true,
@@ -126,7 +125,6 @@ async function updateRouteBetweenPointsOsmAnd({ ctx, start, end, geoProfile }) {
             routeMode: routeMode,
             hasRouting: start.segment !== null || end.segment !== null,
             maxDist: '100', // compatability-only
-            limits,
         },
         headers: {
             'Content-Type': 'application/json',

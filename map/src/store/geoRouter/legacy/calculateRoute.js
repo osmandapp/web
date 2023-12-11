@@ -120,11 +120,10 @@ async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErr
     }
     changeRouteText(true, null);
     const maxDist = '&maxDist=100'; // compatibility-only
-    const limits = '&limits=' + process.env.REACT_APP_API_LIMITS;
     const routeModeStr = TracksManager.formatRouteMode(geoProfile);
     const response = await apiGet(
         `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?` +
-            `routeMode=${routeModeStr}&${starturl}${inter}&${endurl}${avoidRoadsUrl}${maxDist}${limits}`,
+            `routeMode=${routeModeStr}&${starturl}${inter}&${endurl}${avoidRoadsUrl}${maxDist}`,
         {
             apiCache: true,
             method: 'GET',
