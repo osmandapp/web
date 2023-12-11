@@ -27,7 +27,7 @@ export default function IconButtonWithPermissions({ onClick, ...props }) {
     const handleClick = () => {
         if (isDisabled) {
             setOpenDialog(true);
-        } else if (onClick) {
+        } else if (onClick && typeof onClick === 'function') {
             onClick();
         }
     };
