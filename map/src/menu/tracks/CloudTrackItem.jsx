@@ -23,6 +23,7 @@ import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_
 import styles from '../trackfavmenu.module.css';
 import TrackActions from '../actions/TrackActions';
 import ActionsMenu from '../actions/ActionsMenu';
+import MenuItemsTitle from '../components/MenuItemsTitle';
 
 const DEFAULT_DIST = 0;
 const DEFAULT_TIME = '0:00';
@@ -167,9 +168,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                             <TrackIcon />
                         </ListItemIcon>
                         <ListItemText>
-                            <Typography variant="inherit" className={styles.groupName} noWrap>
-                                {trackName}
-                            </Typography>
+                            <MenuItemsTitle name={trackName} maxLines={2} />
                             <Typography variant="body2" className={styles.groupInfo} noWrap>
                                 {dist && `${dist} km`}
                                 {' · '}

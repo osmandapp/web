@@ -7,6 +7,7 @@ import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_
 import styles from '../trackfavmenu.module.css';
 import GroupActions from '../actions/GroupActions';
 import ActionsMenu from '../actions/ActionsMenu';
+import MenuItemsTitle from '../components/MenuItemsTitle';
 
 export default function CloudTrackGroup({ index, group }) {
     const ctx = useContext(AppContext);
@@ -38,9 +39,7 @@ export default function CloudTrackGroup({ index, group }) {
                     <FolderIcon />
                 </ListItemIcon>
                 <ListItemText>
-                    <Typography variant="inherit" className={styles.groupName} noWrap>
-                        {group.name}
-                    </Typography>
+                    <MenuItemsTitle name={group.name} maxLines={2} />
                     <Typography variant="body2" className={styles.groupInfo} noWrap>
                         {`${group.lastModifiedData.split(',')[0]}, tracks ${group.realSize}`}
                     </Typography>

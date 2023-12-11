@@ -10,6 +10,7 @@ import styles from '../trackfavmenu.module.css';
 import FavoriteItemActions from '../actions/FavoriteItemActions';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
+import MenuItemsTitle from '../components/MenuItemsTitle';
 
 export default function FavoriteItem({ marker, group, currentLoc }) {
     const ctx = useContext(AppContext);
@@ -73,25 +74,6 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
         );
     };
 
-    const Title = () => {
-        const maxLines = 2;
-        const infoStyle = {
-            display: '-webkit-box',
-            WebkitBoxOrient: 'vertical',
-            overflow: 'hidden',
-            WebkitLineClamp: maxLines,
-            wordBreak: 'break-word',
-            whiteSpace: 'pre-wrap',
-        };
-        return (
-            <div style={infoStyle}>
-                <Typography variant="inherit" className={styles.groupName}>
-                    {marker.title}
-                </Typography>
-            </div>
-        );
-    };
-
     function getAddress() {
         const comma = marker.locDist && marker?.layer?.options?.address ? ', ' : '';
         return marker?.layer?.options?.address ? `${comma}${marker.layer.options.address}` : '';
@@ -114,7 +96,7 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
                                 <CustomIcon />
                             </ListItemIcon>
                             <ListItemText>
-                                <Title />
+                                <MenuItemsTitle name={marker.title} maxLines={2} />
                                 <FavInfo />
                             </ListItemText>
                             <IconButton

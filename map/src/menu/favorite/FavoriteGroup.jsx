@@ -9,6 +9,7 @@ import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import { ReactComponent as FolderHiddenIcon } from '../../assets/icons/ic_action_folder_hidden.svg';
 import FavoriteGroupActions from '../actions/FavoriteGroupActions';
+import MenuItemsTitle from '../components/MenuItemsTitle';
 
 export default function FavoriteGroup({ index, group }) {
     const ctx = useContext(AppContext);
@@ -58,9 +59,7 @@ export default function FavoriteGroup({ index, group }) {
                     )}
                 </ListItemIcon>
                 <ListItemText>
-                    <Typography variant="inherit" className={styles.groupName} noWrap>
-                        {group.name}
-                    </Typography>
+                    <MenuItemsTitle name={group.name} maxLines={2} />
                     <Typography variant="body2" className={styles.groupInfo} noWrap>
                         {`${getLastModificationDate()}, ${getSize()}`}
                     </Typography>
