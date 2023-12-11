@@ -9,8 +9,8 @@ import { ReactComponent as AddFolderIcon } from '../../../assets/icons/ic_action
 import { MENU_INFO_CLOSE_SIZE } from '../../../manager/GlobalManager';
 import styles from '../trackmenu.module.css';
 import { DEFAULT_GROUP_NAME } from '../../../manager/track/TracksManager';
-import { FREE_ACCOUNT } from '../../../manager/LoginManager';
 import AddFolderDialog from '../../../dialogs/tracks/AddFolderDialog';
+import IconButtonWithPermissions from '../../../frame/components/IconButtonWithPermissions';
 
 export default function TracksHeader({ trackGroup, sortIcon, sortName, setOpenSort, anchorEl }) {
     const ctx = useContext(AppContext);
@@ -69,36 +69,29 @@ export default function TracksHeader({ trackGroup, sortIcon, sortName, setOpenSo
                     </Tooltip>
                     <Tooltip key={'add_folder'} title="Add folder" arrow placement="bottom-end">
                         <span>
-                            <IconButton
+                            <IconButtonWithPermissions
                                 id="se-add-folder"
                                 variant="contained"
                                 type="button"
                                 className={styles.appBarIcon}
                                 onClick={() => setOpenAddFolderDialog(true)}
-                                ref={anchorEl}
-                                disabled={
-                                    !trackGroup ||
-                                    trackGroup.files?.length === 0 ||
-                                    ctx.accountInfo?.account === FREE_ACCOUNT
-                                }
                             >
                                 <AddFolderIcon />
-                            </IconButton>
+                            </IconButtonWithPermissions>
                         </span>
                     </Tooltip>
                     <Tooltip key={'import_track'} title="Import track" arrow placement="bottom-end">
                         <span>
                             <CloudGpxUploader folder={trackGroup.fullName}>
-                                <IconButton
+                                <IconButtonWithPermissions
                                     id="se-import-cloud-track"
                                     component="span"
                                     variant="contained"
                                     type="button"
-                                    disabled={ctx.accountInfo?.account === FREE_ACCOUNT}
                                     className={styles.appBarIcon}
                                 >
                                     <ImportIcon />
-                                </IconButton>
+                                </IconButtonWithPermissions>
                             </CloudGpxUploader>
                         </span>
                     </Tooltip>
