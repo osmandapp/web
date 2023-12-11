@@ -11,7 +11,7 @@ import AppContext, {
 } from '../../../context/AppContext';
 import SaveTrackDialog from '../../../dialogs/tracks/SaveTrackDialog';
 import DeleteTrackDialog from '../../../dialogs/tracks/DeleteTrackDialog';
-import DeleteFavoriteDialog from '../../../infoblock/components/favorite/DeleteFavoriteDialog';
+import DeleteFavoriteDialog from '../../../dialogs/favorites/DeleteFavoriteDialog';
 import _ from 'lodash';
 import TracksManager, { isEmptyTrack } from '../../../manager/track/TracksManager';
 import useUndoRedo from '../../../infoblock/useUndoRedo';

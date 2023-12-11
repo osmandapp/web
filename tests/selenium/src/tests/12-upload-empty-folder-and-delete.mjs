@@ -7,7 +7,7 @@ import { By } from 'selenium-webdriver';
 import actionLogIn from '../actions/actionLogIn.mjs';
 import actionDeleteFolder from '../actions/actionDeleteFolder.mjs';
 import actionCreateNewFolder from '../actions/actionCreateNewFolder.mjs';
-import { getTracks, uploadCloudTracks } from '../util.mjs';
+import { getFiles, uploadCloudTracks } from '../util.mjs';
 
 export default async function test() {
     const folder = 'new';
@@ -22,7 +22,7 @@ export default async function test() {
 
     // import first track
     await clickBy(By.id('se-import-first-track'));
-    const { path } = getTracks().find((t) => t.name === 'test-routed-osrm');
+    const { path } = getFiles({ folder: 'gpx' }).find((t) => t.name === 'test-routed-osrm');
     await uploadCloudTracks({ files: path });
     await clickBy(By.id('se-button-back'));
     await clickBy(By.id('se-back-folder-button'));

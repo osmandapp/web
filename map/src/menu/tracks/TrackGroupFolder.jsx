@@ -1,14 +1,11 @@
-import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import CloudTrackItem from './CloudTrackItem';
 import CloudTrackGroup from './CloudTrackGroup';
 import { Box } from '@mui/material';
-import SortActions from './actions/SortActions';
 import AppContext from '../../context/AppContext';
-import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
-import SortMenu from './actions/SortMenu';
 import { findGroupByName, updateLoadingTracks } from '../../manager/track/TracksManager';
-import TracksHeader from './actions/TracksHeader';
+import GroupHeader from '../actions/GroupHeader';
 import Empty from '../errors/Empty';
 import { EMPTY_FILE_NAME } from '../../manager/track/SaveTrackManager';
 import TrackLoading from './TrackLoading';
@@ -17,21 +14,16 @@ export default function TrackGroupFolder({ folder }) {
     const ctx = useContext(AppContext);
 
     const [group, setGroup] = useState(folder);
-    const [openSort, setOpenSort] = useState(false);
     const [sortFiles, setSortFiles] = useState([]);
     const [sortGroups, setSortGroups] = useState([]);
-    const [sortIcon, setSortIcon] = useState(<TimeIcon />);
-    const [sortName, setSortName] = useState('Last modified');
-    const [selectedSort, setSelectedSort] = useState(null);
-    const anchorEl = useRef(null);
     const [, height] = useWindowSize();
 
     useEffect(() => {
         if (ctx.tracksGroups) {
             let found = findGroupByName(ctx.tracksGroups, group.fullName);
-            if (ctx.openTrackGroups && ctx.openTrackGroups.length > 0) {
-                ctx.openTrackGroups[ctx.openTrackGroups.length - 1] = found;
-                ctx.setOpenTrackGroups([...ctx.openTrackGroups]);
+            if (ctx.openGroups && ctx.openGroups.length > 0) {
+                ctx.openGroups[ctx.openGroups.length - 1] = found;
+                ctx.setOpenGroups([...ctx.openGroups]);
                 if (folder) {
                     setGroup({ ...found });
                 }
@@ -74,15 +66,7 @@ export default function TrackGroupFolder({ folder }) {
     return (
         <>
             <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
-                {group && (
-                    <TracksHeader
-                        trackGroup={group}
-                        sortIcon={sortIcon}
-                        sortName={sortName}
-                        setOpenSort={setOpenSort}
-                        anchorEl={anchorEl}
-                    />
-                )}
+                {group && <GroupHeader trackGroup={group} setSortGroups={setSortGroups} setSortFiles={setSortFiles} />}
                 <Box
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}
@@ -95,24 +79,6 @@ export default function TrackGroupFolder({ folder }) {
                         })}
                     {trackItems}
                 </Box>
-                <SortMenu
-                    openSort={openSort}
-                    setOpenSort={setOpenSort}
-                    anchorEl={anchorEl}
-                    actions={
-                        <SortActions
-                            files={group.groupFiles}
-                            setSortFiles={setSortFiles}
-                            groups={group.subfolders}
-                            setSortGroups={setSortGroups}
-                            setOpenSort={setOpenSort}
-                            selectedSort={selectedSort}
-                            setSelectedSort={setSelectedSort}
-                            setSortIcon={setSortIcon}
-                            setSortName={setSortName}
-                        />
-                    }
-                />
             </Box>
             {group.realSize === 0 && ctx.trackLoading?.length === 0 && (
                 <Empty title={'Empty folder'} text={"This folder doesn't have any track yet"} folder={group.fullName} />

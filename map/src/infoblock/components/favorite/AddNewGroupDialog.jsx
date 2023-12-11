@@ -12,8 +12,8 @@ import FavoriteName from './structure/FavoriteName';
 import FavoriteIcon from './structure/FavoriteIcon';
 import FavoriteColor from './structure/FavoriteColor';
 import FavoriteShape from './structure/FavoriteShape';
-import FavoritesManager from '../../../manager/FavoritesManager';
-import { apiGet, apiPost } from '../../../util/HttpApi';
+import FavoritesManager, { saveFavoriteGroup } from '../../../manager/FavoritesManager';
+import { apiGet } from '../../../util/HttpApi';
 
 export default function AddNewGroupDialog({ dialogOpen, setDialogOpen, setFavoriteGroup }) {
     const menuStyles = contextMenuStyles();
@@ -44,7 +44,7 @@ export default function AddNewGroupDialog({ dialogOpen, setDialogOpen, setFavori
         if (ctx.addFavorite.editTrack) {
             saveTrackWptGroup();
         } else {
-            await saveFavoriteGroup();
+            await saveGroup();
         }
     }
 
@@ -59,24 +59,14 @@ export default function AddNewGroupDialog({ dialogOpen, setDialogOpen, setFavori
         setDialogOpen(false);
     }
 
-    async function saveFavoriteGroup() {
+    async function saveGroup() {
         let data = {
             pointsGroups: createGroup(),
         };
-
-        if (data.pointsGroups[groupName]) {
-            let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add-group`, data, {
-                params: {
-                    groupName: groupName,
-                },
-            });
-            if (resp.data) {
-                let group = FavoritesManager.createGroup(resp.data);
-                setFavoriteGroup(group);
-                ctx.favorites.groups.push(group);
-                ctx.setFavorites({ ...ctx.favorites });
-                setDialogOpen(false);
-            }
+        const group = await saveFavoriteGroup(data, groupName, ctx);
+        if (group) {
+            setFavoriteGroup(group);
+            setDialogOpen(false);
         }
     }
 

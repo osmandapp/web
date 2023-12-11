@@ -1,139 +1,23 @@
-import { Collapse, LinearProgress, ListItemIcon, ListItemText, MenuItem, Switch, Typography } from '@mui/material';
-import { ExpandLess, ExpandMore, Folder } from '@mui/icons-material';
-import React, { useContext, useEffect, useState } from 'react';
-import FavoriteItem from './FavoriteItem';
+import { CircularProgress, Divider, IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
-import Utils from '../../util/Utils';
-import TracksManager from '../../manager/track/TracksManager';
 import FavoritesManager from '../../manager/FavoritesManager';
+import styles from '../trackfavmenu.module.css';
+import ActionsMenu from '../actions/ActionsMenu';
+import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
+import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
+import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
+import { ReactComponent as FolderHiddenIcon } from '../../assets/icons/ic_action_folder_hidden.svg';
+import FavoriteGroupActions from '../actions/FavoriteGroupActions';
+import MenuItemsTitle from '../components/MenuItemsTitle';
 
-export default function FavoriteGroup({ index, group, enableGroups, setEnableGroups }) {
+export default function FavoriteGroup({ index, group }) {
     const ctx = useContext(AppContext);
 
-    const toggleFavoritesPointsOpen = () => {
-        setFavoritesPointsOpen(!favoritesPointsOpen);
-    };
-
-    const [favoritesPointsOpen, setFavoritesPointsOpen] = useState(false);
-    const [loadingFavorites, setLoadingFavorites] = useState(false);
-    const [markers, setMarkers] = useState([]);
-
-    async function enableLayerWithGroups(setProgressVisible, visible) {
-        ctx.setCurrentObjectType(null);
-        if (!visible) {
-            deleteGroupFromMap();
-            let updateGroup = enableGroups.filter(function (f) {
-                return f.name !== group.name;
-            });
-            setEnableGroups(updateGroup);
-        } else {
-            await addGroupToMap(setProgressVisible, true);
-            setEnableGroups([...enableGroups, group]);
-        }
-    }
-
-    async function getFavorites(addToMap, newFavoriteFiles) {
-        let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(
-            group.file.type
-        )}&name=${encodeURIComponent(group.file.name)}`;
-        newFavoriteFiles[group.name] = {
-            url: url,
-            clienttimems: group.file.clienttimems,
-            updatetimems: group.file.updatetimems,
-            name: group.file.name,
-            addToMap: addToMap,
-        };
-        let f = await Utils.getFileData(newFavoriteFiles[group.name]);
-        if (f) {
-            const favoriteFile = new File([f], group.file.name, {
-                type: 'text/plain',
-            });
-            let favorites = await TracksManager.getTrackData(favoriteFile);
-            if (favorites) {
-                favorites.name = group.file.name;
-            }
-            Object.keys(favorites).forEach((t) => {
-                newFavoriteFiles[group.name][`${t}`] = favorites[t];
-            });
-            return newFavoriteFiles;
-        }
-    }
-
-    function deleteGroupFromMap() {
-        const newFavoritesFiles = Object.assign({}, ctx.favorites);
-        if (newFavoritesFiles[group.name]) {
-            newFavoritesFiles[group.name].url = null;
-            ctx.setFavorites(newFavoritesFiles);
-        }
-        if (ctx.selectedGpxFile.nameGroup === group.name) {
-            ctx.selectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
-            delete ctx.selectedGpxFile.markerCurrent;
-            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-        }
-
-        let savedVisibleFav = JSON.parse(localStorage.getItem(FavoritesManager.FAVORITE_LOCAL_STORAGE));
-        if (savedVisibleFav) {
-            savedVisibleFav = savedVisibleFav.filter((name) => name !== group.name);
-            localStorage.setItem(FavoritesManager.FAVORITE_LOCAL_STORAGE, JSON.stringify(savedVisibleFav));
-        }
-    }
-
-    async function addGroupToMap(setProgressVisible, addToMap) {
-        if (FavoritesManager.getGroupSize(group) > 0) {
-            setProgressVisible(true);
-            let newFavoriteFiles = Object.assign({}, ctx.favorites);
-            if (ctx.favorites[group.name]?.url) {
-                newFavoriteFiles[group.name].addToMap = addToMap;
-                ctx.setFavorites({ ...newFavoriteFiles });
-            } else {
-                newFavoriteFiles = await getFavorites(addToMap, newFavoriteFiles);
-                if (addToMap) {
-                    let newSelectedGpxFile = {};
-                    newSelectedGpxFile.file = Object.assign({}, newFavoriteFiles[group.name]);
-                    newSelectedGpxFile.nameGroup = group.name;
-                    if (!ctx.selectedGpxFile) {
-                        ctx.selectedGpxFile = {};
-                    }
-                    if (ctx.selectedGpxFile.markerCurrent) {
-                        newSelectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
-                    }
-                    ctx.setSelectedGpxFile(newSelectedGpxFile);
-                    ctx.setFavorites({ ...newFavoriteFiles });
-                }
-            }
-
-            let savedVisibleFav = JSON.parse(localStorage.getItem('visibleFav'));
-            if (savedVisibleFav) {
-                savedVisibleFav.push(group.name);
-                localStorage.setItem('visibleFav', JSON.stringify(savedVisibleFav));
-            } else {
-                localStorage.setItem('visibleFav', JSON.stringify([group.name]));
-            }
-            setProgressVisible(false);
-        }
-    }
-
-    useEffect(() => {
-        let markerList = [];
-        if (ctx.favorites[group.name]?.markers) {
-            Object.values(ctx.favorites[group.name].markers._layers).forEach((value) => {
-                let marker = {
-                    title: value.options.title,
-                    icon: value.options.icon.options.html,
-                    layer: value,
-                };
-                markerList.push(marker);
-            });
-        } else if (favoritesPointsOpen && markers.length === 0 && FavoritesManager.getGroupSize(group) > 0) {
-            getFavoritesWithoutLayers().then();
-        }
-        setMarkers(markerList);
-    }, [favoritesPointsOpen, setFavoritesPointsOpen, ctx.favorites]);
-
-    async function getFavoritesWithoutLayers() {
-        let newFavoriteFiles = await getFavorites(false, Object.assign({}, ctx.favorites)).then();
-        ctx.setFavorites({ ...newFavoriteFiles });
-    }
+    const [openActions, setOpenActions] = useState(false);
+    const [processDownload, setProcessDownload] = useState(false);
+    const [hoverIconInfo, setHoverIconInfo] = useState(false);
+    const anchorEl = useRef(null);
 
     useEffect(() => {
         if (ctx.favorites[group.name]?.markers && group.name === ctx.selectedGpxFile.file?.name) {
@@ -142,55 +26,78 @@ export default function FavoriteGroup({ index, group, enableGroups, setEnableGro
         }
     }, [ctx.favorites, ctx.setFavorites]);
 
+    function getSize() {
+        return FavoritesManager.getGroupSize(group) > 0 ? `${FavoritesManager.getGroupSize(group)} points` : 'empty';
+    }
+
+    function getLastModificationDate() {
+        const currentDate = new Date(group.file.updatetimems);
+        const month = currentDate.toLocaleString('default', { month: 'short' });
+        const day = currentDate.getDate();
+        return `${month} ${day}`;
+    }
+
     return (
-        <div key={'group' + index}>
+        <>
             <MenuItem
-                sx={{ ml: 3 }}
-                divider
-                onClick={() => {
-                    FavoritesManager.getGroupSize(group) > 0 && toggleFavoritesPointsOpen();
+                className={styles.group}
+                key={'group' + group.name + index}
+                id={'se-menu-fav-' + group.name}
+                onClick={(e) => {
+                    if (e.target !== 'path') {
+                        ctx.setOpenGroups((prevState) => [...prevState, group]);
+                    }
                 }}
             >
-                <ListItemIcon style={{ color: group.name && FavoritesManager.getColorGroup(ctx, group.name, false) }}>
-                    <Folder fontSize="small" />
+                <ListItemIcon className={styles.icon}>
+                    {group.hidden === 'true' ? (
+                        <FolderHiddenIcon />
+                    ) : (
+                        <FolderIcon
+                            style={{ fill: group.name && FavoritesManager.getColorGroup(ctx, group.name, false) }}
+                        />
+                    )}
                 </ListItemIcon>
                 <ListItemText>
-                    <Typography variant="inherit" noWrap>
-                        {group.name}
+                    <MenuItemsTitle name={group.name} maxLines={2} />
+                    <Typography variant="body2" className={styles.groupInfo} noWrap>
+                        {`${getLastModificationDate()}, ${getSize()}`}
                     </Typography>
                 </ListItemText>
-                <Typography variant="body2" color="textSecondary">
-                    {FavoritesManager.getGroupSize(group) > 0 ? FavoritesManager.getGroupSize(group) : ''}
-                </Typography>
-                {FavoritesManager.getGroupSize(group) > 0 && (
-                    <Switch
-                        checked={
-                            ctx.favorites[group.name]?.addToMap === true &&
-                            enableGroups.some((e) => e.name === group.name)
-                        }
-                        onChange={(e) => {
-                            enableLayerWithGroups(setLoadingFavorites, e.target.checked).then();
-                        }}
-                        onClick={(e) => {
-                            e.stopPropagation();
-                        }}
-                    />
-                )}
-                {FavoritesManager.getGroupSize(group) === 0 ? (
-                    <></>
-                ) : favoritesPointsOpen ? (
-                    <ExpandLess />
-                ) : (
-                    <ExpandMore />
-                )}
+                <IconButton
+                    className={styles.sortIcon}
+                    id={`se-folder-actions-button-${group.name}`}
+                    onMouseEnter={() => setHoverIconInfo(true)}
+                    onMouseLeave={() => setHoverIconInfo(false)}
+                    onClick={(e) => {
+                        setOpenActions(true);
+                        ctx.setOpenedPopper(anchorEl);
+                        e.stopPropagation();
+                    }}
+                    ref={anchorEl}
+                >
+                    {processDownload ? (
+                        <CircularProgress size={24} />
+                    ) : hoverIconInfo ? (
+                        <MenuIconHover />
+                    ) : (
+                        <MenuIcon />
+                    )}
+                </IconButton>
             </MenuItem>
-            {loadingFavorites ? <LinearProgress /> : <></>}
-            <Collapse in={favoritesPointsOpen} timeout="auto">
-                {markers &&
-                    markers.map((marker, index) => {
-                        return <FavoriteItem key={marker + index} index={index} marker={marker} group={group} />;
-                    })}
-            </Collapse>
-        </div>
+            <Divider className={styles.dividerItem} />
+            <ActionsMenu
+                open={openActions}
+                setOpen={setOpenActions}
+                anchorEl={anchorEl}
+                actions={
+                    <FavoriteGroupActions
+                        group={group}
+                        setOpenActions={setOpenActions}
+                        setProcessDownload={setProcessDownload}
+                    />
+                }
+            />
+        </>
     );
 }

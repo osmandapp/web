@@ -1,14 +1,14 @@
 import React, { forwardRef, useContext, useState } from 'react';
 import { Box, Divider, ListItemIcon, ListItemText, MenuItem, Paper, Typography } from '@mui/material';
-import styles from '../trackmenu.module.css';
-import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_gsave_dark.svg';
-import { ReactComponent as RenameIcon } from '../../../assets/icons/ic_action_edit_outlined.svg';
-import { ReactComponent as DeleteIcon } from '../../../assets/icons/ic_action_delete_outlined.svg';
-import GpxCollection from '../GpxCollection';
-import RenameDialog from '../../../dialogs/tracks/RenameDialog';
-import DeleteFolderDialog from '../../../dialogs/tracks/DeleteFolderDialog';
-import { apiPost } from '../../../util/HttpApi';
-import AppContext from '../../../context/AppContext';
+import styles from '../trackfavmenu.module.css';
+import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_gsave_dark.svg';
+import { ReactComponent as RenameIcon } from '../../assets/icons/ic_action_edit_outlined.svg';
+import { ReactComponent as DeleteIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
+import GpxCollection from '../tracks/GpxCollection';
+import RenameDialog from '../../dialogs/tracks/RenameDialog';
+import DeleteFolderDialog from '../../dialogs/tracks/DeleteFolderDialog';
+import { apiPost } from '../../util/HttpApi';
+import AppContext from '../../context/AppContext';
 
 const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, ref) => {
     const ctx = useContext(AppContext);
