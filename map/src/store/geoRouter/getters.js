@@ -14,7 +14,8 @@ const PROFILE_LINE = TracksManager.PROFILE_LINE;
  * @return {bool}
  */
 export function isReady() {
-    return this.loaded === true && (this.paused === false || this.type !== 'osmand' || this.profile === PROFILE_LINE);
+    return this.loaded === true && this.paused === false; // as 'osmand' becomes default, no more exceptions for paused state
+    // return this.loaded === true && (this.paused === false || this.type !== 'osmand' || this.profile === PROFILE_LINE); // obsolete
 }
 
 /**
