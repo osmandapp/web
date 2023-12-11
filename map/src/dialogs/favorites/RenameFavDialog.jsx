@@ -140,7 +140,7 @@ export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }
                 ></TextField>
             </DialogContent>
             <DialogActions>
-                <Button className={dialogStyles.button} onClick={closeDialogs}>
+                <Button id={`se-rename-fav-cancel`} className={dialogStyles.button} onClick={closeDialogs}>
                     Cancel
                 </Button>
                 <Button
