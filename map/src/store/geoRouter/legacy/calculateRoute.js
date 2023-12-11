@@ -117,7 +117,7 @@ async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErr
         avoidRoadsUrl = '&avoidRoads=' + avoidRoadsUrl.substring(1);
     }
     changeRouteText(true, null);
-    const maxDist = `&maxDist=${process.env.REACT_APP_MAX_ROUTE_DISTANCE}`;
+    const maxDist = '&maxDist=' + this.getDistanceLimit(); // km
     const routeModeStr = TracksManager.formatRouteMode(geoProfile);
     const response = await apiGet(
         `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?` +
