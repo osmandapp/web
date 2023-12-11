@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<gpx version="1.1" creator="OsmAnd~ 4.6.0" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name></name>
+  </metadata>
+  <wpt lat="52.3554606" lon="4.8929554">
+    <time>2023-04-01T08:12:01Z</time>
+    <name>Albert Cuyp-markt</name>
+    <type>shops</type>
+    <extensions>
+      <osmand:address>Albert Cuypstraat (De Pijp) 130, Zuid</osmand:address>
+      <osmand:icon>shop_department_store</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:amenity_origin>Amenity:Albert Cuyp market: shop:marketplace</osmand:amenity_origin>
+      <osmand:color>#b300ff</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.355944" lon="4.8947622">
+    <time>2023-03-16T19:04:15Z</time>
+    <name>Albert Cuypstraat (De Pijp) 187 second hand</name>
+    <type>shops</type>
+    <extensions>
+      <osmand:address>Zuid</osmand:address>
+      <osmand:icon>amenity_fire_station</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#43a047ff</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.3629791" lon="4.9270337">
+    <time>2023-04-01T08:14:51Z</time>
+    <name>Dapperstraat 40-1</name>
+    <type>shops</type>
+    <extensions>
+      <osmand:address>Oost</osmand:address>
+      <osmand:icon>shop_department_store</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#b300ff</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.3837158" lon="4.8851363">
+    <time>2023-03-16T19:10:15Z</time>
+    <name>Haarlemmerdijk 143</name>
+    <type>shops</type>
+    <extensions>
+      <osmand:address>Amsterdam</osmand:address>
+      <osmand:icon>amenity_fire_station</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#43a047ff</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.3805926" lon="4.8906611">
+    <time>2023-03-16T19:13:40Z</time>
+    <name>Haarlemmerstraat (Amsterdam) 99</name>
+    <type>shops</type>
+    <extensions>
+      <osmand:address>Centrum</osmand:address>
+      <osmand:icon>amenity_fire_station</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#43a047ff</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.3687564" lon="4.8859946">
+    <time>2023-03-16T19:11:39Z</time>
+    <name>Huidenstraat 7-1</name>
+    <type>shops</type>
+    <extensions>
+      <osmand:address>Amsterdam</osmand:address>
+      <osmand:icon>amenity_fire_station</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#43a047ff</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.3656643" lon="4.8667685">
+    <time>2023-03-16T19:11:03Z</time>
+    <name>Kinkerstraat (West) 193</name>
+    <type>shops</type>
+    <extensions>
+      <osmand:address>Amsterdam</osmand:address>
+      <osmand:icon>amenity_fire_station</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#43a047ff</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.3596705" lon="4.878847">
+    <time>2023-04-03T07:11:34Z</time>
+    <name>Michael Kors</name>
+    <type>shops</type>
+    <extensions>
+      <osmand:address>Pieter Cornelisz. Hooftstraat 111, Amsterdam</osmand:address>
+      <osmand:icon>shop_department_store</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:amenity_origin>Amenity:Michael Kors: shop:clothes</osmand:amenity_origin>
+      <osmand:color>#b300ff</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.3636142" lon="4.888966">
+    <time>2023-03-16T19:08:18Z</time>
+    <name>Nieuwe Spiegelstraat (Amsterdam) 37-1</name>
+    <type>shops</type>
+    <extensions>
+      <osmand:address>Centrum</osmand:address>
+      <osmand:icon>amenity_fire_station</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#43a047ff</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.3745709" lon="4.8946506">
+    <time>2023-03-28T06:40:44Z</time>
+    <name>Primark</name>
+    <type>shops</type>
+    <extensions>
+      <osmand:address>Beurspassage 2, Centrum</osmand:address>
+      <osmand:icon>shop_department_store</osmand:icon>
+      <osmand:background>octagon</osmand:background>
+      <osmand:amenity_origin>Amenity:Primark: shop:clothes</osmand:amenity_origin>
+      <osmand:color>#5722ff</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.3773764" lon="4.886016">
+    <time>2023-03-16T19:12:18Z</time>
+    <name>Prinsengracht 201A</name>
+    <type>shops</type>
+    <extensions>
+      <osmand:address>Amsterdam</osmand:address>
+      <osmand:icon>amenity_fire_station</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#43a047ff</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.3709514" lon="4.9007248">
+    <time>2023-03-16T19:05:57Z</time>
+    <name>Sint Antoniesbreestraat (Amsterdam) 25A</name>
+    <type>shops</type>
+    <extensions>
+      <osmand:address>Centrum</osmand:address>
+      <osmand:icon>amenity_fire_station</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#43a047ff</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.4438267" lon="3.5723525">
+    <time>2023-03-16T19:08:46Z</time>
+    <name>Spuistraat (Oude Binnenstad) 96</name>
+    <type>shops</type>
+    <extensions>
+      <osmand:address>Vlissingen</osmand:address>
+      <osmand:icon>amenity_fire_station</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#43a047ff</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.3691041" lon="4.9008535">
+    <time>2023-03-16T19:06:49Z</time>
+    <name>Waterlooplein (Amsterdam) 1</name>
+    <type>shops</type>
+    <extensions>
+      <osmand:address>Centrum</osmand:address>
+      <osmand:icon>amenity_fire_station</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#43a047ff</osmand:color>
+    </extensions>
+  </wpt>
+  <extensions>
+    <osmand:points_groups>
+      <group name="shops" color="#b300ff" icon="shop_department_store" background="circle" />
+    </osmand:points_groups>
+  </extensions>
+</gpx>

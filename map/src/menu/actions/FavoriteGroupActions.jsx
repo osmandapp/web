@@ -148,7 +148,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                     </MenuItem>
                     <Divider className={styles.dividerActions} />
                     <MenuItem
-                        id="se-favoritre-folder-actions-delete"
+                        id="se-favorite-folder-actions-delete"
                         className={styles.action}
                         onClick={() => setOpenDeleteDialog(true)}
                     >
