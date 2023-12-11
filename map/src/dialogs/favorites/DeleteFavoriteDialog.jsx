@@ -93,13 +93,15 @@ export default function DeleteFavoriteDialog({ dialogOpen, setDialogOpen, wpt = 
     }
 
     return (
-        <Dialog open={true} onClose={toggleShowDialog} onClick={(e) => e.stopPropagation()}>
+        <Dialog id="se-delete-fav-dialog" open={true} onClose={toggleShowDialog} onClick={(e) => e.stopPropagation()}>
             <DialogTitle>{getTitleDialog()}</DialogTitle>
             <DialogContent>
                 <DialogContentText>{getQuestionDialog()}</DialogContentText>
             </DialogContent>
             <DialogActions>
-                <Button onClick={() => deleteWpt()}>Delete</Button>
+                <Button id="se-delete-fav-dialog-submit" onClick={() => deleteWpt()}>
+                    Delete
+                </Button>
                 <Button onClick={toggleShowDialog}>Cancel</Button>
             </DialogActions>
         </Dialog>
