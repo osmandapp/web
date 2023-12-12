@@ -5,6 +5,7 @@ import TracksManager from '../../../manager/track/TracksManager';
 import { styled } from '@mui/material/styles';
 import {
     createFavGroupFreeName,
+    getGroupNameFromFile,
     isFavGroupExists,
     prepareFavGroupName,
     saveFavoriteGroup,
@@ -26,6 +27,7 @@ export default function FavoriteGroupUploader({ children }) {
         for (const file in uploadedFiles) {
             let track = uploadedFiles[file].track;
             let groupName = prepareFavGroupName(track.name);
+            groupName = getGroupNameFromFile(groupName);
             if (validName(groupName)) {
                 groupName = createFavGroupFreeName(groupName, ctx.favorites?.groups);
                 if (importFavoriteGroup) {
@@ -69,6 +71,7 @@ export default function FavoriteGroupUploader({ children }) {
                 const track = await TracksManager.getTrackData(file);
                 if (track) {
                     let groupName = prepareFavGroupName(file.name);
+                    groupName = getGroupNameFromFile(groupName);
                     if (isFavGroupExists(groupName, ctx.favorites.groups)) {
                         if (selected) {
                             setImportFile({

@@ -21,3 +21,7 @@ code {
         user-select: none;
     }
 }
+
+.MuiIconButton-root.Mui-disabled {
+    fill: #b3b3b3 !important;
+}

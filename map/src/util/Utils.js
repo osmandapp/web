@@ -193,7 +193,7 @@ export function copyObj(obj) {
 }
 
 // remove dangerous filename parts
-export function prepareFileName(filename) {
+export function prepareFileName(filename, isFavoriteGroup = false) {
     const truncate = (sanitized, length) => {
         const uint8Array = new TextEncoder().encode(sanitized);
         const truncated = uint8Array.slice(0, length);
@@ -201,8 +201,9 @@ export function prepareFileName(filename) {
     };
 
     const newlineRe = /\n/g;
+    // Note: It is allowed to use / in favorite file names
     // eslint-disable-next-line no-useless-escape
-    const illegalRe = /[\/\?<>\\:\*\|"]/g;
+    const illegalRe = isFavoriteGroup ? /[\?<>\\:\*\|"]/g : /[\/\?<>\\:\*\|"]/g;
     // eslint-disable-next-line no-control-regex
     const controlRe = /[\x00-\x1f\x80-\x9f]/g;
     const reservedRe = /^\.+$/;
