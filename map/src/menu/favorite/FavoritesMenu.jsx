@@ -155,7 +155,9 @@ export default function FavoritesMenu() {
     return (
         <>
             <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
-                <GroupHeader favoriteGroup={DEFAULT_FAV_GROUP_NAME} setSortGroups={setSortGroups} />
+                {!isEmpty(ctx.favorites) && (
+                    <GroupHeader favoriteGroup={DEFAULT_FAV_GROUP_NAME} setSortGroups={setSortGroups} />
+                )}
                 {!isEmpty(ctx.favorites) && ctx.favorites?.groups?.length > 0 ? (
                     <Box
                         minWidth={ctx.infoBlockWidth}
