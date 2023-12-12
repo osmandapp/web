@@ -75,12 +75,14 @@ export default function GroupHeader({
     }
 
     function disableSort() {
-        if (trackGroup) {
-            return trackGroup.files?.length === 0;
-        } else if (favoriteGroup) {
-            return ctx.favorites.groups?.length === 0;
+        if (ctx.loginUser) {
+            if (trackGroup) {
+                return trackGroup.files?.length === 0;
+            } else if (favoriteGroup) {
+                return ctx.favorites.groups?.length === 0;
+            }
         }
-        return false;
+        return true;
     }
 
     return (
