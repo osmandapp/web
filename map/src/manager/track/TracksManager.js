@@ -761,7 +761,7 @@ export function eligibleToApplySrtm({ track }) {
             track.tracks?.forEach((t) => countPointsAndGeo(t.points));
         }
 
-        return totalPoints <= AUTO_SRTM_MAX_POINTS;
+        return totalPoints <= AUTO_SRTM_MAX_POINTS && totalPoints > 4; // avoid Line-only [2 points = 2 geometry points]
     }
 
     const analysis = track.analysis;
