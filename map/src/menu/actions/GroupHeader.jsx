@@ -16,6 +16,7 @@ import SortActions, { byTime } from './SortActions';
 import SortMenu from './SortMenu';
 import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
 import FavoriteGroupUploader from '../../frame/components/util/FavoriteGroupUploader';
+import IconButtonWithPermissions from '../../frame/components/IconButtonWithPermissions';
 
 export default function GroupHeader({
     trackGroup = null,
@@ -125,21 +126,16 @@ export default function GroupHeader({
                     {trackGroup && (
                         <Tooltip key={'add_folder'} title="Add folder" arrow placement="bottom-end">
                             <span>
-                                <IconButton
+                                <IconButtonWithPermissions
                                     id="se-add-folder"
                                     variant="contained"
                                     type="button"
                                     className={styles.appBarIcon}
                                     onClick={() => setOpenAddFolderDialog(true)}
-                                    ref={anchorEl}
-                                    disabled={
-                                        !trackGroup ||
-                                        trackGroup?.files?.length === 0 ||
-                                        ctx.accountInfo?.account === FREE_ACCOUNT
-                                    }
+                                    disabled={!trackGroup || trackGroup?.files?.length === 0}
                                 >
                                     <AddFolderIcon />
-                                </IconButton>
+                                </IconButtonWithPermissions>
                             </span>
                         </Tooltip>
                     )}
@@ -147,7 +143,7 @@ export default function GroupHeader({
                         <Tooltip key={'import_track'} title="Import track" arrow placement="bottom-end">
                             <span>
                                 <CloudGpxUploader folder={trackGroup?.fullName}>
-                                    <IconButton
+                                    <IconButtonWithPermissions
                                         id="se-import-cloud-track"
                                         component="span"
                                         variant="contained"
@@ -156,7 +152,7 @@ export default function GroupHeader({
                                         className={styles.appBarIcon}
                                     >
                                         <ImportIcon />
-                                    </IconButton>
+                                    </IconButtonWithPermissions>
                                 </CloudGpxUploader>
                             </span>
                         </Tooltip>
