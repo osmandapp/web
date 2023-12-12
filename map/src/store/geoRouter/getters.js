@@ -158,7 +158,16 @@ function getProfileDetails({ p, type, router, profile } = {}) {
     };
 }
 
+const osrmToOsmAndProfiles = {
+    'OSRM-car': 'car',
+    'OSRM-bike': 'bicycle',
+    'OSRM-foot': 'pedestrian',
+};
+
 function getProfileIcon({ color, profile } = {}) {
+    if (osrmToOsmAndProfiles[profile]) {
+        profile = osrmToOsmAndProfiles[profile];
+    }
     if (profile === PROFILE_LINE) {
         return <LinearScaleIcon sx={{ color: color }} fontSize="small" />;
     } else if (profile.includes('rescuetrack')) {
