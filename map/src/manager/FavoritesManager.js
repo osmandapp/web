@@ -15,6 +15,7 @@ const DEFAULT_GROUP_WPT_COLOR = '#eecc22';
 const FAV_FILE_PREFIX = 'favorites-';
 export const LOCATION_UNAVAILABLE = 'loc_unavailable';
 export const DEFAULT_GROUP_NAME_POINTS_GROUPS = '';
+export const SUBFOLDER_PLACEHOLDER = '_%_';
 const FAVORITE_LOCAL_STORAGE = 'visibleFav';
 const colors = [
     '#10c0f0',
@@ -51,6 +52,7 @@ function getShapesSvg(color) {
 }
 
 async function addFavorite(data, fileName, updatetime) {
+    fileName = getGroupNameForFile(fileName);
     let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add`, data, {
         params: {
             fileName: fileName,
@@ -64,6 +66,7 @@ async function addFavorite(data, fileName, updatetime) {
 }
 
 async function deleteFavorite(data, fileName, updatetime) {
+    fileName = getGroupNameForFile(fileName);
     let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/delete`, data, {
         params: {
             fileName: fileName,
@@ -77,6 +80,8 @@ async function deleteFavorite(data, fileName, updatetime) {
 }
 
 async function updateFavorite(data, wptName, oldGroupName, newGroupName, oldGroupUpdatetime, newGroupUpdatetime, ind) {
+    oldGroupName = getGroupNameForFile(oldGroupName);
+    newGroupName = getGroupNameForFile(newGroupName);
     let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update`, data, {
         params: {
             wptName: wptName,
@@ -159,7 +164,8 @@ function getColorGroup(ctx, groupName, wpt) {
 }
 
 function createGroup(file) {
-    file.folder = prepareFavGroupName(file.name);
+    file.preparedName = getGroupNameFromFile(file.name);
+    file.folder = prepareFavGroupName(file.preparedName);
     let pointsGroups = FavoritesManager.prepareTrackData(file.details.pointGroups);
     const groupName = file.folder === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : file.folder;
 
@@ -175,12 +181,27 @@ function createGroup(file) {
     };
 }
 
+export function getGroupNameForFile(groupName) {
+    if (groupName.includes('/')) {
+        return groupName.replace(/\//g, SUBFOLDER_PLACEHOLDER);
+    }
+    return groupName;
+}
+
+export function getGroupNameFromFile(fileName) {
+    if (fileName.includes(SUBFOLDER_PLACEHOLDER)) {
+        return fileName.replace(new RegExp(SUBFOLDER_PLACEHOLDER, 'g'), '/');
+    }
+    return fileName;
+}
+
 export function prepareFavGroupName(name) {
     return name.replace(new RegExp(`^${FavoritesManager.FAV_FILE_PREFIX}`), '').replace(/\.gpx$/, '');
 }
 
 export async function saveFavoriteGroup(data, groupName, ctx) {
     if (data.pointsGroups[groupName]) {
+        groupName = getGroupNameForFile(groupName);
         let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add-group`, data, {
             params: {
                 groupName: groupName,
