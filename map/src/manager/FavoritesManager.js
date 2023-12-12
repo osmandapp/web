@@ -190,7 +190,7 @@ export function getGroupNameForFile(groupName) {
 
 export function getGroupNameFromFile(fileName) {
     if (fileName.includes(SUBFOLDER_PLACEHOLDER)) {
-        return fileName.replace(new RegExp(SUBFOLDER_PLACEHOLDER, 'g'), '/');
+        return fileName.replaceAll(SUBFOLDER_PLACEHOLDER, '/');
     }
     return fileName;
 }
