@@ -9,13 +9,17 @@ import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import { prepareFileName } from '../../util/Utils';
 import { apiGet } from '../../util/HttpApi';
 import { refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
-import FavoritesManager, { prepareFavGroupName } from '../../manager/FavoritesManager';
+import FavoritesManager, {
+    getGroupNameForFile,
+    getGroupNameFromFile,
+    prepareFavGroupName,
+} from '../../manager/FavoritesManager';
 
 export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }) {
     const ctx = useContext(AppContext);
 
     const [nameError, setNameError] = useState('');
-    const [name, setName] = useState(prepareFavGroupName(group.file.name));
+    const [name, setName] = useState(getGroupNameFromFile(prepareFavGroupName(group.file.name)));
 
     const renameError = {
         title: 'Rename error',
@@ -23,7 +27,7 @@ export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }
     };
 
     async function rename() {
-        const newName = prepareFileName(name);
+        const newName = prepareFileName(name, true);
         if (validationName(newName)) {
             if (group) {
                 await renameFavGroup(group, newName, ctx);
@@ -37,12 +41,13 @@ export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }
     }
 
     async function renameFavGroup(group, newName, ctx) {
-        const newGroupName = FavoritesManager.FAV_FILE_PREFIX + newName + '.gpx';
+        let newGroupName = FavoritesManager.FAV_FILE_PREFIX + newName + '.gpx';
+        newGroupName = getGroupNameForFile(newGroupName);
         if (newGroupName !== group.file.name) {
             const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/rename-fav-group`, {
                 params: {
                     fullOldName: group.file.name,
-                    oldName: prepareFavGroupName(group.file.name),
+                    oldName: getGroupNameFromFile(prepareFavGroupName(group.file.name)),
                     fullNewName: newGroupName,
                     newName: newName,
                     oldUpdatetime: group.updatetimems,

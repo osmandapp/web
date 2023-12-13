@@ -14,7 +14,7 @@ import ChangeEmailDialog from './ChangeEmailDialog';
 import DownloadBackupDialog from './DownloadBackupDialog';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import { makeStyles } from '@material-ui/core/styles';
-import { getAccountInfo } from '../manager/LoginManager';
+import { FREE_ACCOUNT, getAccountInfo } from '../manager/LoginManager';
 
 export default function LoginDialog() {
     const ctx = useContext(AppContext);
@@ -111,6 +111,10 @@ export default function LoginDialog() {
         }
     };
 
+    function getAccountType(type) {
+        return type === FREE_ACCOUNT ? 'OsmAnd Start' : type;
+    }
+
     if (ctx.loginUser) {
         return (
             <Dialog classes={{ paper: classes.paper }} open={true} onClose={handleClose}>
@@ -170,7 +174,7 @@ export default function LoginDialog() {
                                 <MenuItem>
                                     <ListItemText>
                                         <Typography component={'span'} sx={{ ml: 1 }} variant="body2" noWrap>
-                                            {`Subscription: ${ctx.accountInfo.account} `}
+                                            {`Subscription: ${getAccountType(ctx.accountInfo.account)} `}
                                             {ctx.accountInfo.type && `(type: ${ctx.accountInfo.type})`}
                                         </Typography>
                                     </ListItemText>
