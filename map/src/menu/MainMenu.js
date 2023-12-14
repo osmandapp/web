@@ -10,7 +10,7 @@ import {
     Toolbar,
 } from '@mui/material';
 import { Divider, Box } from '@mui/material';
-import { Menu, Person, Map } from '@mui/icons-material';
+import { Menu, Person } from '@mui/icons-material';
 import AppContext, {
     OBJECT_TYPE_CLOUD_TRACK,
     OBJECT_TYPE_FAVORITE,
