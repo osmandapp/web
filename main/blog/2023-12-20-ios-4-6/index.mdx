@@ -30,58 +30,78 @@ We are pleased to announce the release of a new version of [OsmAnd for iOS](http
 
 
 - [CarPlay dashboard support](#carplay-dashboard-support)
-- [External sensors BLE sensors support](#external-sensors)
-- Simple widget for Top / Bottom panel
-- Wikivoyage Travel Guides
+- [External sensors](#external-sensors)
+- [Updates for Widgets](#widget-updates)
+- [Wikivoyage Travel Guides](#travel-guides)
 - Night theme
 - Redesign OSM plugin for uploading POI/Note
 - Add OSM link with pin into the Context menu
+- More
 
 
 ## CarPlay dashboard support
 
-![Car Play](./img/car_play_1.png)
-
 One of the additions in this update is the integration of the OsmAnd map into the CarPlay dashboard.  
 - Added dashboard support.
+- Added 3D button to the CarPlay screen.
 - Fixed bugs.
 
+![Car Play](./img/car_play_2.png)
 
 ## External sensors
+
+The release introduces support for [Bluetooth Low Energy (BLE) sensors](https://osmand.net/docs/user/plugins/external-sensors), providing compatibility for a range of external sensors such as speed, cadence, distance, temperature and pulse. This inclusion enhances the app’s capability to sync and display data from these external devices, catering to cycling enthusiasts and those using supplementary fitness equipment.   
 
 |Sensor connection| Widget on the screen|
 |-------|------|
 |![Sensor](./img/sensor_1.png)|![Sensor](./img/sensor_2.png)|
 
-The release introduces support for [Bluetooth Low Energy (BLE) sensors](https://osmand.net/docs/user/plugins/external-sensors), providing compatibility for a range of external sensors such as speed, cadence, distance, bicycle power, and pulse. This inclusion enhances the app’s capability to sync and display data from these external devices, catering to cycling enthusiasts and those using supplementary fitness equipment.   
-
 You can add the following external sensors to the OsmAnd application:
 - **Heart Rate**. The heart rate sensor can transmit your heart rate in real time. This is useful for cycling training when you want to track your heart rate to optimize your training efforts.
-- **Bicycle Power**. Your bike's power sensors measure the power you exert when you pedal. This allows you to analyze and optimize your workouts to improve efficiency and performance.
 - **Bicycle Cadence**. Cadence is the number of pedal turns per minute. Cadence sensors help you maintain optimal pedaling speed for efficient cycling.
 - **Bicycle Speed**. Speed sensors provide information about your current speed while cycling.
 - **Bicycle Distance**. Distance sensors measure the distance you travel when you're driving.
 - **Temperature**. The widget displays the ambient temperature, which can be very useful if you don't want to overheat or freeze on your bike or motorcycle.
 
+This data from external sensors can be added for a [recording track](https://osmand.net/docs/user/plugins/external-sensors/#trip-recording) or to the [Widget panel](https://osmand.net/docs/user/widgets/info-widgets/#external-sensors-widgets). This data you can see on [_Analyze Track on the map_](https://osmand.net/docs/user/map/tracks-on-map#analyze-track-on-map).
 
-## Simple widget for Top / Bottom panel
+![Sensor](./img/sensor_4.png)
 
-Added _Coordinates_, _Lanes_, _Map markers bar_, _Street name_ widgets for Top and Bottom panels:
+## Widget updates
+
+### External sensors widgets
+
+As we noted at [this article](#external-sensors) that external sensors were added. And now you can add [widgets of external sensors](https://osmand.net/docs/user/widgets/info-widgets/#external-sensors-widgets) to a device screen:
+
+_Menu → Configure screen → Right/Left panel → Add widget → External sensors_
+
+![Widget](./img/sensor_3.png)
+
+### Top / Bottom panels
+
+Added [_Coordinates_](https://osmand.net/docs/user/widgets/info-widgets#coordinates-widget), [_Lanes_](https://osmand.net/docs/user/widgets/nav-widgets#lanes), [_Map markers bar_](https://osmand.net/docs/user/widgets/markers), [_Street name_](https://osmand.net/docs/user/widgets/nav-widgets#street-name) widgets for Top and Bottom panels:
 
 ![Widget](./img/widget_top_bottom.png)
 
-
 ## Travel Guides
 
-For this release we added [Wikivoyage Travel Guides](https://osmand.net/docs/user/plan-route/travel-guides). Now you can upload Wikivoyage points and articles for your trip on the OsmAnd map.
+For this release we added [Wikivoyage Travel Guides](https://osmand.net/docs/user/plan-route/travel-guides). Now, you can upload Wikivoyage points and articles for your trip on the OsmAnd map.
 
-*OsmAnd Menu > Travel guides*
+*OsmAnd Menu → Travel guides*
 
 |Download menu| Articles list|
 |-------|------|
 |![wikivoyage](./img/wikivoyage_1.png)|![wikivoyage](./img/wikivoyage_2.png)|
 
-Now, you can add wikivoyage points on the map or find in om _My Places > Tracks > Travel_ menu
+Added Bookmarks for _Travel_ tab in _My Places menu_:
+
+*OsmAnd Menu → My Places → Travel*
+
+|Trabel tab| Bookmark|
+|-------|------|
+|![wikivoyage](./img/wikivoyage_5.png)|![wikivoyage](./img/wikivoyage_6.png)|
+
+You can add wikivoyage points on the map or find in om [_My Places > Tracks > Travel_](https://osmand.net/docs/user/personal/tracks/#my-places-menu) menu.
 
 |Wikivoyage article| Points on the map|
 |-------|------|
@@ -90,7 +110,7 @@ Now, you can add wikivoyage points on the map or find in om _My Places > Tracks 
 
 ## Night theme
 
-Added night theme for all OsmAnd screens.
+Added the night theme for all OsmAnd screens.
 
 Changing appearance for OsmAnd is changing appearance for iOS system:
 
@@ -111,3 +131,51 @@ Changed [POI/Note upload menu](https://osmand.net/docs/user/plugins/osm-editing#
 Now in [the Context menu](https://osmand.net/docs/user/map/map-context-menu#details) of a point, you can find not only geographical coordinates in various formats, but also a shareable OpenStreetMap Link with location marker.
 
 ![OSM Link](./img/osm_link.png)
+
+
+## More
+
+### Rename Route parameters
+
+For [_Cycling_ and _On foot_](https://osmand.net/docs/user/navigation/routing/bicycle-based-routing#route-parameters---bicycle) routing we renamed "_Use elevation data_" to "_Preferred terrain_":
+
+- _Menu → Configure profile (Boat, Driving, Walking or another one) → Navigation settings → Route parameters → Preferred terrain → Any, Flat, Less hilly, Hilly_
+
+- _Navigation button → Settings → Preferred terrain → Any, Flat, Less hilly, Hilly_
+
+![Preferred terrain](./img/routing.png)
+
+### New Help screen
+
+This is an important new feature for users who often travel in regions with limited internet access. The application now has an offline (saved to cache) help screen that helps you solve questions and find information without a network connection.
+
+_Menu → Help_
+
+In addition, the _Help_ menu has been completely redesigned, adding articles from [www.osmand.net/docs](https://osmand.net/docs/intro) with additional menu sections:
+
+_Most viewed, User guide, Troubleshooting, Contact us, Report issues, About OsmAnd_.
+
+### Info for navigaton route
+
+Additional info were added for Navigaton screen:
+- Altitude range (Max/Min altitude)
+- [CO2 emission](https://osmand.net/docs/user/navigation/guidance/navigation-settings#fuel-used-by-motor) (Vehicle engine type is provided)
+
+![Route info](./img/route_info.png)
+
+### GPX slope color
+
+Palitra for Slope ([Track Appearance](https://osmand.net/docs/user/map/tracks-on-map#track-appearance)) is symmetric. Reasoning is that in plenty of use cases like hiking, biking, trail running, skiing, descents are of equal significance than ascents, there is no reason to compress the color space of one vs. the other.
+
+|Track Appearance menu| Track on the map|
+|----|----|
+|![Slope color](./img/slope_0.png)|![Slope color](./img/slope_1.png)|
+
+### Default appearance for Favorites folder
+
+- Added context menu for Favorites folders.
+- Allow to set default appearance for Favorites folders.
+
+|Context menu| Appearance menu|
+|----|----|
+|![Folder](./img/folder.png)|![Folder](./img/folder_1.png)|
