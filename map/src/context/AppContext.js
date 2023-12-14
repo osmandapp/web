@@ -17,6 +17,7 @@ export const OBJECT_TYPE_ROUTE_TRACK = 'route_track';
 export const OBJECT_TYPE_FAVORITE = 'favorite';
 export const OBJECT_TYPE_WEATHER = 'weather';
 export const OBJECT_TYPE_POI = 'poi';
+export const OBJECT_CONFIGURE_MAP = 'configure_map';
 export const defaultConfigureMapStateValues = {
     showFavorites: true,
 };

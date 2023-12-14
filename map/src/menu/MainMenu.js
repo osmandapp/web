@@ -12,6 +12,7 @@ import {
 import { Divider, Box } from '@mui/material';
 import { Menu, Person } from '@mui/icons-material';
 import AppContext, {
+    OBJECT_CONFIGURE_MAP,
     OBJECT_TYPE_CLOUD_TRACK,
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_LOCAL_TRACK,
@@ -70,7 +71,7 @@ export default function MainMenu({
             name: 'Configure Map',
             icon: ConfigureMapIcon,
             component: <ConfigureMap />,
-            type: null,
+            type: OBJECT_CONFIGURE_MAP,
             show: true,
             id: 'se-show-menu-configuremap',
         },
@@ -182,14 +183,20 @@ export default function MainMenu({
     function selectMenu(item) {
         ctx.setOpenGroups([]);
         if (menuInfo) {
+            // update menu
             setShowInfoBlock(false);
             const menu = !isSelectedMenuItem(item) ? item : null;
             setMenuInfo(menu?.component);
             setSelectedType(menu?.type);
+            ctx.setCurrentObjectType(null);
         } else {
+            // select first menu
             setMenuInfo(item.component);
             setSelectedType(item.type);
             setOpenMainMenu(false);
+            if (item.type === OBJECT_CONFIGURE_MAP) {
+                ctx.setCurrentObjectType(OBJECT_CONFIGURE_MAP);
+            }
         }
     }
 

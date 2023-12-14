@@ -21,14 +21,16 @@ import headerStyles from '../trackfavmenu.module.css';
 import styles from '../configuremap/configuremap.module.css';
 import { ReactComponent as StarIcon } from '../../assets/icons/ic_action_favorite.svg';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
+import { cloneDeep } from 'lodash';
 
 export default function ConfigureMap() {
     const ctx = useContext(AppContext);
     const [openSettings, setOpenSettings] = useState(false);
 
     const handleFavoritesSwitchChange = () => {
-        ctx.configureMapState.showFavorites = !ctx.configureMapState.showFavorites;
-        ctx.setConfigureMapState({ ...ctx.configureMapState });
+        let newConfigureMap = cloneDeep(ctx.configureMapState);
+        newConfigureMap.showFavorites = !ctx.configureMapState.showFavorites;
+        ctx.setConfigureMapState(newConfigureMap);
     };
 
     return (
@@ -46,7 +48,7 @@ export default function ConfigureMap() {
                                     variant="contained"
                                     type="button"
                                     className={headerStyles.appBarIcon}
-                                    onClick={() => ctx.setConfigureMapState(defaultConfigureMapStateValues)}
+                                    onClick={() => ctx.setConfigureMapState({ ...defaultConfigureMapStateValues })}
                                 >
                                     <ResetIcon />
                                 </IconButton>
