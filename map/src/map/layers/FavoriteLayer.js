@@ -6,7 +6,7 @@ import TrackLayerProvider from '../util/TrackLayerProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
 import FavoritesManager from '../../manager/FavoritesManager';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
-import _ from 'lodash';
+import _, { isEmpty } from 'lodash';
 
 const FavoriteLayer = () => {
     const ctx = useContext(AppContext);
@@ -20,29 +20,56 @@ const FavoriteLayer = () => {
         selectedGpxFileRef.current = ctx.selectedGpxFile;
     }, [ctx.selectedGpxFile]);
 
+    useEffect(() => {
+        let filesMap = ctx.favorites ? ctx.favorites : {};
+        Object.entries(filesMap).forEach(([key, file]) => {
+            if (!ctx.configureMapState.showFavorites) {
+                removeMarkersFromMap(file);
+            } else {
+                if (file.markers) {
+                    addMarkersOnMap(file, key);
+                }
+            }
+        });
+    }, [ctx.configureMapState.showFavorites]);
+
+    function removeMarkersFromMap(file) {
+        if (file.markers && !isEmpty(file.markers)) {
+            Object.values(file.markers._layers).forEach((l) => map.removeLayer(l));
+        }
+        if (file.oldMarkers) {
+            Object.values(file.oldMarkers._layers).forEach((l) => map.removeLayer(l));
+            delete file.oldMarkers;
+        }
+    }
+
+    function addMarkersOnMap(file, key, addToMap = true) {
+        if (!file.markers) {
+            file.markers = TrackLayerProvider.createLayersByTrackData(file, ctx, map);
+            if (ctx.selectedGpxFile?.markerCurrent && key === ctx.selectedGpxFile.nameGroup) {
+                updateSelectedFavoriteOnMap(file);
+            }
+        }
+        if (file.markers) {
+            if (file.markers && addToMap) {
+                Object.values(file.markers._layers).forEach((l) => l.addTo(map).on('click', onClick));
+            }
+            if (
+                ctx.selectedGpxFile &&
+                file.name === ctx.selectedGpxFile.file?.name &&
+                !ctx.selectedGpxFile.editFavorite
+            ) {
+                map.fitBounds(file.markers.getBounds(), fitBoundsOptions(ctx));
+            }
+        }
+    }
+
     //add favorites groups
     useEffect(() => {
         let filesMap = ctx.favorites ? ctx.favorites : {};
         Object.entries(filesMap).forEach(([key, file]) => {
             if (file.url) {
-                if (!file.markers) {
-                    file.markers = TrackLayerProvider.createLayersByTrackData(file, ctx, map);
-                    if (ctx.selectedGpxFile?.markerCurrent && key === ctx.selectedGpxFile.nameGroup) {
-                        updateSelectedFavoriteOnMap(file);
-                    }
-                }
-                if (file.markers) {
-                    if (file.addToMap && file.markers) {
-                        file.markers.addTo(map).on('click', onClick);
-                    }
-                    if (
-                        ctx.selectedGpxFile &&
-                        file.name === ctx.selectedGpxFile.file?.name &&
-                        !ctx.selectedGpxFile.editFavorite
-                    ) {
-                        map.fitBounds(file.markers.getBounds(), fitBoundsOptions(ctx));
-                    }
-                }
+                addMarkersOnMap(file, key, file.addToMap);
             } else if (!file.url && file.markers) {
                 map.removeLayer(file.markers);
             }
