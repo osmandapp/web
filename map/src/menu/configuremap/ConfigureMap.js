@@ -38,19 +38,21 @@ export default function ConfigureMap() {
                     <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
                         Configure map
                     </Typography>
-                    <Tooltip key={'reset'} title="Reset settings" arrow placement="bottom-end">
-                        <span>
-                            <IconButton
-                                id="se-reset"
-                                variant="contained"
-                                type="button"
-                                className={headerStyles.appBarIcon}
-                                onClick={() => ctx.setConfigureMapState(defaultConfigureMapStateValues)}
-                            >
-                                <ResetIcon />
-                            </IconButton>
-                        </span>
-                    </Tooltip>
+                    {ctx.loginUser && (
+                        <Tooltip key={'reset'} title="Reset settings" arrow placement="bottom-end">
+                            <span>
+                                <IconButton
+                                    id="se-reset"
+                                    variant="contained"
+                                    type="button"
+                                    className={headerStyles.appBarIcon}
+                                    onClick={() => ctx.setConfigureMapState(defaultConfigureMapStateValues)}
+                                >
+                                    <ResetIcon />
+                                </IconButton>
+                            </span>
+                        </Tooltip>
+                    )}
                 </Toolbar>
             </AppBar>
             {ctx.loginUser && (
