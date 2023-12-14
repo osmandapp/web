@@ -22,6 +22,7 @@ import styles from '../configuremap/configuremap.module.css';
 import { ReactComponent as StarIcon } from '../../assets/icons/ic_action_favorite.svg';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
 import { cloneDeep } from 'lodash';
+import EmptyLogin from '../errors/EmptyLogin';
 
 export default function ConfigureMap() {
     const ctx = useContext(AppContext);
@@ -57,51 +58,63 @@ export default function ConfigureMap() {
                     )}
                 </Toolbar>
             </AppBar>
-            {ctx.loginUser && (
+            {!ctx.loginUser && !ctx.develFeatures ? (
+                <EmptyLogin />
+            ) : (
                 <>
-                    <MenuItem className={styles.item} onClick={handleFavoritesSwitchChange}>
-                        <ListItemIcon className={styles.icon}>
-                            <StarIcon />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                                <Typography variant="inherit" noWrap>
-                                    Favorites
-                                </Typography>
-                                <Switch
-                                    checked={ctx.configureMapState.showFavorites}
-                                    onClick={(e) => e.stopPropagation()}
-                                    onChange={handleFavoritesSwitchChange}
-                                />
-                            </div>
-                        </ListItemText>
-                    </MenuItem>
-                    <Divider className={styles.dividerItem} />
+                    {ctx.loginUser && (
+                        <>
+                            <MenuItem className={styles.item} onClick={handleFavoritesSwitchChange}>
+                                <ListItemIcon className={styles.icon}>
+                                    <StarIcon />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    <div
+                                        style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'space-between',
+                                        }}
+                                    >
+                                        <Typography variant="inherit" noWrap>
+                                            Favorites
+                                        </Typography>
+                                        <Switch
+                                            checked={ctx.configureMapState.showFavorites}
+                                            onClick={(e) => e.stopPropagation()}
+                                            onChange={handleFavoritesSwitchChange}
+                                        />
+                                    </div>
+                                </ListItemText>
+                            </MenuItem>
+                            <Divider className={styles.dividerItem} />
+                        </>
+                    )}
+                    {ctx.develFeatures && (
+                        <MenuItem sx={{ ml: 1, mr: 2, mt: 2 }} disableRipple={true}>
+                            <FormControl fullWidth>
+                                <InputLabel id="rendering-style-selector-label">Map Style</InputLabel>
+                                <Select
+                                    labelid="rendering-style-selector-label"
+                                    label="Map Style"
+                                    value={ctx.tileURL.key}
+                                    onChange={(e) => ctx.setTileURL(ctx.allTileURLs[e.target.value])}
+                                >
+                                    {Object.values(ctx.allTileURLs).map((item) => {
+                                        return (
+                                            <MenuItem key={item.key} value={item.key}>
+                                                {item.uiname}
+                                            </MenuItem>
+                                        );
+                                    })}
+                                </Select>
+                            </FormControl>
+                            <IconButton sx={{ ml: 1 }} onClick={() => setOpenSettings(true)}>
+                                <Settings fontSize="small" />
+                            </IconButton>
+                        </MenuItem>
+                    )}
                 </>
-            )}
-            {ctx.develFeatures && (
-                <MenuItem sx={{ ml: 1, mr: 2, mt: 2 }} disableRipple={true}>
-                    <FormControl fullWidth>
-                        <InputLabel id="rendering-style-selector-label">Map Style</InputLabel>
-                        <Select
-                            labelid="rendering-style-selector-label"
-                            label="Map Style"
-                            value={ctx.tileURL.key}
-                            onChange={(e) => ctx.setTileURL(ctx.allTileURLs[e.target.value])}
-                        >
-                            {Object.values(ctx.allTileURLs).map((item) => {
-                                return (
-                                    <MenuItem key={item.key} value={item.key}>
-                                        {item.uiname}
-                                    </MenuItem>
-                                );
-                            })}
-                        </Select>
-                    </FormControl>
-                    <IconButton sx={{ ml: 1 }} onClick={() => setOpenSettings(true)}>
-                        <Settings fontSize="small" />
-                    </IconButton>
-                </MenuItem>
             )}
             {openSettings && <RenderingSettingsDialog setOpenSettings={setOpenSettings} />}
         </>

@@ -78,7 +78,7 @@ const FavoriteLayer = () => {
     }, [ctx.favorites, ctx.setFavorites]);
 
     useEffect(() => {
-        if (ctx.selectedGpxFile?.markerCurrent && ctx.selectedGpxFile.markerCurrent.layer) {
+        if (ctx.selectedGpxFile?.markerCurrent?.layer) {
             if (ctx.configureMapState.showFavorites) {
                 ctx.selectedGpxFile.markerCurrent.layer.addTo(map).on('click', onClick);
             }
