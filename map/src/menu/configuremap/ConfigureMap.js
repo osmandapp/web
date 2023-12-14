@@ -15,7 +15,7 @@ import {
     Divider,
 } from '@mui/material';
 import { Settings } from '@mui/icons-material';
-import AppContext, { defaultConfigureMapStateValues } from '../../context/AppContext';
+import AppContext, { defaultConfigureMapStateValues, LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
 import RenderingSettingsDialog from '../route/RenderingSettingsDialog';
 import headerStyles from '../trackfavmenu.module.css';
 import styles from '../configuremap/configuremap.module.css';
@@ -31,6 +31,7 @@ export default function ConfigureMap() {
     const handleFavoritesSwitchChange = () => {
         let newConfigureMap = cloneDeep(ctx.configureMapState);
         newConfigureMap.showFavorites = !ctx.configureMapState.showFavorites;
+        localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(newConfigureMap));
         ctx.setConfigureMapState(newConfigureMap);
     };
 

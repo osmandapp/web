@@ -18,6 +18,7 @@ export const OBJECT_TYPE_FAVORITE = 'favorite';
 export const OBJECT_TYPE_WEATHER = 'weather';
 export const OBJECT_TYPE_POI = 'poi';
 export const OBJECT_CONFIGURE_MAP = 'configure_map';
+export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
 export const defaultConfigureMapStateValues = {
     showFavorites: true,
 };
@@ -297,7 +298,12 @@ export const AppContextProvider = (props) => {
     const [develFeatures, setDevelFeatures] = useState(process.env.REACT_APP_DEVEL_FEATURES === 'yes');
     const [infoBlockWidth, setInfoBlockWidth] = useState(0);
 
-    const [configureMapState, setConfigureMapState] = useState(defaultConfigureMapStateValues);
+    const [configureMapState, setConfigureMapState] = useState(getConfigureMap);
+
+    function getConfigureMap() {
+        let savedConfigureMap = localStorage.getItem(LOCAL_STORAGE_CONFIGURE_MAP);
+        return savedConfigureMap ? JSON.parse(savedConfigureMap) : defaultConfigureMapStateValues;
+    }
 
     useEffect(() => {
         TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
