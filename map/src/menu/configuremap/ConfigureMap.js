@@ -81,6 +81,7 @@ export default function ConfigureMap() {
                                             Favorites
                                         </Typography>
                                         <Switch
+                                            id="se-configure-map-menu-favorite-switch"
                                             checked={ctx.configureMapState.showFavorites}
                                             onClick={(e) => e.stopPropagation()}
                                             onChange={handleFavoritesSwitchChange}
