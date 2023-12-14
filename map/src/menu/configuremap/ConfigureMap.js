@@ -21,8 +21,10 @@ import headerStyles from '../trackfavmenu.module.css';
 import styles from '../configuremap/configuremap.module.css';
 import { ReactComponent as StarIcon } from '../../assets/icons/ic_action_favorite.svg';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
+import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { cloneDeep } from 'lodash';
 import EmptyLogin from '../errors/EmptyLogin';
+import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 
 export default function ConfigureMap() {
     const ctx = useContext(AppContext);
@@ -35,10 +37,28 @@ export default function ConfigureMap() {
         ctx.setConfigureMapState(newConfigureMap);
     };
 
+    function close() {
+        ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
+        ctx.setCurrentObjectType(null);
+    }
+
+    function setIconStyles() {
+        let res = [];
+        // disabled
+        !ctx.configureMapState.showFavorites && res.push(styles.iconDisabled);
+        // enabled
+        ctx.configureMapState.showFavorites && res.push(styles.iconEnabled);
+
+        return res.join(' ');
+    }
+
     return (
         <>
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
+                    <IconButton variant="contained" type="button" className={styles.closeIcon} onClick={close}>
+                        <CloseIcon />
+                    </IconButton>
                     <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
                         Configure map
                     </Typography>
@@ -66,7 +86,7 @@ export default function ConfigureMap() {
                     {ctx.loginUser && (
                         <>
                             <MenuItem className={styles.item} onClick={handleFavoritesSwitchChange}>
-                                <ListItemIcon className={styles.icon}>
+                                <ListItemIcon className={setIconStyles()}>
                                     <StarIcon />
                                 </ListItemIcon>
                                 <ListItemText>
