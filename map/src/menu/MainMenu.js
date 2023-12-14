@@ -19,7 +19,7 @@ import AppContext, {
     OBJECT_TYPE_WEATHER,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
-import MapStyle from './mapstyle/MapStyle';
+import ConfigureMap from './configuremap/ConfigureMap';
 import RouteMenu from './route/RouteMenu';
 import { useNavigate } from 'react-router-dom';
 import FavoritesMenu from './favorite/FavoritesMenu';
@@ -29,6 +29,7 @@ import { ReactComponent as WeatherIcon } from '../assets/menu/ic_action_umbrella
 import { ReactComponent as TracksIcon } from '../assets/menu/ic_action_track.svg';
 import { ReactComponent as NavigationIcon } from '../assets/menu/ic_action_navigation.svg';
 import { ReactComponent as PlanRouteIcon } from '../assets/menu/ic_action_plan_route.svg';
+import { ReactComponent as ConfigureMapIcon } from '../assets/icons/ic_map_configure_map.svg';
 import InformationBlock from '../infoblock/components/InformationBlock';
 import Weather from './weather/Weather';
 import styles from './mainmenu.module.css';
@@ -66,6 +67,14 @@ export default function MainMenu({
 
     const items = [
         {
+            name: 'Configure Map',
+            icon: ConfigureMapIcon,
+            component: <ConfigureMap />,
+            type: null,
+            show: true,
+            id: 'se-show-menu-configuremap',
+        },
+        {
             name: 'Weather',
             icon: WeatherIcon,
             component: <Weather />,
@@ -96,14 +105,6 @@ export default function MainMenu({
             type: OBJECT_TYPE_ROUTE_TRACK,
             show: true,
             id: 'se-show-menu-navigation',
-        },
-        {
-            name: 'Map Style',
-            icon: Map,
-            component: <MapStyle />,
-            type: null,
-            show: ctx.develFeatures,
-            id: 'se-show-menu-mapstyle',
         },
         {
             name: 'Plan a route',

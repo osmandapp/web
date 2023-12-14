@@ -52,7 +52,9 @@ const FavoriteLayer = () => {
 
     useEffect(() => {
         if (ctx.selectedGpxFile?.markerCurrent && ctx.selectedGpxFile.markerCurrent.layer) {
-            ctx.selectedGpxFile.markerCurrent.layer.addTo(map).on('click', onClick);
+            if (ctx.configureMapState.showFavorites) {
+                ctx.selectedGpxFile.markerCurrent.layer.addTo(map).on('click', onClick);
+            }
             if (ctx.selectedGpxFile.zoom) {
                 map.setView(
                     [
@@ -68,7 +70,7 @@ const FavoriteLayer = () => {
         if (ctx.selectedGpxFile?.markerPrev && ctx.selectedGpxFile?.markerPrev.layer) {
             map.removeLayer(ctx.selectedGpxFile.markerPrev.layer);
         }
-    }, [ctx.selectedGpxFile, ctx.setSelectedGpxFile]);
+    }, [ctx.selectedGpxFile]);
 
     function onClick(e) {
         let type = OBJECT_TYPE_FAVORITE;

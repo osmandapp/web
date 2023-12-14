@@ -12,7 +12,7 @@ import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import styles from '../../../map/components/map.module.css';
 import { ReactComponent as ConfigureMapIcon } from '../../../assets/icons/ic_map_configure_map.svg';
 import SearchInfo from '../search/SearchInfo';
-import MapStyle from '../../../menu/mapstyle/MapStyle';
+import ConfigureMap from '../../../menu/configuremap/ConfigureMap';
 
 export default function GeneralPanelButtons({
     mainMenuWidth,
@@ -62,7 +62,7 @@ export default function GeneralPanelButtons({
     }
 
     function openMapStyle() {
-        setMenuInfo(menuInfo ? null : <MapStyle />);
+        setMenuInfo(menuInfo ? null : <ConfigureMap />);
     }
 
     return (
@@ -75,13 +75,11 @@ export default function GeneralPanelButtons({
                     flexDirection: 'row',
                 }}
             >
-                {ctx.develFeatures && (
-                    <Paper sx={{ mr: '8px' }} className={styles.button}>
-                        <IconButton onClick={openMapStyle}>
-                            <SvgIcon className={styles.customIconPath} component={ConfigureMapIcon} inheritViewBox />
-                        </IconButton>
-                    </Paper>
-                )}
+                <Paper sx={{ mr: '8px' }} className={styles.button}>
+                    <IconButton onClick={openMapStyle}>
+                        <SvgIcon className={styles.customIconPath} component={ConfigureMapIcon} inheritViewBox />
+                    </IconButton>
+                </Paper>
                 <Paper sx={{ height: '40px' }} className={styles.button}>
                     <SearchInfo />
                 </Paper>

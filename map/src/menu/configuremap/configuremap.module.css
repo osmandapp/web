@@ -1,0 +1,15 @@
+.icon {
+    fill: var(--selected-color) !important;
+    min-width: 24px !important;
+    max-width: 24px !important;
+}
+.item {
+    width: 360px !important;
+    padding: 10px 16px !important;
+    gap: 24px !important;
+}
+.dividerItem {
+    margin-left: 64px !important;
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+}
