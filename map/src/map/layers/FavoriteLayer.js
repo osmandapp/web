@@ -4,8 +4,8 @@ import '../../assets/css/gpx.css';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../util/TrackLayerProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
-import FavoritesManager from '../../manager/FavoritesManager';
-import { fitBoundsOptions } from '../../manager/track/TracksManager';
+import FavoritesManager, { addOpenedFavoriteGroups } from '../../manager/FavoritesManager';
+import TracksManager, { fitBoundsOptions } from '../../manager/track/TracksManager';
 import _, { isEmpty } from 'lodash';
 
 const FavoriteLayer = () => {
@@ -21,38 +21,66 @@ const FavoriteLayer = () => {
     }, [ctx.selectedGpxFile]);
 
     useEffect(() => {
-        let filesMap = ctx.favorites ? ctx.favorites : {};
-        Object.entries(filesMap).forEach(([key, file]) => {
-            if (!ctx.configureMapState.showFavorites) {
-                removeMarkersFromMap(file);
-            } else {
-                if (file.markers) {
-                    addMarkersOnMap(file, key);
-                }
+        if (ctx.zoomToFavGroup) {
+            const group = ctx.favorites.mapObjs[ctx.zoomToFavGroup];
+            if (group && group.markers) {
+                map.fitBounds(group.markers.getBounds(), fitBoundsOptions(ctx));
             }
-        });
+        }
+    }, [ctx.zoomToFavGroup]);
+
+    useEffect(() => {
+        // created favorites markers and move them to ctx.favorites for adding to map
+        if (ctx.updateMarkers) {
+            ctx.setFavorites(() => {
+                let favoritesGroups = ctx.updateMarkers;
+                favoritesGroups.mapObjs = Object.keys(favoritesGroups.mapObjs).reduce((group, key) => {
+                    const file = favoritesGroups.mapObjs[key];
+                    if (!file.markers) {
+                        file.markers = TrackLayerProvider.createLayersByTrackData(file, ctx, map);
+                        if (ctx.selectedGpxFile?.markerCurrent && key === ctx.selectedGpxFile.nameGroup) {
+                            updateSelectedFavoriteOnMap(file);
+                        }
+                    }
+                    group[key] = file;
+                    return group;
+                }, {});
+                return favoritesGroups;
+            });
+        }
+    }, [ctx.updateMarkers]);
+
+    useEffect(() => {
+        const updateFavoritesOnMap = async () => {
+            if (isEmpty(ctx.favorites)) {
+                await addOpenedFavoriteGroups(
+                    TracksManager.getFavoriteGroups(ctx.listFiles),
+                    ctx.setFavorites,
+                    ctx.configureMapState,
+                    ctx.setUpdateMarkers
+                );
+            } else {
+                Object.values(ctx.favorites.mapObjs).forEach((file) => {
+                    if (!ctx.configureMapState.showFavorites) {
+                        removeMarkersFromMap(file);
+                    } else {
+                        addMarkersOnMap(file);
+                    }
+                });
+            }
+        };
+        updateFavoritesOnMap().then();
     }, [ctx.configureMapState.showFavorites]);
 
     function removeMarkersFromMap(file) {
-        if (file.markers && !isEmpty(file.markers)) {
-            Object.values(file.markers._layers).forEach((l) => map.removeLayer(l));
-        }
-        if (file.oldMarkers) {
-            Object.values(file.oldMarkers._layers).forEach((l) => map.removeLayer(l));
-            delete file.oldMarkers;
-        }
+        deleteMarkers(file);
+        deleteOldMarkers(file);
     }
 
-    function addMarkersOnMap(file, key, addToMap = true) {
-        if (!file.markers) {
-            file.markers = TrackLayerProvider.createLayersByTrackData(file, ctx, map);
-            if (ctx.selectedGpxFile?.markerCurrent && key === ctx.selectedGpxFile.nameGroup) {
-                updateSelectedFavoriteOnMap(file);
-            }
-        }
-        if (file.markers) {
-            if (file.markers && addToMap) {
-                Object.values(file.markers._layers).forEach((l) => l.addTo(map).on('click', onClick));
+    function addMarkersOnMap(file) {
+        if (file.markers && file.hidden !== 'true') {
+            if (file.markers) {
+                file.markers.addTo(map).on('click', onClick);
             }
             if (
                 ctx.selectedGpxFile &&
@@ -64,22 +92,24 @@ const FavoriteLayer = () => {
         }
     }
 
-    //add favorites groups
+    // add markers on map or remove markers from map
     useEffect(() => {
-        let filesMap = ctx.favorites ? ctx.favorites : {};
-        Object.entries(filesMap).forEach(([key, file]) => {
-            if (file.url) {
-                addMarkersOnMap(file, key, file.addToMap);
-            } else if (!file.url && file.markers) {
-                map.removeLayer(file.markers);
-            }
-            deleteOldMarkers(file);
-        });
-    }, [ctx.favorites, ctx.setFavorites]);
+        const favoritesGroups = ctx.favorites?.mapObjs;
+        favoritesGroups &&
+            Object.values(favoritesGroups).forEach((file) => {
+                if (file.url && ctx.configureMapState.showFavorites) {
+                    addMarkersOnMap(file);
+                    deleteOldMarkers(file);
+                } else if (!file.url) {
+                    removeMarkersFromMap(file);
+                }
+            });
+    }, [ctx.favorites]);
 
     useEffect(() => {
         if (ctx.selectedGpxFile?.markerCurrent?.layer) {
-            if (ctx.configureMapState.showFavorites) {
+            // if the group is hidden, then only zoom to the group markers
+            if (ctx.configureMapState.showFavorites && ctx.selectedGpxFile.file.hidden !== 'true') {
                 ctx.selectedGpxFile.markerCurrent.layer.addTo(map).on('click', onClick);
             }
             if (ctx.selectedGpxFile.zoom) {
@@ -113,7 +143,7 @@ const FavoriteLayer = () => {
         ctx.selectedGpxFile.nameGroup = e.sourceTarget.options.category
             ? e.sourceTarget.options.category
             : FavoritesManager.DEFAULT_GROUP_NAME;
-        ctx.selectedGpxFile.file = Object.assign({}, ctx.favorites[e.sourceTarget.options.category]);
+        ctx.selectedGpxFile.file = Object.assign({}, ctx.favorites.mapObjs[e.sourceTarget.options.category]);
         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
         ctx.setUpdateInfoBlock(true);
     }
@@ -133,6 +163,14 @@ const FavoriteLayer = () => {
             setOpenAddDialog(true);
         }
     }, [ctx.addFavorite]);
+
+    function deleteMarkers(file) {
+        if (file.markers && !isEmpty(file.markers)) {
+            if (map.hasLayer(file.markers)) {
+                map.removeLayer(file.markers);
+            }
+        }
+    }
 
     function deleteOldMarkers(file) {
         if (file.oldMarkers) {

@@ -3,7 +3,7 @@ import useCookie from 'react-use-cookie';
 import Utils, { useMutator, seleniumUpdateActivity } from '../util/Utils';
 import TracksManager, { getGpxFiles } from '../manager/track/TracksManager';
 import _ from 'lodash';
-import FavoritesManager from '../manager/FavoritesManager';
+import { addOpenedFavoriteGroups } from '../manager/FavoritesManager';
 import PoiManager from '../manager/PoiManager';
 import { apiGet } from '../util/HttpApi';
 import { geoRouter } from '../store/geoRouter/geoRouter.js';
@@ -34,16 +34,24 @@ const osmandTileURL = {
     url: 'https://tile.osmand.net/hd/{z}/{x}/{y}.png',
 };
 
-async function loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, gpxFiles, setGpxFiles, setFavorites) {
+async function loadListFiles(
+    loginUser,
+    listFiles,
+    setListFiles,
+    gpxFiles,
+    setGpxFiles,
+    setFavorites,
+    configureMapState,
+    setUpdateMarkers
+) {
     if (loginUser !== listFiles.loginUser) {
         if (!loginUser) {
             setListFiles({});
             setFavorites({});
         } else {
-            setGpxLoading(true);
             const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
             if (response.ok) {
-                await response.json().then((res) => {
+                await response.json().then(async (res) => {
                     if (res) {
                         res.loginUser = loginUser;
                         res.totalUniqueZipSize = 0;
@@ -51,65 +59,21 @@ async function loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, 
                             res.totalUniqueZipSize += f.zipSize;
                         });
                         setListFiles(res);
-                        setGpxLoading(false);
 
-                        addOpenedTracks(getGpxFiles(res), gpxFiles, setGpxFiles).then();
-                        addOpenedFavoriteGroups(TracksManager.getFavoriteGroups(res), setFavorites);
+                        await Promise.all([
+                            addOpenedTracks(getGpxFiles(res), gpxFiles, setGpxFiles),
+                            addOpenedFavoriteGroups(
+                                TracksManager.getFavoriteGroups(res),
+                                setFavorites,
+                                configureMapState,
+                                setUpdateMarkers
+                            ),
+                        ]);
                     }
                 });
             }
         }
     }
-}
-
-async function addOpenedFavoriteGroups(files, setFavorites) {
-    files.sort((a, b) => a.name.localeCompare(b.name));
-    let newFavoritesFiles = {
-        groups: [],
-    };
-    files.forEach((file) => {
-        let group = FavoritesManager.createGroup(file);
-        newFavoritesFiles.groups.push(group);
-    });
-    newFavoritesFiles.groups = FavoritesManager.orderList(
-        newFavoritesFiles.groups,
-        FavoritesManager.DEFAULT_GROUP_NAME
-    );
-
-    let savedVisible = JSON.parse(localStorage.getItem(FavoritesManager.FAVORITE_LOCAL_STORAGE));
-
-    if (savedVisible) {
-        for (const name of savedVisible) {
-            for (const f of newFavoritesFiles.groups) {
-                if (f.name === name) {
-                    let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(
-                        f.file.type
-                    )}&name=${encodeURIComponent(f.file.name)}`;
-                    newFavoritesFiles[f.name] = {
-                        url: url,
-                        clienttimems: f.file.clienttimems,
-                        updatetimems: f.file.updatetimems,
-                        name: f.file.name,
-                        addToMap: true,
-                    };
-                    let res = await Utils.getFileData(newFavoritesFiles[f.name]);
-                    if (res) {
-                        const favoriteFile = new File([res], f.file.name, {
-                            type: 'text/plain',
-                        });
-                        let favorites = await TracksManager.getTrackData(favoriteFile);
-                        if (favorites) {
-                            favorites.name = f.file.name;
-                        }
-                        Object.keys(favorites).forEach((t) => {
-                            newFavoritesFiles[f.name][`${t}`] = favorites[t];
-                        });
-                    }
-                }
-            }
-        }
-    }
-    setFavorites(newFavoritesFiles);
 }
 
 async function addOpenedTracks(files, gpxFiles, setGpxFiles) {
@@ -238,7 +202,11 @@ export const AppContextProvider = (props) => {
     const [pinPoint, setPinPoint] = useState(pinInit);
 
     const [weatherPoint, setWeatherPoint] = useState(null);
+
+    // favorites
     const [favorites, setFavorites] = useState({});
+    const [updateMarkers, setUpdateMarkers] = useState(null);
+    const [zoomToFavGroup, setZoomToFavGroup] = useState(null);
     const [addFavorite, setAddFavorite] = useState({
         add: false,
         location: null,
@@ -342,7 +310,17 @@ export const AppContextProvider = (props) => {
 
     useEffect(() => {
         if (loginUser !== 'INIT') {
-            loadListFiles(loginUser, listFiles, setListFiles, setGpxLoading, gpxFiles, setGpxFiles, setFavorites);
+            setGpxLoading(true);
+            loadListFiles(
+                loginUser,
+                listFiles,
+                setListFiles,
+                gpxFiles,
+                setGpxFiles,
+                setFavorites,
+                configureMapState,
+                setUpdateMarkers
+            ).finally(() => setGpxLoading(false));
         }
     }, [loginUser]);
 
@@ -459,6 +437,10 @@ export const AppContextProvider = (props) => {
                 setStopUseGeoLocation,
                 configureMapState,
                 setConfigureMapState,
+                zoomToFavGroup,
+                setZoomToFavGroup,
+                updateMarkers,
+                setUpdateMarkers,
             }}
         >
             {props.children}

@@ -163,7 +163,7 @@ const SortActions = forwardRef(
             if (trackGroup) {
                 return trackGroup.groupFiles;
             } else if (favoriteGroup) {
-                return ctx.favorites[favoriteGroup.name]?.wpts;
+                return ctx.favorites.mapObjs[favoriteGroup.name]?.wpts;
             }
             return null;
         };

@@ -42,12 +42,13 @@ export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }
 
     async function renameFavGroup(group, newName, ctx) {
         let newGroupName = FavoritesManager.FAV_FILE_PREFIX + newName + '.gpx';
+        const oldName = getGroupNameFromFile(prepareFavGroupName(group.file.name));
         newGroupName = getGroupNameForFile(newGroupName);
         if (newGroupName !== group.file.name) {
             const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/rename-fav-group`, {
                 params: {
                     fullOldName: group.file.name,
-                    oldName: getGroupNameFromFile(prepareFavGroupName(group.file.name)),
+                    oldName: oldName,
                     fullNewName: newGroupName,
                     newName: newName,
                     oldUpdatetime: group.updatetimems,

@@ -20,11 +20,11 @@ export default function FavoriteGroup({ index, group }) {
     const anchorEl = useRef(null);
 
     useEffect(() => {
-        if (ctx.favorites[group.name]?.markers && group.name === ctx.selectedGpxFile.file?.name) {
-            ctx.selectedGpxFile.file.markers = ctx.favorites[group.name].markers;
+        if (ctx.favorites.mapObjs[group.name]?.markers && group.name === ctx.selectedGpxFile.file?.name) {
+            ctx.selectedGpxFile.file.markers = ctx.favorites.mapObjs[group.name].markers;
             ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
         }
-    }, [ctx.favorites, ctx.setFavorites]);
+    }, [ctx.favorites]);
 
     function getSize() {
         return FavoritesManager.getGroupSize(group) > 0 ? `${FavoritesManager.getGroupSize(group)} points` : 'empty';
@@ -46,6 +46,7 @@ export default function FavoriteGroup({ index, group }) {
                 onClick={(e) => {
                     if (e.target !== 'path') {
                         ctx.setOpenGroups((prevState) => [...prevState, group]);
+                        ctx.setZoomToFavGroup(group.name);
                     }
                 }}
             >

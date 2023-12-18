@@ -1,5 +1,6 @@
 import L from 'leaflet';
 import FavoritesManager from '../../../manager/FavoritesManager';
+import { isEmpty } from 'lodash';
 
 function updateSelectedFile(ctx, favorites, result, favoriteName, groupName, deleted) {
     let newSelectedFile = Object.assign({}, ctx.selectedGpxFile);
@@ -63,29 +64,35 @@ function updateGroupAfterChange(ctx, result, selectedGroupName, oldGroupName) {
             Object.keys(result.oldGroupResp.data).forEach((d) => {
                 file[`${d}`] = result.oldGroupResp.data[d];
             });
-            newGroup = {
-                name: g.name,
-                updatetimems: result.oldGroupResp.updatetimems,
-                file: file,
-                pointsGroups: result.oldGroupResp.data.pointsGroups,
-            };
+            newGroup = createNewGroup(g, file, result.oldGroupResp.updatetimems, result.oldGroupResp.data.pointsGroups);
         } else if (g.name === selectedGroupName && result.newGroupResp) {
             let file = g.file;
             Object.keys(result.newGroupResp.data).forEach((d) => {
                 file[`${d}`] = result.newGroupResp.data[d];
             });
-            newGroup = {
-                name: g.name,
-                updatetimems: result.newGroupResp.updatetimems,
-                file: g.file,
-                pointsGroups: result.newGroupResp.data.pointsGroups,
-            };
+            newGroup = createNewGroup(g, file, result.newGroupResp.updatetimems, result.newGroupResp.data.pointsGroups);
         } else {
             newGroup = g;
         }
         updatedGroups.push(newGroup);
     });
     return updatedGroups;
+}
+
+function createNewGroup(g, file, updatetimems, pointsGroups) {
+    let newGroup = {
+        name: g.name,
+        updatetimems: updatetimems,
+        file: g.file,
+        pointsGroups: pointsGroups,
+    };
+    if (!isEmpty(file.wpts)) {
+        newGroup.hidden = file.wpts[0].hidden;
+    } else {
+        delete newGroup.hidden;
+    }
+
+    return newGroup;
 }
 
 function updateMarker(newSelectedFile, deleted, name) {
@@ -108,8 +115,14 @@ function updateGroupObj(selectedGroup, result) {
     Object.keys(result.data).forEach((t) => {
         group[`${t}`] = result.data[t];
     });
+    if (!isEmpty(group.wpts)) {
+        group.hidden = group.wpts[0].hidden;
+    } else {
+        delete group.hidden;
+    }
     group.clienttimems = result.clienttimems;
     group.updatetimems = result.updatetimems;
+
     delete group.markers;
 
     return group;

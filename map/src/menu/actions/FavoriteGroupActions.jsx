@@ -8,10 +8,8 @@ import { ReactComponent as ShowOnMapIcon } from '../../assets/icons/ic_show_on_m
 import Utils from '../../util/Utils';
 import RenameFavDialog from '../../dialogs/favorites/RenameFavDialog';
 import DeleteFavGroupDialog from '../../dialogs/favorites/DeleteFavGroupDialog';
-import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
-import { refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
-import TracksManager from '../../manager/track/TracksManager';
-import { apiPost } from '../../util/HttpApi';
+import AppContext from '../../context/AppContext';
+import { updateAllFavorites, updateFavoriteGroups } from '../../manager/FavoritesManager';
 
 const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, ref) => {
     const ctx = useContext(AppContext);
@@ -27,34 +25,8 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
     }
 
     async function updateGroup(group, hidden) {
-        let groupObj;
-        // get track data
-        if (!ctx.favorites[group.name]) {
-            let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(
-                group.file.type
-            )}&name=${encodeURIComponent(group.file.name)}`;
-            let newGroup = {
-                url: url,
-                clienttimems: group.file.clienttimems,
-                updatetimems: group.file.updatetimems,
-                name: group.file.name,
-                addToMap: false,
-            };
-            let f = await Utils.getFileData(newGroup);
-            if (f) {
-                const favoriteFile = new File([f], group.file.name, {
-                    type: 'text/plain',
-                });
-                let favorites = await TracksManager.getTrackData(favoriteFile);
-                if (favorites) {
-                    groupObj = favorites;
-                }
-            }
-        } else {
-            groupObj = ctx.favorites[group.name];
-        }
+        let groupObj = ctx.favorites.mapObjs[group.name];
 
-        //update wpts
         let data = [];
         groupObj.wpts.forEach((wpt) => {
             const newHiddenValue = !hidden;
@@ -62,14 +34,10 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
             data.push(JSON.stringify(wpt));
         });
 
-        let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update-all-favorites`, data, {
-            params: {
-                fileName: group.file.name,
-                updatetime: group.updatetimems,
-            },
-        });
-        if (resp.data) {
-            refreshGlobalFiles(ctx, null, OBJECT_TYPE_FAVORITE).then();
+        let result = await updateAllFavorites(group, data);
+
+        if (result) {
+            updateFavoriteGroups(result, group.name, null, ctx);
         }
     }
 

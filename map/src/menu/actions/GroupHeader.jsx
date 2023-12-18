@@ -37,7 +37,7 @@ export default function GroupHeader({
     useEffect(() => {
         if (favoriteGroup && !selectedSort) {
             if (setSortFiles) {
-                const files = ctx.favorites[favoriteGroup.name]?.wpts;
+                const files = ctx.favorites.mapObjs[favoriteGroup.name]?.wpts;
                 if (files) {
                     setSortFiles(byTime(files, true));
                 }

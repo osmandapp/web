@@ -15,8 +15,7 @@ import FavoriteGroup from '../../infoblock/components/favorite/structure/Favorit
 import FavoriteIcon from '../../infoblock/components/favorite/structure/FavoriteIcon';
 import FavoriteColor from '../../infoblock/components/favorite/structure/FavoriteColor';
 import FavoriteShape from '../../infoblock/components/favorite/structure/FavoriteShape';
-import FavoritesManager from '../../manager/FavoritesManager';
-import FavoriteHelper from '../../infoblock/components/favorite/FavoriteHelper';
+import FavoritesManager, { updateFavoriteGroups } from '../../manager/FavoritesManager';
 import { apiGet } from '../../util/HttpApi';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { isEmpty } from 'lodash';
@@ -116,7 +115,7 @@ export default function EditFavoriteDialog({
     async function saveFavorite() {
         let selectedGroupName = favoriteGroup === null ? wpt.category : favoriteGroup.name;
         let currentWpt = getCurrentWpt(selectedGroupName);
-        const arrWpt = useSelected ? ctx.selectedGpxFile.file.wpts : ctx.favorites[wpt.group.name].wpts;
+        const arrWpt = useSelected ? ctx.selectedGpxFile.file.wpts : ctx.favorites.mapObjs[wpt.group.name].wpts;
 
         let newGroup = ctx.favorites.groups.find((g) => g.name === selectedGroupName);
         let oldGroup = ctx.favorites.groups.find(
@@ -138,7 +137,8 @@ export default function EditFavoriteDialog({
 
         //update favorites groups
         if (result) {
-            updateFavoriteGroups(result, selectedGroupName, useSelected ? ctx.selectedGpxFile.nameGroup : wpt.category);
+            const oldGroupName = useSelected ? ctx.selectedGpxFile.nameGroup : wpt.category;
+            updateFavoriteGroups(result, selectedGroupName, oldGroupName, ctx, useSelected, favoriteName);
             setEditFavoritesDialogOpen(false);
             if (setOpenActions) {
                 setOpenActions(false);
@@ -146,33 +146,8 @@ export default function EditFavoriteDialog({
         }
     }
 
-    function updateFavoriteGroups(result, selectedGroupName, oldGroupName) {
-        ctx.favorites.groups = FavoriteHelper.updateGroupAfterChange(ctx, result, selectedGroupName, oldGroupName);
-        let selectedGroup = ctx.favorites.groups.find((g) => g.name === selectedGroupName);
-
-        if (result.oldGroupResp) {
-            ctx.favorites[oldGroupName] = FavoriteHelper.updateGroupObj(
-                ctx.favorites[oldGroupName],
-                result.oldGroupResp
-            );
-        }
-
-        if (!ctx.favorites[selectedGroupName]) {
-            ctx.favorites[selectedGroupName] = FavoriteHelper.createGroupObj(result.newGroupResp, selectedGroup);
-        } else {
-            ctx.favorites[selectedGroupName] = FavoriteHelper.updateGroupObj(
-                ctx.favorites[selectedGroupName],
-                result.newGroupResp
-            );
-        }
-        useSelected &&
-            FavoriteHelper.updateSelectedFile(ctx, ctx.favorites, null, favoriteName, selectedGroupName, false);
-
-        ctx.setFavorites({ ...ctx.favorites });
-    }
-
     function getCurrentWpt(selectedGroupName) {
-        const group = useSelected ? ctx.selectedGpxFile.file : ctx.favorites[wpt.group.name];
+        const group = useSelected ? ctx.selectedGpxFile.file : ctx.favorites.mapObjs[wpt.group.name];
         let res = null;
         let wpts = group ? group.wpts : ctx.selectedGpxFile.wpts;
         if (wpts) {
