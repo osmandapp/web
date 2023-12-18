@@ -57,7 +57,7 @@ const FavoriteInfoTab = () => {
     }, [ctx.selectedGpxFile]);
 
     return (
-        <Box className={styles.item} maxWidth={ctx.infoBlockWidth}>
+        <Box id={'se-fav-item-info-' + favorite.name} className={styles.item} maxWidth={ctx.infoBlockWidth}>
             <Typography className={styles.info} variant="subtitle1" color="inherit">
                 <Grid container spacing={2}>
                     <Grid className={styles.name} item xs={10}>

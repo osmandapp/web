@@ -2,7 +2,7 @@ import { ButtonGroup, IconButton, Paper, SvgIcon, Tooltip } from '@mui/material'
 import TracksManager from '../../../manager/track/TracksManager';
 import { Insights, Info } from '@mui/icons-material';
 import React, { useContext, useState } from 'react';
-import AppContext from '../../../context/AppContext';
+import AppContext, { OBJECT_CONFIGURE_MAP } from '../../../context/AppContext';
 import PoiTypesDialog from '../poi/PoiTypesDialog';
 import PanelButtons from './PanelButtons';
 import ChangeProfileTrackDialog from '../../../dialogs/tracks/ChangeProfileTrackDialog';
@@ -12,7 +12,7 @@ import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import styles from '../../../map/components/map.module.css';
 import { ReactComponent as ConfigureMapIcon } from '../../../assets/icons/ic_map_configure_map.svg';
 import SearchInfo from '../search/SearchInfo';
-import MapStyle from '../../../menu/mapstyle/MapStyle';
+import ConfigureMap from '../../../menu/configuremap/ConfigureMap';
 
 export default function GeneralPanelButtons({
     mainMenuWidth,
@@ -20,7 +20,6 @@ export default function GeneralPanelButtons({
     showInfoBlock,
     setShowInfoBlock,
     clearState,
-    menuInfo,
     setMenuInfo,
 }) {
     const ctx = useContext(AppContext);
@@ -62,7 +61,18 @@ export default function GeneralPanelButtons({
     }
 
     function openMapStyle() {
-        setMenuInfo(menuInfo ? null : <MapStyle />);
+        ctx.setOpenGroups([]);
+        ctx.setSelectedGpxFile({});
+        if (ctx.currentObjectType === OBJECT_CONFIGURE_MAP) {
+            // close menu
+            ctx.setCurrentObjectType(null);
+            setMenuInfo(null);
+        } else {
+            //open menu
+            ctx.setCurrentObjectType(OBJECT_CONFIGURE_MAP);
+            setShowInfoBlock(false);
+            setMenuInfo(<ConfigureMap />);
+        }
     }
 
     return (
@@ -75,13 +85,11 @@ export default function GeneralPanelButtons({
                     flexDirection: 'row',
                 }}
             >
-                {ctx.develFeatures && (
-                    <Paper sx={{ mr: '8px' }} className={styles.button}>
-                        <IconButton onClick={openMapStyle}>
-                            <SvgIcon className={styles.customIconPath} component={ConfigureMapIcon} inheritViewBox />
-                        </IconButton>
-                    </Paper>
-                )}
+                <Paper sx={{ mr: '8px' }} className={styles.button}>
+                    <IconButton onClick={openMapStyle}>
+                        <SvgIcon className={styles.customIconPath} component={ConfigureMapIcon} inheritViewBox />
+                    </IconButton>
+                </Paper>
                 <Paper sx={{ height: '40px' }} className={styles.button}>
                     <SearchInfo />
                 </Paper>
