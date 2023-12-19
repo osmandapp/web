@@ -6,6 +6,7 @@ import Paper from '@mui/material/Paper';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import favoriteEditMenuStyles from '../../../styles/FavoriteEditMenuStyles';
 import FavoritesManager from '../../../../manager/FavoritesManager';
+import { isEmpty } from 'lodash';
 
 export default function FavoriteIcon({
     favoriteIcon,
@@ -69,11 +70,12 @@ export default function FavoriteIcon({
             tabs[category[0]] = <ListIcons key={category[0]} icons={category[1].icons} />;
         });
 
-    tabs[FavoritesManager.DEFAULT_TAB_ICONS] = add ? (
-        <ListIcons key={FavoritesManager.DEFAULT_TAB_ICONS} icons={[MarkerOptions.DEFAULT_WPT_ICON]} />
-    ) : (
-        getTabUsedIcons()
-    );
+    tabs[FavoritesManager.DEFAULT_TAB_ICONS] =
+        add || isEmpty(selectedGpxFile) ? (
+            <ListIcons key={FavoritesManager.DEFAULT_TAB_ICONS} icons={[MarkerOptions.DEFAULT_WPT_ICON]} />
+        ) : (
+            getTabUsedIcons()
+        );
 
     list =
         tabs &&
@@ -86,8 +88,11 @@ export default function FavoriteIcon({
             })
         );
 
+    list = list.filter((t) => t !== null);
+
     list.length > 0 &&
         currentIconCategories &&
+        tabs[currentIconCategories] &&
         list.unshift(
             <Tab
                 value={tabs[currentIconCategories].key + ''}
@@ -96,6 +101,7 @@ export default function FavoriteIcon({
             />
         );
     list.length > 0 &&
+        tabs[FavoritesManager.DEFAULT_TAB_ICONS] &&
         list.unshift(
             <Tab
                 icon={<History />}

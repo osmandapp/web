@@ -54,11 +54,11 @@ function updateGroupData(object, result) {
     object.file = file;
 }
 
-function updateGroupAfterChange(ctx, result, selectedGroupName) {
+function updateGroupAfterChange(ctx, result, selectedGroupName, oldGroupName) {
     let updatedGroups = [];
     ctx.favorites.groups.forEach((g) => {
         let newGroup;
-        if (g.name === ctx.selectedGpxFile.nameGroup && result.oldGroupResp?.data) {
+        if (g.name === oldGroupName && result.oldGroupResp?.data) {
             let file = g.file;
             Object.keys(result.oldGroupResp.data).forEach((d) => {
                 file[`${d}`] = result.oldGroupResp.data[d];

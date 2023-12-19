@@ -4,6 +4,7 @@ import { useMap } from 'react-leaflet';
 import { useNavigate } from 'react-router-dom';
 import TracksManager from '../../manager/track/TracksManager';
 import { apiGet } from '../../util/HttpApi';
+import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 
 export default function ContextMenu({ setGeocodingData, setRegionData }) {
     const ctx = useContext(AppContext);
@@ -18,6 +19,15 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
         navigate('/map/loginForm' + window.location.search + window.location.hash);
     };
 
+    function navigateSetStartOrFinish({ latlng, target }) {
+        confirm({
+            ctx,
+            text: 'Modify previous Navigation?',
+            callback: () => routeObject.setOption(target, latlng),
+            skip: !routeObject.getOption('route.points.start') || !routeObject.getOption('route.points.finish'),
+        });
+    }
+
     useEffect(() => {
         if (map) {
             map.contextmenu.removeAllItems();
@@ -27,7 +37,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
             });
             map.contextmenu.addItem({
                 text: 'Navigate from',
-                callback: (e) => routeObject.setOption('route.points.start', e.latlng),
+                callback: (e) => navigateSetStartOrFinish({ latlng: e.latlng, target: 'route.points.start' }),
             });
             if (startPoint && finishPoint) {
                 map.contextmenu.addItem({
@@ -37,7 +47,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
             }
             map.contextmenu.addItem({
                 text: 'Navigate to',
-                callback: (e) => routeObject.setOption('route.points.finish', e.latlng),
+                callback: (e) => navigateSetStartOrFinish({ latlng: e.latlng, target: 'route.points.finish' }),
             });
             map.contextmenu.addItem({
                 text: 'Add pin',

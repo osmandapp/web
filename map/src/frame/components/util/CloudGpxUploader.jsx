@@ -4,6 +4,7 @@ import { useMutator } from '../../../util/Utils';
 import TracksManager from '../../../manager/track/TracksManager';
 import { styled } from '@mui/material/styles';
 import { createTrackFreeName, saveTrackToCloud } from '../../../manager/track/SaveTrackManager';
+import { FREE_ACCOUNT } from '../../../manager/LoginManager';
 
 export default function CloudGpxUploader({ children, folder = null, style = null }) {
     const ctx = useContext(AppContext);
@@ -52,7 +53,14 @@ export default function CloudGpxUploader({ children, folder = null, style = null
 
     return (
         <label className={style} htmlFor="se-upload-cloud-gpx">
-            <HiddenInput id="se-upload-cloud-gpx" accept=".gpx" multiple type="file" onChange={fileSelected} />
+            <HiddenInput
+                disabled={ctx.accountInfo?.account === FREE_ACCOUNT}
+                id="se-upload-cloud-gpx"
+                accept=".gpx"
+                multiple
+                type="file"
+                onChange={fileSelected}
+            />
             {children}
         </label>
     );

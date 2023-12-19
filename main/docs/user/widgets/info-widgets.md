@@ -183,7 +183,7 @@ You can read more about this [here](https://en.wikipedia.org/wiki/Lift-to-drag_r
 
 - **Average glide ratio**. This widget provides information about the average glide ratio for a specified time interval (customizable by the user). The average glide ratio is calculated as the ratio of distance traveled to the change in elevation over the specified time interval. This allows you to analyze historical data and plan long-term routes taking into account the change in glide ratio.    
 
-Widget use: 
+#### Widget use
 
 - **Planning soaring flights.** For soaring pilots, the *Glide ratio to the target* widget becomes an indispensable tool when planning and executing soaring flights. Pilots can estimate how far they can fly to their target given the current conditions and the required glide ratio.
 - **Optimize climbs and descents.** The average glide ratio allows pilots to optimize climbs and descents based on current conditions. Pilots can choose the optimal timing for climbs to maximize flight time or for descents to reach a target point.
@@ -192,27 +192,30 @@ Widget use:
 - **Risk reduction**. The *Glide ratio to the target* widget helps pilots avoid situations where reaching the target becomes impossible due to insufficient glide ratio. This helps to reduce risks and improve flight safety.
 
 
-**Glide Ratio Calculation**  
+#### Glide Ratio Calculation
 The Glide Ratio is calculated by dividing the distance by the difference in altitude. This means that if the widget displays a value like "90:1," it signifies that for every 1 kilometer of descent, you will cover a distance of 90 kilometers.
 
-**Positive and Negative Values**  
-- Positive values indicate that your destination is at a lower altitude than your current position, requiring descent.
-- Negative values indicate that your destination is at a higher altitude, necessitating ascent. For example, "-90:1" means that after covering a distance of 90 kilometers, you need to ascend by 1 kilometer to reach your destination.
+* **Positive and Negative Values**
+  - Positive values indicate that your destination is at a lower altitude than your current position, requiring descent.
+  - Negative values indicate that your destination is at a higher altitude, necessitating ascent. For example, "-90:1" means that after covering a distance of 90 kilometers, you need to ascend by 1 kilometer to reach your destination.
 
-**Capping Ratio**  
+* **Capping Ratio**  
 Glide ratios greater than "150:1" are displayed as "1:0" or "-1:0," indicating that the altitude change is insignificant relative to the distance. 
 
-**"0:1" Display**  
+* **"0:1" Display**  
 When the distance to be covered is minimal compared to the altitude change, the display is "0:1," indicating that you can disregard the distance.
 
-**"0:0" Display**  
+* **"0:0" Display**  
 If both the distance and altitude change are less than 0.1 meters, the display is "0:0," signifying that both values are negligible.
 
-**Rounding**
-Before displaying, data is rounded to "0" if it is less than 0.1 meters. If the distance is greater than or equal to 0.1 meters but the altitude change is less than 0.1 meters, the display is "1:0."
+* **"1:0" Display**  
+If the distance is greater than or equal to 0.1 meters but the altitude change is less than 0.1 meters, the display is "1:0.".
 
-**Decimal Formatting**  
-For glide ratios between 0.1 and 100, we show a single decimal place. For example, a glide ratio of 50.7643 is displayed as "50.8:1." For values greater than 100, decimals are ignored. For instance, "102.35" is displayed as "102:1."
+* **Rounding/Formatting**  
+  - Value <= 0.1: "0.05" is displayed as "0".
+  - Value > 0.1 and < 100: "50.7643" is displayed as "50.8:1.".
+  - Value > 100: "102.35" is displayed as "102:1."
+
 
 In summary, the Glide Ratio widget in OsmAnd provides valuable information about your descent or ascent efficiency. Understanding its display conventions will help you make informed navigation decisions based on distance and altitude differences.
 

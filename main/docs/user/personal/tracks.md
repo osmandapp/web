@@ -693,11 +693,11 @@ After recording and saving, tracks can be managed as follows:
 
 ### Folder statistics (Android)
 
-*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> tab* 
+[*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> tab*](#my-places-menu)
+
+At the bottom of the list in the _Tracks_ tab, and below the list of tracks **in each of your folders**, there is an information section that allows you to view the overall summary statistics for the tracks in the selected folder. All values are displayed in the [units](../personal/profiles.md#units--formats) you have selected.  
 
 ![My Places with tracks in Android](@site/static/img/personal/tracks/dashboard_andr.png)
-
-At the bottom of the list in the Tracks tab, and below the list of tracks **in each of your folders**, there is an information section that allows you to view the overall summary statistics for the tracks in the selected folder. All values are displayed in the [units](../personal/profiles.md#units--formats) you have selected.  
 
 - *Number of **Tracks** in the folder*.
 - *Total sum of* **Distances**.

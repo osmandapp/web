@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
     ClickAwayListener,
     Drawer,
@@ -10,8 +10,9 @@ import {
     Toolbar,
 } from '@mui/material';
 import { Divider, Box } from '@mui/material';
-import { Menu, Person, Map } from '@mui/icons-material';
+import { Menu, Person } from '@mui/icons-material';
 import AppContext, {
+    OBJECT_CONFIGURE_MAP,
     OBJECT_TYPE_CLOUD_TRACK,
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_LOCAL_TRACK,
@@ -19,7 +20,7 @@ import AppContext, {
     OBJECT_TYPE_WEATHER,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
-import MapStyle from './mapstyle/MapStyle';
+import ConfigureMap from './configuremap/ConfigureMap';
 import RouteMenu from './route/RouteMenu';
 import { useNavigate } from 'react-router-dom';
 import FavoritesMenu from './favorite/FavoritesMenu';
@@ -29,11 +30,13 @@ import { ReactComponent as WeatherIcon } from '../assets/menu/ic_action_umbrella
 import { ReactComponent as TracksIcon } from '../assets/menu/ic_action_track.svg';
 import { ReactComponent as NavigationIcon } from '../assets/menu/ic_action_navigation.svg';
 import { ReactComponent as PlanRouteIcon } from '../assets/menu/ic_action_plan_route.svg';
+import { ReactComponent as ConfigureMapIcon } from '../assets/icons/ic_map_configure_map.svg';
 import InformationBlock from '../infoblock/components/InformationBlock';
 import Weather from './weather/Weather';
 import styles from './mainmenu.module.css';
 import TrackGroupFolder from './tracks/TrackGroupFolder';
 import _ from 'lodash';
+import FavoriteGroupFolder from './favorite/FavoriteGroupFolder';
 
 export default function MainMenu({
     size,
@@ -47,6 +50,8 @@ export default function MainMenu({
     setClearState,
 }) {
     const ctx = useContext(AppContext);
+
+    const [selectedType, setSelectedType] = useState(null);
 
     const handleDrawer = () => {
         setOpenMainMenu(!openMainMenu);
@@ -63,10 +68,18 @@ export default function MainMenu({
 
     const items = [
         {
+            name: 'Configure Map',
+            icon: ConfigureMapIcon,
+            component: <ConfigureMap />,
+            type: OBJECT_CONFIGURE_MAP,
+            show: true,
+            id: 'se-show-menu-configuremap',
+        },
+        {
             name: 'Weather',
             icon: WeatherIcon,
             component: <Weather />,
-            type: [OBJECT_TYPE_WEATHER],
+            type: OBJECT_TYPE_WEATHER,
             show: true,
             id: 'se-show-menu-weather',
         },
@@ -74,7 +87,7 @@ export default function MainMenu({
             name: 'Tracks',
             icon: TracksIcon,
             component: <TracksMenu />,
-            type: [OBJECT_TYPE_CLOUD_TRACK],
+            type: OBJECT_TYPE_CLOUD_TRACK,
             show: true,
             id: 'se-show-menu-tracks',
         },
@@ -82,7 +95,7 @@ export default function MainMenu({
             name: 'Favorites',
             icon: FavoritesIcon,
             component: <FavoritesMenu />,
-            type: [OBJECT_TYPE_FAVORITE],
+            type: OBJECT_TYPE_FAVORITE,
             show: true,
             id: 'se-show-menu-favorites',
         },
@@ -90,23 +103,15 @@ export default function MainMenu({
             name: 'Navigation',
             icon: NavigationIcon,
             component: <RouteMenu />,
-            type: [OBJECT_TYPE_ROUTE_TRACK],
+            type: OBJECT_TYPE_ROUTE_TRACK,
             show: true,
             id: 'se-show-menu-navigation',
-        },
-        {
-            name: 'Map Style',
-            icon: Map,
-            component: <MapStyle />,
-            type: [],
-            show: ctx.develFeatures,
-            id: 'se-show-menu-mapstyle',
         },
         {
             name: 'Plan a route',
             icon: PlanRouteIcon,
             component: <PlanRouteMenu />,
-            type: [OBJECT_TYPE_LOCAL_TRACK],
+            type: OBJECT_TYPE_LOCAL_TRACK,
             show: true,
             id: 'se-show-menu-planroute',
         },
@@ -131,10 +136,11 @@ export default function MainMenu({
 
     function selectMenuInfo() {
         const currentMenu = items.find((item) => {
-            return item.type.find((t) => t === ctx.currentObjectType);
+            return item.type === ctx.currentObjectType;
         });
         if (currentMenu) {
             setMenuInfo(currentMenu.component);
+            setSelectedType(currentMenu.type);
         }
     }
 
@@ -164,6 +170,34 @@ export default function MainMenu({
         isSelectedMenuItem(item) && res.push(styles.menuItemSelected);
 
         return res.join(' ');
+    }
+
+    function getGroup() {
+        if (selectedType === OBJECT_TYPE_FAVORITE) {
+            return <FavoriteGroupFolder folder={ctx.openGroups[ctx.openGroups.length - 1]} />;
+        } else if (selectedType === OBJECT_TYPE_CLOUD_TRACK) {
+            return <TrackGroupFolder folder={ctx.openGroups[ctx.openGroups.length - 1]} />;
+        }
+    }
+
+    function selectMenu(item) {
+        ctx.setOpenGroups([]);
+        if (menuInfo) {
+            // update menu
+            setShowInfoBlock(false);
+            const menu = !isSelectedMenuItem(item) ? item : null;
+            setMenuInfo(menu?.component);
+            setSelectedType(menu?.type);
+            ctx.setCurrentObjectType(null);
+        } else {
+            // select first menu
+            setMenuInfo(item.component);
+            setSelectedType(item.type);
+            setOpenMainMenu(false);
+            if (item.type === OBJECT_CONFIGURE_MAP) {
+                ctx.setCurrentObjectType(OBJECT_CONFIGURE_MAP);
+            }
+        }
     }
 
     return (
@@ -262,16 +296,7 @@ export default function MainMenu({
                                         id={item.id}
                                         key={index}
                                         className={setMenuStyles(item)}
-                                        onClick={() => {
-                                            ctx.setOpenTrackGroups([]);
-                                            if (menuInfo) {
-                                                setShowInfoBlock(false);
-                                                setMenuInfo(!isSelectedMenuItem(item) ? item.component : null);
-                                            } else {
-                                                setMenuInfo(item.component);
-                                                setOpenMainMenu(false);
-                                            }
-                                        }}
+                                        onClick={() => selectMenu(item)}
                                     >
                                         <ListItemButton
                                             className={setMenuIconStyles(item)}
@@ -360,11 +385,9 @@ export default function MainMenu({
                 open={true}
                 hideBackdrop
             >
-                <Toolbar />
-                {!showInfoBlock && _.isEmpty(ctx.openTrackGroups) && menuInfo}
-                {ctx.openTrackGroups.length > 0 && !showInfoBlock && (
-                    <TrackGroupFolder folder={ctx.openTrackGroups[ctx.openTrackGroups.length - 1]} />
-                )}
+                <Toolbar sx={{ mb: '-3px' }} />
+                {!showInfoBlock && _.isEmpty(ctx.openGroups) && menuInfo}
+                {ctx.openGroups.length > 0 && !showInfoBlock && getGroup()}
                 <InformationBlock
                     showInfoBlock={showInfoBlock}
                     setShowInfoBlock={setShowInfoBlock}

@@ -33,7 +33,7 @@ export default function Empty({ title, text, folder = null, menu = null }) {
     return (
         <>
             {ctx.loginUser ? (
-                <Box className={styles.block}>
+                <Box className={styles.block} id="se-empty-page">
                     <Icon className={styles.icon}>
                         <EmptyIcon className={styles.icon} />
                     </Icon>

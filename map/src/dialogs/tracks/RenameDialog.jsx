@@ -164,7 +164,7 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
                     className={dialogStyles.button}
                     onClick={() => rename()}
                 >
-                    Add
+                    Apply
                 </Button>
             </DialogActions>
         </Dialog>

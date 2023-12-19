@@ -55,7 +55,7 @@ export function getWptIcon(point, color, background, icon, folder) {
             : DEFAULT_WPT_COLOR;
     colorBackground = Utils.hexToArgb(colorBackground);
     let shapeBackground = background ? background : point.background;
-    let svg = getSvgBackground(colorBackground, shapeBackground);
+    let svg = getBackground(colorBackground, shapeBackground);
     let iconWpt =
         icon && icon !== 'null'
             ? icon
@@ -66,11 +66,17 @@ export function getWptIcon(point, color, background, icon, folder) {
     let part = point ? 'mx_' : '';
     if (iconWpt) {
         return L.divIcon({
-            html: `<div>${svg}<img class="icon" src="/map/images/${iconsFolder}/${part}${iconWpt}.svg"></div>`,
+            html: `<svg viewBox="0 0 24 24" filter="drop-shadow(5px 0 2px gray)" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                    ${svg}
+                   <image x="0" y="0" width="24" height="24" href="/map/images/${iconsFolder}/${part}${iconWpt}.svg" />
+                   </svg>`,
         });
     } else {
         return L.divIcon({
-            html: `<div>${svg}<img class="icon" src="/map/images/${POI_ICONS_FOLDER}/mx_${DEFAULT_WPT_ICON}.svg"></div>`,
+            html: `<svg viewBox="0 0 24 24"  filter="drop-shadow(5px 0 2px gray)" xmlns="http://www.w3.org/2000/svg">
+                   ${svg}
+                   <image x="0" y="0" width="24" height="24" href="/map/images/${POI_ICONS_FOLDER}/mx_${DEFAULT_WPT_ICON}.svg" />
+                   </svg>`,
         });
     }
 }
@@ -83,7 +89,25 @@ function isStrangeShape(shape) {
     );
 }
 
-function getSvgBackground(colorBackground, shape) {
+function getBackground(colorBackground, shape) {
+    let svg;
+    if (shape) {
+        if (shape === BACKGROUND_WPT_SHAPE_CIRCLE || isStrangeShape(shape)) {
+            svg = `<circle cx="12" cy="12" r="12" fill="${colorBackground}"/>`;
+        }
+        if (shape === BACKGROUND_WPT_SHAPE_OCTAGON) {
+            svg = `<path d="M1 7L7 1H17L23 7V17L17 23H7L1 17V7Z" fill="${colorBackground}"/>`;
+        }
+        if (shape === BACKGROUND_WPT_SHAPE_SQUARE) {
+            svg = `<rect width="24" height="24" rx="3" fill="${colorBackground}"/>`;
+        }
+    } else {
+        svg = `<circle cx="12" cy="12" r="12" fill="${colorBackground}"/>`;
+    }
+    return svg;
+}
+
+export function getSvgBackground(colorBackground, shape) {
     let svg;
     if (shape) {
         if (shape === BACKGROUND_WPT_SHAPE_CIRCLE || isStrangeShape(shape)) {
@@ -116,7 +140,7 @@ function getSvgBackground(colorBackground, shape) {
 const MarkerOptions = {
     options,
     getWptIcon,
-    getSvgBackground,
+    getBackground,
     BACKGROUND_WPT_SHAPE_CIRCLE: BACKGROUND_WPT_SHAPE_CIRCLE,
     BACKGROUND_WPT_SHAPE_OCTAGON: BACKGROUND_WPT_SHAPE_OCTAGON,
     BACKGROUND_WPT_SHAPE_SQUARE: BACKGROUND_WPT_SHAPE_SQUARE,

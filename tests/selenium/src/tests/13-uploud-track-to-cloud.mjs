@@ -6,11 +6,11 @@ import actionFinish from '../actions/actionFinish.mjs';
 import actionImportCloudTrack from '../actions/actionImportCloudTrack.mjs';
 import actionCheckCloudTracks from '../actions/actionCheckCloudTracks.mjs';
 import actionCreateNewFolder from '../actions/actionCreateNewFolder.mjs';
-import { deleteTrack, getTracks } from '../util.mjs';
+import { deleteTrack, getFiles } from '../util.mjs';
 
 export default async function test() {
     const trackName = 'test-routed-osrm';
-    const tracks = getTracks();
+    const tracks = getFiles({ folder: 'gpx' });
     const folder = 'uploud track';
 
     await actionOpenMap();
