@@ -15,16 +15,16 @@ function getRouteGeometry(route) {
         .filter((f) => f.geometry?.type === 'LineString' && f.geometry?.coordinates?.length > 0)
         .forEach((f) =>
             // LineString has [[ll], [ll], ...]
-            f.geometry.coordinates.forEach((c, index) => {
+            f.geometry.coordinates.forEach((c) => {
                 const [lng, lat, ele] = c; // ele might be undefined
-                if (ele) {
-                    geometry.push({ lat, lng, ele }); // https://www.rfc-editor.org/rfc/rfc7946#section-3.1.1
-                } else {
-                    // temporary workaround for bug with first/last point NaN elevation (fallback to prev/next point)
-                    const fallback = f.geometry.coordinates[index > 0 ? index - 1 : index + 1];
-                    const [, , ele] = fallback; // still might be undefined
-                    geometry.push({ lat, lng, ele });
-                }
+                // if (ele) {
+                geometry.push({ lat, lng, ele }); // https://www.rfc-editor.org/rfc/rfc7946#section-3.1.1
+                // } else {
+                //     // temporary workaround for bug with first/last point NaN elevation (fallback to prev/next point)
+                //     const fallback = f.geometry.coordinates[index > 0 ? index - 1 : index + 1];
+                //     const [, , ele] = fallback; // still might be undefined
+                //     geometry.push({ lat, lng, ele });
+                // }
             })
         );
     return geometry;
