@@ -7,6 +7,7 @@ import TracksManager from './track/TracksManager';
 import { refreshGlobalFiles } from './track/SaveTrackManager';
 import { OBJECT_TYPE_FAVORITE } from '../context/AppContext';
 import FavoriteHelper from '../infoblock/components/favorite/FavoriteHelper';
+import { compressFromJSON, decompressToJSON } from '../util/GzipBase64.mjs';
 
 export const FAVORITE_FILE_TYPE = 'FAVOURITES';
 export const DEFAULT_FAV_GROUP_NAME = 'favorites';
@@ -17,7 +18,7 @@ const FAV_FILE_PREFIX = 'favorites-';
 export const LOCATION_UNAVAILABLE = 'loc_unavailable';
 export const DEFAULT_GROUP_NAME_POINTS_GROUPS = '';
 export const SUBFOLDER_PLACEHOLDER = '_%_';
-const FAVORITE_LOCAL_STORAGE = 'visibleFav';
+const FAVORITE_STORAGE = 'favorites';
 const colors = [
     '#10c0f0',
     '#1010a0',
@@ -427,10 +428,33 @@ export function prepareIcon(value) {
 
 export async function addFavGroupsToMap(favGroups) {
     let newFavGroups = Object.assign({}, favGroups);
-    for (const g of favGroups.groups) {
-        newFavGroups = await createFavGroupObj(g, newFavGroups);
+    const savedFavGroups = await decompressToJSON(localStorage.getItem(FAVORITE_STORAGE));
+    let newSavedFavGroups = null;
+
+    const promises = favGroups.groups.map(async (g) => {
+        if (!newSavedFavGroups) {
+            newSavedFavGroups = {};
+        }
+        const key = getFavGroupKey(g);
+        if (savedFavGroups) {
+            newFavGroups = savedFavGroups[key] ? savedFavGroups[key] : await createFavGroupObj(g, newFavGroups);
+        } else {
+            newFavGroups = await createFavGroupObj(g, newFavGroups);
+        }
+        newSavedFavGroups[key] = newFavGroups;
+    });
+    const finished = await Promise.all(promises);
+
+    if (finished && newSavedFavGroups !== null) {
+        let res = await compressFromJSON(newSavedFavGroups);
+        localStorage.setItem(FAVORITE_STORAGE, res);
+
+        return newFavGroups;
     }
-    return newFavGroups;
+}
+
+export function getFavGroupKey(g) {
+    return `${g.name}/${g.updatetimems}`;
 }
 
 async function createFavGroupObj(g, favGroups) {
@@ -469,11 +493,12 @@ function createFavGroupUrl(group) {
     )}&name=${encodeURIComponent(group.file.name)}`;
 }
 
-export async function addOpenedFavoriteGroups(files, setFavorites, setUpdateMarkers) {
+export async function addOpenedFavoriteGroups(files, setFavorites, setUpdateMarkers, setProcessingGroups) {
     let newFavoritesFiles = {
         groups: [],
     };
     files.forEach((file) => {
+        setProcessingGroups(true);
         let group = FavoritesManager.createGroup(file);
         newFavoritesFiles.groups.push(group);
     });
@@ -539,7 +564,7 @@ const FavoritesManager = {
     FAVORITE_FILE_TYPE: FAVORITE_FILE_TYPE,
     FAV_FILE_PREFIX: FAV_FILE_PREFIX,
     DEFAULT_GROUP_NAME_POINTS_GROUPS: DEFAULT_GROUP_NAME_POINTS_GROUPS,
-    FAVORITE_LOCAL_STORAGE: FAVORITE_LOCAL_STORAGE,
+    FAVORITE_STORAGE: FAVORITE_STORAGE,
     colors: colors,
     shapes: shapes,
 };

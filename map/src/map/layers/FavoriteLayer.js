@@ -4,8 +4,8 @@ import '../../assets/css/gpx.css';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../util/TrackLayerProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
-import FavoritesManager, { addOpenedFavoriteGroups } from '../../manager/FavoritesManager';
-import TracksManager, { fitBoundsOptions } from '../../manager/track/TracksManager';
+import FavoritesManager from '../../manager/FavoritesManager';
+import { fitBoundsOptions } from '../../manager/track/TracksManager';
 import _, { isEmpty } from 'lodash';
 
 const FavoriteLayer = () => {
@@ -45,30 +45,22 @@ const FavoriteLayer = () => {
                     group[key] = file;
                     return group;
                 }, {});
+                ctx.setProcessingGroups(false);
                 return favoritesGroups;
             });
         }
     }, [ctx.updateMarkers]);
 
     useEffect(() => {
-        const updateFavoritesOnMap = async () => {
-            if (isEmpty(ctx.favorites)) {
-                await addOpenedFavoriteGroups(
-                    TracksManager.getFavoriteGroups(ctx.listFiles),
-                    ctx.setFavorites,
-                    ctx.setUpdateMarkers
-                );
-            } else {
-                Object.values(ctx.favorites.mapObjs).forEach((file) => {
-                    if (!ctx.configureMapState.showFavorites) {
-                        removeMarkersFromMap(file);
-                    } else {
-                        addMarkersOnMap(file);
-                    }
-                });
-            }
-        };
-        updateFavoritesOnMap().then();
+        if (!isEmpty(ctx.favorites)) {
+            Object.values(ctx.favorites.mapObjs).forEach((file) => {
+                if (!ctx.configureMapState.showFavorites) {
+                    removeMarkersFromMap(file);
+                } else {
+                    addMarkersOnMap(file);
+                }
+            });
+        }
     }, [ctx.configureMapState.showFavorites]);
 
     function removeMarkersFromMap(file) {

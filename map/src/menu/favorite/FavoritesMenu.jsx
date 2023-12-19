@@ -43,7 +43,7 @@ export default function FavoritesMenu() {
                 {!isEmpty(ctx.favorites) && (
                     <GroupHeader favoriteGroup={DEFAULT_FAV_GROUP_NAME} setSortGroups={setSortGroups} />
                 )}
-                {ctx.gpxLoading ? (
+                {ctx.gpxLoading || ctx.processingGroups ? (
                     <Loading />
                 ) : !isEmpty(ctx.favorites) && ctx.favorites?.groups?.length > 0 ? (
                     <Box

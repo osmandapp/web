@@ -41,7 +41,8 @@ async function loadListFiles(
     gpxFiles,
     setGpxFiles,
     setFavorites,
-    setUpdateMarkers
+    setUpdateMarkers,
+    setProcessingGroups
 ) {
     if (loginUser !== listFiles.loginUser) {
         if (!loginUser) {
@@ -64,7 +65,8 @@ async function loadListFiles(
                             addOpenedFavoriteGroups(
                                 TracksManager.getFavoriteGroups(res),
                                 setFavorites,
-                                setUpdateMarkers
+                                setUpdateMarkers,
+                                setProcessingGroups
                             ),
                         ]);
                     }
@@ -209,6 +211,7 @@ export const AppContextProvider = (props) => {
         add: false,
         location: null,
     });
+    const [processingGroups, setProcessingGroups] = useState(false);
 
     const [localTracks, setLocalTracks] = useState([]);
     const [currentObjectType, setCurrentObjectType] = useState(null);
@@ -316,7 +319,8 @@ export const AppContextProvider = (props) => {
                 gpxFiles,
                 setGpxFiles,
                 setFavorites,
-                setUpdateMarkers
+                setUpdateMarkers,
+                setProcessingGroups
             ).finally(() => setGpxLoading(false));
         }
     }, [loginUser]);
@@ -438,6 +442,8 @@ export const AppContextProvider = (props) => {
                 setZoomToFavGroup,
                 updateMarkers,
                 setUpdateMarkers,
+                processingGroups,
+                setProcessingGroups,
             }}
         >
             {props.children}
