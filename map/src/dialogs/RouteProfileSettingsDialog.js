@@ -120,7 +120,6 @@ export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenS
                 <FormControl fullWidth>
                     <Select value={router} onChange={onChangeRouter}>
                         {geoRouter.listProviders().map(({ key, name }) => (
-                            // geoRouter.isAllowedType({ type, develFeatures: ctx.develFeatures }) && (...) // map({ key, name, type })
                             <MenuItem key={key} value={key}>
                                 {name}
                             </MenuItem>

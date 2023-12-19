@@ -15,6 +15,8 @@ export async function calculateRoute({ changeRouteText, setRoutingErrorMsg }) {
     const waitingLines = makeLineFeatureCollection.call(this, { style: waitingStyle });
     this.putRoute({ route: waitingLines.geojson, skipConversion: true });
 
+    // don't show anything more than Line
+    // used for drag-and-drop (see events.js)
     if (this.preview) {
         return;
     }
@@ -117,7 +119,7 @@ async function calculateRouteOsmAnd({ geoProfile, changeRouteText, setRoutingErr
         avoidRoadsUrl = '&avoidRoads=' + avoidRoadsUrl.substring(1);
     }
     changeRouteText(true, null);
-    const maxDist = '&maxDist=' + this.getDistanceLimit(); // km
+    const maxDist = '&maxDist=100'; // compatibility-only
     const routeModeStr = TracksManager.formatRouteMode(geoProfile);
     const response = await apiGet(
         `${process.env.REACT_APP_ROUTING_API_SITE}/routing/route?` +

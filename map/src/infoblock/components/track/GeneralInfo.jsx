@@ -565,7 +565,7 @@ export default function GeneralInfo({ width }) {
                             </ListItemText>
                         </MenuItem>
                     )}
-                    {isRouteTrack(ctx) && (
+                    {isRouteTrack(ctx) && points > 2 && (
                         <MenuItem sx={{ ml: -2, mt: -1 }}>
                             <ListItemIcon>
                                 <RouteIcon fontSize="small" />

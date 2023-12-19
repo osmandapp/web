@@ -21,6 +21,9 @@ function getColors() {
         train: '#a56b6f',
         rescuetrack: '#0000ff',
         'rescuetrack-emergency': '#ff0000',
+        'OSRM-car': '#1976d2',
+        'OSRM-bike': '#9053bd',
+        'OSRM-foot': '#d90139',
     };
 }
 

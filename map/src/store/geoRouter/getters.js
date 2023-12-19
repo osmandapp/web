@@ -14,7 +14,8 @@ const PROFILE_LINE = TracksManager.PROFILE_LINE;
  * @return {bool}
  */
 export function isReady() {
-    return this.loaded === true && (this.paused === false || this.type !== 'osmand' || this.profile === PROFILE_LINE);
+    return this.loaded === true && this.paused === false; // as 'osmand' becomes default, no more exceptions for paused state
+    // return this.loaded === true && (this.paused === false || this.type !== 'osmand' || this.profile === PROFILE_LINE); // obsolete
 }
 
 /**
@@ -157,7 +158,16 @@ function getProfileDetails({ p, type, router, profile } = {}) {
     };
 }
 
+const osrmToOsmAndProfiles = {
+    'OSRM-car': 'car',
+    'OSRM-bike': 'bicycle',
+    'OSRM-foot': 'pedestrian',
+};
+
 function getProfileIcon({ color, profile } = {}) {
+    if (osrmToOsmAndProfiles[profile]) {
+        profile = osrmToOsmAndProfiles[profile];
+    }
     if (profile === PROFILE_LINE) {
         return <LinearScaleIcon sx={{ color: color }} fontSize="small" />;
     } else if (profile.includes('rescuetrack')) {
@@ -176,20 +186,3 @@ function getProfileIcon({ color, profile } = {}) {
 export function getColor(geoProfile) {
     return this.getProfile(geoProfile)?.color || 'black';
 }
-
-// used to get `maxDist` parameter for API /routing/update-route-between-points and /routing/route
-export function getDistanceLimit({ router = this.router, profile = this.profile } = {}) {
-    if (this.routerDistanceLimits[router]) {
-        return (
-            this.routerDistanceLimits[router][profile] ||
-            this.routerDistanceLimits[router].default ||
-            this.routerDistanceLimits.default
-        );
-    }
-    return this.routerDistanceLimits.default;
-}
-
-// export function isAllowedType({ type, develFeatures }) {
-//     // allow for currently selected type or non-osmand types or when develFeatures
-//     return type === this.type || type !== 'osmand' || develFeatures === true;
-// }
