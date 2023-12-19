@@ -362,11 +362,16 @@ export default function RouteMenu() {
                         type="file"
                         onChange={(e) => ctx.setRouteTrackFile(e.target.files[0])}
                     />
-                    <Button variant="contained" component="span" sx={{ ml: 2 }}>
+                    <Button variant="contained" component="span" sx={{ ml: 3, fontSize: 11, textAlign: 'center' }}>
                         Upload GPX to route
                     </Button>
                 </label>
-                <Button variant="contained" component="span" sx={{ ml: 2 }} onClick={openInfoBlock}>
+                <Button
+                    variant="contained"
+                    component="span"
+                    sx={{ ml: 3, fontSize: 11, textAlign: 'center' }}
+                    onClick={openInfoBlock}
+                >
                     Show details
                 </Button>
             </ButtonGroup>
