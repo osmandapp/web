@@ -27,7 +27,7 @@ OsmAnd deals with 2 type of maps: [Vector maps](../map/vector-maps.md) and  [Ras
 
 <TabItem value="android" label="Android">
 
-_<Translate android="true" ids="shared_string_menu,welmode_download_maps"/>_
+*<Translate android="true" ids="shared_string_menu,welmode_download_maps"/>*
 
 ![Maps menu Android](@site/static/img/personal/maps/maps_menu_android.png) ![Download maps menu Android](@site/static/img/personal/maps/download_map_android.png) 
 
@@ -35,7 +35,7 @@ _<Translate android="true" ids="shared_string_menu,welmode_download_maps"/>_
 
 <TabItem value="ios" label="iOS">
 
-_<Translate ios="true" ids="shared_string_menu,res_mapsres"/>_
+*<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 ![Maps menu iOS](@site/static/img/personal/maps/maps_menu_ios.png) ![Download maps menu iOS](@site/static/img/personal/maps/download_map_ios.png)
 
@@ -82,7 +82,7 @@ Download maps screen allows you to download maps from OsmAnd servers, you will n
 - Toolbar indicates how much memory is available to download and how much maps is available to download for free.
 
 :::tip Hint
-There is a small world map built into OsmAnd. You don't need to download large maps of any region if you don't intend to use them. If you want a map that covers the entire planet, including major cities, roads, and rivers, you can download a ***Detailed worldwide map***.
+There is a small world map built into OsmAnd. You don't need to download large maps of any region if you don't intend to use them. If you want a map that covers the entire planet, including major cities, roads, and rivers, you can download a **Detailed worldwide map**.
 :::
 
 ## Local maps

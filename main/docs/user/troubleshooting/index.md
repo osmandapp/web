@@ -38,4 +38,6 @@ General issues related to various OsmAnd's features.
 
 How to send crash logs to OsmAnd team
 
+### [Android Auto](android_auto.md)
+
 

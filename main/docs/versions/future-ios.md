@@ -19,7 +19,7 @@ OsmAnd’s latest update to version 4.6 for iOS brings a host of exciting new fe
 
 - [CarPlay dashboard support](#carplay-dashboard-support)
 - [External sensors BLE sensors support](#external-sensors)
-- [Simple widget for Top / Bottom panel](#)
+- [Simple widget for Top / Bottom panel](#simple-widget-for-top--bottom-panel)
 - Travel Guides
 - Night theme
 - Redesign OSM plugin for uploading POI/Note
