@@ -119,7 +119,7 @@ export async function loadProviders({ parseQueryString = false } = {}) {
 
     const osrm = (await loadProvidersOSRM()) || [];
 
-    next.providers = [].concat(osrm, osmand); // default OSRM first
+    next.providers = [].concat(osmand, osrm); // OsmAnd is default since HH-routing was activated
 
     // set 1st router/profile
     next.type = next.providers[0].type;

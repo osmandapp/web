@@ -21,6 +21,8 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import AppContext from '../context/AppContext';
 
+const ENABLE_PROVIDER_SELECTION = false; // disabled by default, but allowed if type=osrm is specified in URL
+
 export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenSettings }) {
     const ctx = useContext(AppContext);
 
@@ -100,13 +102,13 @@ export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenS
         setOpts(geoRouter.getParams());
     }, [geoRouter.getEffectDeps()]);
 
-    const { router, profile } = geoRouter.getProfile();
+    const { type, router, profile } = geoRouter.getProfile();
 
     return (
         <Dialog open={true} onClose={handleCloseAccept}>
             <Box display="flex">
                 <Box flexGrow={1}>
-                    <DialogTitle>Routing Provider Settings</DialogTitle>
+                    <DialogTitle>Advanced Routing Settings</DialogTitle>
                 </Box>
                 <Box>
                     <IconButton onClick={handleCloseAccept}>
@@ -116,16 +118,20 @@ export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenS
             </Box>
 
             <DialogContent>
-                <InputLabel id="route-provider-label">Provider</InputLabel>
-                <FormControl fullWidth>
-                    <Select value={router} onChange={onChangeRouter}>
-                        {geoRouter.listProviders().map(({ key, name }) => (
-                            <MenuItem key={key} value={key}>
-                                {name}
-                            </MenuItem>
-                        ))}
-                    </Select>
-                </FormControl>
+                {(ENABLE_PROVIDER_SELECTION || type === 'osrm') && (
+                    <>
+                        <InputLabel id="route-provider-label">Provider</InputLabel>
+                        <FormControl fullWidth>
+                            <Select value={router} onChange={onChangeRouter}>
+                                {geoRouter.listProviders().map(({ key, name }) => (
+                                    <MenuItem key={key} value={key}>
+                                        {name}
+                                    </MenuItem>
+                                ))}
+                            </Select>
+                        </FormControl>
+                    </>
+                )}
 
                 <InputLabel>Profile</InputLabel>
                 <FormControl fullWidth>
