@@ -178,9 +178,10 @@ export default function RouteMenu() {
 
     const { type, profile } = routeObject.getProfile();
 
-    const routeOptions = ctx.develFeatures
-        ? ['route.map.hidePoints', 'route.map.forceApproximation']
-        : ['route.map.hidePoints'];
+    const routeOptions =
+        ctx.develFeatures && type === 'osrm'
+            ? ['route.map.hidePoints', 'route.map.forceApproximation'] // OSRM-only option (forceApproximation)
+            : ['route.map.hidePoints']; // default
 
     function openInfoBlock() {
         const route = routeObject.getRoute();
