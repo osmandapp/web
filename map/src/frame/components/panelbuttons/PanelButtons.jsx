@@ -128,33 +128,35 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
                                         </IconButton>
                                     </Tooltip>
                                 )}
-                                <Tooltip
-                                    title={isCloudTrack(ctx) ? 'Cloud track' : 'Route track'}
-                                    placement={tooltipOrientation}
-                                    arrow
-                                >
-                                    <IconButton
-                                        id="se-panel-button-edit-icon"
-                                        variant="contained"
-                                        type="button"
-                                        onClick={() =>
-                                            confirm({
-                                                ctx,
-                                                text:
-                                                    'Open ' +
-                                                    (isCloudTrack(ctx) ? 'Cloud' : 'Route') +
-                                                    ' track in Local editor?',
-                                                callback: () => TracksManager.handleEditCloudTrack(ctx),
-                                            })
-                                        }
+                                {isCloudTrack(ctx) && (
+                                    <Tooltip
+                                        title={isCloudTrack(ctx) ? 'Cloud track' : 'Route track'}
+                                        placement={tooltipOrientation}
+                                        arrow
                                     >
-                                        {isCloudTrack(ctx) ? (
-                                            <Cloud fontSize="medium" color="primary" />
-                                        ) : (
-                                            <RouteIcon fontSize="medium" color="primary" />
-                                        )}
-                                    </IconButton>
-                                </Tooltip>
+                                        <IconButton
+                                            id="se-panel-button-edit-icon"
+                                            variant="contained"
+                                            type="button"
+                                            onClick={() =>
+                                                confirm({
+                                                    ctx,
+                                                    text:
+                                                        'Open ' +
+                                                        (isCloudTrack(ctx) ? 'Cloud' : 'Route') +
+                                                        ' track in Local editor?',
+                                                    callback: () => TracksManager.handleEditCloudTrack(ctx),
+                                                })
+                                            }
+                                        >
+                                            {isCloudTrack(ctx) ? (
+                                                <Cloud fontSize="medium" color="primary" />
+                                            ) : (
+                                                <RouteIcon fontSize="medium" color="primary" />
+                                            )}
+                                        </IconButton>
+                                    </Tooltip>
+                                )}
                                 <Tooltip title="Edit locally" arrow placement={tooltipOrientation}>
                                     <IconButton
                                         id="se-panel-button-edit-track"
