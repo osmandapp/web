@@ -9,7 +9,6 @@ const PROFILE_LINE = TracksManager.PROFILE_LINE;
  * Return this Router status:
  * loaded: all providers loaded.
  * Add it to Effect deps if you call it inside.
- * @note ignore pause for OSRM and/or Line (obsolete)
  * @return {bool}
  */
 export function isReady() {
