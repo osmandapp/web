@@ -19,10 +19,12 @@ import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import { downloadGpx } from '../../../infoblock/components/tabs/GeneralInfoTab';
 import RouteIcon from '@mui/icons-material/Route';
 import { FREE_ACCOUNT } from '../../../manager/LoginManager';
+import RouteProfileSettingsDialog from '../../../dialogs/RouteProfileSettingsDialog';
 
 const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clearState, bsize }) => {
     const ctx = useContext(AppContext);
 
+    const [openRoutingSettings, setOpenRoutingSettings] = useState(false);
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const [useSavedState, setUseSavedState] = useState(false);
 
@@ -32,6 +34,10 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
         !isUndoPossible || (pastStates.length === 1 && _.isEmpty(pastStates[0])) || ctx.selectedGpxFile.syncRouting;
     const isRedoDisabled = !isRedoPossible || ctx.selectedGpxFile.syncRouting;
     const isProfileProgress = ctx.processRouting;
+
+    useEffect(() => {
+        openRoutingSettings ? ctx.routeObject.onOpenSettings() : ctx.routeObject.onCloseSettings();
+    }, [openRoutingSettings]);
 
     useEffect(() => {
         if (clearState) {
@@ -111,6 +117,17 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
                     >
                         {(isCloudTrack(ctx) || isRouteTrack(ctx)) && (
                             <>
+                                {isRouteTrack(ctx) && (
+                                    <Tooltip title="Routing profile" placement={tooltipOrientation} arrow>
+                                        <IconButton
+                                            type="button"
+                                            variant="contained"
+                                            onClick={() => setOpenRoutingSettings(true)}
+                                        >
+                                            {ctx.routeObject.getProfile()?.icon}
+                                        </IconButton>
+                                    </Tooltip>
+                                )}
                                 <Tooltip
                                     title={isCloudTrack(ctx) ? 'Cloud track' : 'Route track'}
                                     placement={tooltipOrientation}
@@ -286,6 +303,13 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
                 )}
                 {openDeleteDialog && ctx.currentObjectType === OBJECT_TYPE_FAVORITE && (
                     <DeleteFavoriteDialog dialogOpen={openDeleteDialog} setDialogOpen={setOpenDeleteDialog} />
+                )}
+                {openRoutingSettings && (
+                    <RouteProfileSettingsDialog
+                        useDev={true}
+                        key="routesettingsdialog"
+                        setOpenSettings={setOpenRoutingSettings}
+                    />
                 )}
             </div>
         )
