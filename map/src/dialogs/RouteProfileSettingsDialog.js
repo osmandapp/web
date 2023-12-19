@@ -104,6 +104,18 @@ export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenS
 
     const { type, router, profile } = geoRouter.getProfile();
 
+    // disable other options when `applyaproximation` exist and set to false
+    const APPROXIMATION = 'applyapproximation';
+    function isDisabled(key) {
+        if (key === APPROXIMATION) {
+            return false;
+        }
+        if (opts[APPROXIMATION]?.value === false) {
+            return true;
+        }
+        return false;
+    }
+
     return (
         <Dialog open={true} onClose={handleCloseAccept}>
             <Box display="flex">
@@ -163,6 +175,7 @@ export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenS
                                         <FormControlLabel
                                             key={key}
                                             label={opt.label}
+                                            disabled={isDisabled(key)}
                                             control={
                                                 <Checkbox
                                                     sx={{ mt: '-6px' }}
@@ -182,6 +195,7 @@ export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenS
                                                 label={opt.label}
                                                 value={opt.value ? opt.value : ''}
                                                 onChange={onSelect(key, opts, setOpts)}
+                                                disabled={isDisabled(key)}
                                             >
                                                 {opt.values.map((item, index) => (
                                                     <MenuItem key={item} value={item}>
