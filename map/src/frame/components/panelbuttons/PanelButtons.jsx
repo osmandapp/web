@@ -120,6 +120,7 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
                                 {isRouteTrack(ctx) && (
                                     <Tooltip title="Routing profile" placement={tooltipOrientation} arrow>
                                         <IconButton
+                                            id="se-panel-button-profile-icon"
                                             type="button"
                                             variant="contained"
                                             onClick={() => setOpenRoutingSettings(true)}
