@@ -484,24 +484,29 @@ export async function addOpenedFavoriteGroups(files, setFavorites, setUpdateMark
     }
 }
 
-export function updateFavoriteGroups(
+export function updateFavoriteGroups({
     result,
     selectedGroupName,
     oldGroupName,
     ctx,
     useSelected = false,
-    favoriteName = null
-) {
-    ctx.favorites.groups = FavoriteHelper.updateGroupAfterChange(ctx, result, selectedGroupName, oldGroupName);
+    favoriteName = null,
+    changeHidden = false,
+}) {
+    ctx.favorites.groups = FavoriteHelper.updateGroupAfterChange(
+        ctx,
+        result,
+        selectedGroupName,
+        oldGroupName,
+        changeHidden
+    );
     let selectedGroup = ctx.favorites.groups.find((g) => g.name === selectedGroupName);
-
     if (result.oldGroupResp) {
         ctx.favorites.mapObjs[oldGroupName] = FavoriteHelper.updateGroupObj(
             ctx.favorites.mapObjs[oldGroupName],
             result.oldGroupResp
         );
     }
-
     if (!ctx.favorites.mapObjs[selectedGroupName]) {
         ctx.favorites.mapObjs[selectedGroupName] = FavoriteHelper.createGroupObj(result.newGroupResp, selectedGroup);
     } else {

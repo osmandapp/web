@@ -55,22 +55,28 @@ function updateGroupData(object, result) {
     object.file = file;
 }
 
-function updateGroupAfterChange(ctx, result, selectedGroupName, oldGroupName) {
+function updateGroupAfterChange(ctx, result, selectedGroupName, oldGroupName, changeHidden) {
     let updatedGroups = [];
     ctx.favorites.groups.forEach((g) => {
         let newGroup;
         if (g.name === oldGroupName && result.oldGroupResp?.data) {
-            let file = g.file;
-            Object.keys(result.oldGroupResp.data).forEach((d) => {
-                file[`${d}`] = result.oldGroupResp.data[d];
-            });
-            newGroup = createNewGroup(g, file, result.oldGroupResp.updatetimems, result.oldGroupResp.data.pointsGroups);
+            const file = updateFavFile(g, result.oldGroupResp);
+            newGroup = createNewGroup(
+                g,
+                file,
+                result.oldGroupResp.updatetimems,
+                result.oldGroupResp.data.pointsGroups,
+                changeHidden
+            );
         } else if (g.name === selectedGroupName && result.newGroupResp) {
-            let file = g.file;
-            Object.keys(result.newGroupResp.data).forEach((d) => {
-                file[`${d}`] = result.newGroupResp.data[d];
-            });
-            newGroup = createNewGroup(g, file, result.newGroupResp.updatetimems, result.newGroupResp.data.pointsGroups);
+            const file = updateFavFile(g, result.newGroupResp);
+            newGroup = createNewGroup(
+                g,
+                file,
+                result.newGroupResp.updatetimems,
+                result.newGroupResp.data.pointsGroups,
+                changeHidden
+            );
         } else {
             newGroup = g;
         }
@@ -79,17 +85,30 @@ function updateGroupAfterChange(ctx, result, selectedGroupName, oldGroupName) {
     return updatedGroups;
 }
 
-function createNewGroup(g, file, updatetimems, pointsGroups) {
+function updateFavFile(group, res) {
+    let file = group.file;
+    Object.keys(res.data).forEach((d) => {
+        file[`${d}`] = res.data[d];
+        file.updatetimems = res.updatetimems;
+        file.clienttimems = res.clienttimems;
+    });
+    return file;
+}
+
+function createNewGroup(g, file, updatetimems, pointsGroups, changeHidden = false) {
     let newGroup = {
         name: g.name,
         updatetimems: updatetimems,
-        file: g.file,
+        file: file,
         pointsGroups: pointsGroups,
     };
     if (!isEmpty(file.wpts)) {
         newGroup.hidden = file.wpts[0].hidden;
     } else {
         delete newGroup.hidden;
+    }
+    if (changeHidden) {
+        newGroup.hiddenupdatetimems = g.hiddenupdatetimems ? g.hiddenupdatetimems : g.updatetimems;
     }
 
     return newGroup;

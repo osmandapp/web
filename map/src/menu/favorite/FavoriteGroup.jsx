@@ -17,6 +17,7 @@ export default function FavoriteGroup({ index, group }) {
     const [openActions, setOpenActions] = useState(false);
     const [processDownload, setProcessDownload] = useState(false);
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
+    const [showGroup, setShowGroup] = useState(group.hidden !== 'true');
     const anchorEl = useRef(null);
 
     useEffect(() => {
@@ -51,7 +52,7 @@ export default function FavoriteGroup({ index, group }) {
                 }}
             >
                 <ListItemIcon className={styles.icon}>
-                    {group.hidden === 'true' ? (
+                    {!showGroup ? (
                         <FolderHiddenIcon />
                     ) : (
                         <FolderIcon
@@ -96,6 +97,7 @@ export default function FavoriteGroup({ index, group }) {
                         group={group}
                         setOpenActions={setOpenActions}
                         setProcessDownload={setProcessDownload}
+                        setShowGroup={setShowGroup}
                     />
                 }
             />
