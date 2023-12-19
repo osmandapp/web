@@ -56,7 +56,6 @@ const FavoriteLayer = () => {
                 await addOpenedFavoriteGroups(
                     TracksManager.getFavoriteGroups(ctx.listFiles),
                     ctx.setFavorites,
-                    ctx.configureMapState,
                     ctx.setUpdateMarkers
                 );
             } else {

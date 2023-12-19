@@ -41,7 +41,6 @@ async function loadListFiles(
     gpxFiles,
     setGpxFiles,
     setFavorites,
-    configureMapState,
     setUpdateMarkers
 ) {
     if (loginUser !== listFiles.loginUser) {
@@ -65,7 +64,6 @@ async function loadListFiles(
                             addOpenedFavoriteGroups(
                                 TracksManager.getFavoriteGroups(res),
                                 setFavorites,
-                                configureMapState,
                                 setUpdateMarkers
                             ),
                         ]);
@@ -318,7 +316,6 @@ export const AppContextProvider = (props) => {
                 gpxFiles,
                 setGpxFiles,
                 setFavorites,
-                configureMapState,
                 setUpdateMarkers
             ).finally(() => setGpxLoading(false));
         }

@@ -425,15 +425,12 @@ export function prepareIcon(value) {
     return isNoValue(value) ? MarkerOptions.DEFAULT_WPT_ICON : value;
 }
 
-export async function addFavGroupsToMap(favGroups, showFavorites) {
-    if (showFavorites) {
-        let newFavGroups = Object.assign({}, favGroups);
-        for (const g of favGroups.groups) {
-            newFavGroups = await createFavGroupObj(g, newFavGroups);
-        }
-        return newFavGroups;
+export async function addFavGroupsToMap(favGroups) {
+    let newFavGroups = Object.assign({}, favGroups);
+    for (const g of favGroups.groups) {
+        newFavGroups = await createFavGroupObj(g, newFavGroups);
     }
-    return null;
+    return newFavGroups;
 }
 
 async function createFavGroupObj(g, favGroups) {
@@ -472,7 +469,7 @@ function createFavGroupUrl(group) {
     )}&name=${encodeURIComponent(group.file.name)}`;
 }
 
-export async function addOpenedFavoriteGroups(files, setFavorites, configureMapState, setUpdateMarkers) {
+export async function addOpenedFavoriteGroups(files, setFavorites, setUpdateMarkers) {
     let newFavoritesFiles = {
         groups: [],
     };
@@ -481,7 +478,7 @@ export async function addOpenedFavoriteGroups(files, setFavorites, configureMapS
         newFavoritesFiles.groups.push(group);
     });
     newFavoritesFiles.mapObjs = {};
-    const newGroups = await addFavGroupsToMap(newFavoritesFiles, configureMapState.showFavorites);
+    const newGroups = await addFavGroupsToMap(newFavoritesFiles);
     if (newGroups) {
         setUpdateMarkers(newGroups);
     }
