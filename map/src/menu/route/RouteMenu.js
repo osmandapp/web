@@ -21,6 +21,7 @@ import RouteProfileSettingsDialog from '../../dialogs/RouteProfileSettingsDialog
 import { TextField } from '@mui/material/';
 import { LatLng } from 'leaflet';
 import { makeStyles } from '@material-ui/core/styles';
+import styles from './routemenu.module.css';
 
 const StyledInput = styled('input')({
     display: 'none',
@@ -178,9 +179,10 @@ export default function RouteMenu() {
 
     const { type, profile } = routeObject.getProfile();
 
-    const routeOptions = ctx.develFeatures
-        ? ['route.map.hidePoints', 'route.map.forceApproximation']
-        : ['route.map.hidePoints'];
+    const routeOptions =
+        ctx.develFeatures && type === 'osrm'
+            ? ['route.map.hidePoints', 'route.map.forceApproximation'] // OSRM-only option (forceApproximation)
+            : ['route.map.hidePoints']; // default
 
     function openInfoBlock() {
         const route = routeObject.getRoute();
@@ -361,11 +363,11 @@ export default function RouteMenu() {
                         type="file"
                         onChange={(e) => ctx.setRouteTrackFile(e.target.files[0])}
                     />
-                    <Button variant="contained" component="span" sx={{ ml: 2 }}>
+                    <Button variant="contained" className={styles.smallButton}>
                         Upload GPX to route
                     </Button>
                 </label>
-                <Button variant="contained" component="span" sx={{ ml: 2 }} onClick={openInfoBlock}>
+                <Button variant="contained" component="span" className={styles.smallButton} onClick={openInfoBlock}>
                     Show details
                 </Button>
             </ButtonGroup>

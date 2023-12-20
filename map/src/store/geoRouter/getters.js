@@ -8,14 +8,11 @@ const PROFILE_LINE = TracksManager.PROFILE_LINE;
 /**
  * Return this Router status:
  * loaded: all providers loaded.
- * paused: pause route calculate.
  * Add it to Effect deps if you call it inside.
- * @note ignore pause for OSRM and/or Line
  * @return {bool}
  */
 export function isReady() {
-    return this.loaded === true && this.paused === false; // as 'osmand' becomes default, no more exceptions for paused state
-    // return this.loaded === true && (this.paused === false || this.type !== 'osmand' || this.profile === PROFILE_LINE); // obsolete
+    return this.loaded === true;
 }
 
 /**

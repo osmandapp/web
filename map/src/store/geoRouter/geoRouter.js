@@ -52,7 +52,6 @@ export class geoRouter {
     // state
     setter = null;
     loaded = false;
-    paused = false;
     preview = false;
 
     // current
