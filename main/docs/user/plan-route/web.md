@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Overview
 
 :::info
-The *[osmand.net](https://osmand.net/map/)* site is currently being developed and tested.  
+The *[osmand.net/map](https://osmand.net/map/)* site is currently being developed and tested.  
 **Therefore, the layout and operation of some functions on the site may be different from those described in this article.**   
 
 We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub so you can leave feedback there.
@@ -31,36 +31,47 @@ Features | Versions
 | [OsmAnd Pro sync](#osmand-pro-sync) | <ProFeature/> |
 | [Weather](#weather) | Free |
 | [Tracks](#weather) | Free and <ProFeature/> |
-| [Favorites](#farorites-pro) | <ProFeature/> | 
-| [Map style](#map-style) | Free |
+| [Favorites](#farorites-pro) | [Osmand Start](https://osmand.net/blog/start) or <ProFeature/> | 
 | [Navigation Route](#navigation-route) | Free |
-| [Create track](#create-track-pro) | <ProFeature/> |   
+| [Create track](#create-track-pro) | Free |   
 
 
 ![View OsmAnd Web](@site/static/img/web/web.png)
 
 
-## OsmAnd Pro sync
+## OsmAnd Pro and OsmAnd Start sync
 
-OsmAnd Pro is a [cross-platform](../troubleshooting/setup.md#cross-platform) subscription.  
+- **OsmAnd Pro** is a [cross-platform](../troubleshooting/setup.md#cross-platform) paid subscription. 
+- **OsmAnd Start** is a [free OsmAnd Cloud registration](https://osmand.net/blog/start).
+
 The cross-platform capability allows you to use OsmAnd Pro on all platforms *([Android](../purchases/android.md)  ← →  [iOS](../purchases/ios.md)  →  [Web](https://www.osmand.net/map))*. To do this you need to:
 
-1. Subscribe to OsmAnd Pro. Read more about how to do this for [Android here](../purchases/android.md#how-to-buy), and for [iOS here](../purchases/ios.md#how-to-buy).
-2. Register your [account](../troubleshooting/setup.md#cross-platform) on the OsmAnd server inside OsmAnd app.
-3. The registered email will be your login to activate OsmAnd Pro on the web platform. At first, time needed to choose a password for future entering the web portal (please, use the instruction on the web portal).
+1. Subscribe to _OsmAnd Pro_. Read more about how to do this for [Android here](../purchases/android.md#how-to-buy), and for [iOS here](../purchases/ios.md#how-to-buy).
+2. How to create _OsmAnd Start_ account read more [here](https://osmand.net/blog/start#how-to-create-an-account).
+3. Register your [Pro or Start account](../troubleshooting/setup.md#cross-platform) on the OsmAnd server inside OsmAnd app.
+4. The registered email will be your login to activate OsmAnd Pro on the web platform. At first, time needed to choose a password for future entering the web portal (please, use the instruction on the web portal).
 
 - Enter your *email* and *password* for [osmand.net/map](https://osmand.net/map/).   
 
 ![View OsmAnd Web activation](@site/static/img/web/web_pro_activation.png)  
 
-- Your data, such as tracks and favorites, will appear in the menu after you log in. They are available for display on the map.  
+- Your data, such as tracks (OsmAnd Pro) and favorites(OsmAnd Pro and OsmAnd Start), will appear in the menu after you log in. They are available for display on the map. But you need [to sync this data](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) from your devices.
 
 ![View OsmAnd Web data](@site/static/img/web/web_data.png)  
 
-- To *download backup data* from [OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud), click the login field. There is also a button to *logout* of the account.  
+- To *DOWNLOAD BACKUP* from [OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud), click the login field. On the login field you can see files info (total files number, total files size, cloud storage used) and account info (subscription type, start time and expire time of your subscription).
 
 ![View OsmAnd Web backup file](@site/static/img/web/web_backup_file.png)  
 
+Choose needed files for downloading, ZIP or OSF format of downloaded files and click *DOWNLOAD BACKUP* button:
+
+![View OsmAnd Web backup file](@site/static/img/web/web_backup_file_1.png)  
+
+There is also a button to *logout* of the account.  
+
+- _LOGOUT_, _DELETE YOUR ACCOUNT_ or _Change email_ you find on the login field too. For opening _DELETE YOUR ACCOUNT_ or _Change email_ you need to click _Dangerous area_.
+
+![View OsmAnd Web backup file](@site/static/img/web/web_backup_file_2.png)  
 
 ## Weather
 
@@ -148,7 +159,7 @@ The following features are available:
 ![OsmAnd Web cloud GPX edit](@site/static/img/web/web_cloud_gpx_edit.png)
 
 
-## Favorites (Pro)
+## Favorites
 
 After registering an OsmAnd Pro account, the user's Favorites are displayed in the Favorites menu.  
 The following actions are available:
@@ -168,6 +179,7 @@ The following actions are available:
 ![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
 
 
+<!--
 ## Map style
 
 In this section of the menu, you can change the map style. You can read more about how to do this in the article [Vector Maps (Map Styles)](../map/vector-maps.md) for the OsmAnd app. The settings in the web version are no different.  
@@ -180,7 +192,7 @@ In this section of the menu, you can change the map style. You can read more abo
 - Topo map style
 
 ![OsmAnd Web Favorites add](@site/static/img/web/web_map_style_topo.png)
-
+-->
 
 ## Navigation route
 
@@ -197,7 +209,7 @@ In this section of the menu, you can change the map style. You can read more abo
 ![OsmAnd Web Create Route](@site/static/img/web/web_create_route_2-1.png)
 
 
-## Create track (Pro)
+## Create track
 
 A web version of the ["Plan route"](../plan-route/create-route.md) tool, similar to the OsmAnd app, is currently being developed. To go to create a route, *Right-click → Create Route*.  Or you can use the *Create track* button (right side: *Pencil* and *Upload* buttons).
 
@@ -209,3 +221,10 @@ You can view any actions and display track information in the [Track section](#t
 
 ![OsmAnd Web Create Track](@site/static/img/web/web_create_track_info.png)
 
+
+<!--
+## POIs search and layer
+
+## Search
+
+-->
