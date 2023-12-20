@@ -55,28 +55,16 @@ function updateGroupData(object, result) {
     object.file = file;
 }
 
-function updateGroupAfterChange({ ctx, result, selectedGroupName, oldGroupName, changeHidden }) {
+function updateGroupAfterChange({ ctx, result, selectedGroupName, oldGroupName }) {
     let updatedGroups = [];
     ctx.favorites.groups.forEach((g) => {
         let newGroup;
         if (g.name === oldGroupName && result.oldGroupResp?.data) {
             const file = updateFavFile(g, result.oldGroupResp);
-            newGroup = createNewGroup(
-                g,
-                file,
-                result.oldGroupResp.updatetimems,
-                result.oldGroupResp.data.pointsGroups,
-                changeHidden
-            );
+            newGroup = createNewGroup(g, file, result.oldGroupResp.updatetimems, result.oldGroupResp.data.pointsGroups);
         } else if (g.name === selectedGroupName && result.newGroupResp) {
             const file = updateFavFile(g, result.newGroupResp);
-            newGroup = createNewGroup(
-                g,
-                file,
-                result.newGroupResp.updatetimems,
-                result.newGroupResp.data.pointsGroups,
-                changeHidden
-            );
+            newGroup = createNewGroup(g, file, result.newGroupResp.updatetimems, result.newGroupResp.data.pointsGroups);
         } else {
             newGroup = g;
         }
@@ -95,7 +83,7 @@ function updateFavFile(group, res) {
     return file;
 }
 
-function createNewGroup(g, file, updatetimems, pointsGroups, changeHidden = false) {
+function createNewGroup(g, file, updatetimems, pointsGroups) {
     let newGroup = {
         name: g.name,
         updatetimems: updatetimems,
@@ -104,11 +92,9 @@ function createNewGroup(g, file, updatetimems, pointsGroups, changeHidden = fals
     };
     if (!isEmpty(file.wpts)) {
         newGroup.hidden = file.wpts[0].hidden;
+        newGroup.updatetimemsbywpts = getFavGroupUpdateTimeByWpts(file.wpts);
     } else {
         delete newGroup.hidden;
-    }
-    if (changeHidden) {
-        newGroup.hiddenupdatetimems = g.hiddenupdatetimems ? g.hiddenupdatetimems : g.updatetimems;
     }
 
     return newGroup;
@@ -136,6 +122,7 @@ function updateGroupObj(selectedGroup, result) {
     });
     if (!isEmpty(group.wpts)) {
         group.hidden = group.wpts[0].hidden;
+        group.updatetimemsbywpts = getFavGroupUpdateTimeByWpts(group.wpts);
     } else {
         delete group.hidden;
     }
@@ -157,6 +144,20 @@ function createGroupObj(result, selectedGroup) {
     group.updatetimems = result.updatetimems;
 
     return group;
+}
+
+export function getFavGroupUpdateTimeByWpts(wpts) {
+    if (wpts) {
+        let maxTime = 0;
+        wpts.forEach((wpt) => {
+            if (wpt.ext && wpt.ext.time) {
+                const timeValue = parseInt(wpt.ext.time);
+                maxTime = Math.max(maxTime, timeValue);
+            }
+        });
+        return maxTime;
+    }
+    return null;
 }
 
 const FavoriteHelper = {

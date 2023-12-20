@@ -1130,8 +1130,8 @@ export const getGpxTime = (f, reverse = false, creationTime = false) => {
         raw.push(f?.file?.clienttimems); // uploaded for favorites group(cloud timestamp?)
         raw.push(f?.ext?.time); // uploaded for favorites group(cloud timestamp?)
     } else {
-        if (f?.hiddenupdatetimems) {
-            raw.push(f?.hiddenupdatetimems);
+        if (f?.updatetimemsbywpts) {
+            raw.push(f?.updatetimemsbywpts);
         } else {
             raw.push(f?.details?.analysis?.startTime); // cloud - stored analysis
             raw.push(f?.analysis?.startTime); // local track - fresh analysis

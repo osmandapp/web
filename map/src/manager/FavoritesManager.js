@@ -1,12 +1,12 @@
 import MarkerOptions, { getSvgBackground } from '../map/markers/MarkerOptions';
 import Utils from '../util/Utils';
-import _ from 'lodash';
+import _, { isEmpty } from 'lodash';
 import { apiPost } from '../util/HttpApi';
 import { quickNaNfix } from '../util/Utils';
 import TracksManager from './track/TracksManager';
 import { refreshGlobalFiles } from './track/SaveTrackManager';
 import { OBJECT_TYPE_FAVORITE } from '../context/AppContext';
-import FavoriteHelper from '../infoblock/components/favorite/FavoriteHelper';
+import FavoriteHelper, { getFavGroupUpdateTimeByWpts } from '../infoblock/components/favorite/FavoriteHelper';
 import { compressFromJSON, decompressToJSON } from '../util/GzipBase64.mjs';
 
 export const FAVORITE_FILE_TYPE = 'FAVOURITES';
@@ -97,11 +97,12 @@ async function updateFavorite(data, wptName, oldGroupName, newGroupName, oldGrou
     return prepareResult(resp);
 }
 
-export async function updateAllFavorites(group, data) {
+export async function updateAllFavorites(group, data, hiddenChanged) {
     let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update-all-favorites`, data, {
         params: {
             fileName: group.file.name,
             updatetime: group.updatetimems,
+            hiddenChanged: hiddenChanged,
         },
     });
     return prepareResult(resp);
@@ -475,6 +476,9 @@ function addExistFavGroup(obj, g, favGroups) {
     favGroups.mapObjs[g.name] = obj;
     let ind = favGroups.groups.findIndex((obj) => obj.name === g.name);
     favGroups.groups[ind].pointsGroups = favGroups.mapObjs[g.name].pointsGroups;
+    if (!isEmpty(favGroups.mapObjs[g.name].wpts)) {
+        favGroups.groups[ind].updatetimemsbywpts = getFavGroupUpdateTimeByWpts(favGroups.mapObjs[g.name].wpts);
+    }
 
     return favGroups;
 }
@@ -511,16 +515,19 @@ async function createFavGroupObj(g, favGroups) {
         const favoriteFile = new File([resData], g.file.name, {
             type: 'text/plain',
         });
+        let ind = favGroups.groups.findIndex((obj) => obj.name === g.name);
         let favorites = await TracksManager.getTrackData(favoriteFile);
         if (favorites) {
             favorites.name = g.file.name;
             // Update pointsGroups in favGroups.groups for the current group.
-            let ind = favGroups.groups.findIndex((obj) => obj.name === g.name);
             favGroups.groups[ind].pointsGroups = favorites.pointsGroups;
         }
         Object.keys(favorites).forEach((t) => {
             favGroups.mapObjs[g.name][`${t}`] = favorites[t];
         });
+        if (!isEmpty(favGroups.mapObjs[g.name].wpts)) {
+            favGroups.groups[ind].updatetimemsbywpts = getFavGroupUpdateTimeByWpts(favGroups.mapObjs[g.name].wpts);
+        }
     }
     return favGroups;
 }
@@ -554,14 +561,12 @@ export function updateFavoriteGroups({
     ctx,
     useSelected = false,
     favoriteName = null,
-    changeHidden = false,
 }) {
     ctx.favorites.groups = FavoriteHelper.updateGroupAfterChange({
         ctx,
         result,
         selectedGroupName,
         oldGroupName,
-        changeHidden,
     });
     let selectedGroup = ctx.favorites.groups.find((g) => g.name === selectedGroupName);
     if (result.oldGroupResp) {

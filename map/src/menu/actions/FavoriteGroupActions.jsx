@@ -11,7 +11,7 @@ import DeleteFavGroupDialog from '../../dialogs/favorites/DeleteFavGroupDialog';
 import AppContext from '../../context/AppContext';
 import { updateAllFavorites, updateFavoriteGroups } from '../../manager/FavoritesManager';
 
-const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDownload, setShowGroup }, ref) => {
+const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, ref) => {
     const ctx = useContext(AppContext);
 
     const [openRenameDialog, setOpenRenameDialog] = useState(false);
@@ -19,7 +19,6 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
 
     function showOnMap(hidden) {
         updateGroup(group, hidden);
-        setShowGroup(hidden);
         if (setOpenActions) {
             setOpenActions(false);
         }
@@ -34,7 +33,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
             data.push(JSON.stringify(wpt));
         });
 
-        let result = await updateAllFavorites(group, data);
+        let result = await updateAllFavorites(group, data, true);
 
         if (result) {
             updateFavoriteGroups({
@@ -42,7 +41,6 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                 selectedGroupName: group.name,
                 oldGroupName: null,
                 ctx,
-                changeHidden: true,
             });
         }
     }

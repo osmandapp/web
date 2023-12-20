@@ -17,7 +17,7 @@ export default function FavoriteGroup({ index, group }) {
     const [openActions, setOpenActions] = useState(false);
     const [processDownload, setProcessDownload] = useState(false);
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
-    const [showGroup, setShowGroup] = useState(group.hidden !== 'true');
+    //const [showGroup, setShowGroup] = useState(group.hidden !== 'true');
     const anchorEl = useRef(null);
 
     useEffect(() => {
@@ -32,7 +32,7 @@ export default function FavoriteGroup({ index, group }) {
     }
 
     function getLastModificationDate() {
-        const currentDate = new Date(group.file.updatetimems);
+        const currentDate = new Date(group.updatetimemsbywpts ? group.updatetimemsbywpts : group.file.updatetimems);
         const month = currentDate.toLocaleString('default', { month: 'short' });
         const day = currentDate.getDate();
         return `${month} ${day}`;
@@ -52,7 +52,7 @@ export default function FavoriteGroup({ index, group }) {
                 }}
             >
                 <ListItemIcon className={styles.icon}>
-                    {!showGroup ? (
+                    {group.hidden === 'true' ? (
                         <FolderHiddenIcon />
                     ) : (
                         <FolderIcon
@@ -97,7 +97,6 @@ export default function FavoriteGroup({ index, group }) {
                         group={group}
                         setOpenActions={setOpenActions}
                         setProcessDownload={setProcessDownload}
-                        setShowGroup={setShowGroup}
                     />
                 }
             />
