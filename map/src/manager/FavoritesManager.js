@@ -102,7 +102,7 @@ export async function updateAllFavorites(group, data, hiddenChanged) {
         params: {
             fileName: group.file.name,
             updatetime: group.updatetimems,
-            hiddenChanged: hiddenChanged,
+            hiddenWasChanged: hiddenChanged,
         },
     });
     return prepareResult(resp);
