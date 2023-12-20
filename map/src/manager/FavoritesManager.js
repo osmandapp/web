@@ -18,7 +18,7 @@ const FAV_FILE_PREFIX = 'favorites-';
 export const LOCATION_UNAVAILABLE = 'loc_unavailable';
 export const DEFAULT_GROUP_NAME_POINTS_GROUPS = '';
 export const SUBFOLDER_PLACEHOLDER = '_%_';
-const FAVORITE_STORAGE = 'favorites';
+export const FAVORITE_STORAGE = 'favorites';
 const colors = [
     '#10c0f0',
     '#1010a0',
