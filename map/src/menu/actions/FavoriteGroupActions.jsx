@@ -38,10 +38,10 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
 
         if (result) {
             updateFavoriteGroups({
-                result: result,
+                result,
                 selectedGroupName: group.name,
                 oldGroupName: null,
-                ctx: ctx,
+                ctx,
                 changeHidden: true,
             });
         }

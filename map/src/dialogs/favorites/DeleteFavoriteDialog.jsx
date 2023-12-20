@@ -62,14 +62,14 @@ export default function DeleteFavoriteDialog({ dialogOpen, setDialogOpen, wpt = 
                     );
                     ctx.favorites = FavoriteHelper.updateSelectedGroup(ctx.favorites, groupName, result);
                     useSelected &&
-                        FavoriteHelper.updateSelectedFile(
+                        FavoriteHelper.updateSelectedFile({
                             ctx,
-                            ctx.favorites,
+                            favorites: ctx.favorites,
                             result,
-                            ctx.selectedGpxFile.markerCurrent.title,
-                            ctx.selectedGpxFile.nameGroup,
-                            true
-                        );
+                            favoriteName: ctx.selectedGpxFile.markerCurrent.title,
+                            groupName: ctx.selectedGpxFile.nameGroup,
+                            deleted: true,
+                        });
                     ctx.setUpdateMarkers({ ...ctx.favorites });
                     closeContextMenu();
                     break;

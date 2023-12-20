@@ -480,7 +480,7 @@ function addExistFavGroup(obj, g, favGroups) {
 }
 
 export function getFavGroupKey(g) {
-    return `${g.name}/${g.updatetimems}`;
+    return g.name + '/' + g.updatetimems;
 }
 
 /**
@@ -556,13 +556,13 @@ export function updateFavoriteGroups({
     favoriteName = null,
     changeHidden = false,
 }) {
-    ctx.favorites.groups = FavoriteHelper.updateGroupAfterChange(
+    ctx.favorites.groups = FavoriteHelper.updateGroupAfterChange({
         ctx,
         result,
         selectedGroupName,
         oldGroupName,
-        changeHidden
-    );
+        changeHidden,
+    });
     let selectedGroup = ctx.favorites.groups.find((g) => g.name === selectedGroupName);
     if (result.oldGroupResp) {
         ctx.favorites.mapObjs[oldGroupName] = FavoriteHelper.updateGroupObj(
@@ -579,7 +579,14 @@ export function updateFavoriteGroups({
         );
     }
     if (useSelected && favoriteName) {
-        FavoriteHelper.updateSelectedFile(ctx, ctx.favorites, null, favoriteName, selectedGroupName, false);
+        FavoriteHelper.updateSelectedFile({
+            ctx,
+            favorites: ctx.favorites,
+            result: null,
+            favoriteName,
+            groupName: selectedGroupName,
+            deleted: false,
+        });
     }
     ctx.setUpdateMarkers({ ...ctx.favorites });
 }

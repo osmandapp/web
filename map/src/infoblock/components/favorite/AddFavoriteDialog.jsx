@@ -201,7 +201,14 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen }) {
             );
         }
         ctx.favorites = FavoriteHelper.updateSelectedGroup(ctx.favorites, selectedGroup.name, result);
-        FavoriteHelper.updateSelectedFile(ctx, ctx.favorites, result, favoriteName, selectedGroup.name, false);
+        FavoriteHelper.updateSelectedFile({
+            ctx,
+            favorites: ctx.favorites,
+            result,
+            favoriteName,
+            groupName: selectedGroup.name,
+            deleted: false,
+        });
         ctx.setFavorites({ ...ctx.favorites });
         setFavoriteGroup(ctx.favorites.mapObjs[selectedGroup.name]);
     }
