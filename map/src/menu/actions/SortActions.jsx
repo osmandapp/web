@@ -33,10 +33,10 @@ function byAlpha(files, reverse) {
     });
 }
 
-export function byTime(files, reverse) {
+export function byTime(files, reverse, isFavGroups = false) {
     return [...files].sort((a, b) => {
-        const A = getGpxTime(a, reverse);
-        const B = getGpxTime(b, reverse);
+        const A = getGpxTime({ f: a, reverse, isFavGroups });
+        const B = getGpxTime({ f: b, reverse, isFavGroups });
         if (A === B) {
             return az(a.name, b.name);
         }
@@ -57,8 +57,8 @@ function byDistance(files, reverse) {
 
 function byCreationTime(files, reverse) {
     return [...files].sort((a, b) => {
-        const A = getGpxTime(a, reverse, true);
-        const B = getGpxTime(b, reverse, true);
+        const A = getGpxTime({ f: a, reverse, creationTime: true });
+        const B = getGpxTime({ f: b, reverse, creationTime: true });
         if (A === B) {
             return az(a.name, b.name);
         }
@@ -186,7 +186,13 @@ const SortActions = forwardRef(
                 }
             }
             if (setSortGroups && (method === 'az' || method === 'za' || favoriteGroup)) {
-                setSortGroups(allMethods[method].callback(groups(), allMethods[method].reverse));
+                if (method === 'time') {
+                    setSortGroups(
+                        allMethods[method].callback(groups(), allMethods[method].reverse, favoriteGroup !== null)
+                    );
+                } else {
+                    setSortGroups(allMethods[method].callback(groups(), allMethods[method].reverse));
+                }
             }
         }
 

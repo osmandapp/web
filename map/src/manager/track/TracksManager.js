@@ -1120,7 +1120,7 @@ function evaluateMonthNames() {
     return monthNames;
 }
 
-export const getGpxTime = (f, reverse = false, creationTime = false) => {
+export const getGpxTime = ({ f, reverse = false, creationTime = false, isFavGroups = false }) => {
     const raw = [];
     // fill in raw timestamps (unixtime * 1000), including undefined values
     if (creationTime) {
@@ -1130,8 +1130,8 @@ export const getGpxTime = (f, reverse = false, creationTime = false) => {
         raw.push(f?.file?.clienttimems); // uploaded for favorites group(cloud timestamp?)
         raw.push(f?.ext?.time); // uploaded for favorites group(cloud timestamp?)
     } else {
-        if (f?.updatetimemsbywpts) {
-            raw.push(f?.updatetimemsbywpts);
+        if (isFavGroups) {
+            raw.push(f?.clienttimems);
         } else {
             raw.push(f?.details?.analysis?.startTime); // cloud - stored analysis
             raw.push(f?.analysis?.startTime); // local track - fresh analysis

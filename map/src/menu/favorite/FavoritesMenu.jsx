@@ -8,6 +8,7 @@ import GroupHeader from '../actions/GroupHeader';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { isEmpty } from 'lodash';
 import Loading from '../errors/Loading';
+import { byTime } from '../actions/SortActions';
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
@@ -20,7 +21,11 @@ export default function FavoritesMenu() {
     const groupItems = useMemo(() => {
         const items = [];
         const groups =
-            sortGroups?.length > 0 ? sortGroups : ctx.favorites?.groups?.length > 0 ? ctx.favorites?.groups : null;
+            sortGroups?.length > 0
+                ? sortGroups
+                : ctx.favorites?.groups?.length > 0
+                ? byTime(ctx.favorites?.groups, true, true)
+                : null;
         if (groups) {
             groups.map((g, index) => {
                 items.push(

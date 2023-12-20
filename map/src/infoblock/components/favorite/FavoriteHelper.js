@@ -61,10 +61,22 @@ function updateGroupAfterChange({ ctx, result, selectedGroupName, oldGroupName }
         let newGroup;
         if (g.name === oldGroupName && result.oldGroupResp?.data) {
             const file = updateFavFile(g, result.oldGroupResp);
-            newGroup = createNewGroup(g, file, result.oldGroupResp.updatetimems, result.oldGroupResp.data.pointsGroups);
+            newGroup = createNewGroup(
+                g,
+                file,
+                result.oldGroupResp.updatetimems,
+                result.oldGroupResp.clienttimems,
+                result.oldGroupResp.data.pointsGroups
+            );
         } else if (g.name === selectedGroupName && result.newGroupResp) {
             const file = updateFavFile(g, result.newGroupResp);
-            newGroup = createNewGroup(g, file, result.newGroupResp.updatetimems, result.newGroupResp.data.pointsGroups);
+            newGroup = createNewGroup(
+                g,
+                file,
+                result.newGroupResp.updatetimems,
+                result.newGroupResp.clienttimems,
+                result.newGroupResp.data.pointsGroups
+            );
         } else {
             newGroup = g;
         }
@@ -83,16 +95,16 @@ function updateFavFile(group, res) {
     return file;
 }
 
-function createNewGroup(g, file, updatetimems, pointsGroups) {
+function createNewGroup(g, file, updatetimems, clienttimems, pointsGroups) {
     let newGroup = {
         name: g.name,
         updatetimems: updatetimems,
+        clienttimems: clienttimems,
         file: file,
         pointsGroups: pointsGroups,
     };
     if (!isEmpty(file.wpts)) {
         newGroup.hidden = file.wpts[0].hidden;
-        newGroup.updatetimemsbywpts = getFavGroupUpdateTimeByWpts(file.wpts);
     } else {
         delete newGroup.hidden;
     }
@@ -122,7 +134,6 @@ function updateGroupObj(selectedGroup, result) {
     });
     if (!isEmpty(group.wpts)) {
         group.hidden = group.wpts[0].hidden;
-        group.updatetimemsbywpts = getFavGroupUpdateTimeByWpts(group.wpts);
     } else {
         delete group.hidden;
     }

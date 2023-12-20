@@ -185,10 +185,10 @@ function createGroup(file) {
     file.folder = prepareFavGroupName(file.preparedName);
     let pointsGroups = FavoritesManager.prepareTrackData(file.details.pointGroups);
     const groupName = file.folder === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : file.folder;
-
     return {
         name: file.folder,
         updatetimems: file.updatetimems,
+        clienttimems: file.clienttimems,
         file: file,
         pointsGroups: pointsGroups,
         hidden:
@@ -476,9 +476,6 @@ function addExistFavGroup(obj, g, favGroups) {
     favGroups.mapObjs[g.name] = obj;
     let ind = favGroups.groups.findIndex((obj) => obj.name === g.name);
     favGroups.groups[ind].pointsGroups = favGroups.mapObjs[g.name].pointsGroups;
-    if (!isEmpty(favGroups.mapObjs[g.name].wpts)) {
-        favGroups.groups[ind].updatetimemsbywpts = getFavGroupUpdateTimeByWpts(favGroups.mapObjs[g.name].wpts);
-    }
 
     return favGroups;
 }
@@ -525,9 +522,6 @@ async function createFavGroupObj(g, favGroups) {
         Object.keys(favorites).forEach((t) => {
             favGroups.mapObjs[g.name][`${t}`] = favorites[t];
         });
-        if (!isEmpty(favGroups.mapObjs[g.name].wpts)) {
-            favGroups.groups[ind].updatetimemsbywpts = getFavGroupUpdateTimeByWpts(favGroups.mapObjs[g.name].wpts);
-        }
     }
     return favGroups;
 }
