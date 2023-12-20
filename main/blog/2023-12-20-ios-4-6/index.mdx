@@ -4,9 +4,7 @@ title: OsmAnd 4.6 (iOS)
 authors: eugene
 tags: [release, ios]
 unlisted: true
-
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -17,34 +15,13 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-
 Hello, everyone!
 
 We are pleased to announce the release of a new version of [OsmAnd for iOS](https://itunes.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
-
 <!--truncate-->
 
-
 ### What's new
-
-
-- [CarPlay dashboard support](#carplay-dashboard-support)
-- [External sensors BLE sensors support](#external-sensors)
-- [Simple widget for Top / Bottom panel](#simple-widget-for-top--bottom-panel)
-- Wikivoyage Travel Guides
-- Night theme
-- Redesign OSM plugin for uploading POI/Note
-- Add OSM link with pin into the Context menu
-
-
-## CarPlay dashboard support
-
-![Car Play](./img/car_play_1.png)
-
-One of the additions in this update is the integration of the OsmAnd map into the CarPlay dashboard.  
-- Added dashboard support.
-- Fixed bugs.
 
 - [External sensors](#external-sensors)
 - [Updates for Widgets](#widget-updates)
@@ -65,10 +42,9 @@ One of the additions in this update is the integration of the OsmAnd map into th
 
 The release introduces support for [Bluetooth Low Energy (BLE) sensors](https://osmand.net/docs/user/plugins/external-sensors), providing compatibility for a range of external sensors such as speed, cadence, distance, temperature and pulse. This inclusion enhances the app’s capability to sync and display data from these external devices, catering to cycling enthusiasts and those using supplementary fitness equipment.   
 
-| Sensor connection | Widget on the screen |
+|Sensor connection| Widget on the screen|
 |-------|------|
-| ![Sensor](./img/sensor_1.png) | ![Sensor](./img/sensor_2.png) |
-
+|![Sensor](./img/sensor_1.png)|![Sensor](./img/sensor_2.png)|
 You can add the following external sensors to the OsmAnd application:
 - **Heart Rate**. The heart rate sensor can transmit your heart rate in real time. This is useful for cycling training when you want to track your heart rate to optimize your training efforts.
 - **Bicycle Cadence**. Cadence is the number of pedal turns per minute. Cadence sensors help you maintain optimal pedaling speed for efficient cycling.
@@ -80,13 +56,11 @@ This data from external sensors can be added for a [recording track](https://osm
 
 ![Sensor](./img/sensor_4.png)
 
-![top panel](@site/static/img/widgets/top_bottom_panel_1_ios.png)    ![Widget](./img/widget_top_bottom.png)  
+## Widget updates
 
-1. [All widgets](#all-panel-widgets) from other panels.
-2. [Coordinates widgets](https://osmand.net/docs/user/widgets/info-widgets#coordinates-widget). This set of *informational* widgets displays the geographic coordinates of the current geolocation. 2 widgets included: *Coordinates: map center*, *Coordinates: current location*.
-3. [Street name](https://osmand.net/docs/user/widgets//nav-widgets#street-name). *Navigational* widget shows the current street name with a straight arrow or the next street name with an arrow pointing to an upcoming turn. 
-4. [Lanes](https://osmand.net/docs/user/widgets//nav-widgets#lanes). *Navigational* widget shows the current road lanes layout and highlights lanes for traffic with active navigation.
-5. [Map markers bar](https://osmand.net/docs/user/widgets//markers.md#configure-marker-widgets-android). The widget displays the distance and direction to the next Map marker from your current location. The widget can be configured to show 1 or 2 markers.
+### External sensors widgets
+
+As we noted in [this article](#external-sensors) that external sensors were added. And now you can add [widgets of external sensors](https://osmand.net/docs/user/widgets/info-widgets/#external-sensors-widgets) to a device screen:
 
 _Menu → Configure screen → Right/Left panel → Add widget → External sensors_
 
@@ -100,21 +74,27 @@ Added [_Coordinates_](https://osmand.net/docs/user/widgets/info-widgets#coordina
 
 ## Travel Guides
 
+For this release, we added [Wikivoyage Travel Guides](https://osmand.net/docs/user/plan-route/travel-guides). Now, you can upload Wikivoyage points and articles for your trip on the OsmAnd map.
+
 *OsmAnd Menu → Travel guides*
 
-| Download menu | Articles list |
+|Download menu| Articles list|
 |-------|------|
-| ![wikivoyage](./img/wikivoyage_1.png) | ![wikivoyage](./img/wikivoyage_2.png) |
+|![wikivoyage](./img/wikivoyage_1.png)|![wikivoyage](./img/wikivoyage_2.png)|
 
-In this release, our team has added [Wikivoyage Travel Guides](https://osmand.net/docs/user/plan-route/travel-guides). You can now upload Wikivoyage items and articles to the OsmAnd map for your journey.
-These virtual travel guides offer you valuable insights, recommendations and tips. They also allow travelers to get comprehensive navigational information about attractions right in the app.
+Added Bookmarks for _Travel_ tab in _My Places menu_:
 
-- OsmAnd's travel guides are based on Wikivoyage, a Wikipedia-like community project where volunteer authors create up-to-date articles. Wikivoyage information includes basic facts about a place, transportation, attractions, and places to shop.  
-- You can add wikivoyage points on the map or find it on *My Places → Tracks → Travel* menu.
+*OsmAnd Menu → My Places → Travel*
 
-| Wikivoyage article | Points on the map |
+|Trabel tab| Bookmark|
 |-------|------|
-| ![wikivoyage](./img/wikivoyage_3.png) | ![wikivoyage](./img/wikivoyage_4.png) |
+|![wikivoyage](./img/wikivoyage_5.png)|![wikivoyage](./img/wikivoyage_6.png)|
+
+You can add wikivoyage points on the map or find in om [_My Places > Tracks > Travel_](https://osmand.net/docs/user/personal/tracks/#my-places-menu) menu.
+
+|Wikivoyage article| Points on the map|
+|-------|------|
+|![wikivoyage](./img/wikivoyage_3.png)|![wikivoyage](./img/wikivoyage_4.png)|
 
 ## Default appearance for Favorites folder
 
@@ -124,7 +104,6 @@ These virtual travel guides offer you valuable insights, recommendations and tip
 |Context menu| Appearance menu|
 |----|----|
 |![Folder](./img/folder.png)|![Folder](./img/folder_1.png)|
-
 
 ## New Help screen
 
@@ -147,26 +126,22 @@ One of the additions in this update is the integration of the OsmAnd map into th
 |----|----|
 |![Car Play](./img/car_play_3.png) |![Car Play](./img/car_play_4.png) |
 
-
 ## Night theme
 
 Added the night theme for all OsmAnd screens.
-
 Changing appearance for OsmAnd is changing appearance for iOS system:
 
 _iOS Settings > Display & Brightness > Light/Dark or Automatic_
 
 |iOS settings screen| OsmAnd Configure map menu|
 |----|----|
-|![dark theme](./img/dark.png)|![dark theme](./img/dark_1.png)|
 
+|![dark theme](./img/dark.png)|![dark theme](./img/dark_1.png)|
 
 ## Share point coordinates by an OSM link
 
 Now in [the Context menu](https://osmand.net/docs/user/map/map-context-menu/#coordinates) of a point, you can find not only geographical coordinates in various formats but also a shareable OpenStreetMap Link with a location marker.
-
 ![OSM Link](./img/osm_link.png)
-
 
 ## More
 
@@ -178,13 +153,10 @@ Palitra for Slope ([Track Appearance](https://osmand.net/docs/user/map/tracks-on
 |----|----|
 |![Slope color](./img/slope_0.png)|![Slope color](./img/slope_1.png)|
 
-
 ### Rename Route parameters
 
 For [_Cycling_ and _On foot_](https://osmand.net/docs/user/navigation/routing/bicycle-based-routing#route-parameters---bicycle) routing we renamed "_Use elevation data_" to "_Preferred terrain_":
-
 - _Menu → Configure profile (Boat, Driving, Walking or another one) → Navigation settings → Route parameters → Preferred terrain → Any, Flat, Less hilly, Hilly_
-
 - _Navigation button → Settings → Preferred terrain → Any, Flat, Less hilly, Hilly_
 
 ![Preferred terrain](./img/routing.png)
@@ -211,12 +183,8 @@ Changed [POI/Note upload menu](https://osmand.net/docs/user/plugins/osm-editing#
 
 Bugs: [3235](https://github.com/osmandapp/OsmAnd-iOS/issues/3235), [3262](https://github.com/osmandapp/OsmAnd-iOS/issues/3262), [3268](https://github.com/osmandapp/OsmAnd-iOS/issues/3268), [3242](https://github.com/osmandapp/OsmAnd-iOS/issues/3242), [3251](https://github.com/osmandapp/OsmAnd-iOS/issues/3251), [3245](https://github.com/osmandapp/OsmAnd-iOS/issues/3245), [3240](https://github.com/osmandapp/OsmAnd-iOS/issues/3240), [3239](https://github.com/osmandapp/OsmAnd-iOS/issues/3239), [3218](https://github.com/osmandapp/OsmAnd-iOS/issues/3218), [3207](https://github.com/osmandapp/OsmAnd-iOS/issues/3207), [3153](https://github.com/osmandapp/OsmAnd-iOS/issues/3153), [3178](https://github.com/osmandapp/OsmAnd-iOS/issues/3178), [3166](https://github.com/osmandapp/OsmAnd-iOS/issues/3166), [3297](https://github.com/osmandapp/OsmAnd-iOS/issues/3297). 
 
-
-
-The release of the OsmAnd app for Android 4.6 offers users a wide range of improvements, new features, more powerful navigation and data management tools, making the use of the app more convenient, informative and adapted to different usage situations.  
-
+The release of the OsmAnd app for iOS 4.6 offers users a wide range of improvements, new features, more powerful navigation and data management tools, making the use of the app more convenient, informative and adapted to different usage situations.  
 _________________________________________________
-
 <LinksSocial/>
 <LinksTelegram/>
 <AppleStore/>
