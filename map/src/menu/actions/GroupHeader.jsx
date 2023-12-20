@@ -150,7 +150,7 @@ export default function GroupHeader({
                                         component="span"
                                         variant="contained"
                                         type="button"
-                                        disabled={favoriteGroup !== null || ctx.accountInfo?.account === FREE_ACCOUNT}
+                                        disabled={ctx.accountInfo?.account === FREE_ACCOUNT}
                                         className={styles.appBarIcon}
                                     >
                                         <ImportIcon />

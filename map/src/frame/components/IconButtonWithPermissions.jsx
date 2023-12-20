@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default function IconButtonWithPermissions({ onClick, ...props }) {
+export default function IconButtonWithPermissions({ onClick, className, ...props }) {
     const ctx = useContext(AppContext);
     const classes = useStyles();
 
@@ -34,7 +34,11 @@ export default function IconButtonWithPermissions({ onClick, ...props }) {
 
     return (
         <>
-            <IconButton {...props} className={isDisabled ? classes.disabledIconButton : ''} onClick={handleClick} />
+            <IconButton
+                {...props}
+                className={isDisabled ? classes.disabledIconButton : className || ''}
+                onClick={handleClick}
+            />
             <UnavailableActionAlert open={openDialog} onClose={handleCloseDialog} />
         </>
     );

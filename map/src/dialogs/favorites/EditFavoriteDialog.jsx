@@ -138,7 +138,14 @@ export default function EditFavoriteDialog({
         //update favorites groups
         if (result) {
             const oldGroupName = useSelected ? ctx.selectedGpxFile.nameGroup : wpt.category;
-            updateFavoriteGroups(result, selectedGroupName, oldGroupName, ctx, useSelected, favoriteName);
+            updateFavoriteGroups({
+                result: result,
+                selectedGroupName: selectedGroupName,
+                oldGroupName: oldGroupName,
+                ctx: ctx,
+                useSelected: useSelected,
+                favoriteName: favoriteName,
+            });
             setEditFavoritesDialogOpen(false);
             if (setOpenActions) {
                 setOpenActions(false);

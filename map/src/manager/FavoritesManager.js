@@ -251,7 +251,7 @@ export function createFavGroupFreeName(name, groups) {
 }
 
 export function isFavGroupExists(name, groups) {
-    return groups.some((g) => g.name === name);
+    return groups && groups.some((g) => g.name === name);
 }
 
 function isHidden(pointsGroups, name) {
@@ -426,42 +426,78 @@ export function prepareIcon(value) {
     return isNoValue(value) ? MarkerOptions.DEFAULT_WPT_ICON : value;
 }
 
+/**
+ * Asynchronously adds favorite groups to the map.
+ *
+ * @param {Object} favGroups - The favorite groups to add.
+ * @returns {Object} - The updated favorite groups.
+ */
 export async function addFavGroupsToMap(favGroups) {
-    let newFavGroups = Object.assign({}, favGroups);
+    // Create a shallow copy of the input favorite groups.
+    let newFavGroups = { ...favGroups };
+
+    // Retrieve saved favorite groups from local storage and decompress them.
     const savedFavGroups = await decompressToJSON(localStorage.getItem(FAVORITE_STORAGE));
     let newSavedFavGroups = null;
 
+    // Iterate through favorite group files. If a group exists in the cache, retrieve it; otherwise, make a server request and create a new group object.
     const promises = favGroups.groups.map(async (g) => {
         if (!newSavedFavGroups) {
             newSavedFavGroups = {};
         }
+
         const key = getFavGroupKey(g);
+
         if (savedFavGroups) {
-            newFavGroups = savedFavGroups[key] ? savedFavGroups[key] : await createFavGroupObj(g, newFavGroups);
+            newFavGroups = savedFavGroups[key]
+                ? addExistFavGroup(savedFavGroups[key], g, favGroups)
+                : await createFavGroupObj(g, newFavGroups);
         } else {
             newFavGroups = await createFavGroupObj(g, newFavGroups);
         }
-        newSavedFavGroups[key] = newFavGroups;
+        newSavedFavGroups[key] = newFavGroups.mapObjs[g.name];
     });
+
+    // Wait for all promises to resolve.
     const finished = await Promise.all(promises);
 
+    // Create a new cache with updated favorite group objects and save it to localStorage.
     if (finished && newSavedFavGroups !== null) {
-        let res = await compressFromJSON(newSavedFavGroups);
+        const res = await compressFromJSON(newSavedFavGroups);
         localStorage.setItem(FAVORITE_STORAGE, res);
-
-        return newFavGroups;
     }
+
+    // Return the updated favorite groups.
+    return newFavGroups;
+}
+
+function addExistFavGroup(obj, g, favGroups) {
+    favGroups.mapObjs[g.name] = obj;
+    let ind = favGroups.groups.findIndex((obj) => obj.name === g.name);
+    favGroups.groups[ind].pointsGroups = favGroups.mapObjs[g.name].pointsGroups;
+
+    return favGroups;
 }
 
 export function getFavGroupKey(g) {
     return `${g.name}/${g.updatetimems}`;
 }
 
+/**
+ * Asynchronously creates a new favorite group object based on the provided group data and updates the given favorite groups.
+ *
+ * @param {Object} g - The group data.
+ * @param {Object} favGroups - The existing favorite groups.
+ * @returns {Object} - The updated favorite groups with the new group object.
+ */
 async function createFavGroupObj(g, favGroups) {
     let url = createFavGroupUrl(g);
+
     if (!favGroups.mapObjs) {
         favGroups.mapObjs = {};
     }
+
+    // Create a new entry in the mapObjs property with details from the provided group data.
     favGroups.mapObjs[g.name] = {
         url: url,
         clienttimems: g.file.clienttimems,
@@ -469,6 +505,7 @@ async function createFavGroupObj(g, favGroups) {
         name: g.file.name,
         hidden: g.hidden,
     };
+    // If file data is available, process and update the favorite groups.
     let resData = await Utils.getFileData(favGroups.mapObjs[g.name]);
     if (resData) {
         const favoriteFile = new File([resData], g.file.name, {
@@ -477,6 +514,7 @@ async function createFavGroupObj(g, favGroups) {
         let favorites = await TracksManager.getTrackData(favoriteFile);
         if (favorites) {
             favorites.name = g.file.name;
+            // Update pointsGroups in favGroups.groups for the current group.
             let ind = favGroups.groups.findIndex((obj) => obj.name === g.name);
             favGroups.groups[ind].pointsGroups = favorites.pointsGroups;
         }
