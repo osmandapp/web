@@ -3,6 +3,7 @@ import MarkerOptions from '../markers/MarkerOptions';
 import _ from 'lodash';
 import TracksManager, { isProtectedSegment } from '../../manager/track/TracksManager';
 import EditablePolyline from './EditablePolyline';
+import { FAVORITE_FILE_TYPE } from '../../manager/FavoritesManager';
 
 export const TEMP_LAYER_FLAG = 'temp';
 export const TEMP_LINE_STYLE = {
@@ -23,7 +24,9 @@ function createLayersByTrackData(data, ctx, map) {
     parseWpt(data.wpts, layers, ctx);
 
     if (layers.length > 0) {
-        return new L.FeatureGroup(layers);
+        let layersGroup = new L.FeatureGroup(layers);
+        layersGroup.options.type = FAVORITE_FILE_TYPE;
+        return layersGroup;
     }
 }
 

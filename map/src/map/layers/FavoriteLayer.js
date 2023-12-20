@@ -4,7 +4,7 @@ import '../../assets/css/gpx.css';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../util/TrackLayerProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
-import FavoritesManager, { FAVORITE_STORAGE } from '../../manager/FavoritesManager';
+import FavoritesManager, { FAVORITE_FILE_TYPE, FAVORITE_STORAGE } from '../../manager/FavoritesManager';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
 import _, { isEmpty } from 'lodash';
 
@@ -31,13 +31,12 @@ const FavoriteLayer = () => {
 
     useEffect(() => {
         if (!ctx.loginUser) {
-            // If there is no logged-in user, remove all layers except tiles.
+            // If there is no logged-in user, remove all favorites layers.
             map.eachLayer((layer) => {
-                if (!layer.options.attribution) {
+                if (layer.options.type === FAVORITE_FILE_TYPE) {
                     map.removeLayer(layer);
                 }
             });
-
             // Clear the cache of favorites.
             localStorage.removeItem(FAVORITE_STORAGE);
         }

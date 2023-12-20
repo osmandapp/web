@@ -169,7 +169,7 @@ function getColorGroup(ctx, groupName, wpt) {
             color = currentGroup.color;
         }
     } else {
-        const currentGroup = ctx.favorites.groups.find((g) => g.name === groupName);
+        const currentGroup = ctx.favorites?.groups?.find((g) => g.name === groupName);
         if (currentGroup && currentGroup.pointsGroups[groupName]) {
             color = currentGroup.pointsGroups[groupName].color;
         }
