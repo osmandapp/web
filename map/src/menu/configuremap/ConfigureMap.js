@@ -22,6 +22,7 @@ import styles from '../configuremap/configuremap.module.css';
 import { ReactComponent as StarIcon } from '../../assets/icons/ic_action_favorite.svg';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import { ReactComponent as TracksIcon } from '../../assets/menu/ic_action_track.svg';
 import { cloneDeep } from 'lodash';
 import EmptyLogin from '../errors/EmptyLogin';
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
@@ -51,6 +52,8 @@ export default function ConfigureMap() {
 
         return res.join(' ');
     }
+
+    function openVisibleTracks() {}
 
     return (
         <>
@@ -85,6 +88,11 @@ export default function ConfigureMap() {
                 <>
                     {ctx.loginUser && (
                         <>
+                            <MenuItem className={styles.item}>
+                                <Typography className={styles.title} noWrap>
+                                    Show
+                                </Typography>
+                            </MenuItem>
                             <MenuItem className={styles.item} onClick={handleFavoritesSwitchChange}>
                                 <ListItemIcon className={setIconStyles()}>
                                     <StarIcon />
@@ -110,31 +118,56 @@ export default function ConfigureMap() {
                                 </ListItemText>
                             </MenuItem>
                             <Divider className={styles.dividerItem} />
+                            <MenuItem divider className={styles.item} onClick={openVisibleTracks}>
+                                <ListItemIcon className={styles.iconEnabled}>
+                                    <TracksIcon />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    <div
+                                        style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'space-between',
+                                        }}
+                                    >
+                                        <Typography variant="inherit" noWrap>
+                                            Tracks
+                                        </Typography>
+                                    </div>
+                                </ListItemText>
+                            </MenuItem>
                         </>
                     )}
                     {ctx.develFeatures && (
-                        <MenuItem sx={{ ml: 1, mr: 2, mt: 2 }} disableRipple={true}>
-                            <FormControl fullWidth>
-                                <InputLabel id="rendering-style-selector-label">Map Style</InputLabel>
-                                <Select
-                                    labelid="rendering-style-selector-label"
-                                    label="Map Style"
-                                    value={ctx.tileURL.key}
-                                    onChange={(e) => ctx.setTileURL(ctx.allTileURLs[e.target.value])}
-                                >
-                                    {Object.values(ctx.allTileURLs).map((item) => {
-                                        return (
-                                            <MenuItem key={item.key} value={item.key}>
-                                                {item.uiname}
-                                            </MenuItem>
-                                        );
-                                    })}
-                                </Select>
-                            </FormControl>
-                            <IconButton sx={{ ml: 1 }} onClick={() => setOpenSettings(true)}>
-                                <Settings fontSize="small" />
-                            </IconButton>
-                        </MenuItem>
+                        <>
+                            <MenuItem className={styles.item}>
+                                <Typography className={styles.title} noWrap>
+                                    Appearance
+                                </Typography>
+                            </MenuItem>
+                            <MenuItem sx={{ ml: 1, mr: 2, mt: 2 }} disableRipple={true}>
+                                <FormControl fullWidth>
+                                    <InputLabel id="rendering-style-selector-label">Map Style</InputLabel>
+                                    <Select
+                                        labelid="rendering-style-selector-label"
+                                        label="Map Style"
+                                        value={ctx.tileURL.key}
+                                        onChange={(e) => ctx.setTileURL(ctx.allTileURLs[e.target.value])}
+                                    >
+                                        {Object.values(ctx.allTileURLs).map((item) => {
+                                            return (
+                                                <MenuItem key={item.key} value={item.key}>
+                                                    {item.uiname}
+                                                </MenuItem>
+                                            );
+                                        })}
+                                    </Select>
+                                </FormControl>
+                                <IconButton sx={{ ml: 1 }} onClick={() => setOpenSettings(true)}>
+                                    <Settings fontSize="small" />
+                                </IconButton>
+                            </MenuItem>
+                        </>
                     )}
                 </>
             )}
