@@ -370,7 +370,7 @@ export default function RouteMenu() {
                         type="file"
                         onChange={(e) => ctx.setRouteTrackFile(e.target.files[0])}
                     />
-                    <Button variant="contained" className={styles.smallButton}>
+                    <Button component="span" variant="contained" className={styles.smallButton}>
                         Approximate GPX
                     </Button>
                 </label>
