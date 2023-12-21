@@ -1131,7 +1131,7 @@ export const getGpxTime = ({ f, reverse = false, creationTime = false, isFavGrou
         raw.push(f?.ext?.time); // uploaded for favorites group(cloud timestamp?)
     } else {
         if (isFavGroups) {
-            raw.push(f?.clienttimems);
+            raw.push(f?.clienttimems ?? f?.updatetimems);
         } else {
             raw.push(f?.details?.analysis?.startTime); // cloud - stored analysis
             raw.push(f?.analysis?.startTime); // local track - fresh analysis

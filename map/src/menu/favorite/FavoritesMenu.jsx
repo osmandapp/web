@@ -20,12 +20,12 @@ export default function FavoritesMenu() {
     // get list of favorites groups
     const groupItems = useMemo(() => {
         const items = [];
-        const groups =
-            sortGroups?.length > 0
-                ? sortGroups
-                : ctx.favorites?.groups?.length > 0
-                ? byTime(ctx.favorites?.groups, true, true)
-                : null;
+        let groups = null;
+        if (sortGroups && sortGroups.length > 0) {
+            groups = sortGroups;
+        } else if (ctx.favorites?.groups?.length > 0) {
+            groups = byTime(ctx.favorites.groups, true, true);
+        }
         if (groups) {
             groups.map((g, index) => {
                 items.push(

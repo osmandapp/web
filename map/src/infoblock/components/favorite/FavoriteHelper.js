@@ -61,22 +61,22 @@ function updateGroupAfterChange({ ctx, result, selectedGroupName, oldGroupName }
         let newGroup;
         if (g.name === oldGroupName && result.oldGroupResp?.data) {
             const file = updateFavFile(g, result.oldGroupResp);
-            newGroup = createNewGroup(
+            newGroup = createNewGroup({
                 g,
                 file,
-                result.oldGroupResp.updatetimems,
-                result.oldGroupResp.clienttimems,
-                result.oldGroupResp.data.pointsGroups
-            );
+                updatetimems: result.oldGroupResp.updatetimems,
+                clienttimems: result.oldGroupResp.clienttimems,
+                pointsGroups: result.oldGroupResp.data.pointsGroups,
+            });
         } else if (g.name === selectedGroupName && result.newGroupResp) {
             const file = updateFavFile(g, result.newGroupResp);
-            newGroup = createNewGroup(
+            newGroup = createNewGroup({
                 g,
                 file,
-                result.newGroupResp.updatetimems,
-                result.newGroupResp.clienttimems,
-                result.newGroupResp.data.pointsGroups
-            );
+                updatetimems: result.newGroupResp.updatetimems,
+                clienttimems: result.newGroupResp.clienttimems,
+                pointsGroups: result.newGroupResp.data.pointsGroups,
+            });
         } else {
             newGroup = g;
         }
@@ -95,7 +95,7 @@ function updateFavFile(group, res) {
     return file;
 }
 
-function createNewGroup(g, file, updatetimems, clienttimems, pointsGroups) {
+function createNewGroup({ g, file, updatetimems, clienttimems, pointsGroups }) {
     let newGroup = {
         name: g.name,
         updatetimems: updatetimems,
