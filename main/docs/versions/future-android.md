@@ -59,7 +59,7 @@ Our top and bottom panels have been redesigned with all our users' needs in mind
 
 | View mode  | Edit mode   |
 |-----|------|
-| ![Row](../../blog/2023-09-30-android-4-6/img/row.png) | ![Row](../../blog/2023-09-30-android-4-6/img/row_1.png) |
+| ![Row](../../blog/2023-12-21-android-4-6/img/row.png) | ![Row](../../blog/2023-12-21-android-4-6/img/row_1.png) |
 
 **2.** Added support to change [widget size](../user/widgets/configure-screen.md#settings). You can choose the size that best suits your needs: *Small, Medium, Large*.  
 
@@ -69,7 +69,7 @@ Our top and bottom panels have been redesigned with all our users' needs in mind
 
 |  |
 |-----|
-| ![Row](../../blog/2023-09-30-android-4-6/img/row_4.png) |
+| ![Row](../../blog/2023-12-21-android-4-6/img/row_4.png) |
 
 ### Glide Ratio Widget
 
@@ -86,7 +86,7 @@ Simple *[Glide Ration](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ra
 
 | Glide ratio widgets | Widgets on the screen |
 |--------|---------|
-| ![Glide ratio](../../blog/2023-09-30-android-4-6/img/glide_ratio_1.png) | ![Glide ratio](../../blog/2023-09-30-android-4-6/img/glide_ratio_2.png) |
+| ![Glide ratio](../../blog/2023-12-21-android-4-6/img/glide_ratio_1.png) | ![Glide ratio](../../blog/2023-12-21-android-4-6/img/glide_ratio_2.png) |
 
 ### ANT+ Temperature widget
 
@@ -97,7 +97,7 @@ We have added a new widget for the [External sensor plugin](../user/plugins/exte
 
 |   |   |
 |--------|---------|
-|![Temperature](../../blog/2023-09-30-android-4-6/img/temp.png)|![Temperature](../../blog/2023-09-30-android-4-6/img/temp_1.png)|
+|![Temperature](../../blog/2023-12-21-android-4-6/img/temp.png)|![Temperature](../../blog/2023-12-21-android-4-6/img/temp_1.png)|
 
 
 ## Local menu redesign
@@ -115,13 +115,13 @@ The **Local** menu now contains all necessary additional information about the O
 
 | Resources  | My places  |  Settings   |
 |--------|---------|---------|
-|![Local](../../blog/2023-09-30-android-4-6/img/local.png)|![Local](../../blog/2023-09-30-android-4-6/img/local_1.png)|![Local](../../blog/2023-09-30-android-4-6/img/local_2.png)|  
+|![Local](../../blog/2023-12-21-android-4-6/img/local.png)|![Local](../../blog/2023-12-21-android-4-6/img/local_1.png)|![Local](../../blog/2023-12-21-android-4-6/img/local_2.png)|  
 
 You can select any item from the main list of categories on the Local tab, tap it, and go to a screen with a detailed list of that item and additional options.  
 
 | Terrain maps  | Tracks  |
 |--------|---------|
-|![Local](../../blog/2023-09-30-android-4-6/img/local_3.png)|![Local](../../blog/2023-09-30-android-4-6/img/local_4.png)|
+|![Local](../../blog/2023-12-21-android-4-6/img/local_3.png)|![Local](../../blog/2023-12-21-android-4-6/img/local_4.png)|
 
 
 ## Smart folders
@@ -133,7 +133,7 @@ The new [*Smart Folder*](../user/personal/tracks.md#smart-folder) feature in the
 
 | Tracks menu  | Settings  |
 |--------|---------|
-|![Smart folder](../../blog/2023-09-30-android-4-6/img/smart_folder.png)|![Local](../../blog/2023-09-30-android-4-6/img/smart_folder_1.png)|
+|![Smart folder](../../blog/2023-12-21-android-4-6/img/smart_folder.png)|![Local](../../blog/2023-12-21-android-4-6/img/smart_folder_1.png)|
 
 
 ## Filters for Tracks search
@@ -151,7 +151,7 @@ In addition to navigation and track creation, the Osmand app provides handy tool
 
 | Search menu | Filter menu |
 |--------|---------|
-|![Filter](../../blog/2023-09-30-android-4-6/img/filter.png)|![Filter](../../blog/2023-09-30-android-4-6/img/filter_1.png)|
+|![Filter](../../blog/2023-12-21-android-4-6/img/filter.png)|![Filter](../../blog/2023-12-21-android-4-6/img/filter_1.png)|
 
 
 ## Trash feature in OsmAnd Cloud
@@ -166,13 +166,13 @@ With the *Trash* feature, you can easily view and restore files deleted from Osm
 
 | OsmAnd Cloud menu| Trash menu|
 |-------|-------|
-|![Trash](../../blog/2023-09-30-android-4-6/img/trash.png)|![Trash](../../blog/2023-09-30-android-4-6/img/trash_1.png)|
+|![Trash](../../blog/2023-12-21-android-4-6/img/trash.png)|![Trash](../../blog/2023-12-21-android-4-6/img/trash_1.png)|
 
 - Each item from Trash can be *Restore* or *Delete*. 
 
 | Item's acitons|
 |-------|
-|![Trash](../../blog/2023-09-30-android-4-6/img/trash_2.png)|
+|![Trash](../../blog/2023-12-21-android-4-6/img/trash_2.png)|
 
 
 ## Help screen
@@ -189,7 +189,7 @@ In addition, the Help menu has been completely redesigned, adding articles from 
 
 | | |
 |-------|-------|
-|![Help](../../blog/2023-09-30-android-4-6/img/help.png)|![Help](../../blog/2023-09-30-android-4-6/img/help_1.png)|
+|![Help](../../blog/2023-12-21-android-4-6/img/help.png)|![Help](../../blog/2023-12-21-android-4-6/img/help_1.png)|
 
 
 ## Redesign weather screen
@@ -198,7 +198,7 @@ The [Weather](../user/plugins/weather.md) screen has been redesigned and improve
 
 | |
 |-------|
-|![Weather](../../blog/2023-09-30-android-4-6/img/weather.png)|
+|![Weather](../../blog/2023-12-21-android-4-6/img/weather.png)|
 
 
 ## Share point coordinates by an OSM link
@@ -207,7 +207,7 @@ Now in the Context menu of a point, you can find not only geographical coordinat
 
 | | |
 |-------|-------|
-|![Osm Location pin 1](../../blog/2023-09-30-android-4-6/img/osm_location_pin_1.png) |![Osm Location pin 2](../../blog/2023-09-30-android-4-6/img/osm_location_pin_2.png)|
+|![Osm Location pin 1](../../blog/2023-12-21-android-4-6/img/osm_location_pin_1.png) |![Osm Location pin 2](../../blog/2023-12-21-android-4-6/img/osm_location_pin_2.png)|
 
 
 ## Custom actions for external controller buttons
@@ -220,13 +220,13 @@ You now have the ability to customize actions for buttons or custom buttons for 
 
 | Add new type| Add key binding|
 |-------|-------|
-|![External Devices](../../blog/2023-09-30-android-4-6/img/external.png) |![External devices](../../blog/2023-09-30-android-4-6/img/external_1.png)|
+|![External Devices](../../blog/2023-12-21-android-4-6/img/external.png) |![External devices](../../blog/2023-12-21-android-4-6/img/external_1.png)|
 
 - Additional Actions and Map iterations for key binding are also available.  
 
 | Key bindings|
 |-------|
-|![External Devices](../../blog/2023-09-30-android-4-6/img/external_2.png) |
+|![External Devices](../../blog/2023-12-21-android-4-6/img/external_2.png) |
 
 
 ## Update in Plan a route tool
@@ -237,7 +237,7 @@ The *Import from Track* feature allows you to import waypoints, segments, and ad
 
 | Options menu|
 |-------|
-|![Import from track](../../blog/2023-09-30-android-4-6/img/planroute.png) |
+|![Import from track](../../blog/2023-12-21-android-4-6/img/planroute.png) |
 
 
 ## More updates in this release

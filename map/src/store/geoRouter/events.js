@@ -3,11 +3,11 @@ import TracksManager from '../../manager/track/TracksManager';
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
 
 export function onOpenSettings() {
-    this.flushState((o) => (o.paused = true));
+    this.flushState((o) => (o.preview = true));
 }
 
 export function onCloseSettings() {
-    this.flushState((o) => (o.paused = false));
+    this.flushState((o) => (o.preview = false));
 }
 
 export function onDragStart() {

@@ -24,7 +24,8 @@ export const LOCAL_COMPRESSED_TRACK_KEY = 'localTrack_';
 export const DATA_SIZE_KEY = 'dataSize';
 const TRACK_VISIBLE_FLAG = 'visible';
 const HOURS_24_MS = 86400000;
-const AUTO_SRTM_MAX_POINTS = 10000;
+const AUTO_SRTM_MAX_POINTS = 10000; // don't overload Auto-SRTM API with huge OSRM tracks
+const AUTO_SRTM_MIN_BAD_POINTS_PERCENT = 10; // limit by % of no-elevation points (type=osmand might have up to 10%)
 const FIT_BOUNDS_MAX_ZOOM = 17;
 export const DEFAULT_GROUP_NAME = '';
 
@@ -273,7 +274,7 @@ function prepareTrack(track, localName = null, originalName = null) {
 
 // prepare internal structures including distance
 export function prepareNavigationTrack(track) {
-    track.analysis = prepareAnalysis({});
+    track.analysis = prepareAnalysis(track.analysis ?? {});
     track.hasGeo = hasGeo(track);
     addDistance(track);
     return track;
@@ -320,6 +321,8 @@ export function getTrackPoints(track) {
                 points = getAllPoints(track.points);
             }
         });
+    } else if (track.points) {
+        points = getAllPoints(track.points);
     }
     return points;
 }
@@ -678,48 +681,55 @@ function isEmptyEle(ele) {
     return ele === NAN_MARKER || isNaN(ele) || ele === null || ele === undefined;
 }
 
-function isNonZeroEle(ele) {
+export function isNonZeroEle(ele) {
     return ele !== NAN_MARKER && (ele > 0.01 || ele < -0.01);
 }
 
 export function eligibleToApplySrtm({ track }) {
-    /**
-     * 1) Apply SRTM if any geometry or any point have empty elevation #2156
-     * 2) Apply SRTM if all points have exactly zero elevaton (gpx-bug) #2136
-     */
     function detectNoElevation(track) {
         function checkPoints(points) {
-            let nonZeroPoints = 0;
-            let checkedPoints = 0;
+            let badPoints = 0; // empty ele
+            let goodPoints = 0; // non-zero ele
+            let totalPoints = 0; // total points
             if (points && points.length >= 2) {
                 for (let p = 0; p < points.length; p++) {
                     const geometry = points[p].geometry;
                     if (geometry && geometry.length > 0) {
                         for (let g = 0; g < geometry.length; g++) {
                             if (isEmptyEle(geometry[g].ele)) {
-                                return true; // check empty geometry
+                                badPoints++;
                             }
                             if (isNonZeroEle(geometry[g].ele)) {
-                                nonZeroPoints++; // count non-zero elevation (gpx bug)
+                                goodPoints++; // count non-zero elevation (gpx bug)
                             }
-                            checkedPoints++;
+                            totalPoints++;
                         }
                     } else {
                         // is geometry empty or undefined (p>0)
                         // is geometry strictly undefined (p==0)
                         if (geometry === undefined || p > 0) {
                             if (isEmptyEle(points[p].ele)) {
-                                return true;
+                                badPoints++;
                             }
                             if (isNonZeroEle(points[p].ele)) {
-                                nonZeroPoints++;
+                                goodPoints++;
                             }
-                            checkedPoints++;
+                            totalPoints++;
                         }
                     }
                 }
             }
-            return checkedPoints > 0 && nonZeroPoints === 0 ? true : false; // fix all-zero-elevation gpx problem
+            if (totalPoints > 0) {
+                // Apply SRTM if >N% of total point have empty elevation Issue #2156
+                if ((badPoints / totalPoints) * 100 > AUTO_SRTM_MIN_BAD_POINTS_PERCENT) {
+                    return true;
+                }
+                // Apply SRTM if all points have exactly zero elevaton (gpx-bug) Issue #2136
+                if (goodPoints === 0) {
+                    return true;
+                }
+            }
+            return false; // auto-srtm is not required
         }
 
         if (track.points) {
@@ -751,7 +761,7 @@ export function eligibleToApplySrtm({ track }) {
             track.tracks?.forEach((t) => countPointsAndGeo(t.points));
         }
 
-        return totalPoints <= AUTO_SRTM_MAX_POINTS;
+        return totalPoints <= AUTO_SRTM_MAX_POINTS && totalPoints > 4; // avoid Line-only [2 points = 2 geometry points]
     }
 
     const analysis = track.analysis;

@@ -21,6 +21,9 @@ function getColors() {
         train: '#a56b6f',
         rescuetrack: '#0000ff',
         'rescuetrack-emergency': '#ff0000',
+        'OSRM-car': '#1976d2',
+        'OSRM-bike': '#9053bd',
+        'OSRM-foot': '#d90139',
     };
 }
 
@@ -116,7 +119,7 @@ export async function loadProviders({ parseQueryString = false } = {}) {
 
     const osrm = (await loadProvidersOSRM()) || [];
 
-    next.providers = [].concat(osrm, osmand); // default OSRM first
+    next.providers = [].concat(osmand, osrm); // OsmAnd is default since HH-routing was activated
 
     // set 1st router/profile
     next.type = next.providers[0].type;

@@ -46,14 +46,14 @@ export function nextState() {
  *
  * @example
  *
- * this.flushState((o) => o.paused = !!pause); // simple mutate
+ * this.flushState((o) => o.option = !!flag); // simple mutate
  *
  * const next = this.nextState(); // complex mutate
  * next.router = router;
  * next.profile = profile;
  * next.flushState(next);
  *
- * this.paused = !!pause; // bad mutate (you aren't allowed to mutate context)
+ * this.option = !!flag; // bad mutate (you aren't allowed to mutate context)
  * this.flushState();
  */
 

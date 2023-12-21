@@ -4,9 +4,7 @@ title: OsmAnd 4.6 (iOS)
 authors: eugene
 tags: [release, ios]
 unlisted: true
-
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -17,14 +15,11 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-
 Hello, everyone!
 
 We are pleased to announce the release of a new version of [OsmAnd for iOS](https://itunes.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
-
 <!--truncate-->
-
 
 ### What's new
 
@@ -33,7 +28,7 @@ We are pleased to announce the release of a new version of [OsmAnd for iOS](http
 - [Wikivoyage Travel Guides](#travel-guides)
 - [Default appearance for Favorites folder](#default-appearance-for-favorites-folder)
 - [New help screen](#new-help-screen)
-- [CarPlay dashboard support](#carplay-dashboard-support)
+- [CarPlay dashboard support and 3D](#carplay-dashboard-support-and-3d)
 - [Night theme](#night-theme)
 - [More](#more)
   - New GPX slope palitra
@@ -43,8 +38,6 @@ We are pleased to announce the release of a new version of [OsmAnd for iOS](http
   - Redesign OSM Plugin
   - Bugs fixed
 
-
-
 ## External sensors
 
 The release introduces support for [Bluetooth Low Energy (BLE) sensors](https://osmand.net/docs/user/plugins/external-sensors), providing compatibility for a range of external sensors such as speed, cadence, distance, temperature and pulse. This inclusion enhances the app’s capability to sync and display data from these external devices, catering to cycling enthusiasts and those using supplementary fitness equipment.   
@@ -52,7 +45,6 @@ The release introduces support for [Bluetooth Low Energy (BLE) sensors](https://
 |Sensor connection| Widget on the screen|
 |-------|------|
 |![Sensor](./img/sensor_1.png)|![Sensor](./img/sensor_2.png)|
-
 You can add the following external sensors to the OsmAnd application:
 - **Heart Rate**. The heart rate sensor can transmit your heart rate in real time. This is useful for cycling training when you want to track your heart rate to optimize your training efforts.
 - **Bicycle Cadence**. Cadence is the number of pedal turns per minute. Cadence sensors help you maintain optimal pedaling speed for efficient cycling.
@@ -68,7 +60,7 @@ This data from external sensors can be added for a [recording track](https://osm
 
 ### External sensors widgets
 
-As we noted at [this article](#external-sensors) that external sensors were added. And now you can add [widgets of external sensors](https://osmand.net/docs/user/widgets/info-widgets/#external-sensors-widgets) to a device screen:
+As we noted in [this article](#external-sensors) that external sensors were added. And now you can add [widgets of external sensors](https://osmand.net/docs/user/widgets/info-widgets/#external-sensors-widgets) to a device screen:
 
 _Menu → Configure screen → Right/Left panel → Add widget → External sensors_
 
@@ -82,7 +74,7 @@ Added [_Coordinates_](https://osmand.net/docs/user/widgets/info-widgets#coordina
 
 ## Travel Guides
 
-For this release we added [Wikivoyage Travel Guides](https://osmand.net/docs/user/plan-route/travel-guides). Now, you can upload Wikivoyage points and articles for your trip on the OsmAnd map.
+For this release, we added [Wikivoyage Travel Guides](https://osmand.net/docs/user/plan-route/travel-guides). Now, you can upload Wikivoyage points and articles for your trip on the OsmAnd map.
 
 *OsmAnd Menu → Travel guides*
 
@@ -113,7 +105,6 @@ You can add wikivoyage points on the map or find in om [_My Places > Tracks > Tr
 |----|----|
 |![Folder](./img/folder.png)|![Folder](./img/folder_1.png)|
 
-
 ## New Help screen
 
 This is an important new feature for users who often travel in regions with limited internet access. The application now has an offline (saved to cache) help screen that helps you solve questions and find information without a network connection.
@@ -124,34 +115,33 @@ In addition, the _Help_ menu has been completely redesigned, adding articles fro
 
 _Most viewed, User guide, Troubleshooting, Contact us, Report issues, About OsmAnd_.
 
-## CarPlay dashboard support
+## CarPlay dashboard support and 3D
 
 One of the additions in this update is the integration of the OsmAnd map into the CarPlay dashboard.  
 - Added dashboard support.
 - Added 3D button to the CarPlay screen.
 - Fixed bugs.
 
-![Car Play](./img/car_play_2.png)
+|3D| Dashboard|
+|----|----|
+|![Car Play](./img/car_play_3.png) |![Car Play](./img/car_play_4.png) |
 
 ## Night theme
 
 Added the night theme for all OsmAnd screens.
-
 Changing appearance for OsmAnd is changing appearance for iOS system:
 
 _iOS Settings > Display & Brightness > Light/Dark or Automatic_
 
 |iOS settings screen| OsmAnd Configure map menu|
 |----|----|
-|![dark theme](./img/dark.png)|![dark theme](./img/dark_1.png)|
 
+|![dark theme](./img/dark.png)|![dark theme](./img/dark_1.png)|
 
 ## Share point coordinates by an OSM link
 
-Now in [the Context menu](https://osmand.net/docs/user/map/map-context-menu/#coordinates) of a point, you can find not only geographical coordinates in various formats, but also a shareable OpenStreetMap Link with location marker.
-
+Now in [the Context menu](https://osmand.net/docs/user/map/map-context-menu/#coordinates) of a point, you can find not only geographical coordinates in various formats but also a shareable OpenStreetMap Link with a location marker.
 ![OSM Link](./img/osm_link.png)
-
 
 ## More
 
@@ -163,20 +153,17 @@ Palitra for Slope ([Track Appearance](https://osmand.net/docs/user/map/tracks-on
 |----|----|
 |![Slope color](./img/slope_0.png)|![Slope color](./img/slope_1.png)|
 
-
 ### Rename Route parameters
 
 For [_Cycling_ and _On foot_](https://osmand.net/docs/user/navigation/routing/bicycle-based-routing#route-parameters---bicycle) routing we renamed "_Use elevation data_" to "_Preferred terrain_":
-
 - _Menu → Configure profile (Boat, Driving, Walking or another one) → Navigation settings → Route parameters → Preferred terrain → Any, Flat, Less hilly, Hilly_
-
 - _Navigation button → Settings → Preferred terrain → Any, Flat, Less hilly, Hilly_
 
 ![Preferred terrain](./img/routing.png)
 
 ### Info for navigaton route
 
-Additional info were added for Navigaton screen:
+Additional info was added for Navigaton screen:
 - Altitude range (Max/Min altitude)
 - [CO2 emission](https://osmand.net/docs/user/navigation/guidance/navigation-settings#fuel-used-by-motor) (Vehicle engine type is provided)
 
@@ -194,11 +181,10 @@ Changed [POI/Note upload menu](https://osmand.net/docs/user/plugins/osm-editing#
 
 ### Bugs fixed
 
+Bugs: [3235](https://github.com/osmandapp/OsmAnd-iOS/issues/3235), [3262](https://github.com/osmandapp/OsmAnd-iOS/issues/3262), [3268](https://github.com/osmandapp/OsmAnd-iOS/issues/3268), [3242](https://github.com/osmandapp/OsmAnd-iOS/issues/3242), [3251](https://github.com/osmandapp/OsmAnd-iOS/issues/3251), [3245](https://github.com/osmandapp/OsmAnd-iOS/issues/3245), [3240](https://github.com/osmandapp/OsmAnd-iOS/issues/3240), [3239](https://github.com/osmandapp/OsmAnd-iOS/issues/3239), [3218](https://github.com/osmandapp/OsmAnd-iOS/issues/3218), [3207](https://github.com/osmandapp/OsmAnd-iOS/issues/3207), [3153](https://github.com/osmandapp/OsmAnd-iOS/issues/3153), [3178](https://github.com/osmandapp/OsmAnd-iOS/issues/3178), [3166](https://github.com/osmandapp/OsmAnd-iOS/issues/3166), [3297](https://github.com/osmandapp/OsmAnd-iOS/issues/3297). 
 
-The release of the OsmAnd app for Android 4.6 offers users a wide range of improvements, new features, more powerful navigation and data management tools, making the use of the app more convenient, informative and adapted to different usage situations.  
-
+The release of the OsmAnd app for iOS 4.6 offers users a wide range of improvements, new features, more powerful navigation and data management tools, making the use of the app more convenient, informative and adapted to different usage situations.  
 _________________________________________________
-
 <LinksSocial/>
 <LinksTelegram/>
 <AppleStore/>

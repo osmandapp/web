@@ -19,10 +19,12 @@ import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import { downloadGpx } from '../../../infoblock/components/tabs/GeneralInfoTab';
 import RouteIcon from '@mui/icons-material/Route';
 import { FREE_ACCOUNT } from '../../../manager/LoginManager';
+import RouteProfileSettingsDialog from '../../../dialogs/RouteProfileSettingsDialog';
 
 const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clearState, bsize }) => {
     const ctx = useContext(AppContext);
 
+    const [openRoutingSettings, setOpenRoutingSettings] = useState(false);
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const [useSavedState, setUseSavedState] = useState(false);
 
@@ -32,6 +34,10 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
         !isUndoPossible || (pastStates.length === 1 && _.isEmpty(pastStates[0])) || ctx.selectedGpxFile.syncRouting;
     const isRedoDisabled = !isRedoPossible || ctx.selectedGpxFile.syncRouting;
     const isProfileProgress = ctx.processRouting;
+
+    useEffect(() => {
+        openRoutingSettings ? ctx.routeObject.onOpenSettings() : ctx.routeObject.onCloseSettings();
+    }, [openRoutingSettings]);
 
     useEffect(() => {
         if (clearState) {
@@ -111,33 +117,47 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
                     >
                         {(isCloudTrack(ctx) || isRouteTrack(ctx)) && (
                             <>
-                                <Tooltip
-                                    title={isCloudTrack(ctx) ? 'Cloud track' : 'Route track'}
-                                    placement={tooltipOrientation}
-                                    arrow
-                                >
-                                    <IconButton
-                                        id="se-panel-button-edit-icon"
-                                        variant="contained"
-                                        type="button"
-                                        onClick={() =>
-                                            confirm({
-                                                ctx,
-                                                text:
-                                                    'Open ' +
-                                                    (isCloudTrack(ctx) ? 'Cloud' : 'Route') +
-                                                    ' track in Local editor?',
-                                                callback: () => TracksManager.handleEditCloudTrack(ctx),
-                                            })
-                                        }
+                                {isRouteTrack(ctx) && (
+                                    <Tooltip title="Routing profile" placement={tooltipOrientation} arrow>
+                                        <IconButton
+                                            id="se-panel-button-profile-icon"
+                                            type="button"
+                                            variant="contained"
+                                            onClick={() => setOpenRoutingSettings(true)}
+                                        >
+                                            {ctx.routeObject.getProfile()?.icon}
+                                        </IconButton>
+                                    </Tooltip>
+                                )}
+                                {isCloudTrack(ctx) && (
+                                    <Tooltip
+                                        title={isCloudTrack(ctx) ? 'Cloud track' : 'Route track'}
+                                        placement={tooltipOrientation}
+                                        arrow
                                     >
-                                        {isCloudTrack(ctx) ? (
-                                            <Cloud fontSize="medium" color="primary" />
-                                        ) : (
-                                            <RouteIcon fontSize="medium" color="primary" />
-                                        )}
-                                    </IconButton>
-                                </Tooltip>
+                                        <IconButton
+                                            id="se-panel-button-edit-icon"
+                                            variant="contained"
+                                            type="button"
+                                            onClick={() =>
+                                                confirm({
+                                                    ctx,
+                                                    text:
+                                                        'Open ' +
+                                                        (isCloudTrack(ctx) ? 'Cloud' : 'Route') +
+                                                        ' track in Local editor?',
+                                                    callback: () => TracksManager.handleEditCloudTrack(ctx),
+                                                })
+                                            }
+                                        >
+                                            {isCloudTrack(ctx) ? (
+                                                <Cloud fontSize="medium" color="primary" />
+                                            ) : (
+                                                <RouteIcon fontSize="medium" color="primary" />
+                                            )}
+                                        </IconButton>
+                                    </Tooltip>
+                                )}
                                 <Tooltip title="Edit locally" arrow placement={tooltipOrientation}>
                                     <IconButton
                                         id="se-panel-button-edit-track"
@@ -286,6 +306,13 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
                 )}
                 {openDeleteDialog && ctx.currentObjectType === OBJECT_TYPE_FAVORITE && (
                     <DeleteFavoriteDialog dialogOpen={openDeleteDialog} setDialogOpen={setOpenDeleteDialog} />
+                )}
+                {openRoutingSettings && (
+                    <RouteProfileSettingsDialog
+                        useDev={true}
+                        key="routesettingsdialog"
+                        setOpenSettings={setOpenRoutingSettings}
+                    />
                 )}
             </div>
         )

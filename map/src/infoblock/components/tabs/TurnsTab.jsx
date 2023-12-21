@@ -129,6 +129,7 @@ const ICONS = [
 const MUTE = '[MUTE]';
 
 function getIconByTurnDescription({ description, finish }) {
+    description = description.trim();
     const muted = description.includes(MUTE);
     muted && (description = description.replace(MUTE + ' ', ''));
     const found = ICONS.find(([r]) => (finish ? 'FINISH' : description).match(r));
@@ -141,7 +142,7 @@ function getIconByTurnDescription({ description, finish }) {
 }
 
 function reformatDescription(description) {
-    const d = description.replace(MUTE + ' ', '');
+    const d = description.trim().replace(MUTE + ' ', '');
     const found = d.match(/and go ([\d.]+) meters/);
     const meters = (found && found[1]) ?? 0;
     if (meters > 0) {
