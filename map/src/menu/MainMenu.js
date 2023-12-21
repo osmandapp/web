@@ -133,7 +133,7 @@ export default function MainMenu({
             }
         } else if (selectedType === null) {
             // activate Navigation menu even w/o currentObjectType (if no other menu was activated before)
-            // hop to next render to avoid GlobalFrame setMenuInfo(null) and to catch routeObject options start/end
+            // use timeout to avoid GlobalFrame setMenuInfo(null) and to catch routeObject options start/end
             setTimeout(() => {
                 if (
                     ctx.routeObject.getOption('route.points.start') &&
@@ -141,7 +141,7 @@ export default function MainMenu({
                 ) {
                     selectMenuInfo(OBJECT_TYPE_ROUTE_TRACK);
                 }
-            }, 0); // 0 = next render
+            }, 100);
         }
     }, [ctx.currentObjectType]);
 
