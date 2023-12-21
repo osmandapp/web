@@ -1,12 +1,12 @@
 import MarkerOptions, { getSvgBackground } from '../map/markers/MarkerOptions';
 import Utils from '../util/Utils';
-import _, { isEmpty } from 'lodash';
+import _ from 'lodash';
 import { apiPost } from '../util/HttpApi';
 import { quickNaNfix } from '../util/Utils';
 import TracksManager from './track/TracksManager';
 import { refreshGlobalFiles } from './track/SaveTrackManager';
 import { OBJECT_TYPE_FAVORITE } from '../context/AppContext';
-import FavoriteHelper, { getFavGroupUpdateTimeByWpts } from '../infoblock/components/favorite/FavoriteHelper';
+import FavoriteHelper from '../infoblock/components/favorite/FavoriteHelper';
 import { compressFromJSON, decompressToJSON } from '../util/GzipBase64.mjs';
 
 export const FAVORITE_FILE_TYPE = 'FAVOURITES';
