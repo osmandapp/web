@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import FavoriteGroup from './FavoriteGroup';
 import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
@@ -8,7 +8,7 @@ import GroupHeader from '../actions/GroupHeader';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { isEmpty } from 'lodash';
 import Loading from '../errors/Loading';
-import { byTime } from '../actions/SortActions';
+import { byTime, sort } from '../actions/SortActions';
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
@@ -41,6 +41,17 @@ export default function FavoritesMenu() {
         }
         return items;
     }, [ctx.favorites?.groups, sortGroups]);
+
+    useEffect(() => {
+        if (ctx.selectedSort?.favorites && ctx.selectedSort.favorites[DEFAULT_FAV_GROUP_NAME]) {
+            sort({
+                method: ctx.selectedSort.favorites[DEFAULT_FAV_GROUP_NAME],
+                setSortGroups,
+                groups: ctx.favorites.groups,
+                favoriteGroup: DEFAULT_FAV_GROUP_NAME,
+            });
+        }
+    }, [ctx.selectedSort?.favorites, ctx.favorites.groups]);
 
     return (
         <>

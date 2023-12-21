@@ -269,6 +269,8 @@ export const AppContextProvider = (props) => {
 
     const [configureMapState, setConfigureMapState] = useState(getConfigureMap);
 
+    const [selectedSort, setSelectedSort] = useState({});
+
     function getConfigureMap() {
         let savedConfigureMap = localStorage.getItem(LOCAL_STORAGE_CONFIGURE_MAP);
         return savedConfigureMap ? JSON.parse(savedConfigureMap) : defaultConfigureMapStateValues;
@@ -444,6 +446,8 @@ export const AppContextProvider = (props) => {
                 setUpdateMarkers,
                 processingGroups,
                 setProcessingGroups,
+                selectedSort,
+                setSelectedSort,
             }}
         >
             {props.children}

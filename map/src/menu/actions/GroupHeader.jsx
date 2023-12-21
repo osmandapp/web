@@ -12,7 +12,7 @@ import styles from '../trackfavmenu.module.css';
 import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import AddFolderDialog from '../../dialogs/tracks/AddFolderDialog';
-import SortActions, { byTime } from './SortActions';
+import SortActions, { allMethods, byTime, getSelectedSort } from './SortActions';
 import SortMenu from './SortMenu';
 import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
 import FavoriteGroupUploader from '../../frame/components/util/FavoriteGroupUploader';
@@ -31,11 +31,21 @@ export default function GroupHeader({
     const [openSort, setOpenSort] = useState(false);
     const [sortName, setSortName] = useState('Last modified');
     const [sortIcon, setSortIcon] = useState(<TimeIcon />);
-    const [selectedSort, setSelectedSort] = useState(null);
     const anchorEl = useRef(null);
 
     useEffect(() => {
-        if (favoriteGroup && !selectedSort) {
+        let sortType = getSelectedSort({ trackGroup, favoriteGroup, ctx });
+        if (sortType) {
+            setSortIcon(allMethods[sortType].icon);
+            setSortName(allMethods[sortType].name);
+        } else {
+            setSortIcon(allMethods['time'].icon);
+            setSortName(allMethods['time'].name);
+        }
+    }, [ctx.selectedSort, trackGroup]);
+
+    useEffect(() => {
+        if (favoriteGroup && !ctx.selectedSort) {
             if (setSortFiles) {
                 const files = ctx.favorites.mapObjs[favoriteGroup.name]?.wpts;
                 if (files) {
@@ -192,8 +202,6 @@ export default function GroupHeader({
                         setSortFiles={setSortFiles}
                         setSortGroups={setSortGroups}
                         setOpenSort={setOpenSort}
-                        selectedSort={selectedSort}
-                        setSelectedSort={setSelectedSort}
                         setSortIcon={setSortIcon}
                         setSortName={setSortName}
                         markers={markers}

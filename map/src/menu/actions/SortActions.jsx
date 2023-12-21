@@ -22,6 +22,7 @@ import { ReactComponent as OldDateIcon } from '../../assets/icons/ic_action_sort
 import { ReactComponent as NearestIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
 import styles from '../trackfavmenu.module.css';
 import AppContext from '../../context/AppContext';
+import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
 
 const az = (a, b) => (a > b) - (a < b);
 
@@ -78,7 +79,28 @@ function byLocation(files, reverse, markers = null) {
     });
 }
 
-const allMethods = {
+export function sort({ method, setSortFiles, setSortGroups, markers, files, groups, favoriteGroup }) {
+    let res;
+    if (setSortFiles) {
+        if (method === 'nearest' && markers) {
+            setSortFiles(allMethods[method].callback(files, allMethods[method].reverse, markers));
+        } else {
+            setSortFiles(allMethods[method].callback(files, allMethods[method].reverse));
+        }
+    }
+    if (setSortGroups && (method === 'az' || method === 'za' || favoriteGroup)) {
+        if (method === 'time') {
+            res = allMethods[method].callback(groups, allMethods[method].reverse, favoriteGroup !== null);
+            setSortGroups(res);
+        } else {
+            res = allMethods[method].callback(groups, allMethods[method].reverse);
+            setSortGroups(res);
+        }
+    }
+    return res;
+}
+
+export const allMethods = {
     nearest: {
         reverse: false,
         callback: byLocation,
@@ -139,25 +161,35 @@ const defaultMethod = () => {
     return Object.keys(allMethods)[0];
 };
 
+export function getSelectedSort({ trackGroup = null, favoriteGroup = null, ctx, defaultMethod = null }) {
+    if (trackGroup && ctx.selectedSort?.tracks) {
+        return ctx.selectedSort.tracks[trackGroup.fullName];
+    } else if (favoriteGroup && ctx.selectedSort?.favorites) {
+        return ctx.selectedSort.favorites[
+            favoriteGroup === DEFAULT_FAV_GROUP_NAME ? DEFAULT_FAV_GROUP_NAME : favoriteGroup.name
+        ];
+    }
+    return defaultMethod;
+}
+
 const SortActions = forwardRef(
     (
         {
             trackGroup = null,
             favoriteGroup = null,
-            setSortFiles,
-            setSortGroups,
-            setOpenSort,
-            selectedSort,
-            setSelectedSort,
-            setSortIcon,
-            setSortName,
+            setSortFiles = null,
+            setSortGroups = null,
+            setOpenSort = null,
+            setSortIcon = null,
+            setSortName = null,
             markers = null,
         },
         ref
     ) => {
         const ctx = useContext(AppContext);
-
-        const [currentMethod, setCurrentMethod] = useState(selectedSort ? selectedSort : defaultMethod);
+        const [currentMethod, setCurrentMethod] = useState(
+            getSelectedSort({ trackGroup, favoriteGroup, ctx, defaultMethod: defaultMethod() }) || defaultMethod()
+        );
 
         const files = () => {
             if (trackGroup) {
@@ -170,45 +202,61 @@ const SortActions = forwardRef(
 
         const groups = () => {
             if (trackGroup) {
-                return ctx.tracksGroups;
+                return trackGroup.subfolders;
             } else if (favoriteGroup) {
                 return ctx.favorites.groups;
             }
             return null;
         };
 
-        function sort(method) {
-            if (setSortFiles) {
-                if (method === 'nearest' && markers) {
-                    setSortFiles(allMethods[method].callback(files(), allMethods[method].reverse, markers));
-                } else {
-                    setSortFiles(allMethods[method].callback(files(), allMethods[method].reverse));
-                }
-            }
-            if (setSortGroups && (method === 'az' || method === 'za' || favoriteGroup)) {
-                if (method === 'time') {
-                    setSortGroups(
-                        allMethods[method].callback(groups(), allMethods[method].reverse, favoriteGroup !== null)
-                    );
-                } else {
-                    setSortGroups(allMethods[method].callback(groups(), allMethods[method].reverse));
-                }
-            }
-        }
-
         useEffect(() => {
-            sort(currentMethod);
-        }, [files(), selectedSort]);
+            if (currentMethod) {
+                sort({
+                    method: currentMethod,
+                    setSortFiles,
+                    setSortGroups,
+                    markers,
+                    files: files(),
+                    groups: groups(),
+                    favoriteGroup,
+                });
+            }
+        }, [files(), currentMethod]);
 
         const handleChange = (event) => {
             const method = event.target.value;
-            sort(method);
-            setOpenSort(false);
+            sort({ method, setSortFiles, setSortGroups, markers, files: files(), groups: groups(), favoriteGroup });
+            if (setOpenSort) {
+                setOpenSort(false);
+            }
+
             setSelectedSort(method);
-            setSortIcon(allMethods[method].icon);
-            setSortName(allMethods[method].name);
+
+            if (setSortIcon) {
+                setSortIcon(allMethods[method].icon);
+            }
+            if (setSortName) {
+                setSortName(allMethods[method].name);
+            }
             setCurrentMethod(method);
         };
+
+        function setSelectedSort(method) {
+            if (trackGroup) {
+                if (!ctx.selectedSort.tracks) {
+                    ctx.selectedSort.tracks = {};
+                }
+                ctx.selectedSort.tracks[trackGroup.fullName] = method;
+            } else if (favoriteGroup) {
+                if (!ctx.selectedSort.favorites) {
+                    ctx.selectedSort.favorites = {};
+                }
+                ctx.selectedSort.favorites[
+                    favoriteGroup === DEFAULT_FAV_GROUP_NAME ? DEFAULT_FAV_GROUP_NAME : favoriteGroup.name
+                ] = method;
+            }
+            ctx.setSelectedSort({ ...ctx.selectedSort });
+        }
 
         const Label = ({ item }) => {
             return (

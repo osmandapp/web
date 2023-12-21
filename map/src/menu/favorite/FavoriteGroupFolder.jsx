@@ -14,6 +14,7 @@ import { getDistance } from '../../util/Utils';
 import Loading from '../errors/Loading';
 import { isEmpty } from 'lodash';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
+import { sort } from '../actions/SortActions';
 
 export default function FavoriteGroupFolder({ folder }) {
     const ctx = useContext(AppContext);
@@ -57,6 +58,16 @@ export default function FavoriteGroupFolder({ folder }) {
             });
         }
         markerList = addLocDist({ location: currentLoc, markers: markerList });
+
+        if (ctx.selectedSort?.favorites && ctx.selectedSort.favorites[group.name]) {
+            sort({
+                method: ctx.selectedSort.favorites[group.name],
+                setSortFiles,
+                markers: markerList,
+                files: ctx.favorites.mapObjs[group.name]?.wpts,
+                favoriteGroup: group,
+            });
+        }
         setMarkers([...markerList]);
         refMarkers.current = markerList;
     }, [ctx.favorites]);
