@@ -16,7 +16,12 @@ import {
     Grid,
     ButtonGroup,
 } from '@mui/material';
-import AppContext, { isLocalTrack, isCloudTrack, isRouteTrack } from '../../context/AppContext';
+import AppContext, {
+    isLocalTrack,
+    isCloudTrack,
+    isRouteTrack,
+    OBJECT_TYPE_ROUTE_TRACK,
+} from '../../context/AppContext';
 import RouteProfileSettingsDialog from '../../dialogs/RouteProfileSettingsDialog';
 import { TextField } from '@mui/material/';
 import { LatLng } from 'leaflet';
@@ -188,7 +193,9 @@ export default function RouteMenu() {
         const route = routeObject.getRoute();
         if (route) {
             if (isRouteTrack(ctx) === false) {
-                routeObject.putRoute({ route: routeObject.getRoute() });
+                ctx.setUpdateInfoBlock(true);
+                ctx.setSelectedGpxFile(routeObject.getTrack());
+                ctx.setCurrentObjectType(OBJECT_TYPE_ROUTE_TRACK);
             }
         }
     }
@@ -364,12 +371,14 @@ export default function RouteMenu() {
                         onChange={(e) => ctx.setRouteTrackFile(e.target.files[0])}
                     />
                     <Button variant="contained" className={styles.smallButton}>
-                        Upload GPX to route
+                        Approximate GPX
                     </Button>
                 </label>
-                <Button variant="contained" component="span" className={styles.smallButton} onClick={openInfoBlock}>
-                    Show details
-                </Button>
+                {routeObject.getRoute() && (
+                    <Button variant="contained" component="span" className={styles.smallButton} onClick={openInfoBlock}>
+                        More information
+                    </Button>
+                )}
             </ButtonGroup>
             {routeObject.getRoute() &&
                 routeOptions.map((opt) => (
