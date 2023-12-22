@@ -14,6 +14,7 @@ import { getAccountInfo } from '../manager/LoginManager';
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track';
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track';
 export const OBJECT_TYPE_ROUTE_TRACK = 'route_track';
+export const OBJECT_TYPE_NAVIGATION = 'navigation';
 export const OBJECT_TYPE_FAVORITE = 'favorite';
 export const OBJECT_TYPE_WEATHER = 'weather';
 export const OBJECT_TYPE_POI = 'poi';
