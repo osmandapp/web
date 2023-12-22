@@ -17,7 +17,7 @@ import Empty from '../errors/Empty';
 import Loading from '../errors/Loading';
 import GroupHeader from '../actions/GroupHeader';
 import TrackLoading from './TrackLoading';
-import { sort } from '../actions/SortActions';
+import { doSort } from '../actions/SortActions';
 
 export default function TracksMenu() {
     const ctx = useContext(AppContext);
@@ -71,7 +71,7 @@ export default function TracksMenu() {
                 }
                 // sort default track group
                 if (ctx.selectedSort?.tracks && ctx.selectedSort.tracks[DEFAULT_GROUP_NAME]) {
-                    sort({
+                    doSort({
                         method: ctx.selectedSort.tracks[DEFAULT_GROUP_NAME],
                         setSortFiles,
                         setSortGroups,

@@ -9,7 +9,7 @@ import GroupHeader from '../actions/GroupHeader';
 import Empty from '../errors/Empty';
 import { EMPTY_FILE_NAME } from '../../manager/track/SaveTrackManager';
 import TrackLoading from './TrackLoading';
-import { sort } from '../actions/SortActions';
+import { doSort } from '../actions/SortActions';
 
 export default function TrackGroupFolder({ folder }) {
     const ctx = useContext(AppContext);
@@ -41,7 +41,7 @@ export default function TrackGroupFolder({ folder }) {
 
         // sort track group
         if (ctx.selectedSort?.tracks && ctx.selectedSort.tracks[folder.fullName]) {
-            sort({
+            doSort({
                 method: ctx.selectedSort.tracks[folder.fullName],
                 setSortFiles,
                 setSortGroups,

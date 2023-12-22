@@ -79,7 +79,7 @@ function byLocation(files, reverse, markers = null) {
     });
 }
 
-export function sort({ method, setSortFiles, setSortGroups, markers, files, groups, favoriteGroup }) {
+export function doSort({ method, setSortFiles, setSortGroups, markers, files, groups, favoriteGroup }) {
     let res;
     if (setSortFiles) {
         if (method === 'nearest' && markers) {
@@ -211,7 +211,7 @@ const SortActions = forwardRef(
 
         useEffect(() => {
             if (currentMethod) {
-                sort({
+                doSort({
                     method: currentMethod,
                     setSortFiles,
                     setSortGroups,
@@ -225,7 +225,7 @@ const SortActions = forwardRef(
 
         const handleChange = (event) => {
             const method = event.target.value;
-            sort({ method, setSortFiles, setSortGroups, markers, files: files(), groups: groups(), favoriteGroup });
+            doSort({ method, setSortFiles, setSortGroups, markers, files: files(), groups: groups(), favoriteGroup });
             if (setOpenSort) {
                 setOpenSort(false);
             }

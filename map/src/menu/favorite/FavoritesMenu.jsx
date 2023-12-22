@@ -8,7 +8,7 @@ import GroupHeader from '../actions/GroupHeader';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { isEmpty } from 'lodash';
 import Loading from '../errors/Loading';
-import { byTime, sort } from '../actions/SortActions';
+import { byTime, doSort } from '../actions/SortActions';
 
 export default function FavoritesMenu() {
     const ctx = useContext(AppContext);
@@ -44,7 +44,7 @@ export default function FavoritesMenu() {
 
     useEffect(() => {
         if (ctx.selectedSort?.favorites && ctx.selectedSort.favorites[DEFAULT_FAV_GROUP_NAME]) {
-            sort({
+            doSort({
                 method: ctx.selectedSort.favorites[DEFAULT_FAV_GROUP_NAME],
                 setSortGroups,
                 groups: ctx.favorites.groups,
