@@ -131,12 +131,23 @@ export default function MainMenu({
             if (menuInfo?.type.name !== ctx.currentObjectType) {
                 selectMenuInfo();
             }
+        } else if (selectedType === null) {
+            // activate Navigation menu even w/o currentObjectType (if no other menu was activated before)
+            // use timeout to avoid GlobalFrame setMenuInfo(null) and to catch routeObject options start/end
+            setTimeout(() => {
+                if (
+                    ctx.routeObject.getOption('route.points.start') &&
+                    ctx.routeObject.getOption('route.points.finish')
+                ) {
+                    selectMenuInfo(OBJECT_TYPE_ROUTE_TRACK);
+                }
+            }, 100);
         }
     }, [ctx.currentObjectType]);
 
-    function selectMenuInfo() {
+    function selectMenuInfo(force = null) {
         const currentMenu = items.find((item) => {
-            return item.type === ctx.currentObjectType;
+            return item.type === force ?? ctx.currentObjectType;
         });
         if (currentMenu) {
             setMenuInfo(currentMenu.component);
