@@ -147,7 +147,7 @@ export default function MainMenu({
 
     function selectMenuInfo(force = null) {
         const currentMenu = items.find((item) => {
-            return item.type === force ?? ctx.currentObjectType;
+            return item.type === (force ?? ctx.currentObjectType);
         });
         if (currentMenu) {
             setMenuInfo(currentMenu.component);
