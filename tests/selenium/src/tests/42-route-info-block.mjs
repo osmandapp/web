@@ -2,7 +2,7 @@
 
 import { By } from 'selenium-webdriver';
 import { mobile } from '../options.mjs';
-import { enclose, clickBy, sendKeysBy, matchInnerTextBy, enumerateIds } from '../lib.mjs';
+import { enclose, clickBy, sendKeysBy, matchInnerTextBy } from '../lib.mjs';
 
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
@@ -90,13 +90,13 @@ const routes = [
 
 const MOBILE_SKIP = /(Track|Sand)/; // bye-bye mobile version
 
-const routeTrackPanelButtons = [
-    'se-panel-button-profile-icon',
-    'se-panel-button-edit-track',
-    'se-panel-button-download-gpx',
-];
+// const routeTrackPanelButtons = [
+//     'se-panel-button-profile-icon',
+//     'se-panel-button-edit-track',
+//     'se-panel-button-download-gpx',
+// ];
 
-const routeTrackInfoBlockButtons = ['se-infoblock-button-edit-track', 'se-infoblock-button-download-gpx'];
+// const routeTrackInfoBlockButtons = ['se-infoblock-button-edit-track', 'se-infoblock-button-download-gpx'];
 
 export default async function test() {
     await actionOpenMap();
@@ -110,13 +110,14 @@ export default async function test() {
         await sendKeysBy(By.id('se-route-start-point'), A + '\n');
         await sendKeysBy(By.id('se-route-finish-point'), B + '\n');
 
-        await validatePanelButtons(routeTrackPanelButtons);
-        await validateInfoBlockButtons(routeTrackInfoBlockButtons);
+        // Navigation InfoBlock is disabled by default
+        // await validatePanelButtons(routeTrackPanelButtons);
+        // await validateInfoBlockButtons(routeTrackInfoBlockButtons);
 
         await validateInfoBlockStrings(strings, hasAttributes);
         await validateInfoBlockTurns(turns);
 
-        await clickBy(By.id('se-button-back'));
+        await clickBy(By.id('se-button-back'), { optional: true });
         await actionIdleWait();
     }
 }
@@ -138,26 +139,26 @@ export async function selectProfile({ profile }) {
     await enclose(clicker);
 }
 
-async function validateInfoBlockButtons(ids) {
-    await enclose(
-        async () => {
-            const buttons = await enumerateIds('se-infoblock-button-');
-            return JSON.stringify(ids.sort()) === JSON.stringify(buttons.sort());
-        },
-        { tag: 'validateInfoBlockButtons' }
-    );
-}
+// async function validateInfoBlockButtons(ids) {
+//     await enclose(
+//         async () => {
+//             const buttons = await enumerateIds('se-infoblock-button-');
+//             return JSON.stringify(ids.sort()) === JSON.stringify(buttons.sort());
+//         },
+//         { tag: 'validateInfoBlockButtons' }
+//     );
+// }
 
-async function validatePanelButtons(ids) {
-    await enclose(
-        async () => {
-            const buttons = await enumerateIds('se-panel-button-');
-            return JSON.stringify(ids.sort()) === JSON.stringify(buttons.sort());
-        },
-        { tag: 'validatePanelButtons' }
-    );
-    //await clickBy(By.id('se-button-back'));
-}
+// async function validatePanelButtons(ids) {
+//     await enclose(
+//         async () => {
+//             const buttons = await enumerateIds('se-panel-button-');
+//             return JSON.stringify(ids.sort()) === JSON.stringify(buttons.sort());
+//         },
+//         { tag: 'validatePanelButtons' }
+//     );
+//     //await clickBy(By.id('se-button-back'));
+// }
 
 async function validateInfoBlockStrings(strings, hasAttributes) {
     // don't check Road/Surface on dying-mobile version
