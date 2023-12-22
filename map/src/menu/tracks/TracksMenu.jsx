@@ -17,6 +17,7 @@ import Empty from '../errors/Empty';
 import Loading from '../errors/Loading';
 import GroupHeader from '../actions/GroupHeader';
 import TrackLoading from './TrackLoading';
+import { doSort } from '../actions/SortActions';
 
 export default function TracksMenu() {
     const ctx = useContext(AppContext);
@@ -67,6 +68,16 @@ export default function TracksMenu() {
                 let defGroup = trackGroups.find((g) => g.name === DEFAULT_GROUP_NAME);
                 if (defGroup) {
                     setDefaultGroup(defGroup);
+                }
+                // sort default track group
+                if (ctx.selectedSort?.tracks && ctx.selectedSort.tracks[DEFAULT_GROUP_NAME]) {
+                    doSort({
+                        method: ctx.selectedSort.tracks[DEFAULT_GROUP_NAME],
+                        setSortFiles,
+                        setSortGroups,
+                        files: defGroup.groupFiles,
+                        groups: trackGroups,
+                    });
                 }
             }
             ctx.setTracksGroups(trackGroups);

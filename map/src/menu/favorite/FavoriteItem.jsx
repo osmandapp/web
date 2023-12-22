@@ -31,12 +31,12 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
             newSelectedGpxFile.markerPrev = ctx.selectedGpxFile.markerCurrent;
         }
         let file;
-        Object.keys(ctx.favorites).forEach((favorite) => {
+        Object.keys(ctx.favorites.mapObjs).forEach((favorite) => {
             if (favorite === group.name) {
                 newSelectedGpxFile.nameGroup = favorite;
-                Object.values(ctx.favorites[favorite].markers._layers).forEach((m) => {
+                Object.values(ctx.favorites.mapObjs[favorite].markers._layers).forEach((m) => {
                     if (m.options.title === marker.title) {
-                        file = ctx.favorites[favorite];
+                        file = ctx.favorites.mapObjs[favorite];
                     }
                 });
             }
@@ -89,7 +89,7 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
                     {inView && (
                         <MenuItem
                             className={styles.item}
-                            id={'se-fav-item-' + marker.title}
+                            id={'se-fav-item-name-' + marker.title}
                             onClick={() => addFavoriteToMap(marker)}
                         >
                             <ListItemIcon className={styles.icon}>

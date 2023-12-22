@@ -9,6 +9,7 @@ import GroupHeader from '../actions/GroupHeader';
 import Empty from '../errors/Empty';
 import { EMPTY_FILE_NAME } from '../../manager/track/SaveTrackManager';
 import TrackLoading from './TrackLoading';
+import { doSort } from '../actions/SortActions';
 
 export default function TrackGroupFolder({ folder }) {
     const ctx = useContext(AppContext);
@@ -36,6 +37,17 @@ export default function TrackGroupFolder({ folder }) {
             setGroup({ ...folder });
             setSortFiles([]);
             setSortGroups([]);
+        }
+
+        // sort track group
+        if (ctx.selectedSort?.tracks && ctx.selectedSort.tracks[folder.fullName]) {
+            doSort({
+                method: ctx.selectedSort.tracks[folder.fullName],
+                setSortFiles,
+                setSortGroups,
+                files: group.groupFiles,
+                groups: group.subfolders,
+            });
         }
     }, [folder]);
 

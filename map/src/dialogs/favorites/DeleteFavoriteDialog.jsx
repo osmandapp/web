@@ -42,7 +42,7 @@ export default function DeleteFavoriteDialog({ dialogOpen, setDialogOpen, wpt = 
     }
 
     async function deleteFavorite() {
-        const arrWpt = useSelected ? ctx.selectedGpxFile.file.wpts : ctx.favorites[wpt.group.name].wpts;
+        const arrWpt = useSelected ? ctx.selectedGpxFile.file.wpts : ctx.favorites.mapObjs[wpt.group.name].wpts;
         const groupName = useSelected ? ctx.selectedGpxFile.nameGroup : wpt.category;
         const groupFullName = useSelected ? ctx.selectedGpxFile.file.name : wpt.group.file.name;
         const currentWptName = useSelected ? ctx.selectedGpxFile.markerCurrent.title : wpt.name;
@@ -52,22 +52,25 @@ export default function DeleteFavoriteDialog({ dialogOpen, setDialogOpen, wpt = 
                 let result = await FavoritesManager.deleteFavorite(
                     arrWpt[i],
                     groupFullName,
-                    ctx.favorites[groupName].updatetimems
+                    ctx.favorites.mapObjs[groupName].updatetimems
                 );
                 //update favorites groups
                 if (result) {
-                    ctx.favorites[groupName] = FavoriteHelper.updateGroupObj(ctx.favorites[groupName], result);
+                    ctx.favorites.mapObjs[groupName] = FavoriteHelper.updateGroupObj(
+                        ctx.favorites.mapObjs[groupName],
+                        result
+                    );
                     ctx.favorites = FavoriteHelper.updateSelectedGroup(ctx.favorites, groupName, result);
                     useSelected &&
-                        FavoriteHelper.updateSelectedFile(
+                        FavoriteHelper.updateSelectedFile({
                             ctx,
-                            ctx.favorites,
+                            favorites: ctx.favorites,
                             result,
-                            ctx.selectedGpxFile.markerCurrent.title,
-                            ctx.selectedGpxFile.nameGroup,
-                            true
-                        );
-                    ctx.setFavorites({ ...ctx.favorites });
+                            favoriteName: ctx.selectedGpxFile.markerCurrent.title,
+                            groupName: ctx.selectedGpxFile.nameGroup,
+                            deleted: true,
+                        });
+                    ctx.setUpdateMarkers({ ...ctx.favorites });
                     closeContextMenu();
                     break;
                 }

@@ -192,18 +192,25 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen }) {
     }
 
     async function updateGroupMarkers(result, selectedGroup) {
-        if (!ctx.favorites[selectedGroup.name]) {
-            ctx.favorites[selectedGroup.name] = FavoriteHelper.createGroupObj(result, selectedGroup);
+        if (!ctx.favorites.mapObjs[selectedGroup.name]) {
+            ctx.favorites.mapObjs[selectedGroup.name] = FavoriteHelper.createGroupObj(result, selectedGroup);
         } else {
-            ctx.favorites[selectedGroup.name] = FavoriteHelper.updateGroupObj(
-                ctx.favorites[selectedGroup.name],
+            ctx.favorites.mapObjs[selectedGroup.name] = FavoriteHelper.updateGroupObj(
+                ctx.favorites.mapObjs[selectedGroup.name],
                 result
             );
         }
         ctx.favorites = FavoriteHelper.updateSelectedGroup(ctx.favorites, selectedGroup.name, result);
-        FavoriteHelper.updateSelectedFile(ctx, ctx.favorites, result, favoriteName, selectedGroup.name, false);
+        FavoriteHelper.updateSelectedFile({
+            ctx,
+            favorites: ctx.favorites,
+            result,
+            favoriteName,
+            groupName: selectedGroup.name,
+            deleted: false,
+        });
         ctx.setFavorites({ ...ctx.favorites });
-        setFavoriteGroup(ctx.favorites[selectedGroup.name]);
+        setFavoriteGroup(ctx.favorites.mapObjs[selectedGroup.name]);
     }
 
     const CloseDialog = (dialogOpen) => {
