@@ -104,7 +104,7 @@ export default function MainMenu({
             name: 'Navigation',
             icon: NavigationIcon,
             component: <RouteMenu />,
-            type: OBJECT_TYPE_ROUTE_TRACK,
+            type: OBJECT_TYPE_ROUTE_TRACK, // shared with OBJECT_TYPE_NAVIGATION
             show: true,
             id: 'se-show-menu-navigation',
         },
