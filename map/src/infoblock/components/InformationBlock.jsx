@@ -2,7 +2,7 @@ import { AppBar, LinearProgress, Box, Typography, IconButton } from '@mui/materi
 import AppContext, {
     isLocalTrack,
     isCloudTrack,
-    OBJECT_TYPE_NAVIGATION,
+    OBJECT_TYPE_NAVIGATION_ALONE,
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_WEATHER,
     OBJECT_TYPE_POI,
@@ -114,7 +114,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                     obj = new FavoritesTabList().create(ctx);
                 } else if (ctx.currentObjectType === OBJECT_TYPE_POI) {
                     obj = new PoiTabList().create();
-                } else if (ctx.currentObjectType === OBJECT_TYPE_NAVIGATION) {
+                } else if (ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_ALONE) {
                     // don't display InfoBlock in Navigation menu until details requested
                 } else if (ctx.selectedGpxFile) {
                     // finally assume that default selectedGpxFile is a track

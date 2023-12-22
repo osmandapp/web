@@ -20,7 +20,7 @@ import AppContext, {
     isLocalTrack,
     isCloudTrack,
     isRouteTrack,
-    OBJECT_TYPE_ROUTE_TRACK,
+    OBJECT_TYPE_NAVIGATION_TRACK,
 } from '../../context/AppContext';
 import RouteProfileSettingsDialog from '../../dialogs/RouteProfileSettingsDialog';
 import { TextField } from '@mui/material/';
@@ -194,7 +194,7 @@ export default function RouteMenu() {
         if (route) {
             if (isRouteTrack(ctx) === false) {
                 const { track } = routeObject.putRoute({ route: routeObject.getRoute() }); // get track instantly
-                ctx.setCurrentObjectType(OBJECT_TYPE_ROUTE_TRACK);
+                ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_TRACK);
                 ctx.setSelectedGpxFile(track);
                 ctx.setUpdateInfoBlock(true);
             }

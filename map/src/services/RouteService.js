@@ -1,7 +1,11 @@
 import { useContext, useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import AppContext, { isRouteTrack, OBJECT_TYPE_ROUTE_TRACK, OBJECT_TYPE_NAVIGATION } from '../context/AppContext';
+import AppContext, {
+    isRouteTrack,
+    OBJECT_TYPE_NAVIGATION_TRACK,
+    OBJECT_TYPE_NAVIGATION_ALONE,
+} from '../context/AppContext';
 import TracksManager, { prepareNavigationTrack, getApproximatePoints } from '../manager/track/TracksManager';
 
 export function RouteService() {
@@ -203,9 +207,9 @@ export function RouteService() {
                     // re-open InfoBlock
                     ctx.setUpdateInfoBlock(true);
                     ctx.setSelectedGpxFile(track);
-                    ctx.setCurrentObjectType(OBJECT_TYPE_ROUTE_TRACK);
+                    ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_TRACK);
                 } else {
-                    ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION); // invoke MainMenu.js effect
+                    ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE); // invoke MainMenu.js effect
                 }
             } else {
                 if (isRouteTrack(ctx)) {
