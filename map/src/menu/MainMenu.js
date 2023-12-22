@@ -131,7 +131,8 @@ export default function MainMenu({
             if (menuInfo?.type.name !== ctx.currentObjectType) {
                 selectMenuInfo();
             }
-        } else if (selectedType === null) {
+        } else if (selectedType === null && ctx.currentObjectType === undefined) {
+            // invoked by RouteService.js effect
             // activate Navigation menu even w/o currentObjectType (if no other menu was activated before)
             // use timeout to avoid GlobalFrame setMenuInfo(null) and to catch routeObject options start/end
             setTimeout(() => {
@@ -142,6 +143,7 @@ export default function MainMenu({
                     selectMenuInfo(OBJECT_TYPE_ROUTE_TRACK);
                 }
             }, 100);
+            ctx.setCurrentObjectType(null);
         }
     }, [ctx.currentObjectType]);
 

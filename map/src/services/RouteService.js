@@ -204,6 +204,8 @@ export function RouteService() {
                     ctx.setUpdateInfoBlock(true);
                     ctx.setSelectedGpxFile(track);
                     ctx.setCurrentObjectType(OBJECT_TYPE_ROUTE_TRACK);
+                } else {
+                    ctx.setCurrentObjectType(undefined); // invoke MainMenu.js effect
                 }
             } else {
                 if (isRouteTrack(ctx)) {
