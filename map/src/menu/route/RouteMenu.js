@@ -376,7 +376,13 @@ export default function RouteMenu() {
                     </Button>
                 </label>
                 {routeObject.getRoute() && (
-                    <Button variant="contained" component="span" className={styles.smallButton} onClick={openInfoBlock}>
+                    <Button
+                        id="se-route-more-information"
+                        variant="contained"
+                        component="span"
+                        className={styles.smallButton}
+                        onClick={openInfoBlock}
+                    >
                         More information
                     </Button>
                 )}
