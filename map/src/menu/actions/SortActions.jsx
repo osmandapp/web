@@ -326,6 +326,7 @@ const SortActions = forwardRef(
                                 <>
                                     <Divider className={styles.dividerActions} />
                                     <FormControlLabel
+                                        id={'se-sort-longest'}
                                         className={styles.controlLabel}
                                         disableTypography={true}
                                         labelPlacement="start"
@@ -334,6 +335,7 @@ const SortActions = forwardRef(
                                         label={<Label item={allMethods.longest} />}
                                     />
                                     <FormControlLabel
+                                        id={'se-sort-shortest'}
                                         className={styles.controlLabel}
                                         disableTypography={true}
                                         labelPlacement="start"
