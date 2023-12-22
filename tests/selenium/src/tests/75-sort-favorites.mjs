@@ -77,17 +77,17 @@ export default async function test() {
     await actionFinish();
 }
 
-const favGroupsLastModified = ['se-menu-fav-shops', 'se-menu-fav-oil points', 'se-menu-fav-food'];
+const favGroupsLastModified = ['se-menu-fav-shops', 'se-menu-fav-ozoo', 'se-menu-fav-food'];
 
-const favGroupsAZ = ['se-menu-fav-food', 'se-menu-fav-oil points', 'se-menu-fav-shops'];
+const favGroupsAZ = ['se-menu-fav-food', 'se-menu-fav-ozoo', 'se-menu-fav-shops'];
 
-const favGroupsZA = ['se-menu-fav-shops', 'se-menu-fav-oil points', 'se-menu-fav-food'];
+const favGroupsZA = ['se-menu-fav-shops', 'se-menu-fav-ozoo', 'se-menu-fav-food'];
 
-const favGroupsNewDate = ['se-menu-fav-shops', 'se-menu-fav-oil points', 'se-menu-fav-food'];
+const favGroupsNewDate = ['se-menu-fav-shops', 'se-menu-fav-ozoo', 'se-menu-fav-food'];
 
-const favGroupsOldDate = ['se-menu-fav-food', 'se-menu-fav-oil points', 'se-menu-fav-shops'];
+const favGroupsOldDate = ['se-menu-fav-food', 'se-menu-fav-ozoo', 'se-menu-fav-shops'];
 
-const favGroupsOldDateAfterRename = ['se-menu-fav-oil points', 'se-menu-fav-shops', 'se-menu-fav-food-renamed'];
+const favGroupsOldDateAfterRename = ['se-menu-fav-ozoo', 'se-menu-fav-shops', 'se-menu-fav-food-renamed'];
 
 const favItemsFood = [
     'se-fav-item-name-111test',
