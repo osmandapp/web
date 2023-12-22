@@ -33,8 +33,9 @@ export default function GroupHeader({
     const [sortIcon, setSortIcon] = useState(<TimeIcon />);
     const anchorEl = useRef(null);
 
+    const sortType = getSelectedSort({ trackGroup, favoriteGroup, ctx });
+    const currentSortType = sortType ? sortType : 'time';
     useEffect(() => {
-        let sortType = getSelectedSort({ trackGroup, favoriteGroup, ctx });
         if (sortType) {
             setSortIcon(allMethods[sortType].icon);
             setSortName(allMethods[sortType].name);
@@ -124,6 +125,7 @@ export default function GroupHeader({
                     <Tooltip key={'sort_tracks'} title={`Sort by: ${sortName}`} arrow placement="bottom-end">
                         <span>
                             <IconButton
+                                id={`se-sort-button-${currentSortType}`}
                                 variant="contained"
                                 type="button"
                                 className={styles.appBarIcon}

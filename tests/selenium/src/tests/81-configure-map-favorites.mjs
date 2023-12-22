@@ -33,7 +33,7 @@ export default async function test() {
     await clickBy(By.id(`se-menu-fav-${shortFavGroupName}`));
     await waitBy(By.id(`se-opened-fav-group-${shortFavGroupName}`));
     // open favorite
-    await clickBy(By.id(`se-fav-item-${favoriteName}`));
+    await clickBy(By.id(`se-fav-item-name-${favoriteName}`));
     await waitBy(By.id(`se-fav-item-info-${favoriteName}`));
 
     await waitBy(By.className('leaflet-marker-icon'));

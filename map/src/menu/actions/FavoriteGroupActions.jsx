@@ -79,6 +79,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                                     Show on map
                                 </Typography>
                                 <Switch
+                                    id="se-favorite-folder-actions-show-on-map"
                                     checked={group.hidden !== 'true'}
                                     onClick={(e) => e.stopPropagation()}
                                     onChange={(e) => showOnMap(e.target.checked)}

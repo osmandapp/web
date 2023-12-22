@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<gpx version="1.1" creator="OsmAnd Maps 4.4.9 (4.4.9.1)" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>favorites-food</name>
+    <time>2023-06-29T10:58:18Z</time>
+  </metadata>
+  <wpt lat="50.0508012" lon="19.9421275">
+    <name>111test</name>
+    <type>food</type>
+    <extensions>
+      <osmand:icon>amenity_cafe</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#88E030FF</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="50.0506586" lon="19.9443757">
+    <time>2023-03-19T15:44:04Z</time>
+    <name>Józefa (Kraków) 14</name>
+    <type>food</type>
+    <extensions>
+      <osmand:address>Stare Miasto</osmand:address>
+      <osmand:icon>amenity_fire_station</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#5722FFFF</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="50.0068116" lon="20.088442">
+    <time>2023-06-29T10:57:31Z</time>
+    <name>Parkingtest</name>
+    <type>food</type>
+    <extensions>
+      <osmand:address>Niedzielskich, Wygon</osmand:address>
+      <osmand:icon>amenity_parking</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:amenity_origin>Amenity:: transportation:parking</osmand:amenity_origin>
+      <osmand:color>#88E030FF</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="50.0640274" lon="19.9362125">
+    <time>2023-03-19T15:45:48Z</time>
+    <name>Plac Szczepański (Stare Miasto) 7</name>
+    <type>food</type>
+    <extensions>
+      <osmand:address>Kraków</osmand:address>
+      <osmand:icon>amenity_fire_station</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#5722FFFF</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="50.0499755" lon="19.9424138">
+    <time>2023-03-19T15:41:21Z</time>
+    <name>Świętej Katarzyny (Stare Miasto) 2</name>
+    <type>food</type>
+    <extensions>
+      <osmand:address>Kraków</osmand:address>
+      <osmand:icon>amenity_fire_station</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#5722FFFF</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="49.840643" lon="24.0259677">
+    <time>2023-03-11T20:14:42Z</time>
+    <name>Крива Липа</name>
+    <type>food</type>
+    <extensions>
+      <osmand:address>Крива Липа проїзд</osmand:address>
+      <osmand:icon>amenity_restaurant</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#5722FFFF</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="50.4719142" lon="30.5059648">
+    <name>ssssарарар</name>
+    <type>food</type>
+    <extensions>
+      <osmand:color>#eecc22</osmand:color>
+      <osmand:background>circle</osmand:background>
+      <osmand:icon>special_star</osmand:icon>
+    </extensions>
+  </wpt>
+  <wpt lat="50.4705349" lon="30.5089688">
+    <name>ывывыв</name>
+    <type>food</type>
+    <extensions>
+      <osmand:color>#eecc22</osmand:color>
+      <osmand:background>circle</osmand:background>
+      <osmand:icon>special_star</osmand:icon>
+    </extensions>
+  </wpt>
+  <extensions>
+    <osmand:points_groups>
+      <group name="food" color="#88e030ff" icon="amenity_cafe" background="circle" />
+    </osmand:points_groups>
+  </extensions>
+</gpx>

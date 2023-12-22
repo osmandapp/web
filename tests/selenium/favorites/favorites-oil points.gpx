@@ -1,0 +1,5723 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<gpx version="1.1" creator="OsmAnd~ 4.6.0#55des" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name></name>
+  </metadata>
+  <wpt lat="52.551269" lon="29.069841">
+    <ele>134.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 БАРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.642235" lon="29.78676">
+    <ele>126</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 БЕРЕЗИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.270676" lon="29.059364">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 БОБРОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.481316" lon="28.35495">
+    <ele>136</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 В.ВЕТЧИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.428993" lon="30.252642">
+    <ele>143</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 В.ПЕРВОМАЙСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.11245" lon="30.439509">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 В.СЕМЕНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.178658" lon="30.673111">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 ВАСИЛЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.347507" lon="29.389284">
+    <ele>138</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 ДОМАНОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.549213" lon="29.752403">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 ДОРОЖКИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.836601" lon="28.308085">
+    <ele>147</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 ДУБНИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.411785" lon="30.031582">
+    <ele>150</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 ДУБРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.142937" lon="29.526176">
+    <ele>132</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 ДУДИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.460304" lon="29.811443">
+    <ele>162</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 ЕЛАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.365223" lon="30.483017">
+    <ele>119.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 З.АЛЕКСАНДРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.716003" lon="28.521116">
+    <ele>138</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 З.ВАЛАВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.283009" lon="28.793362">
+    <ele>125</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 З.ГОРОХОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.57267" lon="30.09314">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 ЗАБЕРЕЗИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.582481" lon="29.205961">
+    <ele>143</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 ИПОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.305237" lon="29.145678">
+    <ele>124.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 КАПЛИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.523487" lon="30.438564">
+    <ele>108</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 КОМАРИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.440449" lon="29.202663">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 КРЮКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.040745" lon="30.649624">
+    <ele>133</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 ЛОЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.481354" lon="29.494415">
+    <ele>140.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 ЛЮДВИНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.18512" lon="30.065174">
+    <ele>130.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 МАЛОДУШИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.085781" lon="27.491442">
+    <ele>126</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 МАЛЫШЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.316326" lon="29.739977">
+    <ele>139.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 МАРКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.914715" lon="28.807591">
+    <ele>145</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 МАХНОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.698826" lon="29.091316">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 МОИСЕЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.636089" lon="27.909534">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 Н.ДУБРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.319153" lon="29.462257">
+    <ele>135.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 НИКУЛИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.47121" lon="29.074564">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 ОКТЯБРЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.875824" lon="28.237045">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 ОСОВЕЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.660286" lon="28.468067">
+    <ele>136</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 С.КАЛИНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.098167" lon="28.790302">
+    <ele>120</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 СКРЫГАЛОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.778423" lon="29.974533">
+    <ele>120.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 СТРЕЛИЧЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.821194" lon="29.754194">
+    <ele>118</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 ТУЛЬГОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.163055" lon="27.977182">
+    <ele>128.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 ТУРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.449936" lon="29.086685">
+    <ele>128</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1 Ю.ТРАМЕЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.448803" lon="30.144279">
+    <ele>138</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>10 В.ПЕРВОМАЙСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.1914931" lon="30.429713">
+    <ele>133</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>10 ВЕТХИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.604473" lon="29.136286">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>10 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.264774" lon="30.450052">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>10 ДНЕПРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.342152" lon="28.541101">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>10 КОПАТКЕВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.400024" lon="29.806637">
+    <ele>131.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>10 ЧКАЛОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.125812" lon="30.309052">
+    <ele>135</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>100 БАРСУКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.272728" lon="30.243042">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>100 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.478592" lon="29.579367">
+    <ele>140.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>100N СЛАВАНЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.622845" lon="29.065805">
+    <ele>142</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>101 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.519798" lon="29.525564">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>101 ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.4640674" lon="29.6142293">
+    <ele>162</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>101 СЛАВАНЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.658566" lon="29.872059">
+    <ele>137</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>102 БЕРЕЗИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.408329" lon="29.852819">
+    <ele>162</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>102 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.531261" lon="29.39975">
+    <ele>133</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>106 МАРМОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.517532" lon="29.525358">
+    <ele>148</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>108 ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.656418" lon="29.874311">
+    <ele>138</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>109 БЕРЕЗИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.504547" lon="29.54528">
+    <ele>143</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>109 ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.308327" lon="29.445694">
+    <ele>142.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>11 БАЖЕНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.661755" lon="29.880392">
+    <ele>137.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>11 БЕРЕЗИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.625248" lon="29.33659">
+    <ele>121.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>11 В.ВЫСТУПОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.062672" lon="30.447504">
+    <ele>130</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>11 ВЫШЕМИРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.562366" lon="29.462175">
+    <ele>139.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>11 ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.585083" lon="29.349264">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>11 ПОЛЕССКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.743237" lon="29.535196">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>11 СУДОВИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.51276" lon="29.52511">
+    <ele>143</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>112 ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.428646" lon="29.698549">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>112 Ю.СОСНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.6179642" lon="29.0494035">
+    <ele>141</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>114 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.439777" lon="29.663578">
+    <ele>133.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>116 Ю.СОСНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.5326143" lon="29.4341805">
+    <ele>137.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>117 МАРМОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.2809973" lon="30.2423935">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>117 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.433937" lon="29.686077">
+    <ele>132</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>118 Ю.СОСНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.635826" lon="29.340792">
+    <ele>117</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>12 В.ВЫСТУПОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.472851" lon="29.661371">
+    <ele>133</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>12 З.ПОЖИХАРСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.2672" lon="30.244507">
+    <ele>132</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>120 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.358955" lon="29.939079">
+    <ele>132.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>120 ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.6048902" lon="29.1457764">
+    <ele>143</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>121 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.527317" lon="29.5091">
+    <ele>133</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>121 ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.351856" lon="29.908821">
+    <ele>130</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>121 Ю.ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.347336" lon="29.947267">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>122 ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.346798" lon="29.948984">
+    <ele>135</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>123 ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.265678" lon="30.262091">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>124 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.406071" lon="29.820179">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>125 Ю.ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.655247" lon="29.882069">
+    <ele>139</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>126 БЕРЕЗИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.371052" lon="29.907532">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>126 ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.653511" lon="29.86146">
+    <ele>126</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>127 БЕРЕЗИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.262573" lon="30.253803">
+    <ele>128</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>127 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.356201" lon="29.944555">
+    <ele>133</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>127 ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.657639" lon="29.888226">
+    <ele>138.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>128 БЕРЕЗИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.386845" lon="29.850954">
+    <ele>132.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>128 Ю.ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.313251" lon="29.763166">
+    <ele>138</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>12Z ВАСИЛЕВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.649002" lon="29.925961">
+    <ele>132.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>13 БЕРЕЗИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.274647" lon="30.751408">
+    <ele>125</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>13 БОРЩЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.272152" lon="29.757071">
+    <ele>133</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>13 ВАСИЛЕВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.175045" lon="30.418583">
+    <ele>133</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>13 ВЕТХИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.255375" lon="29.856571">
+    <ele>132</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>13 ЗОЛОТУХИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.143379" lon="30.222075">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>13 МАЛОДУШИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.755794" lon="28.54011">
+    <ele>145.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>13 Н.ДРОЗДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.425175" lon="29.391453">
+    <ele>138</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>13 Н.КОРЕНЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.754234" lon="29.52379">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>13 СУДОВИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.547417" lon="29.811489">
+    <ele>131.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>13 ШАТИЛКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.2577861" lon="30.2620383">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>131 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.37038" lon="29.87318">
+    <ele>132</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>131 Ю.ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.659485" lon="29.873066">
+    <ele>137</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>132 БЕРЕЗИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.516891" lon="29.530081">
+    <ele>146</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>133 ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.539822" lon="29.420187">
+    <ele>136</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>133 Н.ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.443054" lon="29.681934">
+    <ele>133</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>133 Ю.СОСНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.612701" lon="29.133144">
+    <ele>141</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>134 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.529621" lon="29.504551">
+    <ele>133.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>134 ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.273705" lon="30.241102">
+    <ele>131.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>138 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.379734" lon="29.856705">
+    <ele>134.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>138 Ю.ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.588772" lon="29.159884">
+    <ele>138</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>139 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.381935" lon="29.969414">
+    <ele>132.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>139 З.ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.803944" lon="29.275047">
+    <ele>140.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>14 В.ЕЛЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.691078" lon="28.796145">
+    <ele>141</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>14 КРУГЛОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.471203" lon="29.681318">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>14 СОСНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.547417" lon="29.811489">
+    <ele>131.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>14 ШАТИЛКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.264736" lon="30.613319">
+    <ele>121</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>14 Ю.АЛЕКСАНДРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.376171" lon="29.98056">
+    <ele>137</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>141 З.ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.257435" lon="30.291609">
+    <ele>128</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>141 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.612434" lon="29.138754">
+    <ele>141</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>144 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.539871" lon="29.421562">
+    <ele>138</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>146 Н.ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.528507" lon="29.460325">
+    <ele>137</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>148 Н.ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.4415823" lon="29.6881978">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>148 Ю.СОСНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.657349" lon="29.849726">
+    <ele>127</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>15 БЕРЕЗИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.093727" lon="30.484182">
+    <ele>130.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>15 НАДВИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.560772" lon="29.391325">
+    <ele>138</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>15 ПОЛЕССКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.476135" lon="29.72765">
+    <ele>132.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>15 СОСНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.5126686" lon="29.4939215">
+    <ele>138</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>150 Давыдовская</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.519104" lon="29.479366">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>151 Н.ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.44128" lon="29.804417">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>151 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.371216" lon="29.897158">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>152 ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.370762" lon="29.909378">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>153 ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.271931" lon="30.16818">
+    <ele>124.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>154 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.449898" lon="29.67849">
+    <ele>132.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>154 Ю.СОСНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.35416" lon="29.928532">
+    <ele>132.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>154P ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.619488" lon="29.059406">
+    <ele>142</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>155R ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.252254" lon="30.231691">
+    <ele>129.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>158 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.60429" lon="29.172476">
+    <ele>136.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>158N ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.531117" lon="29.440924">
+    <ele>139.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>159 Н.ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.247643" lon="30.732431">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>16 БОРЩЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.569294" lon="29.347752">
+    <ele>137</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>16 МАРМОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.548935" lon="29.556484">
+    <ele>120.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>16 РАДОМЛЯНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.450596" lon="29.313217">
+    <ele>136</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>16 С.ДОМАНОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.460018" lon="29.713892">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>16 СОСНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.544991" lon="29.812292">
+    <ele>131.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>16 Ю.ШАТИЛКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.247787" lon="30.264048">
+    <ele>130</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>161 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.251743" lon="30.240946">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>16502 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.383991" lon="29.839462">
+    <ele>136</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>167 Ю.ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.665745" lon="29.885098">
+    <ele>135</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>17 БЕРЕЗИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.643803" lon="29.015251">
+    <ele>141</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>17 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.510429" lon="29.566263">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>17 ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.187046" lon="30.56707">
+    <ele>137</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>17 ДНЕПРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.1081457" lon="30.042067">
+    <ele>132.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>17 КАРТАШОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.551025" lon="29.359661">
+    <ele>138.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>17 МАРМОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.761295" lon="29.427937">
+    <ele>135.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>17 СУДОВИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.367031" lon="29.878338">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>170 Ю.ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.382515" lon="29.839855">
+    <ele>136</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>174 Ю.ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.25951" lon="30.295971">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>177 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.279179" lon="30.233854">
+    <ele>128.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>185 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.26247" lon="30.220463">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>186 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.5897848" lon="29.1299924">
+    <ele>141.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>187 Вишанская</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.379528" lon="29.865145">
+    <ele>132</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>187 Ю.ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.387871" lon="29.852749">
+    <ele>132.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>189 Ю.ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.565372" lon="29.521511">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>19 РАДОМЛЯНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.759392" lon="29.462074">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>19 СУДОВИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.352238" lon="29.95772">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>19 ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.40789" lon="29.791426">
+    <ele>134.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>19 ЧКАЛОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.278725" lon="30.206427">
+    <ele>128</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>194 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.2514" lon="30.23649">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>196 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.380894" lon="29.864633">
+    <ele>133.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>198 Ю.ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.272732" lon="29.704927">
+    <ele>138</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1N ВАСИЛЕВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.476799" lon="30.356388">
+    <ele>136</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1P Н.УНОРИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.08065" lon="30.324707">
+    <ele>136.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1P ПРЕДБАРСУКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.079929" lon="30.236147">
+    <ele>136</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>1V МОСКВИЧЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.250839" lon="30.748701">
+    <ele>124</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 БОРЩЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.191746" lon="30.584869">
+    <ele>130.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 ВАСИЛЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.6231" lon="29.10634">
+    <ele>140</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.073303" lon="30.46999">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 ВЫШЕМИРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.19511" lon="29.163935">
+    <ele>123.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 ГОРОХОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.847401" lon="28.296009">
+    <ele>145.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 ДУБНИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.42543" lon="30.02693">
+    <ele>152.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 ДУБРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.33564" lon="28.85121">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 З.БОБРОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.481587" lon="29.589849">
+    <ele>138</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 З.СОСНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.752358" lon="29.581308">
+    <ele>127.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 ИСКРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.991138" lon="29.074924">
+    <ele>143</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 КАМЕНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.431236" lon="28.891394">
+    <ele>126.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 КОМАРОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.435642" lon="29.183855">
+    <ele>136.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 КРЮКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.190662" lon="30.821285">
+    <ele>119.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 МЕЖИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.729904" lon="29.145634">
+    <ele>144</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 МОИСЕЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.822315" lon="28.834362">
+    <ele>135.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 НИКОЛАЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.132713" lon="28.480091">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 ПЕТРИКО-ШЕСТОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.451454" lon="29.757021">
+    <ele>133</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 ПОЖИХАРСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.340542" lon="29.529196">
+    <ele>145</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 ПРИТОКСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.039402" lon="29.073763">
+    <ele>160</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 СВОБОДСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.097473" lon="28.852528">
+    <ele>119</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 СКРЫГАЛОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.032391" lon="30.370802">
+    <ele>132.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 УДАЛЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.046722" lon="29.422945">
+    <ele>123.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2 ЮРОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.245781" lon="30.706461">
+    <ele>121</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>20 АЛЕКСАНДРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.282631" lon="30.178371">
+    <ele>126</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>20 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.415047" lon="29.850738">
+    <ele>135</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>200 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.6050642" lon="29.1457656">
+    <ele>143</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>203 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.409157" lon="29.846947">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>204 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.388081" lon="29.851496">
+    <ele>162</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>206 Ю.ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.378674" lon="29.864391">
+    <ele>132</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>208 Ю.ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.254994" lon="30.238222">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>209 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.464065" lon="29.087479">
+    <ele>130.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>21 В.ОКТЯБРЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.1088045" lon="30.0743323">
+    <ele>129.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>21 КАРТАШОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.10704" lon="30.381823">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>21 НАДВИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.753147" lon="29.475126">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>21 СУДОВИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.211857" lon="30.450083">
+    <ele>133</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>210 КРАСНОСЕЛЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.397213" lon="29.866947">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>211 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.406853" lon="29.845869">
+    <ele>136</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>212 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.252827" lon="30.23967">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>212 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.378292" lon="29.874163">
+    <ele>135</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>214 Ю.ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.420506" lon="29.805111">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>215 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.2525186" lon="30.2286909">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>218 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.214878" lon="30.403732">
+    <ele>132.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>219 КРАСНОСЕЛЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.157497" lon="30.05188">
+    <ele>135.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>22 МАЛОДУШИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.54863" lon="29.37163">
+    <ele>141.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>22 МАРМОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.351246" lon="29.389156">
+    <ele>142.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>22 ПРИТОКСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.391995" lon="29.90601">
+    <ele>132.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>22 ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.405567" lon="29.857449">
+    <ele>137</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>222 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.268341" lon="30.195028">
+    <ele>128</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>222 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.40612" lon="29.867043">
+    <ele>136</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>228 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.130531" lon="30.323135">
+    <ele>132</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>23 БАРСУКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.426956" lon="29.40601">
+    <ele>139</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>23 Н.КОРЕНЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.454617" lon="30.375078">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>23 ОЗЕРЩИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.415527" lon="29.883924">
+    <ele>138.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>237 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.256046" lon="30.238359">
+    <ele>128</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>237 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.255718" lon="30.229698">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>238 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.141579" lon="30.313562">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>24 БАРСУКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.670017" lon="29.79792">
+    <ele>129.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>24 БЕРЕЗИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.506306" lon="29.458988">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>24 ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.206249" lon="30.551594">
+    <ele>128.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>24 ДНЕПРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.445503" lon="29.985636">
+    <ele>161.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>24 ПЕРВОМАЙСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.538265" lon="29.090855">
+    <ele>133.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>24 Ю.ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.260036" lon="30.233335">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>242 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.2453903" lon="30.3108388">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>243 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.25103" lon="30.308582">
+    <ele>128</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>245 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.402947" lon="29.882202">
+    <ele>135.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>248 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.258549" lon="30.237684">
+    <ele>130</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>25 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.443516" lon="29.293392">
+    <ele>138</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>25 С.ДОМАНОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.093895" lon="30.305473">
+    <ele>133.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>26 БАРСУКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.666306" lon="29.813351">
+    <ele>129.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>26 БЕРЕЗИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.415199" lon="30.042694">
+    <ele>147.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>26 ДУБРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.463596" lon="30.379976">
+    <ele>138.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>26 ОЗЕРЩИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.421925" lon="29.90576">
+    <ele>135.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>260 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.440292" lon="29.815607">
+    <ele>133</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>261 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.251041" lon="30.307173">
+    <ele>128</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>263 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.254215" lon="30.209711">
+    <ele>128</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>265G1 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.435497" lon="29.310911">
+    <ele>137</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>27 С.ДОМАНОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.611374" lon="29.071606">
+    <ele>143</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>27 Ю.ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.118759" lon="30.338795">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>28 БАРСУКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.406197" lon="29.885881">
+    <ele>137</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>281 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.406338" lon="29.868504">
+    <ele>136</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>282 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.27692" lon="30.210201">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>282 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.258732" lon="30.314882">
+    <ele>126.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>283 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.405396" lon="29.872114">
+    <ele>138</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>283P ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.257382" lon="30.290211">
+    <ele>128</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>288 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.266369" lon="30.321133">
+    <ele>126</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>29 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.453415" lon="29.230673">
+    <ele>142.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>29 С.ДОМАНОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.754932" lon="29.480948">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>29 СУДОВИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.433838" lon="29.781454">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>294 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.23835" lon="30.086588">
+    <ele>130.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>2GP В.БАБИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.220192" lon="29.023077">
+    <ele>120.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>3 БОБРОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.754761" lon="28.52409">
+    <ele>141</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>3 В.ДРОЗДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.793949" lon="29.402088">
+    <ele>118.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>3 В.ЕЛЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.263439" lon="28.767412">
+    <ele>123.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>3 З.ГОРОХОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.82201" lon="28.699758">
+    <ele>143</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>3 З.СОФИЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.539871" lon="28.473808">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>3 КАЛИНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.805451" lon="29.203237">
+    <ele>139</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>3 КОВЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.433315" lon="29.486801">
+    <ele>151.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>3 КОРЕНЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.00806" lon="30.655109">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>3 ЛОЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.183353" lon="30.73193">
+    <ele>118.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>3 МИХАЛЬКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.864838" lon="29.438477">
+    <ele>126</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>3 НАРОВЛЯНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.280155" lon="29.631317">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>3 РУДНИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.760857" lon="30.041311">
+    <ele>121</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>3 СТРЕЛИЧЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.371132" lon="30.727062">
+    <ele>133.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>3 ЩЕРБОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.507156" lon="29.496466">
+    <ele>136.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>30 ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.7089" lon="29.01108">
+    <ele>127</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>30 ЕЛЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.256313" lon="30.339743">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>30 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.42857" lon="29.866791">
+    <ele>137</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>301 ОСТАШКОВИЧИ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.253941" lon="30.24774">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>303 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.2543455" lon="30.2486713">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>304 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.253948" lon="30.26022">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>306 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.2593019" lon="30.2035057">
+    <ele>128</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>307 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.250969" lon="30.274639">
+    <ele>129.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>309 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.411362" lon="29.883587">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>31 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.27346" lon="30.615253">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>31 Ю.АЛЕКСАНДРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.508381" lon="29.434286">
+    <ele>136</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>31 Ю.ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.251068" lon="30.31155">
+    <ele>128</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>316 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.412037" lon="30.037312">
+    <ele>149.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>32 ДУБРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.090431" lon="30.442591">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>32 НАДВИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.264965" lon="29.854948">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>33 ЗОЛОТУХИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.42823" lon="29.752123">
+    <ele>162</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>33 ЧКАЛОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.28075" lon="30.20928">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>335 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.270748" lon="30.24452">
+    <ele>132</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>340 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.2530903" lon="30.2283437">
+    <ele>129.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>341 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.236961" lon="30.337761">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>348 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.145294" lon="30.175487">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>35 МАЛОДУШИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.1819" lon="30.409229">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>35 НЕКРАСОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.272228" lon="30.613049">
+    <ele>119.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>35 Ю.АЛЕКСАНДРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.410595" lon="30.030052">
+    <ele>151.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>36 ДУБРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.270554" lon="30.274567">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>36 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.433681" lon="29.341682">
+    <ele>135</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>36 С.ДОМАНОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.4081282" lon="30.0385198">
+    <ele>150.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>37 ДУБРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.437435" lon="29.79578">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>37 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.265255" lon="30.286716">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>37 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.553593" lon="29.381922">
+    <ele>138.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>37 Ю.ПОЛЕССКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.2504527" lon="30.2556604">
+    <ele>162</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>379 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.650867" lon="29.911573">
+    <ele>138.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>38 В.БЕРЕЗИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.536186" lon="29.517168">
+    <ele>150.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>38 ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.249175" lon="30.2546122">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>385 Речицкая</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.420273" lon="29.318367">
+    <ele>135</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>39 С.ДОМАНОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.172619" lon="30.080109">
+    <ele>132</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>39P МАЛОДУШИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.571396" lon="30.055639">
+    <ele>125</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>3P ГЕОЛОГИЧЕСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.485104" lon="29.718847">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>4 БЛИЖНЕХУТОРСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.244919" lon="29.924954">
+    <ele>132</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>4 ВЕДРИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.78672" lon="28.608191">
+    <ele>146</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>4 ГЛУССКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.232868" lon="30.471953">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>4 ДНЕПРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.805622" lon="29.16419">
+    <ele>141</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>4 ЕЛЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.343475" lon="28.831402">
+    <ele>127</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>4 З.БОБРОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.1033471" lon="30.0473281">
+    <ele>134.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>4 КАРТАШОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.44659" lon="30.41185">
+    <ele>119.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>4 КОПАНЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.35025" lon="28.632698">
+    <ele>137</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>4 КОПАТКЕВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.39043" lon="28.701813">
+    <ele>139</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>4 КРАСНОПОЛЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.692032" lon="28.8284">
+    <ele>141.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>4 МАЛЫНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.72654" lon="29.045376">
+    <ele>152.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>4 ОЗЕМЛИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.052067" lon="29.087784">
+    <ele>148.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>4 ПРУДОКСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.754013" lon="29.451159">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>4 СУДОВИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.442017" lon="29.139322">
+    <ele>135.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>4 ЧИСТОЛУЖСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.409031" lon="29.913607">
+    <ele>132</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>40 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.262329" lon="30.306923">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>403 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.13134" lon="30.301777">
+    <ele>162</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>41 БАРСУКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.626167" lon="29.087635">
+    <ele>138</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>41 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.148312" lon="30.166002">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>41 МАЛОДУШИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.085331" lon="30.44462">
+    <ele>130</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>41 НАДВИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.446606" lon="29.261583">
+    <ele>136</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>41 С.ДОМАНОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.264729" lon="30.281651">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>410 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.275864" lon="30.611505">
+    <ele>120.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>42 Ю.АЛЕКСАНДРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.2703529" lon="30.6175133">
+    <ele>119.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>43 Ю.АЛЕКСАНДРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.462814" lon="29.65307">
+    <ele>135</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>43 Ю.СОСНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.34845" lon="29.971747">
+    <ele>130</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>43 Ю.ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.261196" lon="29.850264">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>44 ЗОЛОТУХИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.422443" lon="29.25296">
+    <ele>132</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>44 КАЗАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.150108" lon="30.199619">
+    <ele>135.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>45 МАЛОДУША</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.659138" lon="29.906658">
+    <ele>136</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>45 С.БЕРЕЗИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.439564" lon="29.689781">
+    <ele>133</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>45 Ю.СОСНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.327477" lon="30.043444">
+    <ele>132.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>45 Ю.ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.274094" lon="29.841471">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>46 ЗОЛОТУХИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.1504365" lon="30.2013045">
+    <ele>135</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>46 Малодушинская</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.756805" lon="29.530996">
+    <ele>130.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>46 СУДОВИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.356865" lon="29.945868">
+    <ele>133</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>46 ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.432053" lon="29.705002">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>47 Ю.СОСНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.338635" lon="29.950771">
+    <ele>130</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>48 Ю.ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.4074593" lon="30.0405621">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>49 ДУБРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.427258" lon="29.755459">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>49 Ю.СОСНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.36414" lon="30.481983">
+    <ele>118</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>5 З.АЛЕКСАНДРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.498531" lon="29.003078">
+    <ele>135.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>5 ОКТЯБРЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.285038" lon="30.19972">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>5 ОППХ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.60503" lon="29.967558">
+    <ele>139</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>5 ОТРУБОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.158051" lon="28.268415">
+    <ele>136.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>5 ПЕТРИКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.351719" lon="29.47994">
+    <ele>143.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>5 ПРИТОКСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.069939" lon="29.09594">
+    <ele>159.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>5 ПРУДОКСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.445469" lon="29.208183">
+    <ele>134.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>5 С.ДОМАНОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.323898" lon="30.149529">
+    <ele>126</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>5 САЛТАНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.693314" lon="29.08029">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>5 Ю.ОЗЕМЛИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.608349" lon="29.157265">
+    <ele>142.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>50 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.263386" lon="29.782715">
+    <ele>137</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>50 ЗОЛОТУХИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.407299" lon="29.865873">
+    <ele>136</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>50 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.244682" lon="30.321678">
+    <ele>130</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>50 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.429169" lon="29.748871">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>50 ЧКАЛОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.426804" lon="29.677492">
+    <ele>129.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>50 Ю.СОСНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.590549" lon="28.874785">
+    <ele>137</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>504 БОРИСОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.461849" lon="30.187601">
+    <ele>138.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>51 В.ПЕРВОМАЙСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.482292" lon="29.64361">
+    <ele>134.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>51 СОСНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.742485" lon="29.472401">
+    <ele>139</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>51 СУДОВИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.2645214" lon="30.2029278">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>511 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.2642891" lon="30.2146309">
+    <ele>130</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>513 Речицкая</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.2641495" lon="30.2149736">
+    <ele>130</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>516 Речицкая</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.165909" lon="30.115101">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>52 МАЛОДУШИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.236637" lon="30.347284">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>52 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.363995" lon="29.93992">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>52 ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.648552" lon="29.901323">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>52P Н.БЕРЕЗИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.254894" lon="29.85717">
+    <ele>132</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>53 ЗОЛОТУХИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.451855" lon="29.277523">
+    <ele>135</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>53 С.ДОМАНОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.269669" lon="30.631559">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>53 Ю.АЛЕКСАНДРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.760677" lon="29.484976">
+    <ele>128</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>54 СУДОВИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.599087" lon="29.18741">
+    <ele>143</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>5402 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.277656" lon="30.208399">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>5402 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.418804" lon="29.753323">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>55 Ю.СОСНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.2455517" lon="30.3102442">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>556 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.400791" lon="29.885258">
+    <ele>136</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>56 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.273537" lon="30.611015">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>56 Ю.АЛЕКСАНДРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.407131" lon="29.880239">
+    <ele>129.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>57 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.449558" lon="29.6755396">
+    <ele>132.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>58 Ю.СОСНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.618717" lon="29.071783">
+    <ele>140.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>5802 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.578819" lon="29.287485">
+    <ele>143</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>59 МАРМОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.27449" lon="30.196899">
+    <ele>126.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>59 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.110023" lon="30.073681">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>5P КАРТАШОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.2634469" lon="29.7825204">
+    <ele>137</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>5Z ВАСИЛЕВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.632832" lon="29.304838">
+    <ele>120.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>6 В.ВЫСТУПОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.215534" lon="29.967386">
+    <ele>136.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>6 ВЕДРИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.547604" lon="30.080504">
+    <ele>123</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>6 ГЕОЛОГИЧЕСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.689552" lon="29.113686">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>6 З.ЧЕРНИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.420128" lon="28.895813">
+    <ele>127</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>6 КОМАРОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.694294" lon="28.898102">
+    <ele>142</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>6 МАЛЫНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.074787" lon="30.126757">
+    <ele>135</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>6 ОМЕЛЬКОВЩИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.456741" lon="30.470997">
+    <ele>133</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>6 РЕШЕТНИКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.325767" lon="29.080765">
+    <ele>133.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>6 САВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.642475" lon="29.303349">
+    <ele>138</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>6 ЧЕРНИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.268154" lon="30.624535">
+    <ele>119</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>6 Ю.АЛЕКСАНДРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.231678" lon="30.299357">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>6 Ю.РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.122341" lon="30.319099">
+    <ele>133</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>60 БАРСУКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.427219" lon="29.82398">
+    <ele>138.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>60 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.266495" lon="30.205704">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>60 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.2509262" lon="30.2277481">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>601 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.453278" lon="30.191532">
+    <ele>140</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>61 В.ПЕРВОМАЙСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.287468" lon="30.193785">
+    <ele>128</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>61 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.463081" lon="29.614065">
+    <ele>136</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>61 СЛАВАНЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.36552" lon="29.907396">
+    <ele>130</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>61 Ю.ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.51622" lon="29.546825">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>62 ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.263634" lon="30.222177">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>62 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.147453" lon="30.154682">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>63 МАЛОДУШИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.147297" lon="30.315906">
+    <ele>134.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>64 БАРСУКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.179077" lon="30.067629">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>64P МАЛОДУШИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.204998" lon="30.000141">
+    <ele>135.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>65 З.МАЛОДУШИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.294907" lon="30.208004">
+    <ele>126</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>66 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.471962" lon="29.701328">
+    <ele>133.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>66 СОСНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.429958" lon="30.237715">
+    <ele>137.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>68 В.ПЕРВОМАЙСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.629211" lon="29.039677">
+    <ele>145</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>68 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.418472" lon="29.825115">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>68 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.629009" lon="29.03846">
+    <ele>144</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>69 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.445065" lon="29.718536">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>69 СОСНОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.35989" lon="30.460569">
+    <ele>119</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>6P З.АЛЕКСАНДРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.164864" lon="30.452143">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>7 ВЕТХИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.058533" lon="30.407061">
+    <ele>127.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>7 ЛЕТЕШИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.177799" lon="30.140118">
+    <ele>130</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>7 МАЛОДУШИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.408661" lon="29.856567">
+    <ele>138.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>7 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.25626" lon="30.262623">
+    <ele>130</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>7 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.170269" lon="30.192614">
+    <ele>132.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>7 С.МАЛОДУШИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.597015" lon="29.18358">
+    <ele>141</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>70 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.47607" lon="29.579048">
+    <ele>140.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>70 СЛАВАНЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.613533" lon="29.202705">
+    <ele>142.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>700 МИКУЛЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.426048" lon="30.253126">
+    <ele>139</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>71 В.ПЕРВОМАЙСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.596344" lon="29.185242">
+    <ele>143</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>71 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.428532" lon="30.27381">
+    <ele>142.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>72 В.ПЕРВОМАЙСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.365479" lon="29.922821">
+    <ele>130</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>72 Ю.ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.585598" lon="29.185482">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>73 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.626289" lon="29.063952">
+    <ele>140.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>74 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.355637" lon="29.922079">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>74 Ю.ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.62648" lon="29.064999">
+    <ele>140</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>75 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.24395" lon="29.843803">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>75 ЗОЛОТУХИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.533997" lon="29.417379">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>75 МАРМОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.403668" lon="29.867849">
+    <ele>137</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>75 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.218166" lon="30.384445">
+    <ele>133</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>75 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.6270525" lon="29.0638947">
+    <ele>139</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>76 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.52251" lon="29.421829">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>76 МАРМОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.533291" lon="29.427137">
+    <ele>135</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>77 МАРМОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.439163" lon="29.769251">
+    <ele>162</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>77 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.621773" lon="29.088966">
+    <ele>137</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>78 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.715275" lon="28.682642">
+    <ele>142</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>8 БОРИСОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.598915" lon="29.093573">
+    <ele>140</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>8 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="51.76379" lon="29.178392">
+    <ele>142</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>8 ЕЛЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.287926" lon="29.829212">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>8 ЗОЛОТУХИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.085377" lon="30.448433">
+    <ele>130</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>8 НАДВИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.269512" lon="30.262014">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>8 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.471787" lon="29.229832">
+    <ele>135.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>8 С.ДОМАНОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.188038" lon="30.139936">
+    <ele>130</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>8 С.МАЛОДУШИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.3241" lon="29.103342">
+    <ele>130</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>8 САВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.510601" lon="29.724138">
+    <ele>133.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>8 ШАТИЛКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.41851" lon="29.824186">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>80 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.46637" lon="29.593794">
+    <ele>139</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>80 СЛАВАНЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.426495" lon="30.28417">
+    <ele>137.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>81 В.ПЕРВОМАЙСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.526489" lon="29.537947">
+    <ele>135</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>81 ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.462574" lon="29.6135523">
+    <ele>136</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>81 СЛАВАНЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.25977" lon="29.802887">
+    <ele>137</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>82 ЗОЛОТУХИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.587166" lon="29.23255">
+    <ele>142</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>83 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.531219" lon="29.415394">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>83 МАРМОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.130856" lon="30.300615">
+    <ele>135</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>84 БАРСУКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.4451768" lon="30.1571415">
+    <ele>143.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>84 В.ПЕРВОМАЙСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.24617" lon="29.813541">
+    <ele>133</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>84 ЗОЛОТУХИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.511917" lon="29.563871">
+    <ele>144</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>85 ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.268612" lon="30.280647">
+    <ele>128</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>86 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.444168" lon="30.163855">
+    <ele>143.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>87 В.ПЕРВОМАЙСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.125694" lon="30.323412">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>88 БАРСУКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.512344" lon="29.554686">
+    <ele>150.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>88 ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.267807" lon="30.279116">
+    <ele>127</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>88 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.109871" lon="30.061359">
+    <ele>132</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>8P КАЛИНИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.245319" lon="29.788731">
+    <ele>133.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9 ЗОЛОТУХИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.47068" lon="29.680746">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9 ПОЖИХАРСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.014191" lon="29.039604">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9 С.КАМЕНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.246571" lon="29.812609">
+    <ele>133</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>90 ЗОЛОТУХИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.272274" lon="30.260561">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>90 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.357712" lon="29.963158">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>90 ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.523262" lon="29.50428">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9001 ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.221413" lon="30.438515">
+    <ele>132</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9001 КРАСНОСЕЛЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.373154" lon="29.86282">
+    <ele>130</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9001 Ю.ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.316662" lon="29.694651">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9003 С.НОВИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.103321" lon="30.04759">
+    <ele>134.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9004 КАРТАШОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.085735" lon="30.210026">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9004 МОСКВИЧЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.737011" lon="29.645958">
+    <ele>129.8</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9004 ПЬЕХОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.227627" lon="30.44309">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9005 КРАСНОСЕЛЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.086479" lon="30.455746">
+    <ele>129</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9006 НАДВИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.080357" lon="30.236261">
+    <ele>136</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9007 МОСКВИЧЕВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.392872" lon="29.872707">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9009 ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.567886" lon="29.324924">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9014 МАРМОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.182419" lon="30.425776">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9016 НЕКРАСОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.409729" lon="29.963055">
+    <ele>141</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9017 ДУБРОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.098083" lon="30.477604">
+    <ele>130.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9018 С.НАДВИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.356705" lon="29.91363">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9036 Ю.ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.345047" lon="29.931446">
+    <ele>134</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9053 ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.576073" lon="29.276022">
+    <ele>138.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9090 МАРМОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.514694" lon="29.525766">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>91 ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.247391" lon="30.264296">
+    <ele>130</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>91 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.375824" lon="29.983387">
+    <ele>137</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9108 З.ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.362824" lon="29.940886">
+    <ele>132.5</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>93 ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.423145" lon="30.261928">
+    <ele>136.2</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>94 В.ПЕРВОМАЙСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.267376" lon="30.245218">
+    <ele>132</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>94 РЕЧИЦКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.333961" lon="30.133884">
+    <ele>131</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>94 ТИШКОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.518528" lon="29.523777">
+    <time>2021-03-03T11:43:13Z</time>
+    <name>94N ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.628609" lon="29.097382">
+    <ele>139</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>9502 ВИШАНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.425774" lon="30.277685">
+    <ele>140</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>95P В.ПЕРВОМАЙСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.514393" lon="29.555872">
+    <ele>149</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>97 ДАВЫДОВСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.4374307" lon="30.3280829">
+    <ele>132</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>97 ОЗЕРЩИНСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.4656138" lon="29.6020248">
+    <ele>140</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>97 СЛАВАНЬСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <wpt lat="52.428879" lon="29.824862">
+    <ele>138</ele>
+    <time>2021-03-03T11:43:13Z</time>
+    <name>98 ОСТАШКОВИЧСКАЯ</name>
+    <type>oil points</type>
+    <extensions>
+      <osmand:address>Near Н5029</osmand:address>
+      <osmand:icon>special_star</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#2196f3</osmand:color>
+    </extensions>
+  </wpt>
+  <extensions>
+    <osmand:points_groups>
+      <group name="oil points" color="#2196f3" icon="special_star" background="circle" />
+    </osmand:points_groups>
+  </extensions>
+</gpx>

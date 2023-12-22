@@ -28,8 +28,8 @@ const az = (a, b) => (a > b) - (a < b);
 
 function byAlpha(files, reverse) {
     return [...files].sort((a, b) => {
-        const A = a.name;
-        const B = b.name;
+        const A = a.name.toLowerCase();
+        const B = b.name.toLowerCase();
         return reverse ? (B > A) - (B < A) : (A > B) - (A < B);
     });
 }
@@ -295,6 +295,7 @@ const SortActions = forwardRef(
                                 </>
                             )}
                             <FormControlLabel
+                                id={'se-sort-time'}
                                 className={styles.controlLabel}
                                 disableTypography={true}
                                 labelPlacement="start"
@@ -304,6 +305,7 @@ const SortActions = forwardRef(
                             />
                             <Divider className={styles.dividerActions} />
                             <FormControlLabel
+                                id={'se-sort-az'}
                                 className={styles.controlLabel}
                                 disableTypography={true}
                                 labelPlacement="start"
@@ -312,6 +314,7 @@ const SortActions = forwardRef(
                                 label={<Label item={allMethods.az} />}
                             />
                             <FormControlLabel
+                                id={'se-sort-za'}
                                 className={styles.controlLabel}
                                 disableTypography={true}
                                 labelPlacement="start"
@@ -344,6 +347,7 @@ const SortActions = forwardRef(
                                 <>
                                     <Divider className={styles.dividerActions} />
                                     <FormControlLabel
+                                        id={'se-sort-newDate'}
                                         className={styles.controlLabel}
                                         disableTypography={true}
                                         labelPlacement="start"
@@ -352,6 +356,7 @@ const SortActions = forwardRef(
                                         label={<Label item={allMethods.newDate} />}
                                     />
                                     <FormControlLabel
+                                        id={'se-sort-oldDate'}
                                         className={styles.controlLabel}
                                         disableTypography={true}
                                         labelPlacement="start"

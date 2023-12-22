@@ -89,7 +89,7 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
                     {inView && (
                         <MenuItem
                             className={styles.item}
-                            id={'se-fav-item-' + marker.title}
+                            id={'se-fav-item-name-' + marker.title}
                             onClick={() => addFavoriteToMap(marker)}
                         >
                             <ListItemIcon className={styles.icon}>

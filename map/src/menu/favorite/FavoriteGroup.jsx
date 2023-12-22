@@ -52,7 +52,7 @@ export default function FavoriteGroup({ index, group }) {
             >
                 <ListItemIcon className={styles.icon}>
                     {group.hidden === 'true' ? (
-                        <FolderHiddenIcon />
+                        <FolderHiddenIcon id={'se-fav-menu-icon-hidden-' + group.name} />
                     ) : (
                         <FolderIcon
                             style={{ fill: group.name && FavoritesManager.getColorGroup(ctx, group.name, false) }}
