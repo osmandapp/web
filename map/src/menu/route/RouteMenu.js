@@ -193,9 +193,10 @@ export default function RouteMenu() {
         const route = routeObject.getRoute();
         if (route) {
             if (isRouteTrack(ctx) === false) {
-                ctx.setUpdateInfoBlock(true);
-                ctx.setSelectedGpxFile(routeObject.getTrack());
+                const { track } = routeObject.putRoute({ route: routeObject.getRoute() }); // get track instantly
                 ctx.setCurrentObjectType(OBJECT_TYPE_ROUTE_TRACK);
+                ctx.setSelectedGpxFile(track);
+                ctx.setUpdateInfoBlock(true);
             }
         }
     }

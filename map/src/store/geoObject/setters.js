@@ -44,6 +44,8 @@ export function putRoute({ route, skipConversion = false }) {
             o.track = track;
             o.id = id;
         });
+
+        return { id, route, track };
     }
 
     return { id, route };
