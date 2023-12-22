@@ -14,6 +14,7 @@ import FavoritesManager, {
     getGroupNameFromFile,
     prepareFavGroupName,
 } from '../../manager/FavoritesManager';
+import { updateSortList } from '../../menu/actions/SortActions';
 
 export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }) {
     const ctx = useContext(AppContext);
@@ -42,12 +43,13 @@ export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }
 
     async function renameFavGroup(group, newName, ctx) {
         let newGroupName = FavoritesManager.FAV_FILE_PREFIX + newName + '.gpx';
+        const oldName = getGroupNameFromFile(prepareFavGroupName(group.file.name));
         newGroupName = getGroupNameForFile(newGroupName);
         if (newGroupName !== group.file.name) {
             const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/rename-fav-group`, {
                 params: {
                     fullOldName: group.file.name,
-                    oldName: getGroupNameFromFile(prepareFavGroupName(group.file.name)),
+                    oldName: oldName,
                     fullNewName: newGroupName,
                     newName: newName,
                     oldUpdatetime: group.updatetimems,
@@ -55,6 +57,7 @@ export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }
                 dataOnErrors: true,
             });
             if (res && res?.data?.status === 'ok') {
+                updateSortList({ oldName, newName, isFavorites: true, ctx });
                 refreshGlobalFiles(ctx, newGroupName, OBJECT_TYPE_FAVORITE).then();
             } else {
                 ctx.setTrackErrorMsg({

@@ -6,6 +6,8 @@ import { quickNaNfix } from '../util/Utils';
 import TracksManager from './track/TracksManager';
 import { refreshGlobalFiles } from './track/SaveTrackManager';
 import { OBJECT_TYPE_FAVORITE } from '../context/AppContext';
+import FavoriteHelper from '../infoblock/components/favorite/FavoriteHelper';
+import { compressFromJSON, decompressToJSON } from '../util/GzipBase64.mjs';
 
 export const FAVORITE_FILE_TYPE = 'FAVOURITES';
 export const DEFAULT_FAV_GROUP_NAME = 'favorites';
@@ -16,7 +18,7 @@ const FAV_FILE_PREFIX = 'favorites-';
 export const LOCATION_UNAVAILABLE = 'loc_unavailable';
 export const DEFAULT_GROUP_NAME_POINTS_GROUPS = '';
 export const SUBFOLDER_PLACEHOLDER = '_%_';
-const FAVORITE_LOCAL_STORAGE = 'visibleFav';
+export const FAVORITE_STORAGE = 'favorites';
 const colors = [
     '#10c0f0',
     '#1010a0',
@@ -92,6 +94,21 @@ async function updateFavorite(data, wptName, oldGroupName, newGroupName, oldGrou
             ind: ind,
         },
     });
+    return prepareResult(resp);
+}
+
+export async function updateAllFavorites(group, data, hiddenChanged) {
+    let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update-all-favorites`, data, {
+        params: {
+            fileName: group.file.name,
+            updatetime: group.updatetimems,
+            updateTimestamp: !hiddenChanged,
+        },
+    });
+    return prepareResult(resp);
+}
+
+export function prepareResult(resp) {
     if (resp.data) {
         let newGroupResp = null;
         let oldGroupResp = null;
@@ -153,7 +170,7 @@ function getColorGroup(ctx, groupName, wpt) {
             color = currentGroup.color;
         }
     } else {
-        const currentGroup = ctx.favorites.groups.find((g) => g.name === groupName);
+        const currentGroup = ctx.favorites?.groups?.find((g) => g.name === groupName);
         if (currentGroup && currentGroup.pointsGroups[groupName]) {
             color = currentGroup.pointsGroups[groupName].color;
         }
@@ -168,10 +185,10 @@ function createGroup(file) {
     file.folder = prepareFavGroupName(file.preparedName);
     let pointsGroups = FavoritesManager.prepareTrackData(file.details.pointGroups);
     const groupName = file.folder === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : file.folder;
-
     return {
         name: file.folder,
         updatetimems: file.updatetimems,
+        clienttimems: file.clienttimems,
         file: file,
         pointsGroups: pointsGroups,
         hidden:
@@ -235,7 +252,7 @@ export function createFavGroupFreeName(name, groups) {
 }
 
 export function isFavGroupExists(name, groups) {
-    return groups.some((g) => g.name === name);
+    return groups && groups.some((g) => g.name === name);
 }
 
 function isHidden(pointsGroups, name) {
@@ -368,21 +385,27 @@ export function changeIconSizeWpt(svgHtml, iconSize, shapeSize) {
     return svgHtml;
 }
 
-export function updateFavGroups(listFiles, ctx) {
+export async function updateFavGroups(listFiles, ctx) {
     if (!_.isEmpty(listFiles)) {
         let files = TracksManager.getFavoriteGroups(listFiles);
         let newFavoritesFiles = {
             groups: [],
+            mapObjs: {},
         };
-        files.forEach((file) => {
-            let group = FavoritesManager.createGroup(file);
+        for (const favFile of files) {
+            let group = FavoritesManager.createGroup(favFile);
             newFavoritesFiles.groups.push(group);
-        });
-        newFavoritesFiles.groups = FavoritesManager.orderList(
-            newFavoritesFiles.groups,
-            FavoritesManager.DEFAULT_GROUP_NAME
-        );
-        ctx.setFavorites(newFavoritesFiles);
+            if (ctx.favorites.mapObjs[favFile.folder]) {
+                if (favFile.updatetimems !== ctx.favorites.mapObjs[favFile.folder].updatetimems) {
+                    newFavoritesFiles = await createFavGroupObj(group, newFavoritesFiles);
+                } else {
+                    newFavoritesFiles.mapObjs[favFile.folder] = ctx.favorites.mapObjs[favFile.folder];
+                }
+            } else {
+                newFavoritesFiles = await createFavGroupObj(group, newFavoritesFiles);
+            }
+        }
+        ctx.setUpdateMarkers(newFavoritesFiles);
     } else {
         ctx.setFavorites([]);
     }
@@ -404,6 +427,169 @@ export function prepareIcon(value) {
     return isNoValue(value) ? MarkerOptions.DEFAULT_WPT_ICON : value;
 }
 
+/**
+ * Asynchronously adds favorite groups to the map.
+ *
+ * @param {Object} favGroups - The favorite groups to add.
+ * @returns {Object} - The updated favorite groups.
+ */
+export async function addFavGroupsToMap(favGroups) {
+    // Create a shallow copy of the input favorite groups.
+    let newFavGroups = { ...favGroups };
+
+    // Retrieve saved favorite groups from local storage and decompress them.
+    const savedFavGroups = await decompressToJSON(localStorage.getItem(FAVORITE_STORAGE));
+    let newSavedFavGroups = null;
+
+    // Iterate through favorite group files. If a group exists in the cache, retrieve it; otherwise, make a server request and create a new group object.
+    const promises = favGroups.groups.map(async (g) => {
+        if (!newSavedFavGroups) {
+            newSavedFavGroups = {};
+        }
+
+        const key = getFavGroupKey(g);
+
+        if (savedFavGroups) {
+            newFavGroups = savedFavGroups[key]
+                ? addExistFavGroup(savedFavGroups[key], g, favGroups)
+                : await createFavGroupObj(g, newFavGroups);
+        } else {
+            newFavGroups = await createFavGroupObj(g, newFavGroups);
+        }
+        newSavedFavGroups[key] = newFavGroups.mapObjs[g.name];
+    });
+
+    // Wait for all promises to resolve.
+    const finished = await Promise.all(promises);
+
+    // Create a new cache with updated favorite group objects and save it to localStorage.
+    if (finished && newSavedFavGroups !== null) {
+        const res = await compressFromJSON(newSavedFavGroups);
+        localStorage.setItem(FAVORITE_STORAGE, res);
+    }
+
+    // Return the updated favorite groups.
+    return newFavGroups;
+}
+
+function addExistFavGroup(obj, g, favGroups) {
+    favGroups.mapObjs[g.name] = obj;
+    let ind = favGroups.groups.findIndex((obj) => obj.name === g.name);
+    favGroups.groups[ind].pointsGroups = favGroups.mapObjs[g.name].pointsGroups;
+
+    return favGroups;
+}
+
+export function getFavGroupKey(g) {
+    return g.name + '/' + g.updatetimems;
+}
+
+/**
+ * Asynchronously creates a new favorite group object based on the provided group data and updates the given favorite groups.
+ *
+ * @param {Object} g - The group data.
+ * @param {Object} favGroups - The existing favorite groups.
+ * @returns {Object} - The updated favorite groups with the new group object.
+ */
+async function createFavGroupObj(g, favGroups) {
+    let url = createFavGroupUrl(g);
+
+    if (!favGroups.mapObjs) {
+        favGroups.mapObjs = {};
+    }
+
+    // Create a new entry in the mapObjs property with details from the provided group data.
+    favGroups.mapObjs[g.name] = {
+        url: url,
+        clienttimems: g.file.clienttimems,
+        updatetimems: g.file.updatetimems,
+        name: g.file.name,
+        hidden: g.hidden,
+    };
+    // If file data is available, process and update the favorite groups.
+    let resData = await Utils.getFileData(favGroups.mapObjs[g.name]);
+    if (resData) {
+        const favoriteFile = new File([resData], g.file.name, {
+            type: 'text/plain',
+        });
+        let ind = favGroups.groups.findIndex((obj) => obj.name === g.name);
+        let favorites = await TracksManager.getTrackData(favoriteFile);
+        if (favorites) {
+            favorites.name = g.file.name;
+            // Update pointsGroups in favGroups.groups for the current group.
+            favGroups.groups[ind].pointsGroups = favorites.pointsGroups;
+        }
+        Object.keys(favorites).forEach((t) => {
+            favGroups.mapObjs[g.name][`${t}`] = favorites[t];
+        });
+    }
+    return favGroups;
+}
+
+function createFavGroupUrl(group) {
+    return `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(
+        group.file.type
+    )}&name=${encodeURIComponent(group.file.name)}`;
+}
+
+export async function addOpenedFavoriteGroups(files, setFavorites, setUpdateMarkers, setProcessingGroups) {
+    let newFavoritesFiles = {
+        groups: [],
+    };
+    files.forEach((file) => {
+        setProcessingGroups(true);
+        let group = FavoritesManager.createGroup(file);
+        newFavoritesFiles.groups.push(group);
+    });
+    newFavoritesFiles.mapObjs = {};
+    const newGroups = await addFavGroupsToMap(newFavoritesFiles);
+    if (newGroups) {
+        setUpdateMarkers(newGroups);
+    }
+}
+
+export function updateFavoriteGroups({
+    result,
+    selectedGroupName,
+    oldGroupName,
+    ctx,
+    useSelected = false,
+    favoriteName = null,
+}) {
+    ctx.favorites.groups = FavoriteHelper.updateGroupAfterChange({
+        ctx,
+        result,
+        selectedGroupName,
+        oldGroupName,
+    });
+    let selectedGroup = ctx.favorites.groups.find((g) => g.name === selectedGroupName);
+    if (result.oldGroupResp) {
+        ctx.favorites.mapObjs[oldGroupName] = FavoriteHelper.updateGroupObj(
+            ctx.favorites.mapObjs[oldGroupName],
+            result.oldGroupResp
+        );
+    }
+    if (!ctx.favorites.mapObjs[selectedGroupName]) {
+        ctx.favorites.mapObjs[selectedGroupName] = FavoriteHelper.createGroupObj(result.newGroupResp, selectedGroup);
+    } else {
+        ctx.favorites.mapObjs[selectedGroupName] = FavoriteHelper.updateGroupObj(
+            ctx.favorites.mapObjs[selectedGroupName],
+            result.newGroupResp
+        );
+    }
+    if (useSelected && favoriteName) {
+        FavoriteHelper.updateSelectedFile({
+            ctx,
+            favorites: ctx.favorites,
+            result: null,
+            favoriteName,
+            groupName: selectedGroupName,
+            deleted: false,
+        });
+    }
+    ctx.setUpdateMarkers({ ...ctx.favorites });
+}
+
 const FavoritesManager = {
     addFavorite,
     deleteFavorite,
@@ -422,7 +608,7 @@ const FavoritesManager = {
     FAVORITE_FILE_TYPE: FAVORITE_FILE_TYPE,
     FAV_FILE_PREFIX: FAV_FILE_PREFIX,
     DEFAULT_GROUP_NAME_POINTS_GROUPS: DEFAULT_GROUP_NAME_POINTS_GROUPS,
-    FAVORITE_LOCAL_STORAGE: FAVORITE_LOCAL_STORAGE,
+    FAVORITE_STORAGE: FAVORITE_STORAGE,
     colors: colors,
     shapes: shapes,
 };

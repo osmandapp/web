@@ -22,21 +22,22 @@ import { ReactComponent as OldDateIcon } from '../../assets/icons/ic_action_sort
 import { ReactComponent as NearestIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
 import styles from '../trackfavmenu.module.css';
 import AppContext from '../../context/AppContext';
+import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
 
 const az = (a, b) => (a > b) - (a < b);
 
 function byAlpha(files, reverse) {
     return [...files].sort((a, b) => {
-        const A = a.name;
-        const B = b.name;
+        const A = a.name.toLowerCase();
+        const B = b.name.toLowerCase();
         return reverse ? (B > A) - (B < A) : (A > B) - (A < B);
     });
 }
 
-export function byTime(files, reverse) {
+export function byTime(files, reverse, isFavGroups = false) {
     return [...files].sort((a, b) => {
-        const A = getGpxTime(a, reverse);
-        const B = getGpxTime(b, reverse);
+        const A = getGpxTime({ f: a, reverse, isFavGroups });
+        const B = getGpxTime({ f: b, reverse, isFavGroups });
         if (A === B) {
             return az(a.name, b.name);
         }
@@ -57,8 +58,8 @@ function byDistance(files, reverse) {
 
 function byCreationTime(files, reverse) {
     return [...files].sort((a, b) => {
-        const A = getGpxTime(a, reverse, true);
-        const B = getGpxTime(b, reverse, true);
+        const A = getGpxTime({ f: a, reverse, creationTime: true });
+        const B = getGpxTime({ f: b, reverse, creationTime: true });
         if (A === B) {
             return az(a.name, b.name);
         }
@@ -78,7 +79,37 @@ function byLocation(files, reverse, markers = null) {
     });
 }
 
-const allMethods = {
+export function doSort({ method, setSortFiles, setSortGroups, markers, files, groups, favoriteGroup }) {
+    let res;
+    if (setSortFiles) {
+        if (method === 'nearest' && markers) {
+            setSortFiles(allMethods[method].callback(files, allMethods[method].reverse, markers));
+        } else {
+            setSortFiles(allMethods[method].callback(files, allMethods[method].reverse));
+        }
+    }
+    if (setSortGroups && (method === 'az' || method === 'za' || favoriteGroup)) {
+        if (method === 'time') {
+            res = allMethods[method].callback(groups, allMethods[method].reverse, favoriteGroup !== null);
+            setSortGroups(res);
+        } else {
+            res = allMethods[method].callback(groups, allMethods[method].reverse);
+            setSortGroups(res);
+        }
+    }
+    return res;
+}
+
+export function updateSortList({ oldName, newName, isFavorites = false, isTracks = false, ctx }) {
+    if (isTracks && ctx.selectedSort?.tracks) {
+        ctx.selectedSort.tracks[newName] = ctx.selectedSort.tracks[oldName];
+    } else if (isFavorites && ctx.selectedSort?.favorites) {
+        ctx.selectedSort.favorites[newName] = ctx.selectedSort.favorites[oldName];
+    }
+    ctx.setSelectedSort({ ...ctx.selectedSort });
+}
+
+export const allMethods = {
     nearest: {
         reverse: false,
         callback: byLocation,
@@ -139,70 +170,102 @@ const defaultMethod = () => {
     return Object.keys(allMethods)[0];
 };
 
+export function getSelectedSort({ trackGroup = null, favoriteGroup = null, ctx, defaultMethod = null }) {
+    if (trackGroup && ctx.selectedSort?.tracks) {
+        return ctx.selectedSort.tracks[trackGroup.fullName];
+    } else if (favoriteGroup && ctx.selectedSort?.favorites) {
+        return ctx.selectedSort.favorites[
+            favoriteGroup === DEFAULT_FAV_GROUP_NAME ? DEFAULT_FAV_GROUP_NAME : favoriteGroup.name
+        ];
+    }
+    return defaultMethod;
+}
+
 const SortActions = forwardRef(
     (
         {
             trackGroup = null,
             favoriteGroup = null,
-            setSortFiles,
-            setSortGroups,
-            setOpenSort,
-            selectedSort,
-            setSelectedSort,
-            setSortIcon,
-            setSortName,
+            setSortFiles = null,
+            setSortGroups = null,
+            setOpenSort = null,
+            setSortIcon = null,
+            setSortName = null,
             markers = null,
         },
         ref
     ) => {
         const ctx = useContext(AppContext);
-
-        const [currentMethod, setCurrentMethod] = useState(selectedSort ? selectedSort : defaultMethod);
+        const [currentMethod, setCurrentMethod] = useState(
+            getSelectedSort({ trackGroup, favoriteGroup, ctx, defaultMethod: defaultMethod() }) || defaultMethod()
+        );
 
         const files = () => {
             if (trackGroup) {
                 return trackGroup.groupFiles;
             } else if (favoriteGroup) {
-                return ctx.favorites[favoriteGroup.name]?.wpts;
+                return ctx.favorites.mapObjs[favoriteGroup.name]?.wpts;
             }
             return null;
         };
 
         const groups = () => {
             if (trackGroup) {
-                return ctx.tracksGroups;
+                return trackGroup.subfolders;
             } else if (favoriteGroup) {
                 return ctx.favorites.groups;
             }
             return null;
         };
 
-        function sort(method) {
-            if (setSortFiles) {
-                if (method === 'nearest' && markers) {
-                    setSortFiles(allMethods[method].callback(files(), allMethods[method].reverse, markers));
-                } else {
-                    setSortFiles(allMethods[method].callback(files(), allMethods[method].reverse));
-                }
-            }
-            if (setSortGroups && (method === 'az' || method === 'za' || favoriteGroup)) {
-                setSortGroups(allMethods[method].callback(groups(), allMethods[method].reverse));
-            }
-        }
-
         useEffect(() => {
-            sort(currentMethod);
-        }, [files(), selectedSort]);
+            if (currentMethod) {
+                doSort({
+                    method: currentMethod,
+                    setSortFiles,
+                    setSortGroups,
+                    markers,
+                    files: files(),
+                    groups: groups(),
+                    favoriteGroup,
+                });
+            }
+        }, [files(), currentMethod]);
 
         const handleChange = (event) => {
             const method = event.target.value;
-            sort(method);
-            setOpenSort(false);
+            doSort({ method, setSortFiles, setSortGroups, markers, files: files(), groups: groups(), favoriteGroup });
+            if (setOpenSort) {
+                setOpenSort(false);
+            }
+
             setSelectedSort(method);
-            setSortIcon(allMethods[method].icon);
-            setSortName(allMethods[method].name);
+
+            if (setSortIcon) {
+                setSortIcon(allMethods[method].icon);
+            }
+            if (setSortName) {
+                setSortName(allMethods[method].name);
+            }
             setCurrentMethod(method);
         };
+
+        function setSelectedSort(method) {
+            if (trackGroup) {
+                if (!ctx.selectedSort.tracks) {
+                    ctx.selectedSort.tracks = {};
+                }
+                ctx.selectedSort.tracks[trackGroup.fullName] = method;
+            } else if (favoriteGroup) {
+                if (!ctx.selectedSort.favorites) {
+                    ctx.selectedSort.favorites = {};
+                }
+                ctx.selectedSort.favorites[
+                    favoriteGroup === DEFAULT_FAV_GROUP_NAME ? DEFAULT_FAV_GROUP_NAME : favoriteGroup.name
+                ] = method;
+            }
+            ctx.setSelectedSort({ ...ctx.selectedSort });
+        }
 
         const Label = ({ item }) => {
             return (
@@ -232,6 +295,7 @@ const SortActions = forwardRef(
                                 </>
                             )}
                             <FormControlLabel
+                                id={'se-sort-time'}
                                 className={styles.controlLabel}
                                 disableTypography={true}
                                 labelPlacement="start"
@@ -241,6 +305,7 @@ const SortActions = forwardRef(
                             />
                             <Divider className={styles.dividerActions} />
                             <FormControlLabel
+                                id={'se-sort-az'}
                                 className={styles.controlLabel}
                                 disableTypography={true}
                                 labelPlacement="start"
@@ -249,6 +314,7 @@ const SortActions = forwardRef(
                                 label={<Label item={allMethods.az} />}
                             />
                             <FormControlLabel
+                                id={'se-sort-za'}
                                 className={styles.controlLabel}
                                 disableTypography={true}
                                 labelPlacement="start"
@@ -260,6 +326,7 @@ const SortActions = forwardRef(
                                 <>
                                     <Divider className={styles.dividerActions} />
                                     <FormControlLabel
+                                        id={'se-sort-longest'}
                                         className={styles.controlLabel}
                                         disableTypography={true}
                                         labelPlacement="start"
@@ -268,6 +335,7 @@ const SortActions = forwardRef(
                                         label={<Label item={allMethods.longest} />}
                                     />
                                     <FormControlLabel
+                                        id={'se-sort-shortest'}
                                         className={styles.controlLabel}
                                         disableTypography={true}
                                         labelPlacement="start"
@@ -281,6 +349,7 @@ const SortActions = forwardRef(
                                 <>
                                     <Divider className={styles.dividerActions} />
                                     <FormControlLabel
+                                        id={'se-sort-newDate'}
                                         className={styles.controlLabel}
                                         disableTypography={true}
                                         labelPlacement="start"
@@ -289,6 +358,7 @@ const SortActions = forwardRef(
                                         label={<Label item={allMethods.newDate} />}
                                     />
                                     <FormControlLabel
+                                        id={'se-sort-oldDate'}
                                         className={styles.controlLabel}
                                         disableTypography={true}
                                         labelPlacement="start"

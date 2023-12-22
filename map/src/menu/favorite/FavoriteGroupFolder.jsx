@@ -10,11 +10,11 @@ import FavoritesManager, {
     removeShadowFromIconWpt,
 } from '../../manager/FavoritesManager';
 import FavoriteItem from './FavoriteItem';
-import Utils, { getDistance } from '../../util/Utils';
-import TracksManager from '../../manager/track/TracksManager';
+import { getDistance } from '../../util/Utils';
 import Loading from '../errors/Loading';
 import { isEmpty } from 'lodash';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
+import { doSort } from '../actions/SortActions';
 
 export default function FavoriteGroupFolder({ folder }) {
     const ctx = useContext(AppContext);
@@ -43,10 +43,12 @@ export default function FavoriteGroupFolder({ folder }) {
         }
     }, [hash]);
 
+    // get markers
     useEffect(() => {
         let markerList = [];
-        if (ctx.favorites[group.name]?.markers) {
-            Object.values(ctx.favorites[group.name].markers._layers).forEach((value) => {
+        if (ctx.favorites.mapObjs[group.name]?.markers) {
+            let layers = ctx.favorites.mapObjs[group.name].markers._layers;
+            Object.values(layers).forEach((value) => {
                 let marker = {
                     title: value.options.title,
                     icon: changeIconSizeWpt(removeShadowFromIconWpt(value.options.icon.options.html), 18, 30),
@@ -54,10 +56,18 @@ export default function FavoriteGroupFolder({ folder }) {
                 };
                 markerList.push(marker);
             });
-        } else if (markers.length === 0 && FavoritesManager.getGroupSize(group) > 0) {
-            getFavoritesWithoutLayers().then();
         }
         markerList = addLocDist({ location: currentLoc, markers: markerList });
+
+        if (ctx.selectedSort?.favorites && ctx.selectedSort.favorites[group.name]) {
+            doSort({
+                method: ctx.selectedSort.favorites[group.name],
+                setSortFiles,
+                markers: markerList,
+                files: ctx.favorites.mapObjs[group.name]?.wpts,
+                favoriteGroup: group,
+            });
+        }
         setMarkers([...markerList]);
         refMarkers.current = markerList;
     }, [ctx.favorites]);
@@ -74,11 +84,6 @@ export default function FavoriteGroupFolder({ folder }) {
             setMarkers(updatedMarkers);
         }
     }, [currentLoc, delayedHash, refMarkers.current]);
-
-    async function getFavoritesWithoutLayers() {
-        let newFavoriteFiles = await getFavorites(false, Object.assign({}, ctx.favorites)).then();
-        ctx.setFavorites({ ...newFavoriteFiles });
-    }
 
     function getCenterMapLoc() {
         const parts = hash.split('/').slice(1);
@@ -125,34 +130,6 @@ export default function FavoriteGroupFolder({ folder }) {
             }
         }
         return res;
-    }
-
-    async function getFavorites(addToMap, newFavoriteFiles) {
-        let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(
-            group.file.type
-        )}&name=${encodeURIComponent(group.file.name)}`;
-        newFavoriteFiles[group.name] = {
-            url: url,
-            clienttimems: group.file.clienttimems,
-            updatetimems: group.file.updatetimems,
-            name: group.file.name,
-            addToMap: addToMap,
-        };
-        let f = await Utils.getFileData(newFavoriteFiles[group.name]);
-        if (f) {
-            const favoriteFile = new File([f], group.file.name, {
-                type: 'text/plain',
-            });
-            const favorites = await TracksManager.getTrackData(favoriteFile);
-            if (favorites) {
-                favorites.name = group.file.name;
-                favorites.wpts = addLocDist({ location: currentLoc, wpts: favorites.wpts });
-                Object.keys(favorites).forEach((t) => {
-                    newFavoriteFiles[group.name][`${t}`] = favorites[t];
-                });
-            }
-            return newFavoriteFiles;
-        }
     }
 
     useEffect(() => {

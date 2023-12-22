@@ -40,7 +40,7 @@ export default async function test() {
     // delete favorite item
     await clickBy(By.id('se-delete-fav-dialog-submit'));
     await waitBy(By.id(`se-actions-${wptName}`), { hidden: true });
-    await waitBy(By.id(`se-fav-item-${wptName}`), { hidden: true });
+    await waitBy(By.id(`se-fav-item-name-${wptName}`), { hidden: true });
 
     await clickBy(By.id('se-back-folder-button'));
     await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));

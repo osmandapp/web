@@ -24,7 +24,11 @@ export async function compressFromString(str) {
 }
 
 export async function decompressToJSON(str) {
-    return JSON.parse(await decompressFromBase64(str));
+    if (str) {
+        return JSON.parse(await decompressFromBase64(str));
+    } else {
+        return null;
+    }
 }
 
 export async function decompressToString(str) {

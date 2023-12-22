@@ -20,18 +20,18 @@ export default function FavoriteGroup({ index, group }) {
     const anchorEl = useRef(null);
 
     useEffect(() => {
-        if (ctx.favorites[group.name]?.markers && group.name === ctx.selectedGpxFile.file?.name) {
-            ctx.selectedGpxFile.file.markers = ctx.favorites[group.name].markers;
+        if (ctx.favorites.mapObjs[group.name]?.markers && group.name === ctx.selectedGpxFile.file?.name) {
+            ctx.selectedGpxFile.file.markers = ctx.favorites.mapObjs[group.name].markers;
             ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
         }
-    }, [ctx.favorites, ctx.setFavorites]);
+    }, [ctx.favorites]);
 
     function getSize() {
         return FavoritesManager.getGroupSize(group) > 0 ? `${FavoritesManager.getGroupSize(group)} points` : 'empty';
     }
 
     function getLastModificationDate() {
-        const currentDate = new Date(group.file.updatetimems);
+        const currentDate = new Date(group.clienttimems);
         const month = currentDate.toLocaleString('default', { month: 'short' });
         const day = currentDate.getDate();
         return `${month} ${day}`;
@@ -46,12 +46,13 @@ export default function FavoriteGroup({ index, group }) {
                 onClick={(e) => {
                     if (e.target !== 'path') {
                         ctx.setOpenGroups((prevState) => [...prevState, group]);
+                        ctx.setZoomToFavGroup(group.name);
                     }
                 }}
             >
                 <ListItemIcon className={styles.icon}>
                     {group.hidden === 'true' ? (
-                        <FolderHiddenIcon />
+                        <FolderHiddenIcon id={'se-fav-menu-icon-hidden-' + group.name} />
                     ) : (
                         <FolderIcon
                             style={{ fill: group.name && FavoritesManager.getColorGroup(ctx, group.name, false) }}
