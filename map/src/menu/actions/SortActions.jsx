@@ -100,6 +100,15 @@ export function doSort({ method, setSortFiles, setSortGroups, markers, files, gr
     return res;
 }
 
+export function updateSortList({ oldName, newName, isFavorites = false, isTracks = false, ctx }) {
+    if (isTracks && ctx.selectedSort?.tracks) {
+        ctx.selectedSort.tracks[newName] = ctx.selectedSort.tracks[oldName];
+    } else if (isFavorites && ctx.selectedSort?.favorites) {
+        ctx.selectedSort.favorites[newName] = ctx.selectedSort.favorites[oldName];
+    }
+    ctx.setSelectedSort({ ...ctx.selectedSort });
+}
+
 export const allMethods = {
     nearest: {
         reverse: false,

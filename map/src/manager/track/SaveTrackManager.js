@@ -16,6 +16,7 @@ import _ from 'lodash';
 import { compressFromJSON } from '../../util/GzipBase64.mjs';
 import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import Utils from '../../util/Utils';
+import { updateSortList } from '../../menu/actions/SortActions';
 
 export const EMPTY_FILE_NAME = 'empty.ignore';
 
@@ -213,15 +214,17 @@ export async function duplicateTrack(oldName, folderName, newName, ctx) {
 }
 
 export async function renameFolder(folder, newName, ctx) {
+    const newFolderName = folder.fullName.replace(folder.name, newName);
     const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/rename-folder`, {
         params: {
             folderName: folder.fullName,
-            newFolderName: folder.fullName.replace(folder.name, newName),
+            newFolderName: newFolderName,
             type: 'GPX',
         },
         dataOnErrors: true,
     });
     if (res && res?.data?.status === 'ok') {
+        updateSortList({ oldName: folder.fullName, newName: newFolderName, isTracks: true, ctx });
         refreshGlobalFiles(ctx).then();
     } else {
         ctx.setTrackErrorMsg({

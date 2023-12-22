@@ -14,6 +14,7 @@ import FavoritesManager, {
     getGroupNameFromFile,
     prepareFavGroupName,
 } from '../../manager/FavoritesManager';
+import { updateSortList } from '../../menu/actions/SortActions';
 
 export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }) {
     const ctx = useContext(AppContext);
@@ -56,6 +57,7 @@ export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }
                 dataOnErrors: true,
             });
             if (res && res?.data?.status === 'ok') {
+                updateSortList({ oldName, newName, isFavorites: true, ctx });
                 refreshGlobalFiles(ctx, newGroupName, OBJECT_TYPE_FAVORITE).then();
             } else {
                 ctx.setTrackErrorMsg({
