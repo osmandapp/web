@@ -11,21 +11,26 @@ import { geoObject } from '../store/geoObject/geoObject.js';
 import WeatherManager from '../manager/WeatherManager';
 import { getAccountInfo } from '../manager/LoginManager';
 
-export const OBJECT_TYPE_LOCAL_TRACK = 'local_track';
-export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track';
-export const OBJECT_TYPE_ROUTE_TRACK = 'route_track';
+export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
+export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
+
+export const OBJECT_TYPE_NAVIGATION_TRACK = 'route_track'; // track converted from Navigation result
+export const OBJECT_TYPE_NAVIGATION_ALONE = 'navigation'; // special case of OBJECT_TYPE_NAVIGATION_TRACK (Navigation w/o InfoBlock)
+
 export const OBJECT_TYPE_FAVORITE = 'favorite';
 export const OBJECT_TYPE_WEATHER = 'weather';
 export const OBJECT_TYPE_POI = 'poi';
+
 export const OBJECT_CONFIGURE_MAP = 'configure_map';
 export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
+
 export const defaultConfigureMapStateValues = {
     showFavorites: true,
 };
 
 export const isLocalTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK;
 export const isCloudTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK;
-export const isRouteTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_ROUTE_TRACK;
+export const isRouteTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_TRACK;
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',

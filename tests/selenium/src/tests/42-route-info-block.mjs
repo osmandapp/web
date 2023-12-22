@@ -46,46 +46,6 @@ const routes = [
             'Keep left (+C|+C|C) to Миколаїв;Одеса and go 0.5 km',
         ],
     },
-    // {
-    //     type: 'osrm',
-    //     profile: 'bicycle',
-    //     A: '46.58083, 31.51220',
-    //     B: '46.42675, 31.71208',
-    //     hasAttributes: false, // temporarily disabled // TODO
-    //     strings: [
-    //         'Points: 2',
-    //         'Bike 28.18 km', // was 28.18
-    //         'Route: 28.2 km, 4:37 min', // was 28.2
-    //         '-2 / 0 / 4 m', // ele
-    //         // /Track.*?: 26.80 km/s, // Road // temporarily disabled // TODO
-    //         // /Sand.*?: 8.93 km/s, // Surface // temporarily disabled // TODO
-    //     ],
-    //     turns: [
-    //         'Depart and go 1.93 km',
-    //         'New name Straight to Ковалівська',
-    //         'End of road Left and go 132 m',
-    //         'Fork Slight right and go 2.49 km',
-    //     ],
-    // },
-    // {
-    //     type: 'osrm',
-    //     profile: 'car',
-    //     A: '47.87383, 35.30130',
-    //     B: '46.67181, 32.50930',
-    //     hasAttributes: false,
-    //     strings: [
-    //         'Points: 2',
-    //         'Car 334.74 km',
-    //         'Route: 334.7 km, 6:55 min',
-    //         '3 / 55 / 115 m', // ele
-    //     ],
-    //     turns: [
-    //         'Exit roundabout Right and go 117 m',
-    //         'End of road Right to I міст Преображенського',
-    //         'Turn Left and go 19.84 km',
-    //         'Arrive',
-    //     ],
-    // },
 ];
 
 const MOBILE_SKIP = /(Track|Sand)/; // bye-bye mobile version
@@ -110,6 +70,8 @@ export default async function test() {
         await sendKeysBy(By.id('se-route-start-point'), A + '\n');
         await sendKeysBy(By.id('se-route-finish-point'), B + '\n');
 
+        // Navigation InfoBlock is disabled by default
+        await clickBy(By.id('se-route-more-information'));
         await validatePanelButtons(routeTrackPanelButtons);
         await validateInfoBlockButtons(routeTrackInfoBlockButtons);
 

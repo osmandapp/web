@@ -57,7 +57,7 @@ export default async function test() {
 
         await sendKeysBy(By.id('se-route-start-point'), A + '\n');
         await sendKeysBy(By.id('se-route-finish-point'), B + '\n');
-        await clickBy(By.id('se-button-back'));
+        await clickBy(By.id('se-button-back'), { optional: true });
         await matchTextBy(By.id('se-route-info'), check);
 
         await actionIdleWait();
