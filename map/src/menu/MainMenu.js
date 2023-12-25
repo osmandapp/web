@@ -16,7 +16,8 @@ import AppContext, {
     OBJECT_TYPE_CLOUD_TRACK,
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_LOCAL_TRACK,
-    OBJECT_TYPE_ROUTE_TRACK,
+    OBJECT_TYPE_NAVIGATION_TRACK,
+    OBJECT_TYPE_NAVIGATION_ALONE,
     OBJECT_TYPE_WEATHER,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
@@ -103,7 +104,7 @@ export default function MainMenu({
             name: 'Navigation',
             icon: NavigationIcon,
             component: <RouteMenu />,
-            type: OBJECT_TYPE_ROUTE_TRACK,
+            type: OBJECT_TYPE_NAVIGATION_TRACK, // shared with OBJECT_TYPE_NAVIGATION_ALONE
             show: true,
             id: 'se-show-menu-navigation',
         },
@@ -128,26 +129,28 @@ export default function MainMenu({
     //open main menu if currentObjectType was changed
     useEffect(() => {
         if (ctx.currentObjectType) {
-            if (menuInfo?.type.name !== ctx.currentObjectType) {
-                selectMenuInfo();
+            if (ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_ALONE) {
+                // invoked by RouteService.js effect
+                // activate Navigation menu even w/o currentObjectType (if no other menu was activated before)
+                // use timeout to avoid GlobalFrame setMenuInfo(null) and to catch routeObject options start/end
+                ctx.setCurrentObjectType(null); // get ready for next navigation changes
+                setTimeout(() => {
+                    if (
+                        ctx.routeObject.getOption('route.points.start') &&
+                        ctx.routeObject.getOption('route.points.finish')
+                    ) {
+                        selectMenuInfo(OBJECT_TYPE_NAVIGATION_TRACK);
+                    }
+                }, 100);
+            } else if (menuInfo?.type.name !== ctx.currentObjectType) {
+                selectMenuInfo(); // process all other object types
             }
-        } else if (selectedType === null) {
-            // activate Navigation menu even w/o currentObjectType (if no other menu was activated before)
-            // use timeout to avoid GlobalFrame setMenuInfo(null) and to catch routeObject options start/end
-            setTimeout(() => {
-                if (
-                    ctx.routeObject.getOption('route.points.start') &&
-                    ctx.routeObject.getOption('route.points.finish')
-                ) {
-                    selectMenuInfo(OBJECT_TYPE_ROUTE_TRACK);
-                }
-            }, 100);
         }
     }, [ctx.currentObjectType]);
 
     function selectMenuInfo(force = null) {
         const currentMenu = items.find((item) => {
-            return item.type === force ?? ctx.currentObjectType;
+            return item.type === (force ?? ctx.currentObjectType);
         });
         if (currentMenu) {
             setMenuInfo(currentMenu.component);

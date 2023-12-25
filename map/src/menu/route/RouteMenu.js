@@ -20,7 +20,7 @@ import AppContext, {
     isLocalTrack,
     isCloudTrack,
     isRouteTrack,
-    OBJECT_TYPE_ROUTE_TRACK,
+    OBJECT_TYPE_NAVIGATION_TRACK,
 } from '../../context/AppContext';
 import RouteProfileSettingsDialog from '../../dialogs/RouteProfileSettingsDialog';
 import { TextField } from '@mui/material/';
@@ -193,9 +193,10 @@ export default function RouteMenu() {
         const route = routeObject.getRoute();
         if (route) {
             if (isRouteTrack(ctx) === false) {
+                const { track } = routeObject.putRoute({ route: routeObject.getRoute() }); // get track instantly
+                ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_TRACK);
+                ctx.setSelectedGpxFile(track);
                 ctx.setUpdateInfoBlock(true);
-                ctx.setSelectedGpxFile(routeObject.getTrack());
-                ctx.setCurrentObjectType(OBJECT_TYPE_ROUTE_TRACK);
             }
         }
     }
@@ -375,7 +376,13 @@ export default function RouteMenu() {
                     </Button>
                 </label>
                 {routeObject.getRoute() && (
-                    <Button variant="contained" component="span" className={styles.smallButton} onClick={openInfoBlock}>
+                    <Button
+                        id="se-route-more-information"
+                        variant="contained"
+                        component="span"
+                        className={styles.smallButton}
+                        onClick={openInfoBlock}
+                    >
                         More information
                     </Button>
                 )}

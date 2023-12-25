@@ -17,6 +17,23 @@ You can get the latest version of OsmAnd free from listed app stores.
 Direct links to free OsmAnd versions.
 ## Version 4 
 
+
+### Version 4.6 
+Release date: 12/2023
+* Android Auto: Added 3D mode and enhanced search screen
+* Tracks: Introduced filters and smart folders, optimized memory for larger files
+* Enhanced top and bottom widget panels to accommodate all widgets
+* Improved local resource management
+* Customizable button mapping for external controllers
+* New widgets: "Glide Ratio" and "Sun Position"
+* OsmAnd Cloud: Now access deleted files
+* Enhanced track coloring in Slope mode with new symmetric gradient
+* Resolved issues with transparent status bar
+* Added support for ANT+ temperature widget
+* Introduced "Available RAM" widget
+
+<DownloadRelease blog="osmand-android-4-6-released" release="net.osmand-4.6.9.apk" />
+
 ### Version 4.5 
 Release date: 08/2023
 * BLE/ANT+ sensors: reworked connection, writing and viewing received data to GPX
