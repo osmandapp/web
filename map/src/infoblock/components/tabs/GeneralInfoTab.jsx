@@ -5,7 +5,7 @@ import { Download } from '@mui/icons-material';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import DeleteTrackDialog from '../../../dialogs/tracks/DeleteTrackDialog';
 import GeneralInfo from '../track/GeneralInfo';
-import { hasSegments, isEmptyTrack } from '../../../manager/track/TracksManager';
+import { getGpxFileFromTrackData, hasSegments, isEmptyTrack } from '../../../manager/track/TracksManager';
 import { Checkbox, FormControlLabel } from '@mui/material/';
 import { makeStyles } from '@material-ui/core/styles';
 import TracksManager from '../../../manager/track/TracksManager';
@@ -21,7 +21,7 @@ const useStyles = makeStyles({
 });
 
 export const downloadGpx = async (ctx) => {
-    const gpx = await TracksManager.getGpxTrack(ctx.selectedGpxFile);
+    const gpx = await getGpxFileFromTrackData(ctx.selectedGpxFile);
     if (gpx) {
         const data = gpx.data;
         const url = document.createElement('a');

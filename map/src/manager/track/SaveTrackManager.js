@@ -11,6 +11,7 @@ import TracksManager, {
     getGpxFiles,
     DEFAULT_GROUP_NAME,
     GPX_FILE_TYPE,
+    getGpxFileFromTrackData,
 } from './TracksManager';
 import _ from 'lodash';
 import { compressFromJSON } from '../../util/GzipBase64.mjs';
@@ -70,10 +71,7 @@ export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file,
     }
     if (ctx.loginUser) {
         const gpxFile = file ? file : ctx.selectedGpxFile.file ? ctx.selectedGpxFile.file : ctx.selectedGpxFile;
-        if (gpxFile.points) {
-            gpxFile.tracks = [{ points: gpxFile.points }];
-        }
-        const gpx = await TracksManager.getGpxTrack(gpxFile);
+        const gpx = await getGpxFileFromTrackData(gpxFile);
         if (gpx) {
             const convertedData = new TextEncoder().encode(gpx.data);
             const zippedResult = require('pako').gzip(convertedData, { to: 'Uint8Array' });

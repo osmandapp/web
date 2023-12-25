@@ -433,22 +433,8 @@ export function addDistanceToPoints(points) {
     }
 }
 
-async function getGpxTrack(file) {
-    let trackData = {
-        tracks: file.points ? [{ points: file.points }] : file.tracks,
-        wpts: file.wpts,
-        metaData: file.metaData,
-        pointsGroups: file.pointsGroups,
-        ext: file.ext,
-        analysis: null,
-    };
-
-    if (!trackData.metaData?.name) {
-        if (!trackData.metaData) {
-            trackData.metaData = {};
-        }
-        trackData.metaData.name = file.name;
-    }
+export async function getGpxFileFromTrackData(file) {
+    let trackData = prepareTrackData({ file });
 
     return await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/save-track-data`, trackData, {
         apiCache: true,
@@ -456,6 +442,30 @@ async function getGpxTrack(file) {
             'Content-Type': 'application/json',
         },
     });
+}
+
+function prepareTrackData({ file, getAnalysis = false }) {
+    // add updated points to track
+    if (file.points) {
+        file.tracks[0].points = file.points;
+    }
+
+    // add metaData name if it isn't exist
+    if (!file.metaData?.name) {
+        if (!file.metaData) {
+            file.metaData = {};
+        }
+        file.metaData.name = file.name;
+    }
+
+    return {
+        tracks: file.tracks,
+        wpts: file.wpts,
+        metaData: file.metaData,
+        pointsGroups: file.pointsGroups,
+        ext: file.ext,
+        analysis: getAnalysis ? file.analysis : null,
+    };
 }
 
 export function createTrackGroups(files) {
@@ -851,17 +861,16 @@ export async function applySrtmElevation({ track, setLoading }) {
 async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     setLoading(true);
 
-    const clone = _.cloneDeep(ctx.selectedGpxFile);
+    const cloneFile = _.cloneDeep(ctx.selectedGpxFile);
 
-    const wpts = clone.wpts;
-    const pointsGroups = clone.pointsGroups;
+    const wpts = cloneFile.wpts;
+    const pointsGroups = cloneFile.pointsGroups;
 
-    const postData = {
-        tracks: points ? [{ points: points }] : clone.tracks,
-        analysis: clone.analysis,
-        metaData: clone.metaData,
-        ext: clone.ext,
-    };
+    if (points) {
+        cloneFile.tracks[0].points = points;
+    }
+
+    const postData = prepareTrackData({ file: cloneFile, getAnalysis: true });
 
     // time vs better cache
     let saveStartTime = null;
@@ -1245,7 +1254,6 @@ const TracksManager = {
     getTrackData,
     handleEditCloudTrack,
     getTrackPoints,
-    getGpxTrack,
     getEditablePoints,
     updateGapProfileOneSegment,
     getEle,
