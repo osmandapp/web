@@ -289,6 +289,3 @@ Depending on the specified parameters, URL strings may contain:
 - **start-finish:** for navigation.
 - **profile:** for navigation.
 - **zoom:** zoom level.
-
-
-
