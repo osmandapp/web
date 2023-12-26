@@ -36,10 +36,9 @@ import InformationBlock from '../infoblock/components/InformationBlock';
 import Weather from './weather/Weather';
 import styles from './mainmenu.module.css';
 import TrackGroupFolder from './tracks/TrackGroupFolder';
-import _, { isEmpty } from 'lodash';
+import _ from 'lodash';
 import FavoriteGroupFolder from './favorite/FavoriteGroupFolder';
 import VisibleTracks from './visibletracks/VisibleTracks';
-import TracksManager from '../manager/track/TracksManager';
 
 export default function MainMenu({
     size,
@@ -51,11 +50,12 @@ export default function MainMenu({
     showInfoBlock,
     setShowInfoBlock,
     setClearState,
+    setOpenVisibleMenu,
+    openVisibleMenu,
 }) {
     const ctx = useContext(AppContext);
 
     const [selectedType, setSelectedType] = useState(null);
-    const [openVisibleMenu, setOpenVisibleMenu] = useState(false);
 
     const handleDrawer = () => {
         setOpenMainMenu(!openMainMenu);
@@ -128,6 +128,12 @@ export default function MainMenu({
             selectMenuInfo();
         }
     }, [showInfoBlock]);
+
+    useEffect(() => {
+        if (openVisibleMenu) {
+            setOpenVisibleMenu(false);
+        }
+    }, [menuInfo]);
 
     //open main menu if currentObjectType was changed
     useEffect(() => {
@@ -216,41 +222,6 @@ export default function MainMenu({
                 ctx.setCurrentObjectType(OBJECT_CONFIGURE_MAP);
             }
         }
-    }
-
-    // add new files to visible tracks
-    useEffect(() => {
-        if (!isEmpty(ctx.gpxFiles)) {
-            let oldFiles = _.cloneDeep(ctx.visibleTracks);
-            let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
-
-            let newVisFiles = {
-                old: oldFiles.old,
-                new: [],
-            };
-            // for localStorage
-            let newVisFilesNames = {
-                old: savedVisible ? savedVisible.old : [],
-                new: [],
-            };
-
-            Object.values(ctx.gpxFiles).forEach((f) => {
-                if ((f.url && !isOldVisibleTrack(oldFiles, f)) || isNewVisibleTrack(oldFiles, f)) {
-                    newVisFiles.new.push(f);
-                    newVisFilesNames.new.push(f.name);
-                }
-            });
-            localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(newVisFilesNames));
-            ctx.setVisibleTracks({ ...newVisFiles });
-        }
-    }, [ctx.gpxFiles]);
-
-    function isOldVisibleTrack(tracks, file) {
-        return !tracks.old.some((t) => t.name === file.name);
-    }
-
-    function isNewVisibleTrack(tracks, file) {
-        return tracks.new.some((t) => t.name === file.name);
     }
 
     return (
@@ -441,7 +412,9 @@ export default function MainMenu({
                 <Toolbar sx={{ mb: '-3px' }} />
                 {!showInfoBlock && _.isEmpty(ctx.openGroups) && !openVisibleMenu && menuInfo}
                 {ctx.openGroups.length > 0 && !showInfoBlock && getGroup()}
-                {openVisibleMenu && !showInfoBlock && <VisibleTracks setOpenVisibleMenu={setOpenVisibleMenu} />}
+                {openVisibleMenu && !showInfoBlock && (
+                    <VisibleTracks setOpenVisibleMenu={setOpenVisibleMenu} setMenuInfo={setMenuInfo} />
+                )}
                 <InformationBlock
                     showInfoBlock={showInfoBlock}
                     setShowInfoBlock={setShowInfoBlock}
