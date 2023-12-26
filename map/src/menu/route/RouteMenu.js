@@ -362,6 +362,23 @@ export default function RouteMenu() {
                     </IconButton>
                 </MenuItem>
             )}
+            {ctx.develFeatures && <RouteProfileSettingsDialog key="routesettingsembed" embed={true} useDev={true} />}
+            {routeObject.getRoute() &&
+                routeOptions.map((opt) => (
+                    <MenuItem key={'routeopt' + opt} sx={{ ml: 2, mr: 2 }}>
+                        <Grid container alignItems="center">
+                            <Grid item xs={10} sx={{ mt: '4px' }} onClick={() => routeObject.setOption(opt, (o) => !o)}>
+                                {routeObject.getOptionText(opt)}
+                            </Grid>
+                            <Grid item xs={2}>
+                                <Switch
+                                    checked={routeObject.getOption(opt)}
+                                    onChange={(e) => routeObject.setOption(opt, e.target.checked)}
+                                />
+                            </Grid>
+                        </Grid>
+                    </MenuItem>
+                ))}
             <ButtonGroup variant="text" sx={{ mt: 1, ml: 1 }}>
                 <label htmlFor="contained-button-route">
                     <StyledInput
@@ -387,22 +404,6 @@ export default function RouteMenu() {
                     </Button>
                 )}
             </ButtonGroup>
-            {routeObject.getRoute() &&
-                routeOptions.map((opt) => (
-                    <MenuItem key={'routeopt' + opt} sx={{ ml: 2, mr: 2 }}>
-                        <Grid container alignItems="center">
-                            <Grid item xs={10} sx={{ mt: '4px' }} onClick={() => routeObject.setOption(opt, (o) => !o)}>
-                                {routeObject.getOptionText(opt)}
-                            </Grid>
-                            <Grid item xs={2}>
-                                <Switch
-                                    checked={routeObject.getOption(opt)}
-                                    onChange={(e) => routeObject.setOption(opt, e.target.checked)}
-                                />
-                            </Grid>
-                        </Grid>
-                    </MenuItem>
-                ))}
             {openSettings && (
                 <RouteProfileSettingsDialog key="routesettingsdialog" setOpenSettings={setOpenSettings} useDev={true} />
             )}
