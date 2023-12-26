@@ -3,6 +3,7 @@ import { apiGet, apiPost } from '../../util/HttpApi';
 import TracksManager, { findGroupByName } from './TracksManager';
 import { refreshGlobalFiles } from './SaveTrackManager';
 import { FAVORITE_FILE_TYPE } from '../FavoritesManager';
+import { cloneDeep } from 'lodash';
 
 export async function deleteTrack(file, ctx, type = 'GPX') {
     if ((isCloudTrack(ctx) || file) && ctx.loginUser) {
@@ -65,6 +66,24 @@ export async function deleteTrackFolder(folder, ctx) {
             msg: res.data,
         });
     }
+}
+
+export function deleteTrackFromMap(ctx, file) {
+    ctx.mutateGpxFiles((o) => (o[file.name].url = null));
+    if (ctx.selectedGpxFile?.name === file.name) {
+        ctx.setCurrentObjectType(null);
+    }
+}
+
+export function deleteTracksFromMap(ctx, files) {
+    let updatedGpxFiles = cloneDeep(ctx.gpxFiles);
+    files.forEach((file) => {
+        updatedGpxFiles[file.name].url = null;
+        if (ctx.selectedGpxFile?.name === file.name) {
+            ctx.setCurrentObjectType(null);
+        }
+    });
+    ctx.setGpxFiles({ ...updatedGpxFiles });
 }
 
 function deleteTracksFromGroups(trackName, ctx) {

@@ -1,4 +1,4 @@
-import { AppBar, Box, IconButton, MenuItem, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, IconButton, MenuItem, Toolbar, Tooltip, Typography } from '@mui/material';
 import React, { useContext, useMemo } from 'react';
 import visibleStyles from './visibletracks.module.css';
 import headerStyles from '../trackfavmenu.module.css';
@@ -10,6 +10,8 @@ import EmptyVisible from '../errors/EmptyVisible';
 import { isEmpty } from 'lodash';
 import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 import Empty from '../errors/Empty';
+import { Button } from '@mui/material/';
+import { deleteTracksFromMap } from '../../manager/track/DeleteTrackManager';
 
 export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null }) {
     const ctx = useContext(AppContext);
@@ -47,6 +49,36 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null }
         return false;
     }
 
+    function hideAllTracks() {
+        if (!isEmpty(ctx.visibleTracks)) {
+            let files = getAllVisibleFiles();
+            if (files.length > 0) {
+                deleteTracksFromMap(ctx, files);
+            }
+        }
+    }
+
+    function allVisibleTracksHidden() {
+        let files = getAllVisibleFiles();
+        if (files.length > 0) {
+            return !files.some((f) => ctx.gpxFiles[f.name].url !== null && !f.addFromVisibleTracks);
+        }
+        return true;
+    }
+
+    function getAllVisibleFiles() {
+        let files = [];
+        if (!isEmpty(ctx.visibleTracks)) {
+            if (!isEmpty(ctx.visibleTracks.old)) {
+                files = files.concat(ctx.visibleTracks.old);
+            }
+            if (!isEmpty(ctx.visibleTracks.new)) {
+                files = files.concat(ctx.visibleTracks.new);
+            }
+        }
+        return files;
+    }
+
     return (
         <>
             <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
@@ -69,6 +101,22 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null }
                                 >
                                     Tracks
                                 </Typography>
+                                <Tooltip
+                                    key={'hide_all_tracks'}
+                                    title={'Hide all visible tracks'}
+                                    arrow
+                                    placement="bottom-end"
+                                >
+                                    <span>
+                                        <Button
+                                            className={visibleStyles.button}
+                                            onClick={hideAllTracks}
+                                            disabled={allVisibleTracksHidden()}
+                                        >
+                                            Hide all
+                                        </Button>
+                                    </span>
+                                </Tooltip>
                             </Toolbar>
                         </AppBar>
                         <Box

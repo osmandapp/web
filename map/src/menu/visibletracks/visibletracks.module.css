@@ -10,3 +10,7 @@
     min-height: 48px !important;
     max-height: 48px !important;
 }
+.button {
+    text-transform: none !important;
+    background-color: #deebff !important;
+}

@@ -24,6 +24,7 @@ import styles from '../trackfavmenu.module.css';
 import TrackActions from '../actions/TrackActions';
 import ActionsMenu from '../actions/ActionsMenu';
 import MenuItemsTitle from '../components/MenuItemsTitle';
+import { deleteTrackFromMap } from '../../manager/track/DeleteTrackManager';
 
 const DEFAULT_DIST = 0;
 const DEFAULT_TIME = '0:00';
@@ -65,7 +66,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
 
     async function processDisplayTrack({ visible, setLoading }) {
         if (!visible) {
-            deleteTrackFromMap();
+            deleteTrackFromMap(ctx, file);
             setLoading(false);
         } else {
             await addTrackToMap(setLoading);
@@ -82,13 +83,6 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
     useEffect(() => {
         showTrack && addTrackToMap(setLoadingTrack);
     }, [showTrack]);
-
-    function deleteTrackFromMap() {
-        ctx.mutateGpxFiles((o) => (o[file.name].url = null));
-        if (ctx.selectedGpxFile?.name === file.name) {
-            ctx.setCurrentObjectType(null);
-        }
-    }
 
     async function addTrackToMap(setProgressVisible) {
         // cleanup edited localTrack
@@ -207,7 +201,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                         </IconButton>
                         {visible && (
                             <Switch
-                                sx={{ ml: -5 }}
+                                sx={{ ml: '-25px' }}
                                 onClick={(e) => e.stopPropagation()}
                                 checked={ctx.gpxFiles[file.name]?.url ? !file.addFromVisibleTracks : false}
                                 onChange={(e) => !file.local && setDisplayTrack(e.target.checked)}
