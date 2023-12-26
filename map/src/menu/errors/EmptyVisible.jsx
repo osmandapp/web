@@ -3,7 +3,7 @@ import styles from './errors.module.css';
 import EmptyLogin from './EmptyLogin';
 import React, { useContext } from 'react';
 import AppContext from '../../context/AppContext';
-import { ReactComponent as EmptyIcon } from '../../assets/icons/ic_action_folder_open.svg';
+import { ReactComponent as EmptyIcon } from '../../assets/icons/ic_action_track_disabled.svg';
 import TracksMenu from '../tracks/TracksMenu';
 
 export default function EmptyVisible({ setMenuInfo }) {
