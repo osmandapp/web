@@ -40,6 +40,13 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null }
         return !!(!isEmpty(ctx.visibleTracks?.old) || !isEmpty(ctx.visibleTracks?.new));
     }
 
+    function hasTracks() {
+        if (!isEmpty(ctx.listFiles)) {
+            return ctx.listFiles.uniqueFiles.some((f) => f.type === 'GPX');
+        }
+        return false;
+    }
+
     return (
         <>
             <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
@@ -93,8 +100,8 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null }
                         )}
                     </>
                 )}
-                {!hasVisibleTracks() && ctx.tracksGroups?.length > 0 && <EmptyVisible setMenuInfo={setMenuInfo} />}
-                {ctx.tracksGroups?.length === 0 && (
+                {!hasVisibleTracks() && hasTracks() && <EmptyVisible setMenuInfo={setMenuInfo} />}
+                {!hasVisibleTracks() && !hasTracks() && (
                     <Empty
                         title={'You don’t have track files'}
                         text={'You can import, create track files using OsmAnd.'}

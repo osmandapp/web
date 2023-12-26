@@ -107,8 +107,8 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
             ctx.setUpdateInfoBlock(true);
             ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
             ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoom: true, cloudRedrawWpts: true });
-            if (file.visibleTrack) {
-                file.visibleTrack = false;
+            if (file.addFromVisibleTracks) {
+                file.addFromVisibleTracks = false;
                 ctx.mutateGpxFiles((o) => (o[file.name] = file));
             }
         } else {
@@ -157,6 +157,18 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
         }
     }, [ctx.openedPopper]);
 
+    function setIconStyles() {
+        let res = [];
+        if (!visible) {
+            res.push(styles.icon);
+        } else if (ctx.gpxFiles[file.name]?.url && !file.addFromVisibleTracks) {
+            res.push(styles.visibleIcon);
+        } else {
+            res.push(styles.icon);
+        }
+        return res.join(' ');
+    }
+
     return useMemo(() => {
         const trackName = TracksManager.getFileName(file);
         return (
@@ -167,7 +179,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                         id={'se-cloud-track-' + trackName}
                         onClick={() => setDisplayTrack(true)}
                     >
-                        <ListItemIcon className={styles.icon}>
+                        <ListItemIcon className={setIconStyles()}>
                             <TrackIcon />
                         </ListItemIcon>
                         <ListItemText>
@@ -197,7 +209,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                             <Switch
                                 sx={{ ml: -5 }}
                                 onClick={(e) => e.stopPropagation()}
-                                checked={ctx.gpxFiles[file.name]?.url ? !file.visibleTrack : false}
+                                checked={ctx.gpxFiles[file.name]?.url ? !file.addFromVisibleTracks : false}
                                 onChange={(e) => !file.local && setDisplayTrack(e.target.checked)}
                             />
                         )}

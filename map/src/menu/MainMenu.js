@@ -130,7 +130,7 @@ export default function MainMenu({
     }, [showInfoBlock]);
 
     useEffect(() => {
-        if (openVisibleMenu) {
+        if (openVisibleMenu && ctx.currentObjectType !== OBJECT_TYPE_CLOUD_TRACK) {
             setOpenVisibleMenu(false);
         }
     }, [menuInfo]);
