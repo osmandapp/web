@@ -47,7 +47,8 @@ async function loadListFiles(
     setGpxFiles,
     setFavorites,
     setUpdateMarkers,
-    setProcessingGroups
+    setProcessingGroups,
+    setVisibleTracks
 ) {
     if (loginUser !== listFiles.loginUser) {
         if (!loginUser) {
@@ -66,7 +67,7 @@ async function loadListFiles(
                         setListFiles(res);
 
                         await Promise.all([
-                            addOpenedTracks(getGpxFiles(res), gpxFiles, setGpxFiles),
+                            addOpenedTracks(getGpxFiles(res), gpxFiles, setGpxFiles, setVisibleTracks),
                             addOpenedFavoriteGroups(
                                 TracksManager.getFavoriteGroups(res),
                                 setFavorites,
@@ -81,14 +82,15 @@ async function loadListFiles(
     }
 }
 
-async function addOpenedTracks(files, gpxFiles, setGpxFiles) {
+async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
     const promises = [];
     const newGpxFiles = Object.assign({}, gpxFiles);
 
+    // get saved visible tracks (only new)
     let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
     let selectedFiles = [];
-    if (savedVisible?.cloud) {
-        savedVisible.cloud.forEach((name) => {
+    if (savedVisible?.new) {
+        savedVisible.new.forEach((name) => {
             files.forEach((f) => {
                 if (f.name === name) {
                     selectedFiles.push(_.indexOf(files, f));
@@ -117,6 +119,8 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles) {
         promises.push(
             TracksManager.getTrackData(gpxfile).then((track) => {
                 track.name = file.name;
+                // add flag to not add layer to the map
+                track.addFromVisibleTracks = true;
                 Object.keys(track).forEach((t) => {
                     newGpxFiles[file.name][`${t}`] = track[t];
                 });
@@ -125,6 +129,19 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles) {
     }
     await Promise.all(promises).then(() => {
         setGpxFiles(newGpxFiles);
+        // add visible tracks to old objects, after next page reload they will be deleted
+        setVisibleTracks({
+            new: [],
+            old: Object.values(newGpxFiles),
+        });
+        // save them to localStorage
+        localStorage.setItem(
+            TracksManager.TRACK_VISIBLE_FLAG,
+            JSON.stringify({
+                new: [],
+                old: Object.keys(newGpxFiles),
+            })
+        );
     });
 }
 
@@ -219,6 +236,7 @@ export const AppContextProvider = (props) => {
     const [processingGroups, setProcessingGroups] = useState(false);
 
     const [localTracks, setLocalTracks] = useState([]);
+    const [visibleTracks, setVisibleTracks] = useState({});
     const [currentObjectType, setCurrentObjectType] = useState(null);
     const [headerText, setHeaderText] = useState({
         search: { text: '' },
@@ -327,7 +345,8 @@ export const AppContextProvider = (props) => {
                 setGpxFiles,
                 setFavorites,
                 setUpdateMarkers,
-                setProcessingGroups
+                setProcessingGroups,
+                setVisibleTracks
             ).finally(() => setGpxLoading(false));
         }
     }, [loginUser]);
@@ -453,6 +472,8 @@ export const AppContextProvider = (props) => {
                 setProcessingGroups,
                 selectedSort,
                 setSelectedSort,
+                visibleTracks,
+                setVisibleTracks,
             }}
         >
             {props.children}

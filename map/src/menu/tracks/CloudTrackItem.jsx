@@ -102,11 +102,15 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
         }
         // Watch out for file.url because this component was called using different data sources.
         // CloudTrackGroup uses ctx.tracksGroups (no-url) but VisibleGroup uses ctx.gpxFiles (url exists)
-        if (file.url || ctx.gpxFiles[file.name]?.url) {
+        if (ctx.gpxFiles[file.name]?.url) {
             // if (file.name !== ctx.selectedGpxFile.name) { ...
             ctx.setUpdateInfoBlock(true);
             ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
             ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoom: true, cloudRedrawWpts: true });
+            if (file.visibleTrack) {
+                file.visibleTrack = false;
+                ctx.mutateGpxFiles((o) => (o[file.name] = file));
+            }
         } else {
             setProgressVisible(true);
             const URL = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
@@ -127,8 +131,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
             if (!track) {
                 setError('Something went wrong!');
             } else if (isEmptyTrack(track) === false) {
-                const type = OBJECT_TYPE_CLOUD_TRACK;
-                ctx.setCurrentObjectType(type);
+                ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
 
                 track.name = file.name;
                 Object.keys(track).forEach((t) => {
@@ -176,27 +179,27 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                                 {wptPoints && ` · ${wptPoints}`}
                             </Typography>
                         </ListItemText>
-                        {visible ? (
+                        <IconButton
+                            id={`se-actions-${trackName}`}
+                            className={styles.sortIcon}
+                            onMouseEnter={() => setHoverIconInfo(true)}
+                            onMouseLeave={() => setHoverIconInfo(false)}
+                            onClick={(e) => {
+                                setOpenActions(true);
+                                ctx.setOpenedPopper(anchorEl);
+                                e.stopPropagation();
+                            }}
+                            ref={anchorEl}
+                        >
+                            {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
+                        </IconButton>
+                        {visible && (
                             <Switch
+                                sx={{ ml: -5 }}
                                 onClick={(e) => e.stopPropagation()}
-                                checked={!!ctx.gpxFiles[file.name]?.url}
+                                checked={ctx.gpxFiles[file.name]?.url ? !file.visibleTrack : false}
                                 onChange={(e) => !file.local && setDisplayTrack(e.target.checked)}
                             />
-                        ) : (
-                            <IconButton
-                                id={`se-actions-${trackName}`}
-                                className={styles.sortIcon}
-                                onMouseEnter={() => setHoverIconInfo(true)}
-                                onMouseLeave={() => setHoverIconInfo(false)}
-                                onClick={(e) => {
-                                    setOpenActions(true);
-                                    ctx.setOpenedPopper(anchorEl);
-                                    e.stopPropagation();
-                                }}
-                                ref={anchorEl}
-                            >
-                                {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
-                            </IconButton>
                         )}
                     </MenuItem>
                 </Tooltip>

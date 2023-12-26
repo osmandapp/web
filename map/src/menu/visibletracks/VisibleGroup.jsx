@@ -1,10 +1,10 @@
 import { Box, Button, Collapse, IconButton, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
-import { useRef, useContext, useEffect, useState, useMemo } from 'react';
-import CloudTrackItem from './CloudTrackItem';
+import { useRef, useContext, useState, useMemo } from 'react';
+import CloudTrackItem from '../tracks/CloudTrackItem';
 import { makeStyles } from '@material-ui/core/styles';
-import LocalTrackItem from './LocalTrackItem';
-import PopperMenu from './PopperMenu';
+import LocalTrackItem from '../tracks/LocalTrackItem';
+import PopperMenu from '../tracks/PopperMenu';
 import AppContext from '../../context/AppContext';
 import TracksManager from '../../manager/track/TracksManager';
 import CloudOutlinedIcon from '@mui/icons-material/CloudOutlined';
@@ -96,36 +96,6 @@ export default function VisibleGroup({ visibleTracks, setVisibleTracks }) {
 
         localStorage.removeItem(TracksManager.TRACK_VISIBLE_FLAG); // clear saved list finally
     }
-
-    useEffect(() => {
-        let savedVisible = localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG);
-        if (savedVisible) {
-            localStorage.removeItem(TracksManager.TRACK_VISIBLE_FLAG);
-        }
-        let localNames = [];
-        let cloudNames = [];
-        visibleTracks.local.forEach((f) => {
-            if (f.selected) {
-                localNames.push({
-                    name: f.name,
-                    addTime: Date.now(),
-                });
-            }
-        });
-        visibleTracks.cloud.forEach((f) => {
-            if (f.url) {
-                cloudNames.push(f.name);
-            }
-        });
-
-        localStorage.setItem(
-            TracksManager.TRACK_VISIBLE_FLAG,
-            JSON.stringify({
-                local: localNames,
-                cloud: cloudNames,
-            })
-        );
-    }, [visibleTracks]);
 
     const localItems = useMemo(
         () =>

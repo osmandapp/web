@@ -124,7 +124,7 @@ const CloudTrackLayer = () => {
         let processed = 0;
         const newGpxFiles = { ...ctx.gpxFiles } ?? {};
         Object.values(newGpxFiles).forEach((file) => {
-            if (file.url && !file.gpx) {
+            if (file.url && !file.gpx && !file.addFromVisibleTracks) {
                 processed++;
                 file.gpx = addTrackToMap({ ctx, file, map });
                 if (file.name === ctxTrack.name) {

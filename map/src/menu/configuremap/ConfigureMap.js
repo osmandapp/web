@@ -27,7 +27,7 @@ import { cloneDeep } from 'lodash';
 import EmptyLogin from '../errors/EmptyLogin';
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 
-export default function ConfigureMap() {
+export default function ConfigureMap({ setOpenVisibleMenu }) {
     const ctx = useContext(AppContext);
     const [openSettings, setOpenSettings] = useState(false);
 
@@ -52,8 +52,6 @@ export default function ConfigureMap() {
 
         return res.join(' ');
     }
-
-    function openVisibleTracks() {}
 
     return (
         <>
@@ -118,7 +116,7 @@ export default function ConfigureMap() {
                                 </ListItemText>
                             </MenuItem>
                             <Divider className={styles.dividerItem} />
-                            <MenuItem divider className={styles.item} onClick={openVisibleTracks}>
+                            <MenuItem divider className={styles.item} onClick={() => setOpenVisibleMenu(true)}>
                                 <ListItemIcon className={styles.iconEnabled}>
                                     <TracksIcon />
                                 </ListItemIcon>
