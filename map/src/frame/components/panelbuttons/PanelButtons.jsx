@@ -19,7 +19,7 @@ import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import { downloadGpx } from '../../../infoblock/components/tabs/GeneralInfoTab';
 import RouteIcon from '@mui/icons-material/Route';
 import { FREE_ACCOUNT } from '../../../manager/LoginManager';
-import RouteProfileSettingsDialog from '../../../dialogs/RouteProfileSettingsDialog';
+import RouteProfileSettings from '../../../menu/route/RouteProfileSettings';
 
 const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clearState, bsize }) => {
     const ctx = useContext(AppContext);
@@ -308,7 +308,7 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
                     <DeleteFavoriteDialog dialogOpen={openDeleteDialog} setDialogOpen={setOpenDeleteDialog} />
                 )}
                 {openRoutingSettings && (
-                    <RouteProfileSettingsDialog
+                    <RouteProfileSettings
                         useDev={true}
                         key="routesettingsdialog"
                         setOpenSettings={setOpenRoutingSettings}

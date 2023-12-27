@@ -11,7 +11,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { makeStyles } from '@material-ui/core/styles';
 import TrackLayerProvider from '../../map/util/TrackLayerProvider';
 import TracksRoutingCache from '../../context/TracksRoutingCache';
-import RouteProfileSettingsDialog from '../RouteProfileSettingsDialog';
+import RouteProfileSettings from '../../menu/route/RouteProfileSettings';
 import { Settings } from '@mui/icons-material';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 
@@ -245,7 +245,7 @@ export default function ChangeProfileTrackDialog({ open }) {
     return (
         <>
             {openSettings && (
-                <RouteProfileSettingsDialog
+                <RouteProfileSettings
                     key="trackroutesettingsdialog"
                     geoRouter={geoRouter}
                     setOpenSettings={setOpenSettings}
