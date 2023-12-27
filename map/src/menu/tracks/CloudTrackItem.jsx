@@ -169,7 +169,12 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
         const trackName = TracksManager.getFileName(file);
         return (
             <>
-                <Tooltip title={info} arrow placement={mobile ? 'bottom' : 'right'} disableInteractive>
+                <Tooltip
+                    title={visible ? '' : info}
+                    arrow
+                    placement={mobile ? 'bottom' : 'right'}
+                    disableInteractive={visible}
+                >
                     <MenuItem
                         className={styles.item}
                         id={'se-cloud-track-' + trackName}
