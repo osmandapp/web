@@ -46,8 +46,10 @@ export default function TracksMenu({ setOpenVisibleMenu }) {
     const defaultGroupItems = useMemo(() => {
         if (defaultGroup) {
             const items = [];
-            (sortFiles.length > 0 ? sortFiles : defaultGroup.groupFiles).map((file) => {
-                items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} />);
+            const listTracks = sortFiles.length > 0 ? sortFiles : defaultGroup.groupFiles;
+            listTracks.map((file, index) => {
+                const isLastItem = !isEmpty(listTracks) ? index === listTracks.length - 1 : false;
+                items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} isLastItem={isLastItem} />);
             });
             return items;
         }

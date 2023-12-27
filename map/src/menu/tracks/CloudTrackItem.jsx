@@ -29,7 +29,7 @@ import { deleteTrackFromMap } from '../../manager/track/DeleteTrackManager';
 const DEFAULT_DIST = 0;
 const DEFAULT_TIME = '0:00';
 
-export default function CloudTrackItem({ file, customIcon = null, visible = null }) {
+export default function CloudTrackItem({ file, customIcon = null, visible = null, isLastItem }) {
     const ctx = useContext(AppContext);
 
     const [, , mobile] = useWindowSize();
@@ -39,6 +39,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const [showTrack, setShowTrack] = useState(false);
     const [openActions, setOpenActions] = useState(false);
+    const [showMenu, setShowMenu] = useState(false);
     const anchorEl = useRef(null);
 
     const info = useMemo(() => <TrackInfo file={file} />, [file]);
@@ -148,6 +149,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
     useEffect(() => {
         if (ctx.openedPopper && ctx.openedPopper !== anchorEl) {
             setOpenActions(false);
+            setShowMenu(false);
         }
     }, [ctx.openedPopper]);
 
@@ -172,6 +174,12 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                         className={styles.item}
                         id={'se-cloud-track-' + trackName}
                         onClick={() => setDisplayTrack(true)}
+                        onMouseEnter={() => setShowMenu(true)}
+                        onMouseLeave={() => {
+                            if (!ctx.openedPopper?.current) {
+                                setShowMenu(false);
+                            }
+                        }}
                     >
                         <ListItemIcon className={setIconStyles()}>
                             <TrackIcon />
@@ -188,6 +196,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                         <Tooltip key={'action_menu_track'} title={'Menu'} arrow placement="bottom-end">
                             <IconButton
                                 id={`se-actions-${trackName}`}
+                                style={{ display: showMenu ? 'block' : 'none' }}
                                 className={styles.sortIcon}
                                 onMouseEnter={() => setHoverIconInfo(true)}
                                 onMouseLeave={() => setHoverIconInfo(false)}
@@ -211,11 +220,12 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                         )}
                     </MenuItem>
                 </Tooltip>
-                <Divider className={styles.dividerItem} />
+                {!isLastItem && <Divider className={styles.dividerItem} />}
                 <ActionsMenu
                     open={openActions}
                     setOpen={setOpenActions}
                     anchorEl={anchorEl}
+                    setShowMenu={setShowMenu}
                     actions={<TrackActions track={file} setShowTrack={setShowTrack} setOpenActions={setOpenActions} />}
                 />
                 {loadingTrack ? <LinearProgress /> : <></>}
@@ -237,5 +247,6 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
         hoverIconInfo,
         openActions,
         ctx.openedPopper,
+        showMenu,
     ]);
 }

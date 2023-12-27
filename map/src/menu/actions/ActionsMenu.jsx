@@ -1,7 +1,10 @@
 import { ClickAwayListener, Popover } from '@mui/material';
-import React from 'react';
+import React, { useContext } from 'react';
+import AppContext from '../../context/AppContext';
 
-export default function ActionsMenu({ open, setOpen, anchorEl, actions = null }) {
+export default function ActionsMenu({ open, setOpen, anchorEl, setShowMenu = null, actions = null }) {
+    const ctx = useContext(AppContext);
+
     return (
         actions && (
             <Popover
@@ -18,7 +21,17 @@ export default function ActionsMenu({ open, setOpen, anchorEl, actions = null })
                 anchorEl={anchorEl.current}
                 disablePortal={true}
             >
-                <ClickAwayListener onClickAway={() => setOpen(false)}>{actions}</ClickAwayListener>
+                <ClickAwayListener
+                    onClickAway={() => {
+                        setOpen(false);
+                        if (setShowMenu) {
+                            setShowMenu(false);
+                        }
+                        ctx.setOpenedPopper(null);
+                    }}
+                >
+                    {actions}
+                </ClickAwayListener>
             </Popover>
         )
     );

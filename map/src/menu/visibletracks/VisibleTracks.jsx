@@ -26,9 +26,17 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null }
 
     const trackItems = useMemo(() => {
         const items = [];
-        ctx.visibleTracks?.new.map((file) => {
+        ctx.visibleTracks?.new.map((file, index) => {
+            const isLastItem = !isEmpty(ctx.visibleTracks?.new) ? index === ctx.visibleTracks?.new.length - 1 : false;
             if (file.filesize !== 0) {
-                items.push(<CloudTrackItem key={'visible-cloudtrack-' + file.name} file={file} visible={true} />);
+                items.push(
+                    <CloudTrackItem
+                        key={'visible-cloudtrack-' + file.name}
+                        file={file}
+                        visible={true}
+                        isLastItem={isLastItem}
+                    />
+                );
             }
         });
         return items;
@@ -36,9 +44,17 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null }
 
     const trackItemsOld = useMemo(() => {
         const items = [];
-        ctx.visibleTracks?.old.map((file) => {
+        ctx.visibleTracks?.old.map((file, index) => {
+            const isLastItem = !isEmpty(ctx.visibleTracks?.old) ? index === ctx.visibleTracks?.old.length - 1 : false;
             if (file.filesize !== 0) {
-                items.push(<CloudTrackItem key={'visible-cloudtrack-' + file.name} file={file} visible={true} />);
+                items.push(
+                    <CloudTrackItem
+                        key={'visible-cloudtrack-' + file.name}
+                        file={file}
+                        visible={true}
+                        isLastItem={isLastItem}
+                    />
+                );
             }
         });
         return items;

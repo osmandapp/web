@@ -8,6 +8,7 @@ import styles from '../trackfavmenu.module.css';
 import GroupActions from '../actions/GroupActions';
 import ActionsMenu from '../actions/ActionsMenu';
 import MenuItemsTitle from '../components/MenuItemsTitle';
+import { Tooltip } from '@mui/material/';
 
 export default function CloudTrackGroup({ index, group }) {
     const ctx = useContext(AppContext);
@@ -15,11 +16,13 @@ export default function CloudTrackGroup({ index, group }) {
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const [openActions, setOpenActions] = useState(false);
     const [processDownload, setProcessDownload] = useState(false);
+    const [showMenu, setShowMenu] = useState(false);
     const anchorEl = useRef(null);
 
     useEffect(() => {
         if (ctx.openedPopper && ctx.openedPopper !== anchorEl) {
             setOpenActions(false);
+            setShowMenu(false);
         }
     }, [ctx.openedPopper]);
 
@@ -34,6 +37,12 @@ export default function CloudTrackGroup({ index, group }) {
                         ctx.setOpenGroups((prevState) => [...prevState, group]);
                     }
                 }}
+                onMouseEnter={() => setShowMenu(true)}
+                onMouseLeave={() => {
+                    if (!ctx.openedPopper?.current) {
+                        setShowMenu(false);
+                    }
+                }}
             >
                 <ListItemIcon className={styles.icon}>
                     <FolderIcon />
@@ -44,32 +53,36 @@ export default function CloudTrackGroup({ index, group }) {
                         {`${group.lastModifiedData.split(',')[0]}, tracks ${group.realSize}`}
                     </Typography>
                 </ListItemText>
-                <IconButton
-                    className={styles.sortIcon}
-                    id={`se-folder-actions-button-${group.name}`}
-                    onMouseEnter={() => setHoverIconInfo(true)}
-                    onMouseLeave={() => setHoverIconInfo(false)}
-                    onClick={(e) => {
-                        setOpenActions(true);
-                        ctx.setOpenedPopper(anchorEl);
-                        e.stopPropagation();
-                    }}
-                    ref={anchorEl}
-                >
-                    {processDownload ? (
-                        <CircularProgress size={24} />
-                    ) : hoverIconInfo ? (
-                        <MenuIconHover />
-                    ) : (
-                        <MenuIcon />
-                    )}
-                </IconButton>
+                <Tooltip key={'action_menu_group'} title={'Menu'} arrow placement="bottom-end">
+                    <IconButton
+                        id={`se-folder-actions-button-${group.name}`}
+                        style={{ display: showMenu ? 'block' : 'none' }}
+                        className={styles.sortIcon}
+                        onMouseEnter={() => setHoverIconInfo(true)}
+                        onMouseLeave={() => setHoverIconInfo(false)}
+                        onClick={(e) => {
+                            setOpenActions(true);
+                            ctx.setOpenedPopper(anchorEl);
+                            e.stopPropagation();
+                        }}
+                        ref={anchorEl}
+                    >
+                        {processDownload ? (
+                            <CircularProgress size={24} />
+                        ) : hoverIconInfo ? (
+                            <MenuIconHover />
+                        ) : (
+                            <MenuIcon />
+                        )}
+                    </IconButton>
+                </Tooltip>
             </MenuItem>
             <Divider className={styles.dividerItem} />
             <ActionsMenu
                 open={openActions}
                 setOpen={setOpenActions}
                 anchorEl={anchorEl}
+                setShowMenu={setShowMenu}
                 actions={
                     <GroupActions
                         group={group}
