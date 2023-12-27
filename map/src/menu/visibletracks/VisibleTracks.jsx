@@ -13,6 +13,12 @@ import Empty from '../errors/Empty';
 import { Button } from '@mui/material/';
 import { deleteTracksFromMap } from '../../manager/track/DeleteTrackManager';
 
+export function getCountVisibleTracks(visibleTracks) {
+    const oldSize = visibleTracks?.old?.length || 0;
+    const newSize = visibleTracks?.new?.length || 0;
+    return oldSize + newSize;
+}
+
 export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null }) {
     const ctx = useContext(AppContext);
 

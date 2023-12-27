@@ -90,7 +90,7 @@ export default function MainMenu({
         {
             name: 'Tracks',
             icon: TracksIcon,
-            component: <TracksMenu />,
+            component: <TracksMenu setOpenVisibleMenu={setOpenVisibleMenu} />,
             type: OBJECT_TYPE_CLOUD_TRACK,
             show: true,
             id: 'se-show-menu-tracks',

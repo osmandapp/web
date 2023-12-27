@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect, useMemo } from 'react';
 import AppContext from '../../context/AppContext';
 import CloudTrackGroup from './CloudTrackGroup';
 import { isEmpty } from 'lodash';
-import { Box } from '@mui/material';
+import { Box, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import CloudTrackItem from './CloudTrackItem';
 import { DEFAULT_GROUP_NAME, updateLoadingTracks } from '../../manager/track/TracksManager';
@@ -11,8 +11,11 @@ import Loading from '../errors/Loading';
 import GroupHeader from '../actions/GroupHeader';
 import TrackLoading from './TrackLoading';
 import { doSort } from '../actions/SortActions';
+import styles from '../trackfavmenu.module.css';
+import { ReactComponent as VisibleIcon } from '../../assets/icons/ic_show_on_map.svg';
+import { getCountVisibleTracks } from '../visibletracks/VisibleTracks';
 
-export default function TracksMenu() {
+export default function TracksMenu({ setOpenVisibleMenu }) {
     const ctx = useContext(AppContext);
 
     const [defaultGroup, setDefaultGroup] = useState(null);
@@ -76,6 +79,19 @@ export default function TracksMenu() {
                                 maxHeight: `${height - 120}px`,
                             }}
                         >
+                            <MenuItem divider className={styles.item} onClick={() => setOpenVisibleMenu(true)}>
+                                <ListItemIcon className={styles.icon}>
+                                    <VisibleIcon />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    <Typography variant="inherit" className={styles.groupName}>
+                                        Visible on map
+                                    </Typography>
+                                    <Typography variant="body2" className={styles.groupInfo} noWrap>
+                                        {`Tracks ${getCountVisibleTracks(ctx.visibleTracks)}`}
+                                    </Typography>
+                                </ListItemText>
+                            </MenuItem>
                             {ctx.tracksGroups &&
                                 (sortGroups.length > 0 ? sortGroups : ctx.tracksGroups)
                                     .filter((g) => g.name !== DEFAULT_GROUP_NAME)
