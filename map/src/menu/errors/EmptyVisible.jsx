@@ -6,12 +6,12 @@ import AppContext from '../../context/AppContext';
 import { ReactComponent as EmptyIcon } from '../../assets/icons/ic_action_track_disabled.svg';
 import TracksMenu from '../tracks/TracksMenu';
 
-export default function EmptyVisible({ setMenuInfo }) {
+export default function EmptyVisible({ setMenuInfo, setOpenVisibleMenu }) {
     const ctx = useContext(AppContext);
 
     function showAllTracks() {
         if (setMenuInfo) {
-            setMenuInfo(<TracksMenu />);
+            setMenuInfo(<TracksMenu setOpenVisibleMenu={setOpenVisibleMenu} />);
         }
     }
 
@@ -27,7 +27,7 @@ export default function EmptyVisible({ setMenuInfo }) {
                             No tracks on map
                         </ListItemText>
                         <ListItemText disableTypography={true} className={styles.text}>
-                            {`Select tracks you won't to make visible on the map.`}
+                            {`Select tracks to display them on the map.`}
                         </ListItemText>
                     </Box>
                     <Button className={styles.button} component="span" onClick={showAllTracks}>

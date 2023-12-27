@@ -91,11 +91,22 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
     let selectedFiles = [];
     if (savedVisible?.new) {
         savedVisible.new.forEach((name) => {
-            files.forEach((f) => {
-                if (f.name === name) {
-                    selectedFiles.push(_.indexOf(files, f));
+            const matchingFile = files.find((f) => f.name === name);
+            if (matchingFile) {
+                if (savedVisible.open && savedVisible.open.includes(name)) {
+                    selectedFiles.push(_.indexOf(files, matchingFile));
                 }
-            });
+            }
+        });
+    }
+    if (savedVisible?.old) {
+        savedVisible.old.forEach((name) => {
+            const matchingFile = files.find((f) => f.name === name);
+            if (matchingFile) {
+                if (savedVisible.open && savedVisible.open.includes(name)) {
+                    selectedFiles.push(_.indexOf(files, matchingFile));
+                }
+            }
         });
     }
 

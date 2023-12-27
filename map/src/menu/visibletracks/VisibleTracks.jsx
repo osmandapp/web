@@ -8,7 +8,7 @@ import CloudTrackItem from '../tracks/CloudTrackItem';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import EmptyVisible from '../errors/EmptyVisible';
 import { isEmpty } from 'lodash';
-import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
+import TracksManager, { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 import Empty from '../errors/Empty';
 import { Button } from '@mui/material/';
 import { deleteTracksFromMap } from '../../manager/track/DeleteTrackManager';
@@ -19,6 +19,22 @@ export function getCountVisibleTracks(visibleTracks) {
     return oldSize + newSize;
 }
 
+export function updateVisibleCache(visible, file) {
+    let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
+    if (savedVisible && !savedVisible.open) {
+        savedVisible.open = [];
+    }
+    if (visible) {
+        savedVisible.open.push(file.name);
+    } else {
+        const ind = savedVisible.open.findIndex((n) => n === file.name);
+        if (ind !== -1) {
+            savedVisible.open.splice(ind, 1);
+        }
+    }
+    localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(savedVisible));
+}
+
 export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null }) {
     const ctx = useContext(AppContext);
 
@@ -26,7 +42,7 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null }
 
     const trackItems = useMemo(() => {
         const items = [];
-        ctx.visibleTracks?.new.map((file, index) => {
+        ctx.visibleTracks?.new?.map((file, index) => {
             const isLastItem = !isEmpty(ctx.visibleTracks?.new) ? index === ctx.visibleTracks?.new.length - 1 : false;
             if (file.filesize !== 0) {
                 items.push(
@@ -104,43 +120,34 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null }
     return (
         <>
             <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+                <AppBar position="static" className={headerStyles.appbar}>
+                    <Toolbar className={headerStyles.toolbar}>
+                        <IconButton
+                            variant="contained"
+                            type="button"
+                            className={headerStyles.appBarIcon}
+                            onClick={() => setOpenVisibleMenu(false)}
+                        >
+                            <CloseIcon />
+                        </IconButton>
+                        <Typography id="se-visible-cloud-track-name" component="div" className={headerStyles.title}>
+                            Tracks
+                        </Typography>
+                        <Tooltip key={'hide_all_tracks'} title={'Hide all visible tracks'} arrow placement="bottom-end">
+                            <span>
+                                <Button
+                                    className={visibleStyles.button}
+                                    onClick={hideAllTracks}
+                                    disabled={allVisibleTracksHidden()}
+                                >
+                                    Hide all
+                                </Button>
+                            </span>
+                        </Tooltip>
+                    </Toolbar>
+                </AppBar>
                 {hasVisibleTracks() && (
                     <>
-                        <AppBar position="static" className={headerStyles.appbar}>
-                            <Toolbar className={headerStyles.toolbar}>
-                                <IconButton
-                                    variant="contained"
-                                    type="button"
-                                    className={headerStyles.appBarIcon}
-                                    onClick={() => setOpenVisibleMenu(false)}
-                                >
-                                    <CloseIcon />
-                                </IconButton>
-                                <Typography
-                                    id="se-visible-cloud-track-name"
-                                    component="div"
-                                    className={headerStyles.title}
-                                >
-                                    Tracks
-                                </Typography>
-                                <Tooltip
-                                    key={'hide_all_tracks'}
-                                    title={'Hide all visible tracks'}
-                                    arrow
-                                    placement="bottom-end"
-                                >
-                                    <span>
-                                        <Button
-                                            className={visibleStyles.button}
-                                            onClick={hideAllTracks}
-                                            disabled={allVisibleTracksHidden()}
-                                        >
-                                            Hide all
-                                        </Button>
-                                    </span>
-                                </Tooltip>
-                            </Toolbar>
-                        </AppBar>
                         <Box
                             minWidth={ctx.infoBlockWidth}
                             maxWidth={ctx.infoBlockWidth}
@@ -170,7 +177,9 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null }
                         )}
                     </>
                 )}
-                {!hasVisibleTracks() && hasTracks() && <EmptyVisible setMenuInfo={setMenuInfo} />}
+                {!hasVisibleTracks() && hasTracks() && (
+                    <EmptyVisible setMenuInfo={setMenuInfo} setOpenVisibleMenu={setOpenVisibleMenu} />
+                )}
                 {!hasVisibleTracks() && !hasTracks() && (
                     <Empty
                         title={'You don’t have track files'}

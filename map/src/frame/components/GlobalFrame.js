@@ -72,6 +72,7 @@ const GlobalFrame = () => {
             let newVisFilesNames = {
                 old: savedVisible ? savedVisible.old : [],
                 new: [],
+                open: savedVisible ? savedVisible.open : [],
             };
 
             Object.values(ctx.gpxFiles).forEach((f) => {

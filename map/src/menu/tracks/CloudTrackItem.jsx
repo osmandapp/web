@@ -25,6 +25,7 @@ import TrackActions from '../actions/TrackActions';
 import ActionsMenu from '../actions/ActionsMenu';
 import MenuItemsTitle from '../components/MenuItemsTitle';
 import { deleteTrackFromMap } from '../../manager/track/DeleteTrackManager';
+import { updateVisibleCache } from '../visibletracks/VisibleTracks';
 
 const DEFAULT_DIST = 0;
 const DEFAULT_TIME = '0:00';
@@ -66,11 +67,12 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
     }
 
     async function processDisplayTrack({ visible, setLoading }) {
+        updateVisibleCache(visible, file);
         if (!visible) {
             deleteTrackFromMap(ctx, file);
             setLoading(false);
         } else {
-            await addTrackToMap(setLoading);
+            await addTrackToMap(setLoading, visible);
         }
     }
 
@@ -82,10 +84,10 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
     }, [displayTrack]);
 
     useEffect(() => {
-        showTrack && addTrackToMap(setLoadingTrack);
+        showTrack && addTrackToMap(setLoadingTrack, visible);
     }, [showTrack]);
 
-    async function addTrackToMap(setProgressVisible) {
+    async function addTrackToMap(setProgressVisible, visible = false) {
         // cleanup edited localTrack
         if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
             ctx.setCreateTrack({
@@ -99,9 +101,11 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
         // CloudTrackGroup uses ctx.tracksGroups (no-url) but VisibleGroup uses ctx.gpxFiles (url exists)
         if (ctx.gpxFiles[file.name]?.url) {
             // if (file.name !== ctx.selectedGpxFile.name) { ...
-            ctx.setUpdateInfoBlock(true);
-            ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
-            ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoom: true, cloudRedrawWpts: true });
+            if (!visible) {
+                ctx.setUpdateInfoBlock(true);
+                ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
+                ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoom: true, cloudRedrawWpts: true });
+            }
             if (file.addFromVisibleTracks) {
                 file.addFromVisibleTracks = false;
                 ctx.mutateGpxFiles((o) => (o[file.name] = file));
@@ -135,9 +139,10 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                 oneGpxFile.analysis = TracksManager.prepareAnalysis(oneGpxFile.analysis);
 
                 ctx.mutateGpxFiles((o) => (o[file.name] = oneGpxFile));
-                ctx.setSelectedGpxFile(Object.assign({}, oneGpxFile));
-
-                ctx.setUpdateInfoBlock(true);
+                if (!visible) {
+                    ctx.setSelectedGpxFile(Object.assign({}, oneGpxFile));
+                    ctx.setUpdateInfoBlock(true);
+                }
 
                 setError('');
             } else {
@@ -163,6 +168,10 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
             res.push(styles.icon);
         }
         return res.join(' ');
+    }
+
+    function checkedSwitch() {
+        return ctx.gpxFiles[file.name]?.url ? !file.addFromVisibleTracks : false;
     }
 
     return useMemo(() => {
@@ -219,7 +228,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                             <Switch
                                 sx={{ ml: '-25px' }}
                                 onClick={(e) => e.stopPropagation()}
-                                checked={ctx.gpxFiles[file.name]?.url ? !file.addFromVisibleTracks : false}
+                                checked={checkedSwitch()}
                                 onChange={(e) => !file.local && setDisplayTrack(e.target.checked)}
                             />
                         )}
