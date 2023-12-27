@@ -131,7 +131,7 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
             TracksManager.getTrackData(gpxfile).then((track) => {
                 track.name = file.name;
                 // add flag to not add layer to the map
-                track.addFromVisibleTracks = true;
+                track.avoidAddingToMap = true;
                 Object.keys(track).forEach((t) => {
                     newGpxFiles[file.name][`${t}`] = track[t];
                 });

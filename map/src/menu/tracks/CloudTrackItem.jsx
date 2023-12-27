@@ -90,7 +90,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
         showTrack && addTrackToMap(setLoadingTrack, visible);
     }, [showTrack]);
 
-    async function addTrackToMap(setProgressVisible, visible = false) {
+    async function addTrackToMap(setProgressVisible, fromVisibleTracks = false) {
         // cleanup edited localTrack
         if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
             ctx.setCreateTrack({
@@ -104,13 +104,13 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
         // CloudTrackGroup uses ctx.tracksGroups (no-url) but VisibleGroup uses ctx.gpxFiles (url exists)
         if (ctx.gpxFiles[file.name]?.url) {
             // if (file.name !== ctx.selectedGpxFile.name) { ...
-            if (!visible || isClickOnItem) {
+            if (!fromVisibleTracks || isClickOnItem) {
                 ctx.setUpdateInfoBlock(true);
                 ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
                 ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoom: true, cloudRedrawWpts: true });
             }
-            if (file.addFromVisibleTracks) {
-                file.addFromVisibleTracks = false;
+            if (file.avoidAddingToMap) {
+                file.avoidAddingToMap = false;
                 ctx.mutateGpxFiles((o) => (o[file.name] = file));
             }
         } else {
@@ -140,7 +140,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                 oneGpxFile.analysis = TracksManager.prepareAnalysis(oneGpxFile.analysis);
 
                 ctx.mutateGpxFiles((o) => (o[file.name] = oneGpxFile));
-                if (!visible || isClickOnItem) {
+                if (!fromVisibleTracks || isClickOnItem) {
                     ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
                     ctx.setSelectedGpxFile(Object.assign({}, oneGpxFile));
                     ctx.setUpdateInfoBlock(true);
@@ -163,7 +163,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
         let res = [];
         if (!visible) {
             res.push(styles.icon);
-        } else if (ctx.gpxFiles[file.name]?.url && !file.addFromVisibleTracks) {
+        } else if (ctx.gpxFiles[file.name]?.url && !file.avoidAddingToMap) {
             res.push(styles.visibleIcon);
         } else {
             res.push(styles.icon);
@@ -172,7 +172,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
     }
 
     function getCheckedSwitch() {
-        return ctx.gpxFiles[file.name]?.url ? !file.addFromVisibleTracks : false;
+        return ctx.gpxFiles[file.name]?.url ? !file.avoidAddingToMap : false;
     }
 
     return useMemo(() => {

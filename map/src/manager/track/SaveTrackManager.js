@@ -210,7 +210,7 @@ export async function updateGpxFiles(oldName, newFileName, listFiles, ctx) {
                     });
                     TracksManager.getTrackData(gpxfile).then((track) => {
                         track.name = file.name;
-                        track.addFromVisibleTracks = true;
+                        track.avoidAddingToMap = true;
                         Object.keys(track).forEach((t) => {
                             newGpxFiles[file.name][`${t}`] = track[t];
                         });
