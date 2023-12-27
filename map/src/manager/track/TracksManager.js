@@ -446,7 +446,7 @@ export async function getGpxFileFromTrackData(file) {
 
 function prepareTrackData({ file, getAnalysis = false }) {
     // add updated points to track
-    if (file.points) {
+    if (file.points && file.tracks && file.tracks[0]) {
         file.tracks[0].points = file.points;
     }
 
@@ -866,7 +866,7 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     const wpts = cloneFile.wpts;
     const pointsGroups = cloneFile.pointsGroups;
 
-    if (points) {
+    if (points && cloneFile.tracks && cloneFile.tracks[0]) {
         cloneFile.tracks[0].points = points;
     }
 
