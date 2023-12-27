@@ -158,12 +158,6 @@ For the *Show along the route* setting, it is recommended to use [Voice prompts]
 
 ## Route line appearance
 
-The Customize route line setting allows you to adjust the appearance of the route line to account for different changes. These can be changes in elevation while driving, significant uphill or downhill ahead, ice on the road, unpaved roads, highways, and other possible obstacles. You can change all of these parameters by style or manually select the color and transparency of the line in the items in this setting. In addition, the setting provides the opportunity to change the width of the route line and the angle display on the turns.  
-
-:::note
- <ProFeature/> Some parameters you can use only with <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribtion</a>.
-:::
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -184,10 +178,17 @@ The Customize route line setting allows you to adjust the appearance of the rout
 
 </Tabs>  
 
+The Customize route line setting allows you to adjust the appearance of the route line to account for different changes. These can be changes in elevation while driving, significant uphill or downhill ahead, ice on the road, unpaved roads, highways, and other possible obstacles. You can change all of these parameters by style or manually select the color and transparency of the line in the items in this setting. In addition, the setting provides the opportunity to change the width of the route line and the angle display on the turns.  
+
+:::note
+ <ProFeature/> Some parameters you can use only with <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribtion</a>.
+:::
+
 
 ### Color
 
-Changes the shades of the colors of the route lines, and their overall coloring changes depending on the selected type from the suggested OsmAnd, according to the Map Legend, or becomes the color and transparency that you set manually.    
+Changes the color tones of the route lines, with their overall coloration changing according to the type you choose from the types offered by OsmAnd, according to the **Map Legend**, or becoming the color and transparency you set manually.
+ 
 
 <Tabs groupId="operating-systems">
 
@@ -202,18 +203,18 @@ Changes the shades of the colors of the route lines, and their overall coloring 
 | *<Translate android="true" id="altitude"/>* – It shows the height on the route point as **green**-**yellow**-**red** gradient. Where **green** represents lowest point of the route, **yellow** - median height points and **red** the highest points. If the route altitude difference is < 100 m, gradient is applied partially or not applied i.e. for a simple uphill route from 100 m to 150 m - the gradient will be **green**-**yellow**. Please note that the color doesn't represent the absolute height value.    |  
 ![Altitude](@site/static/img/navigation/route/Altitude_rl.png) |
 |*<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>* – The route line will be colored in different colors depending on the elevation profile of the route. A detailed description is in the article on the Topography plugin, section [Slope](../../plugins/contour-lines.md#slope). |
-![Altitude](@site/static/img/navigation/route/Slope.png)  |
-|*<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_roadClass_name"/>"* – Colour the route or the track line according to the road classification. [Road style](../../map/vector-maps.md#road-style)|
+![Altitude](@site/static/img/navigation/route/Slope.png)   ![Altitude](@site/static/img/navigation/route/Slope2.png)  |
+|*<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_roadClass_name"/>* – Colour the route or the track line according to the road classification. [Road style](../../map/vector-maps.md#road-style)|
 ![Altitude](@site/static/img/navigation/route/Roud_type.png)  |
-|*<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_surface_name" />"* – Provides information about the physical surface of the road/footpath. [Surface](../../map-legend/osmand.md#surface-smoothness)|
+|*<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_surface_name" />* – Provides information about the physical surface of the road/footpath. [Surface](../../map-legend/osmand.md#surface-smoothness)|
 ![Altitude](@site/static/img/navigation/route/Surface.png)  |
-| *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_smoothness_name"/>"* – Classification of maneuverability of roads/footpaths for wheeled vehicles, particularly with regard to surface regularity/flatness. [Smoothness](../../map-legend/osmand.md#surface-smoothness)|
+| *<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>* – Classification of maneuverability of roads/footpaths for wheeled vehicles, particularly with regard to surface regularity/flatness. [Smoothness](../../map-legend/osmand.md#surface-smoothness)|
 ![Altitude](@site/static/img/navigation/route/Smoothness.png)  |
-| *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_winter_ice_road_name" />"* – Colouring the route or track line according to the winter road classification. [Winter and ice roads](../../map/vector-maps.md#winter-and-ski)|
+| *<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />* – Colouring the route or track line according to the winter road classification. [Winter and ice roads](../../map/vector-maps.md#winter-and-ski)|
 ![Altitude](@site/static/img/navigation/route/Winter.png)  |
-| *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_tracktype_name" />"* – Colouring the route or track line by surface composition. Typically used when the road network is largely unpaved. [Surface firmness](../../map-legend/osmand.md#surface-smoothness)| 
+| *<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />* – Colouring the route or track line by surface composition. Typically used when the road network is largely unpaved. [Surface firmness](../../map-legend/osmand.md#surface-smoothness)| 
 ![Altitude](@site/static/img/navigation/route/firmness.png)  |
-| *<ProFeature/> &nbsp;"Difficulty of horse trails"* – Render paths according to difficulty of horse trails.  |
+| *<ProFeature/> &nbsp;Difficulty of horse trails* – Render paths according to difficulty of horse trails.  |
 ![Altitude](@site/static/img/navigation/route/firmness.png)  |  
 
 </TabItem>
@@ -222,25 +223,25 @@ Changes the shades of the colors of the route lines, and their overall coloring 
 
 |  |
 |------------|
-|&nbsp;*"<Translate android="true" id="map_widget_renderer"/>"* – Map style is used with default colors. You can see a full description of the colors by clicking here [Map style](../../map/vector-maps.md#default-map-styles) |  
+|&nbsp;*<Translate android="true" id="map_widget_renderer"/>* – Map style is used with default colors. You can see a full description of the colors by clicking here [Map style](../../map/vector-maps.md#default-map-styles) |  
 ![map stule](@site/static/img/navigation/route/map_st_2.png) |
-| &nbsp;*"Custom"* – It allows you to show the line in any preferred color and transparency. You can select different settings for the day map and separately for the night map. |  
+| &nbsp;*Custom* – It allows you to show the line in any preferred color and transparency. You can select different settings for the day map and separately for the night map. |  
 ![custom](@site/static/img/navigation/route/custom_ios.png) |
-| &nbsp;*"<Translate android="true" id="altitude"/>"* –  It shows the height on the route point as **green**-**yellow**-**red** gradient. Where **green** represents lowest point of the route, **yellow* - median height points and **red** the highest points. If the route altitude difference is < 50 m, gradient is not applied i.e. for a simple uphill route from 100 m to 120 m. Please note that the color doesn't represent the absolute height value. |  
+| &nbsp;*<Translate android="true" id="altitude"/>* –  It shows the height on the route point as **green**-**yellow**-**red** gradient. Where **green** represents lowest point of the route, **yellow* - median height points and **red** the highest points. If the route altitude difference is < 50 m, gradient is not applied i.e. for a simple uphill route from 100 m to 120 m. Please note that the color doesn't represent the absolute height value. |  
 ![Altitude](@site/static/img/navigation/route/Altitude_rl.png) |
-|*<ProFeature/> &nbsp;"<Translate android="true" id="shared_string_slope"/>"* – The route line will be colored differently depending on the elevation profile of the route. [Slope](../../plugins/contour-lines.md#slope-map)|
-![Altitude](@site/static/img/navigation/route/Slope.png)  |
-|*<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_roadClass_name"/>"* – Colour the route or the track line according to the road classification. [Road style](../../map/vector-maps.md#road-style)|
+|*<ProFeature/> &nbsp;<Translate android="true" id="shared_string_slope"/>* – The route line will be colored differently depending on the elevation profile of the route. [Slope](../../plugins/contour-lines.md#slope-map)|
+![Altitude](@site/static/img/navigation/route/Slope.png) ![Altitude](@site/static/img/navigation/route/Slope2.png) |
+|*<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_roadClass_name"/>* – Colour the route or the track line according to the road classification. [Road style](../../map/vector-maps.md#road-style)|
 ![Altitude](@site/static/img/navigation/route/Roud_type.png)  |
-|*<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_surface_name" />"* – Provides information about the physical surface of the road/footpath. [Surface](../../map-legend/osmand.md#surface-smoothness)|
+|*<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_surface_name" />* – Provides information about the physical surface of the road/footpath. [Surface](../../map-legend/osmand.md#surface-smoothness)|
 ![Altitude](@site/static/img/navigation/route/Surface.png)  |
-| *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_smoothness_name"/>"* – Classification of maneuverability of roads/footpaths for wheeled vehicles, particularly with regard to surface regularity/flatness. [Smoothness](../../map-legend/osmand.md#surface-smoothness)|
+| *<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>* – Classification of maneuverability of roads/footpaths for wheeled vehicles, particularly with regard to surface regularity/flatness. [Smoothness](../../map-legend/osmand.md#surface-smoothness)|
 ![Altitude](@site/static/img/navigation/route/Smoothness.png)  |
-| *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_winter_ice_road_name" />"* – Colouring the route or track line according to the winter road classification. [Winter and ice roads](../../map/vector-maps.md#winter-and-ski)|
+| *<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />* – Colouring the route or track line according to the winter road classification. [Winter and ice roads](../../map/vector-maps.md#winter-and-ski)|
 ![Altitude](@site/static/img/navigation/route/Winter.png)  |
-| *<ProFeature/> &nbsp;"<Translate android="true" id="routeInfo_tracktype_name" />"* – Colouring the route or track line by surface composition. Typically used when the road network is largely unpaved. [Surface firmness](../../map-legend/osmand.md#surface-smoothness)| 
+| *<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />* – Colouring the route or track line by surface composition. Typically used when the road network is largely unpaved. [Surface firmness](../../map-legend/osmand.md#surface-smoothness)| 
 ![Altitude](@site/static/img/navigation/route/firmness.png)  |
-| *<ProFeature/> &nbsp;"Difficulty of horse trails"* – Render paths according to difficulty of horse trails.  |
+| *<ProFeature/> &nbsp;Difficulty of horse trails* – Render paths according to difficulty of horse trails.  |
 ![Altitude](@site/static/img/navigation/route/firmness.png)  | 
 
 </TabItem>

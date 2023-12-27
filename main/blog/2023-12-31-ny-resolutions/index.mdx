@@ -1,7 +1,9 @@
 ---
 slug: ny-resolutions-2024
 title: 2024 New Year resolutions
-authors: victor
+authors: 
+ - victor
+ - eugene
 tags: [resolutions, OsmAnd]
 unlisted: true
 ---
@@ -20,105 +22,161 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Happy New Year!
 
-We have a good tradition every end of the year to write down New Year Resolutions for the next year and sum up the results of the past year ([Resolutions 2023](https://osmand.net/blog/ny-resolutions-2023)). It's already our 7th Resolutions. 
+We are continuing this good tradition for the sixth time. At the end of each year we write _New Year Resolutions_ and our plans for the next one.
 
-
-2023 was very difficult for our team though we stayed strong and #StandWithUkraine 🇺🇦. Nevertheless, there is quite a lot to be proud of 2023 achievements.
-
-In 2023 we launched the new OsmAnd website with new [documentation](https://osmand.net/docs/intro) and [map](https://osmand.net/map). We also introduced the Pro cross-platform subscription for iOS, Android, Web and finally released OpenGL Rendering for Android with 3D terrain.
-
+This year has been difficult for our company, as most of the team 🇺🇦 works in war conditions, and some of the team went into the army. But despite all the difficulties, we worked according to the goals specified in the previous resolution ([Resolutions 2023](https://osmand.net/blog/ny-resolutions-2023)), and you can compare [the results in our report](#2023-achievements). And briefly, in 2023, we introduced a free subscription for cross-platform named OsmAnd Start, completely redesigned the terrain and 3D section, made a big contribution to widgets and much more.
 
 <!--truncate-->
 
 
 ## 2024 New Year Resolutions
 
-Let's start with the to-do list for 2024, and below you can double-check how a similar list was  crushed in 2023 😉
+☛ Let's start with the to-do list for 2024, and [below](#2023-achievements) you can check again how a similar list was completed (or not completed 😉) in 2023.
 
-### Widgets / Trip Computer
+| Travel Guides | [PAD-US](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview#overview) | Speed limited |  Custom buttons | 
+|-----|------|------|-------|
+| ![Travel](./img/travel.png)|![PAD-US](./img/padus.png) |![Limit](./img/limit_widget.png) |![Custom button](./img/custom_button.png) |
+
+
+### Quick action / Widgets / Trip Computer
+
+**Android + iOS + Web**
+
+* Photogallery to inspire (Gallery for cities + Top places) Google Travel
+* AI assistant (select Activity and assist with planning)
+* Revise Wikivoyage / Travel Guides
+* Weather forecast along the track
+* Suggest a route: roundtrips or routes with certain criterias
+* Browse or view network of tracks:
+  - Gpsies, USA db
+  - Curvyroads
+  - Search routes / route selection
+  - Track collections
+  - Private areas and PAD-US (USA)
+* Sightseeing along the routes (photo gallery) - special places
+
+### Share / Public Reviews / Tracks / Marketplace
+
+**Android / iOS / Web**
+
+* Version history – OsmAnd Cloud
+* Share favorites, tracks, settings by link (public)
+* Share favorites, tracks, settings by invite email
+* Common viewing/editing across multiple users in a group
+* Public plugins / profiles with descriptions
+* Public groups / communities
+
+### Map view
+
+**Android / iOS** 
+* Improve map styles (ongoing task)
+* POI (Symbols) Icon Groups (fix rendering issues, allow customization)
+* Improve app start (restart from background)
+* 3D Track log (and maps of winds)
+* 3D Symbols (my location)
+* Weather forecast animation
+* 3D Buildings
+* Round Earth
+* Realistic Sun Shadows
+* Weather - Wind animations
+* Use Geotif as Raster layers and other GDAL vector / raster formats (USA DB)
+* 3D Areas (To highlight area with 3d relief)
+* Tracks Heatmap
+
+### Quick action / Widgets / Trip Computer
+
+**Android + iOS + Web**
+
+* Allow to add many custom buttons (quick action with one action)
+* Allow to control visibility of standard buttons
+* Map quick actions for external devices
+* Review usability Configure Map - _View Map Layers_ button on the screen
+* Widget. Current speed / speed limit widget (Android Auto, CarPlay)
+* **iOS** Custom button bindings
+* **iOS** Elevation widget
+* **iOS** Large widgets for top/bottom panel, Top/bottom panel
+* **iOS** Widget pages
+* **Web/Android/iOS**. Grid coordinate systems
+
+### Weather
+
+**Android + iOS + Web**
+
+* Different forecasts (Redesign weather screen)
+* Animation Weather forecast animation Weather forecast animation
+
+### OSM Editing
 
 **Android + iOS**
-* Full customization for widgets screen - left / right / bottom / top panels
-* Trip Computer and large widgets 
-* Bigger variety of Widgets for your travels and rides
 
+* **iOS** OSM Notes settings
+* Templates
+* Review UX
 
+### Navigation / Android Auto / CarPlay
 
-### Quick Action / Customization
+**Android + iOS + Web**
 
-**iOS:** we'll bring customization to the same level as in Android, so you can configure Driver / Context Menu etc for selected profiles.
+* Main navigation widget #1893
+* **iOS** Online Routing Online Routing Online Routing #1013
+* Routing explanations (CO2 / Route minimal energy / time / distance)
+* Autozoom / Auto-tilt.
+* **iOS** Exit number + Voice
+* **iOS** Show street name without route (Special non navigation mode)
+* Advanced Route Graphs with waypoints, weather, POI
+* **iOS** Altitude correction
+* **iOS** Recording GPX dialog
+* **iOS, Web** Route Preparation: Turn By Turn / Waypoints
+* Avoid road (AA / CarPlay)
+* Settings (AA / CarPlay)
+* Fast routing
+* Electric vehicles support (bike, cars) - routing time, routing energy, charging stations.
 
-**Android / iOS:** we plan to introduce a more powerful concept of quick actions so that users can configure more than 1 shortcut buttons on the map.
+### Personal data
 
+**Android + iOS + Web**
 
-### OsmAnd Cloud
+* Improve track database view customization (default apperance)
+* Attach Photo/Video to Favorites
+* **iOS** Download / Local Maps (Technical debt).
+* Revise Markers / Itinerary
+* **iOS** GPS Filter
+* **iOS** Filter for tracks
+* Improve favorite customization (default apperance)
+* **iOS** Tracks redesign
+* Tracks Heatmap - rasterize >1000 tracks
 
-* **Android / iOS / Web:** Seamless integration through all platforms
-* **Android / iOS / Web:** Edit & sync Tracks / Favorites online
-* **Android / iOS / Web:** Share Tracks / Favorites with friends & family
+### Tools / Search
 
+**Android + iOS + Web**
 
+* [Web/OpenGL/iOS/Android]. Support all Coordinate systems
+* [iOS/Android]. Settings search (Android / iOS)
+* [Web/iOS/Android/Backend]. Help AI assistant
+* [Backend]. Fast fuzzy search
 
-### Photo Gallery
+### Documentation & Guides
 
-Next level of integration of Map & Photos including personal photos and public domain from Wikimedia.
-
-* Displaying photos on the map
-* Search and browse POI using photos
-* Attaching Photos to Favorites and Tracks
-
-### External Devices
-
-**Android / iOS**
-
-Improve integration with external devices such as sensors, controllers, joysticks, smartwatches
-
-* Support BLE Sensors
-* Customize Bluetooth keyboards / controllers access
-* Smart notifications management for watches
-
-### Tracks
-
-* **iOS:** GPS filter, Recording GPX dialog
-* **Android / iOS:** Redesigned Tracks Management
-* **Android / iOS:** Generate / share personal heatmap and tracks collection
-
-
-### 3D maps
-
-* **Android / iOS** 
-
-Finalize and make a stable release of a 3D fully offline worldwide map.
-
-
-### Overall improvements
-
-- Complete offline documentation
-- Photo / video attachments to Favorites points
-- CarPlay
-- Android Auto
-- Fast Auto Routing
-- Alternative Routes
-- Different Weather forecast providers
+* App Guides
+* Complete documentation
+* AI assistant
 
 
 ## 2023 Achievements
 
-Let’s take a look at what was in the original 2022 resolutions list which nearly doesn’t cover all features implemented in 2022 by 2 major releases * [4.2](https://osmand.net/blog/osmand-ios-4-2-released) and [4.3](https://osmand.net/blog/osmand-ios-4-3-released) (iOS); [4.2](https://osmand.net/blog/osmand-android-4-2-released) and [4.3](https://osmand.net/blog/osmand-android-4-3-released) (Android).
+Let’s take a look at what was in the original 2023 resolutions list which nearly doesn’t cover all features implemented in 2023 by major releases * [4.4](https://osmand.net/blog/osmand-ios-4-4-released), [4.4.5](https://osmand.net/blog/osmand-ios-4-45-released), [4.5](https://osmand.net/blog/osmand-ios-4-5-released),[4.6](https://osmand.net/blog/osmand-ios-4-6-released) **(iOS)**; [4.4](https://osmand.net/blog/osmand-android-4-4-released), [4.5](https://osmand.net/blog/osmand-android-4-5-released), [4.6](https://osmand.net/blog/osmand-android-4-6-released) **(Android)**, [beta](https://osmand.net/docs/user/plan-route/web) Map **Web**.
 
 [Resolutions 2023](https://osmand.net/blog/ny-resolutions-2023):
 
+* ✔️ Widgets: full customization for widgets screen (Android), large widget (Android), bigger variety of Widgets for your travels and rides(Android/iOS).
+* ✔️ OsmAnd Cloud: edit & sync Tracks / Favorites online, seamless integration through all platforms (Android/iOS/Web).
+* ✔️ External Devices: support BLE Sensors (Android/iOS), customize Bluetooth keyboards/controllers access (Android/iOS).
+* ✔️ Tracks: redesigned Tracks Management (Android).
+* ✔️ 3D maps: finalize and make a stable release of a 3D fully offline worldwide map (Android/iOS).
+* ✔️ CarPlay updates and improvements (Dashboard, 3D view, search menu).
+* ✔️ Android Auto updates and improvements (Dashboard, 3D view, search menu).
+* ✔️ Fast Auto Routing (Beta version for Android).
 
-* ✔️ Open GL / 3D * Fast Maps (Android)
-* ✔️ OsmAnd Cloud (iOS & Web)
-* ✔️ Documentation (Web)
-* ✔️ Web Map (Web)
-* ✔️ Widgets (Android)
-* ✔️ Weather (Android & iOS & Web)
-* ✔️ Plan Route (Android & iOS & Web)
-* ✔️ Tracks (Android & iOS & Web)
-* ✔️ Quick actions / Customization (Android & iOS)
-* ✔️ Online routing (Android)
 
 ### iOS
 
@@ -237,7 +295,7 @@ OsmAnd Android got 3 major releases with more than <a href="https://github.com/o
 * [Redesign weather screen](https://osmand.net/blog/osmand-android-4-6-released/#redesign-weather-screen)
 * [Android Auto updates](https://osmand.net/blog/osmand-android-4-6-released/#android-auto-updates)
 
-### Web  
+### Web 
 
 
 ![WEB](./img/web_map.png)

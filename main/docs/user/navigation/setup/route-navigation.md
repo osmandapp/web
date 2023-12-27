@@ -395,6 +395,7 @@ To adjust the speed of a simulation go to: *<Translate android="true" ids="share
 
 If you encounter any difficulties while building the route, please consult the troubleshooting instructions in the *[special documentation section](../../troubleshooting/navigation.md)*. There you can find information about possible reasons for *[slow route calculation](../../troubleshooting/navigation.md#route-calculation-is-slow)*, what to do if the route is *[longer than 250 kilometers](../../troubleshooting/navigation.md#how-to-calculate-routes-longer-than-250km)* or the  proposed route *[does not seem correct](../../troubleshooting/navigation.md#the-calculated-route-does-not-seem-correct)*.  
 Below you can find out how to resolve situations when navigation is not possible due to the lack of necessary maps.  
+
 ### No maps 
 
 <InfoAndroidOnly/>

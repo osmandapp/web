@@ -30,7 +30,7 @@ Features | Versions
 |--- |--- |
 | [OsmAnd Pro sync](#osmand-pro-sync) | <ProFeature/> |
 | [Weather](#weather) | Free |
-| [Tracks](#weather) | Free and <ProFeature/> |
+| [Tracks](#weather) | <ProFeature/> |
 | [Favorites](#farorites-pro) | [Osmand Start](https://osmand.net/blog/start) or <ProFeature/> | 
 | [Navigation Route](#navigation-route) | Free |
 | [Create track](#create-track-pro) | Free |   
@@ -84,93 +84,84 @@ The [Weather plugin](../plugins/weather.md) is a paid feature of the OsmAnd app.
 
 ## Tracks
 
-In this section, you can:
+It's a paid feature <ProFeature/>. At first you need to loggin your OsmAnd Pro:
 
-- Download tracks from your device - [Locally](#local).
+![Track loggin](@site/static/img/web/track_loggin.png)
+
+For Track section:
 - Show tracks from [OsmAnd Cloud](#users-tracks-pro).
-- Edit tracks.
+- Adding tracks on the map (_"Visible on map"_ folder).
+- Looking all tracks info and graph
+- Modify tracks and add it to Cloud.
+- Download and delete tracks.
+- Create new folders or delete it.
+- Download folders as OSF or OBF collection.
 
-### Local
 
-- Any user can download any GPX file at [*osmand.net/map*](https://osmand.net/map).    
 
-![OsmAnd Web local GPX](@site/static/img/web/web_local_gpx.png)
-
-- Edit uploaded tracks.  
-
-  Information screens:
-  - *Info*: track data.
-  - *Track*: list of points.
-  - *Settings*: Opening the ["Create track"](#create-track-pro) tool.
-  - *Elevation*: elevation graph.
-  - *Speed*: speed graph.  
-
-  Actions &#8942; button on the *Info* screen:
-  - *Save to Cloud* button (Pro feature).
-  - *Download* the track.
-  - *Add to Collections* - adding chosen track to the *GPX Collection* section.
-  - *Add Waypoints* - List of waypoints on the track.
-  - *Recalculate Elevation (SRTM)* - Add elevation data for the selected track.
-  - *Edit Name* - Change the name of the track.
-  - *Clear* - Delete the track.  
-
-![OsmAnd Web local GPX edit](@site/static/img/web/web_local_gpx_edit.png)
-
-### Visible
+### Visible on the map
 
 Here there is a list of visible tracks on the map.
 
 Switch on / off tracks for showing or not its on the map.
 
-### GPX Collection
+![Visible on the map](@site/static/img/web/visible.png)
 
-After adding chosen tracks to the *GPX Collection* section. You can get OBF map from this data: [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) or [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
 
-[OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
+### Track folder menu
 
-You can download offline map OBF (OsmAnd Binary Format) and open it with OsmAnd on device, it's suitable to display large quantity of tracks will be visible on the map.
+Click to the _Tree points_ ⋮ button for open _Track Folder_ menu. Here you can Download all tracks from chosen folder as:
+- Download as OSF
+- Download as OBF Collection:
+  You can get OBF map from this data: [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) or [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
 
-[Travel OBF](https://osmand.net/blog/routes#generated-travel-routes):
+  [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
 
-Also on Android you can import map of tracks as Travel book which will allow you also to select a specific track on the map and use it as normal GPX. Travel book also supports features such as displaying tracks as points, filtering tracks by activity type and filtering waypoints.
+  You can download offline map OBF (OsmAnd Binary Format) and open it with OsmAnd on device, it's suitable to display large quantity of tracks will be visible on the map.
 
-### User's tracks (Pro)
+  [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes):
+
+  Also You can import map of tracks as Travel book which will allow you also to select a specific track on the map and use it as normal GPX. Travel book also supports features such as displaying tracks as points, filtering tracks by activity type and filtering waypoints.
+
+- Rename chosen folder.
+- Delete chosen folder.
+
+![Track folder menu](@site/static/img/web/collection.png)
+
+### Cloud tracks
 
 GPX tracks that you have in OsmAnd Cloud will be available for display and editing after login. Only for **Pro users** <ProFeature/>.
-The following features are available:
 
-- View track folders - Track folders from OsmAnd Cloud (*My Places → Tracks*).
+The following features are available after choosin cloud track:
 
 - Information screens:
   - *Information* - displaying track data.
   - *Elevation* - graph of elevation.
   - *Speed* - speed graph.
+  - *Slope* - slope graph.
   - *Settings* - list of navigation profiles for the *Create route* tool.  
 
-- Actions &#8942; button on the *Information* screen:
-  - *Download* - downloads the track to the PC.
-  - *Get SRTM* - displays the elevation graph of the selected track.
-  - *Edit* - change the name and other data for the selected track.
-  - Editing a track with the *Create route* tool.
-  - *Add to collection* - creating a collection of tracks to create an OBF file.
-  - *Recalculate Elevation (SRTM)* - add elevation data for the selected track.
-  - *Delete* - deletes the track.
+- Action buttons:
+  - *Edit track* - adding cloud track to local for editing (_Edit locality_ button on the panel).
+  - *Download GPX* - downloads the track to the PC.
+  - *Recalculate* Elevation (Satellite) - displays the elevation graph of the selected track.
+  - *Delete Track* - deletes the track.
+  - *Close track* - close the track.
 
-![OsmAnd Web cloud GPX edit](@site/static/img/web/web_cloud_gpx_edit.png)
+![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track.png)
 
 
 ## Favorites
 
-After registering an OsmAnd Pro account, the user's Favorites are displayed in the Favorites menu.  
+After registering an OsmAnd Pro or OsmAnd Start, the user's Favorites are displayed in the Favorites menu.  
 The following actions are available:
 
-- Show favorites on map.
-- Information - name and description of the favorite.
-- Delete a favorite.
-- [Add new favorites](#add--edit-favorite) - right click on the map.
-- [Edit favorites](#add--edit-favorite).  
+- _Show on map_ - show favorites points from the chosen folder on the map.
+- _Rename_ - name and description of favorite folder.
+- _Download_ - download the chosen favorite folder.
+- _Delete_ - delete the chosen favorite folder.
 
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/web_cloud_favorites_edit.png)
+![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites.png)
 
 ### Add / Edit Favorite
 
@@ -196,35 +187,105 @@ In this section of the menu, you can change the map style. You can read more abo
 
 ## Navigation route
 
-- To start building a navigation route, right-click to add the *Start* and *End* points.
-
-![OsmAnd Web Create Route](@site/static/img/web/web_create_route.png)
+- To start building a navigation route, right-click to add the *Navigate from*,  *Navigate to* and *Navigate via* points.
 
 - After adding the start and end points, we get the route.
 
-![OsmAnd Web Create Route](@site/static/img/web/web_create_route_1-1.png)
-
 - In the Route block you can move the start and end points, edit them and change the type of route.
 
-![OsmAnd Web Create Route](@site/static/img/web/web_create_route_2-1.png)
+![OsmAnd Web Create Route](@site/static/img/web/navigation.png)
 
+- choose _Route profile_ for changing navigation routing type:
 
-## Create track
+![OsmAnd Web Create Route](@site/static/img/web/profile_type.png)
 
-A web version of the ["Plan route"](../plan-route/create-route.md) tool, similar to the OsmAnd app, is currently being developed. To go to create a route, *Right-click → Create Route*.  Or you can use the *Create track* button (right side: *Pencil* and *Upload* buttons).
+- click to Orange circles on Navigation route for look at instructions:
 
-Here you can select a navigation profile to build a section of the route, add waypoints, save the route and view information about it.  
+![OsmAnd Web Create Route](@site/static/img/web/nav_instr.png)
 
-![OsmAnd Web Create Track](@site/static/img/web/web_create_track.png)
+- copy URL for sending the navigation route. Example: [https://test.osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352](https://test.osmand.net/map/?start=43.792163,11.215324&finish=43.852850,11.121941&via=43.812605,11.134644&type=osmand&profile=bicycle#13/43.8200/11.1352)
+
+## Create track and Local
+
+A web version of the ["Plan route"](../plan-route/create-route.md) tool, similar to the OsmAnd app, is currently being developed. To go to create a route, *Right-click → Create new Route*.  Or you can use the *Create track* button on the _Local_ menu(right side: *Pencil* and *Upload* buttons).
+
+Here you can select a navigation profile to build a section of the route (New segments) or for all route (All segments), add waypoints, save the route and view information about it.  
+
+![OsmAnd Web Create Track](@site/static/img/web/create_route.png)
 
 You can view any actions and display track information in the [Track section](#tracks) of this article.
 
-![OsmAnd Web Create Track](@site/static/img/web/web_create_track_info.png)
+Actions for Local:
+- _Import Track_ - any user can download any GPX file at [*osmand.net/map*](https://osmand.net/map) to _Local_ section.  
+- Create track.
+
+![OsmAnd Web Create Track](@site/static/img/web/create_route_2.png)
+
+Local track menu and Edit has 3 panels: Info, Track, Waypoints, Turns.
+
+_Info_ actions and data:
+  - _Save to Cloud_.
+  - _Add description_.
+  - _Rename_ a track.
+  - *recalculate* - Add elevation data for the selected track.
+  - *Elevation*: elevation graph.
+  - *Speed*: speed graph.  
+  - *Slope*: slope graph.  
+  - *Road details* - Road type, Surface, Steepness, Surface firmness, Piste.
+  - *Download GPX* button (Pro feature).
+  - *Close Track* the track.
+  - *Delete Track* - Delete the track. 
+
+![OsmAnd Web Create Track](@site/static/img/web/create_route_3.png)
 
 
-<!--
-## POIs search and layer
+_Track section_ contains track points. Here you can delete it or change order.
+_Waypoints_ menu contains track waypoints. Here you can show or not it on the map, and delete waypoints.
 
-## Search
+_Turns_ menu contains info about segments turns.
 
--->
+![OsmAnd Web Create Track](@site/static/img/web/create_route_1.png)
+
+## POIs on the map
+
+Click to _POI_ button on the side panel. _Show POI_ menu: here you can choose POIs or search POI category for showing its on the map
+
+![POIs menu](@site/static/img/web/poi_menu.png)
+
+## Search function
+
+Write your request for searching and showing on the map. Click to circle for open POI's name.
+
+![Search menu](@site/static/img/web/search.png)
+
+## URL scheme
+
+For easy use of the OsmAnd application you can take advantage of direct links. These are special URLs that allow you to transfer location and contain detailed data about pins and tracks.  
+
+These address strings can be copied and transferred using any data transfer medium supported by your device and used in the Android or iOS versions of OsmAnd.  
+
+1. **URL with a pin on the map:**
+
+  https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
+
+  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_pin.png)
+
+2. **URL without a pin on the map:**
+
+  https://osmand.net/map/#9/52.3924/6.3116
+
+  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_without.png)
+
+3. **URL with navigation:**
+
+  https://osmand.net/map/?start=52.236210,5.119629&finish=52.412472,4.855957&type=osmand&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570
+
+  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_track.png)
+
+Depending on the specified parameters, URL strings may contain:
+
+- **latitude:** latitude value as a number.  
+- **longitude:** longitude value as a number.  
+- **start-finish:** for navigation.
+- **profile:** for navigation.
+- **zoom:** zoom level.

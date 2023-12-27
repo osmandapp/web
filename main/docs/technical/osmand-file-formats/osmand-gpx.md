@@ -186,3 +186,18 @@ A gpx file may contain several routes. Each of them is contained in a specific s
   </rte>
 </gpx>
 ```
+
+## Tags name for sensor data
+
+Increased compatibility of OsmAnd tracks with **Strava and Garmin Basecamp**. *Temperature, Heart Rate, Bicycle Power, Bicycle Cadence, and Bicycle Speed* sensors are enrolled in the Garmin https://www8.garmin.com/xmlschemas/TrackPointExtensionv1.xsd extension scheme.
+
+```xml
+<extensions>
+    <gpxtpx:TrackPointExtension>
+        <gpxtpx:hr>107</gpxtpx:hr>
+        <gpxtpx:wtemp>107</gpxtpx:wtemp>
+        <gpxtpx:cad>107</gpxtpx:cad>
+    </gpxtpx:TrackPointExtension>
+</extensions>
+```
+

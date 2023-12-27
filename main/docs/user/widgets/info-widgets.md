@@ -173,51 +173,36 @@ The average speed is calculated for a given time interval according to your sele
 
 <InfoAndroidOnly />  
 
-![Glide ratio widget](@site/static/img/widgets/glide_ratio_widget.png)  
+|Widgets| Widgets on the screen|
+|--------|---------|
+|![Glide ratio](@site/blog/2023-12-22-android-4-6/img/glide_ratio_1.png)|![Glide ratio](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
 
-The widget provides valuable glide ratio information to help make informed decisions when planning air routes. The *Glide Ratio* widget in OsmAnd helps you assess the efficiency of your descent or ascent when navigating to a specific location ([Map marker](../personal/markers.md) position). It calculates the glide ratio as the ratio of the distance to the difference in altitude between your current position and your intended destination. 
+Glide ratio [simple widgets](../widgets/configure-screen.md#widgets-for-all-panels) provides valuable glide ratio information to help make informed decisions when planning air routes. The *Glide Ratio* widget in OsmAnd helps you assess the efficiency of your descent or ascent when navigating to a specific location ([Map marker](../personal/markers.md) position). It calculates the glide ratio as the ratio of the distance to the difference in altitude between your current position and your intended destination. You can read more about this [here](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
 
-You can read more about this [here](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
+- **Glide ratio to target** shows the glide ratio required to reach the target point. The [Map marker](../personal/markers.md) should be used as the target point. 
 
-- **Glide ratio to the target**. This widget provides information about the required glide ratio to reach the target point ([Map marker](../personal/markers.md) position). The widget calculates this coefficient as the ratio of the distance to the target to the change in altitude. For example, if the glide ratio is 7 : 1 (7 to 1), it means that for each unit of descent, you advance 7 units of distance. This widget is particularly useful for pilots who can optimize their route for the conditions on the way to the target.  
+- **Average glide ratio** shows the average glide ratio for a specified time interval. You can set the time interval for this widget from 15 seconds to 60 minutes.
 
-- **Average glide ratio**. This widget provides information about the average glide ratio for a specified time interval (customizable by the user). The average glide ratio is calculated as the ratio of distance traveled to the change in elevation over the specified time interval. This allows you to analyze historical data and plan long-term routes taking into account the change in glide ratio.    
-
-#### Widget use
-
-- **Planning soaring flights.** For soaring pilots, the *Glide ratio to the target* widget becomes an indispensable tool when planning and executing soaring flights. Pilots can estimate how far they can fly to their target given the current conditions and the required glide ratio.
-- **Optimize climbs and descents.** The average glide ratio allows pilots to optimize climbs and descents based on current conditions. Pilots can choose the optimal timing for climbs to maximize flight time or for descents to reach a target point.
-- **Reacting to changing conditions.** The widget provides continuous glide ratio updates, allowing pilots to react instantly to changes in atmospheric conditions or route. They can adjust their flight plan to ensure safety and efficiency.
-- **Maximum use of horizontal distance.** Knowing the glide ratio allows pilots to maximize the use of horizontal distance to move to the target, which is especially important when planning long flights.
-- **Risk reduction**. The *Glide ratio to the target* widget helps pilots avoid situations where reaching the target becomes impossible due to insufficient glide ratio. This helps to reduce risks and improve flight safety.
-
-
-#### Glide Ratio Calculation
-The Glide Ratio is calculated by dividing the distance by the difference in altitude. This means that if the widget displays a value like "90:1," it signifies that for every 1 kilometer of descent, you will cover a distance of 90 kilometers.
-
-* **Positive and Negative Values**
-  - Positive values indicate that your destination is at a lower altitude than your current position, requiring descent.
-  - Negative values indicate that your destination is at a higher altitude, necessitating ascent. For example, "-90:1" means that after covering a distance of 90 kilometers, you need to ascend by 1 kilometer to reach your destination.
-
-* **Capping Ratio**  
-Glide ratios greater than "150:1" are displayed as "1:0" or "-1:0," indicating that the altitude change is insignificant relative to the distance. 
-
-* **"0:1" Display**  
-When the distance to be covered is minimal compared to the altitude change, the display is "0:1," indicating that you can disregard the distance.
-
-* **"0:0" Display**  
-If both the distance and altitude change are less than 0.1 meters, the display is "0:0," signifying that both values are negligible.
-
-* **"1:0" Display**  
-If the distance is greater than or equal to 0.1 meters but the altitude change is less than 0.1 meters, the display is "1:0.".
-
-* **Rounding/Formatting**  
-  - Value <= 0.1: "0.05" is displayed as "0".
-  - Value > 0.1 and < 100: "50.7643" is displayed as "50.8:1.".
-  - Value > 100: "102.35" is displayed as "102:1."
+**Widgets use:**
+- *Planning soaring flights.* For soaring pilots, the *Glide ratio to the target* widget becomes an indispensable tool when planning and executing soaring flights. Pilots can estimate how far they can fly to their target given the current conditions and the required glide ratio.
+- *Optimize climbs and descents.* The average glide ratio allows pilots to optimize climbs and descents based on current conditions. Pilots can choose the optimal timing for climbs to maximize flight time or for descents to reach a target point.
+- *Reacting to changing conditions.* The widget provides continuous glide ratio updates, allowing pilots to react instantly to changes in atmospheric conditions or route. They can adjust their flight plan to ensure safety and efficiency.
+- *Maximum use of horizontal distance.* Knowing the glide ratio allows pilots to maximize the use of horizontal distance to move to the target, which is especially important when planning long flights.
+- *Risk reduction*. The *Glide ratio to the target* widget helps pilots avoid situations where reaching the target becomes impossible due to insufficient glide ratio. This helps to reduce risks and improve flight safety.
 
 
-In summary, the Glide Ratio widget in OsmAnd provides valuable information about your descent or ascent efficiency. Understanding its display conventions will help you make informed navigation decisions based on distance and altitude differences.
+**Positive and Negative Values:**
+  - *Positive values* indicate that your destination is at a lower altitude than your current position, requiring descent.
+  - *Negative values* indicate that your destination is at a higher altitude, necessitating ascent. For example, "-90:1" means that after covering a distance of 90 kilometers, you need to ascend by 1 kilometer to reach your destination.
+
+
+**Rounding/Formatting:**  
+  - Value **<= 0.1**: 
+    - "0.05" is displayed as "0".
+  - Value **> 0.1 and < 100**: 
+    - for exampl, "50.7643" is displayed as "50.8:1.".
+  - Value **> 100:** 
+    - "102.35" is displayed as "102:1."
 
 
 | | |
