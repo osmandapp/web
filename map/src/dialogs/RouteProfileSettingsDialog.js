@@ -139,53 +139,57 @@ export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenS
                     Object.entries(opts).map(([key, opt]) => (
                         <React.Fragment key={'dialog_' + key}>
                             {checkSection(opt.section) && checkDevSection(opt) && (
-                                <DialogContentText key={key}>{section}</DialogContentText>
+                                <MenuItem selected={true} divider={true} key={'section_' + key}>
+                                    {section ?? 'Options'}
+                                </MenuItem>
                             )}
                             {checkDevSection(opt) && (
-                                <Tooltip key={'tool_' + key} title={opt.description} arrow placement="right">
-                                    {opt.type === 'boolean' ? (
-                                        <FormControlLabel
-                                            key={key}
-                                            label={opt.label}
-                                            disabled={isDisabled(key)}
-                                            control={
-                                                <Checkbox
-                                                    sx={{ mt: '-6px' }}
-                                                    key={'check_' + key}
-                                                    checked={opt.value}
-                                                    icon={opt.group && <RadioButtonUncheckedIcon />}
-                                                    checkedIcon={opt.group && <RadioButtonCheckedIcon />}
-                                                    onChange={onCheckBox(key, opts, setOpts)}
-                                                />
-                                            }
-                                        ></FormControlLabel>
-                                    ) : (
-                                        <FormControl sx={{ m: 1, minWidth: 120 }}>
-                                            <InputLabel id={'routing-param-' + opt.key}>{opt.label}</InputLabel>
-                                            <Select
-                                                labelId={'routing-param-' + opt.key}
+                                <MenuItem dense={opt.type === 'boolean'} key={'option_' + key}>
+                                    <Tooltip key={'tool_' + key} title={opt.description} arrow placement="right">
+                                        {opt.type === 'boolean' ? (
+                                            <FormControlLabel
+                                                key={key}
                                                 label={opt.label}
-                                                value={opt.value ? opt.value : ''}
-                                                onChange={onSelect(key, opts, setOpts)}
                                                 disabled={isDisabled(key)}
-                                            >
-                                                {opt.values.map((item, index) => (
-                                                    <MenuItem key={item} value={item}>
-                                                        {opt.valueDescriptions[index]}
-                                                    </MenuItem>
-                                                ))}
-                                            </Select>
-                                        </FormControl>
-                                    )}
-                                </Tooltip>
+                                                control={
+                                                    <Checkbox
+                                                        sx={{ mt: '-1px' }}
+                                                        key={'check_' + key}
+                                                        checked={opt.value}
+                                                        icon={opt.group && <RadioButtonUncheckedIcon />}
+                                                        checkedIcon={opt.group && <RadioButtonCheckedIcon />}
+                                                        onChange={onCheckBox(key, opts, setOpts)}
+                                                    />
+                                                }
+                                            ></FormControlLabel>
+                                        ) : (
+                                            <FormControl sx={{ m: 0, minWidth: 240 }}>
+                                                <InputLabel id={'routing-param-' + opt.key}>{opt.label}</InputLabel>
+                                                <Select
+                                                    labelId={'routing-param-' + opt.key}
+                                                    label={opt.label}
+                                                    value={opt.value ? opt.value : ''}
+                                                    onChange={onSelect(key, opts, setOpts)}
+                                                    disabled={isDisabled(key)}
+                                                >
+                                                    {opt.values.map((item, index) => (
+                                                        <MenuItem key={item} value={item}>
+                                                            {opt.valueDescriptions[index]}
+                                                        </MenuItem>
+                                                    ))}
+                                                </Select>
+                                            </FormControl>
+                                        )}
+                                    </Tooltip>
+                                </MenuItem>
                             )}
                         </React.Fragment>
                     ))}
-                {showReset() && (
+                <MenuItem>
                     <Button sx={{ ml: 1 }} onClick={handleReset}>
-                        Reset
+                        Reset options
                     </Button>
-                )}
+                </MenuItem>
             </>
         );
     }
@@ -241,7 +245,7 @@ export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenS
                     Object.entries(opts).map(([key, opt]) => (
                         <React.Fragment key={'dialog_' + key}>
                             {checkSection(opt.section) && checkDevSection(opt) && (
-                                <DialogContentText key={key}>{section}</DialogContentText>
+                                <DialogContentText key={'section_' + key}>{section}</DialogContentText>
                             )}
                             {checkDevSection(opt) && (
                                 <Tooltip key={'tool_' + key} title={opt.description}>
@@ -288,7 +292,7 @@ export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenS
                 <Box display="flex" flexGrow={1}>
                     {showReset() && (
                         <Button sx={{ ml: 1 }} onClick={handleReset}>
-                            Reset
+                            Reset options
                         </Button>
                     )}
                 </Box>

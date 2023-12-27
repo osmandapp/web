@@ -404,6 +404,7 @@ export default function RouteMenu() {
                     </Button>
                 )}
             </ButtonGroup>
+            <MenuItem divider={true} />
             {openSettings && (
                 <RouteProfileSettingsDialog key="routesettingsdialog" setOpenSettings={setOpenSettings} useDev={true} />
             )}
