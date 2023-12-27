@@ -27,7 +27,7 @@ export default function EmptyVisible({ setMenuInfo, setOpenVisibleMenu }) {
                             No tracks on map
                         </ListItemText>
                         <ListItemText disableTypography={true} className={styles.text}>
-                            {`Select tracks to display them on the map.`}
+                            Select tracks to display them on the map.
                         </ListItemText>
                     </Box>
                     <Button className={styles.button} component="span" onClick={showAllTracks}>

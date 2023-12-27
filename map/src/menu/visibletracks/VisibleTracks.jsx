@@ -77,7 +77,7 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null }
     }, [ctx.visibleTracks]);
 
     function hasVisibleTracks() {
-        return !!(!isEmpty(ctx.visibleTracks?.old) || !isEmpty(ctx.visibleTracks?.new));
+        return !isEmpty(ctx.visibleTracks?.old) || !isEmpty(ctx.visibleTracks?.new);
     }
 
     function hasTracks() {

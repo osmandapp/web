@@ -212,7 +212,7 @@ export async function updateGpxFiles(oldName, newFileName, listFiles, ctx) {
                         track.name = file.name;
                         track.avoidAddingToMap = true;
                         Object.keys(track).forEach((t) => {
-                            newGpxFiles[file.name][`${t}`] = track[t];
+                            newGpxFiles[file.name][t] = track[t];
                         });
                         delete newGpxFiles[oldName];
                         ctx.setGpxFiles({ ...newGpxFiles });
@@ -382,7 +382,7 @@ async function downloadAfterUpload(ctx, file) {
         ctx.setCurrentObjectType(type);
         track.name = file.name;
         Object.keys(track).forEach((t) => {
-            newGpxFiles[file.name][`${t}`] = track[t];
+            newGpxFiles[file.name][t] = track[t];
         });
         newGpxFiles[file.name].analysis = TracksManager.prepareAnalysis(newGpxFiles[file.name].analysis);
         ctx.setGpxFiles(newGpxFiles);

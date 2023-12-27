@@ -133,7 +133,7 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
                 // add flag to not add layer to the map
                 track.avoidAddingToMap = true;
                 Object.keys(track).forEach((t) => {
-                    newGpxFiles[file.name][`${t}`] = track[t];
+                    newGpxFiles[file.name][t] = track[t];
                 });
             })
         );
