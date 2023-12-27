@@ -211,23 +211,25 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                                 {wptPoints && ` · ${wptPoints}`}
                             </Typography>
                         </ListItemText>
-                        <Tooltip key={'action_menu_track'} title={'Menu'} arrow placement="bottom-end">
-                            <IconButton
-                                id={`se-actions-${trackName}`}
-                                style={{ display: showMenu ? 'block' : 'none' }}
-                                className={styles.sortIcon}
-                                onMouseEnter={() => setHoverIconInfo(true)}
-                                onMouseLeave={() => setHoverIconInfo(false)}
-                                onClick={(e) => {
-                                    setOpenActions(true);
-                                    ctx.setOpenedPopper(anchorEl);
-                                    e.stopPropagation();
-                                }}
-                                ref={anchorEl}
-                            >
-                                {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
-                            </IconButton>
-                        </Tooltip>
+                        {showMenu && (
+                            <Tooltip key={'action_menu_track'} title={'Menu'} arrow placement="bottom-end">
+                                <IconButton
+                                    id={`se-actions-${trackName}`}
+                                    // style={{ display: showMenu ? 'block' : 'none' }}
+                                    className={styles.sortIcon}
+                                    onMouseEnter={() => setHoverIconInfo(true)}
+                                    onMouseLeave={() => setHoverIconInfo(false)}
+                                    onClick={(e) => {
+                                        setOpenActions(true);
+                                        ctx.setOpenedPopper(anchorEl);
+                                        e.stopPropagation();
+                                    }}
+                                    ref={anchorEl}
+                                >
+                                    {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
+                                </IconButton>
+                            </Tooltip>
+                        )}
                         {visible && (
                             <Switch
                                 sx={{ ml: '-25px' }}
