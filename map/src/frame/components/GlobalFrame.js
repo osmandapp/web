@@ -20,7 +20,7 @@ import dialogStyles from '../../dialogs/dialog.module.css';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import _, { isEmpty } from 'lodash';
-import TracksManager from '../../manager/track/TracksManager';
+import TracksManager, { createTrackGroups, getGpxFiles } from '../../manager/track/TracksManager';
 
 const GlobalFrame = () => {
     const ctx = useContext(AppContext);
@@ -54,11 +54,18 @@ const GlobalFrame = () => {
     // add new files to visible tracks
     useEffect(() => {
         if (!isEmpty(ctx.gpxFiles)) {
-            let oldFiles = _.cloneDeep(ctx.visibleTracks);
             let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
 
+            let oldFiles = [];
+            savedVisible.old.forEach((name) => {
+                const file = ctx.gpxFiles[name];
+                if (file) {
+                    oldFiles.push(file);
+                }
+            });
+            // don't update old files, update only new ones
             let newVisFiles = {
-                old: oldFiles.old,
+                old: oldFiles,
                 new: [],
             };
             // for localStorage
@@ -68,22 +75,37 @@ const GlobalFrame = () => {
             };
 
             Object.values(ctx.gpxFiles).forEach((f) => {
-                if ((f.url && !isOldVisibleTrack(oldFiles, f)) || isNewVisibleTrack(oldFiles, f)) {
+                if ((f.url && !isOldVisibleTrack(savedVisible, f)) || isNewVisibleTrack(savedVisible, f)) {
                     newVisFiles.new.push(f);
                     newVisFilesNames.new.push(f.name);
                 }
             });
+            // save updated names to localStorage
             localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(newVisFilesNames));
+            // save updated visible tracks
             ctx.setVisibleTracks({ ...newVisFiles });
         }
     }, [ctx.gpxFiles]);
 
-    function isOldVisibleTrack(tracks, file) {
-        return tracks.old.some((t) => t.name === file.name);
+    // create track groups
+    useEffect(() => {
+        if (!_.isEmpty(ctx.listFiles)) {
+            let files = getGpxFiles(ctx.listFiles);
+            //get groups
+            let trackGroups = createTrackGroups(files);
+
+            ctx.setTracksGroups(trackGroups);
+        } else {
+            ctx.setTracksGroups([]);
+        }
+    }, [ctx.listFiles]);
+
+    function isOldVisibleTrack(names, file) {
+        return names.old.some((n) => n === file.name);
     }
 
-    function isNewVisibleTrack(tracks, file) {
-        return tracks.new.some((t) => t.name === file.name);
+    function isNewVisibleTrack(names, file) {
+        return names.new.some((n) => n === file.name);
     }
 
     return (

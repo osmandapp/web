@@ -185,20 +185,22 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                                 {wptPoints && ` · ${wptPoints}`}
                             </Typography>
                         </ListItemText>
-                        <IconButton
-                            id={`se-actions-${trackName}`}
-                            className={styles.sortIcon}
-                            onMouseEnter={() => setHoverIconInfo(true)}
-                            onMouseLeave={() => setHoverIconInfo(false)}
-                            onClick={(e) => {
-                                setOpenActions(true);
-                                ctx.setOpenedPopper(anchorEl);
-                                e.stopPropagation();
-                            }}
-                            ref={anchorEl}
-                        >
-                            {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
-                        </IconButton>
+                        <Tooltip key={'action_menu_track'} title={'Menu'} arrow placement="bottom-end">
+                            <IconButton
+                                id={`se-actions-${trackName}`}
+                                className={styles.sortIcon}
+                                onMouseEnter={() => setHoverIconInfo(true)}
+                                onMouseLeave={() => setHoverIconInfo(false)}
+                                onClick={(e) => {
+                                    setOpenActions(true);
+                                    ctx.setOpenedPopper(anchorEl);
+                                    e.stopPropagation();
+                                }}
+                                ref={anchorEl}
+                            >
+                                {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
+                            </IconButton>
+                        </Tooltip>
                         {visible && (
                             <Switch
                                 sx={{ ml: '-25px' }}

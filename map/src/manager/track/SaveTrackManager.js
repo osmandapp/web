@@ -13,7 +13,7 @@ import TracksManager, {
     GPX_FILE_TYPE,
     getGpxFileFromTrackData,
 } from './TracksManager';
-import _ from 'lodash';
+import _, { cloneDeep } from 'lodash';
 import { compressFromJSON } from '../../util/GzipBase64.mjs';
 import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import Utils from '../../util/Utils';
@@ -176,13 +176,69 @@ export async function renameTrack(oldName, folder, newName, ctx) {
             dataOnErrors: true,
         });
         if (res && res?.data?.status === 'ok') {
-            refreshGlobalFiles(ctx, newFileName).then();
+            await refreshGlobalFiles(ctx, oldName, newFileName);
         } else {
             ctx.setTrackErrorMsg({
                 title: 'Rename error',
                 msg: res.data,
             });
         }
+    }
+}
+
+export async function updateGpxFiles(oldName, newFileName, listFiles, ctx) {
+    if (!_.isEmpty(listFiles)) {
+        //get gpx files
+        let files = getGpxFiles(listFiles);
+        if (ctx.gpxFiles[oldName]) {
+            let newGpxFiles = cloneDeep(ctx.gpxFiles);
+            for (const file of files) {
+                if (file.name === newFileName) {
+                    let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(
+                        file.type
+                    )}&name=${encodeURIComponent(file.name)}`;
+                    newGpxFiles[file.name] = {
+                        url: url,
+                        clienttimems: file.clienttimems,
+                        updatetimems: file.updatetimems,
+                        name: file.name,
+                        type: 'GPX',
+                    };
+                    let f = await Utils.getFileData(newGpxFiles[file.name]);
+                    const gpxfile = new File([f], file.name, {
+                        type: 'text/plain',
+                    });
+                    TracksManager.getTrackData(gpxfile).then((track) => {
+                        track.name = file.name;
+                        track.addFromVisibleTracks = true;
+                        Object.keys(track).forEach((t) => {
+                            newGpxFiles[file.name][`${t}`] = track[t];
+                        });
+                        delete newGpxFiles[oldName];
+                        ctx.setGpxFiles({ ...newGpxFiles });
+                    });
+                }
+            }
+        }
+    } else {
+        ctx.setGpxFiles({});
+    }
+}
+
+export function updateVisibleTracks(oldN, newN) {
+    let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
+    if (savedVisible) {
+        const newInd = savedVisible.new?.findIndex((n) => n === oldN);
+        let oldInd;
+        if (newInd === -1) {
+            oldInd = savedVisible.old?.findIndex((n) => n === oldN);
+            if (oldInd !== -1) {
+                savedVisible.old[oldInd] = newN;
+            }
+        } else {
+            savedVisible.new[newInd] = newN;
+        }
+        localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(savedVisible));
     }
 }
 
@@ -254,7 +310,7 @@ export async function saveEmptyTrack(folderName, ctx) {
     }
 }
 
-export async function refreshGlobalFiles(ctx, currentFileName = null, type = GPX_FILE_TYPE) {
+export async function refreshGlobalFiles(ctx, oldName = null, currentFileName = null, type = GPX_FILE_TYPE) {
     // refresh list-files but skip if uploaded file is already there
     if (currentFileName == null || !ctx.listFiles.uniqueFiles?.find((f) => f.name === currentFileName)) {
         const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
@@ -263,8 +319,12 @@ export async function refreshGlobalFiles(ctx, currentFileName = null, type = GPX
             ctx.setListFiles(resJson);
         }
         if (type === OBJECT_TYPE_FAVORITE) {
-            updateFavGroups(resJson, ctx);
+            await updateFavGroups(resJson, ctx);
         } else if (type === GPX_FILE_TYPE) {
+            if (oldName) {
+                updateVisibleTracks(oldName, currentFileName);
+                await updateGpxFiles(oldName, currentFileName, resJson, ctx);
+            }
             updateTrackGroups(resJson, ctx);
         }
     } else {

@@ -1,16 +1,11 @@
 import React, { useState, useContext, useEffect, useMemo } from 'react';
 import AppContext from '../../context/AppContext';
 import CloudTrackGroup from './CloudTrackGroup';
-import _ from 'lodash';
+import { isEmpty } from 'lodash';
 import { Box } from '@mui/material';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import CloudTrackItem from './CloudTrackItem';
-import {
-    createTrackGroups,
-    DEFAULT_GROUP_NAME,
-    getGpxFiles,
-    updateLoadingTracks,
-} from '../../manager/track/TracksManager';
+import { DEFAULT_GROUP_NAME, updateLoadingTracks } from '../../manager/track/TracksManager';
 import Empty from '../errors/Empty';
 import Loading from '../errors/Loading';
 import GroupHeader from '../actions/GroupHeader';
@@ -27,33 +22,23 @@ export default function TracksMenu() {
 
     // get gpx files and create groups
     useEffect(() => {
-        if (!_.isEmpty(ctx.listFiles)) {
-            //get gpx files
-            let files = getGpxFiles(ctx.listFiles);
-            //get groups
-            let trackGroups = createTrackGroups(files);
-
-            if (trackGroups.length > 0) {
-                let defGroup = trackGroups.find((g) => g.name === DEFAULT_GROUP_NAME);
-                if (defGroup) {
-                    setDefaultGroup(defGroup);
-                }
-                // sort default track group
-                if (ctx.selectedSort?.tracks && ctx.selectedSort.tracks[DEFAULT_GROUP_NAME]) {
-                    doSort({
-                        method: ctx.selectedSort.tracks[DEFAULT_GROUP_NAME],
-                        setSortFiles,
-                        setSortGroups,
-                        files: defGroup.groupFiles,
-                        groups: trackGroups,
-                    });
-                }
+        if (!isEmpty(ctx.tracksGroups)) {
+            let defGroup = ctx.tracksGroups.find((g) => g.name === DEFAULT_GROUP_NAME);
+            if (defGroup) {
+                setDefaultGroup(defGroup);
             }
-            ctx.setTracksGroups(trackGroups);
-        } else {
-            ctx.setTracksGroups([]);
+            // sort default track group
+            if (ctx.selectedSort?.tracks && ctx.selectedSort.tracks[DEFAULT_GROUP_NAME]) {
+                doSort({
+                    method: ctx.selectedSort.tracks[DEFAULT_GROUP_NAME],
+                    setSortFiles,
+                    setSortGroups,
+                    files: defGroup.groupFiles,
+                    groups: ctx.tracksGroups,
+                });
+            }
         }
-    }, [ctx.listFiles]);
+    }, [ctx.tracksGroups]);
 
     const defaultGroupItems = useMemo(() => {
         if (defaultGroup) {

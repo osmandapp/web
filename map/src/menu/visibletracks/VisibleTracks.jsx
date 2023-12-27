@@ -61,7 +61,7 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null }
     function allVisibleTracksHidden() {
         let files = getAllVisibleFiles();
         if (files.length > 0) {
-            return !files.some((f) => ctx.gpxFiles[f.name].url !== null && !f.addFromVisibleTracks);
+            return !files.some((f) => ctx.gpxFiles[f.name]?.url !== null && !f.addFromVisibleTracks);
         }
         return true;
     }
