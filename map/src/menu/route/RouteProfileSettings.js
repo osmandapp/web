@@ -19,11 +19,11 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import AppContext from '../context/AppContext';
+import AppContext from '../../context/AppContext';
 
 const ENABLE_PROVIDER_SELECTION = false; // disabled by default, but allowed if type=osrm is specified in URL
 
-export default function RouteProfileSettingsDialog({ geoRouter, useDev, setOpenSettings, embed = false }) {
+export default function RouteProfileSettings({ geoRouter, useDev, setOpenSettings, embed = false }) {
     const ctx = useContext(AppContext);
 
     const [opts, setOpts] = useState();

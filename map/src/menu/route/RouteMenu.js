@@ -22,7 +22,7 @@ import AppContext, {
     isRouteTrack,
     OBJECT_TYPE_NAVIGATION_TRACK,
 } from '../../context/AppContext';
-import RouteProfileSettingsDialog from '../../dialogs/RouteProfileSettingsDialog';
+import RouteProfileSettings from './RouteProfileSettings';
 import { TextField } from '@mui/material/';
 import { LatLng } from 'leaflet';
 import { makeStyles } from '@material-ui/core/styles';
@@ -362,7 +362,7 @@ export default function RouteMenu() {
                     </IconButton>
                 </MenuItem>
             )}
-            {ctx.develFeatures && <RouteProfileSettingsDialog key="routesettingsembed" embed={true} useDev={true} />}
+            {ctx.develFeatures && <RouteProfileSettings key="routesettingsembed" embed={true} useDev={true} />}
             {routeObject.getRoute() &&
                 routeOptions.map((opt) => (
                     <MenuItem key={'routeopt' + opt} sx={{ ml: 2, mr: 2 }}>
@@ -406,7 +406,7 @@ export default function RouteMenu() {
             </ButtonGroup>
             <MenuItem divider={true} />
             {openSettings && (
-                <RouteProfileSettingsDialog key="routesettingsdialog" setOpenSettings={setOpenSettings} useDev={true} />
+                <RouteProfileSettings key="routesettingsdialog" setOpenSettings={setOpenSettings} useDev={true} />
             )}
         </>
     );
