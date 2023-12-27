@@ -41,6 +41,8 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
     const [showTrack, setShowTrack] = useState(false);
     const [openActions, setOpenActions] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
+    const [checkedSwitch, setCheckedSwitch] = useState(getCheckedSwitch());
+    const [isClickOnItem, setIsClickOnItem] = useState(false);
     const anchorEl = useRef(null);
 
     const info = useMemo(() => <TrackInfo file={file} />, [file]);
@@ -67,6 +69,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
     }
 
     async function processDisplayTrack({ visible, setLoading }) {
+        setCheckedSwitch(!checkedSwitch);
         updateVisibleCache(visible, file);
         if (!visible) {
             deleteTrackFromMap(ctx, file);
@@ -101,7 +104,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
         // CloudTrackGroup uses ctx.tracksGroups (no-url) but VisibleGroup uses ctx.gpxFiles (url exists)
         if (ctx.gpxFiles[file.name]?.url) {
             // if (file.name !== ctx.selectedGpxFile.name) { ...
-            if (!visible) {
+            if (!visible || isClickOnItem) {
                 ctx.setUpdateInfoBlock(true);
                 ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
                 ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoom: true, cloudRedrawWpts: true });
@@ -130,8 +133,6 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
             if (!track) {
                 setError('Something went wrong!');
             } else if (isEmptyTrack(track) === false) {
-                ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
-
                 track.name = file.name;
                 Object.keys(track).forEach((t) => {
                     oneGpxFile[t] = track[t];
@@ -139,11 +140,11 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                 oneGpxFile.analysis = TracksManager.prepareAnalysis(oneGpxFile.analysis);
 
                 ctx.mutateGpxFiles((o) => (o[file.name] = oneGpxFile));
-                if (!visible) {
+                if (!visible || isClickOnItem) {
+                    ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
                     ctx.setSelectedGpxFile(Object.assign({}, oneGpxFile));
                     ctx.setUpdateInfoBlock(true);
                 }
-
                 setError('');
             } else {
                 setError('Empty track is not supported!');
@@ -170,7 +171,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
         return res.join(' ');
     }
 
-    function checkedSwitch() {
+    function getCheckedSwitch() {
         return ctx.gpxFiles[file.name]?.url ? !file.addFromVisibleTracks : false;
     }
 
@@ -187,7 +188,10 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                     <MenuItem
                         className={styles.item}
                         id={'se-cloud-track-' + trackName}
-                        onClick={() => setDisplayTrack(true)}
+                        onClick={() => {
+                            setDisplayTrack(true);
+                            setIsClickOnItem(true);
+                        }}
                         onMouseEnter={() => setShowMenu(true)}
                         onMouseLeave={() => {
                             if (!ctx.openedPopper?.current) {
@@ -227,9 +231,15 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
                         {visible && (
                             <Switch
                                 sx={{ ml: '-25px' }}
-                                onClick={(e) => e.stopPropagation()}
-                                checked={checkedSwitch()}
-                                onChange={(e) => !file.local && setDisplayTrack(e.target.checked)}
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setIsClickOnItem(false);
+                                }}
+                                checked={checkedSwitch}
+                                onChange={(e) => {
+                                    !file.local && setDisplayTrack(e.target.checked);
+                                    setIsClickOnItem(false);
+                                }}
                             />
                         )}
                     </MenuItem>
@@ -262,5 +272,6 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
         openActions,
         ctx.openedPopper,
         showMenu,
+        checkedSwitch,
     ]);
 }
