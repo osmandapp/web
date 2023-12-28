@@ -9,18 +9,13 @@ import actionOpenMap from '../actions/actionOpenMap.mjs';
 
 const TEST_GPX_FILE = 'test-routed-osrm.gpx';
 const GO_CENTER_HASH = '#14/50.3837/30.4944';
-const CHECK_START = '50.39743, 30.50983';
+const CHECK_START = '50.39743, 30.50982';
 const CHECK_END = '50.36917, 30.52727';
-const CAR = /12\.[\d]+ km, 0:[\d]+ min/;
-const BIKE = /12\.[\d]+ km, 0:[\d]+ min/;
-const FOOT = /13\.[\d]+ km, 3:[\d]+ min/;
+const CAR = /12\.4 km, 0:20 min/;
+const BIKE = /12\.8 km, 0:56 min/;
+const FOOT = /13\.6 km, 4:03 min/;
 
 export default async function test() {
-    // test temporarily disabled // TODO
-    if (CAR || BIKE || FOOT) {
-        return;
-    }
-
     await actionOpenMap();
 
     await clickBy(By.id('se-show-menu-navigation'));

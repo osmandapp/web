@@ -22,7 +22,7 @@ import AppContext, {
     isRouteTrack,
     OBJECT_TYPE_NAVIGATION_TRACK,
 } from '../../context/AppContext';
-import RouteProfileSettingsDialog from '../../dialogs/RouteProfileSettingsDialog';
+import RouteProfileSettings from './RouteProfileSettings';
 import { TextField } from '@mui/material/';
 import { LatLng } from 'leaflet';
 import { makeStyles } from '@material-ui/core/styles';
@@ -362,6 +362,23 @@ export default function RouteMenu() {
                     </IconButton>
                 </MenuItem>
             )}
+            {ctx.develFeatures && <RouteProfileSettings key="routesettingsembed" embed={true} useDev={true} />}
+            {routeObject.getRoute() &&
+                routeOptions.map((opt) => (
+                    <MenuItem key={'routeopt' + opt} sx={{ ml: 2, mr: 2 }}>
+                        <Grid container alignItems="center">
+                            <Grid item xs={10} sx={{ mt: '4px' }} onClick={() => routeObject.setOption(opt, (o) => !o)}>
+                                {routeObject.getOptionText(opt)}
+                            </Grid>
+                            <Grid item xs={2}>
+                                <Switch
+                                    checked={routeObject.getOption(opt)}
+                                    onChange={(e) => routeObject.setOption(opt, e.target.checked)}
+                                />
+                            </Grid>
+                        </Grid>
+                    </MenuItem>
+                ))}
             <ButtonGroup variant="text" sx={{ mt: 1, ml: 1 }}>
                 <label htmlFor="contained-button-route">
                     <StyledInput
@@ -387,24 +404,9 @@ export default function RouteMenu() {
                     </Button>
                 )}
             </ButtonGroup>
-            {routeObject.getRoute() &&
-                routeOptions.map((opt) => (
-                    <MenuItem key={'routeopt' + opt} sx={{ ml: 2, mr: 2 }}>
-                        <Grid container alignItems="center">
-                            <Grid item xs={10} sx={{ mt: '4px' }} onClick={() => routeObject.setOption(opt, (o) => !o)}>
-                                {routeObject.getOptionText(opt)}
-                            </Grid>
-                            <Grid item xs={2}>
-                                <Switch
-                                    checked={routeObject.getOption(opt)}
-                                    onChange={(e) => routeObject.setOption(opt, e.target.checked)}
-                                />
-                            </Grid>
-                        </Grid>
-                    </MenuItem>
-                ))}
+            <MenuItem divider={true} />
             {openSettings && (
-                <RouteProfileSettingsDialog key="routesettingsdialog" setOpenSettings={setOpenSettings} useDev={true} />
+                <RouteProfileSettings key="routesettingsdialog" setOpenSettings={setOpenSettings} useDev={true} />
             )}
         </>
     );
