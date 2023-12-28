@@ -27,7 +27,7 @@ import { cloneDeep } from 'lodash';
 import EmptyLogin from '../errors/EmptyLogin';
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 
-export default function ConfigureMap({ setOpenVisibleMenu, setSelectedType }) {
+export default function ConfigureMap({ setOpenVisibleMenu }) {
     const ctx = useContext(AppContext);
     const [openSettings, setOpenSettings] = useState(false);
 
