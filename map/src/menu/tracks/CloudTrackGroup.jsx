@@ -16,13 +16,11 @@ export default function CloudTrackGroup({ index, group }) {
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const [openActions, setOpenActions] = useState(false);
     const [processDownload, setProcessDownload] = useState(false);
-    const [showMenu, setShowMenu] = useState(false);
     const anchorEl = useRef(null);
 
     useEffect(() => {
         if (ctx.openedPopper && ctx.openedPopper !== anchorEl) {
             setOpenActions(false);
-            setShowMenu(false);
         }
     }, [ctx.openedPopper]);
 
@@ -35,12 +33,6 @@ export default function CloudTrackGroup({ index, group }) {
                 onClick={(e) => {
                     if (e.target !== 'path') {
                         ctx.setOpenGroups((prevState) => [...prevState, group]);
-                    }
-                }}
-                onMouseEnter={() => setShowMenu(true)}
-                onMouseLeave={() => {
-                    if (!ctx.openedPopper?.current) {
-                        setShowMenu(false);
                     }
                 }}
             >
@@ -56,7 +48,6 @@ export default function CloudTrackGroup({ index, group }) {
                 <Tooltip key={'action_menu_group'} title={'Menu'} arrow placement="bottom-end">
                     <IconButton
                         id={`se-folder-actions-button-${group.name}`}
-                        style={{ display: showMenu ? 'block' : 'none' }}
                         className={styles.sortIcon}
                         onMouseEnter={() => setHoverIconInfo(true)}
                         onMouseLeave={() => setHoverIconInfo(false)}
@@ -82,7 +73,6 @@ export default function CloudTrackGroup({ index, group }) {
                 open={openActions}
                 setOpen={setOpenActions}
                 anchorEl={anchorEl}
-                setShowMenu={setShowMenu}
                 actions={
                     <GroupActions
                         group={group}

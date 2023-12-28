@@ -130,7 +130,7 @@ export default function MainMenu({
     }, [showInfoBlock]);
 
     useEffect(() => {
-        if (openVisibleMenu && ctx.currentObjectType !== OBJECT_TYPE_CLOUD_TRACK) {
+        if (openVisibleMenu) {
             setOpenVisibleMenu(false);
         }
     }, [menuInfo]);
@@ -413,7 +413,11 @@ export default function MainMenu({
                 {!showInfoBlock && _.isEmpty(ctx.openGroups) && !openVisibleMenu && menuInfo}
                 {ctx.openGroups.length > 0 && !showInfoBlock && getGroup()}
                 {openVisibleMenu && !showInfoBlock && (
-                    <VisibleTracks setOpenVisibleMenu={setOpenVisibleMenu} setMenuInfo={setMenuInfo} />
+                    <VisibleTracks
+                        setOpenVisibleMenu={setOpenVisibleMenu}
+                        setMenuInfo={setMenuInfo}
+                        setSelectedType={setSelectedType}
+                    />
                 )}
                 <InformationBlock
                     showInfoBlock={showInfoBlock}

@@ -179,79 +179,83 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
         const trackName = TracksManager.getFileName(file);
         return (
             <>
-                <Tooltip
-                    title={visible ? '' : info}
-                    arrow
-                    placement={mobile ? 'bottom' : 'right'}
-                    disableInteractive={visible}
-                >
-                    <MenuItem
-                        className={styles.item}
-                        id={'se-cloud-track-' + trackName}
-                        onClick={() => {
-                            setDisplayTrack(true);
-                            setIsClickOnItem(true);
-                        }}
-                        onMouseEnter={() => setShowMenu(true)}
-                        onMouseLeave={() => {
-                            if (!ctx.openedPopper?.current) {
-                                setShowMenu(false);
-                            }
-                        }}
+                <div className={visible && styles.container}>
+                    <Tooltip
+                        title={visible ? '' : info}
+                        arrow
+                        placement={mobile ? 'bottom' : 'right'}
+                        disableInteractive={visible}
                     >
-                        <ListItemIcon className={setIconStyles()}>
-                            <TrackIcon />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <MenuItemsTitle name={trackName} maxLines={2} />
-                            <Typography variant="body2" className={styles.groupInfo} noWrap>
-                                {dist && `${dist} km`}
-                                {' · '}
-                                {time && `${time}`}
-                                {wptPoints && ` · ${wptPoints}`}
-                            </Typography>
-                        </ListItemText>
-                        {showMenu && (
-                            <Tooltip key={'action_menu_track'} title={'Menu'} arrow placement="bottom-end">
-                                <IconButton
-                                    id={`se-actions-${trackName}`}
-                                    // style={{ display: showMenu ? 'block' : 'none' }}
-                                    className={styles.sortIcon}
-                                    onMouseEnter={() => setHoverIconInfo(true)}
-                                    onMouseLeave={() => setHoverIconInfo(false)}
+                        <MenuItem
+                            className={styles.item}
+                            id={'se-cloud-track-' + trackName}
+                            onClick={() => {
+                                setDisplayTrack(true);
+                                setIsClickOnItem(true);
+                            }}
+                            onMouseEnter={() => visible && setShowMenu(true)}
+                            onMouseLeave={() => {
+                                if (visible && !ctx.openedPopper?.current) {
+                                    setShowMenu(false);
+                                }
+                            }}
+                        >
+                            <ListItemIcon className={setIconStyles()}>
+                                <TrackIcon />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <MenuItemsTitle name={trackName} maxLines={2} />
+                                <Typography variant="body2" className={styles.groupInfo} noWrap>
+                                    {dist && `${dist} km`}
+                                    {' · '}
+                                    {time && `${time}`}
+                                    {wptPoints && ` · ${wptPoints}`}
+                                </Typography>
+                            </ListItemText>
+                            {(!visible || showMenu) && (
+                                <div className={visible && styles.menuButtonContainer}>
+                                    <Tooltip key={'action_menu_track'} title={'Menu'} arrow placement="bottom-end">
+                                        <IconButton
+                                            id={`se-actions-${trackName}`}
+                                            // style={{ display: showMenu ? 'block' : 'none' }}
+                                            className={styles.sortIcon}
+                                            onMouseEnter={() => setHoverIconInfo(true)}
+                                            onMouseLeave={() => setHoverIconInfo(false)}
+                                            onClick={(e) => {
+                                                setOpenActions(true);
+                                                ctx.setOpenedPopper(anchorEl);
+                                                e.stopPropagation();
+                                            }}
+                                            ref={anchorEl}
+                                        >
+                                            {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
+                                        </IconButton>
+                                    </Tooltip>
+                                </div>
+                            )}
+                            {visible && (
+                                <Switch
+                                    sx={{ ml: '-25px' }}
                                     onClick={(e) => {
-                                        setOpenActions(true);
-                                        ctx.setOpenedPopper(anchorEl);
                                         e.stopPropagation();
+                                        setIsClickOnItem(false);
                                     }}
-                                    ref={anchorEl}
-                                >
-                                    {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
-                                </IconButton>
-                            </Tooltip>
-                        )}
-                        {visible && (
-                            <Switch
-                                sx={{ ml: '-25px' }}
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    setIsClickOnItem(false);
-                                }}
-                                checked={checkedSwitch}
-                                onChange={(e) => {
-                                    !file.local && setDisplayTrack(e.target.checked);
-                                    setIsClickOnItem(false);
-                                }}
-                            />
-                        )}
-                    </MenuItem>
-                </Tooltip>
-                {!isLastItem && <Divider className={styles.dividerItem} />}
+                                    checked={checkedSwitch}
+                                    onChange={(e) => {
+                                        !file.local && setDisplayTrack(e.target.checked);
+                                        setIsClickOnItem(false);
+                                    }}
+                                />
+                            )}
+                        </MenuItem>
+                    </Tooltip>
+                </div>
+                {(!visible || !isLastItem) && <Divider className={styles.dividerItem} />}
                 <ActionsMenu
                     open={openActions}
                     setOpen={setOpenActions}
                     anchorEl={anchorEl}
-                    setShowMenu={setShowMenu}
+                    setShowMenu={visible && setShowMenu}
                     actions={<TrackActions track={file} setShowTrack={setShowTrack} setOpenActions={setOpenActions} />}
                 />
                 {loadingTrack ? <LinearProgress /> : <></>}

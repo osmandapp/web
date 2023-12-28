@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useCookie from 'react-use-cookie';
-import Utils, { useMutator, seleniumUpdateActivity } from '../util/Utils';
+import { useMutator, seleniumUpdateActivity } from '../util/Utils';
 import TracksManager, { getGpxFiles } from '../manager/track/TracksManager';
 import _ from 'lodash';
 import { addOpenedFavoriteGroups } from '../manager/FavoritesManager';
@@ -83,7 +83,6 @@ async function loadListFiles(
 }
 
 async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
-    const promises = [];
     const newGpxFiles = Object.assign({}, gpxFiles);
 
     // get saved visible tracks (only new)
@@ -112,48 +111,28 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
 
     for (let ind of selectedFiles) {
         let file = files[ind];
-        let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(
-            file.type
-        )}&name=${encodeURIComponent(file.name)}`;
         newGpxFiles[file.name] = {
-            url: url,
+            url: null,
             clienttimems: file.clienttimems,
             updatetimems: file.updatetimems,
             name: file.name,
             type: 'GPX',
         };
-        let f = await Utils.getFileData(newGpxFiles[file.name]);
-        const gpxfile = new File([f], file.name, {
-            type: 'text/plain',
-        });
-
-        promises.push(
-            TracksManager.getTrackData(gpxfile).then((track) => {
-                track.name = file.name;
-                // add flag to not add layer to the map
-                track.avoidAddingToMap = true;
-                Object.keys(track).forEach((t) => {
-                    newGpxFiles[file.name][t] = track[t];
-                });
-            })
-        );
     }
-    await Promise.all(promises).then(() => {
-        setGpxFiles(newGpxFiles);
-        // add visible tracks to old objects, after next page reload they will be deleted
-        setVisibleTracks({
-            new: [],
-            old: Object.values(newGpxFiles),
-        });
-        // save them to localStorage
-        localStorage.setItem(
-            TracksManager.TRACK_VISIBLE_FLAG,
-            JSON.stringify({
-                new: [],
-                old: Object.keys(newGpxFiles),
-            })
-        );
+    setGpxFiles(newGpxFiles);
+    // add visible tracks to old objects, after next page reload they will be deleted
+    setVisibleTracks({
+        new: [],
+        old: Object.values(newGpxFiles),
     });
+    // save them to localStorage
+    localStorage.setItem(
+        TracksManager.TRACK_VISIBLE_FLAG,
+        JSON.stringify({
+            new: [],
+            old: Object.keys(newGpxFiles),
+        })
+    );
 }
 
 async function checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCookie, setAccountInfo) {

@@ -2,15 +2,16 @@ import { Box, Button, Icon, ListItemText } from '@mui/material';
 import styles from './errors.module.css';
 import EmptyLogin from './EmptyLogin';
 import React, { useContext } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext, { OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
 import { ReactComponent as EmptyIcon } from '../../assets/icons/ic_action_track_disabled.svg';
 import TracksMenu from '../tracks/TracksMenu';
 
-export default function EmptyVisible({ setMenuInfo, setOpenVisibleMenu }) {
+export default function EmptyVisible({ setMenuInfo, setOpenVisibleMenu, setSelectedType }) {
     const ctx = useContext(AppContext);
 
     function showAllTracks() {
         if (setMenuInfo) {
+            setSelectedType(OBJECT_TYPE_CLOUD_TRACK);
             setMenuInfo(<TracksMenu setOpenVisibleMenu={setOpenVisibleMenu} />);
         }
     }

@@ -21,6 +21,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import _, { isEmpty } from 'lodash';
 import TracksManager, { createTrackGroups, getGpxFiles } from '../../manager/track/TracksManager';
+import { removeAllDisableVisTracks } from '../../menu/visibletracks/VisibleTracks';
 
 const GlobalFrame = () => {
     const ctx = useContext(AppContext);
@@ -87,6 +88,20 @@ const GlobalFrame = () => {
             ctx.setVisibleTracks({ ...newVisFiles });
         }
     }, [ctx.gpxFiles]);
+
+    useEffect(() => {
+        if (openVisibleMenu) {
+            let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
+            let newVisFilesNames = {
+                old: savedVisible.old || [],
+                new: savedVisible.new || [],
+                open: savedVisible.open || [],
+            };
+            localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(newVisFilesNames));
+        } else {
+            removeAllDisableVisTracks(ctx);
+        }
+    }, [openVisibleMenu]);
 
     // create track groups
     useEffect(() => {
