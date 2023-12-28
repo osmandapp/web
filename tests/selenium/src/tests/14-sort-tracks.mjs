@@ -7,6 +7,7 @@ import { getFiles } from '../util.mjs';
 import actionImportCloudTrack from '../actions/actionImportCloudTrack.mjs';
 import actionCheckCloudTracks from '../actions/actionCheckCloudTracks.mjs';
 import actionCreateNewFolder from '../actions/actionCreateNewFolder.mjs';
+import actionIdleWait from '../actions/actionIdleWait.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -73,6 +74,7 @@ const trackGroupsShortest = [
 async function validateGroupOrder(ids) {
     await enclose(
         async () => {
+            await actionIdleWait();
             const groups = await enumerateIds('se-cloud-track-test');
             return JSON.stringify(ids) === JSON.stringify(groups);
         },
