@@ -226,7 +226,7 @@ export async function saveFavoriteGroup(data, groupName, ctx) {
         });
         if (resp.data) {
             const res = resp.data;
-            refreshGlobalFiles(ctx, groupName, OBJECT_TYPE_FAVORITE).then();
+            refreshGlobalFiles({ ctx, currentFileName: groupName, type: OBJECT_TYPE_FAVORITE }).then();
             return FavoritesManager.createGroup(res);
         }
     }

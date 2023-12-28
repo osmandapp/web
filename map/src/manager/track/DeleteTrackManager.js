@@ -25,7 +25,7 @@ export async function deleteTrack(file, ctx, type = 'GPX') {
             });
 
             if (type === FAVORITE_FILE_TYPE) {
-                refreshGlobalFiles(ctx, null, OBJECT_TYPE_FAVORITE).then();
+                refreshGlobalFiles({ ctx, type: OBJECT_TYPE_FAVORITE }).then();
             } else {
                 // delete track from ctx.tracksGroups (used in CloudTrackGroup menu)
                 deleteTracksFromGroups(trackName, ctx);
@@ -59,7 +59,7 @@ export async function deleteTrackFolder(folder, ctx) {
         dataOnErrors: true,
     });
     if (res && res?.data?.status === 'ok') {
-        refreshGlobalFiles(ctx).then();
+        refreshGlobalFiles({ ctx }).then();
     } else {
         ctx.setTrackErrorMsg({
             title: 'Delete error',

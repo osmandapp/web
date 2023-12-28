@@ -58,7 +58,7 @@ export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }
             });
             if (res && res?.data?.status === 'ok') {
                 updateSortList({ oldName, newName, isFavorites: true, ctx });
-                refreshGlobalFiles(ctx, newGroupName, OBJECT_TYPE_FAVORITE).then();
+                refreshGlobalFiles({ ctx, currentFileName: newGroupName, type: OBJECT_TYPE_FAVORITE }).then();
             } else {
                 ctx.setTrackErrorMsg({
                     title: 'Rename error',

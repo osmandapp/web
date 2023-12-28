@@ -98,7 +98,7 @@ export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file,
                     downloadAfterUpload(ctx, downloadFile).then();
                 }
                 TracksManager.deleteLocalTrack(ctx);
-                refreshGlobalFiles(ctx, params.name).then();
+                refreshGlobalFiles({ ctx, currentFileName: params.name }).then();
                 return true;
             }
         }
@@ -176,7 +176,7 @@ export async function renameTrack(oldName, folder, newName, ctx) {
             dataOnErrors: true,
         });
         if (res && res?.data?.status === 'ok') {
-            await refreshGlobalFiles(ctx, oldName, newFileName);
+            await refreshGlobalFiles({ ctx, oldName, currentFileName: newFileName });
         } else {
             ctx.setTrackErrorMsg({
                 title: 'Rename error',
@@ -257,7 +257,7 @@ export async function duplicateTrack(oldName, folderName, newName, ctx) {
             dataOnErrors: true,
         });
         if (res && res?.data?.status === 'ok') {
-            refreshGlobalFiles(ctx, newFileName).then();
+            refreshGlobalFiles({ ctx, currentFileName: newFileName }).then();
         } else {
             ctx.setTrackErrorMsg({
                 title: 'Duplicate error',
@@ -279,7 +279,7 @@ export async function renameFolder(folder, newName, ctx) {
     });
     if (res && res?.data?.status === 'ok') {
         updateSortList({ oldName: folder.fullName, newName: newFolderName, isTracks: true, ctx });
-        refreshGlobalFiles(ctx).then();
+        refreshGlobalFiles({ ctx }).then();
     } else {
         ctx.setTrackErrorMsg({
             title: 'Duplicate error',
@@ -305,12 +305,12 @@ export async function saveEmptyTrack(folderName, ctx) {
     //save empty file with new folder's name
     const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data, { params });
     if (res && res?.data?.status === 'ok') {
-        refreshGlobalFiles(ctx, params.name).then();
+        refreshGlobalFiles({ ctx, currentFileName: params.name }).then();
         return true;
     }
 }
 
-export async function refreshGlobalFiles(ctx, oldName = null, currentFileName = null, type = GPX_FILE_TYPE) {
+export async function refreshGlobalFiles({ ctx, oldName = null, currentFileName = null, type = GPX_FILE_TYPE }) {
     // refresh list-files but skip if uploaded file is already there
     if (currentFileName == null || !ctx.listFiles.uniqueFiles?.find((f) => f.name === currentFileName)) {
         const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});

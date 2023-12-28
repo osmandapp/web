@@ -75,7 +75,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
             deleteTrackFromMap(ctx, file);
             setLoading(false);
         } else {
-            await addTrackToMap(setLoading, visible);
+            await addTrackToMap({ setProgressVisible: setLoading, fromVisibleTracks: visible });
         }
     }
 
@@ -87,10 +87,13 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
     }, [displayTrack]);
 
     useEffect(() => {
-        showTrack && addTrackToMap(setLoadingTrack, visible);
+        if (showTrack) {
+            updateVisibleCache(showTrack, file);
+            addTrackToMap({ setProgressVisible: setLoadingTrack, fromVisibleTracks: visible });
+        }
     }, [showTrack]);
 
-    async function addTrackToMap(setProgressVisible, fromVisibleTracks = false) {
+    async function addTrackToMap({ setProgressVisible, fromVisibleTracks = false }) {
         // cleanup edited localTrack
         if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
             ctx.setCreateTrack({
