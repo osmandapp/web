@@ -26,9 +26,9 @@ const ENABLE_PROVIDER_SELECTION = false; // disabled by default, but allowed if 
 export default function RouteProfileSettings({ geoRouter, useDev, setOpenSettings, embed = false }) {
     const ctx = useContext(AppContext);
 
-    const [opts, setOpts] = useState();
-
     geoRouter = geoRouter || ctx.routeObject; // trackRouter callers specify distinct geoRouter
+
+    const [opts, setOpts] = useState(geoRouter.getParams());
 
     // Close = Accept
     const handleCloseAccept = () => {
@@ -140,7 +140,7 @@ export default function RouteProfileSettings({ geoRouter, useDev, setOpenSetting
                         <React.Fragment key={'dialog_' + key}>
                             {checkSection(opt.section) && checkDevSection(opt) && (
                                 <MenuItem selected={true} divider={true} key={'section_' + key}>
-                                    {section ?? 'Options'}
+                                    {section ?? 'General options'}
                                 </MenuItem>
                             )}
                             {checkDevSection(opt) && (
@@ -185,11 +185,13 @@ export default function RouteProfileSettings({ geoRouter, useDev, setOpenSetting
                             )}
                         </React.Fragment>
                     ))}
-                <MenuItem>
-                    <Button sx={{ ml: 1 }} onClick={handleReset}>
-                        Reset options
-                    </Button>
-                </MenuItem>
+                {opts && Object.keys(opts).length > 0 && (
+                    <MenuItem>
+                        <Button sx={{ ml: 1 }} onClick={handleReset}>
+                            Reset options
+                        </Button>
+                    </MenuItem>
+                )}
             </>
         );
     };
