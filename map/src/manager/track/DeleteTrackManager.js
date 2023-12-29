@@ -4,6 +4,7 @@ import TracksManager, { findGroupByName } from './TracksManager';
 import { refreshGlobalFiles } from './SaveTrackManager';
 import { FAVORITE_FILE_TYPE } from '../FavoritesManager';
 import { cloneDeep } from 'lodash';
+import { hideAllVisTracks } from '../../menu/visibletracks/VisibleTracks';
 
 export async function deleteTrack(file, ctx, type = 'GPX') {
     if ((isCloudTrack(ctx) || file) && ctx.loginUser) {
@@ -43,6 +44,13 @@ export async function deleteTrack(file, ctx, type = 'GPX') {
                     }
                     return { ...o };
                 });
+                // update gpxFiles
+                ctx.setGpxFiles((o) => {
+                    if (o[file.name]) {
+                        delete o[file.name];
+                    }
+                    return { ...o };
+                });
             }
         }
     } else if (isLocalTrack(ctx)) {
@@ -76,6 +84,7 @@ export function deleteTrackFromMap(ctx, file) {
 }
 
 export function deleteTracksFromMap(ctx, files) {
+    hideAllVisTracks();
     let updatedGpxFiles = cloneDeep(ctx.gpxFiles);
     files.forEach((file) => {
         updatedGpxFiles[file.name].url = null;

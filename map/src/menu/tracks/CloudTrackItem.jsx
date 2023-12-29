@@ -41,10 +41,10 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
     const [showTrack, setShowTrack] = useState(false);
     const [openActions, setOpenActions] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
-    const [checkedSwitch, setCheckedSwitch] = useState(getCheckedSwitch());
     const [isClickOnItem, setIsClickOnItem] = useState(false);
     const anchorEl = useRef(null);
 
+    let checkedSwitch = getCheckedSwitch();
     const info = useMemo(() => <TrackInfo file={file} />, [file]);
 
     const dist = getDist(file);
@@ -69,8 +69,8 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
     }
 
     async function processDisplayTrack({ visible, setLoading }) {
-        setCheckedSwitch(!checkedSwitch);
-        updateVisibleCache(visible, file);
+        checkedSwitch = !checkedSwitch;
+        updateVisibleCache({ visible, file });
         if (!visible) {
             deleteTrackFromMap(ctx, file);
             setLoading(false);
@@ -88,7 +88,7 @@ export default function CloudTrackItem({ file, customIcon = null, visible = null
 
     useEffect(() => {
         if (showTrack) {
-            updateVisibleCache(showTrack, file);
+            updateVisibleCache({ visible: showTrack, file });
             addTrackToMap({ setProgressVisible: setLoadingTrack, fromVisibleTracks: visible });
         }
     }, [showTrack]);

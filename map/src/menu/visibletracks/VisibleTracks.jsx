@@ -19,7 +19,7 @@ export function getCountVisibleTracks(visibleTracks) {
     return oldSize + newSize;
 }
 
-export function updateVisibleCache(visible, file) {
+export function updateVisibleCache({ visible, file }) {
     let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
     if (savedVisible && !savedVisible.open) {
         savedVisible.open = [];
@@ -31,6 +31,14 @@ export function updateVisibleCache(visible, file) {
         if (ind !== -1) {
             savedVisible.open.splice(ind, 1);
         }
+    }
+    localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(savedVisible));
+}
+
+export function hideAllVisTracks() {
+    let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
+    if (savedVisible) {
+        savedVisible.open = [];
     }
     localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(savedVisible));
 }
@@ -57,6 +65,10 @@ export function removeAllDisableVisTracks(ctx) {
                     newVisFilesNames.open.push(t.name);
                 }
             });
+            newVisFilesNames.old = newVisFilesNames.new.concat(newVisFilesNames.old);
+            newVisFiles.old = newVisFiles.new.concat(newVisFiles.old);
+            newVisFilesNames.new = [];
+            newVisFiles.new = [];
             ctx.visibleTracks.old?.forEach((t) => {
                 if (savedVisible.open?.includes(t.name)) {
                     newVisFiles.old.push(t);

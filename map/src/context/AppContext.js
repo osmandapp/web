@@ -115,6 +115,7 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
             url: null,
             clienttimems: file.clienttimems,
             updatetimems: file.updatetimems,
+            avoidAddingToMap: true,
             name: file.name,
             type: 'GPX',
         };

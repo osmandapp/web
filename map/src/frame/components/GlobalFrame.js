@@ -78,13 +78,41 @@ const GlobalFrame = () => {
 
             Object.values(ctx.gpxFiles).forEach((f) => {
                 if ((f.url && !isOldVisibleTrack(savedVisible, f)) || isNewVisibleTrack(savedVisible, f)) {
-                    newVisFiles.new.push(f);
-                    newVisFilesNames.new.push(f.name);
+                    if (isNewVisibleTrack(savedVisible, f)) {
+                        const ind = savedVisible.new.findIndex((n) => n === f.name);
+                        if (ind !== -1 && !newVisFiles.new[ind]) {
+                            // If the new array at the index is empty, simply assign the current element
+                            newVisFiles.new[ind] = f;
+                            newVisFilesNames.new[ind] = f.name;
+                        } else {
+                            // Otherwise, find the next available index and assign the element
+                            let nextFreeIndex = newVisFiles.new.findIndex((el) => !el);
+                            if (nextFreeIndex === -1) {
+                                // If no free indexes are found, append to the end of the array
+                                newVisFiles.new.push(f);
+                                newVisFilesNames.new.push(f.name);
+                            } else {
+                                // Assign the element to the next free index
+                                newVisFiles.new[nextFreeIndex] = f;
+                                newVisFilesNames.new[nextFreeIndex] = f.name;
+                            }
+                        }
+                    } else {
+                        // If it's not a new visible track, simply push the element to both arrays
+                        newVisFiles.new.push(f);
+                        newVisFilesNames.new.push(f.name);
+                    }
                 }
             });
             // save updated names to localStorage
             localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(newVisFilesNames));
             // save updated visible tracks
+            ctx.setVisibleTracks({ ...newVisFiles });
+        } else {
+            let newVisFiles = {
+                old: [],
+                new: [],
+            };
             ctx.setVisibleTracks({ ...newVisFiles });
         }
     }, [ctx.gpxFiles]);
@@ -99,7 +127,9 @@ const GlobalFrame = () => {
             };
             localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(newVisFilesNames));
         } else {
-            removeAllDisableVisTracks(ctx);
+            if (!isEmpty(ctx.visibleTracks)) {
+                removeAllDisableVisTracks(ctx);
+            }
         }
     }, [openVisibleMenu]);
 

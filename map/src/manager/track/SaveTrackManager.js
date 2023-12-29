@@ -198,25 +198,29 @@ export async function updateGpxFiles(oldName, newFileName, listFiles, ctx) {
                         file.type
                     )}&name=${encodeURIComponent(file.name)}`;
                     newGpxFiles[file.name] = {
-                        url: url,
+                        url: ctx.gpxFiles[oldName].url ? url : null,
                         clienttimems: file.clienttimems,
                         updatetimems: file.updatetimems,
                         name: file.name,
                         type: 'GPX',
                     };
-                    let f = await Utils.getFileData(newGpxFiles[file.name]);
-                    const gpxfile = new File([f], file.name, {
-                        type: 'text/plain',
-                    });
-                    TracksManager.getTrackData(gpxfile).then((track) => {
-                        track.name = file.name;
-                        track.avoidAddingToMap = true;
-                        Object.keys(track).forEach((t) => {
-                            newGpxFiles[file.name][t] = track[t];
+                    if (newGpxFiles[file.name].url) {
+                        let f = await Utils.getFileData(newGpxFiles[file.name]);
+                        const gpxfile = new File([f], file.name, {
+                            type: 'text/plain',
                         });
-                        delete newGpxFiles[oldName];
+                        TracksManager.getTrackData(gpxfile).then((track) => {
+                            track.name = file.name;
+                            Object.keys(track).forEach((t) => {
+                                newGpxFiles[file.name][t] = track[t];
+                            });
+                            newGpxFiles[oldName].url = null;
+                            ctx.setGpxFiles({ ...newGpxFiles });
+                        });
+                    } else {
+                        newGpxFiles[oldName].url = null;
                         ctx.setGpxFiles({ ...newGpxFiles });
-                    });
+                    }
                 }
             }
         }
@@ -237,6 +241,12 @@ export function updateVisibleTracks(oldN, newN) {
             }
         } else {
             savedVisible.new[newInd] = newN;
+        }
+        if (savedVisible.open) {
+            const openInd = savedVisible.open?.findIndex((n) => n === oldN);
+            if (openInd !== -1) {
+                savedVisible.open[openInd] = newN;
+            }
         }
         localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(savedVisible));
     }
@@ -321,11 +331,11 @@ export async function refreshGlobalFiles({ ctx, oldName = null, currentFileName 
         if (type === OBJECT_TYPE_FAVORITE) {
             await updateFavGroups(resJson, ctx);
         } else if (type === GPX_FILE_TYPE) {
+            updateTrackGroups(resJson, ctx);
             if (oldName) {
                 updateVisibleTracks(oldName, currentFileName);
                 await updateGpxFiles(oldName, currentFileName, resJson, ctx);
             }
-            updateTrackGroups(resJson, ctx);
         }
     } else {
         if (type === GPX_FILE_TYPE) {
