@@ -20,15 +20,18 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import AppContext from '../../context/AppContext';
+import { useMutator } from '../../util/Utils';
 
 const ENABLE_PROVIDER_SELECTION = false; // disabled by default, but allowed if type=osrm is specified in URL
 
-export default function RouteProfileSettings({ geoRouter, useDev, setOpenSettings, embed = false }) {
+export default function RouteProfileSettings({ geoRouter, useDev = true, setOpenSettings, embed = false }) {
     const ctx = useContext(AppContext);
 
-    const [opts, setOpts] = useState();
+    const [unfoldedSections, mutateUnfoldedSections] = useMutator({}); // all sections are folded by default
 
-    geoRouter = geoRouter || ctx.routeObject; // trackRouter callers specify distinct geoRouter
+    geoRouter = geoRouter || ctx.routeObject; // `trackRouter` callers should specify distinct geoRouter
+
+    const [opts, setOpts] = useState(geoRouter.getParams());
 
     // Close = Accept
     const handleCloseAccept = () => {
@@ -110,9 +113,7 @@ export default function RouteProfileSettings({ geoRouter, useDev, setOpenSetting
         setOpts(nopts);
     };
 
-    const showReset = () => {
-        return geoRouter.isParamsChanged({ params: opts });
-    };
+    const showReset = () => geoRouter.isParamsChanged({ params: opts });
 
     useEffect(() => {
         setOpts(geoRouter.getParams());
@@ -132,68 +133,116 @@ export default function RouteProfileSettings({ geoRouter, useDev, setOpenSetting
         return false;
     }
 
+    const hasOptions = () => opts && Object.keys(opts).length > 0;
+
+    // sort section === null as 1st, keep others' order
+    const sortValues = (a, b) => !!a.section - !!b.section; // for Object.entries
+    const sortEntries = (a, b) => (a && a[1] && !!a[1].section) - (b && b[1] && !!b[1].section); // for Object.values
+
+    // sections list
+    const sections = [];
+    if (opts) {
+        const hash = {};
+        Object.values(opts)
+            .sort(sortValues)
+            .forEach(({ section }) => {
+                hash[section] || sections.push(section);
+                hash[section] = true;
+            });
+    }
+
+    const switchFolding = (s) => mutateUnfoldedSections((o) => (o[s] = !o[s]));
+
+    const OptBoolean = ({ opt }) => (
+        <Tooltip key={'tool_' + opt.key} title={opt.description} arrow placement="right">
+            <FormControlLabel
+                key={opt.key}
+                label={opt.label}
+                disabled={isDisabled(opt.key)}
+                control={
+                    <Checkbox
+                        sx={{ mt: '-1px' }}
+                        key={'check_' + opt.key}
+                        checked={opt.value}
+                        icon={opt.group && <RadioButtonUncheckedIcon />}
+                        checkedIcon={opt.group && <RadioButtonCheckedIcon />}
+                        onChange={onCheckBox(opt.key, opts, setOpts)}
+                    />
+                }
+            ></FormControlLabel>
+        </Tooltip>
+    );
+
+    const OptSelect = ({ opt }) => (
+        <Tooltip key={'tool_' + opt.key} title={opt.description} arrow placement="right">
+            <FormControl sx={{ m: 0, minWidth: 240 }}>
+                <InputLabel id={'routing-param-' + opt.key}>{opt.label}</InputLabel>
+                <Select
+                    labelId={'routing-param-' + opt.key}
+                    label={opt.label}
+                    value={opt.value ? opt.value : ''}
+                    onChange={onSelect(opt.key, opts, setOpts)}
+                    disabled={isDisabled(opt.key)}
+                >
+                    {opt.values.map((item, index) => (
+                        <MenuItem key={item} value={item}>
+                            {opt.valueDescriptions[index]}
+                        </MenuItem>
+                    ))}
+                </Select>
+            </FormControl>
+        </Tooltip>
+    );
+
+    const OptFlatItem = ({ opt }) => (
+        <MenuItem
+            key={'option_' + opt.key}
+            dense={opt.type === 'boolean'}
+            sx={{ maxHeight: opt.type === 'boolean' ? '32px' : '68px' }}
+        >
+            {opt.type === 'boolean' ? <OptBoolean opt={opt} /> : <OptSelect opt={opt} />}
+        </MenuItem>
+    );
+
+    // new flat-style options
     const flatOptions = () => {
         return (
-            <>
-                {opts &&
-                    Object.entries(opts).map(([key, opt]) => (
-                        <React.Fragment key={'dialog_' + key}>
-                            {checkSection(opt.section) && checkDevSection(opt) && (
-                                <MenuItem selected={true} divider={true} key={'section_' + key}>
-                                    {section ?? 'Options'}
-                                </MenuItem>
-                            )}
-                            {checkDevSection(opt) && (
-                                <MenuItem dense={opt.type === 'boolean'} key={'option_' + key}>
-                                    <Tooltip key={'tool_' + key} title={opt.description} arrow placement="right">
-                                        {opt.type === 'boolean' ? (
-                                            <FormControlLabel
-                                                key={key}
-                                                label={opt.label}
-                                                disabled={isDisabled(key)}
-                                                control={
-                                                    <Checkbox
-                                                        sx={{ mt: '-1px' }}
-                                                        key={'check_' + key}
-                                                        checked={opt.value}
-                                                        icon={opt.group && <RadioButtonUncheckedIcon />}
-                                                        checkedIcon={opt.group && <RadioButtonCheckedIcon />}
-                                                        onChange={onCheckBox(key, opts, setOpts)}
-                                                    />
-                                                }
-                                            ></FormControlLabel>
-                                        ) : (
-                                            <FormControl sx={{ m: 0, minWidth: 240 }}>
-                                                <InputLabel id={'routing-param-' + opt.key}>{opt.label}</InputLabel>
-                                                <Select
-                                                    labelId={'routing-param-' + opt.key}
-                                                    label={opt.label}
-                                                    value={opt.value ? opt.value : ''}
-                                                    onChange={onSelect(key, opts, setOpts)}
-                                                    disabled={isDisabled(key)}
-                                                >
-                                                    {opt.values.map((item, index) => (
-                                                        <MenuItem key={item} value={item}>
-                                                            {opt.valueDescriptions[index]}
-                                                        </MenuItem>
-                                                    ))}
-                                                </Select>
-                                            </FormControl>
-                                        )}
-                                    </Tooltip>
-                                </MenuItem>
-                            )}
+            hasOptions() && (
+                <>
+                    {sections.map((s) => (
+                        <React.Fragment key={'section_' + s}>
+                            <MenuItem
+                                key={'unfold_' + s}
+                                selected={true}
+                                divider={true}
+                                onClick={() => switchFolding(s)}
+                            >
+                                {s ?? 'General options'}
+                            </MenuItem>
+                            {/* <Collapse key={'collapse_' + s} in={unfoldedSections[s]}> */}
+                            <div style={{ display: unfoldedSections[s] ? '' : 'none' }}>
+                                {Object.values(opts)
+                                    .filter((o) => o.section === s)
+                                    .map((opt) => (
+                                        <OptFlatItem key={'opt_' + opt.key} opt={opt} />
+                                    ))}
+                            </div>
+                            {/* </Collapse> */}
                         </React.Fragment>
                     ))}
-                <MenuItem>
-                    <Button sx={{ ml: 1 }} onClick={handleReset}>
-                        Reset options
-                    </Button>
-                </MenuItem>
-            </>
+                    {showReset() && (
+                        <MenuItem>
+                            <Button sx={{ ml: 1 }} onClick={handleReset}>
+                                Reset options
+                            </Button>
+                        </MenuItem>
+                    )}
+                </>
+            )
         );
     };
 
+    // old dialog-style options
     const dialogOptions = () => {
         return (
             <Dialog open={true} onClose={handleCloseAccept}>
@@ -243,51 +292,17 @@ export default function RouteProfileSettings({ geoRouter, useDev, setOpenSetting
                     </FormControl>
 
                     {opts &&
-                        Object.entries(opts).map(([key, opt]) => (
-                            <React.Fragment key={'dialog_' + key}>
-                                {checkSection(opt.section) && checkDevSection(opt) && (
-                                    <DialogContentText key={'section_' + key}>{section}</DialogContentText>
-                                )}
-                                {checkDevSection(opt) && (
-                                    <Tooltip key={'tool_' + key} title={opt.description}>
-                                        {opt.type === 'boolean' ? (
-                                            <FormControlLabel
-                                                key={key}
-                                                label={opt.label}
-                                                disabled={isDisabled(key)}
-                                                control={
-                                                    <Checkbox
-                                                        sx={{ mt: '-6px' }}
-                                                        key={'check_' + key}
-                                                        checked={opt.value}
-                                                        icon={opt.group && <RadioButtonUncheckedIcon />}
-                                                        checkedIcon={opt.group && <RadioButtonCheckedIcon />}
-                                                        onChange={onCheckBox(key, opts, setOpts)}
-                                                    />
-                                                }
-                                            ></FormControlLabel>
-                                        ) : (
-                                            <FormControl sx={{ m: 1, minWidth: 120 }}>
-                                                <InputLabel id={'routing-param-' + opt.key}>{opt.label}</InputLabel>
-                                                <Select
-                                                    labelId={'routing-param-' + opt.key}
-                                                    label={opt.label}
-                                                    value={opt.value ? opt.value : ''}
-                                                    onChange={onSelect(key, opts, setOpts)}
-                                                    disabled={isDisabled(key)}
-                                                >
-                                                    {opt.values.map((item, index) => (
-                                                        <MenuItem key={item} value={item}>
-                                                            {opt.valueDescriptions[index]}
-                                                        </MenuItem>
-                                                    ))}
-                                                </Select>
-                                            </FormControl>
-                                        )}
-                                    </Tooltip>
-                                )}
-                            </React.Fragment>
-                        ))}
+                        Object.entries(opts)
+                            .sort(sortEntries)
+                            .map(([key, opt]) => (
+                                <React.Fragment key={'dialog_' + key}>
+                                    {checkSection(opt.section) && checkDevSection(opt) && (
+                                        <DialogContentText key={'section_' + key}>{section}</DialogContentText>
+                                    )}
+                                    {checkDevSection(opt) &&
+                                        (opt.type === 'boolean' ? <OptBoolean opt={opt} /> : <OptSelect opt={opt} />)}
+                                </React.Fragment>
+                            ))}
                 </DialogContent>
                 <DialogActions>
                     <Box display="flex" flexGrow={1}>
