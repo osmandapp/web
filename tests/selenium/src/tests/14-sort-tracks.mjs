@@ -29,13 +29,17 @@ export default async function test() {
     await actionCheckCloudTracks(tracks);
 
     await validateGroupOrder(trackGroupsLastModified);
+    await waitBy(By.id('se-sort-button-time'));
     await clickBy(By.id('se-sort-button-time'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-longest'));
+    await actionCheckCloudTracks(tracks);
     await validateGroupOrder(trackGroupsLongest);
+    await waitBy(By.id('se-sort-button-longest'));
     await clickBy(By.id('se-sort-button-longest'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-shortest'));
+    await actionCheckCloudTracks(tracks);
     await validateGroupOrder(trackGroupsShortest);
 
     await actionFinish();

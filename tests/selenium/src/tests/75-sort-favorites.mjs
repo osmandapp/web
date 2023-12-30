@@ -6,6 +6,7 @@ import { By } from 'selenium-webdriver';
 import actionCheckFileExist from '../actions/actionCheckFileExist.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import actionRenameFavGroup from '../actions/actionRenameFavGroup.mjs';
+import actionIdleWait from '../actions/actionIdleWait.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -34,18 +35,25 @@ export default async function test() {
     await clickBy(By.id('se-sort-button-time'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-az'));
+    await uploadFavGroup(favorites, false);
     await validateGroupOrder(favGroupsAZ);
+    await waitBy(By.id('se-sort-button-az'));
     await clickBy(By.id('se-sort-button-az'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-za'));
+    await uploadFavGroup(favorites, false);
     await validateGroupOrder(favGroupsZA);
+    await waitBy(By.id('se-sort-button-za'));
     await clickBy(By.id('se-sort-button-za'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-newDate'));
+    await uploadFavGroup(favorites, false);
     await validateGroupOrder(favGroupsNewDate);
+    await waitBy(By.id('se-sort-button-newDate'));
     await clickBy(By.id('se-sort-button-newDate'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-oldDate'));
+    await uploadFavGroup(favorites, false);
     await validateGroupOrder(favGroupsOldDate);
 
     // check item sort by time
@@ -60,6 +68,7 @@ export default async function test() {
     // check save prev groups sort after rename
     await actionRenameFavGroup(shortFavGroupName, suffix);
     await waitBy(By.id('se-sort-button-oldDate'));
+    await waitBy(By.id(`se-menu-fav-${shortFavGroupName}${suffix}`));
     await validateGroupOrder(favGroupsOldDateAfterRename);
 
     // check save sort order after change hidden
@@ -103,6 +112,7 @@ const favItemsFood = [
 async function validateGroupOrder(ids) {
     await enclose(
         async () => {
+            await actionIdleWait();
             const groups = await enumerateIds('se-menu-fav-');
             return JSON.stringify(ids) === JSON.stringify(groups);
         },
@@ -131,10 +141,13 @@ async function deleteFavGroups(favorites) {
     await waitBy(By.id('se-empty-page'));
 }
 
-async function uploadFavGroup(favorites) {
+async function uploadFavGroup(favorites, upload = true) {
     for (const f of favorites) {
-        await uploadFavorites({ files: f.path });
+        if (upload) {
+            await uploadFavorites({ files: f.path });
+        }
         const shortFavGroupName = f.name.split('-')[1];
+        await actionIdleWait();
         await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
     }
 }
