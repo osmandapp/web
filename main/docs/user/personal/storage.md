@@ -17,6 +17,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+## Overview
+
 How to configure, access and change data storage for maps, tracks and other personal data
 
 
@@ -81,9 +83,7 @@ Memory name | Permission access
 
 <TabItem value="ios" label="iOS">
 
-OsmAnd files are visible in the _["Files"](https://apps.apple.com/us/app/files/id1232058109)_ application. You can access all OsmAnd files: [tracks](../personal/tracks.md), [favorites](../personal/favorites.md), [maps](../personal/maps.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md):
-
-_Files → On My Phone → OsmAnd Maps_
+*Files → On My Phone → OsmAnd Maps*
 
 ![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)
 
@@ -91,19 +91,19 @@ _Files → On My Phone → OsmAnd Maps_
 
 </Tabs>
 
+- iOS:
+    OsmAnd files are visible in the _["Files"](https://apps.apple.com/us/app/files/id1232058109)_ application. You can access all OsmAnd files: [tracks](../personal/tracks.md), [favorites](../personal/favorites.md), [maps](../personal/maps.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md)
 
-## Storage on SD card
 
-<InfoAndroidOnly/>
+## Storage on SD card (Android)
 
-:::warning
-When the user enables USB mass storage to share files with a computer or unmounts the SD card via the system settings, the external storage is unmounted from the device and all applications running on the external storage are immediately killed. [Read more here](https://developer.android.com/guide/topics/data/install-location).
+:::note
+When a you *turns on a USB drive to share files* with a computer or disconnects the SD card through system settings, the external drive is disconnected from the device and all applications running on the external drive are **immediately terminated**. You can [read more here](https://developer.android.com/guide/topics/data/install-location).
 :::
 
 ### In order to move the OsmAnd home (maps) folder to an external SD card:
 
--   Go to `Settings (on the start screen) →  OsmAnd Settings → Data
-    storage folder`
+-   Go to *Settings (on the start screen) →  OsmAnd Settings → Data storage folder*
 -   Change the value to a path pointing to the external SD card, on many
     Android systems it may contain `/storage/extSdCard` or similar.
     Please note that some versions of Android strictly limit your choice
@@ -147,17 +147,9 @@ errors (e.g. if the SD card is too full).
 
 ## Backup & Restore
 
-### Backup and Restore for OsmAnd Pro
+### OsmAnd Cloud
 
-:::tip subscribe
-&nbsp;<ProFeature/> You need to subscribe to [OsmAnd Pro](../purchases/android#osmand-pro).  
-:::
-
-:::note cross-platform
-This is a cross-platform feature (Android <-> iOS OsmAnd versions).
-:::
-
-This feature helps to keep and restore your OsmAnd data. There are two variants of backing up in OsmAnd: [OsmAnd Cloud](../personal/osmand-cloud.md) and [Local](../personal/storage.md#local-backup).  
+This feature helps to keep and restore your OsmAnd data. There are two variants of backing up in OsmAnd: [OsmAnd Cloud](../personal/osmand-cloud.md).
 
 
 ### Local backup
