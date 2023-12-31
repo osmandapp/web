@@ -42,52 +42,57 @@ Our main goal is to provide ultimate **Trip computer** experience. We did big st
 
 * Allow to add & configure custom buttons on the HUD display
 * Map quick actions to external keyboards, devices, etc
-* Build widget screens without or with different map views
+* Alow to build screens full of widgets without map or with different map views
 * Redesign Configure Map to allow easy set up on the go
 
 ### New Maps
 
+Next year we would like to focus on different external map sources which could help a lot in different situations. With power of OpenStreetMap we can put almost any layer on top of it and it immediately adds value. Though for many of our users it's hard to find & configure these extra sources, so we want to provide some of the out of the box:
+
 * **Weather** - New forecast data, New sources, New animations!
-* Use Geotif as Raster layers and other GDAL vector / raster formats (USA DB)
-* Browse or view network of tracks:
-  - Gpsies, USA db
-  - Curvyroads
-  - Search routes / route selection
-  - Track collections
-  - Private areas and PAD-US (USA)
-* Revise Wikivoyage / Travel Guides
-* 3D Buildings
-* 3D Track log and wind Maps
-* Nautical maps
+* **USA Government maps** (PAD-US) and other local authorities maps including private areas. Typically Government Data is not portable to OSM due to license issues though they are open and have lots of valuable information.
+  * In order to support custom vector maps, we need to build full Geotif, GDAL vector support in OsmAnd
+* **OSM Custom Maps**. From OpenStreetMap data it's still possible to build many interesting and new maps like 
+  * Map of fun roads to drive on motorcycle with color visualization of curvy roads
+  * Map of hiking, running routes and their networks based on Route relations.
+  * Track collections based on OSM GPS traces similar to Strava Heatmaps
+  * Map of 3D Buildings
+* **Wikivoyage** - we want to review our user interface of Travel guides, so people will be using Wikivoyage and other locally build travel guides more often.
+* **Paragliding maps**. 3D track log and K-wind Maps.
+* **Nautical maps**
 
 ### Routing & Navigation
 
-Last year we've made a huge commmitment to provide 
-* Fast routing
-* Main navigation widget
+Last year we've made a huge commmitment to solve slow routing issue with OsmAnd, it was difficult in order to support all variety of features we have offline maps, split by regions, hourly updated maps, dozen of routing parameters for each profiles and we are almost there. Also we've improved smoothness of map animations during navigation and it's also not done yet. Next year we will continue to work on routing & navigation features same as we did this year, so you can enjoy improvements in different areas:
+* Fast routing. Allow to build 1000 km routes in a matter of 5 seconds.
+* Redesign navigation screen, so all necessary information will be available as 2 large widgets on top & bottom.
+* Provide more navigation information as labels on the map to avoid fixed place widgets
+* Add combined widget for current speed and speed limit. Needed for Android Auto & CarPlay.
 * Autozoom / Auto-tilt.
-* Settings, Avoid road (AA / CarPlay)
-* Suggest a route: roundtrips or routes with certain criterias
-* Widget. Current speed / speed limit widget (Android Auto, CarPlay)
+* Android Auto / Car Play: add more settings to configure on screen display and possibility to quickly specify which roads to avoid to provide better routes
 
 ### Photos 
 
-* Photogallery to inspire (Gallery for cities + Top places) Google Travel
-* Attach Photo/Video to Favorites
-* Sightseeing along the routes (photo gallery) - special places
+Next 2024 year we also would like to focus on visualization of provided routes, places that you see on the maps.
+We want you to have:
+* A photogallery that could inspire you to visit places around you
+* A possibility to attach media from your library to favourites, trackes, waypoints.
+* A detailed list of photos for a specific place
 
 ### Collaborative editing
 
-**Web**/**Android**/**iOS**.
-* Share favorites, tracks, settings and allow collaborative editing 
+This year we worked on our draft Web version that replicates some features of mobile applications but mostly it was focusing to provide you access to your data on the Web. So you can view, delete, add information. 
+
+Next year we would like to continue doing it and add possibility to share between accounts or make some tracks or favorite groups available to everybody.
 
 ### Many, many other features
+
+Every year it makes harder & harder to make list of new year resolutions, as the list of features we want to have in the app is growing. Here is our shortlist of features that we didn't manage to put in the groups above:
 
 * Find a better and easier way to engage more people to contribute to OpenStreetMap
 * Documentation & App Guides
 * AI Assitant to help to cope with OsmAnd capabilities :)
 * Work on application performance (quick start, quick screen transitions)
-
 
 ## 2023 Achievements
 
