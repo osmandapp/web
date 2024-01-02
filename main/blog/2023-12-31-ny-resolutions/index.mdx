@@ -5,7 +5,6 @@ authors:
  - victor
  - eugene
 tags: [resolutions, OsmAnd]
-unlisted: true
 ---
 
 import Tabs from '@theme/Tabs';
@@ -24,143 +23,88 @@ Happy New Year!
 
 We are continuing this good tradition for the sixth time. At the end of each year we write _New Year Resolutions_ and our plans for the next one.
 
-This year has been difficult for our company, as most of the team 🇺🇦 works in war conditions, and some of the team went into the army. But despite all the difficulties, we worked according to the goals specified in the previous resolution ([Resolutions 2023](https://osmand.net/blog/ny-resolutions-2023)), and you can compare [the results in our report](#2023-achievements). And briefly, in 2023, we introduced a free subscription for cross-platform named OsmAnd Start, completely redesigned the terrain and 3D section, made a big contribution to widgets and much more.
-
-<!--truncate-->
+This year has been difficult for our company, as most of our team, based in Ukraine 🇺🇦 ❤️, works in war conditions. But despite all the difficulties, we worked according to the goals specified in the previous resolution ([Resolutions 2023](https://osmand.net/blog/ny-resolutions-2023)), and you can compare [the results in our report](#2023-achievements). Briefly, in 2023, we've introduced a free subscription for cross-platform named OsmAnd Start, completely redesigned the terrain and 3D section, made a big contribution to widgets and much more.
 
 
 ## 2024 New Year Resolutions
 
 ☛ Let's start with the to-do list for 2024, and [below](#2023-achievements) you can check again how a similar list was completed (or not completed 😉) in 2023.
 
-| Travel Guides | [PAD-US](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview#overview) | Speed limited |  Custom buttons | 
-|-----|------|------|-------|
-| ![Travel](./img/travel.png)|![PAD-US](./img/padus.png) |![Limit](./img/limit_widget.png) |![Custom button](./img/custom_button.png) |
+
+### Quick action & Widgets 
+
+Our main goal is to provide ultimate **Trip computer** experience. We did big steps toward it in 2023 and we need to continue next year. Here is the list we think about:
+
+* Allow to add & configure custom buttons on the HUD display
+* Map quick actions to external keyboards, devices, etc
+* Allow to build screens full of widgets without map or with different map views
+* Redesign Configure Map to allow easy set up on the go
+
+| Full widgets (iOS)|  Custom buttons | 
+|-----|------|
+|![Limit](./img/full_widgets.png) |![Custom button](./img/custom_button.png) |
 
 
-### Quick action / Widgets / Trip Computer
+### New Maps
 
-**Android + iOS + Web**
+Next year we would like to focus on different external map sources which could help a lot in real situations. With power of OpenStreetMap we can put almost any layer on top of it and it immediately adds value. Though for many of our users it's hard to find & configure these extra sources, so we want to provide some of the out of the box:
 
-* Photogallery to inspire (Gallery for cities + Top places) Google Travel
-* AI assistant (select Activity and assist with planning)
-* Revise Wikivoyage / Travel Guides
-* Weather forecast along the track
-* Suggest a route: roundtrips or routes with certain criterias
-* Browse or view network of tracks:
-  - Gpsies, USA db
-  - Curvyroads
-  - Search routes / route selection
-  - Track collections
-  - Private areas and PAD-US (USA)
-* Sightseeing along the routes (photo gallery) - special places
+* **Weather** - New forecast data, New sources, New animations!
+* **USA Government maps** (PAD-US) and other local authorities maps including private areas. Typically, government data cannot be ported to OSM due to licensing issues, even though they are open-sourced and contain valuable information.
+  * In order to support custom vector maps, we need to build full Geotif, GDAL vector support in OsmAnd
+* **OSM Custom Maps**. From OpenStreetMap data it's still possible to build many interesting and new maps like 
+  * Map of fun roads to drive on motorcycle with color visualization of curvy roads
+  * Map of hiking, running routes and their networks based on Route relations.
+  * Track collections based on OSM GPS traces similar to Strava Heatmaps
+  * Map of 3D Buildings
+* **Wikivoyage** - we want to review our user interface of Travel guides, so people will be using Wikivoyage and other locally build travel guides more often.
+* **Paragliding maps**. 3D track log and K-wind Maps.
+* **Nautical maps**
 
-### Share / Public Reviews / Tracks / Marketplace
+| Travel Guides | [PAD-US](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview#overview) | New nautical style |
+|-----|------|-------|
+| ![Travel](./img/travel.png)|![PAD-US](./img/padus.png) | ![Nautical](./img/nautical.png)|
 
-**Android / iOS / Web**
+### Routing & Navigation
 
-* Version history – OsmAnd Cloud
-* Share favorites, tracks, settings by link (public)
-* Share favorites, tracks, settings by invite email
-* Common viewing/editing across multiple users in a group
-* Public plugins / profiles with descriptions
-* Public groups / communities
-
-### Map view
-
-**Android / iOS** 
-* Improve map styles (ongoing task)
-* POI (Symbols) Icon Groups (fix rendering issues, allow customization)
-* Improve app start (restart from background)
-* 3D Track log (and maps of winds)
-* 3D Symbols (my location)
-* Weather forecast animation
-* 3D Buildings
-* Round Earth
-* Realistic Sun Shadows
-* Weather - Wind animations
-* Use Geotif as Raster layers and other GDAL vector / raster formats (USA DB)
-* 3D Areas (To highlight area with 3d relief)
-* Tracks Heatmap
-
-### Quick action / Widgets / Trip Computer
-
-**Android + iOS + Web**
-
-* Allow to add many custom buttons (quick action with one action)
-* Allow to control visibility of standard buttons
-* Map quick actions for external devices
-* Review usability Configure Map - _View Map Layers_ button on the screen
-* Widget. Current speed / speed limit widget (Android Auto, CarPlay)
-* **iOS** Custom button bindings
-* **iOS** Elevation widget
-* **iOS** Large widgets for top/bottom panel, Top/bottom panel
-* **iOS** Widget pages
-* **Web/Android/iOS**. Grid coordinate systems
-
-### Weather
-
-**Android + iOS + Web**
-
-* Different forecasts (Redesign weather screen)
-* Animation Weather forecast animation Weather forecast animation
-
-### OSM Editing
-
-**Android + iOS**
-
-* **iOS** OSM Notes settings
-* Templates
-* Review UX
-
-### Navigation / Android Auto / CarPlay
-
-**Android + iOS + Web**
-
-* Main navigation widget #1893
-* **iOS** Online Routing Online Routing Online Routing #1013
-* Routing explanations (CO2 / Route minimal energy / time / distance)
+Last year we've made a huge commmitment to solve slow routing issue with OsmAnd, it was difficult in order to support all variety of features we have offline maps, split by regions, hourly updated maps, dozen of routing parameters for each profiles and we are almost there. Also we've improved smoothness of map animations during navigation and it's also not done yet. Next year we will continue to work on routing & navigation features same as we have done this year, so you can enjoy improvements in different areas:
+* Fast routing. Allow to build 1000 km routes in a matter of 5 seconds.
+* Redesign navigation screen, so all necessary information will be available as 2 large widgets on top & bottom.
+* Provide more navigation information as labels on the map to avoid fixed place widgets
+* Add combined widget for current speed and speed limit. Needed for Android Auto & CarPlay.
 * Autozoom / Auto-tilt.
-* **iOS** Exit number + Voice
-* **iOS** Show street name without route (Special non navigation mode)
-* Advanced Route Graphs with waypoints, weather, POI
-* **iOS** Altitude correction
-* **iOS** Recording GPX dialog
-* **iOS, Web** Route Preparation: Turn By Turn / Waypoints
-* Avoid road (AA / CarPlay)
-* Settings (AA / CarPlay)
-* Fast routing
-* Electric vehicles support (bike, cars) - routing time, routing energy, charging stations.
+* Android Auto / Car Play: add more settings to configure on screen display and possibility to quickly specify which roads to avoid to provide better routes
 
-### Personal data
+| Navigation widget | Speed limited |
+|-----|------|
+| ![Travel](./img/nav_widget.png)|![Limit](./img/limit_widget.png) |
 
-**Android + iOS + Web**
+### Photos 
 
-* Improve track database view customization (default apperance)
-* Attach Photo/Video to Favorites
-* **iOS** Download / Local Maps (Technical debt).
-* Revise Markers / Itinerary
-* **iOS** GPS Filter
-* **iOS** Filter for tracks
-* Improve favorite customization (default apperance)
-* **iOS** Tracks redesign
-* Tracks Heatmap - rasterize >1000 tracks
+Next 2024 year we also would like to focus on visualization of provided routes, places that you see on the maps.
+We want you to have:
+* A photogallery that could inspire you to visit places around you
+* A possibility to attach media from your library to favourites, tracks, waypoints.
+* A detailed list of photos for a specific place
 
-### Tools / Search
+### Collaborative editing
 
-**Android + iOS + Web**
+This year we worked on our draft Web version that replicates some features of mobile applications but mostly it was focusing to provide you access to your data on the Web. So you can view, delete, add information. 
 
-* [Web/OpenGL/iOS/Android]. Support all Coordinate systems
-* [iOS/Android]. Settings search (Android / iOS)
-* [Web/iOS/Android/Backend]. Help AI assistant
-* [Backend]. Fast fuzzy search
+Next year we would like to continue doing it and add possibility to share between accounts or make some tracks or favorite groups available to everybody.
 
-### Documentation & Guides
+| [osmand.net/map](https://osmand.net/map) |
+|-----|
+| ![web](./img/web_coll.png)|
 
-* App Guides
-* Complete documentation
-* AI assistant
+### Many, many other features
 
+Every year it makes harder & harder to make list of new year resolutions, as the list of features we want to have in the app is growing. Here is our shortlist of features that we didn't manage to put in the groups above:
+
+* Find a better and easier way to engage more people to contribute to OpenStreetMap
+* Documentation & App Guides
+* AI Assistant to help to cope with OsmAnd capabilities :)
+* Work on application performance (quick start, quick screen transitions)
 
 ## 2023 Achievements
 
