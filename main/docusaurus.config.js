@@ -203,8 +203,8 @@ const config = {
                 href: 'https://www.redbubble.com/shop/ap/36789864',
               },
               {
-                label: 'support@osmand.net',
-                href: 'mailto:support@osmand.net'
+                label: 'Support', 
+                href: '/help-online/support'
               },
             ],
           },
