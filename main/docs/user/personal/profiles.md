@@ -563,17 +563,6 @@ This menu opens the [OpenStreetMap editing plugin settings](../plugins/osm-editi
 
 </Tabs>
 
-### OpenPlaceReviews
-
-<InfoAndroidOnly />  
-
-Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,plugins_settings,open_place_reviews"/>*  
-
-This menu opens [the OpenPlaceReviews plugin settings](../plugins/openplacereviews.md#plugin-settings). Where you can input your data for starting added reviews of any places.  
-
-:::note
-Changing the settings of the OSM editing plugin affects all profiles.
-:::
 
 ### Accesibility
 
