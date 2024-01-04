@@ -37,8 +37,8 @@ export default function LegendItem({itemsMap, columns = 3}) {
               return <>
                 <tr key={ind * 2}>
                   {itemArray.length > 0 && <td className='text--center'>{itemArray[0][0]}</td>}
-                {itemArray.length > 1 && <td className='text--center'>{itemArray[1][0]}</td>}
-                {itemArray.length > 2 && <td className='text--center'>{itemArray[2][0]}</td>}
+                  {itemArray.length > 1 && <td className='text--center'>{itemArray[1][0]}</td>}
+                  {itemArray.length > 2 && <td className='text--center'>{itemArray[2][0]}</td>}
                 </tr>
                 <tr key={ind * 2 + 1} className={styles.legendDay}>
                   {itemArray.length > 0 && <td><img className={styles.img} src={useBaseUrl('/img/legend/osmand/' + itemArray[0][1] + '_day.svg')}
@@ -54,7 +54,7 @@ export default function LegendItem({itemsMap, columns = 3}) {
             </table>
         </TabItem>
         <TabItem value="nightMode" label="Night mode">
-          <table >
+          <table className={styles.table}>
             <thead>
               <tr>
                 <th className="col-3" style={{ display: 'none' }} />
@@ -70,11 +70,11 @@ export default function LegendItem({itemsMap, columns = 3}) {
                   {itemArray.length > 2 && <td className='text--center'>{itemArray[2][0]}</td>}
                 </tr>
                 <tr key={ind * 2 + 1} className={styles.legendNight}>
-                  {itemArray.length > 0 && <td><img src={useBaseUrl('/img/legend/osmand/' + itemArray[0][1] + '_night.svg')}
+                  {itemArray.length > 0 && <td><img className={styles.img} src={useBaseUrl('/img/legend/osmand/' + itemArray[0][1] + '_night.svg')}
                     alt={itemArray[0][0] + " Night"} /></td>}
-                  {itemArray.length > 1 && <td><img src={useBaseUrl('/img/legend/osmand/' + itemArray[1][1] + '_night.svg')}
+                  {itemArray.length > 1 && <td><img className={styles.img} src={useBaseUrl('/img/legend/osmand/' + itemArray[1][1] + '_night.svg')}
                     alt={itemArray[1][0] + " Night"} /></td>}
-                  {itemArray.length > 2 && <td><img src={useBaseUrl('/img/legend/osmand/' + itemArray[2][1] + '_night.svg')}
+                  {itemArray.length > 2 && <td><img className={styles.img} src={useBaseUrl('/img/legend/osmand/' + itemArray[2][1] + '_night.svg')}
                     alt={itemArray[2][0] + " Night"} /></td>}
                 </tr>
               </>

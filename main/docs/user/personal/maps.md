@@ -244,3 +244,48 @@ Live updates and unlimited map downloads are available for [OpenStreetMap](https
 </TabItem>
 
 </Tabs>
+
+## Data storage folder
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+For Android you can find all information about OsmAnd data and change storage folder in [Global settings](../personal/global-settings.md#data-storage-folder-android).
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
+
+![Profiles Storage Settings Android](@site/static/img/personal/profiles/general_settings_storage_android.png) ![Profiles Storage Settings 1 Android](@site/static/img/personal/profiles/general_settings_storage_1_android.png)
+
+**<Translate android="true" ids="shared_string_osmand_usage"/>**:
+
+Here you can find all information about data size for each categories of data: maps, travel guides, contour lines / hillshade / slope, tracks, audio / video notes, tiles, other.
+
+**<Translate android="true" ids="change_data_storage_folder"/>**
+
+Here you can change forlder for keeping your OsmAnd data in your device
+
+Memory name | Permission access
+|-----------|------------------|
+| Internal app memory | Only OsmAnd app has access to its data and none of external apps / pc has access| 
+| Shared memory | Multiple OsmAnd apps could have access and multiple external apps |
+| External storage 1 | Only 1 OsmAnd app has access and Admin apps and USB |
+| External storage N | SDCard: Only 1 OsmAnd app has access and Admin apps and USB |
+| Multiuser storage | Only 1 OsmAnd app has access but it's shared between multiple Android users |
+| Manually specified | Depends on the path |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*Files → On My Phone → OsmAnd Maps*
+
+![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+- iOS:
+    OsmAnd files are visible in the _["Files"](https://apps.apple.com/us/app/files/id1232058109)_ application. You can access all OsmAnd files: [tracks](../personal/tracks.md), [favorites](../personal/favorites.md), [maps](../personal/maps.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md)
+
