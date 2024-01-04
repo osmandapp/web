@@ -55,7 +55,7 @@ For Android devices you can download the free and paid application on the follow
 
 :::tip Note
 - Android Auto only works with versions of the app from Google Play. Android Auto is not available for OsmAnd+, purchased from Amazon or Maps+ subscription from Huawei AppGallery.
-- OsmAnd Pro subscription is a cross-platform purchase. You can buy it from Amazon or Huawei AppGallery and then [restore](../personal/storage.md#backup-and-restore-for-osmand-pro) on OsmAnd from Google Play and vice versa.
+- OsmAnd Pro subscription is a cross-platform purchase. You can buy it from Amazon or Huawei AppGallery and then [restore](../personal/osmand-cloud.md#cross-platform) on OsmAnd from Google Play and vice versa.
 :::
 
 
@@ -80,7 +80,7 @@ The table shows all the features that are included in the paid and free packages
 | :------ | :------------- | :------------------ | :------------------ | 
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 | Ad-free access | ✔ | ✔ | ✔ |
-| [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | ✔ | ✔ | ✔ |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | ✔ | ✔ | ✔ |
 | [OsmAnd Start](../personal/osmand-cloud.md#osmand-start) | ✔ | ✔ | - |
 | [3D Relief](../plugins/contour-lines.md#3d-relief) | - | - | ✔ |
 | [Pro Features](#pro-features) | - | - | ✔ |
@@ -117,7 +117,7 @@ At the moment, the Pro subscription has the following features:
 
 |  Pro Feature  | Description   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro) | Backup and restore your data, synchronize data with [OsmAnd web portal](https://www.osmand.net/map). |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Backup and restore your data, synchronize data with [OsmAnd web portal](https://www.osmand.net/map). |
 | [Cross-platform](../personal/osmand-cloud.md#cross-platform) | Possibility to use OsmAnd Pro and OsmAnd Start on all platforms (Android ← → iOS → Web).  |
 | [3D Relief](../plugins/contour-lines.md#3d-relief) | Allows you to have and observe a scale model of your neighborhood or an entire continent. |
 | [OsmAnd Live](../personal/maps.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement. |
@@ -179,7 +179,7 @@ To restore the purchase, please check what OsmAnd plan you bought.
 - Log in with **the same account** to the Market (Google Play, Amazon, Huawei AppGallery) that you have an OsmAnd purchase.
 - Open OsmAnd with an active Internet connection.
 - To open Restore purchases, follow these steps: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* and at the top of the screen should appear that Maps+(Pro) is activated.
-- OsmAnd Pro allows to registrate Pro functions for all platforms (Android and iOS). If you have OsmAnd Pro account you need to use it [for activation OsmAnd Pro](../personal/storage.md#backup-and-restore-for-osmand-pro) for your device.
+- OsmAnd Pro allows to registrate Pro functions for all platforms (Android and iOS). If you have OsmAnd Pro account you need to use it [for activation OsmAnd Pro](../personal/osmand-cloud.md) for your device.
 
 ![Pro Plan](@site/static/img/purchases/maps_purchases.png)
 

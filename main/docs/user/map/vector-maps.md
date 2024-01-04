@@ -531,6 +531,5 @@ If the names on the map are not translated into the desired language by the OSM 
 If you have your own or 3rd party custom map style created according to [Specification](../../technical/osmand-file-formats/osmand-rendering-style.md), you can install it on a device in the following ways.
 - Copy *.render.xml file on devices & Open with OsmAnd. 
 - Rendering styles could be exported & imported via [Standard import / export dialogs](../personal/import-export.md). So if you create an example '*.osf' package which will work as a plugin that could be shared with other people.
-- If you have access directly to the External Storage of OsmAnd (Android), you can simply copy it to the **rendering-styles** folder. Read more about it in [Storage specification](../personal/storage.md).
 
 After that, you could select your own map style in the menu.
