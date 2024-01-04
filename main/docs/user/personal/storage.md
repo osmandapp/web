@@ -152,9 +152,7 @@ errors (e.g. if the SD card is too full).
 This feature helps to keep and restore your OsmAnd data. There are two variants of backing up in OsmAnd: [OsmAnd Cloud](../personal/osmand-cloud.md).
 
 
-### Local backup
-
-Back up or restore data (it has restrictions for unpaid users. you can't back up and restore Favorites, map markers..) from a local file:
+### Local backup                                                       
 
 1. *<Translate android="true" ids="backup_into_file"/>* - creating and saving OSF-file in your device.
 
