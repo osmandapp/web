@@ -270,7 +270,6 @@ You need to purchase [OsmAnd+, OsmAnd Maps+, or OsmAnd Pro purchase plan](../plu
 There are multiple ways how to add new raster map, copy it from another device, prepare it on PC and predownloaded tiles to be used offline. For example, you can create your own map package on PC by using special software as [MOBAC, OsmAndMapCreator and etc](../../technical/map-creation/index.md). Typically raster maps are distributed as files with *.sqlitedb* extension. 
 
 Here are the main methods how to add new raster map source which is not defined in OsmAnd yet:
-- Copy a raster map to a **tiles** subfolder of [base osmand storage](../personal/storage.md) (Android).
 - Open ready to use *.sqlitedb* file with OsmAnd.
 - Import package with prepared online maps from another OsmAnd application as a special **osf package** via [Import / export functionality](../personal/import-export.md).
 - Create new online map source on a mobile device itself.

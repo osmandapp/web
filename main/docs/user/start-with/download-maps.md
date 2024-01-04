@@ -149,7 +149,7 @@ The World maps section provides access to various world maps, complementing the 
 
 **Memory info and map counter:**
 - **Map counter** (Free version) - display how many [Free map downloads](../purchases/android.md#free-and-paid-features) left.
-- [Device memory](../personal/storage.md#storage-info-in-download-maps-menu) - show available memory to be used on the device.
+- [Device memory](../personal/maps.md#download-maps-maps) - show available memory to be used on the device.
 
 **Map search:**
 - &#x1F50D; - search the region by names or large cities inside it.
@@ -163,7 +163,7 @@ The World maps section provides access to various world maps, complementing the 
 
 **Memory info and map counter:**  
 - *Map counter (Free version)* - display how many [Free map downloads](../purchases/android.md#free-and-paid-features) left.
-- *[Device memory](../personal/storage.md#storage-info-in-download-maps-menu)* - show available memory to be used on the device.
+- *[Device memory](../personal/maps.md#download-maps-maps)* - show available memory to be used on the device.
 
 **Maps part:**
 - *Downloads (Android)/ Worldwide (iOS)* - browse and download maps split by continents / countries / regions.
