@@ -110,7 +110,7 @@ OsmAnd 4.4 for iOS devices is not available for iOS versions older than iOS 15.
 This means that to install OsmAnd 4.4 you need to upgrade your OS to at least iOS 15 or newer.
 
 
-
+<!--
 ## Storage on SD card (Android)
 
 :::note
@@ -159,7 +159,7 @@ the file manager tool **which came pre-installed with your Android**
 may also be invoked in OsmAnd itself via `Menu/Settings/General/Data
 storage folder` but the copy operations may take a long time or result in
 errors (e.g. if the SD card is too full).
-
+-->
 
 ## Copy raster map package created on PC 
 
