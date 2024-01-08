@@ -2,6 +2,7 @@ import React, { forwardRef, useContext, useState } from 'react';
 import { Box, Divider, ListItemIcon, ListItemText, MenuItem, Paper, Typography } from '@mui/material';
 import styles from '../trackfavmenu.module.css';
 import { ReactComponent as ShowOnMapIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
+import { ReactComponent as HideFromMapIcon } from '../../assets/icons/ic_action_map_hide.svg';
 import { ReactComponent as DownloadIcon } from '../../assets/icons/ic_action_gsave_dark.svg';
 import { ReactComponent as DeleteIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
 import { ReactComponent as RenameIcon } from '../../assets/icons/ic_action_edit_outlined.svg';
@@ -59,7 +60,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
                             }}
                         >
                             <ListItemIcon className={styles.iconAction}>
-                                <ShowOnMapIcon />
+                                <HideFromMapIcon />
                             </ListItemIcon>
                             <ListItemText>
                                 <Typography variant="inherit" className={styles.actionName} noWrap>
