@@ -197,18 +197,18 @@ Glide ratio [simple widgets](../widgets/configure-screen.md#widgets-for-all-pane
 
 
 **Rounding/Formatting:**  
-  - Value **<= 0.1**: 
+  - Value **<= 0.1**:  
     - "0.05" is displayed as "0".
-  - Value **> 0.1 and < 100**: 
+  - Value **> 0.1 and < 100**:  
     - for exampl, "50.7643" is displayed as "50.8:1.".
-  - Value **> 100:** 
+  - Value **> 100:**  
     - "102.35" is displayed as "102:1."
 
 
 | | |
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → Glide ratio* |
-| By tapping | Displays the height of the target. |
+| By tapping | Displays the target altitude. |
 
 
 ## Battery level

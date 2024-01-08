@@ -37,7 +37,3 @@ Common settings to all application profiles.
 ### [Import / Export](./import-export.md)
 
 Import / Export
-
-### [Storage](./storage.md)
-
-How to configure, access and change data storage for maps, tracks and other personal data

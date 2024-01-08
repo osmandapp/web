@@ -665,7 +665,7 @@ Exporting one or more track files to any messenger, email, file managers, Drive 
 
 1. By [Track Context menu → Share](../map/track-context-menu.md#options).
 2. By [My Places menu → Tracks → … → "export" button](../personal/tracks.md#actions). Exporting more than one track by a bundle (It's the case of Local Backup).
-3. By [Local backup file](../personal/storage.md#local-backup). Exporting GPX-tracks as OSF-file.
+3. By [Local backup file](../personal/import-export.md#export-to-file). Exporting GPX-tracks as OSF-file.
 
 
 ### Export a GPX file to an external storage device (iOS)

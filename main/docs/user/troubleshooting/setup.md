@@ -108,3 +108,83 @@ Read more about the [Topography plugin](../plugins/contour-lines.md).
 OsmAnd 4.4 for iOS devices is not available for iOS versions older than iOS 15.
 
 This means that to install OsmAnd 4.4 you need to upgrade your OS to at least iOS 15 or newer.
+
+
+
+## Storage on SD card (Android)
+
+:::note
+When a you *turns on a USB drive to share files* with a computer or disconnects the SD card through system settings, the external drive is disconnected from the device and all applications running on the external drive are **immediately terminated**. You can [read more here](https://developer.android.com/guide/topics/data/install-location).
+:::
+
+### In order to move the OsmAnd home (maps) folder to an external SD card:
+
+-   Go to *Settings (on the start screen) →  OsmAnd Settings → Data storage folder*
+-   Change the value to a path pointing to the external SD card, on many
+    Android systems it may contain `/storage/extSdCard` or similar.
+    Please note that some versions of Android strictly limit your choice
+    of which path will be write-accessible for apps.
+-   You are then asked if the contents of the OsmAnd data folder should be moved from
+    internal memory to the external SD card.
+    You may also perform this manually using a built-in file manager app on the device, or via
+    connecting the device to a computer as external storage and performing the move from there.
+
+
+### How do I use my SD card with OsmAnd under Android 4.4+ and 5?
+
+If you update your Android to version 4.4.x, you will experience a known
+Android issue with the `WRITE_EXTERNAL_STORAGE` permission: Android has
+changed the rules so that from now on no application can write to the
+external SD card anywhere outside its new standard folder
+`Android/data/[PACKAGE-NAME]`. If OsmAnd was installed prior to updating
+your device to Android 4.4.x, it will continue to work (read-only) with
+the old, non-standard osmand folder, but won't be able to update any map
+and other files there.
+
+Solutions:
+
+-   Move OsmAnd's data folder osmand to the internal storage. \
+     **Drawback:** Internal storage can be rather small.
+-   Move OsmAnd's data folder osmand into its standard SD folder, \
+    for OsmAnd+ : `(extSdCard)/Android/data/net.osmand.plus/files` \
+    for OsmAnd : `(extSdCard)/Android/data/net.osmand/files` \
+     **Caution:** Whenever you uninstall OsmAnd now, all your data will
+    be erased as well! (Unless you unmount your SD card, or rename the
+    net.osmand(.plus) folder before de-installation.)
+
+If you manually want to perform the necessary copies/moves, either use a
+PC to perform this action on the SD card, or on the device itself use
+the file manager tool **which came pre-installed with your Android**
+(only these methods will have the necessary write permission). All copy operations
+may also be invoked in OsmAnd itself via `Menu/Settings/General/Data
+storage folder` but the copy operations may take a long time or result in
+errors (e.g. if the SD card is too full).
+
+
+## Copy raster map package created on PC 
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+Map package can be saved in two formats: [SQ Lite and Metainfo](https://osmand.net/docs/user/map/raster-maps).
+Next, you need to move your map package file(s) to OsmAnd-tiles directory:
+
+For **Android** OsmAnd - you need to access storage to copy file(s) from PC to the device folder BASE_OSMAND_STORAGE/tiles_ or you can click the file on your email, cloud, or messenger, download it and choose OsmAnd app to open. Map package is added automatically to your online maps list in OsmAnd.
+
+![Import sqlitedb Android](@site/static/img/plugins/online-maps/import-sqlitedb-android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Map package can be saved in two formats: [SQ Lite and Metainfo](https://osmand.net/docs/user/map/raster-maps).
+Next, you need to move your map package file(s) to OsmAnd-tiles directory:
+
+For **iOS** OsmAnd - you need to click the file on your iTunes or messenger, download it and choose OsmAnd app to open. Map package is added automatically to your online maps list in OsmAnd.
+
+![Import sqlitedb iOS](@site/static/img/plugins/online-maps/import-sqlitedb-ios.png)  
+
+</TabItem>
+
+</Tabs>

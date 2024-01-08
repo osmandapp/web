@@ -33,24 +33,24 @@ At this moment we can propose next solutions:
 
 1. _Migrate maps and other OsmAnd data from SD-card._ It's possible to fix if you migrate maps (OsmAnd data) from SD-card. We're thinking to provide an alternative solution but as of today you can keep some maps (OsmAnd data) on SD-card and copy them manually via File Manager when you need to use them. Sorry for inconvenience but there is no good solution yet.
 If this is your case, please try **to Migrate your files to Internal app memory (External or Multiuser storage of app memory)** and check how it would work for you. 
-[Menu → Settings → OsmAnd settings → Data storage folder](../personal/storage#data-storage-folder-android).
+Menu → Settings → OsmAnd settings → Data storage folder.
 
-2. _Setting the storage location manually for SD-card._ The second decisions it's to set the storage location manually (Menu → Settings → OsmAnd settings → Data storage folder → Manually specified) to :
+1. _Setting the storage location manually for SD-card._ The second decisions it's to set the storage location manually (Menu → Settings → OsmAnd settings → Data storage folder → Manually specified) to :
   
    - _/storage/XXXX-XXXX/Download/osmand_   (in this version, there was an error opening some file when loading, then you can download the World Overview map, but no other regions are shown.)
    - _**/storage/XXXX-XXXX/Download**_ (in this version it works, you can download maps, etc., but OsmAnd does not see everything that is written to folders by other programs ([SasPlanet and etc.](../../technical/map-creation/create-offline-maps-yourself.md)))
 
-where XXXX-XXXX is the name of a SD-Card: [Menu → Settings → OsmAnd settings → Data storage folder](../personal/storage#data-storage-folder-android) → "Manually specified" option. ([The example](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-984467744)).
+where XXXX-XXXX is the name of a SD-Card: Menu → Settings → OsmAnd settings → Data storage folder → "Manually specified" option. ([The example](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-984467744)).
 
 ### Deleting map data after the app update (if selected Multiuser storage 1)
 
 About this issue of OsmAnd Android version: [Github](https://github.com/osmandapp/OsmAnd/issues/13404)
 
-If _Multiuser Storage 1_ is selected as [the storage location](../personal/storage.md#data-storage-folder), then all [local maps](../personal/maps.md#local-maps) are deleted  all the time when the application is automatically updated 4.1.9 → 4.1.10 → 4.1.11 → 4.2.4 → 4.2.6 **(Android version: 11, 12, )**. 
+If _Multiuser Storage 1_ is selected as the storage location, then all [local maps](../personal/maps.md#local-maps) are deleted  all the time when the application is automatically updated 4.1.9 → 4.1.10 → 4.1.11 → 4.2.4 → 4.2.6 **(Android version: 11, 12, )**. 
 
 While you need to choose the next ways for saving your map data during the application updates:
 
-1. make [a backup](../personal/storage.md#local-backup) of these files before updating OsmAnd (_..Android/obb/net.osmand_) and restore these files before opening the OsmAnd update.
+1. make [a backup](../personal/import-export.md) of these files before updating OsmAnd (_..Android/obb/net.osmand_) and restore these files before opening the OsmAnd update.
 
 2. Change the path of OsmAnd folder (This path is also writable by all apps: Wifi FTP server, X-plore, USB cable connected to Linux PC):
 

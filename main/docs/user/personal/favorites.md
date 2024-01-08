@@ -528,56 +528,6 @@ Functions for Favorite folder:
 
 </Tabs>
 
-## Automatic Favorites Backup  
-
-After each edit of Favorites, OsmAnd makes a backup file. These backups can be found using file manager programs: in Android use third-party apps, and in iOS they can be accessed with the system program *Files*.  
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-*Android → data → net.osmand → files → backup*
-
-![Favorites autobackup android](@site/static/img/personal/favorites_autobackup_andr.png)  
-
-:::caution
-In the latest versions of Android, access to system directories is limited. However, after extracting the favorites file from the archive, it remains possible to forward it to messengers or cloud services, etc.  
-:::
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-*Files → On my iPhone → OsmAnd Maps → favourites_backup*
-
-![Favorites autobackup ios](@site/static/img/personal/favorites_autobackup.png)  
-
-</TabItem>
-
-</Tabs>
-
-### Export / Import Favorites backup
-
-You can export Favorites backup files using *[Export](../personal/import-export.md#export)* funciton. The resulting .osf file you can send to the internal memory of the device, cloud storage, or other users of the OsmAnd app via messengers.  
-
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,export_to_file,shared_string_resources,favorites_backup"/>*
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Favorites backup export Android](@site/static/img/personal/favorites_backup_export_andr.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-<InfoAndroidOnly/>
-
-</TabItem>
-
-</Tabs>
-
 
 ## Export / Import
 
@@ -691,3 +641,37 @@ Tap on &#128393; button opens special functions menu. Then you need to choose fa
 </TabItem>
 
 </Tabs>
+
+### Automatic Favorites Backup  
+
+After each edit of Favorites, OsmAnd makes a backup file. These backups can be found using file manager programs: in Android use third-party apps, and in iOS they can be accessed with the system program *Files*.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*Android → data → net.osmand → files → backup*
+
+![Favorites backup export Android](@site/static/img/personal/favorites_backup_export_andr.png)  ![Favorites autobackup android](@site/static/img/personal/favorites_autobackup_andr.png)  
+
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,export_to_file,shared_string_resources,favorites_backup"/>*
+
+You can export Favorites backup files using *[Export](../personal/import-export.md#export)* funciton. The resulting .osf file you can send to the internal memory of the device, cloud storage, or other users of the OsmAnd app via messengers.  
+
+:::caution
+In the latest versions of Android, access to system directories is limited. However, after extracting the favorites file from the archive, it remains possible to forward it to messengers or cloud services, etc.  
+:::
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*Files → On my iPhone → OsmAnd Maps → favourites_backup*
+
+![Favorites autobackup ios](@site/static/img/personal/favorites_autobackup.png)  
+
+</TabItem>
+
+</Tabs>
+

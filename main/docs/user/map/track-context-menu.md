@@ -159,81 +159,7 @@ Interaction with the graph:
 - *<Translate android="true" ids="shared_string_start_time"/>* - exact time when the recording of the track began.
 - *<Translate android="true" ids="shared_string_end_time"/>* -  time when the recording of the track ended.
 
-### Altitude
 
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-**For tracks with altitude data:**
-
-![Track graph altitude Android](@site/static/img/personal/tracks/track_graph_altitude_android.png) 
-
-- *<Translate android="true" ids="average_altitude"/>* - mean altitude above sea level along the track.
-- *<Translate android="true" ids="altitude_range"/>* - the highest and lowest altitude recorded along the track.
-- *<Translate android="true" ids="altitude_ascent"/>* - cumulative altitude gain along the track.
-- *<Translate android="true" ids="altitude_descent"/>* - cumulative altitude loss along the track.  
-
-**For tracks without altitude data (_No elevation data_):**
-
-![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation.png) 
-
-To calculate elevation:
-
-_Calculate elevation_ button → [_Attach to the roads_](../navigation/setup/gpx-navigation.md#attach-to-roads) (Free function) or [_Calculate offline_](#calculate-offline) (Paid function <ProFeature/>):
-
-![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_1.png) 
-
-#### Calculate offline
-
-:::note
-<ProFeature/> Calculate offline feature is only available for <a href="https://osmand.net/docs/user/purchases/android#pro-features"> OsmAnd Pro subscribers</a>.
-:::
-
-This feature allows you to calculate Elevation profile for GPX track offline for any area between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../plugins/contour-lines.md#how-to-download) (Terrain maps (3D) should be predownloaded):  
-
-_Track Context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,calculating_altitude,calculate_offline"/>_
-
-![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png) ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Track graph altitude iOS](@site/static/img/personal/tracks/track_graph_altitude_ios.png) 
-
-
-- *<Translate android="true" ids="average_altitude"/>* - mean altitude above sea level along the track.
-- *<Translate android="true" ids="altitude_range"/>* - the highest and lowest altitude recorded along the track.
-- *<Translate android="true" ids="altitude_ascent"/>* - cumulative altitude gain along the track.
-- *<Translate android="true" ids="altitude_descent"/>* - cumulative altitude loss along the track.  
-
-</TabItem>
-
-</Tabs>
-
-
-<!-- 
-Online Elevation profile
-
-:::note
-<ProFeature/> Online SRTM feature you can use only with Pro feature <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
-:::
-
-This feature allows to calculate Elevation profile for GPX track online by the OsmAnd server:  
-
-Calculate altitude online on OsmAnd servers, based on satellite imagery and digital elevation models. Differences vs. device recorded altitude may be used as altitude correction.
-
-This feature can help to find Altitude data for any place:  
-_Track Context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,calculating_altitude,calculate_online"/>_
-
-![Track graph overview Android](@site/static/img/map/track-menu_track-tab_altitude-empty.png)  ![Track graph overview Android](@site/static/img/map/track-menu_track-tab_altitude-dialog.png)   ![Track graph overview Android](@site/static/img/map/track-menu_track-tab_altitude.png) 
-
-Online SRTM feature
-
-[Public SRTM sources](https://example.com).
--->
 
 ### Speed
 
@@ -261,6 +187,47 @@ This tab can be visible only on recorded tracks (points of this track type have 
 - *<Translate android="true" ids="max_speed"/>*.
 - *<Translate android="true" ids="moving_time"/>*.
 - *<Translate android="true" ids="distance_moving"/>*.
+
+### Altitude
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Track graph altitude Android](@site/static/img/personal/tracks/track_graph_altitude_android.png) ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation.png) 
+
+If track is missing elevation information, it's possible to add it:
+_Calculate elevation_ button → [_Attach to the roads_](../navigation/setup/gpx-navigation.md#attach-to-roads) or [_Calculate offline_](#calculate-elevation).
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Track graph altitude iOS](@site/static/img/personal/tracks/track_graph_altitude_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+- *<Translate android="true" ids="average_altitude"/>* - mean altitude above sea level along the track.
+- *<Translate android="true" ids="altitude_range"/>* - the highest and lowest altitude recorded along the track.
+- *<Translate android="true" ids="altitude_ascent"/>* - cumulative altitude gain along the track.
+- *<Translate android="true" ids="altitude_descent"/>* - cumulative altitude loss along the track.  
+
+### Calculate elevation
+
+:::note
+<ProFeature/> Calculate elevation offline feature is only available for <a href="https://osmand.net/docs/user/purchases/android#pro-features"> OsmAnd Pro subscribers</a>.
+:::
+
+This feature allows you to calculate Elevation profile for GPX track offline for any area between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../plugins/contour-lines.md#how-to-download) (Terrain maps (3D) should be predownloaded):  
+
+_Track Context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,calculating_altitude,calculate_offline"/>_
+
+![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png) ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png)
+
+
+
 
 ## Points / Waypoints
 

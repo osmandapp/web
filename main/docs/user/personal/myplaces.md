@@ -40,7 +40,7 @@ My Places is the primary place in the OsmAnd app that allows you to manage all y
 </Tabs>
 
 
- ## My Places section includes:  
+ ## My Places
  
 - [Favorites](../personal/favorites.md)
 - [Tracks](../personal/tracks.md)

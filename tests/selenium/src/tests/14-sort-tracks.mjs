@@ -7,6 +7,7 @@ import { getFiles } from '../util.mjs';
 import actionImportCloudTrack from '../actions/actionImportCloudTrack.mjs';
 import actionCheckCloudTracks from '../actions/actionCheckCloudTracks.mjs';
 import actionCreateNewFolder from '../actions/actionCreateNewFolder.mjs';
+import actionIdleWait from '../actions/actionIdleWait.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -28,13 +29,17 @@ export default async function test() {
     await actionCheckCloudTracks(tracks);
 
     await validateGroupOrder(trackGroupsLastModified);
+    await waitBy(By.id('se-sort-button-time'));
     await clickBy(By.id('se-sort-button-time'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-longest'));
+    await actionCheckCloudTracks(tracks);
     await validateGroupOrder(trackGroupsLongest);
+    await waitBy(By.id('se-sort-button-longest'));
     await clickBy(By.id('se-sort-button-longest'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-shortest'));
+    await actionCheckCloudTracks(tracks);
     await validateGroupOrder(trackGroupsShortest);
 
     await actionFinish();
@@ -73,6 +78,7 @@ const trackGroupsShortest = [
 async function validateGroupOrder(ids) {
     await enclose(
         async () => {
+            await actionIdleWait();
             const groups = await enumerateIds('se-cloud-track-test');
             return JSON.stringify(ids) === JSON.stringify(groups);
         },

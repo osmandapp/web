@@ -131,8 +131,6 @@ On some Android devices (Xiaomi with Muiu 14), there is no way to set app langua
 
 ### Data storage folder
 
-Read more about storage settings [here](../personal/storage.md#data-storage-folder).
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -154,7 +152,6 @@ For the iOS system, we can not do any manipulation of the storage folder. We can
 OsmAnd files are visible in the "Files" application. To access all tracks, custom routing and rendering files, follow this path:   
 *Files → On My Phone → OsmAnd Maps*
 
-More info about data storage settings read [here](../personal/storage.md#data-storage-folder).
 
 ![General Settings storage iOS](@site/static/img/personal/profiles/files-1.png) ![General Settings storage iOS](@site/static/img/personal/profiles/files-2.png)
 
@@ -365,7 +362,7 @@ Privacy of Location services: *Settings → Privacy → Location Services*
 Android or OsmAnd Cloud can save your data and app settings.   
 
 By default, the Android system backs up your OsmAnd settings and [Favorites](../personal/favorites.md) map markers so you can restore them on new devices or after reinstalling. The size of this backup is limited to 25MB.  
-**If you are using [OsmAnd Cloud](../personal/storage.md#backup-and-restore-for-osmand-pro), it is best to disable this feature to avoid misunderstandings after reinstallation.**  
+**If you are using [OsmAnd Cloud](../personal/osmand-cloud.md), it is best to disable this feature to avoid misunderstandings after reinstallation.**  
 
 ![General Settings notifications Android](@site/static/img/personal/profiles/auto_backup_andr.png)
 
