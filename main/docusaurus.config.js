@@ -24,6 +24,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/osmandapp/web/edit/main/main/',
+          sidebarItemsGenerator: require('./scripts/docs-map-generator.js'),
         },
         blog: {
           showReadingTime: true,
@@ -34,12 +35,10 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-
       }),
     ],
   ],
   plugins: [require.resolve('docusaurus-lunr-search')],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -203,7 +202,7 @@ const config = {
                 href: 'https://www.redbubble.com/shop/ap/36789864',
               },
               {
-                label: 'Support', 
+                label: 'Support',
                 href: '/help-online/support'
               },
             ],
