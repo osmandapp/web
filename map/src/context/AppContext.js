@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useCookie from 'react-use-cookie';
-import { useMutator, seleniumUpdateActivity } from '../util/Utils';
+import Utils, { seleniumUpdateActivity, useMutator } from '../util/Utils';
 import TracksManager, { getGpxFiles } from '../manager/track/TracksManager';
 import _ from 'lodash';
 import { addOpenedFavoriteGroups } from '../manager/FavoritesManager';
@@ -83,33 +83,50 @@ async function loadListFiles(
 }
 
 async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
+    const promises = [];
     const newGpxFiles = Object.assign({}, gpxFiles);
 
-    // get saved visible tracks (only new)
     let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
-    let selectedFiles = [];
-    if (savedVisible?.new) {
-        savedVisible.new.forEach((name) => {
-            const matchingFile = files.find((f) => f.name === name);
-            if (matchingFile) {
-                if (savedVisible.open && savedVisible.open.includes(name)) {
-                    selectedFiles.push(_.indexOf(files, matchingFile));
-                }
-            }
-        });
-    }
-    if (savedVisible?.old) {
-        savedVisible.old.forEach((name) => {
-            const matchingFile = files.find((f) => f.name === name);
-            if (matchingFile) {
-                if (savedVisible.open && savedVisible.open.includes(name)) {
-                    selectedFiles.push(_.indexOf(files, matchingFile));
-                }
-            }
-        });
-    }
 
-    for (let ind of selectedFiles) {
+    let newVisFiles = {
+        old: [],
+        new: [],
+    };
+
+    let newVisFilesNames = {
+        old: savedVisible?.old ? savedVisible?.old : [],
+        new: [],
+        open: [],
+    };
+
+    let newSelectedFiles = [];
+    let oldSelectedFiles = [];
+    if (savedVisible?.new && savedVisible.new.length > 0) {
+        savedVisible.new.forEach((name) => {
+            if (savedVisible.open.includes(name)) {
+                newVisFilesNames.new.push(name);
+                newVisFilesNames.open.push(name);
+            } else {
+                newVisFilesNames.old.push(name);
+            }
+        });
+
+        newVisFilesNames.new.forEach((name) => {
+            const matchingFile = files.find((f) => f.name === name);
+            if (matchingFile) {
+                newSelectedFiles.push(_.indexOf(files, matchingFile));
+            }
+        });
+    }
+    newVisFilesNames.old = newVisFilesNames?.old.splice(-10);
+    newVisFilesNames.old.forEach((name) => {
+        const matchingFile = files.find((f) => f.name === name);
+        if (matchingFile) {
+            oldSelectedFiles.push(_.indexOf(files, matchingFile));
+        }
+    });
+
+    for (let ind of oldSelectedFiles) {
         let file = files[ind];
         newGpxFiles[file.name] = {
             url: null,
@@ -119,21 +136,44 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
             name: file.name,
             type: 'GPX',
         };
+        newVisFiles.old.push(newGpxFiles[file.name]);
     }
-    setGpxFiles(newGpxFiles);
-    // add visible tracks to old objects, after next page reload they will be deleted
-    setVisibleTracks({
-        new: [],
-        old: Object.values(newGpxFiles),
+
+    for (let ind of newSelectedFiles) {
+        let file = files[ind];
+        let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(
+            file.type
+        )}&name=${encodeURIComponent(file.name)}`;
+        newGpxFiles[file.name] = {
+            url: url,
+            clienttimems: file.clienttimems,
+            updatetimems: file.updatetimems,
+            showOnMap: true,
+            name: file.name,
+            type: 'GPX',
+        };
+        let f = await Utils.getFileData(newGpxFiles[file.name]);
+        const gpxfile = new File([f], file.name, {
+            type: 'text/plain',
+        });
+
+        promises.push(
+            TracksManager.getTrackData(gpxfile).then((track) => {
+                track.name = file.name;
+                Object.keys(track).forEach((t) => {
+                    newGpxFiles[file.name][`${t}`] = track[t];
+                });
+                newVisFiles.new.push(newGpxFiles[file.name]);
+            })
+        );
+    }
+
+    await Promise.all(promises).then(() => {
+        setGpxFiles(newGpxFiles);
+        setVisibleTracks(newVisFiles);
     });
-    // save them to localStorage
-    localStorage.setItem(
-        TracksManager.TRACK_VISIBLE_FLAG,
-        JSON.stringify({
-            new: [],
-            old: Object.keys(newGpxFiles),
-        })
-    );
+
+    localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(newVisFilesNames));
 }
 
 async function checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCookie, setAccountInfo) {

@@ -43,43 +43,33 @@ export function hideAllVisTracks() {
     localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(savedVisible));
 }
 
-export function removeAllDisableVisTracks(ctx) {
-    console.log(ctx.visibleTracks);
+export function addCloseTracksToRecently(ctx) {
     if (!isEmpty(ctx.visibleTracks)) {
         let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
-        if (savedVisible.open) {
-            let newVisFiles = {
-                old: [],
-                new: [],
-            };
+        let newVisFiles = {
+            old: ctx.visibleTracks.old,
+            new: [],
+        };
 
-            let newVisFilesNames = {
-                old: [],
-                new: [],
-                open: [],
-            };
+        let newVisFilesNames = {
+            old: savedVisible.old,
+            new: [],
+            open: [],
+        };
 
-            ctx.visibleTracks.new?.forEach((t) => {
-                if (savedVisible.open.includes(t.name)) {
-                    newVisFiles.new.push(t);
-                    newVisFilesNames.new.push(t.name);
-                    newVisFilesNames.open.push(t.name);
-                }
-            });
-            newVisFilesNames.old = newVisFilesNames.new.concat(newVisFilesNames.old);
-            newVisFiles.old = newVisFiles.new.concat(newVisFiles.old);
-            newVisFilesNames.new = [];
-            newVisFiles.new = [];
-            ctx.visibleTracks.old?.forEach((t) => {
-                if (savedVisible.open?.includes(t.name)) {
-                    newVisFiles.old.push(t);
-                    newVisFilesNames.old.push(t.name);
-                    newVisFilesNames.open.push(t.name);
-                }
-            });
-            localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(newVisFilesNames));
-            ctx.setVisibleTracks({ ...newVisFiles });
-        }
+        ctx.visibleTracks.new?.forEach((t) => {
+            if (savedVisible.open && savedVisible.open.includes(t.name)) {
+                newVisFiles.new.push(t);
+                newVisFilesNames.new.push(t.name);
+                newVisFilesNames.open.push(t.name);
+            } else {
+                newVisFiles.old.push(t);
+                newVisFilesNames.old.push(t.name);
+            }
+        });
+
+        localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(newVisFilesNames));
+        ctx.setVisibleTracks({ ...newVisFiles });
     }
 }
 

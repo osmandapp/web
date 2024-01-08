@@ -21,7 +21,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import _, { isEmpty } from 'lodash';
 import TracksManager, { createTrackGroups, getGpxFiles } from '../../manager/track/TracksManager';
-import { removeAllDisableVisTracks } from '../../menu/visibletracks/VisibleTracks';
+import { addCloseTracksToRecently } from '../../menu/visibletracks/VisibleTracks';
 
 const GlobalFrame = () => {
     const ctx = useContext(AppContext);
@@ -105,6 +105,17 @@ const GlobalFrame = () => {
                         newVisFiles.new.push(f);
                         newVisFilesNames.new.push(f.name);
                     }
+                } else {
+                    if (isOldVisibleTrack(savedVisible, f)) {
+                        if (savedVisible.open.includes(f.name)) {
+                            newVisFiles.new.push(f);
+                            newVisFilesNames.new.push(f.name);
+                            const ind = savedVisible.old.findIndex((n) => n === f.name);
+                            if (ind !== -1) {
+                                savedVisible.old.splice(ind, 1);
+                            }
+                        }
+                    }
                 }
             });
             // save updated names to localStorage
@@ -131,7 +142,7 @@ const GlobalFrame = () => {
             localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(newVisFilesNames));
         } else {
             if (!isEmpty(ctx.visibleTracks)) {
-                removeAllDisableVisTracks(ctx);
+                addCloseTracksToRecently(ctx);
             }
         }
     }, [openVisibleMenu]);
