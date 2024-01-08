@@ -26,21 +26,22 @@ export default async function test() {
 
     // import list of tracks
     await actionImportCloudTrack(tracks);
-    await actionCheckCloudTracks(tracks);
 
-    await validateGroupOrder(trackGroupsLastModified);
+    await waitBy(By.id('se-sort-button-time'));
+    await actionCheckCloudTracks(tracks);
+    await validateGroupOrder(trackGroupsLastModified, 'LastModified');
     await waitBy(By.id('se-sort-button-time'));
     await clickBy(By.id('se-sort-button-time'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-longest'));
     await actionCheckCloudTracks(tracks);
-    await validateGroupOrder(trackGroupsLongest);
+    await validateGroupOrder(trackGroupsLongest, 'Longest');
     await waitBy(By.id('se-sort-button-longest'));
     await clickBy(By.id('se-sort-button-longest'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-shortest'));
     await actionCheckCloudTracks(tracks);
-    await validateGroupOrder(trackGroupsShortest);
+    await validateGroupOrder(trackGroupsShortest, 'Shortest');
 
     await actionFinish();
 }
@@ -75,13 +76,15 @@ const trackGroupsShortest = [
     'se-cloud-track-test-routed-osmand',
 ];
 
-async function validateGroupOrder(ids) {
+async function validateGroupOrder(ids, sortName) {
     await enclose(
         async () => {
             await actionIdleWait();
             const groups = await enumerateIds('se-cloud-track-test');
-            return JSON.stringify(ids) === JSON.stringify(groups);
+            if (groups.length > 0) {
+                return JSON.stringify(ids) === JSON.stringify(groups);
+            }
         },
-        { tag: 'validateTrackGroupsSort' }
+        { tag: `validateTrackGroupsSort-${sortName}` }
     );
 }
