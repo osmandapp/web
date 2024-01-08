@@ -44,6 +44,7 @@ export function hideAllVisTracks() {
 }
 
 export function removeAllDisableVisTracks(ctx) {
+    console.log(ctx.visibleTracks);
     if (!isEmpty(ctx.visibleTracks)) {
         let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
         if (savedVisible.open) {

@@ -66,7 +66,7 @@ export default function CloudTrackItem({ file, visible = null, isLastItem }) {
         return f?.analysis?.wptPoints ? f?.analysis?.wptPoints : null;
     }
 
-    async function processDisplayTrack({ visible, setLoading, showOnMap = true, openInfo }) {
+    async function processDisplayTrack({ visible, setLoading, showOnMap = true, showInfo = false }) {
         checkedSwitch = !checkedSwitch;
         updateVisibleCache({ visible: showOnMap, file });
         if (!visible) {
@@ -75,7 +75,7 @@ export default function CloudTrackItem({ file, visible = null, isLastItem }) {
             }
             setLoading(false);
         } else {
-            await openTrack({ setProgressVisible: setLoading, showOnMap, openInfo });
+            await openTrack({ setProgressVisible: setLoading, showOnMap, showInfo });
         }
     }
 
@@ -85,19 +85,19 @@ export default function CloudTrackItem({ file, visible = null, isLastItem }) {
                 setLoading: setLoadingTrack,
                 visible: true,
                 showOnMap: false,
-                openInfo: true,
+                showInfo: true,
             }).then();
         }
     }, [openTrackInfo]);
 
     useEffect(() => {
         if (displayTrack === true || displayTrack === false) {
-            processDisplayTrack({ setLoading: setLoadingTrack, visible: displayTrack }).then();
+            processDisplayTrack({ setLoading: setLoadingTrack, showOnMap: displayTrack, visible: displayTrack }).then();
             setDisplayTrack(null);
         }
     }, [displayTrack]);
 
-    function openInfoBlock(hasUrl, file) {
+    function showInfoBlock(hasUrl, file) {
         ctx.setUpdateInfoBlock(true);
         ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
         if (hasUrl) {
@@ -107,7 +107,7 @@ export default function CloudTrackItem({ file, visible = null, isLastItem }) {
         }
     }
 
-    async function openTrack({ setProgressVisible, showOnMap = true, openInfo = false }) {
+    async function openTrack({ setProgressVisible, showOnMap = true, showInfo = false }) {
         // cleanup edited localTrack
         if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
             ctx.setCreateTrack({
@@ -120,8 +120,8 @@ export default function CloudTrackItem({ file, visible = null, isLastItem }) {
         // Watch out for file.url because this component was called using different data sources.
         // CloudTrackGroup uses ctx.tracksGroups (no-url) but VisibleGroup uses ctx.gpxFiles (url exists)
         if (ctx.gpxFiles[file.name]?.url) {
-            if (openInfo) {
-                openInfoBlock(true, file);
+            if (showInfo) {
+                showInfoBlock(true, file);
             }
             if (showOnMap) {
                 ctx.mutateGpxFiles((o) => (o[file.name].showOnMap = showOnMap));
@@ -156,8 +156,8 @@ export default function CloudTrackItem({ file, visible = null, isLastItem }) {
                     oneGpxFile.showOnMap = showOnMap;
                 }
                 ctx.mutateGpxFiles((o) => (o[file.name] = oneGpxFile));
-                if (openInfo) {
-                    openInfoBlock(false, oneGpxFile);
+                if (showInfo) {
+                    showInfoBlock(false, oneGpxFile);
                 }
                 setError('');
             } else {
