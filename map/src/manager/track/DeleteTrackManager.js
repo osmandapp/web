@@ -76,7 +76,7 @@ export async function deleteTrackFolder(folder, ctx) {
     }
 }
 
-export function deleteTrackFromMap(ctx, file) {
+export function closeTrack(ctx, file) {
     ctx.mutateGpxFiles((o) => (o[file.name].url = null));
     if (ctx.selectedGpxFile?.name === file.name) {
         ctx.setCurrentObjectType(null);

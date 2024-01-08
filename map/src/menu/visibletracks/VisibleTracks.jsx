@@ -103,7 +103,7 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null, 
             }
         });
         return items;
-    }, [ctx.visibleTracks]);
+    }, [ctx.visibleTracks?.new]);
 
     const trackItemsOld = useMemo(() => {
         const items = [];
@@ -121,7 +121,7 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null, 
             }
         });
         return items;
-    }, [ctx.visibleTracks]);
+    }, [ctx.visibleTracks?.old]);
 
     function hasVisibleTracks() {
         return !isEmpty(ctx.visibleTracks?.old) || !isEmpty(ctx.visibleTracks?.new);
@@ -146,7 +146,7 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null, 
     function allVisibleTracksHidden() {
         let files = getAllVisibleFiles();
         if (files.length > 0) {
-            return !files.some((f) => ctx.gpxFiles[f.name]?.url !== null && !f.avoidAddingToMap);
+            return !files.some((f) => ctx.gpxFiles[f.name]?.url !== null && f.showOnMap);
         }
         return true;
     }

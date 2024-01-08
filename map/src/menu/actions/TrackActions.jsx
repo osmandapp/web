@@ -13,7 +13,7 @@ import RenameDialog from '../../dialogs/tracks/RenameDialog';
 import AppContext from '../../context/AppContext';
 import { duplicateTrack } from '../../manager/track/SaveTrackManager';
 
-const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) => {
+const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref) => {
     const ctx = useContext(AppContext);
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
@@ -50,22 +50,41 @@ const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) =
         <>
             <Box ref={ref}>
                 <Paper id="se-track-actions" className={styles.actions}>
-                    <MenuItem
-                        className={styles.action}
-                        onClick={() => {
-                            setShowTrack(true);
-                            setOpenActions(false);
-                        }}
-                    >
-                        <ListItemIcon className={styles.iconAction}>
-                            <ShowOnMapIcon />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography variant="inherit" className={styles.actionName} noWrap>
-                                Show on map
-                            </Typography>
-                        </ListItemText>
-                    </MenuItem>
+                    {ctx.gpxFiles[track.name]?.showOnMap ? (
+                        <MenuItem
+                            className={styles.action}
+                            onClick={() => {
+                                setDisplayTrack(false);
+                                setOpenActions(false);
+                            }}
+                        >
+                            <ListItemIcon className={styles.iconAction}>
+                                <ShowOnMapIcon />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography variant="inherit" className={styles.actionName} noWrap>
+                                    Hide from map
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    ) : (
+                        <MenuItem
+                            className={styles.action}
+                            onClick={() => {
+                                setDisplayTrack(true);
+                                setOpenActions(false);
+                            }}
+                        >
+                            <ListItemIcon className={styles.iconAction}>
+                                <ShowOnMapIcon />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography variant="inherit" className={styles.actionName} noWrap>
+                                    Show on map
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    )}
                     <Divider className={styles.dividerActions} />
                     <MenuItem
                         id={'se-rename-cloud-track'}
