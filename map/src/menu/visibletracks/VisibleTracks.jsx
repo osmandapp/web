@@ -19,6 +19,11 @@ export function getCountVisibleTracks(visibleTracks) {
     return oldSize + newSize;
 }
 
+export function isVisibleTrack(file) {
+    let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
+    return !!savedVisible?.open?.includes(file.name);
+}
+
 export function updateVisibleCache({ visible, file }) {
     let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
     if (savedVisible && !savedVisible.open) {

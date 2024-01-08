@@ -78,7 +78,7 @@ const GlobalFrame = () => {
 
             Object.values(ctx.gpxFiles).forEach((f) => {
                 if (
-                    (f.url && f.showOnMap && !isOldVisibleTrack(savedVisible, f)) ||
+                    (savedVisible.open.includes(f.name) && !isOldVisibleTrack(savedVisible, f)) ||
                     isNewVisibleTrack(savedVisible, f)
                 ) {
                     if (isNewVisibleTrack(savedVisible, f)) {

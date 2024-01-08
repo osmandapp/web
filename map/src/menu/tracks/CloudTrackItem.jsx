@@ -15,7 +15,7 @@ import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import Utils, { toHHMMSS } from '../../util/Utils';
 import TrackInfo from './TrackInfo';
 import TracksManager, { isEmptyTrack } from '../../manager/track/TracksManager';
-import _ from 'lodash';
+import _, { isEmpty } from 'lodash';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { ReactComponent as TrackIcon } from '../../assets/icons/ic_action_polygom_dark.svg';
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
@@ -25,7 +25,7 @@ import TrackActions from '../actions/TrackActions';
 import ActionsMenu from '../actions/ActionsMenu';
 import MenuItemsTitle from '../components/MenuItemsTitle';
 import { closeTrack } from '../../manager/track/DeleteTrackManager';
-import { updateVisibleCache } from '../visibletracks/VisibleTracks';
+import { isVisibleTrack, updateVisibleCache } from '../visibletracks/VisibleTracks';
 
 const DEFAULT_DIST = 0;
 const DEFAULT_TIME = '0:00';
@@ -68,7 +68,9 @@ export default function CloudTrackItem({ file, visible = null, isLastItem }) {
 
     async function processDisplayTrack({ visible, setLoading, showOnMap = true, showInfo = false }) {
         checkedSwitch = !checkedSwitch;
-        updateVisibleCache({ visible: showOnMap, file });
+        if (!showInfo) {
+            updateVisibleCache({ visible: showOnMap, file });
+        }
         if (!visible) {
             if (ctx.gpxFiles[file.name]?.url) {
                 closeTrack(ctx, file);
@@ -84,7 +86,7 @@ export default function CloudTrackItem({ file, visible = null, isLastItem }) {
             processDisplayTrack({
                 setLoading: setLoadingTrack,
                 visible: true,
-                showOnMap: false,
+                showOnMap: true,
                 showInfo: true,
             }).then();
         }
@@ -120,11 +122,16 @@ export default function CloudTrackItem({ file, visible = null, isLastItem }) {
         // Watch out for file.url because this component was called using different data sources.
         // CloudTrackGroup uses ctx.tracksGroups (no-url) but VisibleGroup uses ctx.gpxFiles (url exists)
         if (ctx.gpxFiles[file.name]?.url) {
+            if (showOnMap) {
+                let newGpxFiles = Object.assign({}, ctx.gpxFiles);
+                if (!isEmpty(ctx.selectedGpxFile) && !isVisibleTrack(ctx.selectedGpxFile)) {
+                    newGpxFiles[ctx.selectedGpxFile.name].url = null;
+                }
+                newGpxFiles[file.name].showOnMap = showOnMap;
+                ctx.setGpxFiles({ ...newGpxFiles });
+            }
             if (showInfo) {
                 showInfoBlock(true, file);
-            }
-            if (showOnMap) {
-                ctx.mutateGpxFiles((o) => (o[file.name].showOnMap = showOnMap));
             }
         } else {
             setProgressVisible(true);
