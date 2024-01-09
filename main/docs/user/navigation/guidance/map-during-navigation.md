@@ -203,7 +203,7 @@ Changes the color tones of the route lines, with their overall coloration changi
 | *<Translate android="true" id="altitude"/>* – It shows the height on the route point as **green**-**yellow**-**red** gradient. Where **green** represents lowest point of the route, **yellow** - median height points and **red** the highest points. If the route altitude difference is < 100 m, gradient is applied partially or not applied i.e. for a simple uphill route from 100 m to 150 m - the gradient will be **green**-**yellow**. Please note that the color doesn't represent the absolute height value.    |  
 ![Altitude](@site/static/img/navigation/route/Altitude_rl.png) |
 |*<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>* – The route line will be colored in different colors depending on the elevation profile of the route. A detailed description is in the article on the Topography plugin, section [Slope](../../plugins/contour-lines.md#slope). |
-![Altitude](@site/static/img/navigation/route/Slope.png)   ![Altitude](@site/static/img/navigation/route/Slope2.png)  |
+![Altitude](@site/static/img/navigation/route/Slope.png)   ![Altitude](@site/static/img/navigation/route/Slope4.png)  |
 |*<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_roadClass_name"/>* – Colour the route or the track line according to the road classification. [Road style](../../map/vector-maps.md#road-style)|
 ![Altitude](@site/static/img/navigation/route/Roud_type.png)  |
 |*<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_surface_name" />* – Provides information about the physical surface of the road/footpath. [Surface](../../map-legend/osmand.md#surface-smoothness)|

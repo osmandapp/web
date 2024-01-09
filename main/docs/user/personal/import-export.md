@@ -95,7 +95,7 @@ Opens and restores OSF files. Tap an OSF file in the file manager on your device
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
 
-![Profiles Storage Settings 1 Android](@site/static/img/personal/profiles/general_settings_storage_andr.png)
+![Profiles Android](@site/static/img/personal/profiles/general_settings_storage_andr.png)
 
 For Android you can find all information about OsmAnd data and change storage folder in [Global settings](../personal/global-settings.md#data-storage-folder-android).
 

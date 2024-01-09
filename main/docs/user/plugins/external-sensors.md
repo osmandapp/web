@@ -32,10 +32,12 @@ To start using data from external sensors, you need to make the following settin
 2. Make the necessary settings in the [sensors settings](#sensors-settings).
 3. If needed, add [External sensors widgets](#widgets) to the screen.
 4. You can use the tips for [ANT+ connect](https://www.thisisant.com/consumer/ant-101/ant-in-phones) to set up this type of sensors.
-5. To configure which sensor data can be recorded to a track in the [Trip recording plugin](#trip-recording).
+5. iPhones and iPads do not have the hardware to receive ANT+ signals.
+6. To connect external **BLE sensors**, enable bluetooth on your device.
+7. Sensor data can be recorded to a track in the [Trip recording plugin](#trip-recording).
 
 
-## Pair new sensor
+### Pair new sensor
 
 <Tabs groupId="operating-systems">
 
@@ -43,37 +45,52 @@ To start using data from external sensors, you need to make the following settin
 
 ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_1.png)  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_2.png)  
 
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-:::note
-Screens will be added soon.
-:::
+| | |
+| --- | --- | --- |
+| ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_first_start_ios.png) |  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_bluetooth_turned_off_ios.png) | ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_list_of_sensors_ios.png) 
 
 </TabItem>
 
 </Tabs>
- 
 
 Use the *Pair new sensor* button to connect new sensors.  
 
 - Not all devices support ANT+ (Android only). You can check if your device works with ANT+ by going [here](https://www.thisisant.com/consumer/ant-101/ant-in-phones).  
+- Bicycle power in Android is only Ant+.
+- There is no Bicycle power in iOS because Ant+ sensors are not supported.
 - You need Bluetooth turned on to search for sensors. If your Bluetooth is turned off, the app will prompt you to *Open settings* on your device.
 - To add new sensors, tap the required one in the list of found sensors.
 - A pop-up notification is displayed when a paired sensor is connected or disconnected.  
 
 
-## Sensors settings
+### Sensors settings
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 Use one of the following paths to open the sensor settings:  
 - *<Translate android="true" ids="shared_string_menu,plugin_settings,external_sensors_plugin_name"/> → Available device → Settings* 
 - *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,external_sensors_plugin_name"/> → Available device → Settings*   
 
-![External sensors plugin settings Android](@site/static/img/plugins/sensors/external_sensors_sensor_settings_1.png)  ![External sensors plugin settings Android](@site/static/img/plugins/sensors/external_sensors_sensor_settings_2.png)  
+![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_1.png)  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_2.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_1.png)  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_2.png)  
+
+</TabItem>
+
+</Tabs>
 
 With the plugin for each external sensor available to the OsmAnd application, you can use these settings:  
+
 
 1. All previously added sensors are divided into two lists: **Connected** and **Disconnected**.
 2. Each sensor in the list has a three-dot menu with settings:
@@ -84,18 +101,27 @@ With the plugin for each external sensor available to the OsmAnd application, yo
 - When the battery level of the paired sensor becomes less than 15%, a pop-up notification appears on the screen.
 
 
-## Data analyze
-
-![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze.png)
-
-Data from external sensors can be transmitted to the device and displayed in OsmAnd during the trip as additional information. If you want to analyze this information, you need to record the trip, and only after you save it, in the *Track context menu → Analyze on map*, additional items for the recorded data appear.  
-
-OsmAnd allows you to select a 2nd axis for data analysis: *Heart rate*, *Speed*, *Cadence*, *Bicycle power*, and *Temperature*. *Distance* and *Battery* are not used in [Analyze on map](../map/tracks-on-map.md#analyze-track-on-map).
-
-
 ## Trip recording
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*
+
 ![External sensors](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.png)  ![External sensors](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,shared_string_external"/>*
+
+![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_ios.png)  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_2_ios.png)  
+
+</TabItem>
+
+</Tabs>
 
 Data from connected external sensors can be added to the GPX file using the [Trip recording plugin](../plugins/trip-recording.md#recording-settings).  
 
@@ -108,6 +134,15 @@ Data from connected external sensors can be added to the GPX file using the [Tri
 :::note
 OsmAnd uses [**track recording**](../plugins/trip-recording.md#recorded-gpx-file) with such [**tag names**](https://github.com/osmandapp/Osmand/blob/a3b5c637955a5914421d391206c2efb6ee2dff47/OsmAnd-java/src/main/java/net/osmand/GPXUtilities.java#L2476-L2500) for external sensors, with which your file can be easily read by the sports applications you use.  For example Strava or Runkeeper.
 :::
+
+
+### Data analyze
+
+![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze.png)
+
+Data from external sensors can be transmitted to the device and displayed in OsmAnd during the trip as additional information. If you want to analyze this information, you need to record the trip, and only after you save it, in the *Track context menu → Analyze on map*, additional items for the recorded data appear.  
+
+OsmAnd allows you to select a 2nd axis for data analysis: *Heart rate*, *Speed*, *Cadence*, *Bicycle power*, and *Temperature*. *Distance* and *Battery* are not used in [Analyze on map](../map/tracks-on-map.md#analyze-track-on-map).
 
 
 ## Widgets
