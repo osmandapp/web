@@ -12,7 +12,7 @@ export const TEMP_LINE_STYLE = {
     // name: TEMP_LAYER_FLAG, // style.name was not used, instead of actual layer.options.name
 };
 
-function createLayersByTrackData(data, ctx, map, type = GPX_FILE_TYPE) {
+function createLayersByTrackData({ data, ctx, map, type = GPX_FILE_TYPE }) {
     let layers = [];
     data.tracks?.forEach((track) => {
         if (track.points?.length > 0) {

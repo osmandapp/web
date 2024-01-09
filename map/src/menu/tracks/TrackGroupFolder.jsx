@@ -63,7 +63,7 @@ export default function TrackGroupFolder({ folder }) {
             }
         });
         return items;
-    }, [group.groupFiles, group.groupFiles.length, sortFiles]);
+    }, [group?.groupFiles, sortFiles]);
 
     useEffect(() => {
         if (group) {
@@ -77,7 +77,7 @@ export default function TrackGroupFolder({ folder }) {
             items.push(<CloudTrackGroup key={g.name + index} index={index} group={g} />);
         });
         return items;
-    }, [group.subfolders, group.subfolders.length, sortGroups]);
+    }, [group.subfolders, sortGroups]);
 
     return (
         <>

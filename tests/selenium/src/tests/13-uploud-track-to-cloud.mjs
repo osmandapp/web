@@ -7,6 +7,7 @@ import actionImportCloudTrack from '../actions/actionImportCloudTrack.mjs';
 import actionCheckCloudTracks from '../actions/actionCheckCloudTracks.mjs';
 import actionCreateNewFolder from '../actions/actionCreateNewFolder.mjs';
 import { deleteTrack, getFiles } from '../util.mjs';
+import actionIdleWait from '../actions/actionIdleWait.mjs';
 
 export default async function test() {
     const trackName = 'test-routed-osrm';
@@ -27,10 +28,12 @@ export default async function test() {
     await clickBy(By.id('se-import-cloud-track'));
     // import one track
     await actionImportCloudTrack(tracks, trackName);
+    await actionIdleWait();
     // import duplicate
-    await actionImportCloudTrack(tracks, trackName);
+    await actionImportCloudTrack(tracks, trackName, `${trackName} - 1`);
     // delete them
     await deleteTrack(trackName);
+    await actionIdleWait();
     await deleteTrack(`${trackName} - 1`);
     // check folder is empty
     await waitBy(By.id('se-import-first-track'));

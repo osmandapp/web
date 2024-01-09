@@ -17,7 +17,7 @@ function clickHandler({ ctx, file, layer }) {
 }
 
 function addTrackToMap({ ctx, file, map, fit = true } = {}) {
-    const layer = TrackLayerProvider.createLayersByTrackData(file, ctx, map);
+    const layer = TrackLayerProvider.createLayersByTrackData({ data: file, ctx, map });
 
     layer.on('click', () => clickHandler({ ctx, file, layer }));
 

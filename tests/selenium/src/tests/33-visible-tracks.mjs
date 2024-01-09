@@ -39,7 +39,7 @@ export default async function test() {
     await clickBy(By.id('se-visible-tracks-menu'));
     await waitBy(By.id(`se-new-visible-track-${trackName}`));
     await clickBy(By.id(`se-visible-switch-${trackName}`));
-    await waitBy(By.className(' leaflet-interactive'), { hidden: true });
+    await waitBy(By.className('leaflet-interactive'), { hidden: true });
 
     // check recently visible tracks
     await clickBy(By.id('se-close-visible-tracks'));
@@ -53,7 +53,7 @@ export default async function test() {
 
     // check rename visible track
     await actionRenameTrack(trackName, suffix);
-    await waitBy(By.className(' leaflet-interactive'));
+    await waitBy(By.className('leaflet-interactive'));
 
     // check hide all
     await clickBy(By.id('se-hide-all-visible-tracks'));

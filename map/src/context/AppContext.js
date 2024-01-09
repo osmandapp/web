@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import useCookie from 'react-use-cookie';
 import Utils, { seleniumUpdateActivity, useMutator } from '../util/Utils';
 import TracksManager, { getGpxFiles } from '../manager/track/TracksManager';
-import _ from 'lodash';
 import { addOpenedFavoriteGroups } from '../manager/FavoritesManager';
 import PoiManager from '../manager/PoiManager';
 import { apiGet } from '../util/HttpApi';
@@ -112,17 +111,17 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
         });
 
         newVisFilesNames.new.forEach((name) => {
-            const matchingFile = files.find((f) => f.name === name);
-            if (matchingFile) {
-                newSelectedFiles.push(_.indexOf(files, matchingFile));
+            const matchingFileInd = files.findIndex((f) => f.name === name);
+            if (matchingFileInd !== -1) {
+                newSelectedFiles.push(matchingFileInd);
             }
         });
     }
     newVisFilesNames.old = newVisFilesNames?.old.splice(-10);
     newVisFilesNames.old.forEach((name) => {
-        const matchingFile = files.find((f) => f.name === name);
-        if (matchingFile) {
-            oldSelectedFiles.push(_.indexOf(files, matchingFile));
+        const matchingFileInd = files.findIndex((f) => f.name === name);
+        if (matchingFileInd !== -1) {
+            oldSelectedFiles.push(matchingFileInd);
         }
     });
 
@@ -161,7 +160,7 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks) {
             TracksManager.getTrackData(gpxfile).then((track) => {
                 track.name = file.name;
                 Object.keys(track).forEach((t) => {
-                    newGpxFiles[file.name][`${t}`] = track[t];
+                    newGpxFiles[file.name][t] = track[t];
                 });
                 newVisFiles.new.push(newGpxFiles[file.name]);
             })
