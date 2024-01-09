@@ -2,10 +2,11 @@ const fs = require("fs-extra");
 
 module.exports = OsmAndDocMapGenerator;
 
-const PATH = "./docs/";
-const URL = "https://osmand.net/docs/";
-const docmapFile = "./build/docmap.json";
-const buildDirReadyTrigger = "./build/assets";
+const BASE_URL = "/docs/"; // relative or absolute URL to include into JSON docmap
+
+const DOC_PATH = "./docs/"; // path to docs files when yarn build started
+const JSON_DOCMAP = "./build/docmap.json"; // output JSON file with the Documentation Map
+const BUILD_DIR_READY_TRIGGER = "./build/assets"; // trigger file/dir that indicates that build dir is ready
 
 async function OsmAndDocMapGenerator(props) {
   const items = await props.defaultSidebarItemsGenerator(props);
@@ -18,12 +19,15 @@ async function OsmAndDocMapGenerator(props) {
   return items;
 }
 
-// wait until ./build ready before flush
+// Docusaurus cleanups the ./build dir instantly after this module called.
+// That is the reason why flushing JSON docmap file immediately is a wrong way.
+// Docusaurus does not have API to connect custom sidebar generator with the later-on build process.
+// As a result, cycle of setTimeout() is used to wait for "trigger" file in the build dir to assure that build is started.
 function flushDocMapIntoBuildDir(docmap) {
   const prettyJSON = (smth) => JSON.stringify(smth, null, 2);
   function flush() {
-    if (fs.existsSync(buildDirReadyTrigger)) {
-      fs.writeFileSync(docmapFile, prettyJSON(docmap), { encoding: "utf8" });
+    if (fs.existsSync(BUILD_DIR_READY_TRIGGER)) {
+      fs.writeFileSync(JSON_DOCMAP, prettyJSON(docmap), { encoding: "utf8" });
       return;
     }
     setTimeout(flush, 1000);
@@ -48,9 +52,9 @@ function dumpItem(docmap, item, level) {
   }
 
   const type = item.type;
-  const file = PATH + id + ".md";
+  const file = DOC_PATH + id + ".md";
   const label = item.label ?? readTitle(file, id); // label might be not available, so read it from the file
-  const url = (URL + id).replace(/\/index$/, ""); // remove extra /index from the tail (uri/index -> uri)
+  const url = (BASE_URL + id).replace(/\/index$/, ""); // remove extra /index from the tail (uri/index -> uri)
 
   docmap.push({
     level,
