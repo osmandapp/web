@@ -81,7 +81,12 @@ export default function TracksMenu({ setOpenVisibleMenu }) {
                                 maxHeight: `${height - 120}px`,
                             }}
                         >
-                            <MenuItem divider className={styles.item} onClick={() => setOpenVisibleMenu(true)}>
+                            <MenuItem
+                                id={'se-visible-tracks-menu'}
+                                divider
+                                className={styles.item}
+                                onClick={() => setOpenVisibleMenu(true)}
+                            >
                                 <ListItemIcon className={styles.icon}>
                                     <VisibleIcon />
                                 </ListItemIcon>

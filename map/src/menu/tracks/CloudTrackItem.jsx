@@ -30,7 +30,7 @@ import { isVisibleTrack, updateVisibleCache } from '../visibletracks/VisibleTrac
 const DEFAULT_DIST = 0;
 const DEFAULT_TIME = '0:00';
 
-export default function CloudTrackItem({ file, visible = null, isLastItem }) {
+export default function CloudTrackItem({ id = null, file, visible = null, isLastItem }) {
     const ctx = useContext(AppContext);
 
     const [, , mobile] = useWindowSize();
@@ -207,7 +207,7 @@ export default function CloudTrackItem({ file, visible = null, isLastItem }) {
                     >
                         <MenuItem
                             className={styles.item}
-                            id={'se-cloud-track-' + trackName}
+                            id={id ?? `se-cloud-track-${trackName}`}
                             onClick={() => {
                                 setOpenTrackInfo(true);
                             }}
@@ -253,6 +253,7 @@ export default function CloudTrackItem({ file, visible = null, isLastItem }) {
                             )}
                             {visible && (
                                 <Switch
+                                    id={`se-visible-switch-${trackName}`}
                                     sx={{ ml: '-25px' }}
                                     onClick={(e) => {
                                         e.stopPropagation();

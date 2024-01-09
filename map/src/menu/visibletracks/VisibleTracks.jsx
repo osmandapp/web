@@ -86,10 +86,12 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null, 
     const trackItems = useMemo(() => {
         const items = [];
         ctx.visibleTracks?.new?.map((file, index) => {
+            const trackName = TracksManager.getFileName(file);
             const isLastItem = !isEmpty(ctx.visibleTracks?.new) ? index === ctx.visibleTracks?.new.length - 1 : false;
             if (file.filesize !== 0) {
                 items.push(
                     <CloudTrackItem
+                        id={`se-new-visible-track-${trackName}`}
                         key={'visible-cloudtrack-' + file.name}
                         file={file}
                         visible={true}
@@ -104,10 +106,12 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null, 
     const trackItemsOld = useMemo(() => {
         const items = [];
         ctx.visibleTracks?.old.map((file, index) => {
+            const trackName = TracksManager.getFileName(file);
             const isLastItem = !isEmpty(ctx.visibleTracks?.old) ? index === ctx.visibleTracks?.old.length - 1 : false;
             if (file.filesize !== 0) {
                 items.push(
                     <CloudTrackItem
+                        id={`se-old-visible-track-${trackName}`}
                         key={'visible-cloudtrack-' + file.name}
                         file={file}
                         visible={true}
@@ -166,6 +170,7 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null, 
                 <AppBar position="static" className={headerStyles.appbar}>
                     <Toolbar className={headerStyles.toolbar}>
                         <IconButton
+                            id="se-close-visible-tracks"
                             variant="contained"
                             type="button"
                             className={headerStyles.appBarIcon}
@@ -177,6 +182,7 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null, 
                             Tracks
                         </Typography>
                         <Button
+                            id="se-hide-all-visible-tracks"
                             className={visibleStyles.button}
                             onClick={hideAllTracks}
                             disabled={allVisibleTracksHidden()}
@@ -187,6 +193,7 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null, 
                 </AppBar>
                 {isEmpty(ctx.visibleTracks?.new) && hasTracks() && (
                     <EmptyVisible
+                        id="se-empty-visible"
                         setMenuInfo={setMenuInfo}
                         setOpenVisibleMenu={setOpenVisibleMenu}
                         setSelectedType={setSelectedType}

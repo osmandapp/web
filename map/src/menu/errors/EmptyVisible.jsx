@@ -6,7 +6,7 @@ import AppContext, { OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
 import { ReactComponent as EmptyIcon } from '../../assets/icons/ic_action_track_disabled.svg';
 import TracksMenu from '../tracks/TracksMenu';
 
-export default function EmptyVisible({ setMenuInfo, setOpenVisibleMenu, setSelectedType }) {
+export default function EmptyVisible({ id = null, setMenuInfo, setOpenVisibleMenu, setSelectedType }) {
     const ctx = useContext(AppContext);
 
     function showAllTracks() {
@@ -19,7 +19,7 @@ export default function EmptyVisible({ setMenuInfo, setOpenVisibleMenu, setSelec
     return (
         <>
             {ctx.loginUser ? (
-                <Box className={styles.block} id="se-empty-page">
+                <Box className={styles.block} id={id ?? 'se-empty-page'}>
                     <Icon className={styles.icon}>
                         <EmptyIcon className={styles.icon} />
                     </Icon>

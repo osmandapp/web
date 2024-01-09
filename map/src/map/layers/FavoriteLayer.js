@@ -50,7 +50,7 @@ const FavoriteLayer = () => {
                 favoritesGroups.mapObjs = Object.keys(favoritesGroups.mapObjs).reduce((group, key) => {
                     const file = favoritesGroups.mapObjs[key];
                     if (!file.markers) {
-                        file.markers = TrackLayerProvider.createLayersByTrackData(file, ctx, map);
+                        file.markers = TrackLayerProvider.createLayersByTrackData(file, ctx, map, FAVORITE_FILE_TYPE);
                         if (ctx.selectedGpxFile?.markerCurrent && key === ctx.selectedGpxFile.nameGroup) {
                             updateSelectedFavoriteOnMap(file);
                         }

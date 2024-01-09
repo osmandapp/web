@@ -1,9 +1,8 @@
 import L from 'leaflet';
 import MarkerOptions from '../markers/MarkerOptions';
 import _ from 'lodash';
-import TracksManager, { isProtectedSegment } from '../../manager/track/TracksManager';
+import TracksManager, { GPX_FILE_TYPE, isProtectedSegment } from '../../manager/track/TracksManager';
 import EditablePolyline from './EditablePolyline';
-import { FAVORITE_FILE_TYPE } from '../../manager/FavoritesManager';
 
 export const TEMP_LAYER_FLAG = 'temp';
 export const TEMP_LINE_STYLE = {
@@ -13,7 +12,7 @@ export const TEMP_LINE_STYLE = {
     // name: TEMP_LAYER_FLAG, // style.name was not used, instead of actual layer.options.name
 };
 
-function createLayersByTrackData(data, ctx, map) {
+function createLayersByTrackData(data, ctx, map, type = GPX_FILE_TYPE) {
     let layers = [];
     data.tracks?.forEach((track) => {
         if (track.points?.length > 0) {
@@ -25,7 +24,7 @@ function createLayersByTrackData(data, ctx, map) {
 
     if (layers.length > 0) {
         let layersGroup = new L.FeatureGroup(layers);
-        layersGroup.options.type = FAVORITE_FILE_TYPE;
+        layersGroup.options.type = type;
         return layersGroup;
     }
 }

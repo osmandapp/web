@@ -53,6 +53,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
                 <Paper id="se-track-actions" className={styles.actions}>
                     {ctx.gpxFiles[track.name]?.showOnMap ? (
                         <MenuItem
+                            id={'se-hide-from-map-action'}
                             className={styles.action}
                             onClick={() => {
                                 setDisplayTrack(false);
@@ -70,6 +71,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
                         </MenuItem>
                     ) : (
                         <MenuItem
+                            id={'se-show-on-map-action'}
                             className={styles.action}
                             onClick={() => {
                                 setDisplayTrack(true);
