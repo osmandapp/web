@@ -72,13 +72,14 @@ export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file,
     if (ctx.loginUser) {
         const gpxFile = file ? file : ctx.selectedGpxFile.file ? ctx.selectedGpxFile.file : ctx.selectedGpxFile;
         const gpx = await getGpxFileFromTrackData(gpxFile);
+        console.log(gpx);
         if (gpx) {
             const convertedData = new TextEncoder().encode(gpx.data);
             const zippedResult = require('pako').gzip(convertedData, { to: 'Uint8Array' });
             const convertedZipped = zippedResult.buffer;
             const oMyBlob = new Blob([convertedZipped], { type: 'gpx' });
             const data = new FormData();
-
+            console.log(oMyBlob);
             data.append('file', oMyBlob, gpxFile.name);
 
             const params = {
@@ -88,9 +89,10 @@ export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file,
 
             // close possibly loaded Cloud track (clean up layers)
             ctx.mutateGpxFiles((o) => o[params.name] && (o[params.name].url = null));
-
+            console.log(data);
+            console.log(params);
             const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data, { params });
-
+            console.log(res);
             if (res && res?.data?.status === 'ok') {
                 // re-download gpx
                 const downloadFile = { ...gpxFile, ...params };
@@ -201,6 +203,7 @@ export async function updateGpxFiles(oldName, newFileName, listFiles, ctx) {
                         url: ctx.gpxFiles[oldName].url ? url : null,
                         clienttimems: file.clienttimems,
                         updatetimems: file.updatetimems,
+                        showOnMap: ctx.gpxFiles[oldName].showOnMap,
                         name: file.name,
                         type: 'GPX',
                     };

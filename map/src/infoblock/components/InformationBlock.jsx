@@ -73,7 +73,9 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
             setClearState(true);
 
             if (!isEmpty(ctx.selectedGpxFile) && !isVisibleTrack(ctx.selectedGpxFile)) {
-                ctx.mutateGpxFiles((o) => (o[ctx.selectedGpxFile.name].url = null));
+                if (!isEmpty(ctx.gpxFiles) && ctx.gpxFiles[ctx.selectedGpxFile.name]) {
+                    ctx.mutateGpxFiles((o) => (o[ctx.selectedGpxFile.name].url = null));
+                }
             }
         }
     }, [showInfoBlock]);

@@ -68,8 +68,8 @@ export function addCloseTracksToRecently(ctx) {
                 newVisFilesNames.new.push(t.name);
                 newVisFilesNames.open.push(t.name);
             } else {
-                newVisFiles.old.push(t);
-                newVisFilesNames.old.push(t.name);
+                newVisFiles.old.unshift(t);
+                newVisFilesNames.old.unshift(t.name);
             }
         });
 

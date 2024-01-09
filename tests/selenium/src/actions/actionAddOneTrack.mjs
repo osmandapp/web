@@ -1,8 +1,8 @@
-import {clickBy} from "../lib.mjs";
-import {By} from "selenium-webdriver";
-import actionCheckFileExist from "./actionCheckFileExist.mjs";
-import actionImportCloudTrack from "./actionImportCloudTrack.mjs";
-import {getFiles} from "../util.mjs";
+import { clickBy } from '../lib.mjs';
+import { By } from 'selenium-webdriver';
+import actionCheckFileExist from './actionCheckFileExist.mjs';
+import actionImportCloudTrack from './actionImportCloudTrack.mjs';
+import { getFiles } from '../util.mjs';
 
 export default async function test(trackName) {
     const tracks = getFiles({ folder: 'gpx' });
