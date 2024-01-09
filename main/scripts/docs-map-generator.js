@@ -64,11 +64,11 @@ function dumpItem(docmap, item, level) {
   });
 }
 
-// read on title
+// read on Title from md/mdx
 function readTitle(file, id) {
   fs.existsSync(file) || (file += 'x'); // .md -> .mdx
   const input = fs.readFileSync(file, { encoding: "utf8" });
   const headings = input.split(/[\r\n]/).filter((l) => l.match(/^(title:|#) /));
   const title = (headings && headings.length > 0 && headings[0]) ?? id;
-  return title.replace(/^.*? +/, ''); // cleanup title:|# and spaces
+  return title.replace(/^.*? +/, '').replace(/^"/, '').replace(/"$/, ''); // cleanup title:|#, spaces, and quotes
 }
