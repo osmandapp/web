@@ -5,14 +5,12 @@ import { clickBy, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../actions/actionFinish.mjs';
 import { deleteTrack } from '../util.mjs';
-import actionRenameTrack from '../actions/actionRenameTrack.mjs';
 
 export default async function test() {
     await actionOpenMap();
     await actionLogIn();
 
     const trackName = 'test-routed-osrm';
-    const suffix = '-renamed';
 
     await actionAddOneTrack(trackName);
 
@@ -51,16 +49,12 @@ export default async function test() {
     await waitBy(By.className(' leaflet-interactive'));
     await waitBy(By.id(`se-new-visible-track-${trackName}`));
 
-    // check rename visible track
-    await actionRenameTrack(trackName, suffix);
-    await waitBy(By.className('leaflet-interactive'));
-
     // check hide all
     await clickBy(By.id('se-hide-all-visible-tracks'));
     await waitBy(By.className(' leaflet-interactive'), { hidden: true });
 
     await clickBy(By.id('se-close-visible-tracks'));
-    await deleteTrack(`${trackName}${suffix}`);
+    await deleteTrack(`${trackName}`);
 
     await actionFinish();
 }

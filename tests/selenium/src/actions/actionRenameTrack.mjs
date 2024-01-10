@@ -2,6 +2,7 @@ import { clickBy, enclose, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 
 export default async function test(trackName, suffix) {
+    await waitBy(By.id(`se-actions-${trackName}`));
     await clickBy(By.id(`se-actions-${trackName}`));
     await waitBy(By.id('se-track-actions'));
     await clickBy(By.id('se-rename-cloud-track'));
