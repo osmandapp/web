@@ -4,5 +4,5 @@ import actionIdleWait from './actionIdleWait.mjs';
 
 export default async function test({ id = '' }) {
     await actionIdleWait();
-    return await waitBy(By.id(id), { optional: true });
+    return await waitBy(By.id(id));
 }

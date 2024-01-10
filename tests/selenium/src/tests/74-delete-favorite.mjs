@@ -5,6 +5,7 @@ import actionCheckFileExist from '../actions/actionCheckFileExist.mjs';
 import { By } from 'selenium-webdriver';
 import { deleteFavGroup, getFiles, uploadFavorites } from '../util.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
+import actionIdleWait from "../actions/actionIdleWait.mjs";
 
 export default async function test() {
     await actionOpenMap();

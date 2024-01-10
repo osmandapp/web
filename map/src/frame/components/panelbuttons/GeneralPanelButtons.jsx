@@ -147,6 +147,7 @@ export default function GeneralPanelButtons({
                             </Tooltip>
                             <Tooltip title="POI" arrow placement={tooltipOrientation}>
                                 <IconButton
+                                    id={'se-poi-panel-button'}
                                     variant="contained"
                                     type="button"
                                     onClick={() => {

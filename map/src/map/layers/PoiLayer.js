@@ -1,11 +1,11 @@
-import { useContext, useEffect, useState, useRef } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { OBJECT_TYPE_POI } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import _ from 'lodash';
 import L from 'leaflet';
-import MarkerOptions from '../markers/MarkerOptions';
+import MarkerOptions, { changeIconColor, getSvgBackground } from '../markers/MarkerOptions';
 import 'leaflet-spin';
-import PoiManager from '../../manager/PoiManager';
+import PoiManager, { DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
 import 'leaflet.markercluster';
 import { Alert } from '@mui/material';
 import { apiPost } from '../../util/HttpApi';
@@ -70,14 +70,15 @@ export default function PoiLayer() {
         _.debounce(async (controller, ignore, zoom, poiList, showPoiCategories, savedBbox, prevCategoriesCount) => {
             map.spin(true, { color: '#1976d2' });
             let bbox = map.getBounds();
-            await getPoi(controller, showPoiCategories, bbox, savedBbox, prevCategoriesCount).then((res) => {
+            await getPoi(controller, showPoiCategories, bbox, savedBbox, prevCategoriesCount).then(async (res) => {
                 map.spin(false);
                 if (res && !ignore) {
                     if (!res.alreadyFound) {
                         if (!res.mapLimitExceeded && res.features) {
+                            const layer = await createPoiLayer(res.features.features);
                             const newPoiList = {
                                 prevLayer: _.cloneDeep(poiList.layer),
-                                layer: createPoiLayer(res.features.features),
+                                layer: layer,
                             };
                             setPoiList(newPoiList);
                             setBbox(!res.useLimit ? bbox : null);
@@ -146,8 +147,7 @@ export default function PoiLayer() {
     }, [poiList]);
 
     function onClick(e) {
-        const type = OBJECT_TYPE_POI;
-        ctx.setCurrentObjectType(type);
+        ctx.setCurrentObjectType(OBJECT_TYPE_POI);
 
         const poi = {
             options: e.sourceTarget.options,
@@ -157,37 +157,42 @@ export default function PoiLayer() {
         ctx.setUpdateInfoBlock(true);
     }
 
-    function createPoiLayer(poiList = []) {
-        const layers = poiList.map((poi) => {
-            const coord = poi.geometry.coordinates;
-            return new L.Marker(new L.LatLng(coord[1], coord[0]), {
-                title: poi.properties.name,
-                icon: getPoiIcon(poi),
-                type: poi.properties.type,
-                subType: poi.properties.subType,
-                iconKeyName: poi.properties.iconKeyName,
-                typeOsmTag: poi.properties.typeOsmTag,
-                typeOsmValue: poi.properties.typeOsmValue,
-                iconName: poi.properties.iconName,
-                operator: poi.properties.operator,
-                website: poi.properties.website,
-                wikipedia: poi.properties.wikipedia,
-                opening_hours: poi.properties.opening_hours,
-                email: poi.properties.email,
-                phone: poi.properties.phone,
-                facebook: poi.properties.facebook,
-                instagram: poi.properties.instagram,
-                osmUrl: poi.properties.osmUrl,
-            });
-        });
+    async function createPoiLayer(poiList = []) {
+        const layers = await Promise.all(
+            poiList.map(async (poi) => {
+                const icon = await getPoiIcon(poi);
+                const coord = poi.geometry.coordinates;
+                return new L.Marker(new L.LatLng(coord[1], coord[0]), {
+                    title: poi.properties.name,
+                    icon: icon,
+                    type: poi.properties.type,
+                    subType: poi.properties.subType,
+                    iconKeyName: poi.properties.iconKeyName,
+                    typeOsmTag: poi.properties.typeOsmTag,
+                    typeOsmValue: poi.properties.typeOsmValue,
+                    iconName: poi.properties.iconName,
+                    operator: poi.properties.operator,
+                    website: poi.properties.website,
+                    wikipedia: poi.properties.wikipedia,
+                    opening_hours: poi.properties.opening_hours,
+                    email: poi.properties.email,
+                    phone: poi.properties.phone,
+                    facebook: poi.properties.facebook,
+                    instagram: poi.properties.instagram,
+                    osmUrl: poi.properties.osmUrl,
+                });
+            })
+        );
 
         if (layers.length) {
-            return new L.FeatureGroup(layers);
+            return L.featureGroup(layers);
+        } else {
+            return L.featureGroup(); // return an empty layer group if there are no layers
         }
     }
 
-    function getPoiIcon(poi) {
-        const svg = MarkerOptions.getBackground(PoiManager.DEFAULT_POI_COLOR, PoiManager.DEFAULT_SHAPE_COLOR);
+    async function getPoiIcon(poi) {
+        const svg = getSvgBackground(DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE);
         const iconWpt = PoiManager.getIconNameForPoiType(
             poi.properties.iconKeyName,
             poi.properties.typeOsmTag,
@@ -195,13 +200,14 @@ export default function PoiLayer() {
             poi.properties.iconName
         );
         if (iconWpt) {
-            return L.divIcon({
-                html:
-                    `<div>${svg}` +
-                    `<img alt="iconWpt" class="icon" src="/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${iconWpt}.svg">` +
-                    `</div>`,
-            });
+            const response = await fetch(`/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${iconWpt}.svg`);
+            const data = await response.text();
+            const coloredSvg = changeIconColor(data, DEFAULT_ICON_COLOR);
+            const iconHtml = `<div>${svg}<div class="icon" id="se-wpt-marker-icon-${iconWpt}-${DEFAULT_ICON_COLOR}">${coloredSvg}</div></div>`;
+            return L.divIcon({ html: iconHtml });
         }
+        // Return a default icon if iconWpt is not defined
+        return L.divIcon({ html: svg });
     }
 
     return (
