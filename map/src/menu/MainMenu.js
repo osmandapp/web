@@ -38,6 +38,7 @@ import styles from './mainmenu.module.css';
 import TrackGroupFolder from './tracks/TrackGroupFolder';
 import _ from 'lodash';
 import FavoriteGroupFolder from './favorite/FavoriteGroupFolder';
+import VisibleTracks from './visibletracks/VisibleTracks';
 
 export default function MainMenu({
     size,
@@ -49,6 +50,8 @@ export default function MainMenu({
     showInfoBlock,
     setShowInfoBlock,
     setClearState,
+    setOpenVisibleMenu,
+    openVisibleMenu,
 }) {
     const ctx = useContext(AppContext);
 
@@ -71,7 +74,7 @@ export default function MainMenu({
         {
             name: 'Configure Map',
             icon: ConfigureMapIcon,
-            component: <ConfigureMap />,
+            component: <ConfigureMap setOpenVisibleMenu={setOpenVisibleMenu} />,
             type: OBJECT_CONFIGURE_MAP,
             show: true,
             id: 'se-show-menu-configuremap',
@@ -87,7 +90,7 @@ export default function MainMenu({
         {
             name: 'Tracks',
             icon: TracksIcon,
-            component: <TracksMenu />,
+            component: <TracksMenu setOpenVisibleMenu={setOpenVisibleMenu} />,
             type: OBJECT_TYPE_CLOUD_TRACK,
             show: true,
             id: 'se-show-menu-tracks',
@@ -125,6 +128,12 @@ export default function MainMenu({
             selectMenuInfo();
         }
     }, [showInfoBlock]);
+
+    useEffect(() => {
+        if (openVisibleMenu) {
+            setOpenVisibleMenu(false);
+        }
+    }, [menuInfo]);
 
     //open main menu if currentObjectType was changed
     useEffect(() => {
@@ -196,6 +205,7 @@ export default function MainMenu({
 
     function selectMenu(item) {
         ctx.setOpenGroups([]);
+        setOpenVisibleMenu(false);
         if (menuInfo) {
             // update menu
             setShowInfoBlock(false);
@@ -400,8 +410,15 @@ export default function MainMenu({
                 hideBackdrop
             >
                 <Toolbar sx={{ mb: '-3px' }} />
-                {!showInfoBlock && _.isEmpty(ctx.openGroups) && menuInfo}
+                {!showInfoBlock && _.isEmpty(ctx.openGroups) && !openVisibleMenu && menuInfo}
                 {ctx.openGroups.length > 0 && !showInfoBlock && getGroup()}
+                {openVisibleMenu && !showInfoBlock && (
+                    <VisibleTracks
+                        setOpenVisibleMenu={setOpenVisibleMenu}
+                        setMenuInfo={setMenuInfo}
+                        setSelectedType={setSelectedType}
+                    />
+                )}
                 <InformationBlock
                     showInfoBlock={showInfoBlock}
                     setShowInfoBlock={setShowInfoBlock}

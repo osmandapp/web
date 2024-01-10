@@ -1,0 +1,16 @@
+.title {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: var(--text-primary) !important;
+}
+.item {
+    width: 360px !important;
+    padding: 10px 16px !important;
+    gap: 24px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+}
+.button {
+    text-transform: none !important;
+    background-color: #deebff !important;
+}

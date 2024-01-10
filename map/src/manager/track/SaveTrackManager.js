@@ -13,7 +13,7 @@ import TracksManager, {
     GPX_FILE_TYPE,
     getGpxFileFromTrackData,
 } from './TracksManager';
-import _ from 'lodash';
+import _, { cloneDeep } from 'lodash';
 import { compressFromJSON } from '../../util/GzipBase64.mjs';
 import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import Utils from '../../util/Utils';
@@ -78,7 +78,6 @@ export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file,
             const convertedZipped = zippedResult.buffer;
             const oMyBlob = new Blob([convertedZipped], { type: 'gpx' });
             const data = new FormData();
-
             data.append('file', oMyBlob, gpxFile.name);
 
             const params = {
@@ -88,9 +87,7 @@ export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file,
 
             // close possibly loaded Cloud track (clean up layers)
             ctx.mutateGpxFiles((o) => o[params.name] && (o[params.name].url = null));
-
             const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data, { params });
-
             if (res && res?.data?.status === 'ok') {
                 // re-download gpx
                 const downloadFile = { ...gpxFile, ...params };
@@ -98,7 +95,7 @@ export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file,
                     downloadAfterUpload(ctx, downloadFile).then();
                 }
                 TracksManager.deleteLocalTrack(ctx);
-                refreshGlobalFiles(ctx, params.name).then();
+                refreshGlobalFiles({ ctx, currentFileName: params.name }).then();
                 return true;
             }
         }
@@ -176,13 +173,80 @@ export async function renameTrack(oldName, folder, newName, ctx) {
             dataOnErrors: true,
         });
         if (res && res?.data?.status === 'ok') {
-            refreshGlobalFiles(ctx, newFileName).then();
+            await refreshGlobalFiles({ ctx, oldName, currentFileName: newFileName });
         } else {
             ctx.setTrackErrorMsg({
                 title: 'Rename error',
                 msg: res.data,
             });
         }
+    }
+}
+
+export async function updateGpxFiles(oldName, newFileName, listFiles, ctx) {
+    if (!_.isEmpty(listFiles)) {
+        //get gpx files
+        let files = getGpxFiles(listFiles);
+        if (ctx.gpxFiles[oldName]) {
+            let newGpxFiles = cloneDeep(ctx.gpxFiles);
+            for (const file of files) {
+                if (file.name === newFileName) {
+                    let url = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file?type=${encodeURIComponent(
+                        file.type
+                    )}&name=${encodeURIComponent(file.name)}`;
+                    newGpxFiles[file.name] = {
+                        url: ctx.gpxFiles[oldName].url ? url : null,
+                        clienttimems: file.clienttimems,
+                        updatetimems: file.updatetimems,
+                        showOnMap: ctx.gpxFiles[oldName].showOnMap,
+                        name: file.name,
+                        type: 'GPX',
+                    };
+                    if (newGpxFiles[file.name].url) {
+                        let f = await Utils.getFileData(newGpxFiles[file.name]);
+                        const gpxfile = new File([f], file.name, {
+                            type: 'text/plain',
+                        });
+                        TracksManager.getTrackData(gpxfile).then((track) => {
+                            track.name = file.name;
+                            Object.keys(track).forEach((t) => {
+                                newGpxFiles[file.name][t] = track[t];
+                            });
+                            newGpxFiles[oldName].url = null;
+                            ctx.setGpxFiles({ ...newGpxFiles });
+                        });
+                    } else {
+                        newGpxFiles[oldName].url = null;
+                        ctx.setGpxFiles({ ...newGpxFiles });
+                    }
+                }
+            }
+        }
+    } else {
+        ctx.setGpxFiles({});
+    }
+}
+
+export function updateVisibleTracks(oldN, newN) {
+    let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
+    if (savedVisible) {
+        const newInd = savedVisible.new?.findIndex((n) => n === oldN);
+        let oldInd;
+        if (newInd === -1) {
+            oldInd = savedVisible.old?.findIndex((n) => n === oldN);
+            if (oldInd !== -1) {
+                savedVisible.old[oldInd] = newN;
+            }
+        } else {
+            savedVisible.new[newInd] = newN;
+        }
+        if (savedVisible.open) {
+            const openInd = savedVisible.open?.findIndex((n) => n === oldN);
+            if (openInd !== -1) {
+                savedVisible.open[openInd] = newN;
+            }
+        }
+        localStorage.setItem(TracksManager.TRACK_VISIBLE_FLAG, JSON.stringify(savedVisible));
     }
 }
 
@@ -201,7 +265,7 @@ export async function duplicateTrack(oldName, folderName, newName, ctx) {
             dataOnErrors: true,
         });
         if (res && res?.data?.status === 'ok') {
-            refreshGlobalFiles(ctx, newFileName).then();
+            refreshGlobalFiles({ ctx, currentFileName: newFileName }).then();
         } else {
             ctx.setTrackErrorMsg({
                 title: 'Duplicate error',
@@ -223,7 +287,7 @@ export async function renameFolder(folder, newName, ctx) {
     });
     if (res && res?.data?.status === 'ok') {
         updateSortList({ oldName: folder.fullName, newName: newFolderName, isTracks: true, ctx });
-        refreshGlobalFiles(ctx).then();
+        refreshGlobalFiles({ ctx }).then();
     } else {
         ctx.setTrackErrorMsg({
             title: 'Duplicate error',
@@ -249,12 +313,12 @@ export async function saveEmptyTrack(folderName, ctx) {
     //save empty file with new folder's name
     const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data, { params });
     if (res && res?.data?.status === 'ok') {
-        refreshGlobalFiles(ctx, params.name).then();
+        refreshGlobalFiles({ ctx, currentFileName: params.name }).then();
         return true;
     }
 }
 
-export async function refreshGlobalFiles(ctx, currentFileName = null, type = GPX_FILE_TYPE) {
+export async function refreshGlobalFiles({ ctx, oldName = null, currentFileName = null, type = GPX_FILE_TYPE }) {
     // refresh list-files but skip if uploaded file is already there
     if (currentFileName == null || !ctx.listFiles.uniqueFiles?.find((f) => f.name === currentFileName)) {
         const respGetFiles = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {});
@@ -263,9 +327,13 @@ export async function refreshGlobalFiles(ctx, currentFileName = null, type = GPX
             ctx.setListFiles(resJson);
         }
         if (type === OBJECT_TYPE_FAVORITE) {
-            updateFavGroups(resJson, ctx);
+            await updateFavGroups(resJson, ctx);
         } else if (type === GPX_FILE_TYPE) {
             updateTrackGroups(resJson, ctx);
+            if (oldName) {
+                updateVisibleTracks(oldName, currentFileName);
+                await updateGpxFiles(oldName, currentFileName, resJson, ctx);
+            }
         }
     } else {
         if (type === GPX_FILE_TYPE) {
@@ -322,7 +390,7 @@ async function downloadAfterUpload(ctx, file) {
         ctx.setCurrentObjectType(type);
         track.name = file.name;
         Object.keys(track).forEach((t) => {
-            newGpxFiles[file.name][`${t}`] = track[t];
+            newGpxFiles[file.name][t] = track[t];
         });
         newGpxFiles[file.name].analysis = TracksManager.prepareAnalysis(newGpxFiles[file.name].analysis);
         ctx.setGpxFiles(newGpxFiles);

@@ -30,7 +30,7 @@ const routes = [
         profile: 'pedestrian',
         A: '48.16417, 24.53622',
         B: '48.17215, 24.42149',
-        check: '15.8 km',
+        check: '11.8 km',
     },
     {
         zoom: 14,

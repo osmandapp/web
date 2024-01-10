@@ -8,6 +8,7 @@ import styles from '../trackfavmenu.module.css';
 import GroupActions from '../actions/GroupActions';
 import ActionsMenu from '../actions/ActionsMenu';
 import MenuItemsTitle from '../components/MenuItemsTitle';
+import { Tooltip } from '@mui/material/';
 
 export default function CloudTrackGroup({ index, group }) {
     const ctx = useContext(AppContext);
@@ -44,26 +45,28 @@ export default function CloudTrackGroup({ index, group }) {
                         {`${group.lastModifiedData.split(',')[0]}, tracks ${group.realSize}`}
                     </Typography>
                 </ListItemText>
-                <IconButton
-                    className={styles.sortIcon}
-                    id={`se-folder-actions-button-${group.name}`}
-                    onMouseEnter={() => setHoverIconInfo(true)}
-                    onMouseLeave={() => setHoverIconInfo(false)}
-                    onClick={(e) => {
-                        setOpenActions(true);
-                        ctx.setOpenedPopper(anchorEl);
-                        e.stopPropagation();
-                    }}
-                    ref={anchorEl}
-                >
-                    {processDownload ? (
-                        <CircularProgress size={24} />
-                    ) : hoverIconInfo ? (
-                        <MenuIconHover />
-                    ) : (
-                        <MenuIcon />
-                    )}
-                </IconButton>
+                <Tooltip key={'action_menu_group'} title={'Menu'} arrow placement="bottom-end">
+                    <IconButton
+                        id={`se-folder-actions-button-${group.name}`}
+                        className={styles.sortIcon}
+                        onMouseEnter={() => setHoverIconInfo(true)}
+                        onMouseLeave={() => setHoverIconInfo(false)}
+                        onClick={(e) => {
+                            setOpenActions(true);
+                            ctx.setOpenedPopper(anchorEl);
+                            e.stopPropagation();
+                        }}
+                        ref={anchorEl}
+                    >
+                        {processDownload ? (
+                            <CircularProgress size={24} />
+                        ) : hoverIconInfo ? (
+                            <MenuIconHover />
+                        ) : (
+                            <MenuIcon />
+                        )}
+                    </IconButton>
+                </Tooltip>
             </MenuItem>
             <Divider className={styles.dividerItem} />
             <ActionsMenu

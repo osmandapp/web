@@ -3,6 +3,8 @@ import { apiGet, apiPost } from '../../util/HttpApi';
 import TracksManager, { findGroupByName } from './TracksManager';
 import { refreshGlobalFiles } from './SaveTrackManager';
 import { FAVORITE_FILE_TYPE } from '../FavoritesManager';
+import { cloneDeep } from 'lodash';
+import { hideAllVisTracks } from '../../menu/visibletracks/VisibleTracks';
 
 export async function deleteTrack(file, ctx, type = 'GPX') {
     if ((isCloudTrack(ctx) || file) && ctx.loginUser) {
@@ -24,7 +26,7 @@ export async function deleteTrack(file, ctx, type = 'GPX') {
             });
 
             if (type === FAVORITE_FILE_TYPE) {
-                refreshGlobalFiles(ctx, null, OBJECT_TYPE_FAVORITE).then();
+                refreshGlobalFiles({ ctx, type: OBJECT_TYPE_FAVORITE }).then();
             } else {
                 // delete track from ctx.tracksGroups (used in CloudTrackGroup menu)
                 deleteTracksFromGroups(trackName, ctx);
@@ -39,6 +41,13 @@ export async function deleteTrack(file, ctx, type = 'GPX') {
                     if (index !== -1) {
                         o.uniqueFiles.splice(index, 1);
                         o.uniqueFiles = [...o.uniqueFiles];
+                    }
+                    return { ...o };
+                });
+                // update gpxFiles
+                ctx.setGpxFiles((o) => {
+                    if (o[file.name]) {
+                        delete o[file.name];
                     }
                     return { ...o };
                 });
@@ -58,13 +67,32 @@ export async function deleteTrackFolder(folder, ctx) {
         dataOnErrors: true,
     });
     if (res && res?.data?.status === 'ok') {
-        refreshGlobalFiles(ctx).then();
+        refreshGlobalFiles({ ctx }).then();
     } else {
         ctx.setTrackErrorMsg({
             title: 'Delete error',
             msg: res.data,
         });
     }
+}
+
+export function closeTrack(ctx, file) {
+    ctx.mutateGpxFiles((o) => (o[file.name].url = null));
+    if (ctx.selectedGpxFile?.name === file.name) {
+        ctx.setCurrentObjectType(null);
+    }
+}
+
+export function deleteTracksFromMap(ctx, files) {
+    hideAllVisTracks();
+    let updatedGpxFiles = cloneDeep(ctx.gpxFiles);
+    files.forEach((file) => {
+        updatedGpxFiles[file.name].url = null;
+        if (ctx.selectedGpxFile?.name === file.name) {
+            ctx.setCurrentObjectType(null);
+        }
+    });
+    ctx.setGpxFiles({ ...updatedGpxFiles });
 }
 
 function deleteTracksFromGroups(trackName, ctx) {

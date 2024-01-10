@@ -10,15 +10,14 @@ function clickHandler({ ctx, file, layer }) {
     if (file.name !== ctx.selectedGpxFile.name || ctx.infoBlockWidth === MENU_INFO_CLOSE_SIZE) {
         file.analysis = TracksManager.prepareAnalysis(file.analysis);
         ctx.setSelectedGpxFile({ ...file, cloudRedrawWpts: true });
-        const type = OBJECT_TYPE_CLOUD_TRACK;
-        ctx.setCurrentObjectType(type);
+        ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
         ctx.setUpdateInfoBlock(true);
         layer.off('click'); // once
     }
 }
 
 function addTrackToMap({ ctx, file, map, fit = true } = {}) {
-    const layer = TrackLayerProvider.createLayersByTrackData(file, ctx, map);
+    const layer = TrackLayerProvider.createLayersByTrackData({ data: file, ctx, map });
 
     layer.on('click', () => clickHandler({ ctx, file, layer }));
 
@@ -124,7 +123,7 @@ const CloudTrackLayer = () => {
         let processed = 0;
         const newGpxFiles = { ...ctx.gpxFiles } ?? {};
         Object.values(newGpxFiles).forEach((file) => {
-            if (file.url && !file.gpx) {
+            if (file.url && !file.gpx && file.showOnMap) {
                 processed++;
                 file.gpx = addTrackToMap({ ctx, file, map });
                 if (file.name === ctxTrack.name) {
@@ -135,6 +134,7 @@ const CloudTrackLayer = () => {
                 processed++;
                 unregisterCleanupFileLayer(file);
                 file.gpx = removeLayerFromMap(file, map);
+                file.showOnMap = false;
             } else if (file.delete) {
                 processed++;
                 delete newGpxFiles[file.name];

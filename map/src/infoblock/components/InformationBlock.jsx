@@ -12,12 +12,13 @@ import { TabContext, TabList } from '@mui/lab';
 import TrackTabList from './tabs/TrackTabList';
 import WeatherTabList from './tabs/WeatherTabList';
 import FavoritesTabList from './tabs/FavoritesTabList';
-import _ from 'lodash';
+import _, { isEmpty } from 'lodash';
 import PoiTabList from './tabs/PoiTabList';
 import { hasSegmentTurns } from '../../manager/track/TracksManager';
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import styles from '../../menu/trackfavmenu.module.css';
+import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
 
 const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     const [mounted, setMounted] = useState(false);
@@ -70,6 +71,12 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
             ctx.mutateShowPoints({ points: true, wpts: true });
             ctx.setTrackRange(null);
             setClearState(true);
+
+            if (!isEmpty(ctx.selectedGpxFile) && !isVisibleTrack(ctx.selectedGpxFile)) {
+                if (!isEmpty(ctx.gpxFiles) && ctx.gpxFiles[ctx.selectedGpxFile.name]) {
+                    ctx.mutateGpxFiles((o) => (o[ctx.selectedGpxFile.name].url = null));
+                }
+            }
         }
     }, [showInfoBlock]);
 

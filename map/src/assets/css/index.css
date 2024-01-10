@@ -25,3 +25,7 @@ code {
 .MuiIconButton-root.Mui-disabled {
     fill: #b3b3b3 !important;
 }
+
+.MuiButton-root.Mui-disabled {
+    background-color: #f0f0f0 !important;
+}

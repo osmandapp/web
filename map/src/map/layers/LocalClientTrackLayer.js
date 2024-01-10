@@ -383,7 +383,7 @@ export default function LocalClientTrackLayer() {
         if (track.updated) {
             track.updated = false; // reset
         }
-        let layer = TrackLayerProvider.createLayersByTrackData(track, ctx, map);
+        let layer = TrackLayerProvider.createLayersByTrackData({ data: track, ctx, map });
         if (layer) {
             if (fitBounds) {
                 if (!_.isEmpty(layer.getBounds())) {
@@ -545,7 +545,7 @@ export default function LocalClientTrackLayer() {
         TracksManager.prepareTrack(file);
 
         file.tracks = [{ points, wpts }];
-        file.layers = TrackLayerProvider.createLayersByTrackData(file, ctx, map);
+        file.layers = TrackLayerProvider.createLayersByTrackData({ data: file, ctx, map });
 
         ctx.localTracks.push(file);
         ctx.setLocalTracks([...ctx.localTracks]);

@@ -2,6 +2,7 @@ import React, { forwardRef, useContext, useState } from 'react';
 import { Box, Divider, ListItemIcon, ListItemText, MenuItem, Paper, Typography } from '@mui/material';
 import styles from '../trackfavmenu.module.css';
 import { ReactComponent as ShowOnMapIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
+import { ReactComponent as HideFromMapIcon } from '../../assets/icons/ic_action_map_hide.svg';
 import { ReactComponent as DownloadIcon } from '../../assets/icons/ic_action_gsave_dark.svg';
 import { ReactComponent as DeleteIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
 import { ReactComponent as RenameIcon } from '../../assets/icons/ic_action_edit_outlined.svg';
@@ -13,7 +14,7 @@ import RenameDialog from '../../dialogs/tracks/RenameDialog';
 import AppContext from '../../context/AppContext';
 import { duplicateTrack } from '../../manager/track/SaveTrackManager';
 
-const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) => {
+const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref) => {
     const ctx = useContext(AppContext);
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
@@ -50,22 +51,43 @@ const TrackActions = forwardRef(({ track, setShowTrack, setOpenActions }, ref) =
         <>
             <Box ref={ref}>
                 <Paper id="se-track-actions" className={styles.actions}>
-                    <MenuItem
-                        className={styles.action}
-                        onClick={() => {
-                            setShowTrack(true);
-                            setOpenActions(false);
-                        }}
-                    >
-                        <ListItemIcon className={styles.iconAction}>
-                            <ShowOnMapIcon />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography variant="inherit" className={styles.actionName} noWrap>
-                                Show on map
-                            </Typography>
-                        </ListItemText>
-                    </MenuItem>
+                    {ctx.gpxFiles[track.name]?.showOnMap ? (
+                        <MenuItem
+                            id="se-hide-from-map-action"
+                            className={styles.action}
+                            onClick={() => {
+                                setDisplayTrack(false);
+                                setOpenActions(false);
+                            }}
+                        >
+                            <ListItemIcon className={styles.iconAction}>
+                                <HideFromMapIcon />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography variant="inherit" className={styles.actionName} noWrap>
+                                    Hide from map
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    ) : (
+                        <MenuItem
+                            id="se-show-on-map-action"
+                            className={styles.action}
+                            onClick={() => {
+                                setDisplayTrack(true);
+                                setOpenActions(false);
+                            }}
+                        >
+                            <ListItemIcon className={styles.iconAction}>
+                                <ShowOnMapIcon />
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography variant="inherit" className={styles.actionName} noWrap>
+                                    Show on map
+                                </Typography>
+                            </ListItemText>
+                        </MenuItem>
+                    )}
                     <Divider className={styles.dividerActions} />
                     <MenuItem
                         id={'se-rename-cloud-track'}
