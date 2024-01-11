@@ -90,6 +90,7 @@ Target:
     test:main       Run on MAIN OsmAnd map
 
 Options:
+    --longtimeout   Use 5 minute timeout instead of 45 seconds
     --headless      Run browser in headless (background) mode
     --mobile        Run browser in smartphone emulation mode
     --ignore        Ignore failed tests (exit with success)
