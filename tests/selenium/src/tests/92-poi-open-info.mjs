@@ -1,9 +1,9 @@
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
-import actionFinish from '../actions/actionFinish.mjs';
 import actionCheckPoi from '../actions/actionCheckPoi.mjs';
 import { clickBy, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
+import actionFinish from '../actions/actionFinish.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -13,8 +13,6 @@ export default async function test() {
     const iconWpt = 'amenity_restaurant';
     const poiName = 'Public Cafe';
 
-    await actionCheckPoi({ iconWpt, name: poiName, hidden: true });
-
     await waitBy(By.id('se-poi-panel-button'));
     await clickBy(By.id('se-poi-panel-button'));
 
@@ -22,6 +20,8 @@ export default async function test() {
     await clickBy(By.id(`se-poi-category-${category}`));
 
     await actionCheckPoi({ iconWpt, name: poiName });
+    await clickBy(By.id(`se-wpt-marker-icon-${iconWpt}-#ffffff-${poiName}`));
+    await waitBy(By.id(`se-poi-infoblock-${poiName}`));
 
     await actionFinish();
 }

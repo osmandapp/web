@@ -19,6 +19,7 @@ import AppContext, {
     OBJECT_TYPE_NAVIGATION_TRACK,
     OBJECT_TYPE_NAVIGATION_ALONE,
     OBJECT_TYPE_WEATHER,
+    OBJECT_TYPE_POI,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import ConfigureMap from './configuremap/ConfigureMap';
@@ -118,6 +119,14 @@ export default function MainMenu({
             type: OBJECT_TYPE_LOCAL_TRACK,
             show: true,
             id: 'se-show-menu-planroute',
+        },
+        {
+            name: 'Poi',
+            icon: FavoritesIcon,
+            component: <FavoritesMenu />,
+            type: OBJECT_TYPE_POI,
+            show: false,
+            id: 'se-show-menu-poi',
         },
     ];
 

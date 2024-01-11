@@ -5,7 +5,7 @@ import actionCheckFileExist from '../actions/actionCheckFileExist.mjs';
 import { By } from 'selenium-webdriver';
 import { deleteFavGroup, getFiles, uploadFavorites } from '../util.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
-import actionIdleWait from "../actions/actionIdleWait.mjs";
+import { TIMEOUT_REQUIRED } from '../options.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -18,9 +18,11 @@ export default async function test() {
     // open favorite menu
     await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-favorites'));
-
-    const exist = await actionCheckFileExist({ id: `se-menu-fav-${shortFavGroupName}` });
-
+    await waitBy(By.id('se-progress'), { hidden: true });
+    const exist = await actionCheckFileExist({
+        id: `se-menu-fav-${shortFavGroupName}`,
+        timeout: TIMEOUT_REQUIRED,
+    });
     if (!exist) {
         const favorites = getFiles({ folder: 'favorites' });
         const { path } = favorites.find((t) => t.name === favGroupName);

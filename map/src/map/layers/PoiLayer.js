@@ -203,7 +203,8 @@ export default function PoiLayer() {
             const response = await fetch(`/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${iconWpt}.svg`);
             const data = await response.text();
             const coloredSvg = changeIconColor(data, DEFAULT_ICON_COLOR);
-            const iconHtml = `<div>${svg}<div class="icon" id="se-wpt-marker-icon-${iconWpt}-${DEFAULT_ICON_COLOR}">${coloredSvg}</div></div>`;
+            const poiName = poi.properties.name;
+            const iconHtml = `<div>${svg}<div class="icon" id="se-wpt-marker-icon-${iconWpt}-${DEFAULT_ICON_COLOR}-${poiName}">${coloredSvg}</div></div>`;
             return L.divIcon({ html: iconHtml });
         }
         // Return a default icon if iconWpt is not defined
