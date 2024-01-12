@@ -34,6 +34,7 @@ export default function Render() {
         'Equestrian' : 'sport/sport_sport_equestrian',
         'Field hockey' : 'sport/sport_sport_field_hockey',
         'Golf' : 'sport/sport_sport_golf',
+        'Disc golf' : 'sport/sport_sport_disc_golf',
         'Handball' : 'sport/sport_sport_handball',
         'Ice hockey' : 'sport/sport_sport_ice_hockey',
         'Ice rink' : 'sport/sport_leisure_ice_rink',

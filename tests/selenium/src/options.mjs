@@ -8,7 +8,8 @@ export const TEST_LOGIN = 'osmand@grr.la';
 export const TEST_PASSWORD = '0xDEADBEEF';
 
 export const TIMEOUT_OPTIONAL = 1000; // optional element timeout and driver.implicitlyWait() (1s)
-export const TIMEOUT_REQUIRED = 45000; // required element timeout (waitBy / clickBy / enclose defaults) (45s)
+export let TIMEOUT_REQUIRED = 45 * 1000; // required element timeout (waitBy / clickBy / enclose) (45s)
+export const LONG_TIMEOUT = 300 * 1000; // used with --longtimeout to prolong default TIMEOUT_REQUIRED (300s)
 export const HIDDEN_TIMEOUT = 10000; // hidden timeout (waitBy) (10s)
 
 export const IDLE_DELAY = 1000; // additional delay after global window.seActivityTimestamp (1s)
@@ -39,6 +40,7 @@ export function parseArgs() {
         } else if (a.match(/^(http:|https:)/)) {
             url = a;
         } else if (a.match(/^--/)) {
+            a === '--longtimeout' && (TIMEOUT_REQUIRED = LONG_TIMEOUT);
             a === '--headless' && (headless = true);
             a === '--mobile' && (mobile = true);
             a === '--ignore' && (ignore = true);
@@ -89,6 +91,7 @@ Target:
     test:main       Run on MAIN OsmAnd map
 
 Options:
+    --longtimeout   Use 5 minute timeout instead of 45 seconds
     --headless      Run browser in headless (background) mode
     --mobile        Run browser in smartphone emulation mode
     --ignore        Ignore failed tests (exit with success)
