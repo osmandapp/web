@@ -1,4 +1,4 @@
-import { waitBy } from '../lib.mjs';
+import { waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 
 export default async function test({
@@ -9,8 +9,15 @@ export default async function test({
     colorIcon = '#ffffff',
     hidden = false,
 }) {
-    await waitBy(By.id(`se-wpt-marker-background-${colorShape}-${shape}`), { hidden: hidden });
-    if (iconWpt) {
-        await waitBy(By.id(`se-wpt-marker-icon-${iconWpt}-${colorIcon}-${name}`), { hidden: hidden });
+    if (hidden) {
+        await waitByRemoved(By.id(`se-wpt-marker-background-${colorShape}-${shape}`));
+        if (iconWpt) {
+            await waitByRemoved(By.id(`se-wpt-marker-icon-${iconWpt}-${colorIcon}-${name}`));
+        }
+    } else {
+        await waitBy(By.id(`se-wpt-marker-background-${colorShape}-${shape}`));
+        if (iconWpt) {
+            await waitBy(By.id(`se-wpt-marker-icon-${iconWpt}-${colorIcon}-${name}`));
+        }
     }
 }

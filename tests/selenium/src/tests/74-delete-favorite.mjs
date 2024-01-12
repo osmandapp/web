@@ -1,6 +1,6 @@
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
-import { clickBy, waitBy } from '../lib.mjs';
+import { clickBy, waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { deleteFavGroup, getFiles, uploadFavorites } from '../util.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
@@ -36,8 +36,8 @@ export default async function test() {
 
     // delete favorite item
     await clickBy(By.id('se-delete-fav-dialog-submit'));
-    await waitBy(By.id(`se-actions-${wptName}`), { hidden: true });
-    await waitBy(By.id(`se-fav-item-name-${wptName}`), { hidden: true });
+    await waitByRemoved(By.id(`se-actions-${wptName}`));
+    await waitByRemoved(By.id(`se-fav-item-name-${wptName}`));
 
     await clickBy(By.id('se-back-folder-button'));
     await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));

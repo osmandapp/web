@@ -2,19 +2,21 @@ import { Dialog } from '@material-ui/core';
 import DialogTitle from '@mui/material/DialogTitle';
 import dialogStyles from '../dialog.module.css';
 import DialogContent from '@mui/material/DialogContent';
-import { Button } from '@mui/material';
+import { Button, LinearProgress } from '@mui/material';
 import DialogActions from '@mui/material/DialogActions';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { deleteTrackFolder } from '../../manager/track/DeleteTrackManager';
 import AppContext from '../../context/AppContext';
 
 export default function DeleteFolderDialog({ setOpenDialog, folder, setOpenActions }) {
     const ctx = useContext(AppContext);
+    const [process, setProcess] = useState(false);
+
     async function deleteFolder() {
+        setProcess(true);
         await deleteTrackFolder(folder, ctx);
-        if (setOpenActions) {
-            setOpenActions(false);
-        }
+        setProcess(false);
+        closeDialogs();
     }
 
     function closeDialogs() {
@@ -31,6 +33,7 @@ export default function DeleteFolderDialog({ setOpenDialog, folder, setOpenActio
             onClose={() => setOpenDialog(false)}
             onClick={(e) => e.stopPropagation()}
         >
+            {process ? <LinearProgress /> : <></>}
             <DialogTitle className={dialogStyles.title}>Delete folder</DialogTitle>
             <DialogContent className={dialogStyles.content}>
                 {`This will delete "${folder?.name}" folder and all tracks (${folder?.realSize}) included.`}

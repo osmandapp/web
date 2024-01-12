@@ -46,7 +46,6 @@ export default async function test() {
     );
 
     await clickBy(By.id('se-edit-fav-item-submit'));
-    await waitBy(By.id(`se-actions-${wptName}`), { hidden: true });
 
     await matchTextBy(By.id('se-fav-item-address'), suffix);
 

@@ -1,7 +1,7 @@
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
 import actionAddOneTrack from '../actions/actionAddOneTrack.mjs';
-import { clickBy, waitBy } from '../lib.mjs';
+import { clickBy, waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../actions/actionFinish.mjs';
 import { deleteTrack } from '../util.mjs';
@@ -18,8 +18,8 @@ export default async function test() {
     await waitBy(By.id('se-infoblock-all'));
     await waitBy(By.className('leaflet-interactive'));
     await clickBy(By.id('se-button-back'));
-    await waitBy(By.className('leaflet-interactive'), { hidden: true });
-    await waitBy(By.id('se-infoblock-all'), { hidden: true });
+    await waitByRemoved(By.className('leaflet-interactive'));
+    await waitByRemoved(By.id('se-infoblock-all'));
 
     await deleteTrack(trackName);
 

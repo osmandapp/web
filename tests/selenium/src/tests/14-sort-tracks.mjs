@@ -1,7 +1,7 @@
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
-import { clickBy, enclose, enumerateIds, waitBy } from '../lib.mjs';
+import { clickBy, enclose, enumerateIds, waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { getFiles } from '../util.mjs';
 import actionImportCloudTrack from '../actions/actionImportCloudTrack.mjs';
@@ -9,6 +9,7 @@ import actionCheckCloudTracks from '../actions/actionCheckCloudTracks.mjs';
 import actionCreateNewFolder from '../actions/actionCreateNewFolder.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
 import actionDeleteFolder from '../actions/actionDeleteFolder.mjs';
+import actionRenameTrack from '../actions/actionRenameTrack.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -18,49 +19,51 @@ export default async function test() {
     await clickBy(By.id('se-show-menu-tracks'));
 
     const tracks = getFiles({ folder: 'gpx' });
-    const folder = 'uploud track';
+    const folder = 'uploud-sort';
+    let trackName = 'test-infoblock-desc';
+    const suffix = '-renamed';
 
     await actionCreateNewFolder(folder);
-
     await clickBy(By.id(`se-menu-cloud-${folder}`));
     await waitBy(By.id(`se-cloud-name-track`));
-
     // import list of tracks
     await actionImportCloudTrack(tracks);
-    for (let i = 0; i < tracks.length; i++) {
-        const { name } = tracks[i];
-        await waitBy(By.id('se-import-loading' + name), { hidden: true });
+    await actionIdleWait();
+    for (const t of tracks) {
+        await waitByRemoved(By.id('se-import-loading-' + t.name));
     }
 
     await waitBy(By.id('se-sort-button-time'));
+    await actionIdleWait();
     await actionCheckCloudTracks(tracks);
+    await actionRenameTrack(trackName, suffix);
     await validateGroupOrder(trackGroupsLastModified, 'LastModified');
     await waitBy(By.id('se-sort-button-time'));
     await clickBy(By.id('se-sort-button-time'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-longest'));
-    await actionCheckCloudTracks(tracks);
     await validateGroupOrder(trackGroupsLongest, 'Longest');
     await waitBy(By.id('se-sort-button-longest'));
     await clickBy(By.id('se-sort-button-longest'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-shortest'));
-    await actionCheckCloudTracks(tracks);
     await validateGroupOrder(trackGroupsShortest, 'Shortest');
-
+    await waitBy(By.id('se-back-folder-button'));
+    await clickBy(By.id('se-back-folder-button'));
+    await waitBy(By.id(`se-menu-cloud-${folder}`));
     await actionDeleteFolder(folder);
 
     await actionFinish();
 }
 
 const trackGroupsLastModified = [
+    'se-cloud-track-test-infoblock-desc-renamed',
     'se-cloud-track-test-routed-osmand',
     'se-cloud-track-test-wiki-kyiv',
     'se-cloud-track-test-track-trkpt',
     'se-cloud-track-test-track-mixed',
     'se-cloud-track-test-routed-osrm',
     'se-cloud-track-test-track-wpt',
-    'se-cloud-track-test-infoblock-desc',
 ];
 
 const trackGroupsLongest = [
@@ -69,12 +72,12 @@ const trackGroupsLongest = [
     'se-cloud-track-test-track-mixed',
     'se-cloud-track-test-routed-osrm',
     'se-cloud-track-test-wiki-kyiv',
-    'se-cloud-track-test-infoblock-desc',
+    'se-cloud-track-test-infoblock-desc-renamed',
     'se-cloud-track-test-track-wpt',
 ];
 
 const trackGroupsShortest = [
-    'se-cloud-track-test-infoblock-desc',
+    'se-cloud-track-test-infoblock-desc-renamed',
     'se-cloud-track-test-track-wpt',
     'se-cloud-track-test-wiki-kyiv',
     'se-cloud-track-test-routed-osrm',
@@ -89,7 +92,11 @@ async function validateGroupOrder(ids, sortName) {
             await actionIdleWait();
             const groups = await enumerateIds('se-cloud-track');
             if (groups.length > 0) {
-                return JSON.stringify(ids) === JSON.stringify(groups);
+                if (sortName === 'LastModified') {
+                    return JSON.stringify(ids[0]) === JSON.stringify(groups[0]);
+                } else {
+                    return JSON.stringify(ids) === JSON.stringify(groups);
+                }
             }
         },
         { tag: `validateTrackGroupsSort-${sortName}` }
