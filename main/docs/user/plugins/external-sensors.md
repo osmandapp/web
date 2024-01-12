@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-The **External sensors plugin** allows you to read and record data from [wireless external sensors](https://en.wikipedia.org/wiki/Wireless_sensor_network) running on [**ANT+**](https://en.wikipedia.org/wiki/ANT_(network)) and [**BLE (Bluetooth Low Energy)**](https://www.wikiwand.com/en/Bluetooth_Low_Energy) technologies and display this data using [widgets](#widgets) in the OsmAnd application. This managed network is capable of collecting, transmitting, and storing sensor data.  
+The **External sensors plugin** allows you to read and record data from [wireless external sensors](https://en.wikipedia.org/wiki/Wireless_sensor_network) running on [**ANT+**](https://en.wikipedia.org/wiki/ANT_(network)) and [**BLE (Bluetooth Low Energy)**](https://www.wikiwand.com/en/Bluetooth_Low_Energy) technologies and display this data using [widgets](#widgets) in the OsmAnd application. This managed network is capable of collecting, transmitting, and storing sensor data. *iPhones and iPads* do not have the hardware to receive ANT+ signals.
 
 The OsmAnd External sensors plugin accesses external sensors and can read data such as *Heart Rate*, *Bicycle Power*, *Bicycle Cadence*, *Bicycle Speed*, *Bicycle Distance* and *Temperature*. For the plugin to work correctly, make sure that your device [is connected](#pair-new-sensor) to the appropriate sensors.
 
@@ -32,7 +32,6 @@ To start using data from external sensors, you need to make the following settin
 2. Make the necessary settings in the [sensors settings](#sensors-settings).
 3. If needed, add [External sensors widgets](#widgets) to the screen.
 4. You can use the tips for [ANT+ connect](https://www.thisisant.com/consumer/ant-101/ant-in-phones) to set up this type of sensors.
-5. iPhones and iPads do not have the hardware to receive ANT+ signals.
 6. To connect external **BLE sensors**, enable bluetooth on your device.
 7. Sensor data can be recorded to a track in the [Trip recording plugin](#trip-recording).
 
@@ -59,12 +58,12 @@ To start using data from external sensors, you need to make the following settin
 
 Use the *Pair new sensor* button to connect new sensors.  
 
-- Not all devices support ANT+ (Android only). You can check if your device works with ANT+ by going [here](https://www.thisisant.com/consumer/ant-101/ant-in-phones).  
-- Bicycle power in Android is only Ant+.
-- There is no Bicycle power in iOS because Ant+ sensors are not supported.
 - You need Bluetooth turned on to search for sensors. If your Bluetooth is turned off, the app will prompt you to *Open settings* on your device.
 - To add new sensors, tap the required one in the list of found sensors.
 - A pop-up notification is displayed when a paired sensor is connected or disconnected.  
+- Not all devices support ANT+ (Android only). You can check if your device works with ANT+ by going [here](https://www.thisisant.com/consumer/ant-101/ant-in-phones).  
+- Bicycle power in Android is only Ant+.
+- **There is no Bicycle power in iOS** because Ant+ sensors are not supported.
 
 
 ### Sensors settings
@@ -95,11 +94,10 @@ Use one of the following paths to open the sensor settings:
 
 With the plugin for each external sensor available to the OsmAnd application, you can use these settings:  
 
-
 1. All previously added sensors are divided into two lists: **Connected** and **Disconnected**.
 2. Each sensor in the list has a three-dot menu with settings:
     - **Disconnect** or **Connect** the sensor depending on its current state.
-    - **Settings** - opens a separate sensor screen with additional information on sensor type, battery level, data received, and settings for renaming, "forget sensor", and for specifying wheel circumference. The sensor screen can be opened simply by tapping the field with the sensor name in the list.
+    - **Settings** - opens a separate sensor screen with additional information on sensor type, battery level, data received, and settings for renaming, *forget sensor*, and for specifying wheel circumference. The sensor screen can be opened simply by tapping the field with the sensor name in the list.
     - **Rename** - allows you to set your own name for the sensor.
     - **Forget** - sensor will be removed from the list, but can be paired with it again.
 - When the battery level of the paired sensor becomes less than 15%, a pop-up notification appears on the screen.
@@ -142,7 +140,21 @@ OsmAnd uses [**track recording**](../plugins/trip-recording.md#recorded-gpx-file
 
 ### Data analyze
 
-![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze.png)
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 Data from external sensors can be transmitted to the device and displayed in OsmAnd during the trip as additional information. If you want to analyze this information, you need to record the trip, and only after you save it, in the *Track context menu → Analyze on map*, additional items for the recorded data appear.  
 
@@ -159,7 +171,7 @@ Use the following path to display the widget on the screen:
 *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="external_sensor_widgets"/>*   
 
 1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>**. The heart rate sensor can transmit your heart rate in real time. This is useful for cycling training when you want to track your heart rate to optimize your training efforts. 
-2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>**. Your bike's power sensors measure the power you exert when you pedal. This allows you to analyze and optimize your workouts to improve efficiency and performance. 
+2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android only*). Your bike's power sensors measure the power you exert when you pedal. This allows you to analyze and optimize your workouts to improve efficiency and performance. 
 3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>**. Cadence is the number of pedal turns per minute. Cadence sensors help you maintain optimal pedaling speed for efficient cycling.
 4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>**. Speed sensors provide information about your current speed while cycling. 
 5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>**. Distance sensors measure the distance you travel when you're driving.
