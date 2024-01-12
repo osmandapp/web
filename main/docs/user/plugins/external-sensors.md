@@ -83,6 +83,10 @@ Use one of the following paths to open the sensor settings:
 
 <TabItem value="ios" label="iOS">
 
+Use one of the following paths to open the sensor settings:  
+- *<Translate android="true" ids="shared_string_menu,plugin_settings,external_sensors_plugin_name"/> → Available device → Settings* 
+- *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,external_sensors_plugin_name"/> → Available device → Settings* 
+
 ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_1.png)  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_2.png)  
 
 </TabItem>
