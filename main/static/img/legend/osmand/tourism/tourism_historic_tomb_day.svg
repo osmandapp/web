@@ -15,7 +15,7 @@
 </g>
 
 
-<g transform="translate(8.000000, 8.000000) scale(0.500000 0.500000) "> 
+<g transform="translate(8.000000, 8.000000) scale(2.000000 2.000000) "> 
 
 <rect opacity="0.7" x="8" y="40" width="32" height="4" fill="#ffffff"/>
 <path fill-rule="evenodd" clip100-rule="evenodd" d="M16 12H12V40H36V12H32C32 7.58172 28.4183 4 24 4C19.5817 4 16 7.58172 16 12ZM32 16H16V20H32V16Z" fill="#ffffff"/>

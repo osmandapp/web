@@ -15,7 +15,7 @@
 </g>
 
 
-<g transform="translate(8.000000, 8.000000) scale(0.500000 0.500000) "> 
+<g transform="translate(8.000000, 8.000000) scale(2.000000 2.000000) "> 
 
 <path fill-rule="evenodd" clip100-rule="evenodd" d="M4 12V20H8V36H4V40H44V36H40V20H44V12H40L24 6L8 12H4ZM36 20H32V36H36V20ZM28 20V36H20V20H28ZM16 20H12V36H16V20Z" fill="#ffffff"/>
 
