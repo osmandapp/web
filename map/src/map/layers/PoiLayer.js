@@ -273,8 +273,6 @@ export default function PoiLayer() {
                 return L.divIcon({ html: iconHtml });
             }
         }
-        // Return a default icon if iconWpt is not defined
-        return L.divIcon({ html: svg });
     }
 
     return (
