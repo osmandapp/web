@@ -8,6 +8,7 @@ import actionImportCloudTrack from '../actions/actionImportCloudTrack.mjs';
 import actionCheckCloudTracks from '../actions/actionCheckCloudTracks.mjs';
 import actionCreateNewFolder from '../actions/actionCreateNewFolder.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
+import actionDeleteFolder from '../actions/actionDeleteFolder.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -22,10 +23,14 @@ export default async function test() {
     await actionCreateNewFolder(folder);
 
     await clickBy(By.id(`se-menu-cloud-${folder}`));
-    await waitBy(By.id(`se-cloud-track-name`));
+    await waitBy(By.id(`se-cloud-name-track`));
 
     // import list of tracks
     await actionImportCloudTrack(tracks);
+    for (let i = 0; i < tracks.length; i++) {
+        const { name } = tracks[i];
+        await waitBy(By.id('se-import-loading' + name), { hidden: true });
+    }
 
     await waitBy(By.id('se-sort-button-time'));
     await actionCheckCloudTracks(tracks);
@@ -42,6 +47,8 @@ export default async function test() {
     await clickBy(By.id('se-sort-shortest'));
     await actionCheckCloudTracks(tracks);
     await validateGroupOrder(trackGroupsShortest, 'Shortest');
+
+    await actionDeleteFolder(folder);
 
     await actionFinish();
 }
@@ -80,7 +87,7 @@ async function validateGroupOrder(ids, sortName) {
     await enclose(
         async () => {
             await actionIdleWait();
-            const groups = await enumerateIds('se-cloud-track-test');
+            const groups = await enumerateIds('se-cloud-track');
             if (groups.length > 0) {
                 return JSON.stringify(ids) === JSON.stringify(groups);
             }

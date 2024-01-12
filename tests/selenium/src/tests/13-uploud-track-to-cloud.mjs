@@ -23,7 +23,7 @@ export default async function test() {
     await actionCreateNewFolder(folder);
 
     await clickBy(By.id(`se-menu-cloud-${folder}`));
-    await waitBy(By.id(`se-cloud-track-name`));
+    await waitBy(By.id(`se-cloud-name-track`));
 
     await clickBy(By.id('se-import-cloud-track'));
     // import one track

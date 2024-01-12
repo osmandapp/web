@@ -10,6 +10,7 @@ export default async function test(name) {
     await clickBy(By.id('se-folder-actions-delete'));
     await waitBy(By.id('se-delete-folder-dialog'));
     await clickBy(By.id('se-delete-folder-submit'));
+    await waitBy(By.id('se-loading-page'), { hidden: true });
 
     await enclose(
         async () => {

@@ -4,8 +4,7 @@ import { clickBy, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { deleteFavGroup, getFiles, uploadFavorites } from '../util.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
-import actionCheckFileExist from '../actions/actionCheckFileExist.mjs';
-import { TIMEOUT_REQUIRED } from '../options.mjs';
+import actionOpenFavorites from '../actions/actionOpenFavorites.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -17,12 +16,10 @@ export default async function test() {
     const favorites = getFiles({ folder: 'favorites' });
     const { path } = favorites.find((t) => t.name === favGroupName);
 
-    // open favorite menu
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
-    await clickBy(By.id('se-show-menu-favorites'));
+    await actionOpenFavorites();
 
     // delete old group when need
-    const exist = await actionCheckFileExist({ id: `se-menu-fav-${shortFavGroupName}`, timeout: TIMEOUT_REQUIRED });
+    const exist = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`), { optional: true, idle: true });
     if (exist) {
         await deleteFavGroup(shortFavGroupName);
         await waitBy(By.id('se-empty-page'));

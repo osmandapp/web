@@ -3,9 +3,8 @@ import actionLogIn from '../actions/actionLogIn.mjs';
 import { getFiles, uploadFavorites } from '../util.mjs';
 import { clickBy, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
-import actionCheckFileExist from '../actions/actionCheckFileExist.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
-import { TIMEOUT_REQUIRED } from '../options.mjs';
+import actionOpenFavorites from '../actions/actionOpenFavorites.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -16,12 +15,9 @@ export default async function test() {
 
     const favoriteName = 'Test wpt';
 
-    // open favorite menu
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
-    await clickBy(By.id('se-show-menu-favorites'));
+    await actionOpenFavorites();
 
-    const exist = await actionCheckFileExist({ id: `se-menu-fav-${shortFavGroupName}`, timeout: TIMEOUT_REQUIRED });
-
+    const exist = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`), { optional: true, idle: true });
     if (!exist) {
         const favorites = getFiles({ folder: 'favorites' });
         const { path } = favorites.find((t) => t.name === favGroupName);

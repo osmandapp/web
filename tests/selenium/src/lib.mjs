@@ -3,7 +3,8 @@
 // import { strict as assert } from 'node:assert';
 import { Condition, By } from 'selenium-webdriver';
 
-import { driver, debug, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED } from './options.mjs';
+import { driver, debug, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED, HIDDEN_TIMEOUT } from './options.mjs';
+import actionIdleWait from './actions/actionIdleWait.mjs';
 
 // helpers
 const isStaleError = (e) => e.toString().match(/StaleElementReferenceError/);
@@ -55,8 +56,11 @@ export async function enclose(callback, { tag = 'enclose', optional = false } = 
  * test: failed if no visible element found
  * test-ok: optional === true enforces return null in case of any error happens
  */
-export async function waitBy(by, { optional = false, hidden = false, timeout = TIMEOUT_REQUIRED } = {}) {
+export async function waitBy(by, { optional = false, hidden = false, idle = false } = {}) {
     debug && console.log('waitBy', by.value || by);
+    if (idle) {
+        await actionIdleWait();
+    }
     try {
         return await driver.wait(
             new Condition('waitBy' + by.value, async () => {
@@ -79,7 +83,7 @@ export async function waitBy(by, { optional = false, hidden = false, timeout = T
                 }
                 return false;
             }),
-            optional ? TIMEOUT_OPTIONAL : timeout
+            hidden ? HIDDEN_TIMEOUT : optional ? TIMEOUT_OPTIONAL : TIMEOUT_REQUIRED
         );
     } catch (error) {
         if (optional === true) {
