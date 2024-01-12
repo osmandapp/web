@@ -5610,13 +5610,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"async-foreach@npm:^0.1.3":
-  version: 0.1.3
-  resolution: "async-foreach@npm:0.1.3"
-  checksum: cc43dee65de4decfa521d9444fb87edb2d475e7125d7f63d0d12004d12953e382135a2ea89a83b145ee1b9ec140550c804e1bfca24085d6faeb52c2902acd1f1
-  languageName: node
-  linkType: hard
-
 "async@npm:^3.2.3":
   version: 3.2.4
   resolution: "async@npm:3.2.4"
@@ -13241,7 +13234,6 @@ __metadata:
     "@testing-library/user-event": ^14.2.0
     "@types/leaflet.awesome-markers": ^2.0.25
     anchorme: ^3.0.5
-    async-foreach: ^0.1.3
     axios: ^0.27.2
     babel-jest: ^29.7.0
     blueimp-md5: ^2.19.0
