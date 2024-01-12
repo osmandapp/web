@@ -4,17 +4,15 @@ import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import GroupHeader from '../actions/GroupHeader';
 import Empty from '../errors/Empty';
-import FavoritesManager, {
-    changeIconSizeWpt,
-    LOCATION_UNAVAILABLE,
-    removeShadowFromIconWpt,
-} from '../../manager/FavoritesManager';
+import FavoritesManager from '../../manager/FavoritesManager';
 import FavoriteItem from './FavoriteItem';
 import { getDistance } from '../../util/Utils';
 import Loading from '../errors/Loading';
 import { isEmpty } from 'lodash';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { doSort } from '../actions/SortActions';
+import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
+import { changeIconSizeWpt, removeShadowFromIconWpt } from '../../map/markers/MarkerOptions';
 
 export default function FavoriteGroupFolder({ folder }) {
     const ctx = useContext(AppContext);

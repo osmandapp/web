@@ -117,11 +117,23 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen, width }) {
     }
 
     return (
-        <Dialog sx={{ maxWidth: `${width * 0.75}px` }} open={dialogOpen} onClose={toggleShowDialog} disableEnforceFocus>
+        <Dialog
+            id={'se-open-poi-dialog'}
+            sx={{ maxWidth: `${width * 0.75}px` }}
+            open={dialogOpen}
+            onClose={toggleShowDialog}
+            disableEnforceFocus
+        >
             <DialogTitle sx={{ display: 'inline' }}>
                 Show POI
                 <div style={{ float: 'right' }}>
-                    <IconButton sx={{ ml: '25px' }} variant="contained" type="button" onClick={toggleShowDialog}>
+                    <IconButton
+                        id={'se-close-poi-dialog'}
+                        sx={{ ml: '25px' }}
+                        variant="contained"
+                        type="button"
+                        onClick={toggleShowDialog}
+                    >
                         <Close fontSize="small" />
                     </IconButton>
                 </div>
@@ -200,41 +212,45 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen, width }) {
                     ))}
                 </div>
                 <Grid container spacing={2}>
-                    {removeUnusedFilters(ctx.poiCategory?.filters).map((item, key) => (
-                        <Grid
-                            style={{ marginLeft: '-7px' }}
-                            item
-                            key={key + 'column'}
-                            xs={width > 500 ? 6 : 12}
-                            className={styles.drawerItem}
-                        >
-                            <MenuItem
-                                style={{ marginTop: '-15px', fontSize: '0.9rem' }}
-                                key={key + 'type'}
-                                onClick={() => showPoiCategoriesOnMap(PoiManager.formattingPoiFilter(item, false))}
+                    {removeUnusedFilters(ctx.poiCategory?.filters).map((item, key) => {
+                        const category = PoiManager.formattingPoiFilter(item, true);
+                        return (
+                            <Grid
+                                style={{ marginLeft: '-7px' }}
+                                item
+                                key={key + 'column'}
+                                xs={width > 500 ? 6 : 12}
+                                className={styles.drawerItem}
                             >
-                                <ListItemIcon sx={{ mr: '-15px' }}>
-                                    <div className={classes.icon}>
-                                        <svg
-                                            className="background"
-                                            viewBox="0 0 48 48"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <circle cx="24" cy="24" r="12" fill="#f8931d" />
-                                        </svg>
-                                        <img
-                                            className="icon"
-                                            alt={item}
-                                            src={`/map/images/${
-                                                MarkerOptions.POI_ICONS_FOLDER
-                                            }/mx_${PoiManager.preparePoiFilterIcon(item)}.svg`}
-                                        />
-                                    </div>
-                                </ListItemIcon>
-                                {PoiManager.formattingPoiFilter(item, true)}
-                            </MenuItem>
-                        </Grid>
-                    ))}
+                                <MenuItem
+                                    style={{ marginTop: '-15px', fontSize: '0.9rem' }}
+                                    key={key + 'type'}
+                                    id={`se-poi-category-${category}`}
+                                    onClick={() => showPoiCategoriesOnMap(PoiManager.formattingPoiFilter(item, false))}
+                                >
+                                    <ListItemIcon sx={{ mr: '-15px' }}>
+                                        <div className={classes.icon}>
+                                            <svg
+                                                className="background"
+                                                viewBox="0 0 48 48"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <circle cx="24" cy="24" r="12" fill="#f8931d" />
+                                            </svg>
+                                            <img
+                                                className="icon"
+                                                alt={item}
+                                                src={`/map/images/${
+                                                    MarkerOptions.POI_ICONS_FOLDER
+                                                }/mx_${PoiManager.preparePoiFilterIcon(item)}.svg`}
+                                            />
+                                        </div>
+                                    </ListItemIcon>
+                                    {category}
+                                </MenuItem>
+                            </Grid>
+                        );
+                    })}
                 </Grid>
             </DialogContent>
         </Dialog>

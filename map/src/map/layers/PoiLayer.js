@@ -1,11 +1,11 @@
-import { useContext, useEffect, useState, useRef } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { OBJECT_TYPE_POI } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import _ from 'lodash';
 import L from 'leaflet';
-import MarkerOptions from '../markers/MarkerOptions';
+import MarkerOptions, { changeIconColor, getSvgBackground } from '../markers/MarkerOptions';
 import 'leaflet-spin';
-import PoiManager from '../../manager/PoiManager';
+import PoiManager, { DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
 import 'leaflet.markercluster';
 import { Alert } from '@mui/material';
 import { apiPost } from '../../util/HttpApi';
@@ -67,30 +67,45 @@ export default function PoiLayer() {
     }
 
     const debouncedGetPoi = useRef(
-        _.debounce(async (controller, ignore, zoom, poiList, showPoiCategories, savedBbox, prevCategoriesCount) => {
-            map.spin(true, { color: '#1976d2' });
-            let bbox = map.getBounds();
-            await getPoi(controller, showPoiCategories, bbox, savedBbox, prevCategoriesCount).then((res) => {
-                map.spin(false);
-                if (res && !ignore) {
-                    if (!res.alreadyFound) {
-                        if (!res.mapLimitExceeded && res.features) {
-                            const newPoiList = {
-                                prevLayer: _.cloneDeep(poiList.layer),
-                                layer: createPoiLayer(res.features.features),
-                            };
-                            setPoiList(newPoiList);
-                            setBbox(!res.useLimit ? bbox : null);
-                            setPrevCategoriesCount(showPoiCategories.length);
-                            setUseLimit(res.useLimit);
+        _.debounce(
+            async ({
+                controller,
+                ignore,
+                poiList,
+                showPoiCategories,
+                savedBbox,
+                prevCategoriesCount,
+                poiIconCache,
+            }) => {
+                map.spin(true, { color: '#1976d2' });
+                let bbox = map.getBounds();
+                await getPoi(controller, showPoiCategories, bbox, savedBbox, prevCategoriesCount).then(async (res) => {
+                    map.spin(false);
+                    if (res && !ignore) {
+                        if (!res.alreadyFound) {
+                            if (!res.mapLimitExceeded && res.features) {
+                                const layer = await createPoiLayer({
+                                    poiList: res.features.features,
+                                    globalPoiIconCache: poiIconCache,
+                                });
+                                const newPoiList = {
+                                    prevLayer: _.cloneDeep(poiList.layer),
+                                    layer: layer,
+                                };
+                                setPoiList(newPoiList);
+                                setBbox(!res.useLimit ? bbox : null);
+                                setPrevCategoriesCount(showPoiCategories.length);
+                                setUseLimit(res.useLimit);
+                            }
+                        }
+                        if (res.mapLimitExceeded) {
+                            setAddAlert(true);
                         }
                     }
-                    if (res.mapLimitExceeded) {
-                        setAddAlert(true);
-                    }
-                }
-            });
-        }, 1000)
+                });
+            },
+            1000
+        )
     ).current;
 
     function allPoiFound(zoom, prevZoom) {
@@ -112,7 +127,15 @@ export default function PoiLayer() {
                 setPrevController(controller);
                 setPrevZoom(_.cloneDeep(zoom));
                 setPrevTypesLength(_.cloneDeep(ctx.showPoiCategories.length));
-                debouncedGetPoi(controller, ignore, zoom, poiList, ctx.showPoiCategories, bbox, prevCategoriesCount);
+                debouncedGetPoi({
+                    controller,
+                    ignore,
+                    poiList,
+                    showPoiCategories: ctx.showPoiCategories,
+                    savedBbox: bbox,
+                    prevCategoriesCount,
+                    poiIconCache: ctx.poiIconCache,
+                });
             } else {
                 if (poiList.layer && _.isEmpty(ctx.showPoiCategories)) {
                     const newPoiList = {
@@ -146,8 +169,7 @@ export default function PoiLayer() {
     }, [poiList]);
 
     function onClick(e) {
-        const type = OBJECT_TYPE_POI;
-        ctx.setCurrentObjectType(type);
+        ctx.setCurrentObjectType(OBJECT_TYPE_POI);
 
         const poi = {
             options: e.sourceTarget.options,
@@ -157,37 +179,84 @@ export default function PoiLayer() {
         ctx.setUpdateInfoBlock(true);
     }
 
-    function createPoiLayer(poiList = []) {
-        const layers = poiList.map((poi) => {
-            const coord = poi.geometry.coordinates;
-            return new L.Marker(new L.LatLng(coord[1], coord[0]), {
-                title: poi.properties.name,
-                icon: getPoiIcon(poi),
-                type: poi.properties.type,
-                subType: poi.properties.subType,
-                iconKeyName: poi.properties.iconKeyName,
-                typeOsmTag: poi.properties.typeOsmTag,
-                typeOsmValue: poi.properties.typeOsmValue,
-                iconName: poi.properties.iconName,
-                operator: poi.properties.operator,
-                website: poi.properties.website,
-                wikipedia: poi.properties.wikipedia,
-                opening_hours: poi.properties.opening_hours,
-                email: poi.properties.email,
-                phone: poi.properties.phone,
-                facebook: poi.properties.facebook,
-                instagram: poi.properties.instagram,
-                osmUrl: poi.properties.osmUrl,
-            });
-        });
+    /**
+     * Asynchronously creates a cache of Point of Interest (POI) icons.
+     *
+     * @param {Array} poiList - The list of POIs for which icons should be cached.
+     * @param {Object} poiIconCache - The existing cache of POI icons.
+     * @returns {Object} - The updated cache of POI icons.
+     */
+    async function createPoiCache(poiList, poiIconCache) {
+        const iconCache = {};
+        for (const poi of poiList) {
+            // Get the icon name for the current POI
+            const iconWpt = PoiManager.getIconNameForPoiType(
+                poi.properties.iconKeyName,
+                poi.properties.typeOsmTag,
+                poi.properties.typeOsmValue,
+                poi.properties.iconName
+            );
+
+            if (iconWpt) {
+                // If the icon is already in the existing cache, copy it to the updated cache
+                if (poiIconCache[iconWpt]) {
+                    iconCache[iconWpt] = poiIconCache[iconWpt];
+                } else {
+                    // If the icon is not in the existing cache and not yet in the updated cache
+                    if (!iconCache[iconWpt]) {
+                        try {
+                            const response = await fetch(
+                                `/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${iconWpt}.svg`
+                            );
+                            iconCache[iconWpt] = await response.text();
+                        } catch (error) {
+                            console.error(`Failed to fetch SVG for iconWpt ${iconWpt}: ${error}`);
+                        }
+                    }
+                }
+            }
+        }
+        return iconCache;
+    }
+
+    async function createPoiLayer({ poiList = [], globalPoiIconCache }) {
+        const innerCache = await createPoiCache(poiList, globalPoiIconCache);
+        ctx.setPoiIconCache({ ...innerCache });
+        const layers = await Promise.all(
+            poiList.map(async (poi) => {
+                const icon = await getPoiIcon(poi, innerCache);
+                const coord = poi.geometry.coordinates;
+                return new L.Marker(new L.LatLng(coord[1], coord[0]), {
+                    title: poi.properties.name,
+                    icon: icon,
+                    type: poi.properties.type,
+                    subType: poi.properties.subType,
+                    iconKeyName: poi.properties.iconKeyName,
+                    typeOsmTag: poi.properties.typeOsmTag,
+                    typeOsmValue: poi.properties.typeOsmValue,
+                    iconName: poi.properties.iconName,
+                    operator: poi.properties.operator,
+                    website: poi.properties.website,
+                    wikipedia: poi.properties.wikipedia,
+                    opening_hours: poi.properties.opening_hours,
+                    email: poi.properties.email,
+                    phone: poi.properties.phone,
+                    facebook: poi.properties.facebook,
+                    instagram: poi.properties.instagram,
+                    osmUrl: poi.properties.osmUrl,
+                });
+            })
+        );
 
         if (layers.length) {
-            return new L.FeatureGroup(layers);
+            return L.featureGroup(layers);
+        } else {
+            return L.featureGroup(); // return an empty layer group if there are no layers
         }
     }
 
-    function getPoiIcon(poi) {
-        const svg = MarkerOptions.getBackground(PoiManager.DEFAULT_POI_COLOR, PoiManager.DEFAULT_SHAPE_COLOR);
+    async function getPoiIcon(poi, cache) {
+        const svg = getSvgBackground(DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE);
         const iconWpt = PoiManager.getIconNameForPoiType(
             poi.properties.iconKeyName,
             poi.properties.typeOsmTag,
@@ -195,12 +264,14 @@ export default function PoiLayer() {
             poi.properties.iconName
         );
         if (iconWpt) {
-            return L.divIcon({
-                html:
-                    `<div>${svg}` +
-                    `<img alt="iconWpt" class="icon" src="/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${iconWpt}.svg">` +
-                    `</div>`,
-            });
+            let svgData;
+            if (cache[iconWpt]) {
+                svgData = cache[iconWpt];
+                const coloredSvg = changeIconColor(svgData, DEFAULT_ICON_COLOR);
+                const poiName = poi.properties.name;
+                const iconHtml = `<div>${svg}<div class="icon" id="se-wpt-marker-icon-${iconWpt}-${DEFAULT_ICON_COLOR}-${poiName}">${coloredSvg}</div></div>`;
+                return L.divIcon({ html: iconHtml });
+            }
         }
     }
 

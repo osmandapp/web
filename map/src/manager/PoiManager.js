@@ -4,9 +4,10 @@ import _ from 'lodash';
 
 const POI_CATEGORIES = 'poiCategories';
 const TOP_POI_FILTERS = 'topPoiFilters';
-const DEFAULT_POI_ICON = 'craft_default';
-const DEFAULT_POI_COLOR = '#f8931d';
-const DEFAULT_SHAPE_COLOR = 'circle';
+export const DEFAULT_POI_ICON = 'craft_default';
+export const DEFAULT_POI_COLOR = '#f8931d';
+export const DEFAULT_ICON_COLOR = '#ffffff';
+export const DEFAULT_POI_SHAPE = 'circle';
 
 const poiFilters = {
     accomodation: ['Accomodation'],
@@ -85,7 +86,7 @@ function getIconNameForPoiType(iconKeyName, typeOsmTag, typeOsmValue, iconName) 
     } else if (iconName !== 'null' && icons.includes(`mx_${iconName}.svg`)) {
         return iconName;
     } else {
-        return PoiManager.DEFAULT_POI_ICON;
+        return DEFAULT_POI_ICON;
     }
 }
 
@@ -123,9 +124,6 @@ const PoiManager = {
     formattingPoiType,
     formattingPoiFilter,
     preparePoiFilterIcon,
-    DEFAULT_POI_ICON: DEFAULT_POI_ICON,
-    DEFAULT_POI_COLOR: DEFAULT_POI_COLOR,
-    DEFAULT_SHAPE_COLOR: DEFAULT_SHAPE_COLOR,
     poiFilters,
 };
 

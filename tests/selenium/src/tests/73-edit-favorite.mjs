@@ -1,10 +1,10 @@
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
 import { clickBy, enclose, matchTextBy, waitBy } from '../lib.mjs';
-import actionCheckFileExist from '../actions/actionCheckFileExist.mjs';
 import { By } from 'selenium-webdriver';
 import { deleteFavGroup, getFiles, uploadFavorites } from '../util.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
+import actionOpenFavorites from '../actions/actionOpenFavorites.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -15,11 +15,9 @@ export default async function test() {
     const wptName = 'Test wpt';
     const suffix = '-edited';
 
-    // open favorite menu
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
-    await clickBy(By.id('se-show-menu-favorites'));
+    await actionOpenFavorites();
 
-    const exist = await actionCheckFileExist({ id: `se-menu-fav-${shortFavGroupName}` });
+    const exist = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`), { optional: true, idle: true });
 
     if (!exist) {
         const favorites = getFiles({ folder: 'favorites' });
@@ -48,7 +46,6 @@ export default async function test() {
     );
 
     await clickBy(By.id('se-edit-fav-item-submit'));
-    await waitBy(By.id(`se-actions-${wptName}`), { hidden: true });
 
     await matchTextBy(By.id('se-fav-item-address'), suffix);
 

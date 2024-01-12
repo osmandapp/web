@@ -78,7 +78,7 @@ export default function FavoriteGroup({ index, group }) {
                     ref={anchorEl}
                 >
                     {processDownload ? (
-                        <CircularProgress size={24} />
+                        <CircularProgress id={'se-progress'} size={24} />
                     ) : hoverIconInfo ? (
                         <MenuIconHover />
                     ) : (

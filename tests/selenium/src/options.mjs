@@ -10,6 +10,7 @@ export const TEST_PASSWORD = '0xDEADBEEF';
 export const TIMEOUT_OPTIONAL = 1000; // optional element timeout and driver.implicitlyWait() (1s)
 export let TIMEOUT_REQUIRED = 45 * 1000; // required element timeout (waitBy / clickBy / enclose) (45s)
 export const LONG_TIMEOUT = 300 * 1000; // used with --longtimeout to prolong default TIMEOUT_REQUIRED (300s)
+export const HIDDEN_TIMEOUT = 10000; // hidden timeout (waitBy) (10s)
 
 export const IDLE_DELAY = 1000; // additional delay after global window.seActivityTimestamp (1s)
 export const FINAL_DELAY = 3000; // increased final idle delay - used after complex actions such as upload-tracks (3s)

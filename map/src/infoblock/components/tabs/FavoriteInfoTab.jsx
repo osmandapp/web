@@ -3,7 +3,7 @@ import { Folder, LocationOn } from '@mui/icons-material';
 import React, { useContext, useEffect, useState } from 'react';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import AppContext from '../../../context/AppContext';
-import MarkerOptions from '../../../map/markers/MarkerOptions';
+import MarkerOptions, { removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import EditFavoriteDialog from '../../../dialogs/favorites/EditFavoriteDialog';
 import DeleteFavoriteDialog from '../../../dialogs/favorites/DeleteFavoriteDialog';
 import FavoritesManager, {
@@ -11,7 +11,6 @@ import FavoritesManager, {
     prepareBackground,
     prepareColor,
     prepareIcon,
-    removeShadowFromIconWpt,
 } from '../../../manager/FavoritesManager';
 
 const FavoriteInfoTab = () => {

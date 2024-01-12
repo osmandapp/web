@@ -3,7 +3,8 @@
 // import { strict as assert } from 'node:assert';
 import { Condition, By } from 'selenium-webdriver';
 
-import { driver, debug, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED } from './options.mjs';
+import { driver, debug, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED, HIDDEN_TIMEOUT } from './options.mjs';
+import actionIdleWait from './actions/actionIdleWait.mjs';
 
 // helpers
 const isStaleError = (e) => e.toString().match(/StaleElementReferenceError/);
@@ -45,18 +46,25 @@ export async function enclose(callback, { tag = 'enclose', optional = false } = 
 }
 
 /**
- * Lib: waitBy(by, { optional })
- *
- * Wait (by) for any visible element.
- * Return: element
- *
- * hidden: return true if test failed. used for check if element isn't visible
- *
- * test: failed if no visible element found
- * test-ok: optional === true enforces return null in case of any error happens
- */
-export async function waitBy(by, { optional = false, hidden = false } = {}) {
+ Function: waitBy(by, { optional, idle })
+
+ This function waits for a visible element on the page.
+ Returns: the element if found.
+
+ @param {By} by - An object that describes the locator strategy for the element.
+ @param {Object} options - An object with optional parameters.
+ @param {boolean} options.optional - If true, the function will return null if the element is not found. If false, the function will throw an error when the element is not found.
+ @param {boolean} options.idle - If true, the function will wait for all ongoing actions to complete before proceeding with the search for the element. This is useful in situations where the element might not be immediately available due to ongoing processes or animations.
+
+  Note:
+  The function will return true if the test fails, which is used to check if the element is not visible.
+  The test will fail if no visible element is found.
+  If optional is set to true, it enforces the function to return null in case of any error. */
+export async function waitBy(by, { optional = false, idle = false } = {}) {
     debug && console.log('waitBy', by.value || by);
+    if (idle) {
+        await actionIdleWait();
+    }
     try {
         return await driver.wait(
             new Condition('waitBy' + by.value, async () => {
@@ -85,11 +93,35 @@ export async function waitBy(by, { optional = false, hidden = false } = {}) {
         if (optional === true) {
             return null;
         }
-        if (hidden === true) {
-            return true;
-        }
         throw error;
     }
+}
+
+/**
+
+ Function: waitByRemoved(by)
+ This function waits until a specified element is removed from the page.
+ Returns: true if the element is successfully removed, otherwise waits until the timeout.
+
+ @param {By} by - An object that describes the locator strategy for the element.
+
+  Note:
+  The function first checks if the element exists on the page. If it does, it waits until the element is removed.
+  If the element is not found initially, the function returns true immediately, indicating that the element has been removed.
+  The function uses a predefined timeout (HIDDEN_TIMEOUT) for waiting. If the element is not removed within this timeout, the function will throw an error. */
+export async function waitByRemoved(by) {
+    await actionIdleWait();
+    const found = await driver.findElements(by);
+    if (found && found.length > 0) {
+        return await driver.wait(
+            new Condition('waitByRemoved' + by.value, async () => {
+                const found = await driver.findElements(by);
+                return !found || found.length === 0;
+            }),
+            HIDDEN_TIMEOUT
+        );
+    }
+    return true;
 }
 
 /**

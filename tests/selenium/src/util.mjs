@@ -1,5 +1,5 @@
 import { By } from 'selenium-webdriver';
-import { clickBy, enclose, waitBy } from './lib.mjs';
+import { clickBy, enclose, waitBy, waitByRemoved } from './lib.mjs';
 
 import { readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -56,7 +56,7 @@ export async function deleteTrack(name) {
     await clickBy(By.id(`se-actions-${name}`));
     await clickBy(By.id('se-delete-cloud-track'));
     await clickBy(By.id('se-delete-track-dialog'));
-    await waitBy(By.id(`se-actions-${name}`), { hidden: true });
+    await waitByRemoved(By.id(`se-actions-${name}`));
     await actionIdleWait();
 }
 
@@ -68,6 +68,6 @@ export async function deleteFavGroup(name) {
     await clickBy(By.id('se-favorite-folder-actions-delete'));
     await waitBy(By.id('se-delete-fav-group-dialog'));
     await clickBy(By.id('se-delete-fav-group-submit'));
-    await waitBy(By.id(`se-actions-${name}`), { hidden: true });
+    await waitByRemoved(By.id(`se-actions-${name}`));
     await actionIdleWait();
 }
