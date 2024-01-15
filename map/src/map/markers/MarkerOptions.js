@@ -112,29 +112,129 @@ export function getSvgBackground(colorBackground, shape) {
     if (shape) {
         if (shape === BACKGROUND_WPT_SHAPE_CIRCLE || isStrangeShape(shape)) {
             svg =
-                `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">` +
+                `<svg class="background" id="se-wpt-marker-background-${colorBackground}-${shape}" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">` +
                 `<circle cx="24" cy="24" r="12" fill="${colorBackground}"/>` +
                 `</svg>`;
         }
         if (shape === BACKGROUND_WPT_SHAPE_OCTAGON) {
             svg =
-                `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">` +
+                `<svg class="background" id="se-wpt-marker-background-${colorBackground}-${shape}" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">` +
                 `<path d="M13 19L19 13H29L35 19V29L29 35H19L13 29V19Z" fill="${colorBackground}"/>` +
                 `</svg>`;
         }
         if (shape === BACKGROUND_WPT_SHAPE_SQUARE) {
             svg =
-                `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">` +
+                `<svg class="background" id="se-wpt-marker-background-${colorBackground}-${shape}" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">` +
                 `<rect x="13" y="13" width="22" height="22" rx="3" fill="${colorBackground}"/>` +
                 `</svg>`;
         }
     } else {
         svg =
-            `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">` +
+            `<svg class="background" id="se-wpt-marker-background-${colorBackground}-${shape}" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">` +
             `<circle cx="24" cy="24" r="12" fill="${colorBackground}"/>` +
             `</svg>`;
     }
     return svg;
+}
+
+export function removeShadowFromIconWpt(svgHtml) {
+    const filterPattern = /filter=".*?"/g;
+    return svgHtml.replace(filterPattern, '');
+}
+
+export function changeIconColor(svgHtml, color) {
+    const colorPattern = /(<path[^>]*fill=")[^"]*(")/g;
+    return svgHtml.replace(colorPattern, `$1${color}$2`);
+}
+
+function replacePathData(pathData, shapeSize, oldShapeSize) {
+    // ex. oldShapeSize = 24 and old path = d="M1 7L7 1H17L23 7V17L17 23H7L1 17V7Z"
+    // for shapeSize = 30 new path = d="M1 9L9 1H21L29 9V21L21 29H9L1 21V9Z"
+    const values = pathData.match(/[-+]?\d*\.?\d+/g);
+
+    if (values && values.length === 14) {
+        const scaleFactor = shapeSize / oldShapeSize;
+        const newValues = values.map((value) => {
+            const shiftedValue = parseFloat(value) * scaleFactor;
+            return Math.round(shiftedValue);
+        });
+
+        return `M${newValues[0]} ${newValues[1]}L${newValues[2]} ${newValues[3]}H${newValues[4]}L${newValues[5]} ${newValues[6]}V${newValues[7]}L${newValues[8]} ${newValues[9]}H${newValues[10]}L${newValues[11]} ${newValues[12]}V${newValues[13]}Z`;
+    }
+
+    return pathData;
+}
+
+export function changeIconSizeWpt(svgHtml, iconSize, shapeSize) {
+    // Update the sizes inside viewBox and for <image>, <circle>, <path>, <rect>
+
+    const viewBoxPattern = /viewBox="0 0 (\d+) (\d+)"/;
+    const widthPattern = /width="(\d+)"/;
+    const heightPattern = /height="(\d+)"/;
+    const circlePattern = /<circle ([^>]*)cx="(\d+\.?\d*)" ([^>]*)cy="(\d+\.?\d*)" ([^>]*)r="(\d+\.?\d*)" ([^>]*)\/>/;
+    const pathPattern = /<path\s[^>]*d="([^"]+)"[^>]*>/g;
+    const rectPattern =
+        /<rect ([^>]*)width="(\d+\.?\d*)" ([^>]*)height="(\d+\.?\d*)" ([^>]*)rx="(\d+\.?\d*)" ([^>]*)\/>/;
+    const imagePattern =
+        /<image ([^>]*)x="(\d+\.?\d*)" ([^>]*)y="(\d+\.?\d*)" ([^>]*)width="(\d+\.?\d*)" ([^>]*)height="(\d+\.?\d*)" ([^>]*)href="([^"]*)" ([^>]*)\/>/;
+
+    const viewBoxMatch = svgHtml.match(viewBoxPattern);
+    const oldShapeSize = viewBoxMatch ? parseFloat(viewBoxMatch[1]) : shapeSize;
+
+    svgHtml = svgHtml.replace(viewBoxPattern, () => {
+        // Update the sizes inside viewBox
+        const newWidth = shapeSize;
+        const newHeight = shapeSize;
+        return `viewBox="0 0 ${newWidth} ${newHeight}"`;
+    });
+
+    svgHtml = svgHtml.replace(widthPattern, () => {
+        // Update width
+        return `width="${shapeSize}"`;
+    });
+
+    svgHtml = svgHtml.replace(heightPattern, () => {
+        // Update height
+        return `height="${shapeSize}"`;
+    });
+
+    svgHtml = svgHtml.replace(circlePattern, (match, prefix, cx, middle, cy, middle2, r, suffix) => {
+        // Update the sizes inside <circle>
+        const newCx = shapeSize / 2;
+        const newCy = shapeSize / 2;
+        const newR = shapeSize / 2;
+        return `<circle ${prefix}cx="${newCx}" ${middle}cy="${newCy}" ${middle2}r="${newR}" ${suffix}/>`;
+    });
+
+    svgHtml = svgHtml.replace(pathPattern, (match, pathData) => {
+        // Update the sizes inside <path>
+        const newPathData = replacePathData(pathData, shapeSize, oldShapeSize);
+        const fillPattern = /fill="([^"]*)"/;
+        const oldFillMatch = match.match(fillPattern);
+        const oldFill = oldFillMatch ? oldFillMatch[1] : '';
+        return `<path d="${newPathData}" fill="${oldFill}"/>`;
+    });
+
+    svgHtml = svgHtml.replace(rectPattern, (match, prefix, width, middle, height, middle2, rx, suffix) => {
+        // Update the sizes inside <rect>
+        const newWidth = shapeSize;
+        const newHeight = shapeSize;
+        const newRx = newWidth / 8;
+        return `<rect ${prefix} width="${newWidth}" ${middle} height="${newHeight}" ${middle2} rx="${newRx}" ${suffix}/>`;
+    });
+
+    svgHtml = svgHtml.replace(
+        imagePattern,
+        (match, prefix, x, middle, y, middle2, width, middle3, height, middle4, href, suffix) => {
+            const newSize = iconSize;
+            const offsetX = (shapeSize - newSize) / 2;
+            const offsetY = (shapeSize - newSize) / 2;
+            const transform = `translate(${offsetX},${offsetY})`;
+            return `<image ${prefix} transform="${transform}" ${middle2} width="${newSize}" ${middle3} height="${newSize}" ${middle4} href="${href}" ${suffix}/>`;
+        }
+    );
+
+    return svgHtml;
 }
 
 const MarkerOptions = {

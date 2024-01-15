@@ -301,5 +301,6 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
         wptPoints,
         ctx,
         isLastItem,
+        id,
     ]);
 }

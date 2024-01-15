@@ -3,10 +3,10 @@ import actionLogIn from '../actions/actionLogIn.mjs';
 import { deleteFavGroup, getFiles, uploadFavorites } from '../util.mjs';
 import { clickBy, enclose, enumerateIds, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
-import actionCheckFileExist from '../actions/actionCheckFileExist.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import actionRenameFavGroup from '../actions/actionRenameFavGroup.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
+import actionOpenFavorites from '../actions/actionOpenFavorites.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -15,13 +15,11 @@ export default async function test() {
     const shortFavGroupName = 'food';
     const suffix = '-renamed';
 
-    // open favorite menu
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
-    await clickBy(By.id('se-show-menu-favorites'));
+    await actionOpenFavorites();
 
     const favorites = getFiles({ folder: 'favorites' });
 
-    const exist = await actionCheckFileExist({ id: `se-menu-fav-${shortFavGroupName}${suffix}` });
+    const exist = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}${suffix}`), { optional: true, idle: true });
     if (exist) {
         await deleteFavGroup(`${shortFavGroupName}${suffix}`);
     }
@@ -133,7 +131,7 @@ async function validateItemOrder(ids) {
 async function deleteFavGroups(favorites) {
     for (const f of favorites) {
         const shortFavGroupName = f.name.split('-')[1];
-        const exist = await actionCheckFileExist({ id: `se-menu-fav-${shortFavGroupName}` });
+        const exist = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`), { optional: true, idle: true });
         if (exist) {
             await deleteFavGroup(shortFavGroupName);
         }

@@ -5,7 +5,7 @@ import { ReactComponent as TrackIcon } from '../../assets/icons/ic_action_polygo
 
 export default function TrackLoading({ name }) {
     return (
-        <MenuItem className={styles.item} divider id={'se-import-loading' + name}>
+        <MenuItem className={styles.item} divider id={'se-import-loading-' + name}>
             <ListItemIcon className={styles.icon}>
                 <TrackIcon />
             </ListItemIcon>

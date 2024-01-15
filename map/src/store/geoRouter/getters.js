@@ -106,7 +106,7 @@ export function getChangedParams({ router, profile } = {}) {
 
     if (params && resetParams) {
         Object.keys(params).forEach((k) => {
-            if (params[k].value === resetParams[k].value) {
+            if (resetParams[k] && params[k].value === resetParams[k].value) {
                 delete params[k];
             }
         });

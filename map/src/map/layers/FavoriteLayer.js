@@ -139,8 +139,7 @@ const FavoriteLayer = () => {
     }, [ctx.selectedGpxFile]);
 
     function onClick(e) {
-        let type = OBJECT_TYPE_FAVORITE;
-        ctx.setCurrentObjectType(type);
+        ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
         ctx.selectedGpxFile = {};
         ctx.selectedGpxFile.prevState = _.cloneDeep(selectedGpxFileRef.current);
         ctx.selectedGpxFile.markerCurrent = {

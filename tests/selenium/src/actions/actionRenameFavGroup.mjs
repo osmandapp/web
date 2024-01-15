@@ -1,4 +1,4 @@
-import { clickBy, enclose, waitBy } from '../lib.mjs';
+import { clickBy, enclose, waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 
 export default async function test(shortFavGroupName, suffix) {
@@ -16,5 +16,5 @@ export default async function test(shortFavGroupName, suffix) {
         { tag: 'rename-fav-group' }
     );
     await clickBy(By.id('se-rename-fav-submit'));
-    await waitBy(By.id(`se-actions-${shortFavGroupName}${suffix}`), { hidden: true });
+    await waitByRemoved(By.id(`se-actions-${shortFavGroupName}${suffix}`));
 }

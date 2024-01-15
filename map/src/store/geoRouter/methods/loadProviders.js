@@ -141,6 +141,7 @@ export async function loadProviders({ parseQueryString = false } = {}) {
 
             if (searchParams.get('params')) {
                 const freshParams = TracksManager.decodeRouteMode({
+                    profile,
                     routeMode: searchParams.get('params').toString().replaceAll(':', '='),
                     params: next.getResetParams({ router: picked.router, profile: picked.profile }),
                 });

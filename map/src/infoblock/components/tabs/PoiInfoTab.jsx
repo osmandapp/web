@@ -70,17 +70,17 @@ export default function PoiInfoTab() {
     }, [ctx.selectedGpxFile]);
 
     return (
-        <Box className={styles.item} maxWidth={ctx.infoBlockWidth}>
+        <Box id={`se-poi-infoblock-${poi.name}`} className={styles.item} maxWidth={ctx.infoBlockWidth}>
             <Typography sx={{ position: 'relative' }} className={styles.info} variant="subtitle1" color="inherit">
                 <Grid container spacing={2}>
-                    <Grid className={styles.name} item xs={10}>
+                    <Grid className={styles.name} item xs={9}>
                         <Typography sx={{ mb: 10 }} className={styles.name} variant="inherit">
                             <Link href={poi.osmUrl} target="_blank" underline="none">
                                 {poi.name ? poi.poiType + ': ' + poi.name : poi.poiType}
                             </Link>
                         </Typography>
                     </Grid>
-                    <Grid className={styles.name} sx={{ position: 'relative' }} item xs={2}>
+                    <Grid className={styles.name} sx={{ position: 'relative' }} item xs={3}>
                         <div className={classes.icon} dangerouslySetInnerHTML={{ __html: poi.icon + '' }} />
                     </Grid>
                 </Grid>

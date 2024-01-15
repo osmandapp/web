@@ -73,7 +73,7 @@ export default function GroupHeader({
     function getTitle() {
         if (trackGroup) {
             return (
-                <Typography id="se-cloud-track-name" component="div" className={styles.title}>
+                <Typography id="se-cloud-name-track" component="div" className={styles.title}>
                     {trackGroup?.name === DEFAULT_GROUP_NAME ? 'Tracks' : trackGroup?.name}
                 </Typography>
             );

@@ -1,10 +1,10 @@
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
-import { clickBy, waitBy } from '../lib.mjs';
-import actionCheckFileExist from '../actions/actionCheckFileExist.mjs';
+import { clickBy, waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { deleteFavGroup, getFiles, uploadFavorites } from '../util.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
+import actionOpenFavorites from '../actions/actionOpenFavorites.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -14,12 +14,9 @@ export default async function test() {
     const shortFavGroupName = 'shops';
     const wptName = 'Test wpt';
 
-    // open favorite menu
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
-    await clickBy(By.id('se-show-menu-favorites'));
+    await actionOpenFavorites();
 
-    const exist = await actionCheckFileExist({ id: `se-menu-fav-${shortFavGroupName}` });
-
+    const exist = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`), { optional: true, idle: true });
     if (!exist) {
         const favorites = getFiles({ folder: 'favorites' });
         const { path } = favorites.find((t) => t.name === favGroupName);
@@ -39,8 +36,8 @@ export default async function test() {
 
     // delete favorite item
     await clickBy(By.id('se-delete-fav-dialog-submit'));
-    await waitBy(By.id(`se-actions-${wptName}`), { hidden: true });
-    await waitBy(By.id(`se-fav-item-name-${wptName}`), { hidden: true });
+    await waitByRemoved(By.id(`se-actions-${wptName}`));
+    await waitByRemoved(By.id(`se-fav-item-name-${wptName}`));
 
     await clickBy(By.id('se-back-folder-button'));
     await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));

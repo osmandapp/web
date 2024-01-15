@@ -3,9 +3,9 @@ import actionLogIn from '../actions/actionLogIn.mjs';
 import { deleteFavGroup, getFiles, uploadFavorites } from '../util.mjs';
 import { clickBy, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
-import actionCheckFileExist from '../actions/actionCheckFileExist.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import actionRenameFavGroup from '../actions/actionRenameFavGroup.mjs';
+import actionOpenFavorites from '../actions/actionOpenFavorites.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -18,13 +18,10 @@ export default async function test() {
     const favorites = getFiles({ folder: 'favorites' });
     const { path } = favorites.find((t) => t.name === favGroupName);
 
-    // open favorite menu
-    await clickBy(By.id('se-show-main-menu'), { optional: true });
-    await clickBy(By.id('se-show-menu-favorites'));
+    await actionOpenFavorites();
 
     // delete old group when need
-    const exist = await actionCheckFileExist({ id: `se-menu-fav-${shortFavGroupName}` });
-
+    const exist = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`), { optional: true, idle: true });
     if (!exist) {
         // create folder
         await clickBy(By.id('se-import-fav-group'));
@@ -33,7 +30,10 @@ export default async function test() {
     }
 
     // delete duplicate old group when need
-    const existDuplicate = await actionCheckFileExist({ id: `se-menu-fav-${shortFavGroupName}${suffix}` });
+    const existDuplicate = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}${suffix}`), {
+        optional: true,
+        idle: true,
+    });
     if (existDuplicate) {
         await deleteFavGroup(`${shortFavGroupName}${suffix}`);
     }
