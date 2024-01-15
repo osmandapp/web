@@ -642,16 +642,21 @@ function formatRouteMode({ profile = 'car', params, includeFalse = false }) {
 }
 
 // return params updated with parsed routeMode
-function decodeRouteMode({ routeMode, params }) {
+function decodeRouteMode({ profile, routeMode, params }) {
     const draft = { ...params };
 
     routeMode.split(',').forEach((p) => {
         // assume empty as true (see formatRouteMode)
         let [key, val = true] = p.split('=');
+        val === 'false' && (val = false);
+        val === 'true' && (val = true);
         if (draft[key]) {
-            val === 'false' && (val = false);
-            val === 'true' && (val = true);
             draft[key].value = val;
+        } else {
+            if (key !== profile) {
+                // allow hidden boolean params such as `hhonly` (skip when `key` is `profile`)
+                draft[key] = { section: 'Hidden', label: key, key, type: 'boolean', value: val };
+            }
         }
     });
 
