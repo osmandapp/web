@@ -42,15 +42,17 @@ To start using data from external sensors, you need to make the following settin
 
 <TabItem value="android" label="Android">
 
-![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_1.png)  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_2.png)  
+| | |
+| --- | --- |
+| ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_1.png) | ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_2.png) |
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 | | |
-| --- | --- | --- |
-| ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_first_start_ios.png) |  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_bluetooth_turned_off_ios.png) | ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_list_of_sensors_ios.png) 
+| --- | --- |
+| ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_first_start_ios.png) |  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_bluetooth_turned_off_ios.png) | 
 
 </TabItem>
 
@@ -134,7 +136,7 @@ Data from connected external sensors can be added to the GPX file using the [Tri
 - OsmAnd records data from selected sensors to the [track](../plugins/trip-recording.md#recorded-gpx-file) while recording a trip.
 
 :::note
-OsmAnd uses [**track recording**](../plugins/trip-recording.md#recorded-gpx-file) with such [**tag names**](https://github.com/osmandapp/Osmand/blob/a3b5c637955a5914421d391206c2efb6ee2dff47/OsmAnd-java/src/main/java/net/osmand/GPXUtilities.java#L2476-L2500) for external sensors, with which your file can be easily read by the sports applications you use.  For example Strava or Runkeeper.
+OsmAnd uses [**track recording**](../plugins/trip-recording.md#recorded-gpx-file) with such *tag names* for external sensors, with which your file can be easily read by the sports applications you use.  For example Strava or Runkeeper.
 :::
 
 
