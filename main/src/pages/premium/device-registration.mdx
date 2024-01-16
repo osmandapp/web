@@ -1,0 +1,15 @@
+export const DevRegToken = () => (
+    <span>
+        <p>
+            Your OsmAnd Cloud activation code is <b>{ (new URLSearchParams(window.location.search)).get('token') }</b>
+        </p>
+        <p>
+            Enter the code in OsmAnd App to activate your account.
+        </p>
+        <p>
+            Read details about OsmAnd Cloud in the <a href="/docs/user/personal/osmand-cloud">documentation</a>.
+        </p>
+    </span>
+);
+
+<DevRegToken />
