@@ -26,13 +26,6 @@ generate({
     validate: (json) => json['rendering_attr_highway_class_track_name'] === 'Track',
 });
 
-// 4. Parsed Road-Styles (TODO call external Java-util instead of URL get)
-generate({
-    file: 'src/generated/styles.json',
-    json: await get(getUrlStyles()),
-    validate: (json) => json['default.render.xml']['routeInfo_surface'].length > 0,
-});
-
 // Filter Android Values which are really required by Web Map
 function filterAndroidValues(json) {
     const filtered = {};
@@ -40,35 +33,6 @@ function filterAndroidValues(json) {
         (k) => (k.match(/^rendering_attr_/) || k.match(/^routeInfo_/)) && (filtered[k] = json[k])
     );
     return filtered;
-}
-
-function getUrlStyles() {
-    let url = new URL('https://osmand.net/gpx/get-styles');
-    const params = {
-        styles: [
-            'default.render.xml',
-            'skimap.render.xml',
-            'topo.render.xml',
-            'nautical.render.xml',
-            'regions.render.xml',
-            'offroad.render.xml',
-            'mapnik.render.xml',
-            'desert.render.xml',
-        ],
-        attributes: [
-            'routeInfo_roadClass',
-            'routeInfo_surface',
-            'routeInfo_smoothness',
-            'routeInfo_steepness',
-            'routeInfo_winter_ice_road',
-            'routeInfo_tracktype',
-            'routeInfo_horse_scale',
-            'routeInfo_piste_difficulty',
-            'routeInfo_piste_type',
-        ],
-    };
-    url.search = new URLSearchParams(params).toString();
-    return url;
 }
 
 /**
