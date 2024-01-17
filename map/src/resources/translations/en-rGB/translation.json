@@ -1,0 +1,11 @@
+{
+  "rendering_attr_roadColors_name": "Road colour scheme",
+  "rendering_attr_currentTrackColor_name": "GPX colour",
+  "rendering_attr_coloredBuildings_name": "Colour-code buildings by type",
+  "rendering_attr_currentTrackColor_description": "GPX colour",
+  "rendering_attr_contourColorScheme_name": "Contour lines colour scheme",
+  "rendering_attr_subwayMode_name": "Underground routes",
+  "rendering_attr_roadColors_description": "Select a road colour scheme:",
+  "rendering_attr_appMode_description": "Optimise map for",
+  "shared_string_my_favorites": "My Favourites"
+}

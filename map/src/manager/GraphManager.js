@@ -1,4 +1,4 @@
-import styles from '../../src/generated/styles.json';
+import styles from '../../src/resources/mapStyles/styleRulesResult.json';
 import andValues from '../../src/generated/android-values.json';
 import _ from 'lodash';
 import Utils from '../util/Utils';

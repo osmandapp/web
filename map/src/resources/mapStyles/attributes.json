@@ -1,0 +1,11 @@
+[
+  "routeInfo_roadClass",
+  "routeInfo_surface",
+  "routeInfo_smoothness",
+  "routeInfo_steepness",
+  "routeInfo_winter_ice_road",
+  "routeInfo_tracktype",
+  "routeInfo_horse_scale",
+  "routeInfo_piste_difficulty",
+  "routeInfo_piste_type"
+]

@@ -1,0 +1,13 @@
+{
+  "rendering_attr_noAdminboundaries_name": "Sakrij granice",
+  "rendering_attr_showRoadMaps_description": "Odaberite kada će se prikazati samo cestovne karte:",
+  "rendering_attr_contourLines_name": "Prikaži linije konture",
+  "rendering_attr_contourLines_description": "Izaberite minimalni nivo uvećanja za prikaz ako je moguć. Izdvojanje SRTM-datoteke će možda biti potrebno.",
+  "rendering_attr_noPolygons_name": "Nema poligona",
+  "rendering_attr_hmRendered_name": "Prikaži više detalja na mapi",
+  "rendering_attr_noPolygons_description": "Sve prave slike zemljišta učinite providnim",
+  "rendering_attr_appMode_name": "Režim iscrtavanja",
+  "rendering_attr_appMode_description": "\"Karta za optimizaciju korisničkog profila\"",
+  "rendering_attr_showRoadMaps_name": "Samo cestovne karte",
+  "rendering_attr_hmRendered_description": "Povećajte nivo detalja na mapi"
+}

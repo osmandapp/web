@@ -1,0 +1,10 @@
+{
+  "rendering_attr_noAdminboundaries_name": "सीमा",
+  "rendering_attr_piste_type_downhill_name": "उतार",
+  "rendering_attr_hideHouseNumbers_name": "घरक्रमांक",
+  "rendering_attr_currentTrackWidth_name": "जिपिएक्स रुंदी",
+  "rendering_attr_currentTrackColor_name": "जिपिएक्स रंग",
+  "rendering_attr_hmRendered_name": "नकाशा आधिक तपशिलवार दाखवा",
+  "rendering_attr_hideWaterPolygons_description": "पाणी",
+  "configure_map": "नकाशा मांडणी"
+}

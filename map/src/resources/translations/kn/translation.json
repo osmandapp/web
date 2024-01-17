@@ -1,0 +1,17 @@
+{
+  "rendering_attr_transportStops_name": "ಸಾರಿಗೆ ನಿಲುಗಡೆಗಳು",
+  "rendering_attr_hideHouseNumbers_name": "ಮನೆ ಸಂಖ್ಯಯನ್ನು ಅಡಗಿಸು",
+  "rendering_attr_piste_difficulty_connection_name": "ಸಂಪರ್ಕ",
+  "rendering_attr_tramRoutes_name": "ಹಾದಿಬಂಡಿ ಮಾರ್ಗಗಳು",
+  "rendering_attr_trolleybusRoutes_name": "ಕೈಬಂಡಿ ಮಾರ್ಗಗಳು",
+  "rendering_attr_trainLightrailRoutes_name": "ರೈಲು ಮಾರ್ಗಗಳು",
+  "rendering_attr_streetLighting_name": "ದಾರಿ ದೀಪಗಳು",
+  "rendering_attr_roadStyle_name": "ರಸ್ತೆ ಶೈಲಿ",
+  "rendering_attr_shareTaxiRoutes_name": "ಬಾಡಿಗೆಬಂಡಿ ಮಾರ್ಗಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಿ",
+  "rendering_attr_piste_difficulty_aerialway_name": "ವೈಮಾನಿಕ ಮಾರ್ಗ",
+  "rendering_attr_busRoutes_name": "ಬಸ್ ಮಾರ್ಗಗಳು",
+  "rendering_attr_showCycleNodeNetworkRoutes_name": "ನೋಡ್ ನೆಟ್‌ವರ್ಕ್ ಸೈಕಲ್ ಮಾರ್ಗಗಳನ್ನು ತೋರಿಸಿ",
+  "configure_map": "ನಕ್ಷೆ ವಿನ್ಯಾಸ",
+  "shared_string_tracks": "ನನ್ನ ಟ್ರ್ಯಾಕ್ ಗಳು",
+  "shared_string_my_favorites": "ನನ್ನ ಇಷ್ಟವಾದವುಗಳು"
+}
