@@ -18,23 +18,6 @@ generate({
     validate: (json) => json.some((x) => x === 'mx_service.svg'),
 });
 
-// 3. Android Values (filter from file + validate)
-generate({
-    file: 'src/generated/android-values.json',
-    json: cat('../main/src/translations/android-values.json'),
-    filter: filterAndroidValues, // keys -> rendering_attr_*
-    validate: (json) => json['rendering_attr_highway_class_track_name'] === 'Track',
-});
-
-// Filter Android Values which are really required by Web Map
-function filterAndroidValues(json) {
-    const filtered = {};
-    Object.keys(json).forEach(
-        (k) => (k.match(/^rendering_attr_/) || k.match(/^routeInfo_/)) && (filtered[k] = json[k])
-    );
-    return filtered;
-}
-
 /**
  * @param file <String> file to store fresh data (and read/validate stale data)
  * @param json <JSON> ready to use JSON-object to filter, validate and store to file
