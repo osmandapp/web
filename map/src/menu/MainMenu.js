@@ -40,6 +40,7 @@ import TrackGroupFolder from './tracks/TrackGroupFolder';
 import _ from 'lodash';
 import FavoriteGroupFolder from './favorite/FavoriteGroupFolder';
 import VisibleTracks from './visibletracks/VisibleTracks';
+import { useTranslation } from 'react-i18next';
 
 export default function MainMenu({
     size,
@@ -55,6 +56,7 @@ export default function MainMenu({
     openVisibleMenu,
 }) {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
     const [selectedType, setSelectedType] = useState(null);
 
@@ -73,7 +75,7 @@ export default function MainMenu({
 
     const items = [
         {
-            name: 'Configure Map',
+            name: t('configure_map'),
             icon: ConfigureMapIcon,
             component: <ConfigureMap setOpenVisibleMenu={setOpenVisibleMenu} />,
             type: OBJECT_CONFIGURE_MAP,
@@ -81,7 +83,7 @@ export default function MainMenu({
             id: 'se-show-menu-configuremap',
         },
         {
-            name: 'Weather',
+            name: t('shared_string_weather'),
             icon: WeatherIcon,
             component: <Weather />,
             type: OBJECT_TYPE_WEATHER,
@@ -89,7 +91,7 @@ export default function MainMenu({
             id: 'se-show-menu-weather',
         },
         {
-            name: 'Tracks',
+            name: t('shared_string_tracks'),
             icon: TracksIcon,
             component: <TracksMenu setOpenVisibleMenu={setOpenVisibleMenu} />,
             type: OBJECT_TYPE_CLOUD_TRACK,
@@ -97,7 +99,7 @@ export default function MainMenu({
             id: 'se-show-menu-tracks',
         },
         {
-            name: 'Favorites',
+            name: t('shared_string_my_favorites'),
             icon: FavoritesIcon,
             component: <FavoritesMenu />,
             type: OBJECT_TYPE_FAVORITE,
@@ -105,7 +107,7 @@ export default function MainMenu({
             id: 'se-show-menu-favorites',
         },
         {
-            name: 'Navigation',
+            name: t('shared_string_navigation'),
             icon: NavigationIcon,
             component: <RouteMenu />,
             type: OBJECT_TYPE_NAVIGATION_TRACK, // shared with OBJECT_TYPE_NAVIGATION_ALONE
@@ -113,7 +115,7 @@ export default function MainMenu({
             id: 'se-show-menu-navigation',
         },
         {
-            name: 'Plan a route',
+            name: t('plan_route'),
             icon: PlanRouteIcon,
             component: <PlanRouteMenu />,
             type: OBJECT_TYPE_LOCAL_TRACK,
@@ -395,7 +397,7 @@ export default function MainMenu({
                                                 },
                                             }}
                                         >
-                                            Menu
+                                            {t('shared_string_menu')}
                                         </ListItemText>
                                     </div>
                                 </ListItemButton>

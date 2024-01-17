@@ -100,13 +100,3 @@ function cat(file) {
         return null;
     }
 }
-
-async function get(url) {
-    try {
-        const response = await fetch(url);
-        return await response.json();
-    } catch (e) {
-        console.warn(e);
-        return null;
-    }
-}
