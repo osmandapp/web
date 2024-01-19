@@ -9,5 +9,11 @@
   "rendering_attr_tracktype_grade4_name": "ज्यादातर नरम",
   "rendering_attr_ice_road_name": "बर्फ की सड़क",
   "rendering_attr_tracktype_grade3_name": "ज्यादातर ठोस",
-  "routeInfo_tracktype_name": "सतह की दृढ़ता"
+  "routeInfo_tracktype_name": "सतह की दृढ़ता",
+  "lang_gu": "गुजराती",
+  "lang_ne": "नेपाली",
+  "lang_mn": "मंगोली",
+  "lang_my": "बर्मी",
+  "lang_kk": "कज़ाकिस्तानी",
+  "lang_pnb": "पंजाबी"
 }

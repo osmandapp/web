@@ -6,5 +6,15 @@
   "rendering_attr_currentTrackColor_name": "जिपिएक्स रंग",
   "rendering_attr_hmRendered_name": "नकाशा आधिक तपशिलवार दाखवा",
   "rendering_attr_hideWaterPolygons_description": "पाणी",
-  "configure_map": "नकाशा मांडणी"
+  "configure_map": "नकाशा मांडणी",
+  "lang_gu": "गुजराथी",
+  "lang_bn": "बंगाली",
+  "lang_ne": "नेपाळी",
+  "lang_ml": "मल्याळम",
+  "lang_la": "लॅटिन",
+  "lang_ur": "उर्दु",
+  "lang_th": "थाइ",
+  "lang_te": "तेलगु",
+  "lang_ta": "तामिळ",
+  "lang_pnb": "पंजाबी"
 }

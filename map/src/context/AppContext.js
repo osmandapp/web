@@ -21,6 +21,7 @@ export const OBJECT_TYPE_WEATHER = 'weather';
 export const OBJECT_TYPE_POI = 'poi';
 
 export const OBJECT_CONFIGURE_MAP = 'configure_map';
+export const OBJECT_GLOBAL_SETTINGS = 'global_settings';
 export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
 
 export const defaultConfigureMapStateValues = {

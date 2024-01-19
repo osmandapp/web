@@ -20,6 +20,7 @@ import AppContext, {
     OBJECT_TYPE_NAVIGATION_ALONE,
     OBJECT_TYPE_WEATHER,
     OBJECT_TYPE_POI,
+    OBJECT_GLOBAL_SETTINGS,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import ConfigureMap from './configuremap/ConfigureMap';
@@ -33,6 +34,7 @@ import { ReactComponent as TracksIcon } from '../assets/menu/ic_action_track.svg
 import { ReactComponent as NavigationIcon } from '../assets/menu/ic_action_navigation.svg';
 import { ReactComponent as PlanRouteIcon } from '../assets/menu/ic_action_plan_route.svg';
 import { ReactComponent as ConfigureMapIcon } from '../assets/icons/ic_map_configure_map.svg';
+import { ReactComponent as SettingsIcon } from '../assets/icons/ic_action_settings_outlined.svg';
 import InformationBlock from '../infoblock/components/InformationBlock';
 import Weather from './weather/Weather';
 import styles from './mainmenu.module.css';
@@ -41,6 +43,7 @@ import _ from 'lodash';
 import FavoriteGroupFolder from './favorite/FavoriteGroupFolder';
 import VisibleTracks from './visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
+import SettingsMenu from './settings/SettingsMenu';
 
 export default function MainMenu({
     size,
@@ -129,6 +132,14 @@ export default function MainMenu({
             type: OBJECT_TYPE_POI,
             show: false,
             id: 'se-show-menu-poi',
+        },
+        {
+            name: 'Settings',
+            icon: SettingsIcon,
+            component: <SettingsMenu />,
+            type: OBJECT_GLOBAL_SETTINGS,
+            show: true,
+            id: 'se-show-menu-settings',
         },
     ];
 

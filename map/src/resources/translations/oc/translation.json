@@ -184,5 +184,10 @@
   "configure_map": "Configurar la mapa",
   "shared_string_my_favorites": "Preferéncias",
   "shared_string_navigation": "Navigacion",
-  "plan_route": "Planificar un percors"
+  "plan_route": "Planificar un percors",
+  "lang_zh_hk": "Chinés (Hong Kong)",
+  "lang_af": "Afrikaans",
+  "lang_al": "Albanian",
+  "lang_vo": "Volapuk",
+  "lang_pnb": "Punjabi"
 }

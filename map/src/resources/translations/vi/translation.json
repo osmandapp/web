@@ -7,5 +7,7 @@
   "rendering_attr_OSMMapperAssistantNote_name": "Thẻ ghi chú",
   "rendering_attr_tramRoutes_name": "Định tuyến xe điện",
   "rendering_attr_trainLightrailRoutes_name": "Đường đi của tàu hoả",
-  "rendering_attr_hideIcons_name": "Biểu tượng POI"
+  "rendering_attr_hideIcons_name": "Biểu tượng POI",
+  "lang_zh_hk": "Tiếng Trung (Hồng Kông)",
+  "lang_pnb": "Tiếng Punjabi"
 }

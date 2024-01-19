@@ -4,5 +4,9 @@
   "rendering_attr_smoothness_bad_name": "Начар",
   "rendering_attr_smoothness_good_name": "Яхшы",
   "rendering_attr_hideWaterPolygons_description": "Су",
-  "shared_string_menu": "Меню"
+  "shared_string_menu": "Меню",
+  "lang_ba": "Башкир",
+  "lang_an": "Арагон",
+  "lang_tt": "Татар",
+  "lang_yo": "Йоруба"
 }

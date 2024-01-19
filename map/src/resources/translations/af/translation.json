@@ -20,5 +20,12 @@
   "rendering_attr_showRoadMaps_name": "Paaie-uitsluitlik kaarte",
   "rendering_attr_hideWaterPolygons_description": "Water",
   "rendering_attr_contourDensity_description": "Digtheid van die hoogtelyne",
-  "rendering_attr_hmRendered_description": "Vermeerder die detail wat in die kaart vertoon word"
+  "rendering_attr_hmRendered_description": "Vermeerder die detail wat in die kaart vertoon word",
+  "lang_hr": "Kroaties",
+  "lang_eu": "Baskies",
+  "lang_en": "Engels",
+  "lang_af": "Afrikaans",
+  "lang_hy": "Armeens",
+  "lang_pt_br": "Portugees (Brazilië)",
+  "lang_zh": "Sjinees"
 }
