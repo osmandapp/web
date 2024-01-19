@@ -32,7 +32,7 @@ The *Import / Export* feature allows you to save data from generated **OSF files
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,shared_string_export,export_to_file"/>*  
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
 ![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_android.png) ![Backup local Android](@site/static/img/personal/backup/backup_local_1_android.png)  
 
@@ -81,7 +81,7 @@ All the data you have configured and created can be exported using the **Export 
 
 </Tabs> 
 
-Opens and restores OSF files. Tap an OSF file in the file manager on your device or use the action button. 
+Opens and restores _OSF_ files. Tap an _OSF_ file in the file manager on your device or use the action button. 
 - *Some items already exist*. You can use this feature to save both files or replace all of them.
 - *Restart*. After importing the files, the application must be restarted.
 
@@ -90,5 +90,6 @@ Opens and restores OSF files. Tap an OSF file in the file manager on your device
 
 In the Android and iOS version of OsmAnd, if you completely uninstall the app or select *Clear Data* in the Manager settings, the data folder will also be deleted. If you do not take precautions, this will result in the **loss of all downloaded maps for OsmAnd data, as well as all saved Favorites, GPX tracks, and other data.**   
 
-- You can back up your data using OsmAnd features such as [OsmAnd start](../personal/osmand-cloud.md#osmand-start) as a free version or [OsmAnd Pro](../purchases/index.md) as a paid subscription with more features.
--  Go to Download Maps, Local tab, tap the update icon.
+Two ways hot to keep your data before OsmAnd app reinstall:
+- Using [OsmAnd Cloud](#osmand-cloud). You can back up your data using OsmAnd features such as [OsmAnd start](../personal/osmand-cloud.md#osmand-start) as a free version or [OsmAnd Pro](../purchases/index.md) as a paid subscription with more features.
+-  You can [export _OSF_ file](#export) with your data. Just copy your _OSF_ file to your device folder, Cloud and etc. After reinstall OsmAnd just [importing this _OSF_ file](#import) to OsmAnd app.
