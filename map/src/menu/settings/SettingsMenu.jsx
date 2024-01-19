@@ -24,7 +24,7 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 
 export default function SettingsMenu() {
     const ctx = useContext(AppContext);
-    
+
     const [openLangList, setOpenLangList] = useState(false);
     const { i18n, t } = useTranslation();
     const [currentLang, setCurrentLang] = useState(t(`lang_${i18n.language}`));
