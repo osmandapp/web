@@ -88,8 +88,8 @@ Opens and restores _OSF_ files. Tap an _OSF_ file in the file manager on your de
 
 ## OsmAnd reinstall 
 
-In the Android and iOS version of OsmAnd, if you completely uninstall the app or select *Clear Data* in the Manager settings, the data folder will also be deleted. If you do not take precautions, this will result in the **loss of all downloaded maps for OsmAnd data, as well as all saved Favorites, GPX tracks, and other data.**   
+In the Android and iOS versions of OsmAnd, if you completely uninstall the app or select *Clear Data* in the Manager settings, the data folder will also be deleted. If you do not take precautions, this will result in the **loss of all downloaded maps for OsmAnd data, as well as all saved Favorites, GPX tracks, and other data.**   
 
-Two ways hot to keep your data before OsmAnd app reinstall:
-- Using [OsmAnd Cloud](#osmand-cloud). You can back up your data using OsmAnd features such as [OsmAnd start](../personal/osmand-cloud.md#osmand-start) as a free version or [OsmAnd Pro](../purchases/index.md) as a paid subscription with more features.
--  You can [export _OSF_ file](#export) with your data. Just copy your _OSF_ file to your device folder, Cloud and etc. After reinstall OsmAnd just [importing this _OSF_ file](#import) to OsmAnd app.
+Two ways how to keep your data before the OsmAnd app is reinstalled:
+- Using [OsmAnd Cloud](#osmand-cloud). You can back up your data using OsmAnd features such as [_OsmAnd Start_](../personal/osmand-cloud.md#osmand-start) as a free version or [_OsmAnd Pro_](../purchases/index.md) as a paid subscription with more features.
+-  You can [export _OSF_ file](#export) with your data. Just copy your _OSF_ file to your device folder, Cloud etc. After reinstalling OsmAnd just [import this _OSF_ file](#import) to the OsmAnd app.
