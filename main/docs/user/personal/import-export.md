@@ -11,8 +11,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-<InfoIncompleteArticle/>
-
 ## Overview
 
 The **Import / Export** function in OsmAnd allows you to manage your data. You can export your profiles, favorites, tracks, and other settings into a special format accessible through the apps on your device. This process makes it easy to save and transfer data between devices and allows sharing it with other users.  
