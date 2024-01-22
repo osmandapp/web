@@ -118,6 +118,7 @@ export function convertRouteToTrack({ id, route, trackName, geoProfile, start, f
         id,
         points,
         name: trackName,
+        tracks: [{ points }],
         // metaData: { desc: trackDesc },
         analysis: pointsGeometryMinAvgMaxElevation(points),
     };
