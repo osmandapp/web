@@ -24,7 +24,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/osmandapp/web/edit/main/main/',
-          sidebarItemsGenerator: require('./scripts/docs-map-generator.js'),
+          sidebarItemsGenerator: require('./scripts/help-structure-generator.js'),
         },
         blog: {
           showReadingTime: true,
