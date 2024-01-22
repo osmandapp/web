@@ -309,7 +309,7 @@ export async function checkElementByCss(searchString, exist = true) {
     if (!exist) {
         const elements = await driver.findElements(By.css(searchString));
         if (elements.length === 0) {
-            debug && console.log('Element does not exist');
+            debug && console.log(`Element does not exist (${searchString})`);
             return;
         }
     }
@@ -322,8 +322,8 @@ export async function checkElementByCss(searchString, exist = true) {
             }),
             timeout
         );
-        debug && console.log('Condition met for element');
+        debug && console.log(`Condition met for element (${searchString})`);
     } catch (error) {
-        debug && console.log('Condition not met for element');
+        debug && console.log(`Condition not met for element (${searchString})`);
     }
 }
