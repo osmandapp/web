@@ -30,18 +30,22 @@ async function OsmAndHelpStructureGenerator(props) {
 function flushArticlesIntoBuildDir(articles) {
   const prettyJSON = (smth) => JSON.stringify(smth, null, 2);
 
-  const ios = JSON.parse(fs.readFileSync(IOS_LINKS_JSON, { encoding: 'utf8' }));
-  const android = JSON.parse(fs.readFileSync(ANDROID_LINKS_JSON, { encoding: 'utf8' }));
+  const ios = JSON.parse(fs.readFileSync(IOS_LINKS_JSON, { encoding: "utf8" }));
+  const android = JSON.parse(
+    fs.readFileSync(ANDROID_LINKS_JSON, { encoding: "utf8" })
+  );
 
   const helpStructure = {
     articles,
     android,
     ios,
-  }
+  };
 
   function flush() {
     if (fs.existsSync(BUILD_DIR_READY_TRIGGER)) {
-      fs.writeFileSync(JSON_OUTPUT_FILE, prettyJSON(helpStructure), { encoding: "utf8" });
+      fs.writeFileSync(JSON_OUTPUT_FILE, prettyJSON(helpStructure), {
+        encoding: "utf8",
+      });
       return;
     }
     setTimeout(flush, 1000);
@@ -80,9 +84,12 @@ function dumpItem(articles, item, level) {
 
 // read on Title from md/mdx
 function readTitle(file, id) {
-  fs.existsSync(file) || (file += 'x'); // .md -> .mdx
+  fs.existsSync(file) || (file += "x"); // .md -> .mdx
   const input = fs.readFileSync(file, { encoding: "utf8" });
   const headings = input.split(/[\r\n]/).filter((l) => l.match(/^(title:|#) /));
   const title = (headings && headings.length > 0 && headings[0]) ?? id;
-  return title.replace(/^.*? +/, '').replace(/^"/, '').replace(/"$/, ''); // cleanup title:|#, spaces, and quotes
+  return title
+    .replace(/^.*? +/, "")
+    .replace(/^"/, "")
+    .replace(/"$/, ""); // cleanup title:|#, spaces, and quotes
 }
