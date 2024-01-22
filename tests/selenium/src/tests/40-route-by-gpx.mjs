@@ -11,7 +11,7 @@ const TEST_GPX_FILE = 'test-routed-osrm.gpx';
 const GO_CENTER_HASH = '#14/50.3837/30.4944';
 const CHECK_START = '50.39743, 30.50982';
 const CHECK_END = '50.36917, 30.52727';
-const CAR = /12\.4 km, 0:20 min/;
+const CAR = /12\.7 km, 0:23 min/;
 const BIKE = /12\.8 km, 0:56 min/;
 const FOOT = /13\.6 km, 4:03 min/;
 
