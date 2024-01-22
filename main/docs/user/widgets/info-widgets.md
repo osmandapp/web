@@ -77,7 +77,7 @@ Altitude can not be displayed correctly on some Android devices. To resolve this
 </Tabs>   
 
 You can use the widget to find out the elevation of the current map center above sea level.
-[Download](../start-with/download-maps.md) heightmaps of the required area to display information in the *Elevation: map center widget*.  
+[Terrain map (Hillshade and Slope)](../plugins/contour-lines.md#download-maps) of the required area to display information in the *Elevation: map center widget*.  
 
 | | |
 |------------|------------|
@@ -379,7 +379,7 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 
 ![External sensor widgets Android](@site/static/img/widgets/external-sensors-widgets_1.png) 
 
-Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from your external sensors, such as: *<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>, <Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>* and *<Translate android="true" ids="external_device_characteristic_temperature"/>*.  
+Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from your external sensors, such as: **<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android only*), **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>* and *<Translate android="true" ids="external_device_characteristic_temperature"/>**.  
 
 - To add External sensor widgets to the map screen, [enable](../plugins/index.md#enable--disable) **OsmAnd External sensors plugin**.
 - Widgets can be added even if there is no external sensor connected.
@@ -390,6 +390,7 @@ Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widget
 | | |
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="external_sensor_widgets"/>* |
+| | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="external_sensor_widgets"/>* |
 | By tapping | No changes |   
 
 

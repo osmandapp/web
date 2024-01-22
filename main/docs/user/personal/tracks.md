@@ -779,12 +779,12 @@ To move a track from the default folder to another folder in My Places, follow t
 ![My Places with tracks in Android](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
 
 You can delete a folder with all the tracks contained in it. To do this:
-- Go to Menu → My Places → Tracks tab.
-- Tab the three dots menu of the folder you want to delete.
+- Go to *Menu → My Places → Tracks tab*.
+- Tap the three dots menu of the folder you want to delete.
 - At the bottom of the menu, find the Delete Folder option.
 - Note that this action is irreversible.
 
-## Read more
+## Read more about GPX
 
 - [Show track on Map](../map/tracks-on-map.md)
 - [Analyze on Map](../map/tracks-on-map.md)
