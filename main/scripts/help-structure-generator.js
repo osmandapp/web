@@ -71,25 +71,50 @@ function dumpItem(articles, item, level) {
 
   const type = item.type;
   const file = DOC_PATH + id + ".md";
-  const label = item.label ?? readTitle(file, id); // label might be not available, so read it from the file
+  const { title, ios, android } = readTitleAndOsFlags(file, id);
+  const label = item.label ?? title; // label might be not available, so read it from the file
   const url = (BASE_URL + id).replace(/\/index$/, ""); // remove extra /index from the tail (uri/index -> uri)
 
-  articles.push({
+  const article = {
     level,
     type,
     label,
     url,
-  });
+  };
+
+  // allow flags (android|ios): (true|false) in md-files
+  android !== undefined && (article.android = android);
+  ios !== undefined && (article.ios = ios);
+
+  articles.push(article);
 }
 
-// read on Title from md/mdx
-function readTitle(file, id) {
+// read Title and OS-flags from md/mdx
+function readTitleAndOsFlags(file, id) {
   fs.existsSync(file) || (file += "x"); // .md -> .mdx
   const input = fs.readFileSync(file, { encoding: "utf8" });
+
   const headings = input.split(/[\r\n]/).filter((l) => l.match(/^(title:|#) /));
   const title = (headings && headings.length > 0 && headings[0]) ?? id;
-  return title
-    .replace(/^.*? +/, "")
-    .replace(/^"/, "")
-    .replace(/"$/, ""); // cleanup title:|#, spaces, and quotes
+
+  const flags = {
+    android: undefined,
+    ios: undefined,
+  };
+
+  input.split(/[\r\n]/).forEach((l) => {
+    const fields = l.match(/^(android|ios)\s*:\s*(true|false)/i);
+    if (fields && fields.length === 3) {
+      flags[fields[1]] = fields[2].toLowerCase === "true";
+    }
+  });
+
+  return {
+    title: title // cleanup title:|#, spaces, and quotes
+      .replace(/^.*? +/, "")
+      .replace(/^"/, "")
+      .replace(/"$/, ""),
+    android: flags.android,
+    ios: flags.ios,
+  };
 }

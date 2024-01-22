@@ -1,6 +1,7 @@
 ---
 sidebar_position: 10
 title:  CarPlay
+android: false
 ---
 
 import Tabs from '@theme/Tabs';
