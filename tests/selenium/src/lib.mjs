@@ -301,3 +301,29 @@ export async function sendKeysBy(by, keys) {
         { tag: `sendKeysBy (${by.value || by}) (${keys})` }
     );
 }
+
+export async function checkElementByCss(searchString, exist = true) {
+    const timeout = exist ? TIMEOUT_REQUIRED : HIDDEN_TIMEOUT;
+
+    // If exist is false and the element does not exist, return immediately
+    if (!exist) {
+        const elements = await driver.findElements(By.css(searchString));
+        if (elements.length === 0) {
+            debug && console.log(`Element does not exist (${searchString})`);
+            return;
+        }
+    }
+
+    try {
+        await driver.wait(
+            new Condition('checkElementByCss', async () => {
+                const elements = await driver.findElements(By.css(searchString));
+                return exist ? elements.length > 0 : elements.length === 0;
+            }),
+            timeout
+        );
+        debug && console.log(`Condition met for element (${searchString})`);
+    } catch (error) {
+        debug && console.log(`Condition not met for element (${searchString})`);
+    }
+}
