@@ -307,5 +307,16 @@
   "lang_new": "Nevari",
   "lang_nds": "Alamsaksa",
   "lang_nap": "Napoli",
-  "lang_min": "Minangkabau"
+  "lang_min": "Minangkabau",
+  "add_new_folder": "Lisa uus kaust",
+  "sort_by": "Sorteerimisalus",
+  "shared_string_show_on_map": "Näita kaardil",
+  "shared_string_download": "Laadi alla",
+  "shared_string_rename": "Nimeta ümber",
+  "shared_string_delete": "Kustuta",
+  "sort_last_modified": "Viimati muudetud",
+  "sort_name_ascending": "Nimi: A – Z",
+  "sort_name_descending": "Nimi: Z – A",
+  "user_login": "Logi sisse",
+  "login_account": "Kasutajakonto"
 }

@@ -1,4 +1,10 @@
 {
   "rendering_attr_lightDetail_name": "ข้อมูลของแสง",
-  "rendering_attr_lightDetail_description": "ค่าเริ่มต้น: ชื่อซีมาร์ค (light character.group.period), เลือกข้อมูลเพิ่มเติมเกี่ยวกับเซกเตอร์ 1 ถึง 3 หรือเซกเตอร์ 1,2,3,4,5 light character"
+  "rendering_attr_lightDetail_description": "ค่าเริ่มต้น: ชื่อซีมาร์ค (light character.group.period), เลือกข้อมูลเพิ่มเติมเกี่ยวกับเซกเตอร์ 1 ถึง 3 หรือเซกเตอร์ 1,2,3,4,5 light character",
+  "sort_distance_descending": "ระยะทางที่ยาวที่สุดก่อน",
+  "sort_distance_ascending": "ระยะทางที่สั้นที่สุดก่อน",
+  "shared_string_visible_on_map": "มองเห็นบนแผนที่",
+  "sort_date_ascending": "วันที่ใหม่ล่าสุดก่อน",
+  "sort_date_descending": "วันที่เก่าที่สุดก่อน",
+  "shared_string_nearest": "ใกล้ที่สุด"
 }

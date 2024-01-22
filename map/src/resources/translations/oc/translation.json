@@ -189,5 +189,13 @@
   "lang_af": "Afrikaans",
   "lang_al": "Albanian",
   "lang_vo": "Volapuk",
-  "lang_pnb": "Punjabi"
+  "lang_pnb": "Punjabi",
+  "sort_by": "Ordenar per",
+  "shared_string_duplicate": "Doblar",
+  "shared_string_delete": "Supprimir",
+  "sort_last_modified": "Darriera modificacion",
+  "sort_name_ascending": "Nom: A - Z",
+  "sort_name_descending": "Nom: Z - A",
+  "user_login": "Identificant",
+  "login_account": "Còmpte"
 }

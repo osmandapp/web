@@ -291,5 +291,22 @@
   "lang_new": "Newari",
   "lang_nds": "Alasaksa",
   "lang_nap": "Napoli",
-  "lang_min": "Minangkabau"
+  "lang_min": "Minangkabau",
+  "add_new_folder": "Lisää uusi kansio",
+  "import_tracks": "Tuo jäljet",
+  "sort_by": "Lajittelu",
+  "shared_string_show_on_map": "Näytä kartalla",
+  "shared_string_download": "Lataa",
+  "shared_string_rename": "Nimeä uudelleen",
+  "shared_string_delete": "Poista",
+  "sort_last_modified": "Viimeksi muokattu",
+  "sort_name_ascending": "Nimi: A – Z",
+  "sort_name_descending": "Nimi: Z – A",
+  "sort_distance_descending": "Pisin matka ensimmäisenä",
+  "sort_distance_ascending": "Lyhin matka ensimmäisenä",
+  "sort_date_ascending": "Uusin päivämäärä ensin",
+  "sort_date_descending": "Vanhin päivämäärä ensin",
+  "shared_string_nearest": "Lähin",
+  "user_login": "Kirjaudu",
+  "login_account": "Tili"
 }

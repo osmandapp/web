@@ -9,5 +9,9 @@
   "rendering_attr_trainLightrailRoutes_name": "Đường đi của tàu hoả",
   "rendering_attr_hideIcons_name": "Biểu tượng POI",
   "lang_zh_hk": "Tiếng Trung (Hồng Kông)",
-  "lang_pnb": "Tiếng Punjabi"
+  "lang_pnb": "Tiếng Punjabi",
+  "shared_string_show_on_map": "Hiện trên bản đồ",
+  "shared_string_download": "Tải xuống",
+  "shared_string_rename": "Đổi tên",
+  "shared_string_delete": "Xóa"
 }

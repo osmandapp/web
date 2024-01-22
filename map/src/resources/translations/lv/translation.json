@@ -240,5 +240,17 @@
   "lang_hu_formal": "Hungāru (formālā)",
   "lang_es_us": "Spāņu (amerikāņu)",
   "lang_new": "Nevaru / Nepālas bhasu",
-  "lang_nds": "Zemvācu"
+  "lang_nds": "Zemvācu",
+  "add_new_folder": "Pievienot jaunu mapi",
+  "import_tracks": "Importēt trekus",
+  "sort_by": "Kārtot pēc",
+  "shared_string_show_on_map": "Rādīt uz kartes",
+  "shared_string_download": "Lejupielādēt",
+  "shared_string_rename": "Pārsaukt",
+  "shared_string_delete": "Dzēst",
+  "sort_last_modified": "Labots",
+  "sort_name_ascending": "Vārdi: A -Z",
+  "sort_name_descending": "Vārdi: Z - A",
+  "user_login": "Lietotājs",
+  "login_account": "Konts"
 }

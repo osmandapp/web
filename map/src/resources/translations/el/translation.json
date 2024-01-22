@@ -301,5 +301,21 @@
   "lang_new": "Νιούαρ / Νεπάλ Μπάσα",
   "lang_nds": "Κάτω γερμανικά",
   "lang_nap": "Ναπολιτάνικα",
-  "lang_min": "Μινανγκκαμπάου"
+  "lang_min": "Μινανγκκαμπάου",
+  "add_new_folder": "Προσθήκη νέου φακέλου",
+  "sort_by": "Ταξινόμηση κατά",
+  "shared_string_show_on_map": "Εμφάνιση στον χάρτη",
+  "shared_string_download": "Λήψη",
+  "shared_string_rename": "Μετονομασία",
+  "shared_string_delete": "Διαγραφή",
+  "sort_last_modified": "Τελευταία επεξεργασία",
+  "sort_name_ascending": "Όνομα: Α - Ω",
+  "sort_name_descending": "Όνομα: Ω - Α",
+  "sort_distance_descending": "Μεγαλύτερη απόσταση πρώτη",
+  "sort_distance_ascending": "Μικρότερη απόσταση πρώτη",
+  "sort_date_ascending": "Νεότερη ημερομηνία πρώτη",
+  "sort_date_descending": "Παλαιότερη ημερομηνία πρώτη",
+  "shared_string_nearest": "Κοντινότερο",
+  "user_login": "Σύνδεση",
+  "login_account": "Λογαριασμός"
 }

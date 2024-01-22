@@ -215,5 +215,11 @@
   "lang_hu_formal": "ഹംഗറിയിലെ (ഫോര്‍മല്‍‌)",
   "lang_es_us": "സ്പാനിഷ്(അമേരിക്കന്‍)",
   "lang_new": "നെവാര്‍ /നേപ്പാള്‍ ഭാക്ഷ",
-  "lang_nds": "ലോ ജര്‍മന്‍ ഭാഷ"
+  "lang_nds": "ലോ ജര്‍മന്‍ ഭാഷ",
+  "add_new_folder": "പുതിയ ഫോള്‍ഡര്‍ ചേര്‍ക്കുക",
+  "sort_by": "അടുക്കുന്ന വിധം",
+  "shared_string_show_on_map": "ഭൂപടത്തില്‍ കാണിക്കുക",
+  "shared_string_download": "\" ഡൗണ്‍ലോഡ്\"",
+  "shared_string_rename": "പേരു് മാറ്റുക",
+  "shared_string_delete": "നീക്കം ചെയ്യുക"
 }

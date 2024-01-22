@@ -299,5 +299,20 @@
   "lang_new": "Непал Бхаса",
   "lang_nds": "Долногермански езици",
   "lang_nap": "Неаполитански",
-  "lang_min": "Минангкабау"
+  "lang_min": "Минангкабау",
+  "import_tracks": "Внасяне на трасета",
+  "shared_string_show_on_map": "Показване на картата",
+  "shared_string_duplicate": "Дублиране",
+  "shared_string_download": "Изтегляне",
+  "shared_string_rename": "Преименуване",
+  "shared_string_delete": "Премахване",
+  "sort_last_modified": "Последна промяна",
+  "sort_name_ascending": "Име: А - Я",
+  "sort_name_descending": "Име: Я - А",
+  "sort_distance_descending": "Първо по-дългите",
+  "sort_distance_ascending": "Първо по-кратките",
+  "shared_string_visible_on_map": "Видимо на картата",
+  "sort_date_ascending": "Първо по-пресните",
+  "sort_date_descending": "Първо по-старите",
+  "shared_string_nearest": "По-близки"
 }

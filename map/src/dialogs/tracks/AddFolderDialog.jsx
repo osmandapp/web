@@ -9,12 +9,15 @@ import DialogContent from '@mui/material/DialogContent';
 import { Button, TextField } from '@mui/material';
 import DialogActions from '@mui/material/DialogActions';
 import AppContext from '../../context/AppContext';
+import { useTranslation } from 'react-i18next';
 
 export default function AddFolderDialog({ trackGroup, setOpenAddFolderDialog }) {
     const ctx = useContext(AppContext);
 
     const [folderNameError, setFolderNameError] = useState('');
     const [folderName, setFolderName] = useState('');
+
+    const { t } = useTranslation();
 
     function isFolderExist(name) {
         return trackGroup.subfolders.some((folder) => folder.name === name);
@@ -51,7 +54,7 @@ export default function AddFolderDialog({ trackGroup, setOpenAddFolderDialog }) 
 
     return (
         <Dialog open={true} onClose={() => setOpenAddFolderDialog(false)}>
-            <DialogTitle className={dialogStyles.title}>Add new folder</DialogTitle>
+            <DialogTitle className={dialogStyles.title}>{t('add_new_folder')}</DialogTitle>
             <DialogContent className={dialogStyles.content}>
                 <TextField
                     sx={{

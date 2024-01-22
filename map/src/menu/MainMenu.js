@@ -310,7 +310,9 @@ export default function MainMenu({
                                             },
                                         }}
                                     >
-                                        {ctx.loginUser && ctx.loginUser !== 'INIT' ? 'Account' : 'Login'}
+                                        {ctx.loginUser && ctx.loginUser !== 'INIT'
+                                            ? t('login_account')
+                                            : t('user_login')}
                                     </ListItemText>
                                     {ctx.loginUser && ctx.loginUser !== 'INIT' && (
                                         <ListItemText

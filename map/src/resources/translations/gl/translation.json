@@ -288,5 +288,16 @@
   "lang_new": "Newari ou Nepal bhasa",
   "lang_nds": "Baixo alemán",
   "lang_nap": "Napolitano",
-  "lang_min": "Minangkabau"
+  "lang_min": "Minangkabau",
+  "add_new_folder": "Engadir un cartafol novo",
+  "sort_by": "Ordenar por",
+  "shared_string_show_on_map": "Amosar no mapa",
+  "shared_string_download": "Baixar",
+  "shared_string_rename": "Mudar o nome",
+  "shared_string_delete": "Eliminar",
+  "sort_last_modified": "Última modificación",
+  "sort_name_ascending": "Nome: A – Z",
+  "sort_name_descending": "Nome: Z – A",
+  "user_login": "Iniciar sesión",
+  "login_account": "Conta"
 }

@@ -343,5 +343,20 @@
   "lang_new": "Newar / Nepal Bhasa",
   "lang_nds": "Lágþýska",
   "lang_nap": "Neapólíska",
-  "lang_min": "Minangkabau"
+  "lang_min": "Minangkabau",
+  "add_new_folder": "Bæta við nýrri möppu",
+  "import_tracks": "Flytja inn ferla",
+  "sort_by": "Raða eftir",
+  "shared_string_show_on_map": "Birta á korti",
+  "shared_string_duplicate": "Tvítaka",
+  "shared_string_download": "Sækja",
+  "shared_string_rename": "Endurnefna",
+  "shared_string_delete": "Eyða",
+  "sort_last_modified": "Síðast breytt",
+  "sort_name_ascending": "Nafn: A – Ö",
+  "sort_name_descending": "Nafn: Ö – A",
+  "shared_string_visible_on_map": "Sýnilegt á korti",
+  "shared_string_nearest": "Næsta",
+  "user_login": "Skrá inn",
+  "login_account": "Notandaaðgangur"
 }

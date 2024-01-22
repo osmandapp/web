@@ -15,9 +15,11 @@ import DownloadBackupDialog from './DownloadBackupDialog';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import { makeStyles } from '@material-ui/core/styles';
 import { FREE_ACCOUNT, getAccountInfo } from '../manager/LoginManager';
+import { useTranslation } from 'react-i18next';
 
 export default function LoginDialog() {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
     const [width] = useWindowSize();
     const widthDialog = width / 2 < 450 ? width * 0.75 : width / 2;
@@ -273,7 +275,11 @@ export default function LoginDialog() {
     return (
         <Dialog classes={{ paper: classes.paper }} open={true} onClose={handleClose}>
             <DialogTitle>
-                {state === 'register' ? 'Register' : state === 'register-verify' ? 'Verify your email' : 'Login'}
+                {state === 'register'
+                    ? 'Register'
+                    : state === 'register-verify'
+                      ? 'Verify your email'
+                      : t('user_login')}
             </DialogTitle>
             <DialogContent>
                 <DialogContentText>

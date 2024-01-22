@@ -323,5 +323,17 @@
   "lang_new": "Newar / Bhasa Nepal",
   "lang_nds": "Almaeneg Isel",
   "lang_nap": "Napolitaneg",
-  "lang_min": "Minangkabau"
+  "lang_min": "Minangkabau",
+  "add_new_folder": "Ychwanegu ffolder newydd",
+  "import_tracks": "Mewnforio traciau",
+  "sort_by": "Trefnu yn ôl",
+  "shared_string_show_on_map": "Dangos ar y map",
+  "shared_string_download": "Lawrlwytho",
+  "shared_string_rename": "Ailenwi",
+  "shared_string_delete": "Dileu",
+  "sort_last_modified": "Newidiwyd diwethaf",
+  "sort_name_ascending": "Enw: A - Z",
+  "sort_name_descending": "Enw: Z - A",
+  "user_login": "Mewngofnodi",
+  "login_account": "Cyfrif"
 }

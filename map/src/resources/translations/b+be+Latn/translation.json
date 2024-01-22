@@ -217,5 +217,11 @@
   "lang_hu_formal": "Vuhorskaja (afіcyjnaja)",
   "lang_es_us": "Hіšpanskaja (ZŠA)",
   "lang_new": "Nevarskaja / Nepał-bchasa",
-  "lang_nds": "Nіžnieniamieckaja"
+  "lang_nds": "Nіžnieniamieckaja",
+  "add_new_folder": "Dadać novuju tečku",
+  "sort_by": "Sartavać pa",
+  "shared_string_show_on_map": "Pakazać na mapie",
+  "shared_string_download": "Ściahnuć",
+  "shared_string_rename": "Pieranazvać",
+  "shared_string_delete": "Vydalić"
 }

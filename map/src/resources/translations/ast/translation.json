@@ -291,5 +291,16 @@
   "lang_new": "Newar / Nepal Bhasa",
   "lang_nds": "Low German",
   "lang_nap": "Napolitanu",
-  "lang_min": "Minangkabau"
+  "lang_min": "Minangkabau",
+  "add_new_folder": "Amestar una carpeta",
+  "sort_by": "Sort by",
+  "shared_string_show_on_map": "Amosar nel mapa",
+  "shared_string_download": "Baxar",
+  "shared_string_rename": "Renomar",
+  "shared_string_delete": "Desaniciar",
+  "sort_last_modified": "Última modificación",
+  "sort_name_ascending": "Nome: A – Z",
+  "sort_name_descending": "Nome: Z – A",
+  "user_login": "Login",
+  "login_account": "Cuenta"
 }

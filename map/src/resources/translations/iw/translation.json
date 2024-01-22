@@ -331,5 +331,22 @@
   "lang_new": "נווארית / נפאל בהאסה",
   "lang_nds": "גרמנית תחתית",
   "lang_nap": "נפוליטנית",
-  "lang_min": "מיננגקבאו"
+  "lang_min": "מיננגקבאו",
+  "add_new_folder": "הוספת תיקייה חדשה",
+  "import_tracks": "ייבוא מסלולים",
+  "sort_by": "סידור לפי",
+  "shared_string_show_on_map": "הצגה במפה",
+  "shared_string_download": "הורדה",
+  "shared_string_rename": "שינוי שם",
+  "shared_string_delete": "מחיקה",
+  "sort_last_modified": "שינוי אחרון",
+  "sort_name_ascending": "שם: א – ת",
+  "sort_name_descending": "שם: ת – א",
+  "sort_distance_descending": "העדפת מרחק ארוך קודם",
+  "sort_distance_ascending": "העדפת מרחק קצר קודם",
+  "sort_date_ascending": "העדפת תאריך חדש יותר",
+  "sort_date_descending": "העדפת תאריך ישן יותר",
+  "shared_string_nearest": "הקרוב ביותר",
+  "user_login": "שם כניסה",
+  "login_account": "חשבון"
 }

@@ -93,5 +93,10 @@
   "lang_ru": "ரஷியன்",
   "lang_zh": "சீன",
   "lang_en_gb": "ஆங்கிலம் (யுனைட்டட் கிங்டம்)",
-  "lang_hu_formal": "ஹங்கேரிய (முறையான)"
+  "lang_hu_formal": "ஹங்கேரிய (முறையான)",
+  "sort_by": "வரிசைப்படுத்து",
+  "shared_string_show_on_map": "வரைபடாத்தில் காட்டு",
+  "shared_string_download": "பதிவிறக்கு",
+  "shared_string_rename": "மறுபெயரிடு",
+  "shared_string_delete": "அழி"
 }

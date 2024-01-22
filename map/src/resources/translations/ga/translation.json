@@ -180,5 +180,19 @@
   "lang_pnb": "Puinseáibis",
   "lang_zhminnan": "Minis Theas",
   "lang_nap": "Napóilis",
-  "lang_min": "Míneangcababhais"
+  "lang_min": "Míneangcababhais",
+  "import_tracks": "Iompórtáil conairí",
+  "sort_by": "Sórtáil de réir",
+  "shared_string_download": "Íoslódáil",
+  "shared_string_rename": "Athainmnigh",
+  "shared_string_delete": "Scrios",
+  "sort_last_modified": "An mionathrú deireanach",
+  "sort_distance_descending": "Achar is faide ar dtús",
+  "sort_distance_ascending": "Achar is lú ar dtús",
+  "shared_string_visible_on_map": "Le feiceáil ar an léarscáil",
+  "sort_date_ascending": "Dáta is nuaí ar dtús",
+  "sort_date_descending": "Dáta is sine ar dtús",
+  "shared_string_nearest": "Is gaire",
+  "user_login": "Lógáil isteach",
+  "login_account": "Cuntas"
 }

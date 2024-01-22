@@ -248,5 +248,12 @@
   "lang_new": "Nevarų/Nepalo bhasų",
   "lang_nds": "Vokiečių žemaičių",
   "lang_nap": "Neapoliečių",
-  "lang_min": "Minankabų"
+  "lang_min": "Minankabų",
+  "add_new_folder": "Pridėti naują aplanką",
+  "sort_by": "Rūšiuoti pagal",
+  "shared_string_show_on_map": "Rodyti žemėlapyje",
+  "shared_string_download": "Parsiųst",
+  "shared_string_rename": "Pakeisti pavadinimą",
+  "shared_string_delete": "Ištrinti",
+  "user_login": "Prisijungti"
 }

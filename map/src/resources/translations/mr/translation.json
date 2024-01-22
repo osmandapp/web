@@ -16,5 +16,9 @@
   "lang_th": "थाइ",
   "lang_te": "तेलगु",
   "lang_ta": "तामिळ",
-  "lang_pnb": "पंजाबी"
+  "lang_pnb": "पंजाबी",
+  "shared_string_show_on_map": "नकाशावर दाखवा",
+  "shared_string_download": "डाउनलोड",
+  "shared_string_rename": "नाव बदला",
+  "shared_string_delete": "काढून टाका"
 }

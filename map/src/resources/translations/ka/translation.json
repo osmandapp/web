@@ -284,5 +284,16 @@
   "lang_new": "ნევარული / ნეპალური ბასა",
   "lang_nds": "ქვედა გერმანული",
   "lang_nap": "ნეაპოლური",
-  "lang_min": "მინანგკაბაური"
+  "lang_min": "მინანგკაბაური",
+  "add_new_folder": "ახალი დასტის დამატება",
+  "sort_by": "დალაგება",
+  "shared_string_show_on_map": "რუკაზე ჩვენება",
+  "shared_string_download": "ჩამოტვირთვა",
+  "shared_string_rename": "სახელის გადარქმევა",
+  "shared_string_delete": "წაშლა",
+  "sort_last_modified": "ბოლო ცვლილება",
+  "sort_name_ascending": "სახელი: ა-ჰ",
+  "sort_name_descending": "სახელი: ჰ-ა",
+  "user_login": "შესვლა",
+  "login_account": "ანგარიში"
 }

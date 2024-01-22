@@ -27,5 +27,9 @@
   "lang_te": "ತೆಲುಗು",
   "lang_ta": "ತಮಿಳು",
   "lang_es_ar": "ಅರ್ಜಿಂಟಿನೆಯಾದ ಸ್ಪೇನಿಷ್",
-  "lang_new": "ನೇಪಾಳಿ"
+  "lang_new": "ನೇಪಾಳಿ",
+  "shared_string_show_on_map": "ನಕ್ಷೆಯಲ್ಲಿ ತೋರಿಸು",
+  "shared_string_download": "ನಕಲಿಳಿಸು",
+  "shared_string_rename": "ಮರುಹೆಸರಿಸಿ",
+  "shared_string_delete": "ಅಳಿಸಿ"
 }

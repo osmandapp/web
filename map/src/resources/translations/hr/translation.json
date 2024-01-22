@@ -122,5 +122,10 @@
   "lang_zh": "Kineski",
   "lang_pms": "Pijemonte",
   "lang_es_ar": "Argentinsko španjolski",
-  "lang_new": ""
+  "lang_new": "",
+  "add_new_folder": "Nova mapa",
+  "shared_string_show_on_map": "Prikaži na karti",
+  "shared_string_download": "Preuzimanje",
+  "shared_string_rename": "Preimenuj",
+  "shared_string_delete": "Izbriši"
 }

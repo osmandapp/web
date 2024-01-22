@@ -341,5 +341,18 @@
   "lang_new": "Newar / Nepal Bhasa",
   "lang_nds": "Bassu-tedescu",
   "lang_nap": "Napoletanu",
-  "lang_min": "Minangkabau"
+  "lang_min": "Minangkabau",
+  "add_new_folder": "Annanghe una cartella noa",
+  "import_tracks": "Importa rastas",
+  "sort_by": "Òrdina pro",
+  "shared_string_show_on_map": "Ammustra in sa mapa",
+  "shared_string_duplicate": "Dùplica",
+  "shared_string_download": "Iscàrriga",
+  "shared_string_rename": "Càmbia su nùmene",
+  "shared_string_delete": "Iscantzella",
+  "sort_last_modified": "Ùrtima modìfica",
+  "sort_name_ascending": "Nùmene: A – Z",
+  "sort_name_descending": "Nùmene: Z – A",
+  "user_login": "Identificadore",
+  "login_account": "Contu"
 }

@@ -209,5 +209,22 @@
   "lang_war": "와라이어",
   "lang_new": "Newar / 네팔 Bhasa",
   "lang_nap": "네폴리탄어",
-  "lang_min": "미낭카바우어 인도네시아방언"
+  "lang_min": "미낭카바우어 인도네시아방언",
+  "add_new_folder": "새 폴더 추가",
+  "import_tracks": "트랙 가져오기",
+  "sort_by": "‎정렬 기준‎",
+  "shared_string_show_on_map": "지도에 표시",
+  "shared_string_duplicate": "복제",
+  "shared_string_download": "다운로드",
+  "shared_string_rename": "이름 바꾸기",
+  "shared_string_delete": "삭제",
+  "sort_last_modified": "최종 수정됨",
+  "sort_distance_descending": "최장 거리 먼저",
+  "sort_distance_ascending": "최단 거리 먼저",
+  "shared_string_visible_on_map": "지도에서 표시",
+  "sort_date_ascending": "최신 날짜 먼저",
+  "sort_date_descending": "가장 오래된 날짜 먼저",
+  "shared_string_nearest": "가장 가까운",
+  "user_login": "로그인",
+  "login_account": "계정"
 }

@@ -326,5 +326,19 @@
   "lang_new": "Newar / Nepal Bhasa",
   "lang_nds": "Baix alemany",
   "lang_nap": "Napolità",
-  "lang_min": "Minangkabau"
+  "lang_min": "Minangkabau",
+  "add_new_folder": "Afegeix a una carpeta nova",
+  "import_tracks": "Importa les traces",
+  "sort_by": "Ordena per",
+  "shared_string_show_on_map": "Mostra al mapa",
+  "shared_string_duplicate": "Duplicat",
+  "shared_string_download": "Baixa",
+  "shared_string_rename": "Canvia el nom",
+  "shared_string_delete": "Suprimeix",
+  "sort_last_modified": "Darrera modificació",
+  "sort_name_ascending": "Nom: A - Z",
+  "sort_name_descending": "Nom: Z - A",
+  "shared_string_nearest": "Més proper",
+  "user_login": "Iniciar sessió",
+  "login_account": "Compte"
 }

@@ -100,5 +100,13 @@
   "lang_en_gb": "ᱤᱸᱜᱞᱤᱥ (ᱭᱩᱱᱟᱭᱴᱮᱰ ᱠᱤᱝᱰᱚᱢ)",
   "lang_es_ar": "ᱥᱯᱮᱱᱤᱥᱽ (ᱚᱨᱡᱮᱱᱴᱤᱱᱟ)",
   "lang_es_us": "ᱥᱯᱮᱱᱤᱥᱽ (ᱚᱢᱮᱨᱤᱠᱟ)",
-  "lang_new": "ᱱᱮᱣᱟᱲ / ᱱᱮᱯᱟᱞ ᱵᱷᱟᱥᱟ"
+  "lang_new": "ᱱᱮᱣᱟᱲ / ᱱᱮᱯᱟᱞ ᱵᱷᱟᱥᱟ",
+  "add_new_folder": "ᱱᱟᱶᱟ ᱯᱚᱴᱚᱢ ᱥᱮᱞᱮᱫᱽ ᱢᱮ",
+  "import_tracks": "ᱴᱮᱨᱮᱠ ᱠᱚ ᱟᱹᱜᱩᱭ ᱢᱮ",
+  "shared_string_show_on_map": "ᱱᱚᱠᱥᱟ ᱨᱮ ᱩᱫᱩᱜᱽ ᱢᱮ",
+  "shared_string_delete": "ᱢᱮᱴᱟᱣ ᱢᱮ",
+  "sort_name_ascending": "ᱧᱩᱛᱩᱢ: A – Z",
+  "sort_name_descending": "ᱧᱩᱛᱩᱢ: Z – A",
+  "user_login": "ᱵᱚᱞᱚᱱ ᱢᱮ",
+  "login_account": "ᱠᱷᱟᱛᱟ"
 }

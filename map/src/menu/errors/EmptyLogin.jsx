@@ -2,8 +2,10 @@ import { Box, Button, Icon, ListItemText } from '@mui/material';
 import styles from './errors.module.css';
 import { ReactComponent as UserAccountIcon } from '../../assets/icons/ic_action_user_account.svg';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 export default function EmptyLogin() {
     const navigate = useNavigate();
+    const { t } = useTranslation();
     const openLogin = () => {
         navigate('/map/loginForm' + window.location.search + window.location.hash);
     };
@@ -22,7 +24,7 @@ export default function EmptyLogin() {
                 </ListItemText>
             </Box>
             <Button className={styles.button} component="span" onClick={openLogin}>
-                Login
+                {t('user_login')}
             </Button>
         </Box>
     );

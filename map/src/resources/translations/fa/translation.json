@@ -296,5 +296,16 @@
   "lang_new": "نپال بهاسایی",
   "lang_nds": "آلمانی فرودین",
   "lang_nap": "ناپلی",
-  "lang_min": "مینانگ‌کابائو"
+  "lang_min": "مینانگ‌کابائو",
+  "add_new_folder": "پوشهٔ جدید",
+  "sort_by": "ترتیب بر اساس",
+  "shared_string_show_on_map": "روی نقشه نشان بده",
+  "shared_string_download": "بارگیری",
+  "shared_string_rename": "تغییر نام",
+  "shared_string_delete": "حذف",
+  "sort_last_modified": "آخرین تغییریافته",
+  "sort_name_ascending": "نام: الف - ی",
+  "sort_name_descending": "نام: ی - الف",
+  "user_login": "ورود",
+  "login_account": "حساب"
 }

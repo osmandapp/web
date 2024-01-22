@@ -333,5 +333,18 @@
   "lang_new": "Njuar / Nepal Basa",
   "lang_nds": "Nizok germanski",
   "lang_nap": "Napoltanski",
-  "lang_min": "Minangkabau"
+  "lang_min": "Minangkabau",
+  "add_new_folder": "Dodadi nova papka",
+  "import_tracks": "Vnesete gi zapisite",
+  "sort_by": "Sotriraj po",
+  "shared_string_show_on_map": "Prikazi na karta",
+  "shared_string_duplicate": "Duplikat",
+  "shared_string_download": "Prevzemi",
+  "shared_string_rename": "Preimenuvaj",
+  "shared_string_delete": "Izbrisi",
+  "sort_last_modified": "Posledno modificiranje",
+  "sort_name_ascending": "Ime od A do Z",
+  "sort_name_descending": "Ime od Z do A",
+  "user_login": "Logiraj Se",
+  "login_account": "Pretplatnik, smetka"
 }

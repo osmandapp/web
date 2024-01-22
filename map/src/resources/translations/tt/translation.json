@@ -8,5 +8,10 @@
   "lang_ba": "Башкир",
   "lang_an": "Арагон",
   "lang_tt": "Татар",
-  "lang_yo": "Йоруба"
+  "lang_yo": "Йоруба",
+  "sort_last_modified": "Соңгы үзгәртелде",
+  "sort_name_ascending": "Исем: А - Я",
+  "sort_name_descending": "Исем: Я - A",
+  "user_login": "Логин",
+  "login_account": "Хисап язмасы"
 }

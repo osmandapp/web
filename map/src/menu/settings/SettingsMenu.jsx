@@ -39,7 +39,13 @@ export default function SettingsMenu() {
     useEffect(() => {
         const handleLanguageChange = async (lng) => {
             const translation = await import(`../../resources/translations/${lng}/translation.json`);
-            i18n.addResourceBundle(lng, 'translation', translation.default, true, true);
+            if (translation) {
+                i18n.addResourceBundle(lng, 'translation', translation.default, true, true);
+            }
+            const webTranslation = await import(`../../resources/translations/${lng}/web-translation.json`);
+            if (webTranslation) {
+                i18n.addResourceBundle(lng, 'web', webTranslation.default, true, true);
+            }
             localStorage.setItem('i18nextLng', lng);
             setCurrentLang(t(`lang_${lng}`));
         };

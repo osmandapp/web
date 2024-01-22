@@ -328,5 +328,17 @@
   "lang_new": "Nevarski",
   "lang_nds": "Niskonemački",
   "lang_nap": "Napolitanski",
-  "lang_min": "Minangkabajski"
+  "lang_min": "Minangkabajski",
+  "add_new_folder": "Dodaj novu fasciklu",
+  "import_tracks": "Uvezi putanje",
+  "sort_by": "Rasporedi po",
+  "shared_string_show_on_map": "Prikaži na karti",
+  "shared_string_download": "Preuzmi",
+  "shared_string_rename": "Preimenuj",
+  "shared_string_delete": "Izbriši",
+  "sort_last_modified": "Poslednja izmena",
+  "sort_name_ascending": "Ime: A - Z",
+  "sort_name_descending": "Ime: Z - A",
+  "user_login": "Prijava",
+  "login_account": "Nalog"
 }

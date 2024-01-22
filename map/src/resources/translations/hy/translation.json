@@ -195,5 +195,11 @@
   "lang_new": "Նևար/ Նեպալ Բհասա",
   "lang_nds": "Ցածր Գերմաներեն",
   "lang_nap": "Նեապոլիտանական",
-  "lang_min": "Մինանգկաբաու"
+  "lang_min": "Մինանգկաբաու",
+  "add_new_folder": "Ավելացնել նոր թղթապանակ",
+  "sort_by": "Դասավորել ըստ",
+  "shared_string_show_on_map": "Ցույց տալ քարտեզի վրա",
+  "shared_string_download": "Ներբեռնել",
+  "shared_string_rename": "Վերանվանել",
+  "shared_string_delete": "Ջնջել"
 }

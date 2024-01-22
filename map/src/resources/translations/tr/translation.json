@@ -338,5 +338,18 @@
   "lang_new": "Nevar / Nepal Bhasa",
   "lang_nds": "Aşağı Almanca",
   "lang_nap": "Napolice",
-  "lang_min": "Minangkabauca"
+  "lang_min": "Minangkabauca",
+  "add_new_folder": "Yeni klasör ekle",
+  "import_tracks": "Yolları içe aktar",
+  "sort_by": "Sırala",
+  "shared_string_show_on_map": "Haritada göster",
+  "shared_string_duplicate": "Çoğalt",
+  "shared_string_download": "İndir",
+  "shared_string_rename": "Yeniden adlandır",
+  "shared_string_delete": "Sil",
+  "sort_last_modified": "Son değiştirme",
+  "sort_name_ascending": "Ad: A – Z",
+  "sort_name_descending": "Ad: Z – A",
+  "user_login": "Giriş bilgisi",
+  "login_account": "Hesap"
 }

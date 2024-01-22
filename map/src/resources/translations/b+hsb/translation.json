@@ -166,5 +166,14 @@
   "lang_hu_formal": "madźaršćina (formalna)",
   "lang_es_us": "španišćina (Amerika)",
   "lang_new": "Newar / Nepal Bhasa",
-  "lang_nds": "nižoněmsce"
+  "lang_nds": "nižoněmsce",
+  "add_new_folder": "Nowy rjadowak dodać",
+  "sort_by": "Sortěrować po",
+  "shared_string_show_on_map": "Na karće pokazać",
+  "shared_string_download": "Sćahnyć",
+  "shared_string_rename": "Přemjenować",
+  "shared_string_delete": "Wotstronić",
+  "sort_last_modified": "Poslednja změna",
+  "sort_name_ascending": "Mjeno: A – Z",
+  "sort_name_descending": "Mjeno: Z – A"
 }

@@ -176,5 +176,17 @@
   "lang_es_ar": "İspanca (Argentina)",
   "lang_hu_formal": "Macarca (rəsmi)",
   "lang_es_us": "İspanca (Amerika)",
-  "lang_nds": "Aşağı Almanca"
+  "lang_nds": "Aşağı Almanca",
+  "add_new_folder": "Yeni qovluq əlavə et",
+  "sort_by": "Sırala",
+  "shared_string_show_on_map": "Xəritədə göstər",
+  "shared_string_duplicate": "Surətini çıxar",
+  "shared_string_download": "Endir",
+  "shared_string_rename": "Yenidən adlandır",
+  "shared_string_delete": "Sil",
+  "sort_last_modified": "Son dəyişiklik",
+  "sort_name_ascending": "Ad: A – Z",
+  "sort_name_descending": "Ad: Z – A",
+  "user_login": "İstifadəçi adı",
+  "login_account": "Hesab"
 }
