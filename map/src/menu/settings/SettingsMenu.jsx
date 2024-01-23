@@ -21,6 +21,15 @@ import { ReactComponent as DisplayLanguageIcon } from '../../assets/icons/ic_act
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import { useTranslation } from 'react-i18next';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
+import * as locales from 'date-fns/locale';
+import { format } from 'date-fns';
+import i18n from '../../i18n';
+
+export function getLocalizedTimeUpdate(time) {
+    const locale = locales[i18n.language] || locales.enUS;
+    const currentDate = new Date(time);
+    return format(currentDate, 'MMM d', { locale });
+}
 
 export default function SettingsMenu() {
     const ctx = useContext(AppContext);

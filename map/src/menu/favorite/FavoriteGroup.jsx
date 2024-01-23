@@ -11,6 +11,7 @@ import { ReactComponent as FolderHiddenIcon } from '../../assets/icons/ic_action
 import FavoriteGroupActions from '../actions/FavoriteGroupActions';
 import MenuItemsTitle from '../components/MenuItemsTitle';
 import { useTranslation } from 'react-i18next';
+import { getLocalizedTimeUpdate } from '../settings/SettingsMenu';
 
 export default function FavoriteGroup({ index, group }) {
     const ctx = useContext(AppContext);
@@ -32,13 +33,6 @@ export default function FavoriteGroup({ index, group }) {
         return FavoritesManager.getGroupSize(group) > 0
             ? `${FavoritesManager.getGroupSize(group)} ${t('shared_string_gpx_points').toLowerCase()}`
             : 'empty';
-    }
-
-    function getLastModificationDate() {
-        const currentDate = new Date(group.clienttimems);
-        const month = currentDate.toLocaleString('default', { month: 'short' });
-        const day = currentDate.getDate();
-        return `${month} ${day}`;
     }
 
     return (
@@ -66,7 +60,7 @@ export default function FavoriteGroup({ index, group }) {
                 <ListItemText>
                     <MenuItemsTitle name={group.name} maxLines={2} />
                     <Typography variant="body2" className={styles.groupInfo} noWrap>
-                        {`${getLastModificationDate()}, ${getSize()}`}
+                        {`${getLocalizedTimeUpdate(group.clienttimems)}, ${getSize()}`}
                     </Typography>
                 </ListItemText>
                 <IconButton
