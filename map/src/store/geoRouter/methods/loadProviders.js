@@ -1,7 +1,7 @@
 import { copyObj } from '../../../util/Utils';
 import { apiGet } from '../../../util/HttpApi';
 import TracksManager from '../../../manager/track/TracksManager';
-import onlineRoutingProviders from '../../../generated/online-routing-providers.json';
+import onlineRoutingProviders from '../../../resources/generated/online-routing-providers.json';
 
 const PROFILE_LINE = TracksManager.PROFILE_LINE;
 const PROFILE_LINE_NAME = PROFILE_LINE[0].toUpperCase() + PROFILE_LINE.slice(1);

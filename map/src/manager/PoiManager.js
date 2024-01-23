@@ -1,5 +1,5 @@
 import { apiGet } from '../util/HttpApi';
-import icons from '../generated/poiicons.json';
+import icons from '../resources/generated/poiicons.json';
 import _ from 'lodash';
 
 const POI_CATEGORIES = 'poiCategories';

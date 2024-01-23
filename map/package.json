@@ -59,7 +59,7 @@
         "web-vitals": "^2.1.4"
     },
     "scripts": {
-        "start": "react-scripts start",
+        "start": "yarn generate-resources && react-scripts start",
         "start:mobile": "HOST=0.0.0.0 react-scripts start",
         "start:local": "USE_LOCAL_API=yes react-scripts start",
         "start:fallback": "USE_MAIN_API=yes react-scripts start",

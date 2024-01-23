@@ -1,19 +1,20 @@
 'use strict';
 
-import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { readdirSync, readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
+import { dirname } from 'patch-package/dist/path.js';
 
 const ALLOW_STALE_FILES = true; // do not fail on invalid fresh json but valid old file (default)
 
 // 1. OSRM routing providers (file copy + validate)
 generate({
-    file: 'src/generated/online-routing-providers.json',
+    file: 'src/resources/generated/online-routing-providers.json',
     json: cat('../main/static/online-routing-providers.json'),
     validate: (json) => json.providers[0].type === 'osrm',
 });
 
 // 2. POI icons array based on list of svg-files
 generate({
-    file: 'src/generated/poiicons.json',
+    file: 'src/resources/generated/poiicons.json',
     json: ls('public/images/poi-icons-svg'),
     validate: (json) => json.some((x) => x === 'mx_service.svg'),
 });
@@ -34,6 +35,10 @@ function generate({ file, json, filter, validate }) {
                 throw new Error(`FRESH-JSON invalid ('${file}')`);
             }
             const pretty = prettyJSON(json);
+            const directory = dirname(file);
+            if (!existsSync(directory)) {
+                mkdirSync(directory, { recursive: true });
+            }
             writeFileSync(file, pretty, { encoding: 'utf8' });
             console.log(`OK. File '${file}' generated successfully (${pretty.length} bytes)`);
             return true;
