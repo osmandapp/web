@@ -68,8 +68,8 @@
         "test": "jest",
         "eject": "react-scripts eject",
         "postinstall": "patch-package",
-        "generate-resources": "node scripts/generate-resources.mjs",
-        "lint": "eslint src/**/*.js src/**/*.jsx src/**/*.mjs scripts/*.mjs",
+        "generate-resources": "node src/resources/scripts/generate-resources.mjs",
+        "lint": "eslint src/**/*.js src/**/*.jsx src/**/*.mjs src/resources/scripts/*.mjs",
         "format": "prettier --write './**/*.{js,jsx,mjs,ts,tsx,css}' --config ./.prettierrc"
     },
     "browserslist": {
