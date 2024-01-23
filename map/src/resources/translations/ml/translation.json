@@ -221,5 +221,22 @@
   "shared_string_show_on_map": "ഭൂപടത്തില്‍ കാണിക്കുക",
   "shared_string_download": "\" ഡൗണ്‍ലോഡ്\"",
   "shared_string_rename": "പേരു് മാറ്റുക",
-  "shared_string_delete": "നീക്കം ചെയ്യുക"
+  "shared_string_delete": "നീക്കം ചെയ്യുക",
+  "shared_string_cancel": "റദ്ദാക്കുക",
+  "shared_string_apply": "പ്രയോഗിക്കുക",
+  "shared_string_edit": "തിരുത്തുക(എഡിറ്റ്)",
+  "shared_string_favorites": "ഇഷ്ടമുളളവ",
+  "shared_string_settings": "സജ്ജീകരണങ്ങള്‍",
+  "general_settings_2": "പൊതുവായ സജ്ജീകരണങ്ങള്‍",
+  "preferred_locale": "ഡിസ്പ്ളേ ചെയ്യുന്ന ഭാക്ഷ (Display language)",
+  "shared_string_show": "കാണിക്കുക",
+  "shared_string_appearance": "ദൃശ്യരൂപം",
+  "map_widget_renderer": "ഭൂപടത്തിന്റെ ശൈലി",
+  "rendering_category_hide": "മറയ്ക്കുക",
+  "rendering_category_routes": "റൂട്ടുകള്‍",
+  "rendering_category_details": "വിശദവിവരങ്ങള്‍",
+  "rendering_category_transport": "ഗതാഗത സംവിധാനം",
+  "rendering_category_others": "മറ്റു ഭൂപട സവിശേഷതകള്‍",
+  "shared_string_others": "\"മറ്റുള്ളവ \"",
+  "shared_string_gpx_points": "പോയിന്റുകള്‍"
 }

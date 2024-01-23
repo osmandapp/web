@@ -31,5 +31,16 @@
   "shared_string_show_on_map": "ನಕ್ಷೆಯಲ್ಲಿ ತೋರಿಸು",
   "shared_string_download": "ನಕಲಿಳಿಸು",
   "shared_string_rename": "ಮರುಹೆಸರಿಸಿ",
-  "shared_string_delete": "ಅಳಿಸಿ"
+  "shared_string_delete": "ಅಳಿಸಿ",
+  "shared_string_cancel": "ರದ್ದುಮಾಡು",
+  "shared_string_edit": "ಸಂಪಾದಿಸು",
+  "shared_string_favorites": "ಇಷ್ಟವಾದವುಗಳು",
+  "shared_string_settings": "ಉಪಕರಣಗಳು",
+  "general_settings_2": "ಸಾಮಾನ್ಯ ಉಪಕರಣೆಗಳು",
+  "shared_string_show": "ತೋರಿಸು",
+  "rendering_category_hide": "ಅಡಗಿಸಿ",
+  "rendering_category_routes": "ಮಾರ್ಗಗಳು",
+  "rendering_category_details": "ವಿವರಣೆಗಳು",
+  "rendering_category_transport": "ಸಾರಿಗೆ",
+  "rendering_category_others": "ಇತರೆ ನಕ್ಷೆ ಗುಣವಿಶೇಷಗಳು"
 }

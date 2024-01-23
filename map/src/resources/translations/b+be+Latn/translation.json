@@ -223,5 +223,22 @@
   "shared_string_show_on_map": "Pakazać na mapie",
   "shared_string_download": "Ściahnuć",
   "shared_string_rename": "Pieranazvać",
-  "shared_string_delete": "Vydalić"
+  "shared_string_delete": "Vydalić",
+  "shared_string_cancel": "Skasavać",
+  "shared_string_apply": "Užyć",
+  "shared_string_edit": "Pravіć",
+  "shared_string_favorites": "Ulubionyja",
+  "shared_string_settings": "Nałady",
+  "general_settings_2": "Ahulnyja nałady",
+  "preferred_locale": "Mova іnterfejsu",
+  "shared_string_show": "Pakazać",
+  "shared_string_appearance": "Vyhlad",
+  "map_widget_renderer": "Styl mapy",
+  "rendering_category_hide": "Schavać",
+  "rendering_category_routes": "Maršruty",
+  "rendering_category_details": "Padrabiaznaścі",
+  "rendering_category_transport": "Transpart",
+  "rendering_category_others": "Іnšyja atrybuty mapy",
+  "shared_string_others": "Іnšaje",
+  "shared_string_gpx_points": "Punkty"
 }

@@ -37,18 +37,32 @@ export default function SettingsMenu() {
     }
 
     useEffect(() => {
-        const handleLanguageChange = async (lng) => {
-            const translation = await import(`../../resources/translations/${lng}/translation.json`);
-            if (translation) {
-                i18n.addResourceBundle(lng, 'translation', translation.default, true, true);
+        async function handleLanguageChange(lng) {
+            try {
+                const translation = await import(`../../resources/translations/${lng}/translation.json`);
+                if (translation) {
+                    i18n.addResourceBundle(lng, 'translation', translation.default, true, true);
+                }
+            } catch (error) {
+                if (process.env.NODE_ENV === 'development') {
+                    console.log(`Could not load translation.json for language: ${lng}`);
+                }
             }
-            const webTranslation = await import(`../../resources/translations/${lng}/web-translation.json`);
-            if (webTranslation) {
-                i18n.addResourceBundle(lng, 'web', webTranslation.default, true, true);
+
+            try {
+                const webTranslation = await import(`../../resources/translations/${lng}/web-translation.json`);
+                if (webTranslation) {
+                    i18n.addResourceBundle(lng, 'web', webTranslation.default, true, true);
+                }
+            } catch (error) {
+                if (process.env.NODE_ENV === 'development') {
+                    console.log(`Could not load web-translation.json for language: ${lng}`);
+                }
             }
+
             localStorage.setItem('i18nextLng', lng);
             setCurrentLang(t(`lang_${lng}`));
-        };
+        }
 
         i18n.on('languageChanged', handleLanguageChange);
         handleLanguageChange(i18n.language).then();
@@ -110,13 +124,13 @@ export default function SettingsMenu() {
                         <CloseIcon />
                     </IconButton>
                     <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
-                        Settings
+                        {t('shared_string_settings')}
                     </Typography>
                 </Toolbar>
             </AppBar>
             <MenuItem className={styles.item}>
                 <Typography className={styles.title} noWrap>
-                    General settings
+                    {t('general_settings_2')}
                 </Typography>
             </MenuItem>
             <MenuItem divider className={styles.item} onClick={selectLanguage}>
@@ -132,7 +146,7 @@ export default function SettingsMenu() {
                         }}
                     >
                         <Typography variant="inherit" noWrap>
-                            Display language
+                            {t('preferred_locale')}
                         </Typography>
                         <Typography ref={anchorEl} variant="body2" className={styles.lang} noWrap>
                             {currentLang}

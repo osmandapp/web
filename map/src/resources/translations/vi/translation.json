@@ -13,5 +13,11 @@
   "shared_string_show_on_map": "Hiện trên bản đồ",
   "shared_string_download": "Tải xuống",
   "shared_string_rename": "Đổi tên",
-  "shared_string_delete": "Xóa"
+  "shared_string_delete": "Xóa",
+  "shared_string_cancel": "Hủy",
+  "shared_string_apply": "Áp dụng",
+  "shared_string_favorites": "Ưa thích",
+  "shared_string_settings": "Thiết lập",
+  "preferred_locale": "Ngôn ngữ",
+  "shared_string_others": "Khác"
 }

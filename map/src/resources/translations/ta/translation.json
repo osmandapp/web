@@ -98,5 +98,18 @@
   "shared_string_show_on_map": "வரைபடாத்தில் காட்டு",
   "shared_string_download": "பதிவிறக்கு",
   "shared_string_rename": "மறுபெயரிடு",
-  "shared_string_delete": "அழி"
+  "shared_string_delete": "அழி",
+  "shared_string_cancel": "மறுக்கிறேன்\n\\n",
+  "shared_string_apply": "விண்ணப்பிக்கவும்",
+  "shared_string_edit": "தொகுப்பு",
+  "shared_string_favorites": "பிடித்தவைகள்",
+  "shared_string_settings": "அமைப்புகள்",
+  "general_settings_2": "பொதுவான அமைப்புகள்",
+  "preferred_locale": "காட்சி மொழி",
+  "shared_string_show": "காட்டு",
+  "rendering_category_hide": "மறை",
+  "rendering_category_routes": "வழித்தடங்கள்",
+  "rendering_category_details": "விவரங்கள்",
+  "rendering_category_transport": "போக்குவரத்து",
+  "rendering_category_others": "மற்ற வரைபடம் பண்புக்கூறுகள்"
 }

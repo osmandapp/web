@@ -134,7 +134,7 @@ export default function MainMenu({
             id: 'se-show-menu-poi',
         },
         {
-            name: 'Settings',
+            name: t('shared_string_settings'),
             icon: SettingsIcon,
             component: <SettingsMenu />,
             type: OBJECT_GLOBAL_SETTINGS,

@@ -1,0 +1,12 @@
+{
+  "Transport stops": "rendering_attr_transportStops_name",
+  "Show bus routes": "rendering_attr_busRoutes_name",
+  "Show trolleybus routes": "rendering_attr_trolleybusRoutes_name",
+  "Show share taxi routes": "rendering_attr_shareTaxiRoutes_name",
+  "Show tram routes": "rendering_attr_tramRoutes_name",
+  "Show train routes": "rendering_attr_trainLightrailRoutes_name",
+  "Show light rail routes": "rendering_attr_showLightRailRoutes_name",
+  "Show monorail routes": "rendering_attr_showMonorailRoutes_name",
+  "Show funicular routes": "rendering_attr_showFunicularRoutes_name",
+  "Subway mode": "rendering_attr_subwayMode_name"
+}

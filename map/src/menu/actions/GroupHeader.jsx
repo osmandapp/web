@@ -83,7 +83,7 @@ export default function GroupHeader({
         } else if (favoriteGroup) {
             return (
                 <Typography id="se-fav-group-name" component="div" className={styles.title}>
-                    {favoriteGroup === DEFAULT_FAV_GROUP_NAME ? t('favourites') : favoriteGroup?.name}
+                    {favoriteGroup === DEFAULT_FAV_GROUP_NAME ? t('shared_string_favorites') : favoriteGroup?.name}
                 </Typography>
             );
         }
@@ -175,7 +175,12 @@ export default function GroupHeader({
                         </Tooltip>
                     )}
                     {favoriteGroup === DEFAULT_FAV_GROUP_NAME && (
-                        <Tooltip key={'import_fav_group'} title="Import favorite group" arrow placement="bottom-end">
+                        <Tooltip
+                            key={'import_fav_group'}
+                            title={t('web:import_favorite_groups')}
+                            arrow
+                            placement="bottom-end"
+                        >
                             <span>
                                 <FavoriteGroupUploader>
                                     <IconButton

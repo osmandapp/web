@@ -197,5 +197,21 @@
   "sort_name_ascending": "Nom: A - Z",
   "sort_name_descending": "Nom: Z - A",
   "user_login": "Identificant",
-  "login_account": "Còmpte"
+  "login_account": "Còmpte",
+  "shared_string_cancel": "Anullar",
+  "shared_string_apply": "Aplicar",
+  "shared_string_edit": "Editar",
+  "shared_string_favorites": "Preferéncias",
+  "shared_string_settings": "Configuracion",
+  "general_settings_2": "Paramètres generaus",
+  "reset_to_default": "Restablir lei valors predefinidas",
+  "map_widget_renderer": "Representacion de la mapa",
+  "rendering_category_hide": "Amagar",
+  "rendering_category_routes": "Percors",
+  "rendering_category_details": "Detalhs",
+  "rendering_category_transport": "Transpòrt collectiu",
+  "rendering_category_others": "Autreis atributs de la mapa",
+  "shared_string_others": "Autres",
+  "shared_string_gpx_points": "Ponchs",
+  "shared_string_gpx_files": "Traças"
 }

@@ -127,5 +127,21 @@
   "shared_string_show_on_map": "Prikaži na karti",
   "shared_string_download": "Preuzimanje",
   "shared_string_rename": "Preimenuj",
-  "shared_string_delete": "Izbriši"
+  "shared_string_delete": "Izbriši",
+  "shared_string_cancel": "Odustani",
+  "shared_string_apply": "Primijeni",
+  "shared_string_edit": "Uredi",
+  "shared_string_favorites": "Favoriti",
+  "shared_string_settings": "Postavke",
+  "general_settings_2": "Opće postavke",
+  "preferred_locale": "Prikaz jezika",
+  "shared_string_show": "Prikaži",
+  "shared_string_appearance": "Izgled",
+  "map_widget_renderer": "Stil karte",
+  "rendering_category_hide": "Sakrij",
+  "rendering_category_routes": "Rute",
+  "rendering_category_details": "Detalji",
+  "rendering_category_transport": "Prijevoz",
+  "rendering_category_others": "Ostale značajke karte",
+  "shared_string_gpx_points": "Točke"
 }

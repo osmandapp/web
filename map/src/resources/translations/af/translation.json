@@ -31,5 +31,11 @@
   "shared_string_show_on_map": "Wys op kaart",
   "shared_string_download": "Aflaai",
   "shared_string_rename": "Herbenoem",
-  "shared_string_delete": "verwyder"
+  "shared_string_delete": "verwyder",
+  "shared_string_cancel": "Kanseleer",
+  "shared_string_apply": "toepas",
+  "shared_string_favorites": "Gunstelinge",
+  "shared_string_settings": "Stellings",
+  "preferred_locale": "Vertoon taal",
+  "map_widget_renderer": "Kaartvoorstelling-styl"
 }

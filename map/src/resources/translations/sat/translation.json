@@ -108,5 +108,19 @@
   "sort_name_ascending": "ᱧᱩᱛᱩᱢ: A – Z",
   "sort_name_descending": "ᱧᱩᱛᱩᱢ: Z – A",
   "user_login": "ᱵᱚᱞᱚᱱ ᱢᱮ",
-  "login_account": "ᱠᱷᱟᱛᱟ"
+  "login_account": "ᱠᱷᱟᱛᱟ",
+  "shared_string_cancel": "ᱵᱟᱹᱰᱨᱟᱹ",
+  "shared_string_apply": "ᱵᱟᱦᱟᱞ",
+  "shared_string_edit": "ᱥᱟᱯᱲᱟᱣ ᱢᱮ",
+  "shared_string_favorites": "ᱠᱩᱥᱤᱭᱟᱜ",
+  "shared_string_settings": "ᱥᱟᱡᱣᱠᱚ",
+  "general_settings_2": "ᱥᱟᱫᱷᱟᱨᱚᱱ ᱥᱟᱡᱟᱣᱠᱚ",
+  "preferred_locale": "ᱩᱱᱩᱫᱩᱜᱼᱟ ᱯᱟ.ᱨᱥᱤ",
+  "shared_string_show": "ᱩᱫᱩᱜᱽ",
+  "map_widget_renderer": "ᱱᱚᱠᱥᱟ ᱨᱮᱭᱟᱜ ᱦᱩᱱᱟᱹᱨ",
+  "rendering_category_hide": "ᱩᱠᱩᱭ ᱢᱮ",
+  "rendering_category_routes": "ᱦᱚᱨᱠᱚ",
+  "rendering_category_details": "ᱵᱤᱵᱨᱚᱱ ᱠᱚ",
+  "rendering_category_transport": "ᱴᱨᱟᱱᱥᱯᱚᱴ",
+  "shared_string_gpx_files": "ᱴᱮᱨᱮᱠᱠᱚ"
 }

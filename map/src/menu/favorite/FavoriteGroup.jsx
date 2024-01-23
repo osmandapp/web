@@ -10,9 +10,11 @@ import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_
 import { ReactComponent as FolderHiddenIcon } from '../../assets/icons/ic_action_folder_hidden.svg';
 import FavoriteGroupActions from '../actions/FavoriteGroupActions';
 import MenuItemsTitle from '../components/MenuItemsTitle';
+import { useTranslation } from 'react-i18next';
 
 export default function FavoriteGroup({ index, group }) {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
     const [openActions, setOpenActions] = useState(false);
     const [processDownload, setProcessDownload] = useState(false);
@@ -27,7 +29,9 @@ export default function FavoriteGroup({ index, group }) {
     }, [ctx.favorites]);
 
     function getSize() {
-        return FavoritesManager.getGroupSize(group) > 0 ? `${FavoritesManager.getGroupSize(group)} points` : 'empty';
+        return FavoritesManager.getGroupSize(group) > 0
+            ? `${FavoritesManager.getGroupSize(group)} ${t('shared_string_gpx_points').toLowerCase()}`
+            : 'empty';
     }
 
     function getLastModificationDate() {

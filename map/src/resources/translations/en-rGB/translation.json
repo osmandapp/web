@@ -7,5 +7,6 @@
   "rendering_attr_subwayMode_name": "Underground routes",
   "rendering_attr_roadColors_description": "Select a road colour scheme:",
   "rendering_attr_appMode_description": "Optimise map for",
-  "shared_string_my_favorites": "My Favourites"
+  "shared_string_my_favorites": "My Favourites",
+  "shared_string_favorites": "Favourites"
 }

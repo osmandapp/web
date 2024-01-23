@@ -194,5 +194,20 @@
   "sort_date_descending": "Dáta is sine ar dtús",
   "shared_string_nearest": "Is gaire",
   "user_login": "Lógáil isteach",
-  "login_account": "Cuntas"
+  "login_account": "Cuntas",
+  "shared_string_cancel": "Cealaigh",
+  "shared_string_apply": "Cuir i bhfeidhm",
+  "shared_string_edit": "Cuir in eagar",
+  "shared_string_favorites": "Ceanáin",
+  "shared_string_settings": "Socruithe",
+  "preferred_locale": "Teanga taispeáint",
+  "shared_string_show": "Taispeáin",
+  "shared_string_appearance": "Cuma",
+  "map_widget_renderer": "Stíl na léarscáile",
+  "rendering_category_hide": "Folaigh",
+  "rendering_category_routes": "Bealaí",
+  "rendering_category_details": "Sonraí",
+  "rendering_category_transport": "Iompar poiblí",
+  "shared_string_others": "Eile",
+  "shared_string_gpx_points": "Pointí"
 }

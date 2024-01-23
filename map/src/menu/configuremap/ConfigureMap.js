@@ -26,9 +26,11 @@ import { ReactComponent as TracksIcon } from '../../assets/menu/ic_action_track.
 import { cloneDeep } from 'lodash';
 import EmptyLogin from '../errors/EmptyLogin';
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
+import { useTranslation } from 'react-i18next';
 
 export default function ConfigureMap({ setOpenVisibleMenu }) {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
     const [openSettings, setOpenSettings] = useState(false);
 
     const handleFavoritesSwitchChange = () => {
@@ -61,10 +63,10 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
                         <CloseIcon />
                     </IconButton>
                     <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
-                        Configure map
+                        {t('configure_map')}
                     </Typography>
                     {ctx.loginUser && (
-                        <Tooltip key={'reset'} title="Reset settings" arrow placement="bottom-end">
+                        <Tooltip key={'reset'} title={t('reset_to_default')} arrow placement="bottom-end">
                             <span>
                                 <IconButton
                                     id="se-reset"
@@ -88,7 +90,7 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
                         <>
                             <MenuItem className={styles.item}>
                                 <Typography className={styles.title} noWrap>
-                                    Show
+                                    {t('shared_string_show')}
                                 </Typography>
                             </MenuItem>
                             <MenuItem className={styles.item} onClick={handleFavoritesSwitchChange}>
@@ -104,7 +106,7 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
                                         }}
                                     >
                                         <Typography variant="inherit" noWrap>
-                                            Favorites
+                                            {t('shared_string_favorites')}
                                         </Typography>
                                         <Switch
                                             id="se-configure-map-menu-favorite-switch"
@@ -129,7 +131,7 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
                                         }}
                                     >
                                         <Typography variant="inherit" noWrap>
-                                            Tracks
+                                            {t('shared_string_tracks')}
                                         </Typography>
                                     </div>
                                 </ListItemText>
@@ -140,15 +142,17 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
                         <>
                             <MenuItem className={styles.item}>
                                 <Typography className={styles.title} noWrap>
-                                    Appearance
+                                    {t('shared_string_appearance')}
                                 </Typography>
                             </MenuItem>
                             <MenuItem sx={{ ml: 1, mr: 2, mt: 2 }} disableRipple={true}>
                                 <FormControl fullWidth>
-                                    <InputLabel id="rendering-style-selector-label">Map Style</InputLabel>
+                                    <InputLabel id="rendering-style-selector-label">
+                                        {t('map_widget_renderer')}
+                                    </InputLabel>
                                     <Select
                                         labelid="rendering-style-selector-label"
-                                        label="Map Style"
+                                        label={t('map_widget_renderer')}
                                         value={ctx.tileURL.key}
                                         onChange={(e) => ctx.setTileURL(ctx.allTileURLs[e.target.value])}
                                     >

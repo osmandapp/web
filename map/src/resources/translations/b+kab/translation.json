@@ -175,5 +175,21 @@
   "shared_string_show_on_map": "\"Sken ɣef  tkarḍa\"",
   "shared_string_download": "Sider",
   "shared_string_rename": "Snifel isem",
-  "shared_string_delete": "Ekkes"
+  "shared_string_delete": "Ekkes",
+  "shared_string_cancel": "Sefsex",
+  "shared_string_apply": "Snes",
+  "shared_string_edit": "Ẓreg",
+  "shared_string_favorites": "Imenyafen",
+  "shared_string_settings": "Iɣewwaṛen",
+  "general_settings_2": "Iɣewwaren imuta",
+  "reset_to_default": "Err-d azalen s lexṣas",
+  "shared_string_show": "Sken",
+  "shared_string_appearance": "Udem",
+  "map_widget_renderer": "Aɣanib n tkarḍa",
+  "rendering_category_hide": "Ffer",
+  "rendering_category_routes": "Iberdan",
+  "rendering_category_details": "Talqayt",
+  "rendering_category_transport": "Amesni",
+  "shared_string_others": "Wiyyaḍ",
+  "shared_string_gpx_points": "Tineqqiḍin"
 }

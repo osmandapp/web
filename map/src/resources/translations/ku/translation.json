@@ -4,5 +4,10 @@
   "rendering_attr_horseRoutes_name": "Riyên Hespan",
   "plan_route": "Plana rêgehê",
   "sort_by": "Tesnîfkirina gorî",
-  "shared_string_delete": "Jê bibe"
+  "shared_string_delete": "Jê bibe",
+  "shared_string_cancel": "Betal bike",
+  "shared_string_edit": "Biguherîne",
+  "map_widget_renderer": "Cureya nexşeyê",
+  "rendering_category_hide": "Veşêre",
+  "rendering_category_details": "Berfireh"
 }

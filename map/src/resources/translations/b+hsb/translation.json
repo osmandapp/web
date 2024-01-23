@@ -175,5 +175,18 @@
   "shared_string_delete": "Wotstronić",
   "sort_last_modified": "Poslednja změna",
   "sort_name_ascending": "Mjeno: A – Z",
-  "sort_name_descending": "Mjeno: Z – A"
+  "sort_name_descending": "Mjeno: Z – A",
+  "shared_string_cancel": "Přetorhnyć",
+  "shared_string_apply": "Přewzać",
+  "shared_string_edit": "Wobdźěłać",
+  "shared_string_favorites": "Fawority",
+  "shared_string_settings": "Nastajenja",
+  "general_settings_2": "Powšitkowne nastajenja",
+  "preferred_locale": "Rěč aplikacije a menijow",
+  "shared_string_show": "Pokazać",
+  "shared_string_appearance": "Napohlad",
+  "map_widget_renderer": "Stil karty",
+  "rendering_category_hide": "Schować",
+  "rendering_category_details": "Detaile",
+  "shared_string_others": "Druhe"
 }
