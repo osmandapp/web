@@ -1,1 +1,5 @@
-{}
+{
+  "poi_payment_type": "Tipo de pago",
+  "poi_fuel_type": "Tipo de combustible",
+  "poi_fuel_avia_type": "Tipo de combustible (avions)"
+}

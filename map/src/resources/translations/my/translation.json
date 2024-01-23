@@ -47,5 +47,6 @@
   "rendering_attr_surface_grass_paver_name": "မြက်ခင်းပုံ",
   "rendering_attr_piste_difficulty_easy_name": "လွယ်တယ်",
   "rendering_attr_surface_concrete_name": "ကွန်ကရစ်",
-  "reset_to_default": "မူလပုံမှန်ကိုပြန်ပြောင်းမြည်"
+  "reset_to_default": "မူလပုံမှန်ကိုပြန်ပြောင်းမြည်",
+  "poi_site_type_fortification": "ခံတပ်"
 }

@@ -11,6 +11,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import drawerStyles from '../../styles/DrawerStyles';
 import PoiManager from '../../../manager/PoiManager';
 import _ from 'lodash';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles({
     icon: {
@@ -32,6 +33,7 @@ const useStyles = makeStyles({
 
 export default function PoiTypesDialog({ dialogOpen, setDialogOpen, width }) {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
     const classes = useStyles();
     const styles = drawerStyles();
@@ -104,16 +106,24 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen, width }) {
         return filters.filter((f) => f !== 'routes');
     }
 
+    function translatePoi({ key = null, value = null }) {
+        return key !== null ? t('poi_' + ctx.poiCategory?.filters[key]) : t('poi_' + value);
+    }
+
     function getLabel(category) {
+        let value;
         const poiFilter = Object.keys(PoiManager.poiFilters).find(
             (name) => PoiManager.poiFilters[name][0] === category
         );
         if (poiFilter) {
-            return PoiManager.poiFilters[`${poiFilter}`].length > 1
-                ? PoiManager.poiFilters[`${poiFilter}`][1]
-                : PoiManager.poiFilters[`${poiFilter}`][0];
+            value =
+                PoiManager.poiFilters[`${poiFilter}`].length > 1
+                    ? PoiManager.poiFilters[`${poiFilter}`][1]
+                    : PoiManager.poiFilters[`${poiFilter}`][0];
+        } else {
+            value = category;
         }
-        return category;
+        return translatePoi({ value });
     }
 
     return (
@@ -144,7 +154,7 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen, width }) {
                         if (reason === 'clear') {
                             setSearchOptions(Object.keys(ctx.poiCategory.categories));
                         }
-                        showPoiCategoriesOnMap(PoiManager.formattingPoiType(newValue));
+                        showPoiCategoriesOnMap(newValue);
                     }}
                     renderInput={(params) => (
                         <TextField
@@ -192,7 +202,7 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen, width }) {
                                         />
                                     </div>
                                 </ListItemIcon>
-                                {PoiManager.formattingPoiType(option)}
+                                {PoiManager.formattingPoiType(translatePoi({ value: option }))}
                             </MenuItem>
                         </div>
                     )}
@@ -226,7 +236,7 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen, width }) {
                                     style={{ marginTop: '-15px', fontSize: '0.9rem' }}
                                     key={key + 'type'}
                                     id={`se-poi-category-${category}`}
-                                    onClick={() => showPoiCategoriesOnMap(PoiManager.formattingPoiFilter(item, false))}
+                                    onClick={() => showPoiCategoriesOnMap(item)}
                                 >
                                     <ListItemIcon sx={{ mr: '-15px' }}>
                                         <div className={classes.icon}>
@@ -246,7 +256,7 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen, width }) {
                                             />
                                         </div>
                                     </ListItemIcon>
-                                    {category}
+                                    {translatePoi({ key })}
                                 </MenuItem>
                             </Grid>
                         );

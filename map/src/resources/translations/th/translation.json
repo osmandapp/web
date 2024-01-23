@@ -6,5 +6,6 @@
   "shared_string_visible_on_map": "มองเห็นบนแผนที่",
   "sort_date_ascending": "วันที่ใหม่ล่าสุดก่อน",
   "sort_date_descending": "วันที่เก่าที่สุดก่อน",
-  "shared_string_nearest": "ใกล้ที่สุด"
+  "shared_string_nearest": "ใกล้ที่สุด",
+  "poi_categories": "หมวดหมู่ POI"
 }

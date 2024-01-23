@@ -13,5 +13,6 @@
   "sort_name_ascending": "Исем: А - Я",
   "sort_name_descending": "Исем: Я - A",
   "user_login": "Логин",
-  "login_account": "Хисап язмасы"
+  "login_account": "Хисап язмасы",
+  "poi_dialog_poi_type": "POI тибы"
 }

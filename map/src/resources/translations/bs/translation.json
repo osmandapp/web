@@ -9,5 +9,11 @@
   "rendering_attr_appMode_name": "Režim iscrtavanja",
   "rendering_attr_appMode_description": "\"Karta za optimizaciju korisničkog profila\"",
   "rendering_attr_showRoadMaps_name": "Samo cestovne karte",
-  "rendering_attr_hmRendered_description": "Povećajte nivo detalja na mapi"
+  "rendering_attr_hmRendered_description": "Povećajte nivo detalja na mapi",
+  "poi_search_desc": "Pretraga zanimljivosti",
+  "poi_filter_sightseeing": "Znamenitosti",
+  "poi_filter_restaurants": "Restorani",
+  "poi_filter_entertainment": "Zabava",
+  "poi_filter_public_transport": "Javni prijevoz",
+  "poi_filter_accomodation": "Smještaj"
 }

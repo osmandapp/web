@@ -42,5 +42,21 @@
   "rendering_category_routes": "ಮಾರ್ಗಗಳು",
   "rendering_category_details": "ವಿವರಣೆಗಳು",
   "rendering_category_transport": "ಸಾರಿಗೆ",
-  "rendering_category_others": "ಇತರೆ ನಕ್ಷೆ ಗುಣವಿಶೇಷಗಳು"
+  "rendering_category_others": "ಇತರೆ ನಕ್ಷೆ ಗುಣವಿಶೇಷಗಳು",
+  "poi_vending_type": "ವಿತರಣಾ ಮಾದರಿ",
+  "poi_water_source": "ನೀರಿನ ಮೂಲ",
+  "poi_traffic_signals_sound": "ಧ್ವನಿ",
+  "poi_clothes_type": "ಮಾದರಿ",
+  "poi_highway_crossing_type": "ಮಾದರಿ",
+  "poi_site_type_fortification": "ಕೋಟೆ",
+  "poi_fire_hydrant_position": "ಸ್ಥಾನ",
+  "poi_payment_type": "ಪಾವತಿಸುವ ವಿಧಾನ",
+  "poi_fire_hydrant_type": "ಮಾದರಿ",
+  "poi_internet_access_type": "ಇಂಟರ್ನೆಟ್ access ಪ್ರಕಾರ",
+  "poi_fuel_type": "ಇಂಧನದ ಪ್ರಕಾರ",
+  "poi_payment_toll_type": "ಪಾವತಿಸುವ ವಿಧಾನ",
+  "poi_fuel_avia_type": "ಇಂಧನದ ಪ್ರಕಾರ (ಏವಿಯಾ)",
+  "poi_shoes_type": "ಮಾದರಿ",
+  "poi_bicycle_service": "ಬೈಸಿಕಲ್ ಸೇವೆ",
+  "poi_additional_type": "ಹೆಚ್ಚುವರಿ"
 }

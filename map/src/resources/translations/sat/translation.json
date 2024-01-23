@@ -122,5 +122,13 @@
   "rendering_category_routes": "ᱦᱚᱨᱠᱚ",
   "rendering_category_details": "ᱵᱤᱵᱨᱚᱱ ᱠᱚ",
   "rendering_category_transport": "ᱴᱨᱟᱱᱥᱯᱚᱴ",
-  "shared_string_gpx_files": "ᱴᱮᱨᱮᱠᱠᱚ"
+  "shared_string_gpx_files": "ᱴᱮᱨᱮᱠᱠᱚ",
+  "poi_dialog_opening_hours": "ᱡᱷᱤᱡᱽ ᱜᱮᱭᱟ",
+  "poi_action_delete": "ᱢᱮᱴᱟᱣ ᱢᱮ",
+  "poi_filter_fuel": "ᱥᱩᱱᱩᱢ",
+  "poi_routes": "ᱦᱚᱨᱠᱚ",
+  "poi_filter_public_transport": "ᱯᱟᱵᱞᱤᱠ ᱴᱨᱟᱱᱥᱯᱚᱴ",
+  "poi_dialog_poi_type": "ᱪᱮᱞᱮᱠᱟᱱ POI",
+  "poi_filter_by_name": "ᱧᱩᱛᱩᱢ ᱛᱮ ᱥᱮᱸᱫᱽᱨᱟᱭ ᱢᱮ",
+  "poi_namefinder_query_empty": "POI ᱧᱟᱢ ᱞᱟᱹᱜᱤᱫ ᱚᱞ ᱢᱮ"
 }

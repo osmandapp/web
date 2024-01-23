@@ -111,5 +111,10 @@
   "rendering_category_routes": "வழித்தடங்கள்",
   "rendering_category_details": "விவரங்கள்",
   "rendering_category_transport": "போக்குவரத்து",
-  "rendering_category_others": "மற்ற வரைபடம் பண்புக்கூறுகள்"
+  "rendering_category_others": "மற்ற வரைபடம் பண்புக்கூறுகள்",
+  "poi_dialog_other_tags_message": "மற்ற குறிச்சொற்கள் பாதுகாக்கப்படுகின்றன",
+  "poi_filter_closest_poi": "அருகில் உள்ள POI கள்",
+  "poi_filter_namefinder": "ஆன்லைன் பெயர் தேடுபவர்",
+  "poi_cannot_be_found": "முனை அல்லது வழி கண்டுபிடிக்க முடியவில்லை.",
+  "poi_filter_custom_filter": "விருப்ப வடிப்பான்"
 }
