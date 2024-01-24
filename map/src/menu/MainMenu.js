@@ -63,6 +63,10 @@ export default function MainMenu({
 
     const [selectedType, setSelectedType] = useState(null);
 
+    const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
+    const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
+    const Z_INDEX_OPEN_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK + 1;
+
     const handleDrawer = () => {
         setOpenMainMenu(!openMainMenu);
     };
@@ -262,7 +266,7 @@ export default function MainMenu({
                             boxSizing: 'border-box',
                             width: size,
                             overflow: 'hidden',
-                            zIndex: 1250,
+                            zIndex: openMainMenu ? Z_INDEX_OPEN_LEFT_MENU : Z_INDEX_LEFT_MENU,
                             borderRight: (!menuInfo || (menuInfo && openMainMenu)) && 'none !important',
                             boxShadow:
                                 !menuInfo || (menuInfo && openMainMenu)
@@ -426,7 +430,7 @@ export default function MainMenu({
                         width: infoSize,
                         ml: '64px',
                         boxShadow: 'none',
-                        zIndex: 1000,
+                        zIndex: Z_INDEX_OPEN_MENU_INFOBLOCK,
                     },
                 }}
                 sx={{ left: 'auto !important' }}

@@ -66,7 +66,7 @@ export default function AddFolderDialog({ trackGroup, setOpenAddFolderDialog }) 
                         },
                     }}
                     autoFocus
-                    label={'Name:'}
+                    label={`${t('shared_string_name')}:`}
                     onChange={(e) => {
                         const name = e.target.value;
                         validationFolderName(name);
@@ -84,10 +84,10 @@ export default function AddFolderDialog({ trackGroup, setOpenAddFolderDialog }) 
             </DialogContent>
             <DialogActions>
                 <Button className={dialogStyles.button} onClick={() => setOpenAddFolderDialog(false)}>
-                    Cancel
+                    {t('shared_string_cancel')}
                 </Button>
                 <Button id="se-add-folder-submit" className={dialogStyles.button} onClick={() => addFolder()}>
-                    Add
+                    {t('shared_string_add')}
                 </Button>
             </DialogActions>
         </Dialog>

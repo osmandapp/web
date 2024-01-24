@@ -12,6 +12,7 @@ import TracksManager, { DEFAULT_GROUP_NAME } from '../../manager/track/TracksMan
 import Empty from '../errors/Empty';
 import { Button } from '@mui/material/';
 import { deleteTracksFromMap } from '../../manager/track/DeleteTrackManager';
+import { useTranslation } from 'react-i18next';
 
 export function getCountVisibleTracks(visibleTracks) {
     const oldSize = visibleTracks?.old?.length || 0;
@@ -80,6 +81,7 @@ export function addCloseTracksToRecently(ctx) {
 
 export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null, setSelectedType }) {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
     const [, height] = useWindowSize();
 
@@ -179,7 +181,7 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null, 
                             <CloseIcon />
                         </IconButton>
                         <Typography id="se-visible-cloud-track-name" component="div" className={headerStyles.title}>
-                            Tracks
+                            {t('shared_string_tracks')}
                         </Typography>
                         <Button
                             id="se-hide-all-visible-tracks"
@@ -187,7 +189,7 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null, 
                             onClick={hideAllTracks}
                             disabled={allVisibleTracksHidden()}
                         >
-                            Hide all
+                            {t('shared_string_hide_all')}
                         </Button>
                     </Toolbar>
                 </AppBar>
@@ -213,7 +215,7 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null, 
                                 <Divider />
                                 <MenuItem className={visibleStyles.item}>
                                     <Typography className={visibleStyles.title} noWrap>
-                                        Recently visible
+                                        {t('web:recently_visible')}
                                     </Typography>
                                 </MenuItem>
                                 <Box

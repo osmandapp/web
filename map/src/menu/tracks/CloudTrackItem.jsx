@@ -26,12 +26,14 @@ import ActionsMenu from '../actions/ActionsMenu';
 import MenuItemsTitle from '../components/MenuItemsTitle';
 import { closeTrack } from '../../manager/track/DeleteTrackManager';
 import { isVisibleTrack, updateVisibleCache } from '../visibletracks/VisibleTracks';
+import { useTranslation } from 'react-i18next';
 
 const DEFAULT_DIST = 0;
 const DEFAULT_TIME = '0:00';
 
 export default function CloudTrackItem({ id = null, file, visible = null, isLastItem }) {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
     const [, , mobile] = useWindowSize();
 
@@ -232,7 +234,12 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                             </ListItemText>
                             {(!visible || showMenu) && (
                                 <div className={visible && styles.menuButtonContainer}>
-                                    <Tooltip key={'action_menu_track'} title={'Menu'} arrow placement="bottom-end">
+                                    <Tooltip
+                                        key={'action_menu_track'}
+                                        title={t('shared_string_menu')}
+                                        arrow
+                                        placement="bottom-end"
+                                    >
                                         <IconButton
                                             id={`se-actions-${trackName}`}
                                             // style={{ display: showMenu ? 'block' : 'none' }}
