@@ -10,9 +10,11 @@ import RenameFavDialog from '../../dialogs/favorites/RenameFavDialog';
 import DeleteFavGroupDialog from '../../dialogs/favorites/DeleteFavGroupDialog';
 import AppContext from '../../context/AppContext';
 import { updateAllFavorites, updateFavoriteGroups } from '../../manager/FavoritesManager';
+import { useTranslation } from 'react-i18next';
 
 const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, ref) => {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
     const [openRenameDialog, setOpenRenameDialog] = useState(false);
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
@@ -76,7 +78,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                         <ListItemText>
                             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                                 <Typography variant="inherit" className={styles.actionName} noWrap>
-                                    Show on map
+                                    {t('shared_string_show_on_map')}
                                 </Typography>
                                 <Switch
                                     id="se-favorite-folder-actions-show-on-map"
@@ -98,7 +100,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                         </ListItemIcon>
                         <ListItemText>
                             <Typography variant="inherit" className={styles.actionName} noWrap>
-                                Rename
+                                {t('shared_string_rename')}
                             </Typography>
                         </ListItemText>
                     </MenuItem>
@@ -115,7 +117,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                         </ListItemIcon>
                         <ListItemText>
                             <Typography variant="inherit" className={styles.actionName} noWrap>
-                                Download
+                                {t('shared_string_download')}
                             </Typography>
                         </ListItemText>
                     </MenuItem>
@@ -130,7 +132,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
                         </ListItemIcon>
                         <ListItemText>
                             <Typography variant="inherit" className={styles.actionName} noWrap>
-                                Delete
+                                {t('shared_string_delete')}
                             </Typography>
                         </ListItemText>
                     </MenuItem>

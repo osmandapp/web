@@ -51,8 +51,8 @@ export function getWptIcon(point, color, background, icon, folder) {
         color && color !== 'null'
             ? color
             : point.extensions?.color && point.extensions.color !== 'null'
-            ? point.extensions.color
-            : DEFAULT_WPT_COLOR;
+              ? point.extensions.color
+              : DEFAULT_WPT_COLOR;
     colorBackground = Utils.hexToArgb(colorBackground);
     let shapeBackground = background ? background : point.background;
     let svg = getBackground(colorBackground, shapeBackground);
@@ -60,8 +60,8 @@ export function getWptIcon(point, color, background, icon, folder) {
         icon && icon !== 'null'
             ? icon
             : point.extensions?.icon && point.extensions.icon !== 'null'
-            ? point.extensions.icon
-            : DEFAULT_WPT_ICON;
+              ? point.extensions.icon
+              : DEFAULT_WPT_ICON;
     let iconsFolder = folder ? folder : POI_ICONS_FOLDER;
     let part = point ? 'mx_' : '';
     if (iconWpt) {

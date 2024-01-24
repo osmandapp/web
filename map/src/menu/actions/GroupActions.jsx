@@ -9,6 +9,7 @@ import RenameDialog from '../../dialogs/tracks/RenameDialog';
 import DeleteFolderDialog from '../../dialogs/tracks/DeleteFolderDialog';
 import { apiPost } from '../../util/HttpApi';
 import AppContext from '../../context/AppContext';
+import { useTranslation } from 'react-i18next';
 
 const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, ref) => {
     const ctx = useContext(AppContext);
@@ -16,6 +17,7 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
     const [newCollection, setNewCollection] = useState([]);
     const [openRenameDialog, setOpenRenameDialog] = useState(false);
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
+    const { t } = useTranslation();
 
     async function downloadFolderBackup() {
         setProcessDownload(true);
@@ -64,7 +66,7 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
                         </ListItemIcon>
                         <ListItemText>
                             <Typography variant="inherit" className={styles.actionName} noWrap>
-                                Download as OSF
+                                {t('web:download_as_osf')}
                             </Typography>
                         </ListItemText>
                     </MenuItem>
@@ -81,7 +83,7 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
                         </ListItemIcon>
                         <ListItemText>
                             <Typography variant="inherit" className={styles.actionName} noWrap>
-                                Download as OBF Collection
+                                {t('web:download_as_obf')}
                             </Typography>
                         </ListItemText>
                     </MenuItem>
@@ -96,7 +98,7 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
                         </ListItemIcon>
                         <ListItemText>
                             <Typography variant="inherit" className={styles.actionName} noWrap>
-                                Rename
+                                {t('shared_string_rename')}
                             </Typography>
                         </ListItemText>
                     </MenuItem>
@@ -111,7 +113,7 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
                         </ListItemIcon>
                         <ListItemText>
                             <Typography variant="inherit" className={styles.actionName} noWrap>
-                                Delete
+                                {t('shared_string_delete')}
                             </Typography>
                         </ListItemText>
                     </MenuItem>

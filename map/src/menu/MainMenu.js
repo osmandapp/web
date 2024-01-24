@@ -20,6 +20,7 @@ import AppContext, {
     OBJECT_TYPE_NAVIGATION_ALONE,
     OBJECT_TYPE_WEATHER,
     OBJECT_TYPE_POI,
+    OBJECT_GLOBAL_SETTINGS,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import ConfigureMap from './configuremap/ConfigureMap';
@@ -33,6 +34,7 @@ import { ReactComponent as TracksIcon } from '../assets/menu/ic_action_track.svg
 import { ReactComponent as NavigationIcon } from '../assets/menu/ic_action_navigation.svg';
 import { ReactComponent as PlanRouteIcon } from '../assets/menu/ic_action_plan_route.svg';
 import { ReactComponent as ConfigureMapIcon } from '../assets/icons/ic_map_configure_map.svg';
+import { ReactComponent as SettingsIcon } from '../assets/icons/ic_action_settings_outlined.svg';
 import InformationBlock from '../infoblock/components/InformationBlock';
 import Weather from './weather/Weather';
 import styles from './mainmenu.module.css';
@@ -40,6 +42,8 @@ import TrackGroupFolder from './tracks/TrackGroupFolder';
 import _ from 'lodash';
 import FavoriteGroupFolder from './favorite/FavoriteGroupFolder';
 import VisibleTracks from './visibletracks/VisibleTracks';
+import { useTranslation } from 'react-i18next';
+import SettingsMenu from './settings/SettingsMenu';
 
 export default function MainMenu({
     size,
@@ -55,8 +59,13 @@ export default function MainMenu({
     openVisibleMenu,
 }) {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
     const [selectedType, setSelectedType] = useState(null);
+
+    const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
+    const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
+    const Z_INDEX_OPEN_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK + 1;
 
     const handleDrawer = () => {
         setOpenMainMenu(!openMainMenu);
@@ -73,7 +82,7 @@ export default function MainMenu({
 
     const items = [
         {
-            name: 'Configure Map',
+            name: t('configure_map'),
             icon: ConfigureMapIcon,
             component: <ConfigureMap setOpenVisibleMenu={setOpenVisibleMenu} />,
             type: OBJECT_CONFIGURE_MAP,
@@ -81,7 +90,7 @@ export default function MainMenu({
             id: 'se-show-menu-configuremap',
         },
         {
-            name: 'Weather',
+            name: t('shared_string_weather'),
             icon: WeatherIcon,
             component: <Weather />,
             type: OBJECT_TYPE_WEATHER,
@@ -89,7 +98,7 @@ export default function MainMenu({
             id: 'se-show-menu-weather',
         },
         {
-            name: 'Tracks',
+            name: t('shared_string_tracks'),
             icon: TracksIcon,
             component: <TracksMenu setOpenVisibleMenu={setOpenVisibleMenu} />,
             type: OBJECT_TYPE_CLOUD_TRACK,
@@ -97,7 +106,7 @@ export default function MainMenu({
             id: 'se-show-menu-tracks',
         },
         {
-            name: 'Favorites',
+            name: t('shared_string_my_favorites'),
             icon: FavoritesIcon,
             component: <FavoritesMenu />,
             type: OBJECT_TYPE_FAVORITE,
@@ -105,7 +114,7 @@ export default function MainMenu({
             id: 'se-show-menu-favorites',
         },
         {
-            name: 'Navigation',
+            name: t('shared_string_navigation'),
             icon: NavigationIcon,
             component: <RouteMenu />,
             type: OBJECT_TYPE_NAVIGATION_TRACK, // shared with OBJECT_TYPE_NAVIGATION_ALONE
@@ -113,7 +122,7 @@ export default function MainMenu({
             id: 'se-show-menu-navigation',
         },
         {
-            name: 'Plan a route',
+            name: t('plan_route'),
             icon: PlanRouteIcon,
             component: <PlanRouteMenu />,
             type: OBJECT_TYPE_LOCAL_TRACK,
@@ -127,6 +136,14 @@ export default function MainMenu({
             type: OBJECT_TYPE_POI,
             show: false,
             id: 'se-show-menu-poi',
+        },
+        {
+            name: t('shared_string_settings'),
+            icon: SettingsIcon,
+            component: <SettingsMenu />,
+            type: OBJECT_GLOBAL_SETTINGS,
+            show: true,
+            id: 'se-show-menu-settings',
         },
     ];
 
@@ -249,7 +266,7 @@ export default function MainMenu({
                             boxSizing: 'border-box',
                             width: size,
                             overflow: 'hidden',
-                            zIndex: 1250,
+                            zIndex: openMainMenu ? Z_INDEX_OPEN_LEFT_MENU : Z_INDEX_LEFT_MENU,
                             borderRight: (!menuInfo || (menuInfo && openMainMenu)) && 'none !important',
                             boxShadow:
                                 !menuInfo || (menuInfo && openMainMenu)
@@ -297,7 +314,9 @@ export default function MainMenu({
                                             },
                                         }}
                                     >
-                                        {ctx.loginUser && ctx.loginUser !== 'INIT' ? 'Account' : 'Login'}
+                                        {ctx.loginUser && ctx.loginUser !== 'INIT'
+                                            ? t('login_account')
+                                            : t('user_login')}
                                     </ListItemText>
                                     {ctx.loginUser && ctx.loginUser !== 'INIT' && (
                                         <ListItemText
@@ -395,7 +414,7 @@ export default function MainMenu({
                                                 },
                                             }}
                                         >
-                                            Menu
+                                            {t('shared_string_menu')}
                                         </ListItemText>
                                     </div>
                                 </ListItemButton>
@@ -411,7 +430,7 @@ export default function MainMenu({
                         width: infoSize,
                         ml: '64px',
                         boxShadow: 'none',
-                        zIndex: 1000,
+                        zIndex: Z_INDEX_OPEN_MENU_INFOBLOCK,
                     },
                 }}
                 sx={{ left: 'auto !important' }}

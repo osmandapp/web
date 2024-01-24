@@ -17,6 +17,7 @@ import SortMenu from './SortMenu';
 import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
 import FavoriteGroupUploader from '../../frame/components/util/FavoriteGroupUploader';
 import IconButtonWithPermissions from '../../frame/components/IconButtonWithPermissions';
+import { useTranslation } from 'react-i18next';
 
 export default function GroupHeader({
     trackGroup = null,
@@ -27,9 +28,11 @@ export default function GroupHeader({
 }) {
     const ctx = useContext(AppContext);
 
+    const { t } = useTranslation();
+
     const [openAddFolderDialog, setOpenAddFolderDialog] = useState(false);
     const [openSort, setOpenSort] = useState(false);
-    const [sortName, setSortName] = useState('Last modified');
+    const [sortName, setSortName] = useState(t('sort_last_modified'));
     const [sortIcon, setSortIcon] = useState(<TimeIcon />);
     const anchorEl = useRef(null);
 
@@ -38,10 +41,10 @@ export default function GroupHeader({
     useEffect(() => {
         if (sortType) {
             setSortIcon(allMethods[sortType].icon);
-            setSortName(allMethods[sortType].name);
+            setSortName(allMethods[sortType].name());
         } else {
             setSortIcon(allMethods['time'].icon);
-            setSortName(allMethods['time'].name);
+            setSortName(allMethods['time'].name());
         }
     }, [ctx.selectedSort, trackGroup]);
 
@@ -74,13 +77,13 @@ export default function GroupHeader({
         if (trackGroup) {
             return (
                 <Typography id="se-cloud-name-track" component="div" className={styles.title}>
-                    {trackGroup?.name === DEFAULT_GROUP_NAME ? 'Tracks' : trackGroup?.name}
+                    {trackGroup?.name === DEFAULT_GROUP_NAME ? t('shared_string_tracks') : trackGroup?.name}
                 </Typography>
             );
         } else if (favoriteGroup) {
             return (
                 <Typography id="se-fav-group-name" component="div" className={styles.title}>
-                    {favoriteGroup === DEFAULT_FAV_GROUP_NAME ? 'Favorites' : favoriteGroup?.name}
+                    {favoriteGroup === DEFAULT_FAV_GROUP_NAME ? t('shared_string_favorites') : favoriteGroup?.name}
                 </Typography>
             );
         }
@@ -122,7 +125,7 @@ export default function GroupHeader({
                         </IconButton>
                     )}
                     {getTitle()}
-                    <Tooltip key={'sort_tracks'} title={`Sort by: ${sortName}`} arrow placement="bottom-end">
+                    <Tooltip key={'sort_tracks'} title={`${t('sort_by')}: ${sortName}`} arrow placement="bottom-end">
                         <span>
                             <IconButton
                                 id={`se-sort-button-${currentSortType}`}
@@ -138,7 +141,7 @@ export default function GroupHeader({
                         </span>
                     </Tooltip>
                     {trackGroup && (
-                        <Tooltip key={'add_folder'} title="Add folder" arrow placement="bottom-end">
+                        <Tooltip key={'add_folder'} title={t('add_new_folder')} arrow placement="bottom-end">
                             <span>
                                 <IconButtonWithPermissions
                                     id="se-add-folder"
@@ -154,7 +157,7 @@ export default function GroupHeader({
                         </Tooltip>
                     )}
                     {trackGroup && (
-                        <Tooltip key={'import_track'} title="Import track" arrow placement="bottom-end">
+                        <Tooltip key={'import_track'} title={t('import_tracks')} arrow placement="bottom-end">
                             <span>
                                 <CloudGpxUploader folder={trackGroup?.fullName}>
                                     <IconButtonWithPermissions
@@ -172,7 +175,12 @@ export default function GroupHeader({
                         </Tooltip>
                     )}
                     {favoriteGroup === DEFAULT_FAV_GROUP_NAME && (
-                        <Tooltip key={'import_fav_group'} title="Import favorite group" arrow placement="bottom-end">
+                        <Tooltip
+                            key={'import_fav_group'}
+                            title={t('web:import_favorite_groups')}
+                            arrow
+                            placement="bottom-end"
+                        >
                             <span>
                                 <FavoriteGroupUploader>
                                     <IconButton

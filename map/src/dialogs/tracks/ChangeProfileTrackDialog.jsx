@@ -83,8 +83,8 @@ export default function ChangeProfileTrackDialog({ open }) {
         ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE
             ? 'Previous'
             : ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER
-            ? 'Next'
-            : null;
+              ? 'Next'
+              : null;
 
     useEffect(() => {
         /*

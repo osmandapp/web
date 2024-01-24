@@ -9,9 +9,11 @@ import AppContext from '../../context/AppContext';
 import { DEFAULT_GROUP_NAME, findGroupByName, prepareName } from '../../manager/track/TracksManager';
 import { renameFolder, renameTrack } from '../../manager/track/SaveTrackManager';
 import { prepareFileName } from '../../util/Utils';
+import { useTranslation } from 'react-i18next';
 
 export default function RenameDialog({ setOpenDialog, track = null, group = null, setOpenActions }) {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
     const [nameError, setNameError] = useState('');
     const [name, setName] = useState(track ? prepareName(track.name) : group.name);
@@ -126,7 +128,7 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
             onClose={() => setOpenDialog(false)}
             onClick={(e) => e.stopPropagation()}
         >
-            <DialogTitle className={dialogStyles.title}>Rename</DialogTitle>
+            <DialogTitle className={dialogStyles.title}>{t('shared_string_rename')}</DialogTitle>
             <DialogContent className={dialogStyles.content}>
                 <TextField
                     sx={{
@@ -156,7 +158,7 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
             </DialogContent>
             <DialogActions>
                 <Button className={dialogStyles.button} onClick={closeDialogs}>
-                    Cancel
+                    {t('shared_string_cancel')}
                 </Button>
                 <Button
                     disabled={nameError !== ''}
@@ -164,7 +166,7 @@ export default function RenameDialog({ setOpenDialog, track = null, group = null
                     className={dialogStyles.button}
                     onClick={() => rename()}
                 >
-                    Apply
+                    {t('shared_string_apply')}
                 </Button>
             </DialogActions>
         </Dialog>

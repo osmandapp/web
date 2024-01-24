@@ -9,9 +9,12 @@ import GroupActions from '../actions/GroupActions';
 import ActionsMenu from '../actions/ActionsMenu';
 import MenuItemsTitle from '../components/MenuItemsTitle';
 import { Tooltip } from '@mui/material/';
+import { useTranslation } from 'react-i18next';
+import { getLocalizedTimeUpdate } from '../settings/SettingsMenu';
 
 export default function CloudTrackGroup({ index, group }) {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const [openActions, setOpenActions] = useState(false);
@@ -42,7 +45,7 @@ export default function CloudTrackGroup({ index, group }) {
                 <ListItemText>
                     <MenuItemsTitle name={group.name} maxLines={2} />
                     <Typography variant="body2" className={styles.groupInfo} noWrap>
-                        {`${group.lastModifiedData.split(',')[0]}, tracks ${group.realSize}`}
+                        {`${getLocalizedTimeUpdate(group.lastModifiedData)}, ${t('shared_string_gpx_files').toLowerCase()} ${group.realSize}`}
                     </Typography>
                 </ListItemText>
                 <Tooltip key={'action_menu_group'} title={'Menu'} arrow placement="bottom-end">

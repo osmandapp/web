@@ -14,6 +14,7 @@ import { doSort } from '../actions/SortActions';
 import styles from '../trackfavmenu.module.css';
 import { ReactComponent as VisibleIcon } from '../../assets/icons/ic_show_on_map.svg';
 import { getCountVisibleTracks } from '../visibletracks/VisibleTracks';
+import { useTranslation } from 'react-i18next';
 
 export default function TracksMenu({ setOpenVisibleMenu }) {
     const ctx = useContext(AppContext);
@@ -22,6 +23,7 @@ export default function TracksMenu({ setOpenVisibleMenu }) {
     const [sortFiles, setSortFiles] = useState([]);
     const [sortGroups, setSortGroups] = useState([]);
     const [, height] = useWindowSize();
+    const { t } = useTranslation();
 
     // get gpx files and create groups
     useEffect(() => {
@@ -92,7 +94,7 @@ export default function TracksMenu({ setOpenVisibleMenu }) {
                                 </ListItemIcon>
                                 <ListItemText>
                                     <Typography variant="inherit" className={styles.groupName}>
-                                        Visible on map
+                                        {t('shared_string_visible_on_map')}
                                     </Typography>
                                     <Typography variant="body2" className={styles.groupInfo} noWrap>
                                         {`Tracks ${getCountVisibleTracks(ctx.visibleTracks)}`}
