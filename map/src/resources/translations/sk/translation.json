@@ -4852,5 +4852,8 @@
   "poi_craft_photographic_laboratory": "Fotolaboratórium",
   "poi_craft_agricultural_engines": "Poľnohospodárske stroje",
   "poi_taxi_yes": "Prístup taxíkov: áno",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "Typ výbuchu: atmosferický, z balóna"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "Typ výbuchu: atmosferický, z balóna",
+  "shared_string_hide_all": "Skryť všetko",
+  "shared_string_add": "Pridať",
+  "shared_string_name": "Názov"
 }

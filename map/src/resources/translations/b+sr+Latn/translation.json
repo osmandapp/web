@@ -4302,5 +4302,8 @@
   "poi_craft_photographic_laboratory": "Foto-tamna soba",
   "poi_craft_agricultural_engines": "Poljoprivredne mašine",
   "poi_taxi_yes": "Pristup za taksi: da",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "Tip eksplozije: u atmosferi, balon"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "Tip eksplozije: u atmosferi, balon",
+  "shared_string_hide_all": "Sakrij sve",
+  "shared_string_add": "Dodaj",
+  "shared_string_name": "Ime"
 }

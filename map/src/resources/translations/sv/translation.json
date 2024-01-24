@@ -4925,5 +4925,8 @@
   "poi_craft_photographic_laboratory": "Fotografiskt laboratorium",
   "poi_craft_agricultural_engines": "Jordbruks-motorer",
   "poi_taxi_yes": "Taxiåtkomst: ja",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "Explosionstyp: atmosfärisk, ballong"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "Explosionstyp: atmosfärisk, ballong",
+  "shared_string_hide_all": "Dölj alla",
+  "shared_string_add": "Lägg till",
+  "shared_string_name": "Namn"
 }

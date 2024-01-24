@@ -47,5 +47,6 @@
   "poi_filter_by_name": "Tìm theo tên",
   "poi_filter_custom_filter": "Tùy chỉnh bộ lọc",
   "poi_namefinder_query_empty": "Nhập thông tin cần tìm",
-  "poi_action_add": "thêm"
+  "poi_action_add": "thêm",
+  "shared_string_add": "Thêm"
 }

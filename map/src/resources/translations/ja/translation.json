@@ -4912,5 +4912,8 @@
   "poi_craft_photographic_laboratory": "現像所",
   "poi_craft_agricultural_engines": "農業機械設計作成",
   "poi_taxi_yes": "タクシーでのアクセス:可",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "爆発場所:大気圏内、バルーン"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "爆発場所:大気圏内、バルーン",
+  "shared_string_hide_all": "全て非表示",
+  "shared_string_add": "追加",
+  "shared_string_name": "名前"
 }

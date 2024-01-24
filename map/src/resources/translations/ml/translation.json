@@ -2755,5 +2755,7 @@
   "poi_quarry": "ഖനി",
   "poi_craft_photographic_laboratory": "ഫോട്ടോ സ്റ്റുഡിയോ",
   "poi_craft_agricultural_engines": "കൃഷിയന്ത്ര‌ങ്ങള്‍",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "അണുസ്പോടന വിധം ആകാശത്ത്, ബലൂണ്‍"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "അണുസ്പോടന വിധം ആകാശത്ത്, ബലൂണ്‍",
+  "shared_string_add": "ചേര്‍ക്കുക",
+  "shared_string_name": "പേര‍്"
 }

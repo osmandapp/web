@@ -3131,5 +3131,8 @@
   "poi_craft_photographic_laboratory": "摄影实验室",
   "poi_craft_agricultural_engines": "农用引擎",
   "poi_taxi_yes": "出租车通行： 是",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "爆炸类型：大气层，气球"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "爆炸类型：大气层，气球",
+  "shared_string_hide_all": "隐藏全部",
+  "shared_string_add": "添加",
+  "shared_string_name": "名称"
 }

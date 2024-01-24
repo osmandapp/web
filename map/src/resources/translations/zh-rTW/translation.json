@@ -5150,5 +5150,8 @@
   "poi_craft_photographic_laboratory": "攝影室",
   "poi_craft_agricultural_engines": "農用引擎",
   "poi_taxi_yes": "計程車進入：是",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "爆炸類型：大氣層，氣球"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "爆炸類型：大氣層，氣球",
+  "shared_string_hide_all": "隱藏全部",
+  "shared_string_add": "新增",
+  "shared_string_name": "名稱"
 }

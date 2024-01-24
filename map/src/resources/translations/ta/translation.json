@@ -116,5 +116,6 @@
   "poi_filter_closest_poi": "அருகில் உள்ள POI கள்",
   "poi_filter_namefinder": "ஆன்லைன் பெயர் தேடுபவர்",
   "poi_cannot_be_found": "முனை அல்லது வழி கண்டுபிடிக்க முடியவில்லை.",
-  "poi_filter_custom_filter": "விருப்ப வடிப்பான்"
+  "poi_filter_custom_filter": "விருப்ப வடிப்பான்",
+  "shared_string_add": "சேரு"
 }

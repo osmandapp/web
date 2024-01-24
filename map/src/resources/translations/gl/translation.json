@@ -4288,5 +4288,7 @@
   "poi_craft_photographic_laboratory": "Laboratorio fotográfico",
   "poi_craft_agricultural_engines": "Motores agrícolas",
   "poi_taxi_yes": "Acceso para taxis: si",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "Tipo de estourido: atmosférico, globo"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "Tipo de estourido: atmosférico, globo",
+  "shared_string_add": "Engadir",
+  "shared_string_name": "Nome"
 }

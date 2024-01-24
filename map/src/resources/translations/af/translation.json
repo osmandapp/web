@@ -76,5 +76,7 @@
   "poi_filter_by_name": "Soek met die naam",
   "poi_filter_custom_filter": "persoonlike filter",
   "poi_namefinder_query_empty": "Inset soektog navraag om interessante plek te vind",
-  "poi_action_add": "byvoeg"
+  "poi_action_add": "byvoeg",
+  "shared_string_add": "Voeg by",
+  "shared_string_name": "Naam"
 }

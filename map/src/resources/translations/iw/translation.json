@@ -2824,5 +2824,8 @@
   "poi_quarry": "מחצבה",
   "poi_socket_type3a_output_medium": "בינוני",
   "poi_craft_photographic_laboratory": "ספריית צילום",
-  "poi_craft_agricultural_engines": "מנועים לחקלאות"
+  "poi_craft_agricultural_engines": "מנועים לחקלאות",
+  "shared_string_hide_all": "להסתיר הכול",
+  "shared_string_add": "הוספה",
+  "shared_string_name": "שם"
 }

@@ -285,5 +285,7 @@
   "poi_filter_by_name": "Pošuk pa naźvie",
   "poi_filter_custom_filter": "Svoj fіltar",
   "poi_namefinder_query_empty": "Nadrukujcie dlia pošuku POI",
-  "poi_action_add": "dadać"
+  "poi_action_add": "dadać",
+  "shared_string_add": "Dadać",
+  "shared_string_name": "Nazva"
 }

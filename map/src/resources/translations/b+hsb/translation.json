@@ -2209,5 +2209,7 @@
   "poi_halt": "železniske zastanišćo",
   "poi_life_ring": "wuchowanska rynka",
   "poi_quarry": "skała",
-  "poi_craft_photographic_laboratory": "fotografiski labor"
+  "poi_craft_photographic_laboratory": "fotografiski labor",
+  "shared_string_add": "Přidać",
+  "shared_string_name": "Mjeno"
 }

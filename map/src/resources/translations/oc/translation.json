@@ -1790,5 +1790,8 @@
   "poi_halt": "Estacion de tren",
   "poi_quarry": "Peiriera",
   "poi_craft_photographic_laboratory": "Laboratòri fotografic",
-  "poi_craft_agricultural_engines": "Constructor d’engenhs agricòlas"
+  "poi_craft_agricultural_engines": "Constructor d’engenhs agricòlas",
+  "shared_string_hide_all": "Tot escondre",
+  "shared_string_add": "Ajustar",
+  "shared_string_name": "Nom"
 }

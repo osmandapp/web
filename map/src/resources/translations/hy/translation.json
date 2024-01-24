@@ -264,5 +264,7 @@
   "poi_filter_by_name": "Որոնել ըստ անվան",
   "poi_filter_custom_filter": "Նոր ֆիլտր",
   "poi_namefinder_query_empty": "Մուտքագրեք հարցում POI որոնման համար",
-  "poi_action_add": "ավելացում"
+  "poi_action_add": "ավելացում",
+  "shared_string_add": "Ավելացնել",
+  "shared_string_name": "Անուն"
 }

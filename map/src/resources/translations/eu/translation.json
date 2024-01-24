@@ -4241,5 +4241,8 @@
   "poi_craft_photographic_laboratory": "Argazki-laborategia",
   "poi_craft_agricultural_engines": "Nekazaritzarako motorrak",
   "poi_taxi_yes": "Taxi sarbidea: bai",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "Leherketa mota: atmosferikoa, globoa"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "Leherketa mota: atmosferikoa, globoa",
+  "shared_string_hide_all": "Ezkutatu dena",
+  "shared_string_add": "Gehitu",
+  "shared_string_name": "Izena"
 }

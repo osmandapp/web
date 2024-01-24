@@ -4843,5 +4843,8 @@
   "poi_craft_photographic_laboratory": "Фоталабараторыя",
   "poi_craft_agricultural_engines": "Рамонт с/г тэхнікі",
   "poi_taxi_yes": "Доступ для таксі: ёсць",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "Тып выбуху: атмасферны, на паветраным шары"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "Тып выбуху: атмасферны, на паветраным шары",
+  "shared_string_hide_all": "Схаваць усе",
+  "shared_string_add": "Дадаць",
+  "shared_string_name": "Імя"
 }

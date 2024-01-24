@@ -938,5 +938,7 @@
   "poi_fax": "Fax",
   "poi_weir": "Uggug",
   "poi_aerodrome_type_public": "Azayez",
-  "poi_shower_filter_yes": "Ih"
+  "poi_shower_filter_yes": "Ih",
+  "shared_string_add": "Rnu",
+  "shared_string_name": "Isem"
 }

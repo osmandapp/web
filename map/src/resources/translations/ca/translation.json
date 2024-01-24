@@ -3324,5 +3324,8 @@
   "poi_health_specialty_social_paediatrics_no": "Especialitat mèdica: sense sociologia pediàtrica",
   "poi_craft_photographic_laboratory": "Laboratori fotogràfic",
   "poi_craft_agricultural_engines": "Artefactes agrícoles artesans",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "Tipus d\\\u0027explosió: atmosfèrica, globus"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "Tipus d\\\u0027explosió: atmosfèrica, globus",
+  "shared_string_hide_all": "Amaga-ho tot",
+  "shared_string_add": "Afegeix",
+  "shared_string_name": "Nom"
 }

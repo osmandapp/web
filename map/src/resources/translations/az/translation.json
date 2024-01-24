@@ -437,5 +437,8 @@
   "poi_cocktails": "Kokteyllər",
   "poi_recycling_container": "Konteyner",
   "poi_mobile_phone": "Mobil telefon mağazası",
-  "poi_golf": "Qolf"
+  "poi_golf": "Qolf",
+  "shared_string_hide_all": "Hamısını gizlət",
+  "shared_string_add": "Əlavə et",
+  "shared_string_name": "Ad"
 }

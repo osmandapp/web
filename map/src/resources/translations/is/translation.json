@@ -5051,5 +5051,8 @@
   "poi_craft_photographic_laboratory": "Framköllunarstofa",
   "poi_craft_agricultural_engines": "Landbúnaðarvélar",
   "poi_taxi_yes": "Aðgangur leigubíla: já",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "Tegund sprengingar: í andrúmslofti, loftbelgur"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "Tegund sprengingar: í andrúmslofti, loftbelgur",
+  "shared_string_hide_all": "Fela allt",
+  "shared_string_add": "Bæta við",
+  "shared_string_name": "Nafn"
 }

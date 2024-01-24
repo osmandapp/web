@@ -2880,5 +2880,8 @@
   "poi_halt": "Geležinkelio stotelė;Traukinių stotelė;Geležinkelio stotis;Geležinkelio stotis;Geležinkelio stotis;Stotis",
   "poi_quarry": "Karjeras",
   "poi_craft_photographic_laboratory": "Fotografijos laboratorija",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "Sprogimo tipas: atmosferinis, balionas"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "Sprogimo tipas: atmosferinis, balionas",
+  "shared_string_hide_all": "Paslėpti viską",
+  "shared_string_add": "Pridėti",
+  "shared_string_name": "Pavadinimas"
 }

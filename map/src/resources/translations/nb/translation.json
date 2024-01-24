@@ -2354,5 +2354,8 @@
   "poi_halt": "Jernbaneholdeplass;Togholdeplass;Jernbanestasjon;Togstasjon;Stasjon",
   "poi_quarry": "Steinbrudd",
   "poi_craft_photographic_laboratory": "Fotolaboratorium",
-  "poi_craft_agricultural_engines": "Landbruksmaskiner"
+  "poi_craft_agricultural_engines": "Landbruksmaskiner",
+  "shared_string_hide_all": "Skjul alle",
+  "shared_string_add": "Legg til",
+  "shared_string_name": "Navn"
 }

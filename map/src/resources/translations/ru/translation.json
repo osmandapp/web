@@ -4807,5 +4807,8 @@
   "poi_craft_photographic_laboratory": "Фотолаборатория",
   "poi_craft_agricultural_engines": "Ремонт сельскохозяйственной техники",
   "poi_taxi_yes": "Доступ для такси: да",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "Тип взрыва: атмосферный, на воздушном шаре"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "Тип взрыва: атмосферный, на воздушном шаре",
+  "shared_string_hide_all": "Скрыть все",
+  "shared_string_add": "Добавить",
+  "shared_string_name": "Имя"
 }

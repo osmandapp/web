@@ -4751,5 +4751,8 @@
   "poi_craft_photographic_laboratory": "Фото-тамна соба",
   "poi_craft_agricultural_engines": "Пољопривредне машине",
   "poi_taxi_yes": "Приступ за такси: да",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "Тип експлозије: у атмосфери, балон"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "Тип експлозије: у атмосфери, балон",
+  "shared_string_hide_all": "Сакриј све",
+  "shared_string_add": "Додај",
+  "shared_string_name": "Име"
 }

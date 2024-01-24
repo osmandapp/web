@@ -3935,5 +3935,8 @@
   "poi_craft_photographic_laboratory": "Fotoğraf laboratuvarı",
   "poi_craft_agricultural_engines": "Tarımsal motorlar",
   "poi_taxi_yes": "Taksi erişimi: evet",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "Patlama türü: atmosferik, balon"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "Patlama türü: atmosferik, balon",
+  "shared_string_hide_all": "Tümünü gizle",
+  "shared_string_add": "Ekle",
+  "shared_string_name": "Ad"
 }

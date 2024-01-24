@@ -5146,5 +5146,8 @@
   "poi_craft_photographic_laboratory": "Fotografski laboratorij",
   "poi_craft_agricultural_engines": "Kmetijski motorji",
   "poi_taxi_yes": "Dostop za taksije: da",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "Vrsta eksplozije: v ozračju, balon"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "Vrsta eksplozije: v ozračju, balon",
+  "shared_string_hide_all": "Skrij vse",
+  "shared_string_add": "Dodaj",
+  "shared_string_name": "Ime"
 }

@@ -5099,5 +5099,8 @@
   "poi_craft_photographic_laboratory": "مختبر التصوير الفوتوغرافي",
   "poi_craft_agricultural_engines": "محركات زراعية",
   "poi_taxi_yes": "السماح بدخول مركبات الأجرة: نعم",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "نوع الانفجار: الغلاف الجوي ، بالون"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "نوع الانفجار: الغلاف الجوي ، بالون",
+  "shared_string_hide_all": "أخف الكل",
+  "shared_string_add": "إضافة",
+  "shared_string_name": "الاسم"
 }

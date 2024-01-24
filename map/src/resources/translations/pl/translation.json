@@ -5061,5 +5061,8 @@
   "poi_craft_photographic_laboratory": "Laboratorium fotograficzne",
   "poi_craft_agricultural_engines": "Silniki rolnicze (wystawa)",
   "poi_taxi_yes": "Dostęp dla taksówek: tak",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "Typ eksplozji: atmosferyczna, balon"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "Typ eksplozji: atmosferyczna, balon",
+  "shared_string_hide_all": "Ukryj wszystko",
+  "shared_string_add": "Dodaj",
+  "shared_string_name": "Nazwa"
 }

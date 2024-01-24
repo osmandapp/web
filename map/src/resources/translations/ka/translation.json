@@ -356,5 +356,8 @@
   "poi_filter_by_name": "სახელით ძებნა",
   "poi_filter_custom_filter": "ხელით შეყვანილი ფილტრი",
   "poi_namefinder_query_empty": "შეიტანეთ მონაცემები POI-ის მოსაძებნად",
-  "poi_action_add": "ჩამატება"
+  "poi_action_add": "ჩამატება",
+  "shared_string_hide_all": "ყველას დამალვა",
+  "shared_string_add": "ჩამატება",
+  "shared_string_name": "სახელი"
 }

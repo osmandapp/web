@@ -130,5 +130,8 @@
   "poi_filter_public_transport": "ᱯᱟᱵᱞᱤᱠ ᱴᱨᱟᱱᱥᱯᱚᱴ",
   "poi_dialog_poi_type": "ᱪᱮᱞᱮᱠᱟᱱ POI",
   "poi_filter_by_name": "ᱧᱩᱛᱩᱢ ᱛᱮ ᱥᱮᱸᱫᱽᱨᱟᱭ ᱢᱮ",
-  "poi_namefinder_query_empty": "POI ᱧᱟᱢ ᱞᱟᱹᱜᱤᱫ ᱚᱞ ᱢᱮ"
+  "poi_namefinder_query_empty": "POI ᱧᱟᱢ ᱞᱟᱹᱜᱤᱫ ᱚᱞ ᱢᱮ",
+  "shared_string_hide_all": "ᱡᱷᱚᱛᱚ ᱠᱚ ᱩᱠᱩᱭ ᱢᱮ",
+  "shared_string_add": "ᱥᱮᱞᱮᱫᱽ ᱢᱮ",
+  "shared_string_name": "ᱧᱩᱛᱩᱢ"
 }

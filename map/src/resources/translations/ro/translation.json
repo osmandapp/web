@@ -5063,5 +5063,8 @@
   "poi_craft_photographic_laboratory": "Laborator fotografic",
   "poi_craft_agricultural_engines": "Motoare agricole",
   "poi_taxi_yes": "Acces taxi: da",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "Tip de explozie: atmosferică, balon"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "Tip de explozie: atmosferică, balon",
+  "shared_string_hide_all": "Ascunde toate",
+  "shared_string_add": "Adaugă",
+  "shared_string_name": "Nume"
 }

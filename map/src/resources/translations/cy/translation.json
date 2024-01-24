@@ -4709,5 +4709,8 @@
   "poi_craft_photographic_laboratory": "Labordy ffotograffig",
   "poi_craft_agricultural_engines": "Peiriannau amaethyddol",
   "poi_taxi_yes": "Mynediad tacsi: oes",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "Math o ffrwydrad: atmosfferig, balŵn"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "Math o ffrwydrad: atmosfferig, balŵn",
+  "shared_string_hide_all": "Cuddio\\\u0027r cwbl",
+  "shared_string_add": "Ychwanegu",
+  "shared_string_name": "Enw"
 }

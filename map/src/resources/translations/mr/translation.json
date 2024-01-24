@@ -278,5 +278,7 @@
   "poi_parking": "पार्किंग",
   "poi_trash_disposal": "कचरा विल्हेवाट",
   "poi_mobile_phone": "मोबाईल फोन दुकान",
-  "poi_golf": "गोल्फ"
+  "poi_golf": "गोल्फ",
+  "shared_string_hide_all": "सगळे लपवा",
+  "shared_string_name": "नाव"
 }

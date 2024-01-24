@@ -2021,5 +2021,8 @@
   "poi_shower_filter_yes": "Kyllä",
   "poi_loc_name": "Paikallinen nimi",
   "poi_wetland_mangrove": "Mangrove",
-  "poi_halt": "Rautatiepysäkki"
+  "poi_halt": "Rautatiepysäkki",
+  "shared_string_hide_all": "Piilota kaikki",
+  "shared_string_add": "Lisää",
+  "shared_string_name": "Nimi"
 }

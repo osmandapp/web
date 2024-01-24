@@ -5143,5 +5143,8 @@
   "poi_craft_photographic_laboratory": "Laboratoire photographique",
   "poi_craft_agricultural_engines": "Constructeur d\\\u0027engins agricoles",
   "poi_taxi_yes": "Accès des taxis : oui",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "Type d\\\u0027explosion : atmosphérique, ballon"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "Type d\\\u0027explosion : atmosphérique, ballon",
+  "shared_string_hide_all": "Tout masquer",
+  "shared_string_add": "Ajouter",
+  "shared_string_name": "Nom"
 }

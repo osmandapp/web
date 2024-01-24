@@ -2319,5 +2319,8 @@
   "poi_halt": "Perhentian kereta api;Perhentian kereta;Stasiun kereta api;Stasiun kereta",
   "poi_quarry": "Tambang",
   "poi_craft_photographic_laboratory": "Laboratorium fotografi",
-  "poi_craft_agricultural_engines": "Mesin pertanian"
+  "poi_craft_agricultural_engines": "Mesin pertanian",
+  "shared_string_hide_all": "Sembunyikan semua",
+  "shared_string_add": "Tambahkan",
+  "shared_string_name": "Nama"
 }

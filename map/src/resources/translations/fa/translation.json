@@ -1941,5 +1941,7 @@
   "poi_halt": "ایستگاه راه آهن",
   "poi_quarry": "معدن سنگ",
   "poi_craft_photographic_laboratory": "لابراتوار چاپ عکس",
-  "poi_craft_agricultural_engines": "ماشین آلات و ادوات کشاورزی"
+  "poi_craft_agricultural_engines": "ماشین آلات و ادوات کشاورزی",
+  "shared_string_add": "افزودن",
+  "shared_string_name": "نام"
 }

@@ -4824,5 +4824,8 @@
   "poi_craft_photographic_laboratory": "Laboratòriu fotogràficu",
   "poi_craft_agricultural_engines": "Motores agrìcolos",
   "poi_taxi_yes": "Atzessu pro sos taxis: eja",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "Casta de esplosione: atmosfèrica, palloncinu"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "Casta de esplosione: atmosfèrica, palloncinu",
+  "shared_string_hide_all": "Cua totu",
+  "shared_string_add": "Annanghe",
+  "shared_string_name": "Nùmene"
 }

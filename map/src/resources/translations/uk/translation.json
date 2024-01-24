@@ -5150,5 +5150,8 @@
   "poi_craft_photographic_laboratory": "Фотографічна лабораторія",
   "poi_craft_agricultural_engines": "Ремонт сільськогосподарської техніки",
   "poi_taxi_yes": "Доступ на таксі: так",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "Вид вибуху: атмосферний, на повітряній кулі"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "Вид вибуху: атмосферний, на повітряній кулі",
+  "shared_string_hide_all": "Сховати все",
+  "shared_string_add": "Додати",
+  "shared_string_name": "Назва"
 }

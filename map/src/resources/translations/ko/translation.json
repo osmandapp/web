@@ -1057,5 +1057,8 @@
   "poi_halt": "철도 정거장",
   "poi_quarry": "채석장",
   "poi_craft_photographic_laboratory": "사진 실험실",
-  "poi_craft_agricultural_engines": "농업 엔진"
+  "poi_craft_agricultural_engines": "농업 엔진",
+  "shared_string_hide_all": "모두 숨기기",
+  "shared_string_add": "추가",
+  "shared_string_name": "이름"
 }

@@ -1757,5 +1757,8 @@
   "poi_theatre_genre_philharmonic": "Filharmonija",
   "poi_golf": "Golf",
   "poi_power_supply_no": "Izvor napajanja: ne",
-  "poi_shower_filter_yes": "Da"
+  "poi_shower_filter_yes": "Da",
+  "shared_string_hide_all": "Sakrij sve",
+  "shared_string_add": "Dodaj",
+  "shared_string_name": "Ime"
 }

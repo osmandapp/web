@@ -3520,5 +3520,7 @@
   "poi_health_specialty_social_paediatrics_no": "Specialitāte: sociālā pediatrija: nav",
   "poi_craft_photographic_laboratory": "Fotolaboratorija",
   "poi_craft_agricultural_engines": "Lauksaimniecības tehnikas remonts",
-  "poi_nuclear_explosion_type_atmospheric_balloon": "Sprādziena tips: atmosfērisks, balona"
+  "poi_nuclear_explosion_type_atmospheric_balloon": "Sprādziena tips: atmosfērisks, balona",
+  "shared_string_add": "Pievienot",
+  "shared_string_name": "Nosaukums"
 }
