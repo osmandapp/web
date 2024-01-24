@@ -5,7 +5,7 @@ module.exports = OsmAndHelpStructureGenerator;
 const BASE_URL = "/docs/"; // relative or absolute URL to include into JSON articles
 
 const DOC_PATH = "./docs/"; // path to docs files when yarn build started
-const JSON_OUTPUT_FILE = "./build/help-structure-generated.json"; // JSON file with the Help Structure
+const JSON_OUTPUT_FILE = "./build/help-structure.json"; // JSON file with the Help Structure
 const BUILD_DIR_READY_TRIGGER = "./build/assets"; // trigger file/dir that indicates that build dir is ready
 
 // repository-maintained files with help links
