@@ -60,9 +60,9 @@
     },
     "scripts": {
         "start": "yarn generate-resources && react-scripts start",
-        "start:mobile": "HOST=0.0.0.0 react-scripts start",
-        "start:local": "USE_LOCAL_API=yes react-scripts start",
-        "start:fallback": "USE_MAIN_API=yes react-scripts start",
+        "start:mobile": "HOST=0.0.0.0 yarn generate-resources && react-scripts start",
+        "start:local": "USE_LOCAL_API=yes yarn generate-resources && react-scripts start",
+        "start:fallback": "USE_MAIN_API=yes yarn generate-resources && react-scripts start",
         "build": "yarn generate-resources && react-scripts build",
         "build:staging": "yarn generate-resources && env-cmd -f .env.staging react-scripts build",
         "test": "jest",
