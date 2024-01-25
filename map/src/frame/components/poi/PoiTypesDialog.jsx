@@ -111,19 +111,10 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen, width }) {
     }
 
     function getLabel(category) {
-        let value;
         const poiFilter = Object.keys(PoiManager.poiFilters).find(
             (name) => PoiManager.poiFilters[name][0] === category
         );
-        if (poiFilter) {
-            value =
-                PoiManager.poiFilters[`${poiFilter}`].length > 1
-                    ? PoiManager.poiFilters[`${poiFilter}`][1]
-                    : PoiManager.poiFilters[`${poiFilter}`][0];
-        } else {
-            value = category;
-        }
-        return translatePoi({ value });
+        return translatePoi({ value: poiFilter ?? category });
     }
 
     return (
@@ -236,7 +227,7 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen, width }) {
                                     style={{ marginTop: '-15px', fontSize: '0.9rem' }}
                                     key={key + 'type'}
                                     id={`se-poi-category-${category}`}
-                                    onClick={() => showPoiCategoriesOnMap(item)}
+                                    onClick={() => showPoiCategoriesOnMap(PoiManager.formattingPoiFilter(item, false))}
                                 >
                                     <ListItemIcon sx={{ mr: '-15px' }}>
                                         <div className={classes.icon}>
