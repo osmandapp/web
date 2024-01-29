@@ -62,12 +62,12 @@ Other routing settings:
 
 Penalties for roads with another elevation profile will be set.
 
-|                  **Option**             |**Incline:**| <1% | <3%  | <7% | <13% | <25% | >=25% |**Decline:**| <17% | <35% | <60% | >=60%      |
-|:---------------------------------------:|------------|-----|------|-----|------|------|-------|------------|------|------|------|------------|
-|_Disabled/Any_(the shortest but hardest) |            |  -  |   -  |  -  |   -  |   -  |   -   |            |   -  |   -  |   -  |     -      |
-|_Less hilly_(default, balanced)          |            |     |   2  |  8  |  16  |  32  |   48  |            |  6.4 |  25  |  25  | impossible |
-|_Flat_(the longest but easy)             |            |     |   2  |  12 |  30  |  50  |   74  |            |  6.4 |  25  |  25  | impossible |
-|_Hilly_(more difficult)                  |            |  61 | 19.7 | 7.5 |   3  |  0.5 |  0.3  |            |  6.4 |  25  |  25  | impossible |
+|                  **Option**                 |**Incline:**| <1% | <3%  | <7% | <13% | <25% | >=25% |**Decline:**| <17% | <35% | <60% | >=60%      |
+|:--------------------------------------------|------------|-----|------|-----|------|------|-------|------------|------|------|------|------------|
+|**_Disabled/Any_** (the shortest but hardest)|            |  -  |   -  |  -  |   -  |   -  |   -   |            |   -  |   -  |   -  |     -      |
+|**_Less hilly_** (default, balanced)         |            |     |   2  |  8  |  16  |  32  |   48  |            |  6.4 |  25  |  25  | impossible |
+|**_Less hilly_** (default, balanced)         |            |     |   2  |  12 |  30  |  50  |   74  |            |  6.4 |  25  |  25  | impossible |
+|**_Hilly_** (more difficult)                 |            |  61 | 19.7 | 7.5 |   3  |  0.5 |  0.3  |            |  6.4 |  25  |  25  | impossible |
 
 ## MTB routing particularities
 
