@@ -1,6 +1,7 @@
 ---
 sidebar_position: 9
 title:  Android Auto
+ios: false
 ---
 
 import Tabs from '@theme/Tabs';

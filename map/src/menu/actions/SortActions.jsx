@@ -23,6 +23,7 @@ import { ReactComponent as NearestIcon } from '../../assets/icons/ic_show_on_map
 import styles from '../trackfavmenu.module.css';
 import AppContext from '../../context/AppContext';
 import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
+import i18n from '../../i18n';
 
 const az = (a, b) => (a > b) - (a < b);
 
@@ -114,50 +115,50 @@ export const allMethods = {
         reverse: false,
         callback: byLocation,
         icon: <NearestIcon />,
-        name: 'Nearest',
+        name: () => i18n?.t('shared_string_nearest'),
     },
     time: {
         default: true,
         reverse: true,
         callback: byTime,
         icon: <TimeIcon />,
-        name: 'Last modified',
+        name: () => i18n?.t('sort_last_modified'),
     },
     az: {
         reverse: false,
         callback: byAlpha,
         icon: <AscendingIcon />,
-        name: 'Name A - Z',
+        name: () => i18n?.t('sort_name_ascending'),
     },
     za: {
         reverse: true,
         callback: byAlpha,
         icon: <DescendingIcon />,
-        name: 'Name Z - A',
+        name: () => i18n?.t('sort_name_descending'),
     },
     longest: {
         reverse: true,
         callback: byDistance,
         icon: <LongToShortIcon />,
-        name: 'Longest distance first',
+        name: () => i18n?.t('sort_distance_descending'),
     },
     shortest: {
         reverse: false,
         callback: byDistance,
         icon: <ShortToLongIcon />,
-        name: 'Shortest distance first',
+        name: () => i18n?.t('sort_distance_ascending'),
     },
     newDate: {
         reverse: true,
         callback: byCreationTime,
         icon: <NewDateIcon />,
-        name: 'Newest date first',
+        name: () => i18n?.t('sort_date_ascending'),
     },
     oldDate: {
         reverse: false,
         callback: byCreationTime,
         icon: <OldDateIcon />,
-        name: 'Oldest date first',
+        name: () => i18n?.t('sort_date_descending'),
     },
 };
 
@@ -245,7 +246,7 @@ const SortActions = forwardRef(
                 setSortIcon(allMethods[method].icon);
             }
             if (setSortName) {
-                setSortName(allMethods[method].name);
+                setSortName(allMethods[method].name());
             }
             setCurrentMethod(method);
         };
@@ -271,7 +272,7 @@ const SortActions = forwardRef(
             return (
                 <ListItem className={styles.sortItem}>
                     <Icon className={styles.icon}>{item.icon}</Icon>
-                    <ListItemText className={styles.sortText}>{item.name}</ListItemText>
+                    <ListItemText className={styles.sortText}>{item.name()}</ListItemText>
                 </ListItem>
             );
         };

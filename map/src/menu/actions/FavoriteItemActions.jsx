@@ -12,9 +12,11 @@ import FavoritesManager, {
     prepareIcon,
 } from '../../manager/FavoritesManager';
 import AppContext from '../../context/AppContext';
+import { useTranslation } from 'react-i18next';
 
 const FavoriteItemActions = forwardRef(({ marker, group, setOpenActions }, ref) => {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const [openEditDialog, setOpenEditDialog] = useState(false);
@@ -56,7 +58,7 @@ const FavoriteItemActions = forwardRef(({ marker, group, setOpenActions }, ref) 
                         </ListItemIcon>
                         <ListItemText>
                             <Typography variant="inherit" className={styles.actionName} noWrap>
-                                Edit
+                                {t('shared_string_edit')}
                             </Typography>
                         </ListItemText>
                     </MenuItem>
@@ -71,7 +73,7 @@ const FavoriteItemActions = forwardRef(({ marker, group, setOpenActions }, ref) 
                         </ListItemIcon>
                         <ListItemText>
                             <Typography variant="inherit" className={styles.actionName} noWrap>
-                                Delete
+                                {t('shared_string_delete')}
                             </Typography>
                         </ListItemText>
                     </MenuItem>

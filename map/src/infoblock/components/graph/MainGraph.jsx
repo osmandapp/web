@@ -374,8 +374,8 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                                 context.dataset.yAxisID === 'y1'
                                     ? 'm'
                                     : context.dataset.yAxisID === 'y1Slope'
-                                    ? '%'
-                                    : 'km/h';
+                                      ? '%'
+                                      : 'km/h';
                             if (context.parsed.y !== null) {
                                 label += `${context.parsed.y.toFixed(0)} ${dimension}`;
                             }

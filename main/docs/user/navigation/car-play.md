@@ -1,6 +1,7 @@
 ---
 sidebar_position: 10
 title:  CarPlay
+android: false
 ---
 
 import Tabs from '@theme/Tabs';
@@ -212,17 +213,20 @@ This information widget combines alert types such as **Pedestrian crosswalks** a
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-screen-alert(1).png)  
 
 
-### Map appearance
+### Map appearance (3D)
 
-On the screen of your vehicle multimedia system, you can use both the 2D and 3D views of OsmAnd maps to display your route and navigation. For your map to have a 3D view, you need to open the main *Menu → Settings → App profiles → General settings → [Appearance](../personal/profiles.md#appearance)* in the application directly. This has to be done before connecting to Car Play.  
+The OsmAnd app allows you to use the 3D map view on the CarPlay screen to display your route and navigation.
+- the **3D / 2D button** is displayed on the CarPlay screen. 
+- You can switch between 3D / 2D map modes by tapping this button.
 
-![CarPlay screen](@site/static/img/navigation/auto-car/car-play-D(1).png)    
-
+![Car Play](@site/static/img/navigation/auto-car/car_play_3.png)
 
 ### Multifunction dashboard
 
-The Car Play dashboard will soon be able to display and use the OsmAnd navigation app simultaneously with music, messages, or other notification apps.
+The OsmAnd app can be opened and used to navigate in CarPlay on the vehicle multimedia system screen simultaneously with music, message or other notification apps. Setting up the multifunction dashboard on a phone connected to CarPlay or on the screen in your vehicle system:
+- Find Multi window button and switch it.
 
+![Car Play](@site/static/img/navigation/auto-car/car_play_4.png) 
 
 ## Volume control issue
 

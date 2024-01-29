@@ -6,6 +6,8 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import AppContext from '../../context/AppContext';
+import { useTranslation } from 'react-i18next';
+import renderingAttrTrans from '../../resources/renderingAttributesTranslations.json';
 
 let section = '';
 function checkSection(newSection) {
@@ -39,6 +41,7 @@ const onCheckBox = (key, opts, setOpts) => () => {
 
 export default function RenderingSettingsDialog({ setOpenSettings }) {
     const ctx = useContext(AppContext);
+    const { i18n, t } = useTranslation();
     const selectedStyle = 'df'; // TODO
     const [opts, setOpts] = useState(ctx.allTileURLs[selectedStyle].properties);
     const handleClose = () => {
@@ -47,51 +50,75 @@ export default function RenderingSettingsDialog({ setOpenSettings }) {
     };
     const handleAccept = () => {
         setOpenSettings(false);
-        // let newRouteMode = Object.assign({}, ctx.routeMode);
-        // newRouteMode.opts = opts;
-        // ctx.setRouteMode(newRouteMode);
     };
     section = '';
+
+    function getTranslation(value) {
+        if (renderingAttrTrans[value]) {
+            return t(renderingAttrTrans[value]);
+        }
+
+        const currentLanguage = i18n.language;
+
+        if (currentLanguage === 'en') {
+            return value;
+        }
+
+        const englishTranslations = i18n.store.data['en']['translation'];
+        const key = Object.keys(englishTranslations).find((k) => englishTranslations[k] === value);
+
+        if (key) {
+            return t(key);
+        }
+
+        return value;
+    }
+
     return (
         <Dialog open={true} onClose={handleClose}>
             <DialogTitle>Rendering Settings</DialogTitle>
             <DialogContent>
-                {opts.map((opt) => (
-                    <>
-                        {checkSection(opt.category) && <DialogContentText>{section}</DialogContentText>}
-                        <Tooltip key={'tool_' + opt.attrName} title={opt.description}>
-                            {opt.type === 5 ? (
-                                <FormControlLabel
-                                    key={opt.attrName}
-                                    label={opt.name}
-                                    control={
-                                        <Checkbox
-                                            key={'check_' + opt.attrName}
-                                            checked={opt.value}
-                                            onChange={onCheckBox(opt.attrName, opts, setOpts)}
-                                        />
-                                    }
-                                ></FormControlLabel>
-                            ) : (
-                                <FormControl sx={{ m: 2, minWidth: 250 }}>
-                                    <InputLabel id={'routing-param-' + opt.attrName}>{opt.name}</InputLabel>
-                                    <Select
-                                        labelId={'routing-param-' + opt.attrName}
-                                        label={opt.name}
-                                        value={opt.value ? opt.value : ''}
-                                        onChange={onSelect(opt.attrName, opts, setOpts)}
-                                    >
-                                        {opt.possibleValues.map((item) => (
-                                            <MenuItem key={item} value={item}>
-                                                {item}
-                                            </MenuItem>
-                                        ))}
-                                    </Select>
-                                </FormControl>
+                {opts.map((opt) => {
+                    const name = getTranslation(opt.name);
+                    return (
+                        <React.Fragment key={opt.attrName}>
+                            {checkSection(opt.category) && (
+                                <DialogContentText>{getTranslation(section)}</DialogContentText>
                             )}
-                        </Tooltip>
-                    </>
-                ))}
+                            <Tooltip key={'tool_' + opt.attrName} title={opt.description} arrow placement="right">
+                                {opt.type === 5 ? (
+                                    <FormControlLabel
+                                        key={opt.attrName}
+                                        label={name}
+                                        control={
+                                            <Checkbox
+                                                key={'check_' + opt.attrName}
+                                                checked={opt.value}
+                                                onChange={onCheckBox(opt.attrName, opts, setOpts)}
+                                            />
+                                        }
+                                    ></FormControlLabel>
+                                ) : (
+                                    <FormControl sx={{ m: 2, minWidth: 250 }}>
+                                        <InputLabel id={'routing-param-id-' + opt.attrName}>{name}</InputLabel>
+                                        <Select
+                                            labelId={'routing-param-' + opt.attrName}
+                                            label={name}
+                                            value={opt.value ? opt.value : ''}
+                                            onChange={onSelect(opt.attrName, opts, setOpts)}
+                                        >
+                                            {opt.possibleValues.map((item) => (
+                                                <MenuItem key={'value-' + item} value={item}>
+                                                    {item}
+                                                </MenuItem>
+                                            ))}
+                                        </Select>
+                                    </FormControl>
+                                )}
+                            </Tooltip>
+                        </React.Fragment>
+                    );
+                })}
             </DialogContent>
             <DialogActions>
                 <Button onClick={handleClose}>Cancel</Button>

@@ -1,6 +1,6 @@
-import styles from '../../src/generated/styles.json';
-import andValues from '../../src/generated/android-values.json';
+import styles from '../../src/resources/mapStyles/styleRulesResult.json';
 import _ from 'lodash';
+import i18n from '../i18n';
 import Utils from '../util/Utils';
 
 //road attributes
@@ -72,7 +72,7 @@ function parseType(styles, tag, style = DEFAULT_STYLE) {
     let res = [];
     Object.values(types).map((data) => {
         const value = data.attrStringValue === `${tag}_undefined` ? UNDEFINED_DATA : data.attrStringValue;
-        let name = andValues[`rendering_attr_${value}_name`];
+        let name = i18n?.t(`rendering_attr_${value}_name`);
         const attr = value && value.replace(`${tag}_`, '');
         if (!name) {
             name = prepareType(attr);

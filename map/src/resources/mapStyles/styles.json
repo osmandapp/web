@@ -1,0 +1,10 @@
+[
+  "default.render.xml",
+  "skimap.render.xml",
+  "topo.render.xml",
+  "nautical.render.xml",
+  "regions.render.xml",
+  "offroad.render.xml",
+  "mapnik.render.xml",
+  "desert.render.xml"
+]

@@ -322,31 +322,34 @@ Each Favorites folder containes one group of favorites. You can expand and colla
 
 ![Favorites folders expand android](@site/static/img/personal/favorites_folders_expand_android.png)
 
-Tap on any point from Favorite list shows it on the map and also opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) for chosen point.
+- Tap on any point from Favorite list shows it on the map and also opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) for chosen point.
 
 ![Favorites context menu ios](@site/static/img/personal/favorites_context_menu_ios.png)
 
-Tap on &#8942; button (**Android**) opens special functions for a chosen Favorite folder.
+- Tap on &#8942; button opens special functions for a chosen Favorite folder.
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
 
-Functions for Favorite folder:
-- &nbsp;<Translate android="true" ids="edit_name"/>  - is used to change folder name.
-- &nbsp;<Translate android="true" ids="change_color"/>  - is used to change folder color.
-- &nbsp;<Translate android="true" ids="shared_string_show_on_map"/>  - display or not Favorite points from the folder on the map.
-- &nbsp;<Translate android="true" ids="shared_string_add_to_map_markers"/>  or <Translate android="true" ids="remove_from_map_markers"/>   - add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
-- &nbsp;<Translate android="true" ids="shared_string_share"/>  - sharing Favorite points with other users (using Favorites.gpx file).
-- &nbsp;Button *<Translate android="true" ids="shared_string_cancel"/>* - close this menu.
+Functions for [Favorite folder](#favorite-groups):
+1. &nbsp;<Translate android="true" ids="shared_string_rename"/>  - is used to change folder name. 
+2. &nbsp;<Translate android="true" ids="change_default_appearance"/>  - is used to change default appearance for favorites from the chosen group. 
+3. &nbsp;<Translate android="true" ids="shared_string_show_on_map"/>  - display or not Favorite points from the folder on the map. 
+4. &nbsp;<Translate android="true" ids="shared_string_add_to_map_markers"/>  or <Translate android="true" ids="remove_from_map_markers"/>   - add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md). 
+5. &nbsp;<Translate android="true" ids="shared_string_share"/>  - sharing Favorite points with other users (using Favorites.gpx file). 
+6. &nbsp;Button *<Translate android="true" ids="shared_string_cancel"/>* - close this menu. 
+7. &nbsp;Button *<Translate android="true" ids="shared_string_delete"/>* - delete the chosen favorites folder.  
 
-At the bottom of the screen there are four Actions buttons.  
+
+
+- At the bottom of the screen there are four Actions buttons.  
 
 ![Favorites actions android](@site/static/img/personal/favorites_actions_android.png)
 
 Actions:
-- &#43; - allows to import Favorites points (favorite.gpx) from device storage.
-- &#60; - allows to export (share) all Favorites points as "favourite.gpx" file.
-- &#128681; - allows to add or to remove chosen Favorites points (folders) in [Map markers](../personal/markers.md) list.
-- &#x1F5D1; - allows to delete chosen Favorites points (folders).
+1. &#43; - allows to import Favorites points (favorite.gpx) from device storage.
+2. &#60; - allows to export (share) all Favorites points as "favourite.gpx" file.
+3. &#128681; - allows to add or to remove chosen Favorites points (folders) in [Map markers](../personal/markers.md) list.
+4. &#x1F5D1; - [allows to delete](#bulk-delete) chosen Favorites points (folders).
 
 </TabItem>
 
@@ -354,27 +357,28 @@ Actions:
 
 ![Favorites folders expand ios](@site/static/img/personal/favorites_folders_expand_ios.png)
 
-Tap on any point from Favorite list shows it on map and opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) for this point.  
+- Tap on any point from Favorite list shows it on map and opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) for this point.  
 
 ![Favorites context menu ios](@site/static/img/personal/favorites_context_menu_ios.png)
 
-Tap on &#128393; button opens special functions. You need to choose one ore more folder or points for actions.
+- Tap on &#128394; button opens special functions. You need to choose one ore more folder or points for actions.
 
 ![Favorites actions ios](@site/static/img/personal/favorites_actions_ios.png)
 
 Actions:
-- *Import loader* - allows to share/import Favorites points (folders) like "favorite.gpx" file.
-- *Folder* - allows to move your Favorites points (folders) to others Favorites folders (named Groups) or to new creating folders (Group). 
-- *Palette of colors* - allows to change colors for Favorites points (folders).
-- &#x1F5D1; - allows to delete chosen Favorites points (folders).
+1. *Import loader* - allows to share/import Favorites points (folders) like "favorite.gpx" file.
+2. *Folder* - allows to move your Favorites points (folders) to others Favorites folders (named Groups) or to new creating folders (Group). 
+3. *Palette of colors* - allows to change colors for Favorites points (folders).
+4. &#x1F5D1; - [allows to delete](#bulk-delete) chosen Favorites points (folders).
 
-Export/Import favorite for iOS version like special menu in "My Favorites" menu.
+
+- [Export/Import favorite](#all-favorites) for iOS version like special menu in "My Favorites" menu.
 
 ![Favorites export import ios](@site/static/img/personal/favorites_export_import_ios.png)
 
-<Translate ios="true" ids="fav_import_title"/>  - <Translate ios="true" ids="fav_import_desc"/>.  
+1. [<Translate ios="true" ids="fav_import_title"/>](../personal/import-export.md)  - <Translate ios="true" ids="fav_import_desc"/>.  
 
-<Translate ios="true" ids="fav_export_title"/>  - You can export all your favorites like Favorites.gpx file.
+2. [<Translate ios="true" ids="fav_export_title"/>](../personal/import-export.md)  - You can export all your favorites like Favorites.gpx file.
 
 </TabItem>
 
@@ -384,29 +388,42 @@ Export/Import favorite for iOS version like special menu in "My Favorites" menu.
 
 Favorite Groups is folders with favorite points in *My Favorites* menu.
 
-### Change color
+### Change appearance
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-Tap &#8942; button opens special functions for a chosen Favorite folder.
+- Tap &#8942; button opens special functions for a chosen Favorite folder → _<Translate android="true" ids="change_default_appearance"/>_:
 
-![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
+Default color, icon and shape will apply to the added favorite points into the group.
+
+![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png) ![Favorites folder functions android](@site/static/img/personal/favorites_folder_appearance_android.png)
+
+
 
 Functions for Favorite folder:
-- &nbsp;<Translate android="true" ids="edit_name"/>  - changing folder name.
-- &nbsp;<Translate android="true" ids="change_color"/>  - changing folder color.
-- &nbsp;<Translate android="true" ids="shared_string_show_on_map"/>  - showing or not Favorite points from the folder on the map.
-- &nbsp;<Translate android="true" ids="shared_string_add_to_map_markers"/>  or <Translate android="true" ids="remove_from_map_markers"/>   - add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
-- &nbsp;<Translate android="true" ids="shared_string_share"/>  - sharing Favorite points with other users (like Favorites.gpx file).
-- &nbsp;Button *<Translate android="true" ids="shared_string_cancel"/>* - closes this menu.
+1. &nbsp;<Translate android="true" ids="shared_string_rename"/>  - is used to change folder name. 
+2. &nbsp;**<Translate android="true" ids="change_default_appearance"/>**  - is used to change default appearance for favorites from the chosen group. 
+3. &nbsp;<Translate android="true" ids="shared_string_show_on_map"/>  - display or not Favorite points from the folder on the map. 
+4. &nbsp;<Translate android="true" ids="shared_string_add_to_map_markers"/>  or <Translate android="true" ids="remove_from_map_markers"/>   - add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md). 
+5. &nbsp;<Translate android="true" ids="shared_string_share"/>  - sharing Favorite points with other users (using Favorites.gpx file). 
+6. &nbsp;Button *<Translate android="true" ids="shared_string_cancel"/>* - close this menu. 
+7. &nbsp;Button *<Translate android="true" ids="shared_string_delete"/>* - delete the chosen favorites folder.  
+8. &nbsp;Button *<Translate android="true" ids="shared_string_cancel"/>* - closes this menu.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Tap *Pencil* button opens special functions for a chosen Favorite folder. You need to choose folder or points for action: to change colors for Favorites points (folders).
+- Long tap on folder → show context menu → _Change appearance_:
+
+Default color, icon and shape will apply to the added favorite points into the group.
+
+![Favorites actions ios](@site/static/img/personal/favorites_actions1_ios.png) ![Favorites actions ios](@site/static/img/personal/favorites_actions2_ios.png)
+
+
+- Tap *Pencil* button opens special functions for a chosen Favorite folder. You need to choose folder or points for action: to change colors for Favorites points (folders).
 
 ![Favorites actions ios](@site/static/img/personal/favorites_actions_ios.png)
 
@@ -447,13 +464,18 @@ For changing Group (folder) name you need to tap on &#8942; button to open speci
 ![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
 
 Functions for Favorite folder:
-- &nbsp;<Translate android="true" ids="edit_name"/>  - changing folder name.
+-  &nbsp;<Translate android="true" ids="shared_string_rename"/>  - is used to change folder name. 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-<InfoAndroidOnly/>
+- Long tap on folder → show context menu → _Change appearance → Name_:
+
+Change a name in the group name section.
+
+![Favorites actions ios](@site/static/img/personal/favorites_actions1_ios.png) ![Favorites actions ios](@site/static/img/personal/favorites_actions2_ios.png)
+
 
 </TabItem>
 
@@ -475,7 +497,7 @@ Tap on &#x1F5D1; at the bottom of the screen. You can select points and groups a
 
 <TabItem value="ios" label="iOS">
 
-Tap on &#128393; button opens special functions bar at the bottom of the screen. You can select points and groups and by tap on &#x1F5D1; button in lower right corner delete them.
+Tap on &#128394;&#65039; button opens special functions bar at the bottom of the screen. You can select points and groups and by tap on &#x1F5D1; button in lower right corner delete them.
 
 ![Favorites actions ios](@site/static/img/personal/favorites_actions_ios.png)
 
@@ -634,9 +656,13 @@ A tap on &#8942; button opens the special functions menu for a chosen favorite f
 
 <TabItem value="ios" label="iOS">
 
-Tap on &#128393; button opens special functions menu. Then you need to choose favorites folder(s) or point(s) and using &#8657 (**share**) button send Favorites.gpx file to your device's memory or your friends via messengers.  
+- Tap on &#128394;&#65039; button opens special functions menu. Then you need to choose favorites folder(s) or point(s) and using &#8657 (**share**) button send Favorites.gpx file to your device's memory or your friends via messengers. 
 
 ![Favorites actions ios](@site/static/img/personal/favorites_actions_ios.png)
+
+- Long tap on folder → show context menu → &#8657 (**share**) button.
+
+![Favorites actions ios](@site/static/img/personal/favorites_actions1_ios.png) 
 
 </TabItem>
 

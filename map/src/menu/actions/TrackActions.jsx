@@ -13,12 +13,15 @@ import TracksManager from '../../manager/track/TracksManager';
 import RenameDialog from '../../dialogs/tracks/RenameDialog';
 import AppContext from '../../context/AppContext';
 import { duplicateTrack } from '../../manager/track/SaveTrackManager';
+import { useTranslation } from 'react-i18next';
 
 const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref) => {
     const ctx = useContext(AppContext);
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const [openRenameDialog, setOpenRenameDialog] = useState(false);
+    const { t } = useTranslation();
+
     const downloadGpx = async () => {
         const urlFile = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
         const qs = `?type=${encodeURIComponent(track.type)}&name=${encodeURIComponent(track.name)}`;
@@ -65,7 +68,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
                             </ListItemIcon>
                             <ListItemText>
                                 <Typography variant="inherit" className={styles.actionName} noWrap>
-                                    Hide from map
+                                    {t('web:hide_from_map')}
                                 </Typography>
                             </ListItemText>
                         </MenuItem>
@@ -83,7 +86,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
                             </ListItemIcon>
                             <ListItemText>
                                 <Typography variant="inherit" className={styles.actionName} noWrap>
-                                    Show on map
+                                    {t('shared_string_show_on_map')}
                                 </Typography>
                             </ListItemText>
                         </MenuItem>
@@ -99,7 +102,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
                         </ListItemIcon>
                         <ListItemText>
                             <Typography variant="inherit" className={styles.actionName} noWrap>
-                                Rename
+                                {t('shared_string_rename')}
                             </Typography>
                         </ListItemText>
                     </MenuItem>
@@ -114,7 +117,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
                         </ListItemIcon>
                         <ListItemText>
                             <Typography variant="inherit" className={styles.actionName} noWrap>
-                                Duplicate
+                                {t('shared_string_duplicate')}
                             </Typography>
                         </ListItemText>
                     </MenuItem>
@@ -131,7 +134,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
                         </ListItemIcon>
                         <ListItemText>
                             <Typography variant="inherit" className={styles.actionName} noWrap>
-                                Download
+                                {t('shared_string_download')}
                             </Typography>
                         </ListItemText>
                     </MenuItem>
@@ -146,7 +149,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
                         </ListItemIcon>
                         <ListItemText>
                             <Typography variant="inherit" className={styles.actionName} noWrap>
-                                Delete
+                                {t('shared_string_delete')}
                             </Typography>
                         </ListItemText>
                     </MenuItem>

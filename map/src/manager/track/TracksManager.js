@@ -868,10 +868,14 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
 
     const cloneFile = _.cloneDeep(ctx.selectedGpxFile);
 
+    if (cloneFile.tracks === undefined || cloneFile.tracks.length === 0) {
+        return cloneFile; // no tracks = nothing to analyze
+    }
+
     const wpts = cloneFile.wpts;
     const pointsGroups = cloneFile.pointsGroups;
 
-    if (points && cloneFile.tracks && cloneFile.tracks[0]) {
+    if (points) {
         cloneFile.tracks[0].points = points;
     }
 

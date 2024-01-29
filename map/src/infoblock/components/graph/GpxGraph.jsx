@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import RoadAttributesGraph from './RoadAttributesGraph';
 import MainGraph from './MainGraph';
-import andValues from '../../../../src/generated/android-values.json';
 import { cap, UNDEFINED_DATA } from '../../../manager/GraphManager';
+import { useTranslation } from 'react-i18next';
 
 export default function GpxGraph({ mainData, attrGraphData, showData, width }) {
     const [selectedPoint, setSelectedPoint] = useState(null);
 
+    const { t } = useTranslation();
+
     function isEmptyAttrData(attrName) {
         return (
-            attrGraphData[attrName].datasets.length < 2 &&
-            attrGraphData[attrName].datasets[0]?.label === cap(UNDEFINED_DATA)
+            (attrGraphData[attrName].datasets.length < 2 &&
+                attrGraphData[attrName].datasets[0]?.label === cap(UNDEFINED_DATA)) ||
+            attrGraphData[attrName].datasets.length === 0
         );
     }
 
@@ -34,7 +37,7 @@ export default function GpxGraph({ mainData, attrGraphData, showData, width }) {
                         !isBigData(attrName) && (
                             <RoadAttributesGraph
                                 key={attrName}
-                                name={andValues[`routeInfo_${attrName}_name`]}
+                                name={t(`routeInfo_${attrName}_name`)}
                                 data={attrGraphData[attrName]}
                                 width={width}
                                 selectedPoint={selectedPoint}

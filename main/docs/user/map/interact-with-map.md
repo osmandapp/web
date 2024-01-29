@@ -164,7 +164,7 @@ You can not change Camera tilt when old [map rendering engine](../personal/globa
 ## Settings
 
 
-## External input device buttons
+### External input device buttons
 
 External input device buttons provide a convenient and efficient way to interact with the map and the OsmAnd application interface.  They are located on external devices, such as Bluetooth or other types of keyboards, specialized buttons on vehicle navigation devices, [WunderLINQ](https://blackboxembedded.com/), [Parrot](https://www.parrot.com/en) and other controllers.  
 
@@ -174,14 +174,22 @@ One of the main functions of the external input device buttons is to zoom in and
 The keyboard continues to work even if the *External input devices* option is turned off, when *None* is selected. 
 :::
 
+Enabled the _External input device_ function:
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
 
+After you need to choose your device *<Translate android="true" ids="shared_string_type"/>*: *<Translate android="true" ids="sett_generic_ext_input"/>*, *<Translate android="true" ids="sett_parrot_ext_input"/>*, *<Translate android="true" ids="sett_wunderlinq_ext_input"/>*.
+
+![External devices](@site/static/img/map/external_menu_android.png) ![External devices](@site/static/img/map/external_types_android.png)
+
+Each External input devices Type has *<Translate android="true" ids="key_assignments"/>*. You can click on *<Translate android="true" ids="key_assignments"/>* to see the list of actions and kyes. Table with _Keys_ you can see below:
+
 | Key | Device | Action |
-|:------------|:---------------|:---------------|
+|:---------|:---------------|:---------------|
 |**C**| Keyboard   | [My location](../map/interact-with-map.md#my-location--zoom) |
 |**D**| Keyboard   | [Map orientation](../map/interact-with-map.md#map-orientation-modes) |
 |**N**| Keyboard   | Open Navigation view. |
@@ -207,11 +215,43 @@ The keyboard continues to work even if the *External input devices* option is tu
 You can read more about the actions of external input devices on GitHub in the [MapActivityKeyListener](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82) package.
 :::
 
+#### Own Type creation
+
+You can create your own *<Translate android="true" ids="shared_string_type"/>*:
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
+
+![External devices](@site/static/img/map/external_mypilot_android.png) ![External devices](@site/static/img/map/external_mypilot2_android.png)
+
+Now, you can change buttons for actions. Just go to your created *<Translate android="true" ids="shared_string_type"/>*:
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → Your type → <Translate android="true" ids="key_assignments"/> → Click to any Actions or Map interactions → &#43; or <Translate android="true" ids="shared_string_button"/>*
+
+![External devices](@site/static/img/map/external_assign_android.png)
+
+Now, press the button on your device to assign it to the action.
+
+![External devices](@site/static/img/map/external_assign2_android.png)
+
+If this button is used for another action you see a warning about it and a question about the reassignment.
+
+![External devices](@site/static/img/map/external_assign3_android.png) ![External devices](@site/static/img/map/external_assign4_android.png)
+
+This way the user can assign his actions to the _External input device_ buttons. You can reset key assignments by clicking to _Reset button_ in the top corner of the screen: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → Your type → <Translate android="true" ids="key_assignments"/> → Reset*. All key assignments for the selected type will be removed.
+
+![External devices](@site/static/img/map/external_assign5_android.png) 
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
+
+After you need to choose your device *Type*: *<Translate ios="true" ids="sett_generic_ext_input"/>*, *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*.
+
+![External devices](@site/static/img/map/external_types_ios.png)
+
+Each External input devices Type has *Key assignments*. Table with _Keys_ you can see below:
 
 | Key | Device | Action |
 |:------------|:---------------|:---------------|
@@ -232,6 +272,7 @@ You can read more about the actions of external input devices on GitHub in the [
 </TabItem>
 
 </Tabs>  
+
 
 ### Extra compass settings  
 

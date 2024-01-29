@@ -8,6 +8,7 @@ import { AppContextProvider } from './context/AppContext';
 import DeleteAccountDialog from './login/DeleteAccountDialog';
 import { AppServices } from './services/AppServices';
 import './variables.css';
+import './i18n';
 
 export let globalNavigate = () => null;
 
