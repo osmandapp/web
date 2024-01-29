@@ -120,6 +120,7 @@ __________________________________
                      },
                      "filename":"waterway.obf.zip",
                      "type":"map",
+                     "isHidden":"true",
                      "timestamp":1582994500,
                      "containerSize":28195301,
                      "contentSize":28195301,
@@ -282,6 +283,8 @@ To import icon images of your plugin to OsmAnd you can create folder (in our exa
 
 The *"DOWNLOADS"* type: you can add any files (sqlite, obf, fonts...) for downloading. You can see the general types of downloading files <a href="https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33">here</a>.
 
+**Note**: _"isHidden":"true"_ tag (by default - false) can hide your map data from [Download maps menu](../personal/maps#local-maps) of OsmAnd.
+
 ![Custom package](@site/static/img/plugins/custom/3.jpg)
 
 In *"scope-id"* you can add all necessary information about url of your files, name, description and etc.
@@ -305,7 +308,12 @@ When all files in folder and  *items.JSON*  will  be ready, you can zip all your
 
 >In this article, we try to explain the first steps of your own Plugin creation. In the future, we want to add OsmAnd market in our application so you can share your own plugins, maps, and navigation profiles with others.
 
+
 ## Examples
+
+ - [Anygis maps](https://t.me/ruosmand/127579) custom plugin 
+ - [Map Legend](https://t.me/OsmAndMaps/45410) custom plugin
+ - [UMP-PL](https://ump.waw.pl/) Poland [map custom plugin](https://ump.waw.pl/update/UMP-PL-OsmAnd_plugin.osf)
 
 _________________________________________________
 
