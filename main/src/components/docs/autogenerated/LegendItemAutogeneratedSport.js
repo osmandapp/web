@@ -33,6 +33,7 @@ export default function Render() {
         'Diving' : 'sport/sport_sport_diving',
         'Equestrian' : 'sport/sport_sport_equestrian',
         'Field hockey' : 'sport/sport_sport_field_hockey',
+        'Hang gliding' : 'sport/sport_sport_hang_gliding',
         'Golf' : 'sport/sport_sport_golf',
         'Disc golf' : 'sport/sport_sport_disc_golf',
         'Handball' : 'sport/sport_sport_handball',
