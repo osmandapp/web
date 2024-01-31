@@ -56,11 +56,13 @@ Other routing settings:
 
 ### Penalties of Elevation data
 
-Penalties will be set for roads that differ from the selected type.
+Depending on the selected mode (Less hilly, Flat, Hilly) and the physical slope (%) of the road, a penalty calculated from the height difference is added to each horizontal metre.
+
+**Table of penalties:** 
 
 |                  **Option**                 | **Incline:** | <1% | <3% | <7% | <13% | <25% | >=25% | **Decline:** | <9% | <17% | <35% | <60% | >=60% |
 |:--------------------------------------------|:-------------|-----|-----|-----|------|------|-------|:-------------|-----|------|------|------|-------|
 |**_Disabled/Any_** (the shortest but hardest)|              |  -  |  -  |  -  |   -  |   -  |   -   |              |  -  |   -  |   -  |   -  |   -   |
 |**_Less hilly_** (default, balanced)         |              |     |  1  |  4  |   8  |  10  |   15  |              |  5  |  10  |  17  |  25  |   40  |
-|**_Less hilly_** (default, balanced)         |              |     |  2  |  12 |  30  |  50  |   74  |              |  5  |  10  |  17  |  25  |   40  |
+|**_Flat_** (the longest but easy)            |              |     |  2  |  12 |  30  |  50  |   74  |              |  5  |  10  |  17  |  25  |   40  |
 |**_Hilly_** (more difficult)                 |              |  61 |  20 |  7  |   3  |  0.5 |  0.3  |              |  5  |  10  |  17  |  25  |   40  |

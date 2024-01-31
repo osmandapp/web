@@ -1,6 +1,6 @@
 ---
-sidebar_position: 12
-title:  Custom plugin
+sidebar_position: 17
+title:  Custom package
 ---
 
 import Tabs from '@theme/Tabs';
