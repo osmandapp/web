@@ -62,7 +62,6 @@ export default function Render() {
         'Ten-pin bowling' : 'sport/sport_sport_10pin',
         'Ultralight aviation' : 'sport/sport_sport_ultralight_aviation',
         'Volleyball' : 'sport/sport_sport_volleyball',
-        'Windsurfing' : 'sport/sport_sport_windsurfing',
     }});
 
 }
