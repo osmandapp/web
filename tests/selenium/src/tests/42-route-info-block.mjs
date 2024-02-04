@@ -36,14 +36,14 @@ const routes = [
         hasAttributes: false,
         strings: [
             'Points: 2',
-            'Car 307.42 km',
-            'Route: 307.4 km, 4:59 min',
-            '2 / 51 / 114 m', // ele
+            'Car 329.99 km',
+            'Route: 330.0 km, 5:19 min',
+            '1 / 50 / 114 m', // ele
         ],
         turns: [
             'Go ahead and go 2.8 km',
-            'Take 1 exit onto Прибережна автомагістраль and go 1.7 km',
-            'Keep left (+C|+C|C) to Миколаїв;Одеса and go 0.5 km',
+            'Turn left onto Миколаївське шосе М-14-02 and go 0.5 km',
+            'Go ahead (+C,TSLL) onto Херсонська вулиця Н-23 and go 13.9 km',
         ],
     },
 ];
