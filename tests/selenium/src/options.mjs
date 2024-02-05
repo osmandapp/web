@@ -118,7 +118,8 @@ export async function prepareDriver() {
     options.addArguments('--incognito');
 
     mobile && options.setMobileEmulation({ deviceName });
-    headless && options.headless().windowSize({ width, height });
+    //headless && options.headless().windowSize({ width, height });
+    headless && options.addArguments('--headless', `--window-size=${width},${height}`);
 
     const tryHomeBinary = process.env.HOME + '/bin/chromium';
     existsSync(tryHomeBinary) && options.setChromeBinaryPath(tryHomeBinary);

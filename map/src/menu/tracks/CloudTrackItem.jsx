@@ -14,7 +14,7 @@ import {
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import Utils, { toHHMMSS } from '../../util/Utils';
 import TrackInfo from './TrackInfo';
-import TracksManager, { isEmptyTrack } from '../../manager/track/TracksManager';
+import TracksManager, { getAnalysisData, isEmptyTrack } from '../../manager/track/TracksManager';
 import _, { isEmpty } from 'lodash';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { ReactComponent as TrackIcon } from '../../assets/icons/ic_action_polygom_dark.svg';
@@ -54,18 +54,18 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     const wptPoints = getWptPoints(file);
 
     function getDist(file) {
-        let f = file.details ? file.details : file;
-        return f?.analysis?.totalDistance ? (f?.analysis?.totalDistance / 1000).toFixed(2) : DEFAULT_DIST;
+        let f = getAnalysisData(file);
+        return f?.totalDistance ? (f?.totalDistance / 1000).toFixed(2) : DEFAULT_DIST;
     }
 
     function getTime(file) {
-        let f = file.details ? file.details : file;
-        return f?.analysis?.timeMoving ? toHHMMSS(f?.analysis?.timeMoving) : DEFAULT_TIME;
+        let f = getAnalysisData(file);
+        return f?.timeMoving ? toHHMMSS(f?.timeMoving) : DEFAULT_TIME;
     }
 
     function getWptPoints(file) {
-        let f = file.details ? file.details : file;
-        return f?.analysis?.wptPoints ? f?.analysis?.wptPoints : null;
+        let f = getAnalysisData(file);
+        return f?.wptPoints ? f?.wptPoints : null;
     }
 
     async function processDisplayTrack({ visible, setLoading, showOnMap = true, showInfo = false }) {

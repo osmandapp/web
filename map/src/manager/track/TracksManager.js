@@ -1161,8 +1161,7 @@ export const getGpxTime = ({ f, reverse = false, creationTime = false, isFavGrou
         if (isFavGroups) {
             raw.push(f?.clienttimems ?? f?.updatetimems);
         } else {
-            raw.push(f?.details?.analysis?.startTime); // cloud - stored analysis
-            raw.push(f?.analysis?.startTime); // local track - fresh analysis
+            raw.push(getAnalysisData(f)?.startTime); // cloud - stored analysis
             raw.push(f?.details?.metadata?.time); // gpx - meta (cloud track)
             raw.push(f?.metaData?.ext?.time); // gpx - meta (local track)
             raw.push(f?.clienttimems); // uploaded (cloud timestamp?)
@@ -1221,6 +1220,10 @@ export const getGpxTime = ({ f, reverse = false, creationTime = false, isFavGrou
     }
     return 0;
 };
+
+export function getAnalysisData(file) {
+    return file.details?.analysis?.parameters ?? file.details?.analysis ?? file?.analysis;
+}
 
 export function prepareDesc(trackDesc) {
     return trackDesc && typeof trackDesc === 'string'
