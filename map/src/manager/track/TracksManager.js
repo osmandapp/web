@@ -1162,7 +1162,6 @@ export const getGpxTime = ({ f, reverse = false, creationTime = false, isFavGrou
             raw.push(f?.clienttimems ?? f?.updatetimems);
         } else {
             raw.push(getAnalysisData(f)?.startTime); // cloud - stored analysis
-            raw.push(getAnalysisData(f)?.startTime); // local track - fresh analysis
             raw.push(f?.details?.metadata?.time); // gpx - meta (cloud track)
             raw.push(f?.metaData?.ext?.time); // gpx - meta (local track)
             raw.push(f?.clienttimems); // uploaded (cloud timestamp?)
