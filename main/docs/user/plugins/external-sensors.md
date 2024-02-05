@@ -88,7 +88,7 @@ Use one of the following paths to open the sensor settings:
 - *<Translate android="true" ids="shared_string_menu,plugin_settings,external_sensors_plugin_name"/> → Available device → Settings* 
 - *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,external_sensors_plugin_name"/> → Available device → Settings* 
 
-![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_1.png)  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_2.png)  
+![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_1_ios.png)  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_settings_sensors_2_ios.png)  
 
 </TabItem>
 
@@ -97,11 +97,11 @@ Use one of the following paths to open the sensor settings:
 With the plugin for each external sensor available to the OsmAnd application, you can use these settings:  
 
 1. All previously added sensors are divided into two lists: **Connected** and **Disconnected**.
-2. Each sensor in the list has a three-dot menu with settings:
+2. Each sensor in the list has a menu with settings:
     - **Disconnect** or **Connect** the sensor depending on its current state.
-    - **Settings** - opens a separate sensor screen with additional information on sensor type, battery level, data received, and settings for renaming, *forget sensor*, and for specifying wheel circumference. The sensor screen can be opened simply by tapping the field with the sensor name in the list.
-    - **Rename** - allows you to set your own name for the sensor.
-    - **Forget** - sensor will be removed from the list, but can be paired with it again.
+    - **Settings**. Opens a separate sensor screen with additional information on sensor type, battery level, data received, and settings for renaming, *forget sensor*, and for specifying wheel circumference. The sensor screen can be opened simply by tapping the field with the sensor name in the list.
+    - **Rename**. Allows you to set your own name for the sensor.
+    - **Forget**. The sensor will be removed from the list, but it can be paired again.
 - When the battery level of the paired sensor becomes less than 15%, a pop-up notification appears on the screen.
 
 
@@ -121,7 +121,7 @@ With the plugin for each external sensor available to the OsmAnd application, yo
 
 *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,shared_string_external"/>*
 
-![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_ios.png)  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_2_ios.png)  
+![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.png)  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.png)  
 
 </TabItem>
 
@@ -165,12 +165,27 @@ OsmAnd allows you to select a 2nd axis for data analysis: *Heart rate*, *Speed*,
 
 ## Widgets
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="external_sensor_widgets"/>*
+
 ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid_1.png)  ![External sensors widgets Android](@site/static/img/plugins/sensors/external-sensors-plugin-wid2.png)  
 
-The [External Sensors widget](../widgets/info-widgets.md#external-sensors-widgets) is automatically added to the list of widgets when you enable the External Sensors plugin. Before you start your trip, make sure that the widgets are on the screen, and if not, add them using the [Configure Screen](../widgets/configure-screen.md) menu. External Sensors widgets help you track data from your external sensors in real time.  
+</TabItem>
 
-Use the following path to display the widget on the screen:  
-*<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_left"/> /<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="external_sensor_widgets"/>*   
+<TabItem value="ios" label="iOS">
+
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="external_sensor_widgets"/>*
+
+![External sensors widgets Android](@site/static/img/plugins/sensors/external_sens_widg_1_ios.png)  ![External sensors widgets Android](@site/static/img/plugins/sensors/external_sens_widg_2_ios.png)  
+
+</TabItem>
+
+</Tabs>
+
+The [External Sensors widget](../widgets/info-widgets.md#external-sensors-widgets) is automatically added to the list of widgets when you enable the External Sensors plugin. Before you start your trip, make sure that the widgets are on the screen, and if not, add them using the [Configure Screen](../widgets/configure-screen.md) menu. External Sensors widgets help you track data from your external sensors in real the time.  
 
 1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>**. The heart rate sensor can transmit your heart rate in real time. This is useful for cycling training when you want to track your heart rate to optimize your training efforts. 
 2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android only*). Your bike's power sensors measure the power you exert when you pedal. This allows you to analyze and optimize your workouts to improve efficiency and performance. 

@@ -377,9 +377,23 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 
 ### External sensors widgets
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
 ![External sensor widgets Android](@site/static/img/widgets/external-sensors-widgets_1.png) 
 
-Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from your external sensors, such as: **<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android only*), **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>* and *<Translate android="true" ids="external_device_characteristic_temperature"/>**.  
+</TabItem>
+
+<TabItem value="ios" label="iOS">   
+
+![trip_recording_widget](@site/static/img/widgets/external-sensors-widgets_ios.png)
+
+</TabItem>
+
+</Tabs>   
+
+Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from your external sensors, such as: **<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android only*), **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>** and **<Translate android="true" ids="external_device_characteristic_temperature"/>**.  
 
 - To add External sensor widgets to the map screen, [enable](../plugins/index.md#enable--disable) **OsmAnd External sensors plugin**.
 - Widgets can be added even if there is no external sensor connected.
