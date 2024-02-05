@@ -48,12 +48,8 @@ export function byTime(files, reverse, isFavGroups = false) {
 
 function byDistance(files, reverse) {
     return [...files].sort((a, b) => {
-        console.log(a);
-        console.log(b);
         const A = getAnalysisData(a)?.totalDistance ?? 0;
         const B = getAnalysisData(b)?.totalDistance ?? 0;
-        console.log(A);
-        console.log(B);
         if (A === B) {
             return az(a.name, b.name);
         }
