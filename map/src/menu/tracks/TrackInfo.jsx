@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { toHHMMSS } from '../../util/Utils';
 import AppContext from '../../context/AppContext';
+import { getAnalysisData } from '../../manager/track/TracksManager';
 
 export default function TrackInfo({ file }) {
     const ctx = useContext(AppContext);
@@ -13,7 +14,7 @@ export default function TrackInfo({ file }) {
     let timeMoving = '';
     let updownhill = '';
     let speed = '';
-    let summary = item.details?.analysis ?? item.analysis ?? localLayer?.summary;
+    let summary = getAnalysisData(item) ?? localLayer?.summary;
     if (item.clienttimems) {
         clienttime = `Upload time: ${new Date(item.clienttimems).toDateString()} ${new Date(
             item.clienttimems

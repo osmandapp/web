@@ -10,7 +10,7 @@ import {
     Radio,
     RadioGroup,
 } from '@mui/material';
-import { getGpxTime } from '../../manager/track/TracksManager';
+import { getAnalysisData, getGpxTime } from '../../manager/track/TracksManager';
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import { ReactComponent as AscendingIcon } from '../../assets/icons/ic_action_sort_by_name_ascending.svg';
 import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
@@ -48,8 +48,12 @@ export function byTime(files, reverse, isFavGroups = false) {
 
 function byDistance(files, reverse) {
     return [...files].sort((a, b) => {
-        const A = a.analysis?.totalDistance ?? a.details?.analysis?.totalDistance ?? 0;
-        const B = b.analysis?.totalDistance ?? b.details?.analysis?.totalDistance ?? 0;
+        console.log(a);
+        console.log(b);
+        const A = getAnalysisData(a)?.totalDistance ?? 0;
+        const B = getAnalysisData(b)?.totalDistance ?? 0;
+        console.log(A);
+        console.log(B);
         if (A === B) {
             return az(a.name, b.name);
         }
