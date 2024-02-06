@@ -235,7 +235,7 @@ Before you start recording, you need to configure the Trip recording plugin.
 
 <TabItem value="ios" label="iOS">
 
-![Configuring Trip recording in iOS](@site/static/img/plugins/trip-recording/recording_sett_ios.png)
+![Configuring Trip recording in iOS](@site/static/img/plugins/trip-recording/recording_sett_1_ios.png)  ![Configuring Trip recording in iOS](@site/static/img/plugins/trip-recording/recording_sett_2_ios.png)
 
 </TabItem>
 

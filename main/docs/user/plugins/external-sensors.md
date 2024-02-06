@@ -78,7 +78,7 @@ Use one of the following paths to open the sensor settings:
 - *<Translate android="true" ids="shared_string_menu,plugin_settings,external_sensors_plugin_name"/> → Available device → Settings* 
 - *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,external_sensors_plugin_name"/> → Available device → Settings*   
 
-![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_1.png)  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_2.png)  
+![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_sett_sensors_andr.png)  
 
 </TabItem>
 
@@ -88,7 +88,7 @@ Use one of the following paths to open the sensor settings:
 - *<Translate android="true" ids="shared_string_menu,plugin_settings,external_sensors_plugin_name"/> → Available device → Settings* 
 - *<Translate android="true" ids="shared_string_menu,configure_profile,plugins_settings,external_sensors_plugin_name"/> → Available device → Settings* 
 
-![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_1_ios.png)  ![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_settings_sensors_2_ios.png)  
+![External sensors plugin](@site/static/img/plugins/sensors/external_sensors_sett_sensors_ios.png)  
 
 </TabItem>
 
@@ -146,13 +146,13 @@ OsmAnd uses [**track recording**](../plugins/trip-recording.md#recorded-gpx-file
 
 <TabItem value="android" label="Android">
 
-![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_andr.png)
+![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_1_andr.png)  ![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_ios.png)
+![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_1_ios.png)  ![External sensors](@site/static/img/plugins/sensors/external_sensors_plugin_analyze_2_ios.png)
 
 </TabItem>
 
