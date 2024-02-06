@@ -61,7 +61,7 @@ To start using data from external sensors, you need to make the following settin
 Use the *Pair new sensor* button to connect new sensors.  
 
 - You need Bluetooth turned on to search for sensors. If your Bluetooth is turned off, the app will prompt you to *Open settings* on your device.
-- To add new sensors, tap the required one in the list of found sensors.
+- To add new sensors, tap + for the required one in the list of found sensors.
 - A pop-up notification is displayed when a paired sensor is connected or disconnected.  
 - Not all devices support ANT+ (Android only). You can check if your device works with ANT+ by going [here](https://www.thisisant.com/consumer/ant-101/ant-in-phones).  
 - Bicycle power in Android is only Ant+.
