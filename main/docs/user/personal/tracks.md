@@ -134,28 +134,7 @@ Use the OsmAnd [Trip recording Plugin](../plugins/trip-recording.md) and special
 </Tabs>  
 
 *Plan a Route* tool enables users to modify both [pre-existing GPX](../personal/tracks.md#my-places-menu) tracks and [imported tracks](../personal/tracks.md#import-track).  
-Read more in the article [**Plan a route** tool](../plan-route/create-route.md#modify-existing-gpx-track).  
-
-
-### Add waypoint
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Add waypoint](@site/static/img/personal/tracks/add-track-waypoint-and-1.png)  ![Add waypoint](@site/static/img/personal/tracks/add-track-waypoint-and-2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Add waypoint](@site/static/img/personal/tracks/add-track-waypoint-ios-1.png)  ![Add waypoint](@site/static/img/personal/tracks/add-track-waypoint-ios-2.png)
-
-</TabItem>
- 
-</Tabs>
-
-Waypoints are one kind of point available on the map. The description is in the article [Points on the map](../map/point-layers-on-map.md). In general, waypoints are track points that are part of GPX files. They can be added to the currently recorded track or to any track from your *My Places → Tracks list* using the Map Context Menu. Waypoints are automatically displayed if the selected track is enabled on the map.  
+Read more in the article [**Plan a route** tool](../plan-route/create-route.md#modify-existing-gpx-track). 
 
 
 ## My Places menu

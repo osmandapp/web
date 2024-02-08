@@ -225,6 +225,7 @@ _Track Context menu → <Translate android="true" ids="shared_string_gpx_track,a
 ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png) ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png)
 
 
+
 ## Points / Waypoints
 
 ### Add waypoint
@@ -365,6 +366,7 @@ All of these point types can be saved in GPX format to provide the user with loc
 
 All waypoints of the route are stored in the folders you selected for them when creating or editing. To access a specific folder, you need to open the required track and go to the *Points* submenu. In the three points menu, you can edit a group of waypoints, add them to your marker list, or create a folder in *Menu → My Places → My Favorites*. You can read more information in the article [Tracks Context menu](../map/track-context-menu.md#waypoints-folder).
 
+
 ### Add / Delete
 
 Points / Waypoins menu in Context track menu opens list of track / folders waypoints.
@@ -387,8 +389,6 @@ Points / Waypoins menu in Context track menu opens list of track / folders waypo
 
 ### Waypoints folder 
 
-Manipulation with waypoints folder: change name and color, delete..
-
 <Tabs groupId="operating-systems">
 
 
@@ -398,14 +398,6 @@ Manipulation with waypoints folder: change name and color, delete..
 
 ![Track menu Group menu Android](@site/static/img/personal/tracks/track_menu_group_menu_android.png) 
 
-Actions:  
-- *<Translate android="true" ids="shared_string_show_on_map"/>* - allows to show or not group waypoints on the map.
-- *<Translate android="true" ids="shared_string_rename"/>* - allows to change Group name.
-- *<Translate android="true" ids="change_color"/>* - allows to change color for group waypoints.
-- *<Translate android="true" ids="copy_to_map_markers"/>* - allows to move group waypoints to [Map markers](../personal/markers.md).
-- *<Translate android="true" ids="copy_to_map_favorites"/>* - allows to move group waypoints to [Favorites](../personal/favorites.md).
-- *<Translate android="true" ids="shared_string_delete"/>* - allows to delete group waypoints.
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -414,15 +406,18 @@ Actions:
 
 ![Track menu Group menu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png) 
 
-Actions:  
-- *<Translate ios="true" ids="recording_context_menu_show"/>* - allows to show or not group waypoints on the map.
-- *<Translate ios="true" ids="shared_string_rename"/>* - allows to change Group name.
-- *<Translate ios="true" ids="change_color"/>* - allows to change color for group waypoints.
-- *<Translate ios="true" ids="shared_string_delete"/>* - allows to delete group waypoints.
-
 </TabItem>
 
 </Tabs>
+
+Actions:  
+- **<Translate android="true" ids="shared_string_show_on_map"/>**. Allows you to show or not show group waypoints on the map.
+- **<Translate android="true" ids="shared_string_rename"/>**. Allows you to change the name of the group.
+- **<Translate android="true" ids="change_color"/>**. Allows you to change the color for group waypoints.
+- **<Translate android="true" ids="copy_to_map_markers"/>** (*Android only*). Allows you to move group waypoints to [Map markers](../personal/markers.md).
+- **<Translate android="true" ids="copy_to_map_favorites"/>** (*Android only*). Allows you to move group waypoints to [Favorites](../personal/favorites.md).
+- **<Translate android="true" ids="shared_string_delete"/>**. Allows you to delete group waypoints.
+
 
 ## Options
 

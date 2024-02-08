@@ -17,19 +17,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Downloading maps in the OsmAnd app is a key step to ensure smooth operation and use of offline navigation. Without offline maps, the app cannot function fully. Downloading maps gives you access to maps of different regions, allowing you to navigate without an internet connection.
+Downloading maps to the OsmAnd app is a key step to ensure smooth operation and use of offline navigation. Without offline maps, the app cannot function fully. Downloading maps gives you access to maps of different regions, allowing you to navigate without an internet connection.
 
 To download maps, you have two main ways: view the list of regions in the main menu or select the required region directly on the map. This gives you the flexibility to select the regions you want and ensures that the maps are customized according to your plans.
 
 Though OsmAnd supports both [Vector](../map/vector-maps.md) and [Raster](../map/raster-maps.md) maps, it is highly recommended to start working with vector maps offline. This type of map ensures that all key features of the app work reliably, including [Search](../search/index.md), [Navigation](../navigation/index.md), and [Context menu](../map/map-context-menu.md). This is especially important if your travels include trips to remote locations or places with limited Internet access. 
 
 
-## Download 
-
-To start downloading maps, go to the Download maps (Android) / Maps & Resources (iOS) main menu. There you can select the maps you need for offline navigation.  
-
-
-### First Screen
+## First Screen
 
 <Tabs groupId="operating-systems">
 
@@ -60,12 +55,12 @@ Versions of OsmAnd up to 3.8 offer to download a World map so that you can view 
 :::
 
 
-### Free features for the selected location
+#### Free features for the selected location
 
 - **Standard map**. Provides an overview of the area based on the [OpenStreetMap](https://www.openstreetmap.org/) source and contains a map, routes, addresses, POIs and public transportation information. When you tap opens a screen with a list of regions of the selected country and how much space these maps will take up on your device.
 - **Roads-only** (*Android only*). The map contains only road grid information to focus on routes and road infrastructure. The map is smaller than the standard map due to the removal of map details such as buildings and points of interest. A tap opens a screen with a list of regions of the selected country and how much space these maps will occupy on your device.
 
-### Paid features for the selected location
+#### Paid features for the selected location
 
 - [**Contour lines**](../plugins/contour-lines.md#contour-lines). A map containing contour elevation lines to help visualize the terrain.
 - [**Terrain map (Hillshade and Slope)**](../plugins/contour-lines.md#hillshade--slope). The maps with shadows or slopes provides additional information about the topography.
@@ -77,6 +72,11 @@ Versions of OsmAnd up to 3.8 offer to download a World map so that you can view 
 :::note
 For regions, such as Germany, consisting of multiple maps, you can use bulk map downloading, which is displayed as double downloading arrows next to the map type.
 :::
+
+
+## Download 
+
+To start downloading maps, go to the Download maps (Android) / Maps & Resources (iOS) main menu. There you can select the maps you need for offline navigation.  
 
 
 ### Download Maps menu
@@ -220,8 +220,85 @@ One of the options to download a map is via World map and [Map Context menu](../
 - More information in [Route Preparation article](../navigation/setup/route-navigation/#additional-information-in-navigation-menu).
 
 
-## Build your own Map (advanced)
+## Manage
+
+### Local Resources
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Local tab Android 1](@site/static/img/settings/new_map_and_resourses_andr_1.png) ![Local tab Android 2](@site/static/img/settings/new_map_and_resourses_andr_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Local tab menu iOS](@site/static/img/settings/Local_tab_ios_1.png)
+
+</TabItem>
+
+</Tabs> 
+
+The Local tab *(<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local"/>)* shows how much space OsmAnd uses in a form of linear diagram and a list with splitting by each data type. All data is grouped into three sections, sorted by largest section on top. The data categories inside the sections are also arranged according to the occupied space.  
+The diagram's colors and slice size correspond to the respective section and amount of memory utilized:  
+
+- ***Resources*** (blue): [Standard Maps](../map/vector-maps.md), [Wikipedia](../plugins/wikipedia.md) and [Travel maps](../plan-route/travel-guides.md), [Nautical maps](../plugins/nautical-charts.md), [Terrain maps](../plugins/contour-lines.md), [Live updates](../personal/maps.md#osmand-live), [Weather maps](../plugins/weather.md),  [Map sources](../map/raster-maps.md), [Rendering styles](../map/vector-maps.md#default-map-styles), Map fonts, Voice prompts (recorded and TTS), Cache.  
+- ***My Places*** (yellow): [Favorites](../personal/favorites.md), [Tracks](../personal/tracks.md), [OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), [OSM Edits](../plugins/osm-editing.md#osm-editing-layer), [A/V Notes](../plugins/audio-video-notes.md), [Map markers](../personal/markers.md), [History](../personal/global-settings.md#history), Itinerary.
+- ***Settings*** (green): [Profiles](../personal/profiles.md), Other.
+
+
+### Data type overview and toolbar 
+
+If you choose a category from the Local tab and tap it, you will see a diagram that shows how much space the chosen category uses from the total amount of section space.
+
+![Local category overview Android 1](@site/static/img/settings/local_category_sorting_options_andr_1.png) ![Local category options Android 2](@site/static/img/settings/local_category_sorting_options_andr_2.png)  
+
+Above the graph, there is a toolbar with options available for this type of data. In most cases (except standard maps) there are only two options available:
+
+- **Search** (magnifying glass) - allows searching by name for a specific data only in selected folder.
+- **Three dots menu** (*Android only*)
+ 
+After tapping on the three dots in the right corner of the toolbar, you can access additional actions (*Android only*):
+- **Select** - allows you to select items and perform further actions only with them.
+- **Import** - redirects to internal storage where you can select a file to import.
+
+You can also perform some actions with an item from the list using the three dots menu, located at the right corner of every single entry.
+
+![Local category item actions 2](@site/static/img/settings/local_category_actions_2.png) ![Local category item actions](@site/static/img/settings/local_category_actions.png)  
+
+For most data categories, only the *Info* option is available. If you tap this option, you will be redirected to the *[Local data item overview](#local-data-item-overview)* screen. For maps, additional actions are provided:
+- **Deactivate**/**Activate** - hides/shows the map so it is bypassed/used during computation.
+- **Update** - downloads the latest version of the map. 
+- **Rename** - map name can be changed in order to make it more identifiable.
+- **Remove** - deletes the map from the device's storage.
+
+#### Local data item overview 
+
+![Local data item overview](@site/static/img/settings/local_category_overview_2.png) ![Local data item overview 2](@site/static/img/settings/local_category_overview_1.png)
+
+On the Local data item overview screen you can find information about:
+- **Data type**
+- **Size** 
+- **Creation date of a single entry stored by OsmAnd**
+- **Delete**
+
+#### Standard maps additional option
+
+![Local data sorting options](@site/static/img/settings/local_sorting_options_andr_1.png)
+
+For *Standard maps*, there is an additional option to sort them by:
+- **Map name** (ascending or descending) - is useful if you want to find a specific map quickly.  
+- **Country name** - allows arranging your maps geographically.
+- **Newest or oldest date of modification** - this option may be useful if you would like to see recently updated maps or if you're looking for older versions.
+- **Large or small size** - may help to identify large maps if you are concerned about storage space.
+
+
+### Build your own Map (advanced)
 
 ![Build your own Map](@site/static/img/osmandmapcreator/OsmAndMapCreator-download-raster-maps.png)
 
-It is possible to upload a self-created map. [OsmAndMapCreator]((../../technical/map-creation/create-offline-maps-yourself.md))
+It is possible to upload a self-created map.
+[OsmAndMapCreator]((../../technical/map-creation/create-offline-maps-yourself.md)) can be used to create any maps supported by OsmAnd. To create a vector map you will need an OSM file (*.pbf, *.osm.gz, *.osm.bz2) and to create an online sqlite map you will need the url of the base tile.  
+
+It is possible to upload a self-created map. [OsmAndMapCreator](../../technical/map-creation/create-offline-maps-yourself.md). More info section *My data* article [Maps](../personal/maps.md#build-your-own-map-advanced)
