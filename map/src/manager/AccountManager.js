@@ -2,9 +2,9 @@ import { apiGet, apiPost } from '../util/HttpApi';
 
 export const LOGIN_LOGOUT_URL = '/map/loginForm#logout'; // lose window.location.search/window.location.hash
 
+const CHANGE_EMAIL_MSG = 'change';
+const DELETE_EMAIL_MSG = 'delete';
 const DEFAULT_AUTH_API_LANG = 'en';
-const CHANGE_EMAIL_MSG = '@ACTION_CHANGE@';
-const DELETE_EMAIL_MSG = '@ACTION_DELETE@';
 
 async function userRegister({ username, setEmailError, setState, lang = DEFAULT_AUTH_API_LANG }) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/register`, {
