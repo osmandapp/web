@@ -19,7 +19,8 @@ import { useTranslation } from 'react-i18next';
 
 export default function LoginDialog() {
     const ctx = useContext(AppContext);
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const lang = i18n.language;
 
     const [width] = useWindowSize();
     const widthDialog = width / 2 < 450 ? width * 0.75 : width / 2;
@@ -67,14 +68,23 @@ export default function LoginDialog() {
         setCode('');
         navigate('/map/' + window.location.search + window.location.hash);
     };
+
     const handleLogin = () => {
         if (state === 'register') {
-            AccountManager.userRegister(userEmail, setEmailError, setState).then();
+            AccountManager.userRegister({ username: userEmail, setEmailError, setState, lang }).then();
         } else if (state === 'register-verify') {
-            AccountManager.userActivate(ctx, userEmail, pwd, code, setEmailError, handleClose).then();
+            AccountManager.userActivate({
+                ctx,
+                username: userEmail,
+                pwd,
+                token: code,
+                setEmailError,
+                handleClose,
+                lang,
+            }).then();
         } else {
             if (userEmail) {
-                AccountManager.userLogin(ctx, userEmail, pwd, setEmailError, handleClose).then();
+                AccountManager.userLogin({ ctx, username: userEmail, pwd, setEmailError, handleClose, lang }).then();
             }
         }
     };
@@ -214,7 +224,16 @@ export default function LoginDialog() {
                     </Link>
                     <Button onClick={handleClose}>Close</Button>
                     <Button
-                        onClick={() => AccountManager.userLogout(ctx, userEmail, setEmailError, handleClose, setState)}
+                        onClick={() =>
+                            AccountManager.userLogout({
+                                ctx,
+                                username: userEmail,
+                                setEmailError,
+                                handleClose,
+                                setState,
+                                lang,
+                            })
+                        }
                     >
                         Logout
                     </Button>
@@ -228,11 +247,12 @@ export default function LoginDialog() {
                             sx={{ backgroundColor: '#ff595e !important', ml: 3, mb: '10px' }}
                             onClick={() => {
                                 setDeleteAccountFlag(true);
-                                AccountManager.sendCode(
-                                    ctx.loginUser,
-                                    AccountManager.DELETE_EMAIL_MSG,
-                                    setEmailError
-                                ).then();
+                                AccountManager.sendCode({
+                                    email: ctx.loginUser,
+                                    action: AccountManager.DELETE_EMAIL_MSG,
+                                    setEmailError,
+                                    lang,
+                                }).then();
                             }}
                         >
                             Delete your account
@@ -249,11 +269,12 @@ export default function LoginDialog() {
                             color="inherit"
                             onClick={() => {
                                 setChangeEmailFlag(true);
-                                AccountManager.sendCode(
-                                    ctx.loginUser,
-                                    AccountManager.CHANGE_EMAIL_MSG,
-                                    setEmailError
-                                ).then();
+                                AccountManager.sendCode({
+                                    email: ctx.loginUser,
+                                    action: AccountManager.CHANGE_EMAIL_MSG,
+                                    setEmailError,
+                                    lang,
+                                }).then();
                             }}
                         >
                             Change email

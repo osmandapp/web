@@ -4,12 +4,13 @@ export const LOGIN_LOGOUT_URL = '/map/loginForm#logout'; // lose window.location
 
 const CHANGE_EMAIL_MSG = 'change';
 const DELETE_EMAIL_MSG = 'delete';
+const DEFAULT_AUTH_API_LANG = 'en';
 
-async function userRegister(username, setEmailError, setState) {
+async function userRegister({ username, setEmailError, setState, lang = DEFAULT_AUTH_API_LANG }) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: username.toLowerCase() }),
+        body: JSON.stringify({ username: username.toLowerCase(), lang }),
     });
     if (await isRequestOk(response, setEmailError)) {
         setState('register-verify');
@@ -17,11 +18,11 @@ async function userRegister(username, setEmailError, setState) {
     }
 }
 
-async function userActivate(ctx, username, pwd, token, setEmailError, handleClose) {
+async function userActivate({ ctx, username, pwd, token, setEmailError, handleClose, lang = DEFAULT_AUTH_API_LANG }) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/activate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: username.toLowerCase(), password: pwd, token: token }),
+        body: JSON.stringify({ username: username.toLowerCase(), password: pwd, token: token, lang }),
     });
     if (await isRequestOk(response, setEmailError)) {
         ctx.setLoginUser(username);
@@ -31,11 +32,11 @@ async function userActivate(ctx, username, pwd, token, setEmailError, handleClos
     return true;
 }
 
-async function userLogin(ctx, username, pwd, setEmailError, handleClose) {
+async function userLogin({ ctx, username, pwd, setEmailError, handleClose, lang = DEFAULT_AUTH_API_LANG }) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: username.toLowerCase(), password: pwd }),
+        body: JSON.stringify({ username: username.toLowerCase(), password: pwd, lang }),
     });
     if (await isRequestOk(response, setEmailError)) {
         setEmailError('');
@@ -45,11 +46,11 @@ async function userLogin(ctx, username, pwd, setEmailError, handleClose) {
     }
 }
 
-async function userLogout(ctx, username, setEmailError, handleClose, setState) {
+async function userLogout({ ctx, username, setEmailError, handleClose, setState, lang = DEFAULT_AUTH_API_LANG }) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/logout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: username.toLowerCase() }),
+        body: JSON.stringify({ username: username.toLowerCase(), lang }),
     });
     if (await isRequestOk(response, setEmailError)) {
         setState('login');
@@ -59,12 +60,13 @@ async function userLogout(ctx, username, setEmailError, handleClose, setState) {
     }
 }
 
-async function deleteAccount(userEmail, code, setEmailError, setAccountDeleted) {
+async function deleteAccount({ userEmail, code, setEmailError, setAccountDeleted, lang = DEFAULT_AUTH_API_LANG }) {
     if (isValidEmail(userEmail)) {
         const data = {
             username: userEmail.toLowerCase(),
             password: null,
             token: code,
+            lang,
         };
         const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/delete-account`, data, {
             throwErrors: true,
@@ -108,10 +110,11 @@ async function isRequestOk(response, setEmailError) {
     return res;
 }
 
-async function sendCode(email, action, setEmailError) {
+async function sendCode({ email, action, setEmailError, lang = DEFAULT_AUTH_API_LANG }) {
     const data = {
         email: email.toLowerCase(),
         action: action,
+        lang,
     };
     const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/send-code`, data, {
         throwErrors: true,
@@ -140,11 +143,12 @@ async function confirmCode(email, code, setEmailError) {
     }
 }
 
-async function changeEmail(email, token, setEmailError) {
+async function changeEmail({ email, token, setEmailError, lang = DEFAULT_AUTH_API_LANG }) {
     const data = {
         username: email.toLowerCase(),
         password: null,
         token: token,
+        lang,
     };
     const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/change-email`, data, {
         throwErrors: true,
