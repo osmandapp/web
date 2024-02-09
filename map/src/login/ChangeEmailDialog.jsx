@@ -11,10 +11,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppContext from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 import { useWindowSize } from '../util/hooks/useWindowSize';
+import { useTranslation } from 'react-i18next';
 
 export default function ChangeEmailDialog({ setChangeEmailFlag }) {
     const ctx = useContext(AppContext);
     const navigate = useNavigate();
+
+    const { i18n } = useTranslation();
+    const lang = i18n.language;
 
     const [width] = useWindowSize();
     const widthDialog = width / 2 < 450 ? width * 0.75 : width / 2;
@@ -40,13 +44,18 @@ export default function ChangeEmailDialog({ setChangeEmailFlag }) {
                 }
             });
         } else if (!code && newEmail) {
-            AccountManager.sendCode(newEmail, AccountManager.CHANGE_EMAIL_MSG, setEmailError).then((sent) => {
+            AccountManager.sendCode({
+                email: newEmail,
+                action: AccountManager.CHANGE_EMAIL_MSG,
+                setEmailError,
+                lang,
+            }).then((sent) => {
                 if (sent) {
                     setCodeConfirmed(false);
                 }
             });
         } else if (code && newEmail) {
-            AccountManager.changeEmail(newEmail, code, setEmailError).then((changed) => {
+            AccountManager.changeEmail({ email: newEmail, token: code, setEmailError, lang }).then((changed) => {
                 if (changed) {
                     setEmailChanged(true);
                 }

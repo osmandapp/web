@@ -9,10 +9,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import AccountManager from '../manager/AccountManager';
 import AppContext from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
     const ctx = useContext(AppContext);
     const navigate = useNavigate();
+
+    const { i18n } = useTranslation();
+    const lang = i18n.language;
 
     const [userEmail, setUserEmail] = useState(null);
     const [code, setCode] = useState(null);
@@ -114,7 +118,9 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
                         variant="contained"
                         component="span"
                         sx={{ backgroundColor: '#ff595e !important', ml: 2 }}
-                        onClick={() => AccountManager.deleteAccount(userEmail, code, setEmailError, setAccountDeleted)}
+                        onClick={() =>
+                            AccountManager.deleteAccount({ userEmail, code, setEmailError, setAccountDeleted, lang })
+                        }
                     >
                         Delete this account
                     </Button>
