@@ -32,7 +32,7 @@ Release date: 12/2023
 * Added support for ANT+ temperature widget
 * Introduced "Available RAM" widget
 
-<DownloadRelease blog="osmand-android-4-6-released" release="net.osmand-4.6.9.apk" />
+<DownloadRelease blog="osmand-android-4-6-released" release="net.osmand-4.6.13.apk" />
 
 ### Version 4.5 
 Release date: 08/2023
