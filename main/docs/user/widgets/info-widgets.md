@@ -400,6 +400,7 @@ Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widget
 - All added widgets are visible even if no external sensor is connected.
 - If a sensor has not been added or you need to edit the widget, tap the required widget field in the list and then on *Settings*, or directly on the *Settings icon* in the list.
 - The data displayed in widgets can be recorded using the [Trip recording plugin](../plugins/trip-recording.md#recording-settings).  
+- How to choose which sensor (of the same type) to show in the widget, read [here](../plugins/external-sensors.md#widget-settings).
 
 | | |
 |------------|------------|
