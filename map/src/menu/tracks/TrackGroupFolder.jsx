@@ -76,11 +76,18 @@ export default function TrackGroupFolder({ folder }) {
 
     const groupItems = useMemo(() => {
         const items = [];
-        (sortGroups?.length > 0 ? sortGroups : group.subfolders).map((g, index) => {
-            items.push(<CloudTrackGroup key={g.name + index} index={index} group={g} />);
-        });
-        return items;
+        const listGroups = sortGroups?.length > 0 ? sortGroups : group.subfolders;
+        if (listGroups && listGroups.length > 0) {
+            listGroups.map((g, index) => {
+                items.push(<CloudTrackGroup key={g.name + index} index={index} group={g} />);
+            });
+            return items;
+        }
     }, [group.subfolders, sortGroups]);
+
+    function isEmptyFolder() {
+        return (group?.realSize === 0 && ctx.trackLoading?.length === 0) || (!groupItems && !trackItems);
+    }
 
     return (
         <>
@@ -99,7 +106,7 @@ export default function TrackGroupFolder({ folder }) {
                     {trackItems}
                 </Box>
             </Box>
-            {group.realSize === 0 && ctx.trackLoading?.length === 0 && (
+            {isEmptyFolder() && (
                 <Empty title={'Empty folder'} text={"This folder doesn't have any track yet"} folder={group.fullName} />
             )}
         </>
