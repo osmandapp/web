@@ -13,6 +13,8 @@ import {
     Toolbar,
     Tooltip,
     Divider,
+    ToggleButton,
+    ToggleButtonGroup,
 } from '@mui/material';
 import { Settings } from '@mui/icons-material';
 import AppContext, { defaultConfigureMapStateValues, LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
@@ -28,8 +30,12 @@ import EmptyLogin from '../errors/EmptyLogin';
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import { useTranslation } from 'react-i18next';
 
+export const DYNAMIC_RENDERING = 'dynamic';
+export const VECTOR_GRID = 'vector_grid';
+
 export default function ConfigureMap({ setOpenVisibleMenu }) {
     const ctx = useContext(AppContext);
+
     const { t } = useTranslation();
     const [openSettings, setOpenSettings] = useState(false);
 
@@ -38,6 +44,12 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
         newConfigureMap.showFavorites = !ctx.configureMapState.showFavorites;
         localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(newConfigureMap));
         ctx.setConfigureMapState(newConfigureMap);
+    };
+
+    const handleRenderingType = (event, selectedType) => {
+        if (selectedType !== null && selectedType !== ctx.renderingType) {
+            ctx.setRenderingType(selectedType);
+        }
     };
 
     function close() {
@@ -154,7 +166,9 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
                                         labelid="rendering-style-selector-label"
                                         label={t('map_widget_renderer')}
                                         value={ctx.tileURL.key}
-                                        onChange={(e) => ctx.setTileURL(ctx.allTileURLs[e.target.value])}
+                                        onChange={(e) => {
+                                            ctx.setTileURL(ctx.allTileURLs[e.target.value]);
+                                        }}
                                     >
                                         {Object.values(ctx.allTileURLs).map((item) => {
                                             return (
@@ -169,6 +183,18 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
                                     <Settings fontSize="small" />
                                 </IconButton>
                             </MenuItem>
+                            <ToggleButtonGroup
+                                sx={{ ml: 1, mr: 1, mt: 2, width: 'auto' }}
+                                color="primary"
+                                value={ctx.renderingType}
+                                exclusive
+                                fullWidth={true}
+                                onChange={handleRenderingType}
+                                aria-label="Platform"
+                            >
+                                <ToggleButton value={DYNAMIC_RENDERING}>Dynamic</ToggleButton>
+                                <ToggleButton value={VECTOR_GRID}>Vector grid</ToggleButton>
+                            </ToggleButtonGroup>
                         </>
                     )}
                 </>

@@ -204,6 +204,10 @@ async function loadTileUrls(setAllTileURLs) {
         Object.values(data).forEach((item) => {
             item.tileSize = 256 << item.tileSizeLog;
             item.url = process.env.REACT_APP_TILES_API_SITE + '/tile/' + item.key + '/{z}/{x}/{y}.png';
+            if (item.key === 'hd') {
+                item.infoUrl =
+                    process.env.REACT_APP_TILES_API_SITE + '/tile/' + 'info/' + item.key + '/{z}/{x}/{y}.json';
+            }
             item.uiname = item.name.charAt(0).toUpperCase() + item.name.slice(1);
             if (item.tileSize > 256) {
                 item.uiname += ' HD';
@@ -226,6 +230,7 @@ export const AppContextProvider = (props) => {
     const [weatherLayers, setWeatherLayers] = useState(WeatherManager.getLayers());
     const [weatherDate, setWeatherDate] = useState(WeatherManager.getWeatherDate());
     const [weatherType, setWeatherType] = useState('gfs');
+    const [renderingType, setRenderingType] = useState(null);
     const [gpxLoading, setGpxLoading] = useState(false);
     const [localTracksLoading, setLocalTracksLoading] = useState(false);
     // cookie to store email logged in
@@ -508,6 +513,8 @@ export const AppContextProvider = (props) => {
                 setSelectedSort,
                 visibleTracks,
                 setVisibleTracks,
+                renderingType,
+                setRenderingType,
             }}
         >
             {props.children}

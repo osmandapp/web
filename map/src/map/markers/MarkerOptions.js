@@ -7,6 +7,7 @@ const BACKGROUND_WPT_SHAPE_SQUARE = 'square';
 const DEFAULT_WPT_ICON = 'special_star';
 const DEFAULT_WPT_COLOR = '#eecc22';
 const POI_ICONS_FOLDER = 'poi-icons-svg';
+export const SHIELDS_FOLDER = 'map-shaders-svg';
 
 const MarkerIcon = ({ iconType = 'default-marker', bg = 'blue' }) => {
     let svg =
