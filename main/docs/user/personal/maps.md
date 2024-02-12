@@ -62,18 +62,7 @@ OsmAnd deals with 2 type of maps: [Vector maps](../map/vector-maps.md) and  [Ras
 
 </Tabs>
 
-Downloading maps to the OsmAnd application is an important step that determines the functionality and efficiency of navigation.
-
-#### Downloads tab
-
-- **Device memory**. Visualize the amount of occupied and free space on your device.
-- **Regions**. List by continent and region of the world.
-- [**World maps**](#world-maps). A list of maps of the entire world.
-- [**Nautical maps**](../plugins/nautical-charts.md) (paid feature). Vector maps with sea depth elevation as points or lines.
-- [**Travel guides (Wikivoyage)**](../plan-route/travel-guides.md) (paid feature). These are vector maps containing a collection of articles in HTML format and additionally GPX files.
-- **Other maps**. Additional maps that cannot be categorized by the current map hierarchy are usually obsolete and unsupported maps or maps that will be available in future releases.
-- [**Voice prompts**](../navigation/guidance/voice-navigation.md) (only for Android). Voice packages for voicing navigation prompts.
-- [**Map fonts**](../map/vector-maps.md#map-fonts-android) (only for Android). Additional font files used to display text on the map.
+Loading maps into the OsmAnd application is an important step that determines the functionality and efficiency of navigation.  
 
 Read more in the article [Download maps](../start-with/download-maps.md#map-types).
 
