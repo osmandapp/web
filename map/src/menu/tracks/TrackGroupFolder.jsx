@@ -55,14 +55,17 @@ export default function TrackGroupFolder({ folder }) {
     const trackItems = useMemo(() => {
         const items = [];
         const listTracks = sortFiles?.length > 0 ? sortFiles : group.groupFiles;
-        listTracks.map((file, index) => {
-            // 2 - count empty.ignore too
-            const isLastItem = !isEmpty(listTracks) && listTracks.length > 1 ? index === listTracks.length - 2 : false;
-            if (!file.name.endsWith(EMPTY_FILE_NAME) && file.filesize !== 0) {
-                items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} isLastItem={isLastItem} />);
-            }
-        });
-        return items;
+        if (listTracks && listTracks.length > 0) {
+            listTracks.map((file, index) => {
+                // 2 - count empty.ignore too
+                const isLastItem =
+                    !isEmpty(listTracks) && listTracks.length > 1 ? index === listTracks.length - 2 : false;
+                if (!file.name.endsWith(EMPTY_FILE_NAME) && file.filesize !== 0) {
+                    items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} isLastItem={isLastItem} />);
+                }
+            });
+            return items;
+        }
     }, [group?.groupFiles, sortFiles]);
 
     useEffect(() => {
