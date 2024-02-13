@@ -24,7 +24,11 @@ You have two main ways to download maps: 1) view the list of regions in the main
 Although OsmAnd supports both [Vector](../map/vector-maps.md) and [Raster](../map/raster-maps.md), it is strongly recommended to start working with vector maps offline. This type of maps ensures reliable operation of all key functions of the application, including [Search](../search/index.md), [Navigation](../navigation/index.md), and [Context menu](../map/map-context-menu.md). This is especially important if your travels include trips to remote locations or places with limited internet access.
 
 
-## First Screen
+## Download 
+
+To start downloading maps, go to the main menu **Download maps** (*Android*) / **Maps & Resources** (*iOS*). There you can select the maps you need for offline navigation.
+
+### First Screen
 
 <Tabs groupId="operating-systems">
 
@@ -73,11 +77,7 @@ For regions, such as Germany, consisting of multiple maps, you can use bulk map 
 :::
 
 
-## Download 
-
-To start downloading maps, go to the main menu **Download maps** (*Android*) / **Maps & Resources** (*iOS*). There you can select the maps you need for offline navigation.
-
-### Type of Maps (world) 
+### Type of Maps
 
 <Tabs groupId="operating-systems">
 
@@ -323,12 +323,3 @@ For *Standard maps*, there is an additional option to sort them.
 - **Newest or oldest date of modification** - this option may be useful if you would like to see recently updated maps or if you're looking for older versions.
 - **Large or small size** - may help to identify large maps if you are concerned about storage space.
 
-
-### Build own Map (advanced)
-
-![Build your own Map](@site/static/img/osmandmapcreator/OsmAndMapCreator-download-raster-maps.png)
-
-It is possible to upload a self-created map.
-[OsmAndMapCreator]((../../technical/map-creation/create-offline-maps-yourself.md)) can be used to create any maps supported by OsmAnd. To create a vector map you will need an OSM file (*.pbf, *.osm.gz, *.osm.bz2) and to create an online sqlite map you will need the url of the base tile.  
-
-It is possible to upload a self-created map. [OsmAndMapCreator](../../technical/map-creation/create-offline-maps-yourself.md). More info section *My data* article [Maps](../personal/maps.md#build-your-own-map-advanced)
