@@ -80,6 +80,71 @@ Read full info about Cross-platform and Login [here](https://osmand.net/docs/use
 
 _________________________________
 
+## Versione italiana
+
+**Come attivare OsmAnd Promo Pro**
+
+Avete inserito la vostra e-mail in uno dei moduli Promo. Ora dovete attivare OsmAnd Pro per i vostri dispositivi.
+
+**I vostri passi**:
+
+1. **Riceverete la lista successiva** alla vostra e-mail da OsmAnd sulla registrazione:
+   
+![Confirmation](@site/static/img/promo/advportal/confirmation.png)
+
+
+2. **Il passo successivo** è l'attivazione di **OsmAnd Pro** sul dispositivo.
+
+2a. Installare l'applicazione OsmAnd:
+- Versione Android: [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545), [Amazon](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd).
+- Versione iOS: [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+
+2b. Attivare OsmAnd Pro sul dispositivo:    
+
+_OsmAnd app Menu > Settings > OsmAnd Cloud > I already have an account_
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_1.png').default} alt="confirmation"/></td>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_2.png').default} alt="confirmation"/></td>
+    </tr>
+</table> 
+
+
+3. Dopodiché, riceverete un **codice di quattro cifre** nella vostra e-mail per l'inserimento.
+
+![Confirmation](@site/static/img/promo/advportal/confirmation_3.png)
+
+Utilizzate questo codice a quattro cifre nell'app OsmAnd:
+
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_4.png').default} alt="confirmation"/></td>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_5.png').default} alt="confirmation"/></td>
+    </tr>
+</table> 
+
+
+4. Riavviare l'app OsmAnd e verificare l'attivazione di Osmand Pro:
+
+_OsmAnd app Menu > Settings > Purchases > Restore purchases_
+
+<table class="blogimage">
+  <tr>
+    <td><img src={require('@site/static/img/promo/advportal/confirmation_6.png').default} alt="confirmation"/></td>
+    </tr>
+</table> 
+
+5. Divertitevi con le funzioni di [OsmAnd Pro](https://osmand.net/docs/user/purchases/android#pro-features).
+
+:::tip Note
+Leggete le informazioni complete su Cross-platform e Login [qui](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform).
+:::
+
+_________________________________
+
+
 ## Polska wersija
 
 **Jak aktywować OsmAnd Promo Pro**
