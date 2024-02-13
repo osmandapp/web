@@ -136,18 +136,21 @@ On some Android devices (Xiaomi with Muiu 14), there is no way to set app langua
 
 <TabItem value="android" label="Android">
 
+For Android you can find all information about OsmAnd data and change storage folder in Global settings.
+
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
 
-| |
-| -- | --|
-|![Data storage folder](@site/static/img/personal/profiles/global_sett_andr_1.png) | ![Profiles Android](@site/static/img/personal/profiles/general_settings_storage_andr.png) |
+![Profiles Storage Settings Android](@site/static/img/personal/profiles/general_settings_storage_android.png) ![Profiles Storage Settings 1 Android](@site/static/img/personal/profiles/general_settings_storage_1_android.png)  
 
-**<Translate android="true" ids="change_data_storage_folder"/>**
+OsmAnd usage:  
+Here you will find all the data size information for each data category: maps, guides, contour lines / hills / slopes, tracks, audio and video, tiles, other.  
+
+**<Translate android="true" ids="change_data_storage_folder"/>**  
 
 Here you can change the folder for saving OsmAnd data on your device.
 
 - **Internal app memory**. Only OsmAnd app has access to its data and none of external apps. 
-- *Shared memory*. No longer available.
+- **Shared memory**. No longer available.
 - **External storage 1**. Only 1 OsmAnd app has access and Admin apps and USB.
 - **External storage N**. SDCard: Only 1 OsmAnd app has access and Admin apps and USB.
 - **Multiuser storage**. Only 1 OsmAnd app has access but it's shared between multiple Android users.
@@ -157,7 +160,7 @@ Here you can change the folder for saving OsmAnd data on your device.
 
 <TabItem value="ios" label="iOS">
 
-For the iOS system, we can not do any manipulation of the storage folder. We can only find out how much memory OsmAnd uses.  
+OsmAnd files are visible in the [*Files*](https://apps.apple.com/us/app/files/id1232058109) application. You can access all OsmAnd files: [tracks](../personal/tracks.md), [favorites](../personal/favorites.md), [maps](../personal/maps.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md) 
 
 *iOS device → Settings → General → iPhone storage → OsmAnd Maps*  
 
@@ -166,11 +169,7 @@ For the iOS system, we can not do any manipulation of the storage folder. We can
 OsmAnd files are visible in the "Files" application. To access all tracks, custom routing and rendering files, follow this path:   
 *Files → On My Phone → OsmAnd Maps*
 
-*Files → On My Phone → OsmAnd Maps*
-
 ![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)  
-
-OsmAnd files are visible in the _["Files"](https://apps.apple.com/us/app/files/id1232058109)_ application. You can access all OsmAnd files: [tracks](../personal/tracks.md), [favorites](../personal/favorites.md), [maps](../personal/maps.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md)
 
 
 ![General Settings storage iOS](@site/static/img/personal/profiles/files-1.png) ![General Settings storage iOS](@site/static/img/personal/profiles/files-2.png)
