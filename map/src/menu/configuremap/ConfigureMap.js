@@ -29,6 +29,7 @@ import { cloneDeep } from 'lodash';
 import EmptyLogin from '../errors/EmptyLogin';
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import { useTranslation } from 'react-i18next';
+import { INTERACTIVE_LAYER } from '../../map/layers/CustomTileLayer';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
@@ -168,6 +169,7 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
                                         value={ctx.tileURL.key}
                                         onChange={(e) => {
                                             ctx.setTileURL(ctx.allTileURLs[e.target.value]);
+                                            ctx.setRenderingType(DYNAMIC_RENDERING);
                                         }}
                                     >
                                         {Object.values(ctx.allTileURLs).map((item) => {
@@ -183,18 +185,20 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
                                     <Settings fontSize="small" />
                                 </IconButton>
                             </MenuItem>
-                            <ToggleButtonGroup
-                                sx={{ ml: 1, mr: 1, mt: 2, width: 'auto' }}
-                                color="primary"
-                                value={ctx.renderingType}
-                                exclusive
-                                fullWidth={true}
-                                onChange={handleRenderingType}
-                                aria-label="Platform"
-                            >
-                                <ToggleButton value={DYNAMIC_RENDERING}>Dynamic</ToggleButton>
-                                <ToggleButton value={VECTOR_GRID}>Vector grid</ToggleButton>
-                            </ToggleButtonGroup>
+                            {ctx.tileURL.key === INTERACTIVE_LAYER && (
+                                <ToggleButtonGroup
+                                    sx={{ ml: 1, mr: 1, mt: 2, width: 'auto' }}
+                                    color="primary"
+                                    value={ctx.renderingType}
+                                    exclusive
+                                    fullWidth={true}
+                                    onChange={handleRenderingType}
+                                    aria-label="Platform"
+                                >
+                                    <ToggleButton value={DYNAMIC_RENDERING}>Dynamic</ToggleButton>
+                                    <ToggleButton value={VECTOR_GRID}>Vector grid</ToggleButton>
+                                </ToggleButtonGroup>
+                            )}
                         </>
                     )}
                 </>

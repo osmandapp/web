@@ -9,6 +9,9 @@ import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import { geoObject } from '../store/geoObject/geoObject.js';
 import WeatherManager from '../manager/WeatherManager';
 import { getAccountInfo } from '../manager/LoginManager';
+import { cloneDeep } from 'lodash';
+import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
+import { DYNAMIC_RENDERING } from '../menu/configuremap/ConfigureMap';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -201,10 +204,13 @@ async function loadTileUrls(setAllTileURLs) {
     const response = await apiGet(`${process.env.REACT_APP_TILES_API_SITE}/tile/styles`, {});
     if (response.ok) {
         let data = await response.json();
+
+        data[INTERACTIVE_LAYER] = createInteractiveMap(data);
+
         Object.values(data).forEach((item) => {
             item.tileSize = 256 << item.tileSizeLog;
             item.url = process.env.REACT_APP_TILES_API_SITE + '/tile/' + item.key + '/{z}/{x}/{y}.png';
-            if (item.key === 'hd') {
+            if (item.key === INTERACTIVE_LAYER) {
                 item.infoUrl =
                     process.env.REACT_APP_TILES_API_SITE + '/tile/' + 'info/' + item.key + '/{z}/{x}/{y}.json';
             }
@@ -216,6 +222,13 @@ async function loadTileUrls(setAllTileURLs) {
         data[osmandTileURL.key] = osmandTileURL;
         setAllTileURLs(data);
     }
+}
+
+function createInteractiveMap(data) {
+    let interactiveMap = cloneDeep(data['hd']);
+    interactiveMap.name = INTERACTIVE_LAYER;
+    interactiveMap.key = INTERACTIVE_LAYER;
+    return interactiveMap;
 }
 
 const AppContext = React.createContext();
@@ -230,7 +243,7 @@ export const AppContextProvider = (props) => {
     const [weatherLayers, setWeatherLayers] = useState(WeatherManager.getLayers());
     const [weatherDate, setWeatherDate] = useState(WeatherManager.getWeatherDate());
     const [weatherType, setWeatherType] = useState('gfs');
-    const [renderingType, setRenderingType] = useState(null);
+    const [renderingType, setRenderingType] = useState(DYNAMIC_RENDERING);
     const [gpxLoading, setGpxLoading] = useState(false);
     const [localTracksLoading, setLocalTracksLoading] = useState(false);
     // cookie to store email logged in

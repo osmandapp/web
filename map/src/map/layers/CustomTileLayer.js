@@ -8,6 +8,8 @@ import { DYNAMIC_RENDERING, VECTOR_GRID } from '../../menu/configuremap/Configur
 import { apiGet } from '../../util/HttpApi';
 import styles from './map.module.css';
 
+export const INTERACTIVE_LAYER = 'interactive';
+
 export function CustomTileLayer({ ...props }) {
     const map = useMap();
     const ctx = useContext(AppContext);
@@ -23,12 +25,12 @@ export function CustomTileLayer({ ...props }) {
         let res = [];
 
         for (const obj of dataArray) {
-            res = getPointsIcons(res, obj);
+            res = getGeoJson(res, obj);
         }
         return { ...data, features: res };
     }
 
-    function getPointsIcons(res, obj) {
+    function getGeoJson(res, obj) {
         if (obj.geometry.type === 'point' && obj?.mainIcon !== '' && obj?.iconX && obj?.iconY) {
             let coordinates = [obj.iconX, obj.iconY];
             res.push({
@@ -38,6 +40,13 @@ export function CustomTileLayer({ ...props }) {
                     iconSize: obj.iconSize,
                     shield: obj.shield,
                     mainIcon: obj.mainIcon,
+                    text: obj.text,
+                    textColor: convertDecimalToHex(obj.textColor),
+                    textShadow: obj.textShadow,
+                    textShadowColor: convertDecimalToHex(obj.textShadowColor),
+                    textSize: obj.textSize,
+                    bold: obj.bold,
+                    italic: obj.italic,
                     iconUrl: `/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${obj.mainIcon}.svg`,
                 },
                 geometry: {
@@ -88,11 +97,107 @@ export function CustomTileLayer({ ...props }) {
         return L.layerGroup(markers);
     }
 
+    function createTextLayerGroup(feature, latlng) {
+        const splitTextIntoLines = (text, maxLineLength = 15) => {
+            if (text.length > maxLineLength) {
+                const words = text.split(' ');
+                let lines = [''];
+                let currentLineIndex = 0;
+
+                words.forEach((word) => {
+                    if ((lines[currentLineIndex] + word + ' ').length <= maxLineLength) {
+                        lines[currentLineIndex] += `${word} `;
+                    } else {
+                        lines.push(`${word} `);
+                        currentLineIndex++;
+                    }
+                });
+
+                return lines;
+            } else {
+                return [text];
+            }
+        };
+
+        const createTextMarker = ({
+            text,
+            color = 'black',
+            fontSize = '12',
+            fontFamily = 'Arial',
+            textShadow = 0,
+            textShadowColor,
+            bold = false,
+            italic = false,
+        }) => {
+            const lines = splitTextIntoLines(text);
+            const shieldedLines = lines.map((line) => {
+                const style = `color: ${color}; text-shadow: ${textShadow}px ${textShadow}px 0px ${textShadowColor}; font-size: ${fontSize}px; font-family: ${fontFamily}; font-weight: ${bold ? 'bold' : 'normal'}; font-style: ${italic ? 'italic' : 'normal'}; white-space: nowrap;`;
+                return `<span class="shield" style="${style}">${line}</span>`;
+            });
+            const divStyle = `display: flex; flex-direction: column; justify-content: center; align-items: center;`;
+            const iconHtml = `<div style="${divStyle}">${shieldedLines.join('')}</div>`;
+            const icon = L.divIcon({
+                className: 'custom-text-icon',
+                html: iconHtml,
+                iconAnchor: [0, -10],
+            });
+
+            const marker = L.marker(latlng, { icon });
+            marker.on('click', () => console.log('Clicked on', feature));
+            return marker;
+        };
+
+        const markers = [];
+
+        if (feature.geometry.type === 'Point' && feature.properties.text) {
+            const textMarker = createTextMarker({
+                text: feature.properties.text,
+                color: feature.properties.textColor,
+                fontSize: feature.properties.textSize / 2,
+                fontFamily: feature.properties.fontFamily,
+                textShadow: feature.properties.textShadow / 2,
+                textShadowColor: feature.properties.textShadowColor,
+                bold: feature.properties.bold,
+                italic: feature.properties.italic,
+            });
+            markers.push(textMarker);
+        }
+        return L.layerGroup(markers);
+    }
+
+    function convertDecimalToHex(decimal) {
+        let color = decimal >>> 0;
+        let alpha = (color >> 24) & 0xff;
+        let red = (color >> 16) & 0xff;
+        let green = (color >> 8) & 0xff;
+        let blue = color & 0xff;
+
+        // Convert to hexadecimal and ensure 2 digits
+        red = red.toString(16).padStart(2, '0');
+        green = green.toString(16).padStart(2, '0');
+        blue = blue.toString(16).padStart(2, '0');
+        alpha = alpha.toString(16).padStart(2, '0');
+
+        return `#${red}${green}${blue}${alpha}`;
+    }
+
     function addGeoJsonLayer(geoJsonData) {
         if (geoJsonData && map) {
             return L.geoJson(geoJsonData, {
                 pointToLayer: function (feature, latlng) {
-                    return createIconLayerGroup(feature, latlng);
+                    const layers = [];
+
+                    if (feature.properties.mainIcon) {
+                        const iconLayer = createIconLayerGroup(feature, latlng);
+                        layers.push(iconLayer);
+                    }
+
+                    if (feature.properties.text) {
+                        const textLayer = createTextLayerGroup(feature, latlng);
+                        layers.push(textLayer);
+                    }
+
+                    return L.layerGroup(layers);
                 },
             }).addTo(map);
         }
@@ -171,7 +276,8 @@ export function CustomTileLayer({ ...props }) {
         });
 
         return () => {
+            removeDataLayers(dataLayers);
             map.removeLayer(rasterTileLayer);
         };
-    }, [ctx.tileURL.url, props]);
+    }, [ctx.tileURL.url, props, ctx.renderingType]);
 }
