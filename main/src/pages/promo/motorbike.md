@@ -14,7 +14,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock";
 import SotmScreenshots from './carousel/sotmscreenshots.js';
 
-## OsmAnd offline maps for Motorbike.experience
+## OsmAnd offline maps for [Motorbike.experience](https://www.instagram.com/motorbike.experience/)
 
 ### Get free OsmAnd Pro for 12 months 
 
