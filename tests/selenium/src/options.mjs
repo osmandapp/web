@@ -124,9 +124,12 @@ export async function prepareDriver() {
     const tryHomeBinary = process.env.HOME + '/bin/chromium';
     existsSync(tryHomeBinary) && options.setChromeBinaryPath(tryHomeBinary);
 
-    const builder = await new Builder().forBrowser('chrome');
+    options.setLoggingPrefs({
+        browser: 'ALL',
+        performance: 'ALL',
+    });
 
-    builder.setChromeOptions(options);
+    const builder = new Builder().forBrowser('chrome').setChromeOptions(options);
 
     // debug && builder.setChromeService(new ServiceBuilder().loggingTo('/tmp/log').enableVerboseLogging());
 

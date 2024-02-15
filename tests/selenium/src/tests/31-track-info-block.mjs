@@ -2,7 +2,7 @@
 
 import { By } from 'selenium-webdriver';
 import { mobile } from '../options.mjs';
-import { clickBy, enclose, enumerateIds, matchInnerTextBy } from '../lib.mjs';
+import { clickBy, enclose, enumerateIds, matchInnerTextBy, waitByRemoved } from '../lib.mjs';
 
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
@@ -74,6 +74,7 @@ export default async function test() {
         await actionUploadGpx({ mask: gpx });
         await clickBy(By.id('se-local-track-' + name));
         await actionIdleWait({ idle: 3000 });
+        await waitByRemoved(By.id(`se-loadingSrtm`));
         await clickBy(By.id('se-show-attr-legend-Road type'), { optional: true });
         await actionIdleWait({ idle: 3000 });
         await clickBy(By.id('se-show-attr-legend-Surface'), { optional: true });
@@ -84,6 +85,7 @@ export default async function test() {
         await actionLocalToCloud({ mask: name });
         await clickBy(By.id('se-cloud-track-' + name));
         await actionIdleWait({ idle: 3000 });
+        await waitByRemoved(By.id(`se-loadingSrtm`));
         await clickBy(By.id('se-show-attr-legend-Road type'), { optional: true });
         await actionIdleWait({ idle: 3000 });
         await clickBy(By.id('se-show-attr-legend-Surface'), { optional: true });
