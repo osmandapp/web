@@ -1,7 +1,7 @@
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
 import { deleteFavGroup, getFiles, uploadFavorites } from '../util.mjs';
-import { clickBy, enclose, enumerateIds, waitBy } from '../lib.mjs';
+import { clickBy, enclose, enumerateIds, waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../actions/actionFinish.mjs';
 import actionRenameFavGroup from '../actions/actionRenameFavGroup.mjs';
@@ -129,11 +129,16 @@ async function validateItemOrder(ids) {
 }
 
 async function deleteFavGroups(favorites) {
+    let prevName = '';
     for (const f of favorites) {
+        if (prevName && prevName !== '') {
+            await waitByRemoved(By.id(`se-menu-fav-${prevName}`));
+        }
         const shortFavGroupName = f.name.split('-')[1];
         const exist = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`), { optional: true, idle: true });
         if (exist) {
             await deleteFavGroup(shortFavGroupName);
+            prevName = shortFavGroupName;
         }
     }
     await waitBy(By.id('se-empty-page'));
