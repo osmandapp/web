@@ -46,7 +46,7 @@ export default function PoiLayer() {
         if (response?.data) {
             return response.data;
         } else {
-            console.log(`Pois not found`);
+            console.error(`Pois not found`);
         }
     }
 

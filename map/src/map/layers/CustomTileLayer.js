@@ -18,7 +18,7 @@ export function CustomTileLayer({ ...props }) {
         const dataArray = data.features;
 
         if (!Array.isArray(dataArray) || dataArray.length === 0) {
-            console.log('Invalid input: expected a non-empty array of GeoJSON objects');
+            console.error('Invalid input: expected a non-empty array of GeoJSON objects');
             return null;
         }
 
@@ -31,7 +31,13 @@ export function CustomTileLayer({ ...props }) {
     }
 
     function getGeoJson(res, obj) {
-        if (obj.geometry.type === 'point' && obj?.mainIcon !== '' && obj?.iconX && obj?.iconY) {
+        if (
+            obj.geometry.type === 'point' &&
+            typeof obj?.mainIcon === 'string' &&
+            obj.mainIcon.trim() !== '' &&
+            obj?.iconX &&
+            obj?.iconY
+        ) {
             let coordinates = [obj.iconX, obj.iconY];
             res.push({
                 type: 'Feature',
@@ -220,7 +226,7 @@ export function CustomTileLayer({ ...props }) {
 
             vectorGridLayer.on('click', (e) => {
                 let properties = e.layer.properties;
-                console.log('Clicked on', properties['id']);
+                console.error('Clicked on', properties['id']);
                 let style = {
                     icon: L.icon({
                         iconUrl: properties.iconUrl,
@@ -261,7 +267,7 @@ export function CustomTileLayer({ ...props }) {
             const { z, x, y } = e.coords;
 
             const geoJsonUrl = ctx.tileURL.infoUrl.replace('{z}', z).replace('{x}', x).replace('{y}', y);
-            const response = await apiGet(geoJsonUrl, {});
+            const response = await apiGet(geoJsonUrl, { apiCache: true });
             if (response.ok) {
                 const geoJsonData = await response.json();
                 const preparedGeoJsonData = await prepareGeoJsonData(geoJsonData);

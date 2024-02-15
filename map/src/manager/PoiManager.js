@@ -72,7 +72,7 @@ async function searchPoiCategories(search) {
     if (!_.isEmpty(response?.data)) {
         return response.data;
     } else {
-        console.log(`Poi category not found`);
+        console.error(`Poi category not found`);
     }
 }
 
