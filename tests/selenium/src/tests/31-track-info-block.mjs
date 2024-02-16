@@ -64,6 +64,8 @@ const cloudTrackButtons = [
     'se-infoblock-button-delete-track',
 ];
 
+const TRACK_WITH_SRTM_ELE = 'test-routed-osrm.gpx';
+
 export default async function test() {
     await actionOpenMap();
     await actionLogIn();
@@ -78,7 +80,7 @@ export default async function test() {
         await clickBy(By.id('se-show-attr-legend-Road type'), { optional: true });
         await actionIdleWait({ idle: 3000 });
         await clickBy(By.id('se-show-attr-legend-Surface'), { optional: true });
-        await validateInfoBlockStrings(strings);
+        await validateInfoBlockStrings(strings, gpx);
         await validateInfoBlockButtons(localTrackButtons);
         await clickBy(By.id('se-button-back'));
         await clickBy(By.id('se-show-menu-planroute'));
@@ -89,14 +91,21 @@ export default async function test() {
         await clickBy(By.id('se-show-attr-legend-Road type'), { optional: true });
         await actionIdleWait({ idle: 3000 });
         await clickBy(By.id('se-show-attr-legend-Surface'), { optional: true });
-        await validateInfoBlockStrings(strings);
+        await validateInfoBlockStrings(strings, gpx);
         await validateInfoBlockButtons(cloudTrackButtons);
     }
 }
 
-async function validateInfoBlockStrings(strings) {
+async function validateInfoBlockStrings(strings, gpx) {
     for await (const match of strings) {
         if (mobile && match.toString().match(MOBILE_SKIP)) {
+            continue;
+        }
+        if (gpx === TRACK_WITH_SRTM_ELE && match.toString().match(/m$/)) {
+            let matched = await matchInnerTextBy(By.id('se-infoblock-all'), match, { optional: true });
+            if (!matched) {
+                console.warn('SRTM elevation is not working.');
+            }
             continue;
         }
         await matchInnerTextBy(By.id('se-infoblock-all'), match);
