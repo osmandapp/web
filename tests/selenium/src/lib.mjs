@@ -276,7 +276,7 @@ const getTextBy = async (by) =>
  * test-ok: element found (by)
  * test-ok: text match (match)
  */
-async function matchBy(by, match, getter) {
+async function matchBy(by, match, getter, optional = false) {
     const validate = async () => {
         const text = await getter(by);
         if ((typeof match === 'object' && text.match(match)) || (typeof match !== 'object' && text.includes(match))) {
@@ -285,13 +285,15 @@ async function matchBy(by, match, getter) {
         debug && console.log('matchBy (', match, ') NOT IN (', text, ')');
         return null;
     };
-    return await enclose(validate, { tag: `matchTextBy (${match.toString()})` });
+    return await enclose(validate, { tag: `matchTextBy (${match.toString()})`, optional });
 }
 
-export const matchTextBy = async (by, match) => await matchBy(by, match, getTextBy);
-export const matchValueBy = async (by, match) => await matchBy(by, match, getValueBy);
-export const matchInnerHtmlBy = async (by, match) => await matchBy(by, match, getInnerHtmlBy);
-export const matchInnerTextBy = async (by, match) => await matchBy(by, match, getInnerTextBy);
+export const matchTextBy = async (by, match, optional = false) => await matchBy(by, match, getTextBy, optional);
+export const matchValueBy = async (by, match, optional = false) => await matchBy(by, match, getValueBy, optional);
+export const matchInnerHtmlBy = async (by, match, optional = false) =>
+    await matchBy(by, match, getInnerHtmlBy, optional);
+export const matchInnerTextBy = async (by, match, optional = false) =>
+    await matchBy(by, match, getInnerTextBy, optional);
 
 export async function sendKeysBy(by, keys) {
     enclose(
@@ -334,24 +336,24 @@ export async function checkElementByCss(searchString, exist = true) {
 async function logBrowserAndNetworkErrors(driver) {
     const browserLogs = await driver.manage().logs().get(logging.Type.BROWSER);
     if (browserLogs && browserLogs.length > 0) {
-        console.log('--- Browser Console Logs ---');
+        console.warn('--- Browser Console Logs ---');
         browserLogs.forEach((entry) => {
-            console.log(`[${entry.level}] ${entry.message}`);
+            console.warn(`[${entry.level}] ${entry.message}`);
         });
     } else {
-        console.log('No browser errors logged.');
+        console.warn('No browser errors logged.');
     }
 
     const networkLogs = await driver.manage().logs().get(logging.Type.PERFORMANCE);
     if (networkLogs && networkLogs.length > 0) {
-        console.log('--- Network Logs ---');
+        console.warn('--- Network Logs ---');
         networkLogs.forEach((entry) => {
             const message = JSON.parse(entry.message).message;
             if (message.method === 'Network.responseReceived' || message.method === 'Network.requestFailed') {
-                console.log(`[${message.method}] ${message.params.response ? message.params.response.url : ''}`);
+                console.warn(`[${message.method}] ${message.params.response ? message.params.response.url : ''}`);
             }
         });
     } else {
-        console.log('No network errors logged.');
+        console.warn('No network errors logged.');
     }
 }
