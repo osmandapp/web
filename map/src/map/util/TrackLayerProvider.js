@@ -157,7 +157,7 @@ function addStartEndGap(point, allPoints, layers, editTrack) {
             })
         );
         let currentInd = _.indexOf(allPoints, point);
-        if (currentInd !== -1) {
+        if (currentInd !== -1 && currentInd + 1 < allPoints.length) {
             let start = new L.LatLng(allPoints[currentInd + 1].lat, allPoints[currentInd + 1].lng);
             layers.push(
                 new L.Marker(start, {
