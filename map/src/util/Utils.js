@@ -144,23 +144,18 @@ export function formatMeters(m) {
     }
 }
 
-export const toHHMMSS = function (time) {
-    var sec_num = time / 1000;
-    var hours = Math.floor(sec_num / 3600);
-    var minutes = Math.floor((sec_num - hours * 3600) / 60);
-    var seconds = sec_num - hours * 3600 - minutes * 60;
+export function toHHMMSS(time) {
+    const timeInSeconds = time / 1000;
+    let hours = Math.floor(timeInSeconds / 3600);
+    let minutes = Math.floor((timeInSeconds - hours * 3600) / 60);
+    let seconds = (timeInSeconds - hours * 3600 - minutes * 60).toFixed(2);
 
-    if (hours < 10) {
-        hours = '0' + hours;
-    }
-    if (minutes < 10) {
-        minutes = '0' + minutes;
-    }
-    if (seconds < 10) {
-        seconds = '0' + Math.round(seconds);
-    }
+    hours = hours < 10 ? '0' + hours : hours;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
     return hours + ':' + minutes + ':' + seconds;
-};
+}
 
 /*
     Prepare string with NaN/Infinity before JSON.parse()
