@@ -16,6 +16,7 @@ import SotmScreenshots from './carousel/sotmscreenshots.js';
 
 ![Logo](@site/static/img/promo/logo_osmand_black.png)
 
+
 # Get free OsmAnd Pro for 3 months 
 
 You dont know us for now, but we dream to be a friend of such an amazing you!
