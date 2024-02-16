@@ -62,9 +62,9 @@ export async function deleteTrack(name) {
 
 export async function deleteFavGroup(name) {
     await actionIdleWait();
-    await waitBy(By.id(`se-folder-actions-button-${name}`));
     await clickBy(By.id(`se-folder-actions-button-${name}`));
     await waitBy(By.id('se-favorite-folder-actions'));
+    await waitBy(By.id('se-favorite-folder-actions-delete'));
     await clickBy(By.id('se-favorite-folder-actions-delete'));
     await waitBy(By.id('se-delete-fav-group-dialog'));
     await clickBy(By.id('se-delete-fav-group-submit'));

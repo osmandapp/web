@@ -1,7 +1,7 @@
 'use strict';
 
 // import { strict as assert } from 'node:assert';
-import { Condition, By } from 'selenium-webdriver';
+import { Condition, By, logging } from 'selenium-webdriver';
 
 import { driver, debug, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED, HIDDEN_TIMEOUT } from './options.mjs';
 import actionIdleWait from './actions/actionIdleWait.mjs';
@@ -41,6 +41,7 @@ export async function enclose(callback, { tag = 'enclose', optional = false } = 
         if (optional === true) {
             return null;
         }
+        await logBrowserAndNetworkErrors(driver);
         throw error;
     }
 }
@@ -93,6 +94,7 @@ export async function waitBy(by, { optional = false, idle = false } = {}) {
         if (optional === true) {
             return null;
         }
+        await logBrowserAndNetworkErrors(driver);
         throw error;
     }
 }
@@ -324,6 +326,32 @@ export async function checkElementByCss(searchString, exist = true) {
         );
         debug && console.log(`Condition met for element (${searchString})`);
     } catch (error) {
+        await logBrowserAndNetworkErrors(driver);
         debug && console.log(`Condition not met for element (${searchString})`);
+    }
+}
+
+async function logBrowserAndNetworkErrors(driver) {
+    const browserLogs = await driver.manage().logs().get(logging.Type.BROWSER);
+    if (browserLogs && browserLogs.length > 0) {
+        console.log('--- Browser Console Logs ---');
+        browserLogs.forEach((entry) => {
+            console.log(`[${entry.level}] ${entry.message}`);
+        });
+    } else {
+        console.log('No browser errors logged.');
+    }
+
+    const networkLogs = await driver.manage().logs().get(logging.Type.PERFORMANCE);
+    if (networkLogs && networkLogs.length > 0) {
+        console.log('--- Network Logs ---');
+        networkLogs.forEach((entry) => {
+            const message = JSON.parse(entry.message).message;
+            if (message.method === 'Network.responseReceived' || message.method === 'Network.requestFailed') {
+                console.log(`[${message.method}] ${message.params.response ? message.params.response.url : ''}`);
+            }
+        });
+    } else {
+        console.log('No network errors logged.');
     }
 }
