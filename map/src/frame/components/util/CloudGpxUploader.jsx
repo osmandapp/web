@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import AppContext from '../../../context/AppContext';
 import { useMutator } from '../../../util/Utils';
-import TracksManager from '../../../manager/track/TracksManager';
 import { styled } from '@mui/material/styles';
 import { createTrackFreeName, saveTrackToCloud } from '../../../manager/track/SaveTrackManager';
 import { FREE_ACCOUNT } from '../../../manager/LoginManager';
@@ -17,10 +16,18 @@ export default function CloudGpxUploader({ children, folder = null, style = null
     useEffect(() => {
         for (const file in uploadedFiles) {
             let open = uploadedFiles[file].selected;
-            let fileName = TracksManager.prepareName(uploadedFiles[file].track.name);
+            let fileName = uploadedFiles[file].name;
             if (validName(fileName)) {
+                fileName = fileName.replace('.gpx', '');
                 fileName = createTrackFreeName(fileName, ctx.tracksGroups, folder);
-                saveTrackToCloud(ctx, folder, fileName, 'GPX', uploadedFiles[file].track, open).then();
+                saveTrackToCloud({
+                    ctx,
+                    currentFolder: folder,
+                    fileName,
+                    type: 'GPX',
+                    uploadedFile: uploadedFiles[file],
+                    open,
+                }).then();
                 mutateUploadedFiles((o) => delete o[file]);
                 break; // process 1 file per 1 render
             }
@@ -32,11 +39,10 @@ export default function CloudGpxUploader({ children, folder = null, style = null
         ctx.setTrackLoading(Array.from(e.target.files).map((track) => track.name));
         Array.from(e.target.files).forEach((file) => {
             const reader = new FileReader();
-            reader.addEventListener('load', async () => {
-                const track = await TracksManager.getTrackData(file);
-                if (track) {
-                    track.name = file.name;
-                    mutateUploadedFiles((o) => (o[file.name] = { track, selected }));
+            reader.addEventListener('load', async (e) => {
+                const data = e.target.result;
+                if (data) {
+                    mutateUploadedFiles((o) => (o[file.name] = { file, selected, data: data, name: file.name }));
                 } else {
                     ctx.setTrackErrorMsg({
                         title: 'Import error',
