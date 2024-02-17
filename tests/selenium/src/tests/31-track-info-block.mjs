@@ -102,7 +102,7 @@ async function validateInfoBlockStrings(strings, gpx) {
             continue;
         }
         if (gpx === TRACK_WITH_SRTM_ELE && match.toString().match(/m$/)) {
-            let matched = await matchInnerTextBy(By.id('se-infoblock-all'), match, { optional: true });
+            let matched = await matchInnerTextBy(By.id('se-infoblock-all'), match, true);
             if (!matched) {
                 console.warn('SRTM elevation is not working.');
             }
