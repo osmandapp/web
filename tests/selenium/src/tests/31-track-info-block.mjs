@@ -106,9 +106,9 @@ async function validateInfoBlockStrings(strings, gpx) {
             if (!matched) {
                 console.warn('SRTM elevation is not working.');
             }
-            continue;
+        } else {
+            await matchInnerTextBy(By.id('se-infoblock-all'), match);
         }
-        await matchInnerTextBy(By.id('se-infoblock-all'), match);
     }
 }
 
