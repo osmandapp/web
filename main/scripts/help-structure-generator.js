@@ -66,6 +66,12 @@ function dumpItem(articles, item, level) {
   const { id } = item.link ?? item; // categories get { id } from `item.link` but articles get from `item` directly
 
   if (id === undefined) {
+    const emptyArticle = {
+      level,
+      type: item.type,
+      label: item.label
+    };
+    articles.push(emptyArticle);
     return; // some categories might not have dedicated page/id
   }
 
