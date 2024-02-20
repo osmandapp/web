@@ -14,7 +14,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 ## Overview
 
 Uploading maps to the OsmAnd app is a key step to ensure smooth operation and use of offline navigation. Without offline maps, the app cannot function fully. Downloading maps gives you access to maps of different regions, allowing you to navigate without an Internet connection.  
@@ -72,9 +71,8 @@ Versions of OsmAnd up to 3.8 offer to download a world map so that you can view 
 - [**Weather forecast**](../plugins/weather.md). Weather information on a map for easy route planning.
 - [**Online raster maps**](../map/raster-maps.md). The maps are available for download online and can be installed as third-party maps or OsmAnd Tiles. 
 
-:::note
+**NOTE**  
 For regions, such as Germany, consisting of multiple maps, you can use bulk map loading, which is displayed as double loading arrows next to the map type.
-:::
 
 
 ### Download Maps
@@ -128,7 +126,11 @@ For regions, such as Germany, consisting of multiple maps, you can use bulk map 
   - *[Live updates](../personal/maps.md#osmand-live)*. Set up hourly map updates for specific regions.
 
 **Online sources**  
-To import online map sources, you can tap the *OSF file* of an app profile in storage, messenger, or mail, select the OsmAnd app to open, and select the data to import. Read more [here](../personal/import-export.md#online-sources).
+To import online map sources, you can tap the *OSF file* of an app profile in storage, messenger, or mail, select the OsmAnd app to open, and select the data to import. Read more [here](../personal/import-export.md#online-sources).   
+
+:::tip NOTE
+OsmAnd has a small world map built in. You do not need to download large maps of any region if you are not going to use them. If you need a map covering the whole planet, including major cities, roads and rivers, you can download the **Detailed World Map**.
+:::
 
 
 ### Select on World Map
@@ -184,26 +186,4 @@ The World Maps section provides access to various world maps that complement the
 You can find and download a map using the [search function](../search/index.md).
 
 Simply enter the name of the country or region and you will see the corresponding map file in the list that appears. Click on the country name and start the download process from the [Map Context menu](#context-menu).
-
-
-### Context Menu
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Tap on the map download region](@site/static/img/settings/tap_on_the_map_download_region.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Tap on the map download region](@site/static/img/settings/tap_on_the_map_download_region_ios.png) 
-
-</TabItem>
-
-</Tabs>
-
-One way to load a map is through the world map and the [Map Context menu](../map/map-context-menu.md). The context menu can be accessed by clicking on a label, such as the name of a city, or by long pressing on the map, or by searching by city. The context menu will suggest the smallest region to download.
-
 

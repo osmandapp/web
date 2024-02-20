@@ -16,6 +16,24 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+## Overview
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Track on the map](@site/static/img/personal/tracks/track_on_map_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Track on the map iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
+
+</TabItem>
+ 
+</Tabs>
+
 1. **Main Features**  
 - All tracks in OsmAnd are stored in the folder:    
 *[<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu.md) → [<Translate android="true" ids="shared_string_my_places"/>](../personal/myplaces.md) → [<Translate android="true" ids="shared_string_gpx_tracks"/>](../personal/tracks.md)*.   
@@ -43,43 +61,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 **Import**: the app can import [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language), [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) formats of tracks and points.
 
 
-## Overview
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Track on the map](@site/static/img/personal/tracks/track_on_map_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Track on the map iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
-
-</TabItem>
- 
-</Tabs>
-
-
 ## Create / Edit Track
 
 Tracks is a powerful tool for tracking journeys, recording routes and points of interest (POIs) in real-time, and for later analyzing and sharing data.  
-
-### Coordinate input
-
-<InfoAndroidOnly /> 
-
-- *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → Earth button at the bottom of the screen*
-- *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*  
-
-![Coordinate input Options menu Android](@site/static/img/plan-route/coordinates_input/coordinates_input_options.png)  
-
-- In the pop-up menu, you can enter your own track name or save it by default.  
-- Tap <Translate android="true" ids="shared_string_save"/> to save the added points as a new track.  
-- You will find your track in [My places menu](../personal/myplaces.md) *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>*. Read how to add points by coordinates:  
-- [Coordinate input](../plan-route/coordinate-input.md) article. 
-
 
 ### Currently recording track
 
@@ -111,7 +95,26 @@ Use the OsmAnd [Trip recording Plugin](../plugins/trip-recording.md) and special
 - Share.
 - Export.
 
-### Modify GPX track
+
+## Import
+
+
+### Coordinate input
+
+<InfoAndroidOnly /> 
+
+- *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → Earth button at the bottom of the screen*
+- *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*  
+
+![Coordinate input Options menu Android](@site/static/img/plan-route/coordinates_input/coordinates_input_options.png)  
+
+- In the pop-up menu, you can enter your own track name or save it by default.  
+- Tap <Translate android="true" ids="shared_string_save"/> to save the added points as a new track.  
+- You will find your track in [My places menu](../personal/myplaces.md) *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>*. Read how to add points by coordinates:  
+- [Coordinate input](../plan-route/coordinate-input.md) article. 
+
+
+### Modify GPX
 
 <Tabs groupId="operating-systems">
 
@@ -479,7 +482,7 @@ This screen allows you to select the tracks you want, as well as a list of sugge
 
 ## Import / Export track
 
-### Import track
+### Import
 
 There are two options for importing a track file into OsmAnd. The first is importing by clicking on the track file, the second is importing by the My Places menu action.  
 
@@ -492,7 +495,7 @@ There are two options for importing a track file into OsmAnd. The first is impor
 - Tracks added manually to the OsmAnd folder are imported without restarting the application.  
 
 
-### Export track
+### Export
 
 <Tabs groupId="operating-systems">
 
@@ -529,7 +532,7 @@ Exporting one or more track files to any messenger, email, file managers, Drive 
 3. By [Local backup file](../personal/import-export.md#export-to-file). Exporting GPX-tracks as OSF-file.
 
 
-### Export a GPX file to an external storage device (iOS)
+#### Export a GPX file to an external storage device (iOS)
 
 ![Export with Context menu in iOS](@site/static/img/plugins/trip-recording/cont_menu_in_myplaces_ios.png) 
 
@@ -755,13 +758,14 @@ To move a track from the default folder to another folder in My Places, follow t
 
 <InfoAndroidOnly /> 
 
+*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*.
+
 ![My Places with tracks in Android](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
 
-You can delete a folder with all the tracks contained in it. To do this:
-- Go to *Menu → My Places → Tracks tab*.
-- Tap the three dots menu of the folder you want to delete.
+You can delete a folder with all the tracks it contains. To do this:
+- Tap on the three-dot menu of the folder you want to delete.
 - At the bottom of the menu, find the Delete Folder option.
-- Note that this action is irreversible.
+- *Note* that this action is irreversible.
 
 ## Read more about GPX
 

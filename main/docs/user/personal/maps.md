@@ -19,9 +19,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-The Maps screen allows you to perform basic operations with online and offline maps used in OsmAnd. These are downloading, deleting, renaming, clearing the cache for online maps, updating and checking the map size.
+The Maps screen allows you to perform basic operations with *Online* and *Offline* maps used in OsmAnd. These are downloading, deleting, renaming, clearing the cache for [Online maps](#local-maps), updating and checking the map size.
 
-OsmAnd deals with 2 type of maps: [Vector maps](../map/vector-maps.md) and  [Raster maps](../map/raster-maps.md). All maps are stored in one place of the [Local](#local-maps). 
+OsmAnd operates with 2 type of maps: [Vector maps](../map/vector-maps.md) and [Raster maps](../map/raster-maps.md). All maps are stored in one place of the [Local](#local-maps). 
 
 <Tabs groupId="operating-systems">
 
@@ -107,8 +107,6 @@ Download maps screen allows you to download maps from OsmAnd servers, you will n
 - **Search**. Allows you to search for maps by **country**, **province** or major **city**.
 - **Toolbar**. Indicates how much memory is available for download and how many maps can be downloaded for free.   
 
-OsmAnd has a small world map built in. You do not need to download large maps of any region if you are not going to use them. If you need a map covering the whole planet, including major cities, roads and rivers, you can download the **Detailed World Map**.
-:::
 
 ### Local maps
 
@@ -159,7 +157,7 @@ You can disable vector maps, then they will be present on the device, but will n
 
 Local action available for the map: **<Translate android="true" ids="local_index_mi_restore"/>** and **<Translate android="true" ids="local_index_mi_backup"/>**.
 
-### Local Resources
+#### Local
 
 <Tabs groupId="operating-systems">
 
@@ -254,13 +252,17 @@ For *Standard maps*, there is an additional option to sort them.
 
 </Tabs>
 
-Every month you will be able to update OsmAnd maps on the update screen. Here you can update all maps with one tap. Standard and road-only maps are available every month, usually with a delay of 2 weeks. If you want to access hourly updates, check [OsmAnd Live](#osmand-live).
+Every month you will be able to update OsmAnd maps on the update screen. Here you can update all maps with one tap. Standard and road-only maps are available every month, usually with a delay of 2 weeks. If you want to access hourly updates, check [OsmAnd Live](#osmand-live).   
 
+
+### Extra maps
+
+This is the map folder of the custom plugins. Read more [here](../plugins/custom.md)
 
 ## OsmAnd Live
 
-:::note
-You can use live updates only with [OsmAnd Pro (Android)](../purchases/android.md#free-and-paid-features) and [OsmAnd Live (iOS)](../purchases/ios.md#free-and-paid-features) subscription.
+:::tip NOTE
+The OsmAnd Live is a paid feature of the OsmAnd app.  
 :::
 
 
@@ -311,11 +313,11 @@ Each map has an independent collection of tiny map updates, so be careful if you
 - ```Region name' Updated```: Today 13:21. Represents a timestamp of the latest changes available in the uploaded map. It is always earlier than or equal to the ```last available OpenStreetMap update```. If the ```Updated timestamp``` has not changed since *<Translate android="true" ids="update_now"/>*, then this is the last timestamp when the Region name' region was changed and processed by the OsmAnd servers: the following timestamp exists - ```Incluldes OSM changes made until 2022-08-12, 12:05```.
 - ```Next update```: Today 14:21. Represents the next timestamp when the local device will check for new updates.
 
-### OsmAnd Live limitations
+### Limitations of OsmAnd Live
 
-- Changing addresses on the map and in the search is not yet supported. Address information can be updated with regular monthly updates.
+- Changing addresses on the map and in search is not supported yet. Address information can be updated with regular monthly updates.
 - Updated roads do not contain elevation information, which may affect gradient graphs.
-- Modified and deleted route links are not handled correctly, which may result in the display of public transportation lanes and pedestrian routes that no longer exist. 
+- Changed and deleted route references are not handled correctly, which may result in the display of public transportation lanes and pedestrian routes that no longer exist.
 
 ### Free for OSM Mappers
 
@@ -340,4 +342,25 @@ Live updates and unlimited map downloads are available for [OpenStreetMap](https
 </TabItem>
 
 </Tabs>
+
+
+### Context Menu
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Tap on the map download region](@site/static/img/settings/tap_on_the_map_download_region.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Tap on the map download region](@site/static/img/settings/tap_on_the_map_download_region_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+One way to load a map is through the world map and the [Map Context menu](../map/map-context-menu.md). The context menu can be accessed by clicking on a label, such as the name of a city, or by long pressing on the map, or by searching by city. The context menu will suggest the smallest region to download.
 
