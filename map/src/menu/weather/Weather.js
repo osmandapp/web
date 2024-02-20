@@ -8,8 +8,6 @@ import {
     Divider,
     IconButton,
     MenuItem,
-    ToggleButton,
-    ToggleButtonGroup,
     Toolbar,
     Tooltip,
     Typography,
@@ -45,12 +43,6 @@ export default function Weather() {
 
     const currentDiffHours =
         Math.trunc(ctx.weatherDate.getTime() / (3600 * 1000)) - Math.trunc(new Date().getTime() / (3600 * 1000));
-
-    const handleWeatherType = (event, selectedType) => {
-        if (selectedType !== null && selectedType !== ctx.weatherType) {
-            ctx.setWeatherType(selectedType);
-        }
-    };
 
     function addWeatherHours(ctx, hours) {
         const dt = new Date(ctx.weatherDate.getTime() + hours * 60 * 60 * 1000);
@@ -186,17 +178,6 @@ export default function Weather() {
                     </Tooltip>
                 </Toolbar>
             </AppBar>
-            <ToggleButtonGroup
-                color="primary"
-                value={ctx.weatherType}
-                exclusive
-                fullWidth={true}
-                onChange={handleWeatherType}
-                aria-label="Platform"
-            >
-                <ToggleButton value={GFS_WEATHER_TYPE}>GFS</ToggleButton>
-                <ToggleButton value={ECWMF_WEATHER_TYPE}>ECWMF</ToggleButton>
-            </ToggleButtonGroup>
             <Alert severity="info">{resultText}</Alert>
             <MenuItem disableRipple={true}>
                 <IconButton sx={{ ml: 1 }} disabled={currentDiffHours === 0} onClick={resetWeatherDate}>

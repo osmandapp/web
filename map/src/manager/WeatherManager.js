@@ -2,12 +2,10 @@ import React from 'react';
 import { apiGet } from '../util/HttpApi';
 import { OBJECT_TYPE_WEATHER } from '../context/AppContext';
 import { ReactComponent as TemperatureIcon } from '../assets/icons/ic_action_thermometer.svg';
-import {
-    ReactComponent as PressureIcon,
-    ReactComponent as PrecipitationIcon,
-} from '../assets/icons/ic_action_air_pressure.svg';
+import { ReactComponent as PressureIcon } from '../assets/icons/ic_action_air_pressure.svg';
 import { ReactComponent as WindIcon } from '../assets/icons/ic_action_wind.svg';
 import { ReactComponent as CloudIcon } from '../assets/icons/ic_action_clouds.svg';
+import { ReactComponent as PrecipitationIcon } from '../assets/icons/ic_action_precipitation.svg';
 import styles from '../menu/weather/weather.module.css';
 import i18n from '../i18n';
 
@@ -85,10 +83,10 @@ export function getWeatherLayers(type) {
             icon: <TemperatureIcon className={styles.icon} />,
         },
         {
-            key: 'pressure',
-            name: () => i18n?.t('map_settings_weather_air_pressure'),
-            opacity: 0.6,
-            icon: <PressureIcon className={styles.icon} />,
+            key: 'precip',
+            name: () => i18n?.t('map_settings_weather_precip'),
+            opacity: 0.7,
+            icon: <PrecipitationIcon className={styles.icon} />,
         },
         {
             key: 'wind',
@@ -97,16 +95,16 @@ export function getWeatherLayers(type) {
             icon: <WindIcon className={styles.icon} />,
         },
         {
+            key: 'pressure',
+            name: () => i18n?.t('map_settings_weather_air_pressure'),
+            opacity: 0.6,
+            icon: <PressureIcon className={styles.icon} />,
+        },
+        {
             key: 'cloud',
             name: () => i18n?.t('map_settings_weather_cloud'),
             opacity: 0.5,
             icon: <CloudIcon className={styles.icon} />,
-        },
-        {
-            key: 'precip',
-            name: () => i18n?.t('map_settings_weather_precip'),
-            opacity: 0.7,
-            icon: <PrecipitationIcon className={styles.icon} />,
         },
     ];
     layers.map((item) => {
