@@ -1,31 +1,47 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import {
-    Typography,
-    ListItemText,
-    Switch,
+    Alert,
+    AppBar,
+    Box,
     Button,
+    CircularProgress,
+    Divider,
+    IconButton,
+    MenuItem,
     ToggleButton,
     ToggleButtonGroup,
-    CircularProgress,
-    Alert,
+    Toolbar,
+    Tooltip,
+    Typography,
 } from '@mui/material';
-import { IconButton, Divider, MenuItem, ListItemIcon } from '@mui/material';
-import { Thermostat, NavigateNext, NavigateBefore, RestartAlt } from '@mui/icons-material';
+import { NavigateBefore, NavigateNext, RestartAlt } from '@mui/icons-material';
 import AppContext, { OBJECT_TYPE_WEATHER } from '../../context/AppContext';
-import _ from 'lodash';
-import WeatherManager from '../../manager/WeatherManager';
+import WeatherManager, { ECWMF_WEATHER_TYPE, GFS_WEATHER_TYPE } from '../../manager/WeatherManager';
+import { ReactComponent as ForecastSourceIcon } from '../../assets/icons/ic_action_umbrella.svg';
+import { ReactComponent as WeatherLayersIcon } from '../../assets/icons/ic_map_configure_map.svg';
+import headerStyles from '../trackfavmenu.module.css';
+import styles from '../configuremap/configuremap.module.css';
+import CloseIcon from '@mui/icons-material/Close';
+import { useTranslation } from 'react-i18next';
+import { closeHeader } from '../actions/HeaderHelper';
+import ActionsMenu from '../actions/ActionsMenu';
+import WeatherForecastSourceActions from './WeatherForecastSourceActions';
+import WeatherLayersActions from './WeatherLayersActions';
 
 export default function Weather() {
     const ctx = useContext(AppContext);
-
-    const GFS_WEATHER_TYPE = 'gfs'; // step 1 hour, after 24 hours after the current time - 3 hours
-    const ECWMF_WEATHER_TYPE = 'ecmwf'; // step 3 hour, after 5 days after the current day - 6 hours
+    const { t } = useTranslation();
 
     const MIN_WEATHER_DAYS = -2;
     const MAX_WEATHER_DAYS = +7;
 
     const [loadingWeatherForecast, setLoadingWeatherForecast] = useState(false);
     const [resultText, setResultText] = useState(null);
+
+    const [openForecastActions, setOpenForecastActions] = useState(false);
+    const [openLayersActions, setOpenLayersActions] = useState(false);
+    const anchorForecastSource = useRef(null);
+    const anchorWeatherLayers = useRef(null);
 
     const currentDiffHours =
         Math.trunc(ctx.weatherDate.getTime() / (3600 * 1000)) - Math.trunc(new Date().getTime() / (3600 * 1000));
@@ -34,12 +50,6 @@ export default function Weather() {
         if (selectedType !== null && selectedType !== ctx.weatherType) {
             ctx.setWeatherType(selectedType);
         }
-    };
-
-    const switchLayer = (ctx, index, weatherType) => (e) => {
-        let newLayers = { ...ctx.weatherLayers };
-        newLayers[weatherType][index].checked = e.target.checked;
-        ctx.setWeatherLayers(newLayers);
     };
 
     function addWeatherHours(ctx, hours) {
@@ -67,27 +77,6 @@ export default function Weather() {
                 addWeatherHours(ctx, alignedStep); // step current when need
             }
         }
-    }, [ctx.weatherType]);
-
-    useEffect(() => {
-        if (ctx.currentObjectType === OBJECT_TYPE_WEATHER) {
-            WeatherManager.displayWeatherForecast(ctx, ctx.setWeatherPoint, ctx.weatherType).then();
-        }
-        let newLayers = { ...ctx.weatherLayers };
-        Object.keys(newLayers).forEach((type) => {
-            if (type !== ctx.weatherType) {
-                newLayers[type].forEach((l) => {
-                    if (l.checked) {
-                        const index = _.indexOf(newLayers[type], l);
-                        if (!disableLayers(newLayers[ctx.weatherType][index])) {
-                            newLayers[ctx.weatherType][index].checked = true;
-                        }
-                        newLayers[type][index].checked = false;
-                    }
-                });
-            }
-        });
-        ctx.setWeatherLayers(newLayers);
     }, [ctx.weatherType]);
 
     useEffect(() => {
@@ -121,10 +110,6 @@ export default function Weather() {
         setResultText(`${weatherDateObj.toDateString()}  ${weatherDateObj.getHours()}:00 [${hourstr}].`);
     }, [ctx.weatherPoint, ctx.setWeatherPoint, ctx.weatherDate, ctx.setWeatherDate, ctx.setWeatherLayers]);
 
-    function disableLayers(item) {
-        return (item.key === 'wind' || item.key === 'cloud') && ctx.weatherType === ECWMF_WEATHER_TYPE;
-    }
-
     function getBaseStep(diffHours) {
         if (ctx.weatherType === ECWMF_WEATHER_TYPE) {
             return Math.abs(diffHours) + new Date().getUTCHours() >= 120 ? 6 : 3;
@@ -147,12 +132,60 @@ export default function Weather() {
         }
 
         const currentHoursUTC = date.getUTCHours();
-        const alignedStep = direction < 0 ? -(currentHoursUTC % baseStep) : +(baseStep - (currentHoursUTC % baseStep));
-        return alignedStep;
+        return direction < 0 ? -(currentHoursUTC % baseStep) : +(baseStep - (currentHoursUTC % baseStep));
+    }
+
+    function getActions(e, anchorEl, setOpenActions) {
+        setOpenActions(true);
+        ctx.setOpenedPopper(anchorEl);
+        e.stopPropagation();
     }
 
     return (
-        <>
+        <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+            <AppBar position="static" className={headerStyles.appbar}>
+                <Toolbar className={headerStyles.toolbar}>
+                    <IconButton
+                        variant="contained"
+                        type="button"
+                        className={styles.closeIcon}
+                        onClick={() => closeHeader(ctx)}
+                    >
+                        <CloseIcon />
+                    </IconButton>
+                    <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
+                        {t('shared_string_weather')}
+                    </Typography>
+                    <Tooltip key={'forecast_source'} title={t('web:forecast_source')} arrow placement="bottom-end">
+                        <span>
+                            <IconButton
+                                id="se-forecast_source"
+                                variant="contained"
+                                type="button"
+                                className={headerStyles.appBarIcon}
+                                onClick={(e) => getActions(e, anchorForecastSource, setOpenForecastActions)}
+                                ref={anchorForecastSource}
+                            >
+                                <ForecastSourceIcon />
+                            </IconButton>
+                        </span>
+                    </Tooltip>
+                    <Tooltip key={'weather_layers'} title={t('web:weather_layers')} arrow placement="bottom-end">
+                        <span>
+                            <IconButton
+                                id="se-weather_layers"
+                                variant="contained"
+                                type="button"
+                                className={headerStyles.appBarIcon}
+                                onClick={(e) => getActions(e, anchorWeatherLayers, setOpenLayersActions)}
+                                ref={anchorWeatherLayers}
+                            >
+                                <WeatherLayersIcon />
+                            </IconButton>
+                        </span>
+                    </Tooltip>
+                </Toolbar>
+            </AppBar>
             <ToggleButtonGroup
                 color="primary"
                 value={ctx.weatherType}
@@ -164,20 +197,6 @@ export default function Weather() {
                 <ToggleButton value={GFS_WEATHER_TYPE}>GFS</ToggleButton>
                 <ToggleButton value={ECWMF_WEATHER_TYPE}>ECWMF</ToggleButton>
             </ToggleButtonGroup>
-            {ctx.weatherLayers &&
-                ctx.weatherLayers[ctx.weatherType].map((item, index) => (
-                    <MenuItem key={item.key}>
-                        <ListItemIcon sx={{ ml: 2 }}>
-                            {item.iconComponent ? item.iconComponent : <Thermostat fontSize="small" />}
-                        </ListItemIcon>
-                        <ListItemText>{item.name}</ListItemText>
-                        <Switch
-                            disabled={disableLayers(item)}
-                            checked={item.checked}
-                            onChange={switchLayer(ctx, index, ctx.weatherType)}
-                        />
-                    </MenuItem>
-                ))}
             <Alert severity="info">{resultText}</Alert>
             <MenuItem disableRipple={true}>
                 <IconButton sx={{ ml: 1 }} disabled={currentDiffHours === 0} onClick={resetWeatherDate}>
@@ -217,6 +236,18 @@ export default function Weather() {
             >
                 Weather Forecast
             </Button>
-        </>
+            <ActionsMenu
+                open={openForecastActions}
+                setOpen={setOpenForecastActions}
+                anchorEl={anchorForecastSource}
+                actions={<WeatherForecastSourceActions setOpenActions={setOpenForecastActions} />}
+            />
+            <ActionsMenu
+                open={openLayersActions}
+                setOpen={setOpenLayersActions}
+                anchorEl={anchorWeatherLayers}
+                actions={<WeatherLayersActions />}
+            />
+        </Box>
     );
 }

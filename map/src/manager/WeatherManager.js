@@ -1,7 +1,18 @@
-import { Air, Cloud, Compress, Shower, Thermostat } from '@mui/icons-material';
 import React from 'react';
 import { apiGet } from '../util/HttpApi';
 import { OBJECT_TYPE_WEATHER } from '../context/AppContext';
+import { ReactComponent as TemperatureIcon } from '../assets/icons/ic_action_thermometer.svg';
+import {
+    ReactComponent as PressureIcon,
+    ReactComponent as PrecipitationIcon,
+} from '../assets/icons/ic_action_air_pressure.svg';
+import { ReactComponent as WindIcon } from '../assets/icons/ic_action_wind.svg';
+import { ReactComponent as CloudIcon } from '../assets/icons/ic_action_clouds.svg';
+import styles from '../menu/weather/weather.module.css';
+import i18n from '../i18n';
+
+export const GFS_WEATHER_TYPE = 'gfs'; // step 1 hour, after 24 hours after the current time - 3 hours
+export const ECWMF_WEATHER_TYPE = 'ecmwf'; // step 3 hour, after 5 days after the current day - 6 hours
 
 function getLayers() {
     let allLayers = {};
@@ -62,17 +73,41 @@ async function displayWeatherForecast(ctx, setWeatherPoint, weatherType, setLoad
         data.week = await responseWeek.json();
     }
     setWeatherPoint(data);
-    let type = OBJECT_TYPE_WEATHER;
-    ctx.setCurrentObjectType(type);
+    ctx.setCurrentObjectType(OBJECT_TYPE_WEATHER);
 }
 
-function getWeatherLayers(type) {
+export function getWeatherLayers(type) {
     const layers = [
-        { key: 'temperature', name: 'Temperature', opacity: 0.5, iconComponent: <Thermostat fontSize="small" /> },
-        { key: 'pressure', name: 'Pressure', opacity: 0.6, iconComponent: <Compress fontSize="small" /> },
-        { key: 'wind', name: 'Wind', opacity: 0.6, iconComponent: <Air fontSize="small" /> },
-        { key: 'cloud', name: 'Cloud', opacity: 0.5, iconComponent: <Cloud fontSize="small" /> },
-        { key: 'precip', name: 'Precipitation', opacity: 0.7, iconComponent: <Shower fontSize="small" /> },
+        {
+            key: 'temperature',
+            name: () => i18n?.t('map_settings_weather_temp'),
+            opacity: 0.5,
+            icon: <TemperatureIcon className={styles.icon} />,
+        },
+        {
+            key: 'pressure',
+            name: () => i18n?.t('map_settings_weather_air_pressure'),
+            opacity: 0.6,
+            icon: <PressureIcon className={styles.icon} />,
+        },
+        {
+            key: 'wind',
+            name: () => i18n?.t('map_settings_weather_wind'),
+            opacity: 0.6,
+            icon: <WindIcon className={styles.icon} />,
+        },
+        {
+            key: 'cloud',
+            name: () => i18n?.t('map_settings_weather_cloud'),
+            opacity: 0.5,
+            icon: <CloudIcon className={styles.icon} />,
+        },
+        {
+            key: 'precip',
+            name: () => i18n?.t('map_settings_weather_precip'),
+            opacity: 0.7,
+            icon: <PrecipitationIcon className={styles.icon} />,
+        },
     ];
     layers.map((item) => {
         item.url = getWeatherUrl(item.key, type);

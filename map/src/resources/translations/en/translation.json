@@ -5153,5 +5153,10 @@
   "poi_nuclear_explosion_type_atmospheric_balloon": "Explosion type: atmospheric, balloon",
   "shared_string_hide_all": "Hide all",
   "shared_string_add": "Add",
-  "shared_string_name": "Name"
+  "shared_string_name": "Name",
+  "map_settings_weather_temp": "Temperature",
+  "map_settings_weather_air_pressure": "Air pressure",
+  "map_settings_weather_wind": "Wind",
+  "map_settings_weather_cloud": "Cloud",
+  "map_settings_weather_precip": "Precipitation"
 }

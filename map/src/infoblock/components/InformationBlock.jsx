@@ -100,6 +100,10 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
         isLocalTrack(ctx) && ctx.setUpdateInfoBlock(true);
     }, [hasSegmentTurns({ track: ctx.selectedGpxFile })]);
 
+    function isValidWeatherObj() {
+        return ctx.currentObjectType === OBJECT_TYPE_WEATHER && ctx.weatherPoint?.day && ctx.weatherPoint?.week;
+    }
+
     useEffect(() => {
         if ((!ctx.selectedGpxFile || _.isEmpty(ctx.selectedGpxFile)) && ctx.currentObjectType !== OBJECT_TYPE_WEATHER) {
             setPrevTrack(null);
@@ -115,7 +119,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                 ctx.setUpdateInfoBlock(false);
                 if (isCloudTrack(ctx) && ctx.selectedGpxFile?.tracks) {
                     obj = new TrackTabList().create(ctx, setShowInfoBlock);
-                } else if (ctx.currentObjectType === OBJECT_TYPE_WEATHER && ctx.weatherPoint) {
+                } else if (isValidWeatherObj()) {
                     obj = new WeatherTabList().create(ctx);
                 } else if (ctx.currentObjectType === OBJECT_TYPE_FAVORITE) {
                     obj = new FavoritesTabList().create(ctx);
@@ -123,7 +127,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                     obj = new PoiTabList().create();
                 } else if (ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_ALONE) {
                     // don't display InfoBlock in Navigation menu until details requested
-                } else if (ctx.selectedGpxFile) {
+                } else if (ctx.selectedGpxFile && (isCloudTrack(ctx) || isLocalTrack(ctx))) {
                     // finally assume that default selectedGpxFile is a track
                     obj = new TrackTabList().create(ctx, setShowInfoBlock);
                 }
