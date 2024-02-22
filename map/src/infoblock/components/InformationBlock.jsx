@@ -10,7 +10,6 @@ import AppContext, {
 import React, { useState, useContext, useEffect, useCallback } from 'react';
 import { TabContext, TabList } from '@mui/lab';
 import TrackTabList from './tabs/TrackTabList';
-import WeatherTabList from './tabs/WeatherTabList';
 import FavoritesTabList from './tabs/FavoritesTabList';
 import _, { isEmpty } from 'lodash';
 import PoiTabList from './tabs/PoiTabList';
@@ -100,10 +99,6 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
         isLocalTrack(ctx) && ctx.setUpdateInfoBlock(true);
     }, [hasSegmentTurns({ track: ctx.selectedGpxFile })]);
 
-    function isValidWeatherObj() {
-        return ctx.currentObjectType === OBJECT_TYPE_WEATHER && ctx.weatherPoint?.day && ctx.weatherPoint?.week;
-    }
-
     useEffect(() => {
         if ((!ctx.selectedGpxFile || _.isEmpty(ctx.selectedGpxFile)) && ctx.currentObjectType !== OBJECT_TYPE_WEATHER) {
             setPrevTrack(null);
@@ -119,8 +114,6 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                 ctx.setUpdateInfoBlock(false);
                 if (isCloudTrack(ctx) && ctx.selectedGpxFile?.tracks) {
                     obj = new TrackTabList().create(ctx, setShowInfoBlock);
-                } else if (isValidWeatherObj()) {
-                    obj = new WeatherTabList().create(ctx);
                 } else if (ctx.currentObjectType === OBJECT_TYPE_FAVORITE) {
                     obj = new FavoritesTabList().create(ctx);
                 } else if (ctx.currentObjectType === OBJECT_TYPE_POI) {
@@ -139,7 +132,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                 }
             }
         }
-    }, [ctx.currentObjectType, ctx.selectedGpxFile, ctx.weatherPoint, ctx.updateInfoBlock]);
+    }, [ctx.currentObjectType, ctx.selectedGpxFile, ctx.updateInfoBlock]);
 
     function clearStateIfObjChange() {
         if (

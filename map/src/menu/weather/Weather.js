@@ -1,234 +1,170 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import {
-    Alert,
-    AppBar,
-    Box,
-    Button,
-    CircularProgress,
-    Divider,
-    IconButton,
-    MenuItem,
-    Toolbar,
-    Tooltip,
-    Typography,
-} from '@mui/material';
-import { NavigateBefore, NavigateNext, RestartAlt } from '@mui/icons-material';
-import AppContext, { OBJECT_TYPE_WEATHER } from '../../context/AppContext';
-import WeatherManager, { ECWMF_WEATHER_TYPE, GFS_WEATHER_TYPE } from '../../manager/WeatherManager';
-import { ReactComponent as ForecastSourceIcon } from '../../assets/icons/ic_action_umbrella.svg';
-import { ReactComponent as WeatherLayersIcon } from '../../assets/icons/ic_map_configure_map.svg';
-import headerStyles from '../trackfavmenu.module.css';
-import styles from '../configuremap/configuremap.module.css';
-import CloseIcon from '@mui/icons-material/Close';
-import { useTranslation } from 'react-i18next';
-import { closeHeader } from '../actions/HeaderHelper';
-import ActionsMenu from '../actions/ActionsMenu';
-import WeatherForecastSourceActions from './WeatherForecastSourceActions';
-import WeatherLayersActions from './WeatherLayersActions';
+import React, { useContext, useEffect, useState } from 'react';
+import { Box } from '@mui/material';
+import AppContext from '../../context/AppContext';
+import { updateWeatherTime, dayFormatter, getAlignedStep, timeFormatter } from '../../manager/WeatherManager';
+import { useGeoLocation } from '../../util/hooks/useGeoLocation';
+import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
+import { useDebouncedHash } from '../../util/hooks/useDebouncedHash';
+import { apiGet } from '../../util/HttpApi';
+import { getCenterMapLoc } from '../../manager/MapManager';
+import TimeSlider from './TimeSlider';
+import DayCardsCarousel from './DayCardsCarousel';
+import ForecastTable from './ForecastTable';
+import TopWeatherInfo from './TopWeatherInfo';
+import WeatherInfo from './WeatherInfo';
+import WeatherHeader from './WeatherHeader';
+import Loading from '../errors/Loading';
 
 export default function Weather() {
     const ctx = useContext(AppContext);
-    const { t } = useTranslation();
 
-    const MIN_WEATHER_DAYS = -2;
-    const MAX_WEATHER_DAYS = +7;
+    const currentLoc = useGeoLocation(ctx);
+    const hash = window.location.hash;
+    const delayedHash = useDebouncedHash(hash, 5000);
 
-    const [loadingWeatherForecast, setLoadingWeatherForecast] = useState(false);
-    const [resultText, setResultText] = useState(null);
+    const [weatherLoc, setWeatherLoc] = useState(null);
+    const [dayForecast, setDayForecast] = useState(null);
+    const [weekForecast, setWeekForecast] = useState(null);
+    const [headerForecast, setHeaderForecast] = useState(null);
 
-    const [openForecastActions, setOpenForecastActions] = useState(false);
-    const [openLayersActions, setOpenLayersActions] = useState(false);
-    const anchorForecastSource = useRef(null);
-    const anchorWeatherLayers = useRef(null);
+    const [currentTimeForecast, setCurrentTimeForecast] = useState({
+        day: null,
+        week: null,
+    });
 
-    const currentDiffHours =
-        Math.trunc(ctx.weatherDate.getTime() / (3600 * 1000)) - Math.trunc(new Date().getTime() / (3600 * 1000));
+    const setDayF = (newDay) => {
+        setCurrentTimeForecast((prevState) => ({ ...prevState, day: newDay }));
+    };
 
-    function addWeatherHours(ctx, hours) {
-        const dt = new Date(ctx.weatherDate.getTime() + hours * 60 * 60 * 1000);
-        ctx.setWeatherDate(dt);
-    }
+    const setWeekF = (newWeek) => {
+        setCurrentTimeForecast((prevState) => ({ ...prevState, week: newWeek }));
+    };
 
-    function resetWeatherDate() {
-        const alignedStep = getAlignedStep({ direction: 0, diffHours: 0, date: new Date() });
-        if (alignedStep) {
-            const alignedDate = new Date(new Date().getTime() + alignedStep * 60 * 60 * 1000);
-            ctx.setWeatherDate(alignedDate);
-        } else {
-            ctx.setWeatherDate(new Date());
+    const fetchAddress = async (point) => {
+        const loc = {
+            lat: point.lat.toFixed(6),
+            lon: point.lng.toFixed(6),
+        };
+        const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/weather-api/get-address-by-latlon`, {
+            apiCache: true,
+            params: {
+                lat: loc.lat,
+                lon: loc.lon,
+            },
+        });
+        if (response.ok) {
+            setWeatherLoc({
+                lat: loc.lat,
+                lon: loc.lon,
+                address: response.data,
+            });
         }
+    };
+
+    const fetchDayForecast = async (point) => {
+        const loc = {
+            lat: point.lat.toFixed(6),
+            lon: point.lng.toFixed(6),
+        };
+        const responseDay = await apiGet(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info`, {
+            apiCache: true,
+            params: {
+                lat: loc.lat,
+                lon: loc.lon,
+                weatherType: ctx.weatherType,
+            },
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        });
+        if (responseDay.ok) {
+            const forecast = await responseDay.json();
+            setDayForecast(forecast);
+        }
+    };
+
+    const fetchWeekForecast = async (point) => {
+        const loc = {
+            lat: point.lat.toFixed(6),
+            lon: point.lng.toFixed(6),
+        };
+        const responseWeek = await apiGet(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info`, {
+            apiCache: true,
+            params: {
+                lat: loc.lat,
+                lon: loc.lon,
+                weatherType: ctx.weatherType,
+                week: true,
+            },
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        });
+        if (responseWeek.ok) {
+            const forecast = await responseWeek.json();
+            setWeekForecast(forecast);
+        }
+    };
+
+    function getForecastData(location) {
+        fetchDayForecast(location).then();
+        fetchWeekForecast(location).then();
     }
 
     useEffect(() => {
-        if (ctx.currentObjectType === OBJECT_TYPE_WEATHER) {
-            WeatherManager.displayWeatherForecast(ctx, ctx.setWeatherPoint, ctx.weatherType).then();
+        if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
+            if (weatherLoc && weatherLoc.lat === currentLoc.lat && weatherLoc.lon === currentLoc.lng) {
+                return;
+            }
+            fetchAddress(currentLoc).then();
+            getForecastData(currentLoc);
+        } else if (currentLoc && currentLoc === LOCATION_UNAVAILABLE) {
+            const center = getCenterMapLoc(delayedHash);
+            if (center) {
+                fetchAddress(center).then();
+                getForecastData(center);
+            }
         }
-        if (ctx.weatherType) {
-            const alignedStep = getAlignedStep({ direction: 0 });
+    }, [currentLoc, delayedHash]);
+
+    useEffect(() => {
+        if (ctx.weatherType && currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
+            getForecastData(currentLoc);
+            const alignedStep = getAlignedStep({ direction: 0, ctx });
             if (alignedStep) {
-                addWeatherHours(ctx, alignedStep); // step current when need
+                updateWeatherTime(ctx, alignedStep); // step current when need
             }
         }
     }, [ctx.weatherType]);
 
+    // get current forecast
     useEffect(() => {
-        let weatherDateObj = ctx.weatherDate;
-        let hourstr = 'now';
-        let hours = currentDiffHours;
-
-        if (hours !== 0) {
-            let day = 0;
-            while (hours >= 24) {
-                day++;
-                hours -= 24;
-            }
-            if (day > 0) {
-                if (day === 1) {
-                    hourstr = '+ ' + day + ' day ';
-                } else {
-                    hourstr = '+ ' + day + ' days ';
-                }
-                hours = hours - (hours % 3);
-            } else if (hours > 0) {
-                hourstr = '+';
-            }
-            if (hours > 0) {
-                hourstr += hours + ' hours';
-            } else if (hours < 0) {
-                hourstr = hours + ' hours';
-            }
+        if (!currentTimeForecast) {
+            const useDayForecast = ctx.weatherDate.getDay() === new Date().getDay();
+            const forecast = useDayForecast ? dayForecast : weekForecast;
+            const timeKey = `${dayFormatter(ctx.weatherDate)} ${timeFormatter(ctx.weatherDate)}`;
+            const res = forecast?.filter((f) => f[1] === timeKey);
+            useDayForecast ? setDayF(res) : setWeekF(res);
         }
-
-        setResultText(`${weatherDateObj.toDateString()}  ${weatherDateObj.getHours()}:00 [${hourstr}].`);
-    }, [ctx.weatherPoint, ctx.setWeatherPoint, ctx.weatherDate, ctx.setWeatherDate, ctx.setWeatherLayers]);
-
-    function getBaseStep(diffHours) {
-        if (ctx.weatherType === ECWMF_WEATHER_TYPE) {
-            return Math.abs(diffHours) + new Date().getUTCHours() >= 120 ? 6 : 3;
-        }
-        if (ctx.weatherType === GFS_WEATHER_TYPE) {
-            return Math.abs(diffHours) >= 24 ? 3 : 1;
-        }
-        return 0;
-    }
-
-    // align-backward (<0) align-forward (>0) else just align if needed
-    function getAlignedStep({ direction, diffHours = currentDiffHours, date = ctx.weatherDate }) {
-        const baseStep = getBaseStep(diffHours);
-
-        const baseStepWithDirection = direction < 0 ? -baseStep : direction > 0 ? +baseStep : 0;
-        const newHoursUTC = new Date(date.getTime() + baseStepWithDirection * 3600 * 1000).getUTCHours();
-
-        if (newHoursUTC % baseStep === 0) {
-            return baseStepWithDirection;
-        }
-
-        const currentHoursUTC = date.getUTCHours();
-        return direction < 0 ? -(currentHoursUTC % baseStep) : +(baseStep - (currentHoursUTC % baseStep));
-    }
-
-    function getActions(e, anchorEl, setOpenActions) {
-        setOpenActions(true);
-        ctx.setOpenedPopper(anchorEl);
-        e.stopPropagation();
-    }
+    }, [ctx.weatherDate]);
 
     return (
         <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
-            <AppBar position="static" className={headerStyles.appbar}>
-                <Toolbar className={headerStyles.toolbar}>
-                    <IconButton
-                        variant="contained"
-                        type="button"
-                        className={styles.closeIcon}
-                        onClick={() => closeHeader(ctx)}
-                    >
-                        <CloseIcon />
-                    </IconButton>
-                    <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
-                        {t('shared_string_weather')}
-                    </Typography>
-                    <Tooltip key={'forecast_source'} title={t('web:forecast_source')} arrow placement="bottom-end">
-                        <span>
-                            <IconButton
-                                id="se-forecast_source"
-                                variant="contained"
-                                type="button"
-                                className={headerStyles.appBarIcon}
-                                onClick={(e) => getActions(e, anchorForecastSource, setOpenForecastActions)}
-                                ref={anchorForecastSource}
-                            >
-                                <ForecastSourceIcon />
-                            </IconButton>
-                        </span>
-                    </Tooltip>
-                    <Tooltip key={'weather_layers'} title={t('web:weather_layers')} arrow placement="bottom-end">
-                        <span>
-                            <IconButton
-                                id="se-weather_layers"
-                                variant="contained"
-                                type="button"
-                                className={headerStyles.appBarIcon}
-                                onClick={(e) => getActions(e, anchorWeatherLayers, setOpenLayersActions)}
-                                ref={anchorWeatherLayers}
-                            >
-                                <WeatherLayersIcon />
-                            </IconButton>
-                        </span>
-                    </Tooltip>
-                </Toolbar>
-            </AppBar>
-            <Alert severity="info">{resultText}</Alert>
-            <MenuItem disableRipple={true}>
-                <IconButton sx={{ ml: 1 }} disabled={currentDiffHours === 0} onClick={resetWeatherDate}>
-                    <RestartAlt sx={{ color: '#ff8800' }} />
-                </IconButton>
-                <IconButton
-                    sx={{ ml: 6 }}
-                    disabled={currentDiffHours <= MIN_WEATHER_DAYS * 24}
-                    onClick={() => addWeatherHours(ctx, getAlignedStep({ direction: -1 }))}
-                >
-                    <NavigateBefore />
-                </IconButton>
-                <Typography>
-                    {ctx.weatherDate.toLocaleDateString() + ' ' + ctx.weatherDate.getHours() + ':00'}
-                </Typography>
-                <IconButton
-                    disabled={currentDiffHours >= MAX_WEATHER_DAYS * 24}
-                    onClick={() => addWeatherHours(ctx, getAlignedStep({ direction: +1 }))}
-                >
-                    <NavigateNext />
-                </IconButton>
-                {loadingWeatherForecast ? <CircularProgress size={18} sx={{ ml: 6 }} /> : <></>}
-            </MenuItem>
-            <Divider />
-            <Button
-                variant="contained"
-                component="span"
-                sx={{ mx: 2 }}
-                onClick={() =>
-                    WeatherManager.displayWeatherForecast(
-                        ctx,
-                        ctx.setWeatherPoint,
-                        ctx.weatherType,
-                        setLoadingWeatherForecast
-                    )
-                }
-            >
-                Weather Forecast
-            </Button>
-            <ActionsMenu
-                open={openForecastActions}
-                setOpen={setOpenForecastActions}
-                anchorEl={anchorForecastSource}
-                actions={<WeatherForecastSourceActions setOpenActions={setOpenForecastActions} />}
-            />
-            <ActionsMenu
-                open={openLayersActions}
-                setOpen={setOpenLayersActions}
-                anchorEl={anchorWeatherLayers}
-                actions={<WeatherLayersActions />}
-            />
+            <WeatherHeader />
+            {dayForecast || weekForecast ? (
+                <>
+                    <TopWeatherInfo headerForecast={headerForecast} weatherLoc={weatherLoc} />
+                    <DayCardsCarousel />
+                    <TimeSlider />
+                    <ForecastTable
+                        dayForecast={dayForecast}
+                        weekForecast={weekForecast}
+                        currentTimeForecast={currentTimeForecast}
+                        setHeaderForecast={setHeaderForecast}
+                    />
+                    <WeatherInfo />
+                </>
+            ) : (
+                <Loading />
+            )}
         </Box>
     );
 }

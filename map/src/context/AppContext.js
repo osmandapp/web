@@ -224,7 +224,7 @@ export const AppContextProvider = (props) => {
 
     const searchParams = new URLSearchParams(window.location.search);
     const [weatherLayers, setWeatherLayers] = useState(WeatherManager.getLayers());
-    const [weatherDate, setWeatherDate] = useState(WeatherManager.getWeatherDate());
+    const [weatherDate, setWeatherDate] = useState(new Date());
     const [weatherType, setWeatherType] = useState('gfs');
     const [gpxLoading, setGpxLoading] = useState(false);
     const [localTracksLoading, setLocalTracksLoading] = useState(false);
@@ -253,8 +253,6 @@ export const AppContextProvider = (props) => {
         pinInit = { lat: parseFloat(arr[0]), lng: parseFloat(arr[1]) };
     }
     const [pinPoint, setPinPoint] = useState(pinInit);
-
-    const [weatherPoint, setWeatherPoint] = useState(null);
 
     // favorites
     const [favorites, setFavorites] = useState({});
@@ -423,8 +421,6 @@ export const AppContextProvider = (props) => {
                 trackRouter,
                 afterPointRouter,
                 beforePointRouter,
-                weatherPoint,
-                setWeatherPoint,
                 routeTrackFile,
                 setRouteTrackFile,
                 searchCtx,

@@ -43,3 +43,85 @@
     font-size: 14px !important;
     font-weight: 500 !important;
 }
+.address {
+    color: var(--text-primary) !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+}
+.currentDate {
+    color: var(--text-secondary) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+.headerForecastData {
+    color: var(--text-primary) !important;
+    text-align: right !important;
+    font-size: 30px !important;
+    font-weight: 400 !important;
+}
+.headerForecastUnit {
+    color: var(--text-secondary) !important;
+    text-align: right !important;
+    font-size: 30px !important;
+    font-weight: 400 !important;
+}
+.topContainer {
+    max-height: 45px !important;
+    display: flex !important;
+    padding: 27px 16px !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 24px !important;
+}
+.dayItem {
+    display: flex !important;
+    min-width: 45px !important;
+    padding: 6px 3px !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 6px !important;
+    border: 1px solid #cccccc !important;
+}
+.dayItemDay {
+    color: var(--text-secondary) !important;
+    text-align: center !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+.dayItemNum {
+    color: #237bff !important;
+    text-align: center !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+.dayCarousel {
+    padding: 0px 16px !important;
+    align-items: center !important;
+    gap: 8px !important;
+    align-self: stretch !important;
+    display: flex !important;
+    max-width: 350px !important;
+    overflow-x: hidden !important;
+}
+.currentItemDay {
+    display: flex !important;
+    min-width: 45px !important;
+    padding: 6px 3px !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 6px !important;
+    border: 2px solid #237bff !important;
+}
+.selectedItemDay {
+    display: flex !important;
+    min-width: 45px !important;
+    padding: 6px 3px !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 6px !important;
+    border: 2px solid var(--selected-color) !important;
+    background: #deebff !important;
+}
