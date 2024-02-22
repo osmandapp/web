@@ -1,7 +1,8 @@
-import { Typography } from '@mui/material';
+import { ListItem, Typography } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { currentDiffHours } from '../../manager/WeatherManager';
 import AppContext from '../../context/AppContext';
+import styles from '../weather/weather.module.css';
 
 export default function WeatherInfo() {
     const ctx = useContext(AppContext);
@@ -39,5 +40,9 @@ export default function WeatherInfo() {
         setResultText(`${weatherDateObj.toDateString()}  ${weatherDateObj.getHours()}:00 [${hourstr}].`);
     }, [ctx.weatherDate, ctx.setWeatherDate, ctx.setWeatherLayers]);
 
-    return <Typography variant="inherit">{`Weather generated: ${resultText}`}</Typography>;
+    return (
+        <ListItem className={styles.weatherInfoBlock}>
+            <Typography className={styles.weatherInfo}>{`Weather generated: ${resultText}`}</Typography>
+        </ListItem>
+    );
 }
