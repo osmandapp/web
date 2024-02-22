@@ -58,9 +58,9 @@ It is important to note that you can skip the download step if you already have 
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps"/>*
+*<Translate android="true" ids="shared_string_menu,welmode_download_maps,downloads"/>*
 
-![Download maps regions](@site/static/img/settings/download_maps_regions.png)
+![Download map menu general Android](@site/static/img/personal/maps/download_menu_andr.png)  
 
 </TabItem>
 
@@ -68,31 +68,25 @@ It is important to note that you can skip the download step if you already have 
 
 *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
-![Download maps regions](@site/static/img/settings/download_maps_regions_ios.png)
+![Download map menu general iOS](@site/static/img/personal/maps/download_menu_ios.png) 
 
 </TabItem>
 
 </Tabs>
 
-**Top screen buttons**
-- *Refresh button* &#10227;. Checks for available map updates on OsmAnd servers.
-- *Search button* &#x1F50D;. Find a region by name or the major cities in it.
+**Action**
+- **Refresh** &#10227;. Checks for available map updates on OsmAnd servers.
+- **Search** &#x1F50D;. Find a region by name or the major cities in it.
 
 **Memory info and map counter**
+- **[Device memory](../personal/maps.md#download-maps-maps)**. Show available memory to be used on the device.
 - **Map counter** (*Free version*). Display how many [Free map downloads](../purchases/android.md#free-and-paid-features) left.
-- [Device memory](../personal/maps.md#download-maps-maps) - show available memory to be used on the device.
 
 **Tabs**
-- *Downloads (Android)/ Worldwide (iOS)*.. Browse and download maps split by continents / countries / regions / types.
-- *Local / Installed*. Manage already downloaded maps.
-- *Updates*. Check and download monthly map updates.
+- **Downloads (Android)/ Worldwide (iOS)**. Browse and download maps split by continents / countries / regions / types.
+- **Local**. Manage already downloaded maps.
+- **Updates**. Check and download monthly map updates.
   - *[OsmAnd Live](../personal/maps.md#osmand-live)*. Configure hourly map updates for certain regions.
-
-
-**Memory info and map counter**  
-- *Map counter (Free version)*. Display how many [Free map downloads](../purchases/android.md#free-and-paid-features) left.
-- *[Device memory](../personal/maps.md#download-maps-maps)*. Show available memory to be used on the device.
-
 
 **Online sources**  
 To import online map sources, you can tap the *OSF file* of an app profile in storage, messenger, or mail, select the OsmAnd app to open, and select the data to import. Read more [here](../personal/import-export.md#online-sources).   
@@ -120,7 +114,9 @@ OsmAnd has a small world map built in. You do not need to download large maps of
 
 </Tabs>
 
+<!--
 One way to download a map is to zoom out on the world map and briefly tap to select a region to download. This area will be highlighted in yellow and a panel will appear at the bottom with the name of the region and a suggestion to download it or select other maps.  
+-->
 
 **Note**  
 On the small screen, the map selected for downloading will be highlighted in yellow, maps that have already been downloaded will be highlighted in green, and deactivated maps will be highlighted in orange. **Deactivated** maps are bypassed to speed up the program in case you have a lot of loaded maps.  
