@@ -420,14 +420,14 @@ In some countries or regions, using speed camera warning applications is illegal
 Read about alerts for speed cameras on your route in the article Navigation widgets in the *[Alert widget](../widgets/nav-widgets.md#alert-widget)* section.
 
 
-### Build own Map (advanced)
+### Build your own Map (advanced)
 
 ![Build your own Map](@site/static/img/osmandmapcreator/OsmAndMapCreator-download-raster-maps.png)
 
-It is possible to upload a self-created map.
-[OsmAndMapCreator]((../../technical/map-creation/create-offline-maps-yourself.md)) can be used to create any maps supported by OsmAnd. To create a vector map you will need an OSM file (*.pbf, *.osm.gz, *.osm.bz2) and to create an online sqlite map you will need the url of the base tile.  
+OsmAnd gives you the possibility to upload a self-created map. 
+[OsmAndMapCreator](../../technical/map-creation/create-offline-maps-yourself.md) can be used to create any maps supported by OsmAnd. To create a **Vector map** you will need an OSM file (*.pbf, .osm.gz, .osm.bz2*) and to create an **Online sqlite map** you will need the *url* of the base tile.  
 
-It is possible to upload a self-created map. [OsmAndMapCreator](../../technical/map-creation/create-offline-maps-yourself.md). More info section *My data* article [Maps](../personal/maps.md#build-your-own-map-advanced)
+More information can be found in the *My data* section [Maps](../personal/maps.md#build-your-own-map-advanced) article.
 
 
 ### Local Resources

@@ -124,7 +124,7 @@ The *Maps & Resources* main menu section of the OsmAnd app provides access to ma
 
 </Tabs>
 
-Download maps screen allows you to download maps from OsmAnd servers, you will need an active internet connection to do that. The Download tab allows you to download all presented map types from OsmAnd servers, and an active Internet connection is required.  
+The Download tab allows you to download all presented map types from OsmAnd servers, and an active Internet connection is required.  
 
 To download the required map, on the Download tab, find the section you are interested in and then the folder in it. Tap the folder to open a list of available maps. 
 1. **Maps that can be downloaded** will have a download icon. 
@@ -133,17 +133,26 @@ To download the required map, on the Download tab, find the section you are inte
 
 *Downloads tab consists of map groups:*
 
-- **Memory info and map counter**. Visualize the amount of occupied and free space on your device, and shows how many maps you have left for download.
+- **Memory info**. Visualize the amount of occupied and free space on your device. 
+- **Map counter** (*Free version*). Shows how many maps you have left for download.
 - [**Extra maps**](#extra-maps). Shows [Custom package](../plugins/custom.md), if you downloaded the plugins.
 - **Regions**. List by continent and region of the world: *Africa, Antarctica, Asia, Australia and Oceania, Central America, Europe, North America, Russia, South America.*
-- [**World maps**](../start-with/download-maps.md#select-on-world-map). A list of maps of the entire world: *World altitude correction.(Android only)*, *World overview map*, *All world.(Weather forecast)*
+- [**World maps**](#world-maps). A list of maps of the entire world: *World altitude correction.(Android only)*, *World overview map*, *All world.(Weather forecast)*
 - [**Nautical maps**](../plugins/nautical-charts.md) ([*paid feature*](../purchases/index.md)). Vector maps with elevations as points or lines.
 - [**Travel guides (Wikivoyage)**](../plan-route/travel-guides.md) ([*paid feature*](../purchases/index.md)). These are vector maps containing a selection of articles in HTML format and additionally GPX files.
 - **Other maps**. Additional maps that cannot be assigned to the current map hierarchy are usually obsolete and unsupported maps or maps that will be available in future versions.
 - [**Voice prompts**](../navigation/guidance/voice-navigation.md) (*only for Android*). Voice packs for voicing navigation prompts.
 - [**Map fonts**](../map/vector-maps.md#map-fonts-android) (*only for Android*). Additional font files used to display text on the map.
 
-Basic information can be found in the article [**Download maps**](../start-with/download-maps.md).
+#### World maps 
+
+In the Download Maps menu, there is a **World Maps** section that provides access to download various maps of the world, complementing the functionality of the app.  
+
+- **World Altitude Correction** (*Android only*). Improves navigation accuracy, especially in mountainous terrain.
+- **World overview map**. Provides an extensive overview of the earth's surface, useful for long-term route planning and casual exploration.
+- **All world (Weather forecast)**. Allows you to download a map with weather information.
+
+Information about *maps menu and actions* can be found in the article [**Download maps**](../start-with/download-maps.md).
 
 
 
@@ -250,14 +259,14 @@ There is an additional option to sort items for maps.
 
 </Tabs>
 
-Every month you can update OsmAnd maps on the **Updates** tab. You can update all maps with one tap of the *Update all* button or update only the maps you require one by one. Standard and road-only maps are available every month, usually with a delay of 2 weeks. If you want to access hourly updates, check your [OsmAnd Live](#osmand-live), if you have it added, there will be a Live Updates field at the top under the *Device memory* indicator.  
+Every month you can update OsmAnd maps on the **Updates** tab. You can update all maps with one tap of the *Update all* button or update only the maps you require one by one. Standard and road-only maps are available every month, usually with a delay of 2 weeks. If you want to access hourly updates, check your [OsmAnd Live](#osmand-live), if you have it added, there will be the **Live Updates** field at the top under the *Device memory* indicator.  
 
 
 ### Extra maps
 
 If you want to transfer both profile-dependent settings and rendering files, fonts, routes, maps and other data, OsmAnd has added such a feature. To do this, you can create your own map folder with custom plugins. The plugin file is a custom *zip file* in *.osf format*.  
 To import files, you can tap the OSF file of the application profile in storage, messenger or mail, select the OsmAnd application to open. The name of the plugin will appear in the Plugin List section, enable it, and a folder with maps with the same name will appear in the **Extra maps** section of the [*Downloads*](#downloads) tab.  
-Read more in the **Custom package** article.
+Read more in the [**Custom package**](../plugins/custom.md/) article.
 
 
 ## OsmAnd Live
