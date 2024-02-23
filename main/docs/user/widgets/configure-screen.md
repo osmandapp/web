@@ -24,7 +24,7 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
+*<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_2_andr.png)  
 
@@ -32,7 +32,7 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
+*<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_2.png)   
 
@@ -40,16 +40,48 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 
 </Tabs> 
 
-- [Left panel](#widgets-in-all-panels)
-- [Right panel](#widgets-in-all-panels) 
-- [Top panel](#top--bottom-panel-widgets)
-- [Bottom panel](#top--bottom-panel-widgets)
-- [Buttons](#buttons-android-and-remaining-elements-ios)
-- [Actions](#actions-panel-android--three-button-menu)  
-- **Transparent widgets** - makes transparent the background of the navigation and information widgets.  
+- [Overview](#overview)
+- [Widget panels](#widget-panels)
+  - [Widgets for all panels](#widgets-for-all-panels)
+- [Top / Bottom panels](#top--bottom-panels)
+  - [Rows for panels](#rows-for-panels)
+  - [Settings](#settings)
+- [Left / Right panels](#left--right-panels)
+  - [Pages for widgets](#pages-for-widgets)
+- [Panel widgets settings](#panel-widgets-settings)
+  - [Copies of widgets](#copies-of-widgets)
+  - [Move / Delete](#move--delete)
+- [Actions](#actions)
+- [Buttons](#buttons)
+- [Switch profile](#switch-profile)
 
+## Widget panels
 
-## Widgets for all panels  
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
+
+![Configure screen](@site/static/img/widgets/configure_screen_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/>*  
+
+![Configure screen](@site/static/img/widgets/configure_screen_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
+The OsmAnd app allows you to group, copy, and customize widgets in different ways, move them in the list, and delete widgets you've added to the screen.
+
+Widget panels help you arrange widgets on the application screen in a place that is convenient for you. Widget panels help you arrange widgets on the application screen in a place that is convenient for you. These can be Right/Left rows or Top/Bottom rows.
+
+### Widgets for all panels  
 
 <Tabs groupId="operating-systems">
 
@@ -93,7 +125,7 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 | 22 | [External Sensors widgets (from *External sensors plugin*)](../widgets/info-widgets.md#external-sensors-widgets) | A set of *informational* widgets help you track data from your external sensors in real time. | 6 widgets included: *Heart Rate*, *Bicycle Power*, *Bicycle Cadence*, *Bicycle Speed*, *Bicycle Distance*, *Temperature*. |
 
 
-## Top / Bottom panel widgets
+## Top / Bottom panels
 
 <Tabs groupId="operating-systems">
 
@@ -171,6 +203,79 @@ To change the widget size and icon visibility:
 - Switch to the Off position, in the *Show icon* field.
 
 
+## Left / Right panels
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left / Right panel*  
+
+![Configure screen](@site/static/img/widgets/configure_screen_left_right_andr.png) ![Configure screen](@site/static/img/widgets/configure_screen_left_right_2_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left / Right panel*  
+
+![Configure screen](@site/static/img/widgets/configure_screen_left_right_ios.png)
+
+</TabItem>
+
+</Tabs> 
+
+The OsmAnd app allows you to place widgets in sidebars and group them by pages.
+
+### Pages for widgets
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left"/> → Edit → Add page*  
+
+![Widget page](@site/static/img/widgets/widget_page_1_andr.png) ![Widget page](@site/static/img/widgets/widget_page_2_andr.png)    
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left"/> → Edit → Add page*
+
+![Widget page](@site/static/img/widgets/widget_page_1_ios.png) ![Widget page](@site/static/img/widgets/widget_page_2_ios.png)  
+
+</TabItem>
+
+</Tabs> 
+
+Widgets in the right and left panels can be grouped into **Pages**. To do this, select a panel, tap *Edit*, and then tap *Add Page*. This helps you interact with the map more easily and without distractions when navigating, as well as having multiple sets of widgets for different cases.
+
+## Panel widgets settings
+
+### Copies of widgets
+
+*OsmAnd menu → Configure screen → Widgets → Panel → **Add** chosen widget*  
+
+![Widget dublicate](@site/static/img/widgets/widget_dublicate.png)  
+
+**Copies** can be shown simultaneously for the all panels, as well as for each page of the widget. To find the required options, follow the steps below:  
+- Add the widget you need and tap it.
+- In the list of actions, select the *Duplicate* button.
+- Another option. Select the same widget in the *Available widgets* list and tap the *Add* button.
+
+
+### Move / Delete
+
+*OsmAnd menu → Configure screen → Widgets → Panel → **Add** chosen widget*  
+
+![Configure screen menu](@site/static/img/widgets/configure_screen_remove_andr.png)     
+
+To remove or delete a widget from the application screen, you need to select the required panel and then press the **Edit** button. 
+- To move a widget to the required location or page, long tap the icon on the right and select a position in the widget list. 
+- To no longer see the widget, tap the minus icon to the left of its name.
+
+
 ## Actions 
 
 <Tabs groupId="operating-systems">
@@ -211,55 +316,6 @@ Available actions:
 | 3 | [Distance by tap](../widgets/radius-ruler.md#distance-by-tap-tool) | Gives the ability to measure the distance from your position to the selected point. | | 
 | 4 | [Quick action](../widgets/quick-action.md) | This is a button that provides  quick access to frequently used actions. | |
 
-
-## Actions with added widgets
-
-The OsmAnd app allows you to group, copy, and customize widgets in different ways, move them in the list, and delete widgets you've added to the screen.
-
-### Pages for widgets
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-*<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left"/> → Edit → Add page*  
-
-![Widget page](@site/static/img/widgets/widget_page_1_andr.png) ![Widget page](@site/static/img/widgets/widget_page_2_andr.png)    
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left"/> → Edit → Add page*
-
-![Widget page](@site/static/img/widgets/widget_page_1_ios.png) ![Widget page](@site/static/img/widgets/widget_page_2_ios.png)  
-
-</TabItem>
-
-</Tabs> 
-
-Widgets in the right and left panels can be grouped into **Pages**. To do this, select a panel, tap *Edit*, and then tap *Add Page*. This helps you interact with the map more easily and without distractions when navigating, as well as having multiple sets of widgets for different cases.
-
-
-### Copies of widgets
-
-*OsmAnd menu → Configure screen → Widgets → **Add** chosen widget*  
-
-![Widget dublicate](@site/static/img/widgets/widget_dublicate.png)  
-
-**Copies** can be shown simultaneously for the all panels, as well as for each page of the widget. To find the required options, follow the steps below:  
-- Add the widget you need and tap it.
-- In the list of actions, select the *Duplicate* button.
-- Another option. Select the same widget in the *Available widgets* list and tap the *Add* button.
-
-
-### Move / Delete
-
-![Configure screen menu](@site/static/img/widgets/configure_screen_remove_andr.png)     
-
-To remove or delete a widget from the application screen, you need to select the required panel and then press the **Edit** button. 
-- To move a widget to the required location or page, long tap the icon on the right and select a position in the widget list. 
-- To no longer see the widget, tap the minus icon to the left of its name.
 
 
 ## Switch profile
