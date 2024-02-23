@@ -131,17 +131,25 @@ Widget panels help you arrange widgets on the application screen in a place that
 
 <TabItem value="android" label="Android">  
 
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Top / Bottom panel*  
+
 ![top panel](@site/static/img/widgets/top_bottom_panel_1_andr.png)   
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Top / Bottom panel* 
+
 ![top panel](@site/static/img/widgets/top_bottom_panel_1_ios.png)    
 
 </TabItem>
 
 </Tabs> 
+
+The OsmAnd app allows you to place widgets in top or buttom and group them by rows.
+
+Types of widgets are available for Top / Bottom panels:
 
 |  | Type | Description | Widgets included |
 | :- | :-- | :--- | :--- |
@@ -225,7 +233,7 @@ To change the widget size and icon visibility:
 
 </Tabs> 
 
-The OsmAnd app allows you to place widgets in sidebars and group them by pages.
+The OsmAnd app allows you to place [widgets from the table](#widgets-for-all-panels) in sidebars and group them by pages.
 
 ### Pages for widgets
 
