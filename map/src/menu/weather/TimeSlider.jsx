@@ -17,14 +17,15 @@ export default function TimeSlider() {
             currentHour = new Date(ctx.weatherDate.getTime() + alignedStep * 60 * 60 * 1000).getHours();
         }
 
-        const availableHours = [{ value: currentHour, label: `${currentHour}:00` }];
+        const availableHours = [{ value: currentHour, label: `${currentHour.toString().padStart(2, '0')}` }];
 
         const tryAddHour = (hour, direction) => {
             const alignedStep = getAlignedStep({ direction, ctx });
             if (alignedStep === direction) {
+                let label = `${hour.toString().padStart(2, '0')}`;
                 availableHours.push({
                     value: hour,
-                    label: `${hour}`,
+                    label: label,
                 });
                 return true;
             }
@@ -62,21 +63,40 @@ export default function TimeSlider() {
     const handleChange = (event, newValue) => {
         const newDate = new Date(ctx.weatherDate);
         newDate.setHours(newValue, 0, 0, 0);
+        if (newDate.getTime() < new Date().getTime()) {
+            return;
+        }
         ctx.setWeatherDate(newDate);
     };
 
+    const marks = Array.from({ length: 9 }, (_, index) => {
+        const value = index * 3;
+        let label = `${value.toString().padStart(2, '0')}`;
+        if (value === new Date().getHours()) {
+            label = 'Now';
+        }
+        return { value, label };
+    });
+
     return (
-        <Box sx={{ width: 300, padding: 3 }}>
+        <Box sx={{ width: 320, padding: 3 }}>
             <Slider
-                aria-labelledby="time-slider"
-                step={null}
-                marks={availableMarks}
+                track={false}
+                size="small"
+                step={availableMarks.length === 24 ? 1 : null}
+                marks={availableMarks.length === 24 ? marks : availableMarks}
                 min={0}
                 max={24}
                 value={ctx.weatherDate.getHours()}
                 onChange={handleChange}
                 valueLabelDisplay="auto"
                 valueLabelFormat={(value) => `${value}:00`}
+                sx={{
+                    color: '#237BFF',
+                    '& .MuiSlider-thumb': {
+                        color: '#237BFF',
+                    },
+                }}
             />
         </Box>
     );
