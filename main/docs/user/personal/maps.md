@@ -135,7 +135,7 @@ To download the required map, on the Download tab, find the section you are inte
 
 - **Memory info**. Visualize the amount of occupied and free space on your device. 
 - **Map counter** (*Free version*). Shows how many maps you have left for download.
-- [**Extra maps**](#extra-maps). Shows [Custom package](../plugins/custom.md), if you downloaded the plugins.
+- [**Extra maps**](#extra-maps). Displays the map data for the [Custom package](../plugins/custom.md).
 - **Regions**. List by continent and region of the world: *Africa, Antarctica, Asia, Australia and Oceania, Central America, Europe, North America, Russia, South America.*
 - [**World maps**](#world-maps). A list of maps of the entire world: *World altitude correction.(Android only)*, *World overview map*, *All world.(Weather forecast)*
 - [**Nautical maps**](../plugins/nautical-charts.md) ([*paid feature*](../purchases/index.md)). Vector maps with elevations as points or lines.
