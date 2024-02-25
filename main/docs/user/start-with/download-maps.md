@@ -18,9 +18,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Uploading maps to the OsmAnd app is a key step to ensure smooth operation and use of offline navigation. Without offline maps, the app cannot function fully. Downloading maps gives you access to maps of different regions, allowing you to navigate without an Internet connection.  
 
-You have two *main* ways to download maps: **1)** [view the list of regions in the main menu](#download-maps-menu) or **2)** [select the required region directly on the map](#select-on-the-map). This gives you the flexibility to select the regions you want and ensures that the maps will fit your plans.  
+You have two *main* ways to download maps: **1)** [view the list of regions in the main menu](#download-maps-menu), or **2)** [select the required region directly on the map](#select-on-the-map). This gives you the flexibility to select the regions you want and ensures that the maps will fit your plans.  
 
-Although OsmAnd supports both [Vector](../map/vector-maps.md) and [Raster](../map/raster-maps.md), it is recommended to start working with vector maps offline. This type of maps ensures reliable operation of all key functions of the application, including [Search](../search/index.md), [Navigation](../navigation/index.md), and [Context menu](../map/map-context-menu.md). This is especially important if your travels include trips to remote locations or places with limited internet access.
+Although OsmAnd supports both [Vector](../map/vector-maps.md) and [Raster](../map/raster-maps.md), it is recommended to start working with vector maps offline. This type of maps (read more about [Map OsmAnd types](../personal/maps.md#map-types) here) ensures reliable operation of all key functions of the application, including [Search](../search/index.md), [Navigation](../navigation/index.md), and [Context menu](../map/map-context-menu.md). This is especially important if your travels include trips to remote locations or places with limited internet access.
 
 
 ## Download 
@@ -49,7 +49,7 @@ When you first launch the app, you will be prompted to download a map based on y
 
 If you are using a VPN, OsmAnd can offer you a regional map, giving you the option to choose a different map than your actual geography.  
 
-It is important to note that you can skip the download step if you already have previous [OsmAnd Cloud](../personal/osmand-cloud.md) settings. This is convenient if you have reinstalled the application or want to restore the previous user experience without having to re-select regions and settings.
+It is important to note that you can skip this download step, and if you already have previous [OsmAnd Cloud](../personal/osmand-cloud.md) settings this step can also be skipped. This is convenient if you have reinstalled the application or want to restore the previous user experience without having to re-select regions and settings.
 
 
 ### Download Maps menu
@@ -84,17 +84,16 @@ The **Downloads Maps menu** displays all existing OsmAnd map types. It includes:
 - **[Device memory](../personal/maps.md#download)**. Show available memory to be used on the device.
 - **Map counter** (*Free version*). Display how many [Free map downloads](../purchases/android.md#free-and-paid-features) left.
 
-**Regions**. In order to download a specific type of map of the desired country or area you need:
-- First, click on the region folder, for example Africa or Europe.
-- A list of regions will open.
-- Tap on the desired one and a list of downloadable maps will open.
+**Regions**. To download a specific type of map of the country or region you want:
+- First click on the folder with the region, such as Africa, Europe, or other.
+- Tap the one you want in the list of regions that opens.
+- The next screen shows a list of all map types that can be downloaded.
 
 You can find information about other types of maps in the [Downloads](../personal/maps.md#downloads) section of the **Maps** article.
 
 :::tip NOTE
 OsmAnd has a small world map built in. You do not need to download large maps of any region if you are not going to use them. If you need a map covering the whole planet, including major cities, roads and rivers, you can download the **Detailed World Map**.
 :::
-
 
 ### Select on the map
 
