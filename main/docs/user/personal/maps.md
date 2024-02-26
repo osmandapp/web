@@ -91,15 +91,15 @@ For regions, such as Germany, consisting of multiple maps, you can use bulk map 
 ## Maps and Resources
 
 The *Maps & Resources* main menu section of the OsmAnd app provides access to manage maps and other important data.  
-1. The [*Download*](#downloads) maps tab allows you to download maps for offline use, ensuring accessibility in the absence of internet.  
-2. In the [*Local*](#local) maps tab, you can find and manage detailed information about maps and places, including favorites, tracks, OSM notes, and other items that you have on your device.  
-3. The [*Updates*](#updates) tab allows users to get information about available updates to maps and other resources, ensuring that the data is up-to-date and accurate. 
+- The [*Download*](#downloads) maps tab allows you to download maps for offline use, ensuring accessibility in the absence of internet.  
+- In the [*Local*](#local) maps tab, you can find and manage detailed information about maps and places, including favorites, tracks, OSM notes, and other items that you have on your device.  
+- The [*Updates*](#updates) tab allows users to get information about available updates to maps and other resources, ensuring that the data is up-to-date and accurate. 
 
 *General actions you can do in Maps & Resources*:  
-**Refresh** &#10227;. Reloads the list of available maps from the OsmAnd server.  
-**Search**. Allows you to search for maps by **country**, **province** or major **city**.  
-**Toolbar**. Allows you to see on the indicator how much memory is available for download and how many maps can be downloaded for free. Depending on the tab, sometimes slightly different data is displayed.  
-**Map counter**(*Free version* only visible if you don't have a [subscription](../purchases/index.md)). The indicator with dividers shows how many maps you have left to download out of the *7 available*. <u>**NOTE**</u> that monthly map updates count as one more map download and are subtracted from the available number of free map downloads. 
+1) **Refresh** &#10227;. Reloads the list of available maps from the OsmAnd server.  
+2) **Search**. Allows you to search for maps by **country**, **province** or major **city**.  
+3) **Toolbar**. Allows you to see on the indicator how much memory is available for download and how many maps can be downloaded for free. Depending on the tab, sometimes slightly different data is displayed.  
+4) **Map counter**(*Free version* only visible if you don't have a [subscription](../purchases/index.md)). The indicator with dividers shows how many maps you have left to download out of the *7 available*. <u>**NOTE**</u> that monthly map updates count as one more map download and are subtracted from the available number of free map downloads. 
 
 
 ### Downloads
