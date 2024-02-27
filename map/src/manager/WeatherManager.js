@@ -12,6 +12,9 @@ export const ECWMF_WEATHER_TYPE = 'ecmwf'; // step 3 hour, after 5 days after th
 
 export const MIN_WEATHER_DAYS = -2;
 export const MAX_WEATHER_DAYS = +7;
+export const LOCAL_STORAGE_WEATHER_LOC = 'weatherLoc';
+export const LOCAL_STORAGE_WEATHER_FORECAST_DAY = 'weatherForecastDay';
+export const LOCAL_STORAGE_WEATHER_FORECAST_WEEK = 'weatherForecastWeek';
 
 function getLayers() {
     let allLayers = {};
@@ -138,15 +141,27 @@ export function getAlignedStep({ direction = null, weatherDate = null, ctx, diff
     return direction < 0 ? -(currentHoursUTC % baseStep) : +(baseStep - (currentHoursUTC % baseStep));
 }
 
-// function resetWeatherDate(ctx) {
-//     const alignedStep = getAlignedStep({ direction: 0, diffHours: 0, date: new Date() });
-//     if (alignedStep) {
-//         const alignedDate = new Date(new Date().getTime() + alignedStep * 60 * 60 * 1000);
-//         ctx.setWeatherDate(alignedDate);
-//     } else {
-//         ctx.setWeatherDate(new Date());
-//     }
-// }
+export function addShowDetailsFlag(ctx, index) {
+    const newWeatherLayers = ctx.weatherLayers[ctx.weatherType].map((layerItem, layerIndex) => {
+        if (index === layerIndex) {
+            return { ...layerItem, showDetails: true };
+        }
+        return layerItem;
+    });
+    ctx.setWeatherLayers({ ...ctx.weatherLayers, [ctx.weatherType]: newWeatherLayers });
+}
+
+export function clearShowDetailsFlag(ctx) {
+    const newWeatherLayers = ctx.weatherLayers[ctx.weatherType].map((layerItem) => {
+        if (layerItem.showDetails) {
+            const newLayerItem = { ...layerItem };
+            delete newLayerItem.showDetails;
+            return newLayerItem;
+        }
+        return layerItem;
+    });
+    ctx.setWeatherLayers({ ...ctx.weatherLayers, [ctx.weatherType]: newWeatherLayers });
+}
 
 const WeatherManager = {
     getLayers,

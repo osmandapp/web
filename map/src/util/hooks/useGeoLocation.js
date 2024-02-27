@@ -21,8 +21,8 @@ export function useGeoLocation(ctx) {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
                     (position) => {
-                        const latitude = position.coords.latitude;
-                        const longitude = position.coords.longitude;
+                        const latitude = Math.round(position.coords.latitude * 1000) / 1000;
+                        const longitude = Math.round(position.coords.longitude * 1000) / 1000;
 
                         resolve({ lat: latitude, lng: longitude });
                     },

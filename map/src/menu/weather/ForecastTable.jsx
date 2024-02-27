@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext, { OBJECT_TYPE_WEATHER } from '../../context/AppContext';
 import { Divider, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
-import { dayFormatter, timeFormatter } from '../../manager/WeatherManager';
+import { addShowDetailsFlag, dayFormatter, timeFormatter } from '../../manager/WeatherManager';
 import styles from '../weather/weather.module.css';
 
 export default function ForecastTable({ dayForecast, weekForecast, currentTimeForecast, setHeaderForecast }) {
@@ -44,7 +44,15 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
 
         return (
             <>
-                <MenuItem disabled={forecastValue === NOT_AVAILABLE} className={styles.forecastItem} key={index}>
+                <MenuItem
+                    disabled={forecastValue === NOT_AVAILABLE}
+                    className={styles.forecastItem}
+                    key={index}
+                    onClick={() => {
+                        ctx.setCurrentObjectType(OBJECT_TYPE_WEATHER);
+                        addShowDetailsFlag(ctx, index);
+                    }}
+                >
                     <ListItemIcon className={styles.forecastIcon}>{item.icon}</ListItemIcon>
                     <ListItemText>
                         <Typography sx={{ color: '#237BFF !important' }} variant="inherit">

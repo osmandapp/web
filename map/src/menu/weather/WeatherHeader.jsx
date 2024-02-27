@@ -11,8 +11,9 @@ import AppContext from '../../context/AppContext';
 import { ReactComponent as ForecastSourceIcon } from '../../assets/icons/ic_action_umbrella.svg';
 import { ReactComponent as WeatherLayersIcon } from '../../assets/icons/ic_map_configure_map.svg';
 import { useTranslation } from 'react-i18next';
+import { clearShowDetailsFlag } from '../../manager/WeatherManager';
 
-export default function WeatherHeader() {
+export default function WeatherHeader({ setShowInfoBlock = null, isDetails = false }) {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
@@ -35,12 +36,15 @@ export default function WeatherHeader() {
                         variant="contained"
                         type="button"
                         className={styles.closeIcon}
-                        onClick={() => closeHeader(ctx)}
+                        onClick={() => {
+                            closeHeader({ ctx, setShowInfoBlock });
+                            clearShowDetailsFlag(ctx);
+                        }}
                     >
                         <CloseIcon />
                     </IconButton>
                     <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
-                        {t('shared_string_weather')}
+                        {isDetails ? t('web:forecast_details') : t('shared_string_weather')}
                     </Typography>
                     <Tooltip key={'forecast_source'} title={t('web:forecast_source')} arrow placement="bottom-end">
                         <span>

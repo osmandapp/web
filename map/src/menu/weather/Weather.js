@@ -1,7 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Box } from '@mui/material';
 import AppContext from '../../context/AppContext';
-import { updateWeatherTime, dayFormatter, getAlignedStep, timeFormatter } from '../../manager/WeatherManager';
+import {
+    updateWeatherTime,
+    dayFormatter,
+    getAlignedStep,
+    timeFormatter,
+    LOCAL_STORAGE_WEATHER_LOC,
+    LOCAL_STORAGE_WEATHER_FORECAST_DAY,
+    LOCAL_STORAGE_WEATHER_FORECAST_WEEK,
+} from '../../manager/WeatherManager';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 import { useDebouncedHash } from '../../util/hooks/useDebouncedHash';
@@ -53,11 +61,13 @@ export default function Weather() {
             },
         });
         if (response.ok) {
-            setWeatherLoc({
+            const obj = {
                 lat: loc.lat,
                 lon: loc.lon,
                 address: response.data,
-            });
+            };
+            localStorage.setItem(LOCAL_STORAGE_WEATHER_LOC, JSON.stringify(obj));
+            setWeatherLoc(obj);
         }
     };
 
@@ -78,6 +88,7 @@ export default function Weather() {
         });
         if (responseDay.ok) {
             const forecast = await responseDay.json();
+            localStorage.setItem(LOCAL_STORAGE_WEATHER_FORECAST_DAY, JSON.stringify(forecast));
             setDayForecast(forecast);
         }
     };
@@ -100,9 +111,43 @@ export default function Weather() {
         });
         if (responseWeek.ok) {
             const forecast = await responseWeek.json();
+            localStorage.setItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK, JSON.stringify(forecast));
             setWeekForecast(forecast);
         }
     };
+
+    function getWeatherDataFromCache(currentLoc) {
+        function isSameLocation(locFromCache, currentLoc) {
+            return (
+                parseFloat(locFromCache.lat).toFixed(4) === currentLoc.lat?.toFixed(4) &&
+                parseFloat(locFromCache.lon).toFixed(4) === currentLoc.lng?.toFixed(4)
+            );
+        }
+
+        let savedWeatherLoc = localStorage.getItem(LOCAL_STORAGE_WEATHER_LOC);
+        if (savedWeatherLoc) {
+            savedWeatherLoc = JSON.parse(savedWeatherLoc);
+            if (isSameLocation(savedWeatherLoc, currentLoc)) {
+                if (!weatherLoc) {
+                    setWeatherLoc(savedWeatherLoc);
+                }
+                if (!dayForecast) {
+                    let dayForecast = localStorage.getItem(LOCAL_STORAGE_WEATHER_FORECAST_DAY);
+                    if (dayForecast) {
+                        setDayForecast(JSON.parse(dayForecast));
+                    }
+                }
+                if (!weekForecast) {
+                    let weekForecast = localStorage.getItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK);
+                    if (weekForecast) {
+                        setWeekForecast(JSON.parse(weekForecast));
+                    }
+                }
+                return true;
+            }
+        }
+        return false;
+    }
 
     function getForecastData(location) {
         fetchDayForecast(location).then();
@@ -111,16 +156,19 @@ export default function Weather() {
 
     useEffect(() => {
         if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
-            if (weatherLoc && weatherLoc.lat === currentLoc.lat && weatherLoc.lon === currentLoc.lng) {
-                return;
+            const useCache = getWeatherDataFromCache(currentLoc);
+            if (!useCache) {
+                fetchAddress(currentLoc).then();
+                getForecastData(currentLoc);
             }
-            fetchAddress(currentLoc).then();
-            getForecastData(currentLoc);
         } else if (currentLoc && currentLoc === LOCATION_UNAVAILABLE) {
             const center = getCenterMapLoc(delayedHash);
             if (center) {
-                fetchAddress(center).then();
-                getForecastData(center);
+                const useCache = getWeatherDataFromCache(center);
+                if (!useCache) {
+                    fetchAddress(center).then();
+                    getForecastData(center);
+                }
             }
         }
     }, [currentLoc, delayedHash]);
@@ -151,7 +199,7 @@ export default function Weather() {
             <WeatherHeader />
             {dayForecast || weekForecast ? (
                 <>
-                    <TopWeatherInfo headerForecast={headerForecast} weatherLoc={weatherLoc} />
+                    <TopWeatherInfo headerForecast={headerForecast} weatherLoc={weatherLoc} useWeatherDate={true} />
                     <DayCardsCarousel />
                     <TimeSlider />
                     <ForecastTable
