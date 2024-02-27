@@ -21,12 +21,27 @@ Travel Guides is a paid feature of the OsmAnd app.
 
 ## Overview
 
-Virtual travel guides inside OsmAnd offer valuable insights, recommendations, and tips for users. They also allow tourists to access comprehensive navigation information to attractions directly within the app.  
+Virtual travel guides in OsmAnd offer users valuable information, recommendations, and tips. They also allow travelers to access comprehensive navigation information about attractions in the app.
 
-OsmAnd travel guides are based on data from [Wikivoyage](https://www.wikivoyage.org/), a community project similar to Wikipedia, where volunteer writers create up-to-date articles.  
-Wikivoyage information includes the main facts about a place, transport, landmarks, shopping spots, etc.  
+OsmAnd travel guides are based on data from [Wikivoyage](https://www.wikivoyage.org/), a community project similar to Wikipedia, where volunteer authors create up-to-date articles.  
+Wikivoyage information includes the main facts about a place, transportation, attractions, shopping, and more.  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 ![Travel guides view General](@site/static/img/guides/travel_guides_view_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Maps menu iOS](@site/static/img/personal/maps/travel_guides_overview_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
 
 ## How to use
 
@@ -46,10 +61,28 @@ Wikivoyage information includes the main facts about a place, transport, landmar
 
 ### Download articles
 
-Before you start using travel guides, you need to download them via the [Download map menu](../start-with/download-maps.md#main-menu) (*<Translate android="true" ids="shared_string_menu,welmode_download_maps,shared_string_travel_guides"/>*). Articles are grouped by regions: Africa, Asia, Australia and Oceania, Central America, Europe, North America, Russia, and South America, so you don't need to download travel books for a separate city or country.  
-After the necessary regions are saved on your device, you can browse through articles using OsmAnd, even if you're abroad or out of a mobile network area!  
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*
 
 ![Travel guides download menu](@site/static/img/guides/travel_guides_download.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,travel_guides_beta"/>*
+
+![Maps menu iOS](@site/static/img/guides/travel_guides_download_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+Before you start using travel guides, you need to download them via the [Download map menu](../start-with/download-maps.md#main-menu) (*<Translate android="true" ids="shared_string_menu,welmode_download_maps,shared_string_travel_guides"/>*). Articles are grouped by regions: Africa, Asia, Australia and Oceania, Central America, Europe, North America, Russia, and South America, so you don't need to download travel books for a separate city or country.  
+After the necessary regions are saved on your device, you can browse through articles using OsmAnd, even if you're abroad or out of a mobile network area!  
 
 :::note
 Besides the country, region or city guides, you can also find guides to the sites from movies, books, computer games, as well as places of memory of great people, etc.  

@@ -499,13 +499,13 @@ You should note that if a route you have created or changed has not been saved, 
 
 ### Graph
 
-![Plan a route android](@site/static/img/plan-route/plan_route_graph_1_andr.png)  ![Plan a route android](@site/static/img/plan-route/plan_route_graph_2_andr.png)
+![Plan a route android](@site/static/img/plan-route/plan_route_graph_1_andr.png)  ![Plan a route android](@site/static/img/plan-route/plan_route_graph_3_andr.png)
 
 Detailed route information in [Altitude/Slope graph](../navigation/setup/route-details.md#the-graph) format and [Road attributes](../navigation/setup/route-details.md#road-attributes) can be viewed in the *Graph tab* in the Android version of the OsmAnd app. To view this information in the iOS version of the app, use the menu *[Options](#menu-options) → Navigation → Details*.  
 
 To get elevation data when you open or import a track, you may need to select a route calculation mode.  
-- [*Attach to the roads*](#attach-to-the-roads) - The track will be attached to roads using offline maps and the track geometry can be changed.  
-- **Calculate online** - Calculates the altitude above sea level online on the OsmAnd servers based on satellite images and digital elevation models. The difference with the altitude recorded by the device can be used as an elevation correction.    
+- [*Attach to the roads*](#attach-to-the-roads). The track will be attached to roads using offline maps and the track geometry can be changed.  
+- **Calculate offline** (*Android only*). Calculate altitude offline based on Terrain map (3D) data. The difference between the altitude recorded by your device can be used for altitude correction.  
 
 
 ### Attach to the roads
