@@ -38,7 +38,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - All tracks in OsmAnd are stored in the folder:    
 *[<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu.md) → [<Translate android="true" ids="shared_string_my_places"/>](../personal/myplaces.md) → [<Translate android="true" ids="shared_string_gpx_tracks"/>](../personal/tracks.md)*.   
 - The Tracks tab in the OsmAnd app provides a convenient way to manage and interact with your saved tracks. This feature allows users to record and save the tracks. they have traveled during their travels or outdoor activities.  
-- Track on the map is user Trip recording or Plan a route with makred points on it or not. OsmAnd track file has [GPX format](../plugins/trip-recording.md#recorded-gpx-file).
+- Track on the map is user Trip recording or Plan a route with marked points on it or not. OsmAnd track file has [GPX format](../plugins/trip-recording.md#recorded-gpx-file).
 
 2. **You can add or create tracks in OsmAnd in the following ways**  
 - [Import](./tracks.md#import-track) from the external source.
