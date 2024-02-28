@@ -32,18 +32,6 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
 
 ## How to use
 
-Point of Interest (POI) Search:
-
-- Allows users to search for nearby or specific categories of points of interest (POI) such as restaurants, hotels, gas stations, points of interest, and other.
-- Filters and sorting results by category, distance or rating are possible.
-- Search results show the location of the POI, its contact information, ratings and reviews.
-
-All POI types in OsmAnd: [gitHub link](https://github.com/osmandapp/OsmAnd-resources/blob/dd575efb5aa4ec7e359bb50e8dc6de7c358ff258/poi/poi_types.xml).   
-
-To search for POIs by categories directly on the map, you need to select the required categories from the [list](../map/point-layers-on-map.md#points-of-interest-poi) in *Configure map → Show POI overlay...* and search by icons in the expected location.  
-
-**Please note:** to accomplish some of these tasks (locate addresses, POI) you will need to have the offline vector map file. Initially, the search is based on data located on the map in the visible area of the device screen. If you don't find nothing, OsmAnd propose to increase search radius.  
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -63,6 +51,18 @@ To search for POIs by categories directly on the map, you need to select the req
 </TabItem>
 
 </Tabs>
+
+Point of Interest (POI) Search:
+
+- Allows users to search for nearby or specific categories of points of interest (POI) such as restaurants, hotels, gas stations, points of interest, and other.
+- Filters and sorting results by category, distance or rating are possible.
+- Search results show the location of the POI, its contact information, ratings and reviews.
+
+All POI types in OsmAnd: [gitHub link](https://github.com/osmandapp/OsmAnd-resources/blob/dd575efb5aa4ec7e359bb50e8dc6de7c358ff258/poi/poi_types.xml).   
+
+To search for POIs by categories directly on the map, you need to select the required categories from the [list](../map/point-layers-on-map.md#points-of-interest-poi) in *Configure map → Show POI overlay...* and search by icons in the expected location.  
+
+**Please note:** to accomplish some of these tasks (locate addresses, POI) you will need to have the offline vector map file. Initially, the search is based on data located on the map in the visible area of the device screen. If you don't find nothing, OsmAnd propose to increase search radius.  
 
 
 ### Search query list
@@ -149,14 +149,14 @@ A filter can consist of quite a number of items, the presence of which depends o
 | 3. **Charging station** | <details><summary> 35 types of filters </summary> <ul><li> **Bicycle access** (has *1* value) </li><li> **Bus access** (has *1* value) </li><li> **HGV access** (has *5* values) </li><li> **Motorcar access** (has *1* value) </li><li> **Scooter access** (has *1* value) </li><li> **Auth by app** (has *1* value) </li><li> **Auth by chip card** (has *1* value) </li><li> **Contactless auth** (has *1* value) </li><li> **Auth by key** (has *1* value) </li><li> **Auth by required** (has *1* value) </li><li> **Auth by phone call** (has *1* value) **Auth by short message** (has *1* value) </li><li> **Fee** (has *2* values) </li><li> **Internet access type** (has *3* values) </li><li> **Internet access type** (has *3* values) </li><li> **Wheelchair accessibility** (has *4* values) </li><li> Open now / Open 24/7 </li><li> And other... </li></ul></details> | A [charging station](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station) is an infrastructure facility where owners of electric vehicles can recharge their cars, motorcycles or other electric vehicles. These points provide chargers and appropriate connections to provide energy to vehicle batteries. |
 | 4. **Convenience store and supermarket** | <details><summary> 13 types of filters </summary> <ul><li> **Bulk purchase** (has *2* values) </li><li> **Cash withdrawal** (has *5* values) </li><li> **Changing table** (has *3* values) </li><li> **Coffee** (has *2* values) </li><li> **Delivery** (has *1* value) </li><li> **Diet** (has *8* values) </li><li> **Ice cream** (has *1* value) </li><li> **Organic products** (has *2* values) </li><li> **Payment type** (more than *10* values) </li><li> **Second Hand Filter** (has *2* values) </li><li> **Self checkout** (has *2* values) </li><li> **Wheelchair accessibility** (has *4* values) </li><li> Open now / Open 24/7 </li></ul></details> | [Convenience store](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience) and [supermarket](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket) represent retail facilities. |
 | 5. **<Translate android="true" ids="poi_filter_emergency"/>** | Filters are not available | [Emergency](https://wiki.openstreetmap.org/wiki/Key:emergency) includes facilities and locations associated with emergency services such as hospitals, police stations, fire stations, and first aid medical centers. |
-| 6. **Filling station** | <details><summary> 15 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  | 
-| 7. **Finance** | <details><summary> 6 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
-| 8. **Food** | <details><summary> 24 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
-| 9. **Healthcare** | <details><summary> 11 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |  |
-| 10. **Leisure** | <details><summary> 16 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
-| 11. **Nautical** | Filters are not available  | Includes various [administrative places](https://wiki.openstreetmap.org/wiki/Key:place). |
-| 12. **<Translate android="true" ids="poi_filter_closest_poi"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
-| 13. **<Translate android="true" ids="poi_filter_parking"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
+| 6. **Filling station** | <details><summary> 15 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> | A [fuel station](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel), also known as a filling station, petrol station, gas station and petrol garage. It is the retail-type facility where motor vehicles can be refueled. | 
+| 7. **Finance** | <details><summary> 6 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> | [Finance](https://wiki.openstreetmap.org/wiki/Tag:office%3Dfinancial) used for offices of companies in the financial sector. |
+| 8. **Food** | <details><summary> 24 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> | [Food](https://wiki.openstreetmap.org/wiki/Category:Food_and_beverages) includes all places delivering food and beverages.  |
+| 9. **Healthcare** | <details><summary> 11 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> | [Healthcare](https://wiki.openstreetmap.org/wiki/Healthcare)  include services provided by different professionals in different types of facilities. | 
+| 10. **Leisure** | <details><summary> 16 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> | [Leisure](https://wiki.openstreetmap.org/wiki/Category:Leisure) includes various types of places and facilities for entertainment.  |
+| 11. **Nautical** | Filters are not available  | Includes POIs related to Nautical types. |
+| 12. **<Translate android="true" ids="poi_filter_closest_poi"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> | Includes POIs that are close to you. |
+| 13. **<Translate android="true" ids="poi_filter_parking"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> | [Parking](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking) includes facilities used by the public, customers, or other authorized users to park vehicles such as cars and trucks, commonly known as a car park (British English) or parking lot (American English).  |
 | 14. **Personal transport** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
 | 15. **<Translate android="true" ids="poi_filter_public_transport"/>** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
 | 16. **Routes** | <details><summary> 9 types of filters </summary> <ul><li> Open now / Open 24/7 </li><li> Fridge(2 values) </li><li> Heating(7 values) </li><li> Internet access type(3 values) </li><li> Mattress(2 values) </li><li> Payment type(more than 10 values) </li><li> Shower(1 values) </li><li> Smoking(6 values) </li><li> Star rating(10 values) </li><li> Wheelchair accessibility(4 values) </li></ul></details> |  |
@@ -323,12 +323,12 @@ To save a custom filter, select everything you need, then:
 ### Edit an existing filter
 
 From the main screen:
-1. Tap on the agnifying glass to open the Search screen
-2. Select the Categories tab
-3. Choose the custom category : screen with search results will open
-4. Tap on filter icon and then on Filter screen
-5. Tap on the 3-dot icon
-6. In the drop-down menu, select "Edit categories"
+1. Tap on the agnifying glass to open the Search screen.
+2. Select the Categories tab.
+3. Choose the custom category : screen with search results will open.
+4. Tap on filter icon and then on Filter screen.
+5. Tap on the 3-dot icon.
+6. In the drop-down menu, select "Edit categories".
 
 
 ### Delete Custom POI filter
