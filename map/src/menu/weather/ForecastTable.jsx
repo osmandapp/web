@@ -55,7 +55,10 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
                 >
                     <ListItemIcon className={styles.forecastIcon}>{item.icon}</ListItemIcon>
                     <ListItemText>
-                        <Typography sx={{ color: '#237BFF !important' }} variant="inherit">
+                        <Typography
+                            sx={{ color: forecastValue !== NOT_AVAILABLE ? '#237BFF' : '#727272' }}
+                            variant="inherit"
+                        >
                             {item.name()}
                         </Typography>
                     </ListItemText>

@@ -15,6 +15,7 @@ export const MAX_WEATHER_DAYS = +7;
 export const LOCAL_STORAGE_WEATHER_LOC = 'weatherLoc';
 export const LOCAL_STORAGE_WEATHER_FORECAST_DAY = 'weatherForecastDay';
 export const LOCAL_STORAGE_WEATHER_FORECAST_WEEK = 'weatherForecastWeek';
+export const LOCAL_STORAGE_WEATHER_TYPE = 'weatherType';
 
 function getLayers() {
     let allLayers = {};

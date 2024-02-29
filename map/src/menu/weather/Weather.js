@@ -9,6 +9,7 @@ import {
     LOCAL_STORAGE_WEATHER_LOC,
     LOCAL_STORAGE_WEATHER_FORECAST_DAY,
     LOCAL_STORAGE_WEATHER_FORECAST_WEEK,
+    LOCAL_STORAGE_WEATHER_TYPE,
 } from '../../manager/WeatherManager';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
@@ -124,8 +125,16 @@ export default function Weather() {
             );
         }
 
+        function isSameDay() {
+            let dayForecast = localStorage.getItem(LOCAL_STORAGE_WEATHER_FORECAST_DAY);
+            if (dayForecast) {
+                dayForecast = JSON.parse(dayForecast);
+                return dayForecast[0][1].split(' ')[0] === dayFormatter(new Date());
+            }
+        }
+
         let savedWeatherLoc = localStorage.getItem(LOCAL_STORAGE_WEATHER_LOC);
-        if (savedWeatherLoc) {
+        if (savedWeatherLoc && isSameDay()) {
             savedWeatherLoc = JSON.parse(savedWeatherLoc);
             if (isSameLocation(savedWeatherLoc, currentLoc)) {
                 if (!weatherLoc) {
@@ -173,9 +182,29 @@ export default function Weather() {
         }
     }, [currentLoc, delayedHash]);
 
+    function changedWeatherType(weatherType) {
+        if (weatherType) {
+            let type = localStorage.getItem(LOCAL_STORAGE_WEATHER_TYPE);
+            if (type !== weatherType) {
+                localStorage.setItem(LOCAL_STORAGE_WEATHER_TYPE, weatherType);
+                return true;
+            }
+        }
+        return false;
+    }
+
     useEffect(() => {
-        if (ctx.weatherType && currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
-            getForecastData(currentLoc);
+        if (changedWeatherType(ctx.weatherType)) {
+            setDayForecast(null);
+            setWeekForecast(null);
+            if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
+                getForecastData(currentLoc);
+            } else {
+                const center = getCenterMapLoc(delayedHash);
+                if (center) {
+                    getForecastData(center);
+                }
+            }
             const alignedStep = getAlignedStep({ direction: 0, ctx });
             if (alignedStep) {
                 updateWeatherTime(ctx, alignedStep); // step current when need

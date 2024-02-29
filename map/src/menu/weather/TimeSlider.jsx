@@ -86,7 +86,7 @@ export default function TimeSlider() {
                 step={availableMarks.length === 24 ? 1 : null}
                 marks={availableMarks.length === 24 ? marks : availableMarks}
                 min={0}
-                max={24}
+                max={23}
                 value={ctx.weatherDate.getHours()}
                 onChange={handleChange}
                 valueLabelDisplay="auto"
