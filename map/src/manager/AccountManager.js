@@ -108,9 +108,8 @@ async function isRequestOk(response, setEmailError) {
     return res;
 }
 
-async function sendCode({ email, action, setEmailError = null, lang = DEFAULT_AUTH_API_LANG }) {
+async function sendCode({ action, setEmailError = null, lang = DEFAULT_AUTH_API_LANG }) {
     const data = {
-        email: email.toLowerCase(),
         action: action,
         lang,
     };
@@ -119,6 +118,28 @@ async function sendCode({ email, action, setEmailError = null, lang = DEFAULT_AU
         dataOnErrors: true,
         headers: {
             'Content-Type': 'application/json',
+        },
+    }).catch((error) => {
+        setEmailError && setEmailError(error.response.data);
+    });
+    if (resp?.status === 200) {
+        return true;
+    }
+}
+
+async function sendCodeToNewEmail({ email, action, setEmailError = null, lang = DEFAULT_AUTH_API_LANG }) {
+    const data = {
+        action: action,
+        lang,
+    };
+    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/send-code-to-new-email`, data, {
+        throwErrors: true,
+        dataOnErrors: true,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        params: {
+            email: email.toLowerCase(),
         },
     }).catch((error) => {
         setEmailError && setEmailError(error.response.data);
@@ -169,6 +190,7 @@ const AccountManager = {
     sendCode,
     confirmCode,
     changeEmail,
+    sendCodeToNewEmail,
     CHANGE_EMAIL_MSG: CHANGE_EMAIL_MSG,
     DELETE_EMAIL_MSG: DELETE_EMAIL_MSG,
     LOGIN_LOGOUT_URL,

@@ -44,7 +44,7 @@ export default function ChangeEmailDialog({ setChangeEmailFlag }) {
                 }
             });
         } else if (!code && newEmail) {
-            AccountManager.sendCode({
+            AccountManager.sendCodeToNewEmail({
                 email: newEmail,
                 action: AccountManager.CHANGE_EMAIL_MSG,
                 setEmailError,
