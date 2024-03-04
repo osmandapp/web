@@ -238,7 +238,11 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                     </Box>
                 </>
             ) : (
-                <Empty title={'Empty data'} text={"This weather type isn't supported for this weather source."} />
+                <Empty
+                    title={'Empty data'}
+                    text={"This weather type isn't supported for this weather source."}
+                    checkLogin={false}
+                />
             )}
         </Box>
     );
