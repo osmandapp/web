@@ -45,14 +45,16 @@ export default function ForecastGraph({ data, weatherType, weatherUnits }) {
                 data: Object.values(data).map((item) => item.day[weatherType]?.avg),
                 fill: false,
                 borderColor: '#212121',
-                borderWidth: 1,
+                pointBackgroundColor: '#212121',
+                borderWidth: 2,
             },
             {
                 label: 'Night',
                 data: Object.values(data).map((item) => item.night[weatherType]?.avg),
                 fill: false,
                 borderColor: '#737D8C',
-                borderWidth: 1,
+                pointBackgroundColor: '#737D8C',
+                borderWidth: 2,
             },
         ],
     };
@@ -72,7 +74,7 @@ export default function ForecastGraph({ data, weatherType, weatherUnits }) {
                             .replace(/\//g, '.');
                     },
                     font: {
-                        size: 8,
+                        size: 9,
                     },
                 },
             },
@@ -84,7 +86,7 @@ export default function ForecastGraph({ data, weatherType, weatherUnits }) {
                         return `${parseFloat(val.toFixed(2))} ${weatherUnits}`;
                     },
                     font: {
-                        size: 8,
+                        size: 9,
                     },
                 },
             },

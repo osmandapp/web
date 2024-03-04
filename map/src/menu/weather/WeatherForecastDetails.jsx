@@ -201,11 +201,13 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                     <ForecastButtonItem item={item} index={index} key={index} />
                 ))}
             </Box>
-            <ForecastGraph
-                data={forecastPreparedData}
-                weatherType={currentWeatherType}
-                weatherUnits={currentWeatherUnits}
-            />
+            <Box sx={{ px: '16px' }}>
+                <ForecastGraph
+                    data={forecastPreparedData}
+                    weatherType={currentWeatherType}
+                    weatherUnits={currentWeatherUnits}
+                />
+            </Box>
             <Box sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 450}px` }}>
                 {currentWeatherType !== null &&
                     Object.entries(forecastPreparedData).map(([key, value], index) => (
