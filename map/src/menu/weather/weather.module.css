@@ -83,6 +83,10 @@
     align-items: center !important;
     border-radius: 6px !important;
     border: 1px solid #cccccc !important;
+    &:hover {
+        border: 2px solid var(--selected-color) !important;
+        background-color: #deebff !important;
+    }
 }
 .dayItemDay {
     color: var(--text-secondary) !important;
@@ -105,16 +109,6 @@
     max-width: 350px !important;
     overflow-x: hidden !important;
 }
-.currentItemDay {
-    display: flex !important;
-    min-width: 45px !important;
-    padding: 6px 3px !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    border-radius: 6px !important;
-    border: 2px solid #237bff !important;
-}
 .selectedItemDay {
     display: flex !important;
     min-width: 45px !important;
@@ -124,7 +118,6 @@
     align-items: center !important;
     border-radius: 6px !important;
     border: 2px solid var(--selected-color) !important;
-    background: #deebff !important;
 }
 .weatherInfoBlock {
     display: flex !important;

@@ -76,11 +76,7 @@ export default function DayCardsCarousel() {
 
     function setDayStyles(currentDay) {
         let res = [];
-        if (currentDay.getDay() === new Date().getDay()) {
-            res.push(styles.currentItemDay);
-        } else {
-            res.push(styles.dayItem);
-        }
+        res.push(styles.dayItem);
 
         if (currentDay.getDay() === ctx.weatherDate.getDay()) {
             res.push(styles.selectedItemDay);
