@@ -9,12 +9,24 @@ import i18n from 'i18next';
 import { isEmpty } from 'lodash';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import ForecastGraph from './ForecastGraph';
+import Loading from '../errors/Loading';
+import { useWeatherTypeChange } from '../../util/hooks/useWeatherTypeChange';
+import { useGeoLocation } from '../../util/hooks/useGeoLocation';
+import { useDebouncedHash } from '../../util/hooks/useDebouncedHash';
+import Empty from '../errors/Empty';
 
 export default function WeatherForecastDetails({ setShowInfoBlock }) {
     const ctx = useContext(AppContext);
     const [, height] = useWindowSize();
 
-    const forecast = getSavedForecast();
+    const [forecast, setForecast] = useState(getSavedForecast());
+    const weatherLoc = getWeatherLoc();
+    const currentLoc = useGeoLocation(ctx, false);
+    const delayedHash = useDebouncedHash(window.location.hash, 5000);
+    const [isDisabledType, setIsDisabledType] = useState(false);
+
+    useWeatherTypeChange({ ctx, currentLoc, delayedHash, setWeekForecast: setForecast });
+
     const [currentWeatherType, setCurrentWeatherType] = useState(null);
     const [currentWeatherUnits, setCurrentWeatherUnits] = useState(null);
 
@@ -28,6 +40,13 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
         }
     }, [ctx.weatherLayers]);
 
+    useEffect(() => {
+        if (currentWeatherType) {
+            const selectedType = ctx.weatherLayers[ctx.weatherType].find((layer) => currentWeatherType === layer.key);
+            setIsDisabledType(selectedType.index === -1);
+        }
+    }, [ctx.weatherType, currentWeatherType]);
+
     const forecastPreparedData = useMemo(() => {
         if (!forecast || !ctx.weatherLayers || !ctx.weatherType) {
             return {};
@@ -35,7 +54,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
 
         let res = {};
         let uniqueDates = new Set();
-        const layers = ctx.weatherLayers[ctx.weatherType];
+        const layers = ctx.weatherLayers[ctx.weatherType].map((layer) => ({ ...layer }));
 
         // Iterate over each forecast item to process and organize data.
         forecast.forEach((item) => {
@@ -65,8 +84,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                     if (layer.index !== -1) {
                         let entry = res[dateString][period][layer.key];
                         if (entry) {
-                            res[dateString][period][layer.key].avg =
-                                (entry.avg * entry.count + item[layer.index]) / (entry.count + 1);
+                            entry.avg = (entry.avg * entry.count + item[layer.index]) / (entry.count + 1);
                             res[dateString][period][layer.key].count += 1;
                         } else {
                             res[dateString][period][layer.key] = {
@@ -195,25 +213,33 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
     return (
         <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
             <WeatherHeader setShowInfoBlock={setShowInfoBlock} isDetails={true} />
-            <TopWeatherInfo weatherLoc={getWeatherLoc()} />
+            <TopWeatherInfo weatherLoc={weatherLoc} />
             <Box className={styles.forecastButtonBox}>
                 {ctx.weatherLayers[ctx.weatherType].map((item, index) => (
                     <ForecastButtonItem item={item} index={index} key={index} />
                 ))}
             </Box>
-            <Box sx={{ px: '16px' }}>
-                <ForecastGraph
-                    data={forecastPreparedData}
-                    weatherType={currentWeatherType}
-                    weatherUnits={currentWeatherUnits}
-                />
-            </Box>
-            <Box sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 450}px` }}>
-                {currentWeatherType !== null &&
-                    Object.entries(forecastPreparedData).map(([key, value], index) => (
-                        <ForecastWeekItem day={key} data={value} key={index} index={index} />
-                    ))}
-            </Box>
+            {ctx.forecastLoading ? (
+                <Loading />
+            ) : !isDisabledType ? (
+                <>
+                    <Box sx={{ px: '16px' }}>
+                        <ForecastGraph
+                            data={forecastPreparedData}
+                            weatherType={currentWeatherType}
+                            weatherUnits={currentWeatherUnits}
+                        />
+                    </Box>
+                    <Box sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 450}px` }}>
+                        {currentWeatherType !== null &&
+                            Object.entries(forecastPreparedData).map(([key, value], index) => (
+                                <ForecastWeekItem day={key} data={value} key={index} index={index} />
+                            ))}
+                    </Box>
+                </>
+            ) : (
+                <Empty title={'Empty data'} text={"This weather type isn't supported for this weather source."} />
+            )}
         </Box>
     );
 }

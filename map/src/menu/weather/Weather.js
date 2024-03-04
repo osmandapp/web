@@ -2,14 +2,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Box } from '@mui/material';
 import AppContext from '../../context/AppContext';
 import {
-    updateWeatherTime,
     dayFormatter,
-    getAlignedStep,
     timeFormatter,
     LOCAL_STORAGE_WEATHER_LOC,
     LOCAL_STORAGE_WEATHER_FORECAST_DAY,
     LOCAL_STORAGE_WEATHER_FORECAST_WEEK,
-    LOCAL_STORAGE_WEATHER_TYPE,
+    fetchDayForecast,
+    fetchWeekForecast,
 } from '../../manager/WeatherManager';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
@@ -23,18 +22,20 @@ import TopWeatherInfo from './TopWeatherInfo';
 import WeatherInfo from './WeatherInfo';
 import WeatherHeader from './WeatherHeader';
 import Loading from '../errors/Loading';
+import { useWeatherTypeChange } from '../../util/hooks/useWeatherTypeChange';
 
 export default function Weather() {
     const ctx = useContext(AppContext);
 
-    const currentLoc = useGeoLocation(ctx);
-    const hash = window.location.hash;
-    const delayedHash = useDebouncedHash(hash, 5000);
+    const currentLoc = useGeoLocation(ctx, false);
+    const delayedHash = useDebouncedHash(window.location.hash, 5000);
 
     const [weatherLoc, setWeatherLoc] = useState(null);
     const [dayForecast, setDayForecast] = useState(null);
     const [weekForecast, setWeekForecast] = useState(null);
     const [headerForecast, setHeaderForecast] = useState(null);
+
+    useWeatherTypeChange({ ctx, currentLoc, delayedHash, setDayForecast, setWeekForecast });
 
     const [currentTimeForecast, setCurrentTimeForecast] = useState({
         day: null,
@@ -72,65 +73,34 @@ export default function Weather() {
         }
     };
 
-    const fetchDayForecast = async (point) => {
-        const loc = {
-            lat: point.lat.toFixed(6),
-            lon: point.lng.toFixed(6),
-        };
-        const responseDay = await apiGet(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info`, {
-            apiCache: true,
-            params: {
-                lat: loc.lat,
-                lon: loc.lon,
-                weatherType: ctx.weatherType,
-            },
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-        });
-        if (responseDay.ok) {
-            const forecast = await responseDay.json();
-            localStorage.setItem(LOCAL_STORAGE_WEATHER_FORECAST_DAY, JSON.stringify(forecast));
-            setDayForecast(forecast);
-        }
-    };
-
-    const fetchWeekForecast = async (point) => {
-        const loc = {
-            lat: point.lat.toFixed(6),
-            lon: point.lng.toFixed(6),
-        };
-        const responseWeek = await apiGet(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info`, {
-            apiCache: true,
-            params: {
-                lat: loc.lat,
-                lon: loc.lon,
-                weatherType: ctx.weatherType,
-                week: true,
-            },
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-        });
-        if (responseWeek.ok) {
-            const forecast = await responseWeek.json();
-            localStorage.setItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK, JSON.stringify(forecast));
-            setWeekForecast(forecast);
-        }
-    };
-
     function getWeatherDataFromCache(currentLoc) {
         function isSameLocation(locFromCache, currentLoc) {
             return (
-                parseFloat(locFromCache.lat).toFixed(4) === currentLoc.lat?.toFixed(4) &&
-                parseFloat(locFromCache.lon).toFixed(4) === currentLoc.lng?.toFixed(4)
+                parseFloat(locFromCache.lat).toFixed(3) === currentLoc.lat?.toFixed(3) &&
+                parseFloat(locFromCache.lon).toFixed(3) === currentLoc.lng?.toFixed(3)
             );
         }
 
         function isSameDay() {
             let dayForecast = localStorage.getItem(LOCAL_STORAGE_WEATHER_FORECAST_DAY);
-            if (dayForecast && dayForecast.length > 0) {
+            if (dayForecast) {
                 dayForecast = JSON.parse(dayForecast);
-                return dayForecast[0][1].split(' ')[0] === dayFormatter(new Date());
+                if (
+                    Array.isArray(dayForecast) &&
+                    dayForecast.length > 0 &&
+                    Array.isArray(dayForecast[0]) &&
+                    dayForecast[0].length > 1 &&
+                    typeof dayForecast[0][1] === 'string'
+                ) {
+                    const forecastDate = dayForecast[0][1].split(' ')[0];
+                    return forecastDate === dayFormatter(new Date());
+                }
             }
+            return false;
+        }
+
+        function dayFormatter(date) {
+            return date.toISOString().split('T')[0];
         }
 
         let savedWeatherLoc = localStorage.getItem(LOCAL_STORAGE_WEATHER_LOC);
@@ -159,19 +129,8 @@ export default function Weather() {
     }
 
     function getForecastData(location) {
-        fetchDayForecast(location).then();
-        fetchWeekForecast(location).then(() => ctx.setForecastLoading(false));
-    }
-
-    function changedWeatherType(weatherType) {
-        if (weatherType) {
-            let type = localStorage.getItem(LOCAL_STORAGE_WEATHER_TYPE);
-            if (type !== weatherType) {
-                localStorage.setItem(LOCAL_STORAGE_WEATHER_TYPE, weatherType);
-                return true;
-            }
-        }
-        return false;
+        fetchDayForecast({ point: location, ctx, setDayForecast }).then();
+        fetchWeekForecast({ point: location, ctx, setWeekForecast }).then(() => ctx.setForecastLoading(false));
     }
 
     useEffect(() => {
@@ -192,23 +151,6 @@ export default function Weather() {
             }
         }
     }, [currentLoc, delayedHash]);
-
-    useEffect(() => {
-        if (changedWeatherType(ctx.weatherType)) {
-            if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
-                getForecastData(currentLoc);
-            } else {
-                const center = getCenterMapLoc(delayedHash);
-                if (center) {
-                    getForecastData(center);
-                }
-            }
-            const alignedStep = getAlignedStep({ direction: 0, ctx });
-            if (alignedStep) {
-                updateWeatherTime(ctx, alignedStep); // step current when need
-            }
-        }
-    }, [ctx.weatherType]);
 
     // get current forecast
     useEffect(() => {

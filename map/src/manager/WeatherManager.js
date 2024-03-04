@@ -6,6 +6,7 @@ import { ReactComponent as CloudIcon } from '../assets/icons/ic_action_clouds.sv
 import { ReactComponent as PrecipitationIcon } from '../assets/icons/ic_action_precipitation.svg';
 import styles from '../menu/weather/weather.module.css';
 import i18n from '../i18n';
+import { apiGet } from '../util/HttpApi';
 
 export const GFS_WEATHER_TYPE = 'gfs'; // step 1 hour, after 24 hours after the current time - 3 hours
 export const ECWMF_WEATHER_TYPE = 'ecmwf'; // step 3 hour, after 5 days after the current day - 6 hours
@@ -162,6 +163,66 @@ export function clearShowDetailsFlag(ctx) {
         return layerItem;
     });
     ctx.setWeatherLayers({ ...ctx.weatherLayers, [ctx.weatherType]: newWeatherLayers });
+}
+
+export const fetchDayForecast = async ({ point, ctx, setDayForecast = null }) => {
+    const loc = {
+        lat: point.lat.toFixed(6),
+        lon: point.lng.toFixed(6),
+    };
+    const responseDay = await apiGet(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info`, {
+        apiCache: true,
+        params: {
+            lat: loc.lat,
+            lon: loc.lon,
+            weatherType: ctx.weatherType,
+        },
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+    });
+    if (responseDay.ok) {
+        const forecast = await responseDay.json();
+        localStorage.setItem(LOCAL_STORAGE_WEATHER_FORECAST_DAY, JSON.stringify(forecast));
+        if (setDayForecast) {
+            setDayForecast(forecast);
+        }
+    }
+};
+
+export const fetchWeekForecast = async ({ point, ctx, setWeekForecast = null }) => {
+    const loc = {
+        lat: point.lat.toFixed(6),
+        lon: point.lng.toFixed(6),
+    };
+    const responseWeek = await apiGet(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info`, {
+        apiCache: true,
+        params: {
+            lat: loc.lat,
+            lon: loc.lon,
+            weatherType: ctx.weatherType,
+            week: true,
+        },
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+    });
+    if (responseWeek.ok) {
+        const forecast = await responseWeek.json();
+        localStorage.setItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK, JSON.stringify(forecast));
+        if (setWeekForecast) {
+            setWeekForecast(forecast);
+        }
+    }
+};
+
+export function changedWeatherType(weatherType) {
+    if (weatherType) {
+        let type = localStorage.getItem(LOCAL_STORAGE_WEATHER_TYPE);
+        if (type !== weatherType) {
+            localStorage.setItem(LOCAL_STORAGE_WEATHER_TYPE, weatherType);
+            return true;
+        }
+    }
+    return false;
 }
 
 const WeatherManager = {

@@ -5,7 +5,11 @@ import styles from '../trackfavmenu.module.css';
 import weatherStyles from './weather.module.css';
 import { FormControl } from '@mui/material/';
 import { ReactComponent as WeatherIcon } from '../../assets/menu/ic_action_umbrella.svg';
-import { ECWMF_WEATHER_TYPE, GFS_WEATHER_TYPE } from '../../manager/WeatherManager';
+import {
+    ECWMF_WEATHER_TYPE,
+    GFS_WEATHER_TYPE,
+    LOCAL_STORAGE_WEATHER_FORECAST_WEEK,
+} from '../../manager/WeatherManager';
 import ActionItem from '../components/ActionItem';
 
 export const weatherTypes = {
@@ -25,6 +29,7 @@ const WeatherForecastSourceActions = forwardRef(({ setOpenActions = null }, ref)
     const handleWeatherType = (e) => {
         const selectedType = e.target.value;
         if (selectedType !== null && selectedType !== ctx.weatherType) {
+            localStorage.removeItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK);
             ctx.setWeatherType(selectedType);
             ctx.setForecastLoading(true);
             if (setOpenActions) {

@@ -16,10 +16,7 @@ export default function WeatherInfo() {
 
         if (hours !== 0) {
             let day = 0;
-            while (hours >= 24) {
-                day++;
-                hours -= 24;
-            }
+            hours = hours % 24;
             if (day > 0) {
                 if (day === 1) {
                     hourstr = '+ ' + day + ' day ';

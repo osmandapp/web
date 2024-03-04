@@ -17,12 +17,12 @@ export default function TimeSlider() {
             currentHour = new Date(ctx.weatherDate.getTime() + alignedStep * 60 * 60 * 1000).getHours();
         }
 
-        const availableHours = [{ value: currentHour, label: `${currentHour.toString().padStart(2, '0')}` }];
+        const availableHours = [{ value: currentHour, label: currentHour.toString().padStart(2, '0') }];
 
         const tryAddHour = (hour, direction) => {
             const alignedStep = getAlignedStep({ direction, ctx });
             if (alignedStep === direction) {
-                let label = `${hour.toString().padStart(2, '0')}`;
+                let label = hour.toString().padStart(2, '0');
                 availableHours.push({
                     value: hour,
                     label: label,
@@ -71,7 +71,7 @@ export default function TimeSlider() {
 
     const marks = Array.from({ length: 9 }, (_, index) => {
         const value = index * 3;
-        let label = `${value.toString().padStart(2, '0')}`;
+        let label = value.toString().padStart(2, '0');
         if (value === new Date().getHours()) {
             label = 'Now';
         }
