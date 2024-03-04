@@ -5,6 +5,8 @@ import { isEmpty } from 'lodash';
 import AppContext from '../../context/AppContext';
 import { getAlignedStep } from '../../manager/WeatherManager';
 import styles from '../weather/weather.module.css';
+import * as locales from 'date-fns/locale';
+import { format } from 'date-fns';
 
 export default function DayCardsCarousel() {
     const ctx = useContext(AppContext);
@@ -16,13 +18,18 @@ export default function DayCardsCarousel() {
 
     const carouselRef = useRef(null);
 
+    function formatDay(currentDay) {
+        const locale = locales[i18n.language] || locales.enUS;
+        return format(currentDay, 'eee', { locale });
+    }
+
     useEffect(() => {
         const dates = Array.from({ length: 7 }, (_, i) => {
             const date = new Date();
             date.setDate(date.getDate() + i);
             return {
                 date: date.toISOString(),
-                day: date.toLocaleString(i18n.language, { weekday: 'short' }),
+                day: formatDay(date),
                 num: date.getDate(),
             };
         });

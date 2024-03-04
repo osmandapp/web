@@ -127,7 +127,7 @@ export default function Weather() {
 
         function isSameDay() {
             let dayForecast = localStorage.getItem(LOCAL_STORAGE_WEATHER_FORECAST_DAY);
-            if (dayForecast) {
+            if (dayForecast && dayForecast.length > 0) {
                 dayForecast = JSON.parse(dayForecast);
                 return dayForecast[0][1].split(' ')[0] === dayFormatter(new Date());
             }
