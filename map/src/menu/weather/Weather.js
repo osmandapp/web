@@ -160,7 +160,18 @@ export default function Weather() {
 
     function getForecastData(location) {
         fetchDayForecast(location).then();
-        fetchWeekForecast(location).then();
+        fetchWeekForecast(location).then(() => ctx.setForecastLoading(false));
+    }
+
+    function changedWeatherType(weatherType) {
+        if (weatherType) {
+            let type = localStorage.getItem(LOCAL_STORAGE_WEATHER_TYPE);
+            if (type !== weatherType) {
+                localStorage.setItem(LOCAL_STORAGE_WEATHER_TYPE, weatherType);
+                return true;
+            }
+        }
+        return false;
     }
 
     useEffect(() => {
@@ -182,21 +193,8 @@ export default function Weather() {
         }
     }, [currentLoc, delayedHash]);
 
-    function changedWeatherType(weatherType) {
-        if (weatherType) {
-            let type = localStorage.getItem(LOCAL_STORAGE_WEATHER_TYPE);
-            if (type !== weatherType) {
-                localStorage.setItem(LOCAL_STORAGE_WEATHER_TYPE, weatherType);
-                return true;
-            }
-        }
-        return false;
-    }
-
     useEffect(() => {
         if (changedWeatherType(ctx.weatherType)) {
-            setDayForecast(null);
-            setWeekForecast(null);
             if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
                 getForecastData(currentLoc);
             } else {

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import AppContext, { OBJECT_TYPE_WEATHER } from '../../context/AppContext';
-import { Divider, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
+import { CircularProgress, Divider, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import { addShowDetailsFlag, dayFormatter, timeFormatter } from '../../manager/WeatherManager';
 import styles from '../weather/weather.module.css';
 
@@ -62,14 +62,18 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
                             {item.name()}
                         </Typography>
                     </ListItemText>
-                    <div style={{ display: 'flex' }}>
-                        <Typography variant="body2" className={styles.forecastData}>
-                            {forecastValue === NOT_AVAILABLE ? '' : forecastValue?.split(' ')[0]}
-                        </Typography>
-                        <Typography variant="body2" className={styles.forecastUnit}>
-                            {forecastValue === NOT_AVAILABLE ? forecastValue : forecastValue?.split(' ')[1]}
-                        </Typography>
-                    </div>
+                    {ctx.forecastLoading ? (
+                        <CircularProgress size={12} />
+                    ) : (
+                        <div style={{ display: 'flex' }}>
+                            <Typography variant="body2" className={styles.forecastData}>
+                                {forecastValue === NOT_AVAILABLE ? '' : forecastValue?.split(' ')[0]}
+                            </Typography>
+                            <Typography variant="body2" className={styles.forecastUnit}>
+                                {forecastValue === NOT_AVAILABLE ? forecastValue : forecastValue?.split(' ')[1]}
+                            </Typography>
+                        </div>
+                    )}
                 </MenuItem>
                 {!isLastItem && <Divider className={styles.forecastTableDivider} />}
             </>

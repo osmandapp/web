@@ -26,6 +26,7 @@ const WeatherForecastSourceActions = forwardRef(({ setOpenActions = null }, ref)
         const selectedType = e.target.value;
         if (selectedType !== null && selectedType !== ctx.weatherType) {
             ctx.setWeatherType(selectedType);
+            ctx.setForecastLoading(true);
             if (setOpenActions) {
                 setOpenActions(false);
             }

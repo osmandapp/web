@@ -223,9 +223,12 @@ export const AppContextProvider = (props) => {
     const [fitBoundsPadding, mutateFitBoundsPadding] = useMutator({ left: 0, top: 0, right: 0, bottom: 0 });
 
     const searchParams = new URLSearchParams(window.location.search);
+    // weather
     const [weatherLayers, setWeatherLayers] = useState(WeatherManager.getLayers());
     const [weatherDate, setWeatherDate] = useState(new Date());
     const [weatherType, setWeatherType] = useState('gfs');
+    const [forecastLoading, setForecastLoading] = useState(false);
+
     const [gpxLoading, setGpxLoading] = useState(false);
     const [localTracksLoading, setLocalTracksLoading] = useState(false);
     // cookie to store email logged in
@@ -504,6 +507,8 @@ export const AppContextProvider = (props) => {
                 setSelectedSort,
                 visibleTracks,
                 setVisibleTracks,
+                forecastLoading,
+                setForecastLoading,
             }}
         >
             {props.children}
