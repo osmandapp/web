@@ -3,11 +3,13 @@ import AppContext, { OBJECT_TYPE_WEATHER } from '../../context/AppContext';
 import { CircularProgress, Divider, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import { addShowDetailsFlag, dayFormatter, timeFormatter } from '../../manager/WeatherManager';
 import styles from '../weather/weather.module.css';
+import { useTranslation } from 'react-i18next';
 
 export default function ForecastTable({ dayForecast, weekForecast, currentTimeForecast, setHeaderForecast }) {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
-    const NOT_AVAILABLE = 'Not available';
+    const NOT_AVAILABLE = t('data_is_not_available');
 
     function getForecastValue(item) {
         function formatting(value) {

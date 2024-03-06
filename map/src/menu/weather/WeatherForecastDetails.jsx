@@ -177,6 +177,11 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
         const currentDay = new Date(day);
         const isLastItem = index === Object.entries(forecastPreparedData).length - 1;
 
+        function formatDay(day) {
+            const formattedDay = day.toLocaleString(i18n.language, { weekday: 'long' });
+            return formattedDay.charAt(0).toUpperCase() + formattedDay.slice(1);
+        }
+
         return (
             <>
                 {!isEmpty(data.day) && (
@@ -184,7 +189,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                         <MenuItem className={styles.forecastItem} key={day}>
                             <ListItemText>
                                 <Typography className={styles.weekItemDataDay} variant="inherit">
-                                    {currentDay.toLocaleString(i18n.language, { weekday: 'long' })}
+                                    {formatDay(currentDay)}
                                 </Typography>
                                 <Typography className={styles.weekItemData} variant="inherit">
                                     {currentDay.toLocaleString(i18n.language, { day: 'numeric', month: 'short' })}

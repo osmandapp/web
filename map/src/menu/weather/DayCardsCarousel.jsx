@@ -20,7 +20,8 @@ export default function DayCardsCarousel() {
 
     function formatDay(currentDay) {
         const locale = locales[i18n.language] || locales.enUS;
-        return format(currentDay, 'eee', { locale });
+        const formattedDay = format(currentDay, 'eee', { locale });
+        return formattedDay.charAt(0).toUpperCase() + formattedDay.slice(1);
     }
 
     useEffect(() => {
