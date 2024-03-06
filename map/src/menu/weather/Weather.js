@@ -55,7 +55,7 @@ export default function Weather() {
             lat: point.lat.toFixed(6),
             lon: point.lng.toFixed(6),
         };
-        const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/weather-api/get-address-by-latlon`, {
+        const response = await apiGet(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/get-address-by-latlon`, {
             apiCache: true,
             params: {
                 lat: loc.lat,
