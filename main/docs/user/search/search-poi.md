@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview 
 
-OsmAnd Point of Interest (POI) functionality in OsmAnd provides accuracy, visibility, and convenience in finding interesting places and services near your current location or a selected area on the map.  
+[OsmAnd Point of Interest](../map/point-layers-on-map.md#points-of-interest-poi) (POI) functionality in OsmAnd provides accuracy, visibility, and convenience in finding interesting places and services near your current location or a selected area on the map.  
 
 The search bar allows you to enter keywords related to the places you are interested in. The POI search also presents a convenient list sorted by [category](#categories-poi-search) to help you quickly find what you are looking for, and the [filter](#filters) allows you to select specific POI characteristics to display only relevant results.  
 
@@ -25,9 +25,9 @@ The search bar allows you to enter keywords related to the places you are intere
 OsmAnd provides several ways to get to the Search tool where the **Categories search** section is located.
 
 - The [Search button](../widgets/map-buttons.md#search) is always displayed on the map, and tapping it will take you to the tool's [general screen](#how-to-use), where you can find the *Categories* tab.
-- Go to the main *Menu → Search → Categories tab*.
-- When preparing to start a route, tap *Navigation → Set destination → Search field*.  
-- Go to the main Android *Menu → Configure map → Show POI overlay... → Search*. 
+- Go to the main *Menu → Search → Categories tab* (Android version).
+- When preparing to start a route, tap [*Navigation → Set destination → Search field → Categories tab*](../navigation/setup/route-navigation.md#set-target-point).  
+- Go to the main Android [*Menu → Configure map → POI overlay → Search*](../map/point-layers-on-map.md#points-of-interest-poi). 
 
 
 ## How to use
@@ -384,7 +384,7 @@ To save a custom filter, select everything you need, then:
 From the main screen:
 1. Tap on the agnifying glass to open the Search screen.
 2. Select the Categories tab.
-3. Choose the custom category : screen with search results will open.
+3. Choose the custom category: screen with search results will open.
 4. Tap on filter icon and then on Filter screen.
 5. Tap on the 3-dot icon.
 6. In the drop-down menu, select "Edit categories".
