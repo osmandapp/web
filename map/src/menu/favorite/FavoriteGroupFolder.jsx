@@ -13,6 +13,8 @@ import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { doSort } from '../actions/SortActions';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 import { changeIconSizeWpt, removeShadowFromIconWpt } from '../../map/markers/MarkerOptions';
+import { useDebouncedHash } from '../../util/hooks/useDebouncedHash';
+import { getCenterMapLoc } from '../../manager/MapManager';
 
 export default function FavoriteGroupFolder({ folder }) {
     const ctx = useContext(AppContext);
@@ -26,20 +28,7 @@ export default function FavoriteGroupFolder({ folder }) {
     const refMarkers = useRef(null);
 
     const hash = window.location.hash;
-    const debouncerTimer = useRef(0);
-    const [delayedHash, setDelayedHash] = useState(hash);
-
-    // debounce map move/scroll
-    useEffect(() => {
-        if (currentLoc === LOCATION_UNAVAILABLE) {
-            const timeout = Math.max(5000, 500 + markers.length * 5); // dynamic delay up to 5 seconds
-            debouncerTimer.current > 0 && clearTimeout(debouncerTimer.current);
-            debouncerTimer.current = setTimeout(() => {
-                debouncerTimer.current = 0;
-                setDelayedHash(hash);
-            }, timeout);
-        }
-    }, [hash]);
+    const delayedHash = useDebouncedHash(hash, 5000);
 
     // get markers
     useEffect(() => {
@@ -82,20 +71,6 @@ export default function FavoriteGroupFolder({ folder }) {
             setMarkers(updatedMarkers);
         }
     }, [currentLoc, delayedHash, refMarkers.current]);
-
-    function getCenterMapLoc() {
-        const parts = hash.split('/').slice(1);
-        if (parts.length === 2) {
-            const [lat, lng] = parts.map(parseFloat);
-            if (!isNaN(lat) && !isNaN(lng)) {
-                return {
-                    lat: lat,
-                    lng: lng,
-                };
-            }
-        }
-        return null;
-    }
 
     function addLocDist({ location, markers = null, wpts = null }) {
         let res = [];

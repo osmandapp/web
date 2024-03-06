@@ -74,6 +74,7 @@ const WeatherLayer = () => {
                                 checked={item.checked}
                             >
                                 <TileLayer
+                                    id={'se-weather-l-' + item.key}
                                     name={'weather-' + item.key}
                                     url={item.url}
                                     time={time}

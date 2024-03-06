@@ -2,6 +2,8 @@ import styles from '../../src/resources/mapStyles/styleRulesResult.json';
 import _ from 'lodash';
 import i18n from '../i18n';
 import Utils from '../util/Utils';
+import { Interaction } from 'chart.js';
+import { getRelativePosition } from 'chart.js/helpers';
 
 //road attributes
 export const HIGHWAY = 'highway';
@@ -482,5 +484,58 @@ function generatePastelColor(seed) {
     return `#${rgb.toString(16)}`;
 }
 
-const GraphManager = {};
+const mouseLine = {
+    id: 'mouseLine',
+    afterEvent: function (chart, e) {
+        const chartArea = chart.chartArea;
+        chart.options.mouseLine = {};
+        if (
+            e.event.x >= chartArea.left &&
+            e.event.y >= chartArea.top &&
+            e.event.x <= chartArea.right &&
+            e.event.y <= chartArea.bottom &&
+            chart._active.length > 0
+        ) {
+            chart.options.mouseLine = {};
+            chart.options.mouseLine.x = chart._active[0].element.x;
+        } else {
+            chart.options.mouseLine = {};
+            chart.options.mouseLine.x = NaN;
+        }
+    },
+    afterTooltipDraw: function (chart) {
+        const ctx = chart.ctx;
+        const chartArea = chart.chartArea;
+        const x = chart.options.mouseLine?.x;
+        if (!isNaN(x)) {
+            ctx.save();
+            ctx.moveTo(chart.options.mouseLine.x, chartArea.bottom);
+            ctx.lineTo(chart.options.mouseLine.x, chartArea.top);
+            ctx.strokeStyle = chart.options.mouseLine?.color || '#737D8C';
+            ctx.stroke();
+            ctx.restore();
+        }
+    },
+};
+
+function myCustomMode(chart, e, options, useFinalPosition) {
+    const position = getRelativePosition(e, chart);
+    const items = [];
+    Interaction.evaluateInteractionItems(chart, 'x', position, (element, datasetIndex, index) => {
+        //filter slope points and duplicates
+        if (
+            element.inXRange(position.x, useFinalPosition) &&
+            datasetIndex !== 2 &&
+            !items.some((i) => i.datasetIndex === datasetIndex)
+        ) {
+            items.push({ element, datasetIndex, index });
+        }
+    });
+    return items;
+}
+
+const GraphManager = {
+    mouseLine: mouseLine,
+    myCustomMode: myCustomMode,
+};
 export default GraphManager;

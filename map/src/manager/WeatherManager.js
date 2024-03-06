@@ -1,7 +1,22 @@
-import { Air, Cloud, Compress, Shower, Thermostat } from '@mui/icons-material';
 import React from 'react';
+import { ReactComponent as TemperatureIcon } from '../assets/icons/ic_action_thermometer.svg';
+import { ReactComponent as PressureIcon } from '../assets/icons/ic_action_air_pressure.svg';
+import { ReactComponent as WindIcon } from '../assets/icons/ic_action_wind.svg';
+import { ReactComponent as CloudIcon } from '../assets/icons/ic_action_clouds.svg';
+import { ReactComponent as PrecipitationIcon } from '../assets/icons/ic_action_precipitation.svg';
+import styles from '../menu/weather/weather.module.css';
+import i18n from '../i18n';
 import { apiGet } from '../util/HttpApi';
-import { OBJECT_TYPE_WEATHER } from '../context/AppContext';
+
+export const GFS_WEATHER_TYPE = 'gfs'; // step 1 hour, after 24 hours after the current time - 3 hours
+export const ECWMF_WEATHER_TYPE = 'ecmwf'; // step 3 hour, after 5 days after the current day - 6 hours
+
+export const MIN_WEATHER_DAYS = -2;
+export const MAX_WEATHER_DAYS = +7;
+export const LOCAL_STORAGE_WEATHER_LOC = 'weatherLoc';
+export const LOCAL_STORAGE_WEATHER_FORECAST_DAY = 'weatherForecastDay';
+export const LOCAL_STORAGE_WEATHER_FORECAST_WEEK = 'weatherForecastWeek';
+export const LOCAL_STORAGE_WEATHER_TYPE = 'weatherType';
 
 function getLayers() {
     let allLayers = {};
@@ -10,69 +25,58 @@ function getLayers() {
     return allLayers;
 }
 
-function getWeatherDate() {
-    // // "20211222_0600"
-    const searchParams = new URLSearchParams(window.location.search);
-    const weatherDateObj = new Date();
-    if (searchParams.get('date')) {
-        let weather_date = searchParams.get('date');
-        weatherDateObj.setUTCFullYear(parseInt(weather_date.slice(0, 4)));
-        weatherDateObj.setUTCMonth(parseInt(weather_date.slice(4, 6)) - 1);
-        weatherDateObj.setUTCDate(parseInt(weather_date.slice(6, 8)));
-        weatherDateObj.setUTCHours(parseInt(weather_date.slice(9, 11)));
-    }
-    weatherDateObj.setUTCMinutes(0);
-    weatherDateObj.setUTCSeconds(0);
-    return weatherDateObj;
-}
-
-async function displayWeatherForecast(ctx, setWeatherPoint, weatherType, setLoadingWeatherForecast = null) {
-    let lat = 0;
-    let lon = 0;
-    if (window.location.hash) {
-        let spl = window.location.hash.split('/');
-        if (spl.length > 1) {
-            lon = parseFloat(spl[spl.length - 1]);
-            lat = parseFloat(spl[spl.length - 2]);
-        }
-    }
-    setLoadingWeatherForecast && setLoadingWeatherForecast(true);
-    let data = { lat: lat, lon: lon };
-    const response = await apiGet(
-        `${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info?lat=${data.lat}&lon=${data.lon}&weatherType=${weatherType}&week=false`,
-        {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-        }
-    );
-    if (response.ok) {
-        data.day = await response.json();
-    }
-    const responseWeek = await apiGet(
-        `${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info?lat=${data.lat}&lon=${data.lon}&weatherType=${weatherType}&week=true`,
-        {
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-        }
-    );
-    if (responseWeek) {
-        setLoadingWeatherForecast && setLoadingWeatherForecast(false);
-    }
-    if (responseWeek.ok) {
-        data.week = await responseWeek.json();
-    }
-    setWeatherPoint(data);
-    let type = OBJECT_TYPE_WEATHER;
-    ctx.setCurrentObjectType(type);
-}
-
-function getWeatherLayers(type) {
+export function getWeatherLayers(type) {
     const layers = [
-        { key: 'temperature', name: 'Temperature', opacity: 0.5, iconComponent: <Thermostat fontSize="small" /> },
-        { key: 'pressure', name: 'Pressure', opacity: 0.6, iconComponent: <Compress fontSize="small" /> },
-        { key: 'wind', name: 'Wind', opacity: 0.6, iconComponent: <Air fontSize="small" /> },
-        { key: 'cloud', name: 'Cloud', opacity: 0.5, iconComponent: <Cloud fontSize="small" /> },
-        { key: 'precip', name: 'Precipitation', opacity: 0.7, iconComponent: <Shower fontSize="small" /> },
+        {
+            key: 'temperature',
+            name: () => i18n?.t('map_settings_weather_temp'),
+            opacity: 0.5,
+            icon: <TemperatureIcon className={styles.icon} />,
+            units: '°C',
+            mult: 1,
+            fixed: 1,
+            index: type === ECWMF_WEATHER_TYPE ? 2 : 3,
+        },
+        {
+            key: 'precip',
+            name: () => i18n?.t('map_settings_weather_precip'),
+            opacity: 0.7,
+            icon: <PrecipitationIcon className={styles.icon} />,
+            units: i18n?.t('weather_precip_mm'),
+            mult: 1000 * 1000,
+            fixed: 2,
+            index: type === ECWMF_WEATHER_TYPE ? 4 : 6,
+        },
+        {
+            key: 'wind',
+            name: () => i18n?.t('map_settings_weather_wind'),
+            opacity: 0.6,
+            icon: <WindIcon className={styles.icon} />,
+            units: i18n?.t('weather_wind_ms'),
+            mult: 1,
+            fixed: 2,
+            index: type === ECWMF_WEATHER_TYPE ? -1 : 5,
+        },
+        {
+            key: 'pressure',
+            name: () => i18n?.t('map_settings_weather_air_pressure'),
+            opacity: 0.6,
+            icon: <PressureIcon className={styles.icon} />,
+            units: i18n?.t('weather_pressure_mmhg'),
+            mult: 0.001,
+            fixed: 2,
+            index: type === ECWMF_WEATHER_TYPE ? 3 : 4,
+        },
+        {
+            key: 'cloud',
+            name: () => i18n?.t('map_settings_weather_cloud'),
+            opacity: 0.5,
+            icon: <CloudIcon className={styles.icon} />,
+            units: '%',
+            mult: 1,
+            fixed: 2,
+            index: type === ECWMF_WEATHER_TYPE ? -1 : 2,
+        },
     ];
     layers.map((item) => {
         item.url = getWeatherUrl(item.key, type);
@@ -89,10 +93,140 @@ function getWeatherUrl(layer, type) {
     return `${process.env.REACT_APP_WEATHER_URL}${type}/tiles/${layer}/{time}/{z}/{x}/{y}.png`;
 }
 
+export function updateWeatherTime(ctx, hours) {
+    const dt = new Date(ctx.weatherDate.getTime() + hours * 60 * 60 * 1000);
+    ctx.setWeatherDate(dt);
+}
+
+export function dayFormatter(date) {
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    return month + day;
+}
+
+export function timeFormatter(date) {
+    const hours = String(date.getUTCHours()).padStart(2, '0');
+    return hours + ':00';
+}
+
+export const currentDiffHours = (ctx, weatherDate) =>
+    Math.trunc(weatherDate.getTime() / (3600 * 1000)) - Math.trunc(new Date().getTime() / (3600 * 1000));
+
+export function getBaseStep(diffHours, ctx) {
+    if (ctx.weatherType === ECWMF_WEATHER_TYPE) {
+        return Math.abs(diffHours) + new Date().getUTCHours() >= 120 ? 6 : 3;
+    }
+    if (ctx.weatherType === GFS_WEATHER_TYPE) {
+        return Math.abs(diffHours) >= 24 ? 3 : 1;
+    }
+    return 0;
+}
+
+// align-backward (<0) align-forward (>0) else just align if needed
+export function getAlignedStep({ direction = null, weatherDate = null, ctx, diffHours = null, date = null }) {
+    if (!weatherDate) {
+        weatherDate = ctx.weatherDate;
+    }
+    if (!diffHours) {
+        diffHours = currentDiffHours(ctx, weatherDate);
+    }
+    if (!date) {
+        date = weatherDate;
+    }
+    const baseStep = getBaseStep(diffHours, ctx);
+    const baseStepWithDirection = direction < 0 ? -baseStep : direction > 0 ? +baseStep : 0;
+    const newHoursUTC = new Date(date.getTime() + baseStepWithDirection * 3600 * 1000).getUTCHours();
+    if (newHoursUTC % baseStep === 0) {
+        return baseStepWithDirection;
+    }
+    const currentHoursUTC = date.getUTCHours();
+    return direction < 0 ? -(currentHoursUTC % baseStep) : +(baseStep - (currentHoursUTC % baseStep));
+}
+
+export function addShowDetailsFlag(ctx, index) {
+    const newWeatherLayers = ctx.weatherLayers[ctx.weatherType].map((layerItem, layerIndex) => {
+        if (index === layerIndex) {
+            return { ...layerItem, showDetails: true };
+        }
+        return layerItem;
+    });
+    ctx.setWeatherLayers({ ...ctx.weatherLayers, [ctx.weatherType]: newWeatherLayers });
+}
+
+export function clearShowDetailsFlag(ctx) {
+    const newWeatherLayers = ctx.weatherLayers[ctx.weatherType].map((layerItem) => {
+        if (layerItem.showDetails) {
+            const newLayerItem = { ...layerItem };
+            delete newLayerItem.showDetails;
+            return newLayerItem;
+        }
+        return layerItem;
+    });
+    ctx.setWeatherLayers({ ...ctx.weatherLayers, [ctx.weatherType]: newWeatherLayers });
+}
+
+export const fetchDayForecast = async ({ point, ctx, setDayForecast = null }) => {
+    const loc = {
+        lat: point.lat.toFixed(6),
+        lon: point.lng.toFixed(6),
+    };
+    const responseDay = await apiGet(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info`, {
+        apiCache: true,
+        params: {
+            lat: loc.lat,
+            lon: loc.lon,
+            weatherType: ctx.weatherType,
+        },
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+    });
+    if (responseDay.ok) {
+        const forecast = await responseDay.json();
+        localStorage.setItem(LOCAL_STORAGE_WEATHER_FORECAST_DAY, JSON.stringify(forecast));
+        if (setDayForecast) {
+            setDayForecast(forecast);
+        }
+    }
+};
+
+export const fetchWeekForecast = async ({ point, ctx, setWeekForecast = null }) => {
+    const loc = {
+        lat: point.lat.toFixed(6),
+        lon: point.lng.toFixed(6),
+    };
+    const responseWeek = await apiGet(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info`, {
+        apiCache: true,
+        params: {
+            lat: loc.lat,
+            lon: loc.lon,
+            weatherType: ctx.weatherType,
+            week: true,
+        },
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+    });
+    if (responseWeek.ok) {
+        const forecast = await responseWeek.json();
+        localStorage.setItem(LOCAL_STORAGE_WEATHER_FORECAST_WEEK, JSON.stringify(forecast));
+        if (setWeekForecast) {
+            setWeekForecast(forecast);
+        }
+    }
+};
+
+export function changedWeatherType(weatherType) {
+    if (weatherType) {
+        let type = localStorage.getItem(LOCAL_STORAGE_WEATHER_TYPE);
+        if (type !== weatherType) {
+            localStorage.setItem(LOCAL_STORAGE_WEATHER_TYPE, weatherType);
+            return true;
+        }
+    }
+    return false;
+}
+
 const WeatherManager = {
     getLayers,
-    getWeatherDate,
-    displayWeatherForecast,
 };
 
 export default WeatherManager;

@@ -2,7 +2,7 @@ import { Chart } from 'react-chartjs-2';
 import { Box, Slider, SliderThumb } from '@mui/material';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import _ from 'lodash';
-import {
+import GraphManager, {
     cap,
     checkNextSegment,
     DISTANCE,
@@ -50,41 +50,6 @@ const useStyles = makeStyles({
         '& .MuiSlider-valueLabel': { fontSize: '8px' },
     },
 });
-
-const mouseLine = {
-    id: 'mouseLine',
-    afterEvent: function (chart, e) {
-        const chartArea = chart.chartArea;
-        chart.options.mouseLine = {};
-        if (
-            e.event.x >= chartArea.left &&
-            e.event.y >= chartArea.top &&
-            e.event.x <= chartArea.right &&
-            e.event.y <= chartArea.bottom &&
-            chart._active.length > 0
-        ) {
-            chart.options.mouseLine = {};
-            chart.options.mouseLine.x = chart._active[0].element.x;
-        } else {
-            chart.options.mouseLine = {};
-            chart.options.mouseLine.x = NaN;
-        }
-    },
-    afterTooltipDraw: function (chart) {
-        const ctx = chart.ctx;
-        const chartArea = chart.chartArea;
-        const x = chart.options.mouseLine?.x;
-        if (!isNaN(x)) {
-            ctx.save();
-            //ctx.lineWidth = 2;
-            ctx.moveTo(chart.options.mouseLine.x, chartArea.bottom);
-            ctx.lineTo(chart.options.mouseLine.x, chartArea.top);
-            ctx.strokeStyle = '#f8931c';
-            ctx.stroke();
-            ctx.restore();
-        }
-    },
-};
 
 ChartJS.register(
     Tooltip,
@@ -610,7 +575,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                     style={{ fontSize: 10 }}
                     data={graphData}
                     options={options}
-                    plugins={[mouseLine]}
+                    plugins={[GraphManager.mouseLine]}
                     onMouseMove={(e) => onMouseMoveGraph(e, chartRef)}
                     onMouseLeave={() => hideSelectedPoint()}
                 />

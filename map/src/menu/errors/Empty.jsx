@@ -7,7 +7,7 @@ import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import EmptyLogin from './EmptyLogin';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 
-export default function Empty({ title, text, folder = null, menu = null }) {
+export default function Empty({ title, text, folder = null, menu = null, checkLogin = true }) {
     const ctx = useContext(AppContext);
 
     function showImportBtn() {
@@ -30,9 +30,16 @@ export default function Empty({ title, text, folder = null, menu = null }) {
         return text;
     }
 
+    function checkLoginUser() {
+        if (checkLogin) {
+            return ctx.loginUser;
+        }
+        return true;
+    }
+
     return (
         <>
-            {ctx.loginUser ? (
+            {checkLoginUser() ? (
                 <Box className={styles.block} id="se-empty-page">
                     <Icon className={styles.icon}>
                         <EmptyIcon className={styles.icon} />
