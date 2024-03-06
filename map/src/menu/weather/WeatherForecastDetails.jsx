@@ -203,7 +203,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                                 <Typography className={styles.weekItemNight}>
                                     {data?.night[currentWeatherType].avg}
                                 </Typography>
-                                <Typography className={styles.weekItemNight}>
+                                <Typography className={styles.weekItemUnit}>
                                     {data?.day[currentWeatherType].units}
                                 </Typography>
                             </div>
