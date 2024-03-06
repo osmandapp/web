@@ -3,7 +3,7 @@
 // import { strict as assert } from 'node:assert';
 import { Condition, By, logging } from 'selenium-webdriver';
 
-import { driver, debug, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED, HIDDEN_TIMEOUT } from './options.mjs';
+import { driver, verbose, debug, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED, HIDDEN_TIMEOUT } from './options.mjs';
 import actionIdleWait from './actions/actionIdleWait.mjs';
 
 // helpers
@@ -41,7 +41,7 @@ export async function enclose(callback, { tag = 'enclose', optional = false } = 
         if (optional === true) {
             return null;
         }
-        await logBrowserAndNetworkErrors(driver);
+        verbose && (await logBrowserAndNetworkErrors(driver));
         throw error;
     }
 }
@@ -94,7 +94,7 @@ export async function waitBy(by, { optional = false, idle = false } = {}) {
         if (optional === true) {
             return null;
         }
-        await logBrowserAndNetworkErrors(driver);
+        verbose && (await logBrowserAndNetworkErrors(driver));
         throw error;
     }
 }
@@ -328,12 +328,13 @@ export async function checkElementByCss(searchString, exist = true) {
         );
         debug && console.log(`Condition met for element (${searchString})`);
     } catch (error) {
-        await logBrowserAndNetworkErrors(driver);
+        verbose && (await logBrowserAndNetworkErrors(driver));
         debug && console.log(`Condition not met for element (${searchString})`);
     }
 }
 
 async function logBrowserAndNetworkErrors(driver) {
+    console.warn('\n');
     const browserLogs = await driver.manage().logs().get(logging.Type.BROWSER);
     if (browserLogs && browserLogs.length > 0) {
         console.warn('--- Browser Console Logs ---');
@@ -356,4 +357,5 @@ async function logBrowserAndNetworkErrors(driver) {
     } else {
         console.warn('No network errors logged.');
     }
+    console.warn('\n' + 'Current URL:', await driver.getCurrentUrl(), '\n');
 }
