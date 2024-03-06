@@ -6,6 +6,7 @@ import AppContext, {
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_WEATHER,
     OBJECT_TYPE_POI,
+    isRouteTrack,
 } from '../../context/AppContext';
 import React, { useState, useContext, useEffect, useCallback } from 'react';
 import { TabContext, TabList } from '@mui/lab';
@@ -129,7 +130,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                     tObj = new PoiTabList().create();
                 } else if (ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_ALONE) {
                     // don't display InfoBlock in Navigation menu until details requested
-                } else if (ctx.selectedGpxFile && (isCloudTrack(ctx) || isLocalTrack(ctx))) {
+                } else if (ctx.selectedGpxFile && (isCloudTrack(ctx) || isLocalTrack(ctx) || isRouteTrack(ctx))) {
                     // finally assume that default selectedGpxFile is a track
                     tObj = new TrackTabList().create(ctx, setShowInfoBlock);
                 }
