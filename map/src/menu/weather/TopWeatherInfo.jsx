@@ -3,20 +3,22 @@ import i18n from 'i18next';
 import React, { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import styles from '../weather/weather.module.css';
+import * as locales from 'date-fns/locale';
+import { format } from 'date-fns';
 
 export default function TopWeatherInfo({ headerForecast = null, weatherLoc = null, useWeatherDate = false }) {
     const ctx = useContext(AppContext);
 
     function getSubInfo() {
         if (useWeatherDate) {
-            return `${ctx.weatherDate.toLocaleString(i18n.language, { weekday: 'long' })}, ${ctx.weatherDate.toLocaleString(
-                i18n.language,
-                {
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    hour12: false,
-                }
-            )}`;
+            const locale = locales[i18n.language] || locales.enUS;
+            let formattedDay = format(ctx.weatherDate, 'eeee', { locale });
+            formattedDay = formattedDay.charAt(0).toUpperCase() + formattedDay.slice(1);
+            return `${formattedDay}, ${ctx.weatherDate.toLocaleString(i18n.language, {
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false,
+            })}`;
         } else {
             return 'Current location';
         }
