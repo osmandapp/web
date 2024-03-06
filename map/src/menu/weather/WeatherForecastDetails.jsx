@@ -216,7 +216,12 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
     };
 
     return (
-        <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+        <Box
+            id="se-weather-forecast-details"
+            minWidth={ctx.infoBlockWidth}
+            maxWidth={ctx.infoBlockWidth}
+            sx={{ overflow: 'hidden' }}
+        >
             <WeatherHeader setShowInfoBlock={setShowInfoBlock} isDetails={true} />
             <TopWeatherInfo weatherLoc={weatherLoc} />
             <Box className={styles.forecastButtonBox}>
@@ -228,14 +233,17 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                 <Loading />
             ) : !isDisabledType ? (
                 <>
-                    <Box sx={{ px: '16px' }}>
+                    <Box id="se-weather-forecast-graph" sx={{ px: '16px' }}>
                         <ForecastGraph
                             data={forecastPreparedData}
                             weatherType={currentWeatherType}
                             weatherUnits={currentWeatherUnits}
                         />
                     </Box>
-                    <Box sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 450}px` }}>
+                    <Box
+                        id="se-weather-forecast-week-details"
+                        sx={{ overflowX: 'hidden', overflowY: 'auto !important', maxHeight: `${height - 450}px` }}
+                    >
                         {currentWeatherType !== null &&
                             Object.entries(forecastPreparedData).map(([key, value], index) => (
                                 <ForecastWeekItem day={key} data={value} key={index} index={index} />

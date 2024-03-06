@@ -41,7 +41,7 @@ export default function WeatherInfo() {
     }, [ctx.weatherDate, ctx.setWeatherDate, ctx.setWeatherLayers]);
 
     return (
-        <ListItem className={styles.weatherInfoBlock}>
+        <ListItem id="se-weather-info" className={styles.weatherInfoBlock}>
             <Typography className={styles.weatherInfo}>{`Weather generated: ${resultText}`}</Typography>
         </ListItem>
     );

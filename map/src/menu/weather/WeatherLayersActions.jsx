@@ -55,7 +55,7 @@ const WeatherLayersActions = forwardRef((props, ref) => {
     return (
         <>
             <Box ref={ref}>
-                <Paper id="se-weather-actions" className={styles.actions}>
+                <Paper id="se-weather-layers-actions" className={styles.actions}>
                     <FormControl sx={{ width: '257px' }}>
                         <MenuItem className={weatherStyles.titleItem}>
                             <Typography className={weatherStyles.titleText} noWrap>
@@ -72,6 +72,7 @@ const WeatherLayersActions = forwardRef((props, ref) => {
                                     labelPlacement="start"
                                     control={
                                         <Checkbox
+                                            id={'se-weather-layer-' + index}
                                             className={weatherStyles.checkbox}
                                             size="small"
                                             disabled={disableLayers(item)}

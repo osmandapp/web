@@ -5,6 +5,7 @@ import { By } from 'selenium-webdriver';
 import { deleteFavGroup, getFiles, uploadFavorites } from '../util.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import actionOpenFavorites from '../actions/actionOpenFavorites.mjs';
+import actionDeleteAllFavorites from '../actions/actionDeleteAllFavorites.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -18,12 +19,7 @@ export default async function test() {
 
     await actionOpenFavorites();
 
-    // delete old group when need
-    const exist = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`), { optional: true, idle: true });
-    if (exist) {
-        await deleteFavGroup(shortFavGroupName);
-        await waitBy(By.id('se-empty-page'));
-    }
+    await actionDeleteAllFavorites(favorites);
 
     // import new group
     await clickBy(By.id('se-import-fav-group'));

@@ -27,7 +27,7 @@ export default function TopWeatherInfo({ headerForecast = null, weatherLoc = nul
             <div className={styles.topContainer}>
                 <div>
                     {weatherLoc && (
-                        <Typography variant="body2" noWrap className={styles.address}>
+                        <Typography id="se-weather-location" variant="body2" noWrap className={styles.address}>
                             {weatherLoc.address?.cityLocalNames[i18n.language]}
                         </Typography>
                     )}

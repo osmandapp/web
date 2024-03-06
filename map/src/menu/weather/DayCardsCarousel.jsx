@@ -103,6 +103,7 @@ export default function DayCardsCarousel() {
                     let currentDay = new Date(key);
                     return (
                         <ListItemButton
+                            id={'se-weather-day-item-' + index}
                             key={index}
                             className={setDayStyles(currentDay)}
                             onClick={() => {

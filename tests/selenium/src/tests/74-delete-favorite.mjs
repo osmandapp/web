@@ -5,6 +5,7 @@ import { By } from 'selenium-webdriver';
 import { deleteFavGroup, getFiles, uploadFavorites } from '../util.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import actionOpenFavorites from '../actions/actionOpenFavorites.mjs';
+import actionDeleteAllFavorites from '../actions/actionDeleteAllFavorites.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -14,17 +15,17 @@ export default async function test() {
     const shortFavGroupName = 'shops';
     const wptName = 'Test wpt';
 
-    await actionOpenFavorites();
+    const favorites = getFiles({ folder: 'favorites' });
 
-    const exist = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`), { optional: true, idle: true });
-    if (!exist) {
-        const favorites = getFiles({ folder: 'favorites' });
-        const { path } = favorites.find((t) => t.name === favGroupName);
-        // create folder
-        await clickBy(By.id('se-import-fav-group'));
-        await uploadFavorites({ files: path });
-        await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
-    }
+    await actionOpenFavorites();
+    await actionDeleteAllFavorites(favorites);
+
+    const { path } = favorites.find((t) => t.name === favGroupName);
+    // create folder
+    await clickBy(By.id('se-import-fav-group'));
+    await uploadFavorites({ files: path });
+    await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
+
     // open edit dialog
     await clickBy(By.id(`se-menu-fav-${shortFavGroupName}`));
     await waitBy(By.id(`se-opened-fav-group-${shortFavGroupName}`));

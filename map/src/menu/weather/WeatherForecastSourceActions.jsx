@@ -51,7 +51,7 @@ const WeatherForecastSourceActions = forwardRef(({ setOpenActions = null }, ref)
     return (
         <>
             <Box ref={ref}>
-                <Paper id="se-weather-actions" className={styles.actions}>
+                <Paper id="se-weather-source-actions" className={styles.actions}>
                     <MenuItem className={weatherStyles.titleItem}>
                         <Typography className={weatherStyles.titleText} noWrap>
                             Source

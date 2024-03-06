@@ -44,7 +44,7 @@ export default function WeatherHeader({ setShowInfoBlock = null, isDetails = fal
                     >
                         {isDetails ? <BackIcon /> : <CloseIcon />}
                     </IconButton>
-                    <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
+                    <Typography id="se-weather-menu-name" component="div" className={headerStyles.title}>
                         {isDetails ? t('web:forecast_details') : t('shared_string_weather')}
                     </Typography>
                     <Tooltip key={'forecast_source'} title={t('web:forecast_source')} arrow placement="bottom-end">
@@ -64,7 +64,7 @@ export default function WeatherHeader({ setShowInfoBlock = null, isDetails = fal
                     <Tooltip key={'weather_layers'} title={t('web:weather_layers')} arrow placement="bottom-end">
                         <span>
                             <IconButton
-                                id="se-weather_layers"
+                                id="se-weather-layers"
                                 variant="contained"
                                 type="button"
                                 className={headerStyles.appBarIcon}
