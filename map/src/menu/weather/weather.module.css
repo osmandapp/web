@@ -165,6 +165,8 @@
 }
 .forecastButtonItem {
     height: 36px !important;
+    min-width: 48px !important;
+    max-width: 48px !important;
     padding: 0px 12px !important;
     justify-content: center !important;
     align-items: center !important;
@@ -174,6 +176,8 @@
 }
 .forecastButtonItemSelected {
     height: 36px !important;
+    min-width: 48px !important;
+    max-width: 48px !important;
     padding: 0px 11px !important;
     justify-content: center !important;
     align-items: center !important;
@@ -185,6 +189,9 @@
     .icon {
         fill: #237bff !important;
     }
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
     min-width: 24px !important;
     max-width: 24px !important;
 }
@@ -192,6 +199,9 @@
     .icon {
         fill: #212121 !important;
     }
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
     min-width: 24px !important;
     max-width: 24px !important;
 }

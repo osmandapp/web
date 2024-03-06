@@ -1,4 +1,4 @@
-import { Box, Divider, Icon, ListItemButton, ListItemText, MenuItem, Typography } from '@mui/material';
+import { Box, Button, Divider, Icon, ListItemText, MenuItem, Typography } from '@mui/material';
 import WeatherHeader from './WeatherHeader';
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import AppContext from '../../context/AppContext';
@@ -159,7 +159,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
 
     const ForecastButtonItem = ({ item, index }) => {
         return (
-            <ListItemButton
+            <Button
                 key={index}
                 className={setForecastButtonStyles(item)}
                 disabled={item.index === -1}
@@ -169,7 +169,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                 }}
             >
                 <Icon className={setForecastButtonIconStyles(item)}>{item.icon}</Icon>
-            </ListItemButton>
+            </Button>
         );
     };
 
