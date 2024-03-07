@@ -1,6 +1,6 @@
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
-import { clickBy, enclose, matchTextBy, waitBy } from '../lib.mjs';
+import { clickBy, enclose, matchTextBy, waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { deleteFavGroup, getFiles, uploadFavorites } from '../util.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
@@ -28,6 +28,7 @@ export default async function test() {
     await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
     // open edit dialog
     await clickBy(By.id(`se-menu-fav-${shortFavGroupName}`));
+    await waitByRemoved(By.id(`se-menu-fav-${shortFavGroupName}`));
     await waitBy(By.id(`se-opened-fav-group-${shortFavGroupName}`));
 
     await clickBy(By.id(`se-actions-${wptName}`));
