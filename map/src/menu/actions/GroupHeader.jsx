@@ -115,7 +115,7 @@ export default function GroupHeader({
                             variant="contained"
                             type="button"
                             className={styles.appBarIcon}
-                            onClick={() => closeHeader(ctx)}
+                            onClick={() => closeHeader({ ctx })}
                         >
                             <CloseIcon />
                         </IconButton>

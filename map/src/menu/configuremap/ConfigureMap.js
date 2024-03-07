@@ -58,7 +58,7 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
                         variant="contained"
                         type="button"
                         className={styles.closeIcon}
-                        onClick={() => closeHeader(ctx)}
+                        onClick={() => closeHeader({ ctx })}
                     >
                         <CloseIcon />
                     </IconButton>
