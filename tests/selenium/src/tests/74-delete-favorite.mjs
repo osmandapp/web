@@ -28,6 +28,7 @@ export default async function test() {
 
     // open edit dialog
     await clickBy(By.id(`se-menu-fav-${shortFavGroupName}`));
+    await waitByRemoved(By.id(`se-menu-fav-${shortFavGroupName}`));
     await waitBy(By.id(`se-opened-fav-group-${shortFavGroupName}`));
 
     await clickBy(By.id(`se-actions-${wptName}`));

@@ -67,7 +67,7 @@ export default function FavoriteGroupFolder({ folder }) {
                 setMarkers(updatedMarkers);
             }
         } else if (currentLoc && currentLoc === LOCATION_UNAVAILABLE && refMarkers.current.length > 0) {
-            const updatedMarkers = addLocDist({ location: getCenterMapLoc(), markers: refMarkers.current });
+            const updatedMarkers = addLocDist({ location: getCenterMapLoc(hash), markers: refMarkers.current });
             setMarkers(updatedMarkers);
         }
     }, [currentLoc, delayedHash, refMarkers.current]);

@@ -8,7 +8,7 @@ export default async function test(favorites) {
         if (prevName && prevName !== '') {
             await waitByRemoved(By.id(`se-menu-fav-${prevName}`));
         }
-        const shortFavGroupName = f.name.split('-')[1];
+        const shortFavGroupName = f.name?.replace('favorites-', '');
         const exist = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`), { optional: true, idle: true });
         if (exist) {
             await deleteFavGroup(shortFavGroupName);
