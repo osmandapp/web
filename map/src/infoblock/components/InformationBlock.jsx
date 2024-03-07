@@ -119,9 +119,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                 let tObj;
                 setPrevTrack(ctx.selectedGpxFile);
                 ctx.setUpdateInfoBlock(false);
-                if (isCloudTrack(ctx) && ctx.selectedGpxFile?.tracks) {
-                    tObj = new TrackTabList().create(ctx, setShowInfoBlock);
-                } else if (isValidWeatherObj()) {
+                if (isValidWeatherObj()) {
                     setOpenWeatherForecastDetails(true);
                     setShowInfoBlock(true);
                 } else if (ctx.currentObjectType === OBJECT_TYPE_FAVORITE) {
@@ -176,66 +174,63 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
         }
     }
 
-    const TabsInfo = () => {
-        return (
-            <Box
-                anchor={'right'}
-                sx={{ alignContent: 'flex-end', height: 'auto', width: getWidth(), overflowX: 'hidden' }}
-            >
-                <div id="se-infoblock-all">
-                    {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
-                    <IconButton
-                        id={'se-button-back'}
-                        size="small"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        className={styles.appBarIcon}
-                        sx={{ mx: '11px', my: '11px' }}
-                        onClick={() => {
-                            setShowInfoBlock(false);
-                            ctx.setCurrentObjectType(null);
-                        }}
-                    >
-                        <BackIcon />
-                    </IconButton>
-                    {tabsObj && tabsObj.tabList.length > 0 && (
-                        <TabContext value={value}>
-                            <AppBar position="static" color="default">
-                                <div>
-                                    <TabList
-                                        variant="scrollable"
-                                        scrollButtons
-                                        onChange={(e, newValue) => setValue(newValue)}
-                                    >
-                                        {tabsObj.tabList}
-                                    </TabList>
-                                </div>
-                            </AppBar>
-                            <div>
-                                {Object.values(tabsObj.tabs).map((item) => (
-                                    <PersistentTabPanel
-                                        key={'tabpanel-desktop:' + item.key}
-                                        selectedTabId={value}
-                                        tabId={item.key}
-                                    >
-                                        {item}
-                                    </PersistentTabPanel>
-                                ))}
-                            </div>
-                        </TabContext>
-                    )}
-                </div>
-            </Box>
-        );
-    };
-
     return (
         <>
             {showInfoBlock && (
                 <>
-                    {tabsObj && <TabsInfo />}
-                    {openWeatherForecastDetails && <WeatherForecastDetails setShowInfoBlock={setShowInfoBlock} />}
+                    {openWeatherForecastDetails ? (
+                        <WeatherForecastDetails setShowInfoBlock={setShowInfoBlock} />
+                    ) : (
+                        <Box
+                            anchor={'right'}
+                            sx={{ alignContent: 'flex-end', height: 'auto', width: getWidth(), overflowX: 'hidden' }}
+                        >
+                            <div id="se-infoblock-all">
+                                {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
+                                <IconButton
+                                    id={'se-button-back'}
+                                    size="small"
+                                    edge="start"
+                                    color="inherit"
+                                    aria-label="menu"
+                                    className={styles.appBarIcon}
+                                    sx={{ mx: '11px', my: '11px' }}
+                                    onClick={() => {
+                                        setShowInfoBlock(false);
+                                        ctx.setCurrentObjectType(null);
+                                    }}
+                                >
+                                    <BackIcon />
+                                </IconButton>
+                                {tabsObj && tabsObj.tabList.length > 0 && (
+                                    <TabContext value={value}>
+                                        <AppBar position="static" color="default">
+                                            <div>
+                                                <TabList
+                                                    variant="scrollable"
+                                                    scrollButtons
+                                                    onChange={(e, newValue) => setValue(newValue)}
+                                                >
+                                                    {tabsObj.tabList}
+                                                </TabList>
+                                            </div>
+                                        </AppBar>
+                                        <div>
+                                            {Object.values(tabsObj.tabs).map((item) => (
+                                                <PersistentTabPanel
+                                                    key={'tabpanel-desktop:' + item.key}
+                                                    selectedTabId={value}
+                                                    tabId={item.key}
+                                                >
+                                                    {item}
+                                                </PersistentTabPanel>
+                                            ))}
+                                        </div>
+                                    </TabContext>
+                                )}
+                            </div>
+                        </Box>
+                    )}
                 </>
             )}
         </>
