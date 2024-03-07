@@ -449,6 +449,7 @@ export default function GeneralInfo({ width }) {
                                         {`Elevation (Satellite): ${elevationSRTM}`}
                                         {elevationSRTM === '' && loadingSrtm === false && (
                                             <Link
+                                                id={'se-link-srtm'}
                                                 href="#"
                                                 color="inherit"
                                                 onClick={() => {
