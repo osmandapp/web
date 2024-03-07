@@ -6,7 +6,6 @@ import { deleteFavGroup, getFiles, uploadFavorites } from '../util.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import actionOpenFavorites from '../actions/actionOpenFavorites.mjs';
 import actionDeleteAllFavorites from '../actions/actionDeleteAllFavorites.mjs';
-import actionIdleWait from '../actions/actionIdleWait.mjs';
 
 export default async function test() {
     await actionOpenMap();
