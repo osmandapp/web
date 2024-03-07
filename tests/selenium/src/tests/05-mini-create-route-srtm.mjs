@@ -11,10 +11,7 @@ const routes = [
         A: '50.49321, 30.52429',
         B: '50.49639, 30.51174',
         hasAttributes: false,
-        strings: [
-            'Route: 1.3 km, 0:07 min.',
-            '100 / 101 / 103 m',
-        ],
+        strings: ['Route: 1.3 km, 0:07 min.', '100 / 101 / 103 m'],
         srtm: 'Elevation (Satellite): 101 / 102 / 103 m',
     },
     {
@@ -23,10 +20,7 @@ const routes = [
         A: '50.49321, 30.52429',
         B: '50.49631, 30.51184',
         hasAttributes: false,
-        strings: [
-            'Route: 1.4 km, 0:04 min.',
-            '100 / 101 / 103 m',
-        ],
+        strings: ['Route: 1.4 km, 0:04 min.', '100 / 101 / 103 m'],
         srtm: 'Elevation (Satellite): 101 / 101 / 103 m',
     },
 ];
@@ -35,7 +29,7 @@ export default async function test() {
     await actionOpenMap();
     await clickBy(By.id('se-show-menu-navigation'));
 
-    for await (const { type, profile, strings, turns, A, B, srtm } of routes) {
+    for await (const { type, profile, strings, A, B, srtm } of routes) {
         await clickBy(By.id('se-clear-route-start-point'));
         await clickBy(By.id('se-clear-route-finish-point'));
 
