@@ -130,7 +130,7 @@ export async function loadProviders({ parseQueryString = false } = {}) {
     if (parseQueryString) {
         const searchParams = new URLSearchParams(window.location.search);
 
-        const type = searchParams.get('type') || 'osmand';
+        const type = searchParams.get('type') ?? 'osmand';
         const profile = searchParams.get('profile');
 
         if (type && profile) {
