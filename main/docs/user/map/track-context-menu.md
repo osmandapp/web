@@ -224,9 +224,10 @@ _Calculate elevation_ button → [_Attach to the roads_](../navigation/setup/gpx
 
 This feature allows you to calculate Elevation profile for GPX track offline for any area between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../plugins/contour-lines.md#how-to-download) (**Terrain maps (3D) should be predownloaded**):
 
-1. Check that you have [OsmAnd Pro subscription](../purchases/android.md#pro-features).
-2. Download [Terrain maps(3D)](../plugins/contour-lines.md#download-maps) for needed region.
-3. For a track without Altitude data:
+**1.** Check that you have [OsmAnd Pro subscription](../purchases/android.md#pro-features).
+**2.** Download [Terrain maps(3D)](../plugins/contour-lines.md#download-maps) for needed region.
+**3.** In 3.1 - manual for a track without altitude data. In 3.2 - manual for ["Plan a route" tool](../plan-route/create-route.md#graph):
+**3.1** For a track without Altitude data:
 _Track Context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude,calculate_offline"/>_
 
 ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png) ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png)
@@ -235,7 +236,7 @@ You receive the next graph of your track:
 
 ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)
 
-4. For ["Plan a route" tool](../plan-route/create-route.md#graph), when you use "Straight line" profile for a route creation:
+**3.2** For ["Plan a route" tool](../plan-route/create-route.md#graph), when you use "Straight line" profile for a route creation:
 
 ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_5.png)
 
