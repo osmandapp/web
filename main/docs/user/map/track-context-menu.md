@@ -225,8 +225,11 @@ _Calculate elevation_ button → [_Attach to the roads_](../navigation/setup/gpx
 This feature allows you to calculate Elevation profile for GPX track offline for any area between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../plugins/contour-lines.md#how-to-download) (**Terrain maps (3D) should be predownloaded**):
 
 **1.** Check that you have [OsmAnd Pro subscription](../purchases/android.md#pro-features).
+
 **2.** Download [Terrain maps(3D)](../plugins/contour-lines.md#download-maps) for needed region.
+
 **3.** In 3.1 - manual for a track without altitude data. In 3.2 - manual for ["Plan a route" tool](../plan-route/create-route.md#graph):
+
 **3.1** For a track without Altitude data:
 _Track Context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude,calculate_offline"/>_
 
