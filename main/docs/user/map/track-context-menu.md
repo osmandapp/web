@@ -195,7 +195,7 @@ This tab can be visible only on recorded tracks (points of this track type have 
 ![Track graph altitude Android](@site/static/img/personal/tracks/track_graph_altitude_android.png) ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation.png) 
 
 If track is missing elevation information, it's possible to add it:
-_Calculate elevation_ button → [_Attach to the roads_](../navigation/setup/gpx-navigation.md#attach-to-roads) or [_Calculate offline_](#calculate-elevation).
+_Calculate elevation_ button → [_Attach to the roads_](../navigation/setup/gpx-navigation.md#attach-to-roads) or [_Calculate offline_](#calculate-elevation-offline).
 
 </TabItem>
 
@@ -212,17 +212,55 @@ _Calculate elevation_ button → [_Attach to the roads_](../navigation/setup/gpx
 - *<Translate android="true" ids="altitude_ascent"/>* - cumulative altitude gain along the track.
 - *<Translate android="true" ids="altitude_descent"/>* - cumulative altitude loss along the track.  
 
-### Calculate elevation
+### Calculate elevation offline
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 :::note
 <ProFeature/> Calculate elevation offline feature is only available for <a href="https://osmand.net/docs/user/purchases/android#pro-features"> OsmAnd Pro subscribers</a>.
 :::
 
-This feature allows you to calculate Elevation profile for GPX track offline for any area between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../plugins/contour-lines.md#how-to-download) (Terrain maps (3D) should be predownloaded):  
+This feature allows you to calculate Elevation profile for GPX track offline for any area between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../plugins/contour-lines.md#how-to-download) (**Terrain maps (3D) should be predownloaded**):
 
-_Track Context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,calculating_altitude,calculate_offline"/>_
+1. Check that you have [OsmAnd Pro subscription](../purchases/android.md#pro-features).
+2. Download [Terrain maps(3D)](../plugins/contour-lines.md#download-maps) for needed region.
+3. For a track without Altitude data:
+_Track Context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude,calculate_offline"/>_
 
 ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png) ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png)
+
+You receive the next graph of your track:
+
+![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)
+
+4. For ["Plan a route" tool](../plan-route/create-route.md#graph), when you use "Straight line" profile for a route creation:
+
+![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_5.png)
+
+Below of _Graph menu_ section you find "Calculate elevation": 
+
+![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_6.png)
+
+Click to this button for open "Get elevation data". Here you need to choose "Calculate offline":
+
+![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_7.png)
+
+You receive full Altitude/Slope Graph for your route:
+
+![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_8.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly />
+
+</TabItem>
+
+</Tabs>
+
 
 
 

@@ -505,7 +505,7 @@ Detailed route information in [Altitude/Slope graph](../navigation/setup/route-d
 
 To get elevation data when you open or import a track, you may need to select a route calculation mode.  
 - [*Attach to the roads*](#attach-to-the-roads). The track will be attached to roads using offline maps and the track geometry can be changed.  
-- **Calculate offline** (*Android only*). Calculate altitude offline based on Terrain map (3D) data. The difference between the altitude recorded by your device can be used for altitude correction.  
+- [**Calculate offline**](../map/track-context-menu.md#calculate-elevation-offline) (*Android only*). Calculate altitude offline based on Terrain map (3D) data. The difference between the altitude recorded by your device can be used for altitude correction.  
 
 
 ### Attach to the roads
