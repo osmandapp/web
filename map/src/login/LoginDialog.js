@@ -247,6 +247,12 @@ export default function LoginDialog() {
                             sx={{ backgroundColor: '#ff595e !important', ml: 3, mb: '10px' }}
                             onClick={() => {
                                 setDeleteAccountFlag(true);
+                                AccountManager.sendCode({
+                                    email: ctx.loginUser,
+                                    action: AccountManager.DELETE_EMAIL_MSG,
+                                    setEmailError,
+                                    lang,
+                                }).then();
                             }}
                         >
                             Delete your account
@@ -264,6 +270,7 @@ export default function LoginDialog() {
                             onClick={() => {
                                 setChangeEmailFlag(true);
                                 AccountManager.sendCode({
+                                    email: ctx.loginUser,
                                     action: AccountManager.CHANGE_EMAIL_MSG,
                                     setEmailError,
                                     lang,
