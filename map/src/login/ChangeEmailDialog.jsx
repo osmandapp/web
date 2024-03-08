@@ -29,33 +29,29 @@ export default function ChangeEmailDialog({ setChangeEmailFlag }) {
     const classes = useStyles();
 
     const [newEmail, setNewEmail] = useState(null);
-    const [code, setCode] = useState(null);
-    const [codeConfirmed, setCodeConfirmed] = useState(null);
+    const [oldCode, setOldCode] = useState(null);
+    const [newCode, setNewCode] = useState(null);
+    const [oldCodeConfirmed, setOldCodeConfirmed] = useState(null);
     const [emailError, setEmailError] = useState('');
     const [emailChanged, setEmailChanged] = useState(false);
 
     function handleNext() {
         setEmailError('');
-        if (code && !newEmail) {
-            AccountManager.confirmCode(newEmail, code, setEmailError).then((confirm) => {
-                if (confirm) {
-                    setCode(null);
-                    setCodeConfirmed(true);
-                }
-            });
-        } else if (!code && newEmail) {
+        if (oldCode && newEmail && !oldCodeConfirmed) {
             AccountManager.sendCodeToNewEmail({
                 email: newEmail,
                 action: AccountManager.CHANGE_EMAIL_MSG,
                 setEmailError,
                 lang,
+                code: oldCode,
             }).then((sent) => {
                 if (sent) {
-                    setCodeConfirmed(false);
+                    setOldCodeConfirmed(true);
+                    setOldCode(null);
                 }
             });
-        } else if (code && newEmail) {
-            AccountManager.changeEmail({ email: newEmail, token: code, setEmailError, lang }).then((changed) => {
+        } else if (oldCodeConfirmed) {
+            AccountManager.changeEmail({ email: newEmail, token: newCode, setEmailError, lang }).then((changed) => {
                 if (changed) {
                     setEmailChanged(true);
                 }
@@ -64,16 +60,10 @@ export default function ChangeEmailDialog({ setChangeEmailFlag }) {
     }
 
     function getMsg() {
-        if (newEmail) {
-            if (!codeConfirmed) {
-                return `Please enter verification code which was sent to your new email`;
-            }
+        if (!oldCodeConfirmed) {
+            return `Please enter verification code which was sent to your current email`;
         } else {
-            if (!codeConfirmed) {
-                return `Please enter verification code which was sent to your current email`;
-            } else {
-                return `Please enter your new email`;
-            }
+            return `Please enter your new email`;
         }
     }
 
@@ -99,11 +89,29 @@ export default function ChangeEmailDialog({ setChangeEmailFlag }) {
                 </Grid>
                 <DialogContent>
                     <DialogContentText>{getMsg()}</DialogContentText>
-                    {codeConfirmed && (
+                    {newEmail && oldCodeConfirmed && (
+                        <Typography variant="body2" noWrap>
+                            {`New email: ${newEmail}`}
+                        </Typography>
+                    )}
+                    <TextField
+                        margin="dense"
+                        onChange={(e) => {
+                            oldCodeConfirmed ? setNewCode(e.target.value) : setOldCode(e.target.value);
+                        }}
+                        id="code"
+                        label={`Code from ${newEmail && oldCodeConfirmed ? 'New' : 'Old'} Email`}
+                        type="text"
+                        fullWidth
+                        variant="standard"
+                        value={(newEmail && oldCodeConfirmed ? newCode : oldCode) ?? ''}
+                        helperText={emailError ? emailError : ''}
+                        error={emailError.length > 0}
+                    ></TextField>
+                    {!oldCodeConfirmed && (
                         <TextField
                             margin="dense"
                             onChange={(e) => {
-                                setEmailError('');
                                 setNewEmail(e.target.value);
                             }}
                             id="pwd"
@@ -116,33 +124,11 @@ export default function ChangeEmailDialog({ setChangeEmailFlag }) {
                             error={emailError.length > 0}
                         ></TextField>
                     )}
-                    {newEmail && !codeConfirmed && (
-                        <Typography variant="body2" noWrap>
-                            {`New email: ${newEmail}`}
-                        </Typography>
-                    )}
-                    {!codeConfirmed && (
-                        <TextField
-                            margin="dense"
-                            onChange={(e) => {
-                                setEmailError('');
-                                setCode(e.target.value);
-                            }}
-                            id="code"
-                            label="Code from Email"
-                            type="text"
-                            fullWidth
-                            variant="standard"
-                            value={code ?? ''}
-                            helperText={emailError ? emailError : ''}
-                            error={emailError.length > 0}
-                        ></TextField>
-                    )}
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={() => setChangeEmailFlag(false)}>Cancel</Button>
                     <Button disabled={emailError !== ''} onClick={handleNext}>
-                        {code && newEmail ? 'Finish' : 'Next'}
+                        {oldCodeConfirmed ? 'Finish' : 'Next'}
                     </Button>
                 </DialogActions>
             </Dialog>

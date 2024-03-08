@@ -127,7 +127,7 @@ async function sendCode({ action, setEmailError = null, lang = DEFAULT_AUTH_API_
     }
 }
 
-async function sendCodeToNewEmail({ email, action, setEmailError = null, lang = DEFAULT_AUTH_API_LANG }) {
+async function sendCodeToNewEmail({ email, action, setEmailError = null, lang = DEFAULT_AUTH_API_LANG, code }) {
     const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/send-code-to-new-email`, '', {
         throwErrors: true,
         dataOnErrors: true,
@@ -136,25 +136,13 @@ async function sendCodeToNewEmail({ email, action, setEmailError = null, lang = 
         },
         params: {
             email: email.toLowerCase(),
+            code,
             action,
             lang,
         },
     }).catch((error) => {
         setEmailError && setEmailError(error.response.data);
     });
-    if (resp?.status === 200) {
-        return true;
-    }
-}
-
-async function confirmCode(email, code, setEmailError) {
-    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/confirm-code`, code, {
-        throwErrors: true,
-        dataOnErrors: true,
-        headers: {
-            'Content-Type': 'text/plain',
-        },
-    }).catch((error) => setEmailError(error.response.data));
     if (resp?.status === 200) {
         return true;
     }
@@ -186,7 +174,6 @@ const AccountManager = {
     userLogin,
     userLogout,
     sendCode,
-    confirmCode,
     changeEmail,
     sendCodeToNewEmail,
     CHANGE_EMAIL_MSG: CHANGE_EMAIL_MSG,
