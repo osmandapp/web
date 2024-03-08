@@ -109,15 +109,15 @@ async function isRequestOk(response, setEmailError) {
 }
 
 async function sendCode({ action, setEmailError = null, lang = DEFAULT_AUTH_API_LANG }) {
-    const data = {
-        action: action,
-        lang,
-    };
-    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/send-code`, data, {
+    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/send-code`, '', {
         throwErrors: true,
         dataOnErrors: true,
         headers: {
             'Content-Type': 'application/json',
+        },
+        params: {
+            lang,
+            action,
         },
     }).catch((error) => {
         setEmailError && setEmailError(error.response.data);
@@ -128,11 +128,7 @@ async function sendCode({ action, setEmailError = null, lang = DEFAULT_AUTH_API_
 }
 
 async function sendCodeToNewEmail({ email, action, setEmailError = null, lang = DEFAULT_AUTH_API_LANG }) {
-    const data = {
-        action: action,
-        lang,
-    };
-    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/send-code-to-new-email`, data, {
+    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/send-code-to-new-email`, '', {
         throwErrors: true,
         dataOnErrors: true,
         headers: {
@@ -140,6 +136,8 @@ async function sendCodeToNewEmail({ email, action, setEmailError = null, lang = 
         },
         params: {
             email: email.toLowerCase(),
+            action,
+            lang,
         },
     }).catch((error) => {
         setEmailError && setEmailError(error.response.data);
