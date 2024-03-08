@@ -43,16 +43,7 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
     }
 
     useEffect(() => {
-        const loggedIn = checkLogin();
-        if (loggedIn) {
-            if (ctx.loginUser !== 'INIT') {
-                AccountManager.sendCode({
-                    email: ctx.loginUser,
-                    action: AccountManager.DELETE_EMAIL_MSG,
-                    lang,
-                }).then();
-            }
-        }
+        checkLogin();
     }, [ctx.loginUser]);
 
     function close() {
@@ -127,21 +118,9 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
                         variant="contained"
                         component="span"
                         sx={{ backgroundColor: '#ff595e !important', ml: 2 }}
-                        onClick={() => {
-                            if (userEmail) {
-                                if (userEmail !== ctx.loginUser) {
-                                    setEmailError('Email does not match');
-                                } else {
-                                    AccountManager.deleteAccount({
-                                        userEmail,
-                                        code,
-                                        setEmailError,
-                                        setAccountDeleted,
-                                        lang,
-                                    }).then();
-                                }
-                            }
-                        }}
+                        onClick={() =>
+                            AccountManager.deleteAccount({ userEmail, code, setEmailError, setAccountDeleted, lang })
+                        }
                     >
                         Delete this account
                     </Button>
