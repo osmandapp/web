@@ -1,10 +1,11 @@
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
-import { clickBy, enclose, matchTextBy, waitBy } from '../lib.mjs';
+import { clickBy, enclose, matchTextBy, waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { deleteFavGroup, getFiles, uploadFavorites } from '../util.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import actionOpenFavorites from '../actions/actionOpenFavorites.mjs';
+import actionDeleteAllFavorites from '../actions/actionDeleteAllFavorites.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -15,20 +16,19 @@ export default async function test() {
     const wptName = 'Test wpt';
     const suffix = '-edited';
 
+    const favorites = getFiles({ folder: 'favorites' });
+
     await actionOpenFavorites();
+    await actionDeleteAllFavorites(favorites);
 
-    const exist = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`), { optional: true, idle: true });
-
-    if (!exist) {
-        const favorites = getFiles({ folder: 'favorites' });
-        const { path } = favorites.find((t) => t.name === favGroupName);
-        // create folder
-        await clickBy(By.id('se-import-fav-group'));
-        await uploadFavorites({ files: path });
-        await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
-    }
+    const { path } = favorites.find((t) => t.name === favGroupName);
+    // create folder
+    await clickBy(By.id('se-import-fav-group'));
+    await uploadFavorites({ files: path });
+    await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
     // open edit dialog
     await clickBy(By.id(`se-menu-fav-${shortFavGroupName}`));
+    await waitByRemoved(By.id(`se-menu-fav-${shortFavGroupName}`));
     await waitBy(By.id(`se-opened-fav-group-${shortFavGroupName}`));
 
     await clickBy(By.id(`se-actions-${wptName}`));

@@ -25,8 +25,8 @@ import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.
 import { ReactComponent as TracksIcon } from '../../assets/menu/ic_action_track.svg';
 import { cloneDeep } from 'lodash';
 import EmptyLogin from '../errors/EmptyLogin';
-import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import { useTranslation } from 'react-i18next';
+import { closeHeader } from '../actions/HeaderHelper';
 
 export default function ConfigureMap({ setOpenVisibleMenu }) {
     const ctx = useContext(AppContext);
@@ -39,11 +39,6 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
         localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(newConfigureMap));
         ctx.setConfigureMapState(newConfigureMap);
     };
-
-    function close() {
-        ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
-        ctx.setCurrentObjectType(null);
-    }
 
     function setIconStyles() {
         let res = [];
@@ -59,7 +54,12 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
         <>
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
-                    <IconButton variant="contained" type="button" className={styles.closeIcon} onClick={close}>
+                    <IconButton
+                        variant="contained"
+                        type="button"
+                        className={styles.closeIcon}
+                        onClick={() => closeHeader({ ctx })}
+                    >
                         <CloseIcon />
                     </IconButton>
                     <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>

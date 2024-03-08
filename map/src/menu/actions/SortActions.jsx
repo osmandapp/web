@@ -1,15 +1,4 @@
-import {
-    Box,
-    Divider,
-    FormControl,
-    FormControlLabel,
-    Icon,
-    ListItem,
-    ListItemText,
-    Paper,
-    Radio,
-    RadioGroup,
-} from '@mui/material';
+import { Box, Divider, FormControl, FormControlLabel, Paper, Radio, RadioGroup } from '@mui/material';
 import { getAnalysisData, getGpxTime } from '../../manager/track/TracksManager';
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import { ReactComponent as AscendingIcon } from '../../assets/icons/ic_action_sort_by_name_ascending.svg';
@@ -24,6 +13,7 @@ import styles from '../trackfavmenu.module.css';
 import AppContext from '../../context/AppContext';
 import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
 import i18n from '../../i18n';
+import ActionItem from '../components/ActionItem';
 
 const az = (a, b) => (a > b) - (a < b);
 
@@ -268,15 +258,6 @@ const SortActions = forwardRef(
             ctx.setSelectedSort({ ...ctx.selectedSort });
         }
 
-        const Label = ({ item }) => {
-            return (
-                <ListItem className={styles.sortItem}>
-                    <Icon className={styles.icon}>{item.icon}</Icon>
-                    <ListItemText className={styles.sortText}>{item.name()}</ListItemText>
-                </ListItem>
-            );
-        };
-
         return (
             <Box ref={ref}>
                 <Paper className={styles.actions}>
@@ -290,7 +271,7 @@ const SortActions = forwardRef(
                                         labelPlacement="start"
                                         value="nearest"
                                         control={<Radio className={styles.control} size="small" />}
-                                        label={<Label item={allMethods.nearest} />}
+                                        label={<ActionItem item={allMethods.nearest} />}
                                     />
                                     <Divider className={styles.dividerActions} />
                                 </>
@@ -302,7 +283,7 @@ const SortActions = forwardRef(
                                 labelPlacement="start"
                                 value="time"
                                 control={<Radio className={styles.control} size="small" />}
-                                label={<Label item={allMethods.time} />}
+                                label={<ActionItem item={allMethods.time} />}
                             />
                             <Divider className={styles.dividerActions} />
                             <FormControlLabel
@@ -312,7 +293,7 @@ const SortActions = forwardRef(
                                 labelPlacement="start"
                                 value="az"
                                 control={<Radio className={styles.control} size="small" />}
-                                label={<Label item={allMethods.az} />}
+                                label={<ActionItem item={allMethods.az} />}
                             />
                             <FormControlLabel
                                 id={'se-sort-za'}
@@ -321,7 +302,7 @@ const SortActions = forwardRef(
                                 labelPlacement="start"
                                 value="za"
                                 control={<Radio className={styles.control} size="small" />}
-                                label={<Label item={allMethods.za} />}
+                                label={<ActionItem item={allMethods.za} />}
                             />
                             {trackGroup && (
                                 <>
@@ -333,7 +314,7 @@ const SortActions = forwardRef(
                                         labelPlacement="start"
                                         value="longest"
                                         control={<Radio className={styles.control} size="small" />}
-                                        label={<Label item={allMethods.longest} />}
+                                        label={<ActionItem item={allMethods.longest} />}
                                     />
                                     <FormControlLabel
                                         id={'se-sort-shortest'}
@@ -342,7 +323,7 @@ const SortActions = forwardRef(
                                         labelPlacement="start"
                                         value="shortest"
                                         control={<Radio className={styles.control} size="small" />}
-                                        label={<Label item={allMethods.shortest} />}
+                                        label={<ActionItem item={allMethods.shortest} />}
                                     />
                                 </>
                             )}
@@ -356,7 +337,7 @@ const SortActions = forwardRef(
                                         labelPlacement="start"
                                         value="newDate"
                                         control={<Radio className={styles.control} size="small" />}
-                                        label={<Label item={allMethods.newDate} />}
+                                        label={<ActionItem item={allMethods.newDate} />}
                                     />
                                     <FormControlLabel
                                         id={'se-sort-oldDate'}
@@ -365,7 +346,7 @@ const SortActions = forwardRef(
                                         labelPlacement="start"
                                         value="oldDate"
                                         control={<Radio className={styles.control} size="small" />}
-                                        label={<Label item={allMethods.oldDate} />}
+                                        label={<ActionItem item={allMethods.oldDate} />}
                                     />
                                 </>
                             )}

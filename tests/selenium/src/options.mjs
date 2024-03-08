@@ -22,6 +22,7 @@ export let url = null;
 export let stop = false;
 export let cycle = false;
 export let debug = false;
+export let verbose = false;
 export let ignore = false;
 export let mobile = false;
 export let noexit = false;
@@ -45,6 +46,7 @@ export function parseArgs() {
             a === '--mobile' && (mobile = true);
             a === '--ignore' && (ignore = true);
             a === '--noexit' && (noexit = true);
+            a === '--verbose' && (verbose = true);
             a === '--debug' && (debug = true);
             a === '--cycle' && (cycle = true);
             a === '--stop' && (stop = true);
@@ -98,6 +100,7 @@ Options:
     --stop          Stop tests after first failure happens
     --noexit        Do not close browser after test done
     --debug         Print debug info and full errors
+    --verbose       Print console and network logs
     --cycle         Restart cycle of tests forever
     --list (--ls)   List tests and exit
     --help          Help and exit

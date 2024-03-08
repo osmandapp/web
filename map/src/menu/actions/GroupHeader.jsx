@@ -7,7 +7,6 @@ import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as ImportIcon } from '../../assets/icons/ic_action_folder_import_outlined.svg';
 import { ReactComponent as AddFolderIcon } from '../../assets/icons/ic_action_folder_add_outlined.svg';
-import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import styles from '../trackfavmenu.module.css';
 import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
@@ -18,6 +17,7 @@ import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
 import FavoriteGroupUploader from '../../frame/components/util/FavoriteGroupUploader';
 import IconButtonWithPermissions from '../../frame/components/IconButtonWithPermissions';
 import { useTranslation } from 'react-i18next';
+import { closeHeader } from './HeaderHelper';
 
 export default function GroupHeader({
     trackGroup = null,
@@ -63,10 +63,6 @@ export default function GroupHeader({
             }
         }
     }, [favoriteGroup, ctx.favorites]);
-
-    function closeTrackMenu() {
-        ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
-    }
 
     function prevTrackMenu() {
         ctx.openGroups.pop();
@@ -119,7 +115,7 @@ export default function GroupHeader({
                             variant="contained"
                             type="button"
                             className={styles.appBarIcon}
-                            onClick={closeTrackMenu}
+                            onClick={() => closeHeader({ ctx })}
                         >
                             <CloseIcon />
                         </IconButton>

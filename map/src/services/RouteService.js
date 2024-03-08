@@ -67,9 +67,9 @@ export function RouteService() {
 
             const qs = new URLSearchParams(window.location.search);
 
-            if (Object.keys(obj).length > 0 || (qs.get('type') && qs.get('profile'))) {
+            if (Object.keys(obj).length > 0 || qs.get('profile')) {
                 const { type, profile } = routeObject.getProfile();
-                obj.type = type;
+                type !== 'osmand' && (obj.type = type);
                 obj.profile = profile;
 
                 if (routeObject.isParamsChanged()) {
