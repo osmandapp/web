@@ -22,7 +22,7 @@ const routes = [
         profile: 'car',
         A: '50.07097, 19.79838',
         B: '50.03543, 20.07204',
-        check: '30.9 km',
+        check: '30.8 km',
     },
     {
         zoom: 13,

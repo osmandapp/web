@@ -36,12 +36,12 @@ const routes = [
         hasAttributes: false,
         strings: [
             'Points: 2',
-            'Car 329.99 km',
-            'Route: 330.0 km, 5:19 min',
+            'Car 329.92 km',
+            'Route: 329.9 km, 5:19 min',
             '1 / 50 / 114 m', // ele
         ],
         turns: [
-            'Go ahead and go 2.8 km',
+            'Go ahead and go 2.7 km',
             'Turn left onto Миколаївське шосе М-14-02 and go 0.5 km',
             'Go ahead (+C,TSLL) onto Херсонська вулиця Н-23 and go 13.9 km',
         ],
