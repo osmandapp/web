@@ -12,14 +12,13 @@ import TracksManager, {
     DEFAULT_GROUP_NAME,
     GPX_FILE_TYPE,
     getGpxFileFromTrackData,
+    EMPTY_FILE_NAME,
 } from './TracksManager';
 import _, { cloneDeep } from 'lodash';
 import { compressFromJSON } from '../../util/GzipBase64.mjs';
 import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import Utils from '../../util/Utils';
 import { updateSortList } from '../../menu/actions/SortActions';
-
-export const EMPTY_FILE_NAME = 'empty.ignore';
 
 export function saveTrackToLocal({ ctx, track, selected = true, overwrite = false, cloudAutoSave = false } = {}) {
     const newLocalTracks = [...ctx.localTracks];
