@@ -5,12 +5,13 @@ import { apiGet, apiPost } from '../../util/HttpApi';
 import { compressFromJSON, decompressToJSON } from '../../util/GzipBase64.mjs';
 import { isCloudTrack, isRouteTrack, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
-import { EMPTY_FILE_NAME, saveTrackToLocal } from './SaveTrackManager';
+import { saveTrackToLocal } from './SaveTrackManager';
 import L from 'leaflet';
 import MarkerOptions from '../../map/markers/MarkerOptions';
 import anchorme from 'anchorme';
 
 export const GPX_FILE_TYPE = 'GPX';
+export const EMPTY_FILE_NAME = '__folder__.info';
 const GET_SRTM_DATA = 'get-srtm-data';
 const GET_ANALYSIS = 'get-analysis';
 export const PROFILE_LINE = 'line';
@@ -1241,8 +1242,8 @@ export function prepareDesc(trackDesc) {
 export function getGpxFiles(listFiles) {
     return (!listFiles || !listFiles.uniqueFiles ? [] : listFiles.uniqueFiles).filter((item) => {
         return (
-            (item.type === 'gpx' || item.type === 'GPX' || item.type === 'ignore') &&
-            (item.name.slice(-4) === '.gpx' || item.name.slice(-4) === '.GPX' || item.name.slice(-7) === '.ignore')
+            (item.type === 'gpx' || item.type === 'GPX') &&
+            (item.name.slice(-4) === '.gpx' || item.name.slice(-4) === '.GPX' || item.name.endsWith(EMPTY_FILE_NAME))
         );
     });
 }
