@@ -30,7 +30,6 @@ import EmptyLogin from '../errors/EmptyLogin';
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from '../actions/HeaderHelper';
 import { INTERACTIVE_LAYER } from '../../map/layers/CustomTileLayer';
-import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
@@ -53,11 +52,6 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
             ctx.setRenderingType(selectedType);
         }
     };
-
-    function close() {
-        ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
-        ctx.setCurrentObjectType(null);
-    }
 
     function setIconStyles() {
         let res = [];
