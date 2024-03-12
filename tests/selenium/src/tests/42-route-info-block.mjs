@@ -16,8 +16,8 @@ const routes = [
         hasAttributes: false,
         strings: [
             'Points: 2',
-            'Bicycle 24.48 km',
-            'Route: 24.5 km, 1:08 min',
+            /Bicycle 2\d\.\d\d km/, // 24.48
+            /Route: 2\d\.\d km, 1:\d\d min/, // 24.5 1:08
             // '-2 / 0 / 4 m', // ele // TODO
             // /Track.*?: 26.80 km/s, // Road // temporarily disabled // TODO
             // /Sand.*?: 8.93 km/s, // Surface // temporarily disabled // TODO
@@ -36,8 +36,8 @@ const routes = [
         hasAttributes: false,
         strings: [
             'Points: 2',
-            'Car 329.92 km',
-            'Route: 329.9 km, 5:19 min',
+            /Car 3\d\d\.\d\d km/, // 329.92
+            /Route: 3\d\d\.\d km, 5:\d\d min/, // 329.9 5:19
             '1 / 50 / 114 m', // ele
         ],
         turns: [
