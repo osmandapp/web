@@ -5,16 +5,21 @@ intro: With OsmAndMapCreator there are many ways how to create and customize Ras
 ---
 
 ## OsmAndMapCreator
-[**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator) can be used to create any maps supported by OsmAnd yourself. You can download latest version from [website](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). OsmAndMapCreator has UI capabilities to create raster & vector maps. To create vector map you will need OSM file (`*.pbf, *.osm.gz, *.osm.bz2`) and to create online sqlite map file you will need a `base tile url`.
+
+[**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator) can be used to create any maps supported by OsmAnd yourself. You can download latest version from [website](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). OsmAndMapCreator has UI capabilities to create raster & vector maps. *To create vector map you will need OSM file (`*.pbf, *.osm.gz, *.osm.bz2`)* and *to create online sqlite map file you will need a `base tile url`*.
 
 ### Raster maps (simple)
-Once you selected the tiles you want to create a map from in the menu **Source of tiles** and they are loaded successfully in OsmAndMapCreator. You can select with right click the area you would like to preload. After that you can create `.sqlitedb` file in **Source of tiles** → **Create sqlite database**.
+
+Once you have selected the tiles from which you want to create a map in the **Source of tiles** menu and they have been successfully loaded into OsmAndMapCreator, you can right-click on the area you want to preload. After that you can create `.sqlitedb` file in **Source of tiles** → **Create sqlite database**.  
+
+To create a vector map you will need an OSM file (*.pbf, *.osm.gz, *.osm.bz2) and to create an online sqlite map you will need the url of the base tile. 
 
 <img src={require('@site/static/img/osmandmapcreator/OsmAndMapCreator-download-raster-maps.png').default} alt="Download raster maps" />
 
 <img src={require('@site/static/img/osmandmapcreator/OsmAndMapCreator-create-raster-maps.png').default} alt="Create sqlitedb maps" />
 
 ### Vector maps (simple)
+
 Steps to create vector map via OsmAndMapCreator UI:
 
 1. OSM File
@@ -90,6 +95,7 @@ With "in memory" processing this *nodes.tmp.odb* file will be created in your wo
 
 Example: for a 250MB *.osm.pbf* a \~4.5GB *nodes.tmp.odb* file will be generated.
 
+
 ### Custom vector map (tags)
 
 OsmAnd rendering and POI search relies on information written to [OBF](../osmand-file-formats/osmand-obf.md). It has different structure than other OSM formats and optimized for mobile usage. You can inspect the contents using [Binary Inspector](../map-creation/how-to-inspect-an-obf.md). 3 Most important parts of OBF file are
@@ -102,38 +108,41 @@ OsmAnd rendering and POI search relies on information written to [OBF](../osmand
 
 - Main map object type (`<type tag="abandoned:highway" value="track" minzoom="13"/>`) is registered per OSM entity (node or way or multipolygon). There could be many main types registered per 1 entity (i.e. road + tram + route_bus), tag `order` will sort types within entity.
 - Additional map object type (`<type tag="service" value="driveway" minzoom="13" additional="true"/>`) is additional information attached for OSM entity, so in case OSM entity is not registered with main type it won't be stored inside OBF. Usually it stores information to display extra features like color, smoothness.
-- Text map object type (`<type tag="int_ref" additional="text" minzoom="1" order="32"/>`), stores text information about object so it could be later displayed on the map
+- Text map object type (`<type tag="int_ref" additional="text" minzoom="1" order="32"/>`), stores text information about object so it could be later displayed on the map.
 - `entity_convert` represents simple tag transformation scripts (`<entity_convert pattern="tag_transform" from_tag="bridge" if_tag1="highway" if_value1="proposed" routing="no"/>`). It is often used to combine tags into specific types, so it's easier to display with custom rendering style. Also it allows to give region specific tag transformation and allows to have different features rendering per country.
-- Relation tag propagation. OsmAnd doesn't index relation objects (except multipolygons - stored as area objects) but it allows to propagate, push tags from relation onto members. Obviously 1 member could have multiple parent relations and tags conflicts are possible. OsmAnd supports 3 ways to deal with conflicts: 1) combine all tags as long comma-separated line (good for rendering bus route names as a long string on the way - `nameTags`, `namePrefix`), 2) sort values and keep the highest value (good for rendering routes local vs international - `relationGroupSort`, `additionalTags`, `additionalNamePrefix`), 3) generates unique tags for each relation (not used for now but stores information without loss - `relationGroupNameTags`, `relationGroupAdditionalTags`, `relationGroupPrefix`). **More information** you can find in [Rendering types](https://github.com/osmandapp/OsmAnd-resources/blob/master/obf_creation/rendering_types.xml).
-
+- Relation tag propagation. OsmAnd doesn't index relation objects (except multipolygons - stored as area objects) but it allows to propagate, push tags from relation onto members. Obviously 1 member could have multiple parent relations and tags conflicts are possible. OsmAnd supports 3 ways to deal with conflicts: 
+  - combine all tags as long comma-separated line (good for rendering bus route names as a long string on the way - `nameTags`, `namePrefix`). 
+  - sort values and keep the highest value (good for rendering routes local vs international - `relationGroupSort`, `additionalTags`, `additionalNamePrefix`).
+  - generates unique tags for each relation (not used for now but stores information without loss - `relationGroupNameTags`, `relationGroupAdditionalTags`, `relationGroupPrefix`). **More information** you can find in [Rendering types](https://github.com/osmandapp/OsmAnd-resources/blob/master/obf_creation/rendering_types.xml).  
 
 **Read more**: usually custom vector maps combined with [custom rendering style](../osmand-file-formats/osmand-rendering-style.md).
 
 ## Raster maps (advanced)
 
-OSM is a large database for maps, however, the necessary information is not always available there (eg deserts). Sometimes the information you need is available from other sources, such as paper maps or satellite images.
+OSM is a large database for maps, but it doesn't always have the information you need (for example, about deserts). Sometimes you can get the information you need from other sources, such as paper maps or satellite images.  
 
-There are special programs for preparing, converting, calibrating any source maps (image format maps, pdf format, raster online maps) to OsmAnd online maps.
+There are special programs for preparation, conversion, calibration of any source maps (maps in image format, pdf-format, raster online maps) into OsmAnd online maps.    
 
 About some of them below.
 
 ### MOBAC
 
-Mobile Atlas Creator (MOBAC) is an open source (GPL) program which creates offline atlases. As source for an offline atlas Mobile Atlas Creator can use a large number of different online maps such as OpenStreetMap and other online map providers.
+Mobile Atlas Creator (MOBAC) is an open source (GPL) program for creating offline atlases. Mobile Atlas Creator can use a large number of different online maps, such as OpenStreetMap and other map providers, as a source for creating an offline atlas.  
 
 Just [download](https://mobac.sourceforge.io/) the program, then run it.
 
 In the format choosing dialogue pick *OsmAnd SQLite* or *OsmAnd tile storage*. SQLite is a single file with the selected area while tiles are separate pieces of the map gathered on your device. SQLite often happens to be more convenient as it is stored in one place and occupies less storage space. 
 
-Pick the map source, zoom levels, and other features. Select an area, then choose the menu 'Selection' -> 'Add selection'.
+Pick the map source, zoom levels, and other features. Select an area, then choose the menu *Selection* -> *Add selection*.  
 
 After that, you can create your SQLite file: 'Atlas' -> 'Create Atlas'.
 
+
 ### MAPC2MAPC
 
-[MAPC2MAPC](https://www.the-thorns.org.uk/mapping/) is a Windows program to manipulate digital maps and convert them between different platforms and software. 
+[MAPC2MAPC](https://www.the-thorns.org.uk/mapping/) is a Windows program to manipulate digital maps and convert them between different platforms and software.  
 
-For example, you can convert and calibrate any image format & pdf maps to OsmAnd online map.
+For example, you can convert and calibrate any image format & pdf maps to OsmAnd online map.  
 
 [Video tutorial](https://www.youtube.com/watch?v=Y_fekLfcUOc) of using the program.
 
@@ -145,13 +154,17 @@ SASPlanet is a freeware, opensource navigation software with the capability of v
 
 
 ## Common Issues
+
 ### OutOfMemoryError issue
-**Issue**: OsmAndMapCreator fails with message -  OutOfMemoryError.
+
+**Issue**: OsmAndMapCreator fails with message -  OutOfMemoryError.  
 
 The file you try to process with OsmAndMapCreator is too large. Either try to process a smaller file, or increase the memory for OsmAndMapCreator in the .sh or .bat file. The `-Xmx` parameter specifies how much memory the program can consume. Settings can be different for 64bit (more than 1.5GB) and 32bit (max around 1.5GB) machines.
 
+
 ### Empty file issue
-**Issue**: After converting an .osm to .obf with only a POI index, the .obf is empty, although original .osm file did contain POIs. 
+
+**Issue**: After converting an .osm to .obf with only a POI index, the .obf is empty, although original .osm file did contain POIs.  
 
 It could be that a crucial tag was missing for OsmAndMapCreator to recognize a POI when you converted the osm from another source, like Garmin. If a point in the OSM file looks like this:
 ```
@@ -170,3 +183,5 @@ change it to contain an additional 'amenity' tag, like:
 ```
  
 Then convert the file using OsmAndMapCreator. You can check on the OSM site what tags are good ones to use and you can also verify which tags are supported by [OsmAnd](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/poi_types.xml).
+
+

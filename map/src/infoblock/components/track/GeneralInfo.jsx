@@ -449,6 +449,7 @@ export default function GeneralInfo({ width }) {
                                         {`Elevation (Satellite): ${elevationSRTM}`}
                                         {elevationSRTM === '' && loadingSrtm === false && (
                                             <Link
+                                                id={'se-link-srtm'}
                                                 href="#"
                                                 color="inherit"
                                                 onClick={() => {
@@ -468,7 +469,11 @@ export default function GeneralInfo({ width }) {
                                                 recalculate
                                             </Link>
                                         )}
-                                        {loadingSrtm ? <CircularProgress size={13} sx={{ ml: 1 }} /> : <></>}
+                                        {loadingSrtm ? (
+                                            <CircularProgress id={'se-loadingSrtm'} size={13} sx={{ ml: 1 }} />
+                                        ) : (
+                                            <></>
+                                        )}
                                     </Typography>
                                 </Tooltip>
                             </ListItemText>

@@ -30,6 +30,7 @@ export default function Render() {
         'Harbour' : 'entertainment/entertainment_harbour_yes',
         'Marina' : 'entertainment/entertainment_leisure_marina',
         'Toy lirary' : 'entertainment/entertainment_amenity_toy_library',
+        'Photo booth' : 'entertainment/entertainment_amenity_photo_booth',
         'Public bookcase' : 'entertainment/entertainment_amenity_public_bookcase',
         'Feeding place' : 'entertainment/entertainment_amenity_feeding_place',
         'Gambling venue' : 'entertainment/entertainment_amenity_gambling',

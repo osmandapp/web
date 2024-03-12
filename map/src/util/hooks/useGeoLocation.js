@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 
-export function useGeoLocation(ctx) {
+export function useGeoLocation(ctx, useHighPrecision = true) {
     const [loc, setLoc] = useState(null);
 
     useEffect(() => {
@@ -21,9 +21,12 @@ export function useGeoLocation(ctx) {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
                     (position) => {
-                        const latitude = position.coords.latitude;
-                        const longitude = position.coords.longitude;
-
+                        const latitude = useHighPrecision
+                            ? position.coords.latitude
+                            : Math.round(position.coords.latitude * 1000) / 1000;
+                        const longitude = useHighPrecision
+                            ? position.coords.longitude
+                            : Math.round(position.coords.longitude * 1000) / 1000;
                         resolve({ lat: latitude, lng: longitude });
                     },
                     () => {

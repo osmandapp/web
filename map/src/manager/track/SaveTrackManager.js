@@ -12,14 +12,13 @@ import TracksManager, {
     DEFAULT_GROUP_NAME,
     GPX_FILE_TYPE,
     getGpxFileFromTrackData,
+    EMPTY_FILE_NAME,
 } from './TracksManager';
 import _, { cloneDeep } from 'lodash';
 import { compressFromJSON } from '../../util/GzipBase64.mjs';
 import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import Utils from '../../util/Utils';
 import { updateSortList } from '../../menu/actions/SortActions';
-
-export const EMPTY_FILE_NAME = 'empty.ignore';
 
 export function saveTrackToLocal({ ctx, track, selected = true, overwrite = false, cloudAutoSave = false } = {}) {
     const newLocalTracks = [...ctx.localTracks];
@@ -61,7 +60,28 @@ export function saveTrackToLocal({ ctx, track, selected = true, overwrite = fals
 }
 
 //save to cloud
-export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file, open = true) {
+export async function saveTrackToCloud({
+    ctx,
+    currentFolder,
+    fileName,
+    type,
+    gpxFile = null,
+    uploadedFile = null,
+    open = true,
+}) {
+    const currentFile = await getFile();
+
+    async function getFile() {
+        if (uploadedFile) {
+            return uploadedFile;
+        }
+        const trackData = gpxFile ? gpxFile : ctx.selectedGpxFile?.file ?? ctx.selectedGpxFile;
+        if (trackData) {
+            return await getGpxFileFromTrackData(trackData);
+        }
+        return null;
+    }
+
     if (type !== FavoritesManager.FAVORITE_FILE_TYPE) {
         if (currentFolder === DEFAULT_GROUP_NAME) {
             currentFolder = '';
@@ -69,16 +89,15 @@ export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file,
             currentFolder = currentFolder + '/';
         }
     }
+
     if (ctx.loginUser) {
-        const gpxFile = file ? file : ctx.selectedGpxFile.file ? ctx.selectedGpxFile.file : ctx.selectedGpxFile;
-        const gpx = await getGpxFileFromTrackData(gpxFile);
-        if (gpx) {
-            const convertedData = new TextEncoder().encode(gpx.data);
+        if (currentFile) {
+            const convertedData = new TextEncoder().encode(currentFile.data);
             const zippedResult = require('pako').gzip(convertedData, { to: 'Uint8Array' });
             const convertedZipped = zippedResult.buffer;
             const oMyBlob = new Blob([convertedZipped], { type: 'gpx' });
             const data = new FormData();
-            data.append('file', oMyBlob, gpxFile.name);
+            data.append('file', oMyBlob, currentFile.name);
 
             const params = {
                 type: type,
@@ -90,7 +109,7 @@ export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file,
             const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data, { params });
             if (res && res?.data?.status === 'ok') {
                 // re-download gpx
-                const downloadFile = { ...gpxFile, ...params };
+                const downloadFile = { ...currentFile, ...params };
                 if (open) {
                     downloadAfterUpload(ctx, downloadFile).then();
                 }
@@ -103,7 +122,7 @@ export async function saveTrackToCloud(ctx, currentFolder, fileName, type, file,
             title: 'Save error',
             msg: `Unable to save ${gpxFile.name}`,
         });
-        ctx.setTrackLoading([...ctx.trackLoading.filter((n) => n !== gpxFile.name)]);
+        ctx.setTrackLoading([...ctx.trackLoading.filter((n) => n !== currentFile.name)]);
     }
     return false;
 }

@@ -14,7 +14,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock";
 import SotmScreenshots from './carousel/sotmscreenshots.js';
 
-
+![Logo](@site/static/img/promo/logo_osmand_black.png)
 
 # Get free OsmAnd Pro for 3 months 
 

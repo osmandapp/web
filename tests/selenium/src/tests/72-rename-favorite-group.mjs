@@ -6,6 +6,7 @@ import { By } from 'selenium-webdriver';
 import actionFinish from '../actions/actionFinish.mjs';
 import actionRenameFavGroup from '../actions/actionRenameFavGroup.mjs';
 import actionOpenFavorites from '../actions/actionOpenFavorites.mjs';
+import actionDeleteAllFavorites from '../actions/actionDeleteAllFavorites.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -20,14 +21,12 @@ export default async function test() {
 
     await actionOpenFavorites();
 
-    // delete old group when need
-    const exist = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`), { optional: true, idle: true });
-    if (!exist) {
-        // create folder
-        await clickBy(By.id('se-import-fav-group'));
-        await uploadFavorites({ files: path });
-        await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
-    }
+    await actionDeleteAllFavorites(favorites);
+
+    // create folder
+    await clickBy(By.id('se-import-fav-group'));
+    await uploadFavorites({ files: path });
+    await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
 
     // delete duplicate old group when need
     const existDuplicate = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}${suffix}`), {

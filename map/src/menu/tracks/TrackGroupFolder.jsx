@@ -4,10 +4,9 @@ import CloudTrackGroup from './CloudTrackGroup';
 import { Box } from '@mui/material';
 import AppContext from '../../context/AppContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
-import { findGroupByName, updateLoadingTracks } from '../../manager/track/TracksManager';
+import { EMPTY_FILE_NAME, findGroupByName, updateLoadingTracks } from '../../manager/track/TracksManager';
 import GroupHeader from '../actions/GroupHeader';
 import Empty from '../errors/Empty';
-import { EMPTY_FILE_NAME } from '../../manager/track/SaveTrackManager';
 import TrackLoading from './TrackLoading';
 import { doSort } from '../actions/SortActions';
 import { isEmpty } from 'lodash';
@@ -55,14 +54,17 @@ export default function TrackGroupFolder({ folder }) {
     const trackItems = useMemo(() => {
         const items = [];
         const listTracks = sortFiles?.length > 0 ? sortFiles : group.groupFiles;
-        listTracks.map((file, index) => {
-            // 2 - count empty.ignore too
-            const isLastItem = !isEmpty(listTracks) && listTracks.length > 1 ? index === listTracks.length - 2 : false;
-            if (!file.name.endsWith(EMPTY_FILE_NAME) && file.filesize !== 0) {
-                items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} isLastItem={isLastItem} />);
-            }
-        });
-        return items;
+        if (listTracks && listTracks.length > 0) {
+            listTracks.map((file, index) => {
+                // 2 - count empty.ignore too
+                const isLastItem =
+                    !isEmpty(listTracks) && listTracks.length > 1 ? index === listTracks.length - 2 : false;
+                if (!file.name.endsWith(EMPTY_FILE_NAME) && file.filesize !== 0) {
+                    items.push(<CloudTrackItem key={'cloudtrack-' + file.name} file={file} isLastItem={isLastItem} />);
+                }
+            });
+            return items;
+        }
     }, [group?.groupFiles, sortFiles]);
 
     useEffect(() => {
@@ -73,11 +75,18 @@ export default function TrackGroupFolder({ folder }) {
 
     const groupItems = useMemo(() => {
         const items = [];
-        (sortGroups?.length > 0 ? sortGroups : group.subfolders).map((g, index) => {
-            items.push(<CloudTrackGroup key={g.name + index} index={index} group={g} />);
-        });
-        return items;
+        const listGroups = sortGroups?.length > 0 ? sortGroups : group.subfolders;
+        if (listGroups && listGroups.length > 0) {
+            listGroups.map((g, index) => {
+                items.push(<CloudTrackGroup key={g.name + index} index={index} group={g} />);
+            });
+            return items;
+        }
     }, [group.subfolders, sortGroups]);
+
+    function isEmptyFolder() {
+        return (group?.realSize === 0 && ctx.trackLoading?.length === 0) || (!groupItems && !trackItems);
+    }
 
     return (
         <>
@@ -96,7 +105,7 @@ export default function TrackGroupFolder({ folder }) {
                     {trackItems}
                 </Box>
             </Box>
-            {group.realSize === 0 && ctx.trackLoading?.length === 0 && (
+            {isEmptyFolder() && (
                 <Empty title={'Empty folder'} text={"This folder doesn't have any track yet"} folder={group.fullName} />
             )}
         </>

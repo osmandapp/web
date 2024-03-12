@@ -11,8 +11,35 @@ sidebar_position: 2
 * geo:0,0?q=business+near+city
 
 ### OsmAnd specific intents:
-* http://download.osmand.net/go?lat=&lon=&z=
-* http://osmand.net/go?lat=34&lon=-106&z=11
+
+1. **Location with Pin**: [https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116](https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116)
+
+URL description:
+- "https://osmand.net/map" - OsmAnd web resource.
+- "?pin=52.491143,7.116394" - Pin's coordinates.
+- "#9/52.3924/6.3116" - map zoom and centre map.
+
+![URL with PIN](@site/static/img/technical/url_pin.png) 
+
+2. **Location without Pin**: [https://osmand.net/map/#9/52.3924/6.3116](https://osmand.net/map/#9/52.3924/6.3116)
+
+URL description:
+- "https://osmand.net/map" - OsmAnd web resource.
+- "#9/52.3924/6.3116" - map zoom and centre map.
+
+![URL without PIN](@site/static/img/technical/url_without_pin.png) 
+
+3. **Navigation**: [https://osmand.net/map/?start=52.236210,5.119629&finish=52.412472,4.855957&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570](https://osmand.net/map/?start=52.236210,5.119629&finish=52.412472,4.855957&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570)
+
+URL description:
+- "https://osmand.net/map" - OsmAnd web resource.
+- "start=52.236210,5.119629" - coordinates of the start point.
+- "finish=52.412472,4.855957" - coordinates of the finish point.
+- "profile=car" - navigation profile.
+- "pin=52.491143,7.116394" - Pin's coordinates.
+- "#9/52.3873/5.2570" - map zoom and centre map.
+
+![URL with navigation](@site/static/img/technical/url_navigation.png) 
 
 ### Google:
 * google.navigation:q=34.99393,-106.61568

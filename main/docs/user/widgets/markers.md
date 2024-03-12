@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-Markers are temporary points indicated on the map in the form of flags. The widgets show the *Direction*, *Distance*, *Address*, and *Estimated arrival time (for Android)* to the marker. They allow you to quickly find markers on the map, as well as change their position. You can read more about markers in this [article](../personal/markers).  
+Markers are temporary points indicated on the map in the form of flags. The widgets show the *Direction*, *Distance*, *Address*, and *Estimated arrival time to the marker. They allow you to quickly find markers on the map, as well as change their position. You can read more about markers in this [article](../personal/markers).  
 
 
 ## Top bar widget
@@ -36,9 +36,10 @@ You can also select to display one or two markers. Read more about widget settin
 
 ![Map markers on the Top bar widget](@site/static/img/widgets/map_markers_top-bar-widget-andr.png)
 
+
 | | |
 |------------|------------|
-| Enable | *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets,top_widgets_panel,map_markers_bar"/>* |
+| Enable | *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_markers_bar"/>* |
 | By tapping | The visible part of the map shifts to the marker location. |
 | Long tap + move | To measure the distance and see the direction from a particular point on the map to the tracked marker, you need to make a long tap and immediately slightly move the map position (the context menu should not appear). |
 | Approach marker | In case your location is within a small radius of the map marker (**< 50 m**), in the widget field you can see a checkmark button to quickly delete the map marker (mark as passed). The checked marker is replaced by the next marker in the list of markers.  |
@@ -52,8 +53,9 @@ You can also select to display one or two markers. Read more about widget settin
 
 | | |
 |------------|------------|
-| Enable | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_appearance_rem,map_markers"/>* |
+| Enable | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_markers_bar"/>*|
 | By tapping | The visible part of the map shifts to the marker location. |
+| By tapping | Changing between "Distance" / "Estimated time of arrival" (Switch mode). |
 | Approach marker | In case your location is within a small radius of the map marker (**< 50 m**), in the widget field you can see a checkmark button to quickly delete the map marker (mark as passed). The checked marker is replaced by the next marker in the list of markers.  |
 | Distance format  | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |  
 
@@ -66,7 +68,7 @@ You can also select to display one or two markers. Read more about widget settin
 
 The **Map markers** *(for Android)* widget and **Distance indication - Widgets** *(for iOS)* displays:  
 - _Distance from your current location_ to the selected point indicated by the Marker on the map ([Units of length](../personal/profiles/#general-settings) can be choosed in the Profile settings).
-- _Estimated time of arrival or ETA_ *(Only for Android)*.  
+- _Estimated time of arrival or ETA_.  
 This is the time (hh:mm) when the vehicle or person should arrive at the destination. It is calculated as the distance to the marker divided by the average speed. 
 The average speed is calculated as the mean of all speed values received from location points for the time interval you selected from 15 seconds to 60 minutes.
 
@@ -99,8 +101,9 @@ You can also select to display one or two markers. Read more about widget settin
 
 | | |
 |------------|------------|
-| Enable | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_appearance_rem,map_markers"/>*  |
+| Enable | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_markers_bar"/>*  |
 | By tapping | The visible part of the map shifts to the marker location. |
+| By tapping | Changing between "Distance" / "Estimated time of arrival" (Switch mode). |
 | Distance format  | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
 </TabItem>
@@ -108,9 +111,9 @@ You can also select to display one or two markers. Read more about widget settin
 </Tabs> 
 
 
-## Configure marker widgets (Android)
+## Configure marker widgets
 
-Additional settings for the map marker widgets are only available **in the Android version** of the app. You can read general information about the Map markers widget settings on this [page](../personal/markers#map-markers-widgets).  
+You can read general information about the Map markers widget settings on this [page](../personal/markers#map-markers-widgets).  
 
 **Map markers bar**  
 The top bar widget displays the distance and direction to the next Map marker from your current location. In the settings, you can choose whether one or two markers will be displayed at the top of the screen.   

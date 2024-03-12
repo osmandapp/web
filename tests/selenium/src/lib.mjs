@@ -1,9 +1,9 @@
 'use strict';
 
 // import { strict as assert } from 'node:assert';
-import { Condition, By } from 'selenium-webdriver';
+import { Condition, By, logging } from 'selenium-webdriver';
 
-import { driver, debug, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED, HIDDEN_TIMEOUT } from './options.mjs';
+import { driver, verbose, debug, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED, HIDDEN_TIMEOUT } from './options.mjs';
 import actionIdleWait from './actions/actionIdleWait.mjs';
 
 // helpers
@@ -41,6 +41,7 @@ export async function enclose(callback, { tag = 'enclose', optional = false } = 
         if (optional === true) {
             return null;
         }
+        verbose && (await logBrowserAndNetworkErrors(driver));
         throw error;
     }
 }
@@ -93,6 +94,7 @@ export async function waitBy(by, { optional = false, idle = false } = {}) {
         if (optional === true) {
             return null;
         }
+        verbose && (await logBrowserAndNetworkErrors(driver));
         throw error;
     }
 }
@@ -274,7 +276,7 @@ const getTextBy = async (by) =>
  * test-ok: element found (by)
  * test-ok: text match (match)
  */
-async function matchBy(by, match, getter) {
+async function matchBy(by, match, getter, optional = false) {
     const validate = async () => {
         const text = await getter(by);
         if ((typeof match === 'object' && text.match(match)) || (typeof match !== 'object' && text.includes(match))) {
@@ -283,13 +285,15 @@ async function matchBy(by, match, getter) {
         debug && console.log('matchBy (', match, ') NOT IN (', text, ')');
         return null;
     };
-    return await enclose(validate, { tag: `matchTextBy (${match.toString()})` });
+    return await enclose(validate, { tag: `matchTextBy (${match.toString()})`, optional });
 }
 
-export const matchTextBy = async (by, match) => await matchBy(by, match, getTextBy);
-export const matchValueBy = async (by, match) => await matchBy(by, match, getValueBy);
-export const matchInnerHtmlBy = async (by, match) => await matchBy(by, match, getInnerHtmlBy);
-export const matchInnerTextBy = async (by, match) => await matchBy(by, match, getInnerTextBy);
+export const matchTextBy = async (by, match, optional = false) => await matchBy(by, match, getTextBy, optional);
+export const matchValueBy = async (by, match, optional = false) => await matchBy(by, match, getValueBy, optional);
+export const matchInnerHtmlBy = async (by, match, optional = false) =>
+    await matchBy(by, match, getInnerHtmlBy, optional);
+export const matchInnerTextBy = async (by, match, optional = false) =>
+    await matchBy(by, match, getInnerTextBy, optional);
 
 export async function sendKeysBy(by, keys) {
     enclose(
@@ -324,6 +328,34 @@ export async function checkElementByCss(searchString, exist = true) {
         );
         debug && console.log(`Condition met for element (${searchString})`);
     } catch (error) {
+        verbose && (await logBrowserAndNetworkErrors(driver));
         debug && console.log(`Condition not met for element (${searchString})`);
     }
+}
+
+async function logBrowserAndNetworkErrors(driver) {
+    console.warn('\n');
+    const browserLogs = await driver.manage().logs().get(logging.Type.BROWSER);
+    if (browserLogs && browserLogs.length > 0) {
+        console.warn('--- Browser Console Logs ---');
+        browserLogs.forEach((entry) => {
+            console.warn(`[${entry.level}] ${entry.message}`);
+        });
+    } else {
+        console.warn('No browser errors logged.');
+    }
+
+    const networkLogs = await driver.manage().logs().get(logging.Type.PERFORMANCE);
+    if (networkLogs && networkLogs.length > 0) {
+        console.warn('--- Network Logs ---');
+        networkLogs.forEach((entry) => {
+            const message = JSON.parse(entry.message).message;
+            if (message.method === 'Network.responseReceived' || message.method === 'Network.requestFailed') {
+                console.warn(`[${message.method}] ${message.params.response ? message.params.response.url : ''}`);
+            }
+        });
+    } else {
+        console.warn('No network errors logged.');
+    }
+    console.warn('\n' + 'Current URL:', await driver.getCurrentUrl(), '\n');
 }

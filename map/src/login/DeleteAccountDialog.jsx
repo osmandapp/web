@@ -9,10 +9,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import AccountManager from '../manager/AccountManager';
 import AppContext from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
     const ctx = useContext(AppContext);
     const navigate = useNavigate();
+
+    const { i18n } = useTranslation();
+    const lang = i18n.language;
 
     const [userEmail, setUserEmail] = useState(null);
     const [code, setCode] = useState(null);
@@ -39,7 +43,16 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
     }
 
     useEffect(() => {
-        checkLogin();
+        const loggedIn = checkLogin();
+        if (loggedIn) {
+            if (ctx.loginUser !== 'INIT') {
+                AccountManager.sendCode({
+                    email: ctx.loginUser,
+                    action: AccountManager.DELETE_EMAIL_MSG,
+                    lang,
+                }).then();
+            }
+        }
     }, [ctx.loginUser]);
 
     function close() {
@@ -114,7 +127,21 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
                         variant="contained"
                         component="span"
                         sx={{ backgroundColor: '#ff595e !important', ml: 2 }}
-                        onClick={() => AccountManager.deleteAccount(userEmail, code, setEmailError, setAccountDeleted)}
+                        onClick={() => {
+                            if (userEmail) {
+                                if (userEmail !== ctx.loginUser) {
+                                    setEmailError('Email does not match');
+                                } else {
+                                    AccountManager.deleteAccount({
+                                        userEmail,
+                                        code,
+                                        setEmailError,
+                                        setAccountDeleted,
+                                        lang,
+                                    }).then();
+                                }
+                            }
+                        }}
                     >
                         Delete this account
                     </Button>

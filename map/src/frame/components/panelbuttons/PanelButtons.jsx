@@ -96,7 +96,8 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
     };
 
     return (
-        ctx.selectedGpxFile && (
+        ctx.selectedGpxFile &&
+        ctx.currentObjectType !== OBJECT_TYPE_WEATHER && (
             <div
                 style={{
                     marginTop: getMarginTop(),

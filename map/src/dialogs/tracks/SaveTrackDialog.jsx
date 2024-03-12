@@ -82,12 +82,12 @@ export default function SaveTrackDialog() {
         if (validName(preparedName)) {
             setProcess(true);
             if (!isTrackExists(preparedName, folder, null, ctx.tracksGroups)) {
-                const uploaded = !!(await saveTrackToCloud(
+                const uploaded = !!(await saveTrackToCloud({
                     ctx,
-                    getFolderName(folder),
-                    preparedName,
-                    TracksManager.GPX_FILE_TYPE
-                ));
+                    currentFolder: getFolderName(folder),
+                    fileName: preparedName,
+                    type: TracksManager.GPX_FILE_TYPE,
+                }));
                 closeDialog({ uploaded });
             } else {
                 setExistTrack(true);
@@ -104,12 +104,12 @@ export default function SaveTrackDialog() {
         }
         if (validName(preparedName)) {
             setProcess(true);
-            const uploaded = !!(await saveTrackToCloud(
+            const uploaded = !!(await saveTrackToCloud({
                 ctx,
-                getFolderName(folder),
-                preparedName,
-                TracksManager.GPX_FILE_TYPE
-            ));
+                currentFolder: getFolderName(folder),
+                fileName: preparedName,
+                type: TracksManager.GPX_FILE_TYPE,
+            }));
             closeDialog({ uploaded });
         } else {
             setError(true);

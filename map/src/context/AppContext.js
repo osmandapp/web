@@ -240,10 +240,13 @@ export const AppContextProvider = (props) => {
     const [fitBoundsPadding, mutateFitBoundsPadding] = useMutator({ left: 0, top: 0, right: 0, bottom: 0 });
 
     const searchParams = new URLSearchParams(window.location.search);
+    // weather
     const [weatherLayers, setWeatherLayers] = useState(WeatherManager.getLayers());
-    const [weatherDate, setWeatherDate] = useState(WeatherManager.getWeatherDate());
+    const [weatherDate, setWeatherDate] = useState(new Date());
     const [weatherType, setWeatherType] = useState('gfs');
     const [renderingType, setRenderingType] = useState(DYNAMIC_RENDERING);
+    const [forecastLoading, setForecastLoading] = useState(false);
+
     const [gpxLoading, setGpxLoading] = useState(false);
     const [localTracksLoading, setLocalTracksLoading] = useState(false);
     // cookie to store email logged in
@@ -271,8 +274,6 @@ export const AppContextProvider = (props) => {
         pinInit = { lat: parseFloat(arr[0]), lng: parseFloat(arr[1]) };
     }
     const [pinPoint, setPinPoint] = useState(pinInit);
-
-    const [weatherPoint, setWeatherPoint] = useState(null);
 
     // favorites
     const [favorites, setFavorites] = useState({});
@@ -441,8 +442,6 @@ export const AppContextProvider = (props) => {
                 trackRouter,
                 afterPointRouter,
                 beforePointRouter,
-                weatherPoint,
-                setWeatherPoint,
                 routeTrackFile,
                 setRouteTrackFile,
                 searchCtx,
@@ -526,6 +525,8 @@ export const AppContextProvider = (props) => {
                 setSelectedSort,
                 visibleTracks,
                 setVisibleTracks,
+                forecastLoading,
+                setForecastLoading,
                 renderingType,
                 setRenderingType,
             }}

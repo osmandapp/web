@@ -29,10 +29,15 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 ## What's new
 
-- Allow to add many custom buttons (quick action with one action) 
-- Allow to control visibility of standard buttons 
-- Map quick actions for external devices.
-- Version history.
-- Widget. Current speed / speed limit widget (including AA)
-- Current speed / speed limit widget for Android Auto 
-- Main navigation widget 
+- Current speed / speed limit widget (including Android Auto). 
+- Round up numbers in navigation widgets. 
+- Allow Custom Quick Action Buttons.
+- Ask to disable battery optimization.
+- Redesigned graph.
+- Apply sorting order to all subfolders – Tracks.
+- Filter by Sensor data (HR, Cadence, Power).
+- Add support for tags: author, cmt, link, keywords, copyright, email.
+- New UI for Open Track screen – Tracks.
+- Move to OAuth 2.0 for OpenStreetMap login.
+- Ask to disable battery optimization.
+- Move sensors tags to gpxtpx:TrackPointExtensio.

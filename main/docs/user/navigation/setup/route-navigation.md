@@ -95,7 +95,7 @@ There are 3 ways to reach the navigation menu:
 </Tabs>
 
 - &nbsp;_<Translate android="true" ids="shared_string_my_location"/>_ - allows you to choose where your route will start. The default value is [my curent location](../../map/interact-with-map.md#my-location--zoom), though you can set a different one.
-- &nbsp;_<Translate android="true" ids="add_destination_point"/>_ - is used to [set your destination point](#set-destination).
+- &nbsp;_<Translate android="true" ids="add_destination_point"/>_ - is used to [set your destination point](#set-target-point).
 - &nbsp;"&#43;" - allows to add [intermediate points](../../widgets/nav-widgets.md#intermediate-destination) for navigation.
 - &nbsp;"&#8595;&#8593;" - allows to swap *Start* and *Finish* points.
 - &nbsp;"&#128266;" - can be used to switch off [Voice prompts](../guidance/voice-navigation.md).

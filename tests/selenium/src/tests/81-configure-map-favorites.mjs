@@ -28,6 +28,7 @@ export default async function test() {
     }
     // open group
     await clickBy(By.id(`se-menu-fav-${shortFavGroupName}`));
+    await waitByRemoved(By.id(`se-menu-fav-${shortFavGroupName}`));
     await waitBy(By.id(`se-opened-fav-group-${shortFavGroupName}`));
     // open favorite
     await clickBy(By.id(`se-fav-item-name-${favoriteName}`));

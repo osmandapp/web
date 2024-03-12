@@ -48,7 +48,7 @@ OsmAnd is a mobile application for Maps and Navigation available for **Android**
 [Read more](../purchases/index.md) about OsmAnd versions and Purchases.  
 
 
-## Welcome to OsmAnd!
+## Welcome to OsmAnd
 
 Our goal is to create a fully functional map-oriented application that could be used offline & online for various purposes. The application is full of features, so you don't need to switch between different apps and you will have everything at your fingertips:
 - Browse Worldwide Map with lots of details displayed with [many map styles](../map/vector-maps.md).
@@ -60,6 +60,7 @@ Our goal is to create a fully functional map-oriented application that could be 
 - Navigate [by route](../navigation/setup/route-navigation.md), [by a given track](../navigation/setup/gpx-navigation.md), [by public transport](../navigation/routing/public-transport-navigation.md) and [offroad](../navigation/setup/markers-navigation.md).
 - Everything works in **Offline Mode**!
 - And don't forget to contribute to [OpenStreetMap](https://www.openstreetmap.org/) with the [OSM Editing Plugin](../plugins/osm-editing.md).
+
 
 ## Actions Guide
 
@@ -83,6 +84,7 @@ We recommend that you grant OsmAnd permission to receive information about the p
 
 </Tabs>
 
+
 ### How to download maps
 
 OsmAnd is an offline map application, so after the *<Translate android="true" ids="get_started"/>* screen, you will be prompted to [download map](../start-with/download-maps.md#download---first-screen) of your region. You can select another region or skip this step and download maps later.  
@@ -104,12 +106,11 @@ OsmAnd is an offline map application, so after the *<Translate android="true" id
 </Tabs>
 
 :::note
-
 Application is not properly functional without offline maps which are not distributed within the application. Even though application supports [Vector maps](../map/vector-maps.md) and  [Raster maps](../map/raster-maps.md), it is highly recommended to start with Offline Vector Maps to get all features properly functioning such as [Search](../search/index.md), [Navigation](../navigation/index.md),  [Context menu](../map/map-context-menu.md). 
-
 :::
 
 Read more about [download map](../start-with/download-maps.md) options.
+
 
 ### How to manage your settings
 
@@ -133,6 +134,7 @@ You could manage application settings as [Global settings](../personal/global-se
 
 [Read more](../personal/global-settings.md) about Global settings.
 [Read more](../personal/profiles.md) about Profile settings.
+
 
 ### How to configure plugins
 
@@ -187,6 +189,7 @@ Map is a core element of OsmAnd and it's important to know [how to use it](../ma
 
 [Read more](../map/configure-map-menu.md) about map configuration.
 
+
 ### How to сonfigure screen
 
 [Configure screen](../widgets/configure-screen.md) allows you to enable [Informational](../widgets/info-widgets.md) (altitude, speed, current time, etc.) & [Navigational](../widgets/nav-widgets.md) (destination, bearing, arrival time, etc.) widgets, [Quick action](../widgets/quick-action.md) and other elements that will be displayed over Map.
@@ -208,6 +211,7 @@ Map is a core element of OsmAnd and it's important to know [how to use it](../ma
 </Tabs>
 
 [Read more](../widgets/configure-screen.md) about Screen configuration.
+
 
 ### How to add personal data to maps
 
@@ -231,6 +235,7 @@ OsmAnd allows you to make various marks on the Map for your personal needs. For 
 
 [Read more](../map/point-layers-on-map.md) about points on the map.
 
+
 ### How to browse & find point of interest
 
 [Points of interest (POI)](../map/point-layers-on-map.md#points-of-interest-poi) are amenities that could be searched or highlighted on the map. They represent interesting or useful places and distributed as part of [Vector Maps](../map/vector-maps.md). You can use them to [display on the map](../map/point-layers-on-map.md#points-of-interest-poi), [navigate](../navigation/index.md) and [search](../search/search-poi.md) the points of interest on the Map.
@@ -253,12 +258,12 @@ OsmAnd allows you to make various marks on the Map for your personal needs. For 
 
 [Read more](../search/search-poi.md) about POI search.
 
+
 ### How to plan a route
 
 [Plan route](../plan-route/create-route.md) is a powerful tool that allows to create a trip, edit an existing track and measure distance on the spot. You can quickly put intermediate points and connect them by various navigation lines (bike, pedestrian, straight line, etc). Results could be saved into a GPX file, so it could be [shared](../personal/tracks.md), [edited](../map/tracks-on-map.md) or [used by navigation](../navigation/setup/gpx-navigation.md) later.
 
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
@@ -275,6 +280,7 @@ OsmAnd allows you to make various marks on the Map for your personal needs. For 
 </Tabs>
 
 [Read more](../plan-route/create-route.md) about plan route feature.
+
 
 ### How to search by address
 
@@ -297,12 +303,11 @@ OsmAnd provides many search capabilities including address search. By default it
 </Tabs>
 
 :::note
-
- You need to download the map before searching for an address there. Also, if your current location is too far from your searching address you might need to increase the searching radius. 
-
+You need to download the map before searching for an address there. Also, if your current location is too far from your searching address you might need to increase the searching radius. 
 :::
 
 [Read more](../search/search-address.md) about address search.
+
 
 ### How to start navigation
 
@@ -326,6 +331,7 @@ OsmAnd provides many search capabilities including address search. By default it
 
 [Read more](../navigation/index.md) about navigation.
 
+
 ### How to record you trip
 
 [Trip recording](../plugins/trip-recording.md) is a special tool packaged as OsmAnd plugin that allows to record all movements into track using the device's GPS.
@@ -348,6 +354,7 @@ OsmAnd provides many search capabilities including address search. By default it
 
 [Read more](../plugins/trip-recording.md) about trip recording.
 
+
 ### How to edit maps
 
 OsmAnd powered by [OpenStreetMap](https://www.openstreetmap.org/) data. The maps are created by volunteer contributors, so they can have more or fewer details depending on how much work has been done at a certain part of the map. Anyone can register as a contributor and add or edit OSM maps. OsmAnd provides an editing plugin that helps to improve the OpenStreetMap. 
@@ -369,6 +376,7 @@ OsmAnd powered by [OpenStreetMap](https://www.openstreetmap.org/) data. The maps
 </Tabs>
 
 [Read more](../plugins/osm-editing.md) about OSM editing.
+
 
 ### How to close the app
 
@@ -406,6 +414,7 @@ Before it you might need to do the following, otherwise, OsmAnd will work in the
 
 </Tabs>
 
+
 ## App shortcuts
 
 [App shortcuts](https://support.google.com/android/answer/9450271) are available for the OsmAnd icon. Just long tap the OsmAnd icon on your device screen to open App shortcuts menu.
@@ -415,9 +424,24 @@ Tapping to the action icon allows starting this action immediately.
 
 ![Shortcuts](@site/static/img/shortcuts/shortcuts1.png) ![Shortcuts](@site/static/img/shortcuts/shortcuts2.png)
 
+
 ## Offline Help
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Offline help Android screenshot](@site/static/img/steps/offline_help_screen_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Maps menu iOS](@site/static/img/steps/offline_help_screen_ios.png) 
+
+</TabItem>
+
+</Tabs>
 
 In Help menu you can find articles from our site [www.osmand.net/docs](https://osmand.net/docs/intro/). After initial download (Internet connection required), help articles become available offline.  
 The first subsection of *Offline Help* groups the  **Most viewed** (or popular) articles among our users. **User guide** and **Troubleshooting** sections completely replicate the structure of the site.  
@@ -428,6 +452,7 @@ In Help menu you can also find useful links to OsmAnd social networks, informati
 :::note
 To clear Offline help cash go to the Settings app on your Android device. Scroll down and select *Apps*, find OsmAnd and tap on it. Select *Storage* and then tap on *Clear cache*.
 :::
+
 
 ## Privacy
 
@@ -444,6 +469,7 @@ OsmAnd doesn't have any required permissions on iOS / Android version.
 
 **Optional**:
 - **Camera/voice recording** (Android) - only used by [the Audio/Video notes](../plugins/audio-video-notes.md). This feature is packaged as plugin and by default disabled. It allows to quickly create location-related audio/video notes during a trip.
+
 
 ## Troubleshooting
 

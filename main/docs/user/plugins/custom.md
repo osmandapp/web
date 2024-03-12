@@ -313,6 +313,7 @@ When all files in folder and  *items.JSON*  will  be ready, you can zip all your
 
 Here we added some examples of custom plugins that our users created by yourself.
 
+ - [US Maps](https://t.me/OsmAnd_News/65) custom plugin (PAD-US data, USFS trails and roads, USFS recreation).
  - [Anygis maps](https://t.me/ruosmand/127579) custom plugin.
  - [Map Legend](https://t.me/OsmAndMaps/45410) custom plugin.
  - [UMP-PL](https://ump.waw.pl/) Poland [map custom plugin](https://ump.waw.pl/update/UMP-PL-OsmAnd_plugin.osf).

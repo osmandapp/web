@@ -27,9 +27,10 @@ import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.
 import { ReactComponent as TracksIcon } from '../../assets/menu/ic_action_track.svg';
 import { cloneDeep } from 'lodash';
 import EmptyLogin from '../errors/EmptyLogin';
-import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import { useTranslation } from 'react-i18next';
+import { closeHeader } from '../actions/HeaderHelper';
 import { INTERACTIVE_LAYER } from '../../map/layers/CustomTileLayer';
+import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
@@ -72,7 +73,12 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
         <>
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
-                    <IconButton variant="contained" type="button" className={styles.closeIcon} onClick={close}>
+                    <IconButton
+                        variant="contained"
+                        type="button"
+                        className={styles.closeIcon}
+                        onClick={() => closeHeader({ ctx })}
+                    >
                         <CloseIcon />
                     </IconButton>
                     <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>

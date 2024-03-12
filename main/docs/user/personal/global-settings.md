@@ -136,18 +136,21 @@ On some Android devices (Xiaomi with Muiu 14), there is no way to set app langua
 
 <TabItem value="android" label="Android">
 
+For Android you can find all information about OsmAnd data and change storage folder in Global settings.
+
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
 
-| |
-| -- | --|
-|![Data storage folder](@site/static/img/personal/profiles/global_sett_andr_1.png) | ![Profiles Android](@site/static/img/personal/profiles/general_settings_storage_andr.png) |
+![Profiles Storage Settings Android](@site/static/img/personal/profiles/general_settings_storage_android.png) ![Profiles Storage Settings 1 Android](@site/static/img/personal/profiles/general_settings_storage_1_android.png)  
 
-**<Translate android="true" ids="change_data_storage_folder"/>**
+OsmAnd usage:  
+Here you will find all the data size information for each data category: maps, guides, contour lines / hills / slopes, tracks, audio and video, tiles, other.  
+
+**<Translate android="true" ids="change_data_storage_folder"/>**  
 
 Here you can change the folder for saving OsmAnd data on your device.
 
 - **Internal app memory**. Only OsmAnd app has access to its data and none of external apps. 
-- *Shared memory*. No longer available.
+- **Shared memory**. No longer available.
 - **External storage 1**. Only 1 OsmAnd app has access and Admin apps and USB.
 - **External storage N**. SDCard: Only 1 OsmAnd app has access and Admin apps and USB.
 - **Multiuser storage**. Only 1 OsmAnd app has access but it's shared between multiple Android users.
@@ -157,7 +160,7 @@ Here you can change the folder for saving OsmAnd data on your device.
 
 <TabItem value="ios" label="iOS">
 
-For the iOS system, we can not do any manipulation of the storage folder. We can only find out how much memory OsmAnd uses.  
+OsmAnd files are visible in the [*Files*](https://apps.apple.com/us/app/files/id1232058109) application. You can access all OsmAnd files: [tracks](../personal/tracks.md), [favorites](../personal/favorites.md), [maps](../personal/maps.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md) 
 
 *iOS device → Settings → General → iPhone storage → OsmAnd Maps*  
 
@@ -166,11 +169,7 @@ For the iOS system, we can not do any manipulation of the storage folder. We can
 OsmAnd files are visible in the "Files" application. To access all tracks, custom routing and rendering files, follow this path:   
 *Files → On My Phone → OsmAnd Maps*
 
-*Files → On My Phone → OsmAnd Maps*
-
 ![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)  
-
-OsmAnd files are visible in the _["Files"](https://apps.apple.com/us/app/files/id1232058109)_ application. You can access all OsmAnd files: [tracks](../personal/tracks.md), [favorites](../personal/favorites.md), [maps](../personal/maps.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md)
 
 
 ![General Settings storage iOS](@site/static/img/personal/profiles/files-1.png) ![General Settings storage iOS](@site/static/img/personal/profiles/files-2.png)
@@ -420,4 +419,86 @@ In some countries or regions, using speed camera warning applications is illegal
  
 Read about alerts for speed cameras on your route in the article Navigation widgets in the *[Alert widget](../widgets/nav-widgets.md#alert-widget)* section.
 
+
+### Build your own Map (advanced)
+
+![Build your own Map](@site/static/img/osmandmapcreator/OsmAndMapCreator-download-raster-maps.png)
+
+OsmAnd gives you the possibility to upload a self-created map. 
+[OsmAndMapCreator](../../technical/map-creation/create-offline-maps-yourself.md) can be used to create any maps supported by OsmAnd. To create a **Vector map** you will need an OSM file (*.pbf, .osm.gz, .osm.bz2*) and to create an **Online sqlite map** you will need the *url* of the base tile.  
+
+More information can be found in the *My data* section [Maps](../personal/maps.md#build-your-own-map-advanced) article.
+
+
+### Local Resources
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Local tab Android 1](@site/static/img/settings/new_map_and_resourses_andr_1.png) ![Local tab Android 2](@site/static/img/settings/new_map_and_resourses_andr_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Local tab menu iOS](@site/static/img/settings/Local_tab_ios_1.png)
+
+</TabItem>
+
+</Tabs> 
+
+The Local tab *(<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local"/>)*  shows how much space OsmAnd takes up, in the form of a line chart and a list with a breakdown of each data type. All data is grouped into three sections, sorted by the largest section at the top. The data categories within the sections are also arranged according to the space available.
+The colors and size of the chart fragments correspond to the corresponding partition and the amount of memory used.
+
+- ***Resources*** (*blue*). [Standard Maps](../map/vector-maps.md), [Wikipedia](../plugins/wikipedia.md) and [Travel maps](../plan-route/travel-guides.md), [Nautical maps](../plugins/nautical-charts.md), [Terrain maps](../plugins/contour-lines.md), [Live updates](../personal/maps.md#osmand-live), [Weather maps](../plugins/weather.md),  [Map sources](../map/raster-maps.md), [Rendering styles](../map/vector-maps.md#default-map-styles), Map fonts, Voice prompts (recorded and TTS), Cache.  
+- ***My Places*** (*yellow*). [Favorites](../personal/favorites.md), [Tracks](../personal/tracks.md), [OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), [OSM Edits](../plugins/osm-editing.md#osm-editing-layer), [A/V Notes](../plugins/audio-video-notes.md), [Map markers](../personal/markers.md), [History](../personal/global-settings.md#history), Itinerary.
+- ***Settings*** (*green*). [Profiles](../personal/profiles.md), Other.
+
+
+#### Data type overview and toolbar 
+
+If you select a category on the Local tab and tap it, a graph appears showing how much space the selected category occupies in the total space of the partition.
+
+![Local category overview Android 1](@site/static/img/settings/local_category_sorting_options_andr_1.png) ![Local category options Android 2](@site/static/img/settings/local_category_sorting_options_andr_2.png)  
+
+Above the graph is a toolbar with the options available for that data type. In most cases (except for standard graphs), only two options are available.
+
+- **Search** (*magnifying glass*). Allows you to search for specific data by name only in the selected folder.
+- **Three dots menu** (*Android only*)
+ 
+After tapping on the three dots in the right corner of the toolbar, you can access additional actions (*Android only*):
+- **Select**. Allows you to select items and perform further actions only on them.
+- **Import**. Redirects to internal storage where you can select a file to import.
+
+You can also perform some actions on list items using the three-dot menu located in the right corner of each entry.  
+
+![Local category item actions 2](@site/static/img/settings/local_category_actions_2.png) ![Local category item actions](@site/static/img/settings/local_category_actions.png)  
+
+For most data categories, only the *Information* option is available. If you click this option, you will be redirected to the *[Local data item overview](#local-data-item-overview)* screen. Additional actions are available for maps.
+
+- **Deactivate**/**Activate**. Hides/shows the map for traversal/use in settlements.
+- **Update**. Loads the latest version of the map. 
+- **Rename**. The name of the card can be changed to make it more recognizable.
+- **Remove**. Deleting a card from the device memory.
+
+#### Local data item overview 
+
+![Local data item overview](@site/static/img/settings/local_category_overview_2.png) ![Local data item overview 2](@site/static/img/settings/local_category_overview_1.png)  
+
+The Local Data item overview screen provides information about:
+- **Data type**
+- **Size** 
+- **Creation date of a single entry stored by OsmAnd**
+- **Delete**
+
+#### Standard maps additional option
+
+![Local data sorting options](@site/static/img/settings/local_sorting_options_andr_1.png)
+
+For *Standard maps*, there is an additional option to sort them.
+- **Map name** (ascending or descending) - is useful if you want to find a specific map quickly.  
+- **Country name** - allows arranging your maps geographically.
+- **Newest or oldest date of modification** - this option may be useful if you would like to see recently updated maps or if you're looking for older versions.
+- **Large or small size** - may help to identify large maps if you are concerned about storage space.
 

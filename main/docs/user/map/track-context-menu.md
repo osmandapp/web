@@ -195,7 +195,7 @@ This tab can be visible only on recorded tracks (points of this track type have 
 ![Track graph altitude Android](@site/static/img/personal/tracks/track_graph_altitude_android.png) ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation.png) 
 
 If track is missing elevation information, it's possible to add it:
-_Calculate elevation_ button → [_Attach to the roads_](../navigation/setup/gpx-navigation.md#attach-to-roads) or [_Calculate offline_](#calculate-elevation).
+_Calculate elevation_ button → [_Attach to the roads_](../navigation/setup/gpx-navigation.md#attach-to-roads) or [_Calculate offline_](#calculate-elevation-offline).
 
 </TabItem>
 
@@ -212,17 +212,60 @@ _Calculate elevation_ button → [_Attach to the roads_](../navigation/setup/gpx
 - *<Translate android="true" ids="altitude_ascent"/>* - cumulative altitude gain along the track.
 - *<Translate android="true" ids="altitude_descent"/>* - cumulative altitude loss along the track.  
 
-### Calculate elevation
+### Calculate elevation offline
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 :::note
 <ProFeature/> Calculate elevation offline feature is only available for <a href="https://osmand.net/docs/user/purchases/android#pro-features"> OsmAnd Pro subscribers</a>.
 :::
 
-This feature allows you to calculate Elevation profile for GPX track offline for any area between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../plugins/contour-lines.md#how-to-download) (Terrain maps (3D) should be predownloaded):  
+This feature allows you to calculate Elevation profile for GPX track offline for any area between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../plugins/contour-lines.md#how-to-download) (**Terrain maps (3D) should be predownloaded**):
 
-_Track Context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,calculating_altitude,calculate_offline"/>_
+**1.** Check that you have [OsmAnd Pro subscription](../purchases/android.md#pro-features).
+
+**2.** Download [Terrain maps(3D)](../plugins/contour-lines.md#download-maps) for needed region.
+
+**3.** In 3.1 - manual for a track without altitude data. In 3.2 - manual for ["Plan a route" tool](../plan-route/create-route.md#graph):
+
+**3.1** For a track without Altitude data:
+_Track Context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude,calculate_offline"/>_
 
 ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png) ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png)
+
+You receive the next graph of your track:
+
+![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)
+
+**3.2** For ["Plan a route" tool](../plan-route/create-route.md#graph), when you use "Straight line" profile for a route creation:
+
+![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_5.png)
+
+Below of _Graph menu_ section you find "Calculate elevation": 
+
+![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_6.png)
+
+Click to this button for open "Get elevation data". Here you need to choose "Calculate offline":
+
+![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_7.png)
+
+You receive full Altitude/Slope Graph for your route:
+
+![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_8.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly />
+
+</TabItem>
+
+</Tabs>
+
+
 
 
 ## Points / Waypoints
@@ -365,6 +408,7 @@ All of these point types can be saved in GPX format to provide the user with loc
 
 All waypoints of the route are stored in the folders you selected for them when creating or editing. To access a specific folder, you need to open the required track and go to the *Points* submenu. In the three points menu, you can edit a group of waypoints, add them to your marker list, or create a folder in *Menu → My Places → My Favorites*. You can read more information in the article [Tracks Context menu](../map/track-context-menu.md#waypoints-folder).
 
+
 ### Add / Delete
 
 Points / Waypoins menu in Context track menu opens list of track / folders waypoints.
@@ -387,8 +431,6 @@ Points / Waypoins menu in Context track menu opens list of track / folders waypo
 
 ### Waypoints folder 
 
-Manipulation with waypoints folder: change name and color, delete..
-
 <Tabs groupId="operating-systems">
 
 
@@ -398,14 +440,6 @@ Manipulation with waypoints folder: change name and color, delete..
 
 ![Track menu Group menu Android](@site/static/img/personal/tracks/track_menu_group_menu_android.png) 
 
-Actions:  
-- *<Translate android="true" ids="shared_string_show_on_map"/>* - allows to show or not group waypoints on the map.
-- *<Translate android="true" ids="shared_string_rename"/>* - allows to change Group name.
-- *<Translate android="true" ids="change_color"/>* - allows to change color for group waypoints.
-- *<Translate android="true" ids="copy_to_map_markers"/>* - allows to move group waypoints to [Map markers](../personal/markers.md).
-- *<Translate android="true" ids="copy_to_map_favorites"/>* - allows to move group waypoints to [Favorites](../personal/favorites.md).
-- *<Translate android="true" ids="shared_string_delete"/>* - allows to delete group waypoints.
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -414,15 +448,18 @@ Actions:
 
 ![Track menu Group menu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png) 
 
-Actions:  
-- *<Translate ios="true" ids="recording_context_menu_show"/>* - allows to show or not group waypoints on the map.
-- *<Translate ios="true" ids="shared_string_rename"/>* - allows to change Group name.
-- *<Translate ios="true" ids="change_color"/>* - allows to change color for group waypoints.
-- *<Translate ios="true" ids="shared_string_delete"/>* - allows to delete group waypoints.
-
 </TabItem>
 
 </Tabs>
+
+Actions:  
+- **<Translate android="true" ids="shared_string_show_on_map"/>**. Allows you to show or not show group waypoints on the map.
+- **<Translate android="true" ids="shared_string_rename"/>**. Allows you to change the name of the group.
+- **<Translate android="true" ids="change_color"/>**. Allows you to change the color for group waypoints.
+- **<Translate android="true" ids="copy_to_map_markers"/>** (*Android only*). Allows you to move group waypoints to [Map markers](../personal/markers.md).
+- **<Translate android="true" ids="copy_to_map_favorites"/>** (*Android only*). Allows you to move group waypoints to [Favorites](../personal/favorites.md).
+- **<Translate android="true" ids="shared_string_delete"/>**. Allows you to delete group waypoints.
+
 
 ## Options
 

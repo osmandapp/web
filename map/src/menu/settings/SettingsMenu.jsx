@@ -93,10 +93,11 @@ export default function SettingsMenu() {
     const languageList = useMemo(() => {
         if (langList && currentLang) {
             let res = [];
+            const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'base' });
             let sortedLangList = [...langList].sort((a, b) => {
                 const transA = getTransLanguage(a);
                 const transB = getTransLanguage(b);
-                return transA?.localeCompare(transB);
+                return collator.compare(transA, transB);
             });
             sortedLangList.map((lang, index) => {
                 const transLang = getTransLanguage(lang);

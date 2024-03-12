@@ -7,6 +7,7 @@ import actionFinish from '../actions/actionFinish.mjs';
 import actionRenameFavGroup from '../actions/actionRenameFavGroup.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
 import actionOpenFavorites from '../actions/actionOpenFavorites.mjs';
+import actionDeleteAllFavorites from '../actions/actionDeleteAllFavorites.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -24,7 +25,7 @@ export default async function test() {
         await deleteFavGroup(`${shortFavGroupName}${suffix}`);
     }
 
-    await deleteFavGroups(favorites);
+    await actionDeleteAllFavorites(favorites);
 
     await uploadFavGroup(favorites);
 
@@ -79,7 +80,7 @@ export default async function test() {
     await validateGroupOrder(favGroupsOldDateAfterRename);
 
     await deleteFavGroup(`${shortFavGroupName}${suffix}`);
-    await deleteFavGroups(favorites);
+    await actionDeleteAllFavorites(favorites);
 
     await actionFinish();
 }
@@ -126,17 +127,6 @@ async function validateItemOrder(ids) {
         },
         { tag: 'validateFavItemsSort' }
     );
-}
-
-async function deleteFavGroups(favorites) {
-    for (const f of favorites) {
-        const shortFavGroupName = f.name.split('-')[1];
-        const exist = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`), { optional: true, idle: true });
-        if (exist) {
-            await deleteFavGroup(shortFavGroupName);
-        }
-    }
-    await waitBy(By.id('se-empty-page'));
 }
 
 async function uploadFavGroup(favorites, upload = true) {
