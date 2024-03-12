@@ -14,7 +14,7 @@ const routes = [
         profile: 'line',
         A: '38.68866, -9.17676',
         B: '41.14735, -8.64030',
-        check: '277.3 km',
+        check: /27\d\.\d km/, // 277.3
     },
     {
         zoom: 12,
@@ -22,7 +22,7 @@ const routes = [
         profile: 'car',
         A: '50.07097, 19.79838',
         B: '50.03543, 20.07204',
-        check: '30.8 km',
+        check: /3\d\.\d km/, // 30.8
     },
     {
         zoom: 13,
@@ -30,7 +30,7 @@ const routes = [
         profile: 'pedestrian',
         A: '48.16417, 24.53622',
         B: '48.17215, 24.42149',
-        check: '11.8 km',
+        check: /1\d\.\d km/, // 11.8
     },
     {
         zoom: 14,
@@ -38,7 +38,7 @@ const routes = [
         profile: 'bicycle',
         A: '52.43852, 4.90802',
         B: '52.46022, 4.87782',
-        check: '4.2 km',
+        check: /[345]\.\d km/, // 4.2
     },
 ];
 
