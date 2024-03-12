@@ -113,7 +113,7 @@ Bearing is the direction to a target outside your vehicle, such as a destination
 | | |
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="shared_string_bearing"/>* |
-|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_magnetic_bearing"/> or <Translate ios="true" ids="map_widget_bearing"/>* |
+|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/>  → Left/Right/Top/Bottom panels →  <Translate ios="true" ids="map_widget_magnetic_bearing"/> or <Translate ios="true" ids="map_widget_bearing"/>* |
 | Format | **Android:** You can change the data display format for angular units: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/>* |
 |  | **iOS:** You can change the data display format for angular units: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,angular_units"/>* |  
 
@@ -150,7 +150,7 @@ The widget displays the distance left to the last destination point when followi
 | | |
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → *<Translate android="true" ids="map_widget_distance_to_destination"/>* |
-|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Left / Right panel →* <Translate ios="true" ids="map_widget_distance_to_destination"/> |
+|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_distance_to_destination"/>* |
 | By tapping | Moves the map to the destination point. |    
 
 ### Distance to intermediate
@@ -162,7 +162,7 @@ The widget shows the distance to the first intermediate point along the calculat
 | | |
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → *<Translate android="true" ids="map_widget_distance_to_intermediate"/>* |
-|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Left / Right panel →* <Translate ios="true" ids="map_widget_distance_to_intermediate"/> |
+|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_distance_to_intermediate"/>*|
 | By tapping | **One intermediate point** - move the map to the intermediate point. <br /> **Two or more intermediate points** - opens Destinations list menu. |
 
 ### Time to intermediate
@@ -188,7 +188,7 @@ The widget shows the *Arrival time* or *Time to go* to the first intermediate po
 | | |
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
 | By tapping | Changes between *Arrival time* to *Time to go* and the reverse. |  
 
 
@@ -215,7 +215,7 @@ The widget shows the *Arrival time* or *Time to go* to the last destination poin
 | | |
 |------------|------------|
 | Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="map_widget_left"/>/<Translate android="true" ids="map_widget_right"/> → <Translate android="true" ids="map_widget_time_to_destination"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_time_to_destination"/>* |
 | By tapping | Changes between *Arrival time* to *Time to go* and the reverse. |  
 
 
@@ -228,7 +228,7 @@ Widget displays the speed limit on the current road you are traveling on. It wor
 | |
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_max_speed"/>* |
-|  |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right,map_widget_max_speed"/> or <Translate ios="true" ids="map_widget_intermediate_time"/>* |
+|  |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_max_speed"/> or <Translate ios="true" ids="map_widget_intermediate_time"/>* |
 | By tapping | No changes |
 
 
@@ -241,7 +241,7 @@ Widgets display information about the next turn with maneuvers. There are two ty
 | | |
 |------------|------------|
 | Enable | **Android:** *Menu → Configure screen → Left / Right panel → Next turn, Next turn (small), Second next turn*  |
-|   | **iOS:** *Menu → Configure screen → Left / Right panel → Next turn, Next turn (small), Second next turn* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → Next turn, Next turn (small), Second next turn* |
 | By tapping | If [voice prompts](../navigation/guidance/voice-navigation.md) are enabled, the next maneuver and the distance to it are pronounced. |
 
 
@@ -345,5 +345,5 @@ Approach POIs/Favorites/Waypoints  widget is combined with [Street name](#street
 
 | |
 |------------|------------|
-| Enable  | <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,get_directions,shared_string_settings,show_along_the_route,points_of_interests"/>, <Translate android="true" ids="shared_string_my_favorites"/>, <Translate android="true" ids="way_alarms"/> <br /> <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu"/> → Start navigation → pencil button |
+| Enable  | *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,get_directions,shared_string_settings,show_along_the_route,points_of_interests"/>, <Translate android="true" ids="shared_string_my_favorites"/>, <Translate android="true" ids="way_alarms"/>* <br /> *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu"/> → Start navigation → pencil button* |
 

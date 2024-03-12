@@ -139,7 +139,7 @@ Widget panels help you arrange widgets on the application screen in a place that
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Top / Bottom panel* 
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Top / Bottom panel* 
 
 ![top panel](@site/static/img/widgets/top_bottom_panel_1_ios.png)    
 
@@ -157,7 +157,7 @@ Types of widgets are available for Top / Bottom panels:
 | 2 | [Coordinates widgets](../widgets/info-widgets#coordinates-widget) | This set of *informational* widgets displays the geographic coordinates of the current geolocation. | 2 widgets included: *Coordinates: map center*, *Coordinates: current location*. |
 | 3 | [Street name](../widgets/nav-widgets#street-name) | *Navigational* widget shows the current street name with a straight arrow or the next street name with an arrow pointing to an upcoming turn. | |
 | 4 | [Lanes](../widgets/nav-widgets#lanes) | *Navigational* widget shows the current road lanes layout and highlights lanes for traffic with active navigation. | |
-| 5 | [Map markers bar (*Android only*)](../widgets/markers.md#configure-marker-widgets-android) | The widget displays the distance and direction to the next Map marker from your current location. | The widget can be configured to show 1 or 2 markers. |
+| 5 | [Map markers bar](../widgets/markers.md#configure-marker-widgets-android) | The widget displays the distance and direction to the next Map marker from your current location. | The widget can be configured to show 1 or 2 markers. |
 | 6 | [Elevation profile (*Android only*)](../widgets/nav-widgets#elevation-widget) | *Navigational* widget shows the elevation and slope profile of the current route. | ![elevation profile](@site/static/img/widgets/elevation_prof_and.png) |
 
 
