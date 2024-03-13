@@ -129,8 +129,8 @@ From version 4.7.1 upwards Osmand supports the profile parameter for mapping: Si
 
 ### Examples: Osmand-profile name	Brouter-app
 ```
-[Brouter[trekking]	"trekking" profile will be used (file trekking.brf)
-[Brouter[racebike]	"racebike" profile will be used (file racebike.brf)
+Brouter[trekking]	"trekking" profile will be used (file trekking.brf)
+Brouter[racebike]	"racebike" profile will be used (file racebike.brf)
 ....
 ```
 Remark:
