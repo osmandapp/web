@@ -40,11 +40,25 @@ We are pleased to announce the release of a 4.7 version of OsmAnd for iOS device
 - "My Places > Tracks" redesign.
 
 
+## Redesign My Places > Tracks menu
+
+We made full redesign [_Tracks menu_](https://osmand.net/docs/user/personal/tracks#my-places-menu) of [_My Places_](https://osmand.net/docs/user/personal/myplaces). 
+
+Added new viewed of 
+- Track folders
+- Track list, 
+- _Tracks on map_ menu
+- _New track_ - recording new track. Button for Start track recording.
+
+![My Places > Tracks menu iOS](./img/my_places_tracks_menu_ios.png) 
+
 ## Widgets updates
 
 - Enhanced top and bottom widget panels to accommodate all widgets.
 
 - Background color opacity for transparency widget mode.
+
+- Improved widget configuration by allowing users to move pages and rows.
 
 ## Redesign Track menu of Configure map
 
@@ -75,10 +89,63 @@ By clicking to _"Last modified"_ you open the _Sort tracks_ menu. Where you can 
 
 ![track menu iOS](./img/track_sort_menu_ios.png) ![track menu iOS](./img/track_sort_menu_2_ios.png)
 
-## Updates of Analize on map
+## Updates of GPX tracks
+
+### External sensors data for Analize on map
 
 Updated ["Analyze on Map"](https://osmand.net/docs/user/map/tracks-on-map#analyze-track-on-map) with the ability to display metrics from [sensors](https://osmand.net/docs/user/plugins/external-sensors#trip-recording).
 
 - you can analise your track data with external sensors data: choose the track → [Options](https://osmand.net/docs/user/map/track-context-menu/#options) → Analyze on map → Select graph data
 
 ![track menu iOS](./img/analyse_track_sensors_ios.png) ![track menu iOS](./img/analyse_track_sensors_2_ios.png) ![track menu iOS](./img/analyse_track_sensors_3_ios.png)
+
+### Additional tags support
+
+- Enhanced tags support for GPX has been added: link, author, copyright, and keywords. 
+
+- Add support for additional tags for OSM routes.
+
+## Sun position widget
+
+New [_Sun position_ widget](https://osmand.net/docs/user/widgets/info-widgets#sun-position) was added. It's additional to Sunrise and Sunset widgets. Now this section of widgets names _"Sun position"_:
+
+_Menu → Configure screen → Widgets → Add widget → Sun Position → Sun position, Sunrise, Sunset_. 
+
+![Sun Position](./img/sun_position_3_ios.png)
+
+_"Sun Position"_ widget shows the time until sunrise or sunset, depending on the current time. This widget has the next settings:
+- _Mode_ - choose _"Next event"_, _"Sunset"_, _"Sunrise"_
+- _Format_ - here you choose _"Time left"_ or _"Next event"_, this format settings can be modified by clicking to the widget on the screen.
+
+![Sun Position](./img/sun_position_ios.png) ![Sun Position](./img/sun_position_2_ios.png)
+
+## OsmAnd Cloud updates
+
+- OsmAnd Cloud: added ability to restore deleted files from trash.
+
+- OsmAnd Cloud: added ability to delete account.
+
+## App Language for Basemap
+
+Now World Basemap has name language of the app language.
+
+![App language](./img/app_language_ios.png) 
+
+
+## Fixed
+
+###  Coordinates widget
+
+- Fixed the "Coordinates" widget where, in some cases, the last digits were missed.
+
+### 3D Mode
+
+- Fixed "3D Mode" button behavior: tapping on the button doesn't save the tilt angle.
+
+### Status bar color
+
+- Fixed status bar color for older iOS versions.
+
+### Mac OS version
+
+- Fixed rotate and pinch to zoom gestures.

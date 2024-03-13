@@ -286,7 +286,7 @@ You can reset the current GPS cache through:
 
 <TabItem value="ios" label="iOS">
 
-![Sunset and sunrise widgets](@site/static/img/widgets/sunset_rise_widgets_ios.png)
+![Sunset and sunrise widgets](@site/static/img/widgets/sun_position_4_ios.png) ![Sunset and sunrise widgets](@site/static/img/widgets/sun_position_3_ios.png)
  
 </TabItem>
 
@@ -294,10 +294,14 @@ You can reset the current GPS cache through:
 
 The Sun position widgets show the time of the next sunrise, sunset for the center of the map. When tapped, they can also display the time remaining until the expected sunset or sunrise. In both cases, the time is based on the configured time of your device.      
 
+- _"<Translate ios="true" ids="map_widget_sun_position"/>"_ - <Translate ios="true" ids="map_widget_sun_position_desc"/>
+- _"<Translate ios="true" ids="map_widget_sunrise"/>"_ - <Translate ios="true" ids="map_widget_sunrise_desc"/>
+- _"<Translate ios="true" ids="map_widget_sunset"/>"_ - <Translate ios="true" ids="map_widget_sunset_desc"/>
+
 | | |
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_sun_position"/> → <Translate android="true" ids="map_widget_sun_position"/>, <Translate android="true" ids="shared_string_sunrise"/>, <Translate android="true" ids="shared_string_sunset"/>* |
-|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_sun_position"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_sun_position"/> → <Translate ios="true" ids="map_widget_sun_position"/>, <Translate ios="true" ids="map_widget_sunrise"/>, <Translate ios="true" ids="map_widget_sunset"/>* |
 | By tapping | Switch between the remaining time and the time of the next sunrise/sunset. |  
 
 
