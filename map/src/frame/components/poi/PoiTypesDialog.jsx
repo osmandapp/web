@@ -104,14 +104,22 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen, width }) {
     }
 
     function removeUnusedFilters(filters) {
-        return filters.filter((f) => f !== 'routes');
+        if (filters) {
+            return filters.filter((f) => f !== 'routes');
+        }
+        return null;
     }
 
     function translatePoi({ key = null, value = null }) {
         if (key === null && value === null) {
             return '';
         }
-        return key !== null ? t('poi_' + activePoiFilters[key]) : t('poi_' + value);
+        if (key !== null && activePoiFilters !== null) {
+            return t('poi_' + activePoiFilters[key]);
+        } else if (value !== null) {
+            return t('poi_' + value);
+        }
+        return '';
     }
 
     function getLabel(category) {
@@ -217,7 +225,7 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen, width }) {
                     ))}
                 </div>
                 <Grid container spacing={2}>
-                    {activePoiFilters.map((item, key) => {
+                    {activePoiFilters?.map((item, key) => {
                         const category = PoiManager.formattingPoiFilter(item, true);
                         return (
                             <Grid
