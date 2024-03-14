@@ -20,6 +20,7 @@ import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg
 import styles from '../../menu/trackfavmenu.module.css';
 import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
 import WeatherForecastDetails from '../../menu/weather/WeatherForecastDetails';
+import { useWindowSize } from '../../util/hooks/useWindowSize';
 
 const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     const [mounted, setMounted] = useState(false);
@@ -41,6 +42,7 @@ const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
 
 export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setClearState, mainMenuSize }) {
     const DRAWER_SIZE = 360;
+    const [, height] = useWindowSize();
 
     const ctx = useContext(AppContext);
 
@@ -181,10 +183,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                     {openWeatherForecastDetails ? (
                         <WeatherForecastDetails setShowInfoBlock={setShowInfoBlock} />
                     ) : (
-                        <Box
-                            anchor={'right'}
-                            sx={{ alignContent: 'flex-end', height: 'auto', width: getWidth(), overflowX: 'hidden' }}
-                        >
+                        <Box anchor={'right'} sx={{ height: `${height}px`, width: getWidth(), overflowX: 'hidden' }}>
                             <div id="se-infoblock-all">
                                 {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
                                 <IconButton

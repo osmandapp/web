@@ -44,6 +44,7 @@ import FavoriteGroupFolder from './favorite/FavoriteGroupFolder';
 import VisibleTracks from './visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
 import SettingsMenu from './settings/SettingsMenu';
+import { useWindowSize } from '../util/hooks/useWindowSize';
 
 export default function MainMenu({
     size,
@@ -60,6 +61,7 @@ export default function MainMenu({
 }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
+    const [, height] = useWindowSize();
 
     const [selectedType, setSelectedType] = useState(null);
 
@@ -255,7 +257,6 @@ export default function MainMenu({
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
-                position: 'absolute',
             }}
         >
             <ClickAwayListener onClickAway={handleClickAway}>
@@ -265,6 +266,7 @@ export default function MainMenu({
                         sx: {
                             boxSizing: 'border-box',
                             width: size,
+                            height: `${height}px`,
                             overflow: 'hidden',
                             zIndex: openMainMenu ? Z_INDEX_OPEN_LEFT_MENU : Z_INDEX_LEFT_MENU,
                             borderRight: (!menuInfo || (menuInfo && openMainMenu)) && 'none !important',
