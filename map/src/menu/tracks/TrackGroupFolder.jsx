@@ -91,7 +91,14 @@ export default function TrackGroupFolder({ folder }) {
     return (
         <>
             <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
-                {group && <GroupHeader trackGroup={group} setSortGroups={setSortGroups} setSortFiles={setSortFiles} />}
+                {group && (
+                    <GroupHeader
+                        type="tracks"
+                        trackGroup={group}
+                        setSortGroups={setSortGroups}
+                        setSortFiles={setSortFiles}
+                    />
+                )}
                 <Box
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}

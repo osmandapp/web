@@ -20,7 +20,7 @@ export default function AddFolderDialog({ trackGroup, setOpenAddFolderDialog }) 
     const { t } = useTranslation();
 
     function isFolderExist(name) {
-        return trackGroup.subfolders.some((folder) => folder.name === name);
+        return trackGroup?.subfolders.some((folder) => folder.name === name);
     }
 
     function validationFolderName(name) {
@@ -35,7 +35,7 @@ export default function AddFolderDialog({ trackGroup, setOpenAddFolderDialog }) 
 
     async function addFolder() {
         let folderPart;
-        if (trackGroup.fullName === DEFAULT_GROUP_NAME) {
+        if (!trackGroup || trackGroup.fullName === DEFAULT_GROUP_NAME) {
             folderPart = '';
         } else {
             folderPart = `${trackGroup.fullName}/`;

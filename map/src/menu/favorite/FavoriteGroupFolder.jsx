@@ -149,7 +149,7 @@ export default function FavoriteGroupFolder({ folder }) {
                 maxWidth={ctx.infoBlockWidth}
                 sx={{ overflow: 'hidden' }}
             >
-                <GroupHeader favoriteGroup={group} setSortFiles={setSortFiles} markers={markers} />
+                <GroupHeader type="favorites" favoriteGroup={group} setSortFiles={setSortFiles} markers={markers} />
                 <Box
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}
