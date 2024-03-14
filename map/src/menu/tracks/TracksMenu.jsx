@@ -29,9 +29,7 @@ export default function TracksMenu({ setOpenVisibleMenu }) {
     useEffect(() => {
         if (!isEmpty(ctx.tracksGroups)) {
             let defGroup = ctx.tracksGroups.find((g) => g.name === DEFAULT_GROUP_NAME);
-            if (defGroup) {
-                setDefaultGroup(defGroup);
-            }
+            setDefaultGroup(defGroup ?? null);
             // sort default track group
             if (ctx.selectedSort?.tracks && ctx.selectedSort.tracks[DEFAULT_GROUP_NAME]) {
                 doSort({
@@ -65,8 +63,13 @@ export default function TracksMenu({ setOpenVisibleMenu }) {
 
     return (
         <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
-            {defaultGroup && (
-                <GroupHeader trackGroup={defaultGroup} setSortGroups={setSortGroups} setSortFiles={setSortFiles} />
+            {ctx.loginUser && (
+                <GroupHeader
+                    type="tracks"
+                    trackGroup={defaultGroup}
+                    setSortGroups={setSortGroups}
+                    setSortFiles={setSortFiles}
+                />
             )}
             {ctx.gpxLoading ? (
                 <Loading />

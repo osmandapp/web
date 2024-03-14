@@ -9,7 +9,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 
 Happy New 2020 Year!
 
-Every year we follow tradition to write New Year Resolutions. First of all we would like to describe our achievements, compare them with <a href="https://osmand.net/blog/2019-ny-resolutions">the 2019 Resolutions</a> and prepare a new list for 2020.
+Every year we follow tradition to write New Year Resolutions. First of all we would like to describe our achievements, compare them with <a href="https://osmand.net/blog/ny-resolutions-2019">the 2019 Resolutions</a> and prepare a new list for 2020.
 
 <!--truncate-->
 

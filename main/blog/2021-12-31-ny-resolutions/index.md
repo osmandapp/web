@@ -11,7 +11,7 @@ At the end of each year, we sum up the results of the passing year and write our
 
 <!--truncate-->
 
-2021 was another difficult year for most of us, so it was for OsmAnd as well. Though we wish that 2 COVID years are over and we finally can go back to our normal traveling life with Maps. In our <a href="https://osmand.net/blog/2021-ny-resolutions">2021 New Year resolutions</a> we anticipated the difficulties and wrote a rather simple for our team list which we consider as 90% completed.
+2021 was another difficult year for most of us, so it was for OsmAnd as well. Though we wish that 2 COVID years are over and we finally can go back to our normal traveling life with Maps. In our <a href="https://osmand.net/blog/ny-resolutions-2021">2021 New Year resolutions</a> we anticipated the difficulties and wrote a rather simple for our team list which we consider as 90% completed.
 
 One of the biggest achievements of 2021 is that we’ve managed to double our Team up to 20 people and this Team delivers features with quite an incredible pace.
 
@@ -98,7 +98,7 @@ In 2021 we’ve implemented the possibility to use custom Online Routing and swi
 
 Let’s first take a look at what was in the original 2021 resolutions list which nearly doesn’t cover all features implemented in 2021 by 3 major releases * <a href="https://osmand.net/blog/osmand-ios-3-90-released">3.9</a>, <a href="https://osmand.net/blog/osmand-ios-4-0-released">4.0</a>, <a href="https://osmand.net/blog/osmand-ios-4-1-released">4.1</a> (iOS); <a href="https://osmand.net/blog/osmand-3-9-released">3.9</a>, <a href="https://osmand.net/blog/osmand-android-4-0-released">4.0</a>, <a href="https://osmand.net/blog/osmand-android-4-1-released">4.1</a> (Android).
 
-<a href="https://osmand.net/blog/2021-ny-resolutions">Resolutions 2021:</a>
+<a href="https://osmand.net/blog/ny-resolutions-2021">Resolutions 2021:</a>
 
 * 🚧 Travel and Track Collections (Android & iOS) * available with custom Travel.obf files.
 * ✔️ Full export / import (Android / iOS)
