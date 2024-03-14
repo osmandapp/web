@@ -46,8 +46,8 @@ export async function deleteTrack(file, ctx, type = 'GPX') {
                 });
                 // update gpxFiles
                 ctx.setGpxFiles((o) => {
-                    if (o[file.name]) {
-                        delete o[file.name];
+                    if (o[trackName]) {
+                        delete o[trackName];
                     }
                     return { ...o };
                 });
