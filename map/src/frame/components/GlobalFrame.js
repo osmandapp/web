@@ -31,7 +31,7 @@ const GlobalFrame = () => {
     const [openMainMenu, setOpenMainMenu] = useState(false);
     const [openErrorDialog, setOpenErrorDialog] = useState(false);
     const [menuInfo, setMenuInfo] = useState(null);
-    const [width] = useWindowSize();
+    const [width, height] = useWindowSize();
     const [openVisibleMenu, setOpenVisibleMenu] = useState(false);
 
     const MAIN_MENU_SIZE = openMainMenu ? MAIN_MENU_OPEN_SIZE : MAIN_MENU_MIN_SIZE;
@@ -169,7 +169,7 @@ const GlobalFrame = () => {
     }
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', maxHeight: `${height}px`, overflow: 'hidden' }}>
             <HeaderMenu />
             <Box
                 sx={{
