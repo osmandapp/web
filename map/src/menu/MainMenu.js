@@ -435,7 +435,7 @@ export default function MainMenu({
                         ml: '64px',
                         boxShadow: 'none',
                         zIndex: Z_INDEX_OPEN_MENU_INFOBLOCK,
-                        overflow: 'hidden',
+                        overflowY: 'auto',
                     },
                 }}
                 sx={{ left: 'auto !important' }}

@@ -185,13 +185,16 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                                 height: '100vh',
                                 width: getWidth(),
                                 overflowX: 'hidden',
-                                overflowY: 'auto !important',
+                                overflowY: 'auto',
                             }}
                         >
                             <WeatherForecastDetails setShowInfoBlock={setShowInfoBlock} />
                         </Box>
                     ) : (
-                        <Box anchor={'right'} sx={{ height: '100vh', width: getWidth(), overflowX: 'hidden' }}>
+                        <Box
+                            anchor={'right'}
+                            sx={{ height: '100vh', width: getWidth(), overflowX: 'hidden', overflowY: 'auto' }}
+                        >
                             <div id="se-infoblock-all">
                                 {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
                                 <IconButton
