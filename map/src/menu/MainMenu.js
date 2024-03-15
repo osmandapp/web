@@ -268,6 +268,7 @@ export default function MainMenu({
                             boxSizing: 'border-box',
                             width: size,
                             height: `${height}px`,
+                            maxHeight: '100vh',
                             overflow: 'hidden',
                             zIndex: openMainMenu ? Z_INDEX_OPEN_LEFT_MENU : Z_INDEX_LEFT_MENU,
                             borderRight: (!menuInfo || (menuInfo && openMainMenu)) && 'none !important',
