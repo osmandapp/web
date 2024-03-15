@@ -22,7 +22,7 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 const useStyles = makeStyles(() => ({
     root: (props) => ({
         width: '100%',
-        height: '100%',
+        height: '100vh',
         position: 'fixed',
         '& .leaflet-control-layers': {
             border: '0px !important',

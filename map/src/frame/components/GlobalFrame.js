@@ -169,10 +169,11 @@ const GlobalFrame = () => {
     }
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', height: `100vh`, overflow: 'hidden' }}>
             <HeaderMenu />
             <Box
                 sx={{
+                    height: `100vh`,
                     width: { xs: `calc(100%)` },
                     mr: ctx.infoBlockWidth,
                 }}

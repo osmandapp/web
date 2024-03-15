@@ -164,7 +164,11 @@ export default function Weather() {
     }, [ctx.weatherDate]);
 
     return (
-        <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+        <Box
+            minWidth={ctx.infoBlockWidth}
+            maxWidth={ctx.infoBlockWidth}
+            sx={{ overflowX: 'hidden !important', overflowY: 'auto !important' }}
+        >
             <WeatherHeader />
             {dayForecast || weekForecast ? (
                 <>

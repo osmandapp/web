@@ -257,6 +257,7 @@ export default function MainMenu({
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
+                position: 'absolute',
             }}
         >
             <ClickAwayListener onClickAway={handleClickAway}>
@@ -430,9 +431,11 @@ export default function MainMenu({
                 PaperProps={{
                     sx: {
                         width: infoSize,
+                        height: '100vh',
                         ml: '64px',
                         boxShadow: 'none',
                         zIndex: Z_INDEX_OPEN_MENU_INFOBLOCK,
+                        overflow: 'hidden',
                     },
                 }}
                 sx={{ left: 'auto !important' }}
