@@ -447,7 +447,7 @@ export async function getGpxFileFromTrackData(file) {
 
 function prepareTrackData({ file, getAnalysis = false }) {
     // add updated points to track
-    if (file.points && file.tracks && file.tracks[0]) {
+    if (file.tracks && file.tracks[0] && validateRoutePoints(file.points)) {
         file.tracks[0].points = file.points;
     }
 
@@ -667,7 +667,9 @@ function decodeRouteMode({ profile, routeMode, params }) {
 function updateGapProfileOneSegment(routePoint, points) {
     if (routePoint.profile === PROFILE_GAP) {
         points[points.length - 1].profile = PROFILE_GAP;
+        return true;
     }
+    return false;
 }
 
 function getEle(point, elevation, array) {
@@ -864,6 +866,28 @@ export async function applySrtmElevation({ track, setLoading }) {
     return newGpxFile;
 }
 
+export function validateRoutePoints(points) {
+    if (!points || points.length === 0) {
+        return false;
+    }
+
+    const trackWithGeometry = points[0].geometry && Array.isArray(points[0].geometry);
+
+    if (trackWithGeometry && points[0].geometry.length !== 0) {
+        return false;
+    }
+
+    for (let i = 0; i < points.length; i++) {
+        if (!points[i].geometry) {
+            const hasGap = updateGapProfileOneSegment(points[i], points);
+            if (!hasGap && trackWithGeometry) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 async function getTrackWithAnalysis(path, ctx, setLoading, points) {
     setLoading(true);
 
@@ -875,8 +899,7 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
 
     const wpts = cloneFile.wpts;
     const pointsGroups = cloneFile.pointsGroups;
-
-    if (points) {
+    if (validateRoutePoints(points)) {
         cloneFile.tracks[0].points = points;
     }
 
