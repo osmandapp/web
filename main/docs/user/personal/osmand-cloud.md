@@ -310,6 +310,8 @@ At first you open the trash files list:
 
 </Tabs>  
 
+You can permanently delete all items in the Trash by clicking to 🗑 button. This action can't be undone.
+
 For each file from _Trash_ menu you can make the next actions:
 - Checking file info: time of file deleted.
 - *<Translate ios="true" ids="restore_from_trash"/>* - allows to restore a selected file.
