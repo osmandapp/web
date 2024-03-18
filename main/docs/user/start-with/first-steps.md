@@ -465,10 +465,10 @@ In the *Help menu*, you can also find useful links to OsmAnd social networks, ve
 
 </Tabs>  
 
-- Send crash log (*for Android*)
-- Send logcat log (*for Android*)
-- Send log (*for iOS*)
-- Copy build version
+- **Send crash log** (*for Android*). Allows users to send reports of app crashes to developers, aiding in the identification and resolution of issues.
+- **Send logcat log** (*for Android*). Provides users with the ability to send detailed logs of app crashes to developers, facilitating deeper analysis and troubleshooting.
+- **Send log** (*for iOS*). Performs a similar function to the *Send crash log* feature for Android, enabling users on iOS devices to report app crashes to developers for debugging purposes.
+- **Copy build version**. Enables users to quickly and accurately communicate the current version of the app to developers when reporting issues, simplifying the diagnostic and resolution process.
 
 
 ### Most viewed
@@ -477,7 +477,7 @@ In the *Help menu*, you can also find useful links to OsmAnd social networks, ve
 
 <TabItem value="android" label="Android">
 
-![Offline help Android screenshot](@site/static/img/steps/offline_help_most_viewed_2_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/offline_help_most_viewed_3_andr.png)
 
 </TabItem>
 
@@ -510,7 +510,100 @@ The Most viewed articles among our users refers to the articles in the app or on
 
 </Tabs>
 
-User guide sections completely replicate the structure of the site.
+The **User guide** section of the Help menu is a complete manual that follows the structure of the OsmAnd website, ensuring consistency of information and ease of navigation across platforms. Using Help you can easily navigate from app to website, finding the same content organized familiarly. This consistency enhances usability by providing a single support resource to find answers to questions and troubleshoot issues quickly.
+
+
+### Troubleshooting
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Offline help Android screenshot](@site/static/img/steps/offline_help_troubleshooting_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Maps menu iOS](@site/static/img/steps/offline_help_troubleshooting_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+
+Solutions and tips for solving common problems. If you have a specific question, please check [Troubleshooting](../troubleshooting/index.md) to have it answered.
+
+- **Setup**. The following issues are most commonly encountered when customizing the app.
+- **Maps and data**. Issues related to maps, search, and other data.
+- **Navigation**. The most common issues that occur in navigation mode.
+- **Track recording**. Common issues related to track recording: noises, gaps and inaccuracies.
+- **General**. Common issues related to various OsmAnd functions.
+- **Crash logs**. How to send crash logs to the OsmAnd team.
+- **Android Auto**. Auto navigation problems.
+
+### Contact us
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Offline help Android screenshot](@site/static/img/steps/offline_help_contact_us_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Maps menu iOS](@site/static/img/steps/offline_help_contact_us_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+Gives you the opportunity to ask questions or make suggestions.
+
+### Report an issues
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Offline help Android screenshot](@site/static/img/steps/offline_help_report_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Maps menu iOS](@site/static/img/steps/offline_help_report_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+- **Open issue on GitHub**. Ask questions and propose features.
+- **Send crash log** (*for Android*). Contains only information about crashes.
+- **Send logcat log** (*Android*) / **Send log** (*iOS*). Detailed log file.
+
+### About OsmAnd
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Offline help Android screenshot](@site/static/img/steps/offline_about_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Maps menu iOS](@site/static/img/steps/offline_about_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+You can learn about our team, see the current version of the app and what's new, and download the beta version of the app.
+
 
 ## Privacy
 
@@ -529,26 +622,6 @@ OsmAnd doesn't have any required permissions on iOS / Android version.
 - **Camera/voice recording** (*Android*). Only used by [the Audio/Video notes](../plugins/audio-video-notes.md). This feature is packaged as plugin and by default disabled. It allows to quickly create location-related audio/video notes during a trip.
 
 
-## Troubleshooting
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Offline help Android screenshot](@site/static/img/steps/offline_help_troubleshooting_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Maps menu iOS](@site/static/img/steps/offline_help_troubleshooting_ios.png) 
-
-</TabItem>
-
-</Tabs>
-
-Troubleshooting sections completely replicate the structure of the site.  
-If you have a specific question, please check [Troubleshooting](../troubleshooting/index.md) to have it answered.
 
 
 
