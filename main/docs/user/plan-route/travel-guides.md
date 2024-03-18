@@ -289,9 +289,9 @@ You can also *[add points to the map](#travel-routes)* in *Configure map* menu. 
 
 *<Translate android="true" ids="shared_string_menu,configure_map,travel_routes"/>*
 
-![Travel guides points  menu](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Travel guides points  menu](@site/static/img/guides/travel_guides_travel_routes_view.png) 
-
 An alternative way to browse *Travel guides* is to display them on the map using *Configure map* menu. This feature does not apply to the ability provided by OsmAnd to use Wikivoyage, it only applies to tracks. You can read more in our [blog](https://osmand.net/blog/routes#generated-travel-routes).
+
+![Travel guides points  menu](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Travel guides points  menu](@site/static/img/guides/travel_guides_travel_routes_view.png) 
 
 
 ### Travel routes and articles on the map
