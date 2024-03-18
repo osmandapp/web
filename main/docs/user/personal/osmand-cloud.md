@@ -283,6 +283,39 @@ This section contains information about which of your accounts is connected to O
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_9-1.png)
 
 
+### Trash
+
+_Trash_ function allows to restore your data from trash.
+
+At first you open the trash files list:
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android"> 
+
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_trash"/>*
+
+![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/trash_android.png) ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/trash_2_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS"> 
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_trash"/>*
+
+![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/trash_ios.png) ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/trash_2_ios.png) 
+
+</TabItem>
+
+</Tabs>  
+
+For each file from _Trash_ menu you can make the next actions:
+- Checking file info: time of file deleted.
+- *<Translate ios="true" ids="restore_from_trash"/>* - allows to restore a selected file.
+- *<Translate ios="true" ids="download_to_device"/>* - allows to download a selected file.
+- *<Translate ios="true" ids="shared_string_delete_immediately"/>* - allos to delete a selected file.
+
 ### Deletion option
 
 <Tabs groupId="operating-systems">
@@ -309,7 +342,7 @@ The actions you can do in **Danger zone** section of the Settings menu are irrev
 
 1. **Delete all my data**. You have the option to delete all data previously uploaded to OsmAnd Cloud, including all version history. However, it is not possible to restore deleted data.
 2. **Remove old versions**. You can delete the change history for previously uploaded data. In this case, the current data version will be saved on the server, but it will not be possible to return to the previous changes.
-3. **Delete account** (*Android only*). To delete an account, you need to go through a verification process. A one-time password for confirmation will be sent to your e-mail address registered on OsmAnd Cloud.
+3. **Delete account**. To delete an account, you need to go through a verification process. A one-time password for confirmation will be sent to your e-mail address registered on OsmAnd Cloud.
     - All data from OsmAnd Cloud will be deleted. Data on the device remains untouched.
     - Your account and all account details will be deleted.
     - Secondary devices will be logged off from OsmAnd Cloud and lose access to paid features.  
