@@ -13,6 +13,7 @@ import styles from '../../../map/components/map.module.css';
 import { ReactComponent as ConfigureMapIcon } from '../../../assets/icons/ic_map_configure_map.svg';
 import SearchInfo from '../search/SearchInfo';
 import ConfigureMap from '../../../menu/configuremap/ConfigureMap';
+import { MAIN_MENU_MIN_SIZE, MENU_INFO_OPEN_SIZE } from '../../../manager/GlobalManager';
 
 export default function GeneralPanelButtons({
     mainMenuWidth,
@@ -84,6 +85,7 @@ export default function GeneralPanelButtons({
                     marginTop: `${HEADER_HEIGHT + 20}px`,
                     display: 'flex',
                     flexDirection: 'row',
+                    paddingBottom: '2px',
                 }}
             >
                 <Paper sx={{ mr: '8px' }} className={styles.button}>
@@ -91,7 +93,7 @@ export default function GeneralPanelButtons({
                         <SvgIcon className={styles.customIconPath} component={ConfigureMapIcon} inheritViewBox />
                     </IconButton>
                 </Paper>
-                <Paper sx={{ height: '40px' }} className={styles.button}>
+                <Paper className={styles.button}>
                     <SearchInfo />
                 </Paper>
             </div>
@@ -101,7 +103,7 @@ export default function GeneralPanelButtons({
                     top: `${HEADER_HEIGHT + 100}px`,
                     bottom: useFlexButtons() && `${HEADER_HEIGHT}px`,
                     zIndex: 1000,
-                    position: 'absolute',
+                    position: window.innerWidth > MENU_INFO_OPEN_SIZE + MAIN_MENU_MIN_SIZE ? 'absolute' : 'fixed',
                     display: 'flex',
                     height: useFlexButtons() && height - 2 * HEADER_HEIGHT - GPS_CONTROL_HEIGHT,
                     alignItems: useFlexButtons() && 'center',
