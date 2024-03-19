@@ -52,7 +52,7 @@ Be careful when sending logcat log files, while they may contain some sort of pr
 ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
 
 
-2. Send ips-format Crash file:
+2. Send [IPS-format](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) of logs and authorization data:
 - iOS _Settings → Analytics → Analytics Data → OsmAnd Maps ips-format file_.
 - Next, using your email program, we recommend sending the logs to crash@osmand.net.
 
