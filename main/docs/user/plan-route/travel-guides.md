@@ -131,7 +131,7 @@ If you tap the *Bookmark button*, the article will be saved for later reading an
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_search_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_search_1_ios.png)
 
 </TabItem>
 
