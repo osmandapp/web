@@ -30,13 +30,12 @@ OsmAnd version 4.7 for Android devices is now available on Google Play and other
 - Round up numbers in navigation widgets. 
 - Allow Custom Quick Action Buttons.
 - Ask to disable battery optimization.
-- Redesigned graph.
+- Redesign graphs.
 - Apply sorting order to all subfolders – Tracks.
 - Filter by Sensor data (HR, Cadence, Power).
 - Add support for tags: author, cmt, link, keywords, copyright, email.
 - New UI for Open Track screen – Tracks.
 - Move to OAuth 2.0 for OpenStreetMap login.
-- Ask to disable battery optimization.
 - Move sensors tags to gpxtpx:TrackPointExtensio.
 
 ## Speedometer
@@ -80,4 +79,27 @@ Next, you can add action or actions for created custom button. And enabled it.
 Now, you can see the new custom button on the device screen. This button switches on/off the chosen action immediately.
 
 ![Custom button Android](./img/custom_button_5_android.png)
+
+## Ask of battery optimization
+
+The banner _"Battery optimisation"_ for [Trip recording plugin settings](https://osmand.net/docs/user/plugins/trip-recording#recording-settings) was added. Click to it and set battery optimization, it can cause gaps and inaccuracies in recorded tracks:
+
+_Menu → Settings → App Profile → Trip recoding → Read more (Android battry optimization)_
+
+![Battery optimization Android](./img/battery_optim_android.png) 
+![Battery optimization Android](./img/battery_optim_1_android.png)
+
+## Redesign graphs
+
+[Elevation graphs](https://osmand.net/docs/user/plan-route/create-route#graph) were redesigned without overlapping labels:
+
+![Redesign graph Android](./img/redesign_graph_android.png)
+
+
+## OAuth 2.0 for OSM login
+
+
+Changed OpenStreetMap login authorization to OAuth 2.0. for [_OpenStreetMap editing plugin_](https://osmand.net/docs/user/plugins/osm-editing#settings):
+
+"The Operations Working Group is shutting down OAuth 1.0a and HTTP Basic Auth in 2024. They have been deprecated since 2023 and their role in authorization has replaced by OAuth 2.0 which the standard authorization method for most systems."
 
