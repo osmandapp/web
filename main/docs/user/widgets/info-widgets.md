@@ -344,6 +344,9 @@ The Radius Ruler widget shows the distance between your location and the center 
 | Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
 
+## Speedometer
+
+
 ## Plugins widgets
 
 These widgets are enabled and work in combination with their corresponding plugins.

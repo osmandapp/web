@@ -531,16 +531,15 @@ The **User guide** section of the Help menu is a complete manual that follows th
 
 </Tabs>
 
-
 Solutions and tips for solving common problems. If you have a specific question, please check [Troubleshooting](../troubleshooting/index.md) to have it answered.
 
-- **Setup**. The following issues are most commonly encountered when customizing the app.
-- **Maps and data**. Issues related to maps, search, and other data.
-- **Navigation**. The most common issues that occur in navigation mode.
-- **Track recording**. Common issues related to track recording: noises, gaps and inaccuracies.
-- **General**. Common issues related to various OsmAnd functions.
-- **Crash logs**. How to send crash logs to the OsmAnd team.
-- **Android Auto**. Auto navigation problems.
+- [**Setup**](../troubleshooting/setup.md). When setting up an application, these are the issues that most often arise.
+- [**Maps & data**](../troubleshooting/maps-data.md). Issues related to maps, search and the rest of the data.
+- [**Navigation**](../troubleshooting/navigation.md). The most common issues that occur in navigation mode.
+- [**Track recording**](../troubleshooting/track-recording-issues.md). Common issues related to track recordingsuch as noises, gaps, and inaccuracies.
+- [**General**](../troubleshooting/general.md). Common issues associated to various OsmAnd features.
+- [**Crash logs**](../troubleshooting/crash-logs.md). How to send crash logs to the OsmAnd team.
+- [**Android Auto**](../troubleshooting/android_auto.md) (*only for Android*). Auto navigation problems.
 
 ### Contact us
 
