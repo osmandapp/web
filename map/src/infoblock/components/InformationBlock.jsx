@@ -181,10 +181,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                     {openWeatherForecastDetails ? (
                         <WeatherForecastDetails setShowInfoBlock={setShowInfoBlock} />
                     ) : (
-                        <Box
-                            anchor={'right'}
-                            sx={{ alignContent: 'flex-end', height: 'auto', width: getWidth(), overflowX: 'hidden' }}
-                        >
+                        <Box anchor={'right'} sx={{ height: 'auto', width: getWidth(), overflowX: 'hidden' }}>
                             <div id="se-infoblock-all">
                                 {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
                                 <IconButton
