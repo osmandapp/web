@@ -53,7 +53,7 @@ Wikivoyage information includes the main facts about a place, transportation, at
 - [Bookmark](#explore-and-bookmark) articles to read them later.
 - Chose [points](#points) from articles to visit and add them to the OsmAnd map.
 - Get more information about places to visit from offline [wikipedia articles](#combine-with-wikipedia).
-- [Build a route](../navigation/setup/route-navigation.md#set-destinations) to chosen touristic attractions.
+- [Build a route](../navigation/setup/route-navigation.md#set-destinations) to chosen touristic attractions or a free walk between points.
 
 :::note
 *Travel guides* articles are stored inside OsmAnd in form of GPX tracks with Waypoints.  After adding these tracks to the map (see *[Points](#points)* or *[Travel routes](#travel-routes)* sections of this article), you can manage them via *[My Places](../personal/myplaces.md)* menu.
@@ -75,7 +75,7 @@ Wikivoyage information includes the main facts about a place, transportation, at
 
 *<Translate ios="true" ids="shared_string_menu,travel_guides_beta"/>*
 
-![Maps menu iOS](@site/static/img/guides/travel_guides_download_ios.png) 
+![Maps menu iOS](@site/static/img/guides/travel_guides_download_1_ios.png) 
 
 </TabItem>
 
@@ -131,7 +131,7 @@ If you tap the *Bookmark button*, the article will be saved for later reading an
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_search_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_search_1_ios.png)
 
 </TabItem>
 
@@ -289,16 +289,20 @@ You can also *[add points to the map](#travel-routes)* in *Configure map* menu. 
 
 *<Translate android="true" ids="shared_string_menu,configure_map,travel_routes"/>*
 
-![Travel guides points  menu](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Travel guides points  menu](@site/static/img/guides/travel_guides_travel_routes_view.png) 
+An alternative way to browse *Travel guides* is to display them on the map using *Configure map* menu. This feature does not apply to the ability provided by OsmAnd to use Wikivoyage, it only applies to tracks. You can read more in our [blog](https://osmand.net/blog/routes#generated-travel-routes).
 
-An alternative way to browse *Travel guides* is to display them on the map using *Configure map* menu.
+![Travel guides points  menu](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Travel guides points  menu](@site/static/img/guides/travel_guides_travel_routes_view.png) 
 
 
 ### Travel routes and articles on the map
 
 ![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_on_the_map.png) ![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_context_menu.png)  
 
-After you enable *Travel routes* display in the *Configure map* menu, circles of different colors will appear on the map. The orange ones represent routes tracks, route articles, and some waypoints. If you tap on a specific route, article, or point and then tap *Download* button (&#9047;), you can [manage them as a track](#manage-as-gpx-track).  
+After you enable *Travel routes* display in the *Configure map* menu, circles of different colors will appear on the map. The orange ones represent routes tracks, route articles, and some waypoints. If you tap on a specific route, article, or point and then tap *Download* button (&#9047;), you can [manage them as a track](#manage-as-gpx-track). 
+
+### Custom Travel guides
+
+We recommend you to add new articles or edits to [Wikivoyage](https://en.wikivoyage.org/). We update the Travel guides about every 6 months, and you can download new articles. You can also create your own *Travel book*. How to make it is described in tecnical documentation (see *[Create custom Travel guide](../../technical/map-creation/create_travel_guide.md)* article).
 
 <!--
 ### Collections of tracks
@@ -351,6 +355,4 @@ In some cases, OsmAnd's *[Bookmarks tab](#explore-and-bookmark)* will prompt you
 The [*Wikipedia plugin*](../plugins/wikipedia.md) is a [paid feature](../purchases/index.md) of the OsmAnd app.
 :::
 
-## Custom Travel guides
 
-We recommend you to add new articles or edits to [Wikivoyage](https://en.wikivoyage.org/). We update the Travel guides about every 6 months, and you can download new articles. You can also create your own *Travel book*. How to make it is described in tecnical documentation (see *[Create custom Travel guide](../../technical/map-creation/create_travel_guide.md)* article).

@@ -46,8 +46,8 @@ export async function deleteTrack(file, ctx, type = 'GPX') {
                 });
                 // update gpxFiles
                 ctx.setGpxFiles((o) => {
-                    if (o[file.name]) {
-                        delete o[file.name];
+                    if (o[trackName]) {
+                        delete o[trackName];
                     }
                     return { ...o };
                 });
@@ -111,6 +111,13 @@ function deleteTracksFromGroups(trackName, ctx) {
             if (fileIndexInFiles !== -1) {
                 group.files.splice(fileIndexInFiles, 1);
             }
+            ctx.setTracksGroups([...ctx.tracksGroups]);
+        }
+    } else {
+        const group = findGroupByName(ctx.tracksGroups, '');
+        const fileIndexInFiles = group.files.findIndex((file) => file.name === trackName);
+        if (fileIndexInFiles !== -1) {
+            group.files.splice(fileIndexInFiles, 1);
             ctx.setTracksGroups([...ctx.tracksGroups]);
         }
     }

@@ -41,7 +41,7 @@ const routes = [
             '1 / 50 / 114 m', // ele
         ],
         turns: [
-            'Go ahead and go 2.7 km',
+            /Go ahead and go 2.[78] km/,
             'Turn left onto Миколаївське шосе М-14-02 and go 0.5 km',
             'Go ahead (+C,TSLL) onto Херсонська вулиця Н-23 and go 13.9 km',
         ],

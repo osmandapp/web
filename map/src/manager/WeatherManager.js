@@ -36,6 +36,7 @@ export function getWeatherLayers(type) {
             mult: 1,
             fixed: 1,
             index: type === ECWMF_WEATHER_TYPE ? 2 : 3,
+            checkValue: (value) => value,
         },
         {
             key: 'precip',
@@ -46,6 +47,7 @@ export function getWeatherLayers(type) {
             mult: 1000 * 1000,
             fixed: 2,
             index: type === ECWMF_WEATHER_TYPE ? 4 : 6,
+            checkValue: (value) => Math.max(0, value),
         },
         {
             key: 'wind',
@@ -56,6 +58,7 @@ export function getWeatherLayers(type) {
             mult: 1,
             fixed: 2,
             index: type === ECWMF_WEATHER_TYPE ? -1 : 5,
+            checkValue: (value) => Math.max(0, value),
         },
         {
             key: 'pressure',
@@ -66,6 +69,7 @@ export function getWeatherLayers(type) {
             mult: 0.001,
             fixed: 2,
             index: type === ECWMF_WEATHER_TYPE ? 3 : 4,
+            checkValue: (value) => Math.max(0, value),
         },
         {
             key: 'cloud',
@@ -76,6 +80,7 @@ export function getWeatherLayers(type) {
             mult: 1,
             fixed: 2,
             index: type === ECWMF_WEATHER_TYPE ? -1 : 2,
+            checkValue: (value) => value,
         },
     ];
     layers.map((item) => {

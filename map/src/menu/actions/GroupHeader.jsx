@@ -20,6 +20,7 @@ import { useTranslation } from 'react-i18next';
 import { closeHeader } from './HeaderHelper';
 
 export default function GroupHeader({
+    type,
     trackGroup = null,
     favoriteGroup = null,
     setSortGroups = null,
@@ -27,6 +28,9 @@ export default function GroupHeader({
     markers = null,
 }) {
     const ctx = useContext(AppContext);
+
+    const TRACKS_TYPE = 'tracks';
+    const FAVORITES_TYPE = 'favorites';
 
     const { t } = useTranslation();
 
@@ -70,16 +74,20 @@ export default function GroupHeader({
     }
 
     function getTitle() {
-        if (trackGroup) {
+        if (type === TRACKS_TYPE) {
             return (
                 <Typography id="se-cloud-name-track" component="div" className={styles.title}>
-                    {trackGroup?.name === DEFAULT_GROUP_NAME ? t('shared_string_tracks') : trackGroup?.name}
+                    {trackGroup?.name === DEFAULT_GROUP_NAME || !trackGroup
+                        ? t('shared_string_tracks')
+                        : trackGroup?.name}
                 </Typography>
             );
-        } else if (favoriteGroup) {
+        } else if (type === FAVORITES_TYPE) {
             return (
                 <Typography id="se-fav-group-name" component="div" className={styles.title}>
-                    {favoriteGroup === DEFAULT_FAV_GROUP_NAME ? t('shared_string_favorites') : favoriteGroup?.name}
+                    {favoriteGroup === DEFAULT_FAV_GROUP_NAME || !favoriteGroup
+                        ? t('shared_string_favorites')
+                        : favoriteGroup?.name}
                 </Typography>
             );
         }
@@ -87,9 +95,9 @@ export default function GroupHeader({
 
     function disableSort() {
         if (ctx.loginUser) {
-            if (trackGroup) {
-                return trackGroup.files?.length === 0;
-            } else if (favoriteGroup) {
+            if (type === TRACKS_TYPE) {
+                return !trackGroup || trackGroup.files?.length === 0;
+            } else if (type === FAVORITES_TYPE) {
                 return ctx.favorites.groups?.length === 0;
             }
         }
@@ -136,7 +144,7 @@ export default function GroupHeader({
                             </IconButton>
                         </span>
                     </Tooltip>
-                    {trackGroup && (
+                    {type === TRACKS_TYPE && (
                         <Tooltip key={'add_folder'} title={t('add_new_folder')} arrow placement="bottom-end">
                             <span>
                                 <IconButtonWithPermissions
@@ -145,17 +153,16 @@ export default function GroupHeader({
                                     type="button"
                                     className={styles.appBarIcon}
                                     onClick={() => setOpenAddFolderDialog(true)}
-                                    disabled={!trackGroup || trackGroup?.files?.length === 0}
                                 >
                                     <AddFolderIcon />
                                 </IconButtonWithPermissions>
                             </span>
                         </Tooltip>
                     )}
-                    {trackGroup && (
+                    {type === TRACKS_TYPE && (
                         <Tooltip key={'import_track'} title={t('import_tracks')} arrow placement="bottom-end">
                             <span>
-                                <CloudGpxUploader folder={trackGroup?.fullName}>
+                                <CloudGpxUploader folder={trackGroup ? trackGroup?.fullName : DEFAULT_GROUP_NAME}>
                                     <IconButtonWithPermissions
                                         id="se-import-cloud-track"
                                         component="span"

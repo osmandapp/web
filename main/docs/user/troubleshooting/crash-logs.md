@@ -42,13 +42,21 @@ Be careful when sending logcat log files, while they may contain some sort of pr
 
 ### Send logs from iOS devices
 
-Logs from iOs devices can be sent only manually.
+1. Logs from iOs devices can be sent: 
 
-1. Chose iOS system app Files → On my iPhone (or On my iPad) → OsmAnd Maps → Logs.
-2. Select the file you want to send (the file name contains the date when it was created) and in the pop-up menu, tap share.
-3. Next, using your email program, we recommend sending the logs to crash@osmand.net.
+- Automaticaly: *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*
+   -  Next, using your email program, we recommend sending the logs to crash@osmand.net.
+
+- Manually: chose iOS system _app Files → On my iPhone (or On my iPad) → OsmAnd Maps → Logs_.
 
 ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
+
+
+2. Send [IPS-format](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) of logs and authorization data:
+- iOS _Settings → Analytics → Analytics Data → OsmAnd Maps ips-format file_.
+- Next, using your email program, we recommend sending the logs to crash@osmand.net.
+
+![Send crash logs iOS 1](@site/static/img/troubleshooting/log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 
 ## Send tombstone files (Android only)
 

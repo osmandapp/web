@@ -11,12 +11,13 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
 ## Overview 
 
-[OsmAnd Point of Interest](../map/point-layers-on-map.md#points-of-interest-poi) (POI) functionality in OsmAnd provides accuracy, visibility, and convenience in finding interesting places and services near your current location or a selected area on the map.  
+[OsmAnd Point of Interest](https://wiki.openstreetmap.org/wiki/Points_of_interest) (POI) functionality in OsmAnd provides accuracy, visibility, and convenience in finding interesting places and services near your current location or a selected area on the map.  
 
 The search bar allows you to enter keywords related to the places you are interested in. The POI search also presents a convenient list sorted by [category](#categories-poi-search) to help you quickly find what you are looking for, and the [filter](#filters) allows you to select specific POI characteristics to display only relevant results.  
 
@@ -60,7 +61,8 @@ Point of Interest (POI) Search:
 
 All POI types in OsmAnd: [gitHub link](https://github.com/osmandapp/OsmAnd-resources/blob/dd575efb5aa4ec7e359bb50e8dc6de7c358ff258/poi/poi_types.xml).   
 
-To search for POIs by categories directly on the map, you need to select the required categories from the [list](../map/point-layers-on-map.md#points-of-interest-poi) in *Configure map → Show POI overlay...* and search by icons in the expected location.  
+To search POIs by category directly on the map, you need to select the required categories from the [list](../map/point-layers-on-map.md#points-of-interest-poi) in *Configure map → Show POI overlay...* and search by icons in the expected location.  
+In the Android version, you can also start searching for POIs in *Menu → Search → Categories*.
 
 **Please note:** to accomplish some of these tasks (locate addresses, POI) you will need to have the offline vector map file. Initially, the search is based on data located on the map in the visible area of the device screen. If you don't find nothing, OsmAnd propose to increase search radius.  
 
@@ -125,7 +127,7 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 
 <TabItem value="ios" label="iOS">
 
-![Search POI iOS](@site/static/img/search/search_poi_filter_andr.png)
+![Search POI iOS](@site/static/img/search/search_poi_filter_ios.png)
 
 </TabItem>
 
@@ -221,7 +223,7 @@ A filter can consist of quite a number of items, the presence of which depends o
 
 <TabItem value="ios" label="iOS">
 
-![Search POI iOS](@site/static/img/search/search_poi_rearrange_andr.png)
+![Search POI iOS](@site/static/img/search/search_poi_rearrange_ios.png)
 
 </TabItem>
 
@@ -242,6 +244,8 @@ Description and how to use:
 
 
 ### Online Search
+
+<InfoAndroidOnly />
 
 ![Search POI Android](@site/static/img/search/search_poi_online_andr.png)  
 
@@ -280,7 +284,6 @@ This functionality is especially useful in various cases:
 - *Emergencies*. If you need to find several types of services quickly, you can use a custom POI search to get all the information you need.
 - *Search for nearby services*. Custom Search allows you to combine different POI categories for easy search if you need to find several types of services in a certain neighborhood or on a certain section of the route.
 
-
 ### Custom POI filter
 
 <Tabs groupId="operating-systems">
@@ -297,7 +300,8 @@ This functionality is especially useful in various cases:
 
 </TabItem>
 
-</Tabs>
+</Tabs>  
+
 
 *Custom POI filter* includes sets of amenity categories consisting of relevant values. OsmAnd allows you to collect and combine the required POI types from one or more suggested categories.  
 
@@ -331,6 +335,7 @@ In order to create your own filters to find the places you are looking for on th
 11. **<Translate android="true" ids="amenity_type_man_made"/>**. Includes 121 types.  
 
 12. **<Translate android="true" ids="amenity_type_military"/>**. Includes 7 types: *Danger area, Military bunker, Military naval base, Military office, Military range, Military zone, Nuclear explosion site*.  
+
 13. **<Translate android="true" ids="amenity_type_natural"/>**. Includes 50 types.  
 
 14. **Nautical**. Includes 41 types.  
@@ -359,6 +364,7 @@ In order to create your own filters to find the places you are looking for on th
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
+
 
 ![Custom POI save Android](@site/static/img/search/custom_poi_save_android.png) ![Custom POI save Android](@site/static/img/search/custom_poi_save_1_android.png)
 
@@ -390,6 +396,7 @@ From the main screen:
 6. In the drop-down menu, select "Edit categories".
 
 
+
 ### Delete Custom POI filter
 
 <Tabs groupId="operating-systems">
@@ -415,6 +422,7 @@ You can only delete categories that were created using filters or custom search.
 - In the Filters menu, tap the *three dots* &#8285; located in the upper right corner of the screen.
 - Select **Delete Filter**.
 - You cannot undo the deletion. 
+
 
 An additional option for the iOS app is **Delete Custom Categories**. The item is at the end of the *Categories* tab list. Select the unneeded categories by item or *Select all* and delete.  
 

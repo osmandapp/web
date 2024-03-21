@@ -10,7 +10,7 @@ import Translate from '@site/src/components/Translate.js';
 
 Happy New 2021 Year!
 
-In <a href="https://osmand.net/blog/2019-ny-resolutions">2019</a> and <a href="https://osmand.net/blog/2020-ny-resolutions">2020</a> New Year resolutions we describe our achievements and prepare a new list for 2021.
+In <a href="https://osmand.net/blog/ny-resolutions-2019">2019</a> and <a href="https://osmand.net/blog/ny-resolutions-2020">2020</a> New Year resolutions we describe our achievements and prepare a new list for 2021.
 
 <!--truncate-->
 
@@ -18,7 +18,7 @@ In <a href="https://osmand.net/blog/2019-ny-resolutions">2019</a> and <a href="h
 
 2020 was the Covid-19 pandemic year and it was a very difficult year for us and the whole travel industry. Thank you all who kept supporting us throughout the whole year. We really needed it!
 This year we mostly focused on functionality and maintainability. Many features were completely restructured internally and even more importantly we’ve managed to reorganize our small team of 20 people to grow our competency in many fields.
-In June 2020 our company <a href="https://osmand.net/blog/10-years">celebrated 10 years old</a>. We made a Mega Sale with 90% off and gave out more than 150 T-shirts to our Expert users who managed to pass tricky Quiz.
+In June 2020 our company <a href="https://osmand.net/blog/ten-years">celebrated 10 years old</a>. We made a Mega Sale with 90% off and gave out more than 150 T-shirts to our Expert users who managed to pass tricky Quiz.
 
 ![OsmAnd Pro](./2020-1.png)
 
@@ -26,7 +26,7 @@ In June 2020 our company <a href="https://osmand.net/blog/10-years">celebrated 1
 
 OsmAnd Android got 4 major releases this year: <a href="https://osmand.net/blog/osmand-3-6-released">3.6</a>, <a href="https://osmand.net/blog/osmand-3-7-released">3.7</a>, <a href="https://osmand.net/blog/osmand-3-8-released">3.8</a> and <a href="https://osmand.net/blog/osmand-3-9-released">3.9</a> (already available for Beta Test) with more than <a href="https://github.com/osmandapp/Osmand/milestones?state=closed">300 public features and issues closed on Github</a>. Here are the most prominent features of 2020.
 
-<a href="https://osmand.net/blog/2020-ny-resolutions">#2020 NYR</a> * features we committed last year
+<a href="https://osmand.net/blog/ny-resolutions-2020">#2020 NYR</a> * features we committed last year
 
 ###  User Settings / UI / Usability
 
@@ -69,7 +69,7 @@ We’ve managed to release **4 new versions** of OsmAnd for iOS this year: <a hr
 
 ![OsmAnd Pro](./ios-2020.png)
 
-<a href="https://osmand.net/blog/2020-ny-resolutions">#2020 NYR</a> * features we committed last year
+<a href="https://osmand.net/blog/ny-resolutions-2020">#2020 NYR</a> * features we committed last year
 
 * <a href="https://osmand.net/blog/osmand-ios-3-14-released#pt">Public Transport</a> and <a href="https://osmand.net/blog/osmand-ios-3-12-released">Route details</a> (2020 NYR)
 * <a href="https://osmand.net/blog/osmand-ios-3-14-released#slope">New slopes / hillshade maps</a> (2020 NYR)

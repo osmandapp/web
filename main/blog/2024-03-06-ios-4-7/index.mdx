@@ -40,6 +40,160 @@ We are pleased to announce the release of a 4.7 version of OsmAnd for iOS device
 - "My Places > Tracks" redesign.
 
 
+## Redesign My Places > Tracks menu
+
+We made full redesign [_Tracks menu_](https://osmand.net/docs/user/personal/tracks#my-places-menu) of [_My Places_](https://osmand.net/docs/user/personal/myplaces). 
+
+Added new views of:  
+- Track folders,
+- Track list, 
+- _Tracks on map_ menu,
+- _New track_ - recording new track. Button for Start track recording.
+
+![My Places > Tracks menu iOS](./img/my_places_tracks_menu_ios.png) 
+
+_Tracks on map_ folder opens the [_Tracks menu_](#redesign-tracks-menu-of-configure-map) of Configure map.
+
+By clicking to _Three points_ button you open the menu with the next actions:
+- _Add folder_ - creation and name the new folder.
+- _Import_ - import action of GPX file.
+
+![My Places > Tracks menu iOS](./img/my_places_tracks_menu_2_ios.png) 
+
+
+_New track_ allows to start [_Trip recording_](https://osmand.net/docs/user/plugins/trip-recording) action. Just click _"Start recording"_ button. During recording you can see Recording track data: distance, duration, number of waypoints. There are two points during recording: _Stop record_ and _Save GPX track_.
+
+![My Places > Tracks menu iOS](./img/my_places_tracks_menu_3_ios.png) ![My Places > Tracks menu iOS](./img/my_places_tracks_menu_4_ios.png)
+
+The long tap to any folder opens _Folder_ menu with the next actions:
+- _Rename_ - allows rename a selected folder.
+- _Appearance_ - opens the [_Appearance menu](https://osmand.net/docs/user/map/tracks-on-map#track-appearance) of tracks for a selected folder.
+- _Export_ - allows [to export folder as OSF-file](https://osmand.net/docs/user/personal/import-export#export).
+- _Move_ - allows to move a folder to another Tracks folder or to add the new folder for moving selected folder to it.
+- _Delete_ - allows to delete a selected folder.
+
+![My Places > Tracks menu iOS](./img/my_places_tracks_menu_5_ios.png)
+
+
+The long tap to any GPX track opens the menu with the next actions:
+- _Show on map_ - shows a selected track on the map.
+- _Appearance_ - opens track [_Appearance menu](https://osmand.net/docs/user/map/tracks-on-map#track-appearance).
+- _Navigation_ - [navigate by track](https://osmand.net/docs/user/navigation/setup/gpx-navigation).
+- _Analyze_ - opens [_Analyse on map_](https://osmand.net/docs/user/navigation/setup/route-details#analyse-on-map).
+- _Share_ - shares a selected track.
+- _Upload modifications to OSM_
+- _Edit_ - opens a selected track on [_Plan a route_](https://osmand.net/docs/user/plan-route/create-route).
+- _Duplicate_ - allows to duplicate a selected track.
+- _Rename_ - allows to renamve a selected track.
+- _Move_ - allows to move a selected track to chosen folder.
+- _Delete_ - allows to delete a selected track.
+
+![My Places > Tracks menu iOS](./img/my_places_tracks_menu_6_ios.png)
+
+
+
 ## Widgets updates
 
-Enhanced top and bottom widget panels to accommodate all widgets.
+- Enhanced [top and bottom widget panels](https://osmand.net/docs/user/widgets/configure-screen#top--bottom-panels) to accommodate all widgets.
+
+- Background color opacity for transparency widget mode.
+
+- Improved widget configuration by allowing users [to move pages and rows](https://osmand.net/docs/user/widgets/configure-screen#widget-panels).
+
+![Widget iOS](./img/widget_rows_ios.png) ![Widget iOS](./img/widget_rows_2_ios.png)
+
+
+## Redesign Tracks menu of Configure map
+
+Improved management for tracks visible on the map:
+
+iOS Menu → Configure map → Show on map → Tracks
+
+We added two secitions: _Visible_ and _All_
+
+- _Visible_ - you can select and unselect visible tracks on the map and choose its from _Recently visible_ secition
+- _All_ - you can choose tracks from all track list.
+
+![track menu iOS](./img/track_menu_ios.png) ![track menu iOS](./img/track_menu_2_ios.png)
+
+You can use the next actions (Buttons):
+
+- 🔍 Magnifying glass for seaching a track from the track list.
+- 📥 import a track from device.
+- _"Select All"_ - select all tracks from the list.
+- _"Done"_ - done your track selections and close the "Tracks" section.
+
+By clicking to _"Last modified"_ you open the _Sort tracks_ menu. Where you can sort your tracks by:
+- _"Nearest"_ or _"Last modified"_
+- _"Name A-Z"_ or _"Name Z-A"_
+- _"Newest date first"_ or _"Oldest date first"_
+- _"Longest distance first"_ or _"Shortest distance first"_
+- _"Longest duration first"_ or _"Shorter duration first"_
+
+![track menu iOS](./img/track_sort_menu_ios.png) ![track menu iOS](./img/track_sort_menu_2_ios.png)
+
+## Updates of GPX tracks
+
+### 3D visualization
+
+Added 3D visialization fo tracks by altitude.
+
+![3D tracks iOS](./img/3d_tracks_ios.png)
+
+### External sensors data for Analize on map
+
+Updated ["Analyze on Map"](https://osmand.net/docs/user/map/tracks-on-map#analyze-track-on-map) with the ability to display metrics from [sensors](https://osmand.net/docs/user/plugins/external-sensors#trip-recording).
+
+- you can analise your track data with external sensors data: choose the track → [Options](https://osmand.net/docs/user/map/track-context-menu/#options) → Analyze on map → Select graph data
+
+![track menu iOS](./img/analyse_track_sensors_ios.png) ![track menu iOS](./img/analyse_track_sensors_2_ios.png) ![track menu iOS](./img/analyse_track_sensors_3_ios.png)
+
+### Additional tags support
+
+- Enhanced tags support for GPX has been added: link, author, copyright, and keywords. 
+
+- Add support for additional [tags for OSM routes](https://github.com/osmandapp/OsmAnd-iOS/issues/3370): `description`, `from`, `to`, `distance`, `direction`, `state`, `colour`, `ascent`, `descent`, `roundtrip`, `tourism`
+
+## Sun position widget
+
+New [_Sun position_ widget](https://osmand.net/docs/user/widgets/info-widgets#sun-position) was added. It's additional to Sunrise and Sunset widgets. Now this section of widgets names _"Sun position"_:
+
+_Menu → Configure screen → Widgets → Add widget → Sun Position → Sun position, Sunrise, Sunset_. 
+
+![Sun Position](./img/sun_position_3_ios.png)
+
+_"Sun Position"_ widget shows the time until sunrise or sunset, depending on the current time. This widget has the next settings:
+- _Mode_ - choose _"Next event"_, _"Sunset"_, _"Sunrise"_
+- _Format_ - here you choose _"Time left"_ or _"Next event"_, this format settings can be modified by clicking to the widget on the screen.
+
+![Sun Position](./img/sun_position_ios.png) ![Sun Position](./img/sun_position_2_ios.png)
+
+## OsmAnd Cloud updates
+
+- OsmAnd Cloud: added ability [to restore deleted files from Trash](https://osmand.net/docs/user/personal/osmand-cloud#trash).
+
+- OsmAnd Cloud: added ability [to delete account](https://osmand.net/docs/user/personal/osmand-cloud#deletion-option).
+
+## App Language for Basemap
+
+Now, World Basemap has name language of the app language. App Language is used for base map, zoom levels 1-6 (<7 map zoom). (App language can be changed in System settings - OsmAnd Maps – Language).
+
+![App language](./img/app_language_ios.png) 
+
+## Fixed
+
+###  Coordinates widget
+
+- Fixed the "Coordinates" widget where, in some cases, the last digits were missed.
+
+### 3D Mode
+
+- Fixed "3D Mode" button behavior: tapping on the button doesn't save the tilt angle.
+
+### Status bar color
+
+- Fixed status bar color for older iOS versions.
+
+### Mac OS version
+
+- Fixed rotate and pinch to zoom gestures.

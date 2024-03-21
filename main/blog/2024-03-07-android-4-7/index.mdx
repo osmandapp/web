@@ -30,11 +30,116 @@ OsmAnd version 4.7 for Android devices is now available on Google Play and other
 - Round up numbers in navigation widgets. 
 - Allow Custom Quick Action Buttons.
 - Ask to disable battery optimization.
-- Redesigned graph.
+- Redesign graphs.
 - Apply sorting order to all subfolders – Tracks.
 - Filter by Sensor data (HR, Cadence, Power).
 - Add support for tags: author, cmt, link, keywords, copyright, email.
 - New UI for Open Track screen – Tracks.
 - Move to OAuth 2.0 for OpenStreetMap login.
-- Ask to disable battery optimization.
 - Move sensors tags to gpxtpx:TrackPointExtensio.
+
+## Speedometer
+
+Added the new special widget named Speedometer:
+
+_Menu → Configure screen → Other → Speedometer_
+
+Here you can choose height (_small, middle, big_) for Speedometer and when show Speed limit warning (_Always, When exceeded_).
+
+![Speedometer](./img/speedometer_android.png) ![Speedometer](./img/speedometer_2_android.png)
+
+### Speedometer for Android Auto
+
+Speedometer was added for Android Auto too.
+
+![Speedometer](./img/speedometer_3_android.png)
+
+## Round up numbers
+
+Choose how distance information is displayed in navigation widgets (distance to point, next turn, lanes). Choose _"Precise"_ for exact numbers, or _"Round up"_ for easier reability:
+
+_Menu → Settings → Navigation Profile → General settings → Units & formats → Distance during navigation → Precise_ or _Round up_
+
+![Round up Android](./img/roundup_android.png) ![Round up Android](./img/roundup_2_android.png)
+
+## Custom Buttons
+
+For this release we added Custom Buttons as special form of [Quick action](https://osmand.net/docs/user/widgets/quick-action) tool. It's mean than an user can create a custom action button for device screen.
+
+_Menu → Configure screen → Buttons → Custom buttons → + → Add button_
+
+![Custom button Android](./img/custom_button_android.png) 
+![Custom button Android](./img/custom_button_2_android.png)
+
+Next, you can add action or actions for created custom button. And enabled it.
+
+![Custom button Android](./img/custom_button_3_android.png) 
+![Custom button Android](./img/custom_button_4_android.png)
+
+Now, you can see the new custom button on the device screen. This button switches on/off the chosen action immediately.
+
+![Custom button Android](./img/custom_button_5_android.png)
+
+## Ask of battery optimization
+
+The banner _"Battery optimisation"_ for [Trip recording plugin settings](https://osmand.net/docs/user/plugins/trip-recording#recording-settings) was added. Click to it and set battery optimization, it can cause gaps and inaccuracies in recorded tracks:
+
+_Menu → Settings → App Profile → Trip recoding → Read more (Android battry optimization)_
+
+![Battery optimization Android](./img/battery_optim_android.png) 
+![Battery optimization Android](./img/battery_optim_1_android.png)
+
+## Redesign graphs
+
+[Elevation graphs](https://osmand.net/docs/user/plan-route/create-route#graph) were redesigned without overlapping labels:
+
+![Redesign graph Android](./img/redesign_graph_android.png)
+
+
+## OAuth 2.0 for OSM login
+
+
+Changed OpenStreetMap login authorization to OAuth 2.0. for [_OpenStreetMap editing plugin_](https://osmand.net/docs/user/plugins/osm-editing#settings):
+
+"The Operations Working Group is shutting down OAuth 1.0a and HTTP Basic Auth in 2024. They have been deprecated since 2023 and their role in authorization has replaced by OAuth 2.0 which the standard authorization method for most systems."
+
+## Tracks menu
+
+- Sort of subfolders (_My Places_ menu):
+
+Sorting order can be applied to all subfolders:
+
+_Menu → My places → Tracks → &#8942; → Sort subfolders_
+
+![Subfolders Android](./img/subfolders_android.png) ![Subfolders Android](./img/subfolders_1_android.png)
+
+- New Selected Tracks screen (Plan a route, Navigation, Markers, Development, Quick action):
+
+_Navigation → Follow track → Select_
+
+![Selected tracks menu Android](./img/selected_tracks_menu_android.png)
+
+## Filter by Sensor data
+
+Added [filters](https://osmand.net/docs/user/personal/tracks#filter) by sensor data for GPX tracks.
+
+![GPX filters Android](./img/gpx_filters_android.png)
+
+## Tags support
+
+- During importing process of GPX was added support [for tags](https://github.com/osmandapp/OsmAnd/issues/18342): _author, cmt, link, keywords, copyright, email_ for showing this data for Track Context menu.
+
+![Tags of track Android](./img/tags_track_android.png)
+
+- Move sensors tags to _gpxtpx:TrackPointExtensio_.
+
+
+## More
+
+- [Reduced 2.5D tilt](https://github.com/osmandapp/OsmAnd/issues/16027) angle at low zoom levels.
+- Added option of [Auto Sync](https://osmand.net/docs/user/personal/osmand-cloud) for OsmAnd Cloud.
+- Updated [Search screen of Android Auto](https://github.com/osmandapp/OsmAnd/issues/17209).
+- Added POI's [category "Water"](https://github.com/osmandapp/OsmAnd/issues/16021).
+
+
+
