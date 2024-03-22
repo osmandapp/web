@@ -79,7 +79,7 @@ export function CustomTileLayer({ ...props }) {
 
     function PopupContent({ properties }) {
         return (
-            <Paper elevation={3} style={{ padding: '10px' }}>
+            <Paper elevation={3} style={{ maxHeight: '150px', overflowY: 'auto' }}>
                 <Table size="small" aria-label="properties table">
                     <TableBody>
                         {Object.entries(properties).map(([key, value]) => (
@@ -94,6 +94,20 @@ export function CustomTileLayer({ ...props }) {
                 </Table>
             </Paper>
         );
+    }
+
+    function addPopup(feature, markers) {
+        const popupContent = renderToStaticMarkup(<PopupContent properties={feature.properties} />);
+        const popupOptions = {
+            closeButton: true,
+            autoClose: true,
+            closeOnClick: false,
+        };
+        if (markers.length !== 0) {
+            markers.forEach((marker) => {
+                marker.bindPopup(popupContent, popupOptions);
+            });
+        }
     }
 
     function createIconLayerGroup(feature, latlng) {
@@ -118,15 +132,7 @@ export function CustomTileLayer({ ...props }) {
         const frontIconUrl = `/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${feature.properties.mainIcon}.svg`;
         markers.push(createMarker(frontIconUrl, [12, 12], [0, 0]));
 
-        const popupContent = renderToStaticMarkup(<PopupContent properties={feature.properties} />);
-        const popupOptions = {
-            closeButton: true,
-            autoClose: true,
-            closeOnClick: false,
-        };
-        markers.forEach((marker) => {
-            marker.bindPopup(popupContent, popupOptions);
-        });
+        addPopup(feature, markers);
 
         return L.layerGroup(markers);
     }
@@ -194,6 +200,9 @@ export function CustomTileLayer({ ...props }) {
             });
             markers.push(textMarker);
         }
+
+        addPopup(feature, markers);
+
         return L.layerGroup(markers);
     }
 
@@ -252,6 +261,7 @@ export function CustomTileLayer({ ...props }) {
 
             vectorGridLayer.on('click', (e) => {
                 let properties = e.layer.properties;
+                console.error('Clicked on', properties['id']);
                 let style = {
                     icon: L.icon({
                         iconUrl: properties.iconUrl,
