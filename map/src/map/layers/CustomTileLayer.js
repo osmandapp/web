@@ -7,6 +7,8 @@ import MarkerOptions, { SHIELDS_FOLDER } from '../markers/MarkerOptions';
 import { DYNAMIC_RENDERING, VECTOR_GRID } from '../../menu/configuremap/ConfigureMap';
 import { apiGet } from '../../util/HttpApi';
 import styles from './map.module.css';
+import { Paper, Table, TableBody, TableCell, TableRow } from '@mui/material';
+import { renderToStaticMarkup } from 'react-dom/server';
 
 export const INTERACTIVE_LAYER = 'interactive';
 
@@ -18,7 +20,6 @@ export function CustomTileLayer({ ...props }) {
         const dataArray = data.features;
 
         if (!Array.isArray(dataArray) || dataArray.length === 0) {
-            console.error('Invalid input: expected a non-empty array of GeoJSON objects');
             return null;
         }
 
@@ -76,6 +77,25 @@ export function CustomTileLayer({ ...props }) {
         };
     }
 
+    function PopupContent({ properties }) {
+        return (
+            <Paper elevation={3} style={{ padding: '10px' }}>
+                <Table size="small" aria-label="properties table">
+                    <TableBody>
+                        {Object.entries(properties).map(([key, value]) => (
+                            <TableRow key={key}>
+                                <TableCell component="th" scope="row">
+                                    {key == null ? 'N/A' : key.toString()}
+                                </TableCell>
+                                <TableCell align="right">{value == null ? 'N/A' : value.toString()}</TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </Paper>
+        );
+    }
+
     function createIconLayerGroup(feature, latlng) {
         const createMarker = (iconUrl, iconSize, offset = [0, 0]) => {
             const icon = L.icon({
@@ -85,9 +105,7 @@ export function CustomTileLayer({ ...props }) {
                 className: offset[0] !== 0 || offset[1] !== 0 ? styles.frontIcon : '',
             });
 
-            const marker = L.marker(latlng, { icon });
-            marker.on('click', () => console.log('Clicked on', feature));
-            return marker;
+            return L.marker(latlng, { icon });
         };
 
         const markers = [];
@@ -99,6 +117,16 @@ export function CustomTileLayer({ ...props }) {
 
         const frontIconUrl = `/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${feature.properties.mainIcon}.svg`;
         markers.push(createMarker(frontIconUrl, [12, 12], [0, 0]));
+
+        const popupContent = renderToStaticMarkup(<PopupContent properties={feature.properties} />);
+        const popupOptions = {
+            closeButton: true,
+            autoClose: true,
+            closeOnClick: false,
+        };
+        markers.forEach((marker) => {
+            marker.bindPopup(popupContent, popupOptions);
+        });
 
         return L.layerGroup(markers);
     }
@@ -148,9 +176,7 @@ export function CustomTileLayer({ ...props }) {
                 iconAnchor: [0, -10],
             });
 
-            const marker = L.marker(latlng, { icon });
-            marker.on('click', () => console.log('Clicked on', feature));
-            return marker;
+            return L.marker(latlng, { icon });
         };
 
         const markers = [];
@@ -226,7 +252,6 @@ export function CustomTileLayer({ ...props }) {
 
             vectorGridLayer.on('click', (e) => {
                 let properties = e.layer.properties;
-                console.error('Clicked on', properties['id']);
                 let style = {
                     icon: L.icon({
                         iconUrl: properties.iconUrl,
@@ -281,9 +306,16 @@ export function CustomTileLayer({ ...props }) {
             }
         });
 
+        const onMapClick = () => {
+            map.closePopup();
+        };
+
+        map.on('click', onMapClick);
+
         return () => {
             removeDataLayers(dataLayers);
             map.removeLayer(rasterTileLayer);
+            map.off('click', onMapClick);
         };
     }, [ctx.tileURL.url, props, ctx.renderingType]);
 }
