@@ -177,7 +177,7 @@ export default function Weather() {
                         currentTimeForecast={currentTimeForecast}
                         setHeaderForecast={setHeaderForecast}
                     />
-                    <WeatherInfo />
+                    <WeatherInfo dayForecast={dayForecast} weekForecast={weekForecast} />
                 </>
             ) : (
                 <Loading />
