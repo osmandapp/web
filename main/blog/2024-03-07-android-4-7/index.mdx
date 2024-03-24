@@ -26,6 +26,7 @@ OsmAnd version 4.7 for Android devices is now available on Google Play and other
 
 ## What's new
 
+- New fast offline routing.
 - Current speed / speed limit widget (including Android Auto). 
 - Round up numbers in navigation widgets. 
 - Allow Custom Quick Action Buttons.
@@ -37,6 +38,30 @@ OsmAnd version 4.7 for Android devices is now available on Google Play and other
 - New UI for Open Track screen – Tracks.
 - Move to OAuth 2.0 for OpenStreetMap login.
 - Move sensors tags to gpxtpx:TrackPointExtensio.
+
+
+## Fast offline routing
+
+New fast offline routing was added. It uses a highway hierarchy algorithm.
+
+**For correctly working fast routing, you need to have all vector maps with the same date.**
+
+For example, Car offline routing between Inzlingen to Waldershof takes 10 sec.
+
+![Fast Routing Android](./img/fast_routing_android.png)
+
+## Added Navigation settings for Developers
+
+
+At first you need to enable [Development plugin](https://osmand.net/docs/user/plugins/development).
+
+_Menu → Settings → App profile → Navigation settings → Route parameters → Development_:
+- Routing type
+- GPX approximation
+- Autozoom
+- OsmAnd live data
+
+![Speedometer](./img/dev_route_param_android.png)
 
 ## Speedometer
 
@@ -79,6 +104,15 @@ Next, you can add action or actions for created custom button. And enabled it.
 Now, you can see the new custom button on the device screen. This button switches on/off the chosen action immediately.
 
 ![Custom button Android](./img/custom_button_5_android.png)
+
+## Routes tags
+
+Parsed [Routes](https://osmand.net/docs/user/map/tracks-on-map#routes-on-the-map) tages from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Relation:route) for [Track Context menu](https://osmand.net/docs/user/map/track-context-menu#description-and-info): distance, direction, state, colour, roundtrip, tourism, description, type, from/to, descent/ascent
+
+Tags of relation ["CAIOSM - Emilia Romagna - sentiero 137"](https://www.openstreetmap.org/relation/16115660):
+
+![Routes tags Android](./img/routes_tags_android.png)
+
 
 ## Ask of battery optimization
 
@@ -137,9 +171,14 @@ Added [filters](https://osmand.net/docs/user/personal/tracks#filter) by sensor d
 ## More
 
 - [Reduced 2.5D tilt](https://github.com/osmandapp/OsmAnd/issues/16027) angle at low zoom levels.
+- [Map titl angle](https://github.com/osmandapp/OsmAnd/issues/18798) saved by taping on button.
 - Added option of [Auto Sync](https://osmand.net/docs/user/personal/osmand-cloud) for OsmAnd Cloud.
 - Updated [Search screen of Android Auto](https://github.com/osmandapp/OsmAnd/issues/17209).
 - Added POI's [category "Water"](https://github.com/osmandapp/OsmAnd/issues/16021).
-
+- Inroduce map [rotation North fixed](https://github.com/osmandapp/OsmAnd/issues/17086).
+- [Added visual border](https://github.com/osmandapp/OsmAnd/issues/14486) of downloading area ([Online maps](https://osmand.net/docs/user/map/raster-maps#download--update-tiles)) to square.
+- Changed map zoom after [searching of POIs' categories](https://github.com/osmandapp/OsmAnd/issues/18901).
+- [Do not switch profile](https://github.com/osmandapp/OsmAnd/issues/19166) during initial Route calculation.
+- Added [Android Location services](https://osmand.net/docs/user/plugins/osmand-tracker#position) for OsmAnd Tracker. [Fixed _OsmAnd Tracker widget_](https://github.com/osmandapp/OsmAnd/issues/18235).
 
 
