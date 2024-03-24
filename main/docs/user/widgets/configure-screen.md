@@ -57,6 +57,7 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 
 ## Widget panels
 
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
@@ -179,9 +180,10 @@ Types of widgets are available for Top / Bottom panels:
 4. [Lanes](../widgets/nav-widgets#lanes). *Navigational* widget shows the current road lanes layout and highlights lanes for traffic with active navigation.  
 5. [Map markers bar](../widgets/markers.md#configure-marker-widgets-android). The widget displays the distance and direction to the next Map marker from your current location.  
     The widget can be configured to show 1 or 2 markers.  
-    
+
 6. [Elevation profile (*Android only*)](../widgets/nav-widgets#elevation-widget). *Navigational* widget shows the elevation and slope profile of the current route.  
       ![elevation profile](@site/static/img/widgets/elevation_prof_and.png) 
+
 
 
 ### Rows for panels

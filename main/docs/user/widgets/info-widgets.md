@@ -336,13 +336,13 @@ You can read a more detailed description here: **[Radius ruler and Ruler](../wid
 
 The Radius Ruler widget shows the distance between your location and the center point of the Radius Ruler. The radius of the first circle is equal to [the map scale](../widgets/radius-ruler.md#ruler).
 
+
 | | |
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="radius_ruler_item"/>* |
 |   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_ruler_control"/>* |
 | By tapping | Changes the state of the widget between black scale, gray scale, and invisible modes. |
 | Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
-
 
 ## Speedometer
 
@@ -435,6 +435,7 @@ Weather widgets can only be added to the map screen when the OsmAnd [**Weather p
 ![Weather widget iOS](@site/static/img/widgets/weather_widgets_ios.png)
 
 </TabItem>
+
 
 </Tabs>  
 
