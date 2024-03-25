@@ -10,7 +10,7 @@ import styles from './map.module.css';
 import { Paper, Table, TableBody, TableCell, TableRow } from '@mui/material';
 import { renderToStaticMarkup } from 'react-dom/server';
 
-export const INTERACTIVE_LAYER = 'interactive';
+export const INTERACTIVE_LAYER = 'int';
 
 export function CustomTileLayer({ ...props }) {
     const map = useMap();
@@ -32,13 +32,7 @@ export function CustomTileLayer({ ...props }) {
     }
 
     function getGeoJson(res, obj) {
-        if (
-            obj.geometry.type === 'point' &&
-            typeof obj?.mainIcon === 'string' &&
-            obj.mainIcon.trim() !== '' &&
-            obj?.iconX &&
-            obj?.iconY
-        ) {
+        if (obj.geometry.type === 'point' && obj?.iconX && obj?.iconY) {
             let coordinates = [obj.iconX, obj.iconY];
             res.push({
                 type: 'Feature',
@@ -164,14 +158,13 @@ export function CustomTileLayer({ ...props }) {
             color = 'black',
             fontSize = '12',
             fontFamily = 'Arial',
-            textShadow = 0,
             textShadowColor,
             bold = false,
             italic = false,
         }) => {
             const lines = splitTextIntoLines(text);
             const shieldedLines = lines.map((line) => {
-                const style = `color: ${color}; text-shadow: ${textShadow}px ${textShadow}px 0px ${textShadowColor}; font-size: ${fontSize}px; font-family: ${fontFamily}; font-weight: ${bold ? 'bold' : 'normal'}; font-style: ${italic ? 'italic' : 'normal'}; white-space: nowrap;`;
+                const style = `color: ${color}; text-shadow: 1px 1px 0px ${textShadowColor}; font-size: ${fontSize}px; font-family: ${fontFamily}; font-weight: ${bold ? 'bold' : 'normal'}; font-style: ${italic ? 'italic' : 'normal'}; white-space: nowrap;`;
                 return `<span class="shield" style="${style}">${line}</span>`;
             });
             const divStyle = `display: flex; flex-direction: column; justify-content: center; align-items: center;`;
@@ -193,7 +186,6 @@ export function CustomTileLayer({ ...props }) {
                 color: feature.properties.textColor,
                 fontSize: feature.properties.textSize / 2,
                 fontFamily: feature.properties.fontFamily,
-                textShadow: feature.properties.textShadow / 2,
                 textShadowColor: feature.properties.textShadowColor,
                 bold: feature.properties.bold,
                 italic: feature.properties.italic,

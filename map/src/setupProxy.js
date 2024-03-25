@@ -33,9 +33,7 @@ module.exports = function (app) {
         gpx = maptileProxy;
         tile = maptileProxy;
         routing = maptileProxy;
-
-        weather = testProxy;
-
+        weather = maptileProxy;
         mapapi = mainProxy;
         others = mainProxy;
     }

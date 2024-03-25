@@ -205,7 +205,7 @@ async function loadTileUrls(setAllTileURLs) {
     if (response.ok) {
         let data = await response.json();
 
-        data[INTERACTIVE_LAYER] = createInteractiveMap(data);
+        data[INTERACTIVE_LAYER] = createInteractiveMap(data, 'hd');
 
         Object.values(data).forEach((item) => {
             item.tileSize = 256 << item.tileSizeLog;
@@ -224,10 +224,12 @@ async function loadTileUrls(setAllTileURLs) {
     }
 }
 
-function createInteractiveMap(data) {
-    let interactiveMap = cloneDeep(data['hd']);
-    interactiveMap.name = INTERACTIVE_LAYER;
-    interactiveMap.key = INTERACTIVE_LAYER;
+function createInteractiveMap(data, type) {
+    let interactiveMap = cloneDeep(data[type]);
+    const name = type === 'hd' ? INTERACTIVE_LAYER : `${INTERACTIVE_LAYER}-${type}`;
+    interactiveMap.name = name;
+    interactiveMap.key = name;
+
     return interactiveMap;
 }
 
