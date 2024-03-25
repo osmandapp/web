@@ -32,31 +32,61 @@ export function CustomTileLayer({ ...props }) {
     }
 
     function getGeoJson(res, obj) {
-        if (obj.geometry.type === 'point' && obj?.iconX && obj?.iconY) {
-            let coordinates = [obj.iconX, obj.iconY];
-            res.push({
-                type: 'Feature',
-                properties: {
-                    id: obj.id,
-                    iconSize: obj.iconSize,
-                    shield: obj.shield,
-                    mainIcon: obj.mainIcon,
-                    text: obj.text,
-                    textColor: convertDecimalToHex(obj.textColor),
-                    textShadow: obj.textShadow,
-                    textShadowColor: convertDecimalToHex(obj.textShadowColor),
-                    textSize: obj.textSize,
-                    bold: obj.bold,
-                    italic: obj.italic,
-                    iconUrl: `/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${obj.mainIcon}.svg`,
-                },
-                geometry: {
-                    type: 'Point',
-                    coordinates: coordinates,
-                },
-            });
+        let geoJson;
+        if (obj.geometry.type === 'point') {
+            geoJson = getPoint(obj);
+        } else if (obj.geometry.type === 'polyline') {
+            geoJson = getPolyline(obj);
+        }
+        if (geoJson) {
+            res.push(geoJson);
         }
         return res;
+    }
+
+    function getPoint(obj) {
+        if (obj?.iconX && obj?.iconY) {
+            return {
+                type: 'Feature',
+                properties: getProperties(obj),
+                geometry: {
+                    type: 'Point',
+                    coordinates: [obj.iconX, obj.iconY],
+                },
+            };
+        }
+    }
+
+    function getPolyline(obj) {
+        if (obj?.iconX && obj?.iconY) {
+            return {
+                type: 'Feature',
+                properties: getProperties(obj),
+                geometry: {
+                    type: 'Point',
+                    coordinates: [obj.iconX, obj.iconY],
+                },
+            };
+        }
+    }
+
+    function getProperties(obj) {
+        return {
+            id: obj.id,
+            iconSize: obj.iconSize,
+            shield: obj.shield !== '' ? obj.shield : null,
+            shieldRes: obj.shieldRes !== '' ? obj.shieldRes : null,
+            mainIcon: obj.mainIcon !== '' ? obj.mainIcon : null,
+            text: obj.text,
+            textColor: convertDecimalToHex(obj.textColor),
+            textShadow: obj.textShadow,
+            textShadowColor: convertDecimalToHex(obj.textShadowColor),
+            textSize: obj.textSize,
+            bold: obj.bold,
+            italic: obj.italic,
+            iconUrl:
+                obj.mainIcon !== '' ? `/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${obj.mainIcon}.svg` : null,
+        };
     }
 
     function getIconStyle(properties) {
@@ -158,13 +188,16 @@ export function CustomTileLayer({ ...props }) {
             color = 'black',
             fontSize = '12',
             fontFamily = 'Arial',
+            textShadow = 0,
             textShadowColor,
             bold = false,
             italic = false,
+            iconPadding = null,
         }) => {
             const lines = splitTextIntoLines(text);
+            const textShadowWeight = textShadow > 0 ? 1 : 0;
             const shieldedLines = lines.map((line) => {
-                const style = `color: ${color}; text-shadow: 1px 1px 0px ${textShadowColor}; font-size: ${fontSize}px; font-family: ${fontFamily}; font-weight: ${bold ? 'bold' : 'normal'}; font-style: ${italic ? 'italic' : 'normal'}; white-space: nowrap;`;
+                const style = `color: ${color}; text-shadow: ${textShadowWeight}px ${textShadowWeight}px 0px ${textShadowColor}; font-size: ${fontSize}px; font-family: ${fontFamily}; font-weight: ${bold ? 'bold' : 'normal'}; font-style: ${italic ? 'italic' : 'normal'}; white-space: nowrap;`;
                 return `<span class="shield" style="${style}">${line}</span>`;
             });
             const divStyle = `display: flex; flex-direction: column; justify-content: center; align-items: center;`;
@@ -172,7 +205,7 @@ export function CustomTileLayer({ ...props }) {
             const icon = L.divIcon({
                 className: 'custom-text-icon',
                 html: iconHtml,
-                iconAnchor: [0, -10],
+                iconAnchor: iconPadding,
             });
 
             return L.marker(latlng, { icon });
@@ -186,9 +219,17 @@ export function CustomTileLayer({ ...props }) {
                 color: feature.properties.textColor,
                 fontSize: feature.properties.textSize / 2,
                 fontFamily: feature.properties.fontFamily,
+                textShadow: feature.properties.textShadow,
                 textShadowColor: feature.properties.textShadowColor,
                 bold: feature.properties.bold,
                 italic: feature.properties.italic,
+                iconPadding:
+                    feature.properties.mainIcon !== null
+                        ? [0, -10]
+                        : [
+                              -(feature.properties.text.length * (parseInt(feature.properties.textSize) / 8)),
+                              -(feature.properties.textSize / 8),
+                          ],
             });
             markers.push(textMarker);
         }
@@ -225,6 +266,12 @@ export function CustomTileLayer({ ...props }) {
                         layers.push(iconLayer);
                     }
 
+                    // case road shield
+                    if (feature.properties.shieldRes) {
+                        const iconLayer = createShieldLayerGroup(feature, latlng);
+                        layers.push(iconLayer);
+                    }
+
                     if (feature.properties.text) {
                         const textLayer = createTextLayerGroup(feature, latlng);
                         layers.push(textLayer);
@@ -234,6 +281,26 @@ export function CustomTileLayer({ ...props }) {
                 },
             }).addTo(map);
         }
+    }
+
+    function createShieldLayerGroup(feature, latlng) {
+        const createMarker = (iconUrl) => {
+            const icon = L.icon({
+                iconUrl,
+            });
+            return L.marker(latlng, { icon });
+        };
+
+        const markers = [];
+
+        if (feature.properties.shieldRes) {
+            const backIconUrl = `/map/images/${SHIELDS_FOLDER}/h_${feature.properties.shieldRes}.svg`;
+            markers.push(createMarker(backIconUrl));
+        }
+
+        addPopup(feature, markers);
+
+        return L.layerGroup(markers);
     }
 
     function addVectorGrid(geoJsonData) {
