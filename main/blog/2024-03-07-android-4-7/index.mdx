@@ -19,57 +19,68 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Good news!  
 
-OsmAnd version 4.7 for Android devices is now available on Google Play and other markets. Read about the new features in this article. 
+We're thrilled to announce the release of OsmAnd version 4.7 for Android devices, now available for download on Google Play and other app markets. This latest update brings a suite of new features and improvements designed to enhance your navigation experience.
+
+**[Get the Update Today!](https://play.google.com/store/apps/dev?id=8483587772816822023)**
+
+To enjoy these new features and improvements, head to Google Play or your preferred app market to download or update to OsmAnd version 4.7. We're committed to making OsmAnd the best navigation tool for Android users, and we're excited for you to experience the latest advancements.
+
+Thank you for your continued support of OsmAnd. Happy navigating!
+
+![Speedometer](./img/speedometer_3_android.png)
 
 <!--truncate-->
 
 
 ## What's new
 
-- New fast offline routing.
-- Current speed / speed limit widget (including Android Auto). 
-- Round up numbers in navigation widgets. 
-- Allow Custom Quick Action Buttons.
-- Ask to disable battery optimization.
-- Redesign graphs.
-- Apply sorting order to all subfolders – Tracks.
-- Filter by Sensor data (HR, Cadence, Power).
-- Add support for tags: author, cmt, link, keywords, copyright, email.
-- New UI for Open Track screen – Tracks.
-- Move to OAuth 2.0 for OpenStreetMap login.
-- Move sensors tags to gpxtpx:TrackPointExtensio.
+- [Fast offline routing](#fast-offline-routing)
+- [Navigation settings for Developers](#navigation-settings-for-developers)
+- [Speedometer](#speedometer)
+  - [Speedometer for Android Auto](#speedometer-for-android-auto)
+- [Round up numbers](#round-up-numbers) in navigation widgets
+- [Custom Quick Action Buttons](#custom-buttons)
+- [All route tags](#routes-tags) for the Route info of the Context menu
+- [Battery optimization dialogue](#battery-optimization-dialogue) of Track recording
+- [Redesign graphs](#redesign-graphs) of tracks and route
+- [OAuth 2.0 for OpenStreetMap login](#oauth-20-for-osm-login) for OpenStreetMap login
+- [Tracks menu updated](#tracks-menu)
+   - Apply sorting order to all subfolders > Tracks
+   - Designed the new Selected Tracks screen
+- [Filter by Sensor data](filter-by-sensor-data) (HR, Cadence, Power) for GPX tracks
+- [Added tags support](#tags-support): author, cmt, link, keywords, copyright, email. Moved sensor tags to gpxtpx:TrackPointExtensio.
+- [More for this release](#more)
 
 
-## Fast offline routing
+## Enhanced Offline Navigation
 
-New fast offline routing was added. It uses a highway hierarchy algorithm.
+A new, speedy offline navigation feature has been introduced, utilizing a hierarchical highway algorithm.
 
-**For correctly working fast routing, you need to have all vector maps with the same date.**
+**To ensure the swift routing functions correctly, it's essential that all vector maps are up-to-date and synchronized by date.**
 
-For example, Car offline routing between Inzlingen to Waldershof takes 10 sec.
+For instance, navigating offline by car from Inzlingen to Waldershof now only requires 10 seconds.
 
 ![Fast Routing Android](./img/fast_routing_android.png)
 
-## Added Navigation settings for Developers
+## Navigation settings for Developers
 
+Initially, activating the [Development plugin](https://osmand.net/docs/user/plugins/development) is required.
 
-At first you need to enable [Development plugin](https://osmand.net/docs/user/plugins/development).
-
-_Menu → Settings → App profile → Navigation settings → Route parameters → Development_:
-- Routing type
-- GPX approximation
-- Autozoom
-- OsmAnd live data
+Navigate through _Menu → Settings → App profile → Navigation settings → Route parameters → Development_:
+- _Routing type_: Select the engine and algorithm for routing.
+- _GPX approximation_: Opt for a GPX track approximation method.
+- _Autozoom_: Activate autozoom for easier navigation.
+- _OsmAnd live data_: Utilize the [most recent map updates](https://osmand.net/docs/user/personal/maps/#osmand-live) for routing.
 
 ![Speedometer](./img/dev_route_param_android.png)
 
 ## Speedometer
 
-Added the new special widget named Speedometer:
+Introduced a new distinctive widget called Speedometer:
 
-_Menu → Configure screen → Other → Speedometer_
+Go to _Menu → Configure screen → Other → Speedometer_
 
-Here you can choose height (_small, middle, big_) for Speedometer and when show Speed limit warning (_Always, When exceeded_).
+Within this section, you can select the size (_small, medium, large_) of the Speedometer and specify when to receive a Speed limit warning (_Always, When exceeded_).
 
 ![Speedometer](./img/speedometer_android.png) ![Speedometer](./img/speedometer_2_android.png)
 
@@ -81,7 +92,7 @@ Speedometer was added for Android Auto too.
 
 ## Round up numbers
 
-Choose how distance information is displayed in navigation widgets (distance to point, next turn, lanes). Choose _"Precise"_ for exact numbers, or _"Round up"_ for easier reability:
+Select the format for displaying distance information in navigation widgets (such as distance to a point, the next turn, and lanes). Opt for _"Precise"_ for exact figures, or choose _"Round up"_ for simpler readability:
 
 _Menu → Settings → Navigation Profile → General settings → Units & formats → Distance during navigation → Precise_ or _Round up_
 
@@ -89,34 +100,34 @@ _Menu → Settings → Navigation Profile → General settings → Units & forma
 
 ## Custom Buttons
 
-For this release we added Custom Buttons as special form of [Quick action](https://osmand.net/docs/user/widgets/quick-action) tool. It's mean than an user can create a custom action button for device screen.
+In this update, we've introduced Custom Buttons, a unique type of [Quick action](https://osmand.net/docs/user/widgets/quick-action) tool. This means users can now create a custom action button for their device's screen.
 
 _Menu → Configure screen → Buttons → Custom buttons → + → Add button_
 
 ![Custom button Android](./img/custom_button_android.png) 
 ![Custom button Android](./img/custom_button_2_android.png)
 
-Next, you can add action or actions for created custom button. And enabled it.
+Next, you have the option to assign one or more actions to the custom button you've created and activate it.
 
 ![Custom button Android](./img/custom_button_3_android.png) 
 ![Custom button Android](./img/custom_button_4_android.png)
 
-Now, you can see the new custom button on the device screen. This button switches on/off the chosen action immediately.
+Now, the new custom button will be visible on your device's screen. Tapping this button instantly toggles the selected action on or off.
 
 ![Custom button Android](./img/custom_button_5_android.png)
 
 ## Routes tags
 
-Parsed [Routes](https://osmand.net/docs/user/map/tracks-on-map#routes-on-the-map) tages from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Relation:route) for [Track Context menu](https://osmand.net/docs/user/map/track-context-menu#description-and-info): distance, direction, state, colour, roundtrip, tourism, description, type, from/to, descent/ascent
+Extracted [Route](https://osmand.net/docs/user/map/tracks-on-map#routes-on-the-map) Tags from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Relation:route) Data for [Track Context menu](https://osmand.net/docs/user/map/track-context-menu#description-and-info): Includes distance, direction, state, color, roundtrip, tourism, description, type, start/end points, and elevation change (descent/ascent).
 
-Tags of relation ["CAIOSM - Emilia Romagna - sentiero 137"](https://www.openstreetmap.org/relation/16115660):
+Example of relation tags for ["CAIOSM - Emilia Romagna - sentiero 137"](https://www.openstreetmap.org/relation/16115660):
 
 ![Routes tags Android](./img/routes_tags_android.png)
 
 
-## Ask of battery optimization
+## Battery optimization dialogue
 
-The banner _"Battery optimisation"_ for [Trip recording plugin settings](https://osmand.net/docs/user/plugins/trip-recording#recording-settings) was added. Click to it and set battery optimization, it can cause gaps and inaccuracies in recorded tracks:
+A "Battery Optimization" banner has been introduced in the [Trip recording plugin settings](https://osmand.net/docs/user/plugins/trip-recording#recording-settings). By clicking on it, you can adjust battery optimization settings, which may lead to gaps and inaccuracies in the recorded tracks:
 
 _Menu → Settings → App Profile → Trip recoding → Read more (Android battry optimization)_
 
@@ -125,23 +136,22 @@ _Menu → Settings → App Profile → Trip recoding → Read more (Android batt
 
 ## Redesign graphs
 
-[Elevation graphs](https://osmand.net/docs/user/plan-route/create-route#graph) were redesigned without overlapping labels:
+[Elevation graphs](https://osmand.net/docs/user/plan-route/create-route#graph) have been revamped to eliminate overlapping labels:
 
 ![Redesign graph Android](./img/redesign_graph_android.png)
 
 
 ## OAuth 2.0 for OSM login
 
-
-Changed OpenStreetMap login authorization to OAuth 2.0. for [_OpenStreetMap editing plugin_](https://osmand.net/docs/user/plugins/osm-editing#settings):
+Updated the OpenStreetMap login process to use OAuth 2.0 for the [_OpenStreetMap editing plugin_](https://osmand.net/docs/user/plugins/osm-editing#settings):
 
 "The Operations Working Group is shutting down OAuth 1.0a and HTTP Basic Auth in 2024. They have been deprecated since 2023 and their role in authorization has replaced by OAuth 2.0 which the standard authorization method for most systems."
 
 ## Tracks menu
 
-- Sort of subfolders (_My Places_ menu):
+- Organization of subfolders (_My Places_ menu):
 
-Sorting order can be applied to all subfolders:
+You can now apply a sorting order across all subfolders:
 
 _Menu → My places → Tracks → &#8942; → Sort subfolders_
 
@@ -155,13 +165,13 @@ _Navigation → Follow track → Select_
 
 ## Filter by Sensor data
 
-Added [filters](https://osmand.net/docs/user/personal/tracks#filter) by sensor data for GPX tracks.
+Introduced the ability to [filter](https://osmand.net/docs/user/personal/tracks#filter) GPX tracks by sensor data.
 
 ![GPX filters Android](./img/gpx_filters_android.png)
 
 ## Tags support
 
-- During importing process of GPX was added support [for tags](https://github.com/osmandapp/OsmAnd/issues/18342): _author, cmt, link, keywords, copyright, email_ for showing this data for Track Context menu.
+- The import process for GPX files now includes support for [for tags](https://github.com/osmandapp/OsmAnd/issues/18342) such as _author, cmt, link, keywords, copyright, email_ , allowing for the display of this information in the Track Context menu.
 
 ![Tags of track Android](./img/tags_track_android.png)
 
@@ -171,14 +181,12 @@ Added [filters](https://osmand.net/docs/user/personal/tracks#filter) by sensor d
 ## More
 
 - [Reduced 2.5D tilt](https://github.com/osmandapp/OsmAnd/issues/16027) angle at low zoom levels.
-- [Map titl angle](https://github.com/osmandapp/OsmAnd/issues/18798) saved by taping on button.
+- [Map tilt angle](https://github.com/osmandapp/OsmAnd/issues/18798) saved by taping on a button.
 - Added option of [Auto Sync](https://osmand.net/docs/user/personal/osmand-cloud) for OsmAnd Cloud.
 - Updated [Search screen of Android Auto](https://github.com/osmandapp/OsmAnd/issues/17209).
 - Added POI's [category "Water"](https://github.com/osmandapp/OsmAnd/issues/16021).
-- Inroduce map [rotation North fixed](https://github.com/osmandapp/OsmAnd/issues/17086).
+- Introduce map [rotation North fixed](https://github.com/osmandapp/OsmAnd/issues/17086).
 - [Added visual border](https://github.com/osmandapp/OsmAnd/issues/14486) of downloading area ([Online maps](https://osmand.net/docs/user/map/raster-maps#download--update-tiles)) to square.
-- Changed map zoom after [searching of POIs' categories](https://github.com/osmandapp/OsmAnd/issues/18901).
+- Changed map zoom after [searching for POIs' categories](https://github.com/osmandapp/OsmAnd/issues/18901).
 - [Do not switch profile](https://github.com/osmandapp/OsmAnd/issues/19166) during initial Route calculation.
 - Added [Android Location services](https://osmand.net/docs/user/plugins/osmand-tracker#position) for OsmAnd Tracker. [Fixed _OsmAnd Tracker widget_](https://github.com/osmandapp/OsmAnd/issues/18235).
-
-
