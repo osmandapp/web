@@ -42,15 +42,9 @@ We are pleased to announce the release of a 4.7 version of OsmAnd for iOS device
 - "My Places > Tracks" redesign.
 
 
-## Redesign My Places > Tracks menu
+## Redesign Tracks menu
 
 We made full redesign [_Tracks menu_](https://osmand.net/docs/user/personal/tracks#my-places-menu) of [_My Places_](https://osmand.net/docs/user/personal/myplaces). 
-
-Added new views of:  
-- Track folders,
-- Track list, 
-- _Tracks on map_ menu,
-- _New track_ - recording new track. Button for Start track recording.
 
 ![My Places > Tracks menu iOS](./img/my_places_tracks_menu_ios.png) 
 
@@ -107,9 +101,15 @@ The long tap to any GPX track opens the menu with the next actions:
 
 ## Redesign Tracks menu of Configure map
 
+Added new views of:  
+- Track folders,
+- Tracks list, 
+- _Tracks on map_ menu,
+- _New track_ - recording new track. Button for Start track recording.
+
 Improved management for tracks visible on the map:
 
-iOS Menu → Configure map → Show on map → Tracks
+_iOS Menu → Configure map → Show on map → Tracks_
 
 We added two secitions: _Visible_ and _All_
 
@@ -152,7 +152,7 @@ Updated ["Analyze on Map"](https://osmand.net/docs/user/map/tracks-on-map#analyz
 
 ### Additional tags support
 
-- Enhanced tags support for GPX has been added: link, author, copyright, and keywords. 
+- Enhanced tags support for GPX has been added: _link, author, copyright, and keywords_. 
 
 - Add support for additional [tags for OSM routes](https://github.com/osmandapp/OsmAnd-iOS/issues/3370): `description`, `from`, `to`, `distance`, `direction`, `state`, `colour`, `ascent`, `descent`, `roundtrip`, `tourism`
 
@@ -177,6 +177,30 @@ Simple [Glide Ratio widgets](https://osmand.net/docs/user/widgets/info-widgets#g
 _OsmAnd menu → Configure screen → Widgets (All panels) → Glide ratio to target and Average glide ratio_
 
 ![Glide Ratio widget iOS](./img/glide_ratio_widget_ios.png)
+
+## Speedometer
+
+Introduced a new distinctive widget called Speedometer:
+
+Go to _Menu → Configure screen → Other → Speedometer_
+
+Within this section, you can select the size (_small, medium, large_) of the Speedometer and specify when to receive a Speed limit warning (_Always, When exceeded_).
+
+![Speedometer iOS](./img/speedometer_ios.png)
+
+### Speedometer for CarPlay
+
+Speedometer was added for Android Auto too.
+
+![Speedometer CarPlay iOS](./img/speedometer_carplay_ios.png)
+
+## Round up numbers in navigation widgets
+
+Select the format for displaying distance information in navigation widgets (such as distance to a point, the next turn, and lanes). Opt for _"Precise"_ for exact figures, or choose _"Round up"_ for simpler readability:
+
+_Menu → Settings → Navigation Profile → General settings → Units & formats → Distance during navigation → Precise or Round up_
+
+![Round up iOS](./img/round_up_ios.png) ![Round up iOS](./img/round_up_1_ios.png)
 
 ## OsmAnd Cloud updates
 
@@ -214,3 +238,6 @@ Now, World Basemap has name language of the app language. App Language is used f
 - Inform if some maps between start and destination is missing
 
 ![Map downloading suggestion iOS](./img/map_suggest_ios.png) 
+
+### Autozoom animation for navigation
+
