@@ -170,16 +170,12 @@ export function clearShowDetailsFlag(ctx) {
     ctx.setWeatherLayers({ ...ctx.weatherLayers, [ctx.weatherType]: newWeatherLayers });
 }
 
-export const fetchDayForecast = async ({ point, ctx, setDayForecast = null }) => {
-    const loc = {
-        lat: point.lat.toFixed(6),
-        lon: point.lng.toFixed(6),
-    };
+export const fetchDayForecast = async ({ lat, lon, ctx, setDayForecast = null }) => {
     const responseDay = await apiGet(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info`, {
         apiCache: true,
         params: {
-            lat: loc.lat,
-            lon: loc.lon,
+            lat: lat,
+            lon: lon,
             weatherType: ctx.weatherType,
         },
         method: 'GET',
@@ -194,16 +190,12 @@ export const fetchDayForecast = async ({ point, ctx, setDayForecast = null }) =>
     }
 };
 
-export const fetchWeekForecast = async ({ point, ctx, setWeekForecast = null }) => {
-    const loc = {
-        lat: point.lat.toFixed(6),
-        lon: point.lng.toFixed(6),
-    };
+export const fetchWeekForecast = async ({ lat, lon, ctx, setWeekForecast = null }) => {
     const responseWeek = await apiGet(`${process.env.REACT_APP_WEATHER_API_SITE}/weather-api/point-info`, {
         apiCache: true,
         params: {
-            lat: loc.lat,
-            lon: loc.lon,
+            lat: lat,
+            lon: lon,
             weatherType: ctx.weatherType,
             week: true,
         },

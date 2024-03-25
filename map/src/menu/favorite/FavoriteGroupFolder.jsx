@@ -13,7 +13,6 @@ import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { doSort } from '../actions/SortActions';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 import { changeIconSizeWpt, removeShadowFromIconWpt } from '../../map/markers/MarkerOptions';
-import { useDebouncedHash } from '../../util/hooks/useDebouncedHash';
 import { getCenterMapLoc } from '../../manager/MapManager';
 
 export default function FavoriteGroupFolder({ folder }) {
@@ -24,11 +23,25 @@ export default function FavoriteGroupFolder({ folder }) {
     const [, height] = useWindowSize();
     const [markers, setMarkers] = useState([]);
     const currentLoc = useGeoLocation(ctx);
+    const debouncerTimer = useRef(0);
 
     const refMarkers = useRef(null);
 
     const hash = window.location.hash;
-    const delayedHash = useDebouncedHash(hash, 5000);
+    const [delayedHash, setDelayedHash] = useState(hash);
+
+    // debounce map move/scroll
+    useEffect(() => {
+        debouncerTimer.current > 0 && clearTimeout(debouncerTimer.current);
+        debouncerTimer.current = setTimeout(() => {
+            debouncerTimer.current = 0;
+            setDelayedHash(hash);
+        }, 5000);
+
+        return () => {
+            clearTimeout(debouncerTimer.current);
+        };
+    }, [hash]);
 
     // get markers
     useEffect(() => {
