@@ -59,15 +59,6 @@ Feures **Tracks** functionality lets you create and save routes so you can easil
 - [My places](../personal/myplaces.md) menu.
 - [Track Context menu](../map/track-context-menu.md).  
 
-6. **Places from which tracks can be opened**.
-- *Plan route → Open existing track*
-- *Plan route → Add to a track*
-- *Navigation → Follow track → Select*
-- *Markers → Groups → Add → Track waypoints*
-- *OsmAnd Development → Settings → Simulate your position → Select track*
-- *Quick action → Simulate your position → Select track*
-
-
 **Formats**: OsmAnd uses [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format) format for tracks and points.  
 **Import**: the app can import [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language), [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) formats of tracks and points.
 
@@ -96,10 +87,16 @@ Tracks is a powerful tool for tracking journeys, recording routes and Points of 
 
 You can create a new track by starting a record in the Tracks tab or using the OsmAnd [Trip recording Plugin](../plugins/trip-recording.md) and [Widgets](../widgets/info-widgets.md#trip-recording-widgets). Trip plugin is a special tool designed to record your journeys, walks, and other activities.   
 
-- **New track**. 
-- **Currently recording track** (*Android*) / **Recorded track** (*iOS*)
-- **Menu**
+- **New track**. In this field you can tap the *Start Recording* button to record a new track. You may need to confirm your [battery settings](#baterry-optimization) (for Android) before you start.
+- **Currently recording track** (*Android*) / **Recorded track** (*iOS*). 
+- [**Menu**](#folder-menu). Tapping the three dot menu (for Android) or long press (for iOS) opens the [track menu](#single-track-menu). During track recording, in this field you can see how many kilometers have already been recorded and how long the recording is in progress. The **Stop** button allows you to pause the recording, and to finish it, press the **Save** button.
 
+#### Baterry optimization (Android only)
+
+![Track on the map iOS](@site/static/img/personal/tracks/battery_andr.png)
+
+Select an optimisation setting. To prevent the app from asking you the next time you make a selection, tap the Don't ask anymore button.  
+**NOTE**. Optimizing battery usage in Android can cause gaps and inaccuracies in recorded tracks. If you encounter such problems, try changing the battery usage mode to *Unrestricted*.
 
 
 ### Coordinate input
@@ -117,7 +114,7 @@ You can create a new track by starting a record in the Tracks tab or using the O
 - [Coordinate input](../plan-route/coordinate-input.md) article. 
 
 
-### Modify GPX
+### Plane route
 
 <Tabs groupId="operating-systems">
 
@@ -139,6 +136,8 @@ You can create a new track by starting a record in the Tracks tab or using the O
 
 </Tabs>  
 
+The **Plan a route** tool allows you to create *new routes as GPX tracks*, modify *existing tracks*, and *import* new ones.
+
 *Plan a Route* tool enables users to modify both [pre-existing GPX](../personal/tracks.md#my-places-menu) tracks and [imported tracks](../personal/tracks.md#import-track).  
 Read more in the article [**Plan a route** tool](../plan-route/create-route.md#modify-existing-gpx-track). 
 
@@ -151,8 +150,7 @@ Read more in the article [**Plan a route** tool](../plan-route/create-route.md#m
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>*  
 
-![My places tracks Android](@site/static/img/personal/tracks/my_places_tracks_actions_3_andr.png) 
-
+![My places tracks Android](@site/static/img/personal/tracks/my_places_tracks_actions_3_andr.png)  
 
 </TabItem>
 
@@ -165,6 +163,8 @@ Read more in the article [**Plan a route** tool](../plan-route/create-route.md#m
 </TabItem>
  
 </Tabs>
+
+The Tracks tab provides several types of menus for related actions and settings.
 
 
 ### Search
@@ -337,7 +337,7 @@ Osmand provides convenient track management tools, one of them is filtering in t
     - The *Date of creation* allows you to filter tracks by date.
     - Specify the required time period to find tracks that were created then.
 
-- Nearest cities
+- **Nearest cities**
 
     ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_cities_andr.png)   
 
@@ -414,6 +414,7 @@ Once created, the Smart folder is displayed with a special icon in the folder li
 - [**Export**](../personal/import-export.md). You will go to *Menu → Settings → Actions* tab, where you can export all tracks from the folder.
 - **Delete folde**. You can only delete the Smart folder, not the tracks. A warning message will appear on the display. The deletion will be irreversible.  
 
+
 ### Internal folder menu
 
 ![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)  
@@ -437,7 +438,8 @@ This screen allows you to select the tracks you want, as well as a list of sugge
 - [**Change appearance**](../map/tracks-on-map.md#track-appearance). Allows you to change the appearance of all or specific tracks in a folder.
 - **Delete**. Deletes only the folder with its settings. The tracks displayed in this folder are not deleted.
 
-###  Import / Export Smart folder
+
+###  Export tracks from Smart folder
 
 1. Exporting tracks that are in the Smart folder is available through the menu in the folder field of the Tracks tab.
     - Tap the three-dot menu, then select **Export**.
@@ -499,12 +501,12 @@ There are two options for importing a track file into OsmAnd. The first is impor
 
 Exporting one or more track files to any messenger, email, file managers, Drive or app is possible in several ways.  
 
-1. By [Track Context menu → Share](../map/track-context-menu.md#options).
-2. By [My Places menu → Tracks → … → "export" button](../personal/tracks.md#actions). Exporting more than one track by a bundle (It's the case of Local Backup).
-3. By [Local backup file](../personal/import-export.md#export-to-file). Exporting GPX-tracks as OSF-file.
+1. By [*Track Context menu → Share*](../map/track-context-menu.md#options).
+2. By [*My Places menu → Tracks → … → "export" button*](../personal/tracks.md#actions). Exporting more than one track by a bundle (It's the case of Local Backup).
+3. By [*Local backup file*](../personal/import-export.md#export-to-file). Exporting GPX-tracks as OSF-file.
 
 
-### Export a GPX file to an external storage device (iOS)
+### Export GPX file to an external storage device (iOS)
 
 ![Export with Context menu in iOS](@site/static/img/plugins/trip-recording/cont_menu_in_myplaces_ios.png) 
 
@@ -609,16 +611,63 @@ Actions:
 - **Move**. You can move the selected folder to another existing folder or create a new one.
 - [*Delete folder*](#delete-folder). Allow you to delete a folder. A warning message will appear on the display. The deletion will be irreversible. 
 
-###  Delete folder
+####  Delete folder
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*.
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
 
 ![My Places with tracks in Android](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+
+![Context menu of a track in iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.png)
+
+</TabItem>
+
+</Tabs>  
 
 You can delete a folder with all the tracks it contains. To do this:
 - Tap on the three-dot menu of the folder you want to delete.
 - At the bottom of the menu, find the Delete Folder option.
-- *Note* that this action is irreversible.
+- **Note** that this action is irreversible.
+
+
+### Follow track
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*Navigation → Settings → Follow track → Select*
+
+![My Places with tracks in Android](@site/static/img/personal/tracks/follow_track_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*Navigation → Settings → Follow track → Select*
+
+![Context menu of a track in iOS](@site/static/img/personal/tracks/follow_track_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+**Places from which tracks can be opened**.
+- *Plan route → Open existing track*
+- *Plan route → Add to a track*
+- *Navigation → Follow track → Select*
+- *Markers → Groups → Add → Track waypoints*
+- *OsmAnd Development → Settings → Simulate your position → Select track*
+- *Quick action → Simulate your position → Select track*
 
 
 ### Show tracks on map
