@@ -32,7 +32,10 @@ export default function TopWeatherInfo({
     function getLocation() {
         if (weatherLoc) {
             if (Object.keys(weatherLoc.address).length > 0) {
-                return weatherLoc.address[i18n.language];
+                const name = weatherLoc.address[i18n.language];
+                if (name) {
+                    return name;
+                }
             }
             return weatherLoc.lat + ', ' + weatherLoc.lon;
         }
