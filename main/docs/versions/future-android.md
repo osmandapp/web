@@ -163,7 +163,7 @@ _Navigation → Follow track → Select_
 
 ## Filter by Sensor data
 
-Introduced the ability to [filter](https://osmand.net/docs/user/personal/tracks#filter) GPX tracks by sensor data.
+Introduced the ability to [filter](https://osmand.net/docs/user/personal/tracks.md#filter) GPX tracks by sensor data.
 
 ![GPX filters Android](../../blog/2024-03-07-android-4-7/img/gpx_filters_android.png)
 
