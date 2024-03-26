@@ -63,7 +63,7 @@ You can choose which tracks to show on the map and which to hide. You can do thi
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/> → Choosing tracks for displayed from the list.*  
+*<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*  
 
 ![Tracks menu iOS](@site/static/img/map/tracks_menu_ios.png)   
 
