@@ -498,13 +498,13 @@ The Most viewed articles among our users refers to the articles in the app or on
 
 <TabItem value="android" label="Android">
 
-![Offline help Android screenshot](@site/static/img/steps/offline_help_most_viewed_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/guide_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/steps/offline_help_most_viewed_ios.png) 
+![Maps menu iOS](@site/static/img/steps/guide_ios.png) 
 
 </TabItem>
 
@@ -589,7 +589,7 @@ Gives you the opportunity to ask questions or make suggestions.
 
 <TabItem value="android" label="Android">
 
-![Offline help Android screenshot](@site/static/img/steps/offline_about_andr.png)
+![Offline help Android screenshot](@site/static/img/steps/offline_about_1_andr.png)
 
 </TabItem>
 
