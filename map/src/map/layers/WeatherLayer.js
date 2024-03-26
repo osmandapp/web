@@ -27,13 +27,8 @@ const WeatherLayer = () => {
 
     useEffect(() => {
         if (map) {
-            map.on('zoomend', () => {
-                ctx.setMapBbox(map.getBounds());
-            });
-
-            map.on('dragend', () => {
-                ctx.setMapBbox(map.getBounds());
-            });
+            map.on('zoomend', () => ctx.setMapBbox(map.getBounds()));
+            map.on('dragend', () => ctx.setMapBbox(map.getBounds()));
         }
     }, [map]);
 
