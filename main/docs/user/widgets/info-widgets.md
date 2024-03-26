@@ -171,11 +171,26 @@ The average speed is calculated for a given time interval according to your sele
 
 ## Glide ratio
 
-<InfoAndroidOnly />  
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 |Widgets| Widgets on the screen|
 |--------|---------|
 |![Glide ratio](@site/blog/2023-12-22-android-4-6/img/glide_ratio_1.png)|![Glide ratio](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+|Widgets| Widgets on the screen|
+|--------|---------|
+|![Glide ratio](@site/static/img/widgets/glide_ratio_1_widget_ios.png)|![Glide ratio](@site/static/img/widgets/glide_ratio_widget_ios.png)|
+
+
+</TabItem>
+
+</Tabs>  
 
 Glide ratio [simple widgets](../widgets/configure-screen.md#widgets-for-all-panels) provides valuable glide ratio information to help make informed decisions when planning air routes. The *Glide Ratio* widget in OsmAnd helps you assess the efficiency of your descent or ascent when navigating to a specific location ([Map marker](../personal/markers.md) position). It calculates the glide ratio as the ratio of the distance to the difference in altitude between your current position and your intended destination. You can read more about this [here](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
 
@@ -208,6 +223,7 @@ Glide ratio [simple widgets](../widgets/configure-screen.md#widgets-for-all-pane
 | | |
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → Glide ratio* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → Glide ratio* |
 | By tapping | Displays the target altitude. |
 
 
@@ -336,12 +352,15 @@ You can read a more detailed description here: **[Radius ruler and Ruler](../wid
 
 The Radius Ruler widget shows the distance between your location and the center point of the Radius Ruler. The radius of the first circle is equal to [the map scale](../widgets/radius-ruler.md#ruler).
 
+
 | | |
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="radius_ruler_item"/>* |
 |   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_ruler_control"/>* |
 | By tapping | Changes the state of the widget between black scale, gray scale, and invisible modes. |
 | Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
+
+## Speedometer
 
 
 ## Plugins widgets
@@ -432,6 +451,7 @@ Weather widgets can only be added to the map screen when the OsmAnd [**Weather p
 ![Weather widget iOS](@site/static/img/widgets/weather_widgets_ios.png)
 
 </TabItem>
+
 
 </Tabs>  
 

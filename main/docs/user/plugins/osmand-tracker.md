@@ -79,7 +79,9 @@ _["Live now"](#live-now-screen) screen → ⋮ → Settings_
 
 **Background work** - allows you to change battery optimization settings to stabilize location sharing.
 
-![OsmAnd Tracker](@site/static/img/plugins/online-tracker/settingstracker.jpg) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/20.jpg)
+**Location source** - allows you to choose _Google Play Services_ (by default) or _Android API_ for determining location.
+
+![OsmAnd Tracker](@site/static/img/plugins/online-tracker/settingstracker.png) ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/20.jpg)
 
 
 ### Units & formats

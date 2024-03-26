@@ -114,7 +114,7 @@ This section contains settings of the cursor on the map and map view, settings o
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_appearance"/>*
 
-![Profiles General Settings Appearance Android](@site/static/img/personal/profiles/profiles_appearance_andr.png)
+![Profiles General Settings Appearance Android](@site/static/img/personal/profiles/profiles_appearance_1_andr.png)
 
 </TabItem>
 
@@ -139,10 +139,7 @@ In this section of the General settings menu, you can set parameters for the cur
   - *<Translate android="true" ids="rotate_map_bearing_opt"/>*
   - *<Translate android="true" ids="rotate_map_compass_opt"/>*
   - *<Translate android="true" ids="rotate_map_manual_opt"/>* 
-- **<Translate android="true" ids="display_position"/>** (*Android only*) / *<Translate ios="true" ids="position_on_map"/>* (*iOS*). Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:
-  - *<Translate android="true" ids="position_on_map_center"/>*. The cursor is always positioned in the center of the screen.
-  - *<Translate android="true" ids="position_on_map_bottom"/>*. *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
-  - *<Translate android="true" ids="shared_string_automatic"/>*. Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
+
 - **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Android*). Opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.
 - **<Translate android="true" ids="map_screen_orientation"/>**. Sets and locks the screen position in the OsmAnd application. Not supported on iPad.
   - *<Translate android="true" ids="map_orientation_portrait"/>* 
