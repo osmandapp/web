@@ -6,8 +6,10 @@ const BACKGROUND_WPT_SHAPE_OCTAGON = 'octagon';
 const BACKGROUND_WPT_SHAPE_SQUARE = 'square';
 const DEFAULT_WPT_ICON = 'special_star';
 const DEFAULT_WPT_COLOR = '#eecc22';
-const POI_ICONS_FOLDER = 'poi-icons-svg';
+
+export const POI_ICONS_FOLDER = 'poi-icons-svg';
 export const SHIELDS_FOLDER = 'map-shaders-svg';
+export const MAP_ICONS_FOLDER = 'map-icons-svg';
 
 const MarkerIcon = ({ iconType = 'default-marker', bg = 'blue' }) => {
     let svg =
@@ -247,7 +249,6 @@ const MarkerOptions = {
     BACKGROUND_WPT_SHAPE_SQUARE: BACKGROUND_WPT_SHAPE_SQUARE,
     DEFAULT_WPT_ICON: DEFAULT_WPT_ICON,
     DEFAULT_WPT_COLOR: DEFAULT_WPT_COLOR,
-    POI_ICONS_FOLDER: POI_ICONS_FOLDER,
 };
 
 export default MarkerOptions;

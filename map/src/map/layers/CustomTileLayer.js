@@ -3,7 +3,7 @@ import { useContext, useEffect } from 'react';
 import L from 'leaflet';
 import AppContext from '../../context/AppContext';
 import 'leaflet.vectorgrid';
-import MarkerOptions, { SHIELDS_FOLDER } from '../markers/MarkerOptions';
+import { MAP_ICONS_FOLDER, SHIELDS_FOLDER } from '../markers/MarkerOptions';
 import { DYNAMIC_RENDERING, VECTOR_GRID } from '../../menu/configuremap/ConfigureMap';
 import { apiGet } from '../../util/HttpApi';
 import styles from './map.module.css';
@@ -95,8 +95,7 @@ export function CustomTileLayer({ ...props }) {
             textSize: obj.textSize,
             bold: obj.bold,
             italic: obj.italic,
-            iconUrl:
-                obj.mainIcon !== '' ? `/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${obj.mainIcon}.svg` : null,
+            iconUrl: obj.mainIcon !== '' ? `/map/images/${MAP_ICONS_FOLDER}/mx_${obj.mainIcon}.svg` : null,
         };
     }
 
@@ -164,7 +163,7 @@ export function CustomTileLayer({ ...props }) {
             markers.push(createMarker(backIconUrl, [20, 20]));
         }
 
-        const frontIconUrl = `/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${feature.properties.mainIcon}.svg`;
+        const frontIconUrl = `/map/images/${MAP_ICONS_FOLDER}/mx_${feature.properties.mainIcon}.svg`;
         markers.push(createMarker(frontIconUrl, [12, 12], [0, 0]));
 
         addPopup(feature, markers);
