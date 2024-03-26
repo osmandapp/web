@@ -346,6 +346,8 @@ Available actions:
 
 <TabItem value="android" label="Android">  
 
+![Widget page](@site/static/img/widgets/buttons_andr.png)  
+
 **Buttons:**
 
 1. **Custom buttons**. Allows you to add a list from [Quick action](../widgets/quick-action.md).
@@ -355,16 +357,18 @@ Available actions:
 
 **Other**
 
-1. **Display position**. Choose:
-    - *Center*. Use the center position of the screen for the cursor.
-    - *Bottom*. Use the bottom screen position for the cursor.
-    - *Automatic*. Use the bottom position for the direction of movement, the center position for all others.
+1. **<Translate android="true" ids="display_position"/>**. Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:
+    - *<Translate android="true" ids="position_on_map_center"/>*. The cursor is always positioned in the center of the screen.
+    - *<Translate android="true" ids="position_on_map_bottom"/>*. *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
+    - *<Translate android="true" ids="shared_string_automatic"/>*. Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
 2. [Distance by tap](../widgets/radius-ruler.md#distance-by-tap-tool). Gives the ability to measure the distance from your position to the selected point.
 3. **Speedometer**. Shows the current speed based on GPS data.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
+
+![Widget page](@site/static/img/widgets/buttons_ios.png) 
 
 **Buttons:**
 
