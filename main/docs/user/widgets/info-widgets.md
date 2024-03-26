@@ -363,6 +363,32 @@ The Radius Ruler widget shows the distance between your location and the center 
 ## Speedometer
 
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Speedometer](@site/static/img/widgets/speedometer_android.png) ![Speedometer](@site/static/img/widgets/speedometer_2_android.png)
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Speedometer](@site/static/img/widgets/speedometer_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Within this section, you can select the size (_small, medium, large_) of the Speedometer and specify when to receive a Speed limit warning (_Always, When exceeded_).
+
+| | |
+|------------|------------|
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_other,shared_string_speedometer"/>* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Other → Speedometer* |
+| Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
+
+
 ## Plugins widgets
 
 These widgets are enabled and work in combination with their corresponding plugins.
