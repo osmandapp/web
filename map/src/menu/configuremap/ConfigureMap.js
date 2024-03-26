@@ -13,8 +13,6 @@ import {
     Toolbar,
     Tooltip,
     Divider,
-    ToggleButton,
-    ToggleButtonGroup,
 } from '@mui/material';
 import { Settings } from '@mui/icons-material';
 import AppContext, { defaultConfigureMapStateValues, LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
@@ -29,7 +27,6 @@ import { cloneDeep } from 'lodash';
 import EmptyLogin from '../errors/EmptyLogin';
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from '../actions/HeaderHelper';
-import { INTERACTIVE_LAYER } from '../../map/layers/CustomTileLayer';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
@@ -45,12 +42,6 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
         newConfigureMap.showFavorites = !ctx.configureMapState.showFavorites;
         localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(newConfigureMap));
         ctx.setConfigureMapState(newConfigureMap);
-    };
-
-    const handleRenderingType = (event, selectedType) => {
-        if (selectedType !== null && selectedType !== ctx.renderingType) {
-            ctx.setRenderingType(selectedType);
-        }
     };
 
     function setIconStyles() {
@@ -185,20 +176,6 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
                                     <Settings fontSize="small" />
                                 </IconButton>
                             </MenuItem>
-                            {ctx.tileURL.key === INTERACTIVE_LAYER && (
-                                <ToggleButtonGroup
-                                    sx={{ ml: 1, mr: 1, mt: 2, width: 'auto' }}
-                                    color="primary"
-                                    value={ctx.renderingType}
-                                    exclusive
-                                    fullWidth={true}
-                                    onChange={handleRenderingType}
-                                    aria-label="Platform"
-                                >
-                                    <ToggleButton value={DYNAMIC_RENDERING}>Dynamic</ToggleButton>
-                                    <ToggleButton value={VECTOR_GRID}>Vector grid</ToggleButton>
-                                </ToggleButtonGroup>
-                            )}
                         </>
                     )}
                 </>

@@ -4,7 +4,7 @@ import L from 'leaflet';
 import AppContext from '../../context/AppContext';
 import 'leaflet.vectorgrid';
 import { MAP_ICONS_FOLDER, SHIELDS_FOLDER } from '../markers/MarkerOptions';
-import { DYNAMIC_RENDERING, VECTOR_GRID } from '../../menu/configuremap/ConfigureMap';
+import { DYNAMIC_RENDERING } from '../../menu/configuremap/ConfigureMap';
 import { apiGet } from '../../util/HttpApi';
 import styles from './map.module.css';
 import { Paper, Table, TableBody, TableCell, TableRow } from '@mui/material';
@@ -96,18 +96,6 @@ export function CustomTileLayer({ ...props }) {
             bold: obj.bold,
             italic: obj.italic,
             iconUrl: obj.mainIcon !== '' ? `/map/images/${MAP_ICONS_FOLDER}/mx_${obj.mainIcon}.svg` : null,
-        };
-    }
-
-    function getIconStyle(properties) {
-        let customIcon = new L.icon({
-            iconUrl: properties.iconUrl,
-            iconSize: [15, 15],
-            iconAnchor: [8.5, 8.5],
-        });
-        return {
-            icon: customIcon,
-            radius: 15,
         };
     }
 
@@ -323,41 +311,6 @@ export function CustomTileLayer({ ...props }) {
         return layerGroup;
     }
 
-    function addVectorGrid(geoJsonData) {
-        if (geoJsonData && map) {
-            let vectorGridLayer = L.vectorGrid.slicer(geoJsonData, {
-                rendererFactory: L.svg.tile,
-                vectorTileLayerStyles: {
-                    sliced: getIconStyle,
-                },
-                maxZoom: 22,
-                indexMaxZoom: 5,
-                interactive: true,
-                getFeatureId: function (feature) {
-                    return feature.properties['id'];
-                },
-            });
-
-            vectorGridLayer.on('click', (e) => {
-                let properties = e.layer.properties;
-                console.error('Clicked on', properties['id']);
-                let style = {
-                    icon: L.icon({
-                        iconUrl: properties.iconUrl,
-                        iconSize: [12, 12],
-                    }),
-                };
-                vectorGridLayer.setFeatureStyle(properties['id'], style);
-            });
-
-            vectorGridLayer.addTo(map);
-
-            return () => {
-                map.removeLayer(vectorGridLayer);
-            };
-        }
-    }
-
     useEffect(() => {
         const rasterTileLayer = L.tileLayer(ctx.tileURL.url, props).addTo(map);
         let dataLayers = [];
@@ -385,12 +338,8 @@ export function CustomTileLayer({ ...props }) {
             if (response.ok) {
                 const geoJsonData = await response.json();
                 const preparedGeoJsonData = await prepareGeoJsonData(geoJsonData);
-                if (preparedGeoJsonData) {
-                    if (ctx.renderingType === DYNAMIC_RENDERING) {
-                        dataLayers.push(addGeoJsonLayer(preparedGeoJsonData));
-                    } else if (ctx.renderingType === VECTOR_GRID) {
-                        addVectorGrid(preparedGeoJsonData);
-                    }
+                if (preparedGeoJsonData && ctx.renderingType === DYNAMIC_RENDERING) {
+                    dataLayers.push(addGeoJsonLayer(preparedGeoJsonData));
                 }
             }
         });

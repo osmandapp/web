@@ -227,7 +227,7 @@ async function loadTileUrls(setAllTileURLs) {
 function createInteractiveMap(data, type) {
     let interactiveMap = cloneDeep(data[type]);
     const name = type === 'hd' ? INTERACTIVE_LAYER : `${INTERACTIVE_LAYER}-${type}`;
-    interactiveMap.name = name;
+    interactiveMap.name = 'Interactive';
     interactiveMap.key = name;
 
     return interactiveMap;
