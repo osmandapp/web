@@ -27,6 +27,7 @@ import { cloneDeep } from 'lodash';
 import EmptyLogin from '../errors/EmptyLogin';
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from '../actions/HeaderHelper';
+import { INTERACTIVE_LAYER } from '../../map/layers/CustomTileLayer';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
@@ -160,7 +161,11 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
                                         value={ctx.tileURL.key}
                                         onChange={(e) => {
                                             ctx.setTileURL(ctx.allTileURLs[e.target.value]);
-                                            ctx.setRenderingType(DYNAMIC_RENDERING);
+                                            if (e.target.value === INTERACTIVE_LAYER) {
+                                                ctx.setRenderingType(DYNAMIC_RENDERING);
+                                            } else if (ctx.renderingType) {
+                                                ctx.setRenderingType(null);
+                                            }
                                         }}
                                     >
                                         {Object.values(ctx.allTileURLs).map((item) => {

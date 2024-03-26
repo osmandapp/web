@@ -11,7 +11,6 @@ import WeatherManager from '../manager/WeatherManager';
 import { getAccountInfo } from '../manager/LoginManager';
 import { cloneDeep } from 'lodash';
 import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
-import { DYNAMIC_RENDERING } from '../menu/configuremap/ConfigureMap';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -246,7 +245,7 @@ export const AppContextProvider = (props) => {
     const [weatherLayers, setWeatherLayers] = useState(WeatherManager.getLayers());
     const [weatherDate, setWeatherDate] = useState(new Date());
     const [weatherType, setWeatherType] = useState('gfs');
-    const [renderingType, setRenderingType] = useState(DYNAMIC_RENDERING);
+    const [renderingType, setRenderingType] = useState(null);
     const [forecastLoading, setForecastLoading] = useState(false);
 
     const [gpxLoading, setGpxLoading] = useState(false);
