@@ -1,5 +1,5 @@
 import { useMap } from 'react-leaflet';
-import { useContext, useEffect } from 'react';
+import { useCallback, useContext, useEffect, useRef } from 'react';
 import L from 'leaflet';
 import AppContext from '../../context/AppContext';
 import 'leaflet.vectorgrid';
@@ -15,6 +15,14 @@ export const INTERACTIVE_LAYER = 'int';
 export function CustomTileLayer({ ...props }) {
     const map = useMap();
     const ctx = useContext(AppContext);
+
+    const rasterTileLayerRef = useRef(null);
+    const dataLayersRef = useRef(null);
+    const renderingTypeRef = useRef(ctx.renderingType);
+
+    useEffect(() => {
+        renderingTypeRef.current = ctx.renderingType;
+    }, [ctx.renderingType]);
 
     async function prepareGeoJsonData(data) {
         const dataArray = data.features;
@@ -312,24 +320,30 @@ export function CustomTileLayer({ ...props }) {
     }
 
     useEffect(() => {
-        const rasterTileLayer = L.tileLayer(ctx.tileURL.url, props).addTo(map);
-        let dataLayers = [];
+        if (!rasterTileLayerRef.current) {
+            rasterTileLayerRef.current = L.tileLayer(ctx.tileURL.url, props).addTo(map);
+        } else {
+            rasterTileLayerRef.current.setUrl(ctx.tileURL.url);
+        }
 
-        const removeDataLayers = (dataLayers) => {
-            if (dataLayers.length > 0) {
-                dataLayers.forEach((layer) => {
-                    map.removeLayer(layer);
-                });
-            }
-        };
+        const tileChanged =
+            dataLayersRef.current && dataLayersRef.current.rasterTileLayer !== rasterTileLayerRef.current;
+        const noDataLayers = !renderingTypeRef.current && dataLayersRef?.current?.layers.length > 0;
+
+        if (tileChanged || noDataLayers) {
+            removeDataLayers(dataLayersRef.current.layers);
+            dataLayersRef.current = { layers: [] };
+        }
 
         map.on('zoomstart', () => {
-            removeDataLayers(dataLayers);
-            dataLayers = [];
+            if (dataLayersRef.current) {
+                removeDataLayers(dataLayersRef.current.layers);
+                dataLayersRef.current = { layers: [] };
+            }
         });
 
-        rasterTileLayer.on('tileload', async function (e) {
-            if (ctx.tileURL.infoUrl === undefined || !ctx.renderingType) return;
+        rasterTileLayerRef.current.on('tileload', async function (e) {
+            if (ctx.tileURL.infoUrl === undefined || !renderingTypeRef.current) return;
 
             const { z, x, y } = e.coords;
 
@@ -338,22 +352,43 @@ export function CustomTileLayer({ ...props }) {
             if (response.ok) {
                 const geoJsonData = await response.json();
                 const preparedGeoJsonData = await prepareGeoJsonData(geoJsonData);
-                if (preparedGeoJsonData && ctx.renderingType === DYNAMIC_RENDERING) {
-                    dataLayers.push(addGeoJsonLayer(preparedGeoJsonData));
+                if (preparedGeoJsonData && renderingTypeRef.current === DYNAMIC_RENDERING) {
+                    if (!dataLayersRef.current) {
+                        dataLayersRef.current = {
+                            layers: [],
+                        };
+                    }
+                    dataLayersRef.current.layers.push(addGeoJsonLayer(preparedGeoJsonData));
+                    dataLayersRef.current.rasterTileLayer = rasterTileLayerRef.current;
                 }
             }
         });
 
-        const onMapClick = () => {
-            map.closePopup();
-        };
-
         map.on('click', onMapClick);
 
         return () => {
-            removeDataLayers(dataLayers);
-            map.removeLayer(rasterTileLayer);
             map.off('click', onMapClick);
         };
     }, [ctx.tileURL.url, props, ctx.renderingType]);
+
+    const removeDataLayers = (dataLayers) => {
+        if (dataLayers.length > 0) {
+            dataLayers.forEach((layer) => {
+                map.removeLayer(layer);
+            });
+        }
+    };
+
+    useEffect(() => {
+        return () => {
+            if (map.hasLayer(rasterTileLayerRef.current)) {
+                map.removeLayer(rasterTileLayerRef.current);
+            }
+            removeDataLayers(dataLayersRef.current.layers);
+        };
+    }, []);
+
+    const onMapClick = useCallback(() => {
+        map.closePopup();
+    }, [map]);
 }
