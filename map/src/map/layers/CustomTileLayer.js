@@ -18,7 +18,6 @@ export function CustomTileLayer({ ...props }) {
 
     async function prepareGeoJsonData(data) {
         const dataArray = data.features;
-
         if (!Array.isArray(dataArray) || dataArray.length === 0) {
             return null;
         }
@@ -59,14 +58,26 @@ export function CustomTileLayer({ ...props }) {
 
     function getPolyline(obj) {
         if (obj?.iconX && obj?.iconY) {
-            return {
-                type: 'Feature',
-                properties: getProperties(obj),
-                geometry: {
-                    type: 'Point',
-                    coordinates: [obj.iconX, obj.iconY],
-                },
-            };
+            const type = obj.mainIcon !== '' || obj.shield !== '' || obj.shieldRes !== '' ? 'Point' : 'LineString';
+            if (type === 'Point') {
+                return {
+                    type: 'Feature',
+                    properties: getProperties(obj),
+                    geometry: {
+                        type: type,
+                        coordinates: [obj.iconX, obj.iconY],
+                    },
+                };
+            } else if (type === 'LineString') {
+                return {
+                    type: 'Feature',
+                    properties: getProperties(obj),
+                    geometry: {
+                        type: type,
+                        coordinates: obj.geometry.coordinates,
+                    },
+                };
+            }
         }
     }
 
@@ -183,6 +194,16 @@ export function CustomTileLayer({ ...props }) {
             }
         };
 
+        function getIconPadding() {
+            if (feature.properties.mainIcon !== null) {
+                if (feature.properties.mainIcon.includes('_dot')) {
+                    return [0, 0];
+                }
+                return [0, -5];
+            }
+            return [6, 9];
+        }
+
         const createTextMarker = ({
             text,
             color = 'black',
@@ -192,7 +213,6 @@ export function CustomTileLayer({ ...props }) {
             textShadowColor,
             bold = false,
             italic = false,
-            iconPadding = null,
         }) => {
             const lines = splitTextIntoLines(text);
             const textShadowWeight = textShadow > 0 ? 1 : 0;
@@ -205,10 +225,10 @@ export function CustomTileLayer({ ...props }) {
             const icon = L.divIcon({
                 className: 'custom-text-icon',
                 html: iconHtml,
-                iconAnchor: iconPadding,
+                iconAnchor: getIconPadding(),
             });
 
-            return L.marker(latlng, { icon });
+            return new L.Marker(latlng, { icon, zIndexOffset: 1000 });
         };
 
         const markers = [];
@@ -223,13 +243,6 @@ export function CustomTileLayer({ ...props }) {
                 textShadowColor: feature.properties.textShadowColor,
                 bold: feature.properties.bold,
                 italic: feature.properties.italic,
-                iconPadding:
-                    feature.properties.mainIcon !== null
-                        ? [0, -10]
-                        : [
-                              -(feature.properties.text.length * (parseInt(feature.properties.textSize) / 8)),
-                              -(feature.properties.textSize / 8),
-                          ],
             });
             markers.push(textMarker);
         }
@@ -261,6 +274,11 @@ export function CustomTileLayer({ ...props }) {
                 pointToLayer: function (feature, latlng) {
                     const layers = [];
 
+                    if (feature.properties.text) {
+                        const textLayer = createTextLayerGroup(feature, latlng);
+                        layers.push(textLayer);
+                    }
+
                     if (feature.properties.mainIcon) {
                         const iconLayer = createIconLayerGroup(feature, latlng);
                         layers.push(iconLayer);
@@ -272,11 +290,6 @@ export function CustomTileLayer({ ...props }) {
                         layers.push(iconLayer);
                     }
 
-                    if (feature.properties.text) {
-                        const textLayer = createTextLayerGroup(feature, latlng);
-                        layers.push(textLayer);
-                    }
-
                     return L.layerGroup(layers);
                 },
             }).addTo(map);
@@ -284,23 +297,31 @@ export function CustomTileLayer({ ...props }) {
     }
 
     function createShieldLayerGroup(feature, latlng) {
-        const createMarker = (iconUrl) => {
-            const icon = L.icon({
-                iconUrl,
-            });
-            return L.marker(latlng, { icon });
-        };
+        const layerGroup = L.layerGroup();
 
-        const markers = [];
+        const createMarker = (iconUrl, layerGroup) => {
+            const img = new Image();
+            img.onload = () => {
+                const iconWidth = img.width;
+                const iconHeight = img.height;
+                const iconAnchor = [iconWidth / 2, iconHeight / 2];
+
+                const icon = L.icon({
+                    iconUrl,
+                    iconAnchor,
+                });
+
+                L.marker(latlng, { icon }).addTo(layerGroup);
+            };
+            img.src = iconUrl;
+        };
 
         if (feature.properties.shieldRes) {
             const backIconUrl = `/map/images/${SHIELDS_FOLDER}/h_${feature.properties.shieldRes}.svg`;
-            markers.push(createMarker(backIconUrl));
+            createMarker(backIconUrl, layerGroup);
         }
 
-        addPopup(feature, markers);
-
-        return L.layerGroup(markers);
+        return layerGroup;
     }
 
     function addVectorGrid(geoJsonData) {
