@@ -41,6 +41,7 @@ Thank you for your continued support of OsmAnd. Happy navigating!
 - [Round up numbers](#round-up-numbers) in navigation widgets
 - [Custom Quick Action Buttons](#custom-buttons)
 - [All route tags](#routes-tags) for the Route info of the Context menu
+- [3D tracks visualization](#3d-track-visualization)
 - [Battery optimization dialogue](#battery-optimization-dialogue) of Track recording
 - [Redesign graphs](#redesign-graphs) of tracks and route
 - [OAuth 2.0 for OpenStreetMap login](#oauth-20-for-osm-login) for OpenStreetMap login
@@ -118,12 +119,19 @@ Now, the new custom button will be visible on your device's screen. Tapping this
 
 ## Routes tags
 
-Extracted [Route](https://osmand.net/docs/user/map/tracks-on-map#routes-on-the-map) Tags from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Relation:route) Data for [Track Context menu](https://osmand.net/docs/user/map/track-context-menu#description-and-info): Includes distance, direction, state, color, roundtrip, tourism, description, type, start/end points, and elevation change (descent/ascent).
+Extracted [Route](https://osmand.net/docs/user/map/tracks-on-map#routes-on-the-map) Tags from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Relation:route) Data for [Track Context menu](https://osmand.net/docs/user/map/track-context-menu#description-and-info): Includes `distance`, `direction`, `state`, `color`, `roundtrip`, `tourism`, `description`, `type`, `start/end points`, and `elevation` change (`descent/ascent`).
 
 Example of relation tags for ["CAIOSM - Emilia Romagna - sentiero 137"](https://www.openstreetmap.org/relation/16115660):
 
 ![Routes tags Android](./img/routes_tags_android.png)
 
+## 3D track visualization
+
+Added 3D visialization for tracks by altitude:
+
+_[Track Context menu](https://osmand.net/docs/user/map/tracks-on-map#track-appearance) → Change Appearance → 3D visualization_
+
+![3D tracks Android](./img/3D_track_android.png) ![Routes tags Android](./img/3D_track_1_android.png)
 
 ## Battery optimization dialogue
 
@@ -171,11 +179,11 @@ Introduced the ability to [filter](https://osmand.net/docs/user/personal/tracks#
 
 ## Tags support
 
-- The import process for GPX files now includes support for [for tags](https://github.com/osmandapp/OsmAnd/issues/18342) such as _author, cmt, link, keywords, copyright, email_ , allowing for the display of this information in the Track Context menu.
+- The import process for GPX files now includes support for [for tags](https://github.com/osmandapp/OsmAnd/issues/18342) such as `author`, `cmt`, `link`, `keywords`, `copyright`, `email` , allowing for the display of this information in the Track Context menu.
 
 ![Tags of track Android](./img/tags_track_android.png)
 
-- Move sensors tags to _gpxtpx:TrackPointExtensio_.
+- Move sensors tags to `gpxtpx:TrackPointExtensio`.
 
 
 ## More

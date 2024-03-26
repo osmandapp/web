@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Android 4.7 is the latest release that introduces many new features and improvements to the OsmAnd app. This article describes all the key updates that represent meaningful changes for our users.
 
-## Join Beta
+# Join Beta
 
 OsmAnd releases several Ready-To-Use builds daily, allowing you to track new features and participate in the OsmAnd translation process. You can take part in testing the beta version of OsmAnd using Google Play.
 
@@ -28,12 +28,11 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 </div>
 
 
-## What's new
-
+# What's new
 
 - [Android 4.7 (beta)](#android-47-beta)
-  - [Join Beta](#join-beta)
-  - [What's new](#whats-new)
+- [Join Beta](#join-beta)
+- [What's new](#whats-new)
   - [Enhanced Offline Navigation](#enhanced-offline-navigation)
   - [Navigation settings for Developers](#navigation-settings-for-developers)
   - [Speedometer](#speedometer)
@@ -41,6 +40,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
   - [Round up numbers](#round-up-numbers)
   - [Custom Buttons](#custom-buttons)
   - [Routes tags](#routes-tags)
+  - [3D track visualization](#3d-track-visualization)
   - [Battery optimization dialogue](#battery-optimization-dialogue)
   - [Redesign graphs](#redesign-graphs)
   - [OAuth 2.0 for OSM login](#oauth-20-for-osm-login)
@@ -121,6 +121,14 @@ Extracted [Route](https://osmand.net/docs/user/map/tracks-on-map#routes-on-the-m
 Example of relation tags for ["CAIOSM - Emilia Romagna - sentiero 137"](https://www.openstreetmap.org/relation/16115660):
 
 ![Routes tags Android](../../blog/2024-03-07-android-4-7/img/routes_tags_android.png)
+
+## 3D track visualization
+
+Added 3D visialization for tracks by altitude:
+
+_[Track Context menu](https://osmand.net/docs/user/map/tracks-on-map#track-appearance) → Change Appearance → 3D visualization_
+
+![3D tracks Android](../../blog/2024-03-07-android-4-7/img/3D_track_android.png) ![Routes tags Android](../../blog/2024-03-07-android-4-7/img/3D_track_1_android.png)
 
 
 ## Battery optimization dialogue
