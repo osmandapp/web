@@ -194,8 +194,10 @@ export function CustomTileLayer({ ...props }) {
                 if (feature.properties.mainIcon.includes('_dot')) {
                     return [0, 0];
                 }
+                // icons
                 return [0, -5];
             }
+            // shields
             return [6, 9];
         }
 
