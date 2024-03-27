@@ -259,7 +259,19 @@ Before you start recording, you need to configure the Trip recording plugin.
 | **Online tracking** (*Android*) | It is real-time monitoring of your current location. If the option is enabled and the recording is in progress, the Distance/Start-Stop (REC) widget turns green instead of red, and each point is transmitted to a specified URL. The **Web address** field is for entering the URL using the parameter syntax: lat={0}, lon={1}, timestamp={2}, hdop={3}, altitude={4}, speed={5}, bearing={6}, eta={7} (unix time - to arrival), etfa={8} (unix time - to first intermediate point or finish point), eda={9} (distance in meters - to arrival or to a marker), edfa={10} (distance in meters - to first intermediate point or finish point). The **Tracking Interval** parameter is used to determine the frequency of sending location points. The options can be selected from 0 seconds to 5 minutes. The **Time Buffer** parameter sets the period of time that location points are saved if there is no Internet connection. |
 | **Tracks** | This is a quick re-direction to the folder: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*. |
 | **Reset plugin settings to default** | You can reset all profile settings to the default ones that you had when you installed the application. |
-| **Copy from another profile** (*Android*) | You can copy the Trip recording plugin settings from another profile. |  
+| **Copy from another profile** (*Android*) | You can copy the Trip recording plugin settings from another profile. |
+
+### Baterry optimization
+
+<InfoAndroidOnly /> 
+
+![Track on the map iOS](@site/static/img/plugins/trip-recording/battery_2_andr.png)  ![Track on the map iOS](@site/static/img/plugins/trip-recording/battery_1_andr.png)  
+
+With this feature, you can configure battery optimization for OsmAnd so that you don't lose access to your location when the app runs in the background while navigating or recording a track.  
+
+- **Battery optimisation settings**. Opens Android settings, where you can change them.
+- **Don't ask anymore**. Closes the dialog box and the application does not show it again.
+- **Close**. Closes the dialog box, but it will display next time.
 
 
 ##  Widgets  

@@ -95,7 +95,7 @@ You can create a new track by starting a record in the Tracks tab or using the O
 
 ![Track on the map iOS](@site/static/img/personal/tracks/battery_andr.png)
 
-Select an optimisation setting. To prevent the app from asking you the next time you make a selection, tap the Don't ask anymore button.  
+Select an optimisation setting. To prevent the app from asking you the next time you make a selection, tap the Don't ask anymore button. You can additionally read the section in the article [Trip recording plugin](../plugins/trip-recording.md#baterry-optimization).  
 **NOTE**. Optimizing battery usage in Android can cause gaps and inaccuracies in recorded tracks. If you encounter such problems, try changing the battery usage mode to *Unrestricted*.
 
 
@@ -108,10 +108,8 @@ Select an optimisation setting. To prevent the app from asking you the next time
 
 ![Coordinate input Options menu Android](@site/static/img/plan-route/coordinates_input/coordinates_input_options.png)  
 
-- In the pop-up menu, you can enter your own track name or save it by default.  
-- Tap <Translate android="true" ids="shared_string_save"/> to save the added points as a new track.  
-- You will find your track in [My places menu](../personal/myplaces.md) *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>*. Read how to add points by coordinates:  
-- [Coordinate input](../plan-route/coordinate-input.md) article. 
+In the **Options** menu using the **Save as track** item, you can save the created points as a GPX track and also change its name.
+For more details, read the article [Coordinates input](../plan-route/coordinate-input.md#options).
 
 
 ### Plane route
@@ -136,10 +134,8 @@ Select an optimisation setting. To prevent the app from asking you the next time
 
 </Tabs>  
 
-The **Plan a route** tool allows you to create *new routes as GPX tracks*, modify *existing tracks*, and *import* new ones.
-
-*Plan a Route* tool enables users to modify both [pre-existing GPX](../personal/tracks.md#my-places-menu) tracks and [imported tracks](../personal/tracks.md#import-track).  
-Read more in the article [**Plan a route** tool](../plan-route/create-route.md#modify-existing-gpx-track). 
+The **Plan a route** tool allows you to create *new routes as GPX tracks*, modify *existing tracks*, and *import* new ones.  
+Read more in the article [**Plan a route** tool](../plan-route/create-route.md#types-of-save). 
 
 
 ## Tracks menu
@@ -169,7 +165,23 @@ The Tracks tab provides several types of menus for related actions and settings.
 
 ### Search
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 ![My places tracks seaching function Android](@site/static/img/personal/tracks/my_places_tracks_search_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+
+![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.png) 
+
+</TabItem>
+ 
+</Tabs>  
 
 Tap the &#x1F50D; button at the top of the device screen to open the track list sorting menu. 
 
@@ -181,20 +193,38 @@ Available:
 
 ### Three-dot menu
 
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_appbar_menu_1_andr.png)   
+<Tabs groupId="operating-systems">
 
-- [**Select**](#selection-mode). This menu item allows you to select the folders and routes you need to manage them further.  
+<TabItem value="android" label="Android">
 
-- **Sort subfolder**. The selected sort order on the Tracks tab applies to all levels of subfolders and tracks. 
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_appbar_menu_1_andr.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+
+![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_appbar_menu_ios.png) 
+
+</TabItem>
+ 
+</Tabs>  
+
+- [**Select**](#selection-mode) (*Android only*). This menu item allows you to select the folders and routes you need to manage them further.  
+
+- **Sort subfolder** (*Android only*). The selected sort order on the Tracks tab applies to all levels of subfolders and tracks. 
 
 - **Add folder**. If you need to organize your routes and tracks into logical categories, the app provides the ability to quickly create a new folder and name it. This helps to structure your navigation information.  
 
-- [**Add smart folder**](#smart-folder). This is a tool for automating data organization. Folders automatically sort routes and tracks according to specified criteria. 
+- [**Add smart folder**](#smart-folder) (*Android only*). This is a tool for automating data organization. Folders automatically sort routes and tracks according to specified criteria. 
 
 - **Import**. If you have tracks you want to add to OsmAnd, you can use the import function to upload files from your device.
 
 
 ### Selection mode
+
+<InfoAndroidOnly/>
 
 ![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_selection_andr.png)
 
@@ -239,6 +269,8 @@ Sort menu:
 
 
 ### Filter
+
+<InfoAndroidOnly/>
 
 ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_2_andr.png) 
 
@@ -607,7 +639,7 @@ Actions:
 - **Show all tracks on the map** (*Android only*). Shows all tracks in the folder on the map. It is not recommended, if there are a lot of tracks, the device may freeze.
 - **Edit name** (*Android*) / **Rename** (*iOS*). Changing the folder name.
 - [*Change default appearance*](../map/tracks-on-map.md#track-appearance) (*Android*) / **Appearance** (*iOS*). You can change the appearance of all tracks in a folder.
-- [*Export*](../personal/import-export.md). You go to the *Menu → Settings → Actions* tab, where you can export all the tracks in the folder.
+- [*Export*](../personal/import-export.md). You go to the *Menu → Settings → Actions* tab, where you can export all the tracks in the folder as an [OSF file](../personal/import-export.md#export).
 - **Move**. You can move the selected folder to another existing folder or create a new one.
 - [*Delete folder*](#delete-folder). Allow you to delete a folder. A warning message will appear on the display. The deletion will be irreversible. 
 
