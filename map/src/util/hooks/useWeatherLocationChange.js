@@ -23,7 +23,7 @@ export const useWeatherLocationChange = ({
 }) => {
     useEffect(() => {
         if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
-            const useCache = getWeatherDataFromCache(currentLoc);
+            const useCache = getWeatherDataFromCache({ lat: currentLoc.lat, lon: currentLoc.lng });
             if (!useCache) {
                 fetchAddress({ point: currentLoc }).then((obj) => {
                     if (obj) {
@@ -37,8 +37,12 @@ export const useWeatherLocationChange = ({
             if (center) {
                 fetchAddress({ point: center, useMapBbox: true }).then((obj) => {
                     if (obj) {
-                        setWeatherLoc(obj);
-                        getForecastData(obj.lat, obj.lon);
+                        const useCache = getWeatherDataFromCache({ lat: obj.lat, lon: obj.lon });
+                        if (!useCache) {
+                            ctx.setForecastLoading(true);
+                            setWeatherLoc(obj);
+                            getForecastData(obj.lat, obj.lon);
+                        }
                     }
                 });
             }
@@ -59,8 +63,10 @@ export const useWeatherLocationChange = ({
         let se = null;
         if (useMapBbox) {
             const bbox = ctx.mapBbox;
-            nw = `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`;
-            se = `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`;
+            if (bbox) {
+                nw = `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`;
+                se = `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`;
+            }
         }
 
         const params = {
@@ -87,7 +93,14 @@ export const useWeatherLocationChange = ({
                 lon: response.data.location.longitude.toFixed(6),
                 address: response.data.cityLocalNames,
             };
-            localStorage.setItem(LOCAL_STORAGE_WEATHER_LOC, JSON.stringify(obj));
+            // add address to local storage
+            if (localStorage.getItem(LOCAL_STORAGE_WEATHER_LOC)) {
+                let savedWeatherLoc = JSON.parse(localStorage.getItem(LOCAL_STORAGE_WEATHER_LOC));
+                savedWeatherLoc.address = obj.address;
+                localStorage.setItem(LOCAL_STORAGE_WEATHER_LOC, JSON.stringify(savedWeatherLoc));
+            } else {
+                localStorage.setItem(LOCAL_STORAGE_WEATHER_LOC, JSON.stringify(obj));
+            }
             return obj;
         }
         return null;
@@ -96,8 +109,8 @@ export const useWeatherLocationChange = ({
     function getWeatherDataFromCache(currentLoc) {
         function isSameLocation(locFromCache, currentLoc) {
             return (
-                parseFloat(locFromCache.lat).toFixed(3) === currentLoc.lat?.toFixed(3) &&
-                parseFloat(locFromCache.lon).toFixed(3) === currentLoc.lng?.toFixed(3)
+                parseFloat(locFromCache.lat).toFixed(3) === parseFloat(currentLoc.lat)?.toFixed(3) &&
+                parseFloat(locFromCache.lon).toFixed(3) === parseFloat(currentLoc.lon)?.toFixed(3)
             );
         }
 
@@ -120,7 +133,9 @@ export const useWeatherLocationChange = ({
         }
 
         function dayFormatter(date) {
-            return date.toISOString().split('T')[0];
+            const isoString = date.toISOString();
+            const parts = isoString.split('T')[0].split('-');
+            return parts[1] + parts[2];
         }
 
         let savedWeatherLoc = localStorage.getItem(LOCAL_STORAGE_WEATHER_LOC);
@@ -143,6 +158,8 @@ export const useWeatherLocationChange = ({
                     }
                 }
                 return true;
+            } else {
+                localStorage.setItem(LOCAL_STORAGE_WEATHER_LOC, JSON.stringify(currentLoc));
             }
         }
         return false;

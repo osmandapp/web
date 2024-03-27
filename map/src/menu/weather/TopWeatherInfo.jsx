@@ -30,14 +30,14 @@ export default function TopWeatherInfo({
     }
 
     function getLocation() {
-        if (weatherLoc) {
+        if (weatherLoc?.address) {
             if (Object.keys(weatherLoc.address).length > 0) {
                 const name = weatherLoc.address[i18n.language];
                 if (name) {
                     return name;
                 }
             }
-            return weatherLoc.lat + ', ' + weatherLoc.lon;
+            return parseFloat(weatherLoc.lat).toFixed(4) + ', ' + parseFloat(weatherLoc.lon).toFixed(4);
         }
         return '';
     }
