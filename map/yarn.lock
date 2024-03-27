@@ -5883,7 +5883,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^2.20.0":
+"commander@npm:2, commander@npm:^2.20.0":
   version: 2.20.3
   resolution: "commander@npm:2.20.3"
   checksum: ab8c07884e42c3a8dbc5dd9592c606176c7eb5c1ca5ff274bcf907039b2c41de3626f684ea75ccf4d361ba004bbaff1f577d5384c155f3871e456bdf27becf9e
@@ -9226,6 +9226,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ieee754@npm:^1.1.12":
+  version: 1.2.1
+  resolution: "ieee754@npm:1.2.1"
+  checksum: 5144c0c9815e54ada181d80a0b810221a253562422e7c6c3a60b1901154184f49326ec239d618c416c1c5945a2e197107aee8d986a3dd836b53dffefd99b5e7e
+  languageName: node
+  linkType: hard
+
 "ignore@npm:^5.2.0":
   version: 5.3.1
   resolution: "ignore@npm:5.3.1"
@@ -11436,6 +11443,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"leaflet.vectorgrid@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "leaflet.vectorgrid@npm:1.3.0"
+  dependencies:
+    pbf: ^3.0.2
+    topojson-client: ^2.1.0
+    vector-tile: ^1.3.0
+    whatwg-fetch: ^2.0.3
+  peerDependencies:
+    leaflet: ^1.0.2
+  checksum: 79a848cf92c47c3cb867d9be24203b6d9d79165301e8ec7b90961becdae0921b51426595df3df9daad1a67a3240f726c2dc80d80797aeb290e8271abdc018eaf
+  languageName: node
+  linkType: hard
+
 "leaflet@npm:^1.6.0, leaflet@npm:^1.9.3":
   version: 1.9.4
   resolution: "leaflet@npm:1.9.4"
@@ -12531,6 +12552,7 @@ __metadata:
     leaflet-hash: ^0.2.1
     leaflet-spin: ^1.1.2
     leaflet.awesome-markers: ^2.0.5
+    leaflet.vectorgrid: ^1.3.0
     lodash: ^4.17.21
     pako: ^2.0.4
     patch-package: ^6.4.7
@@ -12823,6 +12845,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pbf@npm:^3.0.2":
+  version: 3.2.1
+  resolution: "pbf@npm:3.2.1"
+  dependencies:
+    ieee754: ^1.1.12
+    resolve-protobuf-schema: ^2.1.0
+  bin:
+    pbf: bin/pbf
+  checksum: 8033f5e21fffdc485e85d50bbff07ab3313c6841c3630a4ba9bc9e82d2e9005ab92000a1a90cb911223caa44316293e367bab607dd8110d5c771e6c8aaad63e1
+  languageName: node
+  linkType: hard
+
 "pend@npm:~1.2.0":
   version: 1.2.0
   resolution: "pend@npm:1.2.0"
@@ -12894,6 +12928,13 @@ __metadata:
   dependencies:
     find-up: ^3.0.0
   checksum: 5bac346b7c7c903613c057ae3ab722f320716199d753f4a7d053d38f2b5955460f3e6ab73b4762c62fd3e947f58e04f1343e92089e7bb6091c90877406fcd8c8
+  languageName: node
+  linkType: hard
+
+"point-geometry@npm:0.0.0":
+  version: 0.0.0
+  resolution: "point-geometry@npm:0.0.0"
+  checksum: 7862f5abd7c7faf7e23fb1aad3c513dd83423800b71cdb6b445a16f2e43162507d4723d6e2a1ede70efe8eb23dfb54706122f077038b4c3bf4ca404e26a60993
   languageName: node
   linkType: hard
 
@@ -13919,6 +13960,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"protocol-buffers-schema@npm:^3.3.1":
+  version: 3.6.0
+  resolution: "protocol-buffers-schema@npm:3.6.0"
+  checksum: 8713b5770f6745ddbcdf3bbd03ee020624d506233bb567927a6615a6f69a5bd620a5f49597f34f4115792b853a4c9cb9e2d5d6b930a1c04bf198023e45c1c349
+  languageName: node
+  linkType: hard
+
 "proxy-addr@npm:~2.0.7":
   version: 2.0.7
   resolution: "proxy-addr@npm:2.0.7"
@@ -14787,6 +14835,15 @@ __metadata:
   version: 5.0.0
   resolution: "resolve-from@npm:5.0.0"
   checksum: 4ceeb9113e1b1372d0cd969f3468fa042daa1dd9527b1b6bb88acb6ab55d8b9cd65dbf18819f9f9ddf0db804990901dcdaade80a215e7b2c23daae38e64f5bdf
+  languageName: node
+  linkType: hard
+
+"resolve-protobuf-schema@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "resolve-protobuf-schema@npm:2.1.0"
+  dependencies:
+    protocol-buffers-schema: ^3.3.1
+  checksum: 88fffab2a3757888884a36f9aa4e24be5186b01820a8c26297dc1ce406b9daf776594926bdf524c2c8e8e5b0aba8ac48362b6584cdecc9a7083215ebca01c599
   languageName: node
   linkType: hard
 
@@ -16278,6 +16335,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"topojson-client@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "topojson-client@npm:2.1.0"
+  dependencies:
+    commander: 2
+  bin:
+    topo2geo: bin/topo2geo
+    topomerge: bin/topomerge
+    topoquantize: bin/topoquantize
+  checksum: ed21f44f18e2d99f7f849762682a2eb794ae5580f90fbfe3a8a5c7db612a0d74bf5ff1c33923ee0c259ef8702aea545b591e363c703e74f81ae0a3a1497b1eba
+  languageName: node
+  linkType: hard
+
 "tough-cookie@npm:^4.0.0, tough-cookie@npm:^4.1.2":
   version: 4.1.3
   resolution: "tough-cookie@npm:4.1.3"
@@ -16811,6 +16881,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vector-tile@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "vector-tile@npm:1.3.0"
+  dependencies:
+    point-geometry: 0.0.0
+  checksum: b3242b64da3b843c083a1739b39ef606329e142edbcb55ec4089eb79607ffc6155264abb1775731f4965f99ebd270398b5b696e44a48f28b45ddfd9e267aada4
+  languageName: node
+  linkType: hard
+
 "victory-vendor@npm:^36.6.8":
   version: 36.9.1
   resolution: "victory-vendor@npm:36.9.1"
@@ -17108,6 +17187,13 @@ __metadata:
   dependencies:
     iconv-lite: 0.6.3
   checksum: 7087810c410aa9b689cbd6af8773341a53cdc1f3aae2a882c163bd5522ec8ca4cdfc269aef417a5792f411807d5d77d50df4c24e3abb00bb60192858a40cc675
+  languageName: node
+  linkType: hard
+
+"whatwg-fetch@npm:^2.0.3":
+  version: 2.0.4
+  resolution: "whatwg-fetch@npm:2.0.4"
+  checksum: de7c65a68d7d62e2f144a6b30293370b3ad82b65ebcd68f2ac8e8bbe7ede90febd98ba9486b78c1cbc950e0e8838fa5c2727f939899ab3fc7b71a04be52d33a5
   languageName: node
   linkType: hard
 

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useContext, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { MapContainer, TileLayer, Marker, ScaleControl, AttributionControl } from 'react-leaflet';
+import { MapContainer, Marker, ScaleControl, AttributionControl } from 'react-leaflet';
 import AppContext from '../../context/AppContext';
 import RouteLayer from '../layers/RouteLayer';
 import WeatherLayer from '../layers/WeatherLayer';
@@ -18,6 +18,7 @@ import GraphLayer from '../layers/GraphLayer';
 import { initialZoom, initialPosition, detectGeoByIp, LocationControl } from './LocationControl';
 import CustomZoomControl from './CustomZoomControl';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
+import { CustomTileLayer } from '../layers/CustomTileLayer';
 
 const useStyles = makeStyles(() => ({
     root: (props) => ({
@@ -165,13 +166,11 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             <WeatherLayer />
             <GraphLayer />
             <PoiLayer />
-            <TileLayer
-                ref={tileLayer}
+            <CustomTileLayer
                 attribution='OsmAnd Web Beta &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
                 minZoom={1}
                 maxZoom={20}
-                maxNativeZoom={18}
-                url={ctx.tileURL.url}
+                maxNativeZoom={20}
             />
             {hoverPoint && (
                 <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerGraph} />

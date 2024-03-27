@@ -54,7 +54,7 @@ export default function SettingsMenu() {
                 }
             } catch (error) {
                 if (process.env.NODE_ENV === 'development') {
-                    console.log(`Could not load translation.json for language: ${lng}`);
+                    console.error(`Could not load translation.json for language: ${lng}`);
                 }
             }
 
@@ -65,7 +65,7 @@ export default function SettingsMenu() {
                 }
             } catch (error) {
                 if (process.env.NODE_ENV === 'development') {
-                    console.log(`Could not load web-translation.json for language: ${lng}`);
+                    console.error(`Could not load web-translation.json for language: ${lng}`);
                 }
             }
 
