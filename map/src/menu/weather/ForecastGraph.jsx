@@ -41,7 +41,7 @@ export default function ForecastGraph({ data, weatherType, weatherUnits }) {
         labels: Object.keys(data),
         datasets: [
             {
-                label: 'Day',
+                label: 'day',
                 data: Object.values(data).map((item) => item.day[weatherType]?.avg),
                 fill: false,
                 borderColor: '#212121',
@@ -49,7 +49,7 @@ export default function ForecastGraph({ data, weatherType, weatherUnits }) {
                 borderWidth: 2,
             },
             {
-                label: 'Night',
+                label: 'night',
                 data: Object.values(data).map((item) => item.night[weatherType]?.avg),
                 fill: false,
                 borderColor: '#737D8C',

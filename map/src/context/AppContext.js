@@ -228,6 +228,7 @@ export const AppContextProvider = (props) => {
     const [weatherDate, setWeatherDate] = useState(new Date());
     const [weatherType, setWeatherType] = useState('gfs');
     const [forecastLoading, setForecastLoading] = useState(false);
+    const [mapBbox, setMapBbox] = useState(null);
 
     const [gpxLoading, setGpxLoading] = useState(false);
     const [localTracksLoading, setLocalTracksLoading] = useState(false);
@@ -509,6 +510,8 @@ export const AppContextProvider = (props) => {
                 setVisibleTracks,
                 forecastLoading,
                 setForecastLoading,
+                mapBbox,
+                setMapBbox,
             }}
         >
             {props.children}
