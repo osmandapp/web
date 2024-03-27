@@ -241,7 +241,7 @@ Widgets display information about the next turn with maneuvers. There are two ty
 | | |
 |------------|------------|
 | Enable | **Android:** *Menu → Configure screen → Left / Right panel → Next turn, Next turn (small), Second next turn*  |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → Next turn, Next turn (small), Second next turn* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left / Right panel → Next turn, Next turn (small), Second next turn* |
 | By tapping | If [voice prompts](../navigation/guidance/voice-navigation.md) are enabled, the next maneuver and the distance to it are pronounced. |
 
 
