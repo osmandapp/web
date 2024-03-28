@@ -1,6 +1,7 @@
 import {
     AppBar,
     ClickAwayListener,
+    Divider,
     IconButton,
     ListItemIcon,
     ListItemText,
@@ -18,6 +19,8 @@ import enList from '../../resources/translations/en/translation.json';
 
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as DisplayLanguageIcon } from '../../assets/icons/ic_action_map_language.svg';
+import { ReactComponent as ChangesIcon } from '../../assets/icons/ic_action_history.svg';
+import { ReactComponent as TrashIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import { useTranslation } from 'react-i18next';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
@@ -162,6 +165,33 @@ export default function SettingsMenu() {
                             {currentLang}
                         </Typography>
                     </div>
+                </ListItemText>
+            </MenuItem>
+            <MenuItem className={styles.item}>
+                <Typography className={styles.title} noWrap>
+                    {t('osmand_cloud')}
+                </Typography>
+            </MenuItem>
+
+            <MenuItem className={styles.item}>
+                <ListItemIcon className={styles.icon}>
+                    <ChangesIcon />
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography variant="inherit" noWrap>
+                        {t('cloud_recent_changes')}
+                    </Typography>
+                </ListItemText>
+            </MenuItem>
+            <Divider className={styles.dividerItem} />
+            <MenuItem divider className={styles.item}>
+                <ListItemIcon className={styles.icon}>
+                    <TrashIcon />
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography variant="inherit" noWrap>
+                        {t('shared_string_trash')}
+                    </Typography>
                 </ListItemText>
             </MenuItem>
             <Popover

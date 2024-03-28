@@ -5174,5 +5174,8 @@
   "weather_wind_ms": "m/s",
   "weather_wind_knots": "Knots",
   "night": "Night",
-  "day": "Day"
+  "day": "Day",
+  "osmand_cloud": "OsmAnd Cloud",
+  "cloud_recent_changes": "Changes",
+  "shared_string_trash": "Trash"
 }
