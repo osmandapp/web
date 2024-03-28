@@ -34,27 +34,29 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
  
 </Tabs>
 
-1. **Main Features**  
+Feures **Tracks** functionality lets you create and save routes so you can easily return to them later or share them with others. A trip planning feature lets you customize your routes based on your preferences and interests. You also get access to preloaded routes to popular destinations and attractions.
+
+1. **Main Features**. 
 - All tracks in OsmAnd are stored in the folder:    
-*[<Translate android="true" ids="shared_string_menu"/>](../start-with/main-menu.md) → [<Translate android="true" ids="shared_string_my_places"/>](../personal/myplaces.md) → [<Translate android="true" ids="shared_string_gpx_tracks"/>](../personal/tracks.md)*.   
-- The Tracks tab in the OsmAnd app provides a convenient way to manage and interact with your saved tracks. This feature allows users to record and save the tracks. they have traveled during their travels or outdoor activities.  
-- Track on the map is user Trip recording or Plan a route with marked points on it or not. OsmAnd track file has [GPX format](../plugins/trip-recording.md#recorded-gpx-file).
+*<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*.   
+- The [Tracks](../personal/tracks.md) tab in the OsmAnd app provides a convenient way to manage and interact with your saved tracks. This feature allows you to record and save tracks completed during travel or outdoor activities. 
+- A track on a map is Trip recording or Plan a route with or without marked points on it. OsmAnd track file is in [GPX format](../plugins/trip-recording.md#recorded-gpx-file).
 
-2. **You can add or create tracks in OsmAnd in the following ways**  
-- [Import](./tracks.md#import-track) from the external source.
+2. **You can add or create tracks in OsmAnd in the following ways**.  
+- [Import](#import) from an external source.
 - Create in the application using [Plan a route](../plan-route/create-route.md) tool.
-- Record in the application using [Trip recording](../plugins/trip-recording.md) plugin. 
+- Recording in the application using [Trip recording](../plugins/trip-recording.md) plugin. 
 
-3. **Tracks management special features in OsmAnd**
+3. **Tracks management special features in OsmAnd**.
 - Enabling and disabling tracks on the map.
-- Customizing the appearance, editing and analyzing tracks.
+- Customizing the appearance, edit and analyze tracks.
 - Use for navigation.
 
 4. **OsmAnd has no limit on the number of tracks to store and display.**
 
-5. **There are three options to display Tracks on the map**
-- [Configure map](../map/tracks-on-map.md#display-via-configure-map-menu) menu.
-- [My places](../map/tracks-on-map.md#display-via-my-places-menu) menu.
+5. **There are three options to display Tracks on the map**.
+- [Configure map](../map/configure-map-menu.md) menu.
+- [My places](../personal/myplaces.md) menu.
 - [Track Context menu](../map/track-context-menu.md).  
 
 **Formats**: OsmAnd uses [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format) format for tracks and points.  
@@ -63,40 +65,38 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Create / Edit Track
 
-Tracks is a powerful tool for tracking journeys, recording routes and points of interest (POIs) in real-time, and for later analyzing and sharing data.  
+Tracks is a powerful tool for tracking journeys, recording routes and Points of Interest (POIs) in real-time, and for later analyzing and sharing data.  
 
-### Currently recording track
+### Track recording
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Track on the map](@site/static/img/personal/tracks/tracks_recording_1_andr.png)  ![Track on the map](@site/static/img/personal/tracks/tracks_recording_2_andr.png)
+![Track on the map](@site/static/img/personal/tracks/tracks_recording_3_andr.png)  ![Track on the map](@site/static/img/personal/tracks/tracks_recording_4_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track on the map iOS](@site/static/img/personal/tracks/tracks_recording_1_ios.png)
+![Track on the map iOS](@site/static/img/personal/tracks/tracks_recording_1_1_ios.png)  ![Track on the map iOS](@site/static/img/personal/tracks/tracks_recording_2_ios.png)
 
 </TabItem>
  
 </Tabs>
 
-Use the OsmAnd [Trip recording Plugin](../plugins/trip-recording.md) and special widgets to record your tracks. Trip recording (Android) or Track recording (iOS) plugin is a special tool designed to record your routes, movements, and workouts. This feature allows you to reuse, modify, update, and share your tracks with friends.    
+You can create a new track by starting a record in the Tracks tab or using the OsmAnd [Trip recording Plugin](../plugins/trip-recording.md) and [Widgets](../widgets/info-widgets.md#trip-recording-widgets). Trip plugin is a special tool designed to record your journeys, walks, and other activities.   
 
-**Three-dot menu**
+- **New track**. In this field you can tap the *Start Recording* button to record a new track. You may need to confirm your [battery settings](#baterry-optimization) (for Android) before you start.
+- **Currently recording track** (*Android*) / **Recorded track** (*iOS*). 
+- [**Menu**](#folder-menu). Tapping the three dot menu (for Android) or long press (for iOS) opens the [track menu](#single-track-menu). During track recording, in this field you can see how many kilometers have already been recorded and how long the recording is in progress. The **Stop** button allows you to pause the recording, and to finish it, press the **Save** button.
 
-- Show on map.  
+#### Baterry optimization (Android only)
 
-![Track on the map iOS](@site/static/img/personal/tracks/tracks_show_on_map_andr.png)
+![Track on the map iOS](@site/static/img/personal/tracks/battery_andr.png)
 
-- Analyze on map.
-- Share.
-- Export.
-
-
-## Import
+Select an optimisation setting. To prevent the app from asking you the next time you make a selection, tap the Don't ask anymore button.  
+**NOTE**. Optimizing battery usage in Android can cause gaps and inaccuracies in recorded tracks. If you encounter such problems, try changing the battery usage mode to *Unrestricted*.
 
 
 ### Coordinate input
@@ -114,7 +114,7 @@ Use the OsmAnd [Trip recording Plugin](../plugins/trip-recording.md) and special
 - [Coordinate input](../plan-route/coordinate-input.md) article. 
 
 
-### Modify GPX
+### Plane route
 
 <Tabs groupId="operating-systems">
 
@@ -136,31 +136,13 @@ Use the OsmAnd [Trip recording Plugin](../plugins/trip-recording.md) and special
 
 </Tabs>  
 
+The **Plan a route** tool allows you to create *new routes as GPX tracks*, modify *existing tracks*, and *import* new ones.
+
 *Plan a Route* tool enables users to modify both [pre-existing GPX](../personal/tracks.md#my-places-menu) tracks and [imported tracks](../personal/tracks.md#import-track).  
 Read more in the article [**Plan a route** tool](../plan-route/create-route.md#modify-existing-gpx-track). 
 
 
-## My Places menu
-
-The **My Places** menu allows you to organize and manage your personal points of interest, and provides convenient tools for saving, editing and using this data.  
-
-Main features of the My Places menu:
-
-- **Create Points of Interest.** In this menu, you can create new points of interest by marking places you are interested in. It can be a meeting place, vacation, travel, restaurant, store and more. You can add title, description, photos and even choose an icon for each point.
-- **Edit and Delete.** The My Places menu provides the ability to edit information about saved points of interest. Users can update names, descriptions, photos and coordinates. There is also a delete function if the point is no longer relevant.
-- **Categories and Hashtags.** You can organize your points of interest into different categories such as Restaurants, Parks, Attractions, and other. Hashtags can also be used for easier searching and filtering of places.
-- **Export & Import.** The My Places menu allows you to export and import point of interest data. This is useful if you want to share your places with friends or save them on another device.
-- **Navigation and Route Management.** Saved points of interest can be used as intermediate waypoints. You can include them in trip planning and navigation, making the process more convenient and customizable.  
-
-My Places menu benefits:
-
-- **Personalization.** The menu allows you to create your own places and organize them as you see prefer.
-- **Integration with navigation.** Points of interest can be used in route planning to help you find places of interest quickly.
-- **Ease of use.** With categories, hashtags and editing capabilities, you can easily manage your POI data.
-- **Synchronization.** The optional data export and import feature allows you to save and use your points of interest information across devices.
-
-
-### Actions
+## Tracks menu
 
 <Tabs groupId="operating-systems">
 
@@ -168,11 +150,7 @@ My Places menu benefits:
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>*  
 
-![My places tracks Android](@site/static/img/personal/tracks/my_places_tracks_actions_3_andr.png) 
-
-- **Search** button. Takes you to a screen with a list of tracks, search by title, and filters.
-- **...* menu button. Opens the action [menu](#appbar-menu).
-- **Sort by**. [Sort tracks](#sort-by) by various parameters.
+![My places tracks Android](@site/static/img/personal/tracks/my_places_tracks_actions_3_andr.png)  
 
 </TabItem>
 
@@ -180,23 +158,13 @@ My Places menu benefits:
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_ios.png) 
-
-Actions  
-
-- **<Translate ios="true" ids="import_tracks"/>**  - open tab *<Translate ios="true" ids="import_from_docs"/>* and next description <Translate ios="true" ids="gpx_import_desc"/>, [My files](../plan-route/create-route.md).
-- **<Translate ios="true" ids="create_new_trip"/>** - opens [*Plan route tool*](../personal/tracks.md#edit-mode-ios) for creating a new track.
-
-Buttons in "&#8230;" menu. **When you go to this menu, the ability to import or create tracks is not available.**  
-
-- **Export** button. Allows you to export selected GPX files using a method available on your device, messengers, email, or save to a folder on your device.
-- **Map** button. The selected tracks are displayed on the map.
-- **OSM editing** button. Allows you to upload the selected [track to the OSM](../plugins/osm-editing.md).
-- &#x1F5D1; button. Deletes the selected tracks.
+![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_1_ios.png) 
 
 </TabItem>
  
 </Tabs>
+
+The Tracks tab provides several types of menus for related actions and settings.
 
 
 ### Search
@@ -211,13 +179,15 @@ Available:
 - [**Filter**](#filter) if you need the specific characteristics of the track.
 
 
-### AppBar menu
+### Three-dot menu
 
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_appbar_menu_andr.png)   
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_appbar_menu_1_andr.png)   
 
 - [**Select**](#selection-mode). This menu item allows you to select the folders and routes you need to manage them further.  
 
-- **Add new folder**. If you need to organize your routes and tracks into logical categories, the app provides the ability to quickly create a new folder and name it. This helps to structure your navigation information.  
+- **Sort subfolder**. The selected sort order on the Tracks tab applies to all levels of subfolders and tracks. 
+
+- **Add folder**. If you need to organize your routes and tracks into logical categories, the app provides the ability to quickly create a new folder and name it. This helps to structure your navigation information.  
 
 - [**Add smart folder**](#smart-folder). This is a tool for automating data organization. Folders automatically sort routes and tracks according to specified criteria. 
 
@@ -281,129 +251,131 @@ Osmand provides convenient track management tools, one of them is filtering in t
 
 ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png)  
 
-#### Filter by name
+**Available filters**:
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_name_andr.png)  
+- **Filter by name**
 
-- This filter allows you to search for tracks by their title.
-- Enter a title or part of a title to filter tracks matching the specified text.
+    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_name_andr.png)  
 
-#### Folder
+    - This filter allows you to search for tracks by their title.
+    - Enter a title or part of a title to filter tracks matching the specified text.
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_folder_andr.png)  
+- **Folder**
 
-- The *Folder* filter allows you to search for tracks in one or more existing folders.
-- Select the needed folders to display the tracks in the search list.
+    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_folder_andr.png)  
 
-#### Duration
+    - The *Folder* filter allows you to search for tracks in one or more existing folders.
+    - Select the needed folders to display the tracks in the search list.
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_duration_andr.png)  
+- **Duration**
 
-- This filter allows you to customize your search by the duration of the recorded tracks.
-- You can select a duration range in hours and minutes to find tracks matching your time limit.
+    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_duration_andr.png)  
 
-#### Time in motion
+    - This filter allows you to customize your search by the duration of the recorded tracks.
+    - You can select a duration range in hours and minutes to find tracks matching your time limit.
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_time_in_motion_andr.png)  
+- **Time in motion**
 
-- This filter helps you find tracks during which you were in motion.
-- Select a range of time in motion to display tracks that match your parameters.
+    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_time_in_motion_andr.png)  
 
-#### Length
+    - This filter helps you find tracks during which you were in motion.
+    - Select a range of time in motion to display tracks that match your parameters.
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_length_andr.png)  
+- **Length**
 
-- This filter allows you to customize your search by track length in kilometers or miles.
-- Specify the required length range to find tracks of a specific length.
+    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_length_andr.png)  
 
-#### Average speed
+    - This filter allows you to customize your search by track length in kilometers or miles.
+    - Specify the required length range to find tracks of a specific length.
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_average_speed_andr.png)   
+- **Average speed**
 
-- This filter helps you sort tracks by average speed.
-- Select the [average speed](../widgets/info-widgets.md#average-speed) range to search for tracks.
+    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_average_speed_andr.png)   
 
-#### Max speed
+    - This filter helps you sort tracks by average speed.
+    - Select the [average speed](../widgets/info-widgets.md#average-speed) range to search for tracks.
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_max_speed_andr.png)     
+- **Max speed**
 
-- This filter allows you to search for tracks with a specific maximum speed.
-- Select from the suggested range of maximum speed values to find tracks that match this parameter.
+    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_max_speed_andr.png)     
 
-#### Uphill
+    - This filter allows you to search for tracks with a specific maximum speed.
+    - Select from the suggested range of maximum speed values to find tracks that match this parameter.
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_uphill_andr.png)  
+- **Uphill**
 
-- This filter searches for tracks that go up a slope or have a positive elevation.
-- Tracks that include sections with the selected uphill are displayed.
+    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_uphill_andr.png)  
 
-#### Downhill
+    - This filter searches for tracks that go up a slope or have a positive elevation.
+    - Tracks that include sections with the selected uphill are displayed.
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_downhill_andr.png)  
+- **Downhill**
 
-- The *Downhill* filter searches for tracks that are descending or have a negative elevation.
-- Finds tracks that include downhill sections for the selected values.
+    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_downhill_andr.png)  
 
-#### Average altitude
+    - The *Downhill* filter searches for tracks that are descending or have a negative elevation.
+    - Finds tracks that include downhill sections for the selected values.
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_average_altitude_andr.png)     
+- **Average altitude**
 
-- This filter helps you find tracks based on average altitude.
-- Specify a range of average altitude to find tracks with these parameters.
+    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_average_altitude_andr.png)     
 
-#### Max altitude
+    - This filter helps you find tracks based on average altitude.
+    - Specify a range of average altitude to find tracks with these parameters.
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_max_alt_andr.png)  
+- **Max altitude**
 
-- This filter searches for tracks according to their maximum altitude above sea level.
-- Specify a range of maximum altitude to find tracks matching the selected parameters.
+    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_max_alt_andr.png)  
 
-#### Date of creation
+    - This filter searches for tracks according to their maximum altitude above sea level.
+    - Specify a range of maximum altitude to find tracks matching the selected parameters.
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_date_of_reation_andr.png)  
+- **Date of creation**
 
-- The *Date of creation* allows you to filter tracks by date.
-- Specify the required time period to find tracks that were created then.
+    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_date_of_reation_andr.png)  
 
-#### Nearest cities
+    - The *Date of creation* allows you to filter tracks by date.
+    - Specify the required time period to find tracks that were created then.
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_cities_andr.png)   
+- **Nearest cities**
 
-- The filter allows you to search for tracks that pass close to specific cities or settlements.
-- Select one or more locations to find tracks passing through them or nearby.
+    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_cities_andr.png)   
 
-#### Country
+    - The filter allows you to search for tracks that pass close to specific cities or settlements.
+    - Select one or more locations to find tracks passing through them or nearby.
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_country_andr.png)  
+- **Country**
 
-- This filter allows you to search for tracks recorded in a specific country or region.
-- Select specific locations to find related tracks.  
+    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_country_andr.png)  
 
-#### Color
+    - This filter allows you to search for tracks recorded in a specific country or region.
+    - Select specific locations to find related tracks.  
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_folder_color_andr.png)
+- **Color**
 
-- The *Color* filter helps you search for tracks by colors that have already been applied to the appearance of existing tracks.
-- Select one or more colors, or *Not specified* for items that do not have a specified color, to find the tracks you need.
+    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_folder_color_andr.png)
 
-#### Width
+    - The *Color* filter helps you search for tracks by colors that have already been applied to the appearance of existing tracks.
+    - Select one or more colors, or *Not specified* for items that do not have a specified color, to find the tracks you need.
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_folder_width_andr.png)  
+- **Width**
 
-- This filter searches for tracks according to their width. Only the parameters that existing tracks have are listed.
-- Select one or more parameters or *Not specified* to find tracks with a specific width or without this attribute.
+    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_folder_width_andr.png)  
 
-#### Other
+    - This filter searches for tracks according to their width. Only the parameters that existing tracks have are listed.
+    - Select one or more parameters or *Not specified* to find tracks with a specific width or without this attribute.
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_other_andr.png)  
+- **Other**
 
-The filter provides additional options for finding and filtering tracks that have special characteristics.  
+    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_other_andr.png)  
 
-- *Visible on Map*. With this feature, you can find tracks that you have selected to be shown on the map.
-- *With Waypoints*. This filter helps you find tracks that contain waypoints, places that were marked during track recording, for example. With this filter, you can easily find tracks with important waypoints, such as vacation spots or notable events on your trip.
+    The filter provides additional options for finding and filtering tracks that have special characteristics.  
+
+    - *Visible on Map*. With this feature, you can find tracks that you have selected to be shown on the map.
+    - *With Waypoints*. This filter helps you find tracks that contain waypoints, places that were marked during track recording, for example. With this filter, you can easily find tracks with important waypoints, such as vacation spots or notable events on your trip.
 
 
-### Smart folder
+## Smart folder
 
 <InfoAndroidOnly/>
 
@@ -416,7 +388,7 @@ The filter provides additional options for finding and filtering tracks that hav
 3. **Dynamic Refresh.** *Smart folder* can dynamically update its contents based on Refresh function. This allows you to always have up-to-date information inside the folder.
 4. **Customize Rules.** You can customize rules that determine which files should be included in the *Smart folder*. 
 
-#### Create Smart folder
+### Create Smart folder
 
 To create a smart folder, follow these steps:
 1. **Tap the three-dot menu icon in the upper right corner** of the screen in the *Tracks* tab. 
@@ -428,7 +400,7 @@ To create a smart folder, follow these steps:
 
 After completing these steps, the Smart Folder will automatically collect and display tracks matching the specified filter parameters.
 
-#### Folder menu in Tracks tab
+### Folder menu in Tracks tab
 
 ![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_2_andr.png)  
 
@@ -442,7 +414,8 @@ Once created, the Smart folder is displayed with a special icon in the folder li
 - [**Export**](../personal/import-export.md). You will go to *Menu → Settings → Actions* tab, where you can export all tracks from the folder.
 - **Delete folde**. You can only delete the Smart folder, not the tracks. A warning message will appear on the display. The deletion will be irreversible.  
 
-#### Internal folder menu
+
+### Internal folder menu
 
 ![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)  
 
@@ -452,7 +425,7 @@ Go to the Smart folder and tap the menu with three dots in the upper right corne
 - [**Edit filter**](#filters-for-smart-folder). Moves to the Filter screen where you can configure track filtering for the folder.
 
 
-#### Select in Smart folder
+### Select in Smart folder
 
 ![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_4_andr.png)  
 
@@ -465,7 +438,8 @@ This screen allows you to select the tracks you want, as well as a list of sugge
 - [**Change appearance**](../map/tracks-on-map.md#track-appearance). Allows you to change the appearance of all or specific tracks in a folder.
 - **Delete**. Deletes only the folder with its settings. The tracks displayed in this folder are not deleted.
 
-####  Import / Export Smart folder
+
+###  Export tracks from Smart folder
 
 1. Exporting tracks that are in the Smart folder is available through the menu in the folder field of the Tracks tab.
     - Tap the three-dot menu, then select **Export**.
@@ -527,12 +501,12 @@ There are two options for importing a track file into OsmAnd. The first is impor
 
 Exporting one or more track files to any messenger, email, file managers, Drive or app is possible in several ways.  
 
-1. By [Track Context menu → Share](../map/track-context-menu.md#options).
-2. By [My Places menu → Tracks → … → "export" button](../personal/tracks.md#actions). Exporting more than one track by a bundle (It's the case of Local Backup).
-3. By [Local backup file](../personal/import-export.md#export-to-file). Exporting GPX-tracks as OSF-file.
+1. By [*Track Context menu → Share*](../map/track-context-menu.md#options).
+2. By [*My Places menu → Tracks → … → "export" button*](../personal/tracks.md#actions). Exporting more than one track by a bundle (It's the case of Local Backup).
+3. By [*Local backup file*](../personal/import-export.md#export-to-file). Exporting GPX-tracks as OSF-file.
 
 
-#### Export a GPX file to an external storage device (iOS)
+### Export GPX file to an external storage device (iOS)
 
 ![Export with Context menu in iOS](@site/static/img/plugins/trip-recording/cont_menu_in_myplaces_ios.png) 
 
@@ -602,18 +576,98 @@ More information about [My Places](../personal/myplaces.md), and/or [Tracks](../
 - My Places is perfect for any inventory work: tap the triple points/arrow at the right side of a track to manage it with any of the options, such as Move, Rename, Share, etc. 
 
 
+### Single track menu
+
+
+
 ### Folder menu
 
-<InfoAndroidOnly /> 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 ![import multitrack](@site/static/img/personal/tracks/tracks_folder_menu.png)
 
-- *Name*. Displays the selected folder name, creation date and the number of tracks it contains.
-- *Show all tracks on the map*. Shows all tracks in the folder on the map. It is not recommended, if there are a lot of tracks, the device may freeze.
-- *Edit name*. Changing the folder name.
-- [*Change default appearance*](../map/tracks-on-map.md#track-appearance). You can change the appearance of all tracks in a folder.
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Context menu of a track in iOS](@site/static/img/personal/tracks/folder_menu_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+To open the folder menu, you need to:
+- *Android* - tap the three-dots menu in the field with the required folder.
+- *iOS* - to make a long-tap on the field of the folder.
+
+Actions:
+- **Name**. Displays the selected folder name, creation date and the number of tracks it contains.
+- **Show all tracks on the map** (*Android only*). Shows all tracks in the folder on the map. It is not recommended, if there are a lot of tracks, the device may freeze.
+- **Edit name** (*Android*) / **Rename** (*iOS*). Changing the folder name.
+- [*Change default appearance*](../map/tracks-on-map.md#track-appearance) (*Android*) / **Appearance** (*iOS*). You can change the appearance of all tracks in a folder.
 - [*Export*](../personal/import-export.md). You go to the *Menu → Settings → Actions* tab, where you can export all the tracks in the folder.
-- [*Delete folder*](#delete-folder). You can delete a folder. A warning message will appear on the display. The deletion will be irreversible. 
+- **Move**. You can move the selected folder to another existing folder or create a new one.
+- [*Delete folder*](#delete-folder). Allow you to delete a folder. A warning message will appear on the display. The deletion will be irreversible. 
+
+####  Delete folder
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+
+![My Places with tracks in Android](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+
+![Context menu of a track in iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+You can delete a folder with all the tracks it contains. To do this:
+- Tap on the three-dot menu of the folder you want to delete.
+- At the bottom of the menu, find the Delete Folder option.
+- **Note** that this action is irreversible.
+
+
+### Follow track
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*Navigation → Settings → Follow track → Select*
+
+![My Places with tracks in Android](@site/static/img/personal/tracks/follow_track_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*Navigation → Settings → Follow track → Select*
+
+![Context menu of a track in iOS](@site/static/img/personal/tracks/follow_track_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+**Places from which tracks can be opened**.
+- *Plan route → Open existing track*
+- *Plan route → Add to a track*
+- *Navigation → Follow track → Select*
+- *Markers → Groups → Add → Track waypoints*
+- *OsmAnd Development → Settings → Simulate your position → Select track*
+- *Quick action → Simulate your position → Select track*
 
 
 ### Show tracks on map
@@ -701,7 +755,7 @@ Then you can move the track to any other preferred folder in the My Places using
 - [Context menu of a track in My Places](../personal/tracks.md#my-places-menu).  
 
 
-#### Context menu on the map 
+### Context menu on the map 
 
 To move a track to another folder inside My Places, you can use [Context menu of a track on the map](../map/track-context-menu.md) as follows: 
 
@@ -716,7 +770,7 @@ To move a track to another folder inside My Places, you can use [Context menu of
 ![More options in Android](@site/static/img/plugins/trip-recording/change_folder_andr_1.png) ![Change folder in Android](@site/static/img/plugins/trip-recording/change_folder_andr_2.png)  
 
 
-#### Context menu in my places
+### Context menu in my places
 
 To move a track to another folder in My Places, you can use [Context menu of a track in My Places](../personal/tracks.md#manage-tracks) as follows: 
 
@@ -736,7 +790,7 @@ Default folder in My Places for saved new tracks: *<Translate ios="true" ids="sh
 You can then move the track to any other preferred folder in My Places and/or export the GPX file to an external storage device.   
 
 
-#### Move track in the My places
+### Move track in the My places
 
 ![More options in iOS](@site/static/img/plugins/trip-recording/change_folder_ios_1.png) ![Change folder in iOS](@site/static/img/plugins/trip-recording/change_folder_ios_2.png)  
 
@@ -754,23 +808,11 @@ To move a track from the default folder to another folder in My Places, follow t
 
 </Tabs>
 
-###  Delete folder
 
-<InfoAndroidOnly /> 
-
-*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*.
-
-![My Places with tracks in Android](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
-
-You can delete a folder with all the tracks it contains. To do this:
-- Tap on the three-dot menu of the folder you want to delete.
-- At the bottom of the menu, find the Delete Folder option.
-- *Note* that this action is irreversible.
-
-## Read more about GPX
+## Read more about Tracks
 
 - [Show track on Map](../map/tracks-on-map.md)
-- [Analyze on Map](../map/tracks-on-map.md)
+- [Analyze on Map](../map/tracks-on-map.md#analyze-track-on-map)
 - [Track Context menu](../map/track-context-menu.md)
 - [Navigation by track](../navigation/setup/gpx-navigation.md)
 - [Trip recording](../plugins/trip-recording.md)

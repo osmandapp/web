@@ -5172,5 +5172,7 @@
   "weather_wind_mph": "mph",
   "weather_wind_kmh": "km/h",
   "weather_wind_ms": "m/s",
-  "weather_wind_knots": "Knots"
+  "weather_wind_knots": "Knots",
+  "night": "Night",
+  "day": "Day"
 }

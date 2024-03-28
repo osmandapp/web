@@ -503,7 +503,7 @@ const mouseLine = {
             chart.options.mouseLine.x = NaN;
         }
     },
-    afterTooltipDraw: function (chart) {
+    beforeTooltipDraw: function (chart) {
         const ctx = chart.ctx;
         const chartArea = chart.chartArea;
         const x = chart.options.mouseLine?.x;
