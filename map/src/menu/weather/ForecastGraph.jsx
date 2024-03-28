@@ -3,6 +3,7 @@ import GraphManager from '../../manager/GraphManager';
 import { Box } from '@mui/material';
 import React, { useRef } from 'react';
 import i18n from 'i18next';
+import { useTranslation } from 'react-i18next';
 import {
     BarElement,
     CategoryScale,
@@ -35,13 +36,15 @@ ChartJS.register(
 
 export default function ForecastGraph({ data, weatherType, weatherUnits }) {
     const chartRef = useRef(null);
+    const { t } = useTranslation();
+
     Interaction.modes.myCustomMode = GraphManager.myCustomMode;
 
     const graphData = {
         labels: Object.keys(data),
         datasets: [
             {
-                label: 'day',
+                label: t('day'),
                 data: Object.values(data).map((item) => item.day[weatherType]?.avg),
                 fill: false,
                 borderColor: '#212121',
@@ -49,7 +52,7 @@ export default function ForecastGraph({ data, weatherType, weatherUnits }) {
                 borderWidth: 2,
             },
             {
-                label: 'night',
+                label: t('night'),
                 data: Object.values(data).map((item) => item.night[weatherType]?.avg),
                 fill: false,
                 borderColor: '#737D8C',
