@@ -114,7 +114,7 @@ Select an optimisation setting. To prevent the app from asking you the next time
 - [Coordinate input](../plan-route/coordinate-input.md) article. 
 
 
-### Plane route
+### Plan route
 
 <Tabs groupId="operating-systems">
 
