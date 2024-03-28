@@ -6,7 +6,12 @@ import styles from '../weather/weather.module.css';
 import * as locales from 'date-fns/locale';
 import { format } from 'date-fns';
 
-export default function TopWeatherInfo({ headerForecast = null, weatherLoc = null, useWeatherDate = false }) {
+export default function TopWeatherInfo({
+    loadingLocation,
+    headerForecast = null,
+    weatherLoc = null,
+    useWeatherDate = false,
+}) {
     const ctx = useContext(AppContext);
 
     function getSubInfo() {
@@ -24,14 +29,33 @@ export default function TopWeatherInfo({ headerForecast = null, weatherLoc = nul
         }
     }
 
+    function getLocation() {
+        if (weatherLoc?.address) {
+            if (Object.keys(weatherLoc.address).length > 0) {
+                const name = weatherLoc.address[i18n.language];
+                if (name) {
+                    return name;
+                }
+            }
+            return parseFloat(weatherLoc.lat).toFixed(4) + ', ' + parseFloat(weatherLoc.lon).toFixed(4);
+        }
+        return '';
+    }
+
     return (
         <ListItemText>
             <div className={styles.topContainer}>
                 <div>
-                    {weatherLoc && (
-                        <Typography id="se-weather-location" variant="body2" noWrap className={styles.address}>
-                            {weatherLoc.address?.cityLocalNames[i18n.language]}
-                        </Typography>
+                    {loadingLocation ? (
+                        <CircularProgress size={20} />
+                    ) : (
+                        <>
+                            {weatherLoc && (
+                                <Typography id="se-weather-location" variant="body2" noWrap className={styles.address}>
+                                    {getLocation()}
+                                </Typography>
+                            )}
+                        </>
                     )}
                     <Typography variant="inherit" className={styles.currentDate}>
                         {getSubInfo()}

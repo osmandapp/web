@@ -27,6 +27,13 @@ const WeatherLayer = () => {
 
     useEffect(() => {
         if (map) {
+            map.on('zoomend', () => ctx.setMapBbox(map.getBounds()));
+            map.on('dragend', () => ctx.setMapBbox(map.getBounds()));
+        }
+    }, [map]);
+
+    useEffect(() => {
+        if (map) {
             map.eachLayer((layer) => {
                 if (layer.options?.name?.match(/^weather-/) && layer.options.time) {
                     const newTime = getWeatherTime(ctx.weatherDate);

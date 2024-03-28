@@ -1,6 +1,6 @@
 import { Box, Button, Divider, Icon, ListItemText, MenuItem, Typography } from '@mui/material';
 import WeatherHeader from './WeatherHeader';
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import TopWeatherInfo from './TopWeatherInfo';
 import { LOCAL_STORAGE_WEATHER_FORECAST_WEEK, LOCAL_STORAGE_WEATHER_LOC } from '../../manager/WeatherManager';
@@ -12,23 +12,50 @@ import ForecastGraph from './ForecastGraph';
 import Loading from '../errors/Loading';
 import { useWeatherTypeChange } from '../../util/hooks/useWeatherTypeChange';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
-import { useDebouncedHash } from '../../util/hooks/useDebouncedHash';
 import Empty from '../errors/Empty';
+import { useWeatherLocationChange } from '../../util/hooks/useWeatherLocationChange';
 
 export default function WeatherForecastDetails({ setShowInfoBlock }) {
     const ctx = useContext(AppContext);
     const [, height] = useWindowSize();
 
     const [forecast, setForecast] = useState(getSavedForecast());
-    const weatherLoc = getWeatherLoc();
+    const [weatherLoc, setWeatherLoc] = useState(getWeatherLoc());
     const currentLoc = useGeoLocation(ctx, false);
-    const delayedHash = useDebouncedHash(window.location.hash, 5000);
+    const hash = window.location.hash;
+    const [delayedHash, setDelayedHash] = useState(hash);
     const [isDisabledType, setIsDisabledType] = useState(false);
+    const debouncerTimer = useRef(0);
+    const [loadingLocation, setLoadingLocation] = useState(false);
 
     useWeatherTypeChange({ ctx, currentLoc, delayedHash, setWeekForecast: setForecast });
+    useWeatherLocationChange({
+        ctx,
+        currentLoc,
+        delayedHash,
+        weatherLoc,
+        setWeatherLoc,
+        weekForecast: forecast,
+        setWeekForecast: setForecast,
+    });
 
     const [currentWeatherType, setCurrentWeatherType] = useState(null);
     const [currentWeatherUnits, setCurrentWeatherUnits] = useState(null);
+
+    // debounce map move/scroll
+    useEffect(() => {
+        setLoadingLocation(true);
+        debouncerTimer.current > 0 && clearTimeout(debouncerTimer.current);
+        debouncerTimer.current = setTimeout(() => {
+            debouncerTimer.current = 0;
+            setDelayedHash(hash);
+            setLoadingLocation(false);
+        }, 2000);
+
+        return () => {
+            clearTimeout(debouncerTimer.current);
+        };
+    }, [hash]);
 
     useEffect(() => {
         const res = ctx.weatherLayers[ctx.weatherType].find((layer) => {
@@ -223,7 +250,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
             sx={{ overflow: 'hidden' }}
         >
             <WeatherHeader setShowInfoBlock={setShowInfoBlock} isDetails={true} />
-            <TopWeatherInfo weatherLoc={weatherLoc} />
+            <TopWeatherInfo loadingLocation={loadingLocation} weatherLoc={weatherLoc} />
             <Box className={styles.forecastButtonBox}>
                 {ctx.weatherLayers[ctx.weatherType].map((item, index) => (
                     <ForecastButtonItem item={item} index={index} key={index} />
