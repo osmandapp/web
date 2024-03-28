@@ -42,7 +42,7 @@ export default function Weather() {
     const [weekForecast, setWeekForecast] = useState(null);
     const [headerForecast, setHeaderForecast] = useState(null);
 
-    useWeatherTypeChange({ ctx, currentLoc, delayedHash, setDayForecast, setWeekForecast });
+    useWeatherTypeChange({ ctx, currentLoc, setDayForecast, setWeekForecast });
     useWeatherLocationChange({
         ctx,
         currentLoc,
