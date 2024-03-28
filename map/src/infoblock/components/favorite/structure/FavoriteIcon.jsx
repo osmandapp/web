@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import MarkerOptions from '../../../../map/markers/MarkerOptions';
+import MarkerOptions, { POI_ICONS_FOLDER } from '../../../../map/markers/MarkerOptions';
 import { AppBar, Box, ListItem, ListItemButton, ListItemText, Tab, Typography } from '@mui/material';
 import { History } from '@mui/icons-material';
 import Paper from '@mui/material/Paper';
@@ -53,7 +53,7 @@ export default function FavoriteIcon({
                                             `<svg class="background" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">` +
                                             `<circle cx="24" cy="24" r="12" fill="#c1c1c1" />` +
                                             `</svg>` +
-                                            `<img class="icon" src="/map/images/${MarkerOptions.POI_ICONS_FOLDER}/mx_${icon}.svg">` +
+                                            `<img class="icon" src="/map/images/${POI_ICONS_FOLDER}/mx_${icon}.svg">` +
                                             `</div>`,
                                     }}
                                 />

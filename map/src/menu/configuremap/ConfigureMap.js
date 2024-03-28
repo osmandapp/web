@@ -27,9 +27,14 @@ import { cloneDeep } from 'lodash';
 import EmptyLogin from '../errors/EmptyLogin';
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from '../actions/HeaderHelper';
+import { INTERACTIVE_LAYER } from '../../map/layers/CustomTileLayer';
+
+export const DYNAMIC_RENDERING = 'dynamic';
+export const VECTOR_GRID = 'vector_grid';
 
 export default function ConfigureMap({ setOpenVisibleMenu }) {
     const ctx = useContext(AppContext);
+
     const { t } = useTranslation();
     const [openSettings, setOpenSettings] = useState(false);
 
@@ -154,7 +159,14 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
                                         labelid="rendering-style-selector-label"
                                         label={t('map_widget_renderer')}
                                         value={ctx.tileURL.key}
-                                        onChange={(e) => ctx.setTileURL(ctx.allTileURLs[e.target.value])}
+                                        onChange={(e) => {
+                                            ctx.setTileURL(ctx.allTileURLs[e.target.value]);
+                                            if (e.target.value === INTERACTIVE_LAYER) {
+                                                ctx.setRenderingType(DYNAMIC_RENDERING);
+                                            } else if (ctx.renderingType) {
+                                                ctx.setRenderingType(null);
+                                            }
+                                        }}
                                     >
                                         {Object.values(ctx.allTileURLs).map((item) => {
                                             return (
