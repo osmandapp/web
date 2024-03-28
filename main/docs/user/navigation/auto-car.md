@@ -249,6 +249,12 @@ This information widget combines alert types such as **Pedestrian crosswalks** a
 - For a detailed description of the alert types, see [this article](../widgets/nav-widgets.md#alert-types).
 - To set up screen alerts for available profiles, see the article [Navigation settings](../navigation/guidance/navigation-settings.md#screen-alerts).  
 
+### Speedometer
+
+![Android Auto](@site/static/img/navigation/auto-car/speedometer_3_android.png)
+
+- In Android Auto it is not possible to set the display of Speedometer, you need to configure Speedometer in the application before starting the navigation and connecting your device to the vehicle for your navigation Profile. Read more [here](../widgets/info-widgets.md#speedometer) on how to add Speedometer to the screen.
+
 
 ### Map appearance (3D)
 

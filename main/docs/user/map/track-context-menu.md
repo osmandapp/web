@@ -453,12 +453,35 @@ Points / Waypoins menu in Context track menu opens list of track / folders waypo
 </Tabs>
 
 Actions:  
-- **<Translate android="true" ids="shared_string_show_on_map"/>**. Allows you to show or not show group waypoints on the map.
+- **<Translate android="true" ids="shared_string_show_on_map"/>**. Allows you to show or not show group waypoints on the map. Or you can use [the screen button](#show-waypoints-on-the-map) for showing or not group waypoints on the map.
 - **<Translate android="true" ids="shared_string_rename"/>**. Allows you to change the name of the group.
 - **<Translate android="true" ids="change_color"/>**. Allows you to change the color for group waypoints.
 - **<Translate android="true" ids="copy_to_map_markers"/>** (*Android only*). Allows you to move group waypoints to [Map markers](../personal/markers.md).
 - **<Translate android="true" ids="copy_to_map_favorites"/>** (*Android only*). Allows you to move group waypoints to [Favorites](../personal/favorites.md).
 - **<Translate android="true" ids="shared_string_delete"/>**. Allows you to delete group waypoints.
+
+
+### Show Waypoints on the map
+
+You can control group visibility on the map (if track is hidden, all groups will be hidden, too). 
+
+You switch on/off group waypoints on the map by the button on the screen. Tap it and open the menu to switch on/off group waypoints on the map.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Track menu Group map Android](@site/static/img/personal/tracks/waypoints_group_map_android.png) ![Track menu Group map Android](@site/static/img/personal/tracks/waypoints_group_map_1_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Track menu Group map iOS](@site/static/img/personal/tracks/waypoints_group_map_ios.png) ![Track menu Group map iOS](@site/static/img/personal/tracks/waypoints_group_map_1_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 
 ## Options
@@ -603,6 +626,7 @@ Actions list is available on the bottom of **Filter** or **Statistics** tab. Osm
 - *<Translate android="true" ids="save_changes_into_file"/>* – allows you to rewrite the track with the new parameters.  
 
 ![GPS filter action Android](@site/static/img/personal/tracks/gps_filter_action_android.png)  
+
 
 ## Read more
 
