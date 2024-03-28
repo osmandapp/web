@@ -28,7 +28,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
     const debouncerTimer = useRef(0);
     const [loadingLocation, setLoadingLocation] = useState(false);
 
-    useWeatherTypeChange({ ctx, currentLoc, delayedHash, setWeekForecast: setForecast });
+    useWeatherTypeChange({ ctx, currentLoc, setWeekForecast: setForecast });
     useWeatherLocationChange({
         ctx,
         currentLoc,

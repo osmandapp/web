@@ -4,24 +4,20 @@ import {
     fetchDayForecast,
     fetchWeekForecast,
     getAlignedStep,
+    LOCAL_STORAGE_WEATHER_LOC,
     updateWeatherTime,
 } from '../../manager/WeatherManager';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
-import { getCenterMapLoc } from '../../manager/MapManager';
 
-export const useWeatherTypeChange = ({
-    ctx,
-    currentLoc,
-    delayedHash,
-    setDayForecast = null,
-    setWeekForecast = null,
-}) => {
+export const useWeatherTypeChange = ({ ctx, currentLoc, setDayForecast = null, setWeekForecast = null }) => {
     function getForecastData(location) {
         if (setDayForecast) {
-            fetchDayForecast({ point: location, ctx, setDayForecast }).then();
+            fetchDayForecast({ lat: location.lat, lon: location.lon, ctx, setDayForecast }).then();
         }
         if (setWeekForecast) {
-            fetchWeekForecast({ point: location, ctx, setWeekForecast }).then(() => ctx.setForecastLoading(false));
+            fetchWeekForecast({ lat: location.lat, lon: location.lon, ctx, setDayForecast }).then(() =>
+                ctx.setForecastLoading(false)
+            );
         }
     }
 
@@ -30,9 +26,10 @@ export const useWeatherTypeChange = ({
             if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
                 getForecastData(currentLoc);
             } else {
-                const center = getCenterMapLoc(delayedHash);
-                if (center) {
-                    getForecastData(center);
+                let savedWeatherLoc = localStorage.getItem(LOCAL_STORAGE_WEATHER_LOC);
+                if (savedWeatherLoc) {
+                    savedWeatherLoc = JSON.parse(savedWeatherLoc);
+                    getForecastData({ lat: savedWeatherLoc.lat, lon: savedWeatherLoc.lon });
                 }
             }
             const alignedStep = getAlignedStep({ direction: 0, ctx });
