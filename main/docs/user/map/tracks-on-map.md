@@ -65,13 +65,13 @@ You can choose which tracks to show on the map and which to hide. You can do thi
 
 *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*  
 
-![Tracks menu iOS](@site/static/img/map/tracks_menu_ios.png)   
-
-It is not recommended to use this way of selecting tracks to display them on the map.  
+![Context menu of a track in iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![Context menu of a track in iOS](@site/static/img/personal/tracks/follow_track_2_ios.png)
 
 </TabItem>
 
 </Tabs>
+
+You can read additional information in the [Tracks](../personal/tracks.md#follow-track) article.
 
 
 #### Tracks in My Places menu
@@ -80,21 +80,24 @@ It is not recommended to use this way of selecting tracks to display them on the
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/> or ["Map" button](../personal/tracks.md#my-places-android) for choosing multiple tracks.*  
+*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*  
 
-![Tracks my places Android](@site/static/img/map/tracks_myplaces_andr.png)
+![My Places with tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → **&#8250;** → <Translate ios="true" ids="recording_context_menu_show"/> or ["Layer" button](../personal/tracks.md#my-places-ios) for choosing multiple tracks.*  
+*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*  
 
-![Tracks menu iOS](@site/static/img/map/tracks_myplaces_ios.png)
-
+![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 </TabItem>
 
 </Tabs>
+
+To show track on the map, you need to:
+- *Android* - tap on the three-dots menu in the field with the required track.
+- *iOS* - long-press on the required track in the list.
 
 
 ### Track Appearance
