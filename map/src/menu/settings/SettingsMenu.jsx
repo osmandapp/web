@@ -179,7 +179,7 @@ export default function SettingsMenu() {
                 </ListItemIcon>
                 <ListItemText>
                     <Typography variant="inherit" noWrap>
-                        {t('cloud_recent_changes')}
+                        {t('web:cloud_changes')}
                     </Typography>
                 </ListItemText>
             </MenuItem>
