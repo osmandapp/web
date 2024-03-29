@@ -34,7 +34,7 @@ export function getLocalizedTimeUpdate(time) {
     return format(currentDate, 'MMM d', { locale });
 }
 
-export default function SettingsMenu() {
+export default function SettingsMenu({ setCloudSettings }) {
     const ctx = useContext(AppContext);
 
     const [openLangList, setOpenLangList] = useState(false);
@@ -91,6 +91,10 @@ export default function SettingsMenu() {
     function getTransLanguage(lang) {
         const trans = t(`lang_${lang}`).toString();
         return trans.startsWith('lang_') ? enList[`lang_${lang}`] : trans;
+    }
+
+    function openCloudSettingsMenu({ changes = false, trash = false }) {
+        setCloudSettings({ changes, trash });
     }
 
     const languageList = useMemo(() => {
@@ -173,7 +177,7 @@ export default function SettingsMenu() {
                 </Typography>
             </MenuItem>
 
-            <MenuItem className={styles.item}>
+            <MenuItem className={styles.item} onClick={() => openCloudSettingsMenu({ changes: true })}>
                 <ListItemIcon className={styles.icon}>
                     <ChangesIcon />
                 </ListItemIcon>
@@ -184,7 +188,7 @@ export default function SettingsMenu() {
                 </ListItemText>
             </MenuItem>
             <Divider className={styles.dividerItem} />
-            <MenuItem divider className={styles.item}>
+            <MenuItem divider className={styles.item} onClick={() => openCloudSettingsMenu({ trash: true })}>
                 <ListItemIcon className={styles.icon}>
                     <TrashIcon />
                 </ListItemIcon>
