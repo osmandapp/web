@@ -266,7 +266,7 @@ Choosing the route opens [Track Context menu](../map/track-context-menu.md):
 
 
 You can view the route, and its relief, download it as a GPX-file, edit it with "Plan route" tool and even start navigation along it:
-- look at Route info (Distance, Uphill, Downhill, Altitude range, Route name, Network, Operator, etc.). 
+- look at **Route info** (_Distance, Direction, Ascent/Descent, Altitude range, Route name, Network, Operator, State, Colo, Type, Description, Color, Roundtrip, start/end points and etc._). 
 
 <Tabs groupId="operating-systems">
 
@@ -284,7 +284,7 @@ You can view the route, and its relief, download it as a GPX-file, edit it with 
 
 </Tabs>
 
-- looking at Altitude Graph, Analyze on map, Share like GPX-file and etc.
+- looking at _Altitude Graph, Analyze on map, Share like GPX-file_ and etc.
 
 <Tabs groupId="operating-systems">
 
@@ -302,7 +302,7 @@ You can view the route, and its relief, download it as a GPX-file, edit it with 
 
 </Tabs>
 
-- download the route like GPX-file: 
+- download the route like _GPX-file_: 
 
 <Tabs groupId="operating-systems">
 
