@@ -126,7 +126,7 @@ Introduced 3D visualization for tracks based on altitude:
 
 _[Track Context menu](https://osmand.net/docs/user/map/tracks-on-map#track-appearance) → Change Appearance → 3D visualization_
 
-![3D tracks iOS](../../blog/2024-03-06-ios-4-7/img/3d_tracks_ios.png)
+![3D tracks iOS](../../blog/2024-03-06-ios-4-7/img/3d_tracks_ios.png) ![3D tracks iOS](../../blog/2024-03-06-ios-4-7/img/3d_tracks_1_ios.png)
 
 ### External sensors data for Analize on map
 
