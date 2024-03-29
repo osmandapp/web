@@ -64,6 +64,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | [Nautical depths](../plugins/nautical-charts.md) | - | ✔ | ✔ |
 | [Travel guides (Wikipedia)](../plugins/wikipedia.md) | - | ✔ | ✔ |
 | [CarPlay](../navigation/car-play.md) | - | ✔ | ✔ |
+| [External sensors support](../plugins/external-sensors.md) | - | ✔ | ✔ |
 | [Offline and online navigation](../navigation/index.md) with turn-by-turn directions | ✔ | ✔ | ✔ |
 | [Offline instant search](../search/index.md) | ✔ | ✔ | ✔ |
 | [Trip recording](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
