@@ -1,5 +1,5 @@
 import { useMap } from 'react-leaflet';
-import { useCallback, useContext, useEffect, useRef } from 'react';
+import { forwardRef, useCallback, useContext, useEffect, useImperativeHandle, useRef } from 'react';
 import L from 'leaflet';
 import AppContext from '../../context/AppContext';
 import 'leaflet.vectorgrid';
@@ -12,13 +12,17 @@ import { renderToStaticMarkup } from 'react-dom/server';
 
 export const INTERACTIVE_LAYER = 'int';
 
-export function CustomTileLayer({ ...props }) {
+const CustomTileLayer = forwardRef((props, ref) => {
     const map = useMap();
     const ctx = useContext(AppContext);
 
     const rasterTileLayerRef = useRef(null);
     const dataLayersRef = useRef(null);
     const renderingTypeRef = useRef(ctx.renderingType);
+
+    useImperativeHandle(ref, () => ({
+        getLeafletLayer: () => rasterTileLayerRef.current,
+    }));
 
     useEffect(() => {
         renderingTypeRef.current = ctx.renderingType;
@@ -393,4 +397,7 @@ export function CustomTileLayer({ ...props }) {
     const onMapClick = useCallback(() => {
         map.closePopup();
     }, [map]);
-}
+});
+
+CustomTileLayer.displayName = 'CustomTileLayer';
+export default CustomTileLayer;

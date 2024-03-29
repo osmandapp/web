@@ -27,8 +27,6 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
     - [Additional tags support](#additional-tags-support)
   - [Sun position widget](#sun-position-widget)
   - [Glide ratio widget](#glide-ratio-widget)
-  - [Speedometer](#speedometer)
-    - [Speedometer for CarPlay](#speedometer-for-carplay)
   - [Round up numbers in navigation widgets](#round-up-numbers-in-navigation-widgets)
   - [OsmAnd Cloud updates](#osmand-cloud-updates)
   - [App Language for Basemap](#app-language-for-basemap)
@@ -166,6 +164,7 @@ _OsmAnd menu → Configure screen → Widgets (All panels) → Glide ratio to ta
 
 ![Glide Ratio widget iOS](../../blog/2024-03-06-ios-4-7/img/glide_ratio_widget_ios.png)
 
+<!--
 ## Speedometer
 
 Introduced a new distinctive widget called Speedometer:
@@ -180,7 +179,7 @@ Within this section, you can select the size (_small, medium, large_) of the Spe
 
 The Speedometer feature has been introduced for CarPlay as well.
 
-![Speedometer CarPlay iOS](../../blog/2024-03-06-ios-4-7/img/speedometer_carplay_ios.png)
+![Speedometer CarPlay iOS](../../blog/2024-03-06-ios-4-7/img/speedometer_carplay_ios.png)  -->
 
 ## Round up numbers in navigation widgets
 

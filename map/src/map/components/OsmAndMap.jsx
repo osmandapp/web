@@ -18,7 +18,7 @@ import GraphLayer from '../layers/GraphLayer';
 import { initialZoom, initialPosition, detectGeoByIp, LocationControl } from './LocationControl';
 import CustomZoomControl from './CustomZoomControl';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
-import { CustomTileLayer } from '../layers/CustomTileLayer';
+import CustomTileLayer from '../layers/CustomTileLayer';
 
 const useStyles = makeStyles(() => ({
     root: (props) => ({
@@ -113,9 +113,12 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
     }, [ctx.tileURL]);
 
     useEffect(() => {
-        if (tileLayer.current) {
-            tileLayer.current.on('load', () => (window.seIsTilesLoaded = true));
-            tileLayer.current.on('tileload', () => (window.seIsTilesLoaded = false));
+        if (tileLayer.current && tileLayer.current.getLeafletLayer) {
+            const leafletLayer = tileLayer.current.getLeafletLayer();
+            if (leafletLayer) {
+                leafletLayer.on('load', () => (window.seIsTilesLoaded = true));
+                leafletLayer.on('tileload', () => (window.seIsTilesLoaded = false));
+            }
         }
     }, [tileLayer.current]);
 
@@ -167,6 +170,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             <GraphLayer />
             <PoiLayer />
             <CustomTileLayer
+                ref={tileLayer}
                 attribution='OsmAnd Web Beta &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
                 minZoom={1}
                 maxZoom={20}
