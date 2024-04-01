@@ -265,6 +265,10 @@ Sort menu:
 - **Longest duration first**. Tracks are sorted so that the ones that took the longest are listed first.
 - **Shorted duration first**. At the top of the list are the tracks that took the least amount of time to complete.
 
+:::note
+**In iOS,** you can use sorting using *Menu → Configure Map → Tracks*.
+:::
+
 
 ### Filter
 
@@ -285,119 +289,97 @@ Osmand provides convenient track management tools, one of them is filtering in t
 
 - **Filter by name**
 
-    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_name_andr.png)  
-
     - This filter allows you to search for tracks by their title.
     - Enter a title or part of a title to filter tracks matching the specified text.
 
 - **Folder**
-
-    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_folder_andr.png)  
 
     - The *Folder* filter allows you to search for tracks in one or more existing folders.
     - Select the needed folders to display the tracks in the search list.
 
 - **Duration**
 
-    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_duration_andr.png)  
-
     - This filter allows you to customize your search by the duration of the recorded tracks.
     - You can select a duration range in hours and minutes to find tracks matching your time limit.
 
 - **Time in motion**
 
-    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_time_in_motion_andr.png)  
-
     - This filter helps you find tracks during which you were in motion.
     - Select a range of time in motion to display tracks that match your parameters.
 
-- **Length**
-
-    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_length_andr.png)  
+- **Length** 
 
     - This filter allows you to customize your search by track length in kilometers or miles.
     - Specify the required length range to find tracks of a specific length.
 
-- **Average speed**
-
-    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_average_speed_andr.png)   
+- **Average speed** 
 
     - This filter helps you sort tracks by average speed.
     - Select the [average speed](../widgets/info-widgets.md#average-speed) range to search for tracks.
 
+- **Sensor data group**  
+    - Sensor speed, average.
+    - Sensor speed, max.
+    - Heart rate, average.
+    - Heart rate, max.
+    - Bicycle Cadence, average.
+    - Bicycle Cadence, max
+    - Bicycle Power, average.
+    - Bicycle Power, max.
+    - Temperature, average.
+    - Temperature, max.
+
 - **Max speed**
 
-    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_max_speed_andr.png)     
-
     - This filter allows you to search for tracks with a specific maximum speed.
-    - Select from the suggested range of maximum speed values to find tracks that match this parameter.
+    - Select from the suggested range of maximum speed values to find tracks that match this parameter.  
 
 - **Uphill**
-
-    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_uphill_andr.png)  
 
     - This filter searches for tracks that go up a slope or have a positive elevation.
     - Tracks that include sections with the selected uphill are displayed.
 
 - **Downhill**
 
-    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_downhill_andr.png)  
-
     - The *Downhill* filter searches for tracks that are descending or have a negative elevation.
     - Finds tracks that include downhill sections for the selected values.
 
 - **Average altitude**
-
-    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_average_altitude_andr.png)     
 
     - This filter helps you find tracks based on average altitude.
     - Specify a range of average altitude to find tracks with these parameters.
 
 - **Max altitude**
 
-    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_max_alt_andr.png)  
-
     - This filter searches for tracks according to their maximum altitude above sea level.
     - Specify a range of maximum altitude to find tracks matching the selected parameters.
 
 - **Date of creation**
-
-    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_date_of_reation_andr.png)  
 
     - The *Date of creation* allows you to filter tracks by date.
     - Specify the required time period to find tracks that were created then.
 
 - **Nearest cities**
 
-    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_cities_andr.png)   
-
     - The filter allows you to search for tracks that pass close to specific cities or settlements.
     - Select one or more locations to find tracks passing through them or nearby.
 
 - **Country**
-
-    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_country_andr.png)  
 
     - This filter allows you to search for tracks recorded in a specific country or region.
     - Select specific locations to find related tracks.  
 
 - **Color**
 
-    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_folder_color_andr.png)
-
     - The *Color* filter helps you search for tracks by colors that have already been applied to the appearance of existing tracks.
     - Select one or more colors, or *Not specified* for items that do not have a specified color, to find the tracks you need.
 
 - **Width**
 
-    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_smart_folder_width_andr.png)  
-
     - This filter searches for tracks according to their width. Only the parameters that existing tracks have are listed.
     - Select one or more parameters or *Not specified* to find tracks with a specific width or without this attribute.
 
-- **Other**
-
-    ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_other_andr.png)  
+- **Other**  
 
     The filter provides additional options for finding and filtering tracks that have special characteristics.  
 
@@ -537,7 +519,6 @@ There are several ways to export one or more track files to any messenger, email
 2. By *My Places menu → Tracks → Folfer / Track menu*. 
     - For [**single track export**](#single-track-menu), select the track to import as is.
     - For [**multi-track export**](#folder-menu), select the required folder.
-<!-- Exporting more than one track by a bundle (It's the case of Local Backup).-->
 3. By [*Local backup file*](../personal/import-export.md#export-to-file). Exporting GPX-tracks as OSF-file.
 
 
@@ -728,18 +709,43 @@ Menu with actions:
 
 1. **Places from which tracks can be opened**.
 - *Plan route → Open existing track*
-- *Plan route → Add to a track*
-- *Navigation → Follow track → Select*
-- *Markers → Groups → Add → Track waypoints*
-- *OsmAnd Development → Settings → Simulate your position → Select track*
-- *Quick action → Simulate your position → Select track*
+- [*Plan route → Add to a track*](../plan-route/create-route.md#menu-options)
+- [*Navigation → Follow track → Select*](../navigation/setup/gpx-navigation.md#follow-track-menu)
+- [*Markers → Groups → Add → Track waypoints*](../map/point-layers-on-map.md#track-waypoints)
+- [*OsmAnd Development → Settings → Simulate your position → Select track*](../plugins/development.md#gpx-track-simulation)
+- [*Quick action → Simulate your position → Select track*](../widgets/quick-action.md)
 
 2. **Actions**.
-- **Search**. Opens the track name search screen with a list of all existing tracks and the ability to sort them. For *iOS*, the [sorting list](#sort-by) in this section is the same as for *Android*.
+- **Search**. Opens the track name search screen with a list of all existing tracks and the ability to sort them.  
 - **Cancel**. Closes the Search without applying the changes.
 - **Import**. Opens a list of files on your device for importing tracks. In Android, it is located in the three-dot menu.
 - [Change appearance](../map/tracks-on-map.md#track-appearance) (*Android only, located in the three-dot menu*). Goes to the option of customising the appearance of the selected tracks.
 - **Switch folder** (*Android only*). You can select the required folder from the list, which is especially convenient if there are many folders.
+
+3. **Sort for tracks**
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>* 
+
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)   
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*  
+
+![Context menu of a track in iOS](@site/static/img/personal/tracks/my_places_tracks_sort_ios.png) 
+
+</TabItem>
+
+</Tabs>  
+
+Provides convenient [track sorting](#sort-by).  
+*For *iOS*, the sorting list in this section is the same as for *Android*.*
 
 
 ### Show tracks on map
