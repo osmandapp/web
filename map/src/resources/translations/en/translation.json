@@ -5176,5 +5176,7 @@
   "night": "Night",
   "day": "Day",
   "osmand_cloud": "OsmAnd Cloud",
-  "shared_string_trash": "Trash"
+  "shared_string_trash": "Trash",
+  "yesterday": "Yesterday",
+  "today": "Today"
 }

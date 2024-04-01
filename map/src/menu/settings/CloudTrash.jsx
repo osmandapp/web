@@ -24,7 +24,7 @@ export default function CloudTrash({ setOpenCloudSettings }) {
                     >
                         <BackIcon />
                     </IconButton>
-                    <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
+                    <Typography component="div" className={headerStyles.title}>
                         {t('shared_string_trash')}
                     </Typography>
                 </Toolbar>

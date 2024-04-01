@@ -174,6 +174,7 @@ export default function MainMenu({
     //open main menu if currentObjectType was changed
     useEffect(() => {
         if (ctx.currentObjectType) {
+            setOpenCloudSettings(false);
             if (ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_ALONE) {
                 // invoked by RouteService.js effect
                 // activate Navigation menu even w/o currentObjectType (if no other menu was activated before)

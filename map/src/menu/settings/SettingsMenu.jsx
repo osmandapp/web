@@ -171,33 +171,37 @@ export default function SettingsMenu({ setCloudSettings }) {
                     </div>
                 </ListItemText>
             </MenuItem>
-            <MenuItem className={styles.item}>
-                <Typography className={styles.title} noWrap>
-                    {t('osmand_cloud')}
-                </Typography>
-            </MenuItem>
+            {ctx.loginUser && (
+                <>
+                    <MenuItem className={styles.item}>
+                        <Typography className={styles.title} noWrap>
+                            {t('osmand_cloud')}
+                        </Typography>
+                    </MenuItem>
 
-            <MenuItem className={styles.item} onClick={() => openCloudSettingsMenu({ changes: true })}>
-                <ListItemIcon className={styles.icon}>
-                    <ChangesIcon />
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography variant="inherit" noWrap>
-                        {t('web:cloud_changes')}
-                    </Typography>
-                </ListItemText>
-            </MenuItem>
-            <Divider className={styles.dividerItem} />
-            <MenuItem divider className={styles.item} onClick={() => openCloudSettingsMenu({ trash: true })}>
-                <ListItemIcon className={styles.icon}>
-                    <TrashIcon />
-                </ListItemIcon>
-                <ListItemText>
-                    <Typography variant="inherit" noWrap>
-                        {t('shared_string_trash')}
-                    </Typography>
-                </ListItemText>
-            </MenuItem>
+                    <MenuItem className={styles.item} onClick={() => openCloudSettingsMenu({ changes: true })}>
+                        <ListItemIcon className={styles.icon}>
+                            <ChangesIcon />
+                        </ListItemIcon>
+                        <ListItemText>
+                            <Typography variant="inherit" noWrap>
+                                {t('web:cloud_changes')}
+                            </Typography>
+                        </ListItemText>
+                    </MenuItem>
+                    <Divider className={styles.dividerItem} />
+                    <MenuItem divider className={styles.item} onClick={() => openCloudSettingsMenu({ trash: true })}>
+                        <ListItemIcon className={styles.icon}>
+                            <TrashIcon />
+                        </ListItemIcon>
+                        <ListItemText>
+                            <Typography variant="inherit" noWrap>
+                                {t('shared_string_trash')}
+                            </Typography>
+                        </ListItemText>
+                    </MenuItem>
+                </>
+            )}
             <Popover
                 anchorOrigin={{
                     vertical: 'top',
