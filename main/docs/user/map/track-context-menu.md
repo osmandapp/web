@@ -495,7 +495,7 @@ Menu Options allows to make manipulation with the chosen track, Information Rout
 ![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_android.png)  
 
 - *<Translate android="true" ids="shared_string_show_on_map"/>* - shows or not the track on the map.
-- *<Translate android="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../map/tracks-on-map.md#track-appearance-android) for the track.
+- *<Translate android="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../map/tracks-on-map.md#track-appearance) for the track.
 - *<Translate android="true" ids="follow_track"/>* - starts navigation by [Follow track option](../navigation/setup/gpx-navigation.md).
 
 
@@ -527,7 +527,7 @@ Menu Options allows to make manipulation with the chosen track, Information Rout
 ![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_ios.png)  
 
 - *<Translate ios="true" ids="shared_string_show_on_map"/>* - shows or not the track on the map.
-- *<Translate ios="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../map/tracks-on-map.md#track-appearance-android) for the track.
+- *<Translate ios="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../map/tracks-on-map.md#track-appearance) for the track.
 - *<Translate ios="true" ids="shared_string_navigation"/>* - starts navigation by [Follow track option](../navigation/setup/gpx-navigation.md).
 
 
