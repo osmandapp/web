@@ -42,7 +42,7 @@ OsmAnd provides the ability to record and display tracks. This allows you to get
 
 ### Display tracks on the map
 
-OsmAnd allows you to view tracks on a map. Each point on the track corresponds to a specific location and contains information about time, speed and altitude. This allows you to visually assess the route, learn about the places you have visited and estimate the difficulty of the route by changes in altitude.  
+OsmAnd allows you [to view tracks on a map](../personal/tracks.md#show-tracks-on-map). Each point on the track corresponds to a specific location and contains information about time, speed and altitude. This allows you to visually assess the route, learn about the places you have visited and estimate the difficulty of the route by changes in altitude.  
 
 You can choose which tracks to show on the map and which to hide. You can do this in the [My Places](#tracks-in-my-places-menu) menu, the [Configure map](#tracks-in-configure-map-menu) menu, when saving a track in the [Plan a route](../plan-route/create-route.md#save-as-new-track) tool, or with [Route Details](../navigation/setup/route-details.md#save-as-a-new-track).  
 
@@ -63,7 +63,7 @@ You can choose which tracks to show on the map and which to hide. You can do thi
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*  
+*<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*
 
 ![Context menu of a track in iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![Context menu of a track in iOS](@site/static/img/personal/tracks/follow_track_2_ios.png)
 
@@ -71,7 +71,7 @@ You can choose which tracks to show on the map and which to hide. You can do thi
 
 </Tabs>
 
-You can read additional information in the [Tracks](../personal/tracks.md#follow-track) article.
+You can read additional information in the [Tracks](../personal/tracks.md#configure-map) article.
 
 
 #### Tracks in My Places menu
@@ -80,7 +80,7 @@ You can read additional information in the [Tracks](../personal/tracks.md#follow
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*  
+[*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*](../personal/tracks.md#single-track-menu)   
 
 ![My Places with tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
@@ -88,7 +88,7 @@ You can read additional information in the [Tracks](../personal/tracks.md#follow
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*  
+[*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → long tap on the chosen GPX track → Show on map*](../personal/tracks.md#single-track-menu)    
 
 ![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 </TabItem>

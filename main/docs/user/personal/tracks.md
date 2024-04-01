@@ -691,11 +691,15 @@ Menu with actions:
 
 <TabItem value="android" label="Android">
 
+*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>* 
+
 ![Tracks and Routes](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Tracks and Routes](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*  
 
 ![Context menu of a track in iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![Context menu of a track in iOS](@site/static/img/personal/tracks/follow_track_2_ios.png)
 
@@ -738,14 +742,14 @@ Provides convenient [track sorting](#sort-by).
 
 ### Show tracks on map
 
-Tracks are a separate data layer that can be shown or hidden using the appropriate option in the [Configure map](../map/configure-map-menu.md#map-data-layers) menu or [My Places](../personal/myplaces.md) menu. In addition, tapping Tracks item opens the track selection screen, allowing you to choose which track or multiple tracks to display on the map.  
+Tracks are a separate data layer that can be shown or hidden using the appropriate option in the [Configure map](../map/configure-map-menu.md#map-data-layers) menu or [My Places](../personal/myplaces.md) menu. In addition, tapping Tracks item opens [the track selection screen](#single-track-menu), allowing you to choose which track or multiple tracks to display on the map.  
 
 To display a track for a specific profile on the map, you can:
 1. Open **Configure map** and select **Tracks**. Then check the required track.  
-    You can hide one or more tracks by deselecting them, or hide them all at once by switching off the Tracks option in the Configure map menu: [*Menu → Configure Map → Tracks*](../map/tracks-on-map.md#tracks-in-configure-map-menu).
+    You can hide one or more tracks by deselecting them, or hide them all at once by switching off the Tracks option in the Configure map menu: [*Menu → Configure Map → Tracks*](#configure-map).
 
 2. Open the **My Places** menu and then **Tracks**. The *Visible* folder displays the tracks already selected.  
-    In the *Rec*, *Import* and other folders, you can select one or more tracks to display on the map by tapping **Show on map** in the [Folder](#folder-menu) or [Track](#single-track-menu) menu. Go to: [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*](#configure-map).
+    In the *Rec*, *Import* and other folders, you can select one or more tracks to display on the map by tapping **Show on map** in the [Folder](#folder-menu) or [Track](#single-track-menu) menu. Go to: [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*](#view-all-tracks).
 
 
 ### Open tracks menu
