@@ -581,7 +581,7 @@ All tracks ever recorded, created or imported are automatically displayed in the
 
 <TabItem value="ios" label="iOS">
 
-![Context menu of a track in iOS](@site/static/img/personal/tracks/folder_menu_ios.png)
+![Context menu of a track in iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
 
 </TabItem>
 
@@ -685,13 +685,11 @@ Menu with actions:
 - **Delete**. Deletes the selected track that you do not need.
 
 
-### Follow track
+### Configure map
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
-
-*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>* 
 
 ![Tracks and Routes](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Tracks and Routes](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
 
@@ -699,30 +697,20 @@ Menu with actions:
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*  
-
 ![Context menu of a track in iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![Context menu of a track in iOS](@site/static/img/personal/tracks/follow_track_2_ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-1. **Places from which tracks can be opened**.
-- *Plan route → Open existing track*
-- [*Plan route → Add to a track*](../plan-route/create-route.md#menu-options)
-- [*Navigation → Follow track → Select*](../navigation/setup/gpx-navigation.md#follow-track-menu)
-- [*Markers → Groups → Add → Track waypoints*](../map/point-layers-on-map.md#track-waypoints)
-- [*OsmAnd Development → Settings → Simulate your position → Select track*](../plugins/development.md#gpx-track-simulation)
-- [*Quick action → Simulate your position → Select track*](../widgets/quick-action.md)
-
-2. **Actions**.
+1. **Actions**.
 - **Search**. Opens the track name search screen with a list of all existing tracks and the ability to sort them.  
 - **Cancel**. Closes the Search without applying the changes.
 - **Import**. Opens a list of files on your device for importing tracks. In Android, it is located in the three-dot menu.
 - [Change appearance](../map/tracks-on-map.md#track-appearance) (*Android only, located in the three-dot menu*). Goes to the option of customising the appearance of the selected tracks.
 - **Switch folder** (*Android only*). You can select the required folder from the list, which is especially convenient if there are many folders.
 
-3. **Sort for tracks**
+2. **Sort for tracks**
 
 <Tabs groupId="operating-systems">
 
@@ -750,32 +738,46 @@ Provides convenient [track sorting](#sort-by).
 
 ### Show tracks on map
 
+Tracks are a separate data layer that can be shown or hidden using the appropriate option in the [Configure map](../map/configure-map-menu.md#map-data-layers) menu or [My Places](../personal/myplaces.md) menu. In addition, tapping Tracks item opens the track selection screen, allowing you to choose which track or multiple tracks to display on the map.  
+
+To display a track for a specific profile on the map, you can:
+1. Open **Configure map** and select **Tracks**. Then check the required track.  
+    You can hide one or more tracks by deselecting them, or hide them all at once by switching off the Tracks option in the Configure map menu: [*Menu → Configure Map → Tracks*](../map/tracks-on-map.md#tracks-in-configure-map-menu).
+
+2. Open the **My Places** menu and then **Tracks**. The *Visible* folder displays the tracks already selected.  
+    In the *Rec*, *Import* and other folders, you can select one or more tracks to display on the map by tapping **Show on map** in the [Folder](#folder-menu) or [Track](#single-track-menu) menu. Go to: [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*](#configure-map).
+
+
+### Open tracks menu
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Tracks and Routes](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Tracks and Routes](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
+![Tracks and Routes](@site/static/img/personal/tracks/open_tracks_menu_3_andr.png)  ![Tracks and Routes](@site/static/img/personal/tracks/open_tracks_menu_2_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Context menu of a track in iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![Context menu of a track in iOS](@site/static/img/personal/tracks/follow_track_2_ios.png)
+![Context menu of a track in iOS](@site/static/img/personal/tracks/open_tracks_menu_3_ios.png)  ![Context menu of a track in iOS](@site/static/img/personal/tracks/open_tracks_menu_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Tracks are a separate data layer that can be shown or hidden using the appropriate option in the [Configure map](../map/configure-map-menu.md#map-data-layers) menu or [My Places](../personal/myplaces.md) menu. In addition, tapping Tracks item opens the track selection screen, allowing you to choose which track or multiple tracks to display on the map.  
+**Places from which tracks can be opened**.
+- [*Plan route → Open existing track*](../plan-route/create-route.md#menu-options)
+- [*Plan route → Add to a track*](../plan-route/create-route.md#menu-options)
+- [*Navigation → Follow track → Select*](../navigation/setup/gpx-navigation.md#follow-track-menu)
+- [*Markers → Groups → Add → Track waypoints*](../map/point-layers-on-map.md#track-waypoints)
+- [*OsmAnd Development → Settings → Simulate your position → Select track*](../plugins/development.md#gpx-track-simulation)
+- [*Quick action → Simulate your position → Select track*](../widgets/quick-action.md)
 
-To display a track for a specific profile on the map, you can:
-1. Open **Configure map** and select **Tracks**. Then check the required track.  
-    You can hide one or more tracks by deselecting them, or hide them all at once by switching off the Tracks option in the Configure map menu: *Menu → Configure Map → Tracks*.
+With the various tools provided by OsmAnd, you can open the entire track list and track folders on your device.
 
-2. Open the **My Places** menu and then **Tracks**. The *Visible* folder displays the tracks already selected.  
-    In the *Rec*, *Import* and other folders, you can select one or more tracks to display on the map by tapping **Show on map** in the [Folder](#folder-menu) or [Track](#single-track-menu) menu. Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.
 
-### Options of track context menu
+### Options of Tracks context menu
 
 <Tabs groupId="operating-systems">
 
