@@ -48,8 +48,8 @@ Feures **Tracks** functionality lets you create and save routes so you can easil
 - Recording in the application using [Trip recording](../plugins/trip-recording.md) plugin. 
 
 3. **Tracks management special features in OsmAnd**.
-- Enabling and disabling tracks on the map.
-- Customizing the appearance, edit and analyze tracks.
+- Enabling and disabling [tracks on the map](#show-tracks-on-map).
+- Customizing [the appearance](../map/tracks-on-map.md#track-appearance), [edit](#create--edit-track) and [analyze tracks](../map/tracks-on-map.md#analyze-track-on-map).
 - Use for navigation.
 
 4. **OsmAnd has no limit on the number of tracks to store and display.**
