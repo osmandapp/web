@@ -212,11 +212,13 @@ This information widget combines alert types such as **Pedestrian crosswalks** a
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-screen-alert(1).png)  
 
+<!--
 ### Speedometer
 
 In CarPlay it is not possible to set the display of Speedometer, you need to configure Speedometer in the application before starting the navigation and connecting your device to the vehicle for your navigation Profile. Read more [here](../widgets/info-widgets.md#speedometer) on how to add Speedometer to the screen.
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/speedometer_carplay_ios.png)  
+-->
 
 ### Map appearance (3D)
 
