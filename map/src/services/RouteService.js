@@ -56,7 +56,7 @@ export function RouteService() {
                 obj['start'] = startPoint.lat.toFixed(6) + ',' + startPoint.lng.toFixed(6);
             }
             if (finishPoint) {
-                obj['finish'] = finishPoint.lat.toFixed(6) + ',' + finishPoint.lng.toFixed(6);
+                obj['end'] = finishPoint.lat.toFixed(6) + ',' + finishPoint.lng.toFixed(6);
             }
             if (viaPoints?.length > 0) {
                 obj['via'] = viaPoints.map((i) => i.lat.toFixed(6) + ',' + i.lng.toFixed(6)).join(';');
