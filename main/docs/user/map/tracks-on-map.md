@@ -44,7 +44,7 @@ OsmAnd provides the ability to record and display tracks. This allows you to get
 
 OsmAnd allows you [to view tracks on a map](../personal/tracks.md#show-tracks-on-map). Each point on the track corresponds to a specific location and contains information about time, speed and altitude. This allows you to visually assess the route, learn about the places you have visited and estimate the difficulty of the route by changes in altitude.  
 
-You can choose which tracks to show on the map and which to hide. You can do this in the [My Places](#tracks-in-my-places-menu) menu, the [Configure map](#tracks-in-configure-map-menu) menu, when saving a track in the [Plan a route](../plan-route/create-route.md#save-as-new-track) tool, or with [Route Details](../navigation/setup/route-details.md#save-as-a-new-track).  
+You can choose which tracks to show on the map and which to hide. You can do this in the [My Places](#tracks-in-my-places-menu) menu, the [Configure map](#tracks-in-configure-map-menu) menu, and in the [Track Context menu](../map/track-context-menu.md#quick-actions) when saving a track in the [Plan a route](../plan-route/create-route.md#save-as-new-track) tool, or with [Route Details](../navigation/setup/route-details.md#save-as-a-new-track).  
 
 ![Tracks on the map Android](@site/static/img/map/tracks_layer_android.png) ![Tracks on the map iOS](@site/static/img/map/tracks_layer_ios.png) 
 
@@ -98,6 +98,26 @@ You can read additional information in the [Tracks](../personal/tracks.md#config
 To show track on the map, you need to:
 - *Android* - tap on the three-dots menu in the field with the required track.
 - *iOS* - long-press on the required track in the list.
+
+#### Tracks in Track Context menu
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Track context menu overview Android 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Track context menu overview iOS 3](@site/static/img/personal/tracks/track_context_overview_ios_3.png)
+
+</TabItem>
+
+</Tabs>
+
+*Show / hide* buttons allow to anable or disable displaying of a track on the map.
 
 
 ### Track Appearance

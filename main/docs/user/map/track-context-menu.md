@@ -83,7 +83,6 @@ Buttons panel with the next action: Show/Hide a track on the map, opening [Appea
 
 ![Track context menu overview Android 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
 
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -94,7 +93,7 @@ Buttons panel with the next action: Show/Hide a track on the map, opening [Appea
 
 </Tabs>
 
-- *Show / hide* buttons allow to anable or disable displaying of a track on the map.
+- [*Show / hide* buttons](../map/tracks-on-map.md#tracks-in-track-context-menu) allow to anable or disable displaying of a track on the map.
 - *Appearance* - is used to customise the [Appearance](../map/tracks-on-map.md#track-appearance) of your track.
 - *Edit track* (**Android**) - opens the track in *[Plan route tool](../plan-route/create-route.md)* or *Export* (**iOS**) allows to export a track.
 - *Directions* - opens the track in *[Navigation](../navigation/setup/gpx-navigation.md#start-gpx-navigation)* mode.

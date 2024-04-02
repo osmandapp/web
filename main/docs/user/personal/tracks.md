@@ -34,7 +34,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
  
 </Tabs>
 
-Feures **Tracks** functionality lets you create and save routes so you can easily return to them later or share them with others. A trip planning feature lets you customize your routes based on your preferences and interests. You also get access to preloaded routes to popular destinations and attractions.
+Features **Tracks** functionality lets you create and save routes so you can easily return to them later or share them with others. A trip planning feature lets you customize your routes based on your preferences and interests. You also get access to preloaded routes to popular destinations and attractions.
 
 1. **Main Features**. 
 - All tracks in OsmAnd are stored in the folder:    
@@ -750,6 +750,8 @@ To display a track for a specific profile on the map, you can:
 
 2. Open the **My Places** menu and then **Tracks**. The *Visible* folder displays the tracks already selected.  
     In the *Rec*, *Import* and other folders, you can select one or more tracks to display on the map by tapping **Show on map** in the [Folder](#folder-menu) or [Track](#single-track-menu) menu. Go to: [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*](#view-all-tracks).
+
+3. Tap the selected track, and in the **Tracks context menu** using the [*Show / Hide*](../map/track-context-menu.md#quick-actions) button you can enable or disable the display of the track on the map.
 
 
 ### Open tracks menu
