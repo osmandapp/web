@@ -1,6 +1,6 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:cc="http://creativecommons.org/ns#"  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:svg="http://www.w3.org/2000/svg"  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"  version="1.1"  id="svg8"  sodipodi:docname="hampshire_gate.svg"  style="fill:none"  inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:cc="http://creativecommons.org/ns#"  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:svg="http://www.w3.org/2000/svg"  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"  version="1.1"  id="svg8"  sodipodi:docname="hampshire_gate.svg"  style="fill:none"  inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
 
-<g transform="translate(0.000000, 0.000000) scale(2.500000 2.500000) "> 
+<g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
 
   <metadata
      id="metadata10">
@@ -51,10 +51,8 @@
      id="path12"
      d="M 3.1992188,1.6503906 A 1.0170508,1.0170508 0 0 0 2.1816406,2.6679688 v 2.8398437 a 1.0170508,1.0170508 0 0 0 -0.53125,0.8925781 v 0.5332032 a 1.0170508,1.0170508 0 0 0 0.53125,0.890625 v 0.8828124 a 1.0170508,1.0170508 0 0 0 -0.53125,0.8925782 v 0.5332026 a 1.0170508,1.0170508 0 0 0 0.53125,0.890626 v 2.308593 a 1.0170508,1.0170508 0 0 0 1.0175782,1.017578 h 1.0683593 a 1.0170508,1.0170508 0 0 0 0.8007813,-0.390625 1.0170508,1.0170508 0 0 0 0.7988281,0.390625 h 1.0664063 a 1.0170508,1.0170508 0 0 0 0.8007812,-0.390625 1.0170508,1.0170508 0 0 0 0.7988281,0.390625 h 1.0664063 a 1.0170508,1.0170508 0 0 0 1.0117186,-0.916015 l 0.01563,-0.148438 h 0.08789 v 0.04687 a 1.0170508,1.0170508 0 0 0 1.017578,1.017578 h 1.068359 a 1.0170508,1.0170508 0 0 0 1.017578,-1.017578 v -0.171875 a 1.0170508,1.0170508 0 0 0 0.53125,-0.892578 v -0.535156 a 1.0170508,1.0170508 0 0 0 -0.53125,-0.890625 V 5.6933594 a 1.0170508,1.0170508 0 0 0 0.53125,-0.8925782 V 4.2675781 a 1.0170508,1.0170508 0 0 0 -0.53125,-0.890625 V 2.6679688 A 1.0170508,1.0170508 0 0 0 12.800781,1.6503906 H 11.732422 A 1.0170508,1.0170508 0 0 0 11.199219,1.8027344 1.0170508,1.0170508 0 0 0 10.667969,1.6503906 H 9.5996094 A 1.0170508,1.0170508 0 0 0 8.5878906,2.5683594 L 8.5195312,3.25 A 1.0170508,1.0170508 0 0 0 7.9511719,3.4335938 V 2.6679688 A 1.0170508,1.0170508 0 0 0 6.9335938,1.6503906 H 5.8671875 A 1.0170508,1.0170508 0 0 0 5.0664062,2.0410156 1.0170508,1.0170508 0 0 0 4.2675781,1.6503906 Z m 4.7519531,6.3007813 h 0.097656 l -0.0625,0.6308593 h -0.035156 z" />
 
-</g>
-
-
-<g transform="translate(8.000000, 8.000000) scale(2.000000 2.000000) "> 
+</g>%n%n
+<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
 
   <metadata
      id="metadata14">
@@ -142,6 +140,4 @@
      id="path12-5-6"
      sodipodi:nodetypes="ccccc" />
 
-</g>
-
-</svg>
+</g>%n%n</svg>

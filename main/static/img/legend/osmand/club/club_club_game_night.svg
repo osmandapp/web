@@ -1,11 +1,9 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:cc="http://creativecommons.org/ns#"  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:svg="http://www.w3.org/2000/svg"  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"  version="1.1"  id="svg8"  style="fill:none"  sodipodi:docname="game.svg"  inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:cc="http://creativecommons.org/ns#"  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:svg="http://www.w3.org/2000/svg"  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"  version="1.1"  id="svg8"  style="fill:none"  sodipodi:docname="game.svg"  inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
 
-<g transform="translate(0.000000, 0.000000) scale(2.000000 2.000000) "> 
+<g transform="translate(130.000000, 0.000000) scale(2.000000 2.000000) "> 
 <g id="g836"><path d="M10 0a10 10 0 1 1-.02 19.98A10 10 0 0 1 10 0z" id="path2" style="opacity:.953;fill:#65af9d;fill-opacity:1"/><path d="M10 19a9 9 0 1 0 0-18 9 9 0 0 0 0 18zm0 1a10 10 0 1 0 0-20 10 10 0 0 0 0 20z" id="path4" style="clip-rule:evenodd;opacity:.95;fill:#404040;fill-rule:evenodd"/></g><defs id="defs11"><clipPath id="clip0"><path d="M0 0h20v20H0V0z" fill="#fff" id="path8"/></clipPath></defs>
-</g>
-
-
-<g transform="translate(8.000000, 8.000000) scale(2.000000 2.000000) "> 
+</g>%n%n
+<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
 
   <metadata
      id="metadata12">
@@ -62,6 +60,4 @@
      d="M 12 22 C 6.4285104 21.999762 1.9997615 26.409551 2 32 C 1.9997615 37.590449 6.4075979 42.000238 11.998047 42 L 12 42 C 15.221111 41.9968 18.206472 40.57023 20.109375 38 L 27.886719 38 C 29.790518 40.571484 32.777279 41.998199 36 42 C 41.590449 42.000239 46.000239 37.590449 46 32 C 46.000239 26.409551 41.57149 21.999761 36 22 L 12 22 z M 10 26 L 14 26 L 14 30 L 18 30 L 18 34 L 14 34 L 14 38 L 10 38 L 10 34 L 6 34 L 6 30 L 10 30 L 10 26 z M 36 26 A 2 2 0 0 1 38 28 A 2 2 0 0 1 36 30 A 2 2 0 0 1 34 28 A 2 2 0 0 1 36 26 z M 32 30 A 2 2 0 0 1 34 32 A 2 2 0 0 1 32 34 A 2 2 0 0 1 30 32 A 2 2 0 0 1 32 30 z M 40 30 A 2 2 0 0 1 42 32 A 2 2 0 0 1 40 34 A 2 2 0 0 1 38 32 A 2 2 0 0 1 40 30 z M 36 34 A 2 2 0 0 1 38 36 A 2 2 0 0 1 36 38 A 2 2 0 0 1 34 36 A 2 2 0 0 1 36 34 z "
      id="path880" />
 
-</g>
-
-</svg>
+</g>%n%n</svg>

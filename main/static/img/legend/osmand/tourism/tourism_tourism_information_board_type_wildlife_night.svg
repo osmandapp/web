@@ -1,6 +1,6 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:cc="http://creativecommons.org/ns#"  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:svg="http://www.w3.org/2000/svg"  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"  version="1.1"  id="svg6"  style="fill:none"  sodipodi:docname="board_type_wildlife.svg"  inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:cc="http://creativecommons.org/ns#"  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:svg="http://www.w3.org/2000/svg"  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"  version="1.1"  id="svg6"  style="fill:none"  sodipodi:docname="board_type_wildlife.svg"  inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
 
-<g transform="translate(0.000000, 0.000000) scale(2.500000 2.500000) "> 
+<g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
 
   <metadata
      id="metadata10">
@@ -42,10 +42,8 @@
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cccccccccccccccccccccc" />
 
-</g>
-
-
-<g transform="translate(9.000000, 9.000000) scale(1.833333 1.833333) "> 
+</g>%n%n
+<g transform="translate(139.000000, 9.000000) scale(0.458333 0.458333) "> 
 
   <metadata
      id="metadata11">
@@ -97,6 +95,4 @@
      d="M13 10h-.1l-.12.03c-.22.05-.43.17-.57.34a.88.88 0 0 0-.21.58c0 1.97 1.42 3.79 3.56 5.13 1.17.74 2.6 1.34 4.19 1.73-.47.33-.89.73-1.25 1.15a3.27 3.27 0 0 0-2.47-1.5c-1.68-.22-3.37.22-3.44.24a.81.81 0 0 0-.5.43c-.1.2-.12.43-.03.63.2.45 1.3 2.7 2.97 3.17a5.05 5.05 0 0 0 2.03.12c-.04.29-.06.58-.06.89C17 26.63 21.18 34 24 34c2.82 0 7-7.37 7-11.06 0-.3-.02-.6-.06-.9a6.02 6.02 0 0 0 2.03-.11c1.66-.46 2.77-2.72 2.97-3.17a.73.73 0 0 0-.03-.63.81.81 0 0 0-.5-.43 9.86 9.86 0 0 0-3.44-.23 3.27 3.27 0 0 0-2.47 1.5 7 7 0 0 0-1.25-1.16c1.58-.4 2.98-1 4.16-1.73 2.14-1.34 3.59-3.16 3.59-5.13a.86.86 0 0 0-.07-.35.92.92 0 0 0-.22-.3 1 1 0 0 0-.71-.28 1.07 1.07 0 0 0-.71.27.92.92 0 0 0-.22.3.86.86 0 0 0-.07.36c0 1.09-.94 2.49-2.72 3.6-.55.35-1.19.65-1.87.93A7.6 7.6 0 0 0 31 10.95a.86.86 0 0 0-.07-.35.92.92 0 0 0-.22-.3 1 1 0 0 0-.71-.28 1.08 1.08 0 0 0-.71.27.92.92 0 0 0-.22.3.86.86 0 0 0-.07.36c0 1.29-.57 2.74-1.5 3.8A4.64 4.64 0 0 1 24 16.5a4.64 4.64 0 0 1-3.5-1.73 6.09 6.09 0 0 1-1.5-3.8.86.86 0 0 0-.09-.41.94.94 0 0 0-.28-.33 1.08 1.08 0 0 0-.85-.19c-.22.05-.43.17-.57.34a.88.88 0 0 0-.21.58c0 1.6.6 3.22 1.63 4.56a11.4 11.4 0 0 1-1.94-.95C14.9 13.44 14 12.04 14 10.96a.86.86 0 0 0-.06-.37.92.92 0 0 0-.22-.3A1.07 1.07 0 0 0 13 10zm7.5 12.94c.83 0 1.5.62 1.5 1.38 0 .76-.67 1.38-1.5 1.38s-1.5-.62-1.5-1.38c0-.76.67-1.38 1.5-1.38zm7 0c.83 0 1.5.62 1.5 1.38 0 .76-.67 1.38-1.5 1.38s-1.5-.62-1.5-1.38c0-.76.67-1.38 1.5-1.38zM24 29.39c.83 0 1.5.12 1.5.7 0 .56-.67 1.38-1.5 1.38s-1.5-.82-1.5-1.39.67-.69 1.5-.69z"
      id="path2" />
 
-</g>
-
-</svg>
+</g>%n%n</svg>

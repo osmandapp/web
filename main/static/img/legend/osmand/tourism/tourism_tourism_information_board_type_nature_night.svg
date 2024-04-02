@@ -1,6 +1,6 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:cc="http://creativecommons.org/ns#"  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:svg="http://www.w3.org/2000/svg"  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"  version="1.1"  id="svg6"  style="fill:none"  sodipodi:docname="board_type_nature.svg"  inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:cc="http://creativecommons.org/ns#"  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:svg="http://www.w3.org/2000/svg"  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"  version="1.1"  id="svg6"  style="fill:none"  sodipodi:docname="board_type_nature.svg"  inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
 
-<g transform="translate(0.000000, 0.000000) scale(2.500000 2.500000) "> 
+<g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
 
   <metadata
      id="metadata10">
@@ -42,10 +42,8 @@
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cccccccccccccccccccccc" />
 
-</g>
-
-
-<g transform="translate(9.000000, 9.000000) scale(1.833333 1.833333) "> 
+</g>%n%n
+<g transform="translate(139.000000, 9.000000) scale(0.458333 0.458333) "> 
 
   <metadata
      id="metadata12">
@@ -101,6 +99,4 @@
      d="M32 22c-3.94 3.79-6.89 7.74-8 12h14V22a447 447 0 0 0-6 0zm-2.03.03c-6.27.12-12.05.8-19.97 3.97v8h8c2.46-3.86 6.23-7.83 11.97-11.97z"
      id="rect882" />
 
-</g>
-
-</svg>
+</g>%n%n</svg>

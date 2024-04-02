@@ -1,12 +1,8 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg8" style="fill:none">
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg8" style="fill:none">
 
-<g transform="translate(0.000000, 0.000000) scale(2.000000 2.000000) "> 
+<g transform="translate(130.000000, 0.000000) scale(2.000000 2.000000) "> 
 <g id="g836"><path d="M10 0a10 10 0 1 1-.02 19.98A10 10 0 0 1 10 0z" id="path2" style="opacity:.953;fill:#65af9d;fill-opacity:1"/><path d="M10 19a9 9 0 1 0 0-18 9 9 0 0 0 0 18zm0 1a10 10 0 1 0 0-20 10 10 0 0 0 0 20z" id="path4" style="clip-rule:evenodd;opacity:.95;fill:#404040;fill-rule:evenodd"/></g><defs id="defs11"><clipPath id="clip0"><path d="M0 0h20v20H0V0z" fill="#fff" id="path8"/></clipPath></defs>
-</g>
-
-
-<g transform="translate(8.000000, 8.000000) scale(2.000000 2.000000) "> 
+</g>%n%n
+<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
 <path style="clip100-rule:evenodd;fill:#fff;fill-opacity:1;fill-rule:evenodd" d="M42 6a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm0 12v-5a1 1 0 1 0 2 0V9a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0v5z" id="path8-3"/><path style="clip100-rule:evenodd;fill:#fff;fill-opacity:1;fill-rule:evenodd" d="M42 22a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm0 12v-5a1 1 0 1 0 2 0v-4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0v5z" id="path8-6"/><path style="color:#000;font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip100-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000;solid-opacity:1;vector-effect:none;fill:#fff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" d="M8 8c-2.2 0-4 1.8-4 4s1.8 4 4 4c.73 0 1.4-.21 2-.56V38c0 2.34 2.1 4.03 4.03 4.03 2.2 0 4-1.8 4-4V38H32V11.59l-.05-.05a4 4 0 0 0-3.49-3.5L28.41 8H8.02zm0 2h.05c1.1.03 1.95.9 1.95 2 0 1.12-.88 2-2 2s-2-.88-2-2c0-1.11.88-2 2-2zm5 2h6a1 1 0 1 1 0 2h-6a1 1 0 1 1 0-2zm0 4h16a1 1 0 1 1 0 2H13a1 1 0 1 1 0-2zm0 4h16a1 1 0 1 1 0 2H13a1 1 0 1 1 0-2zm0 4h16a1 1 0 1 1 0 2H13a1 1 0 1 1 0-2zm0 4h16a1 1 0 1 1 0 2H13a1 1 0 1 1 0-2zm0 4h16a1 1 0 1 1 0 2H13a1 1 0 1 1 0-2zm6.63 8A6 6 0 0 1 14 44h20c2.2 0 4-1.8 4-4z" id="path918"/>
-</g>
-
-</svg>
+</g>%n%n</svg>

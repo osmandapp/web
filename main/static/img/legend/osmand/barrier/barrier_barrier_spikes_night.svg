@@ -1,17 +1,13 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
 
-<g transform="translate(0.000000, 0.000000) scale(2.500000 2.500000) "> 
+<g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
 
  <path transform="matrix(.8 0 0 .8 1.6314 1.6)" d="m3.4688 1.9258a1.4804 1.4804 0 0 0-0.39648 1.832l2.666 5.2207h-3.8574a1.4804 1.4804 0 0 0-1.4805 1.4805v2.457a1.4804 1.4804 0 0 0 1.4805 1.4805h12.553a1.4804 1.4804 0 0 0 1.4805-1.4805v-2.457a1.4804 1.4804 0 0 0-1.4805-1.4805h-0.7168l-8.375-7.0293a1.4804 1.4804 0 0 0-1.873-0.023438z" fill="#ebe7e4" opacity=".8" stop-color="#000000" stroke-width="1.9531" style="-inkscape-stroke:none;font-variation-settings:normal"/>
 
-</g>
-
-
-<g transform="translate(8.000000, 8.000000) scale(2.000000 2.000000) "> 
+</g>%n%n
+<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
 
 <rect x="4" y="32" width="40" height="8" fill="#444444"/>
 <path d="M12 8L40 32H24L12 8Z" fill="#444444" fill-opacity="0.7"/>
 
-</g>
-
-</svg>
+</g>%n%n</svg>

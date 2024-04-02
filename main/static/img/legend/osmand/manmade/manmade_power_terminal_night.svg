@@ -1,6 +1,6 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:cc="http://creativecommons.org/ns#"  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:svg="http://www.w3.org/2000/svg"  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"  version="1.1"  id="svg30"  sodipodi:docname="power_terminal.svg"  style="fill:none"  inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:cc="http://creativecommons.org/ns#"  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:svg="http://www.w3.org/2000/svg"  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"  version="1.1"  id="svg30"  sodipodi:docname="power_terminal.svg"  style="fill:none"  inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
 
-<g transform="translate(0.000000, 0.000000) scale(2.500000 2.500000) "> 
+<g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
 
   <metadata
      id="metadata10">
@@ -51,10 +51,8 @@
      d="m 12,4 a 2.0002,2.0002 0 0 0 -2,2 v 6.011719 l -5.03125,-0.05078 c -1.5807616,-0.03161 -3.0431542,1.3897 -3.0585938,2.970703 -0.01544,1.581002 1.4189226,3.030029 3,3.029297 L 10,18.011719 v 0.07031 H 5.0703125 c -1.5848322,-0.02241 -3.0410156,1.41501 -3.0410156,3 0,1.584991 1.4561834,3.022414 3.0410156,3 H 10 V 40 a 2.0002,2.0002 0 0 0 2,2 h 24 a 2.0002,2.0002 0 0 0 2,-2 V 24 h 4.972656 c 1.584832,0.02241 3.041016,-1.415009 3.041016,-3 0,-1.584991 -1.456184,-3.022413 -3.041016,-3 1.584832,0.02241 3.041016,-1.415009 3.041016,-3 0,-1.584991 -1.456184,-3.022413 -3.041016,-3 H 38 V 6 A 2.0002,2.0002 0 0 0 36,4 h -1 z m 4,6 h 8 a 2.0002,2.0002 0 0 0 -1.818359,1.166016 l -5.728516,12.484375 a 2.0002,2.0002 0 0 0 1.818359,2.833984 h 2.777344 l -3.689453,8.738281 A 2.0002,2.0002 0 0 0 17.201172,36 H 16 Z m 12.951172,0 H 32 v 4.832031 l 0.02734,-0.326172 c -0.05342,0.323228 -0.05342,0.655288 0,0.978516 L 32,15.158203 v 4.689453 a 2.0002,2.0002 0 0 0 -1.728516,-1 h -2.849609 l 3.275391,-5.873047 A 2.0002,2.0002 0 0 0 28.951172,10 Z M 32,21.853516 V 36 H 21.677734 L 31.886719,22.027344 A 2.0002,2.0002 0 0 0 32,21.853516 Z"
      transform="matrix(0.288,0,0,0.288,1.0862706,1.0426666)" />
 
-</g>
-
-
-<g transform="translate(9.000000, 9.000000) scale(1.833333 1.833333) "> 
+</g>%n%n
+<g transform="translate(139.000000, 9.000000) scale(0.458333 0.458333) "> 
 
   <metadata
      id="metadata36">
@@ -133,6 +131,4 @@
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cc" />
 
-</g>
-
-</svg>
+</g>%n%n</svg>

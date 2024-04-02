@@ -1,6 +1,6 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:cc="http://creativecommons.org/ns#"  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:svg="http://www.w3.org/2000/svg"  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"  version="1.1"  id="svg6"  sodipodi:docname="arch.svg"  inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:cc="http://creativecommons.org/ns#"  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:svg="http://www.w3.org/2000/svg"  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"  version="1.1"  id="svg6"  sodipodi:docname="arch.svg"  inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
 
-<g transform="translate(0.000000, 0.000000) scale(2.500000 2.500000) "> 
+<g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
 
   <metadata
      id="metadata10">
@@ -53,10 +53,8 @@
      d="M 4,0.65625 A 0.67803385,0.67803385 0 0 0 3.4121094,0.99804688 C 1.3604667,4.5856736 0.66524504,9.6208456 0.65625,14.664062 a 0.67803385,0.67803385 0 0 0 0.6777344,0.679688 h 2 A 0.67803385,0.67803385 0 0 0 4.0019531,14.783203 C 4.4929936,12.00064 5.1919309,9.9392861 5.9433594,8.6289062 6.6947878,7.3185264 7.4328133,6.84375 8,6.84375 c 0.5671867,0 1.3052122,0.4747764 2.056641,1.7851562 0.751428,1.3103799 1.450365,3.3717338 1.941406,6.1542968 a 0.67803385,0.67803385 0 0 0 0.667969,0.560547 h 2 A 0.67803385,0.67803385 0 0 0 15.34375,14.662109 C 15.313268,9.2099178 14.567084,4.5136966 12.591797,1.0019531 A 0.67803385,0.67803385 0 0 0 12,0.65625 Z"
      transform="matrix(0.8,0,0,0.8,1.6000008,1.6)" />
 
-</g>
-
-
-<g transform="translate(8.000000, 8.000000) scale(2.000000 2.000000) "> 
+</g>%n%n
+<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
 
   <metadata
      id="metadata8">
@@ -96,6 +94,4 @@
      d="M12 4h24c5.65 10.04 7.91 23.83 8 40h-6c-6-34-22-34-28 0H4c.03-14.94 2.16-29.79 8-40z"
      id="rect821" />
 
-</g>
-
-</svg>
+</g>%n%n</svg>

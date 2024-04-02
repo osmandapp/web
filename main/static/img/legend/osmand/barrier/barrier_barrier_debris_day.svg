@@ -1,6 +1,6 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:cc="http://creativecommons.org/ns#"  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:svg="http://www.w3.org/2000/svg"  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"  version="1.1"  id="svg32"  style="fill:none"  sodipodi:docname="debris.svg"  inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:cc="http://creativecommons.org/ns#"  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:svg="http://www.w3.org/2000/svg"  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"  version="1.1"  id="svg32"  style="fill:none"  sodipodi:docname="debris.svg"  inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
 
-<g transform="translate(0.000000, 0.000000) scale(2.500000 2.500000) "> 
+<g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
 
   <metadata
      id="metadata8">
@@ -41,10 +41,8 @@
      d="M 9.9942639,0.55246327 A 0.951007,0.951007 0 0 0 9.8096023,0.57092613 L 7.2243407,1.1895422 a 0.951007,0.951007 0 0 0 -0.6555485,0.581684 0.951007,0.951007 0 0 0 -0.350857,0.3693225 l -0.018466,0.036936 A 0.951007,0.951007 0 0 0 5.69165,2.2051847 L 3.4018466,2.9807631 A 0.951007,0.951007 0 0 0 2.7555311,3.922536 L 2.7739972,4.2272278 2.5985688,4.1625918 A 0.951007,0.951007 0 0 0 1.3890355,4.8735393 L 0.91814863,7.163342 A 0.951007,0.951007 0 0 0 1.6567948,8.2805442 L 0.81658469,9.0376564 A 0.951007,0.951007 0 0 0 0.50266006,9.6839722 0.951007,0.951007 0 0 0 0.31799855,10.237955 v 1.735819 a 0.951007,0.951007 0 0 0 0.21236083,0.581684 0.951007,0.951007 0 0 0 -0.24929314,0.646314 v 0.618617 A 0.951007,0.951007 0 0 0 1.2320734,14.762167 H 14.767765 a 0.951007,0.951007 0 0 0 0.951007,-0.941774 v -0.618616 a 0.951007,0.951007 0 0 0 -0.230827,-0.618616 0.951007,0.951007 0 0 0 -0.09233,-1.329563 l -0.26776,-0.230827 a 0.951007,0.951007 0 0 0 0.415489,-0.738647 L 15.718777,6.9879181 A 0.951007,0.951007 0 0 0 15.441785,6.267738 0.951007,0.951007 0 0 0 15.43257,6.2585226 0.951007,0.951007 0 0 0 14.601593,5.7599365 h -0.0831 L 13.872156,3.931791 A 0.951007,0.951007 0 0 0 12.80112,3.3131749 V 2.3714009 A 0.951007,0.951007 0 0 0 12.754957,2.0944087 0.951007,0.951007 0 0 0 12.016311,0.86640901 L 10.188161,0.5524847 a 0.951007,0.951007 0 0 0 -0.184661,0 z"
      inkscape:connector-curvature="0" />
 
-</g>
-
-
-<g transform="translate(8.000000, 8.000000) scale(2.000000 2.000000) "> 
+</g>%n%n
+<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
 
   <metadata
      id="metadata22">
@@ -140,6 +138,4 @@
      d="M2 42v2h44v-2z"
      id="path847" />
 
-</g>
-
-</svg>
+</g>%n%n</svg>

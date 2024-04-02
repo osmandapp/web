@@ -1,6 +1,6 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
 
-<g transform="translate(0.000000, 0.000000) scale(2.000000 2.000000) "> 
+<g transform="translate(130.000000, 0.000000) scale(2.000000 2.000000) "> 
 
 <g clip-path="url(#clip0)">
 <path opacity="0.953" d="M9.99934 0C15.514 0 20 4.44646 20 10C20 15.5172 15.514 20 9.99934 20C4.48599 20 0 15.5172 0 10C0 4.44646 4.48599 0 9.99934 0V0Z" fill="#878787"/>
@@ -12,10 +12,8 @@
 </clipPath>
 </defs>
 
-</g>
-
-
-<g transform="translate(8.000000, 8.000000) scale(2.000000 2.000000) "> 
+</g>%n%n
+<g transform="translate(138.000000, 8.000000) scale(0.041379 0.041379) "> 
 
 <path fill-rule="evenodd" clip100-rule="evenodd" d="M159.276 112.172C157.444 122.794 59.4897 541.938 59.4897 541.938L520.925 538.039L420.906 110.436L159.276 112.172Z" stroke="#ffffff" stroke-width="22.8525" stroke-linejoin="round"/>
 <path opacity="0.1" fill-rule="evenodd" clip100-rule="evenodd" d="M159.284 112.19C157.452 122.838 59.5034 543.009 59.5034 543.009L520.911 539.101L420.898 110.449L159.284 112.19Z" fill="#ffffff" stroke="#ffffff" stroke-width="22.8798" stroke-linecap="round" stroke-linejoin="round"/>
@@ -24,6 +22,4 @@
 <path opacity="0.5" d="M63.8125 41.0702V145.508H136.034C142.712 121.276 158.946 85.4201 159.281 83.4764L420.906 81.7577L439.697 145.508H516.188V41.0702H63.8125Z" fill="#ffffff" stroke="#ffffff" stroke-width="36.0618" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M386.725 213.946C354.883 192.127 323.06 170.3 291.224 148.478C257.392 171.567 223.536 194.646 189.73 217.747C208.65 217.747 227.57 217.747 246.49 217.747C246.49 243.644 246.49 269.54 246.49 295.436C275.975 295.436 305.46 295.436 334.944 295.436C335.492 269.081 335.957 242.726 336.421 216.371C354.371 216.371 372.32 216.371 390.27 216.371C389.088 215.563 387.906 214.754 386.725 213.946Z" fill="#ffffff" stroke="#ffffff" stroke-width="10.0393" stroke-linecap="round" stroke-linejoin="round"/>
 
-</g>
-
-</svg>
+</g>%n%n</svg>

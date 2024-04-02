@@ -1,6 +1,6 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:cc="http://creativecommons.org/ns#"  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:svg="http://www.w3.org/2000/svg"  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"  version="1.1"  id="svg4"  sodipodi:docname="lounger.svg"  inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:cc="http://creativecommons.org/ns#"  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:svg="http://www.w3.org/2000/svg"  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"  version="1.1"  id="svg4"  sodipodi:docname="lounger.svg"  inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
 
-<g transform="translate(0.000000, 0.000000) scale(2.500000 2.500000) "> 
+<g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
 
   <metadata
      id="metadata10">
@@ -51,10 +51,8 @@
      d="m 14.636719,1.6503906 a 1.0153954,1.0153954 0 0 0 -0.580078,0.203125 L 8.9960938,5.6503906 H 1.3339844 A 1.0153954,1.0153954 0 0 0 0.31835938,6.6660156 V 12 A 1.0153954,1.0153954 0 0 0 1.3339844,13.015625 H 2.6660156 A 1.0153954,1.0153954 0 0 0 3.6816406,12 V 10.349609 H 10 a 1.0153954,1.0153954 0 0 0 0.634766,-0.222656 L 12.318359,8.7792969 V 12 a 1.0153954,1.0153954 0 0 0 1.015625,1.015625 h 1.332032 A 1.0153954,1.0153954 0 0 0 15.681641,12 V 2.6660156 a 1.0153954,1.0153954 0 0 0 -1.044922,-1.015625 z"
      transform="matrix(0.8,0,0,0.8,1.6000001,1.4665586)" />
 
-</g>
-
-
-<g transform="translate(9.000000, 9.000000) scale(1.833333 1.833333) "> 
+</g>%n%n
+<g transform="translate(139.000000, 9.000000) scale(0.458333 0.458333) "> 
 
   <metadata
      id="metadata10">
@@ -103,6 +101,4 @@
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="ccccccccccc" />
 
-</g>
-
-</svg>
+</g>%n%n</svg>

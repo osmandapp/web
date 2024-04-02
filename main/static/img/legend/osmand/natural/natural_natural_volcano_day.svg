@@ -1,16 +1,12 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
 
-<g transform="translate(0.000000, 0.000000) scale(2.500000 2.500000) "> 
+<g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
 
 <path opacity="0.7" fill-rule="evenodd" clip-rule="evenodd" d="M7.99999 2.11319L14.8042 13H1.19574L7.99999 2.11319Z" fill="#F1EAE4"/>
 
-</g>
-
-
-<g transform="translate(8.000000, 8.000000) scale(2.000000 2.000000) "> 
+</g>%n%n
+<g transform="translate(138.000000, 8.000000) scale(0.041379 0.041379) "> 
 
 <path fill-rule="evenodd" clip100-rule="evenodd" d="M67.2149 488.683L289.897 102.986L512.785 489.026L67.2149 488.683H67.2148L67.2149 488.683V488.683Z" fill="#D40000"/>
 
-</g>
-
-</svg>
+</g>%n%n</svg>
