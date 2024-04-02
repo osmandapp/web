@@ -45,8 +45,8 @@ In the list, there is information about prices of OsmAnd product for the US and 
 |    | OsmAnd Free <br /> ![Maps+](@site/static/img/svg/osmand_maps.svg)  | In-app "Maps+" <br /> ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)| Maps+ <br /> ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)| OsmAnd Pro <br /> ![Pro](@site/static/img/svg/pro_icon.svg)|
 | :------------- | :------------- | :------------- | :------------- | :------------- |
 | **Purchase** | - | **One-time**,<br /> use forever | **Subscription**<br /> for 12 months | **Subscription**<br /> for 1 / 12 months |
-| **Price EUR** | 0€ | 29.99€  |  9.99€   |  2.99€ / 29.99€   |
-| **Price USD** | 0$ | 29.99$  |  9.99$   |  2.99$ / 29.99$   |
+| **Price EUR** | 0€ | 39.99€  |  9.99€   |  2.99€ / 29.99€   |
+| **Price USD** | 0$ | 39.99$  |  9.99$   |  2.99$ / 29.99$   |
 
 ### Free and Paid features
 
