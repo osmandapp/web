@@ -112,7 +112,7 @@ In the **Options** menu using the **Save as track** item, you can save the creat
 For more details, read the article [Coordinates input](../plan-route/coordinate-input.md#options).
 
 
-### Plane route
+### Plan route
 
 <Tabs groupId="operating-systems">
 
