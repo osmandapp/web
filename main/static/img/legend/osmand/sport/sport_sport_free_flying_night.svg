@@ -1,6 +1,6 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
 
-<g transform="translate(0.000000, 0.000000) scale(2.000000 2.000000) "> 
+<g transform="translate(130.000000, 0.000000) scale(2.000000 2.000000) "> 
 
 <g clip-path="url(#clip0)">
 <path opacity="0.953" d="M9.99934 0C15.514 0 20 4.44646 20 10C20 15.5172 15.514 20 9.99934 20C4.48599 20 0 15.5172 0 10C0 4.44646 4.48599 0 9.99934 0V0Z" fill="#60BE60"/>
@@ -12,10 +12,8 @@
 </clipPath>
 </defs>
 
-</g>
-
-
-<g transform="translate(8.000000, 8.000000) scale(2.000000 2.000000) "> 
+</g>%n%n
+<g transform="translate(138.000000, 8.000000) scale(0.041379 0.041379) "> 
 
 <path d="M199.035 435.978C219.162 435.978 235.478 419.662 235.478 399.534C235.478 379.407 219.162 363.09 199.035 363.09C178.907 363.09 162.591 379.407 162.591 399.534C162.591 419.662 178.907 435.978 199.035 435.978Z" fill="#ffffff"/>
 <path d="M133.436 423.223L217.257 470.6L184.457 514.332C173.524 527.088 155.302 530.732 140.725 521.621L122.503 510.688C109.747 503.399 106.103 488.822 111.57 476.066L133.436 423.223Z" fill="#ffffff"/>
@@ -25,6 +23,4 @@
 <path d="M299.255 439.622L454.141 395.89" stroke="#ffffff" stroke-width="18.2219" stroke-miterlimit="10" stroke-linejoin="round"/>
 <path d="M118.858 335.758L87.8816 135.317" stroke="#ffffff" stroke-width="18.2219" stroke-miterlimit="10" stroke-linejoin="round"/>
 
-</g>
-
-</svg>
+</g>%n%n</svg>

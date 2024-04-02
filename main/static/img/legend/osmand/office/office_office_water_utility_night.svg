@@ -1,6 +1,6 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
 
-<g transform="translate(0.000000, 0.000000) scale(2.000000 2.000000) "> 
+<g transform="translate(130.000000, 0.000000) scale(2.000000 2.000000) "> 
 
 <g clip-path="url(#clip0)">
 <path opacity="0.953" d="M9.99934 0C15.514 0 20 4.44646 20 10C20 15.5172 15.514 20 9.99934 20C4.48599 20 0 15.5172 0 10C0 4.44646 4.48599 0 9.99934 0V0Z" fill="#878787"/>
@@ -12,10 +12,8 @@
 </clipPath>
 </defs>
 
-</g>
-
-
-<g transform="translate(8.000000, 8.000000) scale(2.000000 2.000000) "> 
+</g>%n%n
+<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
 
 <path d="M12 16H20V20H12V16Z" fill="#ffffff"/>
 <path d="M12 24H20V28H12V24Z" fill="#ffffff"/>
@@ -24,6 +22,4 @@
 <path opacity="0.5" d="M36 35.6586C36.6256 35.8797 37.2987 36 38 36C38.7013 36 39.3744 35.8797 40 35.6586V40H36V35.6586Z" fill="#ffffff"/>
 <path opacity="0.8" d="M38 16C35.7909 16 34 17.7909 34 20V23.5278C32.7725 24.6264 32 26.223 32 28V30C32 33.3137 34.6863 36 38 36C41.3137 36 44 33.3137 44 30V28C44 26.223 43.2275 24.6264 42 23.5278V20C42 17.7909 40.2091 16 38 16Z" fill="#ffffff"/>
 
-</g>
-
-</svg>
+</g>%n%n</svg>
