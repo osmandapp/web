@@ -35,7 +35,7 @@ This article describes how to configure the map appearance for the navigation ca
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
 ![Map screen during navigation](@site/static/img/navigation/configure_map-during-navigation_ios.png)
 
@@ -58,7 +58,7 @@ During navigation, the map appearance changes to that of the app profile used fo
 
 ### Animate my location (Android: Animate own position)
 
-**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
+**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
 **iOS**: *<Translate ios="true" ids="shared_string_menu,routing_settings,routing_settings_2,animate_my_location"/>*  
 
 Creates a smooth map panning effect versus the *[My Position](../../personal/profiles/#profile-appearance)* icon when in motion. The effect introduces a slight delay versus ground truth of about 1 second. For Android, this item is named *Animate own position* and located in the *[Other](../../personal/profiles.md#other)* section of the each profile's General settings menu. Enabling this has been reported to create some pronounced lag issues under some circumstances, disable if such issues arise.
