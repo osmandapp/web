@@ -361,6 +361,8 @@
   "shared_string_apply": "Apply",
   "shared_string_delete": "Delete",
   "shared_string_edit": "Edit",
+  "shared_string_restore": "Restore",
+  "restore_from_trash": "Restore from trash",
   "sort_last_modified": "Last modified",
   "sort_name_ascending": "Name: A – Z",
   "sort_name_descending": "Name: Z – A",
@@ -5178,5 +5180,7 @@
   "osmand_cloud": "OsmAnd Cloud",
   "shared_string_trash": "Trash",
   "yesterday": "Yesterday",
-  "today": "Today"
+  "today": "Today",
+  "shared_string_delete_immediately": "Delete immediately",
+  "delete_trash_item_confirmation_desc": "Delete \"%1$s\" permanently?"
 }

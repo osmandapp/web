@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import {
     AppBar,
     Box,
@@ -13,9 +13,8 @@ import {
 } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
-import { ReactComponent as TrackIcon } from '../../assets/icons/ic_action_polygom_dark.svg';
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
-import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
+import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import MenuItemsTitle from '../components/MenuItemsTitle';
 import AppContext from '../../context/AppContext';
 import headerStyles from '../trackfavmenu.module.css';
@@ -23,91 +22,40 @@ import styles from './settings.module.css';
 import trackStyles from '../../menu/trackfavmenu.module.css';
 import { useTranslation } from 'react-i18next';
 import Loading from '../errors/Loading';
-import TracksManager, { GPX_FILE_TYPE } from '../../manager/track/TracksManager';
-import { FAVORITE_FILE_TYPE, prepareFavGroupName } from '../../manager/FavoritesManager';
-import { isToday, isYesterday, quickNaNfix } from '../../util/Utils';
-import i18n from 'i18next';
+import TracksManager from '../../manager/track/TracksManager';
+import ActionsMenu from '../actions/ActionsMenu';
+import ChangesActions from '../actions/ChangesActions';
+import { formatDate, getFileItemSize, getItemIcon } from '../../manager/SettingsManager';
 
-export default function CloudChanges({ setOpenCloudSettings, allFilesVersions, filesLoading }) {
+export default function CloudChanges({ files, setOpenCloudSettings, filesLoading }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
+
+    const [changes, setChanges] = useState(files);
+
+    useEffect(() => {
+        setChanges(files);
+    }, [files]);
 
     function closeChanges() {
         setOpenCloudSettings(false);
     }
 
-    // Processes and groups files by their update month and year.
-    const listItems = useMemo(() => {
-        const filesByDate = {};
-        allFilesVersions.forEach((file) => {
-            const dateKey = new Date(file.updatetimems).toLocaleString('default', { month: 'long', year: 'numeric' });
-            if (!filesByDate[dateKey]) {
-                filesByDate[dateKey] = [];
-            }
-            filesByDate[dateKey].push(file);
-        });
-
-        const sortedDates = Object.keys(filesByDate).sort((a, b) => new Date(b) - new Date(a));
-
-        return sortedDates.reduce((arr, date) => {
-            arr.push({ type: 'month', date, id: `month-${date}` });
-            const sortedFiles = filesByDate[date].sort((a, b) => b.updatetimems - a.updatetimems);
-            sortedFiles.forEach((file, index) =>
-                arr.push({ type: 'file', file, id: file.id, isLast: index === sortedFiles.length - 1 })
-            );
-            return arr;
-        }, []);
-    }, [allFilesVersions]);
-
-    function getItemIcon(file) {
-        if (file?.type === GPX_FILE_TYPE) {
-            return <TrackIcon />;
-        }
-        if (file?.type === FAVORITE_FILE_TYPE) {
-            const groupName = prepareFavGroupName(file.name);
-            const groups = file.details?.pointGroups ? JSON.parse(quickNaNfix(file.details?.pointGroups)) : null;
-            if (!groups) {
-                return <FolderIcon />;
-            }
-            const color = groups[groupName]?.color;
-            if (!color) {
-                return <FolderIcon />;
-            }
-            return <FolderIcon style={{ fill: color }} />;
-        }
-    }
-
     const ChangesItem = React.memo(({ item }) => {
         // useInView hook from `react-intersection-observer` for lazy loading.
-        const { ref, inView } = useInView({ triggerOnce: true });
+        const { ref, inView } = useInView();
         const fileName = item.file ? TracksManager.getFileName(item.file) : null;
+        const [hoverIconInfo, setHoverIconInfo] = useState(false);
+        const [openActions, setOpenActions] = useState(false);
+        const anchorEl = useRef(null);
 
-        const formatDate = (dateStr) => {
-            const date = new Date(dateStr);
-            const options = { hour: 'numeric', minute: 'numeric' };
-            if (isYesterday(date)) {
-                return t('yesterday') + ', ' + date.toLocaleString(i18n.language, options);
-            }
-            if (isToday(date)) {
-                return t('today') + ', ' + date.toLocaleString(i18n.language, options);
-            }
-            options.day = 'numeric';
-            options.month = 'short';
-
-            return date.toLocaleString(i18n.language, options);
-        };
-
-        // Defines item size based on its type, necessary for layout before content is loaded.
-        // Pre-set constants are used for lazy loading to ensure placeholders match the final content height.
-        // This approach prevents layout shifts as items load in view.
-        function getItemSize(item) {
-            if (item.type === 'month') {
-                return 'var(--base-title-size)';
-            } else {
-                const maxLines = fileName?.length > 27 ? 2 : 1;
-                return maxLines === 1 ? 'var(--menu-item-size)' : 'var(--menu-item-2-lines-size)';
-            }
-        }
+        const handleClick = useCallback(
+            (e) => {
+                setOpenActions(true);
+                e.stopPropagation();
+            },
+            [setOpenActions]
+        );
 
         function getStatus(file) {
             if (file.zipSize <= 0) {
@@ -122,42 +70,65 @@ export default function CloudChanges({ setOpenCloudSettings, allFilesVersions, f
         }
 
         return (
-            <div ref={ref}>
-                {!inView ? (
-                    <Skeleton variant="rectangular" width="100%" height={getItemSize(item)} />
-                ) : (
-                    <>
-                        {item.type === 'month' ? (
-                            <>
-                                <Divider />
-                                <MenuItem className={styles.item}>
-                                    <Typography className={styles.title} noWrap>
-                                        {item.date}
-                                    </Typography>
-                                </MenuItem>
-                            </>
-                        ) : (
-                            <div>
-                                <MenuItem className={trackStyles.item}>
-                                    <ListItemIcon className={trackStyles.icon}>{getItemIcon(item.file)}</ListItemIcon>
-                                    <ListItemText>
-                                        <MenuItemsTitle name={fileName} maxLines={2} />
-                                        <Typography variant="body2" className={trackStyles.groupInfo} noWrap>
-                                            {getStatus(item.file) + ': ' + formatDate(item.file.updatetimems)}
+            <>
+                <div ref={ref}>
+                    {!inView ? (
+                        <Skeleton variant="rectangular" width="100%" height={getFileItemSize(item, fileName)} />
+                    ) : (
+                        <>
+                            {item.type === 'month' ? (
+                                <>
+                                    <Divider />
+                                    <MenuItem className={styles.item} disableRipple>
+                                        <Typography className={styles.title} noWrap>
+                                            {item.date}
                                         </Typography>
-                                    </ListItemText>
-                                    <div>
-                                        <IconButton className={trackStyles.sortIcon}>
-                                            <MenuIcon />
-                                        </IconButton>
-                                    </div>
-                                </MenuItem>
-                                {!item.isLast && <Divider className={styles.dividerItem} />}
-                            </div>
-                        )}
-                    </>
-                )}
-            </div>
+                                    </MenuItem>
+                                </>
+                            ) : (
+                                <div>
+                                    <MenuItem className={trackStyles.item} disableRipple>
+                                        <ListItemIcon className={trackStyles.icon}>
+                                            {getItemIcon(item.file)}
+                                        </ListItemIcon>
+                                        <ListItemText>
+                                            <MenuItemsTitle name={fileName} maxLines={2} />
+                                            <Typography variant="body2" className={trackStyles.groupInfo} noWrap>
+                                                {getStatus(item.file) + ': ' + formatDate(item.file.updatetimems)}
+                                            </Typography>
+                                        </ListItemText>
+                                        <div>
+                                            <IconButton
+                                                className={trackStyles.sortIcon}
+                                                onMouseEnter={() => setHoverIconInfo(true)}
+                                                onMouseLeave={() => setHoverIconInfo(false)}
+                                                onClick={handleClick}
+                                                ref={anchorEl}
+                                            >
+                                                {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
+                                            </IconButton>
+                                        </div>
+                                    </MenuItem>
+                                    {!item.isLast && <Divider className={styles.dividerItem} />}
+                                </div>
+                            )}
+                            <ActionsMenu
+                                open={openActions}
+                                setOpen={setOpenActions}
+                                anchorEl={anchorEl}
+                                actions={
+                                    <ChangesActions
+                                        item={item}
+                                        setOpenActions={setOpenActions}
+                                        changes={changes}
+                                        setChanges={setChanges}
+                                    />
+                                }
+                            />
+                        </>
+                    )}
+                </div>
+            </>
         );
     });
 
@@ -183,7 +154,7 @@ export default function CloudChanges({ setOpenCloudSettings, allFilesVersions, f
                     maxWidth={ctx.infoBlockWidth}
                     sx={{ overflow: 'auto', overflowX: 'hidden' }}
                 >
-                    {listItems.map((item) => (
+                    {changes.map((item) => (
                         <ChangesItem key={item.id} item={item} />
                     ))}
                 </Box>

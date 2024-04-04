@@ -18,7 +18,7 @@ export default function ActionsMenu({ open, setOpen, anchorEl, setShowMenu = nul
                 }}
                 sx={{ ml: '8px' }}
                 open={open}
-                anchorEl={anchorEl.current}
+                anchorEl={anchorEl?.current}
                 disablePortal={true}
             >
                 <ClickAwayListener
