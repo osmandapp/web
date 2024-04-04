@@ -75,7 +75,7 @@ If your track was created in OsmAnd or any other tracking app (so its points hav
 
 ### Quick actions
 
-Buttons panel with the next action: Show/Hide a track on the map, opening [Appearance](../map/tracks-on-map.md#track-appearance) menu of a track, Export / [Plan route](../plan-route/create-route.md), [Navigation](../navigation/setup/gpx-navigation.md).
+Buttons panel with the next action: _Show/Hide_ a track on the map, opening [_Appearance_](../map/tracks-on-map.md#track-appearance) menu of a track, _Export / [Plan route](../plan-route/create-route.md)_, [_Navigation_](../navigation/setup/gpx-navigation.md).
 
 <Tabs groupId="operating-systems">
 
@@ -95,10 +95,12 @@ Buttons panel with the next action: Show/Hide a track on the map, opening [Appea
 
 - [*Show / hide* buttons](../map/tracks-on-map.md#tracks-in-track-context-menu) allow to anable or disable displaying of a track on the map.
 - *Appearance* - is used to customise the [Appearance](../map/tracks-on-map.md#track-appearance) of your track.
-- *Edit track* (**Android**) - opens the track in *[Plan route tool](../plan-route/create-route.md)* or *Export* (**iOS**) allows to export a track.
+- *Edit track* (**Android**) - opens the track in *[Plan route tool](../plan-route/create-route.md)* or *Export* (**iOS**) allows [to export a track](../personal/tracks.md#export).
 - *Directions* - opens the track in *[Navigation](../navigation/setup/gpx-navigation.md#start-gpx-navigation)* mode.
 
 ### Description and info
+
+All tags info and description show at this part of Overview tab.
 
 <Tabs groupId="operating-systems">
 
@@ -116,11 +118,47 @@ Buttons panel with the next action: Show/Hide a track on the map, opening [Appea
 
 </Tabs>
 
-<!--how to add any images to descriptions?-->
-
-- *<Translate android="true" ids="shared_string_edit"/>* (**Android**) or *<Translate ios="true" ids="add_description"/>* (**iOS**) - is used to edit description of the track.
+- **Description**:  *<Translate android="true" ids="shared_string_edit"/>* (**Android**) or *<Translate ios="true" ids="add_description"/>* (**iOS**) - is used to edit description of the track.
+- **General**: `Created on`, `Size`, `Location`, `Description`
+- **Info**: `Keywords`, `Link`
+- **Author**: `Name`, `Email`, `Link`
+- **Copyright**: `Author`, `Year`, `License`
+- **Additional**: `Address`, `Icon`, `Background`, `Color`, `Country`, `State`, `Telephone`, `Postcode`, `Start date`, `Desc`
+  
 - *<Translate android="true" ids="context_menu_read_full"/>* - opens *[Travel guide article](../plan-route/travel-guides.md#travel-article)*.
 - *<Translate android="true" ids="info_button"/>* - contains info about file size, location folder, date of creation.
+
+```xml
+ <metadata>
+    <name>GPX File Example</name>
+    <desc>Example GPX file with various tags</desc>
+    <author>
+      <name>Author Name</name>
+      <email id="your" domain="email.com" />
+      <link href="https://yourwebsite.com" />
+    </author>
+    <copyright author="OsmAnd B.V">
+      <year>2023</year>
+      <license>https://github.com/osmandapp/OsmAnd/blob/master/LICENSE</license>
+    </copyright>
+    <link href="http://docs.osmand.net" />
+    <time>2023-12-13T12:00:00Z</time>
+    <keywords>gpx, osmand, hiking</keywords>
+    <extensions>
+      <osmand:address>Floyd Avenue (The Fan) 907, Richmond</osmand:address>
+      <osmand:icon>place_town</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#ff4e4eff</osmand:color>
+      <osmand:country>United States</osmand:country>
+      <osmand:state>Virginia</osmand:state>
+      <osmand:telephone>(804) 828-0100</osmand:telephone>
+      <osmand:postcode>23284</osmand:postcode>
+      <osmand:start_date>Thursday, June 8, 2023</osmand:start_date>
+      <osmand:desc>Boardwalks are walkways that cross over water or marshy ground. They’re typically made of wood or other smooth materials, and are accessible to wheelchairs. Please check with your park to see if there are accessible trails available. You’ll often find boardwalks close to parking lots, so expect larger crowds.</osmand:desc>
+    </extensions>
+  </metadata>
+
+```
 
 ## Altitude / Speed Graphs
 
