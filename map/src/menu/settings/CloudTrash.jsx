@@ -22,7 +22,7 @@ import { ReactComponent as TrashIcon } from '../../assets/icons/ic_action_delete
 import Loading from '../errors/Loading';
 import { useInView } from 'react-intersection-observer';
 import TracksManager from '../../manager/track/TracksManager';
-import { emptyTrash, formatDate, getFileItemSize, getItemIcon } from '../../manager/SettingsManager';
+import { formatDate, getFileItemSize, getItemIcon } from '../../manager/SettingsManager';
 import trackStyles from '../trackfavmenu.module.css';
 import MenuItemsTitle from '../components/MenuItemsTitle';
 import ActionsMenu from '../actions/ActionsMenu';
@@ -30,12 +30,14 @@ import AppContext from '../../context/AppContext';
 import TrashActions from '../actions/TrashActions';
 import { refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
 import EmptyTrash from '../errors/EmptyTrash';
+import EmptyTrashDialog from './EmptyTrashDialog';
 
 export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
     const [changes, setChanges] = useState(files);
+    const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
 
     useEffect(() => {
         setChanges(files);
@@ -149,7 +151,7 @@ export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }
                             type="button"
                             className={headerStyles.appBarIcon}
                             disabled={changes.length === 0}
-                            onClick={() => emptyTrash({ ctx, changes, setChanges })}
+                            onClick={() => setOpenDeleteDialog(true)}
                         >
                             <TrashIcon />
                         </IconButton>
@@ -170,6 +172,14 @@ export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }
                         <TrashItem key={item.id} item={item} />
                     ))}
                 </Box>
+            )}
+            {openDeleteDialog && (
+                <EmptyTrashDialog
+                    dialogOpen={openDeleteDialog}
+                    setDialogOpen={setOpenDeleteDialog}
+                    changes={changes}
+                    setChanges={setChanges}
+                />
             )}
         </>
     );
