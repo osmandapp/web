@@ -36,7 +36,11 @@ The *Track context menu* provides information about the *[Track](../personal/tra
 
 </Tabs>
 
-As you can see on the screenshot, the *Track context menu* consists of 4 tabs, which can be accessed by clicking on the corresponding icons at the bottom of the screen: [Overview tab](#overview-tab), [Track tab](#altitude--speed-graphs) with Altitude / Speed Graphs, [Points / Waypoints tab](#points--waypoints), [Options menu](#options).
+As you can see on the screenshot, the *Track context menu* consists of 4 tabs, which can be accessed by clicking on the corresponding icons at the bottom of the screen: 
+- [Overview tab](#overview-tab) 
+- [Track tab](#altitude--speed-graphs) with Altitude / Speed Graphs 
+- [Points tab](#points--waypoints) 
+- [Options tab](#options)
 
 ## Overview tab
 
@@ -64,13 +68,13 @@ You can [short tap](../map/map-context-menu.md#select-route-short-tap-for-androi
 
 </Tabs>
 
-At the top of the information panel you can see the name of the track, as well as the symbol used to mark it (*only Android*). Track name can be changed using rename function in [Options menu](#options). Some tracks (mostly *[Travel guides](../plan-route/travel-guides.md#manage-as-gpx-track)* may have short *[description](#description-and-info)* and (or) a picture below the *Track name*. An arrow shows *Direction to the nearest point of the track* from [My location](../map/interact-with-map#my-location--zoom). Info panel also provides information about:
+At the top of the information panel you can see the name of the track, as well as the symbol used to mark it (*only Android*). Track name can be changed using rename function in [Options menu](#options). Some tracks (mostly *[Travel guides](../plan-route/travel-guides.md#manage-as-gpx-track)*) may have short *[description](#description-and-info)* and (or) a picture below the *Track name*. An arrow shows *Direction to the nearest point of the track* from [My location](../map/interact-with-map#my-location--zoom). Info panel also provides information about:
 - *<Translate android="true" ids="distance"/>* - shows track length.
 - *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>* - displays the total sum of ascents and descents during the trip.
 - *<Translate android="true" ids="altitude_range"/>* - indicates min and max altitude on a track.  
 
 :::note
-If your track was created in OsmAnd or any other tracking app (so its points have [< time > and < speed >](../plugins/trip-recording#recorded-gpx-file) tags), in info panel will be also information about *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (**Android**) or *<Translate ios="true" ids="total_time"/>* (**iOS**) (the length of time between the start and end points of the track) , *<Translate android="true" ids="shared_string_time_moving"/>* (sum of time during motion).
+If your track was created in OsmAnd or any other tracking app (so its points have [`time` and  `speed`](../plugins/trip-recording#recorded-gpx-file) tags), in info panel will be also information about *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (**Android**) or *<Translate ios="true" ids="total_time"/>* (**iOS**) (the length of time between the start and end points of the track) , *<Translate android="true" ids="shared_string_time_moving"/>* (sum of time during motion).
 :::  
 
 ### Quick actions
@@ -106,15 +110,15 @@ All tags info and description show at this part of Overview tab.
 
 <TabItem value="android" label="Android">
 
-![Description of a track Android 1](@site/static/img/personal/tracks/track_context_overview_andr_4.png) ![Description of a track Android 2](@site/static/img/personal/tracks/track_context_overview_andr_5.png)
+![Description of a track Android 1](@site/static/img/personal/tracks/track_context_overview_andr_4.png) <!--  ![Description of a track Android 2](@site/static/img/personal/tracks/track_context_overview_andr_5.png) -->
 
-![Description of a track Android 2](@site/static/img/personal/tracks/track_context_overview_andr_5-1.png) ![Description of a track Android 2](@site/static/img/personal/tracks/track_context_overview_andr_5-2.png)
+<!-- ![Description of a track Android 2](@site/static/img/personal/tracks/track_context_overview_andr_5-1.png) ![Description of a track Android 2](@site/static/img/personal/tracks/track_context_overview_andr_5-2.png) -->
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Description of a track iOS](@site/static/img/personal/tracks/track_context_overview_ios_4.png) ![Description of a track iOS](@site/static/img/personal/tracks/track_context_overview_ios_4-1.png)
+![Description of a track iOS](@site/static/img/personal/tracks/track_context_overview_ios_4.png)  <!-- ![Description of a track iOS](@site/static/img/personal/tracks/track_context_overview_ios_4-1.png) -->
 
 </TabItem>
 
@@ -122,12 +126,12 @@ All tags info and description show at this part of Overview tab.
 
 This section displays data from the following tags, as well as general information:
 
-- **Description**:  *<Translate android="true" ids="shared_string_edit"/>* (**Android**) or *<Translate ios="true" ids="add_description"/>* (**iOS**) - is used to edit description of the track.
-- **General** (contains info about file size, location folder, date of creation): _Created on_(tag `time`), _Size_(GPX file size), _Location_(File folder), _Description_(tag `desc`)
-- **Info**: _Keywords_(tag `keywords`), _Link_(tag `link`)
-- **Author** (tag `author`): _Name_(tag `name`), _E-mail address_ (tag `email`), _Link_(`link`)
-- **Copyright** (tag `copyright`): (tag `author`), _Year_(tag `year`), _License_(tag `license`)
-- **Additional** (all tags from `extensions` section): _osmand_:`address`, `icon`, `background`, `color`, `country`, `state`, `telephone`, `postcode`, `start_date`, `desc`
+- **Description**:  *<Translate android="true" ids="shared_string_edit"/>* (**Android**) or *<Translate ios="true" ids="context_menu_edit_descr"/>* (**iOS**) - is used to edit description of the track.
+- **General** (contains info about file size, location folder, date of creation): _Created on_(tag `time`), _Size_(GPX file size), _Location_(File folder), _Description_(tag `desc`).
+- **Info**: _Keywords_(tag `keywords`), _Link_(tag `link`).
+- **Author** (tag `author`): _Name_(tag `name`), _E-mail address_ (tag `email`), _Link_(`link`).
+- **Copyright** (tag `copyright`): (tag `author`), _Year_(tag `year`), _License_(tag `license`).
+- **Additional** (all tags from `extensions` section): _osmand_:`address`, `icon`, `background`, `color`, `country`, `state`, `telephone`, `postcode`, `start_date`, `desc`.
   
 
 <details>
@@ -178,7 +182,8 @@ Interaction with the graph:
 
 - ***Place a point on the graph***. If you want to see the information at a particular point of a track, you can tap anywhere on the graph and a pointer with the values will appear. At the same time, a blue marker will appear on the map, pointing to that location on the track.
 - ***Zoom in/out***. You can use [two-finger movements](./interact-with-map.md#gestures) to zoom in and out for a more detailed view. After zooming in, you can move the graph to the right and left, which corresponds to moving forward and backward along the route.
-- ***Additional information***. The right (**Android**) or left (**iOS**) side of the graph contains data about the lowest, highest and average altitude and speed. At the bottom of the graph you can see the distance marks. 
+- ***Additional information***. The right side of the graph contains data about the lowest, highest and average altitude, slope and speed. At the bottom of the graph you can see the distance marks. 
+
 ### Overview
 
 <Tabs groupId="operating-systems">
@@ -317,7 +322,35 @@ You receive full Altitude/Slope Graph for your route:
 
 ## Points / Waypoints
 
-### Add waypoint
+Waypoints are one kind of point available on the map. The description is in the article [Points on the map](../map/point-layers-on-map.md). In general, waypoints are track points that are part of GPX files.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Context track menu Points Android](@site/static/img/personal/tracks/track_context_points_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Context track menu Points iOS](@site/static/img/personal/tracks/track_context_points_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+In this _Points_ tab you can show track points data and modify your track points (waypoints and route points), delete its and add waypoints to tack.
+
+### Add Waypoint to a track
+
+Waypoints can be added to the currently recorded track or to any track from your track collection [*My Places → Tracks list*](../personal/tracks.md):
+
+- Using the [Map Context Menu](../map/map-context-menu.md#-add--edit--track-waypoint). Waypoints are automatically displayed if the selected track is enabled on the map. To create a waypoint use a [long-tap](../map/map-context-menu.md#select-any-point-long-tap) on the map at any chosen location. In the opened [Map Context Menu](../map/map-context-menu.md#-add--edit--track-waypoint) you can set information about the waypoint. 
+- Using [_Add Waypoint_](#add--delete-buttons) button of the Track Context menu.
+- You can also add a waypoint as a Quick action. Follow the [*Add track waypoint*](../widgets/quick-action.md#create-items) to configure.
+
+When you tap to _Add Waypoint_ button, the Creation point screen opens (this screen is familiar with [_Favorite Context menu_](../personal/favorites.md#favorite-context-menu)):
 
 <Tabs groupId="operating-systems">
 
@@ -335,10 +368,6 @@ You receive full Altitude/Slope Graph for your route:
  
 </Tabs>
 
-Waypoints are one kind of point available on the map. The description is in the article [Points on the map](../map/point-layers-on-map.md). In general, waypoints are track points that are part of GPX files. They can be added to the currently recorded track or to any track from your *My Places → Tracks list* using the Map Context Menu. Waypoints are automatically displayed if the selected track is enabled on the map.  
-
-To create a waypoint use a [long-tap](../map/map-context-menu.md#select-any-point-long-tap) on the map at any chosen location. In the opened [Map Context Menu](../map/map-context-menu.md#-add--edit--track-waypoint) you can set information about the waypoint.  
-
 1. **Add** the name of the waypoint, the address of the selected place and a description for it.
 2. **Select** Group.
 - You can select previously created categories of groups or create a new one.
@@ -350,30 +379,80 @@ To create a waypoint use a [long-tap](../map/map-context-menu.md#select-any-poin
 4. **Replace** another point with this, if you need to.  
 
 
-#### Quick action  
-You can also add a waypoint as a Quick action. Follow the [*Add track waypoint*](../widgets/quick-action.md#create-items) to configure.
+### Display custom GPX tags
 
+<Tabs groupId="operating-systems">
 
-### Waypoint format description
+<TabItem value="android" label="Android">
 
-![Tracks](@site/static/img/personal/tracks/tracks_format_description.png)   
+![Points](@site/static/img/personal/tracks/waypoints_tag_info_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Points](@site/static/img/personal/tracks/waypoints_tag_info_ios.png) 
+
+</TabItem>
+ 
+</Tabs>
+  
+
+<details>
+
+<summary>Example XML code of Waypoint tags</summary>
 
 ```xml
-<gpx version="1.1" creator="OsmAndRouterV2" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
-  <wpt lat="43.5368866" lon="3.7396109">
-    <time>2023-05-24T04:42:07Z</time>
-    <name>Test</name>
-    <desc>description test</desc>
-    <type>Waypoints test</type>
+  <wpt lat="40.123456" lon="-73.987654">
+    <ele>100</ele>
+    <time>2024-04-04T13:12:11Z</time>
+    <name>Waypoint 1</name>
+    <desc>Long description</desc>
+    <link href="http://docs.osmand.net" />
+    <type></type>
+    <cmt>Short comment for the waypoint.</cmt>
     <extensions>
-      <osmand:icon>special_sun</osmand:icon>
-      <osmand:color>#eecc22</osmand:color>
-      <osmand:background>square</osmand:background>
-      <osmand:amenity_subtype>building</osmand:amenity_subtype>
+      <osmand:country>United States</osmand:country>
+      <osmand:address>Floyd Avenue (The Fan) 907, Richmond</osmand:address>
+      <osmand:color>#ff4e4eff</osmand:color>
+      <osmand:background>circle</osmand:background>
+      <osmand:icon>place_town</osmand:icon>
+      <osmand:postcode>23284</osmand:postcode>
+      <osmand:telephone>(804) 828-0100</osmand:telephone>
+      <osmand:state>Virginia</osmand:state>
+      <osmand:start_date>Thursday, June 8, 2023</osmand:start_date>
     </extensions>
   </wpt>
-</gpx>
 ```
+</details>
+
+<details>
+
+<summary>Example XML code of Route point tags</summary>
+
+```xml
+  <rte>
+    <name>Route 1</name>
+    <desc>A sample route</desc>
+    <rtept lat="40.123456" lon="-73.987654">
+      <ele>110</ele>
+      <name>Route Point 1</name>
+      <desc>Point 1 of the route</desc>
+      <extensions>
+        <osmand:country>United States</osmand:country>
+        <osmand:address>Floyd Avenue (The Fan) 907, Richmond</osmand:address>
+        <osmand:color>#ff4e4eff</osmand:color>
+        <osmand:background>circle</osmand:background>
+        <osmand:icon>place_town</osmand:icon>
+        <osmand:postcode>23284</osmand:postcode>
+        <osmand:telephone>(804) 828-0100</osmand:telephone>
+        <osmand:state>Virginia</osmand:state>
+        <osmand:start_date>Thursday, June 8, 2023</osmand:start_date>
+      </extensions>
+    </rtept>
+  </rte>
+```
+</details>
 
 | Parameter | Description | 
 | --- | --- |
@@ -401,37 +480,6 @@ To change the Waypoint description, you can go one of the following ways:
 
 **Amenity tags** that describe additional information, such as hours of operation or phone number, specific to the POI take that information from OpenStreetMap data or data that you entered when creating the POI. You can edit such tags and [custom tags](#display-custom-gpx-tags) only in the code of the GPX file, which you can open with any text editor on your device.
 
-
-### Display custom GPX tags
-
-![Tracks](@site/static/img/personal/tracks/tracks_custom_GPX.png)  
-
-```xml
-<gpx version="1.1" creator="OsmAnd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:test="https://test.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
-    <wpt lat="37.5460870" lon="-77.4532843">
-        <time>2023-06-07T12:31:35Z</time>
-        <name>Test</name>
-        <type>SOTM</type>
-        <extensions>
-            <osmand:address>Floyd Avenue (The Fan) 907, Richmond</osmand:address>
-            <osmand:icon>place_town</osmand:icon>
-            <osmand:background>circle</osmand:background>
-            <osmand:color>#ff4e4eff</osmand:color>
-            <test:country>United States</test:country>
-            <test:state>Virginia</test:state>
-            <test:telephone>(804) 828-0100</test:telephone>
-            <test:postcode>23284</test:postcode>
-            <test:start_date>Thursday, June 8, 2023</test:start_date>
-        </extensions>
-    </wpt>
-</gpx>
-```  
-
-To describe points, you can use the basic [tags available](https://github.com/osmandapp/Osmand/blob/a3b5c637955a5914421d391206c2efb6ee2dff47/OsmAnd-java/src/main/java/net/osmand/GPXUtilities.java#L2476-L2500) in OsmAnd, which you can add and edit directly in the application. Or you can use [custom tags](https://github.com/osmandapp/OsmAnd/blob/fd3a882477518bd19bc8550af331507ba48cfb68/OsmAnd-java/src/main/java/net/osmand/gpx/GPXUtilities.java#L1137-L1160) for the description. These tags cannot be edited in the application, you need to use a text editor.  
-
-The official documentation of the gpx standard [here](https://www.topografix.com/GPX/1/1/#type_wptType).  
-
-
 ### Locations along the route
 
 Waypoints, points of interest (POIs), Favorite points and Audio/video notes all refer to the concept of saving locations and routes in GPX (GPS Exchange Format). You can use the same tags to describe and edit them.  
@@ -447,16 +495,7 @@ Waypoints, points of interest (POIs), Favorite points and Audio/video notes all 
 All of these point types can be saved in GPX format to provide the user with location information and help with navigation and route planning. They serve different purposes, but the general idea is to store and transmit geographic information so that the user can use it in their navigation tasks.
 
 
-### Waypoints folder
-
-*Track Context menu → <Translate android="true" ids="shared_string_gpx_points"/> → Three dots menu*
-
-![My places Tracks](@site/static/img/personal/tracks/tracks_waypoints_folder.png)  
-
-All waypoints of the route are stored in the folders you selected for them when creating or editing. To access a specific folder, you need to open the required track and go to the *Points* submenu. In the three points menu, you can edit a group of waypoints, add them to your marker list, or create a folder in *Menu → My Places → My Favorites*. You can read more information in the article [Tracks Context menu](../map/track-context-menu.md#waypoints-folder).
-
-
-### Add / Delete
+### Add / Delete buttons
 
 Points / Waypoins menu in Context track menu opens list of track / folders waypoints.
 
