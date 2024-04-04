@@ -6,7 +6,7 @@ import DialogActions from '@mui/material/DialogActions';
 import { Button } from '@mui/material';
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import { deleteFile, deleteFileAllVersions, deleteFileVersion } from '../../manager/SettingsManager';
+import { deleteFile, deleteFileAllVersions, deleteFileVersion, formatString } from '../../manager/SettingsManager';
 import AppContext from '../../context/AppContext';
 
 export default function DeleteFileVersionDialog({
@@ -24,13 +24,6 @@ export default function DeleteFileVersionDialog({
         setDialogOpen(!dialogOpen);
     };
 
-    function formatString(templateString, replacements) {
-        return templateString.replace(/%\d\$s/g, function (match) {
-            let index = parseInt(match.replace('%', '').replace('$s', ''), 10) - 1;
-            return replacements[index];
-        });
-    }
-
     async function deleteF() {
         if (deleteVersion) {
             deleteFileVersion(file, ctx, changes, setChanges).then();
@@ -47,7 +40,7 @@ export default function DeleteFileVersionDialog({
             <DialogTitle>Delete</DialogTitle>
             <DialogContent>
                 <DialogContentText>
-                    {formatString(t(`delete_trash_item_confirmation_desc`), [file.name])}
+                    {formatString(t('delete_trash_item_confirmation_desc'), [file.name])}
                 </DialogContentText>
             </DialogContent>
             <DialogActions>

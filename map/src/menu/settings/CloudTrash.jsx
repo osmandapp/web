@@ -29,6 +29,7 @@ import ActionsMenu from '../actions/ActionsMenu';
 import AppContext from '../../context/AppContext';
 import TrashActions from '../actions/TrashActions';
 import { refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
+import EmptyTrash from '../errors/EmptyTrash';
 
 export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }) {
     const ctx = useContext(AppContext);
@@ -147,6 +148,7 @@ export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }
                             variant="contained"
                             type="button"
                             className={headerStyles.appBarIcon}
+                            disabled={changes.length === 0}
                             onClick={() => emptyTrash({ ctx, changes, setChanges })}
                         >
                             <TrashIcon />
@@ -156,6 +158,8 @@ export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }
             </AppBar>
             {filesLoading ? (
                 <Loading />
+            ) : changes.length === 0 ? (
+                <EmptyTrash />
             ) : (
                 <Box
                     minWidth={ctx.infoBlockWidth}

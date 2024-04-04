@@ -195,3 +195,10 @@ function deleteVersionsFromMenu({ changes, name = null, id = null }) {
     });
     return changes;
 }
+
+export function formatString(templateString, replacements) {
+    return templateString.replace(/%\d\$s/g, function (match) {
+        let index = parseInt(match.replace('%', '').replace('$s', ''), 10) - 1;
+        return replacements[index];
+    });
+}

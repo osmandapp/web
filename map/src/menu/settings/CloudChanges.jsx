@@ -27,6 +27,7 @@ import ActionsMenu from '../actions/ActionsMenu';
 import ChangesActions from '../actions/ChangesActions';
 import { formatDate, getFileItemSize, getItemIcon } from '../../manager/SettingsManager';
 import { refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
+import Empty from '../errors/Empty';
 
 export default function CloudChanges({ files, setOpenCloudSettings, filesLoading }) {
     const ctx = useContext(AppContext);
@@ -150,6 +151,8 @@ export default function CloudChanges({ files, setOpenCloudSettings, filesLoading
             </AppBar>
             {filesLoading ? (
                 <Loading />
+            ) : changes.length === 0 ? (
+                <Empty title={'Changes are empty'} />
             ) : (
                 <Box
                     minWidth={ctx.infoBlockWidth}
