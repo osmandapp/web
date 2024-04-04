@@ -45,6 +45,7 @@ import VisibleTracks from './visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
 import SettingsMenu from './settings/SettingsMenu';
 import CloudSettings from './settings/CloudSettings';
+import { refreshGlobalFiles } from '../manager/track/SaveTrackManager';
 
 export default function MainMenu({
     size,
@@ -174,7 +175,7 @@ export default function MainMenu({
     //open main menu if currentObjectType was changed
     useEffect(() => {
         if (ctx.currentObjectType) {
-            setOpenCloudSettings(false);
+            closeCloudSettings();
             if (ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_ALONE) {
                 // invoked by RouteService.js effect
                 // activate Navigation menu even w/o currentObjectType (if no other menu was activated before)
@@ -193,6 +194,11 @@ export default function MainMenu({
             }
         }
     }, [ctx.currentObjectType]);
+
+    function closeCloudSettings() {
+        setOpenCloudSettings(false);
+        refreshGlobalFiles({ ctx }).then();
+    }
 
     function selectMenuInfo(force = null) {
         const currentMenu = items.find((item) => {
@@ -246,7 +252,7 @@ export default function MainMenu({
         if (menuInfo) {
             // update menu
             setShowInfoBlock(false);
-            setOpenCloudSettings(false);
+            closeCloudSettings();
             const menu = !isSelectedMenuItem(item) ? item : null;
             setMenuInfo(menu?.component);
             setSelectedType(menu?.type);

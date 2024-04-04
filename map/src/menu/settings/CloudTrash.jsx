@@ -9,6 +9,7 @@ import {
     MenuItem,
     Skeleton,
     Toolbar,
+    Tooltip,
     Typography,
 } from '@mui/material';
 import headerStyles from '../trackfavmenu.module.css';
@@ -17,15 +18,17 @@ import React, { useCallback, useContext, useEffect, useRef, useState } from 'rea
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
+import { ReactComponent as TrashIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
 import Loading from '../errors/Loading';
 import { useInView } from 'react-intersection-observer';
 import TracksManager from '../../manager/track/TracksManager';
-import { formatDate, getFileItemSize, getItemIcon } from '../../manager/SettingsManager';
+import { emptyTrash, formatDate, getFileItemSize, getItemIcon } from '../../manager/SettingsManager';
 import trackStyles from '../trackfavmenu.module.css';
 import MenuItemsTitle from '../components/MenuItemsTitle';
 import ActionsMenu from '../actions/ActionsMenu';
 import AppContext from '../../context/AppContext';
 import TrashActions from '../actions/TrashActions';
+import { refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
 
 export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }) {
     const ctx = useContext(AppContext);
@@ -39,6 +42,7 @@ export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }
 
     function closeChanges() {
         setOpenCloudSettings(false);
+        refreshGlobalFiles({ ctx }).then();
     }
 
     const TrashItem = React.memo(({ item }) => {
@@ -137,6 +141,17 @@ export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }
                     <Typography component="div" className={headerStyles.title}>
                         {t('shared_string_trash')}
                     </Typography>
+                    <Tooltip key={'empty_trash'} title={t('shared_string_empty_trash')} arrow placement="bottom-end">
+                        <IconButton
+                            component="span"
+                            variant="contained"
+                            type="button"
+                            className={headerStyles.appBarIcon}
+                            onClick={() => emptyTrash({ ctx, changes, setChanges })}
+                        >
+                            <TrashIcon />
+                        </IconButton>
+                    </Tooltip>
                 </Toolbar>
             </AppBar>
             {filesLoading ? (

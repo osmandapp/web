@@ -26,6 +26,7 @@ import TracksManager from '../../manager/track/TracksManager';
 import ActionsMenu from '../actions/ActionsMenu';
 import ChangesActions from '../actions/ChangesActions';
 import { formatDate, getFileItemSize, getItemIcon } from '../../manager/SettingsManager';
+import { refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
 
 export default function CloudChanges({ files, setOpenCloudSettings, filesLoading }) {
     const ctx = useContext(AppContext);
@@ -39,6 +40,7 @@ export default function CloudChanges({ files, setOpenCloudSettings, filesLoading
 
     function closeChanges() {
         setOpenCloudSettings(false);
+        refreshGlobalFiles({ ctx }).then();
     }
 
     const ChangesItem = React.memo(({ item }) => {

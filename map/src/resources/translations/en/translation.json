@@ -5182,5 +5182,6 @@
   "yesterday": "Yesterday",
   "today": "Today",
   "shared_string_delete_immediately": "Delete immediately",
-  "delete_trash_item_confirmation_desc": "Delete \"%1$s\" permanently?"
+  "delete_trash_item_confirmation_desc": "Delete \"%1$s\" permanently?",
+  "shared_string_empty_trash": "Empty trash"
 }

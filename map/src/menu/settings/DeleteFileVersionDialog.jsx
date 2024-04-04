@@ -35,7 +35,7 @@ export default function DeleteFileVersionDialog({
         if (deleteVersion) {
             deleteFileVersion(file, ctx, changes, setChanges).then();
         } else if (deleteAllVersions) {
-            deleteFileAllVersions(file, ctx, changes, setChanges).then();
+            deleteFileAllVersions({ file, changes, setChanges, isTrash: true }).then();
         } else {
             deleteFile(file, ctx, changes, setChanges).then();
         }

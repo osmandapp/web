@@ -89,20 +89,22 @@ export async function deleteFileVersion(file, ctx, changes, setChanges) {
         },
     });
     if (response.status === 200) {
-        changes = changes.filter((f) => f.id !== file.id);
+        changes = deleteVersionsFromMenu({ changes, id: file.id });
         setChanges(changes);
     }
 }
 
-export async function deleteFileAllVersions(file, ctx, changes, setChanges) {
+export async function deleteFileAllVersions({ file, changes, setChanges, isTrash = false }) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/delete-file-all-versions`, {
         params: {
             name: file.name,
             type: file.type,
+            updatetime: file.updatetimems,
+            isTrash: isTrash,
         },
     });
     if (response.status === 200) {
-        changes = deleteVersionsFromMenu(changes, file);
+        changes = deleteVersionsFromMenu({ changes, name: file.name });
         setChanges(changes);
     }
 }
@@ -137,7 +139,7 @@ export async function restoreFile({ file, ctx, changes, setChanges, fromTrash = 
             id: response.data.id,
         };
         if (fromTrash) {
-            changes = deleteVersionsFromMenu(changes, file);
+            changes = deleteVersionsFromMenu({ changes, id: file.id });
             setChanges(changes);
         } else {
             const fileIndex = changes.findIndex((change) => change.type === 'file');
@@ -154,15 +156,42 @@ export async function restoreFile({ file, ctx, changes, setChanges, fromTrash = 
     }
 }
 
-function deleteVersionsFromMenu(changes, currentFile) {
+export async function emptyTrash({ ctx, changes, setChanges }) {
+    const files = changes
+        .filter((change) => change.file && change.type === 'file')
+        .map((change) => ({
+            name: change.file.name,
+            type: change.file.type,
+            updatetime: change.file.updatetimems,
+        }));
+    const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/empty-trash`, files, {
+        dataOnErrors: true,
+    });
+    if (response.status === 200) {
+        setChanges([]);
+    } else {
+        ctx.setRoutingErrorMsg(response.data);
+    }
+}
+
+function deleteVersionsFromMenu({ changes, name = null, id = null }) {
     changes = changes.filter((f) => {
-        return f.file && f.file.name !== currentFile.name;
+        if (f.file) {
+            if (name) {
+                return f.file.name !== name;
+            }
+            if (id) {
+                return f.id !== id;
+            }
+        }
+        return true;
     });
     changes = changes.filter((f, index) => {
         if (f.type === 'month') {
             const nextFileIndex = changes.slice(index + 1).findIndex((f) => f.type === 'file');
             return nextFileIndex !== -1;
         }
+        return true;
     });
     return changes;
 }
