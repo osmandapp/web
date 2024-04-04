@@ -390,7 +390,9 @@ const CustomTileLayer = forwardRef((props, ref) => {
             if (map.hasLayer(rasterTileLayerRef.current)) {
                 map.removeLayer(rasterTileLayerRef.current);
             }
-            removeDataLayers(dataLayersRef.current.layers);
+            if (dataLayersRef.current && dataLayersRef.current.layers.length > 0) {
+                removeDataLayers(dataLayersRef.current.layers);
+            }
         };
     }, []);
 
