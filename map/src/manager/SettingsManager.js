@@ -4,6 +4,7 @@ import { FAVORITE_FILE_TYPE, prepareFavGroupName } from './FavoritesManager';
 import React from 'react';
 import { ReactComponent as TrackIcon } from '../assets/icons/ic_action_polygom_dark.svg';
 import { ReactComponent as FolderIcon } from '../assets/icons/ic_action_folder.svg';
+import { ReactComponent as OtherTypesIcon } from '../assets/icons/ic_map_configure_map.svg';
 import i18n from '../i18n';
 import { apiGet, apiPost } from '../util/HttpApi';
 
@@ -37,8 +38,7 @@ export const formatDate = (dateStr) => {
 export function getItemIcon(file) {
     if (file?.type === GPX_FILE_TYPE) {
         return <TrackIcon />;
-    }
-    if (file?.type === FAVORITE_FILE_TYPE) {
+    } else if (file?.type === FAVORITE_FILE_TYPE) {
         const groupName = prepareFavGroupName(file.name);
         const groups = file.details?.pointGroups ? JSON.parse(quickNaNfix(file.details?.pointGroups)) : null;
         if (!groups) {
@@ -49,6 +49,8 @@ export function getItemIcon(file) {
             return <FolderIcon />;
         }
         return <FolderIcon style={{ fill: color }} />;
+    } else {
+        return <OtherTypesIcon />;
     }
 }
 
@@ -201,4 +203,11 @@ export function formatString(templateString, replacements) {
         let index = parseInt(match.replace('%', '').replace('$s', ''), 10) - 1;
         return replacements[index];
     });
+}
+
+export function isFileRestrictedForDownload(file) {
+    return (
+        file.type.toLowerCase() === 'file' &&
+        (file.name.endsWith('.obf') || file.name.endsWith('.sqlitedb') || file.name.endsWith('.tif'))
+    );
 }

@@ -2,8 +2,6 @@ import CloudTrash from './CloudTrash';
 import CloudChanges from './CloudChanges';
 import React, { useEffect, useMemo, useState } from 'react';
 import { apiGet } from '../../util/HttpApi';
-import { GPX_FILE_TYPE } from '../../manager/track/TracksManager';
-import { FAVORITE_FILE_TYPE } from '../../manager/FavoritesManager';
 
 export default function CloudSettings({ cloudSettings, setOpenCloudSettings }) {
     const [allFilesVersions, setAllFilesVersions] = useState([]);
@@ -19,11 +17,7 @@ export default function CloudSettings({ cloudSettings, setOpenCloudSettings }) {
                 },
             });
             if (response.ok) {
-                const res = response.data.allFiles.filter(
-                    (f) =>
-                        (f.type === GPX_FILE_TYPE || f.type === FAVORITE_FILE_TYPE) &&
-                        f.name.toLowerCase().endsWith('.gpx')
-                );
+                const res = response.data.allFiles.filter((f) => !f.name.toLowerCase().endsWith('.info'));
                 setFilesLoading(false);
                 setAllFilesVersions(res);
             }

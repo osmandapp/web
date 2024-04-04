@@ -6,7 +6,12 @@ import { ReactComponent as DeleteIcon } from '../../assets/icons/ic_action_delet
 import { ReactComponent as DownloadIcon } from '../../assets/icons/ic_action_gsave_dark.svg';
 import { Box, Divider, ListItemIcon, ListItemText, MenuItem, Paper, Typography } from '@mui/material';
 import styles from '../trackfavmenu.module.css';
-import { deleteFileVersion, downloadFile, restoreFile } from '../../manager/SettingsManager';
+import {
+    deleteFileVersion,
+    downloadFile,
+    isFileRestrictedForDownload,
+    restoreFile,
+} from '../../manager/SettingsManager';
 import DeleteFileVersionDialog from '../settings/DeleteFileVersionDialog';
 
 const ChangesActions = forwardRef(({ item, setOpenActions, changes, setChanges }, ref) => {
@@ -21,6 +26,7 @@ const ChangesActions = forwardRef(({ item, setOpenActions, changes, setChanges }
                 <Paper id="se-track-actions" className={styles.actions}>
                     <MenuItem
                         className={styles.action}
+                        disabled={isFileRestrictedForDownload(item.file)}
                         onClick={() => {
                             downloadFile(item.file).then();
                             setOpenActions(false);

@@ -7,7 +7,7 @@ import { ReactComponent as DownloadIcon } from '../../assets/icons/ic_action_gsa
 import { Box, Divider, ListItemIcon, ListItemText, MenuItem, Paper, Typography } from '@mui/material';
 import styles from '../trackfavmenu.module.css';
 import DeleteFileVersionDialog from '../settings/DeleteFileVersionDialog';
-import { downloadFile, restoreFile } from '../../manager/SettingsManager';
+import { downloadFile, isFileRestrictedForDownload, restoreFile } from '../../manager/SettingsManager';
 
 const TrashActions = forwardRef(({ item, setOpenActions, changes, setChanges }, ref) => {
     const ctx = useContext(AppContext);
@@ -21,6 +21,7 @@ const TrashActions = forwardRef(({ item, setOpenActions, changes, setChanges }, 
                 <Paper id="se-track-actions" className={styles.actions}>
                     <MenuItem
                         className={styles.action}
+                        disabled={isFileRestrictedForDownload(item.file)}
                         onClick={() => {
                             downloadFile(item.file).then();
                             setOpenActions(false);
