@@ -474,7 +474,7 @@ To change the Waypoint description, you can go one of the following ways:
   
 1. Find the required track in the *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab* list.
 2. Tap the track on the map, if it is included in the [list of visible](#show-tracks-on-map).
-3. Tap the required waypoint if it is [visible](#waypoints-folder) on the map.  
+3. Tap the required waypoint if it is [visible](../personal/tracks.md#show-tracks-on-map) on the map.  
 
     Then in the [Tracks Context menu](../map/track-context-menu.md) tap *Points*, the field of the required folder with available waypoints and the Waypoint you are looking for. Select menu *Actions →* **Edit GPX waypoint** and make changes. You cannot change the creation date of a point, *timestamp*, in the application.  
 
