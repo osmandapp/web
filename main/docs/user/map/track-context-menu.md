@@ -108,25 +108,31 @@ All tags info and description show at this part of Overview tab.
 
 ![Description of a track Android 1](@site/static/img/personal/tracks/track_context_overview_andr_4.png) ![Description of a track Android 2](@site/static/img/personal/tracks/track_context_overview_andr_5.png)
 
+![Description of a track Android 2](@site/static/img/personal/tracks/track_context_overview_andr_5-1.png) ![Description of a track Android 2](@site/static/img/personal/tracks/track_context_overview_andr_5-2.png)
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Description of a track iOS](@site/static/img/personal/tracks/track_context_overview_ios_4.png)
+![Description of a track iOS](@site/static/img/personal/tracks/track_context_overview_ios_4.png) ![Description of a track iOS](@site/static/img/personal/tracks/track_context_overview_ios_4-1.png)
 
 </TabItem>
 
 </Tabs>
 
+This section displays data from the following tags, as well as general information:
+
 - **Description**:  *<Translate android="true" ids="shared_string_edit"/>* (**Android**) or *<Translate ios="true" ids="add_description"/>* (**iOS**) - is used to edit description of the track.
-- **General**: `Created on`, `Size`, `Location`, `Description`
-- **Info**: `Keywords`, `Link`
-- **Author**: `Name`, `Email`, `Link`
-- **Copyright**: `Author`, `Year`, `License`
-- **Additional**: `Address`, `Icon`, `Background`, `Color`, `Country`, `State`, `Telephone`, `Postcode`, `Start date`, `Desc`
+- **General** (contains info about file size, location folder, date of creation): _Created on_(tag `time`), _Size_(GPX file size), _Location_(File folder), _Description_(tag `desc`)
+- **Info**: _Keywords_(tag `keywords`), _Link_(tag `link`)
+- **Author** (tag `author`): _Name_(tag `name`), _E-mail address_ (tag `email`), _Link_(`link`)
+- **Copyright** (tag `copyright`): (tag `author`), _Year_(tag `year`), _License_(tag `license`)
+- **Additional** (all tags from `extensions` section): _osmand_:`address`, `icon`, `background`, `color`, `country`, `state`, `telephone`, `postcode`, `start_date`, `desc`
   
-- *<Translate android="true" ids="context_menu_read_full"/>* - opens *[Travel guide article](../plan-route/travel-guides.md#travel-article)*.
-- *<Translate android="true" ids="info_button"/>* - contains info about file size, location folder, date of creation.
+
+<details>
+
+<summary>Example XML code of GPX file</summary>
 
 ```xml
  <metadata>
@@ -159,6 +165,10 @@ All tags info and description show at this part of Overview tab.
   </metadata>
 
 ```
+
+</details>
+
+
 
 ## Altitude / Speed Graphs
 
