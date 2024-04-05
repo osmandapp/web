@@ -180,7 +180,11 @@ export default function SettingsMenu({ setCloudSettings }) {
                         </Typography>
                     </MenuItem>
 
-                    <MenuItem className={styles.item} onClick={() => openCloudSettingsMenu({ changes: true })}>
+                    <MenuItem
+                        id={'se-cloud_changes'}
+                        className={styles.item}
+                        onClick={() => openCloudSettingsMenu({ changes: true })}
+                    >
                         <ListItemIcon className={styles.icon}>
                             <ChangesIcon />
                         </ListItemIcon>

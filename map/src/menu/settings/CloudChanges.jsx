@@ -33,10 +33,12 @@ export default function CloudChanges({ files, setOpenCloudSettings, filesLoading
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
-    const [changes, setChanges] = useState(files);
+    const [changes, setChanges] = useState(null);
 
     useEffect(() => {
-        setChanges(files);
+        if (files && files.length > 0) {
+            setChanges(files);
+        }
     }, [files]);
 
     function closeChanges() {
@@ -61,6 +63,9 @@ export default function CloudChanges({ files, setOpenCloudSettings, filesLoading
         );
 
         function getStatus(file) {
+            if (!file) {
+                return '';
+            }
             if (file.zipSize <= 0) {
                 return t('web:deleted');
             }
@@ -72,6 +77,8 @@ export default function CloudChanges({ files, setOpenCloudSettings, filesLoading
             }
             return '';
         }
+
+        const status = getStatus(item.file);
 
         return (
             <>
@@ -91,18 +98,23 @@ export default function CloudChanges({ files, setOpenCloudSettings, filesLoading
                                 </>
                             ) : (
                                 <div>
-                                    <MenuItem className={trackStyles.item} disableRipple>
+                                    <MenuItem
+                                        id={`se-cloud_change-${fileName}-${status}`}
+                                        className={trackStyles.item}
+                                        disableRipple
+                                    >
                                         <ListItemIcon className={trackStyles.icon}>
                                             {getItemIcon(item.file)}
                                         </ListItemIcon>
                                         <ListItemText>
                                             <MenuItemsTitle name={fileName} maxLines={2} />
                                             <Typography variant="body2" className={trackStyles.groupInfo} noWrap>
-                                                {getStatus(item.file) + ': ' + formatDate(item.file.updatetimems)}
+                                                {status + ': ' + formatDate(item.file.updatetimems)}
                                             </Typography>
                                         </ListItemText>
                                         <div>
                                             <IconButton
+                                                id={`se-cloud-changes-actions-${fileName}`}
                                                 className={trackStyles.sortIcon}
                                                 onMouseEnter={() => setHoverIconInfo(true)}
                                                 onMouseLeave={() => setHoverIconInfo(false)}
@@ -150,12 +162,13 @@ export default function CloudChanges({ files, setOpenCloudSettings, filesLoading
                     </Typography>
                 </Toolbar>
             </AppBar>
-            {filesLoading ? (
-                <Loading />
-            ) : changes.length === 0 ? (
+            {filesLoading || !changes ? (
+                <Loading id={'se-loading-page'} />
+            ) : changes?.length === 0 ? (
                 <Empty title={'Changes are empty'} />
             ) : (
                 <Box
+                    id={'se-cloud_changes-items'}
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}
                     sx={{ overflow: 'auto', overflowX: 'hidden' }}

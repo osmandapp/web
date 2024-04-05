@@ -23,7 +23,7 @@ const ChangesActions = forwardRef(({ item, setOpenActions, changes, setChanges }
     return (
         <>
             <Box ref={ref}>
-                <Paper id="se-track-actions" className={styles.actions}>
+                <Paper id="se-changes-actions" className={styles.actions}>
                     <MenuItem
                         className={styles.action}
                         disabled={isFileRestrictedForDownload(item.file)}
@@ -45,6 +45,7 @@ const ChangesActions = forwardRef(({ item, setOpenActions, changes, setChanges }
                         <>
                             <Divider className={styles.dividerActions} />
                             <MenuItem
+                                id={'se-changes-actions-restore'}
                                 className={styles.action}
                                 onClick={() => {
                                     restoreFile({ file: item.file, ctx, changes, setChanges }).then();
@@ -64,6 +65,7 @@ const ChangesActions = forwardRef(({ item, setOpenActions, changes, setChanges }
                     )}
                     <Divider className={styles.dividerActions} />
                     <MenuItem
+                        id={'se-changes-actions-delete'}
                         className={styles.action}
                         onClick={() => {
                             deleteFileVersion({ file: item.file, changes, setChanges }).then();
