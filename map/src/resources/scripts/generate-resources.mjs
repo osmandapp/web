@@ -19,6 +19,20 @@ generate({
     validate: (json) => json.some((x) => x === 'mx_service.svg'),
 });
 
+// 2. Map icons array based on list of svg-files
+generate({
+    file: 'src/resources/generated/mapicons.json',
+    json: ls('public/images/map-icons-svg'),
+    validate: (json) => json.some((x) => x === 'c_mx_building_map.svg'),
+});
+
+// 2. Shaders icons array based on list of svg-files
+generate({
+    file: 'src/resources/generated/shadersicons.json',
+    json: ls('public/images/map-shaders-svg'),
+    validate: (json) => json.some((x) => x === 'c_h_arrow.svg'),
+});
+
 /**
  * @param file <String> file to store fresh data (and read/validate stale data)
  * @param json <JSON> ready to use JSON-object to filter, validate and store to file
