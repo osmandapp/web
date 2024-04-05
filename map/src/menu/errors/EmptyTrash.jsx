@@ -14,7 +14,7 @@ export default function EmptyTrash() {
     return (
         <>
             {ctx.loginUser ? (
-                <Box className={styles.block} id="se-empty-page">
+                <Box id={'se-empty-trash-page'} className={styles.block}>
                     <Icon className={styles.icon}>
                         <TrashIcon className={styles.icon} />
                     </Icon>

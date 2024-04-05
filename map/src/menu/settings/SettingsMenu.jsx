@@ -195,7 +195,12 @@ export default function SettingsMenu({ setCloudSettings }) {
                         </ListItemText>
                     </MenuItem>
                     <Divider className={styles.dividerItem} />
-                    <MenuItem divider className={styles.item} onClick={() => openCloudSettingsMenu({ trash: true })}>
+                    <MenuItem
+                        id={'se-cloud_trash'}
+                        divider
+                        className={styles.item}
+                        onClick={() => openCloudSettingsMenu({ trash: true })}
+                    >
                         <ListItemIcon className={styles.icon}>
                             <TrashIcon />
                         </ListItemIcon>

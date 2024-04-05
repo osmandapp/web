@@ -36,11 +36,13 @@ export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
-    const [changes, setChanges] = useState(files);
+    const [changes, setChanges] = useState(null);
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
 
     useEffect(() => {
-        setChanges(files);
+        if (files) {
+            setChanges(files);
+        }
     }, [files]);
 
     function closeChanges() {
@@ -94,6 +96,7 @@ export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }
                                         </ListItemText>
                                         <div>
                                             <IconButton
+                                                id={`se-cloud-trash-actions-${fileName}`}
                                                 className={trackStyles.sortIcon}
                                                 onMouseEnter={() => setHoverIconInfo(true)}
                                                 onMouseLeave={() => setHoverIconInfo(false)}
@@ -146,11 +149,12 @@ export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }
                     </Typography>
                     <Tooltip key={'empty_trash'} title={t('shared_string_empty_trash')} arrow placement="bottom-end">
                         <IconButton
+                            id={'se-empty_trash'}
                             component="span"
                             variant="contained"
                             type="button"
                             className={headerStyles.appBarIcon}
-                            disabled={changes.length === 0}
+                            disabled={changes?.length === 0}
                             onClick={() => setOpenDeleteDialog(true)}
                         >
                             <TrashIcon />
@@ -158,12 +162,13 @@ export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }
                     </Tooltip>
                 </Toolbar>
             </AppBar>
-            {filesLoading ? (
-                <Loading />
-            ) : changes.length === 0 ? (
+            {filesLoading || !changes ? (
+                <Loading id={'se-loading-page'} />
+            ) : changes?.length === 0 ? (
                 <EmptyTrash />
             ) : (
                 <Box
+                    id={'se-cloud_trash-items'}
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}
                     sx={{ overflow: 'auto', overflowX: 'hidden' }}

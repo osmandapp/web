@@ -4,20 +4,22 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import { emptyTrash, formatString } from '../../manager/SettingsManager';
 import DialogActions from '@mui/material/DialogActions';
-import { Button } from '@mui/material';
-import React, { useContext } from 'react';
+import { Button, LinearProgress } from '@mui/material';
+import React, { useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
 
 export default function EmptyTrashDialog({ dialogOpen, setDialogOpen, changes, setChanges }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
+    const [processing, setProcessing] = useState(false);
     const toggleShowDialog = () => {
         setDialogOpen(!dialogOpen);
     };
 
     return (
-        <Dialog open={true} onClose={toggleShowDialog}>
+        <Dialog id={'se-delete-trash-dialog'} open={true} onClose={toggleShowDialog}>
+            {processing && <LinearProgress />}
             <DialogTitle>{t('shared_string_empty_trash')}</DialogTitle>
             <DialogContent>
                 <DialogContentText>
@@ -27,9 +29,13 @@ export default function EmptyTrashDialog({ dialogOpen, setDialogOpen, changes, s
             <DialogActions>
                 <Button onClick={toggleShowDialog}>Cancel</Button>
                 <Button
+                    id={'se-delete-trash-dialog-delete'}
                     onClick={() => {
-                        setDialogOpen(false);
-                        emptyTrash({ ctx, changes, setChanges }).then();
+                        setProcessing(true);
+                        emptyTrash({ ctx, changes, setChanges }).then(() => {
+                            setProcessing(false);
+                            setDialogOpen(false);
+                        });
                     }}
                 >
                     Delete

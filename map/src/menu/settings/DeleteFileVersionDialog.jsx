@@ -3,8 +3,8 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
-import { Button } from '@mui/material';
-import React from 'react';
+import { Button, LinearProgress } from '@mui/material';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { deleteFile, deleteFileAllVersions, deleteFileVersion, formatString } from '../../manager/SettingsManager';
 
@@ -18,23 +18,32 @@ export default function DeleteFileVersionDialog({
     deleteAllVersions = false,
 }) {
     const { t } = useTranslation();
+    const [processing, setProcessing] = useState(false);
     const toggleShowDialog = () => {
         setDialogOpen(!dialogOpen);
     };
 
     async function deleteF() {
+        setProcessing(true);
         if (deleteVersion) {
-            await deleteFileVersion({ file, changes, setChanges });
+            deleteFileVersion({ file, changes, setChanges }).then(() => {
+                setProcessing(false);
+            });
         } else if (deleteAllVersions) {
-            await deleteFileAllVersions({ file, changes, setChanges, isTrash: true });
+            deleteFileAllVersions({ file, changes, setChanges, isTrash: true }).then(() => {
+                setProcessing(false);
+            });
         } else {
-            await deleteFile({ file, changes, setChanges });
+            deleteFile({ file, changes, setChanges }).then(() => {
+                setProcessing(false);
+            });
         }
         setDialogOpen(false);
     }
 
     return (
-        <Dialog open={true} onClose={toggleShowDialog}>
+        <Dialog id={'se-delete-version-dialog'} open={true} onClose={toggleShowDialog}>
+            {processing && <LinearProgress />}
             <DialogTitle>Delete</DialogTitle>
             <DialogContent>
                 <DialogContentText>
@@ -43,7 +52,9 @@ export default function DeleteFileVersionDialog({
             </DialogContent>
             <DialogActions>
                 <Button onClick={toggleShowDialog}>Cancel</Button>
-                <Button onClick={deleteF}>Delete</Button>
+                <Button id={'se-delete-version-dialog-delete'} onClick={deleteF}>
+                    Delete
+                </Button>
             </DialogActions>
         </Dialog>
     );

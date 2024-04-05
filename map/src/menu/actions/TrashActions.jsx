@@ -18,7 +18,7 @@ const TrashActions = forwardRef(({ item, setOpenActions, changes, setChanges }, 
     return (
         <>
             <Box ref={ref}>
-                <Paper id="se-track-actions" className={styles.actions}>
+                <Paper id="se-trash-actions" className={styles.actions}>
                     <MenuItem
                         className={styles.action}
                         disabled={isFileRestrictedForDownload(item.file)}
@@ -38,6 +38,7 @@ const TrashActions = forwardRef(({ item, setOpenActions, changes, setChanges }, 
                     </MenuItem>
                     <Divider className={styles.dividerActions} />
                     <MenuItem
+                        id={'se-trash-actions-restore'}
                         className={styles.action}
                         onClick={() => {
                             restoreFile({ file: item.file, ctx, changes, setChanges, fromTrash: true }).then();
@@ -54,7 +55,11 @@ const TrashActions = forwardRef(({ item, setOpenActions, changes, setChanges }, 
                         </ListItemText>
                     </MenuItem>
                     <Divider className={styles.dividerActions} />
-                    <MenuItem className={styles.action} onClick={() => setOpenDeleteDialog(true)}>
+                    <MenuItem
+                        id={'se-trash-actions-delete'}
+                        className={styles.action}
+                        onClick={() => setOpenDeleteDialog(true)}
+                    >
                         <ListItemIcon className={styles.iconAction}>
                             <DeleteIcon />
                         </ListItemIcon>

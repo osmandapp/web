@@ -36,7 +36,7 @@ export default function CloudChanges({ files, setOpenCloudSettings, filesLoading
     const [changes, setChanges] = useState(null);
 
     useEffect(() => {
-        if (files && files.length > 0) {
+        if (files) {
             setChanges(files);
         }
     }, [files]);
