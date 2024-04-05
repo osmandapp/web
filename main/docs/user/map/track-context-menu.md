@@ -340,7 +340,9 @@ Waypoints are one kind of point available on the map. The description is in the 
 
 </Tabs>
 
-In this _Points_ tab you can show track points data and modify your track points (waypoints and route points), delete its and add waypoints to tack.
+In this _Points_ tab:
+-  [show track points data](#display-custom-gpx-tags) and modify your track points (waypoints and route points), [delete its and add](#add--delete-buttons) waypoints to a track.
+-  create and modify [Group (folder) of points](#waypoints-folder).
 
 ### Add Waypoint to a track
 
