@@ -26,7 +26,14 @@ export default function EmptyTrashDialog({ dialogOpen, setDialogOpen, changes, s
             </DialogContent>
             <DialogActions>
                 <Button onClick={toggleShowDialog}>Cancel</Button>
-                <Button onClick={() => emptyTrash({ ctx, changes, setChanges })}>Delete</Button>
+                <Button
+                    onClick={() => {
+                        setDialogOpen(false);
+                        emptyTrash({ ctx, changes, setChanges }).then();
+                    }}
+                >
+                    Delete
+                </Button>
             </DialogActions>
         </Dialog>
     );
