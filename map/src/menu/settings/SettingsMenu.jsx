@@ -27,6 +27,7 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import * as locales from 'date-fns/locale';
 import { format } from 'date-fns';
 import i18n from '../../i18n';
+import { FREE_ACCOUNT } from '../../manager/LoginManager';
 
 export function getLocalizedTimeUpdate(time) {
     const locale = locales[i18n.language] || locales.enUS;
@@ -171,7 +172,7 @@ export default function SettingsMenu({ setCloudSettings }) {
                     </div>
                 </ListItemText>
             </MenuItem>
-            {ctx.loginUser && (
+            {ctx.loginUser && ctx.accountInfo?.account !== FREE_ACCOUNT && (
                 <>
                     <MenuItem className={styles.item}>
                         <Typography className={styles.title} noWrap>
