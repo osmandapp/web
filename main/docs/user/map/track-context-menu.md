@@ -462,12 +462,21 @@ When you tap to _Add Waypoint_ button, the Creation point screen opens (this scr
 | `name` | **Name** is the name of the point. Any characters are allowed.  |
 | `desc` | **Description** contains additional information about the point. |
 | `type` | **Select group** is the name of the OsmAnd folder in which this waypoint is saved. |
+| `cmt` | **Comment** is a short comment of a point. |
+| `link` | **Link** is a link to any sources. |
+| `ele` | **Elevation** is a point elevation. |
 
 | Extension | Description | 
 | --- | --- |
 | `osmand:icon` | **Icon** is the name of the icon you selected. | 
 | `osmand:color` | **Color** is the color in HEX format.  |
 | `osmand:background` | **Background** is the shape of the icon, such as a circle, octagon or square. |
+| `osmand:country` | **Country** is the name of country.  |
+| `osmand:address` | **Address** is the address.  |
+| `osmand:postcode` | **Postcode** is the postcode.  |
+| `osmand:telephone` | **Telephone** is the telephone number.  |
+| `osmand:state` | **State** is the state name.  |
+| `osmand:start_date` | **Start date** is the sheduele data of a point.  |
 
 Waypoints are recorded together with the track in the [GPX file](../../technical/osmand-file-formats/osmand-gpx.md). Each of these waypoints has its own set of tags for description. All tags that are directly related to the description of waypoints and that can be edited directly in the OsmAnd application are listed in this section.  
 To change the Waypoint description, you can go one of the following ways:
@@ -479,20 +488,6 @@ To change the Waypoint description, you can go one of the following ways:
     Then in the [Tracks Context menu](../map/track-context-menu.md) tap *Points*, the field of the required folder with available waypoints and the Waypoint you are looking for. Select menu *Actions →* **Edit GPX waypoint** and make changes. You cannot change the creation date of a point, *timestamp*, in the application.  
 
 **Amenity tags** that describe additional information, such as hours of operation or phone number, specific to the POI take that information from OpenStreetMap data or data that you entered when creating the POI. You can edit such tags and [custom tags](#display-custom-gpx-tags) only in the code of the GPX file, which you can open with any text editor on your device.
-
-### Locations along the route
-
-Waypoints, points of interest (POIs), Favorite points and Audio/video notes all refer to the concept of saving locations and routes in GPX (GPS Exchange Format). You can use the same tags to describe and edit them.  
-
-[*Waypoints*](#add-waypoint) are individual points on a map or route. They are used to mark certain places that may be important for navigating or recording your travels. For example, you can create a waypoint on the map to indicate an important intersection or change of direction.  
-
-[*Points of interest(POI)*](../map/point-layers-on-map.md#points-of-interest-poi) are places of special interest to the user. These can be landmarks, restaurants, hotels, gas stations, and other places of interest that the user wants to note or visit.  
-
-[*Favorite points*](../personal/favorites.md) are places that the user finds particularly important or interesting and saves to their list of favorite places. They can include any location that the user wants to easily find and return to later. 
-
-[*Audio/video notes*](../plugins/audio-video-notes.md#gpx-file-with-waypoints). In GPX format, you can save audio and video recordings as waypoints. This allows you to associate media files to specific locations on the map or route.  
-
-All of these point types can be saved in GPX format to provide the user with location information and help with navigation and route planning. They serve different purposes, but the general idea is to store and transmit geographic information so that the user can use it in their navigation tasks.
 
 
 ### Add / Delete buttons
