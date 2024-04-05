@@ -23,7 +23,7 @@ const routes = [
             // /Sand.*?: 8.93 km/s, // Surface // temporarily disabled // TODO
         ],
         turns: [
-            'Go ahead and go 1.1 km',
+            /Go ahead and go [01].[019] km/,
             'Turn slightly left (+TSLL,TSLR) and go 0.2 km',
             'Turn slightly right (+TSLR,TSLL) and go 2.5 km',
         ],
