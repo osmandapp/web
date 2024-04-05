@@ -7,6 +7,7 @@ import { ReactComponent as FolderIcon } from '../assets/icons/ic_action_folder.s
 import { ReactComponent as OtherTypesIcon } from '../assets/icons/ic_map_configure_map.svg';
 import i18n from '../i18n';
 import { apiGet, apiPost } from '../util/HttpApi';
+import { refreshGlobalFiles } from './track/SaveTrackManager';
 
 // Defines item size based on its type, necessary for layout before content is loaded.
 // Pre-set constants are used for lazy loading to ensure placeholders match the final content height.
@@ -213,4 +214,11 @@ export function isFileRestrictedForDownload(file) {
             file.name.toLowerCase().endsWith('.sqlitedb') ||
             file.name.toLowerCase().endsWith('.tif'))
     );
+}
+
+export function closeCloudSettings(openCloudSettings, setOpenCloudSettings, ctx) {
+    if (openCloudSettings) {
+        setOpenCloudSettings(false);
+        refreshGlobalFiles({ ctx }).then();
+    }
 }

@@ -25,8 +25,7 @@ import Loading from '../errors/Loading';
 import TracksManager from '../../manager/track/TracksManager';
 import ActionsMenu from '../actions/ActionsMenu';
 import ChangesActions from '../actions/ChangesActions';
-import { formatDate, getFileItemSize, getItemIcon } from '../../manager/SettingsManager';
-import { refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
+import { closeCloudSettings, formatDate, getFileItemSize, getItemIcon } from '../../manager/SettingsManager';
 import Empty from '../errors/Empty';
 
 export default function CloudChanges({ files, setOpenCloudSettings, filesLoading }) {
@@ -40,11 +39,6 @@ export default function CloudChanges({ files, setOpenCloudSettings, filesLoading
             setChanges(files);
         }
     }, [files]);
-
-    function closeChanges() {
-        setOpenCloudSettings(false);
-        refreshGlobalFiles({ ctx }).then();
-    }
 
     const ChangesItem = React.memo(({ item }) => {
         // useInView hook from `react-intersection-observer` for lazy loading.
@@ -154,7 +148,11 @@ export default function CloudChanges({ files, setOpenCloudSettings, filesLoading
         <>
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
-                    <IconButton variant="contained" className={styles.closeIcon} onClick={closeChanges}>
+                    <IconButton
+                        variant="contained"
+                        className={styles.closeIcon}
+                        onClick={() => closeCloudSettings(true, setOpenCloudSettings, ctx)}
+                    >
                         <BackIcon />
                     </IconButton>
                     <Typography component="div" className={headerStyles.title}>

@@ -22,13 +22,12 @@ import { ReactComponent as TrashIcon } from '../../assets/icons/ic_action_delete
 import Loading from '../errors/Loading';
 import { useInView } from 'react-intersection-observer';
 import TracksManager from '../../manager/track/TracksManager';
-import { formatDate, getFileItemSize, getItemIcon } from '../../manager/SettingsManager';
+import { closeCloudSettings, formatDate, getFileItemSize, getItemIcon } from '../../manager/SettingsManager';
 import trackStyles from '../trackfavmenu.module.css';
 import MenuItemsTitle from '../components/MenuItemsTitle';
 import ActionsMenu from '../actions/ActionsMenu';
 import AppContext from '../../context/AppContext';
 import TrashActions from '../actions/TrashActions';
-import { refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
 import EmptyTrash from '../errors/EmptyTrash';
 import EmptyTrashDialog from './EmptyTrashDialog';
 
@@ -44,11 +43,6 @@ export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }
             setChanges(files);
         }
     }, [files]);
-
-    function closeChanges() {
-        setOpenCloudSettings(false);
-        refreshGlobalFiles({ ctx }).then();
-    }
 
     const TrashItem = React.memo(({ item }) => {
         // useInView hook from `react-intersection-observer` for lazy loading.
@@ -140,7 +134,7 @@ export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }
                         variant="contained"
                         type="button"
                         className={styles.closeIcon}
-                        onClick={() => closeChanges()}
+                        onClick={() => closeCloudSettings(true, setOpenCloudSettings, ctx)}
                     >
                         <BackIcon />
                     </IconButton>

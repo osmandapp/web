@@ -37,6 +37,20 @@ export default async function test() {
     // delete track
     await deleteTrack(trackName);
 
+    // empty trash
+    await openTrash();
+    await waitBy(By.id('se-empty_trash'));
+    await clickBy(By.id('se-empty_trash'));
+    await waitBy(By.id('se-delete-trash-dialog'));
+    await clickBy(By.id('se-delete-trash-dialog-delete'));
+    await waitByRemoved(By.id('se-delete-trash-dialog'));
+    await waitBy(By.id('se-empty-trash-page'));
+
+    // create and delete track
+    await clickBy(By.id('se-show-menu-tracks'));
+    await actionImportCloudTrack(tracks, trackName);
+    await deleteTrack(trackName);
+
     // check trash
     await openTrash();
     await waitBy(By.id(`se-cloud-trash-actions-${trackName}`));
@@ -49,20 +63,6 @@ export default async function test() {
     await clickBy(By.id('se-delete-version-dialog-delete'));
     await waitByRemoved(By.id('se-delete-version-dialog'));
     await waitByRemoved(By.id(`se-cloud-trash-actions-${trackName}`));
-
-    // create and delete track
-    await clickBy(By.id('se-show-menu-tracks'));
-    await actionImportCloudTrack(tracks, trackName);
-    await deleteTrack(trackName);
-
-    // empty trash
-    await openTrash();
-    await waitBy(By.id('se-empty_trash'));
-    await clickBy(By.id('se-empty_trash'));
-    await waitBy(By.id('se-delete-trash-dialog'));
-    await clickBy(By.id('se-delete-trash-dialog-delete'));
-    await waitByRemoved(By.id('se-delete-trash-dialog'));
-    await waitBy(By.id('se-empty-trash-page'));
 
     await actionFinish();
 }
