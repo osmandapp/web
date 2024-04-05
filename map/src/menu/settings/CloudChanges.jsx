@@ -70,6 +70,7 @@ export default function CloudChanges({ files, setOpenCloudSettings, filesLoading
             if (file.updatetimems > file.clienttimems) {
                 return t('web:modified');
             }
+            return '';
         }
 
         return (

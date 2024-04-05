@@ -82,7 +82,7 @@ export const downloadFile = async (file) => {
     }
 };
 
-export async function deleteFileVersion(file, ctx, changes, setChanges) {
+export async function deleteFileVersion({ file, changes, setChanges }) {
     const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/delete-file-version`, '', {
         params: {
             name: file.name,
@@ -111,7 +111,7 @@ export async function deleteFileAllVersions({ file, changes, setChanges, isTrash
     }
 }
 
-export async function deleteFile(file, ctx, changes, setChanges) {
+export async function deleteFile({ file, changes, setChanges }) {
     const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/delete-file`, '', {
         params: {
             name: file.name,
@@ -199,6 +199,7 @@ function deleteVersionsFromMenu({ changes, name = null, id = null }) {
 }
 
 export function formatString(templateString, replacements) {
+    // Inserts parameters into a string, e.g., formatString("Delete \"%1$s\" permanently?", ["File.txt"]) -> "Delete "File.txt" permanently?"
     return templateString.replace(/%\d\$s/g, function (match) {
         let index = parseInt(match.replace('%', '').replace('$s', ''), 10) - 1;
         return replacements[index];
@@ -208,6 +209,8 @@ export function formatString(templateString, replacements) {
 export function isFileRestrictedForDownload(file) {
     return (
         file.type.toLowerCase() === 'file' &&
-        (file.name.endsWith('.obf') || file.name.endsWith('.sqlitedb') || file.name.endsWith('.tif'))
+        (file.name.toLowerCase().endsWith('.obf') ||
+            file.name.toLowerCase().endsWith('.sqlitedb') ||
+            file.name.toLowerCase().endsWith('.tif'))
     );
 }

@@ -66,7 +66,7 @@ const ChangesActions = forwardRef(({ item, setOpenActions, changes, setChanges }
                     <MenuItem
                         className={styles.action}
                         onClick={() => {
-                            deleteFileVersion(item.file, ctx, changes, setChanges).then();
+                            deleteFileVersion({ file: item.file, changes, setChanges }).then();
                             setOpenActions(false);
                         }}
                     >

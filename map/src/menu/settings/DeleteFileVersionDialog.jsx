@@ -4,10 +4,9 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import { Button } from '@mui/material';
-import React, { useContext } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { deleteFile, deleteFileAllVersions, deleteFileVersion, formatString } from '../../manager/SettingsManager';
-import AppContext from '../../context/AppContext';
 
 export default function DeleteFileVersionDialog({
     dialogOpen,
@@ -18,7 +17,6 @@ export default function DeleteFileVersionDialog({
     deleteVersion = false,
     deleteAllVersions = false,
 }) {
-    const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const toggleShowDialog = () => {
         setDialogOpen(!dialogOpen);
@@ -26,11 +24,11 @@ export default function DeleteFileVersionDialog({
 
     async function deleteF() {
         if (deleteVersion) {
-            deleteFileVersion(file, ctx, changes, setChanges).then();
+            await deleteFileVersion({ file, changes, setChanges });
         } else if (deleteAllVersions) {
-            deleteFileAllVersions({ file, changes, setChanges, isTrash: true }).then();
+            await deleteFileAllVersions({ file, changes, setChanges, isTrash: true });
         } else {
-            deleteFile(file, ctx, changes, setChanges).then();
+            await deleteFile({ file, changes, setChanges });
         }
         setDialogOpen(false);
     }
@@ -45,7 +43,7 @@ export default function DeleteFileVersionDialog({
             </DialogContent>
             <DialogActions>
                 <Button onClick={toggleShowDialog}>Cancel</Button>
-                <Button onClick={() => deleteF()}>Delete</Button>
+                <Button onClick={deleteF}>Delete</Button>
             </DialogActions>
         </Dialog>
     );
