@@ -48,7 +48,7 @@ export default function CloudSettings({ cloudSettings, setOpenCloudSettings }) {
         return getPreparedFiles(trashFiles);
     }, [trashFiles]);
 
-    // Processes and groups files by their update month and year.
+    // Process and group files by updatetimems (month/year).
     function getPreparedFiles(files) {
         const filesByDate = {};
         files.forEach((file) => {
