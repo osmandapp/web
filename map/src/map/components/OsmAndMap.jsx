@@ -108,7 +108,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
 
     useEffect(() => {
         if (tileLayer.current) {
-            tileLayer.current.setUrl(ctx.tileURL.url);
+            tileLayer.current.getLeafletLayer().setUrl(ctx.tileURL.url);
         }
     }, [ctx.tileURL]);
 

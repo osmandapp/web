@@ -3,7 +3,7 @@ import { forwardRef, useCallback, useContext, useEffect, useImperativeHandle, us
 import L from 'leaflet';
 import AppContext from '../../context/AppContext';
 import 'leaflet.vectorgrid';
-import { MAP_ICONS_FOLDER, SHIELDS_FOLDER } from '../markers/MarkerOptions';
+import { getIconUrlByName, getShaderUrlByName } from '../markers/MarkerOptions';
 import { DYNAMIC_RENDERING } from '../../menu/configuremap/ConfigureMap';
 import { apiGet } from '../../util/HttpApi';
 import styles from './map.module.css';
@@ -107,7 +107,7 @@ const CustomTileLayer = forwardRef((props, ref) => {
             textSize: obj.textSize,
             bold: obj.bold,
             italic: obj.italic,
-            iconUrl: obj.mainIcon !== '' ? `/map/images/${MAP_ICONS_FOLDER}/mx_${obj.mainIcon}.svg` : null,
+            iconUrl: obj.mainIcon !== '' ? getIconUrlByName('map', obj.mainIcon) : null,
         };
     }
 
@@ -159,11 +159,11 @@ const CustomTileLayer = forwardRef((props, ref) => {
         const markers = [];
 
         if (feature.properties.shield) {
-            const backIconUrl = `/map/images/${SHIELDS_FOLDER}/h_${feature.properties.shield}.svg`;
+            const backIconUrl = getShaderUrlByName(feature.properties.shield);
             markers.push(createMarker(backIconUrl, [20, 20]));
         }
 
-        const frontIconUrl = `/map/images/${MAP_ICONS_FOLDER}/mx_${feature.properties.mainIcon}.svg`;
+        const frontIconUrl = getIconUrlByName('map', feature.properties.mainIcon);
         markers.push(createMarker(frontIconUrl, [12, 12], [0, 0]));
 
         addPopup(feature, markers);
@@ -318,7 +318,7 @@ const CustomTileLayer = forwardRef((props, ref) => {
         };
 
         if (feature.properties.shieldRes) {
-            const backIconUrl = `/map/images/${SHIELDS_FOLDER}/h_${feature.properties.shieldRes}.svg`;
+            const backIconUrl = getShaderUrlByName(feature.properties.shieldRes);
             createMarker(backIconUrl, layerGroup);
         }
 
@@ -390,7 +390,9 @@ const CustomTileLayer = forwardRef((props, ref) => {
             if (map.hasLayer(rasterTileLayerRef.current)) {
                 map.removeLayer(rasterTileLayerRef.current);
             }
-            removeDataLayers(dataLayersRef.current.layers);
+            if (dataLayersRef.current && dataLayersRef.current.layers.length > 0) {
+                removeDataLayers(dataLayersRef.current.layers);
+            }
         };
     }, []);
 

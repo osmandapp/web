@@ -89,6 +89,9 @@ const FavoriteLayer = () => {
     function addMarkersOnMap(file) {
         if (file.markers && file.hidden !== 'true') {
             if (file.markers) {
+                file.markers.eachLayer((layer) => {
+                    layer.options.isFavorite = true;
+                });
                 file.markers.addTo(map).on('click', onClick);
             }
             if (

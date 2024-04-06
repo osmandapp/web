@@ -19,6 +19,7 @@ import TracksRoutingCache, {
 } from '../../context/TracksRoutingCache';
 import WptMapDialog from '../../dialogs/WptMapDialog';
 import { saveTrackToLocalStorage } from '../../manager/track/SaveTrackManager';
+import { FAVORITE_FILE_TYPE } from '../../manager/FavoritesManager';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
@@ -628,6 +629,10 @@ export default function LocalClientTrackLayer() {
         return layer.options.name === TEMP_LAYER_FLAG;
     }
 
+    function isFavoriteLayer(layer) {
+        return layer.options?.isFavorite === true || layer.options.type === FAVORITE_FILE_TYPE;
+    }
+
     function updateLayers(points, wpts, trackLayers, deleteOld) {
         if (trackLayers) {
             let layers = [];
@@ -640,7 +645,7 @@ export default function LocalClientTrackLayer() {
             layers = createEditableLayers(layers);
             if (deleteOld) {
                 map.eachLayer((layer) => {
-                    if (!isTileLayer(layer) && !isTempLayer(layer)) {
+                    if (!isTileLayer(layer) && !isTempLayer(layer) && !isFavoriteLayer(layer)) {
                         map.removeLayer(layer); // cleanup map-layers
                     }
                 });
