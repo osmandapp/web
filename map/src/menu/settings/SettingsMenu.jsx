@@ -1,6 +1,7 @@
 import {
     AppBar,
     ClickAwayListener,
+    Divider,
     IconButton,
     ListItemIcon,
     ListItemText,
@@ -18,12 +19,15 @@ import enList from '../../resources/translations/en/translation.json';
 
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as DisplayLanguageIcon } from '../../assets/icons/ic_action_map_language.svg';
+import { ReactComponent as ChangesIcon } from '../../assets/icons/ic_action_history.svg';
+import { ReactComponent as TrashIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import { useTranslation } from 'react-i18next';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import * as locales from 'date-fns/locale';
 import { format } from 'date-fns';
 import i18n from '../../i18n';
+import { FREE_ACCOUNT } from '../../manager/LoginManager';
 
 export function getLocalizedTimeUpdate(time) {
     const locale = locales[i18n.language] || locales.enUS;
@@ -31,7 +35,7 @@ export function getLocalizedTimeUpdate(time) {
     return format(currentDate, 'MMM d', { locale });
 }
 
-export default function SettingsMenu() {
+export default function SettingsMenu({ setCloudSettings }) {
     const ctx = useContext(AppContext);
 
     const [openLangList, setOpenLangList] = useState(false);
@@ -88,6 +92,10 @@ export default function SettingsMenu() {
     function getTransLanguage(lang) {
         const trans = t(`lang_${lang}`).toString();
         return trans.startsWith('lang_') ? enList[`lang_${lang}`] : trans;
+    }
+
+    function openCloudSettingsMenu({ changes = false, trash = false }) {
+        setCloudSettings({ changes, trash });
     }
 
     const languageList = useMemo(() => {
@@ -164,6 +172,46 @@ export default function SettingsMenu() {
                     </div>
                 </ListItemText>
             </MenuItem>
+            {ctx.loginUser && ctx.accountInfo?.account !== FREE_ACCOUNT && (
+                <>
+                    <MenuItem className={styles.item}>
+                        <Typography className={styles.title} noWrap>
+                            {t('osmand_cloud')}
+                        </Typography>
+                    </MenuItem>
+
+                    <MenuItem
+                        id={'se-cloud_changes'}
+                        className={styles.item}
+                        onClick={() => openCloudSettingsMenu({ changes: true })}
+                    >
+                        <ListItemIcon className={styles.icon}>
+                            <ChangesIcon />
+                        </ListItemIcon>
+                        <ListItemText>
+                            <Typography variant="inherit" noWrap>
+                                {t('web:cloud_changes')}
+                            </Typography>
+                        </ListItemText>
+                    </MenuItem>
+                    <Divider className={styles.dividerItem} />
+                    <MenuItem
+                        id={'se-cloud_trash'}
+                        divider
+                        className={styles.item}
+                        onClick={() => openCloudSettingsMenu({ trash: true })}
+                    >
+                        <ListItemIcon className={styles.icon}>
+                            <TrashIcon />
+                        </ListItemIcon>
+                        <ListItemText>
+                            <Typography variant="inherit" noWrap>
+                                {t('shared_string_trash')}
+                            </Typography>
+                        </ListItemText>
+                    </MenuItem>
+                </>
+            )}
             <Popover
                 anchorOrigin={{
                     vertical: 'top',
