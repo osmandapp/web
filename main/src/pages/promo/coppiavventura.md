@@ -38,7 +38,7 @@ OsmAnd e ["Coppiavventura"](https://www.facebook.com/coppiavventura/) vi present
 OsmAnd non raccoglie informazioni, leggere [l'informativa sulla privacy](https://osmand.net/docs/legal/privacy-policy) e [le condizioni d'uso](https://osmand.net/docs/legal/terms-of-use) di OsmAnd.
 
 
-Link "Coppiavventura": [Instagram](https://www.instagram.com/coppiavventura_), [Youtube](https://www.youtube.com/c/Coppiavventura), [Facebook](https://www.facebook.com/coppiavventura/), [Twitter](https://mobile.twitter.com/), [TikTok](www.tiktok.com/@coppiavventura)
+Link "Coppiavventura": [Instagram](https://www.instagram.com/coppiavventura_), [Youtube](https://www.youtube.com/c/Coppiavventura), [Facebook](https://www.facebook.com/coppiavventura/), [Twitter](https://mobile.twitter.com/)
 
 ______________________________
 
@@ -63,7 +63,7 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 
 OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use).
 
-"Coppiavventura" links: [Instagram](https://www.instagram.com/coppiavventura_), [Youtube](https://www.youtube.com/c/Coppiavventura), [Facebook](https://www.facebook.com/coppiavventura/), [Twitter](https://mobile.twitter.com/), [TikTok](www.tiktok.com/@coppiavventura)
+"Coppiavventura" links: [Instagram](https://www.instagram.com/coppiavventura_), [Youtube](https://www.youtube.com/c/Coppiavventura), [Facebook](https://www.facebook.com/coppiavventura/), [Twitter](https://mobile.twitter.com/)
 ________________________________
 
 <SotmScreenshots />
