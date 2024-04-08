@@ -64,6 +64,16 @@ export default function WptDetails({ setShowInfoBlock, isDetails = false, setOpe
         ctx.setSelectedWpt(null);
     }
 
+    function getId() {
+        if (type?.isFav) {
+            return 'se-fav-item-info-' + wpt.name;
+        }
+        if (type?.isPoi) {
+            return 'se-poi-infoblock-' + wpt.name;
+        }
+        return null;
+    }
+
     return (
         <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
             <AppBar position="static" className={headerStyles.appbar}>
@@ -79,7 +89,7 @@ export default function WptDetails({ setShowInfoBlock, isDetails = false, setOpe
                 </Toolbar>
             </AppBar>
             {wpt !== null && (
-                <ListItemText>
+                <ListItemText id={getId()}>
                     <div className={styles.topContainer}>
                         <Typography variant="body2" noWrap className={styles.name}>
                             {wpt.name}
