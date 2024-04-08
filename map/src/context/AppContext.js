@@ -33,6 +33,7 @@ export const defaultConfigureMapStateValues = {
 export const isLocalTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK;
 export const isCloudTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK;
 export const isRouteTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_TRACK;
+export const isTrack = (ctx) => isLocalTrack(ctx) || isCloudTrack(ctx) || isRouteTrack(ctx);
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',

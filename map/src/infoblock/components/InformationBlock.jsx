@@ -1,25 +1,22 @@
 import { AppBar, LinearProgress, Box, Typography, IconButton } from '@mui/material';
 import AppContext, {
     isLocalTrack,
-    isCloudTrack,
     OBJECT_TYPE_NAVIGATION_ALONE,
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_WEATHER,
-    OBJECT_TYPE_POI,
-    isRouteTrack,
+    isTrack,
 } from '../../context/AppContext';
 import React, { useState, useContext, useEffect, useCallback } from 'react';
 import { TabContext, TabList } from '@mui/lab';
 import TrackTabList from './tabs/TrackTabList';
-import FavoritesTabList from './tabs/FavoritesTabList';
 import _, { isEmpty } from 'lodash';
-import PoiTabList from './tabs/PoiTabList';
 import { hasSegmentTurns } from '../../manager/track/TracksManager';
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import styles from '../../menu/trackfavmenu.module.css';
 import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
 import WeatherForecastDetails from '../../menu/weather/WeatherForecastDetails';
+import WptDetails from './WptDetails';
 
 const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     const [mounted, setMounted] = useState(false);
@@ -48,6 +45,8 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
     const [tabsObj, setTabsObj] = useState(null);
     const [prevTrack, setPrevTrack] = useState(null);
     const [openWeatherForecastDetails, setOpenWeatherForecastDetails] = useState(false);
+    const [openWptDetails, setOpenWptDetails] = useState(false);
+    const [openWptTab, setOpenWptTab] = useState(false);
 
     /**
      * Handle Escape key to close PointContextMenu.
@@ -122,13 +121,9 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                 if (isValidWeatherObj()) {
                     setOpenWeatherForecastDetails(true);
                     setShowInfoBlock(true);
-                } else if (ctx.currentObjectType === OBJECT_TYPE_FAVORITE) {
-                    tObj = new FavoritesTabList().create(ctx);
-                } else if (ctx.currentObjectType === OBJECT_TYPE_POI) {
-                    tObj = new PoiTabList().create();
                 } else if (ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_ALONE) {
                     // don't display InfoBlock in Navigation menu until details requested
-                } else if (ctx.selectedGpxFile && (isCloudTrack(ctx) || isLocalTrack(ctx) || isRouteTrack(ctx))) {
+                } else if (ctx.selectedGpxFile && isTrack(ctx)) {
                     // finally assume that default selectedGpxFile is a track
                     tObj = new TrackTabList().create(ctx, setShowInfoBlock);
                 }
@@ -141,6 +136,24 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
             }
         }
     }, [ctx.currentObjectType, ctx.selectedGpxFile, ctx.updateInfoBlock]);
+
+    useEffect(() => {
+        if (ctx.selectedWpt && !ctx.selectedWpt.trackWpt) {
+            setShowInfoBlock(true);
+            setOpenWptDetails(true);
+        } else {
+            setOpenWptDetails(false);
+        }
+    }, [ctx.selectedWpt]);
+
+    useEffect(() => {
+        if (openWptTab) {
+            let tObj = new TrackTabList().create(ctx, setShowInfoBlock);
+            clearStateIfObjChange();
+            setTabsObj(tObj);
+            setValue('waypoints');
+        }
+    }, [openWptTab]);
 
     function clearStateIfObjChange() {
         if (
@@ -174,13 +187,25 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
         }
     }
 
+    function hasOldTabs() {
+        return !openWeatherForecastDetails && !openWptDetails;
+    }
+
     return (
         <>
             {showInfoBlock && (
                 <>
-                    {openWeatherForecastDetails ? (
-                        <WeatherForecastDetails setShowInfoBlock={setShowInfoBlock} />
-                    ) : (
+                    {openWeatherForecastDetails && <WeatherForecastDetails setShowInfoBlock={setShowInfoBlock} />}
+                    {openWptDetails && (
+                        <WptDetails
+                            setShowInfoBlock={setShowInfoBlock}
+                            isDetails={
+                                ctx.currentObjectType === OBJECT_TYPE_FAVORITE || ctx.selectedWpt?.trackWptDetails
+                            }
+                            setOpenWptTab={setOpenWptTab}
+                        />
+                    )}
+                    {hasOldTabs() && (
                         <Box anchor={'right'} sx={{ height: 'auto', width: getWidth(), overflowX: 'hidden' }}>
                             <div id="se-infoblock-all">
                                 {(ctx.loadingContextMenu || ctx.gpxLoading) && <LinearProgress size={20} />}
@@ -195,6 +220,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                                     onClick={() => {
                                         setShowInfoBlock(false);
                                         ctx.setCurrentObjectType(null);
+                                        ctx.setSelectedGpxFile({});
                                     }}
                                 >
                                     <BackIcon />

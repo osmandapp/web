@@ -108,7 +108,10 @@ const WaypointRow = ({ point, index, ctx }) => {
     const [, , mobile] = useWindowSize();
 
     function showPoint(point) {
-        ctx.setSelectedWpt(point);
+        ctx.setSelectedWpt({
+            ...point.wpt,
+            trackWptDetails: true,
+        });
         ctx.setSelectedGpxFile((o) => ({ ...o, showPoint: point }));
     }
 
@@ -175,17 +178,7 @@ const WaypointRow = ({ point, index, ctx }) => {
                 </Grid>
             </MenuItem>
         );
-    }, [
-        index,
-        point.wpt?.lat,
-        point.wpt?.lon,
-        point.wpt?.name,
-        point.wpt?.desc,
-        point.wpt?.address,
-        point.wpt?.category,
-        ctx.currentObjectType,
-        mobile,
-    ]);
+    }, [index, mobile, ctx, point]);
 };
 
 export default function WaypointsTab() {

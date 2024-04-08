@@ -156,7 +156,7 @@ const FavoriteLayer = () => {
             : FavoritesManager.DEFAULT_GROUP_NAME;
         ctx.selectedGpxFile.file = Object.assign({}, ctx.favorites.mapObjs[e.sourceTarget.options.category]);
         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-        ctx.setUpdateInfoBlock(true);
+        ctx.setSelectedWpt(ctx.selectedGpxFile);
     }
 
     function updateSelectedFavoriteOnMap(file) {

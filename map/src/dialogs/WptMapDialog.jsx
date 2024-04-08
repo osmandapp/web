@@ -63,13 +63,12 @@ export default function WptMapDialog() {
     };
 
     useEffect(() => {
-        if (ctx.selectedGpxFile?.wpts && ctx.selectedWpt) {
+        if (ctx.selectedWpt?.trackWpt) {
             ctx.addFavorite.editTrack = true;
             ctx.setAddFavorite({ ...ctx.addFavorite });
-            const lat = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lat : ctx.selectedWpt.wpt.lat;
-            const lng = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lng : ctx.selectedWpt.wpt.lon;
-            const currentWpt = ctx.selectedGpxFile.wpts.find((wpt) => wpt.lat === lat && wpt.lon === lng);
-            setWpt(currentWpt);
+            setWpt(ctx.selectedWpt);
+        } else {
+            setWpt(null);
         }
     }, [ctx.selectedWpt, ctx.selectedGpxFile]);
 
@@ -87,7 +86,7 @@ export default function WptMapDialog() {
         <>
             {wpt && (
                 <Dialog sx={{ maxWidth: `${widthDialog}px` }} disableEnforceFocus open={ctx.selectedWpt !== null}>
-                    <DialogContent sx={{ overflowX: 'hidden', overflowY: 'hidden' }}>
+                    <DialogContent sx={{ overflowX: 'hidden', overflowY: 'hidden', width: `${widthDialog}px` }}>
                         <IconButton
                             sx={{ float: 'right', mb: -1, mt: -1, mr: -2, zIndex: 1000 }}
                             variant="contained"
@@ -107,7 +106,7 @@ export default function WptMapDialog() {
                                 }}
                             />
                             <Typography
-                                sx={{ color: '#666666', fontWeight: 'bold', mt: '-40px' }}
+                                sx={{ color: '#666666', fontWeight: 'bold' }}
                                 className={styles.name}
                                 variant="inherit"
                             >

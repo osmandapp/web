@@ -170,13 +170,14 @@ export default function PoiLayer() {
 
     function onClick(e) {
         ctx.setCurrentObjectType(OBJECT_TYPE_POI);
-
         const poi = {
             options: e.sourceTarget.options,
             latlng: e.sourceTarget._latlng,
         };
-        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile, poi });
-        ctx.setUpdateInfoBlock(true);
+        let newPoi = {
+            poi: poi,
+        };
+        ctx.setSelectedWpt(newPoi);
     }
 
     /**

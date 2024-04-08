@@ -1,0 +1,23 @@
+.closeIcon {
+    fill: var(--svg-icon-color) !important;
+    padding: 8px;
+    &:hover {
+        fill: var(--selected-color) !important;
+        background-color: #f5f5f5 !important;
+    }
+}
+
+.topContainer {
+    max-height: 45px !important;
+    display: flex !important;
+    padding: 27px 16px !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 24px !important;
+}
+
+.name {
+    color: var(--text-primary) !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+}

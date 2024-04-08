@@ -214,7 +214,12 @@ function parseWpt(points, layers, ctx = null) {
             let marker = new L.Marker(new L.LatLng(lat, lon), opt);
             if (ctx) {
                 marker.on('click', (e) => {
-                    ctx.setSelectedWpt(e);
+                    const wpt = {
+                        trackWpt: true,
+                        ...e,
+                        ...point,
+                    };
+                    ctx.setSelectedWpt(wpt);
                 });
             }
             layers.push(marker);
