@@ -119,7 +119,7 @@ Now, the new custom button will be visible on your device's screen. Tapping this
 
 ## Routes tags
 
-Extracted [Route](https://osmand.net/docs/user/map/tracks-on-map#routes-on-the-map) Tags from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Relation:route) Data for [Track Context menu](https://osmand.net/docs/user/map/track-context-menu#description-and-info): Includes `distance`, `direction`, `state`, `color`, `roundtrip`, `tourism`, `description`, `type`, `start/end points`, and `elevation` change (`descent/ascent`).
+Extracted [Route](https://osmand.net/docs/user/map/tracks-on-map#routes-on-the-map) Tags from [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Relation:route) Data for [Track Context menu](http://localhost:3000/docs/user/map/tracks-on-map#save-as-a-track): Includes `distance`, `direction`, `state`, `color`, `roundtrip`, `tourism`, `description`, `type`, `start/end points`, and `elevation` change (`descent/ascent`).
 
 Example of relation tags for ["CAIOSM - Emilia Romagna - sentiero 137"](https://www.openstreetmap.org/relation/16115660):
 
@@ -179,18 +179,18 @@ Introduced the ability to [filter](https://osmand.net/docs/user/personal/tracks#
 
 ## Tags support
 
-- The import process for GPX files now includes support for [for tags](https://github.com/osmandapp/OsmAnd/issues/18342) such as `author`, `cmt`, `link`, `keywords`, `copyright`, `email` , allowing for the display of this information in the Track Context menu.
+- The import process for GPX files now includes support for [for tags](https://osmand.net/docs/user/map/track-context-menu#description-and-info) such as `author`, `cmt`, `link`, `keywords`, `copyright`, `email` , allowing for the display of this information in the _Track Context menu_.
 
 ![Tags of track Android](./img/tags_track_android.png)
 
-- Move sensors tags to `gpxtpx:TrackPointExtensio`.
+- Move [External sensors](https://osmand.net/docs/user/plugins/external-sensors) tags to `gpxtpx:TrackPointExtensio`.
 
 
 ## More
 
 - [Reduced 2.5D tilt](https://github.com/osmandapp/OsmAnd/issues/16027) angle at low zoom levels.
 - [Map tilt angle](https://github.com/osmandapp/OsmAnd/issues/18798) saved by taping on a button.
-- Added option of [Auto Sync](https://osmand.net/docs/user/personal/osmand-cloud) for OsmAnd Cloud.
+<!--- Added option of [Auto Sync](https://osmand.net/docs/user/personal/osmand-cloud) for OsmAnd Cloud.-->
 - Updated [Search screen of Android Auto](https://github.com/osmandapp/OsmAnd/issues/17209).
 - Added POI's [category "Water"](https://github.com/osmandapp/OsmAnd/issues/16021).
 - Introduce map [rotation North fixed](https://github.com/osmandapp/OsmAnd/issues/17086).

@@ -44,6 +44,8 @@ import FavoriteGroupFolder from './favorite/FavoriteGroupFolder';
 import VisibleTracks from './visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
 import SettingsMenu from './settings/SettingsMenu';
+import CloudSettings from './settings/CloudSettings';
+import { closeCloudSettings } from '../manager/SettingsManager';
 
 export default function MainMenu({
     size,
@@ -62,6 +64,11 @@ export default function MainMenu({
     const { t } = useTranslation();
 
     const [selectedType, setSelectedType] = useState(null);
+    const [cloudSettings, setCloudSettings] = useState({
+        changes: false,
+        trash: false,
+    });
+    const [openCloudSettings, setOpenCloudSettings] = useState(false);
 
     const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
     const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
@@ -140,12 +147,16 @@ export default function MainMenu({
         {
             name: t('shared_string_settings'),
             icon: SettingsIcon,
-            component: <SettingsMenu />,
+            component: <SettingsMenu setCloudSettings={setCloudSettings} />,
             type: OBJECT_GLOBAL_SETTINGS,
             show: true,
             id: 'se-show-menu-settings',
         },
     ];
+
+    useEffect(() => {
+        setOpenCloudSettings(cloudSettings.changes || cloudSettings.trash);
+    }, [cloudSettings]);
 
     //open main menu if infoblock was opened
     useEffect(() => {
@@ -164,6 +175,7 @@ export default function MainMenu({
     //open main menu if currentObjectType was changed
     useEffect(() => {
         if (ctx.currentObjectType) {
+            closeCloudSettings(openCloudSettings, setOpenCloudSettings, ctx);
             if (ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_ALONE) {
                 // invoked by RouteService.js effect
                 // activate Navigation menu even w/o currentObjectType (if no other menu was activated before)
@@ -235,6 +247,7 @@ export default function MainMenu({
         if (menuInfo) {
             // update menu
             setShowInfoBlock(false);
+            closeCloudSettings(openCloudSettings, setOpenCloudSettings, ctx);
             const menu = !isSelectedMenuItem(item) ? item : null;
             setMenuInfo(menu?.component);
             setSelectedType(menu?.type);
@@ -438,9 +451,11 @@ export default function MainMenu({
                 hideBackdrop
             >
                 <Toolbar sx={{ mb: '-3px' }} />
-                {!showInfoBlock && _.isEmpty(ctx.openGroups) && !openVisibleMenu && menuInfo}
-                {ctx.openGroups.length > 0 && !showInfoBlock && getGroup()}
-                {openVisibleMenu && !showInfoBlock && (
+                {/*add main menu items*/}
+                {!showInfoBlock && _.isEmpty(ctx.openGroups) && !openVisibleMenu && !openCloudSettings && menuInfo}
+                {/*add track groups*/}
+                {ctx.openGroups.length > 0 && !openCloudSettings && !showInfoBlock && getGroup()}
+                {openVisibleMenu && !showInfoBlock && !openCloudSettings && (
                     <VisibleTracks
                         setOpenVisibleMenu={setOpenVisibleMenu}
                         setMenuInfo={setMenuInfo}
@@ -453,6 +468,9 @@ export default function MainMenu({
                     setClearState={setClearState}
                     mainMenuSize={size}
                 />
+                {openCloudSettings && (
+                    <CloudSettings cloudSettings={cloudSettings} setOpenCloudSettings={setOpenCloudSettings} />
+                )}
             </Drawer>
         </Box>
     );

@@ -483,7 +483,7 @@ In this part of the menu you reorder or hide items from the [Context menu action
 
 ## Plugin settings
 
-:::cation
+:::caution
 To access the plugin's settings, you must first [enable the plugin](../plugins/index.md#enable--disable) in the *Plugin section of the Main menu*.
 :::
 

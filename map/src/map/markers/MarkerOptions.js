@@ -1,5 +1,8 @@
 import L from 'leaflet';
 import Utils from '../../util/Utils';
+import poiicons from '../../resources/generated/poiicons.json';
+import mapicons from '../../resources/generated/mapicons.json';
+import shadersicons from '../../resources/generated/shadersicons.json';
 
 const BACKGROUND_WPT_SHAPE_CIRCLE = 'circle';
 const BACKGROUND_WPT_SHAPE_OCTAGON = 'octagon';
@@ -8,8 +11,12 @@ const DEFAULT_WPT_ICON = 'special_star';
 const DEFAULT_WPT_COLOR = '#eecc22';
 
 export const POI_ICONS_FOLDER = 'poi-icons-svg';
-export const SHIELDS_FOLDER = 'map-shaders-svg';
+export const SHADERS_FOLDER = 'map-shaders-svg';
 export const MAP_ICONS_FOLDER = 'map-icons-svg';
+export const ICONS_PREFIX = 'mx_';
+export const COLORED_ICONS_PREFIX = 'c_mx_';
+export const SHADERS_PREFIX = 'h_';
+export const COLORED_SHADERS_PREFIX = 'c_h_';
 
 const MarkerIcon = ({ iconType = 'default-marker', bg = 'blue' }) => {
     let svg =
@@ -67,21 +74,23 @@ export function getWptIcon(point, color, background, icon, folder) {
               : DEFAULT_WPT_ICON;
     let iconsFolder = folder ? folder : POI_ICONS_FOLDER;
     let part = point ? 'mx_' : '';
+    let html;
+    const bsize = 24;
+    const isize = 18;
+    const offsetX = (bsize - isize) / 2; // Center the image horizontally
+    const offsetY = (bsize - isize) / 2; // Center the image vertically
     if (iconWpt) {
-        return L.divIcon({
-            html: `<svg viewBox="0 0 24 24" filter="drop-shadow(5px 0 2px gray)" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                    ${svg}
-                   <image x="0" y="0" width="24" height="24" href="/map/images/${iconsFolder}/${part}${iconWpt}.svg" />
-                   </svg>`,
-        });
+        html = `<svg viewBox="0 0 ${bsize} ${bsize}" filter="drop-shadow(5px 0 2px gray)" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                ${svg}
+                <image x="${offsetX}" y="${offsetY}" width="${isize}" height="${isize}" href="/map/images/${iconsFolder}/${part}${iconWpt}.svg" />
+                </svg>`;
     } else {
-        return L.divIcon({
-            html: `<svg viewBox="0 0 24 24"  filter="drop-shadow(5px 0 2px gray)" xmlns="http://www.w3.org/2000/svg">
+        html = `<svg viewBox="0 0 ${bsize} ${bsize}"  filter="drop-shadow(5px 0 2px gray)" xmlns="http://www.w3.org/2000/svg">
                    ${svg}
-                   <image x="0" y="0" width="24" height="24" href="/map/images/${POI_ICONS_FOLDER}/mx_${DEFAULT_WPT_ICON}.svg" />
-                   </svg>`,
-        });
+                   <image x="${offsetX}" y="${offsetY}" width="${isize}" height="${isize}" href="/map/images/${POI_ICONS_FOLDER}/${ICONS_PREFIX}${DEFAULT_WPT_ICON}.svg" />
+                   </svg>`;
     }
+    return L.divIcon({ html: html });
 }
 
 function isStrangeShape(shape) {
@@ -238,6 +247,25 @@ export function changeIconSizeWpt(svgHtml, iconSize, shapeSize) {
     );
 
     return svgHtml;
+}
+
+export function getIconUrlByName(type, name) {
+    if (type === 'poi') {
+        if (poiicons.includes(`${ICONS_PREFIX}${name}.svg`)) {
+            return `/map/images/${POI_ICONS_FOLDER}/${ICONS_PREFIX}${name}.svg`;
+        } else return `/map/images/${POI_ICONS_FOLDER}/${COLORED_ICONS_PREFIX}${name}.svg`;
+    } else if (type === 'map') {
+        if (mapicons.includes(`${ICONS_PREFIX}${name}.svg`)) {
+            return `/map/images/${MAP_ICONS_FOLDER}/${ICONS_PREFIX}${name}.svg`;
+        } else return `/map/images/${MAP_ICONS_FOLDER}/${COLORED_ICONS_PREFIX}${name}.svg`;
+    }
+    return '';
+}
+
+export function getShaderUrlByName(name) {
+    if (shadersicons.includes(`${ICONS_PREFIX}${name}.svg`)) {
+        return `/map/images/${SHADERS_FOLDER}/${SHADERS_PREFIX}${name}.svg`;
+    } else return `/map/images/${SHADERS_FOLDER}/${COLORED_SHADERS_PREFIX}${name}.svg`;
 }
 
 const MarkerOptions = {

@@ -6,7 +6,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Close } from '@mui/icons-material';
 import { Checkbox, FormControlLabel, MenuItem } from '@mui/material/';
 import AppContext from '../../../context/AppContext';
-import { POI_ICONS_FOLDER } from '../../../map/markers/MarkerOptions';
+import { getIconUrlByName } from '../../../map/markers/MarkerOptions';
 import { makeStyles } from '@material-ui/core/styles';
 import drawerStyles from '../../styles/DrawerStyles';
 import PoiManager from '../../../manager/PoiManager';
@@ -199,7 +199,7 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen, width }) {
                                         <img
                                             className="icon"
                                             alt={option}
-                                            src={`/map/images/${POI_ICONS_FOLDER}/mx_${getIcon(option)}.svg`}
+                                            src={getIconUrlByName('poi', getIcon(option))}
                                         />
                                     </div>
                                 </ListItemIcon>
@@ -251,7 +251,7 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen, width }) {
                                             <img
                                                 className="icon"
                                                 alt={item}
-                                                src={`/map/images/${POI_ICONS_FOLDER}/mx_${PoiManager.preparePoiFilterIcon(item)}.svg`}
+                                                src={getIconUrlByName('poi', PoiManager.preparePoiFilterIcon(item))}
                                             />
                                         </div>
                                     </ListItemIcon>

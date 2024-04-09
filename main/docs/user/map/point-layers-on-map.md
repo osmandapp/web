@@ -208,6 +208,21 @@ Enable / disable OSM notes on the map:
 Requires [OSM Editing plugin](../plugins/osm-editing.md#how-to-report-a-mistake).
 
 
+## Points along the route
+
+Waypoints, points of interest (POIs), Favorite points and Audio/video notes all refer to the concept of saving locations and routes in [GPX (GPS Exchange Format)](https://en.wikipedia.org/wiki/GPS_Exchange_Format). You can use [the same tags](../map/track-context-menu.md#display-custom-gpx-tags) to describe and edit them.  
+
+[*Waypoints*](#track-waypoints) are individual points on a map or route. They are used to mark certain places that may be important for navigating or recording your travels. For example, you can create a waypoint on the map to indicate an important intersection or change of direction.  
+
+[*Points of interest(POI)*](#points-of-interest-poi) are places of special interest to the user. These can be landmarks, restaurants, hotels, gas stations, and other places of interest that the user wants to note or visit.  
+
+[*Favorite points*](#favorites) are places that the user finds particularly important or interesting and saves to their list of favorite places. They can include any location that the user wants to easily find and return to later. 
+
+[*Audio/video notes*](#-audio--video-points-android). In GPX format, you can save audio and video recordings as waypoints. This allows you to associate media files to specific locations on the map or route.  
+
+All of these point types can be saved in GPX format to provide the user with location information and help with navigation and route planning. They serve different purposes, but the general idea is to store and transmit geographic information so that the user can use it in their navigation tasks.
+
+
 ## Read more
 
 [Configure map menu](../map/configure-map-menu.md).

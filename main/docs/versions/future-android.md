@@ -188,7 +188,7 @@ Introduced the ability to [filter](https://osmand.net/docs/user/personal/tracks.
 
 - [Reduced 2.5D tilt](https://github.com/osmandapp/OsmAnd/issues/16027) angle at low zoom levels.
 - [Map tilt angle](https://github.com/osmandapp/OsmAnd/issues/18798) saved by taping on a button.
-- Added option of [Auto Sync](https://osmand.net/docs/user/personal/osmand-cloud) for OsmAnd Cloud.
+<!--- Added option of [Auto Sync](https://osmand.net/docs/user/personal/osmand-cloud) for OsmAnd Cloud.-->
 - Updated [Search screen of Android Auto](https://github.com/osmandapp/OsmAnd/issues/17209).
 - Added POI's [category "Water"](https://github.com/osmandapp/OsmAnd/issues/16021).
 - Introduce map [rotation North fixed](https://github.com/osmandapp/OsmAnd/issues/17086).

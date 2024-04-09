@@ -3,7 +3,7 @@ import AppContext, { OBJECT_TYPE_POI } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import _ from 'lodash';
 import L from 'leaflet';
-import { changeIconColor, getSvgBackground, POI_ICONS_FOLDER } from '../markers/MarkerOptions';
+import { changeIconColor, getIconUrlByName, getSvgBackground } from '../markers/MarkerOptions';
 import 'leaflet-spin';
 import PoiManager, { DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
 import 'leaflet.markercluster';
@@ -205,7 +205,7 @@ export default function PoiLayer() {
                     // If the icon is not in the existing cache and not yet in the updated cache
                     if (!iconCache[iconWpt]) {
                         try {
-                            const response = await fetch(`/map/images/${POI_ICONS_FOLDER}/mx_${iconWpt}.svg`);
+                            const response = await fetch(getIconUrlByName('poi', iconWpt));
                             iconCache[iconWpt] = await response.text();
                         } catch (error) {
                             console.error(`Failed to fetch SVG for iconWpt ${iconWpt}: ${error}`);

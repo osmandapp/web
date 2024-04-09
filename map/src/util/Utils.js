@@ -259,6 +259,25 @@ export function measure(f, tag, ms = 1000) {
     return result;
 }
 
+export const isYesterday = (date) => {
+    const today = new Date();
+    const yesterday = new Date(today.setDate(today.getDate() - 1));
+    return (
+        date.getDate() === yesterday.getDate() &&
+        date.getMonth() === yesterday.getMonth() &&
+        date.getFullYear() === yesterday.getFullYear()
+    );
+};
+
+export const isToday = (date) => {
+    const today = new Date();
+    return (
+        date.getDate() === today.getDate() &&
+        date.getMonth() === today.getMonth() &&
+        date.getFullYear() === today.getFullYear()
+    );
+};
+
 const Utils = {
     getFileData,
     getDistance,
