@@ -37,9 +37,8 @@ export default function TopWeatherInfo({
                     return name;
                 }
             }
-            return parseFloat(weatherLoc.lat).toFixed(4) + ', ' + parseFloat(weatherLoc.lon).toFixed(4);
         }
-        return '';
+        return parseFloat(weatherLoc.lat).toFixed(4) + ', ' + parseFloat(weatherLoc.lon).toFixed(4);
     }
 
     return (
