@@ -92,7 +92,7 @@ All settings affect the selected application profile only.
 
 </Tabs>
 
-OsmAnd provides the ability to backup your application profile settings and save them in OsmAnd Cloud. Thus, your settings will be safely and conveniently saved for Android, iOS, or Web versions and restored in case of device failure or reinstallation of OsmAnd app. You can use this special plan if you have [OsmAnd Free or Maps+](../purchases/index.md).  
+OsmAnd provides [the ability to backup](../personal/osmand-cloud.md#osmand-start) your application profile settings and save them in OsmAnd Cloud. Thus, your settings will be safely and conveniently saved for Android, iOS, or Web versions and restored in case of device failure or reinstallation of OsmAnd app. You can use this special plan if you have [OsmAnd Free or Maps+](../purchases/index.md).  
 
 You need to have an OsmAnd Cloud account to use the Free Settings Backup. If you have an account in *OsmAnd Pro* or an active account in OsmAnd Cloud, you will not see the promotion banner.  
 

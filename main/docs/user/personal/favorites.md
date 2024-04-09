@@ -577,7 +577,7 @@ OsmAnd provides a wide range of options for [backing up](../personal/import-expo
 
 </Tabs>
 
-Free Favorites Backup is a special purchase plan to back up your favorite points (locations) for Android, iOS, or Web versions in the OsmAnd application and restore them from OsmAnd Cloud. You can use this special plan if you have [OsmAnd Free or Maps+](../purchases/index.md).  
+[Free Favorites Backup](../personal/osmand-cloud.md#osmand-start) is a special purchase plan to back up your favorite points (locations) for Android, iOS, or Web versions in the OsmAnd application and restore them from OsmAnd Cloud. You can use this special plan if you have [OsmAnd Free or Maps+](../purchases/index.md).  
 
 Free Favorites Backup has the following benefits:
 
