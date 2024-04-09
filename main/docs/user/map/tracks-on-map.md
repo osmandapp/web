@@ -152,7 +152,6 @@ There are three ways to access the Track Appearance menu:
 
 </Tabs> 
 
-
 |  |   
 |----------|
 |**<Translate ios="true" ids="gpx_direction_arrows"/>** - select the interval at which distance or time stamps are displayed on the track. |
@@ -210,8 +209,8 @@ This tool allows you to view track information with graphs and a map.
 - **Follow My location**: click button [My Location](../map/interact-with-map.md#my-location--zoom), so map view and graph is synchronized with your location. In that case **graph scale** will stay constant and **bar information** will be fixed to 1/4 from the left. As you move, **graph will slide** from left to right displaying information Ahead of your Track. This functionality is useful for hiking & cycling during navigation, though this screen doesn't have other widgets displayed. 
 
 
-
 ## Navigation Route
+
 
 Navigation route is a solid line prepared by [Route Preparation process](../navigation/setup/route-navigation.md). It is displayed during Navigation or during Route preparation step.
 
@@ -346,7 +345,6 @@ by clicking to "Save" button. After that, you can do any actions with this GPX-f
 </TabItem>
 
 </Tabs>
-
 
 
 ## Read more

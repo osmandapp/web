@@ -24,6 +24,7 @@ The following profiles are available by default: *Browse map, Driving, Cycling, 
 **Truck, Motorcycle, Moped, Train, Aircraft, Boat and Horseback riding** profiles are switched off by default. In order to use these profiles, you need to activate them in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.  
 :::
 
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
