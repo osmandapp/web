@@ -20,7 +20,7 @@ function createLayersByTrackData({ data, ctx, map, type = GPX_FILE_TYPE }) {
             addStartEnd(track.points, layers, res.coordsTrk, res.coordsAll);
         }
     });
-    parseWpt(data.wpts, layers, ctx);
+    parseWpt(data.wpts, layers, ctx, data);
 
     if (layers.length > 0) {
         let layersGroup = new L.FeatureGroup(layers);
@@ -182,7 +182,7 @@ function getPointGeoProfile(point, points) {
     }
 }
 
-function parseWpt(points, layers, ctx = null) {
+function parseWpt(points, layers, ctx = null, data) {
     points &&
         points.forEach((point) => {
             let opt;
@@ -216,6 +216,7 @@ function parseWpt(points, layers, ctx = null) {
                 marker.on('click', (e) => {
                     const wpt = {
                         trackWpt: true,
+                        file: data,
                         ...e,
                         ...point,
                     };

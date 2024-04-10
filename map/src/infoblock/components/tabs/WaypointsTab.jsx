@@ -110,7 +110,7 @@ const WaypointRow = ({ point, index, ctx }) => {
     function showPoint(point) {
         ctx.setSelectedWpt({
             ...point.wpt,
-            trackWptDetails: true,
+            trackWptItem: true,
         });
         ctx.setSelectedGpxFile((o) => ({ ...o, showPoint: point }));
     }
@@ -274,19 +274,13 @@ export default function WaypointsTab() {
     const switchMassOpen = () => setMassOpen(!massOpen);
     const switchMassVisible = () => setMassVisible(!massVisible);
 
-    // 1st level of speedup
-    // avoid JSON.stringify on every render
-    // use track.name/wpts as a dependence key
     const pointsChangedString = useMemo(() => {
         const name = ctx.selectedGpxFile.name;
         const nLayers = getLayers().length; // used to react to undo/redo
         const wptsString = JSON.stringify(ctx.selectedGpxFile.wpts); // slow
         return name + nLayers + wptsString;
-    }, [ctx.selectedGpxFile, ctx.currentObjectType]);
+    }, [ctx.selectedGpxFile.name, ctx.selectedGpxFile.wpts]);
 
-    // 2nd level of speedup
-    // avoid re-creation of group/rows
-    // depends on the previosly memoized key
     const allGroups = useMemo(() => {
         const groups = getSortedGroups();
         const keys = Object.keys(groups);

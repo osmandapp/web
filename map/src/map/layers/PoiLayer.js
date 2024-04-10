@@ -223,11 +223,18 @@ export default function PoiLayer() {
         ctx.setPoiIconCache({ ...innerCache });
         const layers = await Promise.all(
             poiList.map(async (poi) => {
-                const icon = await getPoiIcon(poi, innerCache);
+                const finalIconName = PoiManager.getIconNameForPoiType(
+                    poi.properties.iconKeyName,
+                    poi.properties.typeOsmTag,
+                    poi.properties.typeOsmValue,
+                    poi.properties.iconName
+                );
+                const icon = await getPoiIcon(poi, innerCache, finalIconName);
                 const coord = poi.geometry.coordinates;
                 return new L.Marker(new L.LatLng(coord[1], coord[0]), {
                     title: poi.properties.name,
                     icon: icon,
+                    finalIconName: finalIconName,
                     type: poi.properties.type,
                     subType: poi.properties.subType,
                     iconKeyName: poi.properties.iconKeyName,
@@ -254,21 +261,15 @@ export default function PoiLayer() {
         }
     }
 
-    async function getPoiIcon(poi, cache) {
+    async function getPoiIcon(poi, cache, finalIconName) {
         const svg = getSvgBackground(DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE);
-        const iconWpt = PoiManager.getIconNameForPoiType(
-            poi.properties.iconKeyName,
-            poi.properties.typeOsmTag,
-            poi.properties.typeOsmValue,
-            poi.properties.iconName
-        );
-        if (iconWpt) {
+        if (finalIconName) {
             let svgData;
-            if (cache[iconWpt]) {
-                svgData = cache[iconWpt];
+            if (cache[finalIconName]) {
+                svgData = cache[finalIconName];
                 const coloredSvg = changeIconColor(svgData, DEFAULT_ICON_COLOR);
                 const poiName = poi.properties.name;
-                const iconHtml = `<div>${svg}<div class="icon" id="se-wpt-marker-icon-${iconWpt}-${DEFAULT_ICON_COLOR}-${poiName}">${coloredSvg}</div></div>`;
+                const iconHtml = `<div>${svg}<div class="icon" id="se-wpt-marker-icon-${finalIconName}-${DEFAULT_ICON_COLOR}-${poiName}">${coloredSvg}</div></div>`;
                 return L.divIcon({ html: iconHtml });
             }
         }

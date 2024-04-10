@@ -156,21 +156,27 @@ function orderList(items, defaultItem) {
     return list.concat(hiddenList);
 }
 
-function getColorGroup(ctx, groupName, wpt) {
+function getColorGroup({ selectedFile = null, favoritesGroup = null, gpxFile = null, groupName }) {
     let color;
     if (groupName === DEFAULT_FAV_GROUP_NAME) {
         groupName = DEFAULT_GROUP_NAME_POINTS_GROUPS;
     }
-    if (wpt) {
+    if (selectedFile) {
         const currentGroup =
-            ctx.selectedGpxFile?.pointsGroups &&
-            !_.isEmpty(ctx.selectedGpxFile?.pointsGroups) &&
-            ctx.selectedGpxFile.pointsGroups[groupName];
+            selectedFile?.pointsGroups &&
+            !_.isEmpty(selectedFile?.pointsGroups) &&
+            selectedFile.pointsGroups[groupName];
         if (currentGroup) {
             color = currentGroup.color;
         }
-    } else {
-        const currentGroup = ctx.favorites?.groups?.find((g) => g.name === groupName);
+    } else if (gpxFile) {
+        const currentGroup =
+            gpxFile?.pointsGroups && !_.isEmpty(gpxFile?.pointsGroups) && gpxFile.pointsGroups[groupName];
+        if (currentGroup) {
+            color = currentGroup.color;
+        }
+    } else if (favoritesGroup) {
+        const currentGroup = favoritesGroup?.groups?.find((g) => g.name === groupName);
         if (currentGroup && currentGroup.pointsGroups[groupName]) {
             color = currentGroup.pointsGroups[groupName].color;
         }

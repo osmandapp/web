@@ -46,6 +46,7 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
         newSelectedGpxFile.name = marker.title;
         newSelectedGpxFile.zoom = true;
         newSelectedGpxFile.prevState = ctx.selectedGpxFile;
+        newSelectedGpxFile.favItem = true;
         ctx.setSelectedWpt(newSelectedGpxFile);
         ctx.setSelectedGpxFile(newSelectedGpxFile);
     }

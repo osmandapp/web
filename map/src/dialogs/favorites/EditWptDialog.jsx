@@ -6,7 +6,7 @@ import DialogActions from '@mui/material/DialogActions';
 import React, { useContext, useEffect, useState } from 'react';
 import contextMenuStyles from '../../infoblock/styles/ContextMenuStyles';
 import AppContext from '../../context/AppContext';
-import DeleteFavoriteDialog from './DeleteFavoriteDialog';
+import DeleteWptDialog from './DeleteWptDialog';
 import { Close } from '@mui/icons-material';
 import FavoriteName from '../../infoblock/components/favorite/structure/FavoriteName';
 import FavoriteAddress from '../../infoblock/components/favorite/structure/FavoriteAddress';
@@ -20,13 +20,14 @@ import { apiGet } from '../../util/HttpApi';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { isEmpty } from 'lodash';
 
-export default function EditFavoriteDialog({
+export default function EditWptDialog({
     wpt,
     editFavoritesDialogOpen,
     setEditFavoritesDialogOpen,
     deleteFavoritesDialogOpen,
     setDeleteFavoritesDialogOpen,
     setOpenActions = null,
+    isDetails = false,
 }) {
     const menuStyles = contextMenuStyles();
     const ctx = useContext(AppContext);
@@ -97,13 +98,28 @@ export default function EditFavoriteDialog({
                 background: favoriteShape,
                 icon: favoriteIcon,
                 category: getCategoryName(selectedGroupName),
-                lat: wpt.lat,
-                lon: wpt.lon,
+                lat: wpt.latlon?.lat ?? wpt.lat,
+                lon: wpt.latlon?.lon ?? wpt.lon,
             };
         }
 
         ctx.selectedGpxFile.updateLayers = true;
+        if (!isDetails) {
+            ctx.selectedGpxFile.save = true;
+            ctx.setCreateTrack({ ...ctx.createTrack, cloudAutoSave: true });
+        }
         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+        let newWpt = ctx.selectedGpxFile.wpts[ind];
+        if (isDetails) {
+            newWpt.trackWptItem = true;
+        }
+
+        const updatedWpt = {
+            trackWpt: true,
+            file: ctx.selectedGpxFile,
+            ...newWpt,
+        };
+        ctx.setSelectedWpt(updatedWpt);
         ctx.setPointContextMenu({});
         setEditFavoritesDialogOpen(false);
     }
@@ -277,10 +293,11 @@ export default function EditFavoriteDialog({
                 <div style={{ float: 'right' }}>
                     <Button onClick={() => setEditFavoritesDialogOpen(false)}>Cancel</Button>
                     {deleteFavoritesDialogOpen && (
-                        <DeleteFavoriteDialog
+                        <DeleteWptDialog
                             dialogOpen={deleteFavoritesDialogOpen}
                             setDialogOpen={setDeleteFavoritesDialogOpen}
                             wpt={wpt}
+                            isDetails={isDetails}
                         />
                     )}
                     <Button id="se-edit-fav-item-submit" disabled={errorName} onClick={() => save()}>

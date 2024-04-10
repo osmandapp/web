@@ -19,6 +19,7 @@ function updateSelectedFile({ ctx, favorites, result, favoriteName, groupName, d
     }
     updateMarker(newSelectedFile, deleted, favoriteName);
     ctx.setSelectedGpxFile(newSelectedFile);
+    ctx.setSelectedWpt(newSelectedFile);
 }
 
 function updateSelectedGroup(favorites, selectedGroupName, result) {

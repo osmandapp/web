@@ -2,7 +2,6 @@ import { AppBar, LinearProgress, Box, Typography, IconButton } from '@mui/materi
 import AppContext, {
     isLocalTrack,
     OBJECT_TYPE_NAVIGATION_ALONE,
-    OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_WEATHER,
     isTrack,
 } from '../../context/AppContext';
@@ -138,7 +137,7 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
     }, [ctx.currentObjectType, ctx.selectedGpxFile, ctx.updateInfoBlock]);
 
     useEffect(() => {
-        if (ctx.selectedWpt && !ctx.selectedWpt.trackWpt) {
+        if (ctx.selectedWpt) {
             setShowInfoBlock(true);
             setOpenWptDetails(true);
         } else {
@@ -198,11 +197,9 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                     {openWeatherForecastDetails && <WeatherForecastDetails setShowInfoBlock={setShowInfoBlock} />}
                     {openWptDetails && (
                         <WptDetails
-                            setShowInfoBlock={setShowInfoBlock}
-                            isDetails={
-                                ctx.currentObjectType === OBJECT_TYPE_FAVORITE || ctx.selectedWpt?.trackWptDetails
-                            }
+                            isDetails={ctx.selectedWpt?.trackWptItem || ctx.selectedWpt?.favItem}
                             setOpenWptTab={setOpenWptTab}
+                            setShowInfoBlock={setShowInfoBlock}
                         />
                     )}
                     {hasOldTabs() && (
