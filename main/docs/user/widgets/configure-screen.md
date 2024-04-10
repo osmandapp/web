@@ -52,7 +52,7 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
   - [Copies of widgets](#copies-of-widgets)
   - [Move / Delete](#move--delete)
 - [Actions](#actions)
-- [Buttons](#buttons)
+- [Buttons and Other](#buttons-and-other)
 - [Switch profile](#switch-profile)
 
 ## Widget panels
@@ -141,8 +141,8 @@ Widget panels help you to arrange widgets on the application screen in a conveni
     4 widgets included: *On request*, *Record audio*, *Record video*, *Take a photo*.  
 
 22. [External Sensors widgets (from *External sensors plugin*)](../widgets/info-widgets.md#external-sensors-widgets)  A set of *informational* widgets help you track data from your external sensors in real time.  
-    6 widgets included: *Heart Rate*, *Bicycle Power*, *Bicycle Cadence*, *Bicycle Speed*, *Bicycle Distance*, *Temperature*. 
-23. [Speedometer](../widgets/info-widgets.md#speedometer).
+    6 widgets included: *Heart Rate*, *Bicycle Power* (_Android only_), *Bicycle Cadence*, *Bicycle Speed*, *Bicycle Distance*, *Temperature*. 
+23. [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
 
 
 ## Top / Bottom panels
@@ -362,7 +362,7 @@ Available actions:
     - *<Translate android="true" ids="position_on_map_bottom"/>*. *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
     - *<Translate android="true" ids="shared_string_automatic"/>*. Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
 2. [Distance by tap](../widgets/radius-ruler.md#distance-by-tap-tool). Gives the ability to measure the distance from your position to the selected point.
-3. **Speedometer**. Shows the current speed based on GPS data.
+3. [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
 
 </TabItem>
 

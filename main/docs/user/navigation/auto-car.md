@@ -113,7 +113,7 @@ You can select previously preset and added [POIs](../map/point-layers-on-map.md#
 
 3. Select [Search](#search) to enter a destination from the available search categories.  
 
-4. Select **Free ride** to take a trip with an end destination not in the categories.
+4. Choose **Free ride** to take a journey without a specified endpoint.
 
 :::note
 While driving, selected points can be [*announced*](#voice-prompts) when you approach or pass them. See the [*Voice prompts*](../navigation/guidance/voice-navigation.md) settings in the appropriate article to set up voice notifications.

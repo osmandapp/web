@@ -275,11 +275,15 @@ The *Scale Levels* function allows you to set the minimum and maximum values of 
 
 <TabItem value="android" label="Android">   
 
+*<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>* 
+
 ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>*
 
 ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png) 
 

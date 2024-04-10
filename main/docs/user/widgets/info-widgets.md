@@ -380,6 +380,8 @@ The Radius Ruler widget shows the distance between your location and the center 
 
 </Tabs>
 
+The widget shows the current speed based on GPS data and and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
+
 Within this section, you can select the size (_small, medium, large_) of the Speedometer and specify when to receive a Speed limit warning (_Always, When exceeded_).
 
 | | |
