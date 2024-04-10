@@ -193,16 +193,16 @@ This tool allows you to view track information with graphs and a map.
 *Tap the track → [<Translate android="true" ids="shared_string_options"/>](../map/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*     
 
 
-![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_on_map_4_android.png)
-![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_on_map_1_android.png)  ![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_on_map_1.1_android.png)
-![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_on_map_2_android.png)  ![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_on_map_2.1_android.png)   
+![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_1_ios.png)
+
+![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_2_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_3_ios.png)
 
 
 </TabItem>
 
 </Tabs>
 
-- **Graph data (Y-axis)**: Altitude, Slope, Speed or their combinations (if data is available in the track).
+- **Graph data (Y-axis)**: Altitude, Slope, Speed, [External sensors data](../plugins/external-sensors.md) or their combinations (if data is available in the track).
 - **Graph dimension (X-axis)**: Distance / Time / Time of day.
 - **Tap/Slide**: tap to Graph for showing info about track point and moving along Graph highlights point location on the map and displays info about point on the bar.
 - **Scale**: scale Graph by [two fingers gesture](../map/interact-with-map.md#gestures). 
