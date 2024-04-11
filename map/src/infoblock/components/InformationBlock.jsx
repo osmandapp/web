@@ -217,7 +217,6 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                                     onClick={() => {
                                         setShowInfoBlock(false);
                                         ctx.setCurrentObjectType(null);
-                                        ctx.setSelectedGpxFile({});
                                     }}
                                 >
                                     <BackIcon />
