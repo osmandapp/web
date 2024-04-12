@@ -65,7 +65,6 @@ A long press on any folder opens the _Folder_ menu, which includes the following
 
 A long press on any GPX track brings up a menu with the following options:
 - _Show on map_ displays the selected track on the map.
-- _Appearance_ opens the track [_Appearance menu](https://osmand.net/docs/user/map/tracks-on-map#track-appearance).
 - _Navigation_ [starts navigation using the track](https://osmand.net/docs/user/navigation/setup/gpx-navigation).
 - _Analyze_ launches [_Analyse on map_](https://osmand.net/docs/user/navigation/setup/route-details#analyse-on-map).
 - _Share_ allows you to share the selected track.
@@ -227,5 +226,6 @@ OsmAnd now alerts you if some maps between your start point and destination are 
 - Fixed [status bar color](https://github.com/osmandapp/OsmAnd-iOS/issues/3321) for older iOS versions.
 - Fixed [rotate and pinch](https://github.com/osmandapp/OsmAnd-iOS/issues/3331) to zoom gestures and [Overlay/Underlay sliders](https://github.com/osmandapp/OsmAnd-iOS/issues/3258) for Mac OS version.
 - [Improved Autozoom animation](https://github.com/osmandapp/OsmAnd-iOS/issues/3340) for navigation.
+- Roundabout with exit number shown on [CarPlay](https://osmand.net/docs/user/navigation/car-play) when navigating.
 
 
