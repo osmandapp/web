@@ -130,7 +130,7 @@ The OpenStreetMap editing plugin allows you to create new objects on the map cal
 3. Choose [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), and add its name and other information such as hours of operation, website, etc. When you select a not uploaded POI, *Create POI* changes to *Modify POI*. 
 4. Depending on the [Offline editing](#settings) setting, you can save the data locally or [upload it](../map/map-context-menu#-upload-poi--osm-note).    
 
-#### Add tags
+### Add tags
 
 You can easily add OSM [tags](https://wiki.openstreetmap.org/wiki/Tags) to the POI. Аfter entering a few characters into the search bar, the program will prompt possible tags.  
 
@@ -154,7 +154,7 @@ You can easily add OSM [tags](https://wiki.openstreetmap.org/wiki/Tags) to the P
 
 You can view, upload to OSM or delete POIs in *My Places → OSM Edits*. You can also export your OSM POIs changes to an [OSC file](https://wiki.openstreetmap.org/wiki/OsmChange) and import it into [JOSM](https://wiki.openstreetmap.org/wiki/JOSM).  
 
-#### Add unsupported POI types
+### Add unsupported POI types
 
 On the Advanced tab, you have the ability to add unsupported POI types that may be useful for your specific task. This allows you to enter POI data manually and extend the functionality of your application.
 
