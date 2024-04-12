@@ -28,6 +28,7 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
   - [Sun position widget](#sun-position-widget)
   - [Glide ratio widget](#glide-ratio-widget)
   - [Round up numbers in navigation widgets](#round-up-numbers-in-navigation-widgets)
+  - [Vertical exaggeration](#vertical-exaggeration)
   - [OsmAnd Cloud updates](#osmand-cloud-updates)
   - [App Language for Basemap](#app-language-for-basemap)
   - [Missing maps download](#missing-maps-download)
@@ -188,6 +189,17 @@ You can now select the format for displaying distance information in navigation 
 _Menu → Settings → Navigation Profile → General settings → Units & formats → Distance during navigation → Precise or Round up_
 
 ![Round up iOS](../../blog/2024-03-06-ios-4-7/img/round_up_ios.png) ![Round up iOS](../../blog/2024-03-06-ios-4-7/img/round_up_1_ios.png)
+
+
+## Vertical exaggeration
+
+A special coefficient for [3D relief](https://osmand.net/docs/user/plugins/contour-lines#3d-relief) has been added in this release. Now, you can adjust the Vertical Exaggeration:
+
+ _iOS Menu → Configure map → Terrain → Vertical exaggeration_ (Ensure that 3D relief is enabled)
+
+This feature allows you to view the contours of smoother topography with enhanced detail.
+
+![Round up iOS](../../blog/2024-03-06-ios-4-7/img/vertical_exag.png)
 
 ## OsmAnd Cloud updates
 
