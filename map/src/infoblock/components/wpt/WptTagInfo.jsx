@@ -1,4 +1,4 @@
-import { Collapse, IconButton, Link, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
+import { Collapse, IconButton, Link, ListItemIcon, ListItemText, MenuItem, Tooltip, Typography } from '@mui/material';
 import styles from './wptDetails.module.css';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -6,10 +6,15 @@ import { OPENING_HOURS, SEPARATOR } from './WptTagsProvider';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import MenuItemsTitle from '../../../menu/components/MenuItemsTitle';
 
-export default function WptTagInfo({ tag = null, baseTag = null }) {
+export default function WptTagInfo({ tag = null, baseTag = null, copy = false }) {
     const { t } = useTranslation();
     const [open, setOpen] = useState(false);
     const [tagList, setTagList] = useState(null);
+    const [hover, setHover] = useState(false);
+
+    function handleCopy(value) {
+        navigator.clipboard.writeText(value);
+    }
 
     useEffect(() => {
         if (tag?.collapsable) {
@@ -67,17 +72,27 @@ export default function WptTagInfo({ tag = null, baseTag = null }) {
                 </MenuItem>
             )}
             {baseTag && (
-                <MenuItem className={styles.tagItem} divider>
-                    <ListItemIcon className={styles.tagIcon}>{baseTag.icon}</ListItemIcon>
-                    <ListItemText>
-                        <Typography variant="inherit" className={styles.tagName}>
-                            {baseTag.name}
-                        </Typography>
-                    </ListItemText>
-                    <Typography variant="inherit" className={styles.tagValue}>
-                        {baseTag.value}
-                    </Typography>
-                </MenuItem>
+                <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+                    <MenuItem className={styles.tagItem} divider>
+                        <ListItemIcon className={styles.tagIcon}>{baseTag.icon}</ListItemIcon>
+                        <ListItemText>
+                            <Typography variant="inherit" className={styles.tagName}>
+                                {baseTag.name}
+                            </Typography>
+                        </ListItemText>
+                        <Tooltip
+                            title="Copy"
+                            arrow
+                            placement="bottom"
+                            open={hover && copy}
+                            onClick={() => handleCopy(baseTag.value)}
+                        >
+                            <Typography variant="inherit" className={styles.tagValue}>
+                                {baseTag.value}
+                            </Typography>
+                        </Tooltip>
+                    </MenuItem>
+                </div>
             )}
             {tagList && (
                 <Collapse in={open} timeout="auto" unmountOnExit>

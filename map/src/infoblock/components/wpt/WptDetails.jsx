@@ -242,6 +242,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                         {wpt.latlon && (
                             <WptTagInfo
                                 key={'latlon'}
+                                copy={true}
                                 baseTag={{
                                     icon: <LocationIcon />,
                                     name: t('coordinates'),

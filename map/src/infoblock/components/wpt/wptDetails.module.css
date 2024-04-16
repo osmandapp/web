@@ -22,4 +22,7 @@
     font-size: 14px !important;
     font-weight: 400 !important;
     line-height: 150% !important;
+    &:hover {
+        color: var(--selected-color) !important;
+    }
 }
