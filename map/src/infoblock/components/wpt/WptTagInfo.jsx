@@ -2,7 +2,7 @@ import { Collapse, IconButton, Link, ListItemIcon, ListItemText, MenuItem, Toolt
 import styles from './wptDetails.module.css';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { OPENING_HOURS, SEPARATOR } from './WptTagsProvider';
+import { OPENING_HOURS, POI_PREFIX, SEPARATOR } from './WptTagsProvider';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import MenuItemsTitle from '../../../menu/components/MenuItemsTitle';
 
@@ -25,6 +25,20 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
         }
     }, [tag]);
 
+    function getText(tag) {
+        return tag.isUrl ? (
+            <Link href={tag.value} target="_blank" rel="noopener noreferrer">
+                {tag.value}
+            </Link>
+        ) : tag.isPhoneNumber || tag.key === OPENING_HOURS || tag.key === 'email' ? (
+            tag.value
+        ) : tag.textPrefix ? (
+            t(tag.textPrefix)
+        ) : (
+            t(`${POI_PREFIX}${tag.key}`)
+        );
+    }
+
     function getValue(tag) {
         if (tag.collapsable) {
             const items = tag.value.split(SEPARATOR);
@@ -33,9 +47,13 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
                 <>
                     <ListItemText onClick={() => setOpen(!open)}>
                         <ListItemText>
-                            <MenuItemsTitle name={t(`poi_${tag.textPrefix}`)} maxLines={2} className={styles.tagName} />
+                            <MenuItemsTitle
+                                name={t(`${POI_PREFIX}${tag.textPrefix}`)}
+                                maxLines={2}
+                                className={styles.tagName}
+                            />
                             <Typography variant="caption" noWrap>
-                                {t(`poi_${items[0]}`)}
+                                {t(`${POI_PREFIX}${items[0]}`)}
                             </Typography>
                         </ListItemText>
                     </ListItemText>
@@ -47,17 +65,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
         } else {
             return (
                 <ListItemText>
-                    <Typography variant="inherit" className={styles.tagName}>
-                        {tag.isUrl ? (
-                            <Link href={tag.value} target="_blank" rel="noopener noreferrer">
-                                {tag.value}
-                            </Link>
-                        ) : tag.isPhoneNumber || tag.key === OPENING_HOURS || tag.key === 'email' ? (
-                            tag.value
-                        ) : (
-                            t(`poi_${tag.key}`)
-                        )}
-                    </Typography>
+                    <MenuItemsTitle name={getText(tag)} maxLines={2} className={styles.tagName} />
                 </ListItemText>
             );
         }
@@ -66,14 +74,14 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
     return (
         <>
             {tag && (
-                <MenuItem className={styles.tagItem} divider>
+                <MenuItem style={{ userSelect: 'text' }} disableRipple className={styles.tagItem} divider>
                     <ListItemIcon className={styles.tagIcon}>{tag.icon}</ListItemIcon>
                     {getValue(tag)}
                 </MenuItem>
             )}
             {baseTag && (
                 <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-                    <MenuItem className={styles.tagItem} divider>
+                    <MenuItem disableRipple style={{ userSelect: 'text' }} className={styles.tagItem} divider>
                         <ListItemIcon className={styles.tagIcon}>{baseTag.icon}</ListItemIcon>
                         <ListItemText>
                             <Typography variant="inherit" className={styles.tagName}>
@@ -81,7 +89,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
                             </Typography>
                         </ListItemText>
                         <Tooltip
-                            title="Copy"
+                            title={t('shared_string_copy')}
                             arrow
                             placement="bottom"
                             open={hover && copy}
@@ -99,7 +107,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
                     {tagList.map((item, index) => (
                         <MenuItem key={index} divider>
                             <Typography key={index} variant="caption" style={{ paddingLeft: 20 }}>
-                                {t(`poi_${item}`)}
+                                {t(`${POI_PREFIX}${item}`)}
                             </Typography>
                         </MenuItem>
                     ))}

@@ -27,6 +27,7 @@ const ROUTE = 'route';
 const WIKIDATA = 'wikidata';
 const WIKIMEDIA_COMMONS = 'wikimedia_commons';
 const OSM_PREFIX = 'osm_tag_';
+export const POI_PREFIX = 'poi_';
 const COLLAPSABLE_PREFIX = 'collapsable_';
 const HIDDEN_EXTENSIONS = 'hidden_extensions';
 export const SEPARATOR = ';';
@@ -76,6 +77,7 @@ function getWptTags(wpt, type) {
                         case COLLECTION_TIMES:
                             tagObj.icon = <TimeIcon />;
                             tagObj.needLinks = false;
+                            tagObj.textPrefix = value;
                             break;
                         case OPENING_HOURS:
                             tagObj.icon = <TimeIcon />;
