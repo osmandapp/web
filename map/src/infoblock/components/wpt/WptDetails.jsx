@@ -8,6 +8,7 @@ import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_clo
 import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_date_start.svg';
 import { ReactComponent as FolderIcon } from '../../../assets/icons/ic_action_folder.svg';
+import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_coordinates_location.svg';
 import PoiManager, { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import MarkerOptions, { changeIconSizeWpt, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import FavoritesManager, { prepareBackground, prepareColor, prepareIcon } from '../../../manager/FavoritesManager';
@@ -231,6 +232,16 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                     icon: <FolderIcon />,
                                     name: t('folder'),
                                     value: wpt.category,
+                                }}
+                            />
+                        )}
+                        {wpt.latlon && (
+                            <WptTagInfo
+                                key={'latlon'}
+                                baseTag={{
+                                    icon: <LocationIcon />,
+                                    name: t('coordinates'),
+                                    value: wpt.latlon.lat.toFixed(6) + ', ' + wpt.latlon.lon.toFixed(6),
                                 }}
                             />
                         )}
