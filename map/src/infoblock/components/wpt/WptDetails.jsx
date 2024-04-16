@@ -202,7 +202,11 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
     return (
         <>
-            <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
+            <Box
+                minWidth={ctx.infoBlockWidth}
+                maxWidth={ctx.infoBlockWidth}
+                sx={{ height: 'auto', overflowX: 'hidden' }}
+            >
                 <Header />
                 {wpt !== null && (
                     <ListItemText id={getId()}>
