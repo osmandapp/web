@@ -501,6 +501,10 @@ export function updateFavoriteGroups({
     ctx.setUpdateMarkers({ ...ctx.favorites });
 }
 
+export function getColorLocation(location) {
+    return location === LOCATION_UNAVAILABLE ? '#ff8800' : '#237bff';
+}
+
 const FavoritesManager = {
     addFavorite,
     deleteFavorite,

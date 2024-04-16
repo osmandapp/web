@@ -1,6 +1,6 @@
 import { AppBar, Box, IconButton, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material';
 import styles from '../../infoblock.module.css';
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import AppContext, { isTrack, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import headerStyles from '../../../menu/trackfavmenu.module.css';
 import { closeHeader } from '../../../menu/actions/HeaderHelper';
@@ -9,9 +9,16 @@ import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_date_start.svg';
 import { ReactComponent as FolderIcon } from '../../../assets/icons/ic_action_folder.svg';
 import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_coordinates_location.svg';
+import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow_16.svg';
 import PoiManager, { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import MarkerOptions, { changeIconSizeWpt, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
-import FavoritesManager, { prepareBackground, prepareColor, prepareIcon } from '../../../manager/FavoritesManager';
+import FavoritesManager, {
+    getColorLocation,
+    LOCATION_UNAVAILABLE,
+    prepareBackground,
+    prepareColor,
+    prepareIcon,
+} from '../../../manager/FavoritesManager';
 import { Folder, LocationOn } from '@mui/icons-material';
 import WptDetailsButtons from './WptDetailsButtons';
 import WptTagsProvider from './WptTagsProvider';
@@ -20,15 +27,36 @@ import { useTranslation } from 'react-i18next';
 import i18n from 'i18next';
 import * as locales from 'date-fns/locale';
 import { format } from 'date-fns';
+import { getDistance } from '../../../util/Utils';
+import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
+import { getCenterMapLoc } from '../../../manager/MapManager';
 
 export default function WptDetails({ isDetails = false, setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
+    const hash = window.location.hash;
+
+    const currentLoc = useGeoLocation(ctx);
 
     const ICON_IMG_SIZE = 24;
     const ICON_SHIELD_SIZE = 40;
 
     const [wpt, setWpt] = useState(null);
+
+    const [delayedHash, setDelayedHash] = useState(hash);
+    const debouncerTimer = useRef(0);
+    // debounce map move/scroll
+    useEffect(() => {
+        debouncerTimer.current > 0 && clearTimeout(debouncerTimer.current);
+        debouncerTimer.current = setTimeout(() => {
+            debouncerTimer.current = 0;
+            setDelayedHash(hash);
+        }, 1000);
+
+        return () => {
+            clearTimeout(debouncerTimer.current);
+        };
+    }, [hash]);
 
     const newWpt = useMemo(() => {
         let result = null;
@@ -200,6 +228,35 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         );
     };
 
+    const WptLoc = ({ wpt, location }) => {
+        const locDist = (wpt, location) => {
+            if (location && wpt.latlon) {
+                if (location === LOCATION_UNAVAILABLE) {
+                    location = getCenterMapLoc(delayedHash);
+                }
+                return (
+                    (getDistance(location.lat, location.lng, wpt.latlon.lat, wpt.latlon.lon) / 1000).toFixed(0) + ' km'
+                );
+            }
+            return null;
+        };
+
+        const color = getColorLocation(location);
+
+        return (
+            <Box className={styles.wptCategory}>
+                <ListItemIcon sx={{ minWidth: 'auto', fill: color }}>
+                    <DirectionIcon />
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography sx={{ color: color + '!important' }} className={styles.wptCategoryText} noWrap>
+                        {locDist(wpt, location) ?? 'No distance'}
+                    </Typography>
+                </ListItemText>
+            </Box>
+        );
+    };
+
     return (
         <>
             <Box
@@ -217,6 +274,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                             {wpt.icon && <WptIcon />}
                         </Box>
                         {wpt?.category && <WptCategory />}
+                        {wpt.latlon && currentLoc && <WptLoc wpt={wpt} location={currentLoc} />}
                         {wpt?.address && <WptAddress />}
                         <WptDetailsButtons wpt={wpt} isDetails={isDetails} />
                         {wpt.time && (
