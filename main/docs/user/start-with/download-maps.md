@@ -74,7 +74,10 @@ It is important to note that you can skip this download step, and if you already
 
 </Tabs>
 
-The **Downloads Maps menu** displays all existing OsmAnd map types. It includes:
+The **Downloads Maps menu** displays:
+- Downloads section with [all existing OsmAnd map types](../personal/maps.md#map-types).
+- [Local section](../personal/maps.md#local) with all your map data.
+- [Updates section](../personal/maps.md#updates)
 
 **Action**. The icons are located in the upper right corner of the screen. 
 - **Refresh** &#10227;. Checks for available map updates on OsmAnd servers.
