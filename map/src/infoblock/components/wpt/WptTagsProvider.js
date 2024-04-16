@@ -10,6 +10,8 @@ import { ReactComponent as InternetIcon } from '../../../assets/icons/ic_action_
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
 import { ReactComponent as InstagramIcon } from '../../../assets/icons/ic_action_social_instagram.svg';
 import { ReactComponent as CuisineIcon } from '../../../assets/icons/ic_action_cuisine.svg';
+import * as locales from 'date-fns/locale';
+import { format, startOfWeek, addDays } from 'date-fns';
 
 const WIKIPEDIA = 'wikipedia';
 const OSM_WIKI = 'osmwiki';
@@ -81,7 +83,7 @@ function getWptTags(wpt, type) {
                             break;
                         case OPENING_HOURS:
                             tagObj.icon = <TimeIcon />;
-                            tagObj.textPrefix = key;
+                            tagObj.textPrefix = localizeWeekDays(value);
                             break;
                         case PHONE:
                             tagObj.icon = <CallIcon />;
@@ -136,6 +138,23 @@ function getWptTags(wpt, type) {
     }
 
     return { res: res, type: typeTag, subtype: subtypeTag };
+}
+
+function localizeWeekDays(schedule) {
+    const locale = locales[i18n.language] || locales.enUS;
+    const baseDate = startOfWeek(new Date(), { weekStartsOn: 1 });
+
+    const days = {
+        Mo: format(baseDate, 'eee', { locale }),
+        Tu: format(addDays(baseDate, 1), 'eee', { locale }),
+        We: format(addDays(baseDate, 2), 'eee', { locale }),
+        Th: format(addDays(baseDate, 3), 'eee', { locale }),
+        Fr: format(addDays(baseDate, 4), 'eee', { locale }),
+        Sa: format(addDays(baseDate, 5), 'eee', { locale }),
+        Su: format(addDays(baseDate, 6), 'eee', { locale }),
+    };
+
+    return schedule.replace(/\b(Mo|Tu|We|Th|Fr|Sa|Su)\b/g, (match) => days[match]);
 }
 
 function fixTagsKeys(tags) {

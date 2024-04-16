@@ -30,7 +30,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
             <Link href={tag.value} target="_blank" rel="noopener noreferrer">
                 {tag.value}
             </Link>
-        ) : tag.isPhoneNumber || tag.key === OPENING_HOURS || tag.key === 'email' ? (
+        ) : tag.isPhoneNumber || tag.key === 'email' ? (
             tag.value
         ) : tag.textPrefix ? (
             t(tag.textPrefix)
