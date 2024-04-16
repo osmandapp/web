@@ -1,20 +1,18 @@
 import { AppBar, Box, IconButton, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material';
-import styles from '../infoblock.module.css';
-import React, { useContext, useEffect, useState } from 'react';
-import AppContext, { isTrack, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_POI } from '../../context/AppContext';
-import headerStyles from '../../menu/trackfavmenu.module.css';
-import { closeHeader } from '../../menu/actions/HeaderHelper';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
-import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
-import { ReactComponent as DeleteIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
-import { ReactComponent as EditIcon } from '../../assets/icons/ic_action_edit_outlined.svg';
-import PoiManager, { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
-import MarkerOptions, { changeIconSizeWpt, removeShadowFromIconWpt } from '../../map/markers/MarkerOptions';
-import FavoritesManager, { prepareBackground, prepareColor, prepareIcon } from '../../manager/FavoritesManager';
+import styles from '../../infoblock.module.css';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
+import AppContext, { isTrack, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_POI } from '../../../context/AppContext';
+import headerStyles from '../../../menu/trackfavmenu.module.css';
+import { closeHeader } from '../../../menu/actions/HeaderHelper';
+import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
+import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
+import PoiManager, { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
+import MarkerOptions, { changeIconSizeWpt, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
+import FavoritesManager, { prepareBackground, prepareColor, prepareIcon } from '../../../manager/FavoritesManager';
 import { Folder, LocationOn } from '@mui/icons-material';
-import EditWptDialog from '../../dialogs/favorites/EditWptDialog';
-import DeleteWptDialog from '../../dialogs/favorites/DeleteWptDialog';
-import TracksManager from '../../manager/track/TracksManager';
+import WptDetailsButtons from './WptDetailsButtons';
+import WptTagsProvider from './WptTagsProvider';
+import WptTagInfo from './WptTagInfo';
 
 export default function WptDetails({ isDetails = false, setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
@@ -23,26 +21,15 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     const ICON_SHIELD_SIZE = 40;
 
     const [wpt, setWpt] = useState(null);
-    const [type, setType] = useState(null);
-    const [editWptDialogOpen, setEditWptDialogOpen] = useState(false);
-    const [deleteWptDialogOpen, setDeleteWptDialogOpen] = useState(false);
 
-    useEffect(() => {
-        if (ctx.selectedWpt) {
-            setType({
-                isPoi: ctx.currentObjectType === OBJECT_TYPE_POI && ctx.selectedWpt?.poi,
-                isWpt: isTrack(ctx) && (ctx.selectedWpt?.trackWpt || ctx.selectedWpt?.trackWptItem),
-                isFav: ctx.currentObjectType === OBJECT_TYPE_FAVORITE && ctx.selectedWpt?.markerCurrent,
-            });
-        }
-    }, [ctx.selectedWpt, ctx.currentObjectType]);
-
-    useEffect(() => {
-        let newWpt = null;
+    const newWpt = useMemo(() => {
+        let result = null;
+        const type = getWptType(ctx.selectedWpt);
         if (type?.isPoi) {
             const currentPoi = ctx.selectedWpt.poi;
             const { options: poiOptions, latlng } = currentPoi;
-            newWpt = {
+            result = {
+                type: type,
                 name: poiOptions.title ? poiOptions.title : PoiManager.formattingPoiType(poiOptions.poiType),
                 latlon: latlng,
                 background: DEFAULT_POI_SHAPE,
@@ -50,7 +37,8 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 icon: poiOptions.finalIconName,
             };
         } else if (type?.isWpt) {
-            newWpt = {
+            result = {
+                type: type,
                 file: ctx.selectedWpt.file,
                 name: ctx.selectedWpt.name,
                 latlon: { lat: ctx.selectedWpt.lat, lon: ctx.selectedWpt.lon },
@@ -65,7 +53,8 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             let markerName = ctx.selectedWpt.markerCurrent.title;
             let currentWpt = ctx.selectedWpt.file.wpts.find((p) => p.name === markerName);
             if (currentWpt) {
-                newWpt = {
+                result = {
+                    type: type,
                     file: ctx.selectedWpt.file,
                     name: currentWpt.name,
                     latlon: { lat: currentWpt.lat, lon: currentWpt.lon },
@@ -75,23 +64,36 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     icon: prepareIcon(currentWpt.icon),
                     category: currentWpt.category,
                     address: currentWpt.address,
+                    time: currentWpt.time,
+                    tags: WptTagsProvider.getWptTags(currentWpt, type),
                 };
             }
         } else {
-            newWpt = null;
+            result = null;
         }
+        return result;
+    }, [ctx.selectedWpt]);
 
+    useEffect(() => {
         if (newWpt !== null) {
             setWpt(newWpt);
         }
-    }, [type]);
+    }, [newWpt]);
+
+    function getWptType(wpt) {
+        return {
+            isPoi: ctx.currentObjectType === OBJECT_TYPE_POI && wpt?.poi,
+            isWpt: isTrack(ctx) && (wpt?.trackWpt || wpt?.trackWptItem),
+            isFav: ctx.currentObjectType === OBJECT_TYPE_FAVORITE && wpt?.markerCurrent,
+        };
+    }
 
     function closeDetails() {
-        if (type?.isPoi) {
+        if (wpt.type?.isPoi) {
             closeHeader({ ctx });
-        } else if (type?.isWpt) {
+        } else if (wpt.type?.isWpt) {
             isDetails ? setOpenWptTab(true) : closeHeader({ ctx });
-        } else if (type?.isFav) {
+        } else if (wpt.type?.isFav) {
             isDetails ? closeOnlyFavDetails() : closeHeader({ ctx });
         }
         ctx.setSelectedWpt(null);
@@ -104,10 +106,10 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }
 
     function getId() {
-        if (type?.isFav) {
+        if (wpt.type?.isFav) {
             return 'se-fav-item-info-' + wpt.name;
         }
-        if (type?.isPoi) {
+        if (wpt.type?.isPoi) {
             return 'se-poi-infoblock-' + wpt.name;
         }
         return null;
@@ -199,69 +201,13 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                         </Box>
                         {wpt?.category && <WptCategory />}
                         {wpt?.address && <WptAddress />}
-                        <Box className={styles.wptActionButtonContainer}>
-                            {!type?.isPoi && (
-                                <IconButton
-                                    className={styles.wptActionsButtons}
-                                    onClick={() => {
-                                        if (type.isWpt) {
-                                            TracksManager.handleEditCloudTrack(ctx).then((openEditState) => {
-                                                if (openEditState) {
-                                                    ctx.addFavorite.editTrack = true;
-                                                    ctx.setAddFavorite({ ...ctx.addFavorite });
-                                                    setEditWptDialogOpen(true);
-                                                }
-                                            });
-                                        } else {
-                                            setEditWptDialogOpen(true);
-                                        }
-                                    }}
-                                >
-                                    <EditIcon className={styles.wptActionButtonIcon} />
-                                </IconButton>
-                            )}
-                            {!type?.isPoi && (
-                                <IconButton
-                                    className={styles.wptActionsButtons}
-                                    onClick={() => {
-                                        if (type.isWpt) {
-                                            TracksManager.handleEditCloudTrack(ctx).then((openEditState) => {
-                                                if (openEditState) {
-                                                    ctx.addFavorite.editTrack = true;
-                                                    ctx.setAddFavorite({ ...ctx.addFavorite });
-                                                    setDeleteWptDialogOpen(true);
-                                                }
-                                            });
-                                        } else {
-                                            setDeleteWptDialogOpen(true);
-                                        }
-                                    }}
-                                >
-                                    <DeleteIcon className={styles.wptActionButtonIcon} />
-                                </IconButton>
-                            )}
-                        </Box>
+                        <WptDetailsButtons wpt={wpt} isDetails={isDetails} />
+                        {wpt?.tags?.res?.map((t, index) => {
+                            return <WptTagInfo key={index} tag={t} />;
+                        })}
                     </ListItemText>
                 )}
             </Box>
-            {editWptDialogOpen && (
-                <EditWptDialog
-                    wpt={wpt}
-                    editFavoritesDialogOpen={editWptDialogOpen}
-                    setEditFavoritesDialogOpen={setEditWptDialogOpen}
-                    deleteFavoritesDialogOpen={deleteWptDialogOpen}
-                    setDeleteFavoritesDialogOpen={setDeleteWptDialogOpen}
-                    isDetails={isDetails}
-                />
-            )}
-            {deleteWptDialogOpen && (
-                <DeleteWptDialog
-                    dialogOpen={deleteWptDialogOpen}
-                    setDialogOpen={setDeleteWptDialogOpen}
-                    isDetails={isDetails}
-                    wpt={type.isWpt ? wpt : null}
-                />
-            )}
         </>
     );
 }

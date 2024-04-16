@@ -15,7 +15,7 @@ import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg
 import styles from '../../menu/trackfavmenu.module.css';
 import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
 import WeatherForecastDetails from '../../menu/weather/WeatherForecastDetails';
-import WptDetails from './WptDetails';
+import WptDetails from './wpt/WptDetails';
 
 const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     const [mounted, setMounted] = useState(false);
