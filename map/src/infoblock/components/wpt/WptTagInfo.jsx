@@ -6,13 +6,13 @@ import { OPENING_HOURS, SEPARATOR } from './WptTagsProvider';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import MenuItemsTitle from '../../../menu/components/MenuItemsTitle';
 
-export default function WptTagInfo({ tag }) {
+export default function WptTagInfo({ tag = null, baseTag = null }) {
     const { t } = useTranslation();
     const [open, setOpen] = useState(false);
     const [tagList, setTagList] = useState(null);
 
     useEffect(() => {
-        if (tag.collapsable) {
+        if (tag?.collapsable) {
             const items = tag.value.split(SEPARATOR);
             if (items.length > 1) {
                 setTagList(items);
@@ -20,7 +20,7 @@ export default function WptTagInfo({ tag }) {
         }
     }, [tag]);
 
-    function getValue() {
+    function getValue(tag) {
         if (tag.collapsable) {
             const items = tag.value.split(SEPARATOR);
 
@@ -28,7 +28,7 @@ export default function WptTagInfo({ tag }) {
                 <>
                     <ListItemText onClick={() => setOpen(!open)}>
                         <ListItemText>
-                            <MenuItemsTitle name={t(`poi_${tag.textPrefix}`)} maxLines={2} className={styles.tagText} />
+                            <MenuItemsTitle name={t(`poi_${tag.textPrefix}`)} maxLines={2} className={styles.tagName} />
                             <Typography variant="caption" noWrap>
                                 {t(`poi_${items[0]}`)}
                             </Typography>
@@ -42,7 +42,7 @@ export default function WptTagInfo({ tag }) {
         } else {
             return (
                 <ListItemText>
-                    <Typography variant="inherit" className={styles.tagText}>
+                    <Typography variant="inherit" className={styles.tagName}>
                         {tag.isUrl ? (
                             <Link href={tag.value} target="_blank" rel="noopener noreferrer">
                                 {tag.value}
@@ -60,10 +60,25 @@ export default function WptTagInfo({ tag }) {
 
     return (
         <>
-            <MenuItem className={styles.tagItem} divider>
-                <ListItemIcon className={styles.tagIcon}>{tag.icon}</ListItemIcon>
-                {getValue()}
-            </MenuItem>
+            {tag && (
+                <MenuItem className={styles.tagItem} divider>
+                    <ListItemIcon className={styles.tagIcon}>{tag.icon}</ListItemIcon>
+                    {getValue(tag)}
+                </MenuItem>
+            )}
+            {baseTag && (
+                <MenuItem className={styles.tagItem} divider>
+                    <ListItemIcon className={styles.tagIcon}>{baseTag.icon}</ListItemIcon>
+                    <ListItemText>
+                        <Typography variant="inherit" className={styles.tagName}>
+                            {baseTag.name}
+                        </Typography>
+                    </ListItemText>
+                    <Typography variant="inherit" className={styles.tagValue}>
+                        {baseTag.value}
+                    </Typography>
+                </MenuItem>
+            )}
             {tagList && (
                 <Collapse in={open} timeout="auto" unmountOnExit>
                     {tagList.map((item, index) => (

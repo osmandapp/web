@@ -6,6 +6,7 @@ import headerStyles from '../../../menu/trackfavmenu.module.css';
 import { closeHeader } from '../../../menu/actions/HeaderHelper';
 import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
 import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
+import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_date_start.svg';
 import PoiManager, { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import MarkerOptions, { changeIconSizeWpt, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import FavoritesManager, { prepareBackground, prepareColor, prepareIcon } from '../../../manager/FavoritesManager';
@@ -13,9 +14,14 @@ import { Folder, LocationOn } from '@mui/icons-material';
 import WptDetailsButtons from './WptDetailsButtons';
 import WptTagsProvider from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
+import { useTranslation } from 'react-i18next';
+import i18n from 'i18next';
+import * as locales from 'date-fns/locale';
+import { format } from 'date-fns';
 
 export default function WptDetails({ isDetails = false, setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
     const ICON_IMG_SIZE = 24;
     const ICON_SHIELD_SIZE = 40;
@@ -64,7 +70,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     icon: prepareIcon(currentWpt.icon),
                     category: currentWpt.category,
                     address: currentWpt.address,
-                    time: currentWpt.time,
+                    time: parseInt(currentWpt.ext?.time) !== 0 ? currentWpt.ext.time : null,
                     tags: WptTagsProvider.getWptTags(currentWpt, type),
                 };
             }
@@ -113,6 +119,11 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             return 'se-poi-infoblock-' + wpt.name;
         }
         return null;
+    }
+
+    function formatTime(time) {
+        const locale = locales[i18n.language] || locales.enUS;
+        return format(time, 'MMM dd, yyyy – HH:mm', { locale: locale }).replace(',', '');
     }
 
     const Header = () => {
@@ -186,7 +197,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             </Box>
         );
     };
-
+    console.log(wpt);
     return (
         <>
             <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
@@ -202,6 +213,16 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                         {wpt?.category && <WptCategory />}
                         {wpt?.address && <WptAddress />}
                         <WptDetailsButtons wpt={wpt} isDetails={isDetails} />
+                        {wpt.time && (
+                            <WptTagInfo
+                                key={'time'}
+                                baseTag={{
+                                    icon: <TimeIcon />,
+                                    name: t('date_of_creation'),
+                                    value: formatTime(wpt.time),
+                                }}
+                            />
+                        )}
                         {wpt?.tags?.res?.map((t, index) => {
                             return <WptTagInfo key={index} tag={t} />;
                         })}

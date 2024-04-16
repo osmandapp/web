@@ -5185,5 +5185,6 @@
   "delete_trash_item_confirmation_desc": "Delete \"%1$s\" permanently?",
   "shared_string_empty_trash": "Empty trash",
   "trash_is_empty": "Trash is empty",
-  "trash_is_empty_banner_desc": "Files removed from OsmAnd Cloud will be available here for %1$s days after."
+  "trash_is_empty_banner_desc": "Files removed from OsmAnd Cloud will be available here for %1$s days after.",
+  "date_of_creation": "Date of creation"
 }
