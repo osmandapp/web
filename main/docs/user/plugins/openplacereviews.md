@@ -23,12 +23,12 @@ The project was discontinued in June 2023. OpenPlaceReviews plugin is available 
 
 #### Settings
 
-*<Translate android="true" ids="shared_string_menu,plugins_menu_group,open_place_reviews,shared_string_settings"/>* 
+*<Translate android="true" ids="shared_string_menu,plugins_menu_group"/> → OpenPlaceReviews → Settings* 
 
 ![OpenPlaceReview Settings Android](@site/static/img/plugins/openplacereviews/openplacereviews_plugin_settings_android.png)
 
 - &nbsp;<Translate android="true" ids="login_account"/> - login to [OpenPlaceReviews](https://openplacereviews.org/login).
-- &nbsp;<Translate android="true" ids="opr_use_dev_url"/> - test profile for [OpenPlaceReviews project](https://openplacereviews.org/).
+- &nbsp;OpenPlaceReview dev url - test profile for [OpenPlaceReviews project](https://openplacereviews.org/).
 
 #### View photos
 
