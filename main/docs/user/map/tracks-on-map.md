@@ -119,14 +119,28 @@ To show track on the map, you need to:
 
 *Show / hide* buttons allow to anable or disable displaying of a track on the map.
 
-
 ### Track Appearance
 
 :::tip note
-
 <ProFeature/> Some parameters you can use only with Pro feature <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
-
 :::
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![3D tracks Android](@site/static/img/personal/map/3D_track_android.png) ![Routes tags Android](@site/static/img/personal/3D_track_1_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Battery optimization Android](@site/static/img/personal/map/battery_optim_android.png) 
+![Battery optimization Android](@site/static/img/personal/map/battery_optim_1_android.png)
+
+</TabItem>
+
+</Tabs> 
 
 In the OsmAnd application, you can apply some settings by changing the appearance of the tracks, to better identify them on the map.  
 
@@ -136,28 +150,13 @@ There are three ways to access the Track Appearance menu:
 - Select Appearance from the [track recording context menu](../plugins/trip-recording#сurrent-track-recording).  
 - Go to *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> → &#8942; → <Translate android="true" ids="change_appearance"/>* for the tracks you have selected to be displayed on the map. 
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-![Track menu options Android](@site/static/img/map/track-appear-and-1.png)  ![Track menu Appearance Android](@site/static/img/map/track-appear-and-2.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Track menu iOS](@site/static/img/map/track-appear-ios-1.png) ![Configure color iOS](@site/static/img/map/track-appear-ios-2.png)  
-
-</TabItem>
-
-</Tabs> 
-
 |  |   
 |----------|
 |**<Translate ios="true" ids="gpx_direction_arrows"/>** - select the interval at which distance or time stamps are displayed on the track. |
 |![Track menu Appearance direction arrows Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)|  
 |**<Translate ios="true" ids="track_show_start_finish_icons"/>** - allows you to select whether or not to show the start and end icons of track segments. |
 |![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)|  
+| 3D visualization - you have the ability to use 3d visualization if the Map rendering engine Version 2 (OpenGl) is enabled. | |
 |**<Translate ios="true" ids="shared_string_color"/>** - allows to display the track line in any color and transparency, or select coloring according to the map legend. If necessary data on the track sections are missing, such sections are displayed in gray color. |
 | 1. *<Translate ios="true" ids="shared_string_color"/>:* *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* and *<Translate android="true" ids="altitude"/>* are free color settings. If *Speed* and *Altitude* are not active, it means that the track does not contain this data. |
 | 2. <ProFeature/> &nbsp;*<Translate android="true" ids="shared_string_color"/>:* *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>* are paid color settings. A detailed description of these settings can be found in the [*Map screen during navigation*](../navigation/guidance/map-during-navigation#color) page, specifically in the [Route line appearance](../navigation/guidance/map-during-navigation.md#route-line-appearance) section. |

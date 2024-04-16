@@ -18,7 +18,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-The following profiles are available by default: *Browse map, Driving, Cycling, Walking, Truck, Motorcycle, Moped, Train, Public transport, Boat, Aircraft, Skiing, Horseback riding*. Each profile is available for full configuration. Of course, you can create your own profile with full customization.
+The following profiles are available by default: *Browse map, Driving, Cycling, Walking, Truck, Motorcycle, Moped, Train, Public transport, Boat, Aircraft, Skiing, Horseback riding*. Each profile is available for full configuration. Of course, you can create your own profile with full customization.  
+Please note that Ski and Nautical profiles will only be available after Menu → Plugins are enabled.
 
 :::note
 **Truck, Motorcycle, Moped, Train, Aircraft, Boat and Horseback riding** profiles are switched off by default. In order to use these profiles, you need to activate them in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.  
@@ -48,23 +49,23 @@ The following profiles are available by default: *Browse map, Driving, Cycling, 
 
 ## Profile configuration
 
-This section contains all the settings related to the appearance, navigation settings, map rendering, configure menu, and screen of a profile.  
+This section contains all settings related to appearance, navigation options, map display, settings menu and profile screen.
 
 :::note
-All settings affect the selected application profile only.
+All settings affect only the selected application profile.
 :::
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Profiles Settings Android](@site/static/img/personal/profiles/profile_settings_menu_android.png)
+![Profiles Settings Android](@site/static/img/personal/profiles/profile_settings_menu_1_andr.png)  ![Profiles Settings Android](@site/static/img/personal/profiles/profile_settings_menu_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Profiles Settings iOS](@site/static/img/personal/profiles/profile_settings_menu_ios.png)
+![Profiles Settings iOS](@site/static/img/personal/profiles/profile_settings_menu_2_ios.png)
 
 </TabItem>
 
@@ -92,15 +93,9 @@ All settings affect the selected application profile only.
 
 </Tabs>
 
-OsmAnd provides [the ability to backup](../personal/osmand-cloud.md#osmand-start) your application profile settings and save them in OsmAnd Cloud. Thus, your settings will be safely and conveniently saved for Android, iOS, or Web versions and restored in case of device failure or reinstallation of OsmAnd app. You can use this special plan if you have [OsmAnd Free or Maps+](../purchases/index.md).  
+OsmAnd provides [the ability to backup](../personal/osmand-cloud.md#osmand-start) your application profile settings and save them in OsmAnd Cloud. Thus, your settings will be safely and conveniently saved for Android, iOS, or Web versions and restored in case of device failure or reinstallation of OsmAnd app. You can take advantage of this special plan by using [OsmAnd Start](../personal/osmand-cloud.md#osmand-start).  
 
 You need to have an OsmAnd Cloud account to use the Free Settings Backup. If you have an account in *OsmAnd Pro* or an active account in OsmAnd Cloud, you will not see the promotion banner.  
-
-- Tap the Free Settings Backup banner.
-- Go through the [registration step](../personal/osmand-cloud.md#login).
-- Then go to the OsmAnd Purchases menu (*Menu → Settings → Purchases*).
-- Select the [OsmAnd Start package](../personal/osmand-cloud.md#osmand-start).
-- Create a backup.
 
 
 ## General settings

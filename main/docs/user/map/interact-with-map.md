@@ -225,6 +225,7 @@ Now, you can change buttons for actions. Just go to your created *<Translate and
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → Your type → <Translate android="true" ids="key_assignments"/> → Click to any Actions or Map interactions → &#43; or <Translate android="true" ids="shared_string_button"/>*
 
+
 ![External devices](@site/static/img/map/external_assign_android.png)
 
 Now, press the button on your device to assign it to the action.
