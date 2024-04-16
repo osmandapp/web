@@ -7,6 +7,7 @@ import { closeHeader } from '../../../menu/actions/HeaderHelper';
 import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
 import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_date_start.svg';
+import { ReactComponent as FolderIcon } from '../../../assets/icons/ic_action_folder.svg';
 import PoiManager, { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import MarkerOptions, { changeIconSizeWpt, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import FavoritesManager, { prepareBackground, prepareColor, prepareIcon } from '../../../manager/FavoritesManager';
@@ -197,7 +198,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             </Box>
         );
     };
-    console.log(wpt);
+
     return (
         <>
             <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ overflow: 'hidden' }}>
@@ -220,6 +221,16 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                     icon: <TimeIcon />,
                                     name: t('date_of_creation'),
                                     value: formatTime(wpt.time),
+                                }}
+                            />
+                        )}
+                        {wpt.category && (
+                            <WptTagInfo
+                                key={'folder'}
+                                baseTag={{
+                                    icon: <FolderIcon />,
+                                    name: t('folder'),
+                                    value: wpt.category,
                                 }}
                             />
                         )}
