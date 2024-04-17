@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { POI_PREFIX, SEPARATOR } from './WptTagsProvider';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import MenuItemsTitle from '../../../menu/components/MenuItemsTitle';
+import i18n from 'i18next';
 
 export default function WptTagInfo({ tag = null, baseTag = null, copy = false }) {
     const { t } = useTranslation();
@@ -25,21 +26,56 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
         }
     }, [tag]);
 
-    function getText(tag) {
+    function getText(tag, value) {
         return tag.isUrl ? (
-            <Link href={tag.value} target="_blank" rel="noopener noreferrer">
-                {tag.value}
+            <Link href={value} target="_blank" rel="noopener noreferrer">
+                {value}
             </Link>
         ) : (
-            tag.value
+            value
         );
     }
 
     function showPrefix(tag) {
-        return !tag.isPhoneNumber && !tag.isUrl;
+        return !tag.isPhoneNumber && !tag.isUrl && tag.value !== tag.textPrefix;
+    }
+
+    function prefixContainsValue(tag) {
+        return (
+            (tag.textPrefix.endsWith('yes') && tag.value === 'yes') ||
+            (tag.textPrefix.endsWith('no') && tag.value === 'no')
+        );
+    }
+
+    function prepareValue(item, addPrefix, POI_PREFIX) {
+        const prefix = addPrefix && !item.startsWith('cuisine_') ? 'cuisine_' : '';
+        const keyWithPrefix = `${POI_PREFIX}${prefix}${item}`;
+        const keyWithoutPrefix = `${prefix}${item}`;
+        // Check if translation with POI_PREFIX exists, if not use without POI_PREFIX
+        const key = i18n.exists(keyWithPrefix) ? keyWithPrefix : keyWithoutPrefix;
+        return t(key);
+    }
+
+    function prepareValueFromList(tag) {
+        const addPrefix = tag.key === 'cuisine';
+        if (tag.isUrl) {
+            return tag.value;
+        }
+        if (prefixContainsValue(tag)) {
+            tag.value = tag.textPrefix;
+        }
+        const items = tag.value.split(SEPARATOR);
+        if (items.length > 1) {
+            const values = items.map((item) => {
+                return prepareValue(item, addPrefix, POI_PREFIX);
+            });
+            return values.join(' • ');
+        }
+        return prepareValue(tag.value, addPrefix, POI_PREFIX);
     }
 
     function getValue(tag) {
+        const value = prepareValueFromList(tag);
         if (tag.collapsable) {
             const items = tag.value.split(SEPARATOR);
 
@@ -49,11 +85,9 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
                         <MenuItemsTitle
                             name={t(`${POI_PREFIX}${tag.textPrefix}`)}
                             maxLines={2}
-                            className={styles.tagName}
+                            className={styles.tagPrefix}
                         />
-                        <Typography variant="caption" noWrap>
-                            {t(`${POI_PREFIX}${items[0]}`)}
-                        </Typography>
+                        <MenuItemsTitle name={value} maxLines={1} className={styles.tagName} />
                     </ListItemText>
                     {items.length > 1 && (
                         <IconButton onClick={() => setOpen(!open)}>{open ? <ExpandLess /> : <ExpandMore />}</IconButton>
@@ -68,7 +102,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
                             {t(`${POI_PREFIX}${tag.textPrefix}`)}
                         </Typography>
                     )}
-                    <MenuItemsTitle name={getText(tag)} maxLines={2} className={styles.tagName} />
+                    <MenuItemsTitle name={getText(tag, value)} maxLines={2} className={styles.tagName} />
                 </ListItemText>
             );
         }
@@ -108,8 +142,8 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
             {tagList && (
                 <Collapse in={open} timeout="auto" unmountOnExit>
                     {tagList.map((item, index) => (
-                        <MenuItem key={index} divider>
-                            <Typography key={index} variant="caption" style={{ paddingLeft: 20 }}>
+                        <MenuItem disableRipple key={index} divider className={styles.tagList}>
+                            <Typography key={index} className={styles.tagName}>
                                 {t(`${POI_PREFIX}${item}`)}
                             </Typography>
                         </MenuItem>

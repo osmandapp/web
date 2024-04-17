@@ -6,6 +6,12 @@
     align-items: center !important;
     gap: 24px !important;
 }
+.tagList {
+    display: flex !important;
+    width: 360px !important;
+    min-height: 48px !important;
+    margin-left: 5px !important;
+}
 .tagIcon {
     min-width: 24px !important;
     max-width: 24px !important;
