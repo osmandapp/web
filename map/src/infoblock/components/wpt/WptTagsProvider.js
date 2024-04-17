@@ -31,7 +31,26 @@ const WIKIMEDIA_COMMONS = 'wikimedia_commons';
 const OSM_PREFIX = 'osm_tag_';
 export const POI_PREFIX = 'poi_';
 const COLLAPSABLE_PREFIX = 'collapsable_';
-const HIDDEN_EXTENSIONS = 'hidden_extensions';
+export const COLOR_NAME_EXTENSION = 'color';
+export const ICON_NAME_EXTENSION = 'icon';
+export const BACKGROUND_TYPE_EXTENSION = 'background';
+export const PROFILE_TYPE_EXTENSION = 'profile';
+export const ADDRESS_EXTENSION = 'address';
+export const AMENITY_ORIGIN_EXTENSION = 'amenity_origin';
+export const NAME = 'name';
+export const ALT_NAME = 'osm_tag_alt_name';
+
+const HIDDEN_EXTENSIONS = [
+    COLOR_NAME_EXTENSION,
+    ICON_NAME_EXTENSION,
+    BACKGROUND_TYPE_EXTENSION,
+    PROFILE_TYPE_EXTENSION,
+    ADDRESS_EXTENSION,
+    AMENITY_ORIGIN_EXTENSION,
+    AMENITY_PREFIX + NAME,
+    AMENITY_PREFIX + TYPE,
+    AMENITY_PREFIX + SUBTYPE,
+];
 export const SEPARATOR = ';';
 
 function getWptTags(wpt, type) {
@@ -83,7 +102,7 @@ function getWptTags(wpt, type) {
                             break;
                         case OPENING_HOURS:
                             tagObj.icon = <TimeIcon />;
-                            tagObj.textPrefix = localizeWeekDays(value);
+                            tagObj.value = localizeWeekDays(value);
                             break;
                         case PHONE:
                             tagObj.icon = <CallIcon />;
@@ -163,7 +182,7 @@ function fixTagsKeys(tags) {
         let newKey = key;
         if (key === AMENITY_PREFIX + OPENING_HOURS) {
             newKey = key.replace(AMENITY_PREFIX, '');
-        } else if (key.startsWith(AMENITY_PREFIX) || HIDDEN_EXTENSIONS.includes(key)) {
+        } else if (key.startsWith(AMENITY_PREFIX) || key.startsWith(ALT_NAME) || HIDDEN_EXTENSIONS.includes(key)) {
             continue;
         } else {
             newKey = key.replace(OSM_PREFIX, '');
@@ -174,8 +193,8 @@ function fixTagsKeys(tags) {
 }
 
 function getFormattedPrefixAndText(key, prefix, value, subtype) {
+    let formattedPrefix = prefix ?? key;
     let formattedValue = value;
-    let formattedPrefix = prefix;
 
     switch (key) {
         case 'width':

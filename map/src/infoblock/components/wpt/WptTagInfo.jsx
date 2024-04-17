@@ -2,7 +2,7 @@ import { Collapse, IconButton, Link, ListItemIcon, ListItemText, MenuItem, Toolt
 import styles from './wptDetails.module.css';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { OPENING_HOURS, POI_PREFIX, SEPARATOR } from './WptTagsProvider';
+import { POI_PREFIX, SEPARATOR } from './WptTagsProvider';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import MenuItemsTitle from '../../../menu/components/MenuItemsTitle';
 
@@ -30,13 +30,13 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
             <Link href={tag.value} target="_blank" rel="noopener noreferrer">
                 {tag.value}
             </Link>
-        ) : tag.isPhoneNumber || tag.key === 'email' ? (
-            tag.value
-        ) : tag.textPrefix ? (
-            t(tag.textPrefix)
         ) : (
-            t(`${POI_PREFIX}${tag.key}`)
+            tag.value
         );
+    }
+
+    function showPrefix(tag) {
+        return !tag.isPhoneNumber && !tag.isUrl;
     }
 
     function getValue(tag) {
@@ -46,16 +46,14 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
             return (
                 <>
                     <ListItemText onClick={() => setOpen(!open)}>
-                        <ListItemText>
-                            <MenuItemsTitle
-                                name={t(`${POI_PREFIX}${tag.textPrefix}`)}
-                                maxLines={2}
-                                className={styles.tagName}
-                            />
-                            <Typography variant="caption" noWrap>
-                                {t(`${POI_PREFIX}${items[0]}`)}
-                            </Typography>
-                        </ListItemText>
+                        <MenuItemsTitle
+                            name={t(`${POI_PREFIX}${tag.textPrefix}`)}
+                            maxLines={2}
+                            className={styles.tagName}
+                        />
+                        <Typography variant="caption" noWrap>
+                            {t(`${POI_PREFIX}${items[0]}`)}
+                        </Typography>
                     </ListItemText>
                     {items.length > 1 && (
                         <IconButton onClick={() => setOpen(!open)}>{open ? <ExpandLess /> : <ExpandMore />}</IconButton>
@@ -65,6 +63,11 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
         } else {
             return (
                 <ListItemText>
+                    {showPrefix(tag) && (
+                        <Typography className={styles.tagPrefix} noWrap>
+                            {t(`${POI_PREFIX}${tag.textPrefix}`)}
+                        </Typography>
+                    )}
                     <MenuItemsTitle name={getText(tag)} maxLines={2} className={styles.tagName} />
                 </ListItemText>
             );

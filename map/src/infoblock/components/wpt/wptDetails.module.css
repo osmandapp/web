@@ -22,7 +22,14 @@
     font-size: 14px !important;
     font-weight: 400 !important;
     line-height: 150% !important;
+    margin-right: 5px !important;
     &:hover {
         color: var(--selected-color) !important;
     }
+}
+.tagPrefix {
+    color: var(--text-secondary) !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
 }
