@@ -74,17 +74,21 @@ function getWptTags(wpt, type) {
             if (!shouldSkipKey(key)) {
                 let tagObj = {};
                 tagObj.key = key;
-                tagObj.value = value;
-                tagObj.needLinks = ![OPENING_HOURS, 'population', 'height'].includes(key);
-                tagObj.isUrl = isUrl(value);
+                if (key.includes(WIKIPEDIA)) {
+                    tagObj.value = getWikipediaURL(key, value);
+                } else {
+                    tagObj.value = value;
+                }
+                tagObj.isUrl = isUrl(tagObj.value);
 
-                if (!tagObj.isUrl && tagObj.needLinks) {
+                if (!tagObj.isUrl) {
                     tagObj.hiddenUrl = getSocialMediaUrl(key, value);
                     if (tagObj.hiddenUrl != null) {
                         tagObj.isUrl = true;
                     }
                 } else if (key.includes(WIKIPEDIA)) {
                     tagObj = addWikipediaTags(key, value, tagObj);
+                    isWikipediaLink = true;
                 }
 
                 if (typeTag === OSM_WIKI) {
@@ -119,6 +123,7 @@ function getWptTags(wpt, type) {
                         default:
                             if (isWikipediaLink) {
                                 tagObj.icon = <WikipediaIcon />;
+                                isWikipediaLink = false;
                             } else if (key === 'addr:housename' || key === 'whitewater:rapid_name') {
                                 tagObj.icon = <PoiNameIcon />;
                             } else if (key === 'operator' || key === 'brand') {
@@ -275,7 +280,7 @@ function addWikipediaTags(key, value, tagObj) {
     let wikiParams = getWikiParams(key, value);
     tagObj.value = wikiParams.text;
     tagObj.hiddenUrl = wikiParams.url;
-    tagObj.isWikipediaLink = tagObj.isUrl = true;
+    tagObj.isUrl = true;
 
     return tagObj;
 }
@@ -331,6 +336,21 @@ function isUrl(value) {
     } catch (_) {
         return false;
     }
+}
+
+function getWikipediaURL(key, value) {
+    if (value) {
+        value = value.replace(/ /g, '_');
+        if (!value.startsWith('http://')) {
+            const keyArr = key.split('_-_');
+            if (keyArr.length === 1) {
+                value = 'http://en.wikipedia.org/wiki/' + value;
+            } else {
+                value = 'http://' + keyArr[1] + '.wikipedia.org/wiki/' + value;
+            }
+        }
+    }
+    return value;
 }
 
 function shouldSkipKey(key) {
