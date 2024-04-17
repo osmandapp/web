@@ -58,7 +58,7 @@ A new, speedy offline navigation feature has been introduced, utilizing a hierar
 
 For instance, navigating offline by car from Inzlingen to Waldershof now only requires 10 seconds.
 
-![Fast Routing Android](../../blog/2024-03-07-android-4-7/img/fast_routing_android.png)
+![Fast Routing Android](../../blog/2024-04-17-android-4-7/img/fast_routing_android.png)
 
 ## Navigation settings for Developers
 
@@ -70,7 +70,7 @@ Navigate through _Menu → Settings → App profile → Navigation settings → 
 - _Autozoom_: Activate autozoom for easier navigation.
 - _OsmAnd live data_: Utilize the [most recent map updates](https://osmand.net/docs/user/personal/maps/#osmand-live) for routing.
 
-![Speedometer](../../blog/2024-03-07-android-4-7/img/dev_route_param_android.png)
+![Speedometer](../../blog/2024-04-17-android-4-7/img/dev_route_param_android.png)
 
 ## Speedometer
 
@@ -80,13 +80,13 @@ Go to _Menu → Configure screen → Other → Speedometer_
 
 Within this section, you can select the size (_small, medium, large_) of the Speedometer and specify when to receive a Speed limit warning (_Always, When exceeded_).
 
-![Speedometer](../../blog/2024-03-07-android-4-7/img/speedometer_android.png) ![Speedometer](../../blog/2024-03-07-android-4-7/img/speedometer_2_android.png)
+![Speedometer](../../blog/2024-04-17-android-4-7/img/speedometer_android.png) ![Speedometer](../../blog/2024-04-17-android-4-7/img/speedometer_2_android.png)
 
 ### Speedometer for Android Auto
 
 Speedometer was added for Android Auto too.
 
-![Speedometer](../../blog/2024-03-07-android-4-7/img/speedometer_3_android.png)
+![Speedometer](../../blog/2024-04-17-android-4-7/img/speedometer_3_android.png)
 
 ## Round up numbers
 
@@ -94,7 +94,7 @@ Select the format for displaying distance information in navigation widgets (suc
 
 _Menu → Settings → Navigation Profile → General settings → Units & formats → Distance during navigation → Precise_ or _Round up_
 
-![Round up Android](../../blog/2024-03-07-android-4-7/img/roundup_android.png) ![Round up Android](../../blog/2024-03-07-android-4-7/img/roundup_2_android.png)
+![Round up Android](../../blog/2024-04-17-android-4-7/img/roundup_android.png) ![Round up Android](../../blog/2024-04-17-android-4-7/img/roundup_2_android.png)
 
 ## Custom Buttons
 
@@ -102,17 +102,17 @@ In this update, we've introduced Custom Buttons, a unique type of [Quick action]
 
 _Menu → Configure screen → Buttons → Custom buttons → + → Add button_
 
-![Custom button Android](../../blog/2024-03-07-android-4-7/img/custom_button_android.png) 
-![Custom button Android](../../blog/2024-03-07-android-4-7/img/custom_button_2_android.png)
+![Custom button Android](../../blog/2024-04-17-android-4-7/img/custom_button_android.png) 
+![Custom button Android](../../blog/2024-04-17-android-4-7/img/custom_button_2_android.png)
 
 Next, you have the option to assign one or more actions to the custom button you've created and activate it.
 
-![Custom button Android](../../blog/2024-03-07-android-4-7/img/custom_button_3_android.png) 
-![Custom button Android](../../blog/2024-03-07-android-4-7/img/custom_button_4_android.png)
+![Custom button Android](../../blog/2024-04-17-android-4-7/img/custom_button_3_android.png) 
+![Custom button Android](../../blog/2024-04-17-android-4-7/img/custom_button_4_android.png)
 
 Now, the new custom button will be visible on your device's screen. Tapping this button instantly toggles the selected action on or off.
 
-![Custom button Android](../../blog/2024-03-07-android-4-7/img/custom_button_5_android.png)
+![Custom button Android](../../blog/2024-04-17-android-4-7/img/custom_button_5_android.png)
 
 ## Routes tags
 
@@ -120,7 +120,7 @@ Extracted [Route](https://osmand.net/docs/user/map/tracks-on-map#routes-on-the-m
 
 Example of relation tags for ["CAIOSM - Emilia Romagna - sentiero 137"](https://www.openstreetmap.org/relation/16115660):
 
-![Routes tags Android](../../blog/2024-03-07-android-4-7/img/routes_tags_android.png)
+![Routes tags Android](../../blog/2024-04-17-android-4-7/img/routes_tags_android.png)
 
 ## 3D track visualization
 
@@ -128,7 +128,7 @@ Added 3D visialization for tracks by altitude:
 
 _[Track Context menu](https://osmand.net/docs/user/map/tracks-on-map#track-appearance) → Change Appearance → 3D visualization_
 
-![3D tracks Android](../../blog/2024-03-07-android-4-7/img/3D_track_android.png) ![Routes tags Android](../../blog/2024-03-07-android-4-7/img/3D_track_1_android.png)
+![3D tracks Android](../../blog/2024-04-17-android-4-7/img/3D_track_android.png) ![Routes tags Android](../../blog/2024-04-17-android-4-7/img/3D_track_1_android.png)
 
 
 ## Battery optimization dialogue
@@ -137,14 +137,14 @@ A "Battery Optimization" banner has been introduced in the [Trip recording plugi
 
 _Menu → Settings → App Profile → Trip recoding → Read more (Android battry optimization)_
 
-![Battery optimization Android](../../blog/2024-03-07-android-4-7/img/battery_optim_android.png) 
-![Battery optimization Android](../../blog/2024-03-07-android-4-7/img/battery_optim_1_android.png)
+![Battery optimization Android](../../blog/2024-04-17-android-4-7/img/battery_optim_android.png) 
+![Battery optimization Android](../../blog/2024-04-17-android-4-7/img/battery_optim_1_android.png)
 
 ## Redesign graphs
 
 [Elevation graphs](https://osmand.net/docs/user/plan-route/create-route#graph) have been revamped to eliminate overlapping labels:
 
-![Redesign graph Android](../../blog/2024-03-07-android-4-7/img/redesign_graph_android.png)
+![Redesign graph Android](../../blog/2024-04-17-android-4-7/img/redesign_graph_android.png)
 
 
 ## OAuth 2.0 for OSM login
@@ -161,25 +161,25 @@ You can now apply a sorting order across all subfolders:
 
 _Menu → My places → Tracks → &#8942; → Sort subfolders_
 
-![Subfolders Android](../../blog/2024-03-07-android-4-7/img/subfolders_android.png) ![Subfolders Android](../../blog/2024-03-07-android-4-7/img/subfolders_1_android.png)
+![Subfolders Android](../../blog/2024-04-17-android-4-7/img/subfolders_android.png) ![Subfolders Android](../../blog/2024-04-17-android-4-7/img/subfolders_1_android.png)
 
 - New Selected Tracks screen (Plan a route, Navigation, Markers, Development, Quick action):
 
 _Navigation → Follow track → Select_
 
-![Selected tracks menu Android](../../blog/2024-03-07-android-4-7/img/selected_tracks_menu_android.png)
+![Selected tracks menu Android](../../blog/2024-04-17-android-4-7/img/selected_tracks_menu_android.png)
 
 ## Filter by Sensor data
 
 Introduced the ability to [filter](https://osmand.net/docs/user/personal/tracks.md#filter) GPX tracks by sensor data.
 
-![GPX filters Android](../../blog/2024-03-07-android-4-7/img/gpx_filters_android.png)
+![GPX filters Android](../../blog/2024-04-17-android-4-7/img/gpx_filters_android.png)
 
 ## Tags support
 
 - The import process for GPX files now includes support for [for tags](https://github.com/osmandapp/OsmAnd/issues/18342) such as _author, cmt, link, keywords, copyright, email_ , allowing for the display of this information in the Track Context menu.
 
-![Tags of track Android](../../blog/2024-03-07-android-4-7/img/tags_track_android.png)
+![Tags of track Android](../../blog/2024-04-17-android-4-7/img/tags_track_android.png)
 
 - Move sensors tags to _gpxtpx:TrackPointExtensio_.
 
