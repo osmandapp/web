@@ -343,7 +343,7 @@ In order to change tile format you can choose <Translate android="true" ids="sto
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  
 &#8942; → <Translate android="true" ids="shared_string_edit,storage_format,sqlite_db_file"/> / <Translate android="true" ids="one_image_per_tile"/>*
 
 </TabItem>
@@ -367,7 +367,7 @@ In order to clear map tiles cache you need to do next:
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  
 &#8942; → <Translate android="true" ids="clear_tile_data"/>*
 
 </TabItem>
@@ -433,7 +433,7 @@ In order for the maps to automatically update the tiles after a period of time, 
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  &#8942; → <Translate android="true" ids="shared_string_edit"/>*
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  &#8942; → <Translate android="true" ids="shared_string_edit"/>*
 
 </TabItem>
 

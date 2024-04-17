@@ -483,7 +483,7 @@ Read more about ['Plan a route'](../plan-route/create-route.md) tool.
 <TabItem value="android" label="Android">  
 
 To update or download online maps (tiles) at specific location, you can use object context menu:  
-**Android**: *<Translate android="true" ids="shared_string_download_map"/>* and for *Update* go to: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_updates"/>*.  
+**Android**: *<Translate android="true" ids="shared_string_download_map"/>* and for *Update* go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
 Please refer to [full instruction](../map/raster-maps.md#download--update-tiles).   
 
 ![Action Download online map Android](@site/static/img/map/action_load_online_map_and.png)
