@@ -6,10 +6,12 @@ import { POI_PREFIX, SEPARATOR } from './WptTagsProvider';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import MenuItemsTitle from '../../../menu/components/MenuItemsTitle';
 import i18n from 'i18next';
+import MoreInfoDialog from './MoreInfoDialog';
 
 export default function WptTagInfo({ tag = null, baseTag = null, copy = false }) {
     const { t } = useTranslation();
     const [open, setOpen] = useState(false);
+    const [openMoreDialog, setOpenMoreDialog] = useState(null);
     const [tagList, setTagList] = useState(null);
     const [hover, setHover] = useState(false);
 
@@ -96,13 +98,15 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
             );
         } else {
             return (
-                <ListItemText>
+                <ListItemText
+                    onClick={() => setOpenMoreDialog({ title: t(`${POI_PREFIX}${tag.key}`), content: tag.value })}
+                >
                     {showPrefix(tag) && (
                         <Typography className={styles.tagPrefix} noWrap>
                             {t(`${POI_PREFIX}${tag.textPrefix}`)}
                         </Typography>
                     )}
-                    <MenuItemsTitle name={getText(tag, value)} maxLines={2} className={styles.tagName} />
+                    <MenuItemsTitle name={getText(tag, value)} maxLines={tag.desc ? 5 : 2} className={styles.tagName} />
                 </ListItemText>
             );
         }
@@ -120,22 +124,35 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
                 <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
                     <MenuItem disableRipple style={{ userSelect: 'text' }} className={styles.tagItem} divider>
                         <ListItemIcon className={styles.tagIcon}>{baseTag.icon}</ListItemIcon>
-                        <ListItemText>
-                            <Typography variant="inherit" className={styles.tagName}>
-                                {baseTag.name}
-                            </Typography>
-                        </ListItemText>
-                        <Tooltip
-                            title={t('shared_string_copy')}
-                            arrow
-                            placement="bottom"
-                            open={hover && copy}
-                            onClick={() => handleCopy(baseTag.value)}
-                        >
-                            <Typography variant="inherit" className={styles.tagValue}>
-                                {baseTag.value}
-                            </Typography>
-                        </Tooltip>
+                        {baseTag.isDesc ? (
+                            <ListItemText
+                                onClick={() => setOpenMoreDialog({ title: baseTag.name, content: baseTag.value })}
+                            >
+                                <Typography variant="inherit" className={styles.tagPrefix} noWrap>
+                                    {baseTag.name}
+                                </Typography>
+                                <MenuItemsTitle name={baseTag.value} maxLines={3} className={styles.tagName} />
+                            </ListItemText>
+                        ) : (
+                            <>
+                                <ListItemText>
+                                    <Typography variant="inherit" className={styles.tagName}>
+                                        {baseTag.name}
+                                    </Typography>
+                                </ListItemText>
+                                <Tooltip
+                                    title={t('shared_string_copy')}
+                                    arrow
+                                    placement="bottom"
+                                    open={hover && copy}
+                                    onClick={() => handleCopy(baseTag.value)}
+                                >
+                                    <Typography variant="inherit" className={styles.tagValue}>
+                                        {baseTag.value}
+                                    </Typography>
+                                </Tooltip>
+                            </>
+                        )}
                     </MenuItem>
                 </div>
             )}
@@ -149,6 +166,13 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
                         </MenuItem>
                     ))}
                 </Collapse>
+            )}
+            {openMoreDialog && (
+                <MoreInfoDialog
+                    setOpenMoreDialog={setOpenMoreDialog}
+                    title={openMoreDialog.title}
+                    content={openMoreDialog.content}
+                />
             )}
         </>
     );

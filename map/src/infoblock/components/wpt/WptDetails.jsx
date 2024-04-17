@@ -10,6 +10,7 @@ import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_date
 import { ReactComponent as FolderIcon } from '../../../assets/icons/ic_action_folder.svg';
 import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_coordinates_location.svg';
 import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow_16.svg';
+import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
 import PoiManager, { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import MarkerOptions, { changeIconSizeWpt, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import FavoritesManager, {
@@ -93,6 +94,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     type: type,
                     file: ctx.selectedWpt.file,
                     name: currentWpt.name,
+                    desc: currentWpt.desc,
                     latlon: { lat: currentWpt.lat, lon: currentWpt.lon },
                     marker: currentWpt.marker,
                     background: prepareBackground(currentWpt.background),
@@ -277,6 +279,17 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                         {wpt.latlon && currentLoc && <WptLoc wpt={wpt} location={currentLoc} />}
                         {wpt?.address && <WptAddress />}
                         <WptDetailsButtons wpt={wpt} isDetails={isDetails} />
+                        {wpt.desc && (
+                            <WptTagInfo
+                                key={'desc'}
+                                baseTag={{
+                                    icon: <DescriptionIcon />,
+                                    name: t('shared_string_description'),
+                                    value: wpt.desc,
+                                    isDesc: true,
+                                }}
+                            />
+                        )}
                         {wpt.time && (
                             <WptTagInfo
                                 key={'time'}

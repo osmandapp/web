@@ -10,6 +10,7 @@ import { ReactComponent as InternetIcon } from '../../../assets/icons/ic_action_
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
 import { ReactComponent as InstagramIcon } from '../../../assets/icons/ic_action_social_instagram.svg';
 import { ReactComponent as CuisineIcon } from '../../../assets/icons/ic_action_cuisine.svg';
+import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
 import * as locales from 'date-fns/locale';
 import { format, startOfWeek, addDays } from 'date-fns';
 
@@ -20,6 +21,7 @@ const TYPE = 'type';
 const SUBTYPE = 'subtype';
 const SERVICE_TIMES = 'service_times';
 const COLLECTION_TIMES = 'collection_times';
+export const DESCRIPTION = 'description';
 export const OPENING_HOURS = 'opening_hours';
 const PHONE = 'phone';
 const MOBILE = 'mobile';
@@ -28,6 +30,7 @@ const CUISINE = 'cuisine';
 const ROUTE = 'route';
 const WIKIDATA = 'wikidata';
 const WIKIMEDIA_COMMONS = 'wikimedia_commons';
+const INSTAGRAM = 'instagram';
 const OSM_PREFIX = 'osm_tag_';
 export const POI_PREFIX = 'poi_';
 const COLLAPSABLE_PREFIX = 'collapsable_';
@@ -120,6 +123,13 @@ function getWptTags(wpt, type) {
                             tagObj.icon = <WebsiteIcon />;
                             tagObj.isUrl = true;
                             break;
+                        case DESCRIPTION:
+                            tagObj.icon = <DescriptionIcon />;
+                            tagObj.desc = true;
+                            break;
+                        case INSTAGRAM:
+                            tagObj.icon = <InstagramIcon />;
+                            break;
                         default:
                             if (isWikipediaLink) {
                                 tagObj.icon = <WikipediaIcon />;
@@ -130,8 +140,6 @@ function getWptTags(wpt, type) {
                                 tagObj.icon = <BrandIcon />;
                             } else if (key === 'internet_access_fee_yes') {
                                 tagObj.icon = <InternetIcon />;
-                            } else if (key === 'instagram') {
-                                tagObj.icon = <InstagramIcon />;
                             } else {
                                 tagObj.icon = <InfoIcon />;
                             }

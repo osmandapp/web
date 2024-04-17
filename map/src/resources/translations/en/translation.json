@@ -5189,5 +5189,6 @@
   "date_of_creation": "Date of creation",
   "folder": "Folder",
   "coordinates": "Coordinates",
-  "shared_string_copy": "Copy"
+  "shared_string_copy": "Copy",
+  "shared_string_description": "Description"
 }
