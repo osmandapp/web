@@ -75,44 +75,38 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 icon: poiOptions.finalIconName,
             };
         } else if (type?.isWpt) {
-            result = {
-                type: type,
-                file: ctx.selectedWpt.file,
-                name: ctx.selectedWpt.name,
-                latlon: { lat: ctx.selectedWpt.lat, lon: ctx.selectedWpt.lon },
-                marker: null,
-                background: prepareBackground(ctx.selectedWpt.background),
-                color: prepareColor(ctx.selectedWpt.color),
-                icon: prepareIcon(ctx.selectedWpt.icon),
-                category: ctx.selectedWpt.category,
-                address: ctx.selectedWpt.address,
-            };
+            result = getDataFromWpt(type, ctx.selectedWpt);
         } else if (type?.isFav) {
             let markerName = ctx.selectedWpt.markerCurrent.title;
             let currentWpt = ctx.selectedWpt.file.wpts.find((p) => p.name === markerName);
             if (currentWpt) {
-                result = {
-                    type: type,
-                    file: ctx.selectedWpt.file,
-                    name: currentWpt.name,
-                    desc: currentWpt.desc,
-                    hidden: currentWpt.hidden,
-                    latlon: { lat: currentWpt.lat, lon: currentWpt.lon },
-                    marker: currentWpt.marker,
-                    background: prepareBackground(currentWpt.background),
-                    color: prepareColor(currentWpt.color),
-                    icon: prepareIcon(currentWpt.icon),
-                    category: currentWpt.category,
-                    address: currentWpt.address,
-                    time: parseInt(currentWpt.ext?.time) !== 0 ? currentWpt.ext.time : null,
-                    tags: WptTagsProvider.getWptTags(currentWpt, type),
-                };
+                result = getDataFromWpt(type, ctx.selectedWpt, currentWpt);
             }
         } else {
             result = null;
         }
         return result;
     }, [ctx.selectedWpt]);
+
+    function getDataFromWpt(type, selectedWpt, wptFromFile = null) {
+        const currentWpt = wptFromFile ? wptFromFile : selectedWpt;
+        return {
+            type: type,
+            file: selectedWpt.file,
+            name: currentWpt.name,
+            desc: currentWpt.desc,
+            hidden: currentWpt.hidden,
+            latlon: { lat: currentWpt.lat, lon: currentWpt.lon },
+            marker: currentWpt.marker,
+            background: prepareBackground(currentWpt.background),
+            color: prepareColor(currentWpt.color),
+            icon: prepareIcon(currentWpt.icon),
+            category: currentWpt.category,
+            address: currentWpt.address,
+            time: parseInt(currentWpt.ext?.time) !== 0 ? currentWpt.ext.time : null,
+            tags: WptTagsProvider.getWptTags(currentWpt, type),
+        };
+    }
 
     useEffect(() => {
         if (newWpt !== null) {
