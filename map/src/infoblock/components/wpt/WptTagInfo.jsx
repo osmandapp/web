@@ -28,14 +28,42 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
         }
     }, [tag]);
 
+    function wrapValueInLink(tag, value) {
+        if (tag.isPhoneNumber) {
+            return (
+                <Link href={`tel:${value}`} target="_blank" rel="noopener noreferrer">
+                    {value}
+                </Link>
+            );
+        }
+        if (tag.isEmail) {
+            return (
+                <Link href={`mailto:${value}`} target="_blank" rel="noopener noreferrer">
+                    {value}
+                </Link>
+            );
+        }
+        if (tag.isUrl) {
+            return (
+                <Link href={value} target="_blank" rel="noopener noreferrer">
+                    {value}
+                </Link>
+            );
+        }
+        return value;
+    }
+
     function getText(tag, value) {
-        return tag.isUrl ? (
-            <Link href={value} target="_blank" rel="noopener noreferrer">
-                {value}
-            </Link>
-        ) : (
-            value
-        );
+        const items = value.split(' • ');
+        if (items.length > 1) {
+            return items.map((item, index) => (
+                <React.Fragment key={index}>
+                    {index > 0 && ' • '}
+                    {wrapValueInLink(tag, item)}
+                </React.Fragment>
+            ));
+        }
+        return wrapValueInLink(tag, value);
     }
 
     function showPrefix(tag) {
@@ -76,6 +104,10 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
         return prepareValue(tag.value, addPrefix, POI_PREFIX);
     }
 
+    function openMoreInfoDialog(tag) {
+        return tag.desc ? () => setOpenMoreDialog({ title: t(`${POI_PREFIX}${tag.key}`), content: tag.desc }) : null;
+    }
+
     function getValue(tag) {
         const value = prepareValueFromList(tag);
         if (tag.collapsable) {
@@ -98,9 +130,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
             );
         } else {
             return (
-                <ListItemText
-                    onClick={() => setOpenMoreDialog({ title: t(`${POI_PREFIX}${tag.key}`), content: tag.value })}
-                >
+                <ListItemText onClick={() => openMoreInfoDialog(tag)}>
                     {showPrefix(tag) && (
                         <Typography className={styles.tagPrefix} noWrap>
                             {t(`${POI_PREFIX}${tag.textPrefix}`)}

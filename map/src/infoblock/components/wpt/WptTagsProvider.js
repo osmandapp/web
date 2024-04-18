@@ -11,6 +11,7 @@ import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info
 import { ReactComponent as InstagramIcon } from '../../../assets/icons/ic_action_social_instagram.svg';
 import { ReactComponent as CuisineIcon } from '../../../assets/icons/ic_action_cuisine.svg';
 import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
+import { ReactComponent as EmailIcon } from '../../../assets/icons/ic_action_at_mail.svg';
 import * as locales from 'date-fns/locale';
 import { format, startOfWeek, addDays } from 'date-fns';
 
@@ -25,6 +26,7 @@ export const DESCRIPTION = 'description';
 export const OPENING_HOURS = 'opening_hours';
 const PHONE = 'phone';
 const MOBILE = 'mobile';
+const EMAIL = 'email';
 const WEBSITE = 'website';
 const CUISINE = 'cuisine';
 const ROUTE = 'route';
@@ -109,7 +111,6 @@ function getWptTags(wpt, type) {
                             break;
                         case OPENING_HOURS:
                             tagObj.icon = <TimeIcon />;
-                            tagObj.value = localizeWeekDays(value);
                             break;
                         case PHONE:
                             tagObj.icon = <CallIcon />;
@@ -129,6 +130,10 @@ function getWptTags(wpt, type) {
                             break;
                         case INSTAGRAM:
                             tagObj.icon = <InstagramIcon />;
+                            break;
+                        case EMAIL:
+                            tagObj.isEmail = true;
+                            tagObj.icon = <EmailIcon />;
                             break;
                         default:
                             if (isWikipediaLink) {
@@ -157,6 +162,10 @@ function getWptTags(wpt, type) {
                         tagObj.icon = <CuisineIcon />;
                         hasCuisine = true;
                     }
+                }
+
+                if (tagObj.key === OPENING_HOURS) {
+                    tagObj.value = localizeWeekDays(tagObj.value);
                 }
 
                 // add ele tag
