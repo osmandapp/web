@@ -11,6 +11,7 @@ import { ReactComponent as FolderIcon } from '../../../assets/icons/ic_action_fo
 import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_coordinates_location.svg';
 import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow_16.svg';
 import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
+import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
 import PoiManager, { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import MarkerOptions, { changeIconSizeWpt, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import FavoritesManager, {
@@ -95,6 +96,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     file: ctx.selectedWpt.file,
                     name: currentWpt.name,
                     desc: currentWpt.desc,
+                    hidden: currentWpt.hidden,
                     latlon: { lat: currentWpt.lat, lon: currentWpt.lon },
                     marker: currentWpt.marker,
                     background: prepareBackground(currentWpt.background),
@@ -297,6 +299,16 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                     icon: <TimeIcon />,
                                     name: t('date_of_creation'),
                                     value: formatTime(wpt.time),
+                                }}
+                            />
+                        )}
+                        {wpt.hidden && (
+                            <WptTagInfo
+                                key={'hidden'}
+                                baseTag={{
+                                    icon: <InfoIcon />,
+                                    name: t('shared_string_hidden'),
+                                    value: t('shared_string_yes'),
                                 }}
                             />
                         )}

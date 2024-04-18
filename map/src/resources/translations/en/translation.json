@@ -5197,5 +5197,7 @@
   "metric_ton": "t",
   "shared_string_width": "Width",
   "shared_string_height": "Height",
-  "distance": "Distance"
+  "distance": "Distance",
+  "shared_string_hidden": "Hidden",
+  "shared_string_yes": "Yes"
 }
