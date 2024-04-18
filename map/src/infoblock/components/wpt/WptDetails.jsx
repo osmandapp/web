@@ -23,7 +23,7 @@ import FavoritesManager, {
 } from '../../../manager/FavoritesManager';
 import { Folder, LocationOn } from '@mui/icons-material';
 import WptDetailsButtons from './WptDetailsButtons';
-import WptTagsProvider from './WptTagsProvider';
+import WptTagsProvider, { FINAL_ICON_NAME } from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
 import { useTranslation } from 'react-i18next';
 import i18n from 'i18next';
@@ -69,10 +69,11 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             result = {
                 type: type,
                 name: poiOptions.title ? poiOptions.title : PoiManager.formattingPoiType(poiOptions.poiType),
-                latlon: latlng,
+                latlon: { lat: latlng.lat, lon: latlng.lng },
                 background: DEFAULT_POI_SHAPE,
                 color: DEFAULT_POI_COLOR,
-                icon: poiOptions.finalIconName,
+                icon: poiOptions[FINAL_ICON_NAME],
+                tags: WptTagsProvider.getWptTags(currentPoi, type),
             };
         } else if (type?.isWpt) {
             result = getDataFromWpt(type, ctx.selectedWpt);

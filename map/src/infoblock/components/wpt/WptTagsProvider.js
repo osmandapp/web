@@ -15,11 +15,14 @@ import { ReactComponent as EmailIcon } from '../../../assets/icons/ic_action_at_
 import * as locales from 'date-fns/locale';
 import { format, startOfWeek, addDays } from 'date-fns';
 
+export const POI_PREFIX = 'poi_';
 const WIKIPEDIA = 'wikipedia';
 const OSM_WIKI = 'osmwiki';
 const AMENITY_PREFIX = 'amenity_';
 const TYPE = 'type';
 const SUBTYPE = 'subtype';
+const TYPE_POI = POI_PREFIX + 'type';
+const SUBTYPE_POI = POI_PREFIX + 'subType';
 const SERVICE_TIMES = 'service_times';
 const COLLECTION_TIMES = 'collection_times';
 export const DESCRIPTION = 'description';
@@ -34,7 +37,6 @@ const WIKIDATA = 'wikidata';
 const WIKIMEDIA_COMMONS = 'wikimedia_commons';
 const INSTAGRAM = 'instagram';
 const OSM_PREFIX = 'osm_tag_';
-export const POI_PREFIX = 'poi_';
 const COLLAPSABLE_PREFIX = 'collapsable_';
 export const COLOR_NAME_EXTENSION = 'color';
 export const ICON_NAME_EXTENSION = 'icon';
@@ -44,6 +46,14 @@ export const ADDRESS_EXTENSION = 'address';
 export const AMENITY_ORIGIN_EXTENSION = 'amenity_origin';
 export const NAME = 'name';
 export const ALT_NAME = 'osm_tag_alt_name';
+
+export const POI_NAME = POI_PREFIX + 'name';
+export const ICON_KEY_NAME = POI_PREFIX + 'iconKeyName';
+export const ICON_NAME = POI_PREFIX + 'iconName';
+export const TYPE_OSM_TAG = POI_PREFIX + 'typeOsmTag';
+export const TYPE_OSM_VALUE = POI_PREFIX + 'typeOsmValue';
+export const TITLE = 'title';
+export const FINAL_ICON_NAME = POI_PREFIX + 'finalIconName';
 
 const HIDDEN_EXTENSIONS = [
     COLOR_NAME_EXTENSION,
@@ -56,20 +66,40 @@ const HIDDEN_EXTENSIONS = [
     AMENITY_PREFIX + TYPE,
     AMENITY_PREFIX + SUBTYPE,
 ];
+
+const HIDDEN_EXTENSIONS_POI = [
+    ...HIDDEN_EXTENSIONS,
+    ICON_KEY_NAME,
+    ICON_NAME,
+    TYPE_OSM_TAG,
+    TYPE_OSM_VALUE,
+    TITLE,
+    FINAL_ICON_NAME,
+    TYPE_POI,
+    SUBTYPE_POI,
+    POI_NAME,
+];
 export const SEPARATOR = ';';
 
-function getWptTags(wpt, type) {
+function getWptTags(obj, type) {
     let tags;
     let res = [];
     let typeTag = null;
     let subtypeTag = null;
-    if (type.isFav) {
-        tags = wpt.ext?.extensions;
+    if (type.isFav || type.isWpt) {
+        tags = obj.ext?.extensions;
+    } else if (type.isPoi) {
+        Object.entries(obj.options).forEach(([key, value]) => {
+            if (value === undefined) {
+                delete obj.options[key];
+            }
+        });
+        tags = obj.options;
     }
 
     if (tags) {
-        typeTag = tags[AMENITY_PREFIX + TYPE];
-        subtypeTag = tags[AMENITY_PREFIX + SUBTYPE];
+        typeTag = tags[AMENITY_PREFIX + TYPE] ?? tags[TYPE];
+        subtypeTag = tags[AMENITY_PREFIX + SUBTYPE] ?? tags[SUBTYPE_POI];
         let isWikipediaLink = false;
         let hasCuisine = false;
 
@@ -204,7 +234,12 @@ function fixTagsKeys(tags) {
         let newKey = key;
         if (key === AMENITY_PREFIX + OPENING_HOURS) {
             newKey = key.replace(AMENITY_PREFIX, '');
-        } else if (key.startsWith(AMENITY_PREFIX) || key.startsWith(ALT_NAME) || HIDDEN_EXTENSIONS.includes(key)) {
+        } else if (
+            key.startsWith(AMENITY_PREFIX) ||
+            key.startsWith(ALT_NAME) ||
+            HIDDEN_EXTENSIONS.includes(key) ||
+            HIDDEN_EXTENSIONS_POI.includes(key)
+        ) {
             continue;
         } else {
             newKey = key.replace(OSM_PREFIX, '');
