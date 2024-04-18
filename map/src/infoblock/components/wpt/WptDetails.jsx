@@ -1,4 +1,4 @@
-import { AppBar, Box, IconButton, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, IconButton, Link, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material';
 import styles from '../../infoblock.module.css';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import AppContext, { isTrack, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_POI } from '../../../context/AppContext';
@@ -12,7 +12,7 @@ import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_
 import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow_16.svg';
 import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
-import PoiManager, { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
+import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import MarkerOptions, { changeIconSizeWpt, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import FavoritesManager, {
     getColorLocation,
@@ -23,7 +23,7 @@ import FavoritesManager, {
 } from '../../../manager/FavoritesManager';
 import { Folder, LocationOn } from '@mui/icons-material';
 import WptDetailsButtons from './WptDetailsButtons';
-import WptTagsProvider, { FINAL_ICON_NAME } from './WptTagsProvider';
+import WptTagsProvider, { FINAL_ICON_NAME, POI_OSM_URL, POI_PREFIX, TYPE_OSM_VALUE } from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
 import { useTranslation } from 'react-i18next';
 import i18n from 'i18next';
@@ -32,6 +32,7 @@ import { format } from 'date-fns';
 import { getDistance } from '../../../util/Utils';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { getCenterMapLoc } from '../../../manager/MapManager';
+import MenuItemsTitle from '../../../menu/components/MenuItemsTitle';
 
 export default function WptDetails({ isDetails = false, setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
@@ -68,12 +69,14 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             const { options: poiOptions, latlng } = currentPoi;
             result = {
                 type: type,
-                name: poiOptions.title ? poiOptions.title : PoiManager.formattingPoiType(poiOptions.poiType),
+                poiType: t(POI_PREFIX + poiOptions[TYPE_OSM_VALUE]),
+                name: poiOptions.title ? poiOptions.title : t(POI_PREFIX + poiOptions[TYPE_OSM_VALUE]),
                 latlon: { lat: latlng.lat, lon: latlng.lng },
                 background: DEFAULT_POI_SHAPE,
                 color: DEFAULT_POI_COLOR,
                 icon: poiOptions[FINAL_ICON_NAME],
                 tags: WptTagsProvider.getWptTags(currentPoi, type),
+                osmUrl: poiOptions[POI_OSM_URL],
             };
         } else if (type?.isWpt) {
             result = getDataFromWpt(type, ctx.selectedWpt);
@@ -267,9 +270,17 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 {wpt !== null && (
                     <ListItemText id={getId()}>
                         <Box className={styles.topContainer}>
-                            <Typography variant="body2" noWrap className={styles.name}>
-                                {wpt.name ?? 'No name'}
-                            </Typography>
+                            <MenuItemsTitle maxLines={3} className={styles.name}>
+                                <Typography className={styles.name}>
+                                    {wpt.type?.isPoi ? (
+                                        <Link href={wpt.osmUrl} target="_blank" underline="none">
+                                            {wpt.name ? wpt.poiType + ': ' + wpt.name : wpt.poiType}
+                                        </Link>
+                                    ) : (
+                                        wpt.name ?? 'No name'
+                                    )}
+                                </Typography>
+                            </MenuItemsTitle>
                             {wpt.icon && <WptIcon />}
                         </Box>
                         {wpt?.category && <WptCategory />}

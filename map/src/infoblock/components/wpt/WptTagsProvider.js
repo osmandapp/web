@@ -54,6 +54,7 @@ export const TYPE_OSM_TAG = POI_PREFIX + 'typeOsmTag';
 export const TYPE_OSM_VALUE = POI_PREFIX + 'typeOsmValue';
 export const TITLE = 'title';
 export const FINAL_ICON_NAME = POI_PREFIX + 'finalIconName';
+export const POI_OSM_URL = POI_PREFIX + 'osmUrl';
 
 const HIDDEN_EXTENSIONS = [
     COLOR_NAME_EXTENSION,
