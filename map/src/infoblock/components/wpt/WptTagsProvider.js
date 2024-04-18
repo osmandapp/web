@@ -219,11 +219,14 @@ function getFormattedPrefixAndText(key, prefix, value, subtype) {
     let formattedValue = value;
 
     switch (key) {
+        case 'ele':
+            formattedValue = `${value} ${i18n?.t('m')}`;
+            break;
         case 'width':
-            formattedPrefix = i18n?.t('width');
+            formattedPrefix = i18n?.t('shared_string_width');
             break;
         case 'height':
-            formattedPrefix = i18n?.t('height');
+            formattedPrefix = i18n?.t('shared_string_height');
             break;
         case 'depth':
         case 'seamark_height':

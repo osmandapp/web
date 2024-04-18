@@ -5190,5 +5190,12 @@
   "folder": "Folder",
   "coordinates": "Coordinates",
   "shared_string_copy": "Copy",
-  "shared_string_description": "Description"
+  "shared_string_description": "Description",
+  "m": "m",
+  "km": "km",
+  "cubic_m": "m³",
+  "metric_ton": "t",
+  "shared_string_width": "Width",
+  "shared_string_height": "Height",
+  "distance": "Distance"
 }
