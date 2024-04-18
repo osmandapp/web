@@ -579,9 +579,9 @@ Gives you the opportunity to ask questions or make suggestions.
 
 </Tabs>
 
-- **Open issue on GitHub**. Ask questions and propose features.
+- **Open issue on GitHub**. [Android version GitHub](https://github.com/osmandapp/OsmAnd-Issues/issues), [iOS version GitHub](https://github.com/osmandapp/OsmAnd-iOS/issues): ask questions, write about bug and propose features.
 - **Send crash log** (*for Android*). Contains only information about crashes.
-- **Send logcat log** (*Android*) / **Send log** (*iOS*). Detailed log file.
+- [**Send logcat log**](../../user/troubleshooting/crash-logs.md#send-logs-from-osmand-app-android) (*Android*) / [**Send log**](../../user/troubleshooting/crash-logs.md#send-logs-from-ios-devices) (*iOS*). Detailed log file.
 
 ### About OsmAnd
 

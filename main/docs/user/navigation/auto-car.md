@@ -41,23 +41,6 @@ When you open the application, a list of categories is displayed. For easy navig
 - In the upper right corner of the screen, tap the button next to the function buttons if you want to return to the list.
 
 
-### Start navigation 
-
-In order for OsmAnd to work in Android Auto, you must connect your Android device to your vehicle multimedia system. The Android operating system must be updated to version 5.0 or higher.
-
-- To find out how to connect and set up your device, visit the [**Android Auto**](https://support.google.com/androidauto/answer/6348029?hl=en) websites.  
-
-- Not all vehicles support device connection capability. Check the [list for Android Auto](https://www.android.com/auto/compatibility/#compatibility-vehicles).  
-
-- You need to purchase a **paid version** of the app or take out a [subscription](../purchases/android.md#free-and-paid-features). Check your current subscription here *Menu → Settings → Purchases*.  
-
-- Android Auto uses the first [OsmAnd profile](../personal/profiles) in the Profiles list for navigation. Set the preferred profile to first, except for the *Browse map* profile, it is not read by Android Auto. To do this, go to OsmAnd *Menu → Settings → App profiles → Edit profile list* → move your profile to the first place or after the *Browse map* profile.  
-
-- It is important to remember that Android Auto is a data-intensive application, including mobile data, and the quality of the system may depend on the quality of your connection and the speed of your Internet access.   
-
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_start_navigation.png)  
-
-
 ### Connection screen
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_connect_screen.png)  
@@ -65,13 +48,30 @@ In order for OsmAnd to work in Android Auto, you must connect your Android devic
 While your device is connected to Android Auto, the map on the app screen is locked for security purposes.  
 
 
+### Start navigation 
+
+In order for OsmAnd to work in Android Auto, you must [connect](#connection-screen) your Android device to your vehicle multimedia system. The Android operating system must be updated to version 6.0 or higher.
+
+- To find out how to connect and set up your device, visit the [**Android Auto**](https://support.google.com/androidauto/answer/6348029?hl=en) websites.  
+
+- Not all vehicles support device connection capability. Check the [list for Android Auto](https://www.android.com/auto/compatibility/#compatibility-vehicles).  
+
+- You need to purchase a **paid version** of the app or take out a [subscription](../purchases/android.md#free-and-paid-features). Check your current subscription here *Menu → Settings → Purchases*.  
+
+- Android Auto uses the first [OsmAnd Driving profile](#first-profile) in the Profiles list for navigation. Set the preferred profile to first, except for the *Browse map* profile, it is not read by Android Auto. To do this, go to OsmAnd *Menu → Settings → App profiles → Edit profile list* → move your [**Driving**](#first-profile) profile to the first place or after the *Browse map* profile.  
+
+- It is important to remember that Android Auto is a data-intensive application, including mobile data, and the quality of the system may depend on the quality of your connection and the speed of your Internet access.   
+
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_start_navigation.png)  
+
+
 ###  First profile
 
 There is no profile selection option in Android Auto.
 
-If you already have a profile selected on your device that corresponds to the type of vehicle, such as *Driving*, *Truck*, *Car*, *Motorcycle*, *Moped*, the app will automatically activate the appropriate profile when you connect to Android Auto. For example, if you have a Truck profile installed and your device connects to Android Auto, the app will activate that profile.
+If you already have a profile selected on your device that corresponds to the type of vehicle, such as *Driving*, *Truck*, *Car*, *Motorcycle*, *Moped*, **the app will automatically activate** the appropriate profile when you connect to Android Auto. For example, if you have a *Truck* profile as selected and your device connects to Android Auto, the app will activate that profile.
 
-If you do not have a profile set on your device that corresponds to your vehicle type, then OsmAnd will automatically switch to the *Driving* profile. This is done to provide basic navigation and to prevent possible problems caused by using the wrong profile for a specific vehicle type.
+If you do not have any _Driving_ profile selected on your device that corresponds to your vehicle type, then OsmAnd will automatically switch to the *Driving* profile. This is done to provide basic navigation and to prevent possible problems caused by using the wrong profile for a specific vehicle type.
 
 **Why it's important**
 
@@ -113,7 +113,7 @@ You can select previously preset and added [POIs](../map/point-layers-on-map.md#
 
 3. Select [Search](#search) to enter a destination from the available search categories.  
 
-4. Select **Free ride** to take a trip with an end destination not in the categories.
+4. Choose **Free ride** to take a journey without a specified endpoint.
 
 :::note
 While driving, selected points can be [*announced*](#voice-prompts) when you approach or pass them. See the [*Voice prompts*](../navigation/guidance/voice-navigation.md) settings in the appropriate article to set up voice notifications.

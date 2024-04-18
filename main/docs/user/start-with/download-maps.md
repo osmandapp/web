@@ -58,7 +58,7 @@ It is important to note that you can skip this download step, and if you already
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,downloads"/>*
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,downloads"/>*
 
 ![Download map menu general Android](@site/static/img/personal/maps/download_menu_andr.png)  
 
@@ -74,7 +74,10 @@ It is important to note that you can skip this download step, and if you already
 
 </Tabs>
 
-The **Downloads Maps menu** displays all existing OsmAnd map types. It includes:
+The **Downloads Maps menu** displays:
+- Downloads section with [all existing OsmAnd map types](../personal/maps.md#map-types).
+- [Local section](../personal/maps.md#local) with all your map data.
+- [Updates section](../personal/maps.md#updates)
 
 **Action**. The icons are located in the upper right corner of the screen. 
 - **Refresh** &#10227;. Checks for available map updates on OsmAnd servers.

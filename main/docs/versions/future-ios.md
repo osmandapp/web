@@ -28,6 +28,7 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
   - [Sun position widget](#sun-position-widget)
   - [Glide ratio widget](#glide-ratio-widget)
   - [Round up numbers in navigation widgets](#round-up-numbers-in-navigation-widgets)
+  - [Vertical exaggeration](#vertical-exaggeration)
   - [OsmAnd Cloud updates](#osmand-cloud-updates)
   - [App Language for Basemap](#app-language-for-basemap)
   - [Missing maps download](#missing-maps-download)
@@ -64,7 +65,6 @@ A long press on any folder opens the _Folder_ menu, which includes the following
 
 A long press on any GPX track brings up a menu with the following options:
 - _Show on map_ displays the selected track on the map.
-- _Appearance_ opens the track [_Appearance menu](https://osmand.net/docs/user/map/tracks-on-map#track-appearance).
 - _Navigation_ [starts navigation using the track](https://osmand.net/docs/user/navigation/setup/gpx-navigation).
 - _Analyze_ launches [_Analyse on map_](https://osmand.net/docs/user/navigation/setup/route-details#analyse-on-map).
 - _Share_ allows you to share the selected track.
@@ -189,6 +189,17 @@ _Menu → Settings → Navigation Profile → General settings → Units & forma
 
 ![Round up iOS](../../blog/2024-03-06-ios-4-7/img/round_up_ios.png) ![Round up iOS](../../blog/2024-03-06-ios-4-7/img/round_up_1_ios.png)
 
+
+## Vertical exaggeration
+
+A special coefficient for [3D relief](https://osmand.net/docs/user/plugins/contour-lines#3d-relief) has been added in this release. Now, you can adjust the Vertical Exaggeration:
+
+ _iOS Menu → Configure map → Terrain → Vertical exaggeration_ (Ensure that 3D relief is enabled)
+
+This feature allows you to view the contours of smoother topography with enhanced detail.
+
+![Round up iOS](../../blog/2024-03-06-ios-4-7/img/vertical_exag.png)
+
 ## OsmAnd Cloud updates
 
 - OsmAnd Cloud: added ability [to restore deleted files from Trash](https://osmand.net/docs/user/personal/osmand-cloud#trash).
@@ -215,5 +226,6 @@ OsmAnd now alerts you if some maps between your start point and destination are 
 - Fixed [status bar color](https://github.com/osmandapp/OsmAnd-iOS/issues/3321) for older iOS versions.
 - Fixed [rotate and pinch](https://github.com/osmandapp/OsmAnd-iOS/issues/3331) to zoom gestures and [Overlay/Underlay sliders](https://github.com/osmandapp/OsmAnd-iOS/issues/3258) for Mac OS version.
 - [Improved Autozoom animation](https://github.com/osmandapp/OsmAnd-iOS/issues/3340) for navigation.
+- Roundabout with exit number shown on [CarPlay](https://osmand.net/docs/user/navigation/car-play) when navigating.
 
 

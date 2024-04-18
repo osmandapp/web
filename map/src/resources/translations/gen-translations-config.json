@@ -1,0 +1,26 @@
+{
+    "android": {
+        "languages" : ["*"],
+        "default_translate_json": "en/translation.json",
+        "translate_json_pattern" : "%s/translation.json",
+        "supportedLanguagesFile": "./supportedLanguages.json",
+        "filters": [
+            {
+                "type": "contains",
+                "filter": "rendering_attr_"
+            },
+            {
+                "type": "contains",
+                "filter": "routeInfo_"
+            },
+            {
+                "type": "startsWith",
+                "filter": "lang_"
+            },
+            {
+                "type": "startsWith",
+                "filter": "poi_"
+            }
+        ]
+    }
+}

@@ -108,14 +108,14 @@ You can download **Contour lines**, **Terrain map (Hillshade and Slope)**, **Ter
 
 1. First option.
 - Go to:
-    - **Android**: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,regions"/>*
+    - **Android**: *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
     - **iOS**: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
 - Select the country of your choice.
 - Download packages from sections:
     - The *<Translate android="true" ids="region_maps"/>* (Android) or *<Translate ios="true" ids="res_region_map"/>* (iOS) section provides available maps for the entire country. You can download them if you need to.
     - The *<Translate android="true" ids="regions"/>* (Android) or *<Translate ios="true" ids="res_mapsres"/>* (iOS) section lists the regions of the selected country. Tap on the required region to open the map packs available for download. 
 - After downloading maps, you can display **Contour lines** and/or **Terrain** using the [Configure map](../map/configure-map-menu.md) section of the Main menu.
-2. If the map displayed on the screen is not downloaded, then in *Menu → Configure map → Topography section → Terrain* at the bottom of the list of features the section *Download maps* with suggested additional maps will be displayed.
+1. If the map displayed on the screen is not downloaded, then in *Menu → Configure map → Topography section → Terrain* at the bottom of the list of features the section *Download maps* with suggested additional maps will be displayed.
 
 ### Meters or Feet for Contour Line
 
@@ -173,7 +173,7 @@ For [**Contour lines**](#contour-lines), you need to determine in which [units](
 - *<Translate android="true" ids="srtm_color_scheme"/>*. Selection of the color by which Сontour lines are displayed on the map. 
 - *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Selection of width options for displaying  Contour lines on the map. 
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Selection of options for the density of Contour lines displayed on the map: Low, Medium, High. At higher densities, the map is loaded more slowly.
-- *<Translate android="true" ids="welmode_download_maps"/>*. Shows Contour line maps for the selected area nearby areas relative to the current map center to be downloaded.  
+- *<Translate android="true" ids="maps_and_resources"/>*. Shows Contour line maps for the selected area nearby areas relative to the current map center to be downloaded.  
 
 
 ## Terrain
@@ -275,11 +275,15 @@ The *Scale Levels* function allows you to set the minimum and maximum values of 
 
 <TabItem value="android" label="Android">   
 
+*<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>* 
+
 ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>*
 
 ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png) 
 
@@ -317,6 +321,35 @@ Follow the steps below to display 3D Relief on the OsmAnd map:
 </TabItem>
  
 </Tabs>
+
+### Vertical exaggeration
+
+_Vertical exaggeration_ is a special coefficient for _3D relief_. You can change a scale (Vertical exaggeration) from x1 to x3. This feature allows to view the contours of smoother topography with enhanced detail.:
+
+<!--- **Android**: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/> → Vertical exaggeration* -->
+- **iOS**: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>(enabled) → Vertical exaggeration*
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+
+:::note
+For Android version _Vertical exaggeration_ is developing.
+:::
+
+</TabItem>  
+
+<TabItem value="ios" label="iOS">
+
+![Round up iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
+
+</TabItem>
+ 
+</Tabs>
+
+
+
 
 ### Hillshade and 3D Relief
 

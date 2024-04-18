@@ -147,11 +147,11 @@ OsmAnd displays additional names of POIs in Map context menu. First is shown the
 
 ### Coordinates
 
-In the Context menu, you can find [geographical coordinates](../search/search-coordinates.md#coordinate-format) of a point in various formats and also shareable OsmAnd and OpenStreetMap Links (the last option is available only when the [OpenStreetMap editing plugin](../plugins/osm-editing.md) is enabled). If you expand coordinates section and long tap on any line from the list, its values will be automatically copied to the clipboard (**Android**) or the *Copy* option becomes available in the pop-up message (**iOS**).  
+In the Context menu, you can find [geographical coordinates](../search/search-coordinates.md#coordinate-format) of a point in various formats and also shareable OsmAnd and [OpenStreetMap Links](../map/map-context-menu.md#openstreetmap-link) (the last option is available only when the [OpenStreetMap editing plugin](../plugins/osm-editing.md) is enabled). If you expand coordinates section and long tap on any line from the list, its values will be automatically copied to the clipboard (**Android**) or the *Copy* option becomes available in the pop-up message (**iOS**).  
 
 |Coordinates format||
 |:------|:------|
-|DDD.DDDDD (Plain Decimal Degress)   <br /> DDD.DDDDD (N/S, E/W comma)   <br /> DDD MM.MMM   <br /> DDD MM SS.S   <br /> [UTM Standard](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)    <br /> [Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)   <br /> [MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)   <br /> [Swiss Grid CH1903 and CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)   <br /> [OsmAnd Web Link](https://osmand.net/map)   <br /> [OpenStreetMap Web Link](https://openstreetmap.org)| ![Coordinates](@site/static/img/map/map_context_menu_Coordinates.png) |
+|DDD.DDDDD (Plain Decimal Degress)   <br /> DDD.DDDDD (N/S, E/W comma)   <br /> DDD MM.MMM   <br /> DDD MM SS.S   <br /> [UTM Standard](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)    <br /> [Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)   <br /> [MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)   <br /> [Swiss Grid CH1903 and CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)   <br /> [OsmAnd Web Link](https://osmand.net/map)   <br /> [OpenStreetMap Web Link](../map/map-context-menu.md#openstreetmap-link)| ![Coordinates](@site/static/img/map/map_context_menu_Coordinates.png) |
 
 OsmAnd Web Link can be automatically recognized by OsmAnd (example: https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771). Both OsmAnd and [Openstreetmap links](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) are opened on corresponding sites with a pin mark to the place of interest.  
 
@@ -483,7 +483,7 @@ Read more about ['Plan a route'](../plan-route/create-route.md) tool.
 <TabItem value="android" label="Android">  
 
 To update or download online maps (tiles) at specific location, you can use object context menu:  
-**Android**: *<Translate android="true" ids="shared_string_download_map"/>* and for *Update* go to: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_updates"/>*.  
+**Android**: *<Translate android="true" ids="shared_string_download_map"/>* and for *Update* go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*.  
 Please refer to [full instruction](../map/raster-maps.md#download--update-tiles).   
 
 ![Action Download online map Android](@site/static/img/map/action_load_online_map_and.png)

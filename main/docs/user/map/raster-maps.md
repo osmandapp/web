@@ -250,12 +250,16 @@ You can customize the zoom level to display and the transparency for Hillshade a
 
 ## 3D Relief
 
+:::note
+[3D Relief](../plugins/contour-lines.md#3d-relief) is an [**OsmAnd Pro**](../purchases/index.md) paid feature <ProFeature />.
+:::
+
 ![Terrain layers](@site/static/img/plugins/online-maps/raster_maps_3d.png)
 
-The **3D Relief** feature is a mapping technology that allows the visualization of terrain on a map using three-dimensional models. This feature adds elevation information to a normal two-dimensional map, which creates a 3D and depth effect and allows you to better visualize the terrain.  
+The [**3D Relief** feature](../plugins/contour-lines.md#3d-relief) is a mapping technology that allows the visualization of terrain on a map using three-dimensional models. This feature adds elevation information to a normal two-dimensional map, which creates a 3D and depth effect and allows you to better visualize the terrain.  
 
 *To start using 3D Relief*:  
-You need to purchase [OsmAnd+, OsmAnd Maps+, or OsmAnd Pro purchase plan](../plugins/index.md#purchase), enable the [Topography plugin](../plugins/contour-lines.md), and switch on the [*3D Relief*](../plugins/contour-lines.md#3d-relief) item in *Menu →  Configure map*.
+You need to purchase [OsmAnd Pro purchase plan](../plugins/index.md#purchase), enable the [Topography plugin](../plugins/contour-lines.md), and switch on the [*3D Relief*](../plugins/contour-lines.md#3d-relief) item in *Menu →  Configure map*.
 
 
 *How the 3D Relief feature works*:  
@@ -339,7 +343,7 @@ In order to change tile format you can choose <Translate android="true" ids="sto
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  
 &#8942; → <Translate android="true" ids="shared_string_edit,storage_format,sqlite_db_file"/> / <Translate android="true" ids="one_image_per_tile"/>*
 
 </TabItem>
@@ -363,7 +367,7 @@ In order to clear map tiles cache you need to do next:
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  
 &#8942; → <Translate android="true" ids="clear_tile_data"/>*
 
 </TabItem>
@@ -429,7 +433,7 @@ In order for the maps to automatically update the tiles after a period of time, 
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  &#8942; → <Translate android="true" ids="shared_string_edit"/>*
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,local_indexes_cat_tile"/> → choose online maps →  &#8942; → <Translate android="true" ids="shared_string_edit"/>*
 
 </TabItem>
 
