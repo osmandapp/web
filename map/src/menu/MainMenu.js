@@ -244,6 +244,7 @@ export default function MainMenu({
 
     function selectMenu(item) {
         ctx.setOpenGroups([]);
+        ctx.setSelectedWpt(null);
         setOpenVisibleMenu(false);
         if (menuInfo) {
             // update menu
