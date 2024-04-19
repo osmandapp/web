@@ -5185,5 +5185,19 @@
   "delete_trash_item_confirmation_desc": "Delete \"%1$s\" permanently?",
   "shared_string_empty_trash": "Empty trash",
   "trash_is_empty": "Trash is empty",
-  "trash_is_empty_banner_desc": "Files removed from OsmAnd Cloud will be available here for %1$s days after."
+  "trash_is_empty_banner_desc": "Files removed from OsmAnd Cloud will be available here for %1$s days after.",
+  "date_of_creation": "Date of creation",
+  "folder": "Folder",
+  "coordinates": "Coordinates",
+  "shared_string_copy": "Copy",
+  "shared_string_description": "Description",
+  "m": "m",
+  "km": "km",
+  "cubic_m": "m³",
+  "metric_ton": "t",
+  "shared_string_width": "Width",
+  "shared_string_height": "Height",
+  "distance": "Distance",
+  "shared_string_hidden": "Hidden",
+  "shared_string_yes": "Yes"
 }

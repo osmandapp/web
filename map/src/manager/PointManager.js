@@ -12,10 +12,13 @@ const deletePoint = async (index, ctx) => {
     }
 };
 
-function deleteWpt(ind, ctx) {
+function deleteWpt(ind, ctx, save = false) {
     ctx.setSelectedGpxFile((o) => {
         o.wpts.splice(ind, 1);
         o.updateLayers = true;
+        if (save) {
+            o.save = true;
+        }
         return { ...o };
     });
 

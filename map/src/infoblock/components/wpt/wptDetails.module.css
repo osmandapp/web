@@ -1,0 +1,41 @@
+.tagItem {
+    display: flex !important;
+    width: 360px !important;
+    min-height: 48px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 24px !important;
+}
+.tagList {
+    display: flex !important;
+    width: 360px !important;
+    min-height: 48px !important;
+    margin-left: 5px !important;
+}
+.tagIcon {
+    min-width: 24px !important;
+    max-width: 24px !important;
+    fill: var(--svg-icon-color) !important;
+}
+.tagName {
+    color: var(--text-primary) !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+}
+.tagValue {
+    color: var(--text-secondary) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    margin-right: 5px !important;
+    &:hover {
+        color: var(--selected-color) !important;
+    }
+}
+.tagPrefix {
+    color: var(--text-secondary) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+}

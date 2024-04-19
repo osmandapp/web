@@ -3,8 +3,8 @@ import { Box, Divider, ListItemIcon, ListItemText, MenuItem, Paper, Typography }
 import styles from '../trackfavmenu.module.css';
 import { ReactComponent as DeleteIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
 import { ReactComponent as RenameIcon } from '../../assets/icons/ic_action_edit_outlined.svg';
-import EditFavoriteDialog from '../../dialogs/favorites/EditFavoriteDialog';
-import DeleteFavoriteDialog from '../../dialogs/favorites/DeleteFavoriteDialog';
+import EditWptDialog from '../../dialogs/favorites/EditWptDialog';
+import DeleteWptDialog from '../../dialogs/favorites/DeleteWptDialog';
 import FavoritesManager, {
     isNoValue,
     prepareBackground,
@@ -80,21 +80,23 @@ const FavoriteItemActions = forwardRef(({ marker, group, setOpenActions }, ref) 
                 </Paper>
             </Box>
             {openDeleteDialog && (
-                <DeleteFavoriteDialog
+                <DeleteWptDialog
                     dialogOpen={openDeleteDialog}
                     setDialogOpen={setOpenDeleteDialog}
                     wpt={favorite}
                     setOpenActions={setOpenActions}
+                    isDetails={true}
                 />
             )}
             {openEditDialog && (
-                <EditFavoriteDialog
+                <EditWptDialog
                     wpt={favorite}
                     editFavoritesDialogOpen={openEditDialog}
                     setEditFavoritesDialogOpen={setOpenEditDialog}
                     deleteFavoritesDialogOpen={openDeleteDialog}
                     setDeleteFavoritesDialogOpen={setOpenDeleteDialog}
                     setOpenActions={setOpenActions}
+                    isDetails={true}
                 />
             )}
         </>

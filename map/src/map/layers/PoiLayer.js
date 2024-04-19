@@ -9,6 +9,14 @@ import PoiManager, { DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } 
 import 'leaflet.markercluster';
 import { Alert } from '@mui/material';
 import { apiPost } from '../../util/HttpApi';
+import {
+    FINAL_ICON_NAME,
+    ICON_KEY_NAME,
+    ICON_NAME,
+    POI_NAME,
+    TYPE_OSM_TAG,
+    TYPE_OSM_VALUE,
+} from '../../infoblock/components/wpt/WptTagsProvider';
 
 export default function PoiLayer() {
     const ctx = useContext(AppContext);
@@ -170,13 +178,14 @@ export default function PoiLayer() {
 
     function onClick(e) {
         ctx.setCurrentObjectType(OBJECT_TYPE_POI);
-
         const poi = {
             options: e.sourceTarget.options,
             latlng: e.sourceTarget._latlng,
         };
-        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile, poi });
-        ctx.setUpdateInfoBlock(true);
+        let newPoi = {
+            poi: poi,
+        };
+        ctx.setSelectedWpt(newPoi);
     }
 
     /**
@@ -191,10 +200,10 @@ export default function PoiLayer() {
         for (const poi of poiList) {
             // Get the icon name for the current POI
             const iconWpt = PoiManager.getIconNameForPoiType(
-                poi.properties.iconKeyName,
-                poi.properties.typeOsmTag,
-                poi.properties.typeOsmValue,
-                poi.properties.iconName
+                poi.properties[ICON_KEY_NAME],
+                poi.properties[TYPE_OSM_TAG],
+                poi.properties[TYPE_OSM_VALUE],
+                poi.properties[ICON_NAME]
             );
 
             if (iconWpt) {
@@ -222,26 +231,19 @@ export default function PoiLayer() {
         ctx.setPoiIconCache({ ...innerCache });
         const layers = await Promise.all(
             poiList.map(async (poi) => {
-                const icon = await getPoiIcon(poi, innerCache);
+                const finalIconName = PoiManager.getIconNameForPoiType(
+                    poi.properties[ICON_KEY_NAME],
+                    poi.properties[TYPE_OSM_TAG],
+                    poi.properties[TYPE_OSM_VALUE],
+                    poi.properties[ICON_NAME]
+                );
+                const icon = await getPoiIcon(poi, innerCache, finalIconName);
                 const coord = poi.geometry.coordinates;
                 return new L.Marker(new L.LatLng(coord[1], coord[0]), {
-                    title: poi.properties.name,
+                    ...poi.properties,
+                    title: poi.properties[POI_NAME],
                     icon: icon,
-                    type: poi.properties.type,
-                    subType: poi.properties.subType,
-                    iconKeyName: poi.properties.iconKeyName,
-                    typeOsmTag: poi.properties.typeOsmTag,
-                    typeOsmValue: poi.properties.typeOsmValue,
-                    iconName: poi.properties.iconName,
-                    operator: poi.properties.operator,
-                    website: poi.properties.website,
-                    wikipedia: poi.properties.wikipedia,
-                    opening_hours: poi.properties.opening_hours,
-                    email: poi.properties.email,
-                    phone: poi.properties.phone,
-                    facebook: poi.properties.facebook,
-                    instagram: poi.properties.instagram,
-                    osmUrl: poi.properties.osmUrl,
+                    [FINAL_ICON_NAME]: finalIconName,
                 });
             })
         );
@@ -253,21 +255,15 @@ export default function PoiLayer() {
         }
     }
 
-    async function getPoiIcon(poi, cache) {
+    async function getPoiIcon(poi, cache, finalIconName) {
         const svg = getSvgBackground(DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE);
-        const iconWpt = PoiManager.getIconNameForPoiType(
-            poi.properties.iconKeyName,
-            poi.properties.typeOsmTag,
-            poi.properties.typeOsmValue,
-            poi.properties.iconName
-        );
-        if (iconWpt) {
+        if (finalIconName) {
             let svgData;
-            if (cache[iconWpt]) {
-                svgData = cache[iconWpt];
+            if (cache[finalIconName]) {
+                svgData = cache[finalIconName];
                 const coloredSvg = changeIconColor(svgData, DEFAULT_ICON_COLOR);
-                const poiName = poi.properties.name;
-                const iconHtml = `<div>${svg}<div class="icon" id="se-wpt-marker-icon-${iconWpt}-${DEFAULT_ICON_COLOR}-${poiName}">${coloredSvg}</div></div>`;
+                const poiName = poi.properties[POI_NAME];
+                const iconHtml = `<div>${svg}<div class="icon" id="se-wpt-marker-icon-${finalIconName}-${DEFAULT_ICON_COLOR}-${poiName}">${coloredSvg}</div></div>`;
                 return L.divIcon({ html: iconHtml });
             }
         }

@@ -11,7 +11,7 @@ import AppContext, {
 } from '../../../context/AppContext';
 import SaveTrackDialog from '../../../dialogs/tracks/SaveTrackDialog';
 import DeleteTrackDialog from '../../../dialogs/tracks/DeleteTrackDialog';
-import DeleteFavoriteDialog from '../../../dialogs/favorites/DeleteFavoriteDialog';
+import DeleteWptDialog from '../../../dialogs/favorites/DeleteWptDialog';
 import _ from 'lodash';
 import TracksManager, { isEmptyTrack } from '../../../manager/track/TracksManager';
 import useUndoRedo from '../../../infoblock/useUndoRedo';
@@ -306,7 +306,7 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
                     />
                 )}
                 {openDeleteDialog && ctx.currentObjectType === OBJECT_TYPE_FAVORITE && (
-                    <DeleteFavoriteDialog dialogOpen={openDeleteDialog} setDialogOpen={setOpenDeleteDialog} />
+                    <DeleteWptDialog dialogOpen={openDeleteDialog} setDialogOpen={setOpenDeleteDialog} />
                 )}
                 {openRoutingSettings && (
                     <RouteProfileSettings
