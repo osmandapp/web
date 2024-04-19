@@ -146,6 +146,13 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
     }, [ctx.selectedWpt]);
 
     useEffect(() => {
+        if (!ctx.loginUser) {
+            setShowInfoBlock(false);
+            setOpenWptDetails(false);
+        }
+    }, [ctx.loginUser]);
+
+    useEffect(() => {
         if (openWptTab) {
             let tObj = new TrackTabList().create(ctx, setShowInfoBlock);
             clearStateIfObjChange();
