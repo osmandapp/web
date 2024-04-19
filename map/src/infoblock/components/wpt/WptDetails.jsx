@@ -309,7 +309,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                 }}
                             />
                         )}
-                        {wpt.hidden && (
+                        {wpt?.hidden === 'true' && (
                             <WptTagInfo
                                 key={'hidden'}
                                 baseTag={{
