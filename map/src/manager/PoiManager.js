@@ -1,6 +1,8 @@
 import { apiGet } from '../util/HttpApi';
 import icons from '../resources/generated/poiicons.json';
 import _ from 'lodash';
+import { ICON_KEY_NAME, ICON_NAME, TYPE_OSM_TAG, TYPE_OSM_VALUE } from '../infoblock/components/wpt/WptTagsProvider';
+import { getIconUrlByName } from '../map/markers/MarkerOptions';
 
 const POI_CATEGORIES = 'poiCategories';
 const TOP_POI_FILTERS = 'topPoiFilters';
@@ -76,7 +78,7 @@ async function searchPoiCategories(search) {
     }
 }
 
-function getIconNameForPoiType(iconKeyName, typeOsmTag, typeOsmValue, iconName) {
+function getIconNameForPoiType({ iconKeyName, typeOsmTag = '', typeOsmValue = '', iconName = '', useDefault = true }) {
     if (icons.includes(`mx_${typeOsmTag}_${typeOsmValue}.svg`)) {
         return `${typeOsmTag}_${typeOsmValue}`;
     } else if (icons.includes(`mx_${iconKeyName}.svg`)) {
@@ -86,7 +88,7 @@ function getIconNameForPoiType(iconKeyName, typeOsmTag, typeOsmValue, iconName) 
     } else if (iconName !== 'null' && icons.includes(`mx_${iconName}.svg`)) {
         return iconName;
     } else {
-        return DEFAULT_POI_ICON;
+        return useDefault ? DEFAULT_POI_ICON : null;
     }
 }
 
@@ -114,6 +116,47 @@ function preparePoiFilterIcon(filter) {
         return 'amenity_drinking_water';
     }
     return filter;
+}
+
+/**
+ * Asynchronously creates a cache of Point of Interest (POI) icons.
+ *
+ * @param {Array} poiList - The list of POIs for which icons should be cached.
+ * @param {Object} obj - An optional object representing a single POI.
+ * @param {Object} poiIconCache - The existing cache of POI icons.
+ * @returns {Object} - The updated cache of POI icons.
+ */
+export async function createPoiCache({ poiList = null, obj = null, poiIconCache }) {
+    const iconCache = {};
+    const arr = poiList ?? [obj];
+    for (const poi of arr) {
+        // Get the icon name for the current POI
+        const iconWpt = PoiManager.getIconNameForPoiType({
+            iconKeyName: obj ? poi.key : poi.properties[ICON_KEY_NAME],
+            typeOsmTag: obj ? '' : poi.properties[TYPE_OSM_TAG],
+            typeOsmValue: obj ? '' : poi.properties[TYPE_OSM_VALUE],
+            iconName: obj ? '' : poi.properties[ICON_NAME],
+            useDefault: !obj,
+        });
+
+        if (iconWpt) {
+            // If the icon is already in the existing cache, copy it to the updated cache
+            if (poiIconCache[iconWpt]) {
+                iconCache[iconWpt] = poiIconCache[iconWpt];
+            } else {
+                // If the icon is not in the existing cache and not yet in the updated cache
+                if (!iconCache[iconWpt]) {
+                    try {
+                        const response = await fetch(getIconUrlByName('poi', iconWpt));
+                        iconCache[iconWpt] = await response.text();
+                    } catch (error) {
+                        console.error(`Failed to fetch SVG for iconWpt ${iconWpt}: ${error}`);
+                    }
+                }
+            }
+        }
+    }
+    return iconCache;
 }
 
 const PoiManager = {

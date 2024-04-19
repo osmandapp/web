@@ -1,6 +1,6 @@
 import { AppBar, Box, Divider, IconButton, Link, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material';
 import styles from '../../infoblock.module.css';
-import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { isTrack, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import headerStyles from '../../../menu/trackfavmenu.module.css';
 import { closeHeader } from '../../../menu/actions/HeaderHelper';
@@ -61,39 +61,47 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         };
     }, [hash]);
 
-    const newWpt = useMemo(() => {
-        let result = null;
-        const type = getWptType(ctx.selectedWpt);
-        if (type?.isPoi) {
-            const currentPoi = ctx.selectedWpt.poi;
-            const { options: poiOptions, latlng } = currentPoi;
-            result = {
-                type: type,
-                poiType: t(POI_PREFIX + poiOptions[TYPE_OSM_VALUE]),
-                name: poiOptions.title ? poiOptions.title : t(POI_PREFIX + poiOptions[TYPE_OSM_VALUE]),
-                latlon: { lat: latlng.lat, lon: latlng.lng },
-                background: DEFAULT_POI_SHAPE,
-                color: DEFAULT_POI_COLOR,
-                icon: poiOptions[FINAL_ICON_NAME],
-                tags: WptTagsProvider.getWptTags(currentPoi, type),
-                osmUrl: poiOptions[POI_OSM_URL],
-            };
-        } else if (type?.isWpt) {
-            result = getDataFromWpt(type, ctx.selectedWpt);
-        } else if (type?.isFav) {
-            let markerName = ctx.selectedWpt.markerCurrent.title;
-            let currentWpt = ctx.selectedWpt.file.wpts.find((p) => p.name === markerName);
-            if (currentWpt) {
-                result = getDataFromWpt(type, ctx.selectedWpt, currentWpt);
+    const [newWpt, setNewWpt] = useState(null);
+
+    useEffect(() => {
+        const fetchWpt = async () => {
+            let result = null;
+            const type = getWptType(ctx.selectedWpt);
+            if (type?.isPoi) {
+                const currentPoi = ctx.selectedWpt.poi;
+                const { options: poiOptions, latlng } = currentPoi;
+                const tags = await WptTagsProvider.getWptTags(currentPoi, type, ctx);
+                result = {
+                    type: type,
+                    poiType: t(POI_PREFIX + poiOptions[TYPE_OSM_VALUE]),
+                    name: poiOptions.title ? poiOptions.title : t(POI_PREFIX + poiOptions[TYPE_OSM_VALUE]),
+                    latlon: { lat: latlng.lat, lon: latlng.lng },
+                    background: DEFAULT_POI_SHAPE,
+                    color: DEFAULT_POI_COLOR,
+                    icon: poiOptions[FINAL_ICON_NAME],
+                    tags: tags,
+                    osmUrl: poiOptions[POI_OSM_URL],
+                };
+            } else if (type?.isWpt) {
+                result = await getDataFromWpt(type, ctx.selectedWpt);
+            } else if (type?.isFav) {
+                let markerName = ctx.selectedWpt.markerCurrent.title;
+                let currentWpt = ctx.selectedWpt.file.wpts.find((p) => p.name === markerName);
+                if (currentWpt) {
+                    result = await getDataFromWpt(type, ctx.selectedWpt, currentWpt);
+                }
+            } else {
+                result = null;
             }
-        } else {
-            result = null;
-        }
-        return result;
+            setNewWpt(result);
+        };
+
+        fetchWpt().then();
     }, [ctx.selectedWpt]);
 
-    function getDataFromWpt(type, selectedWpt, wptFromFile = null) {
+    async function getDataFromWpt(type, selectedWpt, wptFromFile = null) {
         const currentWpt = wptFromFile ? wptFromFile : selectedWpt;
+        const tags = await WptTagsProvider.getWptTags(currentWpt, type, ctx);
         return {
             type: type,
             file: selectedWpt.file,
@@ -108,7 +116,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             category: currentWpt.category,
             address: currentWpt.address,
             time: parseInt(currentWpt.ext?.time) !== 0 ? currentWpt.ext?.time : null,
-            tags: WptTagsProvider.getWptTags(currentWpt, type),
+            tags: tags,
         };
     }
 

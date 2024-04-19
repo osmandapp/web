@@ -3,9 +3,14 @@ import AppContext, { OBJECT_TYPE_POI } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import _ from 'lodash';
 import L from 'leaflet';
-import { changeIconColor, getIconUrlByName, getSvgBackground } from '../markers/MarkerOptions';
+import { changeIconColor, getSvgBackground } from '../markers/MarkerOptions';
 import 'leaflet-spin';
-import PoiManager, { DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
+import PoiManager, {
+    createPoiCache,
+    DEFAULT_ICON_COLOR,
+    DEFAULT_POI_COLOR,
+    DEFAULT_POI_SHAPE,
+} from '../../manager/PoiManager';
 import 'leaflet.markercluster';
 import { Alert } from '@mui/material';
 import { apiPost } from '../../util/HttpApi';
@@ -188,55 +193,17 @@ export default function PoiLayer() {
         ctx.setSelectedWpt(newPoi);
     }
 
-    /**
-     * Asynchronously creates a cache of Point of Interest (POI) icons.
-     *
-     * @param {Array} poiList - The list of POIs for which icons should be cached.
-     * @param {Object} poiIconCache - The existing cache of POI icons.
-     * @returns {Object} - The updated cache of POI icons.
-     */
-    async function createPoiCache(poiList, poiIconCache) {
-        const iconCache = {};
-        for (const poi of poiList) {
-            // Get the icon name for the current POI
-            const iconWpt = PoiManager.getIconNameForPoiType(
-                poi.properties[ICON_KEY_NAME],
-                poi.properties[TYPE_OSM_TAG],
-                poi.properties[TYPE_OSM_VALUE],
-                poi.properties[ICON_NAME]
-            );
-
-            if (iconWpt) {
-                // If the icon is already in the existing cache, copy it to the updated cache
-                if (poiIconCache[iconWpt]) {
-                    iconCache[iconWpt] = poiIconCache[iconWpt];
-                } else {
-                    // If the icon is not in the existing cache and not yet in the updated cache
-                    if (!iconCache[iconWpt]) {
-                        try {
-                            const response = await fetch(getIconUrlByName('poi', iconWpt));
-                            iconCache[iconWpt] = await response.text();
-                        } catch (error) {
-                            console.error(`Failed to fetch SVG for iconWpt ${iconWpt}: ${error}`);
-                        }
-                    }
-                }
-            }
-        }
-        return iconCache;
-    }
-
     async function createPoiLayer({ poiList = [], globalPoiIconCache }) {
-        const innerCache = await createPoiCache(poiList, globalPoiIconCache);
+        const innerCache = await createPoiCache({ poiList, poiIconCache: globalPoiIconCache });
         ctx.setPoiIconCache({ ...innerCache });
         const layers = await Promise.all(
             poiList.map(async (poi) => {
-                const finalIconName = PoiManager.getIconNameForPoiType(
-                    poi.properties[ICON_KEY_NAME],
-                    poi.properties[TYPE_OSM_TAG],
-                    poi.properties[TYPE_OSM_VALUE],
-                    poi.properties[ICON_NAME]
-                );
+                const finalIconName = PoiManager.getIconNameForPoiType({
+                    iconKeyName: poi.properties[ICON_KEY_NAME],
+                    typeOsmTag: poi.properties[TYPE_OSM_TAG],
+                    typeOsmValue: poi.properties[TYPE_OSM_VALUE],
+                    iconName: poi.properties[ICON_NAME],
+                });
                 const icon = await getPoiIcon(poi, innerCache, finalIconName);
                 const coord = poi.geometry.coordinates;
                 return new L.Marker(new L.LatLng(coord[1], coord[0]), {

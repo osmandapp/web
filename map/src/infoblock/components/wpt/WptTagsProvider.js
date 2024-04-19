@@ -15,6 +15,9 @@ import { ReactComponent as EmailIcon } from '../../../assets/icons/ic_action_at_
 import * as locales from 'date-fns/locale';
 import { format, startOfWeek, addDays } from 'date-fns';
 import capitalize from 'lodash/capitalize';
+import { changeIconColor } from '../../../map/markers/MarkerOptions';
+import { createPoiCache } from '../../../manager/PoiManager';
+import React from 'react';
 
 export const POI_PREFIX = 'poi_';
 const WIKIPEDIA = 'wikipedia';
@@ -83,7 +86,30 @@ const HIDDEN_EXTENSIONS_POI = [
 ];
 export const SEPARATOR = ';';
 
-function getWptTags(obj, type) {
+const IconComponent = ({ svg, size = 24, color = '#727272' }) => {
+    const coloredSvg = changeIconColor(svg, color);
+    const svgWithUpdatedSize = coloredSvg
+        .replace(/(width=")[^"]*(")/g, `$1${size}$2`)
+        .replace(/(height=")[^"]*(")/g, `$1${size}$2`);
+
+    return <div dangerouslySetInnerHTML={{ __html: svgWithUpdatedSize }} />;
+};
+
+async function getSvgIcon(key, value, ctx) {
+    const prepKey = key.replace(COLLAPSABLE_PREFIX, '');
+    const innerCache = await createPoiCache({
+        obj: { key: prepKey, value },
+        poiIconCache: ctx.poiIconCache,
+    });
+    ctx.poiIconCache = {
+        ...ctx.poiIconCache,
+        ...innerCache,
+    };
+    ctx.setPoiIconCache({ ...ctx.poiIconCache });
+    return innerCache[prepKey];
+}
+
+async function getWptTags(obj, type, ctx) {
     let tags;
     let res = [];
     let typeTag = null;
@@ -107,7 +133,7 @@ function getWptTags(obj, type) {
 
         tags = fixTagsKeys(tags);
 
-        Object.entries(tags).forEach(([key, value]) => {
+        for (const [key, value] of Object.entries(tags)) {
             if (!shouldSkipKey(key)) {
                 let tagObj = {};
                 tagObj.key = key;
@@ -178,7 +204,12 @@ function getWptTags(obj, type) {
                             } else if (key === 'internet_access_fee_yes') {
                                 tagObj.icon = <InternetIcon />;
                             } else {
-                                tagObj.icon = <InfoIcon />;
+                                const svgData = await getSvgIcon(key, value, ctx);
+                                if (svgData) {
+                                    tagObj.icon = <IconComponent svg={svgData} />;
+                                } else {
+                                    tagObj.icon = <InfoIcon />;
+                                }
                             }
                     }
                 }
@@ -204,7 +235,7 @@ function getWptTags(obj, type) {
 
                 res.push(tagObj);
             }
-        });
+        }
         if (hasCuisine) {
             res = res.filter((t) => t.key !== CUISINE);
         }
