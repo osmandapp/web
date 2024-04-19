@@ -178,7 +178,7 @@ const WaypointRow = ({ point, index, ctx }) => {
                 </Grid>
             </MenuItem>
         );
-    }, [index, mobile, ctx, point]);
+    }, [index, mobile, point]);
 };
 
 export default function WaypointsTab() {
