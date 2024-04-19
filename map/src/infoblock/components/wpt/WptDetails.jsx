@@ -1,4 +1,4 @@
-import { AppBar, Box, IconButton, Link, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Divider, IconButton, Link, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material';
 import styles from '../../infoblock.module.css';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import AppContext, { isTrack, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_POI } from '../../../context/AppContext';
@@ -287,6 +287,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                         {wpt.latlon && currentLoc && <WptLoc wpt={wpt} location={currentLoc} />}
                         {wpt?.address && <WptAddress />}
                         <WptDetailsButtons wpt={wpt} isDetails={isDetails} />
+                        <Divider sx={{ mt: '16px' }} />
                         {wpt.desc && (
                             <WptTagInfo
                                 key={'desc'}
@@ -328,6 +329,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                 }}
                             />
                         )}
+                        {wpt?.tags?.res?.map((t, index) => {
+                            return <WptTagInfo key={index} tag={t} />;
+                        })}
                         {wpt.latlon && (
                             <WptTagInfo
                                 key={'latlon'}
@@ -339,9 +343,6 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                 }}
                             />
                         )}
-                        {wpt?.tags?.res?.map((t, index) => {
-                            return <WptTagInfo key={index} tag={t} />;
-                        })}
                     </ListItemText>
                 )}
             </Box>
