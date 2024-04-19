@@ -107,7 +107,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             icon: prepareIcon(currentWpt.icon),
             category: currentWpt.category,
             address: currentWpt.address,
-            time: parseInt(currentWpt.ext?.time) !== 0 ? currentWpt.ext.time : null,
+            time: parseInt(currentWpt.ext?.time) !== 0 ? currentWpt.ext?.time : null,
             tags: WptTagsProvider.getWptTags(currentWpt, type),
         };
     }

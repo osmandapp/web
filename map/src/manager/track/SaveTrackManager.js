@@ -69,7 +69,7 @@ export async function saveTrackToCloud({
     uploadedFile = null,
     open = true,
 }) {
-    const trackData = gpxFile ? gpxFile : ctx.selectedGpxFile?.file ?? ctx.selectedGpxFile;
+    const trackData = gpxFile ?? ctx.selectedGpxFile?.file ?? ctx.selectedGpxFile;
     const currentFile = await getFile(trackData);
     async function getFile(trackData) {
         if (uploadedFile) {
@@ -110,7 +110,7 @@ export async function saveTrackToCloud({
                 // re-download gpx
                 const downloadFile = { ...currentFile, ...params };
                 if (open) {
-                    downloadAfterUpload(ctx, downloadFile, trackData).then();
+                    downloadAfterUpload(ctx, downloadFile, trackData.showOnMap).then();
                 }
                 TracksManager.deleteLocalTrack(ctx);
                 refreshGlobalFiles({ ctx, currentFileName: params.name }).then();
@@ -373,7 +373,7 @@ function getOldSizeTrack(currentTrackIndex) {
 
 // after success upload from Local to Cloud
 // download it and use as current Cloud track
-async function downloadAfterUpload(ctx, file, trackData) {
+async function downloadAfterUpload(ctx, file, showOnMap) {
     const createState = {
         enable: false, // stop-editor
     };
@@ -411,7 +411,7 @@ async function downloadAfterUpload(ctx, file, trackData) {
             newGpxFiles[file.name][t] = track[t];
         });
         newGpxFiles[file.name].analysis = TracksManager.prepareAnalysis(newGpxFiles[file.name].analysis);
-        newGpxFiles[file.name].showOnMap = trackData.showOnMap;
+        newGpxFiles[file.name].showOnMap = showOnMap;
         ctx.setGpxFiles(newGpxFiles);
         ctx.setSelectedGpxFile(Object.assign({}, newGpxFiles[file.name]));
     }
