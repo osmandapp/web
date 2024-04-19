@@ -39,7 +39,7 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 
 We've completely redesigned the [_Tracks menu_](https://osmand.net/docs/user/personal/tracks#my-places-menu) in [_My Places_](https://osmand.net/docs/user/personal/myplaces). 
 
-![My Places > Tracks menu iOS](../../blog/2024-03-06-ios-4-7/img/my_places_tracks_menu_ios.png) 
+![My Places > Tracks menu iOS](../../blog/2024-04-19-ios-4-7/img/my_places_tracks_menu_ios.png) 
 
 _Tracks on map_ folder now directly opens the [_Tracks menu_](#redesign-tracks-menu-of-configure-map) in Configure map.
 
@@ -47,11 +47,11 @@ By tapping the _Three Dots_ button, you access a menu with the following actions
 - _Add folder_ allows you to create and name a new folder.
 - _Import_ enables the importation of a GPX file.
 
-![My Places > Tracks menu iOS](../../blog/2024-03-06-ios-4-7/img/my_places_tracks_menu_2_ios.png) 
+![My Places > Tracks menu iOS](../../blog/2024-04-19-ios-4-7/img/my_places_tracks_menu_2_ios.png) 
 
 _New track_ allows to start [_Trip recording_](https://osmand.net/docs/user/plugins/trip-recording) action. Just click _"Start recording"_ button. During the recording, you can view the Recording track data, including distance, duration, and the number of waypoints. There are two key actions available during recording: _Stop record_ and _Save GPX track_.
 
-![My Places > Tracks menu iOS](../../blog/2024-03-06-ios-4-7/img/my_places_tracks_menu_3_ios.png) ![My Places > Tracks menu iOS](../../blog/2024-03-06-ios-4-7/img/my_places_tracks_menu_4_ios.png)
+![My Places > Tracks menu iOS](../../blog/2024-04-19-ios-4-7/img/my_places_tracks_menu_3_ios.png) ![My Places > Tracks menu iOS](../../blog/2024-04-19-ios-4-7/img/my_places_tracks_menu_4_ios.png)
 
 A long press on any folder opens the _Folder_ menu, which includes the following options:
 - _Rename_ lets you rename the selected folder.
@@ -60,7 +60,7 @@ A long press on any folder opens the _Folder_ menu, which includes the following
 - _Move_ provides the option to relocate a folder to another Tracks folder or to create a new folder for moving the selected folder into it.
 - _Delete_ gives you the ability to remove the selected folder.
 
-![My Places > Tracks menu iOS](../../blog/2024-03-06-ios-4-7/img/my_places_tracks_menu_5_ios.png)
+![My Places > Tracks menu iOS](../../blog/2024-04-19-ios-4-7/img/my_places_tracks_menu_5_ios.png)
 
 
 A long press on any GPX track brings up a menu with the following options:
@@ -75,7 +75,7 @@ A long press on any GPX track brings up a menu with the following options:
 - _Move_ allows you to relocate the selected track to a specified folder.
 - _Delete_ gives you the option to remove the selected track.
 
-![My Places > Tracks menu iOS](../../blog/2024-03-06-ios-4-7/img/my_places_tracks_menu_6_ios.png)
+![My Places > Tracks menu iOS](../../blog/2024-04-19-ios-4-7/img/my_places_tracks_menu_6_ios.png)
 
 
 ## Widgets updates
@@ -86,7 +86,7 @@ A long press on any GPX track brings up a menu with the following options:
 
 - Improved widget configuration by allowing users [to move pages and rows](https://osmand.net/docs/user/widgets/configure-screen#widget-panels).
 
-![Widget iOS](../../blog/2024-03-06-ios-4-7/img/widget_rows_ios.png) ![Widget iOS](../../blog/2024-03-06-ios-4-7/img/widget_rows_2_ios.png)
+![Widget iOS](../../blog/2024-04-19-ios-4-7/img/widget_rows_ios.png) ![Widget iOS](../../blog/2024-04-19-ios-4-7/img/widget_rows_2_ios.png)
 
 
 ## Redesign Tracks menu of Configure map
@@ -100,7 +100,7 @@ We've introduced two sections: _Visible_ and _All_
 - In _Visible_, you can select and deselect tracks to be displayed on the map and choose from a "Recently Visible" section.
 - In _All_, you have the option to select tracks from the complete track list.
 
-![track menu iOS](../../blog/2024-03-06-ios-4-7/img/track_menu_ios.png) ![track menu iOS](../../blog/2024-03-06-ios-4-7/img/track_menu_2_ios.png)
+![track menu iOS](../../blog/2024-04-19-ios-4-7/img/track_menu_ios.png) ![track menu iOS](../../blog/2024-04-19-ios-4-7/img/track_menu_2_ios.png)
 
 
 You can utilize the following actions (buttons) for track management:
@@ -116,7 +116,7 @@ By clicking on _"Last modified"_ you access the _Sort tracks_ menu. Here, you ca
 - _"Longest distance first"_ or _"Shortest distance first"_
 - _"Longest duration first"_ or _"Shorter duration first"_
 
-![track menu iOS](../../blog/2024-03-06-ios-4-7/img/track_sort_menu_ios.png) ![track menu iOS](../../blog/2024-03-06-ios-4-7/img/track_sort_menu_2_ios.png)
+![track menu iOS](../../blog/2024-04-19-ios-4-7/img/track_sort_menu_ios.png) ![track menu iOS](../../blog/2024-04-19-ios-4-7/img/track_sort_menu_2_ios.png)
 
 ## Updates of GPX tracks
 
@@ -126,7 +126,7 @@ Introduced 3D visualization for tracks based on altitude:
 
 _[Track Context menu](https://osmand.net/docs/user/map/tracks-on-map#track-appearance) → Change Appearance → 3D visualization_
 
-![3D tracks iOS](../../blog/2024-03-06-ios-4-7/img/3d_tracks_ios.png) ![3D tracks iOS](../../blog/2024-03-06-ios-4-7/img/3d_tracks_1_ios.png)
+![3D tracks iOS](../../blog/2024-04-19-ios-4-7/img/3d_tracks_ios.png) ![3D tracks iOS](../../blog/2024-04-19-ios-4-7/img/3d_tracks_1_ios.png)
 
 ### External sensors data for Analize on map
 
@@ -134,7 +134,7 @@ Updated ["Analyze on Map"](https://osmand.net/docs/user/map/tracks-on-map#analyz
 
 - You can now analyze your track data alongside external sensors data: choose the track → [Options](https://osmand.net/docs/user/map/track-context-menu/#options) → Analyze on map → Select graph data
 
-![track menu iOS](../../blog/2024-03-06-ios-4-7/img/analyse_track_sensors_ios.png) ![track menu iOS](../../blog/2024-03-06-ios-4-7/img/analyse_track_sensors_2_ios.png) ![track menu iOS](../../blog/2024-03-06-ios-4-7/img/analyse_track_sensors_3_ios.png)
+![track menu iOS](../../blog/2024-04-19-ios-4-7/img/analyse_track_sensors_ios.png) ![track menu iOS](../../blog/2024-04-19-ios-4-7/img/analyse_track_sensors_2_ios.png) ![track menu iOS](../../blog/2024-04-19-ios-4-7/img/analyse_track_sensors_3_ios.png)
 
 ### Additional tags support
 
@@ -148,13 +148,13 @@ A new [_Sun position_ widget](https://osmand.net/docs/user/widgets/info-widgets#
 
 _Menu → Configure screen → Widgets → Add widget → Sun Position → Sun position, Sunrise, Sunset_. 
 
-![Sun Position](../../blog/2024-03-06-ios-4-7/img/sun_position_3_ios.png)
+![Sun Position](../../blog/2024-04-19-ios-4-7/img/sun_position_3_ios.png)
 
 _"Sun Position"_ widget displays the time until sunrise or sunset, based on the current time. This widget offers the following settings:
 - _Mode_: Select from _"Next event"_, _"Sunset"_, _"Sunrise"_.
 - _Format_: Choose between  _"Time left"_ or _"Next event"_. These format settings can be adjusted by tapping the widget on the screen.
 
-![Sun Position](../../blog/2024-03-06-ios-4-7/img/sun_position_ios.png) ![Sun Position](../../blog/2024-03-06-ios-4-7/img/sun_position_2_ios.png)
+![Sun Position](../../blog/2024-04-19-ios-4-7/img/sun_position_ios.png) ![Sun Position](../../blog/2024-04-19-ios-4-7/img/sun_position_2_ios.png)
 
 ## Glide ratio widget
 
@@ -162,7 +162,7 @@ Simple [Glide Ratio widgets](https://osmand.net/docs/user/widgets/info-widgets#g
 
 _OsmAnd menu → Configure screen → Widgets (All panels) → Glide ratio to target and Average glide ratio_
 
-![Glide Ratio widget iOS](../../blog/2024-03-06-ios-4-7/img/glide_ratio_widget_ios.png)
+![Glide Ratio widget iOS](../../blog/2024-04-19-ios-4-7/img/glide_ratio_widget_ios.png)
 
 <!--
 ## Speedometer
@@ -173,13 +173,13 @@ Go to _Menu → Configure screen → Other → Speedometer_
 
 Within this section, you can select the size (_small, medium, large_) of the Speedometer and specify when to receive a Speed limit warning (_Always, When exceeded_).
 
-![Speedometer iOS](../../blog/2024-03-06-ios-4-7/img/speedometer_ios.png)
+![Speedometer iOS](../../blog/2024-04-19-ios-4-7/img/speedometer_ios.png)
 
 ### Speedometer for CarPlay
 
 The Speedometer feature has been introduced for CarPlay as well.
 
-![Speedometer CarPlay iOS](../../blog/2024-03-06-ios-4-7/img/speedometer_carplay_ios.png)  -->
+![Speedometer CarPlay iOS](../../blog/2024-04-19-ios-4-7/img/speedometer_carplay_ios.png)  -->
 
 ## Round up numbers in navigation widgets
 
@@ -187,7 +187,7 @@ You can now select the format for displaying distance information in navigation 
 
 _Menu → Settings → Navigation Profile → General settings → Units & formats → Distance during navigation → Precise or Round up_
 
-![Round up iOS](../../blog/2024-03-06-ios-4-7/img/round_up_ios.png) ![Round up iOS](../../blog/2024-03-06-ios-4-7/img/round_up_1_ios.png)
+![Round up iOS](../../blog/2024-04-19-ios-4-7/img/round_up_ios.png) ![Round up iOS](../../blog/2024-04-19-ios-4-7/img/round_up_1_ios.png)
 
 
 ## Vertical exaggeration
@@ -198,7 +198,7 @@ A special coefficient for [3D relief](https://osmand.net/docs/user/plugins/conto
 
 This feature allows you to view the contours of smoother topography with enhanced detail.
 
-![Round up iOS](../../blog/2024-03-06-ios-4-7/img/vertical_exag.png)
+![Round up iOS](../../blog/2024-04-19-ios-4-7/img/vertical_exag.png)
 
 ## OsmAnd Cloud updates
 
@@ -210,13 +210,13 @@ This feature allows you to view the contours of smoother topography with enhance
 
 The World Basemap now adopts the language of the app for naming, aligning with the app's language settings. This is applicable for base map zoom levels 1-6 (less than 7 map zoom). The app language can be modified in the System settings under _OsmAnd Maps – Language_. 
 
-![App language](../../blog/2024-03-06-ios-4-7/img/app_language_ios.png) 
+![App language](../../blog/2024-04-19-ios-4-7/img/app_language_ios.png) 
 
 ## Missing maps download
 
 OsmAnd now alerts you if some maps between your start point and destination are missing. It's important to ensure that all maps are up to date and of the same release date for a consistent navigation experience.
 
-![Map downloading suggestion iOS](../../blog/2024-03-06-ios-4-7/img/map_suggest_ios.png) 
+![Map downloading suggestion iOS](../../blog/2024-04-19-ios-4-7/img/map_suggest_ios.png) 
 
 ## More
 

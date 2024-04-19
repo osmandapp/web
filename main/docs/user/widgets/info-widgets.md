@@ -194,9 +194,9 @@ The average speed is calculated for a given time interval according to your sele
 
 Glide ratio [simple widgets](../widgets/configure-screen.md#widgets-for-all-panels) provides valuable glide ratio information to help make informed decisions when planning air routes. The *Glide Ratio* widget in OsmAnd helps you assess the efficiency of your descent or ascent when navigating to a specific location ([Map marker](../personal/markers.md) position). It calculates the glide ratio as the ratio of the distance to the difference in altitude between your current position and your intended destination. You can read more about this [here](https://en.wikipedia.org/wiki/Lift-to-drag_ratio#Glide_ratio).
 
-- **Glide ratio to target** shows the glide ratio required to reach the target point. The [Map marker](../personal/markers.md) should be used as the target point. 
+- **Glide ratio to target** shows the glide ratio required to reach the target point / **Target elevation** shows the targent point elevation. The [Map marker](../personal/markers.md) should be used as the target point. 
 
-- **Average glide ratio** shows the average glide ratio for a specified time interval. You can set the time interval for this widget from 15 seconds to 60 minutes.
+- **Average glide ratio** shows the average glide ratio for a specified time interval / **Average vertical speed** indicates the rate at which an object ascends or descends over a period of time. You can set the time interval for this widget from 15 seconds to 60 minutes. The [Map marker](../personal/markers.md) should be used as the target point. 
 
 **Widgets use:**
 - *Planning soaring flights.* For soaring pilots, the *Glide ratio to the target* widget becomes an indispensable tool when planning and executing soaring flights. Pilots can estimate how far they can fly to their target given the current conditions and the required glide ratio.
@@ -224,7 +224,7 @@ Glide ratio [simple widgets](../widgets/configure-screen.md#widgets-for-all-pane
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → Glide ratio* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → Glide ratio* |
-| By tapping | Displays the target altitude. |
+| By tapping | Displays _Glide ratio to target_ or _Target elevation_ / _Average glide ratio_ or _Average vertical speed_  |
 
 
 ## Battery level
