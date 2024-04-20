@@ -450,16 +450,13 @@ export async function getGpxFileFromTrackData(file) {
 
 function prepareTrackData({ file, getAnalysis = false }) {
     // add updated points to track
-    if (file.tracks && file.tracks[0] && validateRoutePoints(file.points)) {
+    if (file.tracks?.[0] && validateRoutePoints(file.points)) {
         file.tracks[0].points = file.points;
     }
 
     // add metaData name if it isn't exist
-    if (!file.metaData?.name) {
-        if (!file.metaData) {
-            file.metaData = {};
-        }
-        file.metaData.name = file.name;
+    if (!file.metaData?.name || file.metaData.name !== file.name) {
+        file.metaData = { ...file.metaData, name: file.name };
     }
 
     return {
