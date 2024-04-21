@@ -95,14 +95,26 @@ const IconComponent = ({ svg, size = 24, color = '#727272' }) => {
     return <div dangerouslySetInnerHTML={{ __html: svgWithUpdatedSize }} />;
 };
 
-async function getSvgIcon({ key = null, value = null, ctx }) {
-    const prepKey = key?.replace(COLLAPSABLE_PREFIX, '');
-    const innerCache = await createPoiCache({
-        obj: { key: prepKey, value },
-        poiIconCache: ctx.poiIconCache,
-    });
+async function getSvgIcon({ key = null, value = null, ctx, getPoiType = false }) {
+    let innerCache;
+    let cacheValue;
+    if (getPoiType) {
+        const poiList = [{ properties: { [TYPE_OSM_TAG]: key, [TYPE_OSM_VALUE]: value } }];
+        innerCache = await createPoiCache({
+            poiList,
+            poiIconCache: ctx.poiIconCache,
+        });
+        cacheValue = innerCache[`${key}_${value}`];
+    } else {
+        const prepKey = key?.replace(COLLAPSABLE_PREFIX, '');
+        innerCache = await createPoiCache({
+            obj: { key: prepKey, value },
+            poiIconCache: ctx.poiIconCache,
+        });
+        cacheValue = innerCache[prepKey] ?? innerCache[value];
+    }
     updatePoiCache(ctx, innerCache);
-    return innerCache[prepKey] ?? innerCache[value] ?? null;
+    return cacheValue ?? null;
 }
 
 function getIcon(svgData) {
@@ -134,8 +146,14 @@ async function getWptTags(obj, type, ctx) {
         let isWikipediaLink = false;
         let hasCuisine = false;
 
-        tags = fixTagsKeys(tags);
+        if (type.isFav || type.isWpt) {
+            let tagTypeObj = await addPoiTypeTag(typeTag, subtypeTag, ctx);
+            if (tagTypeObj) {
+                res.push(tagTypeObj);
+            }
+        }
 
+        tags = fixTagsKeys(tags);
         for (const [key, value] of Object.entries(tags)) {
             if (!shouldSkipKey(key)) {
                 let tagObj = {};
@@ -245,6 +263,24 @@ async function getWptTags(obj, type, ctx) {
     }
 
     return { res: res, type: typeTag, subtype: subtypeTag };
+}
+
+async function addPoiTypeTag(typeTag, subtypeTag, ctx) {
+    if (!typeTag || !subtypeTag) {
+        return null;
+    }
+    let tagObj = {};
+    let svgData = await getSvgIcon({ key: typeTag, value: subtypeTag, ctx, getPoiType: true });
+    if (!svgData) {
+        svgData = await getSvgIcon({ key: 'amenity', value: subtypeTag, ctx, getPoiType: true });
+    }
+
+    tagObj.icon = getIcon(svgData);
+    tagObj.key = 'type';
+    tagObj.value = subtypeTag;
+    tagObj.textPrefix = subtypeTag;
+
+    return tagObj;
 }
 
 function localizeWeekDays(schedule) {

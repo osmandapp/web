@@ -72,8 +72,8 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
 
     function prefixContainsValue(tag) {
         return (
-            (tag.textPrefix.endsWith('yes') && tag.value === 'yes') ||
-            (tag.textPrefix.endsWith('no') && tag.value === 'no')
+            (tag.textPrefix?.endsWith('yes') && tag.value === 'yes') ||
+            (tag.textPrefix?.endsWith('no') && tag.value === 'no')
         );
     }
 
