@@ -92,6 +92,15 @@ function getIconNameForPoiType({ iconKeyName, typeOsmTag = '', typeOsmValue = ''
     }
 }
 
+export function getIconName(obj) {
+    if (icons.includes(`mx_${obj.key}.svg`)) {
+        return obj.key;
+    } else if (icons.includes(`mx_${obj.value}.svg`)) {
+        return obj.value;
+    }
+    return null;
+}
+
 function formattingPoiFilter(type, rename) {
     if (type) {
         if (rename) {
@@ -130,15 +139,14 @@ export async function createPoiCache({ poiList = null, obj = null, poiIconCache 
     const iconCache = {};
     const arr = poiList ?? [obj];
     for (const poi of arr) {
-        // Get the icon name for the current POI
-        const iconWpt = PoiManager.getIconNameForPoiType({
-            iconKeyName: obj ? poi.key : poi.properties[ICON_KEY_NAME],
-            typeOsmTag: obj ? '' : poi.properties[TYPE_OSM_TAG],
-            typeOsmValue: obj ? '' : poi.properties[TYPE_OSM_VALUE],
-            iconName: obj ? '' : poi.properties[ICON_NAME],
-            useDefault: !obj,
-        });
-
+        const iconWpt = obj
+            ? getIconName(obj)
+            : getIconNameForPoiType({
+                  iconKeyName: poi.properties[ICON_KEY_NAME],
+                  typeOsmTag: poi.properties[TYPE_OSM_TAG],
+                  typeOsmValue: poi.properties[TYPE_OSM_VALUE],
+                  iconName: poi.properties[ICON_NAME],
+              });
         if (iconWpt) {
             // If the icon is already in the existing cache, copy it to the updated cache
             if (poiIconCache[iconWpt]) {
@@ -157,6 +165,14 @@ export async function createPoiCache({ poiList = null, obj = null, poiIconCache 
         }
     }
     return iconCache;
+}
+
+export function updatePoiCache(ctx, newData) {
+    ctx.poiIconCache = {
+        ...ctx.poiIconCache,
+        ...newData,
+    };
+    ctx.setPoiIconCache({ ...ctx.poiIconCache });
 }
 
 const PoiManager = {

@@ -10,6 +10,7 @@ import PoiManager, {
     DEFAULT_ICON_COLOR,
     DEFAULT_POI_COLOR,
     DEFAULT_POI_SHAPE,
+    updatePoiCache,
 } from '../../manager/PoiManager';
 import 'leaflet.markercluster';
 import { Alert } from '@mui/material';
@@ -195,7 +196,7 @@ export default function PoiLayer() {
 
     async function createPoiLayer({ poiList = [], globalPoiIconCache }) {
         const innerCache = await createPoiCache({ poiList, poiIconCache: globalPoiIconCache });
-        ctx.setPoiIconCache({ ...innerCache });
+        updatePoiCache(ctx, innerCache);
         const layers = await Promise.all(
             poiList.map(async (poi) => {
                 const finalIconName = PoiManager.getIconNameForPoiType({

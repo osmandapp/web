@@ -16,7 +16,7 @@ import * as locales from 'date-fns/locale';
 import { format, startOfWeek, addDays } from 'date-fns';
 import capitalize from 'lodash/capitalize';
 import { changeIconColor } from '../../../map/markers/MarkerOptions';
-import { createPoiCache } from '../../../manager/PoiManager';
+import { createPoiCache, updatePoiCache } from '../../../manager/PoiManager';
 import React from 'react';
 
 export const POI_PREFIX = 'poi_';
@@ -95,18 +95,21 @@ const IconComponent = ({ svg, size = 24, color = '#727272' }) => {
     return <div dangerouslySetInnerHTML={{ __html: svgWithUpdatedSize }} />;
 };
 
-async function getSvgIcon(key, value, ctx) {
-    const prepKey = key.replace(COLLAPSABLE_PREFIX, '');
+async function getSvgIcon({ key = null, value = null, ctx }) {
+    const prepKey = key?.replace(COLLAPSABLE_PREFIX, '');
     const innerCache = await createPoiCache({
         obj: { key: prepKey, value },
         poiIconCache: ctx.poiIconCache,
     });
-    ctx.poiIconCache = {
-        ...ctx.poiIconCache,
-        ...innerCache,
-    };
-    ctx.setPoiIconCache({ ...ctx.poiIconCache });
-    return innerCache[prepKey];
+    updatePoiCache(ctx, innerCache);
+    return innerCache[prepKey] ?? innerCache[value] ?? null;
+}
+
+function getIcon(svgData) {
+    if (svgData) {
+        return <IconComponent svg={svgData} />;
+    }
+    return <InfoIcon />;
 }
 
 async function getWptTags(obj, type, ctx) {
@@ -203,13 +206,13 @@ async function getWptTags(obj, type, ctx) {
                                 tagObj.icon = <BrandIcon />;
                             } else if (key === 'internet_access_fee_yes') {
                                 tagObj.icon = <InternetIcon />;
+                            } else if (key.includes('internet_access')) {
+                                const prepValue = value.replace(TYPE, '').replace('__', '_');
+                                const svgData = await getSvgIcon({ value: prepValue, ctx });
+                                tagObj.icon = getIcon(svgData);
                             } else {
-                                const svgData = await getSvgIcon(key, value, ctx);
-                                if (svgData) {
-                                    tagObj.icon = <IconComponent svg={svgData} />;
-                                } else {
-                                    tagObj.icon = <InfoIcon />;
-                                }
+                                const svgData = await getSvgIcon({ key, value, ctx });
+                                tagObj.icon = getIcon(svgData);
                             }
                     }
                 }
