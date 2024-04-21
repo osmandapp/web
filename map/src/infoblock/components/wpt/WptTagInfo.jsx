@@ -67,7 +67,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
     }
 
     function showPrefix(tag) {
-        return !tag.isPhoneNumber && !tag.isUrl && tag.value !== tag.textPrefix;
+        return tag.value !== tag.textPrefix;
     }
 
     function prefixContainsValue(tag) {
@@ -105,7 +105,14 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
     }
 
     function openMoreInfoDialog(tag) {
-        return tag.desc ? () => setOpenMoreDialog({ title: t(`${POI_PREFIX}${tag.key}`), content: tag.desc }) : null;
+        return tag.desc ? setOpenMoreDialog({ title: t(`${POI_PREFIX}${tag.key}`), content: tag.value }) : null;
+    }
+
+    function getTranslation(key, value) {
+        if (i18n.exists(key)) {
+            return i18n.t(key);
+        }
+        return value;
     }
 
     function getValue(tag) {
@@ -117,7 +124,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
                 <>
                     <ListItemText onClick={() => setOpen(!open)}>
                         <MenuItemsTitle
-                            name={t(`${POI_PREFIX}${tag.textPrefix}`)}
+                            name={getTranslation(`${POI_PREFIX}${tag.textPrefix}`, tag.textPrefix)}
                             maxLines={2}
                             className={styles.tagPrefix}
                         />
@@ -133,7 +140,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
                 <ListItemText onClick={() => openMoreInfoDialog(tag)}>
                     {showPrefix(tag) && (
                         <Typography className={styles.tagPrefix} noWrap>
-                            {t(`${POI_PREFIX}${tag.textPrefix}`)}
+                            {getTranslation(`${POI_PREFIX}${tag.textPrefix}`, tag.textPrefix)}
                         </Typography>
                     )}
                     <MenuItemsTitle name={getText(tag, value)} maxLines={tag.desc ? 5 : 2} className={styles.tagName} />

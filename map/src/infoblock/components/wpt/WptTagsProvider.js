@@ -324,9 +324,6 @@ function getFormattedPrefixAndText(key, prefix, value, subtype) {
                 formattedPrefix = `${prefix} ${i18n?.t('capacity')}`;
             }
             break;
-        case 'wikipedia':
-            formattedPrefix = i18n?.t('wikipedia');
-            break;
     }
     return [formattedPrefix, formattedValue];
 }
@@ -372,6 +369,7 @@ function addWikipediaTags(key, value, tagObj) {
     tagObj.value = wikiParams.text;
     tagObj.hiddenUrl = wikiParams.url;
     tagObj.isUrl = true;
+    tagObj.textPrefix = wikiParams.prefix;
 
     return tagObj;
 }
@@ -417,7 +415,13 @@ function getWikiParams(key, value) {
         url = 'http://' + langCode + '.wikipedia.org/wiki/' + formattedTitle;
     }
     let text = title !== null ? title : value;
-    return { text, url };
+    const arr = key.split('_-_');
+    const prefix =
+        arr.length > 1
+            ? i18n.t('shared_string_wikipedia') + ' (' + i18n.t(`lang_${arr[1]}`) + ')'
+            : i18n.t('shared_string_wikipedia');
+
+    return { text, url, prefix };
 }
 
 function isUrl(value) {
