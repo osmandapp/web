@@ -230,9 +230,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     <LocationOn fontSize="small" />
                 </ListItemIcon>
                 <ListItemText>
-                    <Typography className={styles.wptCategoryText} noWrap>
-                        {wpt.address}
-                    </Typography>
+                    <Typography className={styles.wptCategoryText}>{wpt.address}</Typography>
                 </ListItemText>
             </Box>
         );
