@@ -31,9 +31,9 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
     const ctx = useContext(AppContext);
 
     const [favoriteName, setFavoriteName] = useState('');
-    const [favoriteAddress, setFavoriteAddress] = useState('');
+    const [favoriteAddress, setFavoriteAddress] = useState(getDefaultFavAddress());
     const [favoriteDescription, setFavoriteDescription] = useState('');
-    const [addAddress, setAddAddress] = useState(false);
+    const [addAddress, setAddAddress] = useState(favoriteAddress !== '');
     const [addDescription, setAddDescription] = useState(false);
     const [favoriteGroup, setFavoriteGroup] = useState(null);
     const [favoriteIcon, setFavoriteIcon] = useState(getDefaultFavIcon());
@@ -61,9 +61,13 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
 
     function getDefaultFavIcon() {
         if (selectedPoi) {
-            return selectedPoi?.options?.[FINAL_ICON_NAME];
+            return selectedPoi.poi?.options?.[FINAL_ICON_NAME];
         }
         return MarkerOptions.DEFAULT_WPT_ICON;
+    }
+
+    function getDefaultFavAddress() {
+        return selectedPoi?.address ?? '';
     }
 
     async function getIconCategories() {
@@ -158,6 +162,21 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
         ctx.setLocalTracks([...ctx.localTracks]);
     }
 
+    function excludeTags(tag) {
+        return (
+            tag.startsWith(WEB_POI_PREFIX) ||
+            tag === TITLE ||
+            tag === 'icon' ||
+            tag === 'color' ||
+            tag === 'background' ||
+            tag === 'category' ||
+            tag === 'lat' ||
+            tag === 'lon' ||
+            tag === 'desc' ||
+            tag === 'address'
+        );
+    }
+
     async function saveFavorite() {
         let selectedGroup =
             favoriteGroup === null
@@ -176,10 +195,10 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
         if (selectedGroup) {
             let ext = null;
             if (selectedPoi) {
-                const filteredOptions = Object.keys(selectedPoi.options)
-                    .filter((opt) => !opt.startsWith(WEB_POI_PREFIX) && opt !== TITLE && opt !== 'icon')
+                const filteredOptions = Object.keys(selectedPoi.poi.options)
+                    .filter((opt) => !excludeTags(opt))
                     .reduce((obj, key) => {
-                        obj[key] = selectedPoi.options[key];
+                        obj[key] = selectedPoi.poi.options[key];
                         return obj;
                     }, {});
                 ext = { extensions: filteredOptions };

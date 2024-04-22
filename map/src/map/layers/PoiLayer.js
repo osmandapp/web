@@ -240,7 +240,7 @@ export default function PoiLayer() {
     useEffect(() => {
         if (ctx.addFavorite.location && ctx.addFavorite.poi && !openAddDialog) {
             setOpenAddDialog(true);
-            setSelectedPoi(ctx.addFavorite.poi);
+            setSelectedPoi({ poi: ctx.addFavorite.poi, address: ctx.addFavorite.address });
         }
     }, [ctx.addFavorite]);
 

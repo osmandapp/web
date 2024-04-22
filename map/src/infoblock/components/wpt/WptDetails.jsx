@@ -46,6 +46,8 @@ import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { getCenterMapLoc } from '../../../manager/MapManager';
 import MenuItemsTitle from '../../../menu/components/MenuItemsTitle';
 import { useNavigate } from 'react-router-dom';
+import { apiGet } from '../../../util/HttpApi';
+import Loading from '../../../menu/errors/Loading';
 
 export default function WptDetails({ isDetails = false, setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
@@ -58,6 +60,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     const ICON_SHIELD_SIZE = 40;
 
     const [wpt, setWpt] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     const [delayedHash, setDelayedHash] = useState(hash);
     const debouncerTimer = useRef(0);
@@ -135,7 +138,18 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
     useEffect(() => {
         if (newWpt !== null) {
-            setWpt(newWpt);
+            if (newWpt.type?.isPoi) {
+                const address = getPoiAddress(newWpt);
+                address.then((data) => {
+                    setLoading(false);
+                    if (data) {
+                        newWpt.address = data;
+                    }
+                    setWpt(newWpt);
+                });
+            } else {
+                setWpt(newWpt);
+            }
         }
     }, [newWpt]);
 
@@ -184,10 +198,30 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             ctx.setAddFavorite({
                 ...ctx.addFavorite,
                 poi: ctx.selectedWpt?.poi,
+                address: wpt.address,
                 location: ctx.selectedWpt?.poi?.latlng,
             });
         } else {
             navigate('/map/loginForm' + window.location.search + window.location.hash);
+        }
+    }
+
+    async function getPoiAddress(wpt) {
+        setLoading(true);
+        let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/get-poi-address`, {
+            apiCache: true,
+            params: {
+                lat: wpt.latlon.lat,
+                lon: wpt.latlon.lon,
+            },
+        });
+        if (response && response.data) {
+            return response.data
+                .replace(/ str\./g, '')
+                .replace(/ city/g, ',')
+                .replace(/ dist.*/g, '');
+        } else {
+            return null;
         }
     }
 
@@ -292,105 +326,109 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
     return (
         <>
-            <Box
-                minWidth={ctx.infoBlockWidth}
-                maxWidth={ctx.infoBlockWidth}
-                sx={{ height: 'auto', overflowX: 'hidden' }}
-            >
-                <Header />
-                {wpt !== null && (
-                    <ListItemText id={getId()}>
-                        <Box className={styles.topContainer}>
-                            <MenuItemsTitle maxLines={3} className={styles.name}>
-                                <Typography className={styles.name}>
-                                    {wpt.type?.isPoi ? (
-                                        <Link href={wpt.osmUrl} target="_blank" underline="none">
-                                            {wpt.name ? wpt.poiType + ': ' + wpt.name : wpt.poiType}
-                                        </Link>
-                                    ) : (
-                                        wpt.name ?? 'No name'
-                                    )}
-                                </Typography>
-                            </MenuItemsTitle>
-                            {wpt.icon && <WptIcon />}
-                        </Box>
-                        {wpt?.category && <WptCategory />}
-                        <div className={styles.location}>
-                            {wpt.latlon && currentLoc && <WptLoc wpt={wpt} location={currentLoc} />}
-                            {wpt.type?.isPoi && (
-                                <>
-                                    <Tooltip
-                                        title={t('shared_string_add_to_favorites')}
-                                        arrow
-                                        placement="bottom"
-                                        onClick={() => addPointToFavorites()}
-                                    >
-                                        <FavoritesIcon />
-                                    </Tooltip>
-                                </>
+            {loading ? (
+                <Loading />
+            ) : (
+                <Box
+                    minWidth={ctx.infoBlockWidth}
+                    maxWidth={ctx.infoBlockWidth}
+                    sx={{ height: 'auto', overflowX: 'hidden' }}
+                >
+                    <Header />
+                    {wpt !== null && (
+                        <ListItemText id={getId()}>
+                            <Box className={styles.topContainer}>
+                                <MenuItemsTitle maxLines={3} className={styles.name}>
+                                    <Typography className={styles.name}>
+                                        {wpt.type?.isPoi ? (
+                                            <Link href={wpt.osmUrl} target="_blank" underline="none">
+                                                {wpt.name ? wpt.poiType + ': ' + wpt.name : wpt.poiType}
+                                            </Link>
+                                        ) : (
+                                            wpt.name ?? 'No name'
+                                        )}
+                                    </Typography>
+                                </MenuItemsTitle>
+                                {wpt.icon && <WptIcon />}
+                            </Box>
+                            {wpt?.category && <WptCategory />}
+                            <div className={styles.location}>
+                                {wpt.latlon && currentLoc && <WptLoc wpt={wpt} location={currentLoc} />}
+                                {wpt.type?.isPoi && (
+                                    <>
+                                        <Tooltip
+                                            title={t('shared_string_add_to_favorites')}
+                                            arrow
+                                            placement="bottom"
+                                            onClick={() => addPointToFavorites()}
+                                        >
+                                            <FavoritesIcon />
+                                        </Tooltip>
+                                    </>
+                                )}
+                            </div>
+                            {wpt?.address && <WptAddress />}
+                            <WptDetailsButtons wpt={wpt} isDetails={isDetails} />
+                            <Divider sx={{ mt: wpt.type?.isPoi ? '0px' : '16px' }} />
+                            {wpt.desc && (
+                                <WptTagInfo
+                                    key={'desc'}
+                                    baseTag={{
+                                        icon: <DescriptionIcon />,
+                                        name: t('shared_string_description'),
+                                        value: wpt.desc,
+                                        isDesc: true,
+                                    }}
+                                />
                             )}
-                        </div>
-                        {wpt?.address && <WptAddress />}
-                        <WptDetailsButtons wpt={wpt} isDetails={isDetails} />
-                        <Divider sx={{ mt: '16px' }} />
-                        {wpt.desc && (
-                            <WptTagInfo
-                                key={'desc'}
-                                baseTag={{
-                                    icon: <DescriptionIcon />,
-                                    name: t('shared_string_description'),
-                                    value: wpt.desc,
-                                    isDesc: true,
-                                }}
-                            />
-                        )}
-                        {wpt.time && (
-                            <WptTagInfo
-                                key={'time'}
-                                baseTag={{
-                                    icon: <TimeIcon />,
-                                    name: t('date_of_creation'),
-                                    value: formatTime(wpt.time),
-                                }}
-                            />
-                        )}
-                        {wpt?.hidden === 'true' && (
-                            <WptTagInfo
-                                key={'hidden'}
-                                baseTag={{
-                                    icon: <InfoIcon />,
-                                    name: t('shared_string_hidden'),
-                                    value: t('shared_string_yes'),
-                                }}
-                            />
-                        )}
-                        {wpt.category && (
-                            <WptTagInfo
-                                key={'folder'}
-                                baseTag={{
-                                    icon: <FolderIcon />,
-                                    name: t('folder'),
-                                    value: wpt.category,
-                                }}
-                            />
-                        )}
-                        {wpt?.tags?.res?.map((t, index) => {
-                            return <WptTagInfo key={index} tag={t} />;
-                        })}
-                        {wpt.latlon && (
-                            <WptTagInfo
-                                key={'latlon'}
-                                copy={true}
-                                baseTag={{
-                                    icon: <LocationIcon />,
-                                    name: t('coordinates'),
-                                    value: wpt.latlon.lat.toFixed(6) + ', ' + wpt.latlon.lon.toFixed(6),
-                                }}
-                            />
-                        )}
-                    </ListItemText>
-                )}
-            </Box>
+                            {wpt.time && (
+                                <WptTagInfo
+                                    key={'time'}
+                                    baseTag={{
+                                        icon: <TimeIcon />,
+                                        name: t('date_of_creation'),
+                                        value: formatTime(wpt.time),
+                                    }}
+                                />
+                            )}
+                            {wpt?.hidden === 'true' && (
+                                <WptTagInfo
+                                    key={'hidden'}
+                                    baseTag={{
+                                        icon: <InfoIcon />,
+                                        name: t('shared_string_hidden'),
+                                        value: t('shared_string_yes'),
+                                    }}
+                                />
+                            )}
+                            {wpt.category && (
+                                <WptTagInfo
+                                    key={'folder'}
+                                    baseTag={{
+                                        icon: <FolderIcon />,
+                                        name: t('folder'),
+                                        value: wpt.category,
+                                    }}
+                                />
+                            )}
+                            {wpt?.tags?.res?.map((t, index) => {
+                                return <WptTagInfo key={index} tag={t} />;
+                            })}
+                            {wpt.latlon && (
+                                <WptTagInfo
+                                    key={'latlon'}
+                                    copy={true}
+                                    baseTag={{
+                                        icon: <LocationIcon />,
+                                        name: t('coordinates'),
+                                        value: wpt.latlon.lat.toFixed(6) + ', ' + wpt.latlon.lon.toFixed(6),
+                                    }}
+                                />
+                            )}
+                        </ListItemText>
+                    )}
+                </Box>
+            )}
         </>
     );
 }
