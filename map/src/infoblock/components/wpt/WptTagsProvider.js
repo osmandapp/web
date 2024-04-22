@@ -19,14 +19,15 @@ import { changeIconColor } from '../../../map/markers/MarkerOptions';
 import { createPoiCache, updatePoiCache } from '../../../manager/PoiManager';
 import React from 'react';
 
+export const WEB_POI_PREFIX = 'web_poi_';
 export const POI_PREFIX = 'poi_';
 const WIKIPEDIA = 'wikipedia';
 const OSM_WIKI = 'osmwiki';
 const AMENITY_PREFIX = 'amenity_';
 const TYPE = 'type';
 const SUBTYPE = 'subtype';
-const TYPE_POI = POI_PREFIX + 'type';
-const SUBTYPE_POI = POI_PREFIX + 'subType';
+const TYPE_POI = WEB_POI_PREFIX + 'type';
+const SUBTYPE_POI = WEB_POI_PREFIX + 'subType';
 const SERVICE_TIMES = 'service_times';
 const COLLECTION_TIMES = 'collection_times';
 export const DESCRIPTION = 'description';
@@ -51,14 +52,15 @@ export const AMENITY_ORIGIN_EXTENSION = 'amenity_origin';
 export const NAME = 'name';
 export const ALT_NAME = 'osm_tag_alt_name';
 
-export const POI_NAME = POI_PREFIX + 'name';
-export const ICON_KEY_NAME = POI_PREFIX + 'iconKeyName';
-export const ICON_NAME = POI_PREFIX + 'iconName';
-export const TYPE_OSM_TAG = POI_PREFIX + 'typeOsmTag';
-export const TYPE_OSM_VALUE = POI_PREFIX + 'typeOsmValue';
+export const POI_NAME = WEB_POI_PREFIX + 'name';
+export const ICON_KEY_NAME = WEB_POI_PREFIX + 'iconKeyName';
+export const ICON_NAME = WEB_POI_PREFIX + 'iconName';
+export const TYPE_OSM_TAG = WEB_POI_PREFIX + 'typeOsmTag';
+export const TYPE_OSM_VALUE = WEB_POI_PREFIX + 'typeOsmValue';
 export const TITLE = 'title';
-export const FINAL_ICON_NAME = POI_PREFIX + 'finalIconName';
-export const POI_OSM_URL = POI_PREFIX + 'osmUrl';
+export const FINAL_ICON_NAME = WEB_POI_PREFIX + 'finalIconName';
+export const POI_OSM_URL = WEB_POI_PREFIX + 'osmUrl';
+const POI_ID = WEB_POI_PREFIX + 'id';
 
 const HIDDEN_EXTENSIONS = [
     COLOR_NAME_EXTENSION,
@@ -83,6 +85,8 @@ const HIDDEN_EXTENSIONS_POI = [
     TYPE_POI,
     SUBTYPE_POI,
     POI_NAME,
+    POI_ID,
+    POI_OSM_URL,
 ];
 export const SEPARATOR = ';';
 
@@ -129,6 +133,7 @@ async function getWptTags(obj, type, ctx) {
     let res = [];
     let typeTag = null;
     let subtypeTag = null;
+    let id = null;
     if (type.isFav || type.isWpt) {
         tags = obj.ext?.extensions;
     } else if (type.isPoi) {
@@ -143,6 +148,7 @@ async function getWptTags(obj, type, ctx) {
     if (tags) {
         typeTag = tags[AMENITY_PREFIX + TYPE] ?? tags[TYPE];
         subtypeTag = tags[AMENITY_PREFIX + SUBTYPE] ?? tags[SUBTYPE_POI];
+        id = tags[POI_ID];
         let isWikipediaLink = false;
         let hasCuisine = false;
 
@@ -262,7 +268,7 @@ async function getWptTags(obj, type, ctx) {
         }
     }
 
-    return { res: res, type: typeTag, subtype: subtypeTag };
+    return { res, id, type: typeTag, subtype: subtypeTag };
 }
 
 async function addPoiTypeTag(typeTag, subtypeTag, ctx) {

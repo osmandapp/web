@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { OBJECT_TYPE_POI } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import _ from 'lodash';
@@ -23,6 +23,7 @@ import {
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
+import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
 
 export default function PoiLayer() {
     const ctx = useContext(AppContext);
@@ -40,6 +41,8 @@ export default function PoiLayer() {
     const [addAlert, setAddAlert] = useState(false);
     const [bbox, setBbox] = useState(null);
     const [prevCategoriesCount, setPrevCategoriesCount] = useState(null);
+    const [openAddDialog, setOpenAddDialog] = useState(false);
+    const [selectedPoi, setSelectedPoi] = useState(false);
 
     async function getPoi(controller, showPoiCategories, bbox, savedBbox) {
         const searchData = {
@@ -188,10 +191,7 @@ export default function PoiLayer() {
             options: e.sourceTarget.options,
             latlng: e.sourceTarget._latlng,
         };
-        let newPoi = {
-            poi: poi,
-        };
-        ctx.setSelectedWpt(newPoi);
+        ctx.setSelectedWpt({ poi });
     }
 
     async function createPoiLayer({ poiList = [], globalPoiIconCache }) {
@@ -237,12 +237,26 @@ export default function PoiLayer() {
         }
     }
 
+    useEffect(() => {
+        if (ctx.addFavorite.location && ctx.addFavorite.poi && !openAddDialog) {
+            setOpenAddDialog(true);
+            setSelectedPoi(ctx.addFavorite.poi);
+        }
+    }, [ctx.addFavorite]);
+
     return (
         <>
             {addAlert && (
                 <Alert sx={{ position: 'absolute', zIndex: 1000, left: '40%', top: '2%' }} severity="info">
                     Please zoom in closer!
                 </Alert>
+            )}
+            {selectedPoi && openAddDialog && ctx.addFavorite.location && (
+                <AddFavoriteDialog
+                    dialogOpen={openAddDialog}
+                    setDialogOpen={setOpenAddDialog}
+                    selectedPoi={selectedPoi}
+                />
             )}
         </>
     );

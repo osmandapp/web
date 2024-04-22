@@ -56,3 +56,9 @@
 .wptActionButtonIcon {
     fill: #237bff !important;
 }
+.location {
+    display: flex !important;
+    margin-right: 24px !important;
+    justify-content: space-between !important;
+    fill: var(--svg-icon-color) !important;
+}

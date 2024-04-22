@@ -1,4 +1,15 @@
-import { AppBar, Box, Divider, IconButton, Link, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material';
+import {
+    AppBar,
+    Box,
+    Divider,
+    IconButton,
+    Link,
+    ListItemIcon,
+    ListItemText,
+    Toolbar,
+    Tooltip,
+    Typography,
+} from '@mui/material';
 import styles from '../../infoblock.module.css';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { isTrack, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_POI } from '../../../context/AppContext';
@@ -12,6 +23,7 @@ import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_
 import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow_16.svg';
 import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
+import { ReactComponent as FavoritesIcon } from '../../../assets/menu/ic_action_favorite.svg';
 import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import MarkerOptions, { changeIconSizeWpt, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import FavoritesManager, {
@@ -33,6 +45,7 @@ import { getDistance } from '../../../util/Utils';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { getCenterMapLoc } from '../../../manager/MapManager';
 import MenuItemsTitle from '../../../menu/components/MenuItemsTitle';
+import { useNavigate } from 'react-router-dom';
 
 export default function WptDetails({ isDetails = false, setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
@@ -165,6 +178,18 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         const locale = locales[i18n.language] || locales.enUS;
         return format(time, 'MMM dd, yyyy – HH:mm', { locale: locale }).replace(',', '');
     }
+    const navigate = useNavigate();
+    function addPointToFavorites() {
+        if (ctx.loginUser) {
+            ctx.setAddFavorite({
+                ...ctx.addFavorite,
+                poi: ctx.selectedWpt?.poi,
+                location: ctx.selectedWpt?.poi?.latlng,
+            });
+        } else {
+            navigate('/map/loginForm' + window.location.search + window.location.hash);
+        }
+    }
 
     const Header = () => {
         return (
@@ -290,7 +315,21 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                             {wpt.icon && <WptIcon />}
                         </Box>
                         {wpt?.category && <WptCategory />}
-                        {wpt.latlon && currentLoc && <WptLoc wpt={wpt} location={currentLoc} />}
+                        <div className={styles.location}>
+                            {wpt.latlon && currentLoc && <WptLoc wpt={wpt} location={currentLoc} />}
+                            {wpt.type?.isPoi && (
+                                <>
+                                    <Tooltip
+                                        title={t('shared_string_add_to_favorites')}
+                                        arrow
+                                        placement="bottom"
+                                        onClick={() => addPointToFavorites()}
+                                    >
+                                        <FavoritesIcon />
+                                    </Tooltip>
+                                </>
+                            )}
+                        </div>
                         {wpt?.address && <WptAddress />}
                         <WptDetailsButtons wpt={wpt} isDetails={isDetails} />
                         <Divider sx={{ mt: '16px' }} />
