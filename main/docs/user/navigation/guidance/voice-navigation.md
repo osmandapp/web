@@ -208,12 +208,12 @@ There are currently a total of 45 languages.
 
 Using recorded voices in OsmAnd should be a fallback only: They are rather limited, cannot pronaounce street names, place names, etc. You can download voice prompts from two different sets from the list.  
 - The first type, these are the recommended ones:  
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,other_location,index_name_tts_voice"/>*
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,other_location,index_name_tts_voice"/>*
 
 ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-1.png)  ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-2.png)  
 
 - The second type are recorded voice prompts, with an incomplete set of features:  
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,index_name_voice"/>*  
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,index_name_voice"/>*  
 
 ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-recorded.png)  
 
@@ -221,7 +221,7 @@ Using recorded voices in OsmAnd should be a fallback only: They are rather limit
 
 You can configure an OsmAnd profile to beep instead of speaking, in a similar way to a cycle computer. There are three basic patterns: *minimal*, *simple*, and *complex*. The simple and complex patterns have *loud* variants, which will be considerably easier to hear in a loud environment but may sound unpleasantly harsh. 
   
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,index_name_voice"/>*  
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,index_name_voice"/>*  
 
 - **Minimal** - suitable for following a known route on foot with minimal distractions, this pattern will alert you when passing intermediate destinations, favourites and POIs, and when you have deviated from or returned to the route. It will not provide any audio warnings for turns.
 - **Simple** - in addition to alerts for destinations, favourites and POIs etc., the simple pattern alerts you with a longer beep when you need to turn.

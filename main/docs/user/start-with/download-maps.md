@@ -58,7 +58,7 @@ It is important to note that you can skip this download step, and if you already
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,downloads"/>*
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,downloads"/>*
 
 ![Download map menu general Android](@site/static/img/personal/maps/download_menu_andr.png)  
 

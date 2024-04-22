@@ -122,7 +122,7 @@ Map legend of OsmAnd maps you can find [here](../map-legend/index.md).
 When writing local names in simplified/traditional Chinese, Japanese, and Korean ([Map language](../map/vector-maps#map-language)), incorrect hieroglyphs or even squares may appear. This happens when the device does not support the required fonts. Some issues with these incorrect fonts are described on our GitHub page: [3911](https://github.com/osmandapp/OsmAnd/issues/3911), [8187](https://github.com/osmandapp/OsmAnd/issues/8187), [9400](https://github.com/osmandapp/OsmAnd/issues/9400), [10862](https://github.com/osmandapp/OsmAnd/issues/10862). To solve this problem, the Android version of OsmAnd has the option to download the required fonts.
 
 Download map fonts for simplified/traditional Chinese, Japanese and Korean maps:  
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,other_menu_group,fonts_header"/>*  
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,other_menu_group,fonts_header"/>*  
 
 ![Map fonts Android version](@site/static/img/map/map_fonts.png) ![Map fonts version](@site/static/img/map/map_fonts_1.png)
 

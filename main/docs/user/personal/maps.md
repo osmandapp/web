@@ -27,7 +27,7 @@ OsmAnd operates with 2 type of maps: [Vector maps](../map/vector-maps.md) and [R
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps"/>*
+*<Translate android="true" ids="shared_string_menu,maps_and_resources"/>*
 
 ![Maps menu Android](@site/static/img/personal/maps/maps_overview_andr.png) 
 
@@ -108,7 +108,7 @@ The *Maps & Resources* main menu section of the OsmAnd app provides access to ma
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,downloads"/>*
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,downloads"/>*
 
 ![Download map menu general Android](@site/static/img/personal/maps/download_menu_andr.png)  
 
@@ -162,7 +162,7 @@ Information about *maps menu and actions* can be found in the article [**Downloa
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_local"/>*
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*
 
 ![Local tab Android 1](@site/static/img/settings/new_map_and_resourses_andr_1.png) ![Local tab Android 2](@site/static/img/settings/new_map_and_resourses_andr_2.png)
 
@@ -243,7 +243,7 @@ There is an additional option to sort items for maps.
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_updates"/>*
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
 
 ![Maps menu Update maps Android](@site/static/img/personal/maps/maps_update_andr.png) 
 
@@ -283,7 +283,7 @@ Each card has an independent collection of tiny updates, so **be careful** if yo
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,download_tab_updates,live_updates"/>*  
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates,live_updates"/>*  
 
 ![Maps menu OsmAnd live Android](@site/static/img/personal/maps/maps_menu_osmand_live_android.png) ![Maps menu OsmAnd live edit Android](@site/static/img/personal/maps/maps_menu_osmand_live_edit_android.png)
 

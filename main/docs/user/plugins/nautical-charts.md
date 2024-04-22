@@ -112,7 +112,7 @@ All depth numbers on the Nautical Charts are indicated in meters.
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,welmode_download_maps,nautical_maps"/>*  
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,nautical_maps"/>*  
 
 ![Nautical plugin maps view Android](@site/static/img/plugins/nautical-charts/plugin_nautical_view_android.png)
 

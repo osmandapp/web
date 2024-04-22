@@ -55,7 +55,7 @@ To download the Wikipedia data for a region, go to the [available packages for d
 <TabItem value="android" label="Android">
 
 In the **Android** version, you can open Wikipedia data to download by region as follows:  
-1. Go to: *<Translate android="true" ids="shared_string_menu,welmode_download_maps,regions"/>*   
+1. Go to: *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*   
 2. Select the required region. Once the region is opened, the Wikipedia data will be among other packages.   
  
 To see what data has already been uploaded, go to: *<Translate android="true" ids="shared_string_menu,download_tab_local,download_wikipedia_maps"/>*  
