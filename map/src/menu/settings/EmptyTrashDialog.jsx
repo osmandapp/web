@@ -27,7 +27,7 @@ export default function EmptyTrashDialog({ dialogOpen, setDialogOpen, changes, s
                 </DialogContentText>
             </DialogContent>
             <DialogActions>
-                <Button onClick={toggleShowDialog}>Cancel</Button>
+                <Button onClick={toggleShowDialog}>{t('shared_string_cancel')}</Button>
                 <Button
                     id={'se-delete-trash-dialog-delete'}
                     onClick={() => {
@@ -38,7 +38,7 @@ export default function EmptyTrashDialog({ dialogOpen, setDialogOpen, changes, s
                         });
                     }}
                 >
-                    Delete
+                    {t('shared_string_delete')}
                 </Button>
             </DialogActions>
         </Dialog>
