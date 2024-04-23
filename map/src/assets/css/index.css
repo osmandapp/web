@@ -35,3 +35,9 @@ code {
         0px 3px 4px 0px rgba(0, 0, 0, 0.05),
         0px 1px 1px 0px rgba(0, 0, 0, 0.15) !important;
 }
+.MuiTypography {
+    user-select: text !important;
+}
+.MuiMenuItem-root {
+    user-select: text !important;
+}
