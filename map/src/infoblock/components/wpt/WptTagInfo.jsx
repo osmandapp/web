@@ -67,13 +67,13 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
     }
 
     function showPrefix(tag) {
-        return !tag.isPhoneNumber && !tag.isUrl && tag.value !== tag.textPrefix;
+        return tag.value !== tag.textPrefix;
     }
 
     function prefixContainsValue(tag) {
         return (
-            (tag.textPrefix.endsWith('yes') && tag.value === 'yes') ||
-            (tag.textPrefix.endsWith('no') && tag.value === 'no')
+            (tag.textPrefix?.endsWith('yes') && tag.value === 'yes') ||
+            (tag.textPrefix?.endsWith('no') && tag.value === 'no')
         );
     }
 
@@ -105,7 +105,14 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
     }
 
     function openMoreInfoDialog(tag) {
-        return tag.desc ? () => setOpenMoreDialog({ title: t(`${POI_PREFIX}${tag.key}`), content: tag.desc }) : null;
+        return tag.desc ? setOpenMoreDialog({ title: t(`${POI_PREFIX}${tag.key}`), content: tag.value }) : null;
+    }
+
+    function getTranslation(key, value) {
+        if (i18n.exists(key)) {
+            return i18n.t(key);
+        }
+        return value;
     }
 
     function getValue(tag) {
@@ -117,7 +124,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
                 <>
                     <ListItemText onClick={() => setOpen(!open)}>
                         <MenuItemsTitle
-                            name={t(`${POI_PREFIX}${tag.textPrefix}`)}
+                            name={getTranslation(`${POI_PREFIX}${tag.textPrefix}`, tag.textPrefix)}
                             maxLines={2}
                             className={styles.tagPrefix}
                         />
@@ -133,7 +140,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
                 <ListItemText onClick={() => openMoreInfoDialog(tag)}>
                     {showPrefix(tag) && (
                         <Typography className={styles.tagPrefix} noWrap>
-                            {t(`${POI_PREFIX}${tag.textPrefix}`)}
+                            {getTranslation(`${POI_PREFIX}${tag.textPrefix}`, tag.textPrefix)}
                         </Typography>
                     )}
                     <MenuItemsTitle name={getText(tag, value)} maxLines={tag.desc ? 5 : 2} className={styles.tagName} />
@@ -154,35 +161,26 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
                 <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
                     <MenuItem disableRipple style={{ userSelect: 'text' }} className={styles.tagItem} divider>
                         <ListItemIcon className={styles.tagIcon}>{baseTag.icon}</ListItemIcon>
-                        {baseTag.isDesc ? (
-                            <ListItemText
-                                onClick={() => setOpenMoreDialog({ title: baseTag.name, content: baseTag.value })}
+                        <ListItemText
+                            onClick={() => {
+                                if (baseTag.value.length > 50) {
+                                    setOpenMoreDialog({ title: baseTag.name, content: baseTag.value });
+                                }
+                            }}
+                        >
+                            <Typography variant="inherit" className={styles.tagPrefix} noWrap>
+                                {baseTag.name}
+                            </Typography>
+                            <Tooltip
+                                title={t('shared_string_copy')}
+                                arrow
+                                placement="bottom"
+                                open={hover && copy}
+                                onClick={() => handleCopy(baseTag.value)}
                             >
-                                <Typography variant="inherit" className={styles.tagPrefix} noWrap>
-                                    {baseTag.name}
-                                </Typography>
                                 <MenuItemsTitle name={baseTag.value} maxLines={3} className={styles.tagName} />
-                            </ListItemText>
-                        ) : (
-                            <>
-                                <ListItemText>
-                                    <Typography variant="inherit" className={styles.tagName}>
-                                        {baseTag.name}
-                                    </Typography>
-                                </ListItemText>
-                                <Tooltip
-                                    title={t('shared_string_copy')}
-                                    arrow
-                                    placement="bottom"
-                                    open={hover && copy}
-                                    onClick={() => handleCopy(baseTag.value)}
-                                >
-                                    <Typography variant="inherit" className={styles.tagValue}>
-                                        {baseTag.value}
-                                    </Typography>
-                                </Tooltip>
-                            </>
-                        )}
+                            </Tooltip>
+                        </ListItemText>
                     </MenuItem>
                 </div>
             )}

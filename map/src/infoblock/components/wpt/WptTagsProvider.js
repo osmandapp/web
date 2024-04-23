@@ -15,15 +15,19 @@ import { ReactComponent as EmailIcon } from '../../../assets/icons/ic_action_at_
 import * as locales from 'date-fns/locale';
 import { format, startOfWeek, addDays } from 'date-fns';
 import capitalize from 'lodash/capitalize';
+import { changeIconColor } from '../../../map/markers/MarkerOptions';
+import { createPoiCache, updatePoiCache } from '../../../manager/PoiManager';
+import React from 'react';
 
+export const WEB_POI_PREFIX = 'web_poi_';
 export const POI_PREFIX = 'poi_';
 const WIKIPEDIA = 'wikipedia';
 const OSM_WIKI = 'osmwiki';
 const AMENITY_PREFIX = 'amenity_';
 const TYPE = 'type';
 const SUBTYPE = 'subtype';
-const TYPE_POI = POI_PREFIX + 'type';
-const SUBTYPE_POI = POI_PREFIX + 'subType';
+const TYPE_POI = WEB_POI_PREFIX + 'type';
+const SUBTYPE_POI = WEB_POI_PREFIX + 'subType';
 const SERVICE_TIMES = 'service_times';
 const COLLECTION_TIMES = 'collection_times';
 export const DESCRIPTION = 'description';
@@ -48,14 +52,15 @@ export const AMENITY_ORIGIN_EXTENSION = 'amenity_origin';
 export const NAME = 'name';
 export const ALT_NAME = 'osm_tag_alt_name';
 
-export const POI_NAME = POI_PREFIX + 'name';
-export const ICON_KEY_NAME = POI_PREFIX + 'iconKeyName';
-export const ICON_NAME = POI_PREFIX + 'iconName';
-export const TYPE_OSM_TAG = POI_PREFIX + 'typeOsmTag';
-export const TYPE_OSM_VALUE = POI_PREFIX + 'typeOsmValue';
+export const POI_NAME = WEB_POI_PREFIX + 'name';
+export const ICON_KEY_NAME = WEB_POI_PREFIX + 'iconKeyName';
+export const ICON_NAME = WEB_POI_PREFIX + 'iconName';
+export const TYPE_OSM_TAG = WEB_POI_PREFIX + 'typeOsmTag';
+export const TYPE_OSM_VALUE = WEB_POI_PREFIX + 'typeOsmValue';
 export const TITLE = 'title';
-export const FINAL_ICON_NAME = POI_PREFIX + 'finalIconName';
-export const POI_OSM_URL = POI_PREFIX + 'osmUrl';
+export const FINAL_ICON_NAME = WEB_POI_PREFIX + 'finalIconName';
+export const POI_OSM_URL = WEB_POI_PREFIX + 'osmUrl';
+const POI_ID = WEB_POI_PREFIX + 'id';
 
 const HIDDEN_EXTENSIONS = [
     COLOR_NAME_EXTENSION,
@@ -80,14 +85,55 @@ const HIDDEN_EXTENSIONS_POI = [
     TYPE_POI,
     SUBTYPE_POI,
     POI_NAME,
+    POI_ID,
+    POI_OSM_URL,
 ];
 export const SEPARATOR = ';';
 
-function getWptTags(obj, type) {
+const IconComponent = ({ svg, size = 24, color = '#727272' }) => {
+    const coloredSvg = changeIconColor(svg, color);
+    const svgWithUpdatedSize = coloredSvg
+        .replace(/(width=")[^"]*(")/g, `$1${size}$2`)
+        .replace(/(height=")[^"]*(")/g, `$1${size}$2`);
+
+    return <div dangerouslySetInnerHTML={{ __html: svgWithUpdatedSize }} />;
+};
+
+async function getSvgIcon({ key = null, value = null, ctx, getPoiType = false }) {
+    let innerCache;
+    let cacheValue;
+    if (getPoiType) {
+        const poiList = [{ properties: { [TYPE_OSM_TAG]: key, [TYPE_OSM_VALUE]: value } }];
+        innerCache = await createPoiCache({
+            poiList,
+            poiIconCache: ctx.poiIconCache,
+        });
+        cacheValue = innerCache[`${key}_${value}`];
+    } else {
+        const prepKey = key?.replace(COLLAPSABLE_PREFIX, '');
+        innerCache = await createPoiCache({
+            obj: { key: prepKey, value },
+            poiIconCache: ctx.poiIconCache,
+        });
+        cacheValue = innerCache[prepKey] ?? innerCache[value];
+    }
+    updatePoiCache(ctx, innerCache);
+    return cacheValue ?? null;
+}
+
+function getIcon(svgData) {
+    if (svgData) {
+        return <IconComponent svg={svgData} />;
+    }
+    return <InfoIcon />;
+}
+
+async function getWptTags(obj, type, ctx) {
     let tags;
     let res = [];
     let typeTag = null;
     let subtypeTag = null;
+    let id = null;
     if (type.isFav || type.isWpt) {
         tags = obj.ext?.extensions;
     } else if (type.isPoi) {
@@ -102,12 +148,19 @@ function getWptTags(obj, type) {
     if (tags) {
         typeTag = tags[AMENITY_PREFIX + TYPE] ?? tags[TYPE];
         subtypeTag = tags[AMENITY_PREFIX + SUBTYPE] ?? tags[SUBTYPE_POI];
+        id = tags[POI_ID];
         let isWikipediaLink = false;
         let hasCuisine = false;
 
-        tags = fixTagsKeys(tags);
+        if (type.isFav || type.isWpt) {
+            let tagTypeObj = await addPoiTypeTag(typeTag, subtypeTag, ctx);
+            if (tagTypeObj) {
+                res.push(tagTypeObj);
+            }
+        }
 
-        Object.entries(tags).forEach(([key, value]) => {
+        tags = fixTagsKeys(tags);
+        for (const [key, value] of Object.entries(tags)) {
             if (!shouldSkipKey(key)) {
                 let tagObj = {};
                 tagObj.key = key;
@@ -177,8 +230,13 @@ function getWptTags(obj, type) {
                                 tagObj.icon = <BrandIcon />;
                             } else if (key === 'internet_access_fee_yes') {
                                 tagObj.icon = <InternetIcon />;
+                            } else if (key.includes('internet_access')) {
+                                const prepValue = value.replace(TYPE, '').replace('__', '_');
+                                const svgData = await getSvgIcon({ value: prepValue, ctx });
+                                tagObj.icon = getIcon(svgData);
                             } else {
-                                tagObj.icon = <InfoIcon />;
+                                const svgData = await getSvgIcon({ key, value, ctx });
+                                tagObj.icon = getIcon(svgData);
                             }
                     }
                 }
@@ -204,13 +262,31 @@ function getWptTags(obj, type) {
 
                 res.push(tagObj);
             }
-        });
+        }
         if (hasCuisine) {
             res = res.filter((t) => t.key !== CUISINE);
         }
     }
 
-    return { res: res, type: typeTag, subtype: subtypeTag };
+    return { res, id, type: typeTag, subtype: subtypeTag };
+}
+
+async function addPoiTypeTag(typeTag, subtypeTag, ctx) {
+    if (!typeTag || !subtypeTag) {
+        return null;
+    }
+    let tagObj = {};
+    let svgData = await getSvgIcon({ key: typeTag, value: subtypeTag, ctx, getPoiType: true });
+    if (!svgData) {
+        svgData = await getSvgIcon({ key: 'amenity', value: subtypeTag, ctx, getPoiType: true });
+    }
+
+    tagObj.icon = getIcon(svgData);
+    tagObj.key = 'type';
+    tagObj.value = subtypeTag;
+    tagObj.textPrefix = subtypeTag;
+
+    return tagObj;
 }
 
 function localizeWeekDays(schedule) {
@@ -290,9 +366,6 @@ function getFormattedPrefixAndText(key, prefix, value, subtype) {
                 formattedPrefix = `${prefix} ${i18n?.t('capacity')}`;
             }
             break;
-        case 'wikipedia':
-            formattedPrefix = i18n?.t('wikipedia');
-            break;
     }
     return [formattedPrefix, formattedValue];
 }
@@ -338,6 +411,7 @@ function addWikipediaTags(key, value, tagObj) {
     tagObj.value = wikiParams.text;
     tagObj.hiddenUrl = wikiParams.url;
     tagObj.isUrl = true;
+    tagObj.textPrefix = wikiParams.prefix;
 
     return tagObj;
 }
@@ -383,7 +457,13 @@ function getWikiParams(key, value) {
         url = 'http://' + langCode + '.wikipedia.org/wiki/' + formattedTitle;
     }
     let text = title !== null ? title : value;
-    return { text, url };
+    const arr = key.split('_-_');
+    const prefix =
+        arr.length > 1
+            ? i18n.t('shared_string_wikipedia') + ' (' + i18n.t(`lang_${arr[1]}`) + ')'
+            : i18n.t('shared_string_wikipedia');
+
+    return { text, url, prefix };
 }
 
 function isUrl(value) {

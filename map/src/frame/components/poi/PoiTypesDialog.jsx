@@ -93,9 +93,14 @@ export default function PoiTypesDialog({ dialogOpen, setDialogOpen, width }) {
     function getIcon(option) {
         if (poiTypesResult && option && poiTypesResult[option]) {
             option = poiTypesResult[option];
-            return PoiManager.getIconNameForPoiType(option.keyName, option.osmTag, option.osmValue, option.iconName);
+            return PoiManager.getIconNameForPoiType({
+                iconKeyName: option.keyName,
+                typeOsmTag: option.osmTag,
+                typeOsmValue: option.osmValue,
+                iconName: option.iconName,
+            });
         } else {
-            return PoiManager.getIconNameForPoiType(option);
+            return PoiManager.getIconNameForPoiType({ iconKeyName: option });
         }
     }
 

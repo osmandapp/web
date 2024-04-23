@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import MarkerOptions, { ICONS_PREFIX, POI_ICONS_FOLDER } from '../../../../map/markers/MarkerOptions';
+import { ICONS_PREFIX, POI_ICONS_FOLDER } from '../../../../map/markers/MarkerOptions';
 import { AppBar, Box, ListItem, ListItemButton, ListItemText, Tab, Typography } from '@mui/material';
 import { History } from '@mui/icons-material';
 import Paper from '@mui/material/Paper';
@@ -72,7 +72,7 @@ export default function FavoriteIcon({
 
     tabs[FavoritesManager.DEFAULT_TAB_ICONS] =
         add || isEmpty(selectedGpxFile) ? (
-            <ListIcons key={FavoritesManager.DEFAULT_TAB_ICONS} icons={[MarkerOptions.DEFAULT_WPT_ICON]} />
+            <ListIcons key={FavoritesManager.DEFAULT_TAB_ICONS} icons={[favoriteIcon]} />
         ) : (
             getTabUsedIcons()
         );

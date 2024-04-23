@@ -1,8 +1,9 @@
 import { Typography } from '@mui/material';
 import styles from '../trackfavmenu.module.css';
-import React from 'react';
+import React, { forwardRef } from 'react';
 
-export default function MenuItemsTitle({ name = null, children = null, maxLines, className = null }) {
+const MenuItemsTitle = forwardRef((props, ref) => {
+    const { name = null, children = null, maxLines, className = null, ...otherProps } = props;
     const titleStyle = {
         display: '-webkit-box',
         WebkitBoxOrient: 'vertical',
@@ -13,7 +14,7 @@ export default function MenuItemsTitle({ name = null, children = null, maxLines,
     };
 
     return (
-        <div style={titleStyle}>
+        <div style={titleStyle} ref={ref} {...otherProps}>
             {name ? (
                 <Typography variant="inherit" className={className ?? styles.groupName}>
                     {name}
@@ -23,4 +24,7 @@ export default function MenuItemsTitle({ name = null, children = null, maxLines,
             )}
         </div>
     );
-}
+});
+
+MenuItemsTitle.displayName = 'MenuItemsTitle';
+export default MenuItemsTitle;

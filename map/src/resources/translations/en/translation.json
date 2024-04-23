@@ -5199,5 +5199,7 @@
   "shared_string_height": "Height",
   "distance": "Distance",
   "shared_string_hidden": "Hidden",
-  "shared_string_yes": "Yes"
+  "shared_string_yes": "Yes",
+  "shared_string_wikipedia": "Wikipedia",
+  "shared_string_add_to_favorites": "Add to \"Favorites\""
 }
