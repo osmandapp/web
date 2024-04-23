@@ -124,7 +124,7 @@ To show track on the map, you need to:
 
 :::tip note
 
-<ProFeature/> Some parameters you can use only with Pro feature <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
+<ProFeature/> Some parameters you can use only with Maps+ or Pro feature: <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">free and paid features</a>.
 
 :::
 
@@ -140,13 +140,13 @@ There are three ways to access the Track Appearance menu:
 
 <TabItem value="android" label="Android">  
 
-![Track menu options Android](@site/static/img/map/track-appear-and-1.png)  ![Track menu Appearance Android](@site/static/img/map/track-appear-and-2.png)  
+![Track menu Appearance Android](@site/static/img/map/track-appear-and-2.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track menu iOS](@site/static/img/map/track-appear-ios-1.png) ![Configure color iOS](@site/static/img/map/track-appear-ios-2.png)  
+![Configure color iOS](@site/static/img/map/track-appear-ios-2.png)  
 
 </TabItem>
 
@@ -157,7 +157,9 @@ There are three ways to access the Track Appearance menu:
 |**<Translate ios="true" ids="gpx_direction_arrows"/>** - select the interval at which distance or time stamps are displayed on the track. |
 |![Track menu Appearance direction arrows Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)|  
 |**<Translate ios="true" ids="track_show_start_finish_icons"/>** - allows you to select whether or not to show the start and end icons of track segments. |
-|![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)|  
+|![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)|
+|**3D visualization** - allows you to show tracks by altitude. [Paid feature](../../user/purchases/index.md).  |
+|![Track menu Appearance 3D visualisation](@site/static/img/map/track_appearance_menu_3d_android.png)|
 |**<Translate ios="true" ids="shared_string_color"/>** - allows to display the track line in any color and transparency, or select coloring according to the map legend. If necessary data on the track sections are missing, such sections are displayed in gray color. |
 | 1. *<Translate ios="true" ids="shared_string_color"/>:* *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* and *<Translate android="true" ids="altitude"/>* are free color settings. If *Speed* and *Altitude* are not active, it means that the track does not contain this data. |
 | 2. <ProFeature/> &nbsp;*<Translate android="true" ids="shared_string_color"/>:* *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>* are paid color settings. A detailed description of these settings can be found in the [*Map screen during navigation*](../navigation/guidance/map-during-navigation#color) page, specifically in the [Route line appearance](../navigation/guidance/map-during-navigation.md#route-line-appearance) section. |
