@@ -61,13 +61,13 @@ export default function CloudChanges({ files, setOpenCloudSettings, filesLoading
                 return '';
             }
             if (file.zipSize <= 0) {
-                return t('web:deleted');
+                return t('shared_string_deleted');
             }
             if (Math.round(file.updatetimems / 1000) === Math.round(file.clienttimems / 1000)) {
-                return t('web:added');
+                return t('shared_string_added');
             }
             if (file.updatetimems > file.clienttimems) {
-                return t('web:modified');
+                return t('shared_string_modified');
             }
             return '';
         }

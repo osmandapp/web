@@ -7,8 +7,5 @@
   "forecast_source": "Forecast source",
   "weather_layers": "Weather layers",
   "forecast_details": "7 Day forecast",
-  "cloud_changes": "Changes",
-  "added": "Added",
-  "modified": "Modified",
-  "deleted": "Deleted"
+  "cloud_changes": "Changes"
 }
