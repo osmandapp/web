@@ -75,10 +75,11 @@ export const downloadFile = async (file) => {
         },
     };
     const data = await Utils.getFileData(fileRequest);
+    const fileType = file.type === FAVORITE_FILE_TYPE ? GPX_FILE_TYPE : file.type;
     if (data) {
         const url = document.createElement('a');
         url.href = URL.createObjectURL(new Blob([data]));
-        url.download = `${TracksManager.prepareName(file.name)}.${file.type.toLowerCase()}`;
+        url.download = `${TracksManager.prepareName(file.name)}.${fileType.toLowerCase()}`;
         url.click();
     }
 };
