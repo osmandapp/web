@@ -44,16 +44,16 @@ export default function DeleteFileVersionDialog({
     return (
         <Dialog id={'se-delete-version-dialog'} open={true} onClose={toggleShowDialog}>
             {processing && <LinearProgress />}
-            <DialogTitle>Delete</DialogTitle>
+            <DialogTitle>{t('shared_string_delete')}</DialogTitle>
             <DialogContent>
                 <DialogContentText>
                     {formatString(t('delete_trash_item_confirmation_desc'), [file.name])}
                 </DialogContentText>
             </DialogContent>
             <DialogActions>
-                <Button onClick={toggleShowDialog}>Cancel</Button>
+                <Button onClick={toggleShowDialog}>{t('shared_string_cancel')}</Button>
                 <Button id={'se-delete-version-dialog-delete'} onClick={deleteF}>
-                    Delete
+                    {t('shared_string_delete')}
                 </Button>
             </DialogActions>
         </Dialog>

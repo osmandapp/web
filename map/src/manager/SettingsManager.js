@@ -200,7 +200,10 @@ function deleteVersionsFromMenu({ changes, name = null, id = null }) {
 }
 
 export function formatString(templateString, replacements) {
-    // Inserts parameters into a string, e.g., formatString("Delete \"%1$s\" permanently?", ["File.txt"]) -> "Delete "File.txt" permanently?"
+    // First, remove all unnecessary escape characters from the string
+    templateString = templateString.replace(/\\+/g, '');
+
+    // Inserts parameters into a string, e.g., formatString("Delete \\\"%1$s\\\" permanently?", ["File.txt"]) -> "Delete "File.txt" permanently?"
     return templateString.replace(/%\d\$s/g, function (match) {
         let index = parseInt(match.replace('%', '').replace('$s', ''), 10) - 1;
         return replacements[index];
