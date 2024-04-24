@@ -247,6 +247,7 @@ Additional settings for profile.You can switch buttons and input devices for Osm
 - *<Translate android="true" ids="use_volume_buttons_as_zoom"/>* - allows to use or not volume buttons of a device as [zoom](../map/interact-with-map.md#my-location--zoom).
 - *[<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings)* - allows to use or not [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
 - *[<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings)* - allows to use or not [Magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
+- *[<Translate android="true" ids="fix_north_up"/>](../map/interact-with-map.md#map-orientation-modes)* - allows to hard fix or not the North map position.
 - *<Translate android="true" ids="tap_on_map_to_hide_interface"/>* - tapping an empty space on the map hides control buttons and widgets.
 - *[<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#disable-all-animations)* - allows to switch on/off animation for navigation mode.
 - *[<Translate android="true" ids="animate_my_location"/>](../navigation/guidance/map-during-navigation.md#animate-my-location-android-animate-own-position)* - <Translate android="true" ids="animate_my_location_desc"/> Note that the animation takes about 1 second, which creates a slight delay for the *[My location](../map/interact-with-map.md#my-location--zoom)* position to display on the map relative to your location.  
@@ -258,7 +259,7 @@ Additional settings for profile.You can switch buttons and input devices for Osm
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_others"/>*
 
-![Profiles General Settings Other Android](@site/static/img/personal/profiles/profile_gs_other_android.png)  
+![Profiles General Settings Other iOS](@site/static/img/personal/profiles/profile_gs_other_ios.png)  
 
 - *[<Translate ios="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-device-buttons)* - allow you to add other devices, such as <Translate ios="true" ids="sett_wunderlinq_ext_input"/> or <Translate ios="true" ids="sett_generic_ext_input"/>, to control the OsmAnd program using the existing buttons.  
 
