@@ -1,35 +1,16 @@
 import { useTranslation } from 'react-i18next';
-import {
-    AppBar,
-    Box,
-    Divider,
-    IconButton,
-    ListItemIcon,
-    ListItemText,
-    MenuItem,
-    Skeleton,
-    Toolbar,
-    Tooltip,
-    Typography,
-} from '@mui/material';
+import { AppBar, Box, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
 import headerStyles from '../trackfavmenu.module.css';
 import styles from './settings.module.css';
-import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
-import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
-import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import { ReactComponent as TrashIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
 import Loading from '../errors/Loading';
-import { useInView } from 'react-intersection-observer';
-import TracksManager from '../../manager/track/TracksManager';
-import { closeCloudSettings, formatDate, getFileItemSize, getItemIcon } from '../../manager/SettingsManager';
-import trackStyles from '../trackfavmenu.module.css';
-import MenuItemsTitle from '../components/MenuItemsTitle';
-import ActionsMenu from '../actions/ActionsMenu';
+import { closeCloudSettings } from '../../manager/SettingsManager';
 import AppContext from '../../context/AppContext';
-import TrashActions from '../actions/TrashActions';
 import EmptyTrash from '../errors/EmptyTrash';
 import EmptyTrashDialog from './EmptyTrashDialog';
+import TrashItem from './TrashItem';
 
 export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }) {
     const ctx = useContext(AppContext);
@@ -43,93 +24,6 @@ export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }
             setChanges(files);
         }
     }, [files]);
-
-    const TrashItem = React.memo(({ item }) => {
-        // useInView hook from `react-intersection-observer` for lazy loading.
-        const { ref, inView } = useInView();
-        const fileName = item.file ? TracksManager.getFileName(item.file) : null;
-        const [hoverIconInfo, setHoverIconInfo] = useState(false);
-        const [openActions, setOpenActions] = useState(false);
-        const anchorEl = useRef(null);
-
-        const handleClick = useCallback(
-            (e) => {
-                setOpenActions(true);
-                e.stopPropagation();
-            },
-            [setOpenActions]
-        );
-
-        return (
-            <>
-                <div ref={ref}>
-                    {!inView ? (
-                        <Skeleton variant="rectangular" width="100%" height={getFileItemSize(item, fileName)} />
-                    ) : (
-                        <>
-                            {item.type === 'month' ? (
-                                <>
-                                    <Divider />
-                                    <MenuItem className={styles.item} disableRipple>
-                                        <Typography className={styles.title} noWrap>
-                                            {item.date}
-                                        </Typography>
-                                    </MenuItem>
-                                </>
-                            ) : (
-                                <div>
-                                    <MenuItem className={trackStyles.item} disableRipple>
-                                        <ListItemIcon className={trackStyles.icon}>
-                                            {getItemIcon(item.file)}
-                                        </ListItemIcon>
-                                        <ListItemText>
-                                            <MenuItemsTitle name={fileName} maxLines={2} />
-                                            <Typography variant="body2" className={trackStyles.groupInfo} noWrap>
-                                                {formatDate(item.file.updatetimems)}
-                                            </Typography>
-                                            {item?.file?.deviceInfo && (
-                                                <Typography variant="body2" className={trackStyles.groupInfo} noWrap>
-                                                    {item.file.deviceInfo}
-                                                </Typography>
-                                            )}
-                                        </ListItemText>
-                                        <div>
-                                            <IconButton
-                                                id={`se-cloud-trash-actions-${fileName}`}
-                                                className={trackStyles.sortIcon}
-                                                onMouseEnter={() => setHoverIconInfo(true)}
-                                                onMouseLeave={() => setHoverIconInfo(false)}
-                                                onClick={handleClick}
-                                                ref={anchorEl}
-                                            >
-                                                {hoverIconInfo ? <MenuIconHover /> : <MenuIcon />}
-                                            </IconButton>
-                                        </div>
-                                    </MenuItem>
-                                    {!item.isLast && <Divider className={styles.dividerItem} />}
-                                </div>
-                            )}
-                            <ActionsMenu
-                                open={openActions}
-                                setOpen={setOpenActions}
-                                anchorEl={anchorEl}
-                                actions={
-                                    <TrashActions
-                                        item={item}
-                                        setOpenActions={setOpenActions}
-                                        changes={changes}
-                                        setChanges={setChanges}
-                                    />
-                                }
-                            />
-                        </>
-                    )}
-                </div>
-            </>
-        );
-    });
-
-    TrashItem.displayName = 'TrashItem';
 
     return (
         <>
@@ -173,7 +67,7 @@ export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }
                     sx={{ overflow: 'auto', overflowX: 'hidden' }}
                 >
                     {changes.map((item) => (
-                        <TrashItem key={item.id} item={item} />
+                        <TrashItem key={item.id} item={item} changes={changes} setChanges={setChanges} />
                     ))}
                 </Box>
             )}
