@@ -17,6 +17,7 @@ export default function CloudSettings({ cloudSettings, setOpenCloudSettings }) {
             const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {
                 params: {
                     allVersions: true,
+                    addDevices: true,
                 },
             });
             if (response.ok) {

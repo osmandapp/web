@@ -105,6 +105,11 @@ export default function CloudChanges({ files, setOpenCloudSettings, filesLoading
                                             <Typography variant="body2" className={trackStyles.groupInfo} noWrap>
                                                 {status + ': ' + formatDate(item.file.updatetimems)}
                                             </Typography>
+                                            {item?.file?.deviceInfo && (
+                                                <Typography variant="body2" className={trackStyles.groupInfo} noWrap>
+                                                    {item.file.deviceInfo}
+                                                </Typography>
+                                            )}
                                         </ListItemText>
                                         <div>
                                             <IconButton
