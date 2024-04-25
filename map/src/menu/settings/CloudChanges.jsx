@@ -34,7 +34,7 @@ export default function CloudChanges({ files, setOpenCloudSettings, filesLoading
                         <BackIcon />
                     </IconButton>
                     <Typography component="div" className={headerStyles.title}>
-                        {t('web:cloud_changes')}
+                        {t('shared_string_changes')}
                     </Typography>
                 </Toolbar>
             </AppBar>
