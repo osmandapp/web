@@ -95,6 +95,6 @@ export default function TrashItem({ item, changes, setChanges }) {
                 </div>
             </>
         ),
-        [inView, item]
+        [inView, item, hoverIconInfo, openActions, anchorEl, handleClick, changes]
     );
 }

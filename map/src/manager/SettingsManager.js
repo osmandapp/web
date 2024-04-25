@@ -75,11 +75,20 @@ export const downloadFile = async (file) => {
         },
     };
     const data = await Utils.getFileData(fileRequest);
-    const fileType = file.type === FAVORITE_FILE_TYPE ? GPX_FILE_TYPE : file.type;
+    let name;
+    let type;
+    if (file.type === GPX_FILE_TYPE) {
+        name = TracksManager.prepareName(file.name);
+        type = '.' + GPX_FILE_TYPE.toLowerCase();
+    } else {
+        name = file.name;
+        type = '';
+    }
+
     if (data) {
         const url = document.createElement('a');
         url.href = URL.createObjectURL(new Blob([data]));
-        url.download = `${TracksManager.prepareName(file.name)}.${fileType.toLowerCase()}`;
+        url.download = name + type;
         url.click();
     }
 };

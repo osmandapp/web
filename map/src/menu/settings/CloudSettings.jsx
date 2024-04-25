@@ -6,6 +6,7 @@ import { format } from 'date-fns';
 import * as locales from 'date-fns/locale';
 import i18n from 'i18next';
 import devList from '../../resources/apple_device_model_list.json';
+import capitalize from 'lodash/capitalize';
 
 export default function CloudSettings({ cloudSettings, setOpenCloudSettings }) {
     const [allFilesVersions, setAllFilesVersions] = useState([]);
@@ -41,6 +42,7 @@ export default function CloudSettings({ cloudSettings, setOpenCloudSettings }) {
                     file.deviceInfo = modelInfo[0] + ' ' + updatedDevice;
                 }
             }
+            file.deviceInfo = capitalize(file.deviceInfo);
         });
     }
 
