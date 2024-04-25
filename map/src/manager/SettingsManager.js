@@ -75,10 +75,20 @@ export const downloadFile = async (file) => {
         },
     };
     const data = await Utils.getFileData(fileRequest);
+    let name;
+    let type;
+    if (file.type === GPX_FILE_TYPE) {
+        name = TracksManager.prepareName(file.name);
+        type = '.' + GPX_FILE_TYPE.toLowerCase();
+    } else {
+        name = file.name;
+        type = '';
+    }
+
     if (data) {
         const url = document.createElement('a');
         url.href = URL.createObjectURL(new Blob([data]));
-        url.download = `${TracksManager.prepareName(file.name)}.${file.type.toLowerCase()}`;
+        url.download = name + type;
         url.click();
     }
 };
@@ -200,7 +210,10 @@ function deleteVersionsFromMenu({ changes, name = null, id = null }) {
 }
 
 export function formatString(templateString, replacements) {
-    // Inserts parameters into a string, e.g., formatString("Delete \"%1$s\" permanently?", ["File.txt"]) -> "Delete "File.txt" permanently?"
+    // First, remove all unnecessary escape characters from the string
+    templateString = templateString.replace(/\\+/g, '');
+
+    // Inserts parameters into a string, e.g., formatString("Delete \\\"%1$s\\\" permanently?", ["File.txt"]) -> "Delete "File.txt" permanently?"
     return templateString.replace(/%\d\$s/g, function (match) {
         let index = parseInt(match.replace('%', '').replace('$s', ''), 10) - 1;
         return replacements[index];

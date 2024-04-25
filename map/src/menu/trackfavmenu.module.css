@@ -92,7 +92,6 @@
     width: 360px !important;
     padding: 10px 16px !important;
     gap: 24px !important;
-    max-height: var(--menu-item-2-lines-size) !important;
 }
 .actions {
     padding: 6px 0px !important;

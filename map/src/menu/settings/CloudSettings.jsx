@@ -2,6 +2,10 @@ import CloudTrash from './CloudTrash';
 import CloudChanges from './CloudChanges';
 import React, { useEffect, useMemo, useState } from 'react';
 import { apiGet } from '../../util/HttpApi';
+import { format } from 'date-fns';
+import * as locales from 'date-fns/locale';
+import i18n from 'i18next';
+import devList from '../../resources/apple_device_model_list.json';
 
 export default function CloudSettings({ cloudSettings, setOpenCloudSettings }) {
     const [allFilesVersions, setAllFilesVersions] = useState([]);
@@ -14,17 +18,41 @@ export default function CloudSettings({ cloudSettings, setOpenCloudSettings }) {
             const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/list-files`, {
                 params: {
                     allVersions: true,
+                    addDevices: true,
                 },
             });
             if (response.ok) {
                 const res = response.data.allFiles.filter((f) => !f.name.toLowerCase().endsWith('.info'));
                 setFilesLoading(false);
+                preparedDevices(res);
                 setAllFilesVersions(res);
             }
         };
 
         fetchData().then();
     }, []);
+
+    function preparedDevices(files) {
+        files.forEach((file) => {
+            if (!file.deviceInfo) {
+                return;
+            }
+            const modelInfo = file.deviceInfo.split('__model__');
+            if (file.deviceInfo.startsWith('Apple')) {
+                const updatedDevice = devList[modelInfo[1]];
+                if (updatedDevice) {
+                    file.deviceInfo = modelInfo[0] + ' ' + updatedDevice;
+                }
+            } else {
+                file.deviceInfo =
+                    modelInfo[0].charAt(0).toUpperCase() +
+                    modelInfo[0].slice(1) +
+                    ' ' +
+                    modelInfo[1].charAt(0).toUpperCase() +
+                    modelInfo[1].slice(1);
+            }
+        });
+    }
 
     useEffect(() => {
         const groupedFiles = allFilesVersions.reduce((v, file) => {
@@ -51,8 +79,10 @@ export default function CloudSettings({ cloudSettings, setOpenCloudSettings }) {
     // Process and group files by updatetimems (month/year).
     function getPreparedFiles(files) {
         const filesByDate = {};
+        const locale = locales[i18n.language] || locales.enUS;
         files.forEach((file) => {
-            const dateKey = new Date(file.updatetimems).toLocaleString('default', { month: 'long', year: 'numeric' });
+            let dateKey = format(new Date(file.updatetimems), 'LLLL yyyy', { locale });
+            dateKey = dateKey.charAt(0).toUpperCase() + dateKey.slice(1);
             if (!filesByDate[dateKey]) {
                 filesByDate[dateKey] = [];
             }

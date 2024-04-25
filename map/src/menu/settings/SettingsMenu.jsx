@@ -190,7 +190,7 @@ export default function SettingsMenu({ setCloudSettings }) {
                         </ListItemIcon>
                         <ListItemText>
                             <Typography variant="inherit" noWrap>
-                                {t('web:cloud_changes')}
+                                {t('shared_string_changes')}
                             </Typography>
                         </ListItemText>
                     </MenuItem>
