@@ -120,6 +120,6 @@ export default function ChangesItem({ item, changes, setChanges }) {
                 </div>
             </>
         ),
-        [inView, item, status]
+        [inView, item, status, hoverIconInfo, openActions, anchorEl, handleClick, changes]
     );
 }
