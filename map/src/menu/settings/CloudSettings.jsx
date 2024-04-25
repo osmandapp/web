@@ -5,6 +5,7 @@ import { apiGet } from '../../util/HttpApi';
 import { format } from 'date-fns';
 import * as locales from 'date-fns/locale';
 import i18n from 'i18next';
+import devList from '../../resources/apple_device_model_list.json';
 
 export default function CloudSettings({ cloudSettings, setOpenCloudSettings }) {
     const [allFilesVersions, setAllFilesVersions] = useState([]);
@@ -23,12 +24,25 @@ export default function CloudSettings({ cloudSettings, setOpenCloudSettings }) {
             if (response.ok) {
                 const res = response.data.allFiles.filter((f) => !f.name.toLowerCase().endsWith('.info'));
                 setFilesLoading(false);
+                preparedDevices(res);
                 setAllFilesVersions(res);
             }
         };
 
         fetchData().then();
     }, []);
+
+    function preparedDevices(files) {
+        files.forEach((file) => {
+            if (file.deviceInfo && file.deviceInfo.startsWith('Apple')) {
+                const modelInfo = file.deviceInfo.split(' ');
+                const updatedDevice = devList[modelInfo[1]];
+                if (updatedDevice) {
+                    file.deviceInfo = modelInfo[0] + ' ' + updatedDevice;
+                }
+            }
+        });
+    }
 
     useEffect(() => {
         const groupedFiles = allFilesVersions.reduce((v, file) => {
