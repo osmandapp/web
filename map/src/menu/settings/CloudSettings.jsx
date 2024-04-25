@@ -44,7 +44,12 @@ export default function CloudSettings({ cloudSettings, setOpenCloudSettings }) {
                     file.deviceInfo = modelInfo[0] + ' ' + updatedDevice;
                 }
             } else {
-                file.deviceInfo = modelInfo[0].charAt(0).toUpperCase() + modelInfo[0].slice(1) + ' ' + modelInfo[1];
+                file.deviceInfo =
+                    modelInfo[0].charAt(0).toUpperCase() +
+                    modelInfo[0].slice(1) +
+                    ' ' +
+                    modelInfo[1].charAt(0).toUpperCase() +
+                    modelInfo[1].slice(1);
             }
         });
     }
