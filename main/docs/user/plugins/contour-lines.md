@@ -326,7 +326,7 @@ Follow the steps below to display 3D Relief on the OsmAnd map:
 
 _Vertical exaggeration_ is a special coefficient for _3D relief_. You can change a scale (Vertical exaggeration) from x1 to x3. This feature allows to view the contours of smoother topography with enhanced detail.:
 
-<!--- **Android**: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/> → Vertical exaggeration* -->
+- **Android**: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/> → Vertical exaggeration* 
 - **iOS**: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>(enabled) → Vertical exaggeration*
 
 <Tabs groupId="operating-systems">
@@ -334,15 +334,13 @@ _Vertical exaggeration_ is a special coefficient for _3D relief_. You can change
 <TabItem value="android" label="Android">
 
 
-:::note
-For Android version _Vertical exaggeration_ is developing.
-:::
+![Vertical exaggeration Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Round up iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
+![Vertical exaggeration iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
 
 </TabItem>
  
