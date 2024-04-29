@@ -1,0 +1,19 @@
+.wikiIcon {
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+}
+
+.wikiIconSmall {
+    width: 24px;
+    height: 24px;
+}
+
+.wikiIconLarge {
+    width: 46px;
+    height: 46px;
+}
+
+.wikiIcon:hover {
+    box-shadow: 0 0 0 3px var(--selected-color) !important;
+}

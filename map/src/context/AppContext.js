@@ -23,6 +23,7 @@ export const OBJECT_TYPE_WEATHER = 'weather';
 export const OBJECT_TYPE_POI = 'poi';
 
 export const OBJECT_CONFIGURE_MAP = 'configure_map';
+export const OBJECT_SEARCH = 'search';
 export const OBJECT_GLOBAL_SETTINGS = 'global_settings';
 export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
 
@@ -315,6 +316,9 @@ export const AppContextProvider = (props) => {
     const [poiCategory, setPoiCategories] = useState(null);
     const [poiIconCache, setPoiIconCache] = useState({});
 
+    const [wikiPlaces, setWikiPlaces] = useState(null);
+    const [searchSettings, setSearchSettings] = useState({});
+
     const [routingCache, mutateRoutingCache] = useMutator({});
     const [routingNewSegments, setRoutingNewSegments] = useState([]);
     const [processRouting, setProcessRouting] = useState(false);
@@ -534,6 +538,10 @@ export const AppContextProvider = (props) => {
                 setRenderingType,
                 mapBbox,
                 setMapBbox,
+                wikiPlaces,
+                setWikiPlaces,
+                searchSettings,
+                setSearchSettings,
             }}
         >
             {props.children}
