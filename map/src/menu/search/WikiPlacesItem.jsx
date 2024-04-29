@@ -11,6 +11,10 @@ export default function WikiPlacesItem({ item }) {
     const name = item.properties?.wikiTitle;
     const imageTitle = item.properties?.imageTitle;
 
+    function openInfo(item) {
+        console.log(item);
+    }
+
     return useMemo(
         () => (
             <>
@@ -20,7 +24,11 @@ export default function WikiPlacesItem({ item }) {
                     ) : (
                         <>
                             <div>
-                                <MenuItem id={`se-wiki_place-${item.properties?.id}`} divider>
+                                <MenuItem
+                                    id={`se-wiki_place-${item.properties?.id}`}
+                                    divider
+                                    onClick={() => openInfo(item)}
+                                >
                                     <ListItemText>
                                         <MenuItemsTitle name={name} maxLines={2} />
                                     </ListItemText>
