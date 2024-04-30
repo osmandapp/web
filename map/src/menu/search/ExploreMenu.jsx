@@ -58,17 +58,16 @@ export default function ExploreMenu() {
                             sx={{ overflow: 'auto', overflowX: 'hidden' }}
                         >
                             <Typography component="div" sx={{ ml: 2 }}>
-                                Use Commons Geo Tags
+                                Use Wiki Images
                                 <Switch
-                                    checked={ctx.searchSettings.useCommonsGeoTags ?? false}
-                                    onChange={(event) =>
-                                        ctx.setSearchSettings({ useCommonsGeoTags: event.target.checked })
-                                    }
+                                    checked={ctx.searchSettings.useWikiImages ?? false}
+                                    onChange={(event) => ctx.setSearchSettings({ useWikiImages: event.target.checked })}
                                 />
                             </Typography>
-                            {ctx.wikiPlaces?.map((item, index) => (
-                                <WikiPlacesItem index={item.id} key={index} item={item} />
-                            ))}
+                            {!ctx.searchSettings.useWikiImages &&
+                                ctx.wikiPlaces?.map((item, index) => (
+                                    <WikiPlacesItem index={item.id} key={index} item={item} />
+                                ))}
                         </Box>
                     )}
                 </>

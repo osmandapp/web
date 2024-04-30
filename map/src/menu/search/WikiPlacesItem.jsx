@@ -9,7 +9,7 @@ export default function WikiPlacesItem({ item }) {
     const anchorEl = useRef(null);
 
     const name = item.properties?.wikiTitle;
-    const imageTitle = item.properties?.imageTitle;
+    const imageTitle = item.properties?.photoTitle;
 
     function openInfo(item) {
         console.log(item);
