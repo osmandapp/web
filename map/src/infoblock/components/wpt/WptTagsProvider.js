@@ -19,6 +19,8 @@ import { changeIconColor } from '../../../map/markers/MarkerOptions';
 import { createPoiCache, updatePoiCache } from '../../../manager/PoiManager';
 import React from 'react';
 
+export const DEFAULT_TAG_ICON_SIZE = 24;
+export const DEFAULT_TAG_ICON_COLOR = '#727272';
 export const WEB_POI_PREFIX = 'web_poi_';
 export const POI_PREFIX = 'poi_';
 const WIKIPEDIA = 'wikipedia';
@@ -90,7 +92,7 @@ const HIDDEN_EXTENSIONS_POI = [
 ];
 export const SEPARATOR = ';';
 
-const IconComponent = ({ svg, size = 24, color = '#727272' }) => {
+const IconComponent = ({ svg, size, color }) => {
     const coloredSvg = changeIconColor(svg, color);
     const svgWithUpdatedSize = coloredSvg
         .replace(/(width=")[^"]*(")/g, `$1${size}$2`)
@@ -121,11 +123,11 @@ async function getSvgIcon({ key = null, value = null, ctx, getPoiType = false })
     return cacheValue ?? null;
 }
 
-function getIcon(svgData) {
+function getIcon(svgData, size, color) {
     if (svgData) {
-        return <IconComponent svg={svgData} />;
+        return <IconComponent svg={svgData} size={size} color={color} />;
     }
-    return <InfoIcon />;
+    return <InfoIcon style={{ width: size, height: size, fill: color }} />;
 }
 
 async function getWptTags(obj, type, ctx) {
@@ -153,7 +155,7 @@ async function getWptTags(obj, type, ctx) {
         let hasCuisine = false;
 
         if (type.isFav || type.isWpt) {
-            let tagTypeObj = await addPoiTypeTag(typeTag, subtypeTag, ctx);
+            let tagTypeObj = await addPoiTypeTag({ typeTag, subtypeTag, ctx });
             if (tagTypeObj) {
                 res.push(tagTypeObj);
             }
@@ -233,10 +235,10 @@ async function getWptTags(obj, type, ctx) {
                             } else if (key.includes('internet_access')) {
                                 const prepValue = value.replace(TYPE, '').replace('__', '_');
                                 const svgData = await getSvgIcon({ value: prepValue, ctx });
-                                tagObj.icon = getIcon(svgData);
+                                tagObj.icon = getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR);
                             } else {
                                 const svgData = await getSvgIcon({ key, value, ctx });
-                                tagObj.icon = getIcon(svgData);
+                                tagObj.icon = getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR);
                             }
                     }
                 }
@@ -271,7 +273,13 @@ async function getWptTags(obj, type, ctx) {
     return { res, id, type: typeTag, subtype: subtypeTag };
 }
 
-async function addPoiTypeTag(typeTag, subtypeTag, ctx) {
+export async function addPoiTypeTag({
+    typeTag,
+    subtypeTag,
+    ctx,
+    size = DEFAULT_TAG_ICON_SIZE,
+    color = DEFAULT_TAG_ICON_COLOR,
+}) {
     if (!typeTag || !subtypeTag) {
         return null;
     }
@@ -280,8 +288,7 @@ async function addPoiTypeTag(typeTag, subtypeTag, ctx) {
     if (!svgData) {
         svgData = await getSvgIcon({ key: 'amenity', value: subtypeTag, ctx, getPoiType: true });
     }
-
-    tagObj.icon = getIcon(svgData);
+    tagObj.icon = getIcon(svgData, size, color);
     tagObj.key = 'type';
     tagObj.value = subtypeTag;
     tagObj.textPrefix = subtypeTag;

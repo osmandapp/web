@@ -17,3 +17,40 @@
 .wikiIcon:hover {
     box-shadow: 0 0 0 3px var(--selected-color) !important;
 }
+
+.placeTypes {
+    margin-left: 8px !important;
+    color: var(--text-secondary) !important;
+}
+.placeTypesIcon {
+    min-width: 16px !important;
+    max-width: 16px !important;
+    fill: var(--svg-icon-color) !important;
+}
+.placeTypesEmptyIcon {
+    min-width: 45px !important;
+    max-width: 45px !important;
+    fill: #c0c0c0 !important;
+}
+.titleText {
+    color: var(--text-primary) !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+}
+.placeItem {
+    display: flex !important;
+    width: 360px !important;
+    padding: 16px 16px 16px 16px !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 24px !important;
+}
+.emptyImg {
+    min-width: 66px !important;
+    min-height: 66px !important;
+    background-color: #ebebeb !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
