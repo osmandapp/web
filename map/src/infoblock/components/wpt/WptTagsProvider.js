@@ -101,7 +101,25 @@ const IconComponent = ({ svg, size, color }) => {
     return <div dangerouslySetInnerHTML={{ __html: svgWithUpdatedSize }} />;
 };
 
-async function getSvgIcon({ key = null, value = null, ctx, getPoiType = false }) {
+/**
+ * Retrieves an SVG icon for a given POI using key-value pairs.
+ * This function can also handle different types of POI data structures based on the 'getPoiType' flag.
+ *
+ * @param {Object} params - The parameters for fetching or creating the SVG icon.
+ * @param {string|null} params.key - The key used to identify the type of POI. Optional.
+ * @param {string|null} params.value - The value associated with the key for the POI. Optional.
+ * @param {Object} params.ctx - The context object containing necessary caches and other contextual data.
+ * @param {boolean} params.getPoiType - Flag to determine the structure of POI data handling.
+ * @param {string|null} params.icon - An optional icon identifier that can override default behavior.
+ * @returns {Promise<string|null>} - A Promise that resolves to the SVG icon data as a string, or null if no icon is found.
+ *
+ * Details:
+ * - If `getPoiType` is true, the function prepares a list of POIs with properties derived from the key and value, then passes this to `createPoiCache`.
+ * - If `getPoiType` is false, the function processes either a given object or just the key after stripping a prefix.
+ * - The function updates the global `poiIconCache` with any new or existing icons found or fetched during the cache creation process.
+ * - Finally, it attempts to return the most relevant icon from the cache. If no suitable icon is found, it returns null.
+ */
+export async function getSvgIcon({ key = null, value = null, ctx, getPoiType = false, icon = null }) {
     let innerCache;
     let cacheValue;
     if (getPoiType) {
@@ -109,6 +127,7 @@ async function getSvgIcon({ key = null, value = null, ctx, getPoiType = false })
         innerCache = await createPoiCache({
             poiList,
             poiIconCache: ctx.poiIconCache,
+            icon,
         });
         cacheValue = innerCache[`${key}_${value}`];
     } else {
@@ -116,14 +135,15 @@ async function getSvgIcon({ key = null, value = null, ctx, getPoiType = false })
         innerCache = await createPoiCache({
             obj: { key: prepKey, value },
             poiIconCache: ctx.poiIconCache,
+            icon,
         });
-        cacheValue = innerCache[prepKey] ?? innerCache[value];
+        cacheValue = innerCache[icon] ?? innerCache[prepKey] ?? innerCache[value];
     }
     updatePoiCache(ctx, innerCache);
     return cacheValue ?? null;
 }
 
-function getIcon(svgData, size, color) {
+export function getIcon(svgData, size, color) {
     if (svgData) {
         return <IconComponent svg={svgData} size={size} color={color} />;
     }

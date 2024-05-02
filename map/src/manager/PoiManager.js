@@ -133,20 +133,23 @@ function preparePoiFilterIcon(filter) {
  * @param {Array} poiList - The list of POIs for which icons should be cached.
  * @param {Object} obj - An optional object representing a single POI.
  * @param {Object} poiIconCache - The existing cache of POI icons.
+ * @param {String} icon - An optional icon name.
  * @returns {Object} - The updated cache of POI icons.
  */
-export async function createPoiCache({ poiList = null, obj = null, poiIconCache }) {
+export async function createPoiCache({ poiList = null, obj = null, poiIconCache, icon = null }) {
     const iconCache = {};
-    const arr = poiList ?? [obj];
+    const arr = icon ? [icon] : poiList ?? [obj];
     for (const poi of arr) {
-        const iconWpt = obj
-            ? getIconName(obj)
-            : getIconNameForPoiType({
-                  iconKeyName: poi.properties[ICON_KEY_NAME],
-                  typeOsmTag: poi.properties[TYPE_OSM_TAG],
-                  typeOsmValue: poi.properties[TYPE_OSM_VALUE],
-                  iconName: poi.properties[ICON_NAME],
-              });
+        const iconWpt = icon
+            ? icon
+            : obj
+              ? getIconName(obj)
+              : getIconNameForPoiType({
+                    iconKeyName: poi.properties[ICON_KEY_NAME],
+                    typeOsmTag: poi.properties[TYPE_OSM_TAG],
+                    typeOsmValue: poi.properties[TYPE_OSM_VALUE],
+                    iconName: poi.properties[ICON_NAME],
+                });
         if (iconWpt) {
             // If the icon is already in the existing cache, copy it to the updated cache
             if (poiIconCache[iconWpt]) {

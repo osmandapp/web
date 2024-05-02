@@ -43,11 +43,26 @@ export default function SearchLayer() {
             controller.abort();
             map.off('moveend', onMapMoveEnd);
         };
-    }, [ctx.currentObjectType, ctx.searchSettings.useWikiImages]);
+    }, [ctx.currentObjectType, ctx.searchSettings.useWikiImages, ctx.searchSettings.selectedFilters]);
 
+    /**
+     * A debounced function to fetch place data from a specified API based on map boundaries and user-selected filters.
+     * It only executes if not ignored and if at least one filter is selected.
+     * The function also manages a loading spinner on the map during the data fetching process.
+     *
+     * @param {Object} params - Parameters for the fetch operation.
+     * @param {AbortController.signal} params.controller - Used to abort the fetch request if necessary.
+     * @param {boolean} params.ignore - If true, the fetch operation is skipped.
+     * @param {Object} params.settings - Contains user settings such as `selectedFilters` and whether to use Wiki images.
+     * @returns {Promise<void>} - A promise that resolves when the fetch operation is complete.
+     */
     const debouncedGetPlaces = useRef(
         _.debounce(async ({ controller, ignore, settings }) => {
             if (!ignore) {
+                if (settings.selectedFilters.size === 0) {
+                    ctx.setWikiPlaces(null);
+                    return;
+                }
                 map.spin(true, { color: '#1976d2' });
                 let bbox = map.getBounds();
                 const api = settings.useWikiImages ? 'get-wiki-images' : 'get-wiki-data';
@@ -56,6 +71,7 @@ export default function SearchLayer() {
                     params: {
                         northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
                         southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
+                        filters: [...settings.selectedFilters],
                     },
                     signal: controller.signal,
                 });

@@ -5206,5 +5206,8 @@
   "shared_string_added": "Added",
   "shared_string_deleted": "Deleted",
   "shared_string_changes": "Changes",
-  "shared_string_search": "Search"
+  "shared_string_search": "Search",
+  "shared_string_filters": "Filters",
+  "search_categories": "Categories",
+  "shared_string_show_all": "Show all"
 }

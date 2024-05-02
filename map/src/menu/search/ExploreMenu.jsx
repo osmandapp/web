@@ -1,20 +1,26 @@
 import headerStyles from '../trackfavmenu.module.css';
-import { AppBar, Box, IconButton, Switch, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, IconButton, Switch, Toolbar, Tooltip, Typography } from '@mui/material';
 import styles from '../settings/settings.module.css';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import { ReactComponent as FilterIcon } from '../../assets/icons/ic_action_filter.svg';
 import { useTranslation } from 'react-i18next';
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import AppContext, { OBJECT_SEARCH } from '../../context/AppContext';
 import Loading from '../errors/Loading';
 import Empty from '../errors/Empty';
 import WikiPlacesItem from './WikiPlacesItem';
+import ActionsMenu from '../actions/ActionsMenu';
+import WikiPlacesFilter from './WikiPlacesFilter';
+import filters from '../../resources/wiki_data_filters.json';
 
 export default function ExploreMenu() {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
     const [loading, setLoading] = useState(false);
+    const [openFiltersDialog, setOpenFiltersDialog] = useState(false);
+    const anchorEl = useRef(null);
 
     function close() {
         ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
@@ -23,6 +29,7 @@ export default function ExploreMenu() {
 
     useEffect(() => {
         ctx.setCurrentObjectType(OBJECT_SEARCH);
+        ctx.setSearchSettings({ ...ctx.searchSettings, selectedFilters: new Set(filters) });
         setLoading(true);
     }, []);
 
@@ -42,6 +49,21 @@ export default function ExploreMenu() {
                     <Typography id="se-explore-menu-name" component="div" className={headerStyles.title}>
                         {t('web:explore_menu')}
                     </Typography>
+                    <Tooltip key={'wikidata_filters'} title={t('shared_string_filters')} arrow placement="bottom-end">
+                        <span>
+                            <IconButton
+                                id={'se-wikidata_filters'}
+                                component="span"
+                                variant="contained"
+                                type="button"
+                                ref={anchorEl}
+                                className={headerStyles.appBarIcon}
+                                onClick={() => setOpenFiltersDialog(true)}
+                            >
+                                <FilterIcon />
+                            </IconButton>
+                        </span>
+                    </Tooltip>
                 </Toolbar>
             </AppBar>
             {loading ? (
@@ -72,6 +94,12 @@ export default function ExploreMenu() {
                     )}
                 </>
             )}
+            <ActionsMenu
+                open={openFiltersDialog}
+                setOpen={setOpenFiltersDialog}
+                anchorEl={anchorEl}
+                actions={<WikiPlacesFilter />}
+            />
         </>
     );
 }
