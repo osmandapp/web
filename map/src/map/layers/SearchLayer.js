@@ -133,6 +133,7 @@ export default function SearchLayer() {
 
     useEffect(() => {
         if (ctx.wikiPlaces) {
+            let markerArr = new L.geoJSON();
             const sortedPlaces = [...ctx.wikiPlaces].sort((a, b) => b.properties.qrank - a.properties.qrank);
             const geoJsonData = {
                 type: 'FeatureCollection',
@@ -146,10 +147,9 @@ export default function SearchLayer() {
                     },
                 })),
             };
-            let markerArr = new L.geoJSON();
             const markerClusterGroup = new L.MarkerClusterGroup({
                 showCoverageOnHover: false,
-                maxClusterRadius: 50,
+                maxClusterRadius: 100,
                 iconCreateFunction: function (cluster) {
                     let count = cluster.getChildCount();
                     if (count === 1) {
@@ -162,17 +162,6 @@ export default function SearchLayer() {
                         for (const marker of childMarkers) {
                             if (marker.options.index === minIndexMarker.options.index && marker.options.icon) {
                                 return marker.options.icon;
-                            } else {
-                                if (marker instanceof L.Marker) {
-                                    marker.setIcon(
-                                        L.divIcon({
-                                            zIndex: 200,
-                                            iconSize: [10, 10],
-                                            html: '<div class="dot" style="width: 100%; height: 100%; border-radius: 50%; background-color: #fe8800; border: 1px solid #ffffff;"></div>', // HTML-разметка для круглой иконки с прямым применением стилей
-                                        })
-                                    );
-                                }
-                                markerArr.addLayer(marker);
                             }
                         }
                     }
@@ -190,23 +179,8 @@ export default function SearchLayer() {
                         ? feature.properties.imageTitle
                         : feature.properties.photoTitle;
                     const iconUrl = `${WIKI_IMAGE_BASE_URL}${imgTag}`;
-
-                    const image = new Image();
-                    image.onload = () => {
-                        const iconSize = feature.index < 50 ? [46, 46] : [24, 24];
-                        const icon = L.icon({
-                            iconUrl,
-                            iconSize,
-                            className: `${iconSize[0] === 46 ? styles.wikiIconLarge : styles.wikiIconSmall} ${styles.wikiIcon}`,
-                        });
-                        const marker = L.marker(latlng, { icon, index: feature.index });
-                        marker.on('click', () => {
-                            openInfo(feature);
-                        });
-                        addPopup(feature, [marker]);
-                        markerClusterGroup.addLayer(marker);
-                    };
-                    image.onerror = () => {
+                    const iconSize = feature.index < 50 ? [46, 46] : null;
+                    if (!iconSize) {
                         const circle = L.circleMarker(latlng, {
                             fillOpacity: 0.9,
                             radius: 5,
@@ -216,13 +190,42 @@ export default function SearchLayer() {
                             zIndex: 1000,
                         });
                         addPopup(feature, [circle]);
-                        markerClusterGroup.addLayer(circle);
-                    };
-                    image.src = iconUrl;
+                        markerArr.addLayer(circle);
+                    } else {
+                        const image = new Image();
+                        image.onload = () => {
+                            if (iconSize) {
+                                const icon = L.icon({
+                                    iconUrl,
+                                    iconSize,
+                                    className: `${iconSize[0] === 46 ? styles.wikiIconLarge : styles.wikiIconSmall} ${styles.wikiIcon}`,
+                                });
+                                const marker = L.marker(latlng, { icon, index: feature.index });
+                                marker.on('click', () => {
+                                    openInfo(feature);
+                                });
+                                addPopup(feature, [marker]);
+                                markerClusterGroup.addLayer(marker);
+                            }
+                        };
+                        image.onerror = () => {
+                            const circle = L.circleMarker(latlng, {
+                                fillOpacity: 0.9,
+                                radius: 5,
+                                color: '#ffffff',
+                                fillColor: '#fe8800',
+                                weight: 1,
+                                zIndex: 1000,
+                            });
+                            addPopup(feature, [circle]);
+                            markerArr.addLayer(circle);
+                        };
+                        image.src = iconUrl;
+                    }
                 },
             });
-
             removeLayers();
+
             otherIconsLayerRef.current = markerArr;
             map.addLayer(markerArr);
             geoJsonLayerRef.current = markerClusterGroup;
