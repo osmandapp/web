@@ -9,11 +9,22 @@ import 'leaflet-spin';
 import _ from 'lodash';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { Paper, Table, TableBody, TableCell, TableRow } from '@mui/material';
+import 'leaflet.markercluster';
 
 export default function SearchLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
     const geoJsonLayerRef = useRef(null);
+    const otherIconsLayerRef = useRef(null);
+
+    function removeLayers() {
+        if (geoJsonLayerRef.current) {
+            geoJsonLayerRef.current.clearLayers();
+        }
+        if (otherIconsLayerRef.current) {
+            otherIconsLayerRef.current.clearLayers();
+        }
+    }
 
     useEffect(() => {
         let ignore = false;
@@ -22,9 +33,7 @@ export default function SearchLayer() {
 
         const onMapMoveEnd = async () => {
             if (ctx.currentObjectType === OBJECT_SEARCH && geoJsonLayerRef.current) {
-                if (geoJsonLayerRef.current) {
-                    geoJsonLayerRef.current.clearLayers();
-                }
+                removeLayers();
                 debouncedGetPlaces({ controller, ignore, settings });
             }
         };
@@ -32,9 +41,7 @@ export default function SearchLayer() {
         map.on('moveend', onMapMoveEnd);
 
         if (ctx.currentObjectType === OBJECT_SEARCH) {
-            if (geoJsonLayerRef.current) {
-                geoJsonLayerRef.current.clearLayers();
-            }
+            removeLayers();
             debouncedGetPlaces({ controller, ignore, settings });
         }
 
@@ -139,8 +146,45 @@ export default function SearchLayer() {
                     },
                 })),
             };
+            let markerArr = new L.geoJSON();
+            const markerClusterGroup = new L.MarkerClusterGroup({
+                showCoverageOnHover: false,
+                maxClusterRadius: 50,
+                iconCreateFunction: function (cluster) {
+                    let count = cluster.getChildCount();
+                    if (count === 1) {
+                        return cluster.getAllChildMarkers()[0].options.icon;
+                    } else {
+                        const childMarkers = cluster.getAllChildMarkers();
+                        const minIndexMarker = childMarkers.reduce((min, m) =>
+                            m.options.index < min.options.index ? m : min
+                        );
+                        for (const marker of childMarkers) {
+                            if (marker.options.index === minIndexMarker.options.index && marker.options.icon) {
+                                return marker.options.icon;
+                            } else {
+                                if (marker instanceof L.Marker) {
+                                    marker.setIcon(
+                                        L.divIcon({
+                                            zIndex: 200,
+                                            iconSize: [10, 10],
+                                            html: '<div class="dot" style="width: 100%; height: 100%; border-radius: 50%; background-color: #fe8800; border: 1px solid #ffffff;"></div>', // HTML-разметка для круглой иконки с прямым применением стилей
+                                        })
+                                    );
+                                }
+                                markerArr.addLayer(marker);
+                            }
+                        }
+                    }
+                    return L.divIcon({
+                        className: 'dot-icon',
+                        iconSize: [8, 8],
+                        html: '<div class="dot"></div>',
+                    });
+                },
+            });
 
-            const geoJsonLayer = L.geoJSON(geoJsonData, {
+            L.geoJSON(geoJsonData, {
                 pointToLayer: (feature, latlng) => {
                     const imgTag = ctx.searchSettings.useWikiImages
                         ? feature.properties.imageTitle
@@ -148,38 +192,41 @@ export default function SearchLayer() {
                     const iconUrl = `${WIKI_IMAGE_BASE_URL}${imgTag}`;
 
                     const image = new Image();
-                    const layerGroup = L.layerGroup();
-
                     image.onload = () => {
-                        const iconSize = feature.index < 20 ? [46, 46] : [24, 24];
+                        const iconSize = feature.index < 50 ? [46, 46] : [24, 24];
                         const icon = L.icon({
                             iconUrl,
                             iconSize,
                             className: `${iconSize[0] === 46 ? styles.wikiIconLarge : styles.wikiIconSmall} ${styles.wikiIcon}`,
                         });
-                        const marker = L.marker(latlng, { icon });
+                        const marker = L.marker(latlng, { icon, index: feature.index });
                         marker.on('click', () => {
                             openInfo(feature);
                         });
-                        marker.addTo(layerGroup);
                         addPopup(feature, [marker]);
+                        markerClusterGroup.addLayer(marker);
                     };
                     image.onerror = () => {
-                        const circle = L.circle(latlng, {
-                            color: '#fe8800',
-                            fillOpacity: 0.5,
-                            radius: 100,
+                        const circle = L.circleMarker(latlng, {
+                            fillOpacity: 0.9,
+                            radius: 5,
+                            color: '#ffffff',
+                            fillColor: '#fe8800',
+                            weight: 1,
+                            zIndex: 1000,
                         });
                         addPopup(feature, [circle]);
-                        circle.addTo(layerGroup);
+                        markerClusterGroup.addLayer(circle);
                     };
                     image.src = iconUrl;
-
-                    return layerGroup;
                 },
             });
-            geoJsonLayerRef.current = geoJsonLayer;
-            geoJsonLayer.addTo(map);
+
+            removeLayers();
+            otherIconsLayerRef.current = markerArr;
+            map.addLayer(markerArr);
+            geoJsonLayerRef.current = markerClusterGroup;
+            map.addLayer(markerClusterGroup);
         }
     }, [ctx.wikiPlaces]);
 }
