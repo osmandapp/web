@@ -184,7 +184,7 @@ export default function SearchLayer() {
                     const imgTag = ctx.searchSettings.useWikiImages
                         ? feature.properties.imageTitle
                         : feature.properties.photoTitle;
-                    const iconUrl = `${WIKI_IMAGE_BASE_URL}${imgTag}`;
+                    const iconUrl = `${WIKI_IMAGE_BASE_URL}${imgTag}?width=300`;
                     const iconSize = feature.index < 50 ? [46, 46] : null;
                     if (!iconSize) {
                         const circle = L.circleMarker(latlng, {
