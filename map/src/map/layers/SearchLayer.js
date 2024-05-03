@@ -24,6 +24,12 @@ export default function SearchLayer() {
         if (otherIconsLayerRef.current) {
             otherIconsLayerRef.current.clearLayers();
         }
+        // remove lost markers
+        map.eachLayer((layer) => {
+            if (layer instanceof L.MarkerClusterGroup) {
+                map.removeLayer(layer);
+            }
+        });
     }
 
     useEffect(() => {
