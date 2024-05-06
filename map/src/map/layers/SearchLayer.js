@@ -38,8 +38,7 @@ export default function SearchLayer() {
         const settings = ctx.searchSettings;
 
         const onMapMoveEnd = async () => {
-            if (ctx.currentObjectType === OBJECT_SEARCH && geoJsonLayerRef.current) {
-                removeLayers();
+            if (ctx.currentObjectType === OBJECT_SEARCH && (geoJsonLayerRef.current || otherIconsLayerRef.current)) {
                 debouncedGetPlaces({ controller, ignore, settings });
             }
         };
@@ -137,48 +136,74 @@ export default function SearchLayer() {
         );
     }
 
+    const markerClusterGroup = new L.MarkerClusterGroup({
+        showCoverageOnHover: false,
+        zoomToBoundsOnClick: false,
+        maxClusterRadius: 100,
+        iconCreateFunction: function (cluster) {
+            let count = cluster.getChildCount();
+            if (count === 1) {
+                return cluster.getAllChildMarkers()[0].options.icon;
+            } else {
+                const childMarkers = cluster.getAllChildMarkers();
+                const minIndexMarker = childMarkers.reduce((min, m) => (m.options.index < min.options.index ? m : min));
+                for (const marker of childMarkers) {
+                    if (marker.options.index === minIndexMarker.options.index && marker.options.icon) {
+                        return marker.options.icon;
+                    }
+                }
+            }
+            return L.divIcon({
+                className: 'dot-icon',
+                iconSize: [8, 8],
+                html: '<div class="dot"></div>',
+            });
+        },
+    });
+
+    markerClusterGroup.on('clusterclick', function (cluster) {
+        const markers = cluster.layer.getAllChildMarkers();
+        if (markers.length > 0) {
+            markers[0].fire('click');
+        }
+    });
+
+    function createGeoJsonData(places) {
+        const sortedPlaces = [...places].sort((a, b) => b.properties.rowNum - a.properties.rowNum);
+        return {
+            type: 'FeatureCollection',
+            features: sortedPlaces.map((place, index) => ({
+                type: 'Feature',
+                properties: { ...place.properties },
+                index,
+                geometry: {
+                    type: 'Point',
+                    coordinates: [place.geometry.coordinates[0], place.geometry.coordinates[1]],
+                },
+            })),
+        };
+    }
+
+    /**
+     * Replaces old layers with new ones on the map. This function clears all layers in the provided oldLayers object before adding newLayers.
+     * It is a more efficient approach when updating large sets of data, as it avoids the overhead of manually filtering through and updating individual layers.
+     * @param {L.LayerGroup} oldLayers - The layer group to clear from the map.
+     * @param {L.Layer} newLayers - The new layer to add to the map.
+     * @returns {L.Layer} The newly added layers, allowing for further operations if needed.
+     */
+    function addLayers(oldLayers, newLayers) {
+        if (oldLayers) {
+            oldLayers.clearLayers();
+        }
+        map.addLayer(newLayers);
+        return newLayers;
+    }
+
     useEffect(() => {
         if (ctx.wikiPlaces) {
-            let markerArr = new L.geoJSON();
-            const sortedPlaces = [...ctx.wikiPlaces].sort((a, b) => b.properties.rowNum - a.properties.rowNum);
-            const geoJsonData = {
-                type: 'FeatureCollection',
-                features: sortedPlaces.map((place, index) => ({
-                    type: 'Feature',
-                    properties: { ...place.properties },
-                    index,
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [place.geometry.coordinates[0], place.geometry.coordinates[1]],
-                    },
-                })),
-            };
-            const markerClusterGroup = new L.MarkerClusterGroup({
-                showCoverageOnHover: false,
-                maxClusterRadius: 100,
-                iconCreateFunction: function (cluster) {
-                    let count = cluster.getChildCount();
-                    if (count === 1) {
-                        return cluster.getAllChildMarkers()[0].options.icon;
-                    } else {
-                        const childMarkers = cluster.getAllChildMarkers();
-                        const minIndexMarker = childMarkers.reduce((min, m) =>
-                            m.options.index < min.options.index ? m : min
-                        );
-                        for (const marker of childMarkers) {
-                            if (marker.options.index === minIndexMarker.options.index && marker.options.icon) {
-                                return marker.options.icon;
-                            }
-                        }
-                    }
-                    return L.divIcon({
-                        className: 'dot-icon',
-                        iconSize: [8, 8],
-                        html: '<div class="dot"></div>',
-                    });
-                },
-            });
-
+            let markerPromises = [];
+            let simpleMarkersArr = new L.geoJSON();
+            let geoJsonData = createGeoJsonData(ctx.wikiPlaces);
             L.geoJSON(geoJsonData, {
                 pointToLayer: (feature, latlng) => {
                     const imgTag = ctx.searchSettings.useWikiImages
@@ -188,6 +213,7 @@ export default function SearchLayer() {
                     const iconSize = feature.index < 100 ? [46, 46] : null;
                     if (!iconSize) {
                         const circle = L.circleMarker(latlng, {
+                            id: feature.properties.id,
                             fillOpacity: 0.9,
                             radius: 5,
                             color: '#ffffff',
@@ -196,46 +222,52 @@ export default function SearchLayer() {
                             zIndex: 1000,
                         });
                         addPopup(feature, [circle]);
-                        markerArr.addLayer(circle);
+                        simpleMarkersArr.addLayer(circle);
                     } else {
-                        const image = new Image();
-                        image.onload = () => {
-                            if (iconSize) {
+                        let markerPromise = new Promise((resolve) => {
+                            const image = new Image();
+                            image.onload = () => {
                                 const icon = L.icon({
                                     iconUrl,
                                     iconSize,
                                     className: `${iconSize[0] === 46 ? styles.wikiIconLarge : styles.wikiIconSmall} ${styles.wikiIcon}`,
                                 });
-                                const marker = L.marker(latlng, { icon, index: feature.index });
+                                const marker = L.marker(latlng, {
+                                    icon,
+                                    index: feature.index,
+                                    id: feature.properties.id,
+                                });
                                 marker.on('click', () => {
                                     openInfo(feature);
                                 });
                                 addPopup(feature, [marker]);
                                 markerClusterGroup.addLayer(marker);
-                            }
-                        };
-                        image.onerror = () => {
-                            const circle = L.circleMarker(latlng, {
-                                fillOpacity: 0.9,
-                                radius: 5,
-                                color: '#ffffff',
-                                fillColor: '#fe8800',
-                                weight: 1,
-                                zIndex: 1000,
-                            });
-                            addPopup(feature, [circle]);
-                            markerArr.addLayer(circle);
-                        };
-                        image.src = iconUrl;
+                                resolve();
+                            };
+                            image.onerror = () => {
+                                const circle = L.circleMarker(latlng, {
+                                    id: feature.properties.id,
+                                    fillOpacity: 0.9,
+                                    radius: 5,
+                                    color: '#ffffff',
+                                    fillColor: '#fe8800',
+                                    weight: 1,
+                                    zIndex: 1000,
+                                });
+                                addPopup(feature, [circle]);
+                                markerClusterGroup.addLayer(circle);
+                                resolve();
+                            };
+                            image.src = iconUrl;
+                        });
+                        markerPromises.push(markerPromise);
                     }
                 },
             });
-            removeLayers();
-
-            otherIconsLayerRef.current = markerArr;
-            map.addLayer(markerArr);
-            geoJsonLayerRef.current = markerClusterGroup;
-            map.addLayer(markerClusterGroup);
+            otherIconsLayerRef.current = addLayers(otherIconsLayerRef.current, simpleMarkersArr);
+            Promise.all(markerPromises).then(() => {
+                geoJsonLayerRef.current = addLayers(geoJsonLayerRef.current, markerClusterGroup);
+            });
         }
     }, [ctx.wikiPlaces]);
 }
