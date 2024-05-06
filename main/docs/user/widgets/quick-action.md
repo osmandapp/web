@@ -11,6 +11,8 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## Overview
@@ -27,7 +29,7 @@ In order to use the Quick Actions button you need to enable this widget first.
 
 <TabItem value="android" label="Android">  
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>_
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>_
 
 </TabItem>
 
@@ -72,7 +74,13 @@ To open Quick action menu just press on the button.
 ### Add new action
 
 There are 2 ways to add items to the Quick actions list: 
-- _Menu → Configure screen → Quick action → &#8230;&#124; → Add action(+)_ 
+
+-  the first way
+
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>→ &#8230;&#124; → Add action(+)_ 
+
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>→ &#8230;&#124; → Add action(+)_ 
+
 
 <Tabs groupId="operating-systems">
 
@@ -118,11 +126,11 @@ Quick action panel has only **6 slots** for actions per screen. However you coul
 
 <TabItem value="android" label="Android">  
 
-- <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/> → Hold & Drag selected action up and down by the icon (three vertical lines) in the list
+- _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → Hold & Drag_ selected action up and down by the icon (three vertical lines) in the list
 
 <p> </p>
 
-- <Translate android="true" ids="android_button_seq"/> Open Quick action menu  → Long tap on 'Add action' → Hold & Drag selected action up and down by the icon (three vertical lines) in the list
+- _<Translate android="true" ids="android_button_seq"/> Open Quick action menu  → Long tap on 'Add action' → Hold & Drag_ selected action up and down by the icon (three vertical lines) in the list
 
 ![Quick action widget_android_order](@site/static/img/widgets/quick_action_widget_android_order.png) 
 
@@ -130,7 +138,7 @@ Quick action panel has only **6 slots** for actions per screen. However you coul
 
 <TabItem value="ios" label="iOS">
 
-<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/> → Click Edit (Pencil icon) → Hold & Drag selected action up and down by the icon (three vertical lines) in the list → Done
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/> → Click Edit (Pencil icon) → Hold & Drag_ selected action up and down by the icon (three vertical lines) in the list → Done
 
 ![Quick action widget_ios_order](@site/static/img/widgets/quick_action_widget_ios_order.png) 
 
@@ -154,7 +162,7 @@ There are several ways how to access Quick Action to edit or delete it:
 
 <TabItem value="android" label="Android">  
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/> → Click Delete (Bin icon on the right top corner) → Select actions → Delete_
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → Click Delete (Bin icon on the right top corner) → Select actions → Delete_
 
 ![Quick action widget_android_del](@site/static/img/widgets/quick_action_widget_android_del.png)
 
@@ -184,6 +192,7 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 | <Translate android="true" ids="quick_action_add_poi"/> <br /> [Plugin](../plugins/osm-editing.md) | Adds POI to a selected (center) map location map (same as context menu action). <br /> - **Show an interim dialog**: displays confirmation dialog <br /> - **POI type** (optional): preselect OSM type <br /> - **Tag/Value** (multiple): add [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_Features) tags / values |
 | <Translate android="true" ids="quick_action_add_osm_bug"/> <br /> [Plugin](../plugins/osm-editing.md) | Adds [OSM Note](https://wiki.openstreetmap.org/wiki/Notes)  <br /> - **Show an interim dialog**: displays confirmation dialog <br /> - **Message**: adds default message to the note |
 | Add media note <br /> [Android Plugin](../plugins/audio-video-notes.md) | Starts audio / photo / video note recording  for a selected (center) map location. |
+| [<Translate android="true" ids="plan_route_create_new_route"/>](../plan-route/create-route.md) <br /> _for Android only_ | Opening of ["Plan a route"](../plan-route/create-route.md) tool and creation a route for a selected (center) map location. |
 
 ### Configure map
 
@@ -201,6 +210,11 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 | <Translate ios="true" ids="toggle_contour_lines"/> <br /> [Plugin](../plugins/contour-lines.md) | Display or hide Contour lines on the map |
 | <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="shared_string_terrain"/> <br /> [Plugin](../plugins/contour-lines.md) | Display and hide the Terrain (Hillshade / Slope) layer on the map |
 | <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="osm_notes"/> <br /> [Plugin](../plugins/osm-editing.md) | Allows to display on the map all OSM notes |
+| <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="temperature_layer"/> <br /> [Plugin](../plugins/weather.md) | Allows to display on the map temperature layer of Weather. |
+| <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="wind_layer"/> <br /> [Plugin](../plugins/weather.md) | Allows to display on the map wind speed layer of Weather. |
+| <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="pressure_layer"/> <br /> [Plugin](../plugins/weather.md) | Allows to display on the map air pressure layer of Weather. |
+| <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="precipitation_layer"/> <br /> [Plugin](../plugins/weather.md) | Allows to display on the map precipitation layer of Weather. |
+| <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="cloud_layer"/> <br /> [Plugin](../plugins/weather.md) | Allows to display on the map cloud layer of Weather. |
 
 ### Navigation
 
@@ -219,8 +233,50 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 | <Translate android="true" ids="quick_action_remove_next_destination"/> | Removes next intermediate point, if present, otherwise removes destination and displays finish navigation dialog. Action is inactive if you don't have any destination. |
 | [<Translate android="true" ids="simulate_location_by_gpx"/>](../plugins/development.md#gpx-track-simulation) | Simulates the location and movement of your device using a GPX track. |
 
-### Configure screen
+### Additional types
 
 | Action | Description |
 |:-------------|:-------------|
-| [<Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="coordinates_widget"/>](../widgets/info-widgets.md#coordinates-widget) | Show and hide coordinates widget |
+| [<Translate android="true" ids="shared_string_change"/> - <Translate android="true" ids="display_position"/> always in centre](../widgets/configure-screen.md#buttons-and-other) <br /> _for Android only_ | Enable or disable center position for _My Location_ icon on the map. |
+| [<Translate android="true" ids="shared_string_open"/> <Translate android="true" ids="shared_string_weather"/> always in centre](../plugins/weather.md) <br /> _for Android only_ | Open the [_Weather_ forecast screen](../plugins/weather.md#weather-forecast-screen). |
+
+
+## Custom buttons
+
+Custom Buttons are a unique type of _Quick Action_ tool. This means you can create a custom action button for a device's screen.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+To add a new custom button to the screen, follow these steps:
+
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons"/> → + → <Translate android="true" ids="add_button"/>_
+
+Next, enter a name for the newly created button and tap the _'Save'_ button.
+
+![Custom button Android](@site/static/img/widgets/custom_button_2_android.png)
+
+After adding the new custom button, it will appear in the _Custom Buttons_ menu (_<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons"/>_). You then have the option to assign one or more [actions](#quick-action-types) to the newly created and enabled custom button. To do this, follow these steps:
+
+ _<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons"/> → new button → <Translate android="true" ids="quick_action_new_action"/>_
+ 
+All actions available are identical to those found in [Quick Action types](#quick-action-types).
+
+![Custom button Android](@site/static/img/widgets/custom_button_4_android.png)
+
+Now, the new custom button will be visible on your device's screen. You can [move this custom button](#enable-widget) to any location on the screen, similarly to the Quick Action button. 
+
+Tapping this button instantly toggles the selected action on or off, or opens the [Quick action menu](#overview) for a custom button with two or more actions.
+
+![Custom button Android](@site/static/img/widgets/custom_button_5_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly/>
+
+</TabItem>
+
+</Tabs>
