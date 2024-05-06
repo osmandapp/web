@@ -4,9 +4,9 @@ import { ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui
 import MenuItemsTitle from '../components/MenuItemsTitle';
 import { WIKI_IMAGE_BASE_URL } from '../../manager/SearchManager';
 import styles from '../search/search.module.css';
-import { addPoiTypeTag } from '../../infoblock/components/wpt/WptTagsProvider';
+import { addPoiTypeTag, POI_PREFIX } from '../../infoblock/components/wpt/WptTagsProvider';
 import AppContext from '../../context/AppContext';
-import { upperFirst } from 'lodash';
+import { useTranslation } from 'react-i18next';
 
 export default function WikiPlacesItem({ item }) {
     const ctx = useContext(AppContext);
@@ -15,6 +15,7 @@ export default function WikiPlacesItem({ item }) {
     const anchorEl = useRef(null);
     const [typeIcon, setTypeIcon] = useState(null);
     const [typeEmptyIcon, setTypeEmptyIcon] = useState(null);
+    const { t } = useTranslation();
 
     const name = item.properties?.wikiTitle;
     const imageTitle = item.properties?.photoTitle;
@@ -42,6 +43,10 @@ export default function WikiPlacesItem({ item }) {
         console.log(item);
     }
 
+    function getType(type) {
+        return t(`${POI_PREFIX}${type}`);
+    }
+
     return useMemo(
         () => (
             <>
@@ -67,7 +72,7 @@ export default function WikiPlacesItem({ item }) {
                                                     </ListItemIcon>
                                                 )}
                                                 <Typography variant="body2" className={styles.placeTypes} noWrap>
-                                                    {`${upperFirst(poiSubType)}, ${upperFirst(poiType)}`}
+                                                    {`${getType(poiSubType)}, ${getType(poiType)}`}
                                                 </Typography>
                                             </div>
                                         )}
