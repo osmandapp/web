@@ -87,7 +87,7 @@ The map orientation modes allow the user to select how the map is displayed on t
 </Tabs>  
 
 
-- **<Translate android="true" ids="rotate_map_north_opt"/>** - The map is fixed in the direction of the North, which is the top edge of your device. The map does not have automatic rotation, but you can rotate it manually with a [two-pointer gesture (two-finger touch & rotate)](../map/interact-with-map.md#gestures). In this case, the map orientation mode will change to Manual rotation.  
+- **<Translate android="true" ids="rotate_map_north_opt"/>** - The map is fixed in the direction of the North, which is the top edge of your device. The map does not have automatic rotation, but you can rotate it manually with a [two-pointer gesture (two-finger touch & rotate)](../map/interact-with-map.md#gestures). In this case, the map orientation mode will change to Manual rotation. You can *hard lock the North mode* for Android by the ["<Translate android="true" ids="fix_north_up"/>"](../personal/profiles.md#other) function.
 - **<Translate android="true" ids="rotate_map_bearing_opt"/>** - The map rotates relative to the direction of your movement known from GPS data. For details, go to [*Rotate map by bearing*](../map/interact-with-map#rotate-map-by-bearing).
 - **<Translate android="true" ids="rotate_map_compass_opt"/>** - The [icon on the button](../widgets/map-buttons.md/#compass) points to the actual North, and the map moves according to the compass orientation of your device. Your device should be in as horizontal a position as possible. If your device does not have a compass sensor, the orientation of the map remains unchanged.
 - **<Translate android="true" ids="rotate_map_manual_opt"/>** - When you select this option, the map is fixed in the current position and does not rotate automatically. You can manually change the map orientation with a two-pointer gesture (two-finger touch & rotate).   
@@ -96,8 +96,8 @@ The map orientation modes allow the user to select how the map is displayed on t
 **Note**  
 
 - Map Orientation modes can be opened in [*Profile settings*](../personal/profiles.md#appearance) as well as by long-tapping the [*Compass button*](../widgets/map-buttons.md#compass).  
-
 - To quickly switch map orientation modes, tap the "Compass" button located in the upper left corner of the screen, if [it is visible](../widgets/map-buttons.md#display-options).
+- (Android) For hard lock the **<Translate android="true" ids="rotate_map_north_opt"/>** mode you need to use [<Translate android="true" ids="fix_north_up"/>](../personal/profiles.md#other).
 
 
 ### Compass

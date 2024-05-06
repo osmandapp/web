@@ -62,6 +62,13 @@ For the last versions of OsmAnd 4.2 (Android), [map rendering doesn't work](http
 The resolution of this problem is to switch on OpenGL rendering:
 _[OsmAnd menu → Settings → OsmAnd settings → Map rendering engine → Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine)_ and restart OsmAnd.
 
+
+### Hard lock the North map orientation mode
+
+For Android version (OsmAnd 4.7 and newests) we can lock hard [the North map orientation mode](../map/interact-with-map.md#map-orientation-modes) (Classic North position for maps) by _"Enable Fixed North Up"_ function on General Settings of Profile: 
+
+_Menu → Configure profile → General settings → Other → [Enable Fixed North Up](../personal/profiles.md#other)_
+
 ## Search
 ### Structured (city &#8594; street &#8594; house) address search doesn't find the house
 
