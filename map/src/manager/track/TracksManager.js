@@ -243,24 +243,27 @@ async function getTrackData(file) {
 // show overwrite-confirmation dialog
 // called from GeneralInfo and PanelButtons
 function handleEditCloudTrack(ctx) {
-    const track = { ...ctx.selectedGpxFile }; // prepare copy
-    const name = prepareName(track.name, true); // get local name
-    const localTrackNotFound = !ctx.localTracks.find((t) => t.name === name);
+    return new Promise((resolve) => {
+        const track = { ...ctx.selectedGpxFile };
+        const name = prepareName(track.name, true);
+        const localTrackNotFound = !ctx.localTracks.find((t) => t.name === name);
 
-    function proceed() {
-        if (isRouteTrack(ctx)) {
-            ctx.setCurrentObjectType(OBJECT_TYPE_LOCAL_TRACK);
-            ctx.routeObject.setOption('route.map.conceal', true);
+        function proceed() {
+            if (isRouteTrack(ctx)) {
+                ctx.setCurrentObjectType(OBJECT_TYPE_LOCAL_TRACK);
+                ctx.routeObject.setOption('route.map.conceal', true);
+            }
+            saveTrackToLocal({ ctx, track, overwrite: true, cloudAutoSave: isCloudTrack(ctx) });
+            ctx.setUpdateInfoBlock(true);
+            resolve(true);
         }
-        saveTrackToLocal({ ctx, track, overwrite: true, cloudAutoSave: isCloudTrack(ctx) });
-        ctx.setUpdateInfoBlock(true);
-    }
 
-    confirm({
-        ctx,
-        callback: proceed,
-        skip: localTrackNotFound,
-        text: name + ' - Local track found. Overwrite?',
+        confirm({
+            ctx,
+            callback: proceed,
+            skip: localTrackNotFound,
+            text: name + ' - Local track found. Overwrite?',
+        });
     });
 }
 

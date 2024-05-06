@@ -37,6 +37,7 @@ export default function Render() {
         'Association' : 'office/office_office_association',
         'Financial' : 'office/office_office_financial',
         'Political party' : 'office/office_office_political_party',
+        'Property management' : 'office/office_office_property_management',
         'Notary' : 'office/office_office_notary',
         'Foundation' : 'office/office_office_foundation',
         'Tax advisor' : 'office/office_office_tax_advisor',

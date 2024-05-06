@@ -17,7 +17,6 @@ import TracksRoutingCache, {
     requestAnalytics,
     debouncer,
 } from '../../context/TracksRoutingCache';
-import WptMapDialog from '../../dialogs/WptMapDialog';
 import { saveTrackToLocalStorage } from '../../manager/track/SaveTrackManager';
 import { FAVORITE_FILE_TYPE } from '../../manager/FavoritesManager';
 
@@ -917,7 +916,6 @@ export default function LocalClientTrackLayer() {
                     setAddRoutingToTrack={setAddRoutingToTrack}
                 />
             )}
-            <WptMapDialog />
         </>
     );
 }

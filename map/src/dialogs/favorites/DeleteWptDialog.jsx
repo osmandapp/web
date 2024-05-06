@@ -11,11 +11,18 @@ import FavoritesManager from '../../manager/FavoritesManager';
 import FavoriteHelper from '../../infoblock/components/favorite/FavoriteHelper';
 import PointManager from '../../manager/PointManager';
 import { isEmpty } from 'lodash';
+import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 
-export default function DeleteFavoriteDialog({ dialogOpen, setDialogOpen, wpt = null, setOpenActions = null }) {
+export default function DeleteWptDialog({
+    dialogOpen,
+    setDialogOpen,
+    wpt = null,
+    isDetails = false,
+    setOpenActions = null,
+}) {
     const ctx = useContext(AppContext);
 
-    const useSelected = !isEmpty(ctx.selectedGpxFile);
+    const useSelected = !isEmpty(ctx.selectedGpxFile) && ctx.selectedGpxFile.markerCurrent;
 
     const toggleShowDialog = () => {
         setDialogOpen(!dialogOpen);
@@ -25,19 +32,27 @@ export default function DeleteFavoriteDialog({ dialogOpen, setDialogOpen, wpt = 
         //delete wpt from track
         if (ctx.addFavorite.editTrack) {
             if (ctx.selectedWpt) {
-                const lat = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lat : ctx.selectedWpt.wpt.lat;
-                const lng = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lng : ctx.selectedWpt.wpt.lon;
+                const lat = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lat : ctx.selectedWpt.lat;
+                const lng = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lng : ctx.selectedWpt.lon;
                 const ind = ctx.selectedGpxFile.wpts.findIndex((wpt) => wpt.lat === lat && wpt.lon === lng);
-                PointManager.deleteWpt(ind, ctx);
-                setDialogOpen(false);
+                PointManager.deleteWpt(ind, ctx, !isDetails);
                 ctx.setSelectedWpt(null);
+                if (!isDetails) {
+                    ctx.setCreateTrack({ ...ctx.createTrack, cloudAutoSave: true });
+                }
             }
         } else {
             //delete favorite point from group
-            await deleteFavorite();
-            if (setOpenActions) {
-                setOpenActions(false);
-            }
+            deleteFavorite().then(() => {
+                ctx.setSelectedWpt(null);
+                if (!isDetails) {
+                    ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
+                }
+            });
+        }
+        setDialogOpen(false);
+        if (setOpenActions) {
+            setOpenActions(false);
         }
     }
 

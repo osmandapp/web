@@ -56,7 +56,7 @@ const options = {
     }),
 };
 
-export function getWptIcon(point, color, background, icon, folder) {
+export function getWptIcon(point, color, background, icon, folder = POI_ICONS_FOLDER) {
     let colorBackground =
         color && color !== 'null'
             ? color
@@ -72,7 +72,6 @@ export function getWptIcon(point, color, background, icon, folder) {
             : point.extensions?.icon && point.extensions.icon !== 'null'
               ? point.extensions.icon
               : DEFAULT_WPT_ICON;
-    let iconsFolder = folder ? folder : POI_ICONS_FOLDER;
     let part = point ? 'mx_' : '';
     let html;
     const bsize = 24;
@@ -82,7 +81,7 @@ export function getWptIcon(point, color, background, icon, folder) {
     if (iconWpt) {
         html = `<svg viewBox="0 0 ${bsize} ${bsize}" filter="drop-shadow(5px 0 2px gray)" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
                 ${svg}
-                <image x="${offsetX}" y="${offsetY}" width="${isize}" height="${isize}" href="/map/images/${iconsFolder}/${part}${iconWpt}.svg" />
+                <image x="${offsetX}" y="${offsetY}" width="${isize}" height="${isize}" href="/map/images/${folder}/${part}${iconWpt}.svg" />
                 </svg>`;
     } else {
         html = `<svg viewBox="0 0 ${bsize} ${bsize}"  filter="drop-shadow(5px 0 2px gray)" xmlns="http://www.w3.org/2000/svg">

@@ -122,25 +122,10 @@ To show track on the map, you need to:
 ### Track Appearance
 
 :::tip note
-<ProFeature/> Some parameters you can use only with Pro feature <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
+
+<ProFeature/> Some parameters you can use only with Maps+ or Pro feature: <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">free and paid features</a>.
+
 :::
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-![3D tracks Android](@site/static/img/personal/map/3D_track_android.png) ![Routes tags Android](@site/static/img/personal/3D_track_1_android.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Battery optimization Android](@site/static/img/personal/map/battery_optim_android.png) 
-![Battery optimization Android](@site/static/img/personal/map/battery_optim_1_android.png)
-
-</TabItem>
-
-</Tabs> 
 
 In the OsmAnd application, you can apply some settings by changing the appearance of the tracks, to better identify them on the map.  
 
@@ -149,6 +134,22 @@ There are three ways to access the Track Appearance menu:
 - Tap the needed track on the map and select the Appearance icon in the Overview section.
 - Select Appearance from the [track recording context menu](../plugins/trip-recording#сurrent-track-recording).  
 - Go to *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> → &#8942; → <Translate android="true" ids="change_appearance"/>* for the tracks you have selected to be displayed on the map. 
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Track menu options Android](@site/static/img/map/track-appear-and-1.png)  ![Track menu Appearance Android](@site/static/img/map/track-appear-and-2.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Track menu iOS](@site/static/img/map/track-appear-ios-1.png) ![Configure color iOS](@site/static/img/map/track-appear-ios-2.png)  
+
+</TabItem>
+
+</Tabs> 
 
 |  |   
 |----------|
@@ -222,7 +223,7 @@ Navigation route is a solid line prepared by [Route Preparation process](../navi
 
 <TabItem value="android" label="Android">
 
-OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They are selectable by [clicking on the route shield](./tracks-on-map.md#save-as-a-track) or with the right configuration of a visible set of routes, it's possible to follow the route by color & shields.  You can create a track on top of the routes using [Plan Route](../plan-route/create-route.md) functionality.
+OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They are selectable by [clicking on the route shield](#save-as-a-track) or with the right configuration of a visible set of routes, it's possible to follow the route by color & shields.  You can create a track on top of the routes using [Plan Route](../plan-route/create-route.md) functionality.
 
 _<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_routes"/>_
 

@@ -17,6 +17,19 @@ You can get the latest version of OsmAnd free from listed app stores.
 Direct links to free OsmAnd versions.
 ## Version 4 
 
+### Version 4.7
+Release date: 04/2024
+* New "Speedometer" widget compatible with Android Auto
+* Configure the map screen by adding multiple "Quick Action" buttons
+* Improved readability of data in graphs
+* Improved appearance customization for group of tracks
+* Added filters by sensor data for tracks
+* Added support for additional GPX tags
+* Customize "Distance during navigation": choose between precise or round up numbers
+* Unified UI for track selection 
+* OpenStreetMap login switched to OAuth 2.0
+
+<DownloadRelease blog="osmand-android-4-7-released" release="net.osmand-4.7.10.apk" />
 
 ### Version 4.6 
 Release date: 12/2023

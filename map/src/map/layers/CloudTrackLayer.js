@@ -11,6 +11,9 @@ function clickHandler({ ctx, file, layer }) {
         file.analysis = TracksManager.prepareAnalysis(file.analysis);
         ctx.setSelectedGpxFile({ ...file, cloudRedrawWpts: true });
         ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
+        if (ctx.selectedWpt) {
+            ctx.setSelectedWpt(null);
+        }
         ctx.setUpdateInfoBlock(true);
         layer.off('click'); // once
     }

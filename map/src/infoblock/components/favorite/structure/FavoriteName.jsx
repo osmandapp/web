@@ -18,7 +18,7 @@ export default function FavoriteName({
     const [favNames, setFavNames] = useState([]);
 
     useEffect(() => {
-        let group = ctx.favorites.mapObjs[favoriteGroup === null ? favorite?.category : favoriteGroup.name];
+        let group = ctx.favorites?.mapObjs?.[!favoriteGroup ? favorite?.category : favoriteGroup.name];
         let names = [];
         group &&
             group.wpts.forEach((wpt) => {
@@ -54,6 +54,12 @@ export default function FavoriteName({
             return ' ';
         }
     }
+
+    useEffect(() => {
+        if (ctx.selectedWpt?.poi) {
+            setFavoriteName(ctx.selectedWpt.poi?.options?.title);
+        }
+    }, [ctx.selectedWpt]);
 
     return (
         <ListItemText sx={{ maxWidth: `${widthDialog}px` }}>

@@ -161,7 +161,6 @@ export default function MainMenu({
     //open main menu if infoblock was opened
     useEffect(() => {
         if (showInfoBlock && !menuInfo) {
-            setOpenMainMenu(true);
             selectMenuInfo();
         }
     }, [showInfoBlock]);
@@ -202,6 +201,8 @@ export default function MainMenu({
         if (currentMenu) {
             setMenuInfo(currentMenu.component);
             setSelectedType(currentMenu.type);
+        } else {
+            setOpenMainMenu(true);
         }
     }
 
@@ -243,6 +244,7 @@ export default function MainMenu({
 
     function selectMenu(item) {
         ctx.setOpenGroups([]);
+        ctx.setSelectedWpt(null);
         setOpenVisibleMenu(false);
         if (menuInfo) {
             // update menu

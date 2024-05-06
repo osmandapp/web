@@ -155,6 +155,16 @@ In this section you can set parameters of units & formats for chosen application
 
 ![Profiles General Settings Units & formats Android](@site/static/img/personal/profiles/profile_gs_unitsformats_android.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Profiles General Settings Units & formats iOS](@site/static/img/personal/profiles/profile_gs_unitsformats_ios.png)
+
+</TabItem>
+
+</Tabs>
+
 | Parameter | Format | Note   |
 |:------------|:---------------|:---------------|
 |**<Translate android="true" ids="driving_region"/>**| <Translate android="true" ids="shared_string_automatic"/> | According to the device location |
@@ -175,56 +185,20 @@ In this section you can set parameters of units & formats for chosen application
 |          | <Translate android="true" ids="navigate_point_format_utm"/> | 34N 5552876 423678 (Zone Northing Easting) . [<Translate android="true" ids="utm_format_descr"/>](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) |
 |          | <Translate android="true" ids="navigate_point_format_mgrs"/> | Example: 34U DA 23678 52873 . [<Translate android="true" ids="mgrs_format_descr"/>](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)  |
 |          | <Translate android="true" ids="navigate_point_format_olc"/> | Example:  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) represents area 9m x 14m)  |
-|          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> | Example: 2 215 227.87, 830 915.9 ([Swiss coordinate system](https://www.wikiwand.com/en/Swiss_coordinate_system))  |
-|          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> | Example: 4 215 227.87, 1 830 915.9 ([Swiss coordinate system](https://www.wikiwand.com/en/Swiss_coordinate_system)) |
-|**<Translate android="true" ids="angular_measeurement"/>**| Degrees 180° | All angular values have readings from 0° to 180° and from 0° to -180°.  |
+|          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (Android version only) | Example: 2 215 227.87, 830 915.9 ([Swiss coordinate system](https://www.wikiwand.com/en/Swiss_coordinate_system))  |
+|          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (Android version only) | Example: 4 215 227.87, 1 830 915.9 ([Swiss coordinate system](https://www.wikiwand.com/en/Swiss_coordinate_system)) |
+|**<Translate android="true" ids="angular_measeurement"/>** (Android) / **<Translate ios="true" ids="angular_units"/>** (iOS)| Degrees 180° | All angular values have readings from 0° to 180° and from 0° to -180°.  |
 |          | Degrees 360° | All angular values have readings from 0° to 360°.  |
 |          | <Translate android="true" ids="shared_string_milliradians"/> | All angular values have [milliradian value](https://en.wikipedia.org/wiki/Milliradian).  |
-|**<Translate android="true" ids="default_speed_system"/>**| <Translate android="true" ids="si_kmh"/> | 90 km/h  |
+|**<Translate android="true" ids="default_speed_system"/>** (Android) / **<Translate ios="true" ids="units_of_speed"/>** (iOS)| <Translate android="true" ids="si_kmh"/> | 90 km/h  |
 |          | <Translate android="true" ids="si_mph"/> | 55.92 mph  |
 |          | <Translate android="true" ids="si_m_s"/> | 30 m/s |
 |          | <Translate android="true" ids="si_min_m"/> | 1.073 min/m |
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 min/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 kn |
+|**<Translate android="true" ids="distance_during_navigation"/>** | <Translate android="true" ids="precise"/> | _For exact numbers_ (Choose how distance information is displayed in navigation widgets (distance to point, next turn, lanes)) |
+|          | <Translate android="true" ids="round_up"/> | _For easier readability_  |
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Profiles General Settings Units & formats iOS](@site/static/img/personal/profiles/profile_gs_unitsformats_ios.png)
-
-| Parameter | Format | Note |
-|:------------|:---------------|:---------------|
-|**<Translate ios="true" ids="driving_region"/>**| <Translate ios="true" ids="shared_string_automatic"/> | According to the device location |
-|            | <Translate ios="true" ids="driving_region_europe_asia"/>   | <Translate ios="true" ids="right_side_navigation"/>, <Translate ios="true" ids="si_km_m"/>  |
-|            | <Translate ios="true" ids="driving_region_us"/>   |  <Translate ios="true" ids="right_side_navigation"/>, <Translate ios="true" ids="si_mi_feet"/>  |
-|            | <Translate ios="true" ids="driving_region_canada"/>   | <Translate ios="true" ids="right_side_navigation"/>, <Translate ios="true" ids="si_km_m"/>   |
-|            | <Translate ios="true" ids="driving_region_uk"/>   |  <Translate ios="true" ids="left_side_navigation"/>, <Translate ios="true" ids="si_mi_feet"/>   |
-|            | <Translate ios="true" ids="driving_region_japan"/>   | <Translate ios="true" ids="left_side_navigation"/>, <Translate ios="true" ids="si_km_m"/>   |
-|            | <Translate ios="true" ids="driving_region_australia"/>   |  <Translate ios="true" ids="left_side_navigation"/>, <Translate ios="true" ids="si_km_m"/>  |
-|**<Translate ios="true" ids="unit_of_length"/>**| <Translate ios="true" ids="si_km_m"/> | 1 km / 1000 m |
-|          | <Translate ios="true" ids="si_mi_feet"/> | 0.62 ml / 3281 f |
-|          | <Translate ios="true" ids="si_mi_meters"/> | 0.62 ml / 1000 m |
-|          | <Translate ios="true" ids="si_mi_yard"/> | 0.62 ml / 1094 ya |
-|          | <Translate ios="true" ids="si_nm"/> | 0.54 nml |
-|**<Translate ios="true" ids="coords_format"/>**| <Translate ios="true" ids="navigate_point_format_D"/> | Example: 50.12333° 19.93233° (Lat Long) |
-|          | <Translate ios="true" ids="navigate_point_format_DM"/> | Example: 50°7.393′ 19°55.941′ (Lat Long)  |
-|          | <Translate ios="true" ids="navigate_point_format_DMS"/> | Example: 50°7′23.6″ 19°55′56.4″ (Lat Long) 23°27′30″ |
-|          | <Translate ios="true" ids="navigate_point_format_UTM"/> | 34N 5552876 423678 (Zone Northing Easting) . [<Translate ios="true" ids="utm_description"/>](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) |
-|          | <Translate ios="true" ids="navigate_point_format_OLC"/> | Example:  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) represents area 9m x 14m)  |
-|**<Translate ios="true" ids="angular_units"/>**| Degrees 180° | All angular values have readings from 0° to 180° and from 0° to -180°.  |
-|          | Degrees 360° | All angular values have readings from 0° to 360°.  |
-|          | <Translate ios="true" ids="shared_string_milliradians"/> | All angular values have [milliradian value](https://en.wikipedia.org/wiki/Milliradian).  |
-|**<Translate ios="true" ids="default_speed_system"/>**| <Translate ios="true" ids="si_kmh"/> | 90 km/h  |
-|          | <Translate ios="true" ids="si_mph"/> | 55.92 mph  |
-|          | <Translate ios="true" ids="si_m_s"/> | 30 m/s |
-|          | <Translate ios="true" ids="si_min_m"/> | 1.073 min/m |
-|          | <Translate ios="true" ids="si_min_km"/> | 0.667 min/km |
-|          | <Translate ios="true" ids="si_nm_h"/> | 48.59 kn |
-
-</TabItem>
-
-</Tabs>
 
 
 ### Other
@@ -242,6 +216,7 @@ Additional settings for profile.You can switch buttons and input devices for Osm
 - *<Translate android="true" ids="use_volume_buttons_as_zoom"/>* - allows to use or not volume buttons of a device as [zoom](../map/interact-with-map.md#my-location--zoom).
 - *[<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings)* - allows to use or not [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
 - *[<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings)* - allows to use or not [Magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
+- *[<Translate android="true" ids="fix_north_up"/>](../map/interact-with-map.md#map-orientation-modes)* - allows to hard fix or not the North map position.
 - *<Translate android="true" ids="tap_on_map_to_hide_interface"/>* - tapping an empty space on the map hides control buttons and widgets.
 - *[<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#disable-all-animations)* - allows to switch on/off animation for navigation mode.
 - *[<Translate android="true" ids="animate_my_location"/>](../navigation/guidance/map-during-navigation.md#animate-my-location-android-animate-own-position)* - <Translate android="true" ids="animate_my_location_desc"/> Note that the animation takes about 1 second, which creates a slight delay for the *[My location](../map/interact-with-map.md#my-location--zoom)* position to display on the map relative to your location.  
@@ -253,7 +228,7 @@ Additional settings for profile.You can switch buttons and input devices for Osm
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_others"/>*
 
-![Profiles General Settings Other Android](@site/static/img/personal/profiles/profile_gs_other_android.png)  
+![Profiles General Settings Other iOS](@site/static/img/personal/profiles/profile_gs_other_ios.png)  
 
 - *[<Translate ios="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-device-buttons)* - allow you to add other devices, such as <Translate ios="true" ids="sett_wunderlinq_ext_input"/> or <Translate ios="true" ids="sett_generic_ext_input"/>, to control the OsmAnd program using the existing buttons.  
 

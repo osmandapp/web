@@ -1,0 +1,64 @@
+.closeIcon {
+    fill: var(--svg-icon-color) !important;
+    padding: 8px;
+    &:hover {
+        fill: var(--selected-color) !important;
+        background-color: #f5f5f5 !important;
+    }
+}
+
+.topContainer {
+    display: flex !important;
+    min-height: 64px !important;
+    padding: 12px 16px !important;
+    align-items: center !important;
+    gap: 18px !important;
+    justify-content: space-between !important;
+}
+
+.name {
+    color: var(--text-primary) !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+}
+
+.wptCategory {
+    display: flex !important;
+    padding: 0px 16px !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+.wptCategoryText {
+    color: var(--text-secondary) !important;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+.wptActionsButtons {
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 6px !important;
+    gap: 4px !important;
+    flex-direction: column !important;
+    border-radius: 3px !important;
+    background: rgba(35, 123, 255, 0.1) !important;
+}
+.wptActionButtonContainer {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 8px 16px 0px 16px !important;
+    gap: 8px !important;
+    align-self: stretch !important;
+}
+.wptActionButtonIcon {
+    fill: #237bff !important;
+}
+.location {
+    display: flex !important;
+    margin-right: 24px !important;
+    justify-content: space-between !important;
+    fill: var(--svg-icon-color) !important;
+}

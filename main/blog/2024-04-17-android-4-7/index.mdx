@@ -40,6 +40,7 @@ Thank you for your continued support of OsmAnd. Happy navigating!
 - [Round up numbers](#round-up-numbers) in navigation widgets
 - [Custom Quick Action Buttons](#custom-buttons)
 - [All route tags](#routes-tags) for the Route info of the Context menu
+- [Vertical exaggeration](#vertical-exaggeration)
 - [3D tracks visualization](#3d-track-visualization)
 - [Battery optimization dialogue](#battery-optimization-dialogue) of Track recording
 - [Redesign graphs](#redesign-graphs) of tracks and route
@@ -51,6 +52,12 @@ Thank you for your continued support of OsmAnd. Happy navigating!
 - [Added tags support](#tags-support): author, cmt, link, keywords, copyright, email. Moved sensor tags to gpxtpx:TrackPointExtensio.
 - [More for this release](#more)
 
+
+:::note
+
+OsmAnd 4.7.10 is the last build for installation to Android 6.
+
+:::
 
 ## Enhanced Offline Navigation
 
@@ -124,9 +131,19 @@ Example of relation tags for ["CAIOSM - Emilia Romagna - sentiero 137"](https://
 
 ![Routes tags Android](./img/routes_tags_android.png)
 
+## Vertical exaggeration
+
+A special coefficient for [3D relief](https://osmand.net/docs/user/plugins/contour-lines#3d-relief) has been added in this release. Now, you can adjust the Vertical Exaggeration:
+
+ _Menu → Configure map → Topography (3D Relief) → Vertical exaggeration_ (Ensure that 3D relief is enabled)
+
+This feature allows you to view the contours of smoother topography with enhanced detail.
+
+![vertival exaggeraton](./img/vertical_exag_and.png)
+
 ## 3D track visualization
 
-Added 3D visialization for tracks by altitude:
+Added 3D visialization for tracks by altitude (it's a [paid feature](https://osmand.net/docs/user/purchases/android#free-and-paid-features) of Maps+):
 
 _[Track Context menu](https://osmand.net/docs/user/map/tracks-on-map#track-appearance) → Change Appearance → 3D visualization_
 

@@ -25,7 +25,7 @@ export default class TrackTabList {
         }
 
         if ((isCloudTrack(ctx) && !isEmptyTrack(ctx.selectedGpxFile, true, false)) || isLocalTrack(ctx)) {
-            tabs.Waypoints = <WaypointsTab key={'waypoints' + ctx.selectedGpxFile.name} />;
+            tabs.Waypoints = <WaypointsTab key={'waypoints'} />;
         }
 
         if (isRouteTrack(ctx) || hasSegmentTurns({ track: ctx.selectedGpxFile })) {

@@ -8,7 +8,7 @@ import { ReactComponent as DirectionIcon } from '../../assets/icons/ic_direction
 import ActionsMenu from '../actions/ActionsMenu';
 import styles from '../trackfavmenu.module.css';
 import FavoriteItemActions from '../actions/FavoriteItemActions';
-import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
+import { getColorLocation } from '../../manager/FavoritesManager';
 import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
 import MenuItemsTitle from '../components/MenuItemsTitle';
 
@@ -20,8 +20,6 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
     const [hoverIconInfo, setHoverIconInfo] = useState(false);
     const [openActions, setOpenActions] = useState(false);
     const anchorEl = useRef(null);
-
-    const colorLocation = currentLoc === LOCATION_UNAVAILABLE ? '#ff8800' : '#237bff';
 
     function addFavoriteToMap(marker) {
         ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
@@ -46,7 +44,8 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
         newSelectedGpxFile.name = marker.title;
         newSelectedGpxFile.zoom = true;
         newSelectedGpxFile.prevState = ctx.selectedGpxFile;
-        ctx.setUpdateInfoBlock(true);
+        newSelectedGpxFile.favItem = true;
+        ctx.setSelectedWpt(newSelectedGpxFile);
         ctx.setSelectedGpxFile(newSelectedGpxFile);
     }
 
@@ -58,12 +57,16 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
         return (
             <div style={{ display: 'flex', alignItems: 'centre' }}>
                 {marker.locDist && (
-                    <ListItemIcon sx={{ mr: '-23px !important', fill: colorLocation, mt: '2px' }}>
+                    <ListItemIcon sx={{ mr: '-23px !important', fill: getColorLocation(currentLoc), mt: '2px' }}>
                         <DirectionIcon />
                     </ListItemIcon>
                 )}
                 {marker.locDist && (
-                    <Typography variant="body2" className={styles.favLocationInfo} sx={{ color: colorLocation }}>
+                    <Typography
+                        variant="body2"
+                        className={styles.favLocationInfo}
+                        sx={{ color: getColorLocation(currentLoc) }}
+                    >
                         {`${marker.locDist} km`}
                     </Typography>
                 )}

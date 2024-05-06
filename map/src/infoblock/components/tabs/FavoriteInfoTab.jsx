@@ -4,8 +4,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import AppContext from '../../../context/AppContext';
 import MarkerOptions, { removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
-import EditFavoriteDialog from '../../../dialogs/favorites/EditFavoriteDialog';
-import DeleteFavoriteDialog from '../../../dialogs/favorites/DeleteFavoriteDialog';
+import EditWptDialog from '../../../dialogs/favorites/EditWptDialog';
+import DeleteWptDialog from '../../../dialogs/favorites/DeleteWptDialog';
 import FavoritesManager, {
     isNoValue,
     prepareBackground,
@@ -131,7 +131,7 @@ const FavoriteInfoTab = () => {
                 Edit
             </Button>
             {editFavoritesDialogOpen && (
-                <EditFavoriteDialog
+                <EditWptDialog
                     wpt={favorite}
                     editFavoritesDialogOpen={editFavoritesDialogOpen}
                     setEditFavoritesDialogOpen={setEditFavoritesDialogOpen}
@@ -149,10 +149,7 @@ const FavoriteInfoTab = () => {
                 Delete
             </Button>
             {deleteFavoritesDialogOpen && (
-                <DeleteFavoriteDialog
-                    dialogOpen={deleteFavoritesDialogOpen}
-                    setDialogOpen={setDeleteFavoritesDialogOpen}
-                />
+                <DeleteWptDialog dialogOpen={deleteFavoritesDialogOpen} setDialogOpen={setDeleteFavoritesDialogOpen} />
             )}
         </Box>
     );
