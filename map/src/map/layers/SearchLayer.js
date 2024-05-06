@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { OBJECT_SEARCH } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import { apiGet } from '../../util/HttpApi';
@@ -8,18 +8,27 @@ import styles from '../../menu/search/search.module.css';
 import 'leaflet-spin';
 import _ from 'lodash';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { Paper, Table, TableBody, TableCell, TableRow } from '@mui/material';
+import { Box, IconButton, Modal, Paper, Table, TableBody, TableCell, TableRow } from '@mui/material';
+import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import 'leaflet.markercluster';
 
 export default function SearchLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
-    const geoJsonLayerRef = useRef(null);
+
+    const mainIconsLayerRef = useRef(null);
     const otherIconsLayerRef = useRef(null);
 
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [selectedObj, setSelectedObj] = useState(null);
+
+    function closeModal() {
+        setModalIsOpen(false);
+    }
+
     function removeLayers() {
-        if (geoJsonLayerRef.current) {
-            geoJsonLayerRef.current.clearLayers();
+        if (mainIconsLayerRef.current) {
+            mainIconsLayerRef.current.clearLayers();
         }
         if (otherIconsLayerRef.current) {
             otherIconsLayerRef.current.clearLayers();
@@ -38,16 +47,23 @@ export default function SearchLayer() {
         const settings = ctx.searchSettings;
 
         const onMapMoveEnd = async () => {
-            if (ctx.currentObjectType === OBJECT_SEARCH && (geoJsonLayerRef.current || otherIconsLayerRef.current)) {
+            if (
+                ctx.searchSettings.useWikiImages ||
+                (ctx.currentObjectType === OBJECT_SEARCH && (mainIconsLayerRef.current || otherIconsLayerRef.current))
+            ) {
                 debouncedGetPlaces({ controller, ignore, settings });
             }
         };
-
         map.on('moveend', onMapMoveEnd);
 
-        if (ctx.currentObjectType === OBJECT_SEARCH) {
+        if (ctx.currentObjectType === OBJECT_SEARCH || ctx.searchSettings.useWikiImages) {
             removeLayers();
             debouncedGetPlaces({ controller, ignore, settings });
+        }
+
+        if (!ctx.searchSettings.useWikiImages && ctx.currentObjectType !== OBJECT_SEARCH) {
+            removeLayers();
+            ctx.setWikiPlaces(null);
         }
 
         return () => {
@@ -71,7 +87,7 @@ export default function SearchLayer() {
     const debouncedGetPlaces = useRef(
         _.debounce(async ({ controller, ignore, settings }) => {
             if (!ignore) {
-                if (settings.selectedFilters.size === 0) {
+                if (settings?.selectedFilters?.size === 0) {
                     ctx.setWikiPlaces(null);
                     return;
                 }
@@ -83,7 +99,7 @@ export default function SearchLayer() {
                     params: {
                         northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
                         southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
-                        filters: [...settings.selectedFilters],
+                        filters: settings?.selectedFilters ? [...settings.selectedFilters] : null,
                     },
                     signal: controller.signal,
                 });
@@ -95,14 +111,20 @@ export default function SearchLayer() {
                 }
                 map.spin(false);
             }
-        }, 1000)
+        }, 500)
     ).current;
 
     function openInfo(feature) {
-        console.log(feature);
+        if (ctx.searchSettings.useWikiImages) {
+            setSelectedObj(feature);
+            setModalIsOpen(true);
+        }
     }
 
     function addPopup(feature, markers) {
+        if (ctx.searchSettings.useWikiImages) {
+            return;
+        }
         const popupContent = renderToStaticMarkup(<PopupContent properties={feature.properties} />);
         const popupOptions = {
             closeButton: true,
@@ -162,14 +184,16 @@ export default function SearchLayer() {
     });
 
     markerClusterGroup.on('clusterclick', function (cluster) {
-        const markers = cluster.layer.getAllChildMarkers();
-        if (markers.length > 0) {
-            markers[0].fire('click');
+        const childMarkers = cluster.layer.getAllChildMarkers();
+        const minIndexMarker = childMarkers.reduce((min, m) => (m.options.index < min.options.index ? m : min));
+        const mainMarker = childMarkers.find((m) => m.options.index === minIndexMarker.options.index);
+        if (mainMarker) {
+            mainMarker.fire('click');
         }
     });
 
     function createGeoJsonData(places) {
-        const sortedPlaces = [...places].sort((a, b) => b.properties.rowNum - a.properties.rowNum);
+        const sortedPlaces = [...places].sort((a, b) => a.properties.rowNum - b.properties.rowNum);
         return {
             type: 'FeatureCollection',
             features: sortedPlaces.map((place, index) => ({
@@ -221,6 +245,9 @@ export default function SearchLayer() {
                             weight: 1,
                             zIndex: 1000,
                         });
+                        circle.on('click', () => {
+                            openInfo(feature);
+                        });
                         addPopup(feature, [circle]);
                         simpleMarkersArr.addLayer(circle);
                     } else {
@@ -254,6 +281,9 @@ export default function SearchLayer() {
                                     weight: 1,
                                     zIndex: 1000,
                                 });
+                                circle.on('click', () => {
+                                    openInfo(feature);
+                                });
                                 addPopup(feature, [circle]);
                                 markerClusterGroup.addLayer(circle);
                                 resolve();
@@ -264,10 +294,70 @@ export default function SearchLayer() {
                     }
                 },
             });
-            otherIconsLayerRef.current = addLayers(otherIconsLayerRef.current, simpleMarkersArr);
             Promise.all(markerPromises).then(() => {
-                geoJsonLayerRef.current = addLayers(geoJsonLayerRef.current, markerClusterGroup);
+                otherIconsLayerRef.current = addLayers(otherIconsLayerRef.current, simpleMarkersArr);
+                mainIconsLayerRef.current = addLayers(mainIconsLayerRef.current, markerClusterGroup);
             });
         }
     }, [ctx.wikiPlaces]);
+
+    return (
+        <>
+            {selectedObj && (
+                <Modal
+                    open={modalIsOpen}
+                    onClose={closeModal}
+                    sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}
+                >
+                    <Box
+                        sx={{
+                            bgcolor: 'background.paper',
+                            border: '1px solid #000',
+                            boxShadow: 24,
+                            p: 4,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            position: 'relative',
+                        }}
+                    >
+                        <IconButton
+                            variant="contained"
+                            type="button"
+                            sx={{ top: 0, right: 0, position: 'absolute' }}
+                            onClick={closeModal}
+                        >
+                            <CloseIcon />
+                        </IconButton>
+                        <Box>
+                            <img
+                                src={`${WIKI_IMAGE_BASE_URL}${selectedObj.properties.imageTitle}?width=300`}
+                                alt="Selected"
+                            />
+                        </Box>
+                        <Box sx={{ marginTop: 2 }}>
+                            <Table size="small" aria-label="properties table">
+                                <TableBody>
+                                    {Object.entries(selectedObj.properties).map(([key, value]) => (
+                                        <TableRow key={key}>
+                                            <TableCell component="th" scope="row">
+                                                {key == null ? 'N/A' : key.toString()}
+                                            </TableCell>
+                                            <TableCell align="right">
+                                                {value == null ? 'N/A' : value.toString()}
+                                            </TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </Box>
+                    </Box>
+                </Modal>
+            )}
+        </>
+    );
 }

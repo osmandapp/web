@@ -7,6 +7,7 @@ import {
     ListItemText,
     MenuItem,
     Popover,
+    Switch,
     Toolbar,
     Typography,
 } from '@mui/material';
@@ -210,6 +211,17 @@ export default function SettingsMenu({ setCloudSettings }) {
                             </Typography>
                         </ListItemText>
                     </MenuItem>
+                </>
+            )}
+            {ctx.develFeatures && (
+                <>
+                    <Typography component="div" sx={{ ml: 2 }}>
+                        Explore Wikimedia Images
+                        <Switch
+                            checked={ctx.searchSettings.useWikiImages ?? false}
+                            onChange={(event) => ctx.setSearchSettings({ useWikiImages: event.target.checked })}
+                        />
+                    </Typography>
                 </>
             )}
             <Popover
