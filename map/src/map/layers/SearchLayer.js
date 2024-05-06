@@ -140,7 +140,7 @@ export default function SearchLayer() {
     useEffect(() => {
         if (ctx.wikiPlaces) {
             let markerArr = new L.geoJSON();
-            const sortedPlaces = [...ctx.wikiPlaces].sort((a, b) => b.properties.qrank - a.properties.qrank);
+            const sortedPlaces = [...ctx.wikiPlaces].sort((a, b) => b.properties.rowNum - a.properties.rowNum);
             const geoJsonData = {
                 type: 'FeatureCollection',
                 features: sortedPlaces.map((place, index) => ({
@@ -185,7 +185,7 @@ export default function SearchLayer() {
                         ? feature.properties.imageTitle
                         : feature.properties.photoTitle;
                     const iconUrl = `${WIKI_IMAGE_BASE_URL}${imgTag}?width=300`;
-                    const iconSize = feature.index < 50 ? [46, 46] : null;
+                    const iconSize = feature.index < 100 ? [46, 46] : null;
                     if (!iconSize) {
                         const circle = L.circleMarker(latlng, {
                             fillOpacity: 0.9,
