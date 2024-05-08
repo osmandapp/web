@@ -9,7 +9,7 @@ import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import { ReactComponent as FolderHiddenIcon } from '../../assets/icons/ic_action_folder_hidden.svg';
 import FavoriteGroupActions from '../actions/FavoriteGroupActions';
-import MenuItemsTitle from '../components/MenuItemsTitle';
+import MenuItemWithLines from '../components/MenuItemWithLines';
 import { useTranslation } from 'react-i18next';
 import { getLocalizedTimeUpdate } from '../settings/SettingsMenu';
 
@@ -58,7 +58,7 @@ export default function FavoriteGroup({ index, group }) {
                     )}
                 </ListItemIcon>
                 <ListItemText>
-                    <MenuItemsTitle name={group.name} maxLines={2} />
+                    <MenuItemWithLines name={group.name} maxLines={2} />
                     <Typography variant="body2" className={styles.groupInfo} noWrap>
                         {`${getLocalizedTimeUpdate(group.clienttimems)}, ${getSize()}`}
                     </Typography>

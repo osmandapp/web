@@ -7,7 +7,7 @@ import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_
 import styles from '../trackfavmenu.module.css';
 import GroupActions from '../actions/GroupActions';
 import ActionsMenu from '../actions/ActionsMenu';
-import MenuItemsTitle from '../components/MenuItemsTitle';
+import MenuItemWithLines from '../components/MenuItemWithLines';
 import { Tooltip } from '@mui/material/';
 import { useTranslation } from 'react-i18next';
 import { getLocalizedTimeUpdate } from '../settings/SettingsMenu';
@@ -43,7 +43,7 @@ export default function CloudTrackGroup({ index, group }) {
                     <FolderIcon />
                 </ListItemIcon>
                 <ListItemText>
-                    <MenuItemsTitle name={group.name} maxLines={2} />
+                    <MenuItemWithLines name={group.name} maxLines={2} />
                     <Typography variant="body2" className={styles.groupInfo} noWrap>
                         {`${getLocalizedTimeUpdate(group.lastModifiedData)}, ${t('shared_string_gpx_files').toLowerCase()} ${group.realSize}`}
                     </Typography>

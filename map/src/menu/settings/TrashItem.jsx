@@ -5,7 +5,7 @@ import { Divider, IconButton, ListItemIcon, ListItemText, MenuItem, Skeleton, Ty
 import { formatDate, getFileItemSize, getItemIcon } from '../../manager/SettingsManager';
 import styles from './settings.module.css';
 import trackStyles from '../trackfavmenu.module.css';
-import MenuItemsTitle from '../components/MenuItemsTitle';
+import MenuItemWithLines from '../components/MenuItemWithLines';
 import ActionsMenu from '../actions/ActionsMenu';
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
@@ -51,7 +51,7 @@ export default function TrashItem({ item, changes, setChanges }) {
                                             {getItemIcon(item.file)}
                                         </ListItemIcon>
                                         <ListItemText>
-                                            <MenuItemsTitle name={fileName} maxLines={2} />
+                                            <MenuItemWithLines name={fileName} maxLines={2} />
                                             <Typography variant="body2" className={trackStyles.groupInfo} noWrap>
                                                 {formatDate(item.file.updatetimems)}
                                             </Typography>

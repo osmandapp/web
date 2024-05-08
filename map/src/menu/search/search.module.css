@@ -22,6 +22,13 @@
     margin-left: 8px !important;
     color: var(--text-secondary) !important;
 }
+.placeDesc {
+    color: var(--text-secondary) !important;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+}
 .placeTypesIcon {
     min-width: 16px !important;
     max-width: 16px !important;

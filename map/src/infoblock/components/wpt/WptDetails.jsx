@@ -44,7 +44,7 @@ import { format } from 'date-fns';
 import { getDistance } from '../../../util/Utils';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { getCenterMapLoc } from '../../../manager/MapManager';
-import MenuItemsTitle from '../../../menu/components/MenuItemsTitle';
+import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import { useNavigate } from 'react-router-dom';
 import { apiGet } from '../../../util/HttpApi';
 import Loading from '../../../menu/errors/Loading';
@@ -338,7 +338,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     {wpt !== null && (
                         <ListItemText id={getId()}>
                             <Box className={styles.topContainer}>
-                                <MenuItemsTitle maxLines={3} className={styles.name}>
+                                <MenuItemWithLines maxLines={3} className={styles.name}>
                                     <Typography className={styles.name}>
                                         {wpt.type?.isPoi ? (
                                             <Link href={wpt.osmUrl} target="_blank" underline="none">
@@ -348,7 +348,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                             wpt.name ?? 'No name'
                                         )}
                                     </Typography>
-                                </MenuItemsTitle>
+                                </MenuItemWithLines>
                                 {wpt.icon && <WptIcon />}
                             </Box>
                             {wpt?.category && <WptCategory />}

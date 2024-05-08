@@ -11,10 +11,13 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { Box, IconButton, Modal, Paper, Table, TableBody, TableCell, TableRow } from '@mui/material';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import 'leaflet.markercluster';
+import { useTranslation } from 'react-i18next';
 
 export default function SearchLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
+
+    const { i18n } = useTranslation();
 
     const mainIconsLayerRef = useRef(null);
     const otherIconsLayerRef = useRef(null);
@@ -99,6 +102,7 @@ export default function SearchLayer() {
                     params: {
                         northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
                         southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
+                        lang: settings.useWikiImages ? null : i18n.language,
                         filters: settings?.selectedFilters ? [...settings.selectedFilters] : null,
                     },
                     signal: controller.signal,

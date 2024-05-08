@@ -10,7 +10,7 @@ import styles from '../trackfavmenu.module.css';
 import FavoriteItemActions from '../actions/FavoriteItemActions';
 import { getColorLocation } from '../../manager/FavoritesManager';
 import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
-import MenuItemsTitle from '../components/MenuItemsTitle';
+import MenuItemWithLines from '../components/MenuItemWithLines';
 
 export default function FavoriteItem({ marker, group, currentLoc }) {
     const ctx = useContext(AppContext);
@@ -99,7 +99,7 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
                                 <CustomIcon />
                             </ListItemIcon>
                             <ListItemText>
-                                <MenuItemsTitle name={marker.title} maxLines={2} />
+                                <MenuItemWithLines name={marker.title} maxLines={2} />
                                 <FavInfo />
                             </ListItemText>
                             <IconButton

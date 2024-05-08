@@ -1,7 +1,7 @@
 import { useInView } from 'react-intersection-observer';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
-import MenuItemsTitle from '../components/MenuItemsTitle';
+import MenuItemWithLines from '../components/MenuItemWithLines';
 import { WIKI_IMAGE_BASE_URL } from '../../manager/SearchManager';
 import styles from '../search/search.module.css';
 import { addPoiTypeTag, POI_PREFIX } from '../../infoblock/components/wpt/WptTagsProvider';
@@ -18,6 +18,7 @@ export default function WikiPlacesItem({ item }) {
     const { t } = useTranslation();
 
     const name = item.properties?.wikiTitle;
+    const desc = item.properties?.wikiDesc;
     const imageTitle = item.properties?.photoTitle;
     const poiType = item.properties?.poitype;
     const poiSubType = item.properties?.poisubtype;
@@ -63,9 +64,12 @@ export default function WikiPlacesItem({ item }) {
                                     onClick={() => openInfo(item)}
                                 >
                                     <ListItemText>
-                                        <MenuItemsTitle className={styles.titleText} name={name} maxLines={2} />
+                                        <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
+                                        {desc && (
+                                            <MenuItemWithLines className={styles.placeDesc} name={desc} maxLines={2} />
+                                        )}
                                         {poiType && poiSubType && (
-                                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', marginTop: '6px' }}>
                                                 {typeIcon && (
                                                     <ListItemIcon className={styles.placeTypesIcon}>
                                                         {typeIcon}
