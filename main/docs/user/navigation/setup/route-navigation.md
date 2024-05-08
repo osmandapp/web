@@ -398,25 +398,72 @@ Below you can find out how to resolve situations when navigation is not possible
 
 ### No maps 
 
-<InfoAndroidOnly/>
-
 When you try to build a route to a place whose map is not loaded, the progress line indicating that the route is being calculated does not appear, and the Start button also remains gray.  
 Please note, that at some zoom levels the reason for the absence of the route can not be obvious, as it may seem that the necessary maps are present. In that case see *[Additional information in Navigation menu](#additional-information-in-navigation-menu)*.
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
 ![Message no maps when building navigation Android 4](@site/static/img/navigation/route/navigation_by_route_no_maps_4.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Message no maps when building navigation iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+
+
 
 #### Additional information in Navigation menu
 
 If you pull the navigation menu up, you will see possible reasons why your route cannot be completed: 
 
-![Message no maps when building navigation Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png) ![Message no maps when building navigation Android 1](@site/static/img/navigation/route/navigation_by_route_no_maps_3.png) 
+<Tabs groupId="operating-systems">
 
-- the first screenshot shows a message when the map of the destination area is not downloaded.  
-- on the second screenshot you can see, that OsmAnd tryes to calculate the route when there are no maps for its middle section. To resolve that situation online checking may be needed.
+<TabItem value="android" label="Android">
+
+![Message no maps when building navigation Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Message no maps when building navigation iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+The screenshot shows a message when the map of the destination area is not downloaded. You can see, that OsmAnd tries to calculate the route when there are no maps for its middle section. To resolve that situation online checking may be needed.
 
 #### Download maps using Navigation menu
 
-After online verification of the maps required for route calculation, OsmAnd offers to download them without leaving the navigation section. Unfortunately, once the necessary maps are loaded, you will need to enter the start and end points again.
+Tap to the _Details_ button to open the _Required Maps_ screen. After online verification of the maps required for route calculation, OsmAnd offers to download them without leaving the navigation section. The list of missing maps is based on straight line route. To get an accurate list of maps, OsmAnd can pre-calculate your route online, just click to the _Calculate online_ button.
 
-![Message no maps when building navigation Android](@site/static/img/navigation/route/navigation_by_route_no_maps_1.png) ![Message no maps when building navigation Android](@site/static/img/navigation/route/navigation_by_route_no_maps_2.png)
+Unfortunately, once the necessary maps are loaded, you must to enter the start and end points again.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Message no maps when building navigation Android](@site/static/img/navigation/route/navigation_by_route_no_maps_1.png)
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Message no maps when building navigation iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_2_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+
 
