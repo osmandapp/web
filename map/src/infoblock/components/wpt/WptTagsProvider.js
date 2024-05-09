@@ -165,6 +165,13 @@ async function getWptTags(obj, type, ctx) {
             }
         });
         tags = obj.options;
+    } else if (type.isWikiPoi) {
+        Object.entries(obj.properties).forEach(([key, value]) => {
+            if (value === undefined) {
+                delete obj.properties[key];
+            }
+        });
+        tags = obj.properties;
     }
 
     if (tags) {

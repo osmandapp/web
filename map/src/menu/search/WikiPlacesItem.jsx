@@ -40,8 +40,8 @@ export default function WikiPlacesItem({ item }) {
         fetchData().then();
     }, [item]);
 
-    function openInfo(item) {
-        console.log(item);
+    async function openInfo(item) {
+        ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: item });
     }
 
     function getType(type) {

@@ -6,6 +6,7 @@ import {
     Link,
     ListItemIcon,
     ListItemText,
+    MenuItem,
     Toolbar,
     Tooltip,
     Typography,
@@ -98,6 +99,24 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     tags: tags,
                     osmUrl: poiOptions[POI_OSM_URL],
                 };
+            } else if (type?.isWikiPoi) {
+                const currentPoi = ctx.selectedWpt.poi;
+                const wikiObj = ctx.searchSettings.getPoi;
+                const { properties: poiOptions } = currentPoi;
+                const coords = currentPoi.geometry.coordinates;
+                const tags = await WptTagsProvider.getWptTags(currentPoi, type, ctx);
+                result = {
+                    type: type,
+                    poiType: t(POI_PREFIX + poiOptions[TYPE_OSM_VALUE]),
+                    name: wikiObj?.properties.wikiTitle,
+                    latlon: { lat: coords[1], lon: coords[0] },
+                    wikiDesc: wikiObj?.properties.wikiDesc,
+                    background: DEFAULT_POI_SHAPE,
+                    color: DEFAULT_POI_COLOR,
+                    icon: poiOptions[FINAL_ICON_NAME],
+                    tags: tags,
+                    osmUrl: poiOptions[POI_OSM_URL],
+                };
             } else if (type?.isWpt) {
                 result = await getDataFromWpt(type, ctx.selectedWpt);
             } else if (type?.isFav) {
@@ -138,7 +157,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
     useEffect(() => {
         if (newWpt !== null) {
-            if (newWpt.type?.isPoi) {
+            if (newWpt.type?.isPoi || newWpt.type?.isWikiPoi) {
                 const address = getPoiAddress(newWpt);
                 address.then((data) => {
                     setLoading(false);
@@ -156,6 +175,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     function getWptType(wpt) {
         return {
             isPoi: ctx.currentObjectType === OBJECT_TYPE_POI && wpt?.poi,
+            isWikiPoi: wpt?.poi && wpt?.wikidata,
             isWpt: isTrack(ctx) && (wpt?.trackWpt || wpt?.trackWptItem),
             isFav: ctx.currentObjectType === OBJECT_TYPE_FAVORITE && wpt?.markerCurrent,
         };
@@ -168,6 +188,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             isDetails ? setOpenWptTab(true) : closeHeader({ ctx });
         } else if (wpt.type?.isFav) {
             isDetails ? closeOnlyFavDetails() : closeHeader({ ctx });
+        } else if (wpt.type?.isWikiPoi) {
+            setShowInfoBlock(false);
+            ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: null });
         }
         ctx.setSelectedWpt(null);
     }
@@ -338,17 +361,22 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     {wpt !== null && (
                         <ListItemText id={getId()}>
                             <Box className={styles.topContainer}>
-                                <MenuItemWithLines maxLines={3} className={styles.name}>
-                                    <Typography className={styles.name}>
-                                        {wpt.type?.isPoi ? (
-                                            <Link href={wpt.osmUrl} target="_blank" underline="none">
-                                                {wpt.name ? wpt.poiType + ': ' + wpt.name : wpt.poiType}
-                                            </Link>
-                                        ) : (
-                                            wpt.name ?? 'No name'
-                                        )}
+                                <div>
+                                    <MenuItemWithLines maxLines={3} className={styles.name}>
+                                        <Typography className={styles.name}>
+                                            {wpt.type?.isPoi ? (
+                                                <Link href={wpt.osmUrl} target="_blank" underline="none">
+                                                    {wpt.name ? wpt.poiType + ': ' + wpt.name : wpt.poiType}
+                                                </Link>
+                                            ) : (
+                                                wpt.name ?? 'No name'
+                                            )}
+                                        </Typography>
+                                    </MenuItemWithLines>
+                                    <Typography className={styles.type} noWrap>
+                                        {wpt?.poiType}
                                     </Typography>
-                                </MenuItemWithLines>
+                                </div>
                                 {wpt.icon && <WptIcon />}
                             </Box>
                             {wpt?.category && <WptCategory />}
@@ -368,7 +396,22 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                 )}
                             </div>
                             {wpt?.address && <WptAddress />}
-                            <WptDetailsButtons wpt={wpt} isDetails={isDetails} />
+                            {!wpt.type?.isWikiPoi && <WptDetailsButtons wpt={wpt} isDetails={isDetails} />}
+                            {wpt?.wikiDesc && (
+                                <>
+                                    <Divider />
+                                    <MenuItem className={styles.descTitle}>
+                                        <ListItemText>
+                                            <Typography className={styles.descTitleText}>
+                                                {t('shared_string_about')}
+                                            </Typography>
+                                        </ListItemText>
+                                    </MenuItem>
+                                    <div className={styles.descTextBlock}>
+                                        <Typography className={styles.descText}>{wpt?.wikiDesc}</Typography>
+                                    </div>
+                                </>
+                            )}
                             <Divider sx={{ mt: wpt.type?.isPoi ? '0px' : '16px' }} />
                             {wpt.desc && (
                                 <WptTagInfo

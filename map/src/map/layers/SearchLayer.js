@@ -7,15 +7,17 @@ import L from 'leaflet';
 import styles from '../../menu/search/search.module.css';
 import 'leaflet-spin';
 import _ from 'lodash';
-import { renderToStaticMarkup } from 'react-dom/server';
-import { Box, IconButton, Modal, Paper, Table, TableBody, TableCell, TableRow } from '@mui/material';
+import { Box, IconButton, Modal, Table, TableBody, TableCell, TableRow } from '@mui/material';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import 'leaflet.markercluster';
 import { useTranslation } from 'react-i18next';
+import { areSetsEqual } from '../../util/Utils';
 
 export default function SearchLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
+
+    const filtersRef = useRef(null);
 
     const { i18n } = useTranslation();
 
@@ -45,6 +47,29 @@ export default function SearchLayer() {
     }
 
     useEffect(() => {
+        const item = ctx.searchSettings.getPoi;
+        async function getWikiPoi() {
+            const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/get-poi-by-coords`, {
+                apiCache: true,
+                params: {
+                    lat: item.geometry.coordinates[1],
+                    lon: item.geometry.coordinates[0],
+                    type: item.properties?.poitype,
+                    osmid: item.properties?.osmid,
+                },
+            });
+            if (response?.data) {
+                const poi = response.data;
+                ctx.setSelectedWpt({ poi, wikidata: item });
+            }
+        }
+
+        if (item) {
+            getWikiPoi().then();
+        }
+    }, [ctx.searchSettings.getPoi]);
+
+    useEffect(() => {
         let ignore = false;
         let controller = new AbortController();
         const settings = ctx.searchSettings;
@@ -60,8 +85,14 @@ export default function SearchLayer() {
         map.on('moveend', onMapMoveEnd);
 
         if (ctx.currentObjectType === OBJECT_SEARCH || ctx.searchSettings.useWikiImages) {
-            removeLayers();
-            debouncedGetPlaces({ controller, ignore, settings });
+            if (
+                !ctx.searchSettings.selectedFilters ||
+                !areSetsEqual(filtersRef.current, ctx.searchSettings.selectedFilters)
+            ) {
+                filtersRef.current = ctx.searchSettings.selectedFilters;
+                removeLayers();
+                debouncedGetPlaces({ controller, ignore, settings });
+            }
         }
 
         if (!ctx.searchSettings.useWikiImages && ctx.currentObjectType !== OBJECT_SEARCH) {
@@ -122,44 +153,9 @@ export default function SearchLayer() {
         if (ctx.searchSettings.useWikiImages) {
             setSelectedObj(feature);
             setModalIsOpen(true);
+        } else {
+            ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: feature });
         }
-    }
-
-    function addPopup(feature, markers) {
-        if (ctx.searchSettings.useWikiImages) {
-            return;
-        }
-        const popupContent = renderToStaticMarkup(<PopupContent properties={feature.properties} />);
-        const popupOptions = {
-            closeButton: true,
-            autoClose: true,
-            closeOnClick: false,
-        };
-
-        if (markers.length !== 0) {
-            markers.forEach((marker) => {
-                marker.bindPopup(popupContent, popupOptions);
-            });
-        }
-    }
-
-    function PopupContent({ properties }) {
-        return (
-            <Paper elevation={3} style={{ maxHeight: '150px', overflowY: 'auto' }}>
-                <Table size="small" aria-label="properties table">
-                    <TableBody>
-                        {Object.entries(properties).map(([key, value]) => (
-                            <TableRow key={key}>
-                                <TableCell component="th" scope="row">
-                                    {key == null ? 'N/A' : key.toString()}
-                                </TableCell>
-                                <TableCell align="right">{value == null ? 'N/A' : value.toString()}</TableCell>
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </Paper>
-        );
     }
 
     const markerClusterGroup = new L.MarkerClusterGroup({
@@ -252,7 +248,6 @@ export default function SearchLayer() {
                         circle.on('click', () => {
                             openInfo(feature);
                         });
-                        addPopup(feature, [circle]);
                         simpleMarkersArr.addLayer(circle);
                     } else {
                         let markerPromise = new Promise((resolve) => {
@@ -271,7 +266,6 @@ export default function SearchLayer() {
                                 marker.on('click', () => {
                                     openInfo(feature);
                                 });
-                                addPopup(feature, [marker]);
                                 markerClusterGroup.addLayer(marker);
                                 resolve();
                             };
@@ -288,7 +282,6 @@ export default function SearchLayer() {
                                 circle.on('click', () => {
                                     openInfo(feature);
                                 });
-                                addPopup(feature, [circle]);
                                 markerClusterGroup.addLayer(circle);
                                 resolve();
                             };
