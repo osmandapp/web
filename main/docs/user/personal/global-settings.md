@@ -167,7 +167,7 @@ The image for the 3D view of the map is loaded tile by tile, then all the symbol
 OsmAnd allows you to choose whether to *[share your in-app activity](#analytics)* and [indentifiers](#identifiers) (Android only) in the app, the ability to edit your *[history](#history)* and use a *[proxy](#proxy)* (Android only) of your choice.  
 
 :::note
-For more information see [*OsmAnd Privacy and Security Policy*](https://osmand.net/docs/legal/privacy-policy).
+For more information see [*OsmAnd Privacy and Security Policy*](../../legal/privacy-policy.md)
 :::
 
 ### Analytics
