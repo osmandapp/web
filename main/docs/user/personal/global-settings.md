@@ -210,7 +210,7 @@ A UUID (Unique User Identifier) is generated for each installation of the OsmAnd
 
 Starting with OsmAnd version 4.3, you can disable the collection of user data when using the OsmAnd app. Then the UUID will not be sent with any download request.  
 
-You can read more information in the [Terms of use (ToS)](../../legal/terms-of-use.md6-unique-user-indentifier). 
+You can read more information in the [Terms of use (ToS)](../../legal/terms-of-use.md#6-unique-user-indentifier). 
 
 ### History
 
