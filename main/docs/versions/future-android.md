@@ -30,14 +30,21 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 # What's new
 
-- Track Activity / Keywords
-- My Location 3D
-- 3D Track (Finilize)
 - Buttons Control
 - Quick Action Mapping
+- Track Activity / Keywords
+- My Location 3D
+- 3D Track (Finalize)
+- Garmin Connect
+- Weather animation
 
-Additional / Optional:
-* Autosync
+Possible one / many of:
+* Attach Photo/Video to Favorites
+* Accessibility 
+* Explore Top Places (Web)
 * 2 Main Navigation widgets
-* Gallery
-* Garmin
+* Autosync Favorites
+* Share Tracks / Favorites (Web)
+* Roundtrips
+* Grid coordinates
+* Traffic Maps
