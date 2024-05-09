@@ -402,9 +402,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                     <Divider />
                                     <MenuItem className={styles.descTitle}>
                                         <ListItemText>
-                                            <Typography className={styles.descTitleText}>
-                                                {t('shared_string_about')}
-                                            </Typography>
+                                            <Typography className={styles.descTitleText}>About</Typography>
                                         </ListItemText>
                                     </MenuItem>
                                     <div className={styles.descTextBlock}>
