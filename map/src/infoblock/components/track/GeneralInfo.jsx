@@ -6,7 +6,8 @@ import TracksManager, {
     isEmptyTrack,
     applySrtmElevation,
     eligibleToApplySrtm,
-    prepareDesc, updateMetadata,
+    prepareDesc,
+    updateMetadata,
 } from '../../../manager/track/TracksManager';
 import { prepareFileName, toHHMMSS } from '../../../util/Utils';
 import {
@@ -242,11 +243,11 @@ export default function GeneralInfo({ width }) {
 
             if (currentTrack) {
                 currentTrack.name = newName;
-                updateMetadata({file: currentTrack, name: newName})
+                updateMetadata({ file: currentTrack, name: newName });
             }
 
             ctx.selectedGpxFile.name = newName;
-            updateMetadata({file: ctx.selectedGpxFile, name: newName})
+            updateMetadata({ file: ctx.selectedGpxFile, name: newName });
 
             // track rename have to be finished correctly in the editor component
             ctx.selectedGpxFile.oldName = oldName; // used by effect in LocalClientTrackLayer

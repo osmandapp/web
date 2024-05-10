@@ -448,7 +448,7 @@ export async function getGpxFileFromTrackData(file) {
     });
 }
 
-export function updateMetadata({file, name = null}) {
+export function updateMetadata({ file, name = null }) {
     if (!file.metaData) {
         file.metaData = {};
     }
