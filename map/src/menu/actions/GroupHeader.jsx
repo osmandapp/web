@@ -177,7 +177,7 @@ export default function GroupHeader({
                             </span>
                         </Tooltip>
                     )}
-                    {favoriteGroup === DEFAULT_FAV_GROUP_NAME && (
+                    {type === FAVORITES_TYPE && (
                         <Tooltip
                             key={'import_fav_group'}
                             title={t('web:import_favorite_groups')}

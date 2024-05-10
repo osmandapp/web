@@ -5,12 +5,13 @@ import TracksManager from '../../../manager/track/TracksManager';
 import { styled } from '@mui/material/styles';
 import {
     createFavGroupFreeName,
-    getGroupNameFromFile,
+    DEFAULT_FAV_GROUP_NAME,
+    DEFAULT_GROUP_NAME_POINTS_GROUPS,
     isFavGroupExists,
-    prepareFavGroupName,
     saveFavoriteGroup,
 } from '../../../manager/FavoritesManager';
 import ImportFavoriteDialog from '../../../dialogs/favorites/ImportFavoriteDialog';
+import { cloneDeep } from 'lodash';
 
 export default function FavoriteGroupUploader({ children }) {
     const ctx = useContext(AppContext);
@@ -19,25 +20,34 @@ export default function FavoriteGroupUploader({ children }) {
     const [openDialog, setOpenDialog] = useState(false);
     const [importFavoriteGroup, setImportFavoriteGroup] = useState(false);
 
-    function validName(name) {
-        return name !== '' && name.trim().length > 0;
+    function preparedCurrentFile(track, newGroupName) {
+        let pointsGroups = cloneDeep(track.pointsGroups);
+        let newGroup = pointsGroups[newGroupName];
+        let newTrack = cloneDeep(track);
+        newTrack.pointsGroups = {};
+        newTrack.pointsGroups[newGroupName] = newGroup;
+        newTrack.wpts = newTrack.wpts.filter((w) => w.category === newGroupName);
+
+        return newTrack;
     }
 
     useEffect(() => {
         for (const file in uploadedFiles) {
-            let track = uploadedFiles[file].track;
-            let groupName = prepareFavGroupName(track.name);
-            groupName = getGroupNameFromFile(groupName);
-            if (validName(groupName)) {
-                groupName = createFavGroupFreeName(groupName, ctx.favorites?.groups);
+            const track = uploadedFiles[file].track;
+            const pointsGroups = track.pointsGroups;
+            const hasSeveralGroups = Object.keys(pointsGroups).length > 1;
+            for (const group of Object.values(pointsGroups)) {
+                const groupName = group.name !== DEFAULT_GROUP_NAME_POINTS_GROUPS ? group.name : DEFAULT_FAV_GROUP_NAME;
+                const newGroupName = createFavGroupFreeName(groupName, ctx.favorites?.groups);
                 if (importFavoriteGroup) {
-                    renameGroup(track, groupName, importFile.oldName);
+                    renameGroup(track, newGroupName, importFile.oldName);
                 }
-                saveFavoriteGroup(track, groupName, ctx).then();
-                mutateUploadedFiles((o) => delete o[file]);
-                setImportFile(null);
-                break; // process 1 file per 1 render
+                const updatedTrack = hasSeveralGroups ? preparedCurrentFile(track, newGroupName) : track;
+                saveFavoriteGroup(updatedTrack, newGroupName, ctx).then();
             }
+            mutateUploadedFiles((o) => delete o[file]);
+            setImportFile(null);
+            break; // process 1 file per 1 render
         }
     }, [uploadedFiles]);
 
@@ -70,25 +80,27 @@ export default function FavoriteGroupUploader({ children }) {
             reader.addEventListener('load', async () => {
                 const track = await TracksManager.getTrackData(file);
                 if (track) {
-                    let groupName = prepareFavGroupName(file.name);
-                    groupName = getGroupNameFromFile(groupName);
-                    if (isFavGroupExists(groupName, ctx.favorites.groups)) {
-                        if (selected) {
-                            setImportFile({
-                                name: file.name,
-                                oldName: groupName,
-                                track: track,
-                            });
-                            setOpenDialog(true);
+                    const pointsGroups = track.pointsGroups;
+                    for (const name of Object.keys(pointsGroups)) {
+                        let groupName = name !== DEFAULT_GROUP_NAME_POINTS_GROUPS ? name : DEFAULT_FAV_GROUP_NAME;
+                        if (isFavGroupExists(groupName, ctx.favorites.groups)) {
+                            if (selected) {
+                                setImportFile({
+                                    name: groupName,
+                                    oldName: name ?? DEFAULT_GROUP_NAME_POINTS_GROUPS,
+                                    track: track,
+                                });
+                                setOpenDialog(true);
+                            } else {
+                                ctx.setTrackErrorMsg({
+                                    title: 'Import error',
+                                    msg: `Favorite group ${groupName} already exist`,
+                                });
+                            }
                         } else {
-                            ctx.setTrackErrorMsg({
-                                title: 'Import error',
-                                msg: `Favorite group ${file.name} already exist`,
-                            });
+                            track.name = groupName;
+                            mutateUploadedFiles((o) => (o[file.name] = { track, selected }));
                         }
-                    } else {
-                        track.name = file.name;
-                        mutateUploadedFiles((o) => (o[file.name] = { track, selected }));
                     }
                 } else {
                     ctx.setTrackErrorMsg({
