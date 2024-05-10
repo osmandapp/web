@@ -84,7 +84,7 @@ You can create a photo, video, and/or audio note in any of the following ways:
 
 #### 1. Create and tie to your current position
 
-The <Translate android="true" ids="map_widget_av_notes"/> widget is used to create a note tied to your current position, and thus, avoid any search for a suitable point for a note on the map. Simply tap on the widget, and make the note.  
+The <Translate android="true" ids="map_widget_av_notes"/> widget is used to create a note tied to your current position, and thus, avoid any search for a suitable point for a note on the map. Simply tap the widget, and make the note.  
 
 The functions provided by the <Translate android="true" ids="map_widget_av_notes"/> widget depend on how it is configured in the [Configure screen](../widgets/info-widgets.md#-audio-video-notes-widget-android) menu. The widget either immediately opens the camera to make a note, according to the established settings, or asks first what format to create a note in, and then opens the respective recorder dialog.
 
@@ -116,7 +116,7 @@ For _an audio / video note_, respectively the audio, or video recorder shows up.
 - see the length of the record,
 - hide/show the video screen.
 
-Also, it is possible to stop the recording with a tap on the <Translate android="true" ids="map_widget_av_notes"/> widget, regardless of whether the Context menu, or the widget started the recording. For _a photo note_, the camera functionality shows up, and you can take a photo, view the result, and accept and save it, or take a new photo.
+Also, it is possible to stop the recording with a tap the <Translate android="true" ids="map_widget_av_notes"/> widget, regardless of whether the Context menu, or the widget started the recording. For _a photo note_, the camera functionality shows up, and you can take a photo, view the result, and accept and save it, or take a new photo.
 
 ![Video note recorder](@site/static/img/plugins/audio-video-notes/take_a_video_note_widget.png) 
 

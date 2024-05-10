@@ -440,6 +440,7 @@ In this part of the menu you reorder or hide items from the [Configure map](../m
 
 In this part of the menu you reorder or hide items from the [Context menu actions](../map/map-context-menu.md) menu.
 
+
 | Actions: Note |
 |:---------------|
 | "Minus": These items are hidden from the menu, but the represented options or plugins will continue to work.  |

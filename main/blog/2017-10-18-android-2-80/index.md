@@ -17,7 +17,7 @@ OsmAnd 2.8 has been released! We're glad to share all the improvements so let's 
 
 The map marker menu has been completely reworked with a whole list of new features and a convenient intuitive user interface.
 Quick reminder: map markers are points on the map you need short-term. A shop you've planned to visit today, an event location you'll only need once, etc. While favorites are the points you'll need in a long run, map markers are created and removed on the go.
-To start using them, just make a long tap on the map and select the flag icon in the context menu. Done. Now, this point is your map marker. All of them are stored in the 'Map markers' menu in OsmAnd.  You can manage them in many ways. Press 'Options' menu to try the following:
+To start using them, just make a long-tap the map and select the flag icon in the context menu. Done. Now, this point is your map marker. All of them are stored in the 'Map markers' menu in OsmAnd.  You can manage them in many ways. Press 'Options' menu to try the following:
 
 * 'Sort by'. Sort your markers by name, by distance or by date added. Also, creating a route from map markers has become even easier. Just press 'Plan route' and check the markers you need. You can also use the 'Sort' button in this submenu to list them in a particular way.
 * Export all your markers at once as a GPX track. Simply select 'Save as new GPX track'. 

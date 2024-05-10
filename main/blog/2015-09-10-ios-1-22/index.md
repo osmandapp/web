@@ -39,7 +39,7 @@ The OsmAnd iOS version now has the hillshade maps. Those are map layers visualiz
 
 ## Creating new trip
 
-You can now just enter the My trips menu, choose Create new trip and then add waypoints by making long taps. At this moment, you can also add details to the waypoint, such as its name, color indicating this waypoint, its group (you can create a group of waypoints: work locations, favorite spots on town, etc.) and a description. Then hit Save.
+You can now just enter the My trips menu, choose Create new trip and then add waypoints by making long-tap. At this moment, you can also add details to the waypoint, such as its name, color indicating this waypoint, its group (you can create a group of waypoints: work locations, favorite spots on town, etc.) and a description. Then hit Save.
 
 <table class="blogimage">
   <tr>

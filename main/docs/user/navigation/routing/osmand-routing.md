@@ -83,7 +83,7 @@ There are two possible ways to choose which roads to avoid when calculating a ro
 
 </Tabs>
 
-In this menu, you can cancel the previous selection of the road that should be avoided. To do so, tap on a cross (Android) or a red "-" opposite the road you intend to use for route calculation.
+In this menu, you can cancel the previous selection of the road that should be avoided. To do so, tap a cross (Android) or a red "-" opposite the road you intend to use for route calculation.
 
 Using *Select on map* option you can continue to mark roads as invalid for routing on the OsmAnd map.
 

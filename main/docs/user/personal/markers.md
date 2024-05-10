@@ -43,7 +43,7 @@ Markers interface is a tool that helps you save temporary points on the map for 
 
 ### Add Marker on the map
 
-A long tap on the map visible on the screen opens a point menu where you can select *Markers* to add a marker to the map. You can add markers even for unloaded areas.  
+A long-tap the map visible on the screen opens a point menu where you can select *Markers* to add a marker to the map. You can add markers even for unloaded areas.  
 
 <Tabs groupId="operating-systems">
 
@@ -64,7 +64,7 @@ A long tap on the map visible on the screen opens a point menu where you can sel
 
 ### Add / Edit Marker
 
-Short or long tap on the map and choose neede action in [Map Context menu](../map/map-context-menu.md#add--edit-marker).  
+Short or long-tap the map and choose neede action in [Map Context menu](../map/map-context-menu.md#add--edit-marker).  
 
 <Tabs groupId="operating-systems">
 

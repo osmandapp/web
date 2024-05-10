@@ -135,7 +135,7 @@ The graphs that are built while the current track is being recorded visually dis
 - The tabs contain information: **Overview** - distance and speed, **Altitude** - elevation and grade, **Speed** - speed in current moment.  
 - The graph can be scaled.   
     - You can use [two-finger movement](../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. 
-    - If you want to see information at a specific point, you can tap on the graph and a pointer with the values will appear.  
+    - If you want to see information at a specific point, you can tap the graph and a pointer with the values will appear.  
 
 | |  
 | ------------- |   

@@ -74,7 +74,7 @@ In the Navigation section when creating a route you can set the types of points 
 
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,show_along_the_route"/>*   
 - [Build your route](../setup/route-navigation.md#set-destinations).
-- Tap on the [Settings](../setup/route-navigation.md#settings) menu.
+- Tap the [Settings](../setup/route-navigation.md#settings) menu.
 
 ![points along the route](@site/static/img/navigation/show-points-along-3-andr.png) 
 

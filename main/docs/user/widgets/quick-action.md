@@ -21,6 +21,7 @@ Quick Action widget is an interactive user interface element that provides quick
 
 ![Quick action widget](@site/static/img/widgets/quick_action_widget.png)
 
+
 ## Enable widget
 
 In order to use the Quick Actions button you need to enable this widget first.
@@ -29,28 +30,27 @@ In order to use the Quick Actions button you need to enable this widget first.
 
 <TabItem value="android" label="Android">  
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>_
+*<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>_
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>*
 
 </TabItem>
 
 </Tabs>
 
-
-By default the Quick action button will appear on the right corner (above the zoom buttons), but it can be moved to the any part of the screen by long tap on it. 
+- By default the Quick action button will appear on the right corner (above the zoom buttons), but it can be moved to the any part of the screen by long-tap it. 
 
 | | |
 |------------|------------|
 |First appearing  | ![Quick action widget_view](@site/static/img/widgets/quick_action_widget_view.png) |
-|Long tap and moving  | ![Quick action widget_tap](@site/static/img/widgets/quick_action_widget_tap.png) |
+|Long-tap and moving  | ![Quick action widget_tap](@site/static/img/widgets/quick_action_widget_tap.png) |
 |New place  | ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_move.png) |
 
-To open Quick action menu just press on the button.
+- To open Quick action menu just tap the button.
 
 <Tabs groupId="operating-systems">
 
@@ -73,18 +73,15 @@ To open Quick action menu just press on the button.
 
 ### Add new action
 
-There are 2 ways to add items to the Quick actions list: 
+There are 2 ways to add items to the Quick actions list.
 
--  the first way
-
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>→ &#8230;&#124; → Add action(+)_ 
-
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>→ &#8230;&#124; → Add action(+)_ 
-
+-  The first way:
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>→ &#8230;&#124; → Add action(+)* 
 
 ![Quick action widget_android_add](@site/static/img/widgets/quick_action_widget_android_add.png) 
 
@@ -92,13 +89,15 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 
 <TabItem value="ios" label="iOS">
 
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>→ &#8230;&#124; → Add action(+)* 
+
 ![Quick action widget_ios_add](@site/static/img/widgets/quick_action_widget_ios_add.png)
 
 </TabItem>
 
 </Tabs>
 
-- Click _"Quick action" button → "Quick action" menu → Add action_
+- Tap **Quick action** *button →* **Quick action** *menu →* **Add action**
 
 <Tabs groupId="operating-systems">
 
@@ -116,7 +115,7 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 
 </Tabs>
 
-First you need to select [type of the action](#quick-actions-types) and then you could change its name and parameters ([See below](#quick-actions-types) which parameters could be configured for each action type). Every action should have a unique name.
+First, you need to select [an action type](#quick-action-types) and then change its name and parameters. [See below](#quick-actions-types) for what parameters you can configure for each action type. Each action must have a unique name.
 
 ### Reorder actions
 
@@ -130,7 +129,7 @@ Quick action panel has only **6 slots** for actions per screen. However you coul
 
 <p> </p>
 
-- _<Translate android="true" ids="android_button_seq"/> Open Quick action menu  → Long tap on 'Add action' → Hold & Drag_ selected action up and down by the icon (three vertical lines) in the list
+- *<Translate android="true" ids="android_button_seq"/> Open Quick action menu  → Long-tap *Add action* → Hold & Drag* selected action up and down by the icon (three vertical lines) in the list
 
 ![Quick action widget_android_order](@site/static/img/widgets/quick_action_widget_android_order.png) 
 
@@ -151,11 +150,11 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 
 There are several ways how to access Quick Action to edit or delete it:
 
- - Long tap on the action (Android)
+ - Long-tap the action (Android)
 
-    Open Quick action menu → Long tap on the action (short tap to execute the action)
+    Open Quick action menu → Long-tap the action (short tap to execute the action)
 
- - Delete via "Edit actions" list
+ - Delete via *Edit actions* list.
 
 
 <Tabs groupId="operating-systems">
@@ -243,40 +242,34 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 
 ## Custom buttons
 
-Custom Buttons are a unique type of _Quick Action_ tool. This means you can create a custom action button for a device's screen.
+<InfoAndroidOnly/>
 
-<Tabs groupId="operating-systems">
+*<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons"/> → + → <Translate android="true" ids="add_button"/>*  
 
-<TabItem value="android" label="Android">  
+![Custom button Android](@site/static/img/widgets/custom_button_andr.png)  
 
-To add a new custom button to the screen, follow these steps:
+Custom Buttons are a unique type of **Quick Action** tool. This means you can create a custom action button for a device's screen.  
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons"/> → + → <Translate android="true" ids="add_button"/>_
+- To add a new custom button to the screen, tap **+** in the top right upper corner of the screen.
+- Then enter a name for the created button and tap **Save**.
+- After adding a new button, it will appear in the Custom Buttons list. You can then assign one or more [actions](#add-new-action) to the newly created and enabled custom button.
+- All available actions are identical to those found in [Quick Action types](#quick-action-types).
+- You can add created custom buttons using the *three-dot menu →* **Copy from another profile**.
+- When a custom button is created and enabled, it will be displayed on the screen. [It can be moved](#enable-widget) to any location on the screen, similar to a *Quick Action button*.
 
-Next, enter a name for the newly created button and tap the _'Save'_ button.
+<!-- ![Custom button Android](@site/static/img/widgets/custom_button_4_android.png) -->
 
-![Custom button Android](@site/static/img/widgets/custom_button_2_android.png)
-
-After adding the new custom button, it will appear in the _Custom Buttons_ menu (_<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons"/>_). You then have the option to assign one or more [actions](#quick-action-types) to the newly created and enabled custom button. To do this, follow these steps:
-
- _<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons"/> → new button → <Translate android="true" ids="quick_action_new_action"/>_
- 
-All actions available are identical to those found in [Quick Action types](#quick-action-types).
-
-![Custom button Android](@site/static/img/widgets/custom_button_4_android.png)
-
-Now, the new custom button will be visible on your device's screen. You can [move this custom button](#enable-widget) to any location on the screen, similarly to the Quick Action button. 
-
-Tapping this button instantly toggles the selected action on or off, or opens the [Quick action menu](#overview) for a custom button with two or more actions.
+Tapping a custom button instantly switches the selected action on or off. If more than one action was added, a [Quick action menu](#overview) opens with a list of actions.  
 
 ![Custom button Android](@site/static/img/widgets/custom_button_5_android.png)
 
-</TabItem>
+### Rename and Delete actions
 
-<TabItem value="ios" label="iOS">
+![Custom button Android](@site/static/img/widgets/custom_button_rename_andr.png)  ![Custom button Android](@site/static/img/widgets/custom_button_del_andr.png)  
 
-<InfoAndroidOnly/>
+To manage custom buttons, you can tap on one of them, then tap the *three-dot menu* in the top right corner of the screen and select an action.
 
-</TabItem>
+- **Rename**. Allows you to change the name of your button.
+- **Delete**. Allows you to delete your button with all added actions.
 
-</Tabs>
+

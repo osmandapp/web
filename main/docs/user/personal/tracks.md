@@ -473,7 +473,7 @@ This screen allows you to select the tracks you want, as well as a list of sugge
 There are two primary methods for importing a track file into OsmAnd:
 
 1. **Direct File Import.**  
-    - You can import a track by directly tapping a GPX, KML or KMZ file. This can be done from various sources such as messaging applications, email, Google Drive or file managers. When tapped, the file is suggested to open in the OsmAnd app. Once imported, the track is saved in the **Import** folder in the *My Places* menu. The process is as follows: Tap on the required GPX file and then open it in the OsmAnd app.
+    - You can import a track by directly tapping a GPX, KML or KMZ file. This can be done from various sources such as messaging applications, email, Google Drive or file managers. When tapped, the file is suggested to open in the OsmAnd app. Once imported, the track is saved in the **Import** folder in the *My Places* menu. The process is as follows: Tap the required GPX file and then open it in the OsmAnd app.
 
 2. **Import using the *My Places* menu.**
     - Tracks can also be imported through the *My Places* menu in the OsmAnd app. Navigate to this menu and select the *Tracks* option to import your GPX files. Additionally:
@@ -589,7 +589,7 @@ All tracks ever recorded, created or imported are automatically displayed in the
 
 To open the folder menu, you need to:
 - *Android* - tap the three-dots menu in the field with the required folder.
-- *iOS* - to make a long-tap on the field of the folder.
+- *iOS* - to make a long-tap the field of the folder.
 
 Actions:
 - **Name**. Displays the selected folder name, creation date and the number of tracks it contains.
@@ -623,7 +623,7 @@ Actions:
 </Tabs>  
 
 You can delete a folder with all the tracks it contains. To do this:
-- Tap on the three-dot menu of the folder you want to delete.
+- Tap the three-dot menu of the folder you want to delete.
 - At the bottom of the menu, find the Delete Folder option.
 - **NOTE** that this action is irreversible.
 
@@ -667,8 +667,8 @@ At the bottom of the list in the _Tracks_ tab, and below the list of tracks **in
 </Tabs>  
 
 Each track, like folders, has its menu. To open it: 
-- *Android* - tap on the three-dots menu in the field with the required track.
-- *iOS* - long-press on the required track in the list.
+- *Android* - tap the three-dots menu in the field with the required track.
+- *iOS* - long-tap the required track in the list.
 
 Menu with actions:
 - **Show on map**. Displays selected tracks on the map to provide a visual representation of their location.
@@ -801,7 +801,7 @@ With the various tools provided by OsmAnd, you can open the entire track list an
 
 </Tabs>  
 
-When a track is displayed on the map, a context menu appears when you tap on it. For detailed information about each available option, see the [Tracks Context menu](../map/track-context-menu.md) article.  
+When a track is displayed on the map, a context menu appears when you tap it. For detailed information about each available option, see the [Tracks Context menu](../map/track-context-menu.md) article.  
 Options:
 
 - Basic information showing distance, ascent and descent sections, descriptions and quick action buttons such as whether to show the track on the map, its appearance, points and whether to place the track for navigation.

@@ -22,7 +22,7 @@ We continue to follow our <a href="https://osmand.net/blog/2019-ny-resolutions">
 OSM Editing allows you to make contributions to <a href="https://www.openstreetmap.org">OpenStreetMap</a>, a global community aimed at creating a comprehensive map of the world and providing up-to-date open-source data to every user.
 The feature lets you create new objects, so-called <a href="https://wiki.openstreetmap.org/wiki/Points_of_interest">points of interest or POI</a> on the map and <a href="https://wiki.openstreetmap.org/wiki/Notes">OSM notes</a>.
 
-So how to do it? Tap on the map where the new POI has to be placed → 'Actions' and press 'Create POI' or 'Open OSM Note' add its name and other details like working hours, website, etc. You'll also have to register at <a href="https://www.openstreetmap.org">OpenStreetMap</a> and then provide your OSM credentials to introduce changes.
+So how to do it? Tap the map where the new POI has to be placed → 'Actions' and press 'Create POI' or 'Open OSM Note' add its name and other details like working hours, website, etc. You'll also have to register at <a href="https://www.openstreetmap.org">OpenStreetMap</a> and then provide your OSM credentials to introduce changes.
 
 
 <table class="blogimage">

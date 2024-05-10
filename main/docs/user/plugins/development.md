@@ -379,8 +379,8 @@ OsmAnd provides an opportunity to simulate the location and movement of your dev
 - The location movement speed during the simulation can be set equal to the recorded speed (1), or faster (x2, x3, x4).
 :::
 
-After running the simulation, you will see on the main screen of the app that navigation mark is moving according to GPX track. Tap on [my location button](../map/interact-with-map#my-location--zoom) to synchronize "my location" (simulated geolocation of the device) with the center of the map.  
-To stop simulation of the movement of your device, go back to the OsmAnd development [settings](#plugin-settings) and tap on **stop** in the **simulate your position** option.
+After running the simulation, you will see on the main screen of the app that navigation mark is moving according to GPX track. Tap [my location button](../map/interact-with-map#my-location--zoom) to synchronize "my location" (simulated geolocation of the device) with the center of the map.  
+To stop simulation of the movement of your device, go back to the OsmAnd development [settings](#plugin-settings) and tap **stop** in the **simulate your position** option.
 
 :::note  
 You can also simulate movement along a GPX-track from the [navigation menu](../navigation/setup/route-navigation.md#simulate-navigation) without enabling the OsmAnd development plugin. In that case, your location will not be synchronized with the track.  

@@ -58,7 +58,7 @@ Lots of uncategorized tracks can be found on [OpenStreetMap](https://www.openstr
 
 ### Start GPX navigation
 
-Once the track is created or imported inside OsmAnd, it can be found in the track list in [My places](../../personal/myplaces). After that, you can select required file from [available tracks](../../personal/tracks.md#actions), highlight it on the map and afterward use for navigation. From now you can start navigation by track using quick action button in [Track context menu](../../map/track-context-menu.md#quick-actions) (opens by choosing one of [highlighted tracks](./route-navigation.md#previous-route--history) on the map, or by tap on the track file im [My Places](../../personal/myplaces.md) section of the Main menu) or from navigation menu, that can be reached by tap:
+Once the track is created or imported inside OsmAnd, it can be found in the track list in [My places](../../personal/myplaces). After that, you can select required file from [available tracks](../../personal/tracks.md#actions), highlight it on the map and afterward use for navigation. From now you can start navigation by track using quick action button in [Track context menu](../../map/track-context-menu.md#quick-actions) (opens by choosing one of [highlighted tracks](./route-navigation.md#previous-route--history) on the map, or by tap the track file im [My Places](../../personal/myplaces.md) section of the Main menu) or from navigation menu, that can be reached by tap:
 
 - [The navigation button](../../widgets/map-buttons.md#directions) on the map screen.  
 - Navigation section in the Main menu  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.

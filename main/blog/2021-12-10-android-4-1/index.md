@@ -144,9 +144,9 @@ Menu → Settings → OsmAnd settings → Privacy and security: History
 
 ## App shortcuts
 
-<a href="https://support.google.com/android/answer/9450271">App shortcuts</a> are available for the OsmAnd icon. Just long tap the OsmAnd icon on your device screen to open App shortcuts menu.
+<a href="https://support.google.com/android/answer/9450271">App shortcuts</a> are available for the OsmAnd icon. Just long-tap the OsmAnd icon on your device screen to open App shortcuts menu.
 
-Here, you can click short tap for choosing next actions: Navigate to Home, Navigate to Work, Start Recording, Search, My places, Navigate to. Long tap one of the actions allows you to add new action icon to your device screen.
+Here, you can click short tap for choosing next actions: Navigate to Home, Navigate to Work, Start Recording, Search, My places, Navigate to. Long-tap one of the actions allows you to add new action icon to your device screen.
 
 Tapping to the action icon allows starting this action immediately.
 

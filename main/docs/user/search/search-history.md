@@ -124,7 +124,7 @@ You can **disable or enable** the display of the entire search history. In this 
 
 After using OsmAnd for a long time, the *Search History* list can become too long, so deleting search queries helps to clear the list. You can delete queries that are no longer relevant or that you no longer intend to use in the future, which makes it easier to search through the list, especially when you need to find specific search queries quickly.    
 
-You need to **long-tap on any of the query items in the list** to open the Delete screen.  
+You need to **long-tap any of the query items in the list** to open the Delete screen.  
 - *Select or deselect random items* - tap the required item in the list.
 - *Select the period available for deleting*, such as day, last 7 days, or month - check the box with the subheading in the list.
 - *You can delete the entire history* at once by tapping the *Select All* button at the bottom of the screen.

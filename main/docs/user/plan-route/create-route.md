@@ -313,7 +313,7 @@ In order to measure a distance or plan a trip, you need to establish landmarks o
 <!--
 - Text What is a Point
 - [How to create points](#how-to-create-points)
-- By default, the routing type will match the previously selected profile, tap on the routing icon to select how the application should calculate the segment to connect points. The available profile should be configured separately (link). -->
+- By default, the routing type will match the previously selected profile, tap the routing icon to select how the application should calculate the segment to connect points. The available profile should be configured separately (link). -->
 
 
 #### Add points

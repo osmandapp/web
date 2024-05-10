@@ -113,7 +113,7 @@ You can download **Contour lines**, **Terrain map (Hillshade and Slope)**, **Ter
 - Select the country of your choice.
 - Download packages from sections:
     - The *<Translate android="true" ids="region_maps"/>* (Android) or *<Translate ios="true" ids="res_region_map"/>* (iOS) section provides available maps for the entire country. You can download them if you need to.
-    - The *<Translate android="true" ids="regions"/>* (Android) or *<Translate ios="true" ids="res_mapsres"/>* (iOS) section lists the regions of the selected country. Tap on the required region to open the map packs available for download. 
+    - The *<Translate android="true" ids="regions"/>* (Android) or *<Translate ios="true" ids="res_mapsres"/>* (iOS) section lists the regions of the selected country. Tap the required region to open the map packs available for download. 
 - After downloading maps, you can display **Contour lines** and/or **Terrain** using the [Configure map](../map/configure-map-menu.md) section of the Main menu.
 1. If the map displayed on the screen is not downloaded, then in *Menu → Configure map → Topography section → Terrain* at the bottom of the list of features the section *Download maps* with suggested additional maps will be displayed.
 

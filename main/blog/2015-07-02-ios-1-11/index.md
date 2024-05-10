@@ -39,7 +39,7 @@ The POI information has become even fuller: now you can see the opening hours of
 
 ## Trip recording
 
-In the new version, there&#39;s the ability to add new waypoints to track. While you record the track, you can add waypoints by making a long tap. You can also add them to a newly-created track without recording.
+In the new version, there&#39;s the ability to add new waypoints to track. While you record the track, you can add waypoints by making a long-tap. You can also add them to a newly-created track without recording.
 
 <table class="blogimage">
   <tr>

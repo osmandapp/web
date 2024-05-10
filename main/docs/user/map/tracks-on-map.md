@@ -88,7 +88,7 @@ You can read additional information in the [Tracks](../personal/tracks.md#config
 
 <TabItem value="ios" label="iOS">
 
-[*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → long tap on the chosen GPX track → Show on map*](../personal/tracks.md#single-track-menu)    
+[*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → long-tap the chosen GPX track → Show on map*](../personal/tracks.md#single-track-menu)    
 
 ![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 </TabItem>
@@ -96,8 +96,8 @@ You can read additional information in the [Tracks](../personal/tracks.md#config
 </Tabs>
 
 To show track on the map, you need to:
-- *Android* - tap on the three-dots menu in the field with the required track.
-- *iOS* - long-press on the required track in the list.
+- *Android* - tap the three-dots menu in the field with the required track.
+- *iOS* - long-tap the required track in the list.
 
 #### Tracks in Track Context menu
 
@@ -130,7 +130,7 @@ To show track on the map, you need to:
 In the OsmAnd application, you can apply some settings by changing the appearance of the tracks, to better identify them on the map.  
 
 There are three ways to access the Track Appearance menu:
-- Go to the *My Places* menu and tap on any available track in the list (*Menu → My Places → Tracks*), select the Appearance icon in the [Track Context menu](../map/track-context-menu#overview) in the Overview section.
+- Go to the *My Places* menu and tap any available track in the list (*Menu → My Places → Tracks*), select the Appearance icon in the [Track Context menu](../map/track-context-menu#overview) in the Overview section.
 - Tap the needed track on the map and select the Appearance icon in the Overview section.
 - Select Appearance from the [track recording context menu](../plugins/trip-recording#сurrent-track-recording).  
 - Go to *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> → &#8942; → <Translate android="true" ids="change_appearance"/>* for the tracks you have selected to be displayed on the map. 

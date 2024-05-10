@@ -24,12 +24,12 @@ Gestures are important part of the map navigation.
 
 | Map Action | Gesture |
 |:------------|:---------------|
-|**Move**| Press on the map with **one** finger and move around |
-|**Slide**| Swipe the map with **one** finger |
-|**Zoom in**| Double tap on the map with **one** finger   <br /> Double tap on the map with **one** finger and then swipe down   <br /> Pinch with **two** fingers |
-|**Zoom out**|  Double tap on the map with **two** fingers   <br /> Double tap on the map with **one** finger and then swipe up   <br />  Pinch with **two** fingers |
-|**Rotate**| Press with **two** fingers on the map and rotate |
-|**Tilt** - 3D | Press with **two** fingers on the map and then move them up/down  <br /> This option is only available with [map rendering engine](../personal/global-settings.md#map-rendering-engine) version 2 (OpenGL)  |
+|**Move**| Press on the map with **one** finger and move around. |
+|**Slide**| Swipe the map with **one** finger. |
+|**Zoom in**| Double tap the map with **one** finger   <br /> Double tap the map with **one** finger and then swipe down   <br /> Pinch with **two** fingers. |
+|**Zoom out**|  Double tap the map with **two** fingers   <br /> Double tap the map with **one** finger and then swipe up   <br />  Pinch with **two** fingers. |
+|**Rotate**| Tap with **two** fingers on the map and rotate. |
+|**Tilt** - 3D | Tap with **two** fingers on the map and then move them up/down  <br /> This option is only available with [map rendering engine](../personal/global-settings.md#map-rendering-engine) version 2 (OpenGL).  |
 
 Slide animations could be disabled with special [setting](#disable-all-animations).
 
@@ -45,9 +45,9 @@ Slide animations could be disabled with special [setting](#disable-all-animation
 - Grey icon - location has not found yet
 - Arrow icon - 3D mode is switched on
 
-**Long tap** on **My location** opens Context menu, so user can share own location.
+**Long-tap** on **My location** opens Context menu, so user can share own location.
 
-**Zoom buttons** are always visible next to **My Location** and allow to control map zoom level. Changing zoom level doesn't change map synchronization with location. **Long tap** on **Zoom buttons** opens Map magnifier dialog and allows to change map detailing.
+**Zoom buttons** are always visible next to **My Location** and allow to control map zoom level. Changing zoom level doesn't change map synchronization with location. **Long-tap** on **Zoom buttons** opens Map magnifier dialog and allows to change map detailing.
 
 Keep in mind that during navigation zoom can be controlled by **Auto zoom setting**:
 
@@ -129,7 +129,7 @@ The compass button shows how the [map is oriented](#map-orientation-modes). The 
 
 If rotate map by bearing (rotation by [movement direction](#map-orientation-modes)) is enabled, the map will be oriented so that the forward view will be strictly above the icon of my location on the map. Without movement, the map won't be rotated.  
 In this mode, the center of the map will be located slightly below the center of the device. It allows you to see more map data before you move, which is useful in the navigation mode.  
-Rotate map by bearing mode can be changed in [Profile settings](../personal/profiles.md#appearance) or by single tap on the [Compass](#compass).  
+Rotate map by bearing mode can be changed in [Profile settings](../personal/profiles.md#appearance) or by single tap the [Compass](#compass).  
 
 ### Map Tilt and Horizon
 

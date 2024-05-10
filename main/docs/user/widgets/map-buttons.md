@@ -32,7 +32,7 @@ My location and Zoom buttons control the map display. You can read more in [Inte
 
 ![Directions button allows](@site/static/img/widgets/directions_button_allows.png)
 
-**Directions** button allows to [build a route](../navigation/index.md) and [start navigation](../navigation/index.md). In navigation mode this button is not visible by default and it appears after a short tap on the map.
+**Directions** button allows to [build a route](../navigation/index.md) and [start navigation](../navigation/index.md). In navigation mode this button is not visible by default and it appears after a short tap the map.
 
 **Directions** button has 3 different indicative states:
 - Default grey icon - the route has not been built yet. A dialog to build a new route will appear by click.
@@ -51,7 +51,7 @@ My location and Zoom buttons control the map display. You can read more in [Inte
 
 ![Main menu button](@site/static/img/widgets/main_menu_button.png)
 
-[Main menu](../start-with/main-menu.md) button allows to access to [all features](../start-with/main-menu.md) of the application. In navigation mode this button is not visible by default. It appears after a short tap on the map.
+[Main menu](../start-with/main-menu.md) button allows to access to [all features](../start-with/main-menu.md) of the application. In navigation mode this button is not visible by default. It appears after a short tap the map.
 
 
 ## Search

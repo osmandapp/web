@@ -41,7 +41,7 @@ On map you could display points such as Favorites, POI, Markers, Wikipedia, Sear
 </Tabs>
 
 :::info
-In Android version of OsmAnd you can display only certain groups of favorites on the map and during search. Go to *Menu → My Places → Favorites*, tap on on &#8942; and choose  either *Show it on the map* or not.
+In Android version of OsmAnd you can display only certain groups of favorites on the map and during search. Go to *Menu → My Places → Favorites*, tap &#8942; and choose  either *Show it on the map* or not.
 :::
 
 

@@ -69,7 +69,7 @@ The Audio/Video notes plugin has received some updates, too. Press on a map and 
 
 ## OSM Editing
 
-Editing OpenStreetMap in OsmAnd has become even more convenient. Long tap on the map and select 'Actions' to add a new POI or leave a note to mappers. You'll also see the status of the points &mdash; Removed/Edited/Added.
+Editing OpenStreetMap in OsmAnd has become even more convenient. Long-tap the map and select *Actions* to add a new POI or leave a note to mappers. You'll also see the status of the points &mdash; Removed/Edited/Added.
 Besides the updated interface, you'll also see the new menu animation created for a smooth user experience. We hope you enjoy it! Please let us know what you think on our <a href="https://www.facebook.com/osmandapp/">Facebook</a> and <a href="https://www.twitter.com/osmandapp/">Twitter</a>.
 
 <table class="blogimage">

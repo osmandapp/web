@@ -112,7 +112,7 @@ Release date: 12/2022
 Release date: 06/2022
 
 * Widgets redesign: new Look &  Feel, group by Pages, change order and combine as you  want.
-* Hiking / Cycling / Travel routes: tap on the route symbol and get full information about the route.
+* Hiking / Cycling / Travel routes: tap the route symbol and get full information about the route.
 * Favorite groups: set default appearance for new points in the group
 * Fixes: online tile-maps auto-update
 
@@ -406,7 +406,7 @@ Release date: 03/2016
 * Completely new map markers interface
 * Reworked route preparation menu
 * Highway shields designed by country
-* Reverse geocoding showing the address of a location by tap on the map
+* Reverse geocoding showing the address of a location by tap the map
 * Better transport information
 
 <DownloadRelease blog="osmand-2-3" release="net.osmand-2.3.apk" />

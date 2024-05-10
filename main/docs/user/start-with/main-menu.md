@@ -15,7 +15,7 @@ import Translate from '@site/src/components/Translate.js';
 # Main menu
 Main menu' is a primary list of options available to use in the application. It provides quick access to the profile configuration, global settings, search, personal data, navigation and other features.
 
-The [Main menu](../widgets/map-buttons.md#main-menu) icon '&#8801;' is located on the left bottom corner of the Map screen. In navigation mode this button is not visible by default. It appears after a short tap on the map. 
+The [Main menu](../widgets/map-buttons.md#main-menu) icon '&#8801;' is located on the left bottom corner of the Map screen. In navigation mode this button is not visible by default. It appears after a short tap the map. 
 
 <Tabs groupId="operating-systems">
 
