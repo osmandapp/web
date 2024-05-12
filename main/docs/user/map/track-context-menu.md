@@ -190,26 +190,30 @@ Interaction with the graph:
 
 <TabItem value="android" label="Android">
 
-![Context track menu Graphs Android](@site/static/img/personal/tracks/track_menu_graph_android.png)
+![Context track menu Graphs Android](@site/static/img/personal/tracks/track_menu_graph_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Context track menu Graphs iOS](@site/static/img/personal/tracks/track_menu_graph_ios.png)
+![Context track menu Graphs iOS](@site/static/img/personal/tracks/track_menu_graph_1_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**<Translate android="true" ids="analyze_on_map"/>** button opens [Analyze track menu](../map/tracks-on-map.md#analyze-route-on-map-android) for the track.
+- *<Translate android="true" ids="distance"/>*. This is the sum of the total distance traveled on the track, or the length of the track itself.
+- *<Translate android="true" ids="shared_string_time_span"/>*. This is the time interval between the start and end points of the track.
+- *<Translate android="true" ids="shared_string_start_time"/>* This is the exact time when recording of the track starts.
+- *<Translate android="true" ids="shared_string_end_time"/>*. This is the end time of the track recording.
 
-**<Translate android="true" ids="shared_string_options"/>** button opens menu with: "Edit" opens the track in [Plan route tool](../plan-route/index.md), "Delete" allows to delete chosen track item, "Split interval" opens [Split interval function](#split-interval) for the track.
+**<Translate android="true" ids="analyze_on_map"/>** button opens [Analyze track menu](../map/tracks-on-map.md#analyze-track-on-map) for the track.
 
-- *<Translate android="true" ids="distance"/>* - cumulative distance traveled along the track or the length of the track itself.
-- *<Translate android="true" ids="shared_string_time_span"/>* - the length of time between the start and end points of the track.
-- *<Translate android="true" ids="shared_string_start_time"/>* - exact time when the recording of the track began.
-- *<Translate android="true" ids="shared_string_end_time"/>* -  time when the recording of the track ended.
+**<Translate android="true" ids="shared_string_options"/>** button opens menu with: 
+- *Edit* opens the track in [Plan route tool](../plan-route/index.md).
+- *Delete* allows to delete chosen track item.
+- *Split interval* opens [Split interval function](#split-interval) for the track.
+
 
 ### Speed
 

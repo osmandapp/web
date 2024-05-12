@@ -175,9 +175,7 @@ There are three ways to access the Track Appearance menu:
 | **<Translate ios="true" ids="reset_to_original"/>** - resets all settings to default values. |
 
 
-### Analyze Track on Map
-
-This tool allows you to view track information with graphs and a map. 
+### Analyze Track on Map  
 
 <Tabs groupId="operating-systems">
 
@@ -187,6 +185,30 @@ This tool allows you to view track information with graphs and a map.
 
 ![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_on_map_menu_andr.png) ![Track menu analize on the map distance Android](@site/static/img/personal/tracks/track_analyze_on_map_distance_android.png)   
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*Tap the track → [<Translate android="true" ids="shared_string_options"/>](../map/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*     
+
+![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_1_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+This tool allows you to view track information using graphs and maps.  
+
+- **Graph data (Y-axis)**: Altitude, Slope, Speed, [External sensors data](../plugins/external-sensors.md), or a combination of the two (if data is available on the track).
+- **Graph dimension (X-axis)**: Distance, Time, Time of day.
+- **Tap/Slide**. Tap the Graph to display information about the track point and moving it along the Graph highlights the location of the point on the map and displays information about it in the bar.
+- **Scale**. Scale the Graph with a [two-fingers gesture](../map/interact-with-map.md#gestures). 
+- **Follow My location**. Tap the [My Location](../map/interact-with-map.md#my-location--zoom) buttonto have the map view and graph synchronized with your location. In this case, **graph scale** will remain the same and the **bar information** will be fixed to 1/4 to the left. As you move, the **graph will slide** from left to right, displaying information ahead of your track. This feature is useful for hiking and cycling while navigating, although no other widgets are displayed on this screen.  
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 ![Track menu analyze on map 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Track menu analyze on map 5 Android](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
 
@@ -194,24 +216,11 @@ This tool allows you to view track information with graphs and a map.
 
 <TabItem value="ios" label="iOS">
 
-
-*Tap the track → [<Translate android="true" ids="shared_string_options"/>](../map/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*     
-
-
-![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_1_ios.png)
-
 ![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_2_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_3_ios.png)
-
 
 </TabItem>
 
 </Tabs>
-
-- **Graph data (Y-axis)**: Altitude, Slope, Speed, [External sensors data](../plugins/external-sensors.md) or their combinations (if data is available in the track).
-- **Graph dimension (X-axis)**: Distance / Time / Time of day.
-- **Tap/Slide**: tap to Graph for showing info about track point and moving along Graph highlights point location on the map and displays info about point on the bar.
-- **Scale**: scale Graph by [two fingers gesture](../map/interact-with-map.md#gestures). 
-- **Follow My location**: click button [My Location](../map/interact-with-map.md#my-location--zoom), so map view and graph is synchronized with your location. In that case **graph scale** will stay constant and **bar information** will be fixed to 1/4 from the left. As you move, **graph will slide** from left to right displaying information Ahead of your Track. This functionality is useful for hiking & cycling during navigation, though this screen doesn't have other widgets displayed. 
 
 
 ## Navigation Route
