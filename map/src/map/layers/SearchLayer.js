@@ -93,7 +93,8 @@ export default function SearchLayer() {
         if (ctx.currentObjectType === OBJECT_SEARCH || ctx.searchSettings.useWikiImages) {
             if (
                 !ctx.searchSettings.selectedFilters ||
-                !areSetsEqual(filtersRef.current, ctx.searchSettings.selectedFilters)
+                !areSetsEqual(filtersRef.current, ctx.searchSettings.selectedFilters) ||
+                !ctx.wikiPlaces
             ) {
                 filtersRef.current = ctx.searchSettings.selectedFilters;
                 removeLayers();

@@ -257,6 +257,7 @@ export default function MainMenu({
         ctx.setOpenGroups([]);
         ctx.setSelectedWpt(null);
         setOpenVisibleMenu(false);
+        ctx.setLoadingContextMenu(false);
         if (menuInfo) {
             // update menu
             setShowInfoBlock(false);

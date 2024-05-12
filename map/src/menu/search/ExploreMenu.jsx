@@ -24,6 +24,7 @@ export default function ExploreMenu() {
     function close() {
         ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
         ctx.setCurrentObjectType(null);
+        ctx.setLoadingContextMenu(false);
     }
 
     useEffect(() => {
@@ -65,7 +66,7 @@ export default function ExploreMenu() {
                     </Tooltip>
                 </Toolbar>
             </AppBar>
-            {ctx.loadingContextMenu ? (
+            {!ctx.wikiPlaces && ctx.loadingContextMenu && !ctx.searchSettings.getPoi ? (
                 <Loading id={'se-loading-page'} />
             ) : (
                 <>
