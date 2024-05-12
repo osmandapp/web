@@ -81,6 +81,15 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     const [newWpt, setNewWpt] = useState(null);
 
     useEffect(() => {
+        if (wpt?.type?.isWikiPoi) {
+            setLoading(ctx.loadingContextMenu);
+            if (!ctx.loadingContextMenu && !ctx.searchSettings.getPoi) {
+                setShowInfoBlock(false);
+            }
+        }
+    }, [ctx.loadingContextMenu]);
+
+    useEffect(() => {
         const fetchWpt = async () => {
             let result = null;
             const type = getWptType(ctx.selectedWpt);

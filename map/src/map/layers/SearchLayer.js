@@ -18,6 +18,7 @@ export default function SearchLayer() {
     const map = useMap();
 
     const filtersRef = useRef(null);
+    const openedPoiRef = useRef(null);
 
     const { i18n } = useTranslation();
 
@@ -54,18 +55,22 @@ export default function SearchLayer() {
                 params: {
                     lat: item.geometry.coordinates[1],
                     lon: item.geometry.coordinates[0],
-                    type: item.properties?.poitype,
                     osmid: item.properties?.osmid,
                 },
             });
             if (response?.data) {
                 const poi = response.data;
                 ctx.setSelectedWpt({ poi, wikidata: item });
+            } else {
+                ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: null });
+                console.error(`Poi not found. Maybe it has wrong osmid: ${item.properties?.osmid}`);
             }
         }
 
         if (item) {
-            getWikiPoi().then();
+            getWikiPoi().then(() => ctx.setLoadingContextMenu(false));
+        } else {
+            openedPoiRef.current = null;
         }
     }, [ctx.searchSettings.getPoi]);
 
@@ -154,7 +159,11 @@ export default function SearchLayer() {
             setSelectedObj(feature);
             setModalIsOpen(true);
         } else {
-            ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: feature });
+            if (openedPoiRef.current !== feature) {
+                openedPoiRef.current = feature;
+                ctx.setLoadingContextMenu(true);
+                ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: feature });
+            }
         }
     }
 

@@ -41,6 +41,7 @@ export default function WikiPlacesItem({ item }) {
     }, [item]);
 
     async function openInfo(item) {
+        ctx.setLoadingContextMenu(true);
         ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: item });
     }
 
