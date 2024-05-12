@@ -112,6 +112,35 @@ Application is not properly functional without offline maps which are not distri
 Read more about [download map](../start-with/download-maps.md) options.
 
 
+### How to change app language
+
+The *Display language option* is used to change the language of the entire app, including pop-up prompts, internal text, messages, and more. Up to Android 12, OsmAnd allows you to customize the display language according to your preferences directly directly in the app. Starting from Android 13 and on iOS devices, the display language can only be changed in the system settings (see how to change per-app language preferences in [Android](https://developer.android.com/guide/topics/resources/app-languages) and [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*Android Settings → Apps → OsmAnd → Language*
+
+![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*iOS Settings → OsmAnd Maps → Language*
+
+![General Settings Language iOS](@site/static/img/personal/profiles/general_settings_language_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+:::note
+On some Android devices (Xiaomi with Muiu 14), there is no option to set app languages individually in system settings, so the language of OsmAnd can only be changed together with the language of the whole system. You can check out the discussion on [GitHub discussion](https://github.com/osmandapp/OsmAnd/issues/16990) for additional information.
+:::
+
+
 ### How to manage your settings
 
 You could manage application settings as [Global settings](../personal/global-settings.md) or as [Profile configuration](../personal/profiles.md) via [Main menu](../start-with/main-menu.md). Application comes with a predefined list of profiles that could be modified later. Each profile could be considered as a customized map application for specific purposes. By default profiles are being served only as different navigation modes.

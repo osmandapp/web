@@ -102,6 +102,7 @@ You need to have an OsmAnd Cloud account to use the Free Settings Backup. If you
 
 This section contains settings of the cursor on the map and map view, settings of units & formats of map and profile data, settings of external input devices, and other sensors.
 
+
 ### Appearance
 
 <Tabs groupId="operating-systems">
