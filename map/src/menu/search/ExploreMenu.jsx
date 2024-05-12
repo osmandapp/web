@@ -18,7 +18,6 @@ export default function ExploreMenu() {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
-    const [loading, setLoading] = useState(false);
     const [openFiltersDialog, setOpenFiltersDialog] = useState(false);
     const anchorEl = useRef(null);
 
@@ -30,12 +29,12 @@ export default function ExploreMenu() {
     useEffect(() => {
         ctx.setCurrentObjectType(OBJECT_SEARCH);
         ctx.setSearchSettings({ ...ctx.searchSettings, selectedFilters: new Set(filters), useWikiImages: false });
-        setLoading(true);
+        ctx.setLoadingContextMenu(true);
     }, []);
 
     useEffect(() => {
         if (ctx.wikiPlaces) {
-            setLoading(false);
+            ctx.setLoadingContextMenu(false);
         }
     }, [ctx.wikiPlaces]);
 
@@ -66,7 +65,7 @@ export default function ExploreMenu() {
                     </Tooltip>
                 </Toolbar>
             </AppBar>
-            {loading ? (
+            {ctx.loadingContextMenu ? (
                 <Loading id={'se-loading-page'} />
             ) : (
                 <>

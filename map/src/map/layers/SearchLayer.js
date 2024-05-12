@@ -78,13 +78,14 @@ export default function SearchLayer() {
         let ignore = false;
         let controller = new AbortController();
         const settings = ctx.searchSettings;
+        const loadingContextMenu = ctx.loadingContextMenu;
 
         const onMapMoveEnd = async () => {
             if (
                 ctx.searchSettings.useWikiImages ||
                 (ctx.currentObjectType === OBJECT_SEARCH && (mainIconsLayerRef.current || otherIconsLayerRef.current))
             ) {
-                debouncedGetPlaces({ controller, ignore, settings });
+                debouncedGetPlaces({ controller, ignore, settings, loadingContextMenu });
             }
         };
         map.on('moveend', onMapMoveEnd);
@@ -96,7 +97,7 @@ export default function SearchLayer() {
             ) {
                 filtersRef.current = ctx.searchSettings.selectedFilters;
                 removeLayers();
-                debouncedGetPlaces({ controller, ignore, settings });
+                debouncedGetPlaces({ controller, ignore, settings, loadingContextMenu });
             }
         }
 
@@ -110,7 +111,12 @@ export default function SearchLayer() {
             controller.abort();
             map.off('moveend', onMapMoveEnd);
         };
-    }, [ctx.currentObjectType, ctx.searchSettings.useWikiImages, ctx.searchSettings.selectedFilters]);
+    }, [
+        ctx.currentObjectType,
+        ctx.searchSettings.useWikiImages,
+        ctx.searchSettings.selectedFilters,
+        ctx.loadingContextMenu,
+    ]);
 
     /**
      * A debounced function to fetch place data from a specified API based on map boundaries and user-selected filters.
@@ -124,13 +130,15 @@ export default function SearchLayer() {
      * @returns {Promise<void>} - A promise that resolves when the fetch operation is complete.
      */
     const debouncedGetPlaces = useRef(
-        _.debounce(async ({ controller, ignore, settings }) => {
+        _.debounce(async ({ controller, ignore, settings, loadingContextMenu }) => {
             if (!ignore) {
                 if (settings?.selectedFilters?.size === 0) {
                     ctx.setWikiPlaces(null);
                     return;
                 }
-                map.spin(true, { color: '#1976d2' });
+                if (!loadingContextMenu) {
+                    map.spin(true, { color: '#1976d2' });
+                }
                 let bbox = map.getBounds();
                 const api = settings.useWikiImages ? 'get-wiki-images' : 'get-wiki-data';
                 const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/${api}`, {
