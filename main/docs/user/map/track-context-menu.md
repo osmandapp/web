@@ -600,7 +600,7 @@ Menu Options allows to make manipulation with the chosen track, Information Rout
 
 
 - *<Translate android="true" ids="shared_string_gps_filter"/>* - allows [to filter points of the track](../map/track-context-menu.md#gps-filter).
-- *<Translate android="true" ids="altitude_correction"/>* - to [receive elevation data](../map/track-context-menu.md#altitude), attach your track to the roads or calculate it offline (needed [Terrain maps](../plugins/contour-lines.md#download-maps)).
+- *<Translate android="true" ids="altitude_correction"/>* - to [receive elevation data](../map/track-context-menu.md#calculate-elevation-offline), attach your track to the roads or calculate it offline (needed [Terrain maps](../plugins/contour-lines.md#download-maps)).
 - *<Translate android="true" ids="simulate_your_location"/>* - [simulate your position](../plugins/development.md#gpx-track-simulation) using a GPX track.
 
 
