@@ -1,6 +1,6 @@
 import { useInView } from 'react-intersection-observer';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
-import { ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
+import { LinearProgress, ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { WIKI_IMAGE_BASE_URL } from '../../manager/SearchManager';
 import styles from '../search/search.module.css';
@@ -42,6 +42,7 @@ export default function WikiPlacesItem({ item }) {
 
     async function openInfo(item) {
         ctx.setLoadingContextMenu(true);
+        ctx.setLoadingContextItem(item);
         ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: item });
     }
 
@@ -100,12 +101,13 @@ export default function WikiPlacesItem({ item }) {
                                         </div>
                                     )}
                                 </MenuItem>
+                                {ctx.loadingContextItem === item && <LinearProgress />}
                             </div>
                         </>
                     )}
                 </div>
             </>
         ),
-        [inView, item, anchorEl, typeIcon, typeEmptyIcon]
+        [inView, item, anchorEl, typeIcon, typeEmptyIcon, ctx.loadingContextItem]
     );
 }

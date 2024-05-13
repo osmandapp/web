@@ -1,6 +1,7 @@
 import {
     AppBar,
     Box,
+    CircularProgress,
     Divider,
     IconButton,
     Link,
@@ -49,6 +50,7 @@ import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import { useNavigate } from 'react-router-dom';
 import { apiGet } from '../../../util/HttpApi';
 import Loading from '../../../menu/errors/Loading';
+import PhotoGallery from '../../../menu/search/PhotoGallery';
 
 export default function WptDetails({ isDetails = false, setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
@@ -57,11 +59,16 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
     const currentLoc = useGeoLocation(ctx);
 
+    const ADDRESS_NOT_FOUND = 'No data';
+
     const ICON_IMG_SIZE = 24;
     const ICON_SHIELD_SIZE = 40;
 
     const [wpt, setWpt] = useState(null);
     const [loading, setLoading] = useState(false);
+
+    const [isAddressAdded, setIsAddressAdded] = useState(false);
+    const [isPhotosAdded, setIsPhotosAdded] = useState(false);
 
     const [delayedHash, setDelayedHash] = useState(hash);
     const debouncerTimer = useRef(0);
@@ -115,6 +122,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 const coords = currentPoi.geometry.coordinates;
                 const tags = await WptTagsProvider.getWptTags(currentPoi, type, ctx);
                 result = {
+                    id: wikiObj?.properties.id,
                     type: type,
                     poiType: t(POI_PREFIX + poiOptions[TYPE_OSM_VALUE]),
                     name: wikiObj?.properties.wikiTitle,
@@ -166,20 +174,38 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
     useEffect(() => {
         if (newWpt !== null) {
-            if (newWpt.type?.isPoi || newWpt.type?.isWikiPoi) {
-                const address = getPoiAddress(newWpt);
-                address.then((data) => {
-                    setLoading(false);
-                    if (data) {
-                        newWpt.address = data;
-                    }
-                    setWpt(newWpt);
-                });
-            } else {
-                setWpt(newWpt);
-            }
+            setWpt(newWpt);
+            setIsAddressAdded(false);
+            setIsPhotosAdded(false);
         }
     }, [newWpt]);
+
+    useEffect(() => {
+        if ((wpt?.type?.isPoi || wpt?.type?.isWikiPoi) && !isAddressAdded) {
+            const address = getPoiAddress(wpt);
+            address.then((data) => {
+                if (data) {
+                    setWpt((prevWpt) => ({ ...prevWpt, address: data }));
+                    setIsAddressAdded(true);
+                } else {
+                    setWpt((prevWpt) => ({ ...prevWpt, address: ADDRESS_NOT_FOUND }));
+                    setIsAddressAdded(true);
+                }
+            });
+        }
+    }, [wpt, isAddressAdded]);
+
+    useEffect(() => {
+        if (wpt?.type?.isWikiPoi && !isPhotosAdded) {
+            const photos = getWikiPhotos(wpt);
+            photos.then((data) => {
+                if (data) {
+                    setIsPhotosAdded(true);
+                    setWpt((prevWpt) => ({ ...prevWpt, photos: data }));
+                }
+            });
+        }
+    }, [wpt, isPhotosAdded]);
 
     function getWptType(wpt) {
         return {
@@ -239,7 +265,6 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }
 
     async function getPoiAddress(wpt) {
-        setLoading(true);
         let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/get-poi-address`, {
             apiCache: true,
             params: {
@@ -252,6 +277,20 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 .replace(/ str\./g, '')
                 .replace(/ city/g, ',')
                 .replace(/ dist.*/g, '');
+        } else {
+            return null;
+        }
+    }
+
+    async function getWikiPhotos(wpt) {
+        let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/get-wiki-photos`, {
+            apiCache: true,
+            params: {
+                id: wpt.id,
+            },
+        });
+        if (response && response.data) {
+            return response.data;
         } else {
             return null;
         }
@@ -404,14 +443,20 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                     </>
                                 )}
                             </div>
-                            {wpt?.address && <WptAddress />}
+                            {wpt?.address && wpt?.address !== ADDRESS_NOT_FOUND ? (
+                                <WptAddress />
+                            ) : wpt?.address !== ADDRESS_NOT_FOUND ? (
+                                <CircularProgress sx={{ ml: 2 }} size={19} />
+                            ) : null}
                             {!wpt.type?.isWikiPoi && <WptDetailsButtons wpt={wpt} isDetails={isDetails} />}
                             {wpt?.wikiDesc && (
                                 <>
-                                    <Divider />
+                                    <Divider sx={{ mt: 2 }} />
                                     <MenuItem className={styles.descTitle}>
                                         <ListItemText>
-                                            <Typography className={styles.descTitleText}>About</Typography>
+                                            <Typography className={styles.descTitleText}>
+                                                {t('shared_string_description')}
+                                            </Typography>
                                         </ListItemText>
                                     </MenuItem>
                                     <div className={styles.descTextBlock}>
@@ -420,6 +465,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                 </>
                             )}
                             <Divider sx={{ mt: wpt.type?.isPoi ? '0px' : '16px' }} />
+                            {wpt.photos && <PhotoGallery photos={wpt.photos} />}
                             {wpt.desc && (
                                 <WptTagInfo
                                     key={'desc'}

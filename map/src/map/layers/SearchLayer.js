@@ -68,7 +68,11 @@ export default function SearchLayer() {
         }
 
         if (item) {
-            getWikiPoi().then(() => ctx.setLoadingContextMenu(false));
+            getWikiPoi().then(() => {
+                ctx.setLoadingContextMenu(false);
+                ctx.setLoadingContextItem(null);
+                map.spin(false);
+            });
         } else {
             openedPoiRef.current = null;
         }
@@ -171,6 +175,7 @@ export default function SearchLayer() {
             if (openedPoiRef.current !== feature) {
                 openedPoiRef.current = feature;
                 ctx.setLoadingContextMenu(true);
+                map.spin(true, { color: '#1976d2' });
                 ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: feature });
             }
         }

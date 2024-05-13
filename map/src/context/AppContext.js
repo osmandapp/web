@@ -301,6 +301,7 @@ export const AppContextProvider = (props) => {
     });
     const [createTrack, setCreateTrack] = useState(null);
     const [loadingContextMenu, setLoadingContextMenu] = useState(false);
+    const [loadingContextItem, setLoadingContextItem] = useState(null);
     const [updateInfoBlock, setUpdateInfoBlock] = useState(false);
     const [trackProfileManager, setTrackProfileManager] = useState({});
     const [pointContextMenu, setPointContextMenu] = useState({});
@@ -542,6 +543,8 @@ export const AppContextProvider = (props) => {
                 setWikiPlaces,
                 searchSettings,
                 setSearchSettings,
+                loadingContextItem,
+                setLoadingContextItem,
             }}
         >
             {props.children}

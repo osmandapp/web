@@ -54,6 +54,7 @@
         "react-leaflet-markercluster": "^3.0.0-rc1",
         "react-router-dom": "^6.3.0",
         "react-scripts": "^5.0.1",
+        "react-swipeable-views": "^0.14.0",
         "react-use-cookie": "^1.4.0",
         "react-window": "^1.8.7",
         "recharts": "^2.1.10",
