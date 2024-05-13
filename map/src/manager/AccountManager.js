@@ -1,4 +1,5 @@
 import { apiGet, apiPost } from '../util/HttpApi';
+import i18n from '../i18n';
 
 export const LOGIN_LOGOUT_URL = '/map/loginForm#logout'; // lose window.location.search/window.location.hash
 
@@ -40,6 +41,7 @@ async function userLogin({ ctx, username, pwd, setEmailError, handleClose, lang 
         body: JSON.stringify({ username: username.toLowerCase(), password: pwd, lang }),
     });
     if (await isRequestOk(response, setEmailError)) {
+        await resetLanguage();
         setEmailError('');
         ctx.setLoginUser(username);
         ctx.setEmailCookie(username, { days: 30, SameSite: 'Strict' }); // for next login
@@ -54,6 +56,7 @@ async function userLogout({ ctx, username, setEmailError, handleClose, setState,
         body: JSON.stringify({ username: username.toLowerCase(), lang }),
     });
     if (await isRequestOk(response, setEmailError)) {
+        await resetLanguage();
         setState('login');
         ctx.setLoginUser('');
         setEmailError('');
@@ -165,6 +168,11 @@ async function changeEmail({ email, token, setEmailError, lang = DEFAULT_AUTH_AP
     if (resp?.status === 200) {
         return true;
     }
+}
+
+async function resetLanguage() {
+    localStorage.removeItem('i18nextLng');
+    await i18n.changeLanguage(navigator.language);
 }
 
 const AccountManager = {

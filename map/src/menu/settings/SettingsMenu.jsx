@@ -107,6 +107,24 @@ export default function SettingsMenu({ setCloudSettings }) {
                 const transB = getTransLanguage(b);
                 return collator.compare(transA, transB);
             });
+            res.push(
+                <MenuItem
+                    key={'device_language'}
+                    onClick={async () => {
+                        await i18n.changeLanguage(navigator.language).then(() => {
+                            setCurrentLang(t(`lang_${i18n.language}`));
+                        });
+                        setOpenLangList(false);
+                        ctx.setOpenedPopper(null);
+                    }}
+                >
+                    <ListItemText>
+                        <Typography variant="inherit" noWrap>
+                            {`${t('system_locale')} (${t(`lang_${navigator.language}`)})`}
+                        </Typography>
+                    </ListItemText>
+                </MenuItem>
+            );
             sortedLangList.map((lang, index) => {
                 const transLang = getTransLanguage(lang);
                 if (transLang) {

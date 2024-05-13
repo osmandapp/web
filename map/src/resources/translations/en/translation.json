@@ -5205,5 +5205,6 @@
   "shared_string_modified": "Modified",
   "shared_string_added": "Added",
   "shared_string_deleted": "Deleted",
-  "shared_string_changes": "Changes"
+  "shared_string_changes": "Changes",
+  "system_locale": "System"
 }
