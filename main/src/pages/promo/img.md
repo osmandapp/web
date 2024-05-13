@@ -23,3 +23,5 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 
 
 ![Cycloroute style](@site/static/img/email/cyclomap.png)
+
+![Hiking style](@site/static/img/email/hikingstyle.png)
