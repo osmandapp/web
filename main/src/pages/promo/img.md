@@ -46,3 +46,17 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 
 ![Hiking style](@site/static/img/email/icv_orto_val.png)
 
+
+### France
+
+![Hiking style](@site/static/img/email/ign_pentes_fr.png)
+
+### Norway
+
+![Hiking style](@site/static/img/email/finn_kart.png)
+
+![Hiking style](@site/static/img/email/utno_topo.png)
+
+### Swiss
+
+![Hiking style](@site/static/img/email/swiss_topo.png)
