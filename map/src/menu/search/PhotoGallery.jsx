@@ -10,6 +10,12 @@ export default function PhotoGallery({ photos }) {
     const [activeStep, setActiveStep] = useState(0);
     const { t } = useTranslation();
 
+    const [loading, setLoading] = useState(true);
+
+    const handleImageLoad = () => {
+        setLoading(false);
+    };
+
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const handleStepChange = (step) => setActiveStep(step);
@@ -24,7 +30,7 @@ export default function PhotoGallery({ photos }) {
         });
     }
 
-    const filteredPhotos = filterPhotos(photos);
+    const filteredPhotos = filterPhotos(photos).slice(0, 100);
 
     return (
         <>
@@ -71,8 +77,8 @@ export default function PhotoGallery({ photos }) {
                     >
                         <Box
                             sx={{
-                                width: '500px',
-                                height: '500px',
+                                width: '700px',
+                                height: '700px',
                                 bgcolor: 'background.paper',
                                 p: 2,
                                 overflow: 'hidden',
@@ -87,16 +93,19 @@ export default function PhotoGallery({ photos }) {
                                 containerStyle={{ display: 'block' }}
                             >
                                 {filteredPhotos.map((photo, index) => (
-                                    <img
-                                        key={index}
-                                        src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=500`}
-                                        alt={`Photo ${index + 1}`}
-                                        style={{
-                                            maxHeight: '100%',
-                                            maxWidth: '100%',
-                                            overflow: 'hidden',
-                                        }}
-                                    />
+                                    <div key={index}>
+                                        <img
+                                            onLoad={handleImageLoad}
+                                            src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=700`}
+                                            alt={`Photo ${index + 1}`}
+                                            style={{
+                                                display: loading ? 'none' : 'block',
+                                                maxHeight: '100%',
+                                                maxWidth: '100%',
+                                                overflow: 'hidden',
+                                            }}
+                                        />
+                                    </div>
                                 ))}
                             </SwipeableViews>
                             <Box
