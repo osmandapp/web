@@ -31,7 +31,7 @@ export default function PhotoGallery({ photos }) {
     }
 
     const filteredPhotos = filterPhotos(photos).slice(0, 100);
-    console.log('filteredPhotos', filteredPhotos);
+
     return (
         <>
             {filteredPhotos.length > 0 && (
