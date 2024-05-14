@@ -1,6 +1,7 @@
 import {
     AppBar,
     Box,
+    Button,
     CircularProgress,
     Collapse,
     Divider,
@@ -137,6 +138,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     tags: tags,
                     osmUrl: poiOptions[POI_OSM_URL],
                     wvLinks: wikiObj?.properties.wvLinks,
+                    lang: wikiObj?.properties.wikiLang,
                 };
             } else if (type?.isWpt) {
                 result = await getDataFromWpt(type, ctx.selectedWpt);
@@ -461,9 +463,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                 <div>
                                     <MenuItemWithLines maxLines={3} className={styles.name}>
                                         <Typography className={styles.name}>
-                                            {wpt.type?.isPoi ? (
+                                            {wpt.type?.isPoi || wpt.type?.isWikiPoi ? (
                                                 <Link href={wpt.osmUrl} target="_blank" underline="none">
-                                                    {wpt.name ? wpt.poiType + ': ' + wpt.name : wpt.poiType}
+                                                    {wpt.name ? wpt.name : wpt.poiType}
                                                 </Link>
                                             ) : (
                                                 wpt.name ?? 'No name'
@@ -511,6 +513,17 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                     <div className={styles.descTextBlock}>
                                         <Typography className={styles.descText}>{wpt?.wikiDesc}</Typography>
                                     </div>
+                                    <Button
+                                        sx={{ ml: 1 }}
+                                        onClick={() =>
+                                            window.open(
+                                                'http://' + wpt.lang + '.wikipedia.org/wiki/' + wpt.name,
+                                                '_blank'
+                                            )
+                                        }
+                                    >
+                                        {t('shared_string_read_more')}
+                                    </Button>
                                 </>
                             )}
                             <Divider sx={{ mt: wpt.type?.isPoi ? '0px' : '16px' }} />

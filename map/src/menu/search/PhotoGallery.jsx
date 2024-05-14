@@ -31,7 +31,7 @@ export default function PhotoGallery({ photos }) {
     }
 
     const filteredPhotos = filterPhotos(photos).slice(0, 100);
-
+    console.log('filteredPhotos', filteredPhotos);
     return (
         <>
             {filteredPhotos.length > 0 && (
@@ -45,9 +45,15 @@ export default function PhotoGallery({ photos }) {
                         {filteredPhotos.slice(0, 1).map((photo, index) => (
                             <Grid item xs={12} sm={6} key={index}>
                                 <img
+                                    onLoad={handleImageLoad}
                                     src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=300`}
                                     alt={`Photo ${index + 1}`}
-                                    style={{ width: '148px', height: '148px', objectFit: 'cover' }}
+                                    style={{
+                                        display: loading ? 'none' : 'block',
+                                        width: '148px',
+                                        height: '148px',
+                                        objectFit: 'cover',
+                                    }}
                                 />
                             </Grid>
                         ))}
@@ -55,16 +61,22 @@ export default function PhotoGallery({ photos }) {
                             {filteredPhotos.slice(1, 5).map((photo, index) => (
                                 <Grid item xs={6} key={index}>
                                     <img
+                                        onLoad={handleImageLoad}
                                         src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=300`}
                                         alt={`Photo ${index + 2}`}
-                                        style={{ width: '71px', height: '71px', objectFit: 'cover' }}
+                                        style={{
+                                            display: loading ? 'none' : 'block',
+                                            width: '71px',
+                                            height: '71px',
+                                            objectFit: 'cover',
+                                        }}
                                     />
                                 </Grid>
                             ))}
                         </Grid>
                     </Grid>
                     {filteredPhotos.length > 0 && (
-                        <Button onClick={handleOpen} sx={{ ml: 2 }}>
+                        <Button onClick={handleOpen} sx={{ ml: 1 }}>
                             {`${t('shared_string_show_all')} (${filteredPhotos.length})`}
                         </Button>
                     )}
