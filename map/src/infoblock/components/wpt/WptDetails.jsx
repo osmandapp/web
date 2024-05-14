@@ -2,6 +2,7 @@ import {
     AppBar,
     Box,
     CircularProgress,
+    Collapse,
     Divider,
     IconButton,
     Link,
@@ -26,6 +27,7 @@ import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direct
 import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
 import { ReactComponent as FavoritesIcon } from '../../../assets/menu/ic_action_favorite.svg';
+import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
 import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import MarkerOptions, { changeIconSizeWpt, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import FavoritesManager, {
@@ -35,7 +37,7 @@ import FavoritesManager, {
     prepareColor,
     prepareIcon,
 } from '../../../manager/FavoritesManager';
-import { Folder, LocationOn } from '@mui/icons-material';
+import { ExpandLess, ExpandMore, Folder, LocationOn } from '@mui/icons-material';
 import WptDetailsButtons from './WptDetailsButtons';
 import WptTagsProvider, { FINAL_ICON_NAME, POI_OSM_URL, POI_PREFIX, TYPE_OSM_VALUE } from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
@@ -51,6 +53,7 @@ import { useNavigate } from 'react-router-dom';
 import { apiGet } from '../../../util/HttpApi';
 import Loading from '../../../menu/errors/Loading';
 import PhotoGallery from '../../../menu/search/PhotoGallery';
+import wptStyles from '../wpt/wptDetails.module.css';
 
 export default function WptDetails({ isDetails = false, setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
@@ -133,6 +136,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     icon: poiOptions[FINAL_ICON_NAME],
                     tags: tags,
                     osmUrl: poiOptions[POI_OSM_URL],
+                    wvLinks: wikiObj?.properties.wvLinks,
                 };
             } else if (type?.isWpt) {
                 result = await getDataFromWpt(type, ctx.selectedWpt);
@@ -183,13 +187,12 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     useEffect(() => {
         if ((wpt?.type?.isPoi || wpt?.type?.isWikiPoi) && !isAddressAdded) {
             const address = getPoiAddress(wpt);
+            setIsAddressAdded(true);
             address.then((data) => {
                 if (data) {
                     setWpt((prevWpt) => ({ ...prevWpt, address: data }));
-                    setIsAddressAdded(true);
                 } else {
                     setWpt((prevWpt) => ({ ...prevWpt, address: ADDRESS_NOT_FOUND }));
-                    setIsAddressAdded(true);
                 }
             });
         }
@@ -197,10 +200,10 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
     useEffect(() => {
         if (wpt?.type?.isWikiPoi && !isPhotosAdded) {
+            setIsPhotosAdded(true);
             const photos = getWikiPhotos(wpt);
             photos.then((data) => {
                 if (data) {
-                    setIsPhotosAdded(true);
                     setWpt((prevWpt) => ({ ...prevWpt, photos: data }));
                 }
             });
@@ -395,6 +398,52 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         );
     };
 
+    const WikiVoyageLinks = ({ wvLinks }) => {
+        const [open, setOpen] = useState(false);
+
+        const value = Object.values(wvLinks)
+            .map((link) => link[0])
+            .join(' • ');
+
+        return (
+            <>
+                <MenuItem style={{ userSelect: 'text' }} disableRipple className={wptStyles.tagItem} divider>
+                    <WikiIcon className={wptStyles.tagIcon} />
+                    <>
+                        <ListItemText onClick={() => setOpen(!open)}>
+                            <MenuItemWithLines
+                                name={t('shared_string_wikivoyage')}
+                                maxLines={1}
+                                className={wptStyles.tagPrefix}
+                            />
+                            {Object.keys(wvLinks).length > 1 ? (
+                                <MenuItemWithLines name={value} maxLines={1} className={wptStyles.tagName} />
+                            ) : (
+                                <Link href={Object.values(wvLinks)[0][1]} target="_blank" rel="noopener noreferrer">
+                                    {Object.values(wvLinks)[0][1]}
+                                </Link>
+                            )}
+                        </ListItemText>
+                        {Object.keys(wvLinks).length > 1 && (
+                            <IconButton onClick={() => setOpen(!open)}>
+                                {open ? <ExpandLess /> : <ExpandMore />}
+                            </IconButton>
+                        )}
+                    </>
+                </MenuItem>
+                <Collapse in={open} timeout="auto" unmountOnExit>
+                    {Object.values(wvLinks).map((item, index) => (
+                        <MenuItem disableRipple key={index} divider className={wptStyles.tagList}>
+                            <Link href={item[1]} target="_blank" rel="noopener noreferrer">
+                                {item[0]}
+                            </Link>
+                        </MenuItem>
+                    ))}
+                </Collapse>
+            </>
+        );
+    };
+
     return (
         <>
             {loading ? (
@@ -466,6 +515,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                             )}
                             <Divider sx={{ mt: wpt.type?.isPoi ? '0px' : '16px' }} />
                             {wpt.photos && <PhotoGallery photos={wpt.photos} />}
+                            {wpt.wvLinks && <WikiVoyageLinks wvLinks={wpt.wvLinks} />}
                             {wpt.desc && (
                                 <WptTagInfo
                                     key={'desc'}
