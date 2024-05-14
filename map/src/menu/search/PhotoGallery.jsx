@@ -106,17 +106,23 @@ export default function PhotoGallery({ photos }) {
                             >
                                 {filteredPhotos.map((photo, index) => (
                                     <div key={index}>
-                                        <img
-                                            onLoad={handleImageLoad}
-                                            src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=500`}
-                                            alt={`Photo ${index + 1}`}
-                                            style={{
-                                                display: loading ? 'none' : 'block',
-                                                maxHeight: '100%',
-                                                maxWidth: '100%',
-                                                overflow: 'hidden',
-                                            }}
-                                        />
+                                        <a
+                                            href={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <img
+                                                onLoad={handleImageLoad}
+                                                src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=500`}
+                                                alt={`Photo ${index + 1}`}
+                                                style={{
+                                                    display: loading ? 'none' : 'block',
+                                                    maxHeight: '100%',
+                                                    maxWidth: '100%',
+                                                    overflow: 'hidden',
+                                                }}
+                                            />
+                                        </a>
                                     </div>
                                 ))}
                             </SwipeableViews>
