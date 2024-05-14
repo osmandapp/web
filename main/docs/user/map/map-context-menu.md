@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Map Context menu provides information about selected object on the map. It can also be used to build a route to a selected location.  
 
-In order to open Context menu you should tap on the object on the Map. There are two types of map contet menu: selecting an object - by short tap, selecting any precise point on the map - by long tap.
+In order to open Context menu you should tap the object on the Map. There are two types of map contet menu: selecting an object - by short tap, selecting any precise point on the map - by long-tap.
 
 
 ### Select an object (short tap)
@@ -45,8 +45,8 @@ Context menu will appear when you **short tap** on the marked object on the Map.
 </Tabs> 
 
 
-### Select any point (long tap)
-Context menu will appear when you hold at any point on the Map with **long tap**. In this case context menu provides you the information of geographical point address, distance and direction from your current position. 
+### Select any point (long-tap)
+Context menu will appear when you hold at any point on the Map with **long-tap**. In this case context menu provides you the information of geographical point address, distance and direction from your current position. 
 
 <Tabs groupId="operating-systems">
 
@@ -67,7 +67,7 @@ Context menu will appear when you hold at any point on the Map with **long tap**
 
 ### Select route
 
-Short tap on a [GPX-track](../map/tracks-on-map.md) on the map  opens [Context track menu](../map/track-context-menu.md).
+Short tap a [GPX-track](../map/tracks-on-map.md) on the map  opens [Context track menu](../map/track-context-menu.md).
 
 <Tabs groupId="operating-systems">
 
@@ -116,7 +116,7 @@ In order to gain more details about object you need to click on the "Details" bu
 
 ### Object info
 
-This panel includes additional information about the object. This info could be copied to the buffer by tap on it. Additional information about object includes:
+This panel includes additional information about the object. This info could be copied to the buffer by tap it. Additional information about object includes:
 
 - [Alternative names](#alternative-names)
 - [Coordinates](../map/map-context-menu.md#coordinates)
@@ -147,7 +147,7 @@ OsmAnd displays additional names of POIs in Map context menu. First is shown the
 
 ### Coordinates
 
-In the Context menu, you can find [geographical coordinates](../search/search-coordinates.md#coordinate-format) of a point in various formats and also shareable OsmAnd and [OpenStreetMap Links](../map/map-context-menu.md#openstreetmap-link) (the last option is available only when the [OpenStreetMap editing plugin](../plugins/osm-editing.md) is enabled). If you expand coordinates section and long tap on any line from the list, its values will be automatically copied to the clipboard (**Android**) or the *Copy* option becomes available in the pop-up message (**iOS**).  
+In the Context menu, you can find [geographical coordinates](../search/search-coordinates.md#coordinate-format) of a point in various formats and also shareable OsmAnd and [OpenStreetMap Links](../map/map-context-menu.md#openstreetmap-link) (the last option is available only when the [OpenStreetMap editing plugin](../plugins/osm-editing.md) is enabled). If you expand coordinates section and long-tap any line from the list, its values will be automatically copied to the clipboard (**Android**) or the *Copy* option becomes available in the pop-up message (**iOS**).  
 
 |Coordinates format||
 |:------|:------|
@@ -419,7 +419,7 @@ Read more about [search](../search/index.md) functionality.
 ### Avoid road
 
 Using Map context menu, you can add a specific road to the list of non-used for routing roads. That will affect [Route preparation](../navigation/setup/route-navigation.md).  
-To delete previosly selected roads from *[Avoid roads list](../navigation/routing/osmand-routing.md#avoid-roads-menu)* tap on a sign, choose *Remove* (**Android**) or *Dismiss* (**iOS**).
+To delete previosly selected roads from *[Avoid roads list](../navigation/routing/osmand-routing.md#avoid-roads-menu)* tap a sign, choose *Remove* (**Android**) or *Dismiss* (**iOS**).
 
 <Tabs groupId="operating-systems">
 

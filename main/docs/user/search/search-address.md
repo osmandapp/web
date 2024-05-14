@@ -155,7 +155,7 @@ Search for streets by *[addr:street=*](https://wiki.openstreetmap.org/w/index.ph
 </Tabs>
 
 **To use the *Postcode search*, you just need to enter the number**, which can consist even of a single digit, and the application offers a list of available relevant postcodes.
-- Select the required code and tap on it.
+- Select the required code and tap it.
 - You can use the *Show *postcode number* on the map* feature. This opens a [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) with the selected postcode without any additional information about the location.
 - You can refine your search by this code by first selecting the required street from the list and then the number.
 

@@ -93,7 +93,7 @@ The [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.m
 
 ![Profiles Storage Settings Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
 
-1. **Device memory** shows how much free space is left on your device. Tap on a field to access the [*Maps and Resources*](../personal/maps.md#maps-and-resources) menu, where you can see detailed information about OsmAnd data and be able to manage it.
+1. **Device memory** shows how much free space is left on your device. Tap a field to access the [*Maps and Resources*](../personal/maps.md#maps-and-resources) menu, where you can see detailed information about OsmAnd data and be able to manage it.
 
 2. In the **<Translate android="true" ids="change_data_storage_folder"/>**, you can select a folder to save OsmAnd data on your device.  
 

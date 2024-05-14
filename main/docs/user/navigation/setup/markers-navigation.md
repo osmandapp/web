@@ -74,7 +74,7 @@ Either way, follow these steps to set *Marker navigation*:
 
 ## Add marker on a map
 
-*Markers* can be added or deleted from the map by single tap on the screen at the desired location. Then you need to follow instructions from the *[Map context menu](../../map/map-context-menu.md#add--edit-marker)* article.  
+*Markers* can be added or deleted from the map by single tap the screen at the desired location. Then you need to follow instructions from the *[Map context menu](../../map/map-context-menu.md#add--edit-marker)* article.  
 
 ### Add favorite
 
@@ -112,8 +112,8 @@ Once a marker is added to the map, you can select it as your [destination](./rou
 
 - In [Navigation menu](./route-navigation.md#set-target-point).  
 - Using *[Map markers list](../../personal/markers.md#list)*.
-- By tap on a *[Marker widget](../../widgets/markers.md)*.
-- With single tap on a marker on the map.
+- By tap a *[Marker widget](../../widgets/markers.md)*.
+- With single tap a marker on the map.
 
 <!-- screenshot -->
 
@@ -190,7 +190,7 @@ You can sort *Markers* by:
 
 #### Sort markers with Plan a route tool
 
-Using functionality of the [Plan a route](../../plan-route/create-route.md#points-list-and-graph) tool you can sort *Markers* *Dor-to-dor*, put them in reverse order or create a *Round trip*. If you tap on a *Navigation* option, *Markers* will be used as [intermediate destinations](../setup/route-navigation.md#intermediate-destinations) while [Route preparation](../setup/route-navigation.md).
+Using functionality of the [Plan a route](../../plan-route/create-route.md#points-list-and-graph) tool you can sort *Markers* *Dor-to-dor*, put them in reverse order or create a *Round trip*. If you tap a *Navigation* option, *Markers* will be used as [intermediate destinations](../setup/route-navigation.md#intermediate-destinations) while [Route preparation](../setup/route-navigation.md).
 
 <Tabs groupId="operating-systems">
 
@@ -214,7 +214,7 @@ Using functionality of the [Plan a route](../../plan-route/create-route.md#point
 ### Mark as passed
 
 A *Marker* can be marked as passed (Android) or dismissed (iOS) through the *[Map context menu](../../map/map-context-menu.md#add--edit-marker)* (first screenshot).  
-When you approach the *Marker* at a distance closer than 40 meters (Android) or 50 meters (iOS), a switch in the *[Markers widgets](../../widgets/markers.md#top-bar-widget)* bar becomes active (second screenshot). By single tap on this switch, a *Marker* becomes inactive, and navigation is built to the next one from the [list](#navigation-list).  
+When you approach the *Marker* at a distance closer than 40 meters (Android) or 50 meters (iOS), a switch in the *[Markers widgets](../../widgets/markers.md#top-bar-widget)* bar becomes active (second screenshot). By single tap this switch, a *Marker* becomes inactive, and navigation is built to the next one from the [list](#navigation-list).  
 After the *Marker* is been dismissed, it gets into the [History](../../personal/markers.md#history) folder, from where it can be restored if needed.  
 
 <Tabs groupId="operating-systems">

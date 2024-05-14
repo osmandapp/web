@@ -66,7 +66,7 @@ One of the main improvements of the 2.3 release is the introduction of highway s
 
 ## Reverse geocoding
 
-Now OsmAnd has the reverse geocoding function, which means that you automatically get the address of any location you tap on the map. It is also easy to add that location to your favorites or to a route.
+Now OsmAnd has the reverse geocoding function, which means that you automatically get the address of any location you tap the map. It is also easy to add that location to your favorites or to a route.
 
 <table class="blogimage">
   <tr>
@@ -77,7 +77,7 @@ Now OsmAnd has the reverse geocoding function, which means that you automaticall
 
 ## Transport stops information
 
-OsmAnd has obtained better transport information together with new icons. To see the additional info, just go to Configure map * Transport * Transport stops. If you tap on a transport stop marked by a specific icon, you'll be able to see the information concerning the routes available at this stop.
+OsmAnd has obtained better transport information together with new icons. To see the additional info, just go to Configure map * Transport * Transport stops. If you tap a transport stop marked by a specific icon, you'll be able to see the information concerning the routes available at this stop.
 
 <table class="blogimage">
   <tr>

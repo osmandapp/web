@@ -60,8 +60,8 @@ To display street-level imagery on the map, you need to enable layer first in [C
 ![Mapillary plugin Android](@site/static/img/plugins/mapillary/Mapilary_street_level_imagery_android.png) ![Mapillary plugin images Android](@site/static/img/plugins/mapillary/mapillary_plugin_images_android.png)
 
 :::note Mapillary Photo viewer
-- Tap on &#8285; button to open chosen image in [Mapillary application](https://www.mapillary.com/mobile-apps).
-- Tap on an arrow to move from image to image.
+- Tap &#8285; button to open chosen image in [Mapillary application](https://www.mapillary.com/mobile-apps).
+- Tap an arrow to move from image to image.
 :::
 
 </TabItem>
@@ -71,7 +71,7 @@ To display street-level imagery on the map, you need to enable layer first in [C
 ![Mapillary plugin iOS](@site/static/img/plugins/mapillary/Mapilary_street_level_imagery_ios.png) ![Mapillary plugin images iOS](@site/static/img/plugins/mapillary/mapillary_plugin_images_ios.png) 
 
 :::note Mapillary Photo viewer
-- Tap on an arrow to move from image to image.
+- Tap an arrow to move from image to image.
 :::
 
 </TabItem>

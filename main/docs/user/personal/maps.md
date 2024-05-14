@@ -29,7 +29,7 @@ OsmAnd operates with 2 type of maps: [Vector maps](../map/vector-maps.md) and [R
 
 *<Translate android="true" ids="shared_string_menu,maps_and_resources"/>*
 
-![Maps menu Android](@site/static/img/personal/maps/maps_overview_andr.png) 
+![Maps menu Android](@site/static/img/personal/maps/maps_overview_1_andr.png) 
 
 </TabItem>
 
@@ -96,10 +96,10 @@ The *Maps & Resources* main menu section of the OsmAnd app provides access to ma
 - The [*Updates*](#updates) tab allows users to get information about available updates to maps and other resources, ensuring that the data is up-to-date and accurate. 
 
 *General actions you can do in Maps & Resources*:  
-1) **Refresh** &#10227;. Reloads the list of available maps from the OsmAnd server.  
-2) **Search**. Allows you to search for maps by **country**, **province** or major **city**.  
-3) **Toolbar**. Allows you to see on the indicator how much memory is available for download and how many maps can be downloaded for free. Depending on the tab, sometimes slightly different data is displayed.  
-4) **Map counter**(*Free version* only visible if you don't have a [subscription](../purchases/index.md)). The indicator with dividers shows how many maps you have left to download out of the *7 available*. <u>**NOTE**</u> that monthly map updates count as one more map download and are subtracted from the available number of free map downloads. 
+- **Refresh** &#10227;. Reloads the list of available maps from the OsmAnd server.  
+- **Search** &#x1F50D;. Allows you to search for maps by **country**, **province** or major **city**.  
+- **Device memory**. Allows you to see on the indicator how much memory is available for download and how many maps can be downloaded for free. Depending on the tab, sometimes slightly different data is displayed.  
+- **Map counter**(*Free version* only visible if you don't have a [subscription](../purchases/index.md)). The indicator with dividers shows how many maps you have left to download out of the *7 available*. <u>**NOTE**</u> *that monthly map updates count as one more map download and are subtracted from the available number of free map downloads.* 
 
 
 ### Downloads
@@ -155,7 +155,6 @@ In the Download Maps menu, there is a **World Maps** section that provides acces
 Information about *maps menu and actions* can be found in the article [**Download maps**](../start-with/download-maps.md).
 
 
-
 ### Local
 
 <Tabs groupId="operating-systems">
@@ -189,7 +188,7 @@ The Local tab shows how much space all existing OsmAnd data occupies on your dev
 
 ![Local category overview Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png) ![Local category options Android 2](@site/static/img/personal/maps/local_category_options_2_andr.png)   
 
-When you tap on any element of the Local tab, the list of elements of this data category will be opened, and above the list, there is an information panel that visually displays how much space the selected element occupies compared to the total amount of OsmAnd data.  
+When you tap any element of the Local tab, the list of elements of this data category will be opened, and above the list, there is an information panel that visually displays how much space the selected element occupies compared to the total amount of OsmAnd data.  
 
 **Actions:**
 

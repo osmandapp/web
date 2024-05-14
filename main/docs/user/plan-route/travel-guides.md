@@ -91,7 +91,7 @@ There are also specialized guides, such as the UNESCO Global Geoparks Network li
 
 ## Browse Articles
 
-The *Travel guides* screen consists of two general parts: a [*search field*](#search) and a *travel guides* list with two tabs: *[<Translate android="true" ids="shared_string_explore"/> and <Translate android="true" ids="saved_articles"/>](#explore-and-bookmark)*. You can switch between them with a single tap on a tab.    
+The *Travel guides* screen consists of two general parts: a [*search field*](#search) and a *travel guides* list with two tabs: *[<Translate android="true" ids="shared_string_explore"/> and <Translate android="true" ids="saved_articles"/>](#explore-and-bookmark)*. You can switch between them with a single tap a tab.    
 When you open *Travel Guides* (*<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*), OsmAnd will show you articles about interesting places located near the geographic coordinates of the current center of the map. When you tap the item from the list the [Travel guide article](#travel-article) opens. At the bottom of the screen is a switch to the *Bookmarks tab*.  
 
 ### Explore and Bookmark
@@ -298,7 +298,7 @@ An alternative way to browse *Travel guides* is to display them on the map using
 
 ![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_on_the_map.png) ![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_context_menu.png)  
 
-After you enable *Travel routes* display in the *Configure map* menu, circles of different colors will appear on the map. The orange ones represent routes tracks, route articles, and some waypoints. If you tap on a specific route, article, or point and then tap *Download* button (&#9047;), you can [manage them as a track](#manage-as-gpx-track). 
+After you enable *Travel routes* display in the *Configure map* menu, circles of different colors will appear on the map. The orange ones represent routes tracks, route articles, and some waypoints. If you tap a specific route, article, or point and then tap *Download* button (&#9047;), you can [manage them as a track](#manage-as-gpx-track). 
 
 ### Custom Travel guides
 

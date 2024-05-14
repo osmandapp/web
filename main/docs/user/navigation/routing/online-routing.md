@@ -34,7 +34,7 @@ Online routing types are designed for *Driving, Cycling, and Walking* profiles, 
 ### Custom Online routing
 
 In addition to the preset online routing types, you can configure other online routing mechanisms.  
-Tap on the **+ Add online routing engine** button and choose one of the proposed online routing types ([Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Openrouteservice](https://openrouteservice.org)). Select the appropriate vehicle and tap *test routing* before saving your changes.  
+Tap the **+ Add online routing engine** button and choose one of the proposed online routing types ([Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Openrouteservice](https://openrouteservice.org)). Select the appropriate vehicle and tap *test routing* before saving your changes.  
 
 ![Custom online routing Android](@site/static/img/navigation/routing/custom_online_routing_andr_1.png) ![Custom online routing Android](@site/static/img/navigation/routing/custom_online_routing_andr_2.png)  
 

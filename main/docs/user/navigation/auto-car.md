@@ -37,7 +37,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 When you open the application, a list of categories is displayed. For easy navigation, you can hide it by pressing the button in the upper right corner of the screen.  
 
-- Tap on the menu button to hide the list of categories.
+- Tap the menu button to hide the list of categories.
 - In the upper right corner of the screen, tap the button next to the function buttons if you want to return to the list.
 
 

@@ -122,7 +122,7 @@ The *Display language option* is used to change the language of the entire app, 
 
 *Android Settings → Apps → OsmAnd → Language*
 
-![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_android.png)
+![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_1_andr.png)  
 
 </TabItem>
 
@@ -424,7 +424,7 @@ You may need to perform the following steps before doing so, otherwise OsmAnd wi
 - [Stop audio/video note recording](../plugins/audio-video-notes.md)
 
 2. *Force stop* function:
-    - Long tap *OsmAnd icon → _i_ button → Force stop*. 
+    - Long-tap *OsmAnd icon → **i** button → Force stop*. 
     - Open the settings and tap *Apps & notifications → OsmAnd → Force stop*.
 
 </TabItem>
@@ -446,8 +446,8 @@ You may need to perform the following steps before doing so, otherwise OsmAnd wi
 
 ## App shortcuts
 
-[App shortcuts](https://support.google.com/android/answer/9450271) are available for the OsmAnd icon. Just long tap the OsmAnd icon on your device screen to open App shortcuts menu.
-Here, you can click short tap for choosing next actions: _"Navigate to Home", "Navigate to Work", "Start Recording", "Search", "My places", "Navigate to"_. Long tap one of the actions allows you to add new action icon to your device screen.
+[App shortcuts](https://support.google.com/android/answer/9450271) are available for the OsmAnd icon. Just long-tap the OsmAnd icon on your device screen to open App shortcuts menu.
+Here, you can click short tap for choosing next actions: *Navigate to Home*, *Navigate to Work*, *Start Recording*, *Search*, *My places*, *Navigate to*. Long-tap one of the actions allows you to add new action icon to your device screen.
 
 Tapping to the action icon allows starting this action immediately.
 

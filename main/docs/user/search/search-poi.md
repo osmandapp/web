@@ -388,11 +388,11 @@ To save a custom filter, select everything you need, then:
 ### Edit an existing filter
 
 From the main screen:
-1. Tap on the agnifying glass to open the Search screen.
+1. Tap the agnifying glass to open the Search screen.
 2. Select the Categories tab.
 3. Choose the custom category: screen with search results will open.
-4. Tap on filter icon and then on Filter screen.
-5. Tap on the 3-dot icon.
+4. Tap filter icon and then on Filter screen.
+5. Tap the 3-dot icon.
 6. In the drop-down menu, select "Edit categories".
 
 

@@ -51,7 +51,7 @@ When a parking spot appears on the map, it acquires the latitude and longitude o
 
 ###  Set a spot
 
-To set a Parking spot on the map, zoom-in to the required level, then long-tap on the place on the map and in the [Context menu](../map/map-context-menu.md) that opens, do the settings.       
+To set a Parking spot on the map, zoom-in to the required level, then long-tap the place on the map and in the [Context menu](../map/map-context-menu.md) that opens, do the settings.       
 
    
 <Tabs groupId="operating-systems">

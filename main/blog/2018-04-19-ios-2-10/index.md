@@ -28,7 +28,7 @@ The context menu of a point has been updated to a new convenient design. Also, i
 ## Intermediate waypoints
 
 Navigation routes became the number one feature of the last release. This time, we're adding the ability to add intermediate waypoints along the route. Now you can plan your entire route for the day at once instead of making a new one after every stop.
-To try it, build a route, then make a long tap on the map and choose 'Route'. There, you'll be able to add the waypoint, replace your destination, etc. You can also rearrange the order of the points by pressing the flag button in the context menu and dragging the point with the '≡' button. Swipe points to the left to remove them.
+To try it, build a route, then make a long-tap the map and choose 'Route'. There, you'll be able to add the waypoint, replace your destination, etc. You can also rearrange the order of the points by pressing the flag button in the context menu and dragging the point with the '≡' button. Swipe points to the left to remove them.
 
 <table class="blogimage">
   <tr>
@@ -71,7 +71,7 @@ We added several updates related to navigation. First, OsmAnd now offers the wid
 </table> 
 
 
-Also, the new version of OsmAnd helps you avoid certain roads during navigation. You may know that there's bad road quality or that road is stuck in traffic at the moment. Select to avoid that road by pressing the settings button in the navigation context menu and going to Avoid roads > Select on map. Then tap on the street you'd like to avoid. To stop avoiding that street, please press on the road works sign and choose 'Dismiss'.
+Also, the new version of OsmAnd helps you avoid certain roads during navigation. You may know that there's bad road quality or that road is stuck in traffic at the moment. Select to avoid that road by pressing the settings button in the navigation context menu and going to Avoid roads > Select on map. Then tap the street you'd like to avoid. To stop avoiding that street, please press on the road works sign and choose 'Dismiss'.
 
 ## Route simulation
 

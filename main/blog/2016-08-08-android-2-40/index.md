@@ -43,7 +43,7 @@ Now OsmAnd navigation can be integrated into your car audio system. Connect an A
 
 ## Better Public Transport Information
 
-In the previous OsmAnd release, we introduced transport stops information. In 2.4, this has been improved. Now, you can turn them on in Configure map * Transport * Transport stops, then tap on one and see all the routes on that stop. More to come, you can tap a route to view it on the map from start to end.
+In the previous OsmAnd release, we introduced transport stops information. In 2.4, this has been improved. Now, you can turn them on in Configure map * Transport * Transport stops, then tap one and see all the routes on that stop. More to come, you can tap a route to view it on the map from start to end.
 
 <table class="blogimage">
   <tr>

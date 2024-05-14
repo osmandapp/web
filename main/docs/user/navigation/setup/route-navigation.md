@@ -236,7 +236,7 @@ If  [Navigation History](../../personal/global-settings.md#history) recording is
 
 Once start and end points are selected, the app will create a route between them using active profile. During the route calculation process (which can take up to 1-2 minutes) OsmAnd searches for roads, that best match the *[Navigation settings](../guidance/navigation-settings.md)*. You will also see a blue progress line at the bottom of the screen, signaling that the calculation is still not complete.  
 
-- To begin navigation, you should tap on **Start** button.
+- To begin navigation, you should tap **Start** button.
 - To stop navigation mode, tap the *[Navigation](../../widgets/map-buttons.md#directions)* button at the bottom of the screen, than choose **Dismiss** (*Android*) or **Cansel** (*iOS*) and confirm your choice.
 - In the Android version of the app, when you reach your destination, OsmAnd proposes to finish navigation, recalculate the route or find parking. In the iOS version Osmand only announces the end of the route.
 
@@ -274,8 +274,8 @@ This option is availible in Android version of the app in *[Notification list](.
 
 ![Notification screen Android](@site/static/img/navigation/route/navigation_pause_android.png)
 
-To resume navigation, you can use the previously mentioned message from OsmAnd in the notification bar, *Quick actions menu* or dialog, that appears when you tap on the *[Navigation button](../../widgets/map-buttons.md#directions)* (see screenshot).  
-Please note, that when you tap on the *Navigation button* while your route, navigation doesn't stop, voice prompts continue to be voiced, although proposed options (*Resume* (for Android) or *Start* (for iOS)) may be confusing.
+To resume navigation, you can use the previously mentioned message from OsmAnd in the notification bar, *Quick actions menu* or dialog, that appears when you tap the *[Navigation button](../../widgets/map-buttons.md#directions)* (see screenshot).  
+Please note, that when you tap the *Navigation button* while your route, navigation doesn't stop, voice prompts continue to be voiced, although proposed options (*Resume* (for Android) or *Start* (for iOS)) may be confusing.
 
 <Tabs groupId="operating-systems">
 

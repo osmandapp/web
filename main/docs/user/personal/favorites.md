@@ -61,13 +61,13 @@ Favorites are grouped into one of the map layers. You can [show or hide](../map/
 
 ### Favorite Context menu
 
-Favorite's [Context menu](../map/map-context-menu.md#favorites--track-points-from-the-group) opens when you select it in *My Favorites* or tap on it on the map. In Favorite Context menu you can find information about chosen point, [edit](../map/map-context-menu.md#add--edit-favorite) it, add a marker or use it for navigation.  
+Favorite's [Context menu](../map/map-context-menu.md#favorites--track-points-from-the-group) opens when you select it in *My Favorites* or tap it on the map. In Favorite Context menu you can find information about chosen point, [edit](../map/map-context-menu.md#add--edit-favorite) it, add a marker or use it for navigation.  
 
 
 ### Create and Edit
 
 The easiest way to create a new Favorite point is to select the [POI](../map/point-layers-on-map.md#points-of-interest-poi) or building on the map with a short tap and select [Add](../map/map-context-menu.md#add--edit-favorite) in [Map Context menu](../map/map-context-menu.md). In this case, all the information from POI will be added to a new Favorite.  
-You can also add a new Favorite point to any place on the map with [long tap](../map/map-context-menu.md#select-any-point-long-tap).  
+You can also add a new Favorite point to any place on the map with [long-tap](../map/map-context-menu.md#select-any-point-long-tap).  
 
 <Tabs groupId="operating-systems">
 
@@ -274,7 +274,7 @@ Search function opens a points list of Favorites sorted by distance from map cen
 
 ![Searching menu Favorite android](@site/static/img/personal/searching_favorites_menu_android.png)  
 
-Tap on magnifying glass (&#128269;) button opens search menu for Favorites. Tap on a chosen point opens [Context menu](../map/map-context-menu.md#select-an-object-short-tap) of this point.
+Tap magnifying glass (&#128269;) button opens search menu for Favorites. Tap a chosen point opens [Context menu](../map/map-context-menu.md#select-an-object-short-tap) of this point.
 
 ![Searching menu Favorite android](@site/static/img/personal/searching_favorites_menu_2_android.png)
 
@@ -282,7 +282,7 @@ Tap on magnifying glass (&#128269;) button opens search menu for Favorites. Tap 
 
 <TabItem value="ios" label="iOS">
 
-Moving the screen down opens the search menu for Favorites: _Menu → My Places → Favorites → Pull down_. Tap on a chosen point opens [Context menu](../map/map-context-menu.md#select-an-object-short-tap) of this point.
+Moving the screen down opens the search menu for Favorites: _Menu → My Places → Favorites → Pull down_. Tap a chosen point opens [Context menu](../map/map-context-menu.md#select-an-object-short-tap) of this point.
 
 ![Searching menu Favorite iOS](@site/static/img/personal/searching_favorites_menu_ios.png) ![Searching menu Favorite iOS](@site/static/img/personal/searching_favorites_menu_2_ios.png)
 
@@ -322,11 +322,11 @@ Each Favorites folder containes one group of favorites. You can expand and colla
 
 ![Favorites folders expand android](@site/static/img/personal/favorites_folders_expand_android.png)
 
-- Tap on any point from Favorite list shows it on the map and also opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) for chosen point.
+- Tap any point from Favorite list shows it on the map and also opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) for chosen point.
 
 ![Favorites context menu ios](@site/static/img/personal/favorites_context_menu_ios.png)
 
-- Tap on &#8942; button opens special functions for a chosen Favorite folder.
+- Tap &#8942; button opens special functions for a chosen Favorite folder.
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
 
@@ -357,19 +357,19 @@ Actions:
 
 ![Favorites folders expand ios](@site/static/img/personal/favorites_folders_expand_ios.png)
 
-- Tap on any point from Favorite list shows it on map and opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) for this point.  
+- Tap any point from Favorite list shows it on map and opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) for this point.  
 
 ![Favorites context menu ios](@site/static/img/personal/favorites_context_menu_ios.png)
 
-- Tap on &#128394; button opens special functions. You need to choose one ore more folder or points for actions.
+- Tap &#128394; button opens special functions. You need to choose one ore more folder or points for actions.
 
 ![Favorites actions ios](@site/static/img/personal/favorites_actions_ios.png)
 
 Actions:
-1. *Import loader* - allows to share/import Favorites points (folders) like "favorite.gpx" file.
-2. *Folder* - allows to move your Favorites points (folders) to others Favorites folders (named Groups) or to new creating folders (Group). 
-3. *Palette of colors* - allows to change colors for Favorites points (folders).
-4. &#x1F5D1; - [allows to delete](#bulk-delete) chosen Favorites points (folders).
+1. *Import loader*. Allows to share/import Favorites points (folders) like "favorite.gpx" file.
+2. *Folder*. Allows to move your Favorites points (folders) to others Favorites folders (named Groups) or to new creating folders (Group). 
+3. *Palette of colors*. Allows to change colors for Favorites points (folders).
+4. &#x1F5D1;. [Allows to delete](#bulk-delete) chosen Favorites points (folders).
 
 
 - [Export/Import favorite](#all-favorites) for iOS version like special menu in "My Favorites" menu.
@@ -416,7 +416,7 @@ Functions for Favorite folder:
 
 <TabItem value="ios" label="iOS">
 
-- Long tap on folder → show context menu → _Change appearance_:
+- Long-tap folder → show context menu → _Change appearance_:
 
 Default color, icon and shape will apply to the added favorite points into the group.
 
@@ -459,7 +459,7 @@ Default color, icon and shape will apply to the added favorite points into the g
 
 <TabItem value="android" label="Android">
 
-For changing Group (folder) name you need to tap on &#8942; button to open special functions for a chosen Favorite folder.
+For changing Group (folder) name you need to tap &#8942; button to open special functions for a chosen Favorite folder.
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
 
@@ -470,7 +470,7 @@ Functions for Favorite folder:
 
 <TabItem value="ios" label="iOS">
 
-- Long tap on folder → show context menu → _Change appearance → Name_:
+- Long-tap folder → show context menu → _Change appearance → Name_:
 
 Change a name in the group name section.
 
@@ -489,7 +489,7 @@ Favorites data (points and groups) can be deleted using bulk delete.
 
 <TabItem value="android" label="Android">
 
-Tap on &#x1F5D1; at the bottom of the screen. You can select points and groups and by tap on &#x1F5D1; button in top right corner delete them.  
+Tap &#x1F5D1; at the bottom of the screen. You can select points and groups and by tap &#x1F5D1; button in top right corner delete them.  
 
 ![Favorites actions android](@site/static/img/personal/favorites_actions_android.png) ![Favorites action delete android](@site/static/img/personal/favorites_delete_android.png)
 
@@ -497,7 +497,7 @@ Tap on &#x1F5D1; at the bottom of the screen. You can select points and groups a
 
 <TabItem value="ios" label="iOS">
 
-Tap on &#128394;&#65039; button opens special functions bar at the bottom of the screen. You can select points and groups and by tap on &#x1F5D1; button in lower right corner delete them.
+Tap &#128394;&#65039; button opens special functions bar at the bottom of the screen. You can select points and groups and by tap &#x1F5D1; button in lower right corner delete them.
 
 ![Favorites actions ios](@site/static/img/personal/favorites_actions_ios.png)
 
@@ -513,12 +513,13 @@ You can add to or remove your favorites from [Map markers list](../personal/mark
 
 <TabItem value="android" label="Android">
 
-Tap on &#8942; button (**Android**) opens special functions for a chosen Favorite folder (group).
+Tap &#8942; button (**Android**) opens special functions for a chosen Favorite folder (group).
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
 
 Functions for Favorite folder:
-- &nbsp;<Translate android="true" ids="shared_string_add_to_map_markers"/>  or <Translate android="true" ids="remove_from_map_markers"/>   - add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
+- &nbsp;<Translate android="true" ids="shared_string_add_to_map_markers"/>  or <Translate android="true" ids="remove_from_map_markers"/>.   
+- Add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
 
 </TabItem>
 
@@ -648,7 +649,7 @@ iOS:
 
 <TabItem value="android" label="Android">
 
-A tap on &#8942; button opens the special functions menu for a chosen favorite folder. You can choose **share** and send Favorites.gpx file to your device's memory or to your friends via messengers.  
+A tap &#8942; button opens the special functions menu for a chosen favorite folder. You can choose **share** and send Favorites.gpx file to your device's memory or to your friends via messengers.  
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
 
@@ -656,11 +657,11 @@ A tap on &#8942; button opens the special functions menu for a chosen favorite f
 
 <TabItem value="ios" label="iOS">
 
-- Tap on &#128394;&#65039; button opens special functions menu. Then you need to choose favorites folder(s) or point(s) and using &#8657 (**share**) button send Favorites.gpx file to your device's memory or your friends via messengers. 
+- Tap &#128394;&#65039; button opens special functions menu. Then you need to choose favorites folder(s) or point(s) and using &#8657 (**share**) button send Favorites.gpx file to your device's memory or your friends via messengers. 
 
 ![Favorites actions ios](@site/static/img/personal/favorites_actions_ios.png)
 
-- Long tap on folder → show context menu → &#8657 (**share**) button.
+- Long-tap folder → show context menu → &#8657 (**share**) button.
 
 ![Favorites actions ios](@site/static/img/personal/favorites_actions1_ios.png) 
 

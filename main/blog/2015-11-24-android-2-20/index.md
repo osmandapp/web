@@ -26,7 +26,7 @@ You can choose what you would like to see when the application starts: the usual
 
 ## Reworked context-sensitive UI
 
-OsmAnd has acquired a whole new context menu design that changes according to the content and the type of location you're working with. Now POI, Favorites and other types of locations get corresponding context menus to help you operate the app much easier. Also, you can now just tap on a region you need to download the map. This way, you'll get the map sections that you need much faster. More to come, you can enjoy amazing pull-up menus and a whole new Create POI interface.
+OsmAnd has acquired a whole new context menu design that changes according to the content and the type of location you're working with. Now POI, Favorites and other types of locations get corresponding context menus to help you operate the app much easier. Also, you can now just tap a region you need to download the map. This way, you'll get the map sections that you need much faster. More to come, you can enjoy amazing pull-up menus and a whole new Create POI interface.
 
 <table class="blogimage">
   <tr>

@@ -42,7 +42,7 @@ Using the widget on the map, you'll be able to view images or videos and even ad
     </tr>
 </table> 
 
-Now you have access to an extensive database created by volunteers. To view media attached to a certain point on the map, just make a long tap there and open the context menu. You'll be able to scroll through images of the location easily.
+Now you have access to an extensive database created by volunteers. To view media attached to a certain point on the map, just make a long-tap there and open the context menu. You'll be able to scroll through images of the location easily.
 
 Zoom in closer to view the images even more conveniently in a Mapillary window over your map. You can also press the white arrows to 'move' along the streets. To contribute to Mapillary, just press on the widget and take a picture.
 

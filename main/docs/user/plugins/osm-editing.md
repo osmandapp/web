@@ -125,8 +125,7 @@ You can enable or disable as a separate layer the display of OSM modifications, 
 
 The OpenStreetMap editing plugin allows you to create new objects on the map called [points of interest or POI](../map/point-layers-on-map.md#points-of-interest-poi). You can put on a map a new store, your favorite landmark, a bench, or a shelter, so people can find them.  
 
-1. Tap on the map where the new POI will be placed (or tap on a not uploaded POI).
-2. Tap [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
+1. Tap the map to place a new POI, or tap a POI not yet loaded.2. Tap [<Translate android="true" ids="shared_string_actions"/>](../map/map-context-menu.md#actions).
 3. Choose [<Translate android="true" ids="context_menu_item_create_poi"/>](../map/map-context-menu.md#-create--modify-poi), and add its name and other information such as hours of operation, website, etc. When you select a not uploaded POI, *Create POI* changes to *Modify POI*. 
 4. Depending on the [Offline editing](#settings) setting, you can save the data locally or [upload it](../map/map-context-menu#-upload-poi--osm-note).    
 

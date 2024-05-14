@@ -283,7 +283,7 @@ To import icon images of your plugin to OsmAnd you can create folder (in our exa
 
 The *"DOWNLOADS"* type: you can add any files (sqlite, obf, fonts...) for downloading. You can see the general types of downloading files <a href="https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33">here</a>.
 
-**Note**: _"isHidden":"true"_ tag (by default - false) can hide your map data from [Download maps menu](../personal/maps#local-maps) of OsmAnd.
+**Note**: _"isHidden":"true"_ tag (by default - false) can hide your map data from [Maps and Resources](../personal/maps#local-maps) of OsmAnd.
 
 ![Custom package](@site/static/img/plugins/custom/3.jpg)
 

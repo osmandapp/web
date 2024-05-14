@@ -448,6 +448,16 @@ export async function getGpxFileFromTrackData(file) {
     });
 }
 
+export function updateMetadata({ file, name = null }) {
+    if (!file.metaData) {
+        file.metaData = {};
+    }
+    if (name) {
+        file.metaData.name = name;
+    }
+    return file;
+}
+
 function prepareTrackData({ file, getAnalysis = false }) {
     // add updated points to track
     if (file.tracks && file.tracks[0] && validateRoutePoints(file.points)) {

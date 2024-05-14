@@ -120,7 +120,7 @@ Good news for our users with bicycle trips! We improved bicycle nodes' visibilit
 ## Context menu for tracks with basic info
 
 In this release we improved the context menu for tracks and added an opportunity to display the menu by tapping on a track directly on the map.
-When you tap on the track you can see all infromation about it: points, overwiew, altitude, speed.
+When you tap the track you can see all infromation about it: points, overwiew, altitude, speed.
 
 <table class="blogimage">
   <tr>

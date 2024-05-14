@@ -25,7 +25,7 @@ Although OsmAnd supports both [Vector](../map/vector-maps.md) and [Raster](../ma
 
 ## Download 
 
-To start downloading maps, go to the main menu [**Download maps**](../personal/maps.md) (*Android*) / **Maps & Resources** (*iOS*). There you can select the maps you need for offline navigation.
+To start downloading maps, go to the main menu [**Maps & Resources**](../personal/maps.md). There you can select the maps you need for offline navigation.
 
 ### First Screen
 
@@ -52,7 +52,7 @@ If you are using a VPN, OsmAnd can offer you a regional map, giving you the opti
 It is important to note that you can skip this download step, and if you already have previous [OsmAnd Cloud](../personal/osmand-cloud.md) settings this step can also be skipped. This is convenient if you have reinstalled the application or want to restore the previous user experience without having to re-select regions and settings.
 
 
-### Download Maps menu
+### Maps and Resources
 
 <Tabs groupId="operating-systems">
 
@@ -74,22 +74,14 @@ It is important to note that you can skip this download step, and if you already
 
 </Tabs>
 
-The **Downloads Maps menu** displays:
+The **Maps & Resources menu** displays:
 - Downloads section with [all existing OsmAnd map types](../personal/maps.md#map-types).
 - [Local section](../personal/maps.md#local) with all your map data.
-- [Updates section](../personal/maps.md#updates)
+- [Updates section](../personal/maps.md#updates).
 
-**Action**. The icons are located in the upper right corner of the screen. 
-- **Refresh** &#10227;. Checks for available map updates on OsmAnd servers.
-- **Search** &#x1F50D;. Find a region by name or the major cities in it.
-
-**Memory info and Map counter**. Information graphics above all menu sections.
-- **[Device memory](../personal/maps.md#download)**. Show available memory to be used on the device.
-- **Map counter** (*Free version*). Display how many [Free map downloads](../purchases/android.md#free-and-paid-features) left.
-
-**Regions**. To download a specific type of map of the country or region you want:
-- First click on the folder with the region, such as Africa, Europe, or other.
-- Tap the one you want in the list of regions that opens.
+To download a specific type of map of the country or region you need:
+- First tap the folder with the region, such as Africa, Europe, or other.
+- Tap the one you need in the list of regions that opens.
 - The next screen shows a list of all map types that can be downloaded.
 
 You can find information about other types of maps in the [Downloads](../personal/maps.md#downloads) section of the **Maps** article.
@@ -104,13 +96,13 @@ OsmAnd has a small world map built in. You do not need to download large maps of
 
 <TabItem value="android" label="Android">
 
-![Short tap on the World map allows to download region map](@site/static/img/map/download_region_map_via_worldmap.png)
+![Short tapthe World map allows to download region map](@site/static/img/map/download_region_map_via_worldmap.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Short tap on the World map allows to download region map](@site/static/img/settings/download_region_map_via_worldmap_ios.png)
+![Short tap the World map allows to download region map](@site/static/img/settings/download_region_map_via_worldmap_ios.png)
 
 </TabItem>
 
@@ -144,6 +136,6 @@ Search makes it easy to find a specific map or region, providing a convenient an
 
 - To start a search, begin typing the name of a country or region in the search field. A list of map files will start to appear. 
 - In case you don't have the Standard map of some region, there will be a Download icon next to it, if the map is downloaded it will be green, and with a menu, the others will be gray.
-- Tap on the name of the required result and the Regionwide map list will open.
+- Tap the name of the required result and the Regionwide map list will open.
 - Select [map types](../personal/maps.md#map-types): *Standart map, Road-only map, Contour lines, Wikipedia*.
 
