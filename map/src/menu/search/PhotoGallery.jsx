@@ -89,8 +89,8 @@ export default function PhotoGallery({ photos }) {
                     >
                         <Box
                             sx={{
-                                width: '700px',
-                                height: '700px',
+                                width: '500px',
+                                height: '500px',
                                 bgcolor: 'background.paper',
                                 p: 2,
                                 overflow: 'hidden',
@@ -108,7 +108,7 @@ export default function PhotoGallery({ photos }) {
                                     <div key={index}>
                                         <img
                                             onLoad={handleImageLoad}
-                                            src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=700`}
+                                            src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=500`}
                                             alt={`Photo ${index + 1}`}
                                             style={{
                                                 display: loading ? 'none' : 'block',
