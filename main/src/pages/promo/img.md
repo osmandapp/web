@@ -25,3 +25,24 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 ![Cycloroute style](@site/static/img/email/cyclomap.png)
 
 ![Hiking style](@site/static/img/email/hikingstyle.png)
+
+
+### Spain
+![Hiking style](@site/static/img/email/ign_topo_es.png)
+
+![Hiking style](@site/static/img/email/ign_base_es.png)
+
+![Hiking style](@site/static/img/email/ign_orto_es.png)
+
+### Catalunia
+
+![Hiking style](@site/static/img/email/icgc_topo_gris_cat.png)
+
+![Hiking style](@site/static/img/email/icgc_orto_gris_cat.png)
+
+### Valencia
+
+![Hiking style](@site/static/img/email/icv_topo_val.png)
+
+![Hiking style](@site/static/img/email/icv_orto_val.png)
+
