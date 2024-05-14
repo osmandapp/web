@@ -122,7 +122,7 @@ The *Display language option* is used to change the language of the entire app, 
 
 *Android Settings → Apps → OsmAnd → Language*
 
-![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_android.png)
+![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_1_andr.png)  
 
 </TabItem>
 
