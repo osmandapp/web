@@ -60,3 +60,21 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 ### Swiss
 
 ![Hiking style](@site/static/img/email/swiss_topo.png)
+
+### Belgium
+
+![Hiking style](@site/static/img/email/topo_bel.png)
+
+![Hiking style](@site/static/img/email/orto_bel.png)
+
+### Argentina 
+
+![Hiking style](@site/static/img/email/topo_arg.png)
+
+![Hiking style](@site/static/img/email/oscuro_arg.png)
+
+![Hiking style](@site/static/img/email/hib_arg.png)
+
+![Hiking style](@site/static/img/email/gris_arg.png)
+
+![Hiking style](@site/static/img/email/argenmap.png)
