@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { OBJECT_SEARCH } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import { apiGet } from '../../util/HttpApi';
@@ -145,13 +145,13 @@ export default function SearchLayer() {
                     map.spin(true, { color: '#1976d2' });
                 }
                 let bbox = map.getBounds();
-                const api = settings.useWikiImages ? 'get-wiki-images' : 'get-wiki-data';
+                const api = settings?.useWikiImages ? 'get-wiki-images' : 'get-wiki-data';
                 const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/${api}`, {
                     apiCache: true,
                     params: {
                         northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
                         southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
-                        lang: settings.useWikiImages ? null : i18n.language,
+                        lang: settings?.useWikiImages ? null : i18n.language,
                         filters: settings?.selectedFilters ? [...settings.selectedFilters] : null,
                     },
                     signal: controller.signal,
@@ -206,14 +206,22 @@ export default function SearchLayer() {
         },
     });
 
-    markerClusterGroup.on('clusterclick', function (cluster) {
+    const handleClusterClick = useCallback((cluster) => {
         const childMarkers = cluster.layer.getAllChildMarkers();
         const minIndexMarker = childMarkers.reduce((min, m) => (m.options.index < min.options.index ? m : min));
         const mainMarker = childMarkers.find((m) => m.options.index === minIndexMarker.options.index);
         if (mainMarker) {
             mainMarker.fire('click');
         }
-    });
+    }, []);
+
+    useEffect(() => {
+        markerClusterGroup.on('clusterclick', handleClusterClick);
+
+        return () => {
+            markerClusterGroup.off('clusterclick', handleClusterClick);
+        };
+    }, [handleClusterClick]);
 
     function createGeoJsonData(places) {
         const sortedPlaces = [...places].sort((a, b) => a.properties.rowNum - b.properties.rowNum);
