@@ -396,9 +396,10 @@ To adjust the speed of a simulation go to: *<Translate android="true" ids="share
 If you encounter any difficulties while building the route, please consult the troubleshooting instructions in the *[special documentation section](../../troubleshooting/navigation.md)*. There you can find information about possible reasons for *[slow route calculation](../../troubleshooting/navigation.md#route-calculation-is-slow)*, what to do if the route is *[longer than 250 kilometers](../../troubleshooting/navigation.md#how-to-calculate-routes-longer-than-250km)* or the  proposed route *[does not seem correct](../../troubleshooting/navigation.md#the-calculated-route-does-not-seem-correct)*.  
 Below you can find out how to resolve situations when navigation is not possible due to the lack of necessary maps.  
 
-### No maps 
+### No maps or maps not in sync
 
-When you try to build a route to a place whose map is not loaded, the progress line indicating that the route is being calculated does not appear, and the Start button also remains gray.  
+To build a route all **necessary maps** needs to be downloaded and have the same release date. So when you try to build a route to a place whose map is not loaded, the progress line indicating that the route is being calculated does not appear, and the Start button also remains gray. 
+
 Please note, that at some zoom levels the reason for the absence of the route can not be obvious, as it may seem that the necessary maps are present. In that case see *[Additional information in Navigation menu](#additional-information-in-navigation-menu)*.
 
 <Tabs groupId="operating-systems">
