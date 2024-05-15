@@ -198,8 +198,7 @@ In this section you can set parameters of units & formats for chosen application
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 min/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 kn |
 |**<Translate android="true" ids="distance_during_navigation"/>** | <Translate android="true" ids="precise"/> | _For exact numbers_ (Choose how distance information is displayed in navigation widgets (distance to point, next turn, lanes)) |
-|          | <Translate android="true" ids="round_up"/> | _For easier readability_  |
-
+|          | <Translate android="true" ids="round_up"/> | For easier readability numbers on widgets (destination, next turn) will be round down to have less digits. Examples: 12.64 km -> 12 km, 3672 m -> 3 km, 462 m -> 400 m, 184 m -> 150 m, 47 m -> 40 m, 18 m -> 10 m  |
 
 
 ### Other
