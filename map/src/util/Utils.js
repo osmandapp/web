@@ -282,7 +282,7 @@ export function areSetsEqual(set1, set2) {
     if (set1 === set2) {
         return true;
     }
-    if (set1 == null || set2 == null) {
+    if (set1 === null || set2 === null) {
         return false;
     }
     if (set1.size !== set2.size) {

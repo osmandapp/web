@@ -188,9 +188,8 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
     useEffect(() => {
         if ((wpt?.type?.isPoi || wpt?.type?.isWikiPoi) && !isAddressAdded) {
-            const address = getPoiAddress(wpt);
             setIsAddressAdded(true);
-            address.then((data) => {
+            getPoiAddress(wpt).then((data) => {
                 if (data) {
                     setWpt((prevWpt) => ({ ...prevWpt, address: data }));
                 } else {
@@ -203,8 +202,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     useEffect(() => {
         if (wpt?.type?.isWikiPoi && !isPhotosAdded) {
             setIsPhotosAdded(true);
-            const photos = getWikiPhotos(wpt);
-            photos.then((data) => {
+            getWikiPhotos(wpt).then((data) => {
                 if (data) {
                     setWpt((prevWpt) => ({ ...prevWpt, photos: data }));
                 }
@@ -517,7 +515,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                         sx={{ ml: 1 }}
                                         onClick={() =>
                                             window.open(
-                                                'http://' + wpt.lang + '.wikipedia.org/wiki/' + wpt.name,
+                                                'https://' + wpt.lang + '.wikipedia.org/wiki/' + wpt.name,
                                                 '_blank'
                                             )
                                         }

@@ -6,15 +6,15 @@ import styles from '../search/search.module.css';
 import { useTranslation } from 'react-i18next';
 
 export default function PhotoGallery({ photos }) {
+    const MAX_PHOTOS = 100;
+
     const [open, setOpen] = useState(false);
     const [activeStep, setActiveStep] = useState(0);
     const { t } = useTranslation();
 
     const [loading, setLoading] = useState(true);
 
-    const handleImageLoad = () => {
-        setLoading(false);
-    };
+    const handleImageLoad = () => setLoading(false);
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -29,8 +29,7 @@ export default function PhotoGallery({ photos }) {
             return imageExtensions.includes(extension);
         });
     }
-
-    const filteredPhotos = filterPhotos(photos).slice(0, 100);
+    const filteredPhotos = filterPhotos(photos).slice(0, MAX_PHOTOS);
 
     return (
         <>
