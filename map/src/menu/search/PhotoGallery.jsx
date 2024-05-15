@@ -108,7 +108,7 @@ export default function PhotoGallery({ photos }) {
                                 {filteredPhotos.map((photo, index) => (
                                     <div key={index}>
                                         <a
-                                            href={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}`}
+                                            href={`https://commons.wikimedia.org/wiki/File:${photo.properties.imageTitle}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
