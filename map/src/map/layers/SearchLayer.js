@@ -268,7 +268,9 @@ export default function SearchLayer() {
                             weight: 1,
                             zIndex: 1000,
                         });
-                        circle.on('click', () => openInfo(feature));
+                        circle.on('click', () => {
+                            openInfo(feature);
+                        });
                         simpleMarkersArr.addLayer(circle);
                     } else {
                         let markerPromise = new Promise((resolve) => {
@@ -284,7 +286,9 @@ export default function SearchLayer() {
                                     index: feature.index,
                                     id: feature.properties.id,
                                 });
-                                marker.on('click', () => openInfo(feature));
+                                marker.on('click', () => {
+                                    openInfo(feature);
+                                });
                                 markerClusterGroup.addLayer(marker);
                                 resolve();
                             };
@@ -298,7 +302,9 @@ export default function SearchLayer() {
                                     weight: 1,
                                     zIndex: 1000,
                                 });
-                                circle.on('click', () => openInfo(feature));
+                                circle.on('click', () => {
+                                    openInfo(feature);
+                                });
                                 markerClusterGroup.addLayer(circle);
                                 resolve();
                             };

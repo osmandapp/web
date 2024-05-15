@@ -14,7 +14,9 @@ export default function PhotoGallery({ photos }) {
 
     const [loading, setLoading] = useState(true);
 
-    const handleImageLoad = () => setLoading(false);
+    const handleImageLoad = () => {
+        setLoading(false);
+    };
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
