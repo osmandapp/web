@@ -80,7 +80,6 @@ OsmAnd Plugins may augment these Feature groups: **Layers**, **Widgets**, **Cont
 |🤖 [Audio/video notes](#audiovideo-notes) | [Map layer](../plugins/audio-video-notes.md#show-all-on-the-map), [Context menu](../plugins/audio-video-notes.md#create), [Widget](../plugins/audio-video-notes.md#recording-widget) |
 |[OpenStreetMap editing](#openstreetmap-editing)| [Map layer](../plugins/osm-editing.md#how-to-use) |
 |[Parking position](#parking-position) | [Context menu](../plugins/parking.md#set-a-point), [Widget](../plugins/parking.md#parking-widget) |
-|🤖 [OpenPlaceReviews](#openplacereviews) | [Context menu](../plugins/openplacereviews.md#how-to-add) |
 |[Mapillary](#mapillary) | [Map layer](../plugins/mapillary.md#map-layer), [Context menu](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
 |🤖 [External Sensors](#external-sensors) | [Widget](../plugins/external-sensors.md#widgets) |
 |🤖 [Accessibility](#accessibility) | [Custom Settings](../plugins/accessibility.md#plugin-settings) |
@@ -125,7 +124,6 @@ The following plugins provide their own settings:
 | [Weather](#weather) | Configure measurement units for displaying weather events |
 |🤖 [Audio/video notes](#audiovideo-notes) | Select [video format, how long to store, etc.](../plugins/audio-video-notes.md#plugin-settings) |
 |[OpenStreetMap editing](#openstreetmap-editing)| Specify user [login](../plugins/osm-editing.md#plugin-settings)  |
-|🤖 [OpenPlaceReviews](#openplacereviews) | Specify user [login, or use test registration](../plugins/openplacereviews.md#plugin-settings) |
 |🤖 [External Sensors](#external-sensors) | Connect to external device [Settings](../plugins/external-sensors.md#settings) |
 |🤖 [Accessibility](#accessibility) | [Settings](../plugins/accessibility.md#plugin-settings) allow you to use Accessibility [Android features](https://www.android.com/accessibility/) inside OsmAnd. |
 | [OsmAnd development](#osmand-development) | [Plugin settings](../plugins/development.md#plugin-settings) allow you to enable special features for developers or experienced users |
@@ -175,10 +173,6 @@ Set a point on the map where your car is left on the street and notify your cale
 ### [OpenStreetMap editing](./osm-editing.md)
 
 The OpenStreetMap editing plugin allows you to contribute to OpenStreetMap, a global community creating a comprehensive map of the world and providing publicly available up-to-date, open-source data.  
-
-### [OpenPlaceReviews](./openplacereviews.md)
-
-The plugin allows you to add and view photos of restaurants, cafes and other points of interest in the place's context menu. For Android only.  
 
 ### [Mapillary](./mapillary.md)
 

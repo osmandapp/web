@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Contributions are welcome!
 
-You can also use OsmAnd's functionality and plugins to directly contribute data to collaborative projects like OpenStreetMap, OpenPlaceReviews, Wikipedia, WikiVoyage, Mapillary.
+You can also use OsmAnd's functionality and plugins to directly contribute data to collaborative projects like OpenStreetMap, Wikipedia, WikiVoyage, Mapillary.
 
 * [Creating a Consistent User Experience](./creating-consistent-ux.md)
 * [How to Translate OsmAnd](./translating-osmand.md)
