@@ -50,7 +50,7 @@ export default function SearchLayer() {
     useEffect(() => {
         const item = ctx.searchSettings.getPoi;
         async function getWikiPoi() {
-            const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/get-poi-by-coords`, {
+            const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/get-poi-by-osmid`, {
                 apiCache: true,
                 params: {
                     lat: item.geometry.coordinates[1],
