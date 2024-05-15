@@ -29,7 +29,12 @@ export default function ExploreMenu() {
 
     useEffect(() => {
         ctx.setCurrentObjectType(OBJECT_SEARCH);
-        ctx.setSearchSettings({ ...ctx.searchSettings, selectedFilters: new Set(filters), useWikiImages: false });
+        const defaultFilters = filters.filter((f) => f !== 'office');
+        ctx.setSearchSettings({
+            ...ctx.searchSettings,
+            selectedFilters: new Set(defaultFilters),
+            useWikiImages: false,
+        });
         ctx.setLoadingContextMenu(true);
     }, []);
 
