@@ -488,7 +488,7 @@ function getWikiParams(key, value) {
         }
         // Full article URL has a pattern: "http://lang_code.wikipedia.org/wiki/article_name"
         let formattedTitle = title.replace(/ /g, '_');
-        url = 'http://' + langCode + '.wikipedia.org/wiki/' + formattedTitle;
+        url = 'https://' + langCode + '.wikipedia.org/wiki/' + formattedTitle;
     }
     let text = title !== null ? title : value;
     const arr = key.split('_-_');
@@ -515,9 +515,9 @@ function getWikipediaURL(key, value) {
         if (!value.startsWith('http://')) {
             const keyArr = key.split('_-_');
             if (keyArr.length === 1) {
-                value = 'http://en.wikipedia.org/wiki/' + value;
+                value = 'https://en.wikipedia.org/wiki/' + value;
             } else {
-                value = 'http://' + keyArr[1] + '.wikipedia.org/wiki/' + value;
+                value = 'https://' + keyArr[1] + '.wikipedia.org/wiki/' + value;
             }
         }
     }
