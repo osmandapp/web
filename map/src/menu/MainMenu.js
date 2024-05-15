@@ -21,6 +21,7 @@ import AppContext, {
     OBJECT_TYPE_WEATHER,
     OBJECT_TYPE_POI,
     OBJECT_GLOBAL_SETTINGS,
+    OBJECT_SEARCH,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import ConfigureMap from './configuremap/ConfigureMap';
@@ -35,6 +36,7 @@ import { ReactComponent as NavigationIcon } from '../assets/menu/ic_action_navig
 import { ReactComponent as PlanRouteIcon } from '../assets/menu/ic_action_plan_route.svg';
 import { ReactComponent as ConfigureMapIcon } from '../assets/icons/ic_map_configure_map.svg';
 import { ReactComponent as SettingsIcon } from '../assets/icons/ic_action_settings_outlined.svg';
+import { ReactComponent as SearchIcon } from '../assets/icons/ic_action_search_dark.svg';
 import InformationBlock from '../infoblock/components/InformationBlock';
 import Weather from './weather/Weather';
 import styles from './mainmenu.module.css';
@@ -46,6 +48,7 @@ import { useTranslation } from 'react-i18next';
 import SettingsMenu from './settings/SettingsMenu';
 import CloudSettings from './settings/CloudSettings';
 import { closeCloudSettings } from '../manager/SettingsManager';
+import ExploreMenu from './search/ExploreMenu';
 
 export default function MainMenu({
     size,
@@ -88,6 +91,14 @@ export default function MainMenu({
     };
 
     const items = [
+        {
+            name: t('shared_string_search'),
+            icon: SearchIcon,
+            component: <ExploreMenu />,
+            type: OBJECT_SEARCH,
+            show: ctx.develFeatures,
+            id: 'se-show-menu-explore',
+        },
         {
             name: t('configure_map'),
             icon: ConfigureMapIcon,
@@ -246,6 +257,7 @@ export default function MainMenu({
         ctx.setOpenGroups([]);
         ctx.setSelectedWpt(null);
         setOpenVisibleMenu(false);
+        ctx.setLoadingContextMenu(false);
         if (menuInfo) {
             // update menu
             setShowInfoBlock(false);

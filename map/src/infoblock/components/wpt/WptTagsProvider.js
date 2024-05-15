@@ -19,6 +19,8 @@ import { changeIconColor } from '../../../map/markers/MarkerOptions';
 import { createPoiCache, updatePoiCache } from '../../../manager/PoiManager';
 import React from 'react';
 
+export const DEFAULT_TAG_ICON_SIZE = 24;
+export const DEFAULT_TAG_ICON_COLOR = '#727272';
 export const WEB_POI_PREFIX = 'web_poi_';
 export const POI_PREFIX = 'poi_';
 const WIKIPEDIA = 'wikipedia';
@@ -90,7 +92,7 @@ const HIDDEN_EXTENSIONS_POI = [
 ];
 export const SEPARATOR = ';';
 
-const IconComponent = ({ svg, size = 24, color = '#727272' }) => {
+const IconComponent = ({ svg, size, color }) => {
     const coloredSvg = changeIconColor(svg, color);
     const svgWithUpdatedSize = coloredSvg
         .replace(/(width=")[^"]*(")/g, `$1${size}$2`)
@@ -99,7 +101,25 @@ const IconComponent = ({ svg, size = 24, color = '#727272' }) => {
     return <div dangerouslySetInnerHTML={{ __html: svgWithUpdatedSize }} />;
 };
 
-async function getSvgIcon({ key = null, value = null, ctx, getPoiType = false }) {
+/**
+ * Retrieves an SVG icon for a given POI using key-value pairs.
+ * This function can also handle different types of POI data structures based on the 'getPoiType' flag.
+ *
+ * @param {Object} params - The parameters for fetching or creating the SVG icon.
+ * @param {string|null} params.key - The key used to identify the type of POI. Optional.
+ * @param {string|null} params.value - The value associated with the key for the POI. Optional.
+ * @param {Object} params.ctx - The context object containing necessary caches and other contextual data.
+ * @param {boolean} params.getPoiType - Flag to determine the structure of POI data handling.
+ * @param {string|null} params.icon - An optional icon identifier that can override default behavior.
+ * @returns {Promise<string|null>} - A Promise that resolves to the SVG icon data as a string, or null if no icon is found.
+ *
+ * Details:
+ * - If `getPoiType` is true, the function prepares a list of POIs with properties derived from the key and value, then passes this to `createPoiCache`.
+ * - If `getPoiType` is false, the function processes either a given object or just the key after stripping a prefix.
+ * - The function updates the global `poiIconCache` with any new or existing icons found or fetched during the cache creation process.
+ * - Finally, it attempts to return the most relevant icon from the cache. If no suitable icon is found, it returns null.
+ */
+export async function getSvgIcon({ key = null, value = null, ctx, getPoiType = false, icon = null }) {
     let innerCache;
     let cacheValue;
     if (getPoiType) {
@@ -107,6 +127,7 @@ async function getSvgIcon({ key = null, value = null, ctx, getPoiType = false })
         innerCache = await createPoiCache({
             poiList,
             poiIconCache: ctx.poiIconCache,
+            icon,
         });
         cacheValue = innerCache[`${key}_${value}`];
     } else {
@@ -114,18 +135,19 @@ async function getSvgIcon({ key = null, value = null, ctx, getPoiType = false })
         innerCache = await createPoiCache({
             obj: { key: prepKey, value },
             poiIconCache: ctx.poiIconCache,
+            icon,
         });
-        cacheValue = innerCache[prepKey] ?? innerCache[value];
+        cacheValue = innerCache[icon] ?? innerCache[prepKey] ?? innerCache[value];
     }
     updatePoiCache(ctx, innerCache);
     return cacheValue ?? null;
 }
 
-function getIcon(svgData) {
+export function getIcon(svgData, size, color) {
     if (svgData) {
-        return <IconComponent svg={svgData} />;
+        return <IconComponent svg={svgData} size={size} color={color} />;
     }
-    return <InfoIcon />;
+    return <InfoIcon style={{ width: size, height: size, fill: color }} />;
 }
 
 async function getWptTags(obj, type, ctx) {
@@ -143,6 +165,13 @@ async function getWptTags(obj, type, ctx) {
             }
         });
         tags = obj.options;
+    } else if (type.isWikiPoi) {
+        Object.entries(obj.properties).forEach(([key, value]) => {
+            if (value === undefined) {
+                delete obj.properties[key];
+            }
+        });
+        tags = obj.properties;
     }
 
     if (tags) {
@@ -153,7 +182,7 @@ async function getWptTags(obj, type, ctx) {
         let hasCuisine = false;
 
         if (type.isFav || type.isWpt) {
-            let tagTypeObj = await addPoiTypeTag(typeTag, subtypeTag, ctx);
+            let tagTypeObj = await addPoiTypeTag({ typeTag, subtypeTag, ctx });
             if (tagTypeObj) {
                 res.push(tagTypeObj);
             }
@@ -233,10 +262,10 @@ async function getWptTags(obj, type, ctx) {
                             } else if (key.includes('internet_access')) {
                                 const prepValue = value.replace(TYPE, '').replace('__', '_');
                                 const svgData = await getSvgIcon({ value: prepValue, ctx });
-                                tagObj.icon = getIcon(svgData);
+                                tagObj.icon = getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR);
                             } else {
                                 const svgData = await getSvgIcon({ key, value, ctx });
-                                tagObj.icon = getIcon(svgData);
+                                tagObj.icon = getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR);
                             }
                     }
                 }
@@ -271,7 +300,13 @@ async function getWptTags(obj, type, ctx) {
     return { res, id, type: typeTag, subtype: subtypeTag };
 }
 
-async function addPoiTypeTag(typeTag, subtypeTag, ctx) {
+export async function addPoiTypeTag({
+    typeTag,
+    subtypeTag,
+    ctx,
+    size = DEFAULT_TAG_ICON_SIZE,
+    color = DEFAULT_TAG_ICON_COLOR,
+}) {
     if (!typeTag || !subtypeTag) {
         return null;
     }
@@ -280,8 +315,7 @@ async function addPoiTypeTag(typeTag, subtypeTag, ctx) {
     if (!svgData) {
         svgData = await getSvgIcon({ key: 'amenity', value: subtypeTag, ctx, getPoiType: true });
     }
-
-    tagObj.icon = getIcon(svgData);
+    tagObj.icon = getIcon(svgData, size, color);
     tagObj.key = 'type';
     tagObj.value = subtypeTag;
     tagObj.textPrefix = subtypeTag;
@@ -454,7 +488,7 @@ function getWikiParams(key, value) {
         }
         // Full article URL has a pattern: "http://lang_code.wikipedia.org/wiki/article_name"
         let formattedTitle = title.replace(/ /g, '_');
-        url = 'http://' + langCode + '.wikipedia.org/wiki/' + formattedTitle;
+        url = 'https://' + langCode + '.wikipedia.org/wiki/' + formattedTitle;
     }
     let text = title !== null ? title : value;
     const arr = key.split('_-_');
@@ -481,9 +515,9 @@ function getWikipediaURL(key, value) {
         if (!value.startsWith('http://')) {
             const keyArr = key.split('_-_');
             if (keyArr.length === 1) {
-                value = 'http://en.wikipedia.org/wiki/' + value;
+                value = 'https://en.wikipedia.org/wiki/' + value;
             } else {
-                value = 'http://' + keyArr[1] + '.wikipedia.org/wiki/' + value;
+                value = 'https://' + keyArr[1] + '.wikipedia.org/wiki/' + value;
             }
         }
     }

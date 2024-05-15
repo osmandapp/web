@@ -2,7 +2,7 @@ import { Typography } from '@mui/material';
 import styles from '../trackfavmenu.module.css';
 import React, { forwardRef } from 'react';
 
-const MenuItemsTitle = forwardRef((props, ref) => {
+const MenuItemWithLines = forwardRef((props, ref) => {
     const { name = null, children = null, maxLines, className = null, ...otherProps } = props;
     const titleStyle = {
         display: '-webkit-box',
@@ -26,5 +26,5 @@ const MenuItemsTitle = forwardRef((props, ref) => {
     );
 });
 
-MenuItemsTitle.displayName = 'MenuItemsTitle';
-export default MenuItemsTitle;
+MenuItemWithLines.displayName = 'MenuItemsTitle';
+export default MenuItemWithLines;

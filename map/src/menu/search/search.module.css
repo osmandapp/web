@@ -1,0 +1,133 @@
+.wikiIcon {
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+}
+
+.wikiIconSmall {
+    width: 24px;
+    height: 24px;
+}
+
+.wikiIconLarge {
+    width: 46px;
+    height: 46px;
+}
+
+.wikiIcon:hover {
+    box-shadow: 0 0 0 3px var(--selected-color) !important;
+}
+
+.placeTypes {
+    margin-left: 8px !important;
+    color: var(--text-secondary) !important;
+}
+.placeDesc {
+    color: var(--text-secondary) !important;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+}
+.placeTypesIcon {
+    min-width: 16px !important;
+    max-width: 16px !important;
+    fill: var(--svg-icon-color) !important;
+}
+.placeTypesEmptyIcon {
+    min-width: 45px !important;
+    max-width: 45px !important;
+    fill: #c0c0c0 !important;
+}
+.titleText {
+    color: var(--text-primary) !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+}
+.placeItem {
+    display: flex !important;
+    width: 360px !important;
+    padding: 16px 16px 16px 16px !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 24px !important;
+}
+.emptyImg {
+    min-width: 66px !important;
+    min-height: 66px !important;
+    background-color: #ebebeb !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.filter {
+    max-width: 277px !important;
+    overflow: auto;
+    overflow-x: hidden;
+    padding: 6px 0px !important;
+    border-radius: 3px !important;
+    min-height: 44px !important;
+    box-shadow:
+        0px 5px 5px 0px rgba(0, 0, 0, 0.2),
+        0px 3px 14px 0px rgba(0, 0, 0, 0.12),
+        0px 8px 10px 0px rgba(0, 0, 0, 0.14),
+        0px -3px 30px 0px rgba(0, 0, 0, 0.09) !important;
+}
+.filterTitle {
+    display: flex !important;
+    padding: 5px 4px 5px 16px !important;
+    gap: 24px !important;
+}
+.filterTitleText {
+    color: var(--text-secondary) !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+}
+.filterItem {
+    display: flex !important;
+    padding: 5px 4px 5px 16px !important;
+    justify-content: center;
+    align-items: center;
+    gap: 24px !important;
+}
+.filterIcon {
+    min-width: 24px !important;
+    fill: var(--svg-icon-color) !important;
+}
+.filterIconSelected {
+    min-width: 24px !important;
+    fill: var(--selected-color) !important;
+}
+.photoTitle {
+    display: flex !important;
+    width: 360px !important;
+    padding: 0px 16px !important;
+    gap: 6px !important;
+    height: 48px !important;
+}
+.photoCloseButton {
+    display: flex !important;
+    padding: 6px 0px !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    align-self: stretch !important;
+    border-radius: 3px !important;
+    background-color: var(--button) !important;
+    color: var(--selected-color) !important;
+    text-align: center !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: 140% !important;
+    letter-spacing: 0.28px !important;
+    text-transform: none !important;
+}
+.photoTitleText {
+    color: var(--text-primary) !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+}

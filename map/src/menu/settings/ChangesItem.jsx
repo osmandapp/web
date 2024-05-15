@@ -10,7 +10,7 @@ import ChangesActions from '../actions/ChangesActions';
 import ActionsMenu from '../actions/ActionsMenu';
 import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
 import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
-import MenuItemsTitle from '../components/MenuItemsTitle';
+import MenuItemWithLines from '../components/MenuItemWithLines';
 
 export default function ChangesItem({ item, changes, setChanges }) {
     const { t } = useTranslation();
@@ -76,7 +76,7 @@ export default function ChangesItem({ item, changes, setChanges }) {
                                             {getItemIcon(item.file)}
                                         </ListItemIcon>
                                         <ListItemText>
-                                            <MenuItemsTitle name={fileName} maxLines={2} />
+                                            <MenuItemWithLines name={fileName} maxLines={2} />
                                             <Typography variant="body2" className={trackStyles.groupInfo} noWrap>
                                                 {status + ': ' + formatDate(item.file.updatetimems)}
                                             </Typography>

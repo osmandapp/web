@@ -23,7 +23,7 @@ import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_
 import styles from '../trackfavmenu.module.css';
 import TrackActions from '../actions/TrackActions';
 import ActionsMenu from '../actions/ActionsMenu';
-import MenuItemsTitle from '../components/MenuItemsTitle';
+import MenuItemWithLines from '../components/MenuItemWithLines';
 import { closeTrack } from '../../manager/track/DeleteTrackManager';
 import { isVisibleTrack, updateVisibleCache } from '../visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
@@ -224,7 +224,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                                 <TrackIcon />
                             </ListItemIcon>
                             <ListItemText>
-                                <MenuItemsTitle name={trackName} maxLines={2} />
+                                <MenuItemWithLines name={trackName} maxLines={2} />
                                 <Typography variant="body2" className={styles.groupInfo} noWrap>
                                     {dist && `${dist} km`}
                                     {' · '}

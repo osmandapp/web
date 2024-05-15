@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { POI_PREFIX, SEPARATOR } from './WptTagsProvider';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
-import MenuItemsTitle from '../../../menu/components/MenuItemsTitle';
+import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import i18n from 'i18next';
 import MoreInfoDialog from './MoreInfoDialog';
 
@@ -123,12 +123,12 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
             return (
                 <>
                     <ListItemText onClick={() => setOpen(!open)}>
-                        <MenuItemsTitle
+                        <MenuItemWithLines
                             name={getTranslation(`${POI_PREFIX}${tag.textPrefix}`, tag.textPrefix)}
                             maxLines={2}
                             className={styles.tagPrefix}
                         />
-                        <MenuItemsTitle name={value} maxLines={1} className={styles.tagName} />
+                        <MenuItemWithLines name={value} maxLines={1} className={styles.tagName} />
                     </ListItemText>
                     {items.length > 1 && (
                         <IconButton onClick={() => setOpen(!open)}>{open ? <ExpandLess /> : <ExpandMore />}</IconButton>
@@ -143,7 +143,11 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
                             {getTranslation(`${POI_PREFIX}${tag.textPrefix}`, tag.textPrefix)}
                         </Typography>
                     )}
-                    <MenuItemsTitle name={getText(tag, value)} maxLines={tag.desc ? 5 : 2} className={styles.tagName} />
+                    <MenuItemWithLines
+                        name={getText(tag, value)}
+                        maxLines={tag.desc ? 5 : 2}
+                        className={styles.tagName}
+                    />
                 </ListItemText>
             );
         }
@@ -178,7 +182,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
                                 open={hover && copy}
                                 onClick={() => handleCopy(baseTag.value)}
                             >
-                                <MenuItemsTitle name={baseTag.value} maxLines={3} className={styles.tagName} />
+                                <MenuItemWithLines name={baseTag.value} maxLines={3} className={styles.tagName} />
                             </Tooltip>
                         </ListItemText>
                     </MenuItem>

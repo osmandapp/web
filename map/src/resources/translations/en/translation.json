@@ -5205,5 +5205,14 @@
   "shared_string_modified": "Modified",
   "shared_string_added": "Added",
   "shared_string_deleted": "Deleted",
-  "shared_string_changes": "Changes"
+  "shared_string_changes": "Changes",
+  "shared_string_search": "Search",
+  "shared_string_filters": "Filters",
+  "search_categories": "Categories",
+  "shared_string_show_all": "Show all",
+  "shared_string_about": "About",
+  "online_photos": "Online photos",
+  "shared_string_close": "Close",
+  "shared_string_wikivoyage": "Wikivoyage",
+  "shared_string_read_more": "Read more"
 }

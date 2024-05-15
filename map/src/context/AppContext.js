@@ -23,6 +23,7 @@ export const OBJECT_TYPE_WEATHER = 'weather';
 export const OBJECT_TYPE_POI = 'poi';
 
 export const OBJECT_CONFIGURE_MAP = 'configure_map';
+export const OBJECT_SEARCH = 'search';
 export const OBJECT_GLOBAL_SETTINGS = 'global_settings';
 export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
 
@@ -300,6 +301,7 @@ export const AppContextProvider = (props) => {
     });
     const [createTrack, setCreateTrack] = useState(null);
     const [loadingContextMenu, setLoadingContextMenu] = useState(false);
+    const [loadingContextItem, setLoadingContextItem] = useState(null);
     const [updateInfoBlock, setUpdateInfoBlock] = useState(false);
     const [trackProfileManager, setTrackProfileManager] = useState({});
     const [pointContextMenu, setPointContextMenu] = useState({});
@@ -314,6 +316,9 @@ export const AppContextProvider = (props) => {
     const [showPoiCategories, setShowPoiCategories] = useState([]);
     const [poiCategory, setPoiCategories] = useState(null);
     const [poiIconCache, setPoiIconCache] = useState({});
+
+    const [wikiPlaces, setWikiPlaces] = useState(null);
+    const [searchSettings, setSearchSettings] = useState({});
 
     const [routingCache, mutateRoutingCache] = useMutator({});
     const [routingNewSegments, setRoutingNewSegments] = useState([]);
@@ -534,6 +539,12 @@ export const AppContextProvider = (props) => {
                 setRenderingType,
                 mapBbox,
                 setMapBbox,
+                wikiPlaces,
+                setWikiPlaces,
+                searchSettings,
+                setSearchSettings,
+                loadingContextItem,
+                setLoadingContextItem,
             }}
         >
             {props.children}

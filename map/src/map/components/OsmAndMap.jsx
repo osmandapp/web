@@ -19,6 +19,7 @@ import { initialZoom, initialPosition, detectGeoByIp, LocationControl } from './
 import CustomZoomControl from './CustomZoomControl';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import CustomTileLayer from '../layers/CustomTileLayer';
+import SearchLayer from '../layers/SearchLayer';
 
 const useStyles = makeStyles(() => ({
     root: (props) => ({
@@ -169,6 +170,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             <WeatherLayer />
             <GraphLayer />
             <PoiLayer />
+            <SearchLayer />
             <CustomTileLayer
                 ref={tileLayer}
                 attribution='OsmAnd Web Beta &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
