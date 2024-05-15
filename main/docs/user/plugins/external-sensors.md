@@ -15,8 +15,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-<InfoIncompleteArticle/>
-
 ## Overview
 
 :::tip NOTE
