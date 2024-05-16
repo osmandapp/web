@@ -164,7 +164,7 @@ export default function SearchLayer() {
                 }
                 map.spin(false);
             }
-        }, 500)
+        }, 1000)
     ).current;
 
     function openInfo(feature) {
@@ -254,21 +254,126 @@ export default function SearchLayer() {
         return newLayers;
     }
 
+    // Cluster markers based on zoom and coordinates
+    function clusterMarkers({ places, zoom, latitude, iconSize, secondaryIconSize }) {
+        const shift = 1; // Adjust shift as needed for your specific case
+        const clustered = {};
+
+        // Function to convert pixels to meters
+        const metersPerPixel = (latitude, zoomLevel) => {
+            const earthCircumference = 40075017; // In meters
+            return (earthCircumference * Math.cos((latitude * Math.PI) / 180)) / Math.pow(2, zoomLevel + 8);
+        };
+
+        // Minimum distances between markers in meters
+        const mainMinDistance = iconSize * metersPerPixel(latitude, zoom) * 1.5;
+        const secondaryMinDistance = secondaryIconSize * metersPerPixel(latitude, zoom) * 1.5;
+
+        for (const place of places) {
+            const [lng, lat] = place.geometry.coordinates;
+            const x31 = Math.floor(((lng + 180) / 360) * (1 << 31));
+            const y31 = Math.floor(
+                ((1 - Math.log(Math.tan((lat * Math.PI) / 180) + 1 / Math.cos((lat * Math.PI) / 180)) / Math.PI) / 2) *
+                    (1 << 31)
+            );
+            const key = ((x31 >> (31 - (zoom + shift))) & 0xffff) | (((y31 >> (31 - (zoom + shift))) & 0xffff) << 16);
+
+            if (!clustered[key]) {
+                clustered[key] = [];
+            }
+            clustered[key].push(place);
+        }
+
+        // Sort clusters by size
+        const clusters = Object.values(clustered);
+
+        // Function to check if a place can be added without overlapping
+        const canPlaceMarker = (place, existingPlaces, minDistance) => {
+            const latlng = L.latLng(place.geometry.coordinates[1], place.geometry.coordinates[0]);
+            return existingPlaces.every((existingPlace) => {
+                const existingLatLng = L.latLng(
+                    existingPlace.geometry.coordinates[1],
+                    existingPlace.geometry.coordinates[0]
+                );
+                return latlng.distanceTo(existingLatLng) >= minDistance;
+            });
+        };
+
+        const mainMarkers = [];
+        const secondaryMarkers = [];
+
+        const firstItemsSorted = clusters.map((cluster) => cluster[0]).sort((a, b) => a.index - b.index);
+
+        // Add first items to main markers for better visibility
+        firstItemsSorted.forEach((item) => {
+            if (canPlaceMarker(item, mainMarkers, mainMinDistance)) {
+                mainMarkers.push(item);
+            }
+        });
+
+        //Add other markers
+        for (const cluster of clusters) {
+            for (const place of cluster) {
+                if (mainMarkers.includes(place)) {
+                    continue;
+                }
+                if (place.index < 50 && canPlaceMarker(place, mainMarkers, mainMinDistance)) {
+                    mainMarkers.push(place);
+                } else if (canPlaceMarker(place, [...mainMarkers, ...secondaryMarkers], secondaryMinDistance)) {
+                    secondaryMarkers.push(place);
+                }
+            }
+        }
+        return { mainMarkers, secondaryMarkers };
+    }
+
     useEffect(() => {
         if (ctx.wikiPlaces) {
-            let markerPromises = [];
+            const zoom = map.getZoom();
+            const center = map.getCenter();
+            const latitude = center.lat;
+            const geoJsonData = createGeoJsonData(ctx.wikiPlaces);
+            const { mainMarkers, secondaryMarkers } = clusterMarkers({
+                places: geoJsonData.features,
+                zoom,
+                latitude,
+                iconSize: 46,
+                secondaryIconSize: 10,
+            });
+
             let simpleMarkersArr = new L.geoJSON();
-            let geoJsonData = createGeoJsonData(ctx.wikiPlaces);
-            L.geoJSON(geoJsonData, {
-                pointToLayer: (feature, latlng) => {
-                    const imgTag = ctx.searchSettings.useWikiImages
-                        ? feature.properties.imageTitle
-                        : feature.properties.photoTitle;
-                    const iconUrl = `${WIKI_IMAGE_BASE_URL}${imgTag}?width=300`;
-                    const iconSize = feature.index < 100 ? [46, 46] : null;
-                    if (!iconSize) {
+            let largeMarkersArr = new L.geoJSON();
+
+            const markerPromises = mainMarkers.map((place) => {
+                const latlng = L.latLng(place.geometry.coordinates[1], place.geometry.coordinates[0]);
+                const imgTag = ctx.searchSettings.useWikiImages
+                    ? place.properties.imageTitle
+                    : place.properties.photoTitle;
+                const iconUrl = `${WIKI_IMAGE_BASE_URL}${imgTag}?width=300`;
+                const iconSize = [46, 46];
+
+                return new Promise((resolve) => {
+                    const image = new Image();
+                    image.onload = () => {
+                        const icon = L.icon({
+                            iconUrl,
+                            iconSize,
+                            className: `${styles.wikiIconLarge} ${styles.wikiIcon}`,
+                        });
+                        const marker = L.marker(latlng, {
+                            icon,
+                            index: place.index,
+                            id: place.properties.id,
+                        });
+                        marker.on('click', () => {
+                            openInfo(place);
+                        });
+                        largeMarkersArr.addLayer(marker);
+                        resolve();
+                    };
+                    image.onerror = () => {
                         const circle = L.circleMarker(latlng, {
-                            id: feature.properties.id,
+                            id: place.properties.id,
                             fillOpacity: 0.9,
                             radius: 5,
                             color: '#ffffff',
@@ -277,54 +382,35 @@ export default function SearchLayer() {
                             zIndex: 1000,
                         });
                         circle.on('click', () => {
-                            openInfo(feature);
+                            openInfo(place);
                         });
-                        simpleMarkersArr.addLayer(circle);
-                    } else {
-                        let markerPromise = new Promise((resolve) => {
-                            const image = new Image();
-                            image.onload = () => {
-                                const icon = L.icon({
-                                    iconUrl,
-                                    iconSize,
-                                    className: `${iconSize[0] === 46 ? styles.wikiIconLarge : styles.wikiIconSmall} ${styles.wikiIcon}`,
-                                });
-                                const marker = L.marker(latlng, {
-                                    icon,
-                                    index: feature.index,
-                                    id: feature.properties.id,
-                                });
-                                marker.on('click', () => {
-                                    openInfo(feature);
-                                });
-                                markerClusterGroup.addLayer(marker);
-                                resolve();
-                            };
-                            image.onerror = () => {
-                                const circle = L.circleMarker(latlng, {
-                                    id: feature.properties.id,
-                                    fillOpacity: 0.9,
-                                    radius: 5,
-                                    color: '#ffffff',
-                                    fillColor: '#fe8800',
-                                    weight: 1,
-                                    zIndex: 1000,
-                                });
-                                circle.on('click', () => {
-                                    openInfo(feature);
-                                });
-                                markerClusterGroup.addLayer(circle);
-                                resolve();
-                            };
-                            image.src = iconUrl;
-                        });
-                        markerPromises.push(markerPromise);
-                    }
-                },
+                        largeMarkersArr.addLayer(circle);
+                        resolve();
+                    };
+                    image.src = iconUrl;
+                });
             });
+
             Promise.all(markerPromises).then(() => {
+                for (const place of secondaryMarkers) {
+                    const latlng = L.latLng(place.geometry.coordinates[1], place.geometry.coordinates[0]);
+                    const circle = L.circleMarker(latlng, {
+                        id: place.properties.id,
+                        fillOpacity: 0.9,
+                        radius: 5,
+                        color: '#ffffff',
+                        fillColor: '#fe8800',
+                        weight: 1,
+                        zIndex: 1000,
+                    });
+                    circle.on('click', () => {
+                        openInfo(place);
+                    });
+                    simpleMarkersArr.addLayer(circle);
+                }
+
                 otherIconsLayerRef.current = addLayers(otherIconsLayerRef.current, simpleMarkersArr);
-                mainIconsLayerRef.current = addLayers(mainIconsLayerRef.current, markerClusterGroup);
+                mainIconsLayerRef.current = addLayers(mainIconsLayerRef.current, largeMarkersArr);
             });
         }
     }, [ctx.wikiPlaces]);
