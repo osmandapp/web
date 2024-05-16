@@ -43,7 +43,7 @@ export default function WikiPlacesItem({ item }) {
     async function openInfo(item) {
         ctx.setLoadingContextMenu(true);
         ctx.setLoadingContextItem(item);
-        ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: item });
+        ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: item, isDetails: true });
     }
 
     function getType(type) {
@@ -88,7 +88,7 @@ export default function WikiPlacesItem({ item }) {
                                             <img
                                                 src={`${WIKI_IMAGE_BASE_URL}${imageTitle}?width=200`}
                                                 alt={name}
-                                                style={{ width: '66px', height: '66px' }}
+                                                style={{ width: '66px', height: '66px', objectFit: 'cover' }}
                                             />
                                         </ListItemIcon>
                                     ) : (

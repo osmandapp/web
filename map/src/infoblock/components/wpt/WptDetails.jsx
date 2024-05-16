@@ -309,7 +309,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                         className={styles.closeIcon}
                         onClick={() => closeDetails()}
                     >
-                        {isDetails ? <BackIcon /> : <CloseIcon />}
+                        {ctx.searchSettings?.isDetails || isDetails ? <BackIcon /> : <CloseIcon />}
                     </IconButton>
                 </Toolbar>
             </AppBar>

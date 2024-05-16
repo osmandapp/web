@@ -25,18 +25,23 @@ export default function ExploreMenu() {
         ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
         ctx.setCurrentObjectType(null);
         ctx.setLoadingContextMenu(false);
+        addDefaultFilters();
     }
 
     useEffect(() => {
         ctx.setCurrentObjectType(OBJECT_SEARCH);
+        addDefaultFilters();
+        ctx.setLoadingContextMenu(true);
+    }, []);
+
+    function addDefaultFilters() {
         const defaultFilters = filters.filter((f) => f !== 'office');
         ctx.setSearchSettings({
             ...ctx.searchSettings,
             selectedFilters: new Set(defaultFilters),
             useWikiImages: false,
         });
-        ctx.setLoadingContextMenu(true);
-    }, []);
+    }
 
     useEffect(() => {
         if (ctx.wikiPlaces) {
@@ -70,7 +75,7 @@ export default function ExploreMenu() {
                         </span>
                     </Tooltip>
                 </Toolbar>
-                {ctx.wikiPlaces && ctx.loadingContextMenu ? <LinearProgress /> : null}
+                {ctx.wikiPlaces && ctx.loadingContextMenu && !ctx.searchSettings.getPoi ? <LinearProgress /> : null}
             </AppBar>
             {!ctx.wikiPlaces && ctx.loadingContextMenu && !ctx.searchSettings.getPoi ? (
                 <Loading id={'se-loading-page'} />
