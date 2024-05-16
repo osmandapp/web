@@ -266,7 +266,11 @@ export default function SearchLayer() {
     }
 
     // Cluster markers based on zoom and coordinates
-    function clusterMarkers({ places, zoom, latitude, iconSize, secondaryIconSize }) {
+    function clusterMarkers({ places, zoom, latitude, iconSize = 46, secondaryIconSize = 10 }) {
+        const maxMainPlaces = zoom > 10 ? 50 : 100;
+        const maxSecondaryPlaces = zoom > 10 ? 200 : 900;
+        const useUniformMarkerPlacement = zoom <= 10 || zoom >= 16;
+
         const shift = 1; // Adjust shift as needed for your specific case
         const clustered = {};
 
@@ -313,14 +317,16 @@ export default function SearchLayer() {
         const mainMarkers = [];
         const secondaryMarkers = [];
 
-        const firstItemsSorted = clusters.map((cluster) => cluster[0]).sort((a, b) => a.index - b.index);
+        if (useUniformMarkerPlacement) {
+            const firstItemsSorted = clusters.map((cluster) => cluster[0]).sort((a, b) => a.index - b.index);
 
-        // Add first items to main markers for better visibility
-        firstItemsSorted.forEach((item) => {
-            if (canPlaceMarker(item, mainMarkers, mainMinDistance)) {
-                mainMarkers.push(item);
-            }
-        });
+            // Add first items to main markers for better visibility
+            firstItemsSorted.forEach((item) => {
+                if (canPlaceMarker(item, mainMarkers, mainMinDistance)) {
+                    mainMarkers.push(item);
+                }
+            });
+        }
 
         //Add other markers
         for (const cluster of clusters) {
@@ -328,14 +334,18 @@ export default function SearchLayer() {
                 if (mainMarkers.includes(place)) {
                     continue;
                 }
-                if (place.index < 50 && canPlaceMarker(place, mainMarkers, mainMinDistance)) {
+                if (place.index < maxMainPlaces && canPlaceMarker(place, mainMarkers, mainMinDistance)) {
                     mainMarkers.push(place);
                 } else if (canPlaceMarker(place, [...mainMarkers, ...secondaryMarkers], secondaryMinDistance)) {
                     secondaryMarkers.push(place);
                 }
             }
         }
-        return { mainMarkers, secondaryMarkers };
+
+        return {
+            mainMarkers: mainMarkers.slice(0, maxMainPlaces),
+            secondaryMarkers: secondaryMarkers.slice(0, maxSecondaryPlaces),
+        };
     }
 
     useEffect(() => {
@@ -348,8 +358,6 @@ export default function SearchLayer() {
                 places: geoJsonData.features,
                 zoom,
                 latitude,
-                iconSize: 46,
-                secondaryIconSize: 10,
             });
 
             let simpleMarkersArr = new L.geoJSON();
