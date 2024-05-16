@@ -18,6 +18,7 @@ export default function SearchLayer() {
     const map = useMap();
 
     const GET_OBJ_DEBOUNCE_MS = 500;
+    const BIG_ICON_SIZE = 36;
 
     const timerRef = useRef(null);
 
@@ -249,8 +250,8 @@ export default function SearchLayer() {
     }
 
     // Cluster markers based on zoom and coordinates
-    function clusterMarkers({ places, zoom, latitude, iconSize = 46, secondaryIconSize = 10 }) {
-        const maxMainPlaces = zoom > 10 ? 50 : 100;
+    function clusterMarkers({ places, zoom, latitude, iconSize = BIG_ICON_SIZE, secondaryIconSize = 10 }) {
+        const maxMainPlaces = 50;
         const maxSecondaryPlaces = zoom > 10 ? 200 : 900;
         const useUniformMarkerPlacement = zoom <= 10 || zoom >= 16;
 
@@ -351,8 +352,8 @@ export default function SearchLayer() {
                 const imgTag = ctx.searchSettings.useWikiImages
                     ? place.properties.imageTitle
                     : place.properties.photoTitle;
-                const iconUrl = `${WIKI_IMAGE_BASE_URL}${imgTag}?width=300`;
-                const iconSize = [46, 46];
+                const iconUrl = `${WIKI_IMAGE_BASE_URL}${imgTag}?width=200`;
+                const iconSize = [BIG_ICON_SIZE, BIG_ICON_SIZE];
 
                 return new Promise((resolve) => {
                     const image = new Image();

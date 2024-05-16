@@ -86,7 +86,7 @@ export default function WikiPlacesItem({ item }) {
                                     {imageTitle && imageTitle !== '' ? (
                                         <ListItemIcon>
                                             <img
-                                                src={`${WIKI_IMAGE_BASE_URL}${imageTitle}?width=300`}
+                                                src={`${WIKI_IMAGE_BASE_URL}${imageTitle}?width=200`}
                                                 alt={name}
                                                 style={{ width: '66px', height: '66px' }}
                                             />
