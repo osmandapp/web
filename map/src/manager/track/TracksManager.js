@@ -659,6 +659,12 @@ function formatRouteMode({ profile = 'car', params, includeFalse = false }) {
 function decodeRouteMode({ profile, routeMode, params }) {
     const draft = { ...params };
 
+    const oldRoutingTypeParams = {
+        hhoff: false,
+        calcmode: false,
+        nativerouting: false,
+    };
+
     routeMode.split(',').forEach((p) => {
         // assume empty as true (see formatRouteMode)
         let [key, val = true] = p.split('=');
@@ -666,6 +672,8 @@ function decodeRouteMode({ profile, routeMode, params }) {
         val === 'true' && (val = true);
         if (draft[key]) {
             draft[key].value = val;
+        } else if (oldRoutingTypeParams[key] !== undefined) {
+            oldRoutingTypeParams[key] = val;
         } else {
             if (key !== profile) {
                 // allow hidden boolean params such as `hhonly` (skip when `key` is `profile`)
@@ -674,7 +682,27 @@ function decodeRouteMode({ profile, routeMode, params }) {
         }
     });
 
+    const oldRoutingType = parseOldRoutingType(profile, oldRoutingTypeParams);
+    oldRoutingType && (draft.routing.value = oldRoutingType);
+
     return draft;
+}
+
+// enum OsmAndMapsService.ServerRoutingTypes
+function parseOldRoutingType(profile, params) {
+    const defaultRouting = 'hh_java';
+
+    let astar = profile === 'car' ? '2phase' : 'normal';
+    params.calcmode === 'COMPLEX' && (astar = '2phase');
+    params.calcmode === 'NORMAL' && (astar = 'normal');
+
+    const type = params.hhoff === true ? 'astar_' + astar : 'hh';
+
+    const lib = params.nativerouting === true ? 'cpp' : 'java';
+
+    const routing = type + '_' + lib;
+
+    return routing == defaultRouting ? undefined : routing;
 }
 
 function updateGapProfileOneSegment(routePoint, points) {

@@ -362,7 +362,7 @@ export default function RouteMenu() {
                     </IconButton>
                 </MenuItem>
             )}
-            {ctx.develFeatures && <RouteProfileSettings key="routesettingsembed" embed={true} useDev={true} />}
+            {ctx.develFeatures && <RouteProfileSettings key="routesettingsembed" embed={true} />}
             {routeObject.getRoute() &&
                 routeOptions.map((opt) => (
                     <MenuItem key={'routeopt' + opt} sx={{ ml: 2, mr: 2 }}>
@@ -405,9 +405,7 @@ export default function RouteMenu() {
                 )}
             </ButtonGroup>
             <MenuItem divider={true} />
-            {openSettings && (
-                <RouteProfileSettings key="routesettingsdialog" setOpenSettings={setOpenSettings} useDev={true} />
-            )}
+            {openSettings && <RouteProfileSettings key="routesettingsdialog" setOpenSettings={setOpenSettings} />}
         </>
     );
 }

@@ -33,6 +33,7 @@ export default function Render() {
         'Geodesist' : 'office/office_office_geodesist',
         'Advertising agency' : 'office/office_office_advertising_agency',
         'Educational institution' : 'office/office_office_educational_institution',
+        'Engineer office' : 'office/office_office_engineer',
         'Religion office' : 'office/office_office_religion',
         'Association' : 'office/office_office_association',
         'Financial' : 'office/office_office_financial',

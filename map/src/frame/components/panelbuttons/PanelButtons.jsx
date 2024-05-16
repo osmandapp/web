@@ -309,11 +309,7 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
                     <DeleteWptDialog dialogOpen={openDeleteDialog} setDialogOpen={setOpenDeleteDialog} />
                 )}
                 {openRoutingSettings && (
-                    <RouteProfileSettings
-                        useDev={true}
-                        key="routesettingsdialog"
-                        setOpenSettings={setOpenRoutingSettings}
-                    />
+                    <RouteProfileSettings key="routesettingsdialog" setOpenSettings={setOpenRoutingSettings} />
                 )}
             </div>
         )

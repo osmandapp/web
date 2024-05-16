@@ -27,7 +27,6 @@ export default function SelectTrackProfile({ geoRouter, label, hideSettings = fa
                     key="trackroutesettingsdialog"
                     geoRouter={geoRouter}
                     setOpenSettings={setOpenSettings}
-                    useDev={true}
                 />
             )}
             <MenuItem className={classes.grid} key="trackrouteprofile" sx={{ ml: 1, mr: 2, mt: 1 }}>
