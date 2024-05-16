@@ -86,18 +86,14 @@ export default function SearchLayer() {
         let ignore = false;
         let controller = new AbortController();
         const settings = ctx.searchSettings;
-        const loadingContextMenu = ctx.loadingContextMenu;
 
         const onMapMoveEnd = async () => {
             if (
                 ctx.searchSettings.useWikiImages ||
                 (ctx.currentObjectType === OBJECT_SEARCH && (mainIconsLayerRef.current || otherIconsLayerRef.current))
             ) {
-                debouncer(
-                    () => getData({ controller, ignore, settings, loadingContextMenu }),
-                    timerRef,
-                    GET_OBJ_DEBOUNCE_MS
-                );
+                ctx.setLoadingContextMenu(true);
+                debouncer(() => getData({ controller, ignore, settings }), timerRef, GET_OBJ_DEBOUNCE_MS);
             }
         };
         map.on('moveend', onMapMoveEnd);
@@ -110,11 +106,7 @@ export default function SearchLayer() {
             ) {
                 filtersRef.current = ctx.searchSettings.selectedFilters;
                 removeLayers();
-                debouncer(
-                    () => getData({ controller, ignore, settings, loadingContextMenu }),
-                    timerRef,
-                    GET_OBJ_DEBOUNCE_MS
-                );
+                debouncer(() => getData({ controller, ignore, settings }), timerRef, GET_OBJ_DEBOUNCE_MS);
             }
         }
 
@@ -128,12 +120,7 @@ export default function SearchLayer() {
             controller.abort();
             map.off('moveend', onMapMoveEnd);
         };
-    }, [
-        ctx.currentObjectType,
-        ctx.searchSettings.useWikiImages,
-        ctx.searchSettings.selectedFilters,
-        ctx.loadingContextMenu,
-    ]);
+    }, [ctx.currentObjectType, ctx.searchSettings.useWikiImages, ctx.searchSettings.selectedFilters]);
 
     /**
      * A debounced function to fetch place data from a specified API based on map boundaries and user-selected filters.
@@ -147,16 +134,13 @@ export default function SearchLayer() {
      * @returns {Promise<void>} - A promise that resolves when the fetch operation is complete.
      */
 
-    async function getData({ controller, ignore, settings, loadingContextMenu }) {
+    async function getData({ controller, ignore, settings }) {
         if (!ignore) {
             if (settings?.selectedFilters?.size === 0) {
                 ctx.setWikiPlaces(null);
                 return;
             }
-            if (!loadingContextMenu) {
-                map.spin(true, { color: '#1976d2' });
-            }
-            let bbox = map.getBounds();
+            const bbox = map.getBounds();
             const api = settings?.useWikiImages ? 'get-wiki-images' : 'get-wiki-data';
             const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/${api}`, {
                 apiCache: true,
@@ -174,7 +158,6 @@ export default function SearchLayer() {
             } else {
                 console.error(`Places not found`);
             }
-            map.spin(false);
         }
     }
 
