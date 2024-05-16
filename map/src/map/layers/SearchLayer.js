@@ -6,16 +6,20 @@ import { WIKI_IMAGE_BASE_URL } from '../../manager/SearchManager';
 import L from 'leaflet';
 import styles from '../../menu/search/search.module.css';
 import 'leaflet-spin';
-import _ from 'lodash';
 import { Box, IconButton, Modal, Table, TableBody, TableCell, TableRow } from '@mui/material';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import 'leaflet.markercluster';
 import { useTranslation } from 'react-i18next';
 import { areSetsEqual } from '../../util/Utils';
+import { debouncer } from '../../context/TracksRoutingCache';
 
 export default function SearchLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
+
+    const GET_OBJ_DEBOUNCE_MS = 500;
+
+    const timerRef = useRef(null);
 
     const filtersRef = useRef(null);
     const openedPoiRef = useRef(null);
@@ -89,7 +93,11 @@ export default function SearchLayer() {
                 ctx.searchSettings.useWikiImages ||
                 (ctx.currentObjectType === OBJECT_SEARCH && (mainIconsLayerRef.current || otherIconsLayerRef.current))
             ) {
-                debouncedGetPlaces({ controller, ignore, settings, loadingContextMenu });
+                debouncer(
+                    () => getData({ controller, ignore, settings, loadingContextMenu }),
+                    timerRef,
+                    GET_OBJ_DEBOUNCE_MS
+                );
             }
         };
         map.on('moveend', onMapMoveEnd);
@@ -102,7 +110,11 @@ export default function SearchLayer() {
             ) {
                 filtersRef.current = ctx.searchSettings.selectedFilters;
                 removeLayers();
-                debouncedGetPlaces({ controller, ignore, settings, loadingContextMenu });
+                debouncer(
+                    () => getData({ controller, ignore, settings, loadingContextMenu }),
+                    timerRef,
+                    GET_OBJ_DEBOUNCE_MS
+                );
             }
         }
 
@@ -134,38 +146,37 @@ export default function SearchLayer() {
      * @param {Object} params.settings - Contains user settings such as `selectedFilters` and whether to use Wiki images.
      * @returns {Promise<void>} - A promise that resolves when the fetch operation is complete.
      */
-    const debouncedGetPlaces = useRef(
-        _.debounce(async ({ controller, ignore, settings, loadingContextMenu }) => {
-            if (!ignore) {
-                if (settings?.selectedFilters?.size === 0) {
-                    ctx.setWikiPlaces(null);
-                    return;
-                }
-                if (!loadingContextMenu) {
-                    map.spin(true, { color: '#1976d2' });
-                }
-                let bbox = map.getBounds();
-                const api = settings?.useWikiImages ? 'get-wiki-images' : 'get-wiki-data';
-                const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/${api}`, {
-                    apiCache: true,
-                    params: {
-                        northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
-                        southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
-                        lang: settings?.useWikiImages ? null : i18n.language,
-                        filters: settings?.selectedFilters ? [...settings.selectedFilters] : null,
-                    },
-                    signal: controller.signal,
-                });
-                if (response?.data) {
-                    let jsonData = response.data.features;
-                    ctx.setWikiPlaces(jsonData);
-                } else {
-                    console.error(`Places not found`);
-                }
-                map.spin(false);
+
+    async function getData({ controller, ignore, settings, loadingContextMenu }) {
+        if (!ignore) {
+            if (settings?.selectedFilters?.size === 0) {
+                ctx.setWikiPlaces(null);
+                return;
             }
-        }, 1000)
-    ).current;
+            if (!loadingContextMenu) {
+                map.spin(true, { color: '#1976d2' });
+            }
+            let bbox = map.getBounds();
+            const api = settings?.useWikiImages ? 'get-wiki-images' : 'get-wiki-data';
+            const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/${api}`, {
+                apiCache: true,
+                params: {
+                    northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
+                    southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
+                    lang: settings?.useWikiImages ? null : i18n.language,
+                    filters: settings?.selectedFilters ? [...settings.selectedFilters] : null,
+                },
+                signal: controller.signal,
+            });
+            if (response?.data) {
+                let jsonData = response.data.features;
+                ctx.setWikiPlaces(jsonData);
+            } else {
+                console.error(`Places not found`);
+            }
+            map.spin(false);
+        }
+    }
 
     function openInfo(feature) {
         if (ctx.searchSettings.useWikiImages) {
