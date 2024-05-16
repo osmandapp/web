@@ -24,7 +24,7 @@ import { useMutator } from '../../util/Utils';
 
 const ENABLE_PROVIDER_SELECTION = false; // disabled by default, but allowed if type=osrm is specified in URL
 
-export default function RouteProfileSettings({ geoRouter, useDev = true, setOpenSettings, embed = false }) {
+export default function RouteProfileSettings({ geoRouter, useDevelFeatures = true, setOpenSettings, embed = false }) {
     const ctx = useContext(AppContext);
 
     const [unfoldedSections, mutateUnfoldedSections] = useMutator({}); // all sections are folded by default
@@ -77,6 +77,9 @@ export default function RouteProfileSettings({ geoRouter, useDev = true, setOpen
     let section = '';
 
     function checkSection(newSection) {
+        if (section === 'Hidden') {
+            return false;
+        }
         if (newSection === section) {
             return false;
         }
@@ -84,10 +87,17 @@ export default function RouteProfileSettings({ geoRouter, useDev = true, setOpen
         return true;
     }
 
-    function checkDevSection(opt) {
-        if (!useDev) {
-            return opt.section !== 'Development';
-        } else return true;
+    function showDevSection(opt) {
+        if (opt.section === 'Hidden') {
+            return false;
+        }
+        if (useDevelFeatures) {
+            return true;
+        }
+        if (opt.section && (opt.section === 'Development' || opt.section.includes('(devel)'))) {
+            return false;
+        }
+        return true;
     }
 
     const onSelect = (key, opts, setOpts) => (e) => {
@@ -146,8 +156,10 @@ export default function RouteProfileSettings({ geoRouter, useDev = true, setOpen
         Object.values(opts)
             .sort(sortValues)
             .forEach(({ section }) => {
-                hash[section] || sections.push(section);
-                hash[section] = true;
+                if (section !== 'Hidden') {
+                    hash[section] || sections.push(section);
+                    hash[section] = true;
+                }
             });
     }
 
@@ -175,7 +187,7 @@ export default function RouteProfileSettings({ geoRouter, useDev = true, setOpen
 
     const OptSelect = ({ opt }) => (
         <Tooltip key={'tool_' + opt.key} title={opt.description} arrow placement="right">
-            <FormControl sx={{ m: 0, minWidth: 240 }}>
+            <FormControl sx={{ m: 0, minWidth: 240 }} size="small">
                 <InputLabel id={'routing-param-' + opt.key}>{opt.label}</InputLabel>
                 <Select
                     labelId={'routing-param-' + opt.key}
@@ -296,10 +308,10 @@ export default function RouteProfileSettings({ geoRouter, useDev = true, setOpen
                             .sort(sortEntries)
                             .map(([key, opt]) => (
                                 <React.Fragment key={'dialog_' + key}>
-                                    {checkSection(opt.section) && checkDevSection(opt) && (
+                                    {checkSection(opt.section) && showDevSection(opt) && (
                                         <DialogContentText key={'section_' + key}>{section}</DialogContentText>
                                     )}
-                                    {checkDevSection(opt) &&
+                                    {showDevSection(opt) &&
                                         (opt.type === 'boolean' ? <OptBoolean opt={opt} /> : <OptSelect opt={opt} />)}
                                 </React.Fragment>
                             ))}

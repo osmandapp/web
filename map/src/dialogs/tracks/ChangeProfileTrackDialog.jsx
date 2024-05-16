@@ -249,7 +249,6 @@ export default function ChangeProfileTrackDialog({ open }) {
                     key="trackroutesettingsdialog"
                     geoRouter={geoRouter}
                     setOpenSettings={setOpenSettings}
-                    useDev={true}
                 />
             )}
             <Dialog disableEnforceFocus open={open} onClose={handleCancel} className={classes.dialog}>
