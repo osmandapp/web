@@ -260,9 +260,9 @@ You can find out how the map behavior changes during navigation in OsmAnd app in
 
 ## Animate own position
 
-This setting is located in different places in the OsmAnd app for the Android version and for the iOS version. Android - in the menu *General Settings → Other*. iOS - in the *Navigation settings*. For more information, see the article *Map screen during navigation*, section [Animate my location](../../navigation/guidance/map-during-navigation.md#animate-my-location-android-animate-own-position).  
+![Navigation Settings Android](@site/static/img/navigation/navigaton_settings_animate-own-position_ios.png) 
 
-![Navigation Settings Android](@site/static/img/navigation/navigaton_settings_animate-own-position_ios.png)  
+This setting is available in different places in the OsmAnd app for the Android version and for the iOS version. In *Android*, it is located in the [Other](../../personal/profiles.md#other) section of the *General Settings* menu. In *iOS* it is located in [Navigation settings](../../personal/profiles.md#navigation-settings). For more details see *Map screen during navigation*, section [Animate own position](../../navigation/guidance/map-during-navigation.md#animate-own-position).  
 
 
 ## Customize route line

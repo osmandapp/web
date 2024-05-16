@@ -17,7 +17,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-*The Navigation by track* (GPX) option allows you to follow a predefined route (or track) on the map. It can be particularly helpful for outdoor activities such as hiking, cycling, or off-road driving, where having a planned route can enhance safety and efficiency of movement. If you are moving in an organized group, this feature can help each member of the group have the same information about the route as the others.  
+*The Navigation by track* (GPX) option allows you to follow a predefined route or track on a map. It can be particularly useful for outdoor activities such as hiking, cycling, or off-road driving, where having a planned route can enhance safety and efficiency of movement. If you are traveling in an organized group, this feature can help each member of the group to have the same rout information the others.   
+
 *Navigation by track* option can also be used in the everyday life. You can reuse previously [recorded track](../../plugins/trip-recording.md) or share it with your relatives or friends instead of explaining to them the route. You can also use for navigation [routes on the OsmAnd map](../../../../blog/routes/). How to highlight them on the map and what their colors mean is described in the [Routes section](../../map/vector-maps.md#routes) of the vector maps article.  
 
 <Tabs groupId="operating-systems">
@@ -58,13 +59,6 @@ Lots of uncategorized tracks can be found on [OpenStreetMap](https://www.openstr
 
 ### Start GPX navigation
 
-Once the track is created or imported inside OsmAnd, it can be found in the track list in [My places](../../personal/myplaces). After that, you can select required file from [available tracks](../../personal/tracks.md#actions), highlight it on the map and afterward use for navigation. From now you can start navigation by track using quick action button in [Track context menu](../../map/track-context-menu.md#quick-actions) (opens by choosing one of [highlighted tracks](./route-navigation.md#previous-route--history) on the map, or by tap the track file im [My Places](../../personal/myplaces.md) section of the Main menu) or from navigation menu, that can be reached by tap:
-
-- [The navigation button](../../widgets/map-buttons.md#directions) on the map screen.  
-- Navigation section in the Main menu  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
-
-In the [Navigation menu](./route-navigation.md#navigation-menu) go to *<Translate android="true" ids="shared_string_settings,follow_track"/>*.  
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
@@ -81,9 +75,14 @@ In the [Navigation menu](./route-navigation.md#navigation-menu) go to *<Translat
 
 </Tabs>
 
-### Choose segments
+Once the track is created or imported inside OsmAnd, it can be found in the track list in [My places](../../personal/myplaces). After that, you can select required file from [available tracks](../../personal/tracks.md#actions), highlight it on the map and afterward use for navigation. From now you can start navigation by track using quick action button in [Track context menu](../../map/track-context-menu.md#quick-actions) (opens by choosing one of [highlighted tracks](./route-navigation.md#previous-route--history) on the map, or by tap the track file im [My Places](../../personal/myplaces.md) section of the Main menu) or from navigation menu, that can be reached by tap:
 
-If your track consists of multiple segments or tracks, you can select either specific segment  or whole gpx-track file for navigation.
+- [The navigation button](../../widgets/map-buttons.md#directions) on the map screen.  
+- Navigation section in the Main menu  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
+
+In the [Navigation menu](./route-navigation.md#navigation-menu) go to *<Translate android="true" ids="shared_string_settings,follow_track"/>*.  
+
+### Choose segments
 
 <Tabs groupId="operating-systems">
 
@@ -100,6 +99,8 @@ If your track consists of multiple segments or tracks, you can select either spe
 </TabItem>
 
 </Tabs>
+
+If your track consists of multiple segments or tracks, you can select either specific segment  or whole gpx-track file for navigation.  
 
 :::note
 If your track consists of more than one track, [while importing](../../personal/tracks.md#import-track) you can decide either to save it as one file or more.
@@ -136,8 +137,6 @@ Also you can choose [<Translate android="true" ids="nav_type_hint"/>](../routing
 
 ### Attach to roads
 
-When your track selected as a *[destination point](../setup/route-navigation.md#set-destinations)*, you can find the **Attach to the roads** option in the *[Navigation menu](../setup/route-navigation.md#navigation-menu)* (only in the **Android** version of the app) or in the *[Follow track menu](#follow-track-menu)* (both Android and iOs versions). If you tap this option,  the [Plan a route](../../plan-route/create-route.md#saving-a-route) tool will open and OsmAnd will match each point on the track to the nearest allowed road on the map according to the chosen profile and threshold distance.
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
@@ -153,6 +152,8 @@ When your track selected as a *[destination point](../setup/route-navigation.md#
 </TabItem>
 
 </Tabs>
+
+When your track selected as a *[destination point](../setup/route-navigation.md#set-destinations)*, you can find the **Attach to the roads** option in the *[Navigation menu](../setup/route-navigation.md#navigation-menu)* (only in the **Android** version of the app) or in the *[Follow track menu](#follow-track-menu)* (both Android and iOS versions). If you tap this option,  the [Plan a route](../../plan-route/create-route.md#saving-a-route) tool will open and OsmAnd will match each point on the track to the nearest allowed road on the map according to the chosen profile and threshold distance.  
 
 - Threshold distance (default is 50 meters) refers to the maximum distance between a point on a GPS track and the nearest point on a road in order to attach the track to the road.
 - When you change the profile, OsmAnd automatically reattaches your track to the allowed for this profile roads.

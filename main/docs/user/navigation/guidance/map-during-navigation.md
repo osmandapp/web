@@ -56,12 +56,12 @@ During navigation, the map appearance changes to that of the app profile used fo
 | *"<Translate android="true" ids="approximate_bearing"/>"* | Determines the bearing based on the navigational route you are following.    | The setting is visible only if the OsmAnd [Development plugin](../../plugins/development.md) is enabled. <br /> This option should be enabled if the orientation of the directional map is flipped or jiggles when using [Android Auto](../auto-car.md#issues).   |
 
 
-### Animate my location (Android: Animate own position)
+### Animate own position
 
 **Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,animate_my_location"/>*  
 **iOS**: *<Translate ios="true" ids="shared_string_menu,routing_settings,routing_settings_2,animate_my_location"/>*  
 
-Creates a smooth map panning effect versus the *[My Position](../../personal/profiles/#profile-appearance)* icon when in motion. The effect introduces a slight delay versus ground truth of about 1 second. For Android, this item is named *Animate own position* and located in the *[Other](../../personal/profiles.md#other)* section of the each profile's General settings menu. Enabling this has been reported to create some pronounced lag issues under some circumstances, disable if such issues arise.
+This setting provides a smooth animation of the *[My Position](../../personal/profiles.md#profile-appearance)* point moving on the map during navigation. Note that the animation takes about 1 second, which creates a slight delay when displaying the *My Position* position on the map relative to your location. For Android, this item is located in the *[Other](../../personal/profiles.md#other)* section of the General Settings menu. Reportedly, turning this item on can cause a pronounced delay in some circumstances, disable it if you experience such issues.
 
 
 ## Show points along the route
