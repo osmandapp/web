@@ -272,7 +272,13 @@ const RouteLayer = ({ geocodingData, region }) => {
         }
     }, [routeConceal, routeLayer]);
 
-    const passStyle = (f) => f.style; // pass geojson.features.style to set colors/etc
+    // pass geojson.features.style to set colors/etc
+    const passStyle = (f) => {
+        if (!f.style && f.geometry?.type === 'LineString') {
+            f.style = { color: routeObject.getColor() };
+        }
+        return f.style;
+    };
 
     return (
         <>
