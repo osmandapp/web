@@ -87,14 +87,18 @@ export default function SearchLayer() {
         let ignore = false;
         let controller = new AbortController();
         const settings = ctx.searchSettings;
+        const setLoadingContextMenu = ctx.setLoadingContextMenu;
 
         const onMapMoveEnd = async () => {
             if (
                 ctx.searchSettings.useWikiImages ||
                 (ctx.currentObjectType === OBJECT_SEARCH && (mainIconsLayerRef.current || otherIconsLayerRef.current))
             ) {
-                ctx.setLoadingContextMenu(true);
-                debouncer(() => getData({ controller, ignore, settings }), timerRef, GET_OBJ_DEBOUNCE_MS);
+                debouncer(
+                    () => getData({ controller, ignore, settings, setLoadingContextMenu }),
+                    timerRef,
+                    GET_OBJ_DEBOUNCE_MS
+                );
             }
         };
         map.on('moveend', onMapMoveEnd);
@@ -107,7 +111,11 @@ export default function SearchLayer() {
             ) {
                 filtersRef.current = ctx.searchSettings.selectedFilters;
                 removeLayers();
-                debouncer(() => getData({ controller, ignore, settings }), timerRef, GET_OBJ_DEBOUNCE_MS);
+                debouncer(
+                    () => getData({ controller, ignore, settings, setLoadingContextMenu }),
+                    timerRef,
+                    GET_OBJ_DEBOUNCE_MS
+                );
             }
         }
 
@@ -121,7 +129,12 @@ export default function SearchLayer() {
             controller.abort();
             map.off('moveend', onMapMoveEnd);
         };
-    }, [ctx.currentObjectType, ctx.searchSettings.useWikiImages, ctx.searchSettings.selectedFilters]);
+    }, [
+        ctx.currentObjectType,
+        ctx.searchSettings.useWikiImages,
+        ctx.searchSettings.selectedFilters,
+        ctx.setLoadingContextMenu,
+    ]);
 
     /**
      * A debounced function to fetch place data from a specified API based on map boundaries and user-selected filters.
@@ -135,12 +148,13 @@ export default function SearchLayer() {
      * @returns {Promise<void>} - A promise that resolves when the fetch operation is complete.
      */
 
-    async function getData({ controller, ignore, settings }) {
+    async function getData({ controller, ignore, settings, setLoadingContextMenu }) {
         if (!ignore) {
             if (settings?.selectedFilters?.size === 0) {
                 ctx.setWikiPlaces(null);
                 return;
             }
+            setLoadingContextMenu(true);
             const bbox = map.getBounds();
             const api = settings?.useWikiImages ? 'get-wiki-images' : 'get-wiki-data';
             const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/${api}`, {
@@ -159,6 +173,7 @@ export default function SearchLayer() {
             } else {
                 console.error(`Places not found`);
             }
+            setLoadingContextMenu(false);
         }
     }
 
