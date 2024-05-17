@@ -32,6 +32,34 @@ export default function SearchLayer() {
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [selectedObj, setSelectedObj] = useState(null);
+    const pointerRef = useRef(null);
+
+    useEffect(() => {
+        if (ctx.selectedPoiId?.id) {
+            let foundMarker = null;
+            // Search for the marker in the main icons layer
+            mainIconsLayerRef?.current?.eachLayer((layer) => {
+                if (layer.options.id === ctx.selectedPoiId.id) {
+                    foundMarker = layer;
+                }
+            });
+            // If not found, search in the other icons layer
+            if (!foundMarker) {
+                otherIconsLayerRef?.current?.eachLayer((layer) => {
+                    if (layer.options.id === ctx.selectedPoiId.id) {
+                        foundMarker = layer;
+                    }
+                });
+            }
+            if (foundMarker) {
+                if (ctx.selectedPoiId.show) {
+                    foundMarker.fire('selectMarker'); // Show the selected marker
+                } else {
+                    foundMarker.fire('mouseout'); // Hide the marker
+                }
+            }
+        }
+    }, [ctx.selectedPoiId]);
 
     function closeModal() {
         setModalIsOpen(false);
@@ -383,9 +411,7 @@ export default function SearchLayer() {
                             index: place.index,
                             id: place.properties.id,
                         });
-                        marker.on('click', () => {
-                            openInfo(place);
-                        });
+                        addEventListeners({ marker, place, main: true, iconSize, latlng });
                         largeMarkersArr.addLayer(marker);
                         resolve();
                     };
@@ -399,9 +425,7 @@ export default function SearchLayer() {
                             weight: 1,
                             zIndex: 1000,
                         });
-                        circle.on('click', () => {
-                            openInfo(place);
-                        });
+                        addEventListeners({ marker: circle, place, latlng });
                         largeMarkersArr.addLayer(circle);
                         resolve();
                     };
@@ -421,9 +445,7 @@ export default function SearchLayer() {
                         weight: 1,
                         zIndex: 1000,
                     });
-                    circle.on('click', () => {
-                        openInfo(place);
-                    });
+                    addEventListeners({ marker: circle, place, latlng });
                     simpleMarkersArr.addLayer(circle);
                 }
 
@@ -432,6 +454,73 @@ export default function SearchLayer() {
             });
         }
     }, [ctx.wikiPlaces]);
+
+    function addEventListeners({ marker, place, main = false, latlng, iconSize = [10, 10] }) {
+        // Add click event to open information about the place
+        marker.on('click', () => {
+            openInfo(place);
+        });
+
+        // Add custom event to handle marker selection
+        marker.on('selectMarker', () => {
+            if (pointerRef.current) {
+                if (map?.hasLayer(pointerRef.current)) {
+                    map.removeLayer(pointerRef.current);
+                }
+                pointerRef.current = null;
+            }
+            let newMarker;
+            if (main) {
+                newMarker = new L.Marker(latlng, {
+                    icon: L.divIcon({
+                        className: `${styles.wikiIconHover} ${styles.wikiIconLarge}`,
+                        iconSize,
+                    }),
+                });
+                newMarker.options.icon.options.className = `${styles.wikiIconHover} ${styles.wikiIconLarge}`;
+                pointerRef.current = newMarker.addTo(map);
+            } else {
+                newMarker = L.circleMarker(latlng, {
+                    id: place.properties.id,
+                    fillOpacity: 0.9,
+                    radius: 5,
+                    color: '#ffffff',
+                    fillColor: '#237bff',
+                    weight: 1,
+                    zIndex: 1000,
+                });
+            }
+            pointerRef.current = newMarker.addTo(map);
+        });
+
+        // Add mouseover event to highlight the marker
+        marker.on('mouseover', () => {
+            ctx.setSelectedPoiId({ id: marker.options.id });
+            if (!main) {
+                marker.setStyle({
+                    fillColor: '#237bff',
+                });
+            }
+        });
+
+        // Add mouseout event to reset marker style and remove pointer
+        marker.on('mouseout', (event) => {
+            if (event.originalEvent) {
+                ctx.setSelectedPoiId({ id: -1 });
+                if (!main) {
+                    marker.setStyle({
+                        fillColor: '#fe8800',
+                    });
+                }
+            }
+            if (pointerRef.current) {
+                if (map?.hasLayer(pointerRef.current)) {
+                    map.removeLayer(pointerRef.current);
+                }
+                pointerRef.current = null;
+            }
+        });
+    }
 
     return (
         <>

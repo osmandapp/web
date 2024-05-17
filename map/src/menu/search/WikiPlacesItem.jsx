@@ -16,12 +16,23 @@ export default function WikiPlacesItem({ item }) {
     const [typeIcon, setTypeIcon] = useState(null);
     const [typeEmptyIcon, setTypeEmptyIcon] = useState(null);
     const { t } = useTranslation();
+    const [isHovered, setIsHovered] = useState(false);
 
     const name = item.properties?.wikiTitle;
     const desc = item.properties?.wikiDesc;
     const imageTitle = item.properties?.photoTitle;
     const poiType = item.properties?.poitype;
     const poiSubType = item.properties?.poisubtype;
+
+    function handleMouseEnter(item) {
+        ctx.setSelectedPoiId({ id: item.properties.id, show: true });
+        setIsHovered(true);
+    }
+
+    function handleMouseLeave(item) {
+        ctx.setSelectedPoiId({ id: item.properties.id, show: false });
+        setIsHovered(false);
+    }
 
     useEffect(() => {
         async function fetchData() {
@@ -50,6 +61,14 @@ export default function WikiPlacesItem({ item }) {
         return t(`${POI_PREFIX}${type}`);
     }
 
+    useEffect(() => {
+        if (ctx.selectedPoiId?.id === item.properties.id) {
+            setIsHovered(true);
+        } else {
+            setIsHovered(false);
+        }
+    }, [ctx.selectedPoiId?.id]);
+
     return useMemo(
         () => (
             <>
@@ -62,8 +81,10 @@ export default function WikiPlacesItem({ item }) {
                                 <MenuItem
                                     id={`se-wiki_place-${item.properties?.id}`}
                                     divider
-                                    className={styles.placeItem}
+                                    className={`${styles.placeItem} ${isHovered ? styles.hoverItem : ''}`}
                                     onClick={() => openInfo(item)}
+                                    onMouseEnter={() => handleMouseEnter(item)}
+                                    onMouseLeave={() => handleMouseLeave(item)}
                                 >
                                     <ListItemText>
                                         <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
@@ -108,6 +129,6 @@ export default function WikiPlacesItem({ item }) {
                 </div>
             </>
         ),
-        [inView, item, anchorEl, typeIcon, typeEmptyIcon, ctx.loadingContextItem]
+        [inView, item, anchorEl, typeIcon, typeEmptyIcon, ctx.loadingContextItem, isHovered]
     );
 }

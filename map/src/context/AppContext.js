@@ -334,6 +334,8 @@ export const AppContextProvider = (props) => {
     const [afterPointRouter, setAfterPointRouter] = useState(() => new geoRouter());
     const [beforePointRouter, setBeforePointRouter] = useState(() => new geoRouter());
 
+    const [selectedPoiId, setSelectedPoiId] = useState(null);
+
     routeObject.initSetter({ setter: setRouteObject });
     trackRouter.initSetter({ setter: setTrackRouter });
     afterPointRouter.initSetter({ setter: setAfterPointRouter });
@@ -545,6 +547,8 @@ export const AppContextProvider = (props) => {
                 setSearchSettings,
                 loadingContextItem,
                 setLoadingContextItem,
+                selectedPoiId,
+                setSelectedPoiId,
             }}
         >
             {props.children}
