@@ -123,21 +123,20 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             } else if (type?.isWikiPoi) {
                 const currentPoi = ctx.selectedWpt.poi;
                 const wikiObj = ctx.searchSettings.getPoi;
-                const { properties: poiOptions } = currentPoi;
-                const coords = currentPoi.geometry.coordinates;
-                const tags = await WptTagsProvider.getWptTags(currentPoi, type, ctx);
+                const coords = wikiObj.geometry.coordinates;
+                const tags = currentPoi ? await WptTagsProvider.getWptTags(currentPoi, type, ctx) : null;
                 result = {
                     id: wikiObj?.properties.id,
                     type: type,
-                    poiType: t(POI_PREFIX + poiOptions[TYPE_OSM_VALUE]),
+                    poiType: t(`${POI_PREFIX}${wikiObj.properties?.poisubtype}`),
                     name: wikiObj?.properties.wikiTitle,
                     latlon: { lat: coords[1], lon: coords[0] },
                     wikiDesc: wikiObj?.properties.wikiDesc,
                     background: DEFAULT_POI_SHAPE,
                     color: DEFAULT_POI_COLOR,
-                    icon: poiOptions[FINAL_ICON_NAME],
+                    icon: currentPoi?.properties[FINAL_ICON_NAME],
                     tags: tags,
-                    osmUrl: poiOptions[POI_OSM_URL],
+                    osmUrl: currentPoi?.properties[POI_OSM_URL],
                     wvLinks: wikiObj?.properties.wvLinks,
                     lang: wikiObj?.properties.wikiLang,
                 };
@@ -214,7 +213,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     function getWptType(wpt) {
         return {
             isPoi: ctx.currentObjectType === OBJECT_TYPE_POI && wpt?.poi,
-            isWikiPoi: wpt?.poi && wpt?.wikidata,
+            isWikiPoi: wpt?.wikidata,
             isWpt: isTrack(ctx) && (wpt?.trackWpt || wpt?.trackWptItem),
             isFav: ctx.currentObjectType === OBJECT_TYPE_FAVORITE && wpt?.markerCurrent,
         };
