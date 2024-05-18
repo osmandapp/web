@@ -24,13 +24,22 @@ export default function PhotoGallery({ photos }) {
 
     function filterPhotos(photos) {
         const imageExtensions = ['.jpeg', '.jpg', '.png', '.gif'];
-        return photos.features.filter((photo) => {
-            const extension = photo.properties.imageTitle
-                .slice(photo.properties.imageTitle.lastIndexOf('.'))
-                .toLowerCase();
-            return imageExtensions.includes(extension);
-        });
+        return photos.features
+            .filter((photo) => {
+                const extension = photo.properties.imageTitle
+                    .slice(photo.properties.imageTitle.lastIndexOf('.'))
+                    .toLowerCase();
+                return imageExtensions.includes(extension);
+            })
+            .sort((a, b) => a.properties.rowNum - b.properties.rowNum)
+            .reduce((acc, photo) => {
+                if (!acc.find((item) => item.properties.mediaId === photo.properties.mediaId)) {
+                    acc.push(photo);
+                }
+                return acc;
+            }, []);
     }
+
     const filteredPhotos = filterPhotos(photos).slice(0, MAX_PHOTOS);
 
     return (
