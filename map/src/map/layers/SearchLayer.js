@@ -96,8 +96,7 @@ export default function SearchLayer() {
                 const poi = response.data;
                 ctx.setSelectedWpt({ poi, wikidata: item });
             } else {
-                ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: null });
-                console.error(`Poi not found. Maybe it has wrong osmid: ${item.properties?.osmid}`);
+                ctx.setSelectedWpt({ wikidata: item });
             }
         }
 
