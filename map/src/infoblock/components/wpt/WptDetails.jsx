@@ -55,6 +55,7 @@ import { apiGet } from '../../../util/HttpApi';
 import Loading from '../../../menu/errors/Loading';
 import PhotoGallery from '../../../menu/search/PhotoGallery';
 import wptStyles from '../wpt/wptDetails.module.css';
+import parse from 'html-react-parser';
 
 export default function WptDetails({ isDetails = false, setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
@@ -444,6 +445,13 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         );
     };
 
+    const cleanHtml = (html) => {
+        return html
+            .replace('div class="content"', '')
+            .replace(/\([^)]*\)/g, '')
+            .replace(/\[[^\]]*\]/g, '');
+    };
+
     return (
         <>
             {loading ? (
@@ -509,7 +517,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                         </ListItemText>
                                     </MenuItem>
                                     <div className={styles.descTextBlock}>
-                                        <Typography className={styles.descText}>{wpt?.wikiDesc}</Typography>
+                                        <Typography className={styles.descText}>
+                                            {parse(cleanHtml(wpt?.wikiDesc || ''))}
+                                        </Typography>
                                     </div>
                                     <Button
                                         sx={{ ml: 1 }}
