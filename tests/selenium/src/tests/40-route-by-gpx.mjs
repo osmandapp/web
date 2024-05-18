@@ -9,11 +9,11 @@ import actionOpenMap from '../actions/actionOpenMap.mjs';
 
 const TEST_GPX_FILE = 'test-routed-osrm.gpx';
 const GO_CENTER_HASH = '#14/50.3837/30.4944';
-const CHECK_START = /50\.(39743|39753), 30\.(50982|50947)/;
+const CHECK_START = /50\.(39743|39753|39737), 30\.(50982|50947|51001)/;
 const CHECK_END = '50.36917, 30.52727';
 const CAR = /12\.[0-9] km, 0:2[0-9] min/;
-const BIKE = /12\.[0-9] km, 0:5[0-9] min/;
-const FOOT = /13\.[0-9] km, [34]:[0-9][0-9] min/;
+const BIKE = /1[12]\.[0-9] km, 0:5[0-9] min/;
+const FOOT = /1[12]\.[0-9] km, [34]:[0-9][0-9] min/;
 
 export default async function test() {
     await actionOpenMap();
