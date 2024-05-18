@@ -56,6 +56,7 @@ export default function SearchLayer() {
                     lat: item.geometry.coordinates[1],
                     lon: item.geometry.coordinates[0],
                     osmid: item.properties?.osmid,
+                    type: item.properties?.osmtype,
                 },
             });
             if (response?.data) {
