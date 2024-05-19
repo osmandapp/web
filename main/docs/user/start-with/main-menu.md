@@ -64,16 +64,14 @@ In this menu you can **switch** active profile, **configure** (change settings) 
 
 ### Customize (Advanced use of Android)
 
-It is a menu where the user can reorder or hide items from the Drawer, to see hidden items from the menu, copy the list of items from the another profile and reset to default settings.
-
 *<Translate android="true" ids="shared_string_menu,configure_profile,ui_customization,shared_string_drawer"/> →  &#65049; → Enable*.  
 
-![Drawer menu items ](@site/static/img/settings/drawer_menu_correct.png)
+![Drawer menu items ](@site/static/img/settings/drawer_menu_correct.png)  
 
-The *bin on the left* side of the item will remove the item from the main list.
-Spin up or down the *line on the right* will give an opportunity to move the item up or down along the list.
+- This menu allows you to change the order, hide or show items from the [Drawer](../personal/profiles.md#drawer), copy a list of items from another profile and reset the default settings.  
 
-The items that have been moved to the bin are moved to the "Hidden" section. You can restore them by clicking on the green button to the left of their titles.
+- The *Minus* button deletes an item from the main menu in the drawer and moves it to the *Hidden* section. The *Move* button changes the position of the selected item in the list.  
 
-![Drawer menu hidden items ](@site/static/img/settings/drawer_menu_hidden_items.png)
+- Items moved to the *Hidden* section are not displayed in the Drawer menu, but all options, settings, or plugins from this list continue to work. You can restore items by tapping the green button to the left of their names.  
+    ![Drawer menu hidden items ](@site/static/img/settings/drawer_menu_hidden_items.png)
 
