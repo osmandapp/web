@@ -30,7 +30,7 @@
 }
 .contextMenu {
     display: flex !important;
-    width: 249px !important;
+    min-width: 249px !important;
     padding: 8px 0px !important;
     flex-direction: column !important;
     justify-content: center !important;
