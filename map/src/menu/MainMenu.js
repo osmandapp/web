@@ -262,7 +262,8 @@ export default function MainMenu({
             // update menu
             setShowInfoBlock(false);
             closeCloudSettings(openCloudSettings, setOpenCloudSettings, ctx);
-            const menu = !isSelectedMenuItem(item) || ctx.openMenu ? item : null;
+            const updateMenu = !isSelectedMenuItem(item) || ctx.openMenu;
+            const menu = updateMenu ? item : null;
             setMenuInfo(menu?.component);
             setSelectedType(menu?.type);
             ctx.setCurrentObjectType(null);
