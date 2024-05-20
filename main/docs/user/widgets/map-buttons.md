@@ -79,7 +79,8 @@ The Compass button shows how the map is oriented on your device screen. For more
 #### Buttons
 
 - ![Compass](@site/static/img/widgets/map_butt_north_up_ios.png)   
-**North is up (fixed)**. In this mode, the map is oriented so that the North is always at the top of the screen. Regardless of the direction in which you move the device, the map remains static and you can see your position in relation to your surroundings.  
+**North is up**. In this mode, the map is oriented so that the North is always at the top of the screen. Regardless of the direction in which you move the device, the map remains static and you can see your position in relation to your surroundings.  
+The map does not have automatic rotation, but you can rotate it manually with a [two-pointer gesture (two-finger touch & rotate)](../map/interact-with-map.md#gestures), and in this case, the map orientation mode will change to Manual rotation. You can hard lock this position using the [*<Translate android="true" ids="fix_north_up"/>*](../personal/profiles.md#other) feature, if you do not need to rotate the map with a gesture. 
 
 - ![Compass](@site/static/img/widgets/map_butt_movem_dir_ios.png)   
 **Movement direction**. In this mode, the map is oriented according to the direction of your device. For example, if you turn to the right, the map also rotates so that the right side of the screen corresponds to the direction of movement. For details, go to [*Rotate map by bearing*](../map/interact-with-map#rotate-map-by-bearing).   
@@ -88,7 +89,7 @@ The Compass button shows how the map is oriented on your device screen. For more
 **Compass direction**. In this mode, the map is oriented according to the device's compass. In this way, the north of the map corresponds to real north and you can see the orientation of the map in relation to the surrounding terrain. 
 
 - ![Compass](@site/static/img/widgets/map_butt_manually_ios.png)  
-**Manually rotated (fixed)**. In this mode you can manually rotate the map with a [two-pointer gesture (two-finger touch & rotate)](../map/interact-with-map.md#gestures) according to your preference. The orientation of the map does not depend on the direction of travel or the compass of the device, but is determined by the user. 
+**Manually rotated**. In this mode you can manually rotate the map with a [two-pointer gesture (two-finger touch & rotate)](../map/interact-with-map.md#gestures) according to your preference. The orientation of the map does not depend on the direction of travel or the compass of the device, but is determined by the user. 
 
 
 #### Display options
