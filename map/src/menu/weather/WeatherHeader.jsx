@@ -34,6 +34,7 @@ export default function WeatherHeader({ setShowInfoBlock = null, isDetails = fal
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
                     <IconButton
+                        id="se-weather-close"
                         variant="contained"
                         type="button"
                         className={styles.closeIcon}

@@ -164,7 +164,7 @@ export default function LocalClientTrackLayer() {
             - Re-setup new event handler with refreshed context.
          */
         if (ctx.createTrack && ctxTrack) {
-            if (ctx.createTrack?.enable && _.isEmpty(ctx.pointContextMenu)) {
+            if (ctx.createTrack?.enable && _.isEmpty(ctx.pointContextMenu) && !ctx.openContextMenu) {
                 setupClickOnMap();
             } else {
                 deleteClickOnMap();
@@ -172,7 +172,14 @@ export default function LocalClientTrackLayer() {
         }
         // ctx.pointContextMenu was added to monitor menu state and ignore click
         // ctx.routingCache was added to have actual context for addRoutingToCache()
-    }, [ctx.createTrack, ctxTrack, geoRouter.getEffectDeps(), ctx.pointContextMenu, ctx.routingCache]);
+    }, [
+        ctx.createTrack,
+        ctxTrack,
+        geoRouter.getEffectDeps(),
+        ctx.pointContextMenu,
+        ctx.routingCache,
+        ctx.openContextMenu,
+    ]);
 
     // after Edit, cleanup localLayers which were "killed" by updateLayers()
     useEffect(() => {
