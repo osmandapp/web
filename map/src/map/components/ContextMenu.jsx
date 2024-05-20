@@ -42,11 +42,13 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
         });
         setClickLatLng(event.latlng);
         setOpen(true);
+        ctx.setOpenContextMenu(true);
     };
 
     const handleClose = () => {
         setOpen(false);
         setClickLatLng(null);
+        ctx.setOpenContextMenu(false);
     };
 
     const handleMenuItemClick = (callback) => {
