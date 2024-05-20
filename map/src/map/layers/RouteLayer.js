@@ -150,7 +150,7 @@ const RouteLayer = ({ geocodingData, region }) => {
         fillOpacity: 0.8,
     };
 
-    const onEachFeature = (feature, layer) => {
+    const onEachFeature = ({ feature, layer, id = null }) => {
         if (feature.properties && feature.properties.description) {
             let desc = feature.properties.description;
             if (feature.properties.roadId) {
@@ -168,6 +168,12 @@ const RouteLayer = ({ geocodingData, region }) => {
                     <input type="button" value="Avoid" onclick="addAvoidRoadId${id}()"/>
                     <a href="https://openstreetmap.org/way/${osm}" target="_blank">${name}</a>`;
             }
+            layer.on('add', function () {
+                const el = layer.getElement();
+                if (el) {
+                    el.setAttribute('id', id);
+                }
+            });
             layer.bindPopup(desc);
         }
     };
@@ -289,7 +295,7 @@ const RouteLayer = ({ geocodingData, region }) => {
                     data={routeObject.getRoute()}
                     style={passStyle}
                     pointToLayer={pointToLayer}
-                    onEachFeature={onEachFeature}
+                    onEachFeature={(feature, layer) => onEachFeature({ feature, layer })}
                     filter={routeFilter}
                 />
             )}
@@ -298,7 +304,7 @@ const RouteLayer = ({ geocodingData, region }) => {
                     key={geocodingData.id + refreshKey}
                     data={geocodingData.geojson}
                     pointToLayer={pointToLayerGeoData}
-                    onEachFeature={onEachFeature}
+                    onEachFeature={(feature, layer) => onEachFeature({ feature, layer, id: 'se-geojson-search' })}
                 />
             )}
             {ctx.searchCtx.geojson && (
@@ -306,7 +312,7 @@ const RouteLayer = ({ geocodingData, region }) => {
                     key={ctx.searchCtx.id + refreshKey}
                     data={ctx.searchCtx.geojson}
                     pointToLayer={pointToLayerSearch}
-                    onEachFeature={onEachFeature}
+                    onEachFeature={(feature, layer) => onEachFeature({ feature, layer })}
                 />
             )}
             {startPoint && (

@@ -265,7 +265,12 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
 
     const CloseDialog = (dialogOpen) => {
         return (
-            <IconButton variant="contained" type="button" onClick={() => dialogOpen(false)}>
+            <IconButton
+                id={'se-add-fav-dialog-close'}
+                variant="contained"
+                type="button"
+                onClick={() => dialogOpen(false)}
+            >
                 <Close fontSize="small" />
             </IconButton>
         );
@@ -305,7 +310,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
                     {CloseDialog(setDialogOpen)}
                 </Grid>
             </Grid>
-            <DialogContent>
+            <DialogContent id={'se-add-fav-dialog'}>
                 <FavoriteName
                     favoriteName={favoriteName}
                     setFavoriteName={setFavoriteName}

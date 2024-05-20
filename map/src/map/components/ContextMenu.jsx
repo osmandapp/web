@@ -146,6 +146,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                 }}
             />
             <Popover
+                id={'se-context-menu'}
                 anchorOrigin={{
                     vertical: 'top',
                     horizontal: 'left',
@@ -165,14 +166,22 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                 >
                     <Box className={styles.contextMenu}>
                         {/* Where I am */}
-                        <MenuItem className={styles.contextMenuItem} onClick={() => handleMenuItemClick(whereAmI)}>
+                        <MenuItem
+                            id={'se-where-i-am'}
+                            className={styles.contextMenuItem}
+                            onClick={() => handleMenuItemClick(whereAmI)}
+                        >
                             <ListItemIcon className={styles.contextMenuIcon}>
                                 <MyLocationIcon />
                             </ListItemIcon>
                             <ListItemText className={styles.contextMenuItemText}>{t('where_am_i')}</ListItemText>
                         </MenuItem>
                         {/* Weather */}
-                        <MenuItem className={styles.contextMenuItem} onClick={() => handleMenuItemClick(openWeather)}>
+                        <MenuItem
+                            id={'se-open-weather-action'}
+                            className={styles.contextMenuItem}
+                            onClick={() => handleMenuItemClick(openWeather)}
+                        >
                             <ListItemIcon className={styles.contextMenuIcon}>
                                 <WeatherIcon />
                             </ListItemIcon>
@@ -183,6 +192,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                         <Divider className={styles.dividerMenu} />
                         {/*Create new route */}
                         <MenuItem
+                            id={'se-create-route-action'}
                             className={styles.contextMenuItem}
                             onClick={() => handleMenuItemClick((latlng) => TracksManager.createTrack(ctx, latlng))}
                         >
@@ -194,7 +204,11 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                             </ListItemText>
                         </MenuItem>
                         {/*Add favorite */}
-                        <MenuItem className={styles.contextMenuItem} onClick={() => handleMenuItemClick(addFavorite)}>
+                        <MenuItem
+                            id={'se-add-favorite-action'}
+                            className={styles.contextMenuItem}
+                            onClick={() => handleMenuItemClick(addFavorite)}
+                        >
                             <ListItemIcon className={styles.contextMenuIcon}>
                                 <FavoriteAddIcon />
                             </ListItemIcon>
@@ -205,6 +219,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                         <Divider className={styles.dividerMenu} />
                         {/*Direction from */}
                         <MenuItem
+                            id={'se-direction-action-from'}
                             className={styles.contextMenuItem}
                             onClick={() =>
                                 handleMenuItemClick((latlng) =>
@@ -222,6 +237,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                         {/*Direction via */}
                         {startPoint && finishPoint && (
                             <MenuItem
+                                id={'se-direction-action-via'}
                                 className={styles.contextMenuItem}
                                 onClick={() =>
                                     handleMenuItemClick((latlng) =>
@@ -239,6 +255,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                         )}
                         {/*Direction to */}
                         <MenuItem
+                            id={'se-direction-action-to'}
                             className={styles.contextMenuItem}
                             onClick={() =>
                                 handleMenuItemClick((latlng) =>
@@ -267,6 +284,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                         <Divider className={styles.dividerMenu} />
                         {/*Add pin */}
                         <MenuItem
+                            id={'se-add-pin-action'}
                             className={styles.contextMenuItem}
                             onClick={() => handleMenuItemClick((latlng) => ctx.setPinPoint(latlng))}
                         >
@@ -277,6 +295,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                         </MenuItem>
                         {/*Show regions */}
                         <MenuItem
+                            id={'se-show-regions-action'}
                             className={styles.contextMenuItem}
                             onClick={() =>
                                 handleMenuItemClick((latlng) => (ctx.loginUser ? getRegions(latlng) : openLogin()))

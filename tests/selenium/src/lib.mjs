@@ -1,9 +1,9 @@
 'use strict';
 
 // import { strict as assert } from 'node:assert';
-import { Condition, By, logging } from 'selenium-webdriver';
+import { By, Condition, logging } from 'selenium-webdriver';
 
-import { driver, verbose, debug, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED, HIDDEN_TIMEOUT } from './options.mjs';
+import { debug, driver, HIDDEN_TIMEOUT, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED, verbose } from './options.mjs';
 import actionIdleWait from './actions/actionIdleWait.mjs';
 
 // helpers
@@ -358,4 +358,15 @@ async function logBrowserAndNetworkErrors(driver) {
         console.warn('No network errors logged.');
     }
     console.warn('\n' + 'Current URL:', await driver.getCurrentUrl(), '\n');
+}
+
+export async function clickOnMapCenter() {
+    await new Promise(resolve => setTimeout(resolve, TIMEOUT_OPTIONAL));
+    const mapElement = await driver.findElement(By.className('leaflet-container'));
+    const actions = driver.actions({ async: true });
+    await actions.move({ origin: mapElement, x: 100, y: 100 }).contextClick().perform();
+}
+
+export async function getUrl() {
+    return await driver.getCurrentUrl();
 }
