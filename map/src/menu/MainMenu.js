@@ -110,7 +110,7 @@ export default function MainMenu({
         {
             name: t('shared_string_weather'),
             icon: WeatherIcon,
-            component: <Weather />,
+            component: <Weather location={ctx.openMenu?.latlng} />,
             type: OBJECT_TYPE_WEATHER,
             show: true,
             id: 'se-show-menu-weather',
@@ -262,7 +262,7 @@ export default function MainMenu({
             // update menu
             setShowInfoBlock(false);
             closeCloudSettings(openCloudSettings, setOpenCloudSettings, ctx);
-            const menu = !isSelectedMenuItem(item) ? item : null;
+            const menu = !isSelectedMenuItem(item) || ctx.openMenu ? item : null;
             setMenuInfo(menu?.component);
             setSelectedType(menu?.type);
             ctx.setCurrentObjectType(null);
@@ -276,6 +276,14 @@ export default function MainMenu({
             }
         }
     }
+
+    useEffect(() => {
+        if (ctx.openMenu) {
+            const item = items.find((item) => item.id === ctx.openMenu?.id);
+            selectMenu(item);
+            ctx.setOpenMenu(null);
+        }
+    }, [ctx.openMenu]);
 
     return (
         <Box
