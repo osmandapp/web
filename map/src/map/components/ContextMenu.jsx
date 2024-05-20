@@ -160,6 +160,11 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                 open={open}
                 anchorEl={anchorEl.current}
                 disablePortal={true}
+                onKeyDown={(e) => {
+                    if (e.key === 'Escape') {
+                        handleClose();
+                    }
+                }}
             >
                 <ClickAwayListener
                     onClickAway={() => {
