@@ -213,7 +213,7 @@ export default function SettingsMenu({ setCloudSettings }) {
                     </MenuItem>
                 </>
             )}
-            {ctx.develFeatures && (
+            {ctx.develFeatures && ctx.loginUser && (
                 <>
                     <Typography component="div" sx={{ ml: 2 }}>
                         Explore Wikimedia Images
