@@ -180,7 +180,7 @@ Enabled the _External input device_ function:
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
 
-After you need to choose your device *<Translate android="true" ids="shared_string_type"/>*: *<Translate android="true" ids="sett_generic_ext_input"/>*, *<Translate android="true" ids="sett_parrot_ext_input"/>*, *<Translate android="true" ids="sett_wunderlinq_ext_input"/>*.
+After you need to choose your device *<Translate android="true" ids="shared_string_type"/>*: *<Translate android="true" ids="sett_generic_ext_input"/>*, *<Translate android="true" ids="sett_parrot_ext_input"/>*, *<Translate android="true" ids="sett_wunderlinq_ext_input"/>* or create [your own type](#assign-custom-keys).
 
 ![External devices](@site/static/img/map/external_menu_android.png) ![External devices](@site/static/img/map/external_types_android.png)
 
@@ -213,32 +213,6 @@ Each External input devices Type has *<Translate android="true" ids="key_assignm
 You can read more about the actions of external input devices on GitHub in the [MapActivityKeyListener](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82) package.
 :::
 
-#### Own Type creation
-
-You can create your own *<Translate android="true" ids="shared_string_type"/>*:
-
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
-
-![External devices](@site/static/img/map/external_mypilot_android.png) ![External devices](@site/static/img/map/external_mypilot2_android.png)
-
-Now, you can change buttons for actions. Just go to your created *<Translate android="true" ids="shared_string_type"/>*:
-
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → Your type → <Translate android="true" ids="key_assignments"/> → Click to any Actions or Map interactions → &#43; or <Translate android="true" ids="shared_string_button"/>*
-
-
-![External devices](@site/static/img/map/external_assign_android.png)
-
-Now, press the button on your device to assign it to the action.
-
-![External devices](@site/static/img/map/external_assign2_android.png)
-
-If this button is used for another action you see a warning about it and a question about the reassignment.
-
-![External devices](@site/static/img/map/external_assign3_android.png) ![External devices](@site/static/img/map/external_assign4_android.png)
-
-This way the user can assign his actions to the _External input device_ buttons. You can reset key assignments by clicking to _Reset button_ in the top corner of the screen: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → Your type → <Translate android="true" ids="key_assignments"/> → Reset*. All key assignments for the selected type will be removed.
-
-![External devices](@site/static/img/map/external_assign5_android.png) 
 
 </TabItem>
 
@@ -294,5 +268,48 @@ You can turn off all map animations during map changes, such as gestures and but
 **iOS**: *<Translate ios="true" ids="shared_string_menu,routing_settings,routing_settings_2,animate_my_location"/>*  
 
 Creates a smooth map panning effect versus the *[My Position](../personal/profiles/#profile-appearance)* icon when in motion. The effect introduces a slight delay versus ground truth of about 1 second. Enabling this has been reported to create some pronounced lag issues under some circumstances, disable if such issues arise.
+
+
+## Assign custom keys
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+You can create your own [*<Translate android="true" ids="shared_string_type"/>*](#external-input-device-buttons):
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
+
+![External devices](@site/static/img/map/external_mypilot_android.png) ![External devices](@site/static/img/map/external_mypilot2_android.png)
+
+Now, you can change buttons for actions. Just go to your created *<Translate android="true" ids="shared_string_type"/>*:
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → Your type → <Translate android="true" ids="key_assignments"/> → Click to any Actions or Map interactions → &#43; or <Translate android="true" ids="shared_string_button"/>*
+
+
+![External devices](@site/static/img/map/external_assign_android.png)
+
+Now, press the button on your device to assign it to the action.
+
+![External devices](@site/static/img/map/external_assign2_android.png)
+
+If this button is used for another action you see a warning about it and a question about the reassignment.
+
+![External devices](@site/static/img/map/external_assign3_android.png) ![External devices](@site/static/img/map/external_assign4_android.png)
+
+This way the user can assign his actions to the _External input device_ buttons. You can reset key assignments by clicking to _Reset button_ in the top corner of the screen: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → Your type → <Translate android="true" ids="key_assignments"/> → Reset*. All key assignments for the selected type will be removed.
+
+![External devices](@site/static/img/map/external_assign5_android.png) 
+  
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly / >
+
+</TabItem>
+
+</Tabs>  
+
 
 

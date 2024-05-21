@@ -279,17 +279,22 @@ The Camera Elevation widget shows the camera elevation above the surface level. 
 
 ![Zoom level widget Android 1](@site/static/img/plugins/development/developer_widg_zoom_1.png) ![Zoom level widget Android 2](@site/static/img/plugins/development/developer_widg_zoom_2.png)  
 
+Widget has two views:  _<Translate android="true" ids="map_widget_zoom_level"/>_ and  _<Translate android="true" ids="map_widget_map_scale"/>_. The first shows the current map zoom level, the second shows the current map scale (A map scale is the relationship between a distance on a map and the corresponding distance on the earth. The example: 1:50,000).
+
+Switch the mode by tapping on the widget.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
 ![Zoom level widget ios 1](@site/static/img/plugins/development/developer_widg_zoom_ios_1.png) ![Zoom level widget ios 2](@site/static/img/plugins/development/developer_widg_zoom_ios_2.png)  
+
+The Zoom level widget represents the current map zoom level.
+
 </TabItem>
 
 </Tabs>  
 
-
-The Zoom level widget represents the current map zoom level.  
 
 :::note
 The initial zoom level (0) is the level at which the entire surface of the earth (the full map) is displayed on the screen, and its size is 256 by 256 pixels.  
