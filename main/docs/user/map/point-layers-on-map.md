@@ -165,7 +165,7 @@ OsmAnd has special Point of Interests indicated with 'W' logo and Wikipedia arti
 
 Enable / disable wikipedia articles on the map and filter by language:   
 *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,local_indexes_cat_wiki"/>*  
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,configure_map,poi_overlay,res_wiki"/>*  
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,configure_map,ownload_wikipedia_maps"/>*  
 
 [Read more](../plugins/wikipedia.md) how to download and use the Wikipedia feature in OsmAnd.
 
