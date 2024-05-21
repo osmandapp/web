@@ -60,7 +60,7 @@ Keep in mind that during navigation zoom can be controlled by **Auto zoom settin
 Map magnifier is a special way to magnify the map. Essentially it works as a magnifying glass for paper maps, it allows to see the text bigger for raster maps or to see more or less details for the same scale - [Read more](../map/vector-maps.md#map-magnifier).
 
 
-## Map orientation & Compass
+## Map orientation and Compass
 
 ### Map orientation modes
 
@@ -72,7 +72,7 @@ The map orientation modes allow the user to select how the map is displayed on t
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
 
-![Compass widget](@site/static/img/map/map_orientation_android.png)  
+![Compass widget](@site/static/img/map/map_orientation_mode_andr.png)  
   
 </TabItem>
 
@@ -80,17 +80,17 @@ The map orientation modes allow the user to select how the map is displayed on t
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_appearance,rotate_map_to"/>*
 
-![Compass widget](@site/static/img/map/map_orientation_ios.png)  
+![Compass widget](@site/static/img/map/map_orientation_mode_ios.png)  
 
 </TabItem>
 
 </Tabs>  
 
 
-- **<Translate android="true" ids="rotate_map_north_opt"/>** - The map is fixed in the direction of the North, which is the top edge of your device. The map does not have automatic rotation, but you can rotate it manually with a [two-pointer gesture (two-finger touch & rotate)](../map/interact-with-map.md#gestures). In this case, the map orientation mode will change to Manual rotation. You can *hard lock the North mode* for Android by the ["<Translate android="true" ids="fix_north_up"/>"](../personal/profiles.md#other) function.
-- **<Translate android="true" ids="rotate_map_bearing_opt"/>** - The map rotates relative to the direction of your movement known from GPS data. For details, go to [*Rotate map by bearing*](../map/interact-with-map#rotate-map-by-bearing).
-- **<Translate android="true" ids="rotate_map_compass_opt"/>** - The [icon on the button](../widgets/map-buttons.md/#compass) points to the actual North, and the map moves according to the compass orientation of your device. Your device should be in as horizontal a position as possible. If your device does not have a compass sensor, the orientation of the map remains unchanged.
-- **<Translate android="true" ids="rotate_map_manual_opt"/>** - When you select this option, the map is fixed in the current position and does not rotate automatically. You can manually change the map orientation with a two-pointer gesture (two-finger touch & rotate).   
+- **<Translate android="true" ids="rotate_map_north_opt"/>**. The map is fixed in the direction of the North, which is the top edge of your device. The map does not have automatic rotation, but you can rotate it manually with a [two-pointer gesture (two-finger touch & rotate)](../map/interact-with-map.md#gestures), and in this case, the map orientation mode will change to Manual rotation. You can *hard lock the North mode* for Android by the [*<Translate android="true" ids="fix_north_up"/>*](../personal/profiles.md#other) feature.
+- **<Translate android="true" ids="rotate_map_bearing_opt"/>**. The map rotates relative to the direction of your movement known from GPS data. For details, go to [*Rotate map by bearing*](../map/interact-with-map#rotate-map-by-bearing).
+- **<Translate android="true" ids="rotate_map_compass_opt"/>**. The [icon on the button](../widgets/map-buttons.md/#compass) points to the actual North, and the map moves according to the compass orientation of your device. Your device should be in as horizontal a position as possible. If your device does not have a compass sensor, the orientation of the map remains unchanged.
+- **<Translate android="true" ids="rotate_map_manual_opt"/>**. When you select this option, the map is fixed in the current position and does not rotate automatically. You can manually change the map orientation with a two-pointer gesture (two-finger touch & rotate).   
 
 
 **Note**  

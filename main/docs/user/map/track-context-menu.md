@@ -270,57 +270,23 @@ _Calculate elevation_ button → [_Attach to the roads_](../navigation/setup/gpx
 
 ### Calculate elevation offline
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-:::note
-<ProFeature/> Calculate elevation offline feature is only available for <a href="https://osmand.net/docs/user/purchases/android#pro-features"> OsmAnd Pro subscribers</a>.
-:::
-
-This feature allows you to calculate Elevation profile for GPX track offline for any area between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../plugins/contour-lines.md#how-to-download) (**Terrain maps (3D) should be predownloaded**):
-
-**1.** Check that you have [OsmAnd Pro subscription](../purchases/android.md#pro-features) <ProFeature/>.
-
-**2.** Download [Terrain maps(3D)](../plugins/contour-lines.md#download-maps) for needed region.
-
-**3.** In 3.1 - manual for a track without altitude data. In 3.2 - manual for ["Plan a route" tool](../plan-route/create-route.md#graph):
-
-**3.1** For a track without Altitude data you need to go the Track Context menu:
-
-_Track Context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,get_altitude_data"/> → Use Terrain maps_
-
-![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png) <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->
-
-After calculation you receive the graph of your track based on Terrain data:
-
-![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)
-
-**3.2** For ["Plan a route" tool](../plan-route/create-route.md#graph), when you use "Straight line" profile for a route creation, a track graph hasn't altitude data for straight line section:
-
-![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_5.png)
-
-Below of _Graph menu_ section you find the _<Translate android="true" ids="get_altitude_data"/>_ button: 
-
-![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_6.png)
-
-Click to this button for open _<Translate android="true" ids="get_altitude_data"/> → Use Terrain maps_.
-
-After calculation you receive full Altitude/Slope Graph for your route based on Terrain maps data:
-
-![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_8.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
 <InfoAndroidOnly />
 
-</TabItem>
+:::note
+Calculate elevation offline feature is only available for [**OsmAnd Pro subscribers**](../purchases/android.md#pro-features) <ProFeature />.
+:::
 
-</Tabs>
+This feature allows you to calculate elevation profile for GPX track offline for any terrain between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../plugins/contour-lines.md#how-to-download). *Terrain maps (3D) should be previously downloaded*.
 
-
+1. Purchase [OsmAnd Pro subscription](../purchases/android.md#pro-features).
+2. Download [Terrain maps(3D)](../plugins/contour-lines.md#download-maps) for the required region.
+3. If the track does not contain any altitude data, go to the track context menu (*Track Context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,get_altitude_data"/>*), select *Use Terrain maps*, and after the calculation you will get a track graph based on the terrain data.  
+  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
+4. If you are creating a route with the [*Plan a route*](../plan-route/create-route.md#graph) tool using the *Straight line* method and there is no elevation data on the graph, you need to:
+    - Tap *Get elevation data*, then select *Use Terrain maps*.
+    - After the calculation, you will get a complete Altitude/Slope graph of your route based on terrain data.  
+    
+  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
 
 
 ## Points / Waypoints

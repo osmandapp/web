@@ -242,6 +242,9 @@ export const AppContextProvider = (props) => {
     const [globalConfirmation, setGlobalConfirmation] = useState(null);
     const [fitBoundsPadding, mutateFitBoundsPadding] = useMutator({ left: 0, top: 0, right: 0, bottom: 0 });
 
+    const [openMenu, setOpenMenu] = useState(null);
+    const [openContextMenu, setOpenContextMenu] = useState(false);
+
     const searchParams = new URLSearchParams(window.location.search);
     // weather
     const [weatherLayers, setWeatherLayers] = useState(WeatherManager.getLayers());
@@ -549,6 +552,10 @@ export const AppContextProvider = (props) => {
                 setLoadingContextItem,
                 selectedPoiId,
                 setSelectedPoiId,
+                openMenu,
+                setOpenMenu,
+                openContextMenu,
+                setOpenContextMenu,
             }}
         >
             {props.children}

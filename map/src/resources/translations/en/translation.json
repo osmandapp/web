@@ -5214,5 +5214,13 @@
   "online_photos": "Online photos",
   "shared_string_close": "Close",
   "shared_string_wikivoyage": "Wikivoyage",
-  "shared_string_read_more": "Read more"
+  "shared_string_read_more": "Read more",
+  "where_am_i": "Where am I?",
+  "open_weather_action": "Open weather",
+  "plan_route_create_new_route": "Create new route",
+  "favourites_context_menu_add": "Add Favorite",
+  "context_menu_item_directions_to": "Directions to",
+  "context_menu_item_directions_from": "Directions from",
+  "copy_coordinates": "Copy coordinates",
+  "add_intermediate_point": "Add intermediate"
 }

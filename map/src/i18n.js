@@ -14,7 +14,7 @@ const translationParsePlugin = {
     name: 'jsonParse',
     process: function (value) {
         try {
-            return value.replace(/\\'/g, "'");
+            return value.replace(/\\/g, '');
         } catch (e) {
             return value;
         }
