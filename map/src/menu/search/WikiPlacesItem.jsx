@@ -7,6 +7,8 @@ import styles from '../search/search.module.css';
 import { addPoiTypeTag, POI_PREFIX } from '../../infoblock/components/wpt/WptTagsProvider';
 import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
+import { cleanHtml } from '../../manager/PoiManager';
+import parse from 'html-react-parser';
 
 export default function WikiPlacesItem({ item }) {
     const ctx = useContext(AppContext);
@@ -19,7 +21,7 @@ export default function WikiPlacesItem({ item }) {
     const [isHovered, setIsHovered] = useState(false);
 
     const name = item.properties?.wikiTitle;
-    const desc = item.properties?.wikiDesc;
+    const desc = item.properties?.wikiDesc ? parse(cleanHtml(item.properties?.wikiDesc)) : null;
     const imageTitle = item.properties?.photoTitle;
     const poiType = item.properties?.poitype;
     const poiSubType = item.properties?.poisubtype;
@@ -98,7 +100,7 @@ export default function WikiPlacesItem({ item }) {
                                                         {typeIcon}
                                                     </ListItemIcon>
                                                 )}
-                                                <Typography variant="body2" className={styles.placeTypes} noWrap>
+                                                <Typography className={styles.placeTypes} noWrap>
                                                     {`${getType(poiSubType)}, ${getType(poiType)}`}
                                                 </Typography>
                                             </div>

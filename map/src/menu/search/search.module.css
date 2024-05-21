@@ -27,8 +27,14 @@
 }
 
 .placeTypes {
+    font-family: Roboto;
     margin-left: 8px !important;
     color: var(--text-secondary) !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 140% !important;
+    letter-spacing: 0.28px !important;
 }
 .placeDesc {
     color: var(--text-secondary) !important;
@@ -48,6 +54,7 @@
     fill: #c0c0c0 !important;
 }
 .titleText {
+    font-family: Roboto;
     color: var(--text-primary) !important;
     font-size: 16px !important;
     font-style: normal !important;

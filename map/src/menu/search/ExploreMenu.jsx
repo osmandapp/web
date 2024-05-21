@@ -21,6 +21,8 @@ export default function ExploreMenu() {
     const [openFiltersDialog, setOpenFiltersDialog] = useState(false);
     const anchorEl = useRef(null);
 
+    const MAX_PLACES = 50;
+
     function close() {
         ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
         ctx.setCurrentObjectType(null);
@@ -91,9 +93,9 @@ export default function ExploreMenu() {
                             sx={{ overflow: 'auto', overflowX: 'hidden' }}
                         >
                             {!ctx.searchSettings.useWikiImages &&
-                                ctx.wikiPlaces?.map((item, index) => (
-                                    <WikiPlacesItem index={item.id} key={index} item={item} />
-                                ))}
+                                ctx.wikiPlaces
+                                    ?.slice(0, MAX_PLACES)
+                                    .map((item, index) => <WikiPlacesItem index={item.id} key={index} item={item} />)}
                         </Box>
                     )}
                 </>

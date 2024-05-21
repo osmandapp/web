@@ -29,7 +29,7 @@ import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_acti
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
 import { ReactComponent as FavoritesIcon } from '../../../assets/menu/ic_action_favorite.svg';
 import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
-import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
+import { cleanHtml, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
 import MarkerOptions, { changeIconSizeWpt, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import FavoritesManager, {
     getColorLocation,
@@ -442,13 +442,6 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 </Collapse>
             </>
         );
-    };
-
-    const cleanHtml = (html) => {
-        return html
-            .replace('div class="content"', '')
-            .replace(/\([^)]*\)/g, '')
-            .replace(/\[[^\]]*\]/g, '');
     };
 
     return (

@@ -181,6 +181,13 @@ export function updatePoiCache(ctx, newData) {
     ctx.setPoiIconCache({ ...ctx.poiIconCache });
 }
 
+export const cleanHtml = (html) => {
+    return html
+        .replace('div class="content"', '')
+        .replace(/\([^)]*\)/g, '')
+        .replace(/\[[^\]]*\]/g, '');
+};
+
 const PoiManager = {
     getPoiCategories,
     searchPoiCategories,
