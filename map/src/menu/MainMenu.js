@@ -96,7 +96,7 @@ export default function MainMenu({
             icon: SearchIcon,
             component: <ExploreMenu />,
             type: OBJECT_SEARCH,
-            show: ctx.develFeatures,
+            show: ctx.develFeatures && ctx.loginUser,
             id: 'se-show-menu-explore',
         },
         {
