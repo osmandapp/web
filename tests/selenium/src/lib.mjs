@@ -361,7 +361,7 @@ async function logBrowserAndNetworkErrors(driver) {
 }
 
 export async function clickOnMapCenter() {
-    await new Promise(resolve => setTimeout(resolve, TIMEOUT_OPTIONAL));
+    await new Promise((resolve) => setTimeout(resolve, TIMEOUT_OPTIONAL));
     const mapElement = await driver.findElement(By.className('leaflet-container'));
     const actions = driver.actions({ async: true });
     await actions.move({ origin: mapElement, x: 100, y: 100 }).contextClick().perform();
