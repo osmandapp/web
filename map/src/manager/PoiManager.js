@@ -185,7 +185,9 @@ export const cleanHtml = (html) => {
     return html
         .replace('div class="content"', '')
         .replace(/\([^)]*\)/g, '')
-        .replace(/\[[^\]]*\]/g, '');
+        .replace(/\[[^\]]*\]/g, '')
+        .replace(/[})]/g, '')
+        .replace(/http\S*\s/g, '');
 };
 
 const PoiManager = {
