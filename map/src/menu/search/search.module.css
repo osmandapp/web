@@ -62,16 +62,14 @@
 }
 .placeItem {
     display: flex !important;
-    width: 360px !important;
-    padding: 16px 20px 16px 16px !important;
+    padding: 16px 16px 16px 16px !important;
     justify-content: center !important;
     align-items: flex-start !important;
     gap: 24px !important;
 }
 .hoverItem {
     display: flex !important;
-    width: 360px !important;
-    padding: 16px 20px 16px 16px !important;
+    padding: 16px 16px 16px 16px !important;
     justify-content: center !important;
     align-items: flex-start !important;
     gap: 24px !important;
