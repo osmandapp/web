@@ -375,6 +375,14 @@ export default function SearchLayer() {
         };
     }
 
+    function updateMarkerZIndex(layerGroup, zIndex) {
+        layerGroup.eachLayer((layer) => {
+            if (layer instanceof L.Marker) {
+                layer.setZIndexOffset(zIndex);
+            }
+        });
+    }
+
     useEffect(() => {
         if (ctx.wikiPlaces) {
             const zoom = map.getZoom();
@@ -451,6 +459,7 @@ export default function SearchLayer() {
 
                 otherIconsLayerRef.current = addLayers(otherIconsLayerRef.current, simpleMarkersArr);
                 mainIconsLayerRef.current = addLayers(mainIconsLayerRef.current, largeMarkersArr);
+                updateMarkerZIndex(mainIconsLayerRef.current, 2000);
             });
         }
     }, [ctx.wikiPlaces]);
