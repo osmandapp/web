@@ -12,6 +12,10 @@ export async function calculateGpxRoute({ routeTrackFile, changeRouteText, setRo
         params: this.getParams() ?? {},
     };
 
+    if (this.preview) {
+        return;
+    }
+
     const routeModeStr = TracksManager.formatRouteMode(geoProfile);
 
     setRoutingErrorMsg(null);
