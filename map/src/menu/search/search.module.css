@@ -49,8 +49,8 @@
     fill: var(--svg-icon-color) !important;
 }
 .placeTypesEmptyIcon {
-    min-width: 45px !important;
-    max-width: 45px !important;
+    min-width: 24px !important;
+    max-width: 24px !important;
     fill: #c0c0c0 !important;
 }
 .titleText {

@@ -44,7 +44,6 @@ export default function WikiPlacesItem({ item }) {
                 typeTag: poiType,
                 subtypeTag: poiSubType,
                 ctx,
-                size: 45,
                 color: '#c0c0c0',
             });
             setTypeEmptyIcon(tagTypeObjEmptyImg?.icon);

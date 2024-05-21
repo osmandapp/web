@@ -39,7 +39,7 @@ export default function PhotoGallery({ photos }) {
             .sort((a, b) => a.properties.rowNum - b.properties.rowNum)
             .reduce((acc, photo) => {
                 if (!acc.find((item) => item.properties.mediaId === photo.properties.mediaId)) {
-                    photo.properties.imageTitle = photo.properties.imageTitle.replace(/ /g, '_');
+                    photo.properties.imageTitle = photo.properties.imageTitle.replaceAll(' ', '_');
                     acc.push(photo);
                 }
                 return acc;
