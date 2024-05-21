@@ -32,12 +32,11 @@ For native routing there are different limitations for different phones, dependi
 
 ### Calculation of 50 km routes for pedestrians
 
-If you select *Walking* profile, the app may crash. There may be causes for this:
-- If you have created a route longer than 50 km.
+If you select the Walking profile, the application may crash, which is only relevant if you have selected the [**Standard routing A***](../navigation/guidance/navigation-settings.md#development-settings) in the navigation settings. This can happen for several reasons:
+- If you have created a route that is longer than 50 km.
 - The number of direct points on the route exceeds 1 million.
-- You are using a mobile device to process a 50 km long route (not recommended, but you can use the Web version to calculate such a route).  
-
-If you need to create a route of a similar distance, use other profile types, such as *Bicycle*.
+- You are using a mobile device to process a route 50 km long (not recommended, but you can use the web version to calculate such a route).  
+If you need to create a route of the same distance, use other profile types, such as *Bicycle*.
 
 
 ## The calculated route does not seem correct

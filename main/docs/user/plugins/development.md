@@ -151,9 +151,9 @@ Use one of the following paths to open the plugin settings:
 
 <TabItem value="android" label="Android">  
 
-- **Memory allocated for routing** option allows you to determine the amount of memory allocated for calculating long routes.  
+- **Memory allocated for routing** option allows you to determine the amount of memory allocated for calculating long routes. You can use this option if the [Standard routing A*](../navigation/guidance/navigation-settings.md#development-settings) is selected in the *Navigation settings*.
 
-:::note
+:::note Calculation of extra-long routes
 - Higher memory allocation may impact the performance of other apps. 
 - [Calculation of 50 km routes for pedestrians](../troubleshooting/navigation.md#calculation-of-50-km-routes-for-pedestrians) 
 :::
