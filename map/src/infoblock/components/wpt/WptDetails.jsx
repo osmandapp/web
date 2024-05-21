@@ -55,6 +55,7 @@ import { apiGet } from '../../../util/HttpApi';
 import Loading from '../../../menu/errors/Loading';
 import PhotoGallery from '../../../menu/search/PhotoGallery';
 import wptStyles from '../wpt/wptDetails.module.css';
+import parse from 'html-react-parser';
 
 export default function WptDetails({ isDetails = false, setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
@@ -122,21 +123,20 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             } else if (type?.isWikiPoi) {
                 const currentPoi = ctx.selectedWpt.poi;
                 const wikiObj = ctx.searchSettings.getPoi;
-                const { properties: poiOptions } = currentPoi;
-                const coords = currentPoi.geometry.coordinates;
-                const tags = await WptTagsProvider.getWptTags(currentPoi, type, ctx);
+                const coords = wikiObj.geometry.coordinates;
+                const tags = currentPoi ? await WptTagsProvider.getWptTags(currentPoi, type, ctx) : null;
                 result = {
                     id: wikiObj?.properties.id,
                     type: type,
-                    poiType: t(POI_PREFIX + poiOptions[TYPE_OSM_VALUE]),
+                    poiType: t(`${POI_PREFIX}${wikiObj.properties?.poisubtype}`),
                     name: wikiObj?.properties.wikiTitle,
                     latlon: { lat: coords[1], lon: coords[0] },
                     wikiDesc: wikiObj?.properties.wikiDesc,
                     background: DEFAULT_POI_SHAPE,
                     color: DEFAULT_POI_COLOR,
-                    icon: poiOptions[FINAL_ICON_NAME],
+                    icon: currentPoi?.properties[FINAL_ICON_NAME],
                     tags: tags,
-                    osmUrl: poiOptions[POI_OSM_URL],
+                    osmUrl: currentPoi?.properties[POI_OSM_URL],
                     wvLinks: wikiObj?.properties.wvLinks,
                     lang: wikiObj?.properties.wikiLang,
                 };
@@ -213,7 +213,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     function getWptType(wpt) {
         return {
             isPoi: ctx.currentObjectType === OBJECT_TYPE_POI && wpt?.poi,
-            isWikiPoi: wpt?.poi && wpt?.wikidata,
+            isWikiPoi: wpt?.wikidata,
             isWpt: isTrack(ctx) && (wpt?.trackWpt || wpt?.trackWptItem),
             isFav: ctx.currentObjectType === OBJECT_TYPE_FAVORITE && wpt?.markerCurrent,
         };
@@ -309,7 +309,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                         className={styles.closeIcon}
                         onClick={() => closeDetails()}
                     >
-                        {isDetails ? <BackIcon /> : <CloseIcon />}
+                        {ctx.searchSettings?.isDetails || isDetails ? <BackIcon /> : <CloseIcon />}
                     </IconButton>
                 </Toolbar>
             </AppBar>
@@ -444,6 +444,13 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         );
     };
 
+    const cleanHtml = (html) => {
+        return html
+            .replace('div class="content"', '')
+            .replace(/\([^)]*\)/g, '')
+            .replace(/\[[^\]]*\]/g, '');
+    };
+
     return (
         <>
             {loading ? (
@@ -509,7 +516,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                         </ListItemText>
                                     </MenuItem>
                                     <div className={styles.descTextBlock}>
-                                        <Typography className={styles.descText}>{wpt?.wikiDesc}</Typography>
+                                        <Typography className={styles.descText}>
+                                            {parse(cleanHtml(wpt?.wikiDesc || ''))}
+                                        </Typography>
                                     </div>
                                     <Button
                                         sx={{ ml: 1 }}

@@ -1,5 +1,5 @@
 import headerStyles from '../trackfavmenu.module.css';
-import { AppBar, Box, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
+import { AppBar, Box, IconButton, LinearProgress, Toolbar, Tooltip, Typography } from '@mui/material';
 import styles from '../settings/settings.module.css';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
@@ -25,18 +25,23 @@ export default function ExploreMenu() {
         ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
         ctx.setCurrentObjectType(null);
         ctx.setLoadingContextMenu(false);
+        addDefaultFilters();
     }
 
     useEffect(() => {
         ctx.setCurrentObjectType(OBJECT_SEARCH);
+        addDefaultFilters();
+        ctx.setLoadingContextMenu(true);
+    }, []);
+
+    function addDefaultFilters() {
         const defaultFilters = filters.filter((f) => f !== 'office');
         ctx.setSearchSettings({
             ...ctx.searchSettings,
             selectedFilters: new Set(defaultFilters),
             useWikiImages: false,
         });
-        ctx.setLoadingContextMenu(true);
-    }, []);
+    }
 
     useEffect(() => {
         if (ctx.wikiPlaces) {
@@ -70,6 +75,7 @@ export default function ExploreMenu() {
                         </span>
                     </Tooltip>
                 </Toolbar>
+                {ctx.wikiPlaces && ctx.loadingContextMenu && !ctx.searchSettings.getPoi ? <LinearProgress /> : null}
             </AppBar>
             {!ctx.wikiPlaces && ctx.loadingContextMenu && !ctx.searchSettings.getPoi ? (
                 <Loading id={'se-loading-page'} />

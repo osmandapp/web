@@ -2,6 +2,14 @@
     border-radius: 50%;
     border: 3px solid white;
     object-fit: cover;
+    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.1));
+}
+.wikiIconHover {
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.1));
+    box-shadow: 0 0 0 3px var(--selected-color) !important;
 }
 
 .wikiIconSmall {
@@ -48,10 +56,19 @@
 .placeItem {
     display: flex !important;
     width: 360px !important;
-    padding: 16px 16px 16px 16px !important;
+    padding: 16px 20px 16px 16px !important;
     justify-content: center !important;
     align-items: flex-start !important;
     gap: 24px !important;
+}
+.hoverItem {
+    display: flex !important;
+    width: 360px !important;
+    padding: 16px 20px 16px 16px !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 24px !important;
+    background-color: #f0f0f0 !important;
 }
 .emptyImg {
     min-width: 66px !important;
