@@ -13,9 +13,14 @@ export default function PhotoGallery({ photos }) {
     const { t } = useTranslation();
 
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState({});
 
     const handleImageLoad = () => {
         setLoading(false);
+    };
+
+    const handleImageError = (index) => {
+        setError((prevError) => ({ ...prevError, [index]: true }));
     };
 
     const handleOpen = () => setOpen(true);
@@ -34,6 +39,7 @@ export default function PhotoGallery({ photos }) {
             .sort((a, b) => a.properties.rowNum - b.properties.rowNum)
             .reduce((acc, photo) => {
                 if (!acc.find((item) => item.properties.mediaId === photo.properties.mediaId)) {
+                    photo.properties.imageTitle = photo.properties.imageTitle.replace(/ /g, '_');
                     acc.push(photo);
                 }
                 return acc;
@@ -54,33 +60,39 @@ export default function PhotoGallery({ photos }) {
                     <Grid container spacing={-0.5} sx={{ p: 2, width: '341px' }}>
                         {filteredPhotos.slice(0, 1).map((photo, index) => (
                             <Grid item xs={12} sm={6} key={index}>
-                                <img
-                                    onLoad={handleImageLoad}
-                                    src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=300`}
-                                    alt={`Photo ${index + 1}`}
-                                    style={{
-                                        display: loading ? 'none' : 'block',
-                                        width: '148px',
-                                        height: '148px',
-                                        objectFit: 'cover',
-                                    }}
-                                />
+                                {!error[index] && (
+                                    <img
+                                        onLoad={handleImageLoad}
+                                        onError={() => handleImageError(index)}
+                                        src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=300`}
+                                        alt={`Photo ${index + 1}`}
+                                        style={{
+                                            display: loading ? 'none' : 'block',
+                                            width: '148px',
+                                            height: '148px',
+                                            objectFit: 'cover',
+                                        }}
+                                    />
+                                )}
                             </Grid>
                         ))}
                         <Grid item xs={12} sm={6} container>
                             {filteredPhotos.slice(1, 5).map((photo, index) => (
-                                <Grid item xs={6} key={index}>
-                                    <img
-                                        onLoad={handleImageLoad}
-                                        src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=300`}
-                                        alt={`Photo ${index + 2}`}
-                                        style={{
-                                            display: loading ? 'none' : 'block',
-                                            width: '71px',
-                                            height: '71px',
-                                            objectFit: 'cover',
-                                        }}
-                                    />
+                                <Grid item xs={6} key={index + 1}>
+                                    {!error[index + 1] && (
+                                        <img
+                                            onLoad={handleImageLoad}
+                                            onError={() => handleImageError(index + 1)}
+                                            src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=300`}
+                                            alt={`Photo ${index + 2}`}
+                                            style={{
+                                                display: loading ? 'none' : 'block',
+                                                width: '71px',
+                                                height: '71px',
+                                                objectFit: 'cover',
+                                            }}
+                                        />
+                                    )}
                                 </Grid>
                             ))}
                         </Grid>
@@ -121,17 +133,20 @@ export default function PhotoGallery({ photos }) {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
-                                            <img
-                                                onLoad={handleImageLoad}
-                                                src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=500`}
-                                                alt={`Photo ${index + 1}`}
-                                                style={{
-                                                    display: loading ? 'none' : 'block',
-                                                    maxHeight: '100%',
-                                                    maxWidth: '100%',
-                                                    overflow: 'hidden',
-                                                }}
-                                            />
+                                            {!error[index] && (
+                                                <img
+                                                    onLoad={handleImageLoad}
+                                                    onError={() => handleImageError(index)}
+                                                    src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=500`}
+                                                    alt={`Photo ${index + 1}`}
+                                                    style={{
+                                                        display: loading ? 'none' : 'block',
+                                                        maxHeight: '100%',
+                                                        maxWidth: '100%',
+                                                        overflow: 'hidden',
+                                                    }}
+                                                />
+                                            )}
                                         </a>
                                     </div>
                                 ))}
