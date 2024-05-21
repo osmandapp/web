@@ -237,9 +237,7 @@ Navigation route is a solid line prepared by [Route Preparation process](../navi
 
 <TabItem value="android" label="Android">
 
-OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They are selectable by [clicking on the route shield](#save-as-a-track) or with the right configuration of a visible set of routes, it's possible to follow the route by color & shields.  You can create a track on top of the routes using [Plan Route](../plan-route/create-route.md) functionality.
-
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_routes"/>_
+*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_routes"/>*
 
 ![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) 
 
@@ -247,9 +245,7 @@ _<Translate android="true" ids="android_button_seq"/> <Translate android="true" 
 
 <TabItem value="ios" label="iOS">
 
-OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They are not selectable but with the right configuration of visible set of routes, it's possible to follow the route by color & shields, you can create a track on top of the routes using [Plan Route](../plan-route/create-route.md) functionality.
-
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>_
+*<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
 ![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png) 
 
@@ -257,108 +253,36 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 
 </Tabs>
 
+OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They can be selected by tapping [the symbol on the route](#save-as-a-track), and if the visible set of routes is configured correctly, you can follow the color and icons. You can create a track on top of the routes using the [Plan a Route](../plan-route/create-route.md) tool.  
+
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 
 ### Save as a Track
 
-[Hiking / Cycling / Travel routes](../map/vector-maps.md#routes) are clickable. Just tap **the route symbol**, get full route information and download the GPX file for the selected route. (Routes are marked on the map with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol).)
-
-Clicking on a shield ([OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol)) proposes to choose the nearest routes.
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/routes-4.png)
+![Routes on the ground](@site/static/img/map/routes-4.png)   ![Routes on the ground](@site/static/img/map/routes-5.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routes on the ground](@site/static/img/map/hiking.png)
+![Routes on the ground](@site/static/img/map/hiking.png)   ![Routes on the ground](@site/static/img/map/hiking_1.png)
 
 </TabItem>
 
 </Tabs>  
 
-Choosing the route opens [Track Context menu](../map/track-context-menu.md):
+[*Hiking, Cycle, Travel, and other routes*](../map/vector-maps.md#routes) are available for selection on the map, and marked with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol). If you tap a *route symbol*, a list of the routes nearest to it is offered. Selecting one of them opens the [context menu](../map/track-context-menu.md) of the route.  
 
-<Tabs groupId="operating-systems">
+To get full route information, tap on the *route symbol* or the line of the selected route, if you have already used the download button in the *Track context menu*.    
 
-<TabItem value="android" label="Android">
-
-![Routes on the ground](@site/static/img/map/routes-5.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Routes on the ground](@site/static/img/map/hiking_1.png)
-
-</TabItem>
-
-</Tabs>
-
-
-You can view the route, and its relief, download it as a GPX-file, edit it with "Plan route" tool and even start navigation along it:
-- look at **Route info** (_Distance, Direction, Ascent/Descent, Altitude range, Route name, Network, Operator, State, Colo, Type, Description, Color, Roundtrip, start/end points and etc._). 
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Routes on the ground](@site/static/img/map/routes-6.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Routes on the ground](@site/static/img/map/hiking_5.png)
-
-</TabItem>
-
-</Tabs>
-
-- looking at _Altitude Graph, Analyze on map, Share like GPX-file_ and etc.
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Routes on the ground](@site/static/img/map/routes-7.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Routes on the ground](@site/static/img/map/hiking_2.png)
-
-</TabItem>
-
-</Tabs>
-
-- download the route like _GPX-file_: 
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-By taping to **Download** button. After that, you can do any actions with this GPX-file (navigation, change viewing, modifying by "Route plan" tool and etc).
-
-![Routes on the ground](@site/static/img/map/routes-8.png) ![Routes on the ground](@site/static/img/map/routes-9.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-by clicking to "Save" button. After that, you can do any actions with this GPX-file (navigation, change viewing, modifying by "Route plan" tool and etc).
-
-![Routes on the ground](@site/static/img/map/hiking_1.png) ![Routes on the ground](@site/static/img/map/hiking_3.png)
-
-</TabItem>
-
-</Tabs>
+- **Route info** in *Overview*. You can view detailed information about the selected route such as *Distance, Direction, Ascent/Descent, Altitude range, Route name, Network, Operator, State, Type, Description, Color, Roundtrip, Start/End points, and more*. 
+- **Graph** in *Tracks*. Displays *Altitude information, Distanse, Time*, provides access to [*Analyze on map*](#analyze-track-on-map) feature.
+- **Download** (*Android*) / **Save** (*iOS*) button. After saving a GPX file, you will have access to track actions such as changing [*Appearance*](#track-appearance), [*Navigation*](#navigation-route), editing in [*Plan a route*](../plan-route/create-route.md), and more.
 
 
 ## Read more
