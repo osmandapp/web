@@ -92,9 +92,9 @@ There are four ways to access the *Plan a route* tool.
 In case you chose [*Plan a route*](#how-to-open) in the main *Menu*, you can select the following **actions** in the opened screen:
 
 - [*Create new route*](#create-new-route) - Select the section of the map on your screen where you want to start ctreating a GPS route. Points are created using the pointer in the center of the visible map and the *Add point* button. Or you can tap anywhere on the map, and a Point will be placed automaticlly. In the [*point context menu*](#point-context-menu) you can change its location.
-- [*<Translate android="true" ids="plan_route_open_existing_track"/>*](#modify-gpx-track) - The list of all GPX tracks available to the application opens. In this menu, you can select tracks from the existing [folders](../personal/tracks.md#my-places-menu) and use the sort option for more convenience.  
+- [*<Translate android="true" ids="plan_route_open_existing_track"/>*](#modify-gpx-track) - The list of all GPX tracks available to the application opens. In this menu, you can select tracks from the existing [folders](../personal/tracks/index.md) and use the sort option for more convenience.  
 - [*<Translate android="true" ids="plan_route_last_edited"/>*](#modify-gpx-track) - This is a list of the last 5 GPX tracks used in the app, for quick access.
-- *<Translate android="true" ids="plan_route_import_track"/>* - (Android only) With this option, you can choose to import the GPX track on your device or in connected cloud storage. For iOS, the [*Import Tracks*](../personal/tracks.md#import-track) option is available in the *Menu → My Places → Tracks → Actions*.  
+- *<Translate android="true" ids="plan_route_import_track"/>* - (Android only) With this option, you can choose to import the GPX track on your device or in connected cloud storage. For iOS, the [*Import Tracks*](../personal/tracks/manage-tracks.md#import) option is available in the *Menu → My Places → Tracks → Actions*.  
 
 
 #### Create new route
@@ -128,7 +128,7 @@ You can **zoom in and out** for easy placement of points when creating or editin
 
 </Tabs>  
 
-*Plan a route* tool allows modifying [existing GPX track](../personal/tracks.md#my-places-menu) as well as an [imported track](../personal/tracks.md#import-track).   
+*Plan a route* tool allows modifying [existing GPX track](../personal/tracks/index.md) as well as an [imported track](../personal/tracks/manage-tracks.md#import).   
 
 - Open the required track.
 - If necessary, use [Attach to the roads](#attach-to-the-roads).
@@ -194,7 +194,7 @@ In this menu, you have access to the *[Navigation settings](../navigation/guidan
 
 ### Types of Save 
 
-After [you have added](#add-points) at least one point to the map, you can use the save option. All tracks saved in *Plane a route* can be found in the main *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> →* *[<Translate android="true" ids="show_gpx"/>](../personal/tracks.md#my-places-menu)*.   
+After [you have added](#add-points) at least one point to the map, you can use the save option. All tracks saved in *Plane a route* can be found in the main *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> →* *[<Translate android="true" ids="show_gpx"/>](../personal/tracks/index.md)*.   
 There are four ways to save: 
 - [Quick](#quick-save) 
 - [Save as new](#save-as-new-track)
@@ -227,9 +227,9 @@ With this option you can save any track without even modifying it.
 3. Write a name for the track, and select a folder from the list.
 4. Enable displaying the track on the map, if required.
 5. You can use the *Simplified track* feature if you want to delete all previously recorded waypoints from the track and save the route line only.  
-6. After you tap the *Save* button, a dialogue opens informing you that the track has been saved and suggesting the next steps. You can [*open the track*](../personal/tracks.md#options-of-context-menu), *share* it, reopen the Plan a route to [*create a new route*](#create-new-route), or *Exit*.  
+6. After you tap the *Save* button, a dialogue opens informing you that the track has been saved and suggesting the next steps. You can [*open the track*](../personal/tracks/manage-tracks.md#options-of-tracks-context-menu), *share* it, reopen the Plan a route to [*create a new route*](#create-new-route), or *Exit*.  
 
-You can optionally change the name and folder later in *Menu → My Places → Tracks tab*. For more information about this and about displaying the track on the map, see the article [Tracks](../personal/tracks.md#manage-tracks).  
+You can optionally change the name and folder later in *Menu → My Places → Tracks tab*. For more information about this and about displaying the track on the map, see the article [Tracks](../personal/tracks/manage-tracks.md).  
 
 
 #### Quick save

@@ -42,7 +42,7 @@ Tracks is a powerful tool for tracking journeys, recording routes and Points of 
  
 </Tabs>
 
-You can create a new track by starting a record in the Tracks tab or using the OsmAnd [Trip recording Plugin](../plugins/trip-recording.md) and [Widgets](../widgets/info-widgets.md#trip-recording-widgets). Trip plugin is a special tool designed to record your journeys, walks, and other activities.   
+You can create a new track by starting a record in the Tracks tab or using the OsmAnd [Trip recording Plugin](../../plugins/trip-recording.md) and [Widgets](../../widgets/info-widgets.md#trip-recording-widgets). Trip plugin is a special tool designed to record your journeys, walks, and other activities.   
 
 - **New track**. In this field you can tap the *Start Recording* button to record a new track. You may need to confirm your [battery settings](#baterry-optimization) (for Android) before you start.
 - **Currently recording track** (*Android*) / **Recorded track** (*iOS*). 
@@ -66,7 +66,7 @@ Select an optimisation setting. To prevent the app from asking you the next time
 ![Coordinate input Options menu Android](@site/static/img/plan-route/coordinates_input/coordinates_input_options.png)  
 
 In the **Options** menu using the **Save as track** item, you can save the created points as a GPX track and also change its name.
-For more details, read the article [Coordinates input](../plan-route/coordinate-input.md#options).
+For more details, read the article [Coordinates input](../../plan-route/coordinate-input.md#options).
 
 
 ### Plan route
@@ -92,5 +92,5 @@ For more details, read the article [Coordinates input](../plan-route/coordinate-
 </Tabs>  
 
 The **Plan a route** tool allows you to create *new routes as GPX tracks*, modify *existing tracks*, and *import* new ones.  
-Read more in the article [**Plan a route** tool](../plan-route/create-route.md#types-of-save). 
+Read more in the article [**Plan a route** tool](../../plan-route/create-route.md#types-of-save). 
 

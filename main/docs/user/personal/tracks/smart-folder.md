@@ -64,7 +64,7 @@ Osmand provides convenient track management tools, one of them is filtering in t
 - **Average speed** 
 
     - This filter helps you sort tracks by average speed.
-    - Select the [average speed](../widgets/info-widgets.md#average-speed) range to search for tracks.
+    - Select the [average speed](../../widgets/info-widgets.md#average-speed) range to search for tracks.
 
 - **Sensor data group**  
     - Sensor speed, average.
@@ -172,7 +172,7 @@ Once created, the Smart folder is displayed with a special icon in the folder li
 - **Rename**. Changing the folder name.
 - **Refresh**. Allows you to update the track list.
 - [**Edit filter**](#filter). You can change the track filter settings for the current Smart folder.
-- [**Export**](../personal/import-export.md). You will go to *Menu → Settings → Actions* tab, where you can export all tracks from the folder.
+- [**Export**](../../personal/import-export.md). You will go to *Menu → Settings → Actions* tab, where you can export all tracks from the folder.
 - **Delete folder**. You can only delete the Smart folder, not the tracks. A warning message will appear on the display. The deletion will be irreversible.  
 
 
@@ -194,9 +194,9 @@ This screen allows you to select the tracks you want, as well as a list of sugge
 
 - **Show on map**. Unlike *Show all tracks on the map*, this function allows you to customize the display of tracks selectively.
 - **Share**. Allows you to export tracks using *Export to File*.
-- **Upload to [OpenStreetMap](../plugins/osm-editing.md#create--modify-osm-note)**. You can load the selected tracks into OpenStreetMap.
+- **Upload to [OpenStreetMap](../../plugins/osm-editing.md#create--modify-osm-note)**. You can load the selected tracks into OpenStreetMap.
 - **Move**. Moving selected tracks to another folder.
-- [**Change appearance**](../map/tracks-on-map.md#track-appearance). Allows you to change the appearance of all or specific tracks in a folder.
+- [**Change appearance**](../../map/tracks-on-map.md#track-appearance). Allows you to change the appearance of all or specific tracks in a folder.
 - **Delete**. Deletes only the folder with its settings. The tracks displayed in this folder are not deleted.
 
 
