@@ -39,7 +39,7 @@ Features **Tracks** functionality lets you create and save routes so you can eas
 1. **Main Features**. 
 - All tracks in OsmAnd are stored in the folder:    
 *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*.   
-- The [Tracks](../personal/tracks.md) tab in the OsmAnd app provides a convenient way to manage and interact with your saved tracks. This feature allows you to record and save tracks completed during travel or outdoor activities. 
+- The **Tracks** tab in the OsmAnd app provides a convenient way to manage and interact with your saved tracks. This feature allows you to record and save tracks completed during travel or outdoor activities. 
 - A track on a map is Trip recording or Plan a route with or without marked points on it. OsmAnd track file is in [GPX format](../plugins/trip-recording.md#recorded-gpx-file).
 
 2. **You can add or create tracks in OsmAnd in the following ways**.  

@@ -71,7 +71,7 @@ You can choose which tracks to show on the map and which to hide. You can do thi
 
 </Tabs>
 
-You can read additional information in the [Tracks](../personal/tracks.md#configure-map) article.
+You can read additional information in the [Tracks](../personal/tracks/manage-tracks.md#configure-map) article.
 
 
 #### Tracks in My Places menu
@@ -80,7 +80,7 @@ You can read additional information in the [Tracks](../personal/tracks.md#config
 
 <TabItem value="android" label="Android">
 
-[*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*](../personal/tracks.md#single-track-menu)   
+[*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*](../personal/tracks/manage-tracks.md#single-track-menu)    
 
 ![My Places with tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
@@ -88,7 +88,7 @@ You can read additional information in the [Tracks](../personal/tracks.md#config
 
 <TabItem value="ios" label="iOS">
 
-[*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → long-tap the chosen GPX track → Show on map*](../personal/tracks.md#single-track-menu)    
+[*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → long-tap the chosen GPX track → Show on map*](../personal/tracks/manage-tracks.md#single-track-menu)    
 
 ![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 </TabItem>
@@ -291,7 +291,7 @@ To get full route information, tap on the *route symbol* or the line of the sele
 - [Track Context menu](../map/track-context-menu.md)  
 - [Configure map](../map/configure-map-menu.md)  
 - [Navigation by track](../navigation/setup/gpx-navigation.md)  
-- [GPX tracks](../personal/tracks.md)  
+- [GPX tracks](../personal/tracks/index.md)  
 - [Tracks on the map](../map/tracks-on-map.md)  
 - [Plan route](../plan-route/index.md)  
 - [Trip Recording](../plugins/trip-recording.md)  

@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-The *Track context menu* provides information about the *[Track](../personal/tracks.md)* in both text and [graphic](#altitude--speed-graphs) forms. It allows you to add information, make changes, edit and perform various other actions with the track. You can access *Track context menu* by simply tapping the needed track on the map or using *[My places](../personal/myplaces.md)* menu (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). You may need to open track folder and select the desired track by tapping it.
+The *Track context menu* provides information about the *[Track](../personal/tracks/index.md)* in both text and [graphic](#altitude--speed-graphs) forms. It allows you to add information, make changes, edit and perform various other actions with the track. You can access *Track context menu* by simply tapping the needed track on the map or using *[My places](../personal/myplaces.md)* menu (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). You may need to open track folder and select the desired track by tapping it.
 
 <Tabs groupId="operating-systems">
 
@@ -99,7 +99,7 @@ Buttons panel with the next action: _Show/Hide_ a track on the map, opening [_Ap
 
 - [*Show / hide* buttons](../map/tracks-on-map.md#tracks-in-track-context-menu) allow to anable or disable displaying of a track on the map.
 - *Appearance* - is used to customise the [Appearance](../map/tracks-on-map.md#track-appearance) of your track.
-- *Edit track* (**Android**) - opens the track in *[Plan route tool](../plan-route/create-route.md)* or *Export* (**iOS**) allows [to export a track](../personal/tracks.md#export).
+- *Edit track* (**Android**) - opens the track in *[Plan route tool](../plan-route/create-route.md)* or *Export* (**iOS**) allows [to export a track](../personal/tracks/manage-tracks.md#export).
 - *Directions* - opens the track in *[Navigation](../navigation/setup/gpx-navigation.md#start-gpx-navigation)* mode.
 
 ### Description and info
@@ -267,7 +267,7 @@ _Calculate elevation_ button → [_Attach to the roads_](../navigation/setup/gpx
 - *<Translate android="true" ids="altitude_range"/>* - the highest and lowest altitude recorded along the track.
 - *<Translate android="true" ids="altitude_ascent"/>* - cumulative altitude gain along the track.
 - *<Translate android="true" ids="altitude_descent"/>* - cumulative altitude loss along the track. 
- 
+
 
 ### Calculate elevation offline
 
@@ -316,7 +316,7 @@ In this _Points_ tab:
 
 ### Add Waypoint to a track
 
-Waypoints can be added to the currently recorded track or to any track from your track collection [*My Places → Tracks list*](../personal/tracks.md):
+Waypoints can be added to the currently recorded track or to any track from your track collection [*My Places → Tracks list*](../personal/tracks/index.md):
 
 - Using the [Map Context Menu](../map/map-context-menu.md#-add--edit--track-waypoint). Waypoints are automatically displayed if the selected track is enabled on the map. To create a waypoint use a [long-tap](../map/map-context-menu.md#select-any-point-long-tap) on the map at any chosen location. In the opened [Map Context Menu](../map/map-context-menu.md#-add--edit--track-waypoint) you can set information about the waypoint. 
 - Using [_Add Waypoint_](#add--delete-buttons) button of the Track Context menu.
@@ -455,7 +455,7 @@ To change the Waypoint description, you can go one of the following ways:
   
 1. Find the required track in the *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab* list.
 2. Tap the track on the map, if it is included in the [list of visible](#show-tracks-on-map).
-3. Tap the required waypoint if it is [visible](../personal/tracks.md#show-tracks-on-map) on the map.  
+3. Tap the required waypoint if it is [visible](../personal/tracks/manage-tracks.md#show-tracks-on-map) on the map.  
 
     Then in the [Tracks Context menu](../map/track-context-menu.md) tap *Points*, the field of the required folder with available waypoints and the Waypoint you are looking for. Select menu *Actions →* **Edit GPX waypoint** and make changes. You cannot change the creation date of a point, *timestamp*, in the application.  
 
@@ -683,7 +683,7 @@ Actions list is available on the bottom of **Filter** or **Statistics** tab. Osm
 
 ## Read more
 
-- [GPX tracks](../personal/tracks.md)
+- [GPX tracks](../personal/tracks/index.md)
 - [Tracks on the map](../map/tracks-on-map.md)
 - [Navigation by track](../navigation/setup/gpx-navigation.md)
 - [Plan route](../plan-route/index.md)

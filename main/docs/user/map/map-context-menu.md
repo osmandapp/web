@@ -588,7 +588,7 @@ You can add waypoints to a recorded track or to the current track recording usin
 - In the *Map Context Menu* that opens, choose *Actions → Add track waypoint*.
 - The list displays the [tracks](../map/tracks-on-map.md#display-tracks-on-the-map) recorded and shown on the map, as well as the [current track recording](../plugins/trip-recording.md#from-widget), to which you can add the selected waypoint.
 - You can add waypoints to a track that is not yet active for recording, in which case the inactive track switches from the *Start state* to the *Resume state*.
-- [Fill in](../personal/tracks.md#add-waypoint) the required data and save the waypoint. 
+- [Fill in](../map/track-context-menu.md#add-waypoint-to-a-track) the required data and save the waypoint. 
 - You can configure the [Quick Actions](../widgets/quick-action.md) by adding a waypoint to the *Add track waypoint*. 
 
 Requires [Trip recording plugin](../plugins/trip-recording.md).

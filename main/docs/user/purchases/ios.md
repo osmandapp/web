@@ -69,8 +69,8 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | [Offline and online navigation](../navigation/index.md) with turn-by-turn directions | ✔ | ✔ | ✔ |
 | [Offline instant search](../search/index.md) | ✔ | ✔ | ✔ |
 | [Trip recording](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
-| [Export GPX tracks](../personal/tracks.md#export-track) | ✔ | ✔ | ✔ |
-| [Import GPX/KML tracks](../personal/tracks.md#import-track) | ✔ | ✔ | ✔ |
+| [Export GPX tracks](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
+| [Import GPX/KML tracks](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
 | ["Plan a route"](../plan-route/create-route.md) tool | ✔ | ✔ | ✔ |
 | ["Map markers"](../personal/markers.md) tool | ✔ | ✔ | ✔ |
 | [Online map sources](../plugins/online-map.md) | ✔ | ✔ | ✔ | 
