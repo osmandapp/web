@@ -14,7 +14,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 import SotmScreenshots from './carousel/sotmscreenshots.js';
 import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock";
 
-![index](@site/static/img/promo/advseeker/advseeker.png)
+![index](@site/static/img/promo/motorrad/motorrad.png)
 
 
 **OsmAnd Pro for "Motorradmagazin"**
