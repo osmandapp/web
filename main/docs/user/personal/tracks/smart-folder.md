@@ -30,7 +30,7 @@ Osmand provides convenient track management tools, one of them is filtering in t
 - To access the Filter screen, tap the Search icon &#x1F50D;, in the *Sort by* row on the right, tap *Filter*. 
 - After selecting the required filters, tap the Show button in the lower right corner of the screen. The number of filtered tracks is displayed in brackets.
 - You can clear all configured filters using the *Reset all* button.
-- The configured filter set can be saved as a new [*Smart folder*](#smart-folder) using the button in the upper right corner of the screen.
+- The configured filter set can be saved as a new *Smart folder* using the button in the upper right corner of the screen.
 
 ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png)  
 

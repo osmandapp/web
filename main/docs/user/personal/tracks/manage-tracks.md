@@ -21,9 +21,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 After recording and saving, tracks can be managed as follows:    
 
-- In [*My Places*](../personal/myplaces.md), you can view all [GPX data](https://en.wikipedia.org/wiki/GPS_Exchange_Format) that has ever been recorded.
-- In [*Configure map*](../map/tracks-on-map.md), select a specific track and display it on the map.
-- With the [*Context menu*](../map/track-context-menu.md) of the track on the map, so that to adjust the appearance, to update points on the route, to view segments, to start navigation along the track/segment, and/or other options. 
+- In [*My Places*](../../personal/myplaces.md), you can view all [GPX data](https://en.wikipedia.org/wiki/GPS_Exchange_Format) that has ever been recorded.
+- In [*Configure map*](../../map/tracks-on-map.md), select a specific track and display it on the map.
+- With the [*Context menu*](../../map/track-context-menu.md) of the track on the map, so that to adjust the appearance, to update points on the route, to view segments, to start navigation along the track/segment, and/or other options. 
 
 
 ### View all tracks 
@@ -48,7 +48,7 @@ After recording and saving, tracks can be managed as follows:
 
 </Tabs>
 
-All tracks ever recorded, created or imported are automatically displayed in the [My Places](../personal/myplaces.md) folder in the *Tracks* tab. They are organised by folder or displayed in a list below them.
+All tracks ever recorded, created or imported are automatically displayed in the [My Places](../../personal/myplaces.md) folder in the *Tracks* tab. They are organised by folder or displayed in a list below them.
 
 ### Folder menu
 
@@ -76,8 +76,8 @@ Actions:
 - **Name**. Displays the selected folder name, creation date and the number of tracks it contains.
 - **Show all tracks on the map** (*Android only*). Shows all tracks in the folder on the map. It is not recommended, if there are a lot of tracks, the device may freeze.
 - **Edit name** (*Android*) / **Rename** (*iOS*). Changing the folder name.
-- [*Change default appearance*](../map/tracks-on-map.md#track-appearance) (*Android*) / **Appearance** (*iOS*). You can change the appearance of all tracks in a folder.
-- [*Export*](../personal/import-export.md). You go to the *Menu → Settings → Actions* tab, where you can export all the tracks in the folder as an [OSF file](../personal/import-export.md#export).
+- [*Change default appearance*](../../map/tracks-on-map.md#track-appearance) (*Android*) / **Appearance** (*iOS*). You can change the appearance of all tracks in a folder.
+- [*Export*](../../personal/import-export.md). You go to the *Menu → Settings → Actions* tab, where you can export all the tracks in the folder as an [OSF file](../../personal/import-export.md#export).
 - [**Move**](#context-menu-in-my-places). You can move the selected folder to another existing folder or create a new one.
 - [*Delete folder*](#delete-folder). Allow you to delete a folder. A warning message will appear on the display. The deletion will be irreversible. 
 
@@ -115,7 +115,7 @@ You can delete a folder with all the tracks it contains. To do this:
 
 ![My Places with tracks in Android](@site/static/img/personal/tracks/dashboard_andr.png)  
 
-At the bottom of the list in the _Tracks_ tab, and below the list of tracks **in each of your folders**, there is an information section that allows you to view the overall summary statistics for the tracks in the selected folder. All values are displayed in the [units](../personal/profiles.md#units--formats) you have selected.   
+At the bottom of the list in the _Tracks_ tab, and below the list of tracks **in each of your folders**, there is an information section that allows you to view the overall summary statistics for the tracks in the selected folder. All values are displayed in the [units](../../personal/profiles.md#units--formats) you have selected.   
 
 - *Number of **Tracks** in the folder*. Displays the number of tracks contained in the selected folder.
 - *Total sum of* **Distances**. The total length of all tracks in the selected folder, measured in in the units you have selected, is displayed.
@@ -153,12 +153,12 @@ Each track, like folders, has its menu. To open it:
 
 Menu with actions:
 - **Show on map**. Displays selected tracks on the map to provide a visual representation of their location.
-- **Appearance** (*iOS only*). You can choose the [appearance of tracks](../map/tracks-on-map.md#track-appearance).
-- **Navigation** (*iOS only*). Starts [navigation](../navigation/setup/gpx-navigation.md) on the selected track. 
-- **Analyze on map (Android) / Analyze (iOS)**. Opens the [Analyse on map](../navigation/setup/route-details.md#analyse-on-map) tool in Route Details. 
+- **Appearance** (*iOS only*). You can choose the [appearance of tracks](../../map/tracks-on-map.md#track-appearance).
+- **Navigation** (*iOS only*). Starts [navigation](../../navigation/setup/gpx-navigation.md) on the selected track. 
+- **Analyze on map (Android) / Analyze (iOS)**. Opens the [Analyse on map](../../navigation/setup/route-details.md#analyse-on-map) tool in Route Details. 
 - **Share**. Allows you to share the selected track.
-- **Upload modifications to OSM** (*iOS only*). You can [upload the changes](../plugins/osm-editing.md#gps-track) you have created to *OpenStreetMap*.
-- **Edit** (*iOS only*). This item allows you to make changes to the track using the [Plan a route](../plan-route/create-route.md#modify-gpx-track) tool. 
+- **Upload modifications to OSM** (*iOS only*). You can [upload the changes](../../plugins/osm-editing.md#gps-track) you have created to *OpenStreetMap*.
+- **Edit** (*iOS only*). This item allows you to make changes to the track using the [Plan a route](../../plan-route/create-route.md#modify-gpx-track) tool. 
 - **Duplicate** (*iOS only*). Allows you to create a copy of the selected track.
 - **Rename**. Item to change the name of the selected track.
 - **Move**. Gives you the ability to move the selected track to a specified folder.
@@ -192,7 +192,7 @@ Menu with actions:
 - **Search**. Opens the track name search screen with a list of all existing tracks and the ability to sort them.  
 - **Cancel**. Closes the Search without applying the changes.
 - **Import**. Opens a list of files on your device for importing tracks. In Android, it is located in the three-dot menu.
-- [Change appearance](../map/tracks-on-map.md#track-appearance) (*Android only, located in the three-dot menu*). Goes to the option of customising the appearance of the selected tracks.
+- [Change appearance](../../map/tracks-on-map.md#track-appearance) (*Android only, located in the three-dot menu*). Goes to the option of customising the appearance of the selected tracks.
 - **Switch folder** (*Android only*). You can select the required folder from the list, which is especially convenient if there are many folders.
 
 2. **Sort for tracks**
@@ -223,7 +223,7 @@ Provides convenient [track sorting](#sort-by).
 
 ### Show tracks on map
 
-Tracks are a separate data layer that can be shown or hidden using the appropriate option in the [Configure map](../map/configure-map-menu.md#map-data-layers) menu or [My Places](../personal/myplaces.md) menu. In addition, tapping Tracks item opens [the track selection screen](#single-track-menu), allowing you to choose which track or multiple tracks to display on the map.  
+Tracks are a separate data layer that can be shown or hidden using the appropriate option in the [Configure map](../../map/configure-map-menu.md#map-data-layers) menu or [My Places](../../personal/myplaces.md) menu. In addition, tapping Tracks item opens [the track selection screen](#single-track-menu), allowing you to choose which track or multiple tracks to display on the map.  
 
 To display a track for a specific profile on the map, you can:
 1. Open **Configure map** and select **Tracks**. Then check the required track.  
@@ -232,7 +232,7 @@ To display a track for a specific profile on the map, you can:
 2. Open the **My Places** menu and then **Tracks**. The *Visible* folder displays the tracks already selected.  
     In the *Rec*, *Import* and other folders, you can select one or more tracks to display on the map by tapping **Show on map** in the [Folder](#folder-menu) or [Track](#single-track-menu) menu. Go to: [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*](#view-all-tracks).
 
-3. Tap the selected track, and in the **Tracks context menu** using the [*Show / Hide*](../map/track-context-menu.md#quick-actions) button you can enable or disable the display of the track on the map.
+3. Tap the selected track, and in the **Tracks context menu** using the [*Show / Hide*](../../map/track-context-menu.md#quick-actions) button you can enable or disable the display of the track on the map.
 
 
 ### Open tracks menu
@@ -254,12 +254,12 @@ To display a track for a specific profile on the map, you can:
 </Tabs>
 
 **Places from which tracks can be opened**.
-- [*Plan route → Open existing track*](../plan-route/create-route.md#menu-options)
-- [*Plan route → Add to a track*](../plan-route/create-route.md#menu-options)
-- [*Navigation → Follow track → Select*](../navigation/setup/gpx-navigation.md#follow-track-menu)
-- [*Markers → Groups → Add → Track waypoints*](../map/point-layers-on-map.md#track-waypoints)
-- [*OsmAnd Development → Settings → Simulate your position → Select track*](../plugins/development.md#gpx-track-simulation)
-- [*Quick action → Simulate your position → Select track*](../widgets/quick-action.md)
+- [*Plan route → Open existing track*](../../plan-route/create-route.md#menu-options)
+- [*Plan route → Add to a track*](../../plan-route/create-route.md#menu-options)
+- [*Navigation → Follow track → Select*](../../navigation/setup/gpx-navigation.md#follow-track-menu)
+- [*Markers → Groups → Add → Track waypoints*](../../map/point-layers-on-map.md#track-waypoints)
+- [*OsmAnd Development → Settings → Simulate your position → Select track*](../../plugins/development.md#gpx-track-simulation)
+- [*Quick action → Simulate your position → Select track*](../../widgets/quick-action.md)
 
 With the various tools provided by OsmAnd, you can open the entire track list and track folders on your device.
 
@@ -282,15 +282,15 @@ With the various tools provided by OsmAnd, you can open the entire track list an
 
 </Tabs>  
 
-When a track is displayed on the map, a context menu appears when you tap it. For detailed information about each available option, see the [Tracks Context menu](../map/track-context-menu.md) article.  
+When a track is displayed on the map, a context menu appears when you tap it. For detailed information about each available option, see the [Tracks Context menu](../../map/track-context-menu.md) article.  
 Options:
 
 - Basic information showing distance, ascent and descent sections, descriptions and quick action buttons such as whether to show the track on the map, its appearance, points and whether to place the track for navigation.
 - Graphs for analysing of altitude and speed.
 - Tab to view and update points and waypoints.
-- Other [options](../map/track-context-menu.md#options): appearance, analysis of split intervals, sharing, editing, renaming, and more.  
+- Other [options](../../map/track-context-menu.md#options): appearance, analysis of split intervals, sharing, editing, renaming, and more.  
 
-When you tap a track directly on the map, the track context menu appears, where you can see a [basic overview of the track](../map/track-context-menu.md#overview) as well as a more [analytical data](../map/track-context-menu.md#altitude--speed-graphs) for investigating the route and making adjustments to [points and waypoints](../map/track-context-menu.md#points--waypoints), if necessary. You can also edit a track using the [Plan route tool](../plan-route/create-route.md#opening-plan-route). From the context menu, open a track in this tool and edit it: delete or add points, cut the track before or after a certain point.
+When you tap a track directly on the map, the track context menu appears, where you can see a [basic overview of the track](../../map/track-context-menu.md#overview) as well as a more [analytical data](../../map/track-context-menu.md#altitude--speed-graphs) for investigating the route and making adjustments to [points and waypoints](../../map/track-context-menu.md#points--waypoints), if necessary. You can also edit a track using the [Plan route tool](../../plan-route/create-route.md#opening-plan-route). From the context menu, open a track in this tool and edit it: delete or add points, cut the track before or after a certain point.
 
 
 #### Change folder
@@ -400,7 +400,7 @@ Available:
 
 - **Add folder**. If you need to organize your routes and tracks into logical categories, the app provides the ability to quickly create a new folder and name it. This helps to structure your navigation information.  
 
-- [**Add smart folder**](#smart-folder) (*Android only*). This is a tool for automating data organization. Folders automatically sort routes and tracks according to specified criteria. 
+- [**Add smart folder**](../tracks/smart-folder.md#create-smart-folder) (*Android only*). This is a tool for automating data organization. Folders automatically sort routes and tracks according to specified criteria. 
 
 - [**Import**](#import). If you have tracks you want to add to OsmAnd, you can use the import function to upload files from your device.
 
@@ -504,11 +504,11 @@ There are two primary methods for importing a track file into OsmAnd:
 
 There are several ways to export one or more track files to any messenger, email, file managers, Drive or app.  
 
-1. By [*Track Context menu → Share*](../map/track-context-menu.md#options).
+1. By [*Track Context menu → Share*](../../map/track-context-menu.md#options).
 2. By *My Places menu → Tracks → Folfer / Track menu*. 
     - For [**single track export**](#single-track-menu), select the track to import as is.
     - For [**multi-track export**](#folder-menu), select the required folder.
-3. By [*Local backup file*](../personal/import-export.md#export-to-file). Exporting GPX-tracks as OSF-file.
+3. By [*Local backup file*](../../personal/import-export.md#export-to-file). Exporting GPX-tracks as OSF-file.
 
 
 ### Export GPX file to an external storage device (iOS)
@@ -517,7 +517,7 @@ There are several ways to export one or more track files to any messenger, email
 
 To export a GPX file to an external storage, do the following: 
 
-- Open the [Context menu](../map/track-context-menu.md) of a track on the map in one of the following ways:
+- Open the [Context menu](../../map/track-context-menu.md) of a track on the map in one of the following ways:
     - By tapping a track in My Places, the map shows up with the context menu opened for the track.
     - By tapping a track directly on the map.  
     In any case, make certain the track is visible on the map. 
