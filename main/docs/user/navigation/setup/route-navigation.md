@@ -47,27 +47,21 @@ For correct work of the navigation, you need to give OsmAnd permission to receiv
 To use the offline navigation, you first need to [download maps](../../start-with/download-maps.md) of the region you plan to navigate through. Once the maps are downloaded, follow these steps to set up navigation:  
 
 1. Configure profiles you intend to use for navigation according to your needs:  
-
     - Set your [vehicle parameters](../guidance/navigation-settings.md#size-parameters) (important for truck drivers), select the [engine type](../guidance/navigation-settings.md#fuel-used-by-motor) (optional).
     - Configure [route line appearance](../guidance/map-during-navigation#route-line-appearance) (optional, only for [Pro users](../../purchases/index.md#purchases)).  
     - Choose whether to provide [notifications](../guidance/voice-navigation.md) during your route or not. If you need voice prompts, [configure](../guidance/voice-navigation.md#settings-of-voice-prompts) them.
- 
 2. Go to the [Navigation menu](#navigation-menu):
     - Specify the [destination point](#set-target-point).
     - Wait until the route is calculated. After that you will be able to obtain additional information about your route in *[Details section](./route-details.md#overview)*.
     - You can switch between different [routing types](./../routing/index.md) (profiles) to get the best result.
     - Add [intermediate destinations](#intermediate-destinations) (optional).
     - You can also change the departure point from the [current location](../../map/interact-with-map#my-location--zoom) to the required one.
-  
 3. Additional [navigation settings](#settings) can be used depending on your purposes (you can configure which roads to avoid or prefer, save fuel or choose the fastest route, etc).
-
 4. [Start](#start--stop-navigation) navigation or at first [simulate navigation](#simulate-navigation) (with this function you can test your route before actually traveling along it).
-
 5. While on the route you can [Pause/Resume](#pause--resume-navigation) navigation and [Stop](#start--stop-navigation) it.
 
 :::note
 - Route cannot be build when *[Online map](../../map/raster-maps.md#select-raster-maps)* is selected as map source.
-- Route calculation for long distances (longer than 200 km for [driving](../routing/car-based-routing.md)) may take few minutes.
 :::
 
 ### Navigation menu  
@@ -258,7 +252,6 @@ Once start and end points are selected, the app will create a route between them
 
 :::note
 - After the route is created, in the *[Details](../setup/route-details.md)* section you can find additional information (altitude, uphill, downhill, road type, turn-by-turn instructions, etc.), analyze your route on the map, print the route plan, save the route and share it.  
-- If the route calculation lasts more then 2 minutes you may need to see our *[troubleshouting guide](../../troubleshooting/navigation.md#route-calculation-is-slow)*.
 :::
 
 ### Route recalculation
