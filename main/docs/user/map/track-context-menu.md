@@ -266,7 +266,8 @@ _Calculate elevation_ button → [_Attach to the roads_](../navigation/setup/gpx
 - *<Translate android="true" ids="average_altitude"/>* - mean altitude above sea level along the track.
 - *<Translate android="true" ids="altitude_range"/>* - the highest and lowest altitude recorded along the track.
 - *<Translate android="true" ids="altitude_ascent"/>* - cumulative altitude gain along the track.
-- *<Translate android="true" ids="altitude_descent"/>* - cumulative altitude loss along the track.  
+- *<Translate android="true" ids="altitude_descent"/>* - cumulative altitude loss along the track. 
+ 
 
 ### Calculate elevation offline
 

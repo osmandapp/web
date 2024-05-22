@@ -482,12 +482,11 @@ The route line in the *Plan a route* tool is displayed as an already configured 
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios-options](@site/static/img/plan-route/plan_route_navigation_andr.png)
+![Plan a route ios-options](@site/static/img/plan-route/plan_route_navigation_ios.png)
 
 </TabItem>
 
 </Tabs> 
-
 
 The *Plan a route* tool provides a feature such as starting navigation directly during the planning process. To do this, you need to open the [Options](#menu-options) menu and select ***Navigation***.    
 
@@ -499,16 +498,16 @@ You should note that if a route you have created or changed has not been saved, 
 
 ### Graph
 
-![Plan a route android](@site/static/img/plan-route/plan_route_graph_1_andr.png)  ![Plan a route android](@site/static/img/plan-route/plan_route_graph_3_andr.png)
+![Plan a route android](@site/static/img/plan-route/plan_route_graph_1_andr.png)  ![Plan a route android](@site/static/img/plan-route/plan_route_graph_4_andr.png)
 
 Detailed route information in [Altitude/Slope graph](../navigation/setup/route-details.md#the-graph) format and [Road attributes](../navigation/setup/route-details.md#road-attributes) can be viewed in the *Graph tab* in the Android version of the OsmAnd app. To view this information in the iOS version of the app, use the menu *[Options](#menu-options) → Navigation → Details*.  
 
 To get elevation data when you open or import a track, you may need to select a route calculation mode.  
-- [*Attach to the roads*](#attach-to-the-roads). The track will be attached to roads using offline maps and the track geometry can be changed.  
+- [*Use nearby roads*](#use-nearby-roads). The track will be attached to roads using offline maps and the track geometry can be changed.  
 - [**Calculate offline**](../map/track-context-menu.md#calculate-elevation-offline) (*Android only*). Calculate altitude offline based on Terrain map (3D) data. The difference between the altitude recorded by your device can be used for altitude correction.  
 
 
-### Attach to the roads
+### Use nearby roads
 
 <Tabs groupId="operating-systems">
 

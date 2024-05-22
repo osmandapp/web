@@ -392,7 +392,7 @@ Available actions:
 
 #### Display position
 
-![Widget page](@site/static/img/widgets/buttons_andr.png)  
+![Widget page](@site/static/img/widgets/buttons_other_display_position_andr.png)  
 
 Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:
 - *<Translate android="true" ids="position_on_map_center"/>*. The cursor is always positioned in the center of the screen.
