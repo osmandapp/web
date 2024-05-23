@@ -88,7 +88,7 @@ export default function MainMenu({
     });
     const [openCloudSettings, setOpenCloudSettings] = useState(false);
     // temp solution for navigation track
-    const [openFormMenu, setOpenFormMenu] = useState(null);
+    const [openFromMenu, setOpenFromMenu] = useState(null);
 
     const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
     const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
@@ -318,7 +318,7 @@ export default function MainMenu({
             }
         }
         if (item.type === OBJECT_TYPE_NAVIGATION_TRACK) {
-            setOpenFormMenu(!openFromUrl);
+            setOpenFromMenu(!openFromUrl);
         }
         ctx.setPrevPageUrl({ url: location, active: false });
     }
@@ -352,7 +352,7 @@ export default function MainMenu({
     }, [ctx.prevPageUrl]);
 
     function navigateToUrl(menu) {
-        if (menu.type === OBJECT_TYPE_NAVIGATION_TRACK && !openFormMenu) {
+        if (menu.type === OBJECT_TYPE_NAVIGATION_TRACK && !openFromMenu) {
             // special case for navigation track because of waiting for loading providers
             if (ctx.pageParams[menu.type]) {
                 navigate(menu.url + ctx.pageParams[menu.type] + location.hash);
