@@ -228,7 +228,8 @@ If  [Navigation History](../../personal/global-settings.md#history) recording is
 
 ## Start / stop navigation
 
-Once start and end points are selected, the app will create a route between them using active profile. During the route calculation process (which can take up to 1-2 minutes) OsmAnd searches for roads, that best match the *[Navigation settings](../guidance/navigation-settings.md)*. You will also see a blue progress line at the bottom of the screen, signaling that the calculation is still not complete.  
+Once start and end points are selected, the app will create a route between them using active profile.
+Once start and end points are selected, the app will create a route between them using active profile. [The App profile](../../personal/profiles.md) and [widgets](../../widgets/index.md) set will only switch once you click the _Start_ button of navigation. 
 
 - To begin navigation, you should tap **Start** button.
 - To stop navigation mode, tap the *[Navigation](../../widgets/map-buttons.md#directions)* button at the bottom of the screen, than choose **Dismiss** (*Android*) or **Cansel** (*iOS*) and confirm your choice.

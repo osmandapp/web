@@ -207,12 +207,12 @@ Interaction with the graph:
 - *<Translate android="true" ids="shared_string_start_time"/>* This is the exact time when recording of the track starts.
 - *<Translate android="true" ids="shared_string_end_time"/>*. This is the end time of the track recording.
 
-**<Translate android="true" ids="analyze_on_map"/>** button opens [Analyze track menu](../map/tracks-on-map.md#analyze-track-on-map) for the track.
-
-**<Translate android="true" ids="shared_string_options"/>** button opens menu with: 
-- *Edit* opens the track in [Plan route tool](../plan-route/index.md).
-- *Delete* allows to delete chosen track item.
-- *Split interval* opens [Split interval function](#split-interval) for the track.
+**Buttons**:
+- **<Translate android="true" ids="analyze_on_map"/>** button opens [Analyze track menu](../map/tracks-on-map.md#analyze-track-on-map) for the track.
+- **<Translate android="true" ids="shared_string_options"/>** button opens menu with: 
+  - *Edit* opens the track in [Plan route tool](../plan-route/index.md).
+  - *Delete* allows to delete chosen track item.
+  - *Split interval* opens [Split interval function](#split-interval) for the track.
 
 
 ### Speed
@@ -237,10 +237,10 @@ This tab can be visible only on recorded tracks (points of this track type have 
 
 </Tabs>
 
-- *<Translate android="true" ids="average_speed"/>* .
-- *<Translate android="true" ids="max_speed"/>*.
-- *<Translate android="true" ids="moving_time"/>*.
-- *<Translate android="true" ids="distance_moving"/>*.
+- *<Translate android="true" ids="average_speed"/>* - means average speed during the trip.
+- *<Translate android="true" ids="max_speed"/>* - shows max.sped during the trip.
+- *<Translate android="true" ids="moving_time"/>* - means the sum time during trip moving only.
+- *<Translate android="true" ids="distance_moving"/>* - shows corrected distance of the trip.
 
 ### Altitude
 
@@ -248,10 +248,10 @@ This tab can be visible only on recorded tracks (points of this track type have 
 
 <TabItem value="android" label="Android">
 
-![Track graph altitude Android](@site/static/img/personal/tracks/track_graph_altitude_android.png) ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation.png) 
+![Track graph altitude Android](@site/static/img/personal/tracks/track_graph_altitude_android.png)
 
 If track is missing elevation information, it's possible to add it:
-_Calculate elevation_ button → [_Attach to the roads_](../navigation/setup/gpx-navigation.md#attach-to-roads) or [_Calculate offline_](#calculate-elevation-offline).
+_Calculate elevation_ button → [_Use nearby roads_](../plan-route/create-route.md#use-nearby-roads) (<Translate android="true" ids="use_nearby_roads_summary"/>) or [_Use Terrain maps_](#calculate-elevation-offline) (<Translate android="true" ids="use_terrain_maps_summary"/>).
 
 </TabItem>
 
@@ -279,11 +279,10 @@ Calculate elevation offline feature is only available for [**OsmAnd Pro subscrib
 
 This feature allows you to calculate elevation profile for GPX track offline for any terrain between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../plugins/contour-lines.md#how-to-download). *Terrain maps (3D) should be previously downloaded*.
 
-1. Purchase [OsmAnd Pro subscription](../purchases/android.md#pro-features).
-2. Download [Terrain maps(3D)](../plugins/contour-lines.md#download-maps) for the required region.
-3. If the track does not contain any altitude data, go to the track context menu (*Track Context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,get_altitude_data"/>*), select *Use Terrain maps*, and after the calculation you will get a track graph based on the terrain data.  
+1. Download [Terrain maps(3D)](../plugins/contour-lines.md#download-maps) for the required region.
+2. If the track does not contain any altitude data, go to the track context menu (*Track Context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,get_altitude_data"/>*), select *Use Terrain maps*, and after the calculation you will get a track graph based on the terrain data.  
   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
-4. If you are creating a route with the [*Plan a route*](../plan-route/create-route.md#graph) tool using the *Straight line* method and there is no elevation data on the graph, you need to:
+3. If you are creating a route with the [*Plan a route*](../plan-route/create-route.md#graph) tool using the *Straight line* method and there is no elevation data on the graph, you need to:
     - Tap *Get elevation data*, then select *Use Terrain maps*.
     - After the calculation, you will get a complete Altitude/Slope graph of your route based on terrain data.  
     
