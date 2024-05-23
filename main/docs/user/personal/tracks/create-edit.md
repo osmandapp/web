@@ -52,7 +52,7 @@ You can create a new track by starting a record in the Tracks tab or using the O
 
 ![Track on the map iOS](@site/static/img/personal/tracks/battery_andr.png)
 
-Select an optimisation setting. To prevent the app from asking you the next time you make a selection, tap the Don't ask anymore button. You can additionally read the section in the article [Trip recording plugin](../plugins/trip-recording.md#baterry-optimization).  
+Select an optimisation setting. To prevent the app from asking you the next time you make a selection, tap the Don't ask anymore button. You can additionally read the section in the article [Trip recording plugin](../../plugins/trip-recording.md#baterry-optimization).  
 **NOTE**. Optimizing battery usage in Android can cause gaps and inaccuracies in recorded tracks. If you encounter such problems, try changing the battery usage mode to *Unrestricted*.
 
 

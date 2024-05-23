@@ -14,7 +14,7 @@ OsmAnd allows to store and manage different map data like maps, points, tracks; 
 
 Favorites is the list of Favorites (user's points) in 'My Places' menu.
 
-### [Tracks](./tracks.md)
+### [Tracks](./tracks/index.md)
 
 Short information about tracks and how to use them
 
