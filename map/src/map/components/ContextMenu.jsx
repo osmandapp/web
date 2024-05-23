@@ -250,9 +250,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                                 id={'se-direction-action-via'}
                                 className={styles.contextMenuItem}
                                 onClick={() =>
-                                    handleMenuItemClick((latlng) =>
-                                        navigateSetStartOrFinish({ latlng, target: 'route.points.finish' })
-                                    )
+                                    handleMenuItemClick((latlng) => routeObject.routeAddViaPoint({ ll: latlng }))
                                 }
                             >
                                 <ListItemIcon className={styles.contextMenuIcon}>
