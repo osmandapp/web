@@ -350,13 +350,10 @@ export default function MainMenu({
         if (menu.type === OBJECT_TYPE_NAVIGATION_TRACK) {
             // special case for Navigation due to lazy-loading providers
             if (ctx.pageParams[menu.type] !== undefined) {
-                console.log('1');
                 navigate(menu.url + ctx.pageParams[menu.type] + location.hash);
             } else if (!ctx.routeObject.isReady()) {
-                console.log('2');
                 navigate(menu.url + window.location.search + location.hash);
             } else {
-                console.log('3');
                 navigate(menu.url + location.hash);
             }
         } else {
