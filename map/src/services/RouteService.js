@@ -4,7 +4,6 @@ import AppContext, {
     isRouteTrack,
     OBJECT_TYPE_NAVIGATION_TRACK,
     OBJECT_TYPE_NAVIGATION_ALONE,
-    OBJECT_TYPE_LOCAL_TRACK,
 } from '../context/AppContext';
 import TracksManager, { prepareNavigationTrack, getApproximatePoints } from '../manager/track/TracksManager';
 
@@ -21,14 +20,12 @@ export function RouteService() {
     const setRoutingErrorMsg = ctx.setRoutingErrorMsg;
 
     useEffect(() => {
-        if (ctx.currentObjectType !== OBJECT_TYPE_LOCAL_TRACK) {
-            const startPoint = routeObject.getOption('route.points.start');
-            const finishPoint = routeObject.getOption('route.points.finish');
-            if ((startPoint || finishPoint) && ctx.currentObjectType !== OBJECT_TYPE_NAVIGATION_TRACK) {
-                ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
-            }
+        const startPoint = routeObject.getOption('route.points.start');
+        const finishPoint = routeObject.getOption('route.points.finish');
+        if ((startPoint || finishPoint) && ctx.currentObjectType !== OBJECT_TYPE_NAVIGATION_TRACK) {
+            ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
         }
-    }, [routeObject]);
+    }, [routeObject.getRouteEffectDeps()]);
 
     function changeRouteText(processRoute, props) {
         let resultText = '';
@@ -104,23 +101,18 @@ export function RouteService() {
 
     // navigate to query-string
     useEffect(() => {
-        if (
-            ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_TRACK ||
-            ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_ALONE
-        ) {
-            if (routeObject.isReady() && (Object.keys(routeQueryStringParams).length > 0 || routeQueryStringCleanup)) {
-                if (Object.keys(routeQueryStringParams).length === 0) {
-                    setRouteQueryStringCleanup(false); // only once
-                }
-                const pretty = new URLSearchParams(Object.entries(routeQueryStringParams))
-                    .toString()
-                    .replaceAll('%2C', ',')
-                    .replaceAll('%3A', ':')
-                    .replaceAll('%3B', ';');
-                let pageParams = ctx.pageParams;
-                pageParams[OBJECT_TYPE_NAVIGATION_TRACK] = '?' + pretty;
-                ctx.setPageParams(pageParams);
+        if (routeObject.isReady() && (Object.keys(routeQueryStringParams).length > 0 || routeQueryStringCleanup)) {
+            if (Object.keys(routeQueryStringParams).length === 0) {
+                setRouteQueryStringCleanup(false); // only once
             }
+            const pretty = new URLSearchParams(Object.entries(routeQueryStringParams))
+                .toString()
+                .replaceAll('%2C', ',')
+                .replaceAll('%3A', ':')
+                .replaceAll('%3B', ';');
+            let pageParams = ctx.pageParams;
+            pageParams[OBJECT_TYPE_NAVIGATION_TRACK] = '?' + pretty;
+            ctx.setPageParams(pageParams);
         }
     }, [routeQueryStringParams]);
 
