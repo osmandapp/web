@@ -17,7 +17,7 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 
 ![images March sale](@site/static/img/email/2024March.png)
 
-![images March sale](@site/static/img/email/2024-may.png)
+![images May sale](@site/static/img/email/2024may.png)
 
 ![images March sale](@site/static/img/email/ign_spain.png)
 
