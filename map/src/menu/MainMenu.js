@@ -316,9 +316,9 @@ export default function MainMenu({
             if (item.type === OBJECT_CONFIGURE_MAP) {
                 ctx.setCurrentObjectType(OBJECT_CONFIGURE_MAP);
             }
-            if (item.type === OBJECT_TYPE_NAVIGATION_TRACK) {
-                setOpenFormMenu(!openFromUrl);
-            }
+        }
+        if (item.type === OBJECT_TYPE_NAVIGATION_TRACK) {
+            setOpenFormMenu(!openFromUrl);
         }
         ctx.setPrevPageUrl({ url: location, active: false });
     }
