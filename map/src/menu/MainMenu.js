@@ -87,8 +87,6 @@ export default function MainMenu({
         trash: false,
     });
     const [openCloudSettings, setOpenCloudSettings] = useState(false);
-    // temp solution for navigation track
-    const [openFromMenu, setOpenFromMenu] = useState(null);
 
     const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
     const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
@@ -291,7 +289,7 @@ export default function MainMenu({
         }
     }
 
-    function selectMenu({ item, openFromUrl = false }) {
+    function selectMenu({ item }) {
         ctx.setOpenGroups([]);
         ctx.setSelectedWpt(null);
         setOpenVisibleMenu(false);
@@ -316,9 +314,6 @@ export default function MainMenu({
             if (item.type === OBJECT_CONFIGURE_MAP) {
                 ctx.setCurrentObjectType(OBJECT_CONFIGURE_MAP);
             }
-        }
-        if (item.type === OBJECT_TYPE_NAVIGATION_TRACK) {
-            setOpenFromMenu(!openFromUrl);
         }
         ctx.setPrevPageUrl({ url: location, active: false });
     }
@@ -352,14 +347,21 @@ export default function MainMenu({
     }, [ctx.prevPageUrl]);
 
     function navigateToUrl(menu) {
-        if (menu.type === OBJECT_TYPE_NAVIGATION_TRACK && !openFromMenu) {
-            // special case for navigation track because of waiting for loading providers
-            if (ctx.pageParams[menu.type]) {
+        if (menu.type === OBJECT_TYPE_NAVIGATION_TRACK) {
+            // special case for Navigation due to lazy-loading providers
+            if (ctx.pageParams[menu.type] !== undefined) {
+                console.log('1');
                 navigate(menu.url + ctx.pageParams[menu.type] + location.hash);
+            } else if (!ctx.routeObject.isReady()) {
+                console.log('2');
+                navigate(menu.url + window.location.search + location.hash);
+            } else {
+                console.log('3');
+                navigate(menu.url + location.hash);
             }
         } else {
             // all other cases
-            if (ctx.pageParams[menu.type]) {
+            if (ctx.pageParams[menu.type] !== undefined) {
                 navigate(menu.url + ctx.pageParams[menu.type] + location.hash);
             } else {
                 navigate(menu.url + location.hash);
