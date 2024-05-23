@@ -424,7 +424,7 @@ You can read how to configure the appearance of the markers in [this section](#a
 
 You can add or remove your favorites in/from [Map markers list](../personal/markers.md).
 
-Tap '&#8942;' button (**Android**) opens special functions for a chosen Favorite folder (group).
+Tap *&#8942;* button (**Android**) opens special functions for a chosen Favorite folder (group).
 
 ![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
 
@@ -444,7 +444,7 @@ Functions for Favorite folder:
 
 ## Setting Markers for Waypoints
 
-[Waypoints to Map Markers link](../personal/tracks.md#group-menu)
+[Waypoints to Map Markers link](../map/track-context-menu.md#waypoints-folder)
 
 Track points (waypoints) are points that are part of Track (GPX) files. These points displayed automatically if track is displayed on the map. They look & could be configured similar to [Favorites](#favorites) - icon, names, color, shape. How to create and add Waypoint read [here](../map/track-context-menu.md#add-waypoint-to-a-track).
 

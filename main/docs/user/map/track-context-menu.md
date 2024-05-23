@@ -489,7 +489,7 @@ Points / Waypoins menu in Context track menu opens list of track / folders waypo
 
 <TabItem value="android" label="Android">
 
-"&#8285;" button opens waypoint Group menu.
+*&#8285;* button opens waypoint Group menu.
 
 ![Track menu Group menu Android](@site/static/img/personal/tracks/track_menu_group_menu_android.png) 
 
@@ -497,7 +497,7 @@ Points / Waypoins menu in Context track menu opens list of track / folders waypo
 
 <TabItem value="ios" label="iOS">
 
-"&#8230;" button opens waypoint Group menu.
+*&#8230;* button opens waypoint Group menu.
 
 ![Track menu Group menu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png) 
 
@@ -666,7 +666,7 @@ In this menu, you can change some parameters of your track with filters such as,
 Statistics tab displays information about **modified** track i.e. without filtered values. It's displayed within stat blocks and graph data.
   
 - The *Data* part shows statistics similar to the Filter menu.  
-- The *Graph* part displays three types of graphs by parameters: Overview, Altitude, Speed. This functional is a copy of [track Graph](../map/track-context-menu.md#altitude--speed-graphs).
+- The *Graph* part displays three types of graphs by parameters: Overview, Altitude, Speed. This functional is a copy of [track Graph](#altitude--speed-graphs).
 
 ![GPS filter graph Android](@site/static/img/personal/tracks/gps_filter_graph_android.png)   
 
