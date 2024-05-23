@@ -444,7 +444,7 @@ Functions for Favorite folder:
 
 ## Setting Markers for Waypoints
 
-[Waypoints to Map Markers link](../personal/tracks.md#group-menu)
+[Waypoints to Map Markers link](../personal/tracks/manage-tracks.md#tracks-menu)
 
 Track points (waypoints) are points that are part of Track (GPX) files. These points displayed automatically if track is displayed on the map. They look & could be configured similar to [Favorites](#favorites) - icon, names, color, shape. How to create and add Waypoint read [here](../map/track-context-menu.md#add-waypoint-to-a-track).
 
