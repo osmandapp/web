@@ -1,5 +1,5 @@
 import { useContext, useMemo } from 'react';
-import AppContext, { OBJECT_TYPE_LOCAL_TRACK, isLocalTrack } from '../../context/AppContext';
+import AppContext, { isLocalTrack, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import { ListItemText, MenuItem, Switch, Tooltip, Typography } from '@mui/material';
 import _ from 'lodash';
 import TracksManager from '../../manager/track/TracksManager';
@@ -63,8 +63,7 @@ export default function LocalTrackItem({ track }) {
     }
 
     function updateTrackInfoBlock() {
-        const type = OBJECT_TYPE_LOCAL_TRACK;
-        ctx.setCurrentObjectType(type);
+        ctx.setCurrentObjectType(OBJECT_TYPE_LOCAL_TRACK);
         ctx.setUpdateInfoBlock(true);
     }
 
