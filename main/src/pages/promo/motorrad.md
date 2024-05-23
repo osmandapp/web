@@ -16,31 +16,6 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 
 ![index](@site/static/img/promo/motorrad/motorrad_2.png)
 
-
-## English version
-
-**OsmAnd Pro for "Motorradmagazin"**
-
-Hello funs of two wheels!
-
-OsmAnd and ["Motorradmagazin"](https://www.motorrad-magazin.at/) introduce and present you OsmAnd Pro subscriptions for 1 year. 
-You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform): iOS, Android and Web.
-
-**Your steps**:
-
-1. **Input your e-mail** for registration:
-   
-<RegisterUserPromoBlock  promoKey='motorrad'/>
-
-<p> </p>
-
-2. **Full manual** is [HERE](https://osmand.net/promo/manual#english-version).
-
-OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use).
-
-"Motorradmagazin" links: [Blog](https://www.motorrad-magazin.at/), [Youtube](https://www.youtube.com/@motorradvideos), [Facebook](https://www.facebook.com/Motorradmagazin)
-
-
 ## Deutsche Version
 
 **OsmAnd Pro für das "Motorradmagazin"**
@@ -64,6 +39,31 @@ Sie können alle OsmAnd-Funktionen für [alle Plattformen nutzen](https://osmand
 OsmAnd sammelt keine Informationen. Bitte lesen Sie die [Datenschutzrichtlinie](https://osmand.net/docs/legal/privacy-policy) und [Nutzungsbedingungen](https://osmand.net/docs/legal/terms-of-use) von OsmAnd.
 
 Links zum "Motorradmagazin": [Blog](https://www.motorrad-magazin.at/), [Youtube](https://www.youtube.com/@motorradvideos), [Facebook](https://www.facebook.com/Motorradmagazin)
+
+
+## English Version
+
+**OsmAnd Pro for "Motorradmagazin"**
+
+Hello funs of two wheels!
+
+OsmAnd and ["Motorradmagazin"](https://www.motorrad-magazin.at/) introduce and present you OsmAnd Pro subscriptions for 1 year. 
+You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform): iOS, Android and Web.
+
+**Your steps**:
+
+1. **Input your e-mail** for registration:
+   
+<RegisterUserPromoBlock  promoKey='motorrad'/>
+
+<p> </p>
+
+2. **Full manual** is [HERE](https://osmand.net/promo/manual#english-version).
+
+OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use).
+
+"Motorradmagazin" links: [Blog](https://www.motorrad-magazin.at/), [Youtube](https://www.youtube.com/@motorradvideos), [Facebook](https://www.facebook.com/Motorradmagazin)
+
 
 ________________________________
 
