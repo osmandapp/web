@@ -112,7 +112,7 @@ export function RouteService() {
                 .replaceAll('%3B', ';');
             let pageParams = ctx.pageParams;
             pageParams[OBJECT_TYPE_NAVIGATION_TRACK] = '?' + pretty;
-            ctx.setPageParams(pageParams);
+            ctx.setPageParams({ ...pageParams });
         }
     }, [routeQueryStringParams]);
 
