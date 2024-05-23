@@ -66,8 +66,6 @@ Our goal is to create a fully functional map-oriented application that can be us
 
 ### Permission to access the location  
 
-We recommend that you grant OsmAnd permission to receive information about the precise location of your device. We do not collect, use or share your private information, so access to the precise geolocation is needed for correct offline work of search, navigation, and other OsmAnd functions.  
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -84,32 +82,32 @@ We recommend that you grant OsmAnd permission to receive information about the p
 
 </Tabs>
 
+We recommend that you grant OsmAnd permission to receive information about the precise location of your device. We do not collect, use or share your private information, so access to the precise geolocation is needed for correct offline work of search, navigation, and other OsmAnd functions.  
 
 ### How to download maps
-
-OsmAnd is an offline map application, so after the *<Translate android="true" ids="get_started"/>* screen, you will be prompted to [download map](../start-with/download-maps.md#download---first-screen) of your region. You can select another region or skip this step and download maps later.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Show on the map](@site/static/img/settings/start_screen_white_andr.png) ![Map](@site/static/img/settings/start_screen_map_andr.png)
+![Show on the map](@site/static/img/steps/start_screen_download_andr.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Show on the map](@site/static/img/settings/download_map1_ios.png) ![Map](@site/static/img/settings/map_ios.png)
+![Show on the map](@site/static/img/steps/start_screen_download_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-:::note
-Application is not properly functional without offline maps which are not distributed within the application. Even though application supports [Vector maps](../map/vector-maps.md) and  [Raster maps](../map/raster-maps.md), it is highly recommended to start with Offline Vector Maps to get all features properly functioning such as [Search](../search/index.md), [Navigation](../navigation/index.md),  [Context menu](../map/map-context-menu.md). 
-:::
+The OsmAnd app works with different types of maps, but it can only function fully with downloaded offline maps, so after the *<Translate android="true" ids="get_started"/>* screen you are prompted to [*download map*](../start-with/download-maps.md#first-screen) of your region. You can choose a different region, restore from [OsmAnd Cloud](../personal/osmand-cloud.md), or skip this step and download maps later.  
+For other map download options available, see the [*article Download maps*](../start-with/download-maps.md).
 
-Read more about [Download map](../start-with/download-maps.md) options.
+:::note
+OsmAnd cannot work correctly without downloaded offline maps. Although the application supports [*Vector*](../map/vector-maps.md) and [*Raster*](../map/raster-maps.md) maps, it is strongly recommended to start working with vector offline maps to make all functions such as [*Search*](../search/index.md), [*Navigation*](../navigation/index.md), and [*Context menu*](../map/map-context-menu.md) work properly.
+:::
 
 
 ### How to change app language

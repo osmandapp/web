@@ -25,7 +25,8 @@ Although OsmAnd supports both [Vector](../map/vector-maps.md) and [Raster](../ma
 
 ## Download 
 
-To start downloading maps, go to the main menu [*Maps & Resources*](../personal/maps.md). There you can select the maps you need for offline navigation.
+You can start loading maps from the [first screen](#first-screen), or go to the main menu *→* [Maps & Resources](#maps-and-resources) and select the required maps from the general list, or [select a region](#select-on-the-map) directly on the map by tapping the region you need.
+
 
 ### First Screen
 
@@ -33,13 +34,13 @@ To start downloading maps, go to the main menu [*Maps & Resources*](../personal/
 
 <TabItem value="android" label="Android">
 
-![Download map Android](@site/static/img/settings/start_screen_white_andr.png)
+![Download map Android](@site/static/img/steps/start_screen_first_screen_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Download map iOS](@site/static/img/settings/start_screen_white_ios.png)
+![Download map iOS](@site/static/img/steps/start_screen_first_screen_ios.png)
 
 </TabItem>
 
@@ -49,7 +50,30 @@ When you first launch the app, you will be prompted to download a map based on y
 
 If you are using a VPN, OsmAnd can offer you a regional map, giving you the option to choose a different map than your actual geography.  
 
-It is important to note that you can skip this download step, and if you already have previous [OsmAnd Cloud](../personal/osmand-cloud.md) settings this step can also be skipped. This is convenient if you have reinstalled the application or want to restore the previous user experience without having to re-select regions and settings.
+**Three-dot menu** in the upper right corner of the screen.    
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Download map Android](@site/static/img/steps/start_screen_first_screen_location_andr.png)   ![Download map iOS](@site/static/img/steps/start_screen_first_screen_other_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Download map Android](@site/static/img/steps/start_screen_first_screen_location_ios.png)   ![Download map iOS](@site/static/img/steps/start_screen_first_screen_other_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+- *Location menu.*  
+    - *Select a different region.* Opens the [Download Maps](#maps-and-resources) menu.
+    - *Allow us to determine your location.* [Requests permission](../start-with/first-steps.md#permission-to-access-the-location) to access location, and finds the required map using this data.
+- *Other menu.*
+    - *Restore from OsmAnd Cloud.* Opens the [OsmAnd Cloud](../personal/osmand-cloud.md) main screen or login screen. This is useful if you have reinstalled the app or want to restore the previous user experience without re-selecting regions and settings.
+    - *Restore from file.* Opens the device's file manager to select and import an OSF file.  
 
 
 ### Maps and Resources
@@ -74,7 +98,7 @@ It is important to note that you can skip this download step, and if you already
 
 </Tabs>
 
-The **Maps & Resources menu** displays:
+The [*Maps & Resources*](../personal/maps.md) displays:
 - Downloads section with [all existing OsmAnd map types](../personal/maps.md#map-types).
 - [Local section](../personal/maps.md#local) with all your map data.
 - [Updates section](../personal/maps.md#updates).
