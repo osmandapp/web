@@ -87,6 +87,8 @@ export default function MainMenu({
         trash: false,
     });
     const [openCloudSettings, setOpenCloudSettings] = useState(false);
+    // temp solution for navigation track
+    const [openFormMenu, setOpenFormMenu] = useState(null);
 
     const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
     const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
@@ -107,7 +109,7 @@ export default function MainMenu({
             const item = items.find((item) => item.url === location.pathname);
             if (item) {
                 ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE);
-                selectMenu(item);
+                selectMenu({ item, openFromUrl: true });
             }
         }
     }, [location.pathname]);
@@ -289,7 +291,7 @@ export default function MainMenu({
         }
     }
 
-    function selectMenu(item) {
+    function selectMenu({ item, openFromUrl = false }) {
         ctx.setOpenGroups([]);
         ctx.setSelectedWpt(null);
         setOpenVisibleMenu(false);
@@ -314,6 +316,9 @@ export default function MainMenu({
             if (item.type === OBJECT_CONFIGURE_MAP) {
                 ctx.setCurrentObjectType(OBJECT_CONFIGURE_MAP);
             }
+            if (item.type === OBJECT_TYPE_NAVIGATION_TRACK) {
+                setOpenFormMenu(!openFromUrl);
+            }
         }
         ctx.setPrevPageUrl({ url: location, active: false });
     }
@@ -321,7 +326,7 @@ export default function MainMenu({
     useEffect(() => {
         if (ctx.openMenu) {
             const item = items.find((item) => item.id === ctx.openMenu?.id);
-            selectMenu(item);
+            selectMenu({ item });
             ctx.setOpenMenu(null);
         }
     }, [ctx.openMenu]);
@@ -347,7 +352,7 @@ export default function MainMenu({
     }, [ctx.prevPageUrl]);
 
     function navigateToUrl(menu) {
-        if (menu.type === OBJECT_TYPE_NAVIGATION_TRACK) {
+        if (menu.type === OBJECT_TYPE_NAVIGATION_TRACK && !openFormMenu) {
             // special case for navigation track because of waiting for loading providers
             if (ctx.pageParams[menu.type]) {
                 navigate(menu.url + ctx.pageParams[menu.type] + location.hash);
@@ -460,7 +465,7 @@ export default function MainMenu({
                                         id={item.id}
                                         key={index}
                                         className={setMenuStyles(item)}
-                                        onClick={() => selectMenu(item)}
+                                        onClick={() => selectMenu({ item })}
                                     >
                                         <ListItemButton
                                             className={setMenuIconStyles(item)}
