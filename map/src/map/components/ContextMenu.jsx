@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState, useRef } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext, { OBJECT_TYPE_NAVIGATION_ALONE, OBJECT_TYPE_NAVIGATION_TRACK } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import { useNavigate } from 'react-router-dom';
 import TracksManager from '../../manager/track/TracksManager';
@@ -21,6 +21,7 @@ import { ReactComponent as CoordinatesIcon } from '../../assets/icons/ic_action_
 import { ReactComponent as AddPinIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
 import { ReactComponent as ShowRegionsIcon } from '../../assets/icons/ic_action_world_globe.svg';
 import { useTranslation } from 'react-i18next';
+import { LOGIN_URL, MAIN_URL } from '../../manager/GlobalManager';
 
 export default function ContextMenu({ setGeocodingData, setRegionData }) {
     const ctx = useContext(AppContext);
@@ -57,7 +58,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
     };
 
     const openLogin = () => {
-        navigate('/map/loginForm' + window.location.search + window.location.hash);
+        navigate(MAIN_URL + '/' + LOGIN_URL + window.location.search + window.location.hash);
     };
 
     const routeObject = ctx.routeObject;
@@ -68,10 +69,18 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
         confirm({
             ctx,
             text: 'Modify previous Navigation?',
-            callback: () => routeObject.setOption(target, latlng),
+            callback: () => {
+                routeObject.setOption(target, latlng);
+            },
             skip: !routeObject.getOption('route.points.start') || !routeObject.getOption('route.points.finish'),
         });
     }
+
+    useEffect(() => {
+        if ((startPoint || finishPoint) && ctx.currentObjectType !== OBJECT_TYPE_NAVIGATION_TRACK) {
+            ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
+        }
+    }, [routeObject]);
 
     useEffect(() => {
         if (map) {

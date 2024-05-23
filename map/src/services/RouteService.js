@@ -105,6 +105,7 @@ export function RouteService() {
                 .replaceAll('%2C', ',')
                 .replaceAll('%3A', ':')
                 .replaceAll('%3B', ';');
+            ctx.setPageParams('?' + pretty);
             navigate({
                 hash: url.hash,
                 search: '?' + pretty,
