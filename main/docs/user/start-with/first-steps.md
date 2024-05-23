@@ -109,7 +109,7 @@ OsmAnd is an offline map application, so after the *<Translate android="true" id
 Application is not properly functional without offline maps which are not distributed within the application. Even though application supports [Vector maps](../map/vector-maps.md) and  [Raster maps](../map/raster-maps.md), it is highly recommended to start with Offline Vector Maps to get all features properly functioning such as [Search](../search/index.md), [Navigation](../navigation/index.md),  [Context menu](../map/map-context-menu.md). 
 :::
 
-Read more about [download map](../start-with/download-maps.md) options.
+Read more about [Download map](../start-with/download-maps.md) options.
 
 
 ### How to change app language

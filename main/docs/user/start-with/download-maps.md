@@ -25,7 +25,7 @@ Although OsmAnd supports both [Vector](../map/vector-maps.md) and [Raster](../ma
 
 ## Download 
 
-To start downloading maps, go to the main menu [**Maps & Resources**](../personal/maps.md). There you can select the maps you need for offline navigation.
+To start downloading maps, go to the main menu [*Maps & Resources*](../personal/maps.md). There you can select the maps you need for offline navigation.
 
 ### First Screen
 
