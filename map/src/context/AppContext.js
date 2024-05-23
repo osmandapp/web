@@ -247,7 +247,7 @@ export const AppContextProvider = (props) => {
 
     //pages
     const [prevPageUrl, setPrevPageUrl] = useState(null);
-    const [pageParams, setPageParams] = useState(null);
+    const [pageParams, setPageParams] = useState({});
 
     const searchParams = new URLSearchParams(window.location.search);
     // weather

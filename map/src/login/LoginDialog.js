@@ -60,7 +60,7 @@ export default function LoginDialog() {
         if (ctx.wantDeleteAcc) {
             navigate(MAIN_URL + '/' + DELETE_ACCOUNT_URL + window.location.search + window.location.hash);
         } else {
-            navigate(ctx.prevPageUrl?.pathname + window.location.search + window.location.hash);
+            ctx.setPrevPageUrl((prevPageUrl) => ({ ...prevPageUrl, active: true }));
         }
     };
 
@@ -68,7 +68,7 @@ export default function LoginDialog() {
         setEmailError('');
         setPwd('');
         setCode('');
-        navigate(ctx.prevPageUrl?.pathname + window.location.search + window.location.hash);
+        ctx.setPrevPageUrl((prevPageUrl) => ({ ...prevPageUrl, active: true }));
     };
 
     const handleLogin = () => {

@@ -1,5 +1,4 @@
 import { useContext, useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
 
 import AppContext, {
     isRouteTrack,
@@ -20,6 +19,14 @@ export function RouteService() {
     const setHeaderText = ctx.setHeaderText;
     const setRoutingErrorMsg = ctx.setRoutingErrorMsg;
 
+    useEffect(() => {
+        const startPoint = routeObject.getOption('route.points.start');
+        const finishPoint = routeObject.getOption('route.points.finish');
+        if ((startPoint || finishPoint) && ctx.currentObjectType !== OBJECT_TYPE_NAVIGATION_TRACK) {
+            ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
+        }
+    }, [routeObject]);
+
     function changeRouteText(processRoute, props) {
         let resultText = '';
         if (processRoute) {
@@ -37,8 +44,6 @@ export function RouteService() {
         }));
     }
 
-    const url = useLocation();
-    const navigate = useNavigate();
     const [routeQueryStringParams, setRouteQueryStringParams] = useState({});
     const [routeQueryStringCleanup, setRouteQueryStringCleanup] = useState(false);
 
@@ -105,13 +110,11 @@ export function RouteService() {
                 .replaceAll('%2C', ',')
                 .replaceAll('%3A', ':')
                 .replaceAll('%3B', ';');
-            ctx.setPageParams('?' + pretty);
-            navigate({
-                hash: url.hash,
-                search: '?' + pretty,
-            });
+            let pageParams = ctx.pageParams;
+            pageParams[OBJECT_TYPE_NAVIGATION_TRACK] = '?' + pretty;
+            ctx.setPageParams(pageParams);
         }
-    }, [routeQueryStringParams, routeObject.isReady()]);
+    }, [routeQueryStringParams]);
 
     // parse query-string
     useEffect(() => {

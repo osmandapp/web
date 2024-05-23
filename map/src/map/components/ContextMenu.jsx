@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState, useRef } from 'react';
-import AppContext, { OBJECT_TYPE_NAVIGATION_ALONE, OBJECT_TYPE_NAVIGATION_TRACK } from '../../context/AppContext';
+import AppContext from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import { useNavigate } from 'react-router-dom';
 import TracksManager from '../../manager/track/TracksManager';
@@ -75,12 +75,6 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
             skip: !routeObject.getOption('route.points.start') || !routeObject.getOption('route.points.finish'),
         });
     }
-
-    useEffect(() => {
-        if ((startPoint || finishPoint) && ctx.currentObjectType !== OBJECT_TYPE_NAVIGATION_TRACK) {
-            ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
-        }
-    }, [routeObject]);
 
     useEffect(() => {
         if (map) {

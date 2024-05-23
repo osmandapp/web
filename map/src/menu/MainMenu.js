@@ -98,7 +98,7 @@ export default function MainMenu({
 
     const navigate = useNavigate();
     const openLogin = () => {
-        ctx.setPrevPageUrl(location);
+        ctx.setPrevPageUrl({ url: location, active: false });
         navigate(MAIN_URL + '/' + LOGIN_URL + window.location.hash);
     };
 
@@ -115,20 +115,6 @@ export default function MainMenu({
     const handleClickAway = () => {
         setOpenMainMenu(false);
     };
-
-    function cleanParams() {
-        const routeObject = ctx.routeObject;
-        if (routeObject.getOption('route.points.start') || routeObject.getOption('route.points.finish')) {
-            routeObject.setOption('route.points.start', null);
-            routeObject.setOption('route.points.finish', null);
-            routeObject.setOption('route.points.viaPoints', []);
-            routeObject.setOption('route.points.avoidRoads', []);
-            routeObject.resetRoute();
-        }
-        if (ctx.pinPoint) {
-            ctx.setPinPoint(null);
-        }
-    }
 
     const items = [
         {
@@ -261,13 +247,7 @@ export default function MainMenu({
         if (currentMenu) {
             setMenuInfo(currentMenu.component);
             setSelectedType(currentMenu.type);
-            ctx.setPrevPageUrl(location);
-            if (currentMenu.url === MAIN_URL + '/' + NAVIGATE_URL) {
-                const params = ctx.pageParams || '';
-                navigate(currentMenu.url + params + location.hash);
-            } else {
-                navigate(currentMenu.url + location.hash);
-            }
+            ctx.setPrevPageUrl({ url: location, active: false });
         } else {
             setOpenMainMenu(true);
         }
@@ -335,9 +315,7 @@ export default function MainMenu({
                 ctx.setCurrentObjectType(OBJECT_CONFIGURE_MAP);
             }
         }
-        ctx.setPrevPageUrl(location);
-        cleanParams();
-        navigate(item.url + location.hash);
+        ctx.setPrevPageUrl({ url: location, active: false });
     }
 
     useEffect(() => {
@@ -347,6 +325,42 @@ export default function MainMenu({
             ctx.setOpenMenu(null);
         }
     }, [ctx.openMenu]);
+
+    useEffect(() => {
+        const currentMenu = items.find((item) => isSelectedMenuItem(item));
+        if (currentMenu) {
+            navigateToUrl(currentMenu);
+        }
+    }, [ctx.pageParams, menuInfo]);
+
+    useEffect(() => {
+        // now this case only for login/logout
+        if (ctx.prevPageUrl?.active) {
+            const currentMenu = items.find((item) => item.url === ctx.prevPageUrl.url.pathname);
+            if (currentMenu) {
+                navigateToUrl(currentMenu);
+            } else {
+                // if the menu not found, navigate to the main page
+                navigate(ctx.prevPageUrl.url.pathname + location.hash);
+            }
+        }
+    }, [ctx.prevPageUrl]);
+
+    function navigateToUrl(menu) {
+        if (menu.type === OBJECT_TYPE_NAVIGATION_TRACK) {
+            // special case for navigation track because of waiting for loading providers
+            if (ctx.pageParams[menu.type]) {
+                navigate(menu.url + ctx.pageParams[menu.type] + location.hash);
+            }
+        } else {
+            // all other cases
+            if (ctx.pageParams[menu.type]) {
+                navigate(menu.url + ctx.pageParams[menu.type] + location.hash);
+            } else {
+                navigate(menu.url + location.hash);
+            }
+        }
+    }
 
     return (
         <Box
