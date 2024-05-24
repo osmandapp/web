@@ -60,6 +60,7 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
                     <IconButton
+                        id={'se-configure-map-menu-close'}
                         variant="contained"
                         type="button"
                         className={styles.closeIcon}

@@ -82,7 +82,6 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
 
     useEffect(() => {
         const width = getWidth();
-        ctx.setInfoBlockWidth(width);
         const px = parseFloat(width) || 0; // 100px -> 100, auto -> 0
         const padding = px || DRAWER_SIZE + Number(mainMenuSize.replace('px', '')) + 24; // always apply right padding on desktop
         ctx.mutateFitBoundsPadding((o) => (o.left = padding));
