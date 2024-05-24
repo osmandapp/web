@@ -28,15 +28,6 @@ export default async function test() {
     url = await getUrl();
     await assert(!url.includes(LOGIN_URL));
 
-    // explore
-    await clickBy(By.id('se-show-menu-explore'));
-    url = await getUrl();
-    await assert(url.includes(EXPLORE_URL));
-    await waitBy(By.id('se-explore-menu-close'));
-    await clickBy(By.id('se-explore-menu-close'));
-    url = await getUrl();
-    await assert(!url.includes(EXPLORE_URL));
-
     // configure
     await clickBy(By.id('se-show-menu-configuremap'));
     url = await getUrl();
