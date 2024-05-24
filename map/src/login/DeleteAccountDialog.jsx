@@ -10,6 +10,7 @@ import AccountManager from '../manager/AccountManager';
 import AppContext from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { LOGIN_URL, MAIN_URL } from '../manager/GlobalManager';
 
 export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
     const ctx = useContext(AppContext);
@@ -27,7 +28,7 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
         if (accountDeleted) {
             ctx.setEmailCookie('');
             ctx.setLoginUser(null);
-            navigate('/map/loginForm' + window.location.search + window.location.hash);
+            navigate(MAIN_URL + '/' + LOGIN_URL + window.location.search + window.location.hash);
         }
     }, [accountDeleted]);
 
@@ -37,7 +38,7 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
         } else {
             if (ctx.loginUser !== 'INIT') {
                 ctx.setWantDeleteAcc(true);
-                navigate('/map/loginForm' + window.location.search + window.location.hash);
+                navigate(MAIN_URL + '/' + LOGIN_URL + window.location.search + window.location.hash);
             }
         }
     }

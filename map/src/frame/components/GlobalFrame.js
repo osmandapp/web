@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Box, Button, Dialog } from '@mui/material';
 import OsmAndMap from '../../map/components/OsmAndMap';
 import MainMenu from '../../menu/MainMenu';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import AppContext from '../../context/AppContext';
 import GeneralPanelButtons from './panelbuttons/GeneralPanelButtons';
 import { GlobalConfirmationDialog } from '../../dialogs/GlobalConfirmationDialog';
@@ -10,6 +10,7 @@ import HeaderMenu from './header/HeaderMenu';
 import {
     MAIN_MENU_MIN_SIZE,
     MAIN_MENU_OPEN_SIZE,
+    MAIN_URL,
     MENU_INFO_CLOSE_SIZE,
     MENU_INFO_OPEN_SIZE,
 } from '../../manager/GlobalManager';
@@ -33,18 +34,27 @@ const GlobalFrame = () => {
     const [menuInfo, setMenuInfo] = useState(null);
     const [width, height] = useWindowSize();
     const [openVisibleMenu, setOpenVisibleMenu] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const MAIN_MENU_SIZE = openMainMenu ? MAIN_MENU_OPEN_SIZE : MAIN_MENU_MIN_SIZE;
     const MENU_INFO_SIZE = menuInfo ? MENU_INFO_OPEN_SIZE : MENU_INFO_CLOSE_SIZE;
 
     useEffect(() => {
-        ctx.setInfoBlockWidth(MENU_INFO_SIZE);
-    });
+        if (menuInfo) {
+            ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE);
+        }
+    }, [menuInfo]);
 
     useEffect(() => {
         if (ctx.infoBlockWidth === MENU_INFO_CLOSE_SIZE) {
             setShowInfoBlock(false);
-            setMenuInfo(null);
+            if (menuInfo !== null) {
+                setMenuInfo(null);
+            }
+            if (location.pathname !== MAIN_URL) {
+                navigate(MAIN_URL + location.hash);
+            }
         }
     }, [ctx.infoBlockWidth]);
 

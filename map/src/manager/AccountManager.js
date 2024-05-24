@@ -1,6 +1,7 @@
 import { apiGet, apiPost } from '../util/HttpApi';
+import { LOGIN_URL, MAIN_URL } from './GlobalManager';
 
-export const LOGIN_LOGOUT_URL = '/map/loginForm#logout'; // lose window.location.search/window.location.hash
+export const LOGIN_LOGOUT_URL = MAIN_URL + '/' + LOGIN_URL + '#logout'; // lose window.location.search/window.location.hash
 
 const CHANGE_EMAIL_MSG = 'change';
 const DELETE_EMAIL_MSG = 'delete';

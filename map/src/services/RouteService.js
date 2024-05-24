@@ -1,5 +1,4 @@
 import { useContext, useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
 
 import AppContext, {
     isRouteTrack,
@@ -7,6 +6,7 @@ import AppContext, {
     OBJECT_TYPE_NAVIGATION_ALONE,
 } from '../context/AppContext';
 import TracksManager, { prepareNavigationTrack, getApproximatePoints } from '../manager/track/TracksManager';
+import { createUrlParams } from '../util/Utils';
 
 export function RouteService() {
     const ctx = useContext(AppContext);
@@ -19,6 +19,14 @@ export function RouteService() {
 
     const setHeaderText = ctx.setHeaderText;
     const setRoutingErrorMsg = ctx.setRoutingErrorMsg;
+
+    useEffect(() => {
+        const startPoint = routeObject.getOption('route.points.start');
+        const finishPoint = routeObject.getOption('route.points.finish');
+        if ((startPoint || finishPoint) && ctx.currentObjectType !== OBJECT_TYPE_NAVIGATION_TRACK) {
+            ctx.setCurrentObjectType(OBJECT_TYPE_NAVIGATION_ALONE);
+        }
+    }, [routeObject.getRouteEffectDeps()]);
 
     function changeRouteText(processRoute, props) {
         let resultText = '';
@@ -37,8 +45,6 @@ export function RouteService() {
         }));
     }
 
-    const url = useLocation();
-    const navigate = useNavigate();
     const [routeQueryStringParams, setRouteQueryStringParams] = useState({});
     const [routeQueryStringCleanup, setRouteQueryStringCleanup] = useState(false);
 
@@ -92,7 +98,7 @@ export function RouteService() {
                 setRouteQueryStringParams(obj);
             }
         }
-    }, [pinPoint, routeObject.getRouteEffectDeps(), routeObject.getEffectDeps()]);
+    }, [routeObject.getRouteEffectDeps(), routeObject.getEffectDeps()]);
 
     // navigate to query-string
     useEffect(() => {
@@ -100,17 +106,12 @@ export function RouteService() {
             if (Object.keys(routeQueryStringParams).length === 0) {
                 setRouteQueryStringCleanup(false); // only once
             }
-            const pretty = new URLSearchParams(Object.entries(routeQueryStringParams))
-                .toString()
-                .replaceAll('%2C', ',')
-                .replaceAll('%3A', ':')
-                .replaceAll('%3B', ';');
-            navigate({
-                hash: url.hash,
-                search: '?' + pretty,
-            });
+            const pretty = createUrlParams(routeQueryStringParams);
+            const pageParams = { ...ctx.pageParams };
+            pageParams[OBJECT_TYPE_NAVIGATION_TRACK] = pretty;
+            ctx.setPageParams(pageParams);
         }
-    }, [routeQueryStringParams, routeObject.isReady()]);
+    }, [routeQueryStringParams]);
 
     // parse query-string
     useEffect(() => {

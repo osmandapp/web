@@ -56,6 +56,7 @@ import Loading from '../../../menu/errors/Loading';
 import PhotoGallery from '../../../menu/search/PhotoGallery';
 import wptStyles from '../wpt/wptDetails.module.css';
 import parse from 'html-react-parser';
+import { LOGIN_URL, MAIN_URL } from '../../../manager/GlobalManager';
 
 export default function WptDetails({ isDetails = false, setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
@@ -263,7 +264,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 location: ctx.selectedWpt?.poi?.latlng,
             });
         } else {
-            navigate('/map/loginForm' + window.location.search + window.location.hash);
+            navigate(MAIN_URL + '/' + LOGIN_URL + window.location.search + window.location.hash);
         }
     }
 

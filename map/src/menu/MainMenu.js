@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import {
+    Box,
     ClickAwayListener,
+    Divider,
     Drawer,
     ListItemButton,
     ListItemIcon,
@@ -9,24 +11,23 @@ import {
     SvgIcon,
     Toolbar,
 } from '@mui/material';
-import { Divider, Box } from '@mui/material';
 import { Menu, Person } from '@mui/icons-material';
 import AppContext, {
     OBJECT_CONFIGURE_MAP,
+    OBJECT_GLOBAL_SETTINGS,
+    OBJECT_SEARCH,
     OBJECT_TYPE_CLOUD_TRACK,
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_LOCAL_TRACK,
-    OBJECT_TYPE_NAVIGATION_TRACK,
     OBJECT_TYPE_NAVIGATION_ALONE,
-    OBJECT_TYPE_WEATHER,
+    OBJECT_TYPE_NAVIGATION_TRACK,
     OBJECT_TYPE_POI,
-    OBJECT_GLOBAL_SETTINGS,
-    OBJECT_SEARCH,
+    OBJECT_TYPE_WEATHER,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import ConfigureMap from './configuremap/ConfigureMap';
 import RouteMenu from './route/RouteMenu';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import FavoritesMenu from './favorite/FavoritesMenu';
 import PlanRouteMenu from './planroute/PlanRouteMenu';
 import { ReactComponent as FavoritesIcon } from '../assets/menu/ic_action_favorite.svg';
@@ -49,6 +50,21 @@ import SettingsMenu from './settings/SettingsMenu';
 import CloudSettings from './settings/CloudSettings';
 import { closeCloudSettings } from '../manager/SettingsManager';
 import ExploreMenu from './search/ExploreMenu';
+import {
+    CONFIGURE_URL,
+    EXPLORE_URL,
+    FAVORITES_URL,
+    LOGIN_URL,
+    MAIN_URL,
+    MENU_INFO_CLOSE_SIZE,
+    MENU_INFO_OPEN_SIZE,
+    NAVIGATE_URL,
+    PLANROUTE_URL,
+    SETTINGS_URL,
+    TRACKS_URL,
+    WEATHER_URL,
+} from '../manager/GlobalManager';
+import { createUrlParams } from '../util/Utils';
 
 export default function MainMenu({
     size,
@@ -65,6 +81,7 @@ export default function MainMenu({
 }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
+    const location = useLocation();
 
     const [selectedType, setSelectedType] = useState(null);
     const [cloudSettings, setCloudSettings] = useState({
@@ -83,8 +100,19 @@ export default function MainMenu({
 
     const navigate = useNavigate();
     const openLogin = () => {
-        navigate('/map/loginForm' + window.location.search + window.location.hash);
+        ctx.setPrevPageUrl({ url: location, active: false });
+        navigate(MAIN_URL + '/' + LOGIN_URL + window.location.hash);
     };
+
+    useEffect(() => {
+        if (!menuInfo) {
+            const item = items.find((item) => item.url === location.pathname);
+            if (item) {
+                ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE);
+                selectMenu({ item, openFromUrl: true });
+            }
+        }
+    }, [location.pathname]);
 
     const handleClickAway = () => {
         setOpenMainMenu(false);
@@ -98,6 +126,7 @@ export default function MainMenu({
             type: OBJECT_SEARCH,
             show: ctx.develFeatures && ctx.loginUser,
             id: 'se-show-menu-explore',
+            url: MAIN_URL + '/' + EXPLORE_URL,
         },
         {
             name: t('configure_map'),
@@ -106,6 +135,7 @@ export default function MainMenu({
             type: OBJECT_CONFIGURE_MAP,
             show: true,
             id: 'se-show-menu-configuremap',
+            url: MAIN_URL + '/' + CONFIGURE_URL,
         },
         {
             name: t('shared_string_weather'),
@@ -114,6 +144,7 @@ export default function MainMenu({
             type: OBJECT_TYPE_WEATHER,
             show: true,
             id: 'se-show-menu-weather',
+            url: MAIN_URL + '/' + WEATHER_URL,
         },
         {
             name: t('shared_string_tracks'),
@@ -122,6 +153,7 @@ export default function MainMenu({
             type: OBJECT_TYPE_CLOUD_TRACK,
             show: true,
             id: 'se-show-menu-tracks',
+            url: MAIN_URL + '/' + TRACKS_URL,
         },
         {
             name: t('shared_string_my_favorites'),
@@ -130,6 +162,7 @@ export default function MainMenu({
             type: OBJECT_TYPE_FAVORITE,
             show: true,
             id: 'se-show-menu-favorites',
+            url: MAIN_URL + '/' + FAVORITES_URL,
         },
         {
             name: t('shared_string_navigation'),
@@ -138,6 +171,7 @@ export default function MainMenu({
             type: OBJECT_TYPE_NAVIGATION_TRACK, // shared with OBJECT_TYPE_NAVIGATION_ALONE
             show: true,
             id: 'se-show-menu-navigation',
+            url: MAIN_URL + '/' + NAVIGATE_URL,
         },
         {
             name: t('plan_route'),
@@ -146,6 +180,7 @@ export default function MainMenu({
             type: OBJECT_TYPE_LOCAL_TRACK,
             show: true,
             id: 'se-show-menu-planroute',
+            url: MAIN_URL + '/' + PLANROUTE_URL,
         },
         {
             name: 'Poi',
@@ -154,6 +189,7 @@ export default function MainMenu({
             type: OBJECT_TYPE_POI,
             show: false,
             id: 'se-show-menu-poi',
+            url: '',
         },
         {
             name: t('shared_string_settings'),
@@ -162,6 +198,7 @@ export default function MainMenu({
             type: OBJECT_GLOBAL_SETTINGS,
             show: true,
             id: 'se-show-menu-settings',
+            url: MAIN_URL + '/' + SETTINGS_URL,
         },
     ];
 
@@ -172,7 +209,7 @@ export default function MainMenu({
     //open main menu if infoblock was opened
     useEffect(() => {
         if (showInfoBlock && !menuInfo) {
-            selectMenuInfo();
+            selectMenuInfoByObjectType();
         }
     }, [showInfoBlock]);
 
@@ -193,25 +230,26 @@ export default function MainMenu({
                 ctx.setCurrentObjectType(null); // get ready for next navigation changes
                 setTimeout(() => {
                     if (
-                        ctx.routeObject.getOption('route.points.start') &&
+                        ctx.routeObject.getOption('route.points.start') ||
                         ctx.routeObject.getOption('route.points.finish')
                     ) {
-                        selectMenuInfo(OBJECT_TYPE_NAVIGATION_TRACK);
+                        selectMenuInfoByObjectType(OBJECT_TYPE_NAVIGATION_TRACK);
                     }
                 }, 100);
             } else if (menuInfo?.type.name !== ctx.currentObjectType) {
-                selectMenuInfo(); // process all other object types
+                selectMenuInfoByObjectType(); // process all other object types
             }
         }
     }, [ctx.currentObjectType]);
 
-    function selectMenuInfo(force = null) {
+    function selectMenuInfoByObjectType(force = null) {
         const currentMenu = items.find((item) => {
             return item.type === (force ?? ctx.currentObjectType);
         });
         if (currentMenu) {
             setMenuInfo(currentMenu.component);
             setSelectedType(currentMenu.type);
+            ctx.setPrevPageUrl({ url: location, active: false });
         } else {
             setOpenMainMenu(true);
         }
@@ -253,7 +291,7 @@ export default function MainMenu({
         }
     }
 
-    function selectMenu(item) {
+    function selectMenu({ item }) {
         ctx.setOpenGroups([]);
         ctx.setSelectedWpt(null);
         setOpenVisibleMenu(false);
@@ -264,6 +302,9 @@ export default function MainMenu({
             closeCloudSettings(openCloudSettings, setOpenCloudSettings, ctx);
             const updateMenu = !isSelectedMenuItem(item) || ctx.openMenu;
             const menu = updateMenu ? item : null;
+            if (!menu) {
+                ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
+            }
             setMenuInfo(menu?.component);
             setSelectedType(menu?.type);
             ctx.setCurrentObjectType(null);
@@ -276,15 +317,80 @@ export default function MainMenu({
                 ctx.setCurrentObjectType(OBJECT_CONFIGURE_MAP);
             }
         }
+        ctx.setPrevPageUrl({ url: location, active: false });
     }
 
     useEffect(() => {
         if (ctx.openMenu) {
             const item = items.find((item) => item.id === ctx.openMenu?.id);
-            selectMenu(item);
+            selectMenu({ item });
             ctx.setOpenMenu(null);
         }
     }, [ctx.openMenu]);
+
+    // Note: When adding new parameters, it may be necessary to refactor pageParams
+    // to store a list of parameters as a map instead of a string for better flexibility.
+    useEffect(() => {
+        const pinPoint = ctx.pinPoint;
+        if (pinPoint) {
+            const pin = `${pinPoint.lat.toFixed(6)},${pinPoint.lng.toFixed(6)}`;
+            const pretty = createUrlParams({ pin });
+            const pageParams = { ...ctx.pageParams };
+            const pinRegex = /pin=([^&]*)/;
+            const newPin = pretty.match(pinRegex)[0];
+
+            items.forEach((item) => {
+                const type = item.type;
+                const existingParams = pageParams[type] || '';
+                if (existingParams.match(pinRegex)) {
+                    pageParams[type] = existingParams.replace(pinRegex, newPin);
+                } else {
+                    pageParams[type] = existingParams ? `${existingParams}&${pretty.slice(1)}` : pretty;
+                }
+            });
+            ctx.setPageParams(pageParams);
+        }
+    }, [ctx.pinPoint]);
+
+    useEffect(() => {
+        const currentMenu = items.find((item) => isSelectedMenuItem(item));
+        if (currentMenu) {
+            navigateToUrl(currentMenu);
+        }
+    }, [ctx.pageParams, menuInfo]);
+
+    useEffect(() => {
+        // now this case only for login/logout
+        if (ctx.prevPageUrl?.active) {
+            const currentMenu = items.find((item) => item.url === ctx.prevPageUrl.url.pathname);
+            if (currentMenu) {
+                navigateToUrl(currentMenu);
+            } else {
+                // if the menu not found, navigate to the main page
+                navigate(ctx.prevPageUrl.url.pathname + location.hash);
+            }
+        }
+    }, [ctx.prevPageUrl]);
+
+    function navigateToUrl(menu) {
+        if (menu.type === OBJECT_TYPE_NAVIGATION_TRACK) {
+            // special case for Navigation due to lazy-loading providers
+            if (ctx.pageParams[menu.type] !== undefined) {
+                navigate(menu.url + ctx.pageParams[menu.type] + location.hash);
+            } else if (!ctx.routeObject.isReady()) {
+                navigate(menu.url + window.location.search + location.hash);
+            } else {
+                navigate(menu.url + location.hash);
+            }
+        } else {
+            // all other cases
+            if (ctx.pageParams[menu.type] !== undefined) {
+                navigate(menu.url + ctx.pageParams[menu.type] + location.hash);
+            } else {
+                navigate(menu.url + location.hash);
+            }
+        }
+    }
 
     return (
         <Box
@@ -314,6 +420,7 @@ export default function MainMenu({
                 >
                     <Toolbar />
                     <MenuItem
+                        id={'se-login-button'}
                         key={'Profile'}
                         sx={{
                             minHeight: 'var(--profile-menu-button-height)',
@@ -384,7 +491,7 @@ export default function MainMenu({
                                         id={item.id}
                                         key={index}
                                         className={setMenuStyles(item)}
-                                        onClick={() => selectMenu(item)}
+                                        onClick={() => selectMenu({ item })}
                                     >
                                         <ListItemButton
                                             className={setMenuIconStyles(item)}

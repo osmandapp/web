@@ -55,7 +55,13 @@ export default function ExploreMenu() {
         <>
             <AppBar position="static" className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
-                    <IconButton variant="contained" type="button" className={styles.closeIcon} onClick={close}>
+                    <IconButton
+                        id={'se-explore-menu-close'}
+                        variant="contained"
+                        type="button"
+                        className={styles.closeIcon}
+                        onClick={close}
+                    >
                         <CloseIcon />
                     </IconButton>
                     <Typography id="se-explore-menu-name" component="div" className={headerStyles.title}>

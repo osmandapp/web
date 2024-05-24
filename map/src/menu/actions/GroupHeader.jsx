@@ -121,6 +121,7 @@ export default function GroupHeader({
                     ) : (
                         <IconButton
                             variant="contained"
+                            id="se-close-folder-button"
                             type="button"
                             className={styles.appBarIcon}
                             onClick={() => closeHeader({ ctx })}

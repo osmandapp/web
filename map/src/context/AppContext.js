@@ -245,6 +245,10 @@ export const AppContextProvider = (props) => {
     const [openMenu, setOpenMenu] = useState(null);
     const [openContextMenu, setOpenContextMenu] = useState(false);
 
+    //pages
+    const [prevPageUrl, setPrevPageUrl] = useState(null);
+    const [pageParams, setPageParams] = useState({});
+
     const searchParams = new URLSearchParams(window.location.search);
     // weather
     const [weatherLayers, setWeatherLayers] = useState(WeatherManager.getLayers());
@@ -556,6 +560,10 @@ export const AppContextProvider = (props) => {
                 setOpenMenu,
                 openContextMenu,
                 setOpenContextMenu,
+                prevPageUrl,
+                setPrevPageUrl,
+                pageParams,
+                setPageParams,
             }}
         >
             {props.children}
