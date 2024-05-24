@@ -4,7 +4,6 @@ import actionFinish from '../actions/actionFinish.mjs';
 import { assert, clickBy, clickOnMapCenter, getUrl, waitBy } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 
-const EXPLORE_URL = 'search/';
 const CONFIGURE_URL = 'configure/';
 const WEATHER_URL = 'weather/';
 const TRACKS_URL = 'mydata/tracks/';
