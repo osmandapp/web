@@ -55,6 +55,7 @@ import {
     EXPLORE_URL,
     FAVORITES_URL,
     LOGIN_URL,
+    MAIN_PAGE_TYPE,
     MAIN_URL,
     MENU_INFO_CLOSE_SIZE,
     MENU_INFO_OPEN_SIZE,
@@ -93,8 +94,6 @@ export default function MainMenu({
     const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
     const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
     const Z_INDEX_OPEN_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK + 1;
-
-    const MAIN_PAGE_TYPE = 'main';
 
     const handleDrawer = () => {
         setOpenMainMenu(!openMainMenu);

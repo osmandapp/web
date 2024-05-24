@@ -10,6 +10,7 @@ import HeaderMenu from './header/HeaderMenu';
 import {
     MAIN_MENU_MIN_SIZE,
     MAIN_MENU_OPEN_SIZE,
+    MAIN_PAGE_TYPE,
     MAIN_URL,
     MENU_INFO_CLOSE_SIZE,
     MENU_INFO_OPEN_SIZE,
@@ -53,7 +54,11 @@ const GlobalFrame = () => {
                 setMenuInfo(null);
             }
             if (location.pathname !== MAIN_URL) {
-                navigate(MAIN_URL + location.hash);
+                if (ctx.pageParams[MAIN_PAGE_TYPE] !== undefined) {
+                    navigate(MAIN_URL + ctx.pageParams[MAIN_PAGE_TYPE] + location.hash);
+                } else {
+                    navigate(MAIN_URL + location.hash);
+                }
             }
         }
     }, [ctx.infoBlockWidth]);
