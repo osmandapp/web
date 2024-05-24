@@ -94,6 +94,8 @@ export default function MainMenu({
     const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
     const Z_INDEX_OPEN_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK + 1;
 
+    const MAIN_PAGE_TYPE = 'main';
+
     const handleDrawer = () => {
         setOpenMainMenu(!openMainMenu);
     };
@@ -341,21 +343,32 @@ export default function MainMenu({
 
             items.forEach((item) => {
                 const type = item.type;
-                const existingParams = pageParams[type] || '';
-                if (existingParams.match(pinRegex)) {
-                    pageParams[type] = existingParams.replace(pinRegex, newPin);
-                } else {
-                    pageParams[type] = existingParams ? `${existingParams}&${pretty.slice(1)}` : pretty;
-                }
+                pageParams[type] = addParamsToUrl(pageParams, type, pinRegex, newPin, pretty);
             });
+            // case for main page
+            if (location.pathname === MAIN_URL) {
+                pageParams[MAIN_PAGE_TYPE] = addParamsToUrl(pageParams, MAIN_PAGE_TYPE, pinRegex, newPin, pretty);
+            }
+
             ctx.setPageParams(pageParams);
         }
     }, [ctx.pinPoint]);
 
+    function addParamsToUrl(pageParams, type, pinRegex, newPin, pretty) {
+        const existingParams = pageParams[type] || '';
+        if (existingParams.match(pinRegex)) {
+            return existingParams.replace(pinRegex, newPin);
+        } else {
+            return existingParams ? `${existingParams}&${pretty.slice(1)}` : pretty;
+        }
+    }
+
     useEffect(() => {
         const currentMenu = items.find((item) => isSelectedMenuItem(item));
         if (currentMenu) {
-            navigateToUrl(currentMenu);
+            navigateToUrl({ menu: currentMenu });
+        } else if (location.pathname === MAIN_URL) {
+            navigateToUrl({ isMain: true });
         }
     }, [ctx.pageParams, menuInfo]);
 
@@ -364,30 +377,38 @@ export default function MainMenu({
         if (ctx.prevPageUrl?.active) {
             const currentMenu = items.find((item) => item.url === ctx.prevPageUrl.url.pathname);
             if (currentMenu) {
-                navigateToUrl(currentMenu);
+                navigateToUrl({ menu: currentMenu });
             } else {
                 // if the menu not found, navigate to the main page
-                navigate(ctx.prevPageUrl.url.pathname + location.hash);
+                navigateToUrl({ isMain: true });
             }
         }
     }, [ctx.prevPageUrl]);
 
-    function navigateToUrl(menu) {
-        if (menu.type === OBJECT_TYPE_NAVIGATION_TRACK) {
-            // special case for Navigation due to lazy-loading providers
-            if (ctx.pageParams[menu.type] !== undefined) {
-                navigate(menu.url + ctx.pageParams[menu.type] + location.hash);
-            } else if (!ctx.routeObject.isReady()) {
-                navigate(menu.url + window.location.search + location.hash);
+    function navigateToUrl({ menu = null, isMain = false }) {
+        if (isMain) {
+            if (ctx.pageParams[MAIN_PAGE_TYPE] !== undefined) {
+                navigate(MAIN_URL + ctx.pageParams[MAIN_PAGE_TYPE] + location.hash);
             } else {
-                navigate(menu.url + location.hash);
+                navigate(MAIN_URL + location.hash);
             }
-        } else {
-            // all other cases
-            if (ctx.pageParams[menu.type] !== undefined) {
-                navigate(menu.url + ctx.pageParams[menu.type] + location.hash);
+        } else if (menu) {
+            if (menu.type === OBJECT_TYPE_NAVIGATION_TRACK) {
+                // special case for Navigation due to lazy-loading providers
+                if (ctx.pageParams[menu.type] !== undefined) {
+                    navigate(menu.url + ctx.pageParams[menu.type] + location.hash);
+                } else if (!ctx.routeObject.isReady()) {
+                    navigate(menu.url + window.location.search + location.hash);
+                } else {
+                    navigate(menu.url + location.hash);
+                }
             } else {
-                navigate(menu.url + location.hash);
+                // all other cases
+                if (ctx.pageParams[menu.type] !== undefined) {
+                    navigate(menu.url + ctx.pageParams[menu.type] + location.hash);
+                } else {
+                    navigate(menu.url + location.hash);
+                }
             }
         }
     }
