@@ -22,104 +22,104 @@ export default async function test() {
     // login
     await clickBy(By.id('se-login-button'));
     url = await getUrl();
-    assert(url.includes(LOGIN_URL));
+    await assert(url.includes(LOGIN_URL));
     await waitBy(By.id('se-cancel-login'));
     await clickBy(By.id('se-cancel-login'));
     url = await getUrl();
-    assert(!url.includes(LOGIN_URL));
+    await assert(!url.includes(LOGIN_URL));
 
     // explore
     await clickBy(By.id('se-show-menu-explore'));
     url = await getUrl();
-    assert(url.includes(EXPLORE_URL));
+    await assert(url.includes(EXPLORE_URL));
     await waitBy(By.id('se-explore-menu-close'));
     await clickBy(By.id('se-explore-menu-close'));
     url = await getUrl();
-    assert(!url.includes(EXPLORE_URL));
+    await assert(!url.includes(EXPLORE_URL));
 
     // configure
     await clickBy(By.id('se-show-menu-configuremap'));
     url = await getUrl();
-    assert(url.includes(CONFIGURE_URL));
+    await assert(url.includes(CONFIGURE_URL));
     await waitBy(By.id('se-configure-map-menu-close'));
     await clickBy(By.id('se-configure-map-menu-close'));
     url = await getUrl();
-    assert(!url.includes(CONFIGURE_URL));
+    await assert(!url.includes(CONFIGURE_URL));
 
     // weather
     await clickBy(By.id('se-show-menu-weather'));
     url = await getUrl();
-    assert(url.includes(WEATHER_URL));
+    await assert(url.includes(WEATHER_URL));
     await waitBy(By.id('se-weather-close'));
     await clickBy(By.id('se-weather-close'));
     url = await getUrl();
-    assert(!url.includes(WEATHER_URL));
+    await assert(!url.includes(WEATHER_URL));
 
     // tracks
     await clickBy(By.id('se-show-menu-tracks'));
     url = await getUrl();
-    assert(url.includes(TRACKS_URL));
+    await assert(url.includes(TRACKS_URL));
     await waitBy(By.id('se-close-folder-button'));
     await clickBy(By.id('se-close-folder-button'));
     url = await getUrl();
-    assert(!url.includes(TRACKS_URL));
+    await assert(!url.includes(TRACKS_URL));
 
     // favorites
     await clickBy(By.id('se-show-menu-favorites'));
     url = await getUrl();
-    assert(url.includes(FAVORITES_URL));
+    await assert(url.includes(FAVORITES_URL));
     await waitBy(By.id('se-close-folder-button'));
     await clickBy(By.id('se-close-folder-button'));
     url = await getUrl();
-    assert(!url.includes(FAVORITES_URL));
+    await assert(!url.includes(FAVORITES_URL));
 
     // navigation
     await clickBy(By.id('se-show-menu-navigation'));
     url = await getUrl();
-    assert(url.includes(NAVIGATE_URL));
+    await assert(url.includes(NAVIGATE_URL));
     await clickBy(By.id('se-show-menu-navigation'));
     url = await getUrl();
-    assert(!url.includes(NAVIGATE_URL));
+    await assert(!url.includes(NAVIGATE_URL));
 
     // plan
     await clickBy(By.id('se-show-menu-planroute'));
     url = await getUrl();
-    assert(url.includes(PLANROUTE_URL));
+    await assert(url.includes(PLANROUTE_URL));
     await clickBy(By.id('se-show-menu-planroute'));
     url = await getUrl();
-    assert(!url.includes(PLANROUTE_URL));
+    await assert(!url.includes(PLANROUTE_URL));
 
     // settings
     await clickBy(By.id('se-show-menu-settings'));
     url = await getUrl();
-    assert(url.includes(SETTINGS_URL));
+    await assert(url.includes(SETTINGS_URL));
     await clickBy(By.id('se-show-menu-settings'));
     url = await getUrl();
-    assert(!url.includes(SETTINGS_URL));
+    await assert(!url.includes(SETTINGS_URL));
 
     // check pin
     await clickOnMapCenter();
     await waitBy(By.id('se-context-menu'));
     await clickBy(By.id('se-add-pin-action'));
     url = await getUrl();
-    assert(url.includes('pin'));
+    await assert(url.includes('pin'));
     await clickBy(By.id('se-show-menu-navigation'));
     url = await getUrl();
-    assert(url.includes('pin'));
+    await assert(url.includes('pin'));
 
     // check navigation
     await clickOnMapCenter();
     await waitBy(By.id('se-context-menu'));
     await clickBy(By.id('se-direction-action-from'));
     url = await getUrl();
-    assert(url.includes('pin'));
-    assert(url.includes(NAVIGATE_URL));
-    assert(url.includes('start'));
+    await assert(url.includes('pin'));
+    await assert(url.includes(NAVIGATE_URL));
+    await assert(url.includes('start'));
     await clickBy(By.id('se-show-menu-navigation'));
     url = await getUrl();
-    assert(url.includes('pin'));
-    assert(!url.includes(NAVIGATE_URL));
-    assert(!url.includes('start'));
+    await assert(url.includes('pin'));
+    await assert(!url.includes(NAVIGATE_URL));
+    await assert(!url.includes('start'));
 
     await actionFinish();
 }
