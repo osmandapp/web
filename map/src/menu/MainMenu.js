@@ -440,7 +440,7 @@ export default function MainMenu({
                 >
                     <Toolbar />
                     <MenuItem
-                        id={'se-login-button'}
+                        id={'se-open-login-button'}
                         key={'Profile'}
                         sx={{
                             minHeight: 'var(--profile-menu-button-height)',
