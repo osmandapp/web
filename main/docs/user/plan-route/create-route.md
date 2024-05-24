@@ -174,7 +174,7 @@ The *Straight Line* is needed and will be used for areas not covered by routing 
 - [*<Translate android="true" ids="shared_string_save_changes"/>*](#save-changes) - If it is a new track without linking to the existing one, the *Save as new track* menu opens. When you add new segments to an opened or imported track, the notification about saving the GPS file to the storage appears, after which you can continue to create the next segment.
 - [*<Translate android="true" ids="save_as_new_track"/>*](#save-as-new-track) - Saves your route like GPX track.
 - [*<Translate android="true" ids="add_to_a_track"/>*](#add-to-a-track) - Add your route to a track from your track folder and save the new track. 
-- [*<Translate android="true" ids="shared_string_navigation"/>*](#navigation) - Starts navigation from your position to the finish point using a drawn route.
+- [*<Translate android="true" ids="shared_string_navigation"/>*](#navigation-with-plan-a-route) - Starts navigation from your position to the finish point using a drawn route.
 - *<Translate android="true" ids="reverse_route"/>* - You swap the Start point of the route and the last added point. The route segment settings do not change when Reverse is applied. 
 - [*<Translate android="true" ids="attach_to_the_roads"/>*](#attach-to-the-roads) - Creates an approximate route. Each point on the track is matched to the nearest permitted road on the map according to the selected profile and threshold distance.
 - [*<Translate android="true" ids="shared_string_gps_filter"/>*](../map/track-context-menu.md#gps-filter) - You can filter out route points that do not match the selected routing type, delete unnecessary data or correct inaccurate data. GPS filter will only work if the routing type is specified as *Straight Line*. <!-- Android only(No!!!) with Straight line routing. **?How to use?** **When are additional details needed to calculate a route when switching to another type of routing?** -->
@@ -490,21 +490,48 @@ The route line in the *Plan a route* tool is displayed as an already configured 
 
 The *Plan a route* tool provides a feature such as starting navigation directly during the planning process. To do this, you need to open the [Options](#menu-options) menu and select ***Navigation***.    
 
-Navigation opens the [Navigate by track](../navigation/setup/gpx-navigation.md) function with the start from the first point in the list. The track can be from an [existing list or imported](#modify-gpx-track). In this case, its name will correspond to the previously selected one, and the navigation will be built taking into account all the changes made in the current route planning.  
-You can start navigating on the route you have just created. In this case, the name of the route will be in the form of a date, as in the case of a [quick save](#quick-save).  
+- Navigation opens the [Navigate by track](../navigation/setup/gpx-navigation.md) function with the start from the first point in the list. The track can be from an [existing list or imported](#modify-gpx-track). In this case, its name will correspond to the previously selected one, and the navigation will be built taking into account all the changes made in the current route planning.  
 
-You should note that if a route you have created or changed has not been saved, all data will be lost when you close the navigation. To avoid this, you can save the route by tapping it in the navigation field and selecting edit.
+- You can start navigating on the route you have just created. In this case, the name of the route will be in the form of a date, as in the case of a [quick save](#quick-save).  
+
+- You should note that if a route you have created or changed has not been saved, all data will be lost when you close the navigation. To avoid this, you can save the route by tapping it in the navigation field and selecting edit.
   
 
 ### Graph
 
-![Plan a route android](@site/static/img/plan-route/plan_route_graph_1_andr.png)  ![Plan a route android](@site/static/img/plan-route/plan_route_graph_4_andr.png)  
+<Tabs groupId="operating-systems">
 
-Detailed route information in [Altitude/Slope graph](../navigation/setup/route-details.md#the-graph) format and [Road attributes](../navigation/setup/route-details.md#road-attributes) can be viewed in the *Graph tab* in the Android version of the OsmAnd app. To view this information in the iOS version of the app, use the menu *[Options](#menu-options) → Navigation → Details*.  
+<TabItem value="android" label="Android">
 
-To get elevation data when you open or import a track, you may need to select a route calculation mode.  
-- [*Use nearby roads*](#use-nearby-roads). The track will be attached to roads using offline maps and the track geometry can be changed.  
-- [**Calculate offline**](../map/track-context-menu.md#calculate-elevation-offline) (*Android only*). Calculate altitude offline based on Terrain map (3D) data. The difference between the altitude recorded by your device can be used for altitude correction.  
+![Plan a route android](@site/static/img/plan-route/plan_route_graph_5_andr.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios.png)
+
+</TabItem>
+
+</Tabs>   
+
+During route planning, the [graph](../navigation/setup/route-details.md#elevation-graph) displays route altitude and slope percentage information, plus you can tap anywhere on the graph to display a pointer with particular data.  
+
+- For **Android**, the graph is displayed in the *Graph* tab when creating or opening a track, and when [*Navigation*](#navigation-with-plan-a-route) using *Plan a route*.
+- For **iOS**, the graph is only available through the *[Options](#menu-options) → Navigation* menu.
+
+When calculating a route for navigation in *Plan a route*, you can find out additional track information such as [*Elevation info*](../navigation/setup/route-details.md#elevation-info) and [*Road attributes*](../navigation/setup/route-details.md#road-attributes), and use the [*Analyze on map*](../navigation/setup/route-details.md#analyse-on-map) tool. Tap the *Details* button below the graph.  
+
+### Get elevation data
+
+<InfoAndroidOnly />
+
+![Plan a route android](@site/static/img/plan-route/plan_route_graph_4_andr.png)  
+
+If [*Elevation data*](../map/track-context-menu.md#calculating-missing-elevation) was missed when opening or importing a track, you can use one of the route calculation modes.
+
+- [*Use nearby roads*](#use-nearby-roads). This mode uses previously loaded maps and elevation data to find the nearest roads to build a track. The geometry of the track can be adjusted.  
+- [*Use Terrain maps*](../map/track-context-menu.md#calculating-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Mode calculates altitude based on Terrain map data (3D). The difference between the altitude recorded by your device can be used for elevation correction.  The geometry of the track remains unchanged.
 
 
 ### Use nearby roads
@@ -526,7 +553,8 @@ To get elevation data when you open or import a track, you may need to select a 
 </Tabs>  
 
 When you open a track in *Plan a route*, if the parameters with which this route was recorded or created do not match the current ones, the tool can offer you two options to recalculate the route. There are continue to connect the points with a *straight line* or *attach it* to the nearest available road.  
-The current parameter status, the route type shown by an icon in the screen's bottom left corner, will be undefined and indicated by a *question mark*. It is the one you need to press to access these settings.  
+
+The current parameter status, the route type shown by an icon in the screen's bottom left corner, will be undefined and indicated by a *question mark*. It is the one you need to tap to access these settings.  
 
 ![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route_attach_andr.png)  
 
@@ -538,6 +566,6 @@ Additional conditions for opening the Attach to roads menu:
 - *Attach to the roads* may not be activated if the *Plan a route* tool has already automatically linked GPX track points to the nearest road points.
 
 :::note
-For more information on attaching track to the road, see the Navigation section, the article [Navigate by track](../navigation/setup/gpx-navigation.md#follow-track-menu).
+For more information on attaching track to the road, see the Navigation section, the article [*Navigate by track*](../navigation/setup/gpx-navigation.md#follow-track-menu).
 :::
 

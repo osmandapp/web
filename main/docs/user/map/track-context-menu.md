@@ -251,7 +251,7 @@ This tab can be visible only on recorded tracks (points of this track type have 
 ![Track graph altitude Android](@site/static/img/personal/tracks/track_graph_altitude_android.png)
 
 If track is missing elevation information, it's possible to add it:
-_Calculate elevation_ button → [_Use nearby roads_](../plan-route/create-route.md#use-nearby-roads) (<Translate android="true" ids="use_nearby_roads_summary"/>) or [_Use Terrain maps_](#calculate-elevation-offline) (<Translate android="true" ids="use_terrain_maps_summary"/>).
+*Calculate elevation* button → [*Use nearby roads*](../plan-route/create-route.md#use-nearby-roads) (<Translate android="true" ids="use_nearby_roads_summary"/>) or [*Use Terrain maps*](#calculating-missing-elevation) (<Translate android="true" ids="use_terrain_maps_summary"/>).
 
 </TabItem>
 
@@ -269,7 +269,7 @@ _Calculate elevation_ button → [_Use nearby roads_](../plan-route/create-route
 - *<Translate android="true" ids="altitude_descent"/>* - cumulative altitude loss along the track. 
 
 
-### Calculate elevation offline
+### Calculating missing elevation
 
 <InfoAndroidOnly />
 

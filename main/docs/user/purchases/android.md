@@ -126,7 +126,7 @@ At the moment, the Pro subscription has the following features:
 | [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map. |
 | [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changing the color and width of the route line during navigation. |
 | [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | Shows your location on the Elevation graph of the navigation route with additional info.  |
-| [Elevation correction(offline)](../map/track-context-menu.md#calculate-elevation-offline) | Allows you to calculate an altitude graph for your track ([Terrain map](../plugins/contour-lines.md#how-to-download) required for chosen region). |
+| [Elevation correction(offline)](../map/track-context-menu.md#calculating-missing-elevation) | Allows you to calculate an altitude graph for your track ([Terrain map](../plugins/contour-lines.md#how-to-download) required for chosen region). |
 
 
 ### How to buy
