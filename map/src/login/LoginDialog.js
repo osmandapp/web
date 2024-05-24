@@ -16,7 +16,7 @@ import { useWindowSize } from '../util/hooks/useWindowSize';
 import { makeStyles } from '@material-ui/core/styles';
 import { FREE_ACCOUNT, getAccountInfo } from '../manager/LoginManager';
 import { useTranslation } from 'react-i18next';
-import { DELETE_ACCOUNT_URL, MAIN_URL } from '../manager/GlobalManager';
+import { DELETE_ACCOUNT_URL, MAIN_URL_WITH_SLASH } from '../manager/GlobalManager';
 
 export default function LoginDialog() {
     const ctx = useContext(AppContext);
@@ -58,7 +58,7 @@ export default function LoginDialog() {
         setPwd('');
         setCode('');
         if (ctx.wantDeleteAcc) {
-            navigate(MAIN_URL + '/' + DELETE_ACCOUNT_URL + window.location.search + window.location.hash);
+            navigate(MAIN_URL_WITH_SLASH + DELETE_ACCOUNT_URL + window.location.search + window.location.hash);
         } else {
             ctx.setPrevPageUrl((prevPageUrl) => ({ ...prevPageUrl, active: true }));
         }

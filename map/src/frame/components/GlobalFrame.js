@@ -11,7 +11,7 @@ import {
     MAIN_MENU_MIN_SIZE,
     MAIN_MENU_OPEN_SIZE,
     MAIN_PAGE_TYPE,
-    MAIN_URL,
+    MAIN_URL_WITH_SLASH,
     MENU_INFO_CLOSE_SIZE,
     MENU_INFO_OPEN_SIZE,
 } from '../../manager/GlobalManager';
@@ -53,11 +53,11 @@ const GlobalFrame = () => {
             if (menuInfo !== null) {
                 setMenuInfo(null);
             }
-            if (location.pathname !== MAIN_URL) {
+            if (location.pathname !== MAIN_URL_WITH_SLASH) {
                 if (ctx.pageParams[MAIN_PAGE_TYPE] !== undefined) {
-                    navigate(MAIN_URL + ctx.pageParams[MAIN_PAGE_TYPE] + location.hash);
+                    navigate(MAIN_URL_WITH_SLASH + ctx.pageParams[MAIN_PAGE_TYPE] + location.hash);
                 } else {
-                    navigate(MAIN_URL + location.hash);
+                    navigate(MAIN_URL_WITH_SLASH + location.hash);
                 }
             }
         }

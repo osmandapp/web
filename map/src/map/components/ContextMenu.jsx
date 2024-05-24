@@ -21,7 +21,7 @@ import { ReactComponent as CoordinatesIcon } from '../../assets/icons/ic_action_
 import { ReactComponent as AddPinIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
 import { ReactComponent as ShowRegionsIcon } from '../../assets/icons/ic_action_world_globe.svg';
 import { useTranslation } from 'react-i18next';
-import { LOGIN_URL, MAIN_URL } from '../../manager/GlobalManager';
+import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 
 export default function ContextMenu({ setGeocodingData, setRegionData }) {
     const ctx = useContext(AppContext);
@@ -58,7 +58,7 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
     };
 
     const openLogin = () => {
-        navigate(MAIN_URL + '/' + LOGIN_URL + window.location.search + window.location.hash);
+        navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.search + window.location.hash);
     };
 
     const routeObject = ctx.routeObject;

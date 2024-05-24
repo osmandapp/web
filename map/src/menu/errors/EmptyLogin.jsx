@@ -3,12 +3,12 @@ import styles from './errors.module.css';
 import { ReactComponent as UserAccountIcon } from '../../assets/icons/ic_action_user_account.svg';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { LOGIN_URL, MAIN_URL } from '../../manager/GlobalManager';
+import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 export default function EmptyLogin() {
     const navigate = useNavigate();
     const { t } = useTranslation();
     const openLogin = () => {
-        navigate(MAIN_URL + '/' + LOGIN_URL + window.location.search + window.location.hash);
+        navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.search + window.location.hash);
     };
 
     return (

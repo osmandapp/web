@@ -56,7 +56,7 @@ import {
     FAVORITES_URL,
     LOGIN_URL,
     MAIN_PAGE_TYPE,
-    MAIN_URL,
+    MAIN_URL_WITH_SLASH,
     MENU_INFO_CLOSE_SIZE,
     MENU_INFO_OPEN_SIZE,
     NAVIGATE_URL,
@@ -102,7 +102,7 @@ export default function MainMenu({
     const navigate = useNavigate();
     const openLogin = () => {
         ctx.setPrevPageUrl({ url: location, active: false });
-        navigate(MAIN_URL + '/' + LOGIN_URL + window.location.hash);
+        navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.hash);
     };
 
     useEffect(() => {
@@ -127,7 +127,7 @@ export default function MainMenu({
             type: OBJECT_SEARCH,
             show: ctx.develFeatures && ctx.loginUser,
             id: 'se-show-menu-explore',
-            url: MAIN_URL + '/' + EXPLORE_URL,
+            url: MAIN_URL_WITH_SLASH + EXPLORE_URL,
         },
         {
             name: t('configure_map'),
@@ -136,7 +136,7 @@ export default function MainMenu({
             type: OBJECT_CONFIGURE_MAP,
             show: true,
             id: 'se-show-menu-configuremap',
-            url: MAIN_URL + '/' + CONFIGURE_URL,
+            url: MAIN_URL_WITH_SLASH + CONFIGURE_URL,
         },
         {
             name: t('shared_string_weather'),
@@ -145,7 +145,7 @@ export default function MainMenu({
             type: OBJECT_TYPE_WEATHER,
             show: true,
             id: 'se-show-menu-weather',
-            url: MAIN_URL + '/' + WEATHER_URL,
+            url: MAIN_URL_WITH_SLASH + WEATHER_URL,
         },
         {
             name: t('shared_string_tracks'),
@@ -154,7 +154,7 @@ export default function MainMenu({
             type: OBJECT_TYPE_CLOUD_TRACK,
             show: true,
             id: 'se-show-menu-tracks',
-            url: MAIN_URL + '/' + TRACKS_URL,
+            url: MAIN_URL_WITH_SLASH + TRACKS_URL,
         },
         {
             name: t('shared_string_my_favorites'),
@@ -163,7 +163,7 @@ export default function MainMenu({
             type: OBJECT_TYPE_FAVORITE,
             show: true,
             id: 'se-show-menu-favorites',
-            url: MAIN_URL + '/' + FAVORITES_URL,
+            url: MAIN_URL_WITH_SLASH + FAVORITES_URL,
         },
         {
             name: t('shared_string_navigation'),
@@ -172,7 +172,7 @@ export default function MainMenu({
             type: OBJECT_TYPE_NAVIGATION_TRACK, // shared with OBJECT_TYPE_NAVIGATION_ALONE
             show: true,
             id: 'se-show-menu-navigation',
-            url: MAIN_URL + '/' + NAVIGATE_URL,
+            url: MAIN_URL_WITH_SLASH + NAVIGATE_URL,
         },
         {
             name: t('plan_route'),
@@ -181,7 +181,7 @@ export default function MainMenu({
             type: OBJECT_TYPE_LOCAL_TRACK,
             show: true,
             id: 'se-show-menu-planroute',
-            url: MAIN_URL + '/' + PLANROUTE_URL,
+            url: MAIN_URL_WITH_SLASH + PLANROUTE_URL,
         },
         {
             name: 'Poi',
@@ -199,7 +199,7 @@ export default function MainMenu({
             type: OBJECT_GLOBAL_SETTINGS,
             show: true,
             id: 'se-show-menu-settings',
-            url: MAIN_URL + '/' + SETTINGS_URL,
+            url: MAIN_URL_WITH_SLASH + SETTINGS_URL,
         },
     ];
 
@@ -345,7 +345,7 @@ export default function MainMenu({
                 pageParams[type] = addParamsToUrl(pageParams, type, pinRegex, newPin, pretty);
             });
             // case for main page
-            if (location.pathname === MAIN_URL) {
+            if (location.pathname === MAIN_URL_WITH_SLASH) {
                 pageParams[MAIN_PAGE_TYPE] = addParamsToUrl(pageParams, MAIN_PAGE_TYPE, pinRegex, newPin, pretty);
             }
 
@@ -366,7 +366,7 @@ export default function MainMenu({
         const currentMenu = items.find((item) => isSelectedMenuItem(item));
         if (currentMenu) {
             navigateToUrl({ menu: currentMenu });
-        } else if (location.pathname === MAIN_URL) {
+        } else if (location.pathname === MAIN_URL_WITH_SLASH) {
             navigateToUrl({ isMain: true });
         }
     }, [ctx.pageParams, menuInfo]);
@@ -387,9 +387,9 @@ export default function MainMenu({
     function navigateToUrl({ menu = null, isMain = false }) {
         if (isMain) {
             if (ctx.pageParams[MAIN_PAGE_TYPE] !== undefined) {
-                navigate(MAIN_URL + ctx.pageParams[MAIN_PAGE_TYPE] + location.hash);
+                navigate(MAIN_URL_WITH_SLASH + ctx.pageParams[MAIN_PAGE_TYPE] + location.hash);
             } else {
-                navigate(MAIN_URL + location.hash);
+                navigate(MAIN_URL_WITH_SLASH + location.hash);
             }
         } else if (menu) {
             if (menu.type === OBJECT_TYPE_NAVIGATION_TRACK) {
