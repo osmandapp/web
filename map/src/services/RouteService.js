@@ -6,6 +6,7 @@ import AppContext, {
     OBJECT_TYPE_NAVIGATION_ALONE,
 } from '../context/AppContext';
 import TracksManager, { prepareNavigationTrack, getApproximatePoints } from '../manager/track/TracksManager';
+import { createUrlParams } from '../util/Utils';
 
 export function RouteService() {
     const ctx = useContext(AppContext);
@@ -97,7 +98,7 @@ export function RouteService() {
                 setRouteQueryStringParams(obj);
             }
         }
-    }, [pinPoint, routeObject.getRouteEffectDeps(), routeObject.getEffectDeps()]);
+    }, [routeObject.getRouteEffectDeps(), routeObject.getEffectDeps()]);
 
     // navigate to query-string
     useEffect(() => {
@@ -105,14 +106,10 @@ export function RouteService() {
             if (Object.keys(routeQueryStringParams).length === 0) {
                 setRouteQueryStringCleanup(false); // only once
             }
-            const pretty = new URLSearchParams(Object.entries(routeQueryStringParams))
-                .toString()
-                .replaceAll('%2C', ',')
-                .replaceAll('%3A', ':')
-                .replaceAll('%3B', ';');
-            let pageParams = ctx.pageParams;
-            pageParams[OBJECT_TYPE_NAVIGATION_TRACK] = '?' + pretty;
-            ctx.setPageParams({ ...pageParams });
+            const pretty = createUrlParams(routeQueryStringParams);
+            const pageParams = { ...ctx.pageParams };
+            pageParams[OBJECT_TYPE_NAVIGATION_TRACK] = pretty;
+            ctx.setPageParams(pageParams);
         }
     }, [routeQueryStringParams]);
 

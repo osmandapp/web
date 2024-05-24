@@ -296,6 +296,18 @@ export function areSetsEqual(set1, set2) {
     return true;
 }
 
+export function createUrlParams(params) {
+    let pretty = new URLSearchParams(Object.entries(params))
+        .toString()
+        .replaceAll('%2C', ',')
+        .replaceAll('%3A', ':')
+        .replaceAll('%3B', ';');
+    if (Object.keys(pretty).length > 0) {
+        pretty = '?' + pretty;
+    }
+    return pretty;
+}
+
 const Utils = {
     getFileData,
     getDistance,

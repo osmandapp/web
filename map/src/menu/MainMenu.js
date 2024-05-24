@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import {
+    Box,
     ClickAwayListener,
+    Divider,
     Drawer,
     ListItemButton,
     ListItemIcon,
@@ -9,19 +11,18 @@ import {
     SvgIcon,
     Toolbar,
 } from '@mui/material';
-import { Divider, Box } from '@mui/material';
 import { Menu, Person } from '@mui/icons-material';
 import AppContext, {
     OBJECT_CONFIGURE_MAP,
+    OBJECT_GLOBAL_SETTINGS,
+    OBJECT_SEARCH,
     OBJECT_TYPE_CLOUD_TRACK,
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_LOCAL_TRACK,
-    OBJECT_TYPE_NAVIGATION_TRACK,
     OBJECT_TYPE_NAVIGATION_ALONE,
-    OBJECT_TYPE_WEATHER,
+    OBJECT_TYPE_NAVIGATION_TRACK,
     OBJECT_TYPE_POI,
-    OBJECT_GLOBAL_SETTINGS,
-    OBJECT_SEARCH,
+    OBJECT_TYPE_WEATHER,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import ConfigureMap from './configuremap/ConfigureMap';
@@ -63,6 +64,7 @@ import {
     TRACKS_URL,
     WEATHER_URL,
 } from '../manager/GlobalManager';
+import { createUrlParams } from '../util/Utils';
 
 export default function MainMenu({
     size,
@@ -325,6 +327,28 @@ export default function MainMenu({
             ctx.setOpenMenu(null);
         }
     }, [ctx.openMenu]);
+
+    useEffect(() => {
+        const pinPoint = ctx.pinPoint;
+        if (pinPoint) {
+            const pin = `${pinPoint.lat.toFixed(6)},${pinPoint.lng.toFixed(6)}`;
+            const pretty = createUrlParams({ pin });
+            const pageParams = { ...ctx.pageParams };
+            const pinRegex = /pin=([^&]*)/;
+            const newPin = pretty.match(pinRegex)[0];
+
+            items.forEach((item) => {
+                const type = item.type;
+                const existingParams = pageParams[type] || '';
+                if (existingParams.match(pinRegex)) {
+                    pageParams[type] = existingParams.replace(pinRegex, newPin);
+                } else {
+                    pageParams[type] = existingParams ? `${existingParams}&${pretty.slice(1)}` : pretty;
+                }
+            });
+            ctx.setPageParams(pageParams);
+        }
+    }, [ctx.pinPoint]);
 
     useEffect(() => {
         const currentMenu = items.find((item) => isSelectedMenuItem(item));
