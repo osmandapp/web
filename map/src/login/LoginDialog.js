@@ -222,7 +222,9 @@ export default function LoginDialog() {
                     >
                         Dangerous area
                     </Link>
-                    <Button onClick={handleClose}>Close</Button>
+                    <Button id="se-cancel-login" onClick={handleClose}>
+                        Close
+                    </Button>
                     <Button
                         onClick={() =>
                             AccountManager.userLogout({

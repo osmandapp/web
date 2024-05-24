@@ -328,6 +328,8 @@ export default function MainMenu({
         }
     }, [ctx.openMenu]);
 
+    // Note: When adding new parameters, it may be necessary to refactor pageParams
+    // to store a list of parameters as a map instead of a string for better flexibility.
     useEffect(() => {
         const pinPoint = ctx.pinPoint;
         if (pinPoint) {
@@ -418,6 +420,7 @@ export default function MainMenu({
                 >
                     <Toolbar />
                     <MenuItem
+                        id={'se-login-button'}
                         key={'Profile'}
                         sx={{
                             minHeight: 'var(--profile-menu-button-height)',
