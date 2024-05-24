@@ -339,7 +339,7 @@ Available actions:
 - **Copy from another profile**. This feature allows you to quickly import settings from another profile, select the required ones from the list, and copy. 
 
 
-## Buttons and Other
+## Buttons
 
 <Tabs groupId="operating-systems">
 
@@ -347,29 +347,16 @@ Available actions:
 
 ![Widget page](@site/static/img/widgets/buttons_andr.png)  
 
-**Buttons:**
-
 1. **Custom buttons**. Allows you to add a list from [Quick action](../widgets/quick-action.md).
 2. **Default buttons**. It gives you the ability to hide or show buttons on the map.
     - [3D mode](../widgets/map-buttons.md#3d-mode). Appears in the list and is available for setting if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.
     - [Compass](../widgets/map-buttons.md#display-options). Indicates how the map is oriented on the device.  3 views: *Always visible*, *Always hidden*, *Visible if map is rotated*.
-
-**Other**
-
-1. **<Translate android="true" ids="display_position"/>**. Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:
-    - *<Translate android="true" ids="position_on_map_center"/>*. The cursor is always positioned in the center of the screen.
-    - *<Translate android="true" ids="position_on_map_bottom"/>*. *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
-    - *<Translate android="true" ids="shared_string_automatic"/>*. Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
-2. [Distance by tap](../widgets/radius-ruler.md#distance-by-tap-tool). Gives the ability to measure the distance from your position to the selected point.
-3. [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
 ![Widget page](@site/static/img/widgets/buttons_ios.png) 
-
-**Buttons:**
 
 1. [Compass](../widgets/map-buttons.md#display-options). Indicates how the map is oriented on the device.  3 views: *Always visible*, *Always hidden*, *Visible if map is rotated*. 
 2. [3D mode](../widgets/map-buttons.md#3d-mode). Appears in the list and is available for setting if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.   
@@ -380,6 +367,39 @@ Available actions:
 
 </Tabs> 
 
+
+## Other
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Widget page](@site/static/img/widgets/buttons_andr.png)  
+
+1. **[<Translate android="true" ids="display_position"/>](#display-position)**
+2. [Distance by tap](../widgets/radius-ruler.md#distance-by-tap-tool). Gives the ability to measure the distance from your position to the selected point.
+3. [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+<InfoAndroidOnly/>  
+
+</TabItem>
+
+</Tabs> 
+
+#### Display position
+
+![Widget page](@site/static/img/widgets/buttons_other_display_position_andr.png)  
+
+Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:
+- *<Translate android="true" ids="position_on_map_center"/>*. The cursor is always positioned in the center of the screen.
+- *<Translate android="true" ids="position_on_map_bottom"/>*. *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
+- *<Translate android="true" ids="shared_string_automatic"/>*. Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
+
+**NOTE.** A similar option for iOS called [*Location position on screen*](../personal/profiles.md#location-position-on-screen-ios) is located in *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_appearance"/>*.
 
 
 ## Switch profile

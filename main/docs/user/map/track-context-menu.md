@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-The *Track context menu* provides information about the *[Track](../personal/tracks.md)* in both text and [graphic](#altitude--speed-graphs) forms. It allows you to add information, make changes, edit and perform various other actions with the track. You can access *Track context menu* by simply tapping the needed track on the map or using *[My places](../personal/myplaces.md)* menu (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). You may need to open track folder and select the desired track by tapping it.
+The *Track context menu* provides information about the *[Track](../personal/tracks/index.md)* in both text and [graphic](#altitude--speed-graphs) forms. It allows you to add information, make changes, edit and perform various other actions with the track. You can access *Track context menu* by simply tapping the needed track on the map or using *[My places](../personal/myplaces.md)* menu (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). You may need to open track folder and select the desired track by tapping it.
 
 <Tabs groupId="operating-systems">
 
@@ -99,7 +99,7 @@ Buttons panel with the next action: _Show/Hide_ a track on the map, opening [_Ap
 
 - [*Show / hide* buttons](../map/tracks-on-map.md#tracks-in-track-context-menu) allow to anable or disable displaying of a track on the map.
 - *Appearance* - is used to customise the [Appearance](../map/tracks-on-map.md#track-appearance) of your track.
-- *Edit track* (**Android**) - opens the track in *[Plan route tool](../plan-route/create-route.md)* or *Export* (**iOS**) allows [to export a track](../personal/tracks.md#export).
+- *Edit track* (**Android**) - opens the track in *[Plan route tool](../plan-route/create-route.md)* or *Export* (**iOS**) allows [to export a track](../personal/tracks/manage-tracks.md#export).
 - *Directions* - opens the track in *[Navigation](../navigation/setup/gpx-navigation.md#start-gpx-navigation)* mode.
 
 ### Description and info
@@ -207,12 +207,12 @@ Interaction with the graph:
 - *<Translate android="true" ids="shared_string_start_time"/>* This is the exact time when recording of the track starts.
 - *<Translate android="true" ids="shared_string_end_time"/>*. This is the end time of the track recording.
 
-**<Translate android="true" ids="analyze_on_map"/>** button opens [Analyze track menu](../map/tracks-on-map.md#analyze-track-on-map) for the track.
-
-**<Translate android="true" ids="shared_string_options"/>** button opens menu with: 
-- *Edit* opens the track in [Plan route tool](../plan-route/index.md).
-- *Delete* allows to delete chosen track item.
-- *Split interval* opens [Split interval function](#split-interval) for the track.
+**Buttons**:
+- **<Translate android="true" ids="analyze_on_map"/>** button opens [Analyze track menu](../map/tracks-on-map.md#analyze-track-on-map) for the track.
+- **<Translate android="true" ids="shared_string_options"/>** button opens menu with: 
+  - *Edit* opens the track in [Plan route tool](../plan-route/index.md).
+  - *Delete* allows to delete chosen track item.
+  - *Split interval* opens [Split interval function](#split-interval) for the track.
 
 
 ### Speed
@@ -237,10 +237,10 @@ This tab can be visible only on recorded tracks (points of this track type have 
 
 </Tabs>
 
-- *<Translate android="true" ids="average_speed"/>* .
-- *<Translate android="true" ids="max_speed"/>*.
-- *<Translate android="true" ids="moving_time"/>*.
-- *<Translate android="true" ids="distance_moving"/>*.
+- *<Translate android="true" ids="average_speed"/>* - means average speed during the trip.
+- *<Translate android="true" ids="max_speed"/>* - shows max.sped during the trip.
+- *<Translate android="true" ids="moving_time"/>* - means the sum time during trip moving only.
+- *<Translate android="true" ids="distance_moving"/>* - shows corrected distance of the trip.
 
 ### Altitude
 
@@ -248,10 +248,10 @@ This tab can be visible only on recorded tracks (points of this track type have 
 
 <TabItem value="android" label="Android">
 
-![Track graph altitude Android](@site/static/img/personal/tracks/track_graph_altitude_android.png) ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation.png) 
+![Track graph altitude Android](@site/static/img/personal/tracks/track_graph_altitude_android.png)
 
 If track is missing elevation information, it's possible to add it:
-_Calculate elevation_ button → [_Attach to the roads_](../navigation/setup/gpx-navigation.md#attach-to-roads) or [_Calculate offline_](#calculate-elevation-offline).
+_Calculate elevation_ button → [_Use nearby roads_](../plan-route/create-route.md#use-nearby-roads) (<Translate android="true" ids="use_nearby_roads_summary"/>) or [_Use Terrain maps_](#calculate-elevation-offline) (<Translate android="true" ids="use_terrain_maps_summary"/>).
 
 </TabItem>
 
@@ -266,7 +266,8 @@ _Calculate elevation_ button → [_Attach to the roads_](../navigation/setup/gpx
 - *<Translate android="true" ids="average_altitude"/>* - mean altitude above sea level along the track.
 - *<Translate android="true" ids="altitude_range"/>* - the highest and lowest altitude recorded along the track.
 - *<Translate android="true" ids="altitude_ascent"/>* - cumulative altitude gain along the track.
-- *<Translate android="true" ids="altitude_descent"/>* - cumulative altitude loss along the track.  
+- *<Translate android="true" ids="altitude_descent"/>* - cumulative altitude loss along the track. 
+
 
 ### Calculate elevation offline
 
@@ -278,11 +279,10 @@ Calculate elevation offline feature is only available for [**OsmAnd Pro subscrib
 
 This feature allows you to calculate elevation profile for GPX track offline for any terrain between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../plugins/contour-lines.md#how-to-download). *Terrain maps (3D) should be previously downloaded*.
 
-1. Purchase [OsmAnd Pro subscription](../purchases/android.md#pro-features).
-2. Download [Terrain maps(3D)](../plugins/contour-lines.md#download-maps) for the required region.
-3. If the track does not contain any altitude data, go to the track context menu (*Track Context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,get_altitude_data"/>*), select *Use Terrain maps*, and after the calculation you will get a track graph based on the terrain data.  
+1. Download [Terrain maps(3D)](../plugins/contour-lines.md#download-maps) for the required region.
+2. If the track does not contain any altitude data, go to the track context menu (*Track Context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,get_altitude_data"/>*), select *Use Terrain maps*, and after the calculation you will get a track graph based on the terrain data.  
   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
-4. If you are creating a route with the [*Plan a route*](../plan-route/create-route.md#graph) tool using the *Straight line* method and there is no elevation data on the graph, you need to:
+3. If you are creating a route with the [*Plan a route*](../plan-route/create-route.md#graph) tool using the *Straight line* method and there is no elevation data on the graph, you need to:
     - Tap *Get elevation data*, then select *Use Terrain maps*.
     - After the calculation, you will get a complete Altitude/Slope graph of your route based on terrain data.  
     
@@ -315,7 +315,7 @@ In this _Points_ tab:
 
 ### Add Waypoint to a track
 
-Waypoints can be added to the currently recorded track or to any track from your track collection [*My Places → Tracks list*](../personal/tracks.md):
+Waypoints can be added to the currently recorded track or to any track from your track collection [*My Places → Tracks list*](../personal/tracks/index.md):
 
 - Using the [Map Context Menu](../map/map-context-menu.md#-add--edit--track-waypoint). Waypoints are automatically displayed if the selected track is enabled on the map. To create a waypoint use a [long-tap](../map/map-context-menu.md#select-any-point-long-tap) on the map at any chosen location. In the opened [Map Context Menu](../map/map-context-menu.md#-add--edit--track-waypoint) you can set information about the waypoint. 
 - Using [_Add Waypoint_](#add--delete-buttons) button of the Track Context menu.
@@ -454,7 +454,7 @@ To change the Waypoint description, you can go one of the following ways:
   
 1. Find the required track in the *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab* list.
 2. Tap the track on the map, if it is included in the [list of visible](#show-tracks-on-map).
-3. Tap the required waypoint if it is [visible](../personal/tracks.md#show-tracks-on-map) on the map.  
+3. Tap the required waypoint if it is [visible](../personal/tracks/manage-tracks.md#show-tracks-on-map) on the map.  
 
     Then in the [Tracks Context menu](../map/track-context-menu.md) tap *Points*, the field of the required folder with available waypoints and the Waypoint you are looking for. Select menu *Actions →* **Edit GPX waypoint** and make changes. You cannot change the creation date of a point, *timestamp*, in the application.  
 
@@ -682,7 +682,7 @@ Actions list is available on the bottom of **Filter** or **Statistics** tab. Osm
 
 ## Read more
 
-- [GPX tracks](../personal/tracks.md)
+- [GPX tracks](../personal/tracks/index.md)
 - [Tracks on the map](../map/tracks-on-map.md)
 - [Navigation by track](../navigation/setup/gpx-navigation.md)
 - [Plan route](../plan-route/index.md)

@@ -97,8 +97,8 @@ The table shows all the features that are included in the paid and free packages
 | [Offline and online navigation](../navigation/index.md)<br/>with turn-by-turn directions | ✔ | ✔ | ✔ |
 | [Offline instant search](../search/index.md) | ✔ | ✔ | ✔ |
 | [Trip recording](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
-| [Export GPX tracks](../personal/tracks.md#export-track) | ✔ | ✔ | ✔ |
-| [Import GPX/KML tracks](../personal/tracks.md#import-track) | ✔ | ✔ | ✔ |
+| [Export GPX tracks](../personal/tracks/index.md) | ✔ | ✔ | ✔ |
+| [Import GPX/KML tracks](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
 | [Plan a route](../plan-route/create-route.md) tool | ✔ | ✔ | ✔ |
 | [Map markers](../personal/markers.md) tool | ✔ | ✔ | ✔ |
 | [Online map sources](../plugins/online-map.md) | ✔ | ✔ | ✔ | 

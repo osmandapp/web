@@ -265,7 +265,7 @@ You can turn off all map animations during map changes, such as gestures and but
 ### Animate own position (iOS: Animate my location)
 
 **Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
-**iOS**: *<Translate ios="true" ids="shared_string_menu,routing_settings,routing_settings_2,animate_my_location"/>*  
+**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,routing_settings_2,animate_my_location"/>*  
 
 Creates a smooth map panning effect versus the *[My Position](../personal/profiles/#profile-appearance)* icon when in motion. The effect introduces a slight delay versus ground truth of about 1 second. Enabling this has been reported to create some pronounced lag issues under some circumstances, disable if such issues arise.
 
@@ -276,7 +276,7 @@ Creates a smooth map panning effect versus the *[My Position](../personal/profil
 
 <TabItem value="android" label="Android">
 
-You can create your own [*<Translate android="true" ids="shared_string_type"/>*](#external-input-device-buttons):
+You can create your own [*<Translate android="true" ids="shared_string_type"/>*](#external-input-device-buttons) of keys for an external input device:
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
@@ -294,12 +294,11 @@ Now, press the button on your device to assign it to the action.
 ![External devices](@site/static/img/map/external_assign2_android.png)
 
 If this button is used for another action you see a warning about it and a question about the reassignment.
+This way the user can assign his actions to the _External input device_ buttons. You can reset key assignments by clicking to _Reset button_ in the top corner of the screen:
 
-![External devices](@site/static/img/map/external_assign3_android.png) ![External devices](@site/static/img/map/external_assign4_android.png)
-
-This way the user can assign his actions to the _External input device_ buttons. You can reset key assignments by clicking to _Reset button_ in the top corner of the screen: *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → Your type → <Translate android="true" ids="key_assignments"/> → Reset*. All key assignments for the selected type will be removed.
-
-![External devices](@site/static/img/map/external_assign5_android.png) 
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → Your type → <Translate android="true" ids="key_assignments"/> → Reset*.
+ 
+All key assignments for the selected type will be removed.
   
 </TabItem>
 

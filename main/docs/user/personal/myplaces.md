@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-My Places is the primary place in the OsmAnd app that allows you to manage all your personal information: [Favorite points](../personal/favorites.md), [Tracks](../personal/tracks.md) (imported, recorded, and created GPX files), [OpenStreetMap Edits](../plugins/osm-editing.md), [Audio / Video Notes (*for Android*)](../plugins/audio-video-notes.md).  
+My Places is the primary place in the OsmAnd app that allows you to manage all your personal information: [Favorite points](../personal/favorites.md), [Tracks](../personal/tracks/index.md) (imported, recorded, and created GPX files), [OpenStreetMap Edits](../plugins/osm-editing.md), [Audio / Video Notes (*for Android*)](../plugins/audio-video-notes.md).  
 
 
 <Tabs groupId="operating-systems">
@@ -43,6 +43,6 @@ My Places is the primary place in the OsmAnd app that allows you to manage all y
  ## My Places
  
 - [Favorites](../personal/favorites.md)
-- [Tracks](../personal/tracks.md)
+- [Tracks](../personal/tracks/index.md)
 - [OpenStreetMap edits](../plugins/osm-editing.md)
 - [Audio/video notes](../plugins/audio-video-notes.md)

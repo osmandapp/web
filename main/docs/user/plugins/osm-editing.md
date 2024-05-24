@@ -230,7 +230,7 @@ Your tracks will be added to [OSM traces](https://www.openstreetmap.org/traces) 
 <TabItem value="android" label="Android">
 
 To [upload the GPS track](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks):  
-- Select the required track from [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*](../personal/tracks.md).  
+- Select the required track from [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*](../personal/tracks/index.md).  
 - Tap [Options button](../map/track-context-menu.md#options) of [Track Context menu](../map/track-context-menu.md).  
 - Choose *<Translate android="true" ids="upload_to_openstreetmap"/>*, or Tap the three-dot menu next to the track name and select *Export*.  
 
@@ -241,7 +241,7 @@ To [upload the GPS track](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks)
 <TabItem value="ios" label="iOS">
 
 To [upload the GPS track](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks):  
-- Select the required track from [*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*](../personal/tracks.md) → &#8230; → upload track icon(belowed menu).  
+- Select the required track from [*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*](../personal/tracks/index.md) → &#8230; → upload track icon(belowed menu).  
 - Tap [Options button](../map/track-context-menu.md#options) of [Track Context menu](../map/track-context-menu.md).  
 - Choose *<Translate ios="true" ids="upload_to_openstreetmap"/>*, or Tap the three-dot menu next to the track name and select *Upload*.  
 

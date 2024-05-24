@@ -60,7 +60,7 @@ First, you need to select and configure the profile to be used when connecting t
 - You need to have one of [OsmAnd paid or subscription](../purchases/ios#free-and-paid-features). Check it here *Menu → Settings → Purchases*. 
 - Once connected, you can set a destination and start OsmAnd navigation in CarPlay.  
 
-Note, you may need an Internet connection to use OsmAnd in CarPlay. If your device has limited Internet access, you can [preload or create routes](../personal/tracks.md) and use them without the Internet. 
+Note, you may need an Internet connection to use OsmAnd in CarPlay. If your device has limited Internet access, you can [preload or create routes](../personal/tracks/index.md) and use them without the Internet. 
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-select-point-1.png)
 
@@ -86,7 +86,7 @@ All categories for **route endpoint** selection, *[History](#history), [POIs](#p
 
 ## Select a route endpoint 
 
-You can select previously preset and added [POIs](../map/point-layers-on-map.md#points-of-interest-poi), or [Favorites](../personal/favorites.md), or [Markers](../personal/markers.md) as a destination point. It is also possible to select a recorded or downloaded [Track](../personal/tracks.md) for the route, use the [Search](../search/index.md), or select a destination from the route [History](../search/search-history.md).   
+You can select previously preset and added [POIs](../map/point-layers-on-map.md#points-of-interest-poi), or [Favorites](../personal/favorites.md), or [Markers](../personal/markers.md) as a destination point. It is also possible to select a recorded or downloaded [Track](../personal/tracks/index.md) for the route, use the [Search](../search/index.md), or select a destination from the route [History](../search/search-history.md).   
 
 1. If you want a particular location on the map as an endpoint, select the appropriate category of points from the list, [POIs](#poi-categories), [Favorites](#favorites), or [Map Markers](#map-markers).  
   
@@ -151,9 +151,9 @@ To define your final destination as a Map Marker, you first need to create the r
 
 ### Tracks
 
-To build a route to a destination, you can select an existing track available in the OsmAnd app. The track can be [*downloaded*](../personal/tracks.md#import-track) in advance, used as [*recorded*](../plugins/trip-recording.md) or created in [*Plan a route*](../plan-route/create-route.md).  
+To build a route to a destination, you can select an existing track available in the OsmAnd app. The track can be [*downloaded*](../personal/tracks/manage-tracks.md#import) in advance, used as [*recorded*](../plugins/trip-recording.md) or created in [*Plan a route*](../plan-route/create-route.md).  
 
-From the list of tracks in *Menu → My Places → [Tracks](../personal/tracks.md)*, select the required one before connecting to the vehicle multimedia system, and the route will either build up to the start of the track or display the current direction along the track.   
+From the list of tracks in *Menu → My Places → [Tracks](../personal/tracks/index.md)*, select the required one before connecting to the vehicle multimedia system, and the route will either build up to the start of the track or display the current direction along the track.   
 
 Tracks can also be selected directly on the vehicle screen in CarPlay. They are organized in folders you have created, and for easy and quick access to recently opened tracks, there is a special folder [*Last modified*](#folder-last-modified). 
 

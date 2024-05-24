@@ -55,7 +55,7 @@ In the OsmAnd app with the Trip recording plugin, you can start recording your t
 
 - Usе the [Distance/Start-Stop widget](#distance-start-stop). 
 - Use the **Trip recording** item (*Android*) in the Main menu of the OsmAnd app: *<Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/>*.
-- Use the **<Translate android="true" ids="start_recording"/>** button (*Android*) / record button in the **<Translate ios="true" ids="shared_string_currently_recording_track"/> field** (*iOS*) in [My Places](../personal/tracks.md#my-places-menu) section of the Main menu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.  
+- Use the **<Translate android="true" ids="start_recording"/>** button (*Android*) / record button in the **<Translate ios="true" ids="shared_string_currently_recording_track"/> field** (*iOS*) in [My Places](../personal/myplaces.md) section of the Main menu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.  
 - Use an [application launcher](#launcher-android) (*Android*).
 
 **Recommendations:**  
@@ -243,7 +243,7 @@ Before you start recording, you need to configure the Trip recording plugin.
 
 | Parameter | Description |
 |---|---|
-| **Battery optimization dialogue** (*Android*) | [Select an optimisation setting](../personal/tracks.md#baterry-optimization-android-only). To prevent the app from asking you the next time you make a selection, tap the Don't ask anymore button. |
+| **Battery optimization dialogue** (*Android*) | [Select an optimisation setting](../personal/tracks/create-edit.md#baterry-optimization-android-only). To prevent the app from asking you the next time you make a selection, tap the Don't ask anymore button. |
 | **Show start dialog** (*Android*) | If this feature is enabled, you can select the required settings before starting recording, and then tap the Start button. If this feature is disabled, the recording will start automatically. |
 | **Auto-record track during navigation** | When enabled, the track is automatically recorded during navigation and auto-saved in *<Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/> tab*. **Note**: Trip recording uses the battery energy and continues to run in the background when the screen is closed. |  
 | **General logging interval** | This is the frequency of location requests after which location points are recorded in the track. The default value is 5 seconds. Options from 0 seconds to 5 minutes are available. |

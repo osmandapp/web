@@ -39,7 +39,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Select track to navigate
 
-Before using *The Navigation by track* option you need to [create](#create-or-import-gpx) or [import](../../personal/tracks.md#import-track) a [GPX](../../../technical/osmand-file-formats/osmand-gpx.md) file, which is a common format used to store data about a route.  
+Before using *The Navigation by track* option you need to [create](#create-or-import-gpx) or [import](../../personal/tracks/manage-tracks.md#import) a [GPX](../../../technical/osmand-file-formats/osmand-gpx.md) file, which is a common format used to store data about a route.  
 GPX usually contains a sequence of points (waypoints) that define a route. It can be recorded or created using various tools (mostly apps and online services). More about GPX file format used by OsmAnd you can read in the [Trip recording plugin](../../plugins/trip-recording.md#recorded-gpx-file) article.  
 
 #### Create or import GPX 
@@ -51,7 +51,7 @@ In OsmAnd, GPX file can be created using:
 - [Trip (track) recording](../../plugins/trip-recording.md) plugin.
 - [Web portal](../../plan-route/web.md#tracks) (Pro subscription required).
 
-You can learn how to import GPX files to OsmAnd in the [My data / Tracks](../../personal/tracks.md#import-track) article. Tracks from the OsmAnd Web portal can be downloaded on your device using [OsmAnd Cloud](../../personal/osmand-cloud.md).
+You can learn how to import GPX files to OsmAnd in the [My data / Tracks](../../personal/tracks/manage-tracks.md#import) article. Tracks from the OsmAnd Web portal can be downloaded on your device using [OsmAnd Cloud](../../personal/osmand-cloud.md).
 
 :::note
 Lots of uncategorized tracks can be found on [OpenStreetMap](https://www.openstreetmap.org/traces).
@@ -75,7 +75,7 @@ Lots of uncategorized tracks can be found on [OpenStreetMap](https://www.openstr
 
 </Tabs>
 
-Once the track is created or imported inside OsmAnd, it can be found in the track list in [My places](../../personal/myplaces). After that, you can select required file from [available tracks](../../personal/tracks.md#actions), highlight it on the map and afterward use for navigation. From now you can start navigation by track using quick action button in [Track context menu](../../map/track-context-menu.md#quick-actions) (opens by choosing one of [highlighted tracks](./route-navigation.md#previous-route--history) on the map, or by tap the track file im [My Places](../../personal/myplaces.md) section of the Main menu) or from navigation menu, that can be reached by tap:
+Once the track is created or imported inside OsmAnd, it can be found in the track list in [My places](../../personal/myplaces). After that, you can select required file from [available tracks](../../personal/tracks/manage-tracks.md), highlight it on the map and afterward use for navigation. From now you can start navigation by track using quick action button in [Track context menu](../../map/track-context-menu.md#quick-actions) (opens by choosing one of [highlighted tracks](./route-navigation.md#previous-route--history) on the map, or by tap the track file im [My Places](../../personal/myplaces.md) section of the Main menu) or from navigation menu, that can be reached by tap:
 
 - [The navigation button](../../widgets/map-buttons.md#directions) on the map screen.  
 - Navigation section in the Main menu  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
@@ -103,7 +103,7 @@ In the [Navigation menu](./route-navigation.md#navigation-menu) go to *<Translat
 If your track consists of multiple segments or tracks, you can select either specific segment  or whole gpx-track file for navigation.  
 
 :::note
-If your track consists of more than one track, [while importing](../../personal/tracks.md#import-track) you can decide either to save it as one file or more.
+If your track consists of more than one track, [while importing](../../personal/tracks/manage-tracks.md#import) you can decide either to save it as one file or more.
 :::
 
 ## User Start / finish  points
