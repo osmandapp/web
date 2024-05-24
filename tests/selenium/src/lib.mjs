@@ -370,3 +370,9 @@ export async function clickOnMapCenter() {
 export async function getUrl() {
     return await driver.getCurrentUrl();
 }
+
+export function assert(condition, message) {
+    if (!condition) {
+        throw new Error(message || 'Assertion failed');
+    }
+}
