@@ -4,7 +4,9 @@ export const MENU_INFO_OPEN_SIZE = '360px';
 export const MENU_INFO_CLOSE_SIZE = '0px';
 export const HEADER_SIZE = '60px';
 
+export const MAIN_PAGE_TYPE = 'main';
 export const MAIN_URL = '/map';
+export const MAIN_URL_WITH_SLASH = '/map/';
 export const EXPLORE_URL = 'search/';
 export const CONFIGURE_URL = 'configure/';
 export const WEATHER_URL = 'weather/';
