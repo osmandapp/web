@@ -288,7 +288,7 @@ OsmAnd allows you to make various marks on the Map for your personal needs. For 
 
 ### How to plan a route
 
-[Plan route](../plan-route/create-route.md) is a powerful tool that allows to create a trip, edit an existing track and measure distance on the spot. You can quickly put intermediate points and connect them by various navigation lines (bike, pedestrian, straight line, etc). Results could be saved into a GPX file, so it could be [shared](../personal/tracks/index.md), [edited](../map/tracks-on-map.md) or [used by navigation](../navigation/setup/gpx-navigation.md) later.
+[Plan route](../plan-route/create-route.md) is a powerful tool that allows to create a trip, edit an existing track and measure distance on the spot. You can quickly put intermediate points and connect them by various navigation lines (bike, pedestrian, straight line, etc). Results could be saved into a GPX file, so it could be [shared](../personal/tracks/index.md), [edited](../map/tracks-on-map/tracks-types.md) or [used by navigation](../navigation/setup/gpx-navigation.md) later.
 
 <Tabs groupId="operating-systems">
 

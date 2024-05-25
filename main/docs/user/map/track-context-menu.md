@@ -79,7 +79,7 @@ If your track was created in OsmAnd or any other tracking app (so its points hav
 
 ### Quick actions
 
-Buttons panel with the next action: _Show/Hide_ a track on the map, opening [_Appearance_](../map/tracks-on-map.md#track-appearance) menu of a track, _Export / [Plan route](../plan-route/create-route.md)_, [_Navigation_](../navigation/setup/gpx-navigation.md).
+Buttons panel with the next action: *Show / Hide* a track on the map, opening [_Appearance_](../map/tracks-on-map/track-appearence.md) menu of a track, *Export / [Plan route](../plan-route/create-route.md)*, [_Navigation_](../navigation/setup/gpx-navigation.md).
 
 <Tabs groupId="operating-systems">
 
@@ -97,8 +97,8 @@ Buttons panel with the next action: _Show/Hide_ a track on the map, opening [_Ap
 
 </Tabs>
 
-- [*Show / hide* buttons](../map/tracks-on-map.md#tracks-in-track-context-menu) allow to anable or disable displaying of a track on the map.
-- *Appearance* - is used to customise the [Appearance](../map/tracks-on-map.md#track-appearance) of your track.
+- [*Show / hide* buttons](../map/tracks-on-map/tracks-types.md#tracks-in-track-context-menu) allow to anable or disable displaying of a track on the map.
+- *Appearance* - is used to customise the [Appearance](../map/tracks-on-map/track-appearence.md) of your track.
 - *Edit track* (**Android**) - opens the track in *[Plan route tool](../plan-route/create-route.md)* or *Export* (**iOS**) allows [to export a track](../personal/tracks/manage-tracks.md#export).
 - *Directions* - opens the track in *[Navigation](../navigation/setup/gpx-navigation.md#start-gpx-navigation)* mode.
 
@@ -208,7 +208,7 @@ Interaction with the graph:
 - *<Translate android="true" ids="shared_string_end_time"/>*. This is the end time of the track recording.
 
 **Buttons**:
-- **<Translate android="true" ids="analyze_on_map"/>** button opens [Analyze track menu](../map/tracks-on-map.md#analyze-track-on-map) for the track.
+- **<Translate android="true" ids="analyze_on_map"/>** button opens [Analyze track menu](../map/tracks-on-map/tracks-types.md#analyze-track-on-map) for the track.
 - **<Translate android="true" ids="shared_string_options"/>** button opens menu with: 
   - *Edit* opens the track in [Plan route tool](../plan-route/index.md).
   - *Delete* allows to delete chosen track item.
@@ -547,12 +547,12 @@ Menu Options allows to make manipulation with the chosen track, Information Rout
 ![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_android.png)  
 
 - *<Translate android="true" ids="shared_string_show_on_map"/>* - shows or not the track on the map.
-- *<Translate android="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../map/tracks-on-map.md#track-appearance) for the track.
+- *<Translate android="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../map/tracks-on-map/track-appearence.md) for the track.
 - *<Translate android="true" ids="follow_track"/>* - starts navigation by [Follow track option](../navigation/setup/gpx-navigation.md).
 
 
 - *<Translate android="true" ids="join_segments"/>* - allows to join gaps of the track.
-- *<Translate android="true" ids="analyze_on_map"/>* - opens [Analyze on map function](../map/tracks-on-map.md#analyze-track-on-map-android).
+- *<Translate android="true" ids="analyze_on_map"/>* - opens [Analyze on map function](../map/tracks-on-map/tracks-types.md#analyze-track-on-map).
 - *<Translate android="true" ids="analyze_by_intervals"/>* - [analyze the track by time or distance intervals](../map/track-context-menu.md#split-interval).
 
 
@@ -579,11 +579,11 @@ Menu Options allows to make manipulation with the chosen track, Information Rout
 ![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_ios.png)  
 
 - *<Translate ios="true" ids="shared_string_show_on_map"/>* - shows or not the track on the map.
-- *<Translate ios="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../map/tracks-on-map.md#track-appearance) for the track.
+- *<Translate ios="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../map/tracks-on-map/track-appearence.md) for the track.
 - *<Translate ios="true" ids="shared_string_navigation"/>* - starts navigation by [Follow track option](../navigation/setup/gpx-navigation.md).
 
 
-- *<Translate ios="true" ids="analyze_on_map"/>* - opens [Analyze on map function](../map/tracks-on-map.md#analyze-track-on-map).
+- *<Translate ios="true" ids="analyze_on_map"/>* - opens [Analyze on map function](../map/tracks-on-map/tracks-types.md#analyze-track-on-map).
 
 
 - *<Translate ios="true" ids="shared_string_share"/>* - export the chosen track.
@@ -683,8 +683,8 @@ Actions list is available on the bottom of **Filter** or **Statistics** tab. Osm
 ## Read more
 
 - [GPX tracks](../personal/tracks/index.md)
-- [Tracks on the map](../map/tracks-on-map.md)
+- [Tracks on the map](../map/tracks-on-map/tracks-types.md)
 - [Navigation by track](../navigation/setup/gpx-navigation.md)
 - [Plan route](../plan-route/index.md)
 - [Trip Recording plugin](../plugins/trip-recording.md)
-- [Analyze on Map](../map/tracks-on-map.md)
+- [Analyze on Map](../map/tracks-on-map/tracks-types.md#analyze-track-on-map)
