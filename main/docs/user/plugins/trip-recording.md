@@ -87,7 +87,7 @@ Start dialog opens, if the **<Translate ios="true" ids="track_interval_remember"
 </Tabs>
 
 - **Logging interval** (*Android/iOS*) is used to set the frequency of the requests sent to the GPS sensor to detect and place a new point on the track route.
-- The **Line** (*Android*) icon opens the [Track Appearance options](../map/tracks-on-map.md#track-appearance), which allow you to customize the display of the track on the map. When a track is saved, the selected appearance is saved with the track, and the next time it is turned on, it will start displaying the same way it did the previous time.  
+- The **Line** (*Android*) icon opens the [Track Appearance options](../map/tracks-on-map/track-appearence.md), which allow you to customize the display of the track on the map. When a track is saved, the selected appearance is saved with the track, and the next time it is turned on, it will start displaying the same way it did the previous time.  
 - The **Settings** (*Android*) menu allows you to adjust the recording parameters. See [Trip recording](#recording-settings) settings for more information.
 - If **Remember my choice** (*iOS*) is toggled on, all following track recordings automatically start, without additional settings or the OK button. Before you record a new track, you need to restart the Trip recording plugin for the settings to start displaying again.
 
@@ -147,7 +147,7 @@ The graphs that are built while the current track is being recorded visually dis
 | ![data](@site/static/img/plugins/trip-recording/tr_rec_speed-2.png)  ![data](@site/static/img/plugins/trip-recording/tr_rec_speed-ios.png) |
 
 :::info 
-Tap the links to get more information about the [**Tracks context menu**](../map/track-context-menu.md#options), about the [**Appearence**](../map/tracks-on-map.md#track-appearance) of a track on the map, and about adding [**track points**](../map/track-context-menu.md#waypoints-folder) to the current track. To make necessary changes to the track, for example *Rename track*, use the [**Options**](https://osmand.net/docs/user/map/track-context-menu#options) tab of the Tracks Context menu.  
+Tap the links to get more information about the [**Tracks context menu**](../map/track-context-menu.md#options), about the [**Appearence**](../map/tracks-on-map/track-appearence.md) of a track on the map, and about adding [**track points**](../map/track-context-menu.md#waypoints-folder) to the current track. To make necessary changes to the track, for example *Rename track*, use the [**Options**](https://osmand.net/docs/user/map/track-context-menu#options) tab of the Tracks Context menu.  
 :::
 
 

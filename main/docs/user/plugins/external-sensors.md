@@ -162,7 +162,7 @@ OsmAnd uses [**track recording**](../plugins/trip-recording.md#recorded-gpx-file
 
 Data from external sensors can be transmitted to the device and displayed in OsmAnd during the trip as additional information. If you want to analyze this information, you need to record the trip, and only after you save it, in the *Track context menu → Analyze on map*, additional items for the recorded data appear.  
 
-OsmAnd allows you to select a 2nd axis for data analysis: *Heart rate*, *Speed*, *Cadence*, *Bicycle power*, and *Temperature*. *Distance* and *Battery* are not used in [Analyze on map](../map/tracks-on-map.md#analyze-track-on-map).
+OsmAnd allows you to select a 2nd axis for data analysis: *Heart rate*, *Speed*, *Cadence*, *Bicycle power*, and *Temperature*. *Distance* and *Battery* are not used in [Analyze on map](../map/tracks-on-map/tracks-types.md#analyze-track-on-map).
 
 
 ## Widgets

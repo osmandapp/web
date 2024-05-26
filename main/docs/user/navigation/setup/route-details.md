@@ -146,7 +146,7 @@ The [graphs](../../map/track-context-menu.md#altitude--speed-graphs) visually di
 
 </Tabs>  
 
-This tool is similar to a tool to view [track details](../../map/tracks-on-map.md#analyze-track-on-map) on the map. It allows you to view and visually interact with different graphs and see select point on the map.
+This tool is similar to a tool to view [track details](../../map/tracks-on-map/tracks-types.md#analyze-track-on-map) on the map. It allows you to view and visually interact with different graphs and see select point on the map.
 
 If data is present you can select one of the following types:
 - *Y-axis*. 
