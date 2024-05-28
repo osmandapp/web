@@ -376,7 +376,7 @@ Available actions:
 
 ![Widget page](@site/static/img/widgets/buttons_andr.png)  
 
-1. **[<Translate android="true" ids="display_position"/>](#display-position)**
+1. **[<Translate android="true" ids="display_position"/>](#display-position).**
 2. [Distance by tap](../widgets/radius-ruler.md#distance-by-tap-tool). Gives the ability to measure the distance from your position to the selected point.
 3. [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
 

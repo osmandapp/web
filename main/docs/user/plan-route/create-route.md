@@ -157,7 +157,7 @@ The *Straight Line* is needed and will be used for areas not covered by routing 
 
 <TabItem value="android" label="Android">
 
-![Plan a route android-options](@site/static/img/plan-route/plan_route_menu_options_andr.png)
+![Plan a route android-options](@site/static/img/plan-route/plan_route_menu_options_2_andr.png)
 
 </TabItem>
 
@@ -178,6 +178,7 @@ The *Straight Line* is needed and will be used for areas not covered by routing 
 - *<Translate android="true" ids="reverse_route"/>* - You swap the Start point of the route and the last added point. The route segment settings do not change when Reverse is applied. 
 - [*<Translate android="true" ids="attach_to_the_roads"/>*](#attach-to-the-roads) - Creates an approximate route. Each point on the track is matched to the nearest permitted road on the map according to the selected profile and threshold distance.
 - [*<Translate android="true" ids="shared_string_gps_filter"/>*](../map/track-context-menu.md#gps-filter) - You can filter out route points that do not match the selected routing type, delete unnecessary data or correct inaccurate data. GPS filter will only work if the routing type is specified as *Straight Line*. <!-- Android only(No!!!) with Straight line routing. **?How to use?** **When are additional details needed to calculate a route when switching to another type of routing?** -->
+- *<Translate android="true" ids="get_altitude_data"/>* (*Android only*) - This option is only displayed in the menu if no elevation data is available. With this [option](#get-elevation-data), you can choose to calculate altitude using *Terrain map data* or use data from downloaded maps to find the *nearby roads*.
 - ***<Translate android="true" ids="shared_string_clear_all"/>*** - It archives completely all your actions. An "artifact" remains on the map - the dotted lines of the just cleared route. It disappears at the next adding new points. You can cancel the Clear All function with the Return Action button. The feature does not affect the unchanged parts of the routes opened in the tool.  
 
 
