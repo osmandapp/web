@@ -157,7 +157,7 @@ The *Straight Line* is needed and will be used for areas not covered by routing 
 
 <TabItem value="android" label="Android">
 
-![Plan a route android-options](@site/static/img/plan-route/plan_route_menu_options_2_andr.png)
+![Plan a route android-options](@site/static/img/plan-route/plan_route_menu_options_3_andr.png)
 
 </TabItem>
 
