@@ -54,11 +54,10 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | :------------- | :------------- | :------------- | :------------- |
 |    |  _App_  |_In-App and subscription_ | _Subscription_ |
 | Ad-free access | ✔ | ✔ | ✔ |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | ✔ | ✔ | ✔ |
-| [OsmAnd Start](../personal/osmand-cloud.md#osmand-start) | ✔ | ✔ | - |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
 | [Map downloads](../start-with/download-maps.md) |  <details><summary>**5 map downloads <br /> (map update counts as download)**:</summary> <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 5 possibilities to download.</details> | ✔ | ✔ |
 | [Monthly map updates](../personal/maps.md#update-maps) |  <details><summary>**Once a month** <br /> (with 2 days delay):</summary> * limited to 5 downloads (map update counts as download) </details> |  ✔ | ✔ |
-| <p>[Hourly map updates](../personal/maps.md#osmand-live)</p> (1 hour delay) | - | - | ✔ | 
+| <p>[Hourly map updates](../personal/maps.md#osmand-live)** </p> (1 hour delay) | - | - | ✔ | 
 | [Pro Features](#pro-features) | - | - | ✔ |
 | [Topo data (Contour lines and Terrain)](../plugins/contour-lines.md) | - | ✔ | ✔ |
 | [3D track visualization](../map/tracks-on-map/track-appearence.md) | - | ✔ | ✔ |
@@ -80,6 +79,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | [OsmAnd Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
 | [Export/import app profile](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
 
+** - [free](../personal/maps.md#free-for-osm-mappers) for OSM Mappers.
 
 ### Pro Features
 
