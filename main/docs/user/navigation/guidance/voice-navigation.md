@@ -76,9 +76,9 @@ Read more about under what conditions, when, and which voice prompts are activat
 | - | - | - | 
 | Approaching  | **60 s:**<br/>Driving: 750 m<br/>Cycling: 167 m<br/>Walking: 67 m  |  No more than 1 point at a time |
 | Passing | **15 s:**<br/>Driving: 188 m<br/>Cycling: 42 m<br/>Walking: 17 m | No more than 3 points at a time | 
-4. **Speed limit**:
-    - *Announce when exceeded* - allows you to announce when you exceed the allowed speed limit.
-    - *Speed limit tolerance* (from -10 km/h to 20 km/h) - select the speed limit above which you will receive a voice warning.
+4. [**Speed limit**](#speed-limit):
+    - *Announce when exceeded* (on/off):
+        - *Speed limit tolerance*.
 5. **Other**: 
     - *Announce GPS signal loss and recovery* - OsmAnd announces if the GPS signal on the device is lost.  
     - *Announce route recalculation* - OsmAnd reports route recalculation in case of a [deviation or movement in reverse direction](./navigation-settings.md#recalculate-route).
@@ -100,12 +100,40 @@ In some countries or regions, using speed camera warning applications is illegal
 ![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
 
 
+### Speed limit
+
+The *Speed limit* option allows OsmAnd to announce when the current speed exceeds the set speed limit. The application takes data about maximum speed limits on roads from OpenStreetMap.
+
+- *Announce when exceeded*:  
+    - *Speed limit tolerance*.  
+        Select an allowable speed deviation, between **-10 km** and **+20 km** (the speed is displayed in the *Units of speed* you set), from the [maximum legal speed limit](https://wiki.openstreetmap.org/wiki/Key:maxspeed) on the current road. When the selected speed limit tolerance is exceeded, a voice prompt is activated.  
+
+For **Speedometer** widget in [app](../../widgets/info-widgets.md#speedometer) and for [Android Auto](../../navigation/auto-car.md#speedometer), this *Speed limit tolerance* setting affect the speed displayed in *Speed limit warning*.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Voice Navigation](@site/static/img/navigation/voice/voice_promt_speed_limit_andr.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Voice Navigation](@site/static/img/navigation/voice/voice_promt_speed_limit_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+
 ### Announcement time
 
 The announcement time of the different voice prompts depends on the selected profile, the type of prompt, the current navigation speed, and the default navigation speed. With this setting, you can change the distance before the voice prompts are activated by applying a distance multiplier: *<Translate android="true" ids="arrival_distance_factor_normally" />* - 1.0, *<Translate android="true" ids="arrival_distance_factor_early" />* - 1.5, *<Translate android="true" ids="arrival_distance_factor_late" />* - 0.5, *<Translate android="true" ids="arrival_distance_factor_at_last" />* - 0.25.  
 In the *Time and Distance Intervals* drop-down list, you can view detailed information about the activation of prompts for the different distance multipliers. For more information, see the [Navigation Voice Prompt Triggering](../../../technical/algorithms/voice-prompt-triggering.md).  
 
 ![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)   
+
 
 ### Voice guidance output
 
@@ -115,6 +143,7 @@ To avoid playing audio in the same output stream at the same time, the audio foc
    - Phone call audio (to interrupt Bluetooth [car stereos](../auto-car.md)).
 
 ![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-1.png)
+
 
 ### Testing of voice prompts
 
@@ -132,7 +161,6 @@ When using voice prompts, you may have issues with their playback. Here are some
 2. Make sure that the sound is turned on during navigation.  You can turn the sound on or off in Menu → Navigation → On/Off button or Menu → Navigation → Settings icon → Sound.  
 3. Select which [speakers](#voice-guidance-output) to use. 
 4. Check which [voice guidance](#language) are selected. 
-
 
 
 ## TTS (Text-to-Speech)

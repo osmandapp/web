@@ -370,35 +370,37 @@ The Radius Ruler widget shows the distance between your location and the center 
 | By tapping | Changes the state of the widget between black scale, gray scale, and invisible modes. |
 | Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
-## Speedometer
 
+## Speedometer
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Speedometer](@site/static/img/widgets/speedometer_android.png) ![Speedometer](@site/static/img/widgets/speedometer_2_android.png)
+![Speedometer](@site/static/img/widgets/speedometer_1_andr.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_andr.png) 
 
+**Speedometer widget** is a graphical display of a vehicle's current speed based on the *data received from the GPS*. It also allows you to monitor in real-time whether your speed is in compliance with the allowable speed limit provided by [*OpenStreetMap data*](https://wiki.openstreetmap.org/wiki/Key:maxspeed) for a particular road section and OsmAnd's [*Speed Limit Tolerance*](../navigation/guidance/voice-navigation.md#speed-limit) setting.  
+
+In the Speedometer settings, you can select the size (**Height**) of the widget on the application screen as, *Small*, *Medium* or *Large*, as well as specify when to receive a **Speed limit warning**, you can set *Always* or *When exceeded*.
+
+| | |
+|------------|------------|
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_other,shared_string_speedometer"/>* |
+| Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,default_speed_system"/>*  |
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Speedometer](@site/static/img/widgets/speedometer_ios.png)
+<!-- ![Speedometer](@site/static/img/widgets/speedometer_ios.png) -->
+
+:::info
+In the process of development.
+:::
 
 </TabItem>
 
 </Tabs>
-
-The widget shows the current speed based on GPS data and and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
-
-Within this section, you can select the size (_small, medium, large_) of the Speedometer and specify when to receive a Speed limit warning (_Always, When exceeded_).
-
-| | |
-|------------|------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_other,shared_string_speedometer"/>* |
-|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Other → Speedometer* |
-| Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
 
 ## Plugins widgets

@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 OsmAnd has many powerful features to display various routes on the map. Routes could be built as part of Navigation, created via Plan Route, imported as GPX tracks, recorded via Trip Recording plugin or browsed and selected from OpenStreetMap data.
 
 
-## Types of routes on the map
+## Types of tracks and routes
 
 OsmAnd can display several different types of routes:
 
@@ -38,7 +38,7 @@ OsmAnd can display several different types of routes:
 OsmAnd provides the ability to record and display tracks. This allows you to get location, movement, distance, altitude and travel time data and analyze track data.
 
 
-### Display tracks on the map
+### Display tracks on map
 
 OsmAnd allows you [to view tracks on a map](../../personal/tracks/manage-tracks.md#show-tracks-on-map). Each point on the track corresponds to a specific location and contains information about time, speed and altitude. This allows you to visually assess the route, learn about the places you have visited and estimate the difficulty of the route by changes in altitude.  
 
@@ -47,7 +47,7 @@ You can choose which tracks to show on the map and which to hide. You can do thi
 ![Tracks on the map Android](@site/static/img/map/tracks_layer_android.png) ![Tracks on the map iOS](@site/static/img/map/tracks_layer_ios.png) 
 
 
-#### Tracks in Configure map menu
+### Tracks in Configure map menu
 
 <Tabs groupId="operating-systems">
 
@@ -72,7 +72,7 @@ You can choose which tracks to show on the map and which to hide. You can do thi
 You can read additional information in the [Tracks](../../personal/tracks/manage-tracks.md#configure-map) article.
 
 
-#### Tracks in My Places menu
+### Tracks in My Places menu
 
 <Tabs groupId="operating-systems">
 
@@ -96,6 +96,7 @@ You can read additional information in the [Tracks](../../personal/tracks/manage
 To show track on the map, you need to:
 - *Android* - tap the three-dots menu in the field with the required track.
 - *iOS* - long-tap the required track in the list.
+
 
 ### Tracks in Track Context menu
 
@@ -123,7 +124,7 @@ To show track on the map, you need to:
 You can apply some settings by [changing the appearance of the tracks](./track-appearence.md).
 
 
-### Analyze Track on Map  
+### Analyze Track on map  
 
 <Tabs groupId="operating-systems">
 
@@ -173,13 +174,12 @@ This tool allows you to view track information using graphs and maps.
 
 ## Navigation Route
 
-
 Navigation route is a solid line prepared by [Route Preparation process](../../navigation/setup/route-navigation.md). It is displayed during Navigation or during Route preparation step.
 
 ![Route on the map Android](@site/static/img/map/route_layer_android.png) ![Route on the map iOS](@site/static/img/map/route_layer_ios.png)  
 
 
-## Routes on the map
+## Routes on map
 
 <Tabs groupId="operating-systems">
 
@@ -206,7 +206,7 @@ OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetma
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 
-### Save as a Track
+### Save as Track
 
 <Tabs groupId="operating-systems">
 

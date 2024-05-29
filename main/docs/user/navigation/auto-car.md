@@ -248,11 +248,15 @@ This information widget combines alert types such as **Pedestrian crosswalks** a
 - For a detailed description of the alert types, see [this article](../widgets/nav-widgets.md#alert-types).
 - To set up screen alerts for available profiles, see the article [Navigation settings](../navigation/guidance/navigation-settings.md#screen-alerts).  
 
+
 ### Speedometer
 
 ![Android Auto](@site/static/img/navigation/auto-car/speedometer_3_android.png)
 
-- In Android Auto it is not possible to set the display of Speedometer, you need to configure Speedometer in the application before starting the navigation and connecting your device to the vehicle for your navigation Profile. Read more [here](../widgets/info-widgets.md#speedometer) on how to add Speedometer to the screen.
+**Speedometer** widget is an integrated interface element that displays *current speed* using GPS data and *speed limit* from the [OSM database](https://wiki.openstreetmap.org/wiki/Key:maxspeed) and [OsmAnd settings](../navigation/guidance/voice-navigation.md#speed-limit) on the vehicle's multimedia system screen.   
+
+- There is no option to customize the display of the **Speedometer widget** directly in *Android Auto*, you need to configure it in OsmAnd app before starting navigation and connecting your device to the vehicle.
+- For more information on how to add and configure the *Speedometer* widget to the display, please read the [*Informational widgets article*](../widgets/info-widgets.md#speedometer).
 
 
 ### Map appearance (3D)
