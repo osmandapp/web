@@ -18,7 +18,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 *Horseback routing* can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings.  
 
-### Route parameters - Horse
+## Route parameters - Horse
 
 :::note
 By default, *Horseback riding profile* is deactivated. In order to use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
