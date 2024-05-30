@@ -25,7 +25,6 @@ export default function Render() {
         'Chalet' : 'accomodation/accomodation_tourism_chalet',
         'Camp site' : 'accomodation/accomodation_tourism_camp_site',
         'Camp pitch' : 'accomodation/accomodation_tourism_camp_pitch',
-        'Lean-to' : 'accomodation/accomodation_tourism_lean_to',
         'Shelter' : 'accomodation/accomodation_amenity_shelter',
         'Refugee site' : 'accomodation/accomodation_amenity_refugee_site',
     }});
