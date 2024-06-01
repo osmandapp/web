@@ -42,7 +42,7 @@ You can modify the OsmAnd routing algorithm according to your needs. This can be
 
 - Copy the [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) file on your device. Read the [Help information](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml#L25) carefully. Check out OsmAnd [user's routing.xml](https://groups.google.com/g/osmand/c/JvV7p_JJvEU) file as an example.
 - After making the changes, the new *routing.xml* file can be added to OsmAnd by tapping it and selecting to open it in the OsmAnd app.
-- Select the modified [Navigation type](../../navigation/setup/route-navigation.md#type-of-navigation) for your profile.
+- Select the modified [Navigation type](../../navigation/setup/route-navigation.md#start--stop-navigation) for your profile.
 
 :::note
 More info about this possibility you can find in [Technical documentation](../../../technical/osmand-file-formats/osmand-routing-xml.md) and on [OsmAnd Github page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).  
@@ -55,7 +55,7 @@ Avoid roads function is global and affects all *[Routing types](../routing/index
 :::
 
 There are two possible ways to choose which roads to avoid when calculating a route:
-- Select road type in the [Route parameters](../guidance/navigation-settings.md#route-parameters) section of [Navigation settings](../guidance/voice-navigation.md). Description of this setting is provided in the articles about [Routing types](../routing/index.md) settings. As example, see [Car / Truck / Motorcycle](../routing/car-based-routing.md#route-parameters---car) routing type description.
+- Select road type in the [Route parameters](../guidance/navigation-settings.md#route-parameters) section of [Navigation settings](../guidance/navigation-settings.md). Description of this setting is provided in the articles about [Routing types](../routing/index.md) settings. As example, see [Car / Truck / Motorcycle](../routing/car-based-routing.md#route-parameters---car) routing type description.
 - You can also select specific roads that will not be used for routing using the *[Avoid roads](../../map/map-context-menu.md#avoid-road)* option through the *Map context menu* or using *[Avoid roads menu](#avoid-roads-menu)* (*<Translate android="true" ids="shared_string_menu,shared_string_navigation,impassable_road"/>*).
 
 :::note

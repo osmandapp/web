@@ -80,3 +80,13 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 ![Hiking style](@site/static/img/email/gris_arg.png)
 
 ![Hiking style](@site/static/img/email/argenmap.png)
+
+### USA
+
+![Hiking style](@site/static/img/email/blm.png)
+
+![Hiking style](@site/static/img/email/usfs.png)
+
+![Hiking style](@site/static/img/email/private.png)
+
+![Hiking style](@site/static/img/email/public.png)
