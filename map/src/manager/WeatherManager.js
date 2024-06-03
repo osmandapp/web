@@ -66,7 +66,7 @@ export function getWeatherLayers(type) {
             opacity: 0.6,
             icon: <PressureIcon className={styles.icon} />,
             units: i18n?.t('weather_pressure_mmhg'),
-            mult: 0.001,
+            mult: 0.01,
             fixed: 2,
             index: type === ECWMF_WEATHER_TYPE ? 3 : 4,
             checkValue: (value) => value,

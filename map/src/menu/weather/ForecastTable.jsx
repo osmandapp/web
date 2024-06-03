@@ -49,7 +49,7 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
                 <MenuItem
                     disabled={forecastValue === NOT_AVAILABLE}
                     className={styles.forecastItem}
-                    id={'se-weather-forecast-' + index}
+                    id={'se-weather-forecast-' + item.name()}
                     key={index}
                     onClick={() => {
                         ctx.setCurrentObjectType(OBJECT_TYPE_WEATHER);
@@ -72,7 +72,7 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
                             <Typography
                                 id={
                                     'se-weather-forecast-data-' +
-                                    index +
+                                    item.name() +
                                     (forecastValue === NOT_AVAILABLE ? '-not-available' : '')
                                 }
                                 variant="body2"
