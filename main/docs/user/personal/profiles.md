@@ -112,7 +112,7 @@ This section contains settings for the application theme and compass button, map
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_appearance"/>*
 
-![Profiles General Settings Appearance Android](@site/static/img/personal/profiles/profiles_appearance_1_andr.png)
+![Profiles General Settings Appearance Android](@site/static/img/personal/profiles/profiles_appearance_2_andr.png)
 
 </TabItem>
 
@@ -120,7 +120,7 @@ This section contains settings for the application theme and compass button, map
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_appearance"/>*
 
-![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profile_sett_appearance_2_ios.png)
+![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profiles_appearance_3_ios.png)
 
 </TabItem>
 
@@ -143,18 +143,6 @@ This section contains settings for the application theme and compass button, map
   - *<Translate android="true" ids="map_orientation_default"/>*  
 
 - **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Android*). Opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.  
-
-
-#### Location position on screen (iOS)
-
-![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profile_sett_appearance_location_pos_ios.png)  
-
-Allows you to choose where to display your location on the screen.
-  - *<Translate ios="true" ids="shared_string_automatic"/>*. Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
-  - *<Translate ios="true" ids="position_on_map_center"/>*. The cursor is always positioned in the center of the screen.  
-  - *<Translate ios="true" ids="position_on_map_bottom"/>*. *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.  
-
-**NOTE.** A similar option for Android called [*Display position*](../widgets/configure-screen.md#other) is located in *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other"/>*.
 
 
 ### Units & formats

@@ -379,6 +379,18 @@ The Radius Ruler widget shows the distance between your location and the center 
 
 ![Speedometer](@site/static/img/widgets/speedometer_1_andr.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_andr.png) 
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Speedometer](@site/static/img/widgets/speedometer_1_andr.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_andr.png) 
+
+</TabItem>
+
+</Tabs>
+
+<!-- ![Speedometer](@site/static/img/widgets/speedometer_ios.png) -->
+
 **Speedometer widget** is a graphical display of a vehicle's current speed based on the *data received from the GPS*. It also allows you to monitor in real-time whether your speed is in compliance with the allowable speed limit provided by [*OpenStreetMap data*](https://wiki.openstreetmap.org/wiki/Key:maxspeed) for a particular road section and OsmAnd's [*Speed Limit Tolerance*](../navigation/guidance/voice-navigation.md#speed-limit) setting.  
 
 In the Speedometer settings, you can select the size (**Height**) of the widget on the application screen as, *Small*, *Medium* or *Large*, as well as specify when to receive a **Speed limit warning**, you can set *Always* or *When exceeded*.
@@ -387,20 +399,6 @@ In the Speedometer settings, you can select the size (**Height**) of the widget 
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_other,shared_string_speedometer"/>* |
 | Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,default_speed_system"/>*  |
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-<!-- ![Speedometer](@site/static/img/widgets/speedometer_ios.png) -->
-
-:::info
-In the process of development.
-:::
-
-</TabItem>
-
-</Tabs>
 
 
 ## Plugins widgets

@@ -308,6 +308,90 @@ To remove or delete a widget from the application screen, you need to select the
 - To no longer see the widget, tap the minus icon to the left of its name.
 
 
+## Buttons
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
+
+![Widget page](@site/static/img/widgets/conf_screen_buttons_andr.png)  
+
+- **Custom buttons**. Allows you to add a list from [Quick action](../widgets/quick-action.md).
+- **Default buttons**. It gives you the ability to hide or show buttons on the map.
+    - [3D mode](../widgets/map-buttons.md#3d-mode). Appears in the list and is available for setting if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.
+    - [Compass](../widgets/map-buttons.md#display-options). Indicates how the map is oriented on the device.  3 views: *Always visible*, *Always hidden*, *Visible if map is rotated*.   
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
+
+![Widget page](@site/static/img/widgets/conf_screen_buttons_ios.png)  
+
+- [Compass](../widgets/map-buttons.md#display-options). Indicates how the map is oriented on the device.  3 views: *Always visible*, *Always hidden*, *Visible if map is rotated*. 
+- [Quick action](../widgets/quick-action.md). This is a button that provides  quick access to frequently used actions.  
+- [3D mode](../widgets/map-buttons.md#3d-mode). Appears in the list and is available for setting if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.   
+
+</TabItem>
+
+</Tabs> 
+
+
+## Other
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_other"/>*
+
+![Widget page](@site/static/img/widgets/conf_screen_other_andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>* *→ Other*
+
+![Widget page](@site/static/img/widgets/conf_screen_other_ios.png) 
+
+</TabItem>
+
+</Tabs> 
+
+- [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position--location-position-on-screen). [⬇](#display-position--location-position-on-screen)
+- [Distance by tap](../widgets/radius-ruler.md#distance-by-tap-tool). Gives the ability to measure the distance from your position to the selected point.
+- [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
+
+
+#### Display position / Location position on screen
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Widget page](@site/static/img/widgets/conf_screen_display_position_andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Widget page](@site/static/img/widgets/conf_screen_display_position_ios.png) 
+
+</TabItem>
+
+</Tabs> 
+
+Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:  
+
+- *<Translate android="true" ids="position_on_map_center"/>*. The cursor is always positioned in the center of the screen.
+- *<Translate android="true" ids="position_on_map_bottom"/>*. *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
+- *<Translate android="true" ids="shared_string_automatic"/>*. Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
+
+
 ## Actions 
 
 <Tabs groupId="operating-systems">
@@ -337,76 +421,6 @@ Access to additional actions in the Configure screen are:
 Available actions:
 - **Reset to default**. This feature allows you to reset all settings to default values if you want to start over, or use only the preset ones when starting OsmAnd.
 - **Copy from another profile**. This feature allows you to quickly import settings from another profile, select the required ones from the list, and copy. 
-
-
-## Buttons
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-![Widget page](@site/static/img/widgets/buttons_andr.png)  
-
-1. **Custom buttons**. Allows you to add a list from [Quick action](../widgets/quick-action.md).
-2. **Default buttons**. It gives you the ability to hide or show buttons on the map.
-    - [3D mode](../widgets/map-buttons.md#3d-mode). Appears in the list and is available for setting if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.
-    - [Compass](../widgets/map-buttons.md#display-options). Indicates how the map is oriented on the device.  3 views: *Always visible*, *Always hidden*, *Visible if map is rotated*.
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Widget page](@site/static/img/widgets/buttons_ios.png) 
-
-1. [Compass](../widgets/map-buttons.md#display-options). Indicates how the map is oriented on the device.  3 views: *Always visible*, *Always hidden*, *Visible if map is rotated*. 
-2. [3D mode](../widgets/map-buttons.md#3d-mode). Appears in the list and is available for setting if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.   
-3. [Distance by tap](../widgets/radius-ruler.md#distance-by-tap-tool). Gives the ability to measure the distance from your position to the selected point.   
-4. [Quick action](../widgets/quick-action.md). This is a button that provides  quick access to frequently used actions.  
-
-</TabItem>
-
-</Tabs> 
-
-
-## Other
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-![Widget page](@site/static/img/widgets/buttons_andr.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Widget page](@site/static/img/widgets/buttons_andr.png) 
-
-</TabItem>
-
-</Tabs> 
-
-1. **[<Translate android="true" ids="display_position"/>](#display-position).**
-2. [Distance by tap](../widgets/radius-ruler.md#distance-by-tap-tool). Gives the ability to measure the distance from your position to the selected point.
-3. [Speedometer](../widgets/info-widgets.md#speedometer) (*Android only*). Shows the current speed based on GPS data and and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
-
-
-#### Display position
-
-![Widget page](@site/static/img/widgets/buttons_other_display_position_andr.png)  
-
-Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:
-- *<Translate android="true" ids="position_on_map_center"/>*. The cursor is always positioned in the center of the screen.
-- *<Translate android="true" ids="position_on_map_bottom"/>*. *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
-- *<Translate android="true" ids="shared_string_automatic"/>*. Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
-
-______
-
-Allows you to choose where to display your location on the screen.
-  - *<Translate ios="true" ids="shared_string_automatic"/>*. Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
-  - *<Translate ios="true" ids="position_on_map_center"/>*. The cursor is always positioned in the center of the screen.  
-  - *<Translate ios="true" ids="position_on_map_bottom"/>*. *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.  
-
 
 
 ## Switch profile
