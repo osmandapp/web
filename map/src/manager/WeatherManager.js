@@ -94,6 +94,10 @@ export function getWeatherLayers(type) {
     return layers;
 }
 
+export function disableLayers(item, ctx) {
+    return (item.key === 'wind' || item.key === 'cloud') && ctx.weatherType === ECWMF_WEATHER_TYPE;
+}
+
 function getWeatherUrl(layer, type) {
     return `${process.env.REACT_APP_WEATHER_URL}${type}/tiles/${layer}/{time}/{z}/{x}/{y}.png`;
 }
