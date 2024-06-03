@@ -79,7 +79,7 @@ If your track was created in OsmAnd or any other tracking app (so its points hav
 
 ### Quick actions
 
-Buttons panel with the next action: *Show / Hide* a track on the map, opening [_Appearance_](../map/tracks-on-map/track-appearence.md) menu of a track, *Export / [Plan route](../plan-route/create-route.md)*, [_Navigation_](../navigation/setup/gpx-navigation.md).
+Buttons panel with the next action: *Show / Hide* a track on the map, opening [_Appearance_](../map/tracks-on-map/track-appearance.md) menu of a track, *Export / [Plan route](../plan-route/create-route.md)*, [_Navigation_](../navigation/setup/gpx-navigation.md).
 
 <Tabs groupId="operating-systems">
 
@@ -98,7 +98,7 @@ Buttons panel with the next action: *Show / Hide* a track on the map, opening [_
 </Tabs>
 
 - [*Show / hide* buttons](../map/tracks-on-map/tracks-types.md#tracks-in-track-context-menu) allow to anable or disable displaying of a track on the map.
-- *Appearance* - is used to customise the [Appearance](../map/tracks-on-map/track-appearence.md) of your track.
+- *Appearance* - is used to customise the [Appearance](../map/tracks-on-map/track-appearance.md) of your track.
 - *Edit track* (**Android**) - opens the track in *[Plan route tool](../plan-route/create-route.md)* or *Export* (**iOS**) allows [to export a track](../personal/tracks/manage-tracks.md#export).
 - *Directions* - opens the track in *[Navigation](../navigation/setup/gpx-navigation.md#start-gpx-navigation)* mode.
 
@@ -547,7 +547,7 @@ Menu Options allows to make manipulation with the chosen track, Information Rout
 ![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_android.png)  
 
 - *<Translate android="true" ids="shared_string_show_on_map"/>* - shows or not the track on the map.
-- *<Translate android="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../map/tracks-on-map/track-appearence.md) for the track.
+- *<Translate android="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../map/tracks-on-map/track-appearance.md) for the track.
 - *<Translate android="true" ids="follow_track"/>* - starts navigation by [Follow track option](../navigation/setup/gpx-navigation.md).
 
 
@@ -579,7 +579,7 @@ Menu Options allows to make manipulation with the chosen track, Information Rout
 ![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_ios.png)  
 
 - *<Translate ios="true" ids="shared_string_show_on_map"/>* - shows or not the track on the map.
-- *<Translate ios="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../map/tracks-on-map/track-appearence.md) for the track.
+- *<Translate ios="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../map/tracks-on-map/track-appearance.md) for the track.
 - *<Translate ios="true" ids="shared_string_navigation"/>* - starts navigation by [Follow track option](../navigation/setup/gpx-navigation.md).
 
 

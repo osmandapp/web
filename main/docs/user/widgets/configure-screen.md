@@ -376,19 +376,20 @@ Available actions:
 
 ![Widget page](@site/static/img/widgets/buttons_andr.png)  
 
-1. **[<Translate android="true" ids="display_position"/>](#display-position).**
-2. [Distance by tap](../widgets/radius-ruler.md#distance-by-tap-tool). Gives the ability to measure the distance from your position to the selected point.
-3. [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-<InfoAndroidOnly/>  
+![Widget page](@site/static/img/widgets/buttons_andr.png) 
 
 </TabItem>
 
 </Tabs> 
+
+1. **[<Translate android="true" ids="display_position"/>](#display-position).**
+2. [Distance by tap](../widgets/radius-ruler.md#distance-by-tap-tool). Gives the ability to measure the distance from your position to the selected point.
+3. [Speedometer](../widgets/info-widgets.md#speedometer) (*Android only*). Shows the current speed based on GPS data and and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
+
 
 #### Display position
 
@@ -399,7 +400,13 @@ Allows you to set the placement of the cursor *[My location](../map/interact-wit
 - *<Translate android="true" ids="position_on_map_bottom"/>*. *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
 - *<Translate android="true" ids="shared_string_automatic"/>*. Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
 
-**NOTE.** A similar option for iOS called [*Location position on screen*](../personal/profiles.md#location-position-on-screen-ios) is located in *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_appearance"/>*.
+______
+
+Allows you to choose where to display your location on the screen.
+  - *<Translate ios="true" ids="shared_string_automatic"/>*. Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
+  - *<Translate ios="true" ids="position_on_map_center"/>*. The cursor is always positioned in the center of the screen.  
+  - *<Translate ios="true" ids="position_on_map_bottom"/>*. *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.  
+
 
 
 ## Switch profile

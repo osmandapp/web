@@ -143,7 +143,7 @@ This section contains settings for the application theme and compass button, map
   - *<Translate android="true" ids="map_orientation_default"/>*  
 
 - **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Android*). Opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.  
-- **[<Translate ios="true" ids="position_on_map"/>](#location-position-on-screen-ios)** (*iOS*). 
+
 
 #### Location position on screen (iOS)
 

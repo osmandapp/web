@@ -121,7 +121,7 @@ To show track on the map, you need to:
 
 ### Track Appearance
 
-You can apply some settings by [changing the appearance of the tracks](./track-appearence.md).
+You can apply some settings by [changing the appearance of the tracks](./track-appearance.md).
 
 
 ### Analyze Track on map  
@@ -175,11 +175,11 @@ This tool allows you to view track information using graphs and maps.
 ## Routes
 
 
-### Navigation Route
-
-Navigation route is a solid line prepared by [Route Preparation process](../../navigation/setup/route-navigation.md). It is displayed during Navigation or during Route preparation step.
+### Route navigation
 
 ![Route on the map Android](@site/static/img/map/route_layer_android.png) ![Route on the map iOS](@site/static/img/map/route_layer_ios.png)  
+
+The navigation route is displayed on the map as a solid line with your specified [Start point](../../navigation/setup/gpx-navigation.md#user-start--finish--points) and the plotted route along [selected track](../../navigation/setup/gpx-navigation.md#follow-track-menu). It is visible during navigation or during the [Route preparation](../../navigation/setup/route-navigation.md) stage.
 
 
 ### Routes on map
@@ -204,12 +204,14 @@ Navigation route is a solid line prepared by [Route Preparation process](../../n
 
 </Tabs>
 
-OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They can be selected by tapping [the symbol on the route](#save-as-track), and if the visible set of routes is configured correctly, you can follow the color and icons. You can create a track on top of the routes using the [Plan a Route](../../plan-route/create-route.md) tool.  
+- To display the required routes on the map, enable them in the *Routes list* of the [Configure Map](../../map/configure-map-menu.md) menu.
+- OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They can be selected by tapping [the symbol on the route](#save-as-track), and if the visible set of routes is configured correctly, you can follow the color and icons.
+- You can create a track on top of the routes using the [Plan a Route](../../plan-route/create-route.md) tool.  
 
-![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
+<!-- ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png) -->
 
 
-### Save as Track
+#### Save as Track
 
 <Tabs groupId="operating-systems">
 
@@ -229,14 +231,36 @@ OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetma
 
 [*Hiking, Cycle, Travel, and other routes*](../../map/vector-maps.md#routes) are available for selection on the map, and marked with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol). If you tap a *route symbol*, a list of the routes nearest to it is offered. Selecting one of them opens the [Track context menu](../../map/track-context-menu.md) of the route.  
 
-To get full route information, tap on the *route symbol* or the line of the selected route, if you have already used the download button in the *Track context menu*.    
-
-- **Download** (*Android*) / **Save** (*iOS*) button. After saving a GPX file, you will have access to track actions such as changing [*Appearance*](#track-appearance), [*Navigation*](#navigation-route), editing in [*Plan a route*](../../plan-route/create-route.md), and more.
-- **Route info** in *Overview*. You can view detailed information about the selected route such as *Distance, Direction, Ascent/Descent, Altitude range, Route name, Network, Operator, State, Type, Description, Color, Roundtrip, Start/End points, and more*. 
-- **Graph** in *Tracks*. Displays *Altitude information, Distanse, Time*, provides access to [*Analyze on map*](#analyze-track-on-map) feature.
+To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../../map/track-context-menu.md#info-panel). This will open the [Quick actions](../../map/track-context-menu.md#quick-actions) button panel where you will have access to track actions such as changing [*Appearance*](./track-appearance.md), [*Navigation*](#route-navigation), or editing [*Plan a route*](../../plan-route/create-route.md).
 
 
-### Route info
+#### Route info
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Route info](@site/static/img/map/route_info_1_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Route info](@site/static/img/map/route_info_1_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+- To get full route information, tap the *route symbol*.
+- If you have already used the *download button* in the [Track context menu](../../map/track-context-menu.md), tap the line of the required route on the map.    
+
+**Route info** in *Overview tab* allows you to view detailed information about the selected route such as:
+- *Track details*: Route name/[*OSM ID*](#related-osm-id), Type, Description, Distance, Direction, Ascent/Descent, Altitude range, Network, Operator, State, Color, Roundtrip, Start/End points, and more.
+- *General*: Size, Location, Created on.
+- *Additional Info*: Type of activity.
+
+##### Related OSM ID
 
 <Tabs groupId="operating-systems">
 
@@ -254,6 +278,17 @@ To get full route information, tap on the *route symbol* or the line of the sele
 
 </Tabs>  
 
+A route may not have a name and reference, or the information may have been lost, in which case the corresponding **OSM ID** is displayed in the *Track Context Menu* and *Route info*. It is only visible if the [OpenStreetMap plugin](../../plugins/osm-editing.md) is enabled, it is not displayed as a name on the map, and tap the ID in Route info opens the related OSM ID (for example, [51855](https://www.openstreetmap.org/relation/51855)).
+
+
+#### Graph
+
+In *Tracks tab*, **Graph** displays track information in graphical form with a description of the details:
+- [*Overview*](../../map/track-context-menu.md#overview-1). Distanse, Time. 
+- [*Altitude and Slope information*](../../map/track-context-menu.md#altitude).
+- Provides access to [*Analyze on map*](#analyze-track-on-map) feature
+- *Option menu*. Edit, Delete, Split interval.
+
 
 ## Read more
 
@@ -264,4 +299,5 @@ To get full route information, tap on the *route symbol* or the line of the sele
 - [GPX tracks](../../personal/tracks/index.md)  
 - [Plan route](../../plan-route/index.md)  
 - [Trip Recording](../../plugins/trip-recording.md)    
+- [Track Appearance](./track-appearance.md)
 

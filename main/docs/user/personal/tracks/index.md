@@ -49,7 +49,7 @@ Features **Tracks** functionality lets you create and save routes so you can eas
 
 3. **Tracks management special features in OsmAnd**.
 - Enabling and disabling [tracks on the map](#show-tracks-on-map).
-- Customizing [the appearance](../../map/tracks-on-map/track-appearence.md), [edit](#create--edit-track) and [analyze tracks](../../map/tracks-on-map/tracks-types.md#analyze-track-on-map).
+- Customizing [the appearance](../../map/tracks-on-map/track-appearance.md), [edit](#create--edit-track) and [analyze tracks](../../map/tracks-on-map/tracks-types.md#analyze-track-on-map).
 - Use for navigation.
 
 4. **OsmAnd has no limit on the number of tracks to store and display.**

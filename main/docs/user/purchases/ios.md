@@ -60,7 +60,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | <p>[Hourly map updates](../personal/maps.md#osmand-live)** </p> (1 hour delay) | - | - | ✔ | 
 | [Pro Features](#pro-features) | - | - | ✔ |
 | [Topo data (Contour lines and Terrain)](../plugins/contour-lines.md) | - | ✔ | ✔ |
-| [3D track visualization](../map/tracks-on-map/track-appearence.md) | - | ✔ | ✔ |
+| [3D track visualization](../map/tracks-on-map/track-appearance.md) | - | ✔ | ✔ |
 | [Nautical depths](../plugins/nautical-charts.md) | - | ✔ | ✔ |
 | [Travel guides (Wikipedia)](../plugins/wikipedia.md) | - | ✔ | ✔ |
 | [CarPlay](../navigation/car-play.md) | - | ✔ | ✔ |

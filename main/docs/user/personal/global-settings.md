@@ -147,7 +147,7 @@ OsmAnd files are visible in the [*Files*](https://apps.apple.com/us/app/files/id
 | Map display | The whole map is rendered as a set of tiles, and markers, lines and text are already inside these tiles. | First, the entire tile pack is rendered, and then the available symbols are applied to the map, [layer by layer](../../technical/algorithms/map-rendering-layers.md). |
 | Transparent symbols overlay / underlay | Supports all settings. | Does not support raster layer on top of vector text. |
 | [3D Terrain](../map/raster-maps.md#3d-relief) | Not supported. | This feature visualises the terrain on the map by adding elevation information to a normal 2D map, which creates a 3D and depth effect. |
-| [3D Tracks](../map/tracks-on-map/track-appearence.md) | Not supported. | This feature allows you to display tracks by altitude above sea level. |
+| [3D Tracks](../map/tracks-on-map/track-appearance.md) | Not supported. | This feature allows you to display tracks by altitude above sea level. |
 | [Online map](../plugins/online-map.md) | It does not support the display of Сontour lines if the map source is any online tile map. | When the map source is an online map, 3D maps are also used, and the display of Сontour lines on the map is supported. |
 | [Weather plugin](../plugins/weather.md) | You cannot use this plugin. | Convenient to use with the plugin. |  
 
