@@ -94,8 +94,8 @@ export const useWeatherLocationChange = ({
                 address: response.data.cityLocalNames,
             };
             // add address to local storage
-            if (localStorage.getItem(LOCAL_STORAGE_WEATHER_LOC)) {
-                let savedWeatherLoc = JSON.parse(localStorage.getItem(LOCAL_STORAGE_WEATHER_LOC));
+            let savedWeatherLoc = useSavedWeatherLoc();
+            if (savedWeatherLoc) {
                 savedWeatherLoc.address = obj.address;
                 localStorage.setItem(LOCAL_STORAGE_WEATHER_LOC, JSON.stringify(savedWeatherLoc));
             } else {
@@ -105,6 +105,15 @@ export const useWeatherLocationChange = ({
         }
         return null;
     };
+
+    function useSavedWeatherLoc() {
+        let savedWeatherLoc = localStorage.getItem(LOCAL_STORAGE_WEATHER_LOC);
+        if (savedWeatherLoc) {
+            savedWeatherLoc = JSON.parse(savedWeatherLoc);
+            return savedWeatherLoc;
+        }
+        return null;
+    }
 
     function getWeatherDataFromCache(currentLoc) {
         function isSameLocation(locFromCache, currentLoc) {
