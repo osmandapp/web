@@ -25,7 +25,7 @@ Voice  prompts also work while your device screen is turned off, i.e. you can us
 
 :::note
 - <Translate android="true" ids="voice_announces_info"/>
-- Text notifications fully reflect trigger time and messages of the voice prompts messages
+- Text notifications fully reflect trigger time and messages of the voice prompts messages.
 :::  
 
 
@@ -40,8 +40,8 @@ OsmAnd offers different types of settings for voice prompts to help you follow y
 Read more about under what conditions, when, and which voice prompts are activated in the [Navigation Voice Prompt Triggering](../../../technical/algorithms/voice-prompt-triggering.md) documentation.  
 
 
-
 ### Voice Settings
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -64,7 +64,7 @@ Read more about under what conditions, when, and which voice prompts are activat
 
 </Tabs>  
 
-1. **[Language](#language)** - select preferred language and type.
+1. **[Language](#voice-prompt-language)** - select preferred language and type.
 2. **Announcement** - allows you to configure the following types of prompts: 
     - *Street names (TTS), Exit number, Traffic warnings, Pedestrian crosswalks* and *Tunnels.*
     - *[Speed cameras](#speed-cameras)*. 
@@ -93,22 +93,14 @@ Read more about under what conditions, when, and which voice prompts are activat
 
 ### Speed cameras
 
+![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
+
 [Speed cameras alerts](../../personal/global-settings.md#uninstall-speed-camera) allow you to activate or deactivate POIs with speed cameras. You will need to restart the OsmAnd application to apply the changes.   
   
 In some countries or regions, using speed camera warning applications is illegal. You must make a choice depending on the laws in your country. Select **Keep active**, and you will receive speed camera alerts and notifications. Select **Uninstall** and all data related to speed cameras, such as warnings, notifications, and POIs, will be deleted until you completely reinstall OsmAnd.  
 
-![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
-
 
 ### Speed limit
-
-The *Speed limit* option allows OsmAnd to announce when the current speed exceeds the set speed limit. The application takes data about maximum speed limits on roads from OpenStreetMap.
-
-- *Announce when exceeded*:  
-    - *Speed limit tolerance*.  
-        Select an allowable speed deviation, between **-10 km** and **+20 km** (the speed is displayed in the *Units of speed* you set), from the [maximum legal speed limit](https://wiki.openstreetmap.org/wiki/Key:maxspeed) on the current road. When the selected speed limit tolerance is exceeded, a voice prompt is activated.  
-
-For [**Speedometer** widget](../../widgets/info-widgets.md#speedometer) in the app and for [Android Auto](../../navigation/auto-car.md#speedometer), this *Speed limit tolerance* setting affect the speed displayed in *Speed limit warning*.
 
 <Tabs groupId="operating-systems">
 
@@ -127,27 +119,35 @@ For [**Speedometer** widget](../../widgets/info-widgets.md#speedometer) in the a
 </Tabs>  
 
 
+The *Speed limit* option allows OsmAnd to announce when the current speed exceeds the set speed limit. The application takes data about maximum speed limits on roads from OpenStreetMap.
+
+- *Announce when exceeded*:  
+    - *Speed limit tolerance*.  
+        Select an allowable speed deviation, between **-10 km** and **+20 km** (the speed is displayed in the *Units of speed* you set), from the [maximum legal speed limit](https://wiki.openstreetmap.org/wiki/Key:maxspeed) on the current road. When the selected speed limit tolerance is exceeded, a voice prompt is activated.  
+
+For [**Speedometer** widget](../../widgets/info-widgets.md#speedometer) in the app and for [Android Auto](../../navigation/auto-car.md#speedometer), this *Speed limit tolerance* setting affect the speed displayed in *Speed limit warning*.
+
 ### Announcement time
 
-The announcement time of the different voice prompts depends on the selected profile, the type of prompt, the current navigation speed, and the default navigation speed. With this setting, you can change the distance before the voice prompts are activated by applying a distance multiplier: *<Translate android="true" ids="arrival_distance_factor_normally" />* - 1.0, *<Translate android="true" ids="arrival_distance_factor_early" />* - 1.5, *<Translate android="true" ids="arrival_distance_factor_late" />* - 0.5, *<Translate android="true" ids="arrival_distance_factor_at_last" />* - 0.25.  
-In the *Time and Distance Intervals* drop-down list, you can view detailed information about the activation of prompts for the different distance multipliers. For more information, see the [Navigation Voice Prompt Triggering](../../../technical/algorithms/voice-prompt-triggering.md).  
+![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)  
 
-![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)   
+The announcement time of the different voice prompts depends on the selected profile, the type of prompt, the current navigation speed, and the default navigation speed. With this setting, you can change the distance before the voice prompts are activated by applying a distance multiplier: *<Translate android="true" ids="arrival_distance_factor_normally" />* - 1.0, *<Translate android="true" ids="arrival_distance_factor_early" />* - 1.5, *<Translate android="true" ids="arrival_distance_factor_late" />* - 0.5, *<Translate android="true" ids="arrival_distance_factor_at_last" />* - 0.25.  
+In the *Time and Distance Intervals* drop-down list, you can view detailed information about the activation of prompts for the different distance multipliers. For more information, see the [Navigation Voice Prompt Triggering](../../../technical/algorithms/voice-prompt-triggering.md).   
 
 
 ### Voice guidance output
+
+![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-1.png)
 
 To avoid playing audio in the same output stream at the same time, the audio focus is implemented in Android. OsmAnd will use the loudspeaker selected from the list in this setting to audio output. Other applications will pause playback or turn down the volume to make it easier for you to hear OsmAnd's voice prompts.  
    - Media/navigation audio.
    - Notification audio.
    - Phone call audio (to interrupt Bluetooth [car stereos](../auto-car.md)).
 
-![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-1.png)
-
 
 ### Testing of voice prompts
 
-For testing voice promopts, you can run [Simulate Navigation](../../navigation//setup/route-navigation.md#simulate-navigation) or use  ["Test voice prompts"](../../plugins/development.md#application-testing) on Android.
+**Testing of voice prompts** is possible only for Android version of the application. Enable the *Development plugin* and run [Simulate Navigation](../../navigation//setup/route-navigation.md#simulate-navigation) or use [Test voice prompts](../../plugins/development.md#application-testing).
 
 
 ### Common problems
@@ -165,24 +165,20 @@ When using voice prompts, you may have issues with their playback. Here are some
 
 ## TTS (Text-to-Speech)
 
-TTS voices are the preferred voices to use in OsmAnd. They are bundled with the application, but require the system to have a [Text-to-speech engine](https://en.wikipedia.org/wiki/Speech_synthesis) installed. The engines are often included in Android and iOS, or can be installed separately. A list of engines and supported languages for Android may be found [here](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
+TTS voices are the preferred voices to use in OsmAnd. They are bundled with the application, but require the system to have a [Text-to-speech engine](https://en.wikipedia.org/wiki/Speech_synthesis) installed. The engines are often included in Android and iOS, or can be installed separately. A list of engines and supported languages for Android may be found here [List of languages with available TTS engines on Android](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
 
-To configure your device's TTS, go to your device settings([Android ](https://support.google.com/accessibility/android/answer/6006983) or [iOS](https://support.apple.com/en-gb/guide/iphone/iph96b214f0/ios#:~:text=Go%20to%20Settings%20%3E%20Accessibility%20%3E%20Spoken,the%20top%20of%20the%20screen.)), find the Language & Keyboard section, Text-to-speech, or similar. Select, activate or install it, then configure it to support your ppreferred language, which may just be a setting or require you to download an additional file.  
+To configure the TTS of your device:
+- Go to your device settings,
+    - [Android ](https://support.google.com/accessibility/android/answer/6006983)
+    - [iOS](https://support.apple.com/en-gb/guide/iphone/iph96b214f0/ios#:~:text=Go%20to%20Settings%20%3E%20Accessibility%20%3E%20Spoken,the%20top%20of%20the%20screen)
+- Find the *Language & Keyboard* section, *Text-to-speech*, or similar.
+- Select, activate or install it, and then configure it to support your preferred language, which may just be a setting or require you to download an additional file.  
 
-Check if your Android TTS is working properly by using the "Listen to example" or a similar test button. You can also check if OsmAnd voice prompts are selected correctly: To do this, go to *Settings → Plugins → OsmAnd development → Test voice prompts* (to see this setting, the OsmAnd development plugin must be activated).   
+Check if TTS works properly in Android using the *Listen to example* or a similar test button. You can also check if the voice prompts are selected correctly in OsmAnd, to do this, enable the OsmAnd Development plugin and then go to *Settings → Plugins → OsmAnd Development → Voice Prompts Test*. 
 
 Additional information can be found in the [Troubleshooting](../../troubleshooting/navigation.md#voice-navigation) section.  
 
 ### Voice prompt language
-
-In OsmAnd you can select your preferred language and prompt style from the list
-- *<Translate android="true" ids="tts_title"/>* (for Android) - <Translate android="true" ids="tts_description"/>
-- *<Translate android="true" ids="shared_string_recorded"/>* (for Android) - <Translate android="true" ids="recorded_description"/>
-
-:::note
-- Not all listed languages may be supported by every TTS engine. See e.g. [here](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/)
-- You can change the voice and playback speed only in the system settings of the device. not in OsmAnd.
-:::  
 
 <Tabs groupId="operating-systems">
 
@@ -204,7 +200,28 @@ In OsmAnd you can select your preferred language and prompt style from the list
 
 </Tabs>  
 
-There are currently a total of 45 languages.  
+In OsmAnd you can select your preferred language and prompt style from the list:
+- *<Translate android="true" ids="tts_title"/>* - The text-to-speech feature pronounces all types of instructions: street names, turn instructions, POI names, and more.
+- *<Translate android="true" ids="shared_string_recorded"/>* (for Android) - Recorded voice sounds better than technical voice, but can only speak pre-recorded phrases for turn instructions. It cannot announce street names or POIs.
+
+
+#### Voice prompts settings in the system settings of devices
+
+You can only change the voice type, playback speed, pitch, or pause in sentences in the system settings of the device.  
+
+- **Android:**
+    - Open your **device Settings**.
+    - Select *Accessibility*, then find *Text-to-speech* output.
+    - Choose your preferred engine, language, speech rate, and pitch. 
+
+- **iOS:**
+    - Go to *device Settings → Accessibility*, then **Spoken Content**.
+    - Adjust any of the following: voices, language, speaking rate, pronunciations.
+
+
+#### List of languages
+
+There are currently a total of 45 languages. Not all languages listed below may be supported by every TTS engine. See [here](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
 
 | | |
 | --- | --- |
