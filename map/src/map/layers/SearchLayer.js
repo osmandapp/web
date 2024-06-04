@@ -465,6 +465,7 @@ export default function SearchLayer() {
     }, [ctx.wikiPlaces]);
 
     function addEventListeners({ marker, place, main = false, latlng, iconSize = [10, 10] }) {
+        let tooltip;
         // Add click event to open information about the place
         marker.on('click', () => {
             openInfo(place);
@@ -510,11 +511,26 @@ export default function SearchLayer() {
                     fillColor: '#237bff',
                 });
             }
+            if (place.properties.wikiTitle && place.properties.wikiTitle !== '') {
+                const offset = main ? [iconSize[1] / 10, iconSize[1] / 2] : [0, 0];
+                tooltip = L.tooltip({
+                    permanent: true,
+                    direction: 'bottom',
+                    offset: offset,
+                })
+                    .setContent(place.properties.wikiTitle)
+                    .setLatLng(latlng);
+                map.addLayer(tooltip);
+            }
         });
 
         // Add mouseout event to reset marker style and remove pointer
         marker.on('mouseout', (event) => {
             if (event.originalEvent) {
+                if (tooltip) {
+                    map.removeLayer(tooltip);
+                    tooltip = null;
+                }
                 ctx.setSelectedPoiId({ id: -1 });
                 if (!main) {
                     marker.setStyle({
