@@ -42,6 +42,19 @@ Menu → Settings → OsmAnd settings → Data storage folder.
 
 where XXXX-XXXX is the name of a SD-Card: Menu → Settings → OsmAnd settings → Data storage folder → "Manually specified" option. ([The example](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-984467744)).
 
+### Picking a 'Generally Accessible' OsmAnd Data storage folder Using the 'Media' Storage
+
+Android versions have become increasingly restrictive in terms of which apps and processes can access which storage folders. (In addition, things may even behave different for a fresh app install vs. an app upgrade install vs. an Android system upgrade.) As a result, an app's storage folder may be invisible to other apps, even to file manager apps or from a PC.
+
+For OsmAnd, many users want to use a storage location on external or even removable storage (often having more storage space) which is readily accessible for other proccesses, e.g. if you use manual file copy or sync/backup mechanisms (via a separate app or even a PC).
+
+Our OsmAnd builds do not have the 'All files access' permission (because google heavily restricts its use) to chose any arbitrary storage folder. One possibility I am aware to try is using the 'Media' storage mechanism. The art is to identify a ‘Media’ type folder on your system which will accordingly become read/write available. You can try this:
+-	Go to _OsmAnd’s Settings → OsmAnd settings → Data storage folder_, and identify the general storage location (area) you are trying to target, e.g. by deriving from the reported free space (often this may be the _External storage 2_ location.)
+-	Note down the folder path reported under the option, e.g. something like _/storage/xxxx-xxxx/Android/data/net.osmand.plus/files_
+-	Change to the _Manually specified_ option. There specify this folder path **but with a modification to point to a folder recognized as Media**. On some systems, replacing everything behind _/Android/_ by just _/media_ (e.g. **_/storage/xxxx-xxxx/Android/media_**) works. Other systems may need a different modification.
+
+You have found a good path if after selecting it OsmAnd does NOT complain about not being able to write to the target folder. Before trying this, make sure under Android’s '_Apps_' settings the OsmAnd app has been granted the highest storage permission possible, which usually (explicitly or not) contains the 'Media' storage permission. In new versions of android, the '_Storage_' permission seems a little hidden in advanced menus.
+
 ### Deleting map data after the app update (if selected Multiuser storage 1)
 
 About this issue of OsmAnd Android version: [Github](https://github.com/osmandapp/OsmAnd/issues/13404)
