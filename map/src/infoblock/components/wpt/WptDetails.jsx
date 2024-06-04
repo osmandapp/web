@@ -95,7 +95,6 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
     useEffect(() => {
         if (wpt?.type?.isWikiPoi) {
-            setLoading(ctx.loadingContextMenu);
             if (!ctx.loadingContextMenu && !ctx.searchSettings.getPoi) {
                 setShowInfoBlock(false);
             }
@@ -122,6 +121,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     osmUrl: poiOptions[POI_OSM_URL],
                 };
             } else if (type?.isWikiPoi) {
+                setLoading(true);
                 const currentPoi = ctx.selectedWpt.poi;
                 const wikiObj = ctx.searchSettings.getPoi;
                 const coords = wikiObj.geometry.coordinates;
@@ -155,7 +155,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             setNewWpt(result);
         };
 
-        fetchWpt().then();
+        fetchWpt().then(() => setLoading(false));
     }, [ctx.selectedWpt]);
 
     async function getDataFromWpt(type, selectedWpt, wptFromFile = null) {

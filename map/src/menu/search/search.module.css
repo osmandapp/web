@@ -153,3 +153,6 @@
     font-style: normal !important;
     font-weight: 500 !important;
 }
+.tooltip {
+    border-radius: 33px !important;
+}

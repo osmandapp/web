@@ -27,6 +27,7 @@ export default function SearchLayer() {
 
     const { i18n } = useTranslation();
 
+    const tooltipRef = useRef(null);
     const mainIconsLayerRef = useRef(null);
     const otherIconsLayerRef = useRef(null);
 
@@ -78,6 +79,7 @@ export default function SearchLayer() {
                 map.removeLayer(layer);
             }
         });
+        removeTooltip();
     }
 
     useEffect(() => {
@@ -465,7 +467,6 @@ export default function SearchLayer() {
     }, [ctx.wikiPlaces]);
 
     function addEventListeners({ marker, place, main = false, latlng, iconSize = [10, 10] }) {
-        let tooltip;
         // Add click event to open information about the place
         marker.on('click', () => {
             openInfo(place);
@@ -512,25 +513,26 @@ export default function SearchLayer() {
                 });
             }
             if (place.properties.wikiTitle && place.properties.wikiTitle !== '') {
-                const offset = main ? [iconSize[1] / 10, iconSize[1] / 2] : [0, 0];
-                tooltip = L.tooltip({
+                const offset = main ? [iconSize[1] / 10, iconSize[1] * 0.8] : [0, iconSize[1] * 0.8];
+                const title = place.properties.wikiTitle;
+                const shortTitle = title.length > 50 ? title.substring(0, 50) + '...' : title;
+
+                tooltipRef.current = L.tooltip({
                     permanent: true,
                     direction: 'bottom',
                     offset: offset,
+                    className: styles.tooltip,
                 })
-                    .setContent(place.properties.wikiTitle)
+                    .setContent(shortTitle)
                     .setLatLng(latlng);
-                map.addLayer(tooltip);
+                map.addLayer(tooltipRef.current);
             }
         });
 
         // Add mouseout event to reset marker style and remove pointer
         marker.on('mouseout', (event) => {
             if (event.originalEvent) {
-                if (tooltip) {
-                    map.removeLayer(tooltip);
-                    tooltip = null;
-                }
+                removeTooltip();
                 ctx.setSelectedPoiId({ id: -1 });
                 if (!main) {
                     marker.setStyle({
@@ -545,6 +547,13 @@ export default function SearchLayer() {
                 pointerRef.current = null;
             }
         });
+    }
+
+    function removeTooltip() {
+        if (tooltipRef.current) {
+            map.removeLayer(tooltipRef.current);
+            tooltipRef.current = null;
+        }
     }
 
     return (
