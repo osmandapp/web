@@ -2,7 +2,7 @@ import { ButtonGroup, IconButton, Paper, SvgIcon, Tooltip } from '@mui/material'
 import TracksManager from '../../../manager/track/TracksManager';
 import { Insights, Info } from '@mui/icons-material';
 import React, { useContext, useState } from 'react';
-import AppContext, { OBJECT_CONFIGURE_MAP } from '../../../context/AppContext';
+import AppContext, { OBJECT_CONFIGURE_MAP, OBJECT_TYPE_WEATHER } from '../../../context/AppContext';
 import PoiTypesDialog from '../poi/PoiTypesDialog';
 import PanelButtons from './PanelButtons';
 import ChangeProfileTrackDialog from '../../../dialogs/tracks/ChangeProfileTrackDialog';
@@ -162,7 +162,7 @@ export default function GeneralPanelButtons({
                         </ButtonGroup>
                     </Paper>
                 </div>
-                {showInfoBlock && (
+                {showInfoBlock && !ctx.selectedWpt && ctx.currentObjectType !== OBJECT_TYPE_WEATHER && (
                     <PanelButtons
                         orientation={orientation}
                         tooltipOrientation={tooltipOrientation}
