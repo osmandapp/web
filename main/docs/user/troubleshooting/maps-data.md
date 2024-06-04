@@ -23,9 +23,9 @@ Firstly, OsmAnd is meant to support OpenStreetMap and tries to go that path as f
 
 Yes. You need to choose Feet or Meters data before downloading Contour line data: [read here about it](../../user/plugins/contour-lines.md#choose-meters-or-feet).
 
-### Maps slowly loading on Android 11, 12 (SD-card)
+### Maps slowly loading on Android 11, 12 (SD card)
 
-[Android 11 and 12's new storage access rules](https://www.androidauthority.com/android-12-privacy-features-1225859/) may result in slow SD-card file (map) access performance and other visibility or access restrictions with SD-Card folders. See also these details on the topic: [Reddit discussion](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/), [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453), [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046), [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
+[Android 11 and 12's new storage access rules](https://www.androidauthority.com/android-12-privacy-features-1225859/) may result in slow SD card file (map) access performance and other visibility or access restrictions with SD card folders. See also these details on the topic: [Reddit discussion](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/), [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453), [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046), [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
 
 At this moment we can propose these solutions:
 
@@ -33,15 +33,15 @@ At this moment we can propose these solutions:
 
 - This is done by selection an **_Internal app memory_** target option under _Menu → Settings → OsmAnd settings → Data storage folder_.
 
-- But please note that often _Internal app memory_ space is limited. For the moment, the manual workaround may be to set the OsmAnd data storage folder to Internal app memory storage, but migrate the data manually via a file manager, and keep rarely used larger maps stored on the SD-card until you need to use them. We will be working towards providing a better solution as we can think of one.
+- But please note that often _Internal app memory_ space is limited. For the moment, the manual workaround may be to set the OsmAnd data storage folder to Internal app memory storage, but migrate the data manually via a file manager, and keep rarely used larger maps stored on the SD card until you need to use them. We will be working towards providing a better solution as we can think of one.
 
-#### 2. Use the SD-card's 'Download' Folder:
+#### 2. Use the SD card's 'Download' Folder:
 
 Try this solution by specifying under **_Menu → Settings → OsmAnd settings → Data storage folder → Manually specified_**):
    - **_/storage/XXXX-XXXX/Download/osmand_**   (in some cases this version caused errors with multiple file access, you could e.g. download the World Overview map, but no other regions are shown.)
    - **_/storage/XXXX-XXXX/Download_** (this version should always work, you can download maps, etc. Note that OsmAnd does not see files written to the folder by other apps or programs (e.g SasPlanet etc., see [here](../../technical/map-creation/create-offline-maps-yourself.md)).
 
-Here XXXX-XXXX is the SD-card' identification number, sometimes visible in the folder path displayed under the _External staroage 2_ options, or has to be found out independently. Research of this solution is originally supplied [here](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-984467744).
+Here XXXX-XXXX is the SD card's identification number, sometimes visible in the folder path displayed under the _External staroage 2_ options, or has to be found out independently. Research of this solution is originally supplied [here](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-984467744).
 
 #### 3. 'Media' Storage Option:
 Plesae see below.
