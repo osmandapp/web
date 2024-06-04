@@ -55,7 +55,7 @@ For Android devices you can download the free and paid application on the follow
 
 :::tip Note
 - Android Auto only works with versions of the app from Google Play. Android Auto is not available for OsmAnd+, purchased from Amazon or Maps+ subscription from Huawei AppGallery.
-- OsmAnd Pro subscription is a cross-platform purchase. You can buy it from Amazon or Huawei AppGallery and then [restore](../personal/osmand-cloud.md#cross-platform) on OsmAnd from Google Play and vice versa.
+- OsmAnd Pro subscription is a cross-platform purchase. You can buy it from Amazon or Huawei AppGallery and then [restore (register your e-mail as Pro-account)](../personal/osmand-cloud.md#cross-platform) on OsmAnd from Google Play and vice versa.
 :::
 
 

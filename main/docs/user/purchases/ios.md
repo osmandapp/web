@@ -33,7 +33,7 @@ You can add your purchases to [the Family Sharing - Apple](https://support.apple
 
 :::tip Note
 
-OsmAnd Pro subscription is a cross-platform purchase. It means that you can buy it in App Store and you can use it for [Android versions](../purchases/android.md), [OsmAnd.net](http://osmand.net/map) and vice versa.
+OsmAnd Pro subscription is a cross-platform purchase. It means that you can buy it in App Store and then [restore (register your e-mail as Pro-account)](../personal/osmand-cloud.md#cross-platform) on OsmAnd for [Android versions](../purchases/android.md), [OsmAnd.net](http://osmand.net/map) and vice versa.
 
 :::
 
