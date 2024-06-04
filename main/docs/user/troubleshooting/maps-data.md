@@ -25,22 +25,25 @@ Yes. You need to choose Feet or Meters data before downloading Contour line data
 
 ### Maps slowly loading on Android 11, 12 (SD-card)
 
-There are new storage access rules in [Android 11-12](https://www.androidauthority.com/android-12-privacy-features-1225859/). The problem is related to storing maps on SD-cards. On Android 11 and 12 very slow file access performance and access restrictions to folders on SD-card.
+[Android 11 and 12's new storage access rules](https://www.androidauthority.com/android-12-privacy-features-1225859/) may result in slow SD-card file (map) access performance and other visibility or access restrictions with SD-Card folders. See also these details on the topic: [Reddit discussion](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/), [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453), [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046), [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
 
-About this issue on our pages: [Reddit discussion](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/), [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453), [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046), [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
+At this moment we can propose these solutions:
 
-At this moment we can propose next solutions:
+#### 1. Migrate the OsmAnd data storage folder to 'Internal app memory':
 
-1. _Migrate maps and other OsmAnd data from SD-card._ It's possible to fix if you migrate maps (OsmAnd data) from SD-card. We're thinking to provide an alternative solution but as of today you can keep some maps (OsmAnd data) on SD-card and copy them manually via File Manager when you need to use them. Sorry for inconvenience but there is no good solution yet.
-If this is your case, please try **to Migrate your files to Internal app memory (External or Multiuser storage of app memory)** and check how it would work for you. 
-Menu → Settings → OsmAnd settings → Data storage folder.
+- This is done by selection an **_Internal app memory_** target option under _Menu → Settings → OsmAnd settings → Data storage folder_.
 
-1. _Setting the storage location manually for SD-card._ The second decisions it's to set the storage location manually (Menu → Settings → OsmAnd settings → Data storage folder → Manually specified) to :
-  
-   - _/storage/XXXX-XXXX/Download/osmand_   (in this version, there was an error opening some file when loading, then you can download the World Overview map, but no other regions are shown.)
-   - _**/storage/XXXX-XXXX/Download**_ (in this version it works, you can download maps, etc., but OsmAnd does not see everything that is written to folders by other programs ([SasPlanet and etc.](../../technical/map-creation/create-offline-maps-yourself.md)))
+- But please note that often _Internal app memory_ space is limited. For the moment, the manual workaround may be to set the OsmAnd data storage folder to Internal app memory storage, but migrate the data manually via a file manager, and keep rarely used larger maps stored on the SD-card until you need to use them. We will be working towards providing a better solution as we can think of one.
 
-where XXXX-XXXX is the name of a SD-Card: Menu → Settings → OsmAnd settings → Data storage folder → "Manually specified" option. ([The example](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-984467744)).
+#### 2. Use the SD-card's 'Download' Folder:
+
+Try this solution by specifying under **_Menu → Settings → OsmAnd settings → Data storage folder → Manually specified_**):
+   - **_/storage/XXXX-XXXX/Download/osmand_**   (in some cases this version caused errors with multiple file access, you could e.g. download the World Overview map, but no other regions are shown.)
+   - **_/storage/XXXX-XXXX/Download_** (this version should always work, you can download maps, etc. Note that OsmAnd does not see files written to the folder by other apps or programs ([SasPlanet](../../technical/map-creation/create-offline-maps-yourself.md) etc.).
+
+Here XXXX-XXXX is the SD-card' identification number, sometimes visible in the folder path displayed under the _External staroage 2_ options, or has to be found out independently. Research of this solution is originally supplied [here](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-984467744).
+
+#### 3. See also below ('Media' Storage Option):
 
 ### Picking a 'Generally Accessible' OsmAnd Data storage folder Using the 'Media' Storage
 
