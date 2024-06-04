@@ -187,6 +187,33 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         }
     }, [newWpt]);
 
+    function addFirstPhoto(wpt) {
+        const mainPhotoName = wpt.type.isWikiPoi.properties?.photoTitle;
+        if (!mainPhotoName || mainPhotoName === '') {
+            return wpt;
+        }
+        const mainPhoto = wpt.photos.features.find((photo) => photo.properties.imageTitle === mainPhotoName);
+        if (mainPhoto) {
+            mainPhoto.properties.rowNum = 0;
+            wpt.photos.features.unshift(mainPhoto);
+        } else {
+            const mainFeature = {
+                type: 'Feature',
+                properties: {
+                    imageTitle: mainPhotoName,
+                    mediaId: 0,
+                    rowNum: 0,
+                },
+                geometry: {
+                    type: 'Point',
+                    coordinates: [wpt.latlon.lon, wpt.latlon.lat],
+                },
+            };
+            wpt.photos.features.unshift(mainFeature);
+        }
+        return wpt;
+    }
+
     useEffect(() => {
         if ((wpt?.type?.isPoi || wpt?.type?.isWikiPoi) && !isAddressAdded) {
             setIsAddressAdded(true);
@@ -205,7 +232,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             setIsPhotosAdded(true);
             getWikiPhotos(wpt).then((data) => {
                 if (data) {
-                    setWpt((prevWpt) => ({ ...prevWpt, photos: data }));
+                    let newWpt = { ...wpt, photos: data };
+                    newWpt = addFirstPhoto(newWpt);
+                    setWpt(newWpt);
                 }
             });
         }
