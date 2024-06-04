@@ -137,7 +137,7 @@ export default function SearchLayer() {
                 !areSetsEqual(filtersRef.current, ctx.searchSettings.selectedFilters) ||
                 !ctx.wikiPlaces
             ) {
-                filtersRef.current = ctx.searchSettings.selectedFilters;
+                filtersRef.current = ctx.searchSettings.selectedFilters ?? null;
                 removeLayers();
                 debouncer(
                     () => getData({ controller, ignore, settings, setLoadingContextMenu }),
