@@ -40,7 +40,7 @@ The cross-platform capability allows you to use OsmAnd on all platforms *([Andro
 4. The registered email will be your login to activate OsmAnd Pro or OsmAnd Start on other platforms.  
 
 :::note
-OsmAnd Pro is a subscription with all the features of OsmAnd and is **cross-platform**. This means that you can buy it in one store, for example for Android (Google Play, Amazon, Huawei AppGallery), and launch it on iOS.
+OsmAnd Pro is a subscription with all the features of OsmAnd and is **cross-platform**. This means that you can buy it in one store, for example for Android (Google Play, Amazon, Huawei AppGallery), and launch it on iOS. [Registered e-mail](#login) is your login for OsmAnd Pro activation.
 :::  
 
 
