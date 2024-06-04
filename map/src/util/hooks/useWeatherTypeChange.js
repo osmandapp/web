@@ -10,21 +10,19 @@ import {
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 
 export const useWeatherTypeChange = ({ ctx, currentLoc, setDayForecast = null, setWeekForecast = null }) => {
-    function getForecastData(location) {
+    function getForecastData({ lat, lon }) {
         if (setDayForecast) {
-            fetchDayForecast({ lat: location.lat, lon: location.lon, ctx, setDayForecast }).then();
+            fetchDayForecast({ lat, lon, ctx, setDayForecast }).then();
         }
         if (setWeekForecast) {
-            fetchWeekForecast({ lat: location.lat, lon: location.lon, ctx, setDayForecast }).then(() =>
-                ctx.setForecastLoading(false)
-            );
+            fetchWeekForecast({ lat, lon, ctx, setWeekForecast }).then(() => ctx.setForecastLoading(false));
         }
     }
 
     useEffect(() => {
         if (changedWeatherType(ctx.weatherType)) {
             if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
-                getForecastData(currentLoc);
+                getForecastData({ lat: currentLoc.lat, lon: currentLoc.lng });
             } else {
                 let savedWeatherLoc = localStorage.getItem(LOCAL_STORAGE_WEATHER_LOC);
                 if (savedWeatherLoc) {
