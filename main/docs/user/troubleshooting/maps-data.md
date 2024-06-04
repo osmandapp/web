@@ -39,11 +39,12 @@ At this moment we can propose these solutions:
 
 Try this solution by specifying under **_Menu → Settings → OsmAnd settings → Data storage folder → Manually specified_**):
    - **_/storage/XXXX-XXXX/Download/osmand_**   (in some cases this version caused errors with multiple file access, you could e.g. download the World Overview map, but no other regions are shown.)
-   - **_/storage/XXXX-XXXX/Download_** (this version should always work, you can download maps, etc. Note that OsmAnd does not see files written to the folder by other apps or programs ([SasPlanet](../../technical/map-creation/create-offline-maps-yourself.md) etc.).
+   - **_/storage/XXXX-XXXX/Download_** (this version should always work, you can download maps, etc. Note that OsmAnd does not see files written to the folder by other apps or programs (e.g SasPlanet etc., see [here](../../technical/map-creation/create-offline-maps-yourself.md)).
 
 Here XXXX-XXXX is the SD-card' identification number, sometimes visible in the folder path displayed under the _External staroage 2_ options, or has to be found out independently. Research of this solution is originally supplied [here](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-984467744).
 
-#### 3. See also below ('Media' Storage Option):
+#### 3. 'Media' Storage Option:
+Plesae see below.
 
 ### Picking a 'Generally Accessible' OsmAnd Data storage folder Using the 'Media' Storage
 
