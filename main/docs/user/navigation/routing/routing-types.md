@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 title: Routing types
 ---
 
@@ -12,9 +12,10 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+
 ## Overview
 
-The route type determines how the route is calculated, which roads are permitted, and what the travel time is. The OsmAnd application uses different route types for hiking, cycling, skiing or boating routes. Each profile is assigned a specific routing type that best matches it. OsmAnd allows you to customize the type of routing according to your needs and preferences. To make changes, go to *<Translate android="true" ids="shared_string_menu,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/>, <Translate android="true" ids="app_mode_car"/>, <Translate android="true" ids="app_mode_pedestrian"/> or another one) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
+The route type determines how the route is calculated, which roads are permitted, and what the travel time is. The OsmAnd application uses different route types for hiking, cycling, skiing or boating routes. Each profile is assigned a specific routing type that best matches it. OsmAnd allows you to customize the type of routing according to your needs and preferences. To make changes, go to *<Translate android="true" ids="shared_string_menu,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/>, <Translate android="true" ids="app_mode_car"/>, <Translate android="true" ids="app_mode_pedestrian"/> or others) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
 
 
 ## Routing types  

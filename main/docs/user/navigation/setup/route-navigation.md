@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-The Navigation by route option provides you with simple step-by-step instructions, that help you easily reach your destination. *Navigation by route* can be used with different [types of routing](./../routing/index.md) (or profiles): no matter whether you drive a [car](./../routing/car-based-routing.md), ride a [horse](./../routing/horse-routing.md), [ski](./../routing/ski-routing.md) or [walk](./../routing/pedestrian-routing.md).  
+The Navigation by route option provides you with simple step-by-step instructions, that help you easily reach your destination. *Navigation by route* can be used with different [types of routing](./../routing/routing-types.md) (or profiles): no matter whether you drive a [car](./../routing/car-based-routing.md), ride a [horse](./../routing/horse-routing.md), [ski](./../routing/ski-routing.md) or [walk](./../routing/pedestrian-routing.md).  
 By default, OsmAnd has offline navigation enabled. Although you can also use [online routing engines](./../routing/online-routing.md).  
 
 :::tip
@@ -53,7 +53,7 @@ To use the offline navigation, you first need to [download maps](../../start-wit
 2. Go to the [Navigation menu](#navigation-menu):
     - Specify the [destination point](#set-target-point).
     - Wait until the route is calculated. After that you will be able to obtain additional information about your route in *[Details section](./route-details.md#overview)*.
-    - You can switch between different [routing types](./../routing/index.md) (profiles) to get the best result.
+    - You can switch between different [routing types](./../routing/routing-types.md) (profiles) to get the best result.
     - Add [intermediate destinations](#intermediate-destinations) (optional).
     - You can also change the departure point from the [current location](../../map/interact-with-map#my-location--zoom) to the required one.
 3. Additional [navigation settings](#settings) can be used depending on your purposes (you can configure which roads to avoid or prefer, save fuel or choose the fastest route, etc).
@@ -330,7 +330,7 @@ Please read about route parameters for the corresponding navigation type.
 
 ### Navigation settings
 
-How to configure [routing type](../routing/index.md#routing-types) and [route parameters](../guidance/navigation-settings.md#route-parameters) you can read in the [Navigation settings article](../guidance/navigation-settings.md) or in articles about specific types of routing in the [Route Parameters chapter](../routing/).  
+How to configure [routing type](../routing/routing-types.md) and [route parameters](../guidance/navigation-settings.md#route-parameters) you can read in the [Navigation settings article](../guidance/navigation-settings.md) or in articles about specific types of routing in the [Route Parameters chapter](../routing/).  
 
 ### Simulate navigation
 

@@ -73,7 +73,7 @@ Navigation is an important part of a trip, and choosing *the right type* of navi
 
 **Online navigation** basically uses a special routing engine or website that allows the OsmAnd app to plot a route based on current information and other factors. You can read about how to choose the best route online in the article [*Online routing*](../routing/online-routing.md). This navigation type is only available for *Android version* of the app.  
 
-**Offline navigation**, on the other hand, does not require internet access and offers a wider selection of [navigation types](../routing/index.md) that can be used to calculate a route. Among them, there are such as *bicycle, boat, car, on foot, ski*, and *straight line*. There are currently 13 basic types of routing, as well as an external [BRouter](../routing/brouter.md) routing type that provides additional routing opportunities.  
+**Offline navigation**, on the other hand, does not require internet access and offers a wider selection of [navigation types](../routing/routing-types.md) that can be used to calculate a route. Among them, there are such as *bicycle, boat, car, on foot, ski*, and *straight line*. There are currently 13 basic types of routing, as well as an external [BRouter](../routing/brouter.md) routing type that provides additional routing opportunities.  
 
 The navigation type determines which rules are used to calculate routes. If you need a specific type of navigation, you can **import your own modified *XML* routing file**. Read more about routing rules on our [GitHub page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing). And there is a separate article about XML format and how to use it, [Map Rendering style](../../../technical/osmand-file-formats/osmand-rendering-style.md), which can help you in creating a route file.  
 
@@ -98,7 +98,7 @@ The navigation type determines which rules are used to calculate routes. If you 
 
 **<Translate android="true" ids="route_parameters"/>** are settings that determine how the application will calculate a route to reach a destination, considering factors such as type of transport, routing priorities, route conditions, route complexity, and user preferences.   
 
-For each [profile](../../personal/global-settings.md#default-profile), except for *Browse Map*, OsmAnd selects by default the optimal [Navigation type](#navigation-type) and the relevant [route parameters](../routing/index.md). However, you can choose any type you like and change the parameters depending on your preferences and the external conditions of the upcoming trip.  
+For each [profile](../../personal/global-settings.md#default-profile), except for *Browse Map*, OsmAnd selects by default the optimal [Navigation type](#navigation-type) and the relevant [route parameters](../routing/routing-types.md). However, you can choose any type you like and change the parameters depending on your preferences and the external conditions of the upcoming trip.  
 
 All route parameters are described in detail in the corresponding sections of the documentation:  
 *[Car routing (Truck, Motorcycle)](../routing/car-based-routing.md)*, *[Bicycle  routing (MTB)](../routing/bicycle-based-routing.md)*, *[Moped routing](../routing/moped-routing.md)*, *[Pedestrian routing](../routing/pedestrian-routing.md)*, *[Public Transport routing](../routing/public-transport-navigation.md)*, *[Horseback routing](../routing/horse-routing.md)*, *[Skiing routing](../routing/ski-routing.md)*, *[Train routing](../routing/train-routing.md)*, [Boat routing](../routing/boat-navigation.md)*, *[Direct-to-point routing](../routing/direct-to-point-routing.md)*, *[Straight line routing](../routing/straight-line-routing.md)*, *[Online routing](../routing/online-routing.md)*, *[BRouter routing](../routing/brouter.md)*.  
@@ -196,7 +196,7 @@ A detailed description of the voice prompts settings is written in the first par
 
 Audio instructions during navigation help you as a driver or pedestrian get to your destination while [navigating a selected route](../setup/route-navigation.md). They contain information about turns, driving directions, road signs, distances to your destination, and other factors that may affect your navigation.  
 
-*Voice prompts* allow you to focus on the road and not be distracted by the map or navigation device. They also improve driving safety and reduce the time it takes to navigate in unfamiliar terrain, and can be useful for different [types of routes](../routing/index.md).
+*Voice prompts* allow you to focus on the road and not be distracted by the map or navigation device. They also improve driving safety and reduce the time it takes to navigate in unfamiliar terrain, and can be useful for different [types of routes](../routing/routing-types.md).
 
 
 ## Screen alerts

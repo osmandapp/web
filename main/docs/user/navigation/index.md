@@ -24,7 +24,7 @@ In the **Set up a route** section, you can read basics about how to start naviga
 - [Navigation by markers](./setup/markers-navigation.md)
 - [Route details](./setup/route-details.md)
 
-In the **[Route parameters](./routing/index.md)** section, you can read about different routing types, online and offline. This section also describes routing rules, that determine how your route will be calculated. Common route parameters are described in the [index article](./routing/index.md). Other articles describe the features of certain rooting types.
+In the **[Route parameters](./routing/routing-types.md)** section, you can read about different routing types, online and offline. This section also describes routing rules, that determine how your route will be calculated. Common route parameters are described in the [index article](./routing/routing-types.md). Other articles describe the features of certain rooting types.
 - [Car routing (Truck, Motorcycle)](./routing/car-based-routing.md)
 - [Bicycle routing (MTB)](./routing/bicycle-based-routing.md)
 - [Moped routing](./routing/moped-routing.md)

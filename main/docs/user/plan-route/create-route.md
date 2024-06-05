@@ -101,7 +101,7 @@ In case you chose [*Plan a route*](#how-to-open) in the main *Menu*, you can sel
 
 To create a new track in GPX format, use the main function of the *Plan a route* tool. Unlike recording the current track with *[Trip recording plugin](../plugins/trip-recording.md)*, pre-creating a route has many advantages. You can [add](#add-points) as many points as you want to the route, [delete and move them](#point-context-menu), change route types by [segments](#route-between-points), and get [detailed information about the route](#graph).    
 
-By default, the routing type will match the previously selected profile, click on the routing icon to select how the application should calculate the segment to connect points. The available profile should be configured [separately](../navigation/routing/index.md).  
+By default, the routing type will match the previously selected profile, click on the routing icon to select how the application should calculate the segment to connect points. The available profile should be configured [separately](../navigation/routing/routing-types.md).  
 
 You can **zoom in and out** for easy placement of points when creating or editing a track. When you **zoom out**, the points on the track become invisible for a better view of the entire length of the track and the map as a whole. Only the last added point and the pointer for adding the next point remain visible.
 
@@ -397,7 +397,7 @@ Each point on your route has its own context menu. It shows the *sequence number
 2. Tap the *profile icon* in the bottom left corner of the map screen. Not on the top icon, it will open the Configure Map menu.
 3. In the *[Point Context menu](#point-context-menu) → Change route type before/after*.  
 
-With this option, you can choose how points are connected for the whole track or only for the next segment. This can be done in a straight line or by calculating a route using one of the [profiles](../navigation/routing/index.md) that you have enabled in the OsmAnd app *Menu → Settings → App profiles*.   
+With this option, you can choose how points are connected for the whole track or only for the next segment. This can be done in a straight line or by calculating a route using one of the [profiles](../navigation/routing/routing-types.md) that you have enabled in the OsmAnd app *Menu → Settings → App profiles*.   
 
 - *Whole track* - The whole track will be recalculated using the selected profile.
 - *Next segment* - Only the next segment will be recalculated using the selected profile.  

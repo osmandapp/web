@@ -51,11 +51,11 @@ More info about this possibility you can find in [Technical documentation](../..
 ## Avoid specific roads
 
 :::caution
-Avoid roads function is global and affects all *[Routing types](../routing/index.md)* (except *[Online routing](../routing/online-routing.md)* and *[BRouter](../routing/brouter.md)*, **Android**).  
+Avoid roads function is global and affects all *[Routing types](../routing/routing-types.md)* (except *[Online routing](../routing/online-routing.md)* and *[BRouter](../routing/brouter.md)*, **Android**).  
 :::
 
 There are two possible ways to choose which roads to avoid when calculating a route:
-- Select road type in the [Route parameters](../guidance/navigation-settings.md#route-parameters) section of [Navigation settings](../guidance/navigation-settings.md). Description of this setting is provided in the articles about [Routing types](../routing/index.md) settings. As example, see [Car / Truck / Motorcycle](../routing/car-based-routing.md#route-parameters---car) routing type description.
+- Select road type in the [Route parameters](../guidance/navigation-settings.md#route-parameters) section of [Navigation settings](../guidance/navigation-settings.md). Description of this setting is provided in the articles about [Routing types](../routing/routing-types.md) settings. As example, see [Car / Truck / Motorcycle](../routing/car-based-routing.md#route-parameters---car) routing type description.
 - You can also select specific roads that will not be used for routing using the *[Avoid roads](../../map/map-context-menu.md#avoid-road)* option through the *Map context menu* or using *[Avoid roads menu](#avoid-roads-menu)* (*<Translate android="true" ids="shared_string_menu,shared_string_navigation,impassable_road"/>*).
 
 :::note

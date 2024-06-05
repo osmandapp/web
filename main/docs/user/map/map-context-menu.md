@@ -439,7 +439,7 @@ To delete previosly selected roads from *[Avoid roads list](../navigation/routin
 </Tabs>
 
 :::note
-Avoid roads function is global and affects all *[Routing types](../navigation/routing/index.md)* (except *[Online routing](../navigation/routing/online-routing.md)*).  
+Avoid roads function is global and affects all *[Routing types](../navigation/routing/routing-types.md)* (except *[Online routing](../navigation/routing/online-routing.md)*).  
 :::
 
 
