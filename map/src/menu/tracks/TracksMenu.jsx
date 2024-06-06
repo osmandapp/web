@@ -117,11 +117,13 @@ export default function TracksMenu({ setOpenVisibleMenu }) {
                             {defaultGroupItems}
                         </Box>
                     ) : (
-                        <Empty
-                            title={'You don’t have track files'}
-                            text={'You can import, create track files using OsmAnd.'}
-                            folder={DEFAULT_GROUP_NAME}
-                        />
+                        <Box id={'se-track-menu'}>
+                            <Empty
+                                title={'You don’t have track files'}
+                                text={'You can import, create track files using OsmAnd.'}
+                                folder={DEFAULT_GROUP_NAME}
+                            />
+                        </Box>
                     )}
                 </>
             )}
