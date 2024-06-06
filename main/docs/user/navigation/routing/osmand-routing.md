@@ -31,27 +31,28 @@ You can also create your **[own routing.xml file](#customize-offline-routing)** 
 - *[Straight line routing](./straight-line-routing.md)* - provides a straight line routing (or "point-to-point" navigation) that is recalculated when your location changes.  
 - *[Direct-to-point routing](./direct-to-point-routing.md)* - provides a straight line routing (or "point-to-point" navigation) which stays stable for whole navigation in contrast to **Straight line** routing (route recalculation is disabled).
 
+
 ## Other Routing types
 
 - *[Online routing](./online-routing.md)* (**Android only**) - is an OsmAnd feature that allows users to plan and navigate routes using online services.  
 - *[BRouter routing](./brouter.md)* (**Offline**, **Android only**) - uses BRouter app for offline routing.
 
+
 ## Customize offline routing
 
-You can modify the OsmAnd routing algorithm according to your needs. This can be done by updating the *routing.xml file*:  
+You can modify the OsmAnd routing algorithm according to your needs. This can be done by updating the **routing.xml file**:  
 
-- Copy the [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) file on your device. Read the [Help information](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml#L25) carefully. Check out OsmAnd [user's routing.xml](https://groups.google.com/g/osmand/c/JvV7p_JJvEU) file as an example.
+- Copy the [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) file to your device. Read the [Help information](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml#L25) carefully. As an example, view the [routing.xml](https://groups.google.com/g/osmand/c/JvV7p_JJvEU) file of the OsmAnd user.
 - After making the changes, the new *routing.xml* file can be added to OsmAnd by tapping it and selecting to open it in the OsmAnd app.
-- Select the modified [Navigation type](../../navigation/setup/route-navigation.md#start--stop-navigation) for your profile.
+- Select the modified [Navigation type](../../navigation/guidance/navigation-settings.md#navigation-type) for your profile.
 
-:::note
-More info about this possibility you can find in [Technical documentation](../../../technical/osmand-file-formats/osmand-routing-xml.md) and on [OsmAnd Github page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).  
-:::
+More information about this feature can be found in the [*Technical documentation*](../../../technical/osmand-file-formats/osmand-routing-xml.md) and on [*OsmAnd's GitHub page*](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).  
+
 
 ## Avoid specific roads
 
 :::caution
-Avoid roads function is global and affects all *[Routing types](../routing/routing-types.md)* (except *[Online routing](../routing/online-routing.md)* and *[BRouter](../routing/brouter.md)*, **Android**).  
+Avoid roads feature is global and affects all **[Routing types](../routing/routing-types.md)** except *[Online routing](../routing/online-routing.md)* and *[BRouter](../routing/brouter.md)*.  
 :::
 
 There are two possible ways to choose which roads to avoid when calculating a route:
@@ -65,7 +66,7 @@ There are two possible ways to choose which roads to avoid when calculating a ro
 
 ### Avoid roads menu
 
-*Avoid roads menu* can be reached via *Navigation button → Settings → Avoid roads... (Android) or Avoid roads (iOS)*.  
+*Avoid roads menu* can be accessed using the *Navigation button → Settings → Avoid roads... (Android) or Avoid roads (iOS)*.  
 
 <Tabs groupId="operating-systems">
 
@@ -149,17 +150,13 @@ You can [import](../../personal/import-export.md#import) roads to avoid during r
 The most convenient way to synchronize roads to avoid between your devices is to use [OsmAnd Cloud](../../personal/osmand-cloud.md) (Pro subscription required).
 :::
 
+
 ## Consider temporary limitations
 
 *Consider temporary limitations* option allows taking into account temporary road restrictions when calculating routes. They may include things like road construction or road closures for some reason (an accident, road repairs, natural disasters). Enabling this option can help you avoid unexpected detours or delays. Please note that sometimes this information may be outdated.
 In OpenStreetMap, this information is usually marked with the tag '*[temporary](https://wiki.openstreetmap.org/wiki/Comparison_of_life_cycle_concepts#Opening_hours_time_range_and_Temporary_namespace_and_Conditional_restrictions)*'.  
 
-## Development settings
 
-<InfoAndroidOnly />
+## Development section
 
-*Development section* of the Route parameters settings only visible when [Development plugin](../../plugins/development.md) is turned on.
-
-- ***<Translate android="true" ids="use_live_routing"/>***  - Allows to disable [OsmAnd Live updates](../../personal/maps.md#osmand-live) for routing. We recommend to use this option on and disable once you experience some issues.
-- ***<Translate android="true" ids="use_two_phase_routing"/>***  - Allows to disable 2nd phase to the default (A*) algorithm to improve the quality of the calculated route. This option should be on and off only in case long routes have obvious issues. Please note that switching off might increase time calculation dramatically and also requires more memory.
-- ***<Translate android="true" ids="use_fast_recalculation"/>*** - <Translate android="true" ids="use_fast_recalculation_desc"/>  
+The **Development section** of the *Route parameters* settings (*Menu → Settings → app profile → Navigation settings → Route parameters → Development*) is visible only when [OsmAnd development plugin](../../plugins/development.md) is enabled. It includes settings such as *Routing type (Android) / Routing algorithm (iOS), GPX approximation (Android only), Autozoom, and OsmAnd Live data (Android only)*. Read the [Navigation Settings](../../navigation/guidance/navigation-settings.md#development-settings) article for a detailed description.

@@ -55,7 +55,7 @@ To find extremums [Rames-Dougals-Peucker](https://en.wikipedia.org/wiki/Ramer%E2
 
 The main purpose of the algorithm is to find minimum number of straight lines that could represent the altitude graph. The ```threshold``` is **[7 meters](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd-java/src/main/java/net/osmand/gpx/ElevationDiffsCalculator.java#L13)**. So all peaks higher than 7 meters difference will be detected on a flat surfaces and won't be detected if they are less.
 
-Extremums are displayed as blue dots on the graph with Development plugin on.
+Extremums are displayed on the graph as blue dots with еру OsmAnd development plugin enabled.
 
 **Example 1**. Elevation - [0, 0, 10, 0, 0]. **Extremum** is 10.
 

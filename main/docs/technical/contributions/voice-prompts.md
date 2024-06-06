@@ -35,7 +35,7 @@ The _tts.js_ config files should contain a header as follows, keeping track of w
 * For some voices we also offer additional variants with e.g. shorter ('casual') prompts or some prompts muted to reduce chattiness.
 
 ## 3. Testing of Voice Prompts
-You may temporarily enable OssmAnd's Development plugin, then go to its settings and use button `Test voice prompts`. It provides several annlouncement examples for each type of OsmAnd prompt, using a wide range of numbers to test time/distance formating and pronunciation. The button caption staes the basic prompt content, the exact wording is specified in the tts.js file you test.
+You may temporarily enable OsmAnd development plugin, then go to its settings and use button `Test voice prompts`. It provides several annlouncement examples for each type of OsmAnd prompt, using a wide range of numbers to test time/distance formating and pronunciation. The button caption staes the basic prompt content, the exact wording is specified in the tts.js file you test.
 There is also a test button showing your device settings and language capabilities.
 
 During navigation, the current voice prompt can always be triggered by tapping on the turn arrow widget.

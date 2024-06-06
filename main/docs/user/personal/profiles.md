@@ -605,7 +605,7 @@ This item opens [Accessibility plugin settings](../plugins/accessibility.md#plug
 
 </Tabs>  
 
-This menu opens the [Development plugin settings](../plugins/development.md#plugin-settings), where you can configure the OsmAnd application for testing or try out new features. These settings are intended for developers and are not required for normal use of the application.
+This menu opens the [OsmAnd development plugin settings](../plugins/development.md#plugin-settings), where you can configure the OsmAnd application for testing or try out new features. These settings are intended for developers and are not required for normal use of the application.
 
 :::note
 Changing the settings of the OsmAnd development plugin affects all profiles.

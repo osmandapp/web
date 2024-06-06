@@ -39,7 +39,7 @@ Target sdk tools: [29](https://github.com/osmandapp/OsmAnd/blob/master/OsmAnd/bu
 Gradle task **assembleNightlyFreeLegacyFatDebug** will produce apk at *android/OsmAnd/build/outputs/apk/* *nightlyFreeLegacyFat/debug/OsmAnd-nightlyFree-legacy-fat-debug.apk*. Task name *assembleNightlyFreeLegacyFatDebug* consists of :
 - assemble - standard task to build apk
 - nightlyFree - build flavor described below
-- legacy - legacy / opengl / opengldebug - defines whether produced apk will have native libraries to use opengl map rendering or not. More information in Development plugin.
+- legacy - legacy / opengl / opengldebug - defines whether produced apk will have native libraries to use opengl map rendering or not. More information in OsmAnd development plugin.
 - fat - fat (all native targets) / armv7 / arm64 / x86 / armonly - select which native libraries will be inside apk.
 - debug - debug / release - standard task
 

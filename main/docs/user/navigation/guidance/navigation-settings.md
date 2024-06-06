@@ -71,9 +71,11 @@ The default *Browse map* profile has no settings for navigation.
 
 Navigation is an important part of a trip, and choosing *the right type* of navigation can make your journey much easier. Choosing the type of navigation can depend on how you travel and whether you have an Internet connection.  
 
-**Online navigation** basically uses a special routing engine or website that allows the OsmAnd app to plot a route based on current information and other factors. You can read about how to choose the best route online in the article [*Online routing*](../routing/online-routing.md). This navigation type is only available for *Android version* of the app.  
+- **Online navigation**
+    Mainly uses a special routing system or website that allows the OsmAnd app to plot a route based on current information and other factors. You can read about how to choose the best route online in the article [*Online routing*](../routing/online-routing.md). This navigation type is only available for *Android version* of the app.  
 
-**Offline navigation**, on the other hand, does not require internet access and offers a wider selection of [navigation types](../routing/routing-types.md) that can be used to calculate a route. Among them, there are such as *bicycle, boat, car, on foot, ski*, and *straight line*. There are currently 13 basic types of routing, as well as an external [BRouter](../routing/brouter.md) routing type that provides additional routing opportunities.  
+- **Offline navigation**
+It does not require internet access and offers a wider selection of [navigation types](../routing/routing-types.md) that can be used to calculate a route. Among them, there are such as *bicycle, boat, car, on foot, ski*, and *straight line*. There are currently 13 basic types of routing, as well as an external [BRouter](../routing/brouter.md) routing type that provides additional routing opportunities.  
 
 The navigation type determines which rules are used to calculate routes. If you need a specific type of navigation, you can **import your own modified *XML* routing file**. Read more about routing rules on our [GitHub page](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing). And there is a separate article about XML format and how to use it, [Map Rendering style](../../../technical/osmand-file-formats/osmand-rendering-style.md), which can help you in creating a route file.  
 
@@ -128,7 +130,7 @@ The **Recalculation route** parameter is a setting that allows you to automatica
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="route_recalculation_dist_title"/> in case of deviation*  | <Translate android="true" ids="recalculate_route_distance_promo"/>  | If [Voice prompts](../guidance/voice-navigation.md#settings-of-voice-prompts) are turned on, OsmAnd announces, that route is being recalculated. |
+| *<Translate android="true" ids="route_recalculation_dist_title"/> in case of deviation*  | <Translate android="true" ids="recalculate_route_distance_promo"/>  | If [Voice prompts](../guidance/voice-navigation.md#voice-settings) are turned on, OsmAnd announces, that route is being recalculated. |
 |  *Recalculate route in case of reverse direction*  | Your route will be recalculated if you move to the starting point.  |  When the setting is turned off, the movement to the starting point will not be considered as a deviation from the path (if it is performed along the calculated route).  |
 
 
@@ -138,11 +140,15 @@ The **Recalculation route** parameter is a setting that allows you to automatica
 
 <TabItem value="android" label="Android">
 
+*Menu → Settings → app profile → Navigation settings → Route parameters → Development*
+
 ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_development_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+*Menu → Settings → app profile → Navigation settings → Route parameters → Development*
 
 ![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_development_1_ios.png)
 
@@ -150,7 +156,7 @@ The **Recalculation route** parameter is a setting that allows you to automatica
 
 </Tabs>  
 
-The parameters in the **Development** section are mainly for advanced users, and are only available when the [*Development plugin*](../../plugins/development.md) is enabled.  
+The parameters in the **Development** section are mainly for advanced users, and are only available when the [*OsmAnd development plugin*](../../plugins/development.md) is enabled.  
 
 | Parameter | Description | Note |
 |:------------|:---------------|
@@ -349,13 +355,19 @@ These parameters are used as speed to estimate the [arrival time](../../widgets/
 
 #### Default speed 
 
-The *Default speed* is the preset movement speed. It is used to calculate the arrival time and determine the optimal route based on the movement speed that the application considers typical for this mode of transport. For example, car, public transport, pedestrian, or the speed you set manually.
+The **Default speed** is the preset movement speed. It is used to calculate the arrival time and determine the optimal route based on the movement speed that the application considers typical for this mode of transport. For example, car, public transport, pedestrian, or the speed you set manually.
 
 
 #### Road speeds
 
-The **Minimum speed** setting sets the minimum driving speed for all road types on the route. It increases the priority for roads with a recommended speed lower than the minimum speed.  
-The **Maximum speed** setting sets the maximum driving speed and decreases the priority for roads with a possible speed higher than the maximum.
+:::note
+These settings in iOS are available in *Menu → Settings → app profile → Navigation settings → Route parameters → Road speeds*.
+:::
+
+- **Minimum speed**  
+    The setting sets the minimum driving speed for all road types on the route. It increases the priority for roads with a recommended speed lower than the minimum speed.  
+- **Maximum speed**  
+    The setting sets the maximum driving speed and decreases the priority for roads with a possible speed higher than the maximum.
 
 
 ### Fuel used by motor

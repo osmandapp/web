@@ -124,7 +124,7 @@ Widget panels help you to arrange widgets on the application screen in a conveni
 
 14. [OsmAnd Tracker status](../widgets/info-widgets.md#-tracker-widget)  This *informational* widget is used to quickly access the [OsmAnd Tracker application](https://play.google.com/store/apps/details?id=net.osmand.telegram) to share your location with other users.  
 15. [GPS info (*Android only*)](../widgets/info-widgets.md#gps-info)  *Informational* widget shows the number of satellites the device is currently detecting and using.  
-16. [Developer widgets (from *Development plugin*)](../widgets/info-widgets.md#developer-widgets)  A set of *informational* widgets provides information about zoom level, map rendering speed, map center elevation above sea level, distance to the map center, camera height and tilt and available RAM on your device.  
+16. [Developer widgets (from *OsmAnd development plugin*)](../widgets/info-widgets.md#developer-widgets)  A set of *informational* widgets provides information about zoom level, map rendering speed, map center elevation above sea level, distance to the map center, camera height and tilt and available RAM on your device.  
     5 widgets included: *Map rendering FPS*, *Camera tilt*, *Camera elevation*, *Zoom level*, *Distance from camera to target*, *Available RAM*.  
 
 17. [Mapillary (from *Mapillary plugin*)](../widgets/info-widgets.md#mapillary-widget)  *Informational* widget provides quick access to Mapillary app to add street images.  

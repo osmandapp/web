@@ -20,7 +20,7 @@ import Translate from '@site/src/components/Translate.js';
 **<Translate android="true" ids="arrival_distance_factor_normally" />** | 1
 **<Translate android="true" ids="arrival_distance_factor_late" />** | 0.5
 **<Translate android="true" ids="arrival_distance_factor_at_last" />** | 0.25
-* In addition, there is a user-configurable overall **_Voice prompt delay_** (adjustable in the _Development plugin_, _Text voice prompts_, button 11.2). This is particularly needed for output type _Phone call audio_, where we emulate a call to a car stereo which induces some delay, to avoid the beginning of the prompts being cut off. (All distances announced in the prompts will anticipate any _Voice prompt delay_.)
+* In addition, there is a user-configurable overall **_Voice prompt delay_** (adjustable in the _OsmAnd development plugin_, _Text voice prompts_, button 11.2). This is particularly needed for output type _Phone call audio_, where we emulate a call to a car stereo which induces some delay, to avoid the beginning of the prompts being cut off. (All distances announced in the prompts will anticipate any _Voice prompt delay_.)
 * We mute prompts immediately once they refer to outdated events, or if your direction of travel seems not in line with a current route.
 
 ## Base Profile Default Speeds

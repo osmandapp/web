@@ -33,7 +33,7 @@ To activate special features for developers and testers:
 ## Plugin settings
 
 :::info info  
-Development plugin settings are global and apply to all profiles.  
+OsmAnd development plugin settings are global and apply to all profiles.  
 :::  
 
 Use one of the following paths to open the plugin settings:  

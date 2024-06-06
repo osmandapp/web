@@ -135,7 +135,7 @@ To get comprehensive weather information, you can use the map layers separately 
 When the Weather tab is open, unless otherwise specified, the necessary weather information is uploaded online. On iOS devices, it is possible to use a pre-loaded [Weather forecast](#download-forecast-ios). On Android devices the weather information is automatically cashed after download and can be used offline until the forecast expires.  
 
 :::tip
-On Android devices you can check when Weather data was downloaded by tapping the Weather widget. The Development plugin should be turned on.  
+On Android devices you can check when Weather data was downloaded by tapping the Weather widget. The OsmAnd development plugin should be turned on.  
 ![Date of weather cash android](@site/static/img/plugins/weather/weather_cash_andr.png)  
 :::
 

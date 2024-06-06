@@ -90,7 +90,7 @@ OsmAnd Plugins may augment these Feature groups: **Layers**, **Widgets**, **Cont
 ### Plugin Settings
 
 :::caution NOTE
-Only the development plugin and the OSM editing plugin change settings for all profiles. The remaining plugins are configured for each profile separately.  
+Only the OsmAnd development plugin and the OSM editing plugin change settings for all profiles. The remaining plugins are configured for each profile separately.  
 :::
 
 Most plugins provide specific profile or global settings, which can be accessed via: 

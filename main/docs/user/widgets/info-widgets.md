@@ -592,7 +592,7 @@ This OsmAnd Tracker plugin widget is used to quickly access the OsmAnd Tracker a
 ### Developer widgets
 
 :::note  
-Developer widgets can be added to the map screen only when OsmAnd [**Development plugin**](../plugins/development.md) is enabled.  
+Developer widgets can be added to the map screen only when [**OsmAnd development plugin**](../plugins/development.md) is enabled.  
 :::
 
 Developer widgets are used to get information about map [rendering speed](../plugins/development.md#fps-widget) and virtual camera position: [zoom level](../plugins/development.md#zoom-level), [distance](../plugins/development.md#distance-to-target) to map center, camera [elevation](../plugins/development.md#camera-elevation) and [incline](../plugins/development.md#camera-tilt).  
@@ -671,7 +671,7 @@ This widget is a useful tool for you to monitor the amount of available RAM on y
 
 **Total available* can be caused by various factors, such as background device processes or other applications that may be temporarily using RAM. It's important to remember that RAM is dynamic and can change depending on what apps and tasks are running on your device. These values are useful for tracking and optimizing the memory usage of your OsmAnd application to ensure it runs more consistently and efficiently.
 
-To use this widget, make sure you have the OsmAnd **Development plugin** enabled.
+To use this widget, make sure you have the **OsmAnd development plugin** enabled.
 
 | | |
 |------------|------------|

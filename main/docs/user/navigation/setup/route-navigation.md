@@ -257,7 +257,7 @@ Once start and end points are selected, the app will create a route between them
 
 ### Route recalculation
 
-The route can be recalculated automatically in case of deviation from it. You can change the parameters of the recalculation in the [Navigation settings](../guidance/navigation-settings.md#recalculate-route). You can also disable notification about route recalculationn in the settings of [Voice prompts](../guidance/voice-navigation.md).
+The route can be recalculated automatically in case of deviation from it. You can change the parameters of the recalculation in the [Navigation settings](../guidance/navigation-settings.md#recalculate-route). You can also disable notification about route recalculationn in the settings of [Voice prompts](../guidance/voice-navigation.md#voice-settings).
 
 ### Pause / Resume navigation
 

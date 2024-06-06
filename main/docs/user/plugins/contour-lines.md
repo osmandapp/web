@@ -261,7 +261,7 @@ The *Scale Levels* function allows you to set the minimum and maximum values of 
 
 - If you use the *Map rendering engine Version 1*, you need to use the normal [downloading](../start-with/download-maps.md) of Hillshade and Slope raster maps.
 - If you use the *Map rendering engine Version 2 (OpenGL)*:
-    - You can continue to use the normal Hillshade and Slope raster map download type, but you need to activate the [*Development plugin*](../plugins/development.md) and enable the [*Use raster SQLIte format for hillshade and slope*](../plugins/development.md#terrain) setting.
+    - You can continue to use the normal Hillshade and Slope raster map download type, but you need to activate the [*OsmAnd development plugin*](../plugins/development.md) and enable the [*Use raster SQLIte format for hillshade and slope*](../plugins/development.md#terrain) setting.
     - Alternatively, you can use the *Terrain Map (3D)* download. This saves memory space on your device, and the Hillshade, Slope, and 3D Relief effects will be generated from them using your device.
 
 
