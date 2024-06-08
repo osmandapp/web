@@ -47,8 +47,15 @@ Pedestrian routing can be useful not only in urban areas, where pedestrians may 
 |*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* | <details><summary> Elevation data will be used in route calculation: [penalties](../../../technical/osmand-file-formats/osmand-routing-xml.md#penalties-of-elevation-data) will be set for roads that differ from the selected type. </summary> ![Use elevation data Android](@site/static/img/navigation/routing/pedestrian_elevation_andr.png)  </details> | This preference can help avoid steep hills or vice versa, prefer them. Using this option may be very helpful in pedestrian routing. Without elevation data the fastest route as on plain terrain will be calculated. |
 |*<Translate android="true" ids="routing_attr_allow_via_ferrata_name"/>*| *Via ferrata* routes will be used for routing when this option together with *Use elevation data* enabled.  | [Via ferrata](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dvia_ferrata) is a mountain route equipped with fixed cables, stemples, ladders, and bridges. |
 
-Other routing settings:  
-- The routing algorithm can take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
-- In the [Recalculate route section](../setup/route-navigation.md#route-recalculation) of the Route parameters, you can enable and adjust route recalculation options.
-- *[<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (iOS) should be set according to your speeds (especialy important when you use *Pedestrian routing* for jogging). It is used to calculate Estimated Time of Arrival.
-- In the [Development section](../guidance/navigation-settings.md#development-settings) of the Route parameters, you can try new routing features, that are under testing now. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
+
+## Other routing settings
+
+- The routing algorithm can also take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
+
+- In the [*Recalculate route section*](../../navigation/guidance/navigation-settings.md#recalculate-route) of the *Route parameters*, you can enable and adjust route recalculation options.
+
+- In the [*Development section*](../guidance/navigation-settings.md#development-settings) of the *Route parameters*, you can try new routing features that are currently in the testing phase. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
+
+- *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md##road-speeds) (iOS)* and *Default speed (Android)*. These settings must be set according to the parameters of your vehicle. They are used on unknown roads without speed limits. This is most often the case if you are navigating on a track or online route.  
+    For *iOS* in: *Navigation settings → Route parameters → Road speeds*  
+    For *Android* in: *Navigation settings → Vehicle parameters → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*

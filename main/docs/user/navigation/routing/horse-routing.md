@@ -18,12 +18,14 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 *Horseback routing* can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings.  
 
+![Map routes - horse routes](@site/static/img/map/map-routes-horse.png)
+
+
 ## Route parameters - Horse
 
 :::note
 By default, *Horseback riding profile* is deactivated. In order to use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
-
 
 Horseback routing is designed to provide equestrians with information about horse-friendly paths, bridleways, and riding trails.
 
@@ -54,8 +56,15 @@ Horseback routing is designed to provide equestrians with information about hors
 | *<Translate android="true" ids="routing_attr_only_permitted_ways_name"/>*   |  <Translate android="true" ids="routing_attr_only_permitted_ways_description"/>.  | Only ways specially designated for horses will be used for routing.   |
 |*<Translate android="true" ids="routing_attr_height_obstacles_name"/>* | <details><summary> Projected travel time will reflect elevation impact. </summary> ![Use elevation data Android](@site/static/img/navigation/routing/horse_routing_elevation_android.png)  </details> | This preference can help avoid steep uphills. Without elevation data the fastest route as on plain terrain will be calculated. |
 
-Other routing settings:  
-- The routing algorithm can take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
-- In the [Recalculate route section](../setup/route-navigation.md#route-recalculation) of the Route parameters, you can enable and adjust route recalculation options.
-- *[<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (iOS) should be set according to your horse speeds. It is used to calculate Estimated Time of Arrival.
-- In the [Development section](../guidance/navigation-settings.md#development-settings) of the Route parameters, you can try new routing features, that are under testing now. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
+
+## Other routing settings
+
+- The routing algorithm can also take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
+
+- In the [*Recalculate route section*](../../navigation/guidance/navigation-settings.md#recalculate-route) of the *Route parameters*, you can enable and adjust route recalculation options.
+
+- In the [*Development section*](../guidance/navigation-settings.md#development-settings) of the *Route parameters*, you can try new routing features that are currently in the testing phase. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
+
+- *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md##road-speeds) (iOS)* and *Default speed (Android)*. These settings must be set according to the parameters of your vehicle. They are used on unknown roads without speed limits. This is most often the case if you are navigating on a track or online route.  
+    For *iOS* in: *Navigation settings → Route parameters → Road speeds*  
+    For *Android* in: *Navigation settings → Vehicle parameters → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*

@@ -32,11 +32,15 @@ Car routing is designed to help drivers find the most efficient and direct route
 
 <TabItem value="android" label="Android">  
 
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
+
 ![Car routing settings Android](@site/static/img/navigation/routing/routing_car_settings_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
 ![Car routing settings iOS 1](@site/static/img/navigation/routing/car_routing_ios.png)
 
@@ -53,17 +57,6 @@ Car routing is designed to help drivers find the most efficient and direct route
 | *<Translate android="true" ids="routing_attr_short_way_name"/>* | <Translate android="true" ids="routing_attr_short_way_description"/> | To calculate fuel-efficient routing engine limits speed internallyto 60 kmh, it doesn't change Estimated Time of Arrival though. So in case of 2 same start-end routes motorway (120 kmh) and minor (60 kmh) - shorter route will be selected. For the service roads that has speed limit <60 kmh, faster route will be selected. |
 
 
-#### Other routing settings
-
-- The routing algorithm can also take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
-
-- In the [Recalculate route section](../../navigation/guidance/navigation-settings.md#recalculate-route) of the *Route parameters*, you can enable and adjust route recalculation options.
-
-- *[<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* and *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md##road-speeds)* (for *iOS* in: *Navigation settings → Route parameters → Road speeds*) should be set according to your vehicle parameters. They are used for the unknown roads without speed limits. Mostly it happens, if you navigate by track or online routing.
-
-- In the [Development section](../guidance/navigation-settings.md#development-settings) of the Route parameters, you can try new routing features, that are under testing now. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
-
-
 ## Route parameters - Truck
 
 :::note
@@ -76,11 +69,15 @@ Truck routing is similar to car routing, but is designed specifically for driver
 
 <TabItem value="android" label="Android">  
 
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
+
 ![Truck routing settings Android 2](@site/static/img/navigation/routing/routing_truck_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
 
 ![Truck routing settings iOS 2](@site/static/img/navigation/routing/truck_routing_ios.png)
 
@@ -91,8 +88,8 @@ Truck routing is similar to car routing, but is designed specifically for driver
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-|*<Translate android="true" ids="transport_hazmat_title"/>* | <details><summary> Local authorities may forbid the transportation of hazardous materials on some roads or tunnels. </summary> ![Transporting of hazardous materials Android](@site/static/img/navigation/routing/routing_truck_hazmat_andr.png) </details> | When enabled, the truck routing mechanism takes into account the OSM tag *[hazmat](https://wiki.openstreetmap.org/wiki/Key:hazmat)*. You can choose one of the five categories (A, B, C, D, E) of dangerous materials according to EU restrictions. |
-|*<Translate android="true" ids="dangerous_goods"/>* | <details><summary> Hazardous materials transportation rules in the USA differ from the EU. Displayed only if the Driving Region is set to US. You can select multiple classes. </summary> ![Transporting of hazardous materials Android](@site/static/img/navigation/routing/routing_truck_dangerous_goods_andr.png) </details> | Select one of the types (from 1 to 9) of dangerous materials according to the [USA restrictions](https://www.iafc.org/topics-and-tools/hazmat/fusion-center/transportation-commodities/dot-hazard-classification-system). Transportation of hazardous materials is forbidden on some roads and tunnels. <ul><li>1. Explosives </li><li> 2. Gases </li><li> 3. Flammable Liquids </li><li> 4. Flammable Solids </li><li> 5. Oxidizing Agents and Organic Peroxides </li><li> 6. Toxic and Infectious Substances </li><li> 7. Radioactive Substances </li><li> 8. Corrosive Substances </li><li> 9. Miscellaneous </li></ul> |
+|*<Translate android="true" ids="transport_hazmat_title"/> (Android) / Hazmat category (iOS)* (for **EU region**)| <details><summary> Local authorities may forbid the transportation of hazardous materials on some roads or tunnels. </summary> ![Transporting of hazardous materials Android](@site/static/img/navigation/routing/routing_truck_hazmat_andr.png) </details> | When enabled, the truck routing mechanism takes into account the OSM tag *[hazmat](https://wiki.openstreetmap.org/wiki/Key:hazmat)*. You can choose one of the five categories (A, B, C, D, E) of dangerous materials according to EU restrictions. |
+|*<Translate android="true" ids="dangerous_goods"/>* (only if **USA region** is selected) | <details><summary> Hazardous materials transportation rules in the USA differ from the EU. Displayed only if the Driving Region is set to US. You can select multiple classes. </summary> ![Transporting of hazardous materials Android](@site/static/img/navigation/routing/routing_truck_dangerous_goods_andr.png) </details> | Select one of the types (from 1 to 9) of dangerous materials according to the [USA restrictions](https://www.iafc.org/topics-and-tools/hazmat/fusion-center/transportation-commodities/dot-hazard-classification-system). Transportation of hazardous materials is forbidden on some roads and tunnels. <ul><li>1. Explosives </li><li> 2. Gases </li><li> 3. Flammable Liquids </li><li> 4. Flammable Solids </li><li> 5. Oxidizing Agents and Organic Peroxides </li><li> 6. Toxic and Infectious Substances </li><li> 7. Radioactive Substances </li><li> 8. Corrosive Substances </li><li> 9. Miscellaneous </li></ul> |
 
 
 ## Route parameters - Motorcycle
@@ -101,20 +98,17 @@ Truck routing is similar to car routing, but is designed specifically for driver
 By default, *Motorcycle profile* is deactivated. In order to use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-Motorcycle routing is designed to create an optimal route for motorcyclists considering their preferences. For example, roads with poor road conditions can be preferred or avoided.  
+Motorcycle routing is the process of creating a route specifically optimized for motorcycle travel. This type of routing takes into account the unique needs and preferences of motorcyclists, providing the best possible riding conditions. Routes are laid out taking into account a number of parameters such as choice of road surface ( for example, poor road conditions can be preferred or avoided), avoidance of traffic jams, accessibility of infrastructure or safety. 
 
-<Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+## Other routing settings
 
-![Motorbicke routing settings Android 2](@site/static/img/navigation/routing/routing_moto_settings_andr_2.png)
+- The routing algorithm can also take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
 
-</TabItem>
+- In the [*Recalculate route section*](../../navigation/guidance/navigation-settings.md#recalculate-route) of the *Route parameters*, you can enable and adjust route recalculation options.
 
-<TabItem value="ios" label="iOS">
+- In the [*Development section*](../guidance/navigation-settings.md#development-settings) of the *Route parameters*, you can try new routing features that are currently in the testing phase. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
 
-![Motorbicke routing settings iOS 2](@site/static/img/navigation/routing/motorcycle_routing_ios.png)
-
-</TabItem>
-
-</Tabs>
+- *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md##road-speeds) (iOS)* and *Default speed (Android)*. These settings must be set according to the parameters of your vehicle. They are used on unknown roads without speed limits. This is most often the case if you are navigating on a track or online route.  
+    For *iOS* in: *Navigation settings → Route parameters → Road speeds*  
+    For *Android* in: *Navigation settings → Vehicle parameters → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*

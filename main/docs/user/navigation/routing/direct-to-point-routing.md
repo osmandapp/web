@@ -16,30 +16,35 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ## Overview
 
 Direct-to-point routing in OsmAnd is a useful feature that allows you to navigate directly to a specific point on the map without having to follow a pre-defined route or road network. This feature can be used by boat skippers,
-outdoor enthusiasts, or by emergency services during rescue operations. Overall, direct-to-point routing is a flexible and versatile feature that can be used in a variety of situations where traditional routing methods may not be appropriate or effective.
-
-:::note
-*Direct-to-point* routing type is not linked to any profile and can be used with different ones.
-This type of routing does not take into account any obstacles or barriers that may be present in the terrain, such as mountains, rivers, or dense forests. It also does not provide any information about the quality of the terrain, the difficulty level of the route, or any other relevant factors that may affect the safety or feasibility of the route ([Route Details](../setup/route-details.md) section is empty).  
-:::
+outdoor enthusiasts, or by emergency services during rescue operations. Overall, direct-to-point routing is a flexible and versatile feature that can be used in a variety of situations where traditional routing methods may not be appropriate or effective.  
 
 ![Direct-to-point Navigation type Android](@site/static/img/navigation/boat/direct_navigation_type_android.png)
 
-The point on the line is a virtual point, that has the same distance to the destination as the current location  (it is not a projection of the current location on the line!). So it is easy to measure the progress, and it is possible to use measurement tool to get correct distance.
+A point on a line is a virtual point the distance from which to the destination is the same as the distance from your current location, but it is not a projection of your current location onto a line. This makes it easy to measure progress, and you can use the measurement tool to get the correct distance.
+
+
 ## Route parameters - Direct-to-point
 
-You can activate *Direct-to-point* routing in the desired profile: 
-- *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> or another one) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
+*Direct-to-point* routing type is not linked to any profile and can be used with different ones.
+This type of routing does not take into account any obstacles or barriers that may be present in the terrain, such as mountains, rivers, or dense forests. It also does not provide any information about the quality of the terrain, the difficulty level of the route, or any other relevant factors that may affect the safety or feasibility of the route ([Route Details](../setup/route-details.md) section is empty).  
+
+:::note
+When using Direct-to-point and Boat navigation types, you will need [Depth contours data](../../plugins/nautical-charts.md#nautical-map-style), which can be enabled and set in *Configure map*.
+:::
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-![Direct-to-point routing settings](@site/static/img/navigation/routing/direct_to_point_routing_andr.png)
+*<Translate android="true" ids="shared_string_menu,shared_string_settings"/> → any profile → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*
+
+![Direct-to-point routing settings](@site/static/img/navigation/routing/direct_to_point_routing_3_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings"/> → any profile → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*
 
 ![Direct-to-point routing settings iOS](@site/static/img/navigation/routing/direct_to_point_ios.png)  
 
@@ -47,7 +52,13 @@ You can activate *Direct-to-point* routing in the desired profile:
 
 </Tabs>
 
-Routing settings:  
-- In the [Recalculate route section](../setup/route-navigation.md#route-recalculation) of the Route parameters, you can enable and adjust route recalculation options. Default value - route will be recalculated in case of 0&nbsp;meters deviation. This means that the route will not be recalculated.
-- *[<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (Android) or *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#default-speed--road-speeds)* (iOS) should be set according to your vehicle parameters. It is used to calculate Estimated Time of Arrival.
-- In the [Development section](../guidance/navigation-settings.md#development-settings) of the Route parameters, you can try new routing features, that are under testing now. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
+
+## Other routing settings
+
+- In the [*Recalculate route section*](../../navigation/guidance/navigation-settings.md#recalculate-route) of the *Route parameters*, you can enable and adjust route recalculation options. The default value is 0 meters of deviation, which means that the route is not recalculated.
+
+- In the [*Development section*](../guidance/navigation-settings.md#development-settings) of the *Route parameters*, you can try new routing features that are currently in the testing phase. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
+
+- *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md##road-speeds) (iOS)* and *Default speed (Android)*. These settings can also be set for *Direct-to-point* routing. It is used to calculate Estimated Time of Arrival.  
+    For *iOS* in: *Navigation settings → Route parameters → Road speeds*  
+    For *Android* in: *Navigation settings → Vehicle parameters → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*
