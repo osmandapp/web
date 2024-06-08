@@ -14,7 +14,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock";
 import SotmScreenshots from './carousel/sotmscreenshots.js';
 
-
+![Birthday 2024](@site/static/img/email/hb2024.png)
 
 # Get OsmAnd Pro free for 1 month 
 
@@ -22,7 +22,7 @@ Hey, you passed well our Birthday QUIZ (15-24 points). Now you can take OsmAnd P
 
 Please, input your e-mail for registration <u>until 30 June 2024</u> and read the manual below:
 
-<RegisterUserPromoBlock  promoKey='birthday'/>
+<RegisterUserPromoBlock  promoKey='birthday-2024'/>
 
 **Full manual** is [HERE](https://osmand.net/promo/manual#english-version).
 
