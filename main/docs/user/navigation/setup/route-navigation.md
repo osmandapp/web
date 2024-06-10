@@ -330,7 +330,8 @@ Please read about route parameters for the corresponding navigation type.
 
 ### Navigation settings
 
-How to configure [routing type](../routing/routing-types.md) and [route parameters](../guidance/navigation-settings.md#route-parameters) you can read in the [Navigation settings article](../guidance/navigation-settings.md) or in articles about specific types of routing in the [Route Parameters chapter](../routing/).  
+How to configure [routing type](../routing/routing-types.md) and [route parameters](../guidance/navigation-settings.md#route-parameters) you can read in the [Navigation settings article](../guidance/navigation-settings.md) or in articles about specific types of routing in the [Route Parameters section](../routing/routing-types.md).  
+
 
 ### Simulate navigation
 

@@ -166,7 +166,7 @@ When BRouter is configured, we can compare the pre-calculation speed of the BRou
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
 | *<Translate android="true" ids="fast_route_mode"/>* | <Translate android="true" ids="routing_attr_short_way_description"/>  <Translate android="true" ids="fast_route_mode_descr"/> | In most cases, the shortest route will be suggested. Often this route can take longer than if the setting was disabled |
-| *<Translate android="true" ids="temporary_conditional_routing"/>* |  Read about Consider temporary limitations option in this [article](./index.md#avoid-temporary-closures).   | The routing algorithm can take into account the time constraints specified in the OpenStreetMap. Note that in some cases the information from the OSM may be out of date.   |
+| *<Translate android="true" ids="temporary_conditional_routing"/>* |  Read about Consider temporary limitations option in this [article](../routing/osmand-routing.md#consider-temporary-limitations).   | The routing algorithm can take into account the time constraints specified in the OpenStreetMap. Note that in some cases the information from the OSM may be out of date.   |
 
 
 ### Other routing settings
