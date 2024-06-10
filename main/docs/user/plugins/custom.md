@@ -307,7 +307,9 @@ When the *items.JSON* file and all the files in the folder are ready, you can zi
 
 You can take a look at some of the plugins that OsmAnd users have made on their own:
 
- - [US Maps](https://t.me/OsmAnd_News/65) custom plugin (PAD-US data, USFS trails and roads, USFS recreation).
- - [Anygis maps](https://t.me/ruosmand/127579) custom plugin.
- - [Map Legend](https://t.me/OsmAndMaps/45410) custom plugin.
- - [UMP-PL](https://ump.waw.pl/) Poland [map custom plugin](https://ump.waw.pl/update/UMP-PL-OsmAnd_plugin.osf).
+ - [The USA Maps](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf) custom plugin (PAD-US data, USFS trails and roads, USFS recreation).
+ - [Anygis maps](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf) custom plugin.
+ - [Map Legend](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf) custom plugin.
+ - [UMP-PL](https://ump.waw.pl/) Poland [map custom plugin](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf).
+ - [OsmAnd Rendering plugin](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf) custopm plugin.
+ - [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf) custom plugin.

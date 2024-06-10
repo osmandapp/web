@@ -16,7 +16,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ## Overview
 
 OsmAnd Online maps are an extensive addition to the OpenStreetMap database already present in the application. With this plugin, you can add layers to your map with information from a different source, beginning with the satellite or hiking routes view and ending with very specific data, such as the location of fire hydrants. You can also change the main source of the map from vector maps to online tiles.
-Many new useful map sources you can find in [Anygis project](https://anygis.ru/Web/Html/Osmand_en.md).
 
 
 ## Setup
@@ -69,7 +68,7 @@ _ <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared
 ## How to prepare raster maps
 
 :::info
-Main article to prepare maps https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced
+Main article to prepare maps [read here](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
 Despite the plugin being called *Online Maps*, you can use the maps without internet connection as well. You just need to save the parts of maps (often called tiles) to use them later. To do that, download a specific [Map Creator tool](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) developed by OsmAnd team.
