@@ -37,6 +37,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 - 3D Track (Finalize)
 - Garmin Connect
 - Weather animation
+- Significant speed improvement for ["Attach to roads"](https://osmand.net/docs/user/navigation/setup/gpx-navigation#attach-to-roads) algorithm
 
 Possible one / many of:
 * Attach Photo/Video to Favorites
