@@ -213,7 +213,7 @@ export default function SettingsMenu({ setCloudSettings }) {
                     </MenuItem>
                 </>
             )}
-            {process.env.NODE_ENV !== 'production' && ctx.develFeatures && ctx.loginUser && (
+            {process.env.REACT_APP_DEVEL_FEATURES === 'yes' && ctx.develFeatures && ctx.loginUser && (
                 <>
                     <Typography component="div" sx={{ ml: 2 }}>
                         Explore Wikimedia Images
