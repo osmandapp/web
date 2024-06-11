@@ -320,6 +320,8 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             apiCache: true,
             params: {
                 id: wpt.id,
+                lat: wpt.latlon.lat,
+                lon: wpt.latlon.lon,
             },
         });
         if (response && response.data) {
