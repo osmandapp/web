@@ -479,6 +479,7 @@ export default function SearchLayer() {
 
         // Add custom event to handle marker selection
         marker.on('selectMarker', () => {
+            removeTooltip();
             if (pointerRef.current) {
                 if (map?.hasLayer(pointerRef.current)) {
                     map.removeLayer(pointerRef.current);
@@ -511,6 +512,7 @@ export default function SearchLayer() {
 
         // Add mouseover event to highlight the marker
         marker.on('mouseover', () => {
+            removeTooltip();
             ctx.setSelectedPoiId({ id: marker.options.id });
             if (!main) {
                 marker.setStyle({
@@ -547,6 +549,7 @@ export default function SearchLayer() {
             }
             if (pointerRef.current) {
                 if (map?.hasLayer(pointerRef.current)) {
+                    removeTooltip();
                     map.removeLayer(pointerRef.current);
                 }
                 pointerRef.current = null;
