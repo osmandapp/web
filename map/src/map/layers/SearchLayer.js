@@ -204,6 +204,7 @@ export default function SearchLayer() {
                 console.error(`Places not found`);
             }
             setLoadingContextMenu(false);
+            removeTooltip();
         }
     }
 
@@ -472,6 +473,10 @@ export default function SearchLayer() {
             openInfo(place);
         });
 
+        map.on('zoomend', () => {
+            removeTooltip();
+        });
+
         // Add custom event to handle marker selection
         marker.on('selectMarker', () => {
             if (pointerRef.current) {
@@ -550,7 +555,7 @@ export default function SearchLayer() {
     }
 
     function removeTooltip() {
-        if (tooltipRef.current) {
+        if (tooltipRef.current && map.hasLayer(tooltipRef.current)) {
             map.removeLayer(tooltipRef.current);
             tooltipRef.current = null;
         }
