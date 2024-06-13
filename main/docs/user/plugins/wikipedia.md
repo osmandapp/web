@@ -1,5 +1,5 @@
 ---
-sidebar_position: 16
+sidebar_position: 17
 title:  Wikipedia
 ---
 
@@ -38,7 +38,7 @@ Brief information is provided by Wikipedia POIs (an abbreviation for "[point of 
 
 To display Wikipedia data on the map, you need to make the following setting: 
 
-1. [Purchase](../plugins/index.md#purchase) and [Enable](../plugins/index.md#enable--disable) Wikipedia plugin in the Plugins section of the main menu.    
+1. [Purchase](../plugins/configure-plugins.md#purchase) and [Enable](../plugins/configure-plugins.md#enable--disable) Wikipedia plugin in the Plugins section of the main menu.    
 2. Download the [Wikipedia packages](#download-wikipedia-packages) for the required regions.  
 3. Display the [Wikipedia POIs](#display-wikipedia-on-the-map) on the map for the required profile.  
 4. Configure preferred [languages](#wikipedia-languages) to read articles.

@@ -30,7 +30,7 @@ The OsmAnd External sensors plugin accesses external sensors and can read data s
 
 To start using data from external sensors, you need to make the following settings:  
  
-1. [Enable](../plugins/index.md#enable--disable) External sensors plugin in the Plugins section of the Main menu.    
+1. [Enable](../plugins/configure-plugins.md#enable--disable) External sensors plugin in the Plugins section of the Main menu.    
 2. Make the necessary settings in the [sensors settings](#sensors-settings).
 3. If needed, add [External sensors widgets](#widgets) to the screen.
 4. You can use the tips for [ANT+ connect](https://www.thisisant.com/consumer/ant-101/ant-in-phones) to set up this type of sensors.
