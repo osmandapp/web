@@ -53,6 +53,10 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 
 ![Hiking style](@site/static/img/email/ign_pentes_fr.png)
 
+![Hiking style](@site/static/img/email/ign_aero.png)
+
+![Hiking style](@site/static/img/email/ign_littorale.png)
+
 ### Norway
 
 ![Hiking style](@site/static/img/email/finn_kart.png)
@@ -62,6 +66,22 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 ### Swiss
 
 ![Hiking style](@site/static/img/email/swiss_topo.png)
+
+### Austria
+
+![Hiking style](@site/static/img/email/au_gelaende.png)
+
+![Hiking style](@site/static/img/email/au_geoland.png)
+
+![Hiking style](@site/static/img/email/au_grau.png)
+
+![Hiking style](@site/static/img/email/au_hidpi.png)
+
+![Hiking style](@site/static/img/email/au_ober.png)
+
+![Hiking style](@site/static/img/email/au_ortho.png)
+
+![Hiking style](@site/static/img/email/au_over.png)
 
 ### Belgium
 
