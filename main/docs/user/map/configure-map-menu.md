@@ -71,7 +71,7 @@ The **<Translate android="true" ids="configure_map"/>** menu is divided into two
    - [Street level imagery](../plugins/mapillary.md#viewing-images) - display points with available street-level imagery.
    - [Travel guides](../plan-route/travel-guides.md) - display travel guides on the map.
    - [Wikipedia](../plugins/wikipedia.md) - highlight wikipedia articles linked to the map.
-   - [Other plugin layers](../plugins/index.md) - many plugins add own layers with extra information.
+   - [Other plugin layers](../plugins/configure-plugins.md) - many plugins add own layers with extra information.
 
 ## Map style parameters
 
