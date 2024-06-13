@@ -44,7 +44,7 @@ export function getWeatherLayers(type) {
             opacity: 0.7,
             icon: <PrecipitationIcon className={styles.icon} />,
             units: i18n?.t('weather_precip_mm'),
-            mult: 1000 * 10,
+            mult: type === ECWMF_WEATHER_TYPE ? 1000 * 1000 : 1000 * 10,
             fixed: 2,
             index: type === ECWMF_WEATHER_TYPE ? 4 : 6,
             checkValue: (value) => value,
