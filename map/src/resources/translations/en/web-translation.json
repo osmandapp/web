@@ -7,5 +7,6 @@
   "forecast_source": "Forecast source",
   "weather_layers": "Weather layers",
   "forecast_details": "7 Day forecast",
-  "explore_menu": "Explore"
+  "explore_menu": "Explore",
+  "weather_precip_mmh": "mm/h"
 }
