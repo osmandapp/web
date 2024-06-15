@@ -213,7 +213,7 @@ Audio instructions during navigation help you as a driver or pedestrian get to y
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_screen-alerts_andr.png)
+![Navigation Settings](@site/static/img/navigation/navigation_settings_screen-alerts_new_andr.png)
 
 </TabItem>
 
@@ -221,22 +221,28 @@ Audio instructions during navigation help you as a driver or pedestrian get to y
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_screen-alerts_ios.png)
+![Navigation Settings](@site/static/img/navigation/navigation_settings_screen-alerts_new_ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-This navigation setting allows you to enable the [*Alerts Widget*](../../widgets/nav-widgets.md#alert-widget) and select which alerts you want to see on the app screen while navigating. When you approach one of the available types of obstacles on the road, notifications appear in the lower-left corner of the map. If you configure the [*voice and text prompts*](../../navigation/guidance/voice-navigation.md) available in the OsmAnd app, you'll have a more comfortable and safer trip. The appearance and timing of the prompts depend on your speed settings. You can find them [here](../../../technical/algorithms/voice-prompt-triggering.md).  
-The behavior of *Screen Alerts* is also affected by the [*Show points along the route*](../../navigation/guidance/map-during-navigation.md#show-points-along-the-route) setting.
+The *Screen alert* navigation setting allows you to enable the [*Alerts Widget*](../../widgets/nav-widgets.md#alert-widget). Details:
+- When you approach one of the supported types of obstacles on the road, notifications appear in the lower-left corner of the map.
+- If you configure the [*voice and text prompts*](../../navigation/guidance/voice-navigation.md) available in the OsmAnd app, you'll have a more comfortable and safer trip.
+- The appearance and timing of the prompts depend on your speed settings. You can find them [here](../../../technical/algorithms/voice-prompt-triggering.md).  
+- The behavior of *Screen Alerts* is also affected by the [*Show points along the route*](../../navigation/guidance/map-during-navigation.md#show-points-along-the-route) setting.
 
-You can turn alerts on and off such as:
-- [**Traffic warnings**](https://wiki.openstreetmap.org/wiki/Key:hazard#Traffic_hazards)
-- [**Pedestrian crossings**](https://wiki.openstreetmap.org/wiki/Tag:crossing%3Duncontrolled)
-- [**Speed cameras**](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera). For more information about the Speed cameras setting in OsmAnd, read [Alert Types](../../widgets/nav-widgets.md#alert-types) and the article *Global settings*, section [Legal](../../personal/global-settings.md#legal).
-- [**Tunnels**](https://wiki.openstreetmap.org/wiki/Key:hazmat#Tunnel_restrictions)
+You can select which alerts you want to see on the app screen while navigating:
+- **Speed limit** ([*OSM Wiki info*](https://wiki.openstreetmap.org/wiki/Speed_limits)). In the Screen alerts setting, the *Speed limit* is only displayed on the screen with *Traffic warnings* turned on. If you want to see speed limits during navigation without other warnings, use the [widget](../../widgets/nav-widgets.md#speed-limit).
+- **Traffic warnings** ([*OSM Wiki info*](https://wiki.openstreetmap.org/wiki/Key:hazard#Traffic_hazards)). Additional information can be found in the article [Map screen during navigation](https://osmand.net/docs/user/navigation/guidance/map-during-navigation/#traffic-warnings).
+- **Pedestrian crosswalks** ([*OSM Wiki info*](https://wiki.openstreetmap.org/wiki/Tag:crossing%3Duncontrolled)).
+- **Speed cameras** ([*OSM Wiki info*](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera)). For more information about the Speed cameras setting in OsmAnd, read [Alert Types](../../widgets/nav-widgets.md#alert-types) and the article *Global settings*, section [Legal](../../personal/global-settings.md#legal).
+- **Tunnels** ([*OSM Wiki info*](https://wiki.openstreetmap.org/wiki/Key:hazmat#Tunnel_restrictions)).
 
-The types of warnings have the different visual appearance, which depends on the driving region. OsmAnd does not aspire to present 100% identical road signs but indicates some similarities.  
+:::note
+The types of warnings have a different visual appearance, which depends on the travel region. OsmAnd does not aim to present 100% identical road signs but points out some similarities.  
+:::
 
 
 ## Map during navigation 
