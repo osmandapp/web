@@ -140,7 +140,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                 ['day', 'night'].forEach((period) => {
                     if (res[date][period][layer.key] && layer.index !== -1) {
                         let entry = res[date][period][layer.key];
-                        entry.avg = layer.checkValue(entry.avg * layer.mult).toFixed(layer.fixed);
+                        entry.avg = layer.checkValue(entry.avg).toFixed(layer.fixed);
                         delete entry.count;
                     }
                 });

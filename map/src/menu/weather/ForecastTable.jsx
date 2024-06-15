@@ -13,7 +13,7 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
 
     function getForecastValue(item) {
         function formatting(value) {
-            return item.checkValue(value * item.mult).toFixed(item.fixed);
+            return item.checkValue(value).toFixed(item.fixed);
         }
 
         const useDayForecast = ctx.weatherDate.getDay() === new Date().getDay();
