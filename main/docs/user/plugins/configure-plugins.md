@@ -15,9 +15,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Plugins significantly enhance OsmAnd's functionality. Each is designed to solve a problem or use case, such as trip recording, accessing Wikipedia articles offline, visualizing terrain data, providing street-level views, etc.
+Plugins significantly extend the functionality of OsmAnd. Each is designed to address a specific task or use case, such as recording a trip, accessing Wikipedia articles offline, visualizing terrain data, or providing a street-level view.
 
-Plugins can be internal (you can activate them inside the OsmAnd app) or external (separately installed programs). Third-party plugins work via the OsmAnd API and can get access to OsmAnd data.  
+Plugins can be internal, activated in the OsmAnd application, or external, separately installed programs. Third-party plugins work through the OsmAnd API and can access OsmAnd data.
 
 
 ## Configure a plugin
@@ -31,7 +31,6 @@ In order to access a plugin's functionality, it must first be [enabled](#enable-
 
 <TabItem value="android" label="Android">
 
-To enable / disable plugins go to:  
 *<Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Enable*
 
 ![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin example Android](@site/static/img/settings/plugin_example_android.png)
@@ -40,7 +39,6 @@ To enable / disable plugins go to:
 
 <TabItem value="ios" label="iOS">
 
-To enable / disable plugins go to:  
 *<Translate ios="true" ids="shared_string_menu,plugins_menu_group"/> → &#10003;*
 
 ![Enable plugins iOS](@site/static/img/settings/plugins_enable_ios.png) ![Plugin example iOS](@site/static/img/settings/plugin_example_ios.png)

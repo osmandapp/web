@@ -55,9 +55,9 @@ To use *OpenStreetMap editing* plugin, you have to make the following settings:
 The plugin settings are global and apply to all profiles.
 :::
 
-- [**Login to OpenStreetMap**](#authorization). Login to upload new or modified changes. Use the safe OAuth method or your [OSM username and password](https://www.openstreetmap.org/login). For iOS, the button for the OAuth method is available only for users with a supported version of iOS, 16.4
+- [**Login to OpenStreetMap**](#authorization). Login to upload new or modified changes. Use the secure *OAuth 2.0 method* or [log in on the OSM site](https://www.openstreetmap.org/login). For iOS, the button for the OAuth method is available only for users with a supported version of iOS, 16.4
 - **<Translate android="true" ids="offline_edition"/>**. If this setting is enabled, the changes are first saved locally (*Save* button) and uploaded on request. If it is disabled, the changes are uploaded immediately (*Upload* button).
-- **<Translate android="true" ids="use_dev_url"/>** *(Android only)*. Allows you to enable [dev.openstreetmap.org](https://dev.openstreetmap.org/) instead of [openstreetmap.org](http://openstreetmap.org/) to test uploading OSM Note / POI / GPS tracks. When enabled, you are automatically logged out of OpenStreetMap.org. This setting is only available in the list when the *OsmAnd development plugin* is enabled.
+- **<Translate android="true" ids="use_dev_url"/>** *(Android only)*. Allows you to enable [dev.openstreetmap.org](https://dev.openstreetmap.org/) instead of [openstreetmap.org](http://openstreetmap.org/) to test uploading OSM Note, POI, or GPS tracks. When enabled, you are automatically logged out of OpenStreetMap.org. This setting is only available in the list when the *OsmAnd development plugin* is enabled.
 - [**<Translate android="true" ids="map_updates_for_mappers"/>**](#free-map-updates-for-mappers). 
 - **<Translate android="true" ids="layer_osm_edits"/>**. Tap it to open [*Menu → My Places → OSM edits*](../personal/myplaces.md). This tab lists your unedited OSM notes. The following actions are available with the note: *Upload*, *Show on map*, *Modify OSM note*, *Delete*. Uploaded or deleted notes are no longer displayed in the list.  
 
@@ -68,34 +68,49 @@ If you have an [OsmAnd Pro](../purchases/android.md#pro-features) subscription, 
 
 ### Authorization
 
-- Login or Sign Up to [openstreetmap.org](https://www.openstreetmap.org/login?referer=%2F#map=16/51.5110/0.0550).
-- Use the OAuth method or your OSM username and password. OAuth is preferred.  
-
-
-### Free map updates for mappers
-
-The <Translate android="true" ids="map_updates_for_mappers"/> setting allows you to enable **[OsmAnd live](../personal/maps.md#free-for-osm-mappers)** if you are active OpenStreetMap contributor. So you could enjoy free hourly map updates, unlike standard monhtly map updates. 
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers.png)
+![OsmAnd live for mappers](@site/static/img/personal/maps/osm_authorization_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_ios.png)
+![OsmAnd live for mappers](@site/static/img/personal/maps/osm_authorization_ios.png)
 
 </TabItem>
 
 </Tabs>
 
+Login to contribute changes and GPX files.  
+- Go to [openstreetmap.org](https://www.openstreetmap.org/login?referer=%2F#map=16/51.5110/0.0550) and *log in* or *sign up*.
+- Tap the *Login to OpenStreetMap* field in the OsmAnd app, then tap the *Sign in with OpenStreetMap* button.  
 
-### OSM Editing Layer  
 
-You can enable or disable as a separate layer the display of OSM modifications, such as OSM notes (online), OSM edits, Fixme tags, Note tags, Icons at low zooms, in the [Configure map](../map/configure-map-menu.md) section of the main menu.  
+### Free map updates for mappers
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_login_andr.png)   ![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_login_ios.png)    ![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_2_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+The <Translate android="true" ids="map_updates_for_mappers"/> setting allows you to enable **[OsmAnd live](../personal/maps.md#free-for-osm-mappers)** if you are active OpenStreetMap contributor. So you could enjoy free hourly map updates, unlike standard monhtly map updates. Active contributors to OpenStreetMap.org may be entitled to unlimited hourly map updates. Sign in to OpenStreetMap to check if you are eligible for unlimited monthly and hourly map updates.
+
+
+### OSM Editing Layer
 
 <Tabs groupId="operating-systems">
 
@@ -117,6 +132,8 @@ You can enable or disable as a separate layer the display of OSM modifications, 
 
 </Tabs>
 
+You can enable or disable as a separate layer the display of OSM modifications such as *OSM notes* (online), *OSM edits*, *Fixme tags*, *Note tags*, *Icons at low zooms*, in the [Configure map](../map/configure-map-menu.md) section of the main menu.  
+
 
 ## Create / Modify POI  
 
@@ -127,8 +144,6 @@ The OpenStreetMap editing plugin allows you to create new objects on the map cal
 4. Depending on the [Offline editing](#settings) setting, you can save the data locally or [upload it](../map/map-context-menu#-upload-poi--osm-note).    
 
 ### Add tags
-
-You can easily add OSM [tags](https://wiki.openstreetmap.org/wiki/Tags) to the POI. Аfter entering a few characters into the search bar, the program will prompt possible tags.  
 
 <Tabs groupId="operating-systems">
 
@@ -146,57 +161,42 @@ You can easily add OSM [tags](https://wiki.openstreetmap.org/wiki/Tags) to the P
 
 </Tabs>
 
-#### Offline modifications  
+You can easily add OSM [tags](https://wiki.openstreetmap.org/wiki/Tags) to the POI. Аfter entering a few characters into the search bar, the program will prompt possible tags.  
 
+**Offline modifications.**  
 You can view, upload to OSM or delete POIs in *My Places → OSM Edits*. You can also export your OSM POIs changes to an [OSC file](https://wiki.openstreetmap.org/wiki/OsmChange) and import it into [JOSM](https://wiki.openstreetmap.org/wiki/JOSM).  
 
 ### Add unsupported POI types
 
-On the Advanced tab, you have the ability to add unsupported POI types that may be useful for your specific task. This allows you to enter POI data manually and extend the functionality of your application.
+In the *Advanced* tab, you can add unsupported POI types that may be useful for your specific task. This option allows you to enter POI data manually thus extending the functionality of the application.  
 
-One example of unsupported POI types you can add is *amenity=freeshops*. This type can be useful if you want to mark free stores or places that provide free products.
+One example of unsupported POI types that you can add is *amenity=freeshops*. This type can be useful if you want to mark free stores or places that provide free products.
 
 To add unsupported POI types, follow these steps:
 
-1. open the Advanced tab.
+1. Open the *Advanced* tab.
 2. Tap the *POI Type*.
 3. Enter the *amenity* key and the *freeshops* value in the appropriate fields.
 4. Fill in the rest of the required data for this POI.
-5. Click *Add Tag* to add the new POI to your database.
+5. Tap *Add Tag* to add the new POI to your database.
 
 Remember that when adding unsupported POI types, it is important to make sure that the data is entered correctly to ensure the correct functioning of the application and subsequent processing of the information.
 
 
 ## Create / Modify OSM Note
 
-The OSM Notes feature allows you to add notes to the map. In these notes you can describe mistakes or write about missing information in the OpenStreetMap data. You and other users can leave comments on your notes.  
-You can help other users by checking their questions or issues, giving comments and then closing the resolved notes.  
-Read more about the OpenStreetMap Notes [here](https://wiki.openstreetmap.org/wiki/Notes).  
-
-To create a note, you don't need to log in to OpenStreetMap.org, you can send it anonymously.
-- Tap the map where the new OSM note is to be placed (or tap a not uploaded note), and select [Actions](../map/map-context-menu.md#actions).
-- If you want to add information to an existing note or not uploaded note, edit a comment, or close a note, tap the OSM note on the map and select the [required action](../map/map-context-menu.md#-comment--close-osm-note).
-- You can upload changes as soon as you are available online. You can also undo changes before they are uploaded.  
-
-:::info
-The uploaded OSM Notes are not visible on OsmAnd maps in offline mode.
-:::
-
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-To edit OSM notes (you can comment or close them), enable display of OSM notes on the map in the [Configure map menu](../map/configure-map-menu.md):  
 *<Translate android="true" ids="shared_string_menu,configure_map,layer_osm_bugs"/>*  
 
-![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png)
+![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_android.png)   ![Open OSM Note Android](@site/static/img/plugins/osm-editing/osm_notes_online_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-To be able to edit OSM notes, enable their display on the map in the [Configure map menu](../map/configure-map-menu.md):  
 *<Translate ios="true" ids="shared_string_menu,configure_map,osm_notes_online_layer"/>*  
 
 ![Open OSM Note iOS](@site/static/img/plugins/osm-editing/osm_notes_online_ios.png)
@@ -204,6 +204,20 @@ To be able to edit OSM notes, enable their display on the map in the [Configure 
 </TabItem>
 
 </Tabs>
+
+To edit, comment, or close OSM notes, enable their display on the map in the [Configure map menu](../map/configure-map-menu.md).
+- The OSM Notes feature allows you to add notes to the map. In these notes you can describe mistakes or write about missing information in the OpenStreetMap data. You and other users can leave comments on your notes.
+- You can help other users by checking their questions or issues, giving comments and then closing the resolved notes.
+- Read more about the OpenStreetMap Notes [here](https://wiki.openstreetmap.org/wiki/Notes).
+
+To create a note, you don't need to log in to OpenStreetMap.org, you can send it anonymously.
+- Tap the map where the new OSM note is to be placed (or tap a not uploaded note), and select [Actions](../map/map-context-menu.md#actions).
+- If you want to add information to an existing note or not uploaded note, edit a comment, or close a note, tap the OSM note on the map and select the [required action](../map/map-context-menu.md#-comment--close-osm-note).
+- You can upload changes as soon as you are available online. You can also undo changes before they are uploaded.
+
+:::info
+The uploaded OSM Notes are not visible on OsmAnd maps in offline mode.
+:::
 
 
 ## GPS Track
@@ -247,8 +261,6 @@ To [upload the GPS track](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks)
 </TabItem>
 
 </Tabs>
-
-
 
 **Settings:**
 - **<Translate android="true" ids="shared_string_description"/>**. Allows you to add a description to the track. The description applies to all selected tracks. If you enter nothing in the field, the track names for each separate track are used as descriptions.  
