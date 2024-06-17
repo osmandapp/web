@@ -16,6 +16,7 @@ import styles from '../../menu/trackfavmenu.module.css';
 import { isVisibleTrack } from '../../menu/visibletracks/VisibleTracks';
 import WeatherForecastDetails from '../../menu/weather/WeatherForecastDetails';
 import WptDetails from './wpt/WptDetails';
+import WptPhotoGallery from './wpt/WptPhotoGallery';
 
 const PersistentTabPanel = ({ tabId, selectedTabId, children }) => {
     const [mounted, setMounted] = useState(false);
@@ -201,13 +202,16 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
             {showInfoBlock && (
                 <>
                     {openWeatherForecastDetails && <WeatherForecastDetails setShowInfoBlock={setShowInfoBlock} />}
-                    {openWptDetails && (
-                        <WptDetails
-                            isDetails={ctx.selectedWpt?.trackWptItem || ctx.selectedWpt?.favItem}
-                            setOpenWptTab={setOpenWptTab}
-                            setShowInfoBlock={setShowInfoBlock}
-                        />
-                    )}
+                    {openWptDetails &&
+                        (ctx.photoGallery ? (
+                            <WptPhotoGallery photos={ctx.photoGallery} />
+                        ) : (
+                            <WptDetails
+                                isDetails={ctx.selectedWpt?.trackWptItem || ctx.selectedWpt?.favItem}
+                                setOpenWptTab={setOpenWptTab}
+                                setShowInfoBlock={setShowInfoBlock}
+                            />
+                        ))}
                     {hasOldTabs() && (
                         <Box anchor={'right'} sx={{ height: 'auto', width: getWidth(), overflowX: 'hidden' }}>
                             <div id="se-infoblock-all">

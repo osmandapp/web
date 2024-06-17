@@ -156,3 +156,47 @@
 .tooltip {
     border-radius: 33px !important;
 }
+.iconsPrevNextBlock {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: translateY(-50%) !important;
+    padding: 0 16px !important;
+}
+.iconsPrevNext {
+    border-radius: 50px !important;
+    border: 2px solid #deebff !important;
+    fill: white !important;
+    display: flex !important;
+    padding: 24px 16px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-width: 56px !important;
+    max-width: 56px !important;
+}
+
+.iconsPrevNext:hover {
+    border-radius: 50px !important;
+    background: #deebff !important;
+    fill: var(--selected-color) !important;
+}
+.iconsPrevNext:disabled {
+    border-color: transparent !important;
+    background-color: transparent !important;
+    fill: transparent !important;
+}
+.singlePhotoTitle {
+    flex-grow: 1;
+    color: white !important;
+    font-size: 18px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+    letter-spacing: 0.18px !important;
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+}

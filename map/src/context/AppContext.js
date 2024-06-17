@@ -325,6 +325,8 @@ export const AppContextProvider = (props) => {
     const [poiIconCache, setPoiIconCache] = useState({});
 
     const [wikiPlaces, setWikiPlaces] = useState(null);
+    const [photoGallery, setPhotoGallery] = useState(null);
+    const [selectedPhotoInd, setSelectedPhotoInd] = useState(-1);
     const [searchSettings, setSearchSettings] = useState({});
 
     const [routingCache, mutateRoutingCache] = useMutator({});
@@ -564,6 +566,10 @@ export const AppContextProvider = (props) => {
                 setPrevPageUrl,
                 pageParams,
                 setPageParams,
+                photoGallery,
+                setPhotoGallery,
+                selectedPhotoInd,
+                setSelectedPhotoInd,
             }}
         >
             {props.children}

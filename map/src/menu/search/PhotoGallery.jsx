@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
-import { Box, Button, Divider, Grid, ListItemText, MenuItem, Modal, Typography } from '@mui/material';
-import SwipeableViews from 'react-swipeable-views';
+import React, { useContext, useState } from 'react';
+import { Box, Button, Divider, Grid, ListItemText, MenuItem, Typography } from '@mui/material';
 import { WIKI_IMAGE_BASE_URL } from '../../manager/SearchManager';
 import styles from '../search/search.module.css';
 import { useTranslation } from 'react-i18next';
+import AppContext from '../../context/AppContext';
 
 export default function PhotoGallery({ photos }) {
+    const ctx = useContext(AppContext);
+
     const MAX_PHOTOS = 100;
 
-    const [open, setOpen] = useState(false);
-    const [activeStep, setActiveStep] = useState(0);
     const { t } = useTranslation();
 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState({});
+
+    const filteredPhotos = filterPhotos(photos).slice(0, MAX_PHOTOS);
 
     const handleImageLoad = () => {
         setLoading(false);
@@ -23,9 +25,7 @@ export default function PhotoGallery({ photos }) {
         setError((prevError) => ({ ...prevError, [index]: true }));
     };
 
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
-    const handleStepChange = (step) => setActiveStep(step);
+    const handleOpen = () => ctx.setPhotoGallery(filteredPhotos);
 
     function filterPhotos(photos) {
         const imageExtensions = ['.jpeg', '.jpg', '.png', '.gif'];
@@ -45,8 +45,6 @@ export default function PhotoGallery({ photos }) {
                 return acc;
             }, []);
     }
-
-    const filteredPhotos = filterPhotos(photos).slice(0, MAX_PHOTOS);
 
     return (
         <>
@@ -103,70 +101,6 @@ export default function PhotoGallery({ photos }) {
                         </Button>
                     )}
                     <Divider sx={{ marginTop: 2 }} />
-
-                    <Modal
-                        open={open}
-                        onClose={handleClose}
-                        sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-                    >
-                        <Box
-                            sx={{
-                                width: '500px',
-                                height: '500px',
-                                bgcolor: 'background.paper',
-                                p: 2,
-                                overflow: 'hidden',
-                                position: 'relative',
-                            }}
-                        >
-                            <SwipeableViews
-                                axis={'x'}
-                                index={activeStep}
-                                onChangeIndex={handleStepChange}
-                                style={{ height: '100%' }}
-                                containerStyle={{ display: 'block' }}
-                            >
-                                {filteredPhotos.map((photo, index) => (
-                                    <div key={index}>
-                                        <a
-                                            href={`https://commons.wikimedia.org/wiki/File:${photo.properties.imageTitle}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            {!error[index] && (
-                                                <img
-                                                    onLoad={handleImageLoad}
-                                                    onError={() => handleImageError(index)}
-                                                    src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=500`}
-                                                    alt={`Photo ${index + 1}`}
-                                                    style={{
-                                                        display: loading ? 'none' : 'block',
-                                                        maxHeight: '100%',
-                                                        maxWidth: '100%',
-                                                        overflow: 'hidden',
-                                                    }}
-                                                />
-                                            )}
-                                        </a>
-                                    </div>
-                                ))}
-                            </SwipeableViews>
-                            <Box
-                                sx={{
-                                    position: 'absolute',
-                                    bottom: 4,
-                                    left: 4,
-                                    right: 4,
-                                    display: 'flex',
-                                    justifyContent: 'space-between',
-                                }}
-                            >
-                                <Button className={styles.photoCloseButton} component="span" onClick={handleClose}>
-                                    {t('shared_string_close')}
-                                </Button>
-                            </Box>
-                        </Box>
-                    </Modal>
                 </Box>
             )}
         </>
