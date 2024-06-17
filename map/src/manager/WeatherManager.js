@@ -42,7 +42,7 @@ export function getWeatherLayers(type) {
             name: () => i18n?.t('map_settings_weather_precip'),
             opacity: 0.7,
             icon: <PrecipitationIcon className={styles.icon} />,
-            units: i18n?.t('web:weather_precip_mmh'),
+            units: i18n?.t('weather_precip_mm'),
             fixed: 2,
             index: type === ECWMF_WEATHER_TYPE ? 4 : 6,
             checkValue: (value) => value,
