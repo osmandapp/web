@@ -59,6 +59,6 @@ The moped's rooting settings are very simple and consist of just a few options.
 
 - In the [*Development section*](../guidance/navigation-settings.md#development-settings) of the *Route parameters*, you can try new routing features that are currently in the testing phase. Note, that these settings are only available when the [OsmAnd development plugin](../../plugins/development.md) is enabled.
 
-- *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md##road-speeds) (iOS)* and *Default speed (Android)*. These settings must be set according to the parameters of your vehicle. They are used on unknown roads without speed limits. This is most often the case if you are navigating on a track or online route.  
-    For *iOS* in: *Navigation settings → Route parameters → Road speeds*  
-    For *Android* in: *Navigation settings → Vehicle parameters → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*
+- *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* setting in the *iOS* version of OsmAnd is located in *Navigation settings → Route parameters* (for *Android*, in *Vehicle parameters → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). This setting is used on unknown roads without speed limits. This is most often the case when navigating a track or online route. It must be set according to the parameters of your vehicle.
+
+- *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Properly configuring the settings will help you avoid problems when creating a route. You can select the most appropriate route depending on the type of vehicle and road restrictions, as well as calculate the travel time.

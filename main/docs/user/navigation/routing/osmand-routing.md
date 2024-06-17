@@ -66,17 +66,19 @@ There are two possible ways to choose which roads to avoid when calculating a ro
 
 ### Avoid roads menu
 
-*Avoid roads menu* can be accessed using the *Navigation button → Settings → Avoid roads... (Android) or Avoid roads (iOS)*.  
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
+
+*Navigation button → Settings → Avoid roads...*
 
 ![Avoid road menu Android](@site/static/img/navigation/routing/avoid_roads_menu_andr_2.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+*Navigation button → Settings → Avoid roads*
 
 ![Avoid road menu iOS](@site/static/img/navigation/routing/avoid_roads_menu_ios_2.png) 
 
@@ -108,13 +110,11 @@ When you select a road to avoid using *Map context menu* or *Avoid roads menu*, 
 
 ### Export / Import
 
-Depending on your device settings and available applications, your whole list of roads to avoid or just one of them can be [exported](../../personal/import-export.md#export) as an .osf file to a different locations. Select the roads you want to export in the suggested list.
-
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_export"/>*  
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_export"/>*  
 
 ![Avoid road on the map export Android 1](@site/static/img/navigation/routing/avoid_roads_export_andr_1.png) ![Avoid road on the map export Android 2](@site/static/img/navigation/routing/avoid_roads_export_andr_2.png)
 
@@ -122,11 +122,15 @@ Depending on your device settings and available applications, your whole list of
 
 <TabItem value="ios" label="iOS">
 
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_export"/>*  
+
 ![Avoid road on the map export iOS 1](@site/static/img/navigation/routing/avoid_roads_export_ios_1.png) ![Avoid road on the map export iOS 2](@site/static/img/navigation/routing/avoid_roads_export_ios_2.png)
 
 </TabItem>
 
 </Tabs>
+
+Depending on your device settings and available applications, your whole list of roads to avoid or just one of them can be [exported](../../personal/import-export.md#export) as an .osf file to a different locations. Select the roads you want to export in the suggested list.
 
 You can [import](../../personal/import-export.md#import) roads to avoid during route calculation from other sources in .osf file format.  Also, it can be done using *Import option* (*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_actions,shared_string_import"/>*). You can choose to import all data or only few roads to avoid (marking a road with a tick in the list).  
 

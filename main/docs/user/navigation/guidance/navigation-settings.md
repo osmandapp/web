@@ -350,13 +350,13 @@ Correctly setting the parameters in the OsmAnd app will help you avoid problems 
 
 </Tabs>  
 
-For all types of navigation the minimum and maximum allowable speed, both by default and by road, can be different, according to certain values ([Default speed limits](https://wiki.openstreetmap.org/wiki/Default_speed_limits)) and restrictions for vehicles. The speed is also set in certain increments to make the application settings maximum usable. For the "Walking", "Horseback riding" and "Cycling" profiles, in small increments equivalent to 0.1 km/h ([Units & formats](https://osmand.net/docs/user/personal/profiles#units--formats)), and for the other profiles, in increments equivalent to 1 km/h.  
+For all types of navigation the minimum and maximum allowable speed, both by default and by road, can be different, according to certain values ([Default speed limits](https://wiki.openstreetmap.org/wiki/Default_speed_limits)) and restrictions for vehicles. The speed is also set in certain increments to make the application settings maximum usable. For the *Walking*, *Horseback riding* and *Cycling* profiles, in small increments equivalent to 0.1 km/h ([Units & formats](https://osmand.net/docs/user/personal/profiles#units--formats)), and for the other profiles, in increments equivalent to 1 km/h.  
 Speed settings are used to determine when [voice announcements](../guidance/voice-navigation.md) are activated. 
 
 These parameters are used as speed to estimate the [arrival time](../../widgets/nav-widgets.md#arrival-time-or-time-to-go) when the speed cannot be determined from the map data:
-- for the selected profile;
-- if the used roads have no speed limits, which can also affect the routing;
-- if user generated or imported tracks are selected.   
+- For the selected profile.
+- If the used roads have no speed limits, which can also affect the routing.
+- If user generated or imported tracks are selected.   
 
 
 #### Default speed 
