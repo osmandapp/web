@@ -102,21 +102,19 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                 res[dateString] = { day: {}, night: {} };
                 layers.forEach((layer) => {
                     if (layer.index !== -1) {
-                        res[dateString][period][layer.key] = { avg: item[layer.index], count: 1, units: layer.units };
+                        res[dateString][period][layer.key] = { max: item[layer.index], units: layer.units };
                     }
                 });
             } else {
-                // For existing dates, update the average and count for each applicable layer.
+                // For existing dates, update the maximum value for each applicable layer.
                 layers.forEach((layer) => {
                     if (layer.index !== -1) {
                         let entry = res[dateString][period][layer.key];
                         if (entry) {
-                            entry.avg = (entry.avg * entry.count + item[layer.index]) / (entry.count + 1);
-                            res[dateString][period][layer.key].count += 1;
+                            entry.max = Math.max(entry.max, item[layer.index]);
                         } else {
                             res[dateString][period][layer.key] = {
-                                avg: item[layer.index],
-                                count: 1,
+                                max: item[layer.index],
                                 units: layer.units,
                             };
                         }
@@ -134,14 +132,13 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
             return acc;
         }, {});
 
-        // Adjust the average and formatting.
+        // Adjust the formatting.
         Object.keys(res).forEach((date) => {
             layers.forEach((layer) => {
                 ['day', 'night'].forEach((period) => {
                     if (res[date][period][layer.key] && layer.index !== -1) {
                         let entry = res[date][period][layer.key];
-                        entry.avg = layer.checkValue(entry.avg).toFixed(layer.fixed);
-                        delete entry.count;
+                        entry.max = layer.checkValue(entry.max).toFixed(layer.fixed);
                     }
                 });
             });
@@ -243,11 +240,11 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                             </ListItemText>
                             <div style={{ display: 'flex' }}>
                                 <Typography className={styles.weekItemDay}>
-                                    {data?.day[currentWeatherType].avg}
+                                    {data?.day[currentWeatherType].max}
                                 </Typography>
                                 <Typography className={styles.weekItemNight}>|</Typography>
                                 <Typography className={styles.weekItemNight}>
-                                    {data?.night[currentWeatherType].avg}
+                                    {data?.night[currentWeatherType].max}
                                 </Typography>
                                 <Typography className={styles.weekItemUnit}>
                                     {data?.day[currentWeatherType].units}

@@ -45,7 +45,7 @@ export default function ForecastGraph({ data, weatherType, weatherUnits }) {
         datasets: [
             {
                 label: t('day'),
-                data: Object.values(data).map((item) => item.day[weatherType]?.avg),
+                data: Object.values(data).map((item) => item.day[weatherType]?.max),
                 fill: false,
                 borderColor: '#212121',
                 pointBackgroundColor: '#212121',
@@ -53,7 +53,7 @@ export default function ForecastGraph({ data, weatherType, weatherUnits }) {
             },
             {
                 label: t('night'),
-                data: Object.values(data).map((item) => item.night[weatherType]?.avg),
+                data: Object.values(data).map((item) => item.night[weatherType]?.max),
                 fill: false,
                 borderColor: '#737D8C',
                 pointBackgroundColor: '#737D8C',
