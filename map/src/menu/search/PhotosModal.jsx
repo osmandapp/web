@@ -136,7 +136,7 @@ function PhotoItem({ photo, index, getWidth, getHeight }) {
                     style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
                 >
                     <img
-                        src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=${getWidth()}`}
+                        src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}`}
                         alt={`Photo ${index + 1}`}
                         style={{ width: '100%', height: getHeight() - MARGIN * 3, objectFit: 'contain' }}
                     />
