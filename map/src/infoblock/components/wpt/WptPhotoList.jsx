@@ -6,7 +6,7 @@ import AppContext from '../../../context/AppContext';
 import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
 import ImageItem from '../../../menu/search/ImageItem';
 
-export default function WptPhotoGallery({ photos }) {
+export default function WptPhotoList({ photos }) {
     const ctx = useContext(AppContext);
     const [loadedImages, setLoadedImages] = useState({});
 
