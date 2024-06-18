@@ -89,7 +89,14 @@ export default function PhotosModal({ photos, selectedPhotoIndex }) {
                 </AppBar>
                 <SwipeableViews axis={'x'} index={activeStep} onChangeIndex={handleStepChange}>
                     {photos.map((photo, index) => (
-                        <PhotoItem key={index} photo={photo} index={index} getWidth={getWidth} getHeight={getHeight} />
+                        <PhotoItem
+                            key={index}
+                            photo={photo}
+                            index={index}
+                            getWidth={getWidth}
+                            getHeight={getHeight}
+                            activeStep={activeStep}
+                        />
                     ))}
                 </SwipeableViews>
                 <Box className={styles.iconsPrevNextBlock}>
@@ -109,12 +116,15 @@ export default function PhotosModal({ photos, selectedPhotoIndex }) {
     );
 }
 
-function PhotoItem({ photo, index, getWidth, getHeight }) {
+function PhotoItem({ photo, index, getWidth, getHeight, activeStep }) {
     const { ref, inView } = useInView({
         threshold: 0.1,
         triggerOnce: true,
     });
     const MARGIN = 95;
+
+    // Preload next 5 images if within range
+    const shouldLoadImage = inView || (index >= activeStep && index < activeStep + 5);
 
     return (
         <div
@@ -128,7 +138,7 @@ function PhotoItem({ photo, index, getWidth, getHeight }) {
             }}
             ref={ref}
         >
-            {inView ? (
+            {shouldLoadImage ? (
                 <a
                     href={`https://commons.wikimedia.org/wiki/File:${photo.properties.imageTitle}`}
                     target="_blank"
