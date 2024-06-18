@@ -5222,5 +5222,6 @@
   "context_menu_item_directions_to": "Directions to",
   "context_menu_item_directions_from": "Directions from",
   "copy_coordinates": "Copy coordinates",
-  "add_intermediate_point": "Add intermediate"
+  "add_intermediate_point": "Add intermediate",
+  "shared_string_total": "Total"
 }

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 10
 title:  OsmAnd development
 ---
 
@@ -26,7 +26,7 @@ The OsmAnd development plugin allows you to try new features of the app or to co
 
 To activate special features for developers and testers:
 
-1. [Enable](../plugins/index.md#enable--disable) OsmAnd development plugin in the Plugins section of the Main menu.
+1. [Enable](../plugins/configure-plugins.md#enable--disable) OsmAnd development plugin in the Plugins section of the Main menu.
 2. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).  
 3. Enable [developer widgets](#widgets) if necessary.  
 

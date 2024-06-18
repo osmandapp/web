@@ -149,7 +149,7 @@ The widget displays the distance left to the last destination point when followi
 
 | | |
 |------------|------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → *<Translate android="true" ids="map_widget_distance_to_destination"/>* |
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → All panels → <Translate android="true" ids="map_widget_distance_to_destination"/>* |
 |  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_distance_to_destination"/>* |
 | By tapping | Moves the map to the destination point. |    
 
@@ -228,7 +228,7 @@ Widget displays the speed limit on the current road you are traveling on. It wor
 | |
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_max_speed"/>* |
-|  |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_max_speed"/> or <Translate ios="true" ids="map_widget_intermediate_time"/>* |
+|  |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_max_speed"/>* |
 | By tapping | No changes |
 
 
@@ -278,13 +278,15 @@ Displays a widget by approach time settings. Lanes color is associated with [voi
 
 ## Alert widget
 
-Alert widget combines multiple type of alerts that are displayed in the lower left corner during navigation.
-
 ![Alert information widgets](@site/static/img/widgets/alert_information_widget.png)
 
-There are options to turn on and off specific alerts such as: <Translate android="true" ids="show_traffic_warnings"/>, <Translate android="true" ids="show_pedestrian_warnings"/>, <Translate android="true" ids="show_cameras"/>, <Translate android="true" ids="show_tunnels"/>. Other alerts are active by default, if alert widget is enabled. For speed limit alert, you could configure *<Translate android="true" ids="speed_limit_exceed"/>* within voice prompts to relate vehicle speed with GPS-speed more precisely.
+The **Alert widget** combines several types of alerts that are displayed in the lower left corner while you are navigating.  
 
-Most of alerts are displayed and announced within 15 seconds, same as [Passing waypoint / favorite / POI](../../technical/algorithms/voice-prompt-triggering.md#trigger-behavior).
+- You have the ability to turn alerts such as *<Translate android="true" ids="traffic_warning_speed_limit"/>, <Translate android="true" ids="show_traffic_warnings"/>, <Translate android="true" ids="show_pedestrian_warnings"/>, <Translate android="true" ids="show_cameras"/>,* and *<Translate android="true" ids="show_tunnels"/>* on and off. Other alerts are active by default if the widget is enabled.  
+
+- For the *Speed Limit* alert type, you can adjust the [*<Translate android="true" ids="speed_limit_exceed"/>*](../navigation/guidance/voice-navigation.md#speed-limit) value in the voice prompt settings to better match the vehicle speed and GPS speed.  
+
+- Most alerts are displayed on the screen and announced by voice prompt for 15 seconds, as well as the trigger time for passing a Waypoint, Favorite point, or POI. Read more [here](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 
 | | |
 |------------|------------|
@@ -294,7 +296,7 @@ Most of alerts are displayed and announced within 15 seconds, same as [Passing w
 
 ### Alert types 
 
-Alert types have different visuals that depends on **<Translate android="true" ids="driving_region"/> **  which could be configured via  <Translate android="true" ids="shared_string_settings"/> → <Translate android="true" ids="general_settings_2"/>. OsmAnd doesn't have a goal to represent 100% identical road signs but to indicate some similarities.
+Alert types have different visual design, which depends on the **<Translate android="true" ids="driving_region"/> **  and can be configured through  *<Translate android="true" ids="shared_string_settings"/> → <Translate android="true" ids="general_settings_2"/>*. OsmAnd does not aim to represent 100% identical road signs but points out some similarities.
 
 | | | |
 |------------|------------|------------|
@@ -302,7 +304,7 @@ Alert types have different visuals that depends on **<Translate android="true" i
 | *<Translate android="true" ids="show_traffic_warnings"/>* | [Traffic calming](https://en.wikipedia.org/wiki/Traffic_calming) uses physical design and other measures to improve safety for motorists, pedestrians and cyclists. | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_traffic_calming.png)  ![Alert traffic calming us widgets](@site/static/img/widgets/warnings_traffic_calming_us.png)|
 | *<Translate android="true" ids="show_pedestrian_warnings"/>* | [A pedestrian crossing](https://en.wikipedia.org/wiki/Pedestrian_crossing) (primarily British English) or crosswalk is a place designated for pedestrians to cross a road, street, or avenue. OsmAnd shows the alert of uncontrolled pedestrian crossing.  | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_pedestrian.png)  ![Alert traffic calming us widgets](@site/static/img/widgets/warnings_pedestrian_us.png) |
 | *<Translate android="true" ids="traffic_warning_speed_limit"/>* | In most countries the [Road speed limits](https://en.wikipedia.org/wiki/Speed_limit) are used to set the legal maximum, middle or minimum speed at which road vehicles may travel on a given stretch of road. In OsmAnd the alert is shown when you exceed the speed. You can set parameters of speed exceeding (0, 5, 10.. km/h). ![Alert ex_speed widgets](@site/static/img/widgets/ex_warning_speed.png)  | ![Alert speed_limit widgets](@site/static/img/widgets/warnings_limit.png) ![Alert speed_limit_ca widgets](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Alert speed_limit_us widgets](@site/static/img/widgets/warnings_speed_limit_us.png)|
-| *<Translate android="true" ids="show_tunnels"/>* | A tunnel is an underground passageway, esp cars that pass under a mountain, river, or a congested urban area. In OsmAnd the alert "Tunnels" has information about tunnel length. If you are in a tunnel it shows distance to the end of the tunnel.   ![Alert ex_tunnel widgets](@site/static/img/widgets/ex_warning_tunnel.png)  | ![Alert warnings_tunnel widgets](@site/static/img/widgets/warnings_tunnel.png)  ![Alert warnings_tunnel_us widgets](@site/static/img/widgets/warnings_tunnel_us.png) |
+| *<Translate android="true" ids="show_tunnels"/>* | A tunnel is an underground passageway, esp cars that pass under a mountain, river, or a congested urban area. In OsmAnd the alert *Tunnels* has information about tunnel length. If you are in a tunnel it shows distance to the end of the tunnel.   ![Alert ex_tunnel widgets](@site/static/img/widgets/ex_warning_tunnel.png)  | ![Alert warnings_tunnel widgets](@site/static/img/widgets/warnings_tunnel.png)  ![Alert warnings_tunnel_us widgets](@site/static/img/widgets/warnings_tunnel_us.png) |
 | *<Translate android="true" ids="show_cameras"/>* | [Traffic enforcement cameras](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) and [speed cameras](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) record traffic offenses, including speeding, running red lights, and other types of illegal behavior. <br />**NOTE:** Speed camera alerts are prohibited or illegal in some countries. To completely [remove speed cameras](../personal/global-settings.md#legal) from OsmAnd, go to main *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_speed_camera.png)   |
 | *<Translate android="true" ids="traffic_warning_stop"/>* | [A stop sign](https://en.wikipedia.org/wiki/Stop_sign) is a traffic sign designed to notify drivers that they must come to a complete stop and make sure the intersection is safely clear of vehicles and pedestrians before continuing past the sign.  | ![Alert stop widgets](@site/static/img/widgets/warnings_stop.png) |
 | *<Translate android="true" ids="show_railway_warnings"/>* |This warning means that there is a [railway crossing](https://en.wikipedia.org/wiki/Crossbuck) ahead. | ![Alert warnings_railways widgets](@site/static/img/widgets/warnings_railways.png) ![Alert warnings_railways_ca widgets](@site/static/img/widgets/warnings_railways_ca.png)  ![Alert warnings_railways_us widgets](@site/static/img/widgets/warnings_railways_us.png)  |

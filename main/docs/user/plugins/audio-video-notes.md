@@ -31,7 +31,7 @@ All created audio and video notes compose the Record layer. When enabled on the 
 The audio/video notes are provided with the Audio/video notes plugin, and require the following setup:
 
 
-1. Enable the [Audio/video notes plugin](../plugins/index.md#enable--disable) in the Plugins section of the Main menu.  
+1. Enable the [Audio/video notes plugin](../plugins/configure-plugins.md#enable--disable) in the Plugins section of the Main menu.  
 2. If needed, add [the widget](../widgets/info-widgets.md#-audio-video-notes-widget) to the device screen.  
 3. If needed, configure [the recording settings](#plugin-settings) per profile.  
 
@@ -153,7 +153,6 @@ Also, [Details](../map/map-context-menu#-audiovideo-note-android) will help by g
 ![Audio video plugin Context menu](@site/static/img/plugins/audio-video-notes/audio_video_notes_map_context_menu_1.png) ![Audio video plugin My places menu actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
 
 
-
 ### Rename, delete, share
 
 To manage a note in My Places, tap the vertical triple points of the note in the list, and the available options show up, as follows: 
@@ -165,6 +164,7 @@ To manage a note in My Places, tap the vertical triple points of the note in the
 - **<Translate android="true" ids="shared_string_delete"/>** - to delete the note.
 
 ![Audio video plugin My places menu actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_actions.png)
+
 
 ## Recording Widget
 
@@ -199,6 +199,8 @@ Adding a widget to the screen is necessary if you prefer to avoid searching for 
 
 ### Manage in My Places
 
+![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_three_actions.png)  
+
 The options on the bottom bar can be used to manage the list of notes in My Places, as follows:
 
 - **<Translate android="true" ids="shared_string_sort"/>** - opens a choice of how to sort: by type, or date, and on selection an option, sorts the list respectively. 
@@ -206,14 +208,12 @@ The options on the bottom bar can be used to manage the list of notes in My Plac
 - **<Translate android="true" ids="shared_string_delete"/>** - shows a check list of audio, photo and video notes only. First, required notes are checked, then the Delete icon at the right-hand top corner of the screen is clicked, and after confirmation, deletes the selected notes.  
 
 
-![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/audio_video_notes_myplaces_menu_three_actions.png)  
-
 ### Share with GPX waypoints
 
-**Android**: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>  
-You could share all Notes including [GPX](#waypoints-created-from-notes) that has selected notes as waypoints on **My Places** screen by clicking on bottom menu button share. A checkbox will appear next to each note to select specific notes. There are two checkboxes above the notes: *A/V notes by date* to select all notes and the *Locations* checkbox. The *Locations* checkbox allows you to add a separate GPX file with coordinates and data.
-
+*<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>*   
 ![Share 1](@site/static/img/plugins/audio-video-notes/a-v_share_2.png)
+ 
+You could share all Notes including [GPX](#waypoints-created-from-notes) that has selected notes as waypoints on **My Places** screen by clicking on bottom menu button share. A checkbox will appear next to each note to select specific notes. There are two checkboxes above the notes: *A/V notes by date* to select all notes and the *Locations* checkbox. The *Locations* checkbox allows you to add a separate GPX file with coordinates and data.  
 
 Each note contains the time at which it was created, the amount of data, and if it is a record, the time of recording, location data, you can add GPX data. File formats: Audio - 3gp, Video - mp4, Photo - jpg.
 

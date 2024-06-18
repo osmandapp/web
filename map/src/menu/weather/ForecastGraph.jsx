@@ -39,27 +39,39 @@ export default function ForecastGraph({ data, weatherType, weatherUnits }) {
     const { t } = useTranslation();
 
     Interaction.modes.myCustomMode = GraphManager.myCustomMode;
+    const isPrecipitation = weatherType?.includes('precip');
 
     const graphData = {
         labels: Object.keys(data),
-        datasets: [
-            {
-                label: t('day'),
-                data: Object.values(data).map((item) => item.day[weatherType]?.max),
-                fill: false,
-                borderColor: '#212121',
-                pointBackgroundColor: '#212121',
-                borderWidth: 2,
-            },
-            {
-                label: t('night'),
-                data: Object.values(data).map((item) => item.night[weatherType]?.max),
-                fill: false,
-                borderColor: '#737D8C',
-                pointBackgroundColor: '#737D8C',
-                borderWidth: 2,
-            },
-        ],
+        datasets: isPrecipitation
+            ? [
+                  {
+                      label: t('shared_string_total'),
+                      data: Object.values(data).map((item) => item.totalPrecipitation),
+                      fill: false,
+                      borderColor: '#4285F4',
+                      pointBackgroundColor: '#4285F4',
+                      borderWidth: 2,
+                  },
+              ]
+            : [
+                  {
+                      label: t('day'),
+                      data: Object.values(data).map((item) => item.day[weatherType]?.max),
+                      fill: false,
+                      borderColor: '#212121',
+                      pointBackgroundColor: '#212121',
+                      borderWidth: 2,
+                  },
+                  {
+                      label: t('night'),
+                      data: Object.values(data).map((item) => item.night[weatherType]?.max),
+                      fill: false,
+                      borderColor: '#737D8C',
+                      pointBackgroundColor: '#737D8C',
+                      borderWidth: 2,
+                  },
+              ],
     };
 
     const options = {

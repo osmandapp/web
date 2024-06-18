@@ -83,7 +83,6 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
         let uniqueDates = new Set();
         const layers = ctx.weatherLayers[ctx.weatherType].map((layer) => ({ ...layer }));
 
-        // Iterate over each forecast item to process and organize data.
         forecast.forEach((item) => {
             const date = new Date(item[0]);
             const dateString = date.toISOString().split('T')[0];
@@ -97,16 +96,14 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
             const isDay = time > 6 && time < 18;
             const period = isDay ? 'day' : 'night';
 
-            // If the date isn't already in the result, initialize its structure.
             if (!res[dateString]) {
-                res[dateString] = { day: {}, night: {} };
+                res[dateString] = { day: {}, night: {}, totalPrecipitation: 0 };
                 layers.forEach((layer) => {
                     if (layer.index !== -1) {
                         res[dateString][period][layer.key] = { max: item[layer.index], units: layer.units };
                     }
                 });
             } else {
-                // For existing dates, update the maximum value for each applicable layer.
                 layers.forEach((layer) => {
                     if (layer.index !== -1) {
                         let entry = res[dateString][period][layer.key];
@@ -121,6 +118,13 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                     }
                 });
             }
+
+            // Sum the precipitation values
+            layers.forEach((layer) => {
+                if (layer.key.includes('precip')) {
+                    res[dateString].totalPrecipitation += item[layer.index];
+                }
+            });
         });
 
         // Limit the result to the first 7 dates.
@@ -132,7 +136,6 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
             return acc;
         }, {});
 
-        // Adjust the formatting.
         Object.keys(res).forEach((date) => {
             layers.forEach((layer) => {
                 ['day', 'night'].forEach((period) => {
@@ -239,13 +242,23 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                                 </Typography>
                             </ListItemText>
                             <div style={{ display: 'flex' }}>
-                                <Typography className={styles.weekItemDay}>
-                                    {data?.day[currentWeatherType].max}
-                                </Typography>
-                                <Typography className={styles.weekItemNight}>|</Typography>
-                                <Typography className={styles.weekItemNight}>
-                                    {data?.night[currentWeatherType].max}
-                                </Typography>
+                                {currentWeatherType === 'precip' ? (
+                                    <>
+                                        <Typography className={styles.weekItemDay}>
+                                            {data?.totalPrecipitation.toFixed(2)}
+                                        </Typography>
+                                    </>
+                                ) : (
+                                    <>
+                                        <Typography className={styles.weekItemDay}>
+                                            {data?.day[currentWeatherType].max}
+                                        </Typography>
+                                        <Typography className={styles.weekItemNight}>|</Typography>
+                                        <Typography className={styles.weekItemNight}>
+                                            {data?.night[currentWeatherType].max}
+                                        </Typography>
+                                    </>
+                                )}
                                 <Typography className={styles.weekItemUnit}>
                                     {data?.day[currentWeatherType].units}
                                 </Typography>
