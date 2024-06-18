@@ -4,6 +4,7 @@ import { CircularProgress, Divider, ListItemIcon, ListItemText, MenuItem, Typogr
 import { addShowDetailsFlag, dayFormatter, timeFormatter } from '../../manager/WeatherManager';
 import styles from '../weather/weather.module.css';
 import { useTranslation } from 'react-i18next';
+import i18n from 'i18next';
 
 export default function ForecastTable({ dayForecast, weekForecast, currentTimeForecast, setHeaderForecast }) {
     const ctx = useContext(AppContext);
@@ -24,7 +25,8 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
             const res = currentF ?? forecast?.filter((f) => f[1] === timeKey);
             if (res?.length > 0) {
                 if (item.index !== -1) {
-                    return `${formatting(res[0][item.index])} ${item.units}`;
+                    const units = item.key === 'precip' ? i18n?.t('web:weather_precip_mmh') : item.units;
+                    return `${formatting(res[0][item.index])} ${units}`;
                 } else {
                     return NOT_AVAILABLE;
                 }
