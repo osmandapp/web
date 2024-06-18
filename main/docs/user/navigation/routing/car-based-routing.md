@@ -21,7 +21,7 @@ Car-based routing is designed to help drivers navigate efficiently, safely, and 
 The routing mechanism for motorized ground vehicles differs only in a few settings. The common parameters are described in the [Car](#route-parameters---car) section of this article. [Truck](#route-parameters---truck) and [Motorcycle](#route-parameters---motorcycle) have their own particularities.  
 :::
 
-Routing can be configured according to your needs in the [Route parameters section](../../navigation/guidance/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings of the corresponding profile (*Driving, Truck, Motorcycle*).  
+Routing can be configured according to your needs in the [Route parameters section](../../navigation/guidance/navigation-settings.md#route-parameters) of the Navigation settings of the corresponding profile (*Driving, Truck, Motorcycle*).  
 
 
 ## Route parameters - Car

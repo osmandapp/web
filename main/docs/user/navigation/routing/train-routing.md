@@ -22,12 +22,10 @@ By default, *Train profile* is deactivated. In order to use this profile for rou
 
 *Train routing* in OsmAnd provides users with possibility to use railroad lines for navigation as if they were driving a train like a car. This option can be useful, for example, for hiking when no other roads are available. In other cases it's better to use *[Public transport routing](./public-transport-navigation.md)*.  
 
-![Map transport tram](@site/static/img/map/map-transport-tram.png)
+![Map transport tram](@site/static/img/navigation/routing/train_routing_overview.png)
 
 
 ## Route parameters - Train
-
-*Train routing* can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings.  
 
 <Tabs groupId="operating-systems">
 
@@ -44,6 +42,8 @@ By default, *Train profile* is deactivated. In order to use this profile for rou
 </TabItem>
 
 </Tabs>
+
+*Train routing* can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#route-parameters) of the Navigation settings.  
 
 
 ## Other routing settings

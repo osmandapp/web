@@ -39,7 +39,7 @@ The OsmAnd Boat routing engine also takes into account the characteristics of th
 By default, *Boat profile* is deactivated. In order to use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-Boat routing can be configured according to your needs in the [Route parameters section](../../navigation/guidance/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings.   
+Boat routing can be configured according to your needs in the [Route parameters section](../../navigation/guidance/navigation-settings.md#route-parameters) of the Navigation settings.   
 
 Typically, *Boat routing* is used with boat profile (the last one enabled together with the [Nautical plugin](../../plugins/nautical-charts.md)).  However, it is possible to use boat routing with other profiles as well, and different [routing types](#other-routing-types-for-boat) can also be employed in the boat profile.  
 

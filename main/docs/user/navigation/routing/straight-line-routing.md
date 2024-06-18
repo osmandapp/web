@@ -16,13 +16,14 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-Unlike traditional routing algorithms that use roads, trails, or predefined routes, straight line routing calculates the shortest distance between two points on the map as a straight line. This feature can be useful for active hikers who want to route away from trails or explore remote areas where traditional routes may not be available. For light aircraft pilots and ship skippers, using the Straight Line routing type can be very useful in navigation.  
+Unlike traditional routing algorithms that use roads, trails, or predefined routes, straight line routing calculates the shortest distance between two points on the map as a straight line. This feature can be useful for active hikers who want to route away from trails or explore remote areas where traditional routes may not be available. For light aircraft pilots and ship skippers, using the *Straight line routing type* can be very useful in navigation.  
 
-![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_1.png) ![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_2.png)  
+<!-- ![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_1.png) ![Straight line Navigation example Android 1](@site/static/img/navigation/routing/straight_line_routing_andr_2.png)  -->
 
-Straight line routing does not take into account any obstacles or barriers that may be present in the terrain, such as mountains, rivers, or dense forests. It also does not provide any information about the quality of the terrain, the difficulty level of the route, or any other relevant factors that may affect the safety or feasibility of the route ([Route Details](../setup/route-details.md) section is empty).   
+- *Straight line* routing does not take into account any obstacles or barriers that may be present in the terrain, such as mountains, rivers, or dense forests.
+- It does not provide any information about the quality of the terrain, the difficulty level of the route, or any other relevant factors that may affect the safety or feasibility of the route ([Route Details](../setup/route-details.md) section is empty).   
 
-![Straight-line Navigation type Android](@site/static/img/navigation/boat/straight_navigation_type_android.png)
+![Straight-line Navigation type Android](@site/static/img/navigation/routing/straight_line_routing_andr.png)
 
 
 ## Route parameters - Straight line
@@ -31,7 +32,7 @@ Straight line routing does not take into account any obstacles or barriers that 
 Straight line routing is linked to *Aircraft profile*. By default, this profile is deactivated. In order to use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-*Straight line* routing can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings.  
+*Straight line* routing can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#route-parameters) of the Navigation settings.  
 
 <Tabs groupId="operating-systems">
 

@@ -25,7 +25,7 @@ By default, *Moped profile* is deactivated. In order to use this profile for rou
 
 ## Route parameters - Moped
 
-*Moped routing* can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings.  
+*Moped routing* can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#route-parameters) of the Navigation settings.  
 
 The moped's rooting settings are very simple and consist of just a few options.
 

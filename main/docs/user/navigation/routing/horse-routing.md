@@ -12,13 +12,14 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+
 ## Overview
 
 *Horseback routing* can be useful for equestrians, who want to plan their rides on paths and trails that are safe and suitable for horses. With help of this type of routing you may also discover new routes that haven't been already known about otherwise.  
 
-*Horseback routing* can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings.  
+*Horseback routing* can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#route-parameters) of the Navigation settings.  
 
-![Map routes - horse routes](@site/static/img/map/map-routes-horse.png)
+![Horseback](@site/static/img/navigation/routing/horseback_routing_overview.png)
 
 
 ## Route parameters - Horse

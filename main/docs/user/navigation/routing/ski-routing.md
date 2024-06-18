@@ -21,9 +21,9 @@ The ski routing and skiing profile are only availible when [Ski map view plugin]
 
 *Ski routing* can be particularly useful for backcountry skiers, ski mountaineers, and other winter sports enthusiasts who want to explore new areas and plan their trips in advance. With *ski routing* OsmAnd users can plan routes and navigate safely while enjoying the beauty of winter landscapes.  
 
-*Ski routing* can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#navigation-type--route-parameters) of the Navigation settings.  
+*Ski routing* can be configured according to your needs in the [Route parameters section](../guidance/navigation-settings.md#route-parameters) of the Navigation settings.  
 
-![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
+![Map routes - ski slopes](@site/static/img/navigation/routing/ski_routing_overview.png)
 
 
 ## Route parameters - Ski
