@@ -21,7 +21,7 @@ export default function ImageItem({ photo, index, handleImageLoad, isLoaded }) {
             {inView && (
                 <img
                     src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=300`}
-                    alt={`thumbnail-${index}`}
+                    alt={photo.properties.imageTitle}
                     style={{
                         display: isLoaded ? 'block' : 'none',
                         width: '156px',
