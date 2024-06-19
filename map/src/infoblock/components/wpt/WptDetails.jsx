@@ -316,7 +316,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }
 
     async function getWikiPhotos(wpt) {
-        let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/get-wiki-photos`, {
+        let response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/get-wiki-photos`, {
             apiCache: true,
             params: {
                 id: wpt.id,
