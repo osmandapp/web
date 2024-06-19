@@ -43,6 +43,21 @@ export default function PhotosModal({ photos }) {
         ctx.setSelectedPhotoInd(Math.max(activeStep - 1, 0));
     };
 
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === 'ArrowRight') {
+                handleNext();
+            } else if (event.key === 'ArrowLeft') {
+                handleBack();
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [handleNext, handleBack]);
+
     const handleStepChange = (step) => setActiveStep(step);
 
     function getHeight() {
@@ -133,26 +148,24 @@ function PhotoItem({ photo, index, getWidth, getHeight, activeStep }) {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                marginTop: MARGIN + 'px',
-                marginBottom: MARGIN + 'px',
             }}
             ref={ref}
         >
             {shouldLoadImage ? (
                 <a
-                    href={`https://commons.wikimedia.org/wiki/File:${photo.properties.imageTitle}`}
+                    href={`https://commons.wikimedia.org/wiki/File:${photo.properties.imageTitle}?width=1280`}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
                 >
                     <img
-                        src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}`}
+                        src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=1280`}
                         alt={`Photo ${index + 1}`}
-                        style={{ width: '100%', height: getHeight() - MARGIN * 3, objectFit: 'contain' }}
+                        style={{ width: '100%', height: getHeight() - MARGIN, objectFit: 'contain' }}
                     />
                 </a>
             ) : (
-                <Skeleton variant="rectangular" width={getWidth()} height={getHeight() - MARGIN * 3} />
+                <Skeleton variant="rectangular" width={getWidth()} height={getHeight() - MARGIN} />
             )}
         </div>
     );
