@@ -205,9 +205,7 @@ const GlobalFrame = () => {
                     setMenuInfo={setMenuInfo}
                     setOpenVisibleMenu={setOpenVisibleMenu}
                 />
-                {ctx.selectedPhotoInd !== -1 && (
-                    <PhotosModal photos={ctx.photoGallery} selectedPhotoIndex={ctx.selectedPhotoInd} />
-                )}
+                {ctx.selectedPhotoInd !== -1 && <PhotosModal photos={ctx.photoGallery} />}
             </Box>
             <MainMenu
                 size={MAIN_MENU_SIZE}

@@ -11,24 +11,24 @@ import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.
 import AppContext from '../../context/AppContext';
 import { useInView } from 'react-intersection-observer';
 
-export default function PhotosModal({ photos, selectedPhotoIndex }) {
+export default function PhotosModal({ photos }) {
     const ctx = useContext(AppContext);
 
     const [open, setOpen] = useState(true);
-    const [activeStep, setActiveStep] = useState(selectedPhotoIndex);
+    const [activeStep, setActiveStep] = useState(ctx.selectedPhotoInd);
     const [width, height] = useWindowSize();
 
     const HEADER_HEIGHT = 60;
     const LEFT_MARGIN = 423;
 
     useEffect(() => {
-        if (selectedPhotoIndex !== -1) {
-            if (selectedPhotoIndex !== activeStep) {
+        if (ctx.selectedPhotoInd !== -1) {
+            if (ctx.selectedPhotoInd !== activeStep) {
                 setOpen(true);
             }
-            setActiveStep(selectedPhotoIndex);
+            setActiveStep(ctx.selectedPhotoInd);
         }
-    }, [selectedPhotoIndex]);
+    }, [ctx.selectedPhotoInd]);
 
     const handleClose = () => {
         ctx.setSelectedPhotoInd(-1);
@@ -36,11 +36,11 @@ export default function PhotosModal({ photos, selectedPhotoIndex }) {
     };
 
     const handleNext = () => {
-        setActiveStep((prevActiveStep) => Math.min(prevActiveStep + 1, photos.length - 1));
+        ctx.setSelectedPhotoInd(Math.min(activeStep + 1, photos.length - 1));
     };
 
     const handleBack = () => {
-        setActiveStep((prevActiveStep) => Math.max(prevActiveStep - 1, 0));
+        ctx.setSelectedPhotoInd(Math.max(activeStep - 1, 0));
     };
 
     const handleStepChange = (step) => setActiveStep(step);
