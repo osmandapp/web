@@ -19,7 +19,7 @@ export default function WptPhotoList({ photos }) {
 
     return (
         <Box minWidth={ctx.infoBlockWidth} maxWidth={ctx.infoBlockWidth} sx={{ height: 'auto', overflowX: 'hidden' }}>
-            <AppBar position="static" className={headerStyles.appbar}>
+            <AppBar position="sticky" sx={{ top: 0, width: '100%' }} className={headerStyles.appbar}>
                 <Toolbar className={headerStyles.toolbar}>
                     <IconButton
                         variant="contained"

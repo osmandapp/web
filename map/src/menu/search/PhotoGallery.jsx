@@ -27,6 +27,11 @@ export default function PhotoGallery({ photos }) {
 
     const handleOpen = () => ctx.setPhotoGallery(filteredPhotos);
 
+    const handleImageClick = (index) => {
+        ctx.setSelectedPhotoInd(index);
+        ctx.setPhotoGallery(filteredPhotos);
+    };
+
     function filterPhotos(photos) {
         const imageExtensions = ['.jpeg', '.jpg', '.png', '.gif'];
         return photos.features
@@ -62,6 +67,7 @@ export default function PhotoGallery({ photos }) {
                                     <img
                                         onLoad={handleImageLoad}
                                         onError={() => handleImageError(index)}
+                                        onClick={() => handleImageClick(index)}
                                         src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=300`}
                                         alt={`Photo ${index + 1}`}
                                         style={{
@@ -81,6 +87,7 @@ export default function PhotoGallery({ photos }) {
                                         <img
                                             onLoad={handleImageLoad}
                                             onError={() => handleImageError(index + 1)}
+                                            onClick={() => handleImageClick(index + 1)}
                                             src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=300`}
                                             alt={`Photo ${index + 2}`}
                                             style={{
