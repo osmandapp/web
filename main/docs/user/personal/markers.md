@@ -81,7 +81,7 @@ Short or long-tap the map and choose neede action in [Map Context menu](../map/m
 
 </Tabs> 
 
-It is possible to mark a point or an object in order to make it easier to plan navigation. You just need to click on the 'flag' icon in the menu (Android), 'arrow' (iOS) - displays direction and distance to the selected point from your current location.
+It is possible to mark a point or an object in order to make it easier to plan navigation. You just need to click on the 'flag' icon in the menu (Android), 'arrow' (iOS) - displays direction and distance to the selected point from your current location (or the centre map point when the Location is off).
 
 Actions:
 - [<Translate android="true" ids="shared_string_marker"/> / <Translate android="true" ids="edit_map_marker"/>](../personal/markers.md) - puts a new marker on the selected point.
@@ -124,7 +124,7 @@ Tapping the menu item (<Translate ios="true" ids="map_markers"/>) opens a list o
 
 ### List
 
-Active Map markers: map marker color, showing the big arrow to the location (color arrow), distance to it from your location, data of creation of this marker.
+Active Map markers: map marker color, showing the big arrow to the location (color arrow), distance to it from your location (or the centre map point when the Location is off), data of creation of this marker.
 
 <Tabs groupId="operating-systems">
 
@@ -136,8 +136,8 @@ Active Map markers: map marker color, showing the big arrow to the location (col
 
 Info:
 
-Active Map markers: map marker color, showing the big arrow to the location (color arrow), distance to it from your location, data of creation of this marker.
-Non active map markers: map marker color, showing the small arrow to the location, distance to it from your location, data of creation of this marker.
+Active Map markers: map marker color, showing the big arrow to the location (color arrow), distance to it from your location (or the centre map point when the Location is off), data of creation of this marker.
+Non active map markers: map marker color, showing the small arrow to the location, distance to it from your location (or the centre map point when the Location is off), data of creation of this marker.
 
 Actions:
 
@@ -352,7 +352,7 @@ To start using *Map markers widgets*, you need to make all of the following sett
 
 </Tabs> 
 
-It is possible to mark a point or an object in order to make it easier to plan navigation. You just need to click on the 'flag' icon in the menu (Android), 'arrow' (iOS) - displays direction and distance to the selected point from your current location.
+It is possible to mark a point or an object in order to make it easier to plan navigation. You just need to click on the 'flag' icon in the menu (Android), 'arrow' (iOS) - displays direction and distance to the selected point from your current location (or the centre map point when the Location is off).
 
 Actions:
 - [<Translate android="true" ids="shared_string_marker"/> / <Translate android="true" ids="edit_map_marker"/>](../personal/markers.md) - puts a new marker on the selected point.
