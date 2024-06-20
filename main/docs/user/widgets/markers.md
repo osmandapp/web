@@ -20,7 +20,7 @@ Markers are temporary points indicated on the map in the form of flags. The widg
 ## Top bar widget
 
 The **Map markers bar** (Android) widget / **Distance indication - Top bar** (iOS) widget displays:
-- Distance from your current location to the selected point indicated by the Marker on the map ([Units of length](../personal/profiles/#general-settings) can be choosed in the Profile settings).
+- Distance from your current location to the selected point indicated by the Marker on the map ([Units of length](../personal/profiles/#general-settings) can be chosen in the Profile settings).
 - An arrow of the same color as the marker indicates the direction from the current location and orientation in space of your device (heading) towards the marker.
 - Location Address.
 - Menu icon leading to [Map marker list](../personal/markers/#map-markers-menu).
