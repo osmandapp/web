@@ -10,6 +10,9 @@ import styles from '../search/search.module.css';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import AppContext from '../../context/AppContext';
 import { useInView } from 'react-intersection-observer';
+import { format } from 'date-fns';
+import * as locales from 'date-fns/locale';
+import i18n from 'i18next';
 
 export default function PhotosModal({ photos }) {
     const ctx = useContext(AppContext);
@@ -20,6 +23,23 @@ export default function PhotosModal({ photos }) {
 
     const HEADER_HEIGHT = 60;
     const LEFT_MARGIN = 423;
+    const FOOTER_HEIGHT = getFooterHeight();
+
+    function getFooterHeight() {
+        let size = 0;
+        if (hasFooterInfo()) {
+            if (photos[activeStep].properties.date) {
+                size += 22;
+            }
+            if (photos[activeStep].properties.author) {
+                size += 22;
+            }
+            if (photos[activeStep].properties.license) {
+                size += 22;
+            }
+        }
+        return size;
+    }
 
     useEffect(() => {
         if (ctx.selectedPhotoInd !== -1) {
@@ -64,6 +84,10 @@ export default function PhotosModal({ photos }) {
         return height - HEADER_HEIGHT;
     }
 
+    function getPhotoHeight() {
+        return height - HEADER_HEIGHT - FOOTER_HEIGHT;
+    }
+
     function getWidth() {
         return width - LEFT_MARGIN;
     }
@@ -71,6 +95,26 @@ export default function PhotosModal({ photos }) {
     if (!photos || photos.length === 0) {
         return null;
     }
+
+    function hasFooterInfo() {
+        return (
+            photos &&
+            activeStep &&
+            (photos[activeStep]?.properties?.date ||
+                photos[activeStep]?.properties?.author ||
+                photos[activeStep]?.properties?.license)
+        );
+    }
+
+    const formatDate = (dateStr) => {
+        const cleanDateStr = dateStr.startsWith('+') ? dateStr.slice(1) : dateStr;
+        const locale = locales[i18n.language] || locales.enUS;
+        const date = new Date(cleanDateStr);
+        if (isNaN(date)) {
+            return dateStr;
+        }
+        return format(date, 'd MMMM yyyy', { locale });
+    };
 
     return (
         <Drawer
@@ -109,7 +153,7 @@ export default function PhotosModal({ photos }) {
                             photo={photo}
                             index={index}
                             getWidth={getWidth}
-                            getHeight={getHeight}
+                            getHeight={getPhotoHeight}
                             activeStep={activeStep}
                         />
                     ))}
@@ -126,6 +170,33 @@ export default function PhotosModal({ photos }) {
                         <BackForward />
                     </Button>
                 </Box>
+                {hasFooterInfo() && (
+                    <AppBar position="static" className={styles.photoFooter} sx={{ backgroundColor: 'black' }}>
+                        {photos[activeStep].properties.date && (
+                            <Typography sx={{ color: 'white' }}>
+                                Date: {formatDate(photos[activeStep].properties.date)}
+                            </Typography>
+                        )}
+                        {photos[activeStep].properties.author && (
+                            <Typography sx={{ color: 'white' }}>
+                                Author: {photos[activeStep].properties.author}
+                            </Typography>
+                        )}
+                        {photos[activeStep].properties.license && (
+                            <Typography sx={{ color: 'white' }}>
+                                License:{' '}
+                                <a
+                                    href={`https://www.wikidata.org/wiki/${photos[activeStep].properties.license}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ color: 'white' }}
+                                >
+                                    {photos[activeStep].properties.license}
+                                </a>
+                            </Typography>
+                        )}
+                    </AppBar>
+                )}
             </Box>
         </Drawer>
     );

@@ -225,3 +225,12 @@
     border: 4px solid var(--selected-color) !important;
     box-sizing: border-box !important;
 }
+.photoFooter {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 16px !important;
+    background-color: black !important;
+    position: absolute !important;
+    height: 67px !important;
+}
