@@ -193,14 +193,18 @@ export default function PhotosModal({ photos }) {
                         {activePhoto.properties.license && (
                             <Typography sx={{ color: 'white' }}>
                                 License:{' '}
-                                <a
-                                    href={`https://www.wikidata.org/wiki/${activePhoto.properties.license}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{ color: 'white' }}
-                                >
-                                    {activePhoto.properties.license}
-                                </a>
+                                {activePhoto.properties.license.startsWith('Q') ? (
+                                    <a
+                                        href={`https://www.wikidata.org/wiki/${activePhoto.properties.license}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{ color: 'white' }}
+                                    >
+                                        {activePhoto.properties.license}
+                                    </a>
+                                ) : (
+                                    activePhoto.properties.license
+                                )}
                             </Typography>
                         )}
                     </AppBar>
