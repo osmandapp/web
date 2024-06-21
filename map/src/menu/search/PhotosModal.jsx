@@ -81,9 +81,9 @@ export default function PhotosModal({ photos }) {
 
     useEffect(() => {
         const handleKeyDown = (event) => {
-            if (event.key === 'ArrowRight') {
+            if (event.key === 'ArrowRight' || event.key === ' ') {
                 handleNext();
-            } else if (event.key === 'ArrowLeft') {
+            } else if (event.key === 'ArrowLeft' || event.key === 'Backspace') {
                 handleBack();
             }
         };

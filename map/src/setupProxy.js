@@ -47,5 +47,5 @@ module.exports = function (app) {
     // app.use('/weather/', weather); // defined-by-env
     // app.use('/search/', others); // actually /routing/search
     app.use('/online-routing-providers.json', others); // osrm-providers
-    app.use('/wiki/', wikimediaProxy);
+    app.use('/wiki/', wikimediaProxy); // production uses nginx server-docz-include.conf
 };
