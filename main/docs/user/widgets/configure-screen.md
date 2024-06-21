@@ -50,12 +50,13 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 - [Panel widgets settings](#panel-widgets-settings)
   - [Copies of widgets](#copies-of-widgets)
   - [Move / Delete](#move--delete)
+- [Buttons](#buttons)
+- [Other](#other)
 - [Actions](#actions)
-- [Buttons and Other](#buttons-and-other)
 - [Switch profile](#switch-profile)
 
-## Widget panels
 
+## Widget panels
 
 <Tabs groupId="operating-systems">
 
@@ -77,9 +78,9 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 
 </Tabs> 
 
-OsmAnd application allows you to group, copy and customize widgets in various ways, move them in the list and delete widgets added to the screen.  
+OsmAnd application allows you to group, copy and customize widgets in various ways, move them in the list and delete widgets added to the screen.
 
-Widget panels help you to arrange widgets on the application screen in a convenient place for you. Widget panels help you to arrange widgets on the application screen in a comfortable place. These can be rows on the Right/Left or Top/Bottom.
+With the help of panels you can arrange widgets on the application screen in a convenient place. In panels, widgets can be organized in rows on the right/left or top/bottom.
 
 ### Widgets for all panels  
 
@@ -364,7 +365,7 @@ To remove or delete a widget from the application screen, you need to select the
 
 - [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position--location-position-on-screen). [⬇](#display-position--location-position-on-screen)
 - [Distance by tap](../widgets/radius-ruler.md#distance-by-tap-tool). Gives the ability to measure the distance from your position to the selected point.
-- [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
+- [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed). The displayed data also depends on OsmAnd's [*Speed Limit Tolerance*](../navigation/guidance/voice-navigation.md#speed-limit) setting.
 
 
 #### Display position / Location position on screen
