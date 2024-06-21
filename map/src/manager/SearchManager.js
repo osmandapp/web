@@ -12,75 +12,91 @@ export async function fetchPhotoProperties(photo) {
             });
             const data = response.data;
 
-            const dateRegex =
-                /\|date=(?:{{Original upload date\|)?(.*?)(?:}}|,|\n)|\|Date=(?:{{original upload date\|)?(.*?)(?:}}|,|\n)|\|date=(.*?)(?:\n|,)|\|Date=(.*?)(?:\n|,)/i;
-            const authorRegex =
-                /\|author=(?:\[.*?\s(.*?)\]|(?!{{unknown\|author}})(.*?)|{{(?:Creator|creator):(.*?)}}|{{user at project\|(.*?)\|.*?}}|\[\[User:.*?\|(.*?)\]\])(?:\n|,)|\|Author=(?:{{user at project\|(.*?)\|.*?}}|{{(?:Creator|creator):(.*?)}}|(?!{{unknown\|author}})(.*?)|\[\[User:.*?\|(.*?)\]\]|https:\/\/www\.flickr\.com\/people\/.*?\s(.*?))(?:\n|,)/i;
-            const licenseRegex =
-                /\|license={{(cc-by-sa-\d+\.\d+|cc-by-\d+\.\d+)\|.*?}}|\|permission=(cc-by-sa-\d+\.\d+)|{{Self\|.*?\|(CC-BY-SA-\d+\.\d+)\|.*?}}|{{self\|(cc-by-sa-\d+\.\d+)}}|{{(cc-by-\d+\.\d+)}}|{{(RCE-license)}}|{{(RCE license)}}/i;
+            const parseWikiText = (wikiText) => {
+                const lines = wikiText.split('\n');
+                let author = 'Unknown';
+                let date = 'Unknown';
+                let license = 'Unknown';
 
-            // Matching the data with the regex
-            const dateMatch = data.match(dateRegex);
-            const authorMatch = data.match(authorRegex);
-            const licenseMatch = data.match(licenseRegex);
+                lines.forEach((line) => {
+                    // Parse date
+                    if (
+                        line.includes('|date={{Original upload date|') ||
+                        line.includes('|Date={{original upload date|')
+                    ) {
+                        date = line.split('{{original upload date|')[1].split('}}')[0];
+                    } else if (line.includes('|date=') || line.includes('|Date=')) {
+                        date = line.split('=')[1].trim().split(' ')[0];
+                    }
 
-            // Extracting and cleaning up the matches
-            const date = dateMatch
-                ? (dateMatch[1] || dateMatch[2] || dateMatch[3] || dateMatch[4] || '').trim()
-                : photo.properties.date;
-            let author = authorMatch
-                ? (
-                      authorMatch[1] ||
-                      authorMatch[2] ||
-                      authorMatch[3] ||
-                      authorMatch[4] ||
-                      authorMatch[5] ||
-                      authorMatch[6] ||
-                      authorMatch[7] ||
-                      authorMatch[8] ||
-                      authorMatch[9] ||
-                      ''
-                  ).trim()
-                : photo.properties.author;
-            const license = licenseMatch
-                ? (
-                      licenseMatch[1] ||
-                      licenseMatch[2] ||
-                      licenseMatch[3] ||
-                      licenseMatch[4] ||
-                      licenseMatch[5] ||
-                      licenseMatch[6] ||
-                      ''
-                  ).trim()
-                : photo.properties.license;
+                    // Parse author
+                    if (line.includes('|author=')) {
+                        if (line.includes('{{unknown|author}}')) {
+                            author = 'Unknown';
+                        } else if (line.includes('[[')) {
+                            author = line.split('[[')[1].split(']]')[0].split('|')[1];
+                        } else if (line.includes('{{Creator:')) {
+                            author = line.split('{{Creator:')[1].split('}}')[0];
+                        } else if (line.includes('{{creator:')) {
+                            author = line.split('{{creator:')[1].split('}}')[0];
+                        } else if (line.includes('{{user at project|')) {
+                            author = line.split('{{user at project|')[1].split('|')[0];
+                        } else if (line.includes('[https://')) {
+                            author = line.split('[https://')[1].split(']')[0].split(' ')[1];
+                        } else {
+                            author = line.split('|author=')[1].trim();
+                        }
+                    } else if (line.includes('|Author=')) {
+                        if (line.includes('{{unknown|author}}')) {
+                            author = 'Unknown';
+                        } else if (line.includes('{{user at project|')) {
+                            author = line.split('{{user at project|')[1].split('|')[0];
+                        } else if (line.includes('[https://')) {
+                            author = line.split('[https://')[1].split(']')[0].split(' ')[1];
+                        }
+                    }
 
-            // Additional processing to clean up the author and license
-            if (author && author.startsWith('[[') && author.endsWith(']]')) {
-                author = author.split('|').pop().replace(']]', '');
-            } else if (author && author.startsWith('{{') && author.endsWith('}}')) {
-                const authorParts = author.split('|');
-                if (authorParts.length > 2) {
-                    author = authorParts.slice(1, -1).join('|').replace('}}', '').trim();
-                } else {
-                    author = authorParts[1].replace('}}', '').trim();
-                }
-            } else if (author && author.startsWith('[') && author.includes(' ')) {
-                author = author.substring(author.indexOf(' ') + 1, author.indexOf(']')).trim();
-            }
+                    // Parse license
+                    if (line.includes('|license=')) {
+                        license = line.split('|license=')[1].split('|')[0].split('}')[0];
+                    } else if (line.includes('|permission=')) {
+                        license = line.split('|permission=')[1].split('|')[0].split('}')[0];
+                    } else if (line.includes('{{Self|')) {
+                        const parts = line.split('{{Self|')[1].split('|');
+                        license = parts.find((part) => part.startsWith('CC-BY') || part.startsWith('cc-by'));
+                    } else if (line.includes('{{cc-by-')) {
+                        license = line.split('{{')[1].split('}}')[0];
+                    } else if (line.includes('{{RCE-license}}')) {
+                        license = 'RCE-license';
+                    } else if (line.includes('{{RCE license}}')) {
+                        license = 'RCE license';
+                    }
+                });
+
+                return {
+                    author,
+                    date,
+                    license,
+                };
+            };
+
+            const parsedData = parseWikiText(data);
 
             return {
                 ...photo,
                 properties: {
                     ...photo.properties,
-                    date: date || photo.properties.date,
-                    author: author || photo.properties.author,
-                    license: license || photo.properties.license,
+                    date: parsedData.date !== 'Unknown' ? parsedData.date : photo.properties.date,
+                    author: parsedData.author !== 'Unknown' ? parsedData.author : photo.properties.author,
+                    license: parsedData.license !== 'Unknown' ? parsedData.license : photo.properties.license,
                 },
             };
         } catch (error) {
             console.error('Failed to fetch photo properties:', error);
+            return photo;
         }
     }
+    return photo;
 }
 
 /**
@@ -99,6 +115,7 @@ export async function fetchPhotoProperties(photo) {
  * |author=[[User:PersianDutchNetwork|PersianDutchNetwork]] => PersianDutchNetwork
  * |Author={{user at project|MelvinvdC|wikipedia|nl}} => MelvinvdC
  * |Author=[https://www.flickr.com/people/13088710@N02 Jos van Zetten] from Amsterdam, the Netherlands => Jos van Zetten
+ * |author={{unknown|author}} => 'Unknown'
  *
  * License:
  * |license={{cc-by-sa-3.0|Author Name}} => cc-by-sa-3.0
