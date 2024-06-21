@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AppBar, Box, Button, Drawer, IconButton, Toolbar, Typography, Skeleton } from '@mui/material';
 import SwipeableViews from 'react-swipeable-views';
-import { WIKI_IMAGE_BASE_URL } from '../../manager/SearchManager';
+import { fetchPhotoProperties, WIKI_IMAGE_BASE_URL } from '../../manager/SearchManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as BackForward } from '../../assets/icons/ic_arrow_forward.svg';
@@ -20,6 +20,8 @@ export default function PhotosModal({ photos }) {
     const [open, setOpen] = useState(true);
     const [activeStep, setActiveStep] = useState(ctx.selectedPhotoInd);
     const [width, height] = useWindowSize();
+    const [showInfo, setShowInfo] = useState(false);
+    const [activePhoto, setActivePhoto] = useState(null);
 
     const HEADER_HEIGHT = 60;
     const LEFT_MARGIN = 423;
@@ -27,14 +29,14 @@ export default function PhotosModal({ photos }) {
 
     function getFooterHeight() {
         let size = 0;
-        if (hasFooterInfo()) {
-            if (photos[activeStep].properties.date) {
+        if (showInfo && activePhoto) {
+            if (activePhoto.properties.date) {
                 size += 22;
             }
-            if (photos[activeStep].properties.author) {
+            if (activePhoto.properties.author) {
                 size += 22;
             }
-            if (photos[activeStep].properties.license) {
+            if (activePhoto.properties.license) {
                 size += 22;
             }
         }
@@ -47,6 +49,20 @@ export default function PhotosModal({ photos }) {
                 setOpen(true);
             }
             setActiveStep(ctx.selectedPhotoInd);
+            const currentPhoto = photos[ctx.selectedPhotoInd];
+            if (currentPhoto.properties.date && currentPhoto.properties.author && currentPhoto.properties.license) {
+                setShowInfo(true);
+                setActivePhoto(currentPhoto);
+            } else {
+                fetchPhotoProperties(currentPhoto).then((photo) => {
+                    if (hasFooterInfo(photo)) {
+                        setShowInfo(true);
+                        setActivePhoto(photo);
+                    } else {
+                        setShowInfo(false);
+                    }
+                });
+            }
         }
     }, [ctx.selectedPhotoInd]);
 
@@ -96,14 +112,8 @@ export default function PhotosModal({ photos }) {
         return null;
     }
 
-    function hasFooterInfo() {
-        return (
-            photos &&
-            activeStep &&
-            (photos[activeStep]?.properties?.date ||
-                photos[activeStep]?.properties?.author ||
-                photos[activeStep]?.properties?.license)
-        );
+    function hasFooterInfo(photo) {
+        return photo?.properties?.date || photo?.properties?.author || photo?.properties?.license;
     }
 
     const formatDate = (dateStr) => {
@@ -170,28 +180,26 @@ export default function PhotosModal({ photos }) {
                         <BackForward />
                     </Button>
                 </Box>
-                {hasFooterInfo() && (
+                {activePhoto !== null && activePhoto.imageTitle === photos[activeStep].imageTitle && showInfo && (
                     <AppBar position="static" className={styles.photoFooter} sx={{ backgroundColor: 'black' }}>
-                        {photos[activeStep].properties.date && (
+                        {activePhoto.properties.date && (
                             <Typography sx={{ color: 'white' }}>
-                                Date: {formatDate(photos[activeStep].properties.date)}
+                                Date: {formatDate(activePhoto.properties.date)}
                             </Typography>
                         )}
-                        {photos[activeStep].properties.author && (
-                            <Typography sx={{ color: 'white' }}>
-                                Author: {photos[activeStep].properties.author}
-                            </Typography>
+                        {activePhoto.properties.author && (
+                            <Typography sx={{ color: 'white' }}>Author: {activePhoto.properties.author}</Typography>
                         )}
-                        {photos[activeStep].properties.license && (
+                        {activePhoto.properties.license && (
                             <Typography sx={{ color: 'white' }}>
                                 License:{' '}
                                 <a
-                                    href={`https://www.wikidata.org/wiki/${photos[activeStep].properties.license}`}
+                                    href={`https://www.wikidata.org/wiki/${activePhoto.properties.license}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     style={{ color: 'white' }}
                                 >
-                                    {photos[activeStep].properties.license}
+                                    {activePhoto.properties.license}
                                 </a>
                             </Typography>
                         )}
