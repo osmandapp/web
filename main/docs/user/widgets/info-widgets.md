@@ -383,21 +383,28 @@ The Radius Ruler widget shows the distance between your location and the center 
 
 <TabItem value="ios" label="iOS">
 
-![Speedometer](@site/static/img/widgets/speedometer_1_andr.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_andr.png) 
+![Speedometer](@site/static/img/widgets/speedometer_1_ios.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_ios.png) 
 
 </TabItem>
 
 </Tabs>
 
-<!-- ![Speedometer](@site/static/img/widgets/speedometer_ios.png) -->
+**Speedometer widget** is a graphical display of the current vehicle speed based on *data received from the GPS*. It allows you to monitor in real-time the compliance between your speed and the allowable speed limit. The allowable speed limit is provided by [*OpenStreetMap data*](https://wiki.openstreetmap.org/wiki/Key:maxspeed) for a particular road section and OsmAnd [*Speed Limit Tolerance*](../navigation/guidance/voice-navigation.md#speed-limit) setting.  
 
-**Speedometer widget** is a graphical display of a vehicle's current speed based on the *data received from the GPS*. It also allows you to monitor in real-time whether your speed is in compliance with the allowable speed limit provided by [*OpenStreetMap data*](https://wiki.openstreetmap.org/wiki/Key:maxspeed) for a particular road section and OsmAnd's [*Speed Limit Tolerance*](../navigation/guidance/voice-navigation.md#speed-limit) setting.  
+- In the *Speedometer settings*, you can select the size (**Height**) of the widget on the application screen as, *Small*, *Medium* or *Large*.
+- You can specify when to receive a **Speed limit warning** selecting *Always* or *When exceeded*.
 
-In the Speedometer settings, you can select the size (**Height**) of the widget on the application screen as, *Small*, *Medium* or *Large*, as well as specify when to receive a **Speed limit warning**, you can set *Always* or *When exceeded*.
+<table class="blogimage">
+    <tr>
+        <td><img src={require('@site/static/img/widgets/speedometer_4_andr.png').default} alt="Speedometer"/></td>
+        <td><img src={require('@site/static/img/widgets/speedometer_4_ios.png').default} alt="Speedometer"/></td>
+    </tr>
+</table> 
 
 | | |
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_other,shared_string_speedometer"/>* |
+|        | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location"/>* *→ Speedometer* |
 | Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,default_speed_system"/>*  |
 
 

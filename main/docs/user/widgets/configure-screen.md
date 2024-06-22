@@ -39,22 +39,6 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 
 </Tabs> 
 
-- [Overview](#overview)
-- [Widget panels](#widget-panels)
-  - [Widgets for all panels](#widgets-for-all-panels)
-- [Top / Bottom panels](#top--bottom-panels)
-  - [Rows for panels](#rows-for-panels)
-  - [Settings](#settings)
-- [Left / Right panels](#left--right-panels)
-  - [Pages for widgets](#pages-for-widgets)
-- [Panel widgets settings](#panel-widgets-settings)
-  - [Copies of widgets](#copies-of-widgets)
-  - [Move / Delete](#move--delete)
-- [Buttons](#buttons)
-- [Other](#other)
-- [Actions](#actions)
-- [Switch profile](#switch-profile)
-
 
 ## Widget panels
 
@@ -363,9 +347,9 @@ To remove or delete a widget from the application screen, you need to select the
 
 </Tabs> 
 
-- [<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>](#display-position--location-position-on-screen). [⬇](#display-position--location-position-on-screen)
-- [Distance by tap](../widgets/radius-ruler.md#distance-by-tap-tool). Gives the ability to measure the distance from your position to the selected point.
-- [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed). The displayed data also depends on OsmAnd's [*Speed Limit Tolerance*](../navigation/guidance/voice-navigation.md#speed-limit) setting.
+- [**<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>**](#display-position--location-position-on-screen). [⬇](#display-position--location-position-on-screen)
+- [**Distance by tap**](../widgets/radius-ruler.md#distance-by-tap-tool). Gives the ability to measure the distance from your position to the selected point.
+- [**Speedometer**](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed). The displayed data also depends on OsmAnd's [*Speed Limit Tolerance*](../navigation/guidance/voice-navigation.md#speed-limit) setting.
 
 
 #### Display position / Location position on screen
@@ -388,9 +372,9 @@ To remove or delete a widget from the application screen, you need to select the
 
 Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:  
 
-- *<Translate android="true" ids="position_on_map_center"/>*. The cursor is always positioned in the center of the screen.
-- *<Translate android="true" ids="position_on_map_bottom"/>*. *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
-- *<Translate android="true" ids="shared_string_automatic"/>*. Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* for movement direction, *Center* - for all others).
+- **<Translate android="true" ids="position_on_map_center"/>**. The cursor is always positioned in the center of the screen.
+- **<Translate android="true" ids="position_on_map_bottom"/>**. *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is very useful during navigation.
+- **<Translate android="true" ids="shared_string_automatic"/>**. Places *My location* depending on *[Map orientation](../map/interact-with-map.md#map-orientation-modes)* (*Bottom* - for movement direction, *Center* - for all others).
 
 
 ## Actions 
@@ -416,8 +400,10 @@ Allows you to set the placement of the cursor *[My location](../map/interact-wit
 </Tabs> 
 
 Access to additional actions in the Configure screen are:
-- *Android*. Located in Configure screen at the bottom of the screen in the *Actions* section: *Menu → Configure screen → Actions*.
-- *Android / iOS*. Located on the screens of each Panel in the three-dot menu in the upper right corner of the screen.
+- *Android*
+    Located in Configure screen at the bottom of the screen in the *Actions* section: *Menu → Configure screen → Actions*.
+- *Android / iOS*
+    Located on the screens of each Panel in the three-dot menu in the upper right corner of the screen.
 
 Available actions:
 - **Reset to default**. This feature allows you to reset all settings to default values if you want to start over, or use only the preset ones when starting OsmAnd.
