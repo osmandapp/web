@@ -9,6 +9,7 @@ module.exports = function (app) {
 
     const mainProxy = createProxyMiddleware(prepare('https://osmand.net'));
     const maptileProxy = createProxyMiddleware(prepare('https://maptile.osmand.net'));
+    const wikimediaProxy = createProxyMiddleware(prepare('https://commons.wikimedia.org'));
 
     // yarn start:local
     let gpx = localProxy;
@@ -46,4 +47,5 @@ module.exports = function (app) {
     // app.use('/weather/', weather); // defined-by-env
     // app.use('/search/', others); // actually /routing/search
     app.use('/online-routing-providers.json', others); // osrm-providers
+    app.use('/wiki/', wikimediaProxy); // production uses nginx server-docz-include.conf
 };

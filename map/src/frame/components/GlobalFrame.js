@@ -24,6 +24,7 @@ import DialogActions from '@mui/material/DialogActions';
 import _, { isEmpty } from 'lodash';
 import TracksManager, { createTrackGroups, getGpxFiles } from '../../manager/track/TracksManager';
 import { addCloseTracksToRecently } from '../../menu/visibletracks/VisibleTracks';
+import PhotosModal from '../../menu/search/PhotosModal';
 
 const GlobalFrame = () => {
     const ctx = useContext(AppContext);
@@ -204,6 +205,7 @@ const GlobalFrame = () => {
                     setMenuInfo={setMenuInfo}
                     setOpenVisibleMenu={setOpenVisibleMenu}
                 />
+                {ctx.selectedPhotoInd !== -1 && <PhotosModal photos={ctx.photoGallery} />}
             </Box>
             <MainMenu
                 size={MAIN_MENU_SIZE}
