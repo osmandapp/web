@@ -20,14 +20,13 @@ export async function fetchPhotoProperties(photo) {
                 let inInformationBlock = false;
 
                 lines.forEach((line) => {
-                    if (line.includes('{{Information')) {
+                    if (line === '{{Information') {
                         inInformationBlock = true;
-                    } else if (line.includes('}}') && inInformationBlock) {
+                    } else if (line === '}}' && inInformationBlock) {
                         inInformationBlock = false;
                     }
-
                     // Parse date
-                    if (line.includes('|date={{') || line.includes('|Date={{')) {
+                    if (line.toLowerCase().includes('|date={{')) {
                         const parts = line.split('|date={{')[1]?.split('|') || line.split('|Date={{')[1].split('|');
                         for (let part of parts) {
                             const potentialDate = part.split('}}')[0].trim();
@@ -36,20 +35,28 @@ export async function fetchPhotoProperties(photo) {
                                 break;
                             }
                         }
-                    } else if (line.includes('|date=') || line.includes('|Date=')) {
+                    } else if (line.toLowerCase().includes('|date=')) {
                         date = line.split('=')[1].trim().split(' ')[0];
                     } else if (line.includes('| Date = ')) {
                         date = line.split('| Date = ')[1].split(' ')[0];
                     }
 
                     // Parse author (priority for {{Information block)
-                    if (inInformationBlock && line.includes('|Author=')) {
+                    if (inInformationBlock && line.toLowerCase().includes('|author=')) {
                         if (line.includes('[https://')) {
                             author = line.split('[https://')[1].split(']')[0].split(' ')[1];
+                        } else if (line.includes('|author={{')) {
+                            author = line.split('|author={{')[1].split('}}')[0];
+                        } else if (line.includes('|Author={{')) {
+                            author = line.split('|Author={{')[1].split('}}')[0];
+                        } else if (line.includes('[[')) {
+                            author = line.split('[[')[1].split(']]')[0].split('|')[1];
+                        } else if (line.includes('|author=')) {
+                            author = line.split('|author=')[1].trim();
                         } else {
-                            author = line.split('|Author=')[1].split('/')[0].trim();
+                            author = line.split('|Author=')[1].trim();
                         }
-                    } else if (!inInformationBlock && line.includes('|author=')) {
+                    } else if (!inInformationBlock && line.toLowerCase().includes('|author=') && author === 'Unknown') {
                         if (line.includes('{{unknown|author}}')) {
                             author = 'Unknown';
                         } else if (line.includes('[[')) {
@@ -64,14 +71,6 @@ export async function fetchPhotoProperties(photo) {
                             author = line.split('[https://')[1].split(']')[0].split(' ')[1];
                         } else {
                             author = line.split('|author=')[1].trim();
-                        }
-                    } else if (!inInformationBlock && line.includes('|Author=')) {
-                        if (line.includes('{{unknown|author}}')) {
-                            author = 'Unknown';
-                        } else if (line.includes('{{user at project|')) {
-                            author = line.split('{{user at project|')[1].split('|')[0];
-                        } else if (line.includes('[https://')) {
-                            author = line.split('[https://')[1].split(']')[0].split(' ')[1];
                         }
                     } else if (line.includes('| Author = ')) {
                         author = line.split('| Author = ')[1].split(']')[0].split(' ')[1];
