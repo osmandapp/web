@@ -20,11 +20,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_overview.png)  
 
-[**Android Auto**](https://www.android.com/auto) is software developed by Google that allows users to connect their Android devices to compatible car multimedia systems. Android Auto provides an adapted and optimized version of the OsmAnd app for safe use while driving, making it easier and more secure to access the app's navigation functions.  
+[**Android Auto**](https://www.android.com/auto) is software developed by Google that allows users to connect their Android devices to compatible vehicle multimedia systems. Android Auto provides an adapted and optimized version of the OsmAnd app for safe use while driving, making it easier and more secure to access the app's navigation functions.  
 
 - Android Auto function is only supported when using the OsmAnd app available in the [Google Play store](https://play.google.com/store/apps/dev?id=8483587772816822023). 
 - If you have purchased [OsmAnd Pro](../purchases/android.md#osmand-pro) from the [Amazon store](https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOsmAnd), you can [activate it](https://osmand.net/docs/user/troubleshooting/setup#osmand-pro) in the [OsmAnd Free version](https://play.google.com/store/apps/details?id=net.osmand) app downloaded from the Google Play store. 
 - After this activation, you can use the Android Auto function for which you purchased a subscription to OsmAnd Pro in another app store.
+
+
+### Connection screen
+
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_connect_screen.png)  
+
+While your device is connected to Android Auto, the map on the app screen is locked for security purposes.  
+
 
 ### Landing screen
 
@@ -35,18 +43,27 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     </tr>
 </table> 
 
-When you open the application, a list of categories is displayed. For easy navigation, you can hide it by pressing the button in the upper right corner of the screen.  
+When you open the application, a list of categories is displayed. For easy navigation, you can hide it by tapping the button in the upper right corner of the screen.  
 
 - Tap the menu button to hide the list of categories.
 - In the upper right corner of the screen, tap the button next to the function buttons if you want to return to the list.
 
 
-### Connection screen
+### Interaction with the map
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_connect_screen.png)  
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_interaction_2.png)
 
-While your device is connected to Android Auto, the map on the app screen is locked for security purposes.  
+Android Auto displays the OsmAnd interface adapted to the vehicle multimedia system screen. Interaction with the map is limited to buttons such as:  
 
+- [*OsmAnd menu*](#destination-points). Contains a list of available options for assigning a route endpoint or a free ride.
+- [*Settings*](#voice-prompts). This button is responsible for access to turn *voice promts* on or off when you are navigating the selected route.
+- [*Search*](#search). Tapping the button opens a screen with access to the search functions. 
+- [*My Location*](../widgets/map-buttons.md#my-location--zoom). Moves the visible part of the map so that your current location is in the center of the screen.
+- [*Zoom*](../widgets/map-buttons.md#my-location--zoom). Allows you to zoom in and out of the visible part of the map.
+- [*Compass*](../widgets/map-buttons.md#compass). Shows which of the four available map orientation modes on your device's screen is selected.
+
+
+## Setup
 
 ### Start navigation 
 
@@ -58,20 +75,19 @@ In order for OsmAnd to work in Android Auto, you must [connect](#connection-scre
 
 - You need to purchase a **paid version** of the app or take out a [subscription](../purchases/android.md#free-and-paid-features). Check your current subscription here *Menu → Settings → Purchases*.  
 
-- Android Auto uses the first [OsmAnd Driving profile](#first-profile) in the Profiles list for navigation. Set the preferred profile to first, except for the *Browse map* profile, it is not read by Android Auto. To do this, go to OsmAnd *Menu → Settings → App profiles → Edit profile list* → move your [**Driving**](#first-profile) profile to the first place or after the *Browse map* profile.  
+- Android Auto uses the first [OsmAnd Driving profile](#profile-first) in the Profiles list for navigation. Set the preferred profile to first, except for the *Browse map* profile, it is not read by Android Auto. To do this, go to OsmAnd *Menu → Settings → App profiles → Edit profile list* → move your [**Driving**](#profile-first) profile to the first place or after the *Browse map* profile.  
 
 - It is important to remember that Android Auto is a data-intensive application, including mobile data, and the quality of the system may depend on the quality of your connection and the speed of your Internet access.   
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_start_navigation.png)  
 
 
-###  First profile
+###  Profile first
 
-There is no profile selection option in Android Auto.
+You cannot select a profile directly in *Android Auto* on the vehicle screen.  
+If you already have a profile selected on your device that corresponds to the type of vehicle, such as *Driving*, *Truck*, *Car*, *Motorcycle*, *Moped*, **the app will automatically activate** the appropriate profile when you connect to Android Auto. For example, if you have a *Truck* profile as selected and your device connects to *Android Auto*, the app will activate that profile.
 
-If you already have a profile selected on your device that corresponds to the type of vehicle, such as *Driving*, *Truck*, *Car*, *Motorcycle*, *Moped*, **the app will automatically activate** the appropriate profile when you connect to Android Auto. For example, if you have a *Truck* profile as selected and your device connects to Android Auto, the app will activate that profile.
-
-If you do not have any _Driving_ profile selected on your device that corresponds to your vehicle type, then OsmAnd will automatically switch to the *Driving* profile. This is done to provide basic navigation and to prevent possible problems caused by using the wrong profile for a specific vehicle type.
+If you do not have any *Driving* profile selected on your device that corresponds to your vehicle type, then OsmAnd will automatically switch to the *Driving* profile. This is done to provide basic navigation and to prevent possible problems caused by using the wrong profile for a specific vehicle type.
 
 **Why it's important**
 
@@ -80,20 +96,6 @@ If you do not have any _Driving_ profile selected on your device that correspond
 2. **Utility and Efficiency.** Navigation should be customized to meet the needs of a particular mode of transportation. This allows users to reduce the time it takes to find optimal routes and avoid unnecessary traffic restrictions.
 
 3. **Error avoidance.** Switching to the *Driving* profile when there is no specific profile for the selected mode of transportation provides the user with constant access to the minimum necessary settings and information, thus avoiding possible errors and misunderstandings while driving.  
-
-
-### Interaction with the map
-
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_interaction_2.png)
-
-Android Auto displays the OsmAnd interface adapted to the vehicle multimedia system screen. Interaction with the map is limited to buttons such as:  
-
-- [*OsmAnd menu*](#destination-points) - contains a list of available options to assign an endpoint to the route or free ride.
-- *Settings* - this button is responsible for access to turn [voice promts](#voice-prompts) on or off while you are navigating a selected route.
-- [*Search*](#search) - tapping the button opens a screen with access to the search functions. 
-- [*My Location*](../widgets/map-buttons.md#my-location--zoom) - moves the visible part of the map so that your current location is in the center of the screen.
-- *Zoom* - allows you to zoom in and out of the visible part of the map.
-- *[Compass](../widgets/map-buttons.md#compass)* - shows which of the four available map orientation modes on your device screen is selected.
 
 
 ## Destination Points
@@ -255,6 +257,7 @@ This information widget combines alert types such as **Pedestrian crosswalks** a
 
 **Speedometer** widget is an integrated interface element that displays *current speed* using GPS data and *speed limit* from the [OSM database](https://wiki.openstreetmap.org/wiki/Key:maxspeed) and [OsmAnd settings](../navigation/guidance/voice-navigation.md#speed-limit) on the vehicle's multimedia system screen.   
 
+- The **Speedometer widget** is [*profile dependent*](../personal/profiles.md), so if you change the settings for one profile, they will not be applied to another.
 - There is no option to customize the display of the **Speedometer widget** directly in *Android Auto*, you need to configure it in OsmAnd app before starting navigation and connecting your device to the vehicle.
 - For more information on how to add and configure the *Speedometer* widget to the display, please read the [*Informational widgets article*](../widgets/info-widgets.md#speedometer).
 
