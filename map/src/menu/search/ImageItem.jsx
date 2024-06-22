@@ -8,11 +8,15 @@ import styles from '../search/search.module.css';
 export default function ImageItem({ photo, index, handleImageLoad, isLoaded }) {
     const ctx = useContext(AppContext);
     const [isSelected, setIsSelected] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
     const itemRef = useRef(null);
     const { ref, inView } = useInView({
         triggerOnce: true,
         threshold: 0.1,
     });
+
+    const handleMouseEnter = () => setIsHovered(true);
+    const handleMouseLeave = () => setIsHovered(false);
 
     const combinedRef = (node) => {
         ref(node); // assign the node to useInView ref
@@ -37,7 +41,13 @@ export default function ImageItem({ photo, index, handleImageLoad, isLoaded }) {
     }, [isSelected]);
 
     return (
-        <ImageListItem ref={combinedRef} className={styles.imageItem} onClick={() => handlePhotoClick(index)}>
+        <ImageListItem
+            ref={combinedRef}
+            className={styles.imageItem}
+            onClick={() => handlePhotoClick(index)}
+            onMouseOver={handleMouseEnter}
+            onMouseOut={handleMouseLeave}
+        >
             {!isLoaded && <Skeleton className={styles.skeleton} />}
             {inView && (
                 <img
@@ -47,7 +57,7 @@ export default function ImageItem({ photo, index, handleImageLoad, isLoaded }) {
                     onLoad={() => handleImageLoad(index)}
                 />
             )}
-            {isSelected && <div className={styles.selectedImage} />}
+            {(isSelected || isHovered) && <div className={styles.selectedImage} />}
         </ImageListItem>
     );
 }

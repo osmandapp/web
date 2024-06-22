@@ -70,11 +70,9 @@ export default function PhotoGallery({ photos }) {
                                         onClick={() => handleImageClick(index)}
                                         src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=300`}
                                         alt={`Photo ${index + 1}`}
+                                        className={styles.mainPhotoGallery}
                                         style={{
                                             display: loading ? 'none' : 'block',
-                                            width: '148px',
-                                            height: '148px',
-                                            objectFit: 'cover',
                                         }}
                                     />
                                 )}
@@ -90,11 +88,9 @@ export default function PhotoGallery({ photos }) {
                                             onClick={() => handleImageClick(index + 1)}
                                             src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=300`}
                                             alt={`Photo ${index + 2}`}
+                                            className={styles.littlePhotoGallery}
                                             style={{
                                                 display: loading ? 'none' : 'block',
-                                                width: '71px',
-                                                height: '71px',
-                                                objectFit: 'cover',
                                             }}
                                         />
                                     )}

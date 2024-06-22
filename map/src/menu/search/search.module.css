@@ -234,3 +234,23 @@
     position: absolute !important;
     height: 67px !important;
 }
+.mainPhotoGallery {
+    width: 148px !important;
+    height: 148px !important;
+    object-fit: cover !important;
+    cursor: pointer !important;
+}
+.mainPhotoGallery:hover {
+    outline: 4px solid var(--selected-color) !important;
+    box-sizing: border-box !important;
+}
+.littlePhotoGallery {
+    width: 71px !important;
+    height: 71px !important;
+    object-fit: cover !important;
+    cursor: pointer !important;
+}
+.littlePhotoGallery:hover {
+    outline: 4px solid var(--selected-color) !important;
+    box-sizing: border-box !important;
+}
