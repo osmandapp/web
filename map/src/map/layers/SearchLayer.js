@@ -220,6 +220,7 @@ export default function SearchLayer() {
                 ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: feature });
             }
         }
+        ctx.setPhotoGallery(null);
     }
 
     const markerClusterGroup = new L.MarkerClusterGroup({
