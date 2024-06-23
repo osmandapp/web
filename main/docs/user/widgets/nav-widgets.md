@@ -236,13 +236,23 @@ Widget displays the speed limit on the current road you are traveling on. It wor
 
 ![Next turns widget](@site/static/img/widgets/next_turns_widget.png)
 
-Widgets display information about the next turn with maneuvers. There are two types of **Next turn** widgets, small and large, and a **Second next turn** which is enabled if the turn is in the approach distance.  
+This set of navigational widgets is activated during navigation and display information about the distance to the next maneuver.
 
 | | |
 |------------|------------|
 | Enable | **Android:** *Menu → Configure screen → Left / Right panel → Next turn, Next turn (small), Second next turn*  |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left / Right panel → Next turn, Next turn (small), Second next turn* |
 | By tapping | If [voice prompts](../navigation/guidance/voice-navigation.md) are enabled, the next maneuver and the distance to it are pronounced. |
+
+
+### Next turn
+
+![Next turns widget](@site/static/img/widgets/next_turns_widgets_andr.png)
+
+*Route maneuvers* widgets include:  
+- **Next turn**. The widget shows information about the next turn with a large arrow representing the maneuver and with data about the distance to it.
+- **Next turn (small)**. The widget shows information about the next turn with a small arrow representing the maneuver and with distance data next to the arrow.
+- **Second next turn**. The widget shows information about the next *Next Turn* after the first one, which is activated if the turn is in approach distance.
 
 
 ### Displayed time on widgets
@@ -261,6 +271,7 @@ The table shows the approximate times for activating the prompts, read more [her
 ![Lanes widgets](@site/static/img/widgets/lanes_widget.png) 
 
 The Lanes widget displays the lane layout for the current road and highlights lanes for driving when navigation is active. In passive navigation the widget displays lanes layout for the current road. The data is taken from [OpenStreetMap project](https://wiki.openstreetmap.org/wiki/Key:turn).  
+
 
 |  Name |  Prompt type | Color | ~ Trigger Time | 
 |-----|----|-------|------| 

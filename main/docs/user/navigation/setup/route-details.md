@@ -205,16 +205,55 @@ Road attributes are accessible in the Route Details and display segments related
 - [**Difficulty of horse trails**](https://wiki.openstreetmap.org/wiki/Riding) - This road attribute indicates the difficulty of the route while riding a horse. Suitable for [Horseback routing](../../navigation/routing/horse-routing.md).  
 
 
-## Turn-by-turn information (Android)
+## Turn-by-turn information
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_turn.png)  
+<Tabs groupId="operating-systems">
 
-Turn-by-turn information provides brief instructions for navigating your route, including the next turn, the distance to the turn, the direction of the turn, and the name of the street or trail. Turn information is displayed in the [Next turns](../../widgets/nav-widgets.md#next-turns) and [Lanes](../../widgets/nav-widgets.md#lanes) widgets, and it provides safe and efficient real-time navigation, and allows the driver to better navigate the road.
+<TabItem value="android" label="Android">
+
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_turn.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_turn_ios.png) 
+
+</TabItem>
+
+</Tabs> 
+
+Turn-by-turn information provides detailed [instructions](#instructions) for navigating your route. Besides the *Details* menu, it is also displayed in the [*Route maneuvers*](../../widgets/nav-widgets.md#route-maneuvers) and [*Lanes*](../../widgets/nav-widgets.md#lanes) widgets. It offers safe and efficient real-time navigation, allowing the driver to navigate the road better.  
 
 To view detailed information about specific sections of the route or to make necessary changes, you need to tap this section in the list. The map will zoom in to it and a [Context menu](../../map/map-context-menu.md) will open.  
 
+### Instructions
 
-### Print
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Navigation route Android](@site/static/img/navigation/route/navigation_turn_andr.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigation route Android](@site/static/img/navigation/route/navigation_turn_ios.png) 
+
+</TabItem>
+
+</Tabs> 
+
+Instructions include information about moving along the route, such as:
+- *The [next turn arrow](../../widgets/nav-widgets.md#next-turn) and its direction.*
+- *Distance to maneuver.*
+- *A description of what to do, which includes the name of the street or trail.*
+- *Total distance and time of the route.*
+- *[Lanes](../../widgets/nav-widgets.md#lanes) layout for the current road.*
+
+
+### Print (Android)
 
 ![route details](@site/static/img/navigation/route/route_details_print-2.png)  
 
