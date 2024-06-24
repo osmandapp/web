@@ -257,7 +257,7 @@ This set of navigational widgets is activated during navigation and display info
 
 ### Displayed time on widgets
 
-The table shows the approximate times for activating the prompts, read more [here](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) or in the article [Voice prompts](../navigation/guidance/voice-navigation.md). The color of the arrows indicates the remaining time to make the maneuver. The appearance of the arrows can be used if you do not want to use voice prompts.
+The table shows the approximate times for activating the prompts, read more in the [technical documentation](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) or in the article [Voice prompts](../navigation/guidance/voice-navigation.md). The color of the arrows indicates the remaining time to make the maneuver. The appearance of the arrows can be used if you do not want to use voice prompts.
 
 | ~ Trigger Time | Distance | Prompt type | Color | 
 | ----- | ---- | ------- | ------ | 
@@ -270,7 +270,7 @@ The table shows the approximate times for activating the prompts, read more [her
 
 ![Lanes widgets](@site/static/img/widgets/lanes_widget.png) 
 
-The Lanes widget displays the lane layout for the current road and highlights lanes for driving when navigation is active. In passive navigation the widget displays lanes layout for the current road. The data is taken from [OpenStreetMap project](https://wiki.openstreetmap.org/wiki/Key:turn).  
+The Lanes widget displays the lane layout for the current road and highlights lanes when navigation is active. In passive navigation, widget displays the lane layout for the current road. The data is taken from [OpenStreetMap project](https://wiki.openstreetmap.org/wiki/Key:turn).  
 
 
 |  Name |  Prompt type | Color | ~ Trigger Time | 
