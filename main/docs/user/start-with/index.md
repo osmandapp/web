@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Begin with OsmAnd
 
-Begin with OsmAnd: how to install and download maps. Get access to all features via Main Menu. First steps also refer to key OsmAnd functionality via simple questions list.
+Begin with OsmAnd (OpenStreetMap Automated Navigation Directions): how to install and download maps. Get access to all features via Main Menu. First steps also refer to key OsmAnd functionality via simple questions list.
 
 ### [First steps](./first-steps.md)
 
@@ -15,4 +15,4 @@ Download maps is a necessarily action for further using map and navigation in of
 
 ### [Main menu](./main-menu.md)
 
-'Main menu' is a primary list of options available to use in the application. It provides quick access to the profile configuration, global settings, search, personal data, navigation and other features.
+*Main menu* is a primary list of options available to use in the application. It provides quick access to the profile configuration, global settings, search, personal data, navigation and other features.

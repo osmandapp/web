@@ -337,33 +337,37 @@ Read more about [markers](../personal/markers.md).
 
 <TabItem value="android" label="Android">  
 
-![Share action Android](@site/static/img/map/action_share_android.png)
+| Versions up to Android 14 | 14+ Android |
+|:------------|:---------------|
+| ![Share action Android](@site/static/img/map/action_share_1_andr.png) | ![Share action Android](@site/static/img/map/action_share_2_andr.png) |
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Share action iOS](@site/static/img/map/action_share_ios.png)
+![Share action iOS](@site/static/img/map/action_share_1_ios.png)
 
 </TabItem>
 
 </Tabs> 
 
-The app provides the opportunity to **<Translate android="true" ids="shared_string_share"/>** location in a variety of ways. You can also share your location by selecting *your location* icon on the map.
+The OsmAnd app allows you to **<Translate android="true" ids="shared_string_share"/>** *My Location* or any selected location on the map with messenger, emails, or social media.  
 
-All options to share your location: 
+Available options to share the location:
 
-- **Send** - sends a message via messengers (name, address, coordinates and link) 
-- **Copy** - copies a message into clipboard (name, address, coordinates and link) 
-- **Copy address** (Android) - copies a message into clipboard (only address) 
-- **Copy location/POI name** (Android) - copies a message into clipboard (only name and coordinates) 
-- **Copy coordinates** (Android) - copies a message into clipboard (only coordinates) 
-- **geo** (Android) - opens local installed apps that support [geo url](https://developers.google.com/maps/documentation/urls/android-intents) 
-- **QR-code** (Android) - generates location in QR-code (link with your location)
-- **Save Image** (iOS) - saves a screenshot with map and selected point in the image gallery.
-- **Assign to Contact** (iOS) - makes an icon for chosen contact from the map screenshot.
-- **Print** (iOS) - opens Printer Options for printing the map screenshot.
-- **Save to files** (iOS) - saves the map screenshot in iCloud Drive or storage of your device.
+- ***Send***. Sends a message via messengers (name, address, coordinates and link) 
+- ***Copy***. Copies a message into clipboard (name, address, coordinates and link) 
+- ***Copy address***. Copies a message into clipboard (only address) 
+- ***Copy location/POI name***. Copies a message into clipboard (only name and coordinates) 
+- ***Copy coordinates***. Copies a message into clipboard (only coordinates) 
+- ***geo***. Opens local installed apps that support [geo url](https://developers.google.com/maps/documentation/urls/android-intents) 
+- ***QR-code*** (Android). Generates location in QR-code (link with your location)
+
+<!--
+- ***Save Image*** (iOS) - saves a screenshot with map and selected point in the image gallery.
+- ***Assign to Contact*** (iOS) - makes an icon for chosen contact from the map screenshot.
+- ***Print*** (iOS) - opens Printer Options for printing the map screenshot.
+- ***Save to files*** (iOS) - saves the map screenshot in iCloud Drive or storage of your device. -->
 
 
 ### Directions To / From 

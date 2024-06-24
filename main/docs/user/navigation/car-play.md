@@ -230,7 +230,8 @@ This information widget combines alert types such as **Pedestrian crosswalks** a
 **Speedometer** widget is an integrated interface element that displays *current speed* using GPS data and *speed limit* from the [OSM database](https://wiki.openstreetmap.org/wiki/Key:maxspeed) and [OsmAnd settings](../navigation/guidance/voice-navigation.md#speed-limit) on the vehicle's multimedia system screen.   
 
 - The **Speedometer widget** is [*profile dependent*](../personal/profiles.md), so if you change the settings for one profile, they will not be applied to another.
-- There is no option to set the display of *Speedometer* directly in *CarPlay*. You need to configure it for selected [navigation profile](#carplay-profile) in the OsmAnd application before starting the navigation and connecting your device to the vehicle. - For more information on how to add and configure the *Speedometer* widget to the display, please read the [*Informational widgets article*](../widgets/info-widgets.md#speedometer).
+- There is no option to set the display of *Speedometer* directly in *CarPlay*. You need to configure it for selected [navigation profile](#carplay-profile) in the OsmAnd application before starting the navigation and connecting your device to the vehicle. 
+- For more information on how to add and configure the *Speedometer* widget to the display, please read the [*Informational widgets article*](../widgets/info-widgets.md#speedometer).
 
 
 ### Map appearance (3D)
