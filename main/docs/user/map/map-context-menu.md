@@ -355,13 +355,13 @@ The OsmAnd app allows you to **<Translate android="true" ids="shared_string_shar
 
 Available options to share the location:
 
-- ***Send***. Sends a message via messengers (name, address, coordinates and link) 
-- ***Copy***. Copies a message into clipboard (name, address, coordinates and link) 
-- ***Copy address***. Copies a message into clipboard (only address) 
-- ***Copy location/POI name***. Copies a message into clipboard (only name and coordinates) 
-- ***Copy coordinates***. Copies a message into clipboard (only coordinates) 
-- ***geo***. Opens local installed apps that support [geo url](https://developers.google.com/maps/documentation/urls/android-intents) 
-- ***QR-code*** (Android). Generates location in QR-code (link with your location)
+- ***Send***. Sends text through apps available on your device. Includes all information about the location: My location name or the name of the selected POI, address, coordinates, and geo location as a link. 
+- ***Copy***. Copies all location information (My location name or name of the selected POI, address, coordinates, and geo location as a link) to the clipboard.  
+- ***Copy address***. Copies only address information to the clipboard.
+- ***Copy POI name***. Copies only POI name or address if there is no name to the clipboard. 
+- ***Copy coordinates***. Copies only coordinates information to the clipboard. 
+- ***geo***. Opens a list of available applications that support geo-locations. <!-- (info about [geo urls Android](https://developers.google.com/maps/documentation/urls/android-intents)). --> 
+- ***QR-code*** (*Android*). Generates a link to the selected location in a QR code.
 
 <!--
 - ***Save Image*** (iOS) - saves a screenshot with map and selected point in the image gallery.
