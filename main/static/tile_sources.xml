@@ -163,6 +163,6 @@
    <tile_source name="ArcGIS World Imagery" url_template="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{0}/{2}/{1}" ext=".jpeg" min_zoom="1" max_zoom="18" tile_size="256" img_density="8" avg_img_size="20000"/>
    <tile_source name="ArcGIS World Boundaries and Places" url_template="https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="1" max_zoom="18" tile_size="256" img_density="8" avg_img_size="10000"/>
    <tile_source name="USA Topo Maps" url_template="https://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer/tile/{0}/{2}/{1}" ext=".jpeg" min_zoom="5" max_zoom="16" tile_size="256" img_density="8" avg_img_size="25000"/>
-   <tile_source name="FS Topo" url_template="https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_FSTopo_01/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="3" max_zoom="17" tile_size="256" img_density="8" avg_img_size="25000"/>
+<!--   <tile_source name="FS Topo" url_template="https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_FSTopo_01/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="3" max_zoom="17" tile_size="256" img_density="8" avg_img_size="25000"/>-->
 
 </tile_sources>
