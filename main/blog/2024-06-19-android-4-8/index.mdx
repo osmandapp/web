@@ -33,14 +33,14 @@ Thank you for your continued support of OsmAnd. Happy navigating!
 
 ## What's new
 
-• Visualize elevation changes with new terrain colorization option "Altitude"
-• Design your perfect map with support for custom color palettes for terrain, tracks, and routes.
-• Improved location position icons with 3D variants
-• Quick Actions on external keyboard: Assign actions for a personalized experience
-• Weather UI refresh: Wind animation & improved label visibility
-• OSM Editing: deleted login / password authorization method
-• Switching to system share sheet starting Android 14
-• Fixed track stats, sorting & search
+- Visualize elevation changes with [new terrain colorization](#new-terrain-colorization) option "Altitude" 
+- Design your perfect map with support for custom color palettes for terrain, tracks, and routes. 
+- Improved location position icons with 3D variants 
+- Quick Actions on external keyboard: Assign actions for a personalized experience 
+- Weather UI refresh: Wind animation & improved label visibility 
+- [OSM Editing](#osm-login): deleted login / password authorization method 
+- Switching to system share sheet starting Android 14 
+- Fixed track stats, sorting & search 
 
 
 - Buttons Control
@@ -62,3 +62,42 @@ Possible one / many of:
 * Roundtrips
 * Grid coordinates
 * Traffic Maps
+
+
+## News
+
+### New terrain colorization
+
+#### Quick action for change Terrain color scheme
+
+
+Added a switch between styles similar to switch between layers
+
+_Menu → Configure screen → Custom buttons → + → Add button → Add action → Topography → Change Terrain color scheme_
+
+![Color Scheme](./img/color_scheme.png)
+
+### OSM login
+
+Only new Oauth 2.0 will be supported from June 1st 2024 onwards
+
+- Remove **Use username and password** button from:
+  - Main bottom sheet
+  - Benefits for active OSM contributors
+  - Upload OSM Note dialog
+
+![OSM Oath](./img/osm_oath.png)
+
+### More Favorite icons (4.8?)
+
+Added full list for [Favorites icons](https://github.com/osmandapp/OsmAnd/issues/16223). Find and add an icon from POI iocns library:
+
+![Favorite icons](./img/favorite_icons.png)
+
+
+### Others
+
+- fixed the bug with [export-import GPX file](https://github.com/osmandapp/OsmAnd/issues/19212),
+- fixed [incrorrectly label](https://github.com/osmandapp/OsmAnd/issues/19834) of external temperature sensor data for GPX,
+- improved colors for [multi GPX track after import](https://github.com/osmandapp/OsmAnd/issues/19995),
+- [new share sheet](https://osmand.net/docs/user/map/map-context-menu/#share) for Android 14,
