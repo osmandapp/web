@@ -237,10 +237,12 @@ This tab can be visible only on recorded tracks (points of this track type have 
 
 </Tabs>
 
-- *<Translate android="true" ids="average_speed"/>* - means average speed during the trip.
-- *<Translate android="true" ids="max_speed"/>* - shows max.sped during the trip.
-- *<Translate android="true" ids="moving_time"/>* - means the sum time during trip moving only.
-- *<Translate android="true" ids="distance_moving"/>* - shows corrected distance of the trip.
+The Speed graph shows:
+- *<Translate android="true" ids="average_speed"/>*. Indicates the average speed during the trip.
+- *<Translate android="true" ids="max_speed"/>*. Shows the maximum speed during the trip.
+- *<Translate android="true" ids="moving_time"/>*. Shows the total time during trip in motion only.
+- *<Translate android="true" ids="distance_moving"/>*. Indicates the adjusted distance of the trip.
+
 
 ### Altitude
 
@@ -249,9 +251,6 @@ This tab can be visible only on recorded tracks (points of this track type have 
 <TabItem value="android" label="Android">
 
 ![Track graph altitude Android](@site/static/img/personal/tracks/track_graph_altitude_android.png)
-
-If track is missing elevation information, it's possible to add it:
-*Calculate elevation* button → [*Use nearby roads*](../plan-route/create-route.md#use-nearby-roads) (<Translate android="true" ids="use_nearby_roads_summary"/>) or [*Use Terrain maps*](#calculating-missing-elevation) (<Translate android="true" ids="use_terrain_maps_summary"/>).
 
 </TabItem>
 
@@ -263,10 +262,14 @@ If track is missing elevation information, it's possible to add it:
 
 </Tabs>
 
-- *<Translate android="true" ids="average_altitude"/>* - mean altitude above sea level along the track.
-- *<Translate android="true" ids="altitude_range"/>* - the highest and lowest altitude recorded along the track.
-- *<Translate android="true" ids="altitude_ascent"/>* - cumulative altitude gain along the track.
-- *<Translate android="true" ids="altitude_descent"/>* - cumulative altitude loss along the track. 
+- *<Translate android="true" ids="average_altitude"/>*. Indicates the average altitude above sea level on the route.
+- *<Translate android="true" ids="altitude_range"/>*. The highest and lowest altitude recorded on the route.
+- *<Translate android="true" ids="altitude_ascent"/>*. The cumulative gain in altitude above sea level along the route.
+- *<Translate android="true" ids="altitude_descent"/>*. The cumulative loss of altitude along the route.
+
+If there is no elevation information on the route, you can add it in the following ways:
+- *Calculate elevation* button *→ [Use nearby roads](../plan-route/create-route.md#use-nearby-roads)*. Uses the offline map to find nearby roads and elevation data. Can adjust the track geometry.
+- [*Use Terrain maps*](#calculating-missing-elevation). Uses terrain maps to retrieve elevation data. The track geometry remains unchanged.
 
 
 ### Calculating missing elevation

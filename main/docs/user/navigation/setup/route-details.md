@@ -19,20 +19,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-OsmAnd allows you to find the best route and explore all of its details. The app provides detailed information about the route such as distance, [travel time](#distance--time--co2), [surface type](#road-attributes), [elevation differences](#elevation-info), and [turn information](#turn-by-turn-information). You can also [analyze](#analyse-on-map) the route on the map, find out information about track segments, [print](#print-for-android) the route plan, [save](#save--export--share) the route, and share it with others. With this functionality, you will always be aware of the route details and can plan your trip more efficiently.  
+OsmAnd allows you to find the best route and explore all of its details. The app provides detailed information about the route such as distance, [travel time](#distance--time--co2), [surface type](#road-attributes), [elevation differences](#elevation-info), and [turn information](#turn-by-turn-information). You can also [analyze](#analyse-on-map) the route on the map, find out information about track segments, [print](#print-for-android) the route plan, [save](#share--export-actions) the route, and share it with others. With this functionality, you will always be aware of the route details and can plan your trip more efficiently.  
 
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Route details Android](@site/static/img/navigation/route/navigation_route_android_main-info.png)  
+![Route details Android](@site/static/img/navigation/route/route_detail_overview_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Route details iOS](@site/static/img/navigation/route/navigation_route_ios_main-info.png)
+![Route details iOS](@site/static/img/navigation/route/route_detail_overview_ios.png)
 
 </TabItem>
 
@@ -41,14 +41,26 @@ OsmAnd allows you to find the best route and explore all of its details. The app
 
 ### How to access
 
-You can access Route Details from the [Navigation menu](./route-navigation.md#start--stop-navigation) once route  is calculaetd. You can use them before you start your trip, to improve your planning, and during your trip.  
-There are three ways to access the Route Details menu.   
+After calculating a route in the [Navigation menu](./route-navigation.md#start--stop-navigation), you have access to "Details" about that route. This information is useful to use before starting a trip to improve route planning or to check information about the road ahead while driving.   
+There are three ways to access the *Route Details menu*.   
 
 1. Go to the main *Menu → Navigation*, set the route, and tap the *Details* button.
 2. Tap the *Navigation* icon on the map screen, set the route, and tap the *Details* button.
 3. Go to the *My Places* menu, tap any available track in the list *Menu → My Places → Tracks*, select the *Navigation* icon in the track context menu in the *Overview* and tap *Details*.  
 
-Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../../navigation/routing/routing-types.md), some route details may not be displayed. Also route details is highly dependent on the OpenStreetMap data coverage.
+Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../../navigation/routing/routing-types.md), some route details may not be displayed. In addition, the route details are highly dependent on the *OpenStreetMap data coverage*.
+
+### Displaying data in Android and iOS
+
+- ***Android list***.  
+   In Android, all the data and the [*Analyze on Map*](#analyse-on-map) button are in one list that you have to scroll through to see all the information.  
+
+- ***iOS tabs***.  
+   In iOS, the data is divided into two tabs.  
+   
+   ![Route details](@site/static/img/navigation/route/route_tabs_ios.png)  
+   - *Instructions*. Contains turn-by-turn information.
+   - *Analysis*. This tab contains all other information including the [*Analyze on Map*](#analyse-on-map) button.  
 
 
 ## Distance / time / CO2
@@ -63,28 +75,22 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/route_details_distance-time-CO2_ios.png)
+![Navigation route iOS](@site/static/img/navigation/route/route_details_distance-time-CO2_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-- The *Total distance* is calculated between all route segments including intermediate points in the selected [units](../../personal/profiles.md#units--formats). 
+- The ***Total distance*** is calculated between all route segments including intermediate points in the selected [units](../../personal/profiles.md#units--formats). 
 
-- *Estimated travel time* is calculated as the total of times on each segment and time penalties on specific points. Each navigation profile has different rules for calculating speed on a segment and which penalties should be included (configured in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). For example, car and bicycle profiles take average speed per segment from OpenStreetMap data, but pedestrian, boat, and aircraft profiles use Default speed from [Navigation Settings](../guidance/navigation-settings.md#default-speed--road-speeds).
+- ***Estimated travel time*** is calculated as the total of times on each segment and time penalties on specific points. Each navigation profile has different rules for calculating speed on a segment and which penalties should be included (configured in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). For example, car and bicycle profiles take average speed per segment from OpenStreetMap data, but pedestrian, boat, and aircraft profiles use Default speed from [Navigation Settings](../guidance/navigation-settings.md#default-speed--road-speeds).
 
-- *Estimated arrival time* is calculated as a time from now in Local time of the origin using *Estimated travel time*.
+- ***Estimated arrival time*** is calculated as a time from now in Local time of the origin using *Estimated travel time*.
 
-- *CO2 footprint data* provides a rough estimation of how much CO2 will be produced while following the route. You need to configure the [Fuel engine type](../guidance/navigation-settings.md#fuel-used-by-motor) in Vehicle parameters to get a more accurate approximation.
+- ***CO2 footprint data*** provides a rough estimation of how much CO2 will be produced while following the route. You need to configure the [Fuel engine type](../guidance/navigation-settings.md#fuel-used-by-motor) in Vehicle parameters to get a more accurate approximation.
 
 
 ## Elevation info
-
-Elevation information is provided in all OsmAnd offline route profiles, with the exception of profiles that use Straight line navigation. The elevation data is part of the OsmAnd Offline Maps and is calculated based on [Public SRTM sources](https://www.wikiwand.com/en/Shuttle_Radar_Topography_Mission).
-
-- *Altitude range* - displays minimum / maximum elevation on the route.
-- *Average altitude* - displays weighted average elevation on the route.
-- *Uphill / downhill* - displays the ratio of the path to the horizontal, where zero indicates horizontality and the number of degrees indicates a higher or steeper degree of slope. The grade shows the maximum road slope in percent from your location point to the end of the visible graph or for the selected section of the route without the location point visible on the screen.
 
 <Tabs groupId="operating-systems">
 
@@ -101,6 +107,24 @@ Elevation information is provided in all OsmAnd offline route profiles, with the
 </TabItem>
 
 </Tabs>
+
+**Elevation information** is provided in all OsmAnd offline route profiles, with the exception of profiles that use [Straight line navigation](../routing/straight-line-routing.md). The elevation data is part of the OsmAnd Offline Maps and is calculated based on [Public SRTM sources](https://www.wikiwand.com/en/Shuttle_Radar_Topography_Mission).
+
+- *Altitude range*. Displays minimum / maximum elevation on the route.
+- *Average altitude*. Displays weighted average elevation on the route.
+- *Uphill / downhill*. Displays the ratio of the path to the horizontal, where zero indicates horizontality and the number of degrees indicates a higher or steeper degree of slope. The grade shows the maximum road slope in percent from your location point to the end of the visible graph or for the selected section of the route without the location point visible on the screen.
+
+#### A license for DEM data used by OsmAnd for terrain detection
+
+The altitude data on the map (between 70 degrees north latitude and 70 degrees south latitude) were obtained from measurements made as a part of the *Shuttle Radar Topography Mission (SRTM)*. It utilized the *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, the primary imaging tool in *NASA's Earth Observation System*.  
+For complete information, see the [License](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
+
+
+<details><summary>DEM (DSM) data</summary> 
+   - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. The original data used for this product was supplied by JAXA’s AW3D.<br/>
+	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
+	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummens, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
+	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).</details>
 
 
 ### Elevation graph
@@ -146,26 +170,25 @@ The [graphs](../../map/track-context-menu.md#altitude--speed-graphs) visually di
 
 </Tabs>  
 
-This tool is similar to a tool to view [track details](../../map/tracks-on-map/tracks-types.md#analyze-track-on-map) on the map. It allows you to view and visually interact with different graphs and see select point on the map.
+**Analyse on map** tool is similar to the tool for viewing [track details](../../map/tracks-on-map/tracks-types.md#analyze-track-on-map) on the map. It allows you to view and visually interact with various graphs and see the selected point on the map.
 
 If data is present you can select one of the following types:
-- *Y-axis*. 
-   - *Altitude*
-   - *Slope*
-   - *Speed*
-   - *Altitude/Slope*
-   - *Altitude/Speed*
-   - *Slope/Speed*
-- *X-axis*. 
-   - *Distance*
-   - *Time*
-   - *Time of day*
+
+- *Y-axis*: 
+   - [*Altitude*](../../map/track-context-menu.md#altitude). This is the [process](https://wiki.openstreetmap.org/wiki/Altitude) of obtaining height above a fixed level.
+   - [*Slope*](https://wiki.openstreetmap.org/wiki/Key:incline). The [slope of the landform](https://www.wikiwand.com/en/Grade%20(slope)) means the tangent of the angle of inclination of the surface to the horizontal.
+   - [*Speed*](../../map/track-context-menu.md#speed). 
+   - Graphs with two types of data: *Altitude/Slope*, *Altitude/Speed*, *Slope/Speed*, *Animated zoom/Speed*.
+- *X-axis*: 
+   - *Distance*. You can view the data for a route in relation to the route length.
+   - *Time*. You can view the data for a route in relation to the time calculated for that route.
+   - *Time of day*. You can view route data at certain time of day.
 
 ### Type of interactions
 
-- *Tap and Slide*. Tap the Graph to display information about the track point and the movement along it. The graph highlights the location of the point on the map and displays information about it on the ruler.
-- *Scale*. Scale Graph by [two fingers gesture](../../map/interact-with-map.md#gestures). 
-- *Follow My location*. You can tap [My Location](../../map/interact-with-map.md#my-location--zoom) to synchronize the map view and graph with your location. As you move, the graph will shift from left to right, displaying information ahead of your path.  
+- *Tap and Slide*. Tap the graph to display information about the track point and the movement along it. The graph highlights the location of the point on the map and displays information about it on the ruler.
+- *Scale*. Scale graph by [two fingers gesture](../../map/interact-with-map.md#gestures). 
+- *Follow My location* (*Android only*). You can tap [My Location](../../map/interact-with-map.md#my-location--zoom) to synchronize the map view and graph with your location. As you move, the graph will shift from left to right, displaying information ahead of your path.  
 
 
 ## Road attributes
@@ -174,11 +197,15 @@ If data is present you can select one of the following types:
 
 <TabItem value="android" label="Android">
 
+*[Menu → Navigation](#how-to-access) → Details*
+
 ![Navigation route Android](@site/static/img/navigation/route/route_details_attributes_andr.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
+*[Menu → Navigation](#how-to-access) → Details → Analysis tab*
 
 ![Navigation route iOS](@site/static/img/navigation/route/route_details_attributes_ios.png)
 
@@ -284,6 +311,6 @@ The ability **to print** or **save** turn-by-turn information **in pdf format** 
 
 The Route Details navigation section has options that allow you to perform certain actions with the route information.  
 
-- [**Print**](#print) - allows you to print or save turn-by-turn route information.
-- **Export/Save** - allows you to save the route information **as a new track** for later offline use. The exported track contains all information about road attributes, turn instructions. So [navigation by this track](./gpx-navigation.md)  should provide all features as navigation by the route.
-- **Share** - shares an exported track or a link to the route which could be opened on another device with OsmAnd.
+- [**Print**](#print). Allows you to print or save turn-by-turn route information.
+- **Export/Save**. Allows you to save the route information **as a new track** for later offline use. The exported track contains all information about road attributes, turn instructions. So [navigation by this track](./gpx-navigation.md) should provide all features as navigation by the route.
+- **Share**. Shares an exported track or a link to the route which could be opened on another device with OsmAnd.

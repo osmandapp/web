@@ -35,7 +35,6 @@ For successful navigation with the OsmAnd app, it's important to properly config
 
 </Tabs>
 
-
 ### How to open
 
 This section presents the navigation settings necessary for calculating and plotting a route, which you can set for the selected profile. This menu includes settings for [Route preparation](../setup/route-navigation.md), the [Map screen during navigation](../guidance/map-during-navigation.md), and what you set in the *Navigation settings* directly affects the display of data in the [Route Details](../setup/route-details.md).

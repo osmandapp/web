@@ -21,6 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 This article describes how to configure the map appearance for the navigation case. This includes things like [animated location changes](#animate-my-location-android-animate-own-position), the display of [POIs along the route](#show-points-along-the-route), the use of [screen alerts](#screen-alerts), the [appearance of the route line](#route-line-appearance) including color and width, and turn arrows. These features are closely related to the [route navigation settings](../setup/route-navigation.md#settings).
 
 
+
 ## Map during navigation
 
 <Tabs groupId="operating-systems">
