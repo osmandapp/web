@@ -15,6 +15,8 @@ import SotmScreenshots from './carousel/sotmscreenshots.js';
 import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock";
 
 
+## Sale images
+
 ![images June sale](@site/static/img/email/2024_june.png)
 
 ![images March sale](@site/static/img/email/2024March.png)
