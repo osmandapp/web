@@ -16,6 +16,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+> *This article was last updated in May 2024.*
+
 
 ## Overview
 
@@ -105,7 +107,7 @@ With the *Width setting* you can choose the thickness of the track line based on
 
 ![Track menu Appearance 3D visualisation](@site/static/img/map/track_appearance_menu_3d_android.png)
 
-This feature enables the display of tracks by altitude. [Paid feature](../../purchases/index.md). You have the ability to use 3D Track visualization if the Map rendering engine [Version 2 (OpenGl)](../../personal/global-settings.md#map-rendering-engine) is enabled.  
+This [Paid feature](../../purchases/index.md) allows you to display tracks by elevation.  You have the option to use 3D track visualization if the map rendering engine [Version 2 (OpenGl)](../../personal/global-settings.md#map-rendering-engine) is enabled.
 
 - *Visualized by*: None , Altitude, Fixed Height - Choose to display the 3D track by altitude ([altitude data](../../plugins/trip-recording.md#recorded-gpx-file) from GPX track file), at a fixed height, or not at all. 
 - *Wall color*: None, Solid, Downward gradient, Upward gradient - Select whether to color the 3D track and choose the type of coloration. 
@@ -121,7 +123,7 @@ the gaps between segments will be connected.
 resets all settings to default values. 
 
 
-## Read more
+## Related Articles
 
 - [*Routes on the map* blog article](https://docs.osmand.net/blog/routes)  
 - [Track Context menu](../../map/track-context-menu.md)  

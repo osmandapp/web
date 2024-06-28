@@ -16,6 +16,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+> *This article was last updated in June 2024.*
+
 ## Overview
 
 Voice prompt and text notification features help follow a [calculated route](../setup/route-navigation.md) comfortably and, most importantly, safely.

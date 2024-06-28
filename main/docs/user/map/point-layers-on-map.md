@@ -223,6 +223,6 @@ Waypoints, points of interest (POIs), Favorite points and Audio/video notes all 
 All of these point types can be saved in GPX format to provide the user with location information and help with navigation and route planning. They serve different purposes, but the general idea is to store and transmit geographic information so that the user can use it in their navigation tasks.
 
 
-## Read more
+## Related Articles
 
 [Configure map menu](../map/configure-map-menu.md).

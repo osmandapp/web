@@ -63,7 +63,7 @@ Features **Tracks** functionality lets you create and save routes so you can eas
 **Import**: the app can import [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language), [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) formats of tracks and points.
 
 
-## Read more about Tracks
+## Related Articles about Tracks
 
 - [Show track on Map](../../map/tracks-on-map/tracks-types.md)
 - [Analyze on Map](../../map/tracks-on-map/tracks-types.md#analyze-track-on-map)

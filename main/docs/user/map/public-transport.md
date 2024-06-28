@@ -81,7 +81,7 @@ You can see the full list of stops by clicking <Translate android="true" ids="re
 
 **Note**: If you click <Translate android="true" ids="get_directions"/> button you will get a route from your current location to the selected Public Transport Station.
 
-## Read more
+## Related Articles
 
 - [Vector maps](../map/vector-maps.md) 
 - [Public transport navigation](../navigation/routing/public-transport-navigation.md)

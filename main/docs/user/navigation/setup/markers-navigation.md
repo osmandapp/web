@@ -237,7 +237,7 @@ After the *Marker* is been dismissed, it gets into the [History](../../personal/
 
 After one *Marker* is been [passed](#mark-as-passed), the next one in the [list](../../personal/markers.md#list) became active. Depending on your [settings](#how-to-use), you may be guided to it with an arrow or dashed line.
 
-## Read more
+## Related Articles
 
 - [About Map markers](../../personal/markers.md).
 - [Marker widget](../../widgets/markers.md).

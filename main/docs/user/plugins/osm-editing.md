@@ -12,6 +12,9 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+> *This article was last updated in May 2024.*
+
+
 ## Overview
 
 [OpenStreetMap](https://www.openstreetmap.org/about) (OSM) is a global community that aims to create a detailed free geographical map of the world and provide up-to-date open-source data to every user, and the OpenStreetMap editing plugin allows you to contribute to the community.  

@@ -16,6 +16,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+> *This article was last updated in May 2024.*
+
+
 ## Overview
 
 OsmAnd has many powerful features to display various routes on the map. Routes could be built as part of Navigation, created via Plan Route, imported as GPX tracks, recorded via Trip Recording plugin or browsed and selected from OpenStreetMap data.
@@ -290,7 +293,7 @@ In *Tracks tab*, **Graph** displays track information in graphical form with a d
 - *Option menu*. Edit, Delete, Split interval.
 
 
-## Read more
+## Related Articles
 
 - [*Routes on the map* blog article](https://docs.osmand.net/blog/routes)  
 - [Track Context menu](../../map/track-context-menu.md)  

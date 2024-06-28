@@ -16,6 +16,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+> *This article was last updated in June 2024.*
+
 ## Overview
 
 The *Track context menu* provides information about the *[Track](../personal/tracks/index.md)* in both text and [graphic](#altitude--speed-graphs) forms. It allows you to add information, make changes, edit and perform various other actions with the track. You can access *Track context menu* by simply tapping the needed track on the map or using *[My places](../personal/myplaces.md)* menu (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). You may need to open track folder and select the desired track by tapping it.
@@ -683,7 +685,7 @@ Actions list is available on the bottom of **Filter** or **Statistics** tab. Osm
 ![GPS filter action Android](@site/static/img/personal/tracks/gps_filter_action_android.png)  
 
 
-## Read more
+## Related Articles
 
 - [GPX tracks](../personal/tracks/index.md)
 - [Tracks on the map](../map/tracks-on-map/tracks-types.md)
