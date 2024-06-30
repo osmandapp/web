@@ -72,15 +72,20 @@ This setting provides a smooth animation of the *[My Position](../../personal/pr
 
 ## Show points along the route
 
-In the Navigation section when creating a route you can set the types of points that will be displayed on the map along the route. In order to go to this section of settings in Android and iOS there are different ways, which are determined by the features of the operating systems and design of OsmAnd.  
+The *Show along the route* setting allows you to configure additional route parameters and is required for the operation of widgets such as the [Street name](../../widgets/nav-widgets.md/#street-name) and the [Alert widget](../../widgets/nav-widgets.md#alert-widget). Options include displaying [**POIs**](#points-of-interest-poi) and [**My Favourites**](#my-favorites) along the route or using them as an addition to those already configured for the profile, as well as displaying a complete list of [**Traffic warnings**](#traffic-warnings) along the route.  
+
+- The ability to set different distances (up to 5 km, or 3.11 miles, depending on the [unit of length](../../personal/profiles.md#units--formats) you set) from the route to nearby points is useful when using routing types such as [Straight Line](../routing/straight-line-routing.md) or [Direct-to-point](../routing/direct-to-point-routing.md).
+- For the *Show along the route* setting, it is recommended to use [Voice prompts](../guidance/voice-navigation.md) for navigation.
+- *POIs, Favorite, and Traffic warnings* are not displayed in the list for a route you have already traveled.
+
+
+### How to open and customize
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-- *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,show_along_the_route"/>*   
-- [Build your route](../setup/route-navigation.md#set-destinations).
-- Tap the [Settings](../setup/route-navigation.md#settings) menu.
+*<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,show_along_the_route"/>* 
 
 ![points along the route](@site/static/img/navigation/show-points-along-3-andr.png) 
 
@@ -88,10 +93,7 @@ In the Navigation section when creating a route you can set the types of points 
 
 <TabItem value="ios" label="iOS">
 
-- *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_waypoints"/>*
-- [Build your route](../setup/route-navigation.md#set-destinations). 
-- Set [intermediate points](../setup/route-navigation.md#intermediate-destinations) of the route. Only this item has settings for selecting points to display along the route.
-- Tap *Edit* next to the Intermediate destination to open the Waypoints settings menu.
+*<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_waypoints"/>*
 
 ![points along the route](@site/static/img/navigation/show-points-along-3-ios.png)  
 
@@ -99,44 +101,57 @@ In the Navigation section when creating a route you can set the types of points 
 
 </Tabs>
 
-The *Show along the route* setting allows you to configure additional parameters for your route and is necessary for the operation of widgets such as [Street name](../../widgets/nav-widgets.md/#street-name) and [Alert widget](../../widgets/nav-widgets.md#alert-widget). The parameters imply displaying [**POIs**](#points-of-interest-poi) and [**My Favourites**](#my-favorites) along the route or using them as an addition to those already configured for the profile, as well as displaying a complete list of [**Traffic warnings**](#traffic-warnings) on the route.  
+In the *Navigation section*, when creating a route, you can set the types of points that will be displayed on the map along the route. You can go to this section of settings in Android and iOS in different ways, which are determined by the peculiarities of operating systems and OsmAnd design.  
 
-The ability to set different distances (up to 5 km, or 3.11 miles, depending on the [unit of length](../../personal/profiles.md#units--formats) you set) from the route to points around will be useful when using routing types such as [Straight Line](../routing/straight-line-routing.md) or [Direct-to-point](../routing/direct-to-point-routing.md).
+***Android:***
+- Build your [route](../setup/route-navigation.md#set-destinations).
+- Tap the *[Settings](../setup/route-navigation.md#settings) menu → Show along the route*.  
 
+***iOS:***
+- Build your [route](../setup/route-navigation.md#set-destinations). 
+- Set [intermediate points](../setup/route-navigation.md#intermediate-destinations) on the route. Only this item has settings for selecting points to be displayed along the route.
+    - Add points.
+    - Tap *Edit* (pencil icon) next to an intermediate destination to open the Waypoint settings menu.
 
 ### Points of interest (POI)
 
-The POIs settings in [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-poi) are associated with the **Show along the route** setting. In fact, this is an additional setting for displaying POIs on the map, which is directly related to the created route.  
-
-When you specify to display certain POIs in the *Configure map*, they are all displayed on the maps you have downloaded, regardless of whether you have selected categories or, if you do not care which category, selected the nearest POIs. Their number and identification change depending on the zoom. The *Show along the route* setting shows the same category as in the *POI overlay*, but you see the *whole list* of the selected POIs at once, starting from the point of the current location at the set distance within your route.  
-
-You can remove unnecessary POIs from the list or edit them in the [Сontext menu](../../map/map-context-menu.md) by tapping one of them. The list contains the selected [POI types](../../map/point-layers-on-map.md#poi-types) and brief information about each, the type icon, the name, the distance from the current location point to the POI along the route, and indications of which side of the route in a straight line and how far away the POI is.  
-
 ![POI overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)   
+
+POIs settings in [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-poi) are associated with the **Show along the route** setting. This is essentially an additional setting for displaying POIs on the map, directly related to the created route.  
+
+When you specify the display of certain POIs on the *Configure map*, they are all displayed on the maps you have downloaded, whether you have selected categories or, if you do not care which category, selected nearby POIs.  
+
+- The number and identification of POIs is *scale dependent*. 
+
+- The *Show along the route* setting displays the same category as in the *POI overlay*, but you see the *entire list* of selected POIs at once, starting from the point of the current location at the set distance within your route.  
+
+- You can remove unnecessary POIs from the list or edit them in the [Сontext menu](../../map/map-context-menu.md) by tapping one of them.
+
+- The list contains the selected [POI types](../../map/point-layers-on-map.md#poi-types) and brief information about each of them, such as the *type icon, name, distance from the current location point to the POI along the route*, and *indications of which side of the route in a straight line and how far away the POI is*.  
 
 
 ### My Favorites
 
-In the open list, you will see all the previously added [Favourite](../../personal/favorites.md#favorite-point) points close to the created route. As with POIs, you can select the distance within which these points will be located.  
+The list contains all previously added [*Favourite*](../../personal/favorites.md#favorite-point) points near the route you have created. As with POIs, you can select the distance at which these points are located.  
 
-If you [turn off the display of Favourites on the map](../../map/configure-map-menu.md), they will not disappear from the list. They will also be displayed in the [widget](../../widgets/nav-widgets.md#street-name) and announced when you approach them. You can add Favourite Points to the map while navigating a route. To update the list you need to turn off/on My Favourites.  
+- If you [turn off the display of Favourites on the map](../../map/configure-map-menu.md), they do not disappear from the list and continue to be displayed in the [widget](../../widgets/nav-widgets.md#street-name) and announced when you approach them. 
 
-Each point contains a name or coordinates, a group, the distance from the current location point to the Favourite directly on the route line, and information about how far to the right or left the point is from the line and the direction of the route.
+- You can add your *Favourite points* to the map not only in advance, but also while navigating a route.
+
+- *To update the list*, you need to turn My Favourites off and then on again.  
+
+- Each point contains a name or coordinates, a group, the distance from the current location point to the *Favourite* directly on the route line, and information about how far to the right or left the point is from the line and the direction of the route.
 
 
 ### Traffic warnings
 
-Traffic warnings do not appear directly on the map, like POIs or My Favorites. **To turn on** this item and see the warnings, you need to enable and configure the [Alerts widget](../../widgets/nav-widgets.md#alert-widget) first.
+*Traffic warnings* are not displayed directly on the map like *POIs* or *My Favorites*. 
 
-Choosing to display traffic warnings along your route will allow you to see the entire list just before you start your route, which is useful when planning your trip. The list can be edited. You can delete unnecessary warnings in the list or tap the name and [edit the location](../../map/map-context-menu.md#avoid-road).  
+- **To enable** this option and see the warnings, you must first enable and configure the [*Alerts widget*](../../widgets/nav-widgets.md#alert-widget).
 
-:::note
-POIs, Favorite, and Traffic warnings are not displayed in the list for the route you have traveled.
-:::
+- The choice to display *Traffic warnings* along your route allows you to see the entire list just before you start your route, which is useful when planning your trip. 
 
-:::tip
-For the *Show along the route* setting, it is recommended to use [Voice prompts](../guidance/voice-navigation.md) for navigation.
-:::
+- Unnecessary alerts can be removed from the list or you can tap on the name and [edit the location](../../map/map-context-menu.md#avoid-road).  
 
 
 ## Screen Alerts
@@ -249,7 +264,7 @@ The Turn Arrows setting allows you to select whether or not turn arrows are disp
 
 - ***On map***  
     ![Altitude](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![turn_arr_ios_map](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
-    
+
 - ***In app***  
     ![Altitude](@site/static/img/navigation/route/turn_arr.png)   ![turn_arr_ios](@site/static/img/navigation/route/turn_arr_ios.png)
 

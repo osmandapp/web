@@ -294,7 +294,13 @@ Navigation consumes a lot of power due to the continuous use of GPS, Screen is o
 - Even if you turn off the screen or exit the OsmAnd app, you'll still get voice prompts (it will run in the background).  
 - While navigation you can use *[Screen control](../guidance/voice-navigation.md#screen-control)* options (<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,turn_screen_on"/>).  
 
+
 ## Settings
+
+![Route preparation Android](@site/static/img/navigation/route/navigation_menu_settings_andr.png)
+
+
+### Navigation settings
 
 To access the navigation settings, follow one of the steps below:
 
@@ -327,8 +333,6 @@ There are no navigation settings in *Browse map* profile.
 - &nbsp;**<Translate android="true" ids="route_parameters"/>** controls which parameters will be used during routing (this is the process of selecting a route for navigation).
 
 Please read about route parameters for the corresponding navigation type.
-
-### Navigation settings
 
 How to configure [routing type](../routing/routing-types.md) and [route parameters](../guidance/navigation-settings.md#route-parameters) you can read in the [Navigation settings article](../guidance/navigation-settings.md) or in articles about specific types of routing in the [Route Parameters section](../routing/routing-types.md).  
 
