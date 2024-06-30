@@ -336,13 +336,11 @@ How to configure [routing type](../routing/routing-types.md) and [route paramete
 ### Simulate navigation
 
 Simulate navigation option allows users to test and preview a navigation route without actually physically traveling along it. This can be useful for:  
-- Planning. You can see how long it may take to complete the entire route or its single segment.
-- Familiarization. You can familiarize yourself with the route before you actually go along it. This can be useful in unfamiliar areas, such as a new city or a difficult transport interchange.
-- Testing. You can test the OsmAnd navigation system itself to make sure it works correctly and provides accurate instructions.  
+- ***Planning***. You can see how long it may take to complete the entire route or its single segment.
+- ***Familiarization***. You can familiarize yourself with the route before you actually go along it. This can be useful in unfamiliar areas, such as a new city or a difficult transport interchange.
+- ***Testing***. You can test the OsmAnd navigation system itself to make sure it works correctly and provides accurate instructions.  
 
 #### Start / stop simulation
-
-When the navigation route is built. You can start to simulate movement using *<Translate android="true" ids="simulate_navigation"/>* option.
 
 <Tabs groupId="operating-systems">
 
@@ -360,15 +358,21 @@ When the navigation route is built. You can start to simulate movement using *<T
 
 </Tabs>
 
-In the *[Navigation menu](#navigation-menu)* go to <Translate android="true" ids="shared_string_settings,simulate_navigation"/>. Thеn toggle the switch to enable this option. Pressing the *[Start navigation](#how-to-use)* button starts the simulation. To stop the simulation of navigation you need to tap *[Dismiss](#start--stop-navigation)* button (Android), or *[Cancel](#start--stop-navigation)* (iOS).
+When a navigation route is built, you can start simulating navigation using the *<Translate android="true" ids="simulate_navigation"/>* option.  
+
+- In the *[Navigation menu](#navigation-menu)* go to *<Translate android="true" ids="shared_string_settings,simulate_navigation"/>*.
+- Toggle the switch to enable the option. 
+- Tapping the *[Start navigation](#how-to-use)* button starts the simulation. 
+- To stop the navigation simulation, tap *[Dismiss](#start--stop-navigation)* (Android), or *[Cancel](#start--stop-navigation)* (iOS).
+
 
 #### Simulation settings
-
-To adjust the speed of a simulation go to: *<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/>  →  &#x2699*
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/>  →  &#x2699*
 
 ![Simulate navigation Android](@site/static/img/navigation/route/simulate_navigation_andr_2.png)
 
@@ -376,15 +380,20 @@ To adjust the speed of a simulation go to: *<Translate android="true" ids="share
 
 <TabItem value="ios" label="iOS">
 
+*<Translate android="true" ids="shared_string_navigation,shared_string_settings,simulate_navigation"/>  →  &#x2699*
+
 ![Simulate navigation ios](@site/static/img/navigation/route/simulate_navigation_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-- &nbsp;_<Translate android="true" ids="simulation_preview_mode_title"/>_ - <Translate android="true" ids="simulation_preview_mode_desc"/>
-- &nbsp;_<Translate android="true" ids="simulation_constant_mode_title"/>_ - <Translate android="true" ids="simulation_constant_mode_desc"/>
-- &nbsp;_<Translate android="true" ids="simulation_real_mode_title"/>_ - <Translate android="true" ids="simulation_real_mode_desc"/>
+- ***<Translate android="true" ids="simulation_preview_mode_title"/>***. Simulation speeds will be maximized on straight sections and reduced only at intersections.
+- ***<Translate android="true" ids="simulation_constant_mode_title"/>***. The simulation will run at a constant selected speed.
+- ***<Translate android="true" ids="simulation_real_mode_title"/>***. 
+    - On straight sections of the road, the speed will be close to the maximum allowable speed. 
+    - At intersections, the simulator will reduce speed. 
+    - Additional penalties will be applied at traffic lights, stop signs and other similar obstacles.
 
 ## Troubleshouting
 
