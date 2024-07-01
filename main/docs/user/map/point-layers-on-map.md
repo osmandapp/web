@@ -11,7 +11,7 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
-> *This article was last updated in April 2022.*
+> *This article was last updated in April 2022*
 
 ## Overview
 

@@ -12,7 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-> *This article was last updated in May 2024.*
+
 
 ## Overview
 
@@ -371,3 +371,5 @@ Approach POIs/Favorites/Waypoints  widget is combined with [Street name](#street
 - [Radius-ruler and Ruler](./radius-ruler.md)
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
+
+> *This article was last updated in May 2024*

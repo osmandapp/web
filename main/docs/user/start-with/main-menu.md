@@ -11,7 +11,7 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
-> *This article was last updated in July 2022.*
+
 
 # Overview
 
@@ -78,3 +78,4 @@ In this menu you can **switch** active profile, **configure** (change settings) 
 - Items moved to the *Hidden* section are not displayed in the Drawer menu, but all options, settings, or plugins from this list continue to work. You can restore items by tapping the green button to the left of their names.  
     ![Drawer menu hidden items ](@site/static/img/settings/drawer_menu_hidden_items.png)
 
+> *This article was last updated in July 2022*

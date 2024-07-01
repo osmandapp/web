@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-> *This article was last updated in May 2024.*
+
 
 ## Overview
 
@@ -165,3 +165,4 @@ Search makes it easy to find a specific map or region, providing a convenient an
 - Tap the name of the required result and the Regionwide map list will open.
 - Select [map types](../personal/maps.md#map-types): *Standart map, Road-only map, Contour lines, Wikipedia*.
 
+> *This article was last updated in May 2024*

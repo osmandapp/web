@@ -14,9 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-> *This article was last updated in June 2024.*
-
-> *This article was last updated in June 2024.*
+> *This article was last updated in June 2024*
 
 ## Overview
 

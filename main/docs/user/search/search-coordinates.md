@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-> *This article was last updated in July 2024.*
+
 
 ## Overview
 
@@ -152,3 +152,6 @@ https://github.com/osmandapp/OsmAnd/issues/14081
 - [Search Address](./search-address.md)
 - [Search History](./search-history.md)
 - [Search POI](./search-poi.md)
+
+
+> *This article was last updated in July 2024*

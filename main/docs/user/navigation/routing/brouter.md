@@ -16,12 +16,12 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 <InfoIncompleteArticle/>
 
+> *This article was last updated in June 2024*
+
 :::caution ANDROID ONLY
 The third-party routing algorithm BRouter is only available for the Android version of the OsmAnd app.
 :::   
 
-
-> *This article was last updated in June 2024.*
 
 ## Overview
 

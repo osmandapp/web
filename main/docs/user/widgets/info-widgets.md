@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-> *This article was last updated in June 2024.*
+
 
 ## Overview
 
@@ -695,3 +695,5 @@ To use this widget, make sure you have the **OsmAnd development plugin** enabled
 - [Radius-ruler and Ruler](./radius-ruler.md)
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
+
+> *This article was last updated in June 2024*

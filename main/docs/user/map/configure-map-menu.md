@@ -12,8 +12,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-> *This article was last updated in August 2023.*
-
 ## Overview
 
 The *Configure map* menu is an important item in the OsmAnd main menu, where you can customize the map display to suit your needs. You can highlight favorite points, navigation markers, or special points of interest on the map, display specific routes or third-party GPX files, overlay terrain information, satellite images, or any other available raster images, display public transportation information, and change the map style.  
@@ -97,4 +95,5 @@ For each selected profile in the Android system, you can change the order of the
 ![Configure map items ](@site/static/img/settings/configure-screen-ui-customization.png)
 
 
-## Related Articles
+
+> *This article was last updated in August 2023*

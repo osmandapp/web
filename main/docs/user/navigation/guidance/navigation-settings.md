@@ -16,7 +16,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 > *This article was last updated in July 2024.*
 
-
 ## Overview
 
 For successful navigation with the OsmAnd app, it's important to properly configure the appropriate settings according to your needs and depending on your mode of travel, whether it's by car, on foot, horseback riding, or skiing. This article describes the basic route parametrs, [Voice prompts](#voice-prompts), [Screen alerts](#screen-alerts), [Map behavior during navigation](#map-during-navigation), [Animation of your own position](#animate-own-position), and the [Appearance of route lines](#customize-route-line). In addition, vehicle settings are also detailed, such as [Default speed](#default-speed) and [Maximum/minimum speed](#road-speeds), [Engine type](#fuel-used-by-motor) for CO2 calculation, and [Size/weight](#size-parameters), which can also affect the route. Adjusting these settings will help you get the most out of using OsmAnd and reach your goal without too much effort or delay.
@@ -472,3 +471,15 @@ All of these restrictions can be important for navigation and should be consider
 
 
 ## Related Articles
+
+- [Route parameters](./routing/routing-types.md)
+- [Route preparation](./setup/route-navigation.md)
+- [Navigation by track](./setup/gpx-navigation.md)
+- [Navigation by markers](./setup/markers-navigation.md)
+- [Route details](./setup/route-details.md)
+- [Map screen during navigation](./guidance/map-during-navigation.md)
+- [Voice prompts / Notifications](./guidance/voice-navigation.md)
+- [Android Auto](./auto-car.md)
+- [CarPlay](./car-play.md)
+
+> *This article was last updated in July 2024*

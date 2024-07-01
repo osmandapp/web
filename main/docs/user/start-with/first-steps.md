@@ -12,7 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-> *This article was last updated in May 2024.*
+
 
 ## Overview
 
@@ -651,6 +651,6 @@ OsmAnd doesn't have any required permissions on iOS / Android version.
 - **Camera/voice recording** (*Android*). Only used by [the Audio/Video notes](../plugins/audio-video-notes.md). This feature is packaged as plugin and by default disabled. It allows to quickly create location-related audio/video notes during a trip.
 
 
-
+> *This article was last updated in May 2024*
 
 

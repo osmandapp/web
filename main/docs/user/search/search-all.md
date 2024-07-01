@@ -15,7 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-> *This article was last updated in July 2024.*
 
 ## Overview
 
@@ -234,3 +233,6 @@ Or if you don't have any result you can provide feedback by clicking to "Send" b
 - [Search History](./search-history.md)
 - [Search POI](./search-poi.md)
 - [Search Coordinates](./search-coordinates.md)
+
+
+> *This article was last updated in July 2024*

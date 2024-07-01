@@ -13,7 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-> *This article was last updated in June 2024.*
+> *This article was last updated in June 2024*
 
 ## Overview
 

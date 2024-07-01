@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-> *This article was last updated in July 2024.*
+
 
 ## Overview
 
@@ -195,3 +195,6 @@ On the [delete](#delete) screen, select the required items from the Search Histo
 - [Search Address](./search-address.md)
 - [Search POI](./search-poi.md)
 - [Search Coordinates](./search-coordinates.md)
+
+
+> *This article was last updated in July 2024*

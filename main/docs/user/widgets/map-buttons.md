@@ -16,7 +16,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-> *This article was last updated in March 2024.*
 
 ## Overview
 
@@ -171,4 +170,4 @@ Additional settings for 3D Mode.
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-
+> *This article was last updated in March 2024*

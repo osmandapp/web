@@ -16,7 +16,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-> *This article was last updated in January 2023.*
 
 ## Overview
 
@@ -708,3 +707,8 @@ Available types of actions:
 
 
 ## Related Articles
+
+- 
+- 
+
+> *This article was last updated in January 2023*

@@ -17,8 +17,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-> *This article was last updated in April 2024.*
-
 ## Overview
 
 Quick Action widget is an interactive user interface element that provides quick access to key functions or actions without having to open additional settings. This widget is placed on the main map screen and allows you to simplify and speed up interaction with the application, making it more convenient and efficient.  
@@ -285,3 +283,5 @@ To manage custom buttons, you can tap on one of them, then tap the *three-dot me
 - [Navigational widgets](./nav-widgets.md)
 - [Radius-ruler and Ruler](./radius-ruler.md)
 - [Marker widgets](./markers.md)
+
+> *This article was last updated in April 2024*

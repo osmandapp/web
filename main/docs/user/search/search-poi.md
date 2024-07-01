@@ -15,7 +15,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-> *This article was last updated in July 2024.*
 
 ## Overview 
 
@@ -437,3 +436,6 @@ An additional option for the iOS app is **Delete Custom Categories**. The item i
 - [Search Address](./search-address.md)
 - [Search History](./search-history.md)
 - [Search Coordinates](./search-coordinates.md)
+
+
+> *This article was last updated in July 2024*
