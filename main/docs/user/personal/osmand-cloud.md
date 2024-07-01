@@ -15,6 +15,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
+> *This article was last updated in November 2023.*
+
 ## Overview
 
 :::tip subscribe
@@ -434,3 +436,4 @@ Changes that were uploaded from the Local version to the Cloud are removed from 
 - The actions **Upload local version** or **Download cloud version** are available to you.
 
 
+## Related Articles

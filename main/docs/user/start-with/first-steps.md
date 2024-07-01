@@ -12,6 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+> *This article was last updated in May 2024.*
 
 ## Overview
 

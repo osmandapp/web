@@ -14,6 +14,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
+> *This article was last updated in July 2024.*
+
 ## Overview
 
 *OsmAnd Address Search* is based on OpenStreetMap data and allows you to find location and directions to a specific address from a ready sorted list, as well as search by postal code or coordinates. This tool allows you to find the required addresses in a few taps, which reduces the search time and helps in case you don't remember the exact address.  
@@ -186,3 +188,11 @@ For more information about [United Kingdom Poscode data](https://github.com/hvdw
 </Tabs>
 
 [**Coordinate search**](../search/search-coordinates.md) allows you to specify geographic coordinates, such as latitude and longitude, to find a specific location. It provides accurate locations on a map in different [coordinate formats](../search/search-coordinates.md#coordinates-search) and allows you to get related information. This feature can be useful when you do not have an address or exact name of a location and can make it easier to plan travel and navigate in unknown places.  
+
+
+## Related Articles
+
+- [Search All](./search-all.md)
+- [Search History](./search-history.md)
+- [Search POI](./search-poi.md)
+- [Search Coordinates](./search-coordinates.md)

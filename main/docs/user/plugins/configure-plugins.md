@@ -13,6 +13,8 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+> *This article was last updated in June 2024.*
+
 ## Overview
 
 Plugins significantly extend the functionality of OsmAnd. Each is designed to address a specific task or use case, such as recording a trip, accessing Wikipedia articles offline, visualizing terrain data, or providing a street-level view.

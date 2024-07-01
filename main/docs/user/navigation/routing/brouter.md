@@ -21,6 +21,8 @@ The third-party routing algorithm BRouter is only available for the Android vers
 :::   
 
 
+> *This article was last updated in June 2024.*
+
 ## Overview
 
 *BRouter* is a third-party routing algorithm that can be used in the OsmAnd app for [offline navigation mode](../guidance/navigation-settings.md#navigation-type). It is designed to optimize a route based on different parameters, such as time, distance, or vehicle type. 

@@ -14,6 +14,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
+> *This article was last updated in June 2024.*
+
+> *This article was last updated in June 2024.*
+
 ## Overview
 
 Unlike traditional routing algorithms that use roads, trails, or predefined routes, straight line routing calculates the shortest distance between two points on the map as a straight line. This feature can be useful for active hikers who want to route away from trails or explore remote areas where traditional routes may not be available. For light aircraft pilots and ship skippers, using the *Straight line routing type* can be very useful in navigation.  

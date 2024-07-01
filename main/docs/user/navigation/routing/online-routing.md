@@ -17,6 +17,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly />
 
+> *This article was last updated in June 2024.*
+
 ## Overview
 
 Online routing is a powerful tool that can help users save time and navigate more efficiently. However, it is important to note that online routing relies on internet connectivity, and may not be available in areas with poor network coverage. Additionally, users should always exercise caution and use their judgment when following any route suggested by an online routing service.  

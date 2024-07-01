@@ -170,3 +170,13 @@ Configuring the appearance of map markers is available in both the Android and i
 </TabItem>
 
 </Tabs> 
+
+
+## Related Articles
+
+- [Configure Screen](./configure-screen.md)
+- [Map buttons](./map-buttons.md)
+- [Informational widgets](./info-widgets.md)
+- [Navigational widgets](./nav-widgets.md)
+- [Radius-ruler and Ruler](./radius-ruler.md)
+- [Quick Action](./quick-action.md)

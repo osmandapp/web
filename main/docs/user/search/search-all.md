@@ -15,6 +15,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
+> *This article was last updated in July 2024.*
+
 ## Overview
 
 **Search** is a useful tool for quickly finding locations. You can use search to find a location by address, coordinates, points of interest (POIs), or previous searches. [*Address search*](#address-search) allows you to enter the address you are looking for to get an exact location. [*Сoordinates*](#coordinates-search) search allows you to enter geographic coordinates such as latitude and longitude. [*POI Search*](#poi-search) allows you to search for nearby places in specific categories, such as cafes, hotels, or filling stations. And [*Search History*](#history-search) saves past searches for quick access to previously found places. The search feature makes it easy to plan trips, navigate unknown terrain, and find places of interest nearby.
@@ -225,3 +227,10 @@ Or if you don't have any result you can provide feedback by clicking to "Send" b
 
 ![Online search feedback Android](@site/static/img/search/online_search_feedback_android.png)
 
+
+## Related Articles
+
+- [Search Address](./search-address.md)
+- [Search History](./search-history.md)
+- [Search POI](./search-poi.md)
+- [Search Coordinates](./search-coordinates.md)

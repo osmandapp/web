@@ -16,6 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+> *This article was last updated in July 2024.*
 
 ## Overview
 
@@ -475,4 +476,4 @@ Unfortunately, once the necessary maps are loaded, you must to enter the start a
 </Tabs>
 
 
-
+## Related Articles

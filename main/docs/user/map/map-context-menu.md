@@ -16,6 +16,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+> *This article was last updated in January 2023.*
+
 ## Overview
 
 Map Context menu provides information about selected object on the map. It can also be used to build a route to a selected location.  
@@ -705,3 +707,4 @@ Available types of actions:
 ![Map context menu Customize](@site/static/img/map/map_context_menu_customize_1.png)   ![Map context menu Customize](@site/static/img/map/map_context_menu_customize_2.png)   ![Map context menu Customize](@site/static/img/map/map_context_menu_customize_3.png)
 
 
+## Related Articles

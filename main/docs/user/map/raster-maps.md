@@ -13,6 +13,8 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
+> *This article was last updated in February 2024.*
+
 ## Overview
 
 Raster maps are significant and useful additions to OsmAnd vector maps. They allow you to combine various map sources with vector maps. For example, information about hills and slopes is displayed as a raster layer. You can display an overlay of hiking trails, rain maps, real-time traffic data, and an overlay of satellite imagery on a translucent base vector map. You can also switch the default maps to raster tiles on the web.
@@ -448,3 +450,4 @@ In order for the maps to automatically update the tiles after a period of time, 
 Raster maps can be used as they already exist if the tiles are already mapped. If the raster maps are provided online, there is always a base URL that needs to be configured. There are a few more basic parameters that can be changed for raster maps, you can read about that in [this section](#add-new-online-raster-map-source) of the article. More complex parameters are encoded in the internal components of the [SQ Lite format](../../technical/osmand-file-formats/osmand-sqlite.md).
 
 
+## Related Articles

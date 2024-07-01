@@ -13,6 +13,8 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+> *This article was last updated in Desember 2023.*
+
 ## Overview
 
 How to interact with map using buttons and gestures, so you could pan, rotate and zoom in/out the map, how to rotate the map manually or automatically by compass or by bearing and how to change zoom scale.
@@ -311,4 +313,4 @@ All key assignments for the selected type will be removed.
 </Tabs>  
 
 
-
+## Related Articles

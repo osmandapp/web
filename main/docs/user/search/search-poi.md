@@ -15,6 +15,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+> *This article was last updated in July 2024.*
+
 ## Overview 
 
 [OsmAnd Point of Interest](https://wiki.openstreetmap.org/wiki/Points_of_interest) (POI) functionality in OsmAnd provides accuracy, visibility, and convenience in finding interesting places and services near your current location or a selected area on the map.  
@@ -428,3 +430,10 @@ An additional option for the iOS app is **Delete Custom Categories**. The item i
 
 ![Custom POI delete iOS](@site/static/img/search/custom_poi_delete_ios.png)  
 
+
+## Related Articles
+
+- [Search All](./search-all.md)
+- [Search Address](./search-address.md)
+- [Search History](./search-history.md)
+- [Search Coordinates](./search-coordinates.md)

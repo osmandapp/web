@@ -13,6 +13,8 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
+> *This article was last updated in June 2024.*
+
 ## Overview
 
 Car-based routing is designed to help drivers navigate efficiently, safely, and comfortably, by providing tailored directions that take into account the unique needs and preferences of each driver. Proper routing settings can help drivers save time, and fuel, and avoid hazards on the road. The fastest routing is offered by default.

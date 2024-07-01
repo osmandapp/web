@@ -12,6 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+> *This article was last updated in June 2024.*
 
 ## Overview  
 
@@ -433,3 +434,12 @@ Available actions:
 
 **Take note**. The *Switch profile option* does not display all existing profiles, but only those that have been *switched on* in the Settings menu. 
 
+
+## Related Articles
+
+- [Map buttons](./map-buttons.md)
+- [Informational widgets](./info-widgets.md)
+- [Navigational widgets](./nav-widgets.md)
+- [Radius-ruler and Ruler](./radius-ruler.md)
+- [Marker widgets](./markers.md)
+- [Quick Action](./quick-action.md)

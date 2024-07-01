@@ -14,7 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-> *This article was last updated in June 2024.*
+> *This article was last updated in July 2024.*
 
 
 ## Overview
@@ -470,3 +470,5 @@ Limits on vehicle parameters can be important for navigation and road safety. So
 
 All of these restrictions can be important for navigation and should be considered when planning a route. If a vehicle's exceeds the limits, it may result in road safety, infrastructure damage, accidents fines, and other legal consequences. Therefore, drivers should carefully examine the route and make sure that the height of their vehicle meets the limits.  
 
+
+## Related Articles

@@ -14,6 +14,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
+> *This article was last updated in July 2024.*
+
 ## Overview
 
 *Search History* is a record of all searches and locations that you have entered or searched for in the app over the period of use. This tool allows you to easily find and access previously searched locations, which makes navigation easier and saves your time.   
@@ -187,4 +189,9 @@ The steps to share search history items are similar to [export](#export-and-shar
 On the [delete](#delete) screen, select the required items from the Search History list. In the upper-right corner of the screen, there is an icon indicating sharing. Select an available application or action in the list to share. 
 
 
+## Related Articles
 
+- [Search All](./search-all.md)
+- [Search Address](./search-address.md)
+- [Search POI](./search-poi.md)
+- [Search Coordinates](./search-coordinates.md)

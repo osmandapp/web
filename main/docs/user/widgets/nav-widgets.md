@@ -12,6 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
+> *This article was last updated in May 2024.*
 
 ## Overview
 
@@ -360,3 +361,13 @@ Approach POIs/Favorites/Waypoints  widget is combined with [Street name](#street
 |------------|------------|
 | Enable  | *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,get_directions,shared_string_settings,show_along_the_route,points_of_interests"/>, <Translate android="true" ids="shared_string_my_favorites"/>, <Translate android="true" ids="way_alarms"/>* <br /> *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu"/> → Start navigation → pencil button* |
 
+
+## Related Articles
+
+- [Configure Screen](./configure-screen.md)
+- [Map buttons](./map-buttons.md)
+- [Informational widgets](./info-widgets.md)
+- [Navigational widgets](./nav-widgets.md)
+- [Radius-ruler and Ruler](./radius-ruler.md)
+- [Marker widgets](./markers.md)
+- [Quick Action](./quick-action.md)

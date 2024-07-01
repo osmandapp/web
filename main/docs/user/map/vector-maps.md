@@ -13,6 +13,8 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
+> *This article was last updated in October 2021.*
+
 ## Overview
 
 Vector maps are designed to be the default map data source for OsmAnd, so you need to download them to your device. Vector maps support a huge range of map styles for many activities like cycling, hiking, riding by car or snowmobile, etc. Each map style can be tuned to highlight or hide specific objects and switch between day and night mode. Map vector data could be augmented by vector data and displayed with default Map style, for example, Contour line information. You can create your own OsmAnd map style to demonstrate the necessary information.
@@ -533,3 +535,6 @@ If you have your own or 3rd party custom map style created according to [Specifi
 - Rendering styles could be exported & imported via [Standard import / export dialogs](../personal/import-export.md). So if you create an example '*.osf' package which will work as a plugin that could be shared with other people.
 
 After that, you could select your own map style in the menu.
+
+
+## Related Articles

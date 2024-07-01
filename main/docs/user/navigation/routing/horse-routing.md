@@ -13,6 +13,8 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
+> *This article was last updated in June 2024.*
+
 ## Overview
 
 *Horseback routing* can be useful for equestrians, who want to plan their rides on paths and trails that are safe and suitable for horses. With help of this type of routing you may also discover new routes that haven't been already known about otherwise.  

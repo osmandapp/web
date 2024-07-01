@@ -15,6 +15,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
+> *This article was last updated in March 2023.*
+
 ## Overview
 
 All ruler tools help you understand the current [map scale](https://en.wikipedia.org/wiki/Scale_(map)) and measure distances. The Ruler's Radius tool allows you to set a radius around a selected point on the map, displaying distance circles on the map. The Tangent Distance tool allows you to calculate the distance between selected points or find the distance to a specific point.  
@@ -206,4 +208,12 @@ If you touch two points at the same time, the map will show the line between the
 | Units Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
+## Related Articles
+
+- [Configure Screen](./configure-screen.md)
+- [Map buttons](./map-buttons.md)
+- [Informational widgets](./info-widgets.md)
+- [Navigational widgets](./nav-widgets.md)
+- [Quick Action](./quick-action.md)
+- [Marker widgets](./markers.md)
 

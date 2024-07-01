@@ -13,6 +13,8 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
+> *This article was last updated in June 2024.*
+
 ## Overview
 
 Direct-to-point routing in OsmAnd is a useful feature that allows you to navigate directly to a specific point on the map without having to follow a pre-defined route or road network. This feature can be used by boat skippers,

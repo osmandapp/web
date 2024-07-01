@@ -14,6 +14,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
+> *This article was last updated in June 2024.*
+
 ## Overview
 
 In the OsmAnd app, you can customize the *Configure map menu* or *Drawer*, and share your [navigation profile](../personal/profiles.md) with all settings, however, if you want to share not only profile-dependent settings, but also rendering files, fonts, routes, maps and other data, you can create your own plugin *zip file* in *.osf format* for this purpose.  

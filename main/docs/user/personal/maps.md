@@ -17,6 +17,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+> *This article was last updated in June 2024.*
+
 ## Overview
 
 The **Maps & Resources** allows you to perform basic actions with *Online* and *Offline* maps, and remaining resources used in OsmAnd. For example, such as downloading, deleting, renaming, clearing the cache, updating and checking the size, as well as other actions.
@@ -350,4 +352,4 @@ Live updates and unlimited map downloads are available for [OpenStreetMap](https
 </Tabs>
 
 
-
+## Related Articles

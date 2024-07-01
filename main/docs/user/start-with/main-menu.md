@@ -11,9 +11,11 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
+> *This article was last updated in July 2022.*
 
-# Main menu
-Main menu' is a primary list of options available to use in the application. It provides quick access to the profile configuration, global settings, search, personal data, navigation and other features.
+# Overview
+
+**Main menu** is a primary list of options available to use in the application. It provides quick access to the profile configuration, global settings, search, personal data, navigation and other features.
 
 The [Main menu](../widgets/map-buttons.md#main-menu) icon '&#8801;' is located on the left bottom corner of the Map screen. In navigation mode this button is not visible by default. It appears after a short tap the map. 
 
@@ -37,15 +39,16 @@ The [Main menu](../widgets/map-buttons.md#main-menu) icon '&#8801;' is located o
 ## Main menu (Drawer)
 
 ### Features
+
 * [Map markers](../personal/markers.md) is a tool that allows to mark place on the map.
 * [My places](../personal/myplaces.md) is a menu that includes by default Favorites and tracks and in addition can include [A/V notes](../plugins/audio-video-notes.md) and [OSM edits](../plugins/osm-editing.md) (if such plugins are turned on). 
 * [Search](../search/index.md) (Android) is a tool that allows you to find the place or object that exist on the map.
 * [Directions](../widgets/map-buttons.md#directions) button allows to create a route and start navigation.
 * [Configure map](../map/configure-map-menu.md) is a menu that allows configuring map view.
 * [Download maps](../start-with/download-maps.md) is a menu that contains all files that could be downloaded.
-* [Travel guides (Beta)](../plan-route/travel-guides.md) (Android) is a tool that allows using Wikivoyage guide for your trip.
+* [Travel guides (Beta)](../plan-route/travel-guides.md) (*Android*) is a tool that allows using Wikivoyage guide for your trip.
 * [Plan route](../plan-route/create-route.md) is a tool that allows you to measure distances on the map, create GPX tracks or add new segments to existing ones.
-* [* Trip recording](../plugins/trip-recording.md) (Android) is a tool that allows to record all movements into track using phone's GPS. 
+* [* Trip recording](../plugins/trip-recording.md) (*Android*) is a tool that allows to record all movements into track using phone's GPS. 
 
 ### Settings
 * [Configure screen](../widgets/configure-screen.md) is a menu that allows configuring displaying widgets on the Map.

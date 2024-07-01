@@ -13,6 +13,8 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
+> *This article was last updated in June 2024.*
+
 ## Overview
 
 The route type determines how the route is calculated, which roads are permitted, and what the travel time is. The OsmAnd application uses different route types for hiking, cycling, skiing or boating routes. Each profile is assigned a specific routing type that best matches it.  

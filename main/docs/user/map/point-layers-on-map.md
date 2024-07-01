@@ -11,6 +11,8 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
+> *This article was last updated in April 2022.*
+
 ## Overview
 
 On map you could display points such as Favorites, POI, Markers, Wikipedia, Search results, Audio Video Notes, OSM Edits and other.
@@ -226,3 +228,6 @@ All of these point types can be saved in GPX format to provide the user with loc
 ## Related Articles
 
 [Configure map menu](../map/configure-map-menu.md).
+
+
+## Related Articles

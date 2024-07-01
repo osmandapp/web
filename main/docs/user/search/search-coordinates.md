@@ -14,6 +14,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
+> *This article was last updated in July 2024.*
+
 ## Overview
 
 **OsmAnd Coordinate search** allows you to find a specific location by latitude and longitude. This type of search helps to identify a location accurately. It is especially useful for areas that do not have precise addresses, or for specific geographic tasks such as creating geofences or precise positioning in open space.   
@@ -142,3 +144,11 @@ https://github.com/osmandapp/OsmAnd/issues/16114
 https://github.com/osmandapp/OsmAnd/issues/14081  
 
 -->
+
+
+## Related Articles
+
+- [Search All](./search-all.md)
+- [Search Address](./search-address.md)
+- [Search History](./search-history.md)
+- [Search POI](./search-poi.md)

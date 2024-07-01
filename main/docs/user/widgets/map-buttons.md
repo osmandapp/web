@@ -16,6 +16,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+> *This article was last updated in March 2024.*
+
 ## Overview
 
 Map buttons such as Zoom buttons, Search, Direction, Compass, My Location and Menu represent main controls on the map.
@@ -160,6 +162,13 @@ Additional settings for 3D Mode.
 5. **Recommendation**. It is recommended to download and enable the [Hillshade map](../plugins/contour-lines.md#configure-map-view) for the selected region to improve the user experience.
 
 
+## Related Articles
 
+- [Configure Screen](./configure-screen.md)
+- [Informational widgets](./info-widgets.md)
+- [Navigational widgets](./nav-widgets.md)
+- [Radius-ruler and Ruler](./radius-ruler.md)
+- [Marker widgets](./markers.md)
+- [Quick Action](./quick-action.md)
 
 

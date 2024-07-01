@@ -14,6 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+> *This article was last updated in June 2024.*
 
 ## Overview
 
@@ -684,3 +685,13 @@ To use this widget, make sure you have the **OsmAnd development plugin** enabled
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → Available RAM* |
 | By tapping | No changes |
+
+
+## Related Articles
+
+- [Configure Screen](./configure-screen.md)
+- [Map buttons](./map-buttons.md)
+- [Navigational widgets](./nav-widgets.md)
+- [Radius-ruler and Ruler](./radius-ruler.md)
+- [Marker widgets](./markers.md)
+- [Quick Action](./quick-action.md)
