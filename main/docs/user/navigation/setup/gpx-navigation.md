@@ -147,8 +147,6 @@ You can add a waypoint to any imported or created [GPX track](#create-and-import
 When preparing or navigating a GPX track, you cannot add locations you plan to pass through before reaching the destination (details [here](../../navigation/setup/route-navigation.md#intermediate-destinations)) between the start and finish points specified in the track. You can use the *+* button to add only a new destination point, then part of your route will follow the track, if possible in the recalculation, and the rest will go to the specified point.
 
 
-
-
 ## Follow track menu
 
 <Tabs groupId="operating-systems">
@@ -209,3 +207,13 @@ During navigation, you can use various options such as zooming in or out, pannin
 
 
 ## Related Articles
+
+- [Route parameters](../routing/routing-types.md)
+- [Route preparation](./route-navigation.md)
+- [Route details](./route-details.md)
+- [Navigation by markers](./markers-navigation.md)
+- [Navigation settings](../guidance/navigation-settings.md)
+- [Map screen during navigation](../guidance/map-during-navigation.md)
+- [Voice prompts / Notifications](../guidance/voice-navigation.md)
+- [Android Auto](../auto-car.md)
+- [CarPlay](../car-play.md)

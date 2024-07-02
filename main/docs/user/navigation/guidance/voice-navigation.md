@@ -327,3 +327,13 @@ You can control the screen of your device to save power. This mode has two gener
 
 
 ## Related Articles
+
+- [Route parameters](../routing/routing-types.md)
+- [Route preparation](../setup/route-navigation.md)
+- [Navigation by track](../setup/gpx-navigation.md)
+- [Navigation by markers](../setup/markers-navigation.md)
+- [Route details](../setup/route-details.md)
+- [Navigation settings](./navigation-settings.md)
+- [Map screen during navigation](./map-during-navigation.md)
+- [Android Auto](../auto-car.md)
+- [CarPlay](../car-play.md)

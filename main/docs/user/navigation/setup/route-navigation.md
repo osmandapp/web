@@ -477,3 +477,13 @@ Unfortunately, once the necessary maps are loaded, you must to enter the start a
 
 
 ## Related Articles
+
+- [Route parameters](../routing/routing-types.md)
+- [Route details](./route-details.md)
+- [Navigation by track](./gpx-navigation.md)
+- [Navigation by markers](./markers-navigation.md)
+- [Navigation settings](../guidance/navigation-settings.md)
+- [Map screen during navigation](../guidance/map-during-navigation.md)
+- [Voice prompts / Notifications](../guidance/voice-navigation.md)
+- [Android Auto](../auto-car.md)
+- [CarPlay](../car-play.md)

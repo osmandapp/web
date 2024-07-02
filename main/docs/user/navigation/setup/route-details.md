@@ -333,3 +333,15 @@ The Route Details navigation section has options that allow you to perform certa
 
 
 ## Related Articles
+
+- [Route parameters](../routing/routing-types.md)
+- [Route preparation](./route-navigation.md)
+- [Navigation by track](./gpx-navigation.md)
+- [Navigation by markers](./markers-navigation.md)
+- [Navigation settings](../guidance/navigation-settings.md)
+- [Map screen during navigation](../guidance/map-during-navigation.md)
+- [Voice prompts / Notifications](../guidance/voice-navigation.md)
+- [Android Auto](../auto-car.md)
+- [CarPlay](../car-play.md)
+
+> *This article was last updated in July 2024*

@@ -271,4 +271,13 @@ The Turn Arrows setting allows you to select whether or not turn arrows are disp
 
 ## Related Articles
 
+- [Route parameters](../routing/routing-types.md)
+- [Route preparation](../setup/route-navigation.md)
+- [Navigation by track](../setup/gpx-navigation.md)
+- [Navigation by markers](../setup/markers-navigation.md)
+- [Route details](../setup/route-details.md)
+- [Navigation settings](./navigation-settings.md)
+- [Voice prompts / Notifications](./voice-navigation.md)
+- [Android Auto](../auto-car.md)
+- [CarPlay](../car-play.md)
 

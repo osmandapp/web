@@ -242,4 +242,14 @@ After one *Marker* is been [passed](#mark-as-passed), the next one in the [list]
 ## Related Articles
 
 - [About Map markers](../../personal/markers.md).
-- [Marker widget](../../widgets/markers.md).
+- [Marker widget](../../widgets/markers.md).  
+__
+- [Route parameters](../routing/routing-types.md)
+- [Route preparation](./route-navigation.md)
+- [Route details](./route-details.md)
+- [Navigation by track](./gpx-navigation.md)
+- [Navigation settings](../guidance/navigation-settings.md)
+- [Map screen during navigation](../guidance/map-during-navigation.md)
+- [Voice prompts / Notifications](../guidance/voice-navigation.md)
+- [Android Auto](../auto-car.md)
+- [CarPlay](../car-play.md)
