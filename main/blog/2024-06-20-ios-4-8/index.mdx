@@ -25,19 +25,40 @@ You can download the update right now from the [AppStore](https://itunes.apple.c
 
 <!--truncate-->
 
-## What's new
+**What's new**
 
-• New "Speedometer" widget compatible with CarPlay
-• Added Turn-by-turn instructions to route details
-• Configure the map screen by adding multiple "Quick Action" buttons
-• 3D Track Improvements: new visualization and colorization options
-• Added improved multi-selection mode for Tracks
-• Fixed names for bearing widgets
-• Add smooth transitions while zooming in 3D mode
-• Fixed "Radius ruler" visibility in all widget panels
-• "Location position on screen" is now in Configure Screen
-• Change "Wheel circumference" in BLE sensor settings
-• Added separate "Speed limit" navigation alert 
+
+<!--
+
+- New "Speedometer" widget compatible with CarPlay
+- Added Turn-by-turn instructions to route details
+- Customize the map screen by adding multiple "Quick Action" buttons
+- 3D Track Improvements: new visualization and colorization options
+- Added improved multi-selection mode for Tracks
+- 3D variant for location position icons
+- Weather: UI refresh, added wind animation
+- Add smooth transitions while zooming in 3D mode
+- "Location position on screen" is now in Configure Screen
+- Change "Wheel circumference" in BLE sensor settings
+- Added separate "Speed limit" navigation alert 
+- Fixed names for bearing widgets
+- Fixed "Radius ruler" visibility in all widget panels
+
+-->
+
+- New ["Speedometer" widget](#speedometer-widget) compatible with [CarPlay](#speedometer-for-carplay),
+- Added [Turn-by-turn instructions](#turn-by-turn-instructions) to route details,
+- Customize the map screen by adding multiple ["Quick Action" buttons](#custom-buttons),
+- [3D Track Improvements](#3d-track-updates): new visualization and colorization options
+- Added improved [multi-selection mode for Tracks](#multi-selection-for-my-tracks),
+- [3D variant](#3d-icons-of-my-location) for location position icons
+- Weather: UI refresh, added wind animation
+- Add smooth transitions while zooming in 3D mode
+- "Location position on screen" is now in Configure Screen
+- Change "Wheel circumference" in BLE sensor settings
+- Added separate "Speed limit" navigation alert 
+- Fixed names for bearing widgets
+- Fixed "Radius ruler" visibility in all widget panels
 
 
 
@@ -52,3 +73,60 @@ Possible tasks:
 - My Location 3D
 - Track Activity / Keywords
 - Apple watch sync Tracks
+
+
+## Speedometer widget
+
+For this release [new speedometer widget](https://osmand.net/docs/user/widgets/info-widgets/#speedometer) was added. In the widget settings you can choose three speedometer sizes, speed limit tolerance and warning. 
+
+![Speedometer](@site/static/img/widgets/speedometer_2_ios.png) 
+
+### Speedometer for CarPlay
+
+For [CarPlay the Speedometer widget](https://osmand.net/docs/user/navigation/car-play#speedometer) was added too. The Speedometer widget is profile dependent, so if you change the settings for one profile, they will not be applied to another
+
+![CarPlay screen](@site/static/img/navigation/auto-car/speedometer_carplay_2_ios.png) 
+
+
+## Turn-by-turn instructions
+
+[Turn-by-turn information](https://osmand.net/docs/user/navigation/setup/route-details/#turn-by-turn-information) provides detailed instructions for navigating your route. Instructions include information about moving along the route.
+
+![Navigation route Android](@site/static/img/navigation/route/navigation_turn_ios.png) 
+
+## Custom buttons
+
+In this update, we've introduced Custom Buttons, a unique type of [Quick action](https://osmand.net/docs/user/widgets/quick-action#custom-buttons) tool. This means users can now create a custom action button for their device's screen.
+
+_Menu → Configure screen → Buttons → Custom buttons → + → Add button_
+
+![Custom button](./img/custom_button.png) ![Custom button](./img/custom_button_1.png)
+
+## 3D track updates
+
+Improved [3D track appearance](https://osmand.net/docs/user/map/tracks-on-map/track-appearance#3d-track). More options for Wall color: Altitude, Slope, Speed, Heart rate, Bicycle Cadence, Bicycle Power, Temperature and others.
+
+![3D track](./img/3d_track.png)
+
+
+## Multi-selection for My Tracks
+
+
+[This menu item](https://osmand.net/docs/user/personal/tracks/manage-tracks#three-dot-menu) allows you [to select the folders and routes](https://osmand.net/docs/user/personal/tracks/manage-tracks#selection-mode) you need to manage them further.
+
+_Menu → My Places → Tracks → &#8230; → Select_
+
+![Multi selection on My Tracks](./img/multi_selection.png) ![Multi selection on My Tracks](./img/multi_selection_1.png)
+
+## 3D icons of My Location
+
+3D icons for [My Location](https://osmand.net/docs/user/personal/profiles#profile-appearance) have been added.
+
+![3D icon](./img/3d_icon.png)
+
+
+
+
+## Others
+
+- Added [Context menu for tracks](https://github.com/osmandapp/OsmAnd-iOS/issues/3488) in Configure map,

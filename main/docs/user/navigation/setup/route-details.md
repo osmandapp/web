@@ -282,7 +282,11 @@ Instructions include information about moving along the route, such as:
 - *[Lanes](../../widgets/nav-widgets.md#lanes) layout for the current road.*
 
 
-### Print (Android)
+### Print
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 ![route details](@site/static/img/navigation/route/route_details_print-2.png)  
 
@@ -291,6 +295,16 @@ The **Print** feature of a turn-by-turn route description can be useful if you p
 A printed route description provides detailed turn-by-turn instructions on how to navigate your route, including the distance to the next turn, driving direction, and street or trail names, as well as distance and travel time information. This information can be useful when you are planning a trip and want to estimate the time and distance between different points on the route and determine the expected time of arrival.
 
 The ability **to print** or **save** turn-by-turn information **in pdf format** is especially useful when traveling long distances or in unfamiliar places when you need to have a more detailed idea of the route and the time it takes to get there.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly/>
+
+</TabItem>
+
+</Tabs> 
 
 
 ## Share / Export (Actions)
