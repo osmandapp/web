@@ -15,16 +15,102 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 
 # What's new
 
-- Speedometer + CarPlay
-- 3D Track (Finalize)
-- Track Filters 
-- Track UI (Sorting)
-- Track Change/Default appearance
-- Buttons Configure / Quick Actions (Mapping )
-- External Keyboard Mapping
+- New ["Speedometer" widget](#speedometer-widget) compatible with [CarPlay](#speedometer-for-carplay),
+- Added [Turn-by-turn instructions](#turn-by-turn-instructions) to route details,
+- Customize the map screen by adding multiple ["Quick Action" buttons](#custom-buttons),
+- [3D Track Improvements](#3d-track-updates): new visualization and colorization options
+- Added improved [multi-selection mode for Tracks](#multi-selection-for-my-tracks),
+- [3D variant](#3d-icons-of-my-location) for location position icons,
+- [Weather](#weather-tool-updates): UI refresh, added wind animation,
+- Added [smooth transitions](#smooth-transitions) while zooming in 3D mode,
+- ["Location position on screen"](#location-position-on-screen) is now in the "Configure Screen" menu,
+- Added separate ["Speed limit" navigation alert](#separate-speed-limit-alert), 
+- Changed ["Wheel circumference"](#others) in BLE sensor settings,
+- Fixed [names for bearing widgets](#others),
+- Fixed ["Radius ruler" visibility](#others) in all widget panels
 
-Possible tasks:
-- Calculate Elevation (GPX)
-- My Location 3D
-- Track Activity / Keywords
-- Apple watch sync Tracks
+## Speedometer widget
+
+For this release, a [new speedometer widget](https://osmand.net/docs/user/widgets/info-widgets/#speedometer) has been added. In the widget settings, you can choose from three speedometer sizes, set the speed limit tolerance, and enable warnings.
+
+![Speedometer](@site/static/img/widgets/speedometer_2_ios.png) 
+
+### Speedometer for CarPlay
+
+The [Speedometer widget](https://osmand.net/docs/user/navigation/car-play#speedometer) has also been added for CarPlay. The Speedometer widget is profile-dependent, so if you change the settings for one profile, they will not be applied to another.
+
+![CarPlay screen](@site/static/img/navigation/auto-car/speedometer_carplay_2_ios.png) 
+
+## Turn-by-turn instructions
+
+[Turn-by-turn information](https://osmand.net/docs/user/navigation/setup/route-details/#turn-by-turn-information) provides detailed instructions for navigating your route. These instructions include information about your movements along the route.
+
+![Navigation route Android](@site/static/img/navigation/route/navigation_turn_ios.png) 
+
+## Custom buttons
+
+In this update, we've introduced Custom Buttons, a unique type of [Quick action](https://osmand.net/docs/user/widgets/quick-action#custom-buttons) tool. Users can now create a custom action button for their device's screen.
+
+_Menu → Configure screen → Buttons → Custom buttons → + → Add button_
+
+![Custom button](../../blog/2024-06-20-ios-4-8/img/custom_button.png) ![Custom button](../../blog/2024-06-20-ios-4-8/img/custom_button_1.png)
+
+## 3D track updates
+
+We have improved the [3D track appearance](https://osmand.net/docs/user/map/tracks-on-map/track-appearance#3d-track) and added more options for wall colors. You can now customize wall colors based on Altitude, Slope, Speed, Heart Rate, Bicycle Cadence, Bicycle Power, Temperature, and more.
+
+![3D track](../../blog/2024-06-20-ios-4-8/img/3d_track.png)
+
+## Multi-selection for My Tracks
+
+
+[This menu item](https://osmand.net/docs/user/personal/tracks/manage-tracks#three-dot-menu) allows you [to select the folders and routes](https://osmand.net/docs/user/personal/tracks/manage-tracks#selection-mode) you need for further management.
+
+_Menu → My Places → Tracks → &#8230; → Select_
+
+![Multi selection on My Tracks](../../blog/2024-06-20-ios-4-8/img/multi_selection.png) ![Multi selection on My Tracks](../../blog/2024-06-20-ios-4-8/img/multi_selection_1.png)
+
+## 3D icons of My Location
+
+3D icons for ["My Location"](https://osmand.net/docs/user/personal/profiles#profile-appearance) have been added.
+
+![3D icon](../../blog/2024-06-20-ios-4-8/img/3d_icon.png)
+
+## Weather tool updates
+
+[The Weather tool](https://osmand.net/docs/user/plugins/weather) has been updated with a refreshed UI, added wind animation, and new data source providers ([GFS](https://en.wikipedia.org/wiki/Global_Forecast_System) or [ECMWF](https://en.wikipedia.org/wiki/European_Centre_for_Medium-Range_Weather_Forecasts)).
+
+
+![Weather](../../blog/2024-06-20-ios-4-8/img/weather_ios.png)
+
+
+## Smooth transitions
+
+Smooth transitions have been added while [zooming in 3D mode](https://github.com/osmandapp/OsmAnd-iOS/issues/3802).
+
+
+## Location position on screen
+
+The ["Location position on screen"](https://osmand.net/docs/user/widgets/configure-screen/#display-position--location-position-on-screen) setting has been moved to the "Configure Screen" menu.
+
+_Menu → Configure screen → Other → Location position on screen_
+
+![Widget page](@site/static/img/widgets/conf_screen_display_position_ios.png) 
+
+## Separate Speed limit alert
+
+The ["Speed limit" screen alert](https://osmand.net/docs/user/navigation/guidance/navigation-settings/#screen-alerts) has been separated from the Traffic Warnings screen alert.
+
+![Navigation Settings](@site/static/img/navigation/navigation_settings_screen-alerts_new_ios.png)
+
+## Others
+
+- Added [Context menu for tracks](https://github.com/osmandapp/OsmAnd-iOS/issues/3488) in Configure map,
+- Fixed broken [Hazmat parameters](https://github.com/osmandapp/OsmAnd-iOS/issues/3761),
+- Fixed bug with [dublicates of Custom Plugins data](https://github.com/osmandapp/OsmAnd-iOS/issues/3739),
+- Added changing of ["Wheel circumference"](https://github.com/osmandapp/OsmAnd-iOS/issues/3503) in BLE [sensor settings](https://osmand.net/docs/user/plugins/external-sensors#sensors-settings),
+- Fixed [names for bearing widgets](https://github.com/osmandapp/OsmAnd-iOS/issues/3563),
+- Fixed ["Radius ruler" visibility](https://github.com/osmandapp/OsmAnd-iOS/issues/3656) in all widget panels,
+- Fixed [The Next Turn and Distance](https://github.com/osmandapp/OsmAnd-iOS/issues/3738) to Destination widgets,
+- Fixed bad visibility of text on [Next turn widget](https://github.com/osmandapp/OsmAnd-iOS/issues/3734) - CarPlay,
+- Fixed [Zoom search](https://github.com/osmandapp/OsmAnd-iOS/issues/3569).
