@@ -46,8 +46,10 @@ OsmAnd provides several ways to get to the *Search tool* where the **Address sea
 </Tabs>
 
 Address search simplifies the search and navigation process, ensures accuracy and usability, and reduces the time it takes to find the right address.  
-- To use the Address Search function, you have to [download a map](../start-with/download-maps.md) of the required area first . 
-- The search is based on the data located in the visible area of the map on the device screen. If you do not find anything, OsmAnd offers to increase the search radius.
+- **To use the Address Search function, you have to [download a map](../start-with/download-maps.md) of the required area first.**
+
+- *The search is based on the data located in the visible area of the map on the device screen. If you do not find anything, OsmAnd offers to increase the search radius.*
+
 - The address information in OsmAnd contains all [OSM tag keys](https://wiki.openstreetmap.org/w/index.php?title=Key:addr).
 
 You can perform an **Address Search** using 5 options such as:

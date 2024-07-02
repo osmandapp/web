@@ -496,14 +496,14 @@ All of these restrictions can be important for navigation and should be consider
 
 ## Related Articles
 
-- [Route parameters](./routing/routing-types.md)
-- [Route preparation](./setup/route-navigation.md)
-- [Navigation by track](./setup/gpx-navigation.md)
-- [Navigation by markers](./setup/markers-navigation.md)
-- [Route details](./setup/route-details.md)
-- [Map screen during navigation](./guidance/map-during-navigation.md)
-- [Voice prompts / Notifications](./guidance/voice-navigation.md)
-- [Android Auto](./auto-car.md)
-- [CarPlay](./car-play.md)
+- [Route parameters](../routing/routing-types.md)
+- [Route preparation](../setup/route-navigation.md)
+- [Navigation by track](../setup/gpx-navigation.md)
+- [Navigation by markers](../setup/markers-navigation.md)
+- [Route details](../setup/route-details.md)
+- [Map screen during navigation](./map-during-navigation.md)
+- [Voice prompts / Notifications](./voice-navigation.md)
+- [Android Auto](../auto-car.md)
+- [CarPlay](../car-play.md)
 
 > *This article was last updated in July 2024*
