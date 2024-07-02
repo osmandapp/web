@@ -14,11 +14,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-> *This article was last updated in July 2024.*
+> *This article was last updated in July 2024*
 
 ## Overview
 
-For successful navigation with the OsmAnd app, it's important to properly configure the appropriate settings according to your needs and depending on your mode of travel, whether it's by car, on foot, horseback riding, or skiing. This article describes the basic route parametrs, [Voice prompts](#voice-prompts), [Screen alerts](#screen-alerts), [Map behavior during navigation](#map-during-navigation), [Animation of your own position](#animate-own-position), and the [Appearance of route lines](#customize-route-line). In addition, vehicle settings are also detailed, such as [Default speed](#default-speed) and [Maximum/minimum speed](#road-speeds), [Engine type](#fuel-used-by-motor) for CO2 calculation, and [Size/weight](#size-parameters), which can also affect the route. Adjusting these settings will help you get the most out of using OsmAnd and reach your goal without too much effort or delay.
+For successful navigation, it's important to properly configure the appropriate settings according to your needs how you travel - by car, on foot, on horseback or on skis. This article describes the basic route parametrs, [Voice prompts](#voice-prompts), [Screen alerts](#screen-alerts), [Map behavior during navigation](#map-during-navigation), [Animation of your own position](#animate-own-position), and the [Appearance of route lines](#customize-route-line). It also details vehicle settings such as [Default speed](#default-speed) and [Maximum/minimum speed](#road-speeds), [Engine type](#fuel-used-by-motor) for CO2 calculation, and [Size/weight](#size-parameters), which can affect the route. Adjusting these settings will help you get the most out of using OsmAnd and reach your goal without unnecessary delay.
 
 <Tabs groupId="operating-systems">
 
@@ -43,7 +43,9 @@ This section presents the navigation settings necessary for calculating and plot
 There are three ways to access the Navigation settings menu. 
 
 - Go to the main *Menu → Settings*, select the required *Profile*, and tap *Navigation settings*.
+
 - Tap the *Navigation* icon on the map screen, than select the *Settings icon → Navigation settings*.
+
 - Go to the main *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,routing_settings_2"/>*.  
 
 :::info
@@ -103,7 +105,7 @@ The navigation type determines which rules are used to calculate routes. If you 
 For each [profile](../../personal/global-settings.md#default-profile), except for *Browse Map*, OsmAnd selects by default the optimal [Navigation type](#navigation-type) and the relevant [route parameters](../routing/routing-types.md). However, you can choose any type you like and change the parameters depending on your preferences and the external conditions of the upcoming trip.  
 
 All route parameters are described in detail in the corresponding sections of the documentation:  
-*[Car routing (Truck, Motorcycle)](../routing/car-based-routing.md)*, *[Bicycle  routing (MTB)](../routing/bicycle-based-routing.md)*, *[Moped routing](../routing/moped-routing.md)*, *[Pedestrian routing](../routing/pedestrian-routing.md)*, *[Public Transport routing](../routing/public-transport-navigation.md)*, *[Horseback routing](../routing/horse-routing.md)*, *[Skiing routing](../routing/ski-routing.md)*, *[Train routing](../routing/train-routing.md)*, [Boat routing](../routing/boat-navigation.md)*, *[Direct-to-point routing](../routing/direct-to-point-routing.md)*, *[Straight line routing](../routing/straight-line-routing.md)*, *[Online routing](../routing/online-routing.md)*, *[BRouter routing](../routing/brouter.md)*.  
+*[Car routing (Truck, Motorcycle)](../routing/car-based-routing.md), [Bicycle  routing (MTB)](../routing/bicycle-based-routing.md), [Moped routing](../routing/moped-routing.md), [Pedestrian routing](../routing/pedestrian-routing.md), [Public Transport routing](../routing/public-transport-navigation.md), [Horseback routing](../routing/horse-routing.md), [Skiing routing](../routing/ski-routing.md), [Train routing](../routing/train-routing.md), [Boat routing](../routing/boat-navigation.md), [Direct-to-point routing](../routing/direct-to-point-routing.md), [Straight line routing](../routing/straight-line-routing.md), [Online routing](../routing/online-routing.md), [BRouter routing](../routing/brouter.md)*.  
 
 
 ### Recalculate route
@@ -202,7 +204,9 @@ A detailed description of the voice prompts settings is written in the first par
 
 Audio instructions during navigation help you as a driver or pedestrian get to your destination while [navigating a selected route](../setup/route-navigation.md). They contain information about turns, driving directions, road signs, distances to your destination, and other factors that may affect your navigation.  
 
-*Voice prompts* allow you to focus on the road and not be distracted by the map or navigation device. They also improve driving safety and reduce the time it takes to navigate in unfamiliar terrain, and can be useful for different [types of routes](../routing/routing-types.md).
+If you select a track as your destination point, you have to use the [Attach to the roads](../setup/gpx-navigation.md#attach-to-roads) option for the voice prompts to work correctly.
+
+*Voice prompts* allow you to focus on the road and not be distracted by the map or navigation device. They also improve driving safety, reduce the time it takes to navigate unfamiliar terrain, and can be useful for different [types of routes](../routing/routing-types.md).
 
 
 ## Screen alerts
@@ -257,13 +261,13 @@ The types of warnings have a different visual appearance, which depends on the t
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
 </TabItem>
 
 </Tabs>
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_map-during-1_andr.png)   ![Navigation Settings Android](@site/static/img/navigation/navigation_settings_map-during-3_andr.png)  
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_map-during-1_andr.png)   
 
 The **map is used during navigation** to determine your location, plan your route, and land orientation. During navigation, you can view the map with *auto-center*, move it around, and *zoom in and out* to see the required area. The map can also display markers indicating points of interest, routes, weather conditions, road signs, and other objects that can help you navigate. The map can be updated in *real-time* and displays *up-to-date information* that can affect route planning.
 
@@ -274,7 +278,10 @@ You can find out how the map behavior changes during navigation in OsmAnd app in
 
 ![Navigation Settings Android](@site/static/img/navigation/navigaton_settings_animate-own-position_ios.png) 
 
-This setting is available in different places in the OsmAnd app for the Android version and for the iOS version. In *Android*, it is located in the [Other](../../personal/profiles.md#other) section of the *General Settings* menu. In *iOS* it is located in [Navigation settings](../../personal/profiles.md#navigation-settings). For more details see *Map screen during navigation*, section [Animate own position](../../navigation/guidance/map-during-navigation.md#animate-own-position).  
+This setting is available in different places in the OsmAnd app. 
+- *Android* version. It is located in the [Other](../../personal/profiles.md#other) section of the *General Settings* menu. 
+- *iOS* version/ It is located in [Navigation settings](../../personal/profiles.md#navigation-settings). 
+- For more details see *Map screen during navigation* article, section [Animate own position](../../navigation/guidance/map-during-navigation.md#animate-own-position).  
 
 
 ## Customize route line
@@ -344,7 +351,7 @@ Correctly setting the parameters in the OsmAnd app will help you avoid problems 
 
 <TabItem value="ios" label="iOS">
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_ios.png)   ![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds-r_ios.png)
+![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_ios.png) 
 
 </TabItem>
 
@@ -353,10 +360,10 @@ Correctly setting the parameters in the OsmAnd app will help you avoid problems 
 For all types of navigation the minimum and maximum allowable speed, both by default and by road, can be different, according to certain values ([Default speed limits](https://wiki.openstreetmap.org/wiki/Default_speed_limits)) and restrictions for vehicles. The speed is also set in certain increments to make the application settings maximum usable. For the *Walking*, *Horseback riding* and *Cycling* profiles, in small increments equivalent to 0.1 km/h ([Units & formats](https://osmand.net/docs/user/personal/profiles#units--formats)), and for the other profiles, in increments equivalent to 1 km/h.  
 Speed settings are used to determine when [voice announcements](../guidance/voice-navigation.md) are activated. 
 
-These parameters are used as speed to estimate the [arrival time](../../widgets/nav-widgets.md#arrival-time-or-time-to-go) when the speed cannot be determined from the map data:
-- For the selected profile.
-- If the used roads have no speed limits, which can also affect the routing.
-- If user generated or imported tracks are selected.   
+These parameters are used as speed to estimate the [arrival time](../../widgets/nav-widgets.md#arrival-time-or-time-to-go) when speed cannot be determined from map data:
+- for the selected profile;
+- if the used roads have no speed limits, which can also affect the routing;
+- if user generated or imported tracks are selected.   
 
 
 #### Default speed 
@@ -365,6 +372,23 @@ The **Default speed** is the preset movement speed. It is used to calculate the 
 
 
 #### Road speeds
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds-r_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
 
 :::note
 These settings in iOS are available in *Menu → Settings → app profile → Navigation settings → Route parameters → Road speeds*.
