@@ -27,35 +27,18 @@ You can download the update from the [AppStore](https://itunes.apple.com/us/app/
 
 **What's new**
 
-
-<!--
-
-- New "Speedometer" widget compatible with CarPlay
-- Added Turn-by-turn instructions to route details
-- Customize the map screen by adding multiple "Quick Action" buttons
-- 3D Track Improvements: new visualization and colorization options
-- Added improved multi-selection mode for Tracks
-- 3D variant for location position icons
-- Weather: UI refresh, added wind animation
-- Add smooth transitions while zooming in 3D mode
-- "Location position on screen" is now in Configure Screen
-- Change "Wheel circumference" in BLE sensor settings
-- Added separate "Speed limit" navigation alert 
-- Fixed names for bearing widgets
-- Fixed "Radius ruler" visibility in all widget panels
-
--->
-
 - New ["Speedometer" widget](#speedometer-widget) compatible with [CarPlay](#speedometer-for-carplay),
 - Added [Turn-by-turn instructions](#turn-by-turn-instructions) to route details,
 - Customize the map screen by adding multiple ["Quick Action" buttons](#custom-buttons),
-- [3D Track Improvements](#3d-track-updates): new visualization and colorization options
+- [3D Track Improvements](#3d-track-updates): new visualization and colorization options,
 - Added improved [multi-selection mode for Tracks](#multi-selection-for-my-tracks),
 - [3D variant](#3d-icons-of-my-location) for location position icons,
+- [Color palette files](#color-palettes): use & Import/Extport,
 - [Weather](#weather-tool-updates): UI refresh, added wind animation,
 - Added [smooth transitions](#smooth-transitions) while zooming in 3D mode,
 - ["Location position on screen"](#location-position-on-screen) is now in the "Configure Screen" menu,
 - Added separate ["Speed limit" navigation alert](#separate-speed-limit-alert), 
+- [OSM Editing](#osm-login): deleted login / password authorization method,
 - Changed ["Wheel circumference"](#others) in BLE sensor settings,
 - Fixed [names for bearing widgets](#others),
 - Fixed ["Radius ruler" visibility](#others) in all widget panels
@@ -88,7 +71,7 @@ _Menu → Configure screen → Buttons → Custom buttons → + → Add button_
 
 ## 3D track updates
 
-We have improved the [3D track appearance](https://osmand.net/docs/user/map/tracks-on-map/track-appearance#3d-track) and added more options for wall colors. You can now customize wall colors based on Altitude, Slope, Speed, Heart Rate, Bicycle Cadence, Bicycle Power, Temperature, and more.
+We have improved the [3D track appearance](https://osmand.net/docs/user/map/tracks-on-map/track-appearance#3d-track) and added more options for wall colors. You can now customize wall colors based on _Altitude, Slope, Speed, Heart Rate, Bicycle Cadence, Bicycle Power, Temperature_, and more.
 
 ![3D track](./img/3d_track.png)
 
@@ -107,9 +90,32 @@ _Menu → My Places → Tracks → &#8230; → Select_
 
 ![3D icon](./img/3d_icon.png)
 
+## Color Palettes
+
+For this release you can use (export/import) color palette files for:
+- [Route](https://osmand.net/docs/user/navigation/guidance/map-during-navigation#color): Speed, Slope, Elevation (Altitude).
+- [Terrain](https://osmand.net/docs/user/plugins/contour-lines#hillshade--slope): Hillshade, Slope.
+- [Weather](https://osmand.net/docs/user/plugins/weather#weather-layers): All weather layers.
+
+Users can create and add their own color palettes. Simply compose your TXT file with the following names: _Terrain_ - `height_altitude_name.txt`, `hillshade_color_name.txt`, `slope_name.txt`, _Routes_ - `route_speed_name.txt`, `route_slope_default.txt`, `route_elevation_default.txt`, _Weahter_ - `weather_name.txt`
+
+*height_altitude_0-200.txt*
+
+```
+# 0 - 90 degree RGBA
+0,46,185,0,191
+# yellow 
+100,255,222,2,227
+# red
+200,255,1,1,255
+# violet
+220,130,1,255,255
+
+```
+
 ## Weather tool updates
 
-[The Weather tool](https://osmand.net/docs/user/plugins/weather) has been updated with a refreshed UI, added wind animation, and new data source providers ([GFS](https://en.wikipedia.org/wiki/Global_Forecast_System) or [ECMWF](https://en.wikipedia.org/wiki/European_Centre_for_Medium-Range_Weather_Forecasts)).
+[The Weather tool](https://osmand.net/docs/user/plugins/weather) has been updated with a refreshed UI, added wind animation, and two data source providers ⚙ ([GFS](https://en.wikipedia.org/wiki/Global_Forecast_System) or [ECMWF](https://en.wikipedia.org/wiki/European_Centre_for_Medium-Range_Weather_Forecasts)).
 
 
 ![Weather](./img/weather_ios.png)
@@ -134,6 +140,15 @@ The ["Speed limit" screen alert](https://osmand.net/docs/user/navigation/guidanc
 
 ![Navigation Settings](@site/static/img/navigation/navigation_settings_screen-alerts_new_ios.png)
 
+## OSM login
+
+Only [new OAuth 2.0](https://github.com/osmandapp/OsmAnd-iOS/issues/3736) will be supported from June 1st, 2024 onwards.
+
+- Remove the "Use username and password" button from:
+  - Main bottom sheet,
+  - Benefits for active OSM contributors.
+
+
 ## Others
 
 - Added [Context menu for tracks](https://github.com/osmandapp/OsmAnd-iOS/issues/3488) in Configure map,
@@ -144,4 +159,8 @@ The ["Speed limit" screen alert](https://osmand.net/docs/user/navigation/guidanc
 - Fixed ["Radius ruler" visibility](https://github.com/osmandapp/OsmAnd-iOS/issues/3656) in all widget panels,
 - Fixed [The Next Turn and Distance](https://github.com/osmandapp/OsmAnd-iOS/issues/3738) to Destination widgets,
 - Fixed bad visibility of text on [Next turn widget](https://github.com/osmandapp/OsmAnd-iOS/issues/3734) - CarPlay,
-- Fixed [Zoom search](https://github.com/osmandapp/OsmAnd-iOS/issues/3569).
+- Fixed [Zoom search](https://github.com/osmandapp/OsmAnd-iOS/issues/3569), 
+- Fixed [missed subway station icons](https://github.com/osmandapp/OsmAnd-iOS/issues/3711),
+- Fixed the [crash while downloading](https://github.com/osmandapp/OsmAnd-iOS/issues/3561) in the background,
+- Added [grouping of name-tag](https://github.com/osmandapp/OsmAnd-iOS/issues/3554) for Routes and POI's,
+- Fixed [Favorite points sizes](https://github.com/osmandapp/OsmAnd-iOS/issues/3641) on Mac OS,
