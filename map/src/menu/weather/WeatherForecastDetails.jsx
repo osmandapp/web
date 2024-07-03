@@ -251,16 +251,16 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
                                 ) : (
                                     <>
                                         <Typography className={styles.weekItemDay}>
-                                            {data?.day[currentWeatherType].max}
+                                            {data?.day[currentWeatherType]?.max}
                                         </Typography>
                                         <Typography className={styles.weekItemNight}>|</Typography>
                                         <Typography className={styles.weekItemNight}>
-                                            {data?.night[currentWeatherType].max}
+                                            {data?.night[currentWeatherType]?.max}
                                         </Typography>
                                     </>
                                 )}
                                 <Typography className={styles.weekItemUnit}>
-                                    {data?.day[currentWeatherType].units}
+                                    {data?.day[currentWeatherType]?.units}
                                 </Typography>
                             </div>
                         </MenuItem>

@@ -11,11 +11,16 @@ import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 
 export const useWeatherTypeChange = ({ ctx, currentLoc, setDayForecast = null, setWeekForecast = null }) => {
     function getForecastData({ lat, lon }) {
-        if (setDayForecast) {
-            fetchDayForecast({ lat, lon, ctx, setDayForecast }).then();
-        }
-        if (setWeekForecast) {
-            fetchWeekForecast({ lat, lon, ctx, setWeekForecast }).then(() => ctx.setForecastLoading(false));
+        if (setDayForecast && setWeekForecast) {
+            fetchDayForecast({ lat, lon, ctx, setDayForecast }).then(() =>
+                fetchWeekForecast({ lat, lon, ctx, setWeekForecast }).then(() => ctx.setForecastLoading(false))
+            );
+        } else {
+            if (setDayForecast) {
+                fetchDayForecast({ lat, lon, ctx, setDayForecast }).then();
+            } else if (setWeekForecast) {
+                fetchWeekForecast({ lat, lon, ctx, setWeekForecast }).then(() => ctx.setForecastLoading(false));
+            }
         }
     }
 
