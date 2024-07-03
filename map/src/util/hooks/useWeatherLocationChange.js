@@ -39,7 +39,6 @@ export const useWeatherLocationChange = ({
                     if (obj) {
                         const useCache = getWeatherDataFromCache({ lat: obj.lat, lon: obj.lon });
                         if (!useCache) {
-                            ctx.setForecastLoading(true);
                             setWeatherLoc(obj);
                             getForecastData(obj.lat, obj.lon);
                         }
