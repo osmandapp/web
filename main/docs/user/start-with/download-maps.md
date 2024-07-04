@@ -52,7 +52,7 @@ When you first launch the app, you will be prompted to download a map based on y
 
 If you are using a VPN, OsmAnd can offer you a regional map, giving you the option to choose a different map than your actual geography.  
 
-**Three-dot menu** in the upper right corner of the screen.    
+**3-dot menu** in the upper right corner of the screen.    
 
 <Tabs groupId="operating-systems">
 

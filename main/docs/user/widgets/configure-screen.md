@@ -404,7 +404,7 @@ Access to additional actions in the Configure screen are:
 - *Android*
     Located in Configure screen at the bottom of the screen in the *Actions* section: *Menu → Configure screen → Actions*.
 - *Android / iOS*
-    Located on the screens of each Panel in the three-dot menu in the upper right corner of the screen.
+    Located on the screens of each Panel in the 3-dot menu in the upper right corner of the screen.
 
 Available actions:
 - **Reset to default**. This feature allows you to reset all settings to default values if you want to start over, or use only the preset ones when starting OsmAnd.

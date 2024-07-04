@@ -97,7 +97,7 @@ You can read additional information in the [Tracks](../../personal/tracks/manage
 </Tabs>
 
 To show track on the map, you need to:
-- *Android* - tap the three-dots menu in the field with the required track.
+- *Android* - tap the 3-dot menu in the field with the required track.
 - *iOS* - long-tap the required track in the list.
 
 

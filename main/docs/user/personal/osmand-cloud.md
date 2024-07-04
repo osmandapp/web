@@ -186,7 +186,7 @@ The **Trash** feature allows you to view and manage files that have been deleted
 
     ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_3_andr.png)  
 
-    To free up space from all files deleted from the Cloud, you can use the *Empty Trash* feature. It is available from the three-dots menu in the upper right corner of the Trash screen. The files are deleted permanently, with no possibility of restoring them.
+    To free up space from all files deleted from the Cloud, you can use the *Empty Trash* feature. It is available from the 3-dot menu in the upper right corner of the Trash screen. The files are deleted permanently, with no possibility of restoring them.
 
 - **Managing separate files**.  
 
