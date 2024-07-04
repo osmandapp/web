@@ -19,14 +19,14 @@ function clickHandler({ ctx, file, layer }) {
     }
 }
 
-function addTrackToMap({ ctx, file, map, fit = true } = {}) {
+function addTrackToMap({ ctx, file, map, fit = false } = {}) {
     const layer = TrackLayerProvider.createLayersByTrackData({ data: file, ctx, map });
     if (!layer) {
         return null;
     }
     layer.on('click', () => clickHandler({ ctx, file, layer }));
 
-    if (fit) {
+    if (fit || file.zoomToTrack) {
         map.fitBounds(layer.getBounds(), fitBoundsOptions(ctx));
     }
     layer.addTo(map);
@@ -128,7 +128,7 @@ const CloudTrackLayer = () => {
         let processed = 0;
         const newGpxFiles = { ...ctx.gpxFiles } ?? {};
         Object.values(newGpxFiles).forEach((file) => {
-            if (file.url && !file.gpx && file.showOnMap) {
+            if (file.url && !file.gpx && (file.showOnMap || file.zoomToTrack)) {
                 processed++;
                 file.gpx = addTrackToMap({ ctx, file, map });
                 if (file.name === ctxTrack.name) {

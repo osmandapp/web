@@ -44,6 +44,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
     const [showMenu, setShowMenu] = useState(false);
     const [openTrackInfo, setOpenTrackInfo] = useState(false);
     const [displayTrack, setDisplayTrack] = useState(null); // null -> true/false -> null
+    const [zoomToTrack, setZoomToTrack] = useState(false);
     const anchorEl = useRef(null);
 
     let checkedSwitch = getCheckedSwitch();
@@ -101,17 +102,47 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
         }
     }, [displayTrack]);
 
+    useEffect(() => {
+        if (zoomToTrack) {
+            tempShowTrackOnMap();
+            setZoomToTrack(false);
+        }
+    }, [zoomToTrack]);
+
+    function tempShowTrackOnMap() {
+        if (!ctx.gpxFiles[file.name]?.url) {
+            openTrack({
+                setProgressVisible: setLoadingTrack,
+                showOnMap: false,
+                showInfo: false,
+                zoomToTrack: true,
+            }).then();
+        } else {
+            ctx.mutateGpxFiles((o) => (o[file.name].zoomToTrack = true));
+        }
+    }
+
+    useEffect(() => {
+        if (!openActions && ctx.gpxFiles[file.name]?.zoomToTrack) {
+            if (!ctx.gpxFiles[file.name]?.showOnMap) {
+                closeTrack(ctx, file);
+            } else {
+                ctx.mutateGpxFiles((o) => (o[file.name].zoomToTrack = false));
+            }
+        }
+    }, [openActions]);
+
     function showInfoBlock(hasUrl, file) {
         ctx.setUpdateInfoBlock(true);
         ctx.setCurrentObjectType(OBJECT_TYPE_CLOUD_TRACK);
         if (hasUrl) {
-            ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoom: true, cloudRedrawWpts: true });
+            ctx.setSelectedGpxFile({ ...ctx.gpxFiles[file.name], zoomToTrack: true, cloudRedrawWpts: true });
         } else {
             ctx.setSelectedGpxFile(Object.assign({}, file));
         }
     }
 
-    async function openTrack({ setProgressVisible, showOnMap = true, showInfo = false }) {
+    async function openTrack({ setProgressVisible, showOnMap = true, showInfo = false, zoomToTrack = false }) {
         // cleanup edited localTrack
         if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
             ctx.setCreateTrack({
@@ -124,12 +155,13 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
         // Watch out for file.url because this component was called using different data sources.
         // CloudTrackGroup uses ctx.tracksGroups (no-url) but VisibleGroup uses ctx.gpxFiles (url exists)
         if (ctx.gpxFiles[file.name]?.url) {
-            if (showOnMap) {
+            if (showOnMap || zoomToTrack) {
                 let newGpxFiles = Object.assign({}, ctx.gpxFiles);
                 if (!isEmpty(ctx.selectedGpxFile) && !isVisibleTrack(ctx.selectedGpxFile)) {
                     newGpxFiles[ctx.selectedGpxFile.name].url = null;
                 }
                 newGpxFiles[file.name].showOnMap = showOnMap;
+                newGpxFiles[file.name].zoomToTrack = zoomToTrack;
                 ctx.setGpxFiles({ ...newGpxFiles });
             }
             if (showInfo) {
@@ -163,6 +195,9 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
 
                 if (showOnMap) {
                     oneGpxFile.showOnMap = showOnMap;
+                }
+                if (zoomToTrack) {
+                    oneGpxFile.zoomToTrack = zoomToTrack;
                 }
                 ctx.mutateGpxFiles((o) => (o[file.name] = oneGpxFile));
                 if (showInfo) {
@@ -281,7 +316,12 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                     anchorEl={anchorEl}
                     setShowMenu={visible && setShowMenu}
                     actions={
-                        <TrackActions track={file} setDisplayTrack={setDisplayTrack} setOpenActions={setOpenActions} />
+                        <TrackActions
+                            track={file}
+                            setDisplayTrack={setDisplayTrack}
+                            setZoomToTrack={setZoomToTrack}
+                            setOpenActions={setOpenActions}
+                        />
                     }
                 />
                 {loadingTrack ? <LinearProgress /> : <></>}
