@@ -135,6 +135,8 @@ const CloudTrackLayer = () => {
                     ctx.setSelectedGpxFile((o) => ({ ...o, gpx: file.gpx, cloudRedrawWpts: true }));
                 }
                 registerCleanupFileLayer(file);
+            } else if (file.url && file.zoomToTrack && file.gpx) {
+                map.fitBounds(file.gpx.getBounds(), fitBoundsOptions(ctx));
             } else if (!file.url && file.gpx) {
                 processed++;
                 unregisterCleanupFileLayer(file);
