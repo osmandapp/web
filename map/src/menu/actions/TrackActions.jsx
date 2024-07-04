@@ -98,6 +98,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setZoomToTrack, setOp
                 className={styles.action}
                 onClick={() => {
                     setZoomToTrack(true);
+                    setOpenActions(false);
                 }}
             >
                 <ListItemIcon className={styles.iconAction}>

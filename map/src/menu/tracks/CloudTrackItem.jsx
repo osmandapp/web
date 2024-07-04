@@ -114,23 +114,14 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
             openTrack({
                 setProgressVisible: setLoadingTrack,
                 showOnMap: false,
-                showInfo: false,
+                showInfo: true,
                 zoomToTrack: true,
             }).then();
         } else {
             ctx.mutateGpxFiles((o) => (o[file.name].zoomToTrack = true));
+            showInfoBlock(true, file);
         }
     }
-
-    useEffect(() => {
-        if (!openActions && ctx.gpxFiles[file.name]?.zoomToTrack) {
-            if (!ctx.gpxFiles[file.name]?.showOnMap) {
-                closeTrack(ctx, file);
-            } else {
-                ctx.mutateGpxFiles((o) => (o[file.name].zoomToTrack = false));
-            }
-        }
-    }, [openActions]);
 
     function showInfoBlock(hasUrl, file) {
         ctx.setUpdateInfoBlock(true);
