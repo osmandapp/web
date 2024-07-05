@@ -16,8 +16,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-> *This article was last updated in June 2024*
-
 ## Overview
 
 :::tip NOTE
@@ -85,7 +83,8 @@ In order to start working with the plugin functionality, you need to download th
 
 For stable work and to save resources, you can download a map not of the entire country, but of its specific regions, if such regions are offered in the application. Information about the size of each map type is listed under their name.
 
-### How to download  
+
+### How to Download  
 
 <Tabs groupId="operating-systems">
 
@@ -139,7 +138,7 @@ For [**Contour lines**](#contour-lines), you need to determine in which [units](
 **The unit options are not interchangeable**, so if you need to switch from meters to feet or the reverse, you need to delete the previous version of the Contour Lines map in order to download the other version.
 
  
-## Contour lines
+## Contour Lines
 
 <Tabs groupId="operating-systems">
 
@@ -219,7 +218,7 @@ The **Terrain** option enables and allows you to customize two features such as 
 - *Terrain estimation.* It's convenient for visualizing the landscape, especially if you're walking or biking.
 
 
-#### Color scheme
+#### Color Scheme
 
 | Hillshade | Slope | Menu |
 | ------ | ------- | ------- | 
@@ -241,20 +240,20 @@ Each color corresponds to an angle of deviation from the horizontal.
 
 The *Visibility* function is used to adjust the transparency of the shadows for Hillshade and the colors used to represent the angle in the Slope parameter.
 
-#### Zoom levels 
+#### Zoom Levels 
 
 ![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 The *Scale Levels* function allows you to set the minimum and maximum values of map zoom levels, ranging from 4 to 19, at which the Hillshade or Slope map layers will be displayed.
 
-#### Cache size
+#### Cache Size
 
 **Cache size** is an information section that shows the amount of memory on your device that is used for *Terrain*. Each time you view *Hillshade* or *Slope* information on a map, all of this data is temporarily stored in the cache for quick access and later use, avoiding additional load on your device's processor.  
 
 **Clearing the cache** is sometimes necessary to free up space on your device or to troubleshoot possible productivity issues. To clear the cache you need to go to the *System Settings* of the device, then the path can be as follows: *Applications → OsmAnd → Storage → Clear cache*.
 
 
-### Interaction with Rendering version
+### Interaction with Rendering Version
 
 **Hillshade** and **Slope** are displayed and adjusted in any selected [Map rendering engine](../personal/global-settings.md#map-rendering-engine).
 
@@ -300,7 +299,6 @@ Follow the steps below to display 3D Relief on the OsmAnd map:
 - Download the [Terrain map (3D)](../plugins/contour-lines.md#how-to-download) of the regions, if necessary.
 
 
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -321,17 +319,14 @@ Follow the steps below to display 3D Relief on the OsmAnd map:
  
 </Tabs>
 
-### Vertical exaggeration
 
-_Vertical exaggeration_ is a special coefficient for _3D relief_. You can change a scale (Vertical exaggeration) from x1 to x3. This feature allows to view the contours of smoother topography with enhanced detail.:
-
-- **Android**: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>(enabled) → Vertical exaggeration* 
-- **iOS**: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>(enabled) → Vertical exaggeration*
+### Vertical Exaggeration
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
+*<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/> → Vertical exaggeration*
 
 ![Vertical exaggeration Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
 
@@ -339,13 +334,15 @@ _Vertical exaggeration_ is a special coefficient for _3D relief_. You can change
 
 <TabItem value="ios" label="iOS">
 
+*<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/> → Vertical exaggeration*
+
 ![Vertical exaggeration iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
 
 </TabItem>
  
 </Tabs>
 
-
+*Vertical exaggeration* is a special coefficient for *3D relief*. You can change the scale (*Vertical exaggeration*) from x1 to x3. This feature allows you to view smoother terrain contours with increased detail.
 
 
 ### Hillshade and 3D Relief
@@ -362,7 +359,7 @@ If you **disable** *Hillshade* and **enable** *3D Relief*, relief shadows will s
 When **Hillshade** is **enabled**, an image with relief shadows appears more detailed, darker, and more stepped than a *3D Relief* image. The explanation is that *Hillshade* emphasizes the gradients and contrasts of the terrain, creating a sharper and more detailed image. Whereas *3D Relief* gives the map a more plastic and smooth look, which can soften the terrain and remove some detail.  
 
 
-## Combine layer types
+## Combine Layer Types
 
 <Tabs groupId="operating-systems">
 
@@ -385,5 +382,7 @@ OsmAnd allows you to combine all three types of map layers: Contour lines, separ
 - The combination of **Contour lines** and **Hillshade** is optimal for visual and numerical estimation of mountain slope steepness. 
 - The combination of **Contour lines** and **Slope** layers is best for estimating slope steepness and finding points with the same height.
 - The combination of **3D Relief** and **Hillshade** layers allows you to get a more realistic and visual representation of the terrain, its relief, and landscape details. This combination is especially suitable for mountainous and hilly terrain.
+
+> *This article was last updated in July 2024*
 
 
