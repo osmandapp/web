@@ -17,14 +17,14 @@ export default async function test() {
     // check actions Show/Hide
     await clickBy(By.id(`se-actions-${trackName}`));
     await waitBy(By.id('se-track-actions'));
-    await clickBy(By.id('se-show-on-map-action'));
+    await clickBy(By.id('se-show-track-action'));
 
     await waitByRemoved(By.id('se-infoblock-all'));
     await checkElementByCss('img[src*="point_finish"]');
 
     await clickBy(By.id(`se-actions-${trackName}`));
     await waitBy(By.id('se-track-actions'));
-    await clickBy(By.id('se-hide-from-map-action'));
+    await clickBy(By.id('se-hide-track-action'));
 
     await waitByRemoved(By.id('se-infoblock-all'));
     await checkElementByCss('img[src*="point_finish"]', false);
@@ -32,7 +32,7 @@ export default async function test() {
     // check visible tracks
     await clickBy(By.id(`se-actions-${trackName}`));
     await waitBy(By.id('se-track-actions'));
-    await clickBy(By.id('se-show-on-map-action'));
+    await clickBy(By.id('se-show-track-action'));
     await waitBy(By.id('se-visible-tracks-menu'));
     await clickBy(By.id('se-visible-tracks-menu'));
     await waitBy(By.id(`se-new-visible-track-${trackName}`));
