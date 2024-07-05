@@ -47,7 +47,7 @@ Categories screen is list of POI categories and additional actions buttons below
 
 Actions button:
 
-- &nbsp;<Translate android="true" ids="search_online_address"/> (Android) - allows to use [online POI search](../search/search-poi.md#online-search-android).
+- &nbsp;<Translate android="true" ids="search_online_address"/> (*Android*) - allows to use [online POI search](../search/search-poi.md#online-search-android).
 - &nbsp;<Translate android="true" ids="custom_search"/> / <Translate ios="true" ids="add_custom_category"/> - allow to create [custom POI search and custom POI filter](../search/search-poi.md).
 - &nbsp;<Translate android="true" ids="rearrange_categories"/> - allows to change the list order and hide categories. [Import or export all changes as profiles](../personal/import-export.md).
 - &nbsp;<Translate ios="true" ids="delete_custom_categories"/> - allows to delete [custom categories](../search/search-poi.md).
@@ -220,7 +220,7 @@ In [Categories menu](../search/search-poi.md#how-to-use) there is the button "On
 
 ![Online search Android](@site/static/img/search/online_search_android.png)
 
-If OsmAnd can not find something you can increase search radius by tapping to "Increase search radius" button.
+If OsmAnd can not find something you can increase search radius by tapping to *Increase search radius* button.
 
 Or if you don't have any result you can provide feedback by clicking to "Send" button below device screen.
 

@@ -14,8 +14,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-
-
 ## Overview
 
 *Search History* is a record of all searches and locations that you have entered or searched for in the app over the period of use. This tool allows you to easily find and access previously searched locations, which makes navigation easier and saves your time.   
@@ -29,7 +27,7 @@ OsmAnd provides several ways to view your search history.
 - Search history is available in [Android Auto](../navigation/auto-car.md#search) and [CarPlay](../navigation/car-play.md#search).
 
 
-## How to use
+## How to Use
 
 <Tabs groupId="operating-systems">
 
@@ -60,7 +58,7 @@ The search history serves to provide relevant information about your previous ac
 - *Delete entries*. Search History provides the ability to [delete](#delete) previous entries, which can be useful for confidentiality or to keep your history organized.
 
 
-## History items
+## History Items
 
 <Tabs groupId="operating-systems">
 
@@ -84,19 +82,17 @@ The search history serves to provide relevant information about your previous ac
 - Distance from the your current location to the point and direction by compass.
 
 
+### Order of Items
 
-### Order of items
 - **Recent Items**. The most recent requests or locations are displayed at the top of the list. This allows quick access to recently used items.
 - **Chronological order**. Items in the Search History list are arranged in chronological order, starting with the oldest or earliest entries and ending with the most recent or latest. Old items gradually move down the list as new entries are added, unless old items in the search history have been used, in which case they will be moved to the top of the list.
 - In iOS the list is sorted by month.
 
-### Type of objects
+### Type of Objects
 
 The following **types of objects** get into the Search History list:
 - **Locations**. This can be an address, business name, route number, coordinates, markers, points of interest, OSM notes, or places you tapped on the map.
 - **Tracks and Waypoints**. The list includes tracks you created, recorded, or downloaded that you used in previous routes, and waypoints if you navigated to them separately.
-
-
 
 
 ## Actions

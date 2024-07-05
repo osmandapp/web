@@ -14,8 +14,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-
-
 ## Overview
 
 **OsmAnd Coordinate search** allows you to find a specific location by latitude and longitude. This type of search helps to identify a location accurately. It is especially useful for areas that do not have precise addresses, or for specific geographic tasks such as creating geofences or precise positioning in open space.   
@@ -27,7 +25,7 @@ OsmAnd provides several ways to get to the *Search tool → [Address search tab]
 - When preparing to start a route, tap *Navigation → Set destination → Search field → Address tab → Coordinates Search*.  
 
 
-## How to use
+## How to Use
 
 <Tabs groupId="operating-systems">
 
@@ -59,7 +57,7 @@ Coordinates can be entered in any available format, but the found location is di
 - *Location sharing*. Searching by coordinates provides a convenient way to enter information. You can enter coordinates manually or copy them from other sources. This can be useful when sharing locations with others or using previously obtained coordinates.
 
 
-## Coordinate format
+## Coordinate Format
 
 There are several ways to enter coordinates for the search. To use each of them, it is very important to follow the input rules, otherwise the application will not be able to find the location.    
 
