@@ -18,7 +18,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-**Search** is a useful tool for quickly finding locations. You can use search to find a location by address, coordinates, points of interest (POIs), or previous searches. [*Address search*](#address-search) allows you to enter the address you are looking for to get an exact location. [*Сoordinates*](#coordinates-search) search allows you to enter geographic coordinates such as latitude and longitude. [*POI Search*](#poi-search) allows you to search for nearby places in specific categories, such as cafes, hotels, or filling stations. And [*Search History*](#history-search) saves past searches for quick access to previously found places. The search feature makes it easy to plan trips, navigate unknown terrain, and find places of interest nearby.
+**Search** is a useful tool for quickly finding locations. You can use search to find a location by address, coordinates, points of interest (POIs), or previous searches. Search [*Address*](#search-address) allows you to enter the address you are looking for to get an exact location. [*Сoordinates*](#search-coordinates) search allows you to enter geographic coordinates such as latitude and longitude. Search [*POI*](#search-poi) allows you to search for nearby places in specific categories, such as cafes, hotels, or filling stations. And search [*History*](#search-history) saves past searches for quick access to previously found places. The search feature makes it easy to plan trips, navigate unknown terrain, and find places of interest nearby.
 
 
 ## How to use
@@ -33,24 +33,19 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="ios" label="iOS">
 
-![Search POI list iOS](@site/static/img/search/poi_list_ios.png)  
+![Search POI list iOS](@site/static/img/search/poi_list_1_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-**Please note:** to accomplish some of these tasks (locate addresses, POI, etc.) you will need to have the offline vector map file. Initially, the search is based on data located on the map in the visible area of the device screen. If you don't find nothing, OsmAnd propose to increase search radius.
+You need to follow one of the steps to start your search: 
+- The [*Search button*](../widgets/map-buttons.md#search) on the map application screen *→ enter a search query*.
+- Go to the main *Menu → Search → enter a search query*.
+- When preparing to start a route, tap [*Navigation → Set destination → Search field*](../navigation/setup/route-navigation.md#set-target-point).  
 
-For starting search points you need to click to [Search button on the screen](../widgets/map-buttons.md#search) -> <Translate android="true" ids="search_categories"/>
-
-Categories screen is list of POI categories and additional actions buttons below of the list.  
-
-Actions button:
-
-- &nbsp;<Translate android="true" ids="search_online_address"/> (*Android*) - allows to use [online POI search](../search/search-poi.md#online-search-android).
-- &nbsp;<Translate android="true" ids="custom_search"/> / <Translate ios="true" ids="add_custom_category"/> - allow to create [custom POI search and custom POI filter](../search/search-poi.md).
-- &nbsp;<Translate android="true" ids="rearrange_categories"/> - allows to change the list order and hide categories. [Import or export all changes as profiles](../personal/import-export.md).
-- &nbsp;<Translate ios="true" ids="delete_custom_categories"/> - allows to delete [custom categories](../search/search-poi.md).
+*Downloaded offline vector maps are required to search with OsmAnd*.  
+Initially, **the search is based on the data located on the map in the visible area of the device screen**, but if nothing is found there, OsmAnd offers to increase the search radius.  
 
 Typical queries:
 - Coordinates all formats
@@ -105,13 +100,13 @@ In this search menu (Categories) it's easy way to find your [Favorites](../map/p
 Just you need to enter your favorite/waypoint name, first results will be your favorites/waypoints.
 
 
-## Address Search
+## Search Address
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Search Android](@site/static/img/search/search_address_andr.png) 
+![Search Android](@site/static/img/search/search_address_2_andr.png) 
 
 </TabItem>
 
@@ -123,31 +118,10 @@ Just you need to enter your favorite/waypoint name, first results will be your f
 
 </Tabs>
 
-*OsmAnd Address Search* is based on OpenStreetMap data and allows you to find location and directions to a specific address from a ready sorted list, as well as search by postal code or coordinates. This tool allows you to find the required addresses in a few taps, which reduces the search time and helps in case you don't remember the exact address. 
+**Search Address** uses OpenStreetMap data. This type of search allows you to find the location and direction to a specific address from a ready sorted list. Read more in the [Search Address](./search-address.md) article.
 
 
-### Coordinates Search
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Search Coordinates Android](@site/static/img/search/coordinates_search_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Search Coordinates iOS](@site/static/img/search/coordinates_search_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-*OsmAnd Coordinates Search*
-
-
-## History Search
+## Search History
 
 <Tabs groupId="operating-systems">
 
@@ -165,10 +139,10 @@ Just you need to enter your favorite/waypoint name, first results will be your f
 
 </Tabs> 
 
-*Search History* is a record of all searches and locations that you have entered or searched for in the app over the period of use. This tool allows you to easily find and access previously searched locations, which makes navigation easier and saves your time. 
+You can use the **Search History** to search again for previously found places or addresses or frequently visited places without having to re-enter the query.More details can be found in the [Search History](./search-history.md) article.
 
 
-## POI search
+## Search POI
 
 <Tabs groupId="operating-systems">
 
@@ -180,17 +154,13 @@ Just you need to enter your favorite/waypoint name, first results will be your f
 
 <TabItem value="ios" label="iOS">
 
-![Search POI iOS](@site/static/img/search/poi_search_ios.png)
+![Search POI iOS](@site/static/img/search/search_poi_categoties_1_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-In Categories menu user can start searching by typping line.
-
-OsmAnd starts to find names and categories of POI by entered words. First results will be categories, second resolts will be POI with additional info (full name, categorie name, direction and distance to POI, work time). Pressing to needed categorie opens POI list of this categorie. 
-
-Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of POI.
+The **Search POI** is a list, sorted by category, with which you can easily find places and services near your current location or a selected area on the map. Read the [Search POI](./search-poi.md) article for more information.
 
 
 ### Custom POI Search
@@ -199,32 +169,47 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 
 <TabItem value="android" label="Android">
 
-![Custom search Android](@site/static/img/search/search_custom_andr.png) 
+![Custom search Android](@site/static/img/search/search_custom_filter_andr.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Custom POI iOS](@site/static/img/search/custom_poi_ios.png)
+![Custom POI iOS](@site/static/img/search/custom_poi_filter_1_ios.png) 
 
 </TabItem>
 
 </Tabs>
 
+*Custom search* allows you to combine different POI categories to simplify and personalize your search, for example, if you need to find several types of services in a certain area or on a certain section of a route. For more details, see [Search POI](./search-poi.md#custom-poi-search) article.
 
-## Online search (Android)
 
-![Online search Android](@site/static/img/search/search_online_andr.png)  
+### Online search (Android)
 
-In [Categories menu](../search/search-poi.md#how-to-use) there is the button "Online search". Pressing to this button opens online search menu.
+![Online search Android](@site/static/img/search/search_online_2_andr.png)  
 
-![Online search Android](@site/static/img/search/online_search_android.png)
+OsmAnd provides an **online search** that works in real time, giving you quick access to search results. It is convenient to use when maps of the region are not available, but a constant and stable Internet connection is required. More details can be found in the [Search POI](./search-poi.md#online-search) article.
 
-If OsmAnd can not find something you can increase search radius by tapping to *Increase search radius* button.
 
-Or if you don't have any result you can provide feedback by clicking to "Send" button below device screen.
+## Search Coordinates
 
-![Online search feedback Android](@site/static/img/search/online_search_feedback_android.png)
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Search Coordinates Android](@site/static/img/search/coordinates_search_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Search Coordinates iOS](@site/static/img/search/coordinates_search_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+Coordinate search provides an accurate location. You can enter precise coordinates obtained, for example, from other sources such as a map, GPS device or online services, which is particularly useful when it comes to places that do not have an exact address. For more information, see the [Search Coordinates](./search-coordinates.md) article.
 
 
 ## Related Articles
