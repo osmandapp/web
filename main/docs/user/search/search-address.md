@@ -14,8 +14,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-> *This article was last updated in July 2024*
-
 ## Overview
 
 *OsmAnd Address Search* is based on OpenStreetMap data and allows you to find location and directions to a specific address from a ready sorted list, as well as search by postal code or coordinates. This tool allows you to find the required addresses in a few taps, which reduces the search time and helps in case you don't remember the exact address.  
@@ -33,7 +31,7 @@ OsmAnd provides several ways to get to the *Search tool* where the **Address sea
 
 <TabItem value="android" label="Android">
 
-![Search Android](@site/static/img/search/search_address_andr.png) 
+![Search Android](@site/static/img/search/search_address_2_andr.png) 
 
 </TabItem>
 
@@ -199,3 +197,5 @@ For more information about [United Kingdom Poscode data](https://github.com/hvdw
 - [Search History](./search-history.md)
 - [Search POI](./search-poi.md)
 - [Search Coordinates](./search-coordinates.md)
+
+> *This article was last updated in July 2024*

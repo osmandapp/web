@@ -88,7 +88,7 @@ The order of the elements in the list:
 
 <TabItem value="ios" label="iOS">
 
-![Search POI iOS](@site/static/img/search/poi_search_ios.png)
+![Search POI iOS](@site/static/img/search/search_poi_categoties_1_ios.png)
 
 </TabItem>
 
@@ -246,7 +246,7 @@ Description and how to use:
 
 <InfoAndroidOnly />
 
-![Search POI Android](@site/static/img/search/search_poi_online_andr.png)  
+![Search POI Android](@site/static/img/search/search_online_2_andr.png)  
 
 **Online Search** allows finding locations, addresses and points of interest in real-time. OsmAnd uses [Nominatim](https://nominatim.openstreetmap.org/ui/search.html), an online geocoder developed by OpenStreetMap that translates users' text queries into geographic coordinates and back ([*example*](#online-search-example-of-query)).  
 
@@ -279,7 +279,6 @@ https://nominatim.openstreetmap.org/search?format=xml&addressdetails=0&accept-la
 </details>
 
 
-
 ## Custom POI Search
 
 Custom POI Search is an advanced search feature that allows you to find POIs from different categories and combine them for a more accurate and personalized search. Unlike the standard POI search, which is limited to some predefined categories, Custom POI search provides the flexibility to select and combine different types of POIs.  
@@ -304,7 +303,11 @@ This functionality is especially useful in various cases:
 
 <TabItem value="ios" label="iOS">
 
+<!--
 ![Custom POI iOS](@site/static/img/search/custom_poi_ios.png)   ![Custom POI types iOS](@site/static/img/search/custom_poi_types_ios.png)
+-->
+
+![Custom POI iOS](@site/static/img/search/custom_poi_filter_1_ios.png)   ![Custom POI types iOS](@site/static/img/search/custom_poi_filter_2_ios.png)
 
 </TabItem>
 
