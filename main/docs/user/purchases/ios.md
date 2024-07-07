@@ -59,6 +59,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | [Monthly map updates](../personal/maps.md#update-maps) |  <details><summary>**Once a month** <br /> (with 2 days delay):</summary> * limited to 5 downloads (map update counts as download) </details> |  ✔ | ✔ |
 | <p>[Hourly map updates](../personal/maps.md#osmand-live)** </p> (1 hour delay) | - | - | ✔ | 
 | [Pro Features](#pro-features) | - | - | ✔ |
+| [3D Relief](../plugins/contour-lines.md#3d-relief) | - | - | ✔ |
 | [Topo data (Contour lines and Terrain)](../plugins/contour-lines.md) | - | ✔ | ✔ |
 | [3D track visualization](../map/tracks-on-map/track-appearance.md) | - | ✔ | ✔ |
 | [Nautical depths](../plugins/nautical-charts.md) | - | ✔ | ✔ |
@@ -91,6 +92,7 @@ At the moment, the Pro subscription has the following features:
 | :------------- | :------------- |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Backup and restore your data, synchronize data with [OsmAnd web portal](https://www.osmand.net/map). |
 | [Cross-platform](../personal/osmand-cloud.md#cross-platform) | Possibility to use OsmAnd Pro and OsmAnd Start on all platforms (Android ← → iOS → Web). |
+| [3D Relief](../plugins/contour-lines.md#3d-relief) | Allows you to have and observe a scale model of your neighborhood or an entire continent. |
 | [OsmAnd Live](../personal/maps.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement. |
 | [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map. |
 | [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changing the color and width of the route line during navigation. |

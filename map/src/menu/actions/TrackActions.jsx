@@ -2,11 +2,12 @@ import React, { forwardRef, useContext, useState } from 'react';
 import { Box, Divider, ListItemIcon, ListItemText, MenuItem, Paper, Typography } from '@mui/material';
 import styles from '../trackfavmenu.module.css';
 import { ReactComponent as ShowOnMapIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
-import { ReactComponent as HideFromMapIcon } from '../../assets/icons/ic_action_map_hide.svg';
 import { ReactComponent as DownloadIcon } from '../../assets/icons/ic_action_gsave_dark.svg';
 import { ReactComponent as DeleteIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
 import { ReactComponent as RenameIcon } from '../../assets/icons/ic_action_edit_outlined.svg';
 import { ReactComponent as DuplicateIcon } from '../../assets/icons/ic_action_copy.svg';
+import { ReactComponent as MakeTrackVisible } from '../../assets/icons/ic_action_show_outlined.svg';
+import { ReactComponent as HideTrackVisible } from '../../assets/icons/ic_action_hide_outlined.svg';
 import DeleteTrackDialog from '../../dialogs/tracks/DeleteTrackDialog';
 import Utils from '../../util/Utils';
 import TracksManager from '../../manager/track/TracksManager';
@@ -15,7 +16,7 @@ import AppContext from '../../context/AppContext';
 import { duplicateTrack } from '../../manager/track/SaveTrackManager';
 import { useTranslation } from 'react-i18next';
 
-const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref) => {
+const TrackActions = forwardRef(({ track, setDisplayTrack, setZoomToTrack, setOpenActions }, ref) => {
     const ctx = useContext(AppContext);
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
@@ -50,47 +51,75 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setOpenActions }, ref
         }
     }
 
+    const MakeTrackVisibleAction = () => {
+        return ctx.gpxFiles[track.name]?.showOnMap ? (
+            <MenuItem
+                id="se-hide-track-action"
+                className={styles.action}
+                onClick={() => {
+                    setDisplayTrack(false);
+                    setOpenActions(false);
+                }}
+            >
+                <ListItemIcon className={styles.iconAction}>
+                    <HideTrackVisible />
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography variant="inherit" className={styles.actionName} noWrap>
+                        Hide track
+                    </Typography>
+                </ListItemText>
+            </MenuItem>
+        ) : (
+            <MenuItem
+                id="se-show-track-action"
+                className={styles.action}
+                onClick={() => {
+                    setDisplayTrack(true);
+                    setOpenActions(false);
+                }}
+            >
+                <ListItemIcon className={styles.iconAction}>
+                    <MakeTrackVisible />
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography variant="inherit" className={styles.actionName} noWrap>
+                        Make track visible
+                    </Typography>
+                </ListItemText>
+            </MenuItem>
+        );
+    };
+
+    const ShowOnMapAction = () => {
+        return (
+            <MenuItem
+                id="se-show-on-map-action"
+                className={styles.action}
+                onClick={() => {
+                    setZoomToTrack(true);
+                    setOpenActions(false);
+                }}
+            >
+                <ListItemIcon className={styles.iconAction}>
+                    <ShowOnMapIcon />
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography variant="inherit" className={styles.actionName} noWrap>
+                        {t('shared_string_show_on_map')}
+                    </Typography>
+                </ListItemText>
+            </MenuItem>
+        );
+    };
+
     return (
         <>
             <Box ref={ref}>
                 <Paper id="se-track-actions" className={styles.actions}>
-                    {ctx.gpxFiles[track.name]?.showOnMap ? (
-                        <MenuItem
-                            id="se-hide-from-map-action"
-                            className={styles.action}
-                            onClick={() => {
-                                setDisplayTrack(false);
-                                setOpenActions(false);
-                            }}
-                        >
-                            <ListItemIcon className={styles.iconAction}>
-                                <HideFromMapIcon />
-                            </ListItemIcon>
-                            <ListItemText>
-                                <Typography variant="inherit" className={styles.actionName} noWrap>
-                                    {t('web:hide_from_map')}
-                                </Typography>
-                            </ListItemText>
-                        </MenuItem>
-                    ) : (
-                        <MenuItem
-                            id="se-show-on-map-action"
-                            className={styles.action}
-                            onClick={() => {
-                                setDisplayTrack(true);
-                                setOpenActions(false);
-                            }}
-                        >
-                            <ListItemIcon className={styles.iconAction}>
-                                <ShowOnMapIcon />
-                            </ListItemIcon>
-                            <ListItemText>
-                                <Typography variant="inherit" className={styles.actionName} noWrap>
-                                    {t('shared_string_show_on_map')}
-                                </Typography>
-                            </ListItemText>
-                        </MenuItem>
-                    )}
+                    <ShowOnMapAction />
+                    <Divider className={styles.dividerActions} />
+                    <MakeTrackVisibleAction />
                     <Divider className={styles.dividerActions} />
                     <MenuItem
                         id={'se-rename-cloud-track'}
