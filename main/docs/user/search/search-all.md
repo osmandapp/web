@@ -40,44 +40,33 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 </Tabs>
 
 You need to follow one of the steps to start your search: 
-- The [*Search button*](../widgets/map-buttons.md#search) on the map application screen *→ enter a search query*.
-- Go to the main *Menu → Search → enter a search query*.
-- When preparing to start a route, tap [*Navigation → Set destination → Search field*](../navigation/setup/route-navigation.md#set-target-point).  
-
-*Downloaded offline vector maps are required to search with OsmAnd*.  
-Initially, **the search is based on the data located on the map in the visible area of the device screen**, but if nothing is found there, OsmAnd offers to increase the search radius.  
-
-Typical queries:
-- Coordinates all formats
-- Address: "Street, Housenumber", "City, Street", "Street intersections", "City", "Postcode, Housenumber", "Postcode, Street, Housenumber"
-- POI by name and by category with additional filters
-- Favorite/Waypoint search
-- Track search
-- Online (Nominatim) search
-- URL search (google urls, osmand urls)
-- Search history
+- Tap the [*Search button*](../widgets/map-buttons.md#search) on the map application screen and enter your query.
+- Go to the main *Menu → Search → enter your search query*.
+- When preparing to start a route, tap [*Navigation → Set destination → Search field*](../navigation/setup/route-navigation.md#set-target-point) *→ search query*.  
 
 
-### Search near specific location
+Important information:
+- *Downloaded offline vector maps are required to search with OsmAnd*.
+- Initially, **the search is based on the data located on the map in the visible area of the device screen**, but if nothing is found there, OsmAnd offers to increase the search radius.  
 
-<Tabs groupId="operating-systems">
+**Basic queries:**
+- Coordinates all available formats.
+- Address:
+    - Street, House Number;
+    - City, Street;
+    - Street Intersections;
+    - City;
+    - Postal Code, House Number;
+    - Postal Code, Street, House Number.
+- Search POIs by name and by category with additional filters.
+- Search by Favorites and Waypoints.
+- Search by track.
+- Online search (Nominatim).
+- URL search (Google and OsmAnd).
+- Search History.
 
-<TabItem value="android" label="Android">
 
-![Search Android](@site/static/img/search/search_all_near_location_andr.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Search iOS](@site/static/img/search/search_all_near_location_andr.png)  
-
-</TabItem>
-
-</Tabs>
-
-
-### Favorite/Waypoint/Tracks search
+### Search by list
 
 <Tabs groupId="operating-systems">
 
@@ -95,9 +84,47 @@ Typical queries:
 
 </Tabs>
 
-In this search menu (Categories) it's easy way to find your [Favorites](../map/point-layers-on-map.md#favorites) and [Waypoints](../map/point-layers-on-map.md#track-points) by searching. 
+You can find the required location on the map from the list of points that appear as you enter a query.
+- Start typing the name or address in the search bar.
+- As you type, the list displays the points closest to the query, in roughly this order:
+    - POIs Categories;
+    - Favorites, POIs, and Waypoints;
+    - Tracks;
+    - Addresses;
+    - Maps to download.
 
-Just you need to enter your favorite/waypoint name, first results will be your favorites/waypoints.
+
+### Search on the map
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Search POI Android](@site/static/img/search/poi_overlay_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Search POI iOS](@site/static/img/search/poi_overlay_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+OsmAnd allows you to search for points displayed on a map on your device's screen. To do this:
+- Use [one of the ways](#how-to-use) to get to the Search tool.
+- Start typing the name or address into the search box.
+- A box with the *Show on map* button will appear below the search input field.
+- Tap this button to go to the map.
+- At the top of the screen, you can continue typing your query.
+
+
+### Search nearby
+
+![Search Android](@site/static/img/search/search_all_near_location_andr.png) 
+
+You can use the search in the vicinity of a specific location. To do this, select the required point [from the list in the search menu](#search-by-list) or select it directly on the map. In the [Map Context Menu](../map/map-context-menu.md#actions), select *Actions → Search nearby*.
 
 
 ## Search Address

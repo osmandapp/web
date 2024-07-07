@@ -38,15 +38,11 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_map,layer_poi"/>*
-
 ![Search POI Android](@site/static/img/search/poi_overlay_android.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
-
-*<Translate ios="true" ids="shared_string_menu,configure_map,poi_overlay"/>*  
+<TabItem value="ios" label="iOS">  
 
 ![Search POI iOS](@site/static/img/search/poi_overlay_ios.png)
 
