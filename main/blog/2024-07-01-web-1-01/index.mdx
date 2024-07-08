@@ -24,12 +24,13 @@ We are glad to introduce version 1.01 of our [map web service](https://osmand.ne
 
 **What's new**
 
-– System language by default (process)
-- New Map Context menu
-- Explore map menu
-- Updates POI context menu
-- Displaied Wikipedia/Wikivoyage on the map (testing)
-- Provide URL's for different web sections
+- [System language](#system-language) by default (process),
+- New [Map Context menu](#map-context-menu),
+- [Explore map menu](#explore-map-menu)
+  - Updates [POI context menu](#poi-context-menu),
+  - POIs [Photo gallery](#photo-gallery),
+- Displaied [Wikimedia images](#wikimedia-images) on the map (testing)
+- Provide [URL's for different web sections](#more-urls),
 - Updates favorites icons (4.8?)
 - Added banner to promote mobile version (4.8?)
 - Fixed wrong precipitation data
@@ -40,8 +41,6 @@ We are glad to introduce version 1.01 of our [map web service](https://osmand.ne
 The Web uses language from browser settings. For Chrome priority `chrome://settings/languages`.
 
 User can change system (menu) language manually by _Menu → ⚙ → Dislay language_.
-
-
 
 ## Map Context menu
 
@@ -78,7 +77,7 @@ By clicking to POI the new Context menu:
 - name (category)
 - direction and Distance
 - Description
-- Online photos
+- [Online photos](#photo-gallery)
 
 
 ![Explore menu](./img/poi_context.png)
@@ -86,4 +85,35 @@ By clicking to POI the new Context menu:
 
 ### Photo gallery
 
+Clicking to Online photos to open Photo gallery. Here you can list all photos of a POI.
+
 ![Explore menu](./img/poi_photo.png)
+
+
+## Wikimedia images
+
+Added the feature to show Wikimedia images on the map.
+
+![Explore menu](./img/wiki_photos.png)
+
+## More URLs
+
+-  **Weather** – `osmand.net/map/weather`
+-  **Account** – `osmand.net/map/account`
+-  **Configure Map** – `osmand.net/map/configure/`
+-  **Tracks** – `osmand.net/map/mydata/tracks`
+-  **Favorites** – `osmand.net/map/mydata/favorites`
+-  **Navigation** – `osmand.net/map/navigate`
+-  **Settings** – `osmand.net/map/settings`
+-  **Plan a Route** - `osmand.net/map/plan`
+-  For current [Explore page](#explore-map-menu) - `osmand.net/map/search`
+
+
+Example - `https://osmand.net/map/mydata/favorites/#12/40.7452/-74.0326`
+
+## Others
+
+- Fixed [wrong precipitation data](https://github.com/osmandapp/OsmAnd-Issues/issues/2578),
+- Fixed lagging of [huge numbers user data](https://github.com/osmandapp/web/issues/384),
+- Added [banner to promote](https://github.com/osmandapp/OsmAnd/issues/18825) mobile version,
+- Fixed [zooming to extens](https://github.com/osmandapp/web/issues/246) when enabling favorites or tracks
