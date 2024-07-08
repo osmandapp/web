@@ -51,8 +51,6 @@ Important information:
 
 ### Basic queries
 
-Tags consisting of *a key and a value* can be used as a search query, for example *addr:street=StreetName*. To avoid confusion, sometimes the key or value is surrounded by quotation marks: *key="value" or "key"="value"*. The quotation marks and equal sign are not part of the tag content.
-
 *Query list*:
 
 - Coordinates all available formats.
@@ -69,6 +67,12 @@ Tags consisting of *a key and a value* can be used as a search query, for exampl
 - Online search (Nominatim).
 - URL search (Google and OsmAnd).
 - Search History.
+
+*Supported formats*:  
+
+***Tags*** can be used as a search query. They consist of ***a key and a value***, for example:   
+*addr:street=StreetName*.  
+To avoid confusion, sometimes the key or value is surrounded by quotation marks: **key="value" or "key"="value"**. The quotation marks and equal sign are not part of the tag content.
 
 
 ### Search by list

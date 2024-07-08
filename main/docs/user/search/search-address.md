@@ -73,6 +73,10 @@ You can perform an **Address Search** using 5 options such as:
 - Distance from your current location or from the city center.
 - Additional information, such as the city's district.
 
+### Supported formats
+
+See the [Search All](./search-all.md#basic-queries) article for a list of available queries and supported search formats.
+
 
 ## Select city
 

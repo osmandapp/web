@@ -380,7 +380,9 @@ Available:
 
 <TabItem value="android" label="Android">
 
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_appbar_menu_1_andr.png) 
+*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_appbar_menu_2_andr.png) 
 
 </TabItem>
 
@@ -388,17 +390,17 @@ Available:
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_appbar_menu_ios.png) 
+![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_appbar_menu_2_ios.png) 
 
 </TabItem>
  
 </Tabs>  
 
-- [**Select**](#selection-mode) (*Android only*). This menu item allows you to select the folders and routes you need to manage them further.  
+- [**Select**](#selection-mode). This menu item allows you to select the folders and routes you need to manage them further.  
 
 - **Sort subfolder** (*Android only*). The selected sort order on the Tracks tab applies to all levels of subfolders and tracks. 
 
-- **Add folder**. If you need to organize your routes and tracks into logical categories, the app provides the ability to quickly create a new folder and name it. This helps to structure your navigation information.  
+- **Add new folder**. If you need to organize your routes and tracks into logical categories, the app provides the ability to quickly create a new folder and name it. This helps to structure your navigation information.  
 
 - [**Add smart folder**](../tracks/smart-folder.md#create-smart-folder) (*Android only*). This is a tool for automating data organization. Folders automatically sort routes and tracks according to specified criteria. 
 
@@ -407,23 +409,35 @@ Available:
 
 ### Selection mode
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems">
 
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_selection_andr.png)
+<TabItem value="android" label="Android">
 
-The **Select** menu item provides options for managing folders and tracks. This feature allows you to select multiple tracks or track folders. You can also select all tracks and folders by tapping the special *Select All* button at the top of the screen.
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_selection_2_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_selection_ios.png) 
+
+</TabItem>
+ 
+</Tabs>  
+
+The **Select** menu item provides options for managing folders and tracks. This feature allows you to select multiple tracks or track folders. You can also select all tracks and folders by tapping the special **Select All** button.
 
 Once you have made your choice, the following steps are provided:  
 
 - **Show on map**. With this feature you can display the selected tracks on the map to better understand their location and relationship to each other.
 
-- **Share**. If you want to share selected data with other users or save it to a cloud service, the *Share* feature allows you to send tracks and folders using different sharing methods.
+- **Share** (*Android*) / **Export** (*iOS*). If you want to share selected data with other users or save it to a cloud service, the *Share/Export* feature allows you to send tracks and folders using different sharing methods.
 
 - **Upload to OpenStreetMap**. You can submit selected tracks to OpenStreetMap, contributing to the development and improvement of the data.
 
 - **Move**. You can organize your data by moving selected tracks and folders to other folders.
 
-- **Change appearance**. This option allows you to customize the appearance of selected tracks, making them more visible and recognizable on the map.
+- [**Change appearance**](../../map/tracks-on-map/track-appearance.md) (*Android only*). This option allows you to customize the appearance of selected tracks, making them more visible and recognizable on the map.
 
 - **Delete**. If the selected tracks or folders are no longer needed, the Delete function allows you to delete them, with the app providing confirmation options to avoid accidental deletion.
 
