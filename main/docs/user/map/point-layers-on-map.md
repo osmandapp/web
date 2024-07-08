@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-title:  Points on the map
+title:  Points on the Map
 ---
 
 import Tabs from '@theme/Tabs';

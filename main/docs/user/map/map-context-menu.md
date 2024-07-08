@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: "Map Context menu"
+title: "Map Context Menu"
 ---
 
 import Tabs from '@theme/Tabs';

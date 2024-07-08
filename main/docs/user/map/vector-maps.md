@@ -1,6 +1,6 @@
 ---
 sidebar_position: 10
-title:  Vector maps (Map styles)
+title:  Vector Maps (Map Styles)
 ---
 
 import Tabs from '@theme/Tabs';
@@ -13,7 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-> *This article was last updated in October 2021*
+
 
 ## Overview
 
@@ -25,7 +25,7 @@ Vector maps are designed to be the default map data source for OsmAnd, so you ne
 Configurable and custom map styles are one of the main advantages of OsmAnd. Each user can customize the map display to suit himself and his hobbies, configure it to display or hide certain map objects, the sizes and colors of these objects, and change the scale at which certain objects are displayed.
 
 
-## Default Map styles  
+## Default Map Styles  
 
 OsmAnd offers you many map styles and data layers that fit by default. Let's take a look at the main ones for day and night modes.  
 
@@ -52,7 +52,7 @@ OsmAnd style is the default style of map rendering, general-purpose style. It of
 
 ![OsmAnd map style](@site/static/img/map/map-style-osmand-with-routes.png)
 
-### Touring view
+### Touring View
 
 <Translate android="true" ids="touring_view_render_descr"/>
 
@@ -78,7 +78,7 @@ For nautical navigation. Features buoys, lighthouses, riverways, sea lanes and m
 
 ![Nautical map style](@site/static/img/map/map-style-nautical.png)
 
-### Winter and ski  
+### Winter and Ski  
 
 For skiing sports. Describes the pistes, elevators, cross-country trails, and obscures secondary map objects. **Winter and ski style** is designed to help you with winter sports navigation: you can see the ski slopes and other details such as the difficulty of the slopes and elevator markers. Key features: the convenient display of slopes, elevators, and other skiing features. Less of the distracting secondary objects of the map. Read more about [Ski maps](../plugins/ski-maps.md).
 
@@ -156,7 +156,7 @@ Contour lines are available for all map styles and modes and could be configured
 More information about [Contour lines](../plugins/contour-lines.md). 
 
 
-## * Nautical depth
+## * Nautical Depth
 
 Nautical depth contour lines allow you to define areas of equal depth. They are designed to visualize changes in topography below the water surface. Nautical depth is available for all map styles and modes and can be adjusted whether or not the Nautical map view plugin is enabled.  
 
@@ -183,7 +183,7 @@ Nautical depth contour lines allow you to define areas of equal depth. They are 
 More information about [Nautical map view](../plugins/nautical-charts). 
 
 
-## Show borders
+## Show Borders
 
 This feature gives you the ability to switch on or off the display of the vector layer of previously downloaded maps from the list of available ones. Its general purpose is to hide areas and borders of downloaded maps when viewing the main map, especially if you have a lot of them.  
 
@@ -216,7 +216,7 @@ Downloaded maps are displayed in *Green* in the Android and iOS versions of OsmA
 
 ## Configure Map Style
 
-### Map mode
+### Map Mode
 
 The map is displayed according to the day or night mode selected from the list. And by default and for all new users, the [map style](#default-map-styles) corresponds to the light or dark theme selected in the system settings of your device.
 
@@ -442,7 +442,7 @@ Special settings for roads, where you can change the colors to match the road at
 |**<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Bold outline for roads.|
 |![Map road style bold outline](@site/static/img/map/map-road-style-bold-outline.png)|
 
-### Text size
+### Text Size
 
 <Tabs groupId="operating-systems">
 
@@ -467,7 +467,7 @@ Special settings for roads, where you can change the colors to match the road at
 |**200%**|
 |![Map text size 200%](@site/static/img/map/map-text-size-200.png)|
 
-### Map magnifier
+### Map Magnifier
 
 This setting helps to change the magnifier of the map. It is applicable for raster & vector maps. For raster maps it applies a magnifying effect, so text labels look bigger or smaller. For vector maps it provides a more or less detailed map, if you put it to a low value it will produce a noisy / slow map.  
 
@@ -529,7 +529,7 @@ If the names on the map are not translated into the desired language by the OSM 
 |**Transliterate names**|
 |![Map language transliterate](@site/static/img/map/map-language-transliterate.png)|
 
-## Custom Map style (own map style)
+## Custom Map Style (own map style)
 If you have your own or 3rd party custom map style created according to [Specification](../../technical/osmand-file-formats/osmand-rendering-style.md), you can install it on a device in the following ways.
 - Copy *.render.xml file on devices & Open with OsmAnd. 
 - Rendering styles could be exported & imported via [Standard import / export dialogs](../personal/import-export.md). So if you create an example '*.osf' package which will work as a plugin that could be shared with other people.
@@ -538,3 +538,8 @@ After that, you could select your own map style in the menu.
 
 
 ## Related Articles
+
+- 
+- 
+
+> *This article was last updated in October 2022*

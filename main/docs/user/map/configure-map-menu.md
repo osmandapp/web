@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title:  Configure map
+title:  Configure Map
 ---
 
 import Tabs from '@theme/Tabs';

@@ -16,16 +16,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-*OsmAnd Address Search* is based on OpenStreetMap data and allows you to find location and directions to a specific address from a ready sorted list, as well as search by postal code or coordinates. This tool allows you to find the required addresses in a few taps, which reduces the search time and helps in case you don't remember the exact address.  
+*OsmAnd Search by Address* is based on OpenStreetMap data and allows you to find location and directions to a specific address from a ready sorted list, as well as search by postal code or coordinates. This tool allows you to find the required addresses in a few taps, which reduces the search time and helps in case you don't remember the exact address.  
 
-OsmAnd provides several ways to get to the *Search tool* where the **Address search** section is located.
+OsmAnd provides several ways to get to the *Search tool* where the **Search Address** section is located.
 
 - The [Search button](../widgets/map-buttons.md#search) is always displayed on the map, and tapping it will take you to the tool's [general screen](#how-to-use), where you can find the *Address* tab.
 - Go to the main Android *Menu → Search → Address tab*.
 - When preparing to start a route, tap *Navigation → Set destination → Search field*.  
 
 
-## How to use
+## How to Use
 
 <Tabs groupId="operating-systems">
 
@@ -43,9 +43,9 @@ OsmAnd provides several ways to get to the *Search tool* where the **Address sea
 
 </Tabs>
 
-Address search simplifies the search and navigation process, ensures accuracy and usability, and reduces the time it takes to find the right address.  
+Search by Address simplifies the search and navigation process, ensures accuracy and usability, and reduces the time it takes to find the right address.  
 
-- **To use the Address Search function, **you have to [download a map](../start-with/download-maps.md) of the required area first.**
+- **To use the Search Address function,** you have to [download a map](../start-with/download-maps.md) of the required area first.
 
 - **The search is based on the data located in the visible area of the map** on the device screen. If you do not find anything, OsmAnd offers to increase the search radius.
 
@@ -61,7 +61,7 @@ You can perform an **Address Search** using 5 options such as:
     This **displays a small list of cities around your location** or the locality you specified for *Select street* or *Select city*. Each field contains an icon corresponding to the size of the city, the name of the city, the distance from you to its center, and for Android the compass direction.
 
 
-### Search query list
+### Search Query List
 
 **1.** The **order** of items in the list:
 - **Alphabetical order**. The list starts with unnamed items, if any, then numeric names followed by the names by letters.
@@ -105,12 +105,13 @@ This way of searching makes it easy to find specific locations within a selected
 - *Precision.* You can select a city and street from the available options, avoiding errors when manually entering an address.
 - *Filtering.* The ability to select a specific house from the list makes it easier to accurately navigate to the required location, especially when the exact address is unknown.  
 
-<!--
-City/City/Village Search by *[addr:city/hamlet/town/village/suburb=*](https://wiki.openstreetmap.org/w/index.php?title=Key:addr)*. Result: displaying all objects with this name.
--->
+:::note Key & Value
+*City / Town / Village search* by [**addr:city/hamlet/town/village/suburb=**](https://wiki.openstreetmap.org/w/index.php?title=Key:addr)  
+*Result*: displaying all objects with this name.
+:::
 
 
-## Select street
+## Select Street
 
 <Tabs groupId="operating-systems">
 
@@ -122,7 +123,7 @@ City/City/Village Search by *[addr:city/hamlet/town/village/suburb=*](https://wi
 
 <TabItem value="ios" label="iOS">
 
-![Search Street iOS](@site/static/img/search/address_street_search_ios.png) ![Search Street Android](@site/static/img/search/address_street_search_1_ios.png)
+![Search Street iOS](@site/static/img/search/address_street_search_3_ios.png) ![Search Street Android](@site/static/img/search/address_street_search_4_ios.png)
 
 </TabItem>
 
@@ -130,16 +131,17 @@ City/City/Village Search by *[addr:city/hamlet/town/village/suburb=*](https://wi
 
 Street search is performed in the locality where you are, or where you searched before, or which is in the center of the visible map on the application screen. 
 
-- To use this type of search, tap **Search Street** (Android) or **Select Street** (iOS).
+- To use this type of search, tap **Search Street** (*Android*) or **Select Street** (*iOS*).
 - In the search field next to the city name, you can start typing the street name and the list will refine, giving you the most appropriate results.
 - In other items, the street search is the same as in [*Select City*](#select-city).
 
-<!-- 
-Search for streets by *[addr:street=*](https://wiki.openstreetmap.org/w/index.php?title=Key:addr)*. Result: all streets with this name are shown.
--->
+:::note Key & Value
+*Search streets* by [**addr:street=**](https://wiki.openstreetmap.org/w/index.php?title=Key:addr)  
+*Result*: all streets with this name are shown.
+:::
 
 
-## Postcode search
+## Postcode Search
 
 <Tabs groupId="operating-systems">
 
@@ -167,10 +169,12 @@ Search for streets by *[addr:street=*](https://wiki.openstreetmap.org/w/index.ph
 - *Navigation precision*. In cases where the address is not certain, or where the street name may be repeated in different areas, using a postal code can provide the best route to a given address.
 - *Convenience and speed*. Searching by postcode allows you to find information quickly, especially if you know the postcode but are unsure of the address. Instead of entering the full address, you can enter just the code and get relevant results.  
 
-For more information about [United Kingdom Poscode data](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases), read the link.    
+:::note
+For more information, read the **[United Kingdom Poscode data](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases)**.    
+:::
 
 
-## Coordinates search
+## Coordinates Search
 
 <Tabs groupId="operating-systems">
 
@@ -188,7 +192,7 @@ For more information about [United Kingdom Poscode data](https://github.com/hvdw
 
 </Tabs>
 
-[**Coordinate search**](../search/search-coordinates.md) allows you to specify geographic coordinates, such as latitude and longitude, to find a specific location. It provides accurate locations on a map in different [coordinate formats](../search/search-coordinates.md#coordinates-search) and allows you to get related information. This feature can be useful when you do not have an address or exact name of a location and can make it easier to plan travel and navigate in unknown places.  
+[**Coordinate Search**](../search/search-coordinates.md) allows you to specify geographic coordinates, such as latitude and longitude, to find a specific location. It provides accurate locations on a map in different [coordinate formats](../search/search-coordinates.md#coordinates-search) and allows you to get related information. This feature can be useful when you do not have an address or exact name of a location and can make it easier to plan travel and navigate in unknown places.  
 
 
 ## Related Articles

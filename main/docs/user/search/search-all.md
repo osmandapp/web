@@ -49,7 +49,12 @@ Important information:
 - *Downloaded offline vector maps are required to search with OsmAnd*.
 - Initially, **the search is based on the data located on the map in the visible area of the device screen**, but if nothing is found there, OsmAnd offers to increase the search radius.  
 
-**Basic queries:**
+### Basic queries
+
+Tags consisting of *a key and a value* can be used as a search query, for example *addr:street=StreetName*. To avoid confusion, sometimes the key or value is surrounded by quotation marks: *key="value" or "key"="value"*. The quotation marks and equal sign are not part of the tag content.
+
+*Query list*:
+
 - Coordinates all available formats.
 - Address:
     - Street, House Number;

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-title:  Tracks Context menu
+title:  Tracks Context Menu
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,8 +15,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
-
-> *This article was last updated in June 2024*
 
 ## Overview
 
@@ -693,3 +691,5 @@ Actions list is available on the bottom of **Filter** or **Statistics** tab. Osm
 - [Plan route](../plan-route/index.md)
 - [Trip Recording plugin](../plugins/trip-recording.md)
 - [Analyze on Map](../map/tracks-on-map/tracks-types.md#analyze-track-on-map)
+
+> *This article was last updated in June 2024*

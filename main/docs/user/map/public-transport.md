@@ -1,6 +1,6 @@
 ---
 sidebar_position: 9
-title:  Public transport
+title:  Public Transport
 ---
 
 import Tabs from '@theme/Tabs';

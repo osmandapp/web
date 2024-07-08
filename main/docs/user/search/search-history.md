@@ -76,7 +76,7 @@ The search history serves to provide relevant information about your previous ac
 
 </Tabs> 
 
- Each field in the Search History list contains some of the **information** available to the application.
+Each field in the Search History list contains some of the **information** available to the application.
 - An icon that identifies the type or category of the found object.
 - The object name, location, address, or type query. For tracks information about the distance, number of waypoints, and time is displayed.
 - Distance from the your current location to the point and direction by compass.

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title:  Interact with map
+title:  Interact with Map
 ---
 
 import Tabs from '@theme/Tabs';
@@ -248,7 +248,7 @@ Each External input devices Type has *Key assignments*. Table with _Keys_ you ca
 </Tabs>  
 
 
-### Extra compass settings  
+### Extra Compass Settings  
 
 - **<Translate android="true" ids="use_kalman_filter_compass"/>** - <Translate android="true" ids="use_kalman_filter_compass_descr"/> Smoothes the rotation of the card with a slower rotation animation, although this introduces a slight delay, not more than 1 second.   
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_kalman_filter_compass"/>*
@@ -256,14 +256,14 @@ Each External input devices Type has *Key assignments*. Table with _Keys_ you ca
 - **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Smoothes the rotation of the card with a slower rotation animation, although this introduces a slight delay, not more than 1 second.   
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
 
-### No animations
+### No Animations
+
+<InfoAndroidOnly/>  
 
 You can turn off all map animations during map changes, such as gestures and buttons.    
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,do_not_use_animations"/>*
 
-<InfoAndroidOnly/>  
-
-### Animate own position (iOS: Animate my location)
+### Animate Own Position
 
 **Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 **iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,routing_settings_2,animate_my_location"/>*  
@@ -271,11 +271,9 @@ You can turn off all map animations during map changes, such as gestures and but
 Creates a smooth map panning effect versus the *[My Position](../personal/profiles/#profile-appearance)* icon when in motion. The effect introduces a slight delay versus ground truth of about 1 second. Enabling this has been reported to create some pronounced lag issues under some circumstances, disable if such issues arise.
 
 
-## Assign custom keys
+## Assign Custom Keys
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
+<InfoAndroidOnly />
 
 You can create your own [*<Translate android="true" ids="shared_string_type"/>*](#external-input-device-buttons) of keys for an external input device:
 
@@ -286,7 +284,6 @@ You can create your own [*<Translate android="true" ids="shared_string_type"/>*]
 Now, you can change buttons for actions. Just go to your created *<Translate android="true" ids="shared_string_type"/>*:
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → Your type → <Translate android="true" ids="key_assignments"/> → Click to any Actions or Map interactions → &#43; or <Translate android="true" ids="shared_string_button"/>*
-
 
 ![External devices](@site/static/img/map/external_assign_android.png)
 
@@ -300,16 +297,6 @@ This way the user can assign his actions to the _External input device_ buttons.
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → Your type → <Translate android="true" ids="key_assignments"/> → Reset*.
  
 All key assignments for the selected type will be removed.
-  
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-<InfoAndroidOnly />
-
-</TabItem>
-
-</Tabs>  
 
 
 ## Related Articles
