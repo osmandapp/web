@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-# Overview
+## Overview
 
 
 ## Filter
@@ -213,3 +213,14 @@ This screen allows you to select the tracks you want, as well as a list of sugge
 - Tap Smart folder in the folder list.
 - Tap the 3-dot menu in the upper right corner of the screen.
 - From the 3-dot menu, choose *Select*, then **Share**.
+
+
+## Related Articles
+
+- [Show track on Map](../../map/tracks-on-map/tracks-types.md)
+- [Analyze on Map](../../map/tracks-on-map/tracks-types.md#analyze-track-on-map)
+- [Track Context menu](../../map/track-context-menu.md)
+- [Navigation by track](../../navigation/setup/gpx-navigation.md)
+- [Trip recording](../../plugins/trip-recording.md)
+
+> *This article was last updated in July 2024*

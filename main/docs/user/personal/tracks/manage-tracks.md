@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 2
 title:  Manage Tracks
 ---
 
@@ -16,6 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+## Overview
 
 ## Manage tracks
 
@@ -539,3 +540,12 @@ To export a GPX file to an external storage, do the following:
 - Select the desired storage for exporting the GPX file. 
 
 
+## Related Articles
+
+- [Show track on Map](../../map/tracks-on-map/tracks-types.md)
+- [Analyze on Map](../../map/tracks-on-map/tracks-types.md#analyze-track-on-map)
+- [Track Context menu](../../map/track-context-menu.md)
+- [Navigation by track](../../navigation/setup/gpx-navigation.md)
+- [Trip recording](../../plugins/trip-recording.md)
+
+> *This article was last updated in July 2024*
