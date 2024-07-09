@@ -256,7 +256,7 @@ Your tracks will be added to [OSM traces](https://www.openstreetmap.org/traces) 
 </Tabs>
 
 To [upload the GPS track](https://wiki.openstreetmap.org/wiki/Upload_GPS_tracks), follow the steps below::  
-- Find the required track in [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*](../personal/tracks/index.md).  
+- Find the required track in [*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*](../personal/tracks/create-edit.md).  
 - Tap the menu with three dots next to the track name and select *Export*.   
 
 **Settings:**

@@ -299,7 +299,7 @@ In *Tracks tab*, **Graph** displays track information in graphical form with a d
 - [Track Context menu](../../map/track-context-menu.md)  
 - [Configure map](../../map/configure-map-menu.md)  
 - [Navigation by track](../../navigation/setup/gpx-navigation.md)  
-- [GPX tracks](../../personal/tracks/index.md)  
+- [GPX tracks](../../personal/tracks/create-edit.md)  
 - [Plan route](../../plan-route/index.md)  
 - [Trip Recording](../../plugins/trip-recording.md)    
 - [Track Appearance](./track-appearance.md)

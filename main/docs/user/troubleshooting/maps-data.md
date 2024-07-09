@@ -106,7 +106,7 @@ You can leave notes for future usage in several forms:
 
 -   [Favorites](../personal/favorites.md): they are constant points on the map. You can add a description to every Favorite. To add it, make a *long-tap  →  tap Add*.
 -   [Markers](../personal/markers.md): the temporary points with the directions settings. You can see the distance from the selected point or your current location to the Marker and remove it fast. To add it, make a *long-tap  →  tap Marker*.
--   [Waypoints](../personal/tracks/index.md): the points along your route. You can add a description to this point. To add a waypoint, make a *long-tap the map  →  Directions  →  rst intermediate waypoint*.
+-   [Waypoints](../personal/tracks/create-edit.md): the points along your route. You can add a description to this point. To add a waypoint, make a *long-tap the map  →  Directions  →  rst intermediate waypoint*.
 -   [Audio/Video notes](../plugins/audio-video-notes.md): these are points with your audio-, video-, and photo files added to the selected point on the map. Please enable the Audio/video notes plugin in OsmAnd menu  →  Plugins. To add it, make a *long-tap  →  Actions  →  select the required file to add*.
 -   [OSM Notes](https://www.facebook.com/watch/?v=673312246195291): your reports on the mistakes in the OpenStreetMap source. Please enable the OSM editing plugin in OsmAnd menu  →  Plugins. To add it, make a *l*ong-tap  →  Actions  →  Add OSM note*.
 -   [POIs](../search/index.md): these are the points of interest from the OSM map source. Enable the POI overlay in Configure map menu or select a certain category.
