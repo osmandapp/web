@@ -270,9 +270,8 @@ You can find out information about Online Navigation in [Online routing](../navi
 
 *Nominatim* in OsmAnd is used as a search engine for OpenStreetMap data, with which you can search by name (search by address is currently disabled). Each result has a link to a detail page to see what data about the object is stored in the database.  
 
-<details><summary>Example XML file</summary> 
-https://nominatim.openstreetmap.org/search?format=xml&addressdetails=0&accept-language=en&q=%D0%9C%D1%96%D0%BD%D1%81%D0%BA+%D0%BD%D0%B5%D0%B7%D0%B0%D0%BB%D0%B5%D0%B6%D0%BD%D0%B0%D1%81%D1%86%D1%96+72+&addressdetails=1&limit=300
-</details>
+**Example XML file.** This XML file does not contain any style information associated with it. The document tree is shown in the [link](https://nominatim.openstreetmap.org/search?format=xml&addressdetails=0&accept-language=en&q=%D0%9C%D1%96%D0%BD%D1%81%D0%BA+%D0%BD%D0%B5%D0%B7%D0%B0%D0%BB%D0%B5%D0%B6%D0%BD%D0%B0%D1%81%D1%86%D1%96+72+&addressdetails=1&limit=300).
+
 
 
 ## Custom POI Search
