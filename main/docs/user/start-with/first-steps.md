@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title:  First steps
+title:  First Steps
 ---
 
 import Tabs from '@theme/Tabs';

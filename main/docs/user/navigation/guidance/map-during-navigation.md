@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Map screen during navigation
+title: Map Screen During Navigation
 ---
 
 import Tabs from '@theme/Tabs';

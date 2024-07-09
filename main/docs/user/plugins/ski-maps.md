@@ -1,6 +1,6 @@
 ---
 sidebar_position: 13
-title:  Ski map view
+title:  Ski Map View
 ---
 
 import Tabs from '@theme/Tabs';

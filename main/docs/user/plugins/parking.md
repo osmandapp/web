@@ -1,6 +1,6 @@
 ---
 sidebar_position: 12
-title:  Parking position
+title:  Parking Position
 ---
 
 import Tabs from '@theme/Tabs';

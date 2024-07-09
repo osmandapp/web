@@ -1,6 +1,6 @@
 ---
 sidebar_position: 9
-title:  OpenStreetMap editing
+title:  OpenStreetMap Editing
 ---
 
 import Tabs from '@theme/Tabs';

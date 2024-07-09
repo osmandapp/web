@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title:  External sensors
+title:  External Sensors
 ---
 
 import Tabs from '@theme/Tabs';

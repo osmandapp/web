@@ -1,9 +1,10 @@
 ---
 sidebar_position: 3
+title: Nautical Map Style
 ---
 import Translate from '@site/src/components/Translate.js';
 
-# Nautical map style
+# Nautical Map Style
 Default OsmAnd map style, part of Nautical plugin.
 <Translate android="yes" id="nautical_render_descr" />
 

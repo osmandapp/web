@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-title:  Online maps
+title:  Online Maps
 ---
 
 import Tabs from '@theme/Tabs';

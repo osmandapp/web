@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Web Route planner
+title: Web Route Planner
 ---
 
 import Tabs from '@theme/Tabs';

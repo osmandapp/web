@@ -1,6 +1,6 @@
 ---
 sidebar_position: 10
-title:  OsmAnd development
+title:  OsmAnd Development
 ---
 
 import Tabs from '@theme/Tabs';

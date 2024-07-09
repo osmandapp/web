@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+title: OsmAnd Map Style
 ---
 import Translate from '@site/src/components/Translate.js';
 import LegendItem from '@site/src/components/docs/LegendItem.js';

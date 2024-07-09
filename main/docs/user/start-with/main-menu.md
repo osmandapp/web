@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title:  Main menu
+title:  Main Menu
 ---
 
 import Tabs from '@theme/Tabs';

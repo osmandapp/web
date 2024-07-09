@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title:  Track recording
+title:  Track Recording
 ---
 
 import Tabs from '@theme/Tabs';

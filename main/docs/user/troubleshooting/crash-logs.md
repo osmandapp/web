@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-title:  Crash logs
+title:  Crash Logs
 ---
 
 import Tabs from '@theme/Tabs';

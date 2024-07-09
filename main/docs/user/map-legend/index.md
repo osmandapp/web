@@ -7,11 +7,11 @@ import Translate from '@site/src/components/Translate.js';
 
 OsmAnd map legend for any styles
 
-### [OsmAnd map style](./osmand.md)
+### [OsmAnd Map Style](./osmand.md)
 <Translate android="yes" id="default_render_descr" />
 
-### [Ski map style](./ski-map.md)
+### [Ski Map Style](./ski-map.md)
 <Translate android="yes" id="ski_map_render_descr" />
 
-### [Nautical map style](./nautical-map.md)
+### [Nautical Map Style](./nautical-map.md)
 <Translate android="yes" id="nautical_render_descr" />

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title:  Configure plugins
+title:  Configure Plugins
 ---
 
 import Tabs from '@theme/Tabs';

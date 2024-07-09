@@ -10,7 +10,7 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
-# Plan route
+# Plan Route
 
 ## Overview
 
@@ -22,7 +22,7 @@ OsmAnd allows you to build various routes as tracks, add a route to existing tra
 Using offline Travel guides is an important source of information while traveling. -->
 
 
-## [Plan a route](./create-route.md)
+## [Plan a Route](./create-route.md)
 
 This article describes how to plan a route for a future trip.
 
@@ -32,6 +32,6 @@ This article describes how to plan a route for a future trip.
 Guides will help you see all the interesting places on the map and learn about them in detail during your trip.
 
 
-## [Coordinate input](./coordinate-input.md)
+## [Coordinate Input](./coordinate-input.md)
 
 Description of a simple and fast tool for creating points by specifying geographic coordinates.  

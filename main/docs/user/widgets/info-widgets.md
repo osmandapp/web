@@ -1,6 +1,6 @@
 --- 
 sidebar_position: 3
-title:  Informational widgets
+title:  Informational Widgets
 ---
 
 import Tabs from '@theme/Tabs';

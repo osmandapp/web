@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title:  Coordinates input
+title:  Coordinates Input
 ---
 
 import Tabs from '@theme/Tabs';

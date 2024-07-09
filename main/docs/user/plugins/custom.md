@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title:  Custom package
+title:  Custom Package
 ---
 
 import Tabs from '@theme/Tabs';

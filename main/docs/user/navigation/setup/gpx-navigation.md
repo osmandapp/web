@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title:  Navigate by track
+title:  Navigate by Track
 ---
 
 import Tabs from '@theme/Tabs';

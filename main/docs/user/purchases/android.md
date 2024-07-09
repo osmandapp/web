@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title:  Android purchases
+title:  Android Purchases
 ---
 
 import Tabs from '@theme/Tabs';

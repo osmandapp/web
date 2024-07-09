@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title:  Download maps
+title:  Download Maps
 ---
 
 import Tabs from '@theme/Tabs';

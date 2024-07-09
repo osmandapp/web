@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-title:  Nautical map view
+title:  Nautical Map View
 ---
 
 import Tabs from '@theme/Tabs';

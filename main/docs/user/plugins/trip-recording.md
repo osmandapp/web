@@ -1,6 +1,6 @@
 ---
 sidebar_position: 15
-title:  Trip recording
+title:  Trip Recording
 ---
 
 import Tabs from '@theme/Tabs';

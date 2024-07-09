@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-title:  Marker widgets
+title:  Marker Widgets
 ---
 
 import Tabs from '@theme/Tabs';

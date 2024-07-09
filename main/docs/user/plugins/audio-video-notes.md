@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title:  Audio/video notes
+title:  Audio / Video notes
 ---
 
 import Tabs from '@theme/Tabs';

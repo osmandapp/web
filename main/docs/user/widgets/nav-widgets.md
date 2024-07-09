@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title:  Navigational widgets
+title:  Navigational Widgets
 ---
 
 import Tabs from '@theme/Tabs';

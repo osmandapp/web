@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+title: Ski Map Style
 ---
 import Translate from '@site/src/components/Translate.js';
 

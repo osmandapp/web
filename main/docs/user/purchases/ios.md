@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title:  iOS purchases
+title:  iOS Purchases
 ---
 
 import Tabs from '@theme/Tabs';
