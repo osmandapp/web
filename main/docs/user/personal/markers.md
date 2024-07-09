@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 7
 title:  Markers
 ---
 import Tabs from '@theme/Tabs';

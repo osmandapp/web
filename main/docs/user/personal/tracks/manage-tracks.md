@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-## Manage tracks
+## Manage Tracks
 
 After recording and saving, tracks can be managed as follows:    
 
@@ -27,7 +27,7 @@ After recording and saving, tracks can be managed as follows:
 - With the [*Context menu*](../../map/track-context-menu.md) of the track on the map, so that to adjust the appearance, to update points on the route, to view segments, to start navigation along the track/segment, and/or other options. 
 
 
-### View all tracks 
+### View All Tracks 
 
 <Tabs groupId="operating-systems">
 
@@ -51,7 +51,7 @@ After recording and saving, tracks can be managed as follows:
 
 All tracks ever recorded, created or imported are automatically displayed in the [My Places](../../personal/myplaces.md) folder in the *Tracks* tab. They are organised by folder or displayed in a list below them.
 
-### Folder menu
+### Folder Menu
 
 <Tabs groupId="operating-systems">
 
@@ -82,7 +82,7 @@ Actions:
 - [**Move**](#context-menu-in-my-places). You can move the selected folder to another existing folder or create a new one.
 - [*Delete folder*](#delete-folder). Allow you to delete a folder. A warning message will appear on the display. The deletion will be irreversible. 
 
-####  Delete folder
+####  Delete Folder
 
 <Tabs groupId="operating-systems">
 
@@ -110,7 +110,7 @@ You can delete a folder with all the tracks it contains. To do this:
 - **NOTE** that this action is irreversible.
 
 
-### Folder statistics (Android)
+### Folder Statistics (Android)
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> tab*
 
@@ -126,7 +126,7 @@ At the bottom of the list in the _Tracks_ tab, and below the list of tracks **in
 - *Total **Size** of downloaded files in MB*. Total downloaded file size in megabytes shows how much space all tracks in the selected folder take up on your device.
 
 
-### Single track menu
+### Single Track Menu
 
 <Tabs groupId="operating-systems">
 
@@ -167,7 +167,7 @@ Menu with actions:
 - **Delete**. Deletes the selected track that you do not need.
 
 
-### Configure map
+### Configure Map
 
 <Tabs groupId="operating-systems">
 
@@ -222,7 +222,7 @@ Provides convenient [track sorting](#sort-by).
 *For *iOS*, the sorting list in this section is the same as for *Android*.*
 
 
-### Show tracks on map
+### Show Tracks on Map
 
 Tracks are a separate data layer that can be shown or hidden using the appropriate option in the [Configure map](../../map/configure-map-menu.md#map-data-layers) menu or [My Places](../../personal/myplaces.md) menu. In addition, tapping Tracks item opens [the track selection screen](#single-track-menu), allowing you to choose which track or multiple tracks to display on the map.  
 
@@ -236,7 +236,7 @@ To display a track for a specific profile on the map, you can:
 3. Tap the selected track, and in the **Tracks context menu** using the [*Show / Hide*](../../map/track-context-menu.md#quick-actions) button you can enable or disable the display of the track on the map.
 
 
-### Open tracks menu
+### Open Tracks Menu
 
 <Tabs groupId="operating-systems">
 
@@ -265,7 +265,7 @@ To display a track for a specific profile on the map, you can:
 With the various tools provided by OsmAnd, you can open the entire track list and track folders on your device.
 
 
-### Options of Tracks context menu
+### Options of Tracks Context Menu
 
 <Tabs groupId="operating-systems">
 
@@ -294,7 +294,7 @@ Options:
 When you tap a track directly on the map, the track context menu appears, where you can see a [basic overview of the track](../../map/track-context-menu.md#overview) as well as a more [analytical data](../../map/track-context-menu.md#altitude--speed-graphs) for investigating the route and making adjustments to [points and waypoints](../../map/track-context-menu.md#points--waypoints), if necessary. You can also edit a track using the [Plan route tool](../../plan-route/create-route.md#opening-plan-route). From the context menu, open a track in this tool and edit it: delete or add points, cut the track before or after a certain point.
 
 
-#### Change folder
+#### Change Folder
 
 <Tabs groupId="operating-systems">
 
@@ -324,7 +324,7 @@ You can change the folder for tracks not only using the Folder or Single track m
 - In the *<Translate android="true" ids="shared_string_options"/> list* that opens, tap **<Translate android="true" ids="change_folder"/>**.
 - Select the folder to which you want to move the track.   
 
-## Tracks menu
+## Tracks Menu
 
 <Tabs groupId="operating-systems">
 
@@ -375,7 +375,7 @@ Available:
 - [*Filter*](#filter) (Android only) if you need the specific characteristics of the track.
 
 
-### Three-dots menu
+### Three-Dots Menu
 
 <Tabs groupId="operating-systems">
 
@@ -408,7 +408,7 @@ Available:
 - [**Import**](#import). If you have tracks you want to add to OsmAnd, you can use the import function to upload files from your device.
 
 
-### Selection mode
+### Selection Mode
 
 <Tabs groupId="operating-systems">
 
@@ -470,7 +470,7 @@ Sort menu:
 :::
 
 
-## Import / Export track
+## Import / Export Track
 
 ### Import
 

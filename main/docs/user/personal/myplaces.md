@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 5
 title:  My Places
 ---
 
@@ -40,9 +40,18 @@ My Places is the primary place in the OsmAnd app that allows you to manage all y
 </Tabs>
 
 
- ## My Places
+## Favorites
  
 - [Favorites](../personal/favorites.md)
+
+## Tracks
+
 - [Tracks](../personal/tracks/index.md)
+
+## OpenStreetMap edits
+
 - [OpenStreetMap edits](../plugins/osm-editing.md)
+
+## Audio/video notes
+
 - [Audio/video notes](../plugins/audio-video-notes.md)

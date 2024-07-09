@@ -67,7 +67,7 @@ Features **Tracks** functionality lets you create and save routes so you can eas
 
 Tracks is a powerful tool for tracking journeys, recording routes and Points of Interest (POIs) in real-time, and for later analyzing and sharing data.  
 
-### Track recording
+### Track Recording
 
 <Tabs groupId="operating-systems">
 
@@ -91,7 +91,7 @@ You can create a new track by starting a record in the Tracks tab or using the O
 - **Currently recording track** (*Android*) / **Recorded track** (*iOS*). 
 - [**Menu**](#folder-menu). Tapping the three dot menu (for Android) or long press (for iOS) opens the [track menu](#single-track-menu). During track recording, in this field you can see how many kilometers have already been recorded and how long the recording is in progress. The **Stop** button allows you to pause the recording, and to finish it, press the **Save** button.
 
-#### Baterry optimization (Android only)
+#### Baterry Optimization (Android only)
 
 ![Track on the map iOS](@site/static/img/personal/tracks/battery_andr.png)
 
@@ -99,7 +99,7 @@ Select an optimisation setting. To prevent the app from asking you the next time
 **NOTE**. Optimizing battery usage in Android can cause gaps and inaccuracies in recorded tracks. If you encounter such problems, try changing the battery usage mode to *Unrestricted*.
 
 
-### Coordinate input
+### Coordinate Input
 
 <InfoAndroidOnly /> 
 
@@ -112,7 +112,7 @@ In the **Options** menu using the **Save as track** item, you can save the creat
 For more details, read the article [Coordinates input](../../plan-route/coordinate-input.md#options).
 
 
-### Plan route
+### Plan Route
 
 <Tabs groupId="operating-systems">
 

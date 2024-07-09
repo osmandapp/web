@@ -34,7 +34,7 @@ Osmand provides convenient track management tools, one of them is filtering in t
 
 ![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png)  
 
-### Available filters
+### Available Filters
 
 - **Filter by name**
 
@@ -78,7 +78,7 @@ Osmand provides convenient track management tools, one of them is filtering in t
     - Temperature, average.
     - Temperature, max.
 
-- **Max speed**
+- **Max Speed**
 
     - This filter allows you to search for tracks with a specific maximum speed.
     - Select from the suggested range of maximum speed values to find tracks that match this parameter.  
@@ -136,7 +136,7 @@ Osmand provides convenient track management tools, one of them is filtering in t
     - *With Waypoints*. This filter helps you find tracks that contain waypoints, places that were marked during track recording, for example. With this filter, you can easily find tracks with important waypoints, such as vacation spots or notable events on your trip.
 
 
-## Smart folder
+## Smart Folder
 
 <InfoAndroidOnly/>
 
@@ -146,10 +146,10 @@ Osmand provides convenient track management tools, one of them is filtering in t
 
 1. **Automated organization.** *Smart folder* can automatically sort files within itself based on specified rules or criteria. For example, you can set up a *Smart folder* so that all tracks created on a certain date are automatically moved to that folder.
 2. **Filtering and searching.** This folder can provide options to quickly search for tracks within itself using various filters and keywords. These help users to quickly find the tracks they are looking for.
-3. **Dynamic Refresh.** *Smart folder* can dynamically update its contents based on Refresh function. This allows you to always have up-to-date information inside the folder.
-4. **Customize Rules.** You can customize rules that determine which files should be included in the *Smart folder*. 
+3. **Dynamic refresh.** *Smart folder* can dynamically update its contents based on Refresh function. This allows you to always have up-to-date information inside the folder.
+4. **Customize ules.** You can customize rules that determine which files should be included in the *Smart folder*. 
 
-### Create Smart folder
+### Create Smart Folder
 
 To create a smart folder, follow these steps:
 1. **Tap the 3-dot menu icon in the upper right corner** of the screen in the *Tracks* tab. 
@@ -161,7 +161,7 @@ To create a smart folder, follow these steps:
 
 After completing these steps, the Smart Folder will automatically collect and display tracks matching the specified filter parameters.
 
-### Folder menu in Tracks tab
+### Folder Menu in Tracks Tab
 
 ![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_2_andr.png)  
 
@@ -176,7 +176,7 @@ Once created, the Smart folder is displayed with a special icon in the folder li
 - **Delete folder**. You can only delete the Smart folder, not the tracks. A warning message will appear on the display. The deletion will be irreversible.  
 
 
-### Internal folder menu
+### Internal Folder Menu
 
 ![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)  
 
@@ -186,7 +186,7 @@ Go to the Smart folder and tap the menu with three dots in the upper right corne
 - [**Edit filter**](#filters-for-smart-folder). Moves to the Filter screen where you can configure track filtering for the folder.
 
 
-### Select in Smart folder
+### Select in Smart Folder
 
 ![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_4_andr.png)  
 
@@ -200,7 +200,7 @@ This screen allows you to select the tracks you want, as well as a list of sugge
 - **Delete**. Deletes only the folder with its settings. The tracks displayed in this folder are not deleted.
 
 
-###  Export tracks from Smart folder
+###  Export Tracks from Smart folder
 
 1. Exporting tracks that are in the Smart folder is available through the menu in the folder field of the Tracks tab.
     - Tap the 3-dot menu, then select **Export**.
