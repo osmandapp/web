@@ -196,9 +196,13 @@ You can use the **Search History** to search again for previously found places o
 
 </Tabs>
 
-The **Search POI** is a list, sorted by category, with which you can easily find places and services near your current location or a selected area on the map. Read the [Search POI](./search-poi.md) article for more information.
+The **Search POI** is a list, sorted by category, with which you can easily find places and services near your current location or a selected area on the map. 
 
+- [**Custom POI search**](./search-poi.md#custom-poi-search) allows you to combine different POI categories to simplify and personalize your search, for example, if you need to find several types of services in a certain area or on a certain section of a route.
+- OsmAnd provides an [**Online search**](./search-poi.md#online-search) that works in real time, giving you quick access to search results. It is convenient to use when maps of the region are not available, but a constant and stable Internet connection is required.
+- Read the [Search POI](./search-poi.md) article for more information.
 
+<!--
 ### Custom POI Search
 
 <Tabs groupId="operating-systems">
@@ -225,7 +229,7 @@ The **Search POI** is a list, sorted by category, with which you can easily find
 ![Online search Android](@site/static/img/search/search_online_2_andr.png)  
 
 OsmAnd provides an **online search** that works in real time, giving you quick access to search results. It is convenient to use when maps of the region are not available, but a constant and stable Internet connection is required. More details can be found in the [Search POI](./search-poi.md#online-search) article.
-
+-->
 
 ## Search Coordinates
 
