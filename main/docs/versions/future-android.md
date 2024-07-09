@@ -202,6 +202,10 @@ Category ["Water" (Man made)](https://github.com/osmandapp/OsmAnd/issues/16021) 
 ## Others
 
 - significant speed improvement for ["Attach to roads"](https://osmand.net/docs/user/navigation/setup/gpx-navigation#attach-to-roads) algorithm,
+- Added [Pale style](https://github.com/osmandapp/OsmAnd/issues/20208) for roads rendering,
+- Added Stair icon on the map at border nodes,
+- Added Energy and Rendering statistics on Development plugin,
+- Added [Brands](https://github.com/osmandapp/OsmAnd/issues/20256) for POIs categories,
 - fixed the bug with [export-import GPX file](https://github.com/osmandapp/OsmAnd/issues/19212),
 - fixed [incrorrectly label](https://github.com/osmandapp/OsmAnd/issues/19834) of external temperature sensor data for GPX,
 - improved colors for [multi GPX track after import](https://github.com/osmandapp/OsmAnd/issues/19995),
