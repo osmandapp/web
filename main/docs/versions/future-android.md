@@ -31,8 +31,6 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 # What's new
 
 
-
-
 - New terrain colorization option ["Altitude"](#altitude-color-scheme-for-terrain).
 - [Custom color palettes](#custom-color-palettes) for terrain, tracks, and routes:
    - [Palette editor](#palette-editor),
@@ -48,6 +46,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 - [OSM Editing](#osm-login): deleted login / password authorization method.
 - [More icons](#more-favorite-icons) for Favorites.
 - Added [POI "Water" category](#category-water).
+- Updates for [Compass button](#compass-button-updates).
 - [More updates](#others)
     - Significant speed improvement for ["Attach to roads"](https://osmand.net/docs/user/navigation/setup/gpx-navigation#attach-to-roads) algorithm
 
@@ -189,6 +188,17 @@ Category ["Water" (Man made)](https://github.com/osmandapp/OsmAnd/issues/16021) 
 
 ![Water](../../blog/2024-06-19-android-4-8/img/water_poi.png)
 
+## Compass button updates
+
+- [Compass button](https://osmand.net/docs/user/map/interact-with-map/#map-orientation-and-compass):
+    - Single tap — should rotate map orientation to the North in all orientations. Even if it will rotate back in a second (for example like in compass mode)
+    - Double tap – should switch map orientations (previously works for single taps)
+    - Long tap – without changes, should open bottom sheet with the list of available orientations.
+- Processed accessibility actions:
+    - Single click(rotate map to North) - double click in Talkback
+    - Long click(open bottom sheet with orientations) - double click and hold in Talkback
+    - Double click to switch map orientation is not available for accessibility
+
 ## Others
 
 - significant speed improvement for ["Attach to roads"](https://osmand.net/docs/user/navigation/setup/gpx-navigation#attach-to-roads) algorithm,
@@ -201,4 +211,5 @@ Category ["Water" (Man made)](https://github.com/osmandapp/OsmAnd/issues/16021) 
 - Fixed [track stats, sorting & search](https://github.com/osmandapp/OsmAnd/issues/19634),
 - Fixed a bug with [3D tilt angle](https://github.com/osmandapp/OsmAnd/issues/19868),
 - [Localised names](https://github.com/osmandapp/OsmAnd/issues/20020) for routes,
-- Fixed [wrong uphil calculation](https://github.com/osmandapp/OsmAnd/issues/20074)
+- Fixed [wrong uphil calculation](https://github.com/osmandapp/OsmAnd/issues/20074),
+
