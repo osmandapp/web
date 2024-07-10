@@ -63,6 +63,7 @@ Thank you for your continued support of OsmAnd. Happy navigating!
 - [OSM Editing](#osm-login): deleted login / password authorization method.
 - [More icons](#more-favorite-icons) for Favorites.
 - Added [POI "Water" category](#category-water).
+- Updates for [Compass button](#compass-button-updates).
 - [More updates](#others)
     - Significant speed improvement for ["Attach to roads"](https://osmand.net/docs/user/navigation/setup/gpx-navigation#attach-to-roads) algorithm
 
@@ -204,9 +205,24 @@ Category ["Water" (Man made)](https://github.com/osmandapp/OsmAnd/issues/16021) 
 
 ![Water](./img/water_poi.png)
 
+## Compass button updates
+
+- [Compass button](https://osmand.net/docs/user/map/interact-with-map/#map-orientation-and-compass):
+    - Single tap — should rotate map orientation to the North in all orientations. Even if it will rotate back in a second (for example like in compass mode)
+    - Double tap – should switch map orientations (previously works for single taps)
+    - Long tap – without changes, should open bottom sheet with the list of available orientations.
+- Processed accessibility actions:
+    - Single click(rotate map to North) - double click in Talkback
+    - Long click(open bottom sheet with orientations) - double click and hold in Talkback
+    - Double click to switch map orientation is not available for accessibility
+
 ## Others
 
 - significant speed improvement for ["Attach to roads"](https://osmand.net/docs/user/navigation/setup/gpx-navigation#attach-to-roads) algorithm,
+- Added [Pale style](https://github.com/osmandapp/OsmAnd/issues/20208) for roads rendering,
+- Added Stair icon on the map at border nodes,
+- Added Energy and Rendering statistics on Development plugin,
+- Added [Brands](https://github.com/osmandapp/OsmAnd/issues/20256) for POIs categories,
 - fixed the bug with [export-import GPX file](https://github.com/osmandapp/OsmAnd/issues/19212),
 - fixed [incrorrectly label](https://github.com/osmandapp/OsmAnd/issues/19834) of external temperature sensor data for GPX,
 - improved colors for [multi GPX track after import](https://github.com/osmandapp/OsmAnd/issues/19995),
