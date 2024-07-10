@@ -97,10 +97,10 @@ There are 3 ways to reach the navigation menu:
 - &nbsp;_<Translate android="true" ids="shared_string_settings"/>&#x2699_ - leads to menu where you can quickly adjust some of the [Navigation settings](#settings).
 
 In Navigation menu you can set your destination using:
-- Special favories points [**Home / Work**](#use-home--work-points).
-- Previous route or [History](../../personal/global-settings.md#history).
+- Special favories points [**_Home / Work_**](#use-home--work-points).
+- Previous route or [_History_](../../personal/global-settings.md#history).
 
-Cansel button at the bottom of the screen leads back to the main screen. [Start button](#start--stop-navigation) can be used to start Navigation after route calculation has ended.
+Cancel button at the bottom of the screen leads back to the main screen. [_Start button_](#start--stop-navigation) can be used to start Navigation after route calculation has ended.
   
 ### Choose starting point
 
@@ -108,7 +108,7 @@ As for the starting point, you can choose your current location, location of a [
 
 ### Set target point
 
-The most important thing to start navigation is to determine your destination. The destination point can be found using a [Search](../../search/index.md#overview) function, or simply on a map. You can also set target point in the [Navigation menu](#navigation-menu):  
+The most important thing to start navigation is to determine your destination. The destination point can be found using a [Search](../../search/index.md#overview) function, or simply on a map. You can also set target point in the [_Navigation menu_](#navigation-menu):  
 
 <Tabs groupId="operating-systems">
 
