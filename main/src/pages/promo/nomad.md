@@ -18,9 +18,9 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 
 ## Version française
 
-**OsmAnd Pro pour les utilisateurs de Nomad's trip**
+**OsmAnd Pro pour les observateurs de "Nomad's trip"**
 
-Bonjour les plaisirs des voyages!
+Salut les fans de voyages!
 
 OsmAnd et [_"Nomad's trip"_](https://www.facebook.com/nomadetpep) vous présentent les abonnements OsmAnd Pro pour 1 an. Vous pouvez utiliser toutes les fonctionnalités d'OsmAnd pour [toutes les plateformes](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform): iOS, Android et Web.
 
@@ -44,7 +44,7 @@ ________________________________
 
 ## English version
 
-**OsmAnd Pro for "Nomad's trip" users**
+**OsmAnd Pro for "Nomad's trip" watchers**
 
 Hello fans of trips!
 
