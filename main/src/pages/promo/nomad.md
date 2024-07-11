@@ -46,7 +46,7 @@ ________________________________
 
 **OsmAnd Pro for "Nomad's trip" users**
 
-Hello funs of trips!
+Hello fans of trips!
 
 OsmAnd and ["Nomad's trip"](https://www.facebook.com/nomadetpep) introduce and present you OsmAnd Pro subscriptions for 1 year. 
 You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform): iOS, Android and Web.
