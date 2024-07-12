@@ -59,20 +59,21 @@ Thank you for your continued support of OsmAnd. Happy journey!
 - [Weather UI](#weather-tool-improvements) has been updated with layer animations and improved label visibility.
 - Improvements for the [3D track view](#3d-track-improvements).
 - [GPX track activity](#gpx-track-acitivity).
-- Removed login/password authorization method in [OpenStreetMap Editing plugin](#osm-login).
+- Removed login/password authorization method in [OpenStreetMap Editing plugin](#login-to-openstreetmap).
 - [More icons](#more-favorite-icons) for Favorites.
-- Added [Water category of POIs](#category-water).
+- Added [Water category of POIs](#water-category-of-pois).
 - Updates for [Compass button](#compass-button-updates).
 - [Optional updates](#optional-updates).
 
 
-## Altitude color scheme for Terrain
+## Altitude Color Scheme for Terrain
 
 The new [color scheme Altitude](https://osmand.net/docs/user/plugins/contour-lines#terrain) has been added for Terrain.
 
 ![Color palette](./img/color_altitude.png)
 
-## Custom color palettes
+
+## Custom Color Palettes
 
 New colorizations of color palette schemes have been added for:
 - [Route](https://osmand.net/docs/user/navigation/guidance/map-during-navigation#color): Speed, Slope, Elevation (Altitude).
@@ -98,7 +99,7 @@ After moving the TXT file to _..Android/data/net.osmand/files/color-paletee/heig
 
 ![Palettes](./img/palette.png)
 
-### Palette editor
+### Palette Editor
 
 _Terrain → Modify (Colour scheme) → All colors → &#8942; → Edit_
 
@@ -116,19 +117,21 @@ _Menu → Configure screen → Custom buttons → + → Add button → Add actio
 
 ![Color Scheme](./img/color_scheme.png)
 
-### Color palettes legend
+### Color Palettes Legend
 
 Added new color palettes and legends for [tracks](https://osmand.net/docs/user/map/tracks-on-map/track-appearance#color), [routes](https://osmand.net/docs/user/navigation/guidance/map-during-navigation#color), [terrain](https://osmand.net/docs/user/plugins/contour-lines#color-scheme) to represent speed, altitude, and slopes, [weather](https://osmand.net/docs/user/plugins/weather#weather-layers)  all weather layers:
 
 ![Palettes legend](./img/legend.png) ![Palettes legend](./img/legend_1.png) ![Palettes legend](./img/legend_2.png)
 
-## 3D My location icon
+
+## 3D My Location Icon
 
 3D icons for [My Location](https://osmand.net/docs/user/personal/profiles#profile-appearance) have been added.
 
 ![3D icon](./img/3d_icon.png)
 
-## Profile appearance redesign
+
+## Profile Appearance Redesign
 
 Updates of [Profile appearance](https://osmand.net/docs/user/personal/profiles#profile-appearance):
 - new Icon and Color selection components
@@ -137,7 +140,7 @@ Updates of [Profile appearance](https://osmand.net/docs/user/personal/profiles#p
 - 3D icons default in Opengl
 
 
-## Update of Quick Actions tool
+## Update of Quick Actions Tool
 
 We updated the "Add Action" screen of the [Quick actions](https://osmand.net/docs/user/widgets/quick-action) tool. Now you can find groups of actions and use the search function.
 
@@ -145,78 +148,103 @@ Additionally, you'll find more actions for configuring this tool.
 
 ![External Buttons](./img/external_buttons.png) ![External Buttons](./img/external_buttons_2.png)
 
-
-### Quick Actions on external keyboard
+### Quick Actions on External Keyboard
 
 Assign actions for a personalized experience. All Quick Actions can now be assigned to external keyboard buttons.
 
 ![External Buttons](./img/external_buttons.png) ![External Buttons](./img/external_buttons_1.png)
 
-## Weather tool improvements
 
-- New weather panel with an updated UI,
-- Additional weather source options: click the ⚙ icon and choose between [GFS](https://en.wikipedia.org/wiki/Global_Forecast_System) or [ECMWF](https://en.wikipedia.org/wiki/European_Centre_for_Medium-Range_Weather_Forecasts),
-- Weather animation: tap the "Play" button on the "Weather" screen (make sure to choose weather layers first),
-- Added Wind animation layer.
+## Weather Tool Improvements
+
+Layer animations and improved labels make the weather interface more visual and informative. These changes help you better understand current weather conditions and forecasts. Improved label visibility makes navigating weather data much easier.  
+
+**Improvements**:
+- **New weather panel** with an updated user interface.
+
+- Additional **Weather source options**.
+  - Tap the ⚙ icon and select [GFS](https://en.wikipedia.org/wiki/Global_Forecast_System) or [ECMWF](https://en.wikipedia.org/wiki/European_Centre_for_Medium-Range_Weather_Forecasts).
+
+- **Weather animation**.
+  - After making sure the weather layers are selected, tap the *Play* button on the *Weather* screen.
+  
+- A **Wind animation layer** has been added.
 
 ![weather](./img/weather_annimation.gif)
 
 
-## 3D track improvements
+## 3D Track Improvements
 
-For this release, we added the following improvements to the [appearance of 3D track](https://osmand.net/docs/user/map/tracks-on-map/track-appearance#3d-track).
+Updated 3D track visualizations provide a more detailed view of routes.  In this release, we have added the following improvements to the [3D track appearance](https://osmand.net/docs/user/map/tracks-on-map/track-appearance#3d-track). 
 
-- Visualization options: If "Visualized by" is set to "Fixed height," change "Vertical exaggeration" to "Wall height."
+1. **Visualization options.** 
+    - If *Visualized by* is set to *Fixed height*,  
+        *→* change *Vertical exaggeration* to *Wall height*.
 
-- Wall color options: Choose from Solid, Downward gradient, Upward gradient, Altitude, Slope, or Speed.
+2. **Wall color options.** 
+    - You can choose from:  
+        *Solid, Downward gradient, Upward gradient, Altitude, Slope,* or *Speed*.
 
 ![3D track](./img/track_3d.png)
 
-## GPX track acitivity
 
-Added the ability to add activity for track recording.
+## GPX Track Acitivity
+
+The new feature of adding **Activity** to a recorded GPX track improves navigation and track management. This increases the convenience of working with track recordings.
 
 ![3D track](./img/track_activity.png)
 
-## OSM login
 
-Only new OAuth 2.0 will be supported from June 1st, 2024 onwards.
+## Login to OpenStreetMap
 
-- Remove the "Use username and password" button from:
-  - Main bottom sheet,
-  - Benefits for active OSM contributors,
-  - Upload OSM Note dialog.
+To improve security, the option to authorize via login and password has been removed. As of June 1, 2024, only the new secure OAuth 2.0 method will be supported.  This authorization method provides a higher level of information security to help protect your data and prevent unauthorized access.
+
+The Use username and password button has been removed from: 
+
+- *Login to* screen in the OSM Editing plugin menu.
+- Benefits for active OSM contributors. 
+- Upload OSM Note dialog.
 
 ![OSM Oath](./img/osm_oath.png)
 
-## More Favorite icons
 
-Added a full list of [icons for Favorites](https://github.com/osmandapp/OsmAnd/issues/16223). Find and add an icon from the POI icons library.
+## More Favorite Icons
 
-[Task](https://github.com/osmandapp/OsmAnd/issues/16223)
+A complete list of [icons for Favorites](https://github.com/osmandapp/OsmAnd/issues/16223) has been added, which helps to organize and visualize them better. This allows you to search and select an icon for a favorite in a *Сustom POI search* from the icon library, making the use of favorites more convenient and efficient.  
 
 ![Favorite icons](./img/favorite_icons.png)
 
-## Category "Water"
 
-Category ["Water" (Man made)](https://github.com/osmandapp/OsmAnd/issues/16021) has been added for [Categories](https://osmand.net/docs/user/search/search-poi#categories-poi-search).
+## Water Category of POIs
+
+The new POI [Water (Man made)](https://github.com/osmandapp/OsmAnd/issues/16021) category includes objects with drinking water sources. Searching this [сategories](https://osmand.net/docs/user/search/search-poi#categories-poi-search) will help you easily find water on the map when traveling.  
 
 ![Water](./img/water_poi.png)
 
-## Compass button updates
 
-- [Compass button](https://osmand.net/docs/user/map/interact-with-map/#map-orientation-and-compass):
-    - Single tap — should rotate map orientation to the North in all orientations. Even if it will rotate back in a second (for example like in compass mode)
-    - Double tap – should switch map orientations (previously works for single taps)
-    - Long tap – without changes, should open bottom sheet with the list of available orientations.
-- Processed accessibility actions:
-    - Single click(rotate map to North) - double click in Talkback
-    - Long click(open bottom sheet with orientations) - double click and hold in Talkback
-    - Double click to switch map orientation is not available for accessibility
+## Compass Button Updates
+
+The compass button has received updates that improve its functionality. These changes make the compass more accurate and easier to use, and help you navigate better.
+
+[**Compass button**](https://osmand.net/docs/user/map/interact-with-map/#map-orientation-and-compass): 
+
+- **Single tap**. Rotates the map orientation to the North in all orientations. Even if it rotates back in a second, such as in compass mode.
+- **Double tap**. Switches map orientations. This previously worked with a single tap.
+- **Long tap**. Opens a bottom sheet with a list of available orientations. This function remains unchanged.
+
+**Processed accessibility actions**: 
+
+- **Single tap**. Rotates the map to the North in main mode.  
+    *→* This action corresponds to a **Double tap** in *TalkBack*.
+- **Long tap**. Opens the bottom sheet with orientations in main mode.  
+    *→* This action corresponds to a **Double tap and hold** in *TalkBack*.
+- **Double tap** to switch map orientation is not available in Accessibility mode.
+
 
 ## Optional Updates
 
 - Significant speed improvement for [Attach to roads](https://osmand.net/docs/user/navigation/setup/gpx-navigation#attach-to-roads) algorithm.
+
 - Added [Pale style](https://github.com/osmandapp/OsmAnd/issues/20208) for roads rendering.
 
 - *Stair icon* was added to the map at border nodes.
@@ -226,12 +254,21 @@ Category ["Water" (Man made)](https://github.com/osmandapp/OsmAnd/issues/16021) 
 - Added [Brands](https://github.com/osmandapp/OsmAnd/issues/20256) for POIs categories.
 
 - Fixed bug with [export-import of GPX files](https://github.com/osmandapp/OsmAnd/issues/19212).
+
 - Fixed [incrorrect labeling](https://github.com/osmandapp/OsmAnd/issues/19834) of external temperature sensor data for GPX files.
+
 - Improved colors for [multiple GPX tracks after import](https://github.com/osmandapp/OsmAnd/issues/19995).
+
 - [New share sheet](https://osmand.net/docs/user/map/map-context-menu/#share)- Switch to the system shared sheet when Android 14 starts.
+
 - Fixed an issue with [navigation not stopping after reconnecting in Android Auto](https://github.com/osmandapp/OsmAnd/issues/19651).
+
 - Fixed [incorrect instructions during navigation in Android Auto](https://github.com/osmandapp/OsmAnd/issues/19438).
+
 - Fixed [sorting (statistics and search) of tracks folders in *Configure map → Tracks*](https://github.com/osmandapp/OsmAnd/issues/19634).
+
 - Fixed bug with [3D mode button tilt angle](https://github.com/osmandapp/OsmAnd/issues/19868) on the map.
+
 - Using [localized names](https://github.com/osmandapp/OsmAnd/issues/20020) for routes.
+
 - Fixed [incorrect calculation of uphil](https://github.com/osmandapp/OsmAnd/issues/20074).

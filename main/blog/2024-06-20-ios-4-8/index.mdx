@@ -44,6 +44,7 @@ You can download the update from the [AppStore](https://itunes.apple.com/us/app/
 - Fixed [names for bearing widgets](#others),
 - Fixed ["Radius ruler" visibility](#others) in all widget panels
 
+
 ## Speedometer widget
 
 For this release, a [new speedometer widget](https://osmand.net/docs/user/widgets/info-widgets/#speedometer) has been added. In the widget settings, you can choose from three speedometer sizes, set the speed limit tolerance, and enable warnings.
@@ -56,11 +57,13 @@ The [Speedometer widget](https://osmand.net/docs/user/navigation/car-play#speedo
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/speedometer_carplay_2_ios.png) 
 
+
 ## Turn-by-turn instructions
 
 [Turn-by-turn information](https://osmand.net/docs/user/navigation/setup/route-details/#turn-by-turn-information) provides detailed instructions for navigating your route. These instructions include information about your movements along the route.
 
 ![Navigation route Android](@site/static/img/navigation/route/navigation_turn_ios.png) 
+
 
 ## Custom buttons
 
@@ -70,14 +73,15 @@ _Menu → Configure screen → Buttons → Custom buttons → + → Add button_
 
 ![Custom button](./img/custom_button.png) ![Custom button](./img/custom_button_1.png)
 
+
 ## 3D track updates
 
 We have improved the [3D track appearance](https://osmand.net/docs/user/map/tracks-on-map/track-appearance#3d-track) and added more options for wall colors. You can now customize wall colors based on _Altitude, Slope, Speed, Heart Rate, Bicycle Cadence, Bicycle Power, Temperature_, and more.
 
 ![3D track](./img/3d_track.png)
 
-## Multi-selection for My Tracks
 
+## Multi-selection for My Tracks
 
 [This menu item](https://osmand.net/docs/user/personal/tracks/manage-tracks#three-dots-menu) allows you [to select the folders and routes](https://osmand.net/docs/user/personal/tracks/manage-tracks#selection-mode) you need for further management.
 
@@ -85,11 +89,13 @@ _Menu → My Places → Tracks → &#8230; → Select_
 
 ![Multi selection on My Tracks](./img/multi_selection.png) ![Multi selection on My Tracks](./img/multi_selection_1.png)
 
+
 ## 3D icons of My Location
 
 3D icons for ["My Location"](https://osmand.net/docs/user/personal/profiles#profile-appearance) have been added.
 
 ![3D icon](./img/3d_icon.png)
+
 
 ## Color Palettes
 
@@ -135,22 +141,25 @@ _Menu → Configure screen → Other → Location position on screen_
 
 ![Widget page](@site/static/img/widgets/conf_screen_display_position_ios.png) 
 
+
 ## Separate Speed limit alert
 
 The ["Speed limit" screen alert](https://osmand.net/docs/user/navigation/guidance/navigation-settings/#screen-alerts) has been separated from the Traffic Warnings screen alert.
 
 ![Navigation Settings](@site/static/img/navigation/navigation_settings_screen-alerts_new_ios.png)
 
-## OSM login
 
-Only [new OAuth 2.0](https://github.com/osmandapp/OsmAnd-iOS/issues/3736) will be supported from June 1st, 2024 onwards.
+## Login to OpenStreetMap
 
-- Remove the "Use username and password" button from:
-  - Main bottom sheet,
-  - Benefits for active OSM contributors.
+To improve security, the option to authorize with login and password has been removed. As of June 1, 2024, only [the new secure OAuth 2.0 method](https://github.com/osmandapp/OsmAnd-iOS/issues/3736) will be supported.  This authorization method provides a higher level of information security to help protect your data and prevent unauthorized access.
+
+The *Use username and password* button has been removed from: 
+
+- *Login to* screen in the OSM Editing plugin menu.
+- Benefits for active OSM contributors. 
 
 
-## Others
+## Optional Updates
 
 - Added [Context menu for tracks](https://github.com/osmandapp/OsmAnd-iOS/issues/3488) in Configure map,
 - Fixed broken [Hazmat parameters](https://github.com/osmandapp/OsmAnd-iOS/issues/3761),
