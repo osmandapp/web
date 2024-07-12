@@ -31,6 +31,7 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 - Fixed [names for bearing widgets](#others),
 - Fixed ["Radius ruler" visibility](#others) in all widget panels
 
+
 ## Speedometer widget
 
 For this release, a [new speedometer widget](https://osmand.net/docs/user/widgets/info-widgets/#speedometer) has been added. In the widget settings, you can choose from three speedometer sizes, set the speed limit tolerance, and enable warnings.
