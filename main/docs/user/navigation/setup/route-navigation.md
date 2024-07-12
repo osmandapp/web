@@ -47,19 +47,19 @@ For correct work of the navigation, you need to give OsmAnd permission to receiv
 
 To use the offline navigation, you first need to [download maps](../../start-with/download-maps.md) of the region you plan to navigate through. Once the maps are downloaded, follow these steps to set up navigation:  
 
-1. Configure profiles you intend to use for navigation according to your needs:  
+1. [_Configure profiles_](../../personal/profiles.md) you intend to use for navigation according to your needs:  
     - Set your [vehicle parameters](../guidance/navigation-settings.md#size-parameters) (important for truck drivers), select the [engine type](../guidance/navigation-settings.md#fuel-used-by-motor) (optional).
     - Configure [route line appearance](../guidance/map-during-navigation#route-line-appearance) (optional, only for [Pro users](../../purchases/index.md#purchases)).  
     - Choose whether to provide [notifications](../guidance/voice-navigation.md) during your route or not. If you need voice prompts, [configure](../guidance/voice-navigation.md#settings-of-voice-prompts) them.
-2. Go to the [Navigation menu](#navigation-menu):
+2. Go to the [_Navigation menu_](#navigation-menu):
     - Specify the [destination point](#set-target-point).
     - Wait until the route is calculated. After that you will be able to obtain additional information about your route in *[Details section](./route-details.md#overview)*.
     - You can switch between different [routing types](./../routing/routing-types.md) (profiles) to get the best result.
     - Add [intermediate destinations](#intermediate-destinations) (optional).
     - You can also change the departure point from the [current location](../../map/interact-with-map#my-location--zoom) to the required one.
-3. Additional [navigation settings](#settings) can be used depending on your purposes (you can configure which roads to avoid or prefer, save fuel or choose the fastest route, etc).
+3. Additional [_Navigation settings_](#settings) can be used depending on your purposes (you can configure which roads to avoid or prefer, save fuel or choose the fastest route, etc).
 4. [Start](#start--stop-navigation) navigation or at first [simulate navigation](#simulate-navigation) (with this function you can test your route before actually traveling along it).
-5. While on the route you can [Pause/Resume](#pause--resume-navigation) navigation and [Stop](#start--stop-navigation) it.
+5. While on the route you can [_Pause/Resume_](#pause--resume-navigation) navigation and [_Stop_](#start--stop-navigation) it.
 
 :::note
 - Route cannot be build when *[Online map](../../map/raster-maps.md#select-raster-maps)* is selected as map source.
@@ -69,9 +69,9 @@ To use the offline navigation, you first need to [download maps](../../start-wit
 
 There are 3 ways to reach the navigation menu:
 
-- [The navigation button](../../widgets/map-buttons.md#directions) on the map screen.  
-- *Direction to/from* in a [map context menu](../../map/map-context-menu.md#directions-to--from).  
-- Navigation section in the Main menu  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
+- The [_Navigation button_](../../widgets/map-buttons.md#directions) on the map screen.  
+- *Direction to/from* in a [_Map Context menu_](../../map/map-context-menu.md#directions-to--from).  
+- Navigation section in the [_Main menu_](../../start-with/main-menu.md)  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
 <Tabs groupId="operating-systems">
 
@@ -89,18 +89,18 @@ There are 3 ways to reach the navigation menu:
 
 </Tabs>
 
-- &nbsp;_<Translate android="true" ids="shared_string_my_location"/>_ - allows you to choose where your route will start. The default value is [my curent location](../../map/interact-with-map.md#my-location--zoom), though you can set a different one.
+- &nbsp;_<Translate android="true" ids="shared_string_my_location"/>_ - allows you to choose where your route will start. The default value is [My Curent location](../../map/interact-with-map.md#my-location--zoom), though you can set a different one.
 - &nbsp;_<Translate android="true" ids="add_destination_point"/>_ - is used to [set your destination point](#set-target-point).
 - &nbsp;"&#43;" - allows to add [intermediate points](../../widgets/nav-widgets.md#intermediate-destination) for navigation.
 - &nbsp;"&#8595;&#8593;" - allows to swap *Start* and *Finish* points.
 - &nbsp;"&#128266;" - can be used to switch off [Voice prompts](../guidance/voice-navigation.md).
 - &nbsp;_<Translate android="true" ids="shared_string_settings"/>&#x2699_ - leads to menu where you can quickly adjust some of the [Navigation settings](#settings).
 
-In Navigation menu you can set your destination using:
-- Special favories points [**Home / Work**](#use-home--work-points).
-- Previous route or [History](../../personal/global-settings.md#history).
+In the _Navigation menu_ you can set your destination using:
+- Special favories points [**_Home / Work_**](#use-home--work-points).
+- Previous route or [_History_](../../personal/global-settings.md#history).
 
-Cansel button at the bottom of the screen leads back to the main screen. [Start button](#start--stop-navigation) can be used to start Navigation after route calculation has ended.
+Cancel button at the bottom of the screen leads back to the main screen. [_Start button_](#start--stop-navigation) can be used to start Navigation after route calculation has ended.
   
 ### Choose starting point
 
@@ -108,7 +108,7 @@ As for the starting point, you can choose your current location, location of a [
 
 ### Set target point
 
-The most important thing to start navigation is to determine your destination. The destination point can be found using a [Search](../../search/index.md#overview) function, or simply on a map. You can also set target point in the [Navigation menu](#navigation-menu):  
+The most important thing to start navigation is to determine your destination. The destination point can be found using a [Search](../../search/index.md#overview) function, or simply on a map. You can also set target point in the [_Navigation menu_](#navigation-menu):  
 
 <Tabs groupId="operating-systems">
 
