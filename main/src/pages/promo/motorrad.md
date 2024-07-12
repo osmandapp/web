@@ -30,7 +30,7 @@ Sie können alle OsmAnd-Funktionen für [alle Plattformen nutzen](https://osmand
 
 1. **Geben Sie Ihre E-Mail-Adresse** für die Registrierung ein:
    
-<RegisterUserPromoBlock  promoKey='motorrad'/>
+<RegisterUserPromoBlock  promoKey='motorrad2'/>
 
 <p> </p>
 
@@ -54,7 +54,7 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 
 1. **Input your e-mail** for registration:
    
-<RegisterUserPromoBlock  promoKey='motorrad'/>
+<RegisterUserPromoBlock  promoKey='motorrad2'/>
 
 <p> </p>
 
