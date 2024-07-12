@@ -165,10 +165,6 @@ const config = {
                 href: 'https://t.me/osmand_pl',
               },
               {
-                label: 'Russian',
-                href: 'https://t.me/ruosmand',
-              },
-              {
                 label: 'Spanish',
                 href: 'https://t.me/osmand_es',
               },
