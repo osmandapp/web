@@ -50,12 +50,12 @@ Thank you for your continued support of OsmAnd. Happy journey!
 - [Altitude](#altitude-color-scheme-for-terrain) terrain colorization option.
 - [Custom color palettes](#custom-color-palettes) for terrain, tracks, and routes:
   - [Palette editor](#palette-editor).
-  - [Quick action button](#quick-action-for-change-terrain-color-scheme) for Terrain color schemes.
+  - [Quick action button](#quick-action-to-change-the-color-scheme-of-the-terrain) for Terrain color schemes.
   - [Color palette legend](#color-palette-legend) for tracks, routes, and terrain.
-- [3D options](#3d-my-location-icon) for My location icons. 
+- [3D options](#3d-my-location-icons) for My location icons. 
 - [Profile appearance redesign](#profile-appearance-redesign).
-- [Add action screen](#update-of-quick-actions-tool) of the Quick Actions tool.
-  - Quick Actions on the [external keyboard](#quick-actions-on-external-keyboard) allow you to assign actions for personalized use.
+- [Add action screen](#quick-actions-tool-update) of the Quick Actions tool.
+  - Quick Actions on the [external keyboard](#quick-actions-to-external-keyboard) allow you to assign actions for personalized use.
 - [Weather UI](#weather-tool-improvements) has been updated with layer animations and improved label visibility.
 - Improvements for the [3D track view](#3d-track-improvements).
 - [GPX track activity](#gpx-track-acitivity).
@@ -103,15 +103,18 @@ After moving the TXT file to _..Android/data/net.osmand/files/color-paletee/heig
 
 _Terrain → Modify (Colour scheme) → All colors → &#8942; → Edit_
 
-![Palettes](./img/palette_editor.png)
+<table class="image">
+    <tr>
+        <td><img src={require('@site/blog/2024-06-19-android-4-8/img/palette_editor.png').default} alt="AA"/></td>
+        <td><img src={require('@site/blog/2024-06-19-android-4-8/img/palette_editor_1.png').default} alt="AA"/></td>
+    </tr>
+</table>  
 
 Here, you can create and modify your own palette.
 
-![Palettes](./img/palette_editor_1.png)
+### Quick Action to Change the Color Scheme of the Terrain
 
-### Quick action for change Terrain color scheme
-
-Added a switch between styles, similar to the switch between layers:
+In this release, we have added the ability to switch between terrain color schemes, similar to switching between layers. This can be done using the Quick Actions tool.  
 
 _Menu → Configure screen → Custom buttons → + → Add button → Add action → Topography → Change Terrain color scheme_
 
@@ -119,39 +122,43 @@ _Menu → Configure screen → Custom buttons → + → Add button → Add actio
 
 ### Color Palettes Legend
 
-Added new color palettes and legends for [tracks](https://osmand.net/docs/user/map/tracks-on-map/track-appearance#color), [routes](https://osmand.net/docs/user/navigation/guidance/map-during-navigation#color), [terrain](https://osmand.net/docs/user/plugins/contour-lines#color-scheme) to represent speed, altitude, and slopes, [weather](https://osmand.net/docs/user/plugins/weather#weather-layers)  all weather layers:
+The legend provides an easy way to view and understand the different markings on the map. New color palettes have been added to display [**speed** for tracks](https://osmand.net/docs/user/map/tracks-on-map/track-appearance#color), [**line type** for routes](https://osmand.net/docs/user/navigation/guidance/map-during-navigation#color), [**altitude and slope** for terrain](https://osmand.net/docs/user/plugins/contour-lines#color-scheme), and all [**weather layer**](https://osmand.net/docs/user/plugins/weather#weather-layers) color palettes.
 
-![Palettes legend](./img/legend.png) ![Palettes legend](./img/legend_1.png) ![Palettes legend](./img/legend_2.png)
+<table class="image">
+    <tr>
+        <td><img src={require('@site/blog/2024-06-19-android-4-8/img/legend.png').default} alt="AA"/></td>
+        <td><img src={require('@site/blog/2024-06-19-android-4-8/img/legend_1.png').default} alt="AA"/></td>
+        <td><img src={require('@site/blog/2024-06-19-android-4-8/img/legend_2.png').default} alt="AA"/></td>
+    </tr>
+</table>  
 
 
-## 3D My Location Icon
+## 3D My Location Icons
 
-3D icons for [My Location](https://osmand.net/docs/user/personal/profiles#profile-appearance) have been added.
+A new 3D view has been added for [My Location](https://osmand.net/docs/user/personal/profiles#profile-appearance) icons, which improves their visualization on the map. These changes bring the appearance of the icons in alignment with the 3D tilt of the map.   
 
 ![3D icon](./img/3d_icon.png)
 
 
 ## Profile Appearance Redesign
 
-Updates of [Profile appearance](https://osmand.net/docs/user/personal/profiles#profile-appearance):
-- new Icon and Color selection components
-- Redesign card for location icon selection
-- Added options to disable Location radius and view angle
-- 3D icons default in Opengl
+The [appearance of profiles](https://osmand.net/docs/user/personal/profiles#profile-appearance) has been improved to make them more interesting, recognizable, and usable. 
+The update includes:
+- New icon and color selection components.
+- Redesign of the location icon selection map.
+- Added options to disable location radius and viewing angle.
+- Default 3D icons in OpenGL.
 
 
-## Update of Quick Actions Tool
+## Quick Actions Tool Update
 
-We updated the "Add Action" screen of the [Quick actions](https://osmand.net/docs/user/widgets/quick-action) tool. Now you can find groups of actions and use the search function.
-
-Additionally, you'll find more actions for configuring this tool.
+The updated **Add Action** screen makes it easier to customize and add [*Quick actions*](https://osmand.net/docs/user/widgets/quick-action), improving access to important features. You can now find groups of actions, use the search function, and apply other actions to customize the *Quick Actions tool*, contributing to a better user experience.
 
 ![External Buttons](./img/external_buttons.png) ![External Buttons](./img/external_buttons_2.png)
 
-### Quick Actions on External Keyboard
+### Quick Actions to External Keyboard
 
-Assign actions for a personalized experience. All Quick Actions can now be assigned to external keyboard buttons.
-
+You can now assign all Quick Actions to [external keyboard buttons](https://osmand.net/docs/user/map/interact-with-map/#settings). This is especially useful if you often work with the application using external input devices and need quick access to basic functions. The ability to customize quick actions in this way makes working with OsmAnd more flexible and efficient.  
 ![External Buttons](./img/external_buttons.png) ![External Buttons](./img/external_buttons_1.png)
 
 
