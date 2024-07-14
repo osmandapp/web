@@ -13,7 +13,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-> *This article was last updated in June 2024*
 
 ## Overview
 
@@ -36,8 +35,8 @@ You can also create your **[own routing.xml file](#customize-offline-routing)** 
 
 ## Other Routing types
 
-- *[Online routing](./online-routing.md)* (**Android only**) - is an OsmAnd feature that allows users to plan and navigate routes using online services.  
-- *[BRouter routing](./brouter.md)* (**Offline**, **Android only**) - uses BRouter app for offline routing.
+- *[Online routing](./online-routing.md)* (**Android only**). This is a feature of OsmAnd that allows you to plan and navigate routes using online services.  
+- *[BRouter routing](./brouter.md)* (**Offline**, **Android only**). Uses BRouter app for offline routing.
 
 
 ## Customize offline routing
@@ -45,7 +44,9 @@ You can also create your **[own routing.xml file](#customize-offline-routing)** 
 You can modify the OsmAnd routing algorithm according to your needs. This can be done by updating the **routing.xml file**:  
 
 - Copy the [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) file to your device. Read the [Help information](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml#L25) carefully. As an example, view the [routing.xml](https://groups.google.com/g/osmand/c/JvV7p_JJvEU) file of the OsmAnd user.
+
 - After making the changes, the new *routing.xml* file can be added to OsmAnd by tapping it and selecting to open it in the OsmAnd app.
+
 - Select the modified [Navigation type](../../navigation/guidance/navigation-settings.md#navigation-type) for your profile.
 
 More information about this feature can be found in the [*Technical documentation*](../../../technical/osmand-file-formats/osmand-routing-xml.md) and on [*OsmAnd's GitHub page*](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).  
@@ -166,3 +167,6 @@ In OpenStreetMap, this information is usually marked with the tag '*[temporary](
 ## Development section
 
 The **Development section** of the *Route parameters* settings (*Menu → Settings → app profile → Navigation settings → Route parameters → Development*) is visible only when [OsmAnd development plugin](../../plugins/development.md) is enabled. It includes settings such as *Routing type (Android) / Routing algorithm (iOS), GPX approximation (Android only), Autozoom, and OsmAnd Live data (Android only)*. Read the [Navigation Settings](../../navigation/guidance/navigation-settings.md#development-settings) article for a detailed description.
+
+
+> *This article was last updated in Jule 2024*

@@ -13,8 +13,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-> *This article was last updated in June 2024*
-
 ## Overview
 
 The route type determines how the route is calculated, which roads are permitted, and what the travel time is. The OsmAnd application uses different route types for hiking, cycling, skiing or boating routes. Each profile is assigned a specific routing type that best matches it.  
@@ -31,7 +29,7 @@ The following profiles with their routing types are preset in OsmAnd: *Driving, 
 
 - [**Direct-to-point**](./direct-to-point-routing.md) navigation type doesn't have its own profile and can be used with any enabled one.  
 
-- OsmAnd offline routing can be customized by changing ([.xml file](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml)). For more information see [How to customise routing .xml article](../routing/osmand-routing.md#customize-offline-routing).
+- OsmAnd offline routing can be **configured by modifying the [.xml file](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml)**. For more information, see the [*Customize offline routing*](../routing/osmand-routing.md#customize-offline-routing) article.
 :::
 
 | Category | Description | Note |
@@ -41,3 +39,4 @@ The following profiles with their routing types are preset in OsmAnd: *Driving, 
 | [*BRouter* *(offline)*](./brouter.md)  |  Offline routing provided by [BRouter app](https://brouter.de/).  | Available for **Android only**. The full description read [here](./brouter.md).   |
 | [*<Translate android="true" ids="shared_string_online"/>* (*Android*)](./online-routing.md) |  Online routing builds the route servers' resources online by the Internet connection. | Available for **Android only**. You can configure [online routing](./online-routing.md) to build a route from various online routing engines such as [Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Routing OSM DE](https://routing.openstreetmap.de/), Generic GPX.  |
 
+> *This article was last updated in Jule 2024*

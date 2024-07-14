@@ -13,8 +13,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-> *This article was last updated in June 2024*
-
 ## Overview
 
 Car-based routing is designed to help drivers navigate efficiently, safely, and comfortably, by providing tailored directions that take into account the unique needs and preferences of each driver. Proper routing settings can help drivers save time, and fuel, and avoid hazards on the road. The fastest routing is offered by default.
@@ -65,7 +63,7 @@ Car routing is designed to help drivers find the most efficient and direct route
 By default, *Tuck profile* is deactivated. In order to use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-Truck routing is similar to car routing, but is designed specifically for drivers of large commercial vehicles. It takes into account additional factors such as vehicle [height, weight, and width restrictions](../guidance/navigation-settings.md#size-parameters) and the possibility to transport hazardous materials (see table below). All other routing settings are identical to [car routing](#route-parameters---car).  
+Truck routing is similar to car routing, but is designed specifically for drivers of large commercial vehicles. It considers additional factors such as vehicle [height, weight, and width restrictions](../guidance/navigation-settings.md#size-parameters) and the possibility to transport hazardous materials (check table below). All other routing settings are identical to [car routing](#route-parameters---car).  
 
 <Tabs groupId="operating-systems">
 
@@ -90,8 +88,8 @@ Truck routing is similar to car routing, but is designed specifically for driver
 
 | Parameter | Description | Note |
 |:------------|:---------------|:---------------|
-|*<Translate android="true" ids="transport_hazmat_title"/> (Android) / Hazmat category (iOS)* (for **EU region**)| <details><summary> Local authorities may forbid the transportation of hazardous materials on some roads or tunnels. </summary> ![Transporting of hazardous materials Android](@site/static/img/navigation/routing/routing_truck_hazmat_andr.png) </details> | When enabled, the truck routing mechanism takes into account the OSM tag *[hazmat](https://wiki.openstreetmap.org/wiki/Key:hazmat)*. You can choose one of the five categories (A, B, C, D, E) of dangerous materials according to EU restrictions. |
-|*<Translate android="true" ids="dangerous_goods"/>* (only if **USA region** is selected) | <details><summary> Hazardous materials transportation rules in the USA differ from the EU. Displayed only if the Driving Region is set to US. You can select multiple classes. </summary> ![Transporting of hazardous materials Android](@site/static/img/navigation/routing/routing_truck_dangerous_goods_andr.png) </details> | Select one of the types (from 1 to 9) of dangerous materials according to the [USA restrictions](https://www.iafc.org/topics-and-tools/hazmat/fusion-center/transportation-commodities/dot-hazard-classification-system). Transportation of hazardous materials is forbidden on some roads and tunnels. <ul><li>1. Explosives </li><li> 2. Gases </li><li> 3. Flammable Liquids </li><li> 4. Flammable Solids </li><li> 5. Oxidizing Agents and Organic Peroxides </li><li> 6. Toxic and Infectious Substances </li><li> 7. Radioactive Substances </li><li> 8. Corrosive Substances </li><li> 9. Miscellaneous </li></ul> |
+| *<Translate android="true" ids="transport_hazmat_title"/>* (for **EU region**) | <details><summary> Local authorities may forbid the transportation of hazardous materials on some roads or tunnels. </summary> ![Transporting of hazardous materials Android](@site/static/img/navigation/routing/routing_truck_hazmat_andr.png) </details> | When enabled, the truck routing mechanism takes into account the OSM tag *[hazmat](https://wiki.openstreetmap.org/wiki/Key:hazmat)*. You can choose one of the five categories (*A, B, C, D, E*) of dangerous materials according to **EU restrictions**. |
+| *<Translate android="true" ids="dangerous_goods"/>* (only if **USA region** is selected) | <details><summary> Hazardous materials transportation rules in the USA differ from the EU. Displayed only if the Driving Region is set to US. You can select multiple classes. </summary> ![Transporting of hazardous materials Android](@site/static/img/navigation/routing/routing_truck_dangerous_goods_andr.png) </details> | Select one of the types (from 1 to 9) of dangerous materials according to the [**USA restrictions**](https://www.iafc.org/topics-and-tools/hazmat/fusion-center/transportation-commodities/dot-hazard-classification-system). Transportation of hazardous materials is forbidden on some roads and tunnels. <ul><li>1. *Explosives* </li><li> 2. *Gases* </li><li> 3. *Flammable Liquids* </li><li> 4. *Flammable Solids* </li><li> 5. *Oxidizing Agents and Organic Peroxides* </li><li> 6. *Toxic and Infectious Substances* </li><li> 7. *Radioactive Substances* </li><li> 8. *Corrosive Substances* </li><li> 9. *Miscellaneous* </li></ul> |
 
 
 ## Route parameters - Motorcycle
@@ -115,3 +113,4 @@ Motorcycle routing is the process of creating a route specifically optimized for
 
 - *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Properly configuring the settings will help you avoid problems when creating a route. You can select the most appropriate route depending on the type of vehicle and road restrictions, as well as calculate the travel time.
     
+> *This article was last updated in Jule 2024*
