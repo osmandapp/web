@@ -13,16 +13,18 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-
+<InfoIncompleteArticle/>
 
 ## Overview
 
-Vector maps are designed to be the default map data source for OsmAnd, so you need to download them to your device. Vector maps support a huge range of map styles for many activities like cycling, hiking, riding by car or snowmobile, etc. Each map style can be tuned to highlight or hide specific objects and switch between day and night mode. Map vector data could be augmented by vector data and displayed with default Map style, for example, Contour line information. You can create your own OsmAnd map style to demonstrate the necessary information.
+Vector maps are intended to be used as the default map data source for OsmAnd, so **you need to download them to your device**. Vector maps support a huge range of map styles for different activities like cycling, hiking, riding by car or snowmobile, and other.  
+
+Each map style can be customized to highlight or hide specific objects, as well as switch day and night mode. Map vector data could be augmented by vector data and displayed with default Map style, such as *Contour line* information. You can *create your own OsmAnd map style* to demonstrate the required information.
 
 
 ## Use cases
 
-Configurable and custom map styles are one of the main advantages of OsmAnd. Each user can customize the map display to suit himself and his hobbies, configure it to display or hide certain map objects, the sizes and colors of these objects, and change the scale at which certain objects are displayed.
+Customizable map styles are one of the main advantages of OsmAnd. You can customize the map display to suit yourself and your hobbies, adjust the display or hiding of certain map objects, the sizes and colors of these objects, and change the scale of the display of certain objects.
 
 
 ## Default Map Styles  
@@ -48,15 +50,16 @@ OsmAnd offers you many map styles and data layers that fit by default. Let's tak
 
 ### OsmAnd
 
+![OsmAnd map style](@site/static/img/map/map-style-osmand-with-routes.png)
+
 OsmAnd style is the default style of map rendering, general-purpose style. It offers details about the city such as streets, buildings, transport stops, etc. Simplified rendering to have cleaner maps in the populated cities. Key features: routes, surface quality, access restrictions, road shields, paths rendering according to SAC scale, whitewater sports features, topography features like contour lines.
 
-![OsmAnd map style](@site/static/img/map/map-style-osmand-with-routes.png)
 
 ### Touring View
 
-<Translate android="true" ids="touring_view_render_descr"/>
-
 ![Touring view map style](@site/static/img/map/map-style-touring.png)
+
+Touring style with high contrast and maximum detail. Includes all the options of the default OsmAnd style while displaying as much detail as possible, in particular roads, paths, and other ways of traveling. Clear distinction of road types in a *touring atlas*. Suitable for day, night, and outdoor use.
 
 ### UniRS and LightRS
 
@@ -64,11 +67,11 @@ OsmAnd style is the default style of map rendering, general-purpose style. It of
 
 UniRS and LightRS styles are author styles that render the basic map information but in different colour schemes.
 
-UniRS style: <Translate android="true" ids="unirs_render_descr"/>
+- **UniRS style**. <Translate android="true" ids="unirs_render_descr"/>
 
 ![UniRS map style](@site/static/img/map/map-style-unirs.png)
 
-LightRS style: <Translate android="true" ids="light_rs_render_descr"/>
+- **LightRS style**. <Translate android="true" ids="light_rs_render_descr"/>
 
 ![LightRS map style](@site/static/img/map/map-style-lightrs.png)
 
@@ -86,7 +89,7 @@ For skiing sports. Describes the pistes, elevators, cross-country trails, and ob
 
 ### Topo
 
-For hiking, trekking, and nature cycling. Readable outdoors. Contrasting roads and natural objects, different route types, advanced contour line options, extra details. Adjusting "Surface integrity" distinguishes road quality.
+For hiking, trekking, and nature cycling. Readable outdoors. Contrasting roads and natural objects, different route types, advanced contour line options, extra details. Adjusting *Surface integrity* distinguishes road quality.
 
 ![Topo map style](@site/static/img/map/map-style-topo.png)
 
@@ -114,10 +117,12 @@ This style simulates default web [OpenStreetMap style](https://www.openstreetmap
 
 ![Snowmobile map style](@site/static/img/map/map-style-snowmobile.png)
 
+
 ## Map Legend
 
 Map legend is a visual explanation of the symbols used on the map. It typically includes a sample of each symbol (point, line, or area), and a short description of what the symbol means. For example, a short segment of a blue sinuous line may be labeled 'rivers'.
 Map legend of OsmAnd maps you can find [here](../map-legend/index.md).
+
 
 ## Map Fonts (Android)
 
@@ -190,7 +195,7 @@ This feature gives you the ability to switch on or off the display of the vector
 The borders of the downloaded maps start displaying at zoom level 7 and are no longer displayed at zoom level 3.
 
 :::tip
-Downloaded maps are displayed in *Green* in the Android and iOS versions of OsmAnd when the "Show borders of downloaded maps" feature is switched on. Archived maps in the Android system and those maps that can be updated in iOS are displayed in *Orange*.  
+Downloaded maps are displayed in *Green* in the Android and iOS versions of OsmAnd when the *Show borders of downloaded maps* feature is switched on. Archived maps in the Android system and those maps that can be updated in iOS are displayed in *Orange*.  
 :::
 
 <Tabs groupId="operating-systems">
@@ -261,7 +266,7 @@ The map is displayed according to the day or night mode selected from the list. 
 
 </Tabs>  
 
-|Parameter and Description|
+|Parameters and Description|
 |------------|
 |**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. Showing polygons, trails, points, signs at low zooms on the map. It means you can see more details on your map at low zooms. _Note_: rendering on your device may be not fast.|
 |![Map parameter - More detailed](@site/static/img/map/map-parameter-more-details.png)|
@@ -310,7 +315,7 @@ When you click on the shield icon with a route number or flag, a context menu wi
 
 </Tabs> 
 
-|Parameter and Description|   
+|Parameters and Description|   
 |------------|
 |**<Translate android="true" ids="rendering_attr_showCycleRoutes_name"/>**|
 |*<Translate android="true" ids="layer_route"/>*. <Translate android="true" ids="rendering_value_walkingRoutesOSMC_description"/> Look at [Map legend](../map-legend/index.md).|
@@ -365,7 +370,7 @@ When navigating in cities, you need to see public transport in more contrast, as
 
 </Tabs>  
 
-|Parameter and Description|   
+|Parameters and Description|   
 |------------|
 |**<Translate android="true" ids="rendering_attr_transportStops_name"/>**. Showing public transport stops.|
 |![Map transport stops](@site/static/img/map/map-transport-stops.png)|
@@ -377,8 +382,6 @@ When navigating in cities, you need to see public transport in more contrast, as
 |![Map transport subway](@site/static/img/map/map-transport-subway.png)|
 
 ### Hide
-
-Sometimes we need to hide objects on the map for better vision. For example to hide water while using the [Underlay layer of Satellite online maps](../map/raster-maps.md#select-map-as-main--underlay--overlay-layer).  
 
 <Tabs groupId="operating-systems">
 
@@ -396,18 +399,18 @@ Sometimes we need to hide objects on the map for better vision. For example to h
 
 </Tabs>  
 
-|Parameter          |Description        
-|:------------|:---------------|
-|<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>| Hide regional boundaries inside of countries, but state boundaries are visible. |
-|<Translate android="true" ids="rendering_attr_noPolygons_name"/>|Hide all polygons of natural objects, special function for [Underlay/Overlay layer](../map/raster-maps.md#change-layer-parameters-transparency).  |
-|<Translate android="true" ids="rendering_attr_hideBuildings_name"/>|Hide all polygons of buildings. |
-|<Translate android="true" ids="rendering_attr_hideWaterPolygons_name"/>|Hide all polygons of water (seas, lakes, reservoirs etc.)  |
-|<Translate android="true" ids="rendering_attr_hideHouseNumbers_name"/>|Hide house numbers on the map.  |
-|<Translate android="true" ids="rendering_attr_showProposed_name"/>|Hide proposed objects, those objects which are planned for a building, but only have a project (projected roads, crossroads, buildings etc.)  |
-|<Translate android="true" ids="rendering_attr_hideIcons_name"/>|Hide POI icons from the map. But labels of these POI will be on the map. |
-|<Translate android="true" ids="rendering_attr_hidePOILabels_name"/>|Hide POI labels from the map. But icons of these POI will be on the map.  |
-|<Translate android="true" ids="rendering_attr_hideUnderground_name"/>| Hide all underground objects, like tunnels, passes, floors, etc. Special for clearing maps on cities from non useful objects.  |
-|<Translate android="true" ids="rendering_attr_hideOverground_name"/>|Hide all overground objects. Special for seeing only underground objects like tunnels, passes, etc.|
+Sometimes we need to hide objects on the map for better vision. For example to hide water while using the [Underlay layer of Satellite online maps](../map/raster-maps.md#select-map-as-main--underlay--overlay-layer).  
+
+- **<Translate android="true" ids="rendering_attr_noAdminboundaries_name"/>**. Hide regional boundaries inside of countries, but state boundaries are visible.
+- **<Translate android="true" ids="rendering_attr_noPolygons_name"/>**. Hide all polygons of natural objects, special function for [Underlay/Overlay layer](../map/raster-maps.md#change-layer-parameters-transparency).
+- **<Translate android="true" ids="rendering_attr_hideBuildings_name"/>**. Hide all polygons of buildings.
+- **<Translate android="true" ids="rendering_attr_hideWaterPolygons_name"/>**. Hide all polygons of water (seas, lakes, reservoirs etc.)
+- **<Translate android="true" ids="rendering_attr_hideHouseNumbers_name"/>**. Hide house numbers on the map.
+- **<Translate android="true" ids="rendering_attr_showProposed_name"/>**. Hide proposed objects, those objects which are planned for a building, but only have a project (projected roads, crossroads, buildings etc).
+- **<Translate android="true" ids="rendering_attr_hideIcons_name"/>**. Hide POI icons from the map. But labels of these POI will be on the map.
+- **<Translate android="true" ids="rendering_attr_hidePOILabels_name"/>**. Hide POI labels from the map. But icons of these POI will be on the map.
+- **<Translate android="true" ids="rendering_attr_hideUnderground_name"/>**. Hide all underground objects, like tunnels, passes, floors, etc. Special for clearing maps on cities from non useful objects.
+- **<Translate android="true" ids="rendering_attr_hideOverground_name"/>**. Hide all overground objects. Special for seeing only underground objects like tunnels, passes, etc.
 
 ### Road style
 
@@ -429,7 +432,7 @@ Special settings for roads, where you can change the colors to match the road at
 
 </Tabs> 
 
-|Parameter and Description|   
+|Parameters and Description|   
 |------------|
 |**<Translate android="true" ids="rendering_value_default_name"/>**. Default style for highways. Look at [Map legend](../map-legend/index.md).|
 |![Map road style default](@site/static/img/map/map-road-style-default.png)|
@@ -439,8 +442,11 @@ Special settings for roads, where you can change the colors to match the road at
 |![Map road style american](@site/static/img/map/map-road-style-american.png)|
 |**<Translate android="true" ids="rendering_value_highContrastRoads_name"/>**. The high contrast of roads.|
 |![Map road style high contrast](@site/static/img/map/map-road-style-high-contrast.png)|
+|**Pale**. Less contrasting colors of roads.|
+|![Map road style bold outline](@site/static/img/map/map-road-style-pale.png)|
 |**<Translate android="true" ids="rendering_value_boldOutline_name"/>**. Bold outline for roads.|
 |![Map road style bold outline](@site/static/img/map/map-road-style-bold-outline.png)|
+
 
 ### Text Size
 
@@ -475,7 +481,7 @@ This setting helps to change the magnifier of the map. It is applicable for rast
 
 <TabItem value="android" label="Android">  
 
-You can choose this setting by long-click to "+" or "-" button on the screen or:  
+You can choose this setting by long-tap to "+" or "-" button on the screen or:  
 *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_magnifier"/>*  
 
 </TabItem>
@@ -542,4 +548,4 @@ After that, you could select your own map style in the menu.
 - 
 - 
 
-> *This article was last updated in October 2022*
+> *This article was last updated in July 2024*
