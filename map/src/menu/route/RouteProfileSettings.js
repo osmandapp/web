@@ -24,8 +24,9 @@ import { useMutator } from '../../util/Utils';
 
 const ENABLE_PROVIDER_SELECTION = false; // disabled by default, but allowed if type=osrm is specified in URL
 
-export default function RouteProfileSettings({ geoRouter, useDevelFeatures = true, setOpenSettings, embed = false }) {
+export default function RouteProfileSettings({ geoRouter, setOpenSettings, embed = false }) {
     const ctx = useContext(AppContext);
+    const useDevelFeatures = ctx.develFeatures;
 
     const [unfoldedSections, mutateUnfoldedSections] = useMutator({}); // all sections are folded by default
 
@@ -221,27 +222,29 @@ export default function RouteProfileSettings({ geoRouter, useDevelFeatures = tru
         return (
             hasOptions() && (
                 <>
-                    {sections.map((s) => (
-                        <React.Fragment key={'section_' + s}>
-                            <MenuItem
-                                key={'unfold_' + s}
-                                selected={true}
-                                divider={true}
-                                onClick={() => switchFolding(s)}
-                            >
-                                {s ?? 'General options'}
-                            </MenuItem>
-                            {/* <Collapse key={'collapse_' + s} in={unfoldedSections[s]}> */}
-                            <div style={{ display: unfoldedSections[s] ? '' : 'none' }}>
-                                {Object.values(opts)
-                                    .filter((o) => o.section === s)
-                                    .map((opt) => (
-                                        <OptFlatItem key={'opt_' + opt.key} opt={opt} />
-                                    ))}
-                            </div>
-                            {/* </Collapse> */}
-                        </React.Fragment>
-                    ))}
+                    {sections
+                        .filter((s) => showDevSection({ section: s }))
+                        .map((s) => (
+                            <React.Fragment key={'section_' + s}>
+                                <MenuItem
+                                    key={'unfold_' + s}
+                                    selected={true}
+                                    divider={true}
+                                    onClick={() => switchFolding(s)}
+                                >
+                                    {s ?? 'General options'}
+                                </MenuItem>
+                                {/* <Collapse key={'collapse_' + s} in={unfoldedSections[s]}> */}
+                                <div style={{ display: unfoldedSections[s] ? '' : 'none' }}>
+                                    {Object.values(opts)
+                                        .filter((o) => o.section === s)
+                                        .map((opt) => (
+                                            <OptFlatItem key={'opt_' + opt.key} opt={opt} />
+                                        ))}
+                                </div>
+                                {/* </Collapse> */}
+                            </React.Fragment>
+                        ))}
                     {showReset() && (
                         <MenuItem>
                             <Button sx={{ ml: 1 }} onClick={handleReset}>

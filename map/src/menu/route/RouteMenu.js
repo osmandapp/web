@@ -362,7 +362,7 @@ export default function RouteMenu() {
                     </IconButton>
                 </MenuItem>
             )}
-            {ctx.develFeatures && <RouteProfileSettings key="routesettingsembed" embed={true} />}
+            {/*ctx.develFeatures && */ <RouteProfileSettings key="routesettingsembed" embed={true} />}
             {routeObject.getRoute() &&
                 routeOptions.map((opt) => (
                     <MenuItem key={'routeopt' + opt} sx={{ ml: 2, mr: 2 }}>
