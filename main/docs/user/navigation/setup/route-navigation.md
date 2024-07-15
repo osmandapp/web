@@ -345,7 +345,7 @@ Simulated navigation option allows users to test and preview a navigation route 
 - ***Familiarization***. You can familiarize yourself with the route before you actually go along it. This can be useful in unfamiliar areas, such as a new city or a difficult transport interchange.
 - ***Testing***. You can test the OsmAnd navigation system itself to make sure it works correctly and provides accurate instructions.  
 
-#### Start / stop simulation
+#### Start / Stop Simulation
 
 <Tabs groupId="operating-systems">
 
@@ -371,7 +371,7 @@ When a navigation route is built, you can start simulating navigation using the 
 - To stop the navigation simulation, tap *[Dismiss](#start--stop-navigation)* (Android), or *[Cancel](#start--stop-navigation)* (iOS).
 
 
-#### Simulation settings
+#### Simulation Settings
 
 <Tabs groupId="operating-systems">
 
@@ -402,8 +402,12 @@ When a navigation route is built, you can start simulating navigation using the 
 
 ## Troubleshouting
 
-If you encounter any difficulties while building the route, please consult the troubleshooting instructions in the *[special documentation section](../../troubleshooting/navigation.md)*. There you can find information about possible reasons for *[slow route calculation](../../troubleshooting/navigation.md#route-calculation-is-slow)*, what to do if the route is *[longer than 250 kilometers](../../troubleshooting/navigation.md#how-to-calculate-routes-longer-than-250km)* or the  proposed route *[does not seem correct](../../troubleshooting/navigation.md#the-calculated-route-does-not-seem-correct)*.  
-Below you can find out how to resolve situations when navigation is not possible due to the lack of necessary maps.  
+If you encounter difficulties when creating a route, refer to the troubleshooting instructions in the *[special documentation section](../../troubleshooting/navigation.md)*. There you can find information about:
+
+- The possible causes of *[slow route calculation](../../troubleshooting/navigation.md#route-calculation-is-slow)*.
+- What to do if the route length *[exceeds 250 kilometers](../../troubleshooting/navigation.md#how-to-calculate-routes-longer-than-250km)*.
+- What to do if the suggested *[route seems incorrect](../../troubleshooting/navigation.md#the-calculated-route-does-not-seem-correct)*.
+- How to solve the situation when navigation is not possible due to *[the lack of necessary maps](#maps-missing-or-not-synchronized)*.
 
 ### Maps Missing or Not Synchronized
 
@@ -432,8 +436,6 @@ Please note, that at some zoom levels the reason for the absence of the route ca
 
 #### Additional Information in the Navigation Menu
 
-If you pull the navigation menu up, you will see possible reasons why your route cannot be completed: 
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -449,6 +451,8 @@ If you pull the navigation menu up, you will see possible reasons why your route
 </TabItem>
 
 </Tabs>
+
+If you pull the navigation menu up, you will see possible reasons why your route cannot be completed.
 
 The screenshot shows a message when the map of the destination area is not downloaded. You can see, that OsmAnd tries to calculate the route when there are no maps for its middle section. To resolve that situation online checking may be needed.
 
