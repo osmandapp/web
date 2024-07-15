@@ -61,16 +61,21 @@ The feature displays the altitude of the terrain in different colors, which grea
 
 ![Palettes](../../blog/2024-06-19-android-4-8/img/palette.png)
 
-New colorizations of color palette schemes have been added for:
-- [Route](https://osmand.net/docs/user/navigation/guidance/map-during-navigation#color): Speed, Slope, Elevation (Altitude).
-- [Terrain](https://osmand.net/docs/user/plugins/contour-lines#hillshade--slope): Hillshade, Slope, Altitude.
-- [Weather](https://osmand.net/docs/user/plugins/weather#weather-layers): All weather layers.
+New color palette schemes have been added.
+- For [routes](../user/navigation/guidance/map-during-navigation.md#color): *Speed, Slope,* and *Elevation (Altitude)*.
+- For [terrain](../user/plugins/contour-lines.md#hillshade--slope): *Hillshade, Slope*, and *Altitude*.
+- For [weather](../user/plugins/weather.md#weather-layers): *All weather layers*.
 
-Users can create and add their own color palettes. Simply compose your TXT file with the following names: _Terrain_ - `height_altitude_name.txt`, `hillshade_color_name.txt`, `slope_name.txt`, _Routes_ - `route_speed_name.txt`, `route_slope_default.txt`, `route_elevation_default.txt`, _Weather_ - `weather_name.txt`
+You can add your custom color palettes to OsmAnd. To do this, create a TXT file with the required name:
+- *Routes*: `route_speed_name.txt`, `route_slope_default.txt`, `route_elevation_default.txt`.
+- *Terrain*: `height_altitude_name.txt`, `hillshade_color_name.txt`, `slope_name.txt`.
+- *Weather*: `weather_name.txt`.
 
-*height_altitude_0-200.txt*
+For example:
 
 ```
+TXT file named *height_altitude_0-200.txt*
+
 # 0 - 90 degree RGBA
 0,46,185,0,191
 # yellow 
@@ -81,7 +86,7 @@ Users can create and add their own color palettes. Simply compose your TXT file 
 220,130,1,255,255
 
 ```
-After moving the TXT file to _..Android/data/net.osmand/files/color-paletee/height_altitude_0-200.txt_, new palettes will appear in the Colour Scheme menu.
+After moving this TXT file to *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt*, a new palette will appear in the Color Scheme menu.
 
 ### Palette Editor
 
@@ -94,13 +99,7 @@ After moving the TXT file to _..Android/data/net.osmand/files/color-paletee/heig
     </tr>
 </table>  
 
-<!--
-Редактор палитр: Позволяет создавать и редактировать собственные цветовые схемы для лучшей персонализации карт. Пользователи могут настроить цвета в соответствии с личными предпочтениями или требованиями определенного маршрута. Это делает навигацию более гибкой и индивидуальной.
-
-Здесь вы можете создавать и изменять собственную палитру.
--->
-
-Here, you can create and modify your own palette.
+The palette editor allows you to create and edit custom color schemes to personalize your maps. This is where you can customize colors according to personal preferences or the requirements of a particular route. 
 
 ### Quick Action to Change the Color Scheme of the Terrain
 
