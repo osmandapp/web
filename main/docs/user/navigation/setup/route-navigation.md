@@ -16,15 +16,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-> *This article was last updated in July 2024*
-
 ## Overview
 
-The Navigation by route option provides you with simple step-by-step instructions, that help you easily reach your destination. *Navigation by route* can be used with different [types of routing](./../routing/routing-types.md) (or profiles): no matter whether you drive a [car](./../routing/car-based-routing.md), ride a [horse](./../routing/horse-routing.md), [ski](./../routing/ski-routing.md) or [walk](./../routing/pedestrian-routing.md).  
-By default, OsmAnd has offline navigation enabled. Although you can also use [online routing engines](./../routing/online-routing.md).  
+The *route navigation* option provides simple step-by-step instructions to help you reach your destination easily. You can use this navigation with different [routing types](./../routing/routing-types.md) (or profiles), no matter if you [drive](./../routing/car-based-routing.md), ride a [horse](./../routing/horse-routing.md), [ski](./../routing/ski-routing.md), or [walk](./../routing/pedestrian-routing.md).
 
 :::tip
-For correct work of the navigation, you need to give OsmAnd permission to receive information about [precise location](../../start-with/first-steps.md#permission-to-access-the-location) of your device.
+- *Offline navigation* is enabled in OsmAnd by default. However, you can also use [*online routing engines*](./../routing/online-routing.md).
+- For navigation to work correctly, you must permit OsmAnd to receive information about the [*precise location*](../../start-with/first-steps.md#permission-to-access-the-location) of your device.
 :::
 
 <Tabs groupId="operating-systems">
@@ -43,35 +41,36 @@ For correct work of the navigation, you need to give OsmAnd permission to receiv
 
 </Tabs>
 
-## Set destinations
+
+## Set Destinations
 
 To use the offline navigation, you first need to [download maps](../../start-with/download-maps.md) of the region you plan to navigate through. Once the maps are downloaded, follow these steps to set up navigation:  
 
-1. [_Configure profiles_](../../personal/profiles.md) you intend to use for navigation according to your needs:  
+1. [*Configure profiles*](../../personal/profiles.md) you intend to use for navigation according to your needs:  
     - Set your [vehicle parameters](../guidance/navigation-settings.md#size-parameters) (important for truck drivers), select the [engine type](../guidance/navigation-settings.md#fuel-used-by-motor) (optional).
     - Configure [route line appearance](../guidance/map-during-navigation#route-line-appearance) (optional, only for [Pro users](../../purchases/index.md#purchases)).  
     - Choose whether to provide [notifications](../guidance/voice-navigation.md) during your route or not. If you need voice prompts, [configure](../guidance/voice-navigation.md#settings-of-voice-prompts) them.
-2. Go to the [_Navigation menu_](#navigation-menu):
+2. Go to the [*Navigation menu*](#navigation-menu):
     - Specify the [destination point](#set-target-point).
     - Wait until the route is calculated. After that you will be able to obtain additional information about your route in *[Details section](./route-details.md#overview)*.
     - You can switch between different [routing types](./../routing/routing-types.md) (profiles) to get the best result.
     - Add [intermediate destinations](#intermediate-destinations) (optional).
     - You can also change the departure point from the [current location](../../map/interact-with-map#my-location--zoom) to the required one.
-3. Additional [_Navigation settings_](#settings) can be used depending on your purposes (you can configure which roads to avoid or prefer, save fuel or choose the fastest route, etc).
-4. [Start](#start--stop-navigation) navigation or at first [simulate navigation](#simulate-navigation) (with this function you can test your route before actually traveling along it).
-5. While on the route you can [_Pause/Resume_](#pause--resume-navigation) navigation and [_Stop_](#start--stop-navigation) it.
+3. Additional [*Navigation settings*](#settings) can be used depending on your purposes (you can configure which roads to avoid or prefer, save fuel or choose the fastest route, etc).
+4. [Start](#start--stop-navigation) navigation or at first [simulate navigation](#simulated-navigation) (with this function you can test your route before actually traveling along it).
+5. While on the route you can [*Pause/Resume*](#pause--resume-navigation) navigation and [*Stop*](#start--stop-navigation) it.
 
 :::note
 - Route cannot be build when *[Online map](../../map/raster-maps.md#select-raster-maps)* is selected as map source.
 :::
 
-### Navigation menu  
+### Navigation Menu  
 
 There are 3 ways to reach the navigation menu:
 
-- The [_Navigation button_](../../widgets/map-buttons.md#directions) on the map screen.  
-- *Direction to/from* in a [_Map Context menu_](../../map/map-context-menu.md#directions-to--from).  
-- Navigation section in the [_Main menu_](../../start-with/main-menu.md)  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
+- The [*Navigation button*](../../widgets/map-buttons.md#directions) on the map screen.  
+- *Direction to/from* in a [*Map Context menu*](../../map/map-context-menu.md#directions-to--from).  
+- Navigation section in the [*Main menu*](../../start-with/main-menu.md)  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
 <Tabs groupId="operating-systems">
 
@@ -89,26 +88,24 @@ There are 3 ways to reach the navigation menu:
 
 </Tabs>
 
-- &nbsp;_<Translate android="true" ids="shared_string_my_location"/>_ - allows you to choose where your route will start. The default value is [My Curent location](../../map/interact-with-map.md#my-location--zoom), though you can set a different one.
-- &nbsp;_<Translate android="true" ids="add_destination_point"/>_ - is used to [set your destination point](#set-target-point).
-- &nbsp;"&#43;" - allows to add [intermediate points](../../widgets/nav-widgets.md#intermediate-destination) for navigation.
-- &nbsp;"&#8595;&#8593;" - allows to swap *Start* and *Finish* points.
-- &nbsp;"&#128266;" - can be used to switch off [Voice prompts](../guidance/voice-navigation.md).
-- &nbsp;_<Translate android="true" ids="shared_string_settings"/>&#x2699_ - leads to menu where you can quickly adjust some of the [Navigation settings](#settings).
+- *<Translate android="true" ids="shared_string_my_location"/>*. Allows you to select the starting location of the route. The default is [*My Current location*](../../map/interact-with-map.md#my-location--zoom), but you can set a different value.
+- *<Translate android="true" ids="add_destination_point"/>*. Use to [set your destination point](#set-target-point).
+- &#43; &nbsp; *Add*. Allows you to add [intermediate points](../../widgets/nav-widgets.md#intermediate-destination) for navigation.
+- &#8595;&#8593; &nbsp; *Swap*. Allows you to swap the *Start* and *Finish* points.
+- &#128266; &nbsp; *Sound*. You can use it to mute the [voice prompts](../guidance/voice-navigation.md).
+- &#x2699 &nbsp; *<Translate android="true" ids="shared_string_settings"/>*. Opens a menu where you can quickly customize some [navigation settings](#settings). 
 
-In the _Navigation menu_ you can set your destination using:
-- Special favories points [**_Home / Work_**](#use-home--work-points).
-- Previous route or [_History_](../../personal/global-settings.md#history).
+In the *Navigation menu* you can set your destination using:
+- Special favories points [***Home / Work***](#use-home-or-work-points).
+- Previous route or [*History*](../../personal/global-settings.md#history).
 
-Cancel button at the bottom of the screen leads back to the main screen. [_Start button_](#start--stop-navigation) can be used to start Navigation after route calculation has ended.
+Cancel button at the bottom of the screen leads back to the main screen. [*Start button*](#start--stop-navigation) can be used to start Navigation after route calculation has ended.
   
-### Choose starting point
+### Select Starting Point
 
 As for the starting point, you can choose your current location, location of a [Favorite point](../../map/point-layers-on-map.md#favorites), select a point on the map or use [Search](../../search/index.md). You can also set a starting point in [Map Context menu](../../map/map-context-menu.md) by selecting the [Directions from](../../map/map-context-menu.md#directions-to--from) function.  
 
-### Set target point
-
-The most important thing to start navigation is to determine your destination. The destination point can be found using a [Search](../../search/index.md#overview) function, or simply on a map. You can also set target point in the [_Navigation menu_](#navigation-menu):  
+### Set Target Point
 
 <Tabs groupId="operating-systems">
 
@@ -125,14 +122,16 @@ The most important thing to start navigation is to determine your destination. T
 
 </Tabs>
 
-- &nbsp;_<Translate android="true" ids="search_button"/>_ - opens [the search menu](../../search/index.md).
-- &nbsp;_<Translate android="true" ids="shared_string_address"/>_ - opens [address search menu](../../search/search-address.md).
-- &nbsp;_<Translate android="true" ids="shared_string_select_on_map"/>_ - opens the map to choose a destination point by tapping on the map.
-- &nbsp;_<Translate android="true" ids="shared_string_favorites"/>_ - allows to use [Favorite](../../personal/favorites.md) as a destination.
-- &nbsp;_<Translate android="true" ids="shared_string_markers"/>_ - allows to choose one of the [Map markers](../../personal/markers.md) as a destination point.
-- &nbsp;"&#8595;&#8593;" _Swap Starting point and Destination_ - allows to swap *Start* and *Finish* points.
+The most important thing to start navigation is to determine your destination. The destination point can be found using a [*Search*](../../search/index.md#overview) function, or simply on a map. You can also set target point in the [*Navigation menu*](#navigation-menu):  
 
-### Intermediate destinations
+- *<Translate android="true" ids="search_button"/>* - opens [the search menu](../../search/index.md).
+- *<Translate android="true" ids="shared_string_address"/>* - opens [address search menu](../../search/search-address.md).
+- *<Translate android="true" ids="shared_string_select_on_map"/>* - opens the map to choose a destination point by tapping on the map.
+- *<Translate android="true" ids="shared_string_favorites"/>* - allows to use [Favorite](../../personal/favorites.md) as a destination.
+- *<Translate android="true" ids="shared_string_markers"/>* - allows to choose one of the [Map markers](../../personal/markers.md) as a destination point.
+- &#8595;&#8593; &nbsp; *Swap Starting point and Destination* - allows to swap *Start* and *Finish* points.
+
+### Intermediate Destinations
 
 <Tabs groupId="operating-systems">
 
@@ -182,9 +181,7 @@ In this menu, you can find additional options for managing destinations points:
 -  *<Translate android="true" ids="add_intermediate_point"/>* (or *<Translate ios="true" ids="add_waypoint_short"/>* for iOS) - you can add intermediate destination from this menu.
 -  *<Translate android="true" ids="clear_all_intermediates"/>* - all the intermediate destinations will be removed from the map.
 
-### Use Home / Work points
-
-*Home* and *Work* tabs (or [Special points](../../personal/favorites.md#special-favorites-personal) of Favorites)  can be used to quickly set destination point in the navigation menu. If you have not entered addresses of the Special favorites, these cells will remain empty. If you tap this field, you will be prompted to create these POIs.  
+### Use Home or Work Points
 
 <Tabs groupId="operating-systems">
 
@@ -202,9 +199,10 @@ In this menu, you can find additional options for managing destinations points:
 
 </Tabs>
 
-### Previous route / History
+*Home* and *Work* tabs (or [Special points](../../personal/favorites.md#special-favorites-personal) of Favorites)  can be used to quickly set destination point in the navigation menu. If you have not entered addresses of the Special favorites, these cells will remain empty. If you tap this field, you will be prompted to create these POIs.  
 
-If  [Navigation History](../../personal/global-settings.md#history) recording is enabled, you can use previous route or destinations from history list for navigation. This option can be useful for quick access to frequently used routes. Items in the history list are sorted by most recent use, starting with the newest.  
+
+### History of Previous Routes
 
 <Tabs groupId="operating-systems">
 
@@ -222,19 +220,14 @@ If  [Navigation History](../../personal/global-settings.md#history) recording is
 
 </Tabs>
 
+If  [Navigation History](../../personal/global-settings.md#history) recording is enabled, you can use previous route or destinations from history list for navigation. This option can be useful for quick access to frequently used routes. Items in the history list are sorted by most recent use, starting with the newest.  
+
 :::note
 - When [logging of History](../../personal/global-settings.md#history-options) data is disabled, you will not be prompted to use previouse routes for navigation.
 - You can delete some or all history records about your previous routes. This can be done on the *[Navigation history](../../personal/global-settings.md#history-options)* tab of the History option (*Menu → Settings → OsmAnd settings → History*).
 :::
 
-## Start / stop navigation
-
-Once start and end points are selected, the app will create a route between them using active profile.
-Once start and end points are selected, the app will create a route between them using active profile. [The App profile](../../personal/profiles.md) and [widgets](../../widgets/index.md) set will only switch once you click the _Start_ button of navigation. 
-
-- To begin navigation, you should tap **Start** button.
-- To stop navigation mode, tap the *[Navigation](../../widgets/map-buttons.md#directions)* button at the bottom of the screen, than choose **Dismiss** (*Android*) or **Cansel** (*iOS*) and confirm your choice.
-- In the Android version of the app, when you reach your destination, OsmAnd proposes to finish navigation, recalculate the route or find parking. In the iOS version Osmand only announces the end of the route.
+## Start / Stop Navigation
 
 <Tabs groupId="operating-systems">
 
@@ -252,15 +245,22 @@ Once start and end points are selected, the app will create a route between them
 
 </Tabs>
 
+Once start and end points are selected, the app will create a route between them using active profile.
+Once start and end points are selected, the app will create a route between them using active profile. [The App profile](../../personal/profiles.md) and [widgets](../../widgets/index.md) set will only switch once you click the _Start_ button of navigation. 
+
+- To begin navigation, you should tap **Start** button.
+- To stop navigation mode, tap the *[Navigation](../../widgets/map-buttons.md#directions)* button at the bottom of the screen, than choose **Dismiss** (*Android*) or **Cansel** (*iOS*) and confirm your choice.
+- In the Android version of the app, when you reach your destination, OsmAnd proposes to finish navigation, recalculate the route or find parking. In the iOS version Osmand only announces the end of the route.
+
 :::note
 - After the route is created, in the *[Details](../setup/route-details.md)* section you can find additional information (altitude, uphill, downhill, road type, turn-by-turn instructions, etc.), analyze your route on the map, print the route plan, save the route and share it.  
 :::
 
-### Route recalculation
+### Route Recalculation
 
 The route can be recalculated automatically in case of deviation from it. You can change the parameters of the recalculation in the [Navigation settings](../guidance/navigation-settings.md#recalculate-route). You can also disable notification about route recalculationn in the settings of [Voice prompts](../guidance/voice-navigation.md#voice-settings).
 
-### Pause / Resume navigation
+### Pause / Resume Navigation
 
 <InfoAndroidOnly/>
 
@@ -288,7 +288,7 @@ Please note, that when you tap the *Navigation button* while your route, navigat
 
 </Tabs>
 
-### Save Power during navigation
+### Saving Power during Navigation
 
 Navigation consumes a lot of power due to the continuous use of GPS, Screen is on, route calculation. So to save your device's battery, you can try using the following tips:
 
@@ -301,7 +301,7 @@ Navigation consumes a lot of power due to the continuous use of GPS, Screen is o
 ![Route preparation Android](@site/static/img/navigation/route/navigation_menu_settings_andr.png)
 
 
-### Navigation settings
+### Navigation Settings
 
 To access the navigation settings, follow one of the steps below:
 
@@ -338,9 +338,9 @@ Please read about route parameters for the corresponding navigation type.
 How to configure [routing type](../routing/routing-types.md) and [route parameters](../guidance/navigation-settings.md#route-parameters) you can read in the [Navigation settings article](../guidance/navigation-settings.md) or in articles about specific types of routing in the [Route Parameters section](../routing/routing-types.md).  
 
 
-### Simulate navigation
+### Simulated Navigation
 
-Simulate navigation option allows users to test and preview a navigation route without actually physically traveling along it. This can be useful for:  
+Simulated navigation option allows users to test and preview a navigation route without actually physically traveling along it. This can be useful for:  
 - ***Planning***. You can see how long it may take to complete the entire route or its single segment.
 - ***Familiarization***. You can familiarize yourself with the route before you actually go along it. This can be useful in unfamiliar areas, such as a new city or a difficult transport interchange.
 - ***Testing***. You can test the OsmAnd navigation system itself to make sure it works correctly and provides accurate instructions.  
@@ -405,11 +405,11 @@ When a navigation route is built, you can start simulating navigation using the 
 If you encounter any difficulties while building the route, please consult the troubleshooting instructions in the *[special documentation section](../../troubleshooting/navigation.md)*. There you can find information about possible reasons for *[slow route calculation](../../troubleshooting/navigation.md#route-calculation-is-slow)*, what to do if the route is *[longer than 250 kilometers](../../troubleshooting/navigation.md#how-to-calculate-routes-longer-than-250km)* or the  proposed route *[does not seem correct](../../troubleshooting/navigation.md#the-calculated-route-does-not-seem-correct)*.  
 Below you can find out how to resolve situations when navigation is not possible due to the lack of necessary maps.  
 
-### No maps or maps not in sync
+### Maps Missing or Not Synchronized
 
 To build a route all **necessary maps** needs to be downloaded and have the same release date. So when you try to build a route to a place whose map is not loaded, the progress line indicating that the route is being calculated does not appear, and the Start button also remains gray. 
 
-Please note, that at some zoom levels the reason for the absence of the route can not be obvious, as it may seem that the necessary maps are present. In that case see *[Additional information in Navigation menu](#additional-information-in-navigation-menu)*.
+Please note, that at some zoom levels the reason for the absence of the route can not be obvious, as it may seem that the necessary maps are present. In that case see *[Additional information in the Navigation menu](#additional-information-in-the-navigation-menu)*.
 
 <Tabs groupId="operating-systems">
 
@@ -430,7 +430,7 @@ Please note, that at some zoom levels the reason for the absence of the route ca
 
 
 
-#### Additional information in Navigation menu
+#### Additional Information in the Navigation Menu
 
 If you pull the navigation menu up, you will see possible reasons why your route cannot be completed: 
 
@@ -452,9 +452,9 @@ If you pull the navigation menu up, you will see possible reasons why your route
 
 The screenshot shows a message when the map of the destination area is not downloaded. You can see, that OsmAnd tries to calculate the route when there are no maps for its middle section. To resolve that situation online checking may be needed.
 
-#### Download maps using Navigation menu
+#### Loading Maps Using the Navigation Menu
 
-Tap to the _Details_ button to open the _Required Maps_ screen. After online verification of the maps required for route calculation, OsmAnd offers to download them without leaving the navigation section. The list of missing maps is based on straight line route. To get an accurate list of maps, OsmAnd can pre-calculate your route online, just click to the _Calculate online_ button.
+Tap to the *Details* button to open the *Required Maps* screen. After online verification of the maps required for route calculation, OsmAnd offers to download them without leaving the navigation section. The list of missing maps is based on straight line route. To get an accurate list of maps, OsmAnd can pre-calculate your route online, just click to the *Calculate online* button.
 
 Unfortunately, once the necessary maps are loaded, you must to enter the start and end points again.
 
@@ -487,3 +487,5 @@ Unfortunately, once the necessary maps are loaded, you must to enter the start a
 - [Voice prompts / Notifications](../guidance/voice-navigation.md)
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
+
+> *This article was last updated in July 2024*

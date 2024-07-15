@@ -234,7 +234,7 @@ You can read more information in the [Terms of use (ToS)](../../legal/terms-of-u
 
 </Tabs>  
 
-The application records the history of previously entered data (history) in the following categories: [Search](../search/search-history.md), [Navigation](../navigation/setup/route-navigation.md#previous-route--history), [Map markers](../personal/markers.md#history). Using the switch on the appropriate tab, you can *Enable / Disable* logging for certain category of entries. You can also [manage](#history-options) (view, delete, and share) previously recorded data.  
+The application records the history of previously entered data (history) in the following categories: [Search](../search/search-history.md), [Navigation](../navigation/setup/route-navigation.md#history-of-previous-routes), [Map markers](../personal/markers.md#history). Using the switch on the appropriate tab, you can *Enable / Disable* logging for certain category of entries. You can also [manage](#history-options) (view, delete, and share) previously recorded data.  
 
 - ***Backup as file*** (*Android*) or ***Export*** (*iOS*) is used to make [a backup file](../personal/import-export.md#export) of your Search / Navigation / Map markers history.
 - ***Clear all history*** (*Android*) or ***Delete all history*** (*iOS*) is used to delete all history entries recorded untill now.  

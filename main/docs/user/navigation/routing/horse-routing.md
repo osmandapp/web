@@ -13,8 +13,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
 
-> *This article was last updated in June 2024*
-
 ## Overview
 
 *Horseback routing* can be useful for equestrians, who want to plan their rides on paths and trails that are safe and suitable for horses. With help of this type of routing you may also discover new routes that haven't been already known about otherwise.  
@@ -71,3 +69,5 @@ Horseback routing is designed to provide equestrians with information about hors
 - *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* setting in the *iOS* version of OsmAnd is located in *Navigation settings → Route parameters* (for *Android*, in *Vehicle parameters → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). This setting is used on unknown roads without speed limits. This is most often the case when navigating a track or online route. It must be set according to the parameters of your vehicle.
 
 - *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Properly configuring the settings will help you avoid problems when creating a route. You can select the most appropriate route depending on the type of vehicle and road restrictions, as well as calculate the travel time.
+
+> *This article was last updated in June 2024*
