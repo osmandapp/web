@@ -460,18 +460,17 @@ Special settings for roads, where you can change the colors to match the road at
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,text_size"/>*   
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,text_size"/>*   
 
 </TabItem>
 
 </Tabs>  
 
-|Example|  
-|------------|
-|**100%**|
-|![Map text size 100%](@site/static/img/map/map-text-size-100.png)|
-|**200%**|
-|![Map text size 200%](@site/static/img/map/map-text-size-200.png)|
+- **100%**  
+    ![Map text size 100%](@site/static/img/map/map-text-size-100.png)
+
+- **200%**  
+    ![Map text size 200%](@site/static/img/map/map-text-size-200.png)
 
 ### Map Magnifier
 
@@ -488,19 +487,18 @@ You can choose this setting by long-tap to "+" or "-" button on the screen or:
 
 <TabItem value="ios" label="iOS">  
 
-You can choose this setting by long-click to "+" or "-" button on the screen or:  
+You can choose this setting by long-tap to "+" or "-" button on the screen or:  
 *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,map_magnifier"/>* 
 
 </TabItem>
 
 </Tabs> 
 
-|Example|  
-|------------|
-|**75%**|
-|![Map magnifier 75%](@site/static/img/map/map-magnifier-75.png)|
-|**200%**|
-|![Map magnifier 200%](@site/static/img/map/map-magnifier-200.png)|
+- **75%**  
+    ![Map magnifier 75%](@site/static/img/map/map-magnifier-75.png)
+
+- **200%**  
+    ![Map magnifier 200%](@site/static/img/map/map-magnifier-200.png)
 
 ### Map Language
 
@@ -518,29 +516,32 @@ If the names on the map are not translated into the desired language by the OSM 
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,map_locale"/>*
+*<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_language,map_locale"/>*
 
 </TabItem>
 
 </Tabs>  
 
-|Example|  
-|------------|
-|**Local names**|
-|![Map language local names](@site/static/img/map/map-language-local-names.png)|
-|**Ukranian names**|
-|![Map language ukranian](@site/static/img/map/map-language-urkanian.png)|
-|**Show local names**|
-|![Map language local](@site/static/img/map/map-language-show-local.png)|
-|**Transliterate names**|
-|![Map language transliterate](@site/static/img/map/map-language-transliterate.png)|
+- **Local names**  
+    ![Map language local names](@site/static/img/map/map-language-local-names_2.png)
 
-## Custom Map Style (own map style)
-If you have your own or 3rd party custom map style created according to [Specification](../../technical/osmand-file-formats/osmand-rendering-style.md), you can install it on a device in the following ways.
-- Copy *.render.xml file on devices & Open with OsmAnd. 
-- Rendering styles could be exported & imported via [Standard import / export dialogs](../personal/import-export.md). So if you create an example '*.osf' package which will work as a plugin that could be shared with other people.
+- **Ukranian names**  
+    ![Map language ukranian](@site/static/img/map/map-language-urkanian_2.png)
 
-After that, you could select your own map style in the menu.
+- **Show local names**  
+    ![Map language local](@site/static/img/map/map-language-show-local_2.png)
+
+- **Transliterate names**  
+    ![Map language transliterate](@site/static/img/map/map-language-transliterate_2.png)
+
+
+## Custom Map Style
+
+If you have personal or 3rd party custom map style created according to [Specification](../../technical/osmand-file-formats/osmand-rendering-style.md), you can install it on your device in the following ways:
+
+- Copy the *.render.xml* file to the devices and open it with OsmAnd. 
+- Rendering styles can be exported and imported using [Standard import / export dialogs](../personal/import-export.md). So if you create an example *.osf* package, it will work as a plugin that you can share with other people.
+- You can then choose a map style from the menu.
 
 
 ## Related Articles
