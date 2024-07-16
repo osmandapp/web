@@ -21,18 +21,5 @@
     "start_url": ".",
     "display": "standalone",
     "theme_color": "#000000",
-    "background_color": "#ffffff",
-    "prefer_related_applications": true,
-    "related_applications": [
-        {
-            "platform": "play",
-            "url": "https://play.google.com/store/apps/details?id=net.osmand",
-            "id": "net.osmand"
-        },
-        {
-            "platform": "itunes",
-            "url": "https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257",
-            "id": "net.osmand"
-        }
-    ]
+    "background_color": "#ffffff"
 }

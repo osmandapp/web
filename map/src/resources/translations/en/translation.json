@@ -5223,5 +5223,7 @@
   "context_menu_item_directions_from": "Directions from",
   "copy_coordinates": "Copy coordinates",
   "add_intermediate_point": "Add intermediate",
-  "shared_string_total": "Total"
+  "shared_string_total": "Total",
+  "shared_string_get": "Get",
+  "shared_string_install": "Install"
 }

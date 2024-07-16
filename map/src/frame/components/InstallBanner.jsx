@@ -4,27 +4,24 @@ import { INSTALL_BANNER_SIZE } from '../../manager/GlobalManager';
 import { ReactComponent as Logo } from '../../assets/ic_app_logo_osmand.svg';
 import styles from './frame.module.css';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
+import { useTranslation } from 'react-i18next';
 
-export default function InstallBanner({ showInstallBanner, deferredPrompt, setDeferredPrompt }) {
+export default function InstallBanner({ showInstallBanner }) {
     const [width] = useWindowSize();
 
+    const { t } = useTranslation();
     const [isIos, setIsIos] = useState(false);
+    const URL_APPLE = 'https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257';
+    const URL_GOOGLE = 'https://play.google.com/store/apps/details?id=net.osmand';
 
     useEffect(() => {
         const userAgent = window.navigator.userAgent.toLowerCase();
-        console.log('userAgent', userAgent);
         const isIosDevice = /iphone|ipad|ipod/.test(userAgent);
         setIsIos(isIosDevice);
     }, []);
 
     const handleInstallClick = () => {
-        if (deferredPrompt) {
-            console.log('deferredPrompt', deferredPrompt);
-            deferredPrompt.prompt();
-            deferredPrompt.userChoice.then(() => {
-                setDeferredPrompt(null);
-            });
-        }
+        window.location.href = isIos ? URL_APPLE : URL_GOOGLE;
     };
 
     return showInstallBanner ? (
@@ -36,7 +33,7 @@ export default function InstallBanner({ showInstallBanner, deferredPrompt, setDe
                 maxWidth: width,
                 maxHeight: INSTALL_BANNER_SIZE,
                 background: '#ffffff',
-                boxShadow: '0px 0px 0px 0px rgba(0, 0, 0, 0.05), 0px 1px 1px 0px rgba(0, 0, 0, 0.15) !important',
+                boxShadow: '0px 0px 0px 0px, 0px 1px 1px 0px rgba(0, 0, 0, 0.15) !important',
             }}
         >
             <Box
@@ -74,7 +71,7 @@ export default function InstallBanner({ showInstallBanner, deferredPrompt, setDe
                         borderRadius: isIos && '16px',
                     }}
                 >
-                    {isIos ? 'GET' : 'Install'}
+                    {isIos ? t('shared_string_get') : t('shared_string_install')}
                 </Button>
             </Box>
         </AppBar>

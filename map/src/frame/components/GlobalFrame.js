@@ -39,9 +39,7 @@ const GlobalFrame = () => {
     const [openVisibleMenu, setOpenVisibleMenu] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
-    const [isMobile, setIsMobile] = useState(false);
     const [showInstallBanner, setShowInstallBanner] = useState(false);
-    const [deferredPrompt, setDeferredPrompt] = useState(null);
 
     const MAIN_MENU_SIZE = openMainMenu ? MAIN_MENU_OPEN_SIZE : MAIN_MENU_MIN_SIZE;
     const MENU_INFO_SIZE = menuInfo ? MENU_INFO_OPEN_SIZE : MENU_INFO_CLOSE_SIZE;
@@ -54,34 +52,11 @@ const GlobalFrame = () => {
 
     useEffect(() => {
         const userAgent = navigator.userAgent;
-        const mobileDeviceRegex = /Mobi|Android/i;
+        const mobileDeviceRegex = /Android|iPhone|iPad|iPod/i;
         const isMobileDevice = mobileDeviceRegex.test(userAgent);
-        setIsMobile(isMobileDevice);
+
+        setShowInstallBanner(isMobileDevice);
     }, [height, width]);
-
-    useEffect(() => {
-        const handleBeforeInstallPrompt = (e) => {
-            console.log(e, 'beforeinstallprompt Event fired');
-            e.preventDefault();
-            setDeferredPrompt(e);
-        };
-        window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-
-        return () => {
-            window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-        };
-    }, []);
-
-    useEffect(() => {
-        if (isMobile) {
-            const userAgent = window.navigator.userAgent.toLowerCase();
-            const isIosDevice = /iphone|ipad|ipod/.test(userAgent);
-            const isSafariBrowser = isIosDevice && false;
-            setShowInstallBanner(!isSafariBrowser && deferredPrompt !== null);
-        } else {
-            setShowInstallBanner(false);
-        }
-    }, [isMobile]);
 
     useEffect(() => {
         if (ctx.infoBlockWidth === MENU_INFO_CLOSE_SIZE) {
@@ -221,11 +196,7 @@ const GlobalFrame = () => {
 
     return (
         <Box sx={{ display: 'flex', maxHeight: `${height}px`, overflow: 'hidden' }}>
-            <InstallBanner
-                showInstallBanner={showInstallBanner}
-                deferredPrompt={deferredPrompt}
-                setDeferredPrompt={setDeferredPrompt}
-            />
+            <InstallBanner showInstallBanner={showInstallBanner} />
             <HeaderMenu showInstallBanner={showInstallBanner} />
             <Box
                 sx={{
