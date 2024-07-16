@@ -52,9 +52,15 @@ const GlobalFrame = () => {
 
     useEffect(() => {
         const userAgent = window.navigator.userAgent.toLowerCase();
+
         const mobileDeviceRegex = /android|iphone|ipad|ipod/i;
         const isMobileDevice = mobileDeviceRegex.test(userAgent);
-        const isSafari = /^((?!chrome|android).)*safari/i.test(userAgent);
+
+        const isSafari =
+            !!window.ApplePaySession ||
+            (typeof window.safari !== 'undefined' &&
+                window.safari.pushNotification &&
+                window.safari.pushNotification.toString() === '[object SafariRemoteNotification]');
 
         setShowInstallBanner(isMobileDevice && !isSafari);
     }, [height, width]);
