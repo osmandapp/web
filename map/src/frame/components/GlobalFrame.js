@@ -54,8 +54,9 @@ const GlobalFrame = () => {
         const userAgent = window.navigator.userAgent.toLowerCase();
         const mobileDeviceRegex = /android|iphone|ipad|ipod/i;
         const isMobileDevice = mobileDeviceRegex.test(userAgent);
+        const isSafari = /^((?!chrome|android).)*safari/i.test(userAgent);
 
-        setShowInstallBanner(isMobileDevice);
+        setShowInstallBanner(isMobileDevice && !isSafari);
     }, [height, width]);
 
     useEffect(() => {
