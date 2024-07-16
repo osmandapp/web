@@ -30,8 +30,8 @@ Each feature provided by this plugin is an independent map layer that, when enab
 The Topography plugin provides access to the following map types:  
 
 - [**Contour lines**](#contour-lines). This is a [vector map](../map/vector-maps.md) represented in [**meters** or **feet**](#meters-or-feet). Contour lines show elevation levels and help visualize the terrain.
-- [**Hillshade**](#hillshade--slope). Types of map with shading of hills and slopes, which makes the relief more visible and helps to visually interpret the terrain. 
-- [**Slope**](#hillshade--slope). [Raster](../map/raster-maps.md) layer that provides information about the steepness of slopes, which can be important for route planning and safety. 
+- [**Hillshade**](#hillshade-slope-and-altitude-layers). Types of map with shading of hills and slopes, which makes the relief more visible and helps to visually interpret the terrain. 
+- [**Slope**](#hillshade-slope-and-altitude-layers). [Raster](../map/raster-maps.md) layer that provides information about the steepness of slopes, which can be important for route planning and safety. 
 - [**3D Relief**](#3d-relief). It is a [vector map](../map/vector-maps.md) that provides a three-dimensional representation of the terrain, available only with [OsmAnd Pro subscription](../purchases/index.md). 
 
 

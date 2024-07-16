@@ -63,7 +63,7 @@ The feature displays the altitude of the terrain in different colors, which grea
 
 New color palette schemes have been added.
 - For [routes](../user/navigation/guidance/map-during-navigation.md#color): *Speed, Slope,* and *Elevation (Altitude)*.
-- For [terrain](../user/plugins/contour-lines.md#hillshade--slope): *Hillshade, Slope*, and *Altitude*.
+- For [terrain](../user/plugins/contour-lines.md#hillshade-slope-and-altitude-layers): *Hillshade, Slope*, and *Altitude*.
 - For [weather](../user/plugins/weather.md#weather-layers): *All weather layers*.
 
 You can add your custom color palettes to OsmAnd. To do this, create a TXT file with the required name:
