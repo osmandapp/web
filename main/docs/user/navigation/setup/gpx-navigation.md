@@ -80,7 +80,7 @@ Import GPX files:
 
 If a track has been created or imported into OsmAnd, it can be found in the track list in [My places](../../personal/myplaces). You can select the required file from the [available tracks](../../personal/tracks/manage-tracks.md), highlight it on the map, and then use it for navigation.  
 
-Navigation on a track can be started using the quick action button in the [Track context menu](../../map/track-context-menu.md#quick-actions) (opened by selecting one of the [highlighted tracks](./route-navigation.md#previous-route--history) on the map or by tapping a track file in the [My Places](../../personal/myplaces.md) section of the Main menu) or from the navigation menu, which is opened by tapping:
+Navigation on a track can be started using the quick action button in the [Track context menu](../../map/track-context-menu.md#quick-actions) (opened by selecting one of the [highlighted tracks](./route-navigation.md#history-of-previous-routes) on the map or by tapping a track file in the [My Places](../../personal/myplaces.md) section of the Main menu) or from the navigation menu, which is opened by tapping:
 
 - [*Navigation button*](../../widgets/map-buttons.md#directions) on the map screen.  
 - *Navigation section* in the Main menu  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.

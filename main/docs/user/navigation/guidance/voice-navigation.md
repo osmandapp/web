@@ -150,7 +150,7 @@ To avoid playing audio in the same output stream at the same time, the audio foc
 
 ### Testing of voice prompts
 
-**Testing of voice prompts** is possible only for Android version of the application. Enable the *OsmAnd development plugin* and run [Simulate Navigation](../../navigation//setup/route-navigation.md#simulate-navigation) or use [Test voice prompts](../../plugins/development.md#application-testing).
+**Testing of voice prompts** is possible only for Android version of the application. Enable the *OsmAnd development plugin* and run [Simulate Navigation](../../navigation//setup/route-navigation.md#simulated-navigation) or use [Test voice prompts](../../plugins/development.md#application-testing).
 
 
 ### Common problems

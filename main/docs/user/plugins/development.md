@@ -388,5 +388,5 @@ After running the simulation, you will see on the main screen of the app that na
 To stop simulation of the movement of your device, go back to the OsmAnd development [settings](#plugin-settings) and tap **stop** in the **simulate your position** option.
 
 :::note  
-You can also simulate movement along a GPX-track from the [navigation menu](../navigation/setup/route-navigation.md#simulate-navigation) without enabling the OsmAnd development plugin. In that case, your location will not be synchronized with the track.  
+You can also simulate movement along a GPX-track from the [navigation menu](../navigation/setup/route-navigation.md#simulated-navigation) without enabling the OsmAnd development plugin. In that case, your location will not be synchronized with the track.  
 :::  

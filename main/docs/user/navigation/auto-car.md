@@ -15,8 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-> *This article was last updated in May 2024*
-
 
 ## Overview
 
@@ -296,4 +294,4 @@ The OsmAnd app can be opened and used to navigate in Android Auto on the vehicle
 3. [Location delays (ANR crashes)](../troubleshooting/android_auto.md#location-delays-anr-crashes)
 
 
-
+> *This article was last updated in May 2024*

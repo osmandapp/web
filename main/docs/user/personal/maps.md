@@ -78,7 +78,7 @@ Versions of OsmAnd up to 3.8 offer to download a world map so that you can view 
 #### Paid Features for the Selected Location
 
 - [**Contour lines**](../plugins/contour-lines.md#contour-lines). A map containing contour elevation lines to visualize the terrain.
-- [**Terrain map (Hillshade and Slope)**](../plugins/contour-lines.md#hillshade--slope). Maps with shadows or slopes provide additional terrain information.
+- [**Terrain map (Hillshade and Slope)**](../plugins/contour-lines.md#hillshade-slope-and-altitude-layers). Maps with shadows or slopes provide additional terrain information.
 - [**Terrain map (3D)**](../plugins/contour-lines.md#3d-relief). Three-dimensional representation of the terrain for a better understanding of your surroundings. [Map rendering engine Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) must be enabled.
 - [**Wikipedia**](../plugins/wikipedia.md). Vector map with geo-positioned [Wikipedia](https://wikipedia.org/) articles about landmarks or additional information about places.
 - [**Weather forecast**](../plugins/weather.md). Weather information on a map for easy route planning.
