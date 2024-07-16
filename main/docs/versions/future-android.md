@@ -33,7 +33,6 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 - [Altitude](#altitude-color-scheme-for-terrain) terrain colorization option.
 - [Custom color palettes](#custom-color-palettes) for terrain, tracks, and routes:
-  - [Palette editor](#palette-editor).
   - [Quick action button](#quick-action-to-change-the-color-scheme-of-the-terrain) for Terrain color schemes.
   - [Color palette legend](#color-palette-legend) for tracks, routes, and terrain.
 - [3D options](#3d-my-location-icons) for My location icons. 
@@ -42,7 +41,6 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
   - Quick Actions to the [external keyboard](#quick-actions-to-external-keyboard) allow you to assign actions for personalized use.
 - [Weather UI](#weather-tool-improvements) has been updated with layer animations and improved label visibility.
 - Improvements for the [3D track view](#3d-track-improvements).
-- [GPX track activity](#gpx-track-activity).
 - Removed login/password authorization method in [OpenStreetMap Editing plugin](#login-to-openstreetmap).
 - [More icons](#more-favorite-icons) for Favorites.
 - Added [Water category of POIs](#water-category-of-pois).
@@ -88,6 +86,7 @@ TXT file named *height_altitude_0-200.txt*
 ```
 After moving this TXT file to *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt*, a new palette will appear in the Color Scheme menu.
 
+<!--
 ### Palette Editor
 
 *Terrain → Modify (Colour scheme) → All colors → &#8942; → Edit*
@@ -100,6 +99,7 @@ After moving this TXT file to *..Android/data/net.osmand/files/color-palete/heig
 </table>  
 
 The palette editor allows you to create and edit custom color schemes to personalize your maps. This is where you can customize colors according to personal preferences or the requirements of a particular route. 
+-->
 
 ### Quick Action to Change the Color Scheme of the Terrain
 
@@ -183,13 +183,13 @@ Updated 3D track visualizations provide a more detailed view of routes.  In this
     - You can choose from:  
         *Solid, Downward gradient, Upward gradient, Altitude, Slope,* or *Speed*.
 
-
+<!-->
 ## GPX Track Activity
 
 ![3D track](../../blog/2024-06-19-android-4-8/img/track_activity.png)
 
 The new feature of adding **Activity** to a recorded GPX track improves navigation and track management. This increases the convenience of working with track recordings.
-
+-->
 
 ## Login to OpenStreetMap
 
