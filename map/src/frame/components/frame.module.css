@@ -35,3 +35,25 @@
     align-items: flex-start !important;
     gap: 10px !important;
 }
+.promptText {
+    flex-direction: column;
+    align-items: flex-start !important;
+    text-align: left;
+    max-width: calc(100% - 80px) !important;
+    margin-left: 16px !important;
+}
+.promptTitle,
+.promptDesc {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+.promptTitle {
+    color: #1c1e21 !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+}
+.promptDesc {
+    color: var(--text-secondary) !important;
+    font-size: 14px !important;
+}

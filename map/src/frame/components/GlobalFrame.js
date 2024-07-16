@@ -25,6 +25,7 @@ import _, { isEmpty } from 'lodash';
 import TracksManager, { createTrackGroups, getGpxFiles } from '../../manager/track/TracksManager';
 import { addCloseTracksToRecently } from '../../menu/visibletracks/VisibleTracks';
 import PhotosModal from '../../menu/search/PhotosModal';
+import InstallBanner from './InstallBanner';
 
 const GlobalFrame = () => {
     const ctx = useContext(AppContext);
@@ -38,6 +39,9 @@ const GlobalFrame = () => {
     const [openVisibleMenu, setOpenVisibleMenu] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
+    const [isMobile, setIsMobile] = useState(false);
+    const [showInstallBanner, setShowInstallBanner] = useState(false);
+    const [deferredPrompt, setDeferredPrompt] = useState(null);
 
     const MAIN_MENU_SIZE = openMainMenu ? MAIN_MENU_OPEN_SIZE : MAIN_MENU_MIN_SIZE;
     const MENU_INFO_SIZE = menuInfo ? MENU_INFO_OPEN_SIZE : MENU_INFO_CLOSE_SIZE;
@@ -47,6 +51,36 @@ const GlobalFrame = () => {
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE);
         }
     }, [menuInfo]);
+
+    useEffect(() => {
+        const userAgent = navigator.userAgent;
+        const mobileDeviceRegex = /Mobi|Android/i;
+        const isMobileDevice = mobileDeviceRegex.test(userAgent);
+        setIsMobile(isMobileDevice);
+    }, [height, width]);
+
+    useEffect(() => {
+        const handleBeforeInstallPrompt = (e) => {
+            e.preventDefault();
+            setDeferredPrompt(e);
+        };
+        window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+
+        return () => {
+            window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (isMobile) {
+            const userAgent = window.navigator.userAgent.toLowerCase();
+            const isIosDevice = /iphone|ipad|ipod/.test(userAgent);
+            const isSafariBrowser = isIosDevice && false;
+            setShowInstallBanner(!isSafariBrowser && deferredPrompt !== null);
+        } else {
+            setShowInstallBanner(false);
+        }
+    }, [isMobile]);
 
     useEffect(() => {
         if (ctx.infoBlockWidth === MENU_INFO_CLOSE_SIZE) {
@@ -186,7 +220,12 @@ const GlobalFrame = () => {
 
     return (
         <Box sx={{ display: 'flex', maxHeight: `${height}px`, overflow: 'hidden' }}>
-            <HeaderMenu />
+            <InstallBanner
+                showInstallBanner={showInstallBanner}
+                deferredPrompt={deferredPrompt}
+                setDeferredPrompt={setDeferredPrompt}
+            />
+            <HeaderMenu showInstallBanner={showInstallBanner} />
             <Box
                 sx={{
                     width: { xs: `calc(100%)` },
@@ -219,6 +258,7 @@ const GlobalFrame = () => {
                 setClearState={setClearState}
                 setOpenVisibleMenu={setOpenVisibleMenu}
                 openVisibleMenu={openVisibleMenu}
+                showInstallBanner={showInstallBanner}
             />
             <Outlet />
             <Dialog open={openErrorDialog} onClose={() => setOpenErrorDialog(false)}>
