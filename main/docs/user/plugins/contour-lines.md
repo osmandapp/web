@@ -182,7 +182,7 @@ For [**Contour lines**](#contour-lines), you need to determine in which [units](
 
 *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>* 
 
-![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_andr.png)
+![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
 
 </TabItem>
 
@@ -196,21 +196,28 @@ For [**Contour lines**](#contour-lines), you need to determine in which [units](
 
 </Tabs>  
 
-The **Terrain** option enables and allows you to customize two features such as *Hillshade* and *Slope*. Specific features:  
-- Only one option, either Hillshade or Slope, can be enabled at the same time.
+The **Terrain** option enables and allows you to customize three features such as *Hillshade*, *Slope*, and *Altitude*.  
+Specific features:  
+
+- Only one option can be enabled at the same time, either Hillshade, Slope, or Altitude.
 - If you do not see any changes after downloading and enabling the corresponding map, it is recommended to restart the application.
 
-### Hillshade / Slope
+The **Terrain** menu includes [color scheme](#color-scheme) selection with the option to [modify it](#modify-color-scheme) (for [Pro subscribers](../../user/purchases/index.md)), the ability to change the transparency of the layer on the map ([visibility](#visibility)), and select the [zoom level](#zoom-levels) for its display, information about the size of [cached data](#cache-size), and a list of [maps](../../user/personal/maps.md) needed to display the layer.
 
-| Hillshade | Slope |
-| ------ | ------- |
-| ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
+
+## Hillshade, Slope and Altitude Layers
+
+| Hillshade | Slope | Altitude |
+| ------ | ------- | ------- |
+| ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **Hillshade** is based on simulating surface lighting using terrain data. This method involves creating shadows and highlights based on the angle of the surface relative to the light source. As a result, you see natural hills, valleys, and other terrain details on the map.  
 
 **Slope** determines the surface slope angle based on the elevation data of points on the map. Slope angle calculations are performed considering changes in elevation and distances between points, and representing this change as a slope angle.  
 
-**Hillshade** and **Slope** raster maps are created based on raster terrain data such as Digital Elevation Models (DEM). 
+**Altitude**  
+
+**Hillshade**, **Slope**, and **Altitude** raster maps are created based on raster terrain data such as Digital Elevation Models (DEM). 
 
 **Usage:**  
 - *Navigation.* Makes identifying steep slopes, downhill, or uphill easier, which can be important for safe navigation.
@@ -218,21 +225,28 @@ The **Terrain** option enables and allows you to customize two features such as 
 - *Terrain estimation.* It's convenient for visualizing the landscape, especially if you're walking or biking.
 
 
-#### Color Scheme
+### Color Scheme
 
-| Hillshade | Slope | Menu |
+| Hillshade | Slope | Altitude |
 | ------ | ------- | ------- | 
-|![Hillshade](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu.png)|![Slope](@site/static/img/plugins/contour-lines/color_scheme_slope_menu.png)| ![Menu](@site/static/img/plugins/contour-lines/color_scheme_menu.png) |
+|![Hillshade](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Slope](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menu](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
 
 - *Hillshade* uses dark shades to show slopes, peaks, and lowlands.  
 
 - *Slope* uses color to visualize the steepness of the terrain. You can read more about it [here](https://www.wikiwand.com/en/Grade_(slope)).  
 Each color corresponds to an angle of deviation from the horizontal.  
 
+- *Altitude* uses
+
+#### Legend Color Cards
+
 ![Slope color legend](@site/static/img/plugins/contour-lines/Slope_legend.png)
 
 
-#### Visibility 
+#### Modify Color Scheme
+
+
+### Visibility 
 
 | Visibility 31% | Visibility 74% |
 | ------ | ------- |
@@ -240,13 +254,13 @@ Each color corresponds to an angle of deviation from the horizontal.
 
 The *Visibility* function is used to adjust the transparency of the shadows for Hillshade and the colors used to represent the angle in the Slope parameter.
 
-#### Zoom Levels 
+### Zoom Levels 
 
 ![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 The *Scale Levels* function allows you to set the minimum and maximum values of map zoom levels, ranging from 4 to 19, at which the Hillshade or Slope map layers will be displayed.
 
-#### Cache Size
+### Cache Size
 
 **Cache size** is an information section that shows the amount of memory on your device that is used for *Terrain*. Each time you view *Hillshade* or *Slope* information on a map, all of this data is temporarily stored in the cache for quick access and later use, avoiding additional load on your device's processor.  
 
@@ -383,6 +397,11 @@ OsmAnd allows you to combine all three types of map layers: Contour lines, separ
 - The combination of **Contour lines** and **Slope** layers is best for estimating slope steepness and finding points with the same height.
 - The combination of **3D Relief** and **Hillshade** layers allows you to get a more realistic and visual representation of the terrain, its relief, and landscape details. This combination is especially suitable for mountainous and hilly terrain.
 
+
+## Related Articles
+
+- [Interact with Map](../../user/map/interact-with-map.md)
+- [Global Settings](../../user/personal/global-settings.md)
+- [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
+
 > *This article was last updated in July 2024*
-
-

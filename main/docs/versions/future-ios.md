@@ -15,12 +15,12 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 
 # What's new
 
-- New ["Speedometer" widget](#speedometer-widget) compatible with [CarPlay](#speedometer-for-carplay).
+- New [Speedometer widget](#speedometer-widget) compatible with [CarPlay](#speedometer-for-carplay).
 - Added [Turn-by-turn instructions](#turn-by-turn-instructions) to route details.
 - Customize the map screen by adding multiple ["Quick Action" buttons](#custom-buttons).
-- [3D Track Improvements](#3d-track-updates): new visualization and colorization options.
+- Improvements for the [3D track view](#3d-track-improvements): new visualization and colorization options.
 - Added improved [multi-selection mode for Tracks](#multi-selection-for-my-tracks).
-- [3D variant](#3d-icons-of-my-location) for location position icons.
+- [3D options](#3d-my-location-icons) for My location icons.
 - [Color palette files](#color-palettes): use & Import/Extport.
 - [Weather](#weather-tool-updates): UI refresh, added wind animation.
 - Added [smooth transitions](#smooth-transitions) while zooming in 3D mode.
@@ -60,7 +60,7 @@ The [Speedometer widget](https://osmand.net/docs/user/navigation/car-play#speedo
 In this update, we've introduced Custom Buttons, a unique type of [Quick action](https://osmand.net/docs/user/widgets/quick-action#custom-buttons) tool. Users can now create a custom action button for their device's screen.
 
 
-## 3D Track Updates
+## 3D Track Improvements
 
 ![3D track](../../blog/2024-06-20-ios-4-8/img/3d_track.png)
 
@@ -75,11 +75,11 @@ We have improved the [3D track appearance](https://osmand.net/docs/user/map/trac
 [This menu item](https://osmand.net/docs/user/personal/tracks/manage-tracks#three-dots-menu) allows you [to select the folders and routes](https://osmand.net/docs/user/personal/tracks/manage-tracks#selection-mode) you need for further management.
 
 
-## 3D Icons of My Location
+## 3D My location Icons
 
 ![3D icon](../../blog/2024-06-20-ios-4-8/img/3d_icon.png)
 
-3D icons for ["My Location"](https://osmand.net/docs/user/personal/profiles#profile-appearance) have been added.
+A new 3D view has been added for [My Location](../user/personal/profiles.md#profile-appearance) icons, which improves their visualization on the map. These changes bring the appearance of the icons in alignment with the 3D tilt of the map.   
 
 
 ## Color Palettes
