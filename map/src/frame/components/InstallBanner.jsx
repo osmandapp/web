@@ -12,12 +12,14 @@ export default function InstallBanner({ showInstallBanner, deferredPrompt, setDe
 
     useEffect(() => {
         const userAgent = window.navigator.userAgent.toLowerCase();
+        console.log('userAgent', userAgent);
         const isIosDevice = /iphone|ipad|ipod/.test(userAgent);
         setIsIos(isIosDevice);
     }, []);
 
     const handleInstallClick = () => {
         if (deferredPrompt) {
+            console.log('deferredPrompt', deferredPrompt);
             deferredPrompt.prompt();
             deferredPrompt.userChoice.then(() => {
                 setDeferredPrompt(null);
