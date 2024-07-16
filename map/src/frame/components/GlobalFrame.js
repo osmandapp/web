@@ -61,6 +61,7 @@ const GlobalFrame = () => {
 
     useEffect(() => {
         const handleBeforeInstallPrompt = (e) => {
+            console.log(e, 'beforeinstallprompt Event fired');
             e.preventDefault();
             setDeferredPrompt(e);
         };
