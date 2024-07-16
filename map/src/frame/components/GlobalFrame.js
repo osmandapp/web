@@ -51,8 +51,8 @@ const GlobalFrame = () => {
     }, [menuInfo]);
 
     useEffect(() => {
-        const userAgent = navigator.userAgent;
-        const mobileDeviceRegex = /Android|iPhone|iPad|iPod/i;
+        const userAgent = window.navigator.userAgent.toLowerCase();
+        const mobileDeviceRegex = /android|iphone|ipad|ipod/i;
         const isMobileDevice = mobileDeviceRegex.test(userAgent);
 
         setShowInstallBanner(isMobileDevice);
@@ -215,6 +215,7 @@ const GlobalFrame = () => {
                     clearState={clearState}
                     setMenuInfo={setMenuInfo}
                     setOpenVisibleMenu={setOpenVisibleMenu}
+                    showInstallBanner={showInstallBanner}
                 />
                 {ctx.selectedPhotoInd !== -1 && <PhotosModal photos={ctx.photoGallery} />}
             </Box>
