@@ -36,11 +36,12 @@
     gap: 10px !important;
 }
 .promptText {
-    flex-direction: column;
-    align-items: flex-start !important;
-    text-align: left;
-    max-width: calc(100% - 80px) !important;
+    flex-direction: column !important;
+    text-align: left !important;
+    min-width: auto !important;
+    max-width: calc(100% - 50px) !important;
     margin-left: 16px !important;
+    display: flex !important;
 }
 .promptTitle,
 .promptDesc {

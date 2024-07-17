@@ -50,7 +50,7 @@ export default function InstallBanner({ showInstallBanner }) {
                     px: 2,
                 }}
             >
-                <Box sx={{ display: 'flex', minWidth: width - 100 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', minWidth: 0 }}>
                     <SvgIcon component={Logo} inheritViewBox sx={{ width: '40px', height: '40px' }} />
                     <Box className={styles.promptText}>
                         <Typography className={styles.promptTitle}>
@@ -68,7 +68,10 @@ export default function InstallBanner({ showInstallBanner }) {
                         '&:hover': {
                             backgroundColor: isIos ? '#005BBB' : '#005C44',
                         },
-                        borderRadius: isIos && '16px',
+                        borderRadius: isIos ? '16px' : '6px',
+                        boxShadow: '0px 0px 0px 0px !important',
+                        textTransform: !isIos && 'none',
+                        ml: 2,
                     }}
                 >
                     {isIos ? t('shared_string_get') : t('shared_string_install')}
