@@ -598,6 +598,7 @@ export default function MainMenu({
                     sx: {
                         width: infoSize,
                         ml: '64px',
+                        mt: showInstallBanner && INSTALL_BANNER_SIZE,
                         boxShadow: 'none',
                         zIndex: Z_INDEX_OPEN_MENU_INFOBLOCK,
                     },
