@@ -56,11 +56,8 @@ const GlobalFrame = () => {
         const mobileDeviceRegex = /android|iphone|ipad|ipod/i;
         const isMobileDevice = mobileDeviceRegex.test(userAgent);
 
-        const isSafari =
-            !!window.ApplePaySession ||
-            (typeof window.safari !== 'undefined' &&
-                window.safari.pushNotification &&
-                window.safari.pushNotification.toString() === '[object SafariRemoteNotification]');
+        const isIOS = /iphone|ipad|ipod/.test(userAgent);
+        const isSafari = isIOS && /safari/.test(userAgent) && !/crios|fxios|edgios|opios/.test(userAgent);
 
         setShowInstallBanner(isMobileDevice && !isSafari);
     }, [height, width]);
