@@ -1,6 +1,6 @@
 ---
-sidebar_position: 11
-title:  Color schemes
+sidebar_position: 5
+title:  Color Palette Schemes
 ---
 
 import Tabs from '@theme/Tabs';
