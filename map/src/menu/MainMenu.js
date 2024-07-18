@@ -349,7 +349,7 @@ export default function MainMenu({
                 pageParams[MAIN_PAGE_TYPE] = addParamsToUrl(pageParams, MAIN_PAGE_TYPE, pinRegex, newPin, pretty);
             }
 
-            ctx.setPageParams(pageParams);
+            //ctx.setPageParams(pageParams);
         }
     }, [ctx.pinPoint]);
 
@@ -364,9 +364,11 @@ export default function MainMenu({
 
     useEffect(() => {
         const currentMenu = items.find((item) => isSelectedMenuItem(item));
-        if (currentMenu) {
+        if (currentMenu && menuInfo) {
+            // navigate to the current menu
             navigateToUrl({ menu: currentMenu });
-        } else if (location.pathname === MAIN_URL_WITH_SLASH) {
+        } else if (location.pathname === MAIN_URL_WITH_SLASH && location.search === '') {
+            // if the menu not found, navigate to the main page
             navigateToUrl({ isMain: true });
         }
     }, [ctx.pageParams, menuInfo]);
