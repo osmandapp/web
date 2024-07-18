@@ -25,6 +25,7 @@ import _, { isEmpty } from 'lodash';
 import TracksManager, { createTrackGroups, getGpxFiles } from '../../manager/track/TracksManager';
 import { addCloseTracksToRecently } from '../../menu/visibletracks/VisibleTracks';
 import PhotosModal from '../../menu/search/PhotosModal';
+import InstallBanner from './InstallBanner';
 
 const GlobalFrame = () => {
     const ctx = useContext(AppContext);
@@ -38,6 +39,7 @@ const GlobalFrame = () => {
     const [openVisibleMenu, setOpenVisibleMenu] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
+    const [showInstallBanner, setShowInstallBanner] = useState(false);
 
     const MAIN_MENU_SIZE = openMainMenu ? MAIN_MENU_OPEN_SIZE : MAIN_MENU_MIN_SIZE;
     const MENU_INFO_SIZE = menuInfo ? MENU_INFO_OPEN_SIZE : MENU_INFO_CLOSE_SIZE;
@@ -47,6 +49,18 @@ const GlobalFrame = () => {
             ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE);
         }
     }, [menuInfo]);
+
+    useEffect(() => {
+        const userAgent = window.navigator.userAgent.toLowerCase();
+
+        const mobileDeviceRegex = /android|iphone|ipad|ipod/i;
+        const isMobileDevice = mobileDeviceRegex.test(userAgent);
+
+        const isIOS = /iphone|ipad|ipod/.test(userAgent);
+        const isSafari = isIOS && /safari/.test(userAgent) && !/crios|fxios|edgios|opios/.test(userAgent);
+
+        setShowInstallBanner(isMobileDevice && !isSafari);
+    }, [height, width]);
 
     useEffect(() => {
         if (ctx.infoBlockWidth === MENU_INFO_CLOSE_SIZE) {
@@ -186,7 +200,8 @@ const GlobalFrame = () => {
 
     return (
         <Box sx={{ display: 'flex', maxHeight: `${height}px`, overflow: 'hidden' }}>
-            <HeaderMenu />
+            <InstallBanner showInstallBanner={showInstallBanner} />
+            <HeaderMenu showInstallBanner={showInstallBanner} />
             <Box
                 sx={{
                     width: { xs: `calc(100%)` },
@@ -204,6 +219,7 @@ const GlobalFrame = () => {
                     clearState={clearState}
                     setMenuInfo={setMenuInfo}
                     setOpenVisibleMenu={setOpenVisibleMenu}
+                    showInstallBanner={showInstallBanner}
                 />
                 {ctx.selectedPhotoInd !== -1 && <PhotosModal photos={ctx.photoGallery} />}
             </Box>
@@ -219,6 +235,7 @@ const GlobalFrame = () => {
                 setClearState={setClearState}
                 setOpenVisibleMenu={setOpenVisibleMenu}
                 openVisibleMenu={openVisibleMenu}
+                showInstallBanner={showInstallBanner}
             />
             <Outlet />
             <Dialog open={openErrorDialog} onClose={() => setOpenErrorDialog(false)}>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import { ReactComponent as Logo } from '../../../assets/logo.svg';
 import styles from './header.module.css';
-import { HEADER_SIZE } from '../../../manager/GlobalManager';
+import { HEADER_SIZE, INSTALL_BANNER_SIZE } from '../../../manager/GlobalManager';
 
 const pages = [
     {
@@ -27,14 +27,15 @@ const pages = [
         url: '/docs/hiring',
     },
 ];
-export default function HeaderMenu() {
+
+export default function HeaderMenu({ showInstallBanner }) {
     return (
         <AppBar
-            position="fixed"
             sx={{
                 zIndex: 1300,
                 height: HEADER_SIZE,
                 background: '#ffffff',
+                mt: showInstallBanner && INSTALL_BANNER_SIZE,
             }}
         >
             <Toolbar>
