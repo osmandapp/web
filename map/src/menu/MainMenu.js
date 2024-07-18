@@ -349,7 +349,7 @@ export default function MainMenu({
                 pageParams[MAIN_PAGE_TYPE] = addParamsToUrl(pageParams, MAIN_PAGE_TYPE, pinRegex, newPin, pretty);
             }
 
-            //ctx.setPageParams(pageParams);
+            ctx.setPageParams(pageParams);
         }
     }, [ctx.pinPoint]);
 
