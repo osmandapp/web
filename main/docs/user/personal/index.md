@@ -18,13 +18,17 @@ Common settings to all application profiles.
 
 Each profile is available for full customization. In fact, each profile can become a separate application for the needs of the user.
 
+### [Color Palette Schemes](./color-palette-schemes.md)
+
+Color schemes help visualize data, making it easier to understand. This means you can see data on a map using various colors that are easy to interpret.
+
 ### [My Places](./myplaces.md)
 
 'My Places' is a core place within OsmAnd application that allows you to manage all your personally owned information i.e. Favorite points, Tracks (imported, recorded and created GPX files), OpenStreetMap Edits, Audio / Video Notes (Android).
 
 ### [Favorites](./favorites.md)
 
-Favorites is the list of Favorites (user's points) in 'My Places' menu.
+Favorites is the list of Favorites (user's points) in *My Places* menu.
 
 ### [Markers](./markers.md)
 
@@ -41,7 +45,3 @@ The Import / Export function in OsmAnd allows you to manage your data. You can e
 ### [OsmAnd Cloud](./osmand-cloud.md)
 
 OsmAnd Cloud is the resource you need to save your personal settings and app data.
-
-### [Color schemes](./color-schemes.md)
-
-Color schemes help visualize data, making it easier to understand. This means you can see data on a map using various colors that are easy to interpret.
