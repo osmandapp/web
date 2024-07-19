@@ -20,7 +20,7 @@ Each profile is available for full customization. In fact, each profile can beco
 
 ### [Color Palette Schemes](./color-palette-schemes.md)
 
-Color schemes help visualize data, making it easier to understand. This means you can see data on a map using various colors that are easy to interpret.
+Color palette schemes help you visualize data, making it more understandable. To make the data on the map easier to see and interpret, you can change its display using different color palettes.
 
 ### [My Places](./myplaces.md)
 

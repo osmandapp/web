@@ -16,8 +16,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-> *This article was last updated in June 2024*
-
 
 ## Overview
 
@@ -344,4 +342,4 @@ The Route Details navigation section has options that allow you to perform certa
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *This article was last updated in July 2024*
+> *This article was last updated in June 2024*

@@ -98,7 +98,6 @@ For Track section:
 - Download folders as OSF or OBF collection.
 
 
-
 ### Visible on the map
 
 Here there is a list of visible tracks on the map.
