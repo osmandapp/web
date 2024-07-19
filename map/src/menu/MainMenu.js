@@ -54,6 +54,7 @@ import {
     CONFIGURE_URL,
     EXPLORE_URL,
     FAVORITES_URL,
+    INSTALL_BANNER_SIZE,
     LOGIN_URL,
     MAIN_PAGE_TYPE,
     MAIN_URL_WITH_SLASH,
@@ -66,6 +67,7 @@ import {
     WEATHER_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams } from '../util/Utils';
+import { useWindowSize } from '../util/hooks/useWindowSize';
 
 export default function MainMenu({
     size,
@@ -79,10 +81,12 @@ export default function MainMenu({
     setClearState,
     setOpenVisibleMenu,
     openVisibleMenu,
+    showInstallBanner,
 }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const location = useLocation();
+    const [, height] = useWindowSize();
 
     const [selectedType, setSelectedType] = useState(null);
     const [cloudSettings, setCloudSettings] = useState({
@@ -364,9 +368,11 @@ export default function MainMenu({
 
     useEffect(() => {
         const currentMenu = items.find((item) => isSelectedMenuItem(item));
-        if (currentMenu) {
+        if (currentMenu && menuInfo) {
+            // navigate to the current menu
             navigateToUrl({ menu: currentMenu });
-        } else if (location.pathname === MAIN_URL_WITH_SLASH) {
+        } else if (location.pathname === MAIN_URL_WITH_SLASH && location.search === '') {
+            // if the menu not found, navigate to the main page
             navigateToUrl({ isMain: true });
         }
     }, [ctx.pageParams, menuInfo]);
@@ -427,6 +433,8 @@ export default function MainMenu({
                         sx: {
                             boxSizing: 'border-box',
                             width: size,
+                            mt: showInstallBanner && INSTALL_BANNER_SIZE,
+                            height: showInstallBanner ? `calc(${height}px - ${INSTALL_BANNER_SIZE})` : '100%',
                             overflow: 'hidden',
                             zIndex: openMainMenu ? Z_INDEX_OPEN_LEFT_MENU : Z_INDEX_LEFT_MENU,
                             borderRight: (!menuInfo || (menuInfo && openMainMenu)) && 'none !important',
@@ -592,6 +600,7 @@ export default function MainMenu({
                     sx: {
                         width: infoSize,
                         ml: '64px',
+                        mt: showInstallBanner && INSTALL_BANNER_SIZE,
                         boxShadow: 'none',
                         zIndex: Z_INDEX_OPEN_MENU_INFOBLOCK,
                     },

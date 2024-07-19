@@ -13,7 +13,12 @@ import styles from '../../../map/components/map.module.css';
 import { ReactComponent as ConfigureMapIcon } from '../../../assets/icons/ic_map_configure_map.svg';
 import SearchInfo from '../search/SearchInfo';
 import ConfigureMap from '../../../menu/configuremap/ConfigureMap';
-import { MAIN_MENU_MIN_SIZE, MENU_INFO_OPEN_SIZE } from '../../../manager/GlobalManager';
+import {
+    HEADER_SIZE,
+    INSTALL_BANNER_SIZE,
+    MAIN_MENU_MIN_SIZE,
+    MENU_INFO_OPEN_SIZE,
+} from '../../../manager/GlobalManager';
 
 export default function GeneralPanelButtons({
     mainMenuWidth,
@@ -23,6 +28,7 @@ export default function GeneralPanelButtons({
     clearState,
     setMenuInfo,
     setOpenVisibleMenu,
+    showInstallBanner,
 }) {
     const ctx = useContext(AppContext);
 
@@ -32,7 +38,9 @@ export default function GeneralPanelButtons({
     const tooltipOrientation = getTooltipOrientation();
 
     const GPS_CONTROL_HEIGHT = 70 + 40; // margin + button
-    const HEADER_HEIGHT = 61;
+    const HEADER_SIZE_PX = parseInt(HEADER_SIZE);
+    const INSTALL_BANNER_SIZE_PX = showInstallBanner ? parseInt(INSTALL_BANNER_SIZE) : 0;
+    const HEADER_HEIGHT = HEADER_SIZE_PX + INSTALL_BANNER_SIZE_PX + 1;
     const BUTTON_SIZE = 41;
 
     function getButtonOrientation() {

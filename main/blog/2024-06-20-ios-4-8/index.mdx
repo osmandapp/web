@@ -30,6 +30,7 @@ You can download the update from the [AppStore](https://itunes.apple.com/us/app/
 
 - New ["Speedometer" widget](#speedometer-widget) compatible with [CarPlay](#speedometer-for-carplay),
 - Added [Turn-by-turn instructions](#turn-by-turn-instructions) to route details,
+- ['Add action' screen](#quick-actions-tool-update) of the Quick Actions tool,
 - Customize the map screen by adding multiple ["Quick Action" buttons](#custom-buttons),
 - [3D Track Improvements](#3d-track-updates): new visualization and colorization options,
 - Added improved [multi-selection mode for Tracks](#multi-selection-for-my-tracks),
@@ -38,11 +39,10 @@ You can download the update from the [AppStore](https://itunes.apple.com/us/app/
 - [Weather](#weather-tool-updates): UI refresh, added wind animation,
 - Added [smooth transitions](#smooth-transitions) while zooming in 3D mode,
 - ["Location position on screen"](#location-position-on-screen) is now in the "Configure Screen" menu,
+- Road details update - [indicate road side](#indicate-road-side) where destination,
 - Added separate ["Speed limit" navigation alert](#separate-speed-limit-alert), 
-- [OSM Editing](#osm-login): deleted login / password authorization method,
-- Changed ["Wheel circumference"](#others) in BLE sensor settings,
-- Fixed [names for bearing widgets](#others),
-- Fixed ["Radius ruler" visibility](#others) in all widget panels
+- [OSM Editing](#login-to-openstreetmap): deleted login / password authorization method,
+- [Optional updates](#optional-updates).
 
 
 ## Speedometer widget
@@ -64,6 +64,12 @@ The [Speedometer widget](https://osmand.net/docs/user/navigation/car-play#speedo
 
 ![Navigation route Android](@site/static/img/navigation/route/navigation_turn_ios.png) 
 
+
+## Quick Actions Tool Update
+
+The updated **Add Action** screen makes it easier to customize and add [*Quick actions*](https://osmand.net/docs/user/widgets/quick-action), improving access to important features. You can now find groups of actions, use the search function, and apply other actions to customize the *Quick Actions tool*, contributing to a better user experience.
+
+![action](./img/add_action.png) ![action](./img/add_action_1.png)
 
 ## Custom buttons
 
@@ -99,7 +105,7 @@ A new 3D view has been added for [My Location](https://osmand.net/docs/user/pers
 
 ## Color Palettes
 
-For this release you can use (export/import) color palette files for:
+For this release you can use [(export/import) color palette](https://osmand.net/docs/user/personal/color-schemes) files for:
 - [Route](https://osmand.net/docs/user/navigation/guidance/map-during-navigation#color): Speed, Slope, Elevation (Altitude).
 - [Terrain](https://osmand.net/docs/user/plugins/contour-lines#hillshade-slope-and-altitude-layers): Hillshade, Slope.
 - [Weather](https://osmand.net/docs/user/plugins/weather#weather-layers): All weather layers.
@@ -119,6 +125,15 @@ Users can create and add their own color palettes. Simply compose your TXT file 
 220,130,1,255,255
 
 ```
+
+![Color palette](./img/color_palette_2_ios.png) ![Color palette](./img/color_palette_1_ios.png)
+
+Color Palettes data is available on [_Maps & Resources_](https://osmand.net/docs/user/personal/maps#local) menu:
+
+_Menu → Maps & Resources → Local → Colors_
+
+![Color palette](./img/color_palette_ios.png)
+
 
 ## Weather tool updates
 
@@ -141,6 +156,15 @@ _Menu → Configure screen → Other → Location position on screen_
 
 ![Widget page](@site/static/img/widgets/conf_screen_display_position_ios.png) 
 
+## Indicate road side
+
+Added Road side indication for [Route Details](https://osmand.net/docs/user/navigation/setup/route-details). 
+Angle between Destination (Bearing from last point) and last segment (Bearing last 2 route points)  are measured and split in 3 sectors by 120 degree. 
+* `-60 °` – `+60 °` = straight
+* `-180 °` – `-60 °` = left
+* `60 °` – `180 °` = right.
+
+![Side indication](./img/side_indication.png)
 
 ## Separate Speed limit alert
 
@@ -151,13 +175,12 @@ The ["Speed limit" screen alert](https://osmand.net/docs/user/navigation/guidanc
 
 ## Login to OpenStreetMap
 
-To improve security, the option to authorize with login and password has been removed. As of June 1, 2024, only [the new secure OAuth 2.0 method](https://github.com/osmandapp/OsmAnd-iOS/issues/3736) will be supported.  This authorization method provides a higher level of information security to help protect your data and prevent unauthorized access.
+To improve security, [the option to authorize](https://osmand.net/docs/user/plugins/osm-editing#authorization) with login and password has been removed. As of June 1, 2024, only [the new secure OAuth 2.0 method](https://github.com/osmandapp/OsmAnd-iOS/issues/3736) will be supported.  This authorization method provides a higher level of information security to help protect your data and prevent unauthorized access.
 
 The *Use username and password* button has been removed from: 
 
 - *Login to* screen in the OSM Editing plugin menu.
 - Benefits for active OSM contributors. 
-
 
 ## Optional Updates
 
@@ -173,7 +196,8 @@ The *Use username and password* button has been removed from:
 - Fixed [missed subway station icons](https://github.com/osmandapp/OsmAnd-iOS/issues/3711),
 - Fixed the [crash while downloading](https://github.com/osmandapp/OsmAnd-iOS/issues/3561) in the background,
 - Added [grouping of name-tag](https://github.com/osmandapp/OsmAnd-iOS/issues/3554) for Routes and POI's,
-- Fixed [Favorite points sizes](https://github.com/osmandapp/OsmAnd-iOS/issues/3641) on Mac OS
+- Fixed [Favorite points sizes](https://github.com/osmandapp/OsmAnd-iOS/issues/3641) on Mac OS,
+- Fixed [bad visibility of POI icons](https://github.com/osmandapp/OsmAnd-iOS/issues/3733) on CarPlay.
 
 _________________________________________________
 <LinksSocial/>
