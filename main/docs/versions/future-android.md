@@ -31,13 +31,13 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 # What's new
 
-- [Altitude](#altitude-color-scheme-for-terrain) terrain colorization option.
-- [Color palettes](#color-palettes) for terrain, tracks, and routes:
+- [Altitude](#altitude-of-terrain-color-scheme) terrain colorization option.
+- [Color schemes](#color-schemes) for terrain, tracks, and routes.
   - [Custom Color palettes](#custom-color-palettes).
-  - [Quick action for Terrain styles](#quick-action-to-change-the-color-scheme-of-the-terrain) for Terrain color schemes.
-  - [Color palette legend](#color-palette-legend) for tracks, routes, and terrain.
+  - [Quick action button](#quick-action-to-change-the-terrain-color-scheme) for Terrain color scheme.
+  - [Color palette schemes for Maps Legend](#color-palette-schemes-for-maps-legend) for tracks, routes, and terrain.
 - [Profile appearance redesign](#profile-appearance-redesign).
-- [3D icons](#3d-my-location-icons) for My location. 
+- [3D options](#3d-my-location-icons) for My location icons.  
 - [Add action screen](#quick-actions-tool-update) of the Quick Actions tool.
   - [Show / Hide actions](#show--hide-routes-on-the-map) for Routes on the map.  
   - Quick Actions on the [external keyboard](#quick-actions-to-external-keyboard) allow you to assign actions for personalized use.
@@ -51,14 +51,14 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 - [Optional updates](#optional-updates).
 
 
-## Altitude Color Scheme for Terrain
-
-The new [color scheme Altitude](../user/plugins/contour-lines#terrain) has been added for Terrain.
+## Altitude of Terrain Color Scheme
 
 ![Color palette](../../blog/2024-06-19-android-4-8/img/color_altitude.png)
 
+The feature displays the altitude of the terrain in different colors, which greatly improves the visual perception of the map. Easily recognizable different altitude levels with [new color palette](../user/plugins/contour-lines.md#terrain) helps you better navigate the terrain and distinguish uplands from lowlands.  
 
-## Color Palettes
+
+## Color Schemes
 
 New color palette schemes have been added.
 - For [routes](../user/navigation/guidance/map-during-navigation#color): *Speed, Slope,* and *Elevation (Altitude)*.
@@ -67,9 +67,10 @@ New color palette schemes have been added.
 
 Color Palettes data is available on [_Maps & Resources_](../user/personal/maps#local) menu:
 
-_Menu → Maps & Resources → Local → Colors_
+*Menu → Maps & Resources → Local → Colors*
 
 ![Palettes](../../blog/2024-06-19-android-4-8/img/colors.png)
+
 
 ## Custom Color Palettes
 
@@ -113,7 +114,7 @@ _Terrain → Modify (Colour scheme) → All colors → &#8942; → Edit_
 The palette editor allows you to create and edit custom color schemes to personalize your maps. This is where you can customize colors according to personal preferences or the requirements of a particular route. 
 -->
 
-### Quick Action to Change the Color Scheme of the Terrain
+### Quick Action to Change the Terrain Color Scheme
 
 In this release, we have added the ability to switch between [terrain](../user/plugins/contour-lines#terrain) color schemes, similar to switching between layers. This can be done using the Quick Actions tool.  
 
@@ -121,9 +122,9 @@ _Menu → Configure screen → Custom buttons → + → Add button → Add actio
 
 ![Color Scheme](../../blog/2024-06-19-android-4-8/img/color_scheme.png)
 
-### Color Palettes Legend
+### Color Palette Schemes for Maps Legend
 
-The legend provides an easy way to view and understand the different markings on the map. New color palettes have been added to display [**speed** for tracks](../user/map/tracks-on-map/track-appearance#color), [**line type** for routes](../user/navigation/guidance/map-during-navigation#color), [**altitude and slope** for terrain](../user/plugins/contour-lines#color-scheme), and all [**weather layer**](../user/plugins/weather#weather-layers) color palettes.
+The legend provides an easy way to view and understand the different markings on the map. New color palette schemes have been added to display [**speed** for tracks](../user/map/tracks-on-map/track-appearance#color), [**line type** for routes](../user/navigation/guidance/map-during-navigation#color), [**altitude and slope** for terrain](../user/plugins/contour-lines#color-scheme), and all [**weather layer**](../user/plugins/weather#weather-layers) color palettes.
 
 <table class="image">
     <tr>
