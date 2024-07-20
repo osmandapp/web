@@ -12,8 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-
-> *This article was last updated in February 2024*
+<InfoIncompleteArticle/>
 
 ## Overview
 
@@ -451,3 +450,8 @@ Raster maps can be used as they already exist if the tiles are already mapped. I
 
 
 ## Related Articles
+
+- [Import / Export](../personal/import-export.md)
+- [Color Palette Schemes](../personal/color-palette-schemes.md)
+
+> *This article was last updated in February 2024*

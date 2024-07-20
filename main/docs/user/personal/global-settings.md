@@ -380,3 +380,11 @@ In some countries or regions, using speed camera warning applications is illegal
  
 Read about alerts for speed cameras on your route in the article Navigation widgets in the *[Alert widget](../widgets/nav-widgets.md#alert-widget)* section.
 
+
+## Related Articles
+
+- [Profiles (Settings)](./profiles.md)
+- [Import / Export](../personal/import-export.md)
+- [Color Palette Schemes](../personal/color-palette-schemes.md)
+
+> *This article was last updated in February 2024*

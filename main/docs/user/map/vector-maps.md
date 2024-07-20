@@ -546,7 +546,7 @@ If you have personal or 3rd party custom map style created according to [Specifi
 
 ## Related Articles
 
-- 
-- 
+- [Import / Export](../personal/import-export.md)
+- [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *This article was last updated in July 2024*
+> *This article was last updated in Jule 2024*

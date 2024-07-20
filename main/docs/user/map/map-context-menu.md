@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: "Map Context Menu"
+title: Map Context Menu
 ---
 
 import Tabs from '@theme/Tabs';
@@ -708,7 +708,12 @@ Available types of actions:
 
 ## Related Articles
 
-- 
-- 
+- [Vector maps (Map styles)](./vector-maps.md)
+- [Raster Maps (Online / Offline)](./raster-maps.md)
+- [Points on the map](./point-layers-on-map.md)
+- [Tracks Context menu](./track-context-menu.md)
+- [Public transport](./public-transport.md)
+- [Import / Export](../personal/import-export.md)
+- [Color Palette Schemes](../personal/color-palette-schemes.md)
 
 > *This article was last updated in January 2023*

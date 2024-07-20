@@ -288,3 +288,11 @@ Depending on the specified parameters, URL strings may contain:
 - **start-finish:** for navigation.
 - **profile:** for navigation.
 - **zoom:** zoom level.
+
+
+## Related Articles
+
+- [Import / Export](../personal/import-export.md)
+- [Color Palette Schemes](../personal/color-palette-schemes.md)
+
+> *This article was last updated in July 2024*

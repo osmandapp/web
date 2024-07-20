@@ -149,6 +149,7 @@ The update includes:
 
 ![3D icon](../../blog/2024-06-19-android-4-8/img/profile_appearance.png)
 
+
 ## 3D My Location Icons
 
 A new 3D view has been added for [My Location](../user/personal/profiles#profile-appearance) icons, which improves their visualization on the map. These changes bring the appearance of the icons in alignment with the 3D tilt of the map. 
@@ -219,8 +220,6 @@ _[Navigation settings](../user/navigation/guidance/navigation-settings) → Othe
 - "Always" – Attach to the road should be applied automatically for the selected track while in Navigation.
 
 ![Guidance for track](../../blog/2024-06-19-android-4-8/img/track_guidance.png)
-
-
 
 
 <!--

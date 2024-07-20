@@ -13,6 +13,8 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<InfoIncompleteArticle/>
+
 
 ## Overview
 
@@ -302,13 +304,13 @@ All key assignments for the selected type will be removed.
 ## Related Articles
 
 - [Map Context menu](./map-context-menu.md)
--  [Configure Map](./configure-map-menu.md)
--  [Vector maps (Map styles)](./vector-maps.md)
--  [Raster Maps (Online / Offline)](./raster-maps.md)
--  [Points on the map](./point-layers-on-map.md)
--  [Tracks and Routes](./tracks-on-map/tracks-types.md)
--  [Tracks Context menu](./track-context-menu.md)
--  [Public transport](./public-transport.md)
+- [Configure Map](./configure-map-menu.md)
+- [Vector maps (Map styles)](./vector-maps.md)
+- [Raster Maps (Online / Offline)](./raster-maps.md)
+- [Points on the map](./point-layers-on-map.md)
+- [Tracks and Routes](./tracks-on-map/tracks-types.md)
+- [Tracks Context menu](./track-context-menu.md)
+- [Public transport](./public-transport.md)
 
 
 > *This article was last updated in Desember 2023*
