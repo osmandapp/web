@@ -83,7 +83,31 @@ After moving this TXT file to *..Android/data/net.osmand/files/color-palete/heig
 
 ## Import / Export Colors
 
-Move TXT file to *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt*, a new palette will appear in the Color Scheme menu.
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
+
+![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)   
+
+</TabItem>
+
+<TabItem value="ios" label="iOS"> 
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*     
+
+![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)    
+
+</TabItem>
+
+</Tabs> 
+
+You can import and export all available default and custom color palettes using OsmAnd's restore and backup files tool.
+
+- 
+- All exported files are saved in OSF format.
+- If the size of your selected data is significant, it will take some time for the application to prepare the OSF file.
 
 
 ## Schemes for Maps Legend
