@@ -35,7 +35,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 - [Color schemes](#color-schemes) for terrain, tracks, and routes.
   - [Custom Color palettes](#custom-color-palettes).
   - [Quick action button](#quick-action-to-change-the-terrain-color-scheme) for Terrain color scheme.
-  - [Color palette schemes for Maps Legend](#color-palette-schemes-for-maps-legend) for tracks, routes, and terrain.
+  - [The map legend for color palette schemes](#map-legend-for-color-palette-schemes) of tracks, routes, and terrain.
 - [Profile appearance redesign](#profile-appearance-redesign).
 - [3D options](#3d-my-location-icons) for My location icons.  
 - [Add action screen](#quick-actions-tool-update) of the Quick Actions tool.
@@ -122,7 +122,7 @@ _Menu → Configure screen → Custom buttons → + → Add button → Add actio
 
 ![Color Scheme](../../blog/2024-06-19-android-4-8/img/color_scheme.png)
 
-### Color Palette Schemes for Maps Legend
+### Map Legend for Color Palette Schemes
 
 The legend provides an easy way to view and understand the different markings on the map. New color palette schemes have been added to display [**speed** for tracks](../user/map/tracks-on-map/track-appearance#color), [**line type** for routes](../user/navigation/guidance/map-during-navigation#color), [**altitude and slope** for terrain](../user/plugins/contour-lines#color-scheme), and all [**weather layer**](../user/plugins/weather#weather-layers) color palettes.
 

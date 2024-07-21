@@ -44,7 +44,7 @@ Color schemes help visualize data, making it easier to understand. This means yo
 
 - For [terrain](https://osmand.net/docs/user/plugins/contour-lines#hillshade-slope-and-altitude-layers): *Hillshade, Slope*, and *Altitude*.
 
-### Tracks and Routes
+### Routes
 
 GPX Tracks, Routes:
 
@@ -55,8 +55,7 @@ GPX Tracks, Routes:
 
 - For [weather](https://osmand.net/docs/user/plugins/weather#weather-layers): *All weather layers*.
 
-
-## Modify Color Palette
+### Custom
 
 You can add your custom color palettes to OsmAnd. To do this, create a TXT file with the required name:
 - *Routes*: `route_speed_name.txt`, `route_slope_default.txt`, `route_elevation_default.txt`.
@@ -79,6 +78,10 @@ TXT file named *height_altitude_0-200.txt*
 
 ```
 After moving this TXT file to *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt*, a new palette will appear in the Color Scheme menu.
+
+
+## Modify Color Palette
+
 
 
 ## Import / Export Colors
@@ -105,12 +108,14 @@ After moving this TXT file to *..Android/data/net.osmand/files/color-palete/heig
 
 You can import and export all available default and custom color palettes using OsmAnd's restore and backup files tool.
 
-- 
-- All exported files are saved in OSF format.
-- If the size of your selected data is significant, it will take some time for the application to prepare the OSF file.
+- Open the main *Menu*, *Settings*, scroll down to the **Import/export** (*Android*) or **Local Backup** (*iOS*) section, and select the required action.
+- Select one or more items from the *Color* list or the *Select All* option.
+- All exported files are saved in *OSF* format.
+- If the size of your selected data is significant, it will take some time for the application to prepare the *OSF* file.
+- View [*Import / Export*](../personal/import-export.md) article for more detailed information.
 
 
-## Schemes for Maps Legend
+## Map Legend for Schemes
 
 The legend provides an easy way to view and understand the different markings on the map. New color palettes have been added to display [**speed** for tracks](https://osmand.net/docs/user/map/tracks-on-map/track-appearance#color), [**line type** for routes](https://osmand.net/docs/user/navigation/guidance/map-during-navigation#color), [**altitude and slope** for terrain](https://osmand.net/docs/user/plugins/contour-lines#color-scheme), and all [**weather layer**](https://osmand.net/docs/user/plugins/weather#weather-layers) color palettes.
 
@@ -134,7 +139,7 @@ _Menu → Configure screen → Custom buttons → + → Add button → Add actio
 
 ## Editor
 
-_Terrain → Modify (Colour scheme) → All colors → &#8942; → Edit_
+*Terrain → Modify → All colors → &#8942; → Edit*
 
 <table class="image">
     <tr>
