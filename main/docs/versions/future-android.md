@@ -181,7 +181,7 @@ Layer animations and improved labels make the weather interface more visual and 
 
 **Improvements**:
 - **New weather panel** with an updated user interface.
-- 
+
 <!--
 
 Additional **Weather source options**.
