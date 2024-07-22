@@ -1,31 +1,15 @@
-import {
-    Button,
-    Collapse,
-    IconButton,
-    Link,
-    ListItemIcon,
-    ListItemText,
-    MenuItem,
-    Tooltip,
-    Typography,
-} from '@mui/material';
+import { Collapse, IconButton, Link, ListItemIcon, ListItemText, MenuItem, Tooltip, Typography } from '@mui/material';
 import styles from './wptDetails.module.css';
 import React, { useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { POI_PREFIX, SEPARATOR, WIKIPEDIA } from './WptTagsProvider';
+import { openWikipediaContent, POI_PREFIX, SEPARATOR, WIKIPEDIA } from './WptTagsProvider';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import i18n from 'i18next';
 import MoreInfoDialog from './MoreInfoDialog';
-import { apiGet } from '../../../util/HttpApi';
 import AppContext from '../../../context/AppContext';
-import { Dialog } from '@material-ui/core';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import parse from 'html-react-parser';
-import DialogActions from '@mui/material/DialogActions';
 
-export default function WptTagInfo({ tag = null, baseTag = null, copy = false }) {
+export default function WptTagInfo({ tag = null, baseTag = null, copy = false, setDevWikiContent = null }) {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
@@ -33,8 +17,6 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
     const [openMoreDialog, setOpenMoreDialog] = useState(null);
     const [tagList, setTagList] = useState(null);
     const [hover, setHover] = useState(false);
-
-    const [devWikiContent, setDevWikiContent] = useState(null);
 
     function handleCopy(value) {
         navigator.clipboard.writeText(value);
@@ -174,63 +156,6 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
         }
     }
 
-    function openWikipediaContent(tag) {
-        if (tag.key === WIKIPEDIA) {
-            getWikipediaContent(tag).then((data) => {
-                if (data) {
-                    data = fixWikiUrl(data);
-                    setDevWikiContent(data);
-                }
-            });
-        }
-    }
-
-    function fixWikiUrl(text) {
-        const urlRegex = /href="([^"]*)"/g;
-        return text.replace(urlRegex, (match, w) => {
-            if (w.includes('wikpedia')) {
-                const fixedUrl = w.replace('wikpedia', WIKIPEDIA);
-                return `href="${fixedUrl}"`;
-            }
-            return match;
-        });
-    }
-
-    async function getWikipediaContent(tag) {
-        const wikiData = parseWikipediaUrl(tag.value);
-        if (!wikiData) {
-            return null;
-        }
-        let response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/get-wiki-content`, {
-            apiCache: true,
-            params: {
-                title: wikiData.title,
-                lang: wikiData.lang,
-            },
-        });
-        if (response && response.data) {
-            return response.data;
-        } else {
-            return null;
-        }
-    }
-
-    function parseWikipediaUrl(url) {
-        const regex = /https?:\/\/([a-z]+)\.wikipedia\.org\/wiki\/(.+)/;
-        const match = url.match(regex);
-
-        if (match) {
-            const lang = match[1];
-            const title = decodeURIComponent(match[2]).replace(/_/g, ' ');
-            return {
-                lang,
-                title,
-            };
-        } else {
-            return null;
-        }
-    }
-
     return (
         <>
             {tag && (
@@ -238,7 +163,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
                     style={{ userSelect: 'text' }}
                     disableRipple={!(tag.key === WIKIPEDIA && ctx.develFeatures)}
                     onClick={() => {
-                        openWikipediaContent(tag);
+                        openWikipediaContent(tag, setDevWikiContent);
                     }}
                     className={styles.tagItem}
                     divider
@@ -291,18 +216,6 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
                     title={openMoreDialog.title}
                     content={openMoreDialog.content}
                 />
-            )}
-            {devWikiContent && (
-                <Dialog open={true}>
-                    <DialogContent>
-                        <DialogContentText>{parse(devWikiContent)}</DialogContentText>
-                    </DialogContent>
-                    <DialogActions>
-                        <Button onClick={() => setDevWikiContent(null)} color="primary">
-                            Close
-                        </Button>
-                    </DialogActions>
-                </Dialog>
             )}
         </>
     );

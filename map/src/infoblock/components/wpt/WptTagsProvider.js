@@ -18,12 +18,14 @@ import capitalize from 'lodash/capitalize';
 import { changeIconColor } from '../../../map/markers/MarkerOptions';
 import { createPoiCache, updatePoiCache } from '../../../manager/PoiManager';
 import React from 'react';
+import { apiGet } from '../../../util/HttpApi';
 
 export const DEFAULT_TAG_ICON_SIZE = 24;
 export const DEFAULT_TAG_ICON_COLOR = '#727272';
 export const WEB_POI_PREFIX = 'web_poi_';
 export const POI_PREFIX = 'poi_';
 export const WIKIPEDIA = 'wikipedia';
+const WIKIVOYAGE = 'wikivoyage';
 const OSM_WIKI = 'osmwiki';
 const AMENITY_PREFIX = 'amenity_';
 const TYPE = 'type';
@@ -536,6 +538,92 @@ function shouldSkipKey(key) {
         key.startsWith('name:') ||
         key.includes(ROUTE)
     );
+}
+
+export function openWikipediaContent(tag, setDevWikiContent) {
+    if (tag.key === WIKIPEDIA) {
+        getWikipediaContent(tag).then((data) => {
+            if (data) {
+                data = fixWikiUrl(data);
+                setDevWikiContent(data);
+            }
+        });
+    }
+}
+
+export function openWikivoyageContent(link, setDevWikiContent) {
+    if (link) {
+        getWikivoyageContent(link).then((data) => {
+            if (data) {
+                setDevWikiContent(data);
+            }
+        });
+    }
+}
+
+function fixWikiUrl(text) {
+    const urlRegex = /href="([^"]*)"/g;
+    return text.replace(urlRegex, (match, w) => {
+        if (w.includes('wikpedia')) {
+            const fixedUrl = w.replace('wikpedia', WIKIPEDIA);
+            return `href="${fixedUrl}"`;
+        }
+        return match;
+    });
+}
+
+async function getWikipediaContent(tag) {
+    const wikiData = parseUrl(tag.value, WIKIPEDIA);
+    if (!wikiData) {
+        return null;
+    }
+    let response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/get-wiki-content`, {
+        apiCache: true,
+        params: {
+            title: wikiData.title,
+            lang: wikiData.lang,
+        },
+    });
+    if (response && response.data) {
+        return response.data;
+    } else {
+        return null;
+    }
+}
+
+async function getWikivoyageContent(link) {
+    const wikivoyageData = parseUrl(link[1], WIKIVOYAGE);
+    if (!wikivoyageData) {
+        return null;
+    }
+    let response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/get-wikivoyage-content`, {
+        apiCache: true,
+        params: {
+            title: wikivoyageData.title,
+            lang: wikivoyageData.lang,
+        },
+    });
+    if (response && response.data) {
+        return response.data;
+    } else {
+        return null;
+    }
+}
+
+function parseUrl(url, site) {
+    const regex = new RegExp(`https?://([a-z]+)\\.${site}\\.org/wiki/(.+)`);
+    const match = url.match(regex);
+
+    if (match) {
+        const lang = match[1];
+        const title = decodeURIComponent(match[2]).replace(/_/g, ' ');
+        return {
+            lang,
+            title,
+        };
+    } else {
+        return null;
+    }
 }
 
 const WptTagsProvider = {
