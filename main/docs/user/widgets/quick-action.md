@@ -159,6 +159,7 @@ There are several ways how to access Quick Action to edit or delete it:
  - Delete via *Edit actions* list.
 
 
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  

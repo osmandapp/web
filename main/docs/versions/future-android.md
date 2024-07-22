@@ -34,12 +34,12 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 - [Altitude](#altitude-of-terrain-color-scheme) terrain colorization option.
 - [Color schemes](#color-schemes) for terrain, tracks, and routes.
   - [Custom Color palettes](#custom-color-palettes).
-  - [Quick action button](#quick-action-to-change-the-terrain-color-scheme) for Terrain color scheme.
+  - [Quick action button](#quick-action-to-switch-terrain-color-palettes) for terrain color scheme.
   - [The map legend for color palette schemes](#map-legend-for-color-palette-schemes) of tracks, routes, and terrain.
 - [Profile appearance redesign](#profile-appearance-redesign).
 - [3D options](#3d-my-location-icons) for My location icons.  
 - [Add action screen](#quick-actions-tool-update) of the Quick Actions tool.
-  - [Show / Hide actions](#show--hide-routes-on-the-map) for Routes on the map.  
+  - [Show / Hide actions](#show-or-hide-routes-on-the-map) for Routes on the map.  
   - Quick Actions on the [external keyboard](#quick-actions-to-external-keyboard) allow you to assign actions for personalized use.
 - [Weather UI](#weather-tool-improvements) has been updated with layer animations and improved label visibility.
 - Improvements for the [3D track view](#3d-track-improvements).
@@ -61,11 +61,11 @@ The feature displays the altitude of the terrain in different colors, which grea
 ## Color Schemes
 
 New color palette schemes have been added.
-- For [routes](../user/navigation/guidance/map-during-navigation#color): *Speed, Slope,* and *Elevation (Altitude)*.
-- For [terrain](../user/plugins/contour-lines#hillshade-slope-and-altitude-layers): *Hillshade, Slope*, and *Altitude*.
-- For [weather](../user/plugins/weather#weather-layers): *All weather layers*.
+- For [routes](../user/navigation/guidance/map-during-navigation.md#color): *Speed, Slope,* and *Elevation (Altitude)*.
+- For [terrain](../user/plugins/contour-lines.md#hillshade-slope-and-altitude-layers): *Hillshade, Slope*, and *Altitude*.
+- For [weather](../user/plugins/weather.md#weather-layers): *All weather layers*.
 
-Color Palettes data is available on [_Maps & Resources_](../user/personal/maps#local) menu:
+Color palette data is available in the [_Maps & Resources_](../user/personal/maps.md#local) menu.
 
 *Menu → Maps & Resources → Local → Colors*
 
@@ -73,6 +73,8 @@ Color Palettes data is available on [_Maps & Resources_](../user/personal/maps#l
 
 
 ## Custom Color Palettes
+
+![Palettes](../../blog/2024-06-19-android-4-8/img/palette.png)
 
 You can add your custom color palettes to OsmAnd. To do this, create a TXT file with the required name:
 - *Routes*: `route_speed_name.txt`, `route_slope_default.txt`, `route_elevation_default.txt`.
@@ -96,8 +98,6 @@ TXT file named *height_altitude_0-200.txt*
 ```
 After moving this TXT file to *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt*, a new palette will appear in the Color Scheme menu.
 
-![Palettes](../../blog/2024-06-19-android-4-8/img/palette.png)
-
 
 <!--
 ### Palette Editor
@@ -114,17 +114,15 @@ _Terrain → Modify (Colour scheme) → All colors → &#8942; → Edit_
 The palette editor allows you to create and edit custom color schemes to personalize your maps. This is where you can customize colors according to personal preferences or the requirements of a particular route. 
 -->
 
-### Quick Action to Change the Terrain Color Scheme
+### Quick Action to Switch Terrain Color Palettes
 
-In this release, we have added the ability to switch between [terrain](../user/plugins/contour-lines#terrain) color schemes, similar to switching between layers. This can be done using the Quick Actions tool.  
-
-_Menu → Configure screen → Custom buttons → + → Add button → Add action → Topography → Change Terrain color scheme_
+*Menu → Configure screen → Custom buttons → + → Add button → Add action → Topography → Change Terrain color scheme*  
 
 ![Color Scheme](../../blog/2024-06-19-android-4-8/img/color_scheme.png)
 
-### Map Legend for Color Palette Schemes
+In this release, we have added the ability to switch between [terrain](../user/plugins/contour-lines.md#terrain) color palettes, similar to switching between layers. This can be done using the Quick Actions tool.  
 
-The legend provides an easy way to view and understand the different markings on the map. New color palette schemes have been added to display [**speed** for tracks](../user/map/tracks-on-map/track-appearance#color), [**line type** for routes](../user/navigation/guidance/map-during-navigation#color), [**altitude and slope** for terrain](../user/plugins/contour-lines#color-scheme), and all [**weather layer**](../user/plugins/weather#weather-layers) color palettes.
+### Map Legend for Color Palette Schemes
 
 <table class="image">
     <tr>
@@ -134,50 +132,55 @@ The legend provides an easy way to view and understand the different markings on
     </tr>
 </table>  
 
+The legend provides an easy way to view and understand the different markings on the map. New color palette schemes have been added to display [**speed** for tracks](../user/map/tracks-on-map/track-appearance.md#color), [**line type** for routes](../user/navigation/guidance/map-during-navigation.md#color), [**altitude and slope** for terrain](../user/plugins/contour-lines.md#color-scheme), and all [**weather layer**](../user/plugins/weather.md#weather-layers) color palettes.
+
 
 ## Profile Appearance Redesign
 
-The [appearance of profiles](../user/personal/profiles#profile-appearance) has been improved to make them more interesting, recognizable, and usable. 
+![3D icon](../../blog/2024-06-19-android-4-8/img/profile_appearance.png)
+
+The [appearance of profiles](../user/personal/profiles.md#profile-appearance) has been improved to make them more interesting, recognizable, and usable. 
 
 The update includes:
 - New icon and color selection components.
 - Redesign of the location icon selection map.
-- Default [3D icons](#3d-my-location-icons) in [OpenGL (Version 2)](../user/personal/global-settings/#map-rendering-engine) - Map rendering engine.
-- Added Options menu of icon:
-   - "View angle": Off, Resting position, Navigation position, Rest & navigation position - displays the cone-shaped area you're currently facing.
-   - "Location radius": Off, Resting position, Navigation position, Rest & navigation position - shows the circular area representing your current location accuracy. 
-
-![3D icon](../../blog/2024-06-19-android-4-8/img/profile_appearance.png)
+- Default [3D icons](#3d-my-location-icons) for [map rendering Version 2 (OpenGL)](../user/personal/global-settings.md#map-rendering-engine).
+- Added *Options* menu for 3D icons:
+  - **View angle**. Status: *Off*, &nbsp;*Resting position*, &nbsp;*Navigation position*, &nbsp;*Rest & navigation position*.  
+  Displays of the cone-shaped area you are currently in.
+  - **Location radius**. Status: *Off*, &nbsp;*Resting position*, &nbsp;*Navigation position*, &nbsp;*Rest & navigation position*.  
+  Displays a circular area that reflects the accuracy of your current location.  
 
 
 ## 3D My Location Icons
 
-A new 3D view has been added for [My Location](../user/personal/profiles#profile-appearance) icons, which improves their visualization on the map. These changes bring the appearance of the icons in alignment with the 3D tilt of the map. 
-
-3D icons are available only in [OpenGL (Version 2)](../user/personal/global-settings/#map-rendering-engine) - Map rendering engine.
-
 ![3D icon](../../blog/2024-06-19-android-4-8/img/3d_icon.png)
+
+A new 3D view has been added for [My Location](../user/personal/profiles.md#profile-appearance) icons, which improves their visualization on the map. These changes bring the appearance of the icons in alignment with the 3D tilt of the map.  
+
+3D icons are only available for [map rendering Version 2 (OpenGL)](../user/personal/global-settings.md#map-rendering-engine).
 
 
 ## Quick Actions Tool Update
 
-The updated **Add Action** screen makes it easier to customize and add [*Quick actions*](../user/widgets/quick-action), improving access to important features. You can now find groups of actions, use the search function, and apply other actions to customize the *Quick Actions tool*, contributing to a better user experience.
-
 ![External Buttons](../../blog/2024-06-19-android-4-8/img/external_buttons.png) ![External Buttons](../../blog/2024-06-19-android-4-8/img/external_buttons_2.png)
 
+The updated **Add Action** screen makes it easier to customize and add [*Quick actions*](../user/widgets/quick-action.md), improving access to important features. You can now find groups of actions, use the search function, and apply other actions to customize the *Quick Actions tool*, contributing to a better user experience.
 
-### Show / Hide Routes on the map
+### Show or Hide Routes on the Map
 
-Added new Quick action: to Show / Hide [Routes on the map](../user/map/vector-maps#routes). Now you can on or off Routes on the map by one tap.
+Added a new quick action *Show/Hide [Routes on the map](../user/map/vector-maps.md#routes)*. Now you can turn on or off routes on the map with one tap.
 
 ### Quick Actions to External Keyboard
 
-You can now assign all Quick Actions to [external keyboard buttons](../user/map/interact-with-map/#settings). This is especially useful if you often work with the application using external input devices and need quick access to basic functions. The ability to customize quick actions in this way makes working with OsmAnd more flexible and efficient.  
 ![External Buttons](../../blog/2024-06-19-android-4-8/img/external_buttons.png) ![External Buttons](../../blog/2024-06-19-android-4-8/img/external_buttons_1.png)
 
+You can now assign all Quick Actions to [external keyboard buttons](../user/map/interact-with-map.md#settings). This is especially useful if you often work with the application using external input devices and need quick access to basic functions. The ability to customize quick actions in this way makes working with OsmAnd more flexible and efficient.  
 
 
 ## Weather Tool Improvements
+
+![weather](../../blog/2024-06-19-android-4-8/img/weather_annimation.gif)
 
 Layer animations and improved labels make the weather interface more visual and informative. These changes help you better understand current weather conditions and forecasts. Improved label visibility makes navigating weather data much easier.  
 
@@ -195,12 +198,12 @@ Additional **Weather source options**.
   
 - A **Wind animation layer** has been added.
 
-![weather](../../blog/2024-06-19-android-4-8/img/weather_annimation.gif)
-
 
 ## 3D Track Improvements
 
-Updated 3D track visualizations provide a more detailed view of routes.  In this release, we have added the following improvements to the [3D track appearance](../user/map/tracks-on-map/track-appearance#3d-track). 
+![3D track](../../blog/2024-06-19-android-4-8/img/track_3d.png)
+
+Updated 3D track visualizations provide a more detailed view of routes.  In this release, we have added the following improvements to the [3D track appearance](../user/map/tracks-on-map/track-appearance.md#3d-track). 
 
 1. **Visualization options.** 
     - If *Visualized by* is set to *Fixed height*,  
@@ -210,30 +213,30 @@ Updated 3D track visualizations provide a more detailed view of routes.  In this
     - You can choose from:  
         *Solid, Downward gradient, Upward gradient, Altitude, Slope,* or *Speed*.
 
-![3D track](../../blog/2024-06-19-android-4-8/img/track_3d.png)
 
+## Attach to the Roads Update
 
-## Update Attach to the roads
+*[Navigation settings](../user/navigation/guidance/navigation-settings) → Other → Detailed track guidance*  
 
-Added new option for [_Attach to the roads_](../user/navigation/setup/gpx-navigation#attach-to-roads) - Detailed track guidance:
+![Guidance for track](../../blog/2024-06-19-android-4-8/img/track_guidance.png)  
 
-_[Navigation settings](../user/navigation/guidance/navigation-settings) → Other → Detailed track guidance_:
-
-- "Ask every time" – empty state should be always visible in Navigation if Follow track is active.
-- "Always" – Attach to the road should be applied automatically for the selected track while in Navigation.
-
-![Guidance for track](../../blog/2024-06-19-android-4-8/img/track_guidance.png)
+A new Detailed track guidance setting has been added for the [*Attach to the roads*](../user/navigation/setup/gpx-navigation.md#attach-to-the-roads) feature. The options for using the feature are:
+- **Ask every time**. The button is always displayed when you create a route using *Follow track* in the Navigation menu.
+- **Always**. Attach to the roads is applied automatically.
 
 
 <!--
 ## GPX Track Acitivity
 
-The new feature of adding **Activity** to a recorded GPX track improves navigation and track management. This increases the convenience of working with track recordings.
-
 ![3D track](../../blog/2024-06-19-android-4-8/img/track_activity.png)
+
+The new feature of adding **Activity** to a recorded GPX track improves navigation and track management. This increases the convenience of working with track recordings.
 -->
 
+
 ## Login to OpenStreetMap
+
+![OSM Oath](../../blog/2024-06-19-android-4-8/img/osm_oath.png)
 
 To improve security, the option to authorize via login and password has been removed. As of June 1, 2024, only the new secure OAuth 2.0 method will be supported.  This authorization method provides a higher level of information security to help protect your data and prevent unauthorized access.
 
@@ -243,28 +246,26 @@ The Use username and password button has been removed from:
 - Benefits for active OSM contributors. 
 - Upload OSM Note dialog.
 
-![OSM Oath](../../blog/2024-06-19-android-4-8/img/osm_oath.png)
-
 
 ## More Favorite Icons
 
-A complete list of [icons for Favorites](../user/personal/favorites#create-and-edit) has been added, which helps to organize and visualize them better. This allows you to search and select an icon for a favorite in a *Сustom POI search* from the icon library, making the use of favorites more convenient and efficient.  
-
 ![Favorite icons](../../blog/2024-06-19-android-4-8/img/favorite_icons.png)
+
+A complete list of [icons for Favorites](../user/personal/favorites.md#create-and-edit) has been added, which helps to organize and visualize them better. This allows you to search and select an icon for a favorite in a *Сustom POI search* from the icon library, making the use of favorites more convenient and efficient.  
 
 
 ## Water Category of POIs
 
-The new POI [Water (Man made)](https://github.com/osmandapp/OsmAnd/issues/16021) category includes objects with drinking water sources. Searching this [сategories](../user/search/search-poi#categories-poi-search) will help you easily find water on the map when traveling.  
-
 ![Water](../../blog/2024-06-19-android-4-8/img/water_poi.png)
+
+The new POI [Water (Man made)](https://github.com/osmandapp/OsmAnd/issues/16021) category includes objects with drinking water sources. Searching this [сategories](../user/search/search-poi.md#categories-poi-search) will help you easily find water on the map when traveling.  
 
 
 ## Compass Button Updates
 
 The compass button has received updates that improve its functionality. These changes make the compass more accurate and easier to use, and help you navigate better.
 
-[**Compass button**](../user/map/interact-with-map/#map-orientation-and-compass): 
+[**Compass button**](../user/map/interact-with-map.md#map-orientation-and-compass): 
 
 - **Single tap**. Rotates the map orientation to the North in all orientations. Even if it rotates back in a second, such as in compass mode.
 - **Double tap**. Switches map orientations. This previously worked with a single tap.
@@ -281,7 +282,7 @@ The compass button has received updates that improve its functionality. These ch
 
 ## Optional Updates
 
-- Significant speed improvement for [Attach to roads](../user/navigation/setup/gpx-navigation#attach-to-roads) algorithm.
+- Significant speed improvement for [Attach to roads](../user/navigation/setup/gpx-navigation.md#attach-to-roads) algorithm.
 
 - Added [Pale style](https://github.com/osmandapp/OsmAnd/issues/20208) for roads rendering.
 
@@ -291,32 +292,34 @@ The compass button has received updates that improve its functionality. These ch
 
 - Added [Brands](https://github.com/osmandapp/OsmAnd/issues/20256) for POIs categories.
 
-- Fixed bug with [export-import of GPX files](https://github.com/osmandapp/OsmAnd/issues/19212).
-
-- Fixed [incrorrect labeling](https://github.com/osmandapp/OsmAnd/issues/19834) of external temperature sensor data for GPX files.
-
 - Improved colors for [multiple GPX tracks after import](https://github.com/osmandapp/OsmAnd/issues/19995).
 
-- [New share sheet](../user/map/map-context-menu/#share)- Switch to the system shared sheet when Android 14 starts.
-
-- Fixed an issue with [navigation not stopping after reconnecting in Android Auto](https://github.com/osmandapp/OsmAnd/issues/19651).
-
-- Fixed [incorrect instructions during navigation in Android Auto](https://github.com/osmandapp/OsmAnd/issues/19438).
-
-- Fixed [sorting (statistics and search) of tracks folders in *Configure map → Tracks*](https://github.com/osmandapp/OsmAnd/issues/19634).
-
-- Fixed bug with [3D mode button tilt angle](https://github.com/osmandapp/OsmAnd/issues/19868) on the map.
+- Updated detailed [Sharing text](../user/map/map-context-menu.md#share) screen for Android 14.
 
 - Using [localized names](https://github.com/osmandapp/OsmAnd/issues/20020) for routes.
 
-- Fixed [incorrect calculation of uphil](https://github.com/osmandapp/OsmAnd/issues/20074).
+- Fixed: 
 
-- Fixed [wrong elevation data on graph](https://github.com/osmandapp/OsmAnd/issues/19142) for tunnels, bridges in Route details.
+  - Bug with [export-import of GPX files](https://github.com/osmandapp/OsmAnd/issues/19212).
 
-- Fixed [bug with copied "Custom button"](https://github.com/osmandapp/OsmAnd/issues/19767) from another profile.
+  - [Incrorrect labeling](https://github.com/osmandapp/OsmAnd/issues/19834) of external temperature sensor data for GPX files.
 
-- Fixed [bug with malfunction](https://github.com/osmandapp/OsmAnd/issues/20254) when displaying Quick Action names.
+  - An issue with [navigation not stopping after reconnecting in Android Auto](https://github.com/osmandapp/OsmAnd/issues/19651).
 
-- Fixed [bug with not moving contact icon](https://github.com/osmandapp/OsmAnd/issues/19176) sharing of OsmAnd Telegram tracker.
+  - [Incorrect instructions during navigation in Android Auto](https://github.com/osmandapp/OsmAnd/issues/19438).
 
-- Fixed bug with icons sizes on [Samsung DeX](https://www.samsung.com/uk/apps/samsung-dex/).
+  - [Sorting (statistics and search) of tracks folders in *Configure map → Tracks*](https://github.com/osmandapp/OsmAnd/issues/19634).
+
+  - Bug with [3D mode button tilt angle](https://github.com/osmandapp/OsmAnd/issues/19868) on the map.
+
+  - [Incorrect calculation of uphil](https://github.com/osmandapp/OsmAnd/issues/20074).
+
+  - [Wrong elevation data on graph](https://github.com/osmandapp/OsmAnd/issues/19142) for tunnels, bridges in Route details.
+
+  - [Bug with copied "Custom button"](https://github.com/osmandapp/OsmAnd/issues/19767) from another profile.
+
+  - [Bug with malfunction](https://github.com/osmandapp/OsmAnd/issues/20254) when displaying Quick Action names.
+
+  - [Bug with not moving contact icon](https://github.com/osmandapp/OsmAnd/issues/19176) sharing of OsmAnd Telegram tracker.
+
+  - Bug with icons sizes on [Samsung DeX](https://www.samsung.com/uk/apps/samsung-dex/).

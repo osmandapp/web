@@ -171,7 +171,7 @@ When preparing or navigating a GPX track, you cannot add locations you plan to p
 - *&nbsp;<Translate android="true" ids="pass_whole_track_descr"/>* (or *<Translate ios="true" ids="point_to_navigate"/>* in iOS) - you can choose whether you will be directed to the **<Translate android="true" ids="start_of_the_track"/>** or **<Translate android="true" ids="nearest_point"/>** of the track.
 - *&nbsp;<Translate android="true" ids="nav_type_hint"/>* - you can choose weither you will be guided to the track using *[<Translate android="true" ids="routing_profile_straightline"/>](../routing/straight-line-routing.md)* or usng *[routing type](../routing/routing-types.md)* from current profile.  
 
-### Attach to roads
+### Attach to the roads
 
 <Tabs groupId="operating-systems">
 
@@ -201,7 +201,7 @@ After attaching your track to the roads in [Route details section](../setup/rout
 
 ## Guidance
 
-*Navigation by GPX track* contains the same [voice instructions](../guidance/voice-navigation.md) as route navigation. However, some turns or traffic circles may not be interpreted correctly because there is no information about road intersections in GPX, except for GPX files created by OsmAnd. To eliminate these problems, you should use the [**Attach to roads**](#attach-to-roads) feature.   
+*Navigation by GPX track* contains the same [voice instructions](../guidance/voice-navigation.md) as route navigation. However, some turns or traffic circles may not be interpreted correctly because there is no information about road intersections in GPX, except for GPX files created by OsmAnd. To eliminate these problems, you should use the [**Attach to the roads**](#attach-to-the-roads) feature.   
 
 During navigation, you can use various options such as zooming in or out, panning the map, or switching to a different map style. If you deviate from the track, OsmAnd will automatically recalculate the route to bring you back on track. You can also adjust the speed of the track and set audible alerts for approaching points or deviations from the route.  
 
