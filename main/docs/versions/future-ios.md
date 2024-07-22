@@ -109,7 +109,7 @@ Users can create and add their own color palettes. Simply compose your TXT file 
 
 ![Weather](../../blog/2024-06-20-ios-4-8/img/weather_ios.png)
 
-[The Weather tool](https://osmand.net/docs/user/plugins/weather) has been updated with a refreshed UI, added wind animation, and two data source providers ⚙ ([GFS](https://en.wikipedia.org/wiki/Global_Forecast_System) or [ECMWF](https://en.wikipedia.org/wiki/European_Centre_for_Medium-Range_Weather_Forecasts)).
+[The Weather tool](https://osmand.net/docs/user/plugins/weather) has been updated with a refreshed UI, added wind animation.<!-- and two data source providers ⚙ ([GFS](https://en.wikipedia.org/wiki/Global_Forecast_System) or [ECMWF](https://en.wikipedia.org/wiki/European_Centre_for_Medium-Range_Weather_Forecasts)).-->
 
 
 ## Smooth Transitions

@@ -184,8 +184,11 @@ Layer animations and improved labels make the weather interface more visual and 
 **Improvements**:
 - **New weather panel** with an updated user interface.
 
-- Additional **Weather source options**.
+<!--
+
+Additional **Weather source options**.
   - Tap the ⚙ icon and select [GFS](https://en.wikipedia.org/wiki/Global_Forecast_System) or [ECMWF](https://en.wikipedia.org/wiki/European_Centre_for_Medium-Range_Weather_Forecasts).
+-->
 
 - **Weather animation**.
   - After making sure the weather layers are selected, tap the *Play* button on the *Weather* screen.
