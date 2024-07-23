@@ -40,7 +40,13 @@ import FavoritesManager, {
 } from '../../../manager/FavoritesManager';
 import { ExpandLess, ExpandMore, Folder, LocationOn } from '@mui/icons-material';
 import WptDetailsButtons from './WptDetailsButtons';
-import WptTagsProvider, { FINAL_ICON_NAME, POI_OSM_URL, POI_PREFIX, TYPE_OSM_VALUE } from './WptTagsProvider';
+import WptTagsProvider, {
+    FINAL_ICON_NAME,
+    openWikivoyageContent,
+    POI_OSM_URL,
+    POI_PREFIX,
+    TYPE_OSM_VALUE,
+} from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
 import { useTranslation } from 'react-i18next';
 import i18n from 'i18next';
@@ -57,11 +63,17 @@ import PhotoGallery from '../../../menu/search/PhotoGallery';
 import wptStyles from '../wpt/wptDetails.module.css';
 import parse from 'html-react-parser';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../../manager/GlobalManager';
+import { Dialog } from '@material-ui/core';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogActions from '@mui/material/DialogActions';
 
 export default function WptDetails({ isDetails = false, setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const hash = window.location.hash;
+
+    const [devWikiContent, setDevWikiContent] = useState(null);
 
     const currentLoc = useGeoLocation(ctx);
 
@@ -465,7 +477,15 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 </MenuItem>
                 <Collapse in={open} timeout="auto" unmountOnExit>
                     {Object.values(wvLinks).map((item, index) => (
-                        <MenuItem disableRipple key={index} divider className={wptStyles.tagList}>
+                        <MenuItem
+                            disableRipple={!ctx.develFeatures}
+                            onClick={() => {
+                                openWikivoyageContent(item, setDevWikiContent);
+                            }}
+                            key={index}
+                            divider
+                            className={wptStyles.tagList}
+                        >
                             <Link href={item[1]} target="_blank" rel="noopener noreferrer">
                                 {item[0]}
                             </Link>
@@ -603,7 +623,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                 />
                             )}
                             {wpt?.tags?.res?.map((t, index) => {
-                                return <WptTagInfo key={index} tag={t} />;
+                                return <WptTagInfo key={index} tag={t} setDevWikiContent={setDevWikiContent} />;
                             })}
                             {wpt.latlon && (
                                 <WptTagInfo
@@ -619,6 +639,18 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                         </ListItemText>
                     )}
                 </Box>
+            )}
+            {devWikiContent && (
+                <Dialog open={true}>
+                    <DialogContent>
+                        <DialogContentText>{parse(devWikiContent)}</DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={() => setDevWikiContent(null)} color="primary">
+                            Close
+                        </Button>
+                    </DialogActions>
+                </Dialog>
             )}
         </>
     );

@@ -1,14 +1,17 @@
 import { Collapse, IconButton, Link, ListItemIcon, ListItemText, MenuItem, Tooltip, Typography } from '@mui/material';
 import styles from './wptDetails.module.css';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { POI_PREFIX, SEPARATOR } from './WptTagsProvider';
+import { openWikipediaContent, POI_PREFIX, SEPARATOR, WIKIPEDIA } from './WptTagsProvider';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import i18n from 'i18next';
 import MoreInfoDialog from './MoreInfoDialog';
+import AppContext from '../../../context/AppContext';
 
-export default function WptTagInfo({ tag = null, baseTag = null, copy = false }) {
+export default function WptTagInfo({ tag = null, baseTag = null, copy = false, setDevWikiContent = null }) {
+    const ctx = useContext(AppContext);
+
     const { t } = useTranslation();
     const [open, setOpen] = useState(false);
     const [openMoreDialog, setOpenMoreDialog] = useState(null);
@@ -156,7 +159,15 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false })
     return (
         <>
             {tag && (
-                <MenuItem style={{ userSelect: 'text' }} disableRipple className={styles.tagItem} divider>
+                <MenuItem
+                    style={{ userSelect: 'text' }}
+                    disableRipple={!(tag.key === WIKIPEDIA && ctx.develFeatures)}
+                    onClick={() => {
+                        openWikipediaContent(tag, setDevWikiContent);
+                    }}
+                    className={styles.tagItem}
+                    divider
+                >
                     <ListItemIcon className={styles.tagIcon}>{tag.icon}</ListItemIcon>
                     {getValue(tag)}
                 </MenuItem>
