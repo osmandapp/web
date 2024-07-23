@@ -16,12 +16,7 @@ import {
 } from '@mui/material';
 import styles from '../../infoblock.module.css';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import AppContext, {
-    isTrack,
-    OBJECT_CONFIGURE_MAP,
-    OBJECT_TYPE_FAVORITE,
-    OBJECT_TYPE_POI,
-} from '../../../context/AppContext';
+import AppContext, { isTrack, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import headerStyles from '../../../menu/trackfavmenu.module.css';
 import { closeHeader } from '../../../menu/actions/HeaderHelper';
 import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
