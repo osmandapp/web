@@ -450,7 +450,7 @@ Track points (waypoints) are points that are part of Track (GPX) files. These po
 
 ![Track on map](@site/static/img/map/track_point_on_map.png)
 
-[Read more](../map/tracks-on-map/tracks-types.md) about tracks on the map.
+[Read more](../map/tracks-on-map.md) about tracks on the map.
 
 <Tabs groupId="operating-systems">
 
