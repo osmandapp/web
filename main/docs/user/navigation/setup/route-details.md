@@ -170,7 +170,7 @@ The [graphs](../../map/track-context-menu.md#altitude--speed-graphs) visually di
 
 </Tabs>  
 
-**Analyse on map** tool is similar to the tool for viewing [track details](../../map/tracks-on-map/tracks-types.md#analyze-track-on-map) on the map. It allows you to view and visually interact with various graphs and see the selected point on the map.
+**Analyse on map** tool is similar to the tool for viewing [track details](../../map/tracks-on-map.md#analyze-track-on-map) on the map. It allows you to view and visually interact with various graphs and see the selected point on the map.
 
 If data is present you can select one of the following types:
 

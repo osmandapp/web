@@ -203,7 +203,7 @@ Additional **Weather source options**.
 
 ![3D track](../../blog/2024-06-19-android-4-8/img/track_3d.png)
 
-Updated 3D track visualizations provide a more detailed view of routes.  In this release, we have added the following improvements to the [3D track appearance](../user/map/tracks-on-map/track-appearance.md#3d-track). 
+Updated 3D track visualizations provide a more detailed view of routes.  In this release, we have added the following improvements to the [3D track appearance](../user/map/tracks-on-map.md#track-appearance). 
 
 1. **Visualization options.** 
     - If *Visualized by* is set to *Fixed height*,  

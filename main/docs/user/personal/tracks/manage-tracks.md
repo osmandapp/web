@@ -23,7 +23,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 After recording and saving, tracks can be managed as follows:    
 
 - In [*My Places*](../../personal/myplaces.md), you can view all [GPX data](https://en.wikipedia.org/wiki/GPS_Exchange_Format) that has ever been recorded.
-- In [*Configure map*](../../map/tracks-on-map/tracks-types.md), select a specific track and display it on the map.
+- In [*Configure map*](../../map/tracks-on-map.md), select a specific track and display it on the map.
 - With the [*Context menu*](../../map/track-context-menu.md) of the track on the map, so that to adjust the appearance, to update points on the route, to view segments, to start navigation along the track/segment, and/or other options. 
 
 
@@ -77,7 +77,7 @@ Actions:
 - **Name**. Displays the selected folder name, creation date and the number of tracks it contains.
 - **Show all tracks on the map** (*Android only*). Shows all tracks in the folder on the map. It is not recommended, if there are a lot of tracks, the device may freeze.
 - **Edit name** (*Android*) / **Rename** (*iOS*). Changing the folder name.
-- [*Change default appearance*](../../map/tracks-on-map/track-appearance.md) (*Android*) / **Appearance** (*iOS*). You can change the appearance of all tracks in a folder.
+- [*Change default appearance*](../../map/tracks-on-map.md#track-appearance) (*Android*) / **Appearance** (*iOS*). You can change the appearance of all tracks in a folder.
 - [*Export*](../../personal/import-export.md). You go to the *Menu → Settings → Actions* tab, where you can export all the tracks in the folder as an [OSF file](../../personal/import-export.md#export).
 - [**Move**](#context-menu-in-my-places). You can move the selected folder to another existing folder or create a new one.
 - [*Delete folder*](#delete-folder). Allow you to delete a folder. A warning message will appear on the display. The deletion will be irreversible. 
@@ -154,7 +154,7 @@ Each track, like folders, has its menu. To open it:
 
 Menu with actions:
 - **Show on map**. Displays selected tracks on the map to provide a visual representation of their location.
-- **Appearance** (*iOS only*). You can choose the [appearance of tracks](../../map/tracks-on-map/track-appearance.md).
+- **Appearance** (*iOS only*). You can choose the [appearance of tracks](../../map/tracks-on-map.md#track-appearance).
 - **Navigation** (*iOS only*). Starts [navigation](../../navigation/setup/gpx-navigation.md) on the selected track. 
 - **Analyze on map (Android) / Analyze (iOS)**. Opens the [Analyse on map](../../navigation/setup/route-details.md#analyse-on-map) tool in Route Details. 
 - **Share**. Allows you to share the selected track.
@@ -193,7 +193,7 @@ Menu with actions:
 - **Search**. Opens the track name search screen with a list of all existing tracks and the ability to sort them.  
 - **Cancel**. Closes the Search without applying the changes.
 - **Import**. Opens a list of files on your device for importing tracks. In Android, it is located in the 3-dot menu.
-- [Change appearance](../../map/tracks-on-map/track-appearance.md) (*Android only, located in the 3-dot menu*). Goes to the option of customising the appearance of the selected tracks.
+- [Change appearance](../../map/tracks-on-map.md#track-appearance) (*Android only, located in the 3-dot menu*). Goes to the option of customising the appearance of the selected tracks.
 - **Switch folder** (*Android only*). You can select the required folder from the list, which is especially convenient if there are many folders.
 
 2. **Sort for tracks**
@@ -438,7 +438,7 @@ Once you have made your choice, the following steps are provided:
 
 - **Move**. You can organize your data by moving selected tracks and folders to other folders.
 
-- [**Change appearance**](../../map/tracks-on-map/track-appearance.md) (*Android only*). This option allows you to customize the appearance of selected tracks, making them more visible and recognizable on the map.
+- [**Change appearance**](../../map/tracks-on-map.md#track-appearance) (*Android only*). This option allows you to customize the appearance of selected tracks, making them more visible and recognizable on the map.
 
 - **Delete**. If the selected tracks or folders are no longer needed, the Delete function allows you to delete them, with the app providing confirmation options to avoid accidental deletion.
 
@@ -542,8 +542,8 @@ To export a GPX file to an external storage, do the following:
 
 ## Related Articles
 
-- [Show track on Map](../../map/tracks-on-map/tracks-types.md)
-- [Analyze on Map](../../map/tracks-on-map/tracks-types.md#analyze-track-on-map)
+- [Show track on Map](../../map/tracks-on-map.md)
+- [Analyze on Map](../../map/tracks-on-map.md#analyze-track-on-map)
 - [Track Context menu](../../map/track-context-menu.md)
 - [Navigation by track](../../navigation/setup/gpx-navigation.md)
 - [Trip recording](../../plugins/trip-recording.md)

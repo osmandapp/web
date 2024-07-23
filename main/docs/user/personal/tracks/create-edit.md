@@ -49,12 +49,12 @@ Features **Tracks** functionality lets you create and save routes so you can eas
 
 3. **Tracks management special features in OsmAnd**.
 - Enabling and disabling [tracks on the map](#show-tracks-on-map).
-- Customizing [the appearance](../../map/tracks-on-map/track-appearance.md), [edit](#create--edit-track) and [analyze tracks](../../map/tracks-on-map/tracks-types.md#analyze-track-on-map).
+- Customizing [the appearance](../../map/tracks-on-map.md#track-appearance), [edit](#create--edit-track) and [analyze tracks](../../map/tracks-on-map#analyze-track-on-map).
 - Use for navigation.
 
-4. **OsmAnd has no limit on the number of tracks to store and display.**
+1. **OsmAnd has no limit on the number of tracks to store and display.**
 
-5. **There are three options to display Tracks on the map**.
+2. **There are three options to display Tracks on the map**.
 - [Configure map](../../map/configure-map-menu.md) menu.
 - [My places](../../personal/myplaces.md) menu.
 - [Track Context menu](../../map/track-context-menu.md).  
@@ -140,8 +140,8 @@ Read more in the article [**Plan a route** tool](../../plan-route/create-route.m
 
 ## Related Articles
 
-- [Show track on Map](../../map/tracks-on-map/tracks-types.md)
-- [Analyze on Map](../../map/tracks-on-map/tracks-types.md#analyze-track-on-map)
+- [Show track on Map](../../map/tracks-on-map.md)
+- [Analyze on Map](../../map/tracks-on-map.md#analyze-track-on-map)
 - [Track Context menu](../../map/track-context-menu.md)
 - [Navigation by track](../../navigation/setup/gpx-navigation.md)
 - [Trip recording](../../plugins/trip-recording.md)

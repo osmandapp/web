@@ -308,7 +308,7 @@ All key assignments for the selected type will be removed.
 - [Vector maps (Map styles)](./vector-maps.md)
 - [Raster Maps (Online / Offline)](./raster-maps.md)
 - [Points on the map](./point-layers-on-map.md)
-- [Tracks and Routes](./tracks-on-map/tracks-types.md)
+- [Tracks and Routes](./tracks-on-map.md)
 - [Tracks Context menu](./track-context-menu.md)
 - [Public transport](./public-transport.md)
 

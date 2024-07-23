@@ -196,7 +196,7 @@ This screen allows you to select the tracks you want, as well as a list of sugge
 - **Share**. Allows you to export tracks using *Export to File*.
 - **Upload to [OpenStreetMap](../../plugins/osm-editing.md#create--modify-osm-note)**. You can load the selected tracks into OpenStreetMap.
 - **Move**. Moving selected tracks to another folder.
-- [**Change appearance**](../../map/tracks-on-map/track-appearance.md). Allows you to change the appearance of all or specific tracks in a folder.
+- [**Change appearance**](../../map/tracks-on-map.md#track-appearance). Allows you to change the appearance of all or specific tracks in a folder.
 - **Delete**. Deletes only the folder with its settings. The tracks displayed in this folder are not deleted.
 
 
@@ -217,8 +217,8 @@ This screen allows you to select the tracks you want, as well as a list of sugge
 
 ## Related Articles
 
-- [Show track on Map](../../map/tracks-on-map/tracks-types.md)
-- [Analyze on Map](../../map/tracks-on-map/tracks-types.md#analyze-track-on-map)
+- [Show track on Map](../../map/tracks-on-map.md)
+- [Analyze on Map](../../map/tracks-on-map.md#analyze-track-on-map)
 - [Track Context menu](../../map/track-context-menu.md)
 - [Navigation by track](../../navigation/setup/gpx-navigation.md)
 - [Trip recording](../../plugins/trip-recording.md)

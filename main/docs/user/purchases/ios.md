@@ -61,7 +61,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | [Pro Features](#pro-features) | - | - | ✔ |
 | [3D Relief](../plugins/contour-lines.md#3d-relief) | - | - | ✔ |
 | [Topo data (Contour lines and Terrain)](../plugins/contour-lines.md) | - | ✔ | ✔ |
-| [3D track visualization](../map/tracks-on-map/track-appearance.md) | - | ✔ | ✔ |
+| [3D track visualization](../map/tracks-on-map.md#track-appearance) | - | ✔ | ✔ |
 | [Nautical depths](../plugins/nautical-charts.md) | - | ✔ | ✔ |
 | [Travel guides (Wikipedia)](../plugins/wikipedia.md) | - | ✔ | ✔ |
 | [CarPlay](../navigation/car-play.md) | - | ✔ | ✔ |
