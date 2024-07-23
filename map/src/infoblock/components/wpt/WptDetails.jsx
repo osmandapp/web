@@ -272,9 +272,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
     function closeDetails() {
         if (wpt.type?.isPoi) {
-            if (ctx.currentObjectType !== OBJECT_CONFIGURE_MAP) {
-                closeHeader({ ctx });
-            }
+            closeHeader({ ctx });
         } else if (wpt.type?.isWpt) {
             isDetails ? setOpenWptTab(true) : closeHeader({ ctx });
         } else if (wpt.type?.isFav) {
