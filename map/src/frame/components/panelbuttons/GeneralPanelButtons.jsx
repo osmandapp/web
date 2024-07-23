@@ -1,13 +1,10 @@
-import { ButtonGroup, IconButton, Paper, SvgIcon, Tooltip } from '@mui/material';
-import TracksManager from '../../../manager/track/TracksManager';
-import { Insights } from '@mui/icons-material';
+import { IconButton, Paper, SvgIcon } from '@mui/material';
 import React, { useContext } from 'react';
 import AppContext, { OBJECT_CONFIGURE_MAP, OBJECT_TYPE_WEATHER } from '../../../context/AppContext';
 import PanelButtons from './PanelButtons';
 import ChangeProfileTrackDialog from '../../../dialogs/tracks/ChangeProfileTrackDialog';
 import PointContextMenu from '../../../infoblock/components/PointContextMenu';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
-import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import styles from '../../../map/components/map.module.css';
 import { ReactComponent as ConfigureMapIcon } from '../../../assets/icons/ic_map_configure_map.svg';
 import SearchInfo from '../search/SearchInfo';
@@ -116,46 +113,6 @@ export default function GeneralPanelButtons({
                     flexDirection: useFlexButtons() && 'column',
                 }}
             >
-                <div
-                    className="padding-container"
-                    style={{
-                        display: 'flex',
-                        flexDirection: orientation === 'vertical' ? 'column' : 'row',
-                        marginBottom: useFlexButtons() && 'auto',
-                    }}
-                >
-                    <Paper>
-                        <ButtonGroup
-                            sx={{
-                                boxShadow: '0 1px 5px rgba(0,0,0,0.65)',
-                                borderRadius: '4px',
-                                width: orientation === 'vertical' ? BUTTON_SIZE : 'auto',
-                                height: orientation === 'vertical' ? 'auto' : BUTTON_SIZE,
-                            }}
-                            orientation={orientation}
-                            color="primary"
-                        >
-                            <Tooltip title="Create new route" arrow placement={tooltipOrientation}>
-                                <IconButton
-                                    sx={{ mt: orientation === 'vertical' ? '3px' : 0 }}
-                                    variant="contained"
-                                    type="button"
-                                    onClick={() =>
-                                        confirm({
-                                            ctx,
-                                            title: 'Plan Route: new track',
-                                            text: 'Stop editing the current track?',
-                                            skip: ctx.createTrack?.enable !== true,
-                                            callback: () => TracksManager.createTrack(ctx),
-                                        })
-                                    }
-                                >
-                                    <Insights fontSize="small" />
-                                </IconButton>
-                            </Tooltip>
-                        </ButtonGroup>
-                    </Paper>
-                </div>
                 {showInfoBlock && !ctx.selectedWpt && ctx.currentObjectType !== OBJECT_TYPE_WEATHER && (
                     <PanelButtons
                         orientation={orientation}
