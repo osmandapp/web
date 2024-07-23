@@ -140,7 +140,12 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
                 {activePoiFilters?.map((item, key) => {
                     const category = PoiManager.formattingPoiFilter(item, true);
                     return (
-                        <MenuItem key={key} className={styles.poiCategoryItem} id={`se-poi-category-${category}`}>
+                        <MenuItem
+                            key={key}
+                            className={styles.poiCategoryItem}
+                            id={`se-poi-category-${category}`}
+                            onClick={() => handleTogglePoiCategories(category)}
+                        >
                             <ListItemIcon>{categoryIcons[item]}</ListItemIcon>
                             <ListItemText>
                                 <Typography variant="inherit" noWrap>
@@ -160,7 +165,7 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
                     <Button className={styles.buttonSelectAll} onClick={selectAllCategories}>
                         {t('shared_string_select_all')}
                     </Button>
-                    <Button className={styles.buttonApply} onClick={selectCheckedCategories}>
+                    <Button className={styles.buttonApply} onClick={selectCheckedCategories} id="se-select-categories">
                         {t('shared_string_apply')}
                     </Button>
                 </Toolbar>

@@ -101,6 +101,7 @@ export default function ConfigureMap({ setOpenVisibleMenu, setOpenPoiConfig }) {
                                 </Typography>
                             </MenuItem>
                             <MenuItem
+                                id="se-configure-map-menu-poi-categories"
                                 className={styles.item}
                                 onClick={() => {
                                     setOpenPoiConfig(true);
