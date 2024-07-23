@@ -1,9 +1,8 @@
 import { ButtonGroup, IconButton, Paper, SvgIcon, Tooltip } from '@mui/material';
 import TracksManager from '../../../manager/track/TracksManager';
-import { Insights, Info } from '@mui/icons-material';
-import React, { useContext, useState } from 'react';
+import { Insights } from '@mui/icons-material';
+import React, { useContext } from 'react';
 import AppContext, { OBJECT_CONFIGURE_MAP, OBJECT_TYPE_WEATHER } from '../../../context/AppContext';
-import PoiTypesDialog from '../poi/PoiTypesDialog';
 import PanelButtons from './PanelButtons';
 import ChangeProfileTrackDialog from '../../../dialogs/tracks/ChangeProfileTrackDialog';
 import PointContextMenu from '../../../infoblock/components/PointContextMenu';
@@ -32,7 +31,6 @@ export default function GeneralPanelButtons({
 }) {
     const ctx = useContext(AppContext);
 
-    const [openPoiDialog, setOpenPoiDialog] = useState(false);
     const [width, height] = useWindowSize();
     const orientation = getButtonOrientation();
     const tooltipOrientation = getTooltipOrientation();
@@ -155,18 +153,6 @@ export default function GeneralPanelButtons({
                                     <Insights fontSize="small" />
                                 </IconButton>
                             </Tooltip>
-                            <Tooltip title="POI" arrow placement={tooltipOrientation}>
-                                <IconButton
-                                    id={'se-poi-panel-button'}
-                                    variant="contained"
-                                    type="button"
-                                    onClick={() => {
-                                        setOpenPoiDialog(true);
-                                    }}
-                                >
-                                    <Info fontSize="small" />
-                                </IconButton>
-                            </Tooltip>
                         </ButtonGroup>
                     </Paper>
                 </div>
@@ -178,9 +164,6 @@ export default function GeneralPanelButtons({
                         clearState={clearState}
                         bsize={BUTTON_SIZE}
                     />
-                )}
-                {openPoiDialog && (
-                    <PoiTypesDialog dialogOpen={openPoiDialog} setDialogOpen={setOpenPoiDialog} width={width} />
                 )}
                 {ctx.trackProfileManager?.change && <ChangeProfileTrackDialog open={true} />}
                 {ctx.pointContextMenu.element && <PointContextMenu anchorEl={ctx.pointContextMenu.element} />}

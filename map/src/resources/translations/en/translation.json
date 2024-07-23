@@ -5225,5 +5225,7 @@
   "add_intermediate_point": "Add intermediate",
   "shared_string_total": "Total",
   "shared_string_get": "Get",
-  "shared_string_install": "Install"
+  "shared_string_install": "Install",
+  "layer_poi": "POI overlay…",
+  "shared_string_select_all": "Select all"
 }

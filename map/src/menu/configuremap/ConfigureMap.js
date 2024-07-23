@@ -23,6 +23,7 @@ import { ReactComponent as StarIcon } from '../../assets/icons/ic_action_favorit
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as TracksIcon } from '../../assets/menu/ic_action_track.svg';
+import { ReactComponent as PoiIcon } from '../../assets/icons/ic_action_info_outlined.svg';
 import { cloneDeep } from 'lodash';
 import EmptyLogin from '../errors/EmptyLogin';
 import { useTranslation } from 'react-i18next';
@@ -32,7 +33,7 @@ import { INTERACTIVE_LAYER } from '../../map/layers/CustomTileLayer';
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
 
-export default function ConfigureMap({ setOpenVisibleMenu }) {
+export default function ConfigureMap({ setOpenVisibleMenu, setOpenPoiConfig }) {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
@@ -99,6 +100,35 @@ export default function ConfigureMap({ setOpenVisibleMenu }) {
                                     {t('shared_string_show')}
                                 </Typography>
                             </MenuItem>
+                            <MenuItem
+                                className={styles.item}
+                                onClick={() => {
+                                    setOpenPoiConfig(true);
+                                }}
+                            >
+                                <ListItemIcon className={styles.iconEnabled}>
+                                    <PoiIcon />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    <div
+                                        style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'space-between',
+                                        }}
+                                    >
+                                        <Typography variant="inherit" noWrap>
+                                            {t('layer_poi')}
+                                        </Typography>
+                                        {ctx.showPoiCategories.length > 0 && (
+                                            <Typography variant="body2" className={styles.poiCategoriesInfo} noWrap>
+                                                {ctx.showPoiCategories.length}
+                                            </Typography>
+                                        )}
+                                    </div>
+                                </ListItemText>
+                            </MenuItem>
+                            <Divider className={styles.dividerItem} />
                             <MenuItem className={styles.item} onClick={handleFavoritesSwitchChange}>
                                 <ListItemIcon className={setIconStyles()}>
                                     <StarIcon />

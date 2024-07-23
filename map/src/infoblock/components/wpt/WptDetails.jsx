@@ -16,7 +16,12 @@ import {
 } from '@mui/material';
 import styles from '../../infoblock.module.css';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { isTrack, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_POI } from '../../../context/AppContext';
+import AppContext, {
+    isTrack,
+    OBJECT_CONFIGURE_MAP,
+    OBJECT_TYPE_FAVORITE,
+    OBJECT_TYPE_POI,
+} from '../../../context/AppContext';
 import headerStyles from '../../../menu/trackfavmenu.module.css';
 import { closeHeader } from '../../../menu/actions/HeaderHelper';
 import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
@@ -57,6 +62,22 @@ import PhotoGallery from '../../../menu/search/PhotoGallery';
 import wptStyles from '../wpt/wptDetails.module.css';
 import parse from 'html-react-parser';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../../manager/GlobalManager';
+
+export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize }) => {
+    return (
+        <div
+            style={{ display: 'flex' }}
+            dangerouslySetInnerHTML={{
+                __html:
+                    changeIconSizeWpt(
+                        removeShadowFromIconWpt(MarkerOptions.getWptIcon(wpt, color, background, icon).options.html),
+                        iconSize,
+                        shieldSize
+                    ) + '',
+            }}
+        />
+    );
+};
 
 export default function WptDetails({ isDetails = false, setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
@@ -251,7 +272,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
     function closeDetails() {
         if (wpt.type?.isPoi) {
-            closeHeader({ ctx });
+            if (ctx.currentObjectType !== OBJECT_CONFIGURE_MAP) {
+                closeHeader({ ctx });
+            }
         } else if (wpt.type?.isWpt) {
             isDetails ? setOpenWptTab(true) : closeHeader({ ctx });
         } else if (wpt.type?.isFav) {
@@ -345,24 +368,6 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     </IconButton>
                 </Toolbar>
             </AppBar>
-        );
-    };
-
-    const WptIcon = () => {
-        return (
-            <div
-                style={{ display: 'flex' }}
-                dangerouslySetInnerHTML={{
-                    __html:
-                        changeIconSizeWpt(
-                            removeShadowFromIconWpt(
-                                MarkerOptions.getWptIcon(wpt, wpt?.color, wpt?.background, wpt?.icon).options.html
-                            ),
-                            ICON_IMG_SIZE,
-                            ICON_SHIELD_SIZE
-                        ) + '',
-                }}
-            />
         );
     };
 
@@ -506,7 +511,16 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                         {wpt?.poiType}
                                     </Typography>
                                 </div>
-                                {wpt.icon && <WptIcon />}
+                                {wpt.icon && (
+                                    <WptIcon
+                                        wpt={wpt}
+                                        color={wpt.color}
+                                        background={wpt.background}
+                                        icon={wpt.icon}
+                                        iconSize={ICON_IMG_SIZE}
+                                        shieldSize={ICON_SHIELD_SIZE}
+                                    />
+                                )}
                             </Box>
                             {wpt?.category && <WptCategory />}
                             <div className={styles.location}>
