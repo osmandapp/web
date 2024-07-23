@@ -32,8 +32,8 @@ OsmAnd can display several different type of routes:
 2. [Navigation Route](#navigation-route) - a route line displayed during [navigation](../navigation/setup/route-navigation.md). By default this is a solid transparent blue line, though default appearance depends on [vector map style](../map/vector-maps.md#default-map-styles), [day & night mode](../map/vector-maps.md#map-mode). It's also possible to fully customize it on Android.
 3. [Routes and route networks on the map](#routes-on-the-map) - special [objects](../map/vector-maps.md#routes) on the map from [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route) data and provided with standard vector maps. They typically represent popular local routes and could be displayed in many ways (shields, color, thickness, pattern). To use these types of routes you will need to enable them on the map.
 
-Read more about [GPX Tracks](../personal/tracks.md#track).
-
+Read more about [GPX Tracks](../personal/tracks/create-edit.md).
+[GPX Tracks](../personal/tracks/create-edit.md).
 
 ## Tracks 
 
@@ -42,7 +42,7 @@ OsmAnd provides the ability to record and display tracks. This allows you to get
 
 ### Display tracks on the map
 
-OsmAnd allows you [to view tracks on a map](../personal/tracks.md#show-tracks-on-map). Each point on the track corresponds to a specific location and contains information about time, speed and altitude. This allows you to visually assess the route, learn about the places you have visited and estimate the difficulty of the route by changes in altitude.  
+OsmAnd allows you [to view tracks on a map](../map/tracks-on-map.md). Each point on the track corresponds to a specific location and contains information about time, speed and altitude. This allows you to visually assess the route, learn about the places you have visited and estimate the difficulty of the route by changes in altitude.  
 
 You can choose which tracks to show on the map and which to hide. You can do this in the [My Places](#tracks-in-my-places-menu) menu, the [Configure map](#tracks-in-configure-map-menu) menu, and in the [Track Context menu](../map/track-context-menu.md#quick-actions) when saving a track in the [Plan a route](../plan-route/create-route.md#save-as-new-track) tool, or with [Route Details](../navigation/setup/route-details.md#save-as-a-new-track).  
 
@@ -71,7 +71,7 @@ You can choose which tracks to show on the map and which to hide. You can do thi
 
 </Tabs>
 
-You can read additional information in the [Tracks](../personal/tracks.md#configure-map) article.
+You can read additional information in the [Tracks](../map/tracks-on-map.md) article.
 
 
 #### Tracks in My Places menu
@@ -80,7 +80,7 @@ You can read additional information in the [Tracks](../personal/tracks.md#config
 
 <TabItem value="android" label="Android">
 
-[*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*](../personal/tracks.md#single-track-menu)   
+[*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*](../map/tracks-on-map.md)   
 
 ![My Places with tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
@@ -88,7 +88,7 @@ You can read additional information in the [Tracks](../personal/tracks.md#config
 
 <TabItem value="ios" label="iOS">
 
-[*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → long-tap the chosen GPX track → Show on map*](../personal/tracks.md#single-track-menu)    
+[*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → long-tap the chosen GPX track → Show on map*](../map/tracks-on-map.md)    
 
 ![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 </TabItem>
@@ -291,7 +291,7 @@ To get full route information, tap on the *route symbol* or the line of the sele
 - [Track Context menu](../map/track-context-menu.md)  
 - [Configure map](../map/configure-map-menu.md)  
 - [Navigation by track](../navigation/setup/gpx-navigation.md)  
-- [GPX tracks](../personal/tracks.md)  
+- [GPX tracks](../personal/tracks/create-edit.md)  
 - [Tracks on the map](../map/tracks-on-map.md)  
 - [Plan route](../plan-route/index.md)  
 - [Trip Recording](../plugins/trip-recording.md)  
