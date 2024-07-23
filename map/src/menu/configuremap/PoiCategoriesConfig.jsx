@@ -121,6 +121,7 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
 
     function selectCheckedCategories() {
         ctx.setShowPoiCategories([...selectedCategories]);
+        setOpenPoiConfig(false);
     }
 
     return (
