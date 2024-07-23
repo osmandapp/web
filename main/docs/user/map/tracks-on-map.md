@@ -119,7 +119,7 @@ To show track on the map, you need to:
 
 *Show / hide* buttons allow to anable or disable displaying of a track on the map.
 
-### Track Appearance
+## Track Appearance
 
 :::tip note
 
@@ -130,58 +130,98 @@ To show track on the map, you need to:
 In the OsmAnd application, you can apply some settings by changing the appearance of the tracks, to better identify them on the map.  
 
 There are three ways to access the Track Appearance menu:
-- Go to the *My Places* menu and tap any available track in the list (*Menu → My Places → Tracks*), select the Appearance icon in the [Track Context menu](../map/track-context-menu#overview) in the Overview section.
+- Go to the *My Places* menu and tap any available track in the list (*Menu → My Places → Tracks*), select the Appearance icon in the [Track Context menu](../../map/track-context-menu.md#overview) in the Overview section.
 - Tap the needed track on the map and select the Appearance icon in the Overview section.
-- Select Appearance from the [track recording context menu](../plugins/trip-recording#сurrent-track-recording).  
+- Select Appearance from the [track recording context menu](../../plugins/trip-recording.md#сurrent-track-recording).  
 - Go to *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> → &#8942; → <Translate android="true" ids="change_appearance"/>* for the tracks you have selected to be displayed on the map. 
 
-<Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android">  
+### Split interval
 
-![Track menu options Android](@site/static/img/map/track-appear-and-1.png)  ![Track menu Appearance Android](@site/static/img/map/track-appear-and-2.png)  
+![Track menu Appearance Split interval](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Split interval](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
 
-</TabItem>
+select the interval at which distance or time stamps are displayed on the track.  
 
-<TabItem value="ios" label="iOS">
+### Direction arrows
 
-![Track menu iOS](@site/static/img/map/track-appear-ios-1.png) ![Configure color iOS](@site/static/img/map/track-appear-ios-2.png)  
+![Track menu Appearance direction arrows Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png) 
 
-</TabItem>
+select the interval at which distance or time stamps are displayed on the track.  
 
-</Tabs> 
+### Show start and finish icons
 
-|  |   
-|----------|
-|**<Translate ios="true" ids="gpx_direction_arrows"/>** - select the interval at which distance or time stamps are displayed on the track. |
-|![Track menu Appearance direction arrows Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)|  
-|**<Translate ios="true" ids="track_show_start_finish_icons"/>** - allows you to select whether or not to show the start and end icons of track segments. |
-|![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)|  
-|**<Translate ios="true" ids="shared_string_color"/>** - allows to display the track line in any color and transparency, or select coloring according to the map legend. If necessary data on the track sections are missing, such sections are displayed in gray color. |
-| 1. *<Translate ios="true" ids="shared_string_color"/>:* *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* and *<Translate android="true" ids="altitude"/>* are free color settings. If *Speed* and *Altitude* are not active, it means that the track does not contain this data. |
-| 2. <ProFeature/> &nbsp;*<Translate android="true" ids="shared_string_color"/>:* *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>* are paid color settings. A detailed description of these settings can be found in the [*Map screen during navigation*](../navigation/guidance/map-during-navigation#color) page, specifically in the [Route line appearance](../navigation/guidance/map-during-navigation.md#route-line-appearance) section. |
-| ![Track menu Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png) |
-|**3D Track** - This feature enables the display of tracks by altitude. [Paid feature](../../user/purchases/index.md). You have the ability to use 3D Track visualization if the Map rendering engine [Version 2 (OpenGl)](../personal/global-settings.md#map-rendering-engine) is enabled. |
-| 1. *Visualized by*: None , Altitude, Fixed Height - Choose to display the 3D track by altitude ([altitude data](../plugins/trip-recording.md#recorded-gpx-file) from GPX track file), at a fixed height, or not at all. |
-| 2. *Wall color*: None, Solid, Downward gradient, Upward gradient - Select whether to color the 3D track and choose the type of coloration. |
-| 3. *Track line*: Top, Bottom, Top and bottom - Decide where to add a line to the 3D track for better visibility. |
-| 4. *Vertical exaggeration*: None to x3.0 - Adjust the level of vertical exaggeration for the 3D track. |
-|![Track menu Appearance 3D visualisation](@site/static/img/map/track_appearance_menu_3d_android.png)|
-|**<Translate ios="true" ids="shared_string_width"/>** - allows you to select the line width depending on the width of the road or if you want to strongly emphasize the route line on the map, *<Translate android="true" ids="rendering_value_thin_name"/>, <Translate android="true" ids="rendering_value_medium_name"/>* and *<Translate android="true" ids="rendering_value_bold_name"/>*. In *<Translate android="true" ids="shared_string_custom"/>*, you can select the preferred line width using the slider. |
-|![Track menu Appearance Track Thickness Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)| 
-|**<Translate ios="true" ids="gpx_split_interval"/>** - select the interval at which distance or time stamps are displayed on the track. |
-|![Track menu Appearance Split interval](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Split interval](@site/static/img/map/track_appearance_menu_split_interval_ios.png)| 
-| **<Translate ios="true" ids="gpx_join_gaps"/>** - the gaps between segments will be connected. |
-| **<Translate ios="true" ids="reset_to_original"/>** - resets all settings to default values. |
+![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
+
+allows you to select whether or not to show the start and end icons of track segments.  
+
+### Color
+
+![Appearance](@site/static/img/map/appearance_color_andr.png) 
+
+allows to display the track line in any color and transparency, or select coloring according to the map legend. If necessary data on the track sections are missing, such sections are displayed in gray color. 
+
+- *<Translate ios="true" ids="shared_string_color"/>:* *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* and *<Translate android="true" ids="altitude"/>* are free color settings. If *Speed* and *Altitude* are not active, it means that the track does not contain this data.  
+
+    ![Track menu Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
+
+- *<Translate android="true" ids="shared_string_color"/>: ([Maps+ / Pro feature](../../purchases/index.md))* *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>* are paid color settings. A detailed description of these settings can be found in the [*Map screen during navigation*](../../navigation/guidance/map-during-navigation.md#color) page, specifically in the [Route line appearance](../../navigation/guidance/map-during-navigation.md#route-line-appearance) section.  
 
 
-### Analyze Track on Map  
+### Width
+
+![Track menu Appearance Track Thickness Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)   ![Track Appearance](@site/static/img/map/track_appearance_width_andr.png)  
+
+You can customize the appearance of the track in several menus of the application:
+- [*Track → Appearance*](../../personal/tracks/manage-tracks.md#folder-menu).
+- [*Navigation settings → Customize route line*](../../navigation/guidance/navigation-settings.md#customize-route-line).
+- [*My Places → Tracks tab → any folder → Default appearance*](../../personal/tracks/manage-tracks.md#folder-menu).
+
+With the *Width setting* you can choose the thickness of the track line based on the width of the road or intersection with other tracks, or for example, if you want to highlight a track on the map by importance.  
+
+- **Thin, Medium,** and **Bold** are lines whose width is fixed and preset by the OsmAnd application.
+- In the **Custom** setting you can set the required line width with a slider, from 1 to 24.
+- In the [*Tracks tab*](../../personal/tracks/manage-tracks.md#folder-menu) with the **Original** setting, different original width parameters can be retained for each track of the selected folder.
+- In the [*Configure Profile*](../../navigation/guidance/navigation-settings.md#customize-route-line) the route line can be set to the **Map Style** width, this is the default width for map specified by the OsmAnd application.
+
+
+<!-- Width  
+You can adjust the width of the displayed line of your route to match the width of the road or path on the map. For better visual identification, you can make the line width wider or narrower by adjusting it manually.
+- ***<Translate android="true" id="map_widget_renderer"/>*** – It's used with default width. You can see a full description of the map style by clicking there [Map style](../../map/vector-maps.md#default-map-styles)  
+    ![map stule](@site/static/img/navigation/route/map_st_2.png)  ![map stule](@site/static/img/navigation/route/map_st.png)  ![map stule](@site/static/img/navigation/route/width_ms_ios.png)
+- ***Thin width / Medium width / Bold width*** – You can choose the width of the line according to the width of the road or highlight the line of the route on the map more strongly.  
+    ![width](@site/static/img/navigation/route/width.png)  ![width](@site/static/img/navigation/route/width_ios.png)  ![width](@site/static/img/navigation/route/width_med.png)
+- ***Custom*** – It allows you to show the line in some preferred width. Select the width using the slider.  
+    ![custom](@site/static/img/navigation/route/custom_1.png)  ![custom](@site/static/img/navigation/route/width_cus_ios.png)  ![custom](@site/static/img/navigation/route/custom_2.png)  
+-->
+
+
+### 3D Track
+
+![Track menu Appearance 3D visualisation](@site/static/img/map/track_appearance_menu_3d_android.png)
+
+This [Paid feature](../../purchases/index.md) allows you to display tracks by elevation.  You have the option to use 3D track visualization if the map rendering engine [Version 2 (OpenGl)](../../personal/global-settings.md#map-rendering-engine) is enabled.
+
+- *Visualized by*: None , Altitude, Fixed Height - Choose to display the 3D track by altitude ([altitude data](../../plugins/trip-recording.md#recorded-gpx-file) from GPX track file), at a fixed height, or not at all. 
+- *Wall color*: None, Solid, Downward gradient, Upward gradient - Select whether to color the 3D track and choose the type of coloration. 
+- *Track line*: Top, Bottom, Top and bottom - Decide where to add a line to the 3D track for better visibility. 
+- *Vertical exaggeration*: None to x3.0 - Adjust the level of vertical exaggeration for the 3D track.  
+
+### Join gaps
+
+the gaps between segments will be connected. 
+
+### Reset to original
+
+resets all settings to default values. 
+
+
+## Analyze Track on Map  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-*Tap the track → [<Translate android="true" ids="shared_string_options"/>](../map/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*  
+*Tap the track → [<Translate android="true" ids="shared_string_options"/>](../../map/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*  
 
 ![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_on_map_menu_andr.png) ![Track menu analize on the map distance Android](@site/static/img/personal/tracks/track_analyze_on_map_distance_android.png)   
 
@@ -189,7 +229,7 @@ There are three ways to access the Track Appearance menu:
 
 <TabItem value="ios" label="iOS">
 
-*Tap the track → [<Translate android="true" ids="shared_string_options"/>](../map/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*     
+*Tap the track → [<Translate android="true" ids="shared_string_options"/>](../../map/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*     
 
 ![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_1_ios.png)
 
@@ -199,11 +239,11 @@ There are three ways to access the Track Appearance menu:
 
 This tool allows you to view track information using graphs and maps.  
 
-- **Graph data (Y-axis)**: Altitude, Slope, Speed, [External sensors data](../plugins/external-sensors.md), or a combination of the two (if data is available on the track).
+- **Graph data (Y-axis)**: Altitude, Slope, Speed, [External sensors data](../../plugins/external-sensors.md), or a combination of the two (if data is available on the track).
 - **Graph dimension (X-axis)**: Distance, Time, Time of day.
 - **Tap/Slide**. Tap the Graph to display information about the track point and moving it along the Graph highlights the location of the point on the map and displays information about it in the bar.
-- **Scale**. Scale the Graph with a [two-fingers gesture](../map/interact-with-map.md#gestures). 
-- **Follow My location**. Tap the [My Location](../map/interact-with-map.md#my-location--zoom) buttonto have the map view and graph synchronized with your location. In this case, **graph scale** will remain the same and the **bar information** will be fixed to 1/4 to the left. As you move, the **graph will slide** from left to right, displaying information ahead of your track. This feature is useful for hiking and cycling while navigating, although no other widgets are displayed on this screen.  
+- **Scale**. Scale the Graph with a [two-fingers gesture](../../map/interact-with-map.md#gestures). 
+- **Follow My location**. Tap the [My Location](../../map/interact-with-map.md#my-location--zoom) buttonto have the map view and graph synchronized with your location. In this case, **graph scale** will remain the same and the **bar information** will be fixed to 1/4 to the left. As you move, the **graph will slide** from left to right, displaying information ahead of your track. This feature is useful for hiking and cycling while navigating, although no other widgets are displayed on this screen.  
 
 
 <Tabs groupId="operating-systems">
