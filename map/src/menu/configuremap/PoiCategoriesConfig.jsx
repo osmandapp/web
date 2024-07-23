@@ -116,7 +116,10 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
             allCategories.push(category);
         });
         setSelectedCategories(new Set(allCategories));
-        ctx.setShowPoiCategories(allCategories);
+    }
+
+    function deselectAllCategories() {
+        setSelectedCategories(new Set());
     }
 
     function selectCheckedCategories() {
@@ -144,7 +147,10 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
                             key={key}
                             className={styles.poiCategoryItem}
                             id={`se-poi-category-${category}`}
-                            onClick={() => handleTogglePoiCategories(category)}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                handleTogglePoiCategories(category);
+                            }}
                         >
                             <ListItemIcon>{categoryIcons[item]}</ListItemIcon>
                             <ListItemText>
@@ -162,9 +168,15 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
             </Box>
             <AppBar position="static" className={styles.footer}>
                 <Toolbar className={headerStyles.toolbar} style={{ justifyContent: 'space-between' }}>
-                    <Button className={styles.buttonSelectAll} onClick={selectAllCategories}>
-                        {t('shared_string_select_all')}
-                    </Button>
+                    {activePoiFilters.length !== selectedCategories.size ? (
+                        <Button className={styles.buttonSelectAll} onClick={selectAllCategories}>
+                            {t('shared_string_select_all')}
+                        </Button>
+                    ) : (
+                        <Button className={styles.buttonSelectAll} onClick={deselectAllCategories}>
+                            {t('shared_string_deselect_all')}
+                        </Button>
+                    )}
                     <Button className={styles.buttonApply} onClick={selectCheckedCategories} id="se-select-categories">
                         {t('shared_string_apply')}
                     </Button>
