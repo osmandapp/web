@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Color schemes help visualize data, making it easier to understand. This means you can see data on a map using various colors that are easy to interpret.  
 
-Color palette data is available in the [_Maps & Resources_](../user/personal/maps.md#local) menu.
+Color palette data is available in the [*Maps & Resources*](../personal/maps.md#local) menu.
 
 <Tabs groupId="operating-systems">
 
@@ -65,18 +65,18 @@ Color palette data is available in the [_Maps & Resources_](../user/personal/map
 
 ### Terrain
 
-- For [terrain](https://osmand.net/docs/user/plugins/contour-lines#hillshade-slope-and-altitude-layers): *Hillshade, Slope*, and *Altitude*.
+- For [terrain](../plugins/contour-lines.md#hillshade-slope-and-altitude-layers): *Hillshade, Slope*, and *Altitude*.
 
 ### Routes
 
 GPX Tracks, Routes:
 
-- For [routes](https://osmand.net/docs/user/navigation/guidance/map-during-navigation#color): *Speed, Slope,* and *Elevation (Altitude)*.
-- For [GPX Tracks](http://localhost:3000/docs/user/map/tracks-on-map/track-appearance#color): *Speed, Slope,* and *Elevation (Altitude), or info from External sensors*.
+- For [routes](../navigation/guidance/map-during-navigation.md#color): *Speed, Slope,* and *Elevation (Altitude)*.
+- For [GPX Tracks](../map/tracks-on-map.md#color): *Speed, Slope,* and *Elevation (Altitude), or info from External sensors*.
 
 ### Weather
 
-- For [weather](https://osmand.net/docs/user/plugins/weather#weather-layers): *All weather layers*.
+- For [weather](../plugins/weather.md#weather-layers): *All weather layers*.
 
 
 ## Modify Color Palette
@@ -116,7 +116,7 @@ You can import and export all available default and custom color palettes using 
 
 ## Map Legend for Schemes
 
-The legend provides an easy way to view and understand the different markings on the map. New color palettes have been added to display [**speed** for tracks](https://osmand.net/docs/user/map/tracks-on-map/track-appearance#color), [**line type** for routes](https://osmand.net/docs/user/navigation/guidance/map-during-navigation#color), [**altitude and slope** for terrain](https://osmand.net/docs/user/plugins/contour-lines#color-scheme), and all [**weather layer**](https://osmand.net/docs/user/plugins/weather#weather-layers) color palettes.
+The legend provides an easy way to view and understand the different markings on the map. New color palettes have been added to display [**speed** for tracks](../map/tracks-on-map.md#color), [**line type** for routes](../navigation/guidance/map-during-navigation.md#color), [**altitude and slope** for terrain](../plugins/contour-lines.md#color-scheme), and all [**weather layer**](../plugins/weather.md#weather-layers) color palettes.
 
 <table class="image">
     <tr>

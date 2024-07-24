@@ -9,7 +9,7 @@ Web 1.01 is the latest web version of OsmAnd, which includes new useful features
 **What's new**
 
 - Default [system language](#system-language) (under development).
-- New [context menu](map-context-menu) for map settings.
+- New [context menu](#map-context-menu) for map settings.
 - New options for [map search](#explore-map-menu).
     - Update for [POIs context menu](#poi-context-menu).
     - POIs [Photo gallery](#photo-gallery).
