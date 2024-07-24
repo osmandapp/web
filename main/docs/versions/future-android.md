@@ -38,7 +38,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
   - [The map legend for color palette schemes](#map-legend-for-color-palette-schemes) of tracks, routes, and terrain.
 - [Profile appearance redesign](#profile-appearance-redesign).
 - [3D options](#3d-my-location-icons) for My location icons.  
-- [Add action screen](#quick-actions-tool-update) of the Quick Actions tool.
+- The new [Add action screen](#quick-actions-tool-update) of the Quick Actions tool has been updated.
   - [Show / Hide actions](#show-or-hide-routes-on-the-map) for Routes on the map.  
   - Quick Actions on the [external keyboard](#quick-actions-to-external-keyboard) allow you to assign actions for personalized use.
 - [Weather UI](#weather-tool-improvements) has been updated with layer animations and improved label visibility.
