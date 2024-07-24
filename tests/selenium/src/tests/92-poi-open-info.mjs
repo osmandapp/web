@@ -13,11 +13,16 @@ export default async function test() {
     const iconWpt = 'amenity_restaurant';
     const poiName = 'Public Cafe';
 
-    await waitBy(By.id('se-poi-panel-button'));
-    await clickBy(By.id('se-poi-panel-button'));
+    // open configure map
+    await clickBy(By.id('se-show-menu-configuremap'));
+    await waitBy(By.id('se-configure-map-menu-name'));
 
-    await waitBy(By.id('se-open-poi-dialog'));
+    // open POI categories
+    await waitBy(By.id('se-configure-map-menu-poi-categories'));
+    await clickBy(By.id('se-configure-map-menu-poi-categories'));
+
     await clickBy(By.id(`se-poi-category-${category}`));
+    await clickBy(By.id('se-select-categories'));
 
     await actionCheckPoi({ iconWpt, name: poiName });
     await clickBy(By.id(`se-wpt-marker-icon-${iconWpt}-#ffffff-${poiName}`));

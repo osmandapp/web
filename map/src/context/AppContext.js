@@ -29,6 +29,8 @@ export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
 
 export const defaultConfigureMapStateValues = {
     showFavorites: true,
+    showPoi: false,
+    showTracks: false,
 };
 
 export const isLocalTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK;

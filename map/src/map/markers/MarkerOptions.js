@@ -3,6 +3,7 @@ import Utils from '../../util/Utils';
 import poiicons from '../../resources/generated/poiicons.json';
 import mapicons from '../../resources/generated/mapicons.json';
 import shadersicons from '../../resources/generated/shadersicons.json';
+import PoiManager from '../../manager/PoiManager';
 
 const BACKGROUND_WPT_SHAPE_CIRCLE = 'circle';
 const BACKGROUND_WPT_SHAPE_OCTAGON = 'octagon';
@@ -89,6 +90,23 @@ export function getWptIcon(point, color, background, icon, folder = POI_ICONS_FO
                    <image x="${offsetX}" y="${offsetY}" width="${isize}" height="${isize}" href="/map/images/${POI_ICONS_FOLDER}/${ICONS_PREFIX}${DEFAULT_WPT_ICON}.svg" />
                    </svg>`;
     }
+    return L.divIcon({ html: html });
+}
+
+export function getPoiCategoryIcon(icon, color, background) {
+    const colorBackground = Utils.hexToArgb(color);
+    const svg = getBackground(colorBackground, background);
+    const bsize = 24;
+    const isize = 18;
+    const offsetX = (bsize - isize) / 2; // Center the image horizontally
+    const offsetY = (bsize - isize) / 2; // Center the image vertically
+    const src = getIconUrlByName('poi', PoiManager.preparePoiFilterIcon(icon));
+
+    const html = `<svg viewBox="0 0 ${bsize} ${bsize}" filter="drop-shadow(5px 0 2px gray)" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                ${svg}
+                <image x="${offsetX}" y="${offsetY}" width="${isize}" height="${isize}" href="${src}" />
+                </svg>`;
+
     return L.divIcon({ html: html });
 }
 

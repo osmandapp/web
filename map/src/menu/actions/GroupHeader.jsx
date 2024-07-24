@@ -7,8 +7,9 @@ import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as ImportIcon } from '../../assets/icons/ic_action_folder_import_outlined.svg';
 import { ReactComponent as AddFolderIcon } from '../../assets/icons/ic_action_folder_add_outlined.svg';
+import { ReactComponent as AddTrackIcon } from '../../assets/icons/ic_action_track_add.svg';
 import styles from '../trackfavmenu.module.css';
-import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
+import TracksManager, { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import AddFolderDialog from '../../dialogs/tracks/AddFolderDialog';
 import SortActions, { allMethods, byTime, getSelectedSort } from './SortActions';
@@ -18,6 +19,7 @@ import FavoriteGroupUploader from '../../frame/components/util/FavoriteGroupUplo
 import IconButtonWithPermissions from '../../frame/components/IconButtonWithPermissions';
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from './HeaderHelper';
+import { confirm } from '../../dialogs/GlobalConfirmationDialog';
 
 export default function GroupHeader({
     type,
@@ -175,6 +177,33 @@ export default function GroupHeader({
                                         <ImportIcon />
                                     </IconButtonWithPermissions>
                                 </CloudGpxUploader>
+                            </span>
+                        </Tooltip>
+                    )}
+                    {type === TRACKS_TYPE && (
+                        <Tooltip
+                            key={'create_new_route'}
+                            title={t('plan_route_create_new_route')}
+                            arrow
+                            placement="bottom-end"
+                        >
+                            <span>
+                                <IconButton
+                                    variant="contained"
+                                    type="button"
+                                    className={styles.appBarIcon}
+                                    onClick={() =>
+                                        confirm({
+                                            ctx,
+                                            title: 'Plan Route: new track',
+                                            text: 'Stop editing the current track?',
+                                            skip: ctx.createTrack?.enable !== true,
+                                            callback: () => TracksManager.createTrack(ctx),
+                                        })
+                                    }
+                                >
+                                    <AddTrackIcon />
+                                </IconButton>
                             </span>
                         </Tooltip>
                     )}

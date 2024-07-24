@@ -8,10 +8,10 @@ import CloudTrackItem from '../tracks/CloudTrackItem';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import EmptyVisible from '../errors/EmptyVisible';
 import { isEmpty } from 'lodash';
-import TracksManager, { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
+import TracksManager, { DEFAULT_GROUP_NAME, getAllVisibleFiles } from '../../manager/track/TracksManager';
 import Empty from '../errors/Empty';
 import { Button } from '@mui/material/';
-import { deleteTracksFromMap } from '../../manager/track/DeleteTrackManager';
+import { hideAllTracks } from '../../manager/track/DeleteTrackManager';
 import { useTranslation } from 'react-i18next';
 
 export function getCountVisibleTracks(visibleTracks) {
@@ -136,34 +136,12 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null, 
         return false;
     }
 
-    function hideAllTracks() {
-        if (!isEmpty(ctx.visibleTracks)) {
-            let files = getAllVisibleFiles();
-            if (files.length > 0) {
-                deleteTracksFromMap(ctx, files);
-            }
-        }
-    }
-
     function allVisibleTracksHidden() {
-        let files = getAllVisibleFiles();
+        let files = getAllVisibleFiles(ctx);
         if (files.length > 0) {
             return !files.some((f) => ctx.gpxFiles[f.name]?.url !== null && f.showOnMap);
         }
         return true;
-    }
-
-    function getAllVisibleFiles() {
-        let files = [];
-        if (!isEmpty(ctx.visibleTracks)) {
-            if (!isEmpty(ctx.visibleTracks.old)) {
-                files = files.concat(ctx.visibleTracks.old);
-            }
-            if (!isEmpty(ctx.visibleTracks.new)) {
-                files = files.concat(ctx.visibleTracks.new);
-            }
-        }
-        return files;
     }
 
     return (
@@ -186,7 +164,7 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null, 
                         <Button
                             id="se-hide-all-visible-tracks"
                             className={visibleStyles.button}
-                            onClick={hideAllTracks}
+                            onClick={() => hideAllTracks(ctx)}
                             disabled={allVisibleTracksHidden()}
                         >
                             {t('shared_string_hide_all')}
