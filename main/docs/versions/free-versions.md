@@ -15,6 +15,7 @@ You can get the latest version of OsmAnd free from listed app stores.
 <hr></hr>
 
 Direct links to free OsmAnd versions.
+
 ## Version 4 
 
 ### Version 4.7
