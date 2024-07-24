@@ -16,7 +16,7 @@ Web 1.01 is the latest web version of OsmAnd, which includes new useful features
 - Display of [Wikimedia images](#wikimedia-images) on the map (in testing).
 - Added ability to provide [URLs for different web sections](#more-urls).
 - Updated icons for Favorites (expected in 4.8).
-- Added a special banner with information about the OsmAnd mobile version (expected in 4.8).
+- Added a special banner with information about the OsmAnd mobile version and a link (expected in 4.8).
 - Fixed incorrect precipitation data.
 - Fixed user data lag when there is a huge amount of data.
 
@@ -83,17 +83,20 @@ Added the feature to show Wikimedia images on the map.
 
 ![Explore menu](../../blog/2024-07-01-web-1-01/img/wiki_photos.png)
 
+
 ## More URLs
 
--  **Weather** – `osmand.net/map/weather`
--  **Account** – `osmand.net/map/account`
--  **Configure Map** – `osmand.net/map/configure/`
--  **Tracks** – `osmand.net/map/mydata/tracks`
--  **Favorites** – `osmand.net/map/mydata/favorites`
--  **Navigation** – `osmand.net/map/navigate`
--  **Settings** – `osmand.net/map/settings`
--  **Plan a Route** - `osmand.net/map/plan`
--  For current [Explore page](#explore-map-menu) - `osmand.net/map/search`
+| | |
+| --- | --- |
+| **Weather** | `osmand.net/map/weather` |
+| **Account** | `osmand.net/map/account` |
+| **Configure Map** | `osmand.net/map/configure/` |
+| **Tracks** | `osmand.net/map/mydata/tracks` |
+| **Favorites** | `osmand.net/map/mydata/favorites` |
+| **Navigation** | `osmand.net/map/navigate` |
+| **Settings** | `osmand.net/map/settings` |
+| **Plan a Route** | `osmand.net/map/plan` |
+| For current [Explore page](#explore-map-menu) | `osmand.net/map/search` |
 
 
 Example - `https://osmand.net/map/mydata/favorites/#12/40.7452/-74.0326`
@@ -101,7 +104,8 @@ Example - `https://osmand.net/map/mydata/favorites/#12/40.7452/-74.0326`
 
 ## Optional Updates
 
-- Fixed [wrong precipitation data](https://github.com/osmandapp/OsmAnd-Issues/issues/2578),
-- Fixed lagging of [huge numbers user data](https://github.com/osmandapp/web/issues/384),
-- Added [banner to promote](https://github.com/osmandapp/OsmAnd/issues/18825) mobile version,
-- Fixed [zooming to extens](https://github.com/osmandapp/web/issues/246) when enabling favorites or tracks
+- Added a special [banner](https://github.com/osmandapp/OsmAnd/issues/18825) with information about the OsmAnd mobile version and a link.
+- Fixed [incorrect precipitation data](https://github.com/osmandapp/OsmAnd-Issues/issues/2578).
+- Fixed user data lag when there is a [huge amount of data](https://github.com/osmandapp/web/issues/384).
+- Fixed [zooming](https://github.com/osmandapp/web/issues/246) when enabling favorites or tracks.
+
