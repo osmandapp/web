@@ -26,6 +26,7 @@ import TracksManager, { createTrackGroups, getGpxFiles } from '../../manager/tra
 import { addCloseTracksToRecently } from '../../menu/visibletracks/VisibleTracks';
 import PhotosModal from '../../menu/search/PhotosModal';
 import InstallBanner from './InstallBanner';
+import { hideAllTracks } from '../../manager/track/DeleteTrackManager';
 
 const GlobalFrame = () => {
     const ctx = useContext(AppContext);
@@ -43,6 +44,16 @@ const GlobalFrame = () => {
 
     const MAIN_MENU_SIZE = openMainMenu ? MAIN_MENU_OPEN_SIZE : MAIN_MENU_MIN_SIZE;
     const MENU_INFO_SIZE = menuInfo ? MENU_INFO_OPEN_SIZE : MENU_INFO_CLOSE_SIZE;
+
+    // check configure map state
+    useEffect(() => {
+        if (!ctx.configureMapState.showPoi) {
+            ctx.setShowPoiCategories([]);
+        }
+        if (!ctx.configureMapState.showTracks) {
+            hideAllTracks(ctx);
+        }
+    }, [ctx.configureMapState]);
 
     useEffect(() => {
         if (menuInfo) {

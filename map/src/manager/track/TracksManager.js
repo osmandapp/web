@@ -1,6 +1,6 @@
 import Utils, { quickNaNfix } from '../../util/Utils';
 import FavoritesManager from '../FavoritesManager';
-import _ from 'lodash';
+import _, { isEmpty } from 'lodash';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import { compressFromJSON, decompressToJSON } from '../../util/GzipBase64.mjs';
 import { isCloudTrack, isRouteTrack, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
@@ -1322,6 +1322,19 @@ export function updateLoadingTracks(ctx, group) {
                 })
         ),
     ]);
+}
+
+export function getAllVisibleFiles(ctx) {
+    let files = [];
+    if (!isEmpty(ctx.visibleTracks)) {
+        if (!isEmpty(ctx.visibleTracks.old)) {
+            files = files.concat(ctx.visibleTracks.old);
+        }
+        if (!isEmpty(ctx.visibleTracks.new)) {
+            files = files.concat(ctx.visibleTracks.new);
+        }
+    }
+    return files;
 }
 
 const TracksManager = {

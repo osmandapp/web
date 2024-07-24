@@ -1,9 +1,9 @@
 import { isCloudTrack, isLocalTrack, OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import { apiGet, apiPost } from '../../util/HttpApi';
-import TracksManager, { findGroupByName } from './TracksManager';
+import TracksManager, { findGroupByName, getAllVisibleFiles } from './TracksManager';
 import { refreshGlobalFiles } from './SaveTrackManager';
 import { FAVORITE_FILE_TYPE } from '../FavoritesManager';
-import { cloneDeep } from 'lodash';
+import { cloneDeep, isEmpty } from 'lodash';
 import { hideAllVisTracks } from '../../menu/visibletracks/VisibleTracks';
 
 export async function deleteTrack(file, ctx, type = 'GPX') {
@@ -80,6 +80,15 @@ export function closeTrack(ctx, file) {
     ctx.mutateGpxFiles((o) => (o[file.name].url = null));
     if (ctx.selectedGpxFile?.name === file.name) {
         ctx.setCurrentObjectType(null);
+    }
+}
+
+export function hideAllTracks(ctx) {
+    if (!isEmpty(ctx.visibleTracks)) {
+        let files = getAllVisibleFiles(ctx);
+        if (files.length > 0) {
+            deleteTracksFromMap(ctx, files);
+        }
     }
 }
 

@@ -68,6 +68,22 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 
+export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize }) => {
+    return (
+        <div
+            style={{ display: 'flex' }}
+            dangerouslySetInnerHTML={{
+                __html:
+                    changeIconSizeWpt(
+                        removeShadowFromIconWpt(MarkerOptions.getWptIcon(wpt, color, background, icon).options.html),
+                        iconSize,
+                        shieldSize
+                    ) + '',
+            }}
+        />
+    );
+};
+
 export default function WptDetails({ isDetails = false, setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
@@ -360,24 +376,6 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         );
     };
 
-    const WptIcon = () => {
-        return (
-            <div
-                style={{ display: 'flex' }}
-                dangerouslySetInnerHTML={{
-                    __html:
-                        changeIconSizeWpt(
-                            removeShadowFromIconWpt(
-                                MarkerOptions.getWptIcon(wpt, wpt?.color, wpt?.background, wpt?.icon).options.html
-                            ),
-                            ICON_IMG_SIZE,
-                            ICON_SHIELD_SIZE
-                        ) + '',
-                }}
-            />
-        );
-    };
-
     const WptCategory = () => {
         return (
             <Box className={styles.wptCategory}>
@@ -526,7 +524,16 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                         {wpt?.poiType}
                                     </Typography>
                                 </div>
-                                {wpt.icon && <WptIcon />}
+                                {wpt.icon && (
+                                    <WptIcon
+                                        wpt={wpt}
+                                        color={wpt.color}
+                                        background={wpt.background}
+                                        icon={wpt.icon}
+                                        iconSize={ICON_IMG_SIZE}
+                                        shieldSize={ICON_SHIELD_SIZE}
+                                    />
+                                )}
                             </Box>
                             {wpt?.category && <WptCategory />}
                             <div className={styles.location}>

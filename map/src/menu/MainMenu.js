@@ -68,6 +68,7 @@ import {
 } from '../manager/GlobalManager';
 import { createUrlParams } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
+import PoiCategoriesConfig from './configuremap/PoiCategoriesConfig';
 
 export default function MainMenu({
     size,
@@ -94,6 +95,7 @@ export default function MainMenu({
         trash: false,
     });
     const [openCloudSettings, setOpenCloudSettings] = useState(false);
+    const [openPoiConfig, setOpenPoiConfig] = useState(false);
 
     const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
     const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
@@ -136,7 +138,7 @@ export default function MainMenu({
         {
             name: t('configure_map'),
             icon: ConfigureMapIcon,
-            component: <ConfigureMap setOpenVisibleMenu={setOpenVisibleMenu} />,
+            component: <ConfigureMap setOpenVisibleMenu={setOpenVisibleMenu} setOpenPoiConfig={setOpenPoiConfig} />,
             type: OBJECT_CONFIGURE_MAP,
             show: true,
             id: 'se-show-menu-configuremap',
@@ -418,6 +420,10 @@ export default function MainMenu({
         }
     }
 
+    function isOpenSubMenu() {
+        return showInfoBlock || openCloudSettings || openPoiConfig;
+    }
+
     return (
         <Box
             sx={{
@@ -610,16 +616,20 @@ export default function MainMenu({
                 hideBackdrop
             >
                 <Toolbar sx={{ mb: '-3px' }} />
-                {/*add main menu items*/}
-                {!showInfoBlock && _.isEmpty(ctx.openGroups) && !openVisibleMenu && !openCloudSettings && menuInfo}
-                {/*add track groups*/}
-                {ctx.openGroups.length > 0 && !openCloudSettings && !showInfoBlock && getGroup()}
-                {openVisibleMenu && !showInfoBlock && !openCloudSettings && (
-                    <VisibleTracks
-                        setOpenVisibleMenu={setOpenVisibleMenu}
-                        setMenuInfo={setMenuInfo}
-                        setSelectedType={setSelectedType}
-                    />
+                {!isOpenSubMenu() && (
+                    <>
+                        {/*add main menu items*/}
+                        {_.isEmpty(ctx.openGroups) && !openVisibleMenu && menuInfo}
+                        {/*add track groups*/}
+                        {ctx.openGroups.length > 0 && getGroup()}
+                        {openVisibleMenu && (
+                            <VisibleTracks
+                                setOpenVisibleMenu={setOpenVisibleMenu}
+                                setMenuInfo={setMenuInfo}
+                                setSelectedType={setSelectedType}
+                            />
+                        )}
+                    </>
                 )}
                 <InformationBlock
                     showInfoBlock={showInfoBlock}
@@ -630,6 +640,7 @@ export default function MainMenu({
                 {openCloudSettings && (
                     <CloudSettings cloudSettings={cloudSettings} setOpenCloudSettings={setOpenCloudSettings} />
                 )}
+                {openPoiConfig && !showInfoBlock && <PoiCategoriesConfig setOpenPoiConfig={setOpenPoiConfig} />}
             </Drawer>
         </Box>
     );
