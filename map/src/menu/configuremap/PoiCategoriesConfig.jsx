@@ -168,7 +168,7 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
             </Box>
             <AppBar position="static" className={styles.footer}>
                 <Toolbar className={headerStyles.toolbar} style={{ justifyContent: 'space-between' }}>
-                    {activePoiFilters.length !== selectedCategories.size ? (
+                    {activePoiFilters?.length !== selectedCategories?.size ? (
                         <Button className={styles.buttonSelectAll} onClick={selectAllCategories}>
                             {t('shared_string_select_all')}
                         </Button>
