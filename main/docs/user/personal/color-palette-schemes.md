@@ -19,7 +19,30 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Color schemes help visualize data, making it easier to understand. This means you can see data on a map using various colors that are easy to interpret.
+Color schemes help visualize data, making it easier to understand. This means you can see data on a map using various colors that are easy to interpret.  
+
+Color palette data is available in the [_Maps & Resources_](../user/personal/maps.md#local) menu.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*Menu → Maps & Resources → Local → Colors*
+
+![Palettes](../../../blog/2024-06-19-android-4-8/img/colors.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*Menu → Maps & Resources → Local → Colors*
+
+![Color palette](../../../blog/2024-06-20-ios-4-8/img/color_palette_ios.png)
+
+</TabItem>
+
+</Tabs>
+
 
 
 ## Schemes Types 
@@ -54,30 +77,6 @@ GPX Tracks, Routes:
 ### Weather
 
 - For [weather](https://osmand.net/docs/user/plugins/weather#weather-layers): *All weather layers*.
-
-### Custom
-
-You can add your custom color palettes to OsmAnd. To do this, create a TXT file with the required name:
-- *Routes*: `route_speed_name.txt`, `route_slope_default.txt`, `route_elevation_default.txt`.
-- *Terrain*: `height_altitude_name.txt`, `hillshade_color_name.txt`, `slope_name.txt`.
-- *Weather*: `weather_name.txt`.
-
-For example:
-
-```
-TXT file named *height_altitude_0-200.txt*
-
-# 0 - 90 degree RGBA
-0,46,185,0,191
-# yellow 
-100,255,222,2,227
-# red
-200,255,1,1,255
-# violet
-220,130,1,255,255
-
-```
-After moving this TXT file to *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt*, a new palette will appear in the Color Scheme menu.
 
 
 ## Modify Color Palette
@@ -139,6 +138,8 @@ _Menu → Configure screen → Custom buttons → + → Add button → Add actio
 
 ## Editor
 
+<!--
+
 *Terrain → Modify → All colors → &#8942; → Edit*
 
 <table class="image">
@@ -148,4 +149,28 @@ _Menu → Configure screen → Custom buttons → + → Add button → Add actio
     </tr>
 </table>  
 
-The palette editor allows you to create and edit custom color schemes to personalize your maps. This is where you can customize colors according to personal preferences or the requirements of a particular route. 
+-->
+
+You can create and edit color palettes to personalize your maps, by customizing colors according to personal preferences or the requirements of a particular route. Own color palette files can be added to OsmAnd using the *import/export tool*. To do this, create a TXT file with the required name using the txt editor:
+
+- *Routes*: `route_speed_name.txt`, `route_slope_default.txt`, `route_elevation_default.txt`.
+- *Terrain*: `height_altitude_name.txt`, `hillshade_color_name.txt`, `slope_name.txt`.
+- *Weather*: `weather_name.txt`.
+
+For example:
+
+```
+TXT file named *height_altitude_0-200.txt*
+
+# 0 - 90 degree RGBA
+0,46,185,0,191
+# yellow 
+100,255,222,2,227
+# red
+200,255,1,1,255
+# violet
+220,130,1,255,255
+
+```
+After moving this TXT file to *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt*, a new palette will appear in the Color Scheme menu.
+
