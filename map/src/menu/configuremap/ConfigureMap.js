@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import {
     MenuItem,
     IconButton,
@@ -29,6 +29,7 @@ import EmptyLogin from '../errors/EmptyLogin';
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from '../actions/HeaderHelper';
 import { INTERACTIVE_LAYER } from '../../map/layers/CustomTileLayer';
+import TracksManager from '../../manager/track/TracksManager';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
@@ -38,6 +39,7 @@ export default function ConfigureMap({ setOpenVisibleMenu, setOpenPoiConfig }) {
 
     const { t } = useTranslation();
     const [openSettings, setOpenSettings] = useState(false);
+    const [openedTracks, setOpenedTracks] = useState(null);
 
     const handleFavoritesSwitchChange = () => {
         let newConfigureMap = cloneDeep(ctx.configureMapState);
@@ -55,6 +57,11 @@ export default function ConfigureMap({ setOpenVisibleMenu, setOpenPoiConfig }) {
 
         return res.join(' ');
     }
+
+    useEffect(() => {
+        let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
+        setOpenedTracks(savedVisible?.open?.length);
+    }, [ctx.gpxFiles, ctx.visibleTracks]);
 
     return (
         <>
@@ -170,6 +177,11 @@ export default function ConfigureMap({ setOpenVisibleMenu, setOpenPoiConfig }) {
                                         <Typography variant="inherit" noWrap>
                                             {t('shared_string_tracks')}
                                         </Typography>
+                                        {openedTracks !== 0 && (
+                                            <Typography variant="body2" className={styles.poiCategoriesInfo} noWrap>
+                                                {openedTracks?.toString()}
+                                            </Typography>
+                                        )}
                                     </div>
                                 </ListItemText>
                             </MenuItem>
