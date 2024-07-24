@@ -2,20 +2,24 @@
 
 ### [Free Releases - Android](/docs/versions/free-versions)
 
-You can get the latest version of OsmAnd free from listed app stores.
+List of previous versions of OsmAnd for Android.
 
 ### [Beta & Nightly builds](/docs/versions/nightly_versions)
 
-OsmAnd produces every day multiple Ready-To-Use builds which allows keep track of new features and participate in OsmAnd contributions (translation process).
+Every day OsmAnd releases several Ready-To-Use builds, allowing you to follow and participate in the creation of new features (translation process).
 
 ### [OsmAnd MapCreator](/docs/versions/map-creator)
 
-OsmAndMapCreator can be used to create any maps supported by OsmAnd yourself. 
+OsmAnd Map Creator is used to create any maps supported by OsmAnd by yourself.  
 
 ### [Next Android Release](/docs/versions/future-android)
 
-Release notes of next coming Android version which currently available as Beta.
+Information about the release of the next version of Android, which is currently available as a beta.
 
 ### [Next iOS Release](/docs/versions/future-ios)
 
-Release notes of next coming iOS version which currently available as Beta.
+Information about the release of the next version of iOS, which is currently available as a beta.
+
+### [Next Web Release](/docs/versions/future-web)
+
+Information about the release of the next version of OsmAnd Web.
