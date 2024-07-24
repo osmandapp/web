@@ -21,85 +21,95 @@ Web 1.01 is the latest web version of OsmAnd, which includes new useful features
 - Fixed user data lag when there is a huge amount of data.
 
 
-## System language
+## System Language
 
-The Web uses language from browser settings. For Chrome priority `chrome://settings/languages`.
+- The Web version of OsmAnd uses the language from the browser settings.  
+- For Chrome, the priority is `chrome://settings/languages`.  
+- You can change the system (menu) language manually by selecting  
+    *Menu →* ⚙ *→ Turn off language*.
 
-User can change system (menu) language manually by _Menu → ⚙ → Dislay language_.
 
 ## Map Context menu
 
-For this release the new Map Context menu was added. For opening the menu to click the right button of mouse to any place of the map. At this menu next actions have been added:
- - _Where am I_
- - _Show weather_
- - _Create new route_
- - _Add Favorite_
- - _Directions from_
- - _Directions to_
- - _Cope coordinates_
- - _Add pin_
- - _Show regions_
-
-
 ![Map Context menu](../../blog/2024-07-01-web-1-01/img/map_context_menu.png)
 
+In this release a new context menu for the map has been added, to open it right click anywhere on the map. This menu includes the following actions:
 
-## Explore map menu
+- **Where am I**
+- **Show weather**
+- **Create new route**
+- **Add Favorite**
+- **Directions from**
+- **Directions to**
+- **Cope coordinates**
+- **Add pin**
+- **Show regions**
 
-New feature for the web with finding places by POIs categories on the map. Show photos for POI on the map.
 
-Click to 🔍 button and open tab with Popular POI on the screen. Tap to one of it for opening POI context menu.
+## Explore Map Menu
 
 ![Explore menu](../../blog/2024-07-01-web-1-01/img/explore.png)
 
-For starting search by categories you need to open the Categories menu and choose needed items:
+A new feature in OsmAnd Web with map places search by POI categories, which displays photos of a specific point of interest on the map.
+
+- Click on 🔍 to open a tab with popular POIs on the map screen. 
+- Then select and click on one of the POIs to open the context menu for it.
+- To start searching by category, open the Categories menu and select the required items.
 
 ![Explore menu](../../blog/2024-07-01-web-1-01/img/explore_cat.png)
 
-### POI Context menu
-
-By clicking to POI the new Context menu:
-- name (category)
-- direction and Distance
-- Description
-- [Online photos](#photo-gallery)
-
+### POI Context Menu
 
 ![Explore menu](../../blog/2024-07-01-web-1-01/img/poi_context.png)
 
+Clicking on a POI opens a new context menu that includes:
 
-### Photo gallery
+- Name (Сategory).
+- Direction and distance.
+- Description.
+- [Online photos](#photo-gallery).
 
-Clicking to Online photos to open Photo gallery. Here you can list all photos of a POI.
+### Photo Gallery
 
 ![Explore menu](../../blog/2024-07-01-web-1-01/img/poi_photo.png)
 
+Clicking on the online photos opens the photo gallery. Here you can scroll through all POI photos.
 
-## Wikimedia images
 
-Note: test version for developers
-
-Added the feature to show Wikimedia images on the map.
+## Wikimedia Images
 
 ![Explore menu](../../blog/2024-07-01-web-1-01/img/wiki_photos.png)
+
+:::note
+This is a test version for developers.
+:::
+
+Added the feature to display Wikimedia images on the map.
 
 
 ## More URLs
 
-| | |
-| --- | --- |
-| **Weather** | `osmand.net/map/weather` |
-| **Account** | `osmand.net/map/account` |
-| **Configure Map** | `osmand.net/map/configure/` |
-| **Tracks** | `osmand.net/map/mydata/tracks` |
-| **Favorites** | `osmand.net/map/mydata/favorites` |
-| **Navigation** | `osmand.net/map/navigate` |
-| **Settings** | `osmand.net/map/settings` |
-| **Plan a Route** | `osmand.net/map/plan` |
-| For current [Explore page](#explore-map-menu) | `osmand.net/map/search` |
+-  **Weather**&nbsp; – &nbsp;`osmand.net/map/weather`
+
+-  **Account**&nbsp; – &nbsp;`osmand.net/map/account`
+
+-  **Configure Map**&nbsp; – &nbsp;`osmand.net/map/configure/`
+
+-  **Tracks**&nbsp; – &nbsp;`osmand.net/map/mydata/tracks`
+
+-  **Favorites**&nbsp; – &nbsp;`osmand.net/map/mydata/favorites`
+
+-  **Navigation**&nbsp; – &nbsp;`osmand.net/map/navigate`
+
+-  **Settings**&nbsp; – &nbsp;`osmand.net/map/settings`
+
+-  **Plan a Route**&nbsp; - &nbsp;`osmand.net/map/plan`
+
+-  For the current [**Explore page**](#explore-map-menu)&nbsp; - &nbsp;`osmand.net/map/search`
 
 
-Example - `https://osmand.net/map/mydata/favorites/#12/40.7452/-74.0326`
+***Example***:  
+    `https://osmand.net/map/mydata/favorites/#12/40.7452/-74.0326`
 
 
 ## Optional Updates
