@@ -41,7 +41,7 @@ All widgets are [profile dependent](../personal/profiles.md), so if you change t
 </Tabs> 
 
 
-## Widget panels
+## Widget Panels
 
 <Tabs groupId="operating-systems">
 
@@ -67,7 +67,7 @@ OsmAnd application allows you to group, copy and customize widgets in various wa
 
 With the help of panels you can arrange widgets on the application screen in a convenient place. In panels, widgets can be organized in rows on the right/left or top/bottom.
 
-### Widgets for all panels  
+### Widgets for All Panels  
 
 <Tabs groupId="operating-systems">
 
@@ -87,29 +87,40 @@ With the help of panels you can arrange widgets on the application screen in a c
 
 1. [Route maneuvers](../widgets/nav-widgets.md#next-turns) (*only for Left/Right panel*)  This set of *navigational* widgets is activated during navigation and display information about the distance to the next maneuver.  
     3 widgets included: *Next turn*, *Next turn (small)*, *Second next turn*. 
+
 2. [Navigation point](../widgets/nav-widgets.md#navigation-points)  A set of *navigation widgets* shows the remaining distance to a destination, intermediate point, arrival time to an intermediate point, or travel time for a calculated route.  
     4 widgets included: [Distance to destination](../widgets/nav-widgets.md#distance-to-destination), [Distance to intermediate](../widgets/nav-widgets.md#distance-to-intermediate), [Time to intermediate](../widgets/nav-widgets.md#time-to-intermediate), [Time to destination](../widgets/nav-widgets.md#time-to-destination). 
+
 3. [Map markers](../widgets/markers.md)  A set of widgets shows the distance or estimated time of arrival (ETA) for the first two markers in the list of map markers. show special points marked as flags on the map.  2 widgets included: *First marker*, *Second marker*. 
+
 4. [Bearing](../widgets/nav-widgets.md#bearing)  This set of *navigational* widgets shows the absolute or relative bearing to a target in angular units (in 180 degrees, 360 degrees, or milliradians mode).  
     3 widgets included: *Relative bearing*, *Magnetic bearing*, *True bearing*. 
 
 5. [Current Speed](../widgets/info-widgets.md#speed)  *Informational* widget shows the current speed detected by the GPS sensor.  
+
 6. [Average speed](../widgets/info-widgets.md#average-speed-widget)  *Informational* widget shows the average speed of the current trip.  
-7. [Speed limit](../widgets/nav-widgets.md#speed-limit)  A set of *informational* widgets displays the speed limit on the current road you are traveling on.  
+
+7. [Speed limit](../widgets/nav-widgets.md#speed-limit)  A set of *informational* widgets displays the speed limit on the current road you are traveling on. 
+
 8. [Altitude](../widgets/info-widgets.md#altitude-widgets)  A set of *informational* widgets displays the altitude above sea level for the current geolocation or the altitude above sea level for the current map center.  
     2 widgets included: *Altitude: current location*, *Elevation: map center*. 
+
 9. [Current time](../widgets/info-widgets.md#current-time)  *Informational* widget displays the current time taken from your device.  
 
 10. [Battery level](../widgets/info-widgets.md#battery-level)  *Informational* widget shows battery level of your device.  
 
 11. [Radius ruler](../widgets/info-widgets.md#radius-ruler)  The widget displays on a map the distance between the user's location and the inner point of the distance circles of the [Radius ruler tool](../widgets/radius-ruler.md).  
+
 12. [Glide ratio](../widgets/info-widgets.md#glide-ratio)  The widgets show the glide ratio to the target and the average glide ratio for the current flight.  
     2 widgets included: *Glide ratio to target*, *Average glide ratio*. 
+
 13. [Sunrise, sunset](../widgets/info-widgets.md#sunset-and-sunrise)  A set of *informational* widgets shows the time of the next sunrise or sunset for the center of the map.  
     2 widgets included: *Sunrise*, *Sunset*. 
 
 14. [OsmAnd Tracker status](../widgets/info-widgets.md#-tracker-widget)  This *informational* widget is used to quickly access the [OsmAnd Tracker application](https://play.google.com/store/apps/details?id=net.osmand.telegram) to share your location with other users.  
+
 15. [GPS info (*Android only*)](../widgets/info-widgets.md#gps-info)  *Informational* widget shows the number of satellites the device is currently detecting and using.  
+
 16. [Developer widgets (from *OsmAnd development plugin*)](../widgets/info-widgets.md#developer-widgets)  A set of *informational* widgets provides information about zoom level, map rendering speed, map center elevation above sea level, distance to the map center, camera height and tilt and available RAM on your device.  
     5 widgets included: *Map rendering FPS*, *Camera tilt*, *Camera elevation*, *Zoom level*, *Distance from camera to target*, *Available RAM*.  
 
@@ -130,7 +141,7 @@ With the help of panels you can arrange widgets on the application screen in a c
 23. [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
 
 
-## Top / Bottom panels
+## Top / Bottom Panels
 
 <Tabs groupId="operating-systems">
 
@@ -170,8 +181,7 @@ Types of widgets are available for Top / Bottom panels:
       ![elevation profile](@site/static/img/widgets/elevation_prof_and.png) 
 
 
-
-### Rows for panels
+### Rows for Panels
 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_widgets_rows_andr.png)
 
@@ -195,7 +205,6 @@ The mode allows you to add **more than one widgets in a single row** on the top 
     - [Route maneuvers](../widgets/nav-widgets.md#next-turns)
 
 - For all rest **Simple** widgets that only display information such as *Widget Name*, *Units of measurement*, *Value*, and *Icon*, there is a option to add several to one panel at once. 
-
 
 ### Settings
 
@@ -221,7 +230,7 @@ To change the widget size and icon visibility:
 - Switch to the Off position, in the *Show icon* field.
 
 
-## Left / Right panels
+## Left / Right Panels
 
 <Tabs groupId="operating-systems">
 
@@ -245,7 +254,7 @@ To change the widget size and icon visibility:
 
 The OsmAnd app allows you to place [widgets from the table](#widgets-for-all-panels) in sidebars and group them by pages.
 
-### Pages for widgets
+### Pages for Widgets
 
 <Tabs groupId="operating-systems">
 
@@ -269,9 +278,9 @@ The OsmAnd app allows you to place [widgets from the table](#widgets-for-all-pan
 
 Widgets in the right and left panels can be grouped into **Pages**. To do this, select a panel, tap *Edit*, and then tap *Add Page*. This helps you interact with the map more easily and without distractions when navigating, as well as having multiple sets of widgets for different cases.
 
-## Panel widgets settings
+## Panel Widgets Settings
 
-### Copies of widgets
+### Copies of Widgets
 
 *OsmAnd menu → Configure screen → Widgets → Panel → **Add** chosen widget*  
 
@@ -304,26 +313,23 @@ To remove or delete a widget from the application screen, you need to select the
 
 ![Widget page](@site/static/img/widgets/conf_screen_buttons_andr.png)  
 
-- **Custom buttons**. Allows you to add a list from [Quick action](../widgets/quick-action.md).
-- **Default buttons**. It gives you the ability to hide or show buttons on the map.
-    - [3D mode](../widgets/map-buttons.md#3d-mode). Appears in the list and is available for setting if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.
-    - [Compass](../widgets/map-buttons.md#display-options). Indicates how the map is oriented on the device.  3 views: *Always visible*, *Always hidden*, *Visible if map is rotated*.   
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
 *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Widget page](@site/static/img/widgets/conf_screen_buttons_ios.png)  
-
-- [Compass](../widgets/map-buttons.md#display-options). Indicates how the map is oriented on the device.  3 views: *Always visible*, *Always hidden*, *Visible if map is rotated*. 
-- [Quick action](../widgets/quick-action.md). This is a button that provides  quick access to frequently used actions.  
-- [3D mode](../widgets/map-buttons.md#3d-mode). Appears in the list and is available for setting if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.   
+![Widget page](@site/static/img/widgets/conf_screen_buttons_2_ios.png)  
 
 </TabItem>
 
 </Tabs> 
+
+- **Custom buttons**. Allows you to add a list of single actions from all available [Quick actions](../widgets/quick-action.md#custom-buttons). These actions can be assigned to one or more widget buttons on the map screen. Custom buttons provide quick access to frequently used actions.
+- **Default buttons**. It gives you the ability to hide or show preset map buttons.
+    - [3D mode](../widgets/map-buttons.md#3d-mode). Appears in the list and is available for setting if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.
+    - [Compass](../widgets/map-buttons.md#display-options). Indicates how the map is oriented on the device.  
+    3 views: *Always visible*, *Always hidden*, *Visible if map is rotated*.   
 
 
 ## Other
@@ -348,12 +354,12 @@ To remove or delete a widget from the application screen, you need to select the
 
 </Tabs> 
 
-- [**<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>**](#display-position--location-position-on-screen). [⬇](#display-position--location-position-on-screen)
+- [**<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>**](#display-position). [⬇](#display-position)
 - [**Distance by tap**](../widgets/radius-ruler.md#distance-by-tap-tool). Gives the ability to measure the distance from your position to the selected point.
 - [**Speedometer**](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed). The displayed data also depends on OsmAnd's [*Speed Limit Tolerance*](../navigation/guidance/voice-navigation.md#speed-limit) setting.
 
 
-#### Display position / Location position on screen
+### Display Position
 
 <Tabs groupId="operating-systems">
 
@@ -370,6 +376,8 @@ To remove or delete a widget from the application screen, you need to select the
 </TabItem>
 
 </Tabs> 
+
+> *Location position on screen* is the name of this setting in the iOS version of OsmAnd.  
 
 Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:  
 
@@ -411,7 +419,7 @@ Available actions:
 - **Copy from another profile**. This feature allows you to quickly import settings from another profile, select the required ones from the list, and copy. 
 
 
-## Switch profile
+## Switch Profile
 
 <Tabs groupId="operating-systems">
 
@@ -445,4 +453,4 @@ Available actions:
 - [Quick Action](./quick-action.md)
 
 
-> *This article was last updated in June 2024*
+> *This article was last updated in July 2024*

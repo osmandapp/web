@@ -313,4 +313,4 @@ All key assignments for the selected type will be removed.
 - [Public transport](./public-transport.md)
 
 
-> *This article was last updated in Desember 2023*
+> *This article was last updated in July 2024*

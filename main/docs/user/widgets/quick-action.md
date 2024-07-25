@@ -285,4 +285,4 @@ To manage custom buttons, you can tap on one of them, then tap the *3-dot menu* 
 - [Radius-ruler and Ruler](./radius-ruler.md)
 - [Marker widgets](./markers.md)
 
-> *This article was last updated in April 2024*
+> *This article was last updated in July 2024*
