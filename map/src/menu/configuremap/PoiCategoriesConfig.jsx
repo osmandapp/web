@@ -27,7 +27,7 @@ export const CategoryIcon = ({ color, background, icon, iconSize, shieldSize }) 
             dangerouslySetInnerHTML={{
                 __html:
                     changeIconSizeWpt(
-                        removeShadowFromIconWpt(getPoiCategoryIcon(icon, color, background).options.html),
+                        removeShadowFromIconWpt(getPoiCategoryIcon({ icon, color, background }).options.html),
                         iconSize,
                         shieldSize
                     ) + '',

@@ -12,6 +12,10 @@ import { getColorLocation } from '../../manager/FavoritesManager';
 import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 
+export const CustomIcon = ({ marker }) => {
+    return <div style={{ height: '30px' }} dangerouslySetInnerHTML={{ __html: marker.icon + '' }} />;
+};
+
 export default function FavoriteItem({ marker, group, currentLoc }) {
     const ctx = useContext(AppContext);
 
@@ -48,10 +52,6 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
         ctx.setSelectedWpt(newSelectedGpxFile);
         ctx.setSelectedGpxFile(newSelectedGpxFile);
     }
-
-    const CustomIcon = () => {
-        return <div style={{ height: '30px' }} dangerouslySetInnerHTML={{ __html: marker.icon + '' }} />;
-    };
 
     const FavInfo = () => {
         return (
@@ -96,7 +96,7 @@ export default function FavoriteItem({ marker, group, currentLoc }) {
                             onClick={() => addFavoriteToMap(marker)}
                         >
                             <ListItemIcon className={styles.icon}>
-                                <CustomIcon />
+                                <CustomIcon marker={marker} />
                             </ListItemIcon>
                             <ListItemText>
                                 <MenuItemWithLines name={marker.title} maxLines={2} />
