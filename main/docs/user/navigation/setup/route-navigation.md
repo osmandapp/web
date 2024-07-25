@@ -174,12 +174,13 @@ If you choose *Sort* (**Android**) or *Options* (**iOS**) in the destinations li
 
 </Tabs>
 
-In this menu, you can find additional options for managing destinations points:
--  *<Translate android="true" ids="intermediate_items_sort_by_distance"/>* - OsmAnd will offer the shortest route between all your destinations, however, the order of the visit can be edited. The starting point and the final destination will not be changed.
--  *<Translate android="true" ids="switch_start_finish"/>* - starting point and final destination will be swapped.  
--  *<Translate android="true" ids="reverse_all_points"/>* (only Android) - all points will be put in the reverse direction.
--  *<Translate android="true" ids="add_intermediate_point"/>* (or *<Translate ios="true" ids="add_waypoint_short"/>* for iOS) - you can add intermediate destination from this menu.
--  *<Translate android="true" ids="clear_all_intermediates"/>* - all the intermediate destinations will be removed from the map.
+In this menu you can find additional options for managing the destinations points:
+
+-  *<Translate android="true" ids="intermediate_items_sort_by_distance"/>*. OsmAnd will offer the shortest route between all your destinations, however, the order of the visit can be edited. The starting point and the final destination will not be changed.
+-  *<Translate android="true" ids="switch_start_finish"/>*. Starting point and final destination will be swapped.  
+-  *<Translate android="true" ids="reverse_all_points"/>* (Android only). All points will be put in the reverse direction.
+-  *<Translate android="true" ids="add_intermediate_point"/>* (or *<Translate ios="true" ids="add_waypoint_short"/>* for iOS). You can add intermediate destination from this menu.
+-  *<Translate android="true" ids="clear_all_intermediates"/>*. All the intermediate destinations will be removed from the map.
 
 ### Use Home or Work Points
 

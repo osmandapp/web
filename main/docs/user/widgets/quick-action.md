@@ -34,41 +34,29 @@ In order to use the Quick Actions button you need to enable this widget first.
 
 *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>*
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>*
-
-</TabItem>
-
-</Tabs>
-
-- By default the Quick action button will appear on the right corner (above the zoom buttons), but it can be moved to the any part of the screen by long-tap it. 
-
-| | |
-|------------|------------|
-|First appearing  | ![Quick action widget_view](@site/static/img/widgets/quick_action_widget_view.png) |
-|Long-tap and moving  | ![Quick action widget_tap](@site/static/img/widgets/quick_action_widget_tap.png) |
-|New place  | ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_move.png) |
-
-- To open Quick action menu just tap the button.
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
 ![Quick action widget_android](@site/static/img/widgets/quick_action_widget_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/>*
+
 ![Quick action widget_ios](@site/static/img/widgets/quick_action_widget_ios.png)
 
 </TabItem>
 
 </Tabs>
+
+- To open Quick action menu just tap the button.
+- By default the Quick action button will appear on the right corner (above the zoom buttons), but it can be moved to the any part of the screen by long-tap it. 
+
+| | |
+|------------|------------|
+| *First appearing*  | ![Quick action widget_view](@site/static/img/widgets/quick_action_widget_view.png) |
+| *Long-tap and moving* | ![Quick action widget_tap](@site/static/img/widgets/quick_action_widget_tap.png) |
+| *New place*  | ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_move.png) |
+| *Several QA buttons on the map screen* | ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_multi.png) |
 
 
 ## Edit actions list
@@ -239,17 +227,31 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 
 | Action | Description |
 |:-------------|:-------------|
-| [<Translate android="true" ids="shared_string_change"/> - <Translate android="true" ids="display_position"/> always in centre](../widgets/configure-screen.md#buttons-and-other) <br /> _for Android only_ | Enable or disable center position for _My Location_ icon on the map. |
-| [<Translate android="true" ids="shared_string_open"/> <Translate android="true" ids="shared_string_weather"/> always in centre](../plugins/weather.md) <br /> _for Android only_ | Open the [_Weather_ forecast screen](../plugins/weather.md#weather-forecast-screen). |
+| [<Translate android="true" ids="shared_string_change"/> - <Translate android="true" ids="display_position"/> always in centre](../widgets/configure-screen.md#buttons-and-other) <br /> *for Android only* | Enable or disable center position for *My Location* icon on the map. |
+| [<Translate android="true" ids="shared_string_open"/> <Translate android="true" ids="shared_string_weather"/> always in centre](../plugins/weather.md) <br /> *for Android only* | Open the [*Weather* forecast screen](../plugins/weather.md#weather-forecast-screen). |
 
 
 ## Custom buttons
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons"/> → + → <Translate android="true" ids="add_button"/>*  
 
 ![Custom button Android](@site/static/img/widgets/custom_button_andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons"/> → + → <Translate ios="true" ids="add_button"/>*  
+
+![Custom button Android](@site/static/img/widgets/custom_button_andr.png)  
+
+</TabItem>
+
+</Tabs> 
 
 Custom Buttons are a unique type of **Quick Action** tool. This means you can create a custom action button for a device's screen.  
 

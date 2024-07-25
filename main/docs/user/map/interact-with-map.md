@@ -175,47 +175,13 @@ One of the main functions of the external input device buttons is to zoom in and
 The keyboard continues to work even if the *External input devices* option is turned off, when *None* is selected. 
 :::
 
-Enabled the _External input device_ function:
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
 
-After you need to choose your device *<Translate android="true" ids="shared_string_type"/>*: *<Translate android="true" ids="sett_generic_ext_input"/>*, *<Translate android="true" ids="sett_parrot_ext_input"/>*, *<Translate android="true" ids="sett_wunderlinq_ext_input"/>* or create [your own type](#assign-custom-keys).
-
 ![External devices](@site/static/img/map/external_menu_android.png) ![External devices](@site/static/img/map/external_types_android.png)
-
-Each External input devices Type has *<Translate android="true" ids="key_assignments"/>*. You can click on *<Translate android="true" ids="key_assignments"/>* to see the list of actions and kyes. Table with _Keys_ you can see below:
-
-| Key | Device | Action |
-|:---------|:---------------|:---------------|
-|**C**| Keyboard   | [My location](../map/interact-with-map.md#my-location--zoom) |
-|**D**| Keyboard   | [Map orientation](../map/interact-with-map.md#map-orientation-modes) |
-|**N**| Keyboard   | Open Navigation view. |
-|**S**| Keyboard   | Open [Search](../search/index.md) view. |
-|**P**| Keyboard   | Switch to the next app profile. Show toast like message **App profile: Name**. |
-|**O**| Keyboard   | Switch to the previous app profile. |
-|**&#8593; **| Keyboard   | Move up  |
-|**&#8595; **| Keyboard   | Move down  |
-|**&#8592; **| Keyboard   | Move left  |
-|**&#8594; **| Keyboard   | Move right  |
-|**&#43; **| Keyboard  | [Zoom in](../map/interact-with-map.md#my-location--zoom) |
-|**&#8722; **| Keyboard  | [Zoom out](../map/interact-with-map.md#my-location--zoom) |
-|**Menu** (legacy Android) | Keyboard  | [Drawer](../start-with/main-menu.md#main-menu-drawer) |
-|**Joystick click** (legacy Android) | Keyboard  | [My location](../map/interact-with-map.md#my-location--zoom) |
-|**Media button**| Keyboard  | [AV notes](../plugins/audio-video-notes.md#add-note-on-the-map) |
-|**&#8592; **| Parrot  | [Zoom out](../map/interact-with-map.md#my-location--zoom) |
-|**&#8594; **| Parrot  | [Zoom in](../map/interact-with-map.md#my-location--zoom) |
-|**&#8595; **| Wunderlinq  | [Zoom out](../map/interact-with-map.md#my-location--zoom) |
-|**&#8593; **| Wunderlinq  | [Zoom in](../map/interact-with-map.md#my-location--zoom) |
-|**ESC**| Wunderlinq  | Opens Wunderlinq dashboard |
-
-:::note
-You can read more about the actions of external input devices on GitHub in the [MapActivityKeyListener](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82) package.
-:::
-
 
 </TabItem>
 
@@ -223,31 +189,43 @@ You can read more about the actions of external input devices on GitHub in the [
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
 
-After you need to choose your device *Type*: *<Translate ios="true" ids="sett_generic_ext_input"/>*, *<Translate ios="true" ids="sett_wunderlinq_ext_input"/>*.
-
 ![External devices](@site/static/img/map/external_types_ios.png)
-
-Each External input devices Type has *Key assignments*. Table with _Keys_ you can see below:
-
-| Key | Device | Action |
-|:------------|:---------------|:---------------|
-|**C**| Keyboard   | [My location](../map/interact-with-map.md#my-location--zoom) |
-|**D**| Keyboard   | [Map orientation](../map/interact-with-map.md#map-orientation-modes) |
-|**N**| Keyboard   | Open Navigation view. |
-|**S**| Keyboard   | Open [Search](../search/index.md) view. |
-|**P**| Keyboard   | Switch to the next app profile. Show toast like message **App profile: Name**. |
-|**O**| Keyboard   | Switch to the previous app profile. |
-|**&#8593; **| Keyboard   | Move up  |
-|**&#8595; **| Keyboard   | Move down  |
-|**&#8592; **| Keyboard   | Move left  |
-|**&#8594; **| Keyboard   | Move right  |
-|**&#43; **| Keyboard  | [Zoom in](../map/interact-with-map.md#my-location--zoom) |
-|**&#8722; **| Keyboard  | [Zoom out](../map/interact-with-map.md#my-location--zoom) |
-
 
 </TabItem>
 
 </Tabs>  
+
+- Enable the *External input device* feature.
+
+- Select the type of device:  
+    **<Translate android="true" ids="sett_generic_ext_input"/>**, **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**, **<Translate android="true" ids="sett_parrot_ext_input"/>** (*Android only*), or create [**your own type**](#assigning-custom-keys) (*Android only*).
+
+- Each type of external input device has a *<Translate android="true" ids="key_assignments"/>*. Tap on the *<Translate android="true" ids="key_assignments"/>* to see a list of actions and keys. The table of keys is shown below.
+
+- You can read more about external input device actions on GitHub in the [MapActivityKeyListener](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82) package.
+
+| Key | Device | Action |
+|:---------|:---------------|:---------------|
+|**C**| *Keyboard*   | [My location](../map/interact-with-map.md#my-location--zoom) |
+|**D**| *Keyboard*   | [Map orientation](../map/interact-with-map.md#map-orientation-modes) |
+|**N**| *Keyboard*   | Open Navigation view. |
+|**S**| *Keyboard*   | Open [Search](../search/index.md) view. |
+|**P**| *Keyboard*   | Switch to the next app profile. Show toast like message **App profile: Name**. |
+|**O**| *Keyboard*   | Switch to the previous app profile. |
+|**&#8593; **| *Keyboard*   | Move up  |
+|**&#8595; **| *Keyboard*   | Move down  |
+|**&#8592; **| *Keyboard*   | Move left  |
+|**&#8594; **| *Keyboard*   | Move right  |
+|**&#43; **| *Keyboard*  | [Zoom in](../map/interact-with-map.md#my-location--zoom) |
+|**&#8722; **| *Keyboard*  | [Zoom out](../map/interact-with-map.md#my-location--zoom) |
+|**&#8595; **| *Wunderlinq*  | [Zoom out](../map/interact-with-map.md#my-location--zoom) |
+|**&#8593; **| *Wunderlinq*  | [Zoom in](../map/interact-with-map.md#my-location--zoom) |
+| **ESC** | *Wunderlinq*  | Opens Wunderlinq dashboard |
+| **Menu** <br/> (*legacy Android*) | *Keyboard*  | [Drawer](../start-with/main-menu.md#main-menu-drawer) |
+| **Joystick click** <br/> (*legacy Android*) | *Keyboard*  | [My location](../map/interact-with-map.md#my-location--zoom) |
+| **Media button** <br/> (*Android only*)| *Keyboard*  | [AV notes](../plugins/audio-video-notes.md#add-note-on-the-map) |
+| **&#8592;** <br/> (*Android only*)| *Parrot*  | [Zoom out](../map/interact-with-map.md#my-location--zoom) |
+| **&#8594;** <br/> (*Android only*) | *Parrot*  | [Zoom in](../map/interact-with-map.md#my-location--zoom) |
 
 
 ### Extra Compass Settings  
@@ -273,7 +251,7 @@ You can turn off all map animations during map changes, such as gestures and but
 Creates a smooth map panning effect versus the *[My Position](../personal/profiles/#profile-appearance)* icon when in motion. The effect introduces a slight delay versus ground truth of about 1 second. Enabling this has been reported to create some pronounced lag issues under some circumstances, disable if such issues arise.
 
 
-## Assign Custom Keys
+## Assigning Custom Keys 
 
 <InfoAndroidOnly />
 
