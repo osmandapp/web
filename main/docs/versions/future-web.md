@@ -13,7 +13,7 @@ Web 1.01 is the latest web version of OsmAnd, which includes new useful features
 - New options for [map search](#explore-map-menu).
     - Update for [POIs context menu](#poi-context-menu).
     - POIs [Photo gallery](#photo-gallery).
-- Display of [Wikimedia images](#wikimedia-images) on the map (in testing).
+<!--- Display of [Wikimedia images](#wikimedia-images) on the map (in testing).-->
 - Added ability to provide [URLs for different web sections](#more-urls).
 - Updated icons for Favorites (expected in 4.8).
 - Added a special banner with information about the OsmAnd mobile version and a link (expected in 4.8).
@@ -75,7 +75,7 @@ Clicking on a POI opens a new context menu that includes:
 
 Clicking on the online photos opens the photo gallery. Here you can scroll through all POI photos.
 
-
+<!--
 ## Wikimedia Images
 
 ![Explore menu](../../blog/2024-07-01-web-1-01/img/wiki_photos.png)
@@ -85,7 +85,7 @@ This is a test version for developers.
 :::
 
 Added the feature to display Wikimedia images on the map.
-
+-->
 
 ## More URLs
 
