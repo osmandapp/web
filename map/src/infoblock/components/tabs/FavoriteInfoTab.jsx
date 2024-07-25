@@ -3,7 +3,7 @@ import { Folder, LocationOn } from '@mui/icons-material';
 import React, { useContext, useEffect, useState } from 'react';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import AppContext from '../../../context/AppContext';
-import MarkerOptions, { removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
+import { createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import EditWptDialog from '../../../dialogs/favorites/EditWptDialog';
 import DeleteWptDialog from '../../../dialogs/favorites/DeleteWptDialog';
 import FavoritesManager, {
@@ -70,12 +70,13 @@ const FavoriteInfoTab = () => {
                                 dangerouslySetInnerHTML={{
                                     __html:
                                         removeShadowFromIconWpt(
-                                            MarkerOptions.getWptIcon(
-                                                favorite?.marker,
-                                                favorite?.color,
-                                                favorite?.background,
-                                                favorite?.icon
-                                            ).options.html
+                                            createPoiIcon({
+                                                point: favorite?.marker,
+                                                color: favorite?.color,
+                                                background: favorite?.background,
+                                                hasBackgroundLight: false,
+                                                icon: favorite?.icon,
+                                            }).options.html
                                         ) + '',
                                 }}
                             />

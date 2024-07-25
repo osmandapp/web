@@ -12,7 +12,7 @@ import { isEmpty } from 'lodash';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { doSort } from '../actions/SortActions';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
-import { changeIconSizeWpt, removeShadowFromIconWpt } from '../../map/markers/MarkerOptions';
+import { changeIconSizeWpt, createPoiIcon, removeShadowFromIconWpt } from '../../map/markers/MarkerOptions';
 import { getCenterMapLoc } from '../../manager/MapManager';
 
 export default function FavoriteGroupFolder({ folder }) {
@@ -49,9 +49,17 @@ export default function FavoriteGroupFolder({ folder }) {
         if (ctx.favorites.mapObjs[group.name]?.markers) {
             let layers = ctx.favorites.mapObjs[group.name].markers._layers;
             Object.values(layers).forEach((value) => {
+                const wpt = getWptByTitle(value.options.title, ctx.favorites.mapObjs[group.name].wpts);
+                const icon = createPoiIcon({
+                    point: wpt,
+                    color: wpt.color,
+                    background: wpt.background,
+                    hasBackgroundLight: false,
+                    icon: wpt.icon,
+                }).options.html;
                 let marker = {
                     title: value.options.title,
-                    icon: changeIconSizeWpt(removeShadowFromIconWpt(value.options.icon.options.html), 18, 30),
+                    icon: changeIconSizeWpt(removeShadowFromIconWpt(icon), 18, 30),
                     layer: value,
                 };
                 markerList.push(marker);
@@ -71,6 +79,10 @@ export default function FavoriteGroupFolder({ folder }) {
         setMarkers([...markerList]);
         refMarkers.current = markerList;
     }, [ctx.favorites]);
+
+    function getWptByTitle(title, wpts) {
+        return wpts.find((wpt) => wpt.name === title);
+    }
 
     useEffect(() => {
         if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {

@@ -1,5 +1,5 @@
 import L from 'leaflet';
-import MarkerOptions from '../markers/MarkerOptions';
+import MarkerOptions, { createPoiIcon } from '../markers/MarkerOptions';
 import _ from 'lodash';
 import TracksManager, { GPX_FILE_TYPE, isProtectedSegment } from '../../manager/track/TracksManager';
 import EditablePolyline from './EditablePolyline';
@@ -186,7 +186,7 @@ function parseWpt(points, layers, ctx = null, data) {
     points &&
         points.forEach((point) => {
             let opt;
-            let icon = MarkerOptions.getWptIcon(point, point.color, point.background, point.icon);
+            let icon = createPoiIcon({ point, color: point.color, background: point.background, icon: point.icon });
             let pInfo = point.ext;
             let lat = point.lat ? point.lat : pInfo.lat;
             let lon = point.lon ? point.lon : pInfo.lon;

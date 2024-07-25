@@ -10,7 +10,7 @@ import wptTabStyle from '../../styles/WptTabStyle';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import { makeStyles } from '@material-ui/core/styles';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
-import MarkerOptions from '../../../map/markers/MarkerOptions';
+import { createPoiIcon } from '../../../map/markers/MarkerOptions';
 import _ from 'lodash';
 
 const useStyles = makeStyles({
@@ -61,7 +61,8 @@ const WaypointGroup = ({ ctx, group, points, defaultOpen, massOpen, massVisible 
     }, [massVisible]);
 
     const point = points[0].wpt;
-    const iconHTML = MarkerOptions.getWptIcon(point, point.color, point.background, point.icon).options.html;
+    const iconHTML = createPoiIcon({ point, color: point.color, background: point.background, icon: point.icon })
+        .options.html;
 
     return (
         <>

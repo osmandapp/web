@@ -1,6 +1,6 @@
 ---
-sidebar_position: 2
 title:  Tracks and Routes
+sidebar_position: 2
 ---
 
 import Tabs from '@theme/Tabs';
@@ -120,7 +120,9 @@ To show track on the map, you need to:
 
 *Show / hide* buttons allow to anable or disable displaying of a track on the map.
 
-## Analyze Track on Map  
+### Appearance
+
+### Analyze Track on Map  
 
 <Tabs groupId="operating-systems">
 
@@ -230,7 +232,7 @@ OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetma
 
 To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../../map/track-context-menu.md#info-panel). This will open the [Quick actions](../../map/track-context-menu.md#quick-actions) button panel where you will have access to track actions such as changing [*Appearance*](#track-appearance), [*Navigation*](#route-navigation), or editing [*Plan a route*](../../plan-route/create-route.md).
 
-### Route info
+**Route info**
 
 <Tabs groupId="operating-systems">
 
@@ -256,7 +258,7 @@ To save the route as a *GPX file*, tap the **Save (Download)** button under [Inf
 - *General*: Size, Location, Created on.
 - *Additional Info*: Type of activity.
 
-### Related OSM ID
+**Related OSM ID**
 
 <Tabs groupId="operating-systems">
 
@@ -277,7 +279,7 @@ To save the route as a *GPX file*, tap the **Save (Download)** button under [Inf
 A route may not have a name and reference, or the information may have been lost, in which case the corresponding **OSM ID** is displayed in the *Track Context Menu* and *Route info*. It is only visible if the [OpenStreetMap plugin](../../plugins/osm-editing.md) is enabled, it is not displayed as a name on the map, and tap the ID in Route info opens the related OSM ID (for example, [51855](https://www.openstreetmap.org/relation/51855)).
 
 
-### Graph
+**Graph**
 
 In *Tracks tab*, **Graph** displays track information in graphical form with a description of the details:
 - [*Overview*](../../map/track-context-menu.md#overview-1). Distanse, Time. 

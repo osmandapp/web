@@ -25,7 +25,7 @@ export default async function test() {
     await clickBy(By.id('se-select-categories'));
 
     await actionCheckPoi({ iconWpt, name: poiName });
-    await clickBy(By.id(`se-wpt-marker-icon-${iconWpt}-#ffffff-${poiName}`));
+    await clickBy(By.xpath(`//*[@title='Public Cafe']`));
     await waitBy(By.id(`se-poi-infoblock-${poiName}`));
 
     await actionFinish();

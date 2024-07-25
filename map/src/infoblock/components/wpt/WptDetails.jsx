@@ -30,7 +30,7 @@ import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info
 import { ReactComponent as FavoritesIcon } from '../../../assets/menu/ic_action_favorite.svg';
 import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
 import { cleanHtml, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
-import MarkerOptions, { changeIconSizeWpt, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
+import { changeIconSizeWpt, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import FavoritesManager, {
     getColorLocation,
     LOCATION_UNAVAILABLE,
@@ -75,7 +75,10 @@ export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldS
             dangerouslySetInnerHTML={{
                 __html:
                     changeIconSizeWpt(
-                        removeShadowFromIconWpt(MarkerOptions.getWptIcon(wpt, color, background, icon).options.html),
+                        removeShadowFromIconWpt(
+                            createPoiIcon({ point: wpt, color, background, hasBackgroundLight: false, icon }).options
+                                .html
+                        ),
                         iconSize,
                         shieldSize
                     ) + '',
