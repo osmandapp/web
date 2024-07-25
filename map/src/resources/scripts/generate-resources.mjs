@@ -33,6 +33,13 @@ generate({
     validate: (json) => json.some((x) => x === 'c_h_arrow.svg'),
 });
 
+// 3. WPT icons array based on list of svg-files
+generateSvgMap({
+    file: 'src/resources/generated/poiBackgroundIcons.json',
+    directory: 'src/assets/wpt',
+    validate: (json) => Object.keys(json).length > 0,
+});
+
 /**
  * @param file <String> file to store fresh data (and read/validate stale data)
  * @param json <JSON> ready to use JSON-object to filter, validate and store to file
@@ -77,6 +84,39 @@ function generate({ file, json, filter, validate }) {
     }
 
     throw new Error(`Fatal error: ${file} neither found nor generated`);
+}
+
+/**
+ * @param {string} file - The file to store the generated SVG map.
+ * @param {string} directory - The directory where the SVG files are located.
+ * @param {Function} validate - A function to validate the generated SVG map.
+ */
+function generateSvgMap({ file, directory, validate }) {
+    let svgMap = {};
+    const svgFiles = ls(directory);
+    if (svgFiles) {
+        svgFiles.forEach((svgFile) => {
+            const svgContent = readFileSync(`${directory}/${svgFile}`, 'utf-8');
+            if (svgContent) {
+                svgMap[svgFile] = svgContent;
+            }
+        });
+    }
+    ensureFileExists(file);
+    generate({ file, json: svgMap, validate });
+}
+
+/**
+ * Ensures that a file exists. If the file does not exist, creates the necessary directories for the file.
+ * @param {string} filePath - The path to the file.
+ */
+function ensureFileExists(filePath) {
+    if (!existsSync(filePath)) {
+        const directory = dirname(filePath);
+        if (!existsSync(directory)) {
+            mkdirSync(directory, { recursive: true });
+        }
+    }
 }
 
 function prettyJSON(smth) {

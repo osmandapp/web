@@ -1,4 +1,4 @@
-import MarkerOptions, { getSvgBackground } from '../map/markers/MarkerOptions';
+import MarkerOptions, { getBackground } from '../map/markers/MarkerOptions';
 import Utils from '../util/Utils';
 import _ from 'lodash';
 import { apiPost } from '../util/HttpApi';
@@ -48,7 +48,7 @@ function GroupResult(clienttimems, updatetimems, data) {
 function getShapesSvg(color) {
     let res = {};
     shapes.forEach((shape) => {
-        res[shape] = getSvgBackground(color, shape);
+        res[shape] = getBackground(color, shape);
     });
     return res;
 }
