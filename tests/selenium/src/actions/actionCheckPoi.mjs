@@ -10,14 +10,14 @@ export default async function test({
     hidden = false,
 }) {
     if (hidden) {
-        await waitByRemoved(By.id(`se-wpt-marker-background-${colorShape}-${shape}`));
+        await waitByRemoved(By.id(`se-poi-marker-background-${colorShape}-${shape}`));
         if (iconWpt) {
-            await waitByRemoved(By.id(`se-wpt-marker-icon-${iconWpt}-${colorIcon}-${name}`));
+            await waitByRemoved(By.id(`se-poi-marker-icon-${iconWpt}-${colorIcon}-${name}`));
         }
     } else {
-        await waitBy(By.id(`se-wpt-marker-background-${colorShape}-${shape}`));
+        await waitBy(By.id(`se-poi-marker-background-${colorShape}-${shape}`));
         if (iconWpt) {
-            await waitBy(By.id(`se-wpt-marker-icon-${iconWpt}-${colorIcon}-${name}`));
+            await waitBy(By.id(`se-poi-marker-icon-${iconWpt}-${colorIcon}-${name}`));
         }
     }
 }

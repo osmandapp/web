@@ -76,7 +76,11 @@ export function createPoiIcon({
               : DEFAULT_WPT_COLOR;
     colorBackground = Utils.hexToArgb(colorBackground);
     const shapeBackground = background ? background : point?.background;
-    const svg = getBackground(colorBackground, shapeBackground);
+    let svg = getBackground(colorBackground, shapeBackground);
+    if (svg) {
+        const idString = `id="se-poi-marker-background-${color}-${background}"`;
+        svg = svg.replace('<svg ', `<svg ${idString} `);
+    }
     const svgLight = hasBackgroundLight ? getBackgroundLight(shapeBackground) : '';
     const iconWpt =
         icon && icon !== 'null'

@@ -3,7 +3,7 @@ import AppContext, { OBJECT_TYPE_POI } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import _ from 'lodash';
 import L from 'leaflet';
-import { changeIconColor, createPoiIcon, getBackground } from '../markers/MarkerOptions';
+import { changeIconColor, createPoiIcon } from '../markers/MarkerOptions';
 import 'leaflet-spin';
 import PoiManager, {
     createPoiCache,
@@ -224,14 +224,22 @@ export default function PoiLayer() {
     }
 
     async function getPoiIcon(poi, cache, finalIconName) {
-        const svg = getBackground(DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE);
         if (finalIconName) {
             let svgData;
             if (cache[finalIconName]) {
                 svgData = cache[finalIconName];
-                const coloredSvg = changeIconColor(svgData, DEFAULT_ICON_COLOR);
-                const iconHtml = createPoiIcon({ color: DEFAULT_POI_COLOR, background: svg, svgIcon: coloredSvg })
-                    .options.html;
+                let coloredSvg = changeIconColor(svgData, DEFAULT_ICON_COLOR);
+                // Add the id attribute to the coloredSvg
+                const poiName = poi.properties[POI_NAME];
+                coloredSvg = coloredSvg.replace(
+                    '<svg',
+                    `<svg id="se-poi-marker-icon-${finalIconName}-${DEFAULT_ICON_COLOR}-${poiName}"`
+                );
+                const iconHtml = createPoiIcon({
+                    color: DEFAULT_POI_COLOR,
+                    background: DEFAULT_POI_SHAPE,
+                    svgIcon: coloredSvg,
+                }).options.html;
                 return L.divIcon({ html: iconHtml });
             }
         }
