@@ -29,7 +29,7 @@ Color palette data is available in the [*Maps & Resources*](../personal/maps.md#
 
 *Menu → Maps & Resources → Local → Colors*
 
-![Palettes](../../../blog/2024-06-19-android-4-8/img/colors.png)
+![Palettes](../../../blog/2024-07-26-android-4-8/img/colors.png)
 
 </TabItem>
 
@@ -51,13 +51,13 @@ Color palette data is available in the [*Maps & Resources*](../personal/maps.md#
 
 <TabItem value="android" label="Android">
 
-![Palettes](@site/blog/2024-06-19-android-4-8/img/palette.png)
+![Palettes](@site/blog/2024-07-26-android-4-8/img/palette.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Color palette](@site/blog/2024-06-19-android-4-8/img/color_altitude.png)
+![Color palette](@site/blog/2024-07-26-android-4-8/img/color_altitude.png)
 
 </TabItem>
 
@@ -120,9 +120,9 @@ The legend provides an easy way to view and understand the different markings on
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/blog/2024-06-19-android-4-8/img/legend.png').default} alt="AA"/></td>
-        <td><img src={require('@site/blog/2024-06-19-android-4-8/img/legend_1.png').default} alt="AA"/></td>
-        <td><img src={require('@site/blog/2024-06-19-android-4-8/img/legend_2.png').default} alt="AA"/></td>
+        <td><img src={require('@site/blog/2024-07-26-android-4-8/img/legend.png').default} alt="AA"/></td>
+        <td><img src={require('@site/blog/2024-07-26-android-4-8/img/legend_1.png').default} alt="AA"/></td>
+        <td><img src={require('@site/blog/2024-07-26-android-4-8/img/legend_2.png').default} alt="AA"/></td>
     </tr>
 </table>  
 
@@ -133,7 +133,7 @@ In this release, we have added the ability to switch between terrain color schem
 
 _Menu → Configure screen → Custom buttons → + → Add button → Add action → Topography → Change Terrain color scheme_
 
-![Color Scheme](@site/blog/2024-06-19-android-4-8/img/color_scheme.png)
+![Color Scheme](@site/blog/2024-07-26-android-4-8/img/color_scheme.png)
 
 
 ## Editor
@@ -144,8 +144,8 @@ _Menu → Configure screen → Custom buttons → + → Add button → Add actio
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/blog/2024-06-19-android-4-8/img/palette_editor.png').default} alt="AA"/></td>
-        <td><img src={require('@site/blog/2024-06-19-android-4-8/img/palette_editor_1.png').default} alt="AA"/></td>
+        <td><img src={require('@site/blog/2024-07-26-android-4-8/img/palette_editor.png').default} alt="AA"/></td>
+        <td><img src={require('@site/blog/2024-07-26-android-4-8/img/palette_editor_1.png').default} alt="AA"/></td>
     </tr>
 </table>  
 
