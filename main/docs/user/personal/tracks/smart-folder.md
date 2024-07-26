@@ -152,7 +152,7 @@ Osmand provides convenient track management tools, one of them is filtering in t
 ### Create Smart Folder
 
 To create a smart folder, follow these steps:
-1. **Tap the 3-dot menu icon in the upper right corner** of the screen in the *Tracks* tab. 
+1. **Tap the three-dot menu icon in the upper right corner** of the screen in the *Tracks* tab. 
 2. **Select the *Add smart folder*** option from the menu that appears after tapping the icon.
 3. **Set the parameters of the smart folder:**
    - **Name the folder** (Enter a new name) for identification.
@@ -165,7 +165,7 @@ After completing these steps, the Smart Folder will automatically collect and di
 
 ![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_2_andr.png)  
 
-Once created, the Smart folder is displayed with a special icon in the folder list in the Tracks tab. To manage it, tap the 3-dot menu in the folder field.
+Once created, the Smart folder is displayed with a special icon in the folder list in the Tracks tab. To manage it, tap the three-dot menu in the folder field.
 
 - **Details**. Opens the entire list of tracks in this folder.
 - **Show all tracks on the map**. If there are many tracks in a folder, it is not recommended to map them all, it may take a long time.
@@ -180,7 +180,7 @@ Once created, the Smart folder is displayed with a special icon in the folder li
 
 ![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_3_andr.png)  
 
-Go to the Smart folder and tap the menu with three dots in the upper right corner of the screen. The following actions are available in this menu:
+Go to the Smart folder and tap the three-dot menu in the upper right corner of the screen. The following actions are available in this menu:
 - [**Select**](#select-in-smart-folder). Allows you to select all or only certain tracks for further interaction with them.
 - **Refresh**. Updates the track list according to the specified filters.
 - [**Edit filter**](#filters-for-smart-folder). Moves to the Filter screen where you can configure track filtering for the folder.
@@ -203,16 +203,16 @@ This screen allows you to select the tracks you want, as well as a list of sugge
 ###  Export Tracks from Smart folder
 
 1. Exporting tracks that are in the Smart folder is available through the menu in the folder field of the Tracks tab.
-    - Tap the 3-dot menu, then select **Export**.
+    - Tap the three-dot menu, then select **Export**.
     - You will go to screen *Menu → Settings → Export to File → My Places → Tracks*.
     - Tap *Continue* and select an available resource to export the osf file.  
 
 2. Settings and the *Smart* folder itself belong to **Global Settings**, so you can export, import and save it to Cloud by selecting *OsmAnd Settings* in *Menu → Settings → Export to File → Settings*.
 
-3. You can export tracks using the [*Select*](#select-in-smart-folder) menu item in the 3-dot menu within a folder.
+3. You can export tracks using the [*Select*](#select-in-smart-folder) menu item in the three-dot menu within a folder.
 - Tap Smart folder in the folder list.
-- Tap the 3-dot menu in the upper right corner of the screen.
-- From the 3-dot menu, choose *Select*, then **Share**.
+- Tap the three-dot menu in the upper right corner of the screen.
+- From the three-dot menu, choose *Select*, then **Share**.
 
 
 ## Related Articles

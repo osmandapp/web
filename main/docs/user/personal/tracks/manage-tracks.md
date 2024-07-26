@@ -70,7 +70,7 @@ All tracks ever recorded, created or imported are automatically displayed in the
 </Tabs>  
 
 To open the folder menu, you need to:
-- *Android* - tap the 3-dot menu in the field with the required folder.
+- *Android* - tap the three-dot menu in the field with the required folder.
 - *iOS* - to make a long-tap the field of the folder.
 
 Actions:
@@ -105,7 +105,7 @@ Actions:
 </Tabs>  
 
 You can delete a folder with all the tracks it contains. To do this:
-- Tap the 3-dot menu of the folder you want to delete.
+- Tap the three-dot menu of the folder you want to delete.
 - At the bottom of the menu, find the Delete Folder option.
 - **NOTE** that this action is irreversible.
 
@@ -149,7 +149,7 @@ At the bottom of the list in the _Tracks_ tab, and below the list of tracks **in
 </Tabs>  
 
 Each track, like folders, has its menu. To open it: 
-- *Android* - tap the 3-dot menu in the field with the required track.
+- *Android* - tap the three-dot menu in the field with the required track.
 - *iOS* - long-tap the required track in the list.
 
 Menu with actions:
@@ -192,8 +192,8 @@ Menu with actions:
 1. **Actions**.
 - **Search**. Opens the track name search screen with a list of all existing tracks and the ability to sort them.  
 - **Cancel**. Closes the Search without applying the changes.
-- **Import**. Opens a list of files on your device for importing tracks. In Android, it is located in the 3-dot menu.
-- [Change appearance](../../map/tracks-on-map.md#track-appearance) (*Android only, located in the 3-dot menu*). Goes to the option of customising the appearance of the selected tracks.
+- **Import**. Opens a list of files on your device for importing tracks. In Android, it is located in the three-dot menu.
+- [Change appearance](../../map/tracks-on-map.md#track-appearance) (*Android only, located in the three-dot menu*). Goes to the option of customising the appearance of the selected tracks.
 - **Switch folder** (*Android only*). You can select the required folder from the list, which is especially convenient if there are many folders.
 
 2. **Sort for tracks**
@@ -375,7 +375,7 @@ Available:
 - [*Filter*](#filter) (Android only) if you need the specific characteristics of the track.
 
 
-### Three-Dots Menu
+### Three-Dot Menu
 
 <Tabs groupId="operating-systems">
 

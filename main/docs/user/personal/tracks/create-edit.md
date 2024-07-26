@@ -89,7 +89,7 @@ You can create a new track by starting a record in the Tracks tab or using the O
 
 - **New track**. In this field you can tap the *Start Recording* button to record a new track. You may need to confirm your [battery settings](#baterry-optimization) (for Android) before you start.
 - **Currently recording track** (*Android*) / **Recorded track** (*iOS*). 
-- [**Menu**](#folder-menu). Tapping the three dot menu (for Android) or long press (for iOS) opens the [track menu](#single-track-menu). During track recording, in this field you can see how many kilometers have already been recorded and how long the recording is in progress. The **Stop** button allows you to pause the recording, and to finish it, press the **Save** button.
+- [**Menu**](#folder-menu). Tapping the three-dot menu (*for Android*) or long press (*for iOS*) opens the [track menu](#single-track-menu). During track recording, in this field you can see how many kilometers have already been recorded and how long the recording is in progress. The **Stop** button allows you to pause the recording, and to finish it, press the **Save** button.
 
 #### Baterry Optimization (Android only)
 

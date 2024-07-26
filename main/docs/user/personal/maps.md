@@ -128,7 +128,7 @@ The Download tab allows you to download all presented map types from OsmAnd serv
 
 To download the required map, on the Download tab, find the section you are interested in and then the folder in it. Tap the folder to open a list of available maps. 
 1. **Maps that can be downloaded** will have a download icon. 
-2. **Downloaded maps** will have a green icon and either a 3-dot menu menu for Android or an *I* icon for iOS, in both cases located to the right of the map name field. 
+2. **Downloaded maps** will have a green icon and either a three-dot menu for Android or an *I* icon for iOS, in both cases located to the right of the map name field. 
 3. If you have the **free version of OsmAnd**, there will be a [GET](../purchases/index.md) icon next to the name of maps that are not available to you, which will take you to the purchase screen.  
 
 *Downloads tab consists of map groups:*
@@ -193,8 +193,8 @@ When you tap any element of the Local tab, the list of elements of this data cat
 **Actions:**
 
 - **Search** &#x1F50D;. Allows you to search for specific data by name only in the selected folder.
-- **3-dot menu**:
-    - **Select**. Allows you to select one or more items, after which you can choose from a 3-dot menu: *Delete*, *Deactivate* or *Activate*.
+- **Three-dot menu**:
+    - **Select**. Allows you to select one or more items, after which you can choose from a three-dot menu: *Delete*, *Deactivate* or *Activate*.
     - **Import**. Redirects to the device's internal storage where you can select a file to import.
 - [**Sorting option**](#additional-action-sorting-option). This action is not available in all items.
 
@@ -203,7 +203,7 @@ When you tap any element of the Local tab, the list of elements of this data cat
 
 ![Local category item actions 2](@site/static/img/personal/maps/local_menu_items_1_andr.png) ![Local category item actions](@site/static/img/personal/maps/local_menu_items_2_andr.png)  
 
-Each item in the list has its 3-dot menu. For most data categories, only two actions are available:
+Each item in the list has its three-dot menu. For most data categories, only two actions are available:
 - **Info**. Redirects to the *[Local data item overview](#local-data-item-overview)* screen.
 - **Export**. Redirects to the *Settings → Export to File* screen.  
 

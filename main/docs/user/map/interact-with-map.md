@@ -197,10 +197,10 @@ The keyboard continues to work even if the *External input devices* option is tu
 
 - Enable the *External input device* feature.
 
-- Select the type of device:  
-    **<Translate android="true" ids="sett_generic_ext_input"/>**, **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**, **<Translate android="true" ids="sett_parrot_ext_input"/>** (*Android only*), or create [**your own type**](#assigning-custom-keys) (*Android only*).
+- Select a device from those supported by OsmAnd by tapping the Type item in the list:  
+    **<Translate android="true" ids="sett_generic_ext_input"/>**, **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**, **<Translate android="true" ids="sett_parrot_ext_input"/>** (*Android only*), or create [**your own type**](#custom-keys-assignment) (*Android only*).
 
-- Each type of external input device has a *<Translate android="true" ids="key_assignments"/>*. Tap on the *<Translate android="true" ids="key_assignments"/>* to see a list of actions and keys. The table of keys is shown below.
+- There is a different key assignment for each type of external input device. Tap the *<Translate android="true" ids="key_assignments"/>* to see a list of actions and keys. The table of keys is shown below.
 
 - You can read more about external input device actions on GitHub in the [MapActivityKeyListener](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82) package.
 
@@ -251,15 +251,22 @@ You can turn off all map animations during map changes, such as gestures and but
 Creates a smooth map panning effect versus the *[My Position](../personal/profiles/#profile-appearance)* icon when in motion. The effect introduces a slight delay versus ground truth of about 1 second. Enabling this has been reported to create some pronounced lag issues under some circumstances, disable if such issues arise.
 
 
-## Assigning Custom Keys 
+## Custom Keys Assignment
 
 <InfoAndroidOnly />
 
-You can create your own [*<Translate android="true" ids="shared_string_type"/>*](#external-input-device-buttons) of keys for an external input device:
+### Add New Type
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
 ![External devices](@site/static/img/map/external_mypilot_android.png) ![External devices](@site/static/img/map/external_mypilot2_android.png)
+
+You can create your custom type with a set of actions for the keys of your external input device. 
+
+- Go to the [External Input Device](#external-input-device-buttons) setting, select *Type* from the list.
+- Tap the&nbsp; **＋** &nbsp;button in the upper right corner of the screen and enter a name.
+- Each new type has a three-dot menu next to it that includes actions such as:  
+    *Rename, Duplicate,* and *Remove.*
 
 Now, you can change buttons for actions. Just go to your created *<Translate android="true" ids="shared_string_type"/>*:
 
@@ -277,6 +284,8 @@ This way the user can assign his actions to the _External input device_ buttons.
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → Your type → <Translate android="true" ids="key_assignments"/> → Reset*.
  
 All key assignments for the selected type will be removed.
+
+### QA
 
 
 ## Related Articles

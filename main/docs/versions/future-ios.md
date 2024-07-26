@@ -93,7 +93,7 @@ We have improved the [appearance of the 3D track](../user/map/tracks-on-map.md#3
 
 ![Multi selection on My Tracks](../../blog/2024-06-20-ios-4-8/img/multi_selection.png) ![Multi selection on My Tracks](../../blog/2024-06-20-ios-4-8/img/multi_selection_1.png)
 
-[This menu item](https://osmand.net/docs/user/personal/tracks/manage-tracks#three-dots-menu) allows you [to select the folders and routes](https://osmand.net/docs/user/personal/tracks/manage-tracks#selection-mode) required for further management.
+[This menu item](https://osmand.net/docs/user/personal/tracks/manage-tracks#three-dot-menu) allows you [to select the folders and routes](https://osmand.net/docs/user/personal/tracks/manage-tracks#selection-mode) required for further management.
 
 
 ## 3D My location Icons

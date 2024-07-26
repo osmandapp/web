@@ -394,7 +394,7 @@ To **save** a custom filter, select filter types, and then:
 - Your filter will appear in the *Categories tab* list in the Search tool.  
 
 Another way to **save**:
-- Select *[category](#categories-poi-search) → [filter icon](#types-of-filters) →* select *types* of characteristics *→ 3-dot menu → Save filter*.
+- Select *[category](#categories-poi-search) → [filter icon](#types-of-filters) →* select *types* of characteristics *→ three-dot menu → Save filter*.
 
 
 ### Edit an Existing Filter
@@ -421,10 +421,10 @@ From the main screen:
 - Select the *Categories* tab.
 - Select a saved custom category, the search results screen appears.
 - Tap the *Filter* icon next to *Show on Map* to open the *Filters* screen.
-- Tap the *3-dot menu*.
+- Tap the *three-dot menu*.
 - In the drop-down menu, select **Edit filter**.
 - To save a custom POI search after editing:  
-    - Select POI categories and filter types for them *→* tap *Show → 3-dot menu → Save As →* enter a new filter name or *save* changes to the current one.
+    - Select POI categories and filter types for them *→* tap *Show → three-dot menu → Save As →* enter a new filter name or *save* changes to the current one.
 
 
 ### Delete Custom POI Filter
@@ -449,7 +449,7 @@ You can only delete categories that were created using filters or custom search.
 
 - Go to the [*Categories* tab](#categories-poi-search) and select the required one.
 - In the field next to *Show on Map*, tap the icon representing the *filter*.
-- In the *Filters* menu, tap the *3-dot menu* ( &#8285; ) located in the upper right corner of the screen.
+- In the *Filters* menu, tap the *three-dot menu* ( &#8285; ) located in the upper right corner of the screen.
 - Select **Delete Filter**.
 - ***You cannot undo the deletion.***
 

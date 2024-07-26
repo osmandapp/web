@@ -96,7 +96,7 @@ You can read additional information in the [Tracks](../map/tracks-on-map.md) art
 </Tabs>
 
 To show track on the map, you need to:
-- *Android* - tap the three-dots menu in the field with the required track.
+- *Android* - tap the three-dot menu in the field with the required track.
 - *iOS* - long-tap the required track in the list.
 
 #### Tracks in Track Context menu

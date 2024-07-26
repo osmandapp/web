@@ -259,7 +259,7 @@ Custom Buttons are a unique type of **Quick Action** tool. This means you can cr
 - Then enter a name for the created button and tap **Save**.
 - After adding a new button, it will appear in the Custom Buttons list. You can then assign one or more [actions](#add-new-action) to the newly created and enabled custom button.
 - All available actions are identical to those found in [Quick Action types](#quick-action-types).
-- You can add created custom buttons using the *3-dot menu →* **Copy from another profile**.
+- You can add created custom buttons using the *three-dot menu →* **Copy from another profile**.
 - When a custom button is created and enabled, it will be displayed on the screen. [It can be moved](#enable-widget) to any location on the screen, similar to a *Quick Action button*.
 
 <!-- ![Custom button Android](@site/static/img/widgets/custom_button_4_android.png) -->
@@ -272,10 +272,12 @@ Tapping a custom button instantly switches the selected action on or off. If mor
 
 ![Custom button Android](@site/static/img/widgets/custom_button_rename_andr.png)  ![Custom button Android](@site/static/img/widgets/custom_button_del_andr.png)  
 
-To manage custom buttons, you can tap on one of them, then tap the *3-dot menu* in the top right corner of the screen and select an action.
+To manage custom buttons, you can tap on one of them, then tap the *three-dot menu* in the top right corner of the screen and select an action.
 
 - **Rename**. Allows you to change the name of your button.
 - **Delete**. Allows you to delete your button with all added actions.
+
+### Custom Keys Assignment
 
 
 ## Related Articles
