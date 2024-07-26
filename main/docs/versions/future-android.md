@@ -53,7 +53,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 ## Altitude of Terrain Color Scheme
 
-![Color palette](../../blog/2024-06-19-android-4-8/img/color_altitude.png)
+![Color palette](../../blog/2024-07-26-android-4-8/img/color_altitude.png)
 
 The feature displays the altitude of the terrain in different colors, which greatly improves the visual perception of the map. Easily recognizable different altitude levels with [new color palette](../user/plugins/contour-lines.md#terrain) helps you better navigate the terrain and distinguish uplands from lowlands.  
 
@@ -69,12 +69,12 @@ Color palette data is available in the [_Maps & Resources_](../user/personal/map
 
 *Menu → Maps & Resources → Local → Colors*
 
-![Palettes](../../blog/2024-06-19-android-4-8/img/colors.png)
+![Palettes](../../blog/2024-07-26-android-4-8/img/colors.png)
 
 
 ## Custom Color Palettes
 
-![Palettes](../../blog/2024-06-19-android-4-8/img/palette.png)
+![Palettes](../../blog/2024-07-26-android-4-8/img/palette.png)
 
 You can add your custom color palettes to OsmAnd. To do this, create a TXT file with the required name:
 - *Routes*: `route_speed_name.txt`, `route_slope_default.txt`, `route_elevation_default.txt`.
@@ -106,8 +106,8 @@ _Terrain → Modify (Colour scheme) → All colors → &#8942; → Edit_
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/blog/2024-06-19-android-4-8/img/palette_editor.png').default} alt="AA"/></td>
-        <td><img src={require('@site/blog/2024-06-19-android-4-8/img/palette_editor_1.png').default} alt="AA"/></td>
+        <td><img src={require('@site/blog/2024-07-26-android-4-8/img/palette_editor.png').default} alt="AA"/></td>
+        <td><img src={require('@site/blog/2024-07-26-android-4-8/img/palette_editor_1.png').default} alt="AA"/></td>
     </tr>
 </table>  
 
@@ -118,7 +118,7 @@ The palette editor allows you to create and edit custom color schemes to persona
 
 *Menu → Configure screen → Custom buttons → + → Add button → Add action → Topography → Change Terrain color scheme*  
 
-![Color Scheme](../../blog/2024-06-19-android-4-8/img/color_scheme.png)
+![Color Scheme](../../blog/2024-07-26-android-4-8/img/color_scheme.png)
 
 In this release, we have added the ability to switch between [terrain](../user/plugins/contour-lines.md#terrain) color palettes, similar to switching between layers. This can be done using the Quick Actions tool.  
 
@@ -126,9 +126,9 @@ In this release, we have added the ability to switch between [terrain](../user/p
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/blog/2024-06-19-android-4-8/img/legend.png').default} alt="AA"/></td>
-        <td><img src={require('@site/blog/2024-06-19-android-4-8/img/legend_1.png').default} alt="AA"/></td>
-        <td><img src={require('@site/blog/2024-06-19-android-4-8/img/legend_2.png').default} alt="AA"/></td>
+        <td><img src={require('@site/blog/2024-07-26-android-4-8/img/legend.png').default} alt="AA"/></td>
+        <td><img src={require('@site/blog/2024-07-26-android-4-8/img/legend_1.png').default} alt="AA"/></td>
+        <td><img src={require('@site/blog/2024-07-26-android-4-8/img/legend_2.png').default} alt="AA"/></td>
     </tr>
 </table>  
 
@@ -137,7 +137,7 @@ The legend provides an easy way to view and understand the different markings on
 
 ## Profile Appearance Redesign
 
-![3D icon](../../blog/2024-06-19-android-4-8/img/profile_appearance.png)
+![3D icon](../../blog/2024-07-26-android-4-8/img/profile_appearance.png)
 
 The [appearance of profiles](../user/personal/profiles.md#profile-appearance) has been improved to make them more interesting, recognizable, and usable. 
 
@@ -154,7 +154,7 @@ The update includes:
 
 ## 3D My Location Icons
 
-![3D icon](../../blog/2024-06-19-android-4-8/img/3d_icon.png)
+![3D icon](../../blog/2024-07-26-android-4-8/img/3d_icon.png)
 
 A new 3D view has been added for [My Location](../user/personal/profiles.md#profile-appearance) icons, which improves their visualization on the map. These changes bring the appearance of the icons in alignment with the 3D tilt of the map.  
 
@@ -163,7 +163,7 @@ A new 3D view has been added for [My Location](../user/personal/profiles.md#prof
 
 ## Quick Actions Tool Update
 
-![External Buttons](../../blog/2024-06-19-android-4-8/img/external_buttons.png) ![External Buttons](../../blog/2024-06-19-android-4-8/img/external_buttons_2.png)
+![External Buttons](../../blog/2024-07-26-android-4-8/img/external_buttons.png) ![External Buttons](../../blog/2024-07-26-android-4-8/img/external_buttons_2.png)
 
 The updated **Add Action** screen makes it easier to customize and add [*Quick actions*](../user/widgets/quick-action.md), improving access to important features. You can now find groups of actions, use the search function, and apply other actions to customize the *Quick Actions tool*, contributing to a better user experience.
 
@@ -173,14 +173,14 @@ Added a new quick action *Show/Hide [Routes on the map](../user/map/vector-maps.
 
 ### Quick Actions to External Keyboard
 
-![External Buttons](../../blog/2024-06-19-android-4-8/img/external_buttons.png) ![External Buttons](../../blog/2024-06-19-android-4-8/img/external_buttons_1.png)
+![External Buttons](../../blog/2024-07-26-android-4-8/img/external_buttons.png) ![External Buttons](../../blog/2024-07-26-android-4-8/img/external_buttons_1.png)
 
 You can now assign all Quick Actions to [external keyboard buttons](../user/map/interact-with-map.md#settings). This is especially useful if you often work with the application using external input devices and need quick access to basic functions. The ability to customize quick actions in this way makes working with OsmAnd more flexible and efficient.  
 
 
 ## Weather Tool Improvements
 
-![weather](../../blog/2024-06-19-android-4-8/img/weather_annimation.gif)
+![weather](../../blog/2024-07-26-android-4-8/img/weather_annimation.gif)
 
 Layer animations and improved labels make the weather interface more visual and informative. These changes help you better understand current weather conditions and forecasts. Improved label visibility makes navigating weather data much easier.  
 
@@ -201,7 +201,7 @@ Additional **Weather source options**.
 
 ## 3D Track Improvements
 
-![3D track](../../blog/2024-06-19-android-4-8/img/track_3d.png)
+![3D track](../../blog/2024-07-26-android-4-8/img/track_3d.png)
 
 Updated 3D track visualizations provide a more detailed view of routes.  In this release, we have added the following improvements to the [3D track appearance](../user/map/tracks-on-map.md#track-appearance). 
 
@@ -218,7 +218,7 @@ Updated 3D track visualizations provide a more detailed view of routes.  In this
 
 *[Navigation settings](../user/navigation/guidance/navigation-settings) → Other → Detailed track guidance*  
 
-![Guidance for track](../../blog/2024-06-19-android-4-8/img/track_guidance.png)  
+![Guidance for track](../../blog/2024-07-26-android-4-8/img/track_guidance.png)  
 
 A new Detailed track guidance setting has been added for the [*Attach to the roads*](../user/navigation/setup/gpx-navigation.md#attach-to-the-roads) feature. The options for using the feature are:
 - **Ask every time**. The button is always displayed when you create a route using *Follow track* in the Navigation menu.
@@ -228,7 +228,7 @@ A new Detailed track guidance setting has been added for the [*Attach to the roa
 <!--
 ## GPX Track Acitivity
 
-![3D track](../../blog/2024-06-19-android-4-8/img/track_activity.png)
+![3D track](../../blog/2024-07-26-android-4-8/img/track_activity.png)
 
 The new feature of adding **Activity** to a recorded GPX track improves navigation and track management. This increases the convenience of working with track recordings.
 -->
@@ -236,7 +236,7 @@ The new feature of adding **Activity** to a recorded GPX track improves navigati
 
 ## Login to OpenStreetMap
 
-![OSM Oath](../../blog/2024-06-19-android-4-8/img/osm_oath.png)
+![OSM Oath](../../blog/2024-07-26-android-4-8/img/osm_oath.png)
 
 To improve security, the option to authorize via login and password has been removed. As of June 1, 2024, only the new secure OAuth 2.0 method will be supported.  This authorization method provides a higher level of information security to help protect your data and prevent unauthorized access.
 
@@ -249,14 +249,14 @@ The Use username and password button has been removed from:
 
 ## More Favorite Icons
 
-![Favorite icons](../../blog/2024-06-19-android-4-8/img/favorite_icons.png)
+![Favorite icons](../../blog/2024-07-26-android-4-8/img/favorite_icons.png)
 
 A complete list of [icons for Favorites](../user/personal/favorites.md#create-and-edit) has been added, which helps to organize and visualize them better. This allows you to search and select an icon for a favorite in a *Сustom POI search* from the icon library, making the use of favorites more convenient and efficient.  
 
 
 ## Water Category of POIs
 
-![Water](../../blog/2024-06-19-android-4-8/img/water_poi.png)
+![Water](../../blog/2024-07-26-android-4-8/img/water_poi.png)
 
 The new POI [Water (Man made)](https://github.com/osmandapp/OsmAnd/issues/16021) category includes objects with drinking water sources. Searching this [сategories](../user/search/search-poi.md#categories-poi-search) will help you easily find water on the map when traveling.  
 
