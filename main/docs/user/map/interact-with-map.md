@@ -255,8 +255,6 @@ Creates a smooth map panning effect versus the *[My Position](../personal/profil
 
 <InfoAndroidOnly />
 
-### Add New Type
-
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
 ![External devices](@site/static/img/map/external_mypilot_android.png) ![External devices](@site/static/img/map/external_mypilot2_android.png)
@@ -267,6 +265,13 @@ You can create your custom type with a set of actions for the keys of your exter
 - Tap the&nbsp; **＋** &nbsp;button in the upper right corner of the screen and enter a name.
 - Each new type has a three-dot menu next to it that includes actions such as:  
     *Rename, Duplicate,* and *Remove.*
+
+After you have created your custom type for the keys, you can assign the required actions to them.
+
+- Select a device type, then tap the *Key assignments* item.
+- A list of actions for *Keyboard* will open by default. You can delete unnecessary actions using the *Edit button* in the upper right corner of the screen.
+- You can remove one action per action, with the **−** button in the item field.
+- It is possible to remove all key assignments for the selected type by tapping the button in the upper right corner of the screen next to the *Edit name*.
 
 Now, you can change buttons for actions. Just go to your created *<Translate android="true" ids="shared_string_type"/>*:
 
@@ -284,8 +289,6 @@ This way the user can assign his actions to the _External input device_ buttons.
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → Your type → <Translate android="true" ids="key_assignments"/> → Reset*.
  
 All key assignments for the selected type will be removed.
-
-### QA
 
 
 ## Related Articles
