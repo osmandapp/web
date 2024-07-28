@@ -175,6 +175,8 @@ One of the main functions of the external input device buttons is to zoom in and
 The keyboard continues to work even if the *External input devices* option is turned off, when *None* is selected. 
 :::
 
+#### Setup
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -257,38 +259,37 @@ Creates a smooth map panning effect versus the *[My Position](../personal/profil
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
-![External devices](@site/static/img/map/external_mypilot_android.png) ![External devices](@site/static/img/map/external_mypilot2_android.png)
+![External devices](@site/static/img/map/external_mypilot_android.png)  ![External devices](@site/static/img/map/external_mypilot2_android.png)
 
-You can create your custom type with a set of actions for the keys of your external input device. 
+- **Create.**   
+    You can create your custom type with a set of actions for the keys of your external input device. 
 
-- Go to the [External Input Device](#external-input-device-buttons) setting, select *Type* from the list.
-- Tap the&nbsp; **＋** &nbsp;button in the upper right corner of the screen and enter a name.
-- Each new type has a three-dot menu next to it that includes actions such as:  
-    *Rename, Duplicate,* and *Remove.*
+    - Go to the [External Input Device](#external-input-device-buttons) setting, select *Type* from the list.
+    - Tap the&nbsp;  "**＋**"  &nbsp;button in the upper right corner of the screen and enter a name.
+    - Each new type has a three-dot menu next to it that includes actions such as:  
+        *Rename, Duplicate,* and *Remove.*
 
-After you have created your custom type for the keys, you can assign the required actions to them.
+- **Assign and delete actions.**  
+    After you have created your custom type for the keys, you can assign the required actions to them.
 
-- Select a device type, then tap the *Key assignments* item.
-- A list of actions for *Keyboard* will open by default. You can delete unnecessary actions using the *Edit button* in the upper right corner of the screen.
-- You can remove one action per action, with the **−** button in the item field.
-- It is possible to remove all key assignments for the selected type by tapping the button in the upper right corner of the screen next to the *Edit name*.
+    - Select a device type, then tap the *Key assignments* item.
+    - **Delete.** A list of actions for *Keyboard* will open by default. You can delete unnecessary actions using the *Edit button* in the upper right corner of the screen:
+        - Remove one action per action, with the&nbsp;  "**−**"  &nbsp;button in the item field.
+        - Remove all key assignments for the selected type by tapping the button in the upper right corner of the screen next to the *Edit name*.  
+        ![External devices](@site/static/img/map/external_custom_1_andr.png)    
 
-Now, you can change buttons for actions. Just go to your created *<Translate android="true" ids="shared_string_type"/>*:
+    - **Edit existing actions.** Tap an action from the list. There are two buttons in the upper right corner of the screen:
+        - The **three-dot menu** allows you to *Rename* the action or *Remove* the keys assigned to it.
+        - With the **Edit** button you can delete an existing action and [add a new](../widgets/quick-action.md#custom-buttons) one. The original main name of the action-key bundle is not changed.  
+        Also in this mode, you can add a new key and assign an additional keys to the selected action.  
+        ![External devices](@site/static/img/map/external_custom_2_andr.png)
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → Your type → <Translate android="true" ids="key_assignments"/> → Click to any Actions or Map interactions → &#43; or <Translate android="true" ids="shared_string_button"/>*
-
-![External devices](@site/static/img/map/external_assign_android.png)
-
-Now, press the button on your device to assign it to the action.
-
-![External devices](@site/static/img/map/external_assign2_android.png)
-
-If this button is used for another action you see a warning about it and a question about the reassignment.
-This way the user can assign his actions to the _External input device_ buttons. You can reset key assignments by clicking to _Reset button_ in the top corner of the screen:
-
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → Your type → <Translate android="true" ids="key_assignments"/> → Reset*.
- 
-All key assignments for the selected type will be removed.
+    - **Add new key asssigment.** You can create a key assignment from scratch.
+        - Tap the *Add* button in the bottom right corner of the screen. 
+        - Select the required action then tap the *Add key* field and press the button on your device to assign it to the action.  
+        ![External devices](@site/static/img/map/external_custom_3_andr.png)
+   
+If the button you assign is already being used for another action, you will receive a notification with the option to reassign the button or cancel the assignment. 
 
 
 ## Related Articles
