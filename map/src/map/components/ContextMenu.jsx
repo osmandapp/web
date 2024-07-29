@@ -125,6 +125,12 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
         ctx.setAddFavorite({ ...ctx.addFavorite });
     }
 
+    function addWpt(latlng) {
+        ctx.addFavorite.location = latlng;
+        ctx.addFavorite.editTrack = true;
+        ctx.setAddFavorite({ ...ctx.addFavorite });
+    }
+
     function formattingRegions(regions) {
         return regions.join(', ').replaceAll('_', ' ');
     }
@@ -213,6 +219,22 @@ export default function ContextMenu({ setGeocodingData, setRegionData }) {
                                 {t('plan_route_create_new_route')}
                             </ListItemText>
                         </MenuItem>
+                        {/*Add wpt */}
+                        {ctx.createTrack?.enable && (
+                            <>
+                                <MenuItem
+                                    id={'se-add-wpt-action'}
+                                    className={styles.contextMenuItem}
+                                    onClick={() => handleMenuItemClick(addWpt)}
+                                >
+                                    <ListItemIcon className={styles.contextMenuIcon}>
+                                        <FavoriteAddIcon />
+                                    </ListItemIcon>
+                                    <ListItemText className={styles.contextMenuItemText}>Add Wpt</ListItemText>
+                                </MenuItem>
+                                <Divider className={styles.dividerMenu} />
+                            </>
+                        )}
                         {/*Add favorite */}
                         <MenuItem
                             id={'se-add-favorite-action'}
