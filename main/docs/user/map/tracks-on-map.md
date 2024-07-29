@@ -286,7 +286,7 @@ This tool allows you to view track information using graphs and maps.
 
 ![Route on the map Android](@site/static/img/map/route_layer_android.png) ![Route on the map iOS](@site/static/img/map/route_layer_ios.png)  
 
-The navigation route is displayed on the map as a solid line with your specified [Start point](../../navigation/setup/gpx-navigation.md#custom-start--finish--points) and the plotted route along [selected track](../../navigation/setup/gpx-navigation.md#follow-track-menu). It is visible during navigation or the [Route preparation](../../navigation/setup/route-navigation.md) stage.
+The navigation route is displayed on the map as a solid line with your specified [Start point](../navigation/setup/gpx-navigation.md#custom-points) and the plotted route along [selected track](../navigation/setup/gpx-navigation.md#follow-track-menu). It is visible during navigation or the [Route preparation](../navigation/setup/route-navigation.md) stage.
 
 
 ## Routes on the Map
