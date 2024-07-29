@@ -327,7 +327,11 @@ export default function RouteMenu() {
             {avoidRoads.map((item, ind) => (
                 <MenuItem key={'avoid_' + (ind + 1)} sx={{ ml: 1, mr: 2, mt: 1 }} disableRipple={true}>
                     <FormControl fullWidth>
-                        <Link target="_blank" rel="noopener" href={'https://openstreetmap.org/way/' + item.id / 64}>
+                        <Link
+                            target="_blank"
+                            rel="noopener"
+                            href={'https://openstreetmap.org/way/' + Math.floor(item.id / 64)}
+                        >
                             Avoid {item.name}
                         </Link>
                     </FormControl>
