@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 OsmAnd has many powerful features to display various routes on the map. Routes could be built as part of Navigation, created via Plan Route, imported as GPX tracks, recorded via Trip Recording plugin or browsed and selected from OpenStreetMap data.
 
 
-## Type of routes on the map
+## Types of Tracks and Routes
 
 OsmAnd can display several different type of routes:
 
@@ -32,15 +32,13 @@ OsmAnd can display several different type of routes:
 2. [Navigation Route](#navigation-route) - a route line displayed during [navigation](../navigation/setup/route-navigation.md). By default this is a solid transparent blue line, though default appearance depends on [vector map style](../map/vector-maps.md#default-map-styles), [day & night mode](../map/vector-maps.md#map-mode). It's also possible to fully customize it on Android.
 3. [Routes and route networks on the map](#routes-on-the-map) - special [objects](../map/vector-maps.md#routes) on the map from [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route) data and provided with standard vector maps. They typically represent popular local routes and could be displayed in many ways (shields, color, thickness, pattern). To use these types of routes you will need to enable them on the map.
 
-Read more about [GPX Tracks](../personal/tracks/create-edit.md).
-[GPX Tracks](../personal/tracks/create-edit.md).
 
 ## Tracks 
 
 OsmAnd provides the ability to record and display tracks. This allows you to get location, movement, distance, altitude and travel time data and analyze track data.
 
 
-### Display tracks on the map
+### Display Tracks on the Map
 
 OsmAnd allows you [to view tracks on a map](../map/tracks-on-map.md). Each point on the track corresponds to a specific location and contains information about time, speed and altitude. This allows you to visually assess the route, learn about the places you have visited and estimate the difficulty of the route by changes in altitude.  
 
@@ -49,8 +47,10 @@ You can choose which tracks to show on the map and which to hide. You can do thi
 ![Tracks on the map Android](@site/static/img/map/tracks_layer_android.png) ![Tracks on the map iOS](@site/static/img/map/tracks_layer_ios.png) 
 
 
-#### Tracks in Configure map menu
+- **Tracks in Configure map menu**. You can read additional information in the [Tracks](../map/tracks-on-map.md) article.  
+(*The information is in the writing process.*)
 
+<!--
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -70,12 +70,12 @@ You can choose which tracks to show on the map and which to hide. You can do thi
 </TabItem>
 
 </Tabs>
+-->
 
-You can read additional information in the [Tracks](../map/tracks-on-map.md) article.
+- **Tracks in My Places menu**. To show track on the map, you need to: *Android* - tap the three-dot menu in the field with the required track, *iOS* - long-tap the required track in the list.  
+(*The information is in the writing process.*)
 
-
-#### Tracks in My Places menu
-
+<!--
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -94,13 +94,12 @@ You can read additional information in the [Tracks](../map/tracks-on-map.md) art
 </TabItem>
 
 </Tabs>
+-->
 
-To show track on the map, you need to:
-- *Android* - tap the three-dot menu in the field with the required track.
-- *iOS* - long-tap the required track in the list.
+- **Tracks in Track Context menu**. *Show / hide* buttons allow to anable or disable displaying of a track on the map.  
+(*The information is in the writing process.*)
 
-#### Tracks in Track Context menu
-
+<!--
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -116,8 +115,8 @@ To show track on the map, you need to:
 </TabItem>
 
 </Tabs>
+-->
 
-*Show / hide* buttons allow to anable or disable displaying of a track on the map.
 
 ## Track Appearance
 
@@ -136,19 +135,19 @@ There are three ways to access the Track Appearance menu:
 - Go to *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> → &#8942; → <Translate android="true" ids="change_appearance"/>* for the tracks you have selected to be displayed on the map. 
 
 
-### Split interval
+### Split Interval
 
 ![Track menu Appearance Split interval](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Split interval](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
 
 select the interval at which distance or time stamps are displayed on the track.  
 
-### Direction arrows
+### Direction Arrows
 
 ![Track menu Appearance direction arrows Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png) 
 
 select the interval at which distance or time stamps are displayed on the track.  
 
-### Show start and finish icons
+### Show Start and Finish Icons
 
 ![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
@@ -226,11 +225,11 @@ This [Paid feature](../purchases/index.md) allows you to display tracks by eleva
 - *<Translate android="true" ids="vertical_exaggeration"/>* : None to x3.0 - Adjust the level of vertical exaggeration for the 3D track.  
 - *<Translate android="true" ids="wall_height"/>* (if you choose <Translate android="true" ids="visualized_by,fixed_height"/>) : None to 2000 m - by changing the scale value, you can change 3D track height.
 
-### Join gaps
+### Join Gaps
 
 the gaps between segments will be connected. 
 
-### Reset to original
+### Reset to Original
 
 resets all settings to default values. 
 
@@ -285,13 +284,12 @@ This tool allows you to view track information using graphs and maps.
 
 ## Navigation Route
 
-
-Navigation route is a solid line prepared by [Route Preparation process](../navigation/setup/route-navigation.md). It is displayed during Navigation or during Route preparation step.
-
 ![Route on the map Android](@site/static/img/map/route_layer_android.png) ![Route on the map iOS](@site/static/img/map/route_layer_ios.png)  
 
+The navigation route is displayed on the map as a solid line with your specified [Start point](../navigation/setup/gpx-navigation.md#custom-points) and the plotted route along [selected track](../navigation/setup/gpx-navigation.md#follow-track-menu). It is visible during navigation or the [Route preparation](../navigation/setup/route-navigation.md) stage.
 
-## Routes on the map
+
+## Routes on the Map
 
 <Tabs groupId="operating-systems">
 
@@ -345,7 +343,7 @@ OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetma
 
 To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../map/track-context-menu.md#info-panel). This will open the [Quick actions](../map/track-context-menu.md#quick-actions) button panel where you will have access to track actions such as changing [*Appearance*](#track-appearance), [*Navigation*](#route-navigation), or editing [*Plan a route*](../plan-route/create-route.md).
 
-### Route info
+### Route Info
 
 <Tabs groupId="operating-systems">
 
@@ -400,15 +398,28 @@ In *Tracks tab*, **Graph** displays track information in graphical form with a d
 - Provides access to [*Analyze on map*](#analyze-track-on-map) feature
 - *Option menu*. Edit, Delete, Split interval.
 
+
+## Quick Actions for Routes
+
+<InfoAndroidOnly />
+
+*<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action,quick_action_new_action,quick_action_add_configure_map"/>*  
+
+![Route info](@site/static/img/map/qa_routes_andr.png)
+
+Using the *Quick Actions* map buttons, you can switch the visibility of different types of routes.  
+The main settings for *Show or Hide routes* can be found in the Configure Map menu. In the [Vector Maps article](../map/vector-maps.md#routes), you can find a description and the entire list of routes available for display. If you want quick access to this map configuration, use the *Custom Button* tool.
+- Go to [Add action](../widgets/quick-action.md#custom-buttons): *Menu → Configure screen → Custom buttons → Quick action → Add action → Configure map*.
+- Add one or more QA buttons to change the visibility of particular routes.
+
+
+
 ## Read more
 
-- ["Routes on the map" blog article](https://docs.osmand.net/blog/routes)  
+- [*Routes on the map* blog article](https://docs.osmand.net/blog/routes)  
 - [Track Context menu](../map/track-context-menu.md)  
 - [Configure map](../map/configure-map-menu.md)  
 - [Navigation by track](../navigation/setup/gpx-navigation.md)  
 - [GPX tracks](../personal/tracks/create-edit.md)  
-- [Tracks on the map](../map/tracks-on-map.md)  
 - [Plan route](../plan-route/index.md)  
 - [Trip Recording](../plugins/trip-recording.md)  
-- [Analyze on Map](../map/tracks-on-map.md)  
-

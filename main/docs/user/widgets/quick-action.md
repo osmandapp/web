@@ -188,23 +188,21 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 
 | Action | Description |
 |:-------------|:-------------|
-| <Translate ios="true" ids="toggle_fav"/> | Show or hide the favourite points on the map. |
-| <Translate ios="true" ids="show_hide_gpx"/> | Show or hide the last visible tracks on the map. |
-| <Translate ios="true" ids="toggle_poi"/> | Enable or disable POI layer with selected categories. <br /> - **POI Categories**: allows to select multiple categories <br /> Note: Action will replace previously selected categories, if POI layer was active before.   |
-| [<Translate ios="true" ids="toggle_public_transport"/>](../map/vector-maps.md#transport) | Enable or disable public transport map layer. <br /> - **Transport type** (on first click): select one or many options from 'Transport stops', 'Bus, trolleybus, shuttle routes', 'Tram and train routes', 'Subway routes' |
+| Show / Hide <br /> [Routes](../map/vector-maps.md#routes) | You can select route types to enable or disable their display. <br /> - *Cycle routes* <br /> - *Mountain bike routes* <br /> - *Hiking routes* <br /> - *Difficulty classification* <br /> - *Ski slopes* <br /> - *Horse routes* <br /> - *Whitewater sports* <br /> - *Running routes* <br /> - *Fitness trails* <br /> - *Travel routes* |
+| Show / Hide <br /> [Weather layers](../plugins/weather.md#weather-layers) | All weather data is presented as separate map layers. With Quick Action you can get quick access to switch the visibility of these layers on the map. <br /> - *Precipitation layer* <br /> - *Cloud layer* <br /> - *Pressure layer* <br /> - *Wind layer* <br /> - *Temperature layer* |
+| Show / Hide <br /> [Topography layers](../plugins/contour-lines.md#overview) | All topography data is presented as separate map layers. You can quickly switch the visibility of these layers with Quick Action. <br /> - *Contour lines* <br /> - *Terrain* (Depending on the layer selected in the Configure map menu, *Hillshade*, *Slope*, or *Altitude* will be displayed.) |
+| Change <br /> [Terrain color scheme](../plugins/contour-lines.md#color-scheme) | Allows you to select one or more palettes from a list of existing ones, which will change when you tap the button. |
+| Show / Hide <br /> [Favourites](../personal/favorites.md#view-on-the-map) | Show or hide the favourite points on the map. |
+| Show / Hide <br /> [Tracks](../personal/tracks/manage-tracks.md#show-tracks-on-map) | Show or hide the last visible tracks on the map. |
+| Show / Hide <br /> [POIs](../map/point-layers-on-map.md#points-of-interest-poi) | Enable or disable POI layer with selected categories. <br /> - **POI Categories**: allows to select multiple categories <br /> Note: Action will replace previously selected categories, if POI layer was active before.   |
+| Show / Hide <br /> [Public transport](../map/vector-maps.md#transport) | Enable or disable public transport map layer. <br /> - **Transport type** (on first tap): select one or many options from 'Transport stops', 'Bus, trolleybus, shuttle routes', 'Tram and train routes', 'Subway routes' |
 | [<Translate ios="true" ids="quick_action_map_source_title"/>](../map/raster-maps.md) | Create a list of map sources and cycle through them.  <br /> - **Show an interim dialog**: displays dialog with maps list <br /> - **Do not show an interim dialog**: map sources will be changed by defined  order. <br /> - Displayed Name - '**Map source >**'. '>' after the map name indicates what is current selected map source. <br /> - Displayed Name - '**> Next map source**'. '>' before the map name indciates what is next selected map source if action is executed. <br /> - **Note**: you could have 1 action to change source and select multiple map sources or many quick actions with 1 map source selected, so you could quickly select the map source just from quick aciton list. |
 | [<Translate ios="true" ids="map_settings_over"/>](../map/raster-maps.md) | Create a list of map sources as map overlay and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="quick_action_map_source_title"/>** (see above) |
 | [<Translate ios="true" ids="map_settings_under"/>](../map/raster-maps.md) |  Create a list of map sources as map underlay and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="quick_action_map_source_title"/>** (see above)  |
 | [<Translate android="true" ids="quick_action_map_style"/>](../map/vector-maps.md#default-map-styles) | Create a list of map styles for vector maps and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="quick_action_map_source_title"/>** (see above) |
 | <Translate ios="true" ids="quick_action_showhide_mapillary_title"/> <br /> [Plugin](../plugins/mapillary.md) | Display or hide Mapillary layer on the map |
-| <Translate ios="true" ids="toggle_contour_lines"/> <br /> [Plugin](../plugins/contour-lines.md) | Display or hide Contour lines on the map |
-| <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="shared_string_terrain"/> <br /> [Plugin](../plugins/contour-lines.md) | Display and hide the Terrain (Hillshade / Slope) layer on the map |
 | <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="osm_notes"/> <br /> [Plugin](../plugins/osm-editing.md) | Allows to display on the map all OSM notes |
-| <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="temperature_layer"/> <br /> [Plugin](../plugins/weather.md) | Allows to display on the map temperature layer of Weather. |
-| <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="wind_layer"/> <br /> [Plugin](../plugins/weather.md) | Allows to display on the map wind speed layer of Weather. |
-| <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="pressure_layer"/> <br /> [Plugin](../plugins/weather.md) | Allows to display on the map air pressure layer of Weather. |
-| <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="precipitation_layer"/> <br /> [Plugin](../plugins/weather.md) | Allows to display on the map precipitation layer of Weather. |
-| <Translate android="true" ids="quick_action_show_hide_title"/> <Translate android="true" ids="cloud_layer"/> <br /> [Plugin](../plugins/weather.md) | Allows to display on the map cloud layer of Weather. |
+
 
 ### Navigation
 
@@ -277,7 +275,15 @@ To manage custom buttons, you can tap on one of them, then tap the *three-dot me
 - **Rename**. Allows you to change the name of your button.
 - **Delete**. Allows you to delete your button with all added actions.
 
-### Custom Keys Assignment
+### Custom Keys
+
+<InfoAndroidOnly />
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
+
+![External devices](@site/static/img/map/external_custom_2_andr.png)
+
+Using the features of the Quick Action tool, you can assign required actions to the keys of your external input device. A description can be found in the [Interact with Map](../map/interact-with-map.md#custom-keys-assignment) article.
 
 
 ## Related Articles
