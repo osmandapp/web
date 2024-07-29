@@ -52,7 +52,6 @@ export default function HeaderMenu({ showInstallBanner }) {
                 <Box className={styles.menu}>
                     {pages.map((page) => (
                         <Button
-                            target="_blank"
                             component={Link}
                             to={page.url}
                             key={page.name}
