@@ -192,6 +192,7 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 | Show / Hide <br /> [Weather layers](../plugins/weather.md#weather-layers) | All weather data is presented as separate map layers. With Quick Action you can get quick access to switch the visibility of these layers on the map. <br /> - *Precipitation layer* <br /> - *Cloud layer* <br /> - *Pressure layer* <br /> - *Wind layer* <br /> - *Temperature layer* |
 | Show / Hide <br /> [Topography layers](../plugins/contour-lines.md#overview) | All topography data is presented as separate map layers. You can quickly switch the visibility of these layers with Quick Action. <br /> - *Contour lines* <br /> - *Terrain* (Depending on the layer selected in the Configure map menu, *Hillshade*, *Slope*, or *Altitude* will be displayed.) |
 | Change <br /> [Terrain color scheme](../plugins/contour-lines.md#color-scheme) | Allows you to select one or more palettes from a list of existing ones, which will change when you tap the button. |
+| -  | - |
 | Show / Hide <br /> [Favourites](../personal/favorites.md#view-on-the-map) | Show or hide the favourite points on the map. |
 | Show / Hide <br /> [Tracks](../personal/tracks/manage-tracks.md#show-tracks-on-map) | Show or hide the last visible tracks on the map. |
 | Show / Hide <br /> [POIs](../map/point-layers-on-map.md#points-of-interest-poi) | Enable or disable POI layer with selected categories. <br /> - **POI Categories**: allows to select multiple categories <br /> Note: Action will replace previously selected categories, if POI layer was active before.   |
@@ -275,6 +276,7 @@ To manage custom buttons, you can tap on one of them, then tap the *three-dot me
 - **Rename**. Allows you to change the name of your button.
 - **Delete**. Allows you to delete your button with all added actions.
 
+<!--
 ### Custom Keys
 
 <InfoAndroidOnly />
@@ -284,7 +286,7 @@ To manage custom buttons, you can tap on one of them, then tap the *three-dot me
 ![External devices](@site/static/img/map/external_custom_2_andr.png)
 
 Using the features of the Quick Action tool, you can assign required actions to the keys of your external input device. A description can be found in the [Interact with Map](../map/interact-with-map.md#custom-keys-assignment) article.
-
+-->
 
 ## Related Articles
 

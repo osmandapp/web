@@ -262,7 +262,7 @@ Creates a smooth map panning effect versus the *[My Position](../personal/profil
 
 ![External devices](@site/static/img/map/external_mypilot_android.png)  ![External devices](@site/static/img/map/external_mypilot2_android.png)
 
-- **Create.**   
+- **Create type.**   
     You can create your custom type with a set of actions for the keys of your external input device. 
 
     - Go to the [External Input Device](#external-input-device-buttons) setting, select *Type* from the list.
