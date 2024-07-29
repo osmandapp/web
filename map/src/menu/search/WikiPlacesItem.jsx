@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { cleanHtml } from '../../manager/PoiManager';
 import parse from 'html-react-parser';
 
-export default function WikiPlacesItem({ item }) {
+export default function WikiPlacesItem({ item, index, lastIndex }) {
     const ctx = useContext(AppContext);
 
     const { ref, inView } = useInView();
@@ -81,7 +81,7 @@ export default function WikiPlacesItem({ item }) {
                             <div>
                                 <MenuItem
                                     id={`se-wiki_place-${item.properties?.id}`}
-                                    divider
+                                    divider={index !== lastIndex}
                                     className={`${styles.placeItem} ${isHovered ? styles.hoverItem : ''}`}
                                     onClick={() => openInfo(item)}
                                     onMouseEnter={() => handleMouseEnter(item)}

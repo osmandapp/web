@@ -23,7 +23,6 @@ export default function GeneralPanelButtons({
     setShowInfoBlock,
     clearState,
     setMenuInfo,
-    setOpenVisibleMenu,
     showInstallBanner,
 }) {
     const ctx = useContext(AppContext);
@@ -76,7 +75,7 @@ export default function GeneralPanelButtons({
             //open menu
             ctx.setCurrentObjectType(OBJECT_CONFIGURE_MAP);
             setShowInfoBlock(false);
-            setMenuInfo(<ConfigureMap setOpenVisibleMenu={setOpenVisibleMenu} />);
+            setMenuInfo(<ConfigureMap />);
         }
     }
 

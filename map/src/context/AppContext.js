@@ -247,6 +247,11 @@ export const AppContextProvider = (props) => {
     const [openMenu, setOpenMenu] = useState(null);
     const [openContextMenu, setOpenContextMenu] = useState(false);
 
+    const [cloudSettings, setCloudSettings] = useState({
+        changes: false,
+        trash: false,
+    });
+
     //pages
     const [prevPageUrl, setPrevPageUrl] = useState(null);
     const [pageParams, setPageParams] = useState({});
@@ -300,6 +305,7 @@ export const AppContextProvider = (props) => {
 
     const [localTracks, setLocalTracks] = useState([]);
     const [visibleTracks, setVisibleTracks] = useState({});
+    const [openVisibleMenu, setOpenVisibleMenu] = useState(false);
     const [currentObjectType, setCurrentObjectType] = useState(null);
     const [headerText, setHeaderText] = useState({
         search: { text: '' },
@@ -572,6 +578,10 @@ export const AppContextProvider = (props) => {
                 setPhotoGallery,
                 selectedPhotoInd,
                 setSelectedPhotoInd,
+                openVisibleMenu,
+                setOpenVisibleMenu,
+                cloudSettings,
+                setCloudSettings,
             }}
         >
             {props.children}
