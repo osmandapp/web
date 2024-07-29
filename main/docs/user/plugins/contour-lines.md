@@ -277,6 +277,16 @@ The *Scale Levels* function allows you to set the minimum and maximum values of 
     - Alternatively, you can use the *Terrain Map (3D)* download. This saves memory space on your device, and the Hillshade, Slope, and 3D Relief effects will be generated from them using your device.
 
 
+### Quick Actions for Topography Layers
+
+![QA for Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
+
+You can use the *Quick Action* buttons on the map screen to switch the visibility of *Contour Lines*, *Terrain* layers, and *color palettes*.
+The main settings for *Show or Hide map types* are in the Topography section of the Configure Map menu. In the [Quick Action](../widgets/quick-action.md#configure-map) article, you can find a list of layers available for display. If you need quick access to this map configuration, use the *Custom Button* tool.
+- Go to [Add action](../widgets/quick-action.md#custom-buttons): *Menu → Configure screen → Custom buttons → Quick action → Add action → Configure map*.
+- Add one or more QA buttons to change the visibility of particular topography layer.
+
+
 ## 3D Relief
 
 :::note
