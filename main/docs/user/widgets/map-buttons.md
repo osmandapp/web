@@ -148,9 +148,9 @@ The compass icon on the button always points to the North. You can select how th
 
 </Tabs>  
 
-- *<Translate android="true" ids="shared_string_hidden"/>* - if this mode is selected for a button, you have to use a gesture to change the map view. Tap the map with two fingers and move them up and down to adjust the map's tilt.  
-- *<Translate android="true" ids="shared_string_visible"/>* - the button is always displayed on the map screen.
-- *<Translate android="true" ids="visible_in_3d_mode"/>* - the button is displayed on the map screen when you change the map view with a [*two-finger and move*](../map/interact-with-map.md#gestures) gesture.   
+- *<Translate android="true" ids="shared_string_hidden"/>*. If this mode is selected for a button, you have to use a gesture to change the map view. Tap the map with two fingers and move them up and down to adjust the map's tilt.  
+- *<Translate android="true" ids="shared_string_visible"/>*. The button is always displayed on the map screen.
+- *<Translate android="true" ids="visible_in_3d_mode"/>*. The button is displayed on the map screen when you change the map view with a [*two-finger and move*](../map/interact-with-map.md#gestures) gesture.   
 
 Additional settings for 3D Mode.  
 

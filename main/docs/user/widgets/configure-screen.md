@@ -141,7 +141,7 @@ With the help of panels you can arrange widgets on the application screen in a c
 23. [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
 
 
-## Top / Bottom Panels
+## Top and Bottom Panels
 
 <Tabs groupId="operating-systems">
 
@@ -230,7 +230,7 @@ To change the widget size and icon visibility:
 - Switch to the Off position, in the *Show icon* field.
 
 
-## Left / Right Panels
+## Left and Right Panels
 
 <Tabs groupId="operating-systems">
 
@@ -292,7 +292,7 @@ Widgets in the right and left panels can be grouped into **Pages**. To do this, 
 - Another option. Select the same widget in the *Available widgets* list and tap the *Add* button.
 
 
-### Move / Delete
+### Move or Delete
 
 *OsmAnd menu → Configure screen → Widgets → Panel → **Add** chosen widget*  
 
@@ -311,7 +311,7 @@ To remove or delete a widget from the application screen, you need to select the
 
 *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Widget page](@site/static/img/widgets/conf_screen_buttons_andr.png)  
+![Widget page](@site/static/img/widgets/conf_screen_buttons_andr.png)   ![Widget page](@site/static/img/widgets/conf_screen_buttons_3_andr.png)
 
 </TabItem>
 
@@ -319,17 +319,23 @@ To remove or delete a widget from the application screen, you need to select the
 
 *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Widget page](@site/static/img/widgets/conf_screen_buttons_2_ios.png)  
+![Widget page](@site/static/img/widgets/conf_screen_buttons_2_ios.png)   ![Widget page](@site/static/img/widgets/conf_screen_buttons_3_ios.png) 
 
 </TabItem>
 
 </Tabs> 
 
 - **Custom buttons**. Allows you to add a list of single actions from all available [Quick actions](../widgets/quick-action.md#custom-buttons). These actions can be assigned to one or more widget buttons on the map screen. Custom buttons provide quick access to frequently used actions.
+
 - **Default buttons**. It gives you the ability to hide or show preset map buttons.
-    - [3D mode](../widgets/map-buttons.md#3d-mode). Appears in the list and is available for setting if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.
+    - [3D mode](../widgets/map-buttons.md#3d-mode). For iOS, the button is always available. For Android, it appears in the list and is available for setting if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.
+
     - [Compass](../widgets/map-buttons.md#display-options). Indicates how the map is oriented on the device.  
     3 views: *Always visible*, *Always hidden*, *Visible if map is rotated*.   
+
+    - The three-dot menu on the Default buttons screen contains actions such as: 
+        - *Reset to default*. Allows you to return the button settings to their original appearance.
+        - *Copy from another profile*. Select from which profile from the offered list you want to copy button settings.
 
 
 ## Other

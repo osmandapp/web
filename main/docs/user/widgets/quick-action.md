@@ -24,7 +24,7 @@ Quick Action widget is an interactive user interface element that provides quick
 ![Quick action widget](@site/static/img/widgets/quick_action_widget.png)
 
 
-## Enable widget
+## Enable Widget
 
 In order to use the Quick Actions button you need to enable this widget first.
 
@@ -59,11 +59,32 @@ In order to use the Quick Actions button you need to enable this widget first.
 | *Several QA buttons on the map screen* | ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_multi.png) |
 
 
-## Edit actions list
+## Edit Actions List
 
-### Add new action
 
-There are 2 ways to add items to the Quick actions list.
+### Add Action Screen
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons"/> → + → <Translate android="true" ids="add_button"/>*  
+
+![Custom button Android](@site/static/img/widgets/custom_button_andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons"/> → + → <Translate ios="true" ids="add_button"/>*  
+
+![Custom button Android](@site/static/img/widgets/custom_button_ios.png)  
+
+</TabItem>
+
+</Tabs> 
+
+Add new action. There are 2 ways to add items to the Quick actions list.
 
 -  The first way:
 
@@ -107,7 +128,8 @@ There are 2 ways to add items to the Quick actions list.
 
 First, you need to select [an action type](#quick-action-types) and then change its name and parameters. [See below](#quick-actions-types) for what parameters you can configure for each action type. Each action must have a unique name.
 
-### Reorder actions
+
+### Reorder Actions
 
 Quick action panel has only **6 slots** for actions per screen. However you could have multiple screens and actions are grouped by the specified order. In order to change the order of items:
 
@@ -136,7 +158,7 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 </Tabs>
 
 
-### Edit / Remove action
+### Edit and Remove action
 
 There are several ways how to access Quick Action to edit or delete it:
 
@@ -169,9 +191,9 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 </Tabs>
 
 
-## Quick action types
+## Quick Action Types
 
-### Create items
+### Create Items
 
 | Action | Description |
 |:-------------|:-------------|
@@ -184,7 +206,7 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 | Add media note <br /> [Android Plugin](../plugins/audio-video-notes.md) | Starts audio / photo / video note recording  for a selected (center) map location. |
 | [<Translate android="true" ids="plan_route_create_new_route"/>](../plan-route/create-route.md) <br /> _for Android only_ | Opening of ["Plan a route"](../plan-route/create-route.md) tool and creation a route for a selected (center) map location. |
 
-### Configure map
+### Configure Map
 
 | Action | Description |
 |:-------------|:-------------|
@@ -222,7 +244,7 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 | <Translate android="true" ids="quick_action_remove_next_destination"/> | Removes next intermediate point, if present, otherwise removes destination and displays finish navigation dialog. Action is inactive if you don't have any destination. |
 | [<Translate android="true" ids="simulate_location_by_gpx"/>](../plugins/development.md#gpx-track-simulation) | Simulates the location and movement of your device using a GPX track. |
 
-### Additional types
+### Additional Types
 
 | Action | Description |
 |:-------------|:-------------|
@@ -230,13 +252,13 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 | [<Translate android="true" ids="shared_string_open"/> <Translate android="true" ids="shared_string_weather"/> always in centre](../plugins/weather.md) <br /> *for Android only* | Open the [*Weather* forecast screen](../plugins/weather.md#weather-forecast-screen). |
 
 
-## Custom buttons
+## Custom Buttons
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons"/> → + → <Translate android="true" ids="add_button"/>*  
+*<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate android="true" ids="add_button"/>*  
 
 ![Custom button Android](@site/static/img/widgets/custom_button_andr.png)  
 
@@ -244,40 +266,67 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,custom_buttons"/> → + → <Translate ios="true" ids="add_button"/>*  
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  
 
-![Custom button Android](@site/static/img/widgets/custom_button_andr.png)  
+![Custom button Android](@site/static/img/widgets/custom_button_ios.png)  
 
 </TabItem>
 
 </Tabs> 
 
-Custom Buttons are a unique type of **Quick Action** tool. This means you can create a custom action button for a device's screen.  
+**Custom buttons** are a unique type of *Quick Action* tool. You can create buttons with one or more actions to display on the map screen.  
 
-- To add a new custom button to the screen, tap **+** in the top right upper corner of the screen.
-- Then enter a name for the created button and tap **Save**.
-- After adding a new button, it will appear in the Custom Buttons list. You can then assign one or more [actions](#add-new-action) to the newly created and enabled custom button.
-- All available actions are identical to those found in [Quick Action types](#quick-action-types).
-- You can add created custom buttons using the *three-dot menu →* **Copy from another profile**.
-- When a custom button is created and enabled, it will be displayed on the screen. [It can be moved](#enable-widget) to any location on the screen, similar to a *Quick Action button*.
+- **To add a new custom button** to the screen, tap&nbsp;  "**＋**"  &nbsp;in the upper right corner of the screen.
 
-<!-- ![Custom button Android](@site/static/img/widgets/custom_button_4_android.png) -->
+- Then **enter a name** for the created button and tap **Save**.
 
-Tapping a custom button instantly switches the selected action on or off. If more than one action was added, a [Quick action menu](#overview) opens with a list of actions.  
+- After adding the new button, it will appear in *the list of Custom buttons*. You can assign one or more [actions](#add-action-screen) to the newly created and enabled custom button.
 
-![Custom button Android](@site/static/img/widgets/custom_button_5_android.png)
+- All available actions are identical to those that can be applied to the default quick action button. They are listed in the [Quick action types](#quick-action-types) section.
 
-### Rename and Delete actions
+- Created buttons are located in the *Configure screen → Buttons → Custom buttons* list and are **available for all application profiles**.
+
+### Interaction with Custom Buttons
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Custom button Android](@site/static/img/widgets/interaction_with_custom_button_andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  
+
+![Custom button Android](@site/static/img/widgets/interaction_with_custom_button_ios.png)  
+
+</TabItem>
+
+</Tabs> 
+
+- When a custom button is created and enabled, it is displayed on the screen. [The button can be moved anywhere on the screen](#enable-widget), similar to a default *Quick Action button*.
+
+- Tapping a custom button instantly switches the selected action on or off.
+
+- If the action *Configure map → Change - Terrain color scheme* is added to the button, tapping it changes the selected color palettes in a loop.  
+
+- The [quick action menu](#overview) opens with a list of actions if more than one action has been added.
+
+<!-- ![Custom button Android](@site/static/img/widgets/custom_button_5_android.png) -->
+
+### Rename and Delete Button
 
 ![Custom button Android](@site/static/img/widgets/custom_button_rename_andr.png)  ![Custom button Android](@site/static/img/widgets/custom_button_del_andr.png)  
 
-To manage custom buttons, you can tap on one of them, then tap the *three-dot menu* in the top right corner of the screen and select an action.
+To manage custom buttons, you can tap one of them, then choose the *three-dot menu* in the upper right corner of the screen and select an action:
 
-- **Rename**. Allows you to change the name of your button.
+- **Rename**. Allows you to change the name of this button.
 - **Delete**. Allows you to delete your button with all added actions.
 
-<!--
-### Custom Keys
+
+## Custom Keys
 
 <InfoAndroidOnly />
 
@@ -285,8 +334,8 @@ To manage custom buttons, you can tap on one of them, then tap the *three-dot me
 
 ![External devices](@site/static/img/map/external_custom_2_andr.png)
 
-Using the features of the Quick Action tool, you can assign required actions to the keys of your external input device. A description can be found in the [Interact with Map](../map/interact-with-map.md#custom-keys-assignment) article.
--->
+Using the Quick Action tool's functionality, you can assign required actions to the keys of your external input device. A description can be found in the [Interact with Map](../map/interact-with-map.md#custom-keys-assignment) article.
+
 
 ## Related Articles
 
