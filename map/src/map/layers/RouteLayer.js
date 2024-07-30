@@ -156,7 +156,7 @@ const RouteLayer = ({ geocodingData, region }) => {
             if (feature.properties.roadId) {
                 const id = feature.properties.roadId;
                 const name = 'Way ' + Math.trunc(id / 64);
-                const osm = id / 64;
+                const osm = Math.floor(id / 64);
 
                 window['addAvoidRoadId' + id] = () => {
                     const newAvoidRoads = Object.assign([], avoidRoads);

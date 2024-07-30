@@ -128,6 +128,15 @@ To get comprehensive weather information, you can use the map layers separately 
 
 </Tabs>
 
+### Quick Actions for Layers
+
+![QA Weather layers](@site/static/img/plugins/weather/QA_weather_layers_andr.png)
+
+To switch the visibility of weather layers, you can use the *Quick Action* buttons on the map screen. The general settings for showing or hiding layers can be found in the separate [Weather section](#weather-forecast-screen) of the main menu. In the [Quick Action](../widgets/quick-action.md#configure-map) article, you will find a list of the layers available for display. If you need quick access to this map configuration, use the *Custom Button* tool.
+- Go to [Add action](../widgets/quick-action.md#custom-buttons): *Menu → Configure screen → Custom buttons → Quick action → Add action → Configure map*.
+- Add one or more QA buttons to change the visibility of particular weather layer.
+
+
 ## Offline forecast
 
 ### Cache  

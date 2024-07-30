@@ -292,9 +292,6 @@ The map is displayed according to the day or night mode selected from the list. 
 
 ### Routes
 
-In OsmAnd it is possible to highlight GPX routes from Openstreetmap related to different outdoor activities (hiking, cycling, running, etc.). You can select one or multiple routes layers at once. However, it is important to note that if different routes meet at the same point, only the color of the uppermost layer will be visible (see [map legend](../map-legend/osmand.md#routes)).  
-When you click on the shield icon with a route number or flag, a context menu with available options is displayed. In some cases, you may find several routes intersecting at a certain place. When you select one of the routes, the *[Track context menu](../map/track-context-menu.md)* appears. In this menu there is an option to save the route in the device memory in GPX format, which will allow you to use it later for [GPX navigation](../navigation/setup/gpx-navigation.md).
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
@@ -314,6 +311,18 @@ When you click on the shield icon with a route number or flag, a context menu wi
 </TabItem>
 
 </Tabs> 
+
+In OsmAnd app you can select GPX routes related to different outdoor activities such as hiking, biking or running routes using data from OpenStreetMap.  
+
+- You can select one or more layers of routes at a time. It is important to note that if different routes intersect at the same point, only the color of the top layer will be visible.
+    - Read about the color scheme of routes in the [Color Palette Schemes](../personal/color-palette-schemes.md) article.  
+    - Route designations for OsmAnd Map Style can be found in the [Map Legend](../map-legend/osmand.md#routes) article.
+
+- You can use *Custom buttons* to customize [Quick Actions](../map/tracks-on-map.md#quick-actions-for-routes) to switch between enabling or disabling the display of selected route types.
+
+- Tapping the shield icon with a route number or route flag on the map will open a context menu with a list of available options.  
+    In some cases, you may find several routes intersecting at a certain location. When you select one of the routes, the *[Track context menu](../map/track-context-menu.md)* appears. In this menu, you can save the selected route to the device memory in GPX format, which will allow you to use it for [GPX navigation](../navigation/setup/gpx-navigation.md) in the future.
+
 
 |Parameters and Description|   
 |------------|

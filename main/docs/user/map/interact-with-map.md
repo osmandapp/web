@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-How to interact with map using buttons and gestures, so you could pan, rotate and zoom in/out the map, how to rotate the map manually or automatically by compass or by bearing and how to change zoom scale.
+This article describes how to customize and interact with the map using buttons and gestures. How to rotate, zoom, change the view angle of the map, rotate it manually, automatically by compass or bearing.
 
 
 ## Gestures
@@ -36,11 +36,12 @@ Gestures are important part of the map navigation.
 
 Slide animations could be disabled with special [setting](#disable-all-animations).
 
+
 ## My Location & Zoom
 
 ![Configure screen menu](@site/static/img/widgets/location_zoom_buttons.png)
 
-**My location** is a circle button that shows whether the center of the map is synchronized with "my location" (geolocation of the device). It is also known as "Where am I?". Generally in navigation, the map is synced with device location, and there are no needs to move the map constantly. In this case, the button is hidden and will be activated when the map and 'my location' will go out of sync by user gesture. The app will try to find the device location and show it on the map at the center of the screen when the user clicks on it. It will switch to the 3D mode when the user click twice on it.
+**My location** is a circle button that shows whether the center of the map is synchronized with *My location* (geolocation of the device). It is also known as "Where am I?". Generally in navigation, the map is synced with device location, and there are no needs to move the map constantly. In this case, the button is hidden and will be activated when the map and *My location* will go out of sync by user gesture. The app will try to find the device location and show it on the map at the center of the screen when the user clicks on it. It will switch to the 3D mode when the user click twice on it.
 
 **My location** button has following indicative states:
 - Full blue icon - location is found but it is not synchronized with map
@@ -175,7 +176,7 @@ One of the main functions of the external input device buttons is to zoom in and
 The keyboard continues to work even if the *External input devices* option is turned off, when *None* is selected. 
 :::
 
-#### Setup
+#### Setup of External Input Devices
 
 <Tabs groupId="operating-systems">
 
