@@ -49,7 +49,7 @@ Slide animations could be disabled with special [setting](#disable-all-animation
 - Grey icon - location has not found yet
 - Arrow icon - 3D mode is switched on
 
-**Long-tap** on **My location** opens Context menu, so user can share own location.
+**Long-tap** (Android) on **My location** opens [Map Context menu](../map/map-context-menu.md), so user can share own location.
 
 **Zoom buttons** are always visible next to **My Location** and allow to control map zoom level. Changing zoom level doesn't change map synchronization with location. **Long-tap** on **Zoom buttons** opens Map magnifier dialog and allows to change map detailing.
 
@@ -61,6 +61,7 @@ Keep in mind that during navigation zoom can be controlled by **Auto zoom settin
 
 
 ## Map magnifier
+
 Map magnifier is a special way to magnify the map. Essentially it works as a magnifying glass for paper maps, it allows to see the text bigger for raster maps or to see more or less details for the same scale - [Read more](../map/vector-maps.md#map-magnifier).
 
 
@@ -91,17 +92,21 @@ The map orientation modes allow the user to select how the map is displayed on t
 </Tabs>  
 
 
-- **<Translate android="true" ids="rotate_map_north_opt"/>**. The map is fixed in the direction of the North, which is the top edge of your device. The map does not have automatic rotation, but you can rotate it manually with a [two-pointer gesture (two-finger touch & rotate)](../map/interact-with-map.md#gestures), and in this case, the map orientation mode will change to Manual rotation. You can *hard lock the North mode* for Android by the [*<Translate android="true" ids="fix_north_up"/>*](../personal/profiles.md#other) feature.
+- **<Translate android="true" ids="rotate_map_north_opt"/>**. The map is fixed in the direction of the North, which is the top edge of your device. The map does not have automatic rotation. 
+   - for **Android** version it has hard lock the North mode (without manual rotation with twor-finger touch & rotate). 
+   - for **iOS** version you can rotate it manually with a [two-pointer gesture (two-finger touch & rotate)](../map/interact-with-map.md#gestures), and in this case, the map orientation mode will change to "Manually rotated". 
 - **<Translate android="true" ids="rotate_map_bearing_opt"/>**. The map rotates relative to the direction of your movement known from GPS data. For details, go to [*Rotate map by bearing*](../map/interact-with-map#rotate-map-by-bearing).
 - **<Translate android="true" ids="rotate_map_compass_opt"/>**. The [icon on the button](../widgets/map-buttons.md/#compass) points to the actual North, and the map moves according to the compass orientation of your device. Your device should be in as horizontal a position as possible. If your device does not have a compass sensor, the orientation of the map remains unchanged.
 - **<Translate android="true" ids="rotate_map_manual_opt"/>**. When you select this option, the map is fixed in the current position and does not rotate automatically. You can manually change the map orientation with a two-pointer gesture (two-finger touch & rotate).   
 
 
-**Note**  
+**Note:**  
 
 - Map Orientation modes can be opened in [*Profile settings*](../personal/profiles.md#appearance) as well as by long-tapping the [*Compass button*](../widgets/map-buttons.md#compass).  
-- To quickly switch map orientation modes, tap the "Compass" button located in the upper left corner of the screen, if [it is visible](../widgets/map-buttons.md#display-options).
-- (Android) For hard lock the **<Translate android="true" ids="rotate_map_north_opt"/>** mode you need to use [<Translate android="true" ids="fix_north_up"/>](../personal/profiles.md#other).
+- To quickly switch to map orientation modes:
+   - for **Android** version - <u>Double tap</u> the [*Compass button*](../widgets/map-buttons.md#compass) located in the upper left corner of the screen, if [it is visible](../widgets/map-buttons.md#display-options).
+   - for **iOS** version - <u>Single tap</u> the [*Compass button*](../widgets/map-buttons.md#compass) located in the upper left corner of the screen, if [it is visible](../widgets/map-buttons.md#display-options).
+- (Android) Single tap the [*Compass button*](../widgets/map-buttons.md#compass) rotates the map orientation to the North in all orientations. Even if it rotates back in a second, such as in compass mode.
 
 
 ### Compass
@@ -126,7 +131,7 @@ The map orientation modes allow the user to select how the map is displayed on t
 
 </Tabs> 
 
-The compass button shows how the [map is oriented](#map-orientation-modes). The red arrow, or the direction of the arrow in *Movement direction* mode, indicates the North. [The icon on the button](../widgets/map-buttons.md#compass) indicates the current map orientation mode. One tap the compass button toggles through all modes in turn.
+The compass button shows how the [map is oriented](#map-orientation-modes). The red arrow, or the direction of the arrow in *Movement direction* mode, indicates the North. [The icon on the button](../widgets/map-buttons.md#compass) indicates the current map orientation mode. Double tap (Android), One tap (iOS) the compass button toggles through all modes in turn.
 
 
 ### Rotate map by bearing
