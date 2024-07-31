@@ -220,7 +220,7 @@ The button allows you to assign a single layer or a list of layers that change c
 - **Do not show an interim dialog**: map sources will be changed by defined  order.
 
 
-### Change Position on Map
+### Change Position on the Map
 
 Quick action button will appear on the right corner (above the zoom buttons), but it can be moved to the any part of the screen by long-tap it.
 
@@ -350,7 +350,13 @@ Using the Quick Action tool's functionality, you can assign required actions to 
 
 | Action | Description |
 |:-------------|:-------------|
-| - | - |
+| Map <br/> [Zoom in](../map/interact-with-map.md) | - |
+| Map <br/> [Zoom out](../map/interact-with-map.md) | - |
+| Move <br/> [Map down](../map/interact-with-map.md) | You can use the quick action button to move the map down.  |
+| Move <br/> [Map up](../map/interact-with-map.md) | When tapped, the map screen moves up. |
+| Move <br/> [Map to the left](../map/interact-with-map.md) | When you tap button map screen moves to the left |
+| Move <br/> [Map to the right](../map/interact-with-map.md) | Whith quick action button you can move the map to the right. |
+| Move <br/> [To My location](../map/interact-with-map.md#my-location--zoom) | - |
 
 
 ### My Places
@@ -371,10 +377,10 @@ Using the Quick Action tool's functionality, you can assign required actions to 
 
 | Action | Description |
 |:-------------|:-------------|
+| Add <br/> [<Translate android="true" ids="quick_action_first_intermediate"/>](../navigation/setup/route-navigation.md#intermediate-destinations) | You can select the center of the map screen as the first intermediate point. The previous destination remains the same. |
 | <Translate android="true" ids="quick_action_navigation_voice"/> | Mute or unmute voice guidance during navigation |
 | <Translate android="true" ids="context_menu_item_directions_from"/> | Mark a selected (center) map location as a point of departure |
 | <Translate android="true" ids="quick_action_add_destination"/> | Add a selected (center) map location as a destination. Previous destination becomes last intermediate point.  |
-| <Translate android="true" ids="quick_action_add_first_intermediate"/> | Add a selected (center) map location as first intermediate point. Previous destination stays the same. |
 | <Translate android="true" ids="quick_action_replace_destination"/> | Set / Replace a selected (center) map location as a destination. Previous destination is deleted. |
 | <Translate android="true" ids="quick_action_auto_zoom"/> | Enable or disable map auto zoom during navigation |
 | <Translate android="true" ids="quick_action_start_stop_navigation"/> | Start navigation (if there is a destination point present) or stop navigation |
@@ -387,11 +393,21 @@ Using the Quick Action tool's functionality, you can assign required actions to 
 
 | Action | Description |
 |:-------------|:-------------|
-| - | - |
 | Change <br/> [App profile](../personal/profiles.md) | Create a list of application profiles and cycle through them.  <br /> - **Show an interim dialog**: displays dialog with profiles list <br /> - **Do not show an interim dialog**: profiles will be changed by defined order. <br /> - **Note**: you could have 1 action with multiple profiles or many actions with 1 profile. |
 | Change <br/> [App profile to next](../personal/profiles.md) | - |
 | Change <br/> [App profile to previous](../personal/profiles.md) | - |
 | Change <br/> [<Translate android="true" ids="quick_action_display_position_in_center"/>](../widgets/configure-screen.md#display-position) | Allows you to set the placement of the *My Location* cursor on the map. Enables or disables the cursor to always be in the center of the screen. |
+
+
+## Use Keyboard for Actions
+
+<InfoAndroidOnly />
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
+
+![External devices](@site/static/img/map/external_custom_2_andr.png)
+
+Using the Quick Action tool's functionality, you can assign required actions to the keys of your external input device. A description can be found in the [Interact with Map](../map/interact-with-map.md#custom-keys-assignment) article.
 
 
 ## Related Articles
@@ -402,17 +418,5 @@ Using the Quick Action tool's functionality, you can assign required actions to 
 - [Navigational widgets](./nav-widgets.md)
 - [Radius-ruler and Ruler](./radius-ruler.md)
 - [Marker widgets](./markers.md)
-
-
-### Use Keyboard with Actions
-
-<InfoAndroidOnly />
-
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
-
-![External devices](@site/static/img/map/external_custom_2_andr.png)
-
-Using the Quick Action tool's functionality, you can assign required actions to the keys of your external input device. A description can be found in the [Interact with Map](../map/interact-with-map.md#custom-keys-assignment) article.
-
 
 > *This article was last updated in July 2024*
