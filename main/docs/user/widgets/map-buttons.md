@@ -81,8 +81,8 @@ The Compass button shows how the map is oriented on your device screen. For more
 
 - ![Compass](@site/static/img/widgets/map_butt_north_up_ios.png)   
 **North is up**. In this mode, the map is oriented so that the North is always at the top of the screen. Regardless of the direction in which you move the device, the map remains static and you can see your position in relation to your surroundings.  
-The map does not have automatic rotation, but you can rotate it manually with a [two-pointer gesture (two-finger touch & rotate)](../map/interact-with-map.md#gestures), and in this case, the map orientation mode will change to Manual rotation. You can hard lock this position using the [*<Translate android="true" ids="fix_north_up"/>*](../personal/profiles.md#other) feature, if you do not need to rotate the map with a gesture. 
-
+   - for **Android** version it has hard lock the North mode (without manual rotation with twor-finger touch & rotate). 
+   - for **iOS** version you can rotate it manually with a [two-pointer gesture (two-finger touch & rotate)](../map/interact-with-map.md#gestures), and in this case, the map orientation mode will change to "Manually rotated". 
 - ![Compass](@site/static/img/widgets/map_butt_movem_dir_ios.png)   
 **Movement direction**. In this mode, the map is oriented according to the direction of your device. For example, if you turn to the right, the map also rotates so that the right side of the screen corresponds to the direction of movement. For details, go to [*Rotate map by bearing*](../map/interact-with-map#rotate-map-by-bearing).   
 
@@ -99,7 +99,7 @@ The map does not have automatic rotation, but you can rotate it manually with a 
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,map_widget_compass"/>*
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
 
 ![Compass widget](@site/static/img/widgets/map_butt_compass_widg_andr.png)
 
@@ -107,7 +107,7 @@ The map does not have automatic rotation, but you can rotate it manually with a 
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_left,map_widget_compass"/>*
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
 
 ![Compass widget](@site/static/img/widgets/map_butt_compass_widg_ios.png)
 
@@ -121,8 +121,8 @@ The compass icon on the button always points to the North. You can select how th
 - *Visible if map is rotated* - the button is not visible while the compass is pointing the North at the top edge of your device.  
 
 :::tip
-1. Tap the Compass button in the upper left corner of the screen, if visible, to switch the map orientation mode.
-2. You can change the map orientation mode by long-tapping the Compass button. This action opens the [*Map orientation*](../map/interact-with-map.md#map-orientation-modes) screen.
+1. Double tap (Android), One tap (iOS) the Compass button in the upper left corner of the screen, if visible, to switch the [map orientation mode](../map/interact-with-map.md).
+2. You can change the map orientation mode by long-tapping the Compass button. This action opens the [*Map orientation*](../map/interact-with-map.md#map-orientation-modes#map-orientation-modes) screen.
 :::
 
 
@@ -132,7 +132,7 @@ The compass icon on the button always points to the North. You can select how th
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,map_3d_mode_action"/>*  
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_3d_mode_action"/>*  
 
 ![3D mode](@site/static/img/widgets/map_butt_3D_mode_andr.png)
 
@@ -140,7 +140,7 @@ The compass icon on the button always points to the North. You can select how th
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,map_3d_mode_action"/>*  
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_3d_mode_action"/>*  
 
 ![3D mode](@site/static/img/widgets/map_butt_3D_mode_ios.png)
 
