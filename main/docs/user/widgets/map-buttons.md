@@ -48,7 +48,7 @@ My location and Zoom buttons control the map display. You can read more in [Inte
 **Configure Map** button allows to access to [Configure Map menu](../map/configure-map-menu.md). Icon on it indicates [Current app profile](../personal/profiles.md).
 
 
-## Main menu
+## Main Menu
 
 ![Main menu button](@site/static/img/widgets/main_menu_button.png)
 
@@ -93,7 +93,7 @@ The map does not have automatic rotation, but you can rotate it manually with a 
 **Manually rotated**. In this mode you can manually rotate the map with a [two-pointer gesture (two-finger touch & rotate)](../map/interact-with-map.md#gestures) according to your preference. The orientation of the map does not depend on the direction of travel or the compass of the device, but is determined by the user. 
 
 
-#### Display options
+#### Display Options
 
 <Tabs groupId="operating-systems">
 
@@ -126,7 +126,7 @@ The compass icon on the button always points to the North. You can select how th
 :::
 
 
-## 3D mode
+## 3D Mode
 
 <Tabs groupId="operating-systems">
 

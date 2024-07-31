@@ -49,7 +49,7 @@ There are profiles such as *Skiing* and *Boat*, the additional features of which
 </Tabs>
 
 
-## Profile configuration
+## Profile Configuration
 
 <Tabs groupId="operating-systems">
 
@@ -73,7 +73,7 @@ This section contains all settings related to appearance, navigation options, ma
 All settings affect only the selected application profile.
 :::
 
-### Free Cloud backup
+### Free Cloud Backup
 
 <Tabs groupId="operating-systems">
 
@@ -100,7 +100,7 @@ OsmAnd provides [the ability to backup](../personal/osmand-cloud.md#osmand-start
 You must have an [OsmAnd Cloud](../personal/osmand-cloud.md#login) account to use the *Free Settings Backup*. If you have an account in *OsmAnd Pro* or an active account in *OsmAnd Cloud*, you will not see the promotion banner.  
 
 
-## General settings
+## General Settings
 
 This section contains settings for the application theme and compass button, map and profile data units and formats, external input devices, and many other settings to create the optimal configuration for your chosen profile.
 
@@ -145,7 +145,7 @@ This section contains settings for the application theme and compass button, map
 - **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Android*). Opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.  
 
 
-### Units & formats
+### Units & Formats
 
 <Tabs groupId="operating-systems">
 
@@ -234,7 +234,7 @@ The **Other** section provides additional profile settings. You can switch butto
 - *[<Translate android="true" ids="animate_my_location"/>](../navigation/guidance/map-during-navigation.md#animate-my-location-android-animate-own-position) (Android)* - <Translate android="true" ids="animate_my_location_desc"/> Note that the animation takes about 1 second, which creates a slight delay for the *[My location](../map/interact-with-map.md#my-location--zoom)* position to display on the map relative to your location.  
 
 
-## Navigation settings
+## Navigation Settings
 
 <Tabs groupId="operating-systems">
 
@@ -272,7 +272,7 @@ There are no navigation settings in *Browse map* profile.
 :::
 
 
-## Configure map
+## Configure Map
 
 <Tabs groupId="operating-systems">
 
@@ -302,7 +302,7 @@ The [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.
 - Display [public transport](../map/public-transport.md) information and [change the map style](../map/vector-maps.md#default-map-styles).
 
 
-## Configure screen
+## Configure Screen
 
 <Tabs groupId="operating-systems">
 
@@ -328,7 +328,7 @@ The [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.
 The [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md) is a menu that allows you to configure the widgets for the selected profile to be displayed on the map. On this screen, you can enable and configure [Informational](../widgets/info-widgets.md) and [Navigational](../widgets/nav-widgets.md) widgets, as well as other items.
 
 
-## Profile appearance
+## Profile Appearance
 
 You can choose the color of the profile elements, its icon and name, also assign icons on the map for movement and without.
 
@@ -372,7 +372,7 @@ You can choose the color of the profile elements, its icon and name, also assign
 With the UI customization feature, you can adjust the number of items in actions such as [*<Translate android="true" ids="shared_string_drawer"/>*](../start-with/main-menu.md#customize-advanced-use-of-android), [*<Translate android="true" ids="configure_map"/>*](../map/configure-map-menu.md) and [*<Translate android="true" ids="context_menu_actions"/>*](../map/map-context-menu.md). Information about the number of added items out of all possible items can be found under the title of each feature. 
 
 
-#### Drawer
+### Drawer
 
 - **Main visible items**. In the Customise UI section, you can reorder or hide items from the [Drawer](../start-with/main-menu.md#customize-advanced-use-of-android).
   - *Minus* button. When you tap, the list items are deleted from the main menu in the drawer and moved to the *Hidden* section. However, all options, settings, or plugins are not disabled.  
@@ -392,7 +392,7 @@ With the UI customization feature, you can adjust the number of items in actions
     ![Profile Copy Android](@site/static/img/personal/profiles/profile_drawer_reset_copy_android.png)   
 
 
-#### Configure map
+### Configure Map
 
 - **Configure map menu**. Items visible in this section of the main menu.  
 
@@ -412,7 +412,7 @@ With the UI customization feature, you can adjust the number of items in actions
     ![Profile Copy Android](@site/static/img/personal/profiles/profile_configure_map_reset_copy_andr.png)   
  
 
-#### Context menu actions
+### Context Menu Actions
 
 - **Map Context menu**. Items visible in the main context and additional actions menu.  
 
@@ -432,7 +432,7 @@ With the UI customization feature, you can adjust the number of items in actions
     ![Profile Copy Android](@site/static/img/personal/profiles/profile_context_menu_reset_copy_andr.png)   
 
 
-## Plugin settings
+## Plugin Settings
 
 :::caution
 To access the plugin's settings, you must first [**enable the plugin**](../plugins/configure-plugins.md#enable--disable) in the *Plugin section of the Main menu*.
@@ -461,7 +461,7 @@ To access the plugin's settings, you must first [**enable the plugin**](../plugi
 Plugins unlock additional features of the application and can be either [paid or free](../plugins/configure-plugins.md#purchase). Some plugins have their own [settings](../plugins/configure-plugins.md#plugin-settings), others do not. OsmAnd gives you the possibility to configure plugins for each profile separately.
 
 
-### Trip recording
+### Trip Recording
 
 <Tabs groupId="operating-systems">
 
@@ -511,7 +511,7 @@ This item opens the [trip recording settings](../plugins/trip-recording.md#recor
 Interactive [Weather](../plugins/weather.md#weather-settings) map layers allow you to monitor the temperature, air pressure, cloud coverage, wind speed and precipitation in your city or any other location on a global map.
 
 
-### Audio / Video notes
+### Audio / Video Notes
 
 <InfoAndroidOnly />  
 
@@ -522,7 +522,7 @@ Interactive [Weather](../plugins/weather.md#weather-settings) map layers allow y
 This item opens [audio-video plugin settings](../plugins/audio-video-notes.md#plugin-settings) for the selected profile. The *Audio/Video notes* plugin extends the functionality of OsmAnd by allowing you to create your own notes in various formats such as photo, video or audio and associate them with geographical location or current location.  
 
 
-### OpenStreetMap editing
+### OpenStreetMap Editing
 
 <Tabs groupId="operating-systems">
 
@@ -583,7 +583,7 @@ When you tap an item in the *Plugin Settings* section, the [settings of external
 This item opens [Accessibility plugin settings](../plugins/accessibility.md#plugin-settings) for the selected profile. The Accessibility plugin settings allow you to customize the application according to your needs. All settings relate to the navigation process and are set individually for each profile.
 
 
-### OsmAnd development
+### OsmAnd Development
 
 <Tabs groupId="operating-systems">
 
@@ -664,3 +664,12 @@ Actions with selected profile:
     - This action is available only for *Android* and only for a *Custom profile*. 
     - Default profiles cannot be deleted.
     - To add a profile go to *Menu → Settings → App profiles → + New profile*.
+
+
+## Related Articles
+
+- [Manage Tracks](../personal/tracks/manage-tracks.md#import--export-track)
+- [Search History](../search/search-history.md#export-and-share)
+- [Color Palette Schemes](../personal/color-palette-schemes.md)
+
+> *This article was last updated in July 2024*

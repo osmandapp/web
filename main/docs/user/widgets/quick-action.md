@@ -51,7 +51,7 @@ In order to use the Quick Action button you need to enable this widget first.
 - To open Quick action menu just tap the button.
 - By default the Quick action button will appear on the right corner (above the zoom buttons), but it can be moved to the any part of the screen by long-tap it. 
 
-### Manage Actions Screens
+### Add / Delete Actions
 
 <Tabs groupId="operating-systems">
 
@@ -93,7 +93,26 @@ In order to use the Quick Action button you need to enable this widget first.
 
 First, you need to select [an action type](#quick-action-types) and then change its name and parameters. [See below](#quick-actions-types) for what parameters you can configure for each action type. Each action must have a unique name.
 
-### Specify Action Parameters
+#### Add Action
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Custom button Android](@site/static/img/widgets/add_action_screen_andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Custom button Android](@site/static/img/widgets/add_action_screen_ios.png)  
+
+</TabItem>
+
+</Tabs> 
+
+
+### Change Action Parameters
 
 
 <!--
@@ -151,7 +170,7 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 </Tabs>
 
 
-**Edit and Remove Action**
+#### Edit and Remove Action
 
 There are several ways how to access Quick Action to edit or delete it:
 
@@ -193,11 +212,25 @@ For some actions, you can assign a list of layers that will change in a circle w
 - *Map style*
 - *Overlay*
 - *Terrain color scheme*
+- *Add profile*
 
 The button allows you to assign a single layer or a list of layers that change circularly when tapped or with an interim dialog.
 
 - **Show an interim dialog**: displays dialog with maps list
 - **Do not show an interim dialog**: map sources will be changed by defined  order.
+
+
+### Change Position on Map
+
+Quick action button will appear on the right corner (above the zoom buttons), but it can be moved to the any part of the screen by long-tap it.
+
+| | |
+|------------|------------|
+| *First appearing*  | ![Quick action widget_view](@site/static/img/widgets/quick_action_widget_view.png) |
+| *Long-tap and moving* | ![Quick action widget_tap](@site/static/img/widgets/quick_action_widget_tap.png) |
+| *New place*  | ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_move.png) |
+| *Several [Custom buttons](#custom-buttons) on the map screen* | ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_multi.png) |
+
 
 
 ### Custom Buttons
@@ -234,7 +267,7 @@ The button allows you to assign a single layer or a list of layers that change c
 
 - Created buttons are located in the *Configure screen → Buttons → Custom buttons* list and are **available for all application profiles**.
 
-**Interaction with Custom Buttons**
+#### Interaction with Custom Buttons
 
 <Tabs groupId="operating-systems">
 
@@ -286,38 +319,6 @@ Using the Quick Action tool's functionality, you can assign required actions to 
 
 -->
 
-### Change Position
-
-Quick action button will appear on the right corner (above the zoom buttons), but it can be moved to the any part of the screen by long-tap it.
-
-| | |
-|------------|------------|
-| *First appearing*  | ![Quick action widget_view](@site/static/img/widgets/quick_action_widget_view.png) |
-| *Long-tap and moving* | ![Quick action widget_tap](@site/static/img/widgets/quick_action_widget_tap.png) |
-| *New place*  | ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_move.png) |
-| *Several [Custom buttons](#custom-buttons) on the map screen* | ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_multi.png) |
-
-
-## Quick Action Types
-
-### Add Action
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Custom button Android](@site/static/img/widgets/add_action_screen_andr.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Custom button Android](@site/static/img/widgets/add_action_screen_ios.png)  
-
-</TabItem>
-
-</Tabs> 
-
 
 ## Action Types 
 
@@ -329,6 +330,7 @@ Quick action button will appear on the right corner (above the zoom buttons), bu
 | Show / Hide <br/> [Topography layers](../plugins/contour-lines.md#overview) | All topography data is presented as separate map layers. You can quickly switch the visibility of these layers with Quick Action. <br/> <br/> - *Contour lines* <br/> - *Terrain*. &nbsp;Depending on the layer selected in the Configure map menu, *Hillshade*, *Slope*, or *Altitude* will be displayed. |
 | Change <br/> [Terrain color scheme](../plugins/contour-lines.md#color-scheme) | Allows you to select one or more palettes from a list of existing ones, which will change when you tap the button. |
 | Show / Hide <br/> [Weather layers](../plugins/weather.md#weather-layers) | All weather data is presented as separate map layers. With Quick Action you can get quick access to switch the visibility of these layers on the map. <br/> <br/> - *Precipitation layer* <br/> - *Cloud layer* <br/> - *Pressure layer* <br/> - *Wind layer* <br/> - *Temperature layer* |
+| [<Translate android="true" ids="shared_string_open"/> <Translate android="true" ids="shared_string_weather"/> always in centre](../plugins/weather.md) <br /> *for Android only* | Open the [*Weather* forecast screen](../plugins/weather.md#weather-forecast-screen). |
 | Show / Hide <br/> [Favourites](../personal/favorites.md#view-on-the-map) | Show or hide the favourite points on the map. |
 | Show / Hide <br/> [Tracks](../personal/tracks/manage-tracks.md#show-tracks-on-map) | Show or hide the last visible tracks on the map. |
 | Show / Hide <br/> [POIs](../map/point-layers-on-map.md#points-of-interest-poi) | Enable or disable POI layer with selected categories. <br/> - **POI Categories**: allows to select multiple categories <br/> Note: Action will replace previously selected categories, if POI layer was active before.  |
@@ -377,24 +379,19 @@ Quick action button will appear on the right corner (above the zoom buttons), bu
 | <Translate android="true" ids="quick_action_auto_zoom"/> | Enable or disable map auto zoom during navigation |
 | <Translate android="true" ids="quick_action_start_stop_navigation"/> | Start navigation (if there is a destination point present) or stop navigation |
 | <Translate android="true" ids="quick_action_resume_pause_navigation"/> | Pause / Resume navigation |
-| <Translate android="true" ids="change_application_profile"/> | Create a list of application profiles and cycle through them.  <br /> - **Show an interim dialog**: displays dialog with profiles list <br /> - **Do not show an interim dialog**: profiles will be changed by defined order. <br /> - **Note**: you could have 1 action with multiple profiles or many actions with 1 profile. |
 | <Translate android="true" ids="quick_action_remove_next_destination"/> | Removes next intermediate point, if present, otherwise removes destination and displays finish navigation dialog. Action is inactive if you don't have any destination. |
 | [<Translate android="true" ids="simulate_location_by_gpx"/>](../plugins/development.md#gpx-track-simulation) | Simulates the location and movement of your device using a GPX track. |
+
 
 ### Settings
 
 | Action | Description |
 |:-------------|:-------------|
 | - | - |
-
-
-
-#### Additional Types
-
-| Action | Description |
-|:-------------|:-------------|
-| [<Translate android="true" ids="shared_string_change"/> - <Translate android="true" ids="display_position"/> always in centre](../widgets/configure-screen.md#buttons-and-other) <br /> *for Android only* | Enable or disable center position for *My Location* icon on the map. |
-| [<Translate android="true" ids="shared_string_open"/> <Translate android="true" ids="shared_string_weather"/> always in centre](../plugins/weather.md) <br /> *for Android only* | Open the [*Weather* forecast screen](../plugins/weather.md#weather-forecast-screen). |
+| Change <br/> [App profile](../personal/profiles.md) | Create a list of application profiles and cycle through them.  <br /> - **Show an interim dialog**: displays dialog with profiles list <br /> - **Do not show an interim dialog**: profiles will be changed by defined order. <br /> - **Note**: you could have 1 action with multiple profiles or many actions with 1 profile. |
+| Change <br/> [App profile to next](../personal/profiles.md) | - |
+| Change <br/> [App profile to previous](../personal/profiles.md) | - |
+| Change <br/> [<Translate android="true" ids="quick_action_display_position_in_center"/>](../widgets/configure-screen.md#display-position) | Allows you to set the placement of the *My Location* cursor on the map. Enables or disables the cursor to always be in the center of the screen. |
 
 
 ## Related Articles

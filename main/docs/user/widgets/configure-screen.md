@@ -415,9 +415,9 @@ Allows you to set the placement of the cursor *[My location](../map/interact-wit
 </Tabs> 
 
 Access to additional actions in the Configure screen are:
-- *Android*
+- *Android.*  
     Located in Configure screen at the bottom of the screen in the *Actions* section: *Menu → Configure screen → Actions*.
-- *Android / iOS*
+- *Android / iOS.*  
     Located on the screens of each Panel in the three-dot menu in the upper right corner of the screen.
 
 Available actions:
