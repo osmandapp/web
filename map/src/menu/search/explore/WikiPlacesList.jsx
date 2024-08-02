@@ -1,7 +1,7 @@
 import WikiPlacesItem from './WikiPlacesItem';
 import { Box } from '@mui/material';
 import React, { useContext } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext from '../../../context/AppContext';
 
 export default function WikiPlacesList({ size }) {
     const ctx = useContext(AppContext);

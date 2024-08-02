@@ -1,10 +1,10 @@
 import { TextField } from '@mui/material/';
 import { Box, IconButton, InputAdornment } from '@mui/material';
-import { ReactComponent as CancelIcon } from '../../assets/icons/ic_action_cancel.svg';
-import { ReactComponent as SearchIcon } from '../../assets/icons/ic_action_search_dark.svg';
+import { ReactComponent as CancelIcon } from '../../../assets/icons/ic_action_cancel.svg';
+import { ReactComponent as SearchIcon } from '../../../assets/icons/ic_action_search_dark.svg';
 import React, { useState } from 'react';
-import styles from './search.module.css';
-import gStyles from '../gstylesmenu.module.css';
+import styles from '../search.module.css';
+import gStyles from '../../gstylesmenu.module.css';
 
 export default function CustomInput({ menuButton = null, setSearchValue }) {
     const [value, setValue] = useState('');
@@ -32,7 +32,6 @@ export default function CustomInput({ menuButton = null, setSearchValue }) {
                 InputProps={{
                     className: styles.searchInput,
                     startAdornment: <InputAdornment position="start">{menuButton}</InputAdornment>,
-
                     endAdornment:
                         value === '' ? (
                             <IconButton

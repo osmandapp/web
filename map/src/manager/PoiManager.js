@@ -1,8 +1,21 @@
 import { apiGet } from '../util/HttpApi';
 import icons from '../resources/generated/poiicons.json';
 import _ from 'lodash';
-import { ICON_KEY_NAME, ICON_NAME, TYPE_OSM_TAG, TYPE_OSM_VALUE } from '../infoblock/components/wpt/WptTagsProvider';
-import { getIconUrlByName } from '../map/markers/MarkerOptions';
+import {
+    getSvgIcon,
+    ICON_KEY_NAME,
+    ICON_NAME,
+    TYPE_OSM_TAG,
+    TYPE_OSM_VALUE,
+} from '../infoblock/components/wpt/WptTagsProvider';
+import {
+    changeIconColor,
+    createPoiIcon,
+    getIconUrlByName,
+    removeShadowFromIconWpt,
+} from '../map/markers/MarkerOptions';
+import { CategoryIcon } from '../menu/configuremap/PoiCategoriesConfig';
+import React from 'react';
 
 const POI_CATEGORIES = 'poiCategories';
 const TOP_POI_FILTERS = 'topPoiFilters';
@@ -78,7 +91,13 @@ async function searchPoiCategories(search) {
     }
 }
 
-function getIconNameForPoiType({ iconKeyName, typeOsmTag = '', typeOsmValue = '', iconName = '', useDefault = true }) {
+export function getIconNameForPoiType({
+    iconKeyName,
+    typeOsmTag = '',
+    typeOsmValue = '',
+    iconName = '',
+    useDefault = true,
+}) {
     if (icons.includes(`mx_${typeOsmTag}_${typeOsmValue}.svg`)) {
         return `${typeOsmTag}_${typeOsmValue}`;
     } else if (icons.includes(`mx_${iconKeyName}.svg`)) {
@@ -189,6 +208,54 @@ export const cleanHtml = (html) => {
         .replace(/[})]/g, '')
         .replace(/http\S*\s/g, '');
 };
+
+export function translatePoi({ key = null, value = null, ctx, t }) {
+    if (key === null && value === null) {
+        return '';
+    }
+    if (key !== null && ctx.poiCategory?.filters !== null) {
+        return t('poi_' + ctx.poiCategory?.filters[key]);
+    } else if (value !== null) {
+        return t('poi_' + value);
+    }
+    return '';
+}
+
+export async function getCategoryIcon(category) {
+    const name = PoiManager.preparePoiFilterIcon(category);
+    return (
+        <CategoryIcon
+            color={DEFAULT_POI_COLOR}
+            background={DEFAULT_POI_SHAPE}
+            icon={name}
+            iconSize={20}
+            shieldSize={30}
+        />
+    );
+}
+
+export async function getSearchCategoryIcon(category, ctx) {
+    const name = PoiManager.preparePoiFilterIcon(category);
+    const svgData = await getSvgIcon({ ctx, icon: name });
+    const coloredSvg = changeIconColor(svgData, DEFAULT_POI_COLOR);
+    const iconHtml = createPoiIcon({
+        color: '#F0F0F0',
+        background: DEFAULT_POI_SHAPE,
+        hasBackgroundLight: false,
+        svgIcon: coloredSvg,
+        iconSize: 24,
+        backgroundSize: 48,
+    }).options.html;
+
+    return (
+        <div
+            style={{ display: 'flex' }}
+            dangerouslySetInnerHTML={{
+                __html: removeShadowFromIconWpt(iconHtml) + '',
+            }}
+        />
+    );
+}
 
 const PoiManager = {
     getPoiCategories,

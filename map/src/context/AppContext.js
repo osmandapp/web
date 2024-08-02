@@ -3,13 +3,13 @@ import useCookie from 'react-use-cookie';
 import Utils, { seleniumUpdateActivity, useMutator } from '../util/Utils';
 import TracksManager, { getGpxFiles } from '../manager/track/TracksManager';
 import { addOpenedFavoriteGroups } from '../manager/FavoritesManager';
-import PoiManager from '../manager/PoiManager';
+import PoiManager, { getCategoryIcon } from '../manager/PoiManager';
 import { apiGet } from '../util/HttpApi';
 import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import { geoObject } from '../store/geoObject/geoObject.js';
 import WeatherManager from '../manager/WeatherManager';
 import { getAccountInfo } from '../manager/LoginManager';
-import { cloneDeep } from 'lodash';
+import { cloneDeep, isEmpty } from 'lodash';
 import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
@@ -23,6 +23,7 @@ export const OBJECT_TYPE_WEATHER = 'weather';
 export const OBJECT_TYPE_POI = 'poi';
 
 export const OBJECT_CONFIGURE_MAP = 'configure_map';
+export const OBJECT_EXPLORE = 'explore';
 export const OBJECT_SEARCH = 'search';
 export const OBJECT_GLOBAL_SETTINGS = 'global_settings';
 export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
@@ -275,7 +276,9 @@ export const AppContextProvider = (props) => {
     const [wantDeleteAcc, setWantDeleteAcc] = useState(false);
     const [listFiles, setListFiles] = useState({});
     const [gpxFiles, mutateGpxFiles, setGpxFiles] = useMutator({});
-    const [searchCtx, setSearchCtx] = useState({});
+    // search
+    const [searchQuery, setSearchQuery] = useState(null);
+    const [searchResult, setSearchResult] = useState(null);
 
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
@@ -328,9 +331,12 @@ export const AppContextProvider = (props) => {
         // futureStates: [], // was used for logs
     });
     const [openedPopper, setOpenedPopper] = useState(null);
+
+    //poi
     const [showPoiCategories, setShowPoiCategories] = useState([]);
     const [poiCategory, setPoiCategories] = useState(null);
     const [poiIconCache, setPoiIconCache] = useState({});
+    const [categoryIcons, setCategoryIcons] = useState({});
 
     const [wikiPlaces, setWikiPlaces] = useState(null);
     const [photoGallery, setPhotoGallery] = useState(null);
@@ -388,11 +394,35 @@ export const AppContextProvider = (props) => {
             PoiManager.getTopPoiFilters(setLocalTracksLoading).then((filters) => {
                 setPoiCategories({
                     categories: categories,
-                    filters: filters,
+                    filters: removeUnusedFilters(filters),
                 });
             });
         });
+
+        function removeUnusedFilters(filters) {
+            if (filters) {
+                return filters.filter((f) => f !== 'routes');
+            }
+            return null;
+        }
     }, []);
+
+    useEffect(() => {
+        async function loadIcons() {
+            const icons = {};
+            const filters = poiCategory?.filters;
+
+            if (filters) {
+                for (const filter of filters) {
+                    icons[filter] = await getCategoryIcon(filter);
+                }
+                setCategoryIcons(icons);
+            }
+        }
+        if (isEmpty(categoryIcons) && poiCategory !== null && poiCategory?.filters !== null) {
+            loadIcons().then();
+        }
+    }, [poiCategory?.filters]);
 
     useEffect(() => {
         const sequentialLoad = async () => {
@@ -471,8 +501,8 @@ export const AppContextProvider = (props) => {
                 beforePointRouter,
                 routeTrackFile,
                 setRouteTrackFile,
-                searchCtx,
-                setSearchCtx,
+                searchQuery,
+                setSearchQuery,
                 favorites,
                 setFavorites,
                 addFavorite,
@@ -582,6 +612,10 @@ export const AppContextProvider = (props) => {
                 setOpenVisibleMenu,
                 cloudSettings,
                 setCloudSettings,
+                categoryIcons,
+                setCategoryIcons,
+                searchResult,
+                setSearchResult,
             }}
         >
             {props.children}

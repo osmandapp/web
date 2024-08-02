@@ -8,7 +8,7 @@ import { ReactComponent as LocationIcon } from '../../assets/icons/ic_map_get_lo
 import { ReactComponent as LocationOffIcon } from '../../assets/icons/ic_action_location_off.svg';
 
 import { apiGet } from '../../util/HttpApi';
-import styles from './map.module.css';
+import styles from '../map.module.css';
 import { POSITION_CLASSES, TOOLTIP_PLACEMENT } from '../util/MapStylesManager';
 
 const flyZoom = 9;

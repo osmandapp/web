@@ -165,11 +165,12 @@ export async function fetchPhotoProperties(photo) {
  * {{User:FlickreviewR/reviewed-pass|Nationaal Archief|https://flickr.com/photos/29998366@N02/2949392968|2016-11-27 10:53:09|No known copyright restrictions|}} => No known copyright restrictions
  */
 
-export function addWikiPlacesDefaultFilters(ctx) {
+export function addWikiPlacesDefaultFilters(ctx, mainSearch = false) {
     const defaultFilters = filters.filter((f) => f !== 'office');
     ctx.setSearchSettings({
         ...ctx.searchSettings,
         selectedFilters: new Set(defaultFilters),
         useWikiImages: false,
+        showOnMainSearch: mainSearch,
     });
 }

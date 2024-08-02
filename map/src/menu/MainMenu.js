@@ -14,6 +14,7 @@ import {
 import { Menu, Person } from '@mui/icons-material';
 import AppContext, {
     OBJECT_CONFIGURE_MAP,
+    OBJECT_EXPLORE,
     OBJECT_GLOBAL_SETTINGS,
     OBJECT_SEARCH,
     OBJECT_TYPE_CLOUD_TRACK,
@@ -257,7 +258,9 @@ export default function MainMenu({
             setSelectedType(currentMenu.type);
             ctx.setPrevPageUrl({ url: location, active: false });
         } else {
-            setOpenMainMenu(true);
+            if (ctx.currentObjectType !== OBJECT_EXPLORE) {
+                setOpenMainMenu(true);
+            }
         }
     }
 

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Box, Button, Dialog } from '@mui/material';
-import OsmAndMap from '../../map/components/OsmAndMap';
+import OsmAndMap from '../../map/OsmAndMap';
 import MainMenu from '../../menu/MainMenu';
 import { useLocation, useNavigate } from 'react-router-dom';
 import AppContext from '../../context/AppContext';
@@ -24,7 +24,7 @@ import DialogActions from '@mui/material/DialogActions';
 import _, { isEmpty } from 'lodash';
 import TracksManager, { createTrackGroups, getGpxFiles } from '../../manager/track/TracksManager';
 import { addCloseTracksToRecently } from '../../menu/visibletracks/VisibleTracks';
-import PhotosModal from '../../menu/search/PhotosModal';
+import PhotosModal from '../../menu/search/explore/PhotosModal';
 import InstallBanner from './InstallBanner';
 import { hideAllTracks } from '../../manager/track/DeleteTrackManager';
 

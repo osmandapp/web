@@ -1,18 +1,18 @@
-import headerStyles from '../trackfavmenu.module.css';
+import headerStyles from '../../trackfavmenu.module.css';
 import { AppBar, IconButton, LinearProgress, Toolbar, Tooltip, Typography } from '@mui/material';
-import styles from '../settings/settings.module.css';
+import styles from '../../settings/settings.module.css';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
-import { ReactComponent as FilterIcon } from '../../assets/icons/ic_action_filter.svg';
+import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
+import { ReactComponent as FilterIcon } from '../../../assets/icons/ic_action_filter.svg';
 import { useTranslation } from 'react-i18next';
-import { MAIN_URL_WITH_SLASH, SEARCH_URL } from '../../manager/GlobalManager';
-import AppContext, { OBJECT_SEARCH } from '../../context/AppContext';
-import Loading from '../errors/Loading';
-import Empty from '../errors/Empty';
-import ActionsMenu from '../actions/ActionsMenu';
+import { MAIN_URL_WITH_SLASH, SEARCH_URL } from '../../../manager/GlobalManager';
+import AppContext, { OBJECT_EXPLORE } from '../../../context/AppContext';
+import Loading from '../../errors/Loading';
+import Empty from '../../errors/Empty';
+import ActionsMenu from '../../actions/ActionsMenu';
 import WikiPlacesFilter from './WikiPlacesFilter';
 import WikiPlacesList from './WikiPlacesList';
-import { addWikiPlacesDefaultFilters } from '../../manager/SearchManager';
+import { addWikiPlacesDefaultFilters } from '../../../manager/SearchManager';
 import { useNavigate } from 'react-router-dom';
 
 export default function ExploreMenu() {
@@ -28,11 +28,11 @@ export default function ExploreMenu() {
     function close() {
         navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + window.location.hash);
         ctx.setLoadingContextMenu(false);
-        addWikiPlacesDefaultFilters(ctx);
+        addWikiPlacesDefaultFilters(ctx, true);
     }
 
     useEffect(() => {
-        ctx.setCurrentObjectType(OBJECT_SEARCH);
+        ctx.setCurrentObjectType(OBJECT_EXPLORE);
         addWikiPlacesDefaultFilters(ctx);
         ctx.setLoadingContextMenu(true);
     }, []);

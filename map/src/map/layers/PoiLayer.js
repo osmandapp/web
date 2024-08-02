@@ -24,6 +24,7 @@ import {
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
+import { SEARCH_TYPE_CATEGORY } from './SearchLayer';
 
 export default function PoiLayer() {
     const ctx = useContext(AppContext);
@@ -35,6 +36,7 @@ export default function PoiLayer() {
     const [poiList, setPoiList] = useState({
         layer: null,
         prevLayer: null,
+        listFeatures: null,
     });
     const [prevController, setPrevController] = useState(false);
     const [useLimit, setUseLimit] = useState(false);
@@ -108,6 +110,7 @@ export default function PoiLayer() {
                                 const newPoiList = {
                                     prevLayer: _.cloneDeep(poiList.layer),
                                     layer: layer,
+                                    listFeatures: res.features,
                                 };
                                 setPoiList(newPoiList);
                                 setBbox(!res.useLimit ? bbox : null);
@@ -134,6 +137,7 @@ export default function PoiLayer() {
         let controller = new AbortController();
 
         async function getPoiList() {
+            setPrevTypesLength(_.cloneDeep(ctx.showPoiCategories.length));
             if (
                 ((!allPoiFound(zoom, prevZoom) && zoom !== prevZoom) || move || typesChanged()) &&
                 !_.isEmpty(ctx.showPoiCategories)
@@ -143,7 +147,6 @@ export default function PoiLayer() {
                 }
                 setPrevController(controller);
                 setPrevZoom(_.cloneDeep(zoom));
-                setPrevTypesLength(_.cloneDeep(ctx.showPoiCategories.length));
                 debouncedGetPoi({
                     controller,
                     ignore,
@@ -181,6 +184,9 @@ export default function PoiLayer() {
         }
         if (poiList.prevLayer) {
             map.removeLayer(poiList.prevLayer);
+        }
+        if (ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY) {
+            ctx.setSearchResult(poiList.listFeatures);
         }
         setMove(false);
     }, [poiList]);

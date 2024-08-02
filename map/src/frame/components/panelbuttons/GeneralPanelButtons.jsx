@@ -5,9 +5,8 @@ import PanelButtons from './PanelButtons';
 import ChangeProfileTrackDialog from '../../../dialogs/tracks/ChangeProfileTrackDialog';
 import PointContextMenu from '../../../infoblock/components/PointContextMenu';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
-import styles from '../../../map/components/map.module.css';
+import styles from '../../../map/map.module.css';
 import { ReactComponent as ConfigureMapIcon } from '../../../assets/icons/ic_map_configure_map.svg';
-import SearchInfo from '../search/SearchInfo';
 import ConfigureMap from '../../../menu/configuremap/ConfigureMap';
 import {
     HEADER_SIZE,
@@ -94,9 +93,6 @@ export default function GeneralPanelButtons({
                     <IconButton onClick={openMapStyle}>
                         <SvgIcon className={styles.customIconPath} component={ConfigureMapIcon} inheritViewBox />
                     </IconButton>
-                </Paper>
-                <Paper className={styles.button}>
-                    <SearchInfo />
                 </Paper>
             </div>
             <div

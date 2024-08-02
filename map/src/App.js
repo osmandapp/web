@@ -21,7 +21,7 @@ import {
     WEATHER_URL,
     EXPLORE_URL,
 } from './manager/GlobalManager';
-import ExploreMenu from './menu/search/ExploreMenu';
+import ExploreMenu from './menu/search/explore/ExploreMenu';
 import SearchMenu from './menu/search/SearchMenu';
 import Weather from './menu/weather/Weather';
 import FavoritesMenu from './menu/favorite/FavoritesMenu';

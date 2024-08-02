@@ -59,7 +59,7 @@ import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import { useNavigate } from 'react-router-dom';
 import { apiGet } from '../../../util/HttpApi';
 import Loading from '../../../menu/errors/Loading';
-import PhotoGallery from '../../../menu/search/PhotoGallery';
+import PhotoGallery from '../../../menu/search/explore/PhotoGallery';
 import wptStyles from '../wpt/wptDetails.module.css';
 import parse from 'html-react-parser';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../../manager/GlobalManager';
