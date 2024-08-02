@@ -295,7 +295,7 @@ The navigation route is displayed on the map as a solid line with your specified
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_routes"/>*
+*<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
 ![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) 
 
@@ -321,6 +321,20 @@ OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetma
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 
+### Coloring routes by type
+
+![Route info](@site/static/img/map/route_coloring_type_andr.png)
+
+Some routes have additional settings with which you can select the relevant coloring type for displaying them on the map. Additional settings are available next to the route name in the&nbsp;  "**...|**"  &nbsp;menu. A list of all routes with descriptions can be found in the [Vector Maps (Map Styles)](../map/vector-maps.md#routes) article.
+
+- **Cycle routes**
+    - *Route.*
+    - *Node networks.*
+- **Hiking routes**
+    - *OSMC.*
+    - 
+
+
 ### Save as a Track
 
 <Tabs groupId="operating-systems">
@@ -342,6 +356,7 @@ OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetma
 [*Hiking, Cycle, Travel, and other routes*](../map/vector-maps.md#routes) are available for selection on the map, and marked with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol). If you tap a *route symbol*, a list of the routes nearest to it is offered. Selecting one of them opens the [Track context menu](../map/track-context-menu.md) of the route.  
 
 To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../map/track-context-menu.md#info-panel). This will open the [Quick actions](../map/track-context-menu.md#quick-actions) button panel where you will have access to track actions such as changing [*Appearance*](#track-appearance), [*Navigation*](#route-navigation), or editing [*Plan a route*](../plan-route/create-route.md).
+
 
 ### Route Info
 
@@ -365,9 +380,12 @@ To save the route as a *GPX file*, tap the **Save (Download)** button under [Inf
 - If you have already used the *download button* in the [Track context menu](../map/track-context-menu.md), tap the line of the required route on the map.    
 
 **Route info** in *Overview tab* allows you to view detailed information about the selected route such as:
-- *Track details*: Route name/[*OSM ID*](#related-osm-id), Type, Description, Distance, Direction, Ascent/Descent, Altitude range, Network, Operator, State, Color, Roundtrip, Start/End points, and more.
-- *General*: Size, Location, Created on.
-- *Additional Info*: Type of activity.
+- *Track details*:  
+    Route name/[*OSM ID*](#related-osm-id), Type, Description, Distance, Direction, Ascent/Descent, Altitude range, Network, Operator, State, Color, Roundtrip, Start/End points, and more.
+- *General*:  
+    Size, Location, Created on.
+- *Additional Info*:  
+    Type of activity.
 
 ### Related OSM ID
 

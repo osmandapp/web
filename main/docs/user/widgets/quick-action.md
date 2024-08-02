@@ -115,44 +115,6 @@ First, you need to select [an action type](#quick-action-types) and then change 
 
 Screens 1, 2, and others are created automatically when the number of actions in the list increases to 6 items.
 
-
-#### Edit and Remove Action
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → Click Delete (Bin icon on the right top corner) → Select actions → Delete_
-
-![Quick action widget_android_del](@site/static/img/widgets/quick_action_widget_android_del.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → Click Edit (Pencil icon on the right top corner) → Select actions → Delete_
-
-![Quick action widget_ios_del](@site/static/img/widgets/quick_action_widget_ios_del.png)
-
-</TabItem>
-
-</Tabs>
-
-
-#### Rename and Delete Button
-
-![Custom button Android](@site/static/img/widgets/custom_button_rename_andr.png)  ![Custom button Android](@site/static/img/widgets/custom_button_del_andr.png)  
-
-To manage custom buttons, you can tap one of them, then choose the *three-dot menu* in the upper right corner of the screen and select an action:
-
-- **Rename**. Allows you to change the name of this button.
-- **Delete**. Allows you to delete your button with all added actions.
-
-
-
-### Change Action Parameters
-
-
 #### Add Button
 
 <Tabs groupId="operating-systems">
@@ -206,6 +168,43 @@ _<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_
 
 </Tabs>
 
+
+
+#### Edit and Remove Action
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → Click Delete (Bin icon on the right top corner) → Select actions → Delete_
+
+![Quick action widget_android_del](@site/static/img/widgets/quick_action_widget_android_del.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → Click Edit (Pencil icon on the right top corner) → Select actions → Delete_
+
+![Quick action widget_ios_del](@site/static/img/widgets/quick_action_widget_ios_del.png)
+
+</TabItem>
+
+</Tabs>
+
+
+#### Rename and Delete Button
+
+![Custom button Android](@site/static/img/widgets/custom_button_rename_andr.png)  ![Custom button Android](@site/static/img/widgets/custom_button_del_andr.png)  
+
+To manage custom buttons, you can tap one of them, then choose the *three-dot menu* in the upper right corner of the screen and select an action:
+
+- **Rename**. Allows you to change the name of this button.
+- **Delete**. Allows you to delete your button with all added actions.
+
+
+
+### Change Action Parameters
 
 #### Actions in Loop
 
