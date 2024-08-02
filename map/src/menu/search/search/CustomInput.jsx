@@ -2,12 +2,19 @@ import { TextField } from '@mui/material/';
 import { Box, IconButton, InputAdornment } from '@mui/material';
 import { ReactComponent as CancelIcon } from '../../../assets/icons/ic_action_cancel.svg';
 import { ReactComponent as SearchIcon } from '../../../assets/icons/ic_action_search_dark.svg';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../search.module.css';
 import gStyles from '../../gstylesmenu.module.css';
+import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 
-export default function CustomInput({ menuButton = null, setSearchValue }) {
+export default function CustomInput({ menuButton = null, setSearchValue, type = SEARCH_TYPE_CATEGORY }) {
     const [value, setValue] = useState('');
+
+    useEffect(() => {
+        if (value === '') {
+            setSearchValue(null);
+        }
+    }, [value]);
 
     return (
         <Box sx={{ mx: 2, my: 1 }}>
@@ -43,7 +50,12 @@ export default function CustomInput({ menuButton = null, setSearchValue }) {
                         ) : (
                             <IconButton
                                 className={`${gStyles.icon} ${styles.searchInputIcon}`}
-                                onClick={() => setSearchValue(value)}
+                                onClick={() => {
+                                    setSearchValue({
+                                        query: value.toLowerCase(),
+                                        type: type,
+                                    });
+                                }}
                             >
                                 <SearchIcon />
                             </IconButton>

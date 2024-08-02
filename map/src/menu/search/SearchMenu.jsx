@@ -26,6 +26,7 @@ export default function SearchMenu() {
     const [categoriesIcons, setCategoriesIcons] = useState({});
     const [openCategories, setOpenCategories] = useState(false);
     const [openSearchResults, setOpenSearchResults] = useState(false);
+    const [searchCategories, setSearchCategories] = useState([]);
 
     const { t } = useTranslation();
 
@@ -34,9 +35,35 @@ export default function SearchMenu() {
     }, []);
 
     useEffect(() => {
+        if (ctx.poiCategory?.filters) {
+            setSearchCategories(ctx.poiCategory.filters);
+        }
+    }, [ctx.poiCategory?.filters]);
+
+    useEffect(() => {
         if (searchValue) {
-            setIsMainSearchScreen(false);
-            setOpenSearchResults(true);
+            if (isMainSearchScreen) {
+                setIsMainSearchScreen(false);
+            }
+            if (openCategories && searchValue.type === SEARCH_TYPE_CATEGORY) {
+                if (searchCategories.includes(searchValue.query)) {
+                    setSearchValue({
+                        query: searchValue.query,
+                        type: SEARCH_TYPE_CATEGORY,
+                    });
+                    setOpenSearchResults(true);
+                    setOpenCategories(false);
+                } else {
+                    const res = searchCategories.filter((item) => item.startsWith(searchValue.query));
+                    setSearchCategories(res);
+                }
+            } else {
+                setOpenCategories(false);
+            }
+        } else {
+            if (openCategories) {
+                setSearchCategories(ctx.poiCategory.filters);
+            }
         }
     }, [searchValue]);
 
@@ -110,7 +137,7 @@ export default function SearchMenu() {
             )}
             {openCategories && (
                 <PoiCategoriesList
-                    categories={ctx.poiCategory?.filters}
+                    categories={searchCategories}
                     setSearchValue={setSearchValue}
                     setOpenCategories={setOpenCategories}
                     setOpenSearchResults={setOpenSearchResults}

@@ -1,7 +1,6 @@
 import { AppBar, Box, IconButton, ListItemIcon, ListItemText, MenuItem, Toolbar, Typography } from '@mui/material';
 import CustomInput from './CustomInput';
 import React, { useContext } from 'react';
-import { translatePoi } from '../../../manager/PoiManager';
 import AppContext from '../../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import headerStyles from '../../trackfavmenu.module.css';
@@ -58,7 +57,7 @@ export default function PoiCategoriesList({
                             <ListItemIcon>{ctx.categoryIcons[item]}</ListItemIcon>
                             <ListItemText>
                                 <Typography variant="inherit" noWrap>
-                                    {translatePoi({ key, ctx, t })}
+                                    {t('poi_' + item)}
                                 </Typography>
                             </ListItemText>
                         </MenuItem>
