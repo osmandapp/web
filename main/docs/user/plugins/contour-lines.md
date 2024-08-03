@@ -236,7 +236,7 @@ The **Terrain** menu includes [color scheme](#color-scheme) selection with the o
 - *Slope* uses color to visualize the steepness of the terrain. You can read more about it [here](https://www.wikiwand.com/en/Grade_(slope)).  
 Each color corresponds to an angle of deviation from the horizontal.  
 
-- *Altitude* uses
+- *Altitude*.
 
 #### Legend Color Cards
 
@@ -281,7 +281,8 @@ The *Scale Levels* function allows you to set the minimum and maximum values of 
 
 ![QA for Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-You can use the *Quick Action* buttons on the map screen to switch the visibility of *Contour Lines*, *Terrain* layers, and *color palettes*.
+You can use the *Quick Action* buttons on the map screen to switch the visibility of [*Contour Lines*](#contour-lines), [*Terrain*](#terrain) layers, and [*color palettes*](#color-scheme). Depending on the layer selected in the Configure map menu, assigning a *Terrain* action to the button will display *Hillshade*, *Slope*, or *Altitude*.  
+
 The main settings for *Show or Hide map types* are in the Topography section of the Configure Map menu. In the [Quick Action](../widgets/quick-action.md#configure-map) article, you can find a list of layers available for display. If you need quick access to this map configuration, use the *Custom Button* tool.
 - Go to [Add action](../widgets/quick-action.md#custom-buttons): *Menu → Configure screen → Custom buttons → Quick action → Add action → Configure map*.
 - Add one or more QA buttons to change the visibility of particular topography layer.
@@ -414,4 +415,4 @@ OsmAnd allows you to combine all three types of map layers: Contour lines, separ
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *This article was last updated in July 2024*
+> *This article was last updated in August 2024*

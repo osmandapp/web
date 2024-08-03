@@ -327,12 +327,10 @@ OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetma
 
 Some routes have additional settings with which you can select the relevant coloring type for displaying them on the map. Additional settings are available next to the route name in the&nbsp;  "**...|**"  &nbsp;menu. A list of all routes with descriptions can be found in the [Vector Maps (Map Styles)](../map/vector-maps.md#routes) article.
 
-- **Cycle routes**
-    - *Route.*
-    - *Node networks.*
-- **Hiking routes**
-    - *OSMC.*
-    - 
+- **Cycle routes**: *Route* and *Node networks*.
+- **Hiking routes**: *OSMC*, *Network affiliation*, and *Node networks*.
+- ****
+
 
 
 ### Save as a Track
