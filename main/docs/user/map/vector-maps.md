@@ -324,39 +324,56 @@ In OsmAnd app you can select GPX routes related to different outdoor activities 
     In some cases, you may find several routes intersecting at a certain location. When you select one of the routes, the *[Track context menu](../map/track-context-menu.md)* appears. In this menu, you can save the selected route to the device memory in GPX format, which will allow you to use it for [GPX navigation](../navigation/setup/gpx-navigation.md) in the future.
 
 
-|Parameters and Description|   
-|------------|
-|**<Translate android="true" ids="rendering_attr_showCycleRoutes_name"/>**|
-|*<Translate android="true" ids="layer_route"/>*. <Translate android="true" ids="rendering_value_walkingRoutesOSMC_description"/> Look at [Map legend](../map-legend/index.md).|
-|![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)|
-|*<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>*. <Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_description"/>|
-|![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)|
-|**<Translate android="true" ids="rendering_attr_showMtbRoutes_name"/>**|
-| *<Translate android="true" ids="mtb_scale"/>*. Show trails according to MTB scale. Look at [Map legend](../map-legend/index.md).|
-|![Map routes - mtb trails](@site/static/img/map/map-routes-mtb-trails.png)|
-| *<Translate android="true" ids="mtb_imba"/>*. Show MTB trails accorgind International Mountain Bicycling Association [MTB IMBA](https://www.imba.com/). Look at [Map legend](../map-legend/index.md).|
-|![Map routes - mtb trails](@site/static/img/map/map-routes-mtb_imba-trails.png)|
-|**<Translate android="true" ids="rendering_attr_hikingRoutesOSMC_name"/>**|
-|*<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>*. [<Translate android="true" ids="rendering_value_walkingRoutesOSMC_description"/>](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol).|
-|![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)|
-|*<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_name"/>*. [<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_description"/>](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) |
-|![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)|
-|*<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>*. [<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_description"/>](https://wiki.openstreetmap.org/wiki/Node_Networks) |
-|![Map routes - hiking node networks](@site/static/img/map/map-routes-hiking-node-networks.png)|
-|**<Translate android="true" ids="rendering_attr_alpineHiking_name"/>**. Showing  classified hiking trails ([SAC scale](https://wiki.openstreetmap.org/wiki/Key:sac_scale) or [CAI scale](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)) in mountainous areas with regard to the difficulties to be expected by colour.|
-|![Map routes - alpine hiking](@site/static/img/map/map-routes-alpine-hiking.png)|
-|**<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>**. Showing colored routes of ski slopes. This setting is provided by map style ["Winter and ski"](../map/vector-maps.md#winter-and-ski). |
-|![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)|
-|**<Translate android="true" ids="rendering_attr_horseRoutes_name"/>**. Showing colored routes and symbols for riding horses.|
-|![Map routes - horse routes](@site/static/img/map/map-routes-horse.png)|
-|**<Translate android="true" ids="rendering_attr_whiteWaterSports_name"/>**. Showing [icons of access, dangerous areas, tourism of whitewater sports](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map). |
-|![Map routes - whitewater sport](@site/static/img/map/map-routes-whitewater-sport.png)|
-|**<Translate android="true" ids="rendering_attr_showRunningRoutes_name"/>**. Used for named, numbered, or otherwise designated running routes used primarily for athletics. Data for these routes are taken from [OpenStreetMap project](https://openstreetmap.org/): The tag [route=running](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning)|
-|![Fitness routes](@site/static/img/map/fitness_1.png)|
-|**<Translate android="true" ids="rendering_attr_showFitnessTrails_name"/>**. A fitness trail is a trail or path equipped with obstacles or stations along its length to exercise the human body for the purpose of improving health. Data for these routes are taken from [OpenStreetMap project](https://openstreetmap.org/): The tag [route=fitness_trail](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail)|
-|![Fitness routes](@site/static/img/map/fitness_route.png) |
-| **<Translate android="true" ids="travel_routes"/>** Shows previously uploaded specially configured [user routes](https://osmand.net/blog/routes#generated-travel-routes) taken from OpenStreetMap categories. *Android only*. |
-| ![Travel routes](@site/static/img/map/travel_route_2.png) ![Travel routes](@site/static/img/map/travel_routes.png) |
+1. **<Translate android="true" ids="rendering_attr_showCycleRoutes_name"/>**
+
+    - *<Translate android="true" ids="layer_route"/>*. <Translate android="true" ids="rendering_value_walkingRoutesOSMC_description"/> Look at [Map legend](../map-legend/index.md).  
+    ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)
+
+    - *<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>*. <Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_description"/>  
+    ![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
+
+2. **<Translate android="true" ids="rendering_attr_showMtbRoutes_name"/>**
+
+    - *<Translate android="true" ids="mtb_scale"/>*. Show trails according to MTB scale. Look at [Map legend](../map-legend/index.md).  
+    ![Map routes - mtb trails](@site/static/img/map/map-routes-mtb-trails.png)
+
+    - *<Translate android="true" ids="mtb_imba"/>*. Show MTB trails accorgind International Mountain Bicycling Association [MTB IMBA](https://www.imba.com/). Look at [Map legend](../map-legend/index.md).  
+    ![Map routes - mtb trails](@site/static/img/map/map-routes-mtb_imba-trails.png)
+
+3. **<Translate android="true" ids="rendering_attr_hikingRoutesOSMC_name"/>**
+
+    - *<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>*. [<Translate android="true" ids="rendering_value_walkingRoutesOSMC_description"/>](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol).  
+    ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)
+
+    - *<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_name"/>*. [<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_description"/>](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol)  
+    ![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)
+
+    - *<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>*. [<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_description"/>](https://wiki.openstreetmap.org/wiki/Node_Networks)  
+    ![Map routes - hiking node networks](@site/static/img/map/map-routes-hiking-node-networks.png)
+
+4. **<Translate android="true" ids="rendering_attr_alpineHiking_name"/>**. Showing  classified hiking trails ([SAC scale](https://wiki.openstreetmap.org/wiki/Key:sac_scale) or [CAI scale](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)) in mountainous areas with regard to the difficulties to be expected by colour.  
+    ![Map routes - alpine hiking](@site/static/img/map/map-routes-alpine-hiking.png)
+
+5. **<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>**. Showing colored routes of ski slopes. This setting is provided by map style ["Winter and ski"](../map/vector-maps.md#winter-and-ski).   
+    ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
+
+6. **<Translate android="true" ids="rendering_attr_horseRoutes_name"/>**. Showing colored routes and symbols for riding horses.  
+    ![Map routes - horse routes](@site/static/img/map/map-routes-horse.png)
+
+7. **<Translate android="true" ids="rendering_attr_whiteWaterSports_name"/>**. Showing [icons of access, dangerous areas, tourism of whitewater sports](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).   
+    ![Map routes - whitewater sport](@site/static/img/map/map-routes-whitewater-sport.png)
+
+8. **<Translate android="true" ids="rendering_attr_showRunningRoutes_name"/>**. Used for named, numbered, or otherwise designated running routes used primarily for athletics. Data for these routes are taken from [OpenStreetMap project](https://openstreetmap.org/): The tag [route=running](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning)  
+    ![Fitness routes](@site/static/img/map/fitness_1.png)
+
+9. **<Translate android="true" ids="rendering_attr_showFitnessTrails_name"/>**. A fitness trail is a trail or path equipped with obstacles or stations along its length to exercise the human body for the purpose of improving health. Data for these routes are taken from [OpenStreetMap project](https://openstreetmap.org/): The tag [route=fitness_trail](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail)  
+    ![Fitness routes](@site/static/img/map/fitness_route.png) 
+
+10. **<Translate android="true" ids="travel_routes"/>** *Android only*. Shows previously uploaded specially configured [user routes](https://osmand.net/blog/routes#generated-travel-routes) taken from OpenStreetMap categories.  
+    ![Travel routes](@site/static/img/map/travel_route_2.png)  
+
+    *Tracks*, *Travelbooks*, and *Points*  
+    ![Travel routes](@site/static/img/map/travel_routes.png) 
 
 
 ### Transport

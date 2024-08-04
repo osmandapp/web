@@ -302,58 +302,58 @@ When enabled, the quick action widget is located in the lower right corner above
 
 | Action | Description |
 |:-------------|:-------------|
-| Show / Hide <br/> [Routes](../map/vector-maps.md#routes) | You can select route types to enable or disable their display. <br/> <br/> - *Cycle routes* <br/> - *Mountain bike routes* <br/> - *Hiking routes* <br/> - *Difficulty classification* <br/> - *Ski slopes* <br/> - *Horse routes* <br/> - *Whitewater sports* <br/> - *Running routes* <br/> - *Fitness trails* <br/> - *Travel routes* |
-| Show / Hide <br/> [Topography layers](../plugins/contour-lines.md#overview) | All topography data is presented as separate map layers. You can quickly switch the visibility of these layers with Quick Action. <br/> <br/> - *Contour lines* <br/> - *Terrain*. &nbsp;Depending on the layer selected in the Configure map menu, *Hillshade*, *Slope*, or *Altitude* will be displayed. |
-| Change <br/> [Terrain color scheme](../plugins/contour-lines.md#color-scheme) | Allows you to select one or more palettes from a list of existing ones, which will change when you tap the button. |
-| Show / Hide <br/> [Weather layers](../plugins/weather.md#weather-layers) | All weather data is presented as separate map layers. With Quick Action you can get quick access to switch the visibility of these layers on the map. <br/> <br/> - *Precipitation layer* <br/> - *Cloud layer* <br/> - *Pressure layer* <br/> - *Wind layer* <br/> - *Temperature layer* |
+| Show / Hide <br/> [**Routes**](../map/vector-maps.md#routes) | You can select route types to enable or disable their display. <br/> Some routes have additional settings. By default, if you have not selected anything in the [Configure Map](../map/configure-map-menu.md) menu, the first route type from the list will be assigned, otherwise a type of your choice will be assigned. You can read more in the [Tracks and Routes](../map/tracks-on-map.md#coloring-routes-by-type) article. <br/> - ***Cycle routes***  &nbsp;(*Route*, *Node networks*) <br/> - ***Mountain bike routes***  &nbsp;(*MTB scale*, *IMBA*) <br/> - ***Hiking routes***  &nbsp;(*OSMC*, *Network affiliation*, *Node networks*) <br/> - ***Difficulty classification***  &nbsp;(*SAC scale*, *CAI scale*) <br/> - ***Ski slopes*** <br/> - ***Horse routes*** <br/> - ***Whitewater sports*** <br/> - ***Running routes*** <br/> - ***Fitness trails*** <br/> - ***Travel routes***  &nbsp;(*Tracks*, *Travelbooks*, *Points*) <br/> |
+| Show / Hide <br/> [**Topography layers**](../plugins/contour-lines.md#overview) | All topography data is presented as separate map layers. You can quickly switch the visibility of these layers with Quick Action. <br/> - ***Contour lines*** <br/> - ***Terrain***.  &nbsp;(*Depending on the layer selected in the [Configure Map](../map/configure-map-menu.md) menu*, *Hillshade*, *Slope*, or *Altitude* *will be displayed.*) |
+| Change <br/> [**Terrain color scheme**](../plugins/contour-lines.md#color-scheme) | Allows you to select one or more palettes from a list of existing ones, which will change when you tap the button. |
+| Show / Hide <br/> [**Weather layers**](../plugins/weather.md#weather-layers) | All weather data is presented as separate map layers. With Quick Action you can get quick access to switch the visibility of these layers on the map. <br/> - *Precipitation layer* <br/> - *Cloud layer* <br/> - *Pressure layer* <br/> - *Wind layer* <br/> - *Temperature layer* |
 | [<Translate android="true" ids="shared_string_open"/> <Translate android="true" ids="shared_string_weather"/> always in centre](../plugins/weather.md) <br /> *for Android only* | Open the [*Weather* forecast screen](../plugins/weather.md#weather-forecast-screen). |
-| Show / Hide <br/> [Favourites](../personal/favorites.md#view-on-the-map) | Show or hide the favourite points on the map. |
-| Show / Hide <br/> [Tracks](../personal/tracks/manage-tracks.md#show-tracks-on-map) | Show or hide the last visible tracks on the map. |
-| Show / Hide <br/> [POIs](../map/point-layers-on-map.md#points-of-interest-poi) | Enable or disable POI layer with selected categories. <br/> - **POI Categories**: allows to select multiple categories <br/> Note: Action will replace previously selected categories, if POI layer was active before.  |
-| Change <br/> [Map mode](../map/vector-maps.md#map-mode) | Quick access to switch between day and night modes. |
+| Show / Hide <br/> [**Favourites**](../personal/favorites.md#view-on-the-map) | Show or hide the favourite points on the map. |
+| Show / Hide <br/> [**Tracks**](../personal/tracks/manage-tracks.md#show-tracks-on-map) | Show or hide the last visible tracks on the map. |
+| Show / Hide <br/> [**POIs**](../map/point-layers-on-map.md#points-of-interest-poi) | Enable or disable POI layer with selected categories. <br/> - **POI Categories**: allows to select multiple categories <br/> Note: Action will replace previously selected categories, if POI layer was active before.  |
+| Change <br/> [**Map mode**](../map/vector-maps.md#map-mode) | Quick access to switch between day and night modes. |
 | - | - |
-| Change <br/> [<Translate ios="true" ids="quick_action_map_source_title"/>](../map/raster-maps.md) | The button allows you to assign a single map source or a list of source that change circularly when tapped or with an interim dialog. <br/> - **Show an interim dialog**. displays dialog with maps list <br/> - **Do not show an interim dialog**: map sources will be changed by defined order. <br/> - Displayed Name - '**Map source >**'. '>' after the map name indicates what is current selected map source. <br/> - Displayed Name - '**> Next map source**'. '>' before the map name indciates what is next selected map source if action is executed. <br/> - **Note**: you could have 1 action to change source and select multiple map sources or many quick actions with 1 map source selected, so you could quickly select the map source just from quick aciton list. |
+| Change <br/> [**<Translate ios="true" ids="quick_action_map_source_title"/>**](../map/raster-maps.md) | The button allows you to assign a single map source or a list of source that change circularly when tapped or with an interim dialog. <br/> - **Show an interim dialog**. displays dialog with maps list <br/> - **Do not show an interim dialog**: map sources will be changed by defined order. <br/> - Displayed Name - '**Map source >**'. '>' after the map name indicates what is current selected map source. <br/> - Displayed Name - '**> Next map source**'. '>' before the map name indciates what is next selected map source if action is executed. <br/> - **Note**: you could have 1 action to change source and select multiple map sources or many quick actions with 1 map source selected, so you could quickly select the map source just from quick aciton list. |
 | - | - |
-| Show / Hide <br /> [Public transport](../map/vector-maps.md#transport) | Enable or disable public transport map layer. <br /> - **Transport type** (on first tap): select one or many options from 'Transport stops', 'Bus, trolleybus, shuttle routes', 'Tram and train routes', 'Subway routes' |
-| [<Translate ios="true" ids="map_settings_over"/>](../map/raster-maps.md) | Create a list of map sources as map overlay and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="quick_action_map_source_title"/>** (see above) |
-| [<Translate ios="true" ids="map_settings_under"/>](../map/raster-maps.md) |  Create a list of map sources as map underlay and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="quick_action_map_source_title"/>** (see above)  |
-| Change <br/> [<Translate android="true" ids="quick_action_map_style"/>](../map/vector-maps.md#default-map-styles) | Create a list of map styles for vector maps and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="quick_action_map_source_title"/>** (see above) |
-| Show / Hide <br/> [Mapillary layer](../plugins/mapillary.md) | Allows you to view map layers with street-level imagery provided by Mapillary. |
-| Show / Hide <br/> [<Translate android="true" ids="osm_notes"/>](../plugins/osm-editing.md) | You can select to display or hide all OSM notes on the map with a single tap on the button. |
+| Show / Hide <br /> [**Public transport**](../map/vector-maps.md#transport) | Enable or disable public transport map layer. <br /> - **Transport type** (on first tap): select one or many options from 'Transport stops', 'Bus, trolleybus, shuttle routes', 'Tram and train routes', 'Subway routes' |
+| [**<Translate ios="true" ids="map_settings_over"/>**](../map/raster-maps.md) | Create a list of map sources as map overlay and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="quick_action_map_source_title"/>** (see above) |
+| [**<Translate ios="true" ids="map_settings_under"/>**](../map/raster-maps.md) |  Create a list of map sources as map underlay and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="quick_action_map_source_title"/>** (see above)  |
+| Change <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/vector-maps.md#default-map-styles) | Create a list of map styles for vector maps and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="quick_action_map_source_title"/>** (see above) |
+| Show / Hide <br/> [**Mapillary layer**](../plugins/mapillary.md) | Allows you to view map layers with street-level imagery provided by Mapillary. |
+| Show / Hide <br/> [**<Translate android="true" ids="osm_notes"/>**](../plugins/osm-editing.md) | You can select to display or hide all OSM notes on the map with a single tap on the button. |
 
 
 ### Map Interactions
 
 | Action | Description |
 |:-------------|:-------------|
-| Map <br/> [Zoom in](../map/interact-with-map.md) | Zooming in the map with simultaneously increasing the amount of data displayed. |
-| Map <br/> [Zoom out](../map/interact-with-map.md) | Downscaling the map. It is convenient to use with [Developer widget - Zoom level](../widgets/info-widgets.md#developer-widgets). |
-| Move <br/> [Map down](../map/interact-with-map.md) | You can use the quick action button to move the map down.  |
-| Move <br/> [Map up](../map/interact-with-map.md) | When tapped, the map screen moves up. |
-| Move <br/> [Map to the left](../map/interact-with-map.md) | When you tap button map screen moves to the left |
-| Move <br/> [Map to the right](../map/interact-with-map.md) | Whith quick action button you can move the map to the right. |
-| Move <br/> [To My location](../map/interact-with-map.md#my-location--zoom) | Moves the map to the *My location* position. |
+| Map <br/> [**Zoom in**](../map/interact-with-map.md) | Zooming in the map with simultaneously increasing the amount of data displayed. |
+| Map <br/> [**Zoom out**](../map/interact-with-map.md) | Downscaling the map. It is convenient to use with [Developer widget - Zoom level](../widgets/info-widgets.md#developer-widgets). |
+| Move <br/> [**Map down**](../map/interact-with-map.md) | You can use the quick action button to move the map down.  |
+| Move <br/> [**Map up**](../map/interact-with-map.md) | When tapped, the map screen moves up. |
+| Move <br/> [**Map to the left**](../map/interact-with-map.md) | When you tap button map screen moves to the left |
+| Move <br/> [**Map to the right**](../map/interact-with-map.md) | Whith quick action button you can move the map to the right. |
+| Move <br/> [**To My location**](../map/interact-with-map.md#my-location--zoom) | Moves the map to the *My location* position. |
 
 
 ### My Places
 
 | Action | Description |
 |:-------------|:-------------|
-| [<Translate android="true" ids="quick_action_add_favorite"/>](../map/configure-map-menu.md#map-layers) | Adds favorite to a selected (center) map location. <br /> - **Show an interim dialog**: displays confirmation dialog <br /> - **Group**: adds favorite to a selected group <br /> - **Color**: adds favorite with a preselected color <br /> - **Name**: adds favorite with a given name prefix  |
-| [<Translate android="true" ids="quick_action_add_gpx"/>](../map/point-layers-on-map.md#track-waypoints) | Adds a new Track waypoint to [currently recording track](../plugins/trip-recording.md) or to [any track from My Places](../personal/tracks/create-edit.md). <br /> - **Show an interim dialog**: displays confirmation dialog <br /> - **Group**: adds favorite to a selected group <br /> - **Color**: adds favorite with a preselected color <br /> - **Name**: adds favorite with a given name prefix  |
-| [<Translate android="true" ids="quick_action_add_marker"/>](../map/configure-map-menu.md#map-layers) | Adds marker to a selected (center) map location. |
+| [**<Translate android="true" ids="quick_action_add_favorite"/>**](../map/configure-map-menu.md#map-layers) | Adds favorite to a selected (center) map location. <br /> - **Show an interim dialog**: displays confirmation dialog <br /> - **Group**: adds favorite to a selected group <br /> - **Color**: adds favorite with a preselected color <br /> - **Name**: adds favorite with a given name prefix  |
+| [**<Translate android="true" ids="quick_action_add_gpx"/>**](../map/point-layers-on-map.md#track-waypoints) | Adds a new Track waypoint to [currently recording track](../plugins/trip-recording.md) or to [any track from My Places](../personal/tracks/create-edit.md). <br /> - **Show an interim dialog**: displays confirmation dialog <br /> - **Group**: adds favorite to a selected group <br /> - **Color**: adds favorite with a preselected color <br /> - **Name**: adds favorite with a given name prefix  |
+| [**<Translate android="true" ids="quick_action_add_marker"/>**](../map/configure-map-menu.md#map-layers) | Adds marker to a selected (center) map location. |
 | <Translate android="true" ids="quick_action_add_parking"/> <br /> [Plugin](../plugins/parking.md) | Adds parking to a selected (center) map location. Old parking position is deleted. |
 | <Translate android="true" ids="quick_action_add_poi"/> <br /> [Plugin](../plugins/osm-editing.md) | Adds POI to a selected (center) map location map (same as context menu action). <br /> - **Show an interim dialog**: displays confirmation dialog <br /> - **POI type** (optional): preselect OSM type <br /> - **Tag/Value** (multiple): add [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_Features) tags / values |
 | <Translate android="true" ids="quick_action_add_osm_bug"/> <br /> [Plugin](../plugins/osm-editing.md) | Adds [OSM Note](https://wiki.openstreetmap.org/wiki/Notes)  <br /> - **Show an interim dialog**: displays confirmation dialog <br /> - **Message**: adds default message to the note |
 | Add media note <br /> [Android Plugin](../plugins/audio-video-notes.md) | Starts audio / photo / video note recording  for a selected (center) map location. |
-| [<Translate android="true" ids="plan_route_create_new_route"/>](../plan-route/create-route.md) <br /> _for Android only_ | Opening of ["Plan a route"](../plan-route/create-route.md) tool and creation a route for a selected (center) map location. |
+| [<Translate android="true" ids="plan_route_create_new_route"/>](../plan-route/create-route.md) <br /> _for Android only_ | Opening of [Plan a route](../plan-route/create-route.md) tool and creation a route for a selected (center) map location. |
 
 
 ### Navigation
 
 | Action | Description |
 |:-------------|:-------------|
-| Add <br/> [<Translate android="true" ids="quick_action_first_intermediate"/>](../navigation/setup/route-navigation.md#intermediate-destinations) | You can select the center of the map screen as the first intermediate point. The previous destination remains the same. |
+| Add <br/> [**<Translate android="true" ids="quick_action_first_intermediate"/>**](../navigation/setup/route-navigation.md#intermediate-destinations) | You can select the center of the map screen as the first intermediate point. The previous destination remains the same. |
 | <Translate android="true" ids="quick_action_navigation_voice"/> | Mute or unmute voice guidance during navigation |
 | <Translate android="true" ids="context_menu_item_directions_from"/> | Mark a selected (center) map location as a point of departure |
 | <Translate android="true" ids="quick_action_add_destination"/> | Add a selected (center) map location as a destination. Previous destination becomes last intermediate point.  |
@@ -369,10 +369,10 @@ When enabled, the quick action widget is located in the lower right corner above
 
 | Action | Description |
 |:-------------|:-------------|
-| Change <br/> [App profile](../personal/profiles.md) | Create a list of application profiles and cycle through them.  <br /> - **Show an interim dialog**: displays dialog with profiles list <br /> - **Do not show an interim dialog**: profiles will be changed by defined order. <br /> - **Note**: you could have 1 action with multiple profiles or many actions with 1 profile. |
-| Change <br/> [App profile to next](../personal/profiles.md) | - |
-| Change <br/> [App profile to previous](../personal/profiles.md) | - |
-| Change <br/> [<Translate android="true" ids="quick_action_display_position_in_center"/>](../widgets/configure-screen.md#display-position) | Allows you to set the placement of the *My Location* cursor on the map. Enables or disables the cursor to always be in the center of the screen. |
+| Change <br/> [**App profile**](../personal/profiles.md) | Create a list of application profiles and cycle through them.  <br /> - **Show an interim dialog**: displays dialog with profiles list <br /> - **Do not show an interim dialog**: profiles will be changed by defined order. <br /> - **Note**: you could have 1 action with multiple profiles or many actions with 1 profile. |
+| Change <br/> [**App profile to next**](../personal/profiles.md) | - |
+| Change <br/> [**App profile to previous**](../personal/profiles.md) | - |
+| Change <br/> [**<Translate android="true" ids="quick_action_display_position_in_center"/>**](../widgets/configure-screen.md#display-position) | Allows you to set the placement of the *My Location* cursor on the map. Enables or disables the cursor to always be in the center of the screen. |
 
 
 ## Use Keyboard for Actions

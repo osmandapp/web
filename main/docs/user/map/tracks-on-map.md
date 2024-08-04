@@ -325,12 +325,17 @@ OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetma
 
 ![Route info](@site/static/img/map/route_coloring_type_andr.png)
 
-Some routes have additional settings with which you can select the relevant coloring type for displaying them on the map. Additional settings are available next to the route name in the&nbsp;  "**...|**"  &nbsp;menu. A list of all routes with descriptions can be found in the [Vector Maps (Map Styles)](../map/vector-maps.md#routes) article.
+Some routes have additional settings with which you can select the relevant coloring type for displaying them on the map.  
+
+Additional settings are available next to the route name in the&nbsp;  "**...|**"  &nbsp;menu. By default, if you do not select anything in the menu, the routes of the first type in the list will be displayed. But if you have made a selection, it is saved by the application and will be used for the current profile every time you enable the routes.  
+
+A list of all routes with descriptions can be found in the [Vector Maps (Map Styles)](../map/vector-maps.md#routes) article.
 
 - **Cycle routes**: *Route* and *Node networks*.
+- **Mountain bike routes**: *MTB scale* and *IMBA*.
 - **Hiking routes**: *OSMC*, *Network affiliation*, and *Node networks*.
-- ****
-
+- **Difficulty classification**: *SAC scale* and *CAI scale*.
+- **Travel routes**: *Tracks*, *Travelbooks*, and *Points*.
 
 
 ### Save as a Track
@@ -424,10 +429,12 @@ In *Tracks tab*, **Graph** displays track information in graphical form with a d
 ![Route info](@site/static/img/map/qa_routes_andr.png)
 
 Using the *Quick Actions* map buttons, you can switch the visibility of different types of routes.  
-The main settings for *Show or Hide routes* can be found in the Configure Map menu. In the [Vector Maps article](../map/vector-maps.md#routes), you can find a description and the entire list of routes available for display. If you want quick access to this map configuration, use the *Custom Button* tool.
+The main settings for *Show or Hide routes* can be found in the Configure Map menu. Some routes have an [additional setting](#coloring-routes-by-type) for selecting types. When assigning an action to a button, either the default type or the type selected in the Configure map will be displayed.  
+
+In the [Vector Maps article](../map/vector-maps.md#routes), you can find a description and the entire list of routes available for display. If you want quick access to this map configuration, use the *Custom Button* tool.  
+
 - Go to [Add action](../widgets/quick-action.md#custom-buttons): *Menu → Configure screen → Custom buttons → Quick action → Add action → Configure map*.
 - Add one or more QA buttons to change the visibility of particular routes.
-
 
 
 ## Read more
