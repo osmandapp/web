@@ -7,7 +7,7 @@ import {
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
-import { getIconNameForPoiType, getSearchCategoryIcon } from '../../../manager/PoiManager';
+import { formattingPoiType, getIconNameForPoiType, getSearchCategoryIcon } from '../../../manager/PoiManager';
 import SearchResultItem from './SearchResultItem';
 import { MenuButton } from './MenuButton';
 import { Box } from '@mui/material';
@@ -35,8 +35,12 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     }, [value]);
 
     function searchByCategory(value) {
+        const preparedValue = {
+            query: formattingPoiType(value.query),
+            type: value.type,
+        };
         ctx.setSearchQuery({
-            query: value.query,
+            search: preparedValue,
             type: SEARCH_TYPE_CATEGORY,
         });
     }
@@ -91,6 +95,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
             <CustomInput
                 menuButton={<MenuButton needBackButton={true} backToPrevScreen={backToMainSearch} />}
                 setSearchValue={setSearchValue}
+                defaultSearchValue={value.type === SEARCH_TYPE_CATEGORY ? formattingPoiType(value.query) : value.query}
             />
             {!result && <Loading />}
             <Box sx={{ overflowY: 'auto' }}>

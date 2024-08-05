@@ -16,6 +16,7 @@ import {
 } from '../map/markers/MarkerOptions';
 import { CategoryIcon } from '../menu/configuremap/PoiCategoriesConfig';
 import React from 'react';
+import i18n from '../i18n';
 
 const POI_CATEGORIES = 'poiCategories';
 const TOP_POI_FILTERS = 'topPoiFilters';
@@ -82,6 +83,7 @@ async function searchPoiCategories(search) {
     let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi-categories`, {
         params: {
             search: search,
+            locale: i18n.language,
         },
     });
     if (!_.isEmpty(response?.data)) {
@@ -121,7 +123,7 @@ export function getIconName(obj) {
 }
 
 function formattingPoiFilter(type, rename) {
-    if (type) {
+    if (type && poiFilters[type]) {
         if (rename) {
             type = poiFilters[type].length > 1 ? poiFilters[type][1] : poiFilters[type][0];
         } else {
@@ -131,7 +133,7 @@ function formattingPoiFilter(type, rename) {
     return type;
 }
 
-function formattingPoiType(type) {
+export function formattingPoiType(type) {
     if (type) {
         type = type.replaceAll('_', ' ');
         type = type.charAt(0).toUpperCase() + type.slice(1);

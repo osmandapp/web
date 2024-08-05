@@ -9,8 +9,12 @@ import WikiPlacesList from './explore/WikiPlacesList';
 import { addWikiPlacesDefaultFilters } from '../../manager/SearchManager';
 import { EXPLORE_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 import { useNavigate } from 'react-router-dom';
-import { getSearchCategoryIcon, translatePoi } from '../../manager/PoiManager';
-import { isEmpty } from 'lodash';
+import PoiManager, {
+    getCategoryIcon,
+    getIconNameForPoiType,
+    getSearchCategoryIcon,
+    translatePoi,
+} from '../../manager/PoiManager';
 import PoiCategoriesList from './search/PoiCategoriesList';
 import SearchResults from './search/SearchResults';
 import { MenuButton } from './search/MenuButton';
@@ -22,11 +26,14 @@ export default function SearchMenu() {
 
     const [isMainSearchScreen, setIsMainSearchScreen] = useState(true);
     const [loadingWikiPlaces, setLoadingWikiPlaces] = useState(false);
+    const [loadingIcons, setLoadingIcons] = useState(false);
     const [searchValue, setSearchValue] = useState(null);
     const [categoriesIcons, setCategoriesIcons] = useState({});
     const [openCategories, setOpenCategories] = useState(false);
     const [openSearchResults, setOpenSearchResults] = useState(false);
     const [searchCategories, setSearchCategories] = useState([]);
+    const [searchCategoriesIconNames, setSearchCategoriesIconNames] = useState(null);
+    const [searchCategoriesIcons, setSearchCategoriesIcons] = useState({});
 
     const { t } = useTranslation();
 
@@ -35,41 +42,76 @@ export default function SearchMenu() {
     }, []);
 
     useEffect(() => {
+        if (ctx.categoryIcons) {
+            setSearchCategoriesIcons((prevIcons) => ({
+                ...prevIcons,
+                ...ctx.categoryIcons,
+            }));
+        }
+    }, [ctx.categoryIcons]);
+
+    useEffect(() => {
         if (ctx.poiCategory?.filters) {
             setSearchCategories(ctx.poiCategory.filters);
         }
     }, [ctx.poiCategory?.filters]);
 
     useEffect(() => {
+        const fetchCategorySearchResults = async (searchValue) => {
+            if (searchValue) {
+                if (openCategories) {
+                    const categoriesResult = await PoiManager.searchPoiCategories(searchValue.query);
+                    if (categoriesResult) {
+                        getCategoriesIcons(categoriesResult);
+                        getCategoriesNames(categoriesResult)
+                    }
+                }
+            } else {
+                if (openCategories) {
+                    setSearchCategories(ctx.poiCategory.filters);
+                }
+            }
+        };
+
         if (searchValue) {
             if (isMainSearchScreen) {
                 setIsMainSearchScreen(false);
             }
-            if (openCategories && searchValue.type === SEARCH_TYPE_CATEGORY) {
-                if (searchCategories.includes(searchValue.query)) {
-                    setSearchValue({
-                        query: searchValue.query,
-                        type: SEARCH_TYPE_CATEGORY,
-                    });
-                    setOpenSearchResults(true);
-                    setOpenCategories(false);
-                } else {
-                    const res = searchCategories.filter((item) => item.startsWith(searchValue.query));
-                    setSearchCategories(res);
-                }
+            if (searchValue.type === SEARCH_TYPE_CATEGORY) {
+                fetchCategorySearchResults(searchValue).then();
             } else {
-                setOpenCategories(false);
+                setOpenSearchResults(true);
             }
-        } else {
-            if (openCategories) {
-                setSearchCategories(ctx.poiCategory.filters);
-            }
+        }
+
+        function getCategoriesIcons(res) {
+            const icons = Object.values(res).map((item) => {
+                return getIconNameForPoiType({
+                    iconKeyName: item.keyName,
+                    typeOsmTag: item.osmTag,
+                    typeOsmValue: item.osmValue,
+                    iconName: item.iconName,
+                    useDefault: true,
+                });
+            });
+            setSearchCategoriesIconNames(icons);
+        }
+
+        function getCategoriesNames(res) {
+            const validCategories = Object.values(res).filter(
+                (item) => item.keyName !== undefined
+            );
+            setSearchCategories(Object.values(validCategories).map((item) => item.keyName));
         }
     }, [searchValue]);
 
     useEffect(() => {
-        //for explore layers
         if (isMainSearchScreen) {
+            // for search categories
+            if (ctx.poiCategory?.filters) {
+                setSearchCategories(ctx.poiCategory.filters);
+            }
+            //for explore layers
             ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: true });
             if (!ctx.searchSettings.selectedFilters) {
                 addWikiPlacesDefaultFilters(ctx, true);
@@ -84,22 +126,48 @@ export default function SearchMenu() {
         }
     }, [ctx.wikiPlaces]);
 
+    // load icons for main search categories
     useEffect(() => {
-        if (isEmpty(categoriesIcons) && ctx.poiCategory !== null && ctx.poiCategory?.filters !== null) {
-            loadIcons().then();
+        if (searchCategories !== null) {
+            if (searchValue?.type !== SEARCH_TYPE_CATEGORY) {
+                loadIcons().then();
+            }
         }
         async function loadIcons() {
-            const icons = {};
-            const filters = ctx.poiCategory?.filters;
-
+            const icons = categoriesIcons;
+            const filters = searchCategories;
             if (filters) {
                 for (const filter of filters) {
-                    icons[filter] = await getSearchCategoryIcon(filter, ctx);
+                    if (!icons[filter]) {
+                        icons[filter] = await getSearchCategoryIcon(filter, ctx);
+                    }
                 }
                 setCategoriesIcons(icons);
             }
         }
-    }, [ctx.poiCategory?.filters]);
+    }, [searchCategories]);
+
+    // load icons for other search categories
+    useEffect(() => {
+        if (searchCategoriesIconNames) {
+            setLoadingIcons(true);
+            loadIcons().then(() => setLoadingIcons(false));
+        }
+
+        async function loadIcons() {
+            const icons = searchCategoriesIcons;
+            const categories = searchCategories;
+            if (categories) {
+                for (const category of categories) {
+                    const ind = categories.indexOf(category);
+                    if (!icons[category]) {
+                        icons[category] = await getCategoryIcon(searchCategoriesIconNames[ind]);
+                    }
+                }
+                setSearchCategoriesIcons(icons);
+            }
+        }
+    }, [searchCategoriesIconNames]);
 
     useEffect(() => {
         if (!openSearchResults) {
@@ -138,10 +206,12 @@ export default function SearchMenu() {
             {openCategories && (
                 <PoiCategoriesList
                     categories={searchCategories}
+                    categoriesIcons={searchCategoriesIcons}
                     setSearchValue={setSearchValue}
                     setOpenCategories={setOpenCategories}
                     setOpenSearchResults={setOpenSearchResults}
                     setIsMainSearchScreen={setIsMainSearchScreen}
+                    loadingIcons={loadingIcons}
                 />
             )}
             {isMainSearchScreen && (

@@ -13,14 +13,15 @@ export default function SearchLayer() {
     const [selectedCategory, setSelectedCategory] = useState(null);
 
     useEffect(() => {
-        if (ctx.searchQuery?.query) {
+        if (ctx.searchQuery?.search) {
+            const searchData = ctx.searchQuery.search;
             if (ctx.searchQuery.type === SEARCH_TYPE_CATEGORY) {
-                const category = PoiManager.formattingPoiFilter(ctx.searchQuery.query, true);
+                const category = PoiManager.formattingPoiFilter(searchData?.query, true);
                 searchByCategory(category);
                 setSelectedCategory(category);
             } else {
                 if (ctx.searchQuery.latlng) {
-                    searchByWord(ctx.searchQuery.query, ctx.searchQuery.latlng).then();
+                    searchByWord(searchData.query, ctx.searchQuery.latlng).then();
                 } else {
                     console.debug('SearchLayer: search query without latlng');
                 }
