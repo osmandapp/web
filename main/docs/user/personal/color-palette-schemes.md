@@ -17,6 +17,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+:::tip NOTE
+Some color scheme features are paid for.  
+:::
+
 ## Overview
 
 Color schemes help visualize data, making it easier to understand. This means you can see data on a map using various colors that are easy to interpret.  
