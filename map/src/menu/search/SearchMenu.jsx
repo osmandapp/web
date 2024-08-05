@@ -63,7 +63,7 @@ export default function SearchMenu() {
                     const categoriesResult = await PoiManager.searchPoiCategories(searchValue.query);
                     if (categoriesResult) {
                         getCategoriesIcons(categoriesResult);
-                        getCategoriesNames(categoriesResult)
+                        getCategoriesNames(categoriesResult);
                     }
                 }
             } else {
@@ -98,9 +98,7 @@ export default function SearchMenu() {
         }
 
         function getCategoriesNames(res) {
-            const validCategories = Object.values(res).filter(
-                (item) => item.keyName !== undefined
-            );
+            const validCategories = Object.values(res).filter((item) => item.keyName !== undefined);
             setSearchCategories(Object.values(validCategories).map((item) => item.keyName));
         }
     }, [searchValue]);
