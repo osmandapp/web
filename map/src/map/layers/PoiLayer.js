@@ -26,9 +26,61 @@ import {
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
 import { SEARCH_TYPE_CATEGORY } from './SearchLayer';
 
+export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache }) {
+    const innerCache = await createPoiCache({ poiList, poiIconCache: globalPoiIconCache });
+    updatePoiCache(ctx, innerCache);
+    const layers = await Promise.all(
+        poiList.map(async (poi) => {
+            const finalIconName = PoiManager.getIconNameForPoiType({
+                iconKeyName: poi.properties[ICON_KEY_NAME],
+                typeOsmTag: poi.properties[TYPE_OSM_TAG],
+                typeOsmValue: poi.properties[TYPE_OSM_VALUE],
+                iconName: poi.properties[ICON_NAME],
+            });
+            const icon = await getPoiIcon(poi, innerCache, finalIconName);
+            const coord = poi.geometry.coordinates;
+            return new L.Marker(new L.LatLng(coord[1], coord[0]), {
+                ...poi.properties,
+                title: poi.properties[POI_NAME],
+                icon: icon,
+                [FINAL_ICON_NAME]: finalIconName,
+            });
+        })
+    );
+
+    if (layers.length) {
+        return L.featureGroup(layers);
+    } else {
+        return L.featureGroup(); // return an empty layer group if there are no layers
+    }
+}
+
+export async function getPoiIcon(poi, cache, finalIconName) {
+    if (finalIconName) {
+        let svgData;
+        if (cache[finalIconName]) {
+            svgData = cache[finalIconName];
+            let coloredSvg = changeIconColor(svgData, DEFAULT_ICON_COLOR);
+            // Add the id attribute to the coloredSvg
+            const poiName = poi.properties[POI_NAME];
+            coloredSvg = coloredSvg.replace(
+                '<svg',
+                `<svg id="se-poi-marker-icon-${finalIconName}-${DEFAULT_ICON_COLOR}-${poiName}"`
+            );
+            const iconHtml = createPoiIcon({
+                color: DEFAULT_POI_COLOR,
+                background: DEFAULT_POI_SHAPE,
+                svgIcon: coloredSvg,
+            }).options.html;
+            return L.divIcon({ html: iconHtml });
+        }
+    }
+}
+
 export default function PoiLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
+
     const [prevZoom, setPrevZoom] = useState(null);
     const [prevTypesLength, setPrevTypesLength] = useState(null);
     const [zoom, setZoom] = useState(null);
@@ -104,6 +156,7 @@ export default function PoiLayer() {
                         if (!res.alreadyFound) {
                             if (!res.mapLimitExceeded && res.features) {
                                 const layer = await createPoiLayer({
+                                    ctx,
                                     poiList: res.features.features,
                                     globalPoiIconCache: poiIconCache,
                                 });
@@ -198,57 +251,6 @@ export default function PoiLayer() {
             latlng: e.sourceTarget._latlng,
         };
         ctx.setSelectedWpt({ poi });
-    }
-
-    async function createPoiLayer({ poiList = [], globalPoiIconCache }) {
-        const innerCache = await createPoiCache({ poiList, poiIconCache: globalPoiIconCache });
-        updatePoiCache(ctx, innerCache);
-        const layers = await Promise.all(
-            poiList.map(async (poi) => {
-                const finalIconName = PoiManager.getIconNameForPoiType({
-                    iconKeyName: poi.properties[ICON_KEY_NAME],
-                    typeOsmTag: poi.properties[TYPE_OSM_TAG],
-                    typeOsmValue: poi.properties[TYPE_OSM_VALUE],
-                    iconName: poi.properties[ICON_NAME],
-                });
-                const icon = await getPoiIcon(poi, innerCache, finalIconName);
-                const coord = poi.geometry.coordinates;
-                return new L.Marker(new L.LatLng(coord[1], coord[0]), {
-                    ...poi.properties,
-                    title: poi.properties[POI_NAME],
-                    icon: icon,
-                    [FINAL_ICON_NAME]: finalIconName,
-                });
-            })
-        );
-
-        if (layers.length) {
-            return L.featureGroup(layers);
-        } else {
-            return L.featureGroup(); // return an empty layer group if there are no layers
-        }
-    }
-
-    async function getPoiIcon(poi, cache, finalIconName) {
-        if (finalIconName) {
-            let svgData;
-            if (cache[finalIconName]) {
-                svgData = cache[finalIconName];
-                let coloredSvg = changeIconColor(svgData, DEFAULT_ICON_COLOR);
-                // Add the id attribute to the coloredSvg
-                const poiName = poi.properties[POI_NAME];
-                coloredSvg = coloredSvg.replace(
-                    '<svg',
-                    `<svg id="se-poi-marker-icon-${finalIconName}-${DEFAULT_ICON_COLOR}-${poiName}"`
-                );
-                const iconHtml = createPoiIcon({
-                    color: DEFAULT_POI_COLOR,
-                    background: DEFAULT_POI_SHAPE,
-                    svgIcon: coloredSvg,
-                }).options.html;
-                return L.divIcon({ html: iconHtml });
-            }
-        }
     }
 
     useEffect(() => {

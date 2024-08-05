@@ -3,14 +3,37 @@ import { useInView } from 'react-intersection-observer';
 import { ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import styles from '../search.module.css';
+import { useTranslation } from 'react-i18next';
+import _ from 'lodash';
+import { formattingPoiType } from '../../../manager/PoiManager';
 
 export default function SearchResultItem({ item }) {
+    const { t } = useTranslation();
     const { ref, inView } = useInView();
 
-    const name = item.properties?.web_poi_name;
-    const type = item.properties?.web_poi_type;
-    const subType = item.properties?.web_poi_subType;
-    const icon = item.icon;
+    const { name, distance, type, icon } = parseItem(item);
+
+    function parseItem(item) {
+        const props = item.properties;
+        let name, distance, type, icon;
+        distance = item.locDist;
+        if (props['web_type'].toLowerCase() === 'poi') {
+            name = props['web_poi_name'];
+            type = props['web_poi_subType'] ?? props['web_poi_type'];
+            type = _.capitalize(t(`amenity_type_${type}`, formattingPoiType(type)));
+            if (name === '') {
+                name = type;
+            }
+            icon = item.icon;
+        } else {
+            name = props['web_name'];
+            type = props['web_type'].toLowerCase();
+            type = _.capitalize(t(`search_address_${type}`, formattingPoiType(type)));
+            icon = item.icon;
+        }
+
+        return { name, distance, type, icon };
+    }
 
     return (
         <div ref={ref}>
@@ -18,12 +41,14 @@ export default function SearchResultItem({ item }) {
                 <Skeleton variant="rectangular" width="100%" height={'var(--menu-item-size)'} />
             ) : (
                 <div>
-                    <MenuItem divider>
+                    <MenuItem className={styles.searchItem} divider>
                         <ListItemText>
                             <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
-                            {type && subType && (
-                                <Typography className={styles.placeTypes} noWrap>
-                                    {`${subType}, ${type}`}
+                            {(type || distance) && (
+                                <Typography variant="body2" className={styles.placeTypes} noWrap>
+                                    {type && `${type}`}
+                                    {' · '}
+                                    {distance && `${(distance / 100).toFixed(1)} km`}
                                 </Typography>
                             )}
                         </ListItemText>

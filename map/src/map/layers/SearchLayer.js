@@ -1,8 +1,9 @@
 import { apiGet } from '../../util/HttpApi';
 import { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
-import { useMap } from 'react-leaflet';
 import PoiManager from '../../manager/PoiManager';
+import { useMap } from 'react-leaflet';
+import { createPoiLayer } from './PoiLayer';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 
@@ -33,6 +34,35 @@ export default function SearchLayer() {
         }
     }, [ctx.searchQuery]);
 
+    async function searchByWord(query, latlng) {
+        let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search`, {
+            apiCache: true,
+            params: {
+                lat: latlng.lat,
+                lon: latlng.lng,
+                text: query,
+            },
+        });
+        if (response.ok) {
+            let data = await response.json();
+            ctx.setSearchResult(data);
+        }
+    }
+
+    useEffect(() => {
+        const addAsyncLayers = async () => {
+            if (ctx.searchResult?.features && ctx.searchQuery.type !== SEARCH_TYPE_CATEGORY) {
+                const layers = await createPoiLayer({
+                    ctx,
+                    poiList: ctx.searchResult?.features,
+                    globalPoiIconCache: ctx.poiIconCache,
+                });
+                layers.addTo(map);
+            }
+        };
+        addAsyncLayers().then();
+    }, [ctx.searchResult]);
+
     function searchByCategory(category) {
         if (!ctx.showPoiCategories.includes(category)) {
             ctx.showPoiCategories.push(category);
@@ -46,23 +76,5 @@ export default function SearchLayer() {
             ctx.showPoiCategories.splice(index, 1);
         }
         ctx.setShowPoiCategories([...ctx.showPoiCategories]);
-    }
-
-    async function searchByWord(query, latlng) {
-        const bbox = map.getBounds();
-        let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search`, {
-            apiCache: true,
-            params: {
-                lat: latlng.lat,
-                lon: latlng.lng,
-                search: query,
-                northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
-                southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
-            },
-        });
-        if (response.ok) {
-            let data = await response.json();
-            ctx.setSearchResult(data);
-        }
     }
 }

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../../context/AppContext';
 import CustomInput from './CustomInput';
 import {
@@ -7,36 +7,107 @@ import {
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
-import { formattingPoiType, getIconNameForPoiType, getSearchCategoryIcon } from '../../../manager/PoiManager';
+import {
+    DEFAULT_POI_ICON,
+    formattingPoiType,
+    getIconNameForPoiType,
+    getSearchCategoryIcon,
+} from '../../../manager/PoiManager';
 import SearchResultItem from './SearchResultItem';
 import { MenuButton } from './MenuButton';
 import { Box } from '@mui/material';
 import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 import Loading from '../../errors/Loading';
+import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
+import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
+import { getCenterMapLoc } from '../../../manager/MapManager';
+import { getDistance } from '../../../util/Utils';
 
 export default function SearchResults({ value, setOpenSearchResults, setIsMainSearchScreen, setSearchValue }) {
     const ctx = useContext(AppContext);
 
     const [result, setResult] = useState(null);
+    const hash = window.location.hash;
+    const [delayedHash, setDelayedHash] = useState(hash);
+    const [locReady, setLocReady] = useState(false);
+    const currentLoc = useGeoLocation(ctx);
+    const debouncerTimer = useRef(0);
+
+    // debounce map move/scroll
+    useEffect(() => {
+        debouncerTimer.current > 0 && clearTimeout(debouncerTimer.current);
+        debouncerTimer.current = setTimeout(() => {
+            debouncerTimer.current = 0;
+            setDelayedHash(hash);
+        }, 5000);
+
+        return () => {
+            clearTimeout(debouncerTimer.current);
+        };
+    }, [hash]);
+
+    useEffect(() => {
+        if (!currentLoc) return;
+        let loc = getLoc();
+
+        let features = ctx.searchResult?.features;
+        if (!features) return;
+
+        if (loc) {
+            const arrWithDist = features.map((f) => {
+                return {
+                    ...f,
+                    locDist: getDistance(loc.lat, loc.lng, f.geometry.coordinates[1], f.geometry.coordinates[0]),
+                };
+            });
+            const sortedList = {
+                features: arrWithDist.sort((a, b) => {
+                    return a.locDist - b.locDist;
+                }),
+            };
+
+            if (sortedList) {
+                if (!features[0].icon) {
+                    calculateIcons(sortedList.features, ctx).then(() => setResult({ features: sortedList.features }));
+                } else {
+                    setResult({ features: sortedList.features });
+                }
+            }
+        }
+    }, [currentLoc, delayedHash, ctx.searchResult?.features]);
+
+    useEffect(() => {
+        if (locReady) {
+            if (value) {
+                if (value.type === SEARCH_TYPE_CATEGORY) {
+                    searchByCategory(value);
+                } else {
+                    searchByWord(value);
+                }
+            }
+        }
+    }, [locReady]);
+
+    function getLoc() {
+        let loc = null;
+        if (currentLoc && currentLoc !== LOCATION_UNAVAILABLE) {
+            loc = currentLoc;
+            setLocReady(true);
+        } else if (currentLoc && currentLoc === LOCATION_UNAVAILABLE) {
+            loc = getCenterMapLoc(hash);
+            setLocReady(true);
+        }
+        return loc;
+    }
 
     useEffect(() => {
         // hide explore layers
         ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
     }, []);
 
-    useEffect(() => {
-        if (value) {
-            if (value.type === SEARCH_TYPE_CATEGORY) {
-                searchByCategory(value);
-            } else {
-                searchByWord(value);
-            }
-        }
-    }, [value]);
-
     function searchByCategory(value) {
         const preparedValue = {
-            query: formattingPoiType(value.query),
+            query: value.query,
             type: value.type,
         };
         ctx.setSearchQuery({
@@ -56,10 +127,12 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
             alert('Please zoom in closer');
             return;
         }
-        let latlng = { lat: parseFloat(arr[1]), lng: parseFloat(arr[2]) };
+
+        const loc = getLoc();
+
         ctx.setSearchQuery({
             search: value,
-            latlng: latlng,
+            latlng: { lat: loc.lat, lng: loc.lng },
         });
     }
 
@@ -70,22 +143,20 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
         ctx.setSearchQuery(null);
     }
 
-    useEffect(() => {
-        if (ctx.searchResult?.features) {
-            calculateIcons(ctx.searchResult.features, ctx).then();
-        }
-        setResult(ctx.searchResult);
-    }, [ctx.searchResult]);
-
     const calculateIcons = async (features, ctx) => {
-        const promises = features.map(async (feature) => {
-            const iconName = getIconNameForPoiType({
-                iconKeyName: feature.properties[ICON_KEY_NAME],
-                typeOsmTag: feature.properties[TYPE_OSM_TAG],
-                typeOsmValue: feature.properties[TYPE_OSM_VALUE],
-                iconName: feature.properties[ICON_NAME],
-            });
-            feature.icon = await getSearchCategoryIcon(iconName, ctx);
+        const promises = features.map(async (f) => {
+            const props = f.properties;
+            if (props['web_type'].toLowerCase() === 'poi') {
+                const iconName = getIconNameForPoiType({
+                    iconKeyName: props[ICON_KEY_NAME],
+                    typeOsmTag: props[TYPE_OSM_TAG],
+                    typeOsmValue: props[TYPE_OSM_VALUE],
+                    iconName: props[ICON_NAME],
+                });
+                f.icon = await getSearchCategoryIcon(iconName, ctx);
+            } else {
+                f.icon = await getSearchCategoryIcon(DEFAULT_POI_ICON, ctx);
+            }
         });
         await Promise.all(promises);
     };
