@@ -314,14 +314,14 @@ The map is displayed according to the day or night mode selected from the list. 
 
 A route is a predefined path, which is a sequence of roads and turns to be followed to reach a certain destination point. In the OsmAnd app, you can mark routes on the map related to different outdoor activities using data from [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route).    
 
-1. You can **select one or more layers of routes at a time**. It is important to note that if different routes intersect at the same point, only the color of the top layer will be visible.
-    - Read about the color scheme of routes in the [Color Palette Schemes](../personal/color-palette-schemes.md) article.  
-    - Route designations for OsmAnd Map Style can be found in the [Map Legend](../map-legend/osmand.md#routes) article.
+1. You can **[select one or more layers of routes at a time](../map/tracks-on-map.md#routes-on-the-map)**. It is important to note that if different routes intersect at the same point, only the color of the top layer will be visible.
+   - Route designations for OsmAnd Map Style can be found in the [Map Legend](../map-legend/osmand.md#routes) article.
+   <!-- - Read about the color scheme of routes in the [Color Palette Schemes](../personal/color-palette-schemes.md) article.  -->
 
 2. You can **use Custom buttons** to customize [Quick Actions](../map/tracks-on-map.md#quick-actions-for-routes) to switch between enabling or disabling the display of selected route types.
 
 3. Tapping **the shield icon with a route number or route flag** on the map will open a context menu with a list of available options.  
-    - In some cases, you may find several routes intersecting at a certain location. When you select one of the routes, the *[Track context menu](../map/track-context-menu.md)* appears. In this menu, you can save the selected route to the device memory in GPX format, which will allow you to use it for [GPX navigation](../navigation/setup/gpx-navigation.md) in the future.
+    - In some cases, you may find several routes intersecting at a certain location. When you select one of the routes, the *[Track context menu](../map/track-context-menu.md)* appears. In this menu, you can [save the selected route](../map/tracks-on-map.md#routes-on-the-map) to the device memory in GPX format, which will allow you to use it for [GPX navigation](../navigation/setup/gpx-navigation.md) in the future.
 
 #### List of routes
 
