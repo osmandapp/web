@@ -6,9 +6,13 @@ import React, { useEffect, useState } from 'react';
 import styles from '../search.module.css';
 import gStyles from '../../gstylesmenu.module.css';
 import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
+import { useTranslation } from 'react-i18next';
 
 export default function CustomInput({ menuButton = null, setSearchValue, type = null, defaultSearchValue = '' }) {
     const [value, setValue] = useState(defaultSearchValue);
+    const [isFocused, setIsFocused] = useState(false);
+
+    const { t } = useTranslation();
 
     const MIN_SIZE_SEARCH_VALUE = 3;
 
@@ -35,7 +39,7 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
     return (
         <Box sx={{ mx: 2, my: 1 }}>
             <TextField
-                className={styles.searchInputField}
+                className={`${styles.searchInputField} ${styles.customAutofillFix}`}
                 sx={{
                     '& .MuiOutlinedInput-notchedOutline': {
                         border: 'none',
@@ -47,9 +51,15 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
                         border: '2px solid var(--selected-color);',
                     },
                 }}
-                placeholder="Search"
+                placeholder={t('shared_string_search')}
                 type="text"
                 fullWidth
+                onFocus={() => setIsFocused(true)}
+                onBlur={() => {
+                    setTimeout(() => {
+                        setIsFocused(false);
+                    }, 200);
+                }}
                 onChange={(e) => {
                     setValue(e.target.value);
                     if (type === SEARCH_TYPE_CATEGORY && e.target.value.length >= MIN_SIZE_SEARCH_VALUE) {
@@ -62,16 +72,18 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
                     className: styles.searchInput,
                     startAdornment: <InputAdornment position="start">{menuButton}</InputAdornment>,
                     endAdornment:
-                        value === '' ? (
+                        value === '' || !isFocused ? (
                             <IconButton
-                                className={`${gStyles.icon} ${styles.searchInputIcon}`}
-                                onClick={() => setValue('')}
+                                className={`${gStyles.icon} ${styles.searchInputIcon} ${isFocused ? styles.focusedIcon : ''}`}
+                                onClick={() => {
+                                    setValue('');
+                                }}
                             >
                                 <CancelIcon />
                             </IconButton>
                         ) : (
                             <IconButton
-                                className={`${gStyles.icon} ${styles.searchInputIcon}`}
+                                className={`${gStyles.icon} ${styles.searchInputIcon} ${isFocused ? styles.focusedIcon : ''}`}
                                 onClick={() => {
                                     search(value);
                                 }}
