@@ -1,11 +1,23 @@
 import { apiGet } from '../../util/HttpApi';
 import { useContext, useEffect, useState } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext, { OBJECT_SEARCH } from '../../context/AppContext';
 import PoiManager from '../../manager/PoiManager';
 import { useMap } from 'react-leaflet';
 import { createPoiLayer } from './PoiLayer';
+import L from 'leaflet';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
+export const SEARCH_LAYER_ID = 'search-layer';
+
+export function findFeatureGroupById(map, id) {
+    let foundGroup = null;
+    map.eachLayer(function (layer) {
+        if (layer instanceof L.FeatureGroup && layer.options.id === id) {
+            foundGroup = layer;
+        }
+    });
+    return foundGroup;
+}
 
 export default function SearchLayer() {
     const ctx = useContext(AppContext);
@@ -49,15 +61,27 @@ export default function SearchLayer() {
         }
     }
 
+    function removeOldSearchLayer() {
+        const searchLayer = findFeatureGroupById(map, SEARCH_LAYER_ID);
+        if (searchLayer) {
+            map.removeLayer(searchLayer);
+        }
+    }
+
     useEffect(() => {
         const addAsyncLayers = async () => {
-            if (ctx.searchResult?.features && ctx.searchQuery.type !== SEARCH_TYPE_CATEGORY) {
-                const layers = await createPoiLayer({
-                    ctx,
-                    poiList: ctx.searchResult?.features,
-                    globalPoiIconCache: ctx.poiIconCache,
-                });
-                layers.addTo(map);
+            if (!ctx.searchResult) {
+                removeOldSearchLayer();
+            } else {
+                if (ctx.searchResult?.features && ctx.searchQuery.type !== SEARCH_TYPE_CATEGORY) {
+                    const layers = await createPoiLayer({
+                        ctx,
+                        poiList: ctx.searchResult?.features,
+                        globalPoiIconCache: ctx.poiIconCache,
+                        type: OBJECT_SEARCH,
+                    });
+                    layers.addTo(map);
+                }
             }
         };
         addAsyncLayers().then();

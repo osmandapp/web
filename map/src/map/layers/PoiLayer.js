@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { OBJECT_TYPE_POI } from '../../context/AppContext';
+import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import _ from 'lodash';
 import L from 'leaflet';
@@ -24,9 +24,9 @@ import {
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
-import { SEARCH_TYPE_CATEGORY } from './SearchLayer';
+import { SEARCH_LAYER_ID, SEARCH_TYPE_CATEGORY } from './SearchLayer';
 
-export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache }) {
+export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, type = OBJECT_TYPE_POI }) {
     const innerCache = await createPoiCache({ poiList, poiIconCache: globalPoiIconCache });
     updatePoiCache(ctx, innerCache);
     const layers = await Promise.all(
@@ -49,7 +49,9 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache }) 
     );
 
     if (layers.length) {
-        return L.featureGroup(layers);
+        return L.featureGroup(layers, {
+            id: type === OBJECT_SEARCH ? SEARCH_LAYER_ID : null,
+        });
     } else {
         return L.featureGroup(); // return an empty layer group if there are no layers
     }
