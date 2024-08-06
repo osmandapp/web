@@ -1,5 +1,5 @@
 ---
-title:  Tracks and Routes
+title:  Tracks
 sidebar_position: 2
 ---
 
