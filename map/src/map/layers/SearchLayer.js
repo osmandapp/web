@@ -72,6 +72,10 @@ export default function SearchLayer() {
         const addAsyncLayers = async () => {
             if (!ctx.searchResult) {
                 removeOldSearchLayer();
+                if (ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY) {
+                    const category = PoiManager.formattingPoiFilter(ctx.searchQuery?.search?.query, true);
+                    removeCategory(category);
+                }
             } else {
                 if (ctx.searchResult?.features && ctx.searchQuery.type !== SEARCH_TYPE_CATEGORY) {
                     const layers = await createPoiLayer({
