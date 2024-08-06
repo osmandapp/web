@@ -29,8 +29,123 @@ OsmAnd can display several different type of routes:
     - Track as a line - file has ```<trkpt>``` points array, each point has location and optionally time, speed, altitude and other attributes. These tracks are displayed on the map as solid lines.
     - Track as a route -  file has ```<rtept>``` points array, each point described as an intermediate point of the route. It depends on how points within a route should be connected either as small route segments or via straight line. These tracks are displayed on the map as dashed lines. 
     - Waypoints - file has ```<wpt>``` points with attributes. Waypoints are displayed as circular points on the map. You could click on them to get additional information.
-2. [Navigation Route](#navigation-route) - a route line displayed during [navigation](../navigation/setup/route-navigation.md). By default this is a solid transparent blue line, though default appearance depends on [vector map style](../map/vector-maps.md#default-map-styles), [day & night mode](../map/vector-maps.md#map-mode). It's also possible to fully customize it on Android.
-3. [Routes and route networks on the map](#routes-on-the-map) - special [objects](../map/vector-maps.md#routes) on the map from [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route) data and provided with standard vector maps. They typically represent popular local routes and could be displayed in many ways (shields, color, thickness, pattern). To use these types of routes you will need to enable them on the map.
+2. [Routes and route networks on the map](#routes-on-the-map) - special [objects](../map/vector-maps.md#routes) on the map from [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route) data and provided with standard vector maps. They typically represent popular local routes and could be displayed in many ways (shields, color, thickness, pattern). To use these types of routes you will need to enable them on the map.
+
+
+## Routes on the Map
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+
+![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+
+![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png) 
+
+</TabItem>
+
+</Tabs>
+
+<!--
+OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They can be selected by tapping [the symbol on the route](#save-as-a-track), and if the visible set of routes is configured correctly, you can follow the color and icons. You can create a track on top of the routes using the [Plan a Route](../plan-route/create-route.md) tool.  -->
+
+- To display the required routes on the map, enable them in the *Routes list* of the [Configure Map](../map/configure-map-menu.md) menu.
+- OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They can be selected by tapping [the symbol on the route](#save-as-track), and if the visible set of routes is configured correctly, you can follow the color and icons.
+- You can create a track on top of the routes using the [Plan a Route](../plan-route/create-route.md) tool.  
+
+![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
+
+
+### Coloring routes by type
+
+![Route info](@site/static/img/map/route_coloring_type_andr.png)
+
+Some routes have additional settings with which you can select the relevant coloring type for displaying them on the map.  
+
+Additional settings are available next to the route name in the&nbsp;  "**...|**"  &nbsp;menu. By default, if you do not select anything in the menu, the routes of the first type in the list will be displayed. But if you have made a selection, it is saved by the application and will be used for the current profile every time you enable the routes.  
+
+A list of all routes with descriptions can be found in the [Vector Maps (Map Styles)](../map/vector-maps.md#routes) article.
+
+- **Cycle routes**: *Route* and *Node networks*.
+- **Mountain bike routes**: *MTB scale* and *IMBA*.
+- **Hiking routes**: *OSMC*, *Network affiliation*, and *Node networks*.
+- **Difficulty classification**: *SAC scale* and *CAI scale*.
+- **Travel routes**: *Tracks*, *Travelbooks*, and *Points*.
+
+
+
+### Route Info
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Route info](@site/static/img/map/route_info_1_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Route info](@site/static/img/map/route_info_1_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+- To get full route information, tap the *route symbol*.
+- If you have already used the *download button* in the [Track context menu](../map/track-context-menu.md), tap the line of the required route on the map.    
+
+**Route info** in *Overview tab* allows you to view detailed information about the selected route such as:
+- *Track details*: Route name, OSM link (OSM Editing plugin required), Type, Description, Distance, Direction, Ascent/Descent, Altitude range, Network, Operator, State, Color, Roundtrip, Start/End points, and more.
+- *General*: Size, Location, Created on.
+- *Additional Info*: Type of activity.
+
+### Save as a Track
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Routes on the ground](@site/static/img/map/routes-4.png)   ![Routes on the ground](@site/static/img/map/routes-5.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Routes on the ground](@site/static/img/map/hiking.png)   ![Routes on the ground](@site/static/img/map/hiking_1.png)
+
+</TabItem>
+
+</Tabs>  
+
+[*Hiking, Cycle, Travel, and other routes*](../map/vector-maps.md#routes) are available for selection on the map, and marked with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol). If you tap a *route symbol*, a list of the routes nearest to it is offered. Selecting one of them opens the [Track context menu](../map/track-context-menu.md) of the route.  
+
+To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../map/track-context-menu.md#info-panel). This will open the [Quick actions](../map/track-context-menu.md#quick-actions) button panel where you will have access to track actions such as changing [*Appearance*](#track-appearance), [*Navigation*](#route-navigation), or editing [*Plan a route*](../plan-route/create-route.md).
+
+
+### Quick Actions 
+
+<InfoAndroidOnly />
+
+*<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action,quick_action_new_action,quick_action_add_configure_map"/>*  
+
+![Route info](@site/static/img/map/qa_routes_andr.png)
+
+Using the *Quick Actions* map buttons, you can switch the visibility of different types of routes.  
+The main settings for *Show or Hide routes* can be found in the Configure Map menu. Some routes have an [additional setting](#coloring-routes-by-type) for selecting types. When assigning an action to a button, either the default type or the type selected in the Configure map will be displayed.  
+
+In the [Vector Maps article](../map/vector-maps.md#routes), you can find a description and the entire list of routes available for display. If you want quick access to this map configuration, use the *Custom Button* tool.  
+
+- Go to [Add action](../widgets/quick-action.md#custom-buttons): *Menu → Configure screen → Custom buttons → Quick action → Add action → Configure map*.
+- Add one or more QA buttons to change the visibility of particular routes.
 
 
 ## Tracks 
@@ -280,130 +395,6 @@ This tool allows you to view track information using graphs and maps.
 </TabItem>
 
 </Tabs>
-
-
-## Navigation Route
-
-![Route on the map Android](@site/static/img/map/route_layer_android.png) ![Route on the map iOS](@site/static/img/map/route_layer_ios.png)  
-
-The navigation route is displayed on the map as a solid line with your specified [Start point](../navigation/setup/gpx-navigation.md#custom-points) and the plotted route along [selected track](../navigation/setup/gpx-navigation.md#follow-track-menu). It is visible during navigation or the [Route preparation](../navigation/setup/route-navigation.md) stage.
-
-
-## Routes on the Map
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-*<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
-
-![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-*<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
-
-![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png) 
-
-</TabItem>
-
-</Tabs>
-
-<!--
-OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They can be selected by tapping [the symbol on the route](#save-as-a-track), and if the visible set of routes is configured correctly, you can follow the color and icons. You can create a track on top of the routes using the [Plan a Route](../plan-route/create-route.md) tool.  -->
-
-- To display the required routes on the map, enable them in the *Routes list* of the [Configure Map](../map/configure-map-menu.md) menu.
-- OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They can be selected by tapping [the symbol on the route](#save-as-track), and if the visible set of routes is configured correctly, you can follow the color and icons.
-- You can create a track on top of the routes using the [Plan a Route](../plan-route/create-route.md) tool.  
-
-![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
-
-
-### Coloring routes by type
-
-![Route info](@site/static/img/map/route_coloring_type_andr.png)
-
-Some routes have additional settings with which you can select the relevant coloring type for displaying them on the map.  
-
-Additional settings are available next to the route name in the&nbsp;  "**...|**"  &nbsp;menu. By default, if you do not select anything in the menu, the routes of the first type in the list will be displayed. But if you have made a selection, it is saved by the application and will be used for the current profile every time you enable the routes.  
-
-A list of all routes with descriptions can be found in the [Vector Maps (Map Styles)](../map/vector-maps.md#routes) article.
-
-- **Cycle routes**: *Route* and *Node networks*.
-- **Mountain bike routes**: *MTB scale* and *IMBA*.
-- **Hiking routes**: *OSMC*, *Network affiliation*, and *Node networks*.
-- **Difficulty classification**: *SAC scale* and *CAI scale*.
-- **Travel routes**: *Tracks*, *Travelbooks*, and *Points*.
-
-
-### Save as a Track
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Routes on the ground](@site/static/img/map/routes-4.png)   ![Routes on the ground](@site/static/img/map/routes-5.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Routes on the ground](@site/static/img/map/hiking.png)   ![Routes on the ground](@site/static/img/map/hiking_1.png)
-
-</TabItem>
-
-</Tabs>  
-
-[*Hiking, Cycle, Travel, and other routes*](../map/vector-maps.md#routes) are available for selection on the map, and marked with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol). If you tap a *route symbol*, a list of the routes nearest to it is offered. Selecting one of them opens the [Track context menu](../map/track-context-menu.md) of the route.  
-
-To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../map/track-context-menu.md#info-panel). This will open the [Quick actions](../map/track-context-menu.md#quick-actions) button panel where you will have access to track actions such as changing [*Appearance*](#track-appearance), [*Navigation*](#route-navigation), or editing [*Plan a route*](../plan-route/create-route.md).
-
-
-### Route Info
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Route info](@site/static/img/map/route_info_1_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Route info](@site/static/img/map/route_info_1_ios.png)
-
-</TabItem>
-
-</Tabs>  
-
-- To get full route information, tap the *route symbol*.
-- If you have already used the *download button* in the [Track context menu](../map/track-context-menu.md), tap the line of the required route on the map.    
-
-**Route info** in *Overview tab* allows you to view detailed information about the selected route such as:
-- *Track details*: Route name, OSM link (OSM Editing plugin required), Type, Description, Distance, Direction, Ascent/Descent, Altitude range, Network, Operator, State, Color, Roundtrip, Start/End points, and more.
-- *General*: Size, Location, Created on.
-- *Additional Info*: Type of activity.
-
-
-
-## Quick Actions for Routes
-
-<InfoAndroidOnly />
-
-*<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action,quick_action_new_action,quick_action_add_configure_map"/>*  
-
-![Route info](@site/static/img/map/qa_routes_andr.png)
-
-Using the *Quick Actions* map buttons, you can switch the visibility of different types of routes.  
-The main settings for *Show or Hide routes* can be found in the Configure Map menu. Some routes have an [additional setting](#coloring-routes-by-type) for selecting types. When assigning an action to a button, either the default type or the type selected in the Configure map will be displayed.  
-
-In the [Vector Maps article](../map/vector-maps.md#routes), you can find a description and the entire list of routes available for display. If you want quick access to this map configuration, use the *Custom Button* tool.  
-
-- Go to [Add action](../widgets/quick-action.md#custom-buttons): *Menu → Configure screen → Custom buttons → Quick action → Add action → Configure map*.
-- Add one or more QA buttons to change the visibility of particular routes.
 
 
 ## Read more
