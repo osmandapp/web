@@ -7,4 +7,4 @@ sidebar_position: 12
 
 **Moved to [Tracks and Routes](./tracks/index.md)**
 
-**Moved to [Tracks and Routes](./routes)**
+**Moved to [Tracks and Routes](./routes.md)**
