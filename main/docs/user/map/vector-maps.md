@@ -292,7 +292,8 @@ The map is displayed according to the day or night mode selected from the list. 
 
 ### Routes
 
-Moved to [Routes selection](./tracks-and-routes/index.md).
+Moved to [Routes selection](../map/routes.md)
+
 
 ### Transport
 

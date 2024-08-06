@@ -37,14 +37,14 @@ OsmAnd provides the ability to record and display tracks. This allows you to get
 
 ### Display Tracks on the Map
 
-OsmAnd allows you [to view tracks on a map](../map/tracks-on-map.md). Each point on the track corresponds to a specific location and contains information about time, speed and altitude. This allows you to visually assess the route, learn about the places you have visited and estimate the difficulty of the route by changes in altitude.  
+OsmAnd allows you [to view tracks on a map](../../map/tracks-on-map.md). Each point on the track corresponds to a specific location and contains information about time, speed and altitude. This allows you to visually assess the route, learn about the places you have visited and estimate the difficulty of the route by changes in altitude.  
 
-You can choose which tracks to show on the map and which to hide. You can do this in the [My Places](#tracks-in-my-places-menu) menu, the [Configure map](#tracks-in-configure-map-menu) menu, and in the [Track Context menu](../map/track-context-menu.md#quick-actions) when saving a track in the [Plan a route](../plan-route/create-route.md#save-as-new-track) tool, or with [Route Details](../navigation/setup/route-details.md#save-as-a-new-track).  
+You can choose which tracks to show on the map and which to hide. You can do this in the [My Places](#tracks-in-my-places-menu) menu, the [Configure map](#tracks-in-configure-map-menu) menu, and in the [Track Context menu](../../map/track-context-menu.md#quick-actions) when saving a track in the [Plan a route](../../plan-route/create-route.md#save-as-new-track) tool, or with [Route Details](../../navigation/setup/route-details.md#save-as-a-new-track).  
 
 ![Tracks on the map Android](@site/static/img/map/tracks_layer_android.png) ![Tracks on the map iOS](@site/static/img/map/tracks_layer_ios.png) 
 
 
-- **Tracks in Configure map menu**. You can read additional information in the [Tracks](../map/tracks-on-map.md) article.  
+- **Tracks in Configure map menu**. You can read additional information in the [Tracks](../../map/tracks-on-map.md) article.  
 (*The information is in the writing process.*)
 
 <!--
@@ -77,7 +77,7 @@ You can choose which tracks to show on the map and which to hide. You can do thi
 
 <TabItem value="android" label="Android">
 
-[*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*](../map/tracks-on-map.md)   
+[*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*](../../map/tracks-on-map.md)   
 
 ![My Places with tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
@@ -85,7 +85,7 @@ You can choose which tracks to show on the map and which to hide. You can do thi
 
 <TabItem value="ios" label="iOS">
 
-[*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → long-tap the chosen GPX track → Show on map*](../map/tracks-on-map.md)    
+[*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → long-tap the chosen GPX track → Show on map*](../../map/tracks-on-map.md)    
 
 ![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 </TabItem>
@@ -130,7 +130,7 @@ Link
 
 <TabItem value="android" label="Android">
 
-*Tap the track → [<Translate android="true" ids="shared_string_options"/>](../map/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*  
+*Tap the track → [<Translate android="true" ids="shared_string_options"/>](../../map/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*  
 
 ![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_on_map_menu_andr.png) ![Track menu analize on the map distance Android](@site/static/img/personal/tracks/track_analyze_on_map_distance_android.png)   
 
@@ -138,7 +138,7 @@ Link
 
 <TabItem value="ios" label="iOS">
 
-*Tap the track → [<Translate android="true" ids="shared_string_options"/>](../map/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*     
+*Tap the track → [<Translate android="true" ids="shared_string_options"/>](../../map/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*     
 
 ![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_1_ios.png)
 
@@ -148,11 +148,11 @@ Link
 
 This tool allows you to view track information using graphs and maps.  
 
-- **Graph data (Y-axis)**: Altitude, Slope, Speed, [External sensors data](../plugins/external-sensors.md), or a combination of the two (if data is available on the track).
+- **Graph data (Y-axis)**: Altitude, Slope, Speed, [External sensors data](../../plugins/external-sensors.md), or a combination of the two (if data is available on the track).
 - **Graph dimension (X-axis)**: Distance, Time, Time of day.
 - **Tap/Slide**. Tap the Graph to display information about the track point and moving it along the Graph highlights the location of the point on the map and displays information about it in the bar.
-- **Scale**. Scale the Graph with a [two-fingers gesture](../map/interact-with-map.md#gestures). 
-- **Follow My location**. Tap the [My Location](../map/interact-with-map.md#my-location--zoom) buttonto have the map view and graph synchronized with your location. In this case, **graph scale** will remain the same and the **bar information** will be fixed to 1/4 to the left. As you move, the **graph will slide** from left to right, displaying information ahead of your track. This feature is useful for hiking and cycling while navigating, although no other widgets are displayed on this screen.  
+- **Scale**. Scale the Graph with a [two-fingers gesture](../../map/interact-with-map.md#gestures). 
+- **Follow My location**. Tap the [My Location](../../map/interact-with-map.md#my-location--zoom) buttonto have the map view and graph synchronized with your location. In this case, **graph scale** will remain the same and the **bar information** will be fixed to 1/4 to the left. As you move, the **graph will slide** from left to right, displaying information ahead of your track. This feature is useful for hiking and cycling while navigating, although no other widgets are displayed on this screen.  
 
 
 <Tabs groupId="operating-systems">
@@ -175,9 +175,9 @@ This tool allows you to view track information using graphs and maps.
 ## Read more
 
 - [*Routes on the map* blog article](https://docs.osmand.net/blog/routes)  
-- [Track Context menu](../map/track-context-menu.md)  
-- [Configure map](../map/configure-map-menu.md)  
-- [Navigation by track](../navigation/setup/gpx-navigation.md)  
-- [GPX tracks](../personal/tracks/create-edit.md)  
-- [Plan route](../plan-route/index.md)  
-- [Trip Recording](../plugins/trip-recording.md)  
+- [Track Context menu](../../map/track-context-menu.md)  
+- [Configure map](../../map/configure-map-menu.md)  
+- [Navigation by track](../../navigation/setup/gpx-navigation.md)  
+- [GPX tracks](../../personal/tracks/create-edit.md)  
+- [Plan route](../../plan-route/index.md)  
+- [Trip Recording](../../plugins/trip-recording.md)  
