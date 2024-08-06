@@ -145,7 +145,7 @@ For complete information, see the [License](https://github.com/osmandapp/OsmAnd/
 
 </Tabs>
 
-The [graphs](../../map/track-context-menu.md#altitude--speed-graphs) visually displays information about the altitude and slope of your navigation route and your current position on this graph with the current altitude and slope. The graph is plotted on two axes. The X-axis is the distance on your route. The first Y-axis is the altitude above sea level, the value of which depends on the terrain and second Y-axis is the approximated [slope](https://www.wikiwand.com/en/Grade_(slope)). You can view elevation graph for the entire route or only for a selected interval by scaling the graph.  
+The [graphs](../../map/tracks/track-context-menu.md#altitude--speed-graphs) visually displays information about the altitude and slope of your navigation route and your current position on this graph with the current altitude and slope. The graph is plotted on two axes. The X-axis is the distance on your route. The first Y-axis is the altitude above sea level, the value of which depends on the terrain and second Y-axis is the approximated [slope](https://www.wikiwand.com/en/Grade_(slope)). You can view elevation graph for the entire route or only for a selected interval by scaling the graph.  
 
 - ***Zoom in/out***. By default, the graph shows the route from the current location to your destination point. You can use [two-finger movements](../../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right, forward on the route, and backward to the current location. *Such manipulations also refer to the visual block of information in the [Road Attributes](#road-attributes) block.*   
 
@@ -170,14 +170,14 @@ The [graphs](../../map/track-context-menu.md#altitude--speed-graphs) visually di
 
 </Tabs>  
 
-**Analyse on map** tool is similar to the tool for viewing [track details](../../map/tracks-on-map.md#analyze-track-on-map) on the map. It allows you to view and visually interact with various graphs and see the selected point on the map.
+**Analyse on map** tool is similar to the tool for viewing [track details](../../map/tracks/index.md#analyze-track-on-map) on the map. It allows you to view and visually interact with various graphs and see the selected point on the map.
 
 If data is present you can select one of the following types:
 
 - *Y-axis*: 
-   - [*Altitude*](../../map/track-context-menu.md#altitude). This is the [process](https://wiki.openstreetmap.org/wiki/Altitude) of obtaining height above a fixed level.
+   - [*Altitude*](../../map/tracks/track-context-menu.md#altitude). This is the [process](https://wiki.openstreetmap.org/wiki/Altitude) of obtaining height above a fixed level.
    - [*Slope*](https://wiki.openstreetmap.org/wiki/Key:incline). The [slope of the landform](https://www.wikiwand.com/en/Grade%20(slope)) means the tangent of the angle of inclination of the surface to the horizontal.
-   - [*Speed*](../../map/track-context-menu.md#speed). 
+   - [*Speed*](../../map/tracks/track-context-menu.md#speed). 
    - Graphs with two types of data: *Altitude/Slope*, *Altitude/Speed*, *Slope/Speed*, *Animated zoom/Speed*.
 - *X-axis*: 
    - *Distance*. You can view the data for a route in relation to the route length.

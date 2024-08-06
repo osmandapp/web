@@ -246,7 +246,7 @@ The Color setting changes the color tones of the route lines, with their overall
 
 ### Width  
 
-You can adjust the width of the displayed line of your route to match the width of the road or path on the map. For better visual identification, you can make the line width wider or narrower by adjusting it manually. More information can be found in the *Tracks and Routes — [Appearance](../../map/tracks-on-map.md#track-appearance) article*.
+You can adjust the width of the displayed line of your route to match the width of the road or path on the map. For better visual identification, you can make the line width wider or narrower by adjusting it manually. More information can be found in the *Tracks and Routes — [Appearance](../../map/tracks/index.md#track-appearance) article*.
 
 - ***<Translate android="true" id="map_widget_renderer"/>***. It's used with default width set by OsmAnd. A full description can be found in the *Vector Maps* article, [Map style](../../map/vector-maps.md#default-map-styles) section.  
     ![map stule](@site/static/img/navigation/route/map_st_2.png)

@@ -36,15 +36,15 @@ OsmAnd provides the ability to record and display tracks. This allows you to get
 
 
 ### Display Tracks on the Map
-
-OsmAnd allows you [to view tracks on a map](../../map/tracks-on-map.md). Each point on the track corresponds to a specific location and contains information about time, speed and altitude. This allows you to visually assess the route, learn about the places you have visited and estimate the difficulty of the route by changes in altitude.  
+[d](./index.md)
+OsmAnd allows you [to view tracks on a map](./index.md). Each point on the track corresponds to a specific location and contains information about time, speed and altitude. This allows you to visually assess the route, learn about the places you have visited and estimate the difficulty of the route by changes in altitude.  
 
 You can choose which tracks to show on the map and which to hide. You can do this in the [My Places](#tracks-in-my-places-menu) menu, the [Configure map](#tracks-in-configure-map-menu) menu, and in the [Track Context menu](../../map/track-context-menu.md#quick-actions) when saving a track in the [Plan a route](../../plan-route/create-route.md#save-as-new-track) tool, or with [Route Details](../../navigation/setup/route-details.md#save-as-a-new-track).  
 
 ![Tracks on the map Android](@site/static/img/map/tracks_layer_android.png) ![Tracks on the map iOS](@site/static/img/map/tracks_layer_ios.png) 
 
 
-- **Tracks in Configure map menu**. You can read additional information in the [Tracks](../../map/tracks-on-map.md) article.  
+- **Tracks in Configure map menu**. You can read additional information in the [Tracks](./index.md) article.  
 (*The information is in the writing process.*)
 
 <!--
@@ -77,7 +77,7 @@ You can choose which tracks to show on the map and which to hide. You can do thi
 
 <TabItem value="android" label="Android">
 
-[*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*](../../map/tracks-on-map.md)   
+[*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*](./index.md)   
 
 ![My Places with tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
@@ -85,7 +85,7 @@ You can choose which tracks to show on the map and which to hide. You can do thi
 
 <TabItem value="ios" label="iOS">
 
-[*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → long-tap the chosen GPX track → Show on map*](../../map/tracks-on-map.md)    
+[*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → long-tap the chosen GPX track → Show on map*](./index.md)    
 
 ![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 </TabItem>

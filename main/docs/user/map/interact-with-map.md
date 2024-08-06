@@ -329,8 +329,8 @@ Tap an action from the list. There are two buttons in the upper right corner of 
 - [Vector maps (Map styles)](./vector-maps.md)
 - [Raster Maps (Online / Offline)](./raster-maps.md)
 - [Points on the map](./point-layers-on-map.md)
-- [Tracks and Routes](./tracks-on-map.md)
-- [Tracks Context menu](./track-context-menu.md)
+- [Tracks and Routes](./tracks/index.md)
+- [Tracks Context menu](./tracks/track-context-menu.md)
 - [Public transport](./public-transport.md)
 
 

@@ -67,7 +67,7 @@ The **<Translate android="true" ids="configure_map"/>** menu is divided into two
    - [Map markers](../map/point-layers-on-map.md) - display map markers.
    - [Overlay labels](../map/point-layers-on-map.md) - show names of points, favorites on the map.
    - [Transport](../map/vector-maps.md#transport) - show public transport stops.
-   - [Tracks](../map/tracks-on-map.md) - display imported, planned or recorded tracks over the map.
+   - [Tracks](../map/tracks/index.md) - display imported, planned or recorded tracks over the map.
    - [Street level imagery](../plugins/mapillary.md#viewing-images) - display points with available street-level imagery.
    - [Travel guides](../plan-route/travel-guides.md) - display travel guides on the map.
    - [Wikipedia](../plugins/wikipedia.md) - highlight wikipedia articles linked to the map.

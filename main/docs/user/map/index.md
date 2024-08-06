@@ -30,13 +30,22 @@ Raster maps is an extensive addition to the offline OpenStreetMap Vector maps th
 
 On map you could display points such as Favorites, POI, Markers, Wikipedia, Search results, Audio Video Notes, OSM Edits and other
 
-### [Tracks and Routes](./tracks-on-map.md)
+### [Tracks](./tracks)
 
-OsmAnd has many powerful features to display various routes on the map. Routes could be built as part of Navigation, created via Plan Route, imported as GPX tracks, recorded via Trip Recording plugin or browsed and selected from OpenStreetMap data.
+Tracks functionality lets you create and save routes so you can easily return to them later or share them with others.
 
-### [Tracks Context Menu](./track-context-menu.md)
+#### [Tracks Context Menu](./tracks/track-context-menu.md)
 
 Tracks Context menu is menu with actions and data of GPX-track.
+
+#### [Track Appearance](./tracks/appearance.md)
+
+Tracks Context menu is menu with actions and data of GPX-track.
+
+### [Routes](./routes.md)
+
+OsmAnd has many powerful features to display various routes on the map. 
+
 
 ### [Public Transport](./public-transport.md)
 

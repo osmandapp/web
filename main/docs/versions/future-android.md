@@ -132,7 +132,7 @@ In this release, we have added the ability to switch between [terrain](../user/p
     </tr>
 </table>  
 
-The legend provides an easy way to view and understand the different markings on the map. New color palette schemes have been added to display [**speed** for tracks](../user/map/tracks-on-map.md#track-appearance), [**line type** for routes](../user/navigation/guidance/map-during-navigation.md#color), [**altitude and slope** for terrain](../user/plugins/contour-lines.md#color-scheme), and all [**weather layer**](../user/plugins/weather.md#weather-layers) color palettes.
+The legend provides an easy way to view and understand the different markings on the map. New color palette schemes have been added to display [**speed** for tracks](../user/map/tracks/index.md#track-appearance), [**line type** for routes](../user/navigation/guidance/map-during-navigation.md#color), [**altitude and slope** for terrain](../user/plugins/contour-lines.md#color-scheme), and all [**weather layer**](../user/plugins/weather.md#weather-layers) color palettes.
 
 
 ## Profile Appearance Redesign
@@ -203,7 +203,7 @@ Additional **Weather source options**.
 
 ![3D track](../../blog/2024-07-26-android-4-8/img/track_3d.png)
 
-Updated 3D track visualizations provide a more detailed view of routes.  In this release, we have added the following improvements to the [3D track appearance](../user/map/tracks-on-map.md#track-appearance). 
+Updated 3D track visualizations provide a more detailed view of routes.  In this release, we have added the following improvements to the [3D track appearance](../user/map/tracks/index.md#track-appearance). 
 
 1. **Visualization options.** 
     - If *Visualized by* is set to *Fixed height*,  
