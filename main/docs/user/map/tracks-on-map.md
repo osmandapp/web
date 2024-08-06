@@ -383,41 +383,10 @@ To save the route as a *GPX file*, tap the **Save (Download)** button under [Inf
 - If you have already used the *download button* in the [Track context menu](../map/track-context-menu.md), tap the line of the required route on the map.    
 
 **Route info** in *Overview tab* allows you to view detailed information about the selected route such as:
-- *Track details*:  
-    Route name/[*OSM ID*](#related-osm-id), Type, Description, Distance, Direction, Ascent/Descent, Altitude range, Network, Operator, State, Color, Roundtrip, Start/End points, and more.
-- *General*:  
-    Size, Location, Created on.
-- *Additional Info*:  
-    Type of activity.
+- *Track details*: Route name, OSM link (OSM Editing plugin required), Type, Description, Distance, Direction, Ascent/Descent, Altitude range, Network, Operator, State, Color, Roundtrip, Start/End points, and more.
+- *General*: Size, Location, Created on.
+- *Additional Info*: Type of activity.
 
-### Related OSM ID
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Route info](@site/static/img/map/route_info_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Route info](@site/static/img/map/route_info_ios.png)
-
-</TabItem>
-
-</Tabs>  
-
-A route may not have a name and reference, or the information may have been lost, in which case the corresponding **OSM ID** is displayed in the *Track Context Menu* and *Route info*. It is only visible if the [OpenStreetMap plugin](../plugins/osm-editing.md) is enabled, it is not displayed as a name on the map, and tap the ID in Route info opens the related OSM ID (for example, [51855](https://www.openstreetmap.org/relation/51855)).
-
-
-### Graph
-
-In *Tracks tab*, **Graph** displays track information in graphical form with a description of the details:
-- [*Overview*](../map/track-context-menu.md#overview-1). Distanse, Time. 
-- [*Altitude and Slope information*](../map/track-context-menu.md#altitude).
-- Provides access to [*Analyze on map*](#analyze-track-on-map) feature
-- *Option menu*. Edit, Delete, Split interval.
 
 
 ## Quick Actions for Routes
