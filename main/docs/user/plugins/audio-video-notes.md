@@ -268,7 +268,7 @@ The name of a manually created waypoint can be established by the user.
 
 ### View waypoints 
 
-A waypoint is available for viewing as a waypoint on the map and in the list of [waypoints of a specific track](../map/track-context-menu#points--waypoints). Deleting the waypoint does not delete the respective audio/video/photo note. 
+A waypoint is available for viewing as a waypoint on the map and in the list of [waypoints of a specific track](../map/tracks/track-context-menu.md#points--waypoints). Deleting the waypoint does not delete the respective audio/video/photo note. 
 
 An audio/video/photo note is available for viewing on the map and in the list of A/V notes in [My Places](../plugins/audio-video-notes#view-in-my-places). Deleting the audio/video/photo note does not delete the respective waypoint. 
 
