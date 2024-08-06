@@ -2,13 +2,16 @@ import { TextField } from '@mui/material/';
 import { Box, IconButton, InputAdornment } from '@mui/material';
 import { ReactComponent as CancelIcon } from '../../../assets/icons/ic_action_cancel.svg';
 import { ReactComponent as SearchIcon } from '../../../assets/icons/ic_action_search_dark.svg';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from '../search.module.css';
 import gStyles from '../../gstylesmenu.module.css';
 import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 import { useTranslation } from 'react-i18next';
+import AppContext from '../../../context/AppContext';
 
 export default function CustomInput({ menuButton = null, setSearchValue, type = null, defaultSearchValue = '' }) {
+    const ctx = useContext(AppContext);
+
     const [value, setValue] = useState(defaultSearchValue);
     const [isFocused, setIsFocused] = useState(false);
 
@@ -77,6 +80,7 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
                                 className={`${gStyles.icon} ${styles.searchInputIcon} ${isFocused ? styles.focusedIcon : ''}`}
                                 onClick={() => {
                                     setValue('');
+                                    ctx.setSearchResult(null);
                                 }}
                             >
                                 <CancelIcon />

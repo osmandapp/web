@@ -22,11 +22,13 @@ import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
 import { getCenterMapLoc } from '../../../manager/MapManager';
 import { getDistance } from '../../../util/Utils';
+import EmptySearch from '../../errors/EmptySearch';
 
 export default function SearchResults({ value, setOpenSearchResults, setIsMainSearchScreen, setSearchValue }) {
     const ctx = useContext(AppContext);
 
     const [result, setResult] = useState(null);
+    const [processingSearch, setProcessingSearch] = useState(false);
     const hash = window.location.hash;
     const [delayedHash, setDelayedHash] = useState(hash);
     const [locReady, setLocReady] = useState(false);
@@ -78,6 +80,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
 
     useEffect(() => {
         if (locReady) {
+            setProcessingSearch(true);
             if (value) {
                 if (value.type === SEARCH_TYPE_CATEGORY) {
                     searchByCategory(value);
@@ -104,6 +107,14 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
         // hide explore layers
         ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
     }, []);
+
+    useEffect(() => {
+        if (!ctx.searchResult) {
+            setResult(null);
+        } else {
+            setProcessingSearch(false);
+        }
+    }, [ctx.searchResult]);
 
     function searchByCategory(value) {
         const preparedValue = {
@@ -166,14 +177,17 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
             <CustomInput
                 menuButton={<MenuButton needBackButton={true} backToPrevScreen={backToMainSearch} />}
                 setSearchValue={setSearchValue}
-                defaultSearchValue={value.type === SEARCH_TYPE_CATEGORY ? formattingPoiType(value.query) : value.query}
+                defaultSearchValue={
+                    value?.type === SEARCH_TYPE_CATEGORY ? formattingPoiType(value.query) : value?.query
+                }
             />
-            {!result && <Loading />}
+            {processingSearch && <Loading />}
             <Box sx={{ overflowY: 'auto' }}>
                 {result?.features.map((item, index) => (
                     <SearchResultItem key={index} item={item} index={index} />
                 ))}
             </Box>
+            {!result && !processingSearch && <EmptySearch />}
         </>
     );
 }
