@@ -196,7 +196,7 @@ This screen allows you to select the tracks you want, as well as a list of sugge
 - **Share**. Allows you to export tracks using *Export to File*.
 - **Upload to [OpenStreetMap](../../plugins/osm-editing.md#create--modify-osm-note)**. You can load the selected tracks into OpenStreetMap.
 - **Move**. Moving selected tracks to another folder.
-- [**Change appearance**](../../map/tracks/index.md#track-appearance). Allows you to change the appearance of all or specific tracks in a folder.
+- [**Change appearance**](../../map/tracks/appearance.md). Allows you to change the appearance of all or specific tracks in a folder.
 - **Delete**. Deletes only the folder with its settings. The tracks displayed in this folder are not deleted.
 
 

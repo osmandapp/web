@@ -80,7 +80,7 @@ If your track was created in OsmAnd or any other tracking app (so its points hav
 
 ### Quick actions
 
-Buttons panel with the next action: *Show / Hide* a track on the map, opening [_Appearance_](../../map/tracks/index.md#track-appearance) menu of a track, *Export / [Plan route](../../plan-route/create-route.md)*, [_Navigation_](../../navigation/setup/gpx-navigation.md).
+Buttons panel with the next action: *Show / Hide* a track on the map, opening [_Appearance_](../../map/tracks/appearance.md) menu of a track, *Export / [Plan route](../../plan-route/create-route.md)*, [_Navigation_](../../navigation/setup/gpx-navigation.md).
 
 <Tabs groupId="operating-systems">
 
@@ -99,7 +99,7 @@ Buttons panel with the next action: *Show / Hide* a track on the map, opening [_
 </Tabs>
 
 - [*Show / hide* buttons](./track-context-menu.md#quick-actions) allow to anable or disable displaying of a track on the map.
-- *Appearance* - is used to customise the [Appearance](../../map/tracks/index.md#track-appearance) of your track.
+- *Appearance* - is used to customise the [Appearance](../../map/tracks/appearance.md) of your track.
 - *Edit track* (**Android**) - opens the track in *[Plan route tool](../../plan-route/create-route.md)* or *Export* (**iOS**) allows [to export a track](../../personal/tracks/manage-tracks.md#export).
 - *Directions* - opens the track in *[Navigation](../../navigation/setup/gpx-navigation.md#start-gpx-navigation)* mode.
 
@@ -551,7 +551,7 @@ Menu Options allows to make manipulation with the chosen track, Information Rout
 ![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_android.png)  
 
 - *<Translate android="true" ids="shared_string_show_on_map"/>* - shows or not the track on the map.
-- *<Translate android="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../index.md#track-appearance) for the track.
+- *<Translate android="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../tracks/appearance.md) for the track.
 - *<Translate android="true" ids="follow_track"/>* - starts navigation by [Follow track option](../../navigation/setup/gpx-navigation.md).
 
 

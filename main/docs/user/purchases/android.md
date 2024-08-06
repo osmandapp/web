@@ -89,7 +89,7 @@ The table shows all the features that are included in the paid and free packages
 | [Android Auto](../navigation/auto-car.md)*** | - | ✔ | ✔ |
 | [External sensors support](../plugins/external-sensors.md) | - | ✔ | ✔ |
 | [Topo data (Contour lines and Terrain)](../plugins/contour-lines.md) | - | ✔ | ✔ |
-| [3D track visualization](../map/tracks/index.md#track-appearance) | - | ✔ | ✔ |
+| [3D track visualization](../map/tracks/appearance.md) | - | ✔ | ✔ |
 | [Nautical depths](../plugins/nautical-charts.md) | - | ✔ | ✔ |
 | [Offline Wikipedia](../plugins/wikipedia.md) | - | ✔ | ✔ |
 | [Offline Wikivoyage - Travel guides](../plan-route/travel-guides.md)| - | ✔ | ✔ |
