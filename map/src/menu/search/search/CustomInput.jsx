@@ -18,6 +18,20 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
         }
     }, [value]);
 
+    function search(value) {
+        setSearchValue({
+            query: value,
+            type: type,
+        });
+    }
+
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            search(e.target.value);
+        }
+    };
+
     return (
         <Box sx={{ mx: 2, my: 1 }}>
             <TextField
@@ -39,12 +53,10 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
                 onChange={(e) => {
                     setValue(e.target.value);
                     if (type === SEARCH_TYPE_CATEGORY && e.target.value.length >= MIN_SIZE_SEARCH_VALUE) {
-                        setSearchValue({
-                            query: e.target.value,
-                            type: type,
-                        });
+                        search(e.target.value);
                     }
                 }}
+                onKeyDown={(e) => handleKeyPress(e)}
                 value={value}
                 InputProps={{
                     className: styles.searchInput,
@@ -61,10 +73,7 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
                             <IconButton
                                 className={`${gStyles.icon} ${styles.searchInputIcon}`}
                                 onClick={() => {
-                                    setSearchValue({
-                                        query: value.toLowerCase(),
-                                        type: type,
-                                    });
+                                    search(value);
                                 }}
                             >
                                 <SearchIcon />
