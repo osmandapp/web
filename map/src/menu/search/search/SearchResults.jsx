@@ -50,10 +50,14 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
 
     useEffect(() => {
         if (!currentLoc) return;
-        let loc = getLoc();
+        const loc = getLoc();
 
-        let features = ctx.searchResult?.features;
-        if (!features) return;
+        const features = ctx.searchResult?.features;
+        if (!features || features.length === 0) {
+            setProcessingSearch(false);
+            setResult(null);
+            return;
+        }
 
         if (loc) {
             const arrWithDist = features.map((f) => {
@@ -70,8 +74,12 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
 
             if (sortedList) {
                 if (!features[0].icon) {
-                    calculateIcons(sortedList.features, ctx).then(() => setResult({ features: sortedList.features }));
+                    calculateIcons(sortedList.features, ctx).then(() => {
+                        setProcessingSearch(false);
+                        setResult({ features: sortedList.features });
+                    });
                 } else {
+                    setProcessingSearch(false);
                     setResult({ features: sortedList.features });
                 }
             }
@@ -80,8 +88,8 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
 
     useEffect(() => {
         if (locReady) {
-            setProcessingSearch(true);
             if (value) {
+                setProcessingSearch(true);
                 if (value.type === SEARCH_TYPE_CATEGORY) {
                     searchByCategory(value);
                 } else {
@@ -89,7 +97,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
                 }
             }
         }
-    }, [locReady]);
+    }, [locReady, value]);
 
     function getLoc() {
         let loc = null;
@@ -111,8 +119,6 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     useEffect(() => {
         if (!ctx.searchResult) {
             setResult(null);
-        } else {
-            setProcessingSearch(false);
         }
     }, [ctx.searchResult]);
 
