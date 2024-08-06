@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 title:  Routes
 ---
 
@@ -50,16 +50,16 @@ OsmAnd has many powerful features to display various routes on the map. Routes c
 A route is a predefined path, which is a sequence of roads and turns to be followed to reach a certain destination point. In the OsmAnd app, you can mark routes on the map related to different outdoor activities using data from [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They typically represent popular local routes and could be displayed in many ways (shields, color, thickness, pattern). To use these types of routes you will need to enable them on the map.
 
 
-1. You can **[select one or more layers of routes at a time](../map/tracks-on-map.md#routes-on-the-map)**. It is important to note that if different routes intersect at the same point, only the color of the top layer will be visible. Route designations for OsmAnd Map Style can be found in the [Map Legend](../map-legend/osmand.md#routes) article.
+1. You can **[select one or more layers of routes at a time](../map/tracks/index.md#routes-on-the-map)**. It is important to note that if different routes intersect at the same point, only the color of the top layer will be visible. Route designations for OsmAnd Map Style can be found in the [Map Legend](../map-legend/osmand.md#routes) article.
    <!-- - Read about the color scheme of routes in the [Color Palette Schemes](../personal/color-palette-schemes.md) article.  -->
 
-2. You can **use Custom buttons** to customize [Quick Actions](../map/tracks-on-map.md#quick-actions-for-routes) to switch between enabling or disabling the display of selected route types.
+2. You can **use Custom buttons** to customize [Quick Actions](../map/tracks/index.md#quick-actions-for-routes) to switch between enabling or disabling the display of selected route types.
 
 3. Tapping **the shield icon with a route number or route flag** on the map will open a context menu with a list of available options.  
-    - In some cases, you may find several routes intersecting at a certain location. When you select one of the routes, the *[Track context menu](../map/track-context-menu.md)* appears. In this menu, you can [save the selected route](../map/tracks-on-map.md#routes-on-the-map) to the device memory in GPX format, which will allow you to use it for [GPX navigation](../navigation/setup/gpx-navigation.md) in the future.
+    - In some cases, you may find several routes intersecting at a certain location. When you select one of the routes, the *[Track context menu](../map/track-context-menu.md)* appears. In this menu, you can [save the selected route](../map/tracks/)  .md#routes-on-the-map) to the device memory in GPX format, which will allow you to use it for [GPX navigation](../navigation/setup/gpx-navigation.md) in the future.
 
 
-OsmAnd can highlight routes provided by OpenStreetMap. Some routes have **additional settings**. By default, if you have not selected anything in the [Configure Map](../map/configure-map-menu.md) menu, the first route type from the list will be assigned, otherwise a type of your choice will be assigned. You can read more in the [Tracks and Routes](../map/tracks-on-map.md#coloring-routes-by-type) article.  
+OsmAnd can highlight routes provided by OpenStreetMap. Some routes have **additional settings**. By default, if you have not selected anything in the [Configure Map](../map/configure-map-menu.md) menu, the first route type from the list will be assigned, otherwise a type of your choice will be assigned. You can read more in the [Tracks and Routes](../map/tracks/index.md#coloring-routes-by-type) article.  
 
 1. **<Translate android="true" ids="rendering_attr_showCycleRoutes_name"/>**.
 
@@ -106,23 +106,23 @@ OsmAnd can highlight routes provided by OpenStreetMap. Some routes have **additi
 Shows ski trail routes highlighted in specific colors. This setting is provided by the [*Winter and Ski*](../map/vector-maps.md#winter-and-ski) map style.   
     ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
 
-6. **<Translate android="true" ids="rendering_attr_horseRoutes_name"/>**.  
+1. **<Translate android="true" ids="rendering_attr_horseRoutes_name"/>**.  
 Shows color-indicated routes and symbols for horseback riding.  
     ![Map routes - horse routes](@site/static/img/map/map-routes-horse.png)
 
-7. **<Translate android="true" ids="rendering_attr_whiteWaterSports_name"/>**.  
+1. **<Translate android="true" ids="rendering_attr_whiteWaterSports_name"/>**.  
 Shows access icons, danger zones, and [whitewater tourism](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).  
     ![Map routes - whitewater sport](@site/static/img/map/map-routes-whitewater-sport.png)
 
-8. **<Translate android="true" ids="rendering_attr_showRunningRoutes_name"/>**.  
+1. **<Translate android="true" ids="rendering_attr_showRunningRoutes_name"/>**.  
 Used for named, numbered, or otherwise marked running routes used primarily for athletics. The data for these routes is taken from the [OpenStreetMap project](https://openstreetmap.org/) (tag [route=running](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning)).   
     ![Fitness routes](@site/static/img/map/fitness_1.png)
 
-9. **<Translate android="true" ids="rendering_attr_showFitnessTrails_name"/>**.  
+1. **<Translate android="true" ids="rendering_attr_showFitnessTrails_name"/>**.  
 A fitness trail is a trail or path equipped with obstacles or stations along its length to exercise the human body for the purpose of improving health. The data for these routes is taken from the [OpenStreetMap project](https://openstreetmap.org/) (tag [route=fitness_trail](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail)).  
     ![Fitness routes](@site/static/img/map/fitness_route.png) 
 
-10. **<Translate android="true" ids="travel_routes"/>** (*Android only*).  
+1.  **<Translate android="true" ids="travel_routes"/>** (*Android only*).  
 
     - Shows previously uploaded specially configured [user routes](https://osmand.net/blog/routes#generated-travel-routes) taken from OpenStreetMap categories.  
     ![Travel routes](@site/static/img/map/travel_route_2.png)   

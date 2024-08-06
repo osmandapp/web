@@ -69,7 +69,7 @@ Context menu will appear when you hold at any point on the Map with **long-tap**
 
 ### Select route
 
-Short tap a [GPX-track](../map/tracks-on-map.md) on the map  opens [Context track menu](../map/track-context-menu.md).
+Short tap a [GPX-track](../map/tracks/index.md) on the map  opens [Context track menu](../map/track-context-menu.md).
 
 <Tabs groupId="operating-systems">
 
@@ -592,7 +592,7 @@ You can add waypoints to a recorded track or to the current track recording usin
 
 - Select a location on the map with a [long-tap](../map/map-context-menu.md#select-any-point-long-tap). 
 - In the *Map Context Menu* that opens, choose *Actions → Add track waypoint*.
-- The list displays the [tracks](../map/tracks-on-map.md#display-tracks-on-the-map) recorded and shown on the map, as well as the [current track recording](../plugins/trip-recording.md#from-widget), to which you can add the selected waypoint.
+- The list displays the [tracks](../map/tracks/index.md#display-tracks-on-the-map) recorded and shown on the map, as well as the [current track recording](../plugins/trip-recording.md#from-widget), to which you can add the selected waypoint.
 - You can add waypoints to a track that is not yet active for recording, in which case the inactive track switches from the *Start state* to the *Resume state*.
 - [Fill in](../map/track-context-menu.md#add-waypoint-to-a-track) the required data and save the waypoint. 
 - You can configure the [Quick Actions](../widgets/quick-action.md) by adding a waypoint to the *Add track waypoint*. 
