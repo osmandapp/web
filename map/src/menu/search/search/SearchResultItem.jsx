@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
@@ -6,8 +6,11 @@ import styles from '../search.module.css';
 import { useTranslation } from 'react-i18next';
 import _ from 'lodash';
 import { formattingPoiType } from '../../../manager/PoiManager';
+import AppContext from '../../../context/AppContext';
 
 export default function SearchResultItem({ item }) {
+    const ctx = useContext(AppContext);
+
     const { t } = useTranslation();
     const { ref, inView } = useInView();
 
@@ -41,7 +44,13 @@ export default function SearchResultItem({ item }) {
                 <Skeleton variant="rectangular" width="100%" height={'var(--menu-item-size)'} />
             ) : (
                 <div>
-                    <MenuItem className={styles.searchItem} divider>
+                    <MenuItem
+                        className={styles.searchItem}
+                        divider
+                        onClick={() => {
+                            ctx.setZoomToMapObj(item);
+                        }}
+                    >
                         <ListItemText>
                             <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
                             {(type || distance) && (

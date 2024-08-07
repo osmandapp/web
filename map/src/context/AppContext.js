@@ -279,6 +279,7 @@ export const AppContextProvider = (props) => {
     // search
     const [searchQuery, setSearchQuery] = useState(null);
     const [searchResult, setSearchResult] = useState(null);
+    const [zoomToMapObj, setZoomToMapObj] = useState(false);
 
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
@@ -616,6 +617,8 @@ export const AppContextProvider = (props) => {
                 setCategoryIcons,
                 searchResult,
                 setSearchResult,
+                zoomToMapObj,
+                setZoomToMapObj,
             }}
         >
             {props.children}

@@ -62,6 +62,14 @@ export default function SearchLayer() {
         }
     }, [ctx.searchQuery]);
 
+    useEffect(() => {
+        if (ctx.zoomToMapObj) {
+            const lat = ctx.zoomToMapObj.geometry.coordinates[1];
+            const lon = ctx.zoomToMapObj.geometry.coordinates[0];
+            map.setView([lat, lon], 17);
+        }
+    }, [ctx.zoomToMapObj]);
+
     async function searchByWord(query, latlng) {
         let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search`, {
             apiCache: true,
