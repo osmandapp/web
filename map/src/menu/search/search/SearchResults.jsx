@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../../context/AppContext';
 import CustomInput from './CustomInput';
 import {
@@ -30,23 +30,8 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     const [result, setResult] = useState(null);
     const [processingSearch, setProcessingSearch] = useState(false);
     const hash = window.location.hash;
-    const [delayedHash, setDelayedHash] = useState(hash);
     const [locReady, setLocReady] = useState(false);
     const currentLoc = useGeoLocation(ctx);
-    const debouncerTimer = useRef(0);
-
-    // debounce map move/scroll
-    useEffect(() => {
-        debouncerTimer.current > 0 && clearTimeout(debouncerTimer.current);
-        debouncerTimer.current = setTimeout(() => {
-            debouncerTimer.current = 0;
-            setDelayedHash(hash);
-        }, 5000);
-
-        return () => {
-            clearTimeout(debouncerTimer.current);
-        };
-    }, [hash]);
 
     useEffect(() => {
         if (!currentLoc) return;
@@ -84,8 +69,8 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
                 }
             }
         }
-    }, [currentLoc, delayedHash, ctx.searchResult?.features]);
-
+    }, [currentLoc, ctx.searchResult?.features]);
+    console.log(ctx.searchResult?.features);
     useEffect(() => {
         if (locReady) {
             if (value) {
@@ -188,11 +173,13 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
                 }
             />
             {processingSearch && <Loading />}
-            <Box sx={{ overflowY: 'auto' }}>
-                {result?.features.map((item, index) => (
-                    <SearchResultItem key={index} item={item} index={index} />
-                ))}
-            </Box>
+            {!processingSearch && (
+                <Box sx={{ overflowY: 'auto' }}>
+                    {result?.features.map((item, index) => (
+                        <SearchResultItem key={index} item={item} index={index} />
+                    ))}
+                </Box>
+            )}
             {!result && !processingSearch && <EmptySearch />}
         </>
     );
