@@ -16,7 +16,26 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-## Track Appearance
+## Overview
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Track menu options Android](@site/static/img/map/track-appear-and-1.png)  ![Track menu Appearance Android](@site/static/img/map/track_appearence_1_andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Track menu iOS](@site/static/img/map/track_appearence_1_ios.png) ![Configure color iOS](@site/static/img/map/track_appearence_2_ios.png)  
+
+</TabItem>
+
+</Tabs> 
+
+
+## Setup
 
 :::tip note
 
@@ -107,16 +126,31 @@ This [paid feature](../../purchases/ios.md) allows you to display tracks by elev
 </Tabs>
 
 3D track settings are responsible for the visualization of the track on the map:
-- *<Translate android="true" ids="visualized_by"/>*: "None", "Altitude", "Speed", "Fixed Height" (additional options for Android: "Heart Rate", "Bicycle Cadence", "Bicycle Power", "Temperature", "Bicycle Speed") - Choose to display the 3D track by altitude (using [altitude data](../../plugins/trip-recording.md#recorded-gpx-file) from GPX track file), at a fixed height, or not at all. 
-- *<Translate android="true" ids="wall_color"/>*: "None", "Solid", "Downward Gradient", "Upward Gradient" (additional options for Android: "Altitude", "Slope", "Speed") - Select whether to color the 3D track and choose the type of coloration. 
-- *<Translate android="true" ids="track_line"/>*: "Top", "Bottom", "Top and bottom" - Decide where to add a line to the 3D track for better visibility. 
-- *<Translate android="true" ids="vertical_exaggeration"/>* :"None" to "x3.0" - Adjust the level of vertical exaggeration for the 3D track.  
-- *<Translate android="true" ids="wall_height"/>* (if you choose _<Translate android="true" ids="visualized_by,fixed_height"/>_) : "None" to "2000 m" - by changing the scale value, you can change 3D track height.
+- *<Translate android="true" ids="visualized_by"/>*: *None*, *Altitude*, *Speed*, *Fixed Height* (additional options for Android: *Heart Rate*, *Bicycle Cadence*, *Bicycle Power*, *Temperature*, *Bicycle Speed*) - Choose to display the 3D track by altitude (using [altitude data](../../plugins/trip-recording.md#recorded-gpx-file) from GPX track file), at a fixed height, or not at all. 
+- *<Translate android="true" ids="wall_color"/>*: *None*, *Solid*, *Downward Gradient*, *Upward Gradient* (additional options for Android: *Altitude*, *Slope*, *Speed*) - Select whether to color the 3D track and choose the type of coloration. 
+- *<Translate android="true" ids="track_line"/>*: *Top*, *Bottom*, *Top and bottom* - Decide where to add a line to the 3D track for better visibility. 
+- *<Translate android="true" ids="vertical_exaggeration"/>* :*None* to *x3.0* - Adjust the level of vertical exaggeration for the 3D track.  
+- *<Translate android="true" ids="wall_height"/>* (if you choose _<Translate android="true" ids="visualized_by,fixed_height"/>_) : *None* to *2000 m* - by changing the scale value, you can change 3D track height.
 
 ### Join Gaps
 
-Gaps in a GPX track can occur during recording, for example. This function (Android: "_<Translate android="true" ids="join_segments"/>_", iOS: "_<Translate ios="true" ids="gpx_join_gaps"/>_") allows you to seamlessly connect all gaps in the chosen GPX track. Segments will be joined with a straight line to form a continuous track.
+Gaps in a GPX track can occur during recording, for example. This function (Android: *_<Translate android="true" ids="join_segments"/>_*, iOS: *_<Translate ios="true" ids="gpx_join_gaps"/>_*) allows you to seamlessly connect all gaps in the chosen GPX track. Segments will be joined with a straight line to form a continuous track.
 
 ### Reset to Original
 
 Resets all settings to default values. 
+
+
+## Related Articles
+
+- [Map Context menu](./map-context-menu.md)
+- [Configure Map](./configure-map-menu.md)
+- [Vector maps (Map styles)](./vector-maps.md)
+- [Raster Maps (Online / Offline)](./raster-maps.md)
+- [Points on the map](./point-layers-on-map.md)
+- [Tracks](./tracks/index.md)
+- [Tracks Context menu](./tracks/track-context-menu.md)
+- [Public transport](./public-transport.md)
+
+
+> *This article was last updated in August 2024*
