@@ -69,20 +69,20 @@ You can read more information [here](https://developer.apple.com/library/archive
 ### Tested Power Settings for Android 9, 10, and 11 (Hardy, 2020-08-25)
 
 I have successfully tested the following Power settings under Android 9, 10, and later 11 (on Samsung devices) for OsmAnd to log gapless tracks. Please locate these **10 settings** and set accordingly:
-* (1) **Power (saving) mode** = OFF   (called 'Optimized' in Android 10)
-* (2) **Adaptive power saving** = OFF   (leaving ON may periodically use Medium power saving which inhibits OsmAnd logging.)
-* (3) **Adaptive battery** = ON   (candidate for 'OFF', but no problem detected so far)
-* (4) **Put unused apps to sleep** = OFF   (check list of sleeping apps)
-* (5) **Auto disable unused apps** = OFF   (seems not to exist anymore in Android 10)
+* (1) **Power saving (mode)** = OFF   (or 'Optimized' in Android 10)
+* (2) **Adaptive power saving** = OFF   (ON may at times activate Medium power saving which prevents OsmAnd logging)
+* (3) **Adaptive battery** = ON   (should not affect apps exempted from battery optimization anyway, see (9) below)
+* (4) **Put unused apps to sleep** = OFF   (ON probably also ok if OsmAnd is exempted from battery optimization, see (9) below)
+* (5) **Auto disable unused apps** = OFF   (seems only present in Android 9)
 * (6) **Optimize settings** = OFF   (in Android 10 under "_Device care / Advanced_", in Android 11 seems gone)
-* (7) **Auto optimize (daily)** = ON
-* (8) **Auto restart (at set times)** = OFF
-* (9) **Optimize Battery Usage** (under "_Apps / OsmAnd / Battery_" or "_Apps / three-dots / Special access / Optimize battery usage / All / OsmAnd_") = May leave all unchanged (looks like OsmAnd does not need to have Battery optimization disabled here)
-* (10) In the same place and for Android 11, make sure **Allow background activity** = ON for OsmAnd.
+* (7) **Auto optimize (daily)** = ON   (probably not relevant)
+* (8) **Auto restart (at set times)** = OFF   (probably not relevant)
+* (9) **Optimize Battery Usage** (under "_Apps / OsmAnd / Battery_" or "_Apps / 3-dots / Special access / Optimize battery usage / All / OsmAnd_") = advisable to exempt OsmAnd from battery optimization (although not necessary on all devices)
+* (10) **Allow background activity** = ON for OsmAnd under "_Apps / OsmAnd / Battery_" for Android 11
 
 Some of these settings interact, so be accurate. Best search for the above settings by name (with and without the expressions in parentheses). Depending on your version of Android, they may be scattered over these various _Android Settings screens_:
 * _Device care_
-* _Device care / three-dots / Automation_
+* _Device care / 3-dots / Automation_
 * _Device care / Advanced_
 * _Device care / Battery_
 * _Device care / Battery / Settings_
