@@ -59,6 +59,8 @@ Keep in mind that during navigation zoom can be controlled by **Auto zoom settin
 
 **<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>  
 
+### My location appearance
+
 
 ## Map magnifier
 
@@ -327,8 +329,8 @@ Tap an action from the list. There are two buttons in the upper right corner of 
 - [Vector maps (Map styles)](./vector-maps.md)
 - [Raster Maps (Online / Offline)](./raster-maps.md)
 - [Points on the map](./point-layers-on-map.md)
-- [Tracks and Routes](./tracks-on-map.md)
-- [Tracks Context menu](./track-context-menu.md)
+- [Tracks and Routes](./tracks/index.md)
+- [Tracks Context menu](./tracks/track-context-menu.md)
 - [Public transport](./public-transport.md)
 
 

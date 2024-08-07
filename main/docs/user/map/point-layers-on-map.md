@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 title:  Points on the Map
 ---
 
@@ -119,11 +119,11 @@ You can read more about markers appearance in this [article](../personal/markers
 
 ## Track Waypoints
 
-Track points (waypoints) are points that are part of Track (GPX) files. These points displayed automatically if track is displayed on the map. They look & could be configured similar to [Favorites](#favorites) - icon, names, color, shape. How to create and add Waypoint read [here](../map/track-context-menu.md#add-waypoint-to-a-track).
+Track points (waypoints) are points that are part of Track (GPX) files. These points displayed automatically if track is displayed on the map. They look & could be configured similar to [Favorites](#favorites) - icon, names, color, shape. How to create and add Waypoint read [here](../map/tracks/track-context-menu.md#add-waypoint-to-a-track).
 
 ![Track on map](@site/static/img/map/track_point_on_map.png)  
 
-[Read more](../map/tracks-on-map.md) about tracks on the map.
+[Read more](../map/tracks/index.md) about tracks on the map.
 
 
 ## Search results (POI)
@@ -212,7 +212,7 @@ Requires [OSM Editing plugin](../plugins/osm-editing.md#how-to-report-a-mistake)
 
 ## Points along the route
 
-Waypoints, points of interest (POIs), Favorite points and Audio/video notes all refer to the concept of saving locations and routes in [GPX (GPS Exchange Format)](https://en.wikipedia.org/wiki/GPS_Exchange_Format). You can use [the same tags](../map/track-context-menu.md#display-custom-gpx-tags) to describe and edit them.  
+Waypoints, points of interest (POIs), Favorite points and Audio/video notes all refer to the concept of saving locations and routes in [GPX (GPS Exchange Format)](https://en.wikipedia.org/wiki/GPS_Exchange_Format). You can use [the same tags](../map/tracks/track-context-menu.md#display-custom-gpx-tags) to describe and edit them.  
 
 [*Waypoints*](#track-waypoints) are individual points on a map or route. They are used to mark certain places that may be important for navigating or recording your travels. For example, you can create a waypoint on the map to indicate an important intersection or change of direction.  
 

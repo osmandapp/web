@@ -89,7 +89,7 @@ The table shows all the features that are included in the paid and free packages
 | [Android Auto](../navigation/auto-car.md)*** | - | ✔ | ✔ |
 | [External sensors support](../plugins/external-sensors.md) | - | ✔ | ✔ |
 | [Topo data (Contour lines and Terrain)](../plugins/contour-lines.md) | - | ✔ | ✔ |
-| [3D track visualization](../map/tracks-on-map.md#track-appearance) | - | ✔ | ✔ |
+| [3D track visualization](../map/tracks/appearance.md) | - | ✔ | ✔ |
 | [Nautical depths](../plugins/nautical-charts.md) | - | ✔ | ✔ |
 | [Offline Wikipedia](../plugins/wikipedia.md) | - | ✔ | ✔ |
 | [Offline Wikivoyage - Travel guides](../plan-route/travel-guides.md)| - | ✔ | ✔ |
@@ -127,7 +127,7 @@ At the moment, the Pro subscription has the following features:
 | [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map. |
 | [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changing the color and width of the route line during navigation. |
 | [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | Shows your location on the Elevation graph of the navigation route with additional info.  |
-| [Elevation correction(offline)](../map/track-context-menu.md#calculating-missing-elevation) | Allows you to calculate an altitude graph for your track ([Terrain map](../plugins/contour-lines.md#how-to-download) required for chosen region). |
+| [Elevation correction(offline)](../map/tracks/track-context-menu.md#calculating-missing-elevation) | Allows you to calculate an altitude graph for your track ([Terrain map](../plugins/contour-lines.md#how-to-download) required for chosen region). |
 
 
 ### How to buy

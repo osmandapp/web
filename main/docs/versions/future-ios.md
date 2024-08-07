@@ -84,7 +84,7 @@ In this update, we have introduced **Custom buttons** in *Configure screen*, a u
 
 ![3D track](../../blog/2024-06-20-ios-4-8/img/3d_track.png)
 
-We have improved the [appearance of the 3D track](../user/map/tracks-on-map.md#3d-track) and added more options for wall colors. Now you can customize wall colors based on _Altitude, Slope, Speed, Heart Rate, Bicycle Cadence, Bicycle Power_, or *Temperature*.
+We have improved the [appearance of the 3D track](../user/map/tracks/index.md#3d-track) and added more options for wall colors. Now you can customize wall colors based on _Altitude, Slope, Speed, Heart Rate, Bicycle Cadence, Bicycle Power_, or *Temperature*.
 
 
 ## Multiselect Mode for Tracks

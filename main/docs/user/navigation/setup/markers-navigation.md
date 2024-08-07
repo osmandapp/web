@@ -104,7 +104,7 @@ GPX tracks with waypoints can be transformed into *Map markers*:
 Only tracks with waypoints can be added to the *Map markers list*. The track you intend to add should also be visible (active) on the map.
 :::
 
-- You can also create *Markers* from a track with waypoints using *[Track context menu](../../map/track-context-menu.md#waypoints-folder)*: *Tap a visible track on the map → in Track context menu chose Points → '&#8942;' → <Translate android="true" ids="add_group_to_markers"/>*
+- You can also create *Markers* from a track with waypoints using *[Track context menu](../../map/tracks/track-context-menu.md#waypoints-folder)*: *Tap a visible track on the map → in Track context menu chose Points → '&#8942;' → <Translate android="true" ids="add_group_to_markers"/>*
 
 ![GPX to markers 2](@site/static/img/navigation/marker/track_to_markers_andr_2.png) ![GPX to markers 3](@site/static/img/navigation/marker/track_to_markers_andr_3.png)
 
