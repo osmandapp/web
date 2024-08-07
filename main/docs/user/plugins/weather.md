@@ -50,13 +50,13 @@ We created a special Weather screen in Main menu for quick access to all Weather
 
 <TabItem value="android" label="Android">  
 
-![Weather Dashboard Android 1](@site/static/img/plugins/weather/weather_dashbord_andr_1.png) ![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_2.png)  
+![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_2.png)  
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">  
 
-![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_1.png) ![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_2.png)
+![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_2.png)
 
 </TabItem>  
 
@@ -107,6 +107,8 @@ All weather data is presented in the form of separate map layers. To see weather
 |![Clouds sheme](@site/static/img/plugins/weather/clouds.png)|  
 | **Atmospheric pressure** is  caused by the weight of air above the measurement point. It decreases with increasing elevation. You can display Atmospheric pressure in hectopascals (hPa), millimeters of mercury (mm Hg), inches of mercury (inHg) |  
 | ![Pressure sheme](@site/static/img/plugins/weather/pressure.png) |  
+| **Wind annimation** involves dynamic representations that show wind direction and speed across a region. |  
+| ![Wind annimation](@site/static/img/plugins/weather/wind_annimation.gif) |  
 
 ### Combine maps  
 
@@ -148,11 +150,7 @@ On Android devices you can check when Weather data was downloaded by tapping the
 ![Date of weather cash android](@site/static/img/plugins/weather/weather_cash_andr.png)  
 :::
 
-### Download forecast (iOS)
-
-:::caution iOS only
-Download Weather forecast function is not available in the Android version of the OsmAnd app.
-:::  
+### Download forecast
 
 &nbsp;  
 
