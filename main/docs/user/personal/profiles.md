@@ -49,7 +49,7 @@ There are profiles such as *Skiing* and *Boat*, the additional features of which
 </Tabs>
 
 
-## Profile configuration
+## Profile Configuration
 
 <Tabs groupId="operating-systems">
 
@@ -73,7 +73,7 @@ This section contains all settings related to appearance, navigation options, ma
 All settings affect only the selected application profile.
 :::
 
-### Free Cloud backup
+### Free Cloud Backup
 
 <Tabs groupId="operating-systems">
 
@@ -100,7 +100,7 @@ OsmAnd provides [the ability to backup](../personal/osmand-cloud.md#osmand-start
 You must have an [OsmAnd Cloud](../personal/osmand-cloud.md#login) account to use the *Free Settings Backup*. If you have an account in *OsmAnd Pro* or an active account in *OsmAnd Cloud*, you will not see the promotion banner.  
 
 
-## General settings
+## General Settings
 
 This section contains settings for the application theme and compass button, map and profile data units and formats, external input devices, and many other settings to create the optimal configuration for your chosen profile.
 
@@ -145,7 +145,7 @@ This section contains settings for the application theme and compass button, map
 - **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Android*). Opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.  
 
 
-### Units & formats
+### Units & Formats
 
 <Tabs groupId="operating-systems">
 
@@ -228,13 +228,12 @@ The **Other** section provides additional profile settings. You can switch butto
 - *[<Translate android="true" ids="external_input_device"/>](../map/interact-with-map.md#external-input-device-buttons) (Android / iOS)* - allow you to add other devices, such as <Translate ios="true" ids="sett_wunderlinq_ext_input"/>, <Translate ios="true" ids="sett_generic_ext_input"/>, or <Translate android="true" ids="sett_parrot_ext_input"/>, to control the OsmAnd program using the existing buttons.  
 - *[<Translate android="true" ids="use_kalman_filter_compass"/>](../map/interact-with-map.md#extra-compass-settings) (Android)* - allows to use or not [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
 - *[<Translate android="true" ids="use_magnetic_sensor"/>](../map/interact-with-map.md#extra-compass-settings) (Android)* - allows to use or not [Magnetic sensor](https://en.wikipedia.org/wiki/Kalman_filter) for smoothen rotation of the map with a slower rotation animation though it introduces a small delay (< 1 second) till.
-- *[<Translate android="true" ids="fix_north_up"/>](../map/interact-with-map.md#map-orientation-modes) (Android)* - allows you to hard lock the map position [*North is up*](../map/interact-with-map.md#map-orientation-modes) if you do not need to rotate the map with a gesture.
 - *<Translate android="true" ids="tap_on_map_to_hide_interface"/> (Android)* - tapping an empty space on the map hides control buttons and widgets.
 - *[<Translate android="true" ids="do_not_use_animations"/>](../map/interact-with-map.md#no-animations) (Android)* - allows to switch on/off animation for navigation mode.
 - *[<Translate android="true" ids="animate_my_location"/>](../navigation/guidance/map-during-navigation.md#animate-my-location-android-animate-own-position) (Android)* - <Translate android="true" ids="animate_my_location_desc"/> Note that the animation takes about 1 second, which creates a slight delay for the *[My location](../map/interact-with-map.md#my-location--zoom)* position to display on the map relative to your location.  
 
 
-## Navigation settings
+## Navigation Settings
 
 <Tabs groupId="operating-systems">
 
@@ -272,7 +271,7 @@ There are no navigation settings in *Browse map* profile.
 :::
 
 
-## Configure map
+## Configure Map
 
 <Tabs groupId="operating-systems">
 
@@ -302,7 +301,7 @@ The [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.
 - Display [public transport](../map/public-transport.md) information and [change the map style](../map/vector-maps.md#default-map-styles).
 
 
-## Configure screen
+## Configure Screen
 
 <Tabs groupId="operating-systems">
 
@@ -328,7 +327,7 @@ The [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.
 The [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md) is a menu that allows you to configure the widgets for the selected profile to be displayed on the map. On this screen, you can enable and configure [Informational](../widgets/info-widgets.md) and [Navigational](../widgets/nav-widgets.md) widgets, as well as other items.
 
 
-## Profile appearance
+## Profile Appearance
 
 You can choose the color of the profile elements, its icon and name, also assign icons on the map for movement and without.
 
@@ -350,14 +349,16 @@ You can choose the color of the profile elements, its icon and name, also assign
 
 | Description | Android screens | iOS screens |
 |:-----|:---------------|:---------------|
-| **<Translate android="true" ids="profile_name_hint"/>**.<br/>You can change the name. |    |     |
-| **<Translate android="true" ids="profile_appearance"/>**.<br/>You can change the color<br/>and label for the selected profile. |    |     |
-| *<Translate android="true" ids="select_color"/>*.<br/>Allows you to select colors<br/>for the profile icon and menu. |  ![Profile Appearance](@site/static/img/personal/profiles/profile_appearance_color_andr.png)  | ![Profile Appearance](@site/static/img/personal/profiles/profile_appearance_color_ios.png)  |
-| *<Translate android="true" ids="select_icon_profile_dialog_title"/>*.<br/>Allows you to select the icon<br/>that fits the best with the selected profile. | ![Profile Appearance](@site/static/img/personal/profiles/profile_appearance_icons_andr.png)  | ![Profile Appearance](@site/static/img/personal/profiles/profile_appearance_icons_ios.png)  |
-| **<Translate android="true" ids="appearance_on_the_map"/>**.<br/>Allows you to select<br/>the appearance of the location icon<br/>according to your preferences. |    |     |
-| *<Translate android="true" ids="select_map_icon"/>*.<br/>Select a location icon<br/>in a non-moving state. | ![Profile Appearance at rest Android](@site/static/img/personal/profiles/profile_appearance_at_rest_andr.png) | ![Profile Appearance iOS](@site/static/img/personal/profiles/profile_appearance_at_rest_ios.png)  |
-| *<Translate android="true" ids="select_navigation_icon"/>*<br/>Selects the location icon<br/>in the state while moving. | ![Profile Appearance on the map Android](@site/static/img/personal/profiles/profile_appearance_moving_andr.png) | ![Profile Appearance iOS](@site/static/img/personal/profiles/profile_appearance_moving_ios.png) |
+| **<Translate android="true" ids="profile_name_hint"/>**.<br/>You can change the name. | ![Profile Appearance](@site/static/img/personal/profiles/prof_name_android.png)   |  ![Profile Appearance](@site/static/img/personal/profiles/prof_name_ios.png)   |
+| **<Translate android="true" ids="profile_appearance"/>**.<br/>You can change the color<br/>and label for the selected profile. |   |   |
+| *<Translate android="true" ids="select_color"/>*.<br/>Allows you to select colors<br/>for the profile icon and menu. <br/> (Android) Click to "All colors" button for openning full color palette and adding more colors.|  ![Profile Appearance](@site/static/img/personal/profiles/profile_appearance_color_andr.png)  | ![Profile Appearance](@site/static/img/personal/profiles/profile_appearance_color_ios.png)  |
+| *<Translate android="true" ids="select_icon_profile_dialog_title"/>*.<br/>Allows you to select the icon<br/>that fits the best with the selected profile.<br/> (Android) Click to "All icons" button for openning all icons. | ![Profile Appearance](@site/static/img/personal/profiles/profile_appearance_icons_andr.png)  | ![Profile Appearance](@site/static/img/personal/profiles/profile_appearance_icons_ios.png)  |
+| **<Translate android="true" ids="appearance_on_the_map"/>** - 3D icon*. <br/>Allows you to select<br/>the appearance of the location icon<br/>according to your preferences. |    |     |
+| *<Translate android="true" ids="select_map_icon"/>*.<br/>Select a location icon<br/>in a non-moving state. <br/> (Android) Click to "All icons" button for openning all icons. | ![Profile Appearance at rest Android](@site/static/img/personal/profiles/profile_appearance_at_rest_andr.png) | ![Profile Appearance iOS](@site/static/img/personal/profiles/profile_appearance_at_rest_ios.png)  |
+| *<Translate android="true" ids="select_navigation_icon"/>*. <br/>Selects the location icon<br/>in the state while moving. <br/> (Android) Click to "All icons" button for openning all icons. | ![Profile Appearance on the map Android](@site/static/img/personal/profiles/profile_appearance_moving_andr.png) | ![Profile Appearance iOS](@site/static/img/personal/profiles/profile_appearance_moving_ios.png) |
+| **<Translate android="true" ids="shared_string_options"/>** (Android only). <br/>Selects as to display the cone-shaped area you're currently facing -  *<Translate android="true" ids="view_angle"/>*, and to show the circular area representing your current location accuracy - *<Translate android="true" ids="location_radius"/>*: <br/> <Translate android="true" ids="shared_string_off"/>, <Translate android="true" ids="resting_position"/>, <Translate android="true" ids="navigation_position"/>, <Translate android="true" ids="resting_navigation_position"/>.| ![Profile Appearance on the map Android](@site/static/img/personal/profiles/profile_appearance_options_android.png) |  |
 
+***Note** (Android version): 3D icons are only available for [map rendering Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine), for map rendering [Version 1](../personal/global-settings.md#map-rendering-engine) icons have 2D view.
 
 ## UI Customization
 
@@ -372,7 +373,7 @@ You can choose the color of the profile elements, its icon and name, also assign
 With the UI customization feature, you can adjust the number of items in actions such as [*<Translate android="true" ids="shared_string_drawer"/>*](../start-with/main-menu.md#customize-advanced-use-of-android), [*<Translate android="true" ids="configure_map"/>*](../map/configure-map-menu.md) and [*<Translate android="true" ids="context_menu_actions"/>*](../map/map-context-menu.md). Information about the number of added items out of all possible items can be found under the title of each feature. 
 
 
-#### Drawer
+### Drawer
 
 - **Main visible items**. In the Customise UI section, you can reorder or hide items from the [Drawer](../start-with/main-menu.md#customize-advanced-use-of-android).
   - *Minus* button. When you tap, the list items are deleted from the main menu in the drawer and moved to the *Hidden* section. However, all options, settings, or plugins are not disabled.  
@@ -392,7 +393,7 @@ With the UI customization feature, you can adjust the number of items in actions
     ![Profile Copy Android](@site/static/img/personal/profiles/profile_drawer_reset_copy_android.png)   
 
 
-#### Configure map
+### Configure Map
 
 - **Configure map menu**. Items visible in this section of the main menu.  
 
@@ -412,7 +413,7 @@ With the UI customization feature, you can adjust the number of items in actions
     ![Profile Copy Android](@site/static/img/personal/profiles/profile_configure_map_reset_copy_andr.png)   
  
 
-#### Context menu actions
+### Context Menu Actions
 
 - **Map Context menu**. Items visible in the main context and additional actions menu.  
 
@@ -432,7 +433,7 @@ With the UI customization feature, you can adjust the number of items in actions
     ![Profile Copy Android](@site/static/img/personal/profiles/profile_context_menu_reset_copy_andr.png)   
 
 
-## Plugin settings
+## Plugin Settings
 
 :::caution
 To access the plugin's settings, you must first [**enable the plugin**](../plugins/configure-plugins.md#enable--disable) in the *Plugin section of the Main menu*.
@@ -461,7 +462,7 @@ To access the plugin's settings, you must first [**enable the plugin**](../plugi
 Plugins unlock additional features of the application and can be either [paid or free](../plugins/configure-plugins.md#purchase). Some plugins have their own [settings](../plugins/configure-plugins.md#plugin-settings), others do not. OsmAnd gives you the possibility to configure plugins for each profile separately.
 
 
-### Trip recording
+### Trip Recording
 
 <Tabs groupId="operating-systems">
 
@@ -511,7 +512,7 @@ This item opens the [trip recording settings](../plugins/trip-recording.md#recor
 Interactive [Weather](../plugins/weather.md#weather-settings) map layers allow you to monitor the temperature, air pressure, cloud coverage, wind speed and precipitation in your city or any other location on a global map.
 
 
-### Audio / Video notes
+### Audio / Video Notes
 
 <InfoAndroidOnly />  
 
@@ -522,7 +523,7 @@ Interactive [Weather](../plugins/weather.md#weather-settings) map layers allow y
 This item opens [audio-video plugin settings](../plugins/audio-video-notes.md#plugin-settings) for the selected profile. The *Audio/Video notes* plugin extends the functionality of OsmAnd by allowing you to create your own notes in various formats such as photo, video or audio and associate them with geographical location or current location.  
 
 
-### OpenStreetMap editing
+### OpenStreetMap Editing
 
 <Tabs groupId="operating-systems">
 
@@ -583,7 +584,7 @@ When you tap an item in the *Plugin Settings* section, the [settings of external
 This item opens [Accessibility plugin settings](../plugins/accessibility.md#plugin-settings) for the selected profile. The Accessibility plugin settings allow you to customize the application according to your needs. All settings relate to the navigation process and are set individually for each profile.
 
 
-### OsmAnd development
+### OsmAnd Development
 
 <Tabs groupId="operating-systems">
 
@@ -664,3 +665,12 @@ Actions with selected profile:
     - This action is available only for *Android* and only for a *Custom profile*. 
     - Default profiles cannot be deleted.
     - To add a profile go to *Menu → Settings → App profiles → + New profile*.
+
+
+## Related Articles
+
+- [Manage Tracks](../personal/tracks/manage-tracks.md#import--export-track)
+- [Search History](../search/search-history.md#export-and-share)
+- [Color Palette Schemes](../personal/color-palette-schemes.md)
+
+> *This article was last updated in July 2024*

@@ -37,8 +37,17 @@ After enabling the plugin and enabling the Android Accessibility settings for yo
 ![Accessibility](@site/static/img/plugins/Accessibility/access_turned_off.png)  
 
 :::info NOTE
-All sound and haptic functions The OsmAnd app accessibility plugin remain running in the background when the screen is turned off or locked.
+**1.** All sound and haptic functions The OsmAnd app accessibility plugin remain running in the background when the screen is turned off or locked.  
+
+**2.** The following actions available by [tapping the compass button](../map/interact-with-map.md#map-orientation-and-compass):
+   - **Single tap**. Rotates the map to the North in main mode.  
+      *→*  &nbsp;This action corresponds to a **Double tap** in *TalkBack*.
+   - **Long tap**. Opens the bottom sheet with orientations in main mode.  
+      *→*  &nbsp;This action corresponds to a **Double tap and hold** in *TalkBack*.
+   - **Double tap** to switch map orientation is not available in Accessibility mode.
 :::
+
+
 
 ### How to use (iOS)
 

@@ -45,8 +45,8 @@ As **Plan a route** is one of the main feature of the OsmAnd app, you can find i
 There are four ways to access the *Plan a route* tool.
 
 1. Go to the main *Menu → Plan a route*.
-2. Go to the *My Places* menu, tap any available track in the list *Menu → My Places → Tracks*, select the *Options* (or *Actions* for iOS) tab in the [track context menu](../map/track-context-menu.md), and in the opened menu find *Edit track*.
-3. In the [track context menu](../map/track-context-menu.md) select *Track tab → Options → Edit*. 
+2. Go to the *My Places* menu, tap any available track in the list *Menu → My Places → Tracks*, select the *Options* (or *Actions* for iOS) tab in the [track context menu](../map/tracks/track-context-menu.md), and in the opened menu find *Edit track*.
+3. In the [track context menu](../map/tracks/track-context-menu.md) select *Track tab → Options → Edit*. 
 4. (Android only) Select the *Edit* icon in the *Overview* tab by tapping any available track in the *Menu → My Places → Tracks*.
 5. (iOS only) Select *Create New Track* from the Actions section in the *Menu → My Places → Tracks*.  
 
@@ -177,7 +177,7 @@ The *Straight Line* is needed and will be used for areas not covered by routing 
 - [*<Translate android="true" ids="shared_string_navigation"/>*](#navigation-with-plan-a-route) - Starts navigation from your position to the finish point using a drawn route.
 - *<Translate android="true" ids="reverse_route"/>* - You swap the Start point of the route and the last added point. The route segment settings do not change when Reverse is applied. 
 - [*<Translate android="true" ids="attach_to_the_roads"/>*](#attach-to-the-roads) - Creates an approximate route. Each point on the track is matched to the nearest permitted road on the map according to the selected profile and threshold distance.
-- [*<Translate android="true" ids="shared_string_gps_filter"/>*](../map/track-context-menu.md#gps-filter) - You can filter out route points that do not match the selected routing type, delete unnecessary data or correct inaccurate data. GPS filter will only work if the routing type is specified as *Straight Line*. <!-- Android only(No!!!) with Straight line routing. **?How to use?** **When are additional details needed to calculate a route when switching to another type of routing?** -->
+- [*<Translate android="true" ids="shared_string_gps_filter"/>*](../map/tracks/track-context-menu.md#gps-filter) - You can filter out route points that do not match the selected routing type, delete unnecessary data or correct inaccurate data. GPS filter will only work if the routing type is specified as *Straight Line*. <!-- Android only(No!!!) with Straight line routing. **?How to use?** **When are additional details needed to calculate a route when switching to another type of routing?** -->
 - *<Translate android="true" ids="get_altitude_data"/>* (*Android only*) - This option is only displayed in the menu if no elevation data is available. With this [option](#get-elevation-data), you can choose to calculate altitude using *Terrain map data* or use data from downloaded maps to find the *nearby roads*.
 - ***<Translate android="true" ids="shared_string_clear_all"/>*** - It archives completely all your actions. An "artifact" remains on the map - the dotted lines of the just cleared route. It disappears at the next adding new points. You can cancel the Clear All function with the Return Action button. The feature does not affect the unchanged parts of the routes opened in the tool.  
 
@@ -529,10 +529,10 @@ When calculating a route for navigation in *Plan a route*, you can find out addi
 
 ![Plan a route android](@site/static/img/plan-route/plan_route_graph_4_andr.png)  
 
-If [*Elevation data*](../map/track-context-menu.md#calculating-missing-elevation) was missed when opening or importing a track, you can use one of the route calculation modes.
+If [*Elevation data*](../map/tracks/track-context-menu.md#calculating-missing-elevation) was missed when opening or importing a track, you can use one of the route calculation modes.
 
 - [*Use nearby roads*](#use-nearby-roads). This mode uses previously loaded maps and elevation data to find the nearest roads to build a track. The geometry of the track can be adjusted.  
-- [*Use Terrain maps*](../map/track-context-menu.md#calculating-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Mode calculates altitude based on Terrain map data (3D). The difference between the altitude recorded by your device can be used for elevation correction.  The geometry of the track remains unchanged.
+- [*Use Terrain maps*](../map/tracks/track-context-menu.md#calculating-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Mode calculates altitude based on Terrain map data (3D). The difference between the altitude recorded by your device can be used for elevation correction.  The geometry of the track remains unchanged.
 
 
 ### Use nearby roads

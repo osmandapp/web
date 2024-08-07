@@ -72,7 +72,7 @@ Read more about under what conditions, when, and which voice prompts are activat
     - *[Speed cameras](#speed-cameras)*. 
     - Also configure the **[Alert widget](../../widgets/nav-widgets.md#alert-widget)** to use with announcements.
 3. **User points**:
-    - Enable voice prompts for the pre-set and added [Waypoints](../../map/track-context-menu.md#add-waypoint-to-a-track), [Favorites](../../personal/favorites.md) or [POIs](../../map/point-layers-on-map.md#points-of-interest-poi). While driving, the selected points will be announced when you approach or pass them.    
+    - Enable voice prompts for the pre-set and added [Waypoints](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track), [Favorites](../../personal/favorites.md) or [POIs](../../map/point-layers-on-map.md#points-of-interest-poi). While driving, the selected points will be announced when you approach or pass them.    
 
 | Prompt Type | Lead Time [s]:<br/>Corresponding<br/>Lead Distance @ Default Speed [m] | Limit |
 | - | - | - | 

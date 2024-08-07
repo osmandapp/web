@@ -192,7 +192,7 @@ In the Options menu, you can choose whether or not to save images in the viewed 
 </Tabs>
 
 You can open an article from the suggested options on the *[Explore tab](#explore-and-bookmark)* or by using the *[Search](#search)* option. 
-If you have added touristic attractions called *[Points](#points)* to the OsmAnd map from *Travel guide article*, you can also open the article using *Read full* button in the [description section](../map/track-context-menu.md#description-and-info) of the waypoint.  
+If you have added touristic attractions called *[Points](#points)* to the OsmAnd map from *Travel guide article*, you can also open the article using *Read full* button in the [description section](../map/tracks/track-context-menu.md#description-and-info) of the waypoint.  
 
 The following controls are located at the top of the screen:
 - Switch to change the language of the article. The language can be selected from the available options.The system language is used by default. 
@@ -277,7 +277,7 @@ Most *Travel guide articles* have the same content structure: *introduction* (im
 
 *Travel guide articles* often contain tourist attractions grouped by topic. By tapping onece on the *Points* button at the bottom of the *[Article](#travel-article)*, all attractions related to the topic (eating places, accommodation options, airports, shops, historical monuments, and so on) will be added to the map and can be *[managed as a Track](#manage-as-gpx-track)*.  
 
-By default, attraction groups are marked with certain icons: *Eat and Drink* categories with a knife and fork in a red circle, *Do and See* with camera in a green circle, and other. You can manage groups of points with &#8942; like a *[Waypoint folder](../map/track-context-menu.md#waypoints-folder)*.  
+By default, attraction groups are marked with certain icons: *Eat and Drink* categories with a knife and fork in a red circle, *Do and See* with camera in a green circle, and other. You can manage groups of points with &#8942; like a *[Waypoint folder](../map/tracks/track-context-menu.md#waypoints-folder)*.  
 
 :::note
 Points in *Travel articles* refer to waypoints on a GPX track.  
@@ -317,14 +317,14 @@ https://osmand.net/blog/routes/#generated-travel-routes
 
 After you add *Travel guides* to the map, *Travel articles* can be saved as a GPX track and managed through the *[My places](../personal/myplaces.md)* menu (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks,icon_group_travel"/>*). They can be displayed on the map, shared, renamed, placed in another folder, exported or deleted.  
 
-- &nbsp;In *[Overview](../map/track-context-menu.md#overview)*, you can read brief description or open [Travel guide article](#travel-article) by taping *Read full* button. *Edit* allows you to correct the article.
-- &nbsp;There is no information in the *[Track](../map/track-context-menu.md#altitude--speed-graphs)* section,  the GPX files of *Travel guides* contain only waypoints.  
-- &nbsp;Under *[Points](../map/track-context-menu.md#points--waypoints)* you see folders with points grouped by name (Buy, Do, Drink, and so on).
-- &nbsp;The *[Option](../map/track-context-menu.md#options)* button performs the same functions as in the regular track.
+- &nbsp;In *[Overview](../map/tracks/track-context-menu.md#overview)*, you can read brief description or open [Travel guide article](#travel-article) by taping *Read full* button. *Edit* allows you to correct the article.
+- &nbsp;There is no information in the *[Track](../map/tracks/track-context-menu.md#altitude--speed-graphs)* section,  the GPX files of *Travel guides* contain only waypoints.  
+- &nbsp;Under *[Points](../map/tracks/track-context-menu.md#points--waypoints)* you see folders with points grouped by name (Buy, Do, Drink, and so on).
+- &nbsp;The *[Option](../map/tracks/track-context-menu.md#options)* button performs the same functions as in the regular track.
 
 :::info
 *Points* are stored in a [GPX-file](../../technical/osmand-file-formats/osmand-gpx.md) (a commonly used format for tracks) as [Waypoints](../map/point-layers-on-map.md#track-waypoints). The number of points (waypoints) in the track contains is marked next to the icon &#128681; in the track field.  
-In *[Track Context menu](../map/track-context-menu.md)* of GPX-file you can find general information about the article to which this track belongs.  
+In *[Track Context menu](../map/tracks/track-context-menu.md)* of GPX-file you can find general information about the article to which this track belongs.  
 :::
 
 ## Combine with Wikipedia

@@ -49,7 +49,7 @@ Slide animations could be disabled with special [setting](#disable-all-animation
 - Grey icon - location has not found yet
 - Arrow icon - 3D mode is switched on
 
-**Long-tap** on **My location** opens Context menu, so user can share own location.
+**Long-tap** (Android) on **My location** opens [Map Context menu](../map/map-context-menu.md), so user can share own location.
 
 **Zoom buttons** are always visible next to **My Location** and allow to control map zoom level. Changing zoom level doesn't change map synchronization with location. **Long-tap** on **Zoom buttons** opens Map magnifier dialog and allows to change map detailing.
 
@@ -59,8 +59,11 @@ Keep in mind that during navigation zoom can be controlled by **Auto zoom settin
 
 **<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>  
 
+### My location appearance
+
 
 ## Map magnifier
+
 Map magnifier is a special way to magnify the map. Essentially it works as a magnifying glass for paper maps, it allows to see the text bigger for raster maps or to see more or less details for the same scale - [Read more](../map/vector-maps.md#map-magnifier).
 
 
@@ -91,17 +94,23 @@ The map orientation modes allow the user to select how the map is displayed on t
 </Tabs>  
 
 
-- **<Translate android="true" ids="rotate_map_north_opt"/>**. The map is fixed in the direction of the North, which is the top edge of your device. The map does not have automatic rotation, but you can rotate it manually with a [two-pointer gesture (two-finger touch & rotate)](../map/interact-with-map.md#gestures), and in this case, the map orientation mode will change to Manual rotation. You can *hard lock the North mode* for Android by the [*<Translate android="true" ids="fix_north_up"/>*](../personal/profiles.md#other) feature.
+- **<Translate android="true" ids="rotate_map_north_opt"/>**. The map is fixed in the direction of the North, which is the top edge of your device. The map does not have automatic rotation. 
+   - for **Android** version it has hard lock the North mode (without manual rotation with twor-finger touch & rotate). 
+   - for **iOS** version you can rotate it manually with a [two-pointer gesture (two-finger touch & rotate)](../map/interact-with-map.md#gestures), and in this case, the map orientation mode will change to *Manually rotated*. 
 - **<Translate android="true" ids="rotate_map_bearing_opt"/>**. The map rotates relative to the direction of your movement known from GPS data. For details, go to [*Rotate map by bearing*](../map/interact-with-map#rotate-map-by-bearing).
 - **<Translate android="true" ids="rotate_map_compass_opt"/>**. The [icon on the button](../widgets/map-buttons.md/#compass) points to the actual North, and the map moves according to the compass orientation of your device. Your device should be in as horizontal a position as possible. If your device does not have a compass sensor, the orientation of the map remains unchanged.
 - **<Translate android="true" ids="rotate_map_manual_opt"/>**. When you select this option, the map is fixed in the current position and does not rotate automatically. You can manually change the map orientation with a two-pointer gesture (two-finger touch & rotate).   
 
 
-**Note**  
+**Note:**  
 
-- Map Orientation modes can be opened in [*Profile settings*](../personal/profiles.md#appearance) as well as by long-tapping the [*Compass button*](../widgets/map-buttons.md#compass).  
-- To quickly switch map orientation modes, tap the "Compass" button located in the upper left corner of the screen, if [it is visible](../widgets/map-buttons.md#display-options).
-- (Android) For hard lock the **<Translate android="true" ids="rotate_map_north_opt"/>** mode you need to use [<Translate android="true" ids="fix_north_up"/>](../personal/profiles.md#other).
+- Map Orientation modes can be opened in the [Profile settings](../personal/profiles.md#appearance) as well as by long-tapping the [Compass button](../widgets/map-buttons.md#compass).  
+- To quickly switch between map orientation modes:
+   - for **Android** version.  
+   **Double tap** the [Compass button](../widgets/map-buttons.md#compass) located in the upper left corner of the screen, if [visible](../widgets/map-buttons.md#display-options).
+   - for **iOS** version.  
+   **Single tap** the [Compass button](../widgets/map-buttons.md#compass) located in the upper left corner of the screen, if [visible](../widgets/map-buttons.md#display-options).
+- (*Android only*) A single tap the [Compass button](../widgets/map-buttons.md#compass) rotates the map orientation to the North in all orientations. Even if it reverts back after a second, such as in compass mode.
 
 
 ### Compass
@@ -126,7 +135,7 @@ The map orientation modes allow the user to select how the map is displayed on t
 
 </Tabs> 
 
-The compass button shows how the [map is oriented](#map-orientation-modes). The red arrow, or the direction of the arrow in *Movement direction* mode, indicates the North. [The icon on the button](../widgets/map-buttons.md#compass) indicates the current map orientation mode. One tap the compass button toggles through all modes in turn.
+The compass button shows how the [map is oriented](#map-orientation-modes). The red arrow, or the direction of the arrow in *Movement direction* mode, indicates the North. [The icon on the button](../widgets/map-buttons.md#compass) indicates the current map orientation mode. Double tap (Android), One tap (iOS) the compass button toggles through all modes in turn.
 
 
 ### Rotate map by bearing
@@ -168,9 +177,9 @@ You can not change Camera tilt when old [map rendering engine](../personal/globa
 
 ### External input device buttons
 
-External input device buttons provide a convenient and efficient way to interact with the map and the OsmAnd application interface.  They are located on external devices, such as Bluetooth or other types of keyboards, specialized buttons on vehicle navigation devices, [WunderLINQ](https://blackboxembedded.com/), [Parrot](https://www.parrot.com/en) and other controllers.  
+External input device buttons provide a convenient and efficient way to interact with the map and the OsmAnd application interface.  They are located on external devices, such as **Bluetooth or other types of keyboards**, **specialized buttons on vehicle navigation devices**, or [WunderLINQ](https://blackboxembedded.com/) and [Parrot](https://www.parrot.com/en) controllers.   
 
-One of the main functions of the external input device buttons is to zoom in and out on the map. They also allow you to navigate around the map, and change map orientation without having to tap and gesture at the screen. The external input device buttons also support other functions, such as opening the main menu or AV Notes.  
+One of the main functions of buttons on external input devices is to zoom in and out of the map. They also allow you to navigate the map and change its orientation without having to tap and gesture on the screen. Buttons on external input devices support many other functions, such as opening the main menu.
 
 :::note
 The keyboard continues to work even if the *External input devices* option is turned off, when *None* is selected. 
@@ -182,7 +191,7 @@ The keyboard continues to work even if the *External input devices* option is tu
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device"/>*
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,other_menu_group,external_input_device"/>*
 
 ![External devices](@site/static/img/map/external_menu_android.png) ![External devices](@site/static/img/map/external_types_android.png)
 
@@ -198,12 +207,14 @@ The keyboard continues to work even if the *External input devices* option is tu
 
 </Tabs>  
 
-- Enable the *External input device* feature.
+To access the settings of an external input device, you need to enable this feature.
 
-- Select a device from those supported by OsmAnd by tapping the Type item in the list:  
-    **<Translate android="true" ids="sett_generic_ext_input"/>**, **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**, **<Translate android="true" ids="sett_parrot_ext_input"/>** (*Android only*), or create [**your own type**](#custom-keys-assignment) (*Android only*).
+- Go to the main *Menu → Settings →* select the *Profile → General settings → Other → External input devices*, and switch to *Enabled*.
 
-- There is a different key assignment for each type of external input device. Tap the *<Translate android="true" ids="key_assignments"/>* to see a list of actions and keys. The table of keys is shown below.
+- Select a device from those supported by OsmAnd by tapping the *Type* item in the list:  
+    **<Translate android="true" ids="sett_generic_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_wunderlinq_ext_input"/>**,&nbsp; **<Translate android="true" ids="sett_parrot_ext_input"/>** (*Android only*), or create [**your own type**](#custom-keys-assignment) (*Android only*).
+
+- There is a different **defined action-key bundle** assignment for each type of external input device. Tap the *<Translate android="true" ids="key_assignments"/>* to see a list of actions and keys. The table of keys is shown below.
 
 - You can read more about external input device actions on GitHub in the [MapActivityKeyListener](https://github.com/osmandapp/OsmAnd/blob/22e40f113ce5c6df97f2f1687d5024ae38a4d28b/OsmAnd/src/net/osmand/plus/activities/MapActivityKeyListener.java#L82) package.
 
@@ -262,35 +273,53 @@ Creates a smooth map panning effect versus the *[My Position](../personal/profil
 
 ![External devices](@site/static/img/map/external_mypilot_android.png)  ![External devices](@site/static/img/map/external_mypilot2_android.png)
 
-- **Create.**   
-    You can create your custom type with a set of actions for the keys of your external input device. 
+#### Create New Type  
 
-    - Go to the [External Input Device](#external-input-device-buttons) setting, select *Type* from the list.
-    - Tap the&nbsp;  "**＋**"  &nbsp;button in the upper right corner of the screen and enter a name.
-    - Each new type has a three-dot menu next to it that includes actions such as:  
-        *Rename, Duplicate,* and *Remove.*
+You can create your custom type with a set of actions for the keys of an external input device (such as a keyboard, joystick, or controller). 
 
-- **Assign and delete actions.**  
-    After you have created your custom type for the keys, you can assign the required actions to them.
+- Go to the [External Input Device](#external-input-device-buttons) setting, select **Type** from the list.
+- Tap the&nbsp;  "**＋**"  &nbsp;button in the upper right corner of the screen and enter a name.
+- After applying, the new type will appear in the *Type* list.
+- To select a created type as the main one, tap it in the list.
+- Each new type has a three-dot menu next to it that includes actions such as:  
+    ***Rename, Duplicate***, and ***Remove***.
 
-    - Select a device type, then tap the *Key assignments* item.
-    - **Delete.** A list of actions for *Keyboard* will open by default. You can delete unnecessary actions using the *Edit button* in the upper right corner of the screen:
-        - Remove one action per action, with the&nbsp;  "**−**"  &nbsp;button in the item field.
-        - Remove all key assignments for the selected type by tapping the button in the upper right corner of the screen next to the *Edit name*.  
-        ![External devices](@site/static/img/map/external_custom_1_andr.png)    
+#### Add New Key Asssigment
 
-    - **Edit existing actions.** Tap an action from the list. There are two buttons in the upper right corner of the screen:
-        - The **three-dot menu** allows you to *Rename* the action or *Remove* the keys assigned to it.
-        - With the **Edit** button you can delete an existing action and [add a new](../widgets/quick-action.md#custom-buttons) one. The original main name of the action-key bundle is not changed.  
-        Also in this mode, you can add a new key and assign an additional keys to the selected action.  
-        ![External devices](@site/static/img/map/external_custom_2_andr.png)
+![External devices](@site/static/img/map/external_custom_4_andr.png)  ![External devices](@site/static/img/map/external_custom_3_andr.png)
 
-    - **Add new key asssigment.** You can create a key assignment from scratch.
-        - Tap the *Add* button in the bottom right corner of the screen. 
-        - Select the required action then tap the *Add key* field and press the button on your device to assign it to the action.  
-        ![External devices](@site/static/img/map/external_custom_3_andr.png)
-   
+After you have created your custom type for the keys, you can assign the required actions to them.
+
+- Select a device type, then tap the **Key assignments** item.
+- Tap the ***Add*** button (&nbsp;"**＋**"&nbsp;) in the bottom right corner of the screen. 
+- Select the required action then tap the ***Add key*** field and tap the button on your device to assign it to the action.  
+
+:::info note
 If the button you assign is already being used for another action, you will receive a notification with the option to reassign the button or cancel the assignment. 
+:::
+
+#### Delete Actions
+
+![External devices](@site/static/img/map/external_custom_1_andr.png)
+
+A list of actions for *Keyboard* will open by default. You can delete unnecessary actions using the **Edit button** (*pencil-shaped*) in the upper right corner of the screen:
+- ***Remove one action*** per action, with the&nbsp;  "**−**"  &nbsp;button in the item field.
+- ***Remove all key assignments*** for the selected type by tapping the button in the upper right corner of the screen next to the *Edit name*.      
+
+#### Edit Existing Actions
+
+![External devices](@site/static/img/map/external_custom_2_andr.png)  
+
+Tap an action from the list. There are two buttons in the upper right corner of the screen:
+- The **three-dot menu** allows you to:   
+    - ***Rename*** the action.  
+    - ***Remove*** the keys assigned to this action.
+
+- With the **Edit button** (*pencil-shaped*) you can:
+    - **Delete** an existing action.
+    - [**Add a new**](../widgets/quick-action.md#custom-buttons) action.
+    - The original main name of the *action-key bundle* is not changed.  
+    - Also in this mode, you can **add a new key** and **assign an additional keys** to the selected action.  
 
 
 ## Related Articles
@@ -300,8 +329,8 @@ If the button you assign is already being used for another action, you will rece
 - [Vector maps (Map styles)](./vector-maps.md)
 - [Raster Maps (Online / Offline)](./raster-maps.md)
 - [Points on the map](./point-layers-on-map.md)
-- [Tracks and Routes](./tracks-on-map.md)
-- [Tracks Context menu](./track-context-menu.md)
+- [Tracks and Routes](./tracks/index.md)
+- [Tracks Context menu](./tracks/track-context-menu.md)
 - [Public transport](./public-transport.md)
 
 

@@ -17,6 +17,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+:::tip NOTE
+Some color scheme features are paid for.  
+:::
+
 ## Overview
 
 Color schemes help visualize data, making it easier to understand. This means you can see data on a map using various colors that are easy to interpret.  
@@ -72,7 +76,7 @@ Color palette data is available in the [*Maps & Resources*](../personal/maps.md#
 GPX Tracks, Routes:
 
 - For [routes](../navigation/guidance/map-during-navigation.md#color): *Speed, Slope,* and *Elevation (Altitude)*.
-- For [GPX Tracks](../map/tracks-on-map.md#color): *Speed, Slope,* and *Elevation (Altitude), or info from External sensors*.
+- For [GPX Tracks](../map/tracks/index.md#color): *Speed, Slope,* and *Elevation (Altitude), or info from External sensors*.
 
 ### Weather
 
@@ -116,7 +120,7 @@ You can import and export all available default and custom color palettes using 
 
 ## Map Legend for Schemes
 
-The legend provides an easy way to view and understand the different markings on the map. New color palettes have been added to display [**speed** for tracks](../map/tracks-on-map.md#color), [**line type** for routes](../navigation/guidance/map-during-navigation.md#color), [**altitude and slope** for terrain](../plugins/contour-lines.md#color-scheme), and all [**weather layer**](../plugins/weather.md#weather-layers) color palettes.
+The legend provides an easy way to view and understand the different markings on the map. New color palettes have been added to display [**speed** for tracks](../map/tracks/index.md#color), [**line type** for routes](../navigation/guidance/map-during-navigation.md#color), [**altitude and slope** for terrain](../plugins/contour-lines.md#color-scheme), and all [**weather layer**](../plugins/weather.md#weather-layers) color palettes.
 
 <table class="image">
     <tr>

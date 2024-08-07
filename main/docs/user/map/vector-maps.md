@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 5
 title:  Vector Maps (Map Styles)
 ---
 
@@ -292,76 +292,10 @@ The map is displayed according to the day or night mode selected from the list. 
 
 ### Routes
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-*<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>* 
-
-![Configure Map Routes section](@site/static/img/map/settings_routes_andr_1.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-*<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
-
-![Configure Map Routes section](@site/static/img/map/settings_routes_ios_1.png)
-
-</TabItem>
-
-</Tabs> 
-
-In OsmAnd app you can select GPX routes related to different outdoor activities such as hiking, biking or running routes using data from OpenStreetMap.  
-
-- You can select one or more layers of routes at a time. It is important to note that if different routes intersect at the same point, only the color of the top layer will be visible.
-    - Read about the color scheme of routes in the [Color Palette Schemes](../personal/color-palette-schemes.md) article.  
-    - Route designations for OsmAnd Map Style can be found in the [Map Legend](../map-legend/osmand.md#routes) article.
-
-- You can use *Custom buttons* to customize [Quick Actions](../map/tracks-on-map.md#quick-actions-for-routes) to switch between enabling or disabling the display of selected route types.
-
-- Tapping the shield icon with a route number or route flag on the map will open a context menu with a list of available options.  
-    In some cases, you may find several routes intersecting at a certain location. When you select one of the routes, the *[Track context menu](../map/track-context-menu.md)* appears. In this menu, you can save the selected route to the device memory in GPX format, which will allow you to use it for [GPX navigation](../navigation/setup/gpx-navigation.md) in the future.
-
-
-|Parameters and Description|   
-|------------|
-|**<Translate android="true" ids="rendering_attr_showCycleRoutes_name"/>**|
-|*<Translate android="true" ids="layer_route"/>*. <Translate android="true" ids="rendering_value_walkingRoutesOSMC_description"/> Look at [Map legend](../map-legend/index.md).|
-|![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)|
-|*<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>*. <Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_description"/>|
-|![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)|
-|**<Translate android="true" ids="rendering_attr_showMtbRoutes_name"/>**|
-| *<Translate android="true" ids="mtb_scale"/>*. Show trails according to MTB scale. Look at [Map legend](../map-legend/index.md).|
-|![Map routes - mtb trails](@site/static/img/map/map-routes-mtb-trails.png)|
-| *<Translate android="true" ids="mtb_imba"/>*. Show MTB trails accorgind International Mountain Bicycling Association [MTB IMBA](https://www.imba.com/). Look at [Map legend](../map-legend/index.md).|
-|![Map routes - mtb trails](@site/static/img/map/map-routes-mtb_imba-trails.png)|
-|**<Translate android="true" ids="rendering_attr_hikingRoutesOSMC_name"/>**|
-|*<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>*. [<Translate android="true" ids="rendering_value_walkingRoutesOSMC_description"/>](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol).|
-|![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)|
-|*<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_name"/>*. [<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_description"/>](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) |
-|![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)|
-|*<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>*. [<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_description"/>](https://wiki.openstreetmap.org/wiki/Node_Networks) |
-|![Map routes - hiking node networks](@site/static/img/map/map-routes-hiking-node-networks.png)|
-|**<Translate android="true" ids="rendering_attr_alpineHiking_name"/>**. Showing  classified hiking trails ([SAC scale](https://wiki.openstreetmap.org/wiki/Key:sac_scale) or [CAI scale](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)) in mountainous areas with regard to the difficulties to be expected by colour.|
-|![Map routes - alpine hiking](@site/static/img/map/map-routes-alpine-hiking.png)|
-|**<Translate android="true" ids="rendering_attr_pisteRoutes_name"/>**. Showing colored routes of ski slopes. This setting is provided by map style ["Winter and ski"](../map/vector-maps.md#winter-and-ski). |
-|![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)|
-|**<Translate android="true" ids="rendering_attr_horseRoutes_name"/>**. Showing colored routes and symbols for riding horses.|
-|![Map routes - horse routes](@site/static/img/map/map-routes-horse.png)|
-|**<Translate android="true" ids="rendering_attr_whiteWaterSports_name"/>**. Showing [icons of access, dangerous areas, tourism of whitewater sports](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map). |
-|![Map routes - whitewater sport](@site/static/img/map/map-routes-whitewater-sport.png)|
-|**<Translate android="true" ids="rendering_attr_showRunningRoutes_name"/>**. Used for named, numbered, or otherwise designated running routes used primarily for athletics. Data for these routes are taken from [OpenStreetMap project](https://openstreetmap.org/): The tag [route=running](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning)|
-|![Fitness routes](@site/static/img/map/fitness_1.png)|
-|**<Translate android="true" ids="rendering_attr_showFitnessTrails_name"/>**. A fitness trail is a trail or path equipped with obstacles or stations along its length to exercise the human body for the purpose of improving health. Data for these routes are taken from [OpenStreetMap project](https://openstreetmap.org/): The tag [route=fitness_trail](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail)|
-|![Fitness routes](@site/static/img/map/fitness_route.png) |
-| **<Translate android="true" ids="travel_routes"/>** Shows previously uploaded specially configured [user routes](https://osmand.net/blog/routes#generated-travel-routes) taken from OpenStreetMap categories. *Android only*. |
-| ![Travel routes](@site/static/img/map/travel_route_2.png) ![Travel routes](@site/static/img/map/travel_routes.png) |
+Moved to [Routes selection](../map/routes.md)
 
 
 ### Transport
-
-When navigating in cities, you need to see public transport in more contrast, as well as stops. You can tap a public transport stop and select one of the public transport routes or stops from the list. Train routes are also displayed in this setting.
 
 <Tabs groupId="operating-systems">
 
@@ -379,16 +313,19 @@ When navigating in cities, you need to see public transport in more contrast, as
 
 </Tabs>  
 
-|Parameters and Description|   
-|------------|
-|**<Translate android="true" ids="rendering_attr_transportStops_name"/>**. Showing public transport stops.|
-|![Map transport stops](@site/static/img/map/map-transport-stops.png)|
-|**<Translate android="true" ids="rendering_attr_publicTransportMode_name"/>**. Showing bus, trolleybus, shuttle routes.|
-|![Map transport bus](@site/static/img/map/map-transport-bus.png)|
-|**<Translate android="true" ids="rendering_attr_tramTrainRoutes_name"/>**. Showing tram and train routes. |
-|![Map transport tram](@site/static/img/map/map-transport-tram.png)|
-|**<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Showing underground routes.|
-|![Map transport subway](@site/static/img/map/map-transport-subway.png)|
+When navigating through cities, you need a more contrasting view of public transportation and stops. You can tap on a public transportation stop and select one of the routes or stops from the list. Train routes are also displayed in this setting.
+
+- **<Translate android="true" ids="rendering_attr_transportStops_name"/>**. Showing public transport stops.  
+    ![Map transport stops](@site/static/img/map/map-transport-stops.png)
+
+- **<Translate android="true" ids="rendering_attr_publicTransportMode_name"/>**. Showing bus, trolleybus, shuttle routes.  
+    ![Map transport bus](@site/static/img/map/map-transport-bus.png)
+
+- **<Translate android="true" ids="rendering_attr_tramTrainRoutes_name"/>**. Showing tram and train routes.   
+    ![Map transport tram](@site/static/img/map/map-transport-tram.png)
+
+- **<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Showing underground routes.  
+    ![Map transport subway](@site/static/img/map/map-transport-subway.png)
 
 ### Hide
 

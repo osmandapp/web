@@ -80,7 +80,7 @@ Import GPX files:
 
 If a track has been created or imported into OsmAnd, it can be found in the track list in [My places](../../personal/myplaces). You can select the required file from the [available tracks](../../personal/tracks/manage-tracks.md), highlight it on the map, and then use it for navigation.  
 
-Navigation on a track can be started using the quick action button in the [Track context menu](../../map/track-context-menu.md#quick-actions) (opened by selecting one of the [highlighted tracks](./route-navigation.md#history-of-previous-routes) on the map or by tapping a track file in the [My Places](../../personal/myplaces.md) section of the Main menu) or from the navigation menu, which is opened by tapping:
+Navigation on a track can be started using the quick action button in the [Track context menu](../../map/tracks/track-context-menu.md#quick-actions) (opened by selecting one of the [highlighted tracks](./route-navigation.md#history-of-previous-routes) on the map or by tapping a track file in the [My Places](../../personal/myplaces.md) section of the Main menu) or from the navigation menu, which is opened by tapping:
 
 - [*Navigation button*](../../widgets/map-buttons.md#directions) on the map screen.  
 - *Navigation section* in the Main menu  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
@@ -135,10 +135,10 @@ You can add a waypoint to any imported or created [GPX track](#create-and-import
     - Go to the *My Places → Tracks* menu. 
     - Tap the track in the list that you are interested in. 
     - In the opened context menu, select *Points tab → bottom section Action → Add Waypoint*.
-    - Enter the required information to the Waypoint and [save](../../map/track-context-menu.md#add-waypoint-to-a-track).
+    - Enter the required information to the Waypoint and [save](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track).
 2. *Visible tracks*:
     - Tracks must first be added to the *Visible on map* folder ([*Show on map* feature](../../personal/tracks/manage-tracks.md#single-track-menu)) in the *Tracks tab*.
-    - Tap the selected track on the map, than *Points tab → bottom section Action → [Add Waypoint](../../map/track-context-menu.md#add-waypoint-to-a-track)*.
+    - Tap the selected track on the map, than *Points tab → bottom section Action → [Add Waypoint](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track)*.
 3. *Long-tap the map*:
     - Long-tap to select a location on the map and tap [Add track waypoint](../../map/map-context-menu.md#-add--edit--track-waypoint) from the *Map context menu*.
     - Select the track to which you want to add a waypoint, enter the required information and save.
