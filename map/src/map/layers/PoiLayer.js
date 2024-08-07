@@ -59,9 +59,8 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
 
 export async function getPoiIcon(poi, cache, finalIconName) {
     if (finalIconName) {
-        let svgData;
         if (cache[finalIconName]) {
-            svgData = cache[finalIconName];
+            const svgData = cache[finalIconName];
             let coloredSvg = changeIconColor(svgData, DEFAULT_ICON_COLOR);
             // Add the id attribute to the coloredSvg
             const poiName = poi.properties[POI_NAME];

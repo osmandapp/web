@@ -236,9 +236,23 @@ export async function getCategoryIcon(category) {
     );
 }
 
-export async function getSearchCategoryIcon(category, ctx) {
-    const name = PoiManager.preparePoiFilterIcon(category);
-    const svgData = await getSvgIcon({ ctx, icon: name });
+export async function getSearchResultIcon({ result, ctx, isCategory = false, iconUrl = null }) {
+    const name = isCategory ? PoiManager.preparePoiFilterIcon(result) : result;
+    let svgData;
+    if (iconUrl) {
+        if (ctx.poiIconCache?.[name]) {
+            svgData = ctx.poiIconCache[name];
+        } else {
+            const response = await fetch(iconUrl);
+            svgData = await response.text();
+            ctx.setPoiIconCache((prevState) => ({
+                ...prevState,
+                [name]: svgData,
+            }));
+        }
+    } else {
+        svgData = await getSvgIcon({ ctx, icon: name });
+    }
     const coloredSvg = changeIconColor(svgData, DEFAULT_POI_COLOR);
     const iconHtml = createPoiIcon({
         color: '#F0F0F0',

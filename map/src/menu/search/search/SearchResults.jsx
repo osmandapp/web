@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext from '../../../context/AppContext';
+import AppContext, { OBJECT_TYPE_POI } from '../../../context/AppContext';
 import CustomInput from './CustomInput';
 import {
     ICON_KEY_NAME,
@@ -7,16 +7,11 @@ import {
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
-import {
-    DEFAULT_POI_ICON,
-    formattingPoiType,
-    getIconNameForPoiType,
-    getSearchCategoryIcon,
-} from '../../../manager/PoiManager';
+import { formattingPoiType, getIconNameForPoiType, getSearchResultIcon } from '../../../manager/PoiManager';
 import SearchResultItem from './SearchResultItem';
 import { MenuButton } from './MenuButton';
 import { Box } from '@mui/material';
-import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
+import { SEARCH_ICON_MAP_OBJ, SEARCH_ICON_MAP_OBJ_URL, SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 import Loading from '../../errors/Loading';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
@@ -51,26 +46,21 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
                     locDist: getDistance(loc.lat, loc.lng, f.geometry.coordinates[1], f.geometry.coordinates[0]),
                 };
             });
-            const sortedList = {
-                features: arrWithDist.sort((a, b) => {
-                    return a.locDist - b.locDist;
-                }),
-            };
 
-            if (sortedList) {
+            if (arrWithDist) {
                 if (!features[0].icon) {
-                    calculateIcons(sortedList.features, ctx).then(() => {
+                    calculateIcons(arrWithDist, ctx).then(() => {
                         setProcessingSearch(false);
-                        setResult({ features: sortedList.features });
+                        setResult({ features: arrWithDist });
                     });
                 } else {
                     setProcessingSearch(false);
-                    setResult({ features: sortedList.features });
+                    setResult({ features: arrWithDist });
                 }
             }
         }
     }, [currentLoc, ctx.searchResult?.features]);
-    console.log(ctx.searchResult?.features);
+
     useEffect(() => {
         if (locReady) {
             if (value) {
@@ -146,18 +136,22 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     }
 
     const calculateIcons = async (features, ctx) => {
-        const promises = features.map(async (f) => {
+        const promises = features?.map(async (f) => {
             const props = f.properties;
-            if (props['web_type'].toLowerCase() === 'poi') {
+            if (props['web_type'].toLowerCase() === OBJECT_TYPE_POI) {
                 const iconName = getIconNameForPoiType({
                     iconKeyName: props[ICON_KEY_NAME],
                     typeOsmTag: props[TYPE_OSM_TAG],
                     typeOsmValue: props[TYPE_OSM_VALUE],
                     iconName: props[ICON_NAME],
                 });
-                f.icon = await getSearchCategoryIcon(iconName, ctx);
+                f.icon = await getSearchResultIcon({ result: iconName, ctx });
             } else {
-                f.icon = await getSearchCategoryIcon(DEFAULT_POI_ICON, ctx);
+                f.icon = await getSearchResultIcon({
+                    result: SEARCH_ICON_MAP_OBJ,
+                    ctx,
+                    iconUrl: SEARCH_ICON_MAP_OBJ_URL,
+                });
             }
         });
         await Promise.all(promises);

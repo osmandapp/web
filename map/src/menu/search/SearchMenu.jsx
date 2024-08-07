@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import PoiManager, {
     getCategoryIcon,
     getIconNameForPoiType,
-    getSearchCategoryIcon,
+    getSearchResultIcon,
     translatePoi,
 } from '../../manager/PoiManager';
 import PoiCategoriesList from './search/PoiCategoriesList';
@@ -137,7 +137,7 @@ export default function SearchMenu() {
             if (filters) {
                 for (const filter of filters) {
                     if (!icons[filter]) {
-                        icons[filter] = await getSearchCategoryIcon(filter, ctx);
+                        icons[filter] = await getSearchResultIcon({ result: filter, ctx, isCategory: true });
                     }
                 }
                 setCategoriesIcons(icons);
