@@ -292,7 +292,7 @@ After you have created your custom type for the keys, you can assign the require
 - Tap the ***Add*** button (&nbsp;"**＋**"&nbsp;) in the bottom right corner of the screen. 
 - Select the required action then tap the ***Add key*** field and tap the button on your device to assign it to the action.  
 
-:::info note
+:::note
 If the button you assign is already being used for another action, you will receive a notification with the option to reassign the button or cancel the assignment. 
 :::
 
