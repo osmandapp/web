@@ -67,8 +67,6 @@ Keep in mind that during navigation zoom can be controlled by **Auto zoom settin
 Map magnifier is a special way to magnify the map. Essentially it works as a magnifying glass for paper maps, it allows to see the text bigger for raster maps or to see more or less details for the same scale - [Read more](../map/vector-maps.md#map-magnifier).
 
 
-## Map orientation and Compass
-
 ### Map orientation modes
 
 The map orientation modes allow the user to select how the map is displayed on the device screen. Enabling each mode changes the way the map is oriented according to the selected option.  
@@ -175,7 +173,32 @@ You can not change Camera tilt when old [map rendering engine](../personal/globa
 ## Settings
 
 
-### External input device buttons
+### Extra Compass Settings  
+
+- **<Translate android="true" ids="use_kalman_filter_compass"/>** - <Translate android="true" ids="use_kalman_filter_compass_descr"/> Smoothes the rotation of the card with a slower rotation animation, although this introduces a slight delay, not more than 1 second.   
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_kalman_filter_compass"/>*
+
+- **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Smoothes the rotation of the card with a slower rotation animation, although this introduces a slight delay, not more than 1 second.   
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
+
+### No Animations
+
+<InfoAndroidOnly/>  
+
+You can turn off all map animations during map changes, such as gestures and buttons.    
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,do_not_use_animations"/>*
+
+### Animate Own Position
+
+**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
+**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,routing_settings_2,animate_my_location"/>*  
+
+Creates a smooth map panning effect versus the *[My Position](../personal/profiles/#profile-appearance)* icon when in motion. The effect introduces a slight delay versus ground truth of about 1 second. Enabling this has been reported to create some pronounced lag issues under some circumstances, disable if such issues arise.
+
+
+
+
+## External input device buttons
 
 External input device buttons provide a convenient and efficient way to interact with the map and the OsmAnd application interface.  They are located on external devices, such as **Bluetooth or other types of keyboards**, **specialized buttons on vehicle navigation devices**, or [WunderLINQ](https://blackboxembedded.com/) and [Parrot](https://www.parrot.com/en) controllers.   
 
@@ -185,7 +208,7 @@ One of the main functions of buttons on external input devices is to zoom in and
 The keyboard continues to work even if the *External input devices* option is turned off, when *None* is selected. 
 :::
 
-#### Setup of External Input Devices
+### Select External Input Devices Type
 
 <Tabs groupId="operating-systems">
 
@@ -241,39 +264,13 @@ To access the settings of an external input device, you need to enable this feat
 | **&#8592;** <br/> (*Android only*)| *Parrot*  | [Zoom out](../map/interact-with-map.md#my-location--zoom) |
 | **&#8594;** <br/> (*Android only*) | *Parrot*  | [Zoom in](../map/interact-with-map.md#my-location--zoom) |
 
-
-### Extra Compass Settings  
-
-- **<Translate android="true" ids="use_kalman_filter_compass"/>** - <Translate android="true" ids="use_kalman_filter_compass_descr"/> Smoothes the rotation of the card with a slower rotation animation, although this introduces a slight delay, not more than 1 second.   
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_kalman_filter_compass"/>*
-
-- **<Translate android="true" ids="use_magnetic_sensor"/>** - <Translate android="true" ids="use_magnetic_sensor_descr"/> Smoothes the rotation of the card with a slower rotation animation, although this introduces a slight delay, not more than 1 second.   
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,shared_string_other,use_magnetic_sensor"/>*
-
-### No Animations
-
-<InfoAndroidOnly/>  
-
-You can turn off all map animations during map changes, such as gestures and buttons.    
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,do_not_use_animations"/>*
-
-### Animate Own Position
-
-**Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
-**iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,routing_settings_2,animate_my_location"/>*  
-
-Creates a smooth map panning effect versus the *[My Position](../personal/profiles/#profile-appearance)* icon when in motion. The effect introduces a slight delay versus ground truth of about 1 second. Enabling this has been reported to create some pronounced lag issues under some circumstances, disable if such issues arise.
-
-
-## Custom Keys Assignment
+### Custom Input Device Type
 
 <InfoAndroidOnly />
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,external_input_device,shared_string_type"/> → &#43;*
 
 ![External devices](@site/static/img/map/external_mypilot_android.png)  ![External devices](@site/static/img/map/external_mypilot2_android.png)
-
-### New Input Device Type  
 
 If you want to bind key assignments for an external input device (such as a keyboard, joystick, or controller), you need to create input device type.
 
@@ -298,7 +295,7 @@ After you have created your custom type for the keys, you can assign the require
 If the button you assign is already being used for another action, you will receive a notification with the option to reassign the button or cancel the assignment. 
 :::
 
-### Edit Actions
+### Edit Custom Actions
 
 ![External devices](@site/static/img/map/external_custom_2_andr.png)  
 
@@ -313,7 +310,7 @@ You can change action and key assignments for already created actions, just sele
     - The original main name of the *action-key bundle* is not changed.  
     - Also in this mode, you can **add a new key** and **assign an additional keys** to the selected action.  
 
-### Delete Actions
+### Delete Custom Actions
 
 ![External devices](@site/static/img/map/external_custom_1_andr.png)
 
