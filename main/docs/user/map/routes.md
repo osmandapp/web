@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 OsmAnd has many powerful features to display various routes on the map. Routes could be built as part of Navigation, created via Plan Route, imported as GPX tracks, recorded via Trip Recording plugin or browsed and selected from OpenStreetMap data.
 
-## Parameters
+## Route Settings
 
 A route is a predefined path, which is a sequence of roads and turns to be followed to reach a certain destination point. In the OsmAnd app, you can mark routes on the map related to different outdoor activities using data from [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They typically represent popular local routes and could be displayed in many ways (shields, color, thickness, pattern). To use these types of routes you will need to enable them on the map.
 
@@ -60,23 +60,25 @@ OsmAnd can highlight routes provided by OpenStreetMap. Some routes have [**addit
 
 ### Cycle routes
 
-1. ***<Translate android="true" ids="layer_route"/>***.  
+***<Translate android="true" ids="layer_route"/>***.  
 Colors routes according to their individual local color (if available in OpenStreetMap) and the tourist shield symbol. You can find more information in the [Map Legend](../map-legend/index.md) article.  
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)
 
-2. ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  
+***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  
 Colors routes according to the type of node network (international, regional, or local).    
 ![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 ### Mountain bike routes
 
-1. ***<Translate android="true" ids="mtb_scale"/>***.  
-Shows trails according to MTB scale. You can find more information in the [Map Legend](../map-legend/index.md) article.    
-![Map routes - mtb trails](@site/static/img/map/map-routes-mtb-trails.png)
+***<Translate android="true" ids="mtb_scale"/>***.   
 
-2. ***<Translate android="true" ids="mtb_imba"/>***.  
+![Map routes - mtb trails](@site/static/img/map/map-routes-mtb-trails.png)  
+Shows trails according to MTB scale. You can find more information in the [Map Legend](../map-legend/index.md) article.    
+
+***<Translate android="true" ids="mtb_imba"/>***.  
+
+![Map routes - mtb trails](@site/static/img/map/map-routes-mtb_imba-trails.png)  
 Show MTB trails accorgind International Mountain Bicycling Association [MTB IMBA](https://www.imba.com/). More information in the article [Map legend](../map-legend/index.md).  
-![Map routes - mtb trails](@site/static/img/map/map-routes-mtb_imba-trails.png)
 
 ### Hiking routes
 
@@ -94,7 +96,7 @@ Colors routes according to the type of [node network](https://wiki.openstreetmap
 
 ### Difficulty classification
 
-Determines the difficulty of hiking trails. Italian and Swiss classifications. Has a list of equipment requirements.  
+Determines the difficulty of hiking trails. Italian and Swiss classifications. Has a specific list of equipment requirements.  
 
 Shows classified hiking trails in mountainous areas based on the difficulty that can be expected for color.    
 

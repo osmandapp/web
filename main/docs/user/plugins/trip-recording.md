@@ -387,6 +387,6 @@ If you have several widgets selected, *Duration*, *Uphill*, or *Downhill*, you d
 
 ## Related Articles
 
-- [Map Context menu](./map-context-menu.md)
+- [Map Context menu](../map/map-context-menu.md)
 
 > *This article was last updated in September 2023*

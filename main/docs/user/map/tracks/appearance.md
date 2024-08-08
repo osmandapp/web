@@ -199,11 +199,11 @@ Resets all settings to default values.
 
 ## Related Articles
 
-- [Map Context menu](./map-context-menu.md)
-- [Configure Map](./configure-map-menu.md)
-- [Points on the map](./point-layers-on-map.md)
-- [Tracks](./tracks/index.md)
-- [Tracks Context menu](./tracks/track-context-menu.md)
+- [Map Context menu](../map-context-menu.md)
+- [Configure Map](../configure-map-menu.md)
+- [Points on the map](../point-layers-on-map.md)
+- [Tracks](../tracks/index.md)
+- [Tracks Context menu](../tracks/track-context-menu.md)
 - [Trip Recording](../../plugins/trip-recording.md)
 
 
