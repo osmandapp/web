@@ -1,15 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../../context/AppContext';
 import CustomInput from './CustomInput';
-import {
-    CATEGORY_ICON,
-    CATEGORY_KEY_NAME_ICON,
-    ICON_KEY_NAME,
-    ICON_NAME,
-    TYPE_OSM_TAG,
-    TYPE_OSM_VALUE,
-} from '../../../infoblock/components/wpt/WptTagsProvider';
-import { formattingPoiType, getIconNameForPoiType, getSearchResultIcon } from '../../../manager/PoiManager';
+import { formattingPoiType, getCatPoiIconName, getSearchResultIcon } from '../../../manager/PoiManager';
 import SearchResultItem from './SearchResultItem';
 import { MenuButton } from './MenuButton';
 import { Box } from '@mui/material';
@@ -57,8 +49,9 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
 
         if (loc) {
             const arrWithDist = features.map((f) => {
-                const lat = f.geometry.coordinates[1];
-                const lon = f.geometry.coordinates[0];
+                const lat = f?.geometry?.coordinates[1];
+                const lon = f?.geometry?.coordinates[0];
+                if (!lat || !lon) return f;
                 return {
                     ...f,
                     locDist: lon === 0 && lat === 0 ? null : getDistance(loc.lat, loc.lng, lat, lon),
@@ -145,20 +138,9 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     const calculateIcons = async (features, ctx) => {
         const promises = features?.map(async (f) => {
             const props = f.properties;
-            if (props['web_type'] === SEARCH_RESULT_TYPE_POI || props['web_type'] === SEARCH_RESULT_TYPE_POI_CATEGORY) {
-                let iconName = getIconNameForPoiType({
-                    iconKeyName: props[ICON_KEY_NAME],
-                    typeOsmTag: props[TYPE_OSM_TAG],
-                    typeOsmValue: props[TYPE_OSM_VALUE],
-                    iconName: props[ICON_NAME],
-                    useDefault: false,
-                });
-                if (!iconName) {
-                    iconName = getIconNameForPoiType({
-                        iconKeyName: props[CATEGORY_KEY_NAME_ICON],
-                        iconName: props[CATEGORY_ICON],
-                    });
-                }
+            const type = props['web_type'];
+            if (type === SEARCH_RESULT_TYPE_POI || type === SEARCH_RESULT_TYPE_POI_CATEGORY) {
+                const iconName = getCatPoiIconName(props);
                 f.icon = await getSearchResultIcon({ result: iconName, ctx });
             } else {
                 f.icon = await getSearchResultIcon({

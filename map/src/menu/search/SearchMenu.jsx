@@ -11,7 +11,7 @@ import { EXPLORE_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 import { useNavigate } from 'react-router-dom';
 import PoiManager, {
     getCategoryIcon,
-    getIconNameForPoiType,
+    getCatPoiIconName,
     getSearchResultIcon,
     translatePoi,
 } from '../../manager/PoiManager';
@@ -19,6 +19,7 @@ import PoiCategoriesList from './search/PoiCategoriesList';
 import SearchResults from './search/SearchResults';
 import { MenuButton } from './search/MenuButton';
 import { SEARCH_TYPE_CATEGORY } from '../../map/layers/SearchLayer';
+import { POI_CATEGORY_KEY_NAME } from '../../infoblock/components/wpt/WptTagsProvider';
 
 export default function SearchMenu() {
     const ctx = useContext(AppContext);
@@ -86,20 +87,14 @@ export default function SearchMenu() {
 
         function getCategoriesIcons(res) {
             const icons = Object.values(res).map((item) => {
-                return getIconNameForPoiType({
-                    iconKeyName: item.keyName,
-                    typeOsmTag: item.osmTag,
-                    typeOsmValue: item.osmValue,
-                    iconName: item.iconName,
-                    useDefault: true,
-                });
+                return getCatPoiIconName(item);
             });
             setSearchCategoriesIconNames(icons);
         }
 
         function getCategoriesNames(res) {
-            const validCategories = Object.values(res).filter((item) => item.keyName !== undefined);
-            setSearchCategories(Object.values(validCategories).map((item) => item.keyName));
+            const validCategories = Object.values(res).filter((item) => item[POI_CATEGORY_KEY_NAME] !== undefined);
+            setSearchCategories(Object.values(validCategories).map((item) => item[POI_CATEGORY_KEY_NAME]));
         }
     }, [searchValue]);
 

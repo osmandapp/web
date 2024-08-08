@@ -41,7 +41,7 @@ import FavoritesManager, {
 import { ExpandLess, ExpandMore, Folder, LocationOn } from '@mui/icons-material';
 import WptDetailsButtons from './WptDetailsButtons';
 import WptTagsProvider, {
-    FINAL_ICON_NAME,
+    FINAL_POI_ICON_NAME,
     openWikivoyageContent,
     POI_OSM_URL,
     POI_PREFIX,
@@ -147,7 +147,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     latlon: { lat: latlng.lat, lon: latlng.lng },
                     background: DEFAULT_POI_SHAPE,
                     color: DEFAULT_POI_COLOR,
-                    icon: poiOptions[FINAL_ICON_NAME],
+                    icon: poiOptions[FINAL_POI_ICON_NAME],
                     tags: tags,
                     osmUrl: poiOptions[POI_OSM_URL],
                 };
@@ -166,7 +166,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     wikiDesc: wikiObj?.properties.wikiDesc,
                     background: DEFAULT_POI_SHAPE,
                     color: DEFAULT_POI_COLOR,
-                    icon: currentPoi?.properties[FINAL_ICON_NAME],
+                    icon: currentPoi?.properties[FINAL_POI_ICON_NAME],
                     tags: tags,
                     osmUrl: currentPoi?.properties[POI_OSM_URL],
                     wvLinks: wikiObj?.properties.wvLinks,

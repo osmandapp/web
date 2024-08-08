@@ -15,13 +15,15 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
 
     const [value, setValue] = useState(defaultSearchValue);
     const [isFocused, setIsFocused] = useState(false);
+    const EMPTY_SEARCH = '';
 
     const { t } = useTranslation();
 
     const MIN_SIZE_SEARCH_VALUE = 3;
 
     useEffect(() => {
-        if (value === '') {
+        if (value === EMPTY_SEARCH) {
+            ctx.setSearchResult(null);
             setSearchValue(null);
         }
     }, [value]);
@@ -80,8 +82,7 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
                             <IconButton
                                 className={`${gStyles.icon} ${styles.searchInputIcon} ${isFocused ? styles.focusedIcon : ''}`}
                                 onClick={() => {
-                                    setValue('');
-                                    ctx.setSearchResult(null);
+                                    setValue(EMPTY_SEARCH);
                                 }}
                             >
                                 <CancelIcon />

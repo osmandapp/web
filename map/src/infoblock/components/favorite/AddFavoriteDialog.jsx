@@ -24,7 +24,7 @@ import TracksManager from '../../../manager/track/TracksManager';
 import { apiGet } from '../../../util/HttpApi';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { saveTrackToLocalStorage } from '../../../manager/track/SaveTrackManager';
-import { FINAL_ICON_NAME, TITLE, WEB_POI_PREFIX } from '../wpt/WptTagsProvider';
+import { FINAL_POI_ICON_NAME, TITLE, WEB_POI_PREFIX } from '../wpt/WptTagsProvider';
 
 export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedPoi = null }) {
     const menuStyles = contextMenuStyles();
@@ -61,7 +61,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
 
     function getDefaultFavIcon() {
         if (selectedPoi) {
-            return selectedPoi.poi?.options?.[FINAL_ICON_NAME];
+            return selectedPoi.poi?.options?.[FINAL_POI_ICON_NAME];
         }
         return MarkerOptions.DEFAULT_WPT_ICON;
     }

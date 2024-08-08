@@ -16,9 +16,9 @@ import 'leaflet.markercluster';
 import { Alert } from '@mui/material';
 import { apiPost } from '../../util/HttpApi';
 import {
-    FINAL_ICON_NAME,
+    FINAL_POI_ICON_NAME,
     ICON_KEY_NAME,
-    ICON_NAME,
+    POI_ICON_NAME,
     POI_NAME,
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
@@ -35,7 +35,7 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
                 iconKeyName: poi.properties[ICON_KEY_NAME],
                 typeOsmTag: poi.properties[TYPE_OSM_TAG],
                 typeOsmValue: poi.properties[TYPE_OSM_VALUE],
-                iconName: poi.properties[ICON_NAME],
+                iconName: poi.properties[POI_ICON_NAME],
             });
             const icon = await getPoiIcon(poi, innerCache, finalIconName);
             const coord = poi.geometry.coordinates;
@@ -43,7 +43,7 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
                 ...poi.properties,
                 title: poi.properties[POI_NAME],
                 icon: icon,
-                [FINAL_ICON_NAME]: finalIconName,
+                [FINAL_POI_ICON_NAME]: finalIconName,
             });
         })
     );

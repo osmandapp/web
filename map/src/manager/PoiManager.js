@@ -2,9 +2,11 @@ import { apiGet } from '../util/HttpApi';
 import icons from '../resources/generated/poiicons.json';
 import _ from 'lodash';
 import {
+    CATEGORY_ICON,
+    CATEGORY_KEY_NAME_ICON,
     getSvgIcon,
     ICON_KEY_NAME,
-    ICON_NAME,
+    POI_ICON_NAME,
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
 } from '../infoblock/components/wpt/WptTagsProvider';
@@ -113,6 +115,24 @@ export function getIconNameForPoiType({
     }
 }
 
+export function getCatPoiIconName(props) {
+    let iconName = getIconNameForPoiType({
+        iconKeyName: props[ICON_KEY_NAME],
+        typeOsmTag: props[TYPE_OSM_TAG],
+        typeOsmValue: props[TYPE_OSM_VALUE],
+        iconName: props[POI_ICON_NAME],
+        useDefault: false,
+    });
+    if (!iconName) {
+        // get from parent category
+        iconName = getIconNameForPoiType({
+            iconKeyName: props[CATEGORY_KEY_NAME_ICON],
+            iconName: props[CATEGORY_ICON],
+        });
+    }
+    return iconName;
+}
+
 export function getIconName(obj) {
     if (icons.includes(`mx_${obj.key}.svg`)) {
         return obj.key;
@@ -171,7 +191,7 @@ export async function createPoiCache({ poiList = null, obj = null, poiIconCache,
                 iconKeyName: poi.properties[ICON_KEY_NAME],
                 typeOsmTag: poi.properties[TYPE_OSM_TAG],
                 typeOsmValue: poi.properties[TYPE_OSM_VALUE],
-                iconName: poi.properties[ICON_NAME],
+                iconName: poi.properties[POI_ICON_NAME],
             });
         }
         if (iconWpt) {

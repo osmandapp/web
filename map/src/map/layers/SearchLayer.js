@@ -12,9 +12,9 @@ import { useMap } from 'react-leaflet';
 import { getPoiIcon } from './PoiLayer';
 import L from 'leaflet';
 import {
-    FINAL_ICON_NAME,
+    FINAL_POI_ICON_NAME,
     ICON_KEY_NAME,
-    ICON_NAME,
+    POI_ICON_NAME,
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
@@ -127,7 +127,7 @@ export default function SearchLayer() {
                         iconKeyName: obj.properties[ICON_KEY_NAME],
                         typeOsmTag: obj.properties[TYPE_OSM_TAG],
                         typeOsmValue: obj.properties[TYPE_OSM_VALUE],
-                        iconName: obj.properties[ICON_NAME],
+                        iconName: obj.properties[POI_ICON_NAME],
                     });
                     icon = await getPoiIcon(obj, innerCache, finalIconName);
                 } else {
@@ -139,7 +139,7 @@ export default function SearchLayer() {
                     ...obj.properties,
                     title: title,
                     icon: icon,
-                    [FINAL_ICON_NAME]: finalIconName,
+                    [FINAL_POI_ICON_NAME]: finalIconName,
                 });
             })
         );
