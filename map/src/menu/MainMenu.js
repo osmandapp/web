@@ -22,7 +22,6 @@ import AppContext, {
     OBJECT_TYPE_LOCAL_TRACK,
     OBJECT_TYPE_NAVIGATION_ALONE,
     OBJECT_TYPE_NAVIGATION_TRACK,
-    OBJECT_TYPE_POI,
     OBJECT_TYPE_WEATHER,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
@@ -188,15 +187,6 @@ export default function MainMenu({
             show: true,
             id: 'se-show-menu-planroute',
             url: MAIN_URL_WITH_SLASH + PLANROUTE_URL,
-        },
-        {
-            name: 'Poi',
-            icon: FavoritesIcon,
-            component: <FavoritesMenu />,
-            type: OBJECT_TYPE_POI,
-            show: false,
-            id: 'se-show-menu-poi',
-            url: '',
         },
         {
             name: t('shared_string_settings'),

@@ -15,6 +15,7 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
 
     const [value, setValue] = useState(defaultSearchValue);
     const [isFocused, setIsFocused] = useState(false);
+    const [isInitialRender, setIsInitialRender] = useState(true);
     const EMPTY_SEARCH = '';
 
     const { t } = useTranslation();
@@ -22,9 +23,13 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
     const MIN_SIZE_SEARCH_VALUE = 3;
 
     useEffect(() => {
-        if (value === EMPTY_SEARCH) {
-            ctx.setSearchResult(null);
-            setSearchValue(null);
+        if (!isInitialRender) {
+            if (value === EMPTY_SEARCH) {
+                ctx.setSearchResult(null);
+                setSearchValue(null);
+            }
+        } else {
+            setIsInitialRender(false);
         }
     }, [value]);
 

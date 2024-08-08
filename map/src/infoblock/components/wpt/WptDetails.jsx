@@ -16,7 +16,7 @@ import {
 } from '@mui/material';
 import styles from '../../infoblock.module.css';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { isTrack, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_POI } from '../../../context/AppContext';
+import AppContext, { isTrack, OBJECT_SEARCH, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import headerStyles from '../../../menu/trackfavmenu.module.css';
 import { closeHeader } from '../../../menu/actions/HeaderHelper';
 import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
@@ -281,17 +281,22 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }
 
     function closeDetails() {
-        if (wpt.type?.isPoi) {
-            closeHeader({ ctx });
-        } else if (wpt.type?.isWpt) {
+        if (wpt?.type?.isPoi) {
+            isDetails ? returnToSearch() : closeHeader({ ctx });
+        } else if (wpt?.type?.isWpt) {
             isDetails ? setOpenWptTab(true) : closeHeader({ ctx });
-        } else if (wpt.type?.isFav) {
+        } else if (wpt?.type?.isFav) {
             isDetails ? closeOnlyFavDetails() : closeHeader({ ctx });
-        } else if (wpt.type?.isWikiPoi) {
+        } else if (wpt?.type?.isWikiPoi) {
             setShowInfoBlock(false);
             ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: null });
         }
         ctx.setSelectedWpt(null);
+    }
+
+    function returnToSearch() {
+        setShowInfoBlock(false);
+        ctx.setCurrentObjectType(OBJECT_SEARCH);
     }
 
     function closeOnlyFavDetails() {

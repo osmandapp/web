@@ -28,7 +28,7 @@ export default function SearchMenu() {
     const [isMainSearchScreen, setIsMainSearchScreen] = useState(true);
     const [loadingWikiPlaces, setLoadingWikiPlaces] = useState(false);
     const [loadingIcons, setLoadingIcons] = useState(false);
-    const [searchValue, setSearchValue] = useState(null);
+    const [searchValue, setSearchValue] = useState(ctx.searchResult);
     const [categoriesIcons, setCategoriesIcons] = useState({});
     const [openCategories, setOpenCategories] = useState(false);
     const [openSearchResults, setOpenSearchResults] = useState(false);

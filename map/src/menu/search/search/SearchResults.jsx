@@ -68,9 +68,12 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
                     setProcessingSearch(false);
                     setResult({ features: arrWithDist });
                 }
+            } else {
+                setResult(null);
+                setProcessingSearch(false);
             }
         }
-    }, [currentLoc, ctx.searchResult?.features]);
+    }, [currentLoc, ctx.searchResult]);
 
     useEffect(() => {
         if (locReady) {

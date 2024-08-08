@@ -30,7 +30,7 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
     const innerCache = await createPoiCache({ poiList, poiIconCache: globalPoiIconCache });
     updatePoiCache(ctx, innerCache);
     const layers = await Promise.all(
-        poiList.map(async (poi) => {
+        poiList?.map(async (poi) => {
             const finalIconName = PoiManager.getIconNameForPoiType({
                 iconKeyName: poi.properties[ICON_KEY_NAME],
                 typeOsmTag: poi.properties[TYPE_OSM_TAG],
@@ -162,7 +162,7 @@ export default function PoiLayer() {
                                     globalPoiIconCache: poiIconCache,
                                 });
                                 const newPoiList = {
-                                    prevLayer: _.cloneDeep(poiList.layer),
+                                    prevLayer: _.cloneDeep(poiList?.layer),
                                     layer: layer,
                                     listFeatures: res.features,
                                 };
@@ -175,6 +175,8 @@ export default function PoiLayer() {
                         if (res.mapLimitExceeded) {
                             setAddAlert(true);
                         }
+                    } else {
+                        setPoiList(null);
                     }
                 });
             },
@@ -211,9 +213,9 @@ export default function PoiLayer() {
                     poiIconCache: ctx.poiIconCache,
                 });
             } else {
-                if (poiList.layer && _.isEmpty(ctx.showPoiCategories)) {
+                if (poiList?.layer && _.isEmpty(ctx.showPoiCategories)) {
                     const newPoiList = {
-                        prevLayer: _.cloneDeep(poiList.layer),
+                        prevLayer: _.cloneDeep(poiList?.layer),
                         layer: null,
                     };
                     setPoiList(newPoiList);
@@ -233,14 +235,14 @@ export default function PoiLayer() {
     }, [zoom, move, ctx.showPoiCategories]);
 
     useEffect(() => {
-        if (poiList.layer && !map.hasLayer(poiList.layer)) {
-            poiList.layer.addTo(map).on('click', onClick);
+        if (poiList?.layer && !map.hasLayer(poiList?.layer)) {
+            poiList?.layer.addTo(map).on('click', onClick);
         }
-        if (poiList.prevLayer) {
-            map.removeLayer(poiList.prevLayer);
+        if (poiList?.prevLayer) {
+            map.removeLayer(poiList?.prevLayer);
         }
         if (ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY) {
-            ctx.setSearchResult(poiList.listFeatures);
+            ctx.setSearchResult(poiList?.listFeatures ?? null);
         }
         setMove(false);
     }, [poiList]);
