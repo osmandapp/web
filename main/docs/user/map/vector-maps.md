@@ -31,21 +31,9 @@ Customizable map styles are one of the main advantages of OsmAnd. You can custom
 
 OsmAnd offers you many map styles and data layers that fit by default. Let's take a look at the main ones for day and night modes.  
 
-<Tabs groupId="operating-systems">
+1. **Android**. *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer"/>*
 
-<TabItem value="android" label="Android">  
-
-*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_widget_renderer"/>*  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-*<Translate ios="true" ids="shared_string_menu,map_settings_type,configure_map,map_settings_offline"/>*   
-
-</TabItem>
-
-</Tabs>  
+2. **iOS**. *<Translate ios="true" ids="shared_string_menu,map_settings_type,configure_map,map_settings_offline"/>*
 
 
 ### OsmAnd
@@ -81,41 +69,41 @@ For nautical navigation. Features buoys, lighthouses, riverways, sea lanes and m
 
 ![Nautical map style](@site/static/img/map/map-style-nautical.png)
 
-### Winter and Ski  
-
-For skiing sports. Describes the pistes, elevators, cross-country trails, and obscures secondary map objects. **Winter and ski style** is designed to help you with winter sports navigation: you can see the ski slopes and other details such as the difficulty of the slopes and elevator markers. Key features: the convenient display of slopes, elevators, and other skiing features. Less of the distracting secondary objects of the map. Read more about [Ski maps](../plugins/ski-maps.md).
+### Winter and Ski
 
 ![Winter & Ski map style](@site/static/img/map/map-style-winter-ski.png)
 
-### Topo
+For skiing sports. Describes the pistes, elevators, cross-country trails, and obscures secondary map objects. **Winter and ski style** is designed to help you with winter sports navigation: you can see the ski slopes and other details such as the difficulty of the slopes and elevator markers. Key features: the convenient display of slopes, elevators, and other skiing features. Less of the distracting secondary objects of the map. Read more about [Ski maps](../plugins/ski-maps.md).
 
-For hiking, trekking, and nature cycling. Readable outdoors. Contrasting roads and natural objects, different route types, advanced contour line options, extra details. Adjusting *Surface integrity* distinguishes road quality.
+### Topo
 
 ![Topo map style](@site/static/img/map/map-style-topo.png)
 
-### OSM-carto
+For hiking, trekking, and nature cycling. Readable outdoors. Contrasting roads and natural objects, different route types, advanced contour line options, extra details. Adjusting *Surface integrity* distinguishes road quality.
 
-This style simulates default web [OpenStreetMap style](https://www.openstreetmap.org/). Web source code is available at [Github](https://github.com/gravitystorm/openstreetmap-carto), OsmAnd code at [Github](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/osm-carto.render.xml).
+### OSM-carto
 
 ![OSM-carto map style](@site/static/img/map/map-style-osm-carto.png)
 
-### Desert
+This style simulates default web [OpenStreetMap style](https://www.openstreetmap.org/). Web source code is available at [Github](https://github.com/gravitystorm/openstreetmap-carto), OsmAnd code at [Github](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/osm-carto.render.xml).
 
-<Translate android="true" ids="desert_render_descr"/>
+### Desert
 
 ![Desert map style](@site/static/img/map/map-style-desert.png)
 
-### Offroad
+<Translate android="true" ids="desert_render_descr"/>
 
-<Translate android="true" ids="off_road_render_descr"/>
+### Offroad
 
 ![Offroad map style](@site/static/img/map/map-style-offroad.png)
 
+<Translate android="true" ids="off_road_render_descr"/>
+
 ### Snowmobile
 
-<Translate android="true" ids="snowmobile_render_descr"/>
-
 ![Snowmobile map style](@site/static/img/map/map-style-snowmobile.png)
+
+<Translate android="true" ids="snowmobile_render_descr"/>
 
 
 ## Map Legend
@@ -126,19 +114,18 @@ Map legend of OsmAnd maps you can find [here](../map-legend/index.md).
 
 ## Map Fonts (Android)
 
-When writing local names in simplified/traditional Chinese, Japanese, and Korean ([Map language](../map/vector-maps#map-language)), incorrect hieroglyphs or even squares may appear. This happens when the device does not support the required fonts. Some issues with these incorrect fonts are described on our GitHub page: [3911](https://github.com/osmandapp/OsmAnd/issues/3911), [8187](https://github.com/osmandapp/OsmAnd/issues/8187), [9400](https://github.com/osmandapp/OsmAnd/issues/9400), [10862](https://github.com/osmandapp/OsmAnd/issues/10862). To solve this problem, the Android version of OsmAnd has the option to download the required fonts.
-
-Download map fonts for simplified/traditional Chinese, Japanese and Korean maps:  
 *<Translate android="true" ids="shared_string_menu,maps_and_resources,other_menu_group,fonts_header"/>*  
 
 ![Map fonts Android version](@site/static/img/map/map_fonts.png) ![Map fonts version](@site/static/img/map/map_fonts_1.png)
 
+Download map fonts for simplified/traditional Chinese, Japanese, and Korean maps. 
+
+When writing local names in simplified/traditional Chinese, Japanese, and Korean ([Map language](../map/vector-maps#map-language)), incorrect hieroglyphs or even squares may appear. This happens when the device does not support the required fonts.  
+
+Some issues with these incorrect fonts are described on our GitHub page: [3911](https://github.com/osmandapp/OsmAnd/issues/3911), [8187](https://github.com/osmandapp/OsmAnd/issues/8187), [9400](https://github.com/osmandapp/OsmAnd/issues/9400), [10862](https://github.com/osmandapp/OsmAnd/issues/10862). To solve this problem, the Android version of OsmAnd has the option to download the required fonts.
+
 
 ## * Contour Lines
-
-Contour lines are represented as vector maps that are displayed as elevation lines. You need to enable the [Topography plugin](../plugins/contour-lines.md), download the data for your region and configure the display. Feature is not enabled by default and needs to be [purchased first](../purchases/index.md).
-
-Contour lines are available for all map styles and modes and could be configured via the [Contour lines menu](../plugins/contour-lines.md#contour-lines-map).
 
 <Tabs groupId="operating-systems">
 
@@ -156,14 +143,14 @@ Contour lines are available for all map styles and modes and could be configured
 
 </Tabs>  
 
-![Contour lines map style](@site/static/img/map/contour_lines.png)  
+![Contour lines map style](@site/static/img/map/contour_lines.png)   
 
-More information about [Contour lines](../plugins/contour-lines.md). 
+Contour lines are represented as vector maps that are displayed as elevation lines. You need to enable the [Topography plugin](../plugins/contour-lines.md), download the data for your region and configure the display. Feature is not enabled by default and needs to be [purchased first](../purchases/index.md).
+
+Contour lines are available for all map styles and modes and could be configured via the [Contour lines menu](../plugins/contour-lines.md#contour-lines-map). More information [here](../plugins/contour-lines.md). 
 
 
 ## * Nautical Depth
-
-Nautical depth contour lines allow you to define areas of equal depth. They are designed to visualize changes in topography below the water surface. Nautical depth is available for all map styles and modes and can be adjusted whether or not the Nautical map view plugin is enabled.  
 
 <Tabs groupId="operating-systems">
 
@@ -185,18 +172,12 @@ Nautical depth contour lines allow you to define areas of equal depth. They are 
 
 </Tabs>  
 
-More information about [Nautical map view](../plugins/nautical-charts). 
+Nautical depth contour lines allow you to define areas of equal depth. They are designed to visualize changes in topography below the water surface. Nautical depth is available for all map styles and modes and can be adjusted whether or not the Nautical map view plugin is enabled.  
+
+More information about [Nautical map view here](../plugins/nautical-charts). 
 
 
 ## Show Borders
-
-This feature gives you the ability to switch on or off the display of the vector layer of previously downloaded maps from the list of available ones. Its general purpose is to hide areas and borders of downloaded maps when viewing the main map, especially if you have a lot of them.  
-
-The borders of the downloaded maps start displaying at zoom level 7 and are no longer displayed at zoom level 3.
-
-:::tip
-Downloaded maps are displayed in *Green* in the Android and iOS versions of OsmAnd when the *Show borders of downloaded maps* feature is switched on. Archived maps in the Android system and those maps that can be updated in iOS are displayed in *Orange*.  
-:::
 
 <Tabs groupId="operating-systems">
 
@@ -217,6 +198,14 @@ Downloaded maps are displayed in *Green* in the Android and iOS versions of OsmA
 </TabItem>
 
 </Tabs>  
+
+This feature gives you the ability to switch on or off the display of the vector layer of previously downloaded maps from the list of available ones. Its general purpose is to hide areas and borders of downloaded maps when viewing the main map, especially if you have a lot of them.  
+
+The borders of the downloaded maps start displaying at zoom level 7 and are no longer displayed at zoom level 3.
+
+:::tip
+Downloaded maps are displayed in *Green* in the Android and iOS versions of OsmAnd when the *Show borders of downloaded maps* feature is switched on. Archived maps in the Android system and those maps that can be updated in iOS are displayed in *Orange*.  
+:::
 
 
 ## Configure Map Style
@@ -292,7 +281,25 @@ The map is displayed according to the day or night mode selected from the list. 
 
 ### Routes
 
-Moved to [Routes selection](../map/routes.md)
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>* 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+
+</TabItem>
+
+</Tabs> 
+
+![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)  ![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)
+
+A route is a path that is predetermined and should be followed to reach a specific destination. A route can be optimized for different types of travel, such as cycling, hiking, running, public transport, and others. You can read more about routes and their types in the [Routes article](../map/routes.md).
 
 
 ### Transport

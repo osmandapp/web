@@ -172,7 +172,7 @@ This tool allows you to view track information using graphs and maps.
 </Tabs>
 
 
-## Read more
+## Related Articles
 
 - [*Routes on the map* blog article](https://docs.osmand.net/blog/routes)  
 - [Track Context menu](../../map/tracks/track-context-menu.md)  
