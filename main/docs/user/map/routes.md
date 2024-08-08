@@ -20,6 +20,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 OsmAnd has many powerful features to display various routes on the map. Routes could be built as part of Navigation, created via Plan Route, imported as GPX tracks, recorded via Trip Recording plugin or browsed and selected from OpenStreetMap data.
 
+## Parameters
+
+A route is a predefined path, which is a sequence of roads and turns to be followed to reach a certain destination point. In the OsmAnd app, you can mark routes on the map related to different outdoor activities using data from [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They typically represent popular local routes and could be displayed in many ways (shields, color, thickness, pattern). To use these types of routes you will need to enable them on the map.
+
+
+1. You can **[select one or more layers of routes at a time](../map/tracks/index.md#routes-on-the-map)**. It is important to note that if different routes intersect at the same point, only the color of the top layer will be visible. Route designations for OsmAnd Map Style can be found in the [Map Legend](../map-legend/osmand.md#routes) article.
+   <!-- - Read about the color scheme of routes in the [Color Palette Schemes](../personal/color-palette-schemes.md) article.  -->
+
+2. You can **use Custom buttons** to customize [Quick Actions](../map/tracks/index.md#quick-actions-for-routes) to switch between enabling or disabling the display of selected route types.
+
+3. Tapping **the shield icon with a route number or route flag** on the map will open a context menu with a list of available options.  
+    - In some cases, you may find several routes intersecting at a certain location. When you select one of the routes, the *[Track context menu](../map/tracks/track-context-menu.md)* appears. In this menu, you can [save the selected route](../map/tracks/)  .md#routes-on-the-map) to the device memory in GPX format, which will allow you to use it for [GPX navigation](../navigation/setup/gpx-navigation.md) in the future.
+
 
 ## Type of Routes
 
@@ -41,19 +54,7 @@ OsmAnd has many powerful features to display various routes on the map. Routes c
 
 </TabItem>
 
-</Tabs> 
-
-A route is a predefined path, which is a sequence of roads and turns to be followed to reach a certain destination point. In the OsmAnd app, you can mark routes on the map related to different outdoor activities using data from [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They typically represent popular local routes and could be displayed in many ways (shields, color, thickness, pattern). To use these types of routes you will need to enable them on the map.
-
-
-1. You can **[select one or more layers of routes at a time](../map/tracks/index.md#routes-on-the-map)**. It is important to note that if different routes intersect at the same point, only the color of the top layer will be visible. Route designations for OsmAnd Map Style can be found in the [Map Legend](../map-legend/osmand.md#routes) article.
-   <!-- - Read about the color scheme of routes in the [Color Palette Schemes](../personal/color-palette-schemes.md) article.  -->
-
-2. You can **use Custom buttons** to customize [Quick Actions](../map/tracks/index.md#quick-actions-for-routes) to switch between enabling or disabling the display of selected route types.
-
-3. Tapping **the shield icon with a route number or route flag** on the map will open a context menu with a list of available options.  
-    - In some cases, you may find several routes intersecting at a certain location. When you select one of the routes, the *[Track context menu](../map/tracks/track-context-menu.md)* appears. In this menu, you can [save the selected route](../map/tracks/)  .md#routes-on-the-map) to the device memory in GPX format, which will allow you to use it for [GPX navigation](../navigation/setup/gpx-navigation.md) in the future.
-
+</Tabs>
 
 OsmAnd can highlight routes provided by OpenStreetMap. Some routes have [**additional settings**](#coloring-routes-by-type). By default, if you have not selected anything in the [Configure Map](../map/configure-map-menu.md) menu, the first route type from the list will be assigned, otherwise a type of your choice will be assigned. You can read more in the [Tracks and Routes](#coloring-routes-by-type) article.  
 
@@ -228,13 +229,15 @@ Shows previously uploaded specially configured [user routes](https://osmand.net/
 To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../map/tracks/track-context-menu.md#info-panel). This will open the [Quick actions](../map/tracks/track-context-menu.md#quick-actions) button panel where you will have access to track actions such as changing [*Appearance*](./tracks/appearance.md), [*Navigation*](#route-navigation), or editing [*Plan a route*](../plan-route/create-route.md).
 
 
-### Coloring Routes by Type
+### Route subtypes
 
 ![Route info](@site/static/img/map/route_coloring_type_andr.png)
 
 Some routes have additional settings with which you can select the relevant coloring type for displaying them on the map.  
 
 Additional settings are available next to the route name in the&nbsp;  "**...|**"  &nbsp;menu. By default, if you do not select anything in the menu, the routes of the first type in the list will be displayed. But if you have made a selection, it is saved by the application and will be used for the current profile every time you enable the routes.  
+
+Coloring Routes by Type:
 
 - **Cycle routes**: *Route* and *Node networks*.
 - **Mountain bike routes**: *MTB scale* and *IMBA*.
@@ -258,6 +261,44 @@ In the [Vector Maps article](../map/vector-maps.md#routes), you can find a descr
 
 - Go to [Add action](../widgets/quick-action.md#custom-buttons): *Menu → Configure screen → Custom buttons → Quick action → Add action → Configure map*.
 - Add one or more QA buttons to change the visibility of particular routes.
+
+
+## Route line appearance
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*  
+
+![Navigation route Android](@site/static/img/navigation/route/route_line_appearance_andr.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
+
+![Navigation route Android](@site/static/img/navigation/route/RLApp_iOS.png)
+
+</TabItem>
+
+</Tabs>  
+
+:::note
+ <ProFeature/> Some parameters you can use only with <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribtion</a>.
+:::
+
+[Route line appearance](../navigation/guidance/map-during-navigation.md#route-line-appearance)
+
+- **Color**
+- **Width**
+- **Turn Arrows**
+
+
+## Plan a Route
+
+- [*Plan route for Markers*](../personal/markers.md#plan-route-for-markers)
 
 
 ## Related Articles
