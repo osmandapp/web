@@ -8,6 +8,7 @@ import gStyles from '../../gstylesmenu.module.css';
 import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../../context/AppContext';
+import { formattingPoiType } from '../../../manager/PoiManager';
 
 export default function CustomInput({ menuButton = null, setSearchValue, type = null, defaultSearchValue = '' }) {
     const ctx = useContext(AppContext);
@@ -66,7 +67,7 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
                 onChange={(e) => {
                     setValue(e.target.value);
                     if (type === SEARCH_TYPE_CATEGORY && e.target.value.length >= MIN_SIZE_SEARCH_VALUE) {
-                        search(e.target.value);
+                        search(formattingPoiType(e.target.value));
                     }
                 }}
                 onKeyDown={(e) => handleKeyPress(e)}

@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
-import AppContext, { OBJECT_TYPE_POI } from '../../../context/AppContext';
+import AppContext from '../../../context/AppContext';
 import CustomInput from './CustomInput';
 import {
+    CATEGORY_ICON,
+    CATEGORY_KEY_NAME_ICON,
     ICON_KEY_NAME,
     ICON_NAME,
     TYPE_OSM_TAG,
@@ -18,6 +20,20 @@ import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
 import { getCenterMapLoc } from '../../../manager/MapManager';
 import { getDistance } from '../../../util/Utils';
 import EmptySearch from '../../errors/EmptySearch';
+
+export const SEARCH_RESULT_TYPE_POI = 'POI';
+export const SEARCH_RESULT_TYPE_POI_CATEGORY = 'POI_TYPE';
+
+export function searchByCategory(value, ctx) {
+    const preparedValue = {
+        query: formattingPoiType(value.query),
+        type: value.type,
+    };
+    ctx.setSearchQuery({
+        search: preparedValue,
+        type: SEARCH_TYPE_CATEGORY,
+    });
+}
 
 export default function SearchResults({ value, setOpenSearchResults, setIsMainSearchScreen, setSearchValue }) {
     const ctx = useContext(AppContext);
@@ -41,9 +57,11 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
 
         if (loc) {
             const arrWithDist = features.map((f) => {
+                const lat = f.geometry.coordinates[1];
+                const lon = f.geometry.coordinates[0];
                 return {
                     ...f,
-                    locDist: getDistance(loc.lat, loc.lng, f.geometry.coordinates[1], f.geometry.coordinates[0]),
+                    locDist: lon === 0 && lat === 0 ? null : getDistance(loc.lat, loc.lng, lat, lon),
                 };
             });
 
@@ -66,7 +84,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
             if (value) {
                 setProcessingSearch(true);
                 if (value.type === SEARCH_TYPE_CATEGORY) {
-                    searchByCategory(value);
+                    searchByCategory(value, ctx);
                 } else {
                     searchByWord(value);
                 }
@@ -96,17 +114,6 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
             setResult(null);
         }
     }, [ctx.searchResult]);
-
-    function searchByCategory(value) {
-        const preparedValue = {
-            query: value.query,
-            type: value.type,
-        };
-        ctx.setSearchQuery({
-            search: preparedValue,
-            type: SEARCH_TYPE_CATEGORY,
-        });
-    }
 
     function searchByWord(value) {
         let hash = window.location.hash;
@@ -138,13 +145,20 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     const calculateIcons = async (features, ctx) => {
         const promises = features?.map(async (f) => {
             const props = f.properties;
-            if (props['web_type'].toLowerCase() === OBJECT_TYPE_POI) {
-                const iconName = getIconNameForPoiType({
+            if (props['web_type'] === SEARCH_RESULT_TYPE_POI || props['web_type'] === SEARCH_RESULT_TYPE_POI_CATEGORY) {
+                let iconName = getIconNameForPoiType({
                     iconKeyName: props[ICON_KEY_NAME],
                     typeOsmTag: props[TYPE_OSM_TAG],
                     typeOsmValue: props[TYPE_OSM_VALUE],
                     iconName: props[ICON_NAME],
+                    useDefault: false,
                 });
+                if (!iconName) {
+                    iconName = getIconNameForPoiType({
+                        iconKeyName: props[CATEGORY_KEY_NAME_ICON],
+                        iconName: props[CATEGORY_ICON],
+                    });
+                }
                 f.icon = await getSearchResultIcon({ result: iconName, ctx });
             } else {
                 f.icon = await getSearchResultIcon({
@@ -170,7 +184,12 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
             {!processingSearch && (
                 <Box sx={{ overflowY: 'auto' }}>
                     {result?.features.map((item, index) => (
-                        <SearchResultItem key={index} item={item} index={index} />
+                        <SearchResultItem
+                            key={index}
+                            item={item}
+                            index={index}
+                            setProcessingSearch={setProcessingSearch}
+                        />
                     ))}
                 </Box>
             )}

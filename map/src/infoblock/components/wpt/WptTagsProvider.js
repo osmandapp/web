@@ -22,6 +22,7 @@ import { apiGet } from '../../../util/HttpApi';
 
 export const DEFAULT_TAG_ICON_SIZE = 24;
 export const DEFAULT_TAG_ICON_COLOR = '#727272';
+export const WEB_PREFIX = 'web_';
 export const WEB_POI_PREFIX = 'web_poi_';
 export const POI_PREFIX = 'poi_';
 export const WIKIPEDIA = 'wikipedia';
@@ -61,6 +62,8 @@ export const ICON_KEY_NAME = WEB_POI_PREFIX + 'iconKeyName';
 export const ICON_NAME = WEB_POI_PREFIX + 'iconName';
 export const TYPE_OSM_TAG = WEB_POI_PREFIX + 'typeOsmTag';
 export const TYPE_OSM_VALUE = WEB_POI_PREFIX + 'typeOsmValue';
+export const CATEGORY_ICON = WEB_PREFIX + 'categoryIcon';
+export const CATEGORY_KEY_NAME_ICON = WEB_PREFIX + 'categoryKeyName';
 export const TITLE = 'title';
 export const FINAL_ICON_NAME = WEB_POI_PREFIX + 'finalIconName';
 export const POI_OSM_URL = WEB_POI_PREFIX + 'osmUrl';

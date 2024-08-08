@@ -7,8 +7,10 @@ import { useTranslation } from 'react-i18next';
 import _ from 'lodash';
 import { formattingPoiType } from '../../../manager/PoiManager';
 import AppContext from '../../../context/AppContext';
+import { SEARCH_RESULT_TYPE_POI, searchByCategory } from './SearchResults';
+import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 
-export default function SearchResultItem({ item }) {
+export default function SearchResultItem({ item, setProcessingSearch }) {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
@@ -20,7 +22,7 @@ export default function SearchResultItem({ item }) {
         const props = item.properties;
         let name, distance, type, icon;
         distance = item.locDist;
-        if (props['web_type'].toLowerCase() === 'poi') {
+        if (props['web_type'] === SEARCH_RESULT_TYPE_POI) {
             name = props['web_poi_name'];
             type = props['web_poi_subType'] ?? props['web_poi_type'];
             type = _.capitalize(t(`amenity_type_${type}`, formattingPoiType(type)));
@@ -48,7 +50,19 @@ export default function SearchResultItem({ item }) {
                         className={styles.searchItem}
                         divider
                         onClick={() => {
-                            ctx.setZoomToMapObj(item);
+                            if (item.locDist) {
+                                ctx.setZoomToMapObj(item);
+                            } else {
+                                const category = item.properties['web_keyName'];
+                                setProcessingSearch(true);
+                                searchByCategory(
+                                    {
+                                        query: formattingPoiType(category),
+                                        type: SEARCH_TYPE_CATEGORY,
+                                    },
+                                    ctx
+                                );
+                            }
                         }}
                     >
                         <ListItemText>
@@ -56,7 +70,7 @@ export default function SearchResultItem({ item }) {
                             {(type || distance) && (
                                 <Typography variant="body2" className={styles.placeTypes} noWrap>
                                     {type && `${type}`}
-                                    {' · '}
+                                    {distance && ' · '}
                                     {distance && `${(distance / 100).toFixed(1)} km`}
                                 </Typography>
                             )}
