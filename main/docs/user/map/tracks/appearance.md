@@ -143,14 +143,14 @@ Resets all settings to default values.
 
 ## Related Articles
 
-- [Map Context menu](./map-context-menu.md)
-- [Configure Map](./configure-map-menu.md)
-- [Vector maps (Map styles)](./vector-maps.md)
-- [Raster Maps (Online / Offline)](./raster-maps.md)
-- [Points on the map](./point-layers-on-map.md)
-- [Tracks](./tracks/index.md)
-- [Tracks Context menu](./tracks/track-context-menu.md)
-- [Public transport](./public-transport.md)
+- [Map Context menu](../map-context-menu.md)
+- [Configure Map](../configure-map-menu.md)
+- [Vector maps (Map styles)](../vector-maps.md)
+- [Raster Maps (Online / Offline)](../raster-maps.md)
+- [Points on the map](../point-layers-on-map.md)
+- [Tracks](../tracks/index.md)
+- [Tracks Context menu](../tracks/track-context-menu.md)
+- [Public transport](../public-transport.md)
 
 
 > *This article was last updated in August 2024*
