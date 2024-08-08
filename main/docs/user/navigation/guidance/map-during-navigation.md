@@ -16,8 +16,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
-> *This article was last updated in June 2024*
-
 
 ## Overview
 
@@ -281,3 +279,4 @@ The Turn Arrows setting allows you to select whether or not turn arrows are disp
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
+> *This article was last updated in June 2024*

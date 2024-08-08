@@ -34,6 +34,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs> 
 
+Track Appearance is a customizable option in the OsmAnd app that allows you to personalize the visual display of tracks on the map. This feature makes it easier to distinguish between different tracks and understand their characteristics.
+
 
 ## How to access
 
@@ -164,24 +166,44 @@ Gaps in a GPX track can occur during recording, for example. This function (Andr
 Resets all settings to default values. 
 
 
-## Appearance of Points on the Track 
+## Waypoints appearance 
 
+- Appearance of Points on the Track
 - Additional Visual Elements
 - Waypoints and Markers
 - Points on Track
 - Points Appearance on the Track
 
 
+## Tracks Color Scheme
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Slope">  
+
+![Slope_color](@site/static/img/map/tracks_color_scheme_slope_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="Altitude">
+
+![Altitude_color](@site/static/img/map/tracks_color_scheme_altitude_andr.png)
+
+</TabItem>
+
+</Tabs> 
+
+- All colors.
+- Add and edit.
+
+
 ## Related Articles
 
 - [Map Context menu](./map-context-menu.md)
 - [Configure Map](./configure-map-menu.md)
-- [Vector maps (Map styles)](./vector-maps.md)
-- [Raster Maps (Online / Offline)](./raster-maps.md)
 - [Points on the map](./point-layers-on-map.md)
 - [Tracks](./tracks/index.md)
 - [Tracks Context menu](./tracks/track-context-menu.md)
-- [Public transport](./public-transport.md)
 - [Trip Recording](../../plugins/trip-recording.md)
 
 

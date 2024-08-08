@@ -14,8 +14,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-> *This article was last updated in September 2023*
-
 ## Overview
 
 Trip recording plugin is a special tool designed to record your routes, movements, and workouts. This feature allows you to reuse, modify, update, and share your tracks with friends.  
@@ -46,7 +44,7 @@ To start recording tracks, you need to make the following settings:
 2. Configure [Trip recording](#recording-settings) settings for the required [profile](../personal/profiles.md).  
 3. If needed, add [Trip recording widgets](#widgets) to the screen.   
 
-After setup is complete, you can make new records, display and manage tracks on the map, change their appearance, edit the route, add waypoints, etc.   
+After setup is complete, you can make new records, display and manage tracks on the map, change their [appearance](../map/tracks/appearance.md), edit the route, add waypoints, etc.   
 
 
 ## New track recording 
@@ -386,3 +384,9 @@ The *Duration*, *Uphill* and *Downhill* widgets provide additional information a
 
 If you have several widgets selected, *Duration*, *Uphill*, or *Downhill*, you don't need to switch between them by closing the dialog box that opens. The dialog box is the same for all these widgets.
 
+
+## Related Articles
+
+- [Map Context menu](./map-context-menu.md)
+
+> *This article was last updated in September 2023*
