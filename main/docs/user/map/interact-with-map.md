@@ -206,7 +206,7 @@ One of the main functions of buttons on external input devices is to zoom in and
 The keyboard continues to work even if the *External input devices* option is turned off, when *None* is selected. 
 :::
 
-### Select External Input Devices Type
+### Preconfigured input device type
 
 <Tabs groupId="operating-systems">
 
@@ -262,7 +262,7 @@ To access the settings of an external input device, you need to enable this feat
 | **&#8592;** <br/> (*Android only*)| *Parrot*  | [Zoom out](../map/interact-with-map.md#my-location--zoom) |
 | **&#8594;** <br/> (*Android only*) | *Parrot*  | [Zoom in](../map/interact-with-map.md#my-location--zoom) |
 
-### Custom Input Device Type
+### Custom input device type
 
 <InfoAndroidOnly />
 
