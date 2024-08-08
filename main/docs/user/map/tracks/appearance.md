@@ -35,13 +35,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </Tabs> 
 
 
-## Setup
-
-:::tip note
-
-<ProFeature/> Some parameters you can use only with Maps+ or Pro feature: <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">free and paid features</a>.
-
-:::
+## How to access
 
 In the OsmAnd application, you can apply some settings by changing the appearance of the tracks, to better identify them on the map.  
 
@@ -49,32 +43,38 @@ There are three ways to access the Track Appearance menu:
 - Go to the *My Places* menu and tap any available track in the list (*Menu → My Places → Tracks*), select the Appearance icon in the [Track Context menu](../../map/tracks/track-context-menu.md#overview) in the Overview section.
 - Tap the needed track on the map and select the Appearance icon in the Overview section.
 - Select Appearance from the [track recording context menu](../../plugins/trip-recording.md#сurrent-track-recording).  
-- Go to *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> → &#8942; → <Translate android="true" ids="change_appearance"/>* for the tracks you have selected to be displayed on the map. 
+- Go to *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> →* **&#8942;** *→ <Translate android="true" ids="change_appearance"/>* for the tracks you have selected to be displayed on the map. 
 
+
+## Settings
+
+:::tip note
+Some settings you can use only with *OsmAnd Pro* or *Maps+*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> and <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Free and Paid features.
+:::
 
 ### Split Interval
 
 ![Track menu Appearance Split interval](@site/static/img/map/track_appearance_menu_split_interval_android.png)  ![Split interval](@site/static/img/map/track_appearance_menu_split_interval_ios.png)
 
-select the interval at which distance or time stamps are displayed on the track.  
+Select the interval at which distance or time stamps are displayed on the track.  
 
 ### Direction Arrows
 
 ![Track menu Appearance direction arrows Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png) 
 
-select the interval at which distance or time stamps are displayed on the track.  
+Select the interval at which distance or time stamps are displayed on the track.  
 
 ### Show Start and Finish Icons
 
 ![Track menu Appearance start and finish icons Android](@site/static/img/map/track_appearance_menu_sf_icons_android.png)  
 
-allows you to select whether or not to show the start and end icons of track segments.  
+Allows you to select whether or not to show the start and end icons of track segments.  
 
 ### Color
 
 ![Appearance](@site/static/img/map/appearance_color_andr.png) 
 
-allows to display the track line in any color and transparency, or select coloring according to the map legend. If necessary data on the track sections are missing, such sections are displayed in gray color. 
+Allows to display the track line in any color and transparency, or select coloring according to the map legend. If necessary data on the track sections are missing, such sections are displayed in gray color. 
 
 - *<Translate ios="true" ids="shared_string_color"/>:* *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* and *<Translate android="true" ids="altitude"/>* are free color settings. If *Speed* and *Altitude* are not active, it means that the track does not contain this data.  
 
@@ -99,9 +99,22 @@ With the *Width setting* you can choose the thickness of the track line based on
 - In the [*Tracks tab*](../../personal/tracks/manage-tracks.md#folder-menu) with the **Original** setting, different original width parameters can be retained for each track of the selected folder.
 - In the [*Configure Profile*](../../navigation/guidance/navigation-settings.md#customize-route-line) the route line can be set to the **Map Style** width, this is the default width for map specified by the OsmAnd application.
 
+<!-- Width  
+You can adjust the width of the displayed line of your route to match the width of the road or path on the map. For better visual identification, you can make the line width wider or narrower by adjusting it manually.
+- ***<Translate android="true" id="map_widget_renderer"/>*** – It's used with default width. You can see a full description of the map style by clicking there [Map style](../map/vector-maps.md#default-map-styles)  
+    ![map stule](@site/static/img/navigation/route/map_st_2.png)  ![map stule](@site/static/img/navigation/route/map_st.png)  ![map stule](@site/static/img/navigation/route/width_ms_ios.png)
+- ***Thin width / Medium width / Bold width*** – You can choose the width of the line according to the width of the road or highlight the line of the route on the map more strongly.  
+    ![width](@site/static/img/navigation/route/width.png)  ![width](@site/static/img/navigation/route/width_ios.png)  ![width](@site/static/img/navigation/route/width_med.png)
+- ***Custom*** – It allows you to show the line in some preferred width. Select the width using the slider.  
+    ![custom](@site/static/img/navigation/route/custom_1.png)  ![custom](@site/static/img/navigation/route/width_cus_ios.png)  ![custom](@site/static/img/navigation/route/custom_2.png)  
+-->
 
 
 ### 3D Track
+
+:::tip subscribe
+3D Track is a paid feature that allows you to display tracks by elevation. Subscribe to *OsmAnd Pro* or* Maps+* for [Android](../../purchases/android.md#free-and-paid-features) or [iOS](../../purchases/ios.md#free-and-paid-features).
+:::
 
 <Tabs groupId="operating-systems">
 
@@ -109,36 +122,54 @@ With the *Width setting* you can choose the thickness of the track line based on
 
 ![Track menu Appearance 3D visualisation](@site/static/img/map/3d_track_appearance_android.png)
 
-This [paid feature](../../purchases/android.md) allows you to display tracks by elevation. 
-
-You have the option to use 3D track visualization if the map rendering engine, [Version 2 (OpenGl)](../../personal/global-settings.md#map-rendering-engine), is enabled.
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Track menu Appearance 3D visualisation](@site/static/img/map/3d_track_appearance_ios.png)
 
-This [paid feature](../../purchases/ios.md) allows you to display tracks by elevation. 
-
 </TabItem>
 
 </Tabs>
 
-3D track settings are responsible for the visualization of the track on the map:
-- *<Translate android="true" ids="visualized_by"/>*: *None*, *Altitude*, *Speed*, *Fixed Height* (additional options for Android: *Heart Rate*, *Bicycle Cadence*, *Bicycle Power*, *Temperature*, *Bicycle Speed*) - Choose to display the 3D track by altitude (using [altitude data](../../plugins/trip-recording.md#recorded-gpx-file) from GPX track file), at a fixed height, or not at all. 
-- *<Translate android="true" ids="wall_color"/>*: *None*, *Solid*, *Downward Gradient*, *Upward Gradient* (additional options for Android: *Altitude*, *Slope*, *Speed*) - Select whether to color the 3D track and choose the type of coloration. 
-- *<Translate android="true" ids="track_line"/>*: *Top*, *Bottom*, *Top and bottom* - Decide where to add a line to the 3D track for better visibility. 
-- *<Translate android="true" ids="vertical_exaggeration"/>* :*None* to *x3.0* - Adjust the level of vertical exaggeration for the 3D track.  
-- *<Translate android="true" ids="wall_height"/>* (if you choose _<Translate android="true" ids="visualized_by,fixed_height"/>_) : *None* to *2000 m* - by changing the scale value, you can change 3D track height.
+3D track feature provides a three-dimensional representation of tracks. This feature adds elevation information to a normal 2D track, which creates a 3D and depth effect and allows you to better visualize the track on the terrain.
+
+- **<Translate android="true" ids="visualized_by"/>**. Select a 3D track display by elevation that uses [elevation data](../../plugins/trip-recording.md#recorded-gpx-file) from the GPX track file, or with fixed elevation.
+    - *None*, &nbsp;*Altitude*, &nbsp;*Speed*, &nbsp;*Fixed Height*.
+    - Additional options for Android: &nbsp;*Heart Rate*, &nbsp;*Bicycle Cadence*, &nbsp;*Bicycle Power*, &nbsp;*Temperature*, &nbsp;*Bicycle Speed*.
+
+- **<Translate android="true" ids="wall_color"/>**. Select the coloring type for the 3D track.
+    - *None*, &nbsp;*Solid*, &nbsp;*Downward Gradient*, &nbsp;*Upward Gradient*.
+    - Additional options for Android: &nbsp;*Altitude*, &nbsp;*Slope*, &nbsp;*Speed*.
+
+- **<Translate android="true" ids="track_line"/>**. Decide where to add a line to the 3D track for better visibility. 
+    - *Top*, &nbsp;*Bottom*, &nbsp;*Top and bottom*.
+
+- **<Translate android="true" ids="vertical_exaggeration"/>**. Adjust the level of vertical exaggeration for the 3D track.  
+    - From *None* to *x3.0*.  
+
+- **<Translate android="true" ids="wall_height"/>** (available when *<Translate android="true" ids="visualized_by"/> → Fixed Height* selected). By changing the scale value, you can change the height of the 3D track.
+    - From *None* to *2000 m*.
+
+:::note
+The *Android* version of the app requires the map rendering engine [Version 2 (OpenGl)](../../personal/global-settings.md#map-rendering-engine) to be enabled to use 3D track visualization.
+:::
 
 ### Join Gaps
 
-Gaps in a GPX track can occur during recording, for example. This function (Android: *_<Translate android="true" ids="join_segments"/>_*, iOS: *_<Translate ios="true" ids="gpx_join_gaps"/>_*) allows you to seamlessly connect all gaps in the chosen GPX track. Segments will be joined with a straight line to form a continuous track.
+Gaps in a GPX track can occur during recording, for example. This function (Android: *<Translate android="true" ids="join_segments"/>*, iOS: *<Translate ios="true" ids="gpx_join_gaps"/>*) allows you to seamlessly connect all gaps in the chosen GPX track. Segments will be joined with a straight line to form a continuous track.
 
 ### Reset to Original
 
 Resets all settings to default values. 
+
+
+## Appearance of Points on the Track 
+
+- Additional Visual Elements
+- Waypoints and Markers
+- Points on Track
+- Points Appearance on the Track
 
 
 ## Related Articles
@@ -151,6 +182,7 @@ Resets all settings to default values.
 - [Tracks](./tracks/index.md)
 - [Tracks Context menu](./tracks/track-context-menu.md)
 - [Public transport](./public-transport.md)
+- [Trip Recording](../../plugins/trip-recording.md)
 
 
 > *This article was last updated in August 2024*
