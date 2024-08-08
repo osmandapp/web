@@ -273,9 +273,9 @@ Creates a smooth map panning effect versus the *[My Position](../personal/profil
 
 ![External devices](@site/static/img/map/external_mypilot_android.png)  ![External devices](@site/static/img/map/external_mypilot2_android.png)
 
-#### Create New Type  
+### New Input Device Type  
 
-You can create your custom type with a set of actions for the keys of an external input device (such as a keyboard, joystick, or controller). 
+If you want to bind key assignments for an external input device (such as a keyboard, joystick, or controller), you need to create input device type.
 
 - Go to the [External Input Device](#external-input-device-buttons) setting, select **Type** from the list.
 - Tap the&nbsp;  "**＋**"  &nbsp;button in the upper right corner of the screen and enter a name.
@@ -284,7 +284,7 @@ You can create your custom type with a set of actions for the keys of an externa
 - Each new type has a three-dot menu next to it that includes actions such as:  
     ***Rename, Duplicate***, and ***Remove***.
 
-#### Add New Key Asssigment
+### Add Action & Key Asssigments
 
 ![External devices](@site/static/img/map/external_custom_4_andr.png)  ![External devices](@site/static/img/map/external_custom_3_andr.png)
 
@@ -298,19 +298,11 @@ After you have created your custom type for the keys, you can assign the require
 If the button you assign is already being used for another action, you will receive a notification with the option to reassign the button or cancel the assignment. 
 :::
 
-#### Delete Actions
-
-![External devices](@site/static/img/map/external_custom_1_andr.png)
-
-A list of actions for *Keyboard* will open by default. You can delete unnecessary actions using the **Edit button** (*pencil-shaped*) in the upper right corner of the screen:
-- ***Remove one action*** per action, with the&nbsp;  "**−**"  &nbsp;button in the item field.
-- ***Remove all key assignments*** for the selected type by tapping the button in the upper right corner of the screen next to the *Edit name*.      
-
-#### Edit Existing Actions
+### Edit Actions
 
 ![External devices](@site/static/img/map/external_custom_2_andr.png)  
 
-Tap an action from the list. There are two buttons in the upper right corner of the screen:
+You can change action and key assignments for already created actions, just select an item in Key assignments list.
 - The **three-dot menu** allows you to:   
     - ***Rename*** the action.  
     - ***Remove*** the keys assigned to this action.
@@ -320,6 +312,15 @@ Tap an action from the list. There are two buttons in the upper right corner of 
     - [**Add a new**](../widgets/quick-action.md#custom-buttons) action.
     - The original main name of the *action-key bundle* is not changed.  
     - Also in this mode, you can **add a new key** and **assign an additional keys** to the selected action.  
+
+### Delete Actions
+
+![External devices](@site/static/img/map/external_custom_1_andr.png)
+
+You can delete multiple unnecessary actions using the **Edit button** (*pencil-shaped*) in the upper right corner of the screen at once:
+- ***Remove one action*** per action, with the&nbsp;  "**−**"  &nbsp;button in the item field.
+- ***Remove all key assignments*** for the selected type by tapping the button in the upper right corner of the screen next to the *Edit name*.      
+
 
 
 ## Related Articles
