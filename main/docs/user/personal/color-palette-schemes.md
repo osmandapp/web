@@ -47,8 +47,6 @@ Color palette data is available in the [*Maps & Resources*](../personal/maps.md#
 
 </Tabs>
 
-
-
 ## Schemes Types 
 
 <Tabs groupId="operating-systems">
@@ -82,40 +80,9 @@ GPX Tracks, Routes:
 
 - For [weather](../plugins/weather.md#weather-layers): *All weather layers*.
 
+### Colors 
 
-## Modify Color Palette
-
-
-
-## Import / Export Colors
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
-
-![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)   
-
-</TabItem>
-
-<TabItem value="ios" label="iOS"> 
-
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*     
-
-![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)    
-
-</TabItem>
-
-</Tabs> 
-
-You can import and export all available default and custom color palettes using OsmAnd's restore and backup files tool.
-
-- Open the main *Menu*, *Settings*, scroll down to the **Import/export** (*Android*) or **Local Backup** (*iOS*) section, and select the required action.
-- Select one or more items from the *Color* list or the *Select All* option.
-- All exported files are saved in *OSF* format.
-- If the size of your selected data is significant, it will take some time for the application to prepare the *OSF* file.
-- View [*Import / Export*](../personal/import-export.md) article for more detailed information.
+- Color palette simply used for predefined colors to assign to Favorites, Tracks
 
 
 ## Map Legend for Schemes
@@ -131,16 +98,8 @@ The legend provides an easy way to view and understand the different markings on
 </table>  
 
 
-## Quick Action for Palettes
 
-In this release, we have added the ability to switch between terrain color schemes, similar to switching between layers. This can be done using the Quick Actions tool.  
-
-_Menu → Configure screen → Custom buttons → + → Add button → Add action → Topography → Change Terrain color scheme_
-
-![Color Scheme](@site/blog/2024-07-26-android-4-8/img/color_scheme.png)
-
-
-## Editor
+## Edit Palette file
 
 <!--
 
@@ -178,3 +137,42 @@ TXT file named *height_altitude_0-200.txt*
 ```
 After moving this TXT file to *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt*, a new palette will appear in the Color Scheme menu.
 
+## Read more
+
+### Quick actions 
+
+_Menu → Configure screen → Custom buttons → + → Add button → Add action → Topography → Change Terrain color scheme_
+
+**Quick Action** to change palette for Terrain. We have added the ability to switch between terrain color schemes, similar to switching between layers. This can be done using the Quick Actions tool.  
+
+![Color Scheme](@site/blog/2024-07-26-android-4-8/img/color_scheme.png)
+
+### Import / Export Colors
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
+
+![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)   
+
+</TabItem>
+
+<TabItem value="ios" label="iOS"> 
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*     
+
+![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)    
+
+</TabItem>
+
+</Tabs> 
+
+You can import and export all available default and custom color palettes using OsmAnd's restore and backup files tool.
+
+- Open the main *Menu*, *Settings*, scroll down to the **Import/export** (*Android*) or **Local Backup** (*iOS*) section, and select the required action.
+- Select one or more items from the *Color* list or the *Select All* option.
+- All exported files are saved in *OSF* format.
+- If the size of your selected data is significant, it will take some time for the application to prepare the *OSF* file.
+- View [*Import / Export*](../personal/import-export.md) article for more detailed information.
