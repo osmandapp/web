@@ -53,7 +53,7 @@ Based on [OpenSeaMap](https://wiki.openstreetmap.org/wiki/OpenSeaMap) data, OsmA
 ## Setup   
 
 The following setup makes the Nautical map show up on the screen: 
-1. [Purchase](../plugins/configure-plugins.md#purchase) and [Enable](../plugins/configure-plugins.md#enable--disable) Nautical map view plugin.  
+1. [Purchase](../plugins/configure-plugins.md#purchase) and [Enable](../plugins/index.md#enable--disable) Nautical map view plugin.  
 2. [Download](#download-nautical-maps) the Nautical maps.  
 3. Set the [Nautical](#set-nautical-map-style) map style for the required [profile](../personal/profiles.md).   
 
