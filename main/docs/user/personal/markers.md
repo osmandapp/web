@@ -231,6 +231,60 @@ Only tracks with waypoints can be added to the *Map markers list*. The track you
 - &nbsp;_<Translate android="true" ids="marker_save_as_track"/>_ - save active markers in a GPX file.
 - &nbsp;_<Translate android="true" ids="move_all_to_history"/>_ - deactivate all markers and move them to [History](#history).
 
+
+## Group markers
+
+### Markers from Favorites
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+You can add or remove your favorites in/from [Map markers list](../personal/markers.md).
+
+Tap *&#8942;* button (**Android**) opens special functions for a chosen Favorite folder (group).
+
+![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
+
+Functions for Favorite folder:
+- &nbsp;<Translate android="true" ids="shared_string_add_to_map_markers"/>  or <Translate android="true" ids="remove_from_map_markers"/>   - add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly/>
+
+</TabItem>
+
+</Tabs>
+
+### Markers from GPX Waypoints
+
+[Waypoints to Map Markers link](../map/tracks/track-context-menu.md#waypoints-folder)
+
+Track points (waypoints) are points that are part of Track (GPX) files. These points displayed automatically if track is displayed on the map. They look & could be configured similar to [Favorites](#favorites) - icon, names, color, shape. How to create and add Waypoint read [here](../map/tracks/track-context-menu.md#add-waypoint-to-a-track).
+
+![Track on map](@site/static/img/map/track_point_on_map.png)
+
+[Read more](../map/tracks/index.md) about tracks on the map.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+You can add or remove your Waypoints in/from [Map markers list](../personal/markers.md).
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+<InfoAndroidOnly/>
+
+</TabItem>
+
+</Tabs>
+
 ## Appearance on the map
 
 Setting the appearance of markers is available in both the Android and iOS versions of the OsmAnd app. The "Appearance on Map" menu is a general setting for displaying markers and additional pointers to them.
@@ -416,54 +470,3 @@ _Estimated arrival time (ETA)_ widget you can choose the time interval: Specify 
 You can read how to configure the appearance of the markers in [this section](#appearance-on-the-map) of the current article.  
 
 
-## Markers from Favorites
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-You can add or remove your favorites in/from [Map markers list](../personal/markers.md).
-
-Tap *&#8942;* button (**Android**) opens special functions for a chosen Favorite folder (group).
-
-![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
-
-Functions for Favorite folder:
-- &nbsp;<Translate android="true" ids="shared_string_add_to_map_markers"/>  or <Translate android="true" ids="remove_from_map_markers"/>   - add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-<InfoAndroidOnly/>
-
-</TabItem>
-
-</Tabs>
-
-
-## Setting Markers for Waypoints
-
-[Waypoints to Map Markers link](../map/tracks/track-context-menu.md#waypoints-folder)
-
-Track points (waypoints) are points that are part of Track (GPX) files. These points displayed automatically if track is displayed on the map. They look & could be configured similar to [Favorites](#favorites) - icon, names, color, shape. How to create and add Waypoint read [here](../map/tracks/track-context-menu.md#add-waypoint-to-a-track).
-
-![Track on map](@site/static/img/map/track_point_on_map.png)
-
-[Read more](../map/tracks/index.md) about tracks on the map.
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-You can add or remove your Waypoints in/from [Map markers list](../personal/markers.md).
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-<InfoAndroidOnly/>
-
-</TabItem>
-
-</Tabs>
