@@ -36,7 +36,7 @@ export function getLocalizedTimeUpdate(time) {
     return format(currentDate, 'MMM d', { locale });
 }
 
-export default function SettingsMenu({ setCloudSettings }) {
+export default function SettingsMenu() {
     const ctx = useContext(AppContext);
 
     const [openLangList, setOpenLangList] = useState(false);
@@ -96,7 +96,7 @@ export default function SettingsMenu({ setCloudSettings }) {
     }
 
     function openCloudSettingsMenu({ changes = false, trash = false }) {
-        setCloudSettings({ changes, trash });
+        ctx.setCloudSettings({ changes, trash });
     }
 
     const languageList = useMemo(() => {

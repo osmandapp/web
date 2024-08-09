@@ -16,7 +16,7 @@ import { ReactComponent as VisibleIcon } from '../../assets/icons/ic_show_on_map
 import { getCountVisibleTracks } from '../visibletracks/VisibleTracks';
 import { useTranslation } from 'react-i18next';
 
-export default function TracksMenu({ setOpenVisibleMenu }) {
+export default function TracksMenu() {
     const ctx = useContext(AppContext);
 
     const [defaultGroup, setDefaultGroup] = useState(null);
@@ -90,7 +90,7 @@ export default function TracksMenu({ setOpenVisibleMenu }) {
                                 id={'se-visible-tracks-menu'}
                                 divider
                                 className={styles.item}
-                                onClick={() => setOpenVisibleMenu(true)}
+                                onClick={() => ctx.setOpenVisibleMenu(true)}
                             >
                                 <ListItemIcon className={styles.icon}>
                                     <VisibleIcon />

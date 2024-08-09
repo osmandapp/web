@@ -16,7 +16,7 @@ import {
 } from '@mui/material';
 import styles from '../../infoblock.module.css';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { isTrack, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_POI } from '../../../context/AppContext';
+import AppContext, { isTrack, OBJECT_SEARCH, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import headerStyles from '../../../menu/trackfavmenu.module.css';
 import { closeHeader } from '../../../menu/actions/HeaderHelper';
 import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
@@ -41,7 +41,7 @@ import FavoritesManager, {
 import { ExpandLess, ExpandMore, Folder, LocationOn } from '@mui/icons-material';
 import WptDetailsButtons from './WptDetailsButtons';
 import WptTagsProvider, {
-    FINAL_ICON_NAME,
+    FINAL_POI_ICON_NAME,
     openWikivoyageContent,
     POI_OSM_URL,
     POI_PREFIX,
@@ -59,7 +59,7 @@ import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import { useNavigate } from 'react-router-dom';
 import { apiGet } from '../../../util/HttpApi';
 import Loading from '../../../menu/errors/Loading';
-import PhotoGallery from '../../../menu/search/PhotoGallery';
+import PhotoGallery from '../../../menu/search/explore/PhotoGallery';
 import wptStyles from '../wpt/wptDetails.module.css';
 import parse from 'html-react-parser';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../../manager/GlobalManager';
@@ -147,7 +147,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     latlon: { lat: latlng.lat, lon: latlng.lng },
                     background: DEFAULT_POI_SHAPE,
                     color: DEFAULT_POI_COLOR,
-                    icon: poiOptions[FINAL_ICON_NAME],
+                    icon: poiOptions[FINAL_POI_ICON_NAME],
                     tags: tags,
                     osmUrl: poiOptions[POI_OSM_URL],
                 };
@@ -166,7 +166,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     wikiDesc: wikiObj?.properties.wikiDesc,
                     background: DEFAULT_POI_SHAPE,
                     color: DEFAULT_POI_COLOR,
-                    icon: currentPoi?.properties[FINAL_ICON_NAME],
+                    icon: currentPoi?.properties[FINAL_POI_ICON_NAME],
                     tags: tags,
                     osmUrl: currentPoi?.properties[POI_OSM_URL],
                     wvLinks: wikiObj?.properties.wvLinks,
@@ -281,17 +281,22 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }
 
     function closeDetails() {
-        if (wpt.type?.isPoi) {
-            closeHeader({ ctx });
-        } else if (wpt.type?.isWpt) {
+        if (wpt?.type?.isPoi) {
+            isDetails ? returnToSearch() : closeHeader({ ctx });
+        } else if (wpt?.type?.isWpt) {
             isDetails ? setOpenWptTab(true) : closeHeader({ ctx });
-        } else if (wpt.type?.isFav) {
+        } else if (wpt?.type?.isFav) {
             isDetails ? closeOnlyFavDetails() : closeHeader({ ctx });
-        } else if (wpt.type?.isWikiPoi) {
+        } else if (wpt?.type?.isWikiPoi) {
             setShowInfoBlock(false);
             ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: null });
         }
         ctx.setSelectedWpt(null);
+    }
+
+    function returnToSearch() {
+        setShowInfoBlock(false);
+        ctx.setCurrentObjectType(OBJECT_SEARCH);
     }
 
     function closeOnlyFavDetails() {

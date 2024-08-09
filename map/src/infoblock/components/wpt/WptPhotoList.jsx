@@ -4,7 +4,7 @@ import headerStyles from '../../../menu/trackfavmenu.module.css';
 import styles from '../../infoblock.module.css';
 import AppContext from '../../../context/AppContext';
 import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
-import ImageItem from '../../../menu/search/ImageItem';
+import ImageItem from '../../../menu/search/explore/ImageItem';
 
 export default function WptPhotoList({ photos }) {
     const ctx = useContext(AppContext);

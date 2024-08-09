@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { Box, Button, Divider, Grid, ListItemText, MenuItem, Typography } from '@mui/material';
-import { WIKI_IMAGE_BASE_URL } from '../../manager/SearchManager';
-import styles from '../search/search.module.css';
+import { WIKI_IMAGE_BASE_URL } from '../../../manager/SearchManager';
+import styles from '../search.module.css';
 import { useTranslation } from 'react-i18next';
-import AppContext from '../../context/AppContext';
+import AppContext from '../../../context/AppContext';
 
 export default function PhotoGallery({ photos }) {
     const ctx = useContext(AppContext);

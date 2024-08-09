@@ -1,25 +1,26 @@
 import { useEffect, useRef, useContext, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { MapContainer, Marker, ScaleControl, AttributionControl } from 'react-leaflet';
-import AppContext from '../../context/AppContext';
-import RouteLayer from '../layers/RouteLayer';
-import WeatherLayer from '../layers/WeatherLayer';
+import AppContext from '../context/AppContext';
+import RouteLayer from './layers/RouteLayer';
+import WeatherLayer from './layers/WeatherLayer';
 import 'leaflet-hash';
 import L from 'leaflet';
 import 'leaflet-contextmenu';
 import 'leaflet-contextmenu/dist/leaflet.contextmenu.css';
-import FavoriteLayer from '../layers/FavoriteLayer';
-import CloudTrackLayer from '../layers/CloudTrackLayer';
-import LocalClientTrackLayer from '../layers/LocalClientTrackLayer';
-import MarkerOptions from '../markers/MarkerOptions';
-import ContextMenu from './ContextMenu';
-import PoiLayer from '../layers/PoiLayer';
-import GraphLayer from '../layers/GraphLayer';
-import { initialZoom, initialPosition, detectGeoByIp, LocationControl } from './LocationControl';
-import CustomZoomControl from './CustomZoomControl';
-import { useWindowSize } from '../../util/hooks/useWindowSize';
-import CustomTileLayer from '../layers/CustomTileLayer';
-import SearchLayer from '../layers/SearchLayer';
+import FavoriteLayer from './layers/FavoriteLayer';
+import CloudTrackLayer from './layers/CloudTrackLayer';
+import LocalClientTrackLayer from './layers/LocalClientTrackLayer';
+import MarkerOptions from './markers/MarkerOptions';
+import ContextMenu from './components/ContextMenu';
+import PoiLayer from './layers/PoiLayer';
+import GraphLayer from './layers/GraphLayer';
+import { initialZoom, initialPosition, detectGeoByIp, LocationControl } from './components/LocationControl';
+import CustomZoomControl from './components/CustomZoomControl';
+import { useWindowSize } from '../util/hooks/useWindowSize';
+import CustomTileLayer from './layers/CustomTileLayer';
+import ExploreLayer from './layers/ExploreLayer';
+import SearchLayer from './layers/SearchLayer';
 
 const useStyles = makeStyles(() => ({
     root: (props) => ({
@@ -171,6 +172,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             <GraphLayer />
             <PoiLayer />
             <SearchLayer />
+            <ExploreLayer />
             <CustomTileLayer
                 ref={tileLayer}
                 attribution='OsmAnd Web Beta &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'

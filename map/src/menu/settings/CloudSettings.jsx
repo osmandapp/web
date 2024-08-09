@@ -1,13 +1,16 @@
 import CloudTrash from './CloudTrash';
 import CloudChanges from './CloudChanges';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { apiGet } from '../../util/HttpApi';
 import { format } from 'date-fns';
 import * as locales from 'date-fns/locale';
 import i18n from 'i18next';
 import devList from '../../resources/apple_device_model_list.json';
+import AppContext from '../../context/AppContext';
 
-export default function CloudSettings({ cloudSettings, setOpenCloudSettings }) {
+export default function CloudSettings({ setOpenCloudSettings }) {
+    const ctx = useContext(AppContext);
+
     const [allFilesVersions, setAllFilesVersions] = useState([]);
     const [trashFiles, setTrashFiles] = useState([]);
     const [filesLoading, setFilesLoading] = useState(false);
@@ -101,13 +104,13 @@ export default function CloudSettings({ cloudSettings, setOpenCloudSettings }) {
         }, []);
     }
 
-    return cloudSettings.changes ? (
+    return ctx.cloudSettings.changes ? (
         <CloudChanges
             files={changesListItems}
             setOpenCloudSettings={setOpenCloudSettings}
             filesLoading={filesLoading}
         />
-    ) : cloudSettings.trash ? (
+    ) : ctx.cloudSettings.trash ? (
         <CloudTrash files={trashListItems} setOpenCloudSettings={setOpenCloudSettings} filesLoading={filesLoading} />
     ) : null;
 }

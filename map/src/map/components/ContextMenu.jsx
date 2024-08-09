@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import TracksManager from '../../manager/track/TracksManager';
 import { apiGet } from '../../util/HttpApi';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
-import styles from './map.module.css';
+import styles from '../map.module.css';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';

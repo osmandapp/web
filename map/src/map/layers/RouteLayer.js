@@ -209,29 +209,6 @@ const RouteLayer = ({ geocodingData, region }) => {
         return L.circleMarker(latlng, opts);
     };
 
-    const pointToLayerSearch = (feature, latlng) => {
-        let opts = Object.assign({}, geojsonMarkerOptions);
-        if (feature.properties && feature.properties.index) {
-            opts.fillOpacity = Math.min(1 / Math.log(feature.properties.index + 2), 1);
-            let clrs = ['#6DD6DA', '#95D9DA', '#A2ABB5', '#AE8CA3', '#817F82'];
-            let indx = [3, 10, 30, 100, 1000];
-            for (var i = 0; i < indx.length; i++) {
-                if (feature.properties.index > indx[i]) {
-                    opts.fillColor = clrs[i];
-                }
-            }
-        }
-
-        return L.circleMarker(latlng, opts);
-    };
-
-    useEffect(() => {
-        let searchRes = ctx.searchCtx.chooseResult;
-        if (searchRes) {
-            map.flyTo([searchRes[1], searchRes[0]], 17);
-        }
-    }, [ctx.searchCtx]);
-
     // GeoJSON requires dynamic key to refresh/refilter
     // used to redraw layer(s) killed after Local Track Editor
     const refreshKey = isRouteTrack(ctx).toString();
@@ -305,14 +282,6 @@ const RouteLayer = ({ geocodingData, region }) => {
                     data={geocodingData.geojson}
                     pointToLayer={pointToLayerGeoData}
                     onEachFeature={(feature, layer) => onEachFeature({ feature, layer, id: 'se-geojson-search' })}
-                />
-            )}
-            {ctx.searchCtx.geojson && (
-                <GeoJSON
-                    key={ctx.searchCtx.id + refreshKey}
-                    data={ctx.searchCtx.geojson}
-                    pointToLayer={pointToLayerSearch}
-                    onEachFeature={(feature, layer) => onEachFeature({ feature, layer })}
                 />
             )}
             {startPoint && (

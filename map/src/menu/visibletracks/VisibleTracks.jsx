@@ -79,7 +79,7 @@ export function addCloseTracksToRecently(ctx) {
     }
 }
 
-export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null, setSelectedType }) {
+export default function VisibleTracks({ setMenuInfo = null, setSelectedType }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
@@ -154,7 +154,7 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null, 
                             variant="contained"
                             type="button"
                             className={headerStyles.appBarIcon}
-                            onClick={() => setOpenVisibleMenu(false)}
+                            onClick={() => ctx.setOpenVisibleMenu(false)}
                         >
                             <CloseIcon />
                         </IconButton>
@@ -175,7 +175,7 @@ export default function VisibleTracks({ setOpenVisibleMenu, setMenuInfo = null, 
                     <EmptyVisible
                         id="se-empty-visible"
                         setMenuInfo={setMenuInfo}
-                        setOpenVisibleMenu={setOpenVisibleMenu}
+                        setOpenVisibleMenu={ctx.setOpenVisibleMenu}
                         setSelectedType={setSelectedType}
                     />
                 )}

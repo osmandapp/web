@@ -1,9 +1,9 @@
 import { useInView } from 'react-intersection-observer';
 import React, { useCallback, useContext, useEffect, useState, useRef } from 'react';
 import { ImageListItem, Skeleton } from '@mui/material';
-import { WIKI_IMAGE_BASE_URL } from '../../manager/SearchManager';
-import AppContext from '../../context/AppContext';
-import styles from '../search/search.module.css';
+import { WIKI_IMAGE_BASE_URL } from '../../../manager/SearchManager';
+import AppContext from '../../../context/AppContext';
+import styles from '../search.module.css';
 
 export default function ImageItem({ photo, index, handleImageLoad, isLoaded }) {
     const ctx = useContext(AppContext);
