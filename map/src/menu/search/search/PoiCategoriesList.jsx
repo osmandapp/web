@@ -7,7 +7,7 @@ import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.
 import gStyles from '../../gstylesmenu.module.css';
 import styles from '../search.module.css';
 import Loading from '../../errors/Loading';
-import PoiManager from '../../../manager/PoiManager';
+import PoiManager, { translatePoi } from '../../../manager/PoiManager';
 import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 
 export default function PoiCategoriesList({
@@ -46,6 +46,7 @@ export default function PoiCategoriesList({
             ) : (
                 <Box sx={{ overflowY: 'auto' }}>
                     {categories?.map((item, key) => {
+                        const catName = PoiManager.formattingPoiType(t(`poi_${item}`));
                         return (
                             <MenuItem
                                 className={styles.categoriesListItem}
@@ -53,8 +54,8 @@ export default function PoiCategoriesList({
                                 onClick={(e) => {
                                     e.preventDefault();
                                     setSearchValue({
-                                        query: item,
-                                        type: 'category',
+                                        query: catName,
+                                        type: SEARCH_TYPE_CATEGORY,
                                     });
                                     setOpenSearchResults(true);
                                     setOpenCategories(false);
@@ -63,7 +64,7 @@ export default function PoiCategoriesList({
                                 <ListItemIcon>{categoriesIcons[item]}</ListItemIcon>
                                 <ListItemText>
                                     <Typography variant="inherit" noWrap>
-                                        {PoiManager.formattingPoiType(t(`poi_${item}`))}
+                                        {catName}
                                     </Typography>
                                 </ListItemText>
                             </MenuItem>

@@ -19,6 +19,7 @@ import {
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import { changeIconColor, createPoiIcon } from '../markers/MarkerOptions';
+import i18n from '../../i18n';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 export const SEARCH_LAYER_ID = 'search-layer';
@@ -77,6 +78,7 @@ export default function SearchLayer() {
                 lat: latlng.lat,
                 lon: latlng.lng,
                 text: query,
+                locale: i18n.language,
             },
         });
         if (response.ok) {

@@ -25,6 +25,7 @@ import {
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
 import { SEARCH_LAYER_ID, SEARCH_TYPE_CATEGORY } from './SearchLayer';
+import i18n from '../../i18n';
 
 export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, type = OBJECT_TYPE_POI }) {
     const innerCache = await createPoiCache({ poiList, poiIconCache: globalPoiIconCache });
@@ -109,9 +110,12 @@ export default function PoiLayer() {
             prevCategoriesCount: prevCategoriesCount,
         };
         let response = await apiPost(
-            `${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi?`,
+            `${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi`,
             searchData,
             {
+                params: {
+                    locale: i18n.language,
+                },
                 signal: controller.signal,
             }
         );

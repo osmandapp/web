@@ -25,7 +25,7 @@ export default function SearchResultItem({ item, setProcessingSearch }) {
         if (props['web_type'] === SEARCH_RESULT_TYPE_POI) {
             name = props['web_poi_name'];
             type = props['web_poi_subType'] ?? props['web_poi_type'];
-            type = _.capitalize(t(`amenity_type_${type}`, formattingPoiType(type)));
+            type = _.capitalize(t(`amenity_type_${type}`, formattingPoiType(t(`poi_${type}`))));
             if (name === '') {
                 name = type;
             }

@@ -220,13 +220,14 @@ export default function SearchMenu() {
                                 ?.sort()
                                 .slice(0, 6)
                                 .map((item, key) => {
+                                    const catName = translatePoi({ key, ctx, t });
                                     return (
                                         <Grid item xs={4} key={key} className={styles.gridItem}>
                                             <ListItemButton
                                                 sx={{}}
                                                 key={key}
                                                 onClick={(e) => {
-                                                    searchByCategory(item);
+                                                    searchByCategory(catName);
                                                     e.preventDefault();
                                                 }}
                                             >
@@ -235,7 +236,7 @@ export default function SearchMenu() {
                                                         {categoriesIcons[item]}
                                                     </ListItemIcon>
                                                     <Typography className={styles.categoryItemText}>
-                                                        {translatePoi({ key, ctx, t })}
+                                                        {catName}
                                                     </Typography>
                                                 </Box>
                                             </ListItemButton>
