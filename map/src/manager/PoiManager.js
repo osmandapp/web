@@ -186,6 +186,9 @@ export async function createPoiCache({ poiList = null, obj = null, poiIconCache,
     const iconCache = {};
     const arr = icon ? [icon] : poiList ?? [obj];
     for (const poi of arr) {
+        if (!poi) {
+            continue;
+        }
         let iconWpt;
         if (icon) {
             iconWpt = icon;

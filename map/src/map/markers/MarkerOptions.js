@@ -12,6 +12,8 @@ const BACKGROUND_WPT_SHAPE_SQUARE = 'square';
 const DEFAULT_WPT_ICON = 'special_star';
 const DEFAULT_WPT_COLOR = '#eecc22';
 
+export const DEFAULT_ICON_SIZE = 24;
+
 export const POI_ICONS_FOLDER = 'poi-icons-svg';
 export const SHADERS_FOLDER = 'map-shaders-svg';
 export const MAP_ICONS_FOLDER = 'map-icons-svg';
@@ -95,7 +97,7 @@ export function createPoiIcon({
               : DEFAULT_WPT_ICON;
     let part = point ? 'mx_' : '';
     let html;
-    const allIconSize = backgroundSize ? backgroundSize : 24;
+    const allIconSize = backgroundSize ? backgroundSize : DEFAULT_ICON_SIZE;
     const bsize = backgroundSize ? backgroundSize : getBackgroundSize(shapeBackground);
     const isize = iconSize;
     const offsetX = (allIconSize - isize) / 2; // Center the image horizontally
@@ -138,7 +140,7 @@ export function createPoiIcon({
 export function getPoiCategoryIcon({ icon, color, background }) {
     const colorBackground = Utils.hexToArgb(color);
     const svg = getBackground(colorBackground, background);
-    const allIconSize = 24;
+    const allIconSize = DEFAULT_ICON_SIZE;
     const bsize = getBackgroundSize(background);
     const isize = 18;
     const offsetX = (allIconSize - isize) / 2; // Center the image horizontally

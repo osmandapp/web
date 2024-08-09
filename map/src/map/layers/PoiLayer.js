@@ -3,7 +3,7 @@ import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../context/AppCon
 import { useMap } from 'react-leaflet';
 import _ from 'lodash';
 import L from 'leaflet';
-import { changeIconColor, createPoiIcon } from '../markers/MarkerOptions';
+import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import 'leaflet-spin';
 import PoiManager, {
     createPoiCache,
@@ -26,12 +26,24 @@ import {
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
 import { SEARCH_LAYER_ID, SEARCH_TYPE_CATEGORY } from './SearchLayer';
 import i18n from '../../i18n';
+import { clusterMarkers, createSecondaryMarker } from '../util/Clusterizer';
 
-export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, type = OBJECT_TYPE_POI }) {
+export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, type = OBJECT_TYPE_POI, map, zoom }) {
     const innerCache = await createPoiCache({ poiList, poiIconCache: globalPoiIconCache });
     updatePoiCache(ctx, innerCache);
-    const layers = await Promise.all(
-        poiList?.map(async (poi) => {
+
+    const center = map.getCenter();
+    const latitude = center.lat;
+    const { mainMarkers, secondaryMarkers } = clusterMarkers({
+        places: poiList,
+        zoom,
+        latitude,
+        iconSize: DEFAULT_ICON_SIZE,
+        isPoi: true,
+    });
+
+    const mainMarkersLayers = await Promise.all(
+        mainMarkers?.map(async (poi) => {
             const finalIconName = PoiManager.getIconNameForPoiType({
                 iconKeyName: poi.properties[ICON_KEY_NAME],
                 typeOsmTag: poi.properties[TYPE_OSM_TAG],
@@ -48,6 +60,17 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
             });
         })
     );
+
+    let simpleMarkersArr = new L.FeatureGroup();
+
+    for (const place of secondaryMarkers) {
+        const circle = createSecondaryMarker(place);
+        if (circle) {
+            simpleMarkersArr.addLayer(circle);
+        }
+    }
+
+    const layers = [...mainMarkersLayers, simpleMarkersArr];
 
     if (layers.length) {
         return L.featureGroup(layers, {
@@ -152,6 +175,7 @@ export default function PoiLayer() {
                 savedBbox,
                 prevCategoriesCount,
                 poiIconCache,
+                zoom,
             }) => {
                 map.spin(true, { color: '#1976d2' });
                 let bbox = map.getBounds();
@@ -164,6 +188,8 @@ export default function PoiLayer() {
                                     ctx,
                                     poiList: res.features.features,
                                     globalPoiIconCache: poiIconCache,
+                                    map,
+                                    zoom,
                                 });
                                 const newPoiList = {
                                     prevLayer: _.cloneDeep(poiList?.layer),
@@ -171,7 +197,7 @@ export default function PoiLayer() {
                                     listFeatures: res.features,
                                 };
                                 setPoiList(newPoiList);
-                                setBbox(!res.useLimit ? bbox : null);
+                                setBbox(bbox);
                                 setPrevCategoriesCount(showPoiCategories.length);
                                 setUseLimit(res.useLimit);
                             }
@@ -215,6 +241,7 @@ export default function PoiLayer() {
                     savedBbox: bbox,
                     prevCategoriesCount,
                     poiIconCache: ctx.poiIconCache,
+                    zoom,
                 });
             } else {
                 if (poiList?.layer && _.isEmpty(ctx.showPoiCategories)) {
@@ -223,6 +250,23 @@ export default function PoiLayer() {
                         layer: null,
                     };
                     setPoiList(newPoiList);
+                } else {
+                    // poi list already found
+                    if (poiList?.listFeatures?.features?.length > 0) {
+                        const layer = await createPoiLayer({
+                            ctx,
+                            poiList: poiList.listFeatures.features,
+                            globalPoiIconCache: ctx.poiIconCache,
+                            map,
+                            zoom,
+                        });
+                        const newPoiList = {
+                            prevLayer: _.cloneDeep(poiList?.layer),
+                            layer: layer,
+                            listFeatures: poiList?.listFeatures,
+                        };
+                        setPoiList(newPoiList);
+                    }
                 }
             }
         }

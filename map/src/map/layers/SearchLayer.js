@@ -18,8 +18,9 @@ import {
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
-import { changeIconColor, createPoiIcon } from '../markers/MarkerOptions';
+import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import i18n from '../../i18n';
+import { clusterMarkers, createSecondaryMarker } from '../util/Clusterizer';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 export const SEARCH_LAYER_ID = 'search-layer';
@@ -40,10 +41,26 @@ export default function SearchLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
 
+    const [zoom, setZoom] = useState(null);
+    const [move, setMove] = useState(false);
+
     const [selectedCategory, setSelectedCategory] = useState(null);
 
     useEffect(() => {
+        if (map) {
+            map.on('zoomend', () => {
+                setZoom(map.getZoom());
+            });
+
+            map.on('dragend', () => {
+                setMove(true);
+            });
+        }
+    }, [map]);
+
+    useEffect(() => {
         if (ctx.searchQuery?.search) {
+            removeOldSearchLayer();
             const searchData = ctx.searchQuery.search;
             if (ctx.searchQuery.type === SEARCH_TYPE_CATEGORY) {
                 const category = PoiManager.formattingPoiFilter(searchData?.query, true);
@@ -62,6 +79,24 @@ export default function SearchLayer() {
             }
         }
     }, [ctx.searchQuery]);
+
+    useEffect(() => {
+        const updateAsyncLayers = async () => {
+            const searchLayer = findFeatureGroupById(map, SEARCH_LAYER_ID);
+
+            if (searchLayer) {
+                const newLayers = await createSearchLayer({
+                    objList: ctx.searchResult?.features,
+                });
+                searchLayer.clearLayers();
+                searchLayer.addLayer(newLayers);
+            }
+        };
+
+        if (ctx.searchResult?.features && ctx.searchQuery.type !== SEARCH_TYPE_CATEGORY) {
+            updateAsyncLayers().then();
+        }
+    }, [zoom, move]);
 
     useEffect(() => {
         if (ctx.zoomToMapObj) {
@@ -118,8 +153,19 @@ export default function SearchLayer() {
         const innerCache = await createPoiCache({ poiList: objList, poiIconCache: ctx.poiIconCache });
         updatePoiCache(ctx, innerCache);
 
-        const layers = await Promise.all(
-            objList.map(async (obj) => {
+        const center = map.getCenter();
+        const zoom = map.getZoom();
+        const latitude = center.lat;
+        const { mainMarkers, secondaryMarkers } = clusterMarkers({
+            places: objList,
+            zoom,
+            latitude,
+            iconSize: DEFAULT_ICON_SIZE,
+            isPoi: true,
+        });
+
+        const mainMarkersLayers = await Promise.all(
+            mainMarkers.map(async (obj) => {
                 const objType = obj.properties['web_type'];
                 let title = obj.properties['web_name'];
                 let finalIconName;
@@ -145,6 +191,17 @@ export default function SearchLayer() {
                 });
             })
         );
+
+        let simpleMarkersArr = new L.FeatureGroup();
+
+        for (const place of secondaryMarkers) {
+            const circle = createSecondaryMarker(place);
+            if (circle) {
+                simpleMarkersArr.addLayer(circle);
+            }
+        }
+
+        const layers = [...mainMarkersLayers, simpleMarkersArr];
 
         if (layers.length) {
             return L.featureGroup(layers, {

@@ -12,13 +12,13 @@ import 'leaflet.markercluster';
 import { useTranslation } from 'react-i18next';
 import { areSetsEqual } from '../../util/Utils';
 import { debouncer } from '../../context/TracksRoutingCache';
+import { EXPLORE_BIG_ICON_SIZE, clusterMarkers } from '../util/Clusterizer';
 
 export default function ExploreLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
 
     const GET_OBJ_DEBOUNCE_MS = 500;
-    const BIG_ICON_SIZE = 36;
 
     const timerRef = useRef(null);
 
@@ -298,89 +298,6 @@ export default function ExploreLayer() {
         return newLayers;
     }
 
-    // Cluster markers based on zoom and coordinates
-    function clusterMarkers({ places, zoom, latitude, iconSize = BIG_ICON_SIZE, secondaryIconSize = 10 }) {
-        const maxMainPlaces = 50;
-        const maxSecondaryPlaces = zoom > 10 ? 200 : 900;
-        const useUniformMarkerPlacement = zoom <= 10 || zoom >= 16;
-
-        const shift = 1; // Adjust shift as needed for your specific case
-        const clustered = {};
-
-        // Function to convert pixels to meters
-        const metersPerPixel = (latitude, zoomLevel) => {
-            const earthCircumference = 40075017; // In meters
-            return (earthCircumference * Math.cos((latitude * Math.PI) / 180)) / Math.pow(2, zoomLevel + 8);
-        };
-
-        // Minimum distances between markers in meters
-        const mainMinDistance = iconSize * metersPerPixel(latitude, zoom) * 1.5;
-        const secondaryMinDistance = secondaryIconSize * metersPerPixel(latitude, zoom) * 1.5;
-
-        for (const place of places) {
-            const [lng, lat] = place.geometry.coordinates;
-            const x31 = Math.floor(((lng + 180) / 360) * (1 << 31));
-            const y31 = Math.floor(
-                ((1 - Math.log(Math.tan((lat * Math.PI) / 180) + 1 / Math.cos((lat * Math.PI) / 180)) / Math.PI) / 2) *
-                    (1 << 31)
-            );
-            const key = ((x31 >> (31 - (zoom + shift))) & 0xffff) | (((y31 >> (31 - (zoom + shift))) & 0xffff) << 16);
-
-            if (!clustered[key]) {
-                clustered[key] = [];
-            }
-            clustered[key].push(place);
-        }
-
-        // Sort clusters by size
-        const clusters = Object.values(clustered);
-
-        // Function to check if a place can be added without overlapping
-        const canPlaceMarker = (place, existingPlaces, minDistance) => {
-            const latlng = L.latLng(place.geometry.coordinates[1], place.geometry.coordinates[0]);
-            return existingPlaces.every((existingPlace) => {
-                const existingLatLng = L.latLng(
-                    existingPlace.geometry.coordinates[1],
-                    existingPlace.geometry.coordinates[0]
-                );
-                return latlng.distanceTo(existingLatLng) >= minDistance;
-            });
-        };
-
-        const mainMarkers = [];
-        const secondaryMarkers = [];
-
-        if (useUniformMarkerPlacement) {
-            const firstItemsSorted = clusters.map((cluster) => cluster[0]).sort((a, b) => a.index - b.index);
-
-            // Add first items to main markers for better visibility
-            firstItemsSorted.forEach((item) => {
-                if (canPlaceMarker(item, mainMarkers, mainMinDistance)) {
-                    mainMarkers.push(item);
-                }
-            });
-        }
-
-        //Add other markers
-        for (const cluster of clusters) {
-            for (const place of cluster) {
-                if (mainMarkers.includes(place)) {
-                    continue;
-                }
-                if (place.index < maxMainPlaces && canPlaceMarker(place, mainMarkers, mainMinDistance)) {
-                    mainMarkers.push(place);
-                } else if (canPlaceMarker(place, [...mainMarkers, ...secondaryMarkers], secondaryMinDistance)) {
-                    secondaryMarkers.push(place);
-                }
-            }
-        }
-
-        return {
-            mainMarkers: mainMarkers.slice(0, maxMainPlaces),
-            secondaryMarkers: secondaryMarkers.slice(0, maxSecondaryPlaces),
-        };
-    }
-
     function updateMarkerZIndex(layerGroup, zIndex) {
         layerGroup.eachLayer((layer) => {
             if (layer instanceof L.Marker) {
@@ -410,7 +327,7 @@ export default function ExploreLayer() {
                     ? place.properties.imageTitle
                     : place.properties.photoTitle;
                 const iconUrl = `${WIKI_IMAGE_BASE_URL}${imgTag}?width=200`;
-                const iconSize = [BIG_ICON_SIZE, BIG_ICON_SIZE];
+                const iconSize = [EXPLORE_BIG_ICON_SIZE, EXPLORE_BIG_ICON_SIZE];
 
                 return new Promise((resolve) => {
                     const image = new Image();
