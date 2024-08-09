@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import _ from 'lodash';
 import { formattingPoiType } from '../../../manager/PoiManager';
 import AppContext from '../../../context/AppContext';
-import { SEARCH_RESULT_TYPE_POI, searchByCategory } from './SearchResults';
+import { SEARCH_RESULT_TYPE_POI, SEARCH_RESULT_TYPE_POI_CATEGORY, searchByCategory } from './SearchResults';
 import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 
 export default function SearchResultItem({ item, setProcessingSearch }) {
@@ -32,9 +32,14 @@ export default function SearchResultItem({ item, setProcessingSearch }) {
             icon = item.icon;
         } else {
             name = props['web_name'];
-            type = props['web_type'].toLowerCase();
-            type = _.capitalize(t(`search_address_${type}`, formattingPoiType(type)));
             icon = item.icon;
+            if (props['web_type'] === SEARCH_RESULT_TYPE_POI_CATEGORY) {
+                type = props['web_categoryKeyName'].toLowerCase();
+                type = _.capitalize(formattingPoiType(t(`poi_${type}`)));
+            } else {
+                type = props['web_type'].toLowerCase();
+                type = _.capitalize(t(`search_address_${type}`, formattingPoiType(type)));
+            }
         }
 
         return { name, distance, type, icon };
