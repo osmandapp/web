@@ -85,7 +85,7 @@ GPX Tracks, Routes:
 - Color palette simply used for predefined colors to assign to Favorites, Tracks
 
 
-## Map Legend for Schemes
+## Palette Legend 
 
 The legend provides an easy way to view and understand the different markings on the map. New color palettes have been added to display [**speed** for tracks](../map/tracks/index.md#color), [**line type** for routes](../navigation/guidance/map-during-navigation.md#color), [**altitude and slope** for terrain](../plugins/contour-lines.md#color-scheme), and all [**weather layer**](../plugins/weather.md#weather-layers) color palettes.
 
