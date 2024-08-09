@@ -214,7 +214,7 @@ When enabled, the quick action widget is located in the lower right corner above
 | *Several [Custom buttons](#custom-buttons) on the map screen* | ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_multi.png) |
 
 
-### Custom Buttons
+## Extra quick action widgets
 
 <Tabs groupId="operating-systems">
 
@@ -249,7 +249,7 @@ When enabled, the quick action widget is located in the lower right corner above
 - Created buttons are located in the *Configure screen → Buttons → Custom buttons* list and are **available for all application profiles**.
 
 
-#### Interaction with Custom Button
+### Interaction with Custom Button
 
 <Tabs groupId="operating-systems">
 
@@ -278,7 +278,7 @@ When enabled, the quick action widget is located in the lower right corner above
 <!-- ![Custom button Android](@site/static/img/widgets/custom_button_5_android.png) -->
 
 
-#### Rename and Delete Custom Button
+### Rename and Delete Custom Button
 
 ![Custom button Android](@site/static/img/widgets/custom_button_rename_andr.png)  ![Custom button Android](@site/static/img/widgets/custom_button_del_andr.png)  
 
