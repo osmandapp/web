@@ -75,7 +75,7 @@ Important information:
 To avoid confusion, sometimes the key or value is surrounded by quotation marks: **key="value" or "key"="value"**. The quotation marks and equal sign are not part of the tag content.
 
 
-### Search by list
+### Full text search
 
 <Tabs groupId="operating-systems">
 
