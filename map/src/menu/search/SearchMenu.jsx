@@ -20,6 +20,7 @@ import SearchResults from './search/SearchResults';
 import { MenuButton } from './search/MenuButton';
 import { SEARCH_TYPE_CATEGORY } from '../../map/layers/SearchLayer';
 import { POI_CATEGORY_KEY_NAME } from '../../infoblock/components/wpt/WptTagsProvider';
+import EmptyLogin from '../errors/EmptyLogin';
 
 export default function SearchMenu() {
     const ctx = useContext(AppContext);
@@ -188,81 +189,86 @@ export default function SearchMenu() {
 
     return (
         <>
-            {openSearchResults && (
-                <SearchResults
-                    value={searchValue}
-                    setOpenSearchResults={setOpenSearchResults}
-                    setIsMainSearchScreen={setIsMainSearchScreen}
-                    setSearchValue={setSearchValue}
-                />
-            )}
-            {openCategories && (
-                <PoiCategoriesList
-                    categories={searchCategories}
-                    categoriesIcons={searchCategoriesIcons}
-                    setSearchValue={setSearchValue}
-                    setOpenCategories={setOpenCategories}
-                    setOpenSearchResults={setOpenSearchResults}
-                    setIsMainSearchScreen={setIsMainSearchScreen}
-                    loadingIcons={loadingIcons}
-                />
-            )}
-            {isMainSearchScreen && (
+            {ctx.loginUser ? (
                 <>
-                    <CustomInput
-                        menuButton={<MenuButton needBackButton={!isMainSearchScreen} />}
-                        setSearchValue={setSearchValue}
-                    />
-                    <SubTitle title={'search_categories'} />
-                    <Box sx={{ overflow: 'none', mt: '16px' }}>
-                        <Grid sx={{ mx: 0.5, maxWidth: '360px' }} container spacing={2}>
-                            {ctx.poiCategory?.filters
-                                ?.sort()
-                                .slice(0, 6)
-                                .map((item, key) => {
-                                    const catName = translatePoi({ key, ctx, t });
-                                    return (
-                                        <Grid item xs={4} key={key} className={styles.gridItem}>
-                                            <ListItemButton
-                                                sx={{}}
-                                                key={key}
-                                                onClick={(e) => {
-                                                    searchByCategory(catName);
-                                                    e.preventDefault();
-                                                }}
-                                            >
-                                                <Box className={styles.categoryItem}>
-                                                    <ListItemIcon className={styles.categoryItemIcon}>
-                                                        {categoriesIcons[item]}
-                                                    </ListItemIcon>
-                                                    <Typography className={styles.categoryItemText}>
-                                                        {catName}
-                                                    </Typography>
-                                                </Box>
-                                            </ListItemButton>
-                                        </Grid>
-                                    );
-                                })}
-                        </Grid>
-                        <Button className={styles.buttonShowAllExplore} onClick={openSearchByCategories}>
-                            {t('shared_string_show_all')}
-                        </Button>
-                    </Box>
-
-                    <Divider />
-                    <SubTitle title={'web:explore_menu'} />
-                    {loadingWikiPlaces ? (
-                        <LinearProgress />
-                    ) : (
+                    {openSearchResults && (
+                        <SearchResults
+                            value={searchValue}
+                            setOpenSearchResults={setOpenSearchResults}
+                            setIsMainSearchScreen={setIsMainSearchScreen}
+                            setSearchValue={setSearchValue}
+                        />
+                    )}
+                    {openCategories && (
+                        <PoiCategoriesList
+                            categories={searchCategories}
+                            categoriesIcons={searchCategoriesIcons}
+                            setSearchValue={setSearchValue}
+                            setOpenCategories={setOpenCategories}
+                            setOpenSearchResults={setOpenSearchResults}
+                            setIsMainSearchScreen={setIsMainSearchScreen}
+                            loadingIcons={loadingIcons}
+                        />
+                    )}
+                    {isMainSearchScreen && (
                         <>
-                            <WikiPlacesList size={3} />
-                            <Button className={styles.buttonShowAllExplore} onClick={openExploreMenu}>
-                                {t('shared_string_show_all')}
-                            </Button>
+                            <CustomInput
+                                menuButton={<MenuButton needBackButton={!isMainSearchScreen} />}
+                                setSearchValue={setSearchValue}
+                            />
+                            <SubTitle title={'search_categories'} />
+                            <Box sx={{ overflow: 'none', mt: '16px' }}>
+                                <Grid sx={{ mx: 0.5, maxWidth: '360px' }} container spacing={2}>
+                                    {ctx.poiCategory?.filters
+                                        ?.sort()
+                                        .slice(0, 6)
+                                        .map((item, key) => {
+                                            const catName = translatePoi({ key, ctx, t });
+                                            return (
+                                                <Grid item xs={4} key={key} className={styles.gridItem}>
+                                                    <ListItemButton
+                                                        key={key}
+                                                        onClick={(e) => {
+                                                            searchByCategory(catName);
+                                                            e.preventDefault();
+                                                        }}
+                                                    >
+                                                        <Box className={styles.categoryItem}>
+                                                            <ListItemIcon className={styles.categoryItemIcon}>
+                                                                {categoriesIcons[item]}
+                                                            </ListItemIcon>
+                                                            <Typography className={styles.categoryItemText}>
+                                                                {catName}
+                                                            </Typography>
+                                                        </Box>
+                                                    </ListItemButton>
+                                                </Grid>
+                                            );
+                                        })}
+                                </Grid>
+                                <Button className={styles.buttonShowAllExplore} onClick={openSearchByCategories}>
+                                    {t('shared_string_show_all')}
+                                </Button>
+                            </Box>
+
                             <Divider />
+                            <SubTitle title={'web:explore_menu'} />
+                            {loadingWikiPlaces ? (
+                                <LinearProgress />
+                            ) : (
+                                <>
+                                    <WikiPlacesList size={3} />
+                                    <Button className={styles.buttonShowAllExplore} onClick={openExploreMenu}>
+                                        {t('shared_string_show_all')}
+                                    </Button>
+                                    <Divider />
+                                </>
+                            )}
                         </>
                     )}
                 </>
+            ) : (
+                <EmptyLogin />
             )}
         </>
     );
