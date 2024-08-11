@@ -63,7 +63,7 @@ UniRS and LightRS styles are author styles that render the basic map information
 
 ![LightRS map style](@site/static/img/map/map-style-lightrs.png)
 
-### Nautical 
+### Nautical
 
 For nautical navigation. Features buoys, lighthouses, riverways, sea lanes and marks, harbors, seamark services, and depth contours. Read more about [Nautical maps](../plugins/nautical-charts.md).
 
@@ -118,7 +118,7 @@ Map legend of OsmAnd maps you can find [here](../map-legend/index.md).
 
 ![Map fonts Android version](@site/static/img/map/map_fonts.png) ![Map fonts version](@site/static/img/map/map_fonts_1.png)
 
-Download map fonts for simplified/traditional Chinese, Japanese, and Korean maps. 
+Download map fonts for simplified/traditional Chinese, Japanese, and Korean maps.  
 
 When writing local names in simplified/traditional Chinese, Japanese, and Korean ([Map language](../map/vector-maps#map-language)), incorrect hieroglyphs or even squares may appear. This happens when the device does not support the required fonts.  
 
@@ -137,17 +137,17 @@ Some issues with these incorrect fonts are described on our GitHub page: [3911](
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>* 
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/>*
 
 </TabItem>
 
 </Tabs>  
 
-![Contour lines map style](@site/static/img/map/contour_lines.png)   
+![Contour lines map style](@site/static/img/map/contour_lines.png)  
 
 Contour lines are represented as vector maps that are displayed as elevation lines. You need to enable the [Topography plugin](../plugins/contour-lines.md), download the data for your region and configure the display. Feature is not enabled by default and needs to be [purchased first](../purchases/index.md).
 
-Contour lines are available for all map styles and modes and could be configured via the [Contour lines menu](../plugins/contour-lines.md#contour-lines-map). More information [here](../plugins/contour-lines.md). 
+Contour lines are available for all map styles and modes and could be configured via the [Contour lines menu](../plugins/contour-lines.md#contour-lines-map). More information [here](../plugins/contour-lines.md).
 
 
 ## * Nautical Depth
@@ -156,7 +156,7 @@ Contour lines are available for all map styles and modes and could be configured
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,nautical_depth"/>*   
+*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,nautical_depth"/>*  
 
 ![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
 
@@ -174,7 +174,7 @@ Contour lines are available for all map styles and modes and could be configured
 
 Nautical depth contour lines allow you to define areas of equal depth. They are designed to visualize changes in topography below the water surface. Nautical depth is available for all map styles and modes and can be adjusted whether or not the Nautical map view plugin is enabled.  
 
-More information about [Nautical map view here](../plugins/nautical-charts). 
+More information about [Nautical map view here](../plugins/nautical-charts).
 
 
 ## Show Borders
@@ -183,7 +183,7 @@ More information about [Nautical map view here](../plugins/nautical-charts).
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*   
+*<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*  
 
 ![show-borders-andr](@site/static/img/map/show-borders-andr.png)  
 
@@ -193,7 +193,7 @@ More information about [Nautical map view here](../plugins/nautical-charts).
 
 *<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*  
 
-![show-borders-ios](@site/static/img/map/show-borders-ios.png) 
+![show-borders-ios](@site/static/img/map/show-borders-ios.png)
 
 </TabItem>
 
@@ -216,7 +216,7 @@ The map is displayed according to the day or night mode selected from the list. 
 
 <Tabs groupId="operating-systems">  
 
-<TabItem value="android" label="Android">   
+<TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_mode"/>*  
 
@@ -228,9 +228,9 @@ The map is displayed according to the day or night mode selected from the list. 
 
 </TabItem>
 
-</Tabs>   
+</Tabs>
 
-|Parameter          |Description        
+| Parameter | Description |
 |:------------|:---------------|
 |**<Translate android="true" ids="daynight_mode_auto"/>**| Switches between day and night modes based on sunset and sunrise data at your location.  |
 |**<Translate android="true" ids="daynight_mode_day"/>**| The map view is always displayed in daytime mode. Light theme. |
@@ -243,11 +243,11 @@ The map is displayed according to the day or night mode selected from the list. 
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_details"/>*   
+*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,rendering_category_details"/>*
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">   
+<TabItem value="ios" label="iOS">
   
 *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,nautical_depth"/>*  
 
@@ -257,7 +257,7 @@ The map is displayed according to the day or night mode selected from the list. 
 
 |Parameters and Description|
 |------------|
-|**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. Showing polygons, trails, points, signs at low zooms on the map. It means you can see more details on your map at low zooms. _Note_: rendering on your device may be not fast.|
+|**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. Showing polygons, trails, points, signs at low zooms on the map. It means you can see more details on your map at low zooms. *Note*: rendering on your device may be not fast.|
 |![Map parameter - More detailed](@site/static/img/map/map-parameter-more-details.png)|
 |**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. Showing type of surface of roads. Colour of the road helps you to understand what is the surface of the road is: asphalt, grass or sand etc. Look at [Map legend](../map-legend/index.md).|
 |![Map parameter - Road surface](@site/static/img/map/map-parameter-road-surface.png)|
@@ -285,7 +285,7 @@ The map is displayed according to the day or night mode selected from the list. 
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>* 
+*<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
 </TabItem>
 
@@ -295,7 +295,7 @@ The map is displayed according to the day or night mode selected from the list. 
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)  ![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)
 
@@ -308,13 +308,13 @@ A route is a path that is predetermined and needs to be followed to reach a spec
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,icon_group_transport"/>*   
+*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,icon_group_transport"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_transport"/>*    
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_transport"/>*
 
 </TabItem>
 
@@ -328,7 +328,7 @@ When navigating through cities, you need a more contrasting view of public trans
 - **<Translate android="true" ids="rendering_attr_publicTransportMode_name"/>**. Showing bus, trolleybus, shuttle routes.  
     ![Map transport bus](@site/static/img/map/map-transport-bus.png)
 
-- **<Translate android="true" ids="rendering_attr_tramTrainRoutes_name"/>**. Showing tram and train routes.   
+- **<Translate android="true" ids="rendering_attr_tramTrainRoutes_name"/>**. Showing tram and train routes.  
     ![Map transport tram](@site/static/img/map/map-transport-tram.png)
 
 - **<Translate android="true" ids="rendering_attr_subwayMode_name"/>**. Showing underground routes.  
@@ -346,7 +346,7 @@ When navigating through cities, you need a more contrasting view of public trans
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_hide"/>* 
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,rendering_category_hide"/>*
 
 </TabItem>
 
@@ -367,8 +367,6 @@ Sometimes we need to hide objects on the map for better vision. For example to h
 
 ### Road style
 
-Special settings for roads, where you can change the colors to match the road atlas or add high-contrast roads or bold outlines for roads.    
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
@@ -383,9 +381,11 @@ Special settings for roads, where you can change the colors to match the road at
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
-|Parameters and Description|   
+Special settings for roads, where you can change the colors to match the road atlas or add high-contrast roads or bold outlines for roads.
+
+|Parameters and Description|
 |------------|
 |**<Translate android="true" ids="rendering_value_default_name"/>**. Default style for highways. Look at [Map legend](../map-legend/index.md).|
 |![Map road style default](@site/static/img/map/map-road-style-default.png)|
@@ -407,13 +407,13 @@ Special settings for roads, where you can change the colors to match the road at
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,text_size"/>*     
+*<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,text_size"/>*
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,text_size"/>*   
+*<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,text_size"/>*
 
 </TabItem>
 
@@ -441,11 +441,11 @@ You can choose this setting by long-tap to "+" or "-" button on the screen or:
 <TabItem value="ios" label="iOS">  
 
 You can choose this setting by long-tap to "+" or "-" button on the screen or:  
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,map_magnifier"/>* 
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,map_magnifier"/>*
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
 - **75%**  
     ![Map magnifier 75%](@site/static/img/map/map-magnifier-75.png)
@@ -492,7 +492,7 @@ If the names on the map are not translated into the desired language by the OSM 
 
 If you have personal or 3rd party custom map style created according to [Specification](../../technical/osmand-file-formats/osmand-rendering-style.md), you can install it on your device in the following ways:
 
-- Copy the *.render.xml* file to the devices and open it with OsmAnd. 
+- Copy the *.render.xml* file to the devices and open it with OsmAnd.
 - Rendering styles can be exported and imported using [Standard import / export dialogs](../personal/import-export.md). So if you create an example *.osf* package, it will work as a plugin that you can share with other people.
 - You can then choose a map style from the menu.
 
