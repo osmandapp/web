@@ -168,9 +168,9 @@ You could manage application settings as [Global settings](../personal/global-se
 
 ### How to configure plugins
 
-[Plugins](../plugins/configure-plugins.md) greatly extend application functionality. Almost all plugins have their own [Map Actions](../map/map-context-menu.md), [Map Layers](../map/configure-map-menu.md), [Map Downloads](../start-with/download-maps.md) and [Settings](../plugins/#plugin-settings).  
+[Plugins](../plugins/index.md#configure-a-plugin) greatly extend application functionality. Almost all plugins have their own [Map Actions](../map/map-context-menu.md), [Map Layers](../map/configure-map-menu.md), [Map Downloads](../start-with/download-maps.md) and [Settings](../plugins/#plugin-settings).  
 
-You can enable / disable plugins via [Main menu](../start-with/main-menu.md) → [Plugins](../plugins/configure-plugins.md).  
+You can enable / disable plugins via [Main menu](../start-with/main-menu.md) → [Plugins](../plugins/index.md#configure-a-plugin).  
 
 <Tabs groupId="operating-systems">
 
@@ -194,7 +194,7 @@ To enable / disable plugins go to:
 
 </Tabs>
 
-[Read more](../plugins/configure-plugins.md) about OsmAnd plugins.
+[Read more](../plugins/index.md#configure-a-plugin) about OsmAnd plugins.
 
 
 ### How to use map

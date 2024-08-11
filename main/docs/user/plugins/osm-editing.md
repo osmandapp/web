@@ -25,7 +25,7 @@ With OsmAnd and the OSM editing plugin, you can easily contribute your own infor
 
 To use *OpenStreetMap editing* plugin, you have to make the following settings:    
 
-1. Enable [Plugin](../plugins/configure-plugins.md#enable--disable).  
+1. Enable [Plugin](../plugins/index.md#enable--disable).  
 2. Set OpenStreetMap editing  in any [profile](../personal/profiles.md).
 3. Enable the display of *OSM notes (online)* or *OSM edits* on the map in the [Configure map menu](../map/configure-map-menu.md/).
 

@@ -40,7 +40,7 @@ Trip recording plugin is used to create new tracks, display recorded tracks on t
 ## Setup 
 
 To start recording tracks, you need to make the following settings:  
-1. [Enable](../plugins/configure-plugins.md#enable--disable) the **Trip recording plugin**.  
+1. [Enable](../plugins/index.md#enable--disable) the **Trip recording plugin**.  
 2. Configure [Trip recording](#recording-settings) settings for the required [profile](../personal/profiles.md).  
 3. If needed, add [Trip recording widgets](#widgets) to the screen.   
 

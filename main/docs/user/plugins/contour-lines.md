@@ -68,8 +68,8 @@ For complete information, see the [License](https://github.com/osmandapp/OsmAnd/
 
 To display **Contour lines** and **Terrain (Hillshade, Slope)** data on the map:
 
-1. *Purchase*: [OsmAnd+, OsmAnd Maps+, or OsmAnd Pro purchase plan](../plugins/configure-plugins.md#purchase)
-2. [*Enable*](../plugins/configure-plugins.md#enable--disable) Topography plugin in the Plugins section of the Main menu.
+1. *Purchase*: [OsmAnd+, OsmAnd Maps+, or OsmAnd Pro purchase plan](../plugins/index.md#purchase)
+2. [*Enable*](../plugins/index.md#enable--disable) Topography plugin in the Plugins section of the Main menu.
 3. [*Download*](#download-maps): Contour lines, Hillshade, Slope, or Terrain map (3D) maps.
 4. *Enable and adjust*: Contour lines, Hillshade, or Slope for the map view.
 5. You can also watch [Youtube Tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  

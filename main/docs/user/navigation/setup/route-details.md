@@ -50,18 +50,6 @@ There are three ways to access the *Route Details menu*.
 
 Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../../navigation/routing/routing-types.md), some route details may not be displayed. In addition, the route details are highly dependent on the *OpenStreetMap data coverage*.
 
-### Displaying data in Android and iOS
-
-- ***Android list***.  
-   In Android, all the data and the [*Analyze on Map*](#analyse-on-map) button are in one list that you have to scroll through to see all the information.  
-
-- ***iOS tabs***.  
-   In iOS, the data is divided into two tabs.  
-   
-   ![Route details](@site/static/img/navigation/route/route_tabs_ios.png)  
-   - *Instructions*. Contains turn-by-turn information.
-   - *Analysis*. This tab contains all other information including the [*Analyze on Map*](#analyse-on-map) button.  
-
 
 ## Distance / time / CO2
 

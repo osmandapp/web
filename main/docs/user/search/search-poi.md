@@ -64,14 +64,6 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
 **Note.** To accomplish some of these tasks (locate addresses, POI) you will need to have the offline vector map file. Initially, the search is based on data located on the map in the visible area of the device screen. If you don't find nothing, OsmAnd propose to increase search radius.  
 
 
-### Search Query List
-
-The order of the elements in the list:
-- **Alphabet order**. The list of categories in the main tab of the search tool, as well as the list of categories of amenities in the сustom search and their inner values, are arranged in alphabetical order.
-- **Distance**. Elements in the internal list of the Category tab are arranged in order of distance from the given location.
-- **By importance**. Filter types are ordered from the most important or most used for a given category of POI.
-
-
 ## Categories POI Search
 
 <Tabs groupId="operating-systems">

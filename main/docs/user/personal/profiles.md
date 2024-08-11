@@ -368,7 +368,7 @@ You can choose the color of the profile elements, its icon and name, also assign
 
 ![Profile UI Customization Android](@site/static/img/personal/profiles/profile_ui_customization_android.png)  
 
-**NOTE:** To hide all controls of unused [plugins](../plugins/configure-plugins.md), disable them.  
+**NOTE:** To hide all controls of unused [plugins](../plugins/index.md#configure-a-plugin), disable them.  
 
 With the UI customization feature, you can adjust the number of items in actions such as [*<Translate android="true" ids="shared_string_drawer"/>*](../start-with/main-menu.md#customize-advanced-use-of-android), [*<Translate android="true" ids="configure_map"/>*](../map/configure-map-menu.md) and [*<Translate android="true" ids="context_menu_actions"/>*](../map/map-context-menu.md). Information about the number of added items out of all possible items can be found under the title of each feature. 
 
@@ -436,7 +436,7 @@ With the UI customization feature, you can adjust the number of items in actions
 ## Plugin Settings
 
 :::caution
-To access the plugin's settings, you must first [**enable the plugin**](../plugins/configure-plugins.md#enable--disable) in the *Plugin section of the Main menu*.
+To access the plugin's settings, you must first [**enable the plugin**](../plugins/index.md#enable--disable) in the *Plugin section of the Main menu*.
 :::
 
 <Tabs groupId="operating-systems">
@@ -459,7 +459,7 @@ To access the plugin's settings, you must first [**enable the plugin**](../plugi
 
 </Tabs>
 
-Plugins unlock additional features of the application and can be either [paid or free](../plugins/configure-plugins.md#purchase). Some plugins have their own [settings](../plugins/configure-plugins.md#plugin-settings), others do not. OsmAnd gives you the possibility to configure plugins for each profile separately.
+Plugins unlock additional features of the application and can be either [paid or free](../plugins/index.md#purchase). Some plugins have their own [settings](../plugins/index.md#plugin-settings), others do not. OsmAnd gives you the possibility to configure plugins for each profile separately.
 
 
 ### Trip Recording

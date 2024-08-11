@@ -25,7 +25,7 @@ OsmAnd provides several ways to get to the *Search tool* where the **Search Addr
 - When preparing to start a route, tap *Navigation → Set destination → Search field*.  
 
 
-## How to Use
+## Full text search
 
 <Tabs groupId="operating-systems">
 
@@ -46,39 +46,16 @@ OsmAnd provides several ways to get to the *Search tool* where the **Search Addr
 Search by Address simplifies the search and navigation process, ensures accuracy and usability, and reduces the time it takes to find the right address.  
 
 - **To use the Search Address function,** you have to [download a map](../start-with/download-maps.md) of the required area first.
-
 - **The search is based on the data located in the visible area of the map** on the device screen. If you do not find anything, OsmAnd offers to increase the search radius.
-
 - The address information in OsmAnd contains all [OSM tag keys](https://wiki.openstreetmap.org/w/index.php?title=Key:addr).
 
-You can perform an **Address Search** using 5 options such as:
-
-- [Select street](#select-street)
-- [Select city](#select-city)
-- [Postcode search](#postcode-search)
-- [Coordinates search](#coordinates-search)
-- **Nearest cities**  
-    This **displays a small list of cities around your location** or the locality you specified for *Select street* or *Select city*. Each field contains an icon corresponding to the size of the city, the name of the city, the distance from you to its center, and for Android the compass direction.
-
-
-### Search Query List
-
-**1.** The **order** of items in the list:
-- **Alphabetical order**. The list starts with unnamed items, if any, then numeric names followed by the names by letters.
-- **Ascending numerical order**. In the next search list, after entering the city and street, the house numbers are displayed in ascending order.
-
-**2.** Each field in the Address Search list contains **information** such as:
-- An icon that identifies the type of locality.
-- Part of an address, postal number, or coordinate area.
-- Distance from your current location or from the city center.
-- Additional information, such as the city's district.
 
 ### Supported formats
 
 See the [Search All](./search-all.md#basic-queries) article for a list of available queries and supported search formats.
 
 
-## Select city
+## Select City
 
 <Tabs groupId="operating-systems">
 
@@ -95,6 +72,9 @@ See the [Search All](./search-all.md#basic-queries) article for a list of availa
 </TabItem>
 
 </Tabs>
+
+**Nearest cities**  
+    This **displays a small list of cities around your location** or the locality you specified for *Select street* or *Select city*. Each field contains an icon corresponding to the size of the city, the name of the city, the distance from you to its center, and for Android the compass direction.
 
 This way of searching makes it easy to find specific locations within a selected locality, providing a convenient way to find addresses accurately and quickly. You can start searching for the needed address by determining the locality.   
 

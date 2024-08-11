@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-title:  Quick Action
+title:  Quick Action (Custom buttons)
 ---
 
 import Tabs from '@theme/Tabs';
@@ -214,7 +214,7 @@ When enabled, the quick action widget is located in the lower right corner above
 | *Several [Custom buttons](#custom-buttons) on the map screen* | ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_multi.png) |
 
 
-### Custom Buttons
+### Extra quick action widgets
 
 <Tabs groupId="operating-systems">
 
@@ -248,44 +248,6 @@ When enabled, the quick action widget is located in the lower right corner above
 
 - Created buttons are located in the *Configure screen → Buttons → Custom buttons* list and are **available for all application profiles**.
 
-
-#### Interaction with Custom Button
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Custom button Android](@site/static/img/widgets/interaction_with_custom_button_andr.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Custom button Android](@site/static/img/widgets/interaction_with_custom_button_ios.png)  
-
-</TabItem>
-
-</Tabs> 
-
-- When a custom button is created and enabled, it is displayed on the screen. [The button can be moved anywhere on the screen](#enable-widget), similar to a default [*Quick Action button*](#change-position-on-the-map).
-
-- Tapping a custom button instantly switches the selected action on or off.
-
-- If the action *Configure map → Change - Terrain color scheme* is added to the button, tapping it changes the selected color palettes in a loop.  
-
-- The [quick action menu](#overview) opens with a list of actions if more than one action has been added.
-
-<!-- ![Custom button Android](@site/static/img/widgets/custom_button_5_android.png) -->
-
-
-#### Rename and Delete Custom Button
-
-![Custom button Android](@site/static/img/widgets/custom_button_rename_andr.png)  ![Custom button Android](@site/static/img/widgets/custom_button_del_andr.png)  
-
-To manage custom buttons, you can tap one of them, then choose the *three-dot menu* in the upper right corner of the screen and select an action:
-
-- **Rename**. Allows you to change the name of this button.
-- **Delete**. Allows you to delete your button with all added actions.
 
 
 ## Action Types 

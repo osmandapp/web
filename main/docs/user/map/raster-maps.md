@@ -260,7 +260,7 @@ You can customize the zoom level to display and the transparency for Hillshade a
 The [**3D Relief** feature](../plugins/contour-lines.md#3d-relief) is a mapping technology that allows the visualization of terrain on a map using three-dimensional models. This feature adds elevation information to a normal two-dimensional map, which creates a 3D and depth effect and allows you to better visualize the terrain.  
 
 *To start using 3D Relief*:  
-You need to purchase [OsmAnd Pro purchase plan](../plugins/configure-plugins.md#purchase), enable the [Topography plugin](../plugins/contour-lines.md), and switch on the [*3D Relief*](../plugins/contour-lines.md#3d-relief) item in *Menu →  Configure map*.
+You need to purchase [OsmAnd Pro purchase plan](../plugins/index.md#purchase), enable the [Topography plugin](../plugins/contour-lines.md), and switch on the [*3D Relief*](../plugins/contour-lines.md#3d-relief) item in *Menu →  Configure map*.
 
 
 *How the 3D Relief feature works*:  
