@@ -18,6 +18,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
+Track Appearance is a customizable option in the OsmAnd app that allows you to personalize the visual display of tracks on the map. This feature makes it easier to distinguish between different tracks and understand their characteristics.
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
@@ -34,10 +36,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs> 
 
-Track Appearance is a customizable option in the OsmAnd app that allows you to personalize the visual display of tracks on the map. This feature makes it easier to distinguish between different tracks and understand their characteristics.
 
+## Setup
 
-## How to access
+:::tip note
+Some settings you can use only with *OsmAnd Pro* or *Maps+*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> and <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Free and Paid features.
+:::
 
 In the OsmAnd application, you can apply some settings by changing the appearance of the tracks, to better identify them on the map.  
 
@@ -47,12 +51,6 @@ There are three ways to access the Track Appearance menu:
 - Select Appearance from the [track recording context menu](../../plugins/trip-recording.md#сurrent-track-recording).  
 - Go to *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> →* **&#8942;** *→ <Translate android="true" ids="change_appearance"/>* for the tracks you have selected to be displayed on the map. 
 
-
-## Settings
-
-:::tip note
-Some settings you can use only with *OsmAnd Pro* or *Maps+*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> and <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Free and Paid features.
-:::
 
 ### Split Interval
 
@@ -101,22 +99,8 @@ With the *Width setting* you can choose the thickness of the track line based on
 - In the [*Tracks tab*](../../personal/tracks/manage-tracks.md#folder-menu) with the **Original** setting, different original width parameters can be retained for each track of the selected folder.
 - In the [*Configure Profile*](../../navigation/guidance/navigation-settings.md#customize-route-line) the route line can be set to the **Map Style** width, this is the default width for map specified by the OsmAnd application.
 
-<!-- Width  
-You can adjust the width of the displayed line of your route to match the width of the road or path on the map. For better visual identification, you can make the line width wider or narrower by adjusting it manually.
-- ***<Translate android="true" id="map_widget_renderer"/>*** – It's used with default width. You can see a full description of the map style by clicking there [Map style](../map/vector-maps.md#default-map-styles)  
-    ![map stule](@site/static/img/navigation/route/map_st_2.png)  ![map stule](@site/static/img/navigation/route/map_st.png)  ![map stule](@site/static/img/navigation/route/width_ms_ios.png)
-- ***Thin width / Medium width / Bold width*** – You can choose the width of the line according to the width of the road or highlight the line of the route on the map more strongly.  
-    ![width](@site/static/img/navigation/route/width.png)  ![width](@site/static/img/navigation/route/width_ios.png)  ![width](@site/static/img/navigation/route/width_med.png)
-- ***Custom*** – It allows you to show the line in some preferred width. Select the width using the slider.  
-    ![custom](@site/static/img/navigation/route/custom_1.png)  ![custom](@site/static/img/navigation/route/width_cus_ios.png)  ![custom](@site/static/img/navigation/route/custom_2.png)  
--->
-
 
 ### 3D Track
-
-:::tip subscribe
-3D Track is a paid feature that allows you to display tracks by elevation. Subscribe to *OsmAnd Pro* or* Maps+* for [Android](../../purchases/android.md#free-and-paid-features) or [iOS](../../purchases/ios.md#free-and-paid-features).
-:::
 
 <Tabs groupId="operating-systems">
 
@@ -166,14 +150,6 @@ Gaps in a GPX track can occur during recording, for example. This function (Andr
 Resets all settings to default values. 
 
 
-## Waypoints appearance 
-
-- Appearance of Points on the Track
-- Additional Visual Elements
-- Waypoints and Markers
-- Points on Track
-- Points Appearance on the Track
-
 
 ## Tracks Color Scheme
 
@@ -205,6 +181,5 @@ Resets all settings to default values.
 - [Tracks](../tracks/index.md)
 - [Tracks Context menu](../tracks/track-context-menu.md)
 - [Trip Recording](../../plugins/trip-recording.md)
-
 
 > *This article was last updated in August 2024*

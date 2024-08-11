@@ -125,7 +125,7 @@ The *Speed limit* option allows OsmAnd to announce when the current speed exceed
 
 - *Announce when exceeded*:  
     - *Speed limit tolerance*.  
-        Select an allowable speed deviation, between **-10 km** and **+20 km** (the speed is displayed in the *Units of speed* you set), from the [maximum legal speed limit](https://wiki.openstreetmap.org/wiki/Key:maxspeed) on the current road. When the selected speed limit tolerance is exceeded, a voice prompt is activated.  
+        Select an allowable speed deviation, on the screenshot between -10 kmh and +20 kmh (the speed is displayed in the *Units of speed* you set), from the [maximum legal speed limit](https://wiki.openstreetmap.org/wiki/Key:maxspeed) on the current road. When the selected speed limit tolerance is exceeded, a voice prompt is activated.  
 
 For [**Speedometer** widget](../../widgets/info-widgets.md#speedometer) in the app and for [Android Auto](../../navigation/auto-car.md#speedometer), [CarPlay](../../navigation/car-play.md#speedometer), this *Speed limit tolerance* setting affect the speed displayed in *Speed limit warning*.
 

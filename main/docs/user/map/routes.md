@@ -94,7 +94,7 @@ Colors by [network affiliation](https://wiki.openstreetmap.org/wiki/Key:osmc:sym
 Colors routes according to the type of [node network](https://wiki.openstreetmap.org/wiki/Node_Networks) (international, regional, or local).  
 ![Map routes - hiking node networks](@site/static/img/map/map-routes-hiking-node-networks.png)
 
-### Difficulty classification
+### Hiking segments (Difficulty classification)
 
 Determines the difficulty of hiking trails. Italian and Swiss classifications. Has a specific list of equipment requirements.  
 
@@ -231,21 +231,6 @@ Shows previously uploaded specially configured [user routes](https://osmand.net/
 To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../map/tracks/track-context-menu.md#info-panel). This will open the [Quick actions](../map/tracks/track-context-menu.md#quick-actions) button panel where you will have access to track actions such as changing [*Appearance*](./tracks/appearance.md), [*Navigation*](#route-navigation), or editing [*Plan a route*](../plan-route/create-route.md).
 
 
-### Route subtypes
-
-![Route info](@site/static/img/map/route_coloring_type_andr.png)
-
-Some routes have additional settings with which you can select the relevant coloring type for displaying them on the map.  
-
-Additional settings are available next to the route name in the&nbsp;  "**...|**"  &nbsp;menu. By default, if you do not select anything in the menu, the routes of the first type in the list will be displayed. But if you have made a selection, it is saved by the application and will be used for the current profile every time you enable the routes.  
-
-Coloring Routes by Type:
-
-- **Cycle routes**: *Route* and *Node networks*.
-- **Mountain bike routes**: *MTB scale* and *IMBA*.
-- **Hiking routes**: *OSMC*, *Network affiliation*, and *Node networks*.
-- **Difficulty classification**: *SAC scale* and *CAI scale*.
-- **Travel routes**: *Tracks*, *Travelbooks*, and *Points*.
 
 
 ### Quick Actions 
