@@ -112,7 +112,7 @@ All weather data is presented in the form of separate map layers. To see weather
 
 ### Combine maps  
 
-To get comprehensive weather information, you can use the map layers separately or easily combine them. Isolines of one specific type can also be added to the Weather layer.  
+To get comprehensive weather information, you can use the map layers separately or easily combine them. Isolines of one specific type can also be added to the Weather layer. Just tap to Layers or Isolines buttons on the screen.
 
 <Tabs groupId="operating-systems">
 
@@ -143,7 +143,7 @@ To switch the visibility of weather layers, you can use the *Quick Action* butto
 
 ### Cache  
 
-When the Weather tab is open, unless otherwise specified, the necessary weather information is uploaded online. On iOS devices, it is possible to use a pre-loaded [Weather forecast](#download-forecast-ios). On Android devices the weather information is automatically cashed after download and can be used offline until the forecast expires.  
+When the Weather tab is open, unless otherwise specified, the necessary weather information is uploaded online. On devices, it is possible to use a pre-loaded [Weather forecast](#download-forecast). The weather information is automatically cashed after download and can be used offline until the forecast expires.  
 
 :::tip
 On Android devices you can check when Weather data was downloaded by tapping the Weather widget. The OsmAnd development plugin should be turned on.  
@@ -159,7 +159,23 @@ If you want to use the weather forecast offline, you should download the weather
 
 &nbsp;  
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+![Weather plugin in Android](@site/static/img/plugins/weather/download_weather_android.png) ![Weather plugin in Android](@site/static/img/plugins/weather/download_weather_1_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
 ![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_ios.png) ![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_1_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+
 
 In the download forecast menu you can obtain information and set parameters to keep your weather data up to date.  
   
