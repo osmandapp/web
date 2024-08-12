@@ -96,7 +96,7 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 
 </Tabs>
 
-**Elevation information** is provided in all OsmAnd offline route profiles, with the exception of profiles that use [Straight line navigation](../routing/straight-line-routing.md). The elevation data is part of the OsmAnd Offline Maps and is calculated based on [Public SRTM sources](https://www.wikiwand.com/en/Shuttle_Radar_Topography_Mission).
+**Elevation information** is provided in all OsmAnd offline route profiles, with the exception of profiles that use [Straight line navigation](../routing/straight-line-routing.md). The elevation data is part of the OsmAnd Offline Maps and is calculated based on [Public SRTM sources](https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission).
 
 - *Altitude range*. Displays minimum / maximum elevation on the route.
 - *Average altitude*. Displays weighted average elevation on the route.
@@ -133,7 +133,7 @@ For complete information, see the [License](https://github.com/osmandapp/OsmAnd/
 
 </Tabs>
 
-The [graphs](../../map/tracks/track-context-menu.md#altitude--speed-graphs) visually displays information about the altitude and slope of your navigation route and your current position on this graph with the current altitude and slope. The graph is plotted on two axes. The X-axis is the distance on your route. The first Y-axis is the altitude above sea level, the value of which depends on the terrain and second Y-axis is the approximated [slope](https://www.wikiwand.com/en/Grade_(slope)). You can view elevation graph for the entire route or only for a selected interval by scaling the graph.  
+The [graphs](../../map/tracks/track-context-menu.md#altitude--speed-graphs) visually displays information about the altitude and slope of your navigation route and your current position on this graph with the current altitude and slope. The graph is plotted on two axes. The X-axis is the distance on your route. The first Y-axis is the altitude above sea level, the value of which depends on the terrain and second Y-axis is the approximated [slope](https://en.wikipedia.org/wiki/Grade_(slope)). You can view elevation graph for the entire route or only for a selected interval by scaling the graph.  
 
 - ***Zoom in/out***. By default, the graph shows the route from the current location to your destination point. You can use [two-finger movements](../../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right, forward on the route, and backward to the current location. *Such manipulations also refer to the visual block of information in the [Road Attributes](#road-attributes) block.*   
 
@@ -164,7 +164,7 @@ If data is present you can select one of the following types:
 
 - *Y-axis*: 
    - [*Altitude*](../../map/tracks/track-context-menu.md#altitude). This is the [process](https://wiki.openstreetmap.org/wiki/Altitude) of obtaining height above a fixed level.
-   - [*Slope*](https://wiki.openstreetmap.org/wiki/Key:incline). The [slope of the landform](https://www.wikiwand.com/en/Grade%20(slope)) means the tangent of the angle of inclination of the surface to the horizontal.
+   - [*Slope*](https://wiki.openstreetmap.org/wiki/Key:incline). The [slope of the landform](https://en.wikipedia.org/wiki/Grade_(slope)) means the tangent of the angle of inclination of the surface to the horizontal.
    - [*Speed*](../../map/tracks/track-context-menu.md#speed). 
    - Graphs with two types of data: *Altitude/Slope*, *Altitude/Speed*, *Slope/Speed*, *Animated zoom/Speed*.
 - *X-axis*: 
