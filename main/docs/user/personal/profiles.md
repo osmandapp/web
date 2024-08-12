@@ -22,7 +22,7 @@ OsmAnd provides a range of default profiles designed for different activities, s
 
 Certain profiles, such as *Skiing* and *Boat*, have additional features that only become available when the corresponding plugins are enabled. These plugins can be activated by navigating to *Menu → Plugins → Ski map view* or *Nautical map view*. This allows the profiles to be provided with the necessary features to meet the specific requirements of these activities.
 
-It's important to note that some profiles, such as **Truck, Motorcycle, Moped, Train, Aircraft, Boat and Horseback riding**, are not activated by default. To access and use these profiles, you need to manually enable them in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*. This approach allows you to keep your list of profiles organized and relevant, activating only those that are needed for a particular use case.
+It's important to note that some profiles, such as *Truck*, *Motorcycle*, *Moped*, *Train*, *Aircraft*, *Boat* and *Horseback riding*, are not activated by default. To access and use these profiles, you need to manually enable them in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*. This approach allows you to keep your list of profiles organized and relevant, activating only those that are needed for a particular use case.
 
 <Tabs groupId="operating-systems">
 
