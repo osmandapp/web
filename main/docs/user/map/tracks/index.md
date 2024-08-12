@@ -117,11 +117,11 @@ You can choose which tracks to show on the map and which to hide. You can do thi
 
 ### Track appearance
 
-Link
+You can modify track appearance. Read more about it [here](./appearance.md)
 
 ### Track context menu
 
-Link
+Tap to any track on the map or choosing it on [My Places](../../personal/myplaces.md) you open [Track Context menu](./track-context-menu.md).
 
 
 ### Analyze Track on Map  

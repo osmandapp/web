@@ -358,10 +358,10 @@ You can choose the color of the profile elements, its icon and name, also assign
 
 ***Note** (Android version): 3D icons are only available for [map rendering Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine), for map rendering [Version 1](../personal/global-settings.md#map-rendering-engine) icons have 2D view.
 
-
+<!--
 ### My Location Appearance
 
-
+-->
 ## UI Customization
 
 <InfoAndroidOnly />
@@ -510,7 +510,6 @@ Actions with selected profile:
     - This action is available only for *Android* and only for a *Custom profile*.
     - Default profiles cannot be deleted.
     - To add a profile go to *Menu → Settings → App profiles → + New profile*.
-
 
 ## Related Articles
 

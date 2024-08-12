@@ -60,6 +60,7 @@ Keep in mind that during navigation zoom can be controlled by **Auto zoom settin
 
 ### My location appearance
 
+You can modify icons of "My Location", read more about it [here](../personal/profiles.md#profile-appearance).
 
 ## Map magnifier
 
