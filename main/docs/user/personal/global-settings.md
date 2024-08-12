@@ -269,7 +269,7 @@ The application records the history of previously entered data (history) in the 
 
 ![General Settings Proxy Android](@site/static/img/personal/profiles/general_settings_proxy_android.png)   
 
-**<Translate android="true" ids="proxy_pref_title"/>** setting allows you to configure an [HTTP proxy](https://www.wikiwand.com/en/Proxy_server) for all network requests. You can set the *Proxy Host* and *Proxy Port*.  
+**<Translate android="true" ids="proxy_pref_title"/>** setting allows you to configure an [HTTP proxy](https://en.wikipedia.org/wiki/Proxy_server) for all network requests. You can set the *Proxy Host* and *Proxy Port*.  
 
 
 ## Other

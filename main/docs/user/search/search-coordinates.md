@@ -65,7 +65,7 @@ There are several ways to enter coordinates for the search. To use each of them,
 
     ![Search Coordinates Android](@site/static/img/search/coordinates_search_degrees_andr.png)  
 
-    **Decimal coordinates (degrees)**. In this format, latitude and longitude coordinates are written in decimal format, for example, 52.37022° latitude and 4.89517° longitude for Amsterdam. This input method is easy to use and is the most common. You can read more about Decimal coordinates format [here](https://www.wikiwand.com/en/Decimal_degrees#:~:text=Decimal%20degrees%20are%20an%20alternative,are%20south%20of%20the%20equator).  
+    **Decimal coordinates (degrees)**. In this format, latitude and longitude coordinates are written in decimal format, for example, 52.37022° latitude and 4.89517° longitude for Amsterdam. This input method is easy to use and is the most common. You can read more about Decimal coordinates format [here](https://en.wikipedia.org/wiki/Decimal_degrees).  
 
     - *Input rules*. Latitude and longitude coordinates are written in decimal format, where latitude ranges from -90 to 90 and longitude ranges from -180 to 180.
     - *Most commonly used*. Decimal coordinates are widely used in navigation applications, GPS devices, web maps, and other geopositioning services.  
@@ -90,7 +90,7 @@ There are several ways to enter coordinates for the search. To use each of them,
 
     ![Search Coordinates Android](@site/static/img/search/coordinates_search_UTM_andr.png)  
 
-    **UTM (Universal Transversal Mercator System)**. In this format, coordinates are specified using UTM zone, East and North directions. For example, for Amsterdam, the coordinates might be approximately as follows: zone 31, East direction 581000, North direction 5809000. Entering coordinates in UTM format may require some familiarity with the system and be more complex than other formats, but it provides good accuracy and meets global geopositioning standards. You can read more about the UTM format [here](https://www.wikiwand.com/en/Universal_Transverse_Mercator_coordinate_system).
+    **UTM (Universal Transversal Mercator System)**. In this format, coordinates are specified using UTM zone, East and North directions. For example, for Amsterdam, the coordinates might be approximately as follows: zone 31, East direction 581000, North direction 5809000. Entering coordinates in UTM format may require some familiarity with the system and be more complex than other formats, but it provides good accuracy and meets global geopositioning standards. You can read more about the UTM format [here](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system).
     - *Input Rules*. Coordinates are recorded in a format that uses the UTM zone and Easting and Northing offsets.
     - *Most commonly used*. UTM format is often used in surveying, mapping, and geographic information systems for measurement and navigation.
 
@@ -98,7 +98,7 @@ There are several ways to enter coordinates for the search. To use each of them,
 
     ![Search Coordinates Android](@site/static/img/search/coordinates_search_OLC_andr.png)  
 
-    **Open Location Code (OLC)**, also known as **Plus Code**, is a global location coding system. It is a combination of letters and numbers to indicate the latitude and longitude of any location on the planet. Example of an OLC code for Amsterdam: 9F3WCVWG+FP. In this example, "9F3WCVWG" indicates a coarse grid, and "+FP" specifies a location within that area. Read more [here](https://www.wikiwand.com/en/Open_Location_Code#:~:text=The%20Open%20Location%20Code%20).   
+    **Open Location Code (OLC)**, also known as **Plus Code**, is a global location coding system. It is a combination of letters and numbers to indicate the latitude and longitude of any location on the planet. Example of an OLC code for Amsterdam: 9F3WCVWG+FP. In this example, "9F3WCVWG" indicates a coarse grid, and "+FP" specifies a location within that area. Read more [here](https://en.wikipedia.org/wiki/Open_Location_Code).   
     - *Input Rules*.  
         - The OLC code consists of 4 to 14 characters, which can be letters from "C" to "Z" (except for "I" and "O") and numbers from "2" to "9".
         - The code begins with a global prefix that indicates a continent or area.
@@ -110,7 +110,7 @@ There are several ways to enter coordinates for the search. To use each of them,
 
     ![Search Coordinates Android](@site/static/img/search/coordinates_search_MGRS_andr.png)  
 
-    **MGRS (Military Grid Reference System)**. This is a coordinate system often used in military applications. It is based on the UTM system and is supplemented with an additional grid of squares. An example of coordinates in MGRS format for a location in Australia can be as follows: 55HBE1234567890. In this example, "55H" represents the MGRS zone and "BE" represents the square in which the location is located. "123456" represents the eastward offset and "7890" represents the northward offset within that square. MGRS are widely used in areas requiring high accuracy and geo-referencing. They are particularly useful in environments where addresses may not be clear or available, such as military operations or expeditions in remote areas. You can read more about the MGRS format [here](https://www.wikiwand.com/en/Military_Grid_Reference_System).  
+    **MGRS (Military Grid Reference System)**. This is a coordinate system often used in military applications. It is based on the UTM system and is supplemented with an additional grid of squares. An example of coordinates in MGRS format for a location in Australia can be as follows: 55HBE1234567890. In this example, "55H" represents the MGRS zone and "BE" represents the square in which the location is located. "123456" represents the eastward offset and "7890" represents the northward offset within that square. MGRS are widely used in areas requiring high accuracy and geo-referencing. They are particularly useful in environments where addresses may not be clear or available, such as military operations or expeditions in remote areas. You can read more about the MGRS format [here](https://en.wikipedia.org/wiki/Military_Grid_Reference_System).  
     - *Input rules*. The coordinates consist of an MGRS zone, a square, and two more digits indicating east and north offsets.
     - *Most commonly used*. The MGRS format is widely used in military navigation and communications, and can also be useful for outdoor enthusiasts and hikers. 
 

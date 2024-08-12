@@ -233,7 +233,7 @@ The **Terrain** menu includes [color scheme](#color-scheme) selection with the o
 
 - *Hillshade* uses dark shades to show slopes, peaks, and lowlands.  
 
-- *Slope* uses color to visualize the steepness of the terrain. You can read more about it [here](https://www.wikiwand.com/en/Grade_(slope)).  
+- *Slope* uses color to visualize the steepness of the terrain. You can read more about it [here](https://en.wikipedia.org/wiki/Grade_(slope)).  
 Each color corresponds to an angle of deviation from the horizontal.  
 
 - *Altitude*.
