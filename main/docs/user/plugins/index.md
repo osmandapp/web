@@ -13,7 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-> *This article was last updated in June 2024*
+
 
 ## Overview
 
@@ -27,7 +27,7 @@ Plugins can be internal, activated in the OsmAnd application, or external, separ
 In order to access a plugin's functionality, it must first be [enabled](#enable--disable), and some plugins require a [purchase](#purchase) before use. Then, in some cases, a specific map layer must be activated, or a user profile must be [configured](#plugin-settings).
 
 
-### Enable / disable
+### Enable / Disable
 
 <Tabs groupId="operating-systems">
 
@@ -59,7 +59,7 @@ Most plugins are available for free, only the plugins in the list below require 
 - [Nautical map view](../plugins/nautical-charts.md)
 - [Weather](../plugins/weather.md)
 
-Detailed information about the application purchase can be found in the [Purchase](../purchases/) section. 
+Detailed information about the application purchase can be found in the [Purchase](../purchases/) section.
 
 ### Plugin Features
 
@@ -93,7 +93,7 @@ OsmAnd Plugins may augment these Feature groups: **Layers**, **Widgets**, **Cont
 Only the OsmAnd development plugin and the OSM editing plugin change settings for all profiles. The remaining plugins are configured for each profile separately.  
 :::
 
-Most plugins provide specific profile or global settings, which can be accessed via: 
+Most plugins provide specific profile or global settings, which can be accessed via:
 
 - *Main menu → Plugins → Plugin name → Settings (&#x2699 for ios)* or  
 - *Main menu → Settings → Profile → [Plugin settings](../personal/profiles.md#plugin-settings)*.  
@@ -102,13 +102,13 @@ Most plugins provide specific profile or global settings, which can be accessed 
 
 <TabItem value="android" label="Android">
 
-![Settings plugin Android 1](@site/static/img/plugins/development/access_plugin_settings_andr_2.png) ![Settings plugin Android 2](@site/static/img/plugins/development/access_plugin_settings_andr_1.png)   
+![Settings plugin Android 1](@site/static/img/plugins/development/access_plugin_settings_andr_2.png) ![Settings plugin Android 2](@site/static/img/plugins/development/access_plugin_settings_andr_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Settings plugin iOS 1](@site/static/img/plugins/development/access_plugin_settings_ios_2.png) ![Settings plugin iOS 2](@site/static/img/plugins/development/access_plugin_settings_ios_1.png) 
+![Settings plugin iOS 1](@site/static/img/plugins/development/access_plugin_settings_ios_2.png) ![Settings plugin iOS 2](@site/static/img/plugins/development/access_plugin_settings_ios_1.png)
 
 </TabItem>
 
@@ -136,7 +136,7 @@ The following plugins provide their own settings:
 **<Translate android="true" ids="copy_from_other_profile"/>** - *plugin settings can be copied from another profile*.
 
 
-## Plugins list 
+## Plugins list
 
 
 ### [Wikipedia](./wikipedia.md)
@@ -199,7 +199,10 @@ The OsmAnd development plugin targets developers and experienced users. It allow
 
 OsmAnd Tracker helps you see where your contacts are on the map in OsmAnd. For Android only.  
 
-##  Create a custom plugin
+
+## Create a custom plugin
 
 You can create your own plugin by following [Custom plugin article](./custom.md).
 
+
+> *This article was last updated in August 2024*
