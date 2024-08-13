@@ -273,11 +273,13 @@ export async function getSearchResultIcon({ result, ctx, isCategory = false, ico
             svgData = ctx.poiIconCache[name];
         } else {
             const response = await fetch(iconUrl);
-            svgData = await response.text();
-            ctx.setPoiIconCache((prevState) => ({
-                ...prevState,
-                [name]: svgData,
-            }));
+            if (response.ok) {
+                svgData = await response.text();
+                ctx.setPoiIconCache((prevState) => ({
+                    ...prevState,
+                    [name]: svgData,
+                }));
+            }
         }
     } else {
         svgData = await getSvgIcon({ ctx, icon: name });

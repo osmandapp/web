@@ -166,7 +166,8 @@ export async function fetchPhotoProperties(photo) {
  */
 
 export function addWikiPlacesDefaultFilters(ctx, mainSearch = false) {
-    const defaultFilters = filters.filter((f) => f !== 'office');
+    const OFFICE_FILTER = 'office';
+    const defaultFilters = filters.filter((f) => f !== OFFICE_FILTER);
     ctx.setSearchSettings({
         ...ctx.searchSettings,
         selectedFilters: new Set(defaultFilters),

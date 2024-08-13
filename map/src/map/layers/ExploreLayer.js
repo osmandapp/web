@@ -137,8 +137,8 @@ export default function ExploreLayer() {
         if (ctx.currentObjectType === OBJECT_EXPLORE || settings.useWikiImages || settings.showOnMainSearch) {
             if (
                 !settings.selectedFilters ||
-                !areSetsEqual(filtersRef.current, settings.selectedFilters) ||
-                !ctx.wikiPlaces
+                !ctx.wikiPlaces ||
+                !areSetsEqual(filtersRef.current, settings.selectedFilters)
             ) {
                 filtersRef.current = settings.selectedFilters ?? null;
                 removeLayers();

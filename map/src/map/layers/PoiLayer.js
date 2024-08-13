@@ -139,6 +139,7 @@ export default function PoiLayer() {
                 params: {
                     locale: i18n.language,
                 },
+                apiCache: true,
                 signal: controller.signal,
             }
         );
@@ -233,8 +234,9 @@ export default function PoiLayer() {
         async function getPoiList() {
             setPrevTypesLength(_.cloneDeep(ctx.showPoiCategories.length));
             if (
-                ((!allPoiFound(zoom, prevZoom) && zoom !== prevZoom) || move || typesChanged()) &&
-                !_.isEmpty(ctx.showPoiCategories)
+                (!_.isEmpty(ctx.showPoiCategories) && !allPoiFound(zoom, prevZoom) && zoom !== prevZoom) ||
+                move ||
+                typesChanged()
             ) {
                 if (prevController) {
                     prevController.abort();
