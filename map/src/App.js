@@ -1,8 +1,8 @@
-import { React, useContext } from 'react';
+import { React } from 'react';
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 import GlobalFrame from './frame/components/GlobalFrame';
 import LoginDialog from './login/LoginDialog';
-import AppContext, { AppContextProvider } from './context/AppContext';
+import { AppContextProvider } from './context/AppContext';
 import DeleteAccountDialog from './login/DeleteAccountDialog';
 import { AppServices } from './services/AppServices';
 import './variables.css';
@@ -39,8 +39,6 @@ const NavigateGlobal = () => {
 };
 
 const App = () => {
-    const ctx = useContext(AppContext);
-
     return (
         <AppContextProvider>
             <BrowserRouter>
@@ -56,7 +54,7 @@ const App = () => {
                         <Route path={SEARCH_URL} element={<SearchMenu />}></Route>
                         <Route path={EXPLORE_URL} element={<ExploreMenu />}></Route>
                         <Route path={CONFIGURE_URL} element={<ConfigureMap />}></Route>
-                        <Route path={WEATHER_URL} element={<Weather location={ctx?.openMenu?.latlng} />}></Route>
+                        <Route path={WEATHER_URL} element={<Weather />}></Route>
                         <Route path={TRACKS_URL} element={<TracksMenu />}></Route>
                         <Route path={FAVORITES_URL} element={<FavoritesMenu />}></Route>
                         <Route path={NAVIGATE_URL} element={<RouteMenu />}></Route>

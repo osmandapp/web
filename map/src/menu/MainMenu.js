@@ -146,7 +146,7 @@ export default function MainMenu({
         {
             name: t('shared_string_weather'),
             icon: WeatherIcon,
-            component: <Weather location={ctx.openMenu?.latlng} />,
+            component: <Weather />,
             type: OBJECT_TYPE_WEATHER,
             show: true,
             id: 'se-show-menu-weather',
