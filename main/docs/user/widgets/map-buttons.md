@@ -77,7 +77,7 @@ The Compass button shows how the map is oriented on your device screen. For more
 
 -->
 
-### Buttons
+### Map orientation modes
 
 - ![Compass](@site/static/img/widgets/map_butt_manually_ios.png)  
 **Manually rotated**. In this mode you can manually rotate the map with a [two-pointer gesture (two-finger touch and rotate)](../map/interact-with-map.md#gestures) according to your preference. The orientation of the map does not depend on the direction of travel or the compass of the device, but is determined by the user.
