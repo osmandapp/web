@@ -22,7 +22,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Map buttons such as Zoom buttons, Search, Direction, Compass, My Location and Menu represent main controls on the map.
 
 
-## My Location & Zoom
+## My Location and Zoom
 
 ![Configure screen menu](@site/static/img/widgets/location_zoom_buttons.png)
 
@@ -64,7 +64,7 @@ Search button buttons provides quick access from the map to [search capabilities
 
 ## Compass
 
-The Compass button shows how the map is oriented on your device screen. For more information, go to the *Map* section of the [*Interact with map*](../map/interact-with-map.md#map-orientation--compass) article.   
+The Compass button shows how the map is oriented on your device screen. For more information, go to the *Map* section of the [*Interact with map*](../map/interact-with-map.md#map-orientation--compass) article.  
 
 <!--
 
@@ -77,23 +77,24 @@ The Compass button shows how the map is oriented on your device screen. For more
 
 -->
 
-#### Buttons
-
-- ![Compass](@site/static/img/widgets/map_butt_north_up_ios.png)   
-**North is up**. In this mode, the map is oriented so that the North is always at the top of the screen. Regardless of the direction in which you move the device, the map remains static and you can see your position in relation to your surroundings.  
-   - for **Android** version it has hard lock the North mode (without manual rotation with twor-finger touch & rotate). 
-   - for **iOS** version you can rotate it manually with a [two-pointer gesture (two-finger touch & rotate)](../map/interact-with-map.md#gestures), and in this case, the map orientation mode will change to "Manually rotated". 
-- ![Compass](@site/static/img/widgets/map_butt_movem_dir_ios.png)   
-**Movement direction**. In this mode, the map is oriented according to the direction of your device. For example, if you turn to the right, the map also rotates so that the right side of the screen corresponds to the direction of movement. For details, go to [*Rotate map by bearing*](../map/interact-with-map#rotate-map-by-bearing).   
-
-- ![Compass](@site/static/img/widgets/map_butt_compas_dir_ios.png)  
-**Compass direction**. In this mode, the map is oriented according to the device's compass. In this way, the north of the map corresponds to real north and you can see the orientation of the map in relation to the surrounding terrain. 
+### Buttons
 
 - ![Compass](@site/static/img/widgets/map_butt_manually_ios.png)  
-**Manually rotated**. In this mode you can manually rotate the map with a [two-pointer gesture (two-finger touch & rotate)](../map/interact-with-map.md#gestures) according to your preference. The orientation of the map does not depend on the direction of travel or the compass of the device, but is determined by the user. 
+**Manually rotated**. In this mode you can manually rotate the map with a [two-pointer gesture (two-finger touch and rotate)](../map/interact-with-map.md#gestures) according to your preference. The orientation of the map does not depend on the direction of travel or the compass of the device, but is determined by the user.
+
+- ![Compass](@site/static/img/widgets/map_butt_movem_dir_ios.png)  
+**Movement direction**. In this mode, the map is oriented according to the direction of your device. For example, if you turn to the right, the map also rotates so that the right side of the screen corresponds to the direction of movement. For details, go to [*Rotate map by bearing*](../map/interact-with-map#rotate-map-by-bearing).
+
+- ![Compass](@site/static/img/widgets/map_butt_compas_dir_ios.png)  
+**Compass direction**. In this mode, the map is oriented according to the device's compass. In this way, the north of the map corresponds to real north and you can see the orientation of the map in relation to the surrounding terrain.
+
+- ![Compass](@site/static/img/widgets/map_butt_north_up_ios.png)  
+**North is up**. In this mode, the map is oriented so that the North is always at the top of the screen. Regardless of the direction in which you move the device, the map remains static and you can see your position in relation to your surroundings.  
+   - for **Android** version it has hard lock the North mode (without manual rotation with twor-finger touch and rotate).
+   - for **iOS** version you can rotate it manually with a [two-pointer gesture (two-finger touch and rotate)](../map/interact-with-map.md#gestures), and in this case, the map orientation mode will change to *Manually rotated*.
 
 
-#### Display Options
+### Display Options
 
 <Tabs groupId="operating-systems">
 
@@ -113,16 +114,19 @@ The Compass button shows how the map is oriented on your device screen. For more
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
 The compass icon on the button always points to the North. You can select how the compass button is displayed on the screen.
-- *Always visible* - the button does not disappear from the screen. 
-- *Always hidden* - in this case, you will not be able to change the map orientation quickly, but the button will not take up space on the screen.
-- *Visible if map is rotated* - the button is not visible while the compass is pointing the North at the top edge of your device.  
+
+- **Always visible** - the button does not disappear from the screen.
+- **Always hidden** - in this case, you will not be able to change the map orientation quickly, but the button will not take up space on the screen.
+- **Visible if map is rotated** - the button is not visible while the compass is pointing the North at the top edge of your device.  
 
 :::tip
+
 1. Double tap (Android), One tap (iOS) the Compass button in the upper left corner of the screen, if visible, to switch the [map orientation mode](../map/interact-with-map.md).
 2. You can change the map orientation mode by long-tapping the Compass button. This action opens the [*Map orientation*](../map/interact-with-map.md#map-orientation-modes#map-orientation-modes) screen.
+
 :::
 
 
@@ -150,14 +154,18 @@ The compass icon on the button always points to the North. You can select how th
 
 - *<Translate android="true" ids="shared_string_hidden"/>*. If this mode is selected for a button, you have to use a gesture to change the map view. Tap the map with two fingers and move them up and down to adjust the map's tilt.  
 - *<Translate android="true" ids="shared_string_visible"/>*. The button is always displayed on the map screen.
-- *<Translate android="true" ids="visible_in_3d_mode"/>*. The button is displayed on the map screen when you change the map view with a [*two-finger and move*](../map/interact-with-map.md#gestures) gesture.   
+- *<Translate android="true" ids="visible_in_3d_mode"/>*. The button is displayed on the map screen when you change the map view with a [*two-finger and move*](../map/interact-with-map.md#gestures) gesture.  
 
-Additional settings for 3D Mode.  
+### Additional settings  
 
-1. **Display the button**. (*For Android*) The setting for the *3D Mode* button appears in the Configure screen list only if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.  
+1. **Display the button**. (*For Android*) The setting for the *3D Mode* button appears in the Configure screen list only if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.
+
 2. **Saves the angle**. After switching to 3D mode and changing the angle manually with a gesture, the angle is saved and used the next time 3D mode is activated. This option is only saved for the profile selected at the time.
-3. **Moving**. You can place the button anywhere on the screen of your device. To do this, hold down the button and without taking your finger off, drag it to the required place.  
+
+3. **Moving**. You can place the button anywhere on the screen of your device. To do this, hold down the button and without taking your finger off, drag it to the required place.
+
 4. **Button position**. The position of the button on the map on the application screen is saved separately for each profile.
+
 5. **Recommendation**. It is recommended to download and enable the [Hillshade map](../plugins/contour-lines.md#configure-map-view) for the selected region to improve the user experience.
 
 
@@ -170,4 +178,4 @@ Additional settings for 3D Mode.
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *This article was last updated in March 2024*
+> *This article was last updated in August 2024*
