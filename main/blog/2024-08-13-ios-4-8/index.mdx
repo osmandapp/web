@@ -35,6 +35,7 @@ Thank you for your continued support of OsmAnd. Have a safe journey!
 
 - New [Speedometer widget](#speedometer-widget) compatible with [CarPlay](#speedometer-for-carplay).
 - Added [Turn-by-turn instructions](#turn-by-turn-instructions) to the route details.
+- The Route detail menu has been updated with the [road side indicator](#road-side-indicator) information.
 - The new [Add action screen](#quick-actions-tool-update) of the Quick Actions tool has been updated.
 - Updated the ability to customize the map screen by adding multiple [Quick Action buttons](#custom-buttons).
 - Improvements new visualization and coloring options for the [3D track view](#3d-track-improvements).
@@ -44,7 +45,6 @@ Thank you for your continued support of OsmAnd. Have a safe journey!
 - [Weather UI](#weather-tool-improvements) has been updated with layer animations and improved label visibility.
 - Added [smooth transitions](#smooth-transitions) when zooming in 3D mode.
 - [Location position on screen](#location-position-on-screen) setting has been moved to the Configure screen menu.
-- The Route detail menu has been updated with the [road side indicator](#road-side-indicator) information.
 - Added a separate [Speed limit navigation alert](#separate-speed-limit-alert) in the navigation settings menu.
 - Removed login/password authorization method in [OpenStreetMap Editing plugin](#login-to-openstreetmap).
 - [Optional updates](#optional-updates).
@@ -69,6 +69,15 @@ The [Speedometer widget](https://osmand.net/docs/user/navigation/car-play#speedo
 
 ![Navigation route Android](@site/static/img/navigation/route/navigation_turn_ios.png) 
 
+## Road Side Indicator
+
+Added Road side indicator for [Route Details](https://osmand.net/docs/user/navigation/setup/route-details).  
+The angle between the Destination (*Bearing from the last point*) and the last segment (*Bearing to the last 2 points of the route*) is measured and divided into 3 sectors of 120 degrees. 
+* `-60 °`&nbsp; &nbsp; to &nbsp; &nbsp;`+60 °`&nbsp; &nbsp; = straight
+* `-180 °`&nbsp; &nbsp; to &nbsp; &nbsp;`-60 °`&nbsp; &nbsp; = left
+* `60 °`&nbsp; &nbsp; to &nbsp; &nbsp;`180 °`&nbsp; &nbsp; = right
+
+![Side indication](./img/side_indication.png)
 
 ## Quick Actions Tool Update
 
@@ -180,17 +189,6 @@ The [Location position on screen](https://osmand.net/docs/user/widgets/configure
 _Menu → Configure screen → Other → Location position on screen_
 
 ![Widget page](@site/static/img/widgets/conf_screen_display_position_ios.png) 
-
-
-## Road Side Indicator
-
-Added Road side indicator for [Route Details](https://osmand.net/docs/user/navigation/setup/route-details).  
-The angle between the Destination (*Bearing from the last point*) and the last segment (*Bearing to the last 2 points of the route*) is measured and divided into 3 sectors of 120 degrees. 
-* `-60 °`&nbsp; &nbsp; to &nbsp; &nbsp;`+60 °`&nbsp; &nbsp; = straight
-* `-180 °`&nbsp; &nbsp; to &nbsp; &nbsp;`-60 °`&nbsp; &nbsp; = left
-* `60 °`&nbsp; &nbsp; to &nbsp; &nbsp;`180 °`&nbsp; &nbsp; = right
-
-![Side indication](./img/side_indication.png)
 
 
 ## Separate Speed Limit Alert
