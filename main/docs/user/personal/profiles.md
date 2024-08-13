@@ -168,8 +168,9 @@ In this section you can set parameters of units and formats for chosen applicati
 |            | <Translate android="true" ids="driving_region_europe_asia"/>   | <Translate android="true" ids="right_side_navigation"/>, <Translate android="true" ids="si_km_m"/>  |
 |            | <Translate android="true" ids="driving_region_us"/>   |  <Translate android="true" ids="right_side_navigation"/>, <Translate android="true" ids="si_mi_feet"/>  |
 |            | <Translate android="true" ids="driving_region_canada"/>   | <Translate android="true" ids="right_side_navigation"/>, <Translate android="true" ids="si_km_m"/>   |
-|            | <Translate android="true" ids="driving_region_uk"/>   |  <Translate android="true" ids="left_side_navigation"/>, <Translate android="true" ids="si_mi_feet"/>   |
+|            | UK and similar  |  <Translate android="true" ids="left_side_navigation"/>, <Translate android="true" ids="si_mi_meters"/>   |
 |            | <Translate android="true" ids="driving_region_japan"/>   | <Translate android="true" ids="left_side_navigation"/>, <Translate android="true" ids="si_km_m"/>   |
+|            | India   | <Translate android="true" ids="left_side_navigation"/>, <Translate android="true" ids="si_km_m"/>   |
 |            | <Translate android="true" ids="driving_region_australia"/>   |  <Translate android="true" ids="left_side_navigation"/>, <Translate android="true" ids="si_km_m"/>  |
 |*<Translate android="true" ids="unit_of_length"/>*| <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
 |          | <Translate android="true" ids="si_mi_feet"/> | 0.62 ml / 3281 ft (1000 m) |
