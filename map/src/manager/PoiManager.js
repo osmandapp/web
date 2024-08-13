@@ -88,6 +88,7 @@ async function getTopPoiFilters() {
 
 async function searchPoiCategories(search) {
     let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi-categories`, {
+        apiCache: true,
         params: {
             search: search,
             locale: i18n.language,

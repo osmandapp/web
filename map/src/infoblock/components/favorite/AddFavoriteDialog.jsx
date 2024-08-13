@@ -60,8 +60,8 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
     }, [ctx.addFavorite]);
 
     function getDefaultFavIcon() {
-        if (selectedPoi) {
-            return selectedPoi.poi?.options?.[FINAL_POI_ICON_NAME];
+        if (selectedPoi && selectedPoi.poi?.options?.[FINAL_POI_ICON_NAME]) {
+            return selectedPoi.poi.options[FINAL_POI_ICON_NAME];
         }
         return MarkerOptions.DEFAULT_WPT_ICON;
     }

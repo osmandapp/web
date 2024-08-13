@@ -150,14 +150,22 @@ export default function PoiLayer() {
     }
 
     useEffect(() => {
-        if (map) {
-            map.on('zoomend', () => {
-                setZoom(map.getZoom());
-            });
+        const handleZoomEnd = () => {
+            setZoom(map.getZoom());
+        };
 
-            map.on('dragend', () => {
-                setMove(true);
-            });
+        const handleDragEnd = () => {
+            setMove(true);
+        };
+
+        if (map) {
+            map.on('zoomend', handleZoomEnd);
+            map.on('dragend', handleDragEnd);
+
+            return () => {
+                map.off('zoomend', handleZoomEnd);
+                map.off('dragend', handleDragEnd);
+            };
         }
     }, [map]);
 

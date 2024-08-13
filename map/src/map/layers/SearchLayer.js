@@ -26,6 +26,7 @@ export const SEARCH_TYPE_CATEGORY = 'category';
 export const SEARCH_LAYER_ID = 'search-layer';
 export const SEARCH_ICON_MAP_OBJ = 'address';
 export const SEARCH_ICON_MAP_OBJ_URL = '/map/images/map_icons/ic_action_marker_dark.svg';
+export const ZOOM_TO_MAP = 17;
 
 export function findFeatureGroupById(map, id) {
     let foundGroup = null;
@@ -47,14 +48,22 @@ export default function SearchLayer() {
     const [selectedCategory, setSelectedCategory] = useState(null);
 
     useEffect(() => {
-        if (map) {
-            map.on('zoomend', () => {
-                setZoom(map.getZoom());
-            });
+        const handleZoomEnd = () => {
+            setZoom(map.getZoom());
+        };
 
-            map.on('dragend', () => {
-                setMove(true);
-            });
+        const handleDragEnd = () => {
+            setMove(true);
+        };
+
+        if (map) {
+            map.on('zoomend', handleZoomEnd);
+            map.on('dragend', handleDragEnd);
+
+            return () => {
+                map.off('zoomend', handleZoomEnd);
+                map.off('dragend', handleDragEnd);
+            };
         }
     }, [map]);
 
@@ -102,7 +111,7 @@ export default function SearchLayer() {
         if (ctx.zoomToMapObj) {
             const lat = ctx.zoomToMapObj.geometry.coordinates[1];
             const lon = ctx.zoomToMapObj.geometry.coordinates[0];
-            map.setView([lat, lon], 17);
+            map.setView([lat, lon], ZOOM_TO_MAP);
         }
     }, [ctx.zoomToMapObj]);
 

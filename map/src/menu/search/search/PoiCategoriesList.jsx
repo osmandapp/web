@@ -7,7 +7,7 @@ import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.
 import gStyles from '../../gstylesmenu.module.css';
 import styles from '../search.module.css';
 import Loading from '../../errors/Loading';
-import PoiManager, { translatePoi } from '../../../manager/PoiManager';
+import PoiManager from '../../../manager/PoiManager';
 import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 
 export default function PoiCategoriesList({

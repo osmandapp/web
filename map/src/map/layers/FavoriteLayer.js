@@ -7,6 +7,7 @@ import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDi
 import FavoritesManager, { FAVORITE_FILE_TYPE, FAVORITE_STORAGE } from '../../manager/FavoritesManager';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
 import _, { isEmpty } from 'lodash';
+import { ZOOM_TO_MAP } from './SearchLayer';
 
 const FavoriteLayer = () => {
     const ctx = useContext(AppContext);
@@ -130,7 +131,7 @@ const FavoriteLayer = () => {
                         ctx.selectedGpxFile.markerCurrent.layer._latlng.lat,
                         ctx.selectedGpxFile.markerCurrent.layer._latlng.lng,
                     ],
-                    17
+                    ZOOM_TO_MAP
                 );
                 delete ctx.selectedGpxFile.zoom;
             }

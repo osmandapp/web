@@ -307,7 +307,7 @@ async function getWptTags(obj, type, ctx) {
         }
     }
 
-    res = res.filter((t) => !t.key.includes(WEB_PREFIX));
+    res = res.filter((t) => !t.key.startsWith(WEB_PREFIX));
 
     return { res, id, type: typeTag, subtype: subtypeTag };
 }
