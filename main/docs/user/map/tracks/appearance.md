@@ -34,7 +34,7 @@ Track Appearance is a customizable option in the OsmAnd app that allows you to p
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
 
 ## Setup
@@ -46,10 +46,11 @@ Some settings you can use only with *OsmAnd Pro* or *Maps+*. <a href="https://os
 In the OsmAnd application, you can apply some settings by changing the appearance of the tracks, to better identify them on the map.  
 
 There are three ways to access the Track Appearance menu:
+
 - Go to the *My Places* menu and tap any available track in the list (*Menu → My Places → Tracks*), select the Appearance icon in the [Track Context menu](../../map/tracks/track-context-menu.md#overview) in the Overview section.
 - Tap the needed track on the map and select the Appearance icon in the Overview section.
 - Select Appearance from the [track recording context menu](../../plugins/trip-recording.md#сurrent-track-recording).  
-- Go to *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> →* **&#8942;** *→ <Translate android="true" ids="change_appearance"/>* for the tracks you have selected to be displayed on the map. 
+- Go to *<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> →* **&#8942;** *→ <Translate android="true" ids="change_appearance"/>* for the tracks you have selected to be displayed on the map.
 
 
 ### Split Interval
@@ -60,7 +61,7 @@ Select the interval at which distance or time stamps are displayed on the track.
 
 ### Direction Arrows
 
-![Track menu Appearance direction arrows Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png) 
+![Track menu Appearance direction arrows Android](@site/static/img/map/track_appearance_menu_direction_arrows_android.png)
 
 Select the interval at which distance or time stamps are displayed on the track.  
 
@@ -72,9 +73,9 @@ Allows you to select whether or not to show the start and end icons of track seg
 
 ### Color
 
-![Appearance](@site/static/img/map/appearance_color_andr.png) 
+![Appearance](@site/static/img/map/appearance_color_andr.png)
 
-Allows to display the track line in any color and transparency, or select coloring according to the map legend. If necessary data on the track sections are missing, such sections are displayed in gray color. 
+Allows to display the track line in any color and transparency, or select coloring according to the map legend. If necessary data on the track sections are missing, such sections are displayed in gray color.
 
 - *<Translate ios="true" ids="shared_string_color"/>:* *<Translate android="true" ids="track_coloring_solid"/>*, *<Translate android="true" ids="shared_string_speed"/>* and *<Translate android="true" ids="altitude"/>* are free color settings. If *Speed* and *Altitude* are not active, it means that the track does not contain this data.  
 
@@ -88,6 +89,7 @@ Allows to display the track line in any color and transparency, or select colori
 ![Track menu Appearance Track Thickness Android](@site/static/img/map/track_appearance_menu_track_thickness_android.png)   ![Track Appearance](@site/static/img/map/track_appearance_width_andr.png)  
 
 You can customize the appearance of the track in several menus of the application:
+
 - [*Track → Appearance*](../../personal/tracks/manage-tracks.md#folder-menu).
 - [*Navigation settings → Customize route line*](../../navigation/guidance/navigation-settings.md#customize-route-line).
 - [*My Places → Tracks tab → any folder → Default appearance*](../../personal/tracks/manage-tracks.md#folder-menu).
@@ -128,7 +130,7 @@ With the *Width setting* you can choose the thickness of the track line based on
     - *None*, &nbsp;*Solid*, &nbsp;*Downward Gradient*, &nbsp;*Upward Gradient*.
     - Additional options for Android: &nbsp;*Altitude*, &nbsp;*Slope*, &nbsp;*Speed*.
 
-- **<Translate android="true" ids="track_line"/>**. Decide where to add a line to the 3D track for better visibility. 
+- **<Translate android="true" ids="track_line"/>**. Decide where to add a line to the 3D track for better visibility.
     - *Top*, &nbsp;*Bottom*, &nbsp;*Top and bottom*.
 
 - **<Translate android="true" ids="vertical_exaggeration"/>**. Adjust the level of vertical exaggeration for the 3D track.  
@@ -147,10 +149,33 @@ Gaps in a GPX track can occur during recording, for example. This function (Andr
 
 ### Reset to Original
 
-Resets all settings to default values. 
+Resets all settings to default values.
 
 
+## Change Tracks Appearance in My Places
 
+<InfoAndroidOnly />
+
+![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_1_andr.png)  ![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_2_andr.png)
+
+
+The display of tracks can be changed one by one and in groups selected from the *My Places* menu in the [Tracks](../../personal/tracks/manage-tracks.md) tab. This tab automatically displays all tracks ever recorded, created, or imported. They are organized by folder or displayed as a list below them.  
+
+Tap the *three-dot menu* in the field with the required [track folder](../../personal/tracks/manage-tracks.md#folder-menu) to open the menu. In it, you can change the appearance of all included tracks using the **Change Default Appearance** option.  
+
+With [*Select*](../../personal/tracks/manage-tracks.md#selection-mode), you can change the appearance of certain tracks in the selected folder or in the whole list of the Tracks tab. To go to **Change Appearance**, select the *three-dot menu* in the upper right corner of the Tracks tab screen and tap *Select*. Then tap the *three-dot menu* at the top of the screen and select *Change Appearance*.
+
+- **Direction arrows**. Adds directional indicators to a track line in the form of arrows along that track.  
+    - States: *Unchanged*, &nbsp;*Original*, &nbsp;*On*, &nbsp;*Off*.
+- **Show start and finish icons**. Adds start and end point indicators to the track line.  
+    - States: *Unchanged*, &nbsp;*Original*, &nbsp;*On*, &nbsp;*Off*.
+- **Color**. Allows you to select the appropriate type of track coloring.
+- **Width**. Allows you to select a preset or manually configured track line width.
+- **Split interval**. Select the interval at which distance or time marks on the track will be displayed.  
+    - States: *Unchanged*, &nbsp;*Original*, &nbsp;*Select*: *Time* or *Distance*.
+
+
+<!--
 ## Tracks Color Scheme
 
 <Tabs groupId="operating-systems">
@@ -167,10 +192,11 @@ Resets all settings to default values.
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
 - All colors.
 - Add and edit.
+-->
 
 
 ## Related Articles

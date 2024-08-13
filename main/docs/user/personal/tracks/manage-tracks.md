@@ -20,14 +20,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Manage Tracks
 
-After recording and saving, tracks can be managed as follows:    
+After recording and saving, tracks can be managed as follows:
 
 - In [*My Places*](../../personal/myplaces.md), you can view all [GPX data](https://en.wikipedia.org/wiki/GPS_Exchange_Format) that has ever been recorded.
 - In [*Configure map*](../../map/tracks/index.md), select a specific track and display it on the map.
-- With the [*Context menu*](../../map/tracks/track-context-menu.md) of the track on the map, so that to adjust the appearance, to update points on the route, to view segments, to start navigation along the track/segment, and/or other options. 
+- With the [*Context menu*](../../map/tracks/track-context-menu.md) of the track on the map, so that to adjust the appearance, to update points on the route, to view segments, to start navigation along the track/segment, and/or other options.
 
 
-### View All Tracks 
+### View All Tracks
 
 <Tabs groupId="operating-systems">
 
@@ -70,19 +70,21 @@ All tracks ever recorded, created or imported are automatically displayed in the
 </Tabs>  
 
 To open the folder menu, you need to:
+
 - *Android* - tap the three-dot menu in the field with the required folder.
 - *iOS* - to make a long-tap the field of the folder.
 
 Actions:
+
 - **Name**. Displays the selected folder name, creation date and the number of tracks it contains.
 - **Show all tracks on the map** (*Android only*). Shows all tracks in the folder on the map. It is not recommended, if there are a lot of tracks, the device may freeze.
 - **Edit name** (*Android*) / **Rename** (*iOS*). Changing the folder name.
 - [*Change default appearance*](../../map/tracks/appearance.md) (*Android*) / **Appearance** (*iOS*). You can change the appearance of all tracks in a folder.
 - [*Export*](../../personal/import-export.md). You go to the *Menu → Settings → Actions* tab, where you can export all the tracks in the folder as an [OSF file](../../personal/import-export.md#export).
 - [**Move**](#context-menu-in-my-places). You can move the selected folder to another existing folder or create a new one.
-- [*Delete folder*](#delete-folder). Allow you to delete a folder. A warning message will appear on the display. The deletion will be irreversible. 
+- [*Delete folder*](#delete-folder). Allow you to delete a folder. A warning message will appear on the display. The deletion will be irreversible.
 
-####  Delete Folder
+#### Delete Folder
 
 <Tabs groupId="operating-systems">
 
@@ -105,6 +107,7 @@ Actions:
 </Tabs>  
 
 You can delete a folder with all the tracks it contains. To do this:
+
 - Tap the three-dot menu of the folder you want to delete.
 - At the bottom of the menu, find the Delete Folder option.
 - **NOTE** that this action is irreversible.
@@ -116,7 +119,7 @@ You can delete a folder with all the tracks it contains. To do this:
 
 ![My Places with tracks in Android](@site/static/img/personal/tracks/dashboard_andr.png)  
 
-At the bottom of the list in the _Tracks_ tab, and below the list of tracks **in each of your folders**, there is an information section that allows you to view the overall summary statistics for the tracks in the selected folder. All values are displayed in the [units](../../personal/profiles.md#units--formats) you have selected.   
+At the bottom of the list in the *Tracks* tab, and below the list of tracks **in each of your folders**, there is an information section that allows you to view the overall summary statistics for the tracks in the selected folder. All values are displayed in the [units](../../personal/profiles.md#units--formats) you have selected.
 
 - *Number of **Tracks** in the folder*. Displays the number of tracks contained in the selected folder.
 - *Total sum of* **Distances**. The total length of all tracks in the selected folder, measured in in the units you have selected, is displayed.
@@ -148,18 +151,20 @@ At the bottom of the list in the _Tracks_ tab, and below the list of tracks **in
 
 </Tabs>  
 
-Each track, like folders, has its menu. To open it: 
+Each track, like folders, has its menu. To open it:
+
 - *Android* - tap the three-dot menu in the field with the required track.
 - *iOS* - long-tap the required track in the list.
 
 Menu with actions:
+
 - **Show on map**. Displays selected tracks on the map to provide a visual representation of their location.
 - **Appearance** (*iOS only*). You can choose the [appearance of tracks](../../map/tracks/appearance.md).
-- **Navigation** (*iOS only*). Starts [navigation](../../navigation/setup/gpx-navigation.md) on the selected track. 
-- **Analyze on map (Android) / Analyze (iOS)**. Opens the [Analyse on map](../../navigation/setup/route-details.md#analyse-on-map) tool in Route Details. 
+- **Navigation** (*iOS only*). Starts [navigation](../../navigation/setup/gpx-navigation.md) on the selected track.
+- **Analyze on map (Android) / Analyze (iOS)**. Opens the [Analyse on map](../../navigation/setup/route-details.md#analyse-on-map) tool in Route Details.
 - **Share**. Allows you to share the selected track.
 - **Upload modifications to OSM** (*iOS only*). You can [upload the changes](../../plugins/osm-editing.md#gps-track) you have created to *OpenStreetMap*.
-- **Edit** (*iOS only*). This item allows you to make changes to the track using the [Plan a route](../../plan-route/create-route.md#modify-gpx-track) tool. 
+- **Edit** (*iOS only*). This item allows you to make changes to the track using the [Plan a route](../../plan-route/create-route.md#modify-gpx-track) tool.
 - **Duplicate** (*iOS only*). Allows you to create a copy of the selected track.
 - **Rename**. Item to change the name of the selected track.
 - **Move**. Gives you the ability to move the selected track to a specified folder.
@@ -173,7 +178,7 @@ Menu with actions:
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>* 
+*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
 
 ![Tracks and Routes](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Tracks and Routes](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
 
@@ -190,11 +195,12 @@ Menu with actions:
 </Tabs>  
 
 1. **Actions**.
-- **Search**. Opens the track name search screen with a list of all existing tracks and the ability to sort them.  
-- **Cancel**. Closes the Search without applying the changes.
-- **Import**. Opens a list of files on your device for importing tracks. In Android, it is located in the three-dot menu.
-- [Change appearance](../../map/tracks/appearance.md) (*Android only, located in the three-dot menu*). Goes to the option of customising the appearance of the selected tracks.
-- **Switch folder** (*Android only*). You can select the required folder from the list, which is especially convenient if there are many folders.
+
+    - **Search**. Opens the track name search screen with a list of all existing tracks and the ability to sort them.  
+    - **Cancel**. Closes the Search without applying the changes.
+    - **Import**. Opens a list of files on your device for importing tracks. In Android, it is located in the three-dot menu.
+    - [Change appearance](../../map/tracks/appearance.md) (*Android only, located in the three-dot menu*). Goes to the option of customising the appearance of the selected tracks.
+    - **Switch folder** (*Android only*). You can select the required folder from the list, which is especially convenient if there are many folders.
 
 2. **Sort for tracks**
 
@@ -202,9 +208,9 @@ Menu with actions:
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>* 
+*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
 
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)   
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)
 
 </TabItem>
 
@@ -212,7 +218,7 @@ Menu with actions:
 
 *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*  
 
-![Context menu of a track in iOS](@site/static/img/personal/tracks/my_places_tracks_sort_ios.png) 
+![Context menu of a track in iOS](@site/static/img/personal/tracks/my_places_tracks_sort_ios.png)
 
 </TabItem>
 
@@ -227,6 +233,7 @@ Provides convenient [track sorting](#sort-by).
 Tracks are a separate data layer that can be shown or hidden using the appropriate option in the [Configure map](../../map/configure-map-menu.md#map-data-layers) menu or [My Places](../../personal/myplaces.md) menu. In addition, tapping Tracks item opens [the track selection screen](#single-track-menu), allowing you to choose which track or multiple tracks to display on the map.  
 
 To display a track for a specific profile on the map, you can:
+
 1. Open **Configure map** and select **Tracks**. Then check the required track.  
     You can hide one or more tracks by deselecting them, or hide them all at once by switching off the Tracks option in the Configure map menu: [*Menu → Configure Map → Tracks*](#configure-map).
 
@@ -255,6 +262,7 @@ To display a track for a specific profile on the map, you can:
 </Tabs>
 
 **Places from which tracks can be opened**.
+
 - [*Plan route → Open existing track*](../../plan-route/create-route.md#menu-options)
 - [*Plan route → Add to a track*](../../plan-route/create-route.md#menu-options)
 - [*Navigation → Follow track → Select*](../../navigation/setup/gpx-navigation.md#follow-track-menu)
@@ -322,7 +330,8 @@ You can change the folder for tracks not only using the Folder or Single track m
     In either case, make sure the track is visible on the map.  
 - Tap **<Translate android="true" ids="shared_string_options"/>** (Android) / **Actions** (iOS).
 - In the *<Translate android="true" ids="shared_string_options"/> list* that opens, tap **<Translate android="true" ids="change_folder"/>**.
-- Select the folder to which you want to move the track.   
+- Select the folder to which you want to move the track.
+
 
 ## Tracks Menu
 
@@ -340,10 +349,10 @@ You can change the folder for tracks not only using the Folder or Single track m
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_1_ios.png) 
+![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_1_ios.png)
 
 </TabItem>
- 
+
 </Tabs>
 
 The Tracks tab provides several types of menus for related actions and settings.
@@ -361,15 +370,16 @@ The Tracks tab provides several types of menus for related actions and settings.
 
 <TabItem value="ios" label="iOS">
 
-![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.png) 
+![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.png)
 
 </TabItem>
- 
+
 </Tabs>  
 
-Tap the &#x1F50D; button at the top of the device screen to open the track list sorting menu. 
+Tap the &#x1F50D; button at the top of the device screen to open the track list sorting menu.  
 
 Available:
+
 - Search by track name.
 - [*Sort by*](#sort-by) for better search if you can't remember the title.
 - [*Filter*](#filter) (Android only) if you need the specific characteristics of the track.
@@ -383,7 +393,7 @@ Available:
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_appbar_menu_2_andr.png) 
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_appbar_menu_2_andr.png)
 
 </TabItem>
 
@@ -391,19 +401,19 @@ Available:
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_appbar_menu_2_ios.png) 
+![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_appbar_menu_2_ios.png)
 
 </TabItem>
- 
+
 </Tabs>  
 
 - [**Select**](#selection-mode). This menu item allows you to select the folders and routes you need to manage them further.  
 
-- **Sort subfolder** (*Android only*). The selected sort order on the Tracks tab applies to all levels of subfolders and tracks. 
+- **Sort subfolder** (*Android only*). The selected sort order on the Tracks tab applies to all levels of subfolders and tracks.
 
 - **Add new folder**. If you need to organize your routes and tracks into logical categories, the app provides the ability to quickly create a new folder and name it. This helps to structure your navigation information.  
 
-- [**Add smart folder**](../tracks/smart-folder.md#create-smart-folder) (*Android only*). This is a tool for automating data organization. Folders automatically sort routes and tracks according to specified criteria. 
+- [**Add smart folder**](../tracks/smart-folder.md#create-smart-folder) (*Android only*). This is a tool for automating data organization. Folders automatically sort routes and tracks according to specified criteria.
 
 - [**Import**](#import). If you have tracks you want to add to OsmAnd, you can use the import function to upload files from your device.
 
@@ -420,10 +430,10 @@ Available:
 
 <TabItem value="ios" label="iOS">
 
-![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_selection_ios.png) 
+![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_selection_ios.png)
 
 </TabItem>
- 
+
 </Tabs>  
 
 The **Select** menu item provides options for managing folders and tracks. This feature allows you to select multiple tracks or track folders. You can also select all tracks and folders by tapping the special **Select All** button.
@@ -447,12 +457,12 @@ Once you have made your choice, the following steps are provided:
 
 <InfoAndroidOnly/>
 
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)   
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
 
 OsmAnd provides a convenient option to sort tracks. This is especially useful if you have a lot of them or if you are searching by certain features.  
 Tap the *Sort by* button at the top of the list to open the track list sorting menu tool.  
 
-Sort menu: 
+Sort menu:
 
 - **Nearest**. Shows tracks that are close to your location.
 - **Last modified**. The tracks in the list are sorted by which ones have been changed recently.
@@ -493,7 +503,7 @@ There are two primary methods for importing a track file into OsmAnd:
 
 <TabItem value="android" label="Android">
 
-![import multitrack](@site/static/img/personal/tracks/import_multitrack.png) ![import multitrack](@site/static/img/personal/tracks/import_multitrack_1.png) 
+![import multitrack](@site/static/img/personal/tracks/import_multitrack.png) ![import multitrack](@site/static/img/personal/tracks/import_multitrack_1.png)
 
 </TabItem>
 
@@ -504,23 +514,23 @@ There are two primary methods for importing a track file into OsmAnd:
         <td><img src={require('@site/static/img/personal/tracks/import_gpx_ios.png').default} alt="gpx"/></td>
         <td><img src={require('@site/static/img/personal/tracks/import_gpx_ios_1.png').default} alt="gpx"/></td>
     </tr>
-</table> 
+</table>
 
 <table class="blogimage">
     <tr>
         <td><img src={require('@site/static/img/personal/tracks/import_gpx_ios_2.png').default} alt="gpx"/></td>
         <td><img src={require('@site/static/img/personal/tracks/import_gpx_ios_3.png').default} alt="gpx"/></td>
     </tr>
-</table> 
+</table>
 
 </TabItem>
- 
+
 </Tabs>
 
 There are several ways to export one or more track files to any messenger, email, file managers, Drive or app.  
 
 1. By [*Track Context menu → Share*](../../map/tracks/track-context-menu.md#options).
-2. By *My Places menu → Tracks → Folfer / Track menu*. 
+2. By *My Places menu → Tracks → Folfer / Track menu*.
     - For [**single track export**](#single-track-menu), select the track to import as is.
     - For [**multi-track export**](#folder-menu), select the required folder.
 3. By [*Local backup file*](../../personal/import-export.md#export-to-file). Exporting GPX-tracks as OSF-file.
@@ -528,16 +538,16 @@ There are several ways to export one or more track files to any messenger, email
 
 ### Export GPX file to an external storage device (iOS)
 
-![Export with Context menu in iOS](@site/static/img/plugins/trip-recording/cont_menu_in_myplaces_ios.png) 
+![Export with Context menu in iOS](@site/static/img/plugins/trip-recording/cont_menu_in_myplaces_ios.png)
 
-To export a GPX file to an external storage, do the following: 
+To export a GPX file to an external storage, do the following:
 
 - Open the [Context menu](../../map/tracks/track-context-menu.md) of a track on the map in one of the following ways:
     - By tapping a track in My Places, the map shows up with the context menu opened for the track.
     - By tapping a track directly on the map.  
-    In any case, make certain the track is visible on the map. 
+    In any case, make certain the track is visible on the map.
 - Tap **<Translate ios="true" ids="shared_string_export"/>**.
-- Select the desired storage for exporting the GPX file. 
+- Select the desired storage for exporting the GPX file.
 
 
 ## Related Articles
