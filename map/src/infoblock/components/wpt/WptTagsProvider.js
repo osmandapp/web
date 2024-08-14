@@ -421,6 +421,9 @@ function isInt(n) {
 }
 
 function getSocialMediaUrl(key, value) {
+    if (typeof value !== 'string') {
+        return null;
+    }
     // Remove leading and closing slashes
     let trimmedValue = value.trim();
     if (trimmedValue.charAt(0) === '/') {

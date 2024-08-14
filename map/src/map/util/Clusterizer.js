@@ -100,6 +100,7 @@ export function createSecondaryMarker(obj) {
     }
     const latlng = L.latLng(obj.geometry.coordinates[1], obj.geometry.coordinates[0]);
     return L.circleMarker(latlng, {
+        ...obj.properties,
         id: obj.properties.id,
         fillOpacity: 0.9,
         radius: 5,
