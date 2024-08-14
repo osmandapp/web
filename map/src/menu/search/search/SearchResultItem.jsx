@@ -80,7 +80,7 @@ export default function SearchResultItem({ item, setProcessingSearch }) {
                                 <Typography variant="body2" className={styles.placeTypes} noWrap>
                                     {type && `${type}`}
                                     {distance && ' · '}
-                                    {distance && `${(distance / 100).toFixed(1)} km`}
+                                    {distance && `${(distance / 1000).toFixed(1)} km`}
                                 </Typography>
                             )}
                         </ListItemText>
