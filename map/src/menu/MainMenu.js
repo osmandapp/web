@@ -117,7 +117,10 @@ export default function MainMenu({
         // close all sub pages
         ctx.setOpenGroups([]);
         ctx.setOpenVisibleMenu(false);
-        setShowInfoBlock(false);
+        const startCreateTrack = ctx.createTrack?.enable && location.pathname === '/map/plan/';
+        if (!startCreateTrack) {
+            setShowInfoBlock(false);
+        }
     }, [location.pathname]);
 
     const handleClickAway = () => {
