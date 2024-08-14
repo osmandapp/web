@@ -80,6 +80,9 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
                 onKeyDown={(e) => handleKeyPress(e)}
                 value={value}
                 InputProps={{
+                    sx: {
+                        paddingLeft: menuButton ? '0px' : '8px',
+                    },
                     className: styles.searchInput,
                     startAdornment: <InputAdornment position="start">{menuButton}</InputAdornment>,
                     endAdornment:
