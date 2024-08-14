@@ -15,7 +15,10 @@ export const MenuButton = ({ needBackButton = false, backToPrevScreen = null }) 
             variant="contained"
             type="button"
             className={`${gStyles.icon} ${styles.searchInputIcon}`}
-            onClick={() => closeHeader({ ctx })}
+            onClick={() => {
+                ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
+                closeHeader({ ctx });
+            }}
         >
             <CloseIcon />
         </IconButton>
