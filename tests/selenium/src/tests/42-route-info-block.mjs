@@ -36,14 +36,14 @@ const routes = [
         hasAttributes: false,
         strings: [
             'Points: 2',
-            /Car 3\d\d\.\d\d km/, // 329.92
-            /Route: 3\d\d\.\d km, 5:\d\d min/, // 329.9 5:19
-            '1 / 50 / 114 m', // ele
+            /Car 44\d\.\d\d km/, // was 329.92, now 440/441 km
+            /Route: 44\d\.\d km, 6:\d\d min/, // was 329.9 5:19, now 440.6 6:13
+            '5 / 90 / 170 m', // ele
         ],
         turns: [
             /Go ahead and go 2.[78] km/,
-            'Turn left onto Миколаївське шосе М-14-02 and go 0.5 km',
-            'Go ahead (+C,TSLL) onto Херсонська вулиця Н-23 and go 13.9 km',
+            'Take 2 exit onto проспект Миру and go 2.7 km',
+            'Keep right (+C,TSLL) onto вулиця Романа Шухевича Н-11 and go 4.7 km',
         ],
     },
 ];
