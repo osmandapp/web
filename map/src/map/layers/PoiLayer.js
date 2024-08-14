@@ -145,8 +145,6 @@ export default function PoiLayer() {
         );
         if (response?.data) {
             return response.data;
-        } else {
-            console.error(`Pois not found`);
         }
     }
 

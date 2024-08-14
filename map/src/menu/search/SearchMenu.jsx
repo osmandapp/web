@@ -108,7 +108,8 @@ export default function SearchMenu() {
             //for explore layers
             ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: true });
             if (!ctx.searchSettings.selectedFilters) {
-                addWikiPlacesDefaultFilters(ctx, true);
+                const selectedFilters = ['tourism', 'leisure'];
+                addWikiPlacesDefaultFilters(ctx, true, selectedFilters);
                 setLoadingWikiPlaces(true);
             }
         }
