@@ -295,10 +295,10 @@ export default function MainMenu({
         ctx.setSelectedWpt(null);
         ctx.setOpenVisibleMenu(false);
         ctx.setLoadingContextMenu(false);
-        ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
         if (menuInfo) {
             // update menu
             setShowInfoBlock(false);
+            ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
             closeCloudSettings(openCloudSettings, setOpenCloudSettings, ctx);
             const updateMenu = !isSelectedMenuItem(item) || ctx.openMenu;
             const menu = updateMenu ? item : null;
