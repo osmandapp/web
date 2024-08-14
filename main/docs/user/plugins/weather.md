@@ -183,7 +183,7 @@ In the download forecast menu you can obtain information and set parameters to k
 - *Update now* button (iOS) / 🔁 (Android) - when active allows to update weather data manually without waiting for an automatic update.  
 - *Update frequency* (iOS)  - can be set to 12h, 24h, weekly.  
 - *Update only via WiFi* (iOS)  - enable this option if you don't want to use mobile data for downloads.  
-- *Remove forecast* / 🗑 (Android) - allows to remove all forecast data for this region.
+- *Remove forecast* (iOS) / 🗑 (Android) - allows to remove all forecast data for this region.
 - ✎ (Android) - allows to rename weather file.
 
 :::info  
