@@ -22,9 +22,15 @@ export default function PoiCategoriesList({
 }) {
     const { t } = useTranslation();
 
+    const sortedCategories = categories?.slice().sort((a, b) => {
+        const nameA = PoiManager.formattingPoiType(t(`poi_${a}`)).toLowerCase();
+        const nameB = PoiManager.formattingPoiType(t(`poi_${b}`)).toLowerCase();
+        return nameA.localeCompare(nameB);
+    });
+
     return (
         <Box>
-            <AppBar position="static" className={headerStyles.appbar}>
+            <AppBar position="static" className={headerStyles.appbar} sx={{ boxShadow: 'none !important' }}>
                 <Toolbar className={headerStyles.toolbar}>
                     <IconButton
                         variant="contained"
@@ -46,7 +52,7 @@ export default function PoiCategoriesList({
                 <Loading />
             ) : (
                 <Box sx={{ overflowY: 'auto', overflowX: 'hidden' }}>
-                    {categories?.map((item, key) => {
+                    {sortedCategories?.map((item, key) => {
                         const catName = PoiManager.formattingPoiType(t(`poi_${item}`));
                         return (
                             <MenuItem

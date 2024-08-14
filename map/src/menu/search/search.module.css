@@ -320,6 +320,7 @@
     padding: 0px 0px 0px 0px !important;
     &:hover {
         background-color: #deebff !important;
+        border-radius: 3px !important;
     }
 }
 .categoriesListItem {
