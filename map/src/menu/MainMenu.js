@@ -117,8 +117,10 @@ export default function MainMenu({
         // close all sub pages
         ctx.setOpenGroups([]);
         ctx.setOpenVisibleMenu(false);
-        const startCreateTrack = ctx.createTrack?.enable && location.pathname === '/map/plan/';
-        if (!startCreateTrack) {
+        const startCreateTrack = ctx.createTrack?.enable && location.pathname === MAIN_URL_WITH_SLASH + PLANROUTE_URL;
+        const openCloudTrackAfterSave =
+            ctx.selectedGpxFile.url && location.pathname === MAIN_URL_WITH_SLASH + TRACKS_URL;
+        if (!startCreateTrack && !openCloudTrackAfterSave) {
             setShowInfoBlock(false);
         }
     }, [location.pathname]);
