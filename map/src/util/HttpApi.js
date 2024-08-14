@@ -135,7 +135,7 @@ export async function apiGet(url, options = null) {
         response = await fetch(fullURL, fullOptions);
     } catch (e) {
         // got general error (have no response)
-        console.error('fetch-catch-error', url, e);
+        console.debug('fetch-catch-error', url, e);
         const ret = { ok: false, text: () => null, json: () => null, blob: () => null, data: null };
         if (options?.throwErrors) {
             const error = new Error('fetch-catch-error');

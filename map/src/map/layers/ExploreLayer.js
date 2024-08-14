@@ -202,8 +202,6 @@ export default function ExploreLayer() {
             if (response?.data) {
                 let jsonData = response.data.features;
                 ctx.setWikiPlaces(jsonData);
-            } else {
-                console.error(`Places not found`);
             }
             setLoadingContextMenu(false);
             removeTooltip();
@@ -380,9 +378,11 @@ export default function ExploreLayer() {
                     simpleMarkersArr.addLayer(circle);
                 }
 
-                otherIconsLayerRef.current = addLayers(otherIconsLayerRef.current, simpleMarkersArr);
-                mainIconsLayerRef.current = addLayers(mainIconsLayerRef.current, largeMarkersArr);
-                updateMarkerZIndex(mainIconsLayerRef.current, 2000);
+                if (ctx.currentObjectType === OBJECT_EXPLORE) {
+                    otherIconsLayerRef.current = addLayers(otherIconsLayerRef.current, simpleMarkersArr);
+                    mainIconsLayerRef.current = addLayers(mainIconsLayerRef.current, largeMarkersArr);
+                    updateMarkerZIndex(mainIconsLayerRef.current, 2000);
+                }
             });
         }
     }, [ctx.wikiPlaces]);
