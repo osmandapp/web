@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 import React, { useContext } from 'react';
 import AppContext from '../../../context/AppContext';
 
-export default function WikiPlacesList({ size }) {
+export default function WikiPlacesList({ size, showAll = null }) {
     const ctx = useContext(AppContext);
 
     return (
@@ -19,6 +19,7 @@ export default function WikiPlacesList({ size }) {
                     .map((item, index) => (
                         <WikiPlacesItem key={index} item={item} index={index} lastIndex={size - 1} />
                     ))}
+            {showAll}
         </Box>
     );
 }

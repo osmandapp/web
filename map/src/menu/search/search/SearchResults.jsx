@@ -37,6 +37,12 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     const currentLoc = useGeoLocation(ctx);
 
     useEffect(() => {
+        if (value?.query) {
+            document.title = value.query;
+        }
+    }, [value?.query]);
+
+    useEffect(() => {
         if (!currentLoc) return;
         const loc = getLoc();
 

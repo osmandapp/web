@@ -53,7 +53,7 @@ export default function SearchResultItem({ item, setProcessingSearch }) {
     }
 
     function getFirstSubstring(inputString) {
-        if (inputString.includes(';')) {
+        if (inputString?.includes(';')) {
             return inputString.split(';')[0];
         }
         return inputString;
