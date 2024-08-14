@@ -282,11 +282,11 @@
 .searchInput {
     padding-left: 0px !important;
     padding-right: 0px !important;
-    height: 48px !important;
+    height: 56px !important;
 }
 .searchInputIcon {
-    width: 48px !important;
-    height: 48px !important;
+    width: 56px !important;
+    height: 56px !important;
 }
 .buttonShowAllExplore {
     text-transform: none !important;
