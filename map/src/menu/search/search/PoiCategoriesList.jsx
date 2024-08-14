@@ -9,6 +9,7 @@ import styles from '../search.module.css';
 import Loading from '../../errors/Loading';
 import PoiManager from '../../../manager/PoiManager';
 import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
+import MenuItemWithLines from '../../components/MenuItemWithLines';
 
 export default function PoiCategoriesList({
     categories,
@@ -44,7 +45,7 @@ export default function PoiCategoriesList({
             {loadingIcons ? (
                 <Loading />
             ) : (
-                <Box sx={{ overflowY: 'auto' }}>
+                <Box sx={{ overflowY: 'auto', overflowX: 'hidden' }}>
                     {categories?.map((item, key) => {
                         const catName = PoiManager.formattingPoiType(t(`poi_${item}`));
                         return (
@@ -63,9 +64,7 @@ export default function PoiCategoriesList({
                             >
                                 <ListItemIcon>{categoriesIcons[item]}</ListItemIcon>
                                 <ListItemText>
-                                    <Typography variant="inherit" noWrap>
-                                        {catName}
-                                    </Typography>
+                                    <MenuItemWithLines name={catName} maxLines={2} width={'270px'} />
                                 </ListItemText>
                             </MenuItem>
                         );
