@@ -258,10 +258,14 @@ export default function SearchMenu() {
                                 <LinearProgress />
                             ) : (
                                 <>
-                                    <WikiPlacesList size={3} />
-                                    <Button className={styles.buttonShowAllExplore} onClick={openExploreMenu}>
-                                        {t('shared_string_show_all')}
-                                    </Button>
+                                    <WikiPlacesList
+                                        size={3}
+                                        showAll={
+                                            <Button className={styles.buttonShowAllExplore} onClick={openExploreMenu}>
+                                                {t('shared_string_show_all')}
+                                            </Button>
+                                        }
+                                    />
                                     <Divider />
                                 </>
                             )}
