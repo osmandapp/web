@@ -175,17 +175,16 @@ If you want to use the weather forecast offline, you should download the weather
 
 </Tabs>  
 
-
-
 In the download forecast menu you can obtain information and set parameters to keep your weather data up to date.  
   
-- *Updated* - shows when the last update was made.  
-- *Next update* - when the next update will be available.  
-- *Updates size* - shows size of all updates.  
-- *Update now* button - when active allows to update weather data manually without waiting for an automatic update.  
-- *Update frequency*  - can be set to 12h, 24h, weekly.  
-- *Update only via WiFi*  - enable this option if you don't want to use mobile data for downloads.  
-- *Remove forecast* - allows to remove all forecast data for this region.  
+- *Updated* (iOS) / *Created* (Android) - shows when the last update was made.  
+- *Next update* (iOS) - when the next update will be available.  
+- *Updates size* (iOS) / *Size* (Android) - shows size of all updates.  
+- *Update now* button (iOS) / 🔁 (Android) - when active allows to update weather data manually without waiting for an automatic update.  
+- *Update frequency* (iOS)  - can be set to 12h, 24h, weekly.  
+- *Update only via WiFi* (iOS)  - enable this option if you don't want to use mobile data for downloads.  
+- *Remove forecast* / 🗑 (Android) - allows to remove all forecast data for this region.
+- ✎ (Android) - allows to rename weather file.
 
 :::info  
 OsmAnd generates a new forecast every 6 hours.  
