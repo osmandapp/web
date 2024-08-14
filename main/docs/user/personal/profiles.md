@@ -396,7 +396,7 @@ With the UI customization feature, you can adjust the number of items in actions
     ![Profile Copy Android](@site/static/img/personal/profiles/profile_drawer_reset_copy_android.png)
 
 
-### Organize items in Configure Map
+### Configure Map
 
 - **Configure map menu**. Items visible in this section of the main menu.  
 
