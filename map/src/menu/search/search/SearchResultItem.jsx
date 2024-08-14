@@ -7,10 +7,10 @@ import { useTranslation } from 'react-i18next';
 import _ from 'lodash';
 import { formattingPoiType } from '../../../manager/PoiManager';
 import AppContext from '../../../context/AppContext';
-import { SEARCH_RESULT_TYPE_POI, SEARCH_RESULT_TYPE_POI_CATEGORY, searchByCategory } from './SearchResults';
+import { SEARCH_RESULT_TYPE_POI, SEARCH_RESULT_TYPE_POI_CATEGORY } from './SearchResults';
 import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 
-export default function SearchResultItem({ item, setProcessingSearch }) {
+export default function SearchResultItem({ item, setProcessingSearch, setSearchValue }) {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
@@ -73,13 +73,10 @@ export default function SearchResultItem({ item, setProcessingSearch }) {
                             } else {
                                 const category = item.properties['web_keyName'];
                                 setProcessingSearch(true);
-                                searchByCategory(
-                                    {
-                                        query: formattingPoiType(category),
-                                        type: SEARCH_TYPE_CATEGORY,
-                                    },
-                                    ctx
-                                );
+                                setSearchValue({
+                                    query: t(`poi_${category}`),
+                                    type: SEARCH_TYPE_CATEGORY,
+                                });
                             }
                         }}
                     >

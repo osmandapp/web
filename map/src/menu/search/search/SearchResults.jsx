@@ -167,9 +167,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
             <CustomInput
                 menuButton={<MenuButton needBackButton={true} backToPrevScreen={backToMainSearch} />}
                 setSearchValue={setSearchValue}
-                defaultSearchValue={
-                    value?.type === SEARCH_TYPE_CATEGORY ? formattingPoiType(value.query) : value?.query
-                }
+                defaultSearchValue={value?.query}
             />
             {processingSearch && <Loading />}
             {!processingSearch && (
@@ -180,6 +178,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
                             item={item}
                             index={index}
                             setProcessingSearch={setProcessingSearch}
+                            setSearchValue={setSearchValue}
                         />
                     ))}
                 </Box>

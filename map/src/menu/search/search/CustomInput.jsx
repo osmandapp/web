@@ -33,6 +33,10 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
         }
     }, [value]);
 
+    useEffect(() => {
+        setValue(defaultSearchValue);
+    }, [defaultSearchValue]);
+
     function search(value) {
         setSearchValue({
             query: value,

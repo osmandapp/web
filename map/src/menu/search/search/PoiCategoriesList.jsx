@@ -53,7 +53,7 @@ export default function PoiCategoriesList({
             ) : (
                 <Box sx={{ overflowY: 'auto', overflowX: 'hidden' }}>
                     {sortedCategories?.map((item, key) => {
-                        const catName = PoiManager.formattingPoiType(t(`poi_${item}`));
+                        const catName = t(`poi_${item}`);
                         return (
                             <MenuItem
                                 className={styles.categoriesListItem}
