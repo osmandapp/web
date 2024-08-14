@@ -48,7 +48,6 @@
     transition: background-color 5000s ease-in-out 0s !important;
 }
 .placeTypes {
-    margin-left: 8px !important;
     font-family: Roboto !important;
     color: var(--text-secondary) !important;
     font-size: 14px !important;
@@ -331,4 +330,9 @@
     align-items: center !important;
     gap: 24px !important;
     min-height: 48px !important;
+}
+.divider {
+    margin-left: 16px !important;
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
 }

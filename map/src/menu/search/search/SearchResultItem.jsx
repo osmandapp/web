@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
+import { Divider, ListItemIcon, ListItemText, MenuItem, Skeleton } from '@mui/material';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import styles from '../search.module.css';
 import { useTranslation } from 'react-i18next';
@@ -46,7 +46,17 @@ export default function SearchResultItem({ item, setProcessingSearch }) {
             }
         }
 
+        name = getFirstSubstring(name);
+        type = getFirstSubstring(type);
+
         return { name, distance, type, icon };
+    }
+
+    function getFirstSubstring(inputString) {
+        if (inputString.includes(';')) {
+            return inputString.split(';')[0];
+        }
+        return inputString;
     }
 
     return (
@@ -57,7 +67,6 @@ export default function SearchResultItem({ item, setProcessingSearch }) {
                 <div>
                     <MenuItem
                         className={styles.searchItem}
-                        divider
                         onClick={() => {
                             if (item.locDist) {
                                 ctx.setZoomToMapObj(item);
@@ -77,15 +86,16 @@ export default function SearchResultItem({ item, setProcessingSearch }) {
                         <ListItemText>
                             <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
                             {(type || distance) && (
-                                <Typography variant="body2" className={styles.placeTypes} noWrap>
-                                    {type && `${type}`}
-                                    {distance && ' · '}
-                                    {distance && `${(distance / 1000).toFixed(1)} km`}
-                                </Typography>
+                                <MenuItemWithLines
+                                    name={`${type}${distance ? ` · ${(distance / 1000).toFixed(1)} km` : ''}`}
+                                    maxLines={4}
+                                    className={styles.placeTypes}
+                                />
                             )}
                         </ListItemText>
                         <ListItemIcon className={styles.categoryItemIcon}>{icon}</ListItemIcon>
                     </MenuItem>
+                    <Divider className={styles.divider} />
                 </div>
             )}
         </div>
