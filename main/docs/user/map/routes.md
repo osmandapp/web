@@ -31,7 +31,7 @@ A route is a predefined path, which is a sequence of roads and turns to be follo
 2. You can **use Custom buttons** to customize [Quick Actions](../map/tracks/index.md#quick-actions-for-routes) to switch between enabling or disabling the display of selected route types.
 
 3. Tapping **the shield icon with a route number or route flag** on the map will open a context menu with a list of available options.  
-    - In some cases, you may find several routes intersecting at a certain location. When you select one of the routes, the *[Track context menu](../map/tracks/track-context-menu.md)* appears. In this menu, you can [save the selected route](../map/tracks.md#routes-on-the-map) to the device memory in GPX format, which will allow you to use it for [GPX navigation](../navigation/setup/gpx-navigation.md) in the future.
+    - In some cases, you may find several routes intersecting at a certain location. When you select one of the routes, the *[Track context menu](../map/tracks/track-context-menu.md)* appears. In this menu, you can [save the selected route](../map/routes.md#configure-routes-on-the-map) to the device memory in GPX format, which will allow you to use it for [GPX navigation](../navigation/setup/gpx-navigation.md) in the future.
 
 
 ## Type of Routes
@@ -108,7 +108,7 @@ Shows classified hiking trails in mountainous areas based on the difficulty that
 
 ### Ski slopes
 
-Shows ski trail routes highlighted in specific colors. This setting is provided by the [*Winter and Ski*](../map/vector-maps.md#winter-and-ski) map style.   
+Shows ski trail routes highlighted in specific colors. This setting is provided by the [*Winter and Ski*](../map/vector-maps.md#winter-and-ski) map style.  
 
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
 
@@ -126,7 +126,7 @@ Shows access icons, danger zones, and [whitewater tourism](https://wiki.openstre
 
 ### Running routes
 
-Used for named, numbered, or otherwise marked running routes used primarily for athletics. The data for these routes is taken from the [OpenStreetMap project](https://openstreetmap.org/) (tag [route=running](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning)).   
+Used for named, numbered, or otherwise marked running routes used primarily for athletics. The data for these routes is taken from the [OpenStreetMap project](https://openstreetmap.org/) (tag [route=running](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning)).  
 
 ![Fitness routes](@site/static/img/map/fitness_1.png)
 
@@ -134,7 +134,7 @@ Used for named, numbered, or otherwise marked running routes used primarily for 
 
 A fitness trail is a trail or path equipped with obstacles or stations along its length to exercise the human body for the purpose of improving health. The data for these routes is taken from the [OpenStreetMap project](https://openstreetmap.org/) (tag [route=fitness_trail](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail)).  
 
-![Fitness routes](@site/static/img/map/fitness_route.png) 
+![Fitness routes](@site/static/img/map/fitness_route.png)
 
 ### Travel routes
 
@@ -142,11 +142,11 @@ A fitness trail is a trail or path equipped with obstacles or stations along its
 
 Shows previously uploaded specially configured [user routes](https://osmand.net/blog/routes#generated-travel-routes) taken from OpenStreetMap categories.  
 
-![Travel routes](@site/static/img/map/travel_route_2.png)   
+![Travel routes](@site/static/img/map/travel_route_2.png)  
 
 - ***Tracks***, ***Travelbooks***, and ***Points***.  
 
-![Travel routes](@site/static/img/map/travel_routes.png) 
+![Travel routes](@site/static/img/map/travel_routes.png)
 
 
 ## Configure Routes on the Map
@@ -157,7 +157,7 @@ Shows previously uploaded specially configured [user routes](https://osmand.net/
 
 *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) 
+![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png)
 
 </TabItem>
 
@@ -165,14 +165,14 @@ Shows previously uploaded specially configured [user routes](https://osmand.net/
 
 *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png) 
+![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 - To display the required routes on the map, enable them in the *Routes list* of the [Configure Map](../map/configure-map-menu.md) menu.
-- OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They can be selected by tapping [the symbol on the route](#save-as-track), and if the visible set of routes is configured correctly, you can follow the color and icons.
+- OsmAnd can highlight [routes present on OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They can be selected by tapping [the symbol on the route](#save-as-a-track), and if the visible set of routes is configured correctly, you can follow the color and icons.
 - You can create a track on top of the routes using the [Plan a Route](../plan-route/create-route.md) tool.  
 
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
@@ -197,12 +197,13 @@ Shows previously uploaded specially configured [user routes](https://osmand.net/
 </Tabs>  
 
 - To get full route information, tap the *route symbol*.
-- If you have already used the *download button* in the [Track context menu](../map/tracks/track-context-menu.md), tap the line of the required route on the map.    
+- If you have already used the *download button* in the [Track context menu](../map/tracks/track-context-menu.md), tap the line of the required route on the map.  
 
-**Route info** in *Overview tab* allows you to view detailed information about the selected route such as:
-- *Track details*: Route name, OSM link (OSM Editing plugin required), Type, Description, Distance, Direction, Ascent/Descent, Altitude range, Network, Operator, State, Color, Roundtrip, Start/End points, and more.
-- *General*: Size, Location, Created on.
-- *Additional Info*: Type of activity.
+***Route info*** in *Overview tab* allows you to view detailed information about the selected route such as:
+
+- **Track details**: Route name, OSM link (OSM Editing plugin required), Type, Description, Distance, Direction, Ascent/Descent, Altitude range, Network, Operator, State, Color, Roundtrip, Start/End points, and more.
+- **General**: Size, Location, Created on.
+- **Additional Info**: Type of activity.
 
 ### Graph (Elevation info)
 
@@ -229,7 +230,7 @@ Shows previously uploaded specially configured [user routes](https://osmand.net/
 
 [*Hiking, Cycle, Travel, and other routes*](#type-of-routes) are available for selection on the map, and marked with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol). If you tap a *route symbol*, a list of the routes nearest to it is offered. Selecting one of them opens the [Track context menu](../map/tracks/track-context-menu.md) of the route.  
 
-To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../map/tracks/track-context-menu.md#info-panel). This will open the [Quick actions](../map/tracks/track-context-menu.md#quick-actions) button panel where you will have access to track actions such as changing [*Appearance*](./tracks/appearance.md), [*Navigation*](#route-navigation), or editing [*Plan a route*](../plan-route/create-route.md).
+To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../map/tracks/track-context-menu.md#info-panel). This will open the [Quick actions](../map/tracks/track-context-menu.md#quick-actions) button panel where you will have access to track actions such as changing [*Appearance*](./tracks/appearance.md), [*Navigation*](../navigation/setup/route-navigation.md), or editing [*Plan a route*](../plan-route/create-route.md).
 
 
 ### Quick Actions
@@ -241,7 +242,7 @@ To save the route as a *GPX file*, tap the **Save (Download)** button under [Inf
 ![Route info](@site/static/img/map/qa_routes_andr.png)
 
 Using the *Quick Actions* map buttons, you can switch the visibility of different types of routes.  
-The main settings for *Show or Hide routes* can be found in the Configure Map menu. Some routes have an [additional setting](#coloring-routes-by-type) for selecting types. When assigning an action to a button, either the default type or the type selected in the Configure map will be displayed.  
+The main settings for *Show or Hide routes* can be found in the Configure Map menu. Some routes have an *additional setting* for selecting types. When assigning an action to a button, either the default type or the type selected in the Configure map will be displayed.  
 
 In the [Vector Maps article](../map/vector-maps.md#routes), you can find a description and the entire list of routes available for display. If you want quick access to this map configuration, use the *Custom Button* tool.  
 
