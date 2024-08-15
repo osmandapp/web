@@ -232,15 +232,15 @@ Road attributes are accessible in the Route Details and display segments related
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_turn_ios.png)
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_turn_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Turn-by-turn information provides detailed [instructions](#instructions) for navigating your route. Besides the *Details* menu, it is also displayed in the [*Route maneuvers*](../../widgets/nav-widgets.md#route-maneuvers) and [*Lanes*](../../widgets/nav-widgets.md#lanes) widgets. It offers safe and efficient real-time navigation, allowing the driver to navigate the road better.  
+Turn-by-turn information provides detailed [instructions](#instructions) on how to navigate a route. In addition to the *Details* menu, it is also displayed in the [*Route maneuvers*](../../widgets/nav-widgets.md#route-maneuvers) and [*Lanes*](../../widgets/nav-widgets.md#lanes) widgets. This information helps you to better navigate your route and allows you to plan ahead.
 
-To view detailed information about specific sections of the route or to make necessary changes, you need to tap this section in the list. The map will zoom in to it and a [Context menu](../../map/map-context-menu.md) will open.  
+Tap a specific section of the route in the list to view detailed information or make changes as required. The map enlarges and a [Context menu](../../map/map-context-menu.md) opens.
 
 
 ### Instructions
@@ -263,23 +263,28 @@ To view detailed information about specific sections of the route or to make nec
 
 Instructions include information about moving along the route, such as:
 
-- *The [next turn arrow](../../widgets/nav-widgets.md#next-turn) and its direction.*
-- *Distance to maneuver.*
-- *A description of what to do, which includes the name of the street or trail.*
-- *Total distance and time of the route.*
-- *[Lanes](../../widgets/nav-widgets.md#lanes) layout for the current road.*
+- The [*next turn arrow*](../../widgets/nav-widgets.md#next-turn) and *its direction*.
+- *Distance to maneuver*.
+- A description of *what to do*, which includes the *name of the street or trail*.
+- *Total distance* and *time of the route*.
+- *[Lanes](../../widgets/nav-widgets.md#lanes) layout* for the current road.
+- [*Road side indicator*](#road-side-indicator) (*iOS only*).
 
+### Road side indicator
 
-**Road side indicator.**
+:::caution iOS only
+This type of instruction is currently not available for the Android version of the OsmAnd app.
+:::
 
 ![Side indication](@site/static/img/navigation/route/side_indication.png)
 
-Added Road side indicator for [Route Details](../user/navigation/setup/route-details.md).  
-The angle between the Destination (*Bearing from the last point*) and the last segment (*Bearing to the last 2 points of the route*) is measured and divided into 3 sectors of 120 degrees.
+In the instruction list, the **road side indicator** shows which direction from your current location and direction of movement to your final point is your destination, this can be left, right, and straight ahead.  
 
-- `-60 °`&nbsp; &nbsp; to &nbsp; &nbsp;`+60 °`&nbsp; &nbsp; = straight
-- `-180 °`&nbsp; &nbsp; to &nbsp; &nbsp;`-60 °`&nbsp; &nbsp; = left
-- `60 °`&nbsp; &nbsp; to &nbsp; &nbsp;`180 °`&nbsp; &nbsp; = right
+The angle between your Destination (*[Bearing](https://en.wikipedia.org/w/index.php?title=Bearing_(navigation)&oldformat=true) from the last point*) and the last segment (*Bearing to the last 2 points of the route*) is measured, divided into 3 sectors of 120 degrees, and the result is that you see which direction your destination is.
+
+- **`-60 °`**&nbsp; &nbsp; &nbsp; to &nbsp; &nbsp;**`60 °`**&nbsp; &nbsp; &nbsp; - marked as **straight ahead**.
+- **`-180 °`**&nbsp; &nbsp; to &nbsp; &nbsp;**`-60 °`**&nbsp; &nbsp; - marked as **left** side.
+- **`60 °`**&nbsp; &nbsp; &nbsp; &nbsp; to &nbsp; &nbsp;**`180 °`**&nbsp; &nbsp; - marked as **right** side.
 
 
 ### Print
