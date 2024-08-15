@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-OsmAnd allows you to find the best route and explore all of its details. The app provides detailed information about the route such as distance, [travel time](#distance--time--co2), [surface type](#road-attributes), [elevation differences](#elevation-info), and [turn information](#turn-by-turn-information). You can also [analyze](#analyse-on-map) the route on the map, find out information about track segments, [print](#print-for-android) the route plan, [save](#share--export-actions) the route, and share it with others. With this functionality, you will always be aware of the route details and can plan your trip more efficiently.  
+OsmAnd allows you to find the best route and explore all of its details. The app provides detailed information about the route such as distance, [travel time](#distance--time--co2), [surface type](#road-attributes), [elevation differences](#elevation-info), and [turn information](#turn-by-turn-information). You can also [analyze](#analyse-on-map) the route on the map, find out information about track segments, [print](#print) the route plan, [save](#share--export-actions) the route, and share it with others. With this functionality, you will always be aware of the route details and can plan your trip more efficiently.  
 
 
 <Tabs groupId="operating-systems">
@@ -39,10 +39,10 @@ OsmAnd allows you to find the best route and explore all of its details. The app
 </Tabs>
 
 
-### How to access
+### How to Access
 
-After calculating a route in the [Navigation menu](./route-navigation.md#start--stop-navigation), you have access to "Details" about that route. This information is useful to use before starting a trip to improve route planning or to check information about the road ahead while driving.   
-There are three ways to access the *Route Details menu*.   
+After calculating a route in the [Navigation menu](./route-navigation.md#start--stop-navigation), you have access to "Details" about that route. This information is useful to use before starting a trip to improve route planning or to check information about the road ahead while driving.  
+There are three ways to access the *Route Details menu*.  
 
 1. Go to the main *Menu → Navigation*, set the route, and tap the *Details* button.
 2. Tap the *Navigation* icon on the map screen, set the route, and tap the *Details* button.
@@ -51,13 +51,13 @@ There are three ways to access the *Route Details menu*.
 Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../../navigation/routing/routing-types.md), some route details may not be displayed. In addition, the route details are highly dependent on the *OpenStreetMap data coverage*.
 
 
-## Distance / time / CO2
+## Distance / Time / CO2
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Route details](@site/static/img/navigation/route/route_details_distance-time-CO2_andr.png)    ![Route details](@site/static/img/navigation/route/route_details_distance-time-CO2_andr2.png) 
+![Route details](@site/static/img/navigation/route/route_details_distance-time-CO2_andr.png)    ![Route details](@site/static/img/navigation/route/route_details_distance-time-CO2_andr2.png)
 
 </TabItem>
 
@@ -69,7 +69,7 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 
 </Tabs>
 
-- The ***Total distance*** is calculated between all route segments including intermediate points in the selected [units](../../personal/profiles.md#units--formats). 
+- The ***Total distance*** is calculated between all route segments including intermediate points in the selected [units](../../personal/profiles.md#units--formats).
 
 - ***Estimated travel time*** is calculated as the total of times on each segment and time penalties on specific points. Each navigation profile has different rules for calculating speed on a segment and which penalties should be included (configured in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md)). For example, car and bicycle profiles take average speed per segment from OpenStreetMap data, but pedestrian, boat, and aircraft profiles use Default speed from [Navigation Settings](../guidance/navigation-settings.md#default-speed--road-speeds).
 
@@ -78,13 +78,13 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 - ***CO2 footprint data*** provides a rough estimation of how much CO2 will be produced while following the route. You need to configure the [Fuel engine type](../guidance/navigation-settings.md#fuel-used-by-motor) in Vehicle parameters to get a more accurate approximation.
 
 
-## Elevation info
+## Elevation Info
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Route details](@site/static/img/navigation/route/route_details_info-block_andr.png) 
+![Route details](@site/static/img/navigation/route/route_details_info-block_andr.png)
 
 </TabItem>
 
@@ -102,26 +102,25 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 - *Average altitude*. Displays weighted average elevation on the route.
 - *Uphill / downhill*. Displays the ratio of the path to the horizontal, where zero indicates horizontality and the number of degrees indicates a higher or steeper degree of slope. The grade shows the maximum road slope in percent from your location point to the end of the visible graph or for the selected section of the route without the location point visible on the screen.
 
-#### A license for DEM data used by OsmAnd for terrain detection
 
-The altitude data on the map (between 70 degrees north latitude and 70 degrees south latitude) were obtained from measurements made as a part of the *Shuttle Radar Topography Mission (SRTM)*. It utilized the *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, the primary imaging tool in *NASA's Earth Observation System*.  
-For complete information, see the [License](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
+***A license for DEM data used by OsmAnd for terrain detection***  
+The altitude data on the map (between 70 degrees north latitude and 70 degrees south latitude) were obtained from measurements made as a part of the *Shuttle Radar Topography Mission (SRTM)*. It utilized the *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, the primary imaging tool in *NASA's Earth Observation System*. For complete information, see the [License](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
-<details><summary>DEM (DSM) data</summary> 
+<details><summary>DEM (DSM) data</summary>
    - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. The original data used for this product was supplied by JAXA’s AW3D.<br/>
-	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
-	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummens, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
-	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).</details>
+ - <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
+ - <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummens, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
+ - <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).</details>
 
 
-### Elevation graph
+### Elevation Graph
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Route details](@site/static/img/navigation/route/route_details_graph_andr.png) 
+![Route details](@site/static/img/navigation/route/route_details_graph_andr.png)
 
 </TabItem>
 
@@ -135,12 +134,12 @@ For complete information, see the [License](https://github.com/osmandapp/OsmAnd/
 
 The [graphs](../../map/tracks/track-context-menu.md#altitude--speed-graphs) visually displays information about the altitude and slope of your navigation route and your current position on this graph with the current altitude and slope. The graph is plotted on two axes. The X-axis is the distance on your route. The first Y-axis is the altitude above sea level, the value of which depends on the terrain and second Y-axis is the approximated [slope](https://en.wikipedia.org/wiki/Grade_(slope)). You can view elevation graph for the entire route or only for a selected interval by scaling the graph.  
 
-- ***Zoom in/out***. By default, the graph shows the route from the current location to your destination point. You can use [two-finger movements](../../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right, forward on the route, and backward to the current location. *Such manipulations also refer to the visual block of information in the [Road Attributes](#road-attributes) block.*   
+- ***Zoom in/out***. By default, the graph shows the route from the current location to your destination point. You can use [two-finger movements](../../map/interact-with-map.md#gestures) to zoom in and out for a more detailed view. You can also move the graph to the right, forward on the route, and backward to the current location. *Such manipulations also refer to the visual block of information in the [Road Attributes](#road-attributes) block.*  
 
 - ***Location Pin***. If you want to see the information at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with  altitude and slope percent will appear.  
 
 
-## Analyse on map
+## Analyse on Map
 
 <Tabs groupId="operating-systems">
 
@@ -162,24 +161,25 @@ The [graphs](../../map/tracks/track-context-menu.md#altitude--speed-graphs) visu
 
 If data is present you can select one of the following types:
 
-- *Y-axis*: 
+- *Y-axis*:
    - [*Altitude*](../../map/tracks/track-context-menu.md#altitude). This is the [process](https://wiki.openstreetmap.org/wiki/Altitude) of obtaining height above a fixed level.
    - [*Slope*](https://wiki.openstreetmap.org/wiki/Key:incline). The [slope of the landform](https://en.wikipedia.org/wiki/Grade_(slope)) means the tangent of the angle of inclination of the surface to the horizontal.
-   - [*Speed*](../../map/tracks/track-context-menu.md#speed). 
+   - [*Speed*](../../map/tracks/track-context-menu.md#speed).
    - Graphs with two types of data: *Altitude/Slope*, *Altitude/Speed*, *Slope/Speed*, *Animated zoom/Speed*.
-- *X-axis*: 
+- *X-axis*:
    - *Distance*. You can view the data for a route in relation to the route length.
    - *Time*. You can view the data for a route in relation to the time calculated for that route.
    - *Time of day*. You can view route data at certain time of day.
 
-### Type of interactions
+
+### Type of Interactions
 
 - *Tap and Slide*. Tap the graph to display information about the track point and the movement along it. The graph highlights the location of the point on the map and displays information about it on the ruler.
-- *Scale*. Scale graph by [two fingers gesture](../../map/interact-with-map.md#gestures). 
+- *Scale*. Scale graph by [two fingers gesture](../../map/interact-with-map.md#gestures).
 - *Follow My location* (*Android only*). You can tap [My Location](../../map/interact-with-map.md#my-location--zoom) to synchronize the map view and graph with your location. As you move, the graph will shift from left to right, displaying information ahead of your path.  
 
 
-## Road attributes
+## Road Attributes
 
 <Tabs groupId="operating-systems">
 
@@ -187,7 +187,7 @@ If data is present you can select one of the following types:
 
 *[Menu → Navigation](#how-to-access) → Details*
 
-![Navigation route Android](@site/static/img/navigation/route/route_details_attributes_andr.png) 
+![Navigation route Android](@site/static/img/navigation/route/route_details_attributes_andr.png)
 
 </TabItem>
 
@@ -211,7 +211,7 @@ Road attributes are accessible in the Route Details and display segments related
 
 - [**Surface firmness**](https://wiki.openstreetmap.org/wiki/Key:tracktype) - It is the ability of the road surface to recover from deformation or load. The higher the surface firmness, the less chance of damage to the vehicle and the more comfortable the road will be. Surface firmness can also affect vehicle speed and fuel consumption.  
 
-- [**Slope**](https://wiki.openstreetmap.org/wiki/Key:incline) - Shows what percentage of slopes there are on your route.   
+- [**Slope**](https://wiki.openstreetmap.org/wiki/Key:incline) - Shows what percentage of slopes there are on your route.
 
 - [**Smoothness**](https://wiki.openstreetmap.org/wiki/Key:smoothness) - Applies to all types of paths and areas, such as highways, parking lots, beaches, trails, and indicates the usability of the route. Gives information that you can drive without significant risk of damage, such as vehicle undercarriage, or injury, such as by falling.  
 
@@ -220,27 +220,28 @@ Road attributes are accessible in the Route Details and display segments related
 - [**Difficulty of horse trails**](https://wiki.openstreetmap.org/wiki/Riding) - This road attribute indicates the difficulty of the route while riding a horse. Suitable for [Horseback routing](../../navigation/routing/horse-routing.md).  
 
 
-## Turn-by-turn information
+## Turn-by-Turn Information
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_turn.png) 
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_turn.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_turn_ios.png) 
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_turn_ios.png)
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
 Turn-by-turn information provides detailed [instructions](#instructions) for navigating your route. Besides the *Details* menu, it is also displayed in the [*Route maneuvers*](../../widgets/nav-widgets.md#route-maneuvers) and [*Lanes*](../../widgets/nav-widgets.md#lanes) widgets. It offers safe and efficient real-time navigation, allowing the driver to navigate the road better.  
 
 To view detailed information about specific sections of the route or to make necessary changes, you need to tap this section in the list. The map will zoom in to it and a [Context menu](../../map/map-context-menu.md) will open.  
+
 
 ### Instructions
 
@@ -248,24 +249,37 @@ To view detailed information about specific sections of the route or to make nec
 
 <TabItem value="android" label="Android">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_turn_andr.png) 
+![Navigation route Android](@site/static/img/navigation/route/navigation_turn_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_turn_ios.png) 
+![Navigation route Android](@site/static/img/navigation/route/navigation_turn_ios.png)
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
 Instructions include information about moving along the route, such as:
+
 - *The [next turn arrow](../../widgets/nav-widgets.md#next-turn) and its direction.*
 - *Distance to maneuver.*
 - *A description of what to do, which includes the name of the street or trail.*
 - *Total distance and time of the route.*
 - *[Lanes](../../widgets/nav-widgets.md#lanes) layout for the current road.*
+
+
+**Road side indicator.**
+
+![Side indication](@site/static/img/navigation/route/side_indication.png)
+
+Added Road side indicator for [Route Details](../user/navigation/setup/route-details.md).  
+The angle between the Destination (*Bearing from the last point*) and the last segment (*Bearing to the last 2 points of the route*) is measured and divided into 3 sectors of 120 degrees.
+
+- `-60 °`&nbsp; &nbsp; to &nbsp; &nbsp;`+60 °`&nbsp; &nbsp; = straight
+- `-180 °`&nbsp; &nbsp; to &nbsp; &nbsp;`-60 °`&nbsp; &nbsp; = left
+- `60 °`&nbsp; &nbsp; to &nbsp; &nbsp;`180 °`&nbsp; &nbsp; = right
 
 
 ### Print
@@ -290,7 +304,7 @@ The ability **to print** or **save** turn-by-turn information **in pdf format** 
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
 
 ## Share / Export (Actions)
@@ -299,7 +313,7 @@ The ability **to print** or **save** turn-by-turn information **in pdf format** 
 
 <TabItem value="android" label="Android">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share1.png) 
+![Navigation route Android](@site/static/img/navigation/route/navigation_route_android_share1.png)
 
 </TabItem>
 
@@ -330,4 +344,4 @@ The Route Details navigation section has options that allow you to perform certa
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *This article was last updated in June 2024*
+> *This article was last updated in August 2024*

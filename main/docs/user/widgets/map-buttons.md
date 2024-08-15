@@ -36,6 +36,7 @@ My location and Zoom buttons control the map display. You can read more in [Inte
 **Directions** button allows to [build a route](../navigation/index.md) and [start navigation](../navigation/index.md). In navigation mode this button is not visible by default and it appears after a short tap the map.
 
 **Directions** button has 3 different indicative states:
+
 - Default grey icon - the route has not been built yet. A dialog to build a new route will appear by click.
 - Default blue icon - the route is built, but navigation has not started yet. A dialog with route information will appear by click.
 - Blue arrow icon - the route is built and navigation has started. A dialog with route information will appear by click.

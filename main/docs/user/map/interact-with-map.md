@@ -66,9 +66,8 @@ You can modify icons of "My Location", read more about it [here](../personal/pro
 
 Map magnifier is a special way to magnify the map. Essentially it works as a magnifying glass for paper maps, it allows to see the text bigger for raster maps or to see more or less details for the same scale - [Read more](../map/vector-maps.md#map-magnifier).
 
-## Map Orientation and Compass
 
-### Map Orientation Modes
+## Map Orientation Modes
 
 <Tabs groupId="operating-systems">
 
@@ -116,7 +115,7 @@ The map orientation modes allow the user to select how the map is displayed on t
 - (*Android only*) A single tap of the [Compass button](../widgets/map-buttons.md#compass) rotates the map orientation to the North in all orientations. Even if it reverts after a second, such as in compass mode.
 
 
-### Compass
+## Compass
 
 <Tabs groupId="operating-systems">
 
@@ -141,15 +140,14 @@ The map orientation modes allow the user to select how the map is displayed on t
 The compass button shows how the [map is oriented](#map-orientation-modes). The red arrow, or the direction of the arrow in *Movement direction* mode, indicates the North. [The icon on the button](../widgets/map-buttons.md#compass) indicates the current map orientation mode. Double tap (Android), One tap (iOS) the compass button toggles through all modes in turn.
 
 
-### Rotate map by bearing
+## Rotate Map by Bearing
 
 If rotate map by bearing (rotation by [movement direction](#map-orientation-modes)) is enabled, the map will be oriented so that the forward view will be strictly above the icon of my location on the map. Without movement, the map won't be rotated.  
 In this mode, the center of the map will be located slightly below the center of the device. It allows you to see more map data before you move, which is useful in the navigation mode.  
 Rotate map by bearing mode can be changed in [Profile settings](../personal/profiles.md#appearance) or by single tap the [Compass](#compass).  
 
-### Map Tilt and Horizon
 
-With new map [rendering engine](../personal/global-settings.md#map-rendering-engine) you can change [camera tilt](../plugins/development.md#camera-tilt) from 90 (no tilt) to 10 degrees. Approximately at map tilt less than 20-22 degrees (this parameter depends on zoom level), the imaginary horizon line becomes visible. Unlike the real one, the program horizon is always straight.  
+## Map Tilt and Horizon
 
 <Tabs groupId="operating-systems">
 
@@ -166,11 +164,13 @@ With new map [rendering engine](../personal/global-settings.md#map-rendering-eng
 
 </Tabs>  
 
+With new map [rendering engine](../personal/global-settings.md#map-rendering-engine) you can change [camera tilt](../plugins/development.md#camera-tilt) from 90 (no tilt) to 10 degrees. Approximately at map tilt less than 20-22 degrees (this parameter depends on zoom level), the imaginary horizon line becomes visible. Unlike the real one, the program horizon is always straight.  
+
 Under horizon you can see so-called *haze* or *fog*. This area of the map is filled with grey color, only few map details can be observed.  
 The use of fog is necessary, since the display of remote objects on the map requires significant computing resources and is not always justified due to map [distortions](../plugins/development.md#comparison-with-a-satellite-imagery) at small viewing angles. So the visible distance on OsmAnd map is currently limited to 35 tiles.  
 
 :::info
-Map tilt can be changed by long press on the screen with two fingers and moving them up/down. You can also change tilt by tapping on the [*My location*](#my-location--zoom) icon in the lower-right corner of the screen (only 45 and 90 degree positions are available).  
+Map tilt can be changed by long press on the screen with two fingers and moving them up/down. You can also change tilt by tapping on the [*My location*](#my-location-and-zoom) icon in the lower-right corner of the screen (only 45 and 90 degree positions are available).  
 You can not change Camera tilt when old [map rendering engine](../personal/global-settings.md#map-rendering-engine) (version 1) is on.
 :::
 
@@ -201,7 +201,7 @@ You can turn off all map animations during map changes, such as gestures and but
 Creates a smooth map panning effect versus the *[My Position](../personal/profiles/#profile-appearance)* icon when in motion. The effect introduces a slight delay versus ground truth of about 1 second. Enabling this has been reported to create some pronounced lag issues under some circumstances, disable if such issues arise.
 
 
-## External input device buttons
+## External Input Device Buttons
 
 External input device buttons provide a convenient and efficient way to interact with the map and the OsmAnd application interface.  They are located on external devices, such as **Bluetooth or other types of keyboards**, **specialized buttons on vehicle navigation devices**, or [WunderLINQ](https://blackboxembedded.com/) and [Parrot](https://www.parrot.com/en) controllers.  
 
@@ -211,7 +211,7 @@ One of the main functions of buttons on external input devices is to zoom in and
 The keyboard continues to work even if the *External input devices* option is turned off, when *None* is selected.
 :::
 
-### Preconfigured input device type
+### Preconfigured Input Device Type
 
 <Tabs groupId="operating-systems">
 
@@ -267,7 +267,7 @@ To access the settings of an external input device, you need to enable this feat
 | **&#8592;** <br/> (*Android only*)| *Parrot*  | [Zoom out](../map/interact-with-map.md#my-location--zoom) |
 | **&#8594;** <br/> (*Android only*) | *Parrot*  | [Zoom in](../map/interact-with-map.md#my-location--zoom) |
 
-### Custom input device type
+### Custom Input Device Type
 
 <InfoAndroidOnly />
 
@@ -336,4 +336,4 @@ You can delete multiple unnecessary actions using the **Edit button** (*pencil-s
 - [Public transport](./public-transport.md)
 
 
-> *This article was last updated in July 2024*
+> *This article was last updated in August 2024*
