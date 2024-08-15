@@ -255,7 +255,7 @@ The **Other** section provides additional profile settings. You can switch butto
 
 In the article [Navigation settings](../navigation/guidance/navigation-settings.md) you can find the relevant settings of the OsmAnd app that you can use in your journeys.
 
-- [Navigation Types](../navigation/guidance/navigation-settings.md#navigation-type). Gives you the option to choose the type of navigation depending on how you are travelling and whether you have an internet connection.
+- [Navigation type](../navigation/guidance/navigation-settings.md#navigation-type). Gives you the option to choose the type of navigation depending on how you are travelling and whether you have an internet connection.
 - [Route parameters](../navigation/guidance/navigation-settings.md#route-parameters). These are settings that determine how the app will calculate a route to reach your destination.
 - [Screen alerts](../navigation/guidance/navigation-settings.md#screen-alerts). This navigation setting allows you to enable the Alerts Widget and select which alerts you want to see on the app screen while navigating.
 - [Voice prompts](../navigation/guidance/navigation-settings.md#voice-prompts). Audio instructions during navigation help you as a driver or pedestrian get to your destination while navigating a selected route.
@@ -263,6 +263,7 @@ In the article [Navigation settings](../navigation/guidance/navigation-settings.
 - [Customise route line](../navigation/guidance/navigation-settings.md#customize-route-line). With this setting you can choose the appearance of the route line that will be visible on the map during navigation.
 - [Map during navigation](../navigation/guidance/navigation-settings.md#map-during-navigation). The map is used during navigation to determine your location, plan your route, and land orientation.
 - [Animate own position](../navigation/guidance/navigation-settings.md#animate-own-position) (*iOS*). For *Android*, this item is located in the [Other](#other) section of the *General Settings* menu. This setting provides a smooth animation of the My Position point moving on the map during navigation.
+- [Detailed track guidance](../navigation/guidance/navigation-settings.md). Allows to match your track to nearby raods for enhanced turn-by-turn guidance: _Ask every time_ or _Always_.
 
 :::info
 There are no navigation settings in *Browse map* profile.  

@@ -11,10 +11,13 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
 
 <InfoIncompleteArticle/>
 
-> *This article was last updated in July 2024*
+> *This article was last updated in August 2024*
 
 ## Overview
 
@@ -493,6 +496,19 @@ Limits on vehicle parameters can be important for navigation and road safety. So
 
 All of these restrictions can be important for navigation and should be considered when planning a route. If a vehicle's exceeds the limits, it may result in road safety, infrastructure damage, accidents fines, and other legal consequences. Therefore, drivers should carefully examine the route and make sure that the height of their vehicle meets the limits.  
 
+## Detailed track guidance
+
+<InfoAndroidOnly/>
+
+*<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,detailed_track_guidance"/>* 
+
+![Navigation Settings Android](@site/static/img/navigation/detailed_track_guidance_android.png)
+
+During creation a [route by a track](../setup/gpx-navigation.md#follow-track-menu) you can attach your [track to the roads](../setup/gpx-navigation.md#follow-track-menu). With this setting you can choose two parameters for "Attach to the Roads" function":
+- _<Translate android="true" ids="ask_every_time"/>_ - this parameter means that the "Attach to the roads" dialogue will appear on the ["Route Details"](../setup/route-details.md) screen after each [route building by a track](../setup/gpx-navigation.md#follow-track-menu).
+- _<Translate android="true" ids="shared_string_always"/>_ - with this parameter the ["Attach to the roads"](../setup/gpx-navigation.md#attach-to-the-roads) process will be automaticaly for each [route building by a track](../setup/gpx-navigation.md#follow-track-menu).
+
+
 
 ## Related Articles
 
@@ -506,4 +522,4 @@ All of these restrictions can be important for navigation and should be consider
 - [Android Auto](../auto-car.md)
 - [CarPlay](../car-play.md)
 
-> *This article was last updated in July 2024*
+> *This article was last updated in August 2024*

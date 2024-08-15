@@ -126,9 +126,10 @@ If a track consists of more than one track, [when importing](../../personal/trac
 
 </Tabs>
 
-- &#128393; button near *track name and info* - opens it in a [*Plan route*](../../plan-route/create-route.md) tool.
-- &#128448; *&nbsp;<Translate android="true" ids="select_another_track"/>* - select another GPX file for navigation.
+- ✏️ button near *track name and info* - opens it in a [*Plan route*](../../plan-route/create-route.md) tool.
+- 📁 *&nbsp;<Translate android="true" ids="select_another_track"/>* - select another GPX file for navigation.
 - *&nbsp;<Translate android="true" ids="gpx_option_reverse_route"/>* - if enabled, the direction of movement along the track will be reversed.
+- *&nbsp;<Translate android="true" ids="attach_to_the_roads"/>* - open ["<Translate android="true" ids="attach_to_the_roads"/>"](#attach-to-the-roads) menu.
 - *&nbsp;<Translate android="true" ids="pass_whole_track_descr"/>* (or *<Translate ios="true" ids="point_to_navigate"/>* in iOS) - you can choose whether you will be directed to the **<Translate android="true" ids="start_of_the_track"/>** or **<Translate android="true" ids="nearest_point"/>** of the track.
 - *&nbsp;<Translate android="true" ids="nav_type_hint"/>* - you can choose weither you will be guided to the track using *[<Translate android="true" ids="routing_profile_straightline"/>](../routing/straight-line-routing.md)* or usng *[routing type](../routing/routing-types.md)* from current profile.  
 
