@@ -212,13 +212,13 @@ Downloaded maps are displayed in *Green* in the Android and iOS versions of OsmA
 
 ### Map Mode
 
-The map is displayed according to the day or night mode selected from the list. And by default and for all new users, the [map style](#default-map-styles) corresponds to the light or dark theme selected in the system settings of your device.
-
 <Tabs groupId="operating-systems">  
 
 <TabItem value="android" label="Android">
 
 *<Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_mode"/>*  
+
+![Map Mode](@site/static/img/map/map_mode_andr.png)
 
 </TabItem>
 
@@ -226,16 +226,22 @@ The map is displayed according to the day or night mode selected from the list. 
 
 *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,map_mode"/>*
 
+![Map Mode](@site/static/img/map/map_mode_ios.png)
+
 </TabItem>
 
 </Tabs>
 
-| Parameter | Description |
-|:------------|:---------------|
-|**<Translate android="true" ids="daynight_mode_auto"/>**| Switches between day and night modes based on sunset and sunrise data at your location.  |
-|**<Translate android="true" ids="daynight_mode_day"/>**| The map view is always displayed in daytime mode. Light theme. |
-|**<Translate android="true" ids="daynight_mode_night"/>**| The map view is always displayed in night mode. Dark theme. |
-|**<Translate android="true" ids="daynight_mode_sensor"/>**| The light sensor is used for day and night modes. |
+The map is displayed in light or dark theme according to the mode selected from the list of suggested ones. By default and for all new users, the [map style](#default-map-styles) corresponds to the theme selected in the system settings of your device.
+
+| | |
+|:------------|:------------|
+| **<Translate android="true" ids="daynight_mode_day"/>** | <Translate android="true" ids="daynight_mode_day_summary"/> |
+| **<Translate android="true" ids="daynight_mode_night"/>** | <Translate android="true" ids="daynight_mode_night_summary"/> |
+| **Sunrise / Sunset** | <Translate android="true" ids="daynight_mode_sunrise_sunset_summary"/> Both times for your region are shown in the description.  |
+| **<Translate android="true" ids="daynight_mode_sensor"/>** (*Android only*) | Uses the device's light sensor to switch between light and dark themes based on ambient light levels. |
+| **<Translate android="true" ids="daynight_mode_app_theme"/>** (*Android only*) | The map display matches the overall theme of the app. Day mode for light theme and night mode for dark theme. |
+
 
 ### Details  
 
@@ -248,6 +254,7 @@ The map is displayed according to the day or night mode selected from the list. 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
+
   
 *<Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,nautical_depth"/>*  
 
@@ -502,4 +509,4 @@ If you have personal or 3rd party custom map style created according to [Specifi
 - [Import / Export](../personal/import-export.md)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *This article was last updated in Jule 2024*
+> *This article was last updated in August 2024*
