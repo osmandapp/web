@@ -18,7 +18,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-OsmAnd has many powerful features to display various routes on the map. Routes could be built as part of Navigation, created via Plan Route, imported as GPX tracks, recorded via Trip Recording plugin or browsed and selected from OpenStreetMap data.
+OsmAnd has many powerful features for displaying different [routes](#type-of-routes) on the map. Routes can be built as part of navigation, created with [Plan Route](#plan-a-route), imported as [GPX tracks](#save-as-a-track), recorded with the [Trip Recording plugin](../plugins/trip-recording.md) or viewed and selected from OpenStreetMap data.
+
 
 ## Route Settings
 
@@ -26,12 +27,11 @@ A route is a predefined path, which is a sequence of roads and turns to be follo
 
 
 1. You can **[select one or more layers of routes at a time](../map/tracks/index.md#routes-on-the-map)**. It is important to note that if different routes intersect at the same point, only the color of the top layer will be visible. Route designations for OsmAnd Map Style can be found in the [Map Legend](../map-legend/osmand.md#routes) article.
-   <!-- - Read about the color scheme of routes in the [Color Palette Schemes](../personal/color-palette-schemes.md) article.  -->
 
 2. You can **use Custom buttons** to customize [Quick Actions](../map/tracks/index.md#quick-actions-for-routes) to switch between enabling or disabling the display of selected route types.
 
 3. Tapping **the shield icon with a route number or route flag** on the map will open a context menu with a list of available options.  
-    - In some cases, you may find several routes intersecting at a certain location. When you select one of the routes, the *[Track context menu](../map/tracks/track-context-menu.md)* appears. In this menu, you can [save the selected route](../map/tracks/)  .md#routes-on-the-map) to the device memory in GPX format, which will allow you to use it for [GPX navigation](../navigation/setup/gpx-navigation.md) in the future.
+    - In some cases, you may find several routes intersecting at a certain location. When you select one of the routes, the *[Track context menu](../map/tracks/track-context-menu.md)* appears. In this menu, you can [save the selected route](../map/tracks.md#routes-on-the-map) to the device memory in GPX format, which will allow you to use it for [GPX navigation](../navigation/setup/gpx-navigation.md) in the future.
 
 
 ## Type of Routes
@@ -40,7 +40,7 @@ A route is a predefined path, which is a sequence of roads and turns to be follo
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>* 
+*<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
 ![Configure Map Routes section](@site/static/img/map/settings_routes_andr_1.png)
 
@@ -56,7 +56,10 @@ A route is a predefined path, which is a sequence of roads and turns to be follo
 
 </Tabs>
 
-OsmAnd can highlight routes provided by OpenStreetMap. Some routes have [**additional settings**](#coloring-routes-by-type). By default, if you have not selected anything in the [Configure Map](../map/configure-map-menu.md) menu, the first route type from the list will be assigned, otherwise a type of your choice will be assigned. You can read more in the [Tracks and Routes](#coloring-routes-by-type) article.  
+OsmAnd can highlight routes provided by OpenStreetMap. Some routes have **additional settings** with which you can select the relevant coloring type for displaying them on the map.  
+
+Additional settings are available next to the route name in the&nbsp;  "**...|**"  &nbsp;menu. By default, if you do not select anything in the [Configure Map](../map/configure-map-menu.md) menu, the routes of the first type in the list will be displayed. But if you have made a selection, it is saved by the application and will be used for the current profile every time you enable the routes.
+
 
 ### Cycle routes
 
@@ -65,32 +68,30 @@ Colors routes according to their individual local color (if available in OpenStr
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)
 
 ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  
-Colors routes according to the type of node network (international, regional, or local).    
+Colors routes according to the type of node network (international, regional, or local).  
 ![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 ### Mountain bike routes
 
-***<Translate android="true" ids="mtb_scale"/>***.   
-
+***<Translate android="true" ids="mtb_scale"/>***.  
+Shows trails according to MTB scale. You can find more information in the [Map Legend](../map-legend/index.md) article.  
 ![Map routes - mtb trails](@site/static/img/map/map-routes-mtb-trails.png)  
-Shows trails according to MTB scale. You can find more information in the [Map Legend](../map-legend/index.md) article.    
 
 ***<Translate android="true" ids="mtb_imba"/>***.  
-
-![Map routes - mtb trails](@site/static/img/map/map-routes-mtb_imba-trails.png)  
 Show MTB trails accorgind International Mountain Bicycling Association [MTB IMBA](https://www.imba.com/). More information in the article [Map legend](../map-legend/index.md).  
+![Map routes - mtb trails](@site/static/img/map/map-routes-mtb_imba-trails.png)
 
 ### Hiking routes
 
-1. ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  
-Colors routes according to their individual [local color](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) (if available in OpenStreetMap) and the tourist shield symbol.    
+***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  
+Colors routes according to their individual [local color](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) (if available in OpenStreetMap) and the tourist shield symbol.  
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)
 
-2. ***<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_name"/>***.  
+***<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_name"/>***.  
 Colors by [network affiliation](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol).  
 ![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)
 
-3. ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  
+***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  
 Colors routes according to the type of [node network](https://wiki.openstreetmap.org/wiki/Node_Networks) (international, regional, or local).  
 ![Map routes - hiking node networks](@site/static/img/map/map-routes-hiking-node-networks.png)
 
@@ -98,7 +99,7 @@ Colors routes according to the type of [node network](https://wiki.openstreetmap
 
 Determines the difficulty of hiking trails. Italian and Swiss classifications. Has a specific list of equipment requirements.  
 
-Shows classified hiking trails in mountainous areas based on the difficulty that can be expected for color.    
+Shows classified hiking trails in mountainous areas based on the difficulty that can be expected for color.  
 
 1. [*SAC scale*](https://wiki.openstreetmap.org/wiki/Key:sac_scale)
 2. [*CAI scale*](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
@@ -231,9 +232,7 @@ Shows previously uploaded specially configured [user routes](https://osmand.net/
 To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../map/tracks/track-context-menu.md#info-panel). This will open the [Quick actions](../map/tracks/track-context-menu.md#quick-actions) button panel where you will have access to track actions such as changing [*Appearance*](./tracks/appearance.md), [*Navigation*](#route-navigation), or editing [*Plan a route*](../plan-route/create-route.md).
 
 
-
-
-### Quick Actions 
+### Quick Actions
 
 <InfoAndroidOnly />
 
