@@ -318,7 +318,7 @@ There are no navigation settings in *Browse map* profile.
 
 <TabItem value="android" label="Android">
 
-![Profiles Navigation Settings Android](@site/static/img/personal/profiles/profile_navigation_settings_android.png)
+![Navigation Settings Android](@site/static/img/navigation/navigation_settings_overview_andr.png)
 
 </TabItem>
 
