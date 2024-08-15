@@ -270,10 +270,11 @@ Instructions include information about moving along the route, such as:
 - *[Lanes](../../widgets/nav-widgets.md#lanes) layout* for the current road.
 - [*Road side indicator*](#road-side-indicator) (*iOS only*).
 
+
 ### Road side indicator
 
 :::caution iOS only
-This type of instruction is currently not available for the Android version of the OsmAnd app.
+This type of instruction is currently *not available for the Android* version of the OsmAnd app.
 :::
 
 ![Side indication](@site/static/img/navigation/route/side_indication.png)
@@ -282,34 +283,22 @@ In the instruction list, the **road side indicator** shows which direction from 
 
 The angle between your Destination (*[Bearing](https://en.wikipedia.org/w/index.php?title=Bearing_(navigation)&oldformat=true) from the last point*) and the last segment (*Bearing to the last 2 points of the route*) is measured, divided into 3 sectors of 120 degrees, and the result is that you see which direction your destination is.
 
-- **`-60 °`**&nbsp; &nbsp; &nbsp; to &nbsp; &nbsp;**`60 °`**&nbsp; &nbsp; &nbsp; - marked as **straight ahead**.
-- **`-180 °`**&nbsp; &nbsp; to &nbsp; &nbsp;**`-60 °`**&nbsp; &nbsp; - marked as **left** side.
-- **`60 °`**&nbsp; &nbsp; &nbsp; &nbsp; to &nbsp; &nbsp;**`180 °`**&nbsp; &nbsp; - marked as **right** side.
+- `-60 °`&nbsp; &nbsp; &nbsp; to &nbsp; &nbsp;`60 °`&nbsp; &nbsp; &nbsp; - marked as **straight ahead**.
+- `-180 °`&nbsp; &nbsp; to &nbsp; &nbsp;`-60 °`&nbsp; &nbsp; - marked as **left** side.
+- `60 °`&nbsp; &nbsp; &nbsp; &nbsp; to &nbsp; &nbsp;`180 °`&nbsp; &nbsp; - marked as **right** side.
 
 
 ### Print
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
+<InfoAndroidOnly/>
 
 ![route details](@site/static/img/navigation/route/route_details_print-2.png)  
 
 The **Print** feature of a turn-by-turn route description can be useful if you prefer to have a physical copy of your route description instead of using electronic devices, or if you do not have access to navigation apps or GPS navigators, no Internet access, or if you need information for other people traveling with you.
 
-A printed route description provides detailed turn-by-turn instructions on how to navigate your route, including the distance to the next turn, driving direction, and street or trail names, as well as distance and travel time information. This information can be useful when you are planning a trip and want to estimate the time and distance between different points on the route and determine the expected time of arrival.
+A printed route description provides detailed *turn-by-turn instructions* on how to navigate your route, including the distance to the next turn, driving direction, and street or trail names, as well as distance and travel time information. This information can be useful when you are planning a trip and want to estimate the time and distance between different points on the route and determine the expected time of arrival.
 
 The ability **to print** or **save** turn-by-turn information **in pdf format** is especially useful when traveling long distances or in unfamiliar places when you need to have a more detailed idea of the route and the time it takes to get there.
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-<InfoAndroidOnly/>
-
-</TabItem>
-
-</Tabs>
 
 
 ## Share / Export (Actions)
