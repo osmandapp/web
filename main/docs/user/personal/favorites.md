@@ -478,25 +478,13 @@ Default color, icon and shape will apply to the added favorite points into the g
 
 ### Bulk Move
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-:::caution Note
-*Only for iOS version.*
+:::caution iOS only
+This feature is currently not available for the *iOS version* of the OsmAnd app.
 :::
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
 
 *Pencil* button opens special functions for a chosen Favorite folder. You need to choose folder or points for action: to move your Favorites points (folders) to others Favorites folders (named groups) or to new creating folder (group). If Favorite group (folder) hasn't any points it will be deleted after OsmAnd restart by automatic.
 
 ![Favorites actions ios](@site/static/img/personal/favorites_actions_ios.png)
-
-</TabItem>
-
-</Tabs>
 
 
 ### Rename
