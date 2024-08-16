@@ -163,14 +163,13 @@ The _Follow Track_ menu helps you choose options for navigation by track. First,
 When your track selected as a *[destination point](../setup/route-navigation.md#set-destinations)*, you can find the **Attach to the roads** option in the *[Follow track menu](#follow-track-menu)* (both Android and iOS versions).
 
 :::note Anroid version
-For the Android version, you can choose two parameters on [Navigation settings → Detailed track guidance](../guidance/navigation-settings.md#detailed-track-guidance) for your Profile: _<Translate android="true" ids="ask_every_time"/>_ (by default) or  _<Translate android="true" ids="shared_string_always"/>_. Where _<Translate android="true" ids="ask_every_time"/>_  means you will have the **Attach to the roads** option in the *[Navigation menu](../setup/route-navigation.md#navigation-menu)*. _<Translate android="true" ids="shared_string_always"/>_ means that your track will be attached to the roads automatically each time.
+For the Android version, you can choose two parameters on [Navigation settings → Detailed track guidance](../guidance/navigation-settings.md#detailed-track-guidance) for your Profile: _<Translate android="true" ids="ask_every_time"/>_ (by default) or  _<Translate android="true" ids="shared_string_always"/>_. Where _<Translate android="true" ids="ask_every_time"/>_  means you will have the **Attach to the roads** option in the *[Navigation menu](../setup/route-navigation.md#navigation-menu)*. _<Translate android="true" ids="shared_string_always"/>_ means that your track will be attached to the roads automatically each times.
 :::
 
  If you tap **Attach to the roads** option,  the [Plan a route](../../plan-route/create-route.md#saving-a-route) tool will open and OsmAnd will match each point on the track to the nearest allowed road on the map according to the chosen profile and threshold distance.  
 
 - *Threshold distance* (default is 50 meters) refers to the maximum distance between a point on a GPS track and the nearest point on a road in order to attach the track to the road.
-- *When you change the profile*, OsmAnd automatically reattaches your track to the allowed for this profile roads.
-If your track consists of a big amount of points, attaching to the roads may take a long time. On the picture above, you can see the highlighted with orange status line, which indicates the progress. After the procedure of attaching to the roads is finished, the button **Apply** is active, and the track can be used for navigation.
+- *When you change the profile*, OsmAnd automatically reattaches your track to the allowed for this profile roads. If your track consists of a big amount of points, attaching to the roads may take a long time. On the picture above, you can see the highlighted with orange status line, which indicates the progress. After the procedure of attaching to the roads is finished, the button **Apply** is active, and the track can be used for navigation.
 
 :::note
 After attaching your track to the roads in [Route details section](../setup/route-details.md), you will find more precise information about your route and [Voice instructions](#guidance) will be more detailed.
