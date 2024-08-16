@@ -254,16 +254,18 @@ export default function PoiLayer() {
                 }
                 setPrevController(controller);
                 setPrevZoom(_.cloneDeep(zoom));
-                debouncedGetPoi({
-                    controller,
-                    ignore,
-                    poiList,
-                    showPoiCategories: ctx.showPoiCategories,
-                    savedBbox: bbox,
-                    prevCategoriesCount,
-                    poiIconCache: ctx.poiIconCache,
-                    zoom,
-                });
+                if (ctx.showPoiCategories.length > 0) {
+                    debouncedGetPoi({
+                        controller,
+                        ignore,
+                        poiList,
+                        showPoiCategories: ctx.showPoiCategories,
+                        savedBbox: bbox,
+                        prevCategoriesCount,
+                        poiIconCache: ctx.poiIconCache,
+                        zoom,
+                    });
+                }
             } else {
                 if (poiList?.layer && _.isEmpty(ctx.showPoiCategories)) {
                     const newPoiList = {
