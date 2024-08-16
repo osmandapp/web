@@ -10,6 +10,43 @@ import AppContext from '../../../context/AppContext';
 import { SEARCH_RESULT_TYPE_POI, SEARCH_RESULT_TYPE_POI_CATEGORY } from './SearchResults';
 import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 
+export function getPropsFromSearchResultItem(props, t) {
+    let type, name;
+    if (props['web_type'] === SEARCH_RESULT_TYPE_POI) {
+        name = props['web_poi_name'];
+        type = props['web_poi_subType'] ?? props['web_poi_type'];
+        type = _.capitalize(t(`amenity_type_${type}`, formattingPoiType(t(`poi_${type}`))));
+        if (name === '') {
+            name = type;
+        }
+    } else {
+        name = props['web_name'];
+        if (props['web_type'] === SEARCH_RESULT_TYPE_POI_CATEGORY) {
+            type = props['web_categoryKeyName']?.toLowerCase();
+            if (type) {
+                type = _.capitalize(formattingPoiType(t(`poi_${type}`)));
+            }
+        } else {
+            type = props['web_type']?.toLowerCase();
+            if (type) {
+                type = _.capitalize(t(`search_address_${type}`, formattingPoiType(type)));
+            }
+        }
+    }
+
+    name = getFirstSubstring(name);
+    type = getFirstSubstring(type);
+
+    function getFirstSubstring(inputString) {
+        if (inputString?.includes(';')) {
+            return inputString.split(';')[0];
+        }
+        return inputString;
+    }
+
+    return { name, type };
+}
+
 export default function SearchResultItem({ item, setSearchValue }) {
     const ctx = useContext(AppContext);
 
@@ -19,44 +56,10 @@ export default function SearchResultItem({ item, setSearchValue }) {
     const { name, distance, type, icon } = parseItem(item);
 
     function parseItem(item) {
-        const props = item.properties;
-        let name, distance, type, icon;
-        distance = item.locDist;
-        if (props['web_type'] === SEARCH_RESULT_TYPE_POI) {
-            name = props['web_poi_name'];
-            type = props['web_poi_subType'] ?? props['web_poi_type'];
-            type = _.capitalize(t(`amenity_type_${type}`, formattingPoiType(t(`poi_${type}`))));
-            if (name === '') {
-                name = type;
-            }
-            icon = item.icon;
-        } else {
-            name = props['web_name'];
-            icon = item.icon;
-            if (props['web_type'] === SEARCH_RESULT_TYPE_POI_CATEGORY) {
-                type = props['web_categoryKeyName']?.toLowerCase();
-                if (type) {
-                    type = _.capitalize(formattingPoiType(t(`poi_${type}`)));
-                }
-            } else {
-                type = props['web_type']?.toLowerCase();
-                if (type) {
-                    type = _.capitalize(t(`search_address_${type}`, formattingPoiType(type)));
-                }
-            }
-        }
-
-        name = getFirstSubstring(name);
-        type = getFirstSubstring(type);
-
-        return { name, distance, type, icon };
-    }
-
-    function getFirstSubstring(inputString) {
-        if (inputString?.includes(';')) {
-            return inputString.split(';')[0];
-        }
-        return inputString;
+        const res = getPropsFromSearchResultItem(item.properties, t);
+        const distance = item.locDist;
+        const icon = item.icon;
+        return { ...res, icon, distance };
     }
 
     return (

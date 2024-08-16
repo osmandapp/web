@@ -1,6 +1,6 @@
 import { apiGet } from '../../util/HttpApi';
 import { useContext, useEffect, useState } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../context/AppContext';
 import PoiManager, {
     createPoiCache,
     DEFAULT_ICON_COLOR,
@@ -151,12 +151,21 @@ export default function SearchLayer() {
                     const layers = await createSearchLayer({
                         objList: ctx.searchResult?.features,
                     });
-                    layers.addTo(map);
+                    layers.addTo(map).on('click', onClick);
                 }
             }
         };
         addAsyncLayers().then();
     }, [ctx.searchResult]);
+
+    function onClick(e) {
+        ctx.setCurrentObjectType(OBJECT_SEARCH);
+        const poi = {
+            options: e.sourceTarget.options,
+            latlng: e.sourceTarget._latlng,
+        };
+        ctx.setSelectedWpt({ poi });
+    }
 
     async function createSearchLayer({ objList }) {
         const innerCache = await createPoiCache({ poiList: objList, poiIconCache: ctx.poiIconCache });

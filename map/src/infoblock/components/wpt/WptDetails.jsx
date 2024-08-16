@@ -29,8 +29,8 @@ import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_acti
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
 import { ReactComponent as FavoritesIcon } from '../../../assets/menu/ic_action_favorite.svg';
 import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
-import { cleanHtml, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
-import { changeIconSizeWpt, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
+import { cleanHtml, DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
+import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import FavoritesManager, {
     getColorLocation,
     LOCATION_UNAVAILABLE,
@@ -67,21 +67,32 @@ import { Dialog } from '@material-ui/core';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
+import { getPropsFromSearchResultItem } from '../../../menu/search/search/SearchResultItem';
+import { SEARCH_ICON_MAP_OBJ } from '../../../map/layers/SearchLayer';
 
-export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize }) => {
+export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
+    const iconSvg = icon === SEARCH_ICON_MAP_OBJ ? ctx.poiIconCache[SEARCH_ICON_MAP_OBJ] : null;
+    let coloredSvg = null;
+    if (iconSvg) {
+        changeIconColor(iconSvg, DEFAULT_ICON_COLOR);
+    }
+
+    const iconHtml = createPoiIcon({
+        color: color,
+        background: background,
+        hasBackgroundLight: false,
+        svgIcon: coloredSvg,
+        iconSize: iconSize,
+        backgroundSize: shieldSize,
+        point: wpt,
+        icon: icon === SEARCH_ICON_MAP_OBJ ? null : icon,
+    }).options.html;
+
     return (
         <div
             style={{ display: 'flex' }}
             dangerouslySetInnerHTML={{
-                __html:
-                    changeIconSizeWpt(
-                        removeShadowFromIconWpt(
-                            createPoiIcon({ point: wpt, color, background, hasBackgroundLight: false, icon }).options
-                                .html
-                        ),
-                        iconSize,
-                        shieldSize
-                    ) + '',
+                __html: removeShadowFromIconWpt(iconHtml) + '',
             }}
         />
     );
@@ -99,7 +110,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     const ADDRESS_NOT_FOUND = 'No data';
 
     const ICON_IMG_SIZE = 24;
-    const ICON_SHIELD_SIZE = 40;
+    const ICON_SHIELD_SIZE = 48;
 
     const [wpt, setWpt] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -180,6 +191,21 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 if (currentWpt) {
                     result = await getDataFromWpt(type, ctx.selectedWpt, currentWpt);
                 }
+            } else if (type?.isSearch) {
+                const currentPoi = ctx.selectedWpt.poi;
+                const { options: objOptions, latlng } = currentPoi;
+                const { name, objType } = getPropsFromSearchResultItem(objOptions, t);
+                const tags = await WptTagsProvider.getWptTags(currentPoi, type, ctx);
+                result = {
+                    type: type,
+                    poiType: objType,
+                    name: name,
+                    latlon: { lat: latlng.lat, lon: latlng.lng },
+                    background: DEFAULT_POI_SHAPE,
+                    color: DEFAULT_POI_COLOR,
+                    icon: objOptions[FINAL_POI_ICON_NAME],
+                    tags: tags,
+                };
             } else {
                 result = null;
             }
@@ -274,6 +300,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     function getWptType(wpt) {
         return {
             isPoi: ctx.currentObjectType === OBJECT_TYPE_POI && wpt?.poi,
+            isSearch: ctx.currentObjectType === OBJECT_SEARCH && wpt?.poi,
             isWikiPoi: wpt?.wikidata,
             isWpt: isTrack(ctx) && (wpt?.trackWpt || wpt?.trackWptItem),
             isFav: ctx.currentObjectType === OBJECT_TYPE_FAVORITE && wpt?.markerCurrent,
@@ -281,7 +308,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }
 
     function closeDetails() {
-        if (wpt?.type?.isPoi) {
+        if (wpt?.type?.isPoi || wpt?.type?.isSearch) {
             isDetails ? returnToSearch() : closeHeader({ ctx });
         } else if (wpt?.type?.isWpt) {
             isDetails ? setOpenWptTab(true) : closeHeader({ ctx });
@@ -540,6 +567,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                         icon={wpt.icon}
                                         iconSize={ICON_IMG_SIZE}
                                         shieldSize={ICON_SHIELD_SIZE}
+                                        ctx={ctx}
                                     />
                                 )}
                             </Box>

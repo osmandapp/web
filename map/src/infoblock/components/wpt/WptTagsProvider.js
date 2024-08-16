@@ -168,7 +168,7 @@ async function getWptTags(obj, type, ctx) {
     let id = null;
     if (type.isFav || type.isWpt) {
         tags = obj.ext?.extensions;
-    } else if (type.isPoi) {
+    } else if (type.isPoi || type.isSearch) {
         Object.entries(obj.options).forEach(([key, value]) => {
             if (value === undefined) {
                 delete obj.options[key];
