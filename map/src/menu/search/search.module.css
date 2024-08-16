@@ -51,10 +51,14 @@
     font-family: Roboto !important;
     color: var(--text-secondary) !important;
     font-size: 14px !important;
-    font-style: normal !important;
     font-weight: 400 !important;
-    line-height: 140% !important;
-    letter-spacing: 0.28px !important;
+}
+.explorePlaceTypes {
+    margin-left: 8px !important;
+    font-family: Roboto !important;
+    color: var(--text-secondary) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
 }
 .placeDesc {
     color: var(--text-secondary) !important;

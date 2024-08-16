@@ -99,7 +99,7 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
                                                         {typeIcon}
                                                     </ListItemIcon>
                                                 )}
-                                                <Typography className={styles.placeTypes} noWrap>
+                                                <Typography className={styles.explorePlaceTypes} noWrap>
                                                     {`${getType(poiSubType)}, ${getType(poiType)}`}
                                                 </Typography>
                                             </div>
