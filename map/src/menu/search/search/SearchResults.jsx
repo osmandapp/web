@@ -45,14 +45,14 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
         if (!currentLoc) return;
         const loc = getLoc();
 
-        const features = ctx.searchResult?.features;
-        if (!features || features.length === 0) {
-            ctx.setProcessingSearch(false);
-            setResult(null);
-            return;
-        }
-
         if (loc) {
+            const features = ctx.searchResult?.features;
+            if (!features || features.length === 0) {
+                ctx.setProcessingSearch(false);
+                setResult(null);
+                return;
+            }
+
             const arrWithDist = features.map((f) => {
                 const lat = f?.geometry?.coordinates[1];
                 const lon = f?.geometry?.coordinates[0];
@@ -169,14 +169,16 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
                 defaultSearchValue={value?.query}
             />
             {ctx.processingSearch && <Loading />}
-            {!ctx.processingSearch && (
-                <Box sx={{ overflowY: 'auto' }}>
-                    {result?.features.map((item, index) => (
-                        <SearchResultItem key={index} item={item} index={index} setSearchValue={setSearchValue} />
-                    ))}
-                </Box>
-            )}
-            {!result && !ctx.processingSearch && <EmptySearch />}
+            {!ctx.processingSearch &&
+                (!result ? (
+                    <EmptySearch />
+                ) : (
+                    <Box sx={{ overflowY: 'auto' }}>
+                        {result?.features.map((item, index) => (
+                            <SearchResultItem key={index} item={item} index={index} setSearchValue={setSearchValue} />
+                        ))}
+                    </Box>
+                ))}
         </>
     );
 }

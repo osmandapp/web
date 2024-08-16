@@ -224,7 +224,6 @@ export default function PoiLayer() {
 
     function addToSearchRes(poiList) {
         if (ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY) {
-            ctx.setProcessingSearch(false);
             ctx.setSearchResult((prevResult) => {
                 return {
                     ...prevResult,
