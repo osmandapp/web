@@ -3,15 +3,16 @@ import { Box } from '@mui/material';
 import React, { useContext } from 'react';
 import AppContext from '../../../context/AppContext';
 
-export default function WikiPlacesList({ size, showAll = null }) {
+export default function WikiPlacesList({ size, showAll = null, useOverflow = true }) {
     const ctx = useContext(AppContext);
 
     return (
         <Box
             id={'se-wiki_places-items'}
-            minWidth={ctx.infoBlockWidth}
-            maxWidth={ctx.infoBlockWidth}
-            sx={{ overflow: 'auto', overflowX: 'hidden' }}
+            sx={{
+                overflowY: useOverflow ? 'auto' : 'hidden',
+                overflowX: 'hidden',
+            }}
         >
             {!ctx.searchSettings.useWikiImages &&
                 ctx.wikiPlaces

@@ -212,14 +212,14 @@ export default function SearchMenu() {
                         />
                     )}
                     {isMainSearchScreen && (
-                        <>
+                        <Box sx={{ overflowY: 'auto', overflowX: 'hidden' }}>
                             <CustomInput
                                 menuButton={<MenuButton needBackButton={!isMainSearchScreen} />}
                                 setSearchValue={setSearchValue}
                             />
                             <SubTitle title={'search_categories'} />
-                            <Box sx={{ overflow: 'none', mt: '16px' }}>
-                                <Grid sx={{ mx: 0.5, maxWidth: '360px' }} container spacing={2}>
+                            <Box sx={{ overflow: 'none', mt: '16px', ml: '16px' }}>
+                                <Grid container spacing={2}>
                                     {ctx.poiCategory?.filters
                                         ?.sort()
                                         .slice(0, 6)
@@ -247,11 +247,10 @@ export default function SearchMenu() {
                                             );
                                         })}
                                 </Grid>
-                                <Button className={styles.buttonShowAllExplore} onClick={openSearchByCategories}>
-                                    {t('shared_string_show_all')}
-                                </Button>
                             </Box>
-
+                            <Button className={styles.buttonShowAllExplore} onClick={openSearchByCategories}>
+                                {t('shared_string_show_all')}
+                            </Button>
                             <Divider />
                             <SubTitle title={'web:explore_menu'} />
                             {loadingWikiPlaces ? (
@@ -260,6 +259,7 @@ export default function SearchMenu() {
                                 <>
                                     <WikiPlacesList
                                         size={3}
+                                        useOverflow={false}
                                         showAll={
                                             <Button className={styles.buttonShowAllExplore} onClick={openExploreMenu}>
                                                 {t('shared_string_show_all')}
@@ -269,7 +269,7 @@ export default function SearchMenu() {
                                     <Divider />
                                 </>
                             )}
-                        </>
+                        </Box>
                     )}
                 </>
             ) : (
