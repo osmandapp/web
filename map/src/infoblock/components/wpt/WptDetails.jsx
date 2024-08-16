@@ -272,7 +272,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }
 
     useEffect(() => {
-        if ((wpt?.type?.isPoi || wpt?.type?.isWikiPoi) && !isAddressAdded) {
+        if ((wpt?.type?.isPoi || wpt?.type?.isSearch || wpt?.type?.isWikiPoi) && !isAddressAdded) {
             setIsAddressAdded(true);
             getPoiAddress(wpt).then((data) => {
                 if (data) {
