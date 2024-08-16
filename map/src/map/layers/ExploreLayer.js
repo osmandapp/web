@@ -305,6 +305,13 @@ export default function ExploreLayer() {
     }
 
     useEffect(() => {
+        const abortController = new AbortController();
+
+        if (ctx.currentObjectType === OBJECT_SEARCH && !ctx.searchSettings.showOnMainSearch) {
+            abortController.abort();
+            return;
+        }
+
         if (ctx.wikiPlaces) {
             const zoom = map.getZoom();
             const center = map.getCenter();
@@ -327,9 +334,16 @@ export default function ExploreLayer() {
                 const iconUrl = `${WIKI_IMAGE_BASE_URL}${imgTag}?width=200`;
                 const iconSize = [EXPLORE_BIG_ICON_SIZE, EXPLORE_BIG_ICON_SIZE];
 
-                return new Promise((resolve) => {
+                return new Promise((resolve, reject) => {
+                    if (abortController.signal.aborted) {
+                        return reject('Operation aborted');
+                    }
+
                     const image = new Image();
                     image.onload = () => {
+                        if (abortController.signal.aborted) {
+                            return reject('Operation aborted');
+                        }
                         const icon = L.icon({
                             iconUrl,
                             iconSize,
@@ -345,6 +359,9 @@ export default function ExploreLayer() {
                         resolve();
                     };
                     image.onerror = () => {
+                        if (abortController.signal.aborted) {
+                            return reject('Operation aborted');
+                        }
                         const circle = L.circleMarker(latlng, {
                             id: place.properties.id,
                             fillOpacity: 0.9,
@@ -362,30 +379,43 @@ export default function ExploreLayer() {
                 });
             });
 
-            Promise.all(markerPromises).then(() => {
-                for (const place of secondaryMarkers) {
-                    const latlng = L.latLng(place.geometry.coordinates[1], place.geometry.coordinates[0]);
-                    const circle = L.circleMarker(latlng, {
-                        id: place.properties.id,
-                        fillOpacity: 0.9,
-                        radius: 5,
-                        color: '#ffffff',
-                        fillColor: '#fe8800',
-                        weight: 1,
-                        zIndex: 1000,
-                    });
-                    addEventListeners({ marker: circle, place, latlng });
-                    simpleMarkersArr.addLayer(circle);
-                }
+            Promise.all(markerPromises)
+                .then(() => {
+                    for (const place of secondaryMarkers) {
+                        const latlng = L.latLng(place.geometry.coordinates[1], place.geometry.coordinates[0]);
+                        const circle = L.circleMarker(latlng, {
+                            id: place.properties.id,
+                            fillOpacity: 0.9,
+                            radius: 5,
+                            color: '#ffffff',
+                            fillColor: '#fe8800',
+                            weight: 1,
+                            zIndex: 1000,
+                        });
+                        addEventListeners({ marker: circle, place, latlng });
+                        simpleMarkersArr.addLayer(circle);
+                    }
 
-                if (ctx.currentObjectType === OBJECT_EXPLORE || ctx.currentObjectType === OBJECT_SEARCH) {
-                    otherIconsLayerRef.current = addLayers(otherIconsLayerRef.current, simpleMarkersArr);
-                    mainIconsLayerRef.current = addLayers(mainIconsLayerRef.current, largeMarkersArr);
-                    updateMarkerZIndex(mainIconsLayerRef.current, 2000);
-                }
-            });
+                    if (
+                        ctx.currentObjectType === OBJECT_EXPLORE ||
+                        (ctx.currentObjectType === OBJECT_SEARCH && ctx.searchSettings.showOnMainSearch)
+                    ) {
+                        otherIconsLayerRef.current = addLayers(otherIconsLayerRef.current, simpleMarkersArr);
+                        mainIconsLayerRef.current = addLayers(mainIconsLayerRef.current, largeMarkersArr);
+                        updateMarkerZIndex(mainIconsLayerRef.current, 2000);
+                    }
+                })
+                .catch((error) => {
+                    if (error !== 'Operation aborted') {
+                        console.error(error);
+                    }
+                });
         }
-    }, [ctx.wikiPlaces]);
+
+        return () => {
+            abortController.abort();
+        };
+    }, [ctx.wikiPlaces, ctx.currentObjectType, ctx.searchSettings.showOnMainSearch]);
 
     function addEventListeners({ marker, place, main = false, latlng, iconSize = [10, 10] }) {
         // Add click event to open information about the place
