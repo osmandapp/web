@@ -31,7 +31,6 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     const ctx = useContext(AppContext);
 
     const [result, setResult] = useState(null);
-    const [processingSearch, setProcessingSearch] = useState(false);
     const hash = window.location.hash;
     const [locReady, setLocReady] = useState(false);
     const currentLoc = useGeoLocation(ctx);
@@ -48,7 +47,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
 
         const features = ctx.searchResult?.features;
         if (!features || features.length === 0) {
-            setProcessingSearch(false);
+            ctx.setProcessingSearch(false);
             setResult(null);
             return;
         }
@@ -67,16 +66,16 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
             if (arrWithDist) {
                 if (!features[0].icon) {
                     calculateIcons(arrWithDist, ctx).then(() => {
-                        setProcessingSearch(false);
+                        ctx.setProcessingSearch(false);
                         setResult({ features: arrWithDist });
                     });
                 } else {
-                    setProcessingSearch(false);
+                    ctx.setProcessingSearch(false);
                     setResult({ features: arrWithDist });
                 }
             } else {
                 setResult(null);
-                setProcessingSearch(false);
+                ctx.setProcessingSearch(false);
             }
         }
     }, [currentLoc, ctx.searchResult]);
@@ -84,7 +83,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     useEffect(() => {
         if (locReady) {
             if (value) {
-                setProcessingSearch(true);
+                ctx.setProcessingSearch(true);
                 if (value.type === SEARCH_TYPE_CATEGORY) {
                     searchByCategory(value, ctx);
                 } else {
@@ -169,15 +168,15 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
                 setSearchValue={setSearchValue}
                 defaultSearchValue={value?.query}
             />
-            {processingSearch && <Loading />}
-            {!processingSearch && (
+            {ctx.processingSearch && <Loading />}
+            {!ctx.processingSearch && (
                 <Box sx={{ overflowY: 'auto' }}>
                     {result?.features.map((item, index) => (
                         <SearchResultItem key={index} item={item} index={index} setSearchValue={setSearchValue} />
                     ))}
                 </Box>
             )}
-            {!result && !processingSearch && <EmptySearch />}
+            {!result && !ctx.processingSearch && <EmptySearch />}
         </>
     );
 }

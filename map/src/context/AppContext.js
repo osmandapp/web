@@ -279,6 +279,7 @@ export const AppContextProvider = (props) => {
     // search
     const [searchQuery, setSearchQuery] = useState(null);
     const [searchResult, setSearchResult] = useState(null);
+    const [processingSearch, setProcessingSearch] = useState(false);
     const [zoomToMapObj, setZoomToMapObj] = useState(false);
 
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
@@ -619,6 +620,8 @@ export const AppContextProvider = (props) => {
                 setSearchResult,
                 zoomToMapObj,
                 setZoomToMapObj,
+                processingSearch,
+                setProcessingSearch,
             }}
         >
             {props.children}

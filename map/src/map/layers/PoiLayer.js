@@ -213,6 +213,7 @@ export default function PoiLayer() {
                             setAddAlert(true);
                         }
                     } else {
+                        ctx.setProcessingSearch(false);
                         setPoiList(null);
                     }
                 });
@@ -220,6 +221,18 @@ export default function PoiLayer() {
             1000
         )
     ).current;
+
+    function addToSearchRes(poiList) {
+        if (ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY) {
+            ctx.setProcessingSearch(false);
+            ctx.setSearchResult((prevResult) => {
+                return {
+                    ...prevResult,
+                    features: poiList?.listFeatures?.features,
+                };
+            });
+        }
+    }
 
     function allPoiFound(zoom, prevZoom) {
         return prevZoom && zoom > prevZoom && !useLimit;
@@ -297,14 +310,7 @@ export default function PoiLayer() {
         if (poiList?.prevLayer) {
             map.removeLayer(poiList?.prevLayer);
         }
-        if (ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY) {
-            ctx.setSearchResult((prevResult) => {
-                return {
-                    ...prevResult,
-                    features: poiList?.listFeatures?.features,
-                };
-            });
-        }
+        addToSearchRes(poiList);
         setMove(false);
     }, [poiList]);
 
