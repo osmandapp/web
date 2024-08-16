@@ -114,17 +114,26 @@ If a track consists of more than one track, [when importing](../../personal/trac
 
 <TabItem value="android" label="Android">  
 
+*<Translate android="true" ids="shared_string_navigation,shared_string_settings,follow_track"/>* 
+
+*<Translate android="true" ids="help_article_map_track_context_menu_name,shared_string_options,follow_track"/>* 
+
 ![Navigation by track screen Android](@site/static/img/navigation/gpx/follow_track_andr_3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
+*<Translate ios="true" ids="shared_string_navigation,shared_string_settings,follow_track"/>* 
+
+
 ![Navigation by track screen iOS](@site/static/img/navigation/gpx/follow_track_ios_3.png)
 
 </TabItem>
 
 </Tabs>
+
+The _Follow Track_ menu helps you choose options for navigation by track. First, you select the track itself, along which you plan a navigation. Then the direction of movement along the track (by default, the direction of the track itself is selected). You can attach the track to the roads. And also choose from which point of the track navigation will begin: the start or the nearest point on the track. And the type of navigation to the point on the track, by default this is the profile in which navigation is set, but you can also choose a straight line.
 
 - ✏️ button near *track name and info* - opens it in a [*Plan route*](../../plan-route/create-route.md) tool.
 - 📁 *&nbsp;<Translate android="true" ids="select_another_track"/>* - select another GPX file for navigation.
@@ -139,7 +148,7 @@ If a track consists of more than one track, [when importing](../../personal/trac
 
 <TabItem value="android" label="Android">  
 
-![Attach to the roads 1](@site/static/img/navigation/gpx/attach_roads_gpx_andr_1.png) ![Attach to the roads 2](@site/static/img/navigation/gpx/attach_roads_gpx_andr_2.png)
+![Attach to the roads 2](@site/static/img/navigation/gpx/attach_roads_gpx_andr_2.png)
 
 </TabItem>
 
@@ -151,7 +160,13 @@ If a track consists of more than one track, [when importing](../../personal/trac
 
 </Tabs>
 
-When your track selected as a *[destination point](../setup/route-navigation.md#set-destinations)*, you can find the **Attach to the roads** option in the *[Navigation menu](../setup/route-navigation.md#navigation-menu)* (only in the **Android** version of the app) or in the *[Follow track menu](#follow-track-menu)* (both Android and iOS versions). If you tap this option,  the [Plan a route](../../plan-route/create-route.md#saving-a-route) tool will open and OsmAnd will match each point on the track to the nearest allowed road on the map according to the chosen profile and threshold distance.  
+When your track selected as a *[destination point](../setup/route-navigation.md#set-destinations)*, you can find the **Attach to the roads** option in the *[Follow track menu](#follow-track-menu)* (both Android and iOS versions).
+
+:::note Anroid version
+For the Android version, you can choose two parameters on [Navigation settings → Detailed track guidance](../guidance/navigation-settings.md#detailed-track-guidance) for your Profile: _<Translate android="true" ids="ask_every_time"/>_ (by default) or  _<Translate android="true" ids="shared_string_always"/>_. Where _<Translate android="true" ids="ask_every_time"/>_  means you will have the **Attach to the roads** option in the *[Navigation menu](../setup/route-navigation.md#navigation-menu)*. _<Translate android="true" ids="shared_string_always"/>_ means that your track will be attached to the roads automatically each time.
+:::
+
+ If you tap **Attach to the roads** option,  the [Plan a route](../../plan-route/create-route.md#saving-a-route) tool will open and OsmAnd will match each point on the track to the nearest allowed road on the map according to the chosen profile and threshold distance.  
 
 - *Threshold distance* (default is 50 meters) refers to the maximum distance between a point on a GPS track and the nearest point on a road in order to attach the track to the road.
 - *When you change the profile*, OsmAnd automatically reattaches your track to the allowed for this profile roads.

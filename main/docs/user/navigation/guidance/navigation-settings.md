@@ -506,9 +506,10 @@ All of these restrictions can be important for navigation and should be consider
 
 During creation a [route by a track](../setup/gpx-navigation.md#follow-track-menu) you can attach your [track to the roads](../setup/gpx-navigation.md#follow-track-menu). With this setting you can choose two parameters for "Attach to the Roads" function":
 - _<Translate android="true" ids="ask_every_time"/>_ - this parameter means that the "Attach to the roads" dialogue will appear on the ["Route Details"](../setup/route-details.md) screen after each [route building by a track](../setup/gpx-navigation.md#follow-track-menu).
+
+![Attach to the roads 1](@site/static/img/navigation/gpx/attach_roads_gpx_andr_1.png)
+
 - _<Translate android="true" ids="shared_string_always"/>_ - with this parameter the ["Attach to the roads"](../setup/gpx-navigation.md#attach-to-the-roads) process will be automaticaly for each [route building by a track](../setup/gpx-navigation.md#follow-track-menu).
-
-
 
 ## Related Articles
 
