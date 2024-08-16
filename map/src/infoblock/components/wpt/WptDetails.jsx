@@ -592,7 +592,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                             ) : wpt?.address !== ADDRESS_NOT_FOUND ? (
                                 <CircularProgress sx={{ ml: 2 }} size={19} />
                             ) : null}
-                            {!wpt.type?.isWikiPoi && <WptDetailsButtons wpt={wpt} isDetails={isDetails} />}
+                            {!wpt.type?.isWikiPoi && !wpt.type?.isSearch && (
+                                <WptDetailsButtons wpt={wpt} isDetails={isDetails} />
+                            )}
                             {wpt?.wikiDesc && (
                                 <>
                                     <Divider sx={{ mt: 2 }} />

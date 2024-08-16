@@ -33,7 +33,21 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     const [result, setResult] = useState(null);
     const hash = window.location.hash;
     const [locReady, setLocReady] = useState(false);
+    const [showEmptySearch, setShowEmptySearch] = useState(false);
     const currentLoc = useGeoLocation(ctx);
+
+    useEffect(() => {
+        let timer;
+        if (!result) {
+            timer = setTimeout(() => {
+                setShowEmptySearch(true);
+            }, 500);
+        } else {
+            setShowEmptySearch(false);
+        }
+
+        return () => clearTimeout(timer);
+    }, [result]);
 
     useEffect(() => {
         if (value?.query) {
@@ -170,7 +184,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
             />
             {ctx.processingSearch && <Loading />}
             {!ctx.processingSearch &&
-                (!result ? (
+                (!result && showEmptySearch ? (
                     <EmptySearch />
                 ) : (
                     <Box sx={{ overflowY: 'auto' }}>
