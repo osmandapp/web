@@ -173,13 +173,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
             {!processingSearch && (
                 <Box sx={{ overflowY: 'auto' }}>
                     {result?.features.map((item, index) => (
-                        <SearchResultItem
-                            key={index}
-                            item={item}
-                            index={index}
-                            setProcessingSearch={setProcessingSearch}
-                            setSearchValue={setSearchValue}
-                        />
+                        <SearchResultItem key={index} item={item} index={index} setSearchValue={setSearchValue} />
                     ))}
                 </Box>
             )}

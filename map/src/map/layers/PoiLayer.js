@@ -298,7 +298,12 @@ export default function PoiLayer() {
             map.removeLayer(poiList?.prevLayer);
         }
         if (ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY) {
-            ctx.setSearchResult(poiList?.listFeatures ?? null);
+            ctx.setSearchResult((prevResult) => {
+                return {
+                    ...prevResult,
+                    features: poiList?.listFeatures?.features,
+                };
+            });
         }
         setMove(false);
     }, [poiList]);

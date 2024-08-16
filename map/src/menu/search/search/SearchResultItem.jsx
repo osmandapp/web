@@ -10,7 +10,7 @@ import AppContext from '../../../context/AppContext';
 import { SEARCH_RESULT_TYPE_POI, SEARCH_RESULT_TYPE_POI_CATEGORY } from './SearchResults';
 import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 
-export default function SearchResultItem({ item, setProcessingSearch, setSearchValue }) {
+export default function SearchResultItem({ item, setSearchValue }) {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
@@ -72,7 +72,6 @@ export default function SearchResultItem({ item, setProcessingSearch, setSearchV
                                 ctx.setZoomToMapObj(item);
                             } else {
                                 const category = item.properties['web_keyName'];
-                                setProcessingSearch(true);
                                 setSearchValue({
                                     query: t(`poi_${category}`),
                                     type: SEARCH_TYPE_CATEGORY,
