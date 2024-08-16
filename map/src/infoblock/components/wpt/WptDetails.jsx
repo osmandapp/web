@@ -300,7 +300,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     function getWptType(wpt) {
         return {
             isPoi: ctx.currentObjectType === OBJECT_TYPE_POI && wpt?.poi,
-            isSearch: ctx.currentObjectType === OBJECT_SEARCH && wpt?.poi,
+            isSearch: ctx.currentObjectType === OBJECT_SEARCH && wpt?.poi && !wpt?.wikidata,
             isWikiPoi: wpt?.wikidata,
             isWpt: isTrack(ctx) && (wpt?.trackWpt || wpt?.trackWptItem),
             isFav: ctx.currentObjectType === OBJECT_TYPE_FAVORITE && wpt?.markerCurrent,

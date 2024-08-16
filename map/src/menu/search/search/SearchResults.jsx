@@ -159,6 +159,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
 
     const calculateIcons = async (features, ctx) => {
         const promises = features?.map(async (f) => {
+            if (!f?.properties) return;
             const props = f.properties;
             const type = props['web_type'];
             if (type === SEARCH_RESULT_TYPE_POI || type === SEARCH_RESULT_TYPE_POI_CATEGORY) {
@@ -188,9 +189,16 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
                     <EmptySearch />
                 ) : (
                     <Box sx={{ overflowY: 'auto' }}>
-                        {result?.features.map((item, index) => (
-                            <SearchResultItem key={index} item={item} index={index} setSearchValue={setSearchValue} />
-                        ))}
+                        {result?.features
+                            .filter((item) => item?.properties)
+                            .map((item, index) => (
+                                <SearchResultItem
+                                    key={index}
+                                    item={item}
+                                    index={index}
+                                    setSearchValue={setSearchValue}
+                                />
+                            ))}
                     </Box>
                 ))}
         </>
