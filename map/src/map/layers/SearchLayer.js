@@ -1,6 +1,6 @@
 import { apiGet } from '../../util/HttpApi';
 import { useContext, useEffect, useState } from 'react';
-import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../context/AppContext';
+import AppContext, { OBJECT_SEARCH } from '../../context/AppContext';
 import PoiManager, {
     createPoiCache,
     DEFAULT_ICON_COLOR,
