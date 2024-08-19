@@ -41,7 +41,7 @@ Arm
 https://download.oracle.com/java/17/archive/jdk-17.0.11_macos-aarch64_bin.dmg
 ```
 
-8. Create new text file. Or update if it exist.
+7. Create new text file. Or update if it exist.
 ```
 mkdir ~/.gradle 
 $ nano ~/.gradle/gradle.properties
