@@ -81,7 +81,7 @@ Actions:
 - **Edit name** (*Android*) / **Rename** (*iOS*). Changing the folder name.
 - [*Change default appearance*](../../map/tracks/appearance.md) (*Android*) / **Appearance** (*iOS*). You can change the appearance of all tracks in a folder.
 - [*Export*](../../personal/import-export.md). You go to the *Menu → Settings → Actions* tab, where you can export all the tracks in the folder as an [OSF file](../../personal/import-export.md#export).
-- [**Move**](#context-menu-in-my-places). You can move the selected folder to another existing folder or create a new one.
+- [**Move**](#change-folder). You can move the selected folder to another existing folder or create a new one.
 - [*Delete folder*](#delete-folder). Allow you to delete a folder. A warning message will appear on the display. The deletion will be irreversible.
 
 #### Delete Folder
@@ -382,7 +382,7 @@ Available:
 
 - Search by track name.
 - [*Sort by*](#sort-by) for better search if you can't remember the title.
-- [*Filter*](#filter) (Android only) if you need the specific characteristics of the track.
+- [*Filter*](./smart-folder.md#filter) (*Android only*) if you need the specific characteristics of the track.
 
 
 ### Three-Dot Menu

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Smart Folder (filter)
+title: Smart Folder (Filter)
 ---
 
 import Tabs from '@theme/Tabs';

@@ -26,22 +26,24 @@ OsmAnd has many powerful features to display various routes on the map. Routes c
 OsmAnd can display several different type of routes
 
 [Tracks (GPX)](#tracks) - recorded or planned trip saved in [GPX-format](https://en.wikipedia.org/wiki/GPS_Exchange_Format). This kind of route could be imported from the external source, created in the application or recorded by user. GPX could contain one of 3 different types of data or all of them:
+
 - Track as a line - file has ```<trkpt>``` points array, each point has location and optionally time, speed, altitude and other attributes. These tracks are displayed on the map as solid lines.
-- Track as a route -  file has ```<rtept>``` points array, each point described as an intermediate point of the route. It depends on how points within a route should be connected either as small route segments or via straight line. These tracks are displayed on the map as dashed lines. 
+- Track as a route -  file has ```<rtept>``` points array, each point described as an intermediate point of the route. It depends on how points within a route should be connected either as small route segments or via straight line. These tracks are displayed on the map as dashed lines.
 - Waypoints - file has ```<wpt>``` points with attributes. Waypoints are displayed as circular points on the map. You could click on them to get additional information.
 
-## Tracks 
+## Tracks
 
 OsmAnd provides the ability to record and display tracks. This allows you to get location, movement, distance, altitude and travel time data and analyze track data.
 
 
 ### Display Tracks on the Map
+
 [d](./index.md)
 OsmAnd allows you [to view tracks on a map](./index.md). Each point on the track corresponds to a specific location and contains information about time, speed and altitude. This allows you to visually assess the route, learn about the places you have visited and estimate the difficulty of the route by changes in altitude.  
 
-You can choose which tracks to show on the map and which to hide. You can do this in the [My Places](#tracks-in-my-places-menu) menu, the [Configure map](#tracks-in-configure-map-menu) menu, and in the [Track Context menu](../../map/tracks/track-context-menu.md#quick-actions) when saving a track in the [Plan a route](../../plan-route/create-route.md#save-as-new-track) tool, or with [Route Details](../../navigation/setup/route-details.md#save-as-a-new-track).  
+You can choose which tracks to show on the map and which to hide. You can do this in the [My Places](../../personal/tracks/manage-tracks.md#change-folder) menu, the [Configure map](../../personal/tracks/manage-tracks.md#change-folder) menu, and in the [Track Context menu](../../map/tracks/track-context-menu.md#quick-actions) when saving a track in the [Plan a route](../../plan-route/create-route.md#save-as-a-new-track) tool, or with [Route Details](../../navigation/setup/route-details.md#save-as-a-new-track).  
 
-![Tracks on the map Android](@site/static/img/map/tracks_layer_android.png) ![Tracks on the map iOS](@site/static/img/map/tracks_layer_ios.png) 
+![Tracks on the map Android](@site/static/img/map/tracks_layer_android.png) ![Tracks on the map iOS](@site/static/img/map/tracks_layer_ios.png)
 
 
 - **Tracks in Configure map menu**. You can read additional information in the [Tracks](./index.md) article.  
@@ -119,7 +121,7 @@ You can choose which tracks to show on the map and which to hide. You can do thi
 
 You can modify track appearance. Read more about it [here](./appearance.md)
 
-### Track context menu
+### Track Context Menu
 
 Tap to any track on the map or choosing it on [My Places](../../personal/myplaces.md) you open [Track Context menu](./track-context-menu.md).
 
@@ -132,13 +134,13 @@ Tap to any track on the map or choosing it on [My Places](../../personal/myplace
 
 *Tap the track → [<Translate android="true" ids="shared_string_options"/>](../../map/tracks/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*  
 
-![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_on_map_menu_andr.png) ![Track menu analize on the map distance Android](@site/static/img/personal/tracks/track_analyze_on_map_distance_android.png)   
+![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_on_map_menu_andr.png) ![Track menu analize on the map distance Android](@site/static/img/personal/tracks/track_analyze_on_map_distance_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-*Tap the track → [<Translate android="true" ids="shared_string_options"/>](../../map/tracks/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*     
+*Tap the track → [<Translate android="true" ids="shared_string_options"/>](../../map/tracks/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*  
 
 ![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_1_ios.png)
 
@@ -151,7 +153,7 @@ This tool allows you to view track information using graphs and maps.
 - **Graph data (Y-axis)**: Altitude, Slope, Speed, [External sensors data](../../plugins/external-sensors.md), or a combination of the two (if data is available on the track).
 - **Graph dimension (X-axis)**: Distance, Time, Time of day.
 - **Tap/Slide**. Tap the Graph to display information about the track point and moving it along the Graph highlights the location of the point on the map and displays information about it in the bar.
-- **Scale**. Scale the Graph with a [two-fingers gesture](../../map/interact-with-map.md#gestures). 
+- **Scale**. Scale the Graph with a [two-fingers gesture](../../map/interact-with-map.md#gestures).
 - **Follow My location**. Tap the [My Location](../../map/interact-with-map.md#my-location--zoom) buttonto have the map view and graph synchronized with your location. In this case, **graph scale** will remain the same and the **bar information** will be fixed to 1/4 to the left. As you move, the **graph will slide** from left to right, displaying information ahead of your track. This feature is useful for hiking and cycling while navigating, although no other widgets are displayed on this screen.  
 
 
