@@ -14,6 +14,7 @@ export const MenuButton = ({ needBackButton = false, backToPrevScreen = null }) 
         <IconButton
             variant="contained"
             type="button"
+            id={'se-search-input-close'}
             className={`${gStyles.icon} ${styles.searchInputIcon}`}
             onClick={() => {
                 ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });

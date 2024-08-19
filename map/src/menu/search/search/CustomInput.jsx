@@ -52,7 +52,7 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
     };
 
     return (
-        <Box sx={{ mx: 2, my: 1 }}>
+        <Box sx={{ mx: 2, my: 1 }} id={'se-search-input'}>
             <TextField
                 className={`${styles.searchInputField} ${styles.customAutofillFix}`}
                 sx={{

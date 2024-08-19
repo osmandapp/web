@@ -101,7 +101,7 @@ export default function GeneralPanelButtons({
                         <SvgIcon className={styles.customIconPath} component={ConfigureMapIcon} inheritViewBox />
                     </IconButton>
                 </Paper>
-                <Paper className={styles.button}>
+                <Paper id={'se-open-search-button'} className={styles.button}>
                     <Box
                         onClick={openSearch}
                         sx={{

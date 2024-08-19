@@ -226,7 +226,13 @@ export default function SearchMenu() {
                                         .map((item, key) => {
                                             const catName = translatePoi({ key, ctx, t });
                                             return (
-                                                <Grid item xs={4} key={key} className={styles.gridItem}>
+                                                <Grid
+                                                    item
+                                                    xs={4}
+                                                    key={key}
+                                                    className={styles.gridItem}
+                                                    id={'se-default-search-categories'}
+                                                >
                                                     <ListItemButton
                                                         key={key}
                                                         onClick={(e) => {
