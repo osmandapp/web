@@ -66,22 +66,6 @@ Favorite's [Context menu](../map/map-context-menu.md#favorites--track-points-fro
 
 ### Create and Edit
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Favorite add menu Android](@site/static/img/personal/favorite_add_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Favorite add menu iOS](@site/static/img/personal/favorite_add_ios.png)
-
-</TabItem>
-
-</Tabs>
-
 To create a new Favorite point, you need to select a [POI](../map/point-layers-on-map.md#points-of-interest-poi) object with a short tap or a structure on the map with a long tap, and then select [Add (☆)](../map/map-context-menu.md#add--edit-favorite) from the [Map Context menu](../map/map-context-menu.md). If you select a point from OSM data, all information about that POI will be added to the newly selected point. [Long-tap](../map/map-context-menu.md#select-any-point-long-tap) selection can be applied anywhere on the map.
 
 **1.** In the editor to create and edit Favorite points:
