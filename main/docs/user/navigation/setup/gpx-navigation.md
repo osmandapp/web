@@ -117,7 +117,7 @@ If a track consists of more than one track, [when importing](../../personal/trac
 - *<Translate android="true" ids="shared_string_navigation,shared_string_settings,follow_track"/>*
 - *<Translate android="true" ids="help_article_map_track_context_menu_name,shared_string_options,follow_track"/>*
 
-![Navigation by track screen Android](@site/static/img/navigation/gpx/follow_track_andr_3.png)
+![Navigation by track screen Android](@site/static/img/navigation/gpx/follow_the_track_5-1_andr.png)
 
 </TabItem>
 
@@ -126,20 +126,32 @@ If a track consists of more than one track, [when importing](../../personal/trac
 *<Translate ios="true" ids="shared_string_navigation,shared_string_settings,follow_track"/>*
 
 
-![Navigation by track screen iOS](@site/static/img/navigation/gpx/follow_track_ios_3.png)
+![Navigation by track screen iOS](@site/static/img/navigation/gpx/follow_the_track_4-1_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-The *Follow Track* menu helps you choose options for navigation by track. First, you select the track itself, along which you plan a navigation. Then the direction of movement along the track (by default, the direction of the track itself is selected). You can attach the track to the roads. And also choose from which point of the track navigation will begin: the start or the nearest point on the track. And the type of navigation to the point on the track, by default this is the profile in which navigation is set, but you can also choose a straight line.
+The *Follow track* menu helps you select several advanced settings for navigating a track.
 
-- ✏️ button near *track name and info* - opens it in a [*Plan route*](../../plan-route/create-route.md) tool.
-- 📁 *&nbsp;<Translate android="true" ids="select_another_track"/>* - select another GPX file for navigation.
-- *&nbsp;<Translate android="true" ids="gpx_option_reverse_route"/>* - if enabled, the direction of movement along the track will be reversed.
-- *&nbsp;<Translate android="true" ids="attach_to_the_roads"/>* - open ["<Translate android="true" ids="attach_to_the_roads"/>"](#attach-to-the-roads) menu.
-- *&nbsp;<Translate android="true" ids="pass_whole_track_descr"/>* (or *<Translate ios="true" ids="point_to_navigate"/>* in iOS) - you can choose whether you will be directed to the **<Translate android="true" ids="start_of_the_track"/>** or **<Translate android="true" ids="nearest_point"/>** of the track.
-- *&nbsp;<Translate android="true" ids="nav_type_hint"/>* - you can choose weither you will be guided to the track using *[<Translate android="true" ids="routing_profile_straightline"/>](../routing/straight-line-routing.md)* or usng *[routing type](../routing/routing-types.md)* from current profile.  
+- First, *select the track* you want to follow.
+- Then *select the direction* of the track (by default, the direction of the current track is selected).
+- You can [*attach the track to roads*](#attach-to-the-roads).
+- *Select from which point the navigation starts* on the track: from the start or the nearest point on the track.
+- *Select the type of navigation* to a point on the track (by default, the profile in which the navigation is set is selected).
+
+**Settings:**
+
+- ***Edit*** (*pencil icon* next to the track name). Opens the track in the [*Plan a route*](../../plan-route/create-route.md) tool.
+- ***<Translate android="true" ids="select_another_track"/>***. Allows you to select a different GPX file for navigation.
+- ***<Translate android="true" ids="gpx_option_reverse_route"/>***. If this setting is enabled, the direction of movement along the track is reversed.
+- ***<Translate android="true" ids="attach_to_the_roads"/>***. Opens the corresponding [menu](#attach-to-the-roads).
+- ***<Translate android="true" ids="pass_whole_track_descr"/>*** (*Android*) / ***<Translate ios="true" ids="point_to_navigate"/>*** (*iOS*). You can select the direction:
+    - to the *<Translate android="true" ids="start_of_the_track"/>*,
+    - to the *<Translate android="true" ids="nearest_point"/>* on the track.
+- ***<Translate android="true" ids="nav_type_hint"/>***. You can choose to:
+    - switch to a route in a [*straight line*](../routing/straight-line-routing.md),
+    - use the [*routing type*](../routing/routing-types.md) from the current profile.
 
 
 ### Attach to the Roads
@@ -154,7 +166,7 @@ The *Follow Track* menu helps you choose options for navigation by track. First,
 
 <TabItem value="ios" label="iOS">
 
-![Attach to the roads 1 ios](@site/static/img/navigation/gpx/attach_roads_gpx_ios_1.png)
+![Attach to the roads 1 ios](@site/static/img/navigation/gpx/attach_to_the_roads_ios.png)
 
 </TabItem>
 
@@ -164,7 +176,10 @@ When your track selected as a *[destination point](../setup/route-navigation.md#
 
 :::note Anroid version
 
-For the Android version, you can select two parameters on [Navigation settings → Detailed track guidance](../guidance/navigation-settings.md#detailed-track-guidance) for your Profile: *<Translate android="true" ids="ask_every_time"/>* (by default) or  *<Translate android="true" ids="shared_string_always"/>*. Where *<Translate android="true" ids="ask_every_time"/>*  means you will have the **Attach to the roads** option in the *[Navigation menu](../setup/route-navigation.md#navigation-menu)*. *<Translate android="true" ids="shared_string_always"/>* means that your track will be attached to the roads automatically each times.
+For the Android version, there are two ways to use the *Attach to the roads* setting with selected profile:
+
+- **<Translate android="true" ids="ask_every_time"/>** (*by default*) and **<Translate android="true" ids="shared_string_always"/>**.
+- You can find more information in the [***Navigation Settings***](../guidance/navigation-settings.md#detailed-track-guidance) article.
 
 :::
 
@@ -174,7 +189,7 @@ If you tap **Attach to the roads** button, the [Plan a route](../../plan-route/c
 - *When you change the profile*, OsmAnd automatically reattaches your track to the allowed for this profile roads. If your track consists of a big amount of points, attaching to the roads may take a long time. On the picture above, you can see the highlighted with orange status line, which indicates the progress. After the procedure of attaching to the roads is finished, the button **Apply** is active, and the track can be used for navigation.
 
 :::note
-After attaching your track to the roads in [Route details section](../setup/route-details.md), you will find more precise information about your route and [Voice instructions](#guidance) will be more detailed.
+After attaching a track to roads, you get more accurate route information in the [**route details** section](../setup/route-details.md), and [**voice instructions**](#guidance) become more detailed.
 :::
 
 
