@@ -103,6 +103,7 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
                             </IconButton>
                         ) : (
                             <IconButton
+                                id={'se-search-input-search'}
                                 className={`${gStyles.icon} ${styles.searchInputIcon} ${isFocused ? styles.focusedIcon : ''}`}
                                 onClick={() => {
                                     search(value);

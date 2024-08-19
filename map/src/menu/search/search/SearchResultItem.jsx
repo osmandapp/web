@@ -70,6 +70,11 @@ export default function SearchResultItem({ item, setSearchValue }) {
         return ` · ${(distance / 1000).toFixed(1)} ${t('km')}`;
     }
 
+    const id =
+        item.properties['web_type'] === SEARCH_RESULT_TYPE_POI_CATEGORY
+            ? `se-search-result-${item.properties['web_name']}`
+            : 'se-search-result-item';
+
     return (
         <div ref={ref}>
             {!inView ? (
@@ -77,7 +82,7 @@ export default function SearchResultItem({ item, setSearchValue }) {
             ) : (
                 <div>
                     <MenuItem
-                        id={'se-search-result'}
+                        id={id}
                         className={styles.searchItem}
                         onClick={() => {
                             if (item.locDist) {

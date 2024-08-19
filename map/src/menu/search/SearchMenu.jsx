@@ -234,6 +234,7 @@ export default function SearchMenu() {
                                                     id={'se-default-search-categories'}
                                                 >
                                                     <ListItemButton
+                                                        id={'se-default-search-categories-item-' + catName}
                                                         key={key}
                                                         onClick={(e) => {
                                                             searchByCategory(catName);
@@ -254,7 +255,11 @@ export default function SearchMenu() {
                                         })}
                                 </Grid>
                             </Box>
-                            <Button className={styles.buttonShowAllExplore} onClick={openSearchByCategories}>
+                            <Button
+                                id={'se-search-categories-show-all'}
+                                className={styles.buttonShowAllExplore}
+                                onClick={openSearchByCategories}
+                            >
                                 {t('shared_string_show_all')}
                             </Button>
                             <Divider />

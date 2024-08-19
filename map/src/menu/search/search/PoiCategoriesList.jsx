@@ -30,7 +30,12 @@ export default function PoiCategoriesList({
 
     return (
         <Box>
-            <AppBar position="static" className={headerStyles.appbar} sx={{ boxShadow: 'none !important' }}>
+            <AppBar
+                id={'se-search-categories-list'}
+                position="static"
+                className={headerStyles.appbar}
+                sx={{ boxShadow: 'none !important' }}
+            >
                 <Toolbar className={headerStyles.toolbar}>
                     <IconButton
                         variant="contained"
@@ -56,6 +61,7 @@ export default function PoiCategoriesList({
                         const catName = t(`poi_${item}`);
                         return (
                             <MenuItem
+                                id={'se-search-categories-list-item-' + catName}
                                 className={styles.categoriesListItem}
                                 key={key}
                                 onClick={(e) => {

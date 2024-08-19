@@ -17,7 +17,7 @@ export default async function test() {
 
     await sendKeysBy(By.id('se-search-input'), searchWord + '\n');
     await waitBy(By.id('se-search-results'));
-    await waitBy(By.id('se-search-result'));
+    await waitBy(By.id('se-search-result-Food'));
 
     await clickBy(By.id('se-search-input-cancel'));
     await waitBy(By.id('se-empty-search'));
