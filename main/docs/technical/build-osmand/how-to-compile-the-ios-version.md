@@ -34,9 +34,14 @@ sidebar_position: 6
   $ brew install cocoapods
   ```
 6. Download and instal Java jdk 17
+```
+Intel
 https://download.oracle.com/java/17/archive/jdk-17.0.11_macos-x64_bin.dmg
+Arm
+https://download.oracle.com/java/17/archive/jdk-17.0.11_macos-aarch64_bin.dmg
+```
 
-7. Create new text file. Update if it exist.
+8. Create new text file. Update if it exist.
 ```
 $ nano ~/.gradle/gradle.properties
 ```
