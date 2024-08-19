@@ -709,7 +709,7 @@ Statistics tab displays information about **modified** track i.e. without filter
 
 #### Actions
 
-![GPS filter action Android](@site/static/img/personal/tracks/gps_filter_action_android.png) 
+![GPS filter action Android](@site/static/img/personal/tracks/gps_filter_action_android.png)
 
 Actions list is available on the bottom of **Filter** or **Statistics** tab. OsmAnd will apply all changes made to the track without updating the file. You can save the changes manually.
 

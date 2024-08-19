@@ -265,7 +265,7 @@ To display a track for a specific profile on the map, you can:
 
 - [*Plan route → Open existing track*](../../plan-route/create-route.md#menu-options)
 - [*Plan route → Add to a track*](../../plan-route/create-route.md#menu-options)
-- [*Navigation → Follow track → Select*](../../navigation/setup/gpx-navigation.md#follow-track-menu)
+- [*Navigation → Follow track → Select*](../../navigation/setup/gpx-navigation.md#how-to-follow-the-track)
 - [*Markers → Groups → Add → Track waypoints*](../../map/point-layers-on-map.md#track-waypoints)
 - [*OsmAnd Development → Settings → Simulate your position → Select track*](../../plugins/development.md#gpx-track-simulation)
 - [*Quick action → Simulate your position → Select track*](../../widgets/quick-action.md)
