@@ -58,15 +58,6 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
         setSelectedCategories(new Set(selectedCategories));
     };
 
-    function selectAllCategories() {
-        let allCategories = [];
-        activePoiFilters.forEach((item) => {
-            const category = PoiManager.formattingPoiFilter(item, true);
-            allCategories.push(category);
-        });
-        setSelectedCategories(new Set(allCategories));
-    }
-
     function deselectAllCategories() {
         setSelectedCategories(new Set());
     }
@@ -117,15 +108,13 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
             </Box>
             <AppBar position="static" className={styles.footer}>
                 <Toolbar className={headerStyles.toolbar} style={{ justifyContent: 'space-between' }}>
-                    {activePoiFilters?.length !== selectedCategories?.size ? (
-                        <Button className={styles.buttonSelectAll} onClick={selectAllCategories}>
-                            {t('shared_string_select_all')}
-                        </Button>
-                    ) : (
-                        <Button className={styles.buttonSelectAll} onClick={deselectAllCategories}>
-                            {t('shared_string_deselect_all')}
-                        </Button>
-                    )}
+                    <Button
+                        disabled={selectedCategories.size === 0}
+                        className={styles.buttonSelectAll}
+                        onClick={deselectAllCategories}
+                    >
+                        {t('shared_string_deselect_all')}
+                    </Button>
                     <Button className={styles.buttonApply} onClick={selectCheckedCategories} id="se-select-categories">
                         {t('shared_string_apply')}
                     </Button>
