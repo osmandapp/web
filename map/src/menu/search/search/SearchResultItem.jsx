@@ -62,6 +62,14 @@ export default function SearchResultItem({ item, setSearchValue }) {
         return { ...res, icon, distance };
     }
 
+    function formatDistance(distance) {
+        if (!distance) return '';
+        if (distance < 1000) {
+            return ` · ${distance.toFixed(0)} ${t('m')}`;
+        }
+        return ` · ${(distance / 1000).toFixed(1)} ${t('km')}`;
+    }
+
     return (
         <div ref={ref}>
             {!inView ? (
@@ -86,7 +94,7 @@ export default function SearchResultItem({ item, setSearchValue }) {
                             <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
                             {(type || distance) && (
                                 <MenuItemWithLines
-                                    name={`${type}${distance ? ` · ${(distance / 1000).toFixed(1)} km` : ''}`}
+                                    name={`${type}${formatDistance(distance)}`}
                                     maxLines={4}
                                     className={styles.placeTypes}
                                 />
