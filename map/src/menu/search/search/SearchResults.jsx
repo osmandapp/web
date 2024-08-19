@@ -188,7 +188,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
                 (!result && showEmptySearch ? (
                     <EmptySearch />
                 ) : (
-                    <Box sx={{ overflowY: 'auto' }}>
+                    <Box sx={{ overflowY: 'auto' }} id={'se-search-results'}>
                         {result?.features
                             .filter((item) => item?.properties)
                             .map((item, index) => (

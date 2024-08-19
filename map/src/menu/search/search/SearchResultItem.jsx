@@ -77,6 +77,7 @@ export default function SearchResultItem({ item, setSearchValue }) {
             ) : (
                 <div>
                     <MenuItem
+                        id={'se-search-result'}
                         className={styles.searchItem}
                         onClick={() => {
                             if (item.locDist) {

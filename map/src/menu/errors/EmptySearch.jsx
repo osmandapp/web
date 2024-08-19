@@ -13,7 +13,7 @@ export default function EmptySearch() {
     return (
         <>
             {ctx.loginUser ? (
-                <Box className={styles.block}>
+                <Box className={styles.block} id={'se-empty-search'}>
                     <Icon className={styles.icon}>
                         <SearchIcon className={styles.icon} />
                     </Icon>

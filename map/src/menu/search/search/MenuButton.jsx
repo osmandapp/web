@@ -27,6 +27,7 @@ export const MenuButton = ({ needBackButton = false, backToPrevScreen = null }) 
         <IconButton
             variant="contained"
             type="button"
+            id={'se-search-input-back'}
             className={`${gStyles.icon} ${styles.searchInputIcon}`}
             onClick={backToPrevScreen ? backToPrevScreen : () => closeHeader({ ctx })}
         >

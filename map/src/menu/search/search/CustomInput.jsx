@@ -52,7 +52,7 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
     };
 
     return (
-        <Box sx={{ mx: 2, my: 1 }} id={'se-search-input'}>
+        <Box sx={{ mx: 2, my: 1 }}>
             <TextField
                 className={`${styles.searchInputField} ${styles.customAutofillFix}`}
                 sx={{
@@ -69,6 +69,7 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
                 placeholder={t('shared_string_search')}
                 type="text"
                 fullWidth
+                id={'se-search-input'}
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => {
                     setTimeout(() => {
@@ -92,6 +93,7 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
                     endAdornment:
                         value === '' || !isFocused ? (
                             <IconButton
+                                id={'se-search-input-cancel'}
                                 className={`${gStyles.icon} ${styles.searchInputIcon} ${isFocused ? styles.focusedIcon : ''}`}
                                 onClick={() => {
                                     setValue(EMPTY_SEARCH);
