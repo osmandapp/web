@@ -108,15 +108,14 @@ Navigation on a track can be started using the quick action button in the [Track
 If a track consists of more than one track, [when importing](../../personal/tracks/manage-tracks.md#import) you can choose whether to save it in a single file or in multiple files. For navigation, if the selected track consists of multiple segments or tracks, you can select either a specific segment or the entire gpx track file.  
 
 
-## Follow Track Menu
+## How to Follow the Track
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-*<Translate android="true" ids="shared_string_navigation,shared_string_settings,follow_track"/>* 
-
-*<Translate android="true" ids="help_article_map_track_context_menu_name,shared_string_options,follow_track"/>* 
+- *<Translate android="true" ids="shared_string_navigation,shared_string_settings,follow_track"/>*
+- *<Translate android="true" ids="help_article_map_track_context_menu_name,shared_string_options,follow_track"/>*
 
 ![Navigation by track screen Android](@site/static/img/navigation/gpx/follow_track_andr_3.png)
 
@@ -124,7 +123,7 @@ If a track consists of more than one track, [when importing](../../personal/trac
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_navigation,shared_string_settings,follow_track"/>* 
+*<Translate ios="true" ids="shared_string_navigation,shared_string_settings,follow_track"/>*
 
 
 ![Navigation by track screen iOS](@site/static/img/navigation/gpx/follow_track_ios_3.png)
@@ -133,7 +132,7 @@ If a track consists of more than one track, [when importing](../../personal/trac
 
 </Tabs>
 
-The _Follow Track_ menu helps you choose options for navigation by track. First, you select the track itself, along which you plan a navigation. Then the direction of movement along the track (by default, the direction of the track itself is selected). You can attach the track to the roads. And also choose from which point of the track navigation will begin: the start or the nearest point on the track. And the type of navigation to the point on the track, by default this is the profile in which navigation is set, but you can also choose a straight line.
+The *Follow Track* menu helps you choose options for navigation by track. First, you select the track itself, along which you plan a navigation. Then the direction of movement along the track (by default, the direction of the track itself is selected). You can attach the track to the roads. And also choose from which point of the track navigation will begin: the start or the nearest point on the track. And the type of navigation to the point on the track, by default this is the profile in which navigation is set, but you can also choose a straight line.
 
 - ✏️ button near *track name and info* - opens it in a [*Plan route*](../../plan-route/create-route.md) tool.
 - 📁 *&nbsp;<Translate android="true" ids="select_another_track"/>* - select another GPX file for navigation.
@@ -141,6 +140,7 @@ The _Follow Track_ menu helps you choose options for navigation by track. First,
 - *&nbsp;<Translate android="true" ids="attach_to_the_roads"/>* - open ["<Translate android="true" ids="attach_to_the_roads"/>"](#attach-to-the-roads) menu.
 - *&nbsp;<Translate android="true" ids="pass_whole_track_descr"/>* (or *<Translate ios="true" ids="point_to_navigate"/>* in iOS) - you can choose whether you will be directed to the **<Translate android="true" ids="start_of_the_track"/>** or **<Translate android="true" ids="nearest_point"/>** of the track.
 - *&nbsp;<Translate android="true" ids="nav_type_hint"/>* - you can choose weither you will be guided to the track using *[<Translate android="true" ids="routing_profile_straightline"/>](../routing/straight-line-routing.md)* or usng *[routing type](../routing/routing-types.md)* from current profile.  
+
 
 ### Attach to the Roads
 
@@ -160,13 +160,15 @@ The _Follow Track_ menu helps you choose options for navigation by track. First,
 
 </Tabs>
 
-When your track selected as a *[destination point](../setup/route-navigation.md#set-destinations)*, you can find the **Attach to the roads** option in the *[Follow track menu](#follow-track-menu)* (both Android and iOS versions).
+When your track selected as a *[destination point](../setup/route-navigation.md#set-destinations)*, you can find the **Attach to the roads** option in the *[Follow track menu](#how-to-follow-the-track)*.
 
 :::note Anroid version
-For the Android version, you can choose two parameters on [Navigation settings → Detailed track guidance](../guidance/navigation-settings.md#detailed-track-guidance) for your Profile: _<Translate android="true" ids="ask_every_time"/>_ (by default) or  _<Translate android="true" ids="shared_string_always"/>_. Where _<Translate android="true" ids="ask_every_time"/>_  means you will have the **Attach to the roads** option in the *[Navigation menu](../setup/route-navigation.md#navigation-menu)*. _<Translate android="true" ids="shared_string_always"/>_ means that your track will be attached to the roads automatically each times.
+
+For the Android version, you can select two parameters on [Navigation settings → Detailed track guidance](../guidance/navigation-settings.md#detailed-track-guidance) for your Profile: *<Translate android="true" ids="ask_every_time"/>* (by default) or  *<Translate android="true" ids="shared_string_always"/>*. Where *<Translate android="true" ids="ask_every_time"/>*  means you will have the **Attach to the roads** option in the *[Navigation menu](../setup/route-navigation.md#navigation-menu)*. *<Translate android="true" ids="shared_string_always"/>* means that your track will be attached to the roads automatically each times.
+
 :::
 
- If you tap **Attach to the roads** option,  the [Plan a route](../../plan-route/create-route.md#saving-a-route) tool will open and OsmAnd will match each point on the track to the nearest allowed road on the map according to the chosen profile and threshold distance.  
+If you tap **Attach to the roads** button, the [Plan a route](../../plan-route/create-route.md#saving-a-route) tool will open and OsmAnd will match each point on the track to the nearest allowed road on the map according to the chosen profile and threshold distance.  
 
 - *Threshold distance* (default is 50 meters) refers to the maximum distance between a point on a GPS track and the nearest point on a road in order to attach the track to the road.
 - *When you change the profile*, OsmAnd automatically reattaches your track to the allowed for this profile roads. If your track consists of a big amount of points, attaching to the roads may take a long time. On the picture above, you can see the highlighted with orange status line, which indicates the progress. After the procedure of attaching to the roads is finished, the button **Apply** is active, and the track can be used for navigation.
@@ -196,7 +198,7 @@ After attaching your track to the roads in [Route details section](../setup/rout
 
 ### Start / Finish Point
 
-You can specify the start and finish point for a route other than the points used in the GPX file. In the [Follow track menu](#follow-track-menu), you can choose whether you want to navigate from your current location to the start point or to the nearest point on the GPX track.  
+You can specify the start and finish point for a route other than the points used in the GPX file. In the [Follow track menu](#how-to-follow-the-track), you can choose whether you want to navigate from your current location to the start point or to the nearest point on the GPX track.  
 Also, you can choose [<Translate android="true" ids="nav_type_hint"/>](../routing/routing-types.md) that will be used when moving on and along the track.  
 
 ### Add Waypoints
@@ -215,7 +217,7 @@ You can add a waypoint to any imported or created [GPX track](#create-and-import
     - Long-tap to select a location on the map and tap [Add track waypoint](../../map/map-context-menu.md#-add--edit--track-waypoint) from the *Map context menu*.
     - Select the track to which you want to add a waypoint, enter the required information and save.
 
-### Follow track menu
+### Restriction on Intermediate Points
 
 When preparing or navigating a GPX track, you cannot add intermediate places you plan to drive through within that track. You can only assign start and finish points in addition to the track or segment you are planning to follow.  
 
