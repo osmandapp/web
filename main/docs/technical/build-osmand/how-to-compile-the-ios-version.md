@@ -34,20 +34,21 @@ sidebar_position: 6
   $ brew install cocoapods
   ```
 6. Download and instal Java jdk 17
-```
-Intel
-https://download.oracle.com/java/17/archive/jdk-17.0.11_macos-x64_bin.dmg
-Arm
-https://download.oracle.com/java/17/archive/jdk-17.0.11_macos-aarch64_bin.dmg
-```
+  ```
+  # for intel
+  https://download.oracle.com/java/17/archive/jdk-17.0.11_macos-x64_bin.dmg
+
+  # for m1
+  https://download.oracle.com/java/17/archive/jdk-17.0.11_macos-aarch64_bin.dmg
+  ```
 
 7. Create new text file. Or update if it exist.
-```
-$ mkdir ~/.gradle 
-$ nano ~/.gradle/gradle.properties
-```
+  ```
+  $ mkdir ~/.gradle 
+  $ nano ~/.gradle/gradle.properties
+  ```
 
-Paste this content into it. Save file and restart computer.
+  Paste this content into it. Save file and restart computer.
 
 ```
 ## Project-wide Gradle settings.
