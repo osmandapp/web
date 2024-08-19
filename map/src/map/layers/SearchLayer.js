@@ -125,7 +125,6 @@ export default function SearchLayer() {
                 locale: i18n.language,
             },
         });
-        ctx.setProcessingSearch(false);
         if (response.ok) {
             let data = await response.json();
             ctx.setSearchResult(data);

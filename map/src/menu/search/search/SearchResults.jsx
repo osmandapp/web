@@ -62,7 +62,6 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
         if (loc) {
             const features = ctx.searchResult?.features;
             if (!features || features.length === 0) {
-                ctx.setProcessingSearch(false);
                 setResult(null);
                 return;
             }
