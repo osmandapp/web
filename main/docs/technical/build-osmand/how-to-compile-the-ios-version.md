@@ -33,7 +33,51 @@ sidebar_position: 6
   # for m1
   $ brew install cocoapods
   ```
-6. Run `prepare.sh` to compile Qt library and download external dependencies
+6. Download and instal Java jdk 17
+  ```
+  # for intel
+  https://download.oracle.com/java/17/archive/jdk-17.0.11_macos-x64_bin.dmg
+
+  # for m1
+  https://download.oracle.com/java/17/archive/jdk-17.0.11_macos-aarch64_bin.dmg
+  ```
+
+7. Create new text file. Or update if it exist.
+  ```
+  $ mkdir ~/.gradle 
+  $ nano ~/.gradle/gradle.properties
+  ```
+
+  Paste this content into it. Save file and restart computer.
+
+```
+## Project-wide Gradle settings.
+#
+# For more details on how to configure your build environment visit
+# http://www.gradle.org/docs/current/userguide/build_environment.html
+#
+# Specifies the JVM arguments used for the daemon process.
+# The setting is particularly useful for tweaking memory settings.
+# Default value: -Xmx10248m -XX:MaxMetaspaceSize=256m
+# org.gradle.jvmargs=-Xmx2048m -XX:MaxMetaspaceSize=512m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
+
+org.gradle.daemon=true
+
+org.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=2048m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
+
+#
+# When configured, Gradle will run in incubating parallel mode.
+# This option should only be used with decoupled projects. More details, visit
+# http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects
+
+org.gradle.parallel=true
+org.gradle.caching=true
+
+#Fri Apr 08 18:47:31 EEST 2016
+# android.useDeprecatedNdk=true
+```
+
+8. Run `prepare.sh` to compile Qt library and download external dependencies
   ```
   $ cd ios
   $ ./prepare.sh
@@ -57,10 +101,10 @@ sidebar_position: 6
   Solution 4: If you've got error like this: ```Failed to configure 'qtbase-ios' for 'ios.simulator.clang.static', aborting...```. Go to folded ```core/external/qtbase-ios/``` and delete all folders starting with ```upstream```.  And run `$ ./prepare.sh` again.
   
   
-7. Open `osmand.xcworkspace` in Xcode
-8. First build.
+9. Open `osmand.xcworkspace` in Xcode
+10. First build.
   Set the build target to `OsmAnd Maps`. (Near play/stop buttons). Select as target your device or as one of iOS simulators. But don't use default 'Any iOS Device (arm64)'. Build the project (play button).
-9. Troubleshooting.
+11. Troubleshooting.
   - In case of build errors you can press in Xcode: ```Product -> Clean build folder```
   - Close Xcode.  Delete `baked` and `binaries` folders in `OsmAnd` directory (if it already exists).
   - Delete Xcode DerivedData folder: ``` rm -rf ~/Library/Developer/Xcode/DerivedData ```
@@ -68,13 +112,13 @@ sidebar_position: 6
   - Restart your computer. (Yes, it can help).
   - Then run `$ ./prepare.sh` and try to build the project again.
   
-10. Troubleshooting (m1 mac)
+12. Troubleshooting (m1 mac)
   - In case of ```ld: library not found for -lOsmAndCore_static_standalone```:
   - Project Navigator -> OsmAnd_projects -> OsmAnd_projects (in Project/Targets list) -> Build settings -> All -> Architectures -> Excluded Architectures -> Debug
   - Add string field of type ```Any IOS Simulator SDK``` with value ```arm64```. (you will need to add it after each prepare.sh run)
   - Build project. In case of errors, delete folders ```Baked``` and ```Binaries``` and run ```prepare.sh``` once again.
 
-11. Debug Qt (optional). If you want to see Qt values in debug mode run this:
+13. Debug Qt (optional). If you want to see Qt values in debug mode run this:
   ```
 $ mkdir -p ~/qtlldb
 $ git clone https://github.com/gbooker/lldb-qt-formatters ~/qtlldb
