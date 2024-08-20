@@ -30,14 +30,12 @@ export function useGeoLocation(ctx, useHighPrecision = true) {
                         resolve({ lat: latitude, lng: longitude });
                     },
                     () => {
-                        ctx.setRoutingErrorMsg('Enabling browser GeoLocation would improve location-based features.');
                         ctx.setStopUseGeoLocation(true);
                         resolve(LOCATION_UNAVAILABLE);
                     },
                     { enableHighAccuracy: true }
                 );
             } else {
-                ctx.setRoutingErrorMsg('Geolocation is not supported by your browser.');
                 resolve(LOCATION_UNAVAILABLE);
             }
         });

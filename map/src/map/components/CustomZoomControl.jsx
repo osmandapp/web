@@ -4,7 +4,7 @@ import { POSITION_CLASSES } from '../util/MapStylesManager';
 import { IconButton, Paper, SvgIcon } from '@mui/material';
 import { ReactComponent as ZoomInIcon } from '../../assets/icons/ic_map_zoom_in.svg';
 import { ReactComponent as ZoomOutIcon } from '../../assets/icons/ic_map_zoom_out.svg';
-import styles from './map.module.css';
+import styles from '../map.module.css';
 
 const XYZ_HASH_SYNC = 'hash'; // use Ctrl + ZoomIn / ZoomOut to save/restore map x/y/z
 

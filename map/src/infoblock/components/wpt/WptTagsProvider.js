@@ -22,6 +22,7 @@ import { apiGet } from '../../../util/HttpApi';
 
 export const DEFAULT_TAG_ICON_SIZE = 24;
 export const DEFAULT_TAG_ICON_COLOR = '#727272';
+export const WEB_PREFIX = 'web_';
 export const WEB_POI_PREFIX = 'web_poi_';
 export const POI_PREFIX = 'poi_';
 export const WIKIPEDIA = 'wikipedia';
@@ -56,15 +57,22 @@ export const AMENITY_ORIGIN_EXTENSION = 'amenity_origin';
 export const NAME = 'name';
 export const ALT_NAME = 'osm_tag_alt_name';
 
+// from Amenity object
 export const POI_NAME = WEB_POI_PREFIX + 'name';
-export const ICON_KEY_NAME = WEB_POI_PREFIX + 'iconKeyName';
-export const ICON_NAME = WEB_POI_PREFIX + 'iconName';
-export const TYPE_OSM_TAG = WEB_POI_PREFIX + 'typeOsmTag';
-export const TYPE_OSM_VALUE = WEB_POI_PREFIX + 'typeOsmValue';
-export const TITLE = 'title';
-export const FINAL_ICON_NAME = WEB_POI_PREFIX + 'finalIconName';
+export const POI_ICON_NAME = WEB_POI_PREFIX + 'iconName';
+export const FINAL_POI_ICON_NAME = WEB_POI_PREFIX + 'finalIconName';
 export const POI_OSM_URL = WEB_POI_PREFIX + 'osmUrl';
 const POI_ID = WEB_POI_PREFIX + 'id';
+
+// from PoiType object
+export const POI_CATEGORY_KEY_NAME = WEB_PREFIX + 'keyName';
+export const ICON_KEY_NAME = WEB_PREFIX + 'iconKeyName';
+export const TYPE_OSM_TAG = WEB_PREFIX + 'typeOsmTag';
+export const TYPE_OSM_VALUE = WEB_PREFIX + 'typeOsmValue';
+export const CATEGORY_ICON = WEB_PREFIX + 'categoryIcon';
+export const CATEGORY_KEY_NAME_ICON = WEB_PREFIX + 'categoryKeyName';
+
+export const TITLE = 'title';
 
 const HIDDEN_EXTENSIONS = [
     COLOR_NAME_EXTENSION,
@@ -81,11 +89,11 @@ const HIDDEN_EXTENSIONS = [
 const HIDDEN_EXTENSIONS_POI = [
     ...HIDDEN_EXTENSIONS,
     ICON_KEY_NAME,
-    ICON_NAME,
+    POI_ICON_NAME,
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
     TITLE,
-    FINAL_ICON_NAME,
+    FINAL_POI_ICON_NAME,
     TYPE_POI,
     SUBTYPE_POI,
     POI_NAME,
@@ -160,7 +168,7 @@ async function getWptTags(obj, type, ctx) {
     let id = null;
     if (type.isFav || type.isWpt) {
         tags = obj.ext?.extensions;
-    } else if (type.isPoi) {
+    } else if (type.isPoi || type.isSearch) {
         Object.entries(obj.options).forEach(([key, value]) => {
             if (value === undefined) {
                 delete obj.options[key];
@@ -299,6 +307,8 @@ async function getWptTags(obj, type, ctx) {
         }
     }
 
+    res = res.filter((t) => !t.key.startsWith(WEB_PREFIX));
+
     return { res, id, type: typeTag, subtype: subtypeTag };
 }
 
@@ -411,6 +421,9 @@ function isInt(n) {
 }
 
 function getSocialMediaUrl(key, value) {
+    if (typeof value !== 'string') {
+        return null;
+    }
     // Remove leading and closing slashes
     let trimmedValue = value.trim();
     if (trimmedValue.charAt(0) === '/') {

@@ -3,7 +3,7 @@ import styles from '../trackfavmenu.module.css';
 import React, { forwardRef } from 'react';
 
 const MenuItemWithLines = forwardRef((props, ref) => {
-    const { name = null, children = null, maxLines, className = null, ...otherProps } = props;
+    const { name = null, children = null, maxLines, className = null, width = null, ...otherProps } = props;
     const titleStyle = {
         display: '-webkit-box',
         WebkitBoxOrient: 'vertical',
@@ -11,6 +11,7 @@ const MenuItemWithLines = forwardRef((props, ref) => {
         WebkitLineClamp: maxLines,
         wordBreak: 'break-word',
         whiteSpace: 'pre-wrap',
+        width: width ?? '100%',
     };
 
     return (

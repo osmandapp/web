@@ -1,49 +1,41 @@
-import headerStyles from '../trackfavmenu.module.css';
-import { AppBar, Box, IconButton, LinearProgress, Toolbar, Tooltip, Typography } from '@mui/material';
-import styles from '../settings/settings.module.css';
+import headerStyles from '../../trackfavmenu.module.css';
+import { AppBar, IconButton, LinearProgress, Toolbar, Tooltip, Typography } from '@mui/material';
+import styles from '../../settings/settings.module.css';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
-import { ReactComponent as FilterIcon } from '../../assets/icons/ic_action_filter.svg';
+import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
+import { ReactComponent as FilterIcon } from '../../../assets/icons/ic_action_filter.svg';
 import { useTranslation } from 'react-i18next';
-import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
-import AppContext, { OBJECT_SEARCH } from '../../context/AppContext';
-import Loading from '../errors/Loading';
-import Empty from '../errors/Empty';
-import WikiPlacesItem from './WikiPlacesItem';
-import ActionsMenu from '../actions/ActionsMenu';
+import { MAIN_URL_WITH_SLASH, SEARCH_URL } from '../../../manager/GlobalManager';
+import AppContext, { OBJECT_EXPLORE } from '../../../context/AppContext';
+import Loading from '../../errors/Loading';
+import Empty from '../../errors/Empty';
+import ActionsMenu from '../../actions/ActionsMenu';
 import WikiPlacesFilter from './WikiPlacesFilter';
-import filters from '../../resources/wiki_data_filters.json';
+import WikiPlacesList from './WikiPlacesList';
+import { addWikiPlacesDefaultFilters } from '../../../manager/SearchManager';
+import { useNavigate } from 'react-router-dom';
 
 export default function ExploreMenu() {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
+    const navigate = useNavigate();
     const [openFiltersDialog, setOpenFiltersDialog] = useState(false);
     const anchorEl = useRef(null);
 
     const MAX_PLACES = 50;
 
     function close() {
-        ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
-        ctx.setCurrentObjectType(null);
+        navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + window.location.hash);
         ctx.setLoadingContextMenu(false);
-        addDefaultFilters();
+        addWikiPlacesDefaultFilters(ctx, true);
     }
 
     useEffect(() => {
-        ctx.setCurrentObjectType(OBJECT_SEARCH);
-        addDefaultFilters();
+        ctx.setCurrentObjectType(OBJECT_EXPLORE);
+        addWikiPlacesDefaultFilters(ctx);
         ctx.setLoadingContextMenu(true);
     }, []);
-
-    function addDefaultFilters() {
-        const defaultFilters = filters.filter((f) => f !== 'office');
-        ctx.setSearchSettings({
-            ...ctx.searchSettings,
-            selectedFilters: new Set(defaultFilters),
-            useWikiImages: false,
-        });
-    }
 
     useEffect(() => {
         if (ctx.wikiPlaces) {
@@ -62,7 +54,7 @@ export default function ExploreMenu() {
                         className={styles.closeIcon}
                         onClick={close}
                     >
-                        <CloseIcon />
+                        <BackIcon />
                     </IconButton>
                     <Typography id="se-explore-menu-name" component="div" className={headerStyles.title}>
                         {t('web:explore_menu')}
@@ -92,17 +84,7 @@ export default function ExploreMenu() {
                     {ctx.wikiPlaces?.length === 0 ? (
                         <Empty title={'Places not found'} />
                     ) : (
-                        <Box
-                            id={'se-wiki_places-items'}
-                            minWidth={ctx.infoBlockWidth}
-                            maxWidth={ctx.infoBlockWidth}
-                            sx={{ overflow: 'auto', overflowX: 'hidden' }}
-                        >
-                            {!ctx.searchSettings.useWikiImages &&
-                                ctx.wikiPlaces
-                                    ?.slice(0, MAX_PLACES)
-                                    .map((item, index) => <WikiPlacesItem index={item.id} key={index} item={item} />)}
-                        </Box>
+                        <WikiPlacesList size={MAX_PLACES} />
                     )}
                 </>
             )}

@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { OBJECT_TYPE_POI } from '../../context/AppContext';
+import AppContext, { OBJECT_SEARCH, OBJECT_TYPE_POI } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import _ from 'lodash';
 import L from 'leaflet';
-import { changeIconColor, createPoiIcon } from '../markers/MarkerOptions';
+import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import 'leaflet-spin';
 import PoiManager, {
     createPoiCache,
@@ -16,18 +16,96 @@ import 'leaflet.markercluster';
 import { Alert } from '@mui/material';
 import { apiPost } from '../../util/HttpApi';
 import {
-    FINAL_ICON_NAME,
+    FINAL_POI_ICON_NAME,
     ICON_KEY_NAME,
-    ICON_NAME,
+    POI_ICON_NAME,
     POI_NAME,
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
+import { SEARCH_LAYER_ID, SEARCH_TYPE_CATEGORY } from './SearchLayer';
+import i18n from '../../i18n';
+import { clusterMarkers, createSecondaryMarker } from '../util/Clusterizer';
+
+export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, type = OBJECT_TYPE_POI, map, zoom }) {
+    const innerCache = await createPoiCache({ poiList, poiIconCache: globalPoiIconCache });
+    updatePoiCache(ctx, innerCache);
+
+    const center = map.getCenter();
+    const latitude = center.lat;
+    const { mainMarkers, secondaryMarkers } = clusterMarkers({
+        places: poiList,
+        zoom,
+        latitude,
+        iconSize: DEFAULT_ICON_SIZE,
+        isPoi: true,
+    });
+
+    const mainMarkersLayers = await Promise.all(
+        mainMarkers?.map(async (poi) => {
+            const finalIconName = PoiManager.getIconNameForPoiType({
+                iconKeyName: poi.properties[ICON_KEY_NAME],
+                typeOsmTag: poi.properties[TYPE_OSM_TAG],
+                typeOsmValue: poi.properties[TYPE_OSM_VALUE],
+                iconName: poi.properties[POI_ICON_NAME],
+            });
+            const icon = await getPoiIcon(poi, innerCache, finalIconName);
+            const coord = poi.geometry.coordinates;
+            return new L.Marker(new L.LatLng(coord[1], coord[0]), {
+                ...poi.properties,
+                title: poi.properties[POI_NAME],
+                icon: icon,
+                [FINAL_POI_ICON_NAME]: finalIconName,
+            });
+        })
+    );
+
+    let simpleMarkersArr = new L.FeatureGroup();
+
+    for (const place of secondaryMarkers) {
+        const circle = createSecondaryMarker(place);
+        if (circle) {
+            simpleMarkersArr.addLayer(circle);
+        }
+    }
+
+    const layers = [...mainMarkersLayers, simpleMarkersArr];
+
+    if (layers.length) {
+        return L.featureGroup(layers, {
+            id: type === OBJECT_SEARCH ? SEARCH_LAYER_ID : null,
+        });
+    } else {
+        return L.featureGroup(); // return an empty layer group if there are no layers
+    }
+}
+
+export async function getPoiIcon(poi, cache, finalIconName) {
+    if (finalIconName) {
+        if (cache[finalIconName]) {
+            const svgData = cache[finalIconName];
+            let coloredSvg = changeIconColor(svgData, DEFAULT_ICON_COLOR);
+            // Add the id attribute to the coloredSvg
+            const poiName = poi.properties[POI_NAME];
+            coloredSvg = coloredSvg.replace(
+                '<svg',
+                `<svg id="se-poi-marker-icon-${finalIconName}-${DEFAULT_ICON_COLOR}-${poiName}"`
+            );
+            const iconHtml = createPoiIcon({
+                color: DEFAULT_POI_COLOR,
+                background: DEFAULT_POI_SHAPE,
+                svgIcon: coloredSvg,
+            }).options.html;
+            return L.divIcon({ html: iconHtml });
+        }
+    }
+}
 
 export default function PoiLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
+
     const [prevZoom, setPrevZoom] = useState(null);
     const [prevTypesLength, setPrevTypesLength] = useState(null);
     const [zoom, setZoom] = useState(null);
@@ -35,6 +113,7 @@ export default function PoiLayer() {
     const [poiList, setPoiList] = useState({
         layer: null,
         prevLayer: null,
+        listFeatures: null,
     });
     const [prevController, setPrevController] = useState(false);
     const [useLimit, setUseLimit] = useState(false);
@@ -54,28 +133,38 @@ export default function PoiLayer() {
             prevCategoriesCount: prevCategoriesCount,
         };
         let response = await apiPost(
-            `${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi?`,
+            `${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi`,
             searchData,
             {
+                params: {
+                    locale: i18n.language,
+                },
+                apiCache: true,
                 signal: controller.signal,
             }
         );
         if (response?.data) {
             return response.data;
-        } else {
-            console.error(`Pois not found`);
         }
     }
 
     useEffect(() => {
-        if (map) {
-            map.on('zoomend', () => {
-                setZoom(map.getZoom());
-            });
+        const handleZoomEnd = () => {
+            setZoom(map.getZoom());
+        };
 
-            map.on('dragend', () => {
-                setMove(true);
-            });
+        const handleDragEnd = () => {
+            setMove(true);
+        };
+
+        if (map) {
+            map.on('zoomend', handleZoomEnd);
+            map.on('dragend', handleDragEnd);
+
+            return () => {
+                map.off('zoomend', handleZoomEnd);
+                map.off('dragend', handleDragEnd);
+            };
         }
     }, [map]);
 
@@ -93,6 +182,7 @@ export default function PoiLayer() {
                 savedBbox,
                 prevCategoriesCount,
                 poiIconCache,
+                zoom,
             }) => {
                 map.spin(true, { color: '#1976d2' });
                 let bbox = map.getBounds();
@@ -102,15 +192,19 @@ export default function PoiLayer() {
                         if (!res.alreadyFound) {
                             if (!res.mapLimitExceeded && res.features) {
                                 const layer = await createPoiLayer({
+                                    ctx,
                                     poiList: res.features.features,
                                     globalPoiIconCache: poiIconCache,
+                                    map,
+                                    zoom,
                                 });
                                 const newPoiList = {
-                                    prevLayer: _.cloneDeep(poiList.layer),
+                                    prevLayer: _.cloneDeep(poiList?.layer),
                                     layer: layer,
+                                    listFeatures: res.features,
                                 };
                                 setPoiList(newPoiList);
-                                setBbox(!res.useLimit ? bbox : null);
+                                setBbox(bbox);
                                 setPrevCategoriesCount(showPoiCategories.length);
                                 setUseLimit(res.useLimit);
                             }
@@ -118,12 +212,26 @@ export default function PoiLayer() {
                         if (res.mapLimitExceeded) {
                             setAddAlert(true);
                         }
+                    } else {
+                        ctx.setProcessingSearch(false);
+                        setPoiList(null);
                     }
                 });
             },
             1000
         )
     ).current;
+
+    function addToSearchRes(poiList) {
+        if (ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY) {
+            ctx.setSearchResult((prevResult) => {
+                return {
+                    ...prevResult,
+                    features: poiList?.listFeatures?.features,
+                };
+            });
+        }
+    }
 
     function allPoiFound(zoom, prevZoom) {
         return prevZoom && zoom > prevZoom && !useLimit;
@@ -134,32 +242,53 @@ export default function PoiLayer() {
         let controller = new AbortController();
 
         async function getPoiList() {
+            setPrevTypesLength(_.cloneDeep(ctx.showPoiCategories.length));
             if (
-                ((!allPoiFound(zoom, prevZoom) && zoom !== prevZoom) || move || typesChanged()) &&
-                !_.isEmpty(ctx.showPoiCategories)
+                (!_.isEmpty(ctx.showPoiCategories) && !allPoiFound(zoom, prevZoom) && zoom !== prevZoom) ||
+                move ||
+                typesChanged()
             ) {
                 if (prevController) {
                     prevController.abort();
                 }
                 setPrevController(controller);
                 setPrevZoom(_.cloneDeep(zoom));
-                setPrevTypesLength(_.cloneDeep(ctx.showPoiCategories.length));
-                debouncedGetPoi({
-                    controller,
-                    ignore,
-                    poiList,
-                    showPoiCategories: ctx.showPoiCategories,
-                    savedBbox: bbox,
-                    prevCategoriesCount,
-                    poiIconCache: ctx.poiIconCache,
-                });
+                if (ctx.showPoiCategories.length > 0) {
+                    debouncedGetPoi({
+                        controller,
+                        ignore,
+                        poiList,
+                        showPoiCategories: ctx.showPoiCategories,
+                        savedBbox: bbox,
+                        prevCategoriesCount,
+                        poiIconCache: ctx.poiIconCache,
+                        zoom,
+                    });
+                }
             } else {
-                if (poiList.layer && _.isEmpty(ctx.showPoiCategories)) {
+                if (poiList?.layer && _.isEmpty(ctx.showPoiCategories)) {
                     const newPoiList = {
-                        prevLayer: _.cloneDeep(poiList.layer),
+                        prevLayer: _.cloneDeep(poiList?.layer),
                         layer: null,
                     };
                     setPoiList(newPoiList);
+                } else {
+                    // poi list already found
+                    if (poiList?.listFeatures?.features?.length > 0) {
+                        const layer = await createPoiLayer({
+                            ctx,
+                            poiList: poiList.listFeatures.features,
+                            globalPoiIconCache: ctx.poiIconCache,
+                            map,
+                            zoom,
+                        });
+                        const newPoiList = {
+                            prevLayer: _.cloneDeep(poiList?.layer),
+                            layer: layer,
+                            listFeatures: poiList?.listFeatures,
+                        };
+                        setPoiList(newPoiList);
+                    }
                 }
             }
         }
@@ -176,12 +305,13 @@ export default function PoiLayer() {
     }, [zoom, move, ctx.showPoiCategories]);
 
     useEffect(() => {
-        if (poiList.layer && !map.hasLayer(poiList.layer)) {
-            poiList.layer.addTo(map).on('click', onClick);
+        if (poiList?.layer && !map.hasLayer(poiList?.layer)) {
+            poiList?.layer.addTo(map).on('click', onClick);
         }
-        if (poiList.prevLayer) {
-            map.removeLayer(poiList.prevLayer);
+        if (poiList?.prevLayer) {
+            map.removeLayer(poiList?.prevLayer);
         }
+        addToSearchRes(poiList);
         setMove(false);
     }, [poiList]);
 
@@ -192,57 +322,6 @@ export default function PoiLayer() {
             latlng: e.sourceTarget._latlng,
         };
         ctx.setSelectedWpt({ poi });
-    }
-
-    async function createPoiLayer({ poiList = [], globalPoiIconCache }) {
-        const innerCache = await createPoiCache({ poiList, poiIconCache: globalPoiIconCache });
-        updatePoiCache(ctx, innerCache);
-        const layers = await Promise.all(
-            poiList.map(async (poi) => {
-                const finalIconName = PoiManager.getIconNameForPoiType({
-                    iconKeyName: poi.properties[ICON_KEY_NAME],
-                    typeOsmTag: poi.properties[TYPE_OSM_TAG],
-                    typeOsmValue: poi.properties[TYPE_OSM_VALUE],
-                    iconName: poi.properties[ICON_NAME],
-                });
-                const icon = await getPoiIcon(poi, innerCache, finalIconName);
-                const coord = poi.geometry.coordinates;
-                return new L.Marker(new L.LatLng(coord[1], coord[0]), {
-                    ...poi.properties,
-                    title: poi.properties[POI_NAME],
-                    icon: icon,
-                    [FINAL_ICON_NAME]: finalIconName,
-                });
-            })
-        );
-
-        if (layers.length) {
-            return L.featureGroup(layers);
-        } else {
-            return L.featureGroup(); // return an empty layer group if there are no layers
-        }
-    }
-
-    async function getPoiIcon(poi, cache, finalIconName) {
-        if (finalIconName) {
-            let svgData;
-            if (cache[finalIconName]) {
-                svgData = cache[finalIconName];
-                let coloredSvg = changeIconColor(svgData, DEFAULT_ICON_COLOR);
-                // Add the id attribute to the coloredSvg
-                const poiName = poi.properties[POI_NAME];
-                coloredSvg = coloredSvg.replace(
-                    '<svg',
-                    `<svg id="se-poi-marker-icon-${finalIconName}-${DEFAULT_ICON_COLOR}-${poiName}"`
-                );
-                const iconHtml = createPoiIcon({
-                    color: DEFAULT_POI_COLOR,
-                    background: DEFAULT_POI_SHAPE,
-                    svgIcon: coloredSvg,
-                }).options.html;
-                return L.divIcon({ html: iconHtml });
-            }
-        }
     }
 
     useEffect(() => {

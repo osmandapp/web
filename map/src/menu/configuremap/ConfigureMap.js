@@ -30,16 +30,19 @@ import { useTranslation } from 'react-i18next';
 import { closeHeader } from '../actions/HeaderHelper';
 import { INTERACTIVE_LAYER } from '../../map/layers/CustomTileLayer';
 import TracksManager from '../../manager/track/TracksManager';
+import SubTitle from '../components/SubTitle';
+import PoiCategoriesConfig from './PoiCategoriesConfig';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
 
-export default function ConfigureMap({ setOpenVisibleMenu, setOpenPoiConfig }) {
+export default function ConfigureMap() {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
     const [openSettings, setOpenSettings] = useState(false);
     const [openedTracks, setOpenedTracks] = useState(null);
+    const [openPoiConfig, setOpenPoiConfig] = useState(false);
 
     const handleFavoritesSwitchChange = () => {
         let newConfigureMap = cloneDeep(ctx.configureMapState);
@@ -65,171 +68,183 @@ export default function ConfigureMap({ setOpenVisibleMenu, setOpenPoiConfig }) {
 
     return (
         <>
-            <AppBar position="static" className={headerStyles.appbar}>
-                <Toolbar className={headerStyles.toolbar}>
-                    <IconButton
-                        id={'se-configure-map-menu-close'}
-                        variant="contained"
-                        type="button"
-                        className={styles.closeIcon}
-                        onClick={() => closeHeader({ ctx })}
-                    >
-                        <CloseIcon />
-                    </IconButton>
-                    <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
-                        {t('configure_map')}
-                    </Typography>
-                    {ctx.loginUser && (
-                        <Tooltip key={'reset'} title={t('reset_to_default')} arrow placement="bottom-end">
-                            <span>
-                                <IconButton
-                                    id="se-reset"
-                                    variant="contained"
-                                    type="button"
-                                    className={headerStyles.appBarIcon}
-                                    onClick={() => ctx.setConfigureMapState({ ...defaultConfigureMapStateValues })}
-                                >
-                                    <ResetIcon />
-                                </IconButton>
-                            </span>
-                        </Tooltip>
-                    )}
-                </Toolbar>
-            </AppBar>
-            {!ctx.loginUser && !ctx.develFeatures ? (
-                <EmptyLogin />
+            {openPoiConfig ? (
+                <PoiCategoriesConfig setOpenPoiConfig={setOpenPoiConfig} />
             ) : (
                 <>
-                    {ctx.loginUser && (
-                        <>
-                            <MenuItem className={styles.item}>
-                                <Typography className={styles.title} noWrap>
-                                    {t('shared_string_show')}
-                                </Typography>
-                            </MenuItem>
-                            <MenuItem
-                                id="se-configure-map-menu-poi-categories"
-                                className={styles.item}
-                                onClick={() => {
-                                    setOpenPoiConfig(true);
-                                }}
+                    <AppBar position="static" className={headerStyles.appbar}>
+                        <Toolbar className={headerStyles.toolbar}>
+                            <IconButton
+                                id={'se-configure-map-menu-close'}
+                                variant="contained"
+                                type="button"
+                                className={styles.closeIcon}
+                                onClick={() => closeHeader({ ctx })}
                             >
-                                <ListItemIcon className={styles.iconEnabled}>
-                                    <PoiIcon />
-                                </ListItemIcon>
-                                <ListItemText>
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'space-between',
-                                        }}
-                                    >
-                                        <Typography variant="inherit" noWrap>
-                                            {t('layer_poi')}
-                                        </Typography>
-                                        {ctx.showPoiCategories.length > 0 && (
-                                            <Typography variant="body2" className={styles.poiCategoriesInfo} noWrap>
-                                                {ctx.showPoiCategories.length}
-                                            </Typography>
-                                        )}
-                                    </div>
-                                </ListItemText>
-                            </MenuItem>
-                            <Divider className={styles.dividerItem} />
-                            <MenuItem className={styles.item} onClick={handleFavoritesSwitchChange}>
-                                <ListItemIcon className={setIconStyles()}>
-                                    <StarIcon />
-                                </ListItemIcon>
-                                <ListItemText>
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'space-between',
-                                        }}
-                                    >
-                                        <Typography variant="inherit" noWrap>
-                                            {t('shared_string_favorites')}
-                                        </Typography>
-                                        <Switch
-                                            id="se-configure-map-menu-favorite-switch"
-                                            checked={ctx.configureMapState.showFavorites}
-                                            onClick={(e) => e.stopPropagation()}
-                                            onChange={handleFavoritesSwitchChange}
-                                        />
-                                    </div>
-                                </ListItemText>
-                            </MenuItem>
-                            <Divider className={styles.dividerItem} />
-                            <MenuItem divider className={styles.item} onClick={() => setOpenVisibleMenu(true)}>
-                                <ListItemIcon className={styles.iconEnabled}>
-                                    <TracksIcon />
-                                </ListItemIcon>
-                                <ListItemText>
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'space-between',
-                                        }}
-                                    >
-                                        <Typography variant="inherit" noWrap>
-                                            {t('shared_string_tracks')}
-                                        </Typography>
-                                        {openedTracks !== 0 && (
-                                            <Typography variant="body2" className={styles.poiCategoriesInfo} noWrap>
-                                                {openedTracks?.toString()}
-                                            </Typography>
-                                        )}
-                                    </div>
-                                </ListItemText>
-                            </MenuItem>
-                        </>
-                    )}
-                    {ctx.develFeatures && (
-                        <>
-                            <MenuItem className={styles.item}>
-                                <Typography className={styles.title} noWrap>
-                                    {t('shared_string_appearance')}
-                                </Typography>
-                            </MenuItem>
-                            <MenuItem sx={{ ml: 1, mr: 2, mt: 2 }} disableRipple={true}>
-                                <FormControl fullWidth>
-                                    <InputLabel id="rendering-style-selector-label">
-                                        {t('map_widget_renderer')}
-                                    </InputLabel>
-                                    <Select
-                                        labelid="rendering-style-selector-label"
-                                        label={t('map_widget_renderer')}
-                                        value={ctx.tileURL.key}
-                                        onChange={(e) => {
-                                            ctx.setTileURL(ctx.allTileURLs[e.target.value]);
-                                            if (e.target.value === INTERACTIVE_LAYER) {
-                                                ctx.setRenderingType(DYNAMIC_RENDERING);
-                                            } else if (ctx.renderingType) {
-                                                ctx.setRenderingType(null);
+                                <CloseIcon />
+                            </IconButton>
+                            <Typography id="se-configure-map-menu-name" component="div" className={headerStyles.title}>
+                                {t('configure_map')}
+                            </Typography>
+                            {ctx.loginUser && (
+                                <Tooltip key={'reset'} title={t('reset_to_default')} arrow placement="bottom-end">
+                                    <span>
+                                        <IconButton
+                                            id="se-reset"
+                                            variant="contained"
+                                            type="button"
+                                            className={headerStyles.appBarIcon}
+                                            onClick={() =>
+                                                ctx.setConfigureMapState({ ...defaultConfigureMapStateValues })
                                             }
+                                        >
+                                            <ResetIcon />
+                                        </IconButton>
+                                    </span>
+                                </Tooltip>
+                            )}
+                        </Toolbar>
+                    </AppBar>
+                    {!ctx.loginUser && !ctx.develFeatures ? (
+                        <EmptyLogin />
+                    ) : (
+                        <>
+                            {ctx.loginUser && (
+                                <>
+                                    <SubTitle title={'shared_string_show'} />
+                                    <MenuItem
+                                        id="se-configure-map-menu-poi-categories"
+                                        className={styles.item}
+                                        onClick={() => {
+                                            setOpenPoiConfig(true);
                                         }}
                                     >
-                                        {Object.values(ctx.allTileURLs).map((item) => {
-                                            return (
-                                                <MenuItem key={item.key} value={item.key}>
-                                                    {item.uiname}
-                                                </MenuItem>
-                                            );
-                                        })}
-                                    </Select>
-                                </FormControl>
-                                <IconButton sx={{ ml: 1 }} onClick={() => setOpenSettings(true)}>
-                                    <Settings fontSize="small" />
-                                </IconButton>
-                            </MenuItem>
+                                        <ListItemIcon className={styles.iconEnabled}>
+                                            <PoiIcon />
+                                        </ListItemIcon>
+                                        <ListItemText>
+                                            <div
+                                                style={{
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'space-between',
+                                                }}
+                                            >
+                                                <Typography variant="inherit" noWrap>
+                                                    {t('layer_poi')}
+                                                </Typography>
+                                                {ctx.showPoiCategories.length > 0 && (
+                                                    <Typography
+                                                        variant="body2"
+                                                        className={styles.poiCategoriesInfo}
+                                                        noWrap
+                                                    >
+                                                        {ctx.showPoiCategories.length}
+                                                    </Typography>
+                                                )}
+                                            </div>
+                                        </ListItemText>
+                                    </MenuItem>
+                                    <Divider className={styles.dividerItem} />
+                                    <MenuItem className={styles.item} onClick={handleFavoritesSwitchChange}>
+                                        <ListItemIcon className={setIconStyles()}>
+                                            <StarIcon />
+                                        </ListItemIcon>
+                                        <ListItemText>
+                                            <div
+                                                style={{
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'space-between',
+                                                }}
+                                            >
+                                                <Typography variant="inherit" noWrap>
+                                                    {t('shared_string_favorites')}
+                                                </Typography>
+                                                <Switch
+                                                    id="se-configure-map-menu-favorite-switch"
+                                                    checked={ctx.configureMapState.showFavorites}
+                                                    onClick={(e) => e.stopPropagation()}
+                                                    onChange={handleFavoritesSwitchChange}
+                                                />
+                                            </div>
+                                        </ListItemText>
+                                    </MenuItem>
+                                    <Divider className={styles.dividerItem} />
+                                    <MenuItem
+                                        divider
+                                        className={styles.item}
+                                        onClick={() => ctx.setOpenVisibleMenu(true)}
+                                    >
+                                        <ListItemIcon className={styles.iconEnabled}>
+                                            <TracksIcon />
+                                        </ListItemIcon>
+                                        <ListItemText>
+                                            <div
+                                                style={{
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'space-between',
+                                                }}
+                                            >
+                                                <Typography variant="inherit" noWrap>
+                                                    {t('shared_string_tracks')}
+                                                </Typography>
+                                                {openedTracks !== 0 && (
+                                                    <Typography
+                                                        variant="body2"
+                                                        className={styles.poiCategoriesInfo}
+                                                        noWrap
+                                                    >
+                                                        {openedTracks?.toString()}
+                                                    </Typography>
+                                                )}
+                                            </div>
+                                        </ListItemText>
+                                    </MenuItem>
+                                </>
+                            )}
+                            {ctx.develFeatures && (
+                                <>
+                                    <SubTitle title={'shared_string_appearance'} />
+                                    <MenuItem sx={{ ml: 1, mr: 2, mt: 2 }} disableRipple={true}>
+                                        <FormControl fullWidth>
+                                            <InputLabel id="rendering-style-selector-label">
+                                                {t('map_widget_renderer')}
+                                            </InputLabel>
+                                            <Select
+                                                labelid="rendering-style-selector-label"
+                                                label={t('map_widget_renderer')}
+                                                value={ctx.tileURL.key}
+                                                onChange={(e) => {
+                                                    ctx.setTileURL(ctx.allTileURLs[e.target.value]);
+                                                    if (e.target.value === INTERACTIVE_LAYER) {
+                                                        ctx.setRenderingType(DYNAMIC_RENDERING);
+                                                    } else if (ctx.renderingType) {
+                                                        ctx.setRenderingType(null);
+                                                    }
+                                                }}
+                                            >
+                                                {Object.values(ctx.allTileURLs).map((item) => {
+                                                    return (
+                                                        <MenuItem key={item.key} value={item.key}>
+                                                            {item.uiname}
+                                                        </MenuItem>
+                                                    );
+                                                })}
+                                            </Select>
+                                        </FormControl>
+                                        <IconButton sx={{ ml: 1 }} onClick={() => setOpenSettings(true)}>
+                                            <Settings fontSize="small" />
+                                        </IconButton>
+                                    </MenuItem>
+                                </>
+                            )}
                         </>
                     )}
+                    {openSettings && <RenderingSettingsDialog setOpenSettings={setOpenSettings} />}
                 </>
             )}
-            {openSettings && <RenderingSettingsDialog setOpenSettings={setOpenSettings} />}
         </>
     );
 }

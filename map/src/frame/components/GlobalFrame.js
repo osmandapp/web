@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Box, Button, Dialog } from '@mui/material';
-import OsmAndMap from '../../map/components/OsmAndMap';
+import OsmAndMap from '../../map/OsmAndMap';
 import MainMenu from '../../menu/MainMenu';
-import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import AppContext from '../../context/AppContext';
 import GeneralPanelButtons from './panelbuttons/GeneralPanelButtons';
 import { GlobalConfirmationDialog } from '../../dialogs/GlobalConfirmationDialog';
@@ -24,7 +24,7 @@ import DialogActions from '@mui/material/DialogActions';
 import _, { isEmpty } from 'lodash';
 import TracksManager, { createTrackGroups, getGpxFiles } from '../../manager/track/TracksManager';
 import { addCloseTracksToRecently } from '../../menu/visibletracks/VisibleTracks';
-import PhotosModal from '../../menu/search/PhotosModal';
+import PhotosModal from '../../menu/search/explore/PhotosModal';
 import InstallBanner from './InstallBanner';
 import { hideAllTracks } from '../../manager/track/DeleteTrackManager';
 
@@ -37,7 +37,6 @@ const GlobalFrame = () => {
     const [openErrorDialog, setOpenErrorDialog] = useState(false);
     const [menuInfo, setMenuInfo] = useState(null);
     const [width, height] = useWindowSize();
-    const [openVisibleMenu, setOpenVisibleMenu] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
     const [showInstallBanner, setShowInstallBanner] = useState(false);
@@ -173,7 +172,7 @@ const GlobalFrame = () => {
     }, [ctx.gpxFiles]);
 
     useEffect(() => {
-        if (openVisibleMenu) {
+        if (ctx.openVisibleMenu) {
             let savedVisible = JSON.parse(localStorage.getItem(TracksManager.TRACK_VISIBLE_FLAG));
             let newVisFilesNames = {
                 old: savedVisible.old || [],
@@ -186,7 +185,7 @@ const GlobalFrame = () => {
                 addCloseTracksToRecently(ctx);
             }
         }
-    }, [openVisibleMenu]);
+    }, [ctx.openVisibleMenu]);
 
     // create track groups
     useEffect(() => {
@@ -229,7 +228,6 @@ const GlobalFrame = () => {
                     setShowInfoBlock={setShowInfoBlock}
                     clearState={clearState}
                     setMenuInfo={setMenuInfo}
-                    setOpenVisibleMenu={setOpenVisibleMenu}
                     showInstallBanner={showInstallBanner}
                 />
                 {ctx.selectedPhotoInd !== -1 && <PhotosModal photos={ctx.photoGallery} />}
@@ -244,11 +242,8 @@ const GlobalFrame = () => {
                 showInfoBlock={showInfoBlock}
                 setShowInfoBlock={setShowInfoBlock}
                 setClearState={setClearState}
-                setOpenVisibleMenu={setOpenVisibleMenu}
-                openVisibleMenu={openVisibleMenu}
                 showInstallBanner={showInstallBanner}
             />
-            <Outlet />
             <Dialog open={openErrorDialog} onClose={() => setOpenErrorDialog(false)}>
                 <DialogTitle className={dialogStyles.title}>{ctx.trackErrorMsg?.title}</DialogTitle>
                 <DialogContent className={dialogStyles.content}>{ctx.trackErrorMsg?.msg}</DialogContent>

@@ -16,21 +16,16 @@ import React, { useContext, useEffect, useState } from 'react';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
-import PoiManager, { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
+import PoiManager, { translatePoi } from '../../manager/PoiManager';
 import { changeIconSizeWpt, getPoiCategoryIcon, removeShadowFromIconWpt } from '../../map/markers/MarkerOptions';
-import { isEmpty } from 'lodash';
 
 export const CategoryIcon = ({ color, background, icon, iconSize, shieldSize }) => {
+    let svgHtml = getPoiCategoryIcon({ icon, color, background }).options.html;
     return (
         <div
             style={{ display: 'flex' }}
             dangerouslySetInnerHTML={{
-                __html:
-                    changeIconSizeWpt(
-                        removeShadowFromIconWpt(getPoiCategoryIcon({ icon, color, background }).options.html),
-                        iconSize,
-                        shieldSize
-                    ) + '',
+                __html: changeIconSizeWpt(removeShadowFromIconWpt(svgHtml), iconSize, shieldSize) + '',
             }}
         />
     );
@@ -40,10 +35,9 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
-    const [categoryIcons, setCategoryIcons] = useState({});
     const [selectedCategories, setSelectedCategories] = useState(new Set());
 
-    const activePoiFilters = removeUnusedFilters(ctx.poiCategory?.filters);
+    const activePoiFilters = ctx.poiCategory?.filters;
 
     useEffect(() => {
         if (ctx.showPoiCategories.length > 0) {
@@ -51,28 +45,8 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
         }
     }, []);
 
-    useEffect(() => {
-        async function loadIcons() {
-            const icons = {};
-            for (const filter of activePoiFilters) {
-                icons[filter] = await getCategoryIcon(filter);
-            }
-            setCategoryIcons(icons);
-        }
-        if (isEmpty(categoryIcons) && activePoiFilters !== null) {
-            loadIcons().then();
-        }
-    }, [activePoiFilters]);
-
     function closeCategories() {
         setOpenPoiConfig(false);
-    }
-
-    function removeUnusedFilters(filters) {
-        if (filters) {
-            return filters.filter((f) => f !== 'routes');
-        }
-        return null;
     }
 
     const handleTogglePoiCategories = (category) => {
@@ -83,40 +57,6 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
         }
         setSelectedCategories(new Set(selectedCategories));
     };
-
-    function translatePoi({ key = null, value = null }) {
-        if (key === null && value === null) {
-            return '';
-        }
-        if (key !== null && activePoiFilters !== null) {
-            return t('poi_' + activePoiFilters[key]);
-        } else if (value !== null) {
-            return t('poi_' + value);
-        }
-        return '';
-    }
-
-    async function getCategoryIcon(category) {
-        const name = PoiManager.preparePoiFilterIcon(category);
-        return (
-            <CategoryIcon
-                color={DEFAULT_POI_COLOR}
-                background={DEFAULT_POI_SHAPE}
-                icon={name}
-                iconSize={20}
-                shieldSize={30}
-            />
-        );
-    }
-
-    function selectAllCategories() {
-        let allCategories = [];
-        activePoiFilters.forEach((item) => {
-            const category = PoiManager.formattingPoiFilter(item, true);
-            allCategories.push(category);
-        });
-        setSelectedCategories(new Set(allCategories));
-    }
 
     function deselectAllCategories() {
         setSelectedCategories(new Set());
@@ -152,10 +92,10 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
                                 handleTogglePoiCategories(category);
                             }}
                         >
-                            <ListItemIcon>{categoryIcons[item]}</ListItemIcon>
+                            <ListItemIcon>{ctx.categoryIcons[item]}</ListItemIcon>
                             <ListItemText>
                                 <Typography variant="inherit" noWrap>
-                                    {translatePoi({ key })}
+                                    {translatePoi({ key, ctx, t })}
                                 </Typography>
                             </ListItemText>
                             <Checkbox
@@ -168,15 +108,13 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
             </Box>
             <AppBar position="static" className={styles.footer}>
                 <Toolbar className={headerStyles.toolbar} style={{ justifyContent: 'space-between' }}>
-                    {activePoiFilters?.length !== selectedCategories?.size ? (
-                        <Button className={styles.buttonSelectAll} onClick={selectAllCategories}>
-                            {t('shared_string_select_all')}
-                        </Button>
-                    ) : (
-                        <Button className={styles.buttonSelectAll} onClick={deselectAllCategories}>
-                            {t('shared_string_deselect_all')}
-                        </Button>
-                    )}
+                    <Button
+                        disabled={selectedCategories.size === 0}
+                        className={styles.buttonSelectAll}
+                        onClick={deselectAllCategories}
+                    >
+                        {t('shared_string_deselect_all')}
+                    </Button>
                     <Button className={styles.buttonApply} onClick={selectCheckedCategories} id="se-select-categories">
                         {t('shared_string_apply')}
                     </Button>

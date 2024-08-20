@@ -6,9 +6,9 @@ import 'leaflet.vectorgrid';
 import { getIconUrlByName, getShaderUrlByName } from '../markers/MarkerOptions';
 import { DYNAMIC_RENDERING } from '../../menu/configuremap/ConfigureMap';
 import { apiGet } from '../../util/HttpApi';
-import styles from './map.module.css';
 import { Paper, Table, TableBody, TableCell, TableRow } from '@mui/material';
 import { renderToStaticMarkup } from 'react-dom/server';
+import styles from '../map.module.css';
 
 export const INTERACTIVE_LAYER = 'int';
 

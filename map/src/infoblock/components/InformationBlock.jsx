@@ -207,7 +207,9 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                             <WptPhotoList photos={ctx.photoGallery} />
                         ) : (
                             <WptDetails
-                                isDetails={ctx.selectedWpt?.trackWptItem || ctx.selectedWpt?.favItem}
+                                isDetails={
+                                    ctx.selectedWpt?.trackWptItem || ctx.selectedWpt?.favItem || ctx.searchResult
+                                }
                                 setOpenWptTab={setOpenWptTab}
                                 setShowInfoBlock={setShowInfoBlock}
                             />

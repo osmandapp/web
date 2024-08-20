@@ -16,7 +16,7 @@ import {
 } from '@mui/material';
 import styles from '../../infoblock.module.css';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import AppContext, { isTrack, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_POI } from '../../../context/AppContext';
+import AppContext, { isTrack, OBJECT_SEARCH, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_POI } from '../../../context/AppContext';
 import headerStyles from '../../../menu/trackfavmenu.module.css';
 import { closeHeader } from '../../../menu/actions/HeaderHelper';
 import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
@@ -29,8 +29,8 @@ import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_acti
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
 import { ReactComponent as FavoritesIcon } from '../../../assets/menu/ic_action_favorite.svg';
 import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
-import { cleanHtml, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
-import { changeIconSizeWpt, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
+import { cleanHtml, DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
+import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import FavoritesManager, {
     getColorLocation,
     LOCATION_UNAVAILABLE,
@@ -41,7 +41,7 @@ import FavoritesManager, {
 import { ExpandLess, ExpandMore, Folder, LocationOn } from '@mui/icons-material';
 import WptDetailsButtons from './WptDetailsButtons';
 import WptTagsProvider, {
-    FINAL_ICON_NAME,
+    FINAL_POI_ICON_NAME,
     openWikivoyageContent,
     POI_OSM_URL,
     POI_PREFIX,
@@ -59,7 +59,7 @@ import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import { useNavigate } from 'react-router-dom';
 import { apiGet } from '../../../util/HttpApi';
 import Loading from '../../../menu/errors/Loading';
-import PhotoGallery from '../../../menu/search/PhotoGallery';
+import PhotoGallery from '../../../menu/search/explore/PhotoGallery';
 import wptStyles from '../wpt/wptDetails.module.css';
 import parse from 'html-react-parser';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../../manager/GlobalManager';
@@ -67,21 +67,32 @@ import { Dialog } from '@material-ui/core';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
+import { getPropsFromSearchResultItem } from '../../../menu/search/search/SearchResultItem';
+import { SEARCH_ICON_MAP_OBJ } from '../../../map/layers/SearchLayer';
 
-export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize }) => {
+export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
+    const iconSvg = icon === SEARCH_ICON_MAP_OBJ ? ctx.poiIconCache[SEARCH_ICON_MAP_OBJ] : null;
+    let coloredSvg = null;
+    if (iconSvg) {
+        changeIconColor(iconSvg, DEFAULT_ICON_COLOR);
+    }
+
+    const iconHtml = createPoiIcon({
+        color: color,
+        background: background,
+        hasBackgroundLight: false,
+        svgIcon: coloredSvg,
+        iconSize: iconSize,
+        backgroundSize: shieldSize,
+        point: wpt,
+        icon: icon === SEARCH_ICON_MAP_OBJ ? null : icon,
+    }).options.html;
+
     return (
         <div
             style={{ display: 'flex' }}
             dangerouslySetInnerHTML={{
-                __html:
-                    changeIconSizeWpt(
-                        removeShadowFromIconWpt(
-                            createPoiIcon({ point: wpt, color, background, hasBackgroundLight: false, icon }).options
-                                .html
-                        ),
-                        iconSize,
-                        shieldSize
-                    ) + '',
+                __html: removeShadowFromIconWpt(iconHtml) + '',
             }}
         />
     );
@@ -99,7 +110,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     const ADDRESS_NOT_FOUND = 'No data';
 
     const ICON_IMG_SIZE = 24;
-    const ICON_SHIELD_SIZE = 40;
+    const ICON_SHIELD_SIZE = 48;
 
     const [wpt, setWpt] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -147,7 +158,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     latlon: { lat: latlng.lat, lon: latlng.lng },
                     background: DEFAULT_POI_SHAPE,
                     color: DEFAULT_POI_COLOR,
-                    icon: poiOptions[FINAL_ICON_NAME],
+                    icon: poiOptions[FINAL_POI_ICON_NAME],
                     tags: tags,
                     osmUrl: poiOptions[POI_OSM_URL],
                 };
@@ -166,7 +177,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     wikiDesc: wikiObj?.properties.wikiDesc,
                     background: DEFAULT_POI_SHAPE,
                     color: DEFAULT_POI_COLOR,
-                    icon: currentPoi?.properties[FINAL_ICON_NAME],
+                    icon: currentPoi?.properties[FINAL_POI_ICON_NAME],
                     tags: tags,
                     osmUrl: currentPoi?.properties[POI_OSM_URL],
                     wvLinks: wikiObj?.properties.wvLinks,
@@ -180,6 +191,21 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 if (currentWpt) {
                     result = await getDataFromWpt(type, ctx.selectedWpt, currentWpt);
                 }
+            } else if (type?.isSearch) {
+                const currentPoi = ctx.selectedWpt.poi;
+                const { options: objOptions, latlng } = currentPoi;
+                const { name, objType } = getPropsFromSearchResultItem(objOptions, t);
+                const tags = await WptTagsProvider.getWptTags(currentPoi, type, ctx);
+                result = {
+                    type: type,
+                    poiType: objType,
+                    name: name,
+                    latlon: { lat: latlng.lat, lon: latlng.lng },
+                    background: DEFAULT_POI_SHAPE,
+                    color: DEFAULT_POI_COLOR,
+                    icon: objOptions[FINAL_POI_ICON_NAME],
+                    tags: tags,
+                };
             } else {
                 result = null;
             }
@@ -246,7 +272,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }
 
     useEffect(() => {
-        if ((wpt?.type?.isPoi || wpt?.type?.isWikiPoi) && !isAddressAdded) {
+        if ((wpt?.type?.isPoi || wpt?.type?.isSearch || wpt?.type?.isWikiPoi) && !isAddressAdded) {
             setIsAddressAdded(true);
             getPoiAddress(wpt).then((data) => {
                 if (data) {
@@ -274,6 +300,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     function getWptType(wpt) {
         return {
             isPoi: ctx.currentObjectType === OBJECT_TYPE_POI && wpt?.poi,
+            isSearch: ctx.currentObjectType === OBJECT_SEARCH && wpt?.poi && !wpt?.wikidata,
             isWikiPoi: wpt?.wikidata,
             isWpt: isTrack(ctx) && (wpt?.trackWpt || wpt?.trackWptItem),
             isFav: ctx.currentObjectType === OBJECT_TYPE_FAVORITE && wpt?.markerCurrent,
@@ -281,17 +308,22 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }
 
     function closeDetails() {
-        if (wpt.type?.isPoi) {
-            closeHeader({ ctx });
-        } else if (wpt.type?.isWpt) {
+        if (wpt?.type?.isPoi || wpt?.type?.isSearch) {
+            isDetails ? returnToSearch() : closeHeader({ ctx });
+        } else if (wpt?.type?.isWpt) {
             isDetails ? setOpenWptTab(true) : closeHeader({ ctx });
-        } else if (wpt.type?.isFav) {
+        } else if (wpt?.type?.isFav) {
             isDetails ? closeOnlyFavDetails() : closeHeader({ ctx });
-        } else if (wpt.type?.isWikiPoi) {
+        } else if (wpt?.type?.isWikiPoi) {
             setShowInfoBlock(false);
             ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: null });
         }
         ctx.setSelectedWpt(null);
+    }
+
+    function returnToSearch() {
+        setShowInfoBlock(false);
+        ctx.setCurrentObjectType(OBJECT_SEARCH);
     }
 
     function closeOnlyFavDetails() {
@@ -535,6 +567,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                         icon={wpt.icon}
                                         iconSize={ICON_IMG_SIZE}
                                         shieldSize={ICON_SHIELD_SIZE}
+                                        ctx={ctx}
                                     />
                                 )}
                             </Box>
@@ -559,7 +592,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                             ) : wpt?.address !== ADDRESS_NOT_FOUND ? (
                                 <CircularProgress sx={{ ml: 2 }} size={19} />
                             ) : null}
-                            {!wpt.type?.isWikiPoi && <WptDetailsButtons wpt={wpt} isDetails={isDetails} />}
+                            {!wpt.type?.isWikiPoi && !wpt.type?.isSearch && (
+                                <WptDetailsButtons wpt={wpt} isDetails={isDetails} />
+                            )}
                             {wpt?.wikiDesc && (
                                 <>
                                     <Divider sx={{ mt: 2 }} />
