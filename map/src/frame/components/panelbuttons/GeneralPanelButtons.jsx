@@ -1,13 +1,13 @@
-import { IconButton, Paper, SvgIcon } from '@mui/material';
+import { Box, IconButton, Paper, SvgIcon, Typography } from '@mui/material';
 import React, { useContext } from 'react';
 import AppContext, { OBJECT_CONFIGURE_MAP, OBJECT_TYPE_WEATHER } from '../../../context/AppContext';
 import PanelButtons from './PanelButtons';
 import ChangeProfileTrackDialog from '../../../dialogs/tracks/ChangeProfileTrackDialog';
 import PointContextMenu from '../../../infoblock/components/PointContextMenu';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
-import styles from '../../../map/components/map.module.css';
+import styles from '../../../map/map.module.css';
 import { ReactComponent as ConfigureMapIcon } from '../../../assets/icons/ic_map_configure_map.svg';
-import SearchInfo from '../search/SearchInfo';
+import { ReactComponent as SearchIcon } from '../../../assets/icons/ic_action_search_dark.svg';
 import ConfigureMap from '../../../menu/configuremap/ConfigureMap';
 import {
     HEADER_SIZE,
@@ -15,6 +15,7 @@ import {
     MAIN_MENU_MIN_SIZE,
     MENU_INFO_OPEN_SIZE,
 } from '../../../manager/GlobalManager';
+import SearchMenu from '../../../menu/search/SearchMenu';
 
 export default function GeneralPanelButtons({
     mainMenuWidth,
@@ -23,7 +24,6 @@ export default function GeneralPanelButtons({
     setShowInfoBlock,
     clearState,
     setMenuInfo,
-    setOpenVisibleMenu,
     showInstallBanner,
 }) {
     const ctx = useContext(AppContext);
@@ -76,8 +76,13 @@ export default function GeneralPanelButtons({
             //open menu
             ctx.setCurrentObjectType(OBJECT_CONFIGURE_MAP);
             setShowInfoBlock(false);
-            setMenuInfo(<ConfigureMap setOpenVisibleMenu={setOpenVisibleMenu} />);
+            setMenuInfo(<ConfigureMap />);
         }
+    }
+
+    function openSearch() {
+        setShowInfoBlock(false);
+        setMenuInfo(<SearchMenu />);
     }
 
     return (
@@ -96,8 +101,22 @@ export default function GeneralPanelButtons({
                         <SvgIcon className={styles.customIconPath} component={ConfigureMapIcon} inheritViewBox />
                     </IconButton>
                 </Paper>
-                <Paper className={styles.button}>
-                    <SearchInfo />
+                <Paper id={'se-open-search-button'} className={styles.button}>
+                    <Box
+                        onClick={openSearch}
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            backgroundColor: 'transparent',
+                            mt: '8px',
+                            px: '8px',
+                        }}
+                    >
+                        <SvgIcon className={styles.customIconPath} component={SearchIcon} inheritViewBox />
+                        <Typography variant="inherit" className={styles.searchTitle}>
+                            Search
+                        </Typography>
+                    </Box>
                 </Paper>
             </div>
             <div

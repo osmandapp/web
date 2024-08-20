@@ -156,9 +156,21 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
         }
     }
 
+    function isServiceTag(tag) {
+        const notString = typeof tag.value !== 'string';
+        const isServiceTag =
+            tag.key === 'fillOpacity' ||
+            tag.key === 'radius' ||
+            tag.key === 'color' ||
+            tag.key === 'fillColor' ||
+            tag.key === 'weight' ||
+            tag.key === 'zIndex';
+        return notString || isServiceTag;
+    }
+
     return (
         <>
-            {tag && (
+            {tag && !isServiceTag(tag) && (
                 <MenuItem
                     style={{ userSelect: 'text' }}
                     disableRipple={!(tag.key === WIKIPEDIA && ctx.develFeatures)}

@@ -1,4 +1,5 @@
 import { apiGet } from '../util/HttpApi';
+import filters from '../resources/wiki_data_filters.json';
 
 export const WIKI_IMAGE_BASE_URL = 'https://commons.wikimedia.org/wiki/Special:FilePath/';
 
@@ -163,3 +164,14 @@ export async function fetchPhotoProperties(photo) {
  * {{RCE license}} => RCE license
  * {{User:FlickreviewR/reviewed-pass|Nationaal Archief|https://flickr.com/photos/29998366@N02/2949392968|2016-11-27 10:53:09|No known copyright restrictions|}} => No known copyright restrictions
  */
+
+export function addWikiPlacesDefaultFilters(ctx, mainSearch = false, selectedFilters = null) {
+    const OFFICE_FILTER = 'office';
+    const defaultFilters = selectedFilters ?? filters.filter((f) => f !== OFFICE_FILTER);
+    ctx.setSearchSettings({
+        ...ctx.searchSettings,
+        selectedFilters: new Set(defaultFilters),
+        useWikiImages: false,
+        showOnMainSearch: mainSearch,
+    });
+}

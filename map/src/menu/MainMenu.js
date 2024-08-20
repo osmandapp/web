@@ -14,6 +14,7 @@ import {
 import { Menu, Person } from '@mui/icons-material';
 import AppContext, {
     OBJECT_CONFIGURE_MAP,
+    OBJECT_EXPLORE,
     OBJECT_GLOBAL_SETTINGS,
     OBJECT_SEARCH,
     OBJECT_TYPE_CLOUD_TRACK,
@@ -21,13 +22,12 @@ import AppContext, {
     OBJECT_TYPE_LOCAL_TRACK,
     OBJECT_TYPE_NAVIGATION_ALONE,
     OBJECT_TYPE_NAVIGATION_TRACK,
-    OBJECT_TYPE_POI,
     OBJECT_TYPE_WEATHER,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
 import ConfigureMap from './configuremap/ConfigureMap';
 import RouteMenu from './route/RouteMenu';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import FavoritesMenu from './favorite/FavoritesMenu';
 import PlanRouteMenu from './planroute/PlanRouteMenu';
 import { ReactComponent as FavoritesIcon } from '../assets/menu/ic_action_favorite.svg';
@@ -49,10 +49,9 @@ import { useTranslation } from 'react-i18next';
 import SettingsMenu from './settings/SettingsMenu';
 import CloudSettings from './settings/CloudSettings';
 import { closeCloudSettings } from '../manager/SettingsManager';
-import ExploreMenu from './search/ExploreMenu';
 import {
     CONFIGURE_URL,
-    EXPLORE_URL,
+    SEARCH_URL,
     FAVORITES_URL,
     INSTALL_BANNER_SIZE,
     LOGIN_URL,
@@ -68,7 +67,7 @@ import {
 } from '../manager/GlobalManager';
 import { createUrlParams } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
-import PoiCategoriesConfig from './configuremap/PoiCategoriesConfig';
+import SearchMenu from './search/SearchMenu';
 
 export default function MainMenu({
     size,
@@ -80,8 +79,6 @@ export default function MainMenu({
     showInfoBlock,
     setShowInfoBlock,
     setClearState,
-    setOpenVisibleMenu,
-    openVisibleMenu,
     showInstallBanner,
 }) {
     const ctx = useContext(AppContext);
@@ -90,12 +87,7 @@ export default function MainMenu({
     const [, height] = useWindowSize();
 
     const [selectedType, setSelectedType] = useState(null);
-    const [cloudSettings, setCloudSettings] = useState({
-        changes: false,
-        trash: false,
-    });
     const [openCloudSettings, setOpenCloudSettings] = useState(false);
-    const [openPoiConfig, setOpenPoiConfig] = useState(false);
 
     const Z_INDEX_OPEN_MENU_INFOBLOCK = 1000;
     const Z_INDEX_LEFT_MENU = Z_INDEX_OPEN_MENU_INFOBLOCK - 1;
@@ -119,6 +111,18 @@ export default function MainMenu({
                 selectMenu({ item, openFromUrl: true });
             }
         }
+        if (location.pathname === MAIN_URL_WITH_SLASH) {
+            ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
+        }
+        // close all sub pages
+        ctx.setOpenGroups([]);
+        ctx.setOpenVisibleMenu(false);
+        const startCreateTrack = ctx.createTrack?.enable && location.pathname === MAIN_URL_WITH_SLASH + PLANROUTE_URL;
+        const openCloudTrackAfterSave =
+            ctx.selectedGpxFile.url && location.pathname === MAIN_URL_WITH_SLASH + TRACKS_URL;
+        if (!startCreateTrack && !openCloudTrackAfterSave) {
+            setShowInfoBlock(false);
+        }
     }, [location.pathname]);
 
     const handleClickAway = () => {
@@ -129,16 +133,16 @@ export default function MainMenu({
         {
             name: t('shared_string_search'),
             icon: SearchIcon,
-            component: <ExploreMenu />,
+            component: <SearchMenu />,
             type: OBJECT_SEARCH,
             show: ctx.loginUser,
-            id: 'se-show-menu-explore',
-            url: MAIN_URL_WITH_SLASH + EXPLORE_URL,
+            id: 'se-show-menu-search',
+            url: MAIN_URL_WITH_SLASH + SEARCH_URL,
         },
         {
             name: t('configure_map'),
             icon: ConfigureMapIcon,
-            component: <ConfigureMap setOpenVisibleMenu={setOpenVisibleMenu} setOpenPoiConfig={setOpenPoiConfig} />,
+            component: <ConfigureMap />,
             type: OBJECT_CONFIGURE_MAP,
             show: true,
             id: 'se-show-menu-configuremap',
@@ -147,7 +151,7 @@ export default function MainMenu({
         {
             name: t('shared_string_weather'),
             icon: WeatherIcon,
-            component: <Weather location={ctx.openMenu?.latlng} />,
+            component: <Weather />,
             type: OBJECT_TYPE_WEATHER,
             show: true,
             id: 'se-show-menu-weather',
@@ -156,7 +160,7 @@ export default function MainMenu({
         {
             name: t('shared_string_tracks'),
             icon: TracksIcon,
-            component: <TracksMenu setOpenVisibleMenu={setOpenVisibleMenu} />,
+            component: <TracksMenu />,
             type: OBJECT_TYPE_CLOUD_TRACK,
             show: true,
             id: 'se-show-menu-tracks',
@@ -190,18 +194,9 @@ export default function MainMenu({
             url: MAIN_URL_WITH_SLASH + PLANROUTE_URL,
         },
         {
-            name: 'Poi',
-            icon: FavoritesIcon,
-            component: <FavoritesMenu />,
-            type: OBJECT_TYPE_POI,
-            show: false,
-            id: 'se-show-menu-poi',
-            url: '',
-        },
-        {
             name: t('shared_string_settings'),
             icon: SettingsIcon,
-            component: <SettingsMenu setCloudSettings={setCloudSettings} />,
+            component: <SettingsMenu />,
             type: OBJECT_GLOBAL_SETTINGS,
             show: true,
             id: 'se-show-menu-settings',
@@ -210,8 +205,8 @@ export default function MainMenu({
     ];
 
     useEffect(() => {
-        setOpenCloudSettings(cloudSettings.changes || cloudSettings.trash);
-    }, [cloudSettings]);
+        setOpenCloudSettings(ctx.cloudSettings.changes || ctx.cloudSettings.trash);
+    }, [ctx.cloudSettings]);
 
     //open main menu if infoblock was opened
     useEffect(() => {
@@ -221,8 +216,8 @@ export default function MainMenu({
     }, [showInfoBlock]);
 
     useEffect(() => {
-        if (openVisibleMenu) {
-            setOpenVisibleMenu(false);
+        if (ctx.openVisibleMenu) {
+            ctx.setOpenVisibleMenu(false);
         }
     }, [menuInfo]);
 
@@ -258,7 +253,9 @@ export default function MainMenu({
             setSelectedType(currentMenu.type);
             ctx.setPrevPageUrl({ url: location, active: false });
         } else {
-            setOpenMainMenu(true);
+            if (ctx.currentObjectType !== OBJECT_EXPLORE) {
+                setOpenMainMenu(true);
+            }
         }
     }
 
@@ -301,11 +298,12 @@ export default function MainMenu({
     function selectMenu({ item }) {
         ctx.setOpenGroups([]);
         ctx.setSelectedWpt(null);
-        setOpenVisibleMenu(false);
+        ctx.setOpenVisibleMenu(false);
         ctx.setLoadingContextMenu(false);
         if (menuInfo) {
             // update menu
             setShowInfoBlock(false);
+            ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: false });
             closeCloudSettings(openCloudSettings, setOpenCloudSettings, ctx);
             const updateMenu = !isSelectedMenuItem(item) || ctx.openMenu;
             const menu = updateMenu ? item : null;
@@ -421,7 +419,7 @@ export default function MainMenu({
     }
 
     function isOpenSubMenu() {
-        return showInfoBlock || openCloudSettings || openPoiConfig;
+        return showInfoBlock || openCloudSettings;
     }
 
     return (
@@ -619,15 +617,11 @@ export default function MainMenu({
                 {!isOpenSubMenu() && (
                     <>
                         {/*add main menu items*/}
-                        {_.isEmpty(ctx.openGroups) && !openVisibleMenu && menuInfo}
+                        {_.isEmpty(ctx.openGroups) && !ctx.openVisibleMenu && <Outlet />}
                         {/*add track groups*/}
                         {ctx.openGroups.length > 0 && getGroup()}
-                        {openVisibleMenu && (
-                            <VisibleTracks
-                                setOpenVisibleMenu={setOpenVisibleMenu}
-                                setMenuInfo={setMenuInfo}
-                                setSelectedType={setSelectedType}
-                            />
+                        {ctx.openVisibleMenu && (
+                            <VisibleTracks setMenuInfo={setMenuInfo} setSelectedType={setSelectedType} />
                         )}
                     </>
                 )}
@@ -637,10 +631,7 @@ export default function MainMenu({
                     setClearState={setClearState}
                     mainMenuSize={size}
                 />
-                {openCloudSettings && (
-                    <CloudSettings cloudSettings={cloudSettings} setOpenCloudSettings={setOpenCloudSettings} />
-                )}
-                {openPoiConfig && !showInfoBlock && <PoiCategoriesConfig setOpenPoiConfig={setOpenPoiConfig} />}
+                {openCloudSettings && <CloudSettings setOpenCloudSettings={setOpenCloudSettings} />}
             </Drawer>
         </Box>
     );

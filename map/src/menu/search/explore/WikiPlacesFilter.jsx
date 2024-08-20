@@ -1,11 +1,11 @@
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext from '../../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import { Box, Checkbox, ListItemIcon, ListItemText, MenuItem, Paper, Typography } from '@mui/material';
-import styles from '../trackfavmenu.module.css';
-import searchStyles from '../search/search.module.css';
-import filters from '../../resources/wiki_data_filters.json';
-import { getIcon, getSvgIcon } from '../../infoblock/components/wpt/WptTagsProvider';
+import styles from '../../trackfavmenu.module.css';
+import searchStyles from '../search.module.css';
+import filters from '../../../resources/wiki_data_filters.json';
+import { getIcon, getSvgIcon } from '../../../infoblock/components/wpt/WptTagsProvider';
 
 const WikiPlacesFilter = forwardRef((_, ref) => {
     const ctx = useContext(AppContext);

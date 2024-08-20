@@ -13,10 +13,10 @@ import Loading from '../errors/Loading';
 import { useWeatherTypeChange } from '../../util/hooks/useWeatherTypeChange';
 import { useWeatherLocationChange } from '../../util/hooks/useWeatherLocationChange';
 
-export default function Weather({ location = null }) {
+export default function Weather() {
     const ctx = useContext(AppContext);
 
-    const currentLoc = location ?? useGeoLocation(ctx, false);
+    const currentLoc = ctx.openMenu?.latlng ?? useGeoLocation(ctx, false);
     const hash = window.location.hash;
     const debouncerTimer = useRef(0);
     const [delayedHash, setDelayedHash] = useState(hash);
@@ -24,7 +24,7 @@ export default function Weather({ location = null }) {
 
     // debounce map move/scroll
     useEffect(() => {
-        if (!location) {
+        if (!ctx.openMenu?.latlng) {
             setLoadingLocation(true);
             debouncerTimer.current > 0 && clearTimeout(debouncerTimer.current);
             debouncerTimer.current = setTimeout(() => {

@@ -1,16 +1,16 @@
 import { useInView } from 'react-intersection-observer';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { LinearProgress, ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
-import MenuItemWithLines from '../components/MenuItemWithLines';
-import { WIKI_IMAGE_BASE_URL } from '../../manager/SearchManager';
-import styles from '../search/search.module.css';
-import { addPoiTypeTag, POI_PREFIX } from '../../infoblock/components/wpt/WptTagsProvider';
-import AppContext from '../../context/AppContext';
+import MenuItemWithLines from '../../components/MenuItemWithLines';
+import { WIKI_IMAGE_BASE_URL } from '../../../manager/SearchManager';
+import styles from '../search.module.css';
+import { addPoiTypeTag, POI_PREFIX } from '../../../infoblock/components/wpt/WptTagsProvider';
+import AppContext from '../../../context/AppContext';
 import { useTranslation } from 'react-i18next';
-import { cleanHtml } from '../../manager/PoiManager';
+import { cleanHtml } from '../../../manager/PoiManager';
 import parse from 'html-react-parser';
 
-export default function WikiPlacesItem({ item }) {
+export default function WikiPlacesItem({ item, index, lastIndex }) {
     const ctx = useContext(AppContext);
 
     const { ref, inView } = useInView();
@@ -81,7 +81,7 @@ export default function WikiPlacesItem({ item }) {
                             <div>
                                 <MenuItem
                                     id={`se-wiki_place-${item.properties?.id}`}
-                                    divider
+                                    divider={index !== lastIndex}
                                     className={`${styles.placeItem} ${isHovered ? styles.hoverItem : ''}`}
                                     onClick={() => openInfo(item)}
                                     onMouseEnter={() => handleMouseEnter(item)}
@@ -99,7 +99,7 @@ export default function WikiPlacesItem({ item }) {
                                                         {typeIcon}
                                                     </ListItemIcon>
                                                 )}
-                                                <Typography className={styles.placeTypes} noWrap>
+                                                <Typography className={styles.explorePlaceTypes} noWrap>
                                                     {`${getType(poiSubType)}, ${getType(poiType)}`}
                                                 </Typography>
                                             </div>

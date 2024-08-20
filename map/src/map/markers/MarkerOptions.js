@@ -12,6 +12,8 @@ const BACKGROUND_WPT_SHAPE_SQUARE = 'square';
 const DEFAULT_WPT_ICON = 'special_star';
 const DEFAULT_WPT_COLOR = '#eecc22';
 
+export const DEFAULT_ICON_SIZE = 24;
+
 export const POI_ICONS_FOLDER = 'poi-icons-svg';
 export const SHADERS_FOLDER = 'map-shaders-svg';
 export const MAP_ICONS_FOLDER = 'map-icons-svg';
@@ -67,6 +69,8 @@ export function createPoiIcon({
     icon = null,
     svgIcon = null,
     folder = POI_ICONS_FOLDER,
+    iconSize = 12,
+    backgroundSize = null,
 }) {
     let colorBackground =
         color && color !== 'null'
@@ -77,6 +81,9 @@ export function createPoiIcon({
     colorBackground = Utils.hexToArgb(colorBackground);
     const shapeBackground = background ? background : point?.background;
     let svg = getBackground(colorBackground, shapeBackground);
+    if (backgroundSize) {
+        svg = changeIconSizeWpt(svg, 0, 48);
+    }
     if (svg) {
         const idString = `id="se-poi-marker-background-${color}-${background}"`;
         svg = svg.replace('<svg ', `<svg ${idString} `);
@@ -90,9 +97,9 @@ export function createPoiIcon({
               : DEFAULT_WPT_ICON;
     let part = point ? 'mx_' : '';
     let html;
-    const allIconSize = 24;
-    const bsize = getBackgroundSize(shapeBackground);
-    const isize = 12;
+    const allIconSize = backgroundSize ? backgroundSize : DEFAULT_ICON_SIZE;
+    const bsize = backgroundSize ? backgroundSize : getBackgroundSize(shapeBackground);
+    const isize = iconSize;
     const offsetX = (allIconSize - isize) / 2; // Center the image horizontally
     const offsetY = (allIconSize - isize) / 2; // Center the image vertically
     if (iconWpt || svgIcon) {
@@ -105,7 +112,7 @@ export function createPoiIcon({
             iconElement = `<image width="${isize}" height="${isize}" href="/map/images/${folder}/${part}${iconWpt}.svg" />`;
         }
 
-        html = `<svg viewBox="0 0 ${allIconSize} ${allIconSize}" style="filter: drop-shadow(0px 2px 7px rgba(0, 0, 0, 0.10)) drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.23));" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+        html = `<svg viewBox="0 0 ${allIconSize} ${allIconSize}" style="filter: drop-shadow(0px 2px 7px rgba(0, 0, 0, 0.10)) drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.23));" width="${allIconSize}" height="${allIconSize}" xmlns="http://www.w3.org/2000/svg">
             <g transform="translate(${(allIconSize - bsize) / 2}, ${(allIconSize - bsize) / 2})">
                 ${svg}
             </g>
@@ -133,7 +140,7 @@ export function createPoiIcon({
 export function getPoiCategoryIcon({ icon, color, background }) {
     const colorBackground = Utils.hexToArgb(color);
     const svg = getBackground(colorBackground, background);
-    const allIconSize = 24;
+    const allIconSize = DEFAULT_ICON_SIZE;
     const bsize = getBackgroundSize(background);
     const isize = 18;
     const offsetX = (allIconSize - isize) / 2; // Center the image horizontally
@@ -228,7 +235,10 @@ export function removeShadowFromIconWpt(svgHtml) {
 
 export function changeIconColor(svgHtml, color) {
     const colorPattern = /(<path[^>]*fill=")[^"]*(")/g;
-    return svgHtml.replace(colorPattern, `$1${color}$2`);
+    const strokePattern = /(<path[^>]*stroke=")[^"]*(")/g;
+    svgHtml = svgHtml.replace(colorPattern, `$1${color}$2`);
+    svgHtml = svgHtml.replace(strokePattern, `$1${color}$2`);
+    return svgHtml;
 }
 
 function changeSvgColor(svgHtml, color) {
@@ -307,6 +317,7 @@ function replacePathDataAndCalculateSize(pathData, shapeSize, oldShapeSize) {
     return { newPathData: pathData, realWidth: 0, realHeight: 0 };
 }
 
+// only for icons with image (with href)
 export function changeIconSizeWpt(svgHtml, iconSize, shapeSize) {
     // Update the sizes inside viewBox and for <image>, <circle>, <path>, <rect>
     const viewBoxPattern = /viewBox="0 0 (\d+) (\d+)"/;
