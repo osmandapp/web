@@ -185,7 +185,7 @@ function preparePoiFilterIcon(filter) {
  */
 export async function createPoiCache({ poiList = null, obj = null, poiIconCache, icon = null }) {
     const iconCache = {};
-    const arr = icon ? [icon] : poiList ?? [obj];
+    const arr = icon ? [icon] : (poiList ?? [obj]);
     for (const poi of arr) {
         if (!poi) {
             continue;

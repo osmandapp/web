@@ -551,7 +551,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                                     {wpt.name ? wpt.name : wpt.poiType}
                                                 </Link>
                                             ) : (
-                                                wpt.name ?? 'No name'
+                                                (wpt.name ?? 'No name')
                                             )}
                                         </Typography>
                                     </MenuItemWithLines>

@@ -130,7 +130,7 @@ export default function EditWptDialog({
 
     async function saveFavorite() {
         let selectedGroupName =
-            favoriteGroup === null ? wpt.category ?? FavoritesManager.DEFAULT_GROUP_NAME : favoriteGroup.name;
+            favoriteGroup === null ? (wpt.category ?? FavoritesManager.DEFAULT_GROUP_NAME) : favoriteGroup.name;
         let currentWpt = getCurrentWpt(selectedGroupName);
         const arrWpt = useSelected ? ctx.selectedGpxFile.file.wpts : ctx.favorites.mapObjs[wpt.group.name].wpts;
 

@@ -10,8 +10,9 @@ import Loading from '../../errors/Loading';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
 import { getCenterMapLoc } from '../../../manager/MapManager';
-import { getDistance, isValidCoordinates } from '../../../util/Utils';
+import { getDistance } from '../../../util/Utils';
 import EmptySearch from '../../errors/EmptySearch';
+import { convert } from 'geo-coordinates-parser';
 
 export const SEARCH_RESULT_TYPE_POI = 'POI';
 export const SEARCH_RESULT_TYPE_POI_CATEGORY = 'POI_TYPE';
@@ -98,7 +99,9 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     useEffect(() => {
         if (locReady) {
             if (value) {
-                if (!isValidCoordinates(value.query)) {
+                try {
+                    convert(value.query);
+                } catch {
                     let hash = window.location.hash;
                     if (!hash) {
                         setErrorZoom(ZOOM_ERROR);

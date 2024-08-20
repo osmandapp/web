@@ -26,6 +26,7 @@
         "draft-js": "^0.11.7",
         "draftjs-to-html": "^0.9.1",
         "env-cmd": "^10.1.0",
+        "geo-coordinates-parser": "^1.7.3",
         "html-react-parser": "^5.1.10",
         "http-proxy-middleware": "^2.0.6",
         "i18next": "^23.7.16",
