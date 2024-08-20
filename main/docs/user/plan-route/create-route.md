@@ -577,10 +577,10 @@ For more information on attaching track to the road, see the Navigation section,
 
 ## Related Articles
 
-- [Show track on Map](../../map/tracks/index.md)
-- [Analyze on Map](../../map/tracks/index.md#analyze-track-on-map)
-- [Track Context menu](../../map/tracks/track-context-menu.md)
-- [Navigation by track](../../navigation/setup/gpx-navigation.md)
-- [Trip recording](../../plugins/trip-recording.md)
+- [Show track on Map](../map/tracks/index.md)
+- [Analyze on Map](../map/tracks/index.md#analyze-track-on-map)
+- [Track Context menu](../map/tracks/track-context-menu.md)
+- [Navigation by track](../navigation/setup/gpx-navigation.md)
+- [Trip recording](../plugins/trip-recording.md)
 
 > *This article was last updated in August 2024*
