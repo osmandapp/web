@@ -10,11 +10,12 @@ import Loading from '../../errors/Loading';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
 import { getCenterMapLoc } from '../../../manager/MapManager';
-import { getDistance } from '../../../util/Utils';
+import { getDistance, isValidCoordinates } from '../../../util/Utils';
 import EmptySearch from '../../errors/EmptySearch';
 
 export const SEARCH_RESULT_TYPE_POI = 'POI';
 export const SEARCH_RESULT_TYPE_POI_CATEGORY = 'POI_TYPE';
+const ZOOM_ERROR = 'Please zoom in closer';
 
 export function searchByCategory(value, ctx) {
     const preparedValue = {
@@ -34,6 +35,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     const hash = window.location.hash;
     const [locReady, setLocReady] = useState(false);
     const [showEmptySearch, setShowEmptySearch] = useState(false);
+    const [errorZoom, setErrorZoom] = useState(null);
     const currentLoc = useGeoLocation(ctx);
 
     useEffect(() => {
@@ -96,6 +98,20 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     useEffect(() => {
         if (locReady) {
             if (value) {
+                if (!isValidCoordinates(value.query)) {
+                    let hash = window.location.hash;
+                    if (!hash) {
+                        setErrorZoom(ZOOM_ERROR);
+                        setResult(null);
+                        return;
+                    }
+                    let arr = hash.split('/');
+                    if (parseInt(arr[0].substring(1)) < 7) {
+                        setErrorZoom(ZOOM_ERROR);
+                        setResult(null);
+                        return;
+                    }
+                }
                 ctx.setProcessingSearch(true);
                 if (value.type === SEARCH_TYPE_CATEGORY) {
                     searchByCategory(value, ctx);
@@ -130,17 +146,6 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     }, [ctx.searchResult]);
 
     function searchByWord(value) {
-        let hash = window.location.hash;
-        if (!hash) {
-            alert('Please zoom in closer');
-            return;
-        }
-        let arr = hash.split('/');
-        if (parseInt(arr[0].substring(1)) < 7) {
-            alert('Please zoom in closer');
-            return;
-        }
-
         const loc = getLoc();
 
         ctx.setSearchQuery({
@@ -185,7 +190,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
             {ctx.processingSearch && <Loading />}
             {!ctx.processingSearch &&
                 (!result && showEmptySearch ? (
-                    <EmptySearch />
+                    <EmptySearch message={errorZoom} />
                 ) : (
                     <Box sx={{ overflowY: 'auto' }} id={'se-search-results'}>
                         {result?.features

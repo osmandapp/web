@@ -308,6 +308,77 @@ export function createUrlParams(params) {
     return pretty;
 }
 
+export function isValidCoordinates(coordinateString) {
+    const dmsPattern =
+        /^\s*(latitude\s*[:\s])?\s*(-?\d{1,2})°\s*(\d{1,2})'?\s*(\d{1,2}(\.\d+)?")?\s*([NS])?\s*[,;\s]\s*(longitude\s*[:\s])?\s*(-?\d{1,3})°\s*(\d{1,2})'?\s*(\d{1,2}(\.\d+)?")?\s*([EW])?\s*$/i;
+    const decimalPattern = /^\s*-?\d{1,2}(\.\d+)?\s*[NS]?\s+(-?\d{1,3}(\.\d+)?\s*[EW]?)$/i;
+
+    if (!dmsPattern.test(coordinateString) && !decimalPattern.test(coordinateString)) {
+        return false;
+    }
+
+    if (dmsPattern.test(coordinateString)) {
+        return isValidDMSCoordinates(coordinateString);
+    }
+
+    return isValidDecimalCoordinates(coordinateString);
+}
+
+function isValidDMSCoordinates(coordinateString) {
+    const dmsPattern =
+        /(-?\d{1,2})°\s*(\d{1,2})'?\s*(\d{1,2}(\.\d+)?")?\s*([NS])?,?\s*(-?\d{1,3})°\s*(\d{1,2})'?\s*(\d{1,2}(\.\d+)?")?\s*([EW])?/i;
+    const match = coordinateString.match(dmsPattern);
+
+    if (!match) return false;
+
+    let [, latDegrees, latMinutes, latSeconds, , latHemisphere, lonDegrees, lonMinutes, lonSeconds, , lonHemisphere] =
+        match;
+
+    latDegrees = parseInt(latDegrees, 10);
+    latMinutes = parseInt(latMinutes || 0, 10);
+    latSeconds = parseFloat(latSeconds || 0);
+
+    lonDegrees = parseInt(lonDegrees, 10);
+    lonMinutes = parseInt(lonMinutes || 0, 10);
+    lonSeconds = parseFloat(lonSeconds || 0);
+
+    let latitude = latDegrees + latMinutes / 60 + latSeconds / 3600;
+    let longitude = lonDegrees + lonMinutes / 60 + lonSeconds / 3600;
+
+    if (latHemisphere && latHemisphere.toUpperCase() === 'S') latitude = -latitude;
+    if (lonHemisphere && lonHemisphere.toUpperCase() === 'W') longitude = -longitude;
+
+    const isLatitudeValid = latitude >= -90 && latitude <= 90;
+    const isLongitudeValid = longitude >= -180 && longitude <= 180;
+
+    return isLatitudeValid && isLongitudeValid;
+}
+
+function isValidDecimalCoordinates(coordinateString) {
+    const cleanedString = coordinateString.trim();
+    let [latitude, longitude] = cleanedString.split(/\s+/);
+
+    latitude = parseFloat(latitude);
+    longitude = parseFloat(longitude);
+
+    const isLatitudeValid = latitude >= -90 && latitude <= 90;
+    const isLongitudeValid = longitude >= -180 && longitude <= 180;
+
+    return isLatitudeValid && isLongitudeValid;
+}
+
+// "40.7128, -74.0060" — Decimal degrees: latitude, longitude
+// "-90.0000, 180.0000" — Boundary values for latitude and longitude in decimal format
+// " 40.7128 , -74.0060 " — Decimal degrees with spaces
+// "45.0 N, 75.0 W" — Decimal degrees with hemisphere indicators (N/S, E/W)
+// "latitude: 40.7128, longitude: -74.0060" — Decimal degrees with 'latitude' and 'longitude' labels
+// "40° 42' 46\" N, 74° 0' 21\" W" — Degrees, minutes, and seconds (DMS) with hemisphere indicators
+// "45°30'00\"N, 73°34'00\"W" — DMS format without spaces
+// " 40° 42' 46\" N , 74° 0' 21\" W " — DMS format with spaces
+// "latitude: 40° 42' 46\" N, longitude: 74° 0' 21\" W" — DMS format with 'latitude' and 'longitude' labels
+// "90°0'0\"S, 180°0'0\"E" — Boundary values for latitude and longitude in DMS format
+// "45.3784 -80.2181" — Decimal degrees with a space separator
+
 const Utils = {
     getFileData,
     getDistance,

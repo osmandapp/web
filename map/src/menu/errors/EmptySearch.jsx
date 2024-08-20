@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 
-export default function EmptySearch() {
+export default function EmptySearch({ message }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
@@ -22,7 +22,7 @@ export default function EmptySearch() {
                             {t('nothing_found_in_radius')}
                         </ListItemText>
                         <ListItemText disableTypography={true} className={styles.text}>
-                            {t('nothing_found_descr')}
+                            {message ?? t('nothing_found_descr')}
                         </ListItemText>
                     </Box>
                 </Box>
