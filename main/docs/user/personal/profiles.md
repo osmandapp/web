@@ -160,42 +160,76 @@ This section contains settings for the application theme and compass button, map
 
 </Tabs>
 
-In this section you can set parameters of units and formats for chosen application profile.  
+In the **Units and Formats** section, you can customize various display settings related to measurements and formats, so that the application matches your personal preferences and regional standards, and all data is presented in the most convenient and familiar way.
 
-| Parameter | Format | Note   |
+
+<!--
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Format</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan=4 align="left">**<Translate android="true" ids="driving_region"/>**</td>
+            <td rowspan=2 align="left"><Translate android="true" ids="shared_string_automatic"/></td>
+            <td align="left">According to the device location.</td>
+        </tr>
+        <tr>
+            <td rowspan=2 align="left"><Translate android="true" ids="driving_region_europe_asia"/></td>
+            <td align="left"><Translate android="true" ids="right_side_navigation"/>, <Translate android="true" ids="si_km_m"/></td>
+        </tr>
+        <tr>
+            <td align="left"><Translate android="true" ids="driving_region_us"/></td>
+            <td align="left"><Translate android="true" ids="right_side_navigation"/>, <Translate android="true" ids="si_mi_feet"/></td>
+        </tr>
+    </tbody>
+</table>
+
+-->
+
+|  |  |  |
 |:------------|:---------------|:---------------|
-|*<Translate android="true" ids="driving_region"/>*| <Translate android="true" ids="shared_string_automatic"/> | According to the device location |
+| **<Translate android="true" ids="driving_region"/>** | <Translate android="true" ids="shared_string_automatic"/> | According to the device location. |
 |            | <Translate android="true" ids="driving_region_europe_asia"/>   | <Translate android="true" ids="right_side_navigation"/>, <Translate android="true" ids="si_km_m"/>  |
 |            | <Translate android="true" ids="driving_region_us"/>   |  <Translate android="true" ids="right_side_navigation"/>, <Translate android="true" ids="si_mi_feet"/>  |
 |            | <Translate android="true" ids="driving_region_canada"/>   | <Translate android="true" ids="right_side_navigation"/>, <Translate android="true" ids="si_km_m"/>   |
-|            | UK and similar  |  <Translate android="true" ids="left_side_navigation"/>, <Translate android="true" ids="si_mi_meters"/>   |
+|            | <Translate android="true" ids="driving_region_uk"/>  |  <Translate android="true" ids="left_side_navigation"/>, <Translate android="true" ids="si_mi_meters"/>   |
 |            | <Translate android="true" ids="driving_region_japan"/>   | <Translate android="true" ids="left_side_navigation"/>, <Translate android="true" ids="si_km_m"/>   |
-|            | India   | <Translate android="true" ids="left_side_navigation"/>, <Translate android="true" ids="si_km_m"/>   |
+|            | <Translate android="true" ids="driving_region_india"/>   | <Translate android="true" ids="left_side_navigation"/>, <Translate android="true" ids="si_km_m"/>   |
 |            | <Translate android="true" ids="driving_region_australia"/>   |  <Translate android="true" ids="left_side_navigation"/>, <Translate android="true" ids="si_km_m"/>  |
-|*<Translate android="true" ids="unit_of_length"/>*| <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
+|  |  |
+| **<Translate android="true" ids="unit_of_length"/>** | <Translate android="true" ids="si_km_m"/> | 1 km / 1000 m |
 |          | <Translate android="true" ids="si_mi_feet"/> | 0.62 ml / 3281 ft (1000 m) |
 |          | <Translate android="true" ids="si_mi_meters"/> | 0.62 ml / 1000 m |
 |          | <Translate android="true" ids="si_mi_yard"/> | 1094 ya / 0.62 ml (1000 m) |
 |          | <Translate android="true" ids="si_nm_ft"/>, <Translate android="true" ids="si_nm_mt"/> | 0.54 nmi / 3280.84 ft / 1000 m |
-|*<Translate android="true" ids="coordinates_format"/>*| <Translate android="true" ids="dd_mm_mmmm_format"/> | Example: 50.12333° 19.93233° (Lat Long) |
+|  |  |
+| **<Translate android="true" ids="coordinates_format"/>** | <Translate android="true" ids="dd_mm_mmmm_format"/> | Example: 50.12333° 19.93233° (Lat Long) |
 |          | <Translate android="true" ids="dd_mm_mmm_format"/> | Example: 50°7.393′ 19°55.941′ (Lat Long)  |
 |          | <Translate android="true" ids="dd_mm_ss_format"/> | Example: 50°7′23.6″ 19°55′56.4″ (Lat Long) 23°27′30″ |
 |          | <Translate android="true" ids="navigate_point_format_utm"/> | 34N 5552876 423678 (Zone Northing Easting) . [<Translate android="true" ids="utm_format_descr"/>](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) |
 |          | <Translate android="true" ids="navigate_point_format_mgrs"/> | Example: 34U DA 23678 52873 . [<Translate android="true" ids="mgrs_format_descr"/>](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)  |
 |          | <Translate android="true" ids="navigate_point_format_olc"/> | Example:  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) represents area 9m x 14m)  |
-|          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (Android version only) | Example: 2 215 227.87, 830 915.9 ([Swiss coordinate system](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))  |
+|          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (Android version only) | Example: 2 215 227.87, 830 915.9 ([Swiss coordinate system](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
 |          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (Android version only) | Example: 4 215 227.87, 1 830 915.9 ([Swiss coordinate system](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
-|*<Translate android="true" ids="angular_measeurement"/>* (Android) / *<Translate ios="true" ids="angular_units"/>* (iOS)| Degrees 180° | All angular values have readings from 0° to 180° and from 0° to -180°.  |
+|  |  |
+| **<Translate android="true" ids="angular_measeurement"/>** (*Android*) / **<Translate ios="true" ids="angular_units"/>** (iOS)| Degrees 180° | All angular values have readings from 0° to 180° and from 0° to -180°.  |
 |          | Degrees 360° | All angular values have readings from 0° to 360°.  |
 |          | <Translate android="true" ids="shared_string_milliradians"/> | All angular values have [milliradian value](https://en.wikipedia.org/wiki/Milliradian).  |
-|*<Translate android="true" ids="default_speed_system"/>* (Android) / *<Translate ios="true" ids="units_of_speed"/>* (iOS)| <Translate android="true" ids="si_kmh"/> | 90 km/h  |
+|  |  |
+| **<Translate android="true" ids="default_speed_system"/>** (*Android*) / **<Translate ios="true" ids="units_of_speed"/>** (iOS)| <Translate android="true" ids="si_kmh"/> | 90 km/h  |
 |          | <Translate android="true" ids="si_mph"/> | 55.92 mph  |
 |          | <Translate android="true" ids="si_m_s"/> | 30 m/s |
 |          | <Translate android="true" ids="si_min_m"/> | 1.073 min/m |
 |          | <Translate android="true" ids="si_min_km"/> | 0.667 min/km |
 |          | <Translate android="true" ids="si_nm_h"/> | 48.59 kn |
-|**<Translate android="true" ids="distance_during_navigation"/>** | <Translate android="true" ids="precise"/> | *For exact numbers*. Select how distance information is displayed in the navigation widgets, such as distance to a point, next turn, or lane. |
-|          | <Translate android="true" ids="round_up"/> | *For better readability*, the numbers displayed in the navigation widgets (distance to a point, next turn, or lane) will be rounded down to have fewer digits. For examples: 3672 m *→* 3.6 km, 462 m *→* 400 m, 184 m *→* 150 m, 47 m *→* 40 m, 18 m *→* 15 m. |
+|  |  |
+| **<Translate android="true" ids="distance_during_navigation"/>** | <Translate android="true" ids="precise"/> | *For exact numbers*. Select how distance information is displayed in the navigation widgets, such as distance to a point, next turn, or lane. |
+|          | <Translate android="true" ids="round_up"/> | *For better readability*, the numbers displayed in the navigation widgets (distance to a point, next turn, or lane) will be rounded down to have fewer digits. <br/> For examples: 3672 m *→* 3.6 km,&nbsp; 462 m *→* 400 m,&nbsp; 184 m *→* 150 m,&nbsp; 47 m *→* 40 m,&nbsp; 18 m *→* 15 m. |
 
 
 ### Other
@@ -263,7 +297,7 @@ In the article [Navigation settings](../navigation/guidance/navigation-settings.
 - [Customise route line](../navigation/guidance/navigation-settings.md#customize-route-line). With this setting you can choose the appearance of the route line that will be visible on the map during navigation.
 - [Map during navigation](../navigation/guidance/navigation-settings.md#map-during-navigation). The map is used during navigation to determine your location, plan your route, and land orientation.
 - [Animate own position](../navigation/guidance/navigation-settings.md#animate-own-position) (*iOS*). For *Android*, this item is located in the [Other](#other) section of the *General Settings* menu. This setting provides a smooth animation of the My Position point moving on the map during navigation.
-- [Detailed track guidance](../navigation/guidance/navigation-settings.md). Allows to match your track to nearby raods for enhanced turn-by-turn guidance: _Ask every time_ or _Always_.
+- [Detailed track guidance](../navigation/guidance/navigation-settings.md). Allows you to match your route to nearby roads to enhance turn-by-turn instructions. Available settings: *Ask every time* or *Always*.
 
 :::info
 There are no navigation settings in *Browse map* profile.  
@@ -397,7 +431,7 @@ With the UI customization feature, you can adjust the number of items in actions
     ![Profile Copy Android](@site/static/img/personal/profiles/profile_drawer_reset_copy_android.png)
 
 
-### Configure Map
+### Configuring the Map
 
 - **Configure map menu**. Items visible in this section of the main menu.  
 
