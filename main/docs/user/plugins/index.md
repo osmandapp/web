@@ -147,7 +147,7 @@ Having Wikipedia on your trip helps you learn more about the places you visit. I
 
 OsmAnd Online maps are an extensive addition to the OpenStreetMap database already present in the application. With this plugin, you can add layers to your map with information from various sources.  
 
-### [Trip recording](./trip-recording.md)
+### [Trip Recording](./trip-recording.md)
 
 To tell a story of where you have been, GPS data, as latitude and longitude of your location, can be recorded and stored in a file, and then re-used, improved, enhanced with waypoints, provided for navigation, shared with friends, etc.  
 
@@ -155,23 +155,23 @@ To tell a story of where you have been, GPS data, as latitude and longitude of y
 
 Topography information, such as Contour lines, Hillshade, Slope, 3D Relief, helps to make a visual assessment of the lay of the land by seeing elevation, relief, extremes, steepness, points of equal height, etc.  
 
-### [Nautical map view](./nautical-charts.md)
+### [Nautical Map View](./nautical-charts.md)
 
 Nautical map view provides detailed graphical representation of oceans, seas, coastal areas and rivers to help you navigate on the water, see popular traffic routes, obstacles in the waterway, harbors, anchorages, and other essential reference.
 
-### [Ski map view](./ski-maps.md)
+### [Ski Map View](./ski-maps.md)
 
 Ski map view uses winter colors, shows downhill or cross-country pistes, cable cars, chairlifts, and other facilities and services, which can be used to navigate recreation areas, ski resorts and terrain parks.
 
-### [Audio/video notes](./audio-video-notes.md)
+### [Audio/Video Notes](./audio-video-notes.md)
 
 Create audio/video notes for future reference, e.g. to remember a event, scene, or interaction. Created audio/video notes are available from *My places* as well as on the map as an individual layer of user-made stories and thoughts tied to a geolocation. For Android only.  
 
-### [Parking position](./parking.md)
+### [Parking Position](./parking.md)
 
 Set a point on the map where your car is left on the street and notify your calendar when the parking time ends. This will make it easier for you to track the time and location of your car.
 
-### [OpenStreetMap editing](./osm-editing.md)
+### [OpenStreetMap Editing](./osm-editing.md)
 
 The OpenStreetMap editing plugin allows you to contribute to OpenStreetMap, a global community creating a comprehensive map of the world and providing publicly available up-to-date, open-source data.  
 
@@ -183,15 +183,15 @@ See street-level views of your routes or places of interest, provided by [Mapill
 
 The Accessibility plugin makes the device's accessibility features directly available in OsmAnd. For Android only.  
 
-### [External sensors](./external-sensors.md)
+### [External Sensors](./external-sensors.md)
 
-Connect external sensors to display their data in OsmAnd and to store the information in track recordings. For Android only.  
+Connect external sensors to display their data in OsmAnd and store the information in track recordings.  
 
 ### [Weather](./weather.md)
 
 Shows the hourly forecast for the current day and for 7 days ahead.  
 
-### [OsmAnd development](./development.md)
+### [OsmAnd Development](./development.md)
 
 The OsmAnd development plugin targets developers and experienced users. It allows you to simulate navigation routes, check screen rendering performance, etc.  
 
@@ -200,9 +200,10 @@ The OsmAnd development plugin targets developers and experienced users. It allow
 OsmAnd Tracker helps you see where your contacts are on the map in OsmAnd. For Android only.  
 
 
-## Create a custom plugin
+## [Create a Custom Plugin](./custom.md)
 
-You can create your own plugin by following [Custom plugin article](./custom.md).
+You can create your own plugin by following *Custom Package* article.
 
+_______
 
 > *This article was last updated in August 2024*
