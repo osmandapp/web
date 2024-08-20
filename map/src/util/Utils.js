@@ -309,31 +309,103 @@ export function createUrlParams(params) {
 }
 
 export function isValidCoordinates(coordinateString) {
-    const dmsPattern =
-        /^\s*(latitude\s*[:\s])?\s*(-?\d{1,2})°\s*(\d{1,2})'?\s*(\d{1,2}(\.\d+)?")?\s*([NS])?\s*[,;\s]\s*(longitude\s*[:\s])?\s*(-?\d{1,3})°\s*(\d{1,2})'?\s*(\d{1,2}(\.\d+)?")?\s*([EW])?\s*$/i;
-    const decimalPattern = /^\s*-?\d{1,2}(\.\d+)?\s*[NS]?\s+(-?\d{1,3}(\.\d+)?\s*[EW]?)$/i;
+    // Remove 'latitude' and 'longitude' labels if present
+    coordinateString = coordinateString.replace(/latitude\s*:\s*/i, '').replace(/longitude\s*:\s*/i, '');
 
-    if (!dmsPattern.test(coordinateString) && !decimalPattern.test(coordinateString)) {
-        return false;
+    // Define patterns to match different coordinate formats
+    const basicDecimalPattern = /^\s*-?\d{1,2}(\.\d+)?\s*,?\s*-?\d{1,3}(\.\d+)?\s*$/;
+    const decimalPatternWithHemisphere = /^\s*-?\d{1,2}(\.\d+)?\s*[NS]?\s*,?\s*-?\d{1,3}(\.\d+)?\s*[EW]?\s*$/i;
+    const decimalPatternWithSpace = /^\s*-?\d{1,2}(\.\d+)?\s*([NS])?\s*,?\s*-?\d{1,3}(\.\d+)?\s*([EW])?\s*$/i;
+    const dmsPattern =
+        /^\s*-?\d{1,2}°\s*\d{1,2}'?\s*\d{1,2}(\.\d+)?("\s*[NS])?\s*,?\s*-?\d{1,3}°\s*\d{1,2}'?\s*\d{1,2}(\.\d+)?("\s*[EW])?\s*$/i;
+    const dmsNoSeparatorPattern =
+        /^\s*-?\d{1,2}°\d{1,2}'\d{1,2}(\.\d+)?("[NS])?\s*-?\d{1,3}°\d{1,2}'\d{1,2}(\.\d+)?("[EW])?\s*$/i;
+
+    // Normalize the string by removing extra spaces and replacing them with a single comma or space
+    coordinateString = coordinateString.replace(/\s*,\s*/g, ',').replace(/\s+/g, ' ');
+
+    // Validate using different patterns and corresponding validation functions
+    if (basicDecimalPattern.test(coordinateString)) {
+        return isValidBasicDecimalCoordinates(coordinateString);
     }
 
-    if (dmsPattern.test(coordinateString)) {
+    if (decimalPatternWithHemisphere.test(coordinateString) || decimalPatternWithSpace.test(coordinateString)) {
+        return isValidDecimalCoordinates(coordinateString);
+    }
+
+    if (dmsPattern.test(coordinateString) || dmsNoSeparatorPattern.test(coordinateString)) {
         return isValidDMSCoordinates(coordinateString);
     }
 
-    return isValidDecimalCoordinates(coordinateString);
+    return false; // Return false if no pattern matches
+}
+
+function isValidBasicDecimalCoordinates(coordinateString) {
+    // Normalize the string by removing extra spaces around commas or spaces
+    coordinateString = coordinateString
+        .trim()
+        .replace(/\s*,\s*/g, ',')
+        .replace(/\s+/g, ' ');
+
+    // Split the string into latitude and longitude based on either a comma or space
+    let [latitude, longitude] = coordinateString.includes(',')
+        ? coordinateString.split(',')
+        : coordinateString.split(' ');
+
+    // Parse the latitude and longitude as floating-point numbers
+    latitude = parseFloat(latitude);
+    longitude = parseFloat(longitude);
+
+    // Check if the latitude and longitude are within valid ranges
+    const isLatitudeValid = latitude >= -90 && latitude <= 90;
+    const isLongitudeValid = longitude >= -180 && longitude <= 180;
+
+    return isLatitudeValid && isLongitudeValid; // Return true if both are valid
+}
+
+function isValidDecimalCoordinates(coordinateString) {
+    // Normalize the string by removing extra spaces around commas or spaces
+    let [latitude, latitudeHemisphere, longitude, longitudeHemisphere] = coordinateString
+        .trim()
+        .replace(/\s*,\s*/g, ',')
+        .split(/[\s,]+/);
+
+    // Parse latitude and longitude as floating-point numbers
+    latitude = parseFloat(latitude);
+    longitude = parseFloat(longitude);
+
+    // Adjust latitude and longitude based on hemisphere indicators (N/S and E/W)
+    if (latitudeHemisphere && latitudeHemisphere.toUpperCase() === 'S') {
+        latitude = -latitude;
+    }
+    if (longitudeHemisphere && longitudeHemisphere.toUpperCase() === 'W') {
+        longitude = -longitude;
+    }
+
+    // Check if the latitude and longitude are within valid ranges
+    const isLatitudeValid = latitude >= -90 && latitude <= 90;
+    const isLongitudeValid = longitude >= -180 && longitude <= 180;
+
+    return isLatitudeValid && isLongitudeValid; // Return true if both are valid
 }
 
 function isValidDMSCoordinates(coordinateString) {
+    // Define patterns to match Degrees, Minutes, Seconds (DMS) format
     const dmsPattern =
         /(-?\d{1,2})°\s*(\d{1,2})'?\s*(\d{1,2}(\.\d+)?")?\s*([NS])?,?\s*(-?\d{1,3})°\s*(\d{1,2})'?\s*(\d{1,2}(\.\d+)?")?\s*([EW])?/i;
-    const match = coordinateString.match(dmsPattern);
+    const dmsNoSeparatorPattern =
+        /(-?\d{1,2})°\d{1,2}'\d{1,2}(\.\d+)?("[NS])?\s*(-?\d{1,3})°\d{1,2}'\d{1,2}(\.\d+)?("[EW])?/i;
 
-    if (!match) return false;
+    // Match the string against the DMS patterns
+    const match = coordinateString.match(dmsPattern) || coordinateString.match(dmsNoSeparatorPattern);
 
+    if (!match) return false; // Return false if the string doesn't match the DMS format
+
+    // Extract components of the DMS coordinates from the match
     let [, latDegrees, latMinutes, latSeconds, , latHemisphere, lonDegrees, lonMinutes, lonSeconds, , lonHemisphere] =
         match;
 
+    // Convert DMS components to floating-point numbers
     latDegrees = parseInt(latDegrees, 10);
     latMinutes = parseInt(latMinutes || 0, 10);
     latSeconds = parseFloat(latSeconds || 0);
@@ -342,25 +414,15 @@ function isValidDMSCoordinates(coordinateString) {
     lonMinutes = parseInt(lonMinutes || 0, 10);
     lonSeconds = parseFloat(lonSeconds || 0);
 
+    // Convert DMS to decimal degrees
     let latitude = latDegrees + latMinutes / 60 + latSeconds / 3600;
     let longitude = lonDegrees + lonMinutes / 60 + lonSeconds / 3600;
 
+    // Adjust latitude and longitude based on hemisphere indicators (N/S and E/W)
     if (latHemisphere && latHemisphere.toUpperCase() === 'S') latitude = -latitude;
     if (lonHemisphere && lonHemisphere.toUpperCase() === 'W') longitude = -longitude;
 
-    const isLatitudeValid = latitude >= -90 && latitude <= 90;
-    const isLongitudeValid = longitude >= -180 && longitude <= 180;
-
-    return isLatitudeValid && isLongitudeValid;
-}
-
-function isValidDecimalCoordinates(coordinateString) {
-    const cleanedString = coordinateString.trim();
-    let [latitude, longitude] = cleanedString.split(/\s+/);
-
-    latitude = parseFloat(latitude);
-    longitude = parseFloat(longitude);
-
+    // Check if the latitude and longitude are within valid ranges
     const isLatitudeValid = latitude >= -90 && latitude <= 90;
     const isLongitudeValid = longitude >= -180 && longitude <= 180;
 
@@ -378,6 +440,18 @@ function isValidDecimalCoordinates(coordinateString) {
 // "latitude: 40° 42' 46\" N, longitude: 74° 0' 21\" W" — DMS format with 'latitude' and 'longitude' labels
 // "90°0'0\"S, 180°0'0\"E" — Boundary values for latitude and longitude in DMS format
 // "45.3784 -80.2181" — Decimal degrees with a space separator
+
+// console.log(isValidCoordinates("40.7128, -74.0060"));
+// console.log(isValidCoordinates("-90.0000, 180.0000"));
+// console.log(isValidCoordinates(" 40.7128 , -74.0060 "));
+// console.log(isValidCoordinates("45.0 N, 75.0 W"));
+// console.log(isValidCoordinates("latitude: 40.7128, longitude: -74.0060"));
+// console.log(isValidCoordinates("40° 42' 46\" N, 74° 0' 21\" W"));
+// console.log(isValidCoordinates("45°30'00\"N, 73°34'00\"W"));
+// console.log(isValidCoordinates(" 40° 42' 46\" N , 74° 0' 21\" W "));
+// console.log(isValidCoordinates("latitude: 40° 42' 46\" N, longitude: 74° 0' 21\" W"));
+// console.log(isValidCoordinates("90°0'0\"S, 180°0'0\"E"));
+// console.log(isValidCoordinates("45.3784 -80.2181"));
 
 const Utils = {
     getFileData,
