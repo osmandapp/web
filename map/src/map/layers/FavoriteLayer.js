@@ -8,6 +8,8 @@ import FavoritesManager, { FAVORITE_FILE_TYPE, FAVORITE_STORAGE } from '../../ma
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
 import _, { isEmpty } from 'lodash';
 import { ZOOM_TO_MAP } from './SearchLayer';
+import { createHoverMarker } from '../util/Clusterizer';
+import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 
 const FavoriteLayer = () => {
     const ctx = useContext(AppContext);
@@ -92,6 +94,17 @@ const FavoriteLayer = () => {
             if (file.markers) {
                 file.markers.eachLayer((layer) => {
                     layer.options.isFavorite = true;
+                });
+                file.markers.getLayers().forEach((marker) => {
+                    createHoverMarker({
+                        marker,
+                        mainStyle: true,
+                        text: marker.options['title'],
+                        latlng: marker._latlng,
+                        iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
+                        map,
+                        tooltipRef: ctx.tooltipRef,
+                    });
                 });
                 file.markers.addTo(map).on('click', onClick);
             }

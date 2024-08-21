@@ -20,7 +20,8 @@ import {
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import i18n from '../../i18n';
-import { clusterMarkers, createSecondaryMarker } from '../util/Clusterizer';
+import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
+import styles from '../../menu/search/search.module.css';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 export const SEARCH_LAYER_ID = 'search-layer';
@@ -203,6 +204,7 @@ export default function SearchLayer() {
                 const coord = obj.geometry.coordinates;
                 return new L.Marker(new L.LatLng(coord[1], coord[0]), {
                     ...obj.properties,
+                    id: obj.properties['web_poi_id'],
                     title: title,
                     icon: icon,
                     [FINAL_POI_ICON_NAME]: finalIconName,
@@ -218,6 +220,28 @@ export default function SearchLayer() {
                 simpleMarkersArr.addLayer(circle);
             }
         }
+
+        mainMarkersLayers.forEach((marker) => {
+            createHoverMarker({
+                marker,
+                mainStyle: true,
+                text: marker.options['web_poi_name'] ?? marker.options['web_name'],
+                latlng: marker._latlng,
+                iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
+                map,
+                tooltipRef: ctx.tooltipRef,
+            });
+        });
+
+        simpleMarkersArr.getLayers().forEach((marker) => {
+            createHoverMarker({
+                marker,
+                text: marker.options['web_poi_name'] ?? marker.options['web_name'],
+                latlng: marker._latlng,
+                map,
+                tooltipRef: ctx.tooltipRef,
+            });
+        });
 
         const layers = [...mainMarkersLayers, simpleMarkersArr];
 
@@ -250,7 +274,7 @@ export default function SearchLayer() {
             background: DEFAULT_POI_SHAPE,
             svgIcon: coloredSvg,
         }).options.html;
-        return L.divIcon({ html: iconHtml });
+        return L.divIcon({ html: iconHtml, className: styles.hoverIcon });
     }
 
     function searchByCategory(category) {

@@ -26,7 +26,8 @@ import {
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
 import { SEARCH_LAYER_ID, SEARCH_TYPE_CATEGORY } from './SearchLayer';
 import i18n from '../../i18n';
-import { clusterMarkers, createSecondaryMarker } from '../util/Clusterizer';
+import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
+import styles from '../../menu/search/search.module.css';
 
 export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, type = OBJECT_TYPE_POI, map, zoom }) {
     const innerCache = await createPoiCache({ poiList, poiIconCache: globalPoiIconCache });
@@ -70,6 +71,28 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
         }
     }
 
+    mainMarkersLayers.forEach((marker) => {
+        createHoverMarker({
+            marker,
+            mainStyle: true,
+            text: marker.options['web_poi_name'],
+            latlng: marker._latlng,
+            iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
+            map,
+            tooltipRef: ctx.tooltipRef,
+        });
+    });
+
+    simpleMarkersArr.getLayers().forEach((marker) => {
+        createHoverMarker({
+            marker,
+            text: marker.options['web_poi_name'],
+            latlng: marker._latlng,
+            map,
+            tooltipRef: ctx.tooltipRef,
+        });
+    });
+
     const layers = [...mainMarkersLayers, simpleMarkersArr];
 
     if (layers.length) {
@@ -97,7 +120,7 @@ export async function getPoiIcon(poi, cache, finalIconName) {
                 background: DEFAULT_POI_SHAPE,
                 svgIcon: coloredSvg,
             }).options.html;
-            return L.divIcon({ html: iconHtml });
+            return L.divIcon({ html: iconHtml, className: styles.hoverIcon });
         }
     }
 }

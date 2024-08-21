@@ -1,4 +1,5 @@
 import L from 'leaflet';
+import styles from '../../menu/search/search.module.css';
 
 export const EXPLORE_BIG_ICON_SIZE = 36;
 
@@ -109,4 +110,76 @@ export function createSecondaryMarker(obj) {
         weight: 1,
         zIndex: 1000,
     });
+}
+
+export function createHoverMarker({
+    marker,
+    setSelectedId = null,
+    mainStyle = false,
+    text,
+    latlng,
+    iconSize = [10, 10],
+    map,
+    pointerRef = null,
+    tooltipRef,
+}) {
+    map.on('zoomend', () => {
+        removeTooltip(map, tooltipRef);
+    });
+
+    // Add mouseover event to highlight the marker
+    marker.on('mouseover', () => {
+        removeTooltip(map, tooltipRef);
+        if (setSelectedId) {
+            setSelectedId({ id: marker.options.id });
+        }
+        if (!mainStyle) {
+            marker.setStyle({
+                fillColor: '#237bff',
+            });
+        }
+        if (text) {
+            const offset = mainStyle ? [5, iconSize[1] * 0.8] : [0, iconSize[1] * 0.8];
+            const title = text;
+            const shortTitle = title.length > 50 ? title.substring(0, 50) + '...' : title;
+            tooltipRef.current = L.tooltip({
+                permanent: true,
+                direction: 'bottom',
+                offset: offset,
+                className: styles.tooltip,
+            })
+                .setContent(shortTitle)
+                .setLatLng(latlng);
+            map.addLayer(tooltipRef.current);
+        }
+    });
+
+    // Add mouseout event to reset marker style and remove pointer
+    marker.on('mouseout', (event) => {
+        if (event.originalEvent) {
+            removeTooltip(map, tooltipRef);
+            if (setSelectedId) {
+                setSelectedId({ id: -1 });
+            }
+            if (!mainStyle) {
+                marker.setStyle({
+                    fillColor: '#fe8800',
+                });
+            }
+        }
+        if (pointerRef?.current) {
+            if (map?.hasLayer(pointerRef.current)) {
+                removeTooltip(map, tooltipRef);
+                map.removeLayer(pointerRef.current);
+            }
+            pointerRef.current = null;
+        }
+    });
+}
+
+export function removeTooltip(map, tooltipRef) {
+    if (tooltipRef.current && map.hasLayer(tooltipRef.current)) {
+        map.removeLayer(tooltipRef.current);
+        tooltipRef.current = null;
+    }
 }
