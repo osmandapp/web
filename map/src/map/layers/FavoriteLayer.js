@@ -103,7 +103,7 @@ const FavoriteLayer = () => {
                         latlng: marker._latlng,
                         iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
                         map,
-                        tooltipRef: ctx.tooltipRef,
+                        ctx,
                     });
                 });
                 file.markers.addTo(map).on('click', onClick);

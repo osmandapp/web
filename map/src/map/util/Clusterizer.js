@@ -120,9 +120,12 @@ export function createHoverMarker({
     latlng,
     iconSize = [10, 10],
     map,
-    pointerRef = null,
-    tooltipRef,
+    ctx,
+    pointerStyle = `${styles.wikiIconHover} ${styles.wikiIconLarge}`,
 }) {
+    let tooltipRef = ctx.searchTooltipRef;
+    let pointerRef = ctx.searchPointerRef;
+
     map.on('zoomend', () => {
         removeTooltip(map, tooltipRef);
     });
@@ -174,6 +177,38 @@ export function createHoverMarker({
             }
             pointerRef.current = null;
         }
+    });
+
+    // Add custom event to handle marker selection
+    marker.on('selectMarker', () => {
+        removeTooltip(map, tooltipRef);
+        if (pointerRef.current) {
+            if (map?.hasLayer(pointerRef.current)) {
+                map.removeLayer(pointerRef.current);
+            }
+            pointerRef.current = null;
+        }
+        let newMarker;
+        if (mainStyle) {
+            newMarker = new L.Marker(latlng, {
+                icon: L.divIcon({
+                    className: pointerStyle,
+                    iconSize,
+                }),
+            });
+            newMarker.options.icon.options.className = pointerStyle;
+            pointerRef.current = newMarker.addTo(map);
+        } else {
+            newMarker = L.circleMarker(latlng, {
+                fillOpacity: 0.9,
+                radius: 5,
+                color: '#ffffff',
+                fillColor: '#237bff',
+                weight: 1,
+                zIndex: 1000,
+            });
+        }
+        pointerRef.current = newMarker.addTo(map);
     });
 }
 

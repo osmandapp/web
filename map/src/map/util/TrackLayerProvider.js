@@ -230,7 +230,7 @@ function parseWpt(points, layers, ctx = null, data, map) {
                     latlng: marker._latlng,
                     iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
                     map,
-                    tooltipRef: ctx.tooltipRef,
+                    ctx,
                 });
             }
             layers.push(marker);

@@ -13,6 +13,9 @@ import { useTranslation } from 'react-i18next';
 import { areSetsEqual } from '../../util/Utils';
 import { debouncer } from '../../context/TracksRoutingCache';
 import { EXPLORE_BIG_ICON_SIZE, clusterMarkers, createHoverMarker, removeTooltip } from '../util/Clusterizer';
+import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
+
+export const EXPLORE_LAYER_ID = 'explore-layer';
 
 export default function ExploreLayer() {
     const ctx = useContext(AppContext);
@@ -32,34 +35,14 @@ export default function ExploreLayer() {
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [selectedObj, setSelectedObj] = useState(null);
-    const pointerRef = useRef(null);
 
-    useEffect(() => {
-        if (ctx.selectedPoiId?.id) {
-            let foundMarker = null;
-            // Search for the marker in the main icons layer
-            mainIconsLayerRef?.current?.eachLayer((layer) => {
-                if (layer.options.id === ctx.selectedPoiId.id) {
-                    foundMarker = layer;
-                }
-            });
-            // If not found, search in the other icons layer
-            if (!foundMarker) {
-                otherIconsLayerRef?.current?.eachLayer((layer) => {
-                    if (layer.options.id === ctx.selectedPoiId.id) {
-                        foundMarker = layer;
-                    }
-                });
-            }
-            if (foundMarker) {
-                if (ctx.selectedPoiId.show) {
-                    foundMarker.fire('selectMarker'); // Show the selected marker
-                } else {
-                    foundMarker.fire('mouseout'); // Hide the marker
-                }
-            }
-        }
-    }, [ctx.selectedPoiId]);
+    useSelectedPoiMarker(
+        ctx,
+        mainIconsLayerRef.current && otherIconsLayerRef.current
+            ? [...mainIconsLayerRef.current.getLayers(), ...otherIconsLayerRef.current.getLayers()]
+            : null,
+        EXPLORE_LAYER_ID
+    );
 
     function closeModal() {
         setModalIsOpen(false);
@@ -78,7 +61,7 @@ export default function ExploreLayer() {
                 map.removeLayer(layer);
             }
         });
-        removeTooltip(map, ctx.tooltipRef);
+        removeTooltip(map, ctx.searchTooltipRef);
     }
 
     useEffect(() => {
@@ -203,7 +186,7 @@ export default function ExploreLayer() {
                 ctx.setWikiPlaces(jsonData);
             }
             setLoadingContextMenu(false);
-            removeTooltip(map, ctx.tooltipRef);
+            removeTooltip(map, ctx.searchTooltipRef);
         }
     }
 
@@ -422,39 +405,6 @@ export default function ExploreLayer() {
             openInfo(place);
         });
 
-        // Add custom event to handle marker selection
-        marker.on('selectMarker', () => {
-            removeTooltip(map, ctx.tooltipRef);
-            if (pointerRef.current) {
-                if (map?.hasLayer(pointerRef.current)) {
-                    map.removeLayer(pointerRef.current);
-                }
-                pointerRef.current = null;
-            }
-            let newMarker;
-            if (main) {
-                newMarker = new L.Marker(latlng, {
-                    icon: L.divIcon({
-                        className: `${styles.wikiIconHover} ${styles.wikiIconLarge}`,
-                        iconSize,
-                    }),
-                });
-                newMarker.options.icon.options.className = `${styles.wikiIconHover} ${styles.wikiIconLarge}`;
-                pointerRef.current = newMarker.addTo(map);
-            } else {
-                newMarker = L.circleMarker(latlng, {
-                    id: place.properties.id,
-                    fillOpacity: 0.9,
-                    radius: 5,
-                    color: '#ffffff',
-                    fillColor: '#237bff',
-                    weight: 1,
-                    zIndex: 1000,
-                });
-            }
-            pointerRef.current = newMarker.addTo(map);
-        });
-
         const tooltipText = () => {
             if (place.properties.wikiTitle && place.properties.wikiTitle !== '') {
                 return place.properties.wikiTitle;
@@ -469,8 +419,7 @@ export default function ExploreLayer() {
             latlng,
             iconSize,
             map,
-            pointerRef,
-            tooltipRef: ctx.tooltipRef,
+            ctx,
         });
     }
 

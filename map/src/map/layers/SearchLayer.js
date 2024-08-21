@@ -22,6 +22,7 @@ import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/Ma
 import i18n from '../../i18n';
 import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
 import styles from '../../menu/search/search.module.css';
+import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 export const SEARCH_LAYER_ID = 'search-layer';
@@ -39,6 +40,10 @@ export function findFeatureGroupById(map, id) {
     return foundGroup;
 }
 
+export function getObjIdSearch(obj) {
+    return obj.properties['web_poi_id'] ?? obj.geometry.coordinates[1] + obj.geometry.coordinates[0];
+}
+
 export default function SearchLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
@@ -47,6 +52,12 @@ export default function SearchLayer() {
     const [move, setMove] = useState(false);
 
     const [selectedCategory, setSelectedCategory] = useState(null);
+
+    useSelectedPoiMarker(
+        ctx,
+        ctx.selectedPoiId?.type === SEARCH_LAYER_ID ? findFeatureGroupById(map, SEARCH_LAYER_ID)?.getLayers() : null,
+        SEARCH_LAYER_ID
+    );
 
     useEffect(() => {
         const handleZoomEnd = () => {
@@ -204,7 +215,7 @@ export default function SearchLayer() {
                 const coord = obj.geometry.coordinates;
                 return new L.Marker(new L.LatLng(coord[1], coord[0]), {
                     ...obj.properties,
-                    id: obj.properties['web_poi_id'],
+                    id: getObjIdSearch(obj),
                     title: title,
                     icon: icon,
                     [FINAL_POI_ICON_NAME]: finalIconName,
@@ -224,22 +235,26 @@ export default function SearchLayer() {
         mainMarkersLayers.forEach((marker) => {
             createHoverMarker({
                 marker,
+                setSelectedId: ctx.setSelectedPoiId,
                 mainStyle: true,
                 text: marker.options['web_poi_name'] ?? marker.options['web_name'],
                 latlng: marker._latlng,
                 iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
                 map,
-                tooltipRef: ctx.tooltipRef,
+                ctx,
+                pointerStyle: `${styles.hoverPointer}`,
             });
         });
 
         simpleMarkersArr.getLayers().forEach((marker) => {
             createHoverMarker({
                 marker,
+                setSelectedId: ctx.setSelectedPoiId,
                 text: marker.options['web_poi_name'] ?? marker.options['web_name'],
                 latlng: marker._latlng,
                 map,
-                tooltipRef: ctx.tooltipRef,
+                ctx,
+                pointerStyle: `${styles.hoverPointer}`,
             });
         });
 
@@ -274,7 +289,7 @@ export default function SearchLayer() {
             background: DEFAULT_POI_SHAPE,
             svgIcon: coloredSvg,
         }).options.html;
-        return L.divIcon({ html: iconHtml, className: styles.hoverIcon });
+        return L.divIcon({ html: iconHtml });
     }
 
     function searchByCategory(category) {

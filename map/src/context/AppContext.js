@@ -277,7 +277,8 @@ export const AppContextProvider = (props) => {
     const [listFiles, setListFiles] = useState({});
     const [gpxFiles, mutateGpxFiles, setGpxFiles] = useMutator({});
     // search
-    const tooltipRef = useRef(null);
+    const searchTooltipRef = useRef(null);
+    const searchPointerRef = useRef(null);
     const [searchQuery, setSearchQuery] = useState(null);
     const [searchResult, setSearchResult] = useState(null);
     const [processingSearch, setProcessingSearch] = useState(false);
@@ -623,7 +624,8 @@ export const AppContextProvider = (props) => {
                 setZoomToMapObj,
                 processingSearch,
                 setProcessingSearch,
-                tooltipRef,
+                searchTooltipRef,
+                searchPointerRef,
             }}
         >
             {props.children}

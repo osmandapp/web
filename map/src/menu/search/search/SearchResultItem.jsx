@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Divider, ListItemIcon, ListItemText, MenuItem, Skeleton } from '@mui/material';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
@@ -8,7 +8,7 @@ import _ from 'lodash';
 import { formattingPoiType } from '../../../manager/PoiManager';
 import AppContext from '../../../context/AppContext';
 import { SEARCH_RESULT_TYPE_POI, SEARCH_RESULT_TYPE_POI_CATEGORY } from './SearchResults';
-import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
+import { getObjIdSearch, SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 
 export function getPropsFromSearchResultItem(props, t) {
     let type, name;
@@ -47,13 +47,34 @@ export function getPropsFromSearchResultItem(props, t) {
     return { name, type };
 }
 
-export default function SearchResultItem({ item, setSearchValue }) {
+export default function SearchResultItem({ item, setSearchValue, typeItem }) {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
     const { ref, inView } = useInView();
 
     const { name, distance, type, icon } = parseItem(item);
+    const [isHovered, setIsHovered] = useState(false);
+
+    const itemId = getObjIdSearch(item);
+
+    function handleMouseEnter() {
+        ctx.setSelectedPoiId({ id: itemId, show: true, type: typeItem });
+        setIsHovered(true);
+    }
+
+    function handleMouseLeave() {
+        ctx.setSelectedPoiId({ id: itemId, show: false, type: typeItem });
+        setIsHovered(false);
+    }
+
+    useEffect(() => {
+        if (ctx.selectedPoiId?.id === itemId) {
+            setIsHovered(true);
+        } else {
+            setIsHovered(false);
+        }
+    }, [ctx.selectedPoiId?.id]);
 
     function parseItem(item) {
         const res = getPropsFromSearchResultItem(item.properties, t);
@@ -83,7 +104,9 @@ export default function SearchResultItem({ item, setSearchValue }) {
                 <div>
                     <MenuItem
                         id={id}
-                        className={styles.searchItem}
+                        onMouseEnter={() => handleMouseEnter()}
+                        onMouseLeave={() => handleMouseLeave()}
+                        className={`${styles.searchItem} ${isHovered ? styles.searchHoverItem : ''}`}
                         onClick={() => {
                             if (item.locDist) {
                                 ctx.setZoomToMapObj(item);

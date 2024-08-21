@@ -9,6 +9,7 @@ import AppContext from '../../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import { cleanHtml } from '../../../manager/PoiManager';
 import parse from 'html-react-parser';
+import { EXPLORE_LAYER_ID } from '../../../map/layers/ExploreLayer';
 
 export default function WikiPlacesItem({ item, index, lastIndex }) {
     const ctx = useContext(AppContext);
@@ -27,12 +28,12 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
     const poiSubType = item.properties?.poisubtype;
 
     function handleMouseEnter(item) {
-        ctx.setSelectedPoiId({ id: item.properties.id, show: true });
+        ctx.setSelectedPoiId({ id: item.properties.id, show: true, type: EXPLORE_LAYER_ID });
         setIsHovered(true);
     }
 
     function handleMouseLeave(item) {
-        ctx.setSelectedPoiId({ id: item.properties.id, show: false });
+        ctx.setSelectedPoiId({ id: item.properties.id, show: false, type: EXPLORE_LAYER_ID });
         setIsHovered(false);
     }
 

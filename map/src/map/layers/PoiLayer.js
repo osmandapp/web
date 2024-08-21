@@ -24,10 +24,11 @@ import {
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import AddFavoriteDialog from '../../infoblock/components/favorite/AddFavoriteDialog';
-import { SEARCH_LAYER_ID, SEARCH_TYPE_CATEGORY } from './SearchLayer';
+import { getObjIdSearch, SEARCH_LAYER_ID, SEARCH_TYPE_CATEGORY } from './SearchLayer';
 import i18n from '../../i18n';
 import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
 import styles from '../../menu/search/search.module.css';
+import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
 
 export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, type = OBJECT_TYPE_POI, map, zoom }) {
     const innerCache = await createPoiCache({ poiList, poiIconCache: globalPoiIconCache });
@@ -55,6 +56,7 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
             const coord = poi.geometry.coordinates;
             return new L.Marker(new L.LatLng(coord[1], coord[0]), {
                 ...poi.properties,
+                id: getObjIdSearch(poi),
                 title: poi.properties[POI_NAME],
                 icon: icon,
                 [FINAL_POI_ICON_NAME]: finalIconName,
@@ -74,22 +76,26 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
     mainMarkersLayers.forEach((marker) => {
         createHoverMarker({
             marker,
+            setSelectedId: ctx.setSelectedPoiId,
             mainStyle: true,
             text: marker.options['web_poi_name'],
             latlng: marker._latlng,
             iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
             map,
-            tooltipRef: ctx.tooltipRef,
+            ctx,
+            pointerStyle: `${styles.hoverPointer}`,
         });
     });
 
     simpleMarkersArr.getLayers().forEach((marker) => {
         createHoverMarker({
             marker,
+            setSelectedId: ctx.setSelectedPoiId,
             text: marker.options['web_poi_name'],
             latlng: marker._latlng,
             map,
-            tooltipRef: ctx.tooltipRef,
+            ctx,
+            pointerStyle: `${styles.hoverPointer}`,
         });
     });
 
@@ -120,10 +126,12 @@ export async function getPoiIcon(poi, cache, finalIconName) {
                 background: DEFAULT_POI_SHAPE,
                 svgIcon: coloredSvg,
             }).options.html;
-            return L.divIcon({ html: iconHtml, className: styles.hoverIcon });
+            return L.divIcon({ html: iconHtml });
         }
     }
 }
+
+export const POI_LAYER_ID = 'poi-layer';
 
 export default function PoiLayer() {
     const ctx = useContext(AppContext);
@@ -145,6 +153,12 @@ export default function PoiLayer() {
     const [prevCategoriesCount, setPrevCategoriesCount] = useState(null);
     const [openAddDialog, setOpenAddDialog] = useState(false);
     const [selectedPoi, setSelectedPoi] = useState(false);
+
+    useSelectedPoiMarker(
+        ctx,
+        ctx.selectedPoiId?.type === POI_LAYER_ID ? poiList?.layer?.getLayers() : null,
+        POI_LAYER_ID
+    );
 
     async function getPoi(controller, showPoiCategories, bbox, savedBbox) {
         const searchData = {

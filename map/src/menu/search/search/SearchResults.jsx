@@ -5,7 +5,12 @@ import { formattingPoiType, getCatPoiIconName, getSearchResultIcon } from '../..
 import SearchResultItem from './SearchResultItem';
 import { MenuButton } from './MenuButton';
 import { Box } from '@mui/material';
-import { SEARCH_ICON_MAP_OBJ, SEARCH_ICON_MAP_OBJ_URL, SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
+import {
+    SEARCH_ICON_MAP_OBJ,
+    SEARCH_ICON_MAP_OBJ_URL,
+    SEARCH_LAYER_ID,
+    SEARCH_TYPE_CATEGORY,
+} from '../../../map/layers/SearchLayer';
 import Loading from '../../errors/Loading';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
 import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
@@ -13,6 +18,7 @@ import { getCenterMapLoc } from '../../../manager/MapManager';
 import { getDistance } from '../../../util/Utils';
 import EmptySearch from '../../errors/EmptySearch';
 import { convert } from 'geo-coordinates-parser';
+import { POI_LAYER_ID } from '../../../map/layers/PoiLayer';
 
 export const SEARCH_RESULT_TYPE_POI = 'POI';
 export const SEARCH_RESULT_TYPE_POI_CATEGORY = 'POI_TYPE';
@@ -203,6 +209,7 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
                                     key={index}
                                     item={item}
                                     index={index}
+                                    typeItem={value?.type === SEARCH_TYPE_CATEGORY ? POI_LAYER_ID : SEARCH_LAYER_ID}
                                     setSearchValue={setSearchValue}
                                 />
                             ))}
