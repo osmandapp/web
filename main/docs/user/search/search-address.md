@@ -20,7 +20,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 OsmAnd provides several ways to get to the *Search tool* where the **Search Address** section is located.
 
-- The [Search button](../widgets/map-buttons.md#search) is always displayed on the map, and tapping it will take you to the tool's [general screen](#how-to-use), where you can find the *Address* tab.
+- The [Search button](../widgets/map-buttons.md#search) is always displayed on the map, and tapping it will take you to the tool's [general screen](#full-text-search), where you can find the *Address* tab.
 - Go to the main Android *Menu → Search → Address tab*.
 - When preparing to start a route, tap *Navigation → Set destination → Search field*.  
 
@@ -31,7 +31,7 @@ OsmAnd provides several ways to get to the *Search tool* where the **Search Addr
 
 <TabItem value="android" label="Android">
 
-![Search Android](@site/static/img/search/search_address_2_andr.png) 
+![Search Android](@site/static/img/search/search_address_2_andr.png)
 
 </TabItem>
 
@@ -61,7 +61,7 @@ See the [Search All](./search-all.md#basic-queries) article for a list of availa
 
 <TabItem value="android" label="Android">
 
-![Search Street Android](@site/static/img/search/town_search_android.png) 
+![Search Street Android](@site/static/img/search/town_search_android.png)
 
 </TabItem>
 
@@ -76,15 +76,16 @@ See the [Search All](./search-all.md#basic-queries) article for a list of availa
 **Nearest cities**  
     This **displays a small list of cities around your location** or the locality you specified for *Select street* or *Select city*. Each field contains an icon corresponding to the size of the city, the name of the city, the distance from you to its center, and for Android the compass direction.
 
-This way of searching makes it easy to find specific locations within a selected locality, providing a convenient way to find addresses accurately and quickly. You can start searching for the needed address by determining the locality.   
+This way of searching makes it easy to find specific locations within a selected locality, providing a convenient way to find addresses accurately and quickly. You can start searching for the needed address by determining the locality.
 
-- To do this, tap **First specify city/town/locality** (Android) or **Select city** (iOS). 
+- To do this, tap **First specify city/town/locality** (Android) or **Select city** (iOS).
 - In the list that opens, select the required locality. [Here](#search-query-list) describes the order in which search queries are displayed and what information is available about each item.
 - On the next screen, you can either continue to refine the address or select the *Show on the map* button below the search entry field.
 - To specify your search, you can enter all or only part of the name of the city, town, or village where the address you are looking for is located. This allows you to narrow your search and get a more accurate list.
 - Tapping the last item in the address, house number, or intersection name, opens the [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object.  
 
 **Searching by city offers the following benefits:**
+
 - *Convenience*. Allows you to quickly select the required city from the list, and specify a certain street, house or intersection in the selected city without having to enter the full address. This saves time and simplifies the process of finding the right place.
 - *Precision.* You can select a city and street from the available options, avoiding errors when manually entering an address.
 - *Filtering.* The ability to select a specific house from the list makes it easier to accurately navigate to the required location, especially when the exact address is unknown.  
@@ -113,7 +114,7 @@ This way of searching makes it easy to find specific locations within a selected
 
 </Tabs>
 
-Street search is performed in the locality where you are, or where you searched before, or which is in the center of the visible map on the application screen. 
+Street search is performed in the locality where you are, or where you searched before, or which is in the center of the visible map on the application screen.
 
 - To use this type of search, tap **Search Street** (*Android*) or **Select Street** (*iOS*).
 - In the search field next to the city name, you can start typing the street name and the list will refine, giving you the most appropriate results.
@@ -144,17 +145,19 @@ Street search is performed in the locality where you are, or where you searched 
 </Tabs>
 
 **To use the *Postcode search*, you just need to enter the number**, which can consist even of a single digit, and the application offers a list of available relevant postcodes.
+
 - Select the required code and tap it.
 - You can use the *Show *postcode number* on the map* feature. This opens a [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) with the selected postcode without any additional information about the location.
 - You can refine your search by this code by first selecting the required street from the list and then the number.
 
-**Searching by postcode can be useful in the following cases:**  
+**Searching by postcode can be useful in the following cases:**
+
 - *Find addresses*. When you enter a postcode, OsmAnd identifies the corresponding area and suggests addresses in that area. This is especially useful if you know the postcode but do not know the exact address.
 - *Navigation precision*. In cases where the address is not certain, or where the street name may be repeated in different areas, using a postal code can provide the best route to a given address.
 - *Convenience and speed*. Searching by postcode allows you to find information quickly, especially if you know the postcode but are unsure of the address. Instead of entering the full address, you can enter just the code and get relevant results.  
 
 :::note
-For more information, read the **[United Kingdom Poscode data](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases)**.    
+For more information, read the **[United Kingdom Poscode data](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases)**.
 :::
 
 

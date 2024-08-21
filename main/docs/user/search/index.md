@@ -23,7 +23,7 @@ This article describes the main features and available options of the Search too
 
 ### [Search Address](./search-address.md)
 
-The Search tool has options such as sequential search by address, with already prepared data for quick selection and search by postcode. These options are described in this article. 
+The Search tool has options such as sequential search by address, with already prepared data for quick selection and search by postcode. These options are described in this article.
 
 
 ### [Search History](./search-history.md)
@@ -32,7 +32,7 @@ This article discusses the search capabilities of query history in detail.
 
 
 ### [Search POI](./search-poi.md)
- 
+
 Searching through all POI categories and setting up a custom POI search is described in this article.
 
 

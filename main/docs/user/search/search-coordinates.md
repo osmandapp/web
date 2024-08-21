@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-**OsmAnd Coordinate search** allows you to find a specific location by latitude and longitude. This type of search helps to identify a location accurately. It is especially useful for areas that do not have precise addresses, or for specific geographic tasks such as creating geofences or precise positioning in open space.   
+**OsmAnd Coordinate search** allows you to find a specific location by latitude and longitude. This type of search helps to identify a location accurately. It is especially useful for areas that do not have precise addresses, or for specific geographic tasks such as creating geofences or precise positioning in open space.
 
 OsmAnd provides several ways to get to the *Search tool → [Address search tab](../search/search-address.md)* where the **Coordinates search** is located.
 
@@ -41,25 +41,26 @@ OsmAnd provides several ways to get to the *Search tool → [Address search tab]
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
-Coordinates can be entered in any available format, but the found location is displayed in the format specified in *Configure profile → General settings → Units & formats*.   
+Coordinates can be entered in any available format, but the found location is displayed in the format specified in *Configure profile → General settings → Units & formats*.
 
 - To use the coordinates search, you can type them in each corresponding field individually, or paste previously copied coordinates into the search field or enter them in it. The application prompts you to select a suitable location.
-- Coordinate Search automatically converts one coordinate format to another when the specified format is changed in the field with their list. 
+- Coordinate Search automatically converts one coordinate format to another when the specified format is changed in the field with their list.
 - Tap the suggested location and [Map Context menu](../map/map-context-menu.md#select-any-point-long-tap) opens.
 - More information can be found here [Geographical coordingates](https://en.wikipedia.org/wiki/Geographic_coordinate_system).
 
 
 **Scope of the coordinate search function**:
-- *Precise location*. Coordinate search provides an accurate location. You can enter precise coordinates obtained, for example, from other sources such as a map, GPS device, or online services. 
+
+- *Precise location*. Coordinate search provides an accurate location. You can enter precise coordinates obtained, for example, from other sources such as a map, GPS device, or online services.
 - *Places without an address*. Coordinates are particularly useful when it comes to places that do not have an exact address, or when the address is unknown. For example, it may be a remote area, a point on the sea, or a mountain peak. By entering coordinates, you can find and navigate to such locations without having to know the address.
 - *Location sharing*. Searching by coordinates provides a convenient way to enter information. You can enter coordinates manually or copy them from other sources. This can be useful when sharing locations with others or using previously obtained coordinates.
 
 
 ## Coordinate Format
 
-There are several ways to enter coordinates for the search. To use each of them, it is very important to follow the input rules, otherwise the application will not be able to find the location.    
+There are several ways to enter coordinates for the search. To use each of them, it is very important to follow the input rules, otherwise the application will not be able to find the location.
 
 1. **<Translate android="true" ids="navigate_point_format_D"/>**  
 
@@ -98,7 +99,7 @@ There are several ways to enter coordinates for the search. To use each of them,
 
     ![Search Coordinates Android](@site/static/img/search/coordinates_search_OLC_andr.png)  
 
-    **Open Location Code (OLC)**, also known as **Plus Code**, is a global location coding system. It is a combination of letters and numbers to indicate the latitude and longitude of any location on the planet. Example of an OLC code for Amsterdam: 9F3WCVWG+FP. In this example, "9F3WCVWG" indicates a coarse grid, and "+FP" specifies a location within that area. Read more [here](https://en.wikipedia.org/wiki/Open_Location_Code).   
+    **Open Location Code (OLC)**, also known as **Plus Code**, is a global location coding system. It is a combination of letters and numbers to indicate the latitude and longitude of any location on the planet. Example of an OLC code for Amsterdam: 9F3WCVWG+FP. In this example, "9F3WCVWG" indicates a coarse grid, and "+FP" specifies a location within that area. Read more [here](https://en.wikipedia.org/wiki/Open_Location_Code).
     - *Input Rules*.  
         - The OLC code consists of 4 to 14 characters, which can be letters from "C" to "Z" (except for "I" and "O") and numbers from "2" to "9".
         - The code begins with a global prefix that indicates a continent or area.
@@ -112,7 +113,7 @@ There are several ways to enter coordinates for the search. To use each of them,
 
     **MGRS (Military Grid Reference System)**. This is a coordinate system often used in military applications. It is based on the UTM system and is supplemented with an additional grid of squares. An example of coordinates in MGRS format for a location in Australia can be as follows: 55HBE1234567890. In this example, "55H" represents the MGRS zone and "BE" represents the square in which the location is located. "123456" represents the eastward offset and "7890" represents the northward offset within that square. MGRS are widely used in areas requiring high accuracy and geo-referencing. They are particularly useful in environments where addresses may not be clear or available, such as military operations or expeditions in remote areas. You can read more about the MGRS format [here](https://en.wikipedia.org/wiki/Military_Grid_Reference_System).  
     - *Input rules*. The coordinates consist of an MGRS zone, a square, and two more digits indicating east and north offsets.
-    - *Most commonly used*. The MGRS format is widely used in military navigation and communications, and can also be useful for outdoor enthusiasts and hikers. 
+    - *Most commonly used*. The MGRS format is widely used in military navigation and communications, and can also be useful for outdoor enthusiasts and hikers.
 
 7. **Swiss Grid** (CH1903) and **Swiss Grid** (CH1903+)  
 

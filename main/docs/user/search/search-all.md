@@ -21,13 +21,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 **Search** is a useful tool for quickly finding locations. You can use search to find a location by address, coordinates, points of interest (POIs), or previous searches. Search [*Address*](#search-address) allows you to enter the address you are looking for to get an exact location. [*Сoordinates*](#search-coordinates) search allows you to enter geographic coordinates such as latitude and longitude. Search [*POI*](#search-poi) allows you to search for nearby places in specific categories, such as cafes, hotels, or filling stations. And search [*History*](#search-history) saves past searches for quick access to previously found places. The search feature makes it easy to plan trips, navigate unknown terrain, and find places of interest nearby.
 
 
-## How to use
+## How to Use
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Search POI list Android](@site/static/img/search/poi_list_android.png) 
+![Search POI list Android](@site/static/img/search/poi_list_android.png)
 
 </TabItem>
 
@@ -39,19 +39,21 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 </Tabs>
 
-You need to follow one of the steps to start your search: 
+You need to follow one of the steps to start your search:
+
 - Tap the [*Search button*](../widgets/map-buttons.md#search) on the map application screen and enter your query.
 - Go to the main *Menu → Search → enter your search query*.
 - When preparing to start a route, tap [*Navigation → Set destination → Search field*](../navigation/setup/route-navigation.md#set-target-point) *→ search query*.  
 
 
 Important information:
+
 - *Downloaded offline vector maps are required to search with OsmAnd*.
 - Initially, **the search is based on the data located on the map in the visible area of the device screen**, but if nothing is found there, OsmAnd offers to increase the search radius.  
 
-### Basic queries
+### Basic Queries
 
-*Query list*:
+***Query list*:**
 
 - Coordinates all available formats.
 - Address:
@@ -68,20 +70,20 @@ Important information:
 - URL search (Google and OsmAnd).
 - Search History.
 
-*Supported formats*:  
+***Supported formats*:**  
 
-***Tags*** can be used as a search query. They consist of ***a key and a value***, for example:   
+***Tags*** can be used as a search query. They consist of ***a key and a value***, for example:
 *addr:street=StreetName*.  
 To avoid confusion, sometimes the key or value is surrounded by quotation marks: **key="value" or "key"="value"**. The quotation marks and equal sign are not part of the tag content.
 
 
-### Full text search
+### Full Text Search
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Favorite search Android](@site/static/img/search/favorite_search_android.png) 
+![Favorite search Android](@site/static/img/search/favorite_search_android.png)
 
 </TabItem>
 
@@ -94,16 +96,18 @@ To avoid confusion, sometimes the key or value is surrounded by quotation marks:
 </Tabs>
 
 You can find the required location on the map from the list of points that appear as you enter a query.
+
 - Start typing the name or address in the search bar.
 - As you type, the list displays the points closest to the query, in roughly this order:
-    - POIs Categories;
-    - Favorites, POIs, and Waypoints;
-    - Tracks;
-    - Addresses;
-    - Maps to download.
+
+    - POIs Categories
+    - Favorites, POIs, and Waypoints
+    - Tracks
+    - Addresses
+    - Maps to download
 
 
-### Search on the map
+### Search on the Map
 
 <Tabs groupId="operating-systems">
 
@@ -122,6 +126,7 @@ You can find the required location on the map from the list of points that appea
 </Tabs>
 
 OsmAnd allows you to search for points displayed on a map on your device's screen. To do this:
+
 - Use [one of the ways](#how-to-use) to get to the Search tool.
 - Start typing the name or address into the search box.
 - A box with the *Show on map* button will appear below the search input field.
@@ -129,11 +134,11 @@ OsmAnd allows you to search for points displayed on a map on your device's scree
 - At the top of the screen, you can continue typing your query.
 
 
-### Search nearby
+### Search Nearby
 
-![Search Android](@site/static/img/search/search_all_near_location_andr.png) 
+![Search Android](@site/static/img/search/search_all_near_location_andr.png)
 
-You can use the search in the vicinity of a specific location. To do this, select the required point [from the list in the search menu](#search-by-list) or select it directly on the map. In the [Map Context Menu](../map/map-context-menu.md#actions), select *Actions → Search nearby*.
+You can use the search in the vicinity of a specific location. To do this, select the required point [from the list in the search menu](#full-text-search) or select it directly on the map. In the [Map Context Menu](../map/map-context-menu.md#actions), select *Actions → Search nearby*.
 
 
 ## Search Address
@@ -142,7 +147,7 @@ You can use the search in the vicinity of a specific location. To do this, selec
 
 <TabItem value="android" label="Android">
 
-![Search Android](@site/static/img/search/search_address_2_andr.png) 
+![Search Android](@site/static/img/search/search_address_2_andr.png)
 
 </TabItem>
 
@@ -173,7 +178,7 @@ You can use the search in the vicinity of a specific location. To do this, selec
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
 You can use the **Search History** to search again for previously found places or addresses or frequently visited places without having to re-enter the query.More details can be found in the [Search History](./search-history.md) article.
 
@@ -196,40 +201,12 @@ You can use the **Search History** to search again for previously found places o
 
 </Tabs>
 
-The **Search POI** is a list, sorted by category, with which you can easily find places and services near your current location or a selected area on the map. 
+The **Search POI** is a list, sorted by category, with which you can easily find places and services near your current location or a selected area on the map.
 
 - [**Custom POI search**](./search-poi.md#custom-poi-search) allows you to combine different POI categories to simplify and personalize your search, for example, if you need to find several types of services in a certain area or on a certain section of a route.
 - OsmAnd provides an [**Online search**](./search-poi.md#online-search) that works in real time, giving you quick access to search results. It is convenient to use when maps of the region are not available, but a constant and stable Internet connection is required.
 - Read the [Search POI](./search-poi.md) article for more information.
 
-<!--
-### Custom POI Search
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Custom search Android](@site/static/img/search/search_custom_filter_andr.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Custom POI iOS](@site/static/img/search/custom_poi_filter_1_ios.png) 
-
-</TabItem>
-
-</Tabs>
-
-*Custom search* allows you to combine different POI categories to simplify and personalize your search, for example, if you need to find several types of services in a certain area or on a certain section of a route. For more details, see [Search POI](./search-poi.md#custom-poi-search) article.
-
-
-### Online search (Android)
-
-![Online search Android](@site/static/img/search/search_online_2_andr.png)  
-
-OsmAnd provides an **online search** that works in real time, giving you quick access to search results. It is convenient to use when maps of the region are not available, but a constant and stable Internet connection is required. More details can be found in the [Search POI](./search-poi.md#online-search) article.
--->
 
 ## Search Coordinates
 
@@ -259,5 +236,4 @@ Coordinate search provides an accurate location. You can enter precise coordinat
 - [Search POI](./search-poi.md)
 - [Search Coordinates](./search-coordinates.md)
 
-
-> *This article was last updated in July 2024*
+> *This article was last updated in August 2024*
