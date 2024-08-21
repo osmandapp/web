@@ -1,8 +1,9 @@
 import L from 'leaflet';
-import MarkerOptions, { createPoiIcon } from '../markers/MarkerOptions';
+import MarkerOptions, { createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import _ from 'lodash';
 import TracksManager, { GPX_FILE_TYPE, isProtectedSegment } from '../../manager/track/TracksManager';
 import EditablePolyline from './EditablePolyline';
+import { createHoverMarker } from './Clusterizer';
 
 export const TEMP_LAYER_FLAG = 'temp';
 export const TEMP_LINE_STYLE = {
@@ -20,7 +21,7 @@ function createLayersByTrackData({ data, ctx, map, type = GPX_FILE_TYPE }) {
             addStartEnd(track.points, layers, res.coordsTrk, res.coordsAll);
         }
     });
-    parseWpt(data.wpts, layers, ctx, data);
+    parseWpt(data.wpts, layers, ctx, data, map);
 
     if (layers.length > 0) {
         let layersGroup = new L.FeatureGroup(layers);
@@ -182,7 +183,7 @@ function getPointGeoProfile(point, points) {
     }
 }
 
-function parseWpt(points, layers, ctx = null, data) {
+function parseWpt(points, layers, ctx = null, data, map) {
     points &&
         points.forEach((point) => {
             let opt;
@@ -221,6 +222,15 @@ function parseWpt(points, layers, ctx = null, data) {
                         ...point,
                     };
                     ctx.setSelectedWpt(wpt);
+                });
+                createHoverMarker({
+                    marker,
+                    mainStyle: true,
+                    text: marker.options['title'],
+                    latlng: marker._latlng,
+                    iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
+                    map,
+                    tooltipRef: ctx.tooltipRef,
                 });
             }
             layers.push(marker);
