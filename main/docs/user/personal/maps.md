@@ -15,8 +15,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-<InfoIncompleteArticle/>
-
 ## Overview
 
 The **Maps & Resources** allows you to perform basic actions with *Online* and *Offline* maps, and remaining resources used in OsmAnd. For example, such as downloading, deleting, renaming, clearing the cache, updating and checking the size, as well as other actions.
