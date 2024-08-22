@@ -178,7 +178,9 @@ Shows previously uploaded specially configured [user routes](https://osmand.net/
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 
-### Route Info (Route details)
+### Route Info and Elevation
+
+To get full route information and elevation data, tap the *route icon (shield)* on the map. If you have already used the *Download button* in the [Track context menu](../map/tracks/track-context-menu.md), tap the line of the required route on the map.  
 
 <Tabs groupId="operating-systems">
 
@@ -196,19 +198,12 @@ Shows previously uploaded specially configured [user routes](https://osmand.net/
 
 </Tabs>  
 
-- To get full route information, tap the *route symbol*.
-- If you have already used the *download button* in the [Track context menu](../map/tracks/track-context-menu.md), tap the line of the required route on the map.  
-
-***Route info*** in *Overview tab* allows you to view detailed information about the selected route such as:
-
-- **Track details**: Route name, OSM link (OSM Editing plugin required), Type, Description, Distance, Direction, Ascent/Descent, Altitude range, Network, Operator, State, Color, Roundtrip, Start/End points, and more.
+Following information will be visible in context menu: 
+- **Route info**: Route name, OSM link (OSM Editing plugin required), Type, Description, Distance, Direction, Ascent/Descent, Altitude range, Network, Operator, State, Color, Roundtrip, Start/End points, and more.
 - **General**: Size, Location, Created on.
 - **Additional Info**: Type of activity.
-
-### Graph (Elevation info)
-
-- [Elevation info](../navigation/setup/route-details.md#elevation-info)
-- [Analyze Track on Map](../map/tracks/index.md#analyze-track-on-map)
+- **[Elevation info](../navigation/setup/route-details.md#elevation-info)**
+- **[Analyze Track on Map](../map/tracks/index.md#analyze-track-on-map)**
 
 ### Save as a Track
 
@@ -235,69 +230,16 @@ To save the route as a *GPX file*, tap the **Save (Download)** button under [Inf
 
 ### Quick Actions
 
-<InfoAndroidOnly />
-
-*<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action,quick_action_new_action,quick_action_add_configure_map"/>*  
-
-![Route info](@site/static/img/map/qa_routes_andr.png)
-
-Using the *Quick Actions* map buttons, you can switch the visibility of different types of routes.  
-The main settings for *Show or Hide routes* can be found in the Configure Map menu. Some routes have an *additional setting* for selecting types. When assigning an action to a button, either the default type or the type selected in the Configure map will be displayed.  
-
-In the [Vector Maps article](../map/vector-maps.md#routes), you can find a description and the entire list of routes available for display. If you want quick access to this map configuration, use the *Custom Button* tool.  
-
-- Go to [Add action](../widgets/quick-action.md#custom-buttons): *Menu → Configure screen → Custom buttons → Quick action → Add action → Configure map*.
-- Add one or more QA buttons to change the visibility of particular routes.
-
-
-## Route line appearance
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*  
-
-![Navigation route Android](@site/static/img/navigation/route/route_line_appearance_andr.png)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
-
-![Navigation route Android](@site/static/img/navigation/route/RLApp_iOS.png)
-
-</TabItem>
-
-</Tabs>  
-
-:::note
- <ProFeature/> Some parameters you can use only with <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribtion</a>.
-:::
-
-[Route line appearance](../navigation/guidance/map-during-navigation.md#route-line-appearance)
-
-- **Color**
-- **Width**
-- **Turn Arrows**
-
-
-## Plan a Route
-
-- [*Plan route for Markers*](../personal/markers.md#plan-route-for-markers)
+You can configure to switch on and off routes via [Quick action](../widgets/quick-action.md#configure-map) widget.
 
 
 ## Related Articles
 
 - [Map Context menu](./map-context-menu.md)
 - [Configure Map](./configure-map-menu.md)
-- [Vector maps (Map styles)](./vector-maps.md)
-- [Raster Maps (Online / Offline)](./raster-maps.md)
-- [Points on the map](./point-layers-on-map.md)
 - [Tracks](./tracks/index.md)
 - [Tracks Context menu](./tracks/track-context-menu.md)
 - [Public transport](./public-transport.md)
-
+- [Navigation route line appearance](../navigation/guidance/map-during-navigation.md#route-line-appearance)
 
 > *This article was last updated in August 2024*
