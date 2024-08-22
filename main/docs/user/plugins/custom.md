@@ -18,7 +18,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-In the OsmAnd app, you can customize the *Configure map menu* or *Drawer*, and share your [navigation profile](../personal/profiles.md) with all settings, however, if you want to share not only profile-dependent settings, but also rendering files, fonts, routes, maps and other data, you can create your own plugin *zip file* in *.osf format* for this purpose.  
+In the OsmAnd app, you can create lots of customization and export it as a .osf file. Once you add description, image, icon - these settings turns out to be a fully independent plugin. In this plugin you could include 
+- All [Profile Settings](../personal/profiles.md) with a new profile
+- Specific set of quick actions and menu layouts for *Drawer* and *Context menu*
+- Custom offline map inside the plugin or suggested to download
+- Specific online routing types and online maps
 
 
 ## How to create
