@@ -146,4 +146,8 @@ export async function prepareDriver() {
     }
 
     await driver.manage().setTimeouts({ implicit: TIMEOUT_OPTIONAL });
+
+    let windowSize = await driver.manage().window().getRect();
+    console.log(`Actual window size: ${windowSize.width}x${windowSize.height}`);
+
 }
