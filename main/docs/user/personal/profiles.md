@@ -14,8 +14,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoIncompleteArticle/>
-
 ## Overview
 
 OsmAnd provides a range of default profiles designed for different activities, such as driving, cycling, walking, and more specialized ones like skiing and boating. These profiles are intended to optimize your navigation experience based on the type of activity you are engaged in. Each profile comes with a set of configurable options, allowing you to adjust settings and use additional plugins to expand functionality to match your preferences.
@@ -413,62 +411,26 @@ With the UI customization feature, you can adjust the number of items in actions
 
 ### Drawer
 
-- **Main visible items**. In the Customise UI section, you can reorder or hide items from the [Drawer](../start-with/main-menu.md#customize-advanced-use-of-android).
-  - *Minus* button. When you tap, the list items are deleted from the main menu in the drawer and moved to the *Hidden* section. However, all options, settings, or plugins are not disabled.  
-  - *Moving* button. Tap and hold the move icon to the right of the item name to change the position of the selected item in the list.  
-
-      ![Profile Drawer Android](@site/static/img/personal/profiles/profile_drawer_moving_android.png)  
-- **Divider**. The list of items in the main menu can be separated by a divider to arrange the options in a convenient and logical order for you.  
-
-    ![Profile Reset Android](@site/static/img/personal/profiles/profile_drawer_divider_andr.png)  
-- **Hidden**. These items are not displayed in the main menu, but all options, settings, or plugins from the list continue to work.  
-  - *Restore* button. When you tap, the selected item will move to the visible items on the main menu.  
-
-      ![Profile Reset Android](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png)  
+![Profile Drawer Android](@site/static/img/personal/profiles/profile_drawer_moving_android.png)  ![Profile Reset Android](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png)  
+- **Main visible items**. In the Customise UI section, you can reorder hide and restore items from the [Drawer](../start-with/main-menu.md#customize-advanced-use-of-android).
 - **<Translate android="true" ids="reset_to_default"/>**. Tapping it restores the original list of items in the main menu in the drawer. All your changes are instantly undone.  
 - **<Translate android="true" ids="copy_from_other_profile"/>**. You can copy for this profile the position of elements created in another OsmAnd profile.  
 
-    ![Profile Copy Android](@site/static/img/personal/profiles/profile_drawer_reset_copy_android.png)
-
-
 ### Configuring the Map
 
-- **Configure map menu**. Items visible in this section of the main menu.  
-
-  ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_visible_andr.png)
-- **Show**. In this part of the Customise UI section you can reorder or hide items from the [Configure map](../map/configure-map-menu.md).  
-  - *Minus* button. When you tap, the list items are deleted from the Configure map menu and moved to the *Hidden* section. However, all settings are not disabled.  
-  - *Moving* button. Tap and hold the move icon to the right of the item name to change the position of the selected item in the list.  
-
-      ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_show_andr.png)
-- **Hidden**. These items are not displayed in the main menu, but all options, settings, or plugins from the list continue to work.  
-  - *Restore* button. When tapped, the selected item will return to its original state.  
-
-      ![Profile Configure map menu Reset Android](@site/static/img/personal/profiles/profile_configure_map_hidden_andr.png)
+  ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_visible_andr.png) ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_show_andr.png)
+- **Configure map menu**. In this part of the Customise UI section you can reorder or hide items from the [Configure map](../map/configure-map-menu.md).  
 - **<Translate android="true" ids="reset_to_default"/>**. Tapping it restores the original list of items in the Configure map menu. All your changes are instantly undone.  
 - **<Translate android="true" ids="copy_from_other_profile"/>**. You can copy for this profile the position of elements created in another OsmAnd profile.  
-
-    ![Profile Copy Android](@site/static/img/personal/profiles/profile_configure_map_reset_copy_andr.png)
 
 
 ### Context Menu Actions
 
-- **Map Context menu**. Items visible in the main context and additional actions menu.  
+![Profile Context menu Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profile Configure map menu Reset Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
 
-  ![Profile Context menu Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)
-- **Show**. In this part of the Customise UI section you can reorder or hide items from the [Map Context menu](../map/map-context-menu.md).  
-  - *Minus* button. When you tap, the list items are deleted from the main context or actions menu and moved to the *Hidden* section. However, all options or plugins are not disabled.  
-  - *Moving* button. Tap and hold the move icon to the right of the item name to change the position of the selected item in the list.  
-
-      ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_context_menu_show_andr.png)
-- **Hidden**. These items are not displayed in the menus, but all options or plugins from the list continue to work.  
-  - *Restore* button. When you tap, the selected item will move to the visible items on the menus.  
-
-      ![Profile Configure map menu Reset Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
+- **Map Context menu**.  In this part of the Customise UI section you can reorder or hide items from the [Map Context menu](../map/map-context-menu.md).  
 - **<Translate android="true" ids="reset_to_default"/>**. Tapping it restores the original list of items in the main menu in the drawer. All your changes are instantly undone.
 - **<Translate android="true" ids="copy_from_other_profile"/>**. You can copy for this profile the position of elements created in another OsmAnd profile.  
-
-    ![Profile Copy Android](@site/static/img/personal/profiles/profile_context_menu_reset_copy_andr.png)
 
 
 ## Plugin Settings
