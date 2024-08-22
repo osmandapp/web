@@ -23,12 +23,12 @@ Information widgets are needed for quick access to information important to the 
 ![Informational widgets](@site/static/img/widgets/informational_widgets_all.png)
 
 
-## Altitude widgets  
+## Altitude Widgets  
 
 Altitude widgets display the height above the sea level of the current geolocation and the elevation of the map center.  
 
 
-### Altitude: current location  
+### Altitude: Current Location  
   
 :::note  
 Altitude can not be displayed correctly on some Android devices. To resolve this problem, download an altitude correction map: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.  
@@ -50,7 +50,6 @@ Altitude can not be displayed correctly on some Android devices. To resolve this
 
 </Tabs>  
 
-
 | | |
 |------------|------------|
 | Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_altitude_current_location"/>* |
@@ -59,7 +58,11 @@ Altitude can not be displayed correctly on some Android devices. To resolve this
 | Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* |  
 
 
-### Elevation: map center
+### Elevation: Map Center
+
+:::tip subscribe
+&nbsp;<ProFeature/> To get access to use the *Elevation: map center* widget, subscribe to OsmAnd Pro for [Android](../purchases/android.md#osmand-pro) or [iOS](../purchases/ios.md#osmand-pro).  
+:::
 
 <Tabs groupId="operating-systems">
 
@@ -71,26 +74,26 @@ Altitude can not be displayed correctly on some Android devices. To resolve this
 
 <TabItem value="ios" label="iOS">
 
-![Elevation widget iOS](@site/static/img/widgets/elevation_widget_ios.png) 
+![Elevation widget iOS](@site/static/img/widgets/elevation_widget_ios.png)
 
 </TabItem>
 
-</Tabs>   
+</Tabs>
 
 You can use the widget to find out the elevation of the current map center above sea level.
-[Terrain map (Hillshade and Slope)](../plugins/contour-lines.md#download-maps) of the required area is needed to display information in the *Elevation: map center widget*.  
+[Terrain map (Hillshade and Slope)](../plugins/contour-lines.md#download-maps) of the required area is needed to display information in the **Elevation: map center widget**.  
 
 | | |
 |------------|------------|
 | Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_altitude_map_center"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_altitude_map_center"/>* | 
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_altitude_map_center"/>* |
 | By tapping | No changes |
-| Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* | 
+| Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* |
 
 
-## Current time
+## Current Time
 
-![Current time widget](@site/static/img/widgets/current_time_widget.png)    
+![Current time widget](@site/static/img/widgets/current_time_widget.png)
 
 This widget displays the current time taken from your device.  
 
@@ -102,7 +105,7 @@ This widget displays the current time taken from your device.
 | Format | Time & Format is configured by device settings. |
 
 
-## Current speed
+## Current Speed
 
 ![Speed widget](@site/static/img/widgets/current_speed_widget.png)  
 
@@ -116,36 +119,35 @@ The widget shows the current speed detected by the GPS sensor.
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,default_speed_system"/>* |
 
 
-## Average speed 
+## Average Speed
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Average speed widget Android](@site/static/img/widgets/average_speed_widget.png) 
+![Average speed widget Android](@site/static/img/widgets/average_speed_widget.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Average speed widget iOS](@site/static/img/widgets/average_speed_widget_ios_2.png) 
+![Average speed widget iOS](@site/static/img/widgets/average_speed_widget_ios_2.png)
 
 </TabItem>
 
-</Tabs>   
-  
+</Tabs>  
 
-This widget shows your average speed for a selected time interval and does not require any other features such as track recording or navigation. You can easily use it to check if your average speed is in line with highway speed limits, or record your average speed for the last 5-15 minutes of cycling.    
+This widget shows your average speed for a selected time interval and does not require any other features such as track recording or navigation. You can easily use it to check if your average speed is in line with highway speed limits, or record your average speed for the last 5-15 minutes of cycling.  
 
-Tap the Average Speed widget *Settings* button (Android) or tap the added widget field (iOS) to select the time interval and the stop on/off option.   
+Tap the Average Speed widget *Settings* button (Android) or tap the added widget field (iOS) to select the time interval and the stop on/off option.  
 
 **Time interval**  
 The average speed is calculated for a given time interval according to your selection. Thus, you can set the average speed calculation interval from 15 seconds to 60 minutes. In general, the average speed is taken from the recorded GPS points: ```Average Speed = AVERAGE(GPS_LOCATION.speed)```.  
 
 
 **Take stops into account**  
-***Off*** *setting*. A long stop will also add zeros to the average speed calculation, which can significantly change the overall value.   
-***On*** *setting*. If your average speed is less than 1 speed unit per hour, this value will not be added to the average speed calculation. This allows your average speed to not change much when you stop, for example at a traffic light or want to take a break from cycling.    
+***Off*** *setting*. A long stop will also add zeros to the average speed calculation, which can significantly change the overall value.
+***On*** *setting*. If your average speed is less than 1 speed unit per hour, this value will not be added to the average speed calculation. This allows your average speed to not change much when you stop, for example at a traffic light or want to take a break from cycling.
 
 <Tabs groupId="operating-systems">
 
@@ -167,10 +169,10 @@ The average speed is calculated for a given time interval according to your sele
 |------------|------------|
 | Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_average_speed"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_average_speed"/>* |
-| By tapping | No changes |   
+| By tapping | No changes |
 
 
-## Glide ratio
+## Glide Ratio
 
 <Tabs groupId="operating-systems">
 
@@ -197,6 +199,7 @@ Glide ratio [simple widgets](../widgets/configure-screen.md#widgets-for-all-pane
 
 
 **Widgets use:**
+
 - *Planning soaring flights.* For soaring pilots, the *Glide ratio to the target* widget becomes an indispensable tool when planning and executing soaring flights. Pilots can estimate how far they can fly to their target given the current conditions and the required glide ratio.
 - *Optimize climbs and descents.* The average glide ratio allows pilots to optimize climbs and descents based on current conditions. Pilots can choose the optimal timing for climbs to maximize flight time or for descents to reach a target point.
 - *Reacting to changing conditions.* The widget provides continuous glide ratio updates, allowing pilots to react instantly to changes in atmospheric conditions or route. They can adjust their flight plan to ensure safety and efficiency.
@@ -205,40 +208,46 @@ Glide ratio [simple widgets](../widgets/configure-screen.md#widgets-for-all-pane
 
 
 **Positive and Negative Values:**
-  - *Positive values* indicate that your destination is at a lower altitude than your current position, requiring descent.
-  - *Negative values* indicate that your destination is at a higher altitude, necessitating ascent. For example, "-90:1" means that after covering a distance of 90 kilometers, you need to ascend by 1 kilometer to reach your destination.
+
+- *Positive values* indicate that your destination is at a lower altitude than your current position, requiring descent.
+- *Negative values* indicate that your destination is at a higher altitude, necessitating ascent. For example, "-90:1" means that after covering a distance of 90 kilometers, you need to ascend by 1 kilometer to reach your destination.
 
 
-**Rounding/Formatting:**  
-  - Value **<= 0.1**:  
-    - "0.05" is displayed as "0".
-  - Value **> 0.1 and < 100**:  
-    - for exampl, "50.7643" is displayed as "50.8:1.".
-  - Value **> 100:**  
-    - "102.35" is displayed as "102:1."
+**Rounding/Formatting:**
 
-### Glide ratio to target
+- Value **<= 0.1**:  
+  - "0.05" is displayed as "0".
+- Value **> 0.1 and < 100**:  
+  - for example, "50.7643" is displayed as "50.8:1.".
+- Value **> 100:**  
+  - "102.35" is displayed as "102:1."
+
+
+### Glide Ratio to Target
+
 - **Glide ratio to target** shows the exact glide ratio required to reach the target point.
-- **Target elevation** shows the targent point elevation. The [Map marker](../personal/markers.md) should be used as the target point. 
+- **Target elevation** shows the targent point elevation. The [Map marker](../personal/markers.md) should be used as the target point.
 
 | | |
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → Glide ratio* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → Glide ratio* |
-| By tapping | Changes _Glide ratio to target_ or _Target elevation_  |
+| By tapping | Changes *Glide ratio to target* or *Target elevation*  |
 
-### Glide ratio to target
+
+### Average Glide Ratio
+
 - **Average glide ratio** shows the average glide ratio for a specified time interval.
-- **Average vertical speed** indicates the rate at which an object ascends or descends over a period of time. For evaluation takes into account only first and last point in time interval. You can set the time interval for this widget from 15 seconds to 60 minutes. The [Map marker](../personal/markers.md) should be used as the target point. 
+- **Average vertical speed** indicates the rate at which an object ascends or descends over a period of time. For evaluation takes into account only first and last point in time interval. You can set the time interval for this widget from 15 seconds to 60 minutes. The [Map marker](../personal/markers.md) should be used as the target point.
 
 | | |
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → Glide ratio* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → Glide ratio* |
-| By tapping | Changes _Average glide ratio_ or _Average vertical speed_  |
+| By tapping | Changes *Average glide ratio* or *Average vertical speed*  |
 
 
-## Battery level
+## Battery Level
 
 ![Battery level widget](@site/static/img/widgets/battery_level_widget.png)  
 
@@ -251,7 +260,7 @@ This widget shows the battery level of your device.
 | By tapping | No changes |
 
 
-## Coordinates widget
+## Coordinates Widget
 
 OsmAnd offers two types of coordinate widgets:
 
@@ -286,13 +295,13 @@ Coordinates widgets are displayed at the top of the screen. Icons with a green b
 
 ## GPS Info  
 
-<InfoAndroidOnly /> 
+<InfoAndroidOnly />
 
-![GPS Info Android widget](@site/static/img/widgets/gps_info_widget.png)     
+![GPS Info Android widget](@site/static/img/widgets/gps_info_widget.png)
 
 The GPS (Global Positioning System) information widget shows the number of satellites that the device is currently detecting and using. You can use it to check the GPS status in case of a poor signal.  
 
-You can reset the current GPS cache through: 
+You can reset the current GPS cache through:
 *<Translate android="true" ids="shared_string_menu,open_settings,rendering_value_browse_map_name,configure_profile,debugging_and_development,agps_info"/>*.  
 
 | | |
@@ -301,7 +310,7 @@ You can reset the current GPS cache through:
 | By tapping | Opens the GPS status menu with third-party tools to configure the on-board GPS device. |  
 
 
-## Sun position
+## Sun Position
 
 <Tabs groupId="operating-systems">
 
@@ -314,16 +323,16 @@ You can reset the current GPS cache through:
 <TabItem value="ios" label="iOS">
 
 ![Sunset and sunrise widgets](@site/static/img/widgets/sun_position_4_ios.png) ![Sunset and sunrise widgets](@site/static/img/widgets/sun_position_3_ios.png)
- 
+
 </TabItem>
 
 </Tabs>  
 
-The Sun position widgets show the time of the next sunrise, sunset for the center of the map. When tapped, they can also display the time remaining until the expected sunset or sunrise. In both cases, the time is based on the configured time of your device.      
+Sun position widgets show the next sunrise and sunset times for the center of the map. When tapped, they display the time remaining until the expected sunset or sunrise. In both cases, the time is based on the configured time of your device.
 
-- _"<Translate ios="true" ids="map_widget_sun_position"/>"_ - <Translate ios="true" ids="map_widget_sun_position_desc"/>
-- _"<Translate ios="true" ids="map_widget_sunrise"/>"_ - <Translate ios="true" ids="map_widget_sunrise_desc"/>
-- _"<Translate ios="true" ids="map_widget_sunset"/>"_ - <Translate ios="true" ids="map_widget_sunset_desc"/>
+- **<Translate ios="true" ids="map_widget_sun_position"/>**. <Translate ios="true" ids="map_widget_sun_position_desc"/>
+- **<Translate ios="true" ids="map_widget_sunrise"/>**. <Translate ios="true" ids="map_widget_sunrise_desc"/>
+- **<Translate ios="true" ids="map_widget_sunset"/>**. <Translate ios="true" ids="map_widget_sunset_desc"/>
 
 | | |
 |------------|------------|
@@ -332,7 +341,7 @@ The Sun position widgets show the time of the next sunrise, sunset for the cente
 | By tapping | Switch between the remaining time and the time of the next sunrise/sunset. |  
 
 
-## Radius ruler
+## Radius Ruler
 
 :::note  
 You can read a more detailed description here: **[Radius ruler and Ruler](../widgets/radius-ruler)**.  
@@ -354,15 +363,13 @@ You can read a more detailed description here: **[Radius ruler and Ruler](../wid
         <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_1.png').default} alt="Radius-ruler"/></td>
         <td><img src={require('@site/static/img/widgets/radius_ruler_widget_ios_2.png').default} alt="Radius-ruler"/></td>
     </tr>
-</table> 
-
+</table>
 
 </TabItem>
 
 </Tabs>
 
 The Radius Ruler widget shows the distance between your location and the center point of the Radius Ruler. The radius of the first circle is equal to [the map scale](../widgets/radius-ruler.md#ruler).
-
 
 | | |
 |------------|------------|
@@ -378,13 +385,13 @@ The Radius Ruler widget shows the distance between your location and the center 
 
 <TabItem value="android" label="Android">
 
-![Speedometer](@site/static/img/widgets/speedometer_1_andr.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_andr.png) 
+![Speedometer](@site/static/img/widgets/speedometer_1_andr.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Speedometer](@site/static/img/widgets/speedometer_1_ios.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_ios.png) 
+![Speedometer](@site/static/img/widgets/speedometer_1_ios.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_ios.png)
 
 </TabItem>
 
@@ -400,7 +407,7 @@ The Radius Ruler widget shows the distance between your location and the center 
         <td><img src={require('@site/static/img/widgets/speedometer_4_andr.png').default} alt="Speedometer"/></td>
         <td><img src={require('@site/static/img/widgets/speedometer_4_ios.png').default} alt="Speedometer"/></td>
     </tr>
-</table> 
+</table>
 
 | | |
 |------------|------------|
@@ -409,11 +416,12 @@ The Radius Ruler widget shows the distance between your location and the center 
 | Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,default_speed_system"/>*  |
 
 
-## Plugins widgets
+## Plugin Widgets
 
 These widgets are enabled and work in combination with their corresponding plugins.
 
-### Trip recording widgets  
+
+### Trip Recording Widgets  
 
 :::note  
 You can read a more detailed description here: **[<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md)**.  
@@ -423,19 +431,19 @@ You can read a more detailed description here: **[<Translate android="true" ids=
 
 <TabItem value="android" label="Android">  
 
-![trip_recording_widget](@site/static/img/widgets/wid_trip_rec.png) 
+![trip_recording_widget](@site/static/img/widgets/wid_trip_rec.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">   
+<TabItem value="ios" label="iOS">
 
 ![trip_recording_widget](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
 
 </TabItem>
 
-</Tabs>   
+</Tabs>
 
-Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#widgets). You can use widgets to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill*.    
+Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#widgets). You can use widgets to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill*.
 
 | | |
 |------------|------------|
@@ -444,23 +452,23 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 | By tapping | Starts/Stop track recording or View the graph. |
 
 
-### External sensors widgets
+### External Sensors Widgets
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
-![External sensor widgets Android](@site/static/img/widgets/external-sensors-widgets_1.png) 
+![External sensor widgets Android](@site/static/img/widgets/external-sensors-widgets_1.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">   
+<TabItem value="ios" label="iOS">
 
 ![trip_recording_widget](@site/static/img/widgets/external-sensors-widgets_ios.png)
 
 </TabItem>
 
-</Tabs>   
+</Tabs>
 
 Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widgets). You can use them to view brief information from your external sensors, such as: **<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android only*), **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, <Translate android="true" ids="map_widget_ant_bicycle_dist"/>** and **<Translate android="true" ids="external_device_characteristic_temperature"/>**.  
 
@@ -475,10 +483,10 @@ Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widget
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="external_sensor_widgets"/>* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="external_sensors_plugin_name"/>* |
-| By tapping | No changes |   
+| By tapping | No changes |
 
 
-### Weather widgets
+### Weather Widgets
 
 :::note  
 Weather widgets can only be added to the map screen when the OsmAnd [**Weather plugin**](../plugins/weather.md) is enabled.  
@@ -488,7 +496,7 @@ Weather widgets can only be added to the map screen when the OsmAnd [**Weather p
 
 <TabItem value="android" label="Android">
 
-![Weather widget Android](@site/static/img/widgets/weather_widgets_andr.png) 
+![Weather widget Android](@site/static/img/widgets/weather_widgets_andr.png)
 
 </TabItem>
 
@@ -498,10 +506,9 @@ Weather widgets can only be added to the map screen when the OsmAnd [**Weather p
 
 </TabItem>
 
-
 </Tabs>  
 
-Weather widgets display current weather information for a central point on the map. They are automatically enabled on the screen when viewed with the plugin (*Menu → Weather*), and you can choose which ones to put on the home screen for everyday use (*Menu → Customize Screen*). You can read more about this in the article [Weather plugin](../plugins/weather.md).   
+Weather widgets display current weather information for a central point on the map. They are automatically enabled on the screen when viewed with the plugin (*Menu → Weather*), and you can choose which ones to put on the home screen for everyday use (*Menu → Customize Screen*). You can read more about this in the article [Weather plugin](../plugins/weather.md).
 
 - **Temperature**. <Translate android="true" ids="temperature_widget_desc"/>
 - **Air Pressure**. <Translate android="true" ids="air_pressure_widget_desc"/>
@@ -517,7 +524,7 @@ Weather widgets display current weather information for a central point on the m
 | Format | *Menu → Plugins → Weather → Settings* or *Menu → Settings → App Profile → Weather* |  
 
 
-### Parking widget
+### Parking Widget
 
 :::note  
 Parking widget can be added to the map screen only when OsmAnd [**Parking position plugin**](../plugins/parking.md) is enabled.  
@@ -525,7 +532,7 @@ Parking widget can be added to the map screen only when OsmAnd [**Parking positi
 
 ![Parking widget](@site/static/img/plugins/parking/parking_widget.png)  
 
-This is a Parking plugin widget that shows the distance from the center of the screen to the parking location.    
+This is a Parking plugin widget that shows the distance from the center of the screen to the parking location.
 
 | | |
 |------------|------------|
@@ -535,13 +542,13 @@ This is a Parking plugin widget that shows the distance from the center of the s
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
-### Mapillary widget
+### Mapillary Widget
 
 :::note  
 Mapillary widget can be added to the map screen only when OsmAnd [**Mapillary plugin**](../plugins/mapillary.md) is enabled.  
 :::  
 
-![Mapillary widget](@site/static/img/widgets/mapillary_widget.png)   
+![Mapillary widget](@site/static/img/widgets/mapillary_widget.png)
 
 This is a Mapillary plugin widget that provides quick access to Mapillary app to add [*Street-Level imagery*](../plugins/mapillary.md#enable-layer).  
 
@@ -552,21 +559,21 @@ This is a Mapillary plugin widget that provides quick access to Mapillary app to
 | By tapping | Opens [Mapillary](https://www.mapillary.com/) application. |
 
 
-### Audio/video notes widget
+### Audio/Video Notes Widget
 
 <InfoAndroidOnly />
 
 :::note  
-Widgets can only be added to the map screen when the OsmAnd [**Audio/video notes plugin**](../plugins/audio-video-notes.md) is enabled. 
-:::   
+Widgets can only be added to the map screen when the OsmAnd [**Audio/video notes plugin**](../plugins/audio-video-notes.md) is enabled.
+:::
 
 ![Audio-video notes widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
 These are Audio/video notes plugin widgets that provide quick access to start/stop taking audio, video, or photo notes.  
 
-You can configure which action is selected by default:    
+You can configure which action is selected by default:
 
-- *On request*. Default state. Every time the action selection dialog is displayed. 
+- *On request*. Default state. Every time the action selection dialog is displayed.
 - *Record audio* - records an audio note.
 - *Record video* - allows you to record a video.
 - *Take a photo* - allows you to take a photo.  
@@ -577,7 +584,7 @@ You can configure which action is selected by default:
 | By tapping | Start / stops taking a note  |
 
 
-### Tracker widget
+### Tracker Widget
 
 <InfoAndroidOnly />
 
@@ -597,7 +604,7 @@ This OsmAnd Tracker plugin widget is used to quickly access the OsmAnd Tracker a
 | By tapping | Opens OsmAnd Online GPS Tracker app. |
 
 
-### Developer widgets
+### Developer Widgets
 
 :::note  
 Developer widgets can be added to the map screen only when [**OsmAnd development plugin**](../plugins/development.md) is enabled.  
@@ -606,7 +613,7 @@ Developer widgets can be added to the map screen only when [**OsmAnd development
 Developer widgets are used to get information about map [rendering speed](../plugins/development.md#fps-widget) and virtual camera position: [zoom level](../plugins/development.md#zoom-level), [distance](../plugins/development.md#distance-to-target) to map center, camera [elevation](../plugins/development.md#camera-elevation) and [incline](../plugins/development.md#camera-tilt).  
 
 
-#### FPS widget
+#### FPS Widget
 
 The [Map rendering FPS](../plugins/development.md#fps-widget) shows how fast the map and its elements are rendered and updated. The higher the rendering speed, the higher the quantitative values in frames per second.  
 
@@ -633,14 +640,15 @@ The [Map rendering FPS](../plugins/development.md#fps-widget) shows how fast the
 | By tapping | No changes |
 
 
-#### Camera widgets  
+#### Camera Widgets  
 
 Camera widgets can be used to compare the OsmAnd map and the earth's surface.  
-There are four Camera widgets:  
+There are four Camera widgets:
+
 - [Camera tilt](../plugins/development.md#camera-tilt). <Translate android="true" ids="map_widget_camera_tilt_desc"/>
 - [Camera Elevation](../plugins/development.md#camera-elevation). <Translate android="true" ids="map_widget_camera_distance_desc"/>
 - [Zoom level](../plugins/development.md#zoom-level). <Translate android="true" ids="map_widget_zoom_level_desc"/>
-- [Distance from camera to target](../plugins/development.md#distance-to-target). <Translate android="true" ids="map_widget_target_distance_desc"/> 
+- [Distance from camera to target](../plugins/development.md#distance-to-target). <Translate android="true" ids="map_widget_target_distance_desc"/>
 
 <Tabs groupId="operating-systems">
 
@@ -662,7 +670,7 @@ There are four Camera widgets:
 |------------|------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="developer_widgets"/>* |
 |   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="developer_widgets"/>* |
-| By tapping | No changes | 
+| By tapping | No changes |
 
 
 #### Available RAM
@@ -696,4 +704,4 @@ To use this widget, make sure you have the **OsmAnd development plugin** enabled
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *This article was last updated in June 2024*
+> *This article was last updated in August 2024*
