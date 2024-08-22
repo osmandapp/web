@@ -104,8 +104,8 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
                 <div>
                     <MenuItem
                         id={id}
-                        onMouseEnter={() => handleMouseEnter()}
-                        onMouseLeave={() => handleMouseLeave()}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
                         className={`${styles.searchItem} ${isHovered ? styles.searchHoverItem : ''}`}
                         onClick={() => {
                             if (item.locDist) {

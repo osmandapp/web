@@ -83,7 +83,7 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
             iconSize: [DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE],
             map,
             ctx,
-            pointerStyle: `${styles.hoverPointer}`,
+            pointerStyle: styles.hoverPointer,
         });
     });
 
@@ -95,7 +95,7 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
             latlng: marker._latlng,
             map,
             ctx,
-            pointerStyle: `${styles.hoverPointer}`,
+            pointerStyle: styles.hoverPointer,
         });
     });
 

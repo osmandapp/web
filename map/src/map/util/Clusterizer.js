@@ -126,12 +126,11 @@ export function createHoverMarker({
     let tooltipRef = ctx.searchTooltipRef;
     let pointerRef = ctx.searchPointerRef;
 
-    map.on('zoomend', () => {
+    const onZoomEnd = () => {
         removeTooltip(map, tooltipRef);
-    });
+    };
 
-    // Add mouseover event to highlight the marker
-    marker.on('mouseover', () => {
+    const onMouseOver = () => {
         removeTooltip(map, tooltipRef);
         if (setSelectedId) {
             setSelectedId({ id: marker.options.id });
@@ -155,10 +154,9 @@ export function createHoverMarker({
                 .setLatLng(latlng);
             map.addLayer(tooltipRef.current);
         }
-    });
+    };
 
-    // Add mouseout event to reset marker style and remove pointer
-    marker.on('mouseout', (event) => {
+    const onMouseOut = (event) => {
         if (event.originalEvent) {
             removeTooltip(map, tooltipRef);
             if (setSelectedId) {
@@ -177,10 +175,9 @@ export function createHoverMarker({
             }
             pointerRef.current = null;
         }
-    });
+    };
 
-    // Add custom event to handle marker selection
-    marker.on('selectMarker', () => {
+    const onSelectMarker = () => {
         removeTooltip(map, tooltipRef);
         if (pointerRef.current) {
             if (map?.hasLayer(pointerRef.current)) {
@@ -209,7 +206,19 @@ export function createHoverMarker({
             });
         }
         pointerRef.current = newMarker.addTo(map);
-    });
+    };
+
+    map.on('zoomend', onZoomEnd);
+    marker.on('mouseover', onMouseOver);
+    marker.on('mouseout', onMouseOut);
+    marker.on('selectMarker', onSelectMarker);
+
+    return () => {
+        map.off('zoomend', onZoomEnd);
+        marker.off('mouseover', onMouseOver);
+        marker.off('mouseout', onMouseOut);
+        marker.off('selectMarker', onSelectMarker);
+    };
 }
 
 export function removeTooltip(map, tooltipRef) {
