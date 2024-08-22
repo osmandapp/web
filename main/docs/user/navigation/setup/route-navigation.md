@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-The *route navigation* option provides simple step-by-step instructions to help you reach your destination easily. You can use this navigation with different [routing types](./../routing/routing-types.md) (or profiles), no matter if you [drive](./../routing/car-based-routing.md), ride a [horse](./../routing/horse-routing.md), [ski](./../routing/ski-routing.md), or [walk](./../routing/pedestrian-routing.md).
+The *route navigation* option provides simple step-by-step instructions to help you reach your destination easily. You can use this navigation with different [routing types](./../routing/osmand-routing.md#routing-types) (or profiles), no matter if you [drive](./../routing/car-based-routing.md), ride a [horse](./../routing/horse-routing.md), [ski](./../routing/ski-routing.md), or [walk](./../routing/pedestrian-routing.md).
 
 :::tip
 - *Offline navigation* is enabled in OsmAnd by default. However, you can also use [*online routing engines*](./../routing/online-routing.md).
@@ -51,7 +51,7 @@ To use the offline navigation, you first need to [download maps](../../start-wit
 2. Go to the [*Navigation menu*](#navigation-menu):
     - Specify the [destination point](#set-target-point).
     - Wait until the route is calculated. After that you will be able to obtain additional information about your route in *[Details section](./route-details.md#overview)*.
-    - You can switch between different [routing types](./../routing/routing-types.md) (profiles) to get the best result.
+    - You can switch between different [routing types](./../routing/osmand-routing.md#routing-types) (profiles) to get the best result.
     - Add [intermediate destinations](#intermediate-destinations) (optional).
     - You can also change the departure point from the [current location](../../map/interact-with-map#my-location--zoom) to the required one.
 3. Additional [*Navigation settings*](#settings) can be used depending on your purposes (you can configure which roads to avoid or prefer, save fuel or choose the fastest route, etc).
