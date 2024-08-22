@@ -244,7 +244,7 @@ After one *Marker* is been [passed](#mark-as-passed), the next one in the [list]
 - [About Map markers](../../personal/markers.md).
 - [Marker widget](../../widgets/markers.md).  
 __
-- [Route parameters](../routing/routing-types.md)
+- [Route parameters](../routing/osmand-routing.md#routing-types)
 - [Route preparation](./route-navigation.md)
 - [Route details](./route-details.md)
 - [Navigation by track](./gpx-navigation.md)
