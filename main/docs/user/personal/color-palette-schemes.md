@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title:  Color Palette Schemes
+title:  Color Schemes
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,15 +15,15 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-<InfoIncompleteArticle/>
-
 :::tip NOTE
-Some color scheme features are paid for.  
+
+Сolor schemes are used as part of paid [Maps+](../purchases/index.md) and Pro <ProFeature /> features .  
+
 :::
 
 ## Overview
 
-Color schemes help visualize data, making it easier to understand. This means you can see data on a map using various colors that are easy to interpret.  
+Color schemes are used in variety areas of application such as **Route colorization**, **Map terrain**, **Weather map**. Represented as a separate entity, it could be exported, imported and edited, so you could change a color scheme and change data visualization on the map.
 
 Color palette data is available in the [*Maps & Resources*](../personal/maps.md#local) menu.
 
@@ -47,7 +47,7 @@ Color palette data is available in the [*Maps & Resources*](../personal/maps.md#
 
 </Tabs>
 
-## Schemes Types 
+## Scheme Types 
 
 <Tabs groupId="operating-systems">
 
@@ -67,22 +67,21 @@ Color palette data is available in the [*Maps & Resources*](../personal/maps.md#
 
 ### Terrain
 
-- For [terrain](../plugins/contour-lines.md#hillshade-slope-and-altitude-layers): *Hillshade, Slope*, and *Altitude*.
+Terrain files (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) define 3 [terrain visualizations](../plugins/contour-lines.md#hillshade-slope-and-altitude-layers): *Hillshade, Slope*, and *Altitude*. For each type you can have multiple palettes, for example *avalanche slope* is provided by default.
 
 ### Routes
 
-GPX Tracks, Routes:
-
-- For [routes](../navigation/guidance/map-during-navigation.md#color): *Speed, Slope,* and *Elevation (Altitude)*.
+Line gradient visualizations uses palette files (`route_<type_name>_<palette_name>.txt`) to color GPX tracks and Routes:
+- For [Routes](../navigation/guidance/map-during-navigation.md#color): *Speed, Slope,* and *Elevation (Altitude)*.
 - For [GPX Tracks](../map/tracks/index.md#color): *Speed, Slope,* and *Elevation (Altitude), or info from External sensors*.
 
 ### Weather
 
-- For [weather](../plugins/weather.md#weather-layers): *All weather layers*.
+Weather palette files (`weather_<type_name>.txt`) defines visualization for [weather layers](../plugins/weather.md#weather-layers).
 
 ### Colors 
 
-- Color palette simply used for predefined colors to assign to Favorites, Tracks
+Color palette (`user_palette_default.txt`) is simply used for predefined colors to assign to [Favorites](./favorites.md), [Tracks](./tracks/).
 
 
 ## Palette Legend 
@@ -101,30 +100,17 @@ The legend provides an easy way to view and understand the different markings on
 
 ## Edit Palette file
 
-<!--
+You can edit palettes to personalize look for maps, routes. Own color palette files can be added to OsmAnd using the [import/export tool](./import-export.md).
 
-*Terrain → Modify → All colors → &#8942; → Edit*
+- *Routes*: `route_speed_<type_name>.txt`, `route_slope_<type_name>.txt`, `route_elevation_<type_name>.txt`.
+- *Terrain*: `height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`.
+- *Weather*: `weather_<type_name>.txt`.
+- *Color*: `user_palette_default.txt`.
 
-<table class="image">
-    <tr>
-        <td><img src={require('@site/blog/2024-07-26-android-4-8/img/palette_editor.png').default} alt="AA"/></td>
-        <td><img src={require('@site/blog/2024-07-26-android-4-8/img/palette_editor_1.png').default} alt="AA"/></td>
-    </tr>
-</table>  
-
--->
-
-You can create and edit color palettes to personalize your maps, by customizing colors according to personal preferences or the requirements of a particular route. Own color palette files can be added to OsmAnd using the *import/export tool*. To do this, create a TXT file with the required name using the txt editor:
-
-- *Routes*: `route_speed_name.txt`, `route_slope_default.txt`, `route_elevation_default.txt`.
-- *Terrain*: `height_altitude_name.txt`, `hillshade_color_name.txt`, `slope_name.txt`.
-- *Weather*: `weather_name.txt`.
-
-For example:
+Each line represents a numerica value (for color palette, it's an index) and rgba color. For example:
 
 ```
-TXT file named *height_altitude_0-200.txt*
-
+# TXT file named *height_altitude_0-200.txt*
 # 0 - 90 degree RGBA
 0,46,185,0,191
 # yellow 

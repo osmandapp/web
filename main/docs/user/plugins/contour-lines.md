@@ -14,12 +14,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoIncompleteArticle/>
 
 ## Overview
 
 :::tip NOTE
-The Topography plugin is a paid feature of the OsmAnd app.  
+The Topography plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.  
 :::
 
 Topography is an important feature of cartography that provides information to visually assess the terrain's relief. 
