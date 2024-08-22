@@ -267,7 +267,7 @@ The Turn Arrows setting allows you to select whether or not turn arrows are disp
 
 ## Related Articles
 
-- [Route parameters](../routing/routing-types.md)
+- [Route parameters](../routing/osmand-routing.md#routing-types)
 - [Route preparation](../setup/route-navigation.md)
 - [Navigation by track](../setup/gpx-navigation.md)
 - [Navigation by markers](../setup/markers-navigation.md)

@@ -334,7 +334,7 @@ There are no navigation settings in *Browse map* profile.
 
 Please read about route parameters for the corresponding navigation type.
 
-How to configure [routing type](../routing/routing-types.md) and [route parameters](../guidance/navigation-settings.md#route-parameters) you can read in the [Navigation settings article](../guidance/navigation-settings.md) or in articles about specific types of routing in the [Route Parameters section](../routing/routing-types.md).  
+How to configure [routing type](../routing/osmand-routing.md#routing-types) and [route parameters](../guidance/navigation-settings.md#route-parameters) you can read in the [Navigation settings article](../guidance/navigation-settings.md) or in articles about specific types of routing in the [Route Parameters section](../routing/osmand-routing.md#routing-types).  
 
 
 ### Simulated Navigation
@@ -481,7 +481,7 @@ Unfortunately, once the necessary maps are loaded, you must to enter the start a
 
 ## Related Articles
 
-- [Route parameters](../routing/routing-types.md)
+- [Route parameters](../routing/osmand-routing.md#routing-types)
 - [Route details](./route-details.md)
 - [Navigation by track](./gpx-navigation.md)
 - [Navigation by markers](./markers-navigation.md)

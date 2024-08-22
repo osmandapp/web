@@ -46,7 +46,7 @@ There are three ways to access the *Route Details menu*.
 2. Tap the *Navigation* icon on the map screen, set the route, and tap the *Details* button.
 3. Go to the *My Places* menu, tap any available track in the list *Menu → My Places → Tracks*, select the *Navigation* icon in the track context menu in the *Overview* and tap *Details*.  
 
-Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../../navigation/routing/routing-types.md), some route details may not be displayed. In addition, the route details are highly dependent on the *OpenStreetMap data coverage*.
+Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../../navigation/routing/osmand-routing.md#routing-types), some route details may not be displayed. In addition, the route details are highly dependent on the *OpenStreetMap data coverage*.
 
 
 ## Distance / Time / CO2
@@ -326,7 +326,7 @@ The Route Details navigation section has options that allow you to perform certa
 
 ## Related Articles
 
-- [Route parameters](../routing/routing-types.md)
+- [Route parameters](../routing/osmand-routing.md#routing-types)
 - [Route preparation](./route-navigation.md)
 - [Navigation by track](./gpx-navigation.md)
 - [Navigation by markers](./markers-navigation.md)
