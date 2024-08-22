@@ -13,14 +13,14 @@ import Translate from '@site/src/components/Translate.js';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+
+## Overview
+
 :::tip NOTE
 The Nautical map view plugin is a paid feature of the OsmAnd app.  
 :::
 
 Nautical map view is a detailed graphic representation of oceans, seas, coastal areas, and rivers that helps you navigate the water and know popular routes, obstacles in your waterway, nearest harbors, anchorages, and other important landmarks.  
-
-
-## Overview
 
 Nautical Chart is a highly detailed topographical map to help skippers navigate a vessel on a selected course on the water. It is similar to a road map for those traveling by car. Often colled a *'Chart'* for historical reasons, it is a detailed graphic representation of the oceans, seas, coastal areas and rivers.  
 
