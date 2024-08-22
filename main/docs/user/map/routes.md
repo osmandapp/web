@@ -14,113 +14,77 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoIncompleteArticle/>
 
 ## Overview
 
-OsmAnd has many powerful features for displaying different [routes](#type-of-routes) on the map. Routes can be built as part of navigation, created with [Plan Route](#plan-a-route), imported as [GPX tracks](#save-as-a-track), recorded with the [Trip Recording plugin](../plugins/trip-recording.md) or viewed and selected from OpenStreetMap data.
-
-
-## Route Settings
-
-A route is a predefined path, which is a sequence of roads and turns to be followed to reach a certain destination point. In the OsmAnd app, you can mark routes on the map related to different outdoor activities using data from [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). They typically represent popular local routes and could be displayed in many ways (shields, color, thickness, pattern). To use these types of routes you will need to enable them on the map.
-
-
-1. You can **[select one or more layers of routes at a time](../map/tracks/index.md#routes-on-the-map)**. It is important to note that if different routes intersect at the same point, only the color of the top layer will be visible. Route designations for OsmAnd Map Style can be found in the [Map Legend](../map-legend/osmand.md#routes) article.
-
-2. You can **use Custom buttons** to customize [Quick Actions](../map/tracks/index.md#quick-actions-for-routes) to switch between enabling or disabling the display of selected route types.
-
-3. Tapping **the shield icon with a route number or route flag** on the map will open a context menu with a list of available options.  
-    - In some cases, you may find several routes intersecting at a certain location. When you select one of the routes, the *[Track context menu](../map/tracks/track-context-menu.md)* appears. In this menu, you can [save the selected route](../map/routes.md#configure-routes-on-the-map) to the device memory in GPX format, which will allow you to use it for [GPX navigation](../navigation/setup/gpx-navigation.md) in the future.
+OsmAnd has many powerful features for displaying different [routes](#type-of-routes) on the map. By default these routes are part of [vector maps](./vector-maps.md#routes) (OpenStreetMap data), however similar functionality is provided by [tracks](./tracks/index.md) which could be created with [Plan Route](#plan-a-route), imported as [GPX tracks](#save-as-a-track), recorded with the [Trip Recording plugin](../plugins/trip-recording.md).
 
 
 ## Type of Routes
 
-<Tabs groupId="operating-systems">
+Routes represent different outdoor activities using data from [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Tapping **the shield icon with a route number or route flag** on the map will open a context menu which provides additional information about the route and allows to use it as part of navigation. 
 
-<TabItem value="android" label="Android">  
-
-*<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
-
-![Configure Map Routes section](@site/static/img/map/settings_routes_andr_1.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-*<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
-
-![Configure Map Routes section](@site/static/img/map/settings_routes_ios_1.png)
-
-</TabItem>
-
-</Tabs>
-
-OsmAnd can highlight routes provided by OpenStreetMap. Some routes have **additional settings** with which you can select the relevant coloring type for displaying them on the map.  
-
-Additional settings are available next to the route name in the&nbsp;  "**...|**"  &nbsp;menu. By default, if you do not select anything in the [Configure Map](../map/configure-map-menu.md) menu, the routes of the first type in the list will be displayed. But if you have made a selection, it is saved by the application and will be used for the current profile every time you enable the routes.
-
+You can configure filtering of some route types in [Configure Map](../map/configure-map-menu.md) menu.
 
 ### Cycle routes
 
-***<Translate android="true" ids="layer_route"/>***.  
-Colors routes according to their individual local color (if available in OpenStreetMap) and the tourist shield symbol. You can find more information in the [Map Legend](../map-legend/index.md) article.  
+[Cycle routes](https://wiki.openstreetmap.org/wiki/Cycle_routes) are present as three types: *local* (lcn), *regional* (rcn), *national* (ncn), *international* (icn). Also cycle routes could be part of [Node networks](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). You can choose how to assign color to the route segments:
+
+- ***<Translate android="true" ids="layer_route"/>***.  
 ![Map routes - cycle routes](@site/static/img/map/map-routes-cycle-routes.png)
 
-***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  
-Colors routes according to the type of node network (international, regional, or local).  
+- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  
 ![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
+
+You can find more information in the [Map Legend](../map-legend/index.md) article.  
 
 ### Mountain bike routes
 
-***<Translate android="true" ids="mtb_scale"/>***.  
-Shows trails according to MTB scale. You can find more information in the [Map Legend](../map-legend/index.md) article.  
+MTB routes have specific mapping in [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Tag:route%3Dmtb) and could be selected separately from cycling routes.
+
+- ***<Translate android="true" ids="mtb_scale"/>***.  Shows trails according to MTB scale. You can find more information in the [Map Legend](../map-legend/index.md) article.  
 ![Map routes - mtb trails](@site/static/img/map/map-routes-mtb-trails.png)  
 
-***<Translate android="true" ids="mtb_imba"/>***.  
-Show MTB trails accorgind International Mountain Bicycling Association [MTB IMBA](https://www.imba.com/). More information in the article [Map legend](../map-legend/index.md).  
+- ***<Translate android="true" ids="mtb_imba"/>***.  Show MTB trails accorgind International Mountain Bicycling Association [MTB IMBA](https://www.imba.com/). More information in the article [Map legend](../map-legend/index.md).  
 ![Map routes - mtb trails](@site/static/img/map/map-routes-mtb_imba-trails.png)
 
-### Hiking routes
+### Hiking / Walking routes
 
-***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  
-Colors routes according to their individual [local color](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) (if available in OpenStreetMap) and the tourist shield symbol.  
+[Hinking routes](https://wiki.openstreetmap.org/wiki/Walking_Routes) are present as three types: *local* (lwn), *regional* (rwn), *national* (nwn), *international* (iwn). Also walking routes could be part of [Node networks](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd doesn't separate walking and hiking routes and combines them into 1 group. You can choose how to assign color to the route segments:
+
+- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  Colors routes according to their individual [local color](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) (if available in OpenStreetMap) and the tourist shield symbol.  
 ![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)
 
-***<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_name"/>***.  
-Colors by [network affiliation](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol).  
+- ***<Translate android="true" ids="rendering_value_walkingRoutesScopeOSMC_name"/>***.  Colors by [network affiliation](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol).  
 ![Map routes - hiking network](@site/static/img/map/map-routes-hiking-network.png)
 
-***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  
-Colors routes according to the type of [node network](https://wiki.openstreetmap.org/wiki/Node_Networks) (international, regional, or local).  
+- ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  Colors routes according to the type of [node network](https://wiki.openstreetmap.org/wiki/Node_Networks) (international, regional, or local).  
 ![Map routes - hiking node networks](@site/static/img/map/map-routes-hiking-node-networks.png)
 
 ### Hiking segments (Difficulty classification)
 
-Determines the difficulty of hiking trails. Italian and Swiss classifications. Has a specific list of equipment requirements.  
-
-Shows classified hiking trails in mountainous areas based on the difficulty that can be expected for color.  
+Some road segments could be part of many routes but they could be individually colored to represent difficulty for the segment in mountainous areas. Currently OsmAnd supports Italian and Swiss classifications, each of them has a specific list of equipment requirements to access this segment.  
 
 1. [*SAC scale*](https://wiki.openstreetmap.org/wiki/Key:sac_scale)
 2. [*CAI scale*](https://wiki.openstreetmap.org/wiki/Proposal:Cai_scale)  
 
 ![Map routes - alpine hiking](@site/static/img/map/map-routes-alpine-hiking.png)
 
-### Ski slopes
+### Ski routes
 
-Shows ski trail routes highlighted in specific colors. This setting is provided by the [*Winter and Ski*](../map/vector-maps.md#winter-and-ski) map style.  
+Ski routes are a specific group of [routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dski) in OpenStreetMap. Typically these routes could be used with [*Winter and Ski*](../map/vector-maps.md#winter-and-ski) map style with all visible [Pistes](https://wiki.openstreetmap.org/wiki/Pistes).  
 
 ![Map routes - ski slopes](@site/static/img/map/map-routes-ski-slopes.png)
 
 ### Horse routes
 
-Shows color-indicated routes and symbols for horseback riding.  
+[Horse routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dhorse) are displayed as color-indicated routes with symbols for horseback riding.  
 
 ![Map routes - horse routes](@site/static/img/map/map-routes-horse.png)
 
 ### Whitewater sports
 
-Shows access icons, danger zones, and [whitewater tourism](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).  
+[Whitewater routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Dcanoe) are shown together with access icons, danger zones for [whitewater tourism](https://wiki.openstreetmap.org/wiki/Whitewater_sports#Whitewater_Map).  
 
 ![Map routes - whitewater sport](@site/static/img/map/map-routes-whitewater-sport.png)
 
