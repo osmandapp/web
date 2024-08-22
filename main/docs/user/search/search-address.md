@@ -50,6 +50,21 @@ Search by Address simplifies the search and navigation process, ensures accuracy
 - The address information in OsmAnd contains all [OSM tag keys](https://wiki.openstreetmap.org/w/index.php?title=Key:addr).
 
 
+Search query list:
+
+**1.** The **order** of items in the list:
+
+- **Ordered by name**. Selecting *First specify city/town/locality* (Android) or *Select city* (iOS) will display a list that starts with unnamed items, if any, then numeric names followed by the names by letters.
+- **Ascending numerical order**. In the next search list, the house numbers are displayed in ascending order, after entering the city and street.
+
+**2.** Each field in the Address Search list contains **information** such as:
+
+- An icon that identifies the type of locality.
+- Part of an address, postal number, or coordinate area.
+- Distance from your current location or from the city center.
+- Additional information, such as the city's district.
+
+
 ### Supported formats
 
 See the [Search All](./search-all.md#basic-queries) article for a list of available queries and supported search formats.
@@ -79,7 +94,7 @@ See the [Search All](./search-all.md#basic-queries) article for a list of availa
 This way of searching makes it easy to find specific locations within a selected locality, providing a convenient way to find addresses accurately and quickly. You can start searching for the needed address by determining the locality.
 
 - To do this, tap **First specify city/town/locality** (Android) or **Select city** (iOS).
-- In the list that opens, select the required locality. [Here](#search-query-list) describes the order in which search queries are displayed and what information is available about each item.
+- In the list that opens, select the required locality. [Here](#full-text-search) describes the order in which search queries are displayed and what information is available about each item.
 - On the next screen, you can either continue to refine the address or select the *Show on the map* button below the search entry field.
 - To specify your search, you can enter all or only part of the name of the city, town, or village where the address you are looking for is located. This allows you to narrow your search and get a more accurate list.
 - Tapping the last item in the address, house number, or intersection name, opens the [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object.  
