@@ -90,13 +90,13 @@ Ski routes are a specific group of [routes](https://wiki.openstreetmap.org/wiki/
 
 ### Running routes
 
-Used for named, numbered, or otherwise marked running routes used primarily for athletics. The data for these routes is taken from the [OpenStreetMap project](https://openstreetmap.org/) (tag [route=running](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning)).  
+[Running routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning) in OpenStreetMap are used for named, numbered, or otherwise marked running routes used primarily for athletics. 
 
 ![Fitness routes](@site/static/img/map/fitness_1.png)
 
 ### Fitness trails
 
-A fitness trail is a trail or path equipped with obstacles or stations along its length to exercise the human body for the purpose of improving health. The data for these routes is taken from the [OpenStreetMap project](https://openstreetmap.org/) (tag [route=fitness_trail](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail)).  
+A [fitness trail](https://wiki.openstreetmap.org/wiki/Tag:route%3Dfitness_trail) is a trail or path equipped with obstacles or stations along its length to exercise the human body for the purpose of improving health.  
 
 ![Fitness routes](@site/static/img/map/fitness_route.png)
 
@@ -104,16 +104,14 @@ A fitness trail is a trail or path equipped with obstacles or stations along its
 
 <InfoAndroidOnly />
 
-Shows previously uploaded specially configured [user routes](https://osmand.net/blog/routes#generated-travel-routes) taken from OpenStreetMap categories.  
+Travel routes is part of custom files - [Travelbook](../plan-route/travel-guides.md)  (.travel.obf). These travelbooks could be generated from [user routes](https://osmand.net/blog/routes#generated-travel-routes) or could be part of extra [Plugins](../plugins/index.md).
 
-![Travel routes](@site/static/img/map/travel_route_2.png)  
+![Travel routes](@site/static/img/map/travel_route_2.png)  ![Travel routes](@site/static/img/map/travel_routes.png)
 
-- ***Tracks***, ***Travelbooks***, and ***Points***.  
-
-![Travel routes](@site/static/img/map/travel_routes.png)
+You can configure to display specific ***Travelbooks*** or specific type of ***Tracks*** or display tracks as Points or display ***Point groups*** (for example for Wikivoyage travelbooks). Read more information about [Travel guides](../plan-route/travel-guides.md).
 
 
-## Configure Routes on the Map
+## Display Routes on the Map
 
 <Tabs groupId="operating-systems">
 
