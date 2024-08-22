@@ -1,4 +1,5 @@
 import L from 'leaflet';
+import styles from '../../menu/search/search.module.css';
 
 export const EXPLORE_BIG_ICON_SIZE = 36;
 
@@ -109,4 +110,120 @@ export function createSecondaryMarker(obj) {
         weight: 1,
         zIndex: 1000,
     });
+}
+
+export function createHoverMarker({
+    marker,
+    setSelectedId = null,
+    mainStyle = false,
+    text,
+    latlng,
+    iconSize = [10, 10],
+    map,
+    ctx,
+    pointerStyle = `${styles.wikiIconHover} ${styles.wikiIconLarge}`,
+}) {
+    let tooltipRef = ctx.searchTooltipRef;
+    let pointerRef = ctx.searchPointerRef;
+
+    const onZoomEnd = () => {
+        removeTooltip(map, tooltipRef);
+    };
+
+    const onMouseOver = () => {
+        removeTooltip(map, tooltipRef);
+        if (setSelectedId) {
+            setSelectedId({ id: marker.options.id });
+        }
+        if (!mainStyle) {
+            marker.setStyle({
+                fillColor: '#237bff',
+            });
+        }
+        if (text) {
+            const offset = mainStyle ? [5, iconSize[1] * 0.8] : [0, iconSize[1] * 0.8];
+            const title = text;
+            const shortTitle = title.length > 50 ? title.substring(0, 50) + '...' : title;
+            tooltipRef.current = L.tooltip({
+                permanent: true,
+                direction: 'bottom',
+                offset: offset,
+                className: styles.tooltip,
+            })
+                .setContent(shortTitle)
+                .setLatLng(latlng);
+            map.addLayer(tooltipRef.current);
+        }
+    };
+
+    const onMouseOut = (event) => {
+        if (event.originalEvent) {
+            removeTooltip(map, tooltipRef);
+            if (setSelectedId) {
+                setSelectedId({ id: -1 });
+            }
+            if (!mainStyle) {
+                marker.setStyle({
+                    fillColor: '#fe8800',
+                });
+            }
+        }
+        if (pointerRef?.current) {
+            if (map?.hasLayer(pointerRef.current)) {
+                removeTooltip(map, tooltipRef);
+                map.removeLayer(pointerRef.current);
+            }
+            pointerRef.current = null;
+        }
+    };
+
+    const onSelectMarker = () => {
+        removeTooltip(map, tooltipRef);
+        if (pointerRef.current) {
+            if (map?.hasLayer(pointerRef.current)) {
+                map.removeLayer(pointerRef.current);
+            }
+            pointerRef.current = null;
+        }
+        let newMarker;
+        if (mainStyle) {
+            newMarker = new L.Marker(latlng, {
+                icon: L.divIcon({
+                    className: pointerStyle,
+                    iconSize,
+                }),
+            });
+            newMarker.options.icon.options.className = pointerStyle;
+            pointerRef.current = newMarker.addTo(map);
+        } else {
+            newMarker = L.circleMarker(latlng, {
+                fillOpacity: 0.9,
+                radius: 5,
+                color: '#ffffff',
+                fillColor: '#237bff',
+                weight: 1,
+                zIndex: 1000,
+            });
+        }
+        pointerRef.current = newMarker.addTo(map);
+    };
+
+    map.on('zoomend', onZoomEnd);
+    marker.on('mouseover', onMouseOver);
+    marker.on('mouseout', onMouseOut);
+    marker.on('selectMarker', onSelectMarker);
+
+    return () => {
+        map.off('zoomend', onZoomEnd);
+        marker.off('mouseover', onMouseOver);
+        marker.off('mouseout', onMouseOut);
+        marker.off('selectMarker', onSelectMarker);
+    };
+}
+
+export function removeTooltip(map, tooltipRef) {
+    if (tooltipRef.current && map.hasLayer(tooltipRef.current)) {
+        map.removeLayer(tooltipRef.current);
+        tooltipRef.current = null;
+    }
 }

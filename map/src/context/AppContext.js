@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import useCookie from 'react-use-cookie';
 import Utils, { seleniumUpdateActivity, useMutator } from '../util/Utils';
 import TracksManager, { getGpxFiles } from '../manager/track/TracksManager';
@@ -277,6 +277,8 @@ export const AppContextProvider = (props) => {
     const [listFiles, setListFiles] = useState({});
     const [gpxFiles, mutateGpxFiles, setGpxFiles] = useMutator({});
     // search
+    const searchTooltipRef = useRef(null);
+    const searchPointerRef = useRef(null);
     const [searchQuery, setSearchQuery] = useState(null);
     const [searchResult, setSearchResult] = useState(null);
     const [processingSearch, setProcessingSearch] = useState(false);
@@ -622,6 +624,8 @@ export const AppContextProvider = (props) => {
                 setZoomToMapObj,
                 processingSearch,
                 setProcessingSearch,
+                searchTooltipRef,
+                searchPointerRef,
             }}
         >
             {props.children}

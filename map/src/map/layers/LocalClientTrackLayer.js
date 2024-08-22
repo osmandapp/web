@@ -646,7 +646,7 @@ export default function LocalClientTrackLayer() {
                 TrackLayerProvider.parsePoints({ map, ctx, points, layers, draggable: true });
             }
             if (wpts?.length > 0) {
-                TrackLayerProvider.parseWpt(wpts, layers);
+                TrackLayerProvider.parseWpt({ points: wpts, layers });
             }
             layers = createEditableLayers(layers);
             if (deleteOld) {

@@ -12,7 +12,10 @@ import 'leaflet.markercluster';
 import { useTranslation } from 'react-i18next';
 import { areSetsEqual } from '../../util/Utils';
 import { debouncer } from '../../context/TracksRoutingCache';
-import { EXPLORE_BIG_ICON_SIZE, clusterMarkers } from '../util/Clusterizer';
+import { EXPLORE_BIG_ICON_SIZE, clusterMarkers, createHoverMarker, removeTooltip } from '../util/Clusterizer';
+import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
+
+export const EXPLORE_LAYER_ID = 'explore-layer';
 
 export default function ExploreLayer() {
     const ctx = useContext(AppContext);
@@ -27,40 +30,19 @@ export default function ExploreLayer() {
 
     const { i18n } = useTranslation();
 
-    const tooltipRef = useRef(null);
     const mainIconsLayerRef = useRef(null);
     const otherIconsLayerRef = useRef(null);
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [selectedObj, setSelectedObj] = useState(null);
-    const pointerRef = useRef(null);
 
-    useEffect(() => {
-        if (ctx.selectedPoiId?.id) {
-            let foundMarker = null;
-            // Search for the marker in the main icons layer
-            mainIconsLayerRef?.current?.eachLayer((layer) => {
-                if (layer.options.id === ctx.selectedPoiId.id) {
-                    foundMarker = layer;
-                }
-            });
-            // If not found, search in the other icons layer
-            if (!foundMarker) {
-                otherIconsLayerRef?.current?.eachLayer((layer) => {
-                    if (layer.options.id === ctx.selectedPoiId.id) {
-                        foundMarker = layer;
-                    }
-                });
-            }
-            if (foundMarker) {
-                if (ctx.selectedPoiId.show) {
-                    foundMarker.fire('selectMarker'); // Show the selected marker
-                } else {
-                    foundMarker.fire('mouseout'); // Hide the marker
-                }
-            }
-        }
-    }, [ctx.selectedPoiId]);
+    useSelectedPoiMarker(
+        ctx,
+        mainIconsLayerRef.current && otherIconsLayerRef.current
+            ? [...mainIconsLayerRef.current.getLayers(), ...otherIconsLayerRef.current.getLayers()]
+            : null,
+        EXPLORE_LAYER_ID
+    );
 
     function closeModal() {
         setModalIsOpen(false);
@@ -79,7 +61,7 @@ export default function ExploreLayer() {
                 map.removeLayer(layer);
             }
         });
-        removeTooltip();
+        removeTooltip(map, ctx.searchTooltipRef);
     }
 
     useEffect(() => {
@@ -204,7 +186,7 @@ export default function ExploreLayer() {
                 ctx.setWikiPlaces(jsonData);
             }
             setLoadingContextMenu(false);
-            removeTooltip();
+            removeTooltip(map, ctx.searchTooltipRef);
         }
     }
 
@@ -423,95 +405,22 @@ export default function ExploreLayer() {
             openInfo(place);
         });
 
-        map.on('zoomend', () => {
-            removeTooltip();
-        });
-
-        // Add custom event to handle marker selection
-        marker.on('selectMarker', () => {
-            removeTooltip();
-            if (pointerRef.current) {
-                if (map?.hasLayer(pointerRef.current)) {
-                    map.removeLayer(pointerRef.current);
-                }
-                pointerRef.current = null;
-            }
-            let newMarker;
-            if (main) {
-                newMarker = new L.Marker(latlng, {
-                    icon: L.divIcon({
-                        className: `${styles.wikiIconHover} ${styles.wikiIconLarge}`,
-                        iconSize,
-                    }),
-                });
-                newMarker.options.icon.options.className = `${styles.wikiIconHover} ${styles.wikiIconLarge}`;
-                pointerRef.current = newMarker.addTo(map);
-            } else {
-                newMarker = L.circleMarker(latlng, {
-                    id: place.properties.id,
-                    fillOpacity: 0.9,
-                    radius: 5,
-                    color: '#ffffff',
-                    fillColor: '#237bff',
-                    weight: 1,
-                    zIndex: 1000,
-                });
-            }
-            pointerRef.current = newMarker.addTo(map);
-        });
-
-        // Add mouseover event to highlight the marker
-        marker.on('mouseover', () => {
-            removeTooltip();
-            ctx.setSelectedPoiId({ id: marker.options.id });
-            if (!main) {
-                marker.setStyle({
-                    fillColor: '#237bff',
-                });
-            }
+        const tooltipText = () => {
             if (place.properties.wikiTitle && place.properties.wikiTitle !== '') {
-                const offset = main ? [iconSize[1] / 10, iconSize[1] * 0.8] : [0, iconSize[1] * 0.8];
-                const title = place.properties.wikiTitle;
-                const shortTitle = title.length > 50 ? title.substring(0, 50) + '...' : title;
-
-                tooltipRef.current = L.tooltip({
-                    permanent: true,
-                    direction: 'bottom',
-                    offset: offset,
-                    className: styles.tooltip,
-                })
-                    .setContent(shortTitle)
-                    .setLatLng(latlng);
-                map.addLayer(tooltipRef.current);
+                return place.properties.wikiTitle;
             }
+        };
+
+        createHoverMarker({
+            marker,
+            setSelectedId: ctx.setSelectedPoiId,
+            mainStyle: main,
+            text: tooltipText(),
+            latlng,
+            iconSize,
+            map,
+            ctx,
         });
-
-        // Add mouseout event to reset marker style and remove pointer
-        marker.on('mouseout', (event) => {
-            if (event.originalEvent) {
-                removeTooltip();
-                ctx.setSelectedPoiId({ id: -1 });
-                if (!main) {
-                    marker.setStyle({
-                        fillColor: '#fe8800',
-                    });
-                }
-            }
-            if (pointerRef.current) {
-                if (map?.hasLayer(pointerRef.current)) {
-                    removeTooltip();
-                    map.removeLayer(pointerRef.current);
-                }
-                pointerRef.current = null;
-            }
-        });
-    }
-
-    function removeTooltip() {
-        if (tooltipRef.current && map.hasLayer(tooltipRef.current)) {
-            map.removeLayer(tooltipRef.current);
-            tooltipRef.current = null;
-        }
     }
 
     return (
