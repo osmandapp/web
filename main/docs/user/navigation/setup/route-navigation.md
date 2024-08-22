@@ -14,8 +14,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoIncompleteArticle/>
-
 ## Overview
 
 The *route navigation* option provides simple step-by-step instructions to help you reach your destination easily. You can use this navigation with different [routing types](./../routing/routing-types.md) (or profiles), no matter if you [drive](./../routing/car-based-routing.md), ride a [horse](./../routing/horse-routing.md), [ski](./../routing/ski-routing.md), or [walk](./../routing/pedestrian-routing.md).
