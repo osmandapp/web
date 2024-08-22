@@ -12,7 +12,7 @@ export default function GpxCollection({ tracks, setProcessDownload }) {
 
     useEffect(() => {
         if (tracks.length > 0) {
-            downloadObf(`OsmAndCollection.obf`).then();
+            downloadObf(`OsmAndCollection.travel.obf`).then();
         }
     }, [tracks]);
 
