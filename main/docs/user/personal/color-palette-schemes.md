@@ -41,7 +41,7 @@ Color palette data is available in the [*Maps & Resources*](../personal/maps.md#
 
 *Menu → Maps & Resources → Local → Colors*
 
-![Color palette](../../../blog/2024-06-20-ios-4-8/img/color_palette_ios.png)
+![Color palette](../../../blog/2024-08-22-ios-4-8/img/color_palette_ios.png)
 
 </TabItem>
 
