@@ -112,8 +112,8 @@ Defaults: run all tests using foreground desktop mode
 }
 
 export async function prepareDriver() {
-    const width = 1280;
-    const height = 720;
+    const width = 1920;
+    const height = 1080;
     const deviceName = 'iPad Air';
 
     const options = new Options();
