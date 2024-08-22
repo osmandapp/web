@@ -122,7 +122,7 @@ export async function prepareDriver() {
 
     mobile && options.setMobileEmulation({ deviceName });
     //headless && options.headless().windowSize({ width, height });
-    headless && options.addArguments('--headless', `--window-size=${width},${height}`);
+    headless && options.addArguments('--headless', '--disable-gpu', '--no-sandbox', `--window-size=${width},${height}`);
 
     const tryHomeBinary = process.env.HOME + '/bin/chromium';
     existsSync(tryHomeBinary) && options.setChromeBinaryPath(tryHomeBinary);
@@ -140,10 +140,6 @@ export async function prepareDriver() {
     // debug && builder.setChromeService(new ServiceBuilder().loggingTo('/tmp/log').enableVerboseLogging());
 
     driver = builder.build();
-
-    if (headless) {
-        await driver.manage().window().setRect({ width, height });
-    }
 
     await driver.manage().setTimeouts({ implicit: TIMEOUT_OPTIONAL });
 }

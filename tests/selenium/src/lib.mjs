@@ -231,6 +231,9 @@ export async function enumerateIds(match) {
         if (found && found.length > 0) {
             for (let i = 0; i < found.length; i++) {
                 const element = found[i];
+
+                await driver.executeScript('arguments[0].scrollIntoView(true);', element);
+
                 if ((await element.getCssValue('visibility')) !== 'hidden') {
                     ids.push(await element.getAttribute('id'));
                 }
