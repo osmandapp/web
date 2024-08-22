@@ -132,6 +132,9 @@ export async function prepareDriver() {
         performance: 'ALL',
     });
 
+    options.setUserPreferences({
+        'profile.default_content_setting_values.geolocation': 2, // 2 means block geolocation requests
+    });
     const builder = new Builder().forBrowser('chrome').setChromeOptions(options);
 
     // debug && builder.setChromeService(new ServiceBuilder().loggingTo('/tmp/log').enableVerboseLogging());
