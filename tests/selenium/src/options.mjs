@@ -141,12 +141,5 @@ export async function prepareDriver() {
 
     driver = builder.build();
 
-    if (headless) {
-        await driver.manage().window().setRect({ width, height });
-    }
-
     await driver.manage().setTimeouts({ implicit: TIMEOUT_OPTIONAL });
-
-    let windowSize = await driver.manage().window().getRect();
-    console.log(`Actual window size: ${windowSize.width}x${windowSize.height}`);
 }
