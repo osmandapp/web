@@ -141,5 +141,9 @@ export async function prepareDriver() {
 
     driver = builder.build();
 
+    if (headless) {
+        await driver.manage().window().setRect({ width, height });
+    }
+
     await driver.manage().setTimeouts({ implicit: TIMEOUT_OPTIONAL });
 }
