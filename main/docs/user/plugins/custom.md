@@ -271,38 +271,42 @@ You may need to read:
 ```
 </details>
 
-### Import types
+
+## Import types
 
 There are many import types for OsmAnd *items.JSON* file. All types can be found [here](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L133), and this article describes only a few of them.
 
-1. To start, you create and add your plugin to *items.JSON*. The first type of import is **"PLUGIN"**.  
+### Plugin description
+To start, you create and add your plugin to *items.JSON*. The first type of import is **"PLUGIN"**.  
    *<u>NOTE</u>*. You must create and add this line for each type **"pluginId":"test.plugin"**, where *test.plugin* is the name of your package.  
 
    ![Custom package](@site/static/img/plugins/custom/2.jpg)
 
-2. To import images of your plugin icons into OsmAnd, create a folder (in our example it is the *"res"* folder) where the image files will be stored. The name of this type is **"RESOURSES"**.  
+### Plugin images
+2To import images of your plugin icons into OsmAnd, create a folder (in our example it is the *"res"* folder) where the image files will be stored. The name of this type is **"RESOURSES"**.  
 
    ![Custom package](@site/static/img/plugins/custom/4.jpg)
 
-3. You can add any files such as *SQLite, OBF, or fonts* for download using the **"DOWNLOADS"** type. The main types of downloadable files can be found [here](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33).  
-   *<u>NOTE</u>*. The tag **"isHidden":"true"** (by default it is *false*) can hide your map data from [Maps and Resources](../personal/maps.md#local) of OsmAnd.  
 
-   ![Custom package](@site/static/img/plugins/custom/3.jpg)
-
-4. In **"scope-id"** you can add all the necessary information about your file's URL, name, description, and more.  
-
-   ![Custom package](@site/static/img/plugins/custom/5.jpg)
-
-5. Using the **"PROFILE ”** type you can add a navigation profile for your plugin. You can get all the information about your navigation profile in the exported JSON file, where it is possible to read which *items.JSON* types were added (*“QUICK_ACTIONS”, “POI_UI_FILTERS”, “MAP_SOURCES ”* or others). 
+### Profiles
+Using the **"PROFILE ”** type you can add a navigation profile for your plugin. You can get all the information about your navigation profile in the exported JSON file, where it is possible to read which *items.JSON* types were added (*“QUICK_ACTIONS”, “POI_UI_FILTERS”, “MAP_SOURCES ”* or others). 
 NOTE: Start creating a navigation profile with all parameters, for this purpose export navigation profiles, and copy necessary items from the navigation *profiles.osf* (items.JSON) file to *PLUGIN.osf* (items.JSON) file.  
 
    ![Custom package](@site/static/img/plugins/custom/6.jpg)
 
-6. In the **"SUGGESTED_DOWNLOADS"** type, you can download the maps that OsmAnd offers when importing a new plugin.  
+### Downloads
+You can add any files such as *SQLite, OBF, or fonts* for download using the **"DOWNLOADS"** type. The main types of downloadable files can be found [here](https://github.com/osmandapp/Osmand/blob/master/OsmAnd/src/net/osmand/plus/download/DownloadActivityType.java#L33).  
+   *<u>NOTE</u>*. The tag **"isHidden":"true"** (by default it is *false*) can hide your map data from [Maps and Resources](../personal/maps.md#local) of OsmAnd.  In **"scope-id"** you can add all the necessary information about your file's URL, name, description, and more.  
+
+   ![Custom package](@site/static/img/plugins/custom/3.jpg)
+
+### Suggested downloads
+In the **"SUGGESTED_DOWNLOADS"** type, you can download the maps that OsmAnd offers when importing a new plugin.  
 
    ![Custom package](@site/static/img/plugins/custom/7.jpg)
 
-7. In the **"FILE"** type you can add files from your plugin folders to OsmAnd folders, the "subtype" of which can be found [here](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L1312). In the example provided, the *routing.xml* and *rendering.xml* files have been added. You can read about how to create these files at the links [here](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) and [here](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles).  
+### Files
+ In the **"FILE"** type you can add files from your plugin folders to OsmAnd folders, the "subtype" of which can be found [here](https://github.com/osmandapp/Osmand/blob/r3.7/OsmAnd/src/net/osmand/plus/settings/backend/SettingsHelper.java#L1312). In the example provided, the *routing.xml* and *rendering.xml* files have been added. You can read about how to create these files at the links [here](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) and [here](https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles).  
 
    ![Custom package](@site/static/img/plugins/custom/8.jpg)
 
