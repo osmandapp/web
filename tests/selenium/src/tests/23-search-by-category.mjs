@@ -1,6 +1,6 @@
 import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
-import { clickBy, sendKeysBy, waitBy } from '../lib.mjs';
+import { clickBy, sendKeysBy, waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../actions/actionFinish.mjs';
 
@@ -25,6 +25,7 @@ export default async function test() {
     await sendKeysBy(By.id('se-search-input'), searchCategory);
     await clickBy(By.id('se-search-input-search'));
 
+    await waitByRemoved(By.id('se-loading-page'));
     await waitBy(By.id('se-search-result-item'));
     await clickBy(By.id(`se-search-result-${searchCategory}`));
 
@@ -37,6 +38,7 @@ export default async function test() {
     await waitBy(By.id('se-search-categories-list'));
     await clickBy(By.id(`se-search-categories-list-item-${searchCategory}`));
 
+    await waitByRemoved(By.id('se-loading-page'));
     await waitBy(By.id('se-search-results'));
     await clickBy(By.id('se-search-input-back'));
 
