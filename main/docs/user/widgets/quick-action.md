@@ -59,100 +59,33 @@ In order to use the Quick Action button you need to enable this widget first.
 
 <TabItem value="android" label="Android">
 
-![Custom button Android](@site/static/img/widgets/add_action_screen_andr.png)  
+_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → Click Delete (Bin icon on the right top corner) → Select actions_
+
+![Quick action widget_android_add](@site/static/img/widgets/quick_action_widget_andr.png)  ![Custom button Android](@site/static/img/widgets/add_action_screen_andr.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Custom button Android](@site/static/img/widgets/add_action_screen_ios.png)  
+_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → Click Edit (Pencil icon on the right top corner) → Select actions _
+
+![Quick action widget_ios_add](@site/static/img/widgets/quick_action_widget_2_ios.png) ![Custom button Android](@site/static/img/widgets/add_action_screen_ios.png) 
 
 </TabItem>
 
 </Tabs> 
 
-All actions are organized in the **Add Action** menu and grouped by type. A complete list with actions and their descriptions can be found in the [Action types](#action-types) section.
-
-#### Add Action
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-*<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> or User button* 
-
-![Quick action widget_android_add](@site/static/img/widgets/quick_action_widget_andr.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>or User button* 
-
-![Quick action widget_ios_add](@site/static/img/widgets/quick_action_widget_2_ios.png)
-
-</TabItem>
-
-</Tabs>
+All actions are organized in the **Add Action** menu and grouped by type. A complete list with actions and their descriptions can be found in the [Action types](#action-types) section. 
 
 You can assign one or more [actions](#action-types) to the quick action button. There are 2 ways to add actions.
+- **In the Configure screen**  - Select a button from the list, tap the&nbsp;  "**＋**"  &nbsp;button. You need to select the [action type](#action-types) first, and then change its name and [parameters](#actions-in-loop). 
+- **In the quick action button panel** - Tap the *Quick Action button* on the map screen. At the end of the list, on the latest screen in the panel, is the "**＋**"  &nbsp;**Add Action** box. Tap it and select an action from the [list of types](#action-types).
 
-**In the Configure screen**  
-
-- Select a button from the list.
-- Tap the&nbsp;  "**＋**"  &nbsp;button. *In Android there is an additional button -* **Add action**. 
-- You need to select the [action type](#action-types) first, and then change its name and [parameters](#actions-in-loop). 
-- Each action must have a unique name.
-
-**In the quick action button panel**  
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-![Quick action widget_android_add2](@site/static/img/widgets/quick_action_widget_android_add2.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Quick action widget_ios_add2](@site/static/img/widgets/quick_action_widget_ios_add2.png)
-
-</TabItem>
-
-</Tabs>
-
-- Tap the *Quick Action button* on the map screen.
-- At the end of the list, on the latest screen in the panel, is the "**＋**"  &nbsp;**Add Action** box.
-- Tap it and select an action from the [list of types](#action-types).
-- The action will appear at the end of the list. To change it's position, go to the [Configure screen](#change-action-parameters).
 
 :::note
-Screens 1, 2, and others are created automatically when the number of actions in the list increases to 6 items.
+- Each action must have a unique name.
+- Screens 1, 2, and others are created automatically when the number of actions in the list increases to 6 items.
 :::
-
-
-#### Edit and Remove Action
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → Click Delete (Bin icon on the right top corner) → Select actions → Delete_
-
-![Quick action widget_android_del](@site/static/img/widgets/quick_action_widget_android_del.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → Click Edit (Pencil icon on the right top corner) → Select actions → Delete_
-
-![Quick action widget_ios_del](@site/static/img/widgets/quick_action_widget_ios_del.png)
-
-</TabItem>
-
-</Tabs>
 
 
 ### Change Action Parameters
@@ -335,7 +268,7 @@ When enabled, the quick action widget is located in the lower right corner above
 
 ![External devices](@site/static/img/map/external_custom_2_andr.png)
 
-Using the Quick Action tool's functionality, you can assign required actions to the keys of your external input device. A description can be found in the [Interact with Map](../map/interact-with-map.md#custom-keys-assignment) article.
+Using the Quick Action tool's functionality, you can assign required actions to the keys of your external input device. A description can be found in the [Interact with Map](../map/interact-with-map.md#custom-input-device-type) article.
 
 
 ## Related Articles
