@@ -149,5 +149,4 @@ export async function prepareDriver() {
 
     let windowSize = await driver.manage().window().getRect();
     console.log(`Actual window size: ${windowSize.width}x${windowSize.height}`);
-
 }
