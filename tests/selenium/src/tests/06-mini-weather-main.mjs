@@ -9,9 +9,9 @@ export default async function test() {
     await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-weather'));
 
+    await waitByRemoved(By.id('se-loading-weather-data'));
     await waitBy(By.id('se-weather-menu-name'));
     await waitBy(By.id('se-weather-day-item-1'));
-    await waitByRemoved(By.id('se-loading-weather-data'));
     await waitBy(By.id('se-weather-forecast-data-Precipitation'));
     await waitBy(By.id('se-weather-info'));
 
