@@ -18,7 +18,26 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Offline OsmAnd routing is based on OpenStreetMap data and provides variety of routes for different purposes. This is a list of predefined routing types which could be extended. The navigation rules are contained in [routing.xml](../../../technical/osmand-file-formats/osmand-routing-xml.md) file and are used for offline routing. The route type changes automatically, when you change your profile.  
 
-You can also create your **[own routing.xml file](#customize-offline-routing)** and use it for navigation (only for advanced OsmAnd users).
+
+
+## Routing types
+
+The following profiles with their routing types are preset in OsmAnd: *Driving, Cycling, Walking, Truck, Motorcycle, Moped, Public transport, Boat, Aircraft, Skiing, Train, Horseback riding*. Besides these, you can create your own profiles with specific routing rules or [modify OsmAnd routing algorithm](../routing/osmand-routing.md#customize-offline-routing).  
+
+:::note  
+- [**Truck, Motorcycle, Moped, Train, Aircraft, Boat and Horseback riding**](./osmand-routing.md) profiles are switched off by default. In order to use these profiles, you need to activate them in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.  
+
+- [**Direct-to-point**](./direct-to-point-routing.md) navigation type doesn't have its own profile and can be used with any enabled one.  
+
+- OsmAnd offline routing can be **configured by modifying the [.xml file](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml)**. For more information, see the [*Customize offline routing*](../routing/osmand-routing.md#customize-offline-routing) article.
+:::
+
+| Category | Description | Note |
+|:------------|:---------------|:---------------|
+| *OsmAnd offline routing*  |  OsmAnd offline routing mechanism uses predownloaded maps as data source for route calculation. |  Navigation types: [<Translate android="true" ids="app_mode_boat"/>](./boat-navigation.md), [<Translate android="true" ids="rendering_value_bicycle_name"/>](./bicycle-based-routing.md), [<Translate android="true" ids="rendering_value_car_name"/>](./car-based-routing.md),  [<Translate android="true" ids="horseback_riding"/>](./horse-routing.md), [Moped](./moped-routing.md), [Motorcycle](./car-based-routing.md#route-parameters---motorcycle), [<Translate android="true" ids="rendering_value_pedestrian_name"/>](./pedestrian-routing.md), [<Translate android="true" ids="app_mode_public_transport"/>](./public-transport-navigation.md), [<Translate android="true" ids="routing_profile_ski"/>](./ski-routing.md), [Truck](car-based-routing#route-parameters---truck), [Train](./train-routing.md).            |
+| *Direct to point routing* |  Also uses offline maps and provides a straight line routing (or *point-to-point* navigation).  | Navigation types: *[Straight line](./straight-line-routing.md)*,  *[Direct-to-point](./direct-to-point-routing.md)*.  |
+| [*BRouter* *(offline)*](./brouter.md)  |  Offline routing provided by [BRouter app](https://brouter.de/).  | Available for **Android only**. The full description read [here](./brouter.md).   |
+| [*<Translate android="true" ids="shared_string_online"/>* (*Android*)](./online-routing.md) |  Online routing builds the route servers' resources online by the Internet connection. | Available for **Android only**. You can configure [online routing](./online-routing.md) to build a route from various online routing engines such as [Graphhopper](https://graphhopper.com/), [OSRM](http://project-osrm.org/), [Routing OSM DE](https://routing.openstreetmap.de/), Generic GPX.  |
 
 - *[Car routing (Truck, Motorcycle)](./car-based-routing.md)* - OsmAnd provides driving instructions for  drivers of Cars, Trucks and Motorcycles.  
 - *[Bicycle  routing (MTB)](./bicycle-based-routing.md)* - Bicycle routing provides navigation prompts specifically for cyclists and mtb enthusiasts. It can also be used by moped (scooter) drivers.  
@@ -33,20 +52,12 @@ You can also create your **[own routing.xml file](#customize-offline-routing)** 
 - *[Direct-to-point routing](./direct-to-point-routing.md)* - provides a straight line routing (or "point-to-point" navigation) which stays stable for whole navigation in contrast to **Straight line** routing (route recalculation is disabled).
 
 
-## Other Routing types
-
-- *[Online routing](./online-routing.md)* (**Android only**). This is a feature of OsmAnd that allows you to plan and navigate routes using online services.  
-- *[BRouter routing](./brouter.md)* (**Offline**, **Android only**). Uses BRouter app for offline routing.
-
-
 ## Customize offline routing
 
-You can modify the OsmAnd routing algorithm according to your needs. This can be done by updating the **routing.xml file**:  
+You can also create your **[own routing.xml file](#customize-offline-routing)** or modify default **routing.xml** and use it for navigation (only for advanced OsmAnd users).
 
 - Copy the [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) file to your device. Read the [Help information](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml#L25) carefully. As an example, view the [routing.xml](https://groups.google.com/g/osmand/c/JvV7p_JJvEU) file of the OsmAnd user.
-
 - After making the changes, the new *routing.xml* file can be added to OsmAnd by tapping it and selecting to open it in the OsmAnd app.
-
 - Select the modified [Navigation type](../../navigation/guidance/navigation-settings.md#navigation-type) for your profile.
 
 More information about this feature can be found in the [*Technical documentation*](../../../technical/osmand-file-formats/osmand-routing-xml.md) and on [*OsmAnd's GitHub page*](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml).  
