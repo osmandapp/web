@@ -41,7 +41,7 @@ export function findFeatureGroupById(map, id) {
 }
 
 export function getObjIdSearch(obj) {
-    return obj.properties['web_poi_id'] ?? `${obj.geometry.coordinates[1]}${obj.geometry.coordinates[0]}`;
+    return obj.properties['web_poi_id'] ?? `${obj.geometry.coordinates[1]},${obj.geometry.coordinates[0]}`;
 }
 
 export default function SearchLayer() {
