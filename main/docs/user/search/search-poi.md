@@ -52,16 +52,33 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
 
 *All POI types in OsmAnd you can find here:* [gitHub link](https://github.com/osmandapp/OsmAnd-resources/blob/dd575efb5aa4ec7e359bb50e8dc6de7c358ff258/poi/poi_types.xml).
 
-- **Point of Interest (POI) Search:**
-    - Allows users to search for nearby or specific categories of points of interest (POI) such as restaurants, hotels, gas stations, points of interest, and other.
+- **Point of Interest (POI) search:**
+    - Allows you to search for nearby or specific categories of points of interest (POI) such as restaurants, hotels, gas stations, stores, and other.
+
     - Filters and sorting results by category, distance or rating are possible.
+
     - Search results show the location of the POI, its contact information, ratings and reviews.
 
-- **To search POIs by category directly on the map**:
-    - You need to select the required categories from the [**list**](../map/point-layers-on-map.md#points-of-interest-poi) in *Configure map → Show POI overlay...* and search by icons in the expected location.  
+- **Search POIs by category directly on the map**:
+    - You need to select the required categories from the [**list**](../map/point-layers-on-map.md#points-of-interest-poi) in *Configure map → Show POI overlay...* and search by icons in the expected location.
+
     - (*Android only*) You can start searching for POIs in *Menu → Search → Categories*.
 
-**Note.** To accomplish some of these tasks (locate addresses, POI) you will need to have the offline vector map file. Initially, the search is based on data located on the map in the visible area of the device screen. If you don't find nothing, OsmAnd propose to increase search radius.  
+- **Brand search:**
+    - When entering a business venue or brand name (such as Audi, Starbucks, Aldi), the list of search results is ordered with priority by POI name and sorted by distance from the corresponding location.
+
+    - This type of search is convenient to use if a retail outlet specializes in selling goods or services of one brand or if the brand itself is better known and more recognizable than the name or category of the POI.
+
+    - To perform a search, the tag “brand” and brand names must be added to the POI description.
+
+    - Example of a car shop: *POI type* - Car dealer, *name* - Octo Automobile, [***brand*** *name*](https://wiki.openstreetmap.org/wiki/Key:brand) - Audi, BMW, Fiat, Jaguar, Land Rover.  
+
+    ![Search POI Android](@site/static/img/search/brand_search_andr.png)
+
+
+:::note
+To accomplish some of these tasks (locate addresses, POI) you will need to have the offline vector map file. Initially, the search is based on data located on the map in the visible area of the device screen. If you don't find nothing, OsmAnd propose to increase search radius.
+:::  
 
 
 ## Categories POI Search

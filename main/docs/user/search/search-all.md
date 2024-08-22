@@ -65,7 +65,8 @@ Important information:
     - Postal Code, Street, House Number.
 - Search POIs by name and by category with additional filters.
 - Search by Favorites and Waypoints.
-- Search by track.
+- Search by tracks.
+- Search by business venues and brand names.
 - Online search (Nominatim).
 - URL search (Google and OsmAnd).
 - Search History.
@@ -99,12 +100,12 @@ You can find the required location on the map from the list of points that appea
 
 - Start typing the name or address in the search bar.
 - As you type, the list displays the points closest to the query, in roughly this order:
-
     - POIs Categories
     - Favorites, POIs, and Waypoints
     - Tracks
     - Addresses
     - Maps to download
+- If you enter a brand name, the list will start with results by this name sorted by closest distance.
 
 
 ### Search on the Map
