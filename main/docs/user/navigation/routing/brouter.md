@@ -14,8 +14,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-<InfoIncompleteArticle/>
-
 > *This article was last updated in June 2024*
 
 :::caution ANDROID ONLY
