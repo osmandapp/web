@@ -190,15 +190,14 @@ In the download forecast menu you can obtain information and set parameters to k
 OsmAnd generates a new forecast every 6 hours.  
 :::
 
-## Weather Widgets
 
-The [Weather widgets](../widgets/info-widgets.md#weather-widgets) such as Temperature, Air Pressure, Wind, Cloud, and Precipitation show the current weather data for the central point on the map. Weather widgets are always displayed when the [Weather screen](#weather-forecast-screen) is on. They also can be placed on the main screen for the chosen profile. To activate Weather widgets, use the following path.
+## Weather Widgets
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-*Menu → Configure screen → Right panel / Left panel → Weather*
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="shared_string_weather"/>*
 
 ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)  
 
@@ -206,10 +205,24 @@ The [Weather widgets](../widgets/info-widgets.md#weather-widgets) such as Temper
 
 <TabItem value="ios" label="iOS">
 
-*Menu → Configure screen → Right panel / Left panel → Weather*
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="shared_string_weather"/>*
 
 ![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
 
 </TabItem>
 
 </Tabs>
+
+[Weather widgets](../widgets/info-widgets.md#weather-widgets) such as Temperature, Air Pressure, Wind, Cloud, and Precipitation show the current weather data for **central point on the map**.
+
+- Weather widgets are only displayed when the [Weather screen](#weather-forecast-screen) is turned on.
+- To activate weather widgets, select the *Configure screen* main menu item, the panel on which to place them, and the required widgets from the list.
+
+
+## Related Articles
+
+- [Interact with Map](../../user/map/interact-with-map.md)
+- [Global Settings](../../user/personal/global-settings.md)
+- [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
+
+> *This article was last updated in August 2024*
