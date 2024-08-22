@@ -14,8 +14,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoIncompleteArticle/>
-
 
 ## Overview
 
@@ -466,7 +464,7 @@ Using Map context menu, you can add a specific road to the list of non-used for 
 To delete previosly selected roads from *[Avoid roads list](../navigation/routing/osmand-routing.md#avoid-roads-menu)* tap a sign, choose *Remove* (**Android**) or *Dismiss* (**iOS**).
 
 :::note
-Avoid roads function is global and affects all *[Routing types](../navigation/routing/routing-types.md)* (except *[Online routing](../navigation/routing/online-routing.md)*).  
+Avoid roads function is global and affects all *[Routing types](../navigation/routing/osmand-routing.md#routing-types)* (except *[Online routing](../navigation/routing/online-routing.md)*).  
 :::
 
 

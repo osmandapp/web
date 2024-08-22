@@ -327,7 +327,7 @@ You can control the screen of your device to save power. This mode has two gener
 
 ## Related Articles
 
-- [Route parameters](../routing/routing-types.md)
+- [Route parameters](../routing/osmand-routing.md#routing-types)
 - [Route preparation](../setup/route-navigation.md)
 - [Navigation by track](../setup/gpx-navigation.md)
 - [Navigation by markers](../setup/markers-navigation.md)

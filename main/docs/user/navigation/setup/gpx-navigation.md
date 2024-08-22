@@ -151,7 +151,7 @@ The *Follow track* menu helps you select several advanced settings for navigatin
     - to the *<Translate android="true" ids="nearest_point"/>* on the track.
 - ***<Translate android="true" ids="nav_type_hint"/>***. You can choose to:
     - switch to a route in a [*straight line*](../routing/straight-line-routing.md),
-    - use the [*routing type*](../routing/routing-types.md) from the current profile.
+    - use the [*routing type*](../routing/osmand-routing.md#routing-types) from the current profile.
 
 
 ### Attach to the Roads
@@ -214,7 +214,7 @@ After attaching a track to roads, you get more accurate route information in the
 ### Start / Finish Point
 
 You can specify the start and finish point for a route other than the points used in the GPX file. In the [Follow track menu](#how-to-follow-the-track), you can choose whether you want to navigate from your current location to the start point or to the nearest point on the GPX track.  
-Also, you can choose [<Translate android="true" ids="nav_type_hint"/>](../routing/routing-types.md) that will be used when moving on and along the track.  
+Also, you can choose [<Translate android="true" ids="nav_type_hint"/>](../routing/osmand-routing.md#routing-types) that will be used when moving on and along the track.  
 
 ### Add Waypoints
 
@@ -250,7 +250,7 @@ During navigation, you can use various options such as zooming in or out, pannin
 
 ## Related Articles
 
-- [Route parameters](../routing/routing-types.md)
+- [Route parameters](../routing/osmand-routing.md#routing-types)
 - [Route preparation](./route-navigation.md)
 - [Route details](./route-details.md)
 - [Navigation by markers](./markers-navigation.md)
