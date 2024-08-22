@@ -66,7 +66,7 @@ The [Speedometer widget](../user/navigation/car-play.md#speedometer) has also be
 
 ## Quick Actions Tool Update
 
-![action](../../blog/2024-08-13-ios-4-8/img/add_action.png) ![action](../../blog/2024-08-13-ios-4-8/img/add_action_1.png)
+![action](../../blog/2024-08-22-ios-4-8/img/add_action.png) ![action](../../blog/2024-08-22-ios-4-8/img/add_action_1.png)
 
 The updated **Add Action** screen makes it easier to customize and add [*Quick actions*](../user/widgets/quick-action.md), improving access to important features. You can now find groups of actions, use the search function, and apply other actions to customize the *Quick Actions tool*, contributing to a better user experience.
 
@@ -75,14 +75,14 @@ The updated **Add Action** screen makes it easier to customize and add [*Quick a
 
 *Menu → Configure screen → Buttons → Custom buttons → + → Add button*  
 
-![Custom button](../../blog/2024-08-13-ios-4-8/img/custom_button.png)  ![Custom button](../../blog/2024-08-13-ios-4-8/img/custom_button_1.png)
+![Custom button](../../blog/2024-08-22-ios-4-8/img/custom_button.png)  ![Custom button](../../blog/2024-08-22-ios-4-8/img/custom_button_1.png)
 
 In this update, we have introduced **Custom buttons** in *Configure screen*, a unique type of [Quick action](../user/widgets/quick-action.md#custom-buttons) tool. Now users can create custom action buttons for their device screen.
 
 
 ## 3D Track Improvements
 
-![3D track](../../blog/2024-08-13-ios-4-8/img/3d_track.png)
+![3D track](../../blog/2024-08-22-ios-4-8/img/3d_track.png)
 
 We have improved the [appearance of the 3D track](../user/map/tracks/index.md#3d-track) and added more options for wall colors. Now you can customize wall colors based on _Altitude, Slope, Speed, Heart Rate, Bicycle Cadence, Bicycle Power_, or *Temperature*.
 
@@ -91,21 +91,21 @@ We have improved the [appearance of the 3D track](../user/map/tracks/index.md#3d
 
 *Menu → My Places → Tracks → &#8230; → Select*  
 
-![Multi selection on My Tracks](../../blog/2024-08-13-ios-4-8/img/multi_selection.png) ![Multi selection on My Tracks](../../blog/2024-08-13-ios-4-8/img/multi_selection_1.png)
+![Multi selection on My Tracks](../../blog/2024-08-22-ios-4-8/img/multi_selection.png) ![Multi selection on My Tracks](../../blog/2024-08-22-ios-4-8/img/multi_selection_1.png)
 
 [This menu item](https://osmand.net/docs/user/personal/tracks/manage-tracks#three-dot-menu) allows you [to select the folders and routes](https://osmand.net/docs/user/personal/tracks/manage-tracks#selection-mode) required for further management.
 
 
 ## 3D My location Icons
 
-![3D icon](../../blog/2024-08-13-ios-4-8/img/3d_icon.png)
+![3D icon](../../blog/2024-08-22-ios-4-8/img/3d_icon.png)
 
 A new 3D view has been added for [My Location](../user/personal/profiles.md#profile-appearance) icons, which improves their visualization on the map. These changes bring the appearance of the icons in alignment with the 3D tilt of the map.   
 
 
 ## Color Palettes
 
-![Color palette](../../blog/2024-08-13-ios-4-8/img/color_palette_2_ios.png) ![Color palette](../../blog/2024-08-13-ios-4-8/img/color_palette_1_ios.png)  
+![Color palette](../../blog/2024-08-22-ios-4-8/img/color_palette_2_ios.png) ![Color palette](../../blog/2024-08-22-ios-4-8/img/color_palette_1_ios.png)  
 
 In this release, new color palette schemes have been added.
 - For [routes](../user/navigation/guidance/map-during-navigation.md#color): *Speed, Slope,* and *Elevation (Altitude)*.
@@ -138,12 +138,12 @@ Color palettes data is available in the [_Maps & Resources_](../user/personal/ma
 
 _Menu → Maps & Resources → Local → Colors_
 
-![Color palette](../../blog/2024-08-13-ios-4-8/img/color_palette_ios.png)
+![Color palette](../../blog/2024-08-22-ios-4-8/img/color_palette_ios.png)
 
 
 ## Weather Tool Improvements
 
-![Weather](../../blog/2024-08-13-ios-4-8/img/weather_ios.png)
+![Weather](../../blog/2024-08-22-ios-4-8/img/weather_ios.png)
 
 Layer animations and improved labels make the [weather interface](../user/plugins/weather.md) more visual and informative. These changes help you better understand current weather conditions and forecasts. Improved label visibility makes navigating weather data much easier.  
 
@@ -177,7 +177,7 @@ The [Location position on screen](https://osmand.net/docs/user/widgets/configure
 
 ## Road Side Indicator
 
-![Side indication](../../blog/2024-08-13-ios-4-8/img/side_indication.png)
+![Side indication](../../blog/2024-08-22-ios-4-8/img/side_indication.png)
 
 Added Road side indicator for [Route Details](../user/navigation/setup/route-details.md).  
 The angle between the Destination (*Bearing from the last point*) and the last segment (*Bearing to the last 2 points of the route*) is measured and divided into 3 sectors of 120 degrees. 
