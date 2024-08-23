@@ -3,7 +3,7 @@ import icons from '../resources/generated/poiicons.json';
 import _ from 'lodash';
 import {
     CATEGORY_ICON,
-    CATEGORY_KEY_NAME_ICON,
+    MAIN_CATEGORY_KEY_NAME,
     getSvgIcon,
     ICON_KEY_NAME,
     POI_ICON_NAME,
@@ -97,7 +97,7 @@ async function searchPoiCategories(search) {
     if (!_.isEmpty(response?.data)) {
         return response.data;
     } else {
-        console.error(`Poi category not found`);
+        return null;
     }
 }
 
@@ -132,7 +132,7 @@ export function getCatPoiIconName(props) {
     if (!iconName) {
         // get from parent category
         iconName = getIconNameForPoiType({
-            iconKeyName: props[CATEGORY_KEY_NAME_ICON],
+            iconKeyName: props[MAIN_CATEGORY_KEY_NAME],
             iconName: props[CATEGORY_ICON],
         });
     }
