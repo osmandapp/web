@@ -18,8 +18,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Favorites is one of the OsmAnd's features, that allows the user to make a kind of bookmarks (notes) on the map. By default, they are displayed in the form of yellow stars, though the app provides ample opportunities to customize Favorites using any colour, shape, and icon. They are grouped into a separate map layer, that become visible from the 6th zoom level.  
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -36,10 +34,10 @@ Favorites is one of the OsmAnd's features, that allows the user to make a kind o
 
 </Tabs>
 
+Favorites is one of the OsmAnd's features, that allows the user to make a kind of bookmarks (notes) on the map. By default, they are displayed in the form of yellow stars, though the app provides ample opportunities to customize Favorites using any colour, shape, and icon. They are grouped into a separate map layer, that become visible from the 6th zoom level.  
+
 
 ## Favorite Point
-
-### View on the Map
 
 <Tabs groupId="operating-systems">
 
@@ -57,110 +55,33 @@ Favorites is one of the OsmAnd's features, that allows the user to make a kind o
 
 </Tabs>
 
-Favorites are grouped into one of the map layers. You can [show or hide](../map/point-layers-on-map.md#favorites) Favorites and their [names](../map/point-layers-on-map.md#favorite--poi-names) on the map.
-
-### Favorite Context Menu
-
-Favorite's [Context menu](../map/map-context-menu.md#favorites--track-points-from-the-group) opens when you select it in *My Favorites* or tap it on the map. In Favorite Context menu you can find information about chosen point, [edit](../map/map-context-menu.md#add--edit-favorite) it, add a marker or use it for navigation.  
+Favorites are grouped into one of the map layers. You can [show or hide](../map/point-layers-on-map.md#favorites) Favorites and their [names](../map/point-layers-on-map.md#favorite--poi-names) on the map. Favorite's [Context menu](../map/map-context-menu.md#favorites--track-points-from-the-group) opens when you select it on the map, there you can find detailed information about chosen point, [edit or delete](../map/map-context-menu.md#add--edit-favorite) it  
 
 
-### Create and Edit
+### Create
 
-To create a new Favorite point, you need to select a [POI](../map/point-layers-on-map.md#points-of-interest-poi) object with a short tap or a structure on the map with a long tap, and then select [Add (☆)](../map/map-context-menu.md#add--edit-favorite) from the [Map Context menu](../map/map-context-menu.md). If you select a point from OSM data, all information about that POI will be added to the newly selected point. [Long-tap](../map/map-context-menu.md#select-any-point-long-tap) selection can be applied anywhere on the map.
+<Tabs groupId="operating-systems"><TabItem value="android" label="Android"> 
 
-**1.** In the editor to create and edit Favorite points:
+![Favorite add description Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Favorite group Android](@site/static/img/personal/favorite_group_android.png)
+</TabItem><TabItem value="ios" label="iOS">
 
-- First add **Name**, **Address**, and if you want, **Description**.
-- Then **select an existing group** from the list or **create a new one**.
-- 
-    <Tabs groupId="operating-systems">
+![Favorite add description iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Favorite group iOS](@site/static/img/personal/favorite_group_ios.png)
+</TabItem>
+</Tabs>
 
-    <TabItem value="android" label="Android">  
-
-    ![Favorite add description Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Favorite group Android](@site/static/img/personal/favorite_group_android.png)
-
-    </TabItem>
-
-    <TabItem value="ios" label="iOS">
-
-    ![Favorite add description iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Favorite group iOS](@site/static/img/personal/favorite_group_ios.png)
-
-    </TabItem>
-
-    </Tabs>
+To create a new Favorite point, you need to select a [POI](../map/point-layers-on-map.md#points-of-interest-poi) object with a short tap or a structure on the map with a long tap, and then select [Add (☆)](../map/map-context-menu.md#add--edit-favorite) from the [Map Context menu](../map/map-context-menu.md). If you select a point from OSM data, all information about that POI will be added to the newly selected point. You can also select any point on the map to add Favorite using [Long-tap](../map/map-context-menu.md#select-any-point-long-tap).
 
 
-**2.** To create a new favorite group tap **Add a group** in the group list.
+Following fields could be specified for a favorite point:
+- Unique **Name** per group is **required**.
+- **Address** and **description** are optional.
+- Existing [**Favorite group**](#favorite-groups) from the list or newly created. 
+- Visual **icon**, **color**, **shape** are selected by default from [**group appearance**](#change-appearance) 
+but could be changed uniquely per a favorite point.
 
-- Add a *name* for the group in the *Add New Category* editor. It must be unique.
-- Select a *color*, *icon*, and *shape*.
-- The selected favorite group appearance will be the default for all new points added to the group.  
-- 
-    <Tabs groupId="operating-systems">
+### Edit, replace and delete
 
-    <TabItem value="android" label="Android">
-
-    ![Favorite new group Android](@site/static/img/personal/favorite_add_new_group_andr.png)
-
-    </TabItem>
-
-    <TabItem value="ios" label="iOS">
-
-    ![Favorite new group iOS](@site/static/img/personal/favorite_add_new_group_ios.png)
-
-    </TabItem>
-
-    </Tabs>
-
-
-**3.** After making actions with groups, **select the icon** for the favorite point.
-
-- For *Android*, the list of icons consists of all POI images available in the OsmAnd app.
-- For *iOS* a special set of the most suitable Favorite icons is compiled.
-- After selecting an image on the icon, define the **color** and geometric **shape** for it.
-- 
-    <Tabs groupId="operating-systems">
-
-    <TabItem value="android" label="Android">
-
-    ![Favorite icon Android](@site/static/img/personal/favorite_icon_andr.png)  ![Favorite color and shape Android](@site/static/img/personal/favorite_color_shape_andr.png)
-
-    </TabItem>
-
-    <TabItem value="ios" label="iOS">
-
-    ![Favorite icon iOS](@site/static/img/personal/favorite_icon_1_ios.png)  ![Favorite color and shape iOS](@site/static/img/personal/favorite_color_shape_1_ios.png)
-
-    </TabItem>
-
-    </Tabs>
-
-
-**4.** During the creation process, you can:
-
-- **Save** the new favorite point.
-- Tap the **Cancel** button to exit the favorite point editor without saving or with saving.
-- You can **Replace** another point with the current point by selecting it from a sorted list of nearby favorite points and POIs. For *Android*, the *Replace* button is repeated in the top right corner of the screen.
-
-- 
-    <Tabs groupId="operating-systems">
-
-    <TabItem value="android" label="Android">
-
-    ![Favorite actions Android](@site/static/img/personal/favorite_actions_android.png)
-
-    </TabItem>
-
-    <TabItem value="ios" label="iOS">
-
-    ![Favorite actions iOS](@site/static/img/personal/favorite_actions_ios.png)
-
-    </TabItem>
-
-    </Tabs>
-
-
-#### Edit
+To edit a favorite point, you need to [tap](../map/map-context-menu.md#select-an-object-short-tap) it on the map or access via [My Favorites](#manage-favorites) and select the **Edit favorite** button from the [*Map Context menu*](../map/map-context-menu.md#add--edit-favorite).
 
 <Tabs groupId="operating-systems">
 
@@ -178,39 +99,16 @@ To create a new Favorite point, you need to select a [POI](../map/point-layers-o
 
 </Tabs>
 
-To edit a favorite point, [tap](../map/map-context-menu.md#select-an-object-short-tap) it.
 
-- Select the **Edit favorite** button from the [*Map Context menu*](../map/map-context-menu.md#add--edit-favorite).
-- The editing process is described in the [*Add favorite point*](#create-and-edit) section.
+- You can edit all fields that where specified during **create** a favorite point such as name, icon, group and etc.
 - In this editor there is a button **Delete** this point from your list of Favorites. For *Android*, it is duplicated in the upper right corner of the screen.
-- You can change the name, description, address of the selected favorite, change or create a new group for it, choose a different icon, color and shape, replace it with another point.
+- In order to have always same Favorite like *My parked car*, during creation of a favorite point with new location you can hit **Replace** and it will assign new location.
 
 
-### Favorites in GPX File
 
-All information about a Favourite is stored and described using tags. When creating a Favourite point, you can write your own [description](#create-and-edit) or use information from the OSM [point of interest (POI)](../map/point-layers-on-map.md#points-of-interest-poi) data from which your point was created. Favorite points, POIs, and Waypoints use the same **tags** to store information and are saved in **GPX file format**.  
+### Special Favorites (Personal)
 
-
-```xml
-<gpx version="1.1" creator="OsmAnd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:test="https://test.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
-    <wpt lat="37.5460870" lon="-77.4532843">
-        <time>2023-06-07T12:31:35Z</time>
-        <name>Test</name>
-        <type>SOTM</type>
-        <extensions>
-            <osmand:address>Floyd Avenue (The Fan) 907, Richmond</osmand:address>
-            <osmand:icon>place_town</osmand:icon>
-            <osmand:background>circle</osmand:background>
-            <osmand:color>#ff4e4eff</osmand:color>
-            <test:country>United States</test:country>
-            <test:state>Virginia</test:state>
-            <test:telephone>(804) 828-0100</test:telephone>
-            <test:postcode>23284</test:postcode>
-            <test:start_date>Thursday, June 8, 2023</test:start_date>
-        </extensions>
-    </wpt>
-</gpx>
-```  
+***Personal*** folder is a folder dedicated for special *<Translate android="true" ids="favorite_home_category"/>* and *<Translate android="true" ids="work_button"/>* points of [Navigation Context menu](../navigation/setup/route-navigation.md#select-starting-point). This folder doesn't have &#8942; button, because you can not change the parameters for this folder.  
 
 
 ## Manage Favorites
@@ -542,28 +440,6 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 - Add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
 
 
-
-## Special Favorites (Personal)
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-*Personal* folder is a special folder for *<Translate android="true" ids="favorite_home_category"/>* and *<Translate android="true" ids="work_button"/>* points of [Navigation Context menu](../navigation/index.md). This folder doesn't have &#8942; button, because you can not change the parameters for this folder.  
-
-![Favorites personal android](@site/static/img/personal/favorites_personal_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-*Personal* folder is a special folder for *<Translate ios="true" ids="home_pt"/>* and *<Translate ios="true" ids="work_pt"/>* points of [Navigation Context menu](../navigation/index.md).
-
-</TabItem>
-
-</Tabs>
-
-
 ## Export / Import
 
 OsmAnd provides a wide range of options for [backing up](./import-export.md) important data for [restoring](./import-export.md#import) it later. Favorites can be saved as a separate file in internal and external storage, uploaded to [OsmAnd Cloud](../personal/osmand-cloud.md) (onlyif you have an [OsmAnd Pro or OsmAnd Start subscription](../purchases/index.md) and) or [sent](#automatic-favorites-backup) to friends using instant messaging programs.
@@ -719,6 +595,33 @@ In the latest versions of Android, access to system directories is limited. Howe
 </TabItem>
 
 </Tabs>
+
+### Favorites in GPX File
+
+All information about a Favourite is stored and described using tags. When creating a Favourite point, you can write your own [description](#create-and-edit) or use information from the OSM [point of interest (POI)](../map/point-layers-on-map.md#points-of-interest-poi) data from which your point was created. Favorite points, POIs, and Waypoints use the same **tags** to store information and are saved in **GPX file format**.  
+
+
+```xml
+<gpx version="1.1" creator="OsmAnd" xmlns="http://www.topografix.com/GPX/1/1" xmlns:osmand="https://osmand.net" xmlns:test="https://test.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+    <wpt lat="37.5460870" lon="-77.4532843">
+        <time>2023-06-07T12:31:35Z</time>
+        <name>Test</name>
+        <type>SOTM</type>
+        <extensions>
+            <osmand:address>Floyd Avenue (The Fan) 907, Richmond</osmand:address>
+            <osmand:icon>place_town</osmand:icon>
+            <osmand:background>circle</osmand:background>
+            <osmand:color>#ff4e4eff</osmand:color>
+            <test:country>United States</test:country>
+            <test:state>Virginia</test:state>
+            <test:telephone>(804) 828-0100</test:telephone>
+            <test:postcode>23284</test:postcode>
+            <test:start_date>Thursday, June 8, 2023</test:start_date>
+        </extensions>
+    </wpt>
+</gpx>
+```  
+
 
 
 ## Related Articles
