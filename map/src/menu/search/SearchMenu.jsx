@@ -67,8 +67,16 @@ export default function SearchMenu() {
                 if (openCategories) {
                     const categoriesResult = await PoiManager.searchPoiCategories(searchValue.query);
                     if (categoriesResult) {
-                        getCategoriesIcons(categoriesResult);
-                        getCategoriesNames(categoriesResult);
+                        const validCategories = Object.values(categoriesResult).filter(
+                            (item) => item[CATEGORY_KEY_NAME] !== undefined
+                        );
+                        const sortedCategories = validCategories?.sort((a, b) => {
+                            const nameA = PoiManager.formattingPoiType(t(`poi_${a[CATEGORY_KEY_NAME]}`)).toLowerCase();
+                            const nameB = PoiManager.formattingPoiType(t(`poi_${b[CATEGORY_KEY_NAME]}`)).toLowerCase();
+                            return nameA.localeCompare(nameB);
+                        });
+                        getCategoriesIcons(sortedCategories);
+                        setSearchCategories(sortedCategories);
                     } else {
                         setSearchCategories([]);
                     }
@@ -92,16 +100,11 @@ export default function SearchMenu() {
         }
 
         function getCategoriesIcons(res) {
-            const icons = Object.values(res).map((item) => {
+            const icons = res.map((item) => {
                 return getCatPoiIconName(item);
             });
             setLoadingIcons(true);
             setSearchCategoriesIconNames(icons);
-        }
-
-        function getCategoriesNames(res) {
-            const validCategories = Object.values(res).filter((item) => item[CATEGORY_KEY_NAME] !== undefined);
-            setSearchCategories(validCategories);
         }
     }, [searchValue]);
 
