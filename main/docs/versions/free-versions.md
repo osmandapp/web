@@ -18,6 +18,22 @@ Direct links to free OsmAnd versions.
 
 ## Version 4 
 
+### Version 4.8
+Release date: 08/2024
+* New terrain colorization option "Altitude"
+* Custom color palettes for terrain, tracks, and routes.
+* 3D variant for location position icons
+* Quick Actions can now be assigned to external keyboards
+* Weather: UI refresh, added wind animation
+* 3D Track Improvements: new visualization and colorization options
+* Expanded selection of tourist routes on the map
+* Added app theme option to follow map mode
+* Fixed track stats, sorting & search
+* OSM Editing: deleted login / password authorization method
+* Switching to system share sheet starting Android 14
+
+<DownloadRelease blog="osmand-android-4-8-released" release="net.osmand-4.8.6.apk" />
+
 ### Version 4.7
 Release date: 04/2024
 * New "Speedometer" widget compatible with Android Auto
