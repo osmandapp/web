@@ -205,6 +205,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     color: DEFAULT_POI_COLOR,
                     icon: objOptions[FINAL_POI_ICON_NAME],
                     tags: tags,
+                    osmUrl: objOptions[POI_OSM_URL],
                 };
             } else {
                 result = null;
@@ -529,6 +530,28 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         );
     };
 
+    const WptName = () => {
+        if (wpt.type?.isPoi || wpt.type?.isWikiPoi) {
+            return (
+                <Typography className={styles.name}>
+                    <Link href={wpt.osmUrl} target="_blank" underline="none">
+                        {wpt.name ? wpt.name : wpt.poiType}
+                    </Link>
+                </Typography>
+            );
+        } else if (wpt.type?.isSearch && wpt.osmUrl) {
+            return (
+                <Typography className={styles.name}>
+                    <Link href={wpt.osmUrl} target="_blank" underline="none">
+                        {wpt.name ?? 'No name'}
+                    </Link>
+                </Typography>
+            );
+        } else {
+            return <Typography className={styles.name}>{wpt.name ?? 'No name'}</Typography>;
+        }
+    };
+
     return (
         <>
             {loading ? (
@@ -545,15 +568,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                             <Box className={styles.topContainer}>
                                 <div>
                                     <MenuItemWithLines maxLines={3} className={styles.name}>
-                                        <Typography className={styles.name}>
-                                            {wpt.type?.isPoi || wpt.type?.isWikiPoi ? (
-                                                <Link href={wpt.osmUrl} target="_blank" underline="none">
-                                                    {wpt.name ? wpt.name : wpt.poiType}
-                                                </Link>
-                                            ) : (
-                                                (wpt.name ?? 'No name')
-                                            )}
-                                        </Typography>
+                                        <WptName />
                                     </MenuItemWithLines>
                                     <Typography className={styles.type} noWrap>
                                         {wpt?.poiType}
