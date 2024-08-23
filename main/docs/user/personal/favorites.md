@@ -206,7 +206,7 @@ You can perform following actions for the whole Favorite group:
 1. &nbsp;<Translate android="true" ids="shared_string_rename"/>  - is used to change the folder name.
 2. &nbsp;<Translate android="true" ids="change_default_appearance"/>  - is used to [change default appearance](#change-group-appearance) for favorites from the chosen group.
 3. &nbsp;<Translate android="true" ids="shared_string_show_on_map"/>  - displays or not Favorite points from the folder on the map (***Android only***).
-4. &nbsp;<Translate android="true" ids="shared_string_add_to_map_markers"/>  - adds or removes all Favorite points from a folder in [Map markers list](../personal/markers.md) (***Android only***).
+4. &nbsp;<Translate android="true" ids="shared_string_add_to_map_markers"/>  - adds or removes all Favorite points from a folder in [Map markers list](../personal/markers.md#groups) (***Android only***).
 5. &nbsp;<Translate android="true" ids="shared_string_delete"/> - deletes the chosen favorites folder.  
 6. &nbsp;<Translate android="true" ids="shared_string_share"/>  - sharing Favorite points with other users (using Favorites.gpx file).
 
