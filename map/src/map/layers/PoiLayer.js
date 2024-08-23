@@ -161,6 +161,9 @@ export default function PoiLayer() {
     );
 
     async function getPoi(controller, showPoiCategories, bbox, savedBbox) {
+        if (!showPoiCategories || showPoiCategories.length === 0) {
+            return null;
+        }
         const searchData = {
             categories: showPoiCategories,
             northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
@@ -182,6 +185,8 @@ export default function PoiLayer() {
         );
         if (response?.data) {
             return response.data;
+        } else {
+            return null;
         }
     }
 
