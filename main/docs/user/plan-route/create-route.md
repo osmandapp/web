@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-The **Plan a route** (*Menu → Plan a route*) tool is a powerful feature of the OsmAnd application that allows you to [create new routes](#create-new-route) as GPX tracks, [edit and add new segments](#segments---route-between-points) to already saved tracks, [measure distances](#distance-measurement) on the map, and [attach track](#attach-track-to-roads) segments to the nearest available road using different navigation profiles. The feature is designed to work in *offline mode*.
+The **Plan a route** (*Menu → Plan a route*) tool is a powerful feature of the OsmAnd application that allows you to [create new routes](#create-new-route) as GPX tracks, [edit and add new segments](#segments) to already saved tracks, [measure distances](#distance-measurement) on the map, and [attach track](#attach-track-to-roads) segments to the nearest available road using different navigation profiles. The feature is designed to work in *offline mode*.
 
 A route consists of a set of segments between specified points. The segments can be either straight lines or routes adapted to the selected profile. The route can be saved as GPX for later import, edit and [navigation](../navigation/setup/gpx-navigation.md).
 
@@ -60,7 +60,7 @@ A route consists of a set of segments between specified points. The segments can
 
 ### Create New Route
 
-To create a new track in GPX format, use the main function of the *Plan a route* tool. Unlike recording the current track with *[Trip recording plugin](../plugins/trip-recording.md)*, pre-creating a route has many advantages. You can [add](#add-points) as many points as you want to the route, [delete and move them](#point-context-menu), change route types by [segments](#segments---route-between-points), and get [detailed information about the route](#graph).  
+To create a new track in GPX format, use the main function of the *Plan a route* tool. Unlike recording the current track with *[Trip recording plugin](../plugins/trip-recording.md)*, pre-creating a route has many advantages. You can [add](#add-points) as many points as you want to the route, [delete and move them](#point-context-menu), change route types by [segments](#route-between-points), and get [detailed information about the route](#graph).  
 
 By default, the routing type will match the previously selected profile, click on the routing icon to select how the application should calculate the segment to connect points. The available profile should be configured [separately](../navigation/routing/osmand-routing.md#routing-types).  
 
@@ -89,7 +89,7 @@ You can **zoom in and out** for easy placement of points when creating or editin
 
 - Open the required track.
 - If necessary, use [Attach to the roads](#add-to-a-track).
-- Start editing the route using the [points list](#point-context-menu), start a [new segment](#segments---route-between-points) using the [Options menu](#menu-options) or [continue](#add-points) the route forward.  
+- Start editing the route using the [points list](#point-context-menu), start a [new segment](#segments) using the [Options menu](#menu-options) or [continue](#add-points) the route forward.  
 - To find out more details about the route, use the [Graph](#graph).
 
 
@@ -182,6 +182,37 @@ In order to measure a distance or plan a trip, you need to add points at the *Po
  You can also **Undo**/**Redo** every action you made in plan route.
 :::
   
+### Route between points
+
+Added points in the editor could be connected as a straight line or as a route between points of a selected profile. *Route between points* can be accessed in several ways:
+
+1. From the *Options* menu *→* *Route between points*.
+2. Tap the *profile icon* in the bottom left corner of the map screen. Not on the top icon, it will open the Configure Map menu.
+3. In the *[Point Context menu](#point-context-menu) → Change route type before/after*.  
+
+
+<Tabs groupId="operating-systems"><TabItem value="android" label="Android">
+
+![Plan a route android](@site/static/img/plan-route/plan_route_between_points_andr.png) ![Plan a route android](@site/static/img/plan-route/plan_route_change-route-type_andr.png)
+
+</TabItem><TabItem value="ios" label="iOS">
+
+![Plan a route ios](@site/static/img/plan-route/plan_route_between_points_ios.png) ![Plan a route ios](@site/static/img/plan-route/plan_route_change-route-type_ios.png)
+
+</TabItem></Tabs>
+
+You can change route between 2 specific points or between multiple points:
+- *Whole track*. The whole track will be recalculated using the selected profile.
+- *Next segment*. Only the next segment will be recalculated using the selected profile.  
+- *Change the Route Type Before/After Point* - In the *Point context menu* you can change the way the route is calculated for the section from this point to the nearest or to the edge point. The setting provides information about the distance from this point to the beginning or the end of the route or to the next/previous point.
+- *Recalculate routes*. You can use route recalculation without changing the profile type. The profile icon shown on the planned route in the tool will not change, but the route type will match the selected one. You may need this to find alternative routes.  
+
+### Segments
+
+A track segment is a collection of points that are connected without **gaps**. In a plan route tool it's possible:
+- To merge segments with to each other: [Join segments](#point-context-menu) option removes gap to previously separated segments.
+- To split or create new unconnected sections of a track. To create one, use the [Start new segment](#point-context-menu) option or select the [Split](#point-context-menu) feature from the Point context menu.
+
 ### Point Context Menu
 
 <Tabs groupId="operating-systems">
@@ -220,72 +251,11 @@ Each point on your route has its own context menu. It shows the *sequence number
 
 - ***<Translate ios="true" ids="join_segments"/>***. The last point on one of the split segments and the next in the list of points on the other segment have this connection setting.  
 
-- [*<Translate ios="true" ids="change_route_type_before"/>*](#change-the-route-type-beforeafter-point). You can change the connection mode, the routing type configured on the available profile, between points on the previous segment, or for all segments from the start of the route to the selected point.  
+- ***<Translate ios="true" ids="change_route_type_before"/>***. You can change the connection mode, the routing type configured on the available profile, between points on the previous segment, or for all segments from the start of the route to the selected point.  
 
-- [*<Translate ios="true" ids="change_route_type_after"/>*](#change-the-route-type-beforeafter-point). You can change the routing type between points on the next segment or for all segments from the selected point to the last added point.  
+- ***<Translate ios="true" ids="change_route_type_after"/>***. You can change the routing type between points on the next segment or for all segments from the selected point to the last added point.  
 
 - ***<Translate ios="true" ids="delete_point"/>***. Remove the selected point from the route. Similar to deleting a point in a list.
-
-
-### Segments - Route between points
-
-A segment is a section of a road, the distance between two points. The whole route consists of a set of segments you have set up, connected to each other or spaced apart from each other.
-
-- Segments can be connected to each other: adding points also adds a new segment, you can use the [Join segments](#menu-options) option for previously separated segments or the [Add to a track](#add-to-a-track) feature.
-- Segments can be separate, unconnected sections of track. To create one, use the [Start new segment](#menu-options) option or select the [Split](#point-context-menu) feature from the Point context menu.
-
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Plan a route android](@site/static/img/plan-route/plan_route_between_points_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Plan a route ios](@site/static/img/plan-route/plan_route_between_points_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-*Route between points* can be accessed in several ways:
-
-1. From the *Options* menu *→* *Route between points*.
-2. Tap the *profile icon* in the bottom left corner of the map screen. Not on the top icon, it will open the Configure Map menu.
-3. In the *[Point Context menu](#point-context-menu) → Change route type before/after*.  
-
-With this option, you can choose how points are connected for the whole track or only for the next segment. This can be done in a straight line or by calculating a route using one of the [profiles](../navigation/routing/osmand-routing.md#routing-types) that you have enabled in the OsmAnd app *Menu → Settings → App profiles*.
-
-- *Whole track*. The whole track will be recalculated using the selected profile.
-- *Next segment*. Only the next segment will be recalculated using the selected profile.  
-
-**Recalculate routes**. You can use route recalculation without changing the profile type. The profile icon shown on the planned route in the tool will not change, but the route type will match the selected one. You may need this to find alternative routes.  
-
-
-### Change the Route Type Before/After Point
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Plan a route android](@site/static/img/plan-route/plan_route_change-route-type_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Plan a route ios](@site/static/img/plan-route/plan_route_change-route-type_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-In the *Point context menu* **Change route type before (or after)** opens the *Options* menu [*Route between points*](#segments---route-between-points). The difference is that you can change the way the route is calculated for the section from this point to the nearest or to the edge point.  
-The setting provides information about the distance from this point to the beginning or the end of the route or to the next/previous point.
-
 
 
 
@@ -407,7 +377,7 @@ Changes are saved during the planning process and, unlike a *Quick save*, **Plan
 
 </Tabs>
 
-When creating a new track or editing an existing one, you can use this option to attach it as a [separate segment](#segments---route-between-points) to a track from the list of available tracks. Changes to a selected track *cannot be undone*. It can only be re-opened in the *Plan a route* for editing.
+When creating a new track or editing an existing one, you can use this option to attach it as a [separate segment](#segments) to a track from the list of available tracks. Changes to a selected track *cannot be undone*. It can only be re-opened in the *Plan a route* for editing.
 
 
 
@@ -429,7 +399,7 @@ When creating a new track or editing an existing one, you can use this option to
 
 </Tabs>
 
-- [*<Translate android="true" ids="route_between_points"/>*](#segments---route-between-points). Shows the chosen application profile (the straight line by default). Tap this action is equal *Profile* button with opening application [profile menu](../personal/profiles.md).
+- [*<Translate android="true" ids="route_between_points"/>*](#route-between-points). Shows the chosen application profile (the straight line by default). Tap this action is equal *Profile* button with opening application [profile menu](../personal/profiles.md).
 - *<Translate ios="true" ids="gpx_start_new_segment"/>* (*iOS*) or *<Translate android="true" ids="plan_route_add_new_segment"/>* (*Android*). Draws new route segments that do not connect to the previous segment.
 - [*<Translate android="true" ids="shared_string_save_changes"/>*](#save-changes). If it is a new track without linking to the existing one, the *Save as new track* menu opens. When you add new segments to an opened or imported track, the notification about saving the GPS file to the storage appears, after which you can continue to create the next segment.
 - [*<Translate android="true" ids="save_as_new_track"/>*](#save-as-a-new-track). Saves your route like GPX track.
@@ -437,7 +407,7 @@ When creating a new track or editing an existing one, you can use this option to
 - [*<Translate android="true" ids="shared_string_navigation"/>*](#navigation-with-plan-a-route). Starts navigation from your position to the finish point using a drawn route.
 - *<Translate android="true" ids="reverse_route"/>*. You swap the Start point of the route and the last added point. The route segment settings do not change when Reverse is applied.
 - [*<Translate android="true" ids="attach_to_the_roads"/>*](#add-to-a-track). Creates an approximate route. Each point on the track is matched to the nearest permitted road on the map according to the selected profile and threshold distance.
-- [*<Translate android="true" ids="shared_string_gps_filter"/>*](../map/tracks/track-context-menu.md#gps-filter). You can filter out route points that do not match the selected routing type, delete unnecessary data or correct inaccurate data. GPS filter will only work if the routing type is specified as *Straight Line*. <!-- Android only(No!!!) with Straight line routing. **?How to use?** **When are additional details needed to calculate a route when switching to another type of routing?** -->
+- [*<Translate android="true" ids="shared_string_gps_filter"/>*](../map/tracks/track-context-menu.md#gps-filter) (Android only). You can filter out route points that do not match the selected routing type, delete unnecessary data or correct inaccurate data. GPS filter will only work if the routing type is specified as *Straight Line*. <!-- Android only(No!!!) with Straight line routing. **?How to use?** **When are additional details needed to calculate a route when switching to another type of routing?** -->
 - *<Translate android="true" ids="get_altitude_data"/>* (*Android only*). This option is only displayed in the menu if no elevation data is available. With this [option](#get-elevation-data), you can choose to calculate altitude using *Terrain map data* or use data from downloaded maps to find the *nearby roads*.
 - ***<Translate android="true" ids="shared_string_clear_all"/>***. It archives completely all your actions. An "artifact" remains on the map - the dotted lines of the just cleared route. It disappears at the next adding new points. You can cancel the Clear All function with the Return Action button. The feature does not affect the unchanged parts of the routes opened in the tool.  
 
