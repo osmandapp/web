@@ -140,7 +140,7 @@ If [*Elevation data*](../map/tracks/track-context-menu.md#calculating-missing-el
 You can select a distance threshold how far points of a simplified track could be from points of an original track.
 
 :::note 
-If you open a track and see ***undefined*** profile icon, that means you can select whether to attqach track to roads or simply connect points with straight line and treat as a recorded trqack.
+If you open a track and see ***undefined*** profile icon, that means you can select whether to attach track to roads or simply connect points with a straight line and treat as a recorded track.
 :::
 
 
