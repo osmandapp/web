@@ -74,7 +74,7 @@ Altitude can not be displayed correctly on some Android devices. To resolve this
 
 <TabItem value="ios" label="iOS">
 
-![Elevation widget iOS](@site/static/img/widgets/elevation_widget_ios.png)
+![Elevation widget iOS](@site/static/img/widgets/elevation_widget_2_ios.png)
 
 </TabItem>
 
