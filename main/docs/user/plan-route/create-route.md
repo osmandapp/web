@@ -58,7 +58,7 @@ A route consists of a set of segments between specified points. The segments can
 
 ### Create New Route
 
-To create a new track in GPX format, use the main function of the *Plan a route* tool. Unlike recording the current track with *[Trip recording plugin](../plugins/trip-recording.md)*, pre-creating a route has many advantages. You can [add](#add-points) as many points as you want to the route, [delete and move them](#point-context-menu), change route types by [segments](#route-between-points), and get [detailed information about the route](#graph).  
+To create a new track in GPX format, use the main function of the *Plan a route* tool. Unlike recording the current track with *[Trip recording plugin](../plugins/trip-recording.md)*, pre-creating a route has many advantages. You can [add](#add-points) as many points as you want to the route, [delete and move them](#point-context-menu), change route types by [segments](#segments), and get [detailed information about the route](#graph).  
 
 By default, the routing type will match the previously selected profile, click on the routing icon to select how the application should calculate the segment to connect points. The available profile should be configured [separately](../navigation/routing/osmand-routing.md#routing-types).  
 
@@ -83,7 +83,7 @@ You can **zoom in and out** for easy placement of points when creating or editin
 
 </Tabs>  
 
-*Plan a route* tool allows modifying [existing GPX track](../personal/tracks/create-edit.md) as well as an [imported track](../personal/tracks/manage-tracks.md#import). However in case you need to exclude large amount of points based on generic criterias, [*<Translate android="true" ids="shared_string_gps_filter"/>*](../map/tracks/track-context-menu.md#gps-filter) might be a more suitable tool.
+*Plan a route* tool allows modifying [existing GPX track](../personal/tracks/create-edit.md) as well as an [imported track](../personal/tracks/manage-tracks.md#import). However in case you need to exclude a large amount of points based on generic criterias, [*<Translate android="true" ids="shared_string_gps_filter"/>*](../map/tracks/track-context-menu.md#gps-filter) might be a more suitable tool.
 
 
 ### Distance Measurement
@@ -109,7 +109,7 @@ The *Straight Line* is needed and will be used for areas not covered by routing 
 
 If [*Elevation data*](../map/tracks/track-context-menu.md#calculating-missing-elevation) is missing in an existing track, it's possible to add it using follow tools:
 
-- [*Use nearby roads*](#attach-track-to-roads). This mode uses offline maps to find the nearest roads to build a track, so elevation data will be retrieved from attached raods. The geometry of the track can be adjusted.  
+- [*Use nearby roads*](#attach-track-to-roads). This mode uses offline maps to find the nearest roads to build a track, so elevation data will be retrieved from attached roads. The geometry of the track can be adjusted.  
 - [*Use Terrain maps*](../map/tracks/track-context-menu.md#calculating-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Mode calculates altitude based on Terrain map data (3D). The difference between the altitude recorded by your device can be used for elevation correction.  The geometry of the track remains unchanged.
 
 
@@ -140,7 +140,7 @@ If [*Elevation data*](../map/tracks/track-context-menu.md#calculating-missing-el
 You can select a distance threshold how far points of a simplified track could be from points of an original track.
 
 :::note 
-If you open a track and see ***undefined*** profile icon, that means you can select whether to attqach track to roads or simply connect points with straight line and treat as a recorded trqack.
+If you open a track and see ***undefined*** profile icon, that means you can select whether to attach track to roads or simply connect points with a straight line and treat as a recorded track.
 :::
 
 
@@ -164,7 +164,7 @@ If you open a track and see ***undefined*** profile icon, that means you can sel
 
 </Tabs>  
 
-In order to measure a distance or plan a trip, you need to add points at the *Pointer* location one by one and clicking *Add Point* button. By accessing **points list** below you can reorder points, delete or access to a specific [point context menu](#point-context-menu).
+In order to measure a distance or plan a trip, you need to add points at the *Pointer* location one by one and click *Add Point* button. By accessing **points list** below you can reorder points, delete or access to a specific [point context menu](#point-context-menu).
 
 :::note
  You can also **Undo**/**Redo** every action you made in plan route.
@@ -264,7 +264,7 @@ Each point on your route has its own context menu. It shows the *sequence number
 </Tabs>  
 
 With Plan route tool you can create multi-modal routes i.e. first part could be a *cycling* part, then could be a straight line and then a *pedestrian*. 
-You can do it via option [Route between points](segments---route-between-points). Multi-modal navigation is not possible, so you will need to select one the most suited profile to follow turn instrctions.
+You can do it via option [Route between points](#route-between-points). Multi-modal navigation is not possible, so you will need to select one the most suited profile to follow turn instructions.
 
 ## Editor
 
@@ -330,7 +330,7 @@ When saving new track you can select option ***Simplified*** track, so the track
 - [*<Translate android="true" ids="attach_to_the_roads"/>*](#attach-track-to-roads). Creates an approximate route. Each point on the track is matched to the nearest permitted road on the map according to the selected profile and threshold distance.
 - [*<Translate android="true" ids="shared_string_gps_filter"/>*](../map/tracks/track-context-menu.md#gps-filter) (Android only). You can filter out route points that do not match the selected routing type, delete unnecessary data or correct inaccurate data. GPS filter will only work if the routing type is specified as *Straight Line*. <!-- Android only(No!!!) with Straight line routing. **?How to use?** **When are additional details needed to calculate a route when switching to another type of routing?** -->
 - [*<Translate android="true" ids="get_altitude_data"/>*](#get-elevation-data) (*Android only*). This option is only displayed in the menu if no elevation data is available. With this [option](#get-elevation-data), you can choose to calculate altitude using *Terrain map data* or use data from downloaded maps to find the *nearby roads*.
-- ***<Translate android="true" ids="shared_string_clear_all"/>***. It archives completely all your actions. An "artifact" remains on the map - the dotted lines of the just cleared route. It disappears at the next adding new points. You can cancel the Clear All function with the Return Action button. The feature does not affect the unchanged parts of the routes opened in the tool.    
+- ***<Translate android="true" ids="shared_string_clear_all"/>***. It archives completely all your actions. An "artefact" remains on the map - the dotted lines of the just cleared route. It disappears at the next adding new points. You can cancel the Clear All function with the Return Action button. The feature does not affect the unchanged parts of the routes opened in the tool.    
 
 ### Graph
 
