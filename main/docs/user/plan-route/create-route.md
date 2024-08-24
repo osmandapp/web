@@ -264,7 +264,7 @@ Each point on your route has its own context menu. It shows the *sequence number
 </Tabs>  
 
 With Plan route tool you can create multi-modal routes i.e. first part could be a *cycling* part, then could be a straight line and then a *pedestrian*. 
-You can do it via option [Route between points](segments---route-between-points). Multi-modal navigation is not possible, so you will need to select one the most suited profile to follow turn instructions.
+You can do it via option [Route between points](#route-between-points). Multi-modal navigation is not possible, so you will need to select one the most suited profile to follow turn instructions.
 
 ## Editor
 
