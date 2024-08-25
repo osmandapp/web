@@ -13,13 +13,11 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoIncompleteArticle/>
-
-> *This article was last updated in June 2023.*
+> *This article was last updated in June 2024.*
 
 ## Overview
 
-[Map markers](../../personal/markers.md) are temporary points on the map marked by flags. They can be used for a variety of purposes, such as to indicate a location that you want to visit, a point of interest that you want to remember, or to create a custom route. They can be particularly helpful for hikers, bikers, or anyone exploring a new area who wants to mark interesting locations or points of reference on the map.  
+[Map markers](../../personal/markers.md) are points on the map marked by flags. They can be used for a variety of purposes, such as to indicate a location that you want to visit, a point of interest that you want to remember, or to create a custom route. They can be particularly helpful for hikers, bikers, or anyone exploring a new area who wants to mark interesting locations or points of reference on the map. Main difference from [Favorite points](../../personal/favorites.md), Markers are faster to create as they don't require a name.
 
 <Tabs groupId="operating-systems">
 
@@ -37,11 +35,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-## How to use
+## Use markers in navigation
+  *Map markers* can serve as [destinations](./route-navigation.md/#set-destinations) while building a route. They are especially convenient when you need to set a route with intermediate points.
 
-*The marker navigation* option has two use cases:
-- *Map markers* can serve as [destinations](./route-navigation.md/#set-destinations) while building a route. They are especially convenient when you need to set a route with intermediate points.
-- In some situations (especially for short routes, for example, during off-road competitions), due to the possibility to display the direction of movement and distance to markers on the map, they can serve as waypoints without setting the navigation mode.  
+  However *Map markers* also provide various functionality such as [widgets](../../widgets/markers.md), direction of movements, lines on the map, so you could use these tools for navigation without building a route line and entering full voice guidance navigation.
+
+  In case you need a simple point to point navigation displayed as straight lines, you can build and sort ***Itinerary list*** consisted of markers as intermediate points and use widgets for simple navigation. 
 
 <Tabs groupId="operating-systems">
 
@@ -59,74 +58,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-Either way, follow these steps to set *Marker navigation*:
+Here are simple recommendation steps to *Navigate by markers*:
 
 1. Create markers. Find the desired object(s) on the map, tap it, and choose the *[Marker button](../../personal/markers.md#add-marker-on-the-map)* in the *[Map context menu](../../map/map-context-menu.md#add--edit-marker)*. You can also make markers from [favorites](#add-favorite-group) or [GPX tracks](#add-gpx).
-
-2. Customise *Map markers view* if you would like to use Markers without starting Navigation. Enable **Arrows on the map** and **Direction line** options in the *[Appearance](../../personal/markers.md#appearance-on-the-map)* section of *[Map markers menu](../../personal/markers.md#map-markers-menu)*.
-
-3.  Add *[Markers widgets](../../personal/markers.md#marker-widgets)* in *[Configure screen menu](../../widgets/configure-screen.md)* (optional).
-
-4. [Select a marker](#select-markers) as your destination or use *Markers* to create a route in [**Plan a route**](../../personal/markers.md#plan-route-for-markers) tool.
+2. [*Sort markers*](#sort-markers) in preferred way you want to pass them
+3. Customise *Map markers view* if you would like to use Markers without starting Navigation. Enable **Arrows on the map** and **Direction line** options in the *[Appearance](../../personal/markers.md#appearance-on-the-map)* section of *[Map markers menu](../../personal/markers.md#map-markers-menu)*.
+4.  Add *[Markers widgets](../../personal/markers.md#marker-widgets)* in *[Configure screen menu](../../widgets/configure-screen.md)* (optional).
+5. [*Mark as passed*](#pass-markers) already visited markers or restore them from the history if you want to pass them again.
    
 :::note
-- When **Arrows on the map** and **Direction line** options are enabled in *Appearance* section of [Map markers menu](../../personal/markers.md#appearance-on-the-map), you will see an arrow or dashed line on the map. The arrow shows the direction to the active marker when it is outside the current map screen. Direction line is drawn when your geolocation and marker are both on the same screen.  
-- These two options can be used for navigation to the marker without actiually starting navigation in a classical way. This use case is similar to the *[straight line](../routing/straight-line-routing.md)* routing type.
+When **Arrows on the map** and **Direction line** options are enabled in *Appearance* section of [Map markers menu](../../personal/markers.md#appearance-on-the-map), you will see an arrow or dashed line on the map. The arrow shows the direction to the active marker when it is outside the current map screen. Direction line is drawn when your geolocation and marker are both on the same screen.  
 :::
 
-## Add marker on a map
+## Itinerary list
 
-*Markers* can be added or deleted from the map by single tap the screen at the desired location. Then you need to follow instructions from the *[Map context menu](../../map/map-context-menu.md#add--edit-marker)* article.  
-
-### Add favorite
-
-<InfoAndroidOnly />
-
-You can create *Map markers* from *[Favorites](../../personal/favorites.md)* using:
-- *[Favorites groups menu](../../personal/favorites.md#add-to-map-markers)* *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→My Favorites)*.
-- &#128681; icon in the Favorites in-page menu *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→My Favorites→&#128681;)*.
-- **'+'** (add) option  in *[Groups tab](../../personal/markers.md#groups)* in Map markers menu *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→+)*.  
-  
-![Favorites to markers 1](@site/static/img/navigation/marker/markers_favorites_andr_3.png) ![Favorites to markers 2](@site/static/img/navigation/marker/markers_favorites_andr_2.png)
-
-
-### Add GPX
-
-<InfoAndroidOnly />
-
-GPX tracks with waypoints can be transformed into *Map markers*:
-- using **'+'** (add) option  in *[Groups tab](../../personal/markers.md#groups)* in Map markers menu *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.  
-- by turning on switch near track in *[Groups tab](../../personal/markers.md#groups)* in Map markers menu *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
-
-![GPX to markers 1](@site/static/img/navigation/marker/track_to_markers_andr.png)
-
-:::note
-Only tracks with waypoints can be added to the *Map markers list*. The track you intend to add should also be visible (active) on the map.
-:::
-
-- You can also create *Markers* from a track with waypoints using *[Track context menu](../../map/tracks/track-context-menu.md#waypoints-folder)*: *Tap a visible track on the map → in Track context menu chose Points → '&#8942;' → <Translate android="true" ids="add_group_to_markers"/>*
-
-![GPX to markers 2](@site/static/img/navigation/marker/track_to_markers_andr_2.png) ![GPX to markers 3](@site/static/img/navigation/marker/track_to_markers_andr_3.png)
-
-## Select a marker
-
-Once a marker is added to the map, you can select it as your [destination](./route-navigation.md/#set-destinations) while [Preparing your route](./route-navigation.md). A *Marker* can be picked up:
-
-- In [Navigation menu](./route-navigation.md#set-target-point).  
-- Using *[Map markers list](../../personal/markers.md#list)*.
-- By tap a *[Marker widget](../../widgets/markers.md)*.
-- With single tap a marker on the map.
-
-<!-- screenshot -->
-
-After a *Marker* is selected, the map screen will move to its location and the *[Map context menu](../../map/map-context-menu.md)* will be opened. In that menu you can find information about distance to selected *Marker*.  
-From *Map context menu* you can also build navigation to *Marker* using [directions](../../map/map-context-menu.md#directions-to--from) option, [Edit](../../personal/markers.md#add--edit-marker) marker's name (**Android only**), *[Mark marker as passed](#pass-markers)* or *Make *Marker* active* (**Android only**) (this action will put chosen marker on the first place in the *Markers navigation list* and *Markers widget*).
-
-## Navigation list
-
-When you use *Map markers* as destinations for planning and building a specific route, especially with *[Intermediate destinations](./route-navigation.md#intermediate-destinations)*, they serve as waypoints in created by OsmAnd track.  
-
-In other cases *Markers* can be used for navigation one by one from *[Map markers list](../../personal/markers.md#list)*.
+Itinerary list represents an ordered list of *passable* markers that are visible on the map. You can add and delete points one by one or do it in batch using prepared in advance [GPX file](#add-group-of-track-waypoints) or [Favorite group](#add-group-of-favorite). For local competitions or adventure it might be useful to create a list points from coordinates using [Coordinate input tool](../../plan-route/coordinate-input.md). 
 
 <Tabs groupId="operating-systems">
 
@@ -144,7 +90,42 @@ In other cases *Markers* can be used for navigation one by one from *[Map marker
 
 </Tabs>
 
-### Sort markers
+### Add single markers
+
+*Markers* can be added or deleted from the map by single tap the screen at the desired location. Then you need to follow instructions from the *[Map context menu](../../map/map-context-menu.md#add--edit-marker)* article.  
+
+### Add Group of Favorite
+
+<InfoAndroidOnly />
+
+You can create *Map markers* from *[Favorites](../../personal/favorites.md)* using:
+- *[Favorites groups menu](../../personal/favorites.md#add-to-map-markers)* *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→My Favorites)*.
+- &#128681; icon in the Favorites in-page menu *(<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>→My Favorites→&#128681;)*.
+- **'+'** (add) option  in *[Groups tab](../../personal/markers.md#groups)* in Map markers menu *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→+)*.  
+  
+![Favorites to markers 1](@site/static/img/navigation/marker/markers_favorites_andr_3.png) ![Favorites to markers 2](@site/static/img/navigation/marker/markers_favorites_andr_2.png)
+
+
+### Add Group of Track Waypoints
+
+<InfoAndroidOnly />
+
+GPX tracks with waypoints can be used as *Map markers* and quickly switched off:
+- using **'+'** (add) option  in *[Groups tab](../../personal/markers.md#groups)* in Map markers menu *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.  
+- by turning on switch near track in *[Groups tab](../../personal/markers.md#groups)* in Map markers menu *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_groups"/>→ +)*.
+
+![GPX to markers 1](@site/static/img/navigation/marker/track_to_markers_andr.png)
+
+:::note
+Only tracks with waypoints can be added to the *Map markers list*. The track you intend to add should also be visible (active) on the map.
+:::
+
+- You can also create *Markers* from a track with waypoints using *[Track context menu](../../map/tracks/track-context-menu.md#waypoints-folder)*: *Tap a visible track on the map → in Track context menu chose Points → '&#8942;' → <Translate android="true" ids="add_group_to_markers"/>*
+
+![GPX to markers 2](@site/static/img/navigation/marker/track_to_markers_andr_2.png) ![GPX to markers 3](@site/static/img/navigation/marker/track_to_markers_andr_3.png)
+
+
+## Sort markers
 
 Pressing on a left corner (Android) or right corner (iOS) of a *Map marker* tab in *[Map markers list](../../personal/markers.md#list)* and moving it up or down, you can change its order in *Navigation list* (while moving a marker card you will see a line indicating where the marker will be placed).
 
@@ -166,7 +147,7 @@ Pressing on a left corner (Android) or right corner (iOS) of a *Map marker* tab 
 
 In Android version of the OsmAnd app, there are other sorting options for *Map markers* *(<Translate android="true" ids="shared_string_menu,map_markers,shared_string_more"/>→ 'Sort by' or 'Plan a route')*.
 
-#### Sort markers by ...
+### Sort by attributes
 
 <Tabs groupId="operating-systems">
 
@@ -190,34 +171,19 @@ You can sort *Markers* by:
 - Distance (nearest or farthest first). This option will sort the markers by their distance from your current location.
 - Date (recently or a long time ago) This will sort the markers by the date they were added. If you have added a lot of markers over time, this can be a useful way to see which ones are the most recent.
 
-#### Sort markers with Plan a route tool
-
-Using functionality of the [Plan a route](../../plan-route/create-route.md#points-list-and-graph) tool you can sort *Markers* *Dor-to-dor*, put them in reverse order or create a *Round trip*. If you tap a *Navigation* option, *Markers* will be used as [intermediate destinations](../setup/route-navigation.md#intermediate-destinations) while [Route preparation](../setup/route-navigation.md).
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">  
-
-![Alternative Markers sorting Android 3](@site/static/img/navigation/marker/sorting_markers_andr_3.png) ![Alternative Markers sorting Android 4](@site/static/img/navigation/marker/sorting_markers_andr_4.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
+### Reorder with a Plan route tool
 
 <InfoAndroidOnly />
 
-</TabItem>
+Using functionality of the Plan a route in Markers list tool you can sort *Markers* *Door-to-door*, put them in reverse order or create a *Round trip*. If you tap a *Navigation* option, *Markers* will be used as [intermediate destinations](../setup/route-navigation.md#intermediate-destinations).
 
-</Tabs>
+![Alternative Markers sorting Android 3](@site/static/img/navigation/marker/sorting_markers_andr_3.png) ![Alternative Markers sorting Android 4](@site/static/img/navigation/marker/sorting_markers_andr_4.png)
 
 ## Pass markers
 
-*Markers* can be helpful if you want to keep track of your progress on a route or if you want to be notified when you approach the designated place (only when *Markes* serve as waypoints and *[Voice guidance](../guidance/voice-navigation.md)* is enabled).
-### Mark as passed
-
-A *Marker* can be marked as passed (Android) or dismissed (iOS) through the *[Map context menu](../../map/map-context-menu.md#add--edit-marker)* (first screenshot).  
-When you approach the *Marker* at a distance closer than 40 meters (Android) or 50 meters (iOS), a switch in the *[Markers widgets](../../widgets/markers.md#top-bar-widget)* bar becomes active (second screenshot). By single tap this switch, a *Marker* becomes inactive, and navigation is built to the next one from the [list](#navigation-list).  
-After the *Marker* is been dismissed, it gets into the [History](../../personal/markers.md#history) folder, from where it can be restored if needed.  
+A *Marker* can be marked as passed (Android) or dismissed (iOS)
+- Through the *[Map context menu](../../map/map-context-menu.md#add--edit-marker)* (first screenshot).  
+- When you approach the *Marker* at a distance closer than 40 meters (Android) or 50 meters (iOS), a switch in the *[Markers widgets](../../widgets/markers.md#top-bar-widget)* bar becomes active (second screenshot).
 
 <Tabs groupId="operating-systems">
 
@@ -235,9 +201,8 @@ After the *Marker* is been dismissed, it gets into the [History](../../personal/
 
 </Tabs>
 
-### Next Marker
+After the *Marker* is been passed, it gets into the [History](../../personal/markers.md#history) folder, from where it can be restored if needed. The next marker in the [list](#itinerary-list) became active. Depending on your [settings](#how-to-use), you may be guided to it with an arrow or dashed line.
 
-After one *Marker* is been [passed](#mark-as-passed), the next one in the [list](../../personal/markers.md#list) became active. Depending on your [settings](#how-to-use), you may be guided to it with an arrow or dashed line.
 
 ## Related Articles
 

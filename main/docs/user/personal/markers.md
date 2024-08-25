@@ -410,7 +410,7 @@ It is possible to mark a point or an object in order to make it easier to plan n
 
 Actions:
 - [<Translate android="true" ids="shared_string_marker"/> / <Translate android="true" ids="edit_map_marker"/>](../personal/markers.md) - puts a new marker on the selected point.
-- 'Mark passed' (Android) / Dismiss (iOS) - deactivates marker and puts it to the History.
+- ['Mark passed'](../navigation/setup/markers-navigation.md) (Android) / Dismiss (iOS) - deactivates marker and puts it to the History.
 - 'Make active' (Android) - moves marker to the top position (on the top panel).
 - 'Restore marker' (Android) - moves marker from History to active list.  
 
