@@ -171,11 +171,16 @@ The compass icon on the button always points to the North. You can select how th
 
 ## Related Articles
 
+
 - [Configure Screen](./configure-screen.md)
 - [Informational widgets](./info-widgets.md)
 - [Navigational widgets](./nav-widgets.md)
 - [Radius-ruler and Ruler](./radius-ruler.md)
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
+
+### Custom buttons
+
+[Quick action widget](./quick-action.md) is a configurable button with various action types that could be assigned to it. It also possible to ahve multiple [Custom buttons](./quick-action.md#custom-buttons).
 
 > *This article was last updated in August 2024*

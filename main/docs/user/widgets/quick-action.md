@@ -87,7 +87,7 @@ You can assign one or more [actions](#action-types) to the quick action button. 
 :::
 
 
-### Change Action Parameters
+### Action Parameters
 
 <Tabs groupId="operating-systems">
 
@@ -146,7 +146,7 @@ When enabled, the quick action widget is located in the lower right corner above
 | *Several [Custom buttons](#custom-buttons) on the map screen* | ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_multi.png) |
 
 
-### Extra quick action widgets
+### Custom buttons
 
 <Tabs groupId="operating-systems">
 
@@ -168,18 +168,9 @@ When enabled, the quick action widget is located in the lower right corner above
 
 </Tabs> 
 
-**Custom buttons** are a unique type of *Quick Action* tool. You can create buttons with one or more actions to display on the map screen.  
+**Custom buttons** are additional buttons on the map that act the same as *Quick Action* button. You can create a button with one or more actions and display it on the map screen.  Custom buttons are located in the *Configure screen → Buttons → Custom buttons* list. Each button has a profile independent actions list and should have a unique ***Name***, however button could be switched on/off individually for each **profile**.
 
-- **To add a new custom button** to the screen, tap&nbsp;  "**＋**"  &nbsp;in the upper right corner of the screen.
-
-- Then **enter a name** for the created button and tap **Save**.
-
-- After adding the new button, it will appear in *the list of Custom buttons*. You can assign one or more [actions](#add-action) to the newly created and enabled custom button.
-
-- All available actions are identical to those that can be applied to the default quick action button. They are listed in the [Quick action types](#quick-action-types) section.
-
-- Created buttons are located in the *Configure screen → Buttons → Custom buttons* list and are **available for all application profiles**.
-
+All available [actions](#quick-action-types) are identical to those that can be applied to the default quick action. Custom buttons could be a special ***Single-action*** button, so they will apply immediately once clicked without extra menu.
 
 
 ## Action Types 
