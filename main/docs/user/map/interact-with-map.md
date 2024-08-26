@@ -201,7 +201,7 @@ You can turn off all map animations during map changes, such as gestures and but
 Creates a smooth map panning effect versus the *[My Position](../personal/profiles/#profile-appearance)* icon when in motion. The effect introduces a slight delay versus ground truth of about 1 second. Enabling this has been reported to create some pronounced lag issues under some circumstances, disable if such issues arise.
 
 
-## External Input Device Buttons
+## External Input Devices
 
 External input device buttons provide a convenient and efficient way to interact with the map and the OsmAnd application interface.  They are located on external devices, such as **Bluetooth or other types of keyboards**, **specialized buttons on vehicle navigation devices**, or [WunderLINQ](https://blackboxembedded.com/) and [Parrot](https://www.parrot.com/en) controllers.  
 
@@ -211,7 +211,7 @@ One of the main functions of buttons on external input devices is to zoom in and
 The keyboard continues to work even if the *External input devices* option is turned off, when *None* is selected.
 :::
 
-### Preconfigured Input Device Type
+### Preconfigured Input Device
 
 <Tabs groupId="operating-systems">
 
@@ -275,46 +275,25 @@ To access the settings of an external input device, you need to enable this feat
 
 ![External devices](@site/static/img/map/external_mypilot_android.png)  ![External devices](@site/static/img/map/external_mypilot2_android.png)
 
-If you want to bind key assignments for an external input device (such as a keyboard, joystick, or controller), you need to create input device type.
-
-- Go to the [External Input Device](#external-input-device-buttons) setting, select **Type** from the list.
-- Tap the&nbsp;  "**＋**"  &nbsp;button in the upper right corner of the screen and enter a name.
-- After applying, the new type will appear in the *Type* list.
-- To select a created type as the main one, tap it in the list.
-- Each new type has a three-dot menu next to it that includes actions such as:  
-    ***Rename, Duplicate***, and ***Remove***.
+If you want to bind key assignments for an external input device (such as a keyboard, joystick, or controller), you need to create an input device type: go to the [External Input Device](#external-input-devices) setting, select **Type** from the list, tap the&nbsp;  "**＋**"  &nbsp; and enter a name. Each type has a menu with actions: ***Rename, Duplicate***, and ***Remove***.
 
 ### Add Action & Key Asssigments
 
 ![External devices](@site/static/img/map/external_custom_4_andr.png)  ![External devices](@site/static/img/map/external_custom_3_andr.png)
 
-After you have created your custom type for the keys, you can assign the required actions to them.
+After you have created a custom input type, you can assign the required actions to the keys. Big variety of [action types](../widgets/quick-action.md#action-types) from Quick Action widget is available.
 
 - Select a device type, then tap the **Key assignments** item.
 - Tap the ***Add*** button (&nbsp;"**＋**"&nbsp;) in the bottom right corner of the screen.
 - Select the required action then tap the ***Add key*** field and tap the button on your device to assign it to the action.  
 
 :::note
-If the button you assign is already being used for another action, you will receive a notification with the option to reassign the button or cancel the assignment.
+- If the button you assign is already being used for another action, you will receive a notification with the option to reassign the button or cancel the assignment.
+- Later you can change action and key assignments or add other key assignments for already created actions, just select an item in Key assignments list.
+
 :::
 
-### Edit Custom Actions
-
-![External devices](@site/static/img/map/external_custom_2_andr.png)  
-
-You can change action and key assignments for already created actions, just select an item in Key assignments list.  
-
-- The **three-dot menu** allows you to:
-    - ***Rename*** the action.  
-    - ***Remove*** the keys assigned to this action.
-
-- With the **Edit button** (*pencil-shaped*) you can:
-    - **Delete** an existing action.
-    - [**Add a new**](../widgets/quick-action.md#custom-buttons) action.
-    - The original main name of the *action-key bundle* is not changed.  
-    - Also in this mode, you can **add a new key** and **assign an additional keys** to the selected action.  
-
-### Delete Custom Actions
+### Delete Key assignment
 
 ![External devices](@site/static/img/map/external_custom_1_andr.png)
 
