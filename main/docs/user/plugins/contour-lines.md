@@ -266,7 +266,7 @@ The *Scale Levels* function allows you to set the minimum and maximum values of 
 **Clearing the cache** is sometimes necessary to free up space on your device or to troubleshoot possible productivity issues. To clear the cache you need to go to the *System Settings* of the device, then the path can be as follows: *Applications → OsmAnd → Storage → Clear cache*.
 
 
-### Interaction with Rendering Version
+### Rendering Engine (Android)
 
 **Hillshade** and **Slope** are displayed and adjusted in any selected [Map rendering engine](../personal/global-settings.md#map-rendering-engine).
 
@@ -276,7 +276,7 @@ The *Scale Levels* function allows you to set the minimum and maximum values of 
     - Alternatively, you can use the *Terrain Map (3D)* download. This saves memory space on your device, and the Hillshade, Slope, and 3D Relief effects will be generated from them using your device.
 
 
-### Quick Actions for Topography Layers
+### Quick Actions
 
 ![QA for Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
