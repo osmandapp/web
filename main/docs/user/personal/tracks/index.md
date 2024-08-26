@@ -20,3 +20,7 @@ Read about what's a track and different types of tracks.
 ### [Display tracks](../../map/tracks/index.md#display-tracks)
 
 How to display tracks and its options in OsmAnd.
+
+### [Navigate by track](../../navigation/setup/gpx-navigation.md)
+
+Read more about how to use track in navigation.
