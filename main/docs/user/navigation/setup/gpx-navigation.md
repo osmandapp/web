@@ -143,24 +143,14 @@ to the *<Translate android="true" ids="start_of_the_track"/>* or to the *<Transl
 
 </Tabs>
 
-When your track selected as a *[destination point](../setup/route-navigation.md#set-destinations)*, you can find the **Attach to the roads** option in the *[Follow track menu](#how-to-follow-the-track)*.
-
-:::note Anroid version
-
-For the Android version, there are two ways to use the *Attach to the roads* setting with selected profile:
-
-- **<Translate android="true" ids="ask_every_time"/>** (*by default*) and **<Translate android="true" ids="shared_string_always"/>**.
-- You can find more information in the [***Navigation Settings***](../guidance/navigation-settings.md#detailed-track-guidance) article.
-
-:::
-
-If you tap **Attach to the roads** button, the [Plan a route](../../plan-route/create-route.md#saving-a-route) tool will open and OsmAnd will match each point on the track to the nearest allowed road on the map according to the chosen profile and threshold distance.  
+You can find the **Attach to the roads** option in the *[Follow track menu](#how-to-follow-the-track)*. If you select **Attach to the roads**, the [Plan a route](../../plan-route/create-route.md#attach-track-to-roads) tool will open and OsmAnd will match each point on the track to the nearest allowed road on the map according to the **chosen profile** and ***threshold distance***. After attaching a track to roads, you get more accurate route information in the [**route details** section](../setup/route-details.md), and [**voice instructions**](#guidance) become more detailed.
 
 - *Threshold distance* (default is 50 meters) refers to the maximum distance between a point on a GPS track and the nearest point on a road in order to attach the track to the road.
 - *When you change the profile*, OsmAnd automatically reattaches your track to the allowed for this profile roads. If your track consists of a big amount of points, attaching to the roads may take a long time. On the picture above, you can see the highlighted with orange status line, which indicates the progress. After the procedure of attaching to the roads is finished, the button **Apply** is active, and the track can be used for navigation.
 
-:::note
-After attaching a track to roads, you get more accurate route information in the [**route details** section](../setup/route-details.md), and [**voice instructions**](#guidance) become more detailed.
+:::note Automatic attach to the roads
+
+For the Android version, *Attach to the roads* runs automatically once track is selected for navigation. You can change it and get more information in the [***Navigation Settings***](../guidance/navigation-settings.md#detailed-track-guidance).
 :::
 
 

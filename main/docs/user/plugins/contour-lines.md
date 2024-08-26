@@ -232,7 +232,7 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 
 - *Hillshade* uses dark shades to show slopes, peaks, and lowlands. Virtual Sun has a fixed azimuth (direction) of 315 degrees.
 
-- *Slope* uses color to visualize the steepness of the terrain. You can read more about it [here](https://en.wikipedia.org/wiki/Grade_(slope)). Each color corresponds to an angle of deviation from the horizontal.  
+- *Slope* uses color to visualize the steepness of the terrain. You can read more about it [here](https://en.wikipedia.org/wiki/Grade_(slope)). Each color corresponds to an angle of deviation from the horizontal. One of additional *slope* color scheme is ***Avalanche***, available in **Modify** menu.
 
 - *Altitude*. Altitude map colors each pixel according to calculated map height using the gradient from a defined color scheme. Usually altitude schemes are very dependent on location. In mountain areas you would prefer to distribute colors to a wider altitude range and in flat areas, you would select a color scheme that has small range between min/max altitude.
 

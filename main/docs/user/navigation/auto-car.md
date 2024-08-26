@@ -205,9 +205,51 @@ You can use the Search tool to find the required place on the map for route plan
 The Favorites and Tracks categories have a special *Last Modified* folder. Since the list in these categories can be very large as it contains all your existing favorites or tracks, this folder is necessary for easy and quick access to your most recent destinations.   
 
 
-## Additional features
+## Navigation features
 
 In addition to the basic features of the OsmAnd app in Android Auto that provide convenient navigation in your vehicle, there are a number of additional features that enhance the user experience and make navigation more personalized, comfortable, and efficient.  
+
+
+### Next turn & Route info
+
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_alert_widget.png)
+
+Next turn widget displays distance and type about [next turn maneuvre](../widgets/nav-widgets.md#next-turn) and 
+[street name](../widgets/nav-widgets.md#street-name).
+
+Route information consists of [estimated time of travel](../widgets/nav-widgets.md#time-to-destination), 
+[estimate time of arrival](../widgets/nav-widgets.md#time-to-destination) and [distance to travel](../widgets/nav-widgets.md#distance-to-destination).
+
+
+### Screen Alert widget
+
+This information widget combines alert types such as **Pedestrian crosswalks** and **Speed Limit**. 
+- The types of alerts have different appearance, which depends on the **<Translate android="true" ids="driving_region"/>**  and can be configured in *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>*.
+- In Android Auto it is not possible to set the display of alerts, you need to configure the widget in the application before starting the navigation and connecting your device to the vehicle.
+- For a detailed description of the alert types, see [this article](../widgets/nav-widgets.md#alert-types).
+- To set up screen alerts for available profiles, see the article [Navigation settings](../navigation/guidance/navigation-settings.md#screen-alerts).  
+
+
+### Speedometer
+
+![Android Auto](@site/static/img/navigation/auto-car/speedometer_3_android.png)
+
+**Speedometer** widget is an integrated interface element that displays *current speed* using GPS data and *speed limit* from the [OSM database](https://wiki.openstreetmap.org/wiki/Key:maxspeed) and [OsmAnd settings](../navigation/guidance/voice-navigation.md#speed-limit) on the vehicle's multimedia system screen.   
+
+- The **Speedometer widget** is [*profile dependent*](../personal/profiles.md), so if you change the settings for one profile, they will not be applied to another.
+- There is no option to customize the display of the **Speedometer widget** directly in *Android Auto*, you need to configure it in OsmAnd app before starting navigation and connecting your device to the vehicle.
+- For more information on how to add and configure the *Speedometer* widget to the display, please read the [*Informational widgets article*](../widgets/info-widgets.md#speedometer).
+
+
+### Map appearance (3D)
+
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_appearance_3d_2.png)
+
+The OsmAnd app allows you to use the 3D map view on the Android Auto screen to display your route and navigation.
+- To enable this feature, you need to select [Map rendering Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine).
+- Open the main *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>* directly in the OsmAnd app.
+- After configuring the settings, the **3D button** will be displayed on the Android Auto screen when the category list for destinations is closed. 
+- You can switch between 3D / 2D map modes by tapping this button.
 
 
 ### Voice prompts
@@ -237,40 +279,6 @@ OsmAnd has [map mode](../map/vector-maps.md#map-mode) options, but when you use 
 - If you want the map display mode to switch depending on the time of day, select Automatic mode.  
 
 <!-- ![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_mode.png) -->
-
-
-### Screen Alert widget
-
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_alert_widget.png)
-
-
-This information widget combines alert types such as **Pedestrian crosswalks** and **Speed Limit**. 
-- The types of alerts have different appearance, which depends on the **<Translate android="true" ids="driving_region"/>**  and can be configured in *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>*.
-- In Android Auto it is not possible to set the display of alerts, you need to configure the widget in the application before starting the navigation and connecting your device to the vehicle.
-- For a detailed description of the alert types, see [this article](../widgets/nav-widgets.md#alert-types).
-- To set up screen alerts for available profiles, see the article [Navigation settings](../navigation/guidance/navigation-settings.md#screen-alerts).  
-
-
-### Speedometer
-
-![Android Auto](@site/static/img/navigation/auto-car/speedometer_3_android.png)
-
-**Speedometer** widget is an integrated interface element that displays *current speed* using GPS data and *speed limit* from the [OSM database](https://wiki.openstreetmap.org/wiki/Key:maxspeed) and [OsmAnd settings](../navigation/guidance/voice-navigation.md#speed-limit) on the vehicle's multimedia system screen.   
-
-- The **Speedometer widget** is [*profile dependent*](../personal/profiles.md), so if you change the settings for one profile, they will not be applied to another.
-- There is no option to customize the display of the **Speedometer widget** directly in *Android Auto*, you need to configure it in OsmAnd app before starting navigation and connecting your device to the vehicle.
-- For more information on how to add and configure the *Speedometer* widget to the display, please read the [*Informational widgets article*](../widgets/info-widgets.md#speedometer).
-
-
-### Map appearance (3D)
-
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_appearance_3d_2.png)
-
-The OsmAnd app allows you to use the 3D map view on the Android Auto screen to display your route and navigation.
-- To enable this feature, you need to select [Map rendering Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine).
-- Open the main *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/>* directly in the OsmAnd app.
-- After configuring the settings, the **3D button** will be displayed on the Android Auto screen when the category list for destinations is closed. 
-- You can switch between 3D / 2D map modes by tapping this button.
 
 
 ### Split-screen
