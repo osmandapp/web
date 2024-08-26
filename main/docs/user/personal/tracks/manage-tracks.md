@@ -38,9 +38,7 @@ All tracks in OsmAnd are stored in the folder: *<Translate android="true" ids="s
 </Tabs>
 
 
-
-
-## Create a track
+## Create a Track
 
 
 <Tabs groupId="operating-systems">
