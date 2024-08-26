@@ -34,7 +34,7 @@ Favorites is the list of Favorites (user's points) in *My Places* menu.
 
 Markers interface is a convenient tool that helps you save points on the map for your short-term needs.
 
-### [Tracks](./tracks/create-edit.md)
+### [Tracks](./tracks/index.md)
 
 Short information about tracks and how to use them
 

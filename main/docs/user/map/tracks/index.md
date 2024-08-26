@@ -166,7 +166,7 @@ Tap the [My Location](../../map/interact-with-map.md#my-location--zoom) buttonto
 - [Track Context menu](../../map/tracks/track-context-menu.md)  
 - [Configure map](../../map/configure-map-menu.md)  
 - [Navigation by track](../../navigation/setup/gpx-navigation.md)  
-- [GPX tracks](../../personal/tracks/create-edit.md)  
+- [GPX tracks](../../personal/tracks/index.md)  
 - [Plan route](../../plan-route/index.md)  
 - [Trip Recording](../../plugins/trip-recording.md)  
 

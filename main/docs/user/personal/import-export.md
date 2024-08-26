@@ -25,6 +25,15 @@ The **Import** and **Export** tools in OsmAnd allow you to manage your data. You
 
 The *Import* and *Export* allows you to save data from generated **OSF files** or use [online sources](../map/raster-maps.md), making it possible to restore information after reinstallation.
 
+**Data types** available for import/export:
+- **Settings:**  
+        [*Profiles*](../personal/profiles.md#actions), &nbsp;[*OsmAnd/General Settings*](../personal/global-settings.md), &nbsp;[*Colors*](../personal/color-palette-schemes.md), &nbsp;[*Quick action*](../widgets/quick-action.md), &nbsp;[*POI Type*](../map/point-layers-on-map.md#poi-types), &nbsp;[*Avoid road*](../map/map-context-menu.md#avoid-road).
+- **My Places:**  
+        [*Favorites*](../personal/favorites.md#export--import), &nbsp;[*Tracks*](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[*OSM notes*, *OSM edits*](../plugins/osm-editing.md#create--modify-poi), &nbsp;[*A/V notes*](../plugins/audio-video-notes.md), &nbsp;[*Map markers*](../personal/markers.md), &nbsp;[*Markers history*, *Search history*, *Navigation history*](../personal/global-settings.md#history), &nbsp;*Itinerary*.
+- **Resources:**  
+        [*Rendering style*](../map/vector-maps.md#custom-map-style), &nbsp;[*Routing*](../navigation/routing/osmand-routing.md), &nbsp;[*Online routing engines*](../navigation/routing/online-routing.md), &nbsp;[*Map sources*, *Standart/Offline Maps*](../map/raster-maps.md), &nbsp;[*Wikipedia and Travel maps*](../plan-route/travel-guides.md), &nbsp;[*Nautical maps*](../plugins/nautical-charts.md), &nbsp;[*Road maps*](../map/vector-maps.md#road-style), &nbsp;[*Topography maps*](../plugins/contour-lines.md), &nbsp;[*Voice prompts (TTS)*](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [*Voice prompts (recorded)*](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[*Favorites backup*](../personal/favorites.md#automatic-favorites-backup).
+
+
 
 ### Export
 
@@ -49,13 +58,6 @@ The *Import* and *Export* allows you to save data from generated **OSF files** o
 </Tabs> 
 
 All the data you have configured and created can be exported using the ***Export menu***. The menu consists of three groups: **Settings**, **My Places**, and **Resources**, which contain all available file folders. In each folder, you can select the files you want to export, one at a time or all at once. **All exported files are saved in OSF format**.  
-
-- **Settings:**  
-        [*Profiles*](../personal/profiles.md#actions), &nbsp;[*OsmAnd/General Settings*](../personal/global-settings.md), &nbsp;[*Colors*](../personal/color-palette-schemes.md), &nbsp;[*Quick action*](../widgets/quick-action.md), &nbsp;[*POI Type*](../map/point-layers-on-map.md#poi-types), &nbsp;[*Avoid road*](../map/map-context-menu.md#avoid-road).
-- **My Places:**  
-        [*Favorites*](../personal/favorites.md#export--import), &nbsp;[*Tracks*](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[*OSM notes*, *OSM edits*](../plugins/osm-editing.md#create--modify-poi), &nbsp;[*A/V notes*](../plugins/audio-video-notes.md), &nbsp;[*Map markers*](../personal/markers.md), &nbsp;[*Markers history*, *Search history*, *Navigation history*](../personal/global-settings.md#history), &nbsp;*Itinerary*.
-- **Resources:**  
-        [*Rendering style*](../map/vector-maps.md#custom-map-style), &nbsp;[*Routing*](../navigation/routing/osmand-routing.md), &nbsp;[*Online routing engines*](../navigation/routing/online-routing.md), &nbsp;[*Map sources*, *Standart/Offline Maps*](../map/raster-maps.md), &nbsp;[*Wikipedia and Travel maps*](../plan-route/travel-guides.md), &nbsp;[*Nautical maps*](../plugins/nautical-charts.md), &nbsp;[*Road maps*](../map/vector-maps.md#road-style), &nbsp;[*Topography maps*](../plugins/contour-lines.md), &nbsp;[*Voice prompts (TTS)*](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [*Voice prompts (recorded)*](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[*Favorites backup*](../personal/favorites.md#automatic-favorites-backup).
 
 
 ### Import

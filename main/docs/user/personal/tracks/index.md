@@ -3,15 +3,20 @@ title:  Tracks
 sidebar_position: 8
 ---
 
-
-## [Create / Edit](./create-edit.md)
-
-Features Tracks functionality lets you create and save routes so you can easily return to them later or share them with others.
-
 ## [Manage Tracks](./manage-tracks.md)
 
-All info about management of tracks and track folders.
+All information about creating, managing and organizing tracks and track folders.
 
 ## [Smart Folder(filter)](./smart-folder.md)
 
 Easy way to create your virtual folders for tracks with any filters. 
+
+## Read more
+
+### [Types of tracks](../../map/tracks/index.md#types-of-tracks)
+
+Read about what's a track and different types of tracks.
+
+### [Display tracks](../../map/tracks/index.md#display-tracks)
+
+How to display tracks and its options in OsmAnd.

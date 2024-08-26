@@ -144,7 +144,7 @@ In the iOS version of OsmAnd, "Appearance on Map" is also a setting for displayi
 ![Map markers Plan Route points Android](@site/static/img/personal/markers/map_markers_plan_route_points_android.png) ![Map markers Plan Route Options Android](@site/static/img/personal/markers/map_markers_plan_route_options_android.png)
 
 
-Using functionality of the Plan a route in Markers list tool you can sort *Markers* *Door-to-door*, put them in reverse order or create a *Round trip*. If you tap a *Navigation* option, *Markers* will be used as [intermediate destinations](../setup/route-navigation.md#intermediate-destinations).
+Using functionality of the Plan a route in Markers list tool you can sort *Markers* *Door-to-door*, put them in reverse order or create a *Round trip*. If you tap a *Navigation* option, *Markers* will be used as [intermediate destinations](../navigation/setup/route-navigation.md#intermediate-destinations).
 
 
 ## Actions

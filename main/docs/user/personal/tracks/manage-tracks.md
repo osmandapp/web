@@ -16,7 +16,57 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
+
 ## Overview
+
+All tracks in OsmAnd are stored in the folder: *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. Track file is processed by OsmAnd in [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format) format, however [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) & [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) could be imported and transformed to GPX. Read more about different types of tracks in [Tracks on map](../../map/tracks/index.md#types-of-tracks) article.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Track on the map](@site/static/img/personal/tracks/track_on_map_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Track on the map iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
+
+</TabItem>
+ 
+</Tabs>
+
+
+
+
+## Create a track
+
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Plan a route modify-track-android](@site/static/img/plan-route/plan-route-modify-track-android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route modify-track-ios](@site/static/img/plan-route/plan-route-modify-track-ios.png)
+
+</TabItem>
+ 
+</Tabs>
+
+
+
+You can add tracks in OsmAnd in the following ways:
+1. **[Import](./manage-tracks.md#import--export-track)** a track from an external source.
+2. Create new track in the application using **[Plan a route](../../plan-route/create-route.md)** tool.
+3. Record track in the application using **[Trip recording](../../plugins/trip-recording.md)** plugin. 
+4. Enter multiple points by coordinates and save as a track using **[Coordinate input](../../plan-route/coordinate-input.md)** tool.
+
 
 ## Manage Tracks
 

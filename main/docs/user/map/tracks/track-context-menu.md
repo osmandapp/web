@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-The *Track context menu* provides information about the *[Track](../../personal/tracks/create-edit.md)* in both text and [graphic](#altitude--speed-graphs) forms. It allows you to add information, make changes, edit and perform various other actions with the track. You can access *Track context menu* by simply tapping the needed track on the map or using *[My places](../../personal/myplaces.md)* menu (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). You may need to open track folder and select the desired track by tapping it.  
+The *Track context menu* provides information about the *[Track](../../personal/tracks/index.md)* in both text and [graphic](#altitude--speed-graphs) forms. It allows you to add information, make changes, edit and perform various other actions with the track. You can access *Track context menu* by simply tapping the needed track on the map or using *[My places](../../personal/myplaces.md)* menu (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). You may need to open track folder and select the desired track by tapping it.  
 
 The *Track context menu* consists of 4 tabs, which can be accessed by taping on the corresponding icons at the bottom of the screen:
 
@@ -337,7 +337,7 @@ In this *Points* tab:
 
 ### Add Waypoint to a Track
 
-Waypoints can be added to the currently recorded track or to any track from your track collection [*My Places → Tracks list*](../../personal/tracks/create-edit.md):
+Waypoints can be added to the currently recorded track or to any track from your track collection [*My Places → Tracks list*](../../personal/tracks/manage-tracks.md):
 
 - Using the [Map Context Menu](../../map/map-context-menu.md#-add--edit--track-waypoint). Waypoints are automatically displayed if the selected track is enabled on the map. To create a waypoint use a [long-tap](../../map/map-context-menu.md#select-any-point-long-tap) on the map at any chosen location. In the opened [Map Context Menu](../../map/map-context-menu.md#-add--edit--track-waypoint) you can set information about the waypoint.
 - Using [*Add Waypoint*](#add--delete-buttons) button of the Track Context menu.
@@ -720,7 +720,7 @@ Actions list is available on the bottom of **Filter** or **Statistics** tab. Osm
 
 ## Related Articles
 
-- [GPX tracks](../../personal/tracks/create-edit.md)
+- [GPX tracks](../../personal/tracks/manage-tracks.md)
 - [Tracks on the map](./track-context-menu.md)
 - [Navigation by track](../../navigation/setup/gpx-navigation.md)
 - [Plan route](../../plan-route/index.md)
