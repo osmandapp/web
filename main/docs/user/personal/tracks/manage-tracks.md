@@ -14,7 +14,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoIncompleteArticle/>
 
 
 ## Overview
@@ -161,7 +160,7 @@ Available:
 
 - Search by track name.
 - [*Sort by*](#sort-by) for better search if you can't remember the title.
-- [*Filter*](./smart-folder.md#filter) (*Android only*) if you need the specific characteristics of the track.
+- [*Filter*](./smart-folder.md#search-filter) (*Android only*) if you need the specific characteristics of the track.
 
 ### Selection Mode
 
