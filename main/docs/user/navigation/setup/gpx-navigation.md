@@ -13,14 +13,12 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoIncompleteArticle/>
-
 
 ## Overview
 
 The *Navigation by track* (GPX) option allows you to follow a predefined route or track on a map. It can be particularly useful for outdoor activities such as hiking, cycling, or off-road driving, where having a planned route improves safety and efficiency. If you are traveling in an organized group, this feature helps you and each member of the group have the same route information as the others.  
 
-The *Navigation by track* option can also be used in the everyday life. You can use a previously [recorded track](../../plugins/trip-recording.md) or share it with your family or friends instead of explaining the route to them. You can also use the [routes on the OsmAnd map](../../../../blog/routes/) for navigation. How to highlight them on the map and what their colors mean is described in the [Routes section](../../map/vector-maps.md#routes) of the *Vector maps* article.  
+The *Navigation by track* option can also be used in the everyday life. You can use a previously [recorded track](../../plugins/trip-recording.md) or [create a track](../../personal/tracks/manage-tracks.md#create-a-track) and share it with your family or friends instead of explaining the route to them. You can also use the [routes on the OsmAnd map](../../../../blog/routes/) for navigation. How to highlight them on the map and what their colors mean is described in the [Routes section](../../map/vector-maps.md#routes) of the *Vector maps* article.  
 
 <Tabs groupId="operating-systems">
 
@@ -39,26 +37,14 @@ The *Navigation by track* option can also be used in the everyday life. You can 
 </Tabs>
 
 
-## Select the Track to Navigate
+## Select the Track 
 
-Before using the *Navigation by track* option you need to [create](#create-and-import-gpx) or [import](../../personal/tracks/manage-tracks.md#import) a [GPX file](../../../technical/osmand-file-formats/osmand-gpx.md), a common format used to store route data.  
-A *GPX file* usually contains a sequence of points (waypoints) that define a route. It can be recorded or created using various tools (mostly apps and online services). You can read more about *GPX file format* used by OsmAnd in the [Trip recording plugin](../../plugins/trip-recording.md#recorded-gpx-file) article.  
+Before using the *Navigation by track* option you need to [display track on the map](../../map/tracks/index.md#display-tracks-on-the-map). OsmAnd supports track as a line (**Geometry**) and track as a route (**Route**) or combination of them (**OsmAnd** by [Plan route](../../plan-route/create-route.md)). If you have track as a collection **Waypoints**, you can use [Markers navigation](./markers-navigation.md).
 
 
-### Create and Import GPX
-
-In the OsmAnd application, you can create a GPX file using tools such as:
-
-- *[Plan a route](../../plan-route/create-route.md)*.
-- [*Create a route → Save*](./route-details.md#share--export-actions).  
-- [*Trip recording plugin*](../../plugins/trip-recording.md).
-- [*Web portal*](../../plan-route/web.md#tracks) (*Pro subscription required*).
-
-Import GPX files:
-
-- You can learn how to import GPX files to OsmAnd in the [My data / Tracks](../../personal/tracks/manage-tracks.md#import) article.
-- Tracks from the OsmAnd Web portal can be downloaded on your device using [OsmAnd Cloud](../../personal/osmand-cloud.md).
-- You can find many tracks without categories in OpenStreetMap and download them - [Public GPS Traces](https://www.openstreetmap.org/traces).
+- **Geometry** track will have very basic navigation by default and won't provide accurate turns, street names and turn lanes. In order to get missing information, you need to use [Attach to the roads](#attach-to-the-roads) tool.
+- **Route** track will calculate route between route points by selected profile. Basically all route points will be considered as intermediate points. If you route consists > 50 points, it's very likely that it's misconfigured **Geometry** track.
+- **OsmAnd** track consists of both geometry and route parts and it's suitable to provide exactly same guidance as navigation by default. These tracks are produced by [Plan route](../../plan-route/create-route.md) or [Web version](../../plan-route/web.md). It's possible to resave this track to **Geometry** only track as [**Simplified**](../../plan-route/create-route.md#save-route) to be used in 3rd party programs.
 
 
 ### Start GPX Navigation
@@ -78,8 +64,6 @@ Import GPX files:
 </TabItem>
 
 </Tabs>
-
-If a track has been created or imported into OsmAnd, it can be found in the track list in [My places](../../personal/myplaces). You can select the required file from the [available tracks](../../personal/tracks/manage-tracks.md), highlight it on the map, and then use it for navigation.  
 
 Navigation on a track can be started using the quick action button in the [Track context menu](../../map/tracks/track-context-menu.md#quick-actions) (opened by selecting one of the [highlighted tracks](./route-navigation.md#history-of-previous-routes) on the map or by tapping a track file in the [My Places](../../personal/myplaces.md) section of the Main menu) or from the navigation menu, which is opened by tapping:
 
@@ -105,10 +89,10 @@ Navigation on a track can be started using the quick action button in the [Track
 
 </Tabs>
 
-If a track consists of more than one track, [when importing](../../personal/tracks/manage-tracks.md#import) you can choose whether to save it in a single file or in multiple files. For navigation, if the selected track consists of multiple segments or tracks, you can select either a specific segment or the entire gpx track file.  
+For navigation, if the selected track consists of multiple segments or tracks, you can select either a specific segment or the entire gpx track file. When **[importing](../../personal/tracks/manage-tracks.md#import)** you can choose whether to save it in a single file or in multiple files.
 
 
-## How to Follow the Track
+### Follow Track options
 
 <Tabs groupId="operating-systems">
 
@@ -132,26 +116,13 @@ If a track consists of more than one track, [when importing](../../personal/trac
 
 </Tabs>
 
-The *Follow track* menu helps you select several advanced settings for navigating a track.
-
-- First, *select the track* you want to follow.
-- Then *select the direction* of the track (by default, the direction of the current track is selected).
-- You can [*attach the track to roads*](#attach-to-the-roads).
-- *Select from which point the navigation starts* on the track: from the start or the nearest point on the track.
-- *Select the type of navigation* to a point on the track (by default, the profile in which the navigation is set is selected).
-
-**Settings:**
-
 - ***Edit*** (*pencil icon* next to the track name). Opens the track in the [*Plan a route*](../../plan-route/create-route.md) tool.
 - ***<Translate android="true" ids="select_another_track"/>***. Allows you to select a different GPX file for navigation.
 - ***<Translate android="true" ids="gpx_option_reverse_route"/>***. If this setting is enabled, the direction of movement along the track is reversed.
-- ***<Translate android="true" ids="attach_to_the_roads"/>***. Opens the corresponding [menu](#attach-to-the-roads).
-- ***<Translate android="true" ids="pass_whole_track_descr"/>*** (*Android*) / ***<Translate ios="true" ids="point_to_navigate"/>*** (*iOS*). You can select the direction:
-    - to the *<Translate android="true" ids="start_of_the_track"/>*,
-    - to the *<Translate android="true" ids="nearest_point"/>* on the track.
-- ***<Translate android="true" ids="nav_type_hint"/>***. You can choose to:
-    - switch to a route in a [*straight line*](../routing/straight-line-routing.md),
-    - use the [*routing type*](../routing/osmand-routing.md#routing-types) from the current profile.
+- ***<Translate android="true" ids="attach_to_the_roads"/>***. Allows to [Attach track to the roads](#attach-to-the-roads).
+- ***<Translate android="true" ids="pass_whole_track_descr"/>*** (*Android*) / ***<Translate ios="true" ids="point_to_navigate"/>*** (*iOS*). You can select how to navigate from my location to the track:
+to the *<Translate android="true" ids="start_of_the_track"/>* or to the *<Translate android="true" ids="nearest_point"/>* on the track.
+- Choose **Navigation type** for the first and last segment: either build a [*straight line*](../routing/straight-line-routing.md) or use the [*routing type*](../routing/osmand-routing.md#routing-types) from the current profile.
 
 
 ### Attach to the Roads
@@ -193,53 +164,21 @@ After attaching a track to roads, you get more accurate route information in the
 :::
 
 
-## Custom Points
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Overview track context menu Android](@site/static/img/personal/tracks/track_context_overview_andr_1.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Overview track context menu iOS](@site/static/img/personal/tracks/track_context_overview_ios_1.png)
-
-</TabItem>
-
-</Tabs>
+## Points
 
 ### Start / Finish Point
 
-You can specify the start and finish point for a route other than the points used in the GPX file. In the [Follow track menu](#how-to-follow-the-track), you can choose whether you want to navigate from your current location to the start point or to the nearest point on the GPX track.  
-Also, you can choose [<Translate android="true" ids="nav_type_hint"/>](../routing/osmand-routing.md#routing-types) that will be used when moving on and along the track.  
+You can specify the start and finish point for a route other than the start/finish specified in the GPX file. Just change it the same as you do for [Navigation](../setup/route-navigation.md#select-starting-point).
 
-### Add Waypoints
+In the [Follow track menu](#follow-track-options), you can choose whether you want to navigate from your current location to the start point of the track or to the nearest point on the GPX track.  Also, you can choose [<Translate android="true" ids="nav_type_hint"/>](../routing/osmand-routing.md#routing-types) that will be used for the start and end segment of your route.  
 
-You can add a waypoint to any imported or created [GPX track](#create-and-import-gpx) from the [*My Places → Track List* collection](../../personal/tracks/manage-tracks.md#view-all-tracks).  
+### Waypoints
 
-1. Using the *My Places* menu:
-    - Go to the *My Places → Tracks* menu.
-    - Tap the track in the list that you are interested in.
-    - In the opened context menu, select *Points tab → bottom section Action → Add Waypoint*.
-    - Enter the required information to the Waypoint and [save](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track).
-2. *Visible tracks*:
-    - Tracks must first be added to the *Visible on map* folder ([*Show on map* feature](../../personal/tracks/manage-tracks.md#single-track-menu)) in the *Tracks tab*.
-    - Tap the selected track on the map, than *Points tab → bottom section Action → [Add Waypoint](../../map/tracks/track-context-menu.md#add-waypoint-to-a-track)*.
-3. *Long-tap the map*:
-    - Long-tap to select a location on the map and tap [Add track waypoint](../../map/map-context-menu.md#-add--edit--track-waypoint) from the *Map context menu*.
-    - Select the track to which you want to add a waypoint, enter the required information and save.
+If track has waypoints, you can use [Show along the road](../guidance/map-during-navigation.md#show-points-along-the-route) and [Voice guidance](../guidance/voice-navigation.md#voice-settings) to get notified about Points of Interests. You can add **Waypoints** to an existing track via **[Context menu](../../map/map-context-menu.md#-add--edit--track-waypoint)**, track need to be visible on the map.
 
-### Restriction on Intermediate Points
+### Intermediate Points
 
-When preparing or navigating a GPX track, you cannot add intermediate places you plan to drive through within that track. You can only assign start and finish points in addition to the track or segment you are planning to follow.  
-
-To do this, use the&nbsp;  "**+**"  &nbsp;button to add a new destination point. As a result, when recalculating, navigation will be done along the selected track in the part where it is possible. The rest of the route will follow the specified point.  
-
-For detailed information about intermediate destination points, see the [Route Preparation](../../navigation/setup/route-navigation.md#intermediate-destinations) article.
-
+When preparing or navigating a GPX track, you cannot add intermediate places you plan to drive through within that track. You can only assign start and finish points in addition to the track or segment you are planning to follow. 
 
 ## Guidance
 
