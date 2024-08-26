@@ -41,7 +41,7 @@ You can choose which tracks to show on the map and which to hide in the [My Plac
 
 ### Configure map 
 
-Configure map allows you to quickly select all recently visible tracks, so you can easily switch on/off visibility for collection of tracks. Sorting of tracks is the same as configured in My Places - Tracks. By long tap on the track item, you can access [Track menu](../../personal/tracks/manage-tracks.md#track-menu).Also in this menu you can change appearance for multiple [selected tracks](./appearance.md#change-tracks-appearance-in-my-places).
+Configure map allows you to quickly select all recently visible tracks, so you can easily switch on/off visibility for collection of tracks. Sorting of tracks is the same as configured in My Places - Tracks. By long tap on the track item, you can access [Track menu](../../personal/tracks/manage-tracks.md#track-menu).Also in this menu you can change appearance for multiple [selected tracks](./appearance.md#change-multiple-tracks).
 
 <Tabs groupId="operating-systems">
 

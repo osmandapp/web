@@ -15,18 +15,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoIncompleteArticle/>
-
 ## Overview
 
 The *Track context menu* provides information about the *[Track](../../personal/tracks/index.md)* in both text and [graphic](#altitude--speed-graphs) forms. It allows you to add information, make changes, edit and perform various other actions with the track. You can access *Track context menu* by simply tapping the needed track on the map or using *[My places](../../personal/myplaces.md)* menu (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). You may need to open track folder and select the desired track by tapping it.  
-
-The *Track context menu* consists of 4 tabs, which can be accessed by taping on the corresponding icons at the bottom of the screen:
-
-- [Overview tab](#overview-tab)
-- [Track tab](#altitude--speed-graphs) with Altitude / Speed Graphs
-- [Points tab](#points--waypoints)
-- [Options tab](#options)
 
 <Tabs groupId="operating-systems">
 
@@ -45,7 +36,7 @@ The *Track context menu* consists of 4 tabs, which can be accessed by taping on 
 </Tabs>
 
 
-## Overview Tab
+## Track overview
 
 When you tap a track, opens the first screen of the *Track context menu* - *Overview tab*. On this tab you can find a summary about the chosen track (*[Info panel](#info-panel)*) and make the most common actions with the track using *[Quick actions menu](#quick-actions)*. If you pull Overview tab up, you will see [description and service information](#description-and-info) about your track.
 
@@ -107,6 +98,77 @@ Buttons panel with the next action: *Show / Hide* a track on the map, opening [*
 - *Appearance* - is used to customise the [Appearance](../../map/tracks/appearance.md) of your track.
 - *Edit track* (**Android**) - opens the track in *[Plan route tool](../../plan-route/create-route.md)* or *Export* (**iOS**) allows [to export a track](../../personal/tracks/manage-tracks.md#export).
 - *Directions* - opens the track in *[Navigation](../../navigation/setup/gpx-navigation.md#start-gpx-navigation)* mode.
+
+### Options
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_android.png)  
+
+Menu Options allows to make manipulation with the chosen track, Information Routing Edit Delete Share Export to open it in other tools.  
+
+- *<Translate android="true" ids="shared_string_show_on_map"/>* - shows or not the track on the map.
+- *<Translate android="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../tracks/appearance.md) for the track.
+- *<Translate android="true" ids="follow_track"/>* - starts navigation by [Follow track option](../../navigation/setup/gpx-navigation.md).
+
+
+- *<Translate android="true" ids="join_segments"/>* - allows to join gaps of the track.
+- *<Translate android="true" ids="analyze_on_map"/>* - opens [Analyze on map function](../index.md#analyze-track-on-map).
+- *<Translate android="true" ids="analyze_by_intervals"/>* - [analyze the track by time or distance intervals](./track-context-menu.md#split-interval).
+
+
+- *<Translate android="true" ids="shared_string_share"/>* - export the chosen track.
+- *<Translate android="true" ids="upload_to_openstreetmap"/>* - [upload the chose track to OpenStreetMap](../../plugins/osm-editing.md#how-to-upload-gpx-track).
+
+
+- *<Translate android="true" ids="edit_track"/>* - open the chosen track in [Plan route tool](../../plan-route/create-route.md).
+- *<Translate android="true" ids="rename_track"/>* - change track name.
+- *<Translate android="true" ids="change_folder"/>* - select folder and add new one for the chosen track.
+
+
+- *<Translate android="true" ids="shared_string_gps_filter"/>* - allows [to filter points of the track](./track-context-menu.md#gps-filter).
+- *<Translate android="true" ids="altitude_correction"/>* - to [receive elevation data](./track-context-menu.md#calculate-elevation-offline), attach your track to the roads or calculate it offline (needed [Terrain maps](../../plugins/contour-lines.md#download-maps)).
+- *<Translate android="true" ids="simulate_your_location"/>* - [simulate your position](../../plugins/development.md#gpx-track-simulation) using a GPX track.
+
+
+- *<Translate android="true" ids="shared_string_delete"/>* - delete the track.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_ios.png)  
+
+Menu Options allows to make manipulation with the chosen track, Information Routing Edit Delete Share Export to open it in other tools.
+
+- *<Translate ios="true" ids="shared_string_show_on_map"/>* - shows or not the track on the map.
+- *<Translate ios="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../index.md#track-appearance) for the track.
+- *<Translate ios="true" ids="shared_string_navigation"/>* - starts navigation by [Follow track option](../../navigation/setup/gpx-navigation.md).
+
+
+- *<Translate ios="true" ids="analyze_on_map"/>* - opens [Analyze on map function](../index.md#analyze-track-on-map).
+
+
+- *<Translate ios="true" ids="shared_string_share"/>* - export the chosen track.
+- *<Translate ios="true" ids="upload_to_openstreetmap"/>* - [upload the chose track to OpenStreetMap](../../plugins/osm-editing.md#how-to-upload-gpx-track)
+
+
+- *<Translate ios="true" ids="edit_track"/>* - open the chosen track in [Plan route tool](../../plan-route/create-route.md).
+- *Dublicate track* - allows to make and save a copy of the track.
+
+
+- *<Translate ios="true" ids="rename_track"/>* - change track name.
+- *<Translate ios="true" ids="change_folder"/>* - select folder and add new one for the chosen track.
+
+
+- *<Translate ios="true" ids="shared_string_delete"/>* - delete the track.
+
+
+</TabItem>
+
+</Tabs>
 
 
 ### Description and Info
@@ -221,7 +283,7 @@ Interaction with the graph:
 
 **Buttons**:
 
-- **<Translate android="true" ids="analyze_on_map"/>** button opens [Analyze track menu](../index.md#analyze-track-on-map) for the track.  [f](../index.md)
+- **<Translate android="true" ids="analyze_on_map"/>** button opens [Analyze track menu](../index.md#analyze-track-on-map) for the track.
 
 - **<Translate android="true" ids="shared_string_options"/>** button opens menu with:
 
@@ -378,6 +440,58 @@ When you tap to *Add Waypoint* button, the Creation point screen opens (this scr
 4. **Replace** another point with this, if you need to.  
 
 
+### Actions
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Track menu Group menu Android](@site/static/img/personal/tracks/track_menu_group_menu_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Track menu Group menu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+**&#8285;** button opens waypoint Group menu.
+
+**Actions:**
+
+- **<Translate android="true" ids="shared_string_show_on_map"/>**. Allows you to show or not show group waypoints on the map. Or you can use [the screen button](#show-waypoints-on-the-map) for showing or not group waypoints on the map.
+- **<Translate android="true" ids="shared_string_rename"/>**. Allows you to change the name of the group.
+- **<Translate android="true" ids="change_color"/>**. Allows you to change the color for group waypoints.
+- **<Translate android="true" ids="copy_to_map_markers"/>** (*Android only*). Allows you to move group waypoints to [Map markers](../../personal/markers.md).
+- **<Translate android="true" ids="copy_to_map_favorites"/>** (*Android only*). Allows you to move group waypoints to [Favorites](../../personal/favorites.md).
+- **<Translate android="true" ids="shared_string_delete"/>**. Allows you to delete group waypoints.
+
+
+### Waypoint Groups
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Track menu Group map Android](@site/static/img/personal/tracks/waypoints_group_map_android.png) ![Track menu Group map Android](@site/static/img/personal/tracks/waypoints_group_map_1_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Track menu Group map iOS](@site/static/img/personal/tracks/waypoints_group_map_ios.png) ![Track menu Group map iOS](@site/static/img/personal/tracks/waypoints_group_map_1_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+- You can control the visibility of groups on the map. If the track is hidden, all groups will also be hidden.
+
+- You can switch group waypoints on or off on the map using the button in the upper right corner of the context menu of the track on the map. Tap it and select the required action.
+
 ### Display Custom GPX Tags
 
 <Tabs groupId="operating-systems">
@@ -496,153 +610,8 @@ To change the Waypoint description, you can go one of the following ways:
 **Amenity tags** that describe additional information, such as hours of operation or phone number, specific to the POI take that information from OpenStreetMap data or data that you entered when creating the POI. You can edit such tags and [custom tags](#display-custom-gpx-tags) only in the code of the GPX file, which you can open with any text editor on your device.
 
 
-### Add / Delete Buttons
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Track menu points Android](@site/static/img/personal/tracks/track_menu_points_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Statistics screen track iOS](@site/static/img/personal/tracks/waypoints_track_list_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-Points / Waypoins menu in Context track menu opens list of track / folders waypoints.
-
-
-### Waypoints Folder
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Track menu Group menu Android](@site/static/img/personal/tracks/track_menu_group_menu_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Track menu Group menu iOS](@site/static/img/personal/tracks/track_menu_group_menu_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-**&#8285;** button opens waypoint Group menu.
-
-**Actions:**
-
-- **<Translate android="true" ids="shared_string_show_on_map"/>**. Allows you to show or not show group waypoints on the map. Or you can use [the screen button](#show-waypoints-on-the-map) for showing or not group waypoints on the map.
-- **<Translate android="true" ids="shared_string_rename"/>**. Allows you to change the name of the group.
-- **<Translate android="true" ids="change_color"/>**. Allows you to change the color for group waypoints.
-- **<Translate android="true" ids="copy_to_map_markers"/>** (*Android only*). Allows you to move group waypoints to [Map markers](../../personal/markers.md).
-- **<Translate android="true" ids="copy_to_map_favorites"/>** (*Android only*). Allows you to move group waypoints to [Favorites](../../personal/favorites.md).
-- **<Translate android="true" ids="shared_string_delete"/>**. Allows you to delete group waypoints.
-
-
-### Show Waypoints on the Map
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Track menu Group map Android](@site/static/img/personal/tracks/waypoints_group_map_android.png) ![Track menu Group map Android](@site/static/img/personal/tracks/waypoints_group_map_1_android.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Track menu Group map iOS](@site/static/img/personal/tracks/waypoints_group_map_ios.png) ![Track menu Group map iOS](@site/static/img/personal/tracks/waypoints_group_map_1_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-- You can control the visibility of groups on the map. If the track is hidden, all groups will also be hidden.
-
-- You can switch group waypoints on or off on the map using the button in the upper right corner of the context menu of the track on the map. Tap it and select the required action.
-
-
-## Options
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_android.png)  
-
-Menu Options allows to make manipulation with the chosen track, Information Routing Edit Delete Share Export to open it in other tools.  
-
-- *<Translate android="true" ids="shared_string_show_on_map"/>* - shows or not the track on the map.
-- *<Translate android="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../tracks/appearance.md) for the track.
-- *<Translate android="true" ids="follow_track"/>* - starts navigation by [Follow track option](../../navigation/setup/gpx-navigation.md).
-
-
-- *<Translate android="true" ids="join_segments"/>* - allows to join gaps of the track.
-- *<Translate android="true" ids="analyze_on_map"/>* - opens [Analyze on map function](../index.md#analyze-track-on-map).
-- *<Translate android="true" ids="analyze_by_intervals"/>* - [analyze the track by time or distance intervals](./track-context-menu.md#split-interval).
-
-
-- *<Translate android="true" ids="shared_string_share"/>* - export the chosen track.
-- *<Translate android="true" ids="upload_to_openstreetmap"/>* - [upload the chose track to OpenStreetMap](../../plugins/osm-editing.md#how-to-upload-gpx-track).
-
-
-- *<Translate android="true" ids="edit_track"/>* - open the chosen track in [Plan route tool](../../plan-route/create-route.md).
-- *<Translate android="true" ids="rename_track"/>* - change track name.
-- *<Translate android="true" ids="change_folder"/>* - select folder and add new one for the chosen track.
-
-
-- *<Translate android="true" ids="shared_string_gps_filter"/>* - allows [to filter points of the track](./track-context-menu.md#gps-filter).
-- *<Translate android="true" ids="altitude_correction"/>* - to [receive elevation data](./track-context-menu.md#calculate-elevation-offline), attach your track to the roads or calculate it offline (needed [Terrain maps](../../plugins/contour-lines.md#download-maps)).
-- *<Translate android="true" ids="simulate_your_location"/>* - [simulate your position](../../plugins/development.md#gpx-track-simulation) using a GPX track.
-
-
-- *<Translate android="true" ids="shared_string_delete"/>* - delete the track.
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Track menu options Android](@site/static/img/personal/tracks/track_menu_options_ios.png)  
-
-Menu Options allows to make manipulation with the chosen track, Information Routing Edit Delete Share Export to open it in other tools.
-
-- *<Translate ios="true" ids="shared_string_show_on_map"/>* - shows or not the track on the map.
-- *<Translate ios="true" ids="shared_string_appearance"/>* - opens [Appearance menu](../index.md#track-appearance) for the track.
-- *<Translate ios="true" ids="shared_string_navigation"/>* - starts navigation by [Follow track option](../../navigation/setup/gpx-navigation.md).
-
-
-- *<Translate ios="true" ids="analyze_on_map"/>* - opens [Analyze on map function](../index.md#analyze-track-on-map).
-
-
-- *<Translate ios="true" ids="shared_string_share"/>* - export the chosen track.
-- *<Translate ios="true" ids="upload_to_openstreetmap"/>* - [upload the chose track to OpenStreetMap](../../plugins/osm-editing.md#how-to-upload-gpx-track)
-
-
-- *<Translate ios="true" ids="edit_track"/>* - open the chosen track in [Plan route tool](../../plan-route/create-route.md).
-- *Dublicate track* - allows to make and save a copy of the track.
-
-
-- *<Translate ios="true" ids="rename_track"/>* - change track name.
-- *<Translate ios="true" ids="change_folder"/>* - select folder and add new one for the chosen track.
-
-
-- *<Translate ios="true" ids="shared_string_delete"/>* - delete the track.
-
-
-</TabItem>
-
-</Tabs>
-
-
-### Split Interval
+## Split Interval
 
 <InfoAndroidOnly />
 
@@ -654,7 +623,7 @@ Split the track  by distance or time interval.
 ![Track split interval screen Android](@site/static/img/personal/tracks/track_split_interval_android.png) ![Track split interval screen time Android](@site/static/img/personal/tracks/track_split_interval_time_android.png)  
 
 
-### GPS Filter
+## GPS Filter
 
 <InfoAndroidOnly />
 
@@ -679,7 +648,7 @@ The Android GPS Filter app page includes:
 - Blocks *Filter*, *Statistics*, *Action*.  
 
 
-#### Filter Menu
+### Filter Menu
 
 In this menu, you can change some parameters of your track with filters such as, *Smoothing*, *Speed*, *Altitude*, *GPS precision*. The menu is divided into a Points part and an Actions part.
 
@@ -698,7 +667,7 @@ In this menu, you can change some parameters of your track with filters such as,
 |![GPS filter precision numbers Android](@site/static/img/personal/tracks/gps_filter_precision_android.png) |  
 
 
-#### Statistics
+### Statistics
 
 ![GPS filter graph Android](@site/static/img/personal/tracks/gps_filter_graph_android.png)
 
