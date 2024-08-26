@@ -184,7 +184,7 @@ export default function GeneralInfo({ width }) {
     }
 
     function getUpDownHill(info) {
-        if (info?.diffElevationUp && info?.diffElevationDown) {
+        if (info?.diffElevationUp != null && info?.diffElevationDown != null) {
             setUpDownHill(info?.diffElevationUp.toFixed(0) + '/' + info?.diffElevationDown.toFixed(0) + ' m');
         } else {
             setUpDownHill('');
