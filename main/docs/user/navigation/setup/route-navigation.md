@@ -410,56 +410,26 @@ If you encounter difficulties when creating a route, refer to the troubleshootin
 
 ### Maps Missing or Not Synchronized
 
-To build a route all **necessary maps** needs to be downloaded and have the same release date. So when you try to build a route to a place whose map is not loaded, the progress line indicating that the route is being calculated does not appear, and the Start button also remains gray. 
-
-Please note, that at some zoom levels the reason for the absence of the route can not be obvious, as it may seem that the necessary maps are present. In that case see *[Additional information in the Navigation menu](#additional-information-in-the-navigation-menu)*.
+To build a route all **necessary maps** needs to be downloaded and have the same release date. Please note, that in some situation missing maps message could be hidden in the route preparation menu. If you pull the navigation menu up, you will see possible reasons why your route couldn't be calculated.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Message no maps when building navigation Android 4](@site/static/img/navigation/route/navigation_by_route_no_maps_4.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Message no maps when building navigation iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_ios.png) 
-
-</TabItem>
-
-</Tabs>
-
-
-
-
-#### Additional Information in the Navigation Menu
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">
-
-![Message no maps when building navigation Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)
+![Message no maps when building navigation Android 5](@site/static/img/navigation/route/navigation_by_route_no_maps_5.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Message no maps when building navigation iOS](@site/static/img/navigation/route/navigation_by_route_no_maps_1_ios.png) 
-
 </TabItem>
 
 </Tabs>
 
-If you pull the navigation menu up, you will see possible reasons why your route cannot be completed.
+#### Required maps
 
-The screenshot shows a message when the map of the destination area is not downloaded. You can see, that OsmAnd tries to calculate the route when there are no maps for its middle section. To resolve that situation online checking may be needed.
-
-#### Loading Maps Using the Navigation Menu
-
-Tap to the *Details* button to open the *Required Maps* screen. After online verification of the maps required for route calculation, OsmAnd offers to download them without leaving the navigation section. The list of missing maps is based on straight line route. To get an accurate list of maps, OsmAnd can pre-calculate your route online, just click to the *Calculate online* button.
-
-Unfortunately, once the necessary maps are loaded, you must to enter the start and end points again.
+In required maps dialog you will see suggestions of maps to be downloaded or updated. The list of used maps might be not precise as it calculates very basic route, to get the precise list of maps you can click **Calculate online**. If you select **Use downloaded maps** then routing calculation will try to use already downloaded maps and skips the warning message.
 
 <Tabs groupId="operating-systems">
 
