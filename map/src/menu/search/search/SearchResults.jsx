@@ -157,6 +157,8 @@ export default function SearchResults({ value, setOpenSearchResults, setIsMainSe
     function searchByWord(value) {
         const loc = getLoc();
 
+        if (!loc) return;
+
         ctx.setSearchQuery({
             search: value,
             latlng: { lat: loc.lat, lng: loc.lng },

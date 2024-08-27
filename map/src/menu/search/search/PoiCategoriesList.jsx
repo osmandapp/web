@@ -10,6 +10,9 @@ import Loading from '../../errors/Loading';
 import PoiManager from '../../../manager/PoiManager';
 import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
+import { CATEGORY_KEY_NAME, MAIN_CATEGORY_KEY_NAME } from '../../../infoblock/components/wpt/WptTagsProvider';
+import { getFirstSubstring } from './SearchResultItem';
+import EmptySearch from '../../errors/EmptySearch';
 
 export default function PoiCategoriesList({
     categories,
@@ -22,11 +25,22 @@ export default function PoiCategoriesList({
 }) {
     const { t } = useTranslation();
 
-    const sortedCategories = categories?.slice().sort((a, b) => {
-        const nameA = PoiManager.formattingPoiType(t(`poi_${a}`)).toLowerCase();
-        const nameB = PoiManager.formattingPoiType(t(`poi_${b}`)).toLowerCase();
+    const sortedCategories = categories?.sort((a, b) => {
+        const nameA = PoiManager.formattingPoiType(t(`poi_${a[CATEGORY_KEY_NAME]}`)).toLowerCase();
+        const nameB = PoiManager.formattingPoiType(t(`poi_${b[CATEGORY_KEY_NAME]}`)).toLowerCase();
         return nameA.localeCompare(nameB);
     });
+
+    function getCatName(category) {
+        if (category.includes('name:')) {
+            const [mainPart, subPart] = category.split(':');
+            return getFirstSubstring(t(`poi_${mainPart}`)) + ' (' + t(`lang_${subPart}`) + ')';
+        } else if (category.includes('lang:')) {
+            const preparedCategory = category.replace(':', '_');
+            return getFirstSubstring(t(`poi_${preparedCategory}`));
+        }
+        return getFirstSubstring(t(`poi_${category}`));
+    }
 
     return (
         <Box>
@@ -53,12 +67,19 @@ export default function PoiCategoriesList({
                 </Toolbar>
             </AppBar>
             <CustomInput setSearchValue={setSearchValue} type={SEARCH_TYPE_CATEGORY} />
+            {sortedCategories?.length === 0 && <EmptySearch />}
             {loadingIcons ? (
                 <Loading />
             ) : (
                 <Box sx={{ overflowY: 'auto', overflowX: 'hidden' }}>
                     {sortedCategories?.map((item, key) => {
-                        const catName = t(`poi_${item}`);
+                        const category = item[CATEGORY_KEY_NAME];
+                        const parentCategory = item[MAIN_CATEGORY_KEY_NAME];
+                        const catName = getCatName(category);
+                        let mainCatName;
+                        if (parentCategory) {
+                            mainCatName = getCatName(parentCategory);
+                        }
                         return (
                             <MenuItem
                                 id={'se-search-categories-list-item-' + catName}
@@ -74,9 +95,16 @@ export default function PoiCategoriesList({
                                     setOpenCategories(false);
                                 }}
                             >
-                                <ListItemIcon>{categoriesIcons[item]}</ListItemIcon>
+                                <ListItemIcon>{categoriesIcons[category]}</ListItemIcon>
                                 <ListItemText>
-                                    <MenuItemWithLines name={catName} maxLines={2} width={'270px'} />
+                                    <MenuItemWithLines className={styles.titleText} name={catName} maxLines={2} />
+                                    {parentCategory && (
+                                        <MenuItemWithLines
+                                            className={styles.placeTypes}
+                                            name={mainCatName}
+                                            maxLines={2}
+                                        />
+                                    )}
                                 </ListItemText>
                             </MenuItem>
                         );

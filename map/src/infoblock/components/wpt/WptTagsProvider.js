@@ -65,12 +65,12 @@ export const POI_OSM_URL = WEB_POI_PREFIX + 'osmUrl';
 const POI_ID = WEB_POI_PREFIX + 'id';
 
 // from PoiType object
-export const POI_CATEGORY_KEY_NAME = WEB_PREFIX + 'keyName';
+export const CATEGORY_KEY_NAME = WEB_PREFIX + 'keyName';
 export const ICON_KEY_NAME = WEB_PREFIX + 'iconKeyName';
 export const TYPE_OSM_TAG = WEB_PREFIX + 'typeOsmTag';
 export const TYPE_OSM_VALUE = WEB_PREFIX + 'typeOsmValue';
 export const CATEGORY_ICON = WEB_PREFIX + 'categoryIcon';
-export const CATEGORY_KEY_NAME_ICON = WEB_PREFIX + 'categoryKeyName';
+export const MAIN_CATEGORY_KEY_NAME = WEB_PREFIX + 'categoryKeyName';
 
 export const TITLE = 'title';
 

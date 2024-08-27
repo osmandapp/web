@@ -20,7 +20,7 @@ export default function CustomInput({ menuButton = null, setSearchValue, type = 
 
     const { t } = useTranslation();
 
-    const MIN_SIZE_SEARCH_VALUE = 3;
+    const MIN_SIZE_SEARCH_VALUE = 1;
 
     useEffect(() => {
         if (!isInitialRender) {

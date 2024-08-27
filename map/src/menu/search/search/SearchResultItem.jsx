@@ -9,6 +9,14 @@ import { formattingPoiType } from '../../../manager/PoiManager';
 import AppContext from '../../../context/AppContext';
 import { SEARCH_RESULT_TYPE_POI, SEARCH_RESULT_TYPE_POI_CATEGORY } from './SearchResults';
 import { getObjIdSearch, SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
+import { SEPARATOR } from '../../../infoblock/components/wpt/WptTagsProvider';
+
+export function getFirstSubstring(inputString) {
+    if (inputString?.includes(SEPARATOR)) {
+        return inputString.split(SEPARATOR)[0];
+    }
+    return inputString;
+}
 
 export function getPropsFromSearchResultItem(props, t) {
     let type, name;
@@ -36,13 +44,6 @@ export function getPropsFromSearchResultItem(props, t) {
 
     name = getFirstSubstring(name);
     type = getFirstSubstring(type);
-
-    function getFirstSubstring(inputString) {
-        if (inputString?.includes(';')) {
-            return inputString.split(';')[0];
-        }
-        return inputString;
-    }
 
     return { name, type };
 }
