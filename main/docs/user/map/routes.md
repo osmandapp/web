@@ -17,12 +17,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-OsmAnd has many powerful features for displaying different [routes](#type-of-routes) on the map. By default these routes are part of [vector maps](./vector-maps.md#routes) (OpenStreetMap data), however similar functionality is provided by [tracks](./tracks/index.md) which could be created with [Plan Route](#plan-a-route), imported as [GPX tracks](#save-as-a-track), recorded with the [Trip Recording plugin](../plugins/trip-recording.md).
+OsmAnd has many powerful features for displaying different [routes](#type-of-routes) on the map. By default these routes are part of [vector maps](./vector-maps.md#routes) (OpenStreetMap data), however similar functionality is provided by [tracks](./tracks/index.md) which could be created with [Plan a Route](../plan-route/create-route.md), imported as [GPX tracks](#save-as-a-track), recorded with the [Trip Recording plugin](../plugins/trip-recording.md).
 
 
 ## Type of Routes
 
-Routes represent different outdoor activities using data from [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Tapping **the shield icon with a route number or route flag** on the map will open a context menu which provides additional information about the route and allows to use it as part of navigation. 
+Routes represent different outdoor activities using data from [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Tapping **the shield icon with a route number or route flag** on the map will open a context menu which provides additional information about the route and allows to use it as part of navigation.
 
 You can configure filtering of some route types in [Configure Map](../map/configure-map-menu.md) menu.
 
@@ -61,7 +61,7 @@ MTB routes have specific mapping in [OpenStreetMap](https://wiki.openstreetmap.o
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  Colors routes according to the type of [node network](https://wiki.openstreetmap.org/wiki/Node_Networks) (international, regional, or local).  
 ![Map routes - hiking node networks](@site/static/img/map/map-routes-hiking-node-networks.png)
 
-### Hiking segments (Difficulty classification)
+### Hiking Trails Difficulty Grade
 
 Some road segments could be part of many routes but they could be individually colored to represent difficulty for the segment in mountainous areas. Currently OsmAnd supports Italian and Swiss classifications, each of them has a specific list of equipment requirements to access this segment.  
 
@@ -90,7 +90,7 @@ Ski routes are a specific group of [routes](https://wiki.openstreetmap.org/wiki/
 
 ### Running routes
 
-[Running routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning) in OpenStreetMap are used for named, numbered, or otherwise marked running routes used primarily for athletics. 
+[Running routes](https://wiki.openstreetmap.org/wiki/Tag:route%3Drunning) in OpenStreetMap are used for named, numbered, or otherwise marked running routes used primarily for athletics.
 
 ![Fitness routes](@site/static/img/map/fitness_1.png)
 
@@ -160,7 +160,8 @@ To get full route information and elevation data, tap the *route icon (shield)* 
 
 </Tabs>  
 
-Following information will be visible in context menu: 
+Following information will be visible in context menu:
+
 - **Route info**: Route name, OSM link (OSM Editing plugin required), Type, Description, Distance, Direction, Ascent/Descent, Altitude range, Network, Operator, State, Color, Roundtrip, Start/End points, and more.
 - **General**: Size, Location, Created on.
 - **Additional Info**: Type of activity.

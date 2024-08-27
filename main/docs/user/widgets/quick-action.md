@@ -58,32 +58,35 @@ In order to use the Quick Action button you need to enable this widget first.
 
 <TabItem value="android" label="Android">
 
-_<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → Click Delete (Bin icon on the right top corner) → Select actions_
+*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → Tap Delete (Bin icon on the right top corner) → Select actions*
 
-![Quick action widget_android_add](@site/static/img/widgets/quick_action_widget_andr.png)  ![Custom button Android](@site/static/img/widgets/add_action_screen_andr.png) 
+![Quick action widget_android_add](@site/static/img/widgets/quick_action_widget_andr.png)  ![Custom button Android](@site/static/img/widgets/add_action_screen_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-_<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → Click Edit (Pencil icon on the right top corner) → Select actions _
+*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → Tap Edit (Pencil icon on the right top corner) → Select actions*
 
-![Quick action widget_ios_add](@site/static/img/widgets/quick_action_widget_2_ios.png) ![Custom button Android](@site/static/img/widgets/add_action_screen_ios.png) 
+![Quick action widget_ios_add](@site/static/img/widgets/quick_action_widget_2_ios.png) ![Custom button Android](@site/static/img/widgets/add_action_screen_ios.png)
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
-All actions are organized in the **Add Action** menu and grouped by type. A complete list with actions and their descriptions can be found in the [Action types](#action-types) section. 
+All actions are organized in the **Add Action** menu and grouped by type. A complete list with actions and their descriptions can be found in the [Action types](#action-types) section.
 
 You can assign one or more [actions](#action-types) to the quick action button. There are 2 ways to add actions.
-- **In the Configure screen**  - Select a button from the list, tap the&nbsp;  "**＋**"  &nbsp;button. You need to select the [action type](#action-types) first, and then change its name and [parameters](#actions-in-loop). 
+
+- **In the Configure screen**  - Select a button from the list, tap the&nbsp;  "**＋**"  &nbsp;button. You need to select the [action type](#action-types) first, and then change its name and [parameters](#actions-in-loop).
 - **In the quick action button panel** - Tap the *Quick Action button* on the map screen. At the end of the list, on the latest screen in the panel, is the "**＋**"  &nbsp;**Add Action** box. Tap it and select an action from the [list of types](#action-types).
 
 
 :::note
+
 - Each action must have a unique name.
 - Screens 1, 2, and others are created automatically when the number of actions in the list increases to 6 items.
+
 :::
 
 
@@ -93,13 +96,13 @@ You can assign one or more [actions](#action-types) to the quick action button. 
 
 <TabItem value="android" label="Android">  
 
-![Quick action widget_android_order](@site/static/img/widgets/quick_action_widget_android_order.png) 
+![Quick action widget_android_order](@site/static/img/widgets/quick_action_widget_android_order.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Quick action widget_ios_order](@site/static/img/widgets/quick_action_widget_ios_order.png) 
+![Quick action widget_ios_order](@site/static/img/widgets/quick_action_widget_ios_order.png)
 
 </TabItem>
 
@@ -121,6 +124,7 @@ The actions assigned to a button are divided into Screens. These screens, 1, 2 a
 ![Custom button Android](@site/static/img/widgets/actions_in_loop_andr.png)  
 
 For some actions, you can assign a list of layers that will change in a circle with each tap.  
+
 - *Map source*
 - *Map style*
 - *Overlay*
@@ -166,20 +170,20 @@ When enabled, the quick action widget is located in the lower right corner above
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
 **Custom buttons** are additional buttons on the map that act the same as *Quick Action* button. You can create a button with one or more actions and display it on the map screen.  Custom buttons are located in the *Configure screen → Buttons → Custom buttons* list. Each button has a profile independent actions list and should have a unique ***Name***, however button could be switched on/off individually for each **profile**.
 
-All available [actions](#quick-action-types) are identical to those that can be applied to the default quick action. Custom buttons could be a special ***Single-action*** button, so they will apply immediately once clicked without extra menu.
+All available [actions](#action-types) are identical to those that can be applied to the default quick action. Custom buttons could be a special ***Single-action*** button, so they will apply immediately once clicked without extra menu.
 
 
-## Action Types 
+## Action Types
 
 ### Configure Map
 
 | Action | Description |
 |:-------------|:-------------|
-| Show / Hide <br/> [**Routes**](../map/vector-maps.md#routes) | You can select route types to enable or disable their display. <br/> Some routes have additional settings. By default, if you have not selected anything in the [Configure Map](../map/configure-map-menu.md) menu, the first route type from the list will be assigned, otherwise a type of your choice will be assigned. You can read more in the [Routes](../map/routes.md) article. <br/> - ***Cycle routes***  &nbsp;(*Route*, *Node networks*) <br/> - ***Mountain bike routes***  &nbsp;(*MTB scale*, *IMBA*) <br/> - ***Hiking routes***  &nbsp;(*OSMC*, *Network affiliation*, *Node networks*) <br/> - ***Difficulty classification***  &nbsp;(*SAC scale*, *CAI scale*) <br/> - ***Ski slopes*** <br/> - ***Horse routes*** <br/> - ***Whitewater sports*** <br/> - ***Running routes*** <br/> - ***Fitness trails*** <br/> - ***Travel routes***  &nbsp;(*Tracks*, *Travelbooks*, *Points*) <br/> |
+| Show / Hide <br/> [**Routes**](../map/vector-maps.md#routes) | You can select route types to enable or disable their display. <br/> Some routes have additional settings. By default, if you have not selected anything in the [Configure Map](../map/configure-map-menu.md) menu, the first route type from the list will be assigned, otherwise a type of your choice will be assigned. You can read more in the [Routes](../map/routes.md) article. <br/> - ***Cycle routes***  &nbsp;(*Route*, *Node networks*) <br/> - ***Mountain bike routes***  &nbsp;(*MTB scale*, *IMBA*) <br/> - ***Hiking routes***  &nbsp;(*OSMC*, *Network affiliation*, *Node networks*) <br/> - ***Hiking trails difficulty grade***  &nbsp;(*SAC scale*, *CAI scale*) <br/> - ***Ski slopes*** <br/> - ***Horse routes*** <br/> - ***Whitewater sports*** <br/> - ***Running routes*** <br/> - ***Fitness trails*** <br/> - ***Travel routes***  &nbsp;(*Tracks*, *Travelbooks*, *Points*) <br/> |
 | Show / Hide <br/> [**Topography layers**](../plugins/contour-lines.md#overview) | All topography data is presented as separate map layers. You can quickly switch the visibility of these layers with Quick Action. <br/> - ***Contour lines*** <br/> - ***Terrain***.  &nbsp;(*Depending on the layer selected in the [Configure Map](../map/configure-map-menu.md) menu*, *Hillshade*, *Slope*, or *Altitude* *will be displayed.*) |
 | Change <br/> [**Terrain color scheme**](../plugins/contour-lines.md#color-scheme) | Allows you to select one or more palettes from a list of existing ones, which will change when you tap the button. |
 | Show / Hide <br/> [**Weather layers**](../plugins/weather.md#weather-layers) | All weather data is presented as separate map layers. With Quick Action you can get quick access to switch the visibility of these layers on the map. <br/> - *Precipitation layer* <br/> - *Cloud layer* <br/> - *Pressure layer* <br/> - *Wind layer* <br/> - *Temperature layer* |
