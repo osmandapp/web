@@ -33,8 +33,7 @@ export default function PoiCategoriesList({
 
     function getCatName(category) {
         if (category.includes('name:')) {
-            const mainPart = category.split(':')[0];
-            const subPart = category.split(':')[1];
+            const [mainPart, subPart] = category.split(':');
             return getFirstSubstring(t(`poi_${mainPart}`)) + ' (' + t(`lang_${subPart}`) + ')';
         } else if (category.includes('lang:')) {
             const preparedCategory = category.replace(':', '_');
