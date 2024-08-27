@@ -61,7 +61,7 @@ Altitude can not be displayed correctly on some Android devices. To resolve this
 ### Elevation: Map Center
 
 :::tip subscribe
-&nbsp;<ProFeature/> To get access to use the *Elevation: map center* widget, subscribe to OsmAnd Pro for [Android](../purchases/android.md#osmand-pro) or [iOS](../purchases/ios.md#osmand-pro).  
+&nbsp;<ProFeature/> To get access to use the *Elevation: map center* widget, subscribe to OsmAnd Pro for [Android](../purchases/android.md#pro-features) or [iOS](../purchases/ios.md#pro-features).  
 :::
 
 <Tabs groupId="operating-systems">

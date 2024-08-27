@@ -11,6 +11,7 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 
@@ -32,6 +33,8 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 ## Elevation widget
 
+<InfoAndroidOnly/>  
+
 :::note
   
 <ProFeature/>  This widget you can use only with Pro feature  <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribers</a>.
@@ -40,21 +43,19 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 The Elevation widget shows a graph with the elevation and slope of your navigation route and your current location on this graph with current altitude and slope. The graph is plotted on two axes. The X-axis is the distance of your route. The Y-axis is the altitude, the value depends on the relief, and the slope displayed as a percentage.  
 
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android">   
-
-*<Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>*    
+*<Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>*
 
 ![Elevation widget](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
 
 
 ### Interactions with the graph
+
 * *Zoom in/out*. By default, the graph shows the route from the current location up to 10 km ahead. You can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out for a more detailed view of altitude changes on your route. You can also move the graph to the right, forward on the route, and backward to the current location.  
 * *Place a point on the graph*. If you want to see the altitude and degree value at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
 
 
 ### What's in
+
 When you select a route and press the **Start** button, the map opens with your current location, the route on it and the widget at the bottom of the screen. On the widget you can see the graph and information about *Uphill*, *Downhill*, *Grade*, distance, altitude, slope angle. You can select the *optimal scale* and see all possible obstacles on your route.  
 
 All values are indicated either for the whole route or only for the selected interval by scaling the graph.
@@ -74,19 +75,7 @@ All values are indicated either for the whole route or only for the selected int
 | ![downhill scheme](@site/static/img/widgets/sch_downhill_1.png) ![downhill scheme](@site/static/img/widgets/sch_downhill_2.png)|  
 |***Grade*** is is the ratio of the path to the horizontal, where zero indicates horizontality and the number of degrees indicates a higher or steeper degree of slope.|
 | *"Grade"* – shows the maximum road slope in percent from your location point to the end of the visible graph or for the selected section of the route without location point visible on the screen. |
-|![grade scheme](@site/static/img/widgets/sch_grade_1.png) ![grade scheme](@site/static/img/widgets/sch_grade_2.png)| 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-:::note
-**This feature doesn't exist for iOS version of OsmAnd.**
-:::  
-
-</TabItem>
-
-</Tabs>  
+|![grade scheme](@site/static/img/widgets/sch_grade_1.png) ![grade scheme](@site/static/img/widgets/sch_grade_2.png)|
 
 
 ## Bearing widget  
