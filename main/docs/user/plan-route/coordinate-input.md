@@ -34,10 +34,10 @@ After you have opened the coordinate input screen:
 
 - &nbsp;Make sure that the correct [units of measurement](#coordinates-format) are used. If no, change coordinates format in [Options](#options) menu.  
 - &nbsp;Enter the coordinates of the point using [template](#add-a-point). After you press *[Add](#add-a-point)* button, your point will be added to the *[points list](#points-list)*. If &nbsp;needed, you can input additional points.  
-- &nbsp;Save your point(s) as a *[Track](../personal/tracks/create-edit.md)* using *[Options menu](#options)* or &#8592; *(Back)* button.  
+- &nbsp;Save your point(s) as a *[Track](../personal/tracks/manage-tracks.md)* using *[Options menu](#options)* or &#8592; *(Back)* button.  
 
 :::note
-The results of creating points by coordinates - a *[GPX track](../personal/tracks/create-edit.md)* with waypoints - can be found in the [My places menu](../personal/myplaces.md) (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/> folder*).
+The results of creating points by coordinates - a *[GPX track](../personal/tracks/manage-tracks.md)* with waypoints - can be found in the [My places menu](../personal/myplaces.md) (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/> folder*).
 :::
 
 ## Options

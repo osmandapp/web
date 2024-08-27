@@ -201,7 +201,7 @@ Specific features:
 - Only one option can be enabled at the same time, either Hillshade, Slope, or Altitude.
 - If you do not see any changes after downloading and enabling the corresponding map, it is recommended to restart the application.
 
-The **Terrain** menu includes [color scheme](#color-scheme) selection with the option to [modify it](#modify-color-scheme) (for [Pro subscribers](../../user/purchases/index.md)), the ability to change the transparency of the layer on the map ([visibility](#visibility)), and select the [zoom level](#zoom-levels) for its display, information about the size of [cached data](#cache-size), and a list of [maps](../../user/personal/maps.md) needed to display the layer.
+The **Terrain** menu includes [color scheme](#default-color-scheme) selection with the option to [modify it](#modify-color-scheme) (for [Pro subscribers](../../user/purchases/index.md)), the ability to change the transparency of the layer on the map ([visibility](#visibility)), and select the [zoom level](#zoom-levels) for its display, information about the size of [cached data](#cache-size), and a list of [maps](../../user/personal/maps.md) needed to display the layer.
 
 
 ## Hillshade, Slope and Altitude Layers
@@ -224,26 +224,21 @@ The **Terrain** menu includes [color scheme](#color-scheme) selection with the o
 - *Terrain estimation.* It's convenient for visualizing the landscape, especially if you're walking or biking.
 
 
-### Color Scheme
+### Default Color Scheme
 
 | Hillshade | Slope | Altitude |
 | ------ | ------- | ------- | 
 |![Hillshade](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Slope](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menu](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
 
-- *Hillshade* uses dark shades to show slopes, peaks, and lowlands.  
+- *Hillshade* uses dark shades to show slopes, peaks, and lowlands. Virtual Sun has a fixed azimuth (direction) of 315 degrees.
 
-- *Slope* uses color to visualize the steepness of the terrain. You can read more about it [here](https://en.wikipedia.org/wiki/Grade_(slope)).  
-Each color corresponds to an angle of deviation from the horizontal.  
+- *Slope* uses color to visualize the steepness of the terrain. You can read more about it [here](https://en.wikipedia.org/wiki/Grade_(slope)). Each color corresponds to an angle of deviation from the horizontal. One of additional *slope* color scheme is ***Avalanche***, available in **Modify** menu.
 
-- *Altitude*.
+- *Altitude*. Altitude map colors each pixel according to calculated map height using the gradient from a defined color scheme. Usually altitude schemes are very dependent on location. In mountain areas you would prefer to distribute colors to a wider altitude range and in flat areas, you would select a color scheme that has small range between min/max altitude.
 
-#### Legend Color Cards
+### Modify Color Scheme
 
-![Slope color legend](@site/static/img/plugins/contour-lines/Slope_legend.png)
-
-
-#### Modify Color Scheme
-
+This is a Pro function and allows you to select from predefined list of color schemes. Also you can import other color schemes created on PC.
 
 ### Visibility 
 
@@ -266,7 +261,7 @@ The *Scale Levels* function allows you to set the minimum and maximum values of 
 **Clearing the cache** is sometimes necessary to free up space on your device or to troubleshoot possible productivity issues. To clear the cache you need to go to the *System Settings* of the device, then the path can be as follows: *Applications → OsmAnd → Storage → Clear cache*.
 
 
-### Interaction with Rendering Version
+### Rendering Engine (Android)
 
 **Hillshade** and **Slope** are displayed and adjusted in any selected [Map rendering engine](../personal/global-settings.md#map-rendering-engine).
 
@@ -276,11 +271,11 @@ The *Scale Levels* function allows you to set the minimum and maximum values of 
     - Alternatively, you can use the *Terrain Map (3D)* download. This saves memory space on your device, and the Hillshade, Slope, and 3D Relief effects will be generated from them using your device.
 
 
-### Quick Actions for Topography Layers
+### Quick Actions
 
 ![QA for Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
-You can use the *Quick Action* buttons on the map screen to switch the visibility of [*Contour Lines*](#contour-lines), [*Terrain*](#terrain) layers, and [*Terrain color scheme*](#color-scheme). Depending on the layer selected in the Configure map menu, assigning a *Terrain* action to the button will display *Hillshade*, *Slope*, or *Altitude*.  
+You can use the *Quick Action* buttons on the map screen to switch the visibility of [*Contour Lines*](#contour-lines), [*Terrain*](#terrain) layers, and [*Terrain color scheme*](#default-color-scheme). Depending on the layer selected in the Configure map menu, assigning a *Terrain* action to the button will display *Hillshade*, *Slope*, or *Altitude*.  
 
 The main settings for *Show or Hide map types* are in the Topography section of the Configure Map menu. In the [Quick Action](../widgets/quick-action.md#configure-map) article, you can find a list of layers available for display. If you need quick access to this map configuration, use the *Custom Button* tool.
 - Go to [Add action](../widgets/quick-action.md#custom-buttons): *Menu → Configure screen → Custom buttons → Quick action → Add action → Configure map*.

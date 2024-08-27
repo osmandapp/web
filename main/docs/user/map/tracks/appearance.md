@@ -14,8 +14,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<InfoIncompleteArticle/>
-
 ## Overview
 
 Track Appearance is a customizable option in the OsmAnd app that allows you to personalize the visual display of tracks on the map. This feature makes it easier to distinguish between different tracks and understand their characteristics.
@@ -37,7 +35,7 @@ Track Appearance is a customizable option in the OsmAnd app that allows you to p
 </Tabs>
 
 
-## Setup
+## Appearance
 
 :::tip note
 Some settings you can use only with *OsmAnd Pro* or *Maps+*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> and <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Free and Paid features.
@@ -81,7 +79,8 @@ Allows to display the track line in any color and transparency, or select colori
 
     ![Track menu Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_android.png)  ![Appearance Track color Android](@site/static/img/map/track_appearance_menu_track_color_ios-2.png)  
 
-- *<Translate android="true" ids="shared_string_color"/>: ([Maps+ / Pro feature](../../purchases/index.md))* *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>* are paid color settings. A detailed description of these settings can be found in the [*Map screen during navigation*](../../navigation/guidance/map-during-navigation.md#color) page, specifically in the [Route line appearance](../../navigation/guidance/map-during-navigation.md#route-line-appearance) section.  
+- *<Translate android="true" ids="shared_string_color"/>: ([Maps+ / Pro feature](../../purchases/index.md))* *<Translate android="true" ids="shared_string_slope"/>*, *<Translate android="true" ids="routeInfo_roadClass_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_smoothness_name"/>*, *<Translate android="true" ids="routeInfo_winter_ice_road_name"/>*, *<Translate android="true" ids="routeInfo_surface_name"/>*, *<Translate android="true" ids="routeInfo_horse_scale_name"/>* are paid color settings. A detailed description of these settings can be found in the [*Map screen during navigation*](../../navigation/guidance/map-during-navigation.md#color) page, specifically in the [Route line appearance](../../navigation/guidance/map-during-navigation.md#route-line-appearance) section. You can also select or create custom [color schemes](../../personal/color-palette-schemes.md#routes) to apply to the track appearance.
+
 
 
 ### Width
@@ -152,16 +151,15 @@ Gaps in a GPX track can occur during recording, for example. This function (Andr
 Resets all settings to default values.
 
 
-## Change Tracks Appearance in My Places
+## Change multiple tracks
 
 <InfoAndroidOnly />
 
 ![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_1_andr.png)  ![Appearance Android](@site/static/img/personal/tracks/my_places_tracks_change_appear_2_andr.png)
 
-
 The display of tracks can be changed one by one and in groups selected from the *My Places* menu in the [Tracks](../../personal/tracks/manage-tracks.md) tab. This tab automatically displays all tracks ever recorded, created, or imported. They are organized by folder or displayed as a list below them.  
 
-Tap the *three-dot menu* in the field with the required [track folder](../../personal/tracks/manage-tracks.md#folder-menu) to open the menu. In it, you can change the appearance of all included tracks using the **Change Default Appearance** option.  
+You can change the default appearance of all tracks in [the folder](../../personal/tracks/manage-tracks.md#folder-menu) by using the **Change Default Appearance** option. Though if track already has specific parameters to be displayed they won't be applied, in that case you can reset track appearance first to ***Original*** via **Change Appearance**.
 
 With [*Select*](../../personal/tracks/manage-tracks.md#selection-mode), you can change the appearance of certain tracks in the selected folder or in the whole list of the Tracks tab. To go to **Change Appearance**, select the *three-dot menu* in the upper right corner of the Tracks tab screen and tap *Select*. Then tap the *three-dot menu* at the top of the screen and select *Change Appearance*.
 
@@ -173,30 +171,6 @@ With [*Select*](../../personal/tracks/manage-tracks.md#selection-mode), you can 
 - **Width**. Allows you to select a preset or manually configured track line width.
 - **Split interval**. Select the interval at which distance or time marks on the track will be displayed.  
     - States: *Unchanged*, &nbsp;*Original*, &nbsp;*Select*: *Time* or *Distance*.
-
-
-<!--
-## Tracks Color Scheme
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Slope">  
-
-![Slope_color](@site/static/img/map/tracks_color_scheme_slope_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="Altitude">
-
-![Altitude_color](@site/static/img/map/tracks_color_scheme_altitude_andr.png)
-
-</TabItem>
-
-</Tabs>
-
-- All colors.
-- Add and edit.
--->
 
 
 ## Related Articles

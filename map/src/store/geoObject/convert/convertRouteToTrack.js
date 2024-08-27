@@ -1,5 +1,5 @@
 import { getDistance } from '../../../util/Utils';
-import { NAN_MARKER, PROFILE_LINE, isNonZeroEle } from '../../../manager/track/TracksManager'; // jest: 99999, 'line'
+import { isNonZeroEle, NAN_MARKER, PROFILE_LINE } from '../../../manager/track/TracksManager'; // jest: 99999, 'line'
 
 export const defaultPointExtras = {
     srtmEle: null,
@@ -114,20 +114,17 @@ export function convertRouteToTrack({ id, route, trackName, geoProfile, start, f
         }
     });
 
-    const track = {
+    return {
         id,
         points,
         name: trackName,
         tracks: [{ points }],
         // metaData: { desc: trackDesc },
-        analysis: pointsGeometryMinAvgMaxElevation(points),
+        analysis: createAnalysisFromRoute(points, route),
     };
-    // console.log('track', track);
-
-    return track; // bare points
 }
 
-function pointsGeometryMinAvgMaxElevation(points) {
+function createAnalysisFromRoute(points, route) {
     let elevationSum = 0;
     let elevationPoints = 0;
     let avgElevation = Number.NaN;
@@ -148,11 +145,14 @@ function pointsGeometryMinAvgMaxElevation(points) {
             })
         );
     if (elevationPoints > 0) {
+        const props = route.features[0].properties;
         return {
             minElevation,
             maxElevation,
             avgElevation,
             hasElevationData: true,
+            diffElevationUp: props?.diffElevationUp ?? null,
+            diffElevationDown: props?.diffElevationDown ?? null,
         };
     } else {
         return {};

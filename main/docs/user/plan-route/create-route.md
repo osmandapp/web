@@ -83,7 +83,7 @@ You can **zoom in and out** for easy placement of points when creating or editin
 
 </Tabs>  
 
-*Plan a route* tool allows modifying [existing GPX track](../personal/tracks/create-edit.md) as well as an [imported track](../personal/tracks/manage-tracks.md#import). However in case you need to exclude large amount of points based on generic criterias, [*<Translate android="true" ids="shared_string_gps_filter"/>*](../map/tracks/track-context-menu.md#gps-filter) might be a more suitable tool.
+*Plan a route* tool allows modifying existing GPX track as well as an [imported track](../personal/tracks/manage-tracks.md#import). However in case you need to exclude large amount of points based on generic criterias, [*<Translate android="true" ids="shared_string_gps_filter"/>*](../map/tracks/track-context-menu.md#gps-filter) might be a more suitable tool.
 
 
 ### Distance Measurement
@@ -295,7 +295,7 @@ You can do it via option [Route between points](#route-between-points). Multi-mo
 </Tabs>  
 
 
-After [you have added](#adding-points) at least one point to the map, you can use the save option. All tracks saved in *Plane a route* can be found in the main *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> →* *[<Translate android="true" ids="show_gpx"/>](../personal/tracks/create-edit.md)*.  
+After [you have added](#adding-points) at least one point to the map, you can use the save option. All tracks saved in *Plane a route* can be found in the main *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> →* *[<Translate android="true" ids="show_gpx"/>](../personal/tracks/manage-tracks.md)*.  
 
 There are four ways to save:
 

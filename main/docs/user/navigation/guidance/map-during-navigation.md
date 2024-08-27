@@ -75,7 +75,7 @@ The *Show along the route* setting allows you to configure additional route para
 - *POIs, Favorite, and Traffic warnings* are not displayed in the list for a route you have already traveled.
 
 
-### How to open and customize
+### View and select points
 
 <Tabs groupId="operating-systems">
 
@@ -97,17 +97,7 @@ The *Show along the route* setting allows you to configure additional route para
 
 </Tabs>
 
-In the *Navigation section*, when creating a route, you can set the types of points that will be displayed on the map along the route. You can go to this section of settings in Android and iOS in different ways, which are determined by the peculiarities of operating systems and OsmAnd design.  
-
-***Android:***
-- Build your [route](../setup/route-navigation.md#set-destinations).
-- Tap the *[Settings](../setup/route-navigation.md#settings) menu → Show along the route*.  
-
-***iOS:***
-- Build your [route](../setup/route-navigation.md#set-destinations). 
-- Set [intermediate points](../setup/route-navigation.md#intermediate-destinations) on the route. Only this item has settings for selecting points to be displayed along the route.
-    - Add points.
-    - Tap *Edit* (pencil icon) next to an intermediate destination to open the Waypoint settings menu.
+In the *Navigation section*, when creating a route, you can set the types of points that will be displayed on the map along the route.
 
 ### Points of interest (POI)
 
@@ -195,9 +185,10 @@ The list contains all previously added [*Favourite*](../../personal/favorites.md
 
 </Tabs>  
 
-The Customize route line setting allows you to adjust the appearance of the route line to account for different changes. These can be changes in elevation while driving, significant uphill or downhill ahead, ice on the road, unpaved roads, highways, and other possible obstacles.  
+You can select route line appearance by style or manually select the color, the width and transparency of the line. In addition, you can select whether to show turn arrows and direction arrows on the line.
 
-You can change all of these parameters by style or manually select the color and transparency of the line in the items in this setting. In addition, the setting provides the opportunity to change the width of the route line and the angle display on the turns.  
+**Advanced**: the Customize route line setting allows you to adjust the appearance of the route line to display elevation changes, significant uphill or downhill, ice on the road, unpaved roads, highways, and other possible obstacles. You can also select or create custom [color schemes](../../personal/color-palette-schemes.md#routes) to apply to the route line.
+
 
 :::note
  <ProFeature/> Some parameters you can use only with <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">OsmAnd Pro subscribtion</a>.
