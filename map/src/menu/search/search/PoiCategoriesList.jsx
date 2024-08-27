@@ -31,6 +31,18 @@ export default function PoiCategoriesList({
         return nameA.localeCompare(nameB);
     });
 
+    function getCatName(category) {
+        if (category.includes('name:')) {
+            const mainPart = category.split(':')[0];
+            const subPart = category.split(':')[1];
+            return getFirstSubstring(t(`poi_${mainPart}`)) + ' (' + t(`lang_${subPart}`) + ')';
+        } else if (category.includes('lang:')) {
+            const preparedCategory = category.replace(':', '_');
+            return getFirstSubstring(t(`poi_${preparedCategory}`));
+        }
+        return getFirstSubstring(t(`poi_${category}`));
+    }
+
     return (
         <Box>
             <AppBar
@@ -64,10 +76,10 @@ export default function PoiCategoriesList({
                     {sortedCategories?.map((item, key) => {
                         const category = item[CATEGORY_KEY_NAME];
                         const parentCategory = item[MAIN_CATEGORY_KEY_NAME];
-                        const catName = getFirstSubstring(t(`poi_${category}`));
+                        const catName = getCatName(category);
                         let mainCatName;
                         if (parentCategory) {
-                            mainCatName = getFirstSubstring(t(`poi_${parentCategory}`));
+                            mainCatName = getCatName(parentCategory);
                         }
                         return (
                             <MenuItem
