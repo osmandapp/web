@@ -1,6 +1,6 @@
 import { Box, Icon, ListItemText } from '@mui/material';
 import styles from './errors.module.css';
-import EmptyLogin from './EmptyLogin';
+import EmptyLogin from '../login/EmptyLogin';
 import { ReactComponent as SearchIcon } from '../../assets/icons/ic_action_search_dark.svg';
 import { useContext } from 'react';
 import AppContext from '../../context/AppContext';

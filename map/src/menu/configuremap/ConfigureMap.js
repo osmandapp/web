@@ -25,7 +25,7 @@ import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.
 import { ReactComponent as TracksIcon } from '../../assets/menu/ic_action_track.svg';
 import { ReactComponent as PoiIcon } from '../../assets/icons/ic_action_info_outlined.svg';
 import { cloneDeep } from 'lodash';
-import EmptyLogin from '../errors/EmptyLogin';
+import EmptyLogin from '../login/EmptyLogin';
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from '../actions/HeaderHelper';
 import { INTERACTIVE_LAYER } from '../../map/layers/CustomTileLayer';

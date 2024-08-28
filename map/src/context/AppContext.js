@@ -270,8 +270,11 @@ export const AppContextProvider = (props) => {
     const [localTracksLoading, setLocalTracksLoading] = useState(false);
     // cookie to store email logged in
     const [emailCookie, setEmailCookie] = useCookie('email', '');
-    // server state of login
+    // login
     const [loginUser, setLoginUser] = useState(INIT_LOGIN_STATE);
+    const [openLoginMenu, setOpenLoginMenu] = useState(false);
+    const [loginState, setLoginState] = useState({ default: true });
+
     const [accountInfo, setAccountInfo] = useState(null);
     const [wantDeleteAcc, setWantDeleteAcc] = useState(false);
     const [listFiles, setListFiles] = useState({});
@@ -626,6 +629,10 @@ export const AppContextProvider = (props) => {
                 setProcessingSearch,
                 searchTooltipRef,
                 searchPointerRef,
+                openLoginMenu,
+                setOpenLoginMenu,
+                loginState,
+                setLoginState,
             }}
         >
             {props.children}

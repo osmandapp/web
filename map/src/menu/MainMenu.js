@@ -68,6 +68,7 @@ import { createUrlParams } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import SearchMenu from './search/SearchMenu';
 import LoginButton from './login/LoginButton';
+import LoginMenu from './login/LoginMenu';
 
 export default function MainMenu({
     size,
@@ -437,7 +438,8 @@ export default function MainMenu({
                             height: showInstallBanner ? `calc(${height}px - ${INSTALL_BANNER_SIZE})` : '100%',
                             overflow: 'hidden',
                             zIndex: openMainMenu ? Z_INDEX_OPEN_LEFT_MENU : Z_INDEX_LEFT_MENU,
-                            borderRight: (!menuInfo || (menuInfo && openMainMenu)) && 'none !important',
+                            borderRight:
+                                ((!menuInfo && !ctx.openLoginMenu) || (menuInfo && openMainMenu)) && 'none !important',
                             boxShadow:
                                 !menuInfo || (menuInfo && openMainMenu)
                                     ? '0px 8px 10px -5px rgba(0,0,0,0.2), 0px 16px 24px 2px rgba(0,0,0,0.14), 0px 6px 10px 5px rgba(0,0,0,0.12);'
@@ -550,8 +552,9 @@ export default function MainMenu({
                 <Toolbar sx={{ mb: '-3px' }} />
                 {!isOpenSubMenu() && (
                     <>
+                        {ctx.openLoginMenu && <LoginMenu />}
                         {/*add main menu items*/}
-                        {_.isEmpty(ctx.openGroups) && !ctx.openVisibleMenu && <Outlet />}
+                        {_.isEmpty(ctx.openGroups) && !ctx.openVisibleMenu && !ctx.openLoginMenu && <Outlet />}
                         {/*add track groups*/}
                         {ctx.openGroups.length > 0 && getGroup()}
                         {ctx.openVisibleMenu && (

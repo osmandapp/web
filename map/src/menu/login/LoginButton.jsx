@@ -3,10 +3,9 @@ import styles from '../mainmenu.module.css';
 import { Person } from '@mui/icons-material';
 import React, { useContext } from 'react';
 import AppContext from '../../context/AppContext';
-import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
+import { INIT_LOGIN_STATE, openLoginMenu } from '../../manager/LoginManager';
 
 export default function LoginButton({ openMainMenu }) {
     const ctx = useContext(AppContext);
@@ -15,8 +14,7 @@ export default function LoginButton({ openMainMenu }) {
     const { t } = useTranslation();
 
     const openLogin = () => {
-        ctx.setPrevPageUrl({ url: location, active: false });
-        navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.hash);
+        openLoginMenu(ctx, navigate);
     };
 
     return (
