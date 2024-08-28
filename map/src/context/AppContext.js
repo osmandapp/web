@@ -8,7 +8,7 @@ import { apiGet } from '../util/HttpApi';
 import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import { geoObject } from '../store/geoObject/geoObject.js';
 import WeatherManager from '../manager/WeatherManager';
-import { getAccountInfo } from '../manager/LoginManager';
+import { getAccountInfo, INIT_LOGIN_STATE } from '../manager/LoginManager';
 import { cloneDeep, isEmpty } from 'lodash';
 import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
 
@@ -188,7 +188,7 @@ async function checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCook
         method: 'GET',
     });
     if (response.data) {
-        if (loginUser !== 'INIT') {
+        if (loginUser !== INIT_LOGIN_STATE) {
             await getAccountInfo(setAccountInfo);
         }
         const user = await response.json();
@@ -271,7 +271,7 @@ export const AppContextProvider = (props) => {
     // cookie to store email logged in
     const [emailCookie, setEmailCookie] = useCookie('email', '');
     // server state of login
-    const [loginUser, setLoginUser] = useState('INIT');
+    const [loginUser, setLoginUser] = useState(INIT_LOGIN_STATE);
     const [accountInfo, setAccountInfo] = useState(null);
     const [wantDeleteAcc, setWantDeleteAcc] = useState(false);
     const [listFiles, setListFiles] = useState({});
@@ -447,7 +447,7 @@ export const AppContextProvider = (props) => {
     }, [loginUser]);
 
     useEffect(() => {
-        if (loginUser !== 'INIT') {
+        if (loginUser !== INIT_LOGIN_STATE) {
             setGpxLoading(true);
             loadListFiles(
                 loginUser,

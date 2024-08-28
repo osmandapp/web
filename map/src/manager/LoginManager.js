@@ -1,6 +1,7 @@
 import { apiGet } from '../util/HttpApi';
 
 export const FREE_ACCOUNT = 'Free';
+export const INIT_LOGIN_STATE = 'INIT';
 
 export async function getAccountInfo(setAccountInfo) {
     const resp = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-account-info`);

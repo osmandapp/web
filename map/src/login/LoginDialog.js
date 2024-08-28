@@ -14,7 +14,7 @@ import ChangeEmailDialog from './ChangeEmailDialog';
 import DownloadBackupDialog from './DownloadBackupDialog';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import { makeStyles } from '@material-ui/core/styles';
-import { FREE_ACCOUNT, getAccountInfo } from '../manager/LoginManager';
+import { FREE_ACCOUNT, getAccountInfo, INIT_LOGIN_STATE } from '../manager/LoginManager';
 import { useTranslation } from 'react-i18next';
 import { DELETE_ACCOUNT_URL, MAIN_URL_WITH_SLASH } from '../manager/GlobalManager';
 
@@ -101,7 +101,7 @@ export default function LoginDialog() {
     }, [location.hash]);
 
     useEffect(() => {
-        if (ctx.loginUser && ctx.loginUser !== '' && ctx.loginUser !== 'INIT') {
+        if (ctx.loginUser && ctx.loginUser !== '' && ctx.loginUser !== INIT_LOGIN_STATE) {
             getAccountInfo(ctx.setAccountInfo).then();
         } else {
             if (ctx.emailCookie) {
