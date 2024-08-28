@@ -190,7 +190,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                         <ListItemIcon className={styles.tagIcon}>{baseTag.icon}</ListItemIcon>
                         <ListItemText
                             onClick={() => {
-                                if (baseTag.value.length > 50) {
+                                if (baseTag.value?.length > 50) {
                                     setOpenMoreDialog({ title: baseTag.name, content: baseTag.value });
                                 }
                             }}
@@ -198,15 +198,18 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                             <Typography variant="inherit" className={styles.tagPrefix} noWrap>
                                 {baseTag.name}
                             </Typography>
-                            <Tooltip
-                                title={t('shared_string_copy')}
-                                arrow
-                                placement="bottom"
-                                open={hover && copy}
-                                onClick={() => handleCopy(baseTag.value)}
-                            >
-                                <MenuItemWithLines name={baseTag.value} maxLines={3} className={styles.tagName} />
-                            </Tooltip>
+                            {baseTag.value && (
+                                <Tooltip
+                                    title={t('shared_string_copy')}
+                                    arrow
+                                    placement="bottom"
+                                    open={hover && copy}
+                                    onClick={() => handleCopy(baseTag.value)}
+                                >
+                                    <MenuItemWithLines name={baseTag.value} maxLines={3} className={styles.tagName} />
+                                </Tooltip>
+                            )}
+                            {baseTag.link}
                         </ListItemText>
                     </MenuItem>
                 </div>
