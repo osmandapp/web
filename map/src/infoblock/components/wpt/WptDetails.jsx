@@ -24,6 +24,7 @@ import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_date_start.svg';
 import { ReactComponent as FolderIcon } from '../../../assets/icons/ic_action_folder.svg';
 import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_coordinates_location.svg';
+import { ReactComponent as OsmIcon } from '../../../assets/icons/ic_action_openstreetmap_logo.svg';
 import { ReactComponent as DirectionIcon } from '../../../assets/icons/ic_direction_arrow_16.svg';
 import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_action_note_dark.svg';
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
@@ -685,6 +686,20 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                             {wpt?.tags?.res?.map((t, index) => {
                                 return <WptTagInfo key={index} tag={t} setDevWikiContent={setDevWikiContent} />;
                             })}
+                            {wpt.osmUrl && (
+                                <WptTagInfo
+                                    key={'osm'}
+                                    baseTag={{
+                                        icon: <OsmIcon />,
+                                        name: 'OSM ID',
+                                        link: (
+                                            <Link href={wpt.osmUrl} target="_blank" rel="noopener noreferrer">
+                                                {wpt.osmUrl.split('/').pop()}
+                                            </Link>
+                                        ),
+                                    }}
+                                />
+                            )}
                             {wpt.latlon && (
                                 <WptTagInfo
                                     key={'latlon'}
