@@ -299,7 +299,7 @@ Widgets in the right and left panels can be grouped into **Pages**. To do this, 
 ![Configure screen menu](@site/static/img/widgets/configure_screen_remove_andr.png)     
 
 To remove or delete a widget from the application screen, you need to select the required panel and then press the **Edit** button. 
-- To move a widget to the required location or page, long-tap the icon on the right and select a position in the widget list. 
+- To move a widget to the required location or page, long tap the icon on the right and select a position in the widget list. 
 - To no longer see the widget, tap the minus icon to the left of its name.
 
 

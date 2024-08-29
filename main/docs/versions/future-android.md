@@ -32,28 +32,24 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 # What's new
 
 - Buttons Control on map ([Allow to change size, shape, icon for map buttons](https://github.com/osmandapp/OsmAnd-Issues/issues/2437)).
-  - Docs
-- Context menu for widgets.
-  - Docs
+- [Context menu for widgets](#widget-context-menu).
 - [Autosync](https://github.com/osmandapp/OsmAnd/issues/18212) OsmAnd Cloud.
-  - Docs
 - [Smartwatch](https://github.com/osmandapp/OsmAnd/issues/9258).
-  - Docs
 - Gallery / Places - Explore ([images on the map](https://osmand.net/docs/versions/future-web#explore-map-menu)).
-  - Docs
-- [Key “D”, “N”, “S” on external Keyboards - no effect any more](https://github.com/osmandapp/OsmAnd/issues/20636)
-  - Docs
-- Default buttons – Appearance
-  - Docs
+- [Key “D”, “N”, “S” on external Keyboards - no effect any more](https://github.com/osmandapp/OsmAnd/issues/20636).
+- Default buttons – Appearance.
 - Main navigation widgets.
-  - Docs
 - [Activities](https://github.com/osmandapp/OsmAnd/issues/17997) for GPX track data.
-  - Docs
 - Search (USA address).
-  - Docs
 - Nautical maps (new data).
-  - Docs
 - Traffic (Germany and Netherlands).
-  - Docs
 - Geographic grid.
-  - Docs
+
+
+## Widget Context Menu
+
+![Widget context menu](@site/static/img/widgets/widget_context_menu_andr.png)
+
+The [**widget context menu**](../user/widgets/configure-screen.md#panel-widgets-settings) allows you to manage and configure widgets directly from the map screen, providing *a quick way to organize panels*. You can access this menu by ***long tapping*** on any widget to customize the layout of widgets without leaving the map.
+
+
