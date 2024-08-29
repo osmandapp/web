@@ -51,10 +51,11 @@ Altitude can not be displayed correctly on some Android devices. To resolve this
 </Tabs>  
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_altitude_current_location"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_altitude_current_location"/>* |
 | By tapping | No changes |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 | Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* |  
 
 
@@ -84,10 +85,11 @@ You can use the widget to find out the elevation of the current map center above
 [Terrain map (Hillshade and Slope)](../plugins/contour-lines.md#download-maps) of the required area is needed to display information in the **Elevation: map center widget**.  
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_altitude_map_center"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_altitude_map_center"/>* |
 | By tapping | No changes |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 | Format | *Menu → Settings → App profiles → General settings → Units & formats → Units of length* |
 
 
@@ -98,10 +100,11 @@ You can use the widget to find out the elevation of the current map center above
 This widget displays the current time taken from your device.  
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_plain_time"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_plain_time"/>* |
 | By tapping | No changes |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 | Format | Time & Format is configured by device settings. |
 
 
@@ -112,10 +115,11 @@ This widget displays the current time taken from your device.
 The widget shows the current speed detected by the GPS sensor.  
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_current_speed"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_current_speed"/>* |
 | By tapping  | No changes |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,default_speed_system"/>* |
 
 
@@ -166,10 +170,11 @@ The average speed is calculated for a given time interval according to your sele
 </Tabs>  
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_average_speed"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_average_speed"/>* |
 | By tapping | No changes |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 
 
 ## Glide Ratio
@@ -179,7 +184,7 @@ The average speed is calculated for a given time interval according to your sele
 <TabItem value="android" label="Android">
 
 |Widgets| Widgets on the screen|
-|--------|---------|
+|:--------|:---------|
 |![Glide ratio](@site/blog/2023-12-22-android-4-6/img/glide_ratio_1.png)|![Glide ratio](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
 
 </TabItem>
@@ -187,7 +192,7 @@ The average speed is calculated for a given time interval according to your sele
 <TabItem value="ios" label="iOS">
 
 |Widgets| Widgets on the screen|
-|--------|---------|
+|:--------|:---------|
 |![Glide ratio](@site/static/img/widgets/glide_ratio_1_widget_ios.png)|![Glide ratio](@site/static/img/widgets/glide_ratio_widget_ios.png)|
 
 
@@ -209,8 +214,8 @@ Glide ratio [simple widgets](../widgets/configure-screen.md#widgets-for-all-pane
 
 **Positive and Negative Values:**
 
-- *Positive values* indicate that your destination is at a lower altitude than your current position, requiring descent.
-- *Negative values* indicate that your destination is at a higher altitude, necessitating ascent. For example, "-90:1" means that after covering a distance of 90 kilometers, you need to ascend by 1 kilometer to reach your destination.
+- **Positive values** indicate that your destination is at a lower altitude than your current position, requiring descent.
+- **Negative values** indicate that your destination is at a higher altitude, necessitating ascent. For example, "-90:1" means that after covering a distance of 90 kilometers, you need to ascend by 1 kilometer to reach your destination.
 
 
 **Rounding/Formatting:**
@@ -229,10 +234,11 @@ Glide ratio [simple widgets](../widgets/configure-screen.md#widgets-for-all-pane
 - **Target elevation** shows the targent point elevation. The [Map marker](../personal/markers.md) should be used as the target point.
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → Glide ratio* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → Glide ratio* |
 | By tapping | Changes *Glide ratio to target* or *Target elevation*  |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 
 
 ### Average Glide Ratio
@@ -241,10 +247,11 @@ Glide ratio [simple widgets](../widgets/configure-screen.md#widgets-for-all-pane
 - **Average vertical speed** indicates the rate at which an object ascends or descends over a period of time. For evaluation takes into account only first and last point in time interval. You can set the time interval for this widget from 15 seconds to 60 minutes. The [Map marker](../personal/markers.md) should be used as the target point.
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → Glide ratio* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → Glide ratio* |
 | By tapping | Changes *Average glide ratio* or *Average vertical speed*  |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 
 
 ## Battery Level
@@ -254,10 +261,11 @@ Glide ratio [simple widgets](../widgets/configure-screen.md#widgets-for-all-pane
 This widget shows the battery level of your device.
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_battery"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_battery"/>* |
 | By tapping | No changes |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 
 
 ## Coordinates Widget
@@ -286,7 +294,7 @@ Coordinates widgets are displayed at the top of the screen. Icons with a green b
 </Tabs>
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="coordinates_widget"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → <Translate ios="true" ids="coordinates"/>* |
 | By tapping | Copies the coordinates to the clipboard. |
@@ -305,9 +313,10 @@ You can reset the current GPS cache through:
 *<Translate android="true" ids="shared_string_menu,open_settings,rendering_value_browse_map_name,configure_profile,debugging_and_development,agps_info"/>*.  
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_gps_info"/>* |  
-| By tapping | Opens the GPS status menu with third-party tools to configure the on-board GPS device. |  
+| By tapping | Opens the GPS status menu with third-party tools to configure the on-board GPS device. |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 
 
 ## Sun Position
@@ -335,10 +344,11 @@ Sun position widgets show the next sunrise and sunset times for the center of th
 - **<Translate ios="true" ids="map_widget_sunset"/>**. <Translate ios="true" ids="map_widget_sunset_desc"/>
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_sun_position"/> → <Translate android="true" ids="map_widget_sun_position"/>, <Translate android="true" ids="shared_string_sunrise"/>, <Translate android="true" ids="shared_string_sunset"/>* |
 |   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_sun_position"/> → <Translate ios="true" ids="map_widget_sun_position"/>, <Translate ios="true" ids="map_widget_sunrise"/>, <Translate ios="true" ids="map_widget_sunset"/>* |
-| By tapping | Switch between the remaining time and the time of the next sunrise/sunset. |  
+| By tapping | Switch between the remaining time and the time of the next sunrise/sunset. |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 
 
 ## Radius Ruler
@@ -372,10 +382,11 @@ You can read a more detailed description here: **[Radius ruler and Ruler](../wid
 The Radius Ruler widget shows the distance between your location and the center point of the Radius Ruler. The radius of the first circle is equal to [the map scale](../widgets/radius-ruler.md#ruler).
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="radius_ruler_item"/>* |
 |   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="map_widget_ruler_control"/>* |
 | By tapping | Changes the state of the widget between black scale, gray scale, and invisible modes. |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 | Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,unit_of_length"/>*  |
 
 
@@ -410,7 +421,7 @@ The Radius Ruler widget shows the distance between your location and the center 
 </table>
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_other,shared_string_speedometer"/>* |
 |        | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,other_location"/>* *→ Speedometer* |
 | Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,default_speed_system"/>*  |
@@ -446,10 +457,11 @@ You can read a more detailed description here: **[<Translate android="true" ids=
 Trip recording widgets refer to [<Translate android="true" ids="record_plugin_name"/> plugin](../plugins/trip-recording.md#widgets). You can use widgets to view brief information about the track recording on the screen. Such as *Distance*, *Duration*, *Uphill* and *Downhill*.
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_monitoring"/>* |
 |   |  **iOS**: *Menu → Configure screen → Widgets → Left/Right/Top/Bottom panels → Track recording* |
 | By tapping | Starts/Stop track recording or View the graph. |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 
 
 ### External Sensors Widgets
@@ -480,10 +492,11 @@ Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widget
 - How to choose which sensor (of the same type) to show in the widget, read [here](../plugins/external-sensors.md#widget-settings).
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="external_sensor_widgets"/>* |
 | | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="external_sensors_plugin_name"/>* |
 | By tapping | No changes |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 
 
 ### Weather Widgets
@@ -517,10 +530,11 @@ Weather widgets display current weather information for a central point on the m
 - **Precipitation**. <Translate android="true" ids="precipitation_widget_desc"/>
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="shared_string_weather"/>* |
 |   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="shared_string_weather"/>* |  
 | By tapping | Shows in a pop-up dialog box the date and time when the weather information is relevant. |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 | Format | *Menu → Plugins → Weather → Settings* or *Menu → Settings → App Profile → Weather* |  
 
 
@@ -535,10 +549,11 @@ Parking widget can be added to the map screen only when OsmAnd [**Parking positi
 This is a Parking plugin widget that shows the distance from the center of the screen to the parking location.
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_parking"/>* |
 |   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="parking_place"/>* |
 | By tapping | Moves map view to the parking position. |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 | Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
@@ -553,10 +568,11 @@ Mapillary widget can be added to the map screen only when OsmAnd [**Mapillary pl
 This is a Mapillary plugin widget that provides quick access to Mapillary app to add [*Street-Level imagery*](../plugins/mapillary.md#enable-layer).  
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="mapillary"/>* |
 |   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="mapillary"/>* |
 | By tapping | Opens [Mapillary](https://www.mapillary.com/) application. |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 
 
 ### Audio/Video Notes Widget
@@ -579,9 +595,10 @@ You can configure which action is selected by default:
 - *Take a photo* - allows you to take a photo.  
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_av_notes"/>*  |
 | By tapping | Start / stops taking a note  |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 
 
 ### Tracker Widget
@@ -599,7 +616,7 @@ This OsmAnd Tracker plugin widget is used to quickly access the OsmAnd Tracker a
 ![Tracker widget](@site/static/img/plugins/online-tracker/tracker_widget.png)
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="tracker_item"/>* |
 | By tapping | Opens OsmAnd Online GPS Tracker app. |
 
@@ -634,10 +651,11 @@ The [Map rendering FPS](../plugins/development.md#fps-widget) shows how fast the
 </Tabs>
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_rendering_fps"/>* |
 |   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="developer_widgets,map_widget_rendering_fps"/>* |
 | By tapping | No changes |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 
 
 #### Camera Widgets  
@@ -667,10 +685,11 @@ There are four Camera widgets:
 </Tabs>
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="developer_widgets"/>* |
 |   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="developer_widgets"/>* |
 | By tapping | No changes |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 
 
 #### Available RAM
@@ -690,9 +709,10 @@ This widget is a useful tool for you to monitor the amount of available RAM on y
 To use this widget, make sure you have the **OsmAnd development plugin** enabled.
 
 | | |
-|------------|------------|
+|:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → Available RAM* |
 | By tapping | No changes |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 
 
 ## Related Articles
