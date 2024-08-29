@@ -15,5 +15,20 @@
   "login_desc": "Please enter the email you used to create your account.",
   "user_email": "Email",
   "email_is_not_registered": "This email has not been registered of OsmAnd Cloud.",
-  "incorrect_password": "Incorrect password."
+  "incorrect_password": "Incorrect password.",
+  "change_password": "I don’t have or forgot password",
+  "change_reset_password": "Change or reset password",
+  "enter_email": "Please enter the email you used to create your account.",
+  "send_code_desc": "We sent a verification code to \\\"%1$s\\\", please enter it in the field below.",
+  "verification_code": "Verification code",
+  "min_8_symbols": "Minimum 8 symbols.",
+  "new_password": "New password",
+  "repeat_password": "Repeat new password",
+  "change_password_btn": "Change password",
+  "passwords_not_match": "Passwords do not match.",
+  "password_changed_successfully": "Password Changed Successfully",
+  "password_change_success_desc": "Your password has been updated. Please log in to continue.",
+  "password_change_error": "Your password has not been changed.",
+  "password_change_error_desc": "Your password has not been changed. Please try again.",
+  "min_8_symbols_password": "Password must be at least 8 characters long."
 }

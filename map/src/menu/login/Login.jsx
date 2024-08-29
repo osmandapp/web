@@ -1,13 +1,13 @@
-import { AppBar, Box, Button, IconButton, TextField, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Button, IconButton, Link, TextField, Toolbar, Typography } from '@mui/material';
 import headerStyles from '../trackfavmenu.module.css';
 import styles from './login.module.css';
 import { closeHeader } from '../actions/HeaderHelper';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
-import AccountManager from '../../manager/AccountManager';
+import { userLogin } from '../../manager/AccountManager';
 import i18n from 'i18next';
-import { closeLoginMenu } from '../../manager/LoginManager';
+import { closeLoginMenu, EMPTY_INPUT, ERROR_EMAIL, ERROR_PASSWORD } from '../../manager/LoginManager';
 import { useTranslation } from 'react-i18next';
 
 export default function Login() {
@@ -16,44 +16,43 @@ export default function Login() {
     const { t } = useTranslation();
     const lang = i18n.language;
 
-    const [userEmail, setUserEmail] = useState('');
-    const [userPassword, setUserPassword] = useState('');
-    const [error, setError] = useState('');
-    const [emailError, setEmailError] = useState('');
-    const [passwordError, setPasswordError] = useState('');
+    const [userEmail, setUserEmail] = useState(EMPTY_INPUT);
+    const [userPassword, setUserPassword] = useState(EMPTY_INPUT);
+    const [error, setError] = useState(EMPTY_INPUT);
+    const [emailError, setEmailError] = useState(EMPTY_INPUT);
+    const [passwordError, setPasswordError] = useState(EMPTY_INPUT);
 
     const handleClose = () => {
-        setEmailError('');
-        setUserPassword('');
+        setEmailError(EMPTY_INPUT);
+        setUserPassword(EMPTY_INPUT);
+        closeLoginMenu(ctx);
         ctx.setPrevPageUrl((prevPageUrl) => ({ ...prevPageUrl, active: true }));
     };
 
     useEffect(() => {
         if (error) {
-            if (error === 'error_email') {
+            if (error === ERROR_EMAIL) {
                 setEmailError(t('web:email_is_not_registered'));
-            } else if (error === 'error_password') {
+            } else if (error === ERROR_PASSWORD) {
                 setPasswordError(t('web:incorrect_password'));
             }
         }
     }, [error]);
 
     useEffect(() => {
-        if (userPassword === '') {
-            setPasswordError('');
+        if (userPassword === EMPTY_INPUT) {
+            setPasswordError(EMPTY_INPUT);
         }
     }, [userPassword]);
 
     async function handleLogin() {
-        await AccountManager.userLogin({
+        await userLogin({
             ctx,
             username: userEmail,
             pwd: userPassword,
-            setEmailError: setError,
+            setError,
             handleClose,
             lang,
-        }).then(() => {
-            closeLoginMenu(ctx);
         });
     }
 
@@ -63,6 +62,10 @@ export default function Login() {
             await handleLogin();
         }
     };
+
+    function openChangeResetPwd() {
+        ctx.setLoginState({ changePwd: true });
+    }
 
     return (
         <>
@@ -74,8 +77,7 @@ export default function Login() {
                         type="button"
                         className={styles.closeIcon}
                         onClick={() => {
-                            ctx.setOpenLoginMenu(false);
-                            ctx.setLoginState({ default: true });
+                            closeLoginMenu(ctx);
                             closeHeader({ ctx });
                         }}
                     >
@@ -87,14 +89,14 @@ export default function Login() {
                 </Toolbar>
             </AppBar>
             <Box sx={{ mx: 2, my: 1 }}>
-                <Typography className={styles.loginDesc}>{t('web:login_desc')}</Typography>
+                <Typography className={styles.loginText}>{t('web:login_desc')}</Typography>
                 <Box className={emailError && styles.errorBack}>
                     <TextField
                         autoFocus
                         margin="dense"
                         onChange={(e) => {
-                            if (emailError !== '') {
-                                setEmailError('');
+                            if (emailError !== EMPTY_INPUT) {
+                                setEmailError(EMPTY_INPUT);
                             }
                             setUserEmail(e.target.value);
                         }}
@@ -104,7 +106,7 @@ export default function Login() {
                         type="email"
                         fullWidth
                         variant="filled"
-                        helperText={emailError ? emailError : ''}
+                        helperText={emailError ? emailError : EMPTY_INPUT}
                         value={userEmail}
                     />
                 </Box>
@@ -118,14 +120,19 @@ export default function Login() {
                         type="password"
                         fullWidth
                         variant="filled"
-                        helperText={passwordError ? passwordError : ''}
+                        helperText={passwordError ? passwordError : EMPTY_INPUT}
                         error={passwordError.length > 0}
-                        value={userPassword ? userPassword : ''}
+                        value={userPassword ? userPassword : EMPTY_INPUT}
                     />
                 </Box>
+                <Typography className={styles.loginText}>
+                    <Link onClick={openChangeResetPwd} target="_blank" underline="none">
+                        {t('web:change_password')}
+                    </Link>
+                </Typography>
                 <Box sx={{ mt: 2 }}>
                     <Button
-                        disabled={userPassword === '' || userEmail === ''}
+                        disabled={userPassword === EMPTY_INPUT || userEmail === EMPTY_INPUT}
                         className={styles.button}
                         onClick={handleLogin}
                     >

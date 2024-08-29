@@ -3,20 +3,16 @@ import styles from '../errors/errors.module.css';
 import loginStyles from './login.module.css';
 import { ReactComponent as UserAccountIcon } from '../../assets/icons/ic_custom_logo_osmand.svg';
 import { useNavigate } from 'react-router-dom';
-import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 import { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
+import { openLogin } from '../../manager/LoginManager';
+
 export default function EmptyLogin() {
     const ctx = useContext(AppContext);
 
     const navigate = useNavigate();
     const { t } = useTranslation();
-
-    const openLogin = () => {
-        navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.search + window.location.hash);
-        ctx.setLoginState({ login: true });
-    };
 
     return (
         <Box className={loginStyles.block}>
@@ -31,7 +27,7 @@ export default function EmptyLogin() {
                     {t('web:empty_login_desc')}
                 </ListItemText>
             </Box>
-            <Button className={styles.button} component="span" onClick={openLogin}>
+            <Button className={styles.button} component="span" onClick={() => openLogin(ctx, navigate)}>
                 {t('web:login_btn')}
             </Button>
         </Box>

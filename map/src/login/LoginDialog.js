@@ -9,7 +9,7 @@ import AppContext from '../context/AppContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Box, Divider, Link, ListItemText, MenuItem, Typography } from '@mui/material';
 import DeleteAccountDialog from './DeleteAccountDialog';
-import AccountManager from '../manager/AccountManager';
+import AccountManager, { userActivate, userLogin, userRegisterAndSendCode } from '../manager/AccountManager';
 import ChangeEmailDialog from './ChangeEmailDialog';
 import DownloadBackupDialog from './DownloadBackupDialog';
 import { useWindowSize } from '../util/hooks/useWindowSize';
@@ -73,20 +73,19 @@ export default function LoginDialog() {
 
     const handleLogin = () => {
         if (state === 'register') {
-            AccountManager.userRegister({ username: userEmail, setEmailError, setState, lang }).then();
+            userRegisterAndSendCode({ username: userEmail, setError: setEmailError, lang }).then();
         } else if (state === 'register-verify') {
-            AccountManager.userActivate({
-                ctx,
+            userActivate({
                 username: userEmail,
                 pwd,
                 token: code,
-                setEmailError,
+                setError: setEmailError,
                 handleClose,
                 lang,
             }).then();
         } else {
             if (userEmail) {
-                AccountManager.userLogin({ ctx, username: userEmail, pwd, setEmailError, handleClose, lang }).then();
+                userLogin({ ctx, username: userEmail, pwd, setError: setEmailError, handleClose, lang }).then();
             }
         }
     };
@@ -230,7 +229,7 @@ export default function LoginDialog() {
                             AccountManager.userLogout({
                                 ctx,
                                 username: userEmail,
-                                setEmailError,
+                                setError: setEmailError,
                                 handleClose,
                                 setState,
                                 lang,
@@ -267,7 +266,7 @@ export default function LoginDialog() {
                                 setChangeEmailFlag(true);
                                 AccountManager.sendCode({
                                     action: AccountManager.CHANGE_EMAIL_MSG,
-                                    setEmailError,
+                                    setError: setEmailError,
                                     lang,
                                 }).then();
                             }}

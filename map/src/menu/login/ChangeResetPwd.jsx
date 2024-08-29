@@ -1,0 +1,240 @@
+import headerStyles from '../trackfavmenu.module.css';
+import { AppBar, Box, Button, Icon, IconButton, ListItemText, TextField, Toolbar, Typography } from '@mui/material';
+import styles from './login.module.css';
+import errorStyles from './../errors/errors.module.css';
+import { closeHeader } from '../actions/HeaderHelper';
+import React, { useContext, useEffect, useState } from 'react';
+import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import { ReactComponent as UserPasswordIcon } from '../../assets/icons/ic_action_user_password.svg';
+import AppContext from '../../context/AppContext';
+import { closeLoginMenu, EMPTY_INPUT, openLogin } from '../../manager/LoginManager';
+import { useTranslation } from 'react-i18next';
+import { userActivate, userRegisterAndSendCode } from '../../manager/AccountManager';
+import i18n from 'i18next';
+import { formatString } from '../../manager/SettingsManager';
+import loginStyles from './login.module.css';
+import { useNavigate } from 'react-router-dom';
+
+export default function ChangeResetPwd() {
+    const ctx = useContext(AppContext);
+
+    const { t } = useTranslation();
+    const navigate = useNavigate();
+    const lang = i18n.language;
+
+    const [userEmail, setUserEmail] = useState(EMPTY_INPUT);
+    const [emailError, setEmailError] = useState(EMPTY_INPUT);
+    const [passwordError, setPasswordError] = useState(EMPTY_INPUT);
+    const [userPassword1, setUserPassword1] = useState(EMPTY_INPUT);
+    const [userPassword2, setUserPassword2] = useState(EMPTY_INPUT);
+    const [openCodeInput, setOpenCodeInput] = useState(false);
+    const [code, setCode] = useState(EMPTY_INPUT);
+    const [resetPasswordError, setResetPasswordError] = useState(EMPTY_INPUT);
+    const [openResetStatus, setOpenResetStatus] = useState(false);
+
+    const handleEmailChange = (e) => {
+        if (emailError !== EMPTY_INPUT) {
+            setEmailError(EMPTY_INPUT);
+        }
+        setUserEmail(e.target.value);
+    };
+
+    const handleCodeChange = (e) => {
+        setCode(e.target.value);
+    };
+
+    const handlePassword1Change = (e) => {
+        setUserPassword1(e.target.value);
+    };
+
+    const handlePassword2Change = (e) => {
+        setUserPassword2(e.target.value);
+    };
+
+    useEffect(() => {
+        if (emailError && emailError !== EMPTY_INPUT) {
+            setOpenCodeInput(false);
+        }
+    }, [emailError]);
+
+    useEffect(() => {
+        if (userPassword1 !== EMPTY_INPUT && userPassword2 !== EMPTY_INPUT) {
+            if (userPassword1 !== userPassword2) {
+                setPasswordError(t('web:passwords_not_match'));
+            } else if (userPassword1.length < 8 || userPassword2.length < 8) {
+                setPasswordError(t('web:min_8_symbols_password'));
+            } else {
+                setPasswordError(EMPTY_INPUT);
+            }
+        }
+    }, [userPassword1, userPassword2]);
+
+    const handleKeyPress = async (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            await sendVerificationCode();
+        }
+    };
+
+    async function sendVerificationCode() {
+        await userRegisterAndSendCode({ username: userEmail, setError: setEmailError, lang }).then(() => {
+            setOpenCodeInput(true);
+        });
+    }
+
+    async function handleResetPassword() {
+        await userActivate({
+            username: userEmail,
+            pwd: userPassword1,
+            token: code,
+            setError: setResetPasswordError,
+            lang,
+        }).then(() => {
+            setOpenCodeInput(false);
+            setOpenResetStatus(true);
+        });
+    }
+
+    return (
+        <>
+            <AppBar position="static" className={headerStyles.appbar}>
+                <Toolbar className={headerStyles.toolbar}>
+                    <IconButton
+                        id={'se-change-pwd-menu-close'}
+                        variant="contained"
+                        type="button"
+                        className={styles.closeIcon}
+                        onClick={() => {
+                            closeLoginMenu(ctx);
+                            closeHeader({ ctx });
+                        }}
+                    >
+                        <CloseIcon />
+                    </IconButton>
+                    <Typography id="se-change-pwd-menu-name" component="div" className={headerStyles.title}>
+                        {t('web:change_reset_password')}
+                    </Typography>
+                </Toolbar>
+            </AppBar>
+            <Box sx={{ mx: 2, my: 1 }}>
+                {!openResetStatus && !openCodeInput && (
+                    <>
+                        <Typography className={styles.loginText}>{t('web:enter_email')}</Typography>
+                        <Box className={emailError && styles.errorBack}>
+                            <TextField
+                                autoFocus
+                                margin="dense"
+                                onChange={handleEmailChange}
+                                onKeyDown={(e) => handleKeyPress(e)}
+                                id="username"
+                                label={t('web:user_email')}
+                                type="email"
+                                fullWidth
+                                variant="filled"
+                                helperText={emailError ? emailError : EMPTY_INPUT}
+                                value={userEmail}
+                            />
+                        </Box>
+                        <Box sx={{ mt: 2 }}>
+                            <Button
+                                disabled={userEmail === ''}
+                                className={styles.button}
+                                onClick={sendVerificationCode}
+                            >
+                                {t('shared_string_continue')}
+                            </Button>
+                        </Box>
+                    </>
+                )}
+                {openCodeInput && !emailError && (
+                    <>
+                        <Typography className={styles.loginText}>
+                            {formatString(t('web:send_code_desc'), [userEmail])}
+                        </Typography>
+                        <TextField
+                            margin="dense"
+                            onChange={handleCodeChange}
+                            id="code"
+                            label={t('web:verification_code')}
+                            fullWidth
+                            variant="filled"
+                            value={code ? code : EMPTY_INPUT}
+                        />
+                        <Box sx={{ mt: '12px' }}>
+                            <Typography className={styles.title} noWrap>
+                                {t('user_password')}
+                            </Typography>
+                            <Typography className={styles.loginText}>{t('web:min_8_symbols')}</Typography>
+                        </Box>
+                        <Box className={passwordError && styles.errorBack}>
+                            <TextField
+                                margin="dense"
+                                onChange={handlePassword1Change}
+                                id="pwd1"
+                                label={t('web:new_password')}
+                                type="password"
+                                fullWidth
+                                variant="filled"
+                                value={userPassword1 ? userPassword1 : EMPTY_INPUT}
+                            />
+                            <TextField
+                                margin="dense"
+                                onChange={handlePassword2Change}
+                                id="pwd2"
+                                label={t('web:repeat_password')}
+                                type="password"
+                                fullWidth
+                                variant="filled"
+                                helperText={passwordError ? passwordError : EMPTY_INPUT}
+                                error={passwordError.length > 0}
+                                value={userPassword2 ? userPassword2 : EMPTY_INPUT}
+                            />
+                        </Box>
+                        <Box sx={{ mt: 2 }}>
+                            <Button
+                                disabled={
+                                    userPassword1 === EMPTY_INPUT ||
+                                    userPassword2 === EMPTY_INPUT ||
+                                    code === EMPTY_INPUT ||
+                                    passwordError !== EMPTY_INPUT
+                                }
+                                className={styles.button}
+                                onClick={handleResetPassword}
+                            >
+                                {t('web:change_password_btn')}
+                            </Button>
+                        </Box>
+                    </>
+                )}
+                {openResetStatus && (
+                    <>
+                        <Box className={loginStyles.block}>
+                            <Icon className={loginStyles.icon}>
+                                <UserPasswordIcon />
+                            </Icon>
+                            <Box className={errorStyles.info}>
+                                <ListItemText disableTypography={true} className={errorStyles.title}>
+                                    {resetPasswordError
+                                        ? t('web:password_change_error')
+                                        : t('web:password_changed_successfully')}
+                                </ListItemText>
+                                <ListItemText disableTypography={true} className={errorStyles.text}>
+                                    {resetPasswordError
+                                        ? t('web:password_change_error_desc')
+                                        : t('web:password_change_success_desc')}
+                                </ListItemText>
+                            </Box>
+                            <Button
+                                className={errorStyles.button}
+                                component="span"
+                                onClick={() => openLogin(ctx, navigate)}
+                            >
+                                {t('web:login_btn')}
+                            </Button>
+                        </Box>
+                    </>
+                )}
+            </Box>
+        </>
+    );
+}

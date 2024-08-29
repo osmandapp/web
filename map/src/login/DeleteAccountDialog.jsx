@@ -137,7 +137,7 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
                                     AccountManager.deleteAccount({
                                         userEmail,
                                         code,
-                                        setEmailError,
+                                        setError: setEmailError,
                                         setAccountDeleted,
                                         lang,
                                     }).then();
