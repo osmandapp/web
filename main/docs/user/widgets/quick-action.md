@@ -49,7 +49,7 @@ In order to use the Quick Action button you need to enable this widget first.
 
 <!--
 - To open Quick action menu just tap the button.
-- By default the Quick action button will appear on the right corner (above the zoom buttons), but it can be moved to the any part of the screen by long-tap it. -->
+- By default the Quick action button will appear on the right corner (above the zoom buttons), but it can be moved to the any part of the screen by long tap it. -->
 
 
 ### Add and Delete Actions
@@ -113,7 +113,7 @@ The actions assigned to a button are divided into Screens. These screens, 1, 2 a
 - *Android*. *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → Hold & Drag*  
     Select an up or down action using the icon (*three vertical lines*) in the list.
 
-- *Android*. Open *Quick action menu → long-tap Add action → Hold & Drag*  
+- *Android*. Open *Quick action menu → long tap Add action → Hold & Drag*  
     Select an up or down action using the icon (*three vertical lines*) in the list.
 
 - *iOS*. *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/> → Click Edit (Pencil icon) → Hold & Drag*  
@@ -145,7 +145,7 @@ When enabled, the quick action widget is located in the lower right corner above
 | | |
 |------------|------------|
 | *First appearing*  | ![Quick action widget_view](@site/static/img/widgets/quick_action_widget_view.png) |
-| *Long-tap and moving* | ![Quick action widget_tap](@site/static/img/widgets/quick_action_widget_tap.png) |
+| *Long tap and moving* | ![Quick action widget_tap](@site/static/img/widgets/quick_action_widget_tap.png) |
 | *New place*  | ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_move.png) |
 | *Several [Custom buttons](#custom-buttons) on the map screen* | ![Quick action widget_move](@site/static/img/widgets/quick_action_widget_multi.png) |
 

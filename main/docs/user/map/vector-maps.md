@@ -440,14 +440,14 @@ This setting helps to change the magnifier of the map. It is applicable for rast
 
 <TabItem value="android" label="Android">  
 
-You can choose this setting by long-tap to "+" or "-" button on the screen or:  
+You can choose this setting by long tap to "+" or "-" button on the screen or:  
 *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,map_widget_map_rendering,map_magnifier"/>*  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-You can choose this setting by long-tap to "+" or "-" button on the screen or:  
+You can choose this setting by long tap to "+" or "-" button on the screen or:  
 *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,map_widget_renderer,map_magnifier"/>*
 
 </TabItem>

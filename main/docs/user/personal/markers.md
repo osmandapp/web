@@ -37,7 +37,7 @@ Markers are special points marked on the map as flags that could be quickly crea
 
 ### Add / Edit markers
 
-Short or long-tap the map and choose neede action in [Map Context menu](../map/map-context-menu.md#add--edit-marker).  
+Short or long tap the map and choose neede action in [Map Context menu](../map/map-context-menu.md#add--edit-marker).  
 
 <Tabs groupId="operating-systems">
 

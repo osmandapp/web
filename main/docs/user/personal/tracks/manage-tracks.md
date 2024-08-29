@@ -118,7 +118,7 @@ All tracks ever recorded, created or imported are automatically displayed in the
 Each track, like folders, has its menu. To open it:
 
 - *Android* - tap the three-dot menu in the field with the required track.
-- *iOS* - long-tap the required track in the list.
+- *iOS* - long tap the required track in the list.
 
 Menu with actions:
 
@@ -247,7 +247,7 @@ Sort menu:
 To open the folder menu, you need to:
 
 - *Android* - tap the three-dot menu in the field with the required folder.
-- *iOS* - to make a long-tap the field of the folder.
+- *iOS* - to make a long tap the field of the folder.
 
 Actions:
 

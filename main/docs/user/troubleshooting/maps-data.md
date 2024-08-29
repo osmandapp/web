@@ -15,6 +15,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 <InfoIncompleteArticle/>
 
 ## Maps
+
 ### Why does OsmAnd not offer access to Google Maps?
 
 Firstly, OsmAnd is meant to support OpenStreetMap and tries to go that path as far as possible. Secondly, there are licensing issues, so OsmAnd cannot be distributed with Google Maps data.
@@ -37,13 +38,15 @@ At this moment we can propose these solutions:
 
 #### 2. Use the SD card's 'Download' Folder:
 
-Try this solution by specifying under **_Menu → Settings → OsmAnd settings → Data storage folder → Manually specified_**):
+Try this solution by specifying under (***Menu → Settings → OsmAnd settings → Data storage folder → Manually specified***):
+
    - **_/storage/XXXX-XXXX/Download/osmand_**   (in some cases this version caused errors with multiple file access, you could e.g. download the World Overview map, but no other regions are shown.)
-   - **_/storage/XXXX-XXXX/Download_** (this version should always work, you can download maps, etc. Note that OsmAnd does not see files written to the folder by other apps or programs (e.g SasPlanet etc., see [here](../../technical/map-creation/create-offline-maps-yourself.md)).
+   - **_/storage/XXXX-XXXX/Download_** this version should always work, you can download maps, etc. Note that OsmAnd does not see files written to the folder by other apps or programs (e.g SasPlanet etc., see [here](../../technical/map-creation/create-offline-maps-yourself.md)).
 
 Here XXXX-XXXX is the SD card's identification number, sometimes visible in the folder path displayed under the _External staroage 2_ options, or has to be found out independently. Research of this solution is originally supplied [here](https://github.com/osmandapp/OsmAnd/issues/13254#issuecomment-984467744).
 
 #### 3. 'Media' Storage Option:
+
 Plesae see below.
 
 ### Picking a 'Generally Accessible' OsmAnd Data storage folder Using the 'Media' Storage
@@ -53,9 +56,10 @@ Android versions have become increasingly restrictive in terms of which apps and
 For OsmAnd, many users want to use a storage location on external or even removable storage (often having more storage space) which is readily accessible for other proccesses, e.g. if you use manual file copy or sync/backup mechanisms (via a separate app or even a PC).
 
 Our OsmAnd builds do not have the 'All files access' permission (because google heavily restricts its use) to chose any arbitrary storage folder. One possibility I am aware to try is using the 'Media' storage mechanism. The art is to identify a ‘Media’ type folder on your system which will accordingly become read/write available. You can try this:
--	Go to _OsmAnd’s Settings → OsmAnd settings → Data storage folder_, and identify the general storage location (area) you are trying to target, e.g. by deriving from the reported free space (often this may be the _External storage 2_ location.)
--	Note down the folder path reported under the option, e.g. something like _/storage/xxxx-xxxx/Android/data/net.osmand.plus/files_
--	Change to the _Manually specified_ option. There specify this folder path **but with a modification to point to a folder recognized as Media**. On some systems, replacing everything behind _/Android/_ by just _/media_ (e.g. **_/storage/xxxx-xxxx/Android/media_**) works. Other systems may need a different modification.
+
+- Go to _OsmAnd’s Settings → OsmAnd settings → Data storage folder_, and identify the general storage location (area) you are trying to target, e.g. by deriving from the reported free space (often this may be the _External storage 2_ location.)
+- Note down the folder path reported under the option, e.g. something like _/storage/xxxx-xxxx/Android/data/net.osmand.plus/files_
+- Change to the _Manually specified_ option. There specify this folder path **but with a modification to point to a folder recognized as Media**. On some systems, replacing everything behind _/Android/_ by just _/media_ (e.g. **_/storage/xxxx-xxxx/Android/media_**) works. Other systems may need a different modification.
 
 You have found a good path if after selecting it OsmAnd does NOT complain about not being able to write to the target folder. Before trying this, make sure under Android’s '_Apps_' settings the OsmAnd app has been granted the highest storage permission possible, which usually (explicitly or not) contains the 'Media' storage permission. In new versions of android, the '_Storage_' permission seems a little hidden in advanced menus.
 
@@ -63,7 +67,7 @@ You have found a good path if after selecting it OsmAnd does NOT complain about 
 
 About this issue of OsmAnd Android version: [Github](https://github.com/osmandapp/OsmAnd/issues/13404)
 
-If _Multiuser Storage 1_ is selected as the storage location, then all [local maps](../personal/maps.md#local-maps) are deleted  all the time when the application is automatically updated 4.1.9 → 4.1.10 → 4.1.11 → 4.2.4 → 4.2.6 **(Android version: 11, 12, )**. 
+If _Multiuser Storage 1_ is selected as the storage location, then all [local maps](../personal/maps.md#local-maps) are deleted  all the time when the application is automatically updated 4.1.9 → 4.1.10 → 4.1.11 → 4.2.4 → 4.2.6 **(Android version: 11, 12, )**.
 
 While you need to choose the next ways for saving your map data during the application updates:
 
@@ -100,15 +104,18 @@ I tried to search CITY - STREET - HOUSE NUMBER and there was no result.
 
 
 ## Tracks and Points
+
 ### How to mark different places on the map
+
 *It looks like duplicated content for Personal Data category*
+
 You can leave notes for future usage in several forms:
 
--   [Favorites](../personal/favorites.md): they are constant points on the map. You can add a description to every Favorite. To add it, make a *long-tap  →  tap Add*.
--   [Markers](../personal/markers.md): the temporary points with the directions settings. You can see the distance from the selected point or your current location to the Marker and remove it fast. To add it, make a *long-tap  →  tap Marker*.
--   [Waypoints](../map/tracks/index.md#types-of-tracks): the points along your route. You can add a description to this point. To add a waypoint, make a *long-tap the map  →  Directions  →  rst intermediate waypoint*.
--   [Audio/Video notes](../plugins/audio-video-notes.md): these are points with your audio-, video-, and photo files added to the selected point on the map. Please enable the Audio/video notes plugin in OsmAnd menu  →  Plugins. To add it, make a *long-tap  →  Actions  →  select the required file to add*.
--   [OSM Notes](https://www.facebook.com/watch/?v=673312246195291): your reports on the mistakes in the OpenStreetMap source. Please enable the OSM editing plugin in OsmAnd menu  →  Plugins. To add it, make a *l*ong-tap  →  Actions  →  Add OSM note*.
--   [POIs](../search/index.md): these are the points of interest from the OSM map source. Enable the POI overlay in Configure map menu or select a certain category.
--   [Search](../search/index.md).
+- [Favorites](../personal/favorites.md): they are constant points on the map. You can add a description to every Favorite. To add it, make a *long tap  →  tap Add*.
+- [Markers](../personal/markers.md): the temporary points with the directions settings. You can see the distance from the selected point or your current location to the Marker and remove it fast. To add it, make a *long tap  →  tap Marker*.
+- [Waypoints](../map/tracks/index.md#types-of-tracks): the points along your route. You can add a description to this point. To add a waypoint, make a *long tap the map  →  Directions  →  rst intermediate waypoint*.
+- [Audio/Video notes](../plugins/audio-video-notes.md): these are points with your audio-, video-, and photo files added to the selected point on the map. Please enable the Audio/video notes plugin in OsmAnd menu  →  Plugins. To add it, make a *long tap  →  Actions  →  select the required file to add*.
+- [OSM Notes](https://www.facebook.com/watch/?v=673312246195291): your reports on the mistakes in the OpenStreetMap source. Please enable the OSM editing plugin in OsmAnd menu  →  Plugins. To add it, make a *l*ong-tap  →  Actions  →  Add OSM note*.
+- [POIs](../search/index.md): these are the points of interest from the OSM map source. Enable the POI overlay in Configure map menu or select a certain category.
+- [Search](../search/index.md).
 

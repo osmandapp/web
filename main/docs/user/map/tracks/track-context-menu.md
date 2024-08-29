@@ -401,7 +401,7 @@ In this *Points* tab:
 
 Waypoints can be added to the currently recorded track or to any track from your track collection [*My Places → Tracks list*](../../personal/tracks/manage-tracks.md):
 
-- Using the [Map Context Menu](../../map/map-context-menu.md#-add--edit--track-waypoint). Waypoints are automatically displayed if the selected track is enabled on the map. To create a waypoint use a [long-tap](../../map/map-context-menu.md#select-any-point-long-tap) on the map at any chosen location. In the opened [Map Context Menu](../../map/map-context-menu.md#-add--edit--track-waypoint) you can set information about the waypoint.
+- Using the [Map Context Menu](../../map/map-context-menu.md#-add--edit--track-waypoint). Waypoints are automatically displayed if the selected track is enabled on the map. To create a waypoint use a [long tap](../../map/map-context-menu.md#select-any-point-long-tap) on the map at any chosen location. In the opened [Map Context Menu](../../map/map-context-menu.md#-add--edit--track-waypoint) you can set information about the waypoint.
 - Using [*Add Waypoint*](#add--delete-buttons) button of the Track Context menu.
 - You can also add a waypoint as a Quick action. Follow the [*Add track waypoint*](../../widgets/quick-action.md#create-items) to configure.
 

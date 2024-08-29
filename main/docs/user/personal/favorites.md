@@ -68,7 +68,7 @@ Favorites are grouped into one of the map layers. You can [show or hide](../map/
 </TabItem>
 </Tabs>
 
-To create a new Favorite point, you need to select a [POI](../map/point-layers-on-map.md#points-of-interest-poi) object with a short tap or a structure on the map with a long tap, and then select [Add (☆)](../map/map-context-menu.md#add--edit-favorite) from the [Map Context menu](../map/map-context-menu.md). If you select a point from OSM data, all information about that POI will be added to the newly selected point. You can also select any point on the map to add Favorite using [Long-tap](../map/map-context-menu.md#select-any-point-long-tap).
+To create a new Favorite point, you need to select a [POI](../map/point-layers-on-map.md#points-of-interest-poi) object with a short tap or a structure on the map with a long tap, and then select [Add (☆)](../map/map-context-menu.md#add--edit-favorite) from the [Map Context menu](../map/map-context-menu.md). If you select a point from OSM data, all information about that POI will be added to the newly selected point. You can also select any point on the map to add Favorite using [Long tap](../map/map-context-menu.md#select-any-point-long-tap).
 
 
 Following fields could be specified for a favorite point:
@@ -193,7 +193,7 @@ Tap &#128394;&#65039; button opens a selection mode with *Move to a Favorite Gro
 
 <TabItem value="ios" label="iOS">
 
-- *Long-tap folder → show context menu →* *Change appearance*:
+- *Long tap folder → show context menu →* *Change appearance*:
 
 ![Favorites actions ios](@site/static/img/personal/favorites_actions1_ios.png)
 
@@ -346,7 +346,7 @@ A tap &#8942; button opens the special functions menu for a chosen favorite fold
 
 ![Favorites actions ios](@site/static/img/personal/favorites_actions_ios.png)
 
-- Long-tap folder → show context menu → &#8657 (**share**) button.
+- Long tap folder → show context menu → &#8657 (**share**) button.
 
 ![Favorites actions ios](@site/static/img/personal/favorites_actions1_ios.png)
 

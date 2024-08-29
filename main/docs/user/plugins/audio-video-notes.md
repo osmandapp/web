@@ -98,7 +98,7 @@ The functions provided by the <Translate android="true" ids="map_widget_av_notes
 
 To create a note tied to a selected point on the map, use the [Context menu](../map/map-context-menu.md#-record-av-note-android) of the point:
 
-1. Long-tap a point on the map, and the [Context menu](../map/map-context-menu.md) opens.
+1. Long tap a point on the map, and the [Context menu](../map/map-context-menu.md) opens.
 2. Tap **Actions**, and select one of the available options from the list:
 
     - **<Translate android="true" ids="recording_context_menu_arecord"/>** - to make an audio note and tie it to the selected point on the map;

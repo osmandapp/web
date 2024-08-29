@@ -51,7 +51,7 @@ The search history serves to provide relevant information about your previous ac
 
 - *Track previous trips*. The search history can be useful for tracking previous trips and routes. You can track routes you have taken before or [plan your next route](../plan-route/create-route.md) based on previous ones.  
 
-- *Search for places over a certain period of time*. For the Android app, you need to use a long press, then find the month in which you made the trip, exit the delete menu and set the name in the search field. For the iOS app, the search history list is already divided into blocks by month.
+- *Search for places over a certain period of time*. For the Android app, you need to use a long tap, then find the month in which you made the trip, exit the delete menu and set the name in the search field. For the iOS app, the search history list is already divided into blocks by month.
 
 - *Delete entries*. Search History provides the ability to [delete](#delete) previous entries, which can be useful for confidentiality or to keep your history organized.
 
@@ -122,7 +122,7 @@ You can **disable or enable** the display of the entire search history. In this 
 
 After using OsmAnd for a long time, the *Search History* list can become too long, so deleting search queries helps to clear the list. You can delete queries that are no longer relevant or that you no longer intend to use in the future, which makes it easier to search through the list, especially when you need to find specific search queries quickly.
 
-You need to **long-tap any of the query items in the list** to open the Delete screen.
+You need to **long tap any of the query items in the list** to open the Delete screen.
 
 - *Select or deselect random items* - tap the required item in the list.
 - *Select the period available for deleting*, such as day, last 7 days, or month - check the box with the subheading in the list.

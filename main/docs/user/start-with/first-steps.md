@@ -418,14 +418,14 @@ There are two available variants of how to close OsmAnd.
 
 1. Close an app by swiping up and off the screen. For vertical list of app, swipe left or right.  
 
-You may need to perform the following steps before doing so, otherwise OsmAnd will run in the background:
-- [Dismiss navigation](../navigation/setup/route-navigation.md#start--stop-navigation)
-- [Stop map downloading and updating](../start-with/download-maps.md)
-- [Stop trip recording](../plugins/trip-recording.md#create-new-track) 
-- [Stop audio/video note recording](../plugins/audio-video-notes.md)
+2. You may need to perform the following steps before doing so, otherwise OsmAnd will run in the background:
+    - [Dismiss navigation](../navigation/setup/route-navigation.md#start--stop-navigation)
+    - [Stop map downloading and updating](../start-with/download-maps.md)
+    - [Stop trip recording](../plugins/trip-recording.md#create-new-track)
+    - [Stop audio/video note recording](../plugins/audio-video-notes.md)
 
-2. *Force stop* function:
-    - Long-tap *OsmAnd icon → **i** button → Force stop*. 
+3. *Force stop* function:
+    - Long tap *OsmAnd icon → **i** button → Force stop*.
     - Open the settings and tap *Apps & notifications → OsmAnd → Force stop*.
 
 </TabItem>
@@ -435,6 +435,7 @@ You may need to perform the following steps before doing so, otherwise OsmAnd wi
 Close an app by swiping up and off the screen. For vertical list of app, swipe left or right.  
 
 You may need to perform the following steps before doing so, otherwise OsmAnd will run in the background:
+
 - [Cancel navigation](../navigation/setup/route-navigation.md)
 - [Stop map downloading and updating](../start-with/download-maps.md)
 - [Stop trip recording](../plugins/trip-recording.md#create-new-track) 
@@ -447,8 +448,8 @@ You may need to perform the following steps before doing so, otherwise OsmAnd wi
 
 ## App shortcuts
 
-[App shortcuts](https://support.google.com/android/answer/9450271) are available for the OsmAnd icon. Just long-tap the OsmAnd icon on your device screen to open App shortcuts menu.
-Here, you can click short tap for choosing next actions: *Navigate to Home*, *Navigate to Work*, *Start Recording*, *Search*, *My places*, *Navigate to*. Long-tap one of the actions allows you to add new action icon to your device screen.
+[App shortcuts](https://support.google.com/android/answer/9450271) are available for the OsmAnd icon. Just long tap the OsmAnd icon on your device screen to open App shortcuts menu.
+Here, you can click short tap for choosing next actions: *Navigate to Home*, *Navigate to Work*, *Start Recording*, *Search*, *My places*, *Navigate to*. Long tap one of the actions allows you to add new action icon to your device screen.
 
 Tapping to the action icon allows starting this action immediately.
 

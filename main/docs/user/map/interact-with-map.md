@@ -48,9 +48,9 @@ Slide animations could be disabled with special [setting](#no-animations).
 - Grey icon - location has not found yet
 - Arrow icon - 3D mode is switched on
 
-**Long-tap** (Android) on **My location** opens [Map Context menu](../map/map-context-menu.md), so user can share own location.
+**Long tap** (*Android*) on **My location** opens [Map Context menu](../map/map-context-menu.md), so user can share own location.
 
-**Zoom buttons** are always visible next to **My Location** and allow to control map zoom level. Changing zoom level doesn't change map synchronization with location. **Long-tap** on **Zoom buttons** opens Map magnifier dialog and allows to change map detailing.
+**Zoom buttons** are always visible next to **My Location** and allow to control map zoom level. Changing zoom level doesn't change map synchronization with location. **Long tap** on **Zoom buttons** opens Map magnifier dialog and allows to change map detailing.
 
 Keep in mind that during navigation zoom can be controlled by **Auto zoom setting**:
 
@@ -103,7 +103,7 @@ The map orientation modes allow the user to select how the map is displayed on t
 
 **Settings for map orientation modes:**  
 
-- Map Orientation modes can be opened in the [Profile settings](../personal/profiles.md#appearance) as well as by long-tapping the [Compass button](../widgets/map-buttons.md#compass).  
+- Map Orientation modes can be opened in the [Profile settings](../personal/profiles.md#appearance) as well as by long tapping the [Compass button](../widgets/map-buttons.md#compass).  
 
 - To quickly switch between map orientation modes:
    - For **Android** version:  
@@ -170,7 +170,7 @@ Under horizon you can see so-called *haze* or *fog*. This area of the map is fil
 The use of fog is necessary, since the display of remote objects on the map requires significant computing resources and is not always justified due to map [distortions](../plugins/development.md#comparison-with-a-satellite-imagery) at small viewing angles. So the visible distance on OsmAnd map is currently limited to 35 tiles.  
 
 :::info
-Map tilt can be changed by long press on the screen with two fingers and moving them up/down. You can also change tilt by tapping on the [*My location*](#my-location-and-zoom) icon in the lower-right corner of the screen (only 45 and 90 degree positions are available).  
+Map tilt can be changed by long tap on the screen with two fingers and moving them up/down. You can also change tilt by tapping on the [*My location*](#my-location-and-zoom) icon in the lower-right corner of the screen (only 45 and 90 degree positions are available).  
 You can not change Camera tilt when old [map rendering engine](../personal/global-settings.md#map-rendering-engine) (version 1) is on.
 :::
 
