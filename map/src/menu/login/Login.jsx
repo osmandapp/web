@@ -8,10 +8,12 @@ import AppContext from '../../context/AppContext';
 import AccountManager from '../../manager/AccountManager';
 import i18n from 'i18next';
 import { closeLoginMenu } from '../../manager/LoginManager';
+import { useTranslation } from 'react-i18next';
 
 export default function Login() {
     const ctx = useContext(AppContext);
 
+    const { t } = useTranslation();
     const lang = i18n.language;
 
     const [userEmail, setUserEmail] = useState('');
@@ -29,9 +31,9 @@ export default function Login() {
     useEffect(() => {
         if (error) {
             if (error === 'error_email') {
-                setEmailError('This email has not been registered of OsmAnd Cloud.');
+                setEmailError(t('web:email_is_not_registered'));
             } else if (error === 'error_password') {
-                setPasswordError('Incorrect password.');
+                setPasswordError(t('web:incorrect_password'));
             }
         }
     }, [error]);
@@ -80,14 +82,12 @@ export default function Login() {
                         <CloseIcon />
                     </IconButton>
                     <Typography id="se-login-menu-name" component="div" className={headerStyles.title}>
-                        Login
+                        {t('user_login')}
                     </Typography>
                 </Toolbar>
             </AppBar>
             <Box sx={{ mx: 2, my: 1 }}>
-                <Typography className={styles.loginDesc}>
-                    Please enter the email you used to create your account
-                </Typography>
+                <Typography className={styles.loginDesc}>{t('web:login_desc')}</Typography>
                 <Box className={emailError && styles.errorBack}>
                     <TextField
                         autoFocus
@@ -100,7 +100,7 @@ export default function Login() {
                         }}
                         onKeyDown={(e) => handleKeyPress(e)}
                         id="username"
-                        label="Email"
+                        label={t('web:user_email')}
                         type="email"
                         fullWidth
                         variant="filled"
@@ -114,7 +114,7 @@ export default function Login() {
                         onChange={(e) => setUserPassword(e.target.value)}
                         onKeyDown={(e) => handleKeyPress(e)}
                         id="pwd"
-                        label={'Password'}
+                        label={t('user_password')}
                         type="password"
                         fullWidth
                         variant="filled"
@@ -129,7 +129,7 @@ export default function Login() {
                         className={styles.button}
                         onClick={handleLogin}
                     >
-                        Continue
+                        {t('shared_string_continue')}
                     </Button>
                 </Box>
             </Box>

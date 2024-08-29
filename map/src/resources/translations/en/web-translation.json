@@ -8,5 +8,12 @@
   "weather_layers": "Weather layers",
   "forecast_details": "7 Day forecast",
   "explore_menu": "Explore",
-  "weather_precip_mmh": "mm/h"
+  "weather_precip_mmh": "mm/h",
+  "OsmAnd_account": "OsmAnd Account",
+  "empty_login_desc": "Create or log in to your OsmAnd account to manage your tracks and favorites across all your devices.",
+  "login_btn": "Log in",
+  "login_desc": "Please enter the email you used to create your account.",
+  "user_email": "Email",
+  "email_is_not_registered": "This email has not been registered of OsmAnd Cloud.",
+  "incorrect_password": "Incorrect password."
 }

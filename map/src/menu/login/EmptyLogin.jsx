@@ -6,10 +6,12 @@ import { useNavigate } from 'react-router-dom';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 import { useContext } from 'react';
 import AppContext from '../../context/AppContext';
+import { useTranslation } from 'react-i18next';
 export default function EmptyLogin() {
     const ctx = useContext(AppContext);
 
     const navigate = useNavigate();
+    const { t } = useTranslation();
 
     const openLogin = () => {
         navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.search + window.location.hash);
@@ -23,14 +25,14 @@ export default function EmptyLogin() {
             </Icon>
             <Box className={styles.info}>
                 <ListItemText disableTypography={true} className={styles.title}>
-                    OsmAnd Account
+                    {t('web:OsmAnd_account')}
                 </ListItemText>
                 <ListItemText disableTypography={true} className={styles.text}>
-                    Create or log in to your OsmAnd account to manage your tracks and favorites across all your devices.
+                    {t('web:empty_login_desc')}
                 </ListItemText>
             </Box>
             <Button className={styles.button} component="span" onClick={openLogin}>
-                Log in
+                {t('web:login_btn')}
             </Button>
         </Box>
     );

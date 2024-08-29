@@ -5230,5 +5230,7 @@
   "shared_string_select_all": "Select all",
   "shared_string_deselect_all": "Deselect all",
   "nothing_found_in_radius": "Could not find anything:",
-  "nothing_found_descr": "Change the search or increase its radius."
+  "nothing_found_descr": "Change the search or increase its radius.",
+  "user_password": "Password",
+  "shared_string_continue": "Continue"
 }
