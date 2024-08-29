@@ -14,7 +14,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Overview
 
-The map can display items such as Favorites, Points of Interest, Markers, Wikipedia, Search Results, Audio and Video Notes, OSM Editing, and more.
+The map can display points such as Favorites, Points of Interest, Markers, Wikipedia, Search results, Audio and Video notes, OSM editings, and more.
 
 
 ## Favorites
@@ -39,7 +39,7 @@ The map can display items such as Favorites, Points of Interest, Markers, Wikipe
 
 </Tabs>
 
-[Favorites](../personal/favorites.md) are special points marked by users, which appear as yellow stars on the map by default, although they can be customized with any color, shape, and icon. They become visible on the map starting at zoom level 6.   
+[Favorites](../personal/favorites.md) are special points marked by users, which appear as yellow stars on the map by default, although they can be customized with any color, shape, and icon. They become visible on the map starting at zoom level 6.
 
 :::info
 In the Android version of OsmAnd, you can display only certain groups of favorites on the map and during the search. Go to *Menu → My Places → Favorites*, tap &#8942; and choose either *Show it on the map* or not.

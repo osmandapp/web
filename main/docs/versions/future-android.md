@@ -31,19 +31,23 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 # What's new
 
-- Buttons Control on map ([Allow to change size, shape, icon for map buttons](https://github.com/osmandapp/OsmAnd-Issues/issues/2437)).
 - [Context menu for widgets](#widget-context-menu).
+- [4.8 issue Key “D”, “N”, “S” doesn't work on external Keyboards is fixed](https://github.com/osmandapp/OsmAnd/issues/20636).
+- Buttons Control on map ([Allow to change size, shape, icon for map buttons](https://github.com/osmandapp/OsmAnd-Issues/issues/2437)).
+- Gallery / Places - Explore ([images on the map](https://osmand.net/docs/versions/future-web#explore-map-menu)).
+
+<!-- 
+- [Activities](https://github.com/osmandapp/OsmAnd/issues/17997) for GPX track data.
 - [Autosync](https://github.com/osmandapp/OsmAnd/issues/18212) OsmAnd Cloud.
 - [Smartwatch](https://github.com/osmandapp/OsmAnd/issues/9258).
-- Gallery / Places - Explore ([images on the map](https://osmand.net/docs/versions/future-web#explore-map-menu)).
-- [Key “D”, “N”, “S” on external Keyboards - no effect any more](https://github.com/osmandapp/OsmAnd/issues/20636).
+- Created quick actions to represent 'Map rotate'
 - Default buttons – Appearance.
 - Main navigation widgets.
-- [Activities](https://github.com/osmandapp/OsmAnd/issues/17997) for GPX track data.
 - Search (USA address).
 - Nautical maps (new data).
 - Traffic (Germany and Netherlands).
 - Geographic grid.
+-->
 
 
 ## Widget Context Menu
