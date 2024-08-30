@@ -7,12 +7,23 @@ const CHANGE_EMAIL_MSG = 'change';
 const DELETE_EMAIL_MSG = 'delete';
 const DEFAULT_AUTH_API_LANG = 'en';
 
-export async function userRegisterAndSendCode({ username, setError, lang = DEFAULT_AUTH_API_LANG }) {
+export async function userRegisterAndSendCode({ username, setError, lang = DEFAULT_AUTH_API_LANG, isNew = false }) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: username.toLowerCase() }),
-        params: { lang },
+        params: { lang, isNew },
+    });
+    if (await isRequestOk(response, setError)) {
+        setError('');
+    }
+}
+
+export async function validateUserToken({ username, token, setError }) {
+    const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/validate-token`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: username.toLowerCase(), token }),
     });
     if (await isRequestOk(response, setError)) {
         setError('');

@@ -5232,5 +5232,6 @@
   "nothing_found_in_radius": "Could not find anything:",
   "nothing_found_descr": "Change the search or increase its radius.",
   "user_password": "Password",
-  "shared_string_continue": "Continue"
+  "shared_string_continue": "Continue",
+  "register_opr_create_new_account": "Create new account"
 }

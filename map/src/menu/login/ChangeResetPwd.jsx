@@ -1,5 +1,16 @@
 import headerStyles from '../trackfavmenu.module.css';
-import { AppBar, Box, Button, Icon, IconButton, ListItemText, TextField, Toolbar, Typography } from '@mui/material';
+import {
+    AppBar,
+    Box,
+    Button,
+    Icon,
+    IconButton,
+    InputAdornment,
+    ListItemText,
+    TextField,
+    Toolbar,
+    Typography,
+} from '@mui/material';
 import styles from './login.module.css';
 import errorStyles from './../errors/errors.module.css';
 import { closeHeader } from '../actions/HeaderHelper';
@@ -14,6 +25,7 @@ import i18n from 'i18next';
 import { formatString } from '../../manager/SettingsManager';
 import loginStyles from './login.module.css';
 import { useNavigate } from 'react-router-dom';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 export default function ChangeResetPwd() {
     const ctx = useContext(AppContext);
@@ -31,6 +43,8 @@ export default function ChangeResetPwd() {
     const [code, setCode] = useState(EMPTY_INPUT);
     const [resetPasswordError, setResetPasswordError] = useState(EMPTY_INPUT);
     const [openResetStatus, setOpenResetStatus] = useState(false);
+    const [showPassword1, setShowPassword1] = useState(false);
+    const [showPassword2, setShowPassword2] = useState(false);
 
     const handleEmailChange = (e) => {
         if (emailError !== EMPTY_INPUT) {
@@ -49,6 +63,22 @@ export default function ChangeResetPwd() {
 
     const handlePassword2Change = (e) => {
         setUserPassword2(e.target.value);
+    };
+
+    const handleClickShowPassword1 = () => {
+        setShowPassword1(!showPassword1);
+    };
+
+    const handleMouseDownPassword1 = (event) => {
+        event.preventDefault();
+    };
+
+    const handleClickShowPassword2 = () => {
+        setShowPassword2(!showPassword2);
+    };
+
+    const handleMouseDownPassword2 = (event) => {
+        event.preventDefault();
     };
 
     useEffect(() => {
@@ -172,22 +202,46 @@ export default function ChangeResetPwd() {
                                 onChange={handlePassword1Change}
                                 id="pwd1"
                                 label={t('web:new_password')}
-                                type="password"
+                                type={showPassword1 ? 'text' : 'password'}
                                 fullWidth
                                 variant="filled"
                                 value={userPassword1 ? userPassword1 : EMPTY_INPUT}
+                                InputProps={{
+                                    endAdornment: (
+                                        <InputAdornment position="end">
+                                            <IconButton
+                                                onClick={handleClickShowPassword1}
+                                                onMouseDown={handleMouseDownPassword1}
+                                            >
+                                                {showPassword1 ? <Visibility /> : <VisibilityOff />}
+                                            </IconButton>
+                                        </InputAdornment>
+                                    ),
+                                }}
                             />
                             <TextField
                                 margin="dense"
                                 onChange={handlePassword2Change}
                                 id="pwd2"
                                 label={t('web:repeat_password')}
-                                type="password"
+                                type={showPassword2 ? 'text' : 'password'}
                                 fullWidth
                                 variant="filled"
                                 helperText={passwordError ? passwordError : EMPTY_INPUT}
                                 error={passwordError.length > 0}
                                 value={userPassword2 ? userPassword2 : EMPTY_INPUT}
+                                InputProps={{
+                                    endAdornment: (
+                                        <InputAdornment position="end">
+                                            <IconButton
+                                                onClick={handleClickShowPassword2}
+                                                onMouseDown={handleMouseDownPassword2}
+                                            >
+                                                {showPassword2 ? <Visibility /> : <VisibilityOff />}
+                                            </IconButton>
+                                        </InputAdornment>
+                                    ),
+                                }}
                             />
                         </Box>
                         <Box sx={{ mt: 2 }}>

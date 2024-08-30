@@ -14,6 +14,10 @@ export default function EmptyLogin() {
     const navigate = useNavigate();
     const { t } = useTranslation();
 
+    function createAccount() {
+        ctx.setLoginState({ create: true });
+    }
+
     return (
         <Box className={loginStyles.block}>
             <Icon className={loginStyles.logoIcon}>
@@ -29,6 +33,9 @@ export default function EmptyLogin() {
             </Box>
             <Button className={styles.button} component="span" onClick={() => openLogin(ctx, navigate)}>
                 {t('web:login_btn')}
+            </Button>
+            <Button sx={{ mt: 1.5 }} className={styles.button} component="span" onClick={createAccount}>
+                {t('web:create_account_btn')}
             </Button>
         </Box>
     );

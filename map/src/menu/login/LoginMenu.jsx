@@ -10,6 +10,7 @@ import EmptyLogin from './EmptyLogin';
 import Login from './Login';
 import { closeLoginMenu } from '../../manager/LoginManager';
 import ChangeResetPwd from './ChangeResetPwd';
+import CreateAccount from './CreateAccount';
 
 export default function LoginMenu() {
     const ctx = useContext(AppContext);
@@ -50,6 +51,7 @@ export default function LoginMenu() {
                     {ctx.loginState.login && <Login />}
                     {ctx.loginState.default && <Account />}
                     {ctx.loginState.changePwd && <ChangeResetPwd />}
+                    {ctx.loginState.create && <CreateAccount />}
                 </>
             )}
         </>
