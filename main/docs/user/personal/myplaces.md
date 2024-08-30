@@ -17,10 +17,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-My Places is the central hub of the OsmAnd application for managing and customizing all personal data. With My Places, you can organize your [Favorite points](#favorites) that you have marked as important or frequently visited. The [Tracks](#tracks) tab allows you to view, import, record, and create GPX files to help you keep a detailed history of your routes and travels. You can also manage your [OpenStreetMap Edits](#openstreetmap-edits), making contributing to map improvements and updates easy. The [Audio / Video Notes](#audiovideo-notes) plugin and widgets allow Android users to create and save multimedia notes related to specific locations, adding context to their travels.
+My Places is the central hub of the OsmAnd application for managing and customizing all personal data. You can use My Places to organize [Favorite points](#favorites) marked as important or frequently visited. The [Tracks](#tracks) tab allows you to view, import, record, and create GPX files to help you keep a detailed history of your routes and travels. You can also manage your [OpenStreetMap Edits](#openstreetmap-edits), making contributing to map improvements and updates easy. The [Audio / Video Notes](#audiovideo-notes) plugin and widgets allow Android users to create and save multimedia notes related to specific locations, adding context to their travels.
 
 [***Import and export data***](../personal/import-export.md). All data stored in the *My Places* menu can be moved using a special OSF format through applications on your device. This process simplifies saving and transferring data between devices and allows you to share it with other OsmAnd users.  
-**Go to** *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>* section and select whether to export or import data. When exporting, expand the *My Places group* and check the required data.
+**Go to** *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>* section and select whether to export or import data. If you select *export*, you will need to expand *My Places group* and check the required data.
 
 [***Maps & Resources***](../personal/maps.md) main menu item of the OsmAnd application provides access to data management from the *My Places* section. The [*Local*](../personal/maps.md#local) tab shows you how much space is occupied by all existing OsmAnd data on your device, and the *My Places* section is in particular. You can use it to get detailed information about your data and access to manage it. The section can only contain items for which data has been downloaded.  
  **Go to** *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Check and manage your data.
@@ -64,7 +64,7 @@ My Places is the central hub of the OsmAnd application for managing and customiz
 
 </Tabs>
 
-[Favorites](../personal/favorites.md) is one of OsmAnd's useful features that allows you to save places that are important to you and access them quickly. By marking places as favorites, you can navigate to them through the *My Places* menu without having to search for them every time. All favorite places are organized in folders, making it easy to manage, edit, search and view them on the map.
+[Favorites](../personal/favorites.md) is one of OsmAnd's useful features that allows you to save places important to you and access them quickly. By marking places as favorites, you can navigate to them through the *My Places* menu without having to search for them every time. All favorite places are organized in folders, making it easy to manage, edit, search, and view them on the map.
 
 <br/>
 
@@ -91,23 +91,23 @@ My Places is the central hub of the OsmAnd application for managing and customiz
 <!--
 _____
 
-- **View**. In *My Places* menu you can find not only *Favorites* but also function buttons and switchers. Using these toolse you can customize *Favorites* folders and points and import/export favorites data.  
+- **View**. In the *My Places* menu you can find not only *Favorites* but also function buttons and switchers. Using these tools you can customize *Favorites* folders and points and import/export favorites data.  
 
-- **Order / Sorting**. The favorite folders and points are sorted alphabetically. The [personal folder](../personal/favorites.md#special-favorites-personal) is at the very top. In searching list *Favorites* is sorted by distance from the map center.  
+- **Order / Sorting**. The favorite folders and points are sorted alphabetically. The [personal folder](../personal/favorites.md#special-favorites-personal) is at the top. In the search list, *Favorites* is sorted by distance from the map center.  
 
-***<!-- iOS. In order to switch between Folders <-> Points list, use the toggle on top right corner of the screen. Favorite Points in list are sorted by distance from device location. -->
-
-<!--
-- **Search**. Search function opens a points list of Favorites sorted by distance from map center on the device screen. Tap magnifying glass (&#128269;) button opens search menu for Favorites. Tap a chosen point opens [Context menu](../map/map-context-menu.md#select-an-object-short-tap) of this point.
-
-    - **Search Function / Global Search**. Favorites can be found using [Search function](../search/index.md) of OsmAnd. The first lines of the search results will be from *My favorites*. In Android verson of the app you can also use Search in *My Favorites* menu.  
-
-***<!-- iOS. Moving the screen down opens the search menu for Favorites: *Menu → My Places → Favorites → Pull down*. Tap a chosen point opens [Context menu](../map/map-context-menu.md#select-an-object-short-tap) of this point. -->
+***<!-- iOS. To switch between Folders <-> Points list, use the toggle on the top right corner of the screen. Favorite Points in the list are sorted by distance from the device location. -->
 
 <!--
-- **Actions**. Each Favorites folder containes one group of favorites. You can expand and collapse list of Favorite points for one group by tapping on a folder or on &#8743;, &#8744;  symbols (Android) and on &#62;, &#8744;  symbols (iOS). Each point from Favorite list has a name, distance and direction from your location.
+- **Search**. The search function opens a points list of Favorites sorted by distance from the map center on the device screen. Tap the magnifying glass (&#128269;) button to open the search menu for Favorites. Tap a chosen point to open [Context menu](../map/map-context-menu.md#select-an-object-short-tap) of this point.
 
-    - Tap any point from Favorite list shows it on the map and also opens [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) for chosen point.
+    - **Search Function / Global Search**. Favorites can be found using [Search function](../search/index.md) of OsmAnd. The first lines of the search results will be from *My favorites*. In the Android version of the app, you can also use Search in the *My Favorites* menu.  
+
+***<!-- iOS. Moving the screen down opens the search menu for Favorites: *Menu → My Places → Favorites → Pull down*. Tap a chosen point to open [Context menu](../map/map-context-menu.md#select-an-object-short-tap) of this point. -->
+
+<!--
+- **Actions**. Each Favorites folder contains one group of favorites. You can expand and collapse a list of Favorite points for one group by tapping on a folder or &#8743;, &#8744;  symbols (Android) and on &#62;, &#8744;  symbols (iOS). Each point from the Favorite list has a name, distance, and direction from your location.
+
+    - Tap any point from the Favorite list to show it on the map and open [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) for the chosen point.
     Functions for [Favorite folder](#favorite-groups):
 
     - At the bottom of the screen there are four Actions buttons. [allows to delete](#bulk-delete) 
@@ -141,9 +141,9 @@ _____
 
 </Tabs>
 
-OsmAnd has a range of features for creating, saving, and displaying [*tracks*](../personal/tracks/create-edit.md) on the map. They can be part of the [navigation](../navigation/setup/gpx-navigation.md), created with [Plan a route](../plan-route/create-route.md) tool, [imported](../personal/tracks/create-edit.md#import) as GPX tracks, recorded using the [Trip recording](../plugins/trip-recording.md) plugin, or viewed and selected from OpenStreetMap data. **Tracks** is a powerful tool for tracking trips, recording routes and points of interest in real-time, and for later [analyzing](../map/tracks/index.md#analyze-track-on-map), change [appearance](../map/tracks/appearance.md) and sharing data.
+OsmAnd has various features for creating, saving, and displaying [*tracks*](../personal/tracks/create-edit.md) on the map. They can be part of the [navigation](../navigation/setup/gpx-navigation.md), created with [Plan a route](../plan-route/create-route.md) tool, [imported](../personal/tracks/create-edit.md#import) as GPX tracks, recorded using the [Trip recording](../plugins/trip-recording.md) plugin, or viewed and selected from OpenStreetMap data. **Tracks** is a powerful tool for tracking trips, recording routes and points of interest in real-time, and for later [analyzing](../map/tracks/index.md#analyze-track-on-map), change [appearance](../map/tracks/appearance.md) and sharing data.
 
-- **Tracks tab**. All tracks ever recorded, created or imported are automatically displayed in the *My Places* folder in the *Tracks* tab. They are organised by folder or displayed in a list below them.
+- **Tracks tab**. All tracks ever recorded, created, or imported are automatically displayed in the *My Places* folder in the *Tracks* tab. They are organized by folder or displayed in a list below them.
 - **Create a track**. You can create a new track by starting a record in the Tracks tab or using the OsmAnd [Trip recording Plugin](../plugins/trip-recording.md) and [Widgets](../widgets/info-widgets.md#trip-recording-widgets).
 - **Manage**. After recording and saving, you can manage all existing tracks:
     - Using the three-dot menu for [folders](../personal/tracks/manage-tracks.md#folder-menu).
@@ -176,7 +176,7 @@ OsmAnd has a range of features for creating, saving, and displaying [*tracks*](.
 
 The [OpenStreetMap edits](../plugins/osm-editing.md) tab contains unedited, unloaded OSM notes, edits, or errors.  The following actions are available with the note: load, show on map, edit OSM note, delete. Uploaded or deleted notes are no longer displayed in the list.  
 
-With OsmAnd and the OSM editing plugin you can easily contribute your own information to OpenStreetMap.org, e.g. create or modify POIs, add or comment notes, upload recorded GPX tracks.
+With OsmAnd and the OSM editing plugin, you can contribute information to OpenStreetMap.org, such as creating or modifying POIs, adding or commenting on notes, and uploading recorded GPX tracks.
 
 <br/>
 
@@ -190,7 +190,7 @@ With OsmAnd and the OSM editing plugin you can easily contribute your own inform
 
 <br/>
 
-**2.** ***Three-dot menu***. You can manage specific POI or note using the *three-dot menu* next to each note:  
+**2.** ***Three-dot menu***. You can manage specific POIs or notes using the *three-dot menu* next to each note:  
 
 ![Three-dot menu](@site/static/img/plugins/osm-editing/osm_plugin_three-dot_menu.png)
 
@@ -216,14 +216,14 @@ Audio, video, and photo notes are stored in the *My Places* menu and displayed i
 
 ![Share](@site/static/img/plugins/audio-video-notes/my_places_a-v_share_gpx_2.png)
 
-- **<Translate android="true" ids="shared_string_sort"/>**. Opens a selection of sorting method, *By type* or *By date*, and when selected, sorts the list accordingly.
+- **<Translate android="true" ids="shared_string_sort"/>**. Opens a selection of sorting methods, *By type* or *By date*, and when selected, sorts the list accordingly.
 - **<Translate android="true" ids="shared_string_share"/>**. Displays a checklist of all notes, including those added to GPX files as waypoints. First, the required notes are checked, then the *Share* icon in the upper right corner of the screen suggests available sharing options, and finally, these notes become available according to the selected option.
     - **Share with GPX waypoints**. You can share the notes selected as waypoints in the *My Places* menu by adding [GPX data](../plugins/audio-video-notes.md#share-with-gpx-waypoints) to them using the **Share** button at the bottom of the *A/V notes* tab screen.  
 - **<Translate android="true" ids="shared_string_delete"/>**. Displays a checklist of audio, photo, and video notes only. First, check the unnecessary notes, then tap the *Delete* icon in the upper right corner of the screen, after confirming, the selected notes will be deleted permanently.
 
 <br/>
 
-**2.** ***Three-dot menu***. You can manage specific audio, video, or photo note using the *three-dot menu* next to each note:  
+**2.** ***Three-dot menu***. You can manage specific audio, video, or photo notes using the *three-dot menu* next to each note:  
 
 ![Three-dot menu](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
 
@@ -245,7 +245,7 @@ You can share the notes selected as waypoints in the *My Places* menu by adding 
 
 ![Three-dot menu](@site/static/img/plugins/audio-video-notes/my_places_a-v_three-dot_menu.png)
 
-You can manage specific audio, video, or photo note using the **three-dot menu** next to each note:
+You can manage specific audio, video, or photo notes using the **three-dot menu** next to each note:
 
 - **<Translate android="true" ids="recording_context_menu_play"/>** / **<Translate android="true" ids="watch"/>**. Views or listens to the selected audio, video, or photo note directly.
 - **<Translate android="true" ids="shared_string_share"/>**. Shares the note with others through various apps or platforms.
