@@ -83,11 +83,13 @@ In order to start working with the plugin functionality, you need to download th
 For stable work and to save resources, you can download a map not of the entire country, but of its specific regions, if such regions are offered in the application. Information about the size of each map type is listed under their name.
 
 
-### How to Download  
+### 3D Relief maps  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android"> 
+
+*<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
 
 ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
 
@@ -95,26 +97,19 @@ For stable work and to save resources, you can download a map not of the entire 
 
 <TabItem value="ios" label="iOS">
 
+*<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
+	
 ![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-You can download **Contour lines**, **Terrain map (Hillshade and Slope)**, **Terrain map (3D)** for a specific area as follows:
+You need to download **Terrain map (3D)** maps to display Hillshade / Slope / 3D Relief. After downloading maps, you can display **Contour lines** and/or **Terrain** using the [Configure map](../map/configure-map-menu.md) section of the Main menu.
 
-1. First option.
-- Go to:
-    - **Android**: *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
-    - **iOS**: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
-- Select the country of your choice.
-- Download packages from sections:
-    - The *<Translate android="true" ids="region_maps"/>* (Android) or *<Translate ios="true" ids="res_region_map"/>* (iOS) section provides available maps for the entire country. You can download them if you need to.
-    - The *<Translate android="true" ids="regions"/>* (Android) or *<Translate ios="true" ids="res_mapsres"/>* (iOS) section lists the regions of the selected country. Tap the required region to open the map packs available for download. 
-- After downloading maps, you can display **Contour lines** and/or **Terrain** using the [Configure map](../map/configure-map-menu.md) section of the Main menu.
-1. If the map displayed on the screen is not downloaded, then in *Menu → Configure map → Topography section → Terrain* at the bottom of the list of features the section *Download maps* with suggested additional maps will be displayed.
+If the map displayed on the screen is not downloaded, then in *Menu → Configure map → Topography section → Terrain* at the bottom of the list of features the section *Download maps* with suggested additional maps will be displayed.
 
-### Meters or Feet for Contour Line
+### Contour Lines (Meters or Feet) 
 
 <Tabs groupId="operating-systems">
 
