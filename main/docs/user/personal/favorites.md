@@ -114,7 +114,7 @@ To edit a favorite point, you need to [tap](../map/map-context-menu.md#select-an
 
 ### Special Favorites (Personal)
 
-***Personal*** folder is a folder dedicated for special *<Translate android="true" ids="favorite_home_category"/>* and *<Translate android="true" ids="work_button"/>* points of [Navigation Context menu](../navigation/setup/route-navigation.md#select-starting-point). This folder doesn't have &#8942; button, because you can not change the parameters for this folder.  
+***Personal*** folder is dedicated to special *<Translate android="true" ids="favorite_home_category"/>* and *<Translate android="true" ids="work_button"/>* points from the [Navigation Context menu](../navigation/setup/route-navigation.md#select-starting-point). This folder does not have a *three-dot menu*,  as you cannot change its parameters.
 
 
 ## Manage Favorites
@@ -224,24 +224,24 @@ You can perform following actions for the whole Favorite group:
 
 <TabItem value="android" label="Android">
 
-![Favorites folder functions android](@site/static/img/personal/favorites_folder_appearance_android.png)
+![Favorites folder functions android](@site/static/img/personal/favorite_add_new_group_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorites actions ios](@site/static/img/personal/favorites_actions2_ios.png)
+![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Change group appearance allows to change **icon, color, shape** for all favorites in the group and apply it to future added favorites. So it greatly simplifies process of adding new favorites.
+*Change Group Appearance* allows you to change the **icon**, **color**, and **shape** for all favorites in a group and apply these settings to any new favorites added in the future. This feature greatly simplifies the process of organizing and adding new favorites.
 
 
 ## Export / Import
 
-OsmAnd provides a wide range of options for [backing up](./import-export.md) important data for [restoring](./import-export.md#import) it later. Favorites can be saved as a separate file in internal and external storage, uploaded to [OsmAnd Cloud](../personal/osmand-cloud.md) (onlyif you have an [OsmAnd Pro or OsmAnd Start subscription](../purchases/index.md) and) or [sent](#automatic-favorites-backup) to friends using instant messaging programs.
+OsmAnd offers various options for [backing up](./import-export.md) important data and [restoring](./import-export.md#import) it later. Favorites can be saved as a separate file in internal or external storage, uploaded to [OsmAnd Cloud](../personal/osmand-cloud.md) (only if you have an [OsmAnd Pro or OsmAnd Start subscription](../purchases/index.md) and) or [sent](#automatic-favorites-backup) to friends using instant messaging apps.
 
 
 ### Free Cloud backup
@@ -260,19 +260,19 @@ OsmAnd provides a wide range of options for [backing up](./import-export.md) imp
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![Favorites actions ios](@site/static/img/personal/favorites_free_backup_ios.png)
+![Favorites actions ios](@site/static/img/personal/favorites_free_backup_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-[Free Favorites Backup](../personal/osmand-cloud.md#osmand-start) is a special purchase plan to back up your favorite points (locations) for Android, iOS, or Web versions in the OsmAnd application and restore them from OsmAnd Cloud. You can use this special plan if you have [OsmAnd Free or Maps+](../purchases/index.md).  
+[Free Favorites Backup](../personal/osmand-cloud.md#osmand-start) is a special purchase plan that allows you to back up your favorite points (locations) for Android, iOS, or Web versions in the OsmAnd application and restore them from OsmAnd Cloud. This plan is available for users of [OsmAnd Free or Maps+](../purchases/index.md).  
 
-Free Favorites Backup has the following benefits:
+*Free Favorites Backup* offers these benefits:
 
-- No payment is required. You do not need to purchase paid subscriptions.
-- Saving your favorite points. You can regularly backup your favorite points in OsmAnd so you don't lose them if your device crashes or you delete the app.
-- Transferring favorite points. If you use OsmAnd on multiple devices, Free Favorites Backup helps you quickly import your favorite points to a new device.  
+- **No payment is required**. Use the backup feature without purchasing paid subscriptions.
+- **Save favorite points**. Regularly save your favorite points in OsmAnd to avoid losing them if your device crashes or the app is deleted.
+- **Transfer favorite points**. Import your favorite points to a new device with *Free Favorites Backup* feature if you use OsmAnd across multiple devices.  
 
 
 #### Create a Backup
@@ -297,13 +297,13 @@ Free Favorites Backup has the following benefits:
 
 </Tabs>
 
-You need to have an OsmAnd Cloud account to use the Free Settings Backup. If you have an account in *OsmAnd Pro* or an active account in OsmAnd Cloud, you will not see the promotion banner.  
+You need an OsmAnd Cloud account to use the *Free Settings Backup* feature. If you have an account in *OsmAnd Pro* or an active account in *OsmAnd Cloud acount*, you will not see the promotion banner.  
 
-- Tap the Free Favorites Backup banner.
-- Go through the [registration step](../personal/osmand-cloud.md#login).
-- Then go to the OsmAnd Purchases menu (*Menu → Settings → Purchases*).
-- Select the [OsmAnd Start package](../personal/osmand-cloud.md#osmand-start).
-- Create a backup.
+- *Free Favorites Backup banner*. Tap this banner to start the backup process.
+- *Complete the registration step* if you do not have an OsmAnd Cloud account by following the instructions in the [registration guide](../personal/osmand-cloud.md#login).
+- *Navigate to the OsmAnd Purchases* menu (*Menu → Settings → Purchases*).
+- *[OsmAnd Start package](../personal/osmand-cloud.md#osmand-start)*. Select this option to access the Free Settings Backup feature.
+- *Create a backup* of your settings.
 
 
 ### All Favorites
@@ -312,13 +312,13 @@ You need to have an OsmAnd Cloud account to use the Free Settings Backup. If you
 
 <TabItem value="android" label="Android">
 
-![Favorites actions android](@site/static/img/personal/favorites_export_import_andr.png)
+![Favorites actions android](@site/static/img/personal/favorites_export_import_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorites export import ios](@site/static/img/personal/favorites_export_import_2_ios.png)  
+![Favorites export import ios](@site/static/img/personal/favorites_export_import_3_ios.png)  
 
 </TabItem>
 
@@ -336,13 +336,13 @@ You can export and import your favorites using the special buttons at the bottom
 
 <TabItem value="android" label="Android">
 
-![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
+![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorites actions ios](@site/static/img/personal/favorites_actions_ios.png)   ![Favorites actions ios](@site/static/img/personal/favorites_actions1_ios.png)
+![Favorites actions ios](@site/static/img/personal/favorites_actions_1_ios.png)   ![Favorites actions ios](@site/static/img/personal/favorites_actions_2_ios.png)
 
 </TabItem>
 
