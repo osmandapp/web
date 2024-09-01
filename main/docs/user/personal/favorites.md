@@ -134,7 +134,8 @@ To edit a favorite point, [tap](../map/map-context-menu.md#select-an-object-shor
 
 </Tabs>
 
-
+- For *Android*, the list of icons consists of **all POI images** available in the OsmAnd app.
+- For *iOS*, **a special set** of the most suitable Favorite icons is compiled.
 
 
 ### Special Favorites (Personal)
