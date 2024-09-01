@@ -54,7 +54,7 @@ Favorites is one of the OsmAnd's features, that allows the user to make a kind o
 
 </Tabs>
 
-Favorites are grouped into one of the map layers. You can [show or hide](../map/point-layers-on-map.md#favorites) Favorites and their [names](../map/point-layers-on-map.md#favorite-and-poi-names) on the map. Favorite's [Context menu](../map/map-context-menu.md#favorites--track-points-from-the-group) opens when you select it on the map, there you can find detailed information about chosen point, [edit or delete](../map/map-context-menu.md#add--edit-favorite) it  
+Favorites are grouped into one of the map layers. You can [show or hide](../map/point-layers-on-map.md#favorites) Favorites and their [names](../map/point-layers-on-map.md#favorite-and-poi-names) on the map. Favorite's [Context menu](../map/map-context-menu.md#favorites--track-points-from-the-group) opens when you select it on the map, where you can view detailed information about the selected point, and [edit or delete](../map/map-context-menu.md#add--edit-favorite) it.
 
 
 ### Create
@@ -105,11 +105,11 @@ but could be changed uniquely per a favorite point.
 
 </Tabs>
 
-To edit a favorite point, you need to [tap](../map/map-context-menu.md#select-an-object-short-tap) it on the map or access via [My Favorites](#manage-favorites) and select the **Edit favorite** button from the [*Map Context menu*](../map/map-context-menu.md#add--edit-favorite).
+To edit a favorite point, [tap](../map/map-context-menu.md#select-an-object-short-tap) it on the map or access it via [My Favorites](#manage-favorites), then select the **Edit favorite** button from the [*Map Context menu*](../map/map-context-menu.md#add--edit-favorite).
 
-- You can edit all fields that where specified during **create** a favorite point such as name, icon, group and etc.
-- In this editor there is a button **Delete** this point from your list of Favorites. For *Android*, it is duplicated in the upper right corner of the screen.
-- In order to have always same Favorite like *My parked car*, during creation of a favorite point with new location you can hit **Replace** and it will assign new location.
+- You can edit all fields that were specified when **creating** the favorite point, such as name, icon, group, and more.
+- In this editor, there is a **Delete** button to remove the point from your list of Favorites. On *Android*, this option is also available in the upper right corner of the screen.
+- If you want to update the location of a specific Favorite, like *My parked car*, use the **Replace** option when creating a favorite point with a new location to assign it to the existing Favorite.
 
 
 ### Special Favorites (Personal)
@@ -139,7 +139,7 @@ To edit a favorite point, you need to [tap](../map/map-context-menu.md#select-an
 
 </Tabs>
 
-Using **My Favorites** you can search for a specific favorite or a favorite group and do bulk operations such as delete, rename.
+Using **My Favorites**, you can search for a specific favorite or favorite group and perform bulk operations such as deleting or renaming them.
 
 
 ### Order / Sorting / Search
@@ -159,9 +159,10 @@ Using **My Favorites** you can search for a specific favorite or a favorite grou
 
 </Tabs>
 
-The favorite folders and points are sorted alphabetically. The [personal folder](../personal/favorites.md#special-favorites-personal) is at the top. In the search list, *Favorites* is sorted by distance from the map center.  
+Favorite folders and points are sorted alphabetically, with the [personal folder](../personal/favorites.md#special-favorites-personal) at the top. In the search list, *favorite points* are sorted by distance from the center of the map.  
 
-In iOS version it's possible to change order of favorites by distance clicking Directions icon, in Android version you will need to access Search menu. In the searching list *Favorites* are sorted by distance from the previously visible map center. Also favorites could be searched by name using [Global search](../search/search-all.md).
+- *In the iOS version*, you can change the order of your favorite points by distance by tapping the Directions icon.
+- *In the Android version*, you need to access the Search menu. In the search list, *favorites* are sorted by distance from the previously visible map center. You can also search for favorites by name using [Global search](../search/search-all.md).
 
 
 ### Bulk Edit / Delete
@@ -170,21 +171,35 @@ In iOS version it's possible to change order of favorites by distance clicking D
 
 <TabItem value="android" label="Android">
 
-Tap &#x1F5D1; at the bottom of the screen. You can select points and groups and by tap &#x1F5D1; button in top right corner delete them.  
-
 ![Favorites actions android](@site/static/img/personal/favorites_actions_android.png) ![Favorites action delete android](@site/static/img/personal/favorites_delete_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Tap &#128394;&#65039; button opens a selection mode with *Move to a Favorite Group*, *Share*, *Change Color*, *Delete*. You can select points and groups and perform a selected action with them.
-
 ![Favorites actions ios](@site/static/img/personal/favorites_actions_ios.png)
 
 </TabItem>
 
 </Tabs>
+
+Tap the **Delete** (*bin icon on Android*) or the **Edit** button (*pencil icon on iOS*) to open a selection mode with options such as *Move to a Favorite Group*, *Share*, *Change Color*, and *Delete*. You can then select points or groups and perform the required action.
+
+
+<!--
+### Add Favorites to Map Markers
+
+<InfoAndroidOnly/>
+
+![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
+
+You can add to or remove your favorites from [Map markers list](../personal/markers.md).
+Tap &#8942; button (**Android**) opens special functions for a chosen Favorite folder (group).
+
+**Functions for Favorite folder:**
+- **<Translate android="true" ids="shared_string_add_to_map_markers"/>**  or **<Translate android="true" ids="remove_from_map_markers"/>**.
+- Add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
+-->
 
 
 ### Favorite Group actions
@@ -193,29 +208,23 @@ Tap &#128394;&#65039; button opens a selection mode with *Move to a Favorite Gro
 
 <TabItem value="android" label="Android">
 
-- Tap &#8942; button opens special functions for a chosen Favorite folder.
+*Three-dot menu → Change default appearance*
 
-![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
+![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_2_andr.png)
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-- *Long tap folder → show context menu →* *Change appearance*:
+*Long tap folder → Change appearance*
 
-![Favorites actions ios](@site/static/img/personal/favorites_actions1_ios.png)
+![Favorites actions ios](@site/static/img/personal/favorites_actions_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-You can perform following actions for the whole Favorite group:
-
-1. &nbsp;<Translate android="true" ids="shared_string_rename"/>  - is used to change the folder name.
-2. &nbsp;<Translate android="true" ids="change_default_appearance"/>  - is used to [change default appearance](#change-group-appearance) for favorites from the chosen group.
-3. &nbsp;<Translate android="true" ids="shared_string_show_on_map"/>  - displays or not Favorite points from the folder on the map (***Android only***).
-4. &nbsp;<Translate android="true" ids="shared_string_add_to_map_markers"/>  - adds or removes all Favorite points from a folder in [Map markers list](../personal/markers.md#groups) (***Android only***).
-5. &nbsp;<Translate android="true" ids="shared_string_delete"/> - deletes the chosen favorites folder.  
-6. &nbsp;<Translate android="true" ids="shared_string_share"/>  - sharing Favorite points with other users (using Favorites.gpx file).
+Using the  *three-dot menu* next to each folder, you can customize groups of favorite folders. More details are described in the [My Places](../personal/myplaces.md#favorites) article.
 
 
 ### Change Group Appearance
@@ -348,7 +357,7 @@ You can export and import your favorites using the special buttons at the bottom
 
 </Tabs>
 
-Tap the **three-dot menu** (*Android*) or the **edit** button (*pencil icon on iOS*) to open the special features menu for a selected favorites folder. From this menu, choose the **share** button to send the *Favorites.gpx* file to your device's memory or share it with friends via messaging apps.  
+Tap the **Three-dot menu** (*Android*) or the **Edit** button (*pencil icon on iOS*) to open the special features menu for a selected favorites folder. From this menu, choose the **Share** button to send the *Favorites.gpx* file to your device's memory or share it with friends via messaging apps.  
 
 *On iOS*, you can also long-tap a folder to open the context menu, then tap the **Share** button.
 
