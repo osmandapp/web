@@ -112,6 +112,31 @@ To edit a favorite point, [tap](../map/map-context-menu.md#select-an-object-shor
 - If you want to update the location of a specific Favorite, like *My parked car*, use the **Replace** option when creating a favorite point with a new location to assign it to the existing Favorite.
 
 
+### Favorite icons
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
+
+![My places favorites android](@site/static/img/personal/favorite_icon_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
+
+![my_places_ios](@site/static/img/personal/favorite_icon_1_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+
+
+
 ### Special Favorites (Personal)
 
 ***Personal*** folder is dedicated to special *<Translate android="true" ids="favorite_home_category"/>* and *<Translate android="true" ids="work_button"/>* points from the [Navigation Context menu](../navigation/setup/route-navigation.md#select-starting-point). This folder does not have a *three-dot menu*,  as you cannot change its parameters.
