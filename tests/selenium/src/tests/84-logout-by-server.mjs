@@ -11,9 +11,8 @@ export default async function test() {
 
     await waitBy(By.id('se-logout-button'));
 
-    console.log('Logout by server');
     await driver.manage().deleteAllCookies();
-    console.log('Cookies deleted');
+
     await waitBy(By.id('se-login-button'));
     await clickBy(By.id('se-login-button'));
     await waitBy(By.id('se-alert-login-info'));

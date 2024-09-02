@@ -27,6 +27,7 @@ export function openLoginMenu(ctx, navigate) {
 export function closeLoginMenu(ctx) {
     ctx.setOpenLoginMenu(false);
     ctx.setLoginState({ default: true });
+    ctx.setLoginError(null);
 }
 
 export const openLogin = (ctx, navigate) => {

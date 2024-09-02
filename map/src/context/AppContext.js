@@ -276,7 +276,7 @@ export const AppContextProvider = (props) => {
     const [loginState, setLoginState] = useState({ default: true });
     const [accountInfo, setAccountInfo] = useState(null);
     const [wantDeleteAcc, setWantDeleteAcc] = useState(false);
-    const [loginError, setLoginError] = useState(wantDeleteAcc ? 'Please log in to delete your account.' : '');
+    const [loginError, setLoginError] = useState(null);
     // files
     const [listFiles, setListFiles] = useState({});
     const [gpxFiles, mutateGpxFiles, setGpxFiles] = useMutator({});
@@ -390,6 +390,14 @@ export const AppContextProvider = (props) => {
         let savedConfigureMap = localStorage.getItem(LOCAL_STORAGE_CONFIGURE_MAP);
         return savedConfigureMap ? JSON.parse(savedConfigureMap) : defaultConfigureMapStateValues;
     }
+
+    useEffect(() => {
+        if (wantDeleteAcc) {
+            setLoginError('Please log in to delete your account.');
+        } else {
+            setLoginError(null);
+        }
+    }, [wantDeleteAcc]);
 
     useEffect(() => {
         TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
