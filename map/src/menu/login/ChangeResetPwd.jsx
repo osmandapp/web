@@ -26,6 +26,7 @@ import { formatString } from '../../manager/SettingsManager';
 import loginStyles from './login.module.css';
 import { useNavigate } from 'react-router-dom';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { usePasswordValidation } from '../../util/hooks/usePasswordValidation';
 
 export default function ChangeResetPwd() {
     const ctx = useContext(AppContext);
@@ -36,7 +37,6 @@ export default function ChangeResetPwd() {
 
     const [userEmail, setUserEmail] = useState(EMPTY_INPUT);
     const [emailError, setEmailError] = useState(EMPTY_INPUT);
-    const [passwordError, setPasswordError] = useState(EMPTY_INPUT);
     const [userPassword1, setUserPassword1] = useState(EMPTY_INPUT);
     const [userPassword2, setUserPassword2] = useState(EMPTY_INPUT);
     const [openCodeInput, setOpenCodeInput] = useState(false);
@@ -45,6 +45,8 @@ export default function ChangeResetPwd() {
     const [openResetStatus, setOpenResetStatus] = useState(false);
     const [showPassword1, setShowPassword1] = useState(false);
     const [showPassword2, setShowPassword2] = useState(false);
+
+    const passwordError = usePasswordValidation(userPassword1, userPassword2);
 
     const handleEmailChange = (e) => {
         if (emailError !== EMPTY_INPUT) {
@@ -86,18 +88,6 @@ export default function ChangeResetPwd() {
             setOpenCodeInput(false);
         }
     }, [emailError]);
-
-    useEffect(() => {
-        if (userPassword1 !== EMPTY_INPUT && userPassword2 !== EMPTY_INPUT) {
-            if (userPassword1 !== userPassword2) {
-                setPasswordError(t('web:passwords_not_match'));
-            } else if (userPassword1.length < 8 || userPassword2.length < 8) {
-                setPasswordError(t('web:min_8_symbols_password'));
-            } else {
-                setPasswordError(EMPTY_INPUT);
-            }
-        }
-    }, [userPassword1, userPassword2]);
 
     const handleKeyPress = async (e) => {
         if (e.key === 'Enter') {
