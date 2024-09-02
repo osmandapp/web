@@ -56,7 +56,7 @@ The altitude data on the map (between 70 degrees north latitude and 70 degrees s
 For complete information, see the [License](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
-<details><summary>DEM (DSM) data</summary> 
+<details><summary>DEM (DSM) data</summary>
    - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. The original data used for this product was supplied by JAXA’s AW3D.<br/>
 	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
 	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummens, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
@@ -311,7 +311,7 @@ The 3D Relief feature produces a raised relief and provides a three-dimensional 
 
 Follow the steps below to display 3D Relief on the OsmAnd map:
 
-- Purchase OsmAnd Pro subscription for [iOS](../../purchases/ios.md#pro-features) or [Android](../../purchases/android.md#pro-features).
+- Purchase OsmAnd Pro subscription for [iOS](../purchases/ios.md#pro-features) or [Android](../purchases/android.md#pro-features).
 - Go to [*<Translate Android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md):
     - **Android**: scroll to *<Translate android="true" ids="srtm_plugin_name"/> section → <Translate android="true" ids="relief_3d"/>*.
     - **iOS**: scroll to *<Translate ios="true" ids="srtm_plugin_name"/> section → <Translate ios="true" ids="shared_string_terrain,shared_string_relief_3d"/>*.
