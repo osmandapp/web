@@ -16,7 +16,6 @@ export async function getAccountInfo(setAccountInfo) {
 
 export function openLoginMenu(ctx, navigate) {
     ctx.setPrevPageUrl({ url: location, active: false });
-    navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.hash);
     if (!ctx.loginUser) {
         navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.hash);
         ctx.setOpenLoginMenu(true);

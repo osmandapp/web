@@ -9,24 +9,45 @@ import { userLogin } from '../../manager/AccountManager';
 import i18n from 'i18next';
 import { closeLoginMenu, EMPTY_INPUT, ERROR_EMAIL, ERROR_PASSWORD } from '../../manager/LoginManager';
 import { useTranslation } from 'react-i18next';
+import { DELETE_ACCOUNT_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
     const lang = i18n.language;
+    const navigate = useNavigate();
 
     const [userEmail, setUserEmail] = useState(EMPTY_INPUT);
     const [userPassword, setUserPassword] = useState(EMPTY_INPUT);
     const [error, setError] = useState(EMPTY_INPUT);
     const [emailError, setEmailError] = useState(EMPTY_INPUT);
     const [passwordError, setPasswordError] = useState(EMPTY_INPUT);
+    const [tryCookie, setTryCookie] = useState(null); // then try cookie if userEmail is still not set by browser
+
+    useEffect(() => {
+        if (ctx.emailCookie) {
+            setTimeout(() => setTryCookie(ctx.emailCookie), 500); // delay to allow browser auto-login
+        }
+    }, [ctx.loginUser]);
+
+    useEffect(() => {
+        if (tryCookie && userEmail === '') {
+            setUserEmail(tryCookie);
+            setTryCookie(null);
+        }
+    }, [tryCookie]);
 
     const handleClose = () => {
         setEmailError(EMPTY_INPUT);
         setUserPassword(EMPTY_INPUT);
         closeLoginMenu(ctx);
-        ctx.setPrevPageUrl((prevPageUrl) => ({ ...prevPageUrl, active: true }));
+        if (ctx.wantDeleteAcc) {
+            navigate(MAIN_URL_WITH_SLASH + DELETE_ACCOUNT_URL + window.location.search + window.location.hash);
+        } else {
+            ctx.setPrevPageUrl((prevPageUrl) => ({ ...prevPageUrl, active: true }));
+        }
     };
 
     useEffect(() => {
@@ -132,6 +153,7 @@ export default function Login() {
                 </Typography>
                 <Box sx={{ mt: 2 }}>
                     <Button
+                        id="se-submit-login"
                         disabled={userPassword === EMPTY_INPUT || userEmail === EMPTY_INPUT}
                         className={styles.button}
                         onClick={handleLogin}

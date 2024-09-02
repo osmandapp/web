@@ -19,7 +19,7 @@ export default function EmptyLogin() {
     }
 
     return (
-        <Box className={loginStyles.block}>
+        <Box id="se-empty-login-page" className={loginStyles.block}>
             <Icon className={loginStyles.logoIcon}>
                 <UserAccountIcon />
             </Icon>
@@ -31,7 +31,12 @@ export default function EmptyLogin() {
                     {t('web:empty_login_desc')}
                 </ListItemText>
             </Box>
-            <Button className={styles.button} component="span" onClick={() => openLogin(ctx, navigate)}>
+            <Button
+                id="se-login-btn"
+                className={styles.button}
+                component="span"
+                onClick={() => openLogin(ctx, navigate)}
+            >
                 {t('web:login_btn')}
             </Button>
             <Button sx={{ mt: 1.5 }} className={styles.button} component="span" onClick={createAccount}>

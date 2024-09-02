@@ -274,9 +274,10 @@ export const AppContextProvider = (props) => {
     const [loginUser, setLoginUser] = useState(INIT_LOGIN_STATE);
     const [openLoginMenu, setOpenLoginMenu] = useState(false);
     const [loginState, setLoginState] = useState({ default: true });
-
     const [accountInfo, setAccountInfo] = useState(null);
     const [wantDeleteAcc, setWantDeleteAcc] = useState(false);
+    const [loginError, setLoginError] = useState(wantDeleteAcc ? 'Please log in to delete your account.' : '');
+    // files
     const [listFiles, setListFiles] = useState({});
     const [gpxFiles, mutateGpxFiles, setGpxFiles] = useMutator({});
     // search
@@ -633,6 +634,8 @@ export const AppContextProvider = (props) => {
                 setOpenLoginMenu,
                 loginState,
                 setLoginState,
+                loginError,
+                setLoginError,
             }}
         >
             {props.children}
