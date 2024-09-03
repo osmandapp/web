@@ -234,9 +234,30 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 
 - *Altitude*. Altitude map colors each pixel according to calculated map height using the gradient from a defined color scheme. Usually altitude schemes are very dependent on location. In mountain areas you would prefer to distribute colors to a wider altitude range and in flat areas, you would select a color scheme that has small range between min/max altitude.
 
+
 ### Modify Color Scheme
 
-This is a Pro function and allows you to select from predefined list of color schemes. Also you can import other color schemes created on PC.
+:::caution Paid feature
+*Modify Color Scheme* is an **OsmAnd Pro** paid feature for [iOS](../purchases/ios.md#pro-features) and [Android](../purchases/android.md#pro-features) <ProFeature />.
+:::
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_andr.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_1_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+This Pro feature allows you to select from a predefined list of color schemes or import custom schemes created on a PC. You can edit these palettes to personalize the appearance of maps and routes. Custom color palette files can be easily added to OsmAnd using the [import/export tool](../personal/import-export.md).
 
 ### Visibility
 
