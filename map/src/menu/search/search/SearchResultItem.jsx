@@ -60,12 +60,16 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
     const itemId = getObjIdSearch(item);
 
     function handleMouseEnter() {
-        ctx.setSelectedPoiId({ id: itemId, show: true, type: typeItem });
+        if (itemId !== null) {
+            ctx.setSelectedPoiId({ id: itemId, show: true, type: typeItem });
+        }
         setIsHovered(true);
     }
 
     function handleMouseLeave() {
-        ctx.setSelectedPoiId({ id: itemId, show: false, type: typeItem });
+        if (itemId !== null) {
+            ctx.setSelectedPoiId({ id: itemId, show: false, type: typeItem });
+        }
         setIsHovered(false);
     }
 

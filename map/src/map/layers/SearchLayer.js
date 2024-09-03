@@ -12,9 +12,12 @@ import { useMap } from 'react-leaflet';
 import { getPoiIcon } from './PoiLayer';
 import L from 'leaflet';
 import {
+    CATEGORY_NAME,
     FINAL_POI_ICON_NAME,
     ICON_KEY_NAME,
     POI_ICON_NAME,
+    POI_ID,
+    POI_NAME,
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
@@ -41,7 +44,12 @@ export function findFeatureGroupById(map, id) {
 }
 
 export function getObjIdSearch(obj) {
-    return obj.properties['web_poi_id'] ?? `${obj.geometry.coordinates[1]},${obj.geometry.coordinates[0]}`;
+    if (obj.properties[POI_ID]) {
+        return obj.properties[POI_ID];
+    } else if (obj.geometry.coordinates[0] === 0 && obj.geometry.coordinates[1] === 0) {
+        return null;
+    }
+    return `${obj.geometry.coordinates[1]},${obj.geometry.coordinates[0]}`;
 }
 
 export default function SearchLayer() {
@@ -139,8 +147,26 @@ export default function SearchLayer() {
         });
         if (response.ok) {
             let data = await response.json();
+            data = filterDuplicates(data);
             ctx.setSearchResult(data);
         }
+    }
+
+    function filterDuplicates(data) {
+        const seen = new Set();
+        data.features = data.features.filter((feature) => {
+            const id = getObjIdSearch(feature);
+            const name = feature.properties[POI_NAME] ?? feature.properties[CATEGORY_NAME];
+            const uniqueKey = `${id}-${name}`;
+
+            if (seen.has(uniqueKey)) {
+                return false;
+            } else {
+                seen.add(uniqueKey);
+                return true;
+            }
+        });
+        return data;
     }
 
     function removeOldSearchLayer() {
