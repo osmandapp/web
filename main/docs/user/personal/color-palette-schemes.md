@@ -47,7 +47,8 @@ Color palette data is available in the [*Maps & Resources*](../personal/maps.md#
 
 </Tabs>
 
-## Scheme Types 
+
+## Scheme Types
 
 <Tabs groupId="operating-systems">
 
@@ -65,6 +66,7 @@ Color palette data is available in the [*Maps & Resources*](../personal/maps.md#
 
 </Tabs>
 
+
 ### Terrain
 
 Terrain files (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) define 3 [terrain visualizations](../plugins/contour-lines.md#hillshade-slope-and-altitude-layers): *Hillshade, Slope*, and *Altitude*. For each type you can have multiple palettes, for example *avalanche slope* is provided by default.
@@ -72,6 +74,7 @@ Terrain files (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.t
 ### Routes
 
 Line gradient visualizations uses palette files (`route_<type_name>_<palette_name>.txt`) to color GPX tracks and Routes:
+
 - For [Routes](../navigation/guidance/map-during-navigation.md#color): *Speed, Slope,* and *Elevation (Altitude)*.
 - For [GPX Tracks](../map/tracks/index.md#color): *Speed, Slope,* and *Elevation (Altitude), or info from External sensors*.
 
@@ -79,12 +82,12 @@ Line gradient visualizations uses palette files (`route_<type_name>_<palette_nam
 
 Weather palette files (`weather_<type_name>.txt`) defines visualization for [weather layers](../plugins/weather.md#weather-layers).
 
-### Colors 
+### Colors
 
 Color palette (`user_palette_default.txt`) is simply used for predefined colors to assign to [Favorites](./favorites.md), [Tracks](./tracks/).
 
 
-## Palette Legend 
+## Palette Legend
 
 The legend provides an easy way to view and understand the different markings on the map. New color palettes have been added to display [**speed** for tracks](../map/tracks/index.md#color), [**line type** for routes](../navigation/guidance/map-during-navigation.md#color), [**altitude and slope** for terrain](../plugins/contour-lines.md#color-scheme), and all [**weather layer**](../plugins/weather.md#weather-layers) color palettes.
 
@@ -95,7 +98,6 @@ The legend provides an easy way to view and understand the different markings on
         <td><img src={require('@site/blog/2024-07-26-android-4-8/img/legend_2.png').default} alt="AA"/></td>
     </tr>
 </table>  
-
 
 
 ## Edit Palette file
@@ -125,13 +127,14 @@ After moving this TXT file to *..Android/data/net.osmand/files/color-palete/heig
 
 ## Read more
 
-### Quick actions 
+### Quick actions
 
-_Menu → Configure screen → Custom buttons → + → Add button → Add action → Topography → Change Terrain color scheme_
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Add action → Topography → Change Terrain color scheme*
 
-**Quick Action** to change palette for Terrain. We have added the ability to switch between terrain color schemes, similar to switching between layers. This can be done using the Quick Actions tool.  
+![Color Scheme](@site/static/img/widgets/color_scheme.png)
 
-![Color Scheme](@site/blog/2024-07-26-android-4-8/img/color_scheme.png)
+**Quick Action** to change the palette for Terrain. Added the ability to switch between terrain color schemes, similar to switching between layers. This can be done using the *Quick Actions* tool.  
+
 
 ### Import / Export Colors
 
@@ -141,19 +144,19 @@ _Menu → Configure screen → Custom buttons → + → Add button → Add actio
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
-![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)   
+![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS"> 
+<TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*     
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)    
+![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
 
 </TabItem>
 
-</Tabs> 
+</Tabs>
 
 You can import and export all available default and custom color palettes using OsmAnd's restore and backup files tool.
 
@@ -162,3 +165,12 @@ You can import and export all available default and custom color palettes using 
 - All exported files are saved in *OSF* format.
 - If the size of your selected data is significant, it will take some time for the application to prepare the *OSF* file.
 - View [*Import / Export*](../personal/import-export.md) article for more detailed information.
+
+
+## Related Articles
+
+- [Interact with Map](../../user/map/interact-with-map.md)
+- [Global Settings](../../user/personal/global-settings.md)
+- [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
+
+> *This article was last updated in September 2024*
