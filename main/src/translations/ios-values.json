@@ -1278,7 +1278,7 @@
   "ltr_or_rtl_combine_via_colon": "%@: %@",
   "ltr_or_rtl_combine_via_dash": "%@ — %@",
   "ltr_or_rtl_combine_via_or": "%@ or %@",
-  "ltr_or_rtl_combine_via_slash": "%@/%@",
+  "ltr_or_rtl_combine_via_slash": "%@ / %@",
   "ltr_or_rtl_combine_via_comma": "%@, %@",
   "ltr_or_rtl_combine_via_of": "%ld of %ld",
   "listed_exist": "Listed %@, already exist in OsmAnd.",
@@ -2551,7 +2551,7 @@
   "rendering_value_disabled_name": "Disabled",
   "rendering_attr_contourColorScheme_name": "Contour lines color scheme",
   "routing_attr_short_way_name": "Fuel-efficient way",
-  "rendering_attr_alpineHiking_name": "Difficulty classification",
+  "rendering_attr_alpineHiking_name": "Hiking trails difficulty grade",
   "rendering_attr_showLez_name": "Show Low Emission Zones",
   "rendering_value_green_name": "Green",
   "routing_attr_piste_type_nordic_description": "Trails for nordic or cross-country skiing.",
@@ -3414,5 +3414,6 @@
   "user_palette": "User palette",
   "voices": "Voice prompts",
   "weather_wind_animation_enable_descr": "Enable to view wind animation layer on the map.",
-  "wind_layer": "Wind layer"
+  "wind_layer": "Wind layer",
+  "osmand_cloud_delete_account_descr_with_email": "Are you sure you want to delete OsmAnd Cloud account: %@?"
 }
