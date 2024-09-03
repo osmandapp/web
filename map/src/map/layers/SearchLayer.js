@@ -12,9 +12,12 @@ import { useMap } from 'react-leaflet';
 import { getPoiIcon } from './PoiLayer';
 import L from 'leaflet';
 import {
+    CATEGORY_NAME,
     FINAL_POI_ICON_NAME,
     ICON_KEY_NAME,
     POI_ICON_NAME,
+    POI_ID,
+    POI_NAME,
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
@@ -41,8 +44,8 @@ export function findFeatureGroupById(map, id) {
 }
 
 export function getObjIdSearch(obj) {
-    if (obj.properties['web_poi_id']) {
-        return obj.properties['web_poi_id'];
+    if (obj.properties[POI_ID]) {
+        return obj.properties[POI_ID];
     } else if (obj.geometry.coordinates[0] === 0 && obj.geometry.coordinates[1] === 0) {
         return null;
     }
@@ -153,7 +156,7 @@ export default function SearchLayer() {
         const seen = new Set();
         data.features = data.features.filter((feature) => {
             const id = getObjIdSearch(feature);
-            const name = feature.properties['web_poi_name'] ?? feature.properties['web_name'];
+            const name = feature.properties[POI_NAME] ?? feature.properties[CATEGORY_NAME];
             const uniqueKey = `${id}-${name}`;
 
             if (seen.has(uniqueKey)) {
