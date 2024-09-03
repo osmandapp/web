@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 # Android 4.9 (beta)
 
-Android 4.8 is the latest release that introduces many new features and improvements to the OsmAnd app. This article describes all the key updates that represent meaningful changes for our users. 
+Android 4.8 is the latest release that introduces many new features and improvements to the OsmAnd app. This article describes all the key updates that represent meaningful changes for our users.
 
 # Join Beta
 
@@ -31,14 +31,29 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 # What's new
 
-- Buttons Control on map (Allow to change size, shape, icon for map buttons),
-- Context menu for widgets,
-- [Autosync](https://github.com/osmandapp/OsmAnd/issues/18212) OsmAnd Cloud,
-- [Smartwatch](https://github.com/osmandapp/OsmAnd/issues/9258),
-- Gallery / Places - Explore ([images on the map](https://osmand.net/docs/versions/future-web#explore-map-menu)),
-- Main navigation widgets,
-- [Activities](https://github.com/osmandapp/OsmAnd/issues/17997) for GPX track data,
-- Search (USA address),
-- Nautical maps (new data),
-- Traffic (Germany and Netherlands),
-- Geographic grid,
+- [Context menu for widgets](#widget-context-menu).
+- [4.8 issue Key “D”, “N”, “S” doesn't work on external Keyboards is fixed](https://github.com/osmandapp/OsmAnd/issues/20636).
+- Buttons Control on map ([Allow to change size, shape, icon for map buttons](https://github.com/osmandapp/OsmAnd-Issues/issues/2437)).
+- Gallery / Places - Explore ([images on the map](https://osmand.net/docs/versions/future-web#explore-map-menu)).
+
+<!-- 
+- [Activities](https://github.com/osmandapp/OsmAnd/issues/17997) for GPX track data.
+- [Autosync](https://github.com/osmandapp/OsmAnd/issues/18212) OsmAnd Cloud.
+- [Smartwatch](https://github.com/osmandapp/OsmAnd/issues/9258).
+- Created quick actions to represent 'Map rotate'
+- Default buttons – Appearance.
+- Main navigation widgets.
+- Search (USA address).
+- Nautical maps (new data).
+- Traffic (Germany and Netherlands).
+- Geographic grid.
+-->
+
+
+## Widget Context Menu
+
+![Widget context menu](@site/static/img/widgets/widget_context_menu_andr.png)
+
+The [**widget context menu**](../user/widgets/configure-screen.md#panel-widgets-settings) allows you to manage and configure widgets directly from the map screen, providing *a quick way to organize panels*. You can access this menu by ***long tapping*** on any widget to customize the layout of widgets without leaving the map.
+
+

@@ -43,7 +43,7 @@ The context menu appears when you **short tap** a marked object on the map. In t
 **NOTE**. The selected map objects are OpenStreetMap [nodes](https://wiki.openstreetmap.org/wiki/Node) or [ways](https://wiki.openstreetmap.org/wiki/Way).
 
 
-### Select Any Point (Long-tap)
+### Select Any Point (long tap)
 
 <Tabs groupId="operating-systems">
 
@@ -61,7 +61,7 @@ The context menu appears when you **short tap** a marked object on the map. In t
 
 </Tabs>
 
-Context menu will appear when you hold at any point on the Map with **long-tap**. In this case context menu provides you the information of geographical point address, distance and direction from your current position.
+Context menu will appear when you hold at any point on the Map with **long tap**. In this case context menu provides you the information of geographical point address, distance and direction from your current position.
 
 
 ### Select Route
@@ -168,7 +168,7 @@ OsmAnd displays **additional POI names** in the *Map Context menu*.
 |:------|:------|
 | <ul><li>DDD.DDDDD (Plain Decimal Degress)</li><li>DDD.DDDDD (N/S, E/W comma)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[UTM Standard](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Swiss Grid CH1903 and CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[OsmAnd Web Link](https://osmand.net/map)</li><li>[OpenStreetMap Web Link](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Coordinates](@site/static/img/map/map_context_menu_Coordinates.png) |
 
-In the Context menu, you can find [geographical coordinates](../search/search-coordinates.md#coordinate-format) of a point in various formats and also shareable OsmAnd and [OpenStreetMap Links](../map/map-context-menu.md#openstreetmap-link) (the last option is available only when the [OpenStreetMap editing plugin](../plugins/osm-editing.md) is enabled). If you expand coordinates section and long-tap any line from the list, its values will be automatically copied to the clipboard (**Android**) or the *Copy* option becomes available in the pop-up message (**iOS**).  
+In the Context menu, you can find [geographical coordinates](../search/search-coordinates.md#coordinate-format) of a point in various formats and also shareable OsmAnd and [OpenStreetMap Links](../map/map-context-menu.md#openstreetmap-link) (the last option is available only when the [OpenStreetMap editing plugin](../plugins/osm-editing.md) is enabled). If you expand coordinates section and long tap any line from the list, its values will be automatically copied to the clipboard (**Android**) or the *Copy* option becomes available in the pop-up message (**iOS**).  
 
 OsmAnd Web Link can be automatically recognized by OsmAnd (example: https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771). Both OsmAnd and [Openstreetmap links](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) are opened on corresponding sites with a pin mark to the place of interest.  
 
@@ -606,7 +606,7 @@ Requires [Parking position plugin](../plugins/parking.md).
 
 You can add waypoints to a recorded track or to the current track recording using the Map Context Menu.  
 
-- Select a location on the map with a [long-tap](../map/map-context-menu.md#select-any-point-long-tap).
+- Select a location on the map with a [long tap](../map/map-context-menu.md#select-any-point-long-tap).
 - In the *Map Context Menu* that opens, choose *Actions → Add track waypoint*.
 - The list displays the [tracks](../map/tracks/index.md#display-tracks-on-the-map) recorded and shown on the map, as well as the [current track recording](../plugins/trip-recording.md#from-widget), to which you can add the selected waypoint.
 - You can add waypoints to a track that is not yet active for recording, in which case the inactive track switches from the *Start state* to the *Resume state*.

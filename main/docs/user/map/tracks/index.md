@@ -24,7 +24,7 @@ OsmAnd has many powerful features to display various routes on the map. Routes c
 
 OsmAnd can display several different type of routes
 
-[Tracks (GPX)](#tracks) - recorded or planned trip saved in [GPX-format](https://en.wikipedia.org/wiki/GPS_Exchange_Format). This kind of route could be imported from the external source, created in the application or recorded by user. GPX could contain one of 3 different types of data or all of them:
+[Tracks (GPX)](#display-tracks-on-the-map) - recorded or planned trip saved in [GPX-format](https://en.wikipedia.org/wiki/GPS_Exchange_Format). This kind of route could be imported from the external source, created in the application or recorded by user. GPX could contain one of 3 different types of data or all of them:
 
 - Track as a line (**Geometry**)- file has ```<trkpt>``` points array, each point has location and optionally time, speed, altitude and other attributes. These tracks are displayed on the map as solid lines.
 - Track as a route (**Route**)-  file has ```<rtept>``` points array, each point described as an intermediate point of the route. It depends on how points within a route should be connected either as small route segments or via straight line. These tracks are displayed on the map as dashed lines.
@@ -33,13 +33,12 @@ OsmAnd can display several different type of routes
 OsmAnd could create tracks with 1-3 combinations. [Plan Route](../../plan-route/create-route.md) creates track with **Geometry** and **Route**, if you save as **Simplified Track** only **Geometry** will be kept. [Recording track](../../plugins/trip-recording.md#new-track-recording) creates only **Geometry** but it's also possible to add **Points** via Context menu to it.
 
 
-
 ## Display Tracks on the Map
 
 You can choose which tracks to show on the map and which to hide in the [My Places](#my-places) menu, the [Configure map](#configure-map) menu, and in the [Track Context menu](#track-context-menu).  
 
 
-### Configure map 
+### Configure Map
 
 Configure map allows you to quickly select all recently visible tracks, so you can easily switch on/off visibility for collection of tracks. Sorting of tracks is the same as configured in My Places - Tracks. By long tap on the track item, you can access [Track menu](../../personal/tracks/manage-tracks.md#track-menu).Also in this menu you can change appearance for multiple [selected tracks](./appearance.md#change-multiple-tracks).
 
@@ -47,7 +46,7 @@ Configure map allows you to quickly select all recently visible tracks, so you c
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*   
+*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
 
 ![Tracks and Routes](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Tracks and Routes](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
 
@@ -66,14 +65,13 @@ Configure map allows you to quickly select all recently visible tracks, so you c
 
 ### My Places
 
-
-In My places - Tracks to show track on the map, you need to: *Android* - tap the three-dot menu in the field with the required track, *iOS* - long-tap the required track in the list.  
+In My places - Tracks to show track on the map, you need to: *Android* - tap the three-dot menu in the field with the required track, *iOS* - long tap the required track in the list.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-[*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*](./index.md)   
+[*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*](./index.md)
 
 ![My Places with tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
@@ -81,16 +79,16 @@ In My places - Tracks to show track on the map, you need to: *Android* - tap the
 
 <TabItem value="ios" label="iOS">
 
-[*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → long-tap the chosen GPX track → Show on map*](./index.md)    
+[*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → long tap the chosen GPX track → Show on map*](./index.md)
 
 ![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 </TabItem>
 
 </Tabs>
 
-### Track Context menu
+### Track Context Menu
 
-If you selected track on the map or open [Track context menu](./track-context-menu.md) after track being recorded or imported, you can also use  *Show / hide* buttons allow to anable or disable displaying of a track on the map. 
+If you selected track on the map or open [Track context menu](./track-context-menu.md) after track being recorded or imported, you can also use  *Show / hide* buttons allow to anable or disable displaying of a track on the map.
 
 <Tabs groupId="operating-systems">
 
@@ -138,7 +136,7 @@ This tool allows you to view track information using graphs and maps.
 - **Tap/Slide**. Tap the Graph to display information about the track point and moving it along the Graph highlights the location of the point on the map and displays information about it in the bar.
 - **Scale**. Scale the Graph with a [two-fingers gesture](../../map/interact-with-map.md#gestures).
 
-### Follow My location
+### Follow My Location
 
 Tap the [My Location](../../map/interact-with-map.md#my-location--zoom) buttonto have the map view and graph synchronized with your location. In this case, **graph scale** will remain the same and the **bar information** will be fixed to 1/4 to the left. As you move, the **graph will slide** from left to right, displaying information ahead of your track. This feature is useful for hiking and cycling while navigating, although no other widgets are displayed on this screen.  
 
@@ -174,7 +172,7 @@ Tap the [My Location](../../map/interact-with-map.md#my-location--zoom) buttonto
 
 Read more about changing [Track appearance](./appearance.md)
 
-### Track Context Menu
+### Track Context Menu Article
 
 Read more about [Track Context menu](./track-context-menu.md).
 

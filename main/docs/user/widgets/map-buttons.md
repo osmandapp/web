@@ -125,7 +125,7 @@ The compass icon on the button always points to the North. You can select how th
 :::tip
 
 1. Double tap (Android), One tap (iOS) the Compass button in the upper left corner of the screen, if visible, to switch the [map orientation mode](../map/interact-with-map.md).
-2. You can change the map orientation mode by long-tapping the Compass button. This action opens the [*Map orientation*](../map/interact-with-map.md#map-orientation-modes#map-orientation-modes) screen.
+2. You can change the map orientation mode by long tapping the Compass button. This action opens the [*Map orientation*](../map/interact-with-map.md#map-orientation-modes#map-orientation-modes) screen.
 
 :::
 
