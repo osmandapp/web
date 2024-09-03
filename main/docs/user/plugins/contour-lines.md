@@ -257,7 +257,7 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 
 </Tabs>
 
-This Pro feature allows you to select from a predefined list of color schemes or import custom schemes created on a PC. You can edit these palettes to personalize the appearance of maps and routes. Custom color palette files can be easily added to OsmAnd using the [import/export tool](./import-export.md).
+This Pro feature allows you to select from a predefined list of color schemes or import custom schemes created on a PC. You can edit these palettes to personalize the appearance of maps and routes. Custom color palette files can be easily added to OsmAnd using the [import/export tool](../personal/import-export.md).
 
 ### Visibility
 
