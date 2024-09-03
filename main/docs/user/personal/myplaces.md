@@ -19,12 +19,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 My Places is the central hub of the OsmAnd application for managing and customizing all personal data. You can use My Places to organize [Favorite points](#favorites) marked as important or frequently visited. The [Tracks](#tracks) tab allows you to view, import, record, and create GPX files to help you keep a detailed history of your routes and travels. You can also manage your [OpenStreetMap Edits](#openstreetmap-edits), making contributing to map improvements and updates easy. The [Audio / Video Notes](#audiovideo-notes) plugin and widgets allow Android users to create and save multimedia notes related to specific locations, adding context to their travels.
 
-[***Import and export data***](../personal/import-export.md). All data stored in the *My Places* menu can be moved using a special OSF format through applications on your device. This process simplifies saving and transferring data between devices and allows you to share it with other OsmAnd users.  
-**Go to** *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>* section and select whether to export or import data. If you select *export*, you will need to expand *My Places group* and check the required data.
-
-[***Maps & Resources***](../personal/maps.md) main menu item of the OsmAnd application provides access to data management from the *My Places* section. The [*Local*](../personal/maps.md#local) tab shows you how much space is occupied by all existing OsmAnd data on your device, and the *My Places* section is in particular. You can use it to get detailed information about your data and access to manage it. The section can only contain items for which data has been downloaded.  
- **Go to** *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Check and manage your data.
-
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
@@ -44,6 +38,14 @@ My Places is the central hub of the OsmAnd application for managing and customiz
 </TabItem>
 
 </Tabs>
+
+[***Import and export data***](../personal/import-export.md).  
+All data stored in the *My Places* menu can be moved using a special OSF format through applications on your device. This process simplifies saving and transferring data between devices and allows you to share it with other OsmAnd users.  
+**Go to** *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>* section and select whether to export or import data. If you select *export*, you will need to expand *My Places group* and check the required data.
+
+[***Maps & Resources***](../personal/maps.md).  
+*Maps & Resources* main menu item of the OsmAnd application provides access to data management from the *My Places* section. The [*Local*](../personal/maps.md#local) tab shows you how much space is occupied by all existing OsmAnd data on your device, and the *My Places* section is in particular. You can use it to get detailed information about your data and access to manage it. The section can only contain items for which data has been downloaded.  
+**Go to** *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Check and manage your data.
 
 
 ## Favorites
@@ -70,16 +72,30 @@ My Places is the central hub of the OsmAnd application for managing and customiz
 
 **1.** ***Action buttons***. *Action buttons* at the bottom of the My Places screen allow you to manage the list of folders with your favorites:  
 
-- **Import** (*Add* button). Allows you to import favorite.gpx files from your device storage.
-- **Export**. Save your favorite points as a favorites.gpx file for external use or backup.
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>**. You can add any favorite point or the entire list of favorite points in a folder to the [Map markers list](../personal/markers.md).
-- **Delete**. Deletes favorite points one at a time or selected favorite folders and all points contained in them.
+- **Import** (*Add* button). Allows you to import *favorite.gpx* files from your device storage.
+- **Export**. Save your favorite points as a *favorites.gpx* file for external use or backup.
+- **<Translate android="true" ids="shared_string_add_to_map_markers"/>** (*Android only*). You can add any favorite point or the entire list of favorite points in a folder to the [Map markers list](../personal/markers.md).
+- **Delete** (*on iOS, this option is located in the Edit menu*). Deletes favorite points one at a time or selected favorite folders and all points contained in them.
 
 <br/>
 
-**2.** ***Three-dot menu***. You can manage groups of favorites using the *three-dot menu* next to each folder:  
+**2.** ***Three-dot menu*** (*Android*) and ***long tap*** (*iOS*). Use the *three-dot* menu next to each folder or *long tap* the folder to manage groups of favorites:  
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
 
 ![Three-dot menu](@site/static/img/personal/favorites_three-dot_menu.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Favorites menu iOS](@site/static/img/personal/favorites_three-dot_menu_ios.png)
+
+</TabItem>
+
+</Tabs>
 
 - **<Translate android="true" ids="shared_string_rename"/>**. Use this option to change the name of the selected folder.
 - **<Translate android="true" ids="change_default_appearance"/>**. Customize how the favorite points in the folder appear on the map by changing their icons, colors, or labels.
@@ -87,36 +103,6 @@ My Places is the central hub of the OsmAnd application for managing and customiz
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** or **Remove from map markers** (*Android only*). Add all favorite points from the folder to the *Map markers list* or remove them as needed for easy reference.
 - **<Translate android="true" ids="shared_string_share"/>**. Share the favorite points in the folder by exporting them as a *Favorites.gpx* file, making it easy to transfer or back up your data.
 - **<Translate android="true" ids="shared_string_delete"/>**. Permanently delete the selected favorites folder and all the points within it.
-
-<!--
-_____
-
-- **View**. In the *My Places* menu you can find not only *Favorites* but also function buttons and switchers. Using these tools you can customize *Favorites* folders and points and import/export favorites data.  
-
-- **Order / Sorting**. The favorite folders and points are sorted alphabetically. The [personal folder](../personal/favorites.md#special-favorites-personal) is at the top. In the search list, *Favorites* is sorted by distance from the map center.  
-
-***<!-- iOS. To switch between Folders <-> Points list, use the toggle on the top right corner of the screen. Favorite Points in the list are sorted by distance from the device location. -->
-
-<!--
-- **Search**. The search function opens a points list of Favorites sorted by distance from the map center on the device screen. Tap the magnifying glass (&#128269;) button to open the search menu for Favorites. Tap a chosen point to open [Context menu](../map/map-context-menu.md#select-an-object-short-tap) of this point.
-
-    - **Search Function / Global Search**. Favorites can be found using [Search function](../search/index.md) of OsmAnd. The first lines of the search results will be from *My favorites*. In the Android version of the app, you can also use Search in the *My Favorites* menu.  
-
-***<!-- iOS. Moving the screen down opens the search menu for Favorites: *Menu → My Places → Favorites → Pull down*. Tap a chosen point to open [Context menu](../map/map-context-menu.md#select-an-object-short-tap) of this point. -->
-
-<!--
-- **Actions**. Each Favorites folder contains one group of favorites. You can expand and collapse a list of Favorite points for one group by tapping on a folder or &#8743;, &#8744;  symbols (Android) and on &#62;, &#8744;  symbols (iOS). Each point from the Favorite list has a name, distance, and direction from your location.
-
-    - Tap any point from the Favorite list to show it on the map and open [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) for the chosen point.
-    Functions for [Favorite folder](#favorite-groups):
-
-    - At the bottom of the screen there are four Actions buttons. [allows to delete](#bulk-delete) 
-
-    - [Export/Import favorite](#all-favorites).
-
-- Manage Favorite Groups (link+brief note)
-
--->
 
 
 ## Tracks
@@ -180,12 +166,12 @@ With OsmAnd and the OSM editing plugin, you can contribute information to OpenSt
 
 <br/>
 
-**1.** ***Action buttons***. You can use the *action buttons* at the bottom of the My Places screen to manage your list of notes:  
+**1.** ***Action buttons***. You can use the *action buttons* on the My Places screen to manage your list of notes:  
 
 ![Share](@site/static/img/plugins/osm-editing/osm_plugin_export.png)
 
 - **Upload files to OSM**. Send your notes and data to OpenStreetMap to contribute to the community.
-- **Export**. Save your notes and POIs as files for external use or backup, with options to export as OSM notes, POIs, or all data combined.  
+- **Export** (*Android only*). Save your notes and POIs as files for external use or backup, with options to export as OSM notes, POIs, or all data combined.  
 - **Delete**. Remove selected items from your list permanently.
 
 <br/>
