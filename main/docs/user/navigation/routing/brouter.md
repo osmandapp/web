@@ -119,12 +119,12 @@ The BRouter app should be launched before OsmAnd for this specific entry to appe
 
 ## OsmAnd version 4.7.1
 
-From version 4.7.1 upwards Osmand supports the profile parameter for mapping: Since Osmand version 3, many profiles can be defined in Osmand and the user can easily switch between these profiles. A new profile should be created, for example by copying the existing 'Cycling' profile and giving it a new name in the format Brouter(fastbike). You can use any of the exisiting BRouter profiles in the name that are installed on your device. All the profile files have a naming format of 'xxxxxxx.brf'. Or you could create a new profile of your own, like, 'myprofile.brf'. 
+From version 4.7.1 upwards Osmand supports the profile parameter for mapping: Since Osmand version 3, many profiles can be defined in Osmand and the user can easily switch between these profiles. A new profile should be created, for example by copying the existing 'Cycling' profile and giving it a new name in the format Brouter[fastbike]. You can use any of the exisiting BRouter profiles in the name that are installed on your device. All the profile files have a naming format of 'xxxxxxx.brf'. Or you could create a new profile of your own, like, 'myprofile.brf'. 
 
 The naming convention in the OsmAnd profile is important as the BRouter profile included in that profile establishes the actual bridge between OsmAnd and BRouter.
 
 - If in Osmand a profile has "BRouter" defined as navigation service
-- AND the profile-name looks like "Brouter[mysting]"
+- AND the profile-name looks like "Brouter[mystring]"
 
 ==> then the profile "mystring" will be used in the Brouter-app!
 (this new mapping replaces in that case the basic mapping defined above and based on the file "serviceconfig.dat)
