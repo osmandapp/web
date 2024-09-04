@@ -412,13 +412,15 @@ With the UI customization feature, you can adjust the number of items in actions
 ### Drawer
 
 ![Profile Drawer Android](@site/static/img/personal/profiles/profile_drawer_moving_android.png)  ![Profile Reset Android](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png)  
+
 - **Main visible items**. In the Customise UI section, you can reorder hide and restore items from the [Drawer](../start-with/main-menu.md#customize-advanced-use-of-android).
 - **<Translate android="true" ids="reset_to_default"/>**. Tapping it restores the original list of items in the main menu in the drawer. All your changes are instantly undone.  
 - **<Translate android="true" ids="copy_from_other_profile"/>**. You can copy for this profile the position of elements created in another OsmAnd profile.  
 
 ### Configuring the Map
 
-  ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_visible_andr.png) ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_show_andr.png)
+![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_visible_andr.png) ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_show_andr.png)
+
 - **Configure map menu**. In this part of the Customise UI section you can reorder or hide items from the [Configure map](../map/configure-map-menu.md).  
 - **<Translate android="true" ids="reset_to_default"/>**. Tapping it restores the original list of items in the Configure map menu. All your changes are instantly undone.  
 - **<Translate android="true" ids="copy_from_other_profile"/>**. You can copy for this profile the position of elements created in another OsmAnd profile.  
