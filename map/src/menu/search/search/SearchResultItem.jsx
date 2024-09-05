@@ -12,14 +12,12 @@ import { getObjIdSearch, SEARCH_TYPE_CATEGORY } from '../../../map/layers/Search
 import {
     CATEGORY_NAME,
     CATEGORY_TYPE,
-    MAIN_CATEGORY_KEY_NAME,
     POI_NAME,
     POI_SUBTYPE,
     POI_TYPE,
     SEPARATOR,
-    WEB_POI_ADDITIONAL_CATEGORY,
-    WEB_POI_FILTER_NAME,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
+import { getPoiParentCategory } from '../../../manager/SearchManager';
 
 export function getFirstSubstring(inputString) {
     if (inputString?.includes(SEPARATOR)) {
@@ -40,24 +38,7 @@ export function getPropsFromSearchResultItem(props, t) {
     } else {
         name = props[CATEGORY_NAME];
         if (props[CATEGORY_TYPE] === SEARCH_RESULT_TYPE_POI_CATEGORY) {
-            type = props[MAIN_CATEGORY_KEY_NAME]?.toLowerCase();
-            if (type) {
-                type = _.capitalize(formattingPoiType(t(`poi_${type}`)));
-            } else {
-                const filter = props[WEB_POI_FILTER_NAME];
-                const addCategory = props[WEB_POI_ADDITIONAL_CATEGORY];
-                let filterName;
-                let addCategoryName;
-                if (filter) {
-                    filterName = _.capitalize(formattingPoiType(t(`poi_${filter}`)));
-                    filterName = getFirstSubstring(filterName);
-                }
-                if (addCategory) {
-                    addCategoryName = _.capitalize(formattingPoiType(t(`poi_${addCategory}`)));
-                    addCategoryName = getFirstSubstring(addCategoryName);
-                }
-                type = `${filterName}${addCategoryName ? ` (${addCategoryName})` : ''}`;
-            }
+            type = getPoiParentCategory(props, t);
         } else {
             type = props[CATEGORY_TYPE]?.toLowerCase();
             if (type) {

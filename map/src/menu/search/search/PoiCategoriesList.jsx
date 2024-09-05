@@ -10,9 +10,10 @@ import Loading from '../../errors/Loading';
 import PoiManager from '../../../manager/PoiManager';
 import { SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
-import { CATEGORY_KEY_NAME, MAIN_CATEGORY_KEY_NAME } from '../../../infoblock/components/wpt/WptTagsProvider';
+import { CATEGORY_KEY_NAME } from '../../../infoblock/components/wpt/WptTagsProvider';
 import { getFirstSubstring } from './SearchResultItem';
 import EmptySearch from '../../errors/EmptySearch';
+import { getPoiParentCategory } from '../../../manager/SearchManager';
 
 export default function PoiCategoriesList({
     categories,
@@ -74,12 +75,9 @@ export default function PoiCategoriesList({
                 <Box sx={{ overflowY: 'auto', overflowX: 'hidden' }}>
                     {sortedCategories?.map((item, key) => {
                         const category = item[CATEGORY_KEY_NAME];
-                        const parentCategory = item[MAIN_CATEGORY_KEY_NAME];
                         const catName = getCatName(category);
-                        let mainCatName;
-                        if (parentCategory) {
-                            mainCatName = getCatName(parentCategory);
-                        }
+                        const mainCatName = getPoiParentCategory(item, t);
+
                         return (
                             <MenuItem
                                 id={'se-search-categories-list-item-' + catName}
@@ -98,7 +96,7 @@ export default function PoiCategoriesList({
                                 <ListItemIcon>{categoriesIcons[category]}</ListItemIcon>
                                 <ListItemText>
                                     <MenuItemWithLines className={styles.titleText} name={catName} maxLines={2} />
-                                    {parentCategory && (
+                                    {mainCatName && (
                                         <MenuItemWithLines
                                             className={styles.placeTypes}
                                             name={mainCatName}
