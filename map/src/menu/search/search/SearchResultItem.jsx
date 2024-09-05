@@ -143,6 +143,7 @@ export default function SearchResultItem({ item, setSearchValue, typeItem }) {
                                 const category = item.properties['web_keyName'];
                                 setSearchValue({
                                     query: getFirstSubstring(t(`poi_${category}`)),
+                                    key: category,
                                     type: SEARCH_TYPE_CATEGORY,
                                 });
                             }

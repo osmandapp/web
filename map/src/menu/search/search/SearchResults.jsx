@@ -28,6 +28,7 @@ export function searchByCategory(value, ctx) {
     const preparedValue = {
         query: formattingPoiType(value.query),
         type: value.type,
+        key: value.key,
     };
     ctx.setSearchQuery({
         search: preparedValue,

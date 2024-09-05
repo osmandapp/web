@@ -41,7 +41,8 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
 
     useEffect(() => {
         if (ctx.showPoiCategories.length > 0) {
-            setSelectedCategories(new Set(ctx.showPoiCategories));
+            const categories = ctx.showPoiCategories.map((item) => item.category);
+            setSelectedCategories(new Set(categories));
         }
     }, []);
 
@@ -63,7 +64,11 @@ export default function PoiCategoriesConfig({ setOpenPoiConfig }) {
     }
 
     function selectCheckedCategories() {
-        ctx.setShowPoiCategories([...selectedCategories]);
+        const updatedCategories = Array.from(selectedCategories).map((category) => ({
+            key: null,
+            category: category,
+        }));
+        ctx.setShowPoiCategories([...updatedCategories]);
         setOpenPoiConfig(false);
     }
 
