@@ -188,6 +188,8 @@ export default function PoiLayer() {
             savedNorthWest: savedBbox ? `${savedBbox.getNorthWest().lat},${savedBbox.getNorthWest().lng}` : null,
             savedSouthEast: savedBbox ? `${savedBbox.getSouthEast().lat},${savedBbox.getSouthEast().lng}` : null,
             prevCategoriesCount: prevCategoriesCount,
+            prevSearchRes: prevSearchRes,
+            prevSearchCategory: prevSearchCategory,
         };
         let response = await apiPost(
             `${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi`,
@@ -197,8 +199,6 @@ export default function PoiLayer() {
                     locale: i18n.language,
                     lat: map.getCenter().lat,
                     lon: map.getCenter().lng,
-                    prevSearchRes: prevSearchRes,
-                    prevSearchCategory: prevSearchCategory,
                 },
                 apiCache: true,
                 signal: controller.signal,

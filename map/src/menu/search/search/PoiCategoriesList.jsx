@@ -87,6 +87,7 @@ export default function PoiCategoriesList({
                                     e.preventDefault();
                                     setSearchValue({
                                         query: catName,
+                                        key: category,
                                         type: SEARCH_TYPE_CATEGORY,
                                     });
                                     setOpenSearchResults(true);
