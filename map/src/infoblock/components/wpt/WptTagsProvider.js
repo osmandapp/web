@@ -59,6 +59,8 @@ export const ALT_NAME = 'osm_tag_alt_name';
 
 // from Amenity object
 export const POI_NAME = WEB_POI_PREFIX + 'name';
+export const POI_TYPE = WEB_POI_PREFIX + 'type';
+export const POI_SUBTYPE = WEB_POI_PREFIX + 'subType';
 export const POI_ICON_NAME = WEB_POI_PREFIX + 'iconName';
 export const FINAL_POI_ICON_NAME = WEB_POI_PREFIX + 'finalIconName';
 export const POI_OSM_URL = WEB_POI_PREFIX + 'osmUrl';
@@ -66,12 +68,15 @@ export const POI_ID = WEB_POI_PREFIX + 'id';
 
 // from PoiType object
 export const CATEGORY_NAME = WEB_PREFIX + 'name';
+export const CATEGORY_TYPE = WEB_PREFIX + 'type';
 export const CATEGORY_KEY_NAME = WEB_PREFIX + 'keyName';
 export const ICON_KEY_NAME = WEB_PREFIX + 'iconKeyName';
 export const TYPE_OSM_TAG = WEB_PREFIX + 'typeOsmTag';
 export const TYPE_OSM_VALUE = WEB_PREFIX + 'typeOsmValue';
 export const CATEGORY_ICON = WEB_PREFIX + 'categoryIcon';
 export const MAIN_CATEGORY_KEY_NAME = WEB_PREFIX + 'categoryKeyName';
+export const WEB_POI_FILTER_NAME = WEB_PREFIX + 'poiFilterName';
+export const WEB_POI_ADDITIONAL_CATEGORY = WEB_PREFIX + 'poiAdditionalCategory';
 
 export const TITLE = 'title';
 

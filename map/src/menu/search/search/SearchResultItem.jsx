@@ -9,7 +9,17 @@ import { formattingPoiType } from '../../../manager/PoiManager';
 import AppContext from '../../../context/AppContext';
 import { SEARCH_RESULT_TYPE_POI, SEARCH_RESULT_TYPE_POI_CATEGORY } from './SearchResults';
 import { getObjIdSearch, SEARCH_TYPE_CATEGORY } from '../../../map/layers/SearchLayer';
-import { SEPARATOR } from '../../../infoblock/components/wpt/WptTagsProvider';
+import {
+    CATEGORY_NAME,
+    CATEGORY_TYPE,
+    MAIN_CATEGORY_KEY_NAME,
+    POI_NAME,
+    POI_SUBTYPE,
+    POI_TYPE,
+    SEPARATOR,
+    WEB_POI_ADDITIONAL_CATEGORY,
+    WEB_POI_FILTER_NAME,
+} from '../../../infoblock/components/wpt/WptTagsProvider';
 
 export function getFirstSubstring(inputString) {
     if (inputString?.includes(SEPARATOR)) {
@@ -20,22 +30,36 @@ export function getFirstSubstring(inputString) {
 
 export function getPropsFromSearchResultItem(props, t) {
     let type, name;
-    if (props['web_type'] === SEARCH_RESULT_TYPE_POI) {
-        name = props['web_poi_name'];
-        type = props['web_poi_subType'] ?? props['web_poi_type'];
+    if (props[CATEGORY_TYPE] === SEARCH_RESULT_TYPE_POI) {
+        name = props[POI_NAME];
+        type = props[POI_SUBTYPE] ?? props[POI_TYPE];
         type = _.capitalize(t(`amenity_type_${type}`, formattingPoiType(t(`poi_${type}`))));
         if (name === '') {
             name = type;
         }
     } else {
-        name = props['web_name'];
-        if (props['web_type'] === SEARCH_RESULT_TYPE_POI_CATEGORY) {
-            type = props['web_categoryKeyName']?.toLowerCase();
+        name = props[CATEGORY_NAME];
+        if (props[CATEGORY_TYPE] === SEARCH_RESULT_TYPE_POI_CATEGORY) {
+            type = props[MAIN_CATEGORY_KEY_NAME]?.toLowerCase();
             if (type) {
                 type = _.capitalize(formattingPoiType(t(`poi_${type}`)));
+            } else {
+                const filter = props[WEB_POI_FILTER_NAME];
+                const addCategory = props[WEB_POI_ADDITIONAL_CATEGORY];
+                let filterName;
+                let addCategoryName;
+                if (filter) {
+                    filterName = _.capitalize(formattingPoiType(t(`poi_${filter}`)));
+                    filterName = getFirstSubstring(filterName);
+                }
+                if (addCategory) {
+                    addCategoryName = _.capitalize(formattingPoiType(t(`poi_${addCategory}`)));
+                    addCategoryName = getFirstSubstring(addCategoryName);
+                }
+                type = `${filterName}${addCategoryName ? ` (${addCategoryName})` : ''}`;
             }
         } else {
-            type = props['web_type']?.toLowerCase();
+            type = props[CATEGORY_TYPE]?.toLowerCase();
             if (type) {
                 type = _.capitalize(t(`search_address_${type}`, formattingPoiType(type)));
             }
