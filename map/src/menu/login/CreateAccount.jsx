@@ -38,6 +38,8 @@ export default function CreateAccount() {
 
     const passwordError = usePasswordValidation(userPassword1, userPassword2);
 
+    const EMAIL_IS_NOT_VALID = 'Email is not valid.';
+
     const handleClickShowPassword1 = () => {
         setShowPassword1(!showPassword1);
     };
@@ -322,7 +324,7 @@ export default function CreateAccount() {
                                 helperText={emailError ? emailError : EMPTY_INPUT}
                                 value={userEmail}
                             />
-                            {emailError !== EMPTY_INPUT && (
+                            {emailError !== EMPTY_INPUT && emailError !== EMAIL_IS_NOT_VALID && (
                                 <Button
                                     sx={{ mb: 1.5, mt: 0.5 }}
                                     className={styles.blueButton}
