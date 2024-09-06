@@ -1,7 +1,7 @@
 import headerStyles from '../trackfavmenu.module.css';
 import { AppBar, Box, Button, IconButton, InputAdornment, Link, TextField, Toolbar, Typography } from '@mui/material';
 import styles from './login.module.css';
-import { closeLoginMenu, EMPTY_INPUT, openLogin } from '../../manager/LoginManager';
+import { closeLoginMenu, EMPTY_INPUT, ERROR_TOKEN, openLogin } from '../../manager/LoginManager';
 import { closeHeader } from '../actions/HeaderHelper';
 import React, { useContext, useEffect, useState } from 'react';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
@@ -98,7 +98,7 @@ export default function CreateAccount() {
             if (code === EMPTY_INPUT) {
                 setCodeError(false);
             }
-            if (codeError === 'error_token') {
+            if (codeError === ERROR_TOKEN) {
                 setCodeError(t('web:expired_code'));
             }
         }
@@ -320,8 +320,8 @@ export default function CreateAccount() {
                             />
                             {emailError !== EMPTY_INPUT && (
                                 <Button
-                                    sx={{ mt: -1, mb: 1.5, backgroundColor: '#DEEBFF !important' }}
-                                    className={styles.button}
+                                    sx={{ mb: 1.5, mt: 0.5 }}
+                                    className={styles.blueButton}
                                     component="span"
                                     onClick={() => openLogin(ctx, navigate)}
                                 >

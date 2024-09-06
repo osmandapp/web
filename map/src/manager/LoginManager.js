@@ -5,6 +5,7 @@ export const FREE_ACCOUNT = 'Free';
 export const INIT_LOGIN_STATE = 'INIT';
 export const ERROR_EMAIL = 'error_email';
 export const ERROR_PASSWORD = 'error_password';
+export const ERROR_TOKEN = 'error_token';
 export const EMPTY_INPUT = '';
 
 export async function getAccountInfo(setAccountInfo) {
@@ -34,3 +35,7 @@ export const openLogin = (ctx, navigate) => {
     navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.search + window.location.hash);
     ctx.setLoginState({ login: true });
 };
+
+export function createAccount(ctx) {
+    ctx.setLoginState({ create: true });
+}

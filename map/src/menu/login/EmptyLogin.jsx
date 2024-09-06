@@ -6,17 +6,13 @@ import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
-import { openLogin } from '../../manager/LoginManager';
+import { createAccount, openLogin } from '../../manager/LoginManager';
 
 export default function EmptyLogin() {
     const ctx = useContext(AppContext);
 
     const navigate = useNavigate();
     const { t } = useTranslation();
-
-    function createAccount() {
-        ctx.setLoginState({ create: true });
-    }
 
     return (
         <Box id="se-empty-login-page" className={loginStyles.block}>
@@ -39,7 +35,7 @@ export default function EmptyLogin() {
             >
                 {t('web:login_btn')}
             </Button>
-            <Button sx={{ mt: 1.5 }} className={styles.button} component="span" onClick={createAccount}>
+            <Button sx={{ mt: 1.5 }} className={styles.button} component="span" onClick={() => createAccount(ctx)}>
                 {t('web:create_account_btn')}
             </Button>
         </Box>

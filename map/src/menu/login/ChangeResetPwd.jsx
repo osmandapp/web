@@ -18,11 +18,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
 import { ReactComponent as UserPasswordIcon } from '../../assets/icons/ic_action_user_password.svg';
 import AppContext from '../../context/AppContext';
-import { closeLoginMenu, EMPTY_INPUT, openLogin } from '../../manager/LoginManager';
+import { closeLoginMenu, EMPTY_INPUT, ERROR_EMAIL, ERROR_TOKEN, openLogin } from '../../manager/LoginManager';
 import { useTranslation } from 'react-i18next';
 import { userActivate, userRegisterAndSendCode } from '../../manager/AccountManager';
 import i18n from 'i18next';
-import { formatString } from '../../manager/SettingsManager';
 import loginStyles from './login.module.css';
 import { useNavigate } from 'react-router-dom';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
@@ -45,6 +44,8 @@ export default function ChangeResetPwd() {
     const [openResetStatus, setOpenResetStatus] = useState(false);
     const [showPassword1, setShowPassword1] = useState(false);
     const [showPassword2, setShowPassword2] = useState(false);
+    const [codeError, setCodeError] = useState(EMPTY_INPUT);
+    const [checkReset, setCheckReset] = useState(false);
 
     const passwordError = usePasswordValidation(userPassword1, userPassword2);
 
@@ -84,10 +85,25 @@ export default function ChangeResetPwd() {
     };
 
     useEffect(() => {
+        if (emailError === ERROR_EMAIL) {
+            setEmailError(t('web:email_is_not_registered'));
+        }
         if (emailError && emailError !== EMPTY_INPUT) {
             setOpenCodeInput(false);
         }
     }, [emailError]);
+
+    useEffect(() => {
+        if (checkReset) {
+            if (resetPasswordError === ERROR_TOKEN) {
+                setCodeError(t('web:expired_code'));
+                setCheckReset(false);
+            } else {
+                setOpenCodeInput(false);
+                setOpenResetStatus(true);
+            }
+        }
+    }, [checkReset]);
 
     const handleKeyPress = async (e) => {
         if (e.key === 'Enter') {
@@ -103,6 +119,7 @@ export default function ChangeResetPwd() {
     }
 
     async function handleResetPassword() {
+        setCodeError(EMPTY_INPUT);
         await userActivate({
             username: userEmail,
             pwd: userPassword1,
@@ -110,8 +127,7 @@ export default function ChangeResetPwd() {
             setError: setResetPasswordError,
             lang,
         }).then(() => {
-            setOpenCodeInput(false);
-            setOpenResetStatus(true);
+            setCheckReset(true);
         });
     }
 
@@ -169,17 +185,22 @@ export default function ChangeResetPwd() {
                 {openCodeInput && !emailError && (
                     <>
                         <Typography className={styles.loginText}>
-                            {formatString(t('web:send_code_desc'), [userEmail])}
+                            {t('web:send_code_desc').split('%1$s')[0]}
+                            <span style={{ color: '#212121' }}>{userEmail}</span>
+                            {t('web:send_code_desc').split('%1$s')[1]}
                         </Typography>
-                        <TextField
-                            margin="dense"
-                            onChange={handleCodeChange}
-                            id="code"
-                            label={t('web:verification_code')}
-                            fullWidth
-                            variant="filled"
-                            value={code ? code : EMPTY_INPUT}
-                        />
+                        <Box className={codeError && styles.errorBack}>
+                            <TextField
+                                margin="dense"
+                                onChange={handleCodeChange}
+                                id="code"
+                                label={t('web:verification_code')}
+                                fullWidth
+                                variant="filled"
+                                value={code ? code : EMPTY_INPUT}
+                                helperText={codeError ? codeError : EMPTY_INPUT}
+                            />
+                        </Box>
                         <Box sx={{ mt: '12px' }}>
                             <Typography className={styles.title} noWrap>
                                 {t('user_password')}

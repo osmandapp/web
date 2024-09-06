@@ -7,7 +7,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { userLogin } from '../../manager/AccountManager';
 import i18n from 'i18next';
-import { closeLoginMenu, EMPTY_INPUT, ERROR_EMAIL, ERROR_PASSWORD } from '../../manager/LoginManager';
+import { closeLoginMenu, createAccount, EMPTY_INPUT, ERROR_EMAIL, ERROR_PASSWORD } from '../../manager/LoginManager';
 import { useTranslation } from 'react-i18next';
 import { DELETE_ACCOUNT_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 import { useNavigate } from 'react-router-dom';
@@ -31,6 +31,12 @@ export default function Login() {
             setTimeout(() => setTryCookie(ctx.emailCookie), 500); // delay to allow browser auto-login
         }
     }, [ctx.loginUser]);
+
+    useEffect(() => {
+        if (emailError !== EMPTY_INPUT) {
+            setPasswordError(EMPTY_INPUT);
+        }
+    }, [emailError]);
 
     useEffect(() => {
         if (tryCookie && userEmail === '') {
@@ -130,6 +136,16 @@ export default function Login() {
                         helperText={emailError ? emailError : EMPTY_INPUT}
                         value={userEmail}
                     />
+                    {emailError !== EMPTY_INPUT && (
+                        <Button
+                            sx={{ mb: 1.5, mt: 0.5 }}
+                            className={styles.blueButton}
+                            component="span"
+                            onClick={() => createAccount(ctx)}
+                        >
+                            {t('web:create_account_btn')}
+                        </Button>
+                    )}
                 </Box>
                 <Box className={passwordError && styles.errorBack}>
                     <TextField
