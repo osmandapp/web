@@ -84,12 +84,6 @@ The resolution of this problem is to switch on OpenGL rendering:
 _[OsmAnd menu → Settings → OsmAnd settings → Map rendering engine → Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine)_ and restart OsmAnd.
 
 
-### Hard lock the North map orientation mode
-
-*Menu → Configure profile → General settings → Other → [Enable Fixed North Up](../personal/profiles.md#other)*  
-
-For Android version OsmAnd 4.7 and later, you can hard lock the map position [*North is up*](../map/interact-with-map.md#map-orientation-modes) (classic north position for maps) using the *Enable Fixed North Up* feature in the *General profile settings*, if you do not need to rotate the map with a gesture.
-
 
 ## Search
 ### Structured (city &#8594; street &#8594; house) address search doesn't find the house
