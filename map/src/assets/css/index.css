@@ -42,17 +42,8 @@ code {
     user-select: text !important;
 }
 /* Changing the accent color of TextField inputs */
-.MuiInput-underline:after {
+.MuiFilledInput-underline:after {
     border-bottom-color: #237bff !important; /* Underline color when focused */
-    opacity: 1 !important;
-    text-shadow: none !important;
-    filter: none !important;
-    transition: none !important;
-    box-shadow: none !important;
-}
-
-.MuiInput-underline:before {
-    border-bottom-color: #237bff !important; /* Underline color when not focused */
     opacity: 1 !important;
     text-shadow: none !important;
     filter: none !important;
