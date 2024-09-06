@@ -201,7 +201,11 @@ export function getPoiParentCategory(props, t) {
             addCategoryName = _.capitalize(formattingPoiType(t(`poi_${addCategory}`)));
             addCategoryName = getFirstSubstring(addCategoryName);
         }
-        type = `${filterName}${addCategoryName ? ' (' + addCategoryName + ')' : ''}`;
+        if (filterName) {
+            type = `${filterName}${addCategoryName ? ' (' + addCategoryName + ')' : ''}`;
+        } else {
+            type = `${addCategoryName ? addCategoryName : ''}`;
+        }
     }
-    return type && type !== 'undefined' ? type : null;
+    return type && type !== 'undefined' && type !== '' ? type : null;
 }
