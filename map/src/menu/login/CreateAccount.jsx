@@ -229,7 +229,7 @@ export default function CreateAccount() {
                                     code === EMPTY_INPUT ||
                                     passwordError !== EMPTY_INPUT
                                 }
-                                className={styles.button}
+                                className={styles.primaryButton}
                                 onClick={createAccount}
                             >
                                 {t('web:create_account')}
@@ -295,7 +295,11 @@ export default function CreateAccount() {
                             </Typography>
                         )}
                         <Box sx={{ mt: resendCode ? '15px' : '30px' }}>
-                            <Button disabled={code === EMPTY_INPUT} className={styles.button} onClick={validateToken}>
+                            <Button
+                                disabled={code === EMPTY_INPUT}
+                                className={styles.primaryButton}
+                                onClick={validateToken}
+                            >
                                 {t('shared_string_continue')}
                             </Button>
                         </Box>
@@ -332,7 +336,7 @@ export default function CreateAccount() {
                         <Box sx={{ mt: 2 }}>
                             <Button
                                 disabled={userEmail === EMPTY_INPUT}
-                                className={styles.button}
+                                className={styles.primaryButton}
                                 onClick={() => sendVerificationCode(true)}
                             >
                                 {t('shared_string_continue')}

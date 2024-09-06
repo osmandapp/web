@@ -174,7 +174,7 @@ export default function ChangeResetPwd() {
                         <Box sx={{ mt: 2 }}>
                             <Button
                                 disabled={userEmail === ''}
-                                className={styles.button}
+                                className={styles.primaryButton}
                                 onClick={sendVerificationCode}
                             >
                                 {t('shared_string_continue')}
@@ -263,7 +263,7 @@ export default function ChangeResetPwd() {
                                     code === EMPTY_INPUT ||
                                     passwordError !== EMPTY_INPUT
                                 }
-                                className={styles.button}
+                                className={styles.primaryButton}
                                 onClick={handleResetPassword}
                             >
                                 {t('web:change_password_btn')}

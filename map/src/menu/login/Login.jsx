@@ -171,7 +171,7 @@ export default function Login() {
                     <Button
                         id="se-submit-login"
                         disabled={userPassword === EMPTY_INPUT || userEmail === EMPTY_INPUT}
-                        className={styles.button}
+                        className={styles.primaryButton}
                         onClick={handleLogin}
                     >
                         {t('shared_string_continue')}
