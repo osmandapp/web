@@ -47,6 +47,19 @@
     line-height: 140% !important;
     letter-spacing: 0.28px !important;
     text-transform: none !important;
+    box-sizing: border-box !important;
+    border: 2px solid transparent !important;
+    &:hover {
+        border: 2px solid #0f67eb !important;
+        background: #237bff !important;
+        color: #ffffff !important;
+    }
+    &:active {
+        border: 2px solid transparent !important;
+        border-radius: 3px !important;
+        background: #0f67eb !important;
+        color: #ffffff !important;
+    }
 }
 .label {
     display: flex !important;

@@ -41,3 +41,20 @@ code {
 .MuiMenuItem-root {
     user-select: text !important;
 }
+/* Changing the accent color of TextField inputs */
+.MuiFilledInput-underline:after {
+    border-bottom-color: #237bff !important; /* Underline color when focused */
+    opacity: 1 !important;
+    text-shadow: none !important;
+    filter: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+}
+
+.MuiFormLabel-root.Mui-focused {
+    color: #237bff !important; /* Label color when focused */
+    opacity: 1 !important;
+    text-shadow: none !important;
+    filter: none !important;
+    transition: none !important;
+}

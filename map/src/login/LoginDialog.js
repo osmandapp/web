@@ -1,28 +1,25 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Button, Checkbox, TextField, FormControlLabel } from '@mui/material/';
+import { Button } from '@mui/material/';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import AppContext from '../context/AppContext';
-import { useNavigate, useLocation } from 'react-router-dom';
 import { Box, Divider, Link, ListItemText, MenuItem, Typography } from '@mui/material';
 import DeleteAccountDialog from './DeleteAccountDialog';
-import AccountManager from '../manager/AccountManager';
+import AccountManager, { sendCode, userLogout } from '../manager/AccountManager';
 import ChangeEmailDialog from './ChangeEmailDialog';
 import DownloadBackupDialog from './DownloadBackupDialog';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import { makeStyles } from '@material-ui/core/styles';
-import { FREE_ACCOUNT, getAccountInfo } from '../manager/LoginManager';
+import { FREE_ACCOUNT, getAccountInfo, INIT_LOGIN_STATE } from '../manager/LoginManager';
 import { useTranslation } from 'react-i18next';
-import { DELETE_ACCOUNT_URL, MAIN_URL_WITH_SLASH } from '../manager/GlobalManager';
 
 export default function LoginDialog() {
     const ctx = useContext(AppContext);
-    const { t, i18n } = useTranslation();
+    const { i18n } = useTranslation();
     const lang = i18n.language;
-    const location = useLocation();
 
     const [width] = useWindowSize();
     const widthDialog = width / 2 < 450 ? width * 0.75 : width / 2;
@@ -33,89 +30,25 @@ export default function LoginDialog() {
 
     const classes = useStyles();
 
-    const [userEmail, setUserEmail] = useState(''); // first, use empty to allow browser to use auto-login
-    const [tryCookie, setTryCookie] = useState(null); // then try cookie if userEmail is still not set by browser
-
-    const [pwd, setPwd] = useState();
-    const [code, setCode] = useState();
-    const [emailError, setEmailError] = useState(ctx.wantDeleteAcc ? 'Please log in to delete your account.' : '');
-    const [state, setState] = useState('login'); // login, register, register-verify
     const [openDangerousArea, setOpenDangerousArea] = useState(false);
     const [deleteAccountFlag, setDeleteAccountFlag] = useState(false);
     const [changeEmailFlag, setChangeEmailFlag] = useState(false);
     const [openDownloadBackupDialog, setOpenDownloadBackupDialog] = useState(false);
 
-    const navigate = useNavigate();
-
     const toggleOpenDangerousArea = () => {
         setOpenDangerousArea(!openDangerousArea);
         setDeleteAccountFlag(false);
-        setEmailError('');
     };
 
     const handleClose = () => {
-        setEmailError('');
-        setPwd('');
-        setCode('');
-        if (ctx.wantDeleteAcc) {
-            navigate(MAIN_URL_WITH_SLASH + DELETE_ACCOUNT_URL + window.location.search + window.location.hash);
-        } else {
-            ctx.setPrevPageUrl((prevPageUrl) => ({ ...prevPageUrl, active: true }));
-        }
-    };
-
-    const closeDialog = () => {
-        setEmailError('');
-        setPwd('');
-        setCode('');
         ctx.setPrevPageUrl((prevPageUrl) => ({ ...prevPageUrl, active: true }));
     };
 
-    const handleLogin = () => {
-        if (state === 'register') {
-            AccountManager.userRegister({ username: userEmail, setEmailError, setState, lang }).then();
-        } else if (state === 'register-verify') {
-            AccountManager.userActivate({
-                ctx,
-                username: userEmail,
-                pwd,
-                token: code,
-                setEmailError,
-                handleClose,
-                lang,
-            }).then();
-        } else {
-            if (userEmail) {
-                AccountManager.userLogin({ ctx, username: userEmail, pwd, setEmailError, handleClose, lang }).then();
-            }
-        }
-    };
-
     useEffect(() => {
-        if (location.hash === '#logout' && ctx.loginUser) {
-            setState('login');
-            ctx.setLoginUser('');
-            setEmailError('You are logged out by server!');
-            window.location.hash = ''; // useLocation() is read-only
-        }
-    }, [location.hash]);
-
-    useEffect(() => {
-        if (ctx.loginUser && ctx.loginUser !== '' && ctx.loginUser !== 'INIT') {
+        if (ctx.loginUser && ctx.loginUser !== '' && ctx.loginUser !== INIT_LOGIN_STATE) {
             getAccountInfo(ctx.setAccountInfo).then();
-        } else {
-            if (ctx.emailCookie) {
-                setTimeout(() => setTryCookie(ctx.emailCookie), 500); // delay to allow browser auto-login
-            }
         }
     }, [ctx.loginUser]);
-
-    useEffect(() => {
-        if (tryCookie && userEmail === '') {
-            setUserEmail(tryCookie);
-            setTryCookie(null);
-        }
-    }, [tryCookie]);
 
     const clickHandler = (event) => {
         if (event.detail % 3 === 0) {
@@ -227,12 +160,10 @@ export default function LoginDialog() {
                     </Button>
                     <Button
                         onClick={() =>
-                            AccountManager.userLogout({
+                            userLogout({
                                 ctx,
-                                username: userEmail,
-                                setEmailError,
+                                username: ctx.loginUser,
                                 handleClose,
-                                setState,
                                 lang,
                             })
                         }
@@ -265,9 +196,8 @@ export default function LoginDialog() {
                             color="inherit"
                             onClick={() => {
                                 setChangeEmailFlag(true);
-                                AccountManager.sendCode({
+                                sendCode({
                                     action: AccountManager.CHANGE_EMAIL_MSG,
-                                    setEmailError,
                                     lang,
                                 }).then();
                             }}
@@ -288,90 +218,5 @@ export default function LoginDialog() {
             </Dialog>
         );
     }
-    return (
-        <Dialog classes={{ paper: classes.paper }} open={true} onClose={handleClose}>
-            <DialogTitle>
-                {state === 'register'
-                    ? 'Register'
-                    : state === 'register-verify'
-                      ? 'Verify your email'
-                      : t('user_login')}
-            </DialogTitle>
-            <DialogContent>
-                <DialogContentText>
-                    {state === 'register-verify'
-                        ? `Please check your email, enter new strong password and enter verification code`
-                        : `You can login to the website only if you have registered OsmAnd cloud account: "OsmAnd Pro" or "OsmAnd start". Please enter your email below.`}
-                </DialogContentText>
-                <TextField
-                    autoFocus
-                    margin="dense"
-                    onChange={(e) => {
-                        if (emailError !== '') {
-                            setEmailError('');
-                        }
-                        setUserEmail(e.target.value);
-                    }}
-                    onKeyPress={(e) => e.key === 'Enter' && handleLogin()}
-                    id="username"
-                    label="Email Address"
-                    type="email"
-                    fullWidth
-                    variant="standard"
-                    helperText={emailError ? emailError : ''}
-                    error={emailError.length > 0}
-                    value={userEmail}
-                ></TextField>
-
-                {state === 'register' ? (
-                    <></>
-                ) : (
-                    <TextField
-                        margin="dense"
-                        onChange={(e) => setPwd(e.target.value)}
-                        onKeyPress={(e) => e.key === 'Enter' && handleLogin()}
-                        id="pwd"
-                        label={state === 'register-verify' ? 'New Password' : 'Password'}
-                        type="password"
-                        fullWidth
-                        variant="standard"
-                        value={pwd ? pwd : ''}
-                    ></TextField>
-                )}
-                {state !== 'register-verify' ? (
-                    <></>
-                ) : (
-                    <TextField
-                        margin="dense"
-                        onChange={(e) => setCode(e.target.value)}
-                        id="code"
-                        label="Code from Email"
-                        type="text"
-                        fullWidth
-                        variant="standard"
-                        value={code ?? ''}
-                    ></TextField>
-                )}
-                {state === 'register-verify' ? (
-                    <></>
-                ) : (
-                    <FormControlLabel
-                        control={
-                            <Checkbox
-                                checked={state === 'register'}
-                                onChange={() => setState(state === 'login' ? 'register' : 'login')}
-                            />
-                        }
-                        label="Don't have the password or forgot it?"
-                    />
-                )}
-            </DialogContent>
-            <DialogActions>
-                <Button onClick={closeDialog}>Cancel</Button>
-                <Button id="se-submit-login" onClick={handleLogin}>
-                    {state === 'register' ? 'Register' : state === 'register-verify' ? 'Activate' : 'Login'}
-                </Button>
-            </DialogActions>
-        </Dialog>
-    );
+    return <></>;
 }

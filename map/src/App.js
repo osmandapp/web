@@ -20,6 +20,7 @@ import {
     TRACKS_URL,
     WEATHER_URL,
     EXPLORE_URL,
+    OLD_LOGIN_URL,
 } from './manager/GlobalManager';
 import ExploreMenu from './menu/search/explore/ExploreMenu';
 import SearchMenu from './menu/search/SearchMenu';
@@ -30,6 +31,7 @@ import PlanRouteMenu from './menu/planroute/PlanRouteMenu';
 import TracksMenu from './menu/tracks/TracksMenu';
 import SettingsMenu from './menu/settings/SettingsMenu';
 import ConfigureMap from './menu/configuremap/ConfigureMap';
+import LoginMenu from './menu/login/LoginMenu';
 
 export let globalNavigate = () => null;
 
@@ -46,7 +48,9 @@ const App = () => {
                 <NavigateGlobal />
                 <Routes>
                     <Route path={MAIN_URL} element={<GlobalFrame />}>
-                        <Route path={LOGIN_URL} element={<LoginDialog />}></Route>
+                        {/*temp route to old login UI*/}
+                        <Route path={OLD_LOGIN_URL} element={<LoginDialog />}></Route>
+                        <Route path={LOGIN_URL} element={<LoginMenu />}></Route>
                         <Route
                             path={DELETE_ACCOUNT_URL}
                             element={<DeleteAccountDialog setDeleteAccountFlag={null} />}
