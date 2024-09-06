@@ -2,7 +2,7 @@
 
 import { By } from 'selenium-webdriver';
 
-import { clickBy, waitBy, enclose, waitByRemoved, fillLoginData } from '../lib.mjs';
+import { clickBy, waitBy, fillLoginData } from '../lib.mjs';
 import { TEST_LOGIN, TEST_PASSWORD } from '../options.mjs';
 
 /**
