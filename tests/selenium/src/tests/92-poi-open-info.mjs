@@ -11,7 +11,7 @@ export default async function test() {
 
     const category = 'Cafe and restaurant';
     const iconWpt = 'amenity_cafe';
-    const poiName = 'Coffee House';
+    const poiName = 'Mr Grill';
 
     // open configure map
     await clickBy(By.id('se-show-menu-configuremap'));
@@ -25,7 +25,7 @@ export default async function test() {
     await clickBy(By.id('se-select-categories'));
 
     await actionCheckPoi({ iconWpt, name: poiName });
-    await clickBy(By.xpath(`//*[@title='Coffee House']`));
+    await clickBy(By.xpath(`//*[@title='Mr Grill']`));
     await waitBy(By.id(`se-poi-infoblock-${poiName}`));
 
     await actionFinish();
