@@ -44,7 +44,7 @@ The Topography plugin provides access to the following map types:
 
 <TabItem value="ios" label="iOS">
 
-![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) 
+![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png)
 
 </TabItem>
 
@@ -71,7 +71,7 @@ To display **Contour lines** and **Terrain (Hillshade, Slope)** data on the map:
 2. [*Enable*](../plugins/index.md#enable--disable) Topography plugin in the Plugins section of the Main menu.
 3. [*Download*](#download-maps): Contour lines, Hillshade, Slope, or Terrain map (3D) maps.
 4. *Enable and adjust*: Contour lines, Hillshade, or Slope for the map view.
-5. You can also watch [Youtube Tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
+5. You can also watch [YouTube tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
 
 To display [**3D Relief**](#3d-relief) you need to purchase the *OsmAnd Pro* plan, including access to the Topography plugin.
 
@@ -211,7 +211,7 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 
 **Slope** determines the surface slope angle based on the elevation data of points on the map. Slope angle calculations are performed considering changes in elevation and distances between points, and representing this change as a slope angle.  
 
-**Altitude** represents the elevation of points on the map relative to sea level. It helps you understand how the terrain changes in height. This feature is particularly useful for activities such as hiking or mountain biking, where knowing the altitude can assist in planning routes and managing physical exertion. Altitude data is derived from elevation models and provides a clear view of high and low points, making it easier to assess the difficulty of a route or identify peaks and valleys along your journey. 
+**Altitude** represents the elevation of points on the map relative to sea level. It helps you understand how the terrain changes in height. This feature is particularly useful for activities such as hiking or mountain biking, where knowing the altitude can assist in planning routes and managing physical exertion. Altitude data is derived from elevation models and provides a clear view of high and low points, making it easier to assess the difficulty of a route or identify peaks and valleys along your journey.
 
 **Hillshade**, **Slope**, and **Altitude** raster maps are created based on raster terrain data such as Digital Elevation Models (DEM).
 
@@ -396,7 +396,7 @@ Follow the steps below to display 3D Relief on the OsmAnd map:
 
 If you **disable** *Hillshade* and **enable** *3D Relief*, relief shadows will still be visible because *Hillshade* and *3D Relief* are two different ways of visualizing a map. *Hillshade* creates shadows based on the terrain and adds them to the map, while *3D Relief* models 3D elements to show the depth and shape of the terrain, and the shadows are part of the visualization. These features can work in parallel, and disabling *Hillshade* does not affect how 3D effects are displayed.  
 
-When **Hillshade** is **enabled**, an image with relief shadows appears more detailed, darker, and more stepped than a *3D Relief* image. The explanation is that *Hillshade* emphasizes the gradients and contrasts of the terrain, creating a sharper and more detailed image. The *3D Relief* feature gives the map a more fluid and smoothed appearance, softening the terrain and potentially reducing the visibility of some finer details. 
+When **Hillshade** is **enabled**, an image with relief shadows appears more detailed, darker, and more stepped than a *3D Relief* image. The explanation is that *Hillshade* emphasizes the gradients and contrasts of the terrain, creating a sharper and more detailed image. The *3D Relief* feature gives the map a more fluid and smoothed appearance, softening the terrain and potentially reducing the visibility of some finer details.
 
 
 ## Combine Layer Types
