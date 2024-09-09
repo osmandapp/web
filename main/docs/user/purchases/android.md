@@ -102,7 +102,7 @@ The table below details the features included in both the free and paid packages
 | [3D track visualization](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Nautical depths](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Offline Wikipedia](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
-| [Offline Wikivoyage - Travel guides](../plan-route/travel**-**guides.md)| **-** | ✔ | ✔ |
+| [Offline Wikivoyage - Travel guides](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
 | [Offline and online navigation](../navigation/index.md)<br/>with turn-by-turn directions | ✔ | ✔ | ✔ |
 | [Offline instant search](../search/index.md) | ✔ | ✔ | ✔ |
 | [Trip recording](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
