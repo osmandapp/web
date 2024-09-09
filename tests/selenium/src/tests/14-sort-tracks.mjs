@@ -11,6 +11,8 @@ import actionIdleWait from '../actions/actionIdleWait.mjs';
 import actionDeleteFolder from '../actions/actionDeleteFolder.mjs';
 import actionRenameTrack from '../actions/actionRenameTrack.mjs';
 
+export const UPLOAD_SORT = 'upload-sort';
+
 export default async function test() {
     await actionOpenMap();
     await actionLogIn();
@@ -19,7 +21,7 @@ export default async function test() {
     await clickBy(By.id('se-show-menu-tracks'));
 
     const tracks = getFiles({ folder: 'gpx' });
-    const folder = 'uploud-sort';
+    const folder = UPLOAD_SORT;
     let trackName = 'test-infoblock-desc';
     const suffix = '-renamed';
 
