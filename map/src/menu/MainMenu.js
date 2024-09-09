@@ -117,7 +117,9 @@ export default function MainMenu({
         const startCreateTrack = ctx.createTrack?.enable && location.pathname === MAIN_URL_WITH_SLASH + PLANROUTE_URL;
         const openCloudTrackAfterSave =
             ctx.selectedGpxFile.url && location.pathname === MAIN_URL_WITH_SLASH + TRACKS_URL;
-        if (!startCreateTrack && !openCloudTrackAfterSave) {
+        const openFavorite =
+            !!ctx.selectedGpxFile?.markerCurrent && location.pathname === MAIN_URL_WITH_SLASH + FAVORITES_URL;
+        if (!startCreateTrack && !openCloudTrackAfterSave && !openFavorite) {
             setShowInfoBlock(false);
         }
     }, [location.pathname]);
