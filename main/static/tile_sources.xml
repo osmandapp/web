@@ -165,4 +165,6 @@
    <tile_source name="USA Topo Maps" url_template="https://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer/tile/{0}/{2}/{1}" ext=".jpeg" min_zoom="5" max_zoom="16" tile_size="256" img_density="8" avg_img_size="25000"/>
 <!--   <tile_source name="FS Topo" url_template="https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_FSTopo_01/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="3" max_zoom="17" tile_size="256" img_density="8" avg_img_size="25000"/>-->
 
+   <tile_source name="Lasy Państwowe (PL)" url_template="https://mapserver.bdl.lasy.gov.pl/arcgis/rest/services/WMTS_BDL_kat_wlasnosci/MapServer/WMTS/tile/1.0.0/WMTS_BDL_kat_wlasnosci/default/GoogleMapsCompatible/{0}/{2}/{1}.png" ext=".png" min_zoom="7" max_zoom="16" tile_size="256" img_density="32" avg_img_size="10000"/>
+
 </tile_sources>
