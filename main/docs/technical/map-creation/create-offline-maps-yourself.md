@@ -153,6 +153,127 @@ SASPlanet is a freeware, opensource navigation software with the capability of v
 [Download](http://www.sasgis.org/download/) the program, [English guideline](https://www.evernote.com/shard/s100/client/snv?noteGuid=e659886a-096c-46b4-8280-b57b77373847&noteKey=dac8148d9a74ed77&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs100%2Fsh%2Fe659886a-096c-46b4-8280-b57b77373847%2Fdac8148d9a74ed77&title=How%2Bto%2Buse%2BSAS.Planet.%2BEnglish%2Bguideline).
 
 
+### Geolocated PDF or TIFF
+
+How to convert geolocated pdf/tif/tiff files to [OsmAnd SQLitedb](../osmand-file-formats/osmand-sqlite.md) in Windows.
+Georeferencing tif/tiff and pdf files can be fairly simply done in QGIS.
+
+1.    **Install and run OSGeo4W**
+
+[OSGeo4W](https://trac.osgeo.org/osgeo4w/) is a binary distribution of a broad set of open source geospatial software for Windows. It includes QGIS, GDAL/OGR, GRASS as well as many other packages (over 150). Download and run [OSGeo4W](https://trac.osgeo.org/osgeo4w/) network installer.
+
+Now, from Start menu, run OSGeo4W Shell. It should start in the default _C:\OSGeo4W_ directory. Either navigate to your work folder (or you could just use _C:\OSGeo4W_ for this purpose).
+
+2.    **Convert tif/pdf to mbtiles**
+ 
+To convert _tif/pdf_ to _mbtiles_ run (replacing _tif/pdf_ and _mbtiles_ file names where necessary):
+
+&nbsp;<i>gdal_translate -co "ZLEVEL=9" -of mbtiles map_1.tif map_1.mbtiles --config gdal_pdf_dpi 600</i>&nbsp;
+
+&nbsp;<i>gdaladdo -r nearest map_1.mbtiles</i>&nbsp;
+
+
+The first command lets _GDAL_ figure out the max zoom it can generate based on the image resolution. And converts _tif/pdf_ file to _mbtiles_ with specified DPI. Feel free to play around with this setting, but be careful as high DPI values will make the conversion process very long and the resulting file size very big.
+
+The second command lets _GDAL_ figure out and generate the lesser zoom levels based on the max zoom level that already exists. It's not uncommon for those two commands to take a while to complete.
+
+3.    **Install Python from the Microsoft Store**
+   
+Probably the easiest way is to head to [Microsoft Store](https://apps.microsoft.com/detail/9nj46sx7x90p).
+
+If, while trying to execute Python script in the next step, this error occurs:
+
+_Traceback (most recent call last):_
+
+_File ```<console>```, line 1, in ```<module>```_
+
+_ImportError: No module named PIL_
+
+Then in PowerShell, run the following command:
+
+_pip install Pillow_
+
+4.    **Convert mbtiles format to sqlitedb (suitable for OsmAnd and RMaps)**
+
+You will find the Python scrip _mbtiles2osmand.py_ on [GitHub](https://github.com/tarwirdur/mbtiles2osmand). Download it to your work folder and run Command Prompt or PowerShell.
+
+**Usage:**
+
+&nbsp;<i>python3_ mbtiles2osmand.py [-h] [-f] [--jpg JPEG_QUALITY] input output</i>&nbsp;
+
+&nbsp;<u>Positional arguments:</u>&nbsp;
+
+**input**&nbsp;&nbsp;&nbsp;&nbsp; input file
+
+**output**&nbsp;&nbsp;&nbsp;&nbsp; output file
+
+&nbsp;<u>Optional arguments:</u>&nbsp;
+
+**-h, --help** &nbsp;&nbsp;&nbsp;&nbsp;show this help message and exit
+
+**-f, -force** &nbsp;&nbsp;&nbsp;&nbsp;override output file if exists
+
+**--jpg JPEG_QUALITY** &nbsp;&nbsp;&nbsp;&nbsp;convert tiles to JPEG with specified quality
+
+**Examples:**
+
+Simple:
+
+&nbsp;<i>python3 mbtiles2osmand.py _input.mbtiles output.sqlitedb_</i>&nbsp;
+
+Converting tiles to jpeg with compression:
+
+&nbsp;<i>python3 mbtiles2osmand.py _--jpg 75 input.mbtiles output.sqlitedb_</i>&nbsp;
+
+5.    **Copy the .sqlitedb file to OsmAnd**
+
+Now you should have a .sqlitedb file ready in your work folder. Copy it to appropriate OsmAnd folder and use it as an main, undelay or overlay. See [User guide](../../user/map/raster-maps.md) for more details. Done!
+
+6.    **(OPTIONAL) Unite multiple osmand files into single file**
+  
+If you need to, you can find the scrip file unite_osmand.py on [GitHub](https://github.com/tarwirdur/mbtiles2osmand). Again - download it to your work folder and run Command Prompt or PowerShell.
+
+**Usage:**
+
+&nbsp;<i>python3 unite_osmand.py [-h] [-f] input [input ...] output</i>&nbsp;
+
+<u>Positional arguments:</u>
+
+**input** &nbsp;&nbsp;&nbsp;&nbsp; input files. If multiple files contain tile with the same coordinates, tile from first (from argument list) file will be used
+
+**output** &nbsp;&nbsp;&nbsp;&nbsp;output file
+
+<u>Optional arguments:</u>
+
+**-h, --help** &nbsp;&nbsp;&nbsp;&nbsp;show this help message and exit
+
+**-f, -force** &nbsp;&nbsp;&nbsp;&nbsp;override output file if exists
+
+7.    **EXTRA: Convert A Single GeoPDF To GeoTIFF**
+  
+If, for whatever reason, should you wish to convert a single _geopdf_ to _geotiff_, use the _gdal_translate_ command and input your own parameters where denoted by < >. You can use _gdal_translate_ with or without optional parameters. It can take a long time to process and the resulting tiff can be really large especially when including the orthoimagery and shaded terrain. Therefore, it might be a good idea to exclude some of the PDF layers (see second example).
+
+**Usage:**
+
+&nbsp;<i>gdal_translate ```<GeoPDF filename> <Output Geotiff Filename>``` -of gtiff --config 
+gdal_pdf_layers_off “```<pdf layername 1>,<pdf layername 2>,<pdf layername 3>```” --config gdal_pdf_dpi ```<output dpi>``` </i>&nbsp;
+
+**Examples:**
+
+Converting pdf with all its layers to a geotiff at default DPI:
+
+&nbsp;<i>gdal_translate geo_sample_map.pdf output_sample_map.tif -of gtiff</i>&nbsp;
+ 
+Excluding several layers from conversion by <i>gdal_pdf_layers_off</i> parameter followed by list of comma separated layer names. Output file is a geotiff, with specified 600 DPI:
+
+&nbsp;<i>gdal_translate geo_sample_map.pdf output_sample_map.tif -of gtiff --config gdal_pdf_layers_off “Map_Collar, Map_Frame.Projections_and_Grids, Map_Frame.Terrain.Shaded_Relief, Images.Orthoimage” --config gdal_pdf_dpi 600</i>&nbsp;
+
+8.    **Sources:**
+
+- [Gdal2mbtiles](https://github.com/tarwirdur/mbtiles2osmandhttps://gist.github.com/jbaranski/0073f7b98bdf1f64f49988853daed67bhttps://github.com/ecometrica/gdal2mbtiles) (for reference only),
+- [How to convert geopdf to geotiff using GDAL](https://opengislab.com/blog/2016/4/2/usgs-geopdf-to-geotif-with-gdal),
+- See also [Making Overlay Maps for OsmAnd on Linux](https://shallowsky.com/blog/mapping/osmand-making-overlay-maps.html).
+
 ## Common Issues
 
 ### OutOfMemoryError issue
