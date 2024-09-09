@@ -8,12 +8,13 @@ import actionCheckCloudTracks from '../actions/actionCheckCloudTracks.mjs';
 import actionCreateNewFolder from '../actions/actionCreateNewFolder.mjs';
 import { deleteTrack, getFiles } from '../util.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
-import { TEST_FOLDERS } from '../options.mjs';
+
+export const UPLOAD_TRACK = 'upload track';
 
 export default async function test() {
     const trackName = 'test-routed-osrm';
     const tracks = getFiles({ folder: 'gpx' });
-    const folder = TEST_FOLDERS[1];
+    const folder = UPLOAD_TRACK;
 
     await actionOpenMap();
     await actionLogIn();

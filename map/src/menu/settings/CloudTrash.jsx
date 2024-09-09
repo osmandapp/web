@@ -61,7 +61,7 @@ export default function CloudTrash({ files, setOpenCloudSettings, filesLoading }
                 <EmptyTrash />
             ) : (
                 <Box
-                    id={'se-cloud_trash-items'}
+                    id={'se-cloud-trash-items'}
                     minWidth={ctx.infoBlockWidth}
                     maxWidth={ctx.infoBlockWidth}
                     sx={{ overflow: 'auto', overflowX: 'hidden' }}

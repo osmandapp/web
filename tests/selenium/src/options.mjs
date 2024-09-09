@@ -7,8 +7,6 @@ import { Options } from 'selenium-webdriver/chrome.js'; // ServiceBuilder for lo
 export const TEST_LOGIN = 'osmand@grr.la';
 export const TEST_PASSWORD = '0xDEADBEEF';
 
-export const TEST_FOLDERS = ['upload-sort', 'upload track'];
-
 export const TIMEOUT_OPTIONAL = 1000; // optional element timeout and driver.implicitlyWait() (1s)
 export let TIMEOUT_REQUIRED = 45 * 1000; // required element timeout (waitBy / clickBy / enclose) (45s)
 export const LONG_TIMEOUT = 300 * 1000; // used with --longtimeout to prolong default TIMEOUT_REQUIRED (300s)

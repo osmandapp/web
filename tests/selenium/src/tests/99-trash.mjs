@@ -7,7 +7,8 @@ import { deleteTrack, getFiles } from '../util.mjs';
 import actionImportCloudTrack from '../actions/actionImportCloudTrack.mjs';
 import { readdirSync } from 'node:fs';
 import actionDeleteFolder from '../actions/actionDeleteFolder.mjs';
-import { TEST_FOLDERS } from '../options.mjs';
+import { UPLOAD_SORT } from './14-sort-tracks.mjs';
+import { UPLOAD_TRACK } from './13-uploud-track-to-cloud.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -29,7 +30,7 @@ export default async function test() {
 
     // restore track
     await openTrash();
-    await waitBy(By.id('se-cloud_trash-items'));
+    await waitBy(By.id('se-cloud-trash-items'));
     await clickBy(By.id(`se-cloud-trash-actions-${trackName}`));
     await waitBy(By.id('se-trash-actions'));
     await clickBy(By.id('se-trash-actions-restore'));
@@ -43,7 +44,7 @@ export default async function test() {
 
     // empty trash
     await openTrash();
-    await waitBy(By.id('se-cloud_trash-items'));
+    await waitBy(By.id('se-cloud-trash-items'));
     await waitBy(By.id('se-empty_trash'));
     await clearTrash();
 
@@ -54,7 +55,7 @@ export default async function test() {
 
     // check trash
     await openTrash();
-    await waitBy(By.id('se-cloud_trash-items'));
+    await waitBy(By.id('se-cloud-trash-items'));
     await waitBy(By.id(`se-cloud-trash-actions-${trackName}`));
 
     // delete trash track
@@ -86,7 +87,9 @@ export default async function test() {
         }
     }
 
-    for (const name of TEST_FOLDERS) {
+    const folders = [UPLOAD_SORT, UPLOAD_TRACK];
+
+    for (const name of folders) {
         let existFolder = await waitBy(By.id(`se-menu-cloud-${name}`), { optional: true, idle: true });
         if (existFolder) {
             await actionDeleteFolder(name);
