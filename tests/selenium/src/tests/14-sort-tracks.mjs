@@ -10,6 +10,7 @@ import actionCreateNewFolder from '../actions/actionCreateNewFolder.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
 import actionDeleteFolder from '../actions/actionDeleteFolder.mjs';
 import actionRenameTrack from '../actions/actionRenameTrack.mjs';
+import { TEST_FOLDERS } from '../options.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -19,7 +20,7 @@ export default async function test() {
     await clickBy(By.id('se-show-menu-tracks'));
 
     const tracks = getFiles({ folder: 'gpx' });
-    const folder = 'uploud-sort';
+    const folder = TEST_FOLDERS[0];
     let trackName = 'test-infoblock-desc';
     const suffix = '-renamed';
 
