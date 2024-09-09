@@ -448,7 +448,7 @@ You can customize the color of profile elements, their icons, and names, as well
 
 - **<Translate android="true" ids="appearance_on_the_map"/>** - 3D icon*. Allows you to select the appearance of the location icon according to your preferences.
 
-  - *<Translate android="true" ids="select_map_icon"/>*. Select a location icon in a non-moving state. (Android) Tap the "All icons" button to open all icons.
+  - *<Translate android="true" ids="select_map_icon"/>*. Select a location icon in a non-moving state. (*Android*) Tap the "All icons" button to open all icons.
 
   <Tabs groupId="operating-systems">
 
@@ -466,7 +466,7 @@ You can customize the color of profile elements, their icons, and names, as well
 
   </Tabs>
 
-  - *<Translate android="true" ids="select_navigation_icon"/>*. Selects the location icon in the state while moving.  (Android) Tap the **All icons** button to open all icons.
+  - *<Translate android="true" ids="select_navigation_icon"/>*. Selects the location icon in the state while moving.  (*Android*) Tap the **All icons** button to open all icons.
   
   <Tabs groupId="operating-systems">
 
@@ -483,12 +483,15 @@ You can customize the color of profile elements, their icons, and names, as well
   </TabItem>
 
   </Tabs>
+
+  - ***Note 1** (Android version): 3D icons are only available for [map rendering Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine), for map rendering [Version 1](../personal/global-settings.md#map-rendering-engine) icons have a 2D view.
+
+  - ***Note 2** Each user can create their own 3D icon and add it to the app. To do this, you need to create a custom 3D model in [MTL and OBJ formats](https://en.wikipedia.org/wiki/Wavefront_.obj_file), to downloand [the Pluging example](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf), and [modify it](../plugins/custom.md). Alternatively, you can copy the custom 3D files to the OsmAnd folder: `..osmand/models/icon_folder_name/custom_3d_file.mtl`, `..osmand/models/icon_folder_name/custom_3d_file.obj`.
   
 - **<Translate android="true" ids="shared_string_options"/>** (*Android only*). Selects as to display the cone-shaped area you're currently facing -  *<Translate android="true" ids="view_angle"/>*, and to show the circular area representing your current location accuracy - *<Translate android="true" ids="location_radius"/>*:  <Translate android="true" ids="shared_string_off"/>, <Translate android="true" ids="resting_position"/>, <Translate android="true" ids="navigation_position"/>, <Translate android="true" ids="resting_navigation_position"/>.  
 
   ![Profile Appearance on the map Android](@site/static/img/personal/profiles/profile_appearance_options_android.png)
 
-- ***Note** (Android version): 3D icons are only available for [map rendering Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine), for map rendering [Version 1](../personal/global-settings.md#map-rendering-engine) icons have a 2D view.
 
 
 ## UI Customization

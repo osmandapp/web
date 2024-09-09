@@ -41,7 +41,7 @@ export default function ChangeEmailDialog({ setChangeEmailFlag }) {
             AccountManager.sendCodeToNewEmail({
                 email: newEmail,
                 action: AccountManager.CHANGE_EMAIL_MSG,
-                setEmailError,
+                setError: setEmailError,
                 lang,
                 code: oldCode,
             }).then((sent) => {
@@ -51,11 +51,13 @@ export default function ChangeEmailDialog({ setChangeEmailFlag }) {
                 }
             });
         } else if (oldCodeConfirmed) {
-            AccountManager.changeEmail({ email: newEmail, token: newCode, setEmailError, lang }).then((changed) => {
-                if (changed) {
-                    setEmailChanged(true);
+            AccountManager.changeEmail({ email: newEmail, token: newCode, setError: setEmailError, lang }).then(
+                (changed) => {
+                    if (changed) {
+                        setEmailChanged(true);
+                    }
                 }
-            });
+            );
         }
     }
 

@@ -60,7 +60,24 @@ i18n.use(translationParsePlugin)
                     if (i18n.options.debug) {
                         console.error('Failed to load translation file', error);
                     }
-                    callback('en');
+                    // Load English as fallback for both translations
+                    return import(`./resources/translations/en/translation.json`)
+                        .then((defaultTranslation) => {
+                            resources['en'] = {
+                                translation: defaultTranslation.default,
+                            };
+
+                            return import(`./resources/translations/en/web-translation.json`).then(
+                                (defaultWebTranslation) => {
+                                    resources['en'].web = defaultWebTranslation.default;
+                                    callback('en');
+                                }
+                            );
+                        })
+                        .catch((error) => {
+                            console.error('Failed to load default English translation files', error);
+                            callback('en');
+                        });
                 });
         },
         init: () => {},

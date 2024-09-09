@@ -20,7 +20,7 @@ import SearchResults from './search/SearchResults';
 import { MenuButton } from './search/MenuButton';
 import { SEARCH_TYPE_CATEGORY } from '../../map/layers/SearchLayer';
 import { CATEGORY_KEY_NAME } from '../../infoblock/components/wpt/WptTagsProvider';
-import EmptyLogin from '../errors/EmptyLogin';
+import EmptyLogin from '../login/EmptyLogin';
 
 export default function SearchMenu() {
     const ctx = useContext(AppContext);

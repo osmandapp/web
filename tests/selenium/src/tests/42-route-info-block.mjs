@@ -31,19 +31,20 @@ const routes = [
     {
         type: 'osmand',
         profile: 'car',
-        A: '47.87383, 35.30130',
-        B: '46.67181, 32.50930',
+        A: '53.84158, 8.73546',
+        B: '55.67320, 12.56426',
         hasAttributes: false,
         strings: [
             'Points: 2',
-            /Car 44\d\.\d\d km/, // was 329.92, now 440/441 km
-            /Route: 44\d\.\d km, 6:\d\d min/, // was 329.9 5:19, now 440.6 6:13
-            '5 / 90 / 170 m', // ele
+            /Car 506.66 km/,
+            /Route: 506.7 km, 5:55 min/,
+            '-1 / 22 / 84 m', // ele
         ],
         turns: [
-            /Go ahead and go 2.[78] km/,
-            'Take 2 exit onto проспект Миру and go 2.7 km',
-            'Keep right (+C,TSLL) onto вулиця Романа Шухевича Н-11 and go 4.7 km',
+            /Go ahead onto B 73 and go 0.0 km/,
+            /Take 4 exit onto B 73 and go 0.8 km/,
+            /Take 3 exit onto Rendsburger Straße and go 6.4 km/,
+            /Turn left onto Bernstorffsgade and go 0.3 km/,
         ],
     },
 ];

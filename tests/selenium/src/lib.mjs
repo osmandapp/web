@@ -380,3 +380,25 @@ export async function assert(condition, message) {
         throw new Error(message || 'Assertion failed');
     }
 }
+
+export async function fillLoginData(login, password) {
+    await enclose(
+        async () => {
+            const input = await waitBy(By.id('username'));
+            await input.sendKeys(login);
+            return true;
+        },
+        { tag: 'login' }
+    );
+
+    await enclose(
+        async () => {
+            const input = await waitBy(By.id('pwd'));
+            await input.sendKeys(password);
+            return true;
+        },
+        { tag: 'password' }
+    );
+
+    await clickBy(By.id('se-submit-login'));
+}

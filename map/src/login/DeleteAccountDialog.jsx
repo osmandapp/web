@@ -6,11 +6,12 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import Dialog from '@mui/material/Dialog';
 import React, { useContext, useEffect, useState } from 'react';
-import AccountManager from '../manager/AccountManager';
+import AccountManager, { sendCode } from '../manager/AccountManager';
 import AppContext from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../manager/GlobalManager';
+import { INIT_LOGIN_STATE } from '../manager/LoginManager';
 
 export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
     const ctx = useContext(AppContext);
@@ -36,9 +37,10 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
         if (ctx.loginUser) {
             return true;
         } else {
-            if (ctx.loginUser !== 'INIT') {
+            if (ctx.loginUser !== INIT_LOGIN_STATE) {
                 ctx.setWantDeleteAcc(true);
-                navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.search + window.location.hash);
+                navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.hash);
+                ctx.setOpenLoginMenu(true);
             }
         }
     }
@@ -46,8 +48,8 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
     useEffect(() => {
         const loggedIn = checkLogin();
         if (loggedIn) {
-            if (ctx.loginUser !== 'INIT') {
-                AccountManager.sendCode({
+            if (ctx.loginUser !== INIT_LOGIN_STATE) {
+                sendCode({
                     email: ctx.loginUser,
                     action: AccountManager.DELETE_EMAIL_MSG,
                     lang,
@@ -67,8 +69,8 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
 
     return (
         ctx.loginUser &&
-        ctx.loginUser !== 'INIT' && (
-            <Dialog open={true} onClose={close}>
+        ctx.loginUser !== INIT_LOGIN_STATE && (
+            <Dialog id="se-delete-account-dialog" open={true} onClose={close}>
                 <Grid container spacing={2}>
                     <Grid item xs={11} sx={{ mb: -3 }}>
                         <DialogTitle>Are you sure you want to do this?</DialogTitle>
@@ -136,7 +138,7 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
                                     AccountManager.deleteAccount({
                                         userEmail,
                                         code,
-                                        setEmailError,
+                                        setError: setEmailError,
                                         setAccountDeleted,
                                         lang,
                                     }).then();

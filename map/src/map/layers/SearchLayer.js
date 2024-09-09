@@ -93,7 +93,7 @@ export default function SearchLayer() {
             const searchData = ctx.searchQuery.search;
             if (ctx.searchQuery.type === SEARCH_TYPE_CATEGORY) {
                 const category = PoiManager.formattingPoiFilter(searchData?.query, true);
-                searchByCategory(category);
+                searchByCategory(category, searchData.key);
                 setSelectedCategory(category);
             } else {
                 if (ctx.searchQuery.latlng) {
@@ -174,6 +174,8 @@ export default function SearchLayer() {
         if (searchLayer) {
             map.removeLayer(searchLayer);
         }
+        //remove old categories
+        ctx.setShowPoiCategories([]);
     }
 
     useEffect(() => {
@@ -318,15 +320,14 @@ export default function SearchLayer() {
         return L.divIcon({ html: iconHtml });
     }
 
-    function searchByCategory(category) {
-        if (!ctx.showPoiCategories.includes(category)) {
-            ctx.showPoiCategories.push(category);
-        }
-        ctx.setShowPoiCategories([...ctx.showPoiCategories]);
+    function searchByCategory(category, key) {
+        const newCategory = { key, category };
+        ctx.setShowPoiCategories([newCategory]);
     }
 
     function removeCategory(category) {
-        const index = ctx.showPoiCategories.indexOf(category);
+        const index = ctx.showPoiCategories.findIndex((item) => item.category === category);
+
         if (index > -1) {
             ctx.showPoiCategories.splice(index, 1);
         }

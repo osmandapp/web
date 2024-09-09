@@ -22,14 +22,14 @@ The Topography plugin is a [paid feature](../purchases/index.md) of the OsmAnd a
 :::
 
 Topography is an important feature of cartography that provides information to visually assess the terrain's relief.
-Topography information like [*Contour lines*](#contour-lines), [*Terrain*](#terrain) (*Hillshade* and *Slope*) and [*3D Relief*](#3d-relief) helps to make a visual assessment of the lay of the land by seeing elevation, relief, extremes, steepness, or points of equal height.
+Topography information like [*Contour lines*](#contour-lines), [*Terrain*](#terrain) (*Hillshade* and *Slope*), and [*3D Relief*](#3d-relief) helps to make a visual assessment of the lay of the land by seeing elevation, relief, extremes, steepness, or points of equal height.
 
 Each feature provided by this plugin is an independent map layer that, when enabled, can be displayed above or below the main map source depending on the [settings](../map/raster-maps.md#overlay-layer).  
 
 The Topography plugin provides access to the following map types:  
 
 - [**Contour lines**](#contour-lines). This is a [vector map](../map/vector-maps.md) represented in [**meters** or **feet**](#contour-lines-meters-or-feet). Contour lines show elevation levels and help visualize the terrain.
-- [**Hillshade**](#hillshade-slope-and-altitude-layers). Types of map with shading of hills and slopes, which makes the relief more visible and helps to visually interpret the terrain.
+- [**Hillshade**](#hillshade-slope-and-altitude-layers). Types of maps with shading of hills and slopes make the relief more visible and help to visually interpret the terrain.
 - [**Slope**](#hillshade-slope-and-altitude-layers). [Raster](../map/raster-maps.md) layer that provides information about the steepness of slopes, which can be important for route planning and safety.
 - [**3D Relief**](#3d-relief). It is a [vector map](../map/vector-maps.md) that provides a three-dimensional representation of the terrain, available only with [OsmAnd Pro subscription](../purchases/index.md).
 
@@ -44,7 +44,7 @@ The Topography plugin provides access to the following map types:
 
 <TabItem value="ios" label="iOS">
 
-![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) 
+![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png)
 
 </TabItem>
 
@@ -59,7 +59,7 @@ For complete information, see the [License](https://github.com/osmandapp/OsmAnd/
 <details><summary>DEM (DSM) data</summary>
    - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. The original data used for this product was supplied by JAXA’s AW3D.<br/>
 	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
-	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummens, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
+	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummins, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
 	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).</details>
 
 
@@ -71,14 +71,14 @@ To display **Contour lines** and **Terrain (Hillshade, Slope)** data on the map:
 2. [*Enable*](../plugins/index.md#enable--disable) Topography plugin in the Plugins section of the Main menu.
 3. [*Download*](#download-maps): Contour lines, Hillshade, Slope, or Terrain map (3D) maps.
 4. *Enable and adjust*: Contour lines, Hillshade, or Slope for the map view.
-5. You can also watch [Youtube Tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
+5. You can also watch [YouTube tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
 
-To display [**3D Relief**](#3d-relief) you need to purchase the *OsmAnd Pro* plan, wich includes Topography plugin.
+To display [**3D Relief**](#3d-relief) you need to purchase the *OsmAnd Pro* plan, including access to the Topography plugin.
 
 
 ## Download Maps
 
-In order to start working with the plugin functionality, you need to download the maps you are interested in. Some maps, for example, Contour Lines mountain maps, may have a large size, more than 2 GB, and may not be supported on outdated devices.
+To start working with the plugin functionality, you need to download the maps you are interested in. Some maps, such as Contour Lines for mountainous regions, can be quite large, exceeding 2 GB, and may not be supported on outdated devices.
 
 For stable work and to save resources, you can download a map not of the entire country, but of its specific regions, if such regions are offered in the application. Information about the size of each map type is listed under their name.
 
@@ -105,7 +105,7 @@ For stable work and to save resources, you can download a map not of the entire 
 
 </Tabs>
 
-You need to download **Terrain map (3D)** maps to display Hillshade / Slope / 3D Relief. After downloading maps, you can display **Contour lines** and/or **Terrain** using the [Configure map](../map/configure-map-menu.md) section of the Main menu.
+You need to download **Terrain map (3D)** maps to display Hillshade, Slope, and 3D Relief. After downloading maps, you can display **Contour lines** and **Terrain** using the [Configure map](../map/configure-map-menu.md) section of the Main menu.
 
 If the map displayed on the screen is not downloaded, then in *Menu → Configure map → Topography section → Terrain* at the bottom of the list of features the section *Download maps* with suggested additional maps will be displayed.
 
@@ -130,7 +130,7 @@ If the map displayed on the screen is not downloaded, then in *Menu → Configur
 
 For [**Contour lines**](#contour-lines), you need to determine in which [units](../personal/profiles.md#units--formats) (meters or feet) they will be displayed on the map and download the appropriate version of the map to your device.
 
-**The unit options are not interchangeable**, so if you need to switch from meters to feet or the reverse, you need to delete the previous version of the Contour Lines map in order to download the other version.
+**The unit options are not interchangeable**, so if you need to switch from meters to feet or the reverse, you are required to uninstall the previous version of the Contour lines map to download the new version.
 
 
 ## Contour Lines
@@ -158,7 +158,7 @@ For [**Contour lines**](#contour-lines), you need to determine in which [units](
 [Contour lines](../map/vector-maps.md#-contour-lines) are a graphical representation of elevations on a map and are available as vector maps. They form lines corresponding to points with the same altitude, which form contours that allow you to determine in which direction and how much the surface slopes. Specific features:
 
 - When you use the [Map rendering engine](../personal/global-settings.md#map-rendering-engine) Version 2 (OpenGL), Contour lines are displayed in both 3D view and 3D relief mode.
-- When you use the Map rendering engine Version 1, if the map source is any tile map from the Internet, Contour line display is not supported.  
+- When you use the Map rendering engine Version 1, if the map source is any tile map from the Internet, displaying Contour lines is not supported.  
 
 **Appearance settings**:
 
@@ -167,7 +167,7 @@ For [**Contour lines**](#contour-lines), you need to determine in which [units](
 - *<Translate android="true" ids="srtm_color_scheme"/>*. Selection of the color by which Сontour lines are displayed on the map.
 - *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Selection of width options for displaying  Contour lines on the map.
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Selection of options for the density of Contour lines displayed on the map: Low, Medium, High. At higher densities, the map is loaded more slowly.
-- *<Translate android="true" ids="maps_and_resources"/>*. Shows Contour line maps for the selected area nearby areas relative to the current map center to be downloaded.  
+- *<Translate android="true" ids="maps_and_resources"/>*. Displays contour line maps for the selected area and nearby regions relative to the current map center, which can be downloaded.  
 
 
 ## Terrain
@@ -211,13 +211,13 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 
 **Slope** determines the surface slope angle based on the elevation data of points on the map. Slope angle calculations are performed considering changes in elevation and distances between points, and representing this change as a slope angle.  
 
-**Altitude**  
+**Altitude** represents the elevation of points on the map relative to sea level. It helps you understand how the terrain changes in height. This feature is particularly useful for activities such as hiking or mountain biking, where knowing the altitude can assist in planning routes and managing physical exertion. Altitude data is derived from elevation models and provides a clear view of high and low points, making it easier to assess the difficulty of a route or identify peaks and valleys along your journey.
 
 **Hillshade**, **Slope**, and **Altitude** raster maps are created based on raster terrain data such as Digital Elevation Models (DEM).
 
 **Usage:**
 
-- *Navigation.* Makes identifying steep slopes, downhill, or uphill easier, which can be important for safe navigation.
+- *Navigation.* Helps identify steep slopes, both downhill and uphill, which can be crucial for safe navigation.
 - *Plan routes.* Helps to choose the most suitable routes, considering the terrain.
 - *Terrain estimation.* It's convenient for visualizing the landscape, especially if you're walking or biking.
 
@@ -230,9 +230,9 @@ The **Terrain** menu includes [color scheme](#default-color-scheme) selection wi
 
 - *Hillshade* uses dark shades to show slopes, peaks, and lowlands. Virtual Sun has a fixed azimuth (direction) of 315 degrees.
 
-- *Slope* uses color to visualize the steepness of the terrain. You can read more about it [here](https://en.wikipedia.org/wiki/Grade_(slope)). Each color corresponds to an angle of deviation from the horizontal. One of additional *slope* color scheme is ***Avalanche***, available in **Modify** menu.
+- *Slope* uses color to visualize the steepness of the terrain. You can read more about it [here](https://en.wikipedia.org/wiki/Grade_(slope)). Each color corresponds to an angle of deviation from the horizontal. An additional *Slope* color scheme, ***Avalanche***, is available in the **Modify** menu.
 
-- *Altitude*. Altitude map colors each pixel according to calculated map height using the gradient from a defined color scheme. Usually altitude schemes are very dependent on location. In mountain areas you would prefer to distribute colors to a wider altitude range and in flat areas, you would select a color scheme that has small range between min/max altitude.
+- *Altitude*. Altitude map colors each pixel according to calculated map height using the gradient from a defined color scheme. Usually, altitude schemes are very dependent on location. In mountain areas you would prefer to distribute colors to a wider altitude range and in flat areas, you would select a color scheme with a small range between min/max altitude.
 
 
 ### Modify Color Scheme
@@ -265,7 +265,7 @@ This Pro feature allows you to select from a predefined list of color schemes or
 | ------ | ------- |
 | ![Visibility ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibility ](../../../blog/2023-08-28-terrain/img/74.png) |
 
-The *Visibility* function is used to adjust the transparency of the shadows for Hillshade and the colors used to represent the angle in the Slope parameter.
+The *Visibility* function is used to adjust the transparency of the shadows for Hillshade and the colors used for representing the angle in the Slope parameter.
 
 ### Zoom Levels
 
@@ -275,9 +275,9 @@ The *Scale Levels* function allows you to set the minimum and maximum values of 
 
 ### Cache Size
 
-**Cache size** is an information section that shows the amount of memory on your device that is used for *Terrain*. Each time you view *Hillshade* or *Slope* information on a map, all of this data is temporarily stored in the cache for quick access and later use, avoiding additional load on your device's processor.  
+**Cache size** is an informational section that displays the amount of memory on your device currently used for *Terrain* data. Each time you view *Hillshade* or *Slope* information on a map, all of this data is temporarily stored in the cache for quick access and later use, avoiding additional load on your device's processor.  
 
-**Clearing the cache** is sometimes necessary to free up space on your device or to troubleshoot possible productivity issues. To clear the cache you need to go to the *System Settings* of the device, then the path can be as follows: *Applications → OsmAnd → Storage → Clear cache*.
+**Clearing the cache** is sometimes necessary to free up space on your device or to resolve potential performance issues. To clear the cache you need to go to the *System Settings* of the device, then the path can be as follows: *Applications → OsmAnd → Storage → Clear cache*.
 
 
 ### Rendering Engine (Android)
@@ -286,7 +286,7 @@ The *Scale Levels* function allows you to set the minimum and maximum values of 
 
 - If you use the *Map rendering engine Version 1*, you need to use the normal [downloading](../start-with/download-maps.md) of Hillshade and Slope raster maps.
 - If you use the *Map rendering engine Version 2 (OpenGL)*:
-    - You can continue to use the normal Hillshade and Slope raster map download type, but you need to activate the [*OsmAnd development plugin*](../plugins/development.md) and enable the [*Use raster SQLIte format for hillshade and slope*](../plugins/development.md#terrain) setting.
+    - You can continue to use the normal Hillshade and Slope raster map download type. However, to do so, you'll need to activate the [*OsmAnd development plugin*](../plugins/development.md) and enable the [*Use raster SQLite format for hillshade and slope*](../plugins/development.md#terrain) setting.
     - Alternatively, you can use the *Terrain Map (3D)* download. This saves memory space on your device, and the Hillshade, Slope, and 3D Relief effects will be generated from them using your device.
 
 
@@ -299,7 +299,7 @@ You can use the *Quick Action* buttons on the map screen to switch the visibilit
 The main settings for *Show or Hide map types* are in the Topography section of the Configure Map menu. In the [Quick Action](../widgets/quick-action.md#configure-map) article, you can find a list of layers available for display. If you need quick access to this map configuration, use the *Custom Button* tool.
 
 - Go to [Add action](../widgets/quick-action.md#custom-buttons): *Menu → Configure screen → Custom buttons → Quick action → Add action → Configure map*.
-- Add one or more QA buttons to change the visibility of particular topography layer.
+- Add one or more QA buttons to change the visibility of a particular topography layer.
 
 
 ## 3D Relief
@@ -396,7 +396,7 @@ Follow the steps below to display 3D Relief on the OsmAnd map:
 
 If you **disable** *Hillshade* and **enable** *3D Relief*, relief shadows will still be visible because *Hillshade* and *3D Relief* are two different ways of visualizing a map. *Hillshade* creates shadows based on the terrain and adds them to the map, while *3D Relief* models 3D elements to show the depth and shape of the terrain, and the shadows are part of the visualization. These features can work in parallel, and disabling *Hillshade* does not affect how 3D effects are displayed.  
 
-When **Hillshade** is **enabled**, an image with relief shadows appears more detailed, darker, and more stepped than a *3D Relief* image. The explanation is that *Hillshade* emphasizes the gradients and contrasts of the terrain, creating a sharper and more detailed image. Whereas *3D Relief* gives the map a more plastic and smooth look, which can soften the terrain and remove some detail.  
+When **Hillshade** is **enabled**, an image with relief shadows appears more detailed, darker, and more stepped than a *3D Relief* image. The explanation is that *Hillshade* emphasizes the gradients and contrasts of the terrain, creating a sharper and more detailed image. The *3D Relief* feature gives the map a more fluid and smoothed appearance, softening the terrain and potentially reducing the visibility of some finer details.
 
 
 ## Combine Layer Types
@@ -417,11 +417,11 @@ When **Hillshade** is **enabled**, an image with relief shadows appears more det
 
 </Tabs>
 
-OsmAnd allows you to combine all three types of map layers: Contour lines, separately or Hillshade or Slope, and 3D Relief.
+OsmAnd allows you to combine multiple types of map layers for a more visual display.
 
-- The combination of **Contour lines** and **Hillshade** is optimal for visual and numerical estimation of mountain slope steepness.
+- The combination of **Contour lines** and **Hillshade** is optimal for visually and numerically estimating mountain slope steepness.
 - The combination of **Contour lines** and **Slope** layers is best for estimating slope steepness and finding points with the same height.
-- The combination of **3D Relief** and **Hillshade** layers allows you to get a more realistic and visual representation of the terrain, its relief, and landscape details. This combination is especially suitable for mountainous and hilly terrain.
+- The combination of **3D Relief** and **Hillshade** layers lets you get a more realistic and visual representation of the terrain, relief, and landscape details. This combination is especially suitable for mountainous and hilly terrain.
 
 
 ## Related Articles

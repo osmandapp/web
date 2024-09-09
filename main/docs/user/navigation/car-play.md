@@ -69,9 +69,10 @@ To use the iOS version of the OsmAnd app in *CarPlay*, you have to purchase a [p
 1. To create a route, you need to choose the [route endpoint](#select-a-route-endpoint) on the *CarPlay screen* or in the [OsmAnd app](../navigation/setup/route-navigation.md).
 2. You can use [voice prompts](#voice-prompts) to listen for directions or messages about issues on the road.  
 3. After you select a location, press **Start** to follow the route.
-4. As you drive, the vehicle screen will display OsmAnd information about your current location on the map, driving directions, distance to the next turn, and arrival time at your destination.
-5. If you want to change your route or select a different location, you can press the appropriate button on the screen.
-6. Once you have completed your route, you can deactivate *CarPlay* by disconnecting the device from your vehicle multimedia system.
+4. As you drive, the vehicle screen will display OsmAnd information about your current location on the map, driving directions, distance to the next turn, lines, arrival time and distance to your destination.
+![CarPlay screen](@site/static/img/navigation/auto-car/car_play_navmode.png)  
+1. If you want to change your route or select a different location, you can press the appropriate button on the screen.
+2. Once you have completed your route, you can deactivate *CarPlay* by disconnecting the device from your vehicle multimedia system.
 
 :::note
 All categories for **route endpoint** selection, *[History](#history), [POIs](#poi-categories), [Markers](#map-markers), [Search](#search), [Favourites](#favorites), and [Tracks](#tracks)* may contain no more list items than your vehicle multimedia system provides. Typically in most vehicles, lists are dynamically limited to 12 or 24 items. This means that the list in *CarPlay* may not be complete. The total number of items and the actual number of items displayed is indicated under the folder name.

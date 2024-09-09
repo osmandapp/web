@@ -11,7 +11,7 @@ import {
     SvgIcon,
     Toolbar,
 } from '@mui/material';
-import { Menu, Person } from '@mui/icons-material';
+import { Menu } from '@mui/icons-material';
 import AppContext, {
     OBJECT_CONFIGURE_MAP,
     OBJECT_EXPLORE,
@@ -54,7 +54,6 @@ import {
     SEARCH_URL,
     FAVORITES_URL,
     INSTALL_BANNER_SIZE,
-    LOGIN_URL,
     MAIN_PAGE_TYPE,
     MAIN_URL_WITH_SLASH,
     MENU_INFO_CLOSE_SIZE,
@@ -68,6 +67,8 @@ import {
 import { createUrlParams } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import SearchMenu from './search/SearchMenu';
+import LoginButton from './login/LoginButton';
+import LoginMenu from './login/LoginMenu';
 
 export default function MainMenu({
     size,
@@ -98,10 +99,6 @@ export default function MainMenu({
     };
 
     const navigate = useNavigate();
-    const openLogin = () => {
-        ctx.setPrevPageUrl({ url: location, active: false });
-        navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.hash);
-    };
 
     useEffect(() => {
         if (!menuInfo) {
@@ -441,7 +438,8 @@ export default function MainMenu({
                             height: showInstallBanner ? `calc(${height}px - ${INSTALL_BANNER_SIZE})` : '100%',
                             overflow: 'hidden',
                             zIndex: openMainMenu ? Z_INDEX_OPEN_LEFT_MENU : Z_INDEX_LEFT_MENU,
-                            borderRight: (!menuInfo || (menuInfo && openMainMenu)) && 'none !important',
+                            borderRight:
+                                ((!menuInfo && !ctx.openLoginMenu) || (menuInfo && openMainMenu)) && 'none !important',
                             boxShadow:
                                 !menuInfo || (menuInfo && openMainMenu)
                                     ? '0px 8px 10px -5px rgba(0,0,0,0.2), 0px 16px 24px 2px rgba(0,0,0,0.14), 0px 6px 10px 5px rgba(0,0,0,0.12);'
@@ -451,69 +449,7 @@ export default function MainMenu({
                     open={openMainMenu}
                 >
                     <Toolbar />
-                    <MenuItem
-                        id={'se-open-login-button'}
-                        key={'Profile'}
-                        sx={{
-                            minHeight: 'var(--profile-menu-button-height)',
-                            maxHeight: 'var(--profile-menu-button-height)',
-                        }}
-                        onClick={openLogin}
-                    >
-                        <ListItemButton
-                            id={ctx.loginUser && ctx.loginUser !== 'INIT' ? 'se-logout-button' : 'se-login-button'}
-                            className={styles.profileButton}
-                            sx={{
-                                justifyContent: openMainMenu ? 'initial' : 'center',
-                            }}
-                        >
-                            <ListItemIcon
-                                sx={{
-                                    justifyContent: 'center',
-                                    ml: openMainMenu ? '-14px' : 0,
-                                }}
-                            >
-                                <Person />
-                            </ListItemIcon>
-                            {openMainMenu && (
-                                <div>
-                                    <ListItemText
-                                        sx={{
-                                            opacity: openMainMenu ? 1 : 0,
-                                            pl: openMainMenu ? 1 : 0,
-                                            fontSize: 14,
-                                            color: '#237bff',
-                                            textTransform: 'none !important',
-                                            '& .MuiTypography-root': {
-                                                fontSize: '14px',
-                                            },
-                                        }}
-                                    >
-                                        {ctx.loginUser && ctx.loginUser !== 'INIT'
-                                            ? t('login_account')
-                                            : t('user_login')}
-                                    </ListItemText>
-                                    {ctx.loginUser && ctx.loginUser !== 'INIT' && (
-                                        <ListItemText
-                                            className={styles.profileLogin}
-                                            sx={{
-                                                opacity: openMainMenu ? 1 : 0,
-                                                pl: openMainMenu ? 1 : 0,
-                                                '& .MuiTypography-root': {
-                                                    fontSize: '14px',
-                                                    textOverflow: 'ellipsis !important',
-                                                    whiteSpace: 'nowrap',
-                                                    overflow: 'hidden !important',
-                                                },
-                                            }}
-                                        >
-                                            {ctx.loginUser}
-                                        </ListItemText>
-                                    )}
-                                </div>
-                            )}
-                        </ListItemButton>
-                    </MenuItem>
+                    <LoginButton openMainMenu={openMainMenu} />
                     <Divider sx={{ my: '0px !important' }} />
                     <div className={styles.menu}>
                         {items.map(
@@ -616,8 +552,9 @@ export default function MainMenu({
                 <Toolbar sx={{ mb: '-3px' }} />
                 {!isOpenSubMenu() && (
                     <>
+                        {ctx.openLoginMenu && <LoginMenu />}
                         {/*add main menu items*/}
-                        {_.isEmpty(ctx.openGroups) && !ctx.openVisibleMenu && <Outlet />}
+                        {_.isEmpty(ctx.openGroups) && !ctx.openVisibleMenu && !ctx.openLoginMenu && <Outlet />}
                         {/*add track groups*/}
                         {ctx.openGroups.length > 0 && getGroup()}
                         {ctx.openVisibleMenu && (

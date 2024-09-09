@@ -164,13 +164,32 @@ export default function PoiLayer() {
         if (!showPoiCategories || showPoiCategories.length === 0) {
             return null;
         }
+        let catArr = [];
+        //add fields for restoring the previous search result
+        let prevSearchRes;
+        let prevSearchCategory;
+
+        showPoiCategories.forEach((obj) => {
+            if (obj.key) {
+                if (!prevSearchRes && !prevSearchCategory) {
+                    prevSearchRes = obj.key;
+                    prevSearchCategory = obj.category;
+                } else {
+                    console.warn('Only one category can be searched at a time');
+                }
+            }
+            catArr.push(obj.category);
+        });
+
         const searchData = {
-            categories: showPoiCategories,
+            categories: catArr,
             northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
             southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
             savedNorthWest: savedBbox ? `${savedBbox.getNorthWest().lat},${savedBbox.getNorthWest().lng}` : null,
             savedSouthEast: savedBbox ? `${savedBbox.getSouthEast().lat},${savedBbox.getSouthEast().lng}` : null,
             prevCategoriesCount: prevCategoriesCount,
+            prevSearchRes: prevSearchRes,
+            prevSearchCategory: prevSearchCategory,
         };
         let response = await apiPost(
             `${process.env.REACT_APP_ROUTING_API_SITE}/routing/search/search-poi`,
@@ -178,6 +197,8 @@ export default function PoiLayer() {
             {
                 params: {
                     locale: i18n.language,
+                    lat: map.getCenter().lat,
+                    lon: map.getCenter().lng,
                 },
                 apiCache: true,
                 signal: controller.signal,
@@ -211,7 +232,16 @@ export default function PoiLayer() {
     }, [map]);
 
     function typesChanged() {
-        return !_.isEmpty(ctx.showPoiCategories) && prevTypesLength !== ctx.showPoiCategories?.length;
+        if (!_.isEmpty(ctx.showPoiCategories)) {
+            if (ctx.searchQuery?.type === SEARCH_TYPE_CATEGORY) {
+                // always clear the old poi list
+                return true;
+            }
+            if (prevTypesLength !== ctx.showPoiCategories?.length) {
+                return true;
+            }
+        }
+        return false;
     }
 
     const debouncedGetPoi = useRef(
