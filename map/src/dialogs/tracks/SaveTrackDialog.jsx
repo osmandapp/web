@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { Dialog } from '@material-ui/core';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import { Alert, Autocomplete, Button, createFilterOptions, LinearProgress, TextField } from '@mui/material';
@@ -9,6 +8,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContentText from '@mui/material/DialogContentText';
 import { prepareFileName } from '../../util/Utils';
 import { saveTrackToCloud } from '../../manager/track/SaveTrackManager';
+import Dialog from '@mui/material/Dialog';
 
 export default function SaveTrackDialog() {
     const ctx = useContext(AppContext);
@@ -33,6 +33,10 @@ export default function SaveTrackDialog() {
         const groupTitles = [];
 
         groups.forEach((group) => {
+            if (group.fullName === DEFAULT_GROUP_NAME) {
+                // skip default folder
+                return;
+            }
             const groupName = parentName ? `${parentName}/${group.name}` : group.name;
             groupTitles.push({ title: groupName });
 
@@ -220,11 +224,20 @@ export default function SaveTrackDialog() {
                                 id="folder"
                                 options={folders}
                                 getOptionLabel={(option) => getFolderName(option)}
-                                renderOption={(props, option) => (
-                                    <li {...props} id={`option-${option.title}`}>
-                                        {option.title}
-                                    </li>
-                                )}
+                                renderOption={(props, option) => {
+                                    if (folders.length > 0 || option.inputValue) {
+                                        if (option.title === '') {
+                                            return null;
+                                        }
+                                        const { key, ...restProps } = props;
+                                        return (
+                                            <li key={key} {...restProps} id={`option-${option.title}`}>
+                                                {option.title}
+                                            </li>
+                                        );
+                                    }
+                                    return null;
+                                }}
                                 freeSolo
                                 renderInput={(params) => (
                                     <TextField
