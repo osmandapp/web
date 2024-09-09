@@ -398,6 +398,10 @@ export default function MainMenu({
             }
         } else if (menu) {
             if (menu.type === OBJECT_TYPE_NAVIGATION_TRACK) {
+                if (ctx.routeObject.getOption('route.map.zoom')) {
+                    // auto navigation from the route (fitBounds)
+                    return;
+                }
                 // special case for Navigation due to lazy-loading providers
                 if (ctx.pageParams[menu.type] !== undefined) {
                     navigate(menu.url + ctx.pageParams[menu.type] + location.hash);
