@@ -17,5 +17,6 @@ export const FAVORITES_URL = 'mydata/favorites/';
 export const NAVIGATE_URL = 'navigate/';
 export const PLANROUTE_URL = 'plan/';
 export const SETTINGS_URL = 'settings/';
+export const OLD_LOGIN_URL = 'dialog-account/';
 export const LOGIN_URL = 'account/';
 export const DELETE_ACCOUNT_URL = 'delete-account/';

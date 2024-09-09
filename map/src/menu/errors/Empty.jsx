@@ -4,7 +4,7 @@ import styles from './errors.module.css';
 import CloudGpxUploader from '../../frame/components/util/CloudGpxUploader';
 import { useContext } from 'react';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
-import EmptyLogin from './EmptyLogin';
+import EmptyLogin from '../login/EmptyLogin';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 
 export default function Empty({ title, text, folder = null, menu = null, checkLogin = true }) {

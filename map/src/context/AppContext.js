@@ -8,7 +8,7 @@ import { apiGet } from '../util/HttpApi';
 import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import { geoObject } from '../store/geoObject/geoObject.js';
 import WeatherManager from '../manager/WeatherManager';
-import { getAccountInfo } from '../manager/LoginManager';
+import { getAccountInfo, INIT_LOGIN_STATE } from '../manager/LoginManager';
 import { cloneDeep, isEmpty } from 'lodash';
 import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
 
@@ -188,7 +188,7 @@ async function checkUserLogin(loginUser, setLoginUser, emailCookie, setEmailCook
         method: 'GET',
     });
     if (response.data) {
-        if (loginUser !== 'INIT') {
+        if (loginUser !== INIT_LOGIN_STATE) {
             await getAccountInfo(setAccountInfo);
         }
         const user = await response.json();
@@ -270,10 +270,14 @@ export const AppContextProvider = (props) => {
     const [localTracksLoading, setLocalTracksLoading] = useState(false);
     // cookie to store email logged in
     const [emailCookie, setEmailCookie] = useCookie('email', '');
-    // server state of login
-    const [loginUser, setLoginUser] = useState('INIT');
+    // login
+    const [loginUser, setLoginUser] = useState(INIT_LOGIN_STATE);
+    const [openLoginMenu, setOpenLoginMenu] = useState(false);
+    const [loginState, setLoginState] = useState({ default: true });
     const [accountInfo, setAccountInfo] = useState(null);
     const [wantDeleteAcc, setWantDeleteAcc] = useState(false);
+    const [loginError, setLoginError] = useState(null);
+    // files
     const [listFiles, setListFiles] = useState({});
     const [gpxFiles, mutateGpxFiles, setGpxFiles] = useMutator({});
     // search
@@ -388,6 +392,14 @@ export const AppContextProvider = (props) => {
     }
 
     useEffect(() => {
+        if (wantDeleteAcc) {
+            setLoginError('Please log in to delete your account.');
+        } else {
+            setLoginError(null);
+        }
+    }, [wantDeleteAcc]);
+
+    useEffect(() => {
         TracksManager.loadTracks(setLocalTracksLoading).then((tracks) => {
             setLocalTracks(tracks);
         });
@@ -447,7 +459,7 @@ export const AppContextProvider = (props) => {
     }, [loginUser]);
 
     useEffect(() => {
-        if (loginUser !== 'INIT') {
+        if (loginUser !== INIT_LOGIN_STATE) {
             setGpxLoading(true);
             loadListFiles(
                 loginUser,
@@ -626,6 +638,12 @@ export const AppContextProvider = (props) => {
                 setProcessingSearch,
                 searchTooltipRef,
                 searchPointerRef,
+                openLoginMenu,
+                setOpenLoginMenu,
+                loginState,
+                setLoginState,
+                loginError,
+                setLoginError,
             }}
         >
             {props.children}

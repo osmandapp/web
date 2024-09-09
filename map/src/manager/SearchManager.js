@@ -1,5 +1,13 @@
 import { apiGet } from '../util/HttpApi';
 import filters from '../resources/wiki_data_filters.json';
+import {
+    MAIN_CATEGORY_KEY_NAME,
+    WEB_POI_ADDITIONAL_CATEGORY,
+    WEB_POI_FILTER_NAME,
+} from '../infoblock/components/wpt/WptTagsProvider';
+import _ from 'lodash';
+import { formattingPoiType } from './PoiManager';
+import { getFirstSubstring } from '../menu/search/search/SearchResultItem';
 
 export const WIKI_IMAGE_BASE_URL = 'https://commons.wikimedia.org/wiki/Special:FilePath/';
 
@@ -174,4 +182,30 @@ export function addWikiPlacesDefaultFilters(ctx, mainSearch = false, selectedFil
         useWikiImages: false,
         showOnMainSearch: mainSearch,
     });
+}
+
+export function getPoiParentCategory(props, t) {
+    let type = props[MAIN_CATEGORY_KEY_NAME]?.toLowerCase();
+    if (type) {
+        type = _.capitalize(formattingPoiType(t(`poi_${type}`)));
+    } else {
+        const filter = props[WEB_POI_FILTER_NAME];
+        const addCategory = props[WEB_POI_ADDITIONAL_CATEGORY];
+        let filterName;
+        let addCategoryName;
+        if (filter) {
+            filterName = _.capitalize(formattingPoiType(t(`poi_${filter}`)));
+            filterName = getFirstSubstring(filterName);
+        }
+        if (addCategory) {
+            addCategoryName = _.capitalize(formattingPoiType(t(`poi_${addCategory}`)));
+            addCategoryName = getFirstSubstring(addCategoryName);
+        }
+        if (filterName) {
+            type = `${filterName}${addCategoryName ? ' (' + addCategoryName + ')' : ''}`;
+        } else {
+            type = `${addCategoryName ? addCategoryName : ''}`;
+        }
+    }
+    return type && type !== 'undefined' && type !== '' ? type : null;
 }
