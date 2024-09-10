@@ -117,7 +117,7 @@ The table below details the features included in both the free and paid packages
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
 | [Export / Import app profile](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
 
-#### ** OsmAnd Live
+#### ** Map updates
 
 [Free](../personal/maps.md#free-for-osm-mappers). Live updates and unlimited map downloads are available for OSM Mappers.
   
@@ -149,7 +149,9 @@ The **Pro** subscription currently has the following features:
 
 Easy way to choose and buy needed plan by **Purchases** menu. Of course, you see proposal menu for paid features.
 
-**OsmAnd Pro** subscription plan. Here you can choose monthly or annual subscription:
+#### OsmAnd Pro Purchase
+
+![Pro](@site/static/img/svg/pro_icon.svg) *OsmAnd Pro* subscription plan. Here you can choose monthly or annual subscription:
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,shared_string_get"/> → Continue with OsmAnd Pro*
 
@@ -159,8 +161,9 @@ or
 
 ![Pro Plan](@site/static/img/purchases/android_subscription_plan.png)
 
+#### Maps+ Purchase
 
-**Maps+** subscription / in-app plan. Here you can choose annual subscription or one-time payment:
+![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  *Maps+* subscription / in-app plan. Here you can choose annual subscription or one-time payment:
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tap the list of Maps+ features → Continue with Maps+*
 
@@ -174,7 +177,7 @@ New subscriptions start with OsmAnd version 4.0 (August 2021). All previous subs
 
 ## Restore Purchases
 
-### Find Your Purchase
+### Find your Purchase
 
 To restore the purchase, please check what OsmAnd plan you bought.
 
@@ -212,6 +215,16 @@ To restore the purchase, please check what OsmAnd plan you bought.
 1. Clear the cache for Google Play (Huawei AppGallery).
 2. Clear the cache for OsmAnd.
 3. Restart the device and try to restore again.
+
+
+<!--
+## Action Guides
+
+- Restore your data after purchases expire.
+- Transfer purchases from Android to iOS or vice versa 
+- One purchase (account) for Android and iOS
+-->
+
 
 ## Giftcards
 
