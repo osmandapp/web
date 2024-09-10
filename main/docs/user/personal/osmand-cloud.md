@@ -26,10 +26,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 OsmAnd Cloud is a cloud storage service that is not associated with the Android or iOS versions of the app, or the Web platform.
 :::
 
-OsmAnd Cloud is the resource you need to save your personal settings and app data. You can use this data on any device available to install the OsmAnd app or when using the desktop app. Any changes you make can be synchronized.     
+OsmAnd Cloud is the resource you need to save your personal settings and app data. You can use this data on any device available to install the OsmAnd app or when using the desktop app. Any changes you make can be synchronized.
 
 
-## Cross-platform
+## Cross-Platform
 
 OsmAnd Cloud provides the ability to backup, restore and utilize data across Android, iOS devices and the [web version](../plan-route/web.md). Cloud's cross-platform capabilities allow you to transfer profile [settings](../personal/profiles.md), [tracks](../personal/tracks/manage-tracks.md), [favorites](../personal/favorites.md), [OSM Edits/Notes](../plugins/osm-editing.md) and more from one device to another. In the web version, you can plan a route and save it for later use on devices connected to OsmAnd Cloud.
 
@@ -67,18 +67,21 @@ OsmAnd Pro is a subscription with all the features of OsmAnd and is **cross-plat
 
 </Tabs>
 
-To be able to back up and restore data, it is necessary to log in.
+To back up and restore data, you must be logged in.
+
 - To access OsmAnd Cloud registration or log in to your account, you need to have a [Pro](#cross-platform) or [OsmAnd Start](#osmand-start) subscription. You can check their status in the OsmAnd app *Menu→ Settings → Purchases*.  
-- **Your Cloud account absolutely needs to be registered on the device where the purchase was made.**
+- **It is absolutely crucial that your Cloud account be registered on the device where the purchase was originally made.**
 - Enter your email address and tap the *Continue* button.  
 - A verification code will then be sent to your email address for confirmation.
-- To sign in to OsmAnd Cloud on other devices, use your Cloud account. 
-- If you have an OsmAnd Pro subscription, access to your OsmAnd Cloud account is available for one more year after your subscription ends.
+- To sign in to OsmAnd Cloud on other devices, use your Cloud account.
+- **Access for one more year after the subscription ends.** If you have an OsmAnd Pro subscription, access to your OsmAnd Cloud account is available for one more year after your subscription ends.
 
 :::tip
 If you have problems with the registration of your account:
+
 - Check if you are registering on the device on which the purchase was made.
 - You need to have an active Internet connection.
+
 :::  
 
 
@@ -90,13 +93,13 @@ If you have problems with the registration of your account:
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases"/>*  
 
-![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_1_andr.png)   ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_2_andr.png) 
+![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_1_andr.png)   ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_2_andr.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS"> 
+<TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases"/>*     
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases"/>*
 
 ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_1_ios.png)   ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_2_ios.png)  
 
@@ -104,7 +107,7 @@ If you have problems with the registration of your account:
 
 </Tabs>  
 
-The special OsmAnd Start plan provides a unique opportunity to use the OsmAnd Cloud functionality absolutely free of charge to store and synchronize your Favorite, Settings, and OpenStreetMap (OSM) edits/notes. You can use this special plan if you have [OsmAnd Free or Maps+](../purchases/index.md).  
+The OsmAnd Start plan offers a unique opportunity to access OsmAnd Cloud functionality completely free, allowing you to store and synchronize your Favorites, Settings, and OpenStreetMap (OSM) edits and notes. You can use this special plan if you have [OsmAnd Free or Maps+](../purchases/index.md).  
 
 The OsmAnd Start plan includes features such as:
 
@@ -132,7 +135,7 @@ The OsmAnd Start plan includes features such as:
 
 </Tabs>
 
-You need to have an OsmAnd Cloud account to use the OsmAnd Start. If you have an account in *OsmAnd Pro* or an active account in OsmAnd Cloud, the subscription plan will not be available to you.   
+You need to have an OsmAnd Cloud account to use the OsmAnd Start. If you have an account in *OsmAnd Pro* or an active account in OsmAnd Cloud, the subscription plan will not be available to you.
 
 To use OsmAnd Start, do the following steps:
 
@@ -142,7 +145,7 @@ To use OsmAnd Start, do the following steps:
 - Create a backup.
 
 
-## Last sync
+## Last Sync
 
 <Tabs groupId="operating-systems">
 
@@ -150,13 +153,13 @@ To use OsmAnd Start, do the following steps:
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/>*  
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_16.png) 
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_16.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS"> 
+<TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/>*     
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/>*
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_8-1.png)  
 
@@ -164,23 +167,41 @@ To use OsmAnd Start, do the following steps:
 
 </Tabs>  
 
-**Last sync** is a drop-down menu that shows how long ago data was last synchronized between this device and the cloud.  
-- *Local changes* - shows the total number of local changes not uploaded to the cloud.
-- *Cloud changes* - the total number of changes uploaded to the cloud from other devices since the last synchronization.
-- *Conflicts* - the total number of inconsistencies between local and cloud changes.
-- *Sync now* - select this option to synchronize all selected data sections in the [settings](#settings) menu that you have changed on this device and in the cloud.  
+**Last sync** is a drop-down menu that shows how long ago data was last synchronized between this device and the cloud.
+
+- *Local changes*. Shows the total number of local changes not uploaded to the cloud.
+- *Cloud changes*. The total number of changes uploaded to the cloud from other devices since the last synchronization.
+- *Conflicts*. The total number of inconsistencies between local and cloud changes.
+- *Sync now*. Select this option to synchronize all selected data sections in the [settings](#settings) menu that you have changed on this device and in the cloud.  
 
 **Sync now** combines the *Upload all* and *Download all* buttons in the Changes menu, in the [Local and Cloud](#local-and-cloud) sections. **Conflicts** are not synchronized in this way.
 
 
-## Trash (Android)
+## Trash
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,help_article_personal_storage_name"/> → Trash*
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,help_article_personal_storage_name,shared_string_trash"/>*
 
 ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_1_andr.png)  ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_2_andr.png)  
 
-The **Trash** feature allows you to view and manage files that have been deleted from OsmAnd Cloud. It is used to prevent accidental deletion of files, and irreversible loss of your data.
-- **View files**. *Trash* contains a list of all previously deleted files from the *Cloud Changes* folder. All files contain information about the date and time they were deleted. . They are grouped by month and sorted in order from the most recently deleted to the oldest files remaining in the Trash.
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_trash"/>*
+
+![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/trash_ios.png) ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/trash_2_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+The **Trash** feature allows you to view and manage files that have been deleted from OsmAnd Cloud. It is designed to prevent accidental deletion of files, and irreversible loss of your data.
+
+- **View files**. *Trash* contains a list of all previously deleted files from the *Cloud Changes* folder. All files contain information about the date and time they were deleted. They are grouped by month and sorted in order from the most recently deleted to the oldest files remaining in the Trash.
 - **Empty Trash**.  
 
     ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_3_andr.png)  
@@ -191,14 +212,12 @@ The **Trash** feature allows you to view and manage files that have been deleted
 
     ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_4_andr.png)  
 
-    - *Restore from Trash*. With this feature, you can restore files to OsmAnd Cloud. After tapping, the selected file is moved from Trash in the *Changes* section to the *Cloud* folder.
-    - *Download to device*. This feature allows you to download a file to the device. If the selected file with the same name is present in the folder, the *File already exists* dialog box is displayed, in which you can select an action option: *Replace* or *Keep Both*.
-    - *Delete immediately*. This feature allows you to permanently delete the selected file without being able to restore it. Be careful when using this feature as the operation is irreversible.
+    - *<Translate ios="true" ids="restore_from_trash"/>*. With this feature, you can restore files to OsmAnd Cloud. After tapping, the selected file is moved from Trash in the *Changes* section to the *Cloud* folder.
+    - *<Translate ios="true" ids="download_to_device"/>*. This feature allows you to download a file to the device. If the selected file with the same name is present in the folder, the *File already exists* dialog box is displayed, in which you can select an action option: *Replace* or *Keep Both*.
+    - *<Translate ios="true" ids="shared_string_delete_immediately"/>*. This feature allows you to permanently delete the selected file without being able to restore it. Be careful when using this feature as the operation is irreversible.
 
 
 ## Settings
-
-This section is for editing and managing your OsmAnd Cloud.  
 
 <Tabs groupId="operating-systems">
 
@@ -210,7 +229,7 @@ This section is for editing and managing your OsmAnd Cloud.
 
 </TabItem>
 
-<TabItem value="ios" label="iOS"> 
+<TabItem value="ios" label="iOS">
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
 
@@ -218,10 +237,12 @@ This section is for editing and managing your OsmAnd Cloud.
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
+
+This section is for editing and managing your OsmAnd Cloud.  
 
 
-### Select data to back up
+### Select Data to Back Up
 
 <Tabs groupId="operating-systems">
 
@@ -229,7 +250,7 @@ This section is for editing and managing your OsmAnd Cloud.
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_3.png) 
+![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_3.png)
 
 </TabItem>
 
@@ -243,16 +264,18 @@ This section is for editing and managing your OsmAnd Cloud.
 
 </Tabs>
 
-In this menu, you can select which data and folders to sent to the Cloud.
+In this menu, you can select which data and folders to upload to the Cloud:
 
-1. *Settings*. This tab contains a list of information about all your personal settings, such as general, for specific profiles, quick actions, POIs, and avoid road.  
-2. *My Places*. This tab contains a list of information about the data in the [My Places menu](../personal/myplaces), such as favorites, tracks, OSM note, markers, and others.
-3. *Resources*. You can choose to back up resources such as favorites, routing, voice prompts, and some others.
+1. **Settings**. This tab includes all your settings, such as general preferences, specific profiles, quick actions, POIs, and road avoidance settings.
+
+2. **My Places**. This tab lists data from the [My Places menu](../personal/myplaces), including favorites, tracks, OSM notes, markers, and other items.
+
+3. **Resources**. Here, you can choose to back up resources such as favorites, routing information, voice prompts, and additional items.
 
 All [maps](../start-with/download-maps.md) are stored on the device on which they were previously downloaded. OsmAnd Cloud only stores information about which maps you have and the date they were last modified.
 
 
-### Manage storage
+### Manage Storage
 
 <Tabs groupId="operating-systems">
 
@@ -264,7 +287,7 @@ All [maps](../start-with/download-maps.md) are stored on the device on which the
 
 </TabItem>
 
-<TabItem value="ios" label="iOS"> 
+<TabItem value="ios" label="iOS">
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,manage_storage"/>*
 
@@ -279,47 +302,12 @@ The **<Translate android="true" ids="backup_version_history"/>** (Android) / **<
 
 ### Account
 
-This section contains information about which of your accounts is connected to OsmAnd Cloud, as well as a logout button. To backup or restore data, you will need to log in again.    
-
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_9-1.png)
 
-
-### Trash
-
-_Trash_ function allows to restore your data from trash.
-
-At first you open the trash files list:
-
-<Tabs groupId="operating-systems">
-
-<TabItem value="android" label="Android"> 
+This section contains information about which of your accounts is connected to OsmAnd Cloud and includes a logout button. To backup or restore data, you will need to log in again.
 
 
-*<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_trash"/>*
-
-![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/trash_android.png) ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/trash_2_android.png) 
-
-</TabItem>
-
-<TabItem value="ios" label="iOS"> 
-
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_trash"/>*
-
-![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/trash_ios.png) ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/trash_2_ios.png) 
-
-</TabItem>
-
-</Tabs>  
-
-You can permanently delete all items in the Trash by clicking to 🗑 button. This action can't be undone.
-
-For each file from _Trash_ menu you can make the next actions:
-- Checking file info: time of file deleted.
-- *<Translate ios="true" ids="restore_from_trash"/>* - allows to restore a selected file.
-- *<Translate ios="true" ids="download_to_device"/>* - allows to download a selected file.
-- *<Translate ios="true" ids="shared_string_delete_immediately"/>* - allos to delete a selected file.
-
-### Deletion option
+### Deletion Option
 
 <Tabs groupId="operating-systems">
 
@@ -331,7 +319,7 @@ For each file from _Trash_ menu you can make the next actions:
 
 </TabItem>
 
-<TabItem value="ios" label="iOS"> 
+<TabItem value="ios" label="iOS">
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_danger_zone"/>*
 
@@ -341,29 +329,31 @@ For each file from _Trash_ menu you can make the next actions:
 
 </Tabs>  
 
-The actions you can do in **Danger zone** section of the Settings menu are irreversible and therefore require special attention.
+The actions you can do in the **Danger zone** section of the Settings menu are irreversible and therefore require special attention.
 
-1. **Delete all my data**. You have the option to delete all data previously uploaded to OsmAnd Cloud, including all version history. However, it is not possible to restore deleted data.
-2. **Remove old versions**. You can delete the change history for previously uploaded data. In this case, the current data version will be saved on the server, but it will not be possible to return to the previous changes.
+1. **Delete all my data**. This option allows you to remove all data previously uploaded to OsmAnd Cloud, including the entire version history. Please note that once deleted, this data cannot be restored.
+
+2. **Remove old versions**. This option enables you to delete the change history for previously uploaded data. The current data version will be preserved on the server, but you will not be able to revert to previous versions.
+
 3. **Delete account**. To delete an account, you need to go through a verification process. A one-time password for confirmation will be sent to your e-mail address registered on OsmAnd Cloud.
     - All data from OsmAnd Cloud will be deleted. Data on the device remains untouched.
     - Your account and all account details will be deleted.
     - Secondary devices will be logged off from OsmAnd Cloud and lose access to paid features.  
 
     ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_deletion_2_andr.png)
- 
 
-## List of changes
+
+## List of Changes
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android"> 
+<TabItem value="android" label="Android">
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_11.png)  
 
 </TabItem>
 
-<TabItem value="ios" label="iOS"> 
+<TabItem value="ios" label="iOS">
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_9-1.png)  
 
@@ -371,12 +361,11 @@ The actions you can do in **Danger zone** section of the Settings menu are irrev
 
 </Tabs>  
 
-In the [Last Sync](#last-sync) section from the drop-down menu, tap any item to go to the Changes section. In this section, three tabs display all the changes available for editing. If the list is empty, it means that there have been no changes since the last synchronization.  
+In the [Last Sync](#last-sync) section from the drop-down menu, tap any item to go to the Changes section. In this section, three tabs display all the changes available for editing. If the list is empty, it indicates that no changes have occurred since the last synchronization.
 
-- Each item in the Changes list contains information about the date and accurate time of the last synchronization, as well as two items for instantly downloading or uploading the relevant version.   
+- Each item in the Changes list contains information about the date and accurate time of the last synchronization. It also includes options for instantly downloading or uploading the corresponding version.
 
 - *Downloading changes from the cloud storage will override local changes*. Accordingly, uploaded local data removes changes in the cloud version.
-
 
 
 ### Local and Cloud
@@ -391,18 +380,18 @@ In the [Last Sync](#last-sync) section from the drop-down menu, tap any item to 
 
 </TabItem>
 
-<TabItem value="ios" label="iOS"> 
+<TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/> / <Translate ios="true" ids="shared_string_cloud"/>* 
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/> / <Translate ios="true" ids="shared_string_cloud"/>*
 
 ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_6.png)  
 
 </TabItem>
 
-</Tabs>   
+</Tabs>
 
-- **Local.** You can synchronize local changes that do not exist in the cloud version all at once using the *Upload All* button. Or you can select any change you need from the list and tap it to select the *Upload local version*.  
-Changes that were uploaded from the Local version to the Cloud are removed from the *Changes → Local tab* after a while.  
+- **Local.** You can synchronize all local changes that are not present in the Cloud at once by using the *Upload All* button. Alternatively, you can select individual changes from the list and tap them to choose *Upload local version*.  
+Changes uploaded from the Local version to the Cloud are automatically removed from the *Changes → Local tab* after a certain period.  
 - **Cloud.** The Cloud tab displays a list of changes that can be downloaded to your device from the cloud storage. You can download all the changes at once using the button at the bottom of the screen, or separately.  
 
 
@@ -418,7 +407,7 @@ Changes that were uploaded from the Local version to the Cloud are removed from 
 
 </TabItem>
 
-<TabItem value="ios" label="iOS"> 
+<TabItem value="ios" label="iOS">
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,cloud_conflicts"/>*
 
@@ -428,16 +417,34 @@ Changes that were uploaded from the Local version to the Cloud are removed from 
 
 </Tabs>  
 
-*Conflicts* occur when the Local version and the version stored in the Cloud do not match. 
-- In this case, you can replace the data in the Cloud with Local changes or download the stored data to the device from the Cloud. 
+*Conflicts* occur when the Local version and the version stored in the Cloud do not match.
+
+- In this case, you can replace the data in the Cloud with Local changes or download the stored data to the device from the Cloud.
 - The resolved conflicts are removed from the list after processing, which usually does not take much time.
 - When you tap the selected file in the Conflicts folder, information about the Local and Cloud versions being synchronized is displayed. This information shows when the file was modified and when it was uploaded.
 - The actions **Upload local version** or **Download cloud version** are available to you.
 
 
+<!--
+## Action Guides
+
+- Restore your data after purchases expire.
+- It is absolutely crucial that your Cloud account be registered on the device where the purchase was originally made.
+- Access for one more year after the subscription ends.
+
+:::tip
+If you have problems with the registration of your account:
+
+- Check if you are registering on the device on which the purchase was made.
+- You need to have an active Internet connection.
+
+:::  
+-->
+
 ## Related Articles
 
-- 
-- 
+- [Android Purchases](../purchases/android.md)
+- [iOS Purchases](../purchases/ios.md)
+- [Maps & Resources](../personal/maps.md)
 
-> *This article was last updated in November 2023*
+> *This article was last updated in September 2024*
