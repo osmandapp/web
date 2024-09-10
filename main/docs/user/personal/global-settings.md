@@ -92,7 +92,7 @@ The [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.m
 
 ![Profiles Storage Settings Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
 
-1. **Device memory** shows how much free space is left on your device. Tap a field to access the [*Maps and Resources*](../personal/maps.md#maps-and-resources) menu, where you can see detailed information about OsmAnd data and be able to manage it.
+1. **Device memory** shows how much free space is left on your device. Tap a field to access the [*Maps and Resources*](../personal/maps-resources.md#maps-and-resources) menu, where you can see detailed information about OsmAnd data and be able to manage it.
 
 2. In the **<Translate android="true" ids="change_data_storage_folder"/>**, you can select a folder to save OsmAnd data on your device.  
 
@@ -114,7 +114,7 @@ New storage access guidelines have been implemented in Android versions 11-12. T
 
 ![General Settings storage iOS](@site/static/img/personal/profiles/general_settings_storage_ios.png)  
 
-OsmAnd files are visible in the [*Files*](https://apps.apple.com/us/app/files/id1232058109) application. You can access all OsmAnd files: [tracks](../personal/tracks/manage-tracks.md), [favorites](../personal/favorites.md), [maps](../personal/maps.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md). To do this follow the following path:  
+OsmAnd files are visible in the [*Files*](https://apps.apple.com/us/app/files/id1232058109) application. You can access all OsmAnd files: [tracks](../personal/tracks/manage-tracks.md), [favorites](../personal/favorites.md), [maps](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md). To do this follow the following path:  
 
 *Files → On My Phone → OsmAnd Maps*
 

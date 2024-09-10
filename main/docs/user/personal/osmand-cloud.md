@@ -445,6 +445,6 @@ If you have problems with the registration of your account:
 
 - [Android Purchases](../purchases/android.md)
 - [iOS Purchases](../purchases/ios.md)
-- [Maps & Resources](../personal/maps.md)
+- [Maps & Resources](../personal/maps-resources.md)
 
 > *This article was last updated in September 2024*

@@ -22,7 +22,7 @@ Uploading maps to the OsmAnd app is a key step to ensure smooth operation and us
 
 You have two *main* ways to download maps: **1)** [view the list of regions in the main menu](#download-maps-menu), or **2)** [select the required region directly on the map](#select-on-the-map). This gives you the flexibility to select the regions you want and ensures that the maps will fit your plans.  
 
-Although OsmAnd supports both [Vector](../map/vector-maps.md) and [Raster](../map/raster-maps.md), it is recommended to start working with vector maps offline. This type of maps (read more about [Map OsmAnd types](../personal/maps.md#map-types) here) ensures reliable operation of all key functions of the application, including [Search](../search/index.md), [Navigation](../navigation/index.md), and [Context menu](../map/map-context-menu.md). This is especially important if your travels include trips to remote locations or places with limited internet access.
+Although OsmAnd supports both [Vector](../map/vector-maps.md) and [Raster](../map/raster-maps.md), it is recommended to start working with vector maps offline. This type of maps (read more about [Map OsmAnd types](../personal/maps-resources.md#map-types) here) ensures reliable operation of all key functions of the application, including [Search](../search/index.md), [Navigation](../navigation/index.md), and [Context menu](../map/map-context-menu.md). This is especially important if your travels include trips to remote locations or places with limited internet access.
 
 
 ## Download 
@@ -100,17 +100,17 @@ If you are using a VPN, OsmAnd can offer you a regional map, giving you the opti
 
 </Tabs>
 
-The [*Maps & Resources*](../personal/maps.md) displays:
-- Downloads section with [all existing OsmAnd map types](../personal/maps.md#map-types).
-- [Local section](../personal/maps.md#local) with all your map data.
-- [Updates section](../personal/maps.md#updates).
+The [*Maps & Resources*](../personal/maps-resources.md) displays:
+- Downloads section with [all existing OsmAnd map types](../personal/maps-resources.md#map-types).
+- [Local section](../personal/maps-resources.md#local) with all your map data.
+- [Updates section](../personal/maps-resources.md#updates).
 
 To download a specific type of map of the country or region you need:
 - First tap the folder with the region, such as Africa, Europe, or other.
 - Tap the one you need in the list of regions that opens.
 - The next screen shows a list of all map types that can be downloaded.
 
-You can find information about other types of maps in the [Downloads](../personal/maps.md#downloads) section of the **Maps** article.
+You can find information about other types of maps in the [Downloads](../personal/maps-resources.md#downloads) section of the **Maps** article.
 
 :::tip NOTE
 OsmAnd has a small world map built in. You do not need to download large maps of any region if you are not going to use them. If you need a map covering the whole planet, including major cities, roads and rivers, you can download the **Detailed World Map**.
@@ -163,6 +163,6 @@ Search makes it easy to find a specific map or region, providing a convenient an
 - To start a search, begin typing the name of a country or region in the search field. A list of map files will start to appear. 
 - In case you don't have the Standard map of some region, there will be a Download icon next to it, if the map is downloaded it will be green, and with a menu, the others will be gray.
 - Tap the name of the required result and the Regionwide map list will open.
-- Select [map types](../personal/maps.md#map-types): *Standart map, Road-only map, Contour lines, Wikipedia*.
+- Select [map types](../personal/maps-resources.md#map-types): *Standart map, Road-only map, Contour lines, Wikipedia*.
 
 > *This article was last updated in May 2024*

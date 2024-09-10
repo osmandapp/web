@@ -198,7 +198,7 @@ Specific features:
 - Only one option can be enabled at the same time, either Hillshade, Slope, or Altitude.
 - If you do not see any changes after downloading and enabling the corresponding map, it is recommended to restart the application.
 
-The **Terrain** menu includes [color scheme](#default-color-scheme) selection with the option to [modify it](#modify-color-scheme) (for [Pro subscribers](../../user/purchases/index.md)), the ability to change the transparency of the layer on the map ([visibility](#visibility)), and select the [zoom level](#zoom-levels) for its display, information about the size of [cached data](#cache-size), and a list of [maps](../../user/personal/maps.md) needed to display the layer.
+The **Terrain** menu includes [color scheme](#default-color-scheme) selection with the option to [modify it](#modify-color-scheme) (for [Pro subscribers](../../user/purchases/index.md)), the ability to change the transparency of the layer on the map ([visibility](#visibility)), and select the [zoom level](#zoom-levels) for its display, information about the size of [cached data](#cache-size), and a list of [maps](../../user/personal/maps-resources.md) needed to display the layer.
 
 
 ## Hillshade, Slope and Altitude Layers

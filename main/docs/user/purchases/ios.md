@@ -59,8 +59,8 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | **Ad-free access** | ✔ | ✔ | ✔ |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
 | [Map downloads](../start-with/download-maps.md) |  <details><summary>**5 map downloads** <br /> (map update counts as download):</summary> <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - **World overview map**, **World altitude correction**, **Map fonts** and **Voice prompts** are not counted as 5 possibilities to download.</details> | ✔ | ✔ |
-| [Monthly map updates](../personal/maps.md#update-maps) |  <details><summary>**Once a month** <br /> (with 2 days delay):</summary> * limited to 5 downloads (map update counts as download) </details> |  ✔ | ✔ |
-| [Hourly map updates](../personal/maps.md#osmand-live)<br/>OsmAnd Live (1 hour delay) - [**](#-map-updates) | **-** | **-**| ✔ |
+| [Monthly map updates](../personal/maps-resources.md#update-maps) |  <details><summary>**Once a month** <br /> (with 2 days delay):</summary> * limited to 5 downloads (map update counts as download) </details> |  ✔ | ✔ |
+| [Hourly map updates](../personal/maps-resources.md#osmand-live)<br/>OsmAnd Live (1 hour delay) - [**](#-map-updates) | **-** | **-**| ✔ |
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Pro Features](#pro-features) | **-** | **-** | ✔ |
 | [3D Relief](../plugins/contour-lines.md#3d-relief) | **-** | **-** | ✔ |
@@ -85,7 +85,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 
 #### ** Map updates
 
-[Free](../personal/maps.md#free-for-osm-mappers). Live updates and unlimited map downloads are available for OSM Mappers.
+[Free](../personal/maps-resources.md#free-for-osm-mappers). Live updates and unlimited map downloads are available for OSM Mappers.
 
 ### Pro Features
 
@@ -99,7 +99,7 @@ At the moment, the Pro subscription has the following features:
 | [Cross-platform](../personal/osmand-cloud.md#cross-platform) | Possibility to use OsmAnd Pro and OsmAnd Start on all platforms (Android ← → iOS → Web). |
 | [3D Relief](../plugins/contour-lines.md#3d-relief) | Allows you to have and observe a scale model of your neighborhood or an entire continent. |
 | [Altitude Widgets - Elevation: Map Center](../widgets/info-widgets.md#elevation-map-center) | Allows you to find out the elevation of the current map center above sea level.  |
-| [OsmAnd Live](../personal/maps.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement. |
+| [OsmAnd Live](../personal/maps-resources.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement. |
 | [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map. |
 | [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changing the color and width of the route line during navigation. |
 

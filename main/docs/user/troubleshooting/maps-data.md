@@ -67,7 +67,7 @@ You have found a good path if after selecting it OsmAnd does NOT complain about 
 
 About this issue of OsmAnd Android version: [Github](https://github.com/osmandapp/OsmAnd/issues/13404)
 
-If _Multiuser Storage 1_ is selected as the storage location, then all [local maps](../personal/maps.md#local-maps) are deleted  all the time when the application is automatically updated 4.1.9 → 4.1.10 → 4.1.11 → 4.2.4 → 4.2.6 **(Android version: 11, 12, )**.
+If _Multiuser Storage 1_ is selected as the storage location, then all [local maps](../personal/maps-resources.md#local-maps) are deleted  all the time when the application is automatically updated 4.1.9 → 4.1.10 → 4.1.11 → 4.2.4 → 4.2.6 **(Android version: 11, 12, )**.
 
 While you need to choose the next ways for saving your map data during the application updates:
 
