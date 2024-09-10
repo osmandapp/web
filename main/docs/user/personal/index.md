@@ -6,7 +6,7 @@ sidebar_position: 1
 
 OsmAnd allows you to store and manage different data such as maps, points, tracks, personal information, and settings of the application profiles.
 
-## [Maps & Recources](./maps.md)
+## [Maps & Recources](./maps-resources.md)
 
 The *Maps & Resources* menu allows you to do basic operations over online and offline maps and data used in OsmAnd such as downloading, removing, renaming, clearing the cache for online maps, updating, and checking map size.
 
