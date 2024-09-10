@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title:  Search
+title:  Web Search
 ---
 
 import Tabs from '@theme/Tabs';

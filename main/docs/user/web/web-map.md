@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Map
+title: Web Map
 ---
 
 import Tabs from '@theme/Tabs';
