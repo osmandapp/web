@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title:  Synchronize with mobile (Cloud)
+title:  Synchronize with Mobile (Cloud)
 ---
 
 import Tabs from '@theme/Tabs';

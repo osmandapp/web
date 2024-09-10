@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title:  Login/Signup
+title:  Login / Signup
 ---
 
 import Tabs from '@theme/Tabs';

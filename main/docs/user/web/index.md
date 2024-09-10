@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title: Web Route planner
+title: Web Route Planner
 ---
 
 import Tabs from '@theme/Tabs';
@@ -21,8 +21,8 @@ In this section you find description of our [Web Map service](https://osmand.net
 
 ## Map
 
-## Plan a route / Navigation
+## Plan Route / Navigation
 
 ## Search
 
-## Synchronize with mobile (Cloud)
+## Synchronize with Mobile (Cloud)

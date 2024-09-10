@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title:  Plan a route / Navigation
+title:  Plan Route / Navigation
 ---
 
 import Tabs from '@theme/Tabs';
