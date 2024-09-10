@@ -25,7 +25,7 @@ This section explains how to log in and sign up on [www.osmand.net/map](https://
 
 This section offers details about additional map data, such as Favorites, personal tracks, and Weather layers.
 
-## [Plan a route / Navigation](./planner.md)
+## [Plan Route / Navigation](./planner.md)
 
 This section provides information on how to plan routes or create navigation using various profiles.
 
@@ -33,6 +33,6 @@ This section provides information on how to plan routes or create navigation usi
 
 This section explains how to find Points of Interest (POIs) from different categories on the map, perform classic searches, and display category icons on the map.
 
-## [Synchronize with mobile (Cloud)](./web-cloud.md)
+## [Synchronize with Mobile (Cloud)](./web-cloud.md)
 
 This section explains how to use OsmAnd Cloud to sync your data between your OsmAnd applications and the web. It covers how to view your cloud data, manage it, and control your account settings.
