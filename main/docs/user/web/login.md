@@ -11,8 +11,10 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 <InfoIncompleteArticle/>
+
 
 
 :::info
@@ -22,59 +24,76 @@ The *[osmand.net/map](https://osmand.net/map/)* site is currently being develope
 We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub so you can leave feedback there.
 :::
 
-The following features are available for users of the Free version of OsmAnd and for users with the [Pro](../purchases/android.md#osmand-pro) version <ProFeature/>:  
+## Overview
+
+The [OsmAnd Map Portal](https://osmand.net/map) is a browser-based service provided by OsmAnd, allowing users to explore maps, manage their data, plan and create trips, or simply browse the map.
+
+The Map Portal can be used without registration; however, some features are exclusively available for OsmAnd Pro and OsmAnd Start users:
 
 Features | Versions
 |--- |--- |
-| [OsmAnd Pro sync](#osmand-pro-sync) | <ProFeature/> |
-| [Weather](#weather) | Free |
-| [Tracks](#weather) | <ProFeature/> |
-| [Favorites](#farorites-pro) | [Osmand Start](https://osmand.net/blog/start) or <ProFeature/> | 
-| [Navigation Route](#navigation-route) | Free |
-| [Create track](#create-track-pro) | Free |   
+| [Navigation Route](./planner.md) | Free |
+| [Create track](./planner.md) | Free |
+| [Weather](./web-map.md) | Free |
+| [Favorites](./web-map.md) | [Osmand Start](https://osmand.net/blog/start) or <ProFeature/> |
+| [OsmAnd Cloud sync](./web-cloud.md) | [Osmand Start](https://osmand.net/blog/start) or <ProFeature/> |
+| [Web Search](./web-search.md)|[Osmand Start](https://osmand.net/blog/start) or <ProFeature/>|
+| [Tracks](./web-map.md) | <ProFeature/> |
 
+## How to start
 
-![View OsmAnd Web](@site/static/img/web/web.png)
+If you have [OsmAnd Pro](../personal/osmand-cloud.md#login) account or want to create [OsmAnd Start](../personal/osmand-cloud.md#osmand-start) account you need to do next steps:
+- Go to the [OsmAnd Map Portal](https://osmand.net/map),
+- Open _Account_ menu 
+  - Log in (enter the email you used to create your account (Pro or Start))
+  - Create account (OsmAnd Start)
 
+## How to change language
 
-## OsmAnd Pro and OsmAnd Start sync
+If you want to change the display languge:
 
-- **OsmAnd Pro** is a [cross-platform](../troubleshooting/setup.md#cross-platform) paid subscription. 
-- **OsmAnd Start** is a [free OsmAnd Cloud registration](https://osmand.net/blog/start).
+- The Web version of OsmAnd uses the language from the browser settings.  
+- For Chrome, the priority is `chrome://settings/languages`.  
+- You can change the system (menu) language manually by selecting  
+    *Menu →* ⚙ *→ Turn off language*.
 
-The cross-platform capability allows you to use OsmAnd Pro on all platforms *([Android](../purchases/android.md)  ← →  [iOS](../purchases/ios.md)  →  [Web](https://www.osmand.net/map))*. To do this you need to:
+## Work with Account menu
 
-1. Subscribe to _OsmAnd Pro_. Read more about how to do this for [Android here](../purchases/android.md#how-to-buy), and for [iOS here](../purchases/ios.md#how-to-buy).
-2. How to create _OsmAnd Start_ account read more [here](https://osmand.net/blog/start#how-to-create-an-account).
-3. Register your [Pro or Start account](../troubleshooting/setup.md#cross-platform) on the OsmAnd server inside OsmAnd app.
-4. The registered email will be your login to activate OsmAnd Pro on the web platform. At first, time needed to choose a password for future entering the web portal (please, use the instruction on the web portal).
+After registering on the web, users can access their account information, download backups, log out, delete their account, or change their email address.
 
-- Enter your *email* and *password* for [osmand.net/map](https://osmand.net/map/).   
+_General Menu → Account_
 
-![View OsmAnd Web activation](@site/static/img/web/web_pro_activation.png)  
+## URL schemes
 
-- Your data, such as tracks (OsmAnd Pro) and favorites(OsmAnd Pro and OsmAnd Start), will appear in the menu after you log in. They are available for display on the map. But you need [to sync this data](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) from your devices.
+For easy use of the OsmAnd application you can take advantage of direct links. These are special URLs that allow you to transfer location and contain detailed data about pins and tracks.  
 
-![View OsmAnd Web data](@site/static/img/web/web_data.png)  
+These address strings can be copied and transferred using any data transfer medium supported by your device and used in the Android or iOS versions of OsmAnd.  
 
-- To *DOWNLOAD BACKUP* from [OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud), click the login field. On the login field you can see files info (total files number, total files size, cloud storage used) and account info (subscription type, start time and expire time of your subscription).
+1. **URL with a pin on the map:**
 
-![View OsmAnd Web backup file](@site/static/img/web/web_backup_file.png)  
+  https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
 
-Choose needed files for downloading, ZIP or OSF format of downloaded files and click *DOWNLOAD BACKUP* button:
+  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_pin.png)
 
-![View OsmAnd Web backup file](@site/static/img/web/web_backup_file_1.png)  
+2. **URL without a pin on the map:**
 
-There is also a button to *logout* of the account.  
+  https://osmand.net/map/#9/52.3924/6.3116
 
-- _LOGOUT_, _DELETE YOUR ACCOUNT_ or _Change email_ you find on the login field too. For opening _DELETE YOUR ACCOUNT_ or _Change email_ you need to click _Dangerous area_.
+  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_without.png)
 
-![View OsmAnd Web backup file](@site/static/img/web/web_backup_file_2.png)  
+3. **URL with navigation:**
 
+  https://osmand.net/map/?start=52.236210,5.119629&finish=52.412472,4.855957&type=osmand&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570
 
-## Related Articles
+  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_track.png)
 
-- [Import / Export](../personal/import-export.md)
-- [Color Palette Schemes](../personal/color-palette-schemes.md)
+Depending on the specified parameters, URL strings may contain:
+
+- **latitude:** latitude value as a number.  
+- **longitude:** longitude value as a number.  
+- **start-finish:** for navigation.
+- **profile:** for navigation.
+- **zoom:** zoom level.
+
 
 > *This article was last updated in September 2024*
