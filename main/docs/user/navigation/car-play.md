@@ -278,7 +278,7 @@ Sometimes *CarPlay* doesn't connect, or you just can't hear anything even though
 
 ## Related Articles
 
-- [Profiles (Settings)](./profiles.md)
+- [Profiles (Settings)](../personal/profiles.md)
 - [Import / Export](../personal/import-export.md)
 
 > *This article was last updated in June 2024*
