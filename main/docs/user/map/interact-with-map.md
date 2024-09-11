@@ -58,12 +58,12 @@ The *My Location* button is a circular icon that indicates whether the map's cen
 - Changing the zoom level does not affect the map's synchronization with your location.
 - **Long tap** *Zoom buttons* opens *Map magnifier* dialog,allowing you to adjust map detail levels.
 - Keep in mind that during navigation, the zoom can be controlled automatically by the **Auto zoom** setting:
-   - **<Translate android="true" ids="android_button_seq"/>:**&nbsp; *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>*  
-   - **<Translate ios="true" ids="ios_button_seq"/>:**&nbsp; *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>*  
+   - *<Translate android="true" ids="android_button_seq"/>:*&nbsp; *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>*  
+   - *<Translate ios="true" ids="ios_button_seq"/>:*&nbsp; *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>*  
 
 ### My Location Appearance
 
-You can modify icons of **My Location**, read more about it [here](../personal/profiles.md#profile-appearance).
+You can customize **My Location** button icons using Profile appearance settings. Read more about how to do this [here](../personal/profiles.md#profile-appearance).
 
 
 ## Map Magnifier
@@ -286,7 +286,7 @@ If you want to assign keys for an external input device (such as a keyboard, joy
 
 ![External devices](@site/static/img/map/external_custom_4_andr.png)  ![External devices](@site/static/img/map/external_custom_3_andr.png)
 
-After you have created a custom input type, you can assign the required actions to the keys. A big variety of [action types](../widgets/quick-action.md#action-types) from the Quick Action widget is available.
+After you have created a custom input type, you can assign the required actions to the keys. A wide range of [action types](../widgets/quick-action.md#action-types) from the Quick Action widget is available.
 
 - Select a device type, then tap the **Key assignments** item.
 - Tap the ***Add*** button (&nbsp;"**＋**"&nbsp;) in the bottom right corner of the screen.
@@ -295,7 +295,7 @@ After you have created a custom input type, you can assign the required actions 
 :::note
 
 - If the button you assign is already being used for another action, you will receive a notification with the option to reassign the button or cancel the assignment.
-- Later you can change actions and key assignments or add other key assignments for already created actions, just select an item in the Key assignments list.
+- Later you can change actions and key assignments or add other ones for already created actions, just select an item in the Key assignments list.
 
 :::
 
@@ -321,4 +321,4 @@ You can delete multiple unnecessary actions using the **Edit button** (*pencil-s
 - [Public transport](./public-transport.md)
 
 
-> *This article was last updated in August 2024*
+> *This article was last updated in September 2024*
