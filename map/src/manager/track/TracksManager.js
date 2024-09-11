@@ -448,6 +448,25 @@ export async function getGpxFileFromTrackData(file) {
     });
 }
 
+export const downloadGpx = async (track) => {
+    const urlFile = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
+    const qs = `?type=${encodeURIComponent(track.type)}&name=${encodeURIComponent(track.name)}`;
+    const oneGpxFile = {
+        url: urlFile + qs,
+        clienttimems: track.clienttimems,
+        updatetimems: track.updatetimems,
+        name: track.name,
+        type: 'GPX',
+    };
+    const data = await Utils.getFileData(oneGpxFile);
+    if (data) {
+        const url = document.createElement('a');
+        url.href = URL.createObjectURL(new Blob([data]));
+        url.download = `${TracksManager.prepareName(track.name)}.gpx`;
+        url.click();
+    }
+};
+
 export function updateMetadata({ file, name = null }) {
     if (!file.metaData) {
         file.metaData = {};

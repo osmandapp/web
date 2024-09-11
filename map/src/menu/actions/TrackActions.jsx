@@ -9,8 +9,7 @@ import { ReactComponent as DuplicateIcon } from '../../assets/icons/ic_action_co
 import { ReactComponent as MakeTrackVisible } from '../../assets/icons/ic_action_show_outlined.svg';
 import { ReactComponent as HideTrackVisible } from '../../assets/icons/ic_action_hide_outlined.svg';
 import DeleteTrackDialog from '../../dialogs/tracks/DeleteTrackDialog';
-import Utils from '../../util/Utils';
-import TracksManager from '../../manager/track/TracksManager';
+import TracksManager, { downloadGpx } from '../../manager/track/TracksManager';
 import RenameDialog from '../../dialogs/tracks/RenameDialog';
 import AppContext from '../../context/AppContext';
 import { duplicateTrack } from '../../manager/track/SaveTrackManager';
@@ -22,25 +21,6 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setZoomToTrack, setOp
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const [openRenameDialog, setOpenRenameDialog] = useState(false);
     const { t } = useTranslation();
-
-    const downloadGpx = async () => {
-        const urlFile = `${process.env.REACT_APP_USER_API_SITE}/mapapi/download-file`;
-        const qs = `?type=${encodeURIComponent(track.type)}&name=${encodeURIComponent(track.name)}`;
-        const oneGpxFile = {
-            url: urlFile + qs,
-            clienttimems: track.clienttimems,
-            updatetimems: track.updatetimems,
-            name: track.name,
-            type: 'GPX',
-        };
-        const data = await Utils.getFileData(oneGpxFile);
-        if (data) {
-            const url = document.createElement('a');
-            url.href = URL.createObjectURL(new Blob([data]));
-            url.download = `${TracksManager.prepareName(track.name)}.gpx`;
-            url.click();
-        }
-    };
 
     async function createDuplicateTrack() {
         const parts = track.name.split('/');
@@ -154,7 +134,7 @@ const TrackActions = forwardRef(({ track, setDisplayTrack, setZoomToTrack, setOp
                     <MenuItem
                         className={styles.action}
                         onClick={() => {
-                            downloadGpx().then();
+                            downloadGpx(track).then();
                             setOpenActions(false);
                         }}
                     >
