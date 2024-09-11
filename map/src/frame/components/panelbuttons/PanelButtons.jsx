@@ -13,13 +13,13 @@ import SaveTrackDialog from '../../../dialogs/tracks/SaveTrackDialog';
 import DeleteTrackDialog from '../../../dialogs/tracks/DeleteTrackDialog';
 import DeleteWptDialog from '../../../dialogs/favorites/DeleteWptDialog';
 import _ from 'lodash';
-import TracksManager, { isEmptyTrack } from '../../../manager/track/TracksManager';
+import TracksManager, { downloadGpx, isEmptyTrack } from '../../../manager/track/TracksManager';
 import useUndoRedo from '../../../infoblock/useUndoRedo';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
-import { downloadGpx } from '../../../infoblock/components/tabs/GeneralInfoTab';
 import RouteIcon from '@mui/icons-material/Route';
 import { FREE_ACCOUNT } from '../../../manager/LoginManager';
 import RouteProfileSettings from '../../../menu/route/RouteProfileSettings';
+import { downloadCurrentGpx } from '../../../infoblock/components/tabs/GeneralInfoTab';
 
 const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clearState, bsize }) => {
     const ctx = useContext(AppContext);
@@ -258,7 +258,13 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
                                         variant="contained"
                                         type="button"
                                         disabled={isEmptyTrack(ctx.selectedGpxFile)}
-                                        onClick={() => downloadGpx(ctx)}
+                                        onClick={() => {
+                                            if (isLocalTrack(ctx)) {
+                                                downloadCurrentGpx(ctx);
+                                            } else {
+                                                downloadGpx(ctx.selectedGpxFile);
+                                            }
+                                        }}
                                     >
                                         <Download fontSize="small" />
                                     </IconButton>
