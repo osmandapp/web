@@ -9,10 +9,12 @@ import actionCreateNewFolder from '../actions/actionCreateNewFolder.mjs';
 import { deleteTrack, getFiles } from '../util.mjs';
 import actionIdleWait from '../actions/actionIdleWait.mjs';
 
+export const UPLOAD_TRACK = 'upload track';
+
 export default async function test() {
     const trackName = 'test-routed-osrm';
     const tracks = getFiles({ folder: 'gpx' });
-    const folder = 'uploud track';
+    const folder = UPLOAD_TRACK;
 
     await actionOpenMap();
     await actionLogIn();

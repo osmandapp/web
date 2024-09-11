@@ -94,15 +94,15 @@ The table below details the features included in both the free and paid packages
 | [3D Relief](../plugins/contour-lines.md#3d-relief) | **-** | **-** | ✔ |
 | [Pro Features](#pro-features) | **-** | **-** | ✔ |
 | [Unlimited map downloads](../start-with/download-maps.md) | <details><summary>**7 map downloads**</summary>  - Map download or update is meant only download-update of a country (region) map. <br/> - **World overview map**, **World altitude correction**, **Map fonts** and **Voice prompts** are not counted as 7 possibilities to download. </details> | ✔ | ✔ |
-| [Monthly map updates](../personal/maps.md#update-maps)<br/>Once a month (with 2 days delay) | <details><summary>**7 map downloads**</summary> Map update counts as download.</details> | ✔ | ✔ |
-| [Hourly map updates](../personal/maps.md#osmand-live)<br/>OsmAnd Live (1 hour delay) - [**](#-osmand-live) | **-** | **-** | ✔ |
+| [Monthly map updates](../personal/maps-resources.md#update-maps)<br/>Once a month (with 2 days delay) | <details><summary>**7 map downloads**</summary> Map update counts as download.</details> | ✔ | ✔ |
+| [Hourly map updates](../personal/maps-resources.md#osmand-live)<br/>OsmAnd Live (1 hour delay) - [**](#-osmand-live) | **-** | **-** | ✔ |
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [External sensors support](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Topography data](../plugins/contour-lines.md#setup)<br/>(Contour lines and Terrain) | **-** | ✔ | ✔ |
 | [3D track visualization](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Nautical depths](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Offline Wikipedia](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
-| [Offline Wikivoyage - Travel guides](../plan-route/travel**-**guides.md)| **-** | ✔ | ✔ |
+| [Offline Wikivoyage - Travel guides](../plan-route/travel-guides.md)| **-** | ✔ | ✔ |
 | [Offline and online navigation](../navigation/index.md)<br/>with turn-by-turn directions | ✔ | ✔ | ✔ |
 | [Offline instant search](../search/index.md) | ✔ | ✔ | ✔ |
 | [Trip recording](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -117,9 +117,9 @@ The table below details the features included in both the free and paid packages
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
 | [Export / Import app profile](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
 
-#### ** OsmAnd Live
+#### ** Map updates
 
-[Free](../personal/maps.md#free-for-osm-mappers). Live updates and unlimited map downloads are available for OSM Mappers.
+[Free](../personal/maps-resources.md#free-for-osm-mappers). Live updates and unlimited map downloads are available for OSM Mappers.
   
 #### *** Android Auto
 
@@ -137,7 +137,7 @@ The **Pro** subscription currently has the following features:
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Backup and restore your data, synchronize data with [OsmAnd web portal](https://www.osmand.net/map). |
 | [Cross-platform](../personal/osmand-cloud.md#cross-platform) | Possibility to use OsmAnd Pro and OsmAnd Start on all platforms (Android *←→* iOS *→* Web).  |
 | [3D Relief](../plugins/contour-lines.md#3d-relief) | Allows you to have and observe a scale model of your neighborhood or an entire continent. |
-| [OsmAnd Live](../personal/maps.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement. |
+| [OsmAnd Live](../personal/maps-resources.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement. |
 | [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map. |
 | [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changing the color and width of the route line during navigation. |
 | [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | Shows your location on the Elevation graph of the navigation route with additional info.  |
@@ -149,7 +149,9 @@ The **Pro** subscription currently has the following features:
 
 Easy way to choose and buy needed plan by **Purchases** menu. Of course, you see proposal menu for paid features.
 
-**OsmAnd Pro** subscription plan. Here you can choose monthly or annual subscription:
+#### OsmAnd Pro Purchase
+
+![Pro](@site/static/img/svg/pro_icon.svg) *OsmAnd Pro* subscription plan. Here you can choose monthly or annual subscription:
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,backup_and_restore,shared_string_get"/> → Continue with OsmAnd Pro*
 
@@ -159,8 +161,9 @@ or
 
 ![Pro Plan](@site/static/img/purchases/android_subscription_plan.png)
 
+#### Maps+ Purchase
 
-**Maps+** subscription / in-app plan. Here you can choose annual subscription or one-time payment:
+![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  *Maps+* subscription / in-app plan. Here you can choose annual subscription or one-time payment:
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tap the list of Maps+ features → Continue with Maps+*
 
@@ -174,7 +177,7 @@ New subscriptions start with OsmAnd version 4.0 (August 2021). All previous subs
 
 ## Restore Purchases
 
-### Find Your Purchase
+### Find your Purchase
 
 To restore the purchase, please check what OsmAnd plan you bought.
 
@@ -212,6 +215,16 @@ To restore the purchase, please check what OsmAnd plan you bought.
 1. Clear the cache for Google Play (Huawei AppGallery).
 2. Clear the cache for OsmAnd.
 3. Restart the device and try to restore again.
+
+
+<!--
+## Action Guides
+
+- Restore your data after purchases expire.
+- Transfer purchases from Android to iOS or vice versa 
+- One purchase (account) for Android and iOS
+-->
+
 
 ## Giftcards
 

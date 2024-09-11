@@ -23,7 +23,7 @@ The Wikipedia plugin is a paid feature of the OsmAnd app.
 
 Having Wikipedia on your trip helps you learn more about the places you visit. It is available offline and shows Wikipedia articles in relation to the points of interest right on the map.  
 
-The Wikipedia plugin is a separate feature that can be enabled/disabled as needed. Once enabled, it allows you to upload Wikipedia data [downloaded](../personal/maps.md#download-maps-maps) for each geographical region. The map has two kinds of uploaded knowledge from Wikipedia: a brief information and a full article.  
+The Wikipedia plugin is a separate feature that can be enabled/disabled as needed. Once enabled, it allows you to upload Wikipedia data [downloaded](../personal/maps-resources.md#download-maps-maps) for each geographical region. The map has two kinds of uploaded knowledge from Wikipedia: a brief information and a full article.  
 
 
 Brief information is provided by Wikipedia POIs (an abbreviation for "[point of interest](../map/point-layers-on-map.md)"). If the Wikipedia option is toggled on in the menu, a Wikipedia POI appears on the map. When you tap a point of interest, it expands to provide brief information from Wikipedia, as well as the ability to open a full article. The Wikipedia POI, as well as related articles, are available offline. You can read them as needed, switch languages, and search for other information on Wikipedia.  

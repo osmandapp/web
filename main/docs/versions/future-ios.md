@@ -134,7 +134,7 @@ TXT file named *height_altitude_0-200.txt*
 ```
 After moving this TXT file to *..Android/data/net.osmand/files/color-palete/height_altitude_0-200.txt*, a new palette will appear in the Color Scheme menu.  
 
-Color palettes data is available in the [_Maps & Resources_](../user/personal/maps.md#local) menu.
+Color palettes data is available in the [_Maps & Resources_](../user/personal/maps-resources.md#local) menu.
 
 _Menu → Maps & Resources → Local → Colors_
 

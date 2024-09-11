@@ -25,7 +25,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Color schemes are used in variety areas of application such as **Route colorization**, **Map terrain**, **Weather map**. Represented as a separate entity, it could be exported, imported and edited, so you could change a color scheme and change data visualization on the map.
 
-Color palette data is available in the [*Maps & Resources*](../personal/maps.md#local) menu.
+Color palette data is available in the [*Maps & Resources*](../personal/maps-resources.md#local) menu.
 
 <Tabs groupId="operating-systems">
 

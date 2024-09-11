@@ -110,7 +110,7 @@ export async function saveTrackToCloud({
                 // re-download gpx
                 const downloadFile = { ...currentFile, ...params };
                 if (open) {
-                    downloadAfterUpload(ctx, downloadFile, trackData.showOnMap).then();
+                    downloadAfterUpload(ctx, downloadFile, true).then();
                 }
                 TracksManager.deleteLocalTrack(ctx);
                 refreshGlobalFiles({ ctx, currentFileName: params.name }).then();

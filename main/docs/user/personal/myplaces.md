@@ -43,8 +43,8 @@ My Places is the central hub of the OsmAnd application for managing and customiz
 All data stored in the *My Places* menu can be moved using a special OSF format through applications on your device. This process simplifies saving and transferring data between devices and allows you to share it with other OsmAnd users.  
 **Go to** *<Translate android="true" ids="shared_string_menu,shared_string_settings"/>* section and select whether to export or import data. If you select *export*, you will need to expand *My Places group* and check the required data.
 
-[***Maps & Resources***](../personal/maps.md).  
-*Maps & Resources* main menu item of the OsmAnd application provides access to data management from the *My Places* section. The [*Local*](../personal/maps.md#local) tab shows you how much space is occupied by all existing OsmAnd data on your device, and the *My Places* section is in particular. You can use it to get detailed information about your data and access to manage it. The section can only contain items for which data has been downloaded.  
+[***Maps & Resources***](../personal/maps-resources.md).  
+*Maps & Resources* main menu item of the OsmAnd application provides access to data management from the *My Places* section. The [*Local*](../personal/maps-resources.md#local) tab shows you how much space is occupied by all existing OsmAnd data on your device, and the *My Places* section is in particular. You can use it to get detailed information about your data and access to manage it. The section can only contain items for which data has been downloaded.  
 **Go to** *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*. Check and manage your data.
 
 

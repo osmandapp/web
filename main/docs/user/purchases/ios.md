@@ -17,7 +17,7 @@ import Translate from '@site/src/components/Translate.js';
 You can download the app via this link - [OsmAnd Maps on Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 
-## Difference between purchases
+## Difference Between Purchases
 
 #### Maps+
 
@@ -51,7 +51,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | **Price (EUR)** | 0€ | 39.99€  |  9.99€   |  2.99€ / 29.99€   |
 | **Price (USD)** | 0$ | 39.99$  |  9.99$   |  2.99$ / 29.99$   |
 
-### Free and Paid features
+### Free and Paid Features
 
 |  | OsmAnd Free | [OsmAnd Maps+](#maps)<br/>(in&#8209;app & subscription) | [OsmAnd Pro](#osmand-pro) |
 | :------ | :------------- | :------------------ | :------------------ |
@@ -59,8 +59,8 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | **Ad-free access** | ✔ | ✔ | ✔ |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
 | [Map downloads](../start-with/download-maps.md) |  <details><summary>**5 map downloads** <br /> (map update counts as download):</summary> <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - **World overview map**, **World altitude correction**, **Map fonts** and **Voice prompts** are not counted as 5 possibilities to download.</details> | ✔ | ✔ |
-| [Monthly map updates](../personal/maps.md#update-maps) |  <details><summary>**Once a month** <br /> (with 2 days delay):</summary> * limited to 5 downloads (map update counts as download) </details> |  ✔ | ✔ |
-| [Hourly map updates](../personal/maps.md#osmand-live)<br/>OsmAnd Live (1 hour delay) - [**](#-osmand-live) | **-** | **-**| ✔ |
+| [Monthly map updates](../personal/maps-resources.md#update-maps) |  <details><summary>**Once a month** <br /> (with 2 days delay):</summary> * limited to 5 downloads (map update counts as download) </details> |  ✔ | ✔ |
+| [Hourly map updates](../personal/maps-resources.md#osmand-live)<br/>OsmAnd Live (1 hour delay) - [**](#-map-updates) | **-** | **-**| ✔ |
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Pro Features](#pro-features) | **-** | **-** | ✔ |
 | [3D Relief](../plugins/contour-lines.md#3d-relief) | **-** | **-** | ✔ |
@@ -83,9 +83,9 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
 | [Export/import app profile](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
 
-#### ** OsmAnd Live
+#### ** Map updates
 
-[Free](../personal/maps.md#free-for-osm-mappers). Live updates and unlimited map downloads are available for OSM Mappers.
+[Free](../personal/maps-resources.md#free-for-osm-mappers). Live updates and unlimited map downloads are available for OSM Mappers.
 
 ### Pro Features
 
@@ -99,7 +99,7 @@ At the moment, the Pro subscription has the following features:
 | [Cross-platform](../personal/osmand-cloud.md#cross-platform) | Possibility to use OsmAnd Pro and OsmAnd Start on all platforms (Android ← → iOS → Web). |
 | [3D Relief](../plugins/contour-lines.md#3d-relief) | Allows you to have and observe a scale model of your neighborhood or an entire continent. |
 | [Altitude Widgets - Elevation: Map Center](../widgets/info-widgets.md#elevation-map-center) | Allows you to find out the elevation of the current map center above sea level.  |
-| [OsmAnd Live](../personal/maps.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement. |
+| [OsmAnd Live](../personal/maps-resources.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement. |
 | [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map. |
 | [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changing the color and width of the route line during navigation. |
 
@@ -108,7 +108,7 @@ At the moment, the Pro subscription has the following features:
 
 Easy way to choose and buy needed plan by **Purchases** menu. Of course, you see proposal menu for paid features.
 
-#### OsmAnd Pro
+#### OsmAnd Pro Purchase
 
 ![Pro](@site/static/img/svg/pro_icon.svg) *OsmAnd Pro* subscription plan. Here you can choose [monthly or annual subscription](#prices):
 
@@ -120,7 +120,7 @@ or
 
 ![Pro Plan](@site/static/img/purchases/pro.png)
 
-#### Maps+
+#### Maps+ Purchase
 
 ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) *Maps+* subscription / in-app plan. Here you can choose [annual subscription](#prices) or [one-time payment](#prices):
 
@@ -152,6 +152,16 @@ Use the same Apple ID to restore your purchases.
 1. Clear the cache for App Store.
 2. Clear the cache for OsmAnd.
 3. Restart the device and try to restore again.
+
+
+<!--
+## Action Guides
+
+- Restore your data after purchases expire.
+- Transfer purchases from Android to iOS or vice versa 
+- One purchase (account) for Android and iOS
+-->
+
 
 ## Giftcards
 
