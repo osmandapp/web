@@ -16,12 +16,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-This article describes how to customize and interact with the map using buttons and gestures. How to rotate, zoom, change the view angle of the map, rotate it manually, automatically by compass or bearing.
+This article explains how to customize and interact with the map using various buttons and gestures. It covers how to rotate, zoom, adjust the view angle, and change the map's view angle, rotate it manually or automatically using the compass, or according to bearing.
 
 
 ## Gestures
 
-Gestures are important part of the map navigation.
+Gestures are an important part of map navigation.
 
 | Map Action | Gesture |
 |:------------|:---------------|
@@ -32,39 +32,43 @@ Gestures are important part of the map navigation.
 |**Rotate**| Tap with **two** fingers on the map and rotate. |
 |**Tilt** - 3D | Tap with **two** fingers on the map and then move them up/down  <br /> This option is only available with [map rendering engine](../personal/global-settings.md#map-rendering-engine) version 2 (OpenGL).  |
 
-Slide animations could be disabled with special [setting](#no-animations).
+Slide animations could be disabled with a special [setting](#no-animations).
 
 
 ## My Location and Zoom
 
 ![Configure screen menu](@site/static/img/widgets/location_zoom_buttons.png)
 
-**My location** is a circle button that shows whether the center of the map is synchronized with *My location* (geolocation of the device). It is also known as "Where am I?". Generally in navigation, the map is synced with device location, and there are no needs to move the map constantly. In this case, the button is hidden and will be activated when the map and *My location* will go out of sync by user gesture. The app will try to find the device location and show it on the map at the center of the screen when the user clicks on it. It will switch to the 3D mode when the user click twice on it.
+**My location**.  
+The *My Location* button is a circular icon that indicates whether the map's center is synchronized with your device’s current geolocation. Often referred to as the "Where am I?" button, it helps you quickly find your location on the map. During navigation, the map typically stays synced with the device's location, so the button remains hidden. However, it becomes visible if the map and your location go out of sync due to user interaction. Tapping the button will re-center the map on your current location, and a double tap will switch the view to 3D mode.
 
-**My location** button has following indicative states:
+- The *My Location* button has the following states:
+  - *Full blue icon*. The location is found but not synced with the map.
+  - *White icon*. The location is found and synced with the map.
+  - *Grey icon*. The location has not been found yet.
+  - *Arrow icon*. 3D mode is activated.
 
-- Full blue icon - location is found but it is not synchronized with map
-- White icon - location is found and it is synchronized with map
-- Grey icon - location has not found yet
-- Arrow icon - 3D mode is switched on
+- **Long tap** (*Android*) on the *My Location* button opens the [Map Context menu](../map/map-context-menu.md), allowing you to share your location.
 
-**Long tap** (*Android*) on **My location** opens [Map Context menu](../map/map-context-menu.md), so user can share own location.
+<br/>
 
-**Zoom buttons** are always visible next to **My Location** and allow to control map zoom level. Changing zoom level doesn't change map synchronization with location. **Long tap** on **Zoom buttons** opens Map magnifier dialog and allows to change map detailing.
+**Zoom buttons**.  
+*Zoom buttons* are always visible next to *My Location* and allow you to control the map's zoom level.
 
-Keep in mind that during navigation zoom can be controlled by **Auto zoom setting**:
+- Changing the zoom level does not affect the map's synchronization with your location.
+- **Long tap** *Zoom buttons* opens *Map magnifier* dialog,allowing you to adjust map detail levels.
+- Keep in mind that during navigation, the zoom can be controlled automatically by the **Auto zoom** setting:
+   - *<Translate android="true" ids="android_button_seq"/>:*&nbsp; *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>*  
+   - *<Translate ios="true" ids="ios_button_seq"/>:*&nbsp; *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>*  
 
-**<Translate android="true" ids="android_button_seq"/>:** <Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation_info,auto_zoom_map"/>  
+### My Location Appearance
 
-**<Translate ios="true" ids="ios_button_seq"/>:** <Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation,auto_zoom_map"/>  
+You can customize **My Location** button icons using Profile appearance settings. Read more about how to do this [here](../personal/profiles.md#profile-appearance).
 
-### My location appearance
 
-You can modify icons of "My Location", read more about it [here](../personal/profiles.md#profile-appearance).
+## Map Magnifier
 
-## Map magnifier
-
-Map magnifier is a special way to magnify the map. Essentially it works as a magnifying glass for paper maps, it allows to see the text bigger for raster maps or to see more or less details for the same scale - [Read more](../map/vector-maps.md#map-magnifier).
+The *Map Magnifier* is a tool that enhances the map's visibility, similar to a magnifying glass used with paper maps. It allows you to zoom in on the map to view text and details more clearly or to adjust the level of detail while maintaining the same scale. For more information, go to [Vector Maps](../map/vector-maps.md#map-magnifier) article.
 
 
 ## Map Orientation Modes
@@ -142,9 +146,10 @@ The compass button shows how the [map is oriented](#map-orientation-modes). The 
 
 ## Rotate Map by Bearing
 
-If rotate map by bearing (rotation by [movement direction](#map-orientation-modes)) is enabled, the map will be oriented so that the forward view will be strictly above the icon of my location on the map. Without movement, the map won't be rotated.  
-In this mode, the center of the map will be located slightly below the center of the device. It allows you to see more map data before you move, which is useful in the navigation mode.  
-Rotate map by bearing mode can be changed in [Profile settings](../personal/profiles.md#appearance) or by single tap the [Compass](#compass).  
+When the "rotate map by bearing" mode (rotation by [movement direction](#map-orientation-modes)) is enabled, the map is oriented so that your forward view aligns directly above the *My Location* icon. If there is no movement, the map will remain stationary.  
+In this mode, the map's center is positioned slightly below the center of the screen, allowing you to see more map data ahead of your movement—especially helpful in navigation mode.  
+You can adjust the "rotate map by bearing" mode in the [Profile settings](../personal/profiles.md#appearance) or by tapping the [Compass](#compass).
+
 
 
 ## Map Tilt and Horizon
@@ -164,14 +169,14 @@ Rotate map by bearing mode can be changed in [Profile settings](../personal/prof
 
 </Tabs>  
 
-With new map [rendering engine](../personal/global-settings.md#map-rendering-engine) you can change [camera tilt](../plugins/development.md#camera-tilt) from 90 (no tilt) to 10 degrees. Approximately at map tilt less than 20-22 degrees (this parameter depends on zoom level), the imaginary horizon line becomes visible. Unlike the real one, the program horizon is always straight.  
+With new map [rendering engine](../personal/global-settings.md#map-rendering-engine) you can change [camera tilt](../plugins/development.md#camera-tilt) from 90 (no tilt) to 10 degrees. Approximately at a map tilt less than 20-22 degrees (this parameter depends on zoom level), the imaginary horizon line becomes visible. Unlike the real one, the program horizon is always straight.  
 
-Under horizon you can see so-called *haze* or *fog*. This area of the map is filled with grey color, only few map details can be observed.  
-The use of fog is necessary, since the display of remote objects on the map requires significant computing resources and is not always justified due to map [distortions](../plugins/development.md#comparison-with-a-satellite-imagery) at small viewing angles. So the visible distance on OsmAnd map is currently limited to 35 tiles.  
+Under the horizon, you can see so-called *haze* or *fog*. This area of the map is filled with grey color, only a few map details can be observed.  
+The use of fog is necessary since the display of remote objects on the map requires significant computing resources and is not always justified due to map [distortions](../plugins/development.md#comparison-with-a-satellite-imagery) at small viewing angles. So the visible distance on the OsmAnd map is currently limited to 35 tiles.  
 
 :::info
-Map tilt can be changed by long tap on the screen with two fingers and moving them up/down. You can also change tilt by tapping on the [*My location*](#my-location-and-zoom) icon in the lower-right corner of the screen (only 45 and 90 degree positions are available).  
-You can not change Camera tilt when old [map rendering engine](../personal/global-settings.md#map-rendering-engine) (version 1) is on.
+Map tilt can be changed by a long tap on the screen with two fingers and moving them up/down. You can also change the tilt by tapping on the [*My location*](#my-location-and-zoom) icon in the lower-right corner of the screen (only 45 and 90-degree positions are available).  
+You can not change the Camera tilt when the old [map rendering engine](../personal/global-settings.md#map-rendering-engine) (version 1) is on.
 :::
 
 
@@ -189,7 +194,7 @@ You can not change Camera tilt when old [map rendering engine](../personal/globa
 
 <InfoAndroidOnly/>  
 
-You can turn off all map animations during map changes, such as gestures and buttons.  
+You can disable all map animations during map interactions, including gestures and buttons.  
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,general_settings_2,do_not_use_animations"/>*
 
 
@@ -198,7 +203,7 @@ You can turn off all map animations during map changes, such as gestures and but
 **Android**: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 **iOS**: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,shared_string_profiles,routing_settings_2,animate_my_location"/>*  
 
-Creates a smooth map panning effect versus the *[My Position](../personal/profiles/#profile-appearance)* icon when in motion. The effect introduces a slight delay versus ground truth of about 1 second. Enabling this has been reported to create some pronounced lag issues under some circumstances, disable if such issues arise.
+Creates a smooth map panning effect versus the *[My Position](../personal/profiles/#profile-appearance)* icon when in motion. The effect introduces a slight delay versus ground truth of about 1 second. Enabling this has been reported to create some pronounced lag issues under some circumstances, disable it if such issues arise.
 
 
 ## External Input Devices
@@ -208,7 +213,7 @@ External input device buttons provide a convenient and efficient way to interact
 One of the main functions of buttons on external input devices is to zoom in and out of the map. They also allow you to navigate the map and change its orientation without having to tap and gesture on the screen. Buttons on external input devices support many other functions, such as opening the main menu.
 
 :::note
-The keyboard continues to work even if the *External input devices* option is turned off, when *None* is selected.
+The keyboard remains functional even when the *External input devices* option is turned off, and *None* is selected.
 :::
 
 ### Preconfigured Input Device
@@ -250,7 +255,7 @@ To access the settings of an external input device, you need to enable this feat
 |**D**| *Keyboard*   | [Map orientation](../map/interact-with-map.md#map-orientation-modes) |
 |**N**| *Keyboard*   | Open Navigation view. |
 |**S**| *Keyboard*   | Open [Search](../search/index.md) view. |
-|**P**| *Keyboard*   | Switch to the next app profile. Show toast like message **App profile: Name**. |
+|**P**| *Keyboard*   | Switch to the next app profile. Show toast-like message **App profile: Name**. |
 |**O**| *Keyboard*   | Switch to the previous app profile. |
 |**&#8593;**| *Keyboard*   | Move up  |
 |**&#8595;**| *Keyboard*   | Move down  |
@@ -275,21 +280,22 @@ To access the settings of an external input device, you need to enable this feat
 
 ![External devices](@site/static/img/map/external_mypilot_android.png)  ![External devices](@site/static/img/map/external_mypilot2_android.png)
 
-If you want to bind key assignments for an external input device (such as a keyboard, joystick, or controller), you need to create an input device type: go to the [External Input Device](#external-input-devices) setting, select **Type** from the list, tap the&nbsp;  "**＋**"  &nbsp; and enter a name. Each type has a menu with actions: ***Rename, Duplicate***, and ***Remove***.
+If you want to assign keys for an external input device (such as a keyboard, joystick, or controller), you need to create a device type: go to the [External Input Device](#external-input-devices) setting, select **Type** from the list, tap the&nbsp;  "**＋**"  &nbsp; and enter a name. Each type has a menu with the following options: ***Rename, Duplicate***, and ***Remove***.
 
 ### Add Action & Key Asssigments
 
 ![External devices](@site/static/img/map/external_custom_4_andr.png)  ![External devices](@site/static/img/map/external_custom_3_andr.png)
 
-After you have created a custom input type, you can assign the required actions to the keys. Big variety of [action types](../widgets/quick-action.md#action-types) from Quick Action widget is available.
+After you have created a custom input type, you can assign the required actions to the keys. A wide range of [action types](../widgets/quick-action.md#action-types) from the Quick Action widget is available.
 
 - Select a device type, then tap the **Key assignments** item.
 - Tap the ***Add*** button (&nbsp;"**＋**"&nbsp;) in the bottom right corner of the screen.
 - Select the required action then tap the ***Add key*** field and tap the button on your device to assign it to the action.  
 
 :::note
+
 - If the button you assign is already being used for another action, you will receive a notification with the option to reassign the button or cancel the assignment.
-- Later you can change action and key assignments or add other key assignments for already created actions, just select an item in Key assignments list.
+- Later you can change actions and key assignments or add other ones for already created actions, just select an item in the Key assignments list.
 
 :::
 
@@ -315,4 +321,4 @@ You can delete multiple unnecessary actions using the **Edit button** (*pencil-s
 - [Public transport](./public-transport.md)
 
 
-> *This article was last updated in August 2024*
+> *This article was last updated in September 2024*
