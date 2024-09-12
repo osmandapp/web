@@ -476,7 +476,7 @@ Personalize the color scheme and label of your selected profile to enhance its v
 
 </Tabs>
 
-The **My location appearance** settings allow you to customize how your location is displayed on the map, both when stationary and in motion. You can select from a variety of icons, including 3D options, to improve your navigation experience.
+The [**My location**](../map/interact-with-map.md#my-location-and-zoom) **appearance** settings allow you to customize how your location is displayed on the map, both when stationary and in motion. You can select from a variety of icons, including 3D options, to improve your navigation experience.
 
 **3D location icon**.
 
@@ -532,11 +532,11 @@ You can control how certain location-related visual elements appear on the map.
 
 - **<Translate android="true" ids="view_angle"/>**. Displays a cone-shaped area that shows the direction you are currently facing.
 - **<Translate android="true" ids="location_radius"/>**. Shows a circular area around your icon, representing the accuracy of your current location.
-- *Options include*:
+- Options include:
   - *<Translate android="true" ids="shared_string_off"/>*. Disables both the view angle and location radius.
   - *<Translate android="true" ids="resting_position"/>*. Displays the view angle and location radius below my location position icon when stationary.
-  - <Translate android="true" ids="navigation_position"/>. Displays them only when moving.
-  - <Translate android="true" ids="resting_navigation_position"/>. Shows both in all states.
+  - *<Translate android="true" ids="navigation_position"/>*. Displays them only when moving.
+  - *<Translate android="true" ids="resting_navigation_position"/>*. Shows both in all states.
 
 ![Profile Appearance on the map Android](@site/static/img/personal/profiles/profile_appearance_options_android.png)
 
