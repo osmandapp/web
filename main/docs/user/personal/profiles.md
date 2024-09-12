@@ -456,52 +456,98 @@ Personalize the color scheme and label of your selected profile to enhance its v
 
 ## My Location Appearance
 
-- **<Translate android="true" ids="appearance_on_the_map"/>** - 3D icon*. Allows you to select the appearance of the location icon according to your preferences.
+<Tabs groupId="operating-systems">
 
-  - *<Translate android="true" ids="select_map_icon"/>*. Select a location icon in a non-moving state. (*Android*) Tap the "All icons" button to open all icons.
+<TabItem value="android" label="Android">
 
-  <Tabs groupId="operating-systems">
+*<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
 
-  <TabItem value="android" label="Android">
+![My location Appearance](@site/static/img/personal/profiles/location_appearance_andr.png)
 
-  ![Profile Appearance at rest Android](@site/static/img/personal/profiles/profile_appearance_at_rest_andr.png)
+</TabItem>
 
-  </TabItem>
+<TabItem value="ios" label="iOS">
 
-  <TabItem value="ios" label="iOS">
+*<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-  ![Profile Appearance iOS](@site/static/img/personal/profiles/profile_appearance_at_rest_ios.png)
+![My location Appearance](@site/static/img/personal/profiles/location_appearance_ios.png)
 
-  </TabItem>
+</TabItem>
 
-  </Tabs>
+</Tabs>
 
-  - *<Translate android="true" ids="select_navigation_icon"/>*. Selects the location icon in the state while moving.  (*Android*) Tap the **All icons** button to open all icons.
-  
-  <Tabs groupId="operating-systems">
+The **My location appearance** settings allow you to customize how your location is displayed on the map, both when stationary and in motion. You can select from a variety of icons, including 3D options, to improve your navigation experience.
 
-  <TabItem value="android" label="Android">
+**3D location icon**.
 
-  ![Profile Appearance on the map Android](@site/static/img/personal/profiles/profile_appearance_moving_andr.png)
+- Select the appearance of your location icon in 3D or 2D, depending on the map rendering version you are using.
+- *Map rendering* (*Android*). 3D icons are only available for [map rendering Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine). If you are using [map rendering Version 1](../personal/global-settings.md#map-rendering-engine), the icons will appear in 2D.
 
-  </TabItem>
+![My location Appearance](@site/static/img/personal/profiles/location_appearance_3d_icons.png)
 
-  <TabItem value="ios" label="iOS">
+**<Translate android="true" ids="select_map_icon"/>**.
 
-  ![Profile Appearance iOS](@site/static/img/personal/profiles/profile_appearance_moving_ios.png)
+- Customize the icon that represents your location when you are stationary.
+- *All icons* (*Android*). Tap the button to access all available icons.
 
-  </TabItem>
+<Tabs groupId="operating-systems">
 
-  </Tabs>
+<TabItem value="android" label="Android">
 
-  - ***Note 1** (Android version): 3D icons are only available for [map rendering Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine), for map rendering [Version 1](../personal/global-settings.md#map-rendering-engine) icons have a 2D view.
+![Profile Appearance at rest Android](@site/static/img/personal/profiles/profile_appearance_at_rest_andr.png)
 
-  - ***Note 2** Each user can create their own 3D icon and add it to the app. To do this, you need to create a custom 3D model in [MTL and OBJ formats](https://en.wikipedia.org/wiki/Wavefront_.obj_file), to downloand [the Pluging example](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf), and [modify it](../plugins/custom.md). Alternatively, you can copy the custom 3D files to the OsmAnd folder: `..osmand/models/icon_folder_name/custom_3d_file.mtl`, `..osmand/models/icon_folder_name/custom_3d_file.obj`.
-  
-- **<Translate android="true" ids="shared_string_options"/>** (*Android only*). Selects as to display the cone-shaped area you're currently facing -  *<Translate android="true" ids="view_angle"/>*, and to show the circular area representing your current location accuracy - *<Translate android="true" ids="location_radius"/>*:  <Translate android="true" ids="shared_string_off"/>, <Translate android="true" ids="resting_position"/>, <Translate android="true" ids="navigation_position"/>, <Translate android="true" ids="resting_navigation_position"/>.  
+</TabItem>
 
-  ![Profile Appearance on the map Android](@site/static/img/personal/profiles/profile_appearance_options_android.png)
+<TabItem value="ios" label="iOS">
 
+![Profile Appearance iOS](@site/static/img/personal/profiles/profile_appearance_at_rest_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+**<Translate android="true" ids="select_navigation_icon"/>**.
+
+- Choose an icon for when you are moving. This can help distinguish between movement and stationary states.
+- *All icons* (*Android*). Tap the button to open the full icon selection list.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Profile Appearance on the map Android](@site/static/img/personal/profiles/profile_appearance_moving_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Profile Appearance iOS](@site/static/img/personal/profiles/profile_appearance_moving_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+**<Translate android="true" ids="shared_string_options"/>** (*Android only*).  
+You can control how certain location-related visual elements appear on the map.
+
+- **<Translate android="true" ids="view_angle"/>**. Displays a cone-shaped area that shows the direction you are currently facing.
+- **<Translate android="true" ids="location_radius"/>**. Shows a circular area around your icon, representing the accuracy of your current location.
+- *Options include*:
+  - *<Translate android="true" ids="shared_string_off"/>*. Disables both the view angle and location radius.
+  - *<Translate android="true" ids="resting_position"/>*. Displays the view angle and location radius below my location position icon when stationary.
+  - <Translate android="true" ids="navigation_position"/>. Displays them only when moving.
+  - <Translate android="true" ids="resting_navigation_position"/>. Shows both in all states.
+
+![Profile Appearance on the map Android](@site/static/img/personal/profiles/profile_appearance_options_android.png)
+
+**Custom 3D Icons**.  
+If you want to further personalize your map experience, you can create your own 3D icons and add them to the app. To do this, follow the steps below:
+
+- Create a custom 3D model in [MTL and OBJ formats](https://en.wikipedia.org/wiki/Wavefront_.obj_file).
+- Download the [Pluging example](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf) and [modify it](../plugins/custom.md).
+- Alternatively, you can copy the custom 3D files to the OsmAnd folder with the following paths:
+  - `..osmand/models/icon_folder_name/custom_3d_file.mtl`
+  - `..osmand/models/icon_folder_name/custom_3d_file.obj`
 
 
 ## UI Customization
