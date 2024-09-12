@@ -14,57 +14,67 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-> *This article was last updated in August 2024.*
+
 
 ## Overview
 
-Map buttons such as Zoom buttons, Search, Direction, Compass, My Location and Menu represent main controls on the map.
+Map buttons, including *Zoom*, *Search*, *Directions*, *Compass*, *My Location*, *3D Mode*, and *Menu*, serve as the primary controls for interacting with the map. Each button offers specific functionalities to enhance your navigation and map usage experience.
 
 
 ## My Location and Zoom
 
 ![Configure screen menu](@site/static/img/widgets/location_zoom_buttons.png)
 
-My location and Zoom buttons control the map display. You can read more in [Interact with map](../map/interact-with-map.md#my-location--zoom) article.
+The *My Location* and *Zoom* buttons control how the map is displayed:
+
+- **My Location**. Centers the map on your current location.
+- **Zoom**. Adjusts the map's zoom level to provide more or less detail.  
+
+For further details on using these buttons, refer to the [Interact with map](../map/interact-with-map.md#my-location--zoom) article.
 
 
 ## Directions
 
 ![Directions button allows](@site/static/img/widgets/directions_button_allows.png)
 
-**Directions** button allows to [build a route](../navigation/index.md) and [start navigation](../navigation/index.md). In navigation mode this button is not visible by default and it appears after a short tap the map.
+The **Directions** button is essential for route planning and navigation:
 
-**Directions** button has 3 different indicative states:
+- [*Build a route*](../navigation/index.md). Use this button to create a route.
+- [*Start navigation*](../navigation/index.md). Initiate turn-by-turn navigation.
+- In navigation mode, the *Directions* button is not visible by default but appears after a short tap on the map.
 
-- Default grey icon - the route has not been built yet. A dialog to build a new route will appear by click.
-- Default blue icon - the route is built, but navigation has not started yet. A dialog with route information will appear by click.
-- Blue arrow icon - the route is built and navigation has started. A dialog with route information will appear by click.
+Indicative states of the *Directions* button:
+
+- *Default grey icon*. Indicates that no route has been built. Tapping this icon will prompt a dialog to create a new route.
+- *Default blue icon*. Indicates that a route has been built but navigation has not started. Tapping this icon will display a dialog with route information.
+- *Blue arrow icon*. Indicates that navigation is active. Tapping this icon will show a dialog with navigation details.
 
 
 ## Configure Map
 
 ![Configure Map](@site/static/img/widgets/configure_map.png)
 
-**Configure Map** button allows to access to [Configure Map menu](../map/configure-map-menu.md). Icon on it indicates [Current app profile](../personal/profiles.md).
+The **Configure map** button provides access to the [Configure Map menu](../map/configure-map-menu.md). The icon also reflects the [Current app profile](../personal/profiles.md), allowing you to quickly identify and switch between different profiles.
 
 
 ## Main Menu
 
 ![Main menu button](@site/static/img/widgets/main_menu_button.png)
 
-[Main menu](../start-with/main-menu.md) button allows to access to [all features](../start-with/main-menu.md) of the application. In navigation mode this button is not visible by default. It appears after a short tap the map.
+The [**Main menu**](../start-with/main-menu.md) button opens the general menu, granting access to [all application features](../start-with/main-menu.md). In navigation mode, this button is hidden by default and becomes visible after a short tap on the map.
 
 
 ## Search
 
 ![Search button](@site/static/img/widgets/search_button.png)
 
-Search button buttons provides quick access from the map to [search capabilities](../search/index.md).
+The Search button offers quick access to the [search capabilities](../search/index.md), allowing you to find locations, points of interest, and other information directly from the map.
 
 
 ## Compass
 
-The Compass button shows how the map is oriented on your device screen. For more information, go to the *Map* section of the [*Interact with map*](../map/interact-with-map.md#map-orientation--compass) article.  
+The Compass button indicates the orientation of the map on your device screen. For more information on how the map orientation is managed, refer to the *Map* section of the [*Interact with map*](../map/interact-with-map.md#map-orientation--compass) article.
+
 
 <!--
 
@@ -156,7 +166,7 @@ The compass icon on the button always points to the North. You can select how th
 - *<Translate android="true" ids="shared_string_visible"/>*. The button is always displayed on the map screen.
 - *<Translate android="true" ids="visible_in_3d_mode"/>*. The button is displayed on the map screen when you change the map view with a [*two-finger and move*](../map/interact-with-map.md#gestures) gesture.  
 
-### Additional settings  
+### Additional Settings  
 
 1. **Display the button**. (*For Android*) The setting for the *3D Mode* button appears in the Configure screen list only if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.
 
@@ -169,6 +179,11 @@ The compass icon on the button always points to the North. You can select how th
 5. **Recommendation**. It is recommended to download and enable the [Hillshade map](../plugins/contour-lines.md#configure-map-view) for the selected region to improve the user experience.
 
 
+## Custom Buttons
+
+[Quick action widget](./quick-action.md) is a configurable button with various action types that could be assigned to it. It also possible to have multiple [Custom buttons](./quick-action.md#custom-buttons).
+
+
 ## Related Articles
 
 
@@ -178,9 +193,5 @@ The compass icon on the button always points to the North. You can select how th
 - [Radius-ruler and Ruler](./radius-ruler.md)
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
-
-### Custom buttons
-
-[Quick action widget](./quick-action.md) is a configurable button with various action types that could be assigned to it. It also possible to ahve multiple [Custom buttons](./quick-action.md#custom-buttons).
 
 > *This article was last updated in August 2024*
