@@ -1,4 +1,4 @@
-import { apiGet } from '../util/HttpApi';
+import { apiGet, apiPost } from '../util/HttpApi';
 import filters from '../resources/wiki_data_filters.json';
 import {
     MAIN_CATEGORY_KEY_NAME,
@@ -16,109 +16,33 @@ export async function fetchPhotoProperties(photo) {
         const imageTitle = photo.properties.imageTitle;
         const url = `/wiki/File:${imageTitle}?action=raw`;
         try {
+            // Fetch raw wiki data
             const response = await apiGet(url, {
                 apiCache: true,
             });
-            const data = response.data;
+            const data = response?.data;
 
-            const parseWikiText = (wikiText) => {
-                const lines = wikiText.split('\n');
-                let author = 'Unknown';
-                let date = 'Unknown';
-                let license = 'Unknown';
-                let inInformationBlock = false;
+            if (!data) {
+                return photo;
+            }
 
-                lines.forEach((line) => {
-                    if (line === '{{Information') {
-                        inInformationBlock = true;
-                    } else if (line === '}}' && inInformationBlock) {
-                        inInformationBlock = false;
-                    }
-                    // Parse date
-                    if (line.toLowerCase().includes('|date={{')) {
-                        const parts = line.split('|date={{')[1]?.split('|') || line.split('|Date={{')[1].split('|');
-                        for (let part of parts) {
-                            const potentialDate = part.split('}}')[0].trim();
-                            if (/^\d{4}-\d{2}-\d{2}$/.test(potentialDate)) {
-                                date = potentialDate;
-                                break;
-                            }
-                        }
-                    } else if (line.toLowerCase().includes('|date=')) {
-                        date = line.split('=')[1].trim().split(' ')[0];
-                    } else if (line.includes('| Date = ')) {
-                        date = line.split('| Date = ')[1].split(' ')[0];
-                    }
+            // Parse image info
+            const parseResponse = await apiPost(
+                `${process.env.REACT_APP_USER_API_SITE}/routing/search/parse-image-info`,
+                data,
+                {
+                    apiCache: true,
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                }
+            );
 
-                    // Parse author (priority for {{Information block)
-                    if (inInformationBlock && line.toLowerCase().includes('|author=')) {
-                        if (line.includes('[https://')) {
-                            author = line.split('[https://')[1].split(']')[0].split(' ')[1];
-                        } else if (line.includes('|author={{')) {
-                            author = line.split('|author={{')[1].split('}}')[0];
-                        } else if (line.includes('|Author={{')) {
-                            author = line.split('|Author={{')[1].split('}}')[0];
-                        } else if (line.includes('[[')) {
-                            author = line.split('[[')[1].split(']]')[0].split('|')[1];
-                        } else if (line.includes('|author=')) {
-                            author = line.split('|author=')[1].trim();
-                        } else {
-                            author = line.split('|Author=')[1].trim();
-                        }
-                    } else if (!inInformationBlock && line.toLowerCase().includes('|author=') && author === 'Unknown') {
-                        if (line.includes('{{unknown|author}}')) {
-                            author = 'Unknown';
-                        } else if (line.includes('[[')) {
-                            author = line.split('[[')[1].split(']]')[0].split('|')[1];
-                        } else if (line.includes('{{Creator:')) {
-                            author = line.split('{{Creator:')[1].split('}}')[0];
-                        } else if (line.includes('{{creator:')) {
-                            author = line.split('{{creator:')[1].split('}}')[0];
-                        } else if (line.includes('{{user at project|')) {
-                            author = line.split('{{user at project|')[1].split('|')[0];
-                        } else if (line.includes('[https://')) {
-                            author = line.split('[https://')[1].split(']')[0].split(' ')[1];
-                        } else {
-                            author = line.split('|author=')[1].trim();
-                        }
-                    } else if (line.includes('| Author = ')) {
-                        author = line.split('| Author = ')[1].split(']')[0].split(' ')[1];
-                    }
-                    if (author === '-') {
-                        author = 'Unknown';
-                    }
+            const parsedData = parseResponse?.data;
 
-                    // Parse license
-                    if (line.includes('|license=')) {
-                        license = line.split('|license=')[1].split('|')[0].split('}')[0];
-                    } else if (line.includes('|permission=')) {
-                        if (line.includes('{{')) {
-                            license = line.split('{{')[1].split('}}')[0].split('|')[0];
-                        } else {
-                            license = line.split('|permission=')[1].split('|')[0].split('}')[0];
-                        }
-                    } else if (line.includes('{{Self|')) {
-                        const parts = line.split('{{Self|')[1].split('|');
-                        license = parts.find((part) => part.startsWith('CC-BY') || part.startsWith('cc-by'));
-                    } else if (line.includes('{{cc-by-')) {
-                        license = line.split('{{')[1].split('}}')[0].split('|')[0];
-                    } else if (line.includes('{{RCE-license}}')) {
-                        license = 'RCE-license';
-                    } else if (line.includes('{{RCE license}}')) {
-                        license = 'RCE license';
-                    } else if (line.includes('No known copyright restrictions')) {
-                        license = 'No known copyright restrictions';
-                    }
-                });
-
-                return {
-                    author,
-                    date,
-                    license,
-                };
-            };
-
-            const parsedData = parseWikiText(data);
+            if (!parsedData) {
+                return photo;
+            }
 
             return {
                 ...photo,
