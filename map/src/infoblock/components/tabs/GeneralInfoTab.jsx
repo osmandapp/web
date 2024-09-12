@@ -5,11 +5,16 @@ import { Download } from '@mui/icons-material';
 import contextMenuStyles from '../../styles/ContextMenuStyles';
 import DeleteTrackDialog from '../../../dialogs/tracks/DeleteTrackDialog';
 import GeneralInfo from '../track/GeneralInfo';
-import { getGpxFileFromTrackData, hasSegments, isEmptyTrack } from '../../../manager/track/TracksManager';
+import TracksManager, {
+    downloadGpx,
+    getGpxFileFromTrackData,
+    hasSegments,
+    isEmptyTrack,
+} from '../../../manager/track/TracksManager';
 import { Checkbox, FormControlLabel } from '@mui/material/';
 import { makeStyles } from '@material-ui/core/styles';
-import TracksManager from '../../../manager/track/TracksManager';
 import GpxGraphProvider from '../graph/GpxGraphProvider';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles({
     checkbox: {
@@ -20,7 +25,7 @@ const useStyles = makeStyles({
     },
 });
 
-export const downloadGpx = async (ctx) => {
+export const downloadCurrentGpx = async (ctx) => {
     const gpx = await getGpxFileFromTrackData(ctx.selectedGpxFile);
     if (gpx) {
         const data = gpx.data;
@@ -36,6 +41,8 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
     const styles = contextMenuStyles();
     const ctx = useContext(AppContext);
     const classes = useStyles();
+
+    const { t } = useTranslation();
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
 
@@ -87,10 +94,16 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                             sx={{ ml: '-0.5px !important' }}
                             variant="contained"
                             className={styles.button}
-                            onClick={() => downloadGpx(ctx)}
+                            onClick={() => {
+                                if (isLocalTrack(ctx)) {
+                                    downloadCurrentGpx(ctx);
+                                } else {
+                                    downloadGpx(ctx.selectedGpxFile);
+                                }
+                            }}
                         >
                             <Download fontSize="small" sx={{ mr: '3px' }} />
-                            Download GPX
+                            {t('shared_string_download')}
                         </Button>
                     </>
                 )}
