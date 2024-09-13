@@ -57,7 +57,8 @@ The Elevation widget shows a graph with the elevation and slope of your navigati
 
 When you select a route and press the **Start** button, the map opens with your current location, the route on it, and the widget at the bottom of the screen. On the widget, you can see the graph and information about *Uphill*, *Downhill*, *Grade*, distance, altitude, and slope angle. You can select the *optimal scale* and see all possible obstacles on your route.  
 
-All values are indicated either for the whole route or only for the selected interval by scaling the graph.
+- All values are indicated either for the whole route or only for the selected interval by scaling the graph.
+- Read about the [license for the DEM data](https://osmand.net/docs/user/plugins/contour-lines/#license-for-dem-data-used-by-osmand-for-terrain-detection) used by OsmAnd to determine elevation.
 
 |  |
 |:------------|
