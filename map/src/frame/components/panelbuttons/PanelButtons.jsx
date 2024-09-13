@@ -259,7 +259,7 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
                                         type="button"
                                         disabled={isEmptyTrack(ctx.selectedGpxFile)}
                                         onClick={() => {
-                                            if (isLocalTrack(ctx)) {
+                                            if (isLocalTrack(ctx) || isRouteTrack(ctx)) {
                                                 downloadCurrentGpx(ctx);
                                             } else {
                                                 downloadGpx(ctx.selectedGpxFile);
