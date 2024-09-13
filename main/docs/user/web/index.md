@@ -30,10 +30,10 @@ This section details additional map data such as Favorites, Personal Tracks, and
 
 This section provides information on planning routes or creating navigation using different profiles.
 
-## [Web Search](./web-search.md)
+### [Web Search](./web-search.md)
 
 This section explains how to find points of interest (POIs) from different categories on the map, perform a classic search, and display category icons on the map.
 
-## [Synchronize with Mobile (Cloud)](./web-cloud.md)
+### [Synchronize with Mobile (Cloud)](./web-cloud.md)
 
 This section explains how to use OsmAnd Cloud to synchronize data between your OsmAnd applications and the web version. It describes how to view your cloud data, manage it, and control your account settings.
