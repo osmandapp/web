@@ -16,6 +16,7 @@ import { EXPLORE_BIG_ICON_SIZE, clusterMarkers, createHoverMarker, removeTooltip
 import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
 
 export const EXPLORE_LAYER_ID = 'explore-layer';
+export const EXPLORE_MIN_ZOOM = 6;
 
 export default function ExploreLayer() {
     const ctx = useContext(AppContext);
@@ -35,6 +36,15 @@ export default function ExploreLayer() {
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [selectedObj, setSelectedObj] = useState(null);
+
+    const zoom = map.getZoom();
+
+    useEffect(() => {
+        if (zoom < EXPLORE_MIN_ZOOM) {
+            ctx.setWikiPlaces(null);
+            removeLayers();
+        }
+    }, [zoom]);
 
     useSelectedPoiMarker(
         ctx,
@@ -164,7 +174,7 @@ export default function ExploreLayer() {
 
     async function getData({ controller, ignore, settings, setLoadingContextMenu }) {
         if (!ignore) {
-            if (settings?.selectedFilters?.size === 0) {
+            if (map.getZoom() < EXPLORE_MIN_ZOOM || settings?.selectedFilters?.size === 0) {
                 ctx.setWikiPlaces(null);
                 return;
             }
