@@ -145,9 +145,9 @@ Some issues with these incorrect fonts are described on our GitHub page: [3911](
 
 ![Contour lines map style](@site/static/img/map/contour_lines.png)  
 
-Contour lines are represented as vector maps that are displayed as elevation lines. You need to enable the [Topography plugin](../plugins/contour-lines.md), download the data for your region and configure the display. Feature is not enabled by default and needs to be [purchased first](../purchases/index.md).
+Contour lines are represented as vector maps that are displayed as elevation lines. You need to enable the [Topography plugin](../plugins/topography.md), download the data for your region and configure the display. Feature is not enabled by default and needs to be [purchased first](../purchases/index.md).
 
-Contour lines are available for all map styles and modes and could be configured via the [Contour lines menu](../plugins/contour-lines.md#contour-lines-map). More information [here](../plugins/contour-lines.md).
+Contour lines are available for all map styles and modes and could be configured via the [Contour lines menu](../plugins/topography.md#contour-lines). More information [here](../plugins/topography.md).
 
 
 ## * Nautical Depth

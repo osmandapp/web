@@ -338,7 +338,7 @@ The [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.
 
 - Highlight [Favorite points](../personal/favorites.md), [Navigation markers](../personal/markers.md), or special [Points of Interests](../map/point-layers-on-map.md#points-of-interest-poi) on the map.
 - Display specific routes or third-party GPX files.
-- [Overlay terrain information](../plugins/contour-lines.md), satellite images, or any other available [raster maps](../map/raster-maps.md).
+- [Overlay terrain information](../plugins/topography.md), satellite images, or any other available [raster maps](../map/raster-maps.md).
 - Display [public transport](../map/public-transport.md) information and [change the map style](../map/vector-maps.md#default-map-styles).
 
 

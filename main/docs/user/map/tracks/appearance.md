@@ -135,8 +135,8 @@ The *3D Track* feature provides a three-dimensional representation of tracks by 
 
 1. ***Settings***:
 
-    - [**<Translate android="true" ids="vertical_exaggeration"/>**](../../plugins/contour-lines.md#vertical-exaggeration). If Visualized by *Altitude* or *Speed*, adjust the degree of vertical exaggeration for the 3D track in the range of *None* to *x3.0*.
-    - [**<Translate android="true" ids="wall_height"/>**](../../plugins/contour-lines.md#3d-relief). If Visualized by *Fixed Height*, set the fixed height for the 3D track by defining its elevation on the map in the range of *None* to *2000 m*.
+    - [**<Translate android="true" ids="vertical_exaggeration"/>**](../../plugins/topography.md#vertical-exaggeration). If Visualized by *Altitude* or *Speed*, adjust the degree of vertical exaggeration for the 3D track in the range of *None* to *x3.0*.
+    - [**<Translate android="true" ids="wall_height"/>**](../../plugins/topography.md#3d-relief). If Visualized by *Fixed Height*, set the fixed height for the 3D track by defining its elevation on the map in the range of *None* to *2000 m*.
 
 2. ***Visualization options***:
 

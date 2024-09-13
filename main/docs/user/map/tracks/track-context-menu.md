@@ -141,7 +141,7 @@ Menu Options allows to make manipulation with the chosen track, Information Rout
 
 
 - **<Translate android="true" ids="shared_string_gps_filter"/>** (*Android*) - allows [to filter points of the track](./track-context-menu.md#gps-filter).
-- **<Translate android="true" ids="altitude_correction"/>** (*Android*) - to [receive elevation data](./track-context-menu.md#calculate-elevation-offline), attach your track to the roads or calculate it offline (needed [Terrain maps](../../plugins/contour-lines.md#download-maps)).
+- **<Translate android="true" ids="altitude_correction"/>** (*Android*) - to [receive elevation data](./track-context-menu.md#calculate-elevation-offline), attach your track to the roads or calculate it offline (needed [Terrain maps](../../plugins/topography.md#download-maps)).
 - **<Translate android="true" ids="simulate_your_location"/>** (*Android*) - [simulate your position](../../plugins/development.md#gpx-track-simulation) using a GPX track.
 
 
@@ -334,9 +334,9 @@ If there is no elevation information on the route, you can add it in the followi
 Calculate elevation offline feature is only available for [**OsmAnd Pro subscribers**](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
-This feature allows you to calculate elevation profile for GPX track offline for any terrain between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../../plugins/contour-lines.md#how-to-download). *Terrain maps (3D) should be previously downloaded*.
+This feature allows you to calculate elevation profile for GPX track offline for any terrain between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../../plugins/topography.md#how-to-download). *Terrain maps (3D) should be previously downloaded*.
 
-1. Download [Terrain maps(3D)](../../plugins/contour-lines.md#download-maps) for the required region.
+1. Download [Terrain maps(3D)](../../plugins/topography.md#download-maps) for the required region.
 2. If the track does not contain any altitude data, go to the track context menu (*Track Context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,get_altitude_data"/>*), select *Use Terrain maps*, and after the calculation you will get a track graph based on the terrain data.  
   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 3. If you are creating a route with the [*Plan a route*](../../plan-route/create-route.md#graph) tool using the *Straight line* method and there is no elevation data on the graph, you need to:

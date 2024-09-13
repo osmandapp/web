@@ -209,7 +209,7 @@ The Color setting changes the color tones of the route lines, with their overall
 - ***<Translate android="true" id="altitude"/>***. It shows the height of the route point as a **green-yellow-red** gradient. **Green** indicates the lowest point of the route, **yellow** indicates average height of the point, and **red** is the highest. If the route altitude difference is < 100 meters, the gradient is partially applied or not applied, for example for a simple climb from 100 meters to 150 meters - the gradient will be **green-yellow**. Note that the color doesn't represent the absolute value of the altitude.  
     ![Altitude](@site/static/img/navigation/route/Altitude_rl.png)
 
-- ***<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>***. The route line is colored in different colors depending on the elevation profile of the route. A detailed description is in the *Topography plugin* article, [Slope](../../plugins/contour-lines.md#slope) section.  
+- ***<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>***. The route line is colored in different colors depending on the elevation profile of the route. A detailed description is in the *Topography plugin* article, [Slope](../../plugins/topography.md#slope) section.  
     ![Altitude](@site/static/img/navigation/route/Slope.png)   ![Altitude](@site/static/img/navigation/route/Slope4.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_roadClass_name"/>***. Colours a route or track line according to the *road classification*. A detailed description is in the *Vector Maps - [Road Style](../../map/vector-maps.md#road-style)* section.  

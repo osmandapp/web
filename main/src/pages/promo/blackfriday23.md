@@ -43,7 +43,7 @@ ____________
 | Ad-free access | ✔ | ✔ | ✔ |
 | [OsmAnd Cloud](https://osmand.net/docs/user/personal/storage#backup-and-restore-for-osmand-pro) | -  | -  | ✔ |
 | [Cross-platform](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform) | - | - | ✔ |
-| [3D Relief](https://osmand.net/docs/user/plugins/contour-lines#3d-relief) | - | - | ✔ |
+| [3D Relief](https://osmand.net/docs/user/plugins/topography#3d-relief) | - | - | ✔ |
 | [Hourly map updates](https://osmand.net/docs/user/personal/maps-resources#osmand-live)<br/> (1 hour delay) | - | - | ✔ |
 | [Weather Plugin](https://osmand.net/docs/user/plugins/weather) | - | - | ✔ |
 | [Customise Route line](https://osmand.net/docs/user/navigation/guidance/map-during-navigation#route-line-appearance) | - | - | ✔ |
@@ -52,7 +52,7 @@ ____________
 | [Unlimited map downloads](https://osmand.net/docs/user/start-with/download-maps) | <details><summary>**7 map downloads**</summary>  - Map download or update is meant only download-update of a country (region) map. <br/> - *"World overview map"*, *"World altitude correction"*, *"Map fonts"* and *"Voice prompts"* are not counted as 7 possibilities to download. </details> | ✔ | ✔ |
 | [Monthly map updates](https://osmand.net/docs/user/personal/maps-resources#update-maps)<br/>Once a month (with 2 days delay) | <details><summary>**7 map downloads**</summary> Map update counts as download.</details> | ✔ | ✔ |
 | [Android Auto](https://osmand.net/docs/user/navigation/auto-car)/[CarPlay](https://osmand.net/docs/user/navigation/car-play) | - | ✔ | ✔ |
-| [Topo data (Contour lines and Terrain)](https://osmand.net/docs/user/plugins/contour-lines) | - | ✔ | ✔ |
+| [Topo data (Contour lines and Terrain)](https://osmand.net/docs/user/plugins/topography) | - | ✔ | ✔ |
 | [Nautical depths](https://osmand.net/docs/user/plugins/nautical-charts) | - | ✔ | ✔ |
 | [Offline Wikipedia](https://osmand.net/docs/user/plugins/wikipedia) | - | ✔ | ✔ |
 | [Offline Wikivoyage - Travel guides](https://osmand.net/docs/user/plan-route/travel-guides)| - | ✔ | ✔ |

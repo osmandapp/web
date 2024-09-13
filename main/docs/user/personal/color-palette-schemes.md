@@ -69,7 +69,7 @@ Color palette data is available in the [*Maps & Resources*](../personal/maps-res
 
 ### Terrain
 
-Terrain files (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) define 3 [terrain visualizations](../plugins/contour-lines.md#hillshade-slope-and-altitude-layers): *Hillshade, Slope*, and *Altitude*. For each type you can have multiple palettes, for example *avalanche slope* is provided by default.
+Terrain files (`height_altitude_<type_name>.txt`, `hillshade_color_<type_name>.txt`, `slope_<type_name>.txt`) define 3 [terrain visualizations](../plugins/topography.md#hillshade-slope-and-altitude-layers): *Hillshade, Slope*, and *Altitude*. For each type you can have multiple palettes, for example *avalanche slope* is provided by default.
 
 ### Routes
 
@@ -89,7 +89,7 @@ Color palette (`user_palette_default.txt`) is simply used for predefined colors 
 
 ## Palette Legend
 
-The legend provides an easy way to view and understand the different markings on the map. New color palettes have been added to display [**speed** for tracks](../map/tracks/index.md#color), [**line type** for routes](../navigation/guidance/map-during-navigation.md#color), [**altitude and slope** for terrain](../plugins/contour-lines.md#color-scheme), and all [**weather layer**](../plugins/weather.md#weather-layers) color palettes.
+The legend provides an easy way to view and understand the different markings on the map. New color palettes have been added to display [**speed** for tracks](../map/tracks/index.md#color), [**line type** for routes](../navigation/guidance/map-during-navigation.md#color), [**altitude and slope** for terrain](../plugins/topography.md#color-scheme), and all [**weather layer**](../plugins/weather.md#weather-layers) color palettes.
 
 <table class="image">
     <tr>

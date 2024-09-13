@@ -176,7 +176,7 @@ The compass icon on the button always points to the North. You can select how th
 
 4. **Button position**. The position of the button on the map on the application screen is saved separately for each profile.
 
-5. **Recommendation**. It is recommended to download and enable the [Hillshade map](../plugins/contour-lines.md#configure-map-view) for the selected region to improve the user experience.
+5. **Recommendation**. It is recommended to download and enable the [Hillshade map](../plugins/topography.md#configure-map-view) for the selected region to improve the user experience.
 
 
 ## Custom Buttons

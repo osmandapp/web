@@ -53,8 +53,8 @@ In order to access a plugin's functionality, it must first be [enabled](#enable-
 
 Most plugins are available for free, only the plugins in the list below require the purchase of an [OsmAnd+ or OsmAnd Pro](../purchases/index.md) license to use:  
 
-- [Topography](../plugins/contour-lines.md)
-- [3D Relief](../plugins/contour-lines.md#3d-relief) (feature of the Topography plugin)
+- [Topography](../plugins/topography.md)
+- [3D Relief](../plugins/topography.md#3d-relief) (feature of the Topography plugin)
 - [Wikipedia](../plugins/wikipedia.md)
 - [Nautical map view](../plugins/nautical-charts.md)
 - [Weather](../plugins/weather.md)
@@ -72,8 +72,8 @@ OsmAnd Plugins may augment these Feature groups: **Layers**, **Widgets**, **Cont
 | [Wikipedia](#wikipedia) | [Map layer](../plugins/wikipedia.md#download-wikipedia-packages), [Context menu](../plugins/wikipedia.md#wikipedia-languages) |
 | [Online maps](#online-maps) |[Map layer](../plugins/online-map.md#configure-map-source) |
 | [Trip recording](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profile](../plugins/trip-recording.md#profile-settings) |
-| [Topography](#topography) | [Map layer](../plugins/contour-lines.md#configure-map-view) |
-| [3D Relief](#topography) 🤖  | [Map layer](../plugins/contour-lines.md#3d-relief) |
+| [Topography](#topography) | [Map layer](../plugins/topography.md#configure-map-view) |
+| [3D Relief](#topography) 🤖  | [Map layer](../plugins/topography.md#3d-relief) |
 | [Weather](../plugins/weather.md) | [Map layer](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Screen](../plugins/weather.md#configure-screen) |
 | [Nautical map view](#nautical-map-view) | [Map style](../plugins/nautical-charts.md#nautical-map-style), [Profile](../plugins/nautical-charts.md#nautical-options)  |
 | [Ski map view](#ski-map-view) | [Map style](../plugins/ski-maps.md#set-winter-style), [Profile](../plugins/ski-maps.md#skiing-profile) |
@@ -151,7 +151,7 @@ OsmAnd Online maps are an extensive addition to the OpenStreetMap database alrea
 
 To tell a story of where you have been, GPS data, as latitude and longitude of your location, can be recorded and stored in a file, and then re-used, improved, enhanced with waypoints, provided for navigation, shared with friends, etc.  
 
-### [Topography](./contour-lines.md)
+### [Topography](./topography.md)
 
 Topography information, such as Contour lines, Hillshade, Slope, 3D Relief, helps to make a visual assessment of the lay of the land by seeing elevation, relief, extremes, steepness, points of equal height, etc.  
 

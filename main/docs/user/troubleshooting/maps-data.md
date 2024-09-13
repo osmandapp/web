@@ -21,7 +21,7 @@ Firstly, OsmAnd is meant to support OpenStreetMap and tries to go that path as f
 
 ### Is there a way to have contour lines displayed in feet also, instead of meters?
 
-Yes. You need to choose Feet or Meters data before downloading Contour line data: [read here about it](../../user/plugins/contour-lines.md#choose-meters-or-feet).
+Yes. You need to choose Feet or Meters data before downloading Contour line data: [read here about it](../../user/plugins/topography.md#choose-meters-or-feet).
 
 ### Maps slowly loading on Android 11, 12 (SD card)
 

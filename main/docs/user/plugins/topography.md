@@ -336,7 +336,7 @@ Follow the steps below to display 3D Relief on the OsmAnd map:
 - Go to [*<Translate Android="true" ids="shared_string_menu,configure_map"/>*](../map/configure-map-menu.md):
     - **Android**: scroll to *<Translate android="true" ids="srtm_plugin_name"/> section → <Translate android="true" ids="relief_3d"/>*.
     - **iOS**: scroll to *<Translate ios="true" ids="srtm_plugin_name"/> section → <Translate ios="true" ids="shared_string_terrain,shared_string_relief_3d"/>*.
-- Download the [Terrain map (3D)](../plugins/contour-lines.md#how-to-download) of the regions, if necessary.
+- Download the [Terrain map (3D)](#3d-relief-maps) of the regions, if necessary.
 
 
 <Tabs groupId="operating-systems">

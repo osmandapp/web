@@ -109,7 +109,7 @@ A new 3D view has been added for [My Location](../user/personal/profiles.md#prof
 
 In this release, new color palette schemes have been added.
 - For [routes](../user/navigation/guidance/map-during-navigation.md#color): *Speed, Slope,* and *Elevation (Altitude)*.
-- For [terrain](../user/plugins/contour-lines.md#hillshade-slope-and-altitude-layers): *Hillshade, Slope*, and *Altitude*.
+- For [terrain](../user/plugins/topography.md#hillshade-slope-and-altitude-layers): *Hillshade, Slope*, and *Altitude*.
 - For [weather](../user/plugins/weather.md#weather-layers): *All weather layers*.  
 
 You can add your own color palette files to OsmAnd using the *import/export tool*. To do this, create a TXT file with the required name:

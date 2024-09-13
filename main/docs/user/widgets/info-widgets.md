@@ -82,7 +82,7 @@ Altitude can not be displayed correctly on some Android devices. To resolve this
 </Tabs>
 
 You can use the widget to find out the elevation of the current map center above sea level.
-[Terrain map (Hillshade and Slope)](../plugins/contour-lines.md#download-maps) of the required area is needed to display information in the **Elevation: map center widget**.  
+[Terrain map (Hillshade and Slope)](../plugins/topography.md#download-maps) of the required area is needed to display information in the **Elevation: map center widget**.  
 
 | | |
 |:------------|:------------|
