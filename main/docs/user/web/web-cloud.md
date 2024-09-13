@@ -14,20 +14,23 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
+## Overview
 
-## OsmAnd Pro and OsmAnd Start sync
+
+
+## OsmAnd Pro and OsmAnd Start Sync
 
 - **OsmAnd Pro** is a [cross-platform](../troubleshooting/setup.md#cross-platform) paid subscription. 
 - **OsmAnd Start** is a [free OsmAnd Cloud registration](https://osmand.net/blog/start).
 
 The cross-platform capability allows you to use OsmAnd Pro on all platforms *([Android](../purchases/android.md)  ← →  [iOS](../purchases/ios.md)  →  [Web](https://www.osmand.net/map))*. To do this you need to:
 
-1. Subscribe to _OsmAnd Pro_. Read more about how to do this for [Android here](../purchases/android.md#how-to-buy), and for [iOS here](../purchases/ios.md#how-to-buy).
-2. How to create _OsmAnd Start_ account read more [here](https://osmand.net/blog/start#how-to-create-an-account).
+1. Subscribe to **OsmAnd Pro**. Read more about how to do this for [Android here](../purchases/android.md#how-to-buy), and for [iOS here](../purchases/ios.md#how-to-buy).
+2. How to create **OsmAnd Start** account read more [here](https://osmand.net/blog/start#how-to-create-an-account).
 3. Register your [Pro or Start account](../troubleshooting/setup.md#cross-platform) on the OsmAnd server inside OsmAnd app.
 4. The registered email will be your login to activate OsmAnd Pro on the web platform. At first, time needed to choose a password for future entering the web portal (please, use the instruction on the web portal).
 
-- Enter your *email* and *password* for [osmand.net/map](https://osmand.net/map/).   
+- Enter your *email* and *password* for [osmand.net/map](https://osmand.net/map/).
 
 ![View OsmAnd Web activation](@site/static/img/web/web_pro_activation.png)  
 
@@ -45,12 +48,9 @@ Choose needed files for downloading, ZIP or OSF format of downloaded files and c
 
 There is also a button to *logout* of the account.  
 
-- _LOGOUT_, _DELETE YOUR ACCOUNT_ or _Change email_ you find on the login field too. For opening _DELETE YOUR ACCOUNT_ or _Change email_ you need to click _Dangerous area_.
+- *LOGOUT*, *DELETE YOUR ACCOUNT* or *Change email* you find on the login field too. For opening *DELETE YOUR ACCOUNT* or *Change email* you need to click *Dangerous area*.
 
 ![View OsmAnd Web backup file](@site/static/img/web/web_backup_file_2.png)  
-
-
-
 
 
 ## Tracks
@@ -60,8 +60,9 @@ It's a paid feature <ProFeature/>. At first you need to loggin your OsmAnd Pro:
 ![Track loggin](@site/static/img/web/track_loggin.png)
 
 For Track section:
+
 - Show tracks from [OsmAnd Cloud](#users-tracks-pro).
-- Adding tracks on the map (_"Visible on map"_ folder).
+- Adding tracks on the map (**Visible on map** folder).
 - Looking all tracks info and graph
 - Modify tracks and add it to Cloud.
 - Download and delete tracks.
@@ -69,7 +70,7 @@ For Track section:
 - Download folders as OSF or OBF collection.
 
 
-### Visible on the map
+### Visible on the Map
 
 Here there is a list of visible tracks on the map.
 
@@ -78,9 +79,10 @@ Switch on / off tracks for showing or not its on the map.
 ![Visible on the map](@site/static/img/web/visible.png)
 
 
-### Track folder menu
+### Track Folder Menu
 
-Click to the _Tree points_ ⋮ button for open _Track Folder_ menu. Here you can Download all tracks from chosen folder as:
+Click to the *Tree points* **⋮** button for open *Track Folder* menu. Here you can Download all tracks from chosen folder as:
+
 - Download as OSF
 - Download as OBF Collection:
   You can get OBF map from this data: [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) or [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
@@ -98,7 +100,8 @@ Click to the _Tree points_ ⋮ button for open _Track Folder_ menu. Here you can
 
 ![Track folder menu](@site/static/img/web/collection.png)
 
-### Cloud tracks
+
+### Cloud Tracks
 
 GPX tracks that you have in OsmAnd Cloud will be available for display and editing after login. Only for **Pro users** <ProFeature/>.
 
@@ -112,7 +115,7 @@ The following features are available after choosin cloud track:
   - *Settings* - list of navigation profiles for the *Create route* tool.  
 
 - Action buttons:
-  - *Edit track* - adding cloud track to local for editing (_Edit locality_ button on the panel).
+  - *Edit track* - adding cloud track to local for editing (*Edit locality* button on the panel).
   - *Download GPX* - downloads the track to the PC.
   - *Recalculate* Elevation (Satellite) - displays the elevation graph of the selected track.
   - *Delete Track* - deletes the track.
@@ -123,21 +126,24 @@ The following features are available after choosin cloud track:
 
 ## Favorites
 
+![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites.png)
+
 After registering an OsmAnd Pro or OsmAnd Start, the user's Favorites are displayed in the Favorites menu.  
 The following actions are available:
 
-- _Show on map_ - show favorites points from the chosen folder on the map.
-- _Rename_ - name and description of favorite folder.
-- _Download_ - download the chosen favorite folder.
-- _Delete_ - delete the chosen favorite folder.
+- *Show on map* - show favorites points from the chosen folder on the map.
+- *Rename* - name and description of favorite folder.
+- *Download* - download the chosen favorite folder.
+- *Delete* - delete the chosen favorite folder.
 
 ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites.png)
 
+
 ### Add / Edit Favorite
 
-[To add](../personal/favorites.md#edit) a new favorite point, right-click on the screen. To start editing, click on the favorite point, the edit menu screen looks the same as [the menu in OsmAnd app](../personal/favorites.md#create).  
-
 ![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
+
+[To add](../personal/favorites.md#edit) a new favorite point, right-click on the screen. To start editing, click on the favorite point, the edit menu screen looks the same as [the menu in OsmAnd app](../personal/favorites.md#create).  
 
 
 <!--
@@ -154,5 +160,7 @@ In this section of the menu, you can change the map style. You can read more abo
 
 ![OsmAnd Web Favorites add](@site/static/img/web/web_map_style_topo.png)
 -->
+
+## Related Articles
 
 > *This article was last updated in September 2024*
