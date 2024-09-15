@@ -14,7 +14,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
-## Map Context menu
+
+## Overview
+
+
+
+## Map Context Menu
 
 For opening it right click anywhere on the map. This menu includes the following actions:
 
@@ -30,22 +35,25 @@ For opening it right click anywhere on the map. This menu includes the following
 
 ![Map Context menu](@site/blog/2024-07-01-web-1-01/img/map_context_menu.png)
 
+
 ## Weather
 
 The [Weather plugin](../plugins/weather.md) is a paid feature of the OsmAnd app. For the web version, Weather is a free feature with such capabilities as:
+
 - Enable weather layers on the map: *Temperature, Pressure, Wind, Cloud cover and Precipitation* using the menu on the left or right.
 - Enable the display of the weather forecast for the day or week (the forecast step is 3 hours).  
 
 ![OsmAnd Web Weather](@site/static/img/web/web_weather.png)
 
 
-## POIs on the map
+## POIs on the Map
 
 To show POIs on the map:
 
-_Configure map menu or icon → POI overla... → choose categories_
+*Configure map menu or icon → POI overla... → choose categories*
 
 ![POIs menu](@site/static/img/web/poi_menu.png)
+
 
 ## Tracks
 
@@ -54,8 +62,9 @@ It's a paid feature <ProFeature/>. At first you need to loggin your OsmAnd Pro:
 ![Track loggin](@site/static/img/web/track_loggin.png)
 
 For Track section:
+
 - Show tracks from [OsmAnd Cloud](#users-tracks-pro).
-- Adding tracks on the map (_"Visible on map"_ folder).
+- Adding tracks on the map (**Visible on map** folder).
 - Looking all tracks info and graph
 - Modify tracks and add it to Cloud.
 - Download and delete tracks.
@@ -63,19 +72,20 @@ For Track section:
 - Download folders as OSF or OBF collection.
 
 
-### Visible on the map
+### Visible on the Ьap
+
+![Visible on the map](@site/static/img/web/visible.png)
 
 Here there is a list of visible tracks on the map.
 
 Switch on / off tracks for showing or not its on the map.
 
-![Visible on the map](@site/static/img/web/visible.png)
-
 
 ### Track folder menu
 
-Click to the _Tree points_ ⋮ button for open _Track Folder_ menu. Here you can Download all tracks from chosen folder as:
-- Download as OSF
+Click to the *Tree points* **⋮** button for open *Track Folder* menu. Here you can Download all tracks from chosen folder as:
+
+- Download as OSF.
 - Download as OBF Collection:
   You can get OBF map from this data: [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) or [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
 
@@ -92,7 +102,8 @@ Click to the _Tree points_ ⋮ button for open _Track Folder_ menu. Here you can
 
 ![Track folder menu](@site/static/img/web/collection.png)
 
-### Cloud tracks
+
+### Cloud Tracks
 
 GPX tracks that you have in OsmAnd Cloud will be available for display and editing after login. Only for **Pro users** <ProFeature/>.
 
@@ -120,10 +131,10 @@ The following features are available after choosin cloud track:
 After registering an OsmAnd Pro or OsmAnd Start, the user's Favorites are displayed in the Favorites menu.  
 The following actions are available:
 
-- _Show on map_ - show favorites points from the chosen folder on the map.
-- _Rename_ - name and description of favorite folder.
-- _Download_ - download the chosen favorite folder.
-- _Delete_ - delete the chosen favorite folder.
+- *Show on map* - show favorites points from the chosen folder on the map.
+- *Rename* - name and description of favorite folder.
+- *Download* - download the chosen favorite folder.
+- *Delete* - delete the chosen favorite folder.
 
 ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites.png)
 
@@ -150,7 +161,7 @@ In this section of the menu, you can change the map style. You can read more abo
 -->
 
 
-## URL schemes
+## URL Schemes
 
 For easy use of the OsmAnd application you can take advantage of direct links. These are special URLs that allow you to transfer location and contain detailed data about pins and tracks.  
 
@@ -182,5 +193,7 @@ Depending on the specified parameters, URL strings may contain:
 - **profile:** for navigation.
 - **zoom:** zoom level.
 
+
+## Related Articles
 
 > *This article was last updated in September 2024*

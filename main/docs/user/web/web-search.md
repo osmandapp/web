@@ -14,12 +14,15 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <InfoIncompleteArticle/>
 
+
+## Overview
+
 Write your request for searching and showing on the map. Click to circle for open POI's name.
 
 ![Search menu](@site/static/img/web/search.png)
 
 
-## Explore map menu
+## Explore the Map Menu
 
 A new feature in OsmAnd Web with map places search by POI categories, which displays photos of a specific point of interest on the map.
 
@@ -48,5 +51,8 @@ Clicking on a POI opens a new context menu that includes:
 Clicking on the online photos opens the photo gallery. Here you can scroll through all POI photos.
 
 ![Explore menu](@site/blog/2024-07-01-web-1-01/img/poi_photo.png)
+
+
+## Related Articles
 
 > *This article was last updated in September 2024*

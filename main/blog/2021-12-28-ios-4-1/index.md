@@ -91,7 +91,7 @@ Now, you can download region maps of any country <a href="https://osmand.net/doc
 
 ## Added contour lines in feet (You need to re-download files)
 
-We added <a href="https://osmand.net/docs/user/plugins/contour-lines">contour lines maps</a> in feet.
+We added <a href="https://osmand.net/docs/user/plugins/topography">contour lines maps</a> in feet.
 
 <table class="blogimage">
   <tr>

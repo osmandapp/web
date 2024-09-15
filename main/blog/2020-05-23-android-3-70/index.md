@@ -20,7 +20,7 @@ We're happy to announce the new 3.7 OsmAnd release for Android devices.
 
 ## New offline slope maps, see slopes  directly on the maps
 
-You can estimate slopes in your route. We changed menu *Hillshades* to *Terrain* in *Configure map* menu where you can set slopes and hillshades for your map. Now you can choose transparency and zoom levels for your terrain layer. Switch on the *Contour line plugin* at first, you can read more about the <a href="https://osmand.net/docs/user/plugins/contour-lines">Contour lines plugin here</a>. Remember that you can download slopes and hillshade maps for your region.
+You can estimate slopes in your route. We changed menu *Hillshades* to *Terrain* in *Configure map* menu where you can set slopes and hillshades for your map. Now you can choose transparency and zoom levels for your terrain layer. Switch on the *Contour line plugin* at first, you can read more about the <a href="https://osmand.net/docs/user/plugins/topography">Contour lines plugin here</a>. Remember that you can download slopes and hillshade maps for your region.
 
 
 <table class="blogimage">

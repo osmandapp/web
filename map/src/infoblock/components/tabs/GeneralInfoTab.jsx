@@ -95,7 +95,7 @@ export default function GeneralInfoTab({ setShowInfoBlock }) {
                             variant="contained"
                             className={styles.button}
                             onClick={() => {
-                                if (isLocalTrack(ctx)) {
+                                if (isLocalTrack(ctx) || isRouteTrack(ctx)) {
                                     downloadCurrentGpx(ctx);
                                 } else {
                                     downloadGpx(ctx.selectedGpxFile);

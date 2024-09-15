@@ -215,7 +215,7 @@ To get started with Hillshade and Slope you need to:
 1. Purchase the Topography plugin:
     - [Android purchases](../purchases/android.md)
     - [iOS purchases](../purchases/ios.md)
-2. Enable the [Topography plugin](../plugins/contour-lines.md):  
+2. Enable the [Topography plugin](../plugins/topography.md):  
     *Menu → Plugins → ︙ → Enable*
 3. Select your required region, and download **Terrain map (3D)**.
 4. The download process may take some time, depending on the size of the selected region and the speed of your Internet connection.
@@ -227,7 +227,7 @@ To get started with Hillshade and Slope you need to:
 |--------|---------|
 | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
-The difference of relief display on the map when applying these settings is described in the **Topography** article in the corresponding section [*Hillshade and 3D Relief*](../plugins/contour-lines.md#hillshade-and-3d-relief).
+The difference of relief display on the map when applying these settings is described in the **Topography** article in the corresponding section [*Hillshade and 3D Relief*](../plugins/topography.md#hillshade-and-3d-relief).
 
 
 ### Configure Display Options
@@ -250,21 +250,21 @@ The difference of relief display on the map when applying these settings is desc
 
 ![Terrain layers](@site/static/img/plugins/online-maps/terrain_layers.png)
 
-You can customize the zoom level to display and the transparency for Hillshade and Slope. You can read more in the [Topography article](../plugins/contour-lines.md#configure-map-view).
+You can customize the zoom level to display and the transparency for Hillshade and Slope. You can read more in the [Topography article](../plugins/topography.md#configure-map-view).
 
 
 ## 3D Relief
 
 :::note
-[3D Relief](../plugins/contour-lines.md#3d-relief) is an [**OsmAnd Pro**](../purchases/index.md) paid feature <ProFeature />.
+[3D Relief](../plugins/topography.md#3d-relief) is an [**OsmAnd Pro**](../purchases/index.md) paid feature <ProFeature />.
 :::
 
 ![Terrain layers](@site/static/img/plugins/online-maps/raster_maps_3d.png)
 
-The [**3D Relief** feature](../plugins/contour-lines.md#3d-relief) is a mapping technology that allows the visualization of terrain on a map using three-dimensional models. This feature adds elevation information to a normal two-dimensional map, which creates a 3D and depth effect and allows you to better visualize the terrain.  
+The [**3D Relief** feature](../plugins/topography.md#3d-relief) is a mapping technology that allows the visualization of terrain on a map using three-dimensional models. This feature adds elevation information to a normal two-dimensional map, which creates a 3D and depth effect and allows you to better visualize the terrain.  
 
 *To start using 3D Relief*:  
-You need to purchase [OsmAnd Pro purchase plan](../plugins/index.md#purchase), enable the [Topography plugin](../plugins/contour-lines.md), and switch on the [*3D Relief*](../plugins/contour-lines.md#3d-relief) item in *Menu →  Configure map*.
+You need to purchase [OsmAnd Pro purchase plan](../plugins/index.md#purchase), enable the [Topography plugin](../plugins/topography.md), and switch on the [*3D Relief*](../plugins/topography.md#3d-relief) item in *Menu →  Configure map*.
 
 
 *How the 3D Relief feature works*:  

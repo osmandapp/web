@@ -89,7 +89,7 @@ We added <a href="https://osmand.net/docs/user/map/vector-maps#map-mode">night m
 
 ## Added option to download Contour lines in feet
 
-Now, there is an opportunity to download <a href="https://osmand.net/docs/user/plugins/contour-lines#downloading-files">Contour lines</a> data in <a href="https://en.wikipedia.org/wiki/United_States_customary_units">feet</a>.
+Now, there is an opportunity to download <a href="https://osmand.net/docs/user/plugins/topography#downloading-files">Contour lines</a> data in <a href="https://en.wikipedia.org/wiki/United_States_customary_units">feet</a>.
 
 <table class="blogimage">
   <tr>

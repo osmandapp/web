@@ -63,8 +63,8 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | [Hourly map updates](../personal/maps-resources.md#osmand-live)<br/>OsmAnd Live (1 hour delay) - [**](#-map-updates) | **-** | **-**| ✔ |
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Pro Features](#pro-features) | **-** | **-** | ✔ |
-| [3D Relief](../plugins/contour-lines.md#3d-relief) | **-** | **-** | ✔ |
-| [Topography data](../plugins/contour-lines.md#setup)<br/>(Contour lines and Terrain) | **-** | ✔ | ✔ |
+| [3D Relief](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
+| [Topography data](../plugins/topography.md#setup)<br/>(Contour lines and Terrain) | **-** | ✔ | ✔ |
 | [3D track visualization](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
 | [Nautical depths](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Travel guides (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
@@ -97,7 +97,7 @@ At the moment, the Pro subscription has the following features:
 | :------------- | :------------- |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Backup and restore your data, synchronize data with [OsmAnd web portal](https://www.osmand.net/map). |
 | [Cross-platform](../personal/osmand-cloud.md#cross-platform) | Possibility to use OsmAnd Pro and OsmAnd Start on all platforms (Android ← → iOS → Web). |
-| [3D Relief](../plugins/contour-lines.md#3d-relief) | Allows you to have and observe a scale model of your neighborhood or an entire continent. |
+| [3D Relief](../plugins/topography.md#3d-relief) | Allows you to have and observe a scale model of your neighborhood or an entire continent. |
 | [Altitude Widgets - Elevation: Map Center](../widgets/info-widgets.md#elevation-map-center) | Allows you to find out the elevation of the current map center above sea level.  |
 | [OsmAnd Live](../personal/maps-resources.md#osmand-live) | OsmAnd maps update every 15 minutes after [OpenStreetMap](https://www.openstreetmap.org/) improvement. |
 | [Weather Plugin](../plugins/weather.md) | 24h hourly forecast 7 days ahead on the map. |

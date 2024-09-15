@@ -75,9 +75,9 @@ Versions of OsmAnd up to 3.8 offer to download a world map so that you can view 
 
 #### Paid Features for the Selected Location
 
-- [**Contour lines**](../plugins/contour-lines.md#contour-lines). A map containing contour elevation lines to visualize the terrain.
-- [**Terrain map (Hillshade and Slope)**](../plugins/contour-lines.md#hillshade-slope-and-altitude-layers). Maps with shadows or slopes provide additional terrain information.
-- [**Terrain map (3D)**](../plugins/contour-lines.md#3d-relief). Three-dimensional representation of the terrain for a better understanding of your surroundings. [Map rendering engine Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) must be enabled.
+- [**Contour lines**](../plugins/topography.md#contour-lines). A map containing contour elevation lines to visualize the terrain.
+- [**Terrain map (Hillshade and Slope)**](../plugins/topography.md#hillshade-slope-and-altitude-layers). Maps with shadows or slopes provide additional terrain information.
+- [**Terrain map (3D)**](../plugins/topography.md#3d-relief). Three-dimensional representation of the terrain for a better understanding of your surroundings. [Map rendering engine Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) must be enabled.
 - [**Wikipedia**](../plugins/wikipedia.md). Vector map with geo-positioned [Wikipedia](https://wikipedia.org/) articles about landmarks or additional information about places.
 - [**Weather forecast**](../plugins/weather.md). Weather information on a map for easy route planning.
 - [**Online raster maps**](../map/raster-maps.md). The maps are available for download online and can be installed as third-party maps or OsmAnd Tiles.
@@ -180,7 +180,7 @@ Information about *maps menu and actions* can be found in the article [**Downloa
 
 The Local tab shows how much space all existing OsmAnd data occupies on your device. It includes three sections, and for better clarity each section has a different color, and all items in and within the sections are sorted from the largest space occupied on the device to the smallest. Each section can only include items for which data has been downloaded. Below is a sample list of possible items:
 
-- ***Resources*** (*blue*). [*Standard Maps*](../map/vector-maps.md), *[Wikipedia](../plugins/wikipedia.md) and [Travel maps](../plan-route/travel-guides.md)*, [*Nautical maps*](../plugins/nautical-charts.md), [*Topography maps*](../plugins/contour-lines.md), [*Live updates*](../personal/maps-resources.md#osmand-live), *Road only*, [*Weather maps*](../plugins/weather.md),  [*Map sources*](../map/raster-maps.md), [*Rendering styles*](../map/vector-maps.md#default-map-styles), *Map fonts, Voice prompts (recorded and TTS), Cache*.  
+- ***Resources*** (*blue*). [*Standard Maps*](../map/vector-maps.md), *[Wikipedia](../plugins/wikipedia.md) and [Travel maps](../plan-route/travel-guides.md)*, [*Nautical maps*](../plugins/nautical-charts.md), [*Topography maps*](../plugins/topography.md), [*Live updates*](../personal/maps-resources.md#osmand-live), *Road only*, [*Weather maps*](../plugins/weather.md),  [*Map sources*](../map/raster-maps.md), [*Rendering styles*](../map/vector-maps.md#default-map-styles), *Map fonts, Voice prompts (recorded and TTS), Cache*.  
 - ***My Places*** (*yellow*). [Favorites](../personal/favorites.md), [Tracks](../personal/tracks/manage-tracks.md), [OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), [OSM Edits](../plugins/osm-editing.md#osm-editing-layer), [A/V Notes](../plugins/audio-video-notes.md), [Map markers](../personal/markers.md), [History](../personal/global-settings.md#history), Itinerary.
 - ***Settings*** (*green*). [Profiles](../personal/profiles.md), Other.
 

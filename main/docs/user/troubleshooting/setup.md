@@ -34,7 +34,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 To restore [Topography plugin](https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid):
 - Log into the same Google Play account which you used to purchase Topography (formerly Contour lines) plugin, and install [the app](https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid).
 - If the Install button is not active, please make sure to update the Google Play and OsmAnd apps, clear their cache and restart the device, then try install the plugin again.
-- After installation, please enable the Topography plugin in [OsmAnd menu → Plugins](../plugins/contour-lines.md), download the required files in the [Maps and Resources](../start-with/download-maps.md#maps-and-resources) and enable its display in the [Configure map menu](../map/configure-map-menu.md).
+- After installation, please enable the Topography plugin in [OsmAnd menu → Plugins](../plugins/topography.md), download the required files in the [Maps and Resources](../start-with/download-maps.md#maps-and-resources) and enable its display in the [Configure map menu](../map/configure-map-menu.md).
 
 ### How can I identify that OsmAnd Unlimited is active?
 
@@ -97,7 +97,7 @@ After that, your email address can be used as a login to activate OsmAnd Pro on 
 
 ### Contour lines or hillshades do not show up
 
-Read more about the [Topography plugin](../plugins/contour-lines.md).
+Read more about the [Topography plugin](../plugins/topography.md).
 
 
 ## OsmAnd 4.4 (iOS)
