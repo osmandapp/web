@@ -2,8 +2,8 @@ import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import { driver } from '../options.mjs';
-import { clickBy, waitBy, waitByRemoved } from '../lib.mjs';
-import { By } from 'selenium-webdriver';
+import { clickBy, waitBy } from '../lib.mjs';
+import { By, until } from 'selenium-webdriver';
 
 export default async function test() {
     await driver.manage().deleteAllCookies();
@@ -14,14 +14,10 @@ export default async function test() {
 
     const cookies = await driver.manage().getCookies();
     for (let cookie of cookies) {
-        console.log(cookie);
         await driver.manage().deleteCookie(cookie.name);
     }
-    const cookies2 = await driver.manage().getCookies();
-    console.log(cookies2);
-    await waitByRemoved(By.id('se-logout-button'));
+    await driver.wait(until.elementLocated(By.id('se-login-button')), 5000);
 
-    await waitBy(By.id('se-login-button'));
     await clickBy(By.id('se-login-button'));
     await waitBy(By.id('se-alert-login-info'));
 
