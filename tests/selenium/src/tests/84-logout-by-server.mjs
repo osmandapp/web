@@ -6,6 +6,7 @@ import { clickBy, waitBy, waitByRemoved } from '../lib.mjs';
 import { By } from 'selenium-webdriver';
 
 export default async function test() {
+    await driver.manage().deleteAllCookies();
     await actionOpenMap();
     await actionLogIn();
 
@@ -16,7 +17,8 @@ export default async function test() {
         console.log(cookie);
         await driver.manage().deleteCookie(cookie.name);
     }
-    console.log(cookies);
+    const cookies2 = await driver.manage().getCookies();
+    console.log(cookies2);
     await waitByRemoved(By.id('se-logout-button'));
 
     await waitBy(By.id('se-login-button'));
