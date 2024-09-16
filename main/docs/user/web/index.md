@@ -17,7 +17,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 In this section you find description of our [Web Map service](https://osmand.net/map).
 
-### [OsmAnd Cloud](./login.md)
+### [OsmAnd Cloud](./web-cloud.md)
 
 This section explains how to log in and sign up at [www.osmand.net/map](https://osmand.net/map/) and highlights the benefits users receive after registering.
 
