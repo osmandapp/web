@@ -390,9 +390,69 @@ The [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-s
 
 </Tabs>
 
-The **Profile appearance** settings allow you to change name and visual representation of your profile also here you could change **My location** appearance. **Profile name** must be unique, however icons and colors could be the same for different profiles. These changes will apply to various places in the application like ***Route preparation*** menu.
+The **Profile appearance** settings allow you to customize the name and visual representation of your profile. You can also modify the  [**My location**](#my-location-appearance) appearance here. While the *profile name* must be unique, *icons* and *colors* can be the same across different profiles. These changes will be applied across various parts of the application, such as the [*Route preparation*](../navigation/setup/route-navigation.md) menu.
 
+<!--
+**<Translate android="true" ids="profile_name_hint"/>**.  
+You can rename your profile to something more descriptive, which helps distinguish between different profiles for various use cases.
 
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Profile Appearance](@site/static/img/personal/profiles/prof_name_android.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Profile Appearance](@site/static/img/personal/profiles/prof_name_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+**<Translate android="true" ids="profile_appearance"/>**.  
+Personalize the color scheme and label of your selected profile to enhance its visibility and easily identify it within the app.
+
+- *<Translate android="true" ids="select_color"/>*. Choose a color for the profile's icon and menu interface.
+- *All colors* (*Android*). Tap the button to access the complete color palette, allowing you to select a wide variety of colors.
+  
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Profile Appearance](@site/static/img/personal/profiles/profile_appearance_color_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Profile Appearance](@site/static/img/personal/profiles/profile_appearance_color_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+- *<Translate android="true" ids="select_icon_profile_dialog_title"/>*. Assign an icon that best represents the profile's function or activity.
+- *All icons* (*Android*). Tap the button to explore the full range of available icons and choose the one that fits best.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Profile Appearance](@site/static/img/personal/profiles/profile_appearance_icons_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Profile Appearance](@site/static/img/personal/profiles/profile_appearance_icons_ios.png)
+
+</TabItem>
+
+</Tabs>
+-->
 
 ### My Location Appearance
 
@@ -416,21 +476,80 @@ The **Profile appearance** settings allow you to change name and visual represen
 
 </Tabs>
 
-The [**My location**](../map/interact-with-map.md#my-location-and-zoom) **appearance** settings allow you to customize how your location is displayed on the map, both when stationary and in motion. Motion is detected by the Operating system by providing location with speed greater than 0.
+The [**My location**](../map/interact-with-map.md#my-location-and-zoom) **appearance** settings allow you to customize how your location is displayed on the map, both when stationary and in motion. Motion is detected by the operating system when it provides a location update with a speed greater than 0. 
 
+**3D location icon**.
 
-**Additional options** (*Android only*). You can control how certain location-related visual elements appear on the map. You can apply them separately for **stationary** or **moving** icon both or separately.
+- Select the appearance of your location icon in 3D or 2D, depending on the map rendering version you are using.
+- *Map rendering* (*Android*). 3D icons are only available for [map rendering Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine). If you are using [map rendering Version 1](../personal/global-settings.md#map-rendering-engine), the icons will appear in 2D.
+
+![My location Appearance](@site/static/img/personal/profiles/location_appearance_3d_icons.png)
+
+**<Translate android="true" ids="select_map_icon"/>**.
+
+- Customize the icon that represents your location when you are stationary.
+- *All icons* (*Android*). Tap the button to access all available icons.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Profile Appearance at rest Android](@site/static/img/personal/profiles/profile_appearance_at_rest_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Profile Appearance iOS](@site/static/img/personal/profiles/profile_appearance_at_rest_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+**<Translate android="true" ids="select_navigation_icon"/>**.
+
+- Choose an icon for when you are moving. This can help distinguish between movement and stationary states.
+- *All icons* (*Android*). Tap the button to open the full icon selection list.
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+![Profile Appearance on the map Android](@site/static/img/personal/profiles/profile_appearance_moving_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Profile Appearance iOS](@site/static/img/personal/profiles/profile_appearance_moving_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+**<Translate android="true" ids="shared_string_options"/>** (*Android only*).  
+You can control how certain location-related visual elements appear on the map.
 
 - **<Translate android="true" ids="view_angle"/>**. Displays a cone-shaped area that shows the direction you are currently facing.
 - **<Translate android="true" ids="location_radius"/>**. Shows a circular area around your icon, representing the accuracy of your current location.
+- Options include:
+  - *<Translate android="true" ids="shared_string_off"/>*. Disables both the view angle and location radius.
+  - *<Translate android="true" ids="resting_position"/>*. Displays the view angle and location radius below my location position icon when stationary.
+  - *<Translate android="true" ids="navigation_position"/>*. Displays them only when moving.
+  - *<Translate android="true" ids="resting_navigation_position"/>*. Shows both in all states.
 
-**Custom 3D Icons**. If you want to further personalize your map experience, you can create your own 3D icons and add them to the app. To do this, follow the steps below:
+![Profile Appearance on the map Android](@site/static/img/personal/profiles/profile_appearance_options_android.png)
+
+**Custom 3D Icons**.  
+If you want to further personalize your map experience, you can create your own 3D icons and add them to the app. To do this, follow the steps below:
+
 - Create a custom 3D model in [MTL and OBJ formats](https://en.wikipedia.org/wiki/Wavefront_.obj_file).
-- [Create a custom plugin](../plugins/custom.md) by using [pluging example](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf) and include your 3D icons by using following paths:
+- [Create a custom plugin](../plugins/custom.md) by using [pluging example](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf) and include your 3D icons with the following paths:
   - `..osmand/models/icon_folder_name/custom_3d_file.mtl`
   - `..osmand/models/icon_folder_name/custom_3d_file.obj`
-- Alternatively, you can directly copy the custom 3D files to the paths above.
-  
+- Alternatively, directly copy the custom 3D files to the OsmAnd folder with the paths above.
+
+
 ## UI Customization
 
 <InfoAndroidOnly />
