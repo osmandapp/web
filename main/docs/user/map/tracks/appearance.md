@@ -100,15 +100,25 @@ With the *Width setting* you can choose the thickness of the track line based on
 - In the [*Configure Profile*](../../navigation/guidance/navigation-settings.md#customize-route-line) the route line can be set to the **Map Style** width, this is the default width for map specified by the OsmAnd application.
 
 
-### 3D Track
 
-:::caution Paid feature
+
+### Join Gaps
+
+Gaps in a GPX track can occur during recording, for example. This function (Android: *<Translate android="true" ids="join_segments"/>*, iOS: *<Translate ios="true" ids="gpx_join_gaps"/>*) allows you to seamlessly connect all gaps in the chosen GPX track. Segments will be joined with a straight line to form a continuous track.
+
+### Reset to Original
+
+Resets all settings to default values.
+
+
+## 3D Track
+
+:::info Paid feature
 **3D Track** is an **OsmAnd Pro** paid feature for [iOS](../../purchases/ios.md#pro-features) and [Android](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
-:::note For Android
-The *Android* version of the app requires the map rendering engine [Version 2 (OpenGl)](../../personal/global-settings.md#map-rendering-engine) to be enabled to use 3D track visualization.
-:::
+The *3D Track* feature provides a three-dimensional representation of tracks by adding elevation information to standard 2D tracks. This creates a 3D effect with depth, allowing you to better visualize the track in relation to the terrain.  
+
 
 <Tabs groupId="operating-systems">
 
@@ -126,53 +136,33 @@ The *Android* version of the app requires the map rendering engine [Version 2 (O
 
 </Tabs>
 
-The *3D Track* feature provides a three-dimensional representation of tracks by adding elevation information to standard 2D tracks. This creates a 3D effect with depth, allowing you to better visualize the track in relation to the terrain.  
 
-**<Translate android="true" ids="visualized_by"/>**. Choose how to display the 3D track, using [elevation data](../../plugins/trip-recording.md#recorded-gpx-file) from the GPX track file or setting a fixed elevation.
+- **Wall height**. You can visualize 3D track by altitude but also by other available data inside the track or by fixed altitude.
+   - **<Translate android="true" ids="visualized_by"/>**: &nbsp;*Altitude*, &nbsp;*Speed*, &nbsp;*Fixed Height*. 3D Sensor data: &nbsp;*Heart Rate*, &nbsp;*Bicycle Cadence*, &nbsp;*Bicycle Power*, &nbsp;*Temperature*, &nbsp;*Bicycle Speed*.
+   - **<Translate android="true" ids="vertical_exaggeration"/>**. You can scale 3D data to get more prominent visualization.
+   - **<Translate android="true" ids="wall_height"/>**. If Visualized by *Fixed Height*, set the fixed height for the 3D track by defining its elevation on the map in the range of *None* to *2000 m*.
+   - You can combine with [3D Relief](../../plugins/topography.md#3d-relief). If source of 3D data is not alitidue, then 3D data will be represented as the sum from relief altitude and the data for example speed or heart rate data. 
+- **<Translate android="true" ids="wall_color"/>**. You can select the wall color to the same visualization as 3D data or you can choose something else to get another visible data dimension.
+    - Options include: *None*, &nbsp;*Solid*, &nbsp;*Downward Gradient*, &nbsp;*Upward Gradient*, nbsp;*Altitude*, &nbsp;*Slope*, &nbsp;*Speed*.
 
-- Options include: *None*, &nbsp;*Altitude*, &nbsp;*Speed*, &nbsp;*Fixed Height*.
-- Additional options for Android: &nbsp;*Heart Rate*, &nbsp;*Bicycle Cadence*, &nbsp;*Bicycle Power*, &nbsp;*Temperature*, &nbsp;*Bicycle Speed*.
+- **<Translate android="true" ids="track_line"/>**. You can add a line to the top or bottom of 3D track for clearer visualization. Please note that you can configure color of the [track line](#color) as well.
+    - Options include: *Top*, &nbsp;*Bottom*, &nbsp;*Top and bottom*.
 
-1. ***Settings***:
-
-    - [**<Translate android="true" ids="vertical_exaggeration"/>**](../../plugins/topography.md#vertical-exaggeration). If Visualized by *Altitude* or *Speed*, adjust the degree of vertical exaggeration for the 3D track in the range of *None* to *x3.0*.
-    - [**<Translate android="true" ids="wall_height"/>**](../../plugins/topography.md#3d-relief). If Visualized by *Fixed Height*, set the fixed height for the 3D track by defining its elevation on the map in the range of *None* to *2000 m*.
-
-2. ***Visualization options***:
-
-    - **<Translate android="true" ids="wall_color"/>**. Choose the color scheme for the 3D track to enhance visibility and aesthetics.
-        - Options include: *None*, &nbsp;*Solid*, &nbsp;*Downward Gradient*, &nbsp;*Upward Gradient*.
-        - Additional options for Android: &nbsp;*Altitude*, &nbsp;*Slope*, &nbsp;*Speed*.
-
-    - **<Translate android="true" ids="track_line"/>**. Decide where to add a line to the 3D track for clearer visualization.
-        - Options include: *Top*, &nbsp;*Bottom*, &nbsp;*Top and bottom*.
+The *Android* version of the app requires the map rendering engine [Version 2 (OpenGl)](../../personal/global-settings.md#map-rendering-engine) to be enabled to use 3D track visualization.
 
 
-#### Settings with 3D Relief
+### Use Cases
 
-How feature reacts that works with 3D relief (adds height if 3D relief on to not be below surface)
+3D track is useful for sports like paragliding where you can visualize your flight. Though visualization track in 3D could be useful for visual analysis as **Wall height** and **Wall color** provide a lot of visual information.
 
+1. *Visualize by Speed with 3D*. One of the example is to use 3D track with Speed visualizations, so you can see what particular sections on the map caused slow down and speed up. With **Wall color** indication by **Slope** it's also possible to get an understanding how high hills impact the speed.
 
-#### Use Cases
+2. *Visualize by Heart sensor + 3D Relief*. Another interesting use case to visualize tracks by heart sensor data and get direct analysis on the map what was going on. With 3D relief enabled altitude will sum up with heart rate and could be useful in some scenarios. Please note that there are 2 Vertical exaggeration parameters and they work separately for 3D relief and for 3D track.
 
-1. *Visualize by Speed with 3D*.
-
-2. *Visualize by Heart sensor + 3D Relief x*.
-
-3. *Visualize Track height + Slope color line on flat earth*.
+3. *Visualize Track height + Slope color line on flat earth*. If you visualize tracks by altitude then it's better to do on flat earth cause GPS errors of recorded altitude could hide track underground. In this use case you can visualize slope changes separately on the track line and wall color use for altitude.
 
 
-
-### Join Gaps
-
-Gaps in a GPX track can occur during recording, for example. This function (Android: *<Translate android="true" ids="join_segments"/>*, iOS: *<Translate ios="true" ids="gpx_join_gaps"/>*) allows you to seamlessly connect all gaps in the chosen GPX track. Segments will be joined with a straight line to form a continuous track.
-
-### Reset to Original
-
-Resets all settings to default values.
-
-
-## Change Multiple Tracks
+## Change Appearance of Multiple Tracks
 
 <InfoAndroidOnly />
 
