@@ -11,7 +11,10 @@ export default async function test() {
 
     await waitBy(By.id('se-logout-button'));
 
-    await driver.manage().deleteAllCookies();
+    const cookies = await driver.manage().getCookies();
+    for (let cookie of cookies) {
+        await driver.manage().deleteCookie(cookie.name);
+    }
 
     await waitByRemoved(By.id('se-logout-button'));
 
