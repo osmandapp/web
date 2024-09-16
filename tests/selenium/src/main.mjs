@@ -2,6 +2,7 @@
 
 import compareImages from 'resemblejs/compareImages.js';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { TestIgnored } from './TestIgnored.mjs';
 
 import { failed, loggerRun, loggerPass, loggerFail, loggerTitle, loggerReport } from './logger.mjs';
 import { driver, ignore, cycle, stop, mobile, headless, noexit, tests, parseArgs, prepareDriver } from './options.mjs';
@@ -46,7 +47,10 @@ async function runTest({ file, i, total }) {
             try {
                 await test();
             } catch (e) {
-                error = e;
+                if (e instanceof TestIgnored) {
+                    console.log(`Test ${file} is ignored`);
+                    return;
+                }
             }
 
             try {
