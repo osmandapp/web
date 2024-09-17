@@ -1,6 +1,7 @@
 ---
-sidebar_position: 4
-title:  Web Search
+sidebar_position: 3
+sidebar_label:  Search
+title: Search on the Website
 ---
 
 import Tabs from '@theme/Tabs';

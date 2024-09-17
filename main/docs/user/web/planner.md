@@ -1,6 +1,7 @@
 ---
-sidebar_position: 3
-title:  Plan Route / Navigation
+sidebar_position: 2
+sidebar_label:  Plan Route
+title: Plan Route on the Website
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,6 +1,7 @@
 ---
-sidebar_position: 5
-title:  Synchronize with Mobile (Cloud)
+sidebar_position: 4
+sidebar_label:  OsmAnd Cloud
+title: OsmAnd Cloud on the Website
 ---
 
 import Tabs from '@theme/Tabs';
@@ -16,6 +17,63 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
+:::info
+The *[osmand.net/map](https://osmand.net/map/)* site is currently being developed and tested.  
+**Therefore, the layout and operation of some functions on the site may be different from those described in this article.**
+
+We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub so you can leave feedback there.
+:::
+
+The [OsmAnd Map Portal](https://osmand.net/map) is a browser-based service provided by OsmAnd, allowing users to explore maps, manage their data, plan and create trips, or simply browse the map.
+
+#### Subscription Accesses
+
+The Map Portal can be used without registration; however, some features are exclusively available for OsmAnd Pro and OsmAnd Start users:
+
+| Features | Versions |
+|--- |--- |
+| [Navigation Route](./planner.md) | Free |
+| [Create track](./planner.md) | Free |
+| [Weather](./web-map.md) | Free |
+| [Favorites](./web-map.md) | [Osmand Start](https://osmand.net/blog/start) or <ProFeature/> |
+| [OsmAnd Cloud sync](./web-cloud.md) | [Osmand Start](https://osmand.net/blog/start) or <ProFeature/> |
+| [Web Search](./web-search.md)|[Osmand Start](https://osmand.net/blog/start) or <ProFeature/>|
+| [Tracks](./web-map.md) | <ProFeature/> |
+
+
+## How to Start
+
+If you have [OsmAnd Pro](../personal/osmand-cloud.md#login) account or want to create [OsmAnd Start](../personal/osmand-cloud.md#osmand-start) account you need to do next steps:
+
+- Go to the [*OsmAnd Map Portal*](https://osmand.net/map).
+- Open **Account** menu.
+  - *Log in*. Enter the email you used to create your account. For Pro or Start subscriptions.
+  - *Create account*. For OsmAnd Start.
+
+
+## How to Change Language
+
+If you want to change the display languge:
+
+- The Web version of OsmAnd uses the language from the browser settings.  
+- For Chrome, the priority is `chrome://settings/languages`.  
+- You can change the system (menu) language manually by selecting:  
+    *Menu →* ⚙ *→ Turn off language*.
+
+
+## Managing Account
+
+*General Menu → Account*
+
+After registering on the web, users can access their account information, download backups, log out, delete their account, or change their email address.
+
+#### Access Account
+
+#### Backups
+
+#### Log out and Delete
+
+#### Change Email Address
 
 
 ## OsmAnd Pro and OsmAnd Start Sync
@@ -164,3 +222,5 @@ In this section of the menu, you can change the map style. You can read more abo
 ## Related Articles
 
 > *This article was last updated in September 2024*
+
+

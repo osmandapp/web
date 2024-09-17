@@ -47,13 +47,13 @@ The Elevation widget shows a graph with the elevation and slope of your navigati
 ![Elevation widget](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
 
 
-### Interactions with the graph
+#### Interactions with the graph
 
 - *Zoom in/out*. By default, the graph shows the route from the current location up to 10 km ahead. You can use [two-finger movement](../map/interact-with-map#gestures) to zoom in and out for a more detailed view of altitude changes on your route. You can also move the graph to the right, forward on the route, and backward to the current location.  
 - *Place a point on the graph*. If you want to see the altitude and degree value at a particular point ahead on your route, you can tap anywhere on the graph and a pointer with the values will appear.  
 
 
-### What's in
+#### What's in
 
 When you select a route and press the **Start** button, the map opens with your current location, the route on it, and the widget at the bottom of the screen. On the widget, you can see the graph and information about *Uphill*, *Downhill*, *Grade*, distance, altitude, and slope angle. You can select the *optimal scale* and see all possible obstacles on your route.  
 
@@ -109,7 +109,7 @@ Bearing is the direction to a target outside your vehicle, such as a destination
 |  | **iOS:** You can change the data display format for angular units: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,angular_units"/>* |  
 
 
-### How it works
+#### How it works
 
 To display the bearing, a **target point** must be selected. If a **destination** point (or the **first intermediate point**, if there is one) is selected for navigation, it will be used as the target point. Otherwise, the **topmost selected marker** will be used.  
 
