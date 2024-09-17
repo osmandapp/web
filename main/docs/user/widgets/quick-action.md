@@ -186,7 +186,7 @@ When enabled, the *Quick Action* widget initially appears in the lower right cor
 All available [actions](#action-types) are identical to those that can be applied to the default quick action. Custom buttons can be configured as ***Single-action*** buttons, which apply the selected action immediately upon being tapped, without the need to navigate through an extra menu.
 
 
-### Button Appearance
+### Quick Action Button Appearance
 
 <InfoAndroidOnly/>
 
@@ -294,4 +294,4 @@ Using the Quick Action tool's functionality, you can assign required actions to 
 - [Radius-ruler and Ruler](./radius-ruler.md)
 - [Marker widgets](./markers.md)
 
-> *This article was last updated in August 2024*
+> *This article was last updated in September 2024*

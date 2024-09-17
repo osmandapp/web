@@ -412,7 +412,16 @@ To remove or delete a widget from the application screen, you need to select the
 
 ![Button Appearance](@site/static/img/widgets/button_appearance_andr.png)
 
-This feature allows you to adjust the size, shape, icon, and background opacity using sliders. These customization options are available for both *Quick Action (Custom buttons)* and *Default buttons*, giving you full control over the look of your map interface and the fine-turning of the buttons.
+The *Button Appearance* feature enables you fully customize the look of buttons on your map interface. These customization options are available for both *Quick Action (Custom buttons)* and *Default buttons*, providing comprehensive control over the map interface's appearance and allowing precise adjustments to button design.
+
+#### Customization Options
+
+![Button Appearance](@site/static/img/widgets/button_appearance_settings_andr.png)
+
+- **Icon**. Select from a list of icons that represent actions you’ve already added, making it easy to identify functions at a glance.
+- **Corner radius**. Adjust this setting to change the shape of the button, ranging from sharp, square corners to smooth, rounded edges.
+- **Size**. Choose the button size that best fits your screen and stands out as needed. For *Default buttons*, sizes are preset and cannot be adjusted.
+- **Background opacity**. Control the visibility of the button’s background. You can set it to be fully visible or partially transparent, or display only the frame shadow and icon.
 
 
 ## Other
@@ -537,4 +546,4 @@ Available actions:
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *This article was last updated in August 2024*
+> *This article was last updated in September 2024*
