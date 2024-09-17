@@ -390,8 +390,7 @@ The [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-s
 
 </Tabs>
 
-The **Profile appearance** settings allow you to change name and visual representation of your profile also here you could change **My location** appearance. **Profile name** must be unique, however icons and colors could be the same for different profiles. These changes will apply to various places in the application like ***Route preparation*** menu.
-
+The **Profile appearance** settings allow you to customize your profile's name and visual representation. You can also modify the appearance of [**My location**](#my-location-appearance) here. While the *profile name* must be unique, *icons* and *colors* can be the same across different profiles. These changes will be applied across various parts of the application, such as the [*Route preparation*](../navigation/setup/route-navigation) menu.
 
 
 ### My Location Appearance
@@ -416,21 +415,28 @@ The **Profile appearance** settings allow you to change name and visual represen
 
 </Tabs>
 
-The [**My location**](../map/interact-with-map.md#my-location-and-zoom) **appearance** settings allow you to customize how your location is displayed on the map, both when stationary and in motion. Motion is detected by the Operating system by providing location with speed greater than 0.
+The [**My location**](../map/interact-with-map.md#my-location-and-zoom) **appearance** settings allow you to customize how your location is displayed on the map, both when stationary and in motion. Motion is detected by the operating system when it provides a location update with a speed greater than 0.
 
-
-**Additional options** (*Android only*). You can control how certain location-related visual elements appear on the map. You can apply them separately for **stationary** or **moving** icon both or separately.
+**Additional options** (*Android only*).  You can control how certain location-related visual elements appear on the map and apply them separately or both for the Resting and Navigation positions below the *my location* icon.
 
 - **<Translate android="true" ids="view_angle"/>**. Displays a cone-shaped area that shows the direction you are currently facing.
 - **<Translate android="true" ids="location_radius"/>**. Shows a circular area around your icon, representing the accuracy of your current location.
 
+<!--
+**3D location icon**. You can select the appearance of your location icon in 3D or 2D, depending on the map rendering version you are using. *Map rendering* (*Android*). 3D icons are only available for [map rendering Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine). If you are using [map rendering Version 1](../personal/global-settings.md#map-rendering-engine), the icons will appear in 2D.
+
+![My location Appearance](@site/static/img/personal/profiles/location_appearance_3d_icons.png)
+-->
+
 **Custom 3D Icons**. If you want to further personalize your map experience, you can create your own 3D icons and add them to the app. To do this, follow the steps below:
+
 - Create a custom 3D model in [MTL and OBJ formats](https://en.wikipedia.org/wiki/Wavefront_.obj_file).
-- [Create a custom plugin](../plugins/custom.md) by using [pluging example](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf) and include your 3D icons by using following paths:
+- [Create a custom plugin](../plugins/custom.md) by using [pluging example](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf) and include your 3D icons with the following paths:
   - `..osmand/models/icon_folder_name/custom_3d_file.mtl`
   - `..osmand/models/icon_folder_name/custom_3d_file.obj`
-- Alternatively, you can directly copy the custom 3D files to the paths above.
-  
+- Alternatively, directly copy the custom 3D files to the OsmAnd folder with the paths above.
+
+
 ## UI Customization
 
 <InfoAndroidOnly />
@@ -547,6 +553,7 @@ Actions with selected profile:
     - This action is available only for *Android* and only for a *Custom profile*.
     - Default profiles cannot be deleted.
     - To add a profile go to *Menu → Settings → App profiles → + New profile*.
+
 
 ## Related Articles
 
