@@ -22,7 +22,7 @@ import { POI_LAYER_ID } from '../../../map/layers/PoiLayer';
 
 export const SEARCH_RESULT_TYPE_POI = 'POI';
 export const SEARCH_RESULT_TYPE_POI_CATEGORY = 'POI_TYPE';
-const ZOOM_ERROR = 'Please zoom in closer';
+export const ZOOM_ERROR = 'Please zoom in closer';
 
 export function searchByCategory(value, ctx) {
     const preparedValue = {

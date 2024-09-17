@@ -16,6 +16,7 @@ import { EXPLORE_BIG_ICON_SIZE, clusterMarkers, createHoverMarker, removeTooltip
 import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
 
 export const EXPLORE_LAYER_ID = 'explore-layer';
+export const EXPLORE_MIN_ZOOM = 6;
 
 export default function ExploreLayer() {
     const ctx = useContext(AppContext);
@@ -35,6 +36,15 @@ export default function ExploreLayer() {
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [selectedObj, setSelectedObj] = useState(null);
+
+    const zoom = map.getZoom();
+
+    useEffect(() => {
+        if (zoom < EXPLORE_MIN_ZOOM) {
+            ctx.setWikiPlaces(null);
+            removeLayers();
+        }
+    }, [zoom]);
 
     useSelectedPoiMarker(
         ctx,
@@ -163,19 +173,22 @@ export default function ExploreLayer() {
      */
 
     async function getData({ controller, ignore, settings, setLoadingContextMenu }) {
+        const API_GET_OBJS = 'get-wiki-data';
+        const API_GET_IMGS = 'get-wiki-images';
         if (!ignore) {
-            if (settings?.selectedFilters?.size === 0) {
+            if (map.getZoom() < EXPLORE_MIN_ZOOM || settings?.selectedFilters?.size === 0) {
                 ctx.setWikiPlaces(null);
                 return;
             }
             setLoadingContextMenu(true);
             const bbox = map.getBounds();
-            const api = settings?.useWikiImages ? 'get-wiki-images' : 'get-wiki-data';
+            const api = settings?.useWikiImages ? API_GET_IMGS : API_GET_OBJS;
             const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/${api}`, {
                 apiCache: true,
                 params: {
                     northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
                     southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
+                    zoom: api === API_GET_IMGS ? null : map.getZoom(),
                     lang: settings?.useWikiImages ? null : i18n.language,
                     filters: settings?.selectedFilters ? [...settings.selectedFilters] : null,
                 },
