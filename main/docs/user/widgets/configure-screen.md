@@ -412,7 +412,7 @@ To remove or delete a widget from the application screen, you need to select the
 
 ![Button Appearance](@site/static/img/widgets/button_appearance_settings_andr.png)
 
-The **Button appearance* feature enables you fully customize the look of buttons on your map interface. These customization options are available for both *Quick Action (Custom buttons)* and *Default buttons*, providing comprehensive control over the map interface's appearance and allowing precise adjustments to button design.
+The *Button appearance* feature enables you fully customize the look of buttons on your map interface. These customization options are available for both *Quick Action (Custom buttons)* and *Default buttons*, providing comprehensive control over the map interface's appearance and allowing precise adjustments to button design.
 
 *Customization Options*:
 
