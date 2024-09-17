@@ -184,6 +184,16 @@ The compass icon on the button always points to the North. You can select how th
 [Quick action widget](./quick-action.md) is a configurable button with various action types that could be assigned to it. It also possible to have multiple [Custom buttons](./quick-action.md#custom-buttons).
 
 
+## Map Button Appearance
+
+<InfoAndroidOnly/>
+
+Customizing the appearance of buttons allows you to adjust the size, shape, icon, and background opacity for both [Quick Action (Custom buttons)](../widgets/quick-action.md#button-appearance) and [Default buttons](../widgets/configure-screen.md#button-appearance). This flexibility lets you personalize the interface to suit your preferences and improve usability. These options are available via the following menus:
+
+- *Menu → Configure screen → Buttons → Default buttons*
+- *Menu → Configure screen → Custom buttons → Quick action → tree-dot menu → Appearance*
+
+
 ## Related Articles
 
 
@@ -194,4 +204,4 @@ The compass icon on the button always points to the North. You can select how th
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *This article was last updated in August 2024*
+> *This article was last updated in September 2024*
