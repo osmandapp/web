@@ -53,32 +53,27 @@ Please, note if you remove some items from your downloads the chance for free do
 
 If you already used 5(iOS) or 7(Android) possibilities for free downloads, you can get 3 extra downloads if you would subscribe to the mailing list. The banner with suggestion to subscribe would appear when you have used all free downloads.
 
-## OsmAnd Pro
+## Cross-platform purchases
 
-OsmAnd Pro is a subscription with all [OsmAnd features](../purchases/android.md#free-and-paid-features). Its main advantage is that it is **cross-platform**. This means that it can be bought in one of the Android stores (Google Play, Amazon, Huawei AppGallery), and launched on iOS, for example.  
+**OsmAnd Pro** is a subscription that allows to purchase OsmAnd on one platform and use **paid features** on another platform  at the same time. For example purchased one of the [Android](../purchases/android.md)  stores (Google Play, Amazon, Huawei AppGallery), and launched on [iOS](../purchases/ios.md) and [Web](https://www.osmand.net/map), for example.  
 
-### Cross-platform
+Please note that other purchases like Maps+ can't be transfered between billing platforms, even Android Google Play to Android Amazon and vice versa.
 
-The cross-platform feature allows you to use OsmAnd Pro on all platforms at the same time: [Android](../purchases/android.md) ←→ [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map)
+**Steps to transfer license**:
 
-**_Steps_**:
+**1. Purchase.** After you have purchased an OsmAnd Pro subscription, you should register your email on [OsmAnd cloud](../personal/osmand-cloud.md#backup-and-restore-for-osmand-pro).
 
-**1.** After you have purchased an OsmAnd Pro subscription, you should register your email on the OsmAnd server for identification on other platforms.
-
-[Register](../personal/osmand-cloud.md#backup-and-restore-for-osmand-pro) your account:
 *OsmAnd Menu → Settings → OsmAnd Cloud → Create new account* 
 
 :::note
 Registration must take place on the platform on which the subscription was purchased.
 :::
 
-After that, your email address can be used as a login to activate OsmAnd Pro on other platforms.
-
-**2.** OsmAnd Pro Activation:
+**2. Link**. You need to link the purchase on another device. 
 
 *OsmAnd Menu → Settings → OsmAnd Cloud → I already have an account*
 
-**3.** Activation check:
+**3. Activation**. Next you can activate paid features.
 
 *OsmAnd Menu → Settings → Purchases → Restore purchases*
 
