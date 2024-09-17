@@ -17,20 +17,20 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-OsmAnd has many powerful features to display various routes on the map. Routes could be built as part of Navigation, created via Plan Route, imported as GPX tracks, recorded via Trip Recording plugin or browsed and selected from OpenStreetMap data.
+OsmAnd has many powerful features to display various routes on the map. Routes could be built as part of Navigation, created via Plan Route, imported as GPX tracks, recorded via Trip Recording plugin, or browsed and selected from OpenStreetMap data.
 
 
 ## Types of Tracks
 
-OsmAnd can display several different type of routes
+OsmAnd can display several different types of routes
 
-[Tracks (GPX)](#display-tracks-on-the-map) - recorded or planned trip saved in [GPX-format](https://en.wikipedia.org/wiki/GPS_Exchange_Format). This kind of route could be imported from the external source, created in the application or recorded by user. GPX could contain one of 3 different types of data or all of them:
+[Tracks (GPX)](#display-tracks-on-the-map) - recorded or planned trip saved in [GPX-format](https://en.wikipedia.org/wiki/GPS_Exchange_Format). This kind of route could be imported from the external source, created in the application, or recorded by the user. GPX could contain one of 3 different types of data or all of them:
 
-- Track as a line (**Geometry**)- file has ```<trkpt>``` points array, each point has location and optionally time, speed, altitude and other attributes. These tracks are displayed on the map as solid lines.
-- Track as a route (**Route**)-  file has ```<rtept>``` points array, each point described as an intermediate point of the route. It depends on how points within a route should be connected either as small route segments or via straight line. These tracks are displayed on the map as dashed lines.
-- Waypoints (**Points**)- file has ```<wpt>``` points with attributes. Waypoints are displayed as circular points on the map. You could click on them to get additional information.
+- Track as a line (**Geometry**) - file has ```<trkpt>``` points array, each point has location and optionally time, speed, altitude, and other attributes. These tracks are displayed on the map as solid lines.
+- Track as a route (**Route**) - file has ```<rtept>``` points array, each point described as an intermediate point of the route. It depends on how points within a route should be connected either as small route segments or via a straight line. These tracks are displayed on the map as dashed lines.
+- Waypoints (**Points**) - file has ```<wpt>``` points with attributes. Waypoints are displayed as circular points on the map. You could click on them to get additional information.
 
-OsmAnd could create tracks with 1-3 combinations. [Plan Route](../../plan-route/create-route.md) creates track with **Geometry** and **Route**, if you save as **Simplified Track** only **Geometry** will be kept. [Recording track](../../plugins/trip-recording.md#new-track-recording) creates only **Geometry** but it's also possible to add **Points** via Context menu to it.
+OsmAnd could create tracks with 1-3 combinations. [Plan Route](../../plan-route/create-route.md) creates a track with **Geometry** and **Route**, if you save as **Simplified Track** only **Geometry** will be kept. [Recording track](../../plugins/trip-recording.md#new-track-recording) creates only **Geometry** but it's also possible to add **Points** via the Context menu to it.
 
 
 ## Display Tracks on the Map
@@ -39,8 +39,6 @@ You can choose which tracks to show on the map and which to hide in the [My Plac
 
 
 ### Configure Map
-
-Configure map allows you to quickly select all recently visible tracks, so you can easily switch on/off visibility for collection of tracks. Sorting of tracks is the same as configured in My Places - Tracks. By long tap on the track item, you can access [Track menu](../../personal/tracks/manage-tracks.md#track-menu).Also in this menu you can change appearance for multiple [selected tracks](./appearance.md#change-multiple-tracks).
 
 <Tabs groupId="operating-systems">
 
@@ -62,10 +60,10 @@ Configure map allows you to quickly select all recently visible tracks, so you c
 
 </Tabs>
 
+Configure map allows you to quickly select all recently visible tracks, so you can easily switch on/off visibility for a collection of tracks. The sorting of tracks is the same as configured in My Places - Tracks. By long tap on the track item, you can access [Track menu](../../personal/tracks/manage-tracks.md#track-menu). Also in this menu, you can change the appearance for multiple [selected tracks](./appearance.md#change-multiple-tracks).
+
 
 ### My Places
-
-In My places - Tracks to show track on the map, you need to: *Android* - tap the three-dot menu in the field with the required track, *iOS* - long tap the required track in the list.  
 
 <Tabs groupId="operating-systems">
 
@@ -86,9 +84,13 @@ In My places - Tracks to show track on the map, you need to: *Android* - tap the
 
 </Tabs>
 
-### Track Context Menu
+In **My Places - Tracks** to display the track on the map, you need to:
 
-If you selected track on the map or open [Track context menu](./track-context-menu.md) after track being recorded or imported, you can also use  *Show / hide* buttons allow to anable or disable displaying of a track on the map.
+- *Android* - tap the three-dot menu in the field with the required folder.
+- *iOS* - to make a long tap the required track in the list.
+
+
+### Track Context Menu
 
 <Tabs groupId="operating-systems">
 
@@ -105,6 +107,8 @@ If you selected track on the map or open [Track context menu](./track-context-me
 </TabItem>
 
 </Tabs>
+
+If you select the track on the map or open [Track context menu](./track-context-menu.md) after the track is recorded or imported, you can also use the *Show / Hide* buttons to enable or disable the displaying of a track on the map.
 
 
 ## Analyze Track on Map  
@@ -136,10 +140,8 @@ This tool allows you to view track information using graphs and maps.
 - **Tap/Slide**. Tap the Graph to display information about the track point and moving it along the Graph highlights the location of the point on the map and displays information about it in the bar.
 - **Scale**. Scale the Graph with a [two-fingers gesture](../../map/interact-with-map.md#gestures).
 
+
 ### Follow My Location
-
-Tap the [My Location](../../map/interact-with-map.md#my-location--zoom) buttonto have the map view and graph synchronized with your location. In this case, **graph scale** will remain the same and the **bar information** will be fixed to 1/4 to the left. As you move, the **graph will slide** from left to right, displaying information ahead of your track. This feature is useful for hiking and cycling while navigating, although no other widgets are displayed on this screen.  
-
 
 <Tabs groupId="operating-systems">
 
@@ -157,6 +159,8 @@ Tap the [My Location](../../map/interact-with-map.md#my-location--zoom) buttonto
 
 </Tabs>
 
+Tap the [My Location](../../map/interact-with-map.md#my-location--zoom) button to have the map view and graph synchronized with your location. In this case, the **graph scale** will remain the same, and the **bar information** will be fixed to 1/4 to the left. As you move, the **graph will slide** from left to right, displaying information ahead of your track. This feature is useful for hiking and cycling while navigating, although no other widgets are displayed on this screen.  
+
 
 ## Related Articles
 
@@ -167,6 +171,7 @@ Tap the [My Location](../../map/interact-with-map.md#my-location--zoom) buttonto
 - [GPX tracks](../../personal/tracks/index.md)  
 - [Plan route](../../plan-route/index.md)  
 - [Trip Recording](../../plugins/trip-recording.md)  
+
 
 ### Track Appearance
 
@@ -180,3 +185,4 @@ Read more about [Track Context menu](./track-context-menu.md).
 
 Read more about [Track navigation](../../navigation/setup/gpx-navigation.md).
 
+> *This article was last updated in September 2024*
