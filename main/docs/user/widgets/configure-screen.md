@@ -308,7 +308,7 @@ The **widget context menu** allows you to manage and configure widgets directly 
 
 ### Copies of Widgets
 
-*OsmAnd menu → Configure screen → Widgets → Panel → **Add** chosen widget*  
+*OsmAnd menu → Configure screen → Widgets → Panel →* **Add** *chosen widget*  
 
 ![Widget dublicate](@site/static/img/widgets/widget_dublicate.png)  
 
@@ -410,13 +410,11 @@ To remove or delete a widget from the application screen, you need to select the
 
 <InfoAndroidOnly/>
 
-![Button Appearance](@site/static/img/widgets/button_appearance_andr.png)
-
-The *Button Appearance* feature enables you fully customize the look of buttons on your map interface. These customization options are available for both *Quick Action (Custom buttons)* and *Default buttons*, providing comprehensive control over the map interface's appearance and allowing precise adjustments to button design.
-
-#### Customization Options
-
 ![Button Appearance](@site/static/img/widgets/button_appearance_settings_andr.png)
+
+The **Button appearance* feature enables you fully customize the look of buttons on your map interface. These customization options are available for both *Quick Action (Custom buttons)* and *Default buttons*, providing comprehensive control over the map interface's appearance and allowing precise adjustments to button design.
+
+*Customization Options*:
 
 - **Icon**. Select from a list of icons that represent actions you’ve already added, making it easy to identify functions at a glance.
 - **Corner radius**. Adjust this setting to change the shape of the button, ranging from sharp, square corners to smooth, rounded edges.
