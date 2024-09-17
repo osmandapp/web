@@ -15,81 +15,93 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-Hello, everyone!
+Hello, everyone! Welcome to OsmAnd Web Version 1.01!
 
-We are glad to introduce version 1.01 of our [map web service](https://osmand.net/map). 
+We're excited to announce the release of OsmAnd Web Version 1.01 — a powerful update that brings new features, enhanced performance, and essential fixes to improve your experience with our web-based map service.
 
+You can explore the latest version directly at [OsmAnd Web](https://osmand.net/map). 
 
 <!--truncate-->
 
-**What's new**
+**What's New in Version 1.01**
 
-- Default [system language](#system-language) (under development).
-- New [context menu](#map-context-menu) for map settings.
-- New options for [map search](#explore-map-menu):
-  - Update for [POIs context menu](#poi-context-menu),
-  - POIs [Photo gallery](#photo-gallery).
+Here’s a quick rundown of the new features and improvements:
+
+- [Default System Language](#system-language) (in development).
+- New [Context Menu](#new-map-context-menu) for streamlined map interactions.
+- Enhanced [Map Search Options](#explore-map-menu), including:
+  - Updated [POI (Points of Interest) context menu](#poi-context-menu).
+  - New [Photo Gallery for POIs](#photo-gallery), showing detailed images.
 <!--- Display of [Wikimedia images](#wikimedia-images) on the map (in testing).-->
-- Added ability to provide [URLs for different web sections](#more-urls).
-- Updated icons for Favorites (expected in 4.8).
-- Added a special banner with information about the OsmAnd mobile version and a link (expected in 4.8).
-- Fixed incorrect precipitation data.
-- Fixed user data lag when there is a huge amount of data.
-- Fixed zooming when enabling favorites or tracks.
+- Added ability to provide [URLs for specific web sections](#more-urls).
+- Updated Favorites Icons (expected in version 4.8).
+- New banner with information about the OsmAnd mobile app (coming in version 4.8).
+- Fixed several bugs:
+  - Incorrect precipitation data display.
+  - User data lag with large datasets.
+  - Zooming issues when enabling favorites or tracks.
 
+Read on for more details about these features and improvements.
+
+_______________
 
 ## System Language
 
-- The Web version of OsmAnd uses the language from the browser settings.  
-- For Chrome, the priority is `chrome://settings/languages`.  
-- You can change the system (menu) language manually by selecting  
-    *Menu →* ⚙ *→ Turn off language*.
+OsmAnd Web now adapts to the language settings of your browser. By default, the system will use the language set in your browser preferences:
+
+- **Chrome users**: The priority is set through `chrome://settings/languages`.
+
+If you'd like to manually configure the interface (system) language:
+
+- Go to *Menu →* ⚙ *→ Turn off language* auto-detection to choose your preferred language.
 
 
-## Map Context menu
+## New Map Context menu
 
-In this release a new context menu for the map has been added, to open it right click anywhere on the map. This menu includes the following actions:
+In this update, we've introduced a new context menu for the map, making it easier to interact with points on the map. To open the menu, simply right-click anywhere on the map. The following actions are available:
 
-- **Where am I**
-- **Show weather**
-- **Create new route**
-- **Add Favorite**
-- **Directions from**
-- **Directions to**
-- **Cope coordinates**
-- **Add pin**
-- **Show regions**
+- **Where am I** – Quickly find your current location on the map
+- **Show weather** – Get up-to-date weather information for the selected area.
+- **Create new route** – Plan a route from the selected location.
+- **Add Favorite** – Mark a point of interest as a favorite for easy access.
+- **Directions from** – Start navigation from the selected point.
+- **Directions to** – Get directions to the selected point.
+- **Cope coordinates** – Copy the coordinates for external use.
+- **Add pin** – Place a pin to mark a location on the map.
+- **Show regions** – Display the regions associated with the selected point.
 
 ![Map Context menu](./img/map_context_menu.png)
 
 
 ## Explore map menu
 
-A new feature in OsmAnd Web with map places search by POI categories, which displays photos of a specific point of interest on the map.
+Our **Explore Map** feature has received a significant upgrade, making it easier to search for places and view points of interest (POIs) with their photos directly on the map.  
 
-- Click on 🔍 to open a tab with popular POIs on the map screen. 
-- Then select and click on one of the POIs to open the context menu for it.
+To get started:
+
+1. Click the 🔍  icon to open the search tab, which displays popular POI categories. 
+2. Select any POI to open its context menu for more detailed information.
 
 ![Explore menu](./img/explore.png)
 
-- To start searching by category, open the Categories menu and select the required items.
+To refine your search by categories, open the Categories Menu and choose the items you are interested in.
 
 ![Explore menu](./img/explore_cat.png)
 
 ### POI Context Menu
 
-Clicking on a POI opens a new context menu that includes:
+Clicking on a POI now brings up an updated context menu that includes:
 
-- Name (Сategory).
-- Direction and distance.
-- Description.
-- [Online photos](#photo-gallery).
+- POI Name (Category).
+- Direction and distance to the POI.
+- Detailed description.
+- Access to the [Online photo gallery](#photo-gallery) for that POI.
 
 ![Explore menu](./img/poi_context.png)
 
-### Photo Gallery
+### POI Photo Gallery
 
-Clicking on the online photos opens the photo gallery. Here you can scroll through all POI photos.
+For visual learners, we hasve added an exciting new feature—the POI Photo Gallery. When you select a POI, you wll be able to browse through all available online photos related to that location, giving you a more immersive experience.
 
 ![Explore menu](./img/poi_photo.png)
 
@@ -105,7 +117,9 @@ Added the feature to display Wikimedia images on the map.
 ![Explore menu](./img/wiki_photos.png)
 -->
 
-## More URLs
+## More URLs for Easy Access
+
+We’ve added new URLs for specific sections of the OsmAnd Web service, making it even easier to access different tools and functionalities directly. Below are some of the key URLs:
 
 -  **Weather**&nbsp; – &nbsp;`osmand.net/map/weather`
 
@@ -126,14 +140,30 @@ Added the feature to display Wikimedia images on the map.
 -  For the current [**Explore page**](#explore-map-menu)&nbsp; - &nbsp;`osmand.net/map/search`
 
 
-***Example***:  
+***For example***, you can directly access the Favorites page via:  
     `https://osmand.net/map/mydata/favorites/#12/40.7452/-74.0326`
 
 
-## Optional Updates
+## Additional Updates and Fixes
 
-- Added a special [banner](https://github.com/osmandapp/OsmAnd/issues/18825) with information about the OsmAnd mobile version and a link.
-- Fixed [incorrect precipitation data](https://github.com/osmandapp/OsmAnd-Issues/issues/2578).
-- Fixed user data lag when there is a [huge amount of data](https://github.com/osmandapp/web/issues/384).
-- Fixed [zooming](https://github.com/osmandapp/web/issues/246) when enabling favorites or tracks.
+Along with these new features, we've addressed several important issues:
+
+- **Banner for OsmAnd mobile**. A new [banner](https://github.com/osmandapp/OsmAnd/issues/18825) provides information about the OsmAnd mobile app, including a direct download link (coming in version 4.8).
+
+- **Precipitation data fix**. We corrected the display of [precipitation data](https://github.com/osmandapp/OsmAnd-Issues/issues/2578) to ensure accuracy.
+
+- **User Data Lag Fix**. Improved performance when handling [huge amount of user data](https://github.com/osmandapp/web/issues/384), reducing lag.
+
+- **Zooming Fix**. Resolved issues related to [zooming](https://github.com/osmandapp/web/issues/246) when enabling favorites or tracks.
+
+________________________________________
+
+
+We hope these updates improve your experience with OsmAnd Web and make it easier to explore, navigate, and manage your maps. Stay tuned for more exciting features in upcoming releases, and thank you for your continued support!
+
+________________________________________
+
+<LinksSocial/>
+<LinksTelegram/>
+<AndroidStore/>
 
