@@ -17,6 +17,8 @@ const locationZoom = 17;
 export const initialZoom = 5;
 export const initialPosition = [50, 5]; // use != instead of !== to compare coordinates
 
+const XYZ_HASH_SYNC = 'hash'; // use Alt/Ctrl+click on LocationControl to save/restore map x/y/z
+
 export async function detectGeoByIp({ map, hash }) {
     if (hash) {
         const [zoom, lat, lon] = (hash.lastHash ?? window.location.hash ?? '').split('/');
@@ -146,24 +148,33 @@ export const LocationControl = ({ position = 'bottomright' } = {}) => {
         }
     }, []);
 
-    const onClick = useCallback(() => {
-        circle?.removeFrom(map);
-        marker?.removeFrom(map);
-        if (status === 'found') {
-            setStatus('new');
-        } else {
-            setStatus('loading');
-            map.on('locationerror', onLocationError);
-            map.on('locationfound', onLocationFound);
-            map.locate({
-                timeout: 30 * 1000, // seconds
-                watch: false,
-                setView: false,
-                maxZoom: locationZoom,
-                enableHighAccuracy: true,
-            });
-        }
-    }, [status, message]);
+    const onClick = useCallback(
+        (event) => {
+            if (event.altKey) {
+                localStorage.setItem(XYZ_HASH_SYNC, window.location.hash);
+            } else if (event.ctrlKey) {
+                window.location.hash = localStorage.getItem(XYZ_HASH_SYNC);
+            } else {
+                circle?.removeFrom(map);
+                marker?.removeFrom(map);
+                if (status === 'found') {
+                    setStatus('new');
+                } else {
+                    setStatus('loading');
+                    map.on('locationerror', onLocationError);
+                    map.on('locationfound', onLocationFound);
+                    map.locate({
+                        timeout: 30 * 1000, // seconds
+                        watch: false,
+                        setView: false,
+                        maxZoom: locationZoom,
+                        enableHighAccuracy: true,
+                    });
+                }
+            }
+        },
+        [status, message]
+    );
 
     const control = useMemo(
         () => (
