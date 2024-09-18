@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-Quick Action widget is an interactive user interface element that provides quick access to key functions or actions without having to open additional settings. This widget is placed on the main map screen and allows you to simplify and speed up interaction with the application, making it more convenient and efficient.  
+Quick Action widget is an interactive user interface element that provides fast access to key functions or actions without opening additional settings. This widget is placed on the main map screen and allows you to simplify and speed up interaction with the application, making it more convenient and efficient.  
 
 ![Quick action widget](@site/static/img/widgets/quick_action_widget.png)
 
@@ -78,8 +78,8 @@ All actions are organized in the **Add Action** menu and grouped by type. A comp
 
 You can assign one or more [actions](#action-types) to the quick action button. There are 2 ways to add actions.
 
-- **In the Configure screen**  - Select a button from the list, tap the&nbsp;  "**＋**"  &nbsp;button. You need to select the [action type](#action-types) first, and then change its name and [parameters](#actions-in-loop).
-- **In the quick action button panel** - Tap the *Quick Action button* on the map screen. At the end of the list, on the latest screen in the panel, is the "**＋**"  &nbsp;*Add Action* box. Tap it and select an action from the [list of types](#action-types).
+- **In the Configure screen**. Select a button from the list, and tap the&nbsp;  "**＋**"  &nbsp;button. You need to select the [action type](#action-types) first, and then change its name and [parameters](#actions-in-loop).
+- **In the quick action button panel**. Tap the *Quick Action button* on the map screen. At the end of the list, on the latest screen in the panel, is the "**＋**"  &nbsp;*Add Action* box. Tap it and select an action from the [list of types](#action-types).
 
 
 :::note
@@ -110,27 +110,20 @@ You can assign one or more [actions](#action-types) to the quick action button. 
 
 The actions assigned to a button are divided into Screens. These screens, 1, 2, and others are created automatically when the number of actions in the list increases to **6 items**. You can group the actions in an order that is convenient for you. To change the order of items, you need to:
 
-- *Android*. *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → Hold & Drag*  
+- **Android**. *<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → Hold & Drag*  
     Select an up or down action using the icon (*three vertical lines*) in the list.
 
-- *Android*. Open *Quick action menu → long tap Add action → Hold & Drag*  
+- **Android**. Open *Quick action menu → long tap Add action → Hold & Drag*  
     Select an up or down action using the icon (*three vertical lines*) in the list.
 
-- *iOS*. *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/> → Tap Edit (Pencil icon) → Hold & Drag*  
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/> → Tap Edit (Pencil icon) → Hold & Drag*  
      Select an up or down action using the icon (*three vertical lines*) in the list *→ Done*.
 
 #### Actions in Loop
 
 ![Custom button Android](@site/static/img/widgets/actions_in_loop_andr.png)  
 
-For some actions, you can assign a list of layers that will change in a circle with each tap.  
-
-- *Map source*
-- *Map style*
-- *Overlay*
-- *Underlay*
-- *Terrain color scheme*
-- *Add profile*
+For some actions, you can assign a list of layers that will change in a circle with each tap: *Map source*, *Map style*, *Overlay*, *Underlay*, *Terrain color scheme*, *Add profile*.
 
 The button allows you to assign a single layer or a list of layers that change circularly when tapped or with an interim dialog.
 
@@ -206,13 +199,13 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 | Show / Hide <br/> [**Routes**](../map/vector-maps.md#routes) | You can select route types to enable or disable their display. <br/> Some routes have additional settings. By default, if you have not selected anything in the [Configure Map](../map/configure-map-menu.md) menu, the first route type from the list will be assigned, otherwise, a type of your choice will be assigned. You can read more in the [Routes](../map/routes.md) article. <br/> - ***Cycle routes***  &nbsp;(*Route*, *Node networks*) <br/> - ***Mountain bike routes***  &nbsp;(*MTB scale*, *IMBA*) <br/> - ***Hiking routes***  &nbsp;(*OSMC*, *Network affiliation*, *Node networks*) <br/> - ***Hiking trails difficulty grade***  &nbsp;(*SAC scale*, *CAI scale*) <br/> - ***Ski slopes*** <br/> - ***Horse routes*** <br/> - ***Whitewater sports*** <br/> - ***Running routes*** <br/> - ***Fitness trails*** <br/> - ***Travel routes***  &nbsp;(*Tracks*, *Travel books*, *Points*) <br/> |
 | Show / Hide <br/> [**Topography layers**](../plugins/topography.md#overview) | All topography data is presented as separate map layers. You can quickly switch the visibility of these layers with Quick Action. <br/> - ***Contour lines*** <br/> - ***Terrain***.  &nbsp;(*Depending on the layer selected in the [Configure Map](../map/configure-map-menu.md) menu*, *Hillshade*, *Slope*, or *Altitude* *will be displayed.*) |
 | Change <br/> [**Terrain color scheme**](../plugins/topography.md#color-scheme) | Allows you to select one or more palettes from a list of existing ones, which will change when you tap the button. |
-| Show / Hide <br/> [**Weather layers**](../plugins/weather.md#weather-layers) | All weather data is presented as separate map layers. With Quick Action, you can get quick access to switch the visibility of these layers on the map. <br/> - *Precipitation layer* <br/> - *Cloud layer* <br/> - *Pressure layer* <br/> - *Wind layer* <br/> - *Temperature layer* |
+| Show / Hide <br/> [**Weather layers**](../plugins/weather.md#weather-layers) | All weather data is presented as separate map layers. With Quick Action, you can get quick access to switch the visibility of these layers on the map. <br/> - **Precipitation layer** <br/> - **Cloud layer** <br/> - **Pressure layer** <br/> - **Wind layer** <br/> - **Temperature laye*r* |
 | Open <br/> [**Weather screen**](../plugins/weather.md) <br /> *Android only* | Opens the [*Weather* forecast screen](../plugins/weather.md#weather-forecast-screen) with the detailed information. |
 | Show / Hide <br/> [**Favourites**](../personal/favorites.md#view-on-the-map) | Show or hide the favourite points on the map. |
 | Show / Hide <br/> [**Tracks**](../personal/tracks/manage-tracks.md#show-tracks-on-map) | Show or hide the last visible tracks on the map. |
-| Show / Hide <br/> [**POIs**](../map/point-layers-on-map.md#points-of-interest-poi) | Enable or disable POI layer with selected categories. <br/> - **POI Categories**: allows to select multiple categories <br/> Note: Action will replace previously selected categories if the POI layer was active before.  |
+| Show / Hide <br/> [**POIs**](../map/point-layers-on-map.md#points-of-interest-poi) | Enable or disable the display of POI layers with selected categories on the map.<br/>You can select multiple POI categories. The action replaces the POI categories from Configure Map selected without using Quick Actions.  |
 | Change <br/> [**Map mode**](../map/vector-maps.md#map-mode) | Quick access to switch between day and night modes. |
-| Change <br/> [**<Translate ios="true" ids="quick_action_map_source_title"/>**](../map/raster-maps.md) | The button allows you to assign a single map source or a list of source that change circularly when tapped or with an interim dialog. <br/> - **Show an interim dialog**. displays a dialog with maps list <br/> - **Do not show an interim dialog**: map sources will be changed by defined order. <br/> - Displayed Name - '**Map source >**'. '>' after the map name indicates what the currently selected map source is. <br/> - Displayed Name - '**> Next map source**'. '>' before the map name indicates what is the next selected map source if the action is executed. <br/> - **Note**: you could have 1 action to change source and select multiple map sources or many quick actions with 1 map source selected, so you could quickly select the map source just from the quick action list. |
+| Change <br/> [**<Translate ios="true" ids="quick_action_map_source_title"/>**](../map/raster-maps.md) | The button allows you to assign a single map source or a list of source that change circularly when tapped or with an interim dialog. <br/> - **Show an interim dialog**. displays a dialog with maps list <br/> - **Do not show an interim dialog**: map sources will be changed by defined order. <br/> - Displayed Name - '**Map source >**'. '>' after the map name indicates what the currently selected map source is. <br/> - Displayed Name - '**> Next map source**'. '>' before the map name indicates what the next selected map source is if the action is executed. <br/> - **Note**: you could have 1 action to change source and select multiple map sources or many quick actions with 1 map source selected, so you could quickly select the map source just from the quick action list. |
 | Show / Hide <br /> [**Public transport**](../map/vector-maps.md#transport) | Enable or disable public transport map layer. <br /> - **Transport type** (on first tap): select one or many options from *Transport stops*, *Bus, trolleybus, and shuttle routes*, *Tram and train routes*, *Subway routes*. |
 | Change <br/> [**<Translate ios="true" ids="map_settings_over"/>**](../map/raster-maps.md) | Create a list of map sources as map overlay and cycle through them. <br /> Note, works similar to *Change* **<Translate ios="true" ids="quick_action_map_source_title"/>** |
 | Change <br/> [**<Translate ios="true" ids="map_settings_under"/>**](../map/raster-maps.md) |  Create a list of map sources as map underlay and cycle through them. <br /> Note, works similar to *Change* **<Translate ios="true" ids="quick_action_map_source_title"/>**  |
@@ -271,7 +264,8 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 | Change <br/> [**App profile**](../personal/profiles.md) | Create a list of application profiles and cycle through them.  <br /> - **Show an interim dialog**: displays dialog with profiles list <br /> - **Do not show an interim dialog**: profiles will be changed by defined order. <br /> - **Note**: you could have 1 action with multiple profiles or many actions with 1 profile. |
 | Change <br/> [**App profile to next**](../personal/profiles.md) | - |
 | Change <br/> [**App profile to previous**](../personal/profiles.md) | - |
-| Change <br/> [**<Translate android="true" ids="quick_action_display_position_in_center"/>**](../widgets/configure-screen.md#display-position) | Allows you to set the placement of the *My Location* cursor on the map. Enables or disables the cursor to always be in the center of the screen. |
+| Change <br/> [**<Translate android="true" ids="quick_action_display_position_in_center"/>**](../widgets/configure-screen.md#display-position-location-position-on-screen) <br /> *Android only*  | Allows you to set the placement of the *My Location* cursor on the map. Enables or disables the cursor to always be in the center of the screen. |
+| Change <br/> [**Location position on screen**](../widgets/configure-screen.md#display-position-location-position-on-screen) <br /> *iOS only*  | Allows you to enable or disable the display of the previously selected My Location cursor position on the map. |
 
 
 ## Use Keyboard for Actions

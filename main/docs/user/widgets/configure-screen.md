@@ -444,12 +444,12 @@ The *Button appearance* feature enables you fully customize the look of buttons 
 
 </Tabs>
 
-- [**<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>**](#display-position). [⬇](#display-position)
+- [**<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>**](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
 - [**Distance by tap**](../widgets/radius-ruler.md#distance-by-tap-tool). Gives the ability to measure the distance from your position to the selected point.
 - [**Speedometer**](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed). The displayed data also depends on OsmAnd's [*Speed Limit Tolerance*](../navigation/guidance/voice-navigation.md#speed-limit) setting.
 
 
-### Display Position
+### Display Position (Location position on screen)
 
 <Tabs groupId="operating-systems">
 
