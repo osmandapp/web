@@ -12,88 +12,89 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-## Initial setup 
 
-### How to recover data?
+## Initial Setup
 
-### How to copy my favorites and tracks to the new device?
+### How to recover data
 
-- The easiest way is to export profile with all needed information. Menu → Settings → Export → select data that you want to export.
-- Also, you can backup all your data from the previous device if you copy the folder specified in Settings → OsmAnd Settings → Data storage folder (by default it's Android/data/net.osmand.plus). Then, simply paste all the contents of this folder back to the Data storage folder directory.
+### How to transfer Favorites and Tracks to a new device
+
+- The simplest method is to export a profile with the necessary data: *Menu → Settings → Export →* select the data that you want to export.
+- Alternatively, you can backup all your data from the previous device by copying the folder located in *Settings → OsmAnd Settings → Data storage folder* (default path: `Android/data/net.osmand.plus`). Then, paste the contents of this folder into the Data storage folder on your new device.
 
 
 ## Purchases
 
-### How to restore purchases?
+### How to Restore Purchases
 
-- **For iOS**: Please open OsmAnd go to Menu → Maps & Resources → Purchases tab → tap 'Restore All Purchases' button → enter your Apple ID. Or read [this article](../purchases/ios.md#restore-purchases).
-- **For Android**: Please log in to the same app store account using the same email you used when purchasing OsmAnd. Enter 'OsmAnd+' or OsmAnd free (if you want to restore Maps+, OsmAnd Live, OsmAnd Pro) to the search field and install the app. You won't have to pay again, all paid function should be available by default. If that is not the case, please go to your device's Settings → Apps → select your app store and clear the cache. Then restart the device and try again. Or read [this article](../purchases/android.md#restore-purchases).
+- **For iOS**. Open OsmAnd and navigate to *Menu → Maps & Resources → Purchases tab →* tap *Restore All Purchases* and enter your Apple ID. For more details, refer to [this article](../purchases/ios.md#restore-purchases).
+- **For Android**. Log in to the same app store account used for purchasing OsmAnd. Search for *OsmAnd+* or *OsmAnd Free* (for restoring *Maps+*, *OsmAnd Live*, or *OsmAnd Pro*) and install the app.
+No additional payment is required. If the paid features are not restored, go to your device's *Settings → Apps →* select the app store, clear the cache, restart your device, and try again. For further details, refer to [this article](../purchases/android.md#restore-purchases).
 
-### How to restore the Topography (formerly Contour lines) plugin purchase?
 
-To restore [Topography plugin](https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid):
-- Log into the same Google Play account which you used to purchase Topography (formerly Contour lines) plugin, and install [the app](https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid).
-- If the Install button is not active, please make sure to update the Google Play and OsmAnd apps, clear their cache and restart the device, then try install the plugin again.
-- After installation, please enable the Topography plugin in [OsmAnd menu → Plugins](../plugins/topography.md), download the required files in the [Maps and Resources](../start-with/download-maps.md#maps-and-resources) and enable its display in the [Configure map menu](../map/configure-map-menu.md).
+### How to restore the Topography (formerly Contour lines) plugin purchase
 
-### How can I identify that OsmAnd Unlimited is active?
+To restore the [Topography plugin](https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid):
 
-Go to Menu → 'Download maps' and press on the map counter. (The field that says 'Free version. X downloads left'.) If OsmAnd Unlimited is active it should display to you the amount of memory device left instead of number of free downloads.
+1. Log into the same Google Play account used to purchase the Topography plugin, and install [the app](https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid).
+2. If the *Install* button is inactive, ensure that both the Google Play and OsmAnd apps are up to date. Clear their cache, restart your device, and try installing the plugin again.
+3. After installation, enable the Topography plugin in the *[OsmAnd menu → Plugins](../plugins/topography.md)*, download the required files in the *[Maps and Resources](../start-with/download-maps.md#maps-and-resources)*, and activate it through the *[Configure map menu](../map/configure-map-menu.md)*.
 
-### Can I get the full version of OsmAnd as a seperate app for iOS?
 
-For iOS we have only one version of OsmAnd. If you want to enable the full version you need to get more functions in-app. 
+### How to identify if OsmAnd Unlimited is active
 
-### What does 5 or 7 free downloads mean?
+Navigate to *Menu → Download maps* and tap the map counter (the field labeled *Free version. X downloads left*). If OsmAnd Unlimited is active, the display will show the remaining device storage instead of the number of free downloads.
 
-It means that you have only 5(iOS) or 7(Android) possibilities to download (map update counts as download). It can be either map, updates, voice packs, etc. 
-Please, note if you remove some items from your downloads the chance for free download does not return. 
+### Can I get the full version of OsmAnd as a separate app for iOS?
 
-### How can I get the additional map downloads in OsmAnd free?
+For iOS, there is only one version of OsmAnd available. To access the full version, you need to unlock additional functions through in-app purchases.
 
-If you already used 5(iOS) or 7(Android) possibilities for free downloads, you can get 3 extra downloads if you would subscribe to the mailing list. The banner with suggestion to subscribe would appear when you have used all free downloads.
 
-## OsmAnd Pro
+### What do 5 or 7 free downloads mean?
 
-OsmAnd Pro is a subscription with all [OsmAnd features](../purchases/android.md#free-and-paid-features). Its main advantage is that it is **cross-platform**. This means that it can be bought in one of the Android stores (Google Play, Amazon, Huawei AppGallery), and launched on iOS, for example.  
+You are allowed 5 free downloads on iOS or 7 on Android. Each download, whether it's a map, an update (map updates count as downloads), voice packs, or other items, reduces the available count. Please note, that removing items from your downloads does not restore the free download count.
 
-### Cross-platform
 
-The cross-platform feature allows you to use OsmAnd Pro on all platforms at the same time: [Android](../purchases/android.md) ←→ [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map)
+### How can I get additional map downloads in OsmAnd Free?
 
-**_Steps_**:
+If you have used all 5 (iOS) or 7 (Android) free downloads, you can receive 3 extra downloads by *subscribing to the mailing list*. A banner with the subscription option will appear once all free downloads have been used.
 
-**1.** After you have purchased an OsmAnd Pro subscription, you should register your email on the OsmAnd server for identification on other platforms.
 
-[Register](../personal/osmand-cloud.md#backup-and-restore-for-osmand-pro) your account:
-*OsmAnd Menu → Settings → OsmAnd Cloud → Create new account* 
+## Cross-Platform Purchases
+
+**OsmAnd Pro** is a subscription that allows you to purchase OsmAnd on one platform and use **paid features** on other platforms simultaneously. For example, if you purchase it through one of the [Android](../purchases/android.md) stores (Google Play, Amazon, Huawei AppGallery), you can also use it on [iOS](../purchases/ios.md) and [Web](https://www.osmand.net/map).
+
+Please note that other purchases, such as Maps+, cannot be transferred between billing platforms, including between Google Play and Amazon on Android.
+
+**Steps to transfer license**:
+
+**1. Purchase**. After purchasing an OsmAnd Pro subscription, register your email on [OsmAnd Cloud](../personal/osmand-cloud.md#backup-and-restore-for-osmand-pro).
+
+- Navigate to *OsmAnd Menu → Settings → OsmAnd Cloud → Create new account*
 
 :::note
-Registration must take place on the platform on which the subscription was purchased.
+***Registration must be done on the platform where the subscription was purchased.***
 :::
 
-After that, your email address can be used as a login to activate OsmAnd Pro on other platforms.
+**2. Link**. Link your purchase to another device.
 
-**2.** OsmAnd Pro Activation:
+- Navigate to *OsmAnd Menu → Settings → OsmAnd Cloud → I already have an account*
 
-*OsmAnd Menu → Settings → OsmAnd Cloud → I already have an account*
+**3. Activation**. Finally, activate the paid features.
 
-**3.** Activation check:
-
-*OsmAnd Menu → Settings → Purchases → Restore purchases*
+- Navigate to *OsmAnd Menu → Settings → Purchases → Restore purchases*
 
 
-## Import files
+## Import Files
 
-### I have a GPX file, how do I get it into OsmAnd?
+### I have a GPX file, how do I import it into OsmAnd?
 
-- &nbsp;Android
-    - &nbsp;You can [download and open it](../navigation/setup/gpx-navigation.md) using File Browser or Dropbox and select OsmAnd as a target application.
-    - &nbsp;You can put it in OsmAnd home folder: osmand/tracks/(optional\_sub-folder)/your\_file.gpx.
-    
-- &nbsp;iOS
-    - &nbsp;To open [a GPX file in OsmAnd](../navigation/setup/gpx-navigation.md), just download it and select OsmAnd as an app to open it. That's it: you'll view the file normally in the application.
+- **Android**
+    - You can [download and open the file](../navigation/setup/gpx-navigation.md) using a file browser or cloud service like Dropbox, and select OsmAnd as the target application.
+    - Alternatively, place the file in the OsmAnd home folder: `osmand/tracks/(optional_sub-folder)/your_file.gpx`.
 
+- **iOS**
+    - To open [a GPX file in OsmAnd](../navigation/setup/gpx-navigation.md), simply download it and choose OsmAnd as the app to open it. The file will then be available for use within the app.
 
 ### Contour lines or hillshades do not show up
 
@@ -108,32 +109,32 @@ This means that to install OsmAnd 4.4 you need to upgrade your OS to at least iO
 
 
 <!--
-## Storage on SD card (Android)
+## Storage on an SD card (Android)
 
 :::note
-When a you *turns on a USB drive to share files* with a computer or disconnects the SD card through system settings, the external drive is disconnected from the device and all applications running on the external drive are **immediately terminated**. You can [read more here](https://developer.android.com/guide/topics/data/install-location).
+When you *turn on a USB drive to share files* with a computer or disconnect the SD card through system settings, the external drive is disconnected from the device and all applications running on the external drive are **immediately terminated**. You can [read more here](https://developer.android.com/guide/topics/data/install-location).
 :::
 
-### In order to move the OsmAnd home (maps) folder to an external SD card:
+### To move the OsmAnd home (maps) folder to an external SD card:
 
 -   Go to *Settings (on the start screen) →  OsmAnd Settings → Data storage folder*
 -   Change the value to a path pointing to the external SD card, on many
-    Android systems it may contain `/storage/extSdCard` or similar.
+    Android systems may contain `/storage/extSdCard` or similar.
     Please note that some versions of Android strictly limit your choice
     of which path will be write-accessible for apps.
 -   You are then asked if the contents of the OsmAnd data folder should be moved from
     internal memory to the external SD card.
-    You may also perform this manually using a built-in file manager app on the device, or via
+    You may also perform this manually using a built-in file manager app on the device or via
     connecting the device to a computer as external storage and performing the move from there.
 
 
-### How do I use my SD card with OsmAnd under Android 4.4+ and 5?
+### How do I use my SD card with OsmAnd under Android 4.4+ and 5
 
 If you update your Android to version 4.4.x, you will experience a known
 Android issue with the `WRITE_EXTERNAL_STORAGE` permission: Android has
 changed the rules so that from now on no application can write to the
 external SD card anywhere outside its new standard folder
-`Android/data/[PACKAGE-NAME]`. If OsmAnd was installed prior to updating
+`Android/data/[PACKAGE-NAME]`. If OsmAnd was installed before updating
 your device to Android 4.4.x, it will continue to work (read-only) with
 the old, non-standard osmand folder, but won't be able to update any map
 and other files there.
@@ -158,16 +159,12 @@ storage folder` but the copy operations may take a long time or result in
 errors (e.g. if the SD card is too full).
 -->
 
-## Copy raster map package created on PC 
+
+## Copy Raster Map Package Created on PC
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
-
-Map package can be saved in two formats: [SQ Lite and Metainfo](https://osmand.net/docs/user/map/raster-maps).
-Next, you need to move your map package file(s) to OsmAnd-tiles directory:
-
-For **Android** OsmAnd - you need to access storage to copy file(s) from PC to the device folder BASE_OSMAND_STORAGE/tiles_ or you can click the file on your email, cloud, or messenger, download it and choose OsmAnd app to open. Map package is added automatically to your online maps list in OsmAnd.
 
 ![Import sqlitedb Android](@site/static/img/plugins/online-maps/import-sqlitedb-android.png)
 
@@ -175,13 +172,15 @@ For **Android** OsmAnd - you need to access storage to copy file(s) from PC to t
 
 <TabItem value="ios" label="iOS">
 
-Map package can be saved in two formats: [SQ Lite and Metainfo](https://osmand.net/docs/user/map/raster-maps).
-Next, you need to move your map package file(s) to OsmAnd-tiles directory:
-
-For **iOS** OsmAnd - you need to click the file on your iTunes or messenger, download it and choose OsmAnd app to open. Map package is added automatically to your online maps list in OsmAnd.
-
 ![Import sqlitedb iOS](@site/static/img/plugins/online-maps/import-sqlitedb-ios.png)  
 
 </TabItem>
 
 </Tabs>
+
+Map packages can be saved in two formats: [SQLite and Metainfo](https://osmand.net/docs/user/map/raster-maps). After creating your map package, follow these steps to move it to OsmAnd:
+
+- **For Android**. Access storage on your device and copy the file(s) from your PC to the folder `BASE_OSMAND_STORAGE/tiles_`. Alternatively, you can download the file from your email, cloud, or messenger, and open it with the OsmAnd app. The map package will be automatically added to your online maps list.
+
+- **For iOS**. Download the file from iTunes or a messenger, then open it with the OsmAnd app. The map package will be automatically added to your online maps list.
+

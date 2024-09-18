@@ -14,6 +14,10 @@ import WikiPlacesFilter from './WikiPlacesFilter';
 import WikiPlacesList from './WikiPlacesList';
 import { addWikiPlacesDefaultFilters } from '../../../manager/SearchManager';
 import { useNavigate } from 'react-router-dom';
+import EmptySearch from '../../errors/EmptySearch';
+import { ZOOM_ERROR } from '../search/SearchResults';
+import useHashParams from '../../../util/hooks/useHashParams';
+import { EXPLORE_MIN_ZOOM } from '../../../map/layers/ExploreLayer';
 
 export default function ExploreMenu() {
     const ctx = useContext(AppContext);
@@ -22,6 +26,8 @@ export default function ExploreMenu() {
     const navigate = useNavigate();
     const [openFiltersDialog, setOpenFiltersDialog] = useState(false);
     const anchorEl = useRef(null);
+
+    const { zoom } = useHashParams();
 
     const MAX_PLACES = 50;
 
@@ -77,6 +83,7 @@ export default function ExploreMenu() {
                 </Toolbar>
                 {ctx.wikiPlaces && ctx.loadingContextMenu && !ctx.searchSettings.getPoi ? <LinearProgress /> : null}
             </AppBar>
+            {zoom < EXPLORE_MIN_ZOOM && <EmptySearch message={ZOOM_ERROR} />}
             {!ctx.wikiPlaces && ctx.loadingContextMenu && !ctx.searchSettings.getPoi ? (
                 <Loading id={'se-loading-page'} />
             ) : (

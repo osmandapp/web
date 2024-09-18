@@ -308,7 +308,7 @@ The **widget context menu** allows you to manage and configure widgets directly 
 
 ### Copies of Widgets
 
-*OsmAnd menu → Configure screen → Widgets → Panel → **Add** chosen widget*  
+*OsmAnd menu → Configure screen → Widgets → Panel →* **Add** *chosen widget*  
 
 ![Widget dublicate](@site/static/img/widgets/widget_dublicate.png)  
 
@@ -333,13 +333,15 @@ To remove or delete a widget from the application screen, you need to select the
 
 ## Buttons
 
+### Custom Buttons
+
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">  
 
 *<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Widget page](@site/static/img/widgets/conf_screen_buttons_andr.png)   ![Widget page](@site/static/img/widgets/conf_screen_buttons_3_andr.png)
+![Widget page](@site/static/img/widgets/conf_screen_buttons_andr.png)
 
 </TabItem>
 
@@ -347,23 +349,77 @@ To remove or delete a widget from the application screen, you need to select the
 
 *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
 
-![Widget page](@site/static/img/widgets/conf_screen_buttons_2_ios.png)   ![Widget page](@site/static/img/widgets/conf_screen_buttons_3_ios.png)
+![Widget page](@site/static/img/widgets/conf_screen_buttons_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-- **Custom buttons**. Allows you to add a list of single actions from all available [Quick actions](../widgets/quick-action.md#custom-buttons). These actions can be assigned to one or more widget buttons on the map screen. Custom buttons provide quick access to frequently used actions.
+**Quick Action (Custom buttons)** allows you to add a list of single actions from all available [Quick actions](../widgets/quick-action.md#custom-buttons). These actions can be assigned to one or more widget buttons on the map screen. Custom buttons provide quick access to frequently used actions.
 
-- **Default buttons**. It gives you the ability to hide or show preset map buttons.
+### Default Buttons
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">  
+
+*<Translate android="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
+
+![Widget page](@site/static/img/widgets/conf_screen_buttons_3_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons"/>*
+
+![Widget page](@site/static/img/widgets/conf_screen_buttons_3_ios.png)
+
+</TabItem>
+
+</Tabs>
+
+1. **Default buttons** allow you to customize which preset map buttons are visible on the map screen. You can choose to hide or show the following buttons:
+
     - [3D mode](../widgets/map-buttons.md#3d-mode). For iOS, the button is always available. For Android, it appears in the list and is available for setting if the map rendering engine [Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine) is selected.
 
     - [Compass](../widgets/map-buttons.md#display-options). Indicates how the map is oriented on the device.  
     3 views: *Always visible*, *Always hidden*, *Visible if map is rotated*.
 
-    - The three-dot menu on the Default buttons screen contains actions such as:
-        - *Reset to default*. Allows you to return the button settings to their original appearance.
-        - *Copy from another profile*. Select from which profile from the offered list you want to copy button settings.
+    - [Configure map](../map/configure-map-menu.md). Access options to modify the map's style, layers, and additional settings.
+
+    - [Menu](../widgets/map-buttons.md#main-menu). Opens the main application menu for accessing all features.
+
+    - [My location](../widgets/map-buttons.md#my-location-and-zoom). Centers the map on your current position.
+
+    - [Navigation](../widgets/map-buttons.md#directions). Essential for route planning and starting navigation.
+
+    - [Search](../widgets/map-buttons.md#search). Opens the search tool for finding locations.
+
+    - [Zoom in / out](../widgets/map-buttons.md#my-location-and-zoom). Adjusts the map's zoom level to show more or less detail.
+
+2. The **three-dot menu** on the Default buttons screen contains actions such as:
+
+    - *Reset to default*. Allows you to return the button settings to their original appearance.
+    - *Copy from another profile*. Select from which profile from the offered list you want to copy button settings.
+
+3. **The default button appearance** (*Android only*) offers a variety of customization options for these type of buttons. To modify a button's appearance, tap the required button from the list and select the [Appearance](#button-appearance) option.
+
+
+### Button Appearance
+
+<InfoAndroidOnly/>
+
+![Button Appearance](@site/static/img/widgets/button_appearance_settings_andr.png)
+
+The *Button appearance* feature enables you fully customize the look of buttons on your map interface. These customization options are available for both *Quick Action (Custom buttons)* and *Default buttons*, providing comprehensive control over the map interface's appearance and allowing precise adjustments to button design.
+
+*Customization Options*:
+
+- **Icon**. Select from a list of icons that represent actions you’ve already added, making it easy to identify functions at a glance.
+- **Corner radius**. Adjust this setting to change the shape of the button, ranging from sharp, square corners to smooth, rounded edges.
+- **Size**. Choose the button size that best fits your screen and stands out as needed. For *Default buttons*, sizes are preset and cannot be adjusted.
+- **Background opacity**. Control the visibility of the button’s background. You can set it to be fully visible or partially transparent, or display only the frame shadow and icon.
 
 
 ## Other
@@ -388,12 +444,12 @@ To remove or delete a widget from the application screen, you need to select the
 
 </Tabs>
 
-- [**<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>**](#display-position). [⬇](#display-position)
+- [**<Translate android="true" ids="display_position"/> / <Translate ios="true" ids="position_on_map"/>**](#display-position-location-position-on-screen). [⬇](#display-position-location-position-on-screen)
 - [**Distance by tap**](../widgets/radius-ruler.md#distance-by-tap-tool). Gives the ability to measure the distance from your position to the selected point.
 - [**Speedometer**](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed). The displayed data also depends on OsmAnd's [*Speed Limit Tolerance*](../navigation/guidance/voice-navigation.md#speed-limit) setting.
 
 
-### Display Position
+### Display Position (Location position on screen)
 
 <Tabs groupId="operating-systems">
 
@@ -486,4 +542,4 @@ Available actions:
 - [Marker widgets](./markers.md)
 - [Quick Action](./quick-action.md)
 
-> *This article was last updated in August 2024*
+> *This article was last updated in September 2024*

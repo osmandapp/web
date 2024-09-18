@@ -21,6 +21,8 @@ import { MenuButton } from './search/MenuButton';
 import { SEARCH_TYPE_CATEGORY } from '../../map/layers/SearchLayer';
 import { CATEGORY_KEY_NAME } from '../../infoblock/components/wpt/WptTagsProvider';
 import EmptyLogin from '../login/EmptyLogin';
+import useHashParams from '../../util/hooks/useHashParams';
+import { EXPLORE_MIN_ZOOM } from '../../map/layers/ExploreLayer';
 
 export default function SearchMenu() {
     const ctx = useContext(AppContext);
@@ -37,6 +39,8 @@ export default function SearchMenu() {
     const [searchCategoriesIconNames, setSearchCategoriesIconNames] = useState(null);
     const [searchCategoriesIcons, setSearchCategoriesIcons] = useState({});
     const [mainCategories, setMainCategories] = useState(null);
+
+    const { zoom } = useHashParams();
 
     const { t } = useTranslation();
 
@@ -119,16 +123,17 @@ export default function SearchMenu() {
             if (!ctx.searchSettings.selectedFilters) {
                 const selectedFilters = ['tourism', 'leisure'];
                 addWikiPlacesDefaultFilters(ctx, true, selectedFilters);
-                setLoadingWikiPlaces(true);
             }
         }
-    }, [isMainSearchScreen]);
+    }, [isMainSearchScreen, zoom]);
 
     useEffect(() => {
-        if (ctx.wikiPlaces) {
+        if (ctx.wikiPlaces || zoom < EXPLORE_MIN_ZOOM) {
             setLoadingWikiPlaces(false);
+        } else {
+            setLoadingWikiPlaces(true);
         }
-    }, [ctx.wikiPlaces]);
+    }, [ctx.wikiPlaces, zoom]);
 
     // load icons for main search categories
     useEffect(() => {
@@ -281,21 +286,28 @@ export default function SearchMenu() {
                                 {t('shared_string_show_all')}
                             </Button>
                             <Divider />
-                            <SubTitle title={'web:explore_menu'} />
-                            {loadingWikiPlaces ? (
-                                <LinearProgress />
-                            ) : (
+                            {zoom >= EXPLORE_MIN_ZOOM && (
                                 <>
-                                    <WikiPlacesList
-                                        size={3}
-                                        useOverflow={false}
-                                        showAll={
-                                            <Button className={styles.buttonShowAllExplore} onClick={openExploreMenu}>
-                                                {t('shared_string_show_all')}
-                                            </Button>
-                                        }
-                                    />
-                                    <Divider />
+                                    <SubTitle title={'web:explore_menu'} />
+                                    {loadingWikiPlaces ? (
+                                        <LinearProgress />
+                                    ) : (
+                                        <>
+                                            <WikiPlacesList
+                                                size={3}
+                                                useOverflow={false}
+                                                showAll={
+                                                    <Button
+                                                        className={styles.buttonShowAllExplore}
+                                                        onClick={openExploreMenu}
+                                                    >
+                                                        {t('shared_string_show_all')}
+                                                    </Button>
+                                                }
+                                            />
+                                            <Divider />
+                                        </>
+                                    )}
                                 </>
                             )}
                         </Box>
