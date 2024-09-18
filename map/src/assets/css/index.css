@@ -58,3 +58,41 @@ code {
     filter: none !important;
     transition: none !important;
 }
+
+.leaflet-control-zoom {
+    background-color: transparent !important;
+    border: none !important;
+    padding-right: 10px !important;
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+    background-color: white !important;
+    color: #4d4d4d !important;
+    border-radius: 50% !important;
+    border: 2px solid rgba(0, 0, 0, 0.1) !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+    margin-bottom: 10px !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+    font-size: 24px !important;
+}
+.leaflet-control-zoom-in {
+    margin-bottom: 8px !important;
+}
+
+.leaflet-control-zoom-in span,
+.leaflet-control-zoom-out span {
+    margin-bottom: 3px !important;
+}
+
+.leaflet-control-zoom-in:hover,
+.leaflet-control-zoom-out:hover {
+    background-color: #dbdeff !important;
+    color: #237bff !important;
+}
