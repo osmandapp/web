@@ -151,7 +151,6 @@ In this mode, the map's center is positioned slightly below the center of the sc
 You can adjust the "rotate map by bearing" mode in the [Profile settings](../personal/profiles.md#appearance) or by tapping the [Compass](#compass).
 
 
-
 ## Map Tilt and Horizon
 
 <Tabs groupId="operating-systems">
@@ -251,26 +250,27 @@ To access the settings of an external input device, you need to enable this feat
 
 | Key | Device | Action |
 |:---------|:---------------|:---------------|
-|**C**| *Keyboard*   | [My location](../map/interact-with-map.md#my-location--zoom) |
-|**D**| *Keyboard*   | [Map orientation](../map/interact-with-map.md#map-orientation-modes) |
-|**N**| *Keyboard*   | Open Navigation view. |
-|**S**| *Keyboard*   | Open [Search](../search/index.md) view. |
-|**P**| *Keyboard*   | Switch to the next app profile. Show toast-like message **App profile: Name**. |
-|**O**| *Keyboard*   | Switch to the previous app profile. |
-|**&#8593;**| *Keyboard*   | Move up  |
-|**&#8595;**| *Keyboard*   | Move down  |
-|**&#8592;**| *Keyboard*   | Move left  |
-|**&#8594;**| *Keyboard*   | Move right  |
-|**&#43;**| *Keyboard*  | [Zoom in](../map/interact-with-map.md#my-location--zoom) |
-|**&#8722;**| *Keyboard*  | [Zoom out](../map/interact-with-map.md#my-location--zoom) |
-|**&#8595;**| *Wunderlinq*  | [Zoom out](../map/interact-with-map.md#my-location--zoom) |
-|**&#8593;**| *Wunderlinq*  | [Zoom in](../map/interact-with-map.md#my-location--zoom) |
-| **ESC** | *Wunderlinq*  | Opens Wunderlinq dashboard |
-| **Menu** <br/> (*legacy Android*) | *Keyboard*  | [Drawer](../start-with/main-menu.md#main-menu-drawer) |
+|**C**| *Keyboard*   | Move - [To My location](../map/interact-with-map.md#my-location--zoom) |
+|**D**| *Keyboard*   | Change - [Map orientation](../map/interact-with-map.md#map-orientation-modes) |
+|**N**| *Keyboard*   | Show / Hide - Navigation view |
+|**S**| *Keyboard*   | Show / Hide - [Search view](../search/index.md) |
+|**P**| *Keyboard*   | Change - App profile to next.<br/>Switch to the next app profile. Show toast-like message **App profile: Name**. |
+|**O**| *Keyboard*   | Change - App profile to previous.<br/>Switch to the previous app profile. |
+|**&#8593;**| *Keyboard*   | Move - Map up  |
+|**&#8595;**| *Keyboard*   | Move - Map down  |
+|**&#8592;**| *Keyboard*   | Move - Map to the left  |
+|**&#8594;**| *Keyboard*   | Move - Map to the right  |
+|**&#43;** **=**| *Keyboard*  | Map - [Zoom in](../map/interact-with-map.md#my-location--zoom) |
+|**&#8722;**| *Keyboard*  | Map - [Zoom out](../map/interact-with-map.md#my-location--zoom) |
+|**&#8595;**| *Wunderlinq*  | Map - [Zoom out](../map/interact-with-map.md#my-location--zoom) |
+|**&#8593;**| *Wunderlinq*  | Map - [Zoom in](../map/interact-with-map.md#my-location--zoom) |
+| **ESC** | *Wunderlinq*  | Open WunderLINQ Datagrid |
+| **M** <br/> (*legacy Android*) | *Keyboard*  | Show / Hide - [Side menu](../start-with/main-menu.md#main-menu-drawer) |
 | **Joystick click** <br/> (*legacy Android*) | *Keyboard*  | [My location](../map/interact-with-map.md#my-location--zoom) |
-| **Media button** <br/> (*Android only*)| *Keyboard*  | [AV notes](../plugins/audio-video-notes.md#add-note-on-the-map) |
-| **&#8592;** <br/> (*Android only*)| *Parrot*  | [Zoom out](../map/interact-with-map.md#my-location--zoom) |
-| **&#8594;** <br/> (*Android only*) | *Parrot*  | [Zoom in](../map/interact-with-map.md#my-location--zoom) |
+| **Media button** <br/> (*Android only*)| *Keyboard*  | Show / Hide - [AV notes](../plugins/audio-video-notes.md#add-note-on-the-map) |
+| **&#8592;** <br/> (*Android only*)| *Parrot*  | Map - [Zoom out](../map/interact-with-map.md#my-location--zoom) |
+| **&#8594;** <br/> (*Android only*) | *Parrot*  | Map - [Zoom in](../map/interact-with-map.md#my-location--zoom) |
+
 
 ### Custom Input Device Type
 
