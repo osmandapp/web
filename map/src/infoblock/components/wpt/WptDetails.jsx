@@ -235,7 +235,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             color: prepareColor(currentWpt.color),
             icon: prepareIcon(currentWpt.icon),
             category: currentWpt.category,
-            address: currentWpt.address,
+            address: currentWpt.address ?? ADDRESS_NOT_FOUND,
             time: parseInt(currentWpt.ext?.time) !== 0 ? currentWpt.ext?.time : null,
             tags: tags,
         };
@@ -279,28 +279,29 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     useEffect(() => {
         if ((wpt?.type?.isPoi || wpt?.type?.isSearch || wpt?.type?.isWikiPoi) && !isAddressAdded) {
             setIsAddressAdded(true);
-            getPoiAddress(wpt).then((data) => {
-                if (data) {
-                    setWpt((prevWpt) => ({ ...prevWpt, address: data }));
-                } else {
-                    setWpt((prevWpt) => ({ ...prevWpt, address: ADDRESS_NOT_FOUND }));
-                }
-            });
-        }
-    }, [wpt, isAddressAdded]);
 
-    useEffect(() => {
-        if (wpt?.type?.isWikiPoi && !isPhotosAdded) {
-            setIsPhotosAdded(true);
-            getWikiPhotos(wpt).then((data) => {
-                if (data) {
-                    let newWpt = { ...wpt, photos: data };
-                    newWpt = addFirstPhoto(newWpt);
-                    setWpt(newWpt);
+            let updatedWpt = { ...wpt };
+
+            // First, search for the address
+            getPoiAddress(wpt).then((addressData) => {
+                updatedWpt.address = addressData ? addressData : ADDRESS_NOT_FOUND;
+
+                // After searching for the address, search for photos if it's a WikiPoi
+                if (wpt?.type?.isWikiPoi && !isPhotosAdded) {
+                    setIsPhotosAdded(true);
+                    getWikiPhotos(wpt).then((photosData) => {
+                        if (photosData) {
+                            updatedWpt.photos = photosData;
+                            updatedWpt = addFirstPhoto(updatedWpt);
+                        }
+                        setWpt(updatedWpt);
+                    });
+                } else {
+                    setWpt(updatedWpt);
                 }
             });
         }
-    }, [wpt, isPhotosAdded]);
+    }, [wpt, isAddressAdded, isPhotosAdded]);
 
     function getWptType(wpt) {
         return {
