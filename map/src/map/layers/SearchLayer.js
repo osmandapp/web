@@ -243,7 +243,7 @@ export default function SearchLayer() {
                 const coord = obj.geometry.coordinates;
                 return new L.Marker(new L.LatLng(coord[1], coord[0]), {
                     ...obj.properties,
-                    id: getObjIdSearch(obj),
+                    idObj: getObjIdSearch(obj),
                     title: title,
                     icon: icon,
                     [FINAL_POI_ICON_NAME]: finalIconName,
