@@ -111,7 +111,7 @@ All tracks ever recorded, created, or imported are automatically displayed in th
 
 </Tabs>  
 
-Each track, like folders, comes with its own menu, allowing you to manage tracks efficiently. Here's how to access it::
+Each track, like folders, comes with its own menu, allowing you to manage tracks efficiently. Here's how to access it:
 
 - *Android* - tap the three-dot menu in the field with the required track.
 - *iOS* - long tap the required track in the list.
@@ -119,7 +119,7 @@ Each track, like folders, comes with its own menu, allowing you to manage tracks
 The menu provides the following actions:
 
 - **Show/Hide on map**. Displays or hides the selected tracks on the map, providing a visual representation of their location.
-- [**Open** (*iOS, for Configure Map*)](../../map/tracks/index.md#configure-map). If the track is within a folder, this option opens the folder, revealing a list of tracks contained within it.
+- [**Open**](../../map/tracks/index.md#configure-map) (*iOS*). This setting is available in the Configure Map menu. Located in the *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*, it allows you to access the [context menu of the selected track](../../map/tracks/track-context-menu.md) when tapped.
 - **Appearance** (*iOS*). Customize the [appearance of tracks](../../map/tracks/appearance.md) to suit your preferences.
 - **Navigation** (*iOS*). Initiates [navigation](../../navigation/setup/gpx-navigation.md) along the selected track.
 - **Analyze on map (Android) / Analyze (iOS)**. Opens the [Analyse on map](../../navigation/setup/route-details.md#analyse-on-map) tool within Route Details for further analysis.
