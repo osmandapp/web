@@ -1,4 +1,3 @@
-import { Dialog } from '@material-ui/core';
 import { Button, Grid, IconButton } from '@mui/material';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
@@ -19,6 +18,8 @@ import FavoritesManager, { updateFavoriteGroups } from '../../manager/FavoritesM
 import { apiGet } from '../../util/HttpApi';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { isEmpty } from 'lodash';
+import Dialog from '@mui/material/Dialog';
+import { ADDRESS_NOT_FOUND } from '../../infoblock/components/wpt/WptDetails';
 
 export default function EditWptDialog({
     wpt,
@@ -92,7 +93,7 @@ export default function EditWptDialog({
         if (ind !== -1) {
             ctx.selectedGpxFile.wpts[ind] = {
                 name: favoriteName,
-                address: favoriteAddress === '' ? null : favoriteAddress,
+                address: favoriteAddress === '' || favoriteAddress === ADDRESS_NOT_FOUND ? null : favoriteAddress,
                 desc: favoriteDescription === '' ? null : favoriteDescription,
                 color: favoriteColor,
                 background: favoriteShape,
@@ -102,7 +103,7 @@ export default function EditWptDialog({
                 lon: wpt.latlon?.lon ?? wpt.lon,
             };
         }
-
+        ctx.selectedGpxFile.wptChangedFlag++;
         ctx.selectedGpxFile.updateLayers = true;
         if (!isDetails) {
             ctx.selectedGpxFile.save = true;

@@ -63,7 +63,18 @@ export default class EditableMarker {
                 if (this.stopclick) {
                     this.stopclick = false;
                 } else {
-                    this.ctx.setSelectedWpt(e);
+                    let lat = e.target._latlng.lat;
+                    let lng = e.target._latlng.lng;
+                    const point = track.wpts.find(
+                        (point) => parseFloat(point.lat) === lat && parseFloat(point.lon) === lng
+                    );
+                    const wpt = {
+                        trackWpt: true,
+                        file: track.gpx,
+                        ...e,
+                        ...point,
+                    };
+                    this.ctx.setSelectedWpt(wpt);
                 }
             }
         });

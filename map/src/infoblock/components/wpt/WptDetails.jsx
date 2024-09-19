@@ -99,6 +99,8 @@ export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldS
     );
 };
 
+export const ADDRESS_NOT_FOUND = 'No data';
+
 export default function WptDetails({ isDetails = false, setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
@@ -107,8 +109,6 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     const [devWikiContent, setDevWikiContent] = useState(null);
 
     const currentLoc = useGeoLocation(ctx);
-
-    const ADDRESS_NOT_FOUND = 'No data';
 
     const ICON_IMG_SIZE = 24;
     const ICON_SHIELD_SIZE = 48;
@@ -220,21 +220,34 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     async function getDataFromWpt(type, selectedWpt, wptFromFile = null) {
         const currentWpt = wptFromFile ? wptFromFile : selectedWpt;
         const tags = await WptTagsProvider.getWptTags(currentWpt, type, ctx);
+
+        const latlon = getCoordsFromWpt(currentWpt);
+
         return {
             type: type,
             file: selectedWpt.file,
             name: currentWpt.name,
             desc: currentWpt.desc,
             hidden: currentWpt.hidden,
-            latlon: { lat: currentWpt.lat, lon: currentWpt.lon },
+            latlon: latlon,
             marker: currentWpt.marker,
             background: prepareBackground(currentWpt.background),
             color: prepareColor(currentWpt.color),
             icon: prepareIcon(currentWpt.icon),
             category: currentWpt.category,
-            address: currentWpt.address,
+            address: currentWpt.address ?? ADDRESS_NOT_FOUND,
             time: parseInt(currentWpt.ext?.time) !== 0 ? currentWpt.ext?.time : null,
             tags: tags,
+        };
+    }
+
+    function getCoordsFromWpt(wpt) {
+        if (wpt.latlng) {
+            return { lat: wpt.latlng.lat, lon: wpt.latlng.lng };
+        }
+        return {
+            lat: wpt.lat ? parseFloat(wpt.lat) : null,
+            lon: wpt.lon ? parseFloat(wpt.lon) : null,
         };
     }
 
@@ -276,28 +289,29 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     useEffect(() => {
         if ((wpt?.type?.isPoi || wpt?.type?.isSearch || wpt?.type?.isWikiPoi) && !isAddressAdded) {
             setIsAddressAdded(true);
-            getPoiAddress(wpt).then((data) => {
-                if (data) {
-                    setWpt((prevWpt) => ({ ...prevWpt, address: data }));
-                } else {
-                    setWpt((prevWpt) => ({ ...prevWpt, address: ADDRESS_NOT_FOUND }));
-                }
-            });
-        }
-    }, [wpt, isAddressAdded]);
 
-    useEffect(() => {
-        if (wpt?.type?.isWikiPoi && !isPhotosAdded) {
-            setIsPhotosAdded(true);
-            getWikiPhotos(wpt).then((data) => {
-                if (data) {
-                    let newWpt = { ...wpt, photos: data };
-                    newWpt = addFirstPhoto(newWpt);
-                    setWpt(newWpt);
+            let updatedWpt = { ...wpt };
+
+            // First, search for the address
+            getPoiAddress(wpt).then((addressData) => {
+                updatedWpt.address = addressData ? addressData : ADDRESS_NOT_FOUND;
+
+                // After searching for the address, search for photos if it's a WikiPoi
+                if (wpt?.type?.isWikiPoi && !isPhotosAdded) {
+                    setIsPhotosAdded(true);
+                    getWikiPhotos(wpt).then((photosData) => {
+                        if (photosData) {
+                            updatedWpt.photos = photosData;
+                            updatedWpt = addFirstPhoto(updatedWpt);
+                        }
+                        setWpt(updatedWpt);
+                    });
+                } else {
+                    setWpt(updatedWpt);
                 }
             });
         }
-    }, [wpt, isPhotosAdded]);
+    }, [wpt, isAddressAdded, isPhotosAdded]);
 
     function getWptType(wpt) {
         return {

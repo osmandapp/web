@@ -547,6 +547,7 @@ function getWikipediaURL(key, value) {
 
 function shouldSkipKey(key) {
     return (
+        key === 'idObj' ||
         key === 'image' ||
         key === 'mapillary' ||
         key === 'subway_region' ||

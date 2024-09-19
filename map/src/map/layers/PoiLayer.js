@@ -56,7 +56,7 @@ export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, ty
             const coord = poi.geometry.coordinates;
             return new L.Marker(new L.LatLng(coord[1], coord[0]), {
                 ...poi.properties,
-                id: getObjIdSearch(poi),
+                idObj: getObjIdSearch(poi),
                 title: poi.properties[POI_NAME],
                 icon: icon,
                 [FINAL_POI_ICON_NAME]: finalIconName,

@@ -164,7 +164,7 @@ export default function PhotosModal({ photos }) {
                         <BackForward />
                     </Button>
                 </Box>
-                {activePhoto !== null && activePhoto.imageTitle === photos[activeStep].imageTitle && showInfo && (
+                {activePhoto !== null && activePhoto.imageTitle === photos[activeStep]?.imageTitle && showInfo && (
                     <AppBar position="static" className={styles.photoFooter} sx={{ backgroundColor: 'black' }}>
                         <Typography sx={{ color: 'white' }}>
                             {activePhoto.properties.description

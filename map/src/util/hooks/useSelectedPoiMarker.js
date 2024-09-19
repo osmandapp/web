@@ -5,7 +5,7 @@ export function useSelectedPoiMarker(ctx, layers, type) {
         if (layers && ctx.selectedPoiId?.id && ctx.selectedPoiId?.type === type) {
             let foundMarker = null;
             layers.forEach((layer) => {
-                if (layer.options.id === ctx.selectedPoiId.id) {
+                if (layer.options.idObj === ctx.selectedPoiId.id) {
                     foundMarker = layer;
                 }
             });
