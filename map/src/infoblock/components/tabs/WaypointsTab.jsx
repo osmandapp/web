@@ -202,12 +202,6 @@ export default function WaypointsTab() {
         });
     }
 
-    // TODO
-    // function addWaypoint() {
-    //     ctx.selectedGpxFile.addWpt = true;
-    //     ctx.setSelectedGpxFile({...ctx.selectedGpxFile});
-    // }
-
     function getLayers() {
         if (ctx.selectedGpxFile.layers && Object.keys(ctx.selectedGpxFile.layers).length > 0) {
             return ctx.selectedGpxFile.layers.getLayers();
@@ -224,13 +218,16 @@ export default function WaypointsTab() {
         if (ctx.selectedGpxFile.wpts) {
             const layers = getLayers();
             const wptsMap = Object.fromEntries(
-                ctx.selectedGpxFile.wpts.map((wpt, index) => [wpt.lat + ',' + wpt.lon, { wpt, index }])
+                ctx.selectedGpxFile.wpts.map((wpt, index) => [
+                    parseFloat(wpt.lat).toFixed(6) + ',' + parseFloat(wpt.lon).toFixed(6),
+                    { wpt, index },
+                ])
             );
 
             layers.forEach((layer) => {
                 if (layer instanceof L.Marker) {
                     const coord = layer.getLatLng();
-                    const mapped = wptsMap[coord.lat + ',' + coord.lng];
+                    const mapped = wptsMap[coord.lat.toFixed(6) + ',' + coord.lng.toFixed(6)];
                     mapped && wpts.push({ wpt: mapped.wpt, index: mapped.index, layer });
                 }
             });
@@ -280,7 +277,11 @@ export default function WaypointsTab() {
         const nLayers = getLayers().length; // used to react to undo/redo
         const wptsString = JSON.stringify(ctx.selectedGpxFile.wpts); // slow
         return name + nLayers + wptsString;
-    }, [ctx.selectedGpxFile.name, ctx.selectedGpxFile.wpts]);
+    }, [
+        ctx.selectedGpxFile.name,
+        JSON.stringify(ctx.selectedGpxFile.wpts),
+        ctx.selectedGpxFile.layers.getLayers().length,
+    ]);
 
     const allGroups = useMemo(() => {
         const groups = getSortedGroups();
