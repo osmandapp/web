@@ -169,6 +169,10 @@ const config = {
                 href: 'https://t.me/osmand_es',
               },
               {
+                label: 'Brazilian',
+                href: 'https://t.me/brosmand',
+              },
+              {
                 label: 'Arabic',
                 href: 'https://t.me/+NwG00ihXJlBjZTA0',
               },
