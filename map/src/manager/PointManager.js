@@ -16,7 +16,7 @@ function deleteWpt(ind, ctx, save = false) {
     ctx.setSelectedGpxFile((o) => {
         o.wpts.splice(ind, 1);
         o.updateLayers = true;
-        o.wptChangedFlag += 1;
+        o.wptChangedFlag++;
         if (save) {
             o.save = true;
         }
