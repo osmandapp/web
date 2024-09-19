@@ -244,12 +244,11 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     function getCoordsFromWpt(wpt) {
         if (wpt.latlng) {
             return { lat: wpt.latlng.lat, lon: wpt.latlng.lng };
-        } else if (wpt.lat && wpt.lon) {
-            return {
-                lat: wpt.lat ? parseFloat(wpt.lat) : null,
-                lon: wpt.lon ? parseFloat(wpt.lon) : null,
-            };
         }
+        return {
+            lat: wpt.lat ? parseFloat(wpt.lat) : null,
+            lon: wpt.lon ? parseFloat(wpt.lon) : null,
+        };
     }
 
     useEffect(() => {
