@@ -103,7 +103,7 @@ export default function EditWptDialog({
                 lon: wpt.latlon?.lon ?? wpt.lon,
             };
         }
-
+        ctx.selectedGpxFile.wptChangedFlag += 1;
         ctx.selectedGpxFile.updateLayers = true;
         if (!isDetails) {
             ctx.selectedGpxFile.save = true;

@@ -134,6 +134,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
             ctx.selectedGpxFile.pointsGroups[favorite.category].points.push(favorite);
         }
         ctx.selectedGpxFile.updateLayers = true;
+        ctx.selectedGpxFile.wptChangedFlag += 1;
         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
         if (ctx.createTrack) {
             ctx.trackState.update = true;
