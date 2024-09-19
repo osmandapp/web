@@ -1,6 +1,6 @@
 import { useEffect, useRef, useContext, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { MapContainer, Marker, ScaleControl, AttributionControl } from 'react-leaflet';
+import { MapContainer, Marker, ScaleControl, AttributionControl, ZoomControl } from 'react-leaflet';
 import AppContext from '../context/AppContext';
 import RouteLayer from './layers/RouteLayer';
 import WeatherLayer from './layers/WeatherLayer';
@@ -16,7 +16,6 @@ import ContextMenu from './components/ContextMenu';
 import PoiLayer from './layers/PoiLayer';
 import GraphLayer from './layers/GraphLayer';
 import { initialZoom, initialPosition, detectGeoByIp, LocationControl } from './components/LocationControl';
-import CustomZoomControl from './components/CustomZoomControl';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import CustomTileLayer from './layers/CustomTileLayer';
 import ExploreLayer from './layers/ExploreLayer';
@@ -56,14 +55,6 @@ const useStyles = makeStyles(() => ({
             width: '40px !important',
             color: '#757575',
             border: '4px !important',
-        },
-        '& .leaflet-bar a:first-child': {
-            borderTopLeftRadius: '4px !important',
-            borderTopRightRadius: '4px !important',
-        },
-        '& .leaflet-bar a:last-child': {
-            borderBottomLeftRadius: '4px !important',
-            borderBottomRightRadius: '4px !important',
         },
     }),
 }));
@@ -186,7 +177,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             <ScaleControl position={'bottomleft'} imperial={false} />
             <AttributionControl position={'bottomleft'} prefix={false} />
             <LocationControl position={'bottomright'} />
-            <CustomZoomControl position={'bottomright'} />
+            <ZoomControl position={'bottomright'} />
             <ContextMenu setGeocodingData={setGeocodingData} setRegionData={setRegionData} />
         </MapContainer>
     );
