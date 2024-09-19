@@ -226,7 +226,10 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             name: currentWpt.name,
             desc: currentWpt.desc,
             hidden: currentWpt.hidden,
-            latlon: { lat: currentWpt.lat, lon: currentWpt.lon },
+            latlon: {
+                lat: currentWpt.lat ? parseFloat(currentWpt.lat) : null,
+                lon: currentWpt.lon ? parseFloat(currentWpt.lon) : null,
+            },
             marker: currentWpt.marker,
             background: prepareBackground(currentWpt.background),
             color: prepareColor(currentWpt.color),
