@@ -1,4 +1,3 @@
-import { Dialog } from '@material-ui/core';
 import { Button, Grid, IconButton, ListItemText } from '@mui/material';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
@@ -25,6 +24,7 @@ import { apiGet } from '../../../util/HttpApi';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { saveTrackToLocalStorage } from '../../../manager/track/SaveTrackManager';
 import { FINAL_POI_ICON_NAME, TITLE, WEB_POI_PREFIX } from '../wpt/WptTagsProvider';
+import Dialog from '@mui/material/Dialog';
 
 export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedPoi = null }) {
     const menuStyles = contextMenuStyles();

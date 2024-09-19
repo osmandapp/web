@@ -99,6 +99,8 @@ export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldS
     );
 };
 
+export const ADDRESS_NOT_FOUND = 'No data';
+
 export default function WptDetails({ isDetails = false, setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
@@ -107,8 +109,6 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     const [devWikiContent, setDevWikiContent] = useState(null);
 
     const currentLoc = useGeoLocation(ctx);
-
-    const ADDRESS_NOT_FOUND = 'No data';
 
     const ICON_IMG_SIZE = 24;
     const ICON_SHIELD_SIZE = 48;
@@ -220,16 +220,16 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     async function getDataFromWpt(type, selectedWpt, wptFromFile = null) {
         const currentWpt = wptFromFile ? wptFromFile : selectedWpt;
         const tags = await WptTagsProvider.getWptTags(currentWpt, type, ctx);
+
+        const latlon = getCoordsFromWpt(currentWpt);
+
         return {
             type: type,
             file: selectedWpt.file,
             name: currentWpt.name,
             desc: currentWpt.desc,
             hidden: currentWpt.hidden,
-            latlon: {
-                lat: currentWpt.lat ? parseFloat(currentWpt.lat) : null,
-                lon: currentWpt.lon ? parseFloat(currentWpt.lon) : null,
-            },
+            latlon: latlon,
             marker: currentWpt.marker,
             background: prepareBackground(currentWpt.background),
             color: prepareColor(currentWpt.color),
@@ -239,6 +239,17 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             time: parseInt(currentWpt.ext?.time) !== 0 ? currentWpt.ext?.time : null,
             tags: tags,
         };
+    }
+
+    function getCoordsFromWpt(wpt) {
+        if (wpt.latlng) {
+            return { lat: wpt.latlng.lat, lon: wpt.latlng.lng };
+        } else if (wpt.lat && wpt.lon) {
+            return {
+                lat: wpt.lat ? parseFloat(wpt.lat) : null,
+                lon: wpt.lon ? parseFloat(wpt.lon) : null,
+            };
+        }
     }
 
     useEffect(() => {
