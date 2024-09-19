@@ -133,7 +133,7 @@ export function createHoverMarker({
     const onMouseOver = () => {
         removeTooltip(map, tooltipRef);
         if (setSelectedId) {
-            setSelectedId({ id: marker.options.id });
+            setSelectedId({ id: marker.options.idObj });
         }
         if (!mainStyle) {
             marker.setStyle({

@@ -347,7 +347,7 @@ export default function ExploreLayer() {
                         const marker = L.marker(latlng, {
                             icon,
                             index: place.index,
-                            id: place.properties.id,
+                            idObj: place.properties.id,
                         });
                         addEventListeners({ marker, place, main: true, iconSize, latlng });
                         largeMarkersArr.addLayer(marker);
@@ -358,7 +358,7 @@ export default function ExploreLayer() {
                             return reject('Operation aborted');
                         }
                         const circle = L.circleMarker(latlng, {
-                            id: place.properties.id,
+                            idObj: place.properties.id,
                             fillOpacity: 0.9,
                             radius: 5,
                             color: '#ffffff',
@@ -379,7 +379,7 @@ export default function ExploreLayer() {
                     for (const place of secondaryMarkers) {
                         const latlng = L.latLng(place.geometry.coordinates[1], place.geometry.coordinates[0]);
                         const circle = L.circleMarker(latlng, {
-                            id: place.properties.id,
+                            idObj: place.properties.id,
                             fillOpacity: 0.9,
                             radius: 5,
                             color: '#ffffff',
