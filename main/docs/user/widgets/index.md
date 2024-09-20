@@ -32,4 +32,4 @@ Map markers are selected points marked on the map as flags. They provide useful 
 
 ### [Quick Action](./quick-action.md)
 
-Quick Action widget is a customizable quick action button on the map, with which selected actions are available *in just two clicks*.
+Quick Action widget is a customizable quick action button on the map, with which selected actions are available *in just two taps*.
