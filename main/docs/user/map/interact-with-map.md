@@ -21,18 +21,18 @@ This article explains how to customize and interact with the map using various b
 
 ## Gestures
 
-Gestures are an important part of map navigation.
+Gestures are essential for navigating the map easily and intuitively.
 
-| Map Action | Gesture |
-|:------------|:---------------|
-|**Move**| Press on the map with **one** finger and move around. |
-|**Slide**| Swipe the map with **one** finger. |
-|**Zoom in**| Double tap the map with **one** finger   <br /> Double tap the map with **one** finger and then swipe down   <br /> Pinch with **two** fingers. |
-|**Zoom out**|  Double tap the map with **two** fingers   <br /> Double tap the map with **one** finger and then swipe up   <br />  Pinch with **two** fingers. |
-|**Rotate**| Tap with **two** fingers on the map and rotate. |
-|**Tilt** - 3D | Tap with **two** fingers on the map and then move them up/down  <br /> This option is only available with [map rendering engine](../personal/global-settings.md#map-rendering-engine) version 2 (OpenGL).  |
+| Map Action  | Gesture  |
+|:------------|:-------------|
+| **Move**    | Tap and hold the map with **one** finger, then drag to move around. |
+| **Slide**   | Swipe the map with **one** finger. |
+| **Zoom In** | Double tap the map with **one** finger. <br/> Double tap with **one** finger and swipe down. <br/> Pinch with **two** fingers to zoom in. |
+| **Zoom Out**| Double tap with **two** fingers. <br/> Double tap with **one** finger and swipe up. <br/> Pinch with **two** fingers to zoom out. |
+| **Rotate**  | Tap the map with **two** fingers, then rotate your fingers in a circular motion. |
+| **Tilt (3D)** | Tap with **two** fingers and move them up or down. <br/> Available only with [Map Rendering Engine](../personal/global-settings.md#map-rendering-engine) version 2 (OpenGL). |
 
-Slide animations could be disabled with a special [setting](#no-animations).
+Slide animations can be disabled in the settings with a [special option](#no-animations).
 
 
 ## My Location and Zoom
@@ -147,7 +147,7 @@ The compass button shows how the [map is oriented](#map-orientation-modes). The 
 ## Rotate Map by Bearing
 
 When the "rotate map by bearing" mode (rotation by [movement direction](#map-orientation-modes)) is enabled, the map is oriented so that your forward view aligns directly above the *My Location* icon. If there is no movement, the map will remain stationary.  
-In this mode, the map's center is positioned slightly below the center of the screen, allowing you to see more map data ahead of your movement—especially helpful in navigation mode.  
+In this mode, the map's center is positioned slightly below the center of the screen, allowing you to see more map data ahead of your movement — especially helpful in navigation mode.  
 You can adjust the "rotate map by bearing" mode in the [Profile settings](../personal/profiles.md#appearance) or by tapping the [Compass](#compass).
 
 
@@ -254,19 +254,20 @@ To access the settings of an external input device, you need to enable this feat
 |**D**| *Keyboard*   | Change - [Map orientation](../map/interact-with-map.md#map-orientation-modes) |
 |**N**| *Keyboard*   | Show / Hide - Navigation view |
 |**S**| *Keyboard*   | Show / Hide - [Search view](../search/index.md) |
-|**P**| *Keyboard*   | Change - App profile to next.<br/>Switch to the next app profile. Show toast-like message **App profile: Name**. |
-|**O**| *Keyboard*   | Change - App profile to previous.<br/>Switch to the previous app profile. |
+|**P**| *Keyboard*   | Change - App profile to next |
+|**O**| *Keyboard*   | Change - App profile to previous |
 |**&#8593;**| *Keyboard*   | Move - Map up  |
 |**&#8595;**| *Keyboard*   | Move - Map down  |
 |**&#8592;**| *Keyboard*   | Move - Map to the left  |
 |**&#8594;**| *Keyboard*   | Move - Map to the right  |
 |**&#43;** **=**| *Keyboard*  | Map - [Zoom in](../map/interact-with-map.md#my-location--zoom) |
 |**&#8722;**| *Keyboard*  | Map - [Zoom out](../map/interact-with-map.md#my-location--zoom) |
+|**Press back**| *Keyboard*   | Navigate – Previous screen  |
 |**&#8595;**| *Wunderlinq*  | Map - [Zoom out](../map/interact-with-map.md#my-location--zoom) |
 |**&#8593;**| *Wunderlinq*  | Map - [Zoom in](../map/interact-with-map.md#my-location--zoom) |
 | **ESC** | *Wunderlinq*  | Open WunderLINQ Datagrid |
 | **M** <br/> (*legacy Android*) | *Keyboard*  | Show / Hide - [Side menu](../start-with/main-menu.md#main-menu-drawer) |
-| **Joystick click** <br/> (*legacy Android*) | *Keyboard*  | [My location](../map/interact-with-map.md#my-location--zoom) |
+| **Joystick press** <br/> (*legacy Android*) | *Keyboard*  | [My location](../map/interact-with-map.md#my-location--zoom) |
 | **Media button** <br/> (*Android only*)| *Keyboard*  | Show / Hide - [AV notes](../plugins/audio-video-notes.md#add-note-on-the-map) |
 | **&#8592;** <br/> (*Android only*)| *Parrot*  | Map - [Zoom out](../map/interact-with-map.md#my-location--zoom) |
 | **&#8594;** <br/> (*Android only*) | *Parrot*  | Map - [Zoom in](../map/interact-with-map.md#my-location--zoom) |
