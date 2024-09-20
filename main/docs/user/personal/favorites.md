@@ -209,8 +209,9 @@ Favorite folders and points are sorted alphabetically, with the [personal folder
 
 </Tabs>
 
-Tap the **Delete** (*bin icon on Android*) or the **Edit** button (*pencil icon on iOS*) to open a selection mode with options such as *Move to a Favorite Group*, *Share*, *Change Color*, and *Delete*. You can then select points or groups and perform the required action.
+To manage multiple favorites, tap the **Delete** icon (*bin icon on Android*) or the **Edit** button (*pencil icon on iOS*). This action allows you to select multiple individual favorites or entire folders containing them, enabling bulk edit options.  
 
+In both the Android and iOS apps, you will have the *Delete* option available. Additionally, for iOS, you can also access options such as *Move to a Favorite Group*, *Share*, and *Change Color* for enhanced organization and customization of your favorites.
 
 <!--
 ### Add Favorites to Map Markers
