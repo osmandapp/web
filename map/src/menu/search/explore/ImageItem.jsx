@@ -1,9 +1,9 @@
 import { useInView } from 'react-intersection-observer';
 import React, { useCallback, useContext, useEffect, useState, useRef } from 'react';
 import { ImageListItem, Skeleton } from '@mui/material';
-import { WIKI_IMAGE_BASE_URL } from '../../../manager/SearchManager';
 import AppContext from '../../../context/AppContext';
 import styles from '../search.module.css';
+import { getPhotoUrl } from './PhotoGallery';
 
 export default function ImageItem({ photo, index, handleImageLoad, isLoaded }) {
     const ctx = useContext(AppContext);
@@ -51,7 +51,7 @@ export default function ImageItem({ photo, index, handleImageLoad, isLoaded }) {
             {!isLoaded && <Skeleton className={styles.skeleton} />}
             {inView && (
                 <img
-                    src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=300`}
+                    src={getPhotoUrl(photo)}
                     alt={photo.properties.imageTitle}
                     className={styles.image}
                     onLoad={() => handleImageLoad(index)}

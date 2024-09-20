@@ -44,9 +44,13 @@ import WptDetailsButtons from './WptDetailsButtons';
 import WptTagsProvider, {
     FINAL_POI_ICON_NAME,
     openWikivoyageContent,
+    OSM_PREFIX,
     POI_OSM_URL,
     POI_PREFIX,
     TYPE_OSM_VALUE,
+    WIKIDATA,
+    WIKIMEDIA_COMMONS,
+    WIKIPEDIA,
 } from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
 import { useTranslation } from 'react-i18next';
@@ -162,6 +166,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     icon: poiOptions[FINAL_POI_ICON_NAME],
                     tags: tags,
                     osmUrl: poiOptions[POI_OSM_URL],
+                    wikidata: poiOptions[OSM_PREFIX + WIKIDATA],
+                    wikimediaCommons: getWikiCommons(poiOptions[OSM_PREFIX + WIKIMEDIA_COMMONS]),
+                    wikipedia: getWikipedia(poiOptions[OSM_PREFIX + WIKIPEDIA]),
                 };
             } else if (type?.isWikiPoi) {
                 setLoading(true);
@@ -207,6 +214,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     icon: objOptions[FINAL_POI_ICON_NAME],
                     tags: tags,
                     osmUrl: objOptions[POI_OSM_URL],
+                    wikidata: objOptions[OSM_PREFIX + WIKIDATA],
+                    wikimediaCommons: getWikiCommons(objOptions[OSM_PREFIX + WIKIMEDIA_COMMONS]),
+                    wikipedia: getWikipedia(objOptions[OSM_PREFIX + WIKIPEDIA]),
                 };
             } else {
                 result = null;
@@ -216,6 +226,39 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
         fetchWpt().then(() => setLoading(false));
     }, [ctx.selectedWpt]);
+
+    function getWikiCommons(wikimediaCommons) {
+        const WIKIMEDIA_FILE = 'File:';
+        const WIKIMEDIA_CATEGORY = 'Category:';
+        if (wikimediaCommons && wikimediaCommons.trim() !== '') {
+            if (wikimediaCommons.startsWith(WIKIMEDIA_FILE)) {
+                return;
+            } else if (wikimediaCommons.startsWith(WIKIMEDIA_CATEGORY)) {
+                return wikimediaCommons.replace(WIKIMEDIA_CATEGORY, '');
+            }
+        }
+        return wikimediaCommons;
+    }
+
+    function getWikipedia(wikipedia, tags) {
+        let wikiTitle = null;
+
+        const urlInd = !wikipedia ? -1 : wikipedia.indexOf('.wikipedia.org/wiki/');
+        if (urlInd > 0) {
+            const prefix = wikipedia.substring(0, urlInd);
+            const lang = prefix.substring(prefix.lastIndexOf('/') + 1);
+            const title = wikipedia.substring(urlInd + '.wikipedia.org/wiki/'.length);
+            wikiTitle = `${lang}:${title}`;
+        }
+        if (!wikiTitle) {
+            for (const tag in tags) {
+                if (tag.startsWith(WIKIPEDIA + ':')) {
+                    wikiTitle = tag.substring((WIKIPEDIA + ':').length) + ':' + tags[tag];
+                }
+            }
+        }
+        return wikiTitle ? wikiTitle : wikipedia;
+    }
 
     async function getDataFromWpt(type, selectedWpt, wptFromFile = null) {
         const currentWpt = wptFromFile ? wptFromFile : selectedWpt;
@@ -260,7 +303,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     }, [newWpt]);
 
     function addFirstPhoto(wpt) {
-        const mainPhotoName = wpt.type.isWikiPoi.properties?.photoTitle;
+        const mainPhotoName = wpt.type.isWikiPoi?.properties?.photoTitle;
         if (!mainPhotoName || mainPhotoName === '') {
             return wpt;
         }
@@ -296,16 +339,26 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             getPoiAddress(wpt).then((addressData) => {
                 updatedWpt.address = addressData ? addressData : ADDRESS_NOT_FOUND;
 
-                // After searching for the address, search for photos if it's a WikiPoi
-                if (wpt?.type?.isWikiPoi && !isPhotosAdded) {
+                // After searching for the address, search for photos
+                if (!isPhotosAdded) {
                     setIsPhotosAdded(true);
-                    getWikiPhotos(wpt).then((photosData) => {
-                        if (photosData) {
-                            updatedWpt.photos = photosData;
-                            updatedWpt = addFirstPhoto(updatedWpt);
-                        }
-                        setWpt(updatedWpt);
-                    });
+                    if (wpt?.type?.isWikiPoi) {
+                        getWikiPhotos(wpt).then((photosData) => {
+                            if (photosData) {
+                                updatedWpt.photos = photosData;
+                                updatedWpt = addFirstPhoto(updatedWpt);
+                            }
+                            setWpt(updatedWpt);
+                        });
+                    } else if (wpt?.type?.isPoi || wpt?.type?.isSearch) {
+                        getPoiPhotos(wpt).then((photosData) => {
+                            if (photosData) {
+                                updatedWpt.photos = photosData;
+                                updatedWpt = addFirstPhoto(updatedWpt);
+                            }
+                            setWpt(updatedWpt);
+                        });
+                    }
                 } else {
                     setWpt(updatedWpt);
                 }
@@ -401,6 +454,22 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 id: wpt.id,
                 lat: wpt.latlon.lat,
                 lon: wpt.latlon.lon,
+            },
+        });
+        if (response && response.data) {
+            return response.data;
+        } else {
+            return null;
+        }
+    }
+
+    async function getPoiPhotos(wpt) {
+        let response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/get-poi-photos`, {
+            apiCache: true,
+            params: {
+                article: wpt.wikidata,
+                category: wpt.wikimediaCommons,
+                wiki: wpt.wikipedia,
             },
         });
         if (response && response.data) {
