@@ -133,7 +133,7 @@ Track points (waypoints) are part of Track (GPX) files. These points are display
 
 ![POI search](@site/static/img/map/poi_search.png) ![POI search result](@site/static/img/map/poi_search_result.png)
 
-Search results could be displayed on the map as a special POI layer. During the search tap on a special row (**<Translate android="true" ids="shared_string_show_on_map"/>**) to display POIs on the map.  
+Search results could be displayed on the map as a special POI layer. During the search tap a special row (**<Translate android="true" ids="shared_string_show_on_map"/>**) to display POIs on the map.  
 
 To switch off POIs, hit **X** in the top right corner.  
 

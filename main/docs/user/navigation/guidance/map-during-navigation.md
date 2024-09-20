@@ -137,7 +137,7 @@ The list contains all previously added [*Favourite*](../../personal/favorites.md
 
 - The choice to display *Traffic warnings* along your route allows you to see the entire list just before you start your route, which is useful when planning your trip. 
 
-- Unnecessary alerts can be removed from the list or you can tap on the name and [edit the location](../../map/map-context-menu.md#avoid-road).  
+- Unnecessary alerts can be removed from the list or you can tap the name and [edit the location](../../map/map-context-menu.md#avoid-road).  
 
 
 ## Screen Alerts

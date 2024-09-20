@@ -211,7 +211,7 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 | Change <br/> [**<Translate ios="true" ids="map_settings_under"/>**](../map/raster-maps.md) |  Create a list of map sources as map underlay and cycle through them. <br /> Note, works similar to *Change* **<Translate ios="true" ids="quick_action_map_source_title"/>**  |
 | Change <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/vector-maps.md#default-map-styles) | Create a list of map styles for vector maps and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="quick_action_map_source_title"/>** (see above) |
 | Show / Hide <br/> [**Mapillary layer**](../plugins/mapillary.md) | Allows you to view map layers with street-level imagery provided by Mapillary. |
-| Show / Hide <br/> [**<Translate android="true" ids="osm_notes"/>**](../plugins/osm-editing.md) | You can select to display or hide all OSM notes on the map with a single tap on the button. |
+| Show / Hide <br/> [**<Translate android="true" ids="osm_notes"/>**](../plugins/osm-editing.md) | You can select to display or hide all OSM notes on the map with a single tap the button. |
 
 
 ### Map Interactions

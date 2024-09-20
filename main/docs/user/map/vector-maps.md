@@ -327,7 +327,7 @@ A route is a path that is predetermined and needs to be followed to reach a spec
 
 </Tabs>  
 
-When navigating through cities, you need a more contrasting view of public transportation and stops. You can tap on a public transportation stop and select one of the routes or stops from the list. Train routes are also displayed in this setting.
+When navigating through cities, you need a more contrasting view of public transportation and stops. You can tap a public transportation stop and select one of the routes or stops from the list. Train routes are also displayed in this setting.
 
 - **<Translate android="true" ids="rendering_attr_transportStops_name"/>**. Showing public transport stops.  
     ![Map transport stops](@site/static/img/map/map-transport-stops.png)

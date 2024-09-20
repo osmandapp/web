@@ -176,7 +176,7 @@ The Parking spot can be used for navigation when the geolocation is unknown and/
 
 To remove a parking spot from the map, follow these steps:
 
-- Tap on the [widget](#parking-widget) or zoom out on the map to see the parking spot better.
+- Tap the [widget](#parking-widget) or zoom out on the map to see the parking spot better.
 - Tap the **parking spot**, and then select **delete/dismiss** in the [context menu](../map/map-context-menu.md#-add--delete-parking-point) that opens.  
 If there are any reminders, they will also be deleted from the calendar application.
 

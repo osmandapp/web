@@ -136,7 +136,7 @@ This tool provides a detailed analysis of track data using graphs and maps.
 
 - **Graph Data (Y-axis)**: Displays Altitude, Slope, Speed, [External sensor data](../../plugins/external-sensors.md), or a combination (if available for the track).
 - **Graph Dimension (X-axis)**: Can represent Distance, Time, or Time of day.
-- **Tap/Slide Interaction**: Tap on the graph to display information about a specific track point. Sliding along the graph highlights the corresponding location on the map and shows details in the info bar.
+- **Tap/Slide Interaction**: tap the graph to display information about a specific track point. Sliding along the graph highlights the corresponding location on the map and shows details in the info bar.
 - **Scaling**: Use a [two-finger gesture](../../map/interact-with-map.md#gestures) to scale the graph for more detailed viewing.
 
 

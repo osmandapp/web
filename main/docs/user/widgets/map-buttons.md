@@ -41,7 +41,7 @@ The **Directions** button is essential for route planning and navigation:
 
 - [*Build a route*](../navigation/index.md). Use this button to create a route.
 - [*Start navigation*](../navigation/index.md). Initiate turn-by-turn navigation.
-- In navigation mode, the *Directions* button is not visible by default but appears after a short tap on the map.
+- In navigation mode, the *Directions* button is not visible by default but appears after a short tap the map.
 
 Indicative states of the *Directions* button:
 
@@ -61,7 +61,7 @@ The **Configure map** button provides access to the [Configure Map menu](../map/
 
 ![Main menu button](@site/static/img/widgets/main_menu_button.png)
 
-The [**Main menu**](../start-with/main-menu.md) button opens the general menu, granting access to [all application features](../start-with/main-menu.md). In navigation mode, this button is hidden by default and becomes visible after a short tap on the map.
+The [**Main menu**](../start-with/main-menu.md) button opens the general menu, granting access to [all application features](../start-with/main-menu.md). In navigation mode, this button is hidden by default and becomes visible after a short tap the map.
 
 
 ## Search
