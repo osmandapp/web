@@ -86,58 +86,58 @@ To arrange widgets on the app screen, use panels. Panels enable you to place wid
 
 </Tabs>
 
-1. [Route maneuvers](../widgets/nav-widgets.md#next-turns) (*only for Left/Right panel*)  This set of *navigational* widgets is activated during navigation and they display information about the distance to the next maneuver.  
+1. [Route maneuvers](../widgets/nav-widgets.md#next-turns) (*only for Left/Right panel*). This set of *navigational* widgets is activated during navigation and they display information about the distance to the next maneuver.  
     3 widgets are included: *Next turn*, *Next turn (small)*, *Second next turn*.
 
-2. [Navigation point](../widgets/nav-widgets.md#navigation-points)  A set of *navigation widgets* shows the remaining distance to a destination, intermediate point, arrival time to an intermediate point, or travel time for a calculated route.  
+2. [Navigation point](../widgets/nav-widgets.md#navigation-points). A set of *navigation widgets* shows the remaining distance to a destination, intermediate point, arrival time to an intermediate point, or travel time for a calculated route.  
     4 widgets are included: [Distance to destination](../widgets/nav-widgets.md#distance-to-destination), [Distance to intermediate](../widgets/nav-widgets.md#distance-to-intermediate), [Time to intermediate](../widgets/nav-widgets.md#time-to-intermediate), [Time to destination](../widgets/nav-widgets.md#time-to-destination).
 
-3. [Map markers](../widgets/markers.md)  A set of widgets shows the distance or estimated time of arrival (ETA) for the first two markers in the list of map markers. show special points marked as flags on the map.  2 widgets are included: *First marker*, *Second marker*.
+3. [Map markers](../widgets/markers.md). A set of widgets shows the distance or estimated time of arrival (ETA) for the first two markers in the list of map markers. show special points marked as flags on the map.  2 widgets are included: *First marker*, *Second marker*.
 
-4. [Bearing](../widgets/nav-widgets.md#bearing)  This set of *navigational* widgets shows the absolute or relative bearing to a target in angular units (in 180 degrees, 360 degrees, or milliradians mode).  
+4. [Bearing](../widgets/nav-widgets.md#bearing). This set of *navigational* widgets shows the absolute or relative bearing to a target in angular units (in 180 degrees, 360 degrees, or milliradians mode).  
     3 widgets are included: *Relative bearing*, *Magnetic bearing*, *True bearing*.
 
-5. [Current Speed](../widgets/info-widgets.md#speed)  *Informational* widget shows the current speed detected by the GPS sensor.  
+5. [Current Speed](../widgets/info-widgets.md#speed). *Informational* widget shows the current speed detected by the GPS sensor.  
 
-6. [Average speed](../widgets/info-widgets.md#average-speed-widget)  *Informational* widget shows the average speed of the current trip.  
+6. [Average speed](../widgets/info-widgets.md#average-speed-widget). *Informational* widget shows the average speed of the current trip.  
 
-7. [Speed limit](../widgets/nav-widgets.md#speed-limit)  A set of *informational* widgets displays the speed limit on the current road you are traveling on.
+7. [Speed limit](../widgets/nav-widgets.md#speed-limit). A set of *informational* widgets displays the speed limit on the current road you are traveling on.
 
-8. [Altitude](../widgets/info-widgets.md#altitude-widgets)  A set of *informational* widgets displays the altitude above sea level for the current geolocation or the altitude above sea level for the current map center.  
+8. [Altitude](../widgets/info-widgets.md#altitude-widgets). A set of *informational* widgets displays the altitude above sea level for the current geolocation or the altitude above sea level for the current map center.  
     2 widgets are included: *Altitude: current location*, *Elevation: map center*.
 
-9. [Current time](../widgets/info-widgets.md#current-time)  *Informational* widget displays the current time taken from your device.  
+9. [Current time](../widgets/info-widgets.md#current-time). *Informational* widget displays the current time taken from your device.  
 
-10. [Battery level](../widgets/info-widgets.md#battery-level)  *Informational* widget shows battery level of your device.  
+10. [Battery level](../widgets/info-widgets.md#battery-level). *Informational* widget shows battery level of your device.  
 
-11. [Radius ruler](../widgets/info-widgets.md#radius-ruler)  The widget displays on a map the distance between the user's location and the inner point of the distance circles of the [Radius ruler tool](../widgets/radius-ruler.md).  
+11. [Radius ruler](../widgets/info-widgets.md#radius-ruler). The widget displays on a map the distance between the user's location and the inner point of the distance circles of the [Radius ruler tool](../widgets/radius-ruler.md).  
 
-12. [Glide ratio](../widgets/info-widgets.md#glide-ratio)  The widgets show the glide ratio to the target and the average glide ratio for the current flight.  
+12. [Glide ratio](../widgets/info-widgets.md#glide-ratio). The widgets show the glide ratio to the target and the average glide ratio for the current flight.  
     2 widgets are included: *Glide ratio to target*, *Average glide ratio*.
 
-13. [Sunrise, sunset](../widgets/info-widgets.md#sunset-and-sunrise)  A set of *informational* widgets shows the time of the next sunrise or sunset for the center of the map.  
+13. [Sunrise, sunset](../widgets/info-widgets.md#sunset-and-sunrise). A set of *informational* widgets shows the time of the next sunrise or sunset for the center of the map.  
     2 widgets are included: *Sunrise*, *Sunset*.
 
-14. [OsmAnd Tracker status](../widgets/info-widgets.md#-tracker-widget)  This *informational* widget is used to quickly access the [OsmAnd Tracker application](https://play.google.com/store/apps/details?id=net.osmand.telegram) to share your location with other users.  
+14. [OsmAnd Tracker status](../widgets/info-widgets.md#-tracker-widget). This *informational* widget is used to quickly access the [OsmAnd Tracker application](https://play.google.com/store/apps/details?id=net.osmand.telegram) to share your location with other users.  
 
-15. [GPS info (*Android only*)](../widgets/info-widgets.md#gps-info)  *Informational* widget shows the number of satellites the device is currently detecting and using.  
+15. [GPS info (*Android only*)](../widgets/info-widgets.md#gps-info). *Informational* widget shows the number of satellites the device is currently detecting and using.  
 
-16. [Developer widgets (from *OsmAnd development plugin*)](../widgets/info-widgets.md#developer-widgets)  A set of *informational* widgets provides information about zoom level, map rendering speed, map center elevation above sea level, distance to the map center, camera height and tilt and available RAM on your device.  
+16. [Developer widgets (from *OsmAnd development plugin*)](../widgets/info-widgets.md#developer-widgets). A set of *informational* widgets provides information about zoom level, map rendering speed, map center elevation above sea level, distance to the map center, camera height and tilt and available RAM on your device.  
     5 widgets are included: *Map rendering FPS*, *Camera tilt*, *Camera elevation*, *Zoom level*, *Distance from camera to target*, *Available RAM*.  
 
-17. [Mapillary (from *Mapillary plugin*)](../widgets/info-widgets.md#mapillary-widget)  *Informational* widget provides quick access to the Mapillary app to add street images.  
+17. [Mapillary (from *Mapillary plugin*)](../widgets/info-widgets.md#mapillary-widget). *Informational* widget provides quick access to the Mapillary app to add street images.  
 
-18. [Parking (from *Parking position plugin*)](../widgets/info-widgets.md#parking-widget)  *Informational* widget shows the distance from the center of the screen to the parking location.  
+18. [Parking (from *Parking position plugin*)](../widgets/info-widgets.md#parking-widget). *Informational* widget shows the distance from the center of the screen to the parking location.  
 
-19. [Wheather (from *Weather plugin*)](../widgets/info-widgets.md#weather-widgets)  A set of *informational* widgets displays detailed weather data.  
+19. [Wheather (from *Weather plugin*)](../widgets/info-widgets.md#weather-widgets). A set of *informational* widgets displays detailed weather data.  
     5 widgets are included: *Temperature*, *Air Pressure*, *Wind*, *Cloud*, *Precipitation*.  
-20. [Trip recording (from *Trip recording plugin*)](../widgets/info-widgets.md#trip-recording-widgets)  A set of *informational* widgets provides quick access to start and stop track recording.  
+20. [Trip recording (from *Trip recording plugin*)](../widgets/info-widgets.md#trip-recording-widgets). A set of *informational* widgets provides quick access to start and stop track recording.  
     4 widgets are included: *Distance*, *Duration*, *Uphill*, *Downhill*.  
 
-21. [Audio/video notes (from *Audio/video notes plugin*)](../widgets/info-widgets.md#audiovideo-notes-widget)  This set of *informational* widgets provides quick access to start/stop taking an audio, video, or photo notes.  
+21. [Audio/video notes (from *Audio/video notes plugin*)](../widgets/info-widgets.md#audiovideo-notes-widget). This set of *informational* widgets provides quick access to start/stop taking an audio, video, or photo notes.  
     4 widgets are included: *On request*, *Record audio*, *Record video*, *Take a photo*.  
 
-22. [External Sensors widgets (from *External sensors plugin*)](../widgets/info-widgets.md#external-sensors-widgets)  A set of *informational* widgets help you track data from your external sensors in real-time.  
+22. [External Sensors widgets (from *External sensors plugin*)](../widgets/info-widgets.md#external-sensors-widgets). A set of *informational* widgets help you track data from your external sensors in real-time.  
     6 widgets are included: *Heart Rate*, *Bicycle Power* (*Android only*), *Bicycle Cadence*, *Bicycle Speed*, *Bicycle Distance*, *Temperature*.
 23. [Speedometer](../widgets/info-widgets.md#speedometer). Shows the current speed based on GPS data and limited speed based on [OpenStreetMap data](https://wiki.openstreetmap.org/wiki/Key:maxspeed).
 
