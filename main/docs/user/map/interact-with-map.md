@@ -250,8 +250,8 @@ To access the settings of an external input device, you need to enable this feat
 
 | Key | Device | Action |
 |:---------|:---------------|:---------------|
-|**C**| *Keyboard*   | Move - [To My location](../map/interact-with-map.md#my-location--zoom) |
-|**D**| *Keyboard*   | Change - [Map orientation](../map/interact-with-map.md#map-orientation-modes) |
+|**C**| *Keyboard*   | Move - [To My location](#my-location-and-zoom) |
+|**D**| *Keyboard*   | Change - [Map orientation](#map-orientation-modes) |
 |**N**| *Keyboard*   | Show / Hide - Navigation view |
 |**S**| *Keyboard*   | Show / Hide - [Search view](../search/index.md) |
 |**P**| *Keyboard*   | Change - App profile to next |
@@ -260,17 +260,17 @@ To access the settings of an external input device, you need to enable this feat
 |**&#8595;**| *Keyboard*   | Move - Map down  |
 |**&#8592;**| *Keyboard*   | Move - Map to the left  |
 |**&#8594;**| *Keyboard*   | Move - Map to the right  |
-|**&#43;** **=**| *Keyboard*  | Map - [Zoom in](../map/interact-with-map.md#my-location--zoom) |
-|**&#8722;**| *Keyboard*  | Map - [Zoom out](../map/interact-with-map.md#my-location--zoom) |
+|**&#43;** **=**| *Keyboard*  | Map - [Zoom in](#my-location-and-zoom) |
+|**&#8722;**| *Keyboard*  | Map - [Zoom out](#my-location-and-zoom) |
 |**Press back**| *Keyboard*   | Navigate – Previous screen  |
-|**&#8595;**| *Wunderlinq*  | Map - [Zoom out](../map/interact-with-map.md#my-location--zoom) |
-|**&#8593;**| *Wunderlinq*  | Map - [Zoom in](../map/interact-with-map.md#my-location--zoom) |
+|**&#8595;**| *Wunderlinq*  | Map - [Zoom out](#my-location-and-zoom) |
+|**&#8593;**| *Wunderlinq*  | Map - [Zoom in](#my-location-and-zoom) |
 | **ESC** | *Wunderlinq*  | Open WunderLINQ Datagrid |
 | **M** <br/> (*legacy Android*) | *Keyboard*  | Show / Hide - [Side menu](../start-with/main-menu.md#main-menu-drawer) |
-| **Joystick press** <br/> (*legacy Android*) | *Keyboard*  | [My location](../map/interact-with-map.md#my-location--zoom) |
+| **Joystick press** <br/> (*legacy Android*) | *Keyboard*  | Move - [To My location](#my-location-and-zoom) |
 | **Media button** <br/> (*Android only*)| *Keyboard*  | Show / Hide - [AV notes](../plugins/audio-video-notes.md#add-note-on-the-map) |
-| **&#8592;** <br/> (*Android only*)| *Parrot*  | Map - [Zoom out](../map/interact-with-map.md#my-location--zoom) |
-| **&#8594;** <br/> (*Android only*) | *Parrot*  | Map - [Zoom in](../map/interact-with-map.md#my-location--zoom) |
+| **&#8592;** <br/> (*Android only*)| *Parrot*  | Map - [Zoom out](#my-location-and-zoom) |
+| **&#8594;** <br/> (*Android only*) | *Parrot*  | Map - [Zoom in](#my-location-and-zoom) |
 
 
 ### Custom Input Device Type
