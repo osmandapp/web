@@ -158,11 +158,11 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 const tags = await WptTagsProvider.getWptTags(currentPoi, type, ctx);
                 const wikiCommons = getWikiCommons(poiOptions[OSM_PREFIX + WIKIMEDIA_COMMONS]);
                 let photos = null;
-                let wikimediaCommons = null;
-                if (wikiCommons?.type === 'FeatureCollection') {
-                    photos = wikiCommons;
-                } else {
-                    wikimediaCommons = wikiCommons;
+                if (wikiCommons?.files) {
+                    photos = {
+                        type: 'FeatureCollection',
+                        features: wikiCommons.files,
+                    };
                 }
                 result = {
                     type: type,
@@ -175,7 +175,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     tags: tags,
                     osmUrl: poiOptions[POI_OSM_URL],
                     wikidata: poiOptions[OSM_PREFIX + WIKIDATA],
-                    wikimediaCommons: wikimediaCommons,
+                    wikimediaCommons: wikiCommons?.categories,
                     wikipedia: getWikipedia(poiOptions[OSM_PREFIX + WIKIPEDIA]),
                     photos: photos,
                 };
@@ -215,11 +215,11 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 const tags = await WptTagsProvider.getWptTags(currentPoi, type, ctx);
                 const wikiCommons = getWikiCommons(objOptions[OSM_PREFIX + WIKIMEDIA_COMMONS]);
                 let photos = null;
-                let wikimediaCommons = null;
-                if (wikiCommons?.type === 'FeatureCollection') {
-                    photos = wikiCommons;
-                } else {
-                    wikimediaCommons = wikiCommons;
+                if (wikiCommons?.files) {
+                    photos = {
+                        type: 'FeatureCollection',
+                        features: wikiCommons.files,
+                    };
                 }
                 result = {
                     type: type,
@@ -232,7 +232,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     tags: tags,
                     osmUrl: objOptions[POI_OSM_URL],
                     wikidata: objOptions[OSM_PREFIX + WIKIDATA],
-                    wikimediaCommons: wikimediaCommons,
+                    wikimediaCommons: wikiCommons?.categories,
                     wikipedia: getWikipedia(objOptions[OSM_PREFIX + WIKIPEDIA]),
                     photos: photos,
                 };
@@ -248,28 +248,36 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     function getWikiCommons(wikimediaCommons) {
         const WIKIMEDIA_FILE = 'File:';
         const WIKIMEDIA_CATEGORY = 'Category:';
+
         if (wikimediaCommons && wikimediaCommons.trim() !== '') {
-            if (wikimediaCommons.startsWith(WIKIMEDIA_FILE)) {
-                return {
-                    type: 'FeatureCollection',
-                    features: [
-                        {
-                            type: 'Feature',
-                            properties: {
-                                imageTitle: wikimediaCommons.replace(WIKIMEDIA_FILE, ''),
-                            },
-                            geometry: {
-                                type: 'Point',
-                                coordinates: [0, 0],
-                            },
+            const commonsItems = wikimediaCommons.split(';').map((item) => item.trim());
+
+            const files = [];
+            const categories = [];
+
+            commonsItems.forEach((item) => {
+                if (item.startsWith(WIKIMEDIA_FILE)) {
+                    files.push({
+                        type: 'Feature',
+                        properties: {
+                            imageTitle: item.replace(WIKIMEDIA_FILE, ''),
                         },
-                    ],
-                };
-            } else if (wikimediaCommons.startsWith(WIKIMEDIA_CATEGORY)) {
-                return wikimediaCommons.replace(WIKIMEDIA_CATEGORY, '');
-            }
+                        geometry: {
+                            type: 'Point',
+                            coordinates: [0, 0],
+                        },
+                    });
+                } else if (item.startsWith(WIKIMEDIA_CATEGORY)) {
+                    categories.push(item.replace(WIKIMEDIA_CATEGORY, ''));
+                }
+            });
+
+            return {
+                files: files.length > 0 ? files : null,
+                categories: categories.length > 0 ? categories[0] : null,
+            };
         }
-        return wikimediaCommons;
+        return null;
     }
 
     function getWikipedia(wikipedia, tags) {
