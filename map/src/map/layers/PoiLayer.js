@@ -29,6 +29,7 @@ import i18n from '../../i18n';
 import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
 import styles from '../../menu/search/search.module.css';
 import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
+import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
 
 export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, type = OBJECT_TYPE_POI, map, zoom }) {
     const innerCache = await createPoiCache({ poiList, poiIconCache: globalPoiIconCache });
@@ -389,6 +390,7 @@ export default function PoiLayer() {
 
     function onClick(e) {
         ctx.setCurrentObjectType(OBJECT_TYPE_POI);
+        ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE);
         const poi = {
             options: e.sourceTarget.options,
             latlng: e.sourceTarget._latlng,
