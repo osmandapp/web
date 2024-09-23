@@ -3,7 +3,6 @@ slug: osmand-web-1-01-released
 title: OsmAnd 1.01 (web)
 authors: eugene
 tags: [release, web]
-unlisted: true
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -20,6 +19,10 @@ Hello, everyone! Welcome to OsmAnd Web Version 1.01!
 We're excited to announce the release of OsmAnd Web Version 1.01 — a powerful update that brings new features, enhanced performance, and essential fixes to improve your experience with our web-based map service.
 
 You can explore the latest version directly at [OsmAnd Web](https://osmand.net/map). 
+
+![Web Index](./img/web-index.png)
+
+
 
 <!--truncate-->
 
@@ -61,7 +64,7 @@ If you'd like to manually configure the interface (system) language:
 In this update, we've introduced a new context menu for the map, making it easier to interact with points on the map. To open the menu, simply right-click anywhere on the map. The following actions are available:
 
 - **Where am I** – Quickly find your current location on the map
-- **Show weather** – Get up-to-date weather information for the selected area.
+- **Open weather** – Open the Weather menu.
 - **Create new route** – Plan a route from the selected location.
 - **Add Favorite** – Mark a point of interest as a favorite for easy access.
 - **Directions from** – Start navigation from the selected point.
@@ -72,19 +75,19 @@ In this update, we've introduced a new context menu for the map, making it easie
 
 ![Map Context menu](./img/map_context_menu.png)
 
-
 ## Explore map menu
 
-Our **Explore Map** feature has received a significant upgrade, making it easier to search for places and view points of interest (POIs) with their photos directly on the map.  
+Our **Explore Map** feature has received a significant upgrade, making it easier to search for places and view points of interest (POIs) with their photos ([wikidata source](https://www.wikidata.org/)) directly on the map.  
 
 To get started:
 
-1. Click the 🔍  icon to open the search tab, which displays popular POI categories. 
-2. Select any POI to open its context menu for more detailed information.
+1. Click the 🔍  icon to open the search tab, which displays popular POI categories and the "Explore" menu below. 
+2. The "Explore" data will automatically be shown on the map.
+3. Select "Show all" in the "Explore" section to open the full list with the _Filter_ button at the top.
 
 ![Explore menu](./img/explore.png)
 
-To refine your search by categories, open the Categories Menu and choose the items you are interested in.
+4. Pressing the _Filter_ button opens the Categories menu for "Explore." To refine your search, open the Categories menu and select the items you are interested in.
 
 ![Explore menu](./img/explore_cat.png)
 
@@ -141,7 +144,7 @@ We’ve added new URLs for specific sections of the OsmAnd Web service, making i
 
 
 ***For example***, you can directly access the Favorites page via:  
-    `https://osmand.net/map/mydata/favorites/#12/40.7452/-74.0326`
+    [`https://osmand.net/map/weather/#9/52.2394/21.0362`](https://osmand.net/map/weather/#9/52.2394/21.0362)
 
 
 ## Additional Updates and Fixes

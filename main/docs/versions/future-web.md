@@ -31,7 +31,7 @@ Web 1.01 is the latest web version of OsmAnd, which includes new useful features
 
 ## Map Context menu
 
-![Map Context menu](../../blog/2024-07-01-web-1-01/img/map_context_menu.png)
+![Map Context menu](../../blog/2024-09-23-web-1-01/img/map_context_menu.png)
 
 In this release a new context menu for the map has been added, to open it right click anywhere on the map. This menu includes the following actions:
 
@@ -48,7 +48,7 @@ In this release a new context menu for the map has been added, to open it right 
 
 ## Explore Map Menu
 
-![Explore menu](../../blog/2024-07-01-web-1-01/img/explore.png)
+![Explore menu](../../blog/2024-09-23-web-1-01/img/explore.png)
 
 A new feature in OsmAnd Web with map places search by POI categories, which displays photos of a specific point of interest on the map.
 
@@ -56,11 +56,11 @@ A new feature in OsmAnd Web with map places search by POI categories, which disp
 - Then select and click on one of the POIs to open the context menu for it.
 - To start searching by category, open the Categories menu and select the required items.
 
-![Explore menu](../../blog/2024-07-01-web-1-01/img/explore_cat.png)
+![Explore menu](../../blog/2024-09-23-web-1-01/img/explore_cat.png)
 
 ### POI Context Menu
 
-![Explore menu](../../blog/2024-07-01-web-1-01/img/poi_context.png)
+![Explore menu](../../blog/2024-09-23-web-1-01/img/poi_context.png)
 
 Clicking on a POI opens a new context menu that includes:
 
@@ -71,14 +71,14 @@ Clicking on a POI opens a new context menu that includes:
 
 ### Photo Gallery
 
-![Explore menu](../../blog/2024-07-01-web-1-01/img/poi_photo.png)
+![Explore menu](../../blog/2024-09-23-web-1-01/img/poi_photo.png)
 
 Clicking on the online photos opens the photo gallery. Here you can scroll through all POI photos.
 
 <!--
 ## Wikimedia Images
 
-![Explore menu](../../blog/2024-07-01-web-1-01/img/wiki_photos.png)
+![Explore menu](../../blog/2024-09-23-web-1-01/img/wiki_photos.png)
 
 :::note
 This is a test version for developers.

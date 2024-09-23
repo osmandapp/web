@@ -12,29 +12,36 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
 
 ## Overview
 
+:::info
+The *[osmand.net/map](https://osmand.net/map/)* site is currently being developed and tested.  
+**Therefore, the layout and operation of some functions on the site may be different from those described in this article.**
 
+We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub so you can leave feedback there.
+:::
 
 ## Map Context Menu
 
 For opening it right click anywhere on the map. This menu includes the following actions:
 
-- **Where am I**
-- **Show weather**
-- **Create new route**
-- **Add Favorite**
-- **Directions from**
-- **Directions to**
-- **Cope coordinates**
-- **Add pin**
-- **Show regions**
+- **Where am I** – Quickly find your current location on the map
+- **Open weather** – Open the Weather menu.
+- **Create new route** – Plan a route from the selected location.
+- **Add Favorite** – Mark a point of interest as a favorite for easy access.
+- **Directions from** – Start navigation from the selected point.
+- **Directions to** – Get directions to the selected point.
+- **Cope coordinates** – Copy the coordinates for external use.
+- **Add pin** – Place a pin to mark a location on the map.
+- **Show regions** – Display the regions associated with the selected point.
 
-![Map Context menu](@site/blog/2024-07-01-web-1-01/img/map_context_menu.png)
+![Map Context menu](@site/static/img/web/map_context_menu.png)
 
 
 ## Weather
@@ -51,7 +58,7 @@ The [Weather plugin](../plugins/weather.md) is a paid feature of the OsmAnd app.
 
 To show POIs on the map:
 
-*Configure map menu or icon → POI overla... → choose categories*
+*Configure map menu or 🔍 Search icon to open the search tab → choose categories*. Read more about this feature on the ["Search" section](web-search.md).
 
 ![POIs menu](@site/static/img/web/poi_menu.png)
 
@@ -73,40 +80,40 @@ For Track section:
 - Download folders as OSF or OBF collection.
 
 
-### Visible on the Ьap
-
-![Visible on the map](@site/static/img/web/visible.png)
+### Visible on the Map
 
 Here there is a list of visible tracks on the map.
 
-Switch on / off tracks for showing or not its on the map.
+_Switch on/off_ tracks for showing or not its on the map.
+
+![Visible on the map](@site/static/img/web/visible.png)
 
 
 ### Track folder menu
 
 Click to the *Tree points* **⋮** button for open *Track Folder* menu. Here you can Download all tracks from chosen folder as:
 
-- Download as OSF.
-- Download as OBF Collection:
+ - Download as OSF.
+ - Download as OBF Collection:
   You can get OBF map from this data: [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) or [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
 
-  [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
+    -  [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
 
   You can download offline map OBF (OsmAnd Binary Format) and open it with OsmAnd on device, it's suitable to display large quantity of tracks will be visible on the map.
 
-  [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes):
+    -  [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes):
 
   Also You can import map of tracks as Travel book which will allow you also to select a specific track on the map and use it as normal GPX. Travel book also supports features such as displaying tracks as points, filtering tracks by activity type and filtering waypoints.
 
-- Rename chosen folder.
-- Delete chosen folder.
+- _Rename_ chosen folder.
+- _Delete_ chosen folder.
 
 ![Track folder menu](@site/static/img/web/collection.png)
 
 
 ### Cloud Tracks
 
-GPX tracks that you have in OsmAnd Cloud will be available for display and editing after login. Only for **Pro users** <ProFeature/>.
+GPX tracks that you have in [OsmAnd Cloud](../personal/osmand-cloud.md) will be available for display and editing after login. Only for **Pro users** <ProFeature/> and for [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) users (who can download their data even after their Pro subscription has expired).
 
 The following features are available after choosin cloud track:
 
@@ -129,7 +136,7 @@ The following features are available after choosin cloud track:
 
 ## Favorites
 
-After registering an OsmAnd Pro or OsmAnd Start, the user's Favorites are displayed in the Favorites menu.  
+After registering an [**OsmAnd Pro**](../personal/osmand-cloud.md#login) and for [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), the user's Favorites are displayed in the Favorites menu.  
 The following actions are available:
 
 - *Show on map* - show favorites points from the chosen folder on the map.
@@ -180,9 +187,9 @@ These address strings can be copied and transferred using any data transfer medi
 
   ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_without.png)
 
-3. **URL with navigation:**
+3. **URL with navigation:** `osmand.net/map/navigate`
 
-  https://osmand.net/map/?start=52.236210,5.119629&finish=52.412472,4.855957&type=osmand&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570
+  https://osmand.net/map/navigate/?start=52.236210,5.119629&finish=52.412472,4.855957&type=osmand&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570
 
   ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_track.png)
 
@@ -194,7 +201,24 @@ Depending on the specified parameters, URL strings may contain:
 - **profile:** for navigation.
 - **zoom:** zoom level.
 
+4.  **Weather**&nbsp; – &nbsp;`osmand.net/map/weather`
 
-## Related Articles
+***For example***, you can directly access the Favorites page via:  
+    [`https://osmand.net/map/weather/#9/52.2394/21.0362`](https://osmand.net/map/weather/#9/52.2394/21.0362)
+
+5.  **Account**&nbsp; – &nbsp;`osmand.net/map/account`
+
+6.  **Configure Map**&nbsp; – &nbsp;`osmand.net/map/configure/`
+
+7.  **Tracks**&nbsp; – &nbsp;`osmand.net/map/mydata/tracks`
+
+8.  **Favorites**&nbsp; – &nbsp;`osmand.net/map/mydata/favorites`
+
+9.  **Settings**&nbsp; – &nbsp;`osmand.net/map/settings`
+
+10.  **Plan a Route**&nbsp; - &nbsp;`osmand.net/map/plan`
+
+11.  For the current [**Explore page**](#explore-map-menu)&nbsp; - &nbsp;`osmand.net/map/search`
+
 
 > *This article was last updated in September 2024*
