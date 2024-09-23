@@ -13,7 +13,7 @@ export const WIKI_IMAGE_BASE_URL = 'https://commons.wikimedia.org/wiki/Special:F
 
 export async function fetchPhotoProperties(photo) {
     if (!photo.properties.date || !photo.properties.author || !photo.properties.license) {
-        const imageTitle = photo.properties.imageTitle;
+        const imageTitle = getPhotoTitle(photo);
         const url = `/wiki/File:${imageTitle}?action=raw`;
         try {
             // Fetch raw wiki data
@@ -132,4 +132,11 @@ export function getPoiParentCategory(props, t) {
         }
     }
     return type && type !== 'undefined' && type !== '' ? type : null;
+}
+
+export function getPhotoTitle(photo) {
+    if (photo.properties.imageTitle.startsWith(WIKI_IMAGE_BASE_URL)) {
+        return photo.properties.imageTitle.substring(WIKI_IMAGE_BASE_URL.length);
+    }
+    return photo.properties.imageTitle;
 }

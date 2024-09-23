@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AppBar, Box, Button, Drawer, IconButton, Toolbar, Typography, Skeleton } from '@mui/material';
 import SwipeableViews from 'react-swipeable-views';
-import { fetchPhotoProperties, WIKI_IMAGE_BASE_URL } from '../../../manager/SearchManager';
+import { fetchPhotoProperties, getPhotoTitle } from '../../../manager/SearchManager';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as BackForward } from '../../../assets/icons/ic_arrow_forward.svg';
@@ -13,6 +13,7 @@ import { useInView } from 'react-intersection-observer';
 import { format } from 'date-fns';
 import * as locales from 'date-fns/locale';
 import i18n from 'i18next';
+import { getPhotoUrl } from './PhotoGallery';
 
 export default function PhotosModal({ photos }) {
     const ctx = useContext(AppContext);
@@ -121,6 +122,7 @@ export default function PhotosModal({ photos }) {
                     alignItems: 'center',
                     justifyContent: 'center',
                     height: getHeight() + 'px',
+                    width: getWidth() + 'px',
                     maxWidth: getWidth() + 'px',
                     marginLeft: LEFT_MARGIN + 'px',
                     marginTop: HEADER_HEIGHT + 'px',
@@ -217,6 +219,11 @@ function PhotoItem({ photo, index, getWidth, getHeight, activeStep }) {
     // Preload next 5 images if within range
     const shouldLoadImage = inView || (index >= activeStep && index < activeStep + 5);
 
+    function getHref() {
+        const title = getPhotoTitle(photo);
+        return `https://commons.wikimedia.org/wiki/File:${title}?width=1280`;
+    }
+
     return (
         <div
             key={index}
@@ -229,13 +236,13 @@ function PhotoItem({ photo, index, getWidth, getHeight, activeStep }) {
         >
             {shouldLoadImage ? (
                 <a
-                    href={`https://commons.wikimedia.org/wiki/File:${photo.properties.imageTitle}?width=1280`}
+                    href={getHref()}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
                 >
                     <img
-                        src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=1280`}
+                        src={getPhotoUrl(photo, 1280)}
                         alt={`Photo ${index + 1}`}
                         style={{ width: '100%', height: getHeight() - MARGIN, objectFit: 'contain' }}
                     />
