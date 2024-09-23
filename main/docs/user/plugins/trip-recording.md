@@ -56,13 +56,13 @@ With the Trip Recording plugin in OsmAnd, you can easily start recording your tr
 - **Distance/Start-Stop Widget**. Activate recording using the [Distance/Start-Stop widget](#distance-start-stop).
 - **Trip Recording item in Main menu** (*Android*). Select the **Trip recording** option from the Main menu: *<Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/>*.
 - **Record Button**: On *Android*, tap the **<Translate android="true" ids="start_recording"/>** button. On *iOS*, you can start recording by tapping the record button in the **<Translate ios="true" ids="shared_string_currently_recording_track"/>** field, located in [My Places](../personal/myplaces.md) section of the Main menu:: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.  
-- **Application Launcher**. For *Android* users, you can also use an [application launcher](#launcher-android) to start recording.
-
+- **Application Launcher**. For *Android* users, you can also use an [application launcher](#launcher-android) to start recording.  
 
 **Recommendations:**
 
 - **Enable Precise Location**. For accurate track recording, ensure that OsmAnd has permission to access the [precise location](../start-with/first-steps.md#permission-to-access-the-location) of your device.
 - **Troubleshooting iOS Background Issues**. iOS devices may sometimes temporarily suspend or stop apps from running in the background, which could interrupt track recording. - For more detailed troubleshooting tips, check out the [Track Recording Issues](../troubleshooting/track-recording-issues.md#recorded-tracks-have-gaps) section of the documentation.
+
 
 ### Start a Dialog
 
@@ -130,14 +130,10 @@ For *Stop / Save / Pause*:
 In OsmAnd, the **Android** and **iOS** versions handle the track recording interface slightly differently. On Android, you’ll find a dedicated menu for the *Track recording* context, while on iOS, this is streamlined into the *Currently recording track* context menu.
 
 As you record a track, dynamic graphs are generated, providing real-time visual data about your journey. These graphs can reflect information for the entire route or just for a selected segment, depending on your zoom level.  
+Here is what you can find on the graphs:
 
-Here’s what you’ll find on the graphs:
-
-- **Data values**. Located on the right side for Android and the left for iOS, you’ll see the **highest, average, and lowest values** displayed clearly for easy reference.
-- **Tabs for key information**:
-  - *Overview*. Displays total distance and speed.
-  - *Altitude*. Shows elevation changes and the grade of the terrain.
-  - *Speed*. Provides the current speed at each point.
+- **Data values**. Located on the right side for *Android* and the left for *iOS*, you will see the **highest, average, and lowest values** displayed clearly for easy reference.
+- **Tabs for key information**: *Overview* displays total distance and speed; *Altitude* shows elevation changes and the grade of the terrain; *Speed* provides the current speed at each point.
 
 For a more detailed view, you can **scale the graph**:
 
@@ -164,28 +160,28 @@ For more details, you can explore the [**Tracks Context Menu**](../map/tracks/tr
 
 <TabItem value="android" label="Android">
 
-![show_tr_onmap_andr_1](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![show_tr_onmap_andr_2](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_2.png)
+![show_tr_onmap_andr_1](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![sshow_tr_onmap_ios_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![show_tr_onmap_ios_2](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_2.png)
+![sshow_tr_onmap_ios_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Configure map tracks iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
 </TabItem>
 
 </Tabs>
 
-You can choose which tracks are displayed on the map and which are not. To do this, you can use the option *Show on map* or *Visible on map* in *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*, or use *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_gpx_files"/>*.  
+Manage which tracks are visible on your map using one of two options. Head to *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab* and enable the *Show on map* option for any track you want to display or hide. Alternatively, you can go to *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_gpx_files"/>* to quickly adjust the visibility of all your tracks in one place.
 
 
 ### Recorded GPX File
 
-OsmAnd records tracks in a file in the [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format) according to the following structure: *file > track > segments > points*.
+OsmAnd captures your journey in a structured [GPX file](https://en.wikipedia.org/wiki/GPS_Exchange_Format), using a hierarchy of *file > track > segments > points*. Here's how it works:
 
-- One point has several attributes, such as coordinates, speed, altitude, and heading.
-- Points are grouped into tracks.
-- The next point after the gap makes up a new segment.
-- Both segments and tracks are shown with the Start and Finish icons on the map.
+- **Points** represent individual moments of your recorded path, each marked with attributes like coordinates, speed, altitude, and heading.
+- These points are grouped together to form **tracks**, which represent your entire route.
+- If there’s a gap in recording (for instance, if tracking was paused), the next point after the break starts a new **segment**, marking the separation in your journey.
+- Both **segments** and **tracks** are visually represented with *Start* and *Finish* icons on the map.
 
 ```xml
 <extensions>
@@ -202,22 +198,23 @@ OsmAnd records tracks in a file in the [GPX format](https://en.wikipedia.org/wik
 ![GPX file of a recorded track](@site/static/img/plugins/trip-recording/exs_trkpt_seqn_with_segm2.png)  -->
 
 
-| Parameter | Description |
-| --- | --- |
-| `trkpt` | **Point** shows the detected geographical location of the user. Every point is provided with the latitude and the longitude as base attributes of the detected location. |
-| `trkseg` | **Segment** groups points between gaps defined as the absence of movement within a single record. |
-| `lat` | **Latitude** is one of the geographic coordinates you can use to determine your location. |
-| `lon` | **Longitude** is one of the geographic coordinates used to determine the location. |
-| `ele` | **Elevation** is the height of the point above the sea, calculated in meters. |
-| `time` | **Timestamp** is the date and time of when the point was recorded. |
-| `hdop` | **HDOP** is one of the terms of GPS accuracy, abbreviation. from *Horizontal Dilution of Precision*, determined as the error caused by the relative position of the GPS satellites.  True HDOP is a dimensionless number, but [the "HDOP" value stored in OsmAnd GPX tracks is actually "horizontal accuracy", calculated in meters](https://github.com/osmandapp/Osmand/issues/3445). Keep in mind that this is not standard. |
-| `speed` | **Speed** is the rate, in meters per second, at which the user is detected to be moving. |
-| `heading` | **Heading** is the direction to where the front panel of the vehicle/device is pointing. The heading direction is calculated in degrees and determined with the [angle](https://en.wikipedia.org/wiki/Heading_(navigation)) between the direction the front panel is pointing and the course towards which the vehicle/device is intended to move. In navigation, the difference may exist due to the drift caused by the air, water, skidding, slipping, etc. |
-| `speed_sensor` | **Speed** is used to record data from [external sensors](../plugins/external-sensors.md), providing information about your current speed while cycling. [GPX file format](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data)|
-| `cadence` | **Cadence** is used to record data from [external sensors](../plugins/external-sensors.md), showing the number of pedal turns per minute. [GPX file format](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data). |
-| `power` | **Bicycle power** is used to record data from [external sensors](../plugins/external-sensors.md), measuring the power generated by pedaling. [GPX file format](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data) |
-| `atemp` | **Air Temperature** is used to record data from [external sensors](../plugins/external-sensors.md), displaying information about the air temperature (water temperature is not supported). [GPX file format](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data) |
-| `hr` | **Heart Rate** is used to record data from [external sensors](../plugins/external-sensors.md), showing the number of heart beats per minute. [GPX file format](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data) |
+| Parameter  | Description |
+|-----------------|----------------|
+| **`trkpt`** | **Track Point** represents a specific geographical location detected during your activity. Each track point includes latitude and longitude coordinates, forming the basis of your recorded path. |
+| **`trkseg`**  | **Track Segment** groups together consecutive track points, separated by breaks in activity, such as pauses or stops. This helps distinguish continuous movement from idle periods within a single recording.  |
+| **`lat`** | **Latitude** indicates the north-south position of a point on the Earth's surface. It is one-half of the coordinate pair used to pinpoint your exact location.   |
+| **`lon`** | **Longitude** specifies the east-west position, complementing latitude to locate a point on the globe accurately. Together, latitude and longitude define your precise geographical position.    |
+| **`ele`** | **Elevation** measures the height of a track point above sea level, recorded in meters. This can be useful for tracking altitude changes during your activities, such as hikes or bike rides.    |
+| **`time`** | **Timestamp** records the exact date and time when a track point is logged. This allows you to track the duration and timing of your activity with precision.    |
+| **`hdop`** | **Horizontal Dilution of Precision (HDOP)** is a measure of GPS accuracy, reflecting the potential error in location due to the positions of the satellites. Unlike the standard HDOP, OsmAnd GPX tracks use this value to represent horizontal accuracy in meters. Please note that this implementation differs from typical HDOP standards. [Learn more](https://github.com/osmandapp/Osmand/issues/3445).   |
+| **`speed`** | **Speed** records your rate of movement in meters per second. It provides insight into your pace during various segments of your activity.  |
+| **`heading`**  | **Heading** indicates the direction in which your vehicle or device's front is pointed, measured in degrees. It's distinct from the course, which is the actual path of movement. Differences can occur due to external factors like wind, currents, or road conditions. [More on heading](https://en.wikipedia.org/wiki/Heading_(navigation)).  |
+| **`speed_sensor`** | **Speed** from [external sensors](../plugins/external-sensors.md) captures data from connected sensors, providing more precise speed information, especially useful when cycling. For more details, refer to the [GPX file format documentation](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
+| **`cadence`** | **Cadence** measures the number of pedal revolutions per minute, recorded using [external sensors](../plugins/external-sensors.md). This is particularly useful for cyclists aiming to monitor and optimize their pedaling efficiency. [Read more](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
+| **`power`** | **Bicycle Power** quantifies the power generated while pedaling, captured from [external sensors](../plugins/external-sensors.md). It's an essential metric for serious cyclists who want to gauge their performance. [Learn more](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).   |
+| **`atemp`** | **Air Temperature** records the ambient air temperature during your activity, measured using [external sensors](../plugins/external-sensors.md). Note that water temperature is not supported. [Details here](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).   |
+| **`hr`** | **Heart Rate** monitors your heartbeats per minute, using data from connected [sensors](../plugins/external-sensors.md). This information can be vital for tracking your cardiovascular performance during workouts. [Find out more](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
+
 
 
 ## Recording Settings
@@ -276,9 +273,9 @@ Before you start recording, you need to configure the Trip Recording plugin.
 
 This feature allows you to manage battery optimization settings for OsmAnd to ensure uninterrupted access to your location, even when the app runs in the background during navigation or track recording.
 
-- **Battery optimization settings**: Opens Android settings, where you can modify battery-saving preferences for OsmAnd.
-- **Don't ask anymore**: Dismisses the dialog box permanently, so it will not appear again.
-- **Close**: Temporarily closes the dialog box, which will appear again the next time battery optimization needs attention.
+- **Battery optimization settings**. Opens Android settings, where you can modify battery-saving preferences for OsmAnd.
+- **Don't ask anymore**. Dismisses the dialog box permanently, so it will not appear again.
+- **Close**. Temporarily closes the dialog box, which will appear again the next time battery optimization needs attention.
 
 
 ## Widgets  
