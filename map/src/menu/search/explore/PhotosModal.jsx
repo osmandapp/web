@@ -122,6 +122,7 @@ export default function PhotosModal({ photos }) {
                     alignItems: 'center',
                     justifyContent: 'center',
                     height: getHeight() + 'px',
+                    width: getWidth() + 'px',
                     maxWidth: getWidth() + 'px',
                     marginLeft: LEFT_MARGIN + 'px',
                     marginTop: HEADER_HEIGHT + 'px',
