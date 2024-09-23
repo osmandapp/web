@@ -216,16 +216,15 @@ OsmAnd captures your journey in a structured [GPX file](https://en.wikipedia.org
 | **`hr`** | **Heart Rate** monitors your heartbeats per minute, using data from connected [sensors](../plugins/external-sensors.md). This information can be vital for tracking your cardiovascular performance during workouts. [Find out more](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
 
 
-
 ## Recording Settings
 
-Before you start recording, you need to configure the Trip Recording plugin.
+Before you start tracking your trips, you need to properly configure the **Trip Recording plugin** for optimal performance.
 
-- Trip Recording plugin settings are individual for each profile.
-- The recording settings may differ depending on the type of movement. For example, driving, cycling, or Nordic walking may require different settings.
-- To ensure smooth and convenient recording for future use, you may need to make changes to the way you capture and record location points. This may be by changing the frequency of recording or the formatting of the data, such as the number of points or the use of spaces.
-- All [profiles](../personal/profiles.md) are configured in the app's global [settings](../personal/global-settings.md).
-- Before you can proceed with customization, you must select a specific profile, and then in the settings section of that profile, find the profile intended for Trip recording.  
+- **Profile-specific settings**. Each profile in the app can have its own unique Trip Recording settings. This allows you to precisely customize the recording behavior based on your activity, such as driving, cycling, or even Nordic walking, which might require different configurations.
+- **Customize recording parameters**. The recording settings can vary depending on how you move. For example, driving long distances might call for a lower recording frequency, while hiking or walking could benefit from more frequent updates.
+- **Precise location data**. To make sure your recordings are smooth and usable later, you may tweak how location points are captured. This could include adjusting the recording frequency, the format of your data (like the number of points per distance unit), or spacing between recorded points.
+- **Global settings**. Trip Recording settings are configured per profile, which you can manage in the app’s global [settings](../personal/global-settings.md). Before you customize the Trip Recording plugin, first select the profile you want to configure from the [profiles](../personal/profiles.md) section. From there, navigate to the profile’s settings to access the Trip Recording options.
+
 
 <Tabs groupId="operating-systems">
 
@@ -258,7 +257,7 @@ Before you start recording, you need to configure the Trip Recording plugin.
 | **Include heading** | If enabled, the heading is saved into the GPX file for every point. The heading is the direction to where the front panel of the vehicle/device points. It is determined by the angle between the direction where the front panel points and the course towards which the vehicle/device is intended to move. In navigation, the difference may exist due to the drift caused by the air, water, skidding, slipping, etc. |
 | **External sensors** | Data from [External sensors](../plugins/external-sensors.md#trip-recording), such as: **<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android only*), **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, and <Translate android="true" ids="external_device_characteristic_temperature"/>** (**Distance** data from sensors is not added to the track in Android and iOS systems)  is written to a GPX file during track recording. Displayed only when the [External Sensors plugin](../plugins/external-sensors.md) is enabled.  |
 | **Track storage folder** (*Android*) | All tracks are stored in the *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* tab. You can set the internal structure of this folder by selecting one of the following options: **1**) Record all tracks to the *Rec* folder. **2**) Group all tracks into appropriate folders of the month, such as *Rec/yyyyy-mm*. |
-| **Notification** | When enabled, trip recording messages are displayed in the system notification area of the device. The notification area opens when you swipe from the top of the screen to the bottom and closes when you swipe in the opposite direction. Messages are designed to notify you of all actions to start/stop the trip recording feature and are especially useful when the automatic track recording option is enabled during navigation. Once a message is sent, it is displayed in the notification area. The sent message can be cleared if it is not needed. The visibility of a sent message does not depend on the state of the application: whether it is running in the background, in the foreground, or closed. |
+| **Notification** | When enabled, [trip recording messages](#notification) are displayed in the system notification area of the device. |
 | **Online tracking** (*Android*) | It is real-time monitoring of your current location. If the option is enabled and the recording is in progress, the Distance/Start-Stop (REC) widget turns green instead of red, and each point is transmitted to a specified URL. The **Web address** field is for entering the URL using the parameter syntax: lat={0}, lon={1}, timestamp={2}, hdop={3}, altitude={4}, speed={5}, bearing={6}, eta={7} (Unix time - to arrival), etfa={8} (Unix time - to first intermediate point or finish point), eda={9} (distance in meters - to arrival or a marker), edfa={10} (distance in meters - to first intermediate point or finish point). The **Tracking Interval** parameter is used to determine the frequency of sending location points. The options can be selected from 0 seconds to 5 minutes. The **Time Buffer** parameter sets the period that location points are saved if there is no Internet connection. |
 | **Tracks** | This is a quick re-direction to the folder: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*. |
 | **Reset plugin settings to default** | You can reset all profile settings to the default ones that you had when you installed the application. |
@@ -276,6 +275,25 @@ This feature allows you to manage battery optimization settings for OsmAnd to en
 - **Battery optimization settings**. Opens Android settings, where you can modify battery-saving preferences for OsmAnd.
 - **Don't ask anymore**. Dismisses the dialog box permanently, so it will not appear again.
 - **Close**. Temporarily closes the dialog box, which will appear again the next time battery optimization needs attention.
+
+
+### Notification
+
+When enabled, trip recording notifications will always be displayed in the system notification area when the recording is active. This notification ensures that the recording process is not interrupted by the system, and it cannot be disabled during an active recording.
+
+- The notification area opens when you swipe down from the top of the screen and closes when swiping up. These messages notify you of actions like starting/stopping trip recording, especially when automatic recording is enabled during navigation.
+- Notifications remain visible regardless of whether the app is running in the foreground, background, or is closed. You can manually clear the notification if it is no longer needed, but this won’t stop the ongoing recording.
+
+**Important Note:**  
+This behavior is required by Android for any foreground service, like trip recording, to remain visible to the user. If the notification is removed, Android will automatically stop the recording.
+
+- The **Notification** setting in OsmAnd affects whether the notification bar shows a shortcut to start a recording when no recording is active. It does **not** control the visibility of the notification during an active recording.
+
+Additional *Android* options:
+
+- In **Android settings** → **Notifications and status bar** → **Lock screen notifications**, you can remove OsmAnd from the app list to prevent notifications from appearing on the lock screen, avoiding accidental screen activation. This will not affect track recording. Notifications will still appear in the regular notification area.
+- **OsmAnd** may also appear under **Privacy** → **Special Permissions** → **Turn on screen**. If you want to prevent the screen from turning on when a notification appears, try removing OsmAnd from this list.
+- OsmAnd is not listed under **Privacy** → **Special Permissions** → **Alarms and reminders**.
 
 
 ## Widgets  
