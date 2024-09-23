@@ -209,6 +209,7 @@
     right: 0 !important;
     transform: translateY(-50%) !important;
     padding: 0 16px !important;
+    pointer-events: none !important;
 }
 .iconsPrevNext {
     border-radius: 50px !important;
@@ -220,6 +221,7 @@
     align-items: center !important;
     min-width: 56px !important;
     max-width: 56px !important;
+    pointer-events: all !important;
 }
 
 .iconsPrevNext:hover {
