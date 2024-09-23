@@ -156,6 +156,14 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 const currentPoi = ctx.selectedWpt.poi;
                 const { options: poiOptions, latlng } = currentPoi;
                 const tags = await WptTagsProvider.getWptTags(currentPoi, type, ctx);
+                const wikiCommons = getWikiCommons(poiOptions[OSM_PREFIX + WIKIMEDIA_COMMONS]);
+                let photos = null;
+                let wikimediaCommons = null;
+                if (wikiCommons?.type === 'FeatureCollection') {
+                    photos = wikiCommons;
+                } else {
+                    wikimediaCommons = wikiCommons;
+                }
                 result = {
                     type: type,
                     poiType: t(POI_PREFIX + poiOptions[TYPE_OSM_VALUE]),
@@ -167,8 +175,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     tags: tags,
                     osmUrl: poiOptions[POI_OSM_URL],
                     wikidata: poiOptions[OSM_PREFIX + WIKIDATA],
-                    wikimediaCommons: getWikiCommons(poiOptions[OSM_PREFIX + WIKIMEDIA_COMMONS]),
+                    wikimediaCommons: wikimediaCommons,
                     wikipedia: getWikipedia(poiOptions[OSM_PREFIX + WIKIPEDIA]),
+                    photos: photos,
                 };
             } else if (type?.isWikiPoi) {
                 setLoading(true);
@@ -204,6 +213,14 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 const { options: objOptions, latlng } = currentPoi;
                 const { name, objType } = getPropsFromSearchResultItem(objOptions, t);
                 const tags = await WptTagsProvider.getWptTags(currentPoi, type, ctx);
+                const wikiCommons = getWikiCommons(objOptions[OSM_PREFIX + WIKIMEDIA_COMMONS]);
+                let photos = null;
+                let wikimediaCommons = null;
+                if (wikiCommons?.type === 'FeatureCollection') {
+                    photos = wikiCommons;
+                } else {
+                    wikimediaCommons = wikiCommons;
+                }
                 result = {
                     type: type,
                     poiType: objType,
@@ -215,8 +232,9 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     tags: tags,
                     osmUrl: objOptions[POI_OSM_URL],
                     wikidata: objOptions[OSM_PREFIX + WIKIDATA],
-                    wikimediaCommons: getWikiCommons(objOptions[OSM_PREFIX + WIKIMEDIA_COMMONS]),
+                    wikimediaCommons: wikimediaCommons,
                     wikipedia: getWikipedia(objOptions[OSM_PREFIX + WIKIPEDIA]),
+                    photos: photos,
                 };
             } else {
                 result = null;
@@ -232,7 +250,21 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         const WIKIMEDIA_CATEGORY = 'Category:';
         if (wikimediaCommons && wikimediaCommons.trim() !== '') {
             if (wikimediaCommons.startsWith(WIKIMEDIA_FILE)) {
-                return;
+                return {
+                    type: 'FeatureCollection',
+                    features: [
+                        {
+                            type: 'Feature',
+                            properties: {
+                                imageTitle: wikimediaCommons.replace(WIKIMEDIA_FILE, ''),
+                            },
+                            geometry: {
+                                type: 'Point',
+                                coordinates: [0, 0],
+                            },
+                        },
+                    ],
+                };
             } else if (wikimediaCommons.startsWith(WIKIMEDIA_CATEGORY)) {
                 return wikimediaCommons.replace(WIKIMEDIA_CATEGORY, '');
             }
@@ -353,8 +385,12 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     } else if (wpt?.type?.isPoi || wpt?.type?.isSearch) {
                         getPoiPhotos(wpt).then((photosData) => {
                             if (photosData) {
-                                updatedWpt.photos = photosData;
-                                updatedWpt = addFirstPhoto(updatedWpt);
+                                updatedWpt.photos = updatedWpt.photos
+                                    ? {
+                                          ...updatedWpt.photos,
+                                          features: [...updatedWpt.photos.features, ...photosData.features],
+                                      }
+                                    : photosData;
                             }
                             setWpt(updatedWpt);
                         });
