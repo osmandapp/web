@@ -260,6 +260,7 @@ export default function AddFavoriteDialog({ dialogOpen, setDialogOpen, selectedP
             groupName: selectedGroup.name,
             deleted: false,
         });
+        ctx.setUpdateMarkers({ ...ctx.favorites });
         ctx.setFavorites({ ...ctx.favorites });
         setFavoriteGroup(ctx.favorites.mapObjs[selectedGroup.name]);
     }
