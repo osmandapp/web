@@ -22,6 +22,7 @@ import AppContext, {
     OBJECT_TYPE_LOCAL_TRACK,
     OBJECT_TYPE_NAVIGATION_ALONE,
     OBJECT_TYPE_NAVIGATION_TRACK,
+    OBJECT_TYPE_POI,
     OBJECT_TYPE_WEATHER,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
@@ -252,7 +253,7 @@ export default function MainMenu({
             setSelectedType(currentMenu.type);
             ctx.setPrevPageUrl({ url: location, active: false });
         } else {
-            if (ctx.currentObjectType !== OBJECT_EXPLORE) {
+            if (ctx.currentObjectType !== OBJECT_EXPLORE && ctx.currentObjectType !== OBJECT_TYPE_POI) {
                 setOpenMainMenu(true);
             }
         }
@@ -445,7 +446,9 @@ export default function MainMenu({
                             overflow: 'hidden',
                             zIndex: openMainMenu ? Z_INDEX_OPEN_LEFT_MENU : Z_INDEX_LEFT_MENU,
                             borderRight:
-                                ((!menuInfo && !ctx.openLoginMenu) || (menuInfo && openMainMenu)) && 'none !important',
+                                ((!menuInfo && !ctx.openLoginMenu && ctx.infoBlockWidth === MENU_INFO_CLOSE_SIZE) ||
+                                    (menuInfo && openMainMenu)) &&
+                                'none !important',
                             boxShadow:
                                 !menuInfo || (menuInfo && openMainMenu)
                                     ? '0px 8px 10px -5px rgba(0,0,0,0.2), 0px 16px 24px 2px rgba(0,0,0,0.14), 0px 6px 10px 5px rgba(0,0,0,0.12);'
