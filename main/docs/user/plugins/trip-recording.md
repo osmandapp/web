@@ -94,11 +94,15 @@ Start dialog opens, if the **<Translate ios="true" ids="track_interval_remember"
 
 ### Launcher (Android)
 
-![Icon's context menu](@site/static/img/plugins/trip-recording/and_open_from_icon.png) ![Start Recording icon](@site/static/img/plugins/trip-recording/and_trip_rec_icon.png)
+![Icon's context menu](@site/static/img/plugins/trip-recording/launcher_icon_andr.png) ![Start Recording icon](@site/static/img/plugins/trip-recording/and_trip_rec_icon.png)
 
-To start recording a new track, you can use the Start Recording icon on the screen of your Android device, as shown in the screenshots for an example. Long pressing the icon opens a context menu with the Start Recording option.
+You can quickly start a new track recording directly from your Android device's screen using the context menu of the OsmAnd app icon.
 
-Use a long tap on *Start Recording* in the context menu of the OsmAnd icon to add it as a separate icon on your device screen.
+- Perform a **long tap** on the OsmAnd app icon to open the context menu, where you can find the option to **Start Recording**.
+- Tapping the **Start Recording** option will launch the OsmAnd app with the [track recording settings](#overview-screen) displayed on the screen.
+- To add a shortcut for quicker access, **long tap** the **Start Recording** option in the app icon context menu, and it will create a dedicated icon on your home screen.
+
+While track recording is active, a notification badge will appear on the corner of the OsmAnd app icon, indicating that the recording is in progress. For further details on managing this notification, see the [Notification](#notifications) section.
 
 
 ## Current Track Recording
@@ -127,7 +131,7 @@ For *Stop / Save / Pause*:
 
 </Tabs>
 
-In OsmAnd, the **Android** and **iOS** versions handle the track recording interface slightly differently. On Android, you’ll find a dedicated menu for the *Track recording* context, while on iOS, this is streamlined into the *Currently recording track* context menu.
+In OsmAnd, the **Android** and **iOS** versions handle the track recording interface slightly differently. On Android, you will find a dedicated menu for the *Track recording* context, while on iOS, this is streamlined into the *Currently recording track* context menu.
 
 As you record a track, dynamic graphs are generated, providing real-time visual data about your journey. These graphs can reflect information for the entire route or just for a selected segment, depending on your zoom level.  
 Here is what you can find on the graphs:
@@ -257,7 +261,7 @@ Before you start tracking your trips, you need to properly configure the **Trip 
 | **Include heading** | If enabled, the heading is saved into the GPX file for every point. The heading is the direction to where the front panel of the vehicle/device points. It is determined by the angle between the direction where the front panel points and the course towards which the vehicle/device is intended to move. In navigation, the difference may exist due to the drift caused by the air, water, skidding, slipping, etc. |
 | **External sensors** | Data from [External sensors](../plugins/external-sensors.md#trip-recording), such as: **<Translate android="true" ids="map_widget_ant_heart_rate"/>, <Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android only*), **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>, <Translate android="true" ids="map_widget_ant_bicycle_speed"/>, and <Translate android="true" ids="external_device_characteristic_temperature"/>** (**Distance** data from sensors is not added to the track in Android and iOS systems)  is written to a GPX file during track recording. Displayed only when the [External Sensors plugin](../plugins/external-sensors.md) is enabled.  |
 | **Track storage folder** (*Android*) | All tracks are stored in the *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* tab. You can set the internal structure of this folder by selecting one of the following options: **1**) Record all tracks to the *Rec* folder. **2**) Group all tracks into appropriate folders of the month, such as *Rec/yyyyy-mm*. |
-| **Notification** | When enabled, [trip recording messages](#notification) are displayed in the system notification area of the device. |
+| **Notification** | When enabled, [trip recording messages](#notifications) are displayed in the system notification area of the device. |
 | **Online tracking** (*Android*) | It is real-time monitoring of your current location. If the option is enabled and the recording is in progress, the Distance/Start-Stop (REC) widget turns green instead of red, and each point is transmitted to a specified URL. The **Web address** field is for entering the URL using the parameter syntax: lat={0}, lon={1}, timestamp={2}, hdop={3}, altitude={4}, speed={5}, bearing={6}, eta={7} (Unix time - to arrival), etfa={8} (Unix time - to first intermediate point or finish point), eda={9} (distance in meters - to arrival or a marker), edfa={10} (distance in meters - to first intermediate point or finish point). The **Tracking Interval** parameter is used to determine the frequency of sending location points. The options can be selected from 0 seconds to 5 minutes. The **Time Buffer** parameter sets the period that location points are saved if there is no Internet connection. |
 | **Tracks** | This is a quick re-direction to the folder: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*. |
 | **Reset plugin settings to default** | You can reset all profile settings to the default ones that you had when you installed the application. |
@@ -277,23 +281,27 @@ This feature allows you to manage battery optimization settings for OsmAnd to en
 - **Close**. Temporarily closes the dialog box, which will appear again the next time battery optimization needs attention.
 
 
-### Notification
+### Notifications
 
-When enabled, trip recording notifications will always be displayed in the system notification area when the recording is active. This notification ensures that the recording process is not interrupted by the system, and it cannot be disabled during an active recording.
+![Trip Rec Notification](@site/static/img/plugins/trip-recording/trip_rec_notification_andr.png)  
+
+If [Notification](#recording-settings) is enabled in the plugin settings, trip recording notifications will always be displayed in the system notification area when the recording is active. This notification ensures that the recording process is not interrupted by the system, and it cannot be disabled during an active recording.
 
 - The notification area opens when you swipe down from the top of the screen and closes when swiping up. These messages notify you of actions like starting/stopping trip recording, especially when automatic recording is enabled during navigation.
-- Notifications remain visible regardless of whether the app is running in the foreground, background, or is closed. You can manually clear the notification if it is no longer needed, but this won’t stop the ongoing recording.
+- Notifications remain visible regardless of whether the app is running in the foreground, background, or is closed. You can manually clear the old notification if it is no longer needed, but this will not stop the ongoing recording.
 
-**Important Note:**  
+**Important Note.**  
 This behavior is required by Android for any foreground service, like trip recording, to remain visible to the user. If the notification is removed, Android will automatically stop the recording.
 
 - The **Notification** setting in OsmAnd affects whether the notification bar shows a shortcut to start a recording when no recording is active. It does **not** control the visibility of the notification during an active recording.
 
 Additional *Android* options:
 
-- In **Android settings** → **Notifications and status bar** → **Lock screen notifications**, you can remove OsmAnd from the app list to prevent notifications from appearing on the lock screen, avoiding accidental screen activation. This will not affect track recording. Notifications will still appear in the regular notification area.
-- **OsmAnd** may also appear under **Privacy** → **Special Permissions** → **Turn on screen**. If you want to prevent the screen from turning on when a notification appears, try removing OsmAnd from this list.
-- OsmAnd is not listed under **Privacy** → **Special Permissions** → **Alarms and reminders**.
+- In **Android settings** *→* **Notifications and status bar** *→* **Lock screen notifications**, you can remove OsmAnd from the app list to prevent notifications from appearing on the lock screen, avoiding accidental screen activation. This will not affect track recording. Notifications will still appear in the regular notification area.
+- **OsmAnd** may also appear under **Privacy** *→* **Special Permissions** *→* **Turn on screen**. If you want to prevent the screen from turning on when a notification appears, try removing OsmAnd from this list.
+- OsmAnd is not listed under **Privacy** *→* **Special Permissions** → **Alarms and reminders**.
+
+[Badge notification](#launcher-android).
 
 
 ## Widgets  
