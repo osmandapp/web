@@ -12,17 +12,12 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
 ## Overview
-
-:::info
-The *[osmand.net/map](https://osmand.net/map/)* site is currently being developed and tested.  
-**Therefore, the layout and operation of some functions on the site may be different from those described in this article.**
-
-We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub so you can leave feedback there.
-:::
 
 The [OsmAnd Map Portal](https://osmand.net/map) is a browser-based service provided by OsmAnd, allowing users to explore maps, manage their data, plan and create trips, or simply browse the map.
 
@@ -111,99 +106,9 @@ There is also a button to *logout* of the account.
 ![View OsmAnd Web backup file](@site/static/img/web/web_backup_file_2.png)  
 
 
-## Tracks
+## Cloud data
 
-It's a paid feature <ProFeature/>. At first you need to loggin your OsmAnd Pro:
-
-![Track loggin](@site/static/img/web/track_loggin.png)
-
-For Track section:
-
-- Show tracks from [OsmAnd Cloud](#users-tracks-pro).
-- Adding tracks on the map (**Visible on map** folder).
-- Looking all tracks info and graph
-- Modify tracks and add it to Cloud.
-- Download and delete tracks.
-- Create new folders or delete it.
-- Download folders as OSF or OBF collection.
-
-
-### Visible on the Map
-
-Here there is a list of visible tracks on the map.
-
-Switch on / off tracks for showing or not its on the map.
-
-![Visible on the map](@site/static/img/web/visible.png)
-
-
-### Track Folder Menu
-
-Click to the *Tree points* **⋮** button for open *Track Folder* menu. Here you can Download all tracks from chosen folder as:
-
-- Download as OSF
-- Download as OBF Collection:
-  You can get OBF map from this data: [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) or [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
-
-  [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/):
-
-  You can download offline map OBF (OsmAnd Binary Format) and open it with OsmAnd on device, it's suitable to display large quantity of tracks will be visible on the map.
-
-  [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes):
-
-  Also You can import map of tracks as Travel book which will allow you also to select a specific track on the map and use it as normal GPX. Travel book also supports features such as displaying tracks as points, filtering tracks by activity type and filtering waypoints.
-
-- Rename chosen folder.
-- Delete chosen folder.
-
-![Track folder menu](@site/static/img/web/collection.png)
-
-
-### Cloud Tracks
-
-GPX tracks that you have in OsmAnd Cloud will be available for display and editing after login. Only for **Pro users** <ProFeature/>.
-
-The following features are available after choosin cloud track:
-
-- Information screens:
-  - *Information* - displaying track data.
-  - *Elevation* - graph of elevation.
-  - *Speed* - speed graph.
-  - *Slope* - slope graph.
-  - *Settings* - list of navigation profiles for the *Create route* tool.  
-
-- Action buttons:
-  - *Edit track* - adding cloud track to local for editing (*Edit locality* button on the panel).
-  - *Download GPX* - downloads the track to the PC.
-  - *Recalculate* Elevation (Satellite) - displays the elevation graph of the selected track.
-  - *Delete Track* - deletes the track.
-  - *Close track* - close the track.
-
-![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track.png)
-
-
-## Favorites
-
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites.png)
-
-After registering an OsmAnd Pro or OsmAnd Start, the user's Favorites are displayed in the Favorites menu.  
-The following actions are available:
-
-- *Show on map* - show favorites points from the chosen folder on the map.
-- *Rename* - name and description of favorite folder.
-- *Download* - download the chosen favorite folder.
-- *Delete* - delete the chosen favorite folder.
-
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites.png)
-
-
-### Add / Edit Favorite
-
-![OsmAnd Web Favorites add](@site/static/img/web/web_favorites_add.png)
-
-[To add](../personal/favorites.md#edit) a new favorite point, right-click on the screen. To start editing, click on the favorite point, the edit menu screen looks the same as [the menu in OsmAnd app](../personal/favorites.md#create).  
-
-
+[Tracks and Favorites](web-map.md#tracks).
 <!--
 ## Map style
 
@@ -219,7 +124,7 @@ In this section of the menu, you can change the map style. You can read more abo
 ![OsmAnd Web Favorites add](@site/static/img/web/web_map_style_topo.png)
 -->
 
-## Related Articles
+
 
 > *This article was last updated in September 2024*
 

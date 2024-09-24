@@ -42,7 +42,10 @@ const GlobalFrame = () => {
     const [showInstallBanner, setShowInstallBanner] = useState(false);
 
     const MAIN_MENU_SIZE = openMainMenu ? MAIN_MENU_OPEN_SIZE : MAIN_MENU_MIN_SIZE;
-    const MENU_INFO_SIZE = menuInfo || ctx.openLoginMenu ? MENU_INFO_OPEN_SIZE : MENU_INFO_CLOSE_SIZE;
+    const MENU_INFO_SIZE =
+        menuInfo || ctx.openLoginMenu || ctx.infoBlockWidth === MENU_INFO_OPEN_SIZE
+            ? MENU_INFO_OPEN_SIZE
+            : MENU_INFO_CLOSE_SIZE;
 
     // check configure map state
     useEffect(() => {

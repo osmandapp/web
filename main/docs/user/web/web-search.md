@@ -12,29 +12,37 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoIncompleteArticle/>
 
 
 ## Overview
 
-Write your request for searching and showing on the map. Click to circle for open POI's name.
+Write your request for searching and showing on the map.
 
 ![Search menu](@site/static/img/web/search.png)
 
+Click to the POI for open [POI Contex Menu](#poi-context-menu) with tags info.
+
+![Context Menu POI](@site/static/img/web/context_menu_poi.png)
 
 ## Explore the Map Menu
 
-A new feature in OsmAnd Web with map places search by POI categories, which displays photos of a specific point of interest on the map.
+**Explore Map** feature has received a significant upgrade, making it easier to search for places and view points of interest (POIs) with their photos ([wikidata source](https://www.wikidata.org/)) directly on the map.  
 
-- Click on 🔍 to open a tab with popular POIs on the map screen. 
-- Then select and click on one of the POIs to open the context menu for it.
+To get started:
 
-![Explore menu](@site/blog/2024-07-01-web-1-01/img/explore.png)
+1. Click the 🔍  icon to open the search tab, which displays popular POI categories and the "Explore" menu below. 
+2. The "Explore" data will automatically be shown on the map.
+3. Select "Show all" in the "Explore" section to open the full list with the _Filter_ button at the top.
 
-- To start searching by category, open the Categories menu and select the required items.
+![Explore menu](@site/static/img/web/explore.png)
 
-![Explore menu](@site/blog/2024-07-01-web-1-01/img/explore_cat.png)
+4. Pressing the _Filter_ button opens the Categories menu for "Explore." To refine your search, open the Categories menu and select the items you are interested in.
+
+![Explore menu](@site/static/img/web/explore_cat.png)
 
 ### POI Context Menu
 
@@ -45,15 +53,14 @@ Clicking on a POI opens a new context menu that includes:
 - Description.
 - [Online photos](#photo-gallery).
 
-![Explore menu](@site/blog/2024-07-01-web-1-01/img/poi_context.png)
+![Explore menu](@site/static/img/web/poi_context.png)
 
 ### Photo Gallery
 
 Clicking on the online photos opens the photo gallery. Here you can scroll through all POI photos.
 
-![Explore menu](@site/blog/2024-07-01-web-1-01/img/poi_photo.png)
+![Explore menu](@site/static/img/web/poi_photo.png)
 
 
-## Related Articles
 
 > *This article was last updated in September 2024*

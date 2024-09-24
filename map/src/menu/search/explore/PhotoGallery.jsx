@@ -1,9 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { Box, Button, Divider, Grid, ListItemText, MenuItem, Typography } from '@mui/material';
-import { WIKI_IMAGE_BASE_URL } from '../../../manager/SearchManager';
+import { getPhotoTitle, WIKI_IMAGE_BASE_URL } from '../../../manager/SearchManager';
 import styles from '../search.module.css';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../../context/AppContext';
+
+export function getPhotoUrl(photo, size = 300) {
+    const title = getPhotoTitle(photo);
+    return `${WIKI_IMAGE_BASE_URL}${title}?width=${size}`;
+}
 
 export default function PhotoGallery({ photos }) {
     const ctx = useContext(AppContext);
@@ -36,14 +41,14 @@ export default function PhotoGallery({ photos }) {
         const imageExtensions = ['.jpeg', '.jpg', '.png', '.gif'];
         return photos.features
             .filter((photo) => {
-                const extension = photo.properties.imageTitle
-                    .slice(photo.properties.imageTitle.lastIndexOf('.'))
-                    .toLowerCase();
+                const title = getPhotoTitle(photo);
+                const extension = title.slice(title.lastIndexOf('.')).toLowerCase();
                 return imageExtensions.includes(extension);
             })
             .sort((a, b) => a.properties.rowNum - b.properties.rowNum)
             .reduce((acc, photo) => {
-                if (!acc.find((item) => item.properties.mediaId === photo.properties.mediaId)) {
+                const uniqueKey = photo.properties.mediaId || photo.properties.imageTitle;
+                if (!acc.find((item) => (item.properties.mediaId || item.properties.imageTitle) === uniqueKey)) {
                     photo.properties.imageTitle = photo.properties.imageTitle.replaceAll(' ', '_');
                     acc.push(photo);
                 }
@@ -68,7 +73,7 @@ export default function PhotoGallery({ photos }) {
                                         onLoad={handleImageLoad}
                                         onError={() => handleImageError(index)}
                                         onClick={() => handleImageClick(index)}
-                                        src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=300`}
+                                        src={getPhotoUrl(photo)}
                                         alt={`Photo ${index + 1}`}
                                         className={styles.mainPhotoGallery}
                                         style={{
@@ -86,7 +91,7 @@ export default function PhotoGallery({ photos }) {
                                             onLoad={handleImageLoad}
                                             onError={() => handleImageError(index + 1)}
                                             onClick={() => handleImageClick(index + 1)}
-                                            src={`${WIKI_IMAGE_BASE_URL}${photo.properties.imageTitle}?width=300`}
+                                            src={getPhotoUrl(photo)}
                                             alt={`Photo ${index + 2}`}
                                             className={styles.littlePhotoGallery}
                                             style={{
