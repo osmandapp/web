@@ -1,5 +1,5 @@
 ---
-title: OsmAnd Pro for ADVseeker.fi
+title: OsmAnd Pro for Backdrop journal
 ---
 
 import Tabs from '@theme/Tabs';
@@ -28,7 +28,7 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 
 1. **Input your e-mail** for registration:
    
-<RegisterUserPromoBlock  promoKey='backdrop3'/>
+<RegisterUserPromoBlock  promoKey='backdrop4'/>
 
 <p> </p>
 
