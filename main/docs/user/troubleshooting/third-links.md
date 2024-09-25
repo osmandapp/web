@@ -13,6 +13,31 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+### Custom Manuals
+
+|Type | Description | Link|
+|-- | -- | --|
+| Spanish  |  Goiena  |  [Goiena](https://www.goiena.org/osmand) |
+| Spanish  |  Studocu |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
+| Spanish  |  [Mapcolabora](https://mapcolabora.org/)  |  [mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
+| Czech   | OsmAncCZ   | [OsmAnd CZ](https://osmand.cz/) |
+| French  | RandoVélo   | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |
+| Italian | GuidaOsmAnd GitHub  | [GuidaOsmAnd](https://github.com/Max1234-Ita/GuidaOsmand)   |
+| Dutch | OsmAnd Handleiding 2021 | [OsmAnd Handleiding 2021](https://compostelagenootschap.be/wp-content/uploads/2021/09/OsmAnd_handleiding_v2.pdf)   |
+| Dutch | [Janiek](https://www.janiek.be/) | [OsmAnd Handleiding 2021](https://www.janiek.be/?fbclid=IwZXh0bgNhZW0CMTAAAR2zi1q2NqTAc14Y_7W129qapWYQLVxW1e8CuY19_KtplyV6z613q3W6nWo_aem_xWMmPwTXqmVA43tIxhB-VA)   |
+| Русский  | Drive2-Vitaly-salsa  |  [Drive2](https://www.drive2.ru/l/533880791202005393/) |
+
+
+### Facebook groups
+
+|Type | Description | Link|
+|-- | -- | --|
+| OsmAnd users community (English)  |  This is group where OsmAnd users can help other users.  |  [Facebook](https://www.facebook.com/groups/osmandusers/) |
+| Osmand-gebruikers (Dutch)  |  Wil je op de hoogte blijven van updates en/of wijzigingen in de app "Osmand", dan lees je deze hier. Ook tips, vragen, opmerkingen zijn welkom  |  [Facebook](https://www.facebook.com/groups/1734792863427411) |
+| OSMAND+ Aide Partage et Astuces (French)  |  Aide Partage et Astuces |  [Facebook](https://www.facebook.com/groups/584042065963135) |
+| LC8 Rally OsmAnd user group (English)  |  To exchange experiences with the OsmAnd usage |  [Facebook](https://www.facebook.com/groups/1848734328597008) |
+| Osmand Italian"s friends (Italian)  |  To exchange experiences with the OsmAnd usage |  [Facebook](https://www.facebook.com/groups/231397842534959/) |
+
 ### Converters
 
 |Type | Description | Link|
@@ -50,6 +75,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 |map style|	UniMap - some color optimalization	|[github](https://github.com/basings/OsmAnd-custom-map-styles)|
 |map style|	OsmAndRailwayStyles - optimalization for |[OpenRailwayMap](https://www.openrailwaymap.org/)	[github](https://github.com/fuzzysolutions/OsmAndRailwayStyles)|
 |map style|	Highlighted Admin Boundaries	|[github](https://github.com/Max1234-Ita/GuidaOsmand/blob/main/risorse/rendering/en_highlighted_boundaries.md)|
+|map style|	[Openfietsmap](https://www.openfietsmap.nl/downloads/android/osmand)	|[github](https://github.com/ligfietser/OFM_Osmand)|
 
 ### Custom Offline Maps
 
@@ -70,6 +96,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 |online maps|	Set of maps of French geographical institute IGN	|[github](https://github.com/OSM-Plein-Air/OsmAnd-maps-IGN/releases)|
 |online maps|set of maps	|[AnyGis](http://anygis.ru/Web/Html/Osmand_en)
 manual|	1st steps in Italian	|[github](http://github.com/Max1234-Ita/GuidaOsmand)|
+
+
 
 <!--
 | hardware|	!!! there are commercial companies but the links are NOT affiliated !!!	|
