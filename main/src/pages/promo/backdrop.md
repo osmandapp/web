@@ -1,5 +1,5 @@
 ---
-title: OsmAnd Pro for Backdrop journal
+title: OsmAnd Pro for Backdrop Splitboarding
 ---
 
 import Tabs from '@theme/Tabs';
@@ -17,11 +17,12 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 ![index](@site/static/img/promo/backdrop/backdrop.png)
 
 
-**OsmAnd Pro for Backdrop journal**
+**OsmAnd Pro for Backdrop Splitboarding**
 
 Hello, fans of winter activities!
 
-OsmAnd and [Backdrop journal](https://www.backdropjournal.com/) introduce and present you OsmAnd Pro subscriptions for 1 year. 
+OsmAnd and [Backdrop Splitboarding](https://www.backdropjournal.com/) introduce and present you OsmAnd Pro subscriptions for 1 year. 
+
 You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform): iOS, Android and Web.
 
 **Your steps**:
@@ -36,7 +37,7 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 
 OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use).
 
-_Backdrop journal_ links: [Website](https://www.backdropjournal.com/), [Instagram](https://www.instagram.com/backdropjournal/)
+_Backdrop Splitboarding_ links: [Website](https://www.backdropjournal.com/), [Instagram](https://www.instagram.com/backdropsplitboarding/)
 ________________________________
 
 **Ski Map View** shows winter colors and pistes downhill or cross-country, as well as cable cars, chairlifts, facilities and services nearby, which is useful for navigating destinations such as recreation areas, ski resorts and terrain parks.
