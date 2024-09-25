@@ -22,8 +22,6 @@ OsmAnd has many powerful features to display various routes on the map. Routes c
 
 ## Types of Tracks
 
-OsmAnd can display several different types of routes
-
 [Tracks (GPX)](#display-tracks-on-the-map) - recorded or planned trip saved in [GPX-format](https://en.wikipedia.org/wiki/GPS_Exchange_Format). This kind of route could be imported from the external source, created in the application, or recorded by the user. GPX could contain one of 3 different types of data or all of them:
 
 - Track as a line (**Geometry**) - file has ```<trkpt>``` points array, each point has location and optionally time, speed, altitude, and other attributes. These tracks are displayed on the map as solid lines.
@@ -134,10 +132,10 @@ When you select a track on the map or open the [Track Context Menu](./track-cont
 
 This tool provides a detailed analysis of track data using graphs and maps.
 
-- **Graph Data (Y-axis)**: Displays Altitude, Slope, Speed, [External sensor data](../../plugins/external-sensors.md), or a combination (if available for the track).
-- **Graph Dimension (X-axis)**: Can represent Distance, Time, or Time of day.
-- **Tap/Slide Interaction**: tap the graph to display information about a specific track point. Sliding along the graph highlights the corresponding location on the map and shows details in the info bar.
-- **Scaling**: Use a [two-finger gesture](../../map/interact-with-map.md#gestures) to scale the graph for more detailed viewing.
+- **Graph data (Y-axis)**. Displays Altitude, Slope, Speed, [External sensor data](../../plugins/external-sensors.md), or a combination (if available for the track).
+- **Graph dimension (X-axis)**. Can represent Distance, Time, or Time of day.
+- **Tap/slide interaction**. tap the graph to display information about a specific track point. Sliding along the graph highlights the corresponding location on the map and shows details in the info bar.
+- **Scaling**. Use a [two-finger gesture](../../map/interact-with-map.md#gestures) to scale the graph for more detailed viewing.
 
 
 ### Follow My Location
