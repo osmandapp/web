@@ -204,6 +204,7 @@ const FavoriteLayer = () => {
 
     // add markers on map or remove markers from map
     useEffect(() => {
+        ctx.setFavLoading(false);
         const favoritesGroups = ctx.favorites?.mapObjs;
         favoritesGroups &&
             Object.values(favoritesGroups).forEach((file) => {

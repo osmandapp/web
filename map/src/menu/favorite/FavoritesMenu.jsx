@@ -3,7 +3,7 @@ import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import FavoriteGroup from './FavoriteGroup';
 import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
 import Empty from '../errors/Empty';
-import { Box } from '@mui/material';
+import { Box, LinearProgress } from '@mui/material';
 import GroupHeader from '../actions/GroupHeader';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { isEmpty } from 'lodash';
@@ -63,6 +63,7 @@ export default function FavoritesMenu() {
                         setSortGroups={setSortGroups}
                     />
                 )}
+                {ctx.favLoading && <LinearProgress />}
                 {ctx.gpxLoading || ctx.processingGroups ? (
                     <Loading />
                 ) : !isEmpty(ctx.favorites) && ctx.favorites?.groups?.length > 0 ? (
