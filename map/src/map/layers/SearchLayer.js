@@ -57,7 +57,7 @@ export default function SearchLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
 
-    const [zoom, setZoom] = useState(null);
+    const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
     const [move, setMove] = useState(false);
 
     const [selectedCategory, setSelectedCategory] = useState(null);

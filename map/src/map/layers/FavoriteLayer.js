@@ -21,7 +21,7 @@ const FavoriteLayer = () => {
 
     const { lat } = useHashParams();
     const [move, setMove] = useState(false);
-    const [zoom, setZoom] = useState(null);
+    const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
 

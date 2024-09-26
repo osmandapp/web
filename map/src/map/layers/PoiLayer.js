@@ -141,7 +141,7 @@ export default function PoiLayer() {
 
     const [prevZoom, setPrevZoom] = useState(null);
     const [prevTypesLength, setPrevTypesLength] = useState(null);
-    const [zoom, setZoom] = useState(null);
+    const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
     const [move, setMove] = useState(false);
     const [poiList, setPoiList] = useState({
         layer: null,
