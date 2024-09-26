@@ -15,7 +15,7 @@ export function clusterMarkers({
     isFavorites = false,
 }) {
     const maxMainPlaces = getMaxMainPlaces(zoom, isPoi, isFavorites);
-    const maxSecondaryPlaces = getMaxSecondaryPlaces(zoom);
+    const maxSecondaryPlaces = getMaxSecondaryPlaces(zoom, isFavorites);
     const useUniformMarkerPlacement = getUseUniformMarkerPlacement(zoom, isPoi, isFavorites);
 
     // Minimum distances between markers in meters
@@ -54,10 +54,16 @@ export function clusterMarkers({
 }
 
 function getMaxMainPlaces(zoom, isPoi, isFavorites) {
-    return isPoi ? 2000 : isFavorites ? 100 : 50;
+    if (isFavorites) {
+        return 200;
+    }
+    return isPoi ? 2000 : 50;
 }
 
-function getMaxSecondaryPlaces(zoom) {
+function getMaxSecondaryPlaces(zoom, isFavorites) {
+    if (isFavorites) {
+        return 200;
+    }
     return zoom > 10 ? 200 : 900;
 }
 

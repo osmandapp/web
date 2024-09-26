@@ -14,6 +14,7 @@ import { doSort } from '../actions/SortActions';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
 import { changeIconSizeWpt, createPoiIcon, removeShadowFromIconWpt } from '../../map/markers/MarkerOptions';
 import { getCenterMapLoc } from '../../manager/MapManager';
+import { FixedSizeList } from 'react-window';
 
 export default function FavoriteGroupFolder({ folder }) {
     const ctx = useContext(AppContext);
@@ -137,17 +138,38 @@ export default function FavoriteGroupFolder({ folder }) {
     }, [folder]);
 
     const favItems = useMemo(() => {
-        const items = [];
-        let sortMarkers = [];
-        if (sortFiles?.length > 0) {
-            sortMarkers = isWpts(sortFiles) ? getMarkersBySortFiles(sortFiles, markers) : sortFiles;
+        if (markers?.length > 0) {
+            let sortMarkers = [];
+
+            if (sortFiles?.length > 0) {
+                sortMarkers = isWpts(sortFiles) ? getMarkersBySortFiles(sortFiles, markers) : sortFiles;
+            }
+
+            const visibleMarkers = sortMarkers.length > 0 ? sortMarkers : markers;
+
+            return (
+                <FixedSizeList
+                    height={height - 120}
+                    itemCount={visibleMarkers.length}
+                    itemSize={80}
+                    width={ctx.infoBlockWidth}
+                >
+                    {({ index, style }) => (
+                        <div style={style}>
+                            <FavoriteItem
+                                key={visibleMarkers[index].title + index}
+                                marker={visibleMarkers[index]}
+                                group={group}
+                                currentLoc={currentLoc}
+                            />
+                        </div>
+                    )}
+                </FixedSizeList>
+            );
         }
-        markers?.length > 0 &&
-            (sortMarkers?.length > 0 ? sortMarkers : markers).map((marker, index) => {
-                items.push(<FavoriteItem key={marker + index} marker={marker} group={group} currentLoc={currentLoc} />);
-            });
-        return items;
-    }, [markers, sortFiles, ctx.favorites]);
+
+        return null; // Возвращаем null, если нет маркеров для отображения
+    }, [markers, sortFiles, ctx.favorites, height]);
 
     function isWpts(files) {
         return files?.length > 0 && !files[0].layer;
@@ -186,7 +208,7 @@ export default function FavoriteGroupFolder({ folder }) {
                             text={"This group doesn't have any wpt yet. You can add them using map."}
                             menu={OBJECT_TYPE_FAVORITE}
                         />
-                    ) : favItems.length > 0 ? (
+                    ) : favItems ? (
                         favItems
                     ) : (
                         <Loading />
