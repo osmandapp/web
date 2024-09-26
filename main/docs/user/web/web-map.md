@@ -27,19 +27,21 @@ The *[osmand.net/map](https://osmand.net/map/)* site is currently being develope
 We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussions/16567) on our GitHub so you can leave feedback there.
 :::
 
+## Authorization
+
 ## Map Context Menu
 
 For opening it right click anywhere on the map. This menu includes the following actions:
 
-- **Where am I** – Quickly find your current location on the map
-- **Open weather** – Open the Weather menu.
-- **Create new route** – Plan a route from the selected location.
-- **Add Favorite** – Mark a point of interest as a favorite for easy access.
-- **Directions from** – Start navigation from the selected point.
-- **Directions to** – Get directions to the selected point.
-- **Cope coordinates** – Copy the coordinates for external use.
-- **Add pin** – Place a pin to mark a location on the map.
-- **Show regions** – Display the regions associated with the selected point.
+- **Where am I** – a quick search for your current location on the map.
+- **Open weather** – opens the Weather menu.
+- **Create new route** – opens the Plan a route tool with the selected location.
+- **Add Favorite** – allow you mark and set a point of interest as a favorite for easy access.
+- **Directions from** – sets the start of navigation from the selected point.
+- **Directions to** – sets directions to the selected point.
+- **Cope coordinates** – allows you to copy the coordinates for external use.
+- **Add pin** – allows you to place a pin to mark a location on the map.
+- **Show regions** – displays the regions associated with the selected point.
 
 ![Map Context menu](@site/static/img/web/map_context_menu.png)
 
