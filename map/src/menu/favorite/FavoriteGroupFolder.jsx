@@ -168,7 +168,7 @@ export default function FavoriteGroupFolder({ folder }) {
             );
         }
 
-        return null; // Возвращаем null, если нет маркеров для отображения
+        return null;
     }, [markers, sortFiles, ctx.favorites, height]);
 
     function isWpts(files) {
