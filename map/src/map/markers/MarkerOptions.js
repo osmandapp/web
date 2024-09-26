@@ -10,7 +10,7 @@ const BACKGROUND_WPT_SHAPE_CIRCLE = 'circle';
 const BACKGROUND_WPT_SHAPE_OCTAGON = 'octagon';
 const BACKGROUND_WPT_SHAPE_SQUARE = 'square';
 const DEFAULT_WPT_ICON = 'special_star';
-const DEFAULT_WPT_COLOR = '#eecc22';
+export const DEFAULT_WPT_COLOR = '#eecc22';
 
 export const DEFAULT_ICON_SIZE = 24;
 

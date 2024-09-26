@@ -30,6 +30,7 @@ import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../uti
 import styles from '../../menu/search/search.module.css';
 import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
 import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
+import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
 
 export async function createPoiLayer({ ctx, poiList = [], globalPoiIconCache, type = OBJECT_TYPE_POI, map, zoom }) {
     const innerCache = await createPoiCache({ poiList, poiIconCache: globalPoiIconCache });
@@ -155,6 +156,8 @@ export default function PoiLayer() {
     const [openAddDialog, setOpenAddDialog] = useState(false);
     const [selectedPoi, setSelectedPoi] = useState(false);
 
+    useZoomMoveMapHandlers(map, setZoom, setMove);
+
     useSelectedPoiMarker(
         ctx,
         ctx.selectedPoiId?.type === POI_LAYER_ID ? poiList?.layer?.getLayers() : null,
@@ -211,26 +214,6 @@ export default function PoiLayer() {
             return null;
         }
     }
-
-    useEffect(() => {
-        const handleZoomEnd = () => {
-            setZoom(map.getZoom());
-        };
-
-        const handleDragEnd = () => {
-            setMove(true);
-        };
-
-        if (map) {
-            map.on('zoomend', handleZoomEnd);
-            map.on('dragend', handleDragEnd);
-
-            return () => {
-                map.off('zoomend', handleZoomEnd);
-                map.off('dragend', handleDragEnd);
-            };
-        }
-    }, [map]);
 
     function typesChanged() {
         if (!_.isEmpty(ctx.showPoiCategories)) {

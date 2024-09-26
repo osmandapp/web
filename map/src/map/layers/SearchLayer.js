@@ -26,6 +26,7 @@ import i18n from '../../i18n';
 import { clusterMarkers, createHoverMarker, createSecondaryMarker } from '../util/Clusterizer';
 import styles from '../../menu/search/search.module.css';
 import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
+import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
 
 export const SEARCH_TYPE_CATEGORY = 'category';
 export const SEARCH_LAYER_ID = 'search-layer';
@@ -61,31 +62,13 @@ export default function SearchLayer() {
 
     const [selectedCategory, setSelectedCategory] = useState(null);
 
+    useZoomMoveMapHandlers(map, setZoom, setMove);
+
     useSelectedPoiMarker(
         ctx,
         ctx.selectedPoiId?.type === SEARCH_LAYER_ID ? findFeatureGroupById(map, SEARCH_LAYER_ID)?.getLayers() : null,
         SEARCH_LAYER_ID
     );
-
-    useEffect(() => {
-        const handleZoomEnd = () => {
-            setZoom(map.getZoom());
-        };
-
-        const handleDragEnd = () => {
-            setMove(true);
-        };
-
-        if (map) {
-            map.on('zoomend', handleZoomEnd);
-            map.on('dragend', handleDragEnd);
-
-            return () => {
-                map.off('zoomend', handleZoomEnd);
-                map.off('dragend', handleDragEnd);
-            };
-        }
-    }, [map]);
 
     useEffect(() => {
         if (ctx.searchQuery?.search) {

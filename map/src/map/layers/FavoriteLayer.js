@@ -8,12 +8,22 @@ import FavoritesManager, { FAVORITE_FILE_TYPE, FAVORITE_STORAGE } from '../../ma
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
 import _, { isEmpty } from 'lodash';
 import { ZOOM_TO_MAP } from './SearchLayer';
-import { createHoverMarker } from '../util/Clusterizer';
-import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
+import { clusterMarkers, createHoverMarker } from '../util/Clusterizer';
+import { DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
+import useHashParams from '../../util/hooks/useHashParams';
+import L from 'leaflet';
+import Utils from '../../util/Utils';
+import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
 
 const FavoriteLayer = () => {
     const ctx = useContext(AppContext);
     const map = useMap();
+
+    const { lat } = useHashParams();
+    const [move, setMove] = useState(false);
+    const [zoom, setZoom] = useState(null);
+
+    useZoomMoveMapHandlers(map, setZoom, setMove);
 
     const [openAddDialog, setOpenAddDialog] = useState(false);
 
@@ -92,10 +102,60 @@ const FavoriteLayer = () => {
     function addMarkersOnMap(file) {
         if (file.markers && file.hidden !== 'true') {
             if (file.markers) {
-                file.markers.eachLayer((layer) => {
-                    layer.options.isFavorite = true;
+                const mapBounds = map.getBounds();
+
+                const { mainMarkers, secondaryMarkers } = clusterMarkers({
+                    places: filterPointsInBounds(file.wpts, map),
+                    zoom,
+                    latitude: lat,
+                    iconSize: DEFAULT_ICON_SIZE,
+                    isFavorites: true,
                 });
-                file.markers.getLayers().forEach((marker) => {
+
+                const markersToAdd = [];
+
+                file.markers.eachLayer((layer) => {
+                    const markerLatLng = layer.getLatLng();
+                    if (!mapBounds.contains(markerLatLng)) {
+                        return;
+                    }
+                    layer.options.isFavorite = true;
+
+                    if (!layer.options.originalIcon) {
+                        layer.options.originalIcon = layer.options.icon;
+                    }
+
+                    const isMainMarker = mainMarkers.some((mainMarker) => {
+                        const mainLatLng = L.latLng(mainMarker.lat, mainMarker.lon);
+                        return mainLatLng.equals(markerLatLng);
+                    });
+
+                    const isSecondaryMarker = secondaryMarkers.some((secMarker) => {
+                        const secLatLng = L.latLng(secMarker.lat, secMarker.lon);
+                        return secLatLng.equals(markerLatLng);
+                    });
+
+                    if (isMainMarker) {
+                        restoreOriginalIcon(layer);
+                    }
+
+                    if (isSecondaryMarker) {
+                        const color = layer.options.color ? Utils.hexToArgb(layer.options.color) : DEFAULT_WPT_COLOR;
+                        const customIcon = L.divIcon({
+                            className: 'custom-circle-icon',
+                            iconSize: [10, 10],
+                            html: `<div style="background-color:${color};border-radius:50%;width:10px;height:10px;border:1px solid #ffffff;"></div>`,
+                        });
+                        // Replace the marker's icon with the custom circle-like icon
+                        layer.setIcon(customIcon);
+                    }
+
+                    if (isMainMarker || isSecondaryMarker) {
+                        markersToAdd.push(layer);
+                    }
+                });
+
+                markersToAdd.forEach((marker) => {
                     createHoverMarker({
                         marker,
                         mainStyle: true,
@@ -106,7 +166,14 @@ const FavoriteLayer = () => {
                         ctx,
                     });
                 });
-                file.markers.addTo(map).on('click', onClick);
+
+                if (file.markersOnMap) {
+                    map.removeLayer(file.markersOnMap);
+                }
+
+                const layersGroup = new L.FeatureGroup(markersToAdd);
+                file.markersOnMap = layersGroup;
+                layersGroup.addTo(map).on('click', onClick);
             }
             if (
                 ctx.selectedGpxFile &&
@@ -116,6 +183,23 @@ const FavoriteLayer = () => {
                 map.fitBounds(file.markers.getBounds(), fitBoundsOptions(ctx));
             }
         }
+    }
+
+    function restoreOriginalIcon(layer) {
+        if (layer.options.originalIcon) {
+            if (layer.icon !== layer.options.originalIcon) {
+                layer.setIcon(layer.options.originalIcon);
+            }
+        }
+    }
+
+    function filterPointsInBounds(points, map) {
+        const mapBounds = map.getBounds();
+
+        return points.filter((point) => {
+            const pointLatLng = L.latLng(point.lat, point.lon);
+            return mapBounds.contains(pointLatLng);
+        });
     }
 
     // add markers on map or remove markers from map
@@ -132,6 +216,35 @@ const FavoriteLayer = () => {
             });
     }, [ctx.favorites]);
 
+    // update markers on map after zoom
+    useEffect(() => {
+        if (ctx.selectedGpxFile.zoom) {
+            // zoom after click on favorite
+            delete ctx.selectedGpxFile.zoom;
+            return;
+        }
+        updateMarkers();
+    }, [zoom]);
+
+    // update markers on map after move
+    useEffect(() => {
+        if (move) {
+            updateMarkers();
+            setMove(false);
+        }
+    }, [move]);
+
+    function updateMarkers() {
+        const favoritesGroups = ctx.favorites?.mapObjs;
+        favoritesGroups &&
+            Object.values(favoritesGroups).forEach((file) => {
+                if (file.url && ctx.configureMapState.showFavorites) {
+                    addMarkersOnMap(file);
+                    deleteOldMarkers(file);
+                }
+            });
+    }
+
     useEffect(() => {
         if (ctx.selectedGpxFile?.markerCurrent?.layer) {
             // if the group is hidden, then only zoom to the group markers
@@ -146,7 +259,6 @@ const FavoriteLayer = () => {
                     ],
                     ZOOM_TO_MAP
                 );
-                delete ctx.selectedGpxFile.zoom;
             }
         }
 
@@ -193,12 +305,18 @@ const FavoriteLayer = () => {
                 map.removeLayer(file.markers);
             }
         }
+        if (file.markersOnMap) {
+            map.removeLayer(file.markersOnMap);
+        }
     }
 
     function deleteOldMarkers(file) {
-        if (file.oldMarkers) {
+        if (file?.oldMarkers) {
             map.removeLayer(file.oldMarkers);
             delete file.oldMarkers;
+        }
+        if (file?.hidden === 'true' && file?.markersOnMap) {
+            map.removeLayer(file.markersOnMap);
         }
     }
 
