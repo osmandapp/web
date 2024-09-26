@@ -248,23 +248,23 @@ Before you start tracking your trips, you need to properly configure the **Trip 
 
 | Parameter | Description |
 |---|---|
-| **Battery optimization dialogue** (*Android*) | Opens the Android battery optimization settings. To prevent the app from asking you the next time you make a selection, tap *Don't ask anymore*. |
+| **Battery optimization dialogue** (*Android*) | Opens the [Android battery optimization settings](#battery-optimization). Tap *Don't ask anymore* if you do not want to be prompted again. |
 | **Show start dialog** (*Android*) | Enables a dialog where you can configure settings before starting recording. If disabled, the recording starts automatically. |
-| **Auto-record track during navigation** | Automatically records the track during navigation and saves it in the *Trip recording* tab. <br /><br />**Note**: Track recording consumes battery and continues running in the background, even if the screen is off. |
-| **General logging interval** | Sets how often location points are recorded. The default is 5 seconds. You can choose intervals from 0 seconds to 5 minutes. |
-| **Minimum displacement** | A filter to avoid recording points when there’s little movement. It helps reduce data noise. <ul><li>**Side effects**: Rest periods may not be recorded, and minor movements (like a detour) could be skipped.</li><li>**Recommendation**: Set it to 5 meters if you don’t need detailed tracking of minor movements.</li></ul> |
-| **Minimum accuracy** | Filters out location points below a certain accuracy threshold (in meters/feet). <ul><li>**Side effects**: Points in areas with poor reception (under bridges, trees, or between buildings) may be missing.</li><li>**Recommendation**: If unsure, it’s best to leave this filter off to avoid missing data.</li></ul> |
-| **Minimum speed** | Sets a threshold to ignore points recorded below a certain speed. <ul><li>**Side effects**: Sections where you move slower (e.g., walking up a hill) won’t be recorded, and rest periods will be missing.</li><li>**Recommendation**: Use the *Minimum displacement* filter instead, as it might yield better results without losing important data.</li></ul> |
-| **Auto-split recordings after gap** | Automatically splits tracks based on time gaps between recorded points. <ul><li>A new segment starts after a 6-minute gap.</li><li>A new track starts after a 2-hour gap.</li><li>A new file starts when the date changes.</li><li>Gaps occur when no points are detected, either due to poor GPS signal, low movement speed, or system configurations.</li></ul> |
-| **Prevent standalone logging** (*Android*) | Stops the trip recording when OsmAnd is stopped. No background indication is shown in the notification bar. |
-| **Include heading** | Saves the heading (direction) in the GPX file for every point. The heading is the direction the device is facing, which can differ from the movement direction due to external factors like wind or skidding. |
-| **External sensors** | Enables data logging from external sensors like heart rate or bike speed sensors. <br /> Data is logged to the GPX file when the [External Sensors plugin](../plugins/external-sensors.md) is enabled. |
-| **Track storage folder** (*Android*) | Sets where tracks are stored. <ul><li>Record all tracks in the *Rec* folder.</li><li>Group tracks into folders by month (e.g., *Rec/yyyy-mm*).</li></ul> |
+| **Auto-record track during navigation** | Automatically records the track during navigation and saves it in the *<Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/>* tab.<br />*Note*: Track recording consumes battery and continues running in the background, even if the screen is off. |
+| **General logging interval** | Defines how often location points are recorded. The default is 5 seconds. It is enabled with the *Trip recording widget*. |
+| **Minimum displacement** | A filter to avoid recording points when there is little or no movement. It helps reduce data noise.<ul><li>*Side effects*: Rest periods may not be recorded, and small movements may be ignored. This can reduce post-processing data but may also prevent GPS errors from being logged.</li><li>*Recommendation*: Set displacement to 5 meters if you want fewer minor details in your recordings.</li></ul> |
+| **Minimum accuracy** | Filters out location points below a minimum accuracy indication threshold, as reported by the device.<ul><li>*Side effects*: Points in areas with poor signal (under bridges, trees, between buildings, or in some weather conditions) may be missing.</li><li>*Recommendation*: If unsure, it may be better to disable this filter to avoid missing data.</li></ul><details><summary>*Remark*</summary>Suppose the GPS was turned off just before recording. In that case, the first measured point may have reduced accuracy, so it is better to wait a while before recording the point or record the best of 3 consecutive points.</details> |
+| **Minimum speed** | Sets a threshold to ignore points recorded below a certain speed.<ul><li>*Side effects*: Sections where speed falls below a specified threshold will not be recorded.</li><li>*Recommendation*: Use the *Minimum displacement* filter instead, as it can give better results without losing important data.</li></ul><details><summary>*Remark*</summary>Try using the motion detection via the logging minimum displacement filter (B) first, it may produce better results, and you will lose less data. If your tracks remain noisy at low speeds, try non-zero values here. Please note that some measurements may not report any speed value at all (some network-based methods), in which case you would not record anything.<br/><br/>Speed > 0 check: Most GPS chipsets report a speed value only if the algorithm determines you are in motion, and none if you are not. Hence using the > 0 setting in this filter in a sense uses the motion detection of the GPS chipset. But even if not filtered here at recording time, we still use this feature in our GPX analysis to determine the Distance corrected, i.e. the value displayed in that field is the distance recorded while in motion.</details> |
+| **Auto-split recordings after gap** | Automatically splits tracks based on time gaps between recorded points. <ul><li>A new segment starts after a 6-minute gap.</li><li>A new track starts after a 2-hour gap.</li><li>A new file starts when the date changes.</li><li>Gaps can result from GPS signal loss, low speed, or configuration settings.</li></ul><details><summary>*Remark*</summary>A gap is identified when no points are recorded. This may happen either because the location is not detected or because it is detected but not recorded. Several factors can cause this, including weak GPS signals due to poor weather conditions, or the speed of movement falling below the configured threshold. In such cases, even though the device may detect the location, it does not record it.<br/><br/>These gaps in recorded data can trigger the creation of a new segment within the same track, a new track in the same file, or a new GPX file within one recording. This is managed within a single start/stop recording session.</details> |
+| **Prevent standalone logging** (*Android*) | Pauses track recording when the OsmAnd app is killed (via *recent apps*). The background indication is not displayed in the Android notification panel. |
+| **Include heading** | Records the heading (direction of movement) for each point in the GPX file. The heading is the direction the device is facing, which can differ from the movement direction due to external factors like wind or skidding. |
+| **External sensors** | Data from [external sensors](../plugins/external-sensors.md#trip-recording) such as *<Translate android="true" ids="map_widget_ant_heart_rate"/>*, or *<Translate android="true" ids="map_widget_ant_bicycle_speed"/>* is logged to the GPX file. *Distance* data is not recorded on Android or iOS. Displayed only when the [External Sensors plugin](../plugins/external-sensors.md) is enabled. |
+| **Track storage folder** (*Android*) | Defines where in *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* tab recorded tracks are stored. Options include storing all tracks in the Rec folder or organizing them by month, such as Rec/yyyyy-mm. |
 | **Notification** | Controls the display of [trip recording messages](#notifications) in the device’s notification area. |
-| **Online tracking** (*Android*) | Allows real-time tracking of your location. <ul><li>When enabled, the recording widget turns green, and location data is transmitted to a specified URL.</li><li>Customize the tracking URL and frequency of updates.</li></ul> |
-| **Tracks** | A quick link to the folder where tracks are saved: *My places > GPX files*. |
+| **Online tracking** (*Android*) | Allows real-time tracking of your location by sending recorded points to a specified URL. The tracking interval determines how often points are sent, and the time buffer stores points when there’s no Internet connection.<details><summary>*Remark*</summary>If this option is enabled, and track recording is in progress, the Distance/Start-Stop (REC) widget turns **green** instead of **red**, indicating that each recorded point is being transmitted to a specified URL. The **Web address** field allows you to input the URL using the following parameter format:<ul><li>`lat={0}`: Latitude</li><li>`lon={1}`: Longitude</li><li>`timestamp={2}`: Timestamp (Unix time)</li><li>`hdop={3}`: Horizontal dilution of precision</li><li>`altitude={4}`: Altitude</li><li>`speed={5}`: Speed</li><li>`bearing={6}`: Bearing (direction of movement)</li><li>`eta={7}`: Estimated time of arrival (Unix time)</li><li>`etfa={8}`: Estimated time to the first intermediate point or finish point (Unix time)</li><li>`eda={9}`: Estimated distance to arrival or a marker (in meters)</li><li>`edfa={10}`: Estimated distance to the first intermediate point or finish point (in meters)</li></ul>You can set the **Tracking Interval** to specify how often location points are sent, with options ranging from 0 seconds to 5 minutes. Additionally, the **Time Buffer** parameter determines how long location points are stored if there is no Internet connection, ensuring data is saved and transmitted when the connection is restored.</details> |
+| **Tracks** | A quick reference to the folder where tracks are saved *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* tab. |
 | **Reset plugin settings to default** | Resets all trip recording settings for the current profile to their defaults. |
-| **Copy from another profile** (*Android*) | Copies the trip recording settings from another profile. |
+| **Copy from another profile** (*Android*) | Copies the trip recording settings from one profile to another. |
 
 
 ### Battery Optimization
@@ -289,18 +289,28 @@ If [Notification](#recording-settings) is enabled in the plugin settings, trip r
 - The notification area opens when you swipe down from the top of the screen and closes when swiping up. These messages notify you of actions like starting/stopping trip recording, especially when automatic recording is enabled during navigation.
 - Notifications remain visible regardless of whether the app is running in the foreground, background, or is closed. You can manually clear the old notification if it is no longer needed, but this will not stop the ongoing recording.
 
-**Important note:**  
-This behavior is required by Android for any foreground service, like trip recording, to remain visible to the user. If the notification is removed, Android will automatically stop the recording.
+**Important note**.  
+This behavior is required by Android for any foreground service, like trip recording, to remain visible to the user.
 
+- If the notification is removed, Android will automatically stop the recording. You can use the [*Prevent standalone logging*](#recording-settings) setting.
 - The **Notification** setting in OsmAnd affects whether the notification bar shows a shortcut to start a recording when no recording is active. It does **not** control the visibility of the notification during an active recording.
 
 Additional *Android* options:
 
 - In **Android settings** *→* **Notifications and status bar** *→* **Lock screen notifications**, you can remove OsmAnd from the app list to prevent notifications from appearing on the lock screen, avoiding accidental screen activation. This will not affect track recording. Notifications will still appear in the regular notification area.
 - **OsmAnd** may also appear under **Privacy** *→* **Special Permissions** *→* **Turn on screen**. If you want to prevent the screen from turning on when a notification appears, try removing OsmAnd from this list.
-- OsmAnd is not listed under **Privacy** *→* **Special Permissions** → **Alarms and reminders**.
 
-[Badge notification](#launcher-android).
+<!--
+- OsmAnd is not listed under **Privacy** *→* **Special Permissions** → **Alarms and reminders**.
+-->
+
+[Badge notification](#launcher-android).  
+App icon badge appears next to the OsmAnd icon when track recording is active.
+
+- This icon disappears when track recording is complete. To check if a recording is active, you can go to *Menu → My Places → Tracks tab* or tap the widget to manage the recording.  
+- If there is no recording in progress and the badge is still displayed, it may mean that a message from OsmAnd has been left in the device notification panel.  
+- To disable badges in Android settings, go to device *Settings → Apps → OsmAnd → Notifications* and disable the badge display option for this app.
+
 
 
 ## Widgets  
