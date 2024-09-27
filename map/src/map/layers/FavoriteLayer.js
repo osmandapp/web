@@ -175,13 +175,6 @@ const FavoriteLayer = () => {
                 file.markersOnMap = layersGroup;
                 layersGroup.addTo(map).on('click', onClick);
             }
-            if (
-                ctx.selectedGpxFile &&
-                file.name === ctx.selectedGpxFile.file?.name &&
-                !ctx.selectedGpxFile.editFavorite
-            ) {
-                map.fitBounds(file.markers.getBounds(), fitBoundsOptions(ctx));
-            }
         }
     }
 
@@ -221,6 +214,8 @@ const FavoriteLayer = () => {
     useEffect(() => {
         if (ctx.selectedGpxFile.zoom) {
             // zoom after click on favorite
+            // not update object in context to avoid call useEffect with ctx.selectedGpxFile
+            // always delete after zoom from map.setView
             delete ctx.selectedGpxFile.zoom;
             return;
         }

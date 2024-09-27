@@ -19,7 +19,7 @@ const useZoomMoveMapHandlers = (map, onZoomChange, onMapMove) => {
                 map.off('dragend', handleDragEnd);
             };
         }
-    }, [map, onZoomChange, onMapMove]);
+    }, [map]);
 };
 
 export default useZoomMoveMapHandlers;

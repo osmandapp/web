@@ -184,8 +184,8 @@ function getPointGeoProfile(point, points) {
 }
 
 export function getPointLatLon(point) {
-    let lat = point.lat ? point.lat : point.ext.lat;
-    let lon = point.lon ? point.lon : point.ext.lon;
+    let lat = point.lat ?? point.ext.lat;
+    let lon = point.lon ?? point.ext.lon;
     return lat && lon ? { lat: lat, lon: lon } : null;
 }
 

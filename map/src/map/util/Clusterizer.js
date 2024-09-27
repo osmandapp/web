@@ -38,14 +38,14 @@ export function clusterMarkers({
 
     const mainMarkers = createMainMarkersArr(clusters, useUniformMarkerPlacement, mainMinDistance, isFavorites);
 
-    const secondaryMarkers = createOtherMarkersArr(
+    const secondaryMarkers = createOtherMarkersArr({
         clusters,
         mainMarkers,
         maxMainPlaces,
         mainMinDistance,
         secondaryMinDistance,
-        isFavorites
-    );
+        isFavorites,
+    });
 
     return {
         mainMarkers: mainMarkers.slice(0, maxMainPlaces),
@@ -68,7 +68,10 @@ function getMaxSecondaryPlaces(zoom, isFavorites) {
 }
 
 function getUseUniformMarkerPlacement(zoom, isPoi, isFavorites) {
-    return (isPoi || isFavorites) ?? (zoom <= 10 || zoom >= 16);
+    if (isPoi || isFavorites) {
+        return true;
+    }
+    return zoom <= 10 || zoom >= 16;
 }
 
 function calculateDistance({ iconSize, latitude, zoom, isPoi = false }) {
@@ -156,14 +159,14 @@ function createMainMarkersArr(clusters, useUniformMarkerPlacement, mainMinDistan
     return mainMarkers;
 }
 
-function createOtherMarkersArr(
+function createOtherMarkersArr({
     clusters,
     mainMarkers,
     maxMainPlaces,
     mainMinDistance,
     secondaryMinDistance,
-    isFavorites
-) {
+    isFavorites,
+}) {
     const secondaryMarkers = [];
     for (const cluster of clusters) {
         for (const place of cluster) {
