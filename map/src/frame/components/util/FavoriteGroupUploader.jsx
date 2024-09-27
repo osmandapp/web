@@ -74,6 +74,7 @@ export default function FavoriteGroupUploader({ children }) {
     }
 
     const fileSelected = async (e) => {
+        ctx.setFavLoading(true);
         const selected = e.target.files.length === 1;
         Array.from(e.target.files).forEach((file) => {
             const reader = new FileReader();

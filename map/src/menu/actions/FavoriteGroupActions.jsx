@@ -20,6 +20,7 @@ const FavoriteGroupActions = forwardRef(({ group, setOpenActions, setProcessDown
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
 
     function showOnMap(hidden) {
+        ctx.setFavLoading(true);
         updateGroup(group, hidden);
         if (setOpenActions) {
             setOpenActions(false);

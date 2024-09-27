@@ -313,6 +313,7 @@ export const AppContextProvider = (props) => {
         location: null,
     });
     const [processingGroups, setProcessingGroups] = useState(false);
+    const [favLoading, setFavLoading] = useState(false);
 
     const [localTracks, setLocalTracks] = useState([]);
     const [visibleTracks, setVisibleTracks] = useState({});
@@ -644,6 +645,8 @@ export const AppContextProvider = (props) => {
                 setLoginState,
                 loginError,
                 setLoginError,
+                favLoading,
+                setFavLoading,
             }}
         >
             {props.children}
