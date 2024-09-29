@@ -89,6 +89,39 @@ To resolve this issue, switch to OpenGL rendering:
 - Restart OsmAnd to apply the changes.
 
 
+### Resolving slow map rendering in OsmAnd
+
+<!--
+Other header variants:
+
+- Optimizing OsmAnd performance for offline maps
+- Improving map redrawing speed in OsmAnd
+-->
+
+To resolve the issue of slow map rendering, especially when using offline vector maps, the following steps should be taken:
+
+1. **Disable unnecessary map features:**
+   Turn off 3D relief, contour lines, hillshades, and slopes, which can significantly increase the processing power needed to render maps. You can do this in *Menu → Configure map*.
+
+2. **Simplify map details:**
+   Hide less critical elements like boundaries, POIs, OSM notes, weather layers, additional details (*Menu → Configure map → Map rendering*) to streamline map display and improve speed.
+
+3. **Limit the number of displayed POIs:**
+   Display only the maim POIs or limit categories displayed during navigation, which can help speed up map rendering. Access these settings in *Menu → Navigation → Settings*.
+
+4. **Adjust map magnifier:**
+   The map magnifier setting could be a key factor in slowing down the map. Set the magnifier to 100% by long-pressing the **"+"** or **"-"** button on the map screen to optimize the display.
+
+5. **Disable auto-zoom:**
+   Auto-zoom can result in frequent redrawing of the map during navigation, causing delays. Disable auto-zoom in *Menu → Settings → Profile → Navigation settings → [Map during navigation](../navigation/guidance/map-during-navigation.md)*.
+
+6. **Use offline maps only:**
+   Online maps, especially when not downloaded in advance, can slow down map loading. Switch to using only offline maps for smoother performance.
+
+
+These changes should reduce the time it takes to render maps, especially during navigation. For more detailed configuration options, refer to the [Map Settings Guide](https://osmand.net/docs/user/map/interact-with-map#settings).
+
+
 ## Search
 
 ### Structured (city *→* street *→* house) address search doesn't find the house
