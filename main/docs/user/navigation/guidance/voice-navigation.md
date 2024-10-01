@@ -315,14 +315,14 @@ You can control the screen of your device to save power. This mode has two gener
 
 ### Turn screen on
 
-<Translate android="true" ids="turn_screen_on_descr"/>   
+<Translate android="true" ids="turn_screen_on_descr"/>
 
 
 ![turn screen on Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
 
 - *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>* - <Translate android="true" ids="turn_screen_on_sensor_descr"/>
 - *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>* - <Translate android="true" ids="turn_screen_on_navigation_instructions_descr"/>
-- *<Translate android="true" ids="turn_screen_on_power_button"/>* - <Translate android="true" ids="turn_screen_on_power_button_descr"/> 
+- *<Translate android="true" ids="turn_screen_on_power_button"/>* - <Translate android="true" ids="turn_screen_on_power_button_descr"/>
 
 
 ## Related Articles
