@@ -99,17 +99,19 @@ or this title:
 ### Resolving payment account and app email sync issues in OsmAnd
 -->
 
-If you encounter an issue where the email associated with your OsmAnd Pro purchase is different from your OsmAnd app email, follow these steps to resolve the problem:
+If you encounter an issue where the email associated with your OsmAnd Pro purchase does not match the OsmAnd app email, follow these steps to resolve the problem:
 
 1. **Check Google Play and Pay accounts**. Ensure that the correct email is linked to your Google Play Store and Pay accounts. The payment process is handled by these services, and the email mismatch might occur due to an old email still being associated with your payment profile.
 
-2. **Verify OsmAnd app email**. Double-check the email address in your OsmAnd app to ensure it matches your current Google Play email. This can be done by opening the app and navigating to the account settings.
+2. **Verify OsmAnd app email**. Recheck the email address in your OsmAnd app to ensure it matches your current Google Play email. This can be done by opening the app and navigating to the account settings.
 
-3. **Clear app cache and data**. Clear the cache and data of the OsmAnd app by going to your device's *Settings → Apps → OsmAnd → Storage → Clear Cache and Clear Data*. This will refresh the app and remove any residual issues from the old account.
+3. **Restore purchases**. Check the availability and appropriateness of your purchase. To do this, go to OsmAnd *Menu → Settings → Purchases*. If the displayed data does not match your expectations, try [Restore purchases](./setup.md#how-to-restore-purchases).
 
-4. **Reinstall OsmAnd**. If clearing the cache doesn’t resolve the issue, try uninstalling and reinstalling the app. Before doing this, make sure to back up any important data (tracks, favorites) by going to *Menu → Settings → Export to file*. Reinstalling the app will ensure that all account details are correctly refreshed.
+4. **Clear app cache and data**. Clear the cache and data of the OsmAnd app by going to your device's *Settings → Apps → OsmAnd → Storage → Clear Cache and Clear Data*. This will refresh the app and remove any residual issues from the old account.
 
-5. **Disable proxy**. Check the app's proxy settings and make sure the proxy is turned off by going to *Menu → Settings → OsmAnd settings → Proxy*. A proxy or VPN could interfere with account syncing.
+5. **Reinstall OsmAnd**. If clearing the cache doesn’t resolve the issue, try uninstalling and reinstalling the app. Before doing this, make sure to back up any important data (tracks, favorites) by going to *Menu → Settings → Export to file*. Reinstalling the app will ensure that all account details are correctly refreshed.
 
-6. **Re-login or use Web for account management**. If you're still facing issues, try logging out and back in to refresh the app's connection to your current account. If you encounter any problems deleting the old account in-app, consider managing your account through the web version of OsmAnd.
+6. **Disable proxy**. Check the app's proxy settings and make sure the proxy is turned off by going to *Menu → Settings → OsmAnd settings → Proxy*. A proxy or VPN could interfere with account syncing.
+
+7. **Re-login or use Web for account management**. If you're still facing issues, try logging out and back in to refresh the app's connection to your current account. If you encounter any problems deleting the old account in-app, consider managing your account through the web version of OsmAnd.
 
