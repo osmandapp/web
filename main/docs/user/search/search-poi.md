@@ -287,7 +287,6 @@ You can find out information about Online Navigation in [Online routing](../navi
 **Example XML file.** This XML file does not contain any style information associated with it. The document tree is shown in the [link](https://nominatim.openstreetmap.org/search?format=xml&addressdetails=0&accept-language=en&q=%D0%9C%D1%96%D0%BD%D1%81%D0%BA+%D0%BD%D0%B5%D0%B7%D0%B0%D0%BB%D0%B5%D0%B6%D0%BD%D0%B0%D1%81%D1%86%D1%96+72+&addressdetails=1&limit=300).
 
 
-
 ## Custom POI Search
 
 Custom POI Search is an advanced search feature that allows you to find POIs from different categories and combine them for a more accurate and personalized search. Unlike the standard POI search, which is limited to some predefined categories, Custom POI search provides the flexibility to select and combine different types of POIs.  
@@ -324,7 +323,7 @@ This functionality is especially useful in various cases:
 
 *Custom POI filter* includes sets of amenity categories consisting of relevant values. OsmAnd allows you to collect and combine the required POI types from one or more suggested categories.  
 
-In order to create your own filters to find the places you are looking for on the map, you need to select all the categories and subcategories of interest, [save](#save-new-custom-filters), and then [edit](#edit-an-existing-filter) if necessary. You may not save the filtered data, but only view it by tapping the *Show* button. But then, all your actions will be canceled when you switch to other searches or exit the search tool.  
+To create your own filters to find the places, you are looking for on the map, you need to select all the categories and subcategories of interest, [save](#save-new-custom-filters), and then [edit](#edit-an-existing-filter) if necessary. You may not save the filtered data, but only view it by tapping the *Show* button. But then, all your actions will be canceled when you switch to other searches or exit the search tool.  
 
 - Each amenity category contains a list of available generic values for POI types.
 - You have the option to select or deselect them individually by tapping the field of the type you are interested in.

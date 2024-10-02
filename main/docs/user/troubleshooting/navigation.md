@@ -83,7 +83,7 @@ For detailed instructions on setting up and adjusting Voice Prompts, refer to th
 
 *Text-to-Speech (TTS)* issues will usually have to be fixed in your **Android configuration and settings**, not within the OsmAnd app.
 
-In order to use TTS, your device needs to have TTS engine installed. Select or install a TTS engine via your **Android device settings**. Often, one TTS engine is already pre-installed on each device (e.g. google, Samsung, Pico), but another engine can be installed if needed. [Here](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/) is a compilation of supported engines and languages for Android.
+To use TTS, your device needs to have TTS engine installed. Select or install a TTS engine via your **Android device settings**. Often, one TTS engine is already pre-installed on each device (e.g. google, Samsung, Pico), but another engine can be installed if needed. [Here](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/) is a compilation of supported engines and languages for Android.
 
 A TTS engine often supports several languages, so one must be selected to be used. Also, to improve the voice quality: Some TTS engines come pre-installed with only a set of basic-quality pronunciation packages, and then facilitate downloading higher quality voices per language language.
 

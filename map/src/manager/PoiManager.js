@@ -9,6 +9,7 @@ import {
     POI_ICON_NAME,
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
+    SEPARATOR,
 } from '../infoblock/components/wpt/WptTagsProvider';
 import {
     changeIconColor,
@@ -302,6 +303,14 @@ export async function getSearchResultIcon({ result, ctx, isCategory = false, ico
             }}
         />
     );
+}
+
+export function translateWithSplit(t, string) {
+    let translatedString = t(string);
+    if (translatedString?.includes(SEPARATOR)) {
+        translatedString = translatedString.split(SEPARATOR)[0];
+    }
+    return translatedString;
 }
 
 const PoiManager = {

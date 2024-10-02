@@ -12,7 +12,7 @@ Using OsmAnd [MapCreator](../../versions/map-creator.md) you can create your own
 
 ### Prepare the files
 
-Save your track with *[.GPX](../osmand-file-formats/osmand-gpx.md)* extension and the text file as *.html*. In order to create your custom *Travel guide* successfully, the names of the GPX file and the html file have to be identical. For example, *Milan.gpx* and *Milan.html*.  
+Save your track with *[.GPX](../osmand-file-formats/osmand-gpx.md)* extension and the text file as *.html*. To create your custom *Travel guide* successfully, the names of the GPX file and the html file have to be identical. For example, *Milan.gpx* and *Milan.html*.  
 The GPX tracks can be downloaded from the internet or you can create one [using OsmAnd](../../user/plan-route/create-route.md) or any other GPX creation tool (Brouter, or a simialr one).  
 Add the points you'd like to visit into your route and then save that route as a GPX track.  
 

@@ -19,11 +19,11 @@ To get around faster, in OsmAnd you can use street-level views of your routes or
 
 [The Mapillary layer](https://www.mapillary.com/) brings street-level imagery straight into the OsmAnd app. So you can easily overview the surroundings of any place of interest or along the route you have planned. If imagery is missing, you can add it by yourself and others can make use of it. This feature has emerged from our collaboration with [the Mapillary team](https://www.mapillary.com/about) uniting the benefits of both apps.
 
-## Setup 
+## Setup
 
-To display street-level images on the OsmAnd map, you need to make the following settings: 
-   
-1. Enable the [Mapillary plugin](../plugins/#enable--disable) in the Plugins section of the Main menu.    
+To display street-level images on the OsmAnd map, you need to make the following settings:
+
+1. Enable the [Mapillary plugin](../plugins/#enable--disable) in the Plugins section of the Main menu.
 2. Display the [Street-level imagery](#enable-layer) on the map for the required profile in the Configure map menu.
 
 
@@ -32,7 +32,6 @@ To display street-level images on the OsmAnd map, you need to make the following
 Map layer of street-level imagery is displayed on the OsmAnd map as rows of connected green dots. Mapillary user’s photos are attached to these green points. To open the street-view photo, you need to press on the green point and pictures of a selected place will be shown. You can create [a filter](../plugins/mapillary.md#filtering-the-data) and select what photos you would like to display on the map.
 
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
@@ -60,6 +59,7 @@ To display street-level imagery on the map, you need to enable layer first in [C
 ![Mapillary plugin Android](@site/static/img/plugins/mapillary/Mapilary_street_level_imagery_android.png) ![Mapillary plugin images Android](@site/static/img/plugins/mapillary/mapillary_plugin_images_android.png)
 
 :::note Mapillary Photo viewer
+
 - Tap &#8285; button to open chosen image in [Mapillary application](https://www.mapillary.com/mobile-apps).
 - Tap an arrow to move from image to image.
 :::
@@ -68,9 +68,10 @@ To display street-level imagery on the map, you need to enable layer first in [C
 
 <TabItem value="ios" label="iOS">
 
-![Mapillary plugin iOS](@site/static/img/plugins/mapillary/Mapilary_street_level_imagery_ios.png) ![Mapillary plugin images iOS](@site/static/img/plugins/mapillary/mapillary_plugin_images_ios.png) 
+![Mapillary plugin iOS](@site/static/img/plugins/mapillary/Mapilary_street_level_imagery_ios.png) ![Mapillary plugin images iOS](@site/static/img/plugins/mapillary/mapillary_plugin_images_ios.png)
 
 :::note Mapillary Photo viewer
+
 - Tap an arrow to move from image to image.
 :::
 
@@ -79,15 +80,15 @@ To display street-level imagery on the map, you need to enable layer first in [C
 </Tabs>
 
 
-### Filtering the data
+### Filtering the Data
 
-You can create a filter and select which photos you would like to display on the map, for example so you can view only newer images or only 360-degrees.  Go to *<Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*→ &#8230; . 
+You can create a filter and select which photos you would like to display on the map, for example so you can view only newer images or only 360-degrees.  Go to *<Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*→ &#8230; .
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Mapillary plugin filter Android](@site/static/img/plugins/mapillary/mapillary_plugin_filter_android.png) 
+![Mapillary plugin filter Android](@site/static/img/plugins/mapillary/mapillary_plugin_filter_android.png)
 
 </TabItem>
 
@@ -104,7 +105,7 @@ Use *reload tile cache* if the selected images are not displayed.
 :::
 
 
-## Map Context menu
+## Map Context Menu
 
 You can also view nearby Mapillary photos (40 m radius) in the [Map Context menu](../map/map-context-menu.md#online-photos) of a selected point on the map.
 
@@ -125,9 +126,10 @@ You can also view nearby Mapillary photos (40 m radius) in the [Map Context menu
 
 </Tabs>
 
+
 ## Add Photos
 
-In order to add photos you will need to register in the [Mapillary application](https://www.mapillary.com/mobile-apps). You can also add photos in the Map Context menu by clicking on button "Add photos" in [Online photos](../map/map-context-menu.md#online-photos) of Map Context menu. Then the window of the Mapillary application will open.
+To add photos you will need to register in the [Mapillary application](https://www.mapillary.com/mobile-apps). You can also add photos in the Map Context menu by clicking on button "Add photos" in [Online photos](../map/map-context-menu.md#online-photos) of Map Context menu. Then the window of the Mapillary application will open.
 
 <Tabs groupId="operating-systems">
 
@@ -144,6 +146,7 @@ In order to add photos you will need to register in the [Mapillary application](
 </TabItem>
 
 </Tabs>
+
 
 ## Mapillary Widget
 
@@ -168,3 +171,5 @@ The [Mapillary widget](../widgets/info-widgets.md#mapillary-widget) is used to g
 </TabItem>
 
 </Tabs>
+
+> *This article was last updated in August 2023*

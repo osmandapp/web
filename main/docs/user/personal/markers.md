@@ -58,7 +58,7 @@ Short or long tap the map and choose needed action in [Map Context menu](../map/
 
 </Tabs>
 
-It is possible to mark a point or an object in order to make it easier to plan navigation. You just need to tap the *flag* (*Android*) or *arrow* (*iOS*) icon in the menu to display direction and distance to the selected point from your current location (or the centre map point / the initial map touching point when the Location is off).
+It is possible to mark a point or an object to make it easier to plan navigation. You just need to tap the *flag* (*Android*) or *arrow* (*iOS*) icon in the menu to display direction and distance to the selected point from your current location (or the centre map point / the initial map touching point when the Location is off).
 
 ***Actions***:
 

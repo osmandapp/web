@@ -14,8 +14,8 @@ export function clusterMarkers({
     isPoi = false,
     isFavorites = false,
 }) {
-    const maxMainPlaces = getMaxMainPlaces(zoom, isPoi, isFavorites);
-    const maxSecondaryPlaces = getMaxSecondaryPlaces(zoom, isFavorites);
+    const maxMainPlaces = getMaxMainPlaces(zoom, isPoi);
+    const maxSecondaryPlaces = getMaxSecondaryPlaces(zoom);
     const useUniformMarkerPlacement = getUseUniformMarkerPlacement(zoom, isPoi, isFavorites);
 
     // Minimum distances between markers in meters
@@ -36,6 +36,21 @@ export function clusterMarkers({
     // Sort clusters by size
     const clusters = Object.values(clusterPlaces(places, zoom, isFavorites));
 
+    if (isFavorites) {
+        const res = createFavMarkersArr({
+            clusters,
+            mainMinDistance,
+            secondaryMinDistance,
+            isFavorites,
+            zoom,
+        });
+
+        return {
+            mainMarkers: res.mainMarkers,
+            secondaryMarkers: res.secondaryMarkers,
+        };
+    }
+
     const mainMarkers = createMainMarkersArr(clusters, useUniformMarkerPlacement, mainMinDistance, isFavorites);
 
     const secondaryMarkers = createOtherMarkersArr({
@@ -53,17 +68,11 @@ export function clusterMarkers({
     };
 }
 
-function getMaxMainPlaces(zoom, isPoi, isFavorites) {
-    if (isFavorites) {
-        return 200;
-    }
+function getMaxMainPlaces(zoom, isPoi) {
     return isPoi ? 2000 : 50;
 }
 
-function getMaxSecondaryPlaces(zoom, isFavorites) {
-    if (isFavorites) {
-        return 200;
-    }
+function getMaxSecondaryPlaces(zoom) {
     return zoom > 10 ? 200 : 900;
 }
 
@@ -157,6 +166,52 @@ function createMainMarkersArr(clusters, useUniformMarkerPlacement, mainMinDistan
         });
     }
     return mainMarkers;
+}
+
+function createFavMarkersArr({ clusters, mainMinDistance, secondaryMinDistance, isFavorites, zoom }) {
+    const mainMarkers = [];
+    const secondaryMarkers = [];
+    const MAIN_CLUSTER_SIZE = zoom < 10 ? 3 : 50;
+    const OTHER_CLUSTER_SIZE = zoom < 10 ? 5 : 100;
+
+    for (const cluster of clusters) {
+        const mainClusterMarkers = [];
+        const secondaryClusterMarkers = [];
+
+        for (const place of cluster) {
+            if (
+                mainClusterMarkers.length < MAIN_CLUSTER_SIZE &&
+                canPlaceMarker({
+                    place,
+                    existingPlaces: mainClusterMarkers,
+                    minDistance: mainMinDistance,
+                    isFav: isFavorites,
+                })
+            ) {
+                mainClusterMarkers.push(place);
+            } else if (
+                secondaryClusterMarkers.length < OTHER_CLUSTER_SIZE &&
+                canPlaceMarker({
+                    place,
+                    existingPlaces: [...mainClusterMarkers, ...secondaryClusterMarkers],
+                    minDistance: secondaryMinDistance,
+                    isFav: isFavorites,
+                })
+            ) {
+                secondaryClusterMarkers.push(place);
+            }
+
+            if (
+                mainClusterMarkers.length >= MAIN_CLUSTER_SIZE &&
+                secondaryClusterMarkers.length >= OTHER_CLUSTER_SIZE
+            ) {
+                break;
+            }
+        }
+        mainMarkers.push(...mainClusterMarkers);
+        secondaryMarkers.push(...secondaryClusterMarkers);
+    }
+    return { mainMarkers, secondaryMarkers };
 }
 
 function createOtherMarkersArr({
