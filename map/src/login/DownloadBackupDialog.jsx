@@ -284,7 +284,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
                 setErrorBackup(`We couldn't create your backup. Please contact us at support@osmand.net`);
             });
 
-            if (resp.status === 200) {
+            if (resp && resp.status === 200) {
                 setLoadingBackup(false);
                 let name = resp.headers['content-disposition'].split('filename=')[1];
                 const url = document.createElement('a');
@@ -394,9 +394,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
                         </React.Fragment>
                     );
                 })}
-                <Typography variant="caption" color="textSecondary">
-                    {errorBackup}
-                </Typography>
+                {errorBackup && <Alert severity="error">{errorBackup}</Alert>}
             </DialogContent>
             <ToggleButtonGroup
                 color="primary"
