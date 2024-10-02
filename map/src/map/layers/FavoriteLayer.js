@@ -14,6 +14,7 @@ import useHashParams from '../../util/hooks/useHashParams';
 import L from 'leaflet';
 import Utils from '../../util/Utils';
 import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
+import { updateMarkerZIndex } from './ExploreLayer';
 
 const FavoriteLayer = () => {
     const ctx = useContext(AppContext);
@@ -113,7 +114,8 @@ const FavoriteLayer = () => {
                 });
 
                 const markersToAdd = [];
-
+                const mainLayers = [];
+                const secondaryLayers = [];
                 file.markers.eachLayer((layer) => {
                     const markerLatLng = layer.getLatLng();
                     if (!mapBounds.contains(markerLatLng)) {
@@ -137,6 +139,7 @@ const FavoriteLayer = () => {
 
                     if (isMainMarker) {
                         restoreOriginalIcon(layer);
+                        mainLayers.push(layer);
                     }
 
                     if (isSecondaryMarker) {
@@ -148,12 +151,10 @@ const FavoriteLayer = () => {
                         });
                         // Replace the marker's icon with the custom circle-like icon
                         layer.setIcon(customIcon);
-                    }
-
-                    if (isMainMarker || isSecondaryMarker) {
-                        markersToAdd.push(layer);
+                        secondaryLayers.push(layer);
                     }
                 });
+                markersToAdd.push(...mainLayers, ...secondaryLayers);
 
                 markersToAdd.forEach((marker) => {
                     createHoverMarker({
@@ -171,9 +172,12 @@ const FavoriteLayer = () => {
                     map.removeLayer(file.markersOnMap);
                 }
 
-                const layersGroup = new L.FeatureGroup(markersToAdd);
-                file.markersOnMap = layersGroup;
-                layersGroup.addTo(map).on('click', onClick);
+                const mainLayersGroup = new L.FeatureGroup(mainLayers);
+                const secLayersGroup = new L.FeatureGroup(secondaryLayers);
+                const res = new L.LayerGroup([secLayersGroup, mainLayersGroup]);
+                res.addTo(map).on('click', onClick);
+                updateMarkerZIndex(mainLayersGroup, 2000);
+                file.markersOnMap = res;
             }
         }
     }
