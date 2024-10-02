@@ -60,7 +60,7 @@ Car routing is designed to help drivers find the most efficient and direct route
 ## Route parameters - Truck
 
 :::note
-By default, *Tuck profile* is deactivated. In order to use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+By default, *Tuck profile* is deactivated. To use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
 Truck routing is similar to car routing, but is designed specifically for drivers of large commercial vehicles. It considers additional factors such as vehicle [height, weight, and width restrictions](../guidance/navigation-settings.md#size-parameters) and the possibility to transport hazardous materials (check table below). All other routing settings are identical to [car routing](#route-parameters---car).  
@@ -95,13 +95,13 @@ Truck routing is similar to car routing, but is designed specifically for driver
 ## Route parameters - Motorcycle
 
 :::note
-By default, *Motorcycle profile* is deactivated. In order to use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+By default, *Motorcycle profile* is deactivated. To use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
 Motorcycle routing is the process of creating a route specifically optimized for motorcycle travel. This type of routing takes into account the unique needs and preferences of motorcyclists, providing the best possible riding conditions. Routes are laid out taking into account a number of parameters such as choice of road surface ( for example, poor road conditions can be preferred or avoided), avoidance of traffic jams, accessibility of infrastructure or safety. 
 
 
-## Other routing settings
+## Other Routing Settings
 
 - The routing algorithm can also take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
 

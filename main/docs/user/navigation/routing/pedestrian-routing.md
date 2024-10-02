@@ -50,7 +50,7 @@ Pedestrian routing can be useful not only in urban areas, where pedestrians may 
 |*<Translate android="true" ids="routing_attr_allow_via_ferrata_name"/>*| *Via ferrata* routes will be used for routing when this option together with *Use elevation data* enabled.  | [Via ferrata](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dvia_ferrata) is a mountain route equipped with fixed cables, stemples, ladders, and bridges. |
 
 
-## Other routing settings
+## Other Routing Settings
 
 - The routing algorithm can also take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
 

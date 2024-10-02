@@ -38,10 +38,10 @@ The OsmAnd Boat routing engine also takes into account the characteristics of th
 ## Route parameters - Boat
 
 :::note
-By default, *Boat profile* is deactivated. In order to use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+By default, *Boat profile* is deactivated. To use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
 :::
 
-Boat routing can be configured according to your needs in the [Route parameters section](../../navigation/guidance/navigation-settings.md#route-parameters) of the Navigation settings.   
+Boat routing can be configured according to your needs in the [Route parameters section](../../navigation/guidance/navigation-settings.md#route-parameters) of the Navigation settings.  
 
 Typically, *Boat routing* is used with boat profile (the last one enabled together with the [Nautical plugin](../../plugins/nautical-charts.md)).  However, it is possible to use boat routing with other profiles as well, and different [routing types](#other-routing-types-for-boat) can also be employed in the boat profile.  
 
@@ -98,7 +98,7 @@ The [Straight line routing type](./straight-line-routing) can be used with the b
 ![Streaight-line Navigation type Android](@site/static/img/navigation/boat/straight_navigation_type_android.png)
 
 
-## Other routing settings
+## Other Routing Settings
 
 - The routing algorithm can also take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
 

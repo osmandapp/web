@@ -55,7 +55,7 @@ When using Direct-to-point and Boat navigation types, you will need [Depth conto
 </Tabs>
 
 
-## Other routing settings
+## Other Routing Settings
 
 - In the [*Recalculate route section*](../../navigation/guidance/navigation-settings.md#recalculate-route) of the *Route parameters*, you can enable and adjust route recalculation options. The default value is 0 meters of deviation, which means that the route is not recalculated.
 
