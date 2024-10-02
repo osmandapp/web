@@ -8,6 +8,8 @@ import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import i18n from 'i18next';
 import MoreInfoDialog from './MoreInfoDialog';
 import AppContext from '../../../context/AppContext';
+import capitalize from 'lodash/capitalize';
+import { translateWithSplit } from '../../../manager/PoiManager';
 
 export default function WptTagInfo({ tag = null, baseTag = null, copy = false, setDevWikiContent = null }) {
     const ctx = useContext(AppContext);
@@ -86,7 +88,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
         const keyWithoutPrefix = `${prefix}${item}`;
         // Check if translation with POI_PREFIX exists, if not use without POI_PREFIX
         const key = i18n.exists(keyWithPrefix) ? keyWithPrefix : keyWithoutPrefix;
-        return t(key);
+        return translateWithSplit(t, key);
     }
 
     function prepareValueFromList(tag) {
@@ -108,14 +110,16 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
     }
 
     function openMoreInfoDialog(tag) {
-        return tag.desc ? setOpenMoreDialog({ title: t(`${POI_PREFIX}${tag.key}`), content: tag.value }) : null;
+        return tag.desc
+            ? setOpenMoreDialog({ title: translateWithSplit(t, `${POI_PREFIX}${tag.key}`), content: tag.value })
+            : null;
     }
 
     function getTranslation(key, value) {
         if (i18n.exists(key)) {
-            return i18n.t(key);
+            return capitalize(translateWithSplit(i18n.t, key));
         }
-        return value;
+        return capitalize(value);
     }
 
     function getValue(tag) {
@@ -219,7 +223,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                     {tagList.map((item, index) => (
                         <MenuItem disableRipple key={index} divider className={styles.tagList}>
                             <Typography key={index} className={styles.tagName}>
-                                {t(`${POI_PREFIX}${item}`)}
+                                {translateWithSplit(t, `${POI_PREFIX}${item}`)}
                             </Typography>
                         </MenuItem>
                     ))}
