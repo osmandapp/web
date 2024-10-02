@@ -277,7 +277,7 @@ export default function WaypointsTab() {
         const nLayers = getLayers().length; // used to react to undo/redo
         const wptsString = JSON.stringify(ctx.selectedGpxFile.wpts); // slow
         return name + nLayers + wptsString;
-    }, [ctx.selectedGpxFile.name, ctx.selectedGpxFile.wptChangedFlag, ctx.selectedGpxFile.layers.getLayers().length]);
+    }, [ctx.selectedGpxFile.name, ctx.selectedGpxFile.wptChangedFlag]);
 
     const allGroups = useMemo(() => {
         const groups = getSortedGroups();
