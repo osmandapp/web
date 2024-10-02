@@ -56,7 +56,7 @@ OsmAnd's bicycle routing features allows cyclists to input a start and end point
 The MTB (mountain biking) routing mechanism is the same as bicycle routing. Note, that there are some penalties for using [MTB routes](../../map/vector-maps.md#routes), and therefore they are less likely to be offered for cycling to home or to work.
 
 
-## Other routing settings
+## Other Routing Settings
 
 - The routing algorithm can also take into account temporary limitations specified in OpenStreetMap. This can be done by using *[<Translate android="true" ids="temporary_conditional_routing"/>](../routing/osmand-routing.md#consider-temporary-limitations)* option. Note that in some cases, information from OSM can be outdated.  
 

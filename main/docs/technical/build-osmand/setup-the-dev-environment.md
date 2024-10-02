@@ -5,10 +5,11 @@ sidebar_position: 4
 # How to Setup the Development Environment
 
 
-In order to setup the development environment you need to install the [repo utility](https://source.android.com/setup/develop#repo) and use the following [repo manifest](https://github.com/osmandapp/OsmAnd-manifest/blob/master/readonly.xml) or [any other configuration](https://github.com/osmandapp/OsmAnd-manifest).
+To setup the development environment, you need to install the [repo utility](https://source.android.com/setup/develop#repo) and use the following [repo manifest](https://github.com/osmandapp/OsmAnd-manifest/blob/master/readonly.xml) or [any other configuration](https://github.com/osmandapp/OsmAnd-manifest).
 
 
 If you plan to use the `readonly.xml` and the `repo` utility you can run the following:
+
 ```
 repo init -u https://github.com/osmandapp/OsmAnd-manifest -m readonly.xml
 repo sync
@@ -27,7 +28,7 @@ You can also use just git and checkout the following git repositories to correct
     * ```git clone https://github.com/osmandapp/osmandapp.github.io.git help```
 * Folder **core-legacy** - **[OsmAnd-core-legacy](https://github.com/osmandapp/OsmAnd-core-legacy.git)** 
     * ```git clone https://github.com/osmandapp/OsmAnd-core-legacy.git core-legacy```
-* Folder **build** - **[OsmAnd-build](https://github.com/osmandapp/OsmAnd-build.git)** 
+* Folder **build** - **[OsmAnd-build](https://github.com/osmandapp/OsmAnd-build.git)**
     * ```git clone https://github.com/osmandapp/OsmAnd-build.git build```
 * Folder **tools** - **[OsmAnd-tools](https://github.com/osmandapp/OsmAnd-tools.git)** (servers, map creation)
     * ```git clone https://github.com/osmandapp/OsmAnd-tools.git tools```

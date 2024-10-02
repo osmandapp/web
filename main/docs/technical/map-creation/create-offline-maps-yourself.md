@@ -12,7 +12,7 @@ intro: With OsmAndMapCreator there are many ways how to create and customize Ras
 
 Once you have selected the tiles from which you want to create a map in the **Source of tiles** menu and they have been successfully loaded into OsmAndMapCreator, you can right-click on the area you want to preload. After that you can create `.sqlitedb` file in **Source of tiles** → **Create sqlite database**.  
 
-To create a vector map you will need an OSM file (*.pbf, *.osm.gz, *.osm.bz2) and to create an online sqlite map you will need the url of the base tile. 
+To create a vector map you will need an OSM file (*.pbf, *.osm.gz, *.osm.bz2) and to create an online sqlite map you will need the url of the base tile.
 
 <img src={require('@site/static/img/osmandmapcreator/OsmAndMapCreator-download-raster-maps.png').default} alt="Download raster maps" />
 
@@ -24,21 +24,22 @@ Steps to create vector map via OsmAndMapCreator UI:
 
 1. OSM File
     - Download it from [Geofabrik](https://www.geofabrik.de/data/download.html) or small export from [OpenStreetMap](https://www.openstreetmap.org/export#map=19/48.80672/2.13187)
-    - Convert [Shapefile to OSM](https://wiki.openstreetmap.org/wiki/OGR) 
+    - Convert [Shapefile to OSM](https://wiki.openstreetmap.org/wiki/OGR)
     - Generate [OSM XML](https://wiki.openstreetmap.org/wiki/OSM_XML) it yourself using any programming utilities, you can proceed by converting it to [OBF Format](../osmand-file-formats/osmand-obf.md) which OsmAnd can undertand
 2. Select checkboxes whether you want to produce Maps including Address / Routing / Transport / Map data
 3. Select in **File** → **Create .obf from file**.
-4. Once process is completed you will have `.obf` file in the working directory. 
+4. Once process is completed you will have `.obf` file in the working directory.
 
 <img src={require('@site/static/img/osmandmapcreator/OsmAndMapCreator-create-vector-maps.png').default} alt="Create vector maps" />
 
 More parameters how to generate vector maps could be specified in the shell `utilities.sh `.
 
 
-## Vector maps (shell script) 
+## Vector maps (shell script)
+
 The most typical & the most powerful way to create maps used by developers is via shell script `utilities.sh` packaged within OsmAndMapCreator. It also has many other utilities methods to create some custom maps such as basemap or map with region names & boundaries (regions.ocbf).
 
-Example script: 
+Example script:
 ```
 wget -N http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip
 wget  https://creator.osmand.net/osm-extract/albania_europe/albania_europe.pbf
@@ -50,11 +51,11 @@ Generation script takes only 1 file OSM file to process at a time (.pbf, .osm.gz
 
 | Main command | Description   |
 |--------------|---------------|
-| `generate-obf` | Generates full obf with map, address, poi, transport, routing information | 
-| `generate-obf-no-address` | Generates full obf but without address information | 
-| `generate-address` | Generates map with only address information | 
+| `generate-obf` | Generates full obf with map, address, poi, transport, routing information |
+| `generate-obf-no-address` | Generates full obf but without address information |
+| `generate-address` | Generates map with only address information |
 | `generate-poi` | Generates map with only poi information |
-| `generate-map` | Generates map with only map rendering information | 
+| `generate-map` | Generates map with only map rendering information |
 | `generate-roads` | Generates map with only routing information |
 
 
@@ -70,13 +71,13 @@ All extra parameters could be found in the code in case they are not documented 
 | `--poi-types=<FILE>` | poi_types.xml location with rules & OSM tags needs to be encoded in OBF for POI - [more information](#custom-vector-map-tags). |
 | `--extra-relations=<FILE>` | OSM file with polygons like Low Emission Zones which tags should be propagated to the ways. |
 
-
 **Note**: Creating maps with batch.xml is deprecated, please use shell methods mentionned above and combine with downloads / for cycles using standard shell script capabilities.
 
 
 ### RAM to process maps
+
 Creating maps is memory hungry and I/O intensive. In other words: it takes very long and could run out of memory! Please check generation on small maps first.
-In order to give more memory to JVM, you can declare env JAVA_OPTS variable.
+To give more memory to JVM, you can declare env JAVA_OPTS variable.
 ```
 export JAVA_OPTS="-Xms256M -Xmx6400M"
 OsmAndMapCreator/utilities.sh generate-obf ....
@@ -84,6 +85,7 @@ OsmAndMapCreator/utilities.sh generate-obf ....
 
 
 What can you do to improve performance:
+
 - Use SSD disks.
 - Use multiple disks.
 - Use "in memory" processing.
@@ -102,7 +104,7 @@ OsmAnd rendering and POI search relies on information written to [OBF](../osmand
 
 - **Map section** used for Map Rendering defined by [Rendering types](https://github.com/osmandapp/OsmAnd-resources/blob/master/obf_creation/rendering_types.xml)
 - **POI section** used for POI search and Object information defined by [POI types](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/poi_types.xml)
-- **Routing section** used for Routing defined by [Routing types](https://github.com/osmandapp/OsmAnd-resources/blob/master/obf_creation/rendering_types.xml) - same file as rendering types but has own section `<category name="routing"> - routing_type`. 
+- **Routing section** used for Routing defined by [Routing types](https://github.com/osmandapp/OsmAnd-resources/blob/master/obf_creation/rendering_types.xml) - same file as rendering types but has own section `<category name="routing"> - routing_type`.
 
 `rendering_types.xml` and `poi_types.xml` could be overridden during map creation process in OsmAndMapCreator UI settings or as command line parameters `--rendering-types=<path>`, `--poi-types==<path>` to `utilities.sh generate-obf` (packaged with OsmAndMapCreator).
 
@@ -110,8 +112,8 @@ OsmAnd rendering and POI search relies on information written to [OBF](../osmand
 - Additional map object type (`<type tag="service" value="driveway" minzoom="13" additional="true"/>`) is additional information attached for OSM entity, so in case OSM entity is not registered with main type it won't be stored inside OBF. Usually it stores information to display extra features like color, smoothness.
 - Text map object type (`<type tag="int_ref" additional="text" minzoom="1" order="32"/>`), stores text information about object so it could be later displayed on the map.
 - `entity_convert` represents simple tag transformation scripts (`<entity_convert pattern="tag_transform" from_tag="bridge" if_tag1="highway" if_value1="proposed" routing="no"/>`). It is often used to combine tags into specific types, so it's easier to display with custom rendering style. Also it allows to give region specific tag transformation and allows to have different features rendering per country.
-- Relation tag propagation. OsmAnd doesn't index relation objects (except multipolygons - stored as area objects) but it allows to propagate, push tags from relation onto members. Obviously 1 member could have multiple parent relations and tags conflicts are possible. OsmAnd supports 3 ways to deal with conflicts: 
-  - combine all tags as long comma-separated line (good for rendering bus route names as a long string on the way - `nameTags`, `namePrefix`). 
+- Relation tag propagation. OsmAnd doesn't index relation objects (except multipolygons - stored as area objects) but it allows to propagate, push tags from relation onto members. Obviously 1 member could have multiple parent relations and tags conflicts are possible. OsmAnd supports 3 ways to deal with conflicts:
+  - combine all tags as long comma-separated line (good for rendering bus route names as a long string on the way - `nameTags`, `namePrefix`).
   - sort values and keep the highest value (good for rendering routes local vs international - `relationGroupSort`, `additionalTags`, `additionalNamePrefix`).
   - generates unique tags for each relation (not used for now but stores information without loss - `relationGroupNameTags`, `relationGroupAdditionalTags`, `relationGroupPrefix`). **More information** you can find in [Rendering types](https://github.com/osmandapp/OsmAnd-resources/blob/master/obf_creation/rendering_types.xml).  
 
@@ -121,7 +123,7 @@ OsmAnd rendering and POI search relies on information written to [OBF](../osmand
 
 OSM is a large database for maps, but it doesn't always have the information you need (for example, about deserts). Sometimes you can get the information you need from other sources, such as paper maps or satellite images.  
 
-There are special programs for preparation, conversion, calibration of any source maps (maps in image format, pdf-format, raster online maps) into OsmAnd online maps.    
+There are special programs for preparation, conversion, calibration of any source maps (maps in image format, pdf-format, raster online maps) into OsmAnd online maps.
 
 About some of them below.
 
@@ -131,7 +133,7 @@ Mobile Atlas Creator (MOBAC) is an open source (GPL) program for creating offlin
 
 Just [download](https://mobac.sourceforge.io/) the program, then run it.
 
-In the format choosing dialogue pick *OsmAnd SQLite* or *OsmAnd tile storage*. SQLite is a single file with the selected area while tiles are separate pieces of the map gathered on your device. SQLite often happens to be more convenient as it is stored in one place and occupies less storage space. 
+In the format choosing dialogue pick *OsmAnd SQLite* or *OsmAnd tile storage*. SQLite is a single file with the selected area while tiles are separate pieces of the map gathered on your device. SQLite often happens to be more convenient as it is stored in one place and occupies less storage space.
 
 Pick the map source, zoom levels, and other features. Select an area, then choose the menu *Selection* -> *Add selection*.  
 
@@ -158,14 +160,14 @@ SASPlanet is a freeware, opensource navigation software with the capability of v
 How to convert geolocated pdf/tif/tiff files to [OsmAnd SQLitedb](../osmand-file-formats/osmand-sqlite.md) in Windows.
 Georeferencing tif/tiff and pdf files can be fairly simply done in QGIS.
 
-1.    **Install and run OSGeo4W**
+1. **Install and run OSGeo4W**
 
 [OSGeo4W](https://trac.osgeo.org/osgeo4w/) is a binary distribution of a broad set of open source geospatial software for Windows. It includes QGIS, GDAL/OGR, GRASS as well as many other packages (over 150). Download and run [OSGeo4W](https://trac.osgeo.org/osgeo4w/) network installer.
 
 Now, from Start menu, run OSGeo4W Shell. It should start in the default _C:\OSGeo4W_ directory. Either navigate to your work folder (or you could just use _C:\OSGeo4W_ for this purpose).
 
-2.    **Convert tif/pdf to mbtiles**
- 
+2. **Convert tif/pdf to mbtiles**
+
 To convert _tif/pdf_ to _mbtiles_ run (replacing _tif/pdf_ and _mbtiles_ file names where necessary):
 
 &nbsp;<i>gdal_translate -co "ZLEVEL=9" -of mbtiles map_1.tif map_1.mbtiles --config gdal_pdf_dpi 600</i>&nbsp;
@@ -193,7 +195,7 @@ Then in PowerShell, run the following command:
 
 _pip install Pillow_
 
-4.    **Convert mbtiles format to sqlitedb (suitable for OsmAnd and RMaps)**
+4. **Convert mbtiles format to sqlitedb (suitable for OsmAnd and RMaps)**
 
 You will find the Python scrip _mbtiles2osmand.py_ on [GitHub](https://github.com/tarwirdur/mbtiles2osmand). Download it to your work folder and run Command Prompt or PowerShell.
 
@@ -225,11 +227,11 @@ Converting tiles to jpeg with compression:
 
 &nbsp;<i>python3 mbtiles2osmand.py _--jpg 75 input.mbtiles output.sqlitedb_</i>&nbsp;
 
-5.    **Copy the .sqlitedb file to OsmAnd**
+5. **Copy the .sqlitedb file to OsmAnd**
 
 Now you should have a .sqlitedb file ready in your work folder. Copy it to appropriate OsmAnd folder and use it as an main, undelay or overlay. See [User guide](../../user/map/raster-maps.md) for more details. Done!
 
-6.    **(OPTIONAL) Unite multiple osmand files into single file**
+6. **(OPTIONAL) Unite multiple osmand files into single file**
   
 If you need to, you can find the scrip file unite_osmand.py on [GitHub](https://github.com/tarwirdur/mbtiles2osmand). Again - download it to your work folder and run Command Prompt or PowerShell.
 
@@ -249,7 +251,7 @@ If you need to, you can find the scrip file unite_osmand.py on [GitHub](https://
 
 **-f, -force** &nbsp;&nbsp;&nbsp;&nbsp;override output file if exists
 
-7.    **EXTRA: Convert A Single GeoPDF To GeoTIFF**
+7. **EXTRA: Convert A Single GeoPDF To GeoTIFF**
   
 If, for whatever reason, should you wish to convert a single _geopdf_ to _geotiff_, use the _gdal_translate_ command and input your own parameters where denoted by < >. You can use _gdal_translate_ with or without optional parameters. It can take a long time to process and the resulting tiff can be really large especially when including the orthoimagery and shaded terrain. Therefore, it might be a good idea to exclude some of the PDF layers (see second example).
 
@@ -263,16 +265,17 @@ gdal_pdf_layers_off “```<pdf layername 1>,<pdf layername 2>,<pdf layername 3>`
 Converting pdf with all its layers to a geotiff at default DPI:
 
 &nbsp;<i>gdal_translate geo_sample_map.pdf output_sample_map.tif -of gtiff</i>&nbsp;
- 
+
 Excluding several layers from conversion by <i>gdal_pdf_layers_off</i> parameter followed by list of comma separated layer names. Output file is a geotiff, with specified 600 DPI:
 
 &nbsp;<i>gdal_translate geo_sample_map.pdf output_sample_map.tif -of gtiff --config gdal_pdf_layers_off “Map_Collar, Map_Frame.Projections_and_Grids, Map_Frame.Terrain.Shaded_Relief, Images.Orthoimage” --config gdal_pdf_dpi 600</i>&nbsp;
 
-8.    **Sources:**
+8. **Sources:**
 
 - [Gdal2mbtiles](https://github.com/tarwirdur/mbtiles2osmandhttps://gist.github.com/jbaranski/0073f7b98bdf1f64f49988853daed67bhttps://github.com/ecometrica/gdal2mbtiles) (for reference only),
 - [How to convert geopdf to geotiff using GDAL](https://opengislab.com/blog/2016/4/2/usgs-geopdf-to-geotif-with-gdal),
 - See also [Making Overlay Maps for OsmAnd on Linux](https://shallowsky.com/blog/mapping/osmand-making-overlay-maps.html).
+
 
 ## Common Issues
 
@@ -302,7 +305,7 @@ change it to contain an additional 'amenity' tag, like:
     <tag k='amenity' v='point' />
   </node>
 ```
- 
+
 Then convert the file using OsmAndMapCreator. You can check on the OSM site what tags are good ones to use and you can also verify which tags are supported by [OsmAnd](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/poi_types.xml).
 
 

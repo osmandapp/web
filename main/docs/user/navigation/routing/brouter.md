@@ -171,7 +171,7 @@ When BRouter is configured, we can compare the pre-calculation speed of the BRou
 | *<Translate android="true" ids="temporary_conditional_routing"/>* |  Read about Consider temporary limitations option in this [article](../routing/osmand-routing.md#consider-temporary-limitations).   | The routing algorithm can take into account the time constraints specified in the OpenStreetMap. Note that in some cases the information from the OSM may be out of date.   |
 
 
-### Other routing settings
+### Other Routing Settings
 
 - ***<Translate android="true" ids="calculate_osmand_route_without_internet"/>*** (*Navigation → Settings*, [image](../routing/online-routing.md#online-routing-setting)). If this option is enabled, OsmAnd adds two segments to the calculated Brouter track: one from *[My location](../../map/interact-with-map.md#my-location--zoom)* to the starting point of the track and another from the end of the track to the finish point of your route. This option is active if the distance to or from the track exceeds 60 meters.
 

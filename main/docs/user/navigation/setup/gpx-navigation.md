@@ -37,12 +37,12 @@ The *Navigation by track* option can also be used in the everyday life. You can 
 </Tabs>
 
 
-## Select the Track 
+## Select the Track
 
 Before using the *Navigation by track* option you need to [display track on the map](../../map/tracks/index.md#display-tracks-on-the-map). OsmAnd supports track as a line (**Geometry**) and track as a route (**Route**) or combination of them (**OsmAnd** by [Plan route](../../plan-route/create-route.md)). If you have track as a collection **Waypoints**, you can use [Markers navigation](./markers-navigation.md).
 
 
-- **Geometry** track will have very basic navigation by default and won't provide accurate turns, street names and turn lanes. In order to get missing information, you need to use [Attach to the roads](#attach-to-the-roads) tool.
+- **Geometry** track will have very basic navigation by default and won't provide accurate turns, street names and turn lanes. To get missing information, you need to use [Attach to the roads](#attach-to-the-roads) tool.
 - **Route** track will calculate route between route points by selected profile. Basically all route points will be considered as intermediate points. If you route consists > 50 points, it's very likely that it's misconfigured **Geometry** track.
 - **OsmAnd** track consists of both geometry and route parts and it's suitable to provide exactly same guidance as navigation by default. These tracks are produced by [Plan route](../../plan-route/create-route.md) or [Web version](../../plan-route/web.md). It's possible to resave this track to **Geometry** only track as [**Simplified**](../../plan-route/create-route.md#save-route) to be used in 3rd party programs.
 
@@ -143,9 +143,9 @@ to the *<Translate android="true" ids="start_of_the_track"/>* or to the *<Transl
 
 </Tabs>
 
-You can find the **Attach to the roads** option in the *[Follow track menu](#how-to-follow-the-track)*. If you select **Attach to the roads**, the [Plan a route](../../plan-route/create-route.md#attach-track-to-roads) tool will open and OsmAnd will match each point on the track to the nearest allowed road on the map according to the **chosen profile** and ***threshold distance***. After attaching a track to roads, you get more accurate route information in the [**route details** section](../setup/route-details.md), and [**voice instructions**](#guidance) become more detailed.
+You can find the **Attach to the roads** option in the *[Follow track menu](#follow-track-options)*. If you select **Attach to the roads**, the [Plan a route](../../plan-route/create-route.md#attach-track-to-roads) tool will open and OsmAnd will match each point on the track to the nearest allowed road on the map according to the **chosen profile** and ***threshold distance***. After attaching a track to roads, you get more accurate route information in the [**route details** section](../setup/route-details.md), and [**voice instructions**](#guidance) become more detailed.
 
-- *Threshold distance* (default is 50 meters) refers to the maximum distance between a point on a GPS track and the nearest point on a road in order to attach the track to the road.
+- *Threshold distance* (default is 50 meters) refers to the maximum distance between a point on a GPS track and the nearest point on a road to attach the track to the road.
 - *When you change the profile*, OsmAnd automatically reattaches your track to the allowed for this profile roads. If your track consists of a big amount of points, attaching to the roads may take a long time. On the picture above, you can see the highlighted with orange status line, which indicates the progress. After the procedure of attaching to the roads is finished, the button **Apply** is active, and the track can be used for navigation.
 
 :::note Automatic attach to the roads
@@ -168,7 +168,7 @@ If track has waypoints, you can use [Show along the road](../guidance/map-during
 
 ### Intermediate Points
 
-When preparing or navigating a GPX track, you cannot add intermediate places you plan to drive through within that track. You can only assign start and finish points in addition to the track or segment you are planning to follow. 
+When preparing or navigating a GPX track, you cannot add intermediate places you plan to drive through within that track. You can only assign start and finish points in addition to the track or segment you are planning to follow.
 
 ## Guidance
 
