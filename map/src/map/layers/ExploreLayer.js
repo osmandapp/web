@@ -18,6 +18,14 @@ import { useSelectedPoiMarker } from '../../util/hooks/useSelectedPoiMarker';
 export const EXPLORE_LAYER_ID = 'explore-layer';
 export const EXPLORE_MIN_ZOOM = 6;
 
+export function updateMarkerZIndex(layerGroup, zIndex) {
+    layerGroup.eachLayer((layer) => {
+        if (layer instanceof L.Marker) {
+            layer.setZIndexOffset(zIndex);
+        }
+    });
+}
+
 export default function ExploreLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
@@ -289,14 +297,6 @@ export default function ExploreLayer() {
         }
         map.addLayer(newLayers);
         return newLayers;
-    }
-
-    function updateMarkerZIndex(layerGroup, zIndex) {
-        layerGroup.eachLayer((layer) => {
-            if (layer instanceof L.Marker) {
-                layer.setZIndexOffset(zIndex);
-            }
-        });
     }
 
     useEffect(() => {
