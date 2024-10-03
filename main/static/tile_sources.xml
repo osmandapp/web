@@ -15,13 +15,17 @@
 
 <!-- Bing Maps -->
    <tile_source rule="template:1" name="Microsoft Maps" url_template="https://tiles.virtualearth.net/tiles/r{q}.png?g=45" min_zoom="1" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000" ext=".png"/>
-   <tile_source rule="template:1" name="Microsoft Hybrid" url_template="https://tiles.virtualearth.net/tiles/h{q}.jpg?g=45" min_zoom="1" max_zoom="19" tile_size="256" img_density="32" avg_img_size="18000" ext=".jpg"/>
+   <tile_source rule="template:1" name="🛰 Microsoft Hybrid" url_template="https://tiles.virtualearth.net/tiles/h{q}.jpg?g=45" min_zoom="1" max_zoom="19" tile_size="256" img_density="32" avg_img_size="18000" ext=".jpg"/>
    <tile_source rule="template:1" name="🛰 Microsoft Earth" url_template="https://tiles.virtualearth.net/tiles/a{q}.jpg?g=45" min_zoom="1" max_zoom="19" tile_size="256" img_density="32" avg_img_size="18000" ext=".jpg"/>
 
 <!--   <tile_source name="Public Transport" url_template="http://openptmap.org/tiles/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="17" tile_size="256" img_density="16" avg_img_size="5000"/> -->
 
+<!-- Does not work -->
+<!--
    <tile_source name="🚴 Hike Bike Map" url_template="https://tiles.wmflabs.org/hikebike/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="17" tile_size="256" img_density="8" avg_img_size="18000"/>
-   <tile_source name="🚴 ⛰️ Hike Bike Map (Hills Underlay)" url_template="http://tiles.wmflabs.org/hillshading/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="17" tile_size="256" img_density="16" avg_img_size="18000"/>
+   <tile_source name="🚴 ⛰️ Hike Bike Map (Hills Underlay)" url_template="http://tiles.wmflabs.org/hillshading/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="17" tile_size="256" img_density="16" avg_img_size="18000"/>  -->
+
+
 
    <tile_source name="🚴 CyclOSM" url_template="https://c.tile-cyclosm.openstreetmap.fr/cyclosm/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="20" tile_size="256" img_density="16" avg_img_size="26000"/>
 
@@ -36,7 +40,12 @@
 <!--   <tile_source name="Relief" url_template="http://www.maps-for-free.com/layer/relief/z{0}/row{2}/{0}_{1}-{2}.jpg" ext=".jpg" min_zoom="1" max_zoom="12" tile_size="256" img_density="32" avg_img_size="24000"/>-->
 
    <tile_source name="🚒 Fire Hydrants" url_template="http://openfiremap.org/hytiles/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="17" tile_size="256" img_density="16" avg_img_size="2000"/> 
-   <tile_source name="Mapillary" url_template="https://d6a1v2w10ny40.cloudfront.net/v0.1/{0}/{1}/{2}.png" ext=".png" min_zoom="0" max_zoom="17" tile_size="256" img_density="16" avg_img_size="32000"/> 
+
+<!-- Does not work -->
+<!--
+   <tile_source name="Mapillary" url_template="https://d6a1v2w10ny40.cloudfront.net/v0.1/{0}/{1}/{2}.png" ext=".png" min_zoom="0" max_zoom="17" tile_size="256" img_density="16" avg_img_size="32000"/> -->
+
+
 <!--   <tile_source name="OSM Public GPS Traces" url_template="https://a.tile.openstreetmap.org/lines/{0}/{1}/{2}.png" ext=".png" min_zoom="0" max_zoom="20" tile_size="256" img_density="16" avg_img_size="32000"/> -->
 
 
@@ -48,8 +57,19 @@
 
    <tile_source name="🚵 🇨🇿 MTB Map CZ" url_template="http://tile.mtbmap.cz/mtbmap_tiles/{0}/{1}/{2}.png" ext=".png" min_zoom="7" max_zoom="16" tile_size="256" img_density="32" avg_img_size="18000"/>
 
+
+<!-- Does not work -->
+<!--
    <tile_source name="🇦🇹 basemap.at (AT)" url_template="https://maps.wien.gv.at/basemap/bmaphidpi/normal/google3857/{0}/{2}/{1}.jpeg" ext=".jpeg" min_zoom="1" max_zoom="19" tile_size="512" img_density="16" avg_img_size="32000"/>
-   <tile_source name="🇦🇹 basemap.at (Orthofoto)" url_template="https://maps.wien.gv.at/basemap/bmaporthofoto30cm/normal/google3857/{0}/{2}/{1}.jpeg" ext=".jpeg" min_zoom="1" max_zoom="19" tile_size="256" img_density="16" avg_img_size="32000"/>
+   <tile_source name="🇦🇹 🛰 basemap.at (Orthofoto)" url_template="https://maps.wien.gv.at/basemap/bmaporthofoto30cm/normal/google3857/{0}/{2}/{1}.jpeg" ext=".jpeg" min_zoom="1" max_zoom="19" tile_size="256" img_density="16" avg_img_size="32000"/> -->
+
+   <tile_source name="🇦🇹 Geoland BaseMap (AU)" url_template="https://mapsneu.wien.gv.at/basemap/geolandbasemap/normal/google3857/{0}/{2}/{1}.png" ext=".png" min_zoom="6" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/>
+   <tile_source name="🇦🇹 BaseMap Oberflaeche (AU)" url_template="https://mapsneu.wien.gv.at/basemap/bmapoberflaeche/grau/google3857/{0}/{2}/{1}.jpeg" ext=".png" min_zoom="6" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/>
+   <tile_source name="🇦🇹 BaseMap Grau (AU)" url_template="https://mapsneu.wien.gv.at/basemap/bmapgrau/normal/google3857/{0}/{2}/{1}.png" ext=".png" min_zoom="6" max_zoom="15" tile_size="256" img_density="16" avg_img_size="18000"/>
+   <tile_source name="🇦🇹 🛰 Orthophoto (AU)" url_template="https://mapsneu.wien.gv.at/basemap/bmaporthofoto30cm/normal/google3857/{0}/{2}/{1}.jpeg" ext=".jpg" min_zoom="6" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/>
+   <tile_source name="🇦🇹 Gelaende (AU)" url_template="https://mapsneu.wien.gv.at/basemap/bmapgelaende/grau/google3857/{0}/{2}/{1}.jpeg" ext=".jpg" min_zoom="6" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/>
+
+
    <!-- Yandex maps -->
    <tile_source name="Yandex RU" url_template="https://core-renderer-tiles.maps.yandex.net/tiles?l=map&amp;x={1}&amp;y={2}&amp;z={0}" ext=".jpg" min_zoom="1" max_zoom="18" tile_size="256" img_density="16" avg_img_size="18000" ellipsoid="true"/>
    <tile_source name="Top Yandex RU" url_template="https://core-renderer-tiles.maps.yandex.net/tiles?l=skl&amp;x={1}&amp;y={2}&amp;z={0}" ext=".jpg" min_zoom="1" max_zoom="18" tile_size="256" img_density="16" avg_img_size="18000" ellipsoid="true"/>
@@ -76,19 +96,28 @@
    <tile_source name="OpenWandelkaartBaseLayer (BE,NL)" url_template="https://overlay.openstreet.nl/basemap/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="18" tile_size="256" img_density="16" avg_img_size="18000"/>
    <tile_source name="OpenWandelkaartRoads (BE,NL)" url_template="https://overlay.openstreet.nl/roads/{0}/{1}/{2}.png" ext=".png" min_zoom="7" max_zoom="18" tile_size="256" img_density="16" avg_img_size="18000"/>-->
 
-   <tile_source name="🇳🇴 Statkart Topo4 (NO)" url_template="https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=topo4&amp;zoom={0}&amp;x={1}&amp;y={2}" ext=".png" min_zoom="5" max_zoom="17" tile_size="256" img_density="32" avg_img_size="18000"/>
-   <tile_source name="🇳🇴 Statkart Toporaster3 (NO)" url_template="https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=toporaster3&amp;zoom={0}&amp;x={1}&amp;y={2}" ext=".png" min_zoom="5" max_zoom="17" tile_size="256" img_density="32" avg_img_size="18000"/>
-   <tile_source name="🇳🇴 Statkart Nautical (NO)" url_template="https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=sjokartraster&amp;zoom={0}&amp;x={1}&amp;y={2}" ext=".png" min_zoom="3" max_zoom="14" tile_size="256" img_density="32" avg_img_size="18000"/>
+
+   <tile_source name="🇳🇴 Kartverket Topo (NO)" url_template="https://cache.kartverket.no/topo/v1/wmts/1.0.0/?SERVICE=WMTS&amp;REQUEST=GetTile&amp;VERSION=1.0.0&amp;LAYER=topo&amp;STYLE=default&amp;FORMAT=image/png&amp;tileMatrixSet=googlemaps&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}" ext=".png" min_zoom="5" max_zoom="17" tile_size="256" img_density="32" avg_img_size="18000"/>
+   <tile_source name="🇳🇴 Kartverket ortophoto (NO)" url_template="https://gatekeeper1.geonorge.no/BaatGatekeeper/gk/gk.nib_utm33_wmts_v2?&amp;gkt=798AD46226F7A883F0BF77BAA176D6C65FA6CF7D1A6147114F00E1911F55C4956901C26CF083FAFAD5D5BFA953E5A991EDDB83159EFA194D8D018F0853CD0DA1&amp;layer=Nibcache_UTM33_EUREF89&amp;style=default&amp;tilematrixset=default028mm&amp;Service=WMTS&amp;Request=GetTile&amp;Version=1.0.0&amp;Format=image%2Fpng&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}" ext=".png" min_zoom="5" max_zoom="17" tile_size="256" img_density="32" avg_img_size="18000"/>
+
+<!--
+   <tile_source name="🇳🇴 Statkart Nautical (NO)" url_template="https://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=sjokartraster&amp;zoom={0}&amp;x={1}&amp;y={2}" ext=".png" min_zoom="3" max_zoom="14" tile_size="256" img_density="32" avg_img_size="18000"/> -->
+
 
    <tile_source rule="template:1" name="Eniro Map (NO,SE,FI,DK,PL))" url_template="http://map01.eniro.com/geowebcache/service/tms1.0.0/map/{0}/{1}/{2}.png" ext=".png" min_zoom="2" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000" inverted_y="true"/>
-   <tile_source rule="template:1" name="Eniro Aerial (NO,SE,DK)" url_template="http://map01.eniro.com/geowebcache/service/tms1.0.0/aerial/{0}/{1}/{2}.png" ext=".png" min_zoom="2" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000" inverted_y="true"/>
-   <tile_source rule="template:1" name="Eniro Nautical (NO,SE)" url_template="http://map01.eniro.com/geowebcache/service/tms1.0.0/nautical/{0}/{1}/{2}.png" ext=".png" min_zoom="5" max_zoom="16" tile_size="256" img_density="32" avg_img_size="18000" inverted_y="true"/>
+
+<!-- Does not work -->
+<!--
+   <tile_source rule="template:1" name="Eniro Aerial (NO,SE,DK)" url_template="http://map01.eniro.com/geowebcache/service/tms1.0.0/aerial/{0}/{1}/{2}.png" ext=".png" min_zoom="2" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000" inverted_y="true"/> -->
+
+
+   <tile_source rule="template:1" name="🇳🇴 🇸🇪 ⚓ Eniro Nautical (NO,SE)" url_template="http://map01.eniro.com/geowebcache/service/tms1.0.0/nautical/{0}/{1}/{2}.png" ext=".png" min_zoom="5" max_zoom="16" tile_size="256" img_density="32" avg_img_size="18000" inverted_y="true"/>
 
    <tile_source name="🇸🇰 Freemap.sk-atlas" url_template="http://a.freemap.sk/A/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="16" tile_size="256" img_density="16" avg_img_size="18000" />
    <tile_source name="🇸🇰 Freemap.sk-outdoor" url_template="https://outdoor.tiles.freemap.sk/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="16" tile_size="256" img_density="16" avg_img_size="18000" />
-   <tile_source name="🥾 🇸🇰 Freemap.sk-hiking" url_template="http://a.freemap.sk/T/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="16" tile_size="256" img_density="16" avg_img_size="18000" />
-   <tile_source name="🚴 🇸🇰 Freemap.sk-cycle" url_template="http://a.freemap.sk/C/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="16" tile_size="256" img_density="16" avg_img_size="18000" />
-   <tile_source name="⛷️ 🇸🇰 Freemap.sk-ski" url_template="http://a.freemap.sk/K/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="16" tile_size="256" img_density="16" avg_img_size="18000" />
+   <tile_source name="🇸🇰 🥾 Freemap.sk-hiking" url_template="http://a.freemap.sk/T/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="16" tile_size="256" img_density="16" avg_img_size="18000" />
+   <tile_source name="🇸🇰 🚴 Freemap.sk-cycle" url_template="http://a.freemap.sk/C/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="16" tile_size="256" img_density="16" avg_img_size="18000" />
+   <tile_source name="🇸🇰 ⛷️ Freemap.sk-ski" url_template="http://a.freemap.sk/K/{0}/{1}/{-=2}.png" ext=".png" min_zoom="1" max_zoom="16" tile_size="256" img_density="16" avg_img_size="18000" />
    <tile_source name="Bilingual Southeast Asia" url_template="http://tile.osm-tools.org/osm/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/>
    <!-- Poland maps-->
 <!--   <tile_source name="OSM Poland (contour lines)" url_template="http://osm.trail.pl/osmapa.pl/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="18" tile_size="256" img_density="16" avg_img_size="18000"/> 
@@ -110,7 +139,14 @@
   <tile_source name="🇪🇺 Geofabrik.addresses_eu" url_template="https://tools.geofabrik.de/osmi/tiles/addresses/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="16" tile_size="256" img_density="16" avg_img_size="18000" />
   <tile_source name="🇪🇺 Geofabrik.highways_eu" url_template="https://tools.geofabrik.de/osmi/tiles/highways/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="16" tile_size="256" img_density="16" avg_img_size="18000" />
 
+  <tile_source name="🇫🇷 Cartes IGN FR" url_template="https://data.geopf.fr/private/wmts?apikey=ign_scan_ws&amp;Layer=GEOGRAPHICALGRIDSYSTEMS.MAPS&amp;Style=normal&amp;TileMatrixSet=PM&amp;SERVICE=WMTS&amp;REQUEST=GetTile&amp;Version=1.0.0&amp;FORMAT=image/jpeg&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}" ext=".png" min_zoom="1" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000"/>
+  <tile_source name="🇫🇷 🛰 Orthophotos IGN FR" url_template="https://data.geopf.fr/wmts?Layer=ORTHOIMAGERY.ORTHOPHOTOS&amp;Style=normal&amp;TileMatrixSet=PM&amp;SERVICE=WMTS&amp;REQUEST=GetTile&amp;Version=1.0.0&amp;FORMAT=image/jpeg&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}" ext=".png" min_zoom="1" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000"/>
+  <tile_source name="🇫🇷 🥾 Touristique IGN FR" url_template="https://data.geopf.fr/private/wmts?apikey=ign_scan_ws&amp;Layer=GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN25TOUR&amp;Style=normal&amp;TileMatrixSet=PM&amp;SERVICE=WMTS&amp;REQUEST=GetTile&amp;Version=1.0.0&amp;FORMAT=image/jpeg&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}" ext=".png" min_zoom="6" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/>
+  <tile_source name="🇫🇷 ⚓ Littorale IGN Carte FR" url_template="https://data.geopf.fr/wmts?layer=GEOGRAPHICALGRIDSYSTEMS.COASTALMAPS&amp;style=normal&amp;tilematrixset=PM&amp;Service=WMTS&amp;Request=GetTile&amp;Version=1.0.0&amp;FORMAT=image/png&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}" ext=".png" min_zoom="6" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/>
+   <tile_source name="🇫🇷 🚁 Scan OACI IGN FR" url_template="https://data.geopf.fr/private/wmts?apikey=ign_scan_ws&amp;Layer=GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-OACI&amp;Style=normal&amp;TileMatrixSet=PM&amp;SERVICE=WMTS&amp;REQUEST=GetTile&amp;Version=1.0.0&amp;FORMAT=image/jpeg&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}" ext=".png" min_zoom="6" max_zoom="15" tile_size="256" img_density="16" avg_img_size="18000"/>
   <tile_source name="🇫🇷 OSM FR" url_template="https://a.tile.openstreetmap.fr/osmfr/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000"/>
+
+
   <tile_source name="OSM Public Tracks" url_template="https://gps.tile.openstreetmap.org/lines/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="20" tile_size="256" img_density="16" avg_img_size="11000"/>
   
   <tile_source name="🗺 OpenTopoMap" url_template="https://a.tile.opentopomap.org/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="15" tile_size="256" img_density="16" avg_img_size="56000"/>
@@ -135,15 +171,11 @@
 	// 2. Genshtab http://wms.latlon.org gshtab -->
 
 
-   <tile_source name="🇦🇹 LISTMap Topographic (AU)" url_template="https://services.thelist.tas.gov.au/arcgis/rest/services/Basemaps/Topographic/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="3" max_zoom="18" tile_size="256" img_density="16" avg_img_size="18000"/>
-   <tile_source name="🇦🇹 LISTMap Scanned (AU)" url_template="https://services.thelist.tas.gov.au/arcgis/rest/services/Basemaps/TasmapRaster/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="6" max_zoom="16" tile_size="256" img_density="16" avg_img_size="18000"/>
-   <tile_source name="🇦🇹 LISTMap ESgisMapBook (AU)" url_template="https://services.thelist.tas.gov.au/arcgis/rest/services/Basemaps/ESgisMapBookPUBLIC/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="6" max_zoom="15" tile_size="256" img_density="16" avg_img_size="18000"/>
-   <tile_source name="🇦🇹 🛰 LISTMap Orthophoto (AU)" url_template="https://services.thelist.tas.gov.au/arcgis/rest/services/Basemaps/Orthophoto/MapServer/tile/{0}/{2}/{1}" ext=".jpg" min_zoom="6" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/>
-   
    <!-- http://www.lpi.nsw.gov.au/mapping_and_imagery/lpi_web_services -->
+   <!-- 
    <tile_source name="🇦🇹 LPI NSW Imagery (AU)" url_template="https://maps1.six.nsw.gov.au/arcgis/rest/services/sixmaps/LPI_Imagery_Best/MapServer/tile/{0}/{2}/{1}?blankTile=false" ext=".jpg" min_zoom="5" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000"/>
    <tile_source name="🇦🇹 LPI NSW Topo Map (AU)" url_template="https://maps2.six.nsw.gov.au/arcgis/rest/services/sixmaps/LPIMap/MapServer/tile/{0}/{2}/{1}?blankTile=false" ext=".png" min_zoom="5" max_zoom="16" tile_size="256" img_density="16" avg_img_size="18000"/>
-<!--   <tile_source name="LPI NSW Base Map (AU)" url_template="https://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Base_Map/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="5" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/> -->
+   <tile_source name="LPI NSW Base Map (AU)" url_template="https://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Base_Map/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="5" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/> -->
 
   <!-- https://IsraelHiking.osm.org.il | Tiles © Israel Hiking, CC BY-NC-SA 3.0. Data by OpenStreetMap under ODbL -->
   <tile_source name="🇮🇱 🥾 Israel Hiking Map (IL)" url_template="https://IsraelHiking.osm.org.il/Hebrew/Tiles/{0}/{1}/{2}.png" ext=".png" min_zoom="7" max_zoom="16" tile_size="256" img_density="32" avg_img_size="58000"/>
@@ -155,7 +187,7 @@
    <!-- https://kartat.kapsi.fi/ (c) Maanmittauslaitos CC BY 4.0 -->
    <tile_source name="🇫🇮 MML Peruskartta (FI)" url_template="https://tiles.kartat.kapsi.fi/peruskartta/{0}/{1}/{2}.jpg" ext=".jpg" min_zoom="1" max_zoom="19" tile_size="256" img_density="8" avg_img_size="10000"/>
    <tile_source name="🇫🇮 MML Taustakartta (FI)" url_template="https://tiles.kartat.kapsi.fi/taustakartta/{0}/{1}/{2}.jpg" ext=".jpg" min_zoom="1" max_zoom="19" tile_size="256" img_density="8" avg_img_size="10000"/>
-   <tile_source name="🇫🇮 MML Ortoilmakuva (FI)" url_template="https://tiles.kartat.kapsi.fi/ortokuva/{0}/{1}/{2}.jpg" ext=".jpg" min_zoom="1" max_zoom="19" tile_size="256" img_density="8" avg_img_size="10000"/>
+   <tile_source name="🇫🇮 🛰 MML Ortoilmakuva (FI)" url_template="https://tiles.kartat.kapsi.fi/ortokuva/{0}/{1}/{2}.jpg" ext=".jpg" min_zoom="1" max_zoom="19" tile_size="256" img_density="8" avg_img_size="10000"/>
    <tile_source name="🇫🇮 MML Kiinteistörajat (FI)" url_template="https://tiles.kartat.kapsi.fi/kiinteistorajat/{0}/{1}/{2}.jpg" ext=".jpg" min_zoom="1" max_zoom="19" tile_size="256" img_density="8" avg_img_size="10000"/>
 	
    <tile_source name="🚴 GeoVelo" url_template="https://tiles4.geovelo.fr/raster/facilities/{0}/{1}/{2}.png" ext=".png" min_zoom="2" max_zoom="16" tile_size="256" img_density="8" avg_img_size="10000"/>
@@ -163,11 +195,11 @@
    <!-- https://www.openflightmaps.org/ -->
   <tile_source name="🗺 🚁 OpenFlightMaps" url_template="https://nwy-tiles-api.prod.newaydata.com/tiles/{z}/{x}/{y}.png?path=latest/aero/latest" ext=".png" min_zoom="7" max_zoom="12" tile_size="512" img_density="32" avg_img_size="150000"/>
 
-   <tile_source name="Getlost Maps" url_template="https://live.getlost.com.au/{0}/{1}/{2}.jpg" ext=".jpg" min_zoom="11" max_zoom="14" tile_size="256" img_density="8" avg_img_size="25000"/>
+   <tile_source name="🇦🇺 Getlost Maps" url_template="https://live.getlost.com.au/{0}/{1}/{2}.jpg" ext=".jpg" min_zoom="11" max_zoom="14" tile_size="256" img_density="8" avg_img_size="25000"/>
 
    <tile_source name="🇺🇸 USGS National Map" url_template="https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{0}/{2}/{1}" ext=".jpeg" min_zoom="5" max_zoom="16" tile_size="256" img_density="8" avg_img_size="30000"/>
    <tile_source name="🇺🇸 USA Topo Maps" url_template="https://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer/tile/{0}/{2}/{1}" ext=".jpeg" min_zoom="5" max_zoom="16" tile_size="256" img_density="8" avg_img_size="25000"/>
-   <tile_source name="🛰 🇺🇸 ArcGIS World Imagery - Satellite" url_template="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{0}/{2}/{1}" ext=".jpeg" min_zoom="1" max_zoom="18" tile_size="256" img_density="8" avg_img_size="20000"/>
+   <tile_source name="🇺🇸 🛰 ArcGIS World Imagery - Satellite" url_template="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{0}/{2}/{1}" ext=".jpeg" min_zoom="1" max_zoom="18" tile_size="256" img_density="8" avg_img_size="20000"/>
    <tile_source name="🇺🇸 ArcGIS World Boundaries and Places" url_template="https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="1" max_zoom="18" tile_size="256" img_density="8" avg_img_size="10000"/>
 <!--   <tile_source name="FS Topo" url_template="https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_FSTopo_01/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="3" max_zoom="17" tile_size="256" img_density="8" avg_img_size="25000"/>-->
 
