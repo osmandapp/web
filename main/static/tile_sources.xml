@@ -53,9 +53,9 @@
    <tile_source name="Cykloatlas CZ" url_template="http://services.tmapserver.cz/tiles/gm/shc/{0}/{1}/{2}.png" ext=".png" min_zoom="7" max_zoom="16" tile_size="256" img_density="16" avg_img_size="26000"/>
    <tile_source name="Cykloatlas CZ HillShade" url_template="http://services.tmapserver.cz/tiles/gm/sum/{0}/{1}/{2}.png" ext=".png" min_zoom="7" max_zoom="15" tile_size="256" img_density="16" avg_img_size="26000"/>
 -->
-   <tile_source name="🚴 🇨🇿 Prague cycle map" url_template="https://tiles.prahounakole.cz/{0}/{1}/{2}.png" ext=".png" min_zoom="11" max_zoom="18" tile_size="256" img_density="16" avg_img_size="26000"/>
+   <tile_source name="🇨🇿 🚴 Prague cycle map" url_template="https://tiles.prahounakole.cz/{0}/{1}/{2}.png" ext=".png" min_zoom="11" max_zoom="18" tile_size="256" img_density="16" avg_img_size="26000"/>
 
-   <tile_source name="🚵 🇨🇿 MTB Map CZ" url_template="http://tile.mtbmap.cz/mtbmap_tiles/{0}/{1}/{2}.png" ext=".png" min_zoom="7" max_zoom="16" tile_size="256" img_density="32" avg_img_size="18000"/>
+   <tile_source name="🇨🇿 🚵 MTB Map CZ" url_template="http://tile.mtbmap.cz/mtbmap_tiles/{0}/{1}/{2}.png" ext=".png" min_zoom="7" max_zoom="16" tile_size="256" img_density="32" avg_img_size="18000"/>
 
 
 <!-- Does not work -->
@@ -163,7 +163,7 @@
   <tile_source name="🗺 Topomapper 1km" url_template="https://proxy.nakarte.me/http/88.99.52.155/tmg/{0}/{1}/{2}" ext=".jpg" min_zoom="5" max_zoom="17" tile_size="256" img_density="16" avg_img_size="18000"/>
 
   <tile_source rule="template:1" name="🇸🇪 Hitta.se Outdoor (SE)" url_template="https://static.hitta.se/tile/v3/4/{0}/{1}/{2}" ext="png" min_zoom="5" max_zoom="18" tile_size="256" img_density="32" avg_img_size="18000" inverted_y="true"/>
-  <tile_source name="🇸🇪 Lantmäteriet Topo (SE)" ext="png" min_zoom="3" max_zoom="15" tile_size="256" img_density="32" avg_img_size="18000" url_template='https://api.lantmateriet.se/open/topowebb-ccby/v1/wmts/token/9b342b7d9f12d4ddb92277be9869d860/1.0.0/topowebb/default/3857/{0}/{2}/{1}.png'/>
+  <tile_source name="🇸🇪 Lantmäteriet Topo (SE)" ext="png" min_zoom="3" max_zoom="18" tile_size="256" img_density="32" avg_img_size="18000" url_template='https://api.lantmateriet.se/open/topowebb-ccby/v1/wmts/token/9b342b7d9f12d4ddb92277be9869d860/1.0.0/topowebb/default/3857/{0}/{2}/{1}.png'/>
 
 <!--
 	// WMS layers : http://whoots.mapwarper.net/tms/{$z}/{$x}/{$y}/ {layer}/{Path}
@@ -178,8 +178,8 @@
    <tile_source name="LPI NSW Base Map (AU)" url_template="https://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Base_Map/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="5" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/> -->
 
   <!-- https://IsraelHiking.osm.org.il | Tiles © Israel Hiking, CC BY-NC-SA 3.0. Data by OpenStreetMap under ODbL -->
-  <tile_source name="🇮🇱 🥾 Israel Hiking Map (IL)" url_template="https://IsraelHiking.osm.org.il/Hebrew/Tiles/{0}/{1}/{2}.png" ext=".png" min_zoom="7" max_zoom="16" tile_size="256" img_density="32" avg_img_size="58000"/>
-  <tile_source name="🇮🇱 🚵 Israel MTB Map (IL)" url_template="https://IsraelHiking.osm.org.il/Hebrew/mtbTiles/{0}/{1}/{2}.png" ext=".png" min_zoom="7" max_zoom="16" tile_size="256" img_density="32" avg_img_size="43000"/>
+  <tile_source name="🇮🇱 🥾 Israel Hiking Map (IL)" url_template="https://IsraelHiking.osm.org.il/Hebrew/Tiles/{0}/{1}/{2}.png" ext=".png" min_zoom="7" max_zoom="18" tile_size="256" img_density="32" avg_img_size="58000"/>
+  <tile_source name="🇮🇱 🚵 Israel MTB Map (IL)" url_template="https://IsraelHiking.osm.org.il/Hebrew/mtbTiles/{0}/{1}/{2}.png" ext=".png" min_zoom="7" max_zoom="18" tile_size="256" img_density="32" avg_img_size="43000"/>
 
    <!-- http://kelkkareitit.fi -->
    <tile_source name="🇫🇮 Kelkkareitit.fi (snowmobile overlay)" url_template="https://tiles.kelkkareitit.fi/kelkkareitit/{0}/{1}/{2}.png" ext=".png" min_zoom="3" max_zoom="18" tile_size="256" img_density="8" avg_img_size="10000"/>
@@ -193,12 +193,12 @@
    <tile_source name="🚴 GeoVelo" url_template="https://tiles4.geovelo.fr/raster/facilities/{0}/{1}/{2}.png" ext=".png" min_zoom="2" max_zoom="16" tile_size="256" img_density="8" avg_img_size="10000"/>
 
    <!-- https://www.openflightmaps.org/ -->
-  <tile_source name="🗺 🚁 OpenFlightMaps" url_template="https://nwy-tiles-api.prod.newaydata.com/tiles/{z}/{x}/{y}.png?path=latest/aero/latest" ext=".png" min_zoom="7" max_zoom="12" tile_size="512" img_density="32" avg_img_size="150000"/>
+  <tile_source name="🗺 🚁 OpenFlightMaps" url_template="https://nwy-tiles-api.prod.newaydata.com/tiles/{z}/{x}/{y}.png?path=latest/aero/latest" ext=".png" min_zoom="7" max_zoom="16" tile_size="512" img_density="32" avg_img_size="150000"/>
 
-   <tile_source name="🇦🇺 Getlost Maps" url_template="https://live.getlost.com.au/{0}/{1}/{2}.jpg" ext=".jpg" min_zoom="11" max_zoom="14" tile_size="256" img_density="8" avg_img_size="25000"/>
+   <tile_source name="🇦🇺 Getlost Maps" url_template="https://live.getlost.com.au/{0}/{1}/{2}.jpg" ext=".jpg" min_zoom="5" max_zoom="18" tile_size="256" img_density="8" avg_img_size="25000"/>
 
-   <tile_source name="🇺🇸 USGS National Map" url_template="https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{0}/{2}/{1}" ext=".jpeg" min_zoom="5" max_zoom="16" tile_size="256" img_density="8" avg_img_size="30000"/>
-   <tile_source name="🇺🇸 USA Topo Maps" url_template="https://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer/tile/{0}/{2}/{1}" ext=".jpeg" min_zoom="5" max_zoom="16" tile_size="256" img_density="8" avg_img_size="25000"/>
+   <tile_source name="🇺🇸 USGS National Map" url_template="https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{0}/{2}/{1}" ext=".jpeg" min_zoom="5" max_zoom="18" tile_size="256" img_density="8" avg_img_size="30000"/>
+   <tile_source name="🇺🇸 USA Topo Maps" url_template="https://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer/tile/{0}/{2}/{1}" ext=".jpeg" min_zoom="5" max_zoom="18" tile_size="256" img_density="8" avg_img_size="25000"/>
    <tile_source name="🇺🇸 🛰 ArcGIS World Imagery - Satellite" url_template="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{0}/{2}/{1}" ext=".jpeg" min_zoom="1" max_zoom="18" tile_size="256" img_density="8" avg_img_size="20000"/>
    <tile_source name="🇺🇸 ArcGIS World Boundaries and Places" url_template="https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="1" max_zoom="18" tile_size="256" img_density="8" avg_img_size="10000"/>
 <!--   <tile_source name="FS Topo" url_template="https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_FSTopo_01/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="3" max_zoom="17" tile_size="256" img_density="8" avg_img_size="25000"/>-->
