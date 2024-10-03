@@ -16,7 +16,7 @@
 <!-- Bing Maps -->
    <tile_source rule="template:1" name="Microsoft Maps" url_template="https://tiles.virtualearth.net/tiles/r{q}.png?g=45" min_zoom="1" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000" ext=".png"/>
    <tile_source rule="template:1" name="Microsoft Hybrid" url_template="https://tiles.virtualearth.net/tiles/h{q}.jpg?g=45" min_zoom="1" max_zoom="19" tile_size="256" img_density="32" avg_img_size="18000" ext=".jpg"/>
-   <tile_source rule="template:1" name="Microsoft Earth" url_template="https://tiles.virtualearth.net/tiles/a{q}.jpg?g=45" min_zoom="1" max_zoom="19" tile_size="256" img_density="32" avg_img_size="18000" ext=".jpg"/>
+   <tile_source rule="template:1" name="🛰 Microsoft Earth" url_template="https://tiles.virtualearth.net/tiles/a{q}.jpg?g=45" min_zoom="1" max_zoom="19" tile_size="256" img_density="32" avg_img_size="18000" ext=".jpg"/>
 
 <!--   <tile_source name="Public Transport" url_template="http://openptmap.org/tiles/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="17" tile_size="256" img_density="16" avg_img_size="5000"/> -->
 
@@ -48,7 +48,7 @@
    <tile_source name="Top Yandex RU" url_template="https://core-renderer-tiles.maps.yandex.net/tiles?l=skl&amp;x={1}&amp;y={2}&amp;z={0}" ext=".jpg" min_zoom="1" max_zoom="18" tile_size="256" img_density="16" avg_img_size="18000" ellipsoid="true"/>
    <!-- <tile_source name="Yandex NK" url_template="https://01.pvec.maps.yandex.net/?l=wmap&amp;x={1}&amp;y={2}&amp;z={0}" ext=".jpg" min_zoom="1" max_zoom="18" tile_size="256" img_density="16" avg_img_size="18000" ellipsoid="true"/> -->
 <!--   <tile_source name="Top Yandex NK" url_template="https://wvec.maps.yandex.net/?l=wskl&amp;x={1}&amp;y={2}&amp;z={0}" ext=".jpg" min_zoom="1" max_zoom="18" tile_size="256" img_density="16" avg_img_size="18000" ellipsoid="true"/>-->
-   <tile_source name="Yandex Satellite RU" url_template="https://sat01.maps.yandex.net/tiles?l=sat&amp;x={1}&amp;y={2}&amp;z={0}" ext=".jpg" min_zoom="1" max_zoom="19" tile_size="256" img_density="32" avg_img_size="18000" ellipsoid="true"/>
+   <tile_source name="🛰 Yandex Satellite RU" url_template="https://sat01.maps.yandex.net/tiles?l=sat&amp;x={1}&amp;y={2}&amp;z={0}" ext=".jpg" min_zoom="1" max_zoom="19" tile_size="256" img_density="32" avg_img_size="18000" ellipsoid="true"/>
 <!--   <tile_source rule="yandex_traffic" name="Yandex Traffic RU"/>-->
    <tile_source name="Yandex Traffic RU" url_template="https://core-jams-rdr-cache.maps.yandex.net/1.1/tiles?trf&amp;l=trf,trfe&amp;x={1}&amp;y={2}&amp;z={0}" ext=".png" min_zoom="1" max_zoom="18" tile_size="256" img_density="16" avg_img_size="18000" ellipsoid="true"/>
 
@@ -147,10 +147,10 @@
    <tile_source name="Kelkkareitit.fi (snowmobile overlay)" url_template="https://tiles.kelkkareitit.fi/kelkkareitit/{0}/{1}/{2}.png" ext=".png" min_zoom="3" max_zoom="18" tile_size="256" img_density="8" avg_img_size="10000"/>
 
    <!-- https://kartat.kapsi.fi/ (c) Maanmittauslaitos CC BY 4.0 -->
-   <tile_source name="MML Peruskartta (FI)" url_template="https://tiles.kartat.kapsi.fi/peruskartta/{0}/{1}/{2}.jpg" ext=".jpg" min_zoom="1" max_zoom="19" tile_size="256" img_density="8" avg_img_size="10000"/>
-   <tile_source name="MML Taustakartta (FI)" url_template="https://tiles.kartat.kapsi.fi/taustakartta/{0}/{1}/{2}.jpg" ext=".jpg" min_zoom="1" max_zoom="19" tile_size="256" img_density="8" avg_img_size="10000"/>
-   <tile_source name="MML Ortoilmakuva (FI)" url_template="https://tiles.kartat.kapsi.fi/ortokuva/{0}/{1}/{2}.jpg" ext=".jpg" min_zoom="1" max_zoom="19" tile_size="256" img_density="8" avg_img_size="10000"/>
-   <tile_source name="MML Kiinteistörajat (FI)" url_template="https://tiles.kartat.kapsi.fi/kiinteistorajat/{0}/{1}/{2}.jpg" ext=".jpg" min_zoom="1" max_zoom="19" tile_size="256" img_density="8" avg_img_size="10000"/>
+   <tile_source name="🇫🇮 MML Peruskartta (FI)" url_template="https://tiles.kartat.kapsi.fi/peruskartta/{0}/{1}/{2}.jpg" ext=".jpg" min_zoom="1" max_zoom="19" tile_size="256" img_density="8" avg_img_size="10000"/>
+   <tile_source name="🇫🇮 MML Taustakartta (FI)" url_template="https://tiles.kartat.kapsi.fi/taustakartta/{0}/{1}/{2}.jpg" ext=".jpg" min_zoom="1" max_zoom="19" tile_size="256" img_density="8" avg_img_size="10000"/>
+   <tile_source name="🇫🇮 MML Ortoilmakuva (FI)" url_template="https://tiles.kartat.kapsi.fi/ortokuva/{0}/{1}/{2}.jpg" ext=".jpg" min_zoom="1" max_zoom="19" tile_size="256" img_density="8" avg_img_size="10000"/>
+   <tile_source name="🇫🇮 MML Kiinteistörajat (FI)" url_template="https://tiles.kartat.kapsi.fi/kiinteistorajat/{0}/{1}/{2}.jpg" ext=".jpg" min_zoom="1" max_zoom="19" tile_size="256" img_density="8" avg_img_size="10000"/>
 	
    <tile_source name="GeoVelo" url_template="https://tiles4.geovelo.fr/raster/facilities/{0}/{1}/{2}.png" ext=".png" min_zoom="2" max_zoom="16" tile_size="256" img_density="8" avg_img_size="10000"/>
 
@@ -159,10 +159,10 @@
 
    <tile_source name="Getlost Maps" url_template="https://live.getlost.com.au/{0}/{1}/{2}.jpg" ext=".jpg" min_zoom="11" max_zoom="14" tile_size="256" img_density="8" avg_img_size="25000"/>
 
-   <tile_source name="USGS National Map" url_template="https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{0}/{2}/{1}" ext=".jpeg" min_zoom="5" max_zoom="16" tile_size="256" img_density="8" avg_img_size="30000"/>
-   <tile_source name="ArcGIS World Imagery" url_template="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{0}/{2}/{1}" ext=".jpeg" min_zoom="1" max_zoom="18" tile_size="256" img_density="8" avg_img_size="20000"/>
-   <tile_source name="ArcGIS World Boundaries and Places" url_template="https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="1" max_zoom="18" tile_size="256" img_density="8" avg_img_size="10000"/>
-   <tile_source name="USA Topo Maps" url_template="https://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer/tile/{0}/{2}/{1}" ext=".jpeg" min_zoom="5" max_zoom="16" tile_size="256" img_density="8" avg_img_size="25000"/>
+   <tile_source name="🇺🇸 USGS National Map" url_template="https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{0}/{2}/{1}" ext=".jpeg" min_zoom="5" max_zoom="16" tile_size="256" img_density="8" avg_img_size="30000"/>
+   <tile_source name="🇺🇸 USA Topo Maps" url_template="https://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer/tile/{0}/{2}/{1}" ext=".jpeg" min_zoom="5" max_zoom="16" tile_size="256" img_density="8" avg_img_size="25000"/>
+   <tile_source name="🛰 🇺🇸 ArcGIS World Imagery - Satellite" url_template="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{0}/{2}/{1}" ext=".jpeg" min_zoom="1" max_zoom="18" tile_size="256" img_density="8" avg_img_size="20000"/>
+   <tile_source name="🇺🇸 ArcGIS World Boundaries and Places" url_template="https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="1" max_zoom="18" tile_size="256" img_density="8" avg_img_size="10000"/>
 <!--   <tile_source name="FS Topo" url_template="https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_FSTopo_01/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="3" max_zoom="17" tile_size="256" img_density="8" avg_img_size="25000"/>-->
 
    <tile_source name="Lasy Państwowe (PL)" url_template="https://mapserver.bdl.lasy.gov.pl/arcgis/rest/services/WMTS_BDL_kat_wlasnosci/MapServer/WMTS/tile/1.0.0/WMTS_BDL_kat_wlasnosci/default/GoogleMapsCompatible/{0}/{2}/{1}.png" ext=".png" min_zoom="7" max_zoom="16" tile_size="256" img_density="32" avg_img_size="10000"/>
