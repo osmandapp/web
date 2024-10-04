@@ -328,12 +328,19 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
 
     return (
         <Dialog
+            id={'se-download-backup-dialog'}
             classes={{ paper: classes.paper }}
             open={openDownloadBackupDialog}
             onClose={() => setOpenDownloadBackupDialog(false)}
         >
             {loadingBackup && !stopProgress && (
-                <LinearProgress sx={{ height: '8px' }} variant="determinate" value={progress} size={20} />
+                <LinearProgress
+                    id={'se-download-backup-progress'}
+                    sx={{ height: '8px' }}
+                    variant="determinate"
+                    value={progress}
+                    size={20}
+                />
             )}
             {loadingBackup && stopProgress && <LinearProgress sx={{ height: '8px' }} size={20} />}
             <Grid container spacing={2}>
@@ -395,7 +402,9 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
                     );
                 })}
                 {errorBackup !== null && typeof errorBackup === 'string' && (
-                    <Alert severity="error">{errorBackup}</Alert>
+                    <Alert id={'se-download-backup-error'} severity="error">
+                        {errorBackup}
+                    </Alert>
                 )}
             </DialogContent>
             <ToggleButtonGroup
@@ -406,14 +415,21 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
                 onChange={handleBackupType}
                 aria-label="Platform"
             >
-                <ToggleButton value={BACKUP_TYPE_ZIP}>ZIP</ToggleButton>
+                <ToggleButton id={'se-zip-backup'} value={BACKUP_TYPE_ZIP}>
+                    ZIP
+                </ToggleButton>
                 <ToggleButton value={BACKUP_TYPE_OSF}>OSF</ToggleButton>
             </ToggleButtonGroup>
             <DialogActions style={{ justifyContent: 'space-between' }}>
                 <Alert sx={{ backgroundColor: 'transparent !important' }} severity="info">
                     {backupData && getBackupTime()}
                 </Alert>
-                <Button variant="contained" disabled={!backupData} onClick={() => downloadBackup()}>
+                <Button
+                    id={'se-download-backup-btn'}
+                    variant="contained"
+                    disabled={!backupData}
+                    onClick={() => downloadBackup()}
+                >
                     {`Download backup`}
                     {backupData && ` (${getTypeSize(backupData?.size)})`}
                 </Button>
