@@ -122,9 +122,9 @@
 
 
    <!-- Norway maps-->
-   <tile_source name="🇳🇴 Finn Kart (NO)" url_template="http://maptiles{rnd}.finncdn.no/tileService/1.0.3/normaphd/{0}/{1}/{2}.png" ext=".png" min_zoom="5" max_zoom="17" tile_size="256" img_density="32" avg_img_size="18000"/>
+  <!-- <tile_source name="🇳🇴 Finn Kart (NO)" url_template="http://maptiles{rnd}.finncdn.no/tileService/1.0.3/normaphd/{0}/{1}/{2}.png" ext=".png" min_zoom="5" max_zoom="17" tile_size="256" img_density="32" avg_img_size="18000"/> -->
    <tile_source name="🇳🇴 Kartverket Topo (NO)" url_template="https://cache.kartverket.no/topo/v1/wmts/1.0.0/?SERVICE=WMTS&amp;REQUEST=GetTile&amp;VERSION=1.0.0&amp;LAYER=topo&amp;STYLE=default&amp;FORMAT=image/png&amp;tileMatrixSet=googlemaps&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}" ext=".png" min_zoom="5" max_zoom="17" tile_size="256" img_density="32" avg_img_size="18000"/>
-   <tile_source name="🇳🇴 ⚓ Kartverket Nautical (NO)" url_template="https://cache.kartverket.no/v1/wmts?layer=topograatone&amp;style=default&amp;tilematrixset=utm33n&amp;Service=WMTS&amp;Request=GetTile&amp;Version=1.0.0&amp;Format=image%2Fpng&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}" ext=".png" min_zoom="5" max_zoom="19" tile_size="256" img_density="32" avg_img_size="18000"/>   
+   <tile_source name="🇳🇴 ⚓ Kartverket Nautical (NO)" url_template="https://cache.kartverket.no/v1/wmts?layer=topograatone&amp;style=default&amp;tilematrixset={0}&amp;Service=WMTS&amp;Request=GetTile&amp;Version=1.0.0&amp;Format=image%2Fpng&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}" ext=".png" min_zoom="5" max_zoom="19" tile_size="256" img_density="32" avg_img_size="18000"/>   
    <tile_source name="🇳🇴 🛰 Kartverket Orthophoto (NO)" url_template="https://gatekeeper1.geonorge.no/BaatGatekeeper/gk/gk.nib_utm33_wmts_v2?&amp;gkt=D435FC171E8FA0CFDF57207DF5202FF99440E10A8276E6CB86F26777CB4A480643556557B0B5C2FF895790F982B9CB962DD857DEC12A11E68D018F0853CD0DA1&amp;layer=Nibcache_UTM33_EUREF89&amp;style=default&amp;tilematrixset=default028mm&amp;Service=WMTS&amp;Request=GetTile&amp;Version=1.0.0&amp;Format=image%2Fpng&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}" ext=".png" min_zoom="5" max_zoom="17" tile_size="256" img_density="32" avg_img_size="18000"/>
 
 <!--
@@ -161,7 +161,6 @@
    <tile_source name="🇸🇰 🥾 Freemap.sk-hiking" url_template="http://a.freemap.sk/T/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="16" tile_size="256" img_density="16" avg_img_size="18000" />
    <tile_source name="🇸🇰 🚴 Freemap.sk-cycle" url_template="http://a.freemap.sk/C/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="16" tile_size="256" img_density="16" avg_img_size="18000" />
    <tile_source name="🇸🇰 ⛷️ Freemap.sk-ski" url_template="http://a.freemap.sk/K/{0}/{1}/{-=2}.png" ext=".png" min_zoom="1" max_zoom="16" tile_size="256" img_density="16" avg_img_size="18000" />
-   <tile_source name="Bilingual Southeast Asia" url_template="http://tile.osm-tools.org/osm/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/>
 
 
    <!-- Poland maps-->
@@ -174,8 +173,8 @@
 <tile_source name="PRNG (PL)" url_template="http://sdi.geoportal.gov.pl/WMS_PRNG/service.svc/get?FORMAT=image/png&amp;VERSION=1.1.1&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;LAYERS=Miasta_wojewodzkie,Miasta_pozostale,Inne_miejscowosci,Czesci_miejscowosci,Wsie,Hydrografia,Fizjografia&amp;STYLES=&amp;SRS={proj}&amp;WIDTH={width}&amp;HEIGHT={height}&amp;BBOX={bbox}"  ext=".png" min_zoom="1" max_zoom="18" tile_size="256" img_density="16" avg_img_size="18000"/> --> <!-- can't parse argument: proj -->
 
    <tile_source name="🇵🇱 Lasy Państwowe (PL)" url_template="https://mapserver.bdl.lasy.gov.pl/arcgis/rest/services/WMTS_BDL_kat_wlasnosci/MapServer/WMTS/tile/1.0.0/WMTS_BDL_kat_wlasnosci/default/GoogleMapsCompatible/{0}/{2}/{1}.png" ext=".png" min_zoom="7" max_zoom="16" tile_size="256" img_density="32" avg_img_size="10000"/>
-   <tile_source name="🇵🇱 Topo Old Geoportal (PL)" url_template="https://mapy.geoportal.gov.pl/wss/service/WMTS/guest/wmts/TOPO?service=WMTS&amp;request=GetTile&amp;version=1.0.0&amp;layer=MAPA%20TOPOGRAFICZNA&amp;style=default&amp;format=image/jpeg&amp;TileMatrix={0}&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}&amp;refr=1"  ext=".png" min_zoom="5" max_zoom="18" tile_size="256" img_density="16" avg_img_size="18000"/>
-   <tile_source name="🇵🇱 Hydro Geoportal (PL)" url_template="https://mapy.geoportal.gov.pl/wss/service/img/guest/HYDRO/MapServer/WMSServer?VERSION=1.3.0&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;LAYERS=Raster&amp;CRS=EPSG:2180&amp;BBOX={bbox}&amp;WIDTH={width}&amp;height={height}&amp;TRANSPARENT=FALSE&amp;FORMAT=image/jpeg&amp;styles=&amp;uniq={uniq}"  ext=".png" min_zoom="5" max_zoom="18" tile_size="256" img_density="16" avg_img_size="18000"/>
+   <!-- <tile_source name="🇵🇱 Topo Old Geoportal (PL)" url_template="https://mapy.geoportal.gov.pl/wss/service/WMTS/guest/wmts/TOPO?service=WMTS&amp;request=GetTile&amp;version=1.0.0&amp;layer=MAPA%20TOPOGRAFICZNA&amp;style=default&amp;format=image/jpeg&amp;TileMatrix={0}&amp;TileMatrix={0}&amp;TileCol={1}&amp;TileRow={2}&amp;refr=1"  ext=".png" min_zoom="5" max_zoom="18" tile_size="256" img_density="16" avg_img_size="18000"/>
+   <tile_source name="🇵🇱 Hydro Geoportal (PL)" url_template="https://mapy.geoportal.gov.pl/wss/service/img/guest/HYDRO/MapServer/WMSServer?VERSION=1.3.0&amp;SERVICE=WMS&amp;REQUEST=GetMap&amp;LAYERS=Raster&amp;CRS=EPSG:2180&amp;BBOX={bbox}&amp;WIDTH={width}&amp;height={height}&amp;TRANSPARENT=FALSE&amp;FORMAT=image/jpeg&amp;styles=&amp;uniq={uniq}"  ext=".png" min_zoom="5" max_zoom="18" tile_size="256" img_density="16" avg_img_size="18000"/> -->
 
 
 <!--
@@ -239,5 +238,7 @@
    <tile_source name="🇺🇸 🛰 ArcGIS World Imagery - Satellite" url_template="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{0}/{2}/{1}" ext=".jpeg" min_zoom="1" max_zoom="18" tile_size="256" img_density="8" avg_img_size="20000"/>
    <tile_source name="🇺🇸 ArcGIS World Boundaries and Places" url_template="https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="1" max_zoom="18" tile_size="256" img_density="8" avg_img_size="10000"/>
 <!--   <tile_source name="FS Topo" url_template="https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_FSTopo_01/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="3" max_zoom="17" tile_size="256" img_density="8" avg_img_size="25000"/>-->
+
+   <tile_source name="Bilingual Southeast Asia" url_template="http://tile.osm-tools.org/osm/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/>
 
 </tile_sources>
