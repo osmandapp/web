@@ -35,7 +35,7 @@ export default function PhotosModal({ photos }) {
             }
             setActiveStep(ctx.selectedPhotoInd);
             const currentPhoto = photos[ctx.selectedPhotoInd];
-            if (currentPhoto.properties.date && currentPhoto.properties.author && currentPhoto.properties.license) {
+            if (currentPhoto.properties.author && currentPhoto.properties.license) {
                 setShowInfo(true);
                 setActivePhoto(currentPhoto);
             } else {
@@ -98,7 +98,12 @@ export default function PhotosModal({ photos }) {
     }
 
     function hasFooterInfo(photo) {
-        return photo?.properties?.date || photo?.properties?.author || photo?.properties?.license;
+        return (
+            photo?.properties?.date ||
+            photo?.properties?.author ||
+            photo?.properties?.license ||
+            photo?.properties?.description
+        );
     }
 
     const formatDate = (dateStr) => {
@@ -169,19 +174,12 @@ export default function PhotosModal({ photos }) {
                 {activePhoto !== null && activePhoto.imageTitle === photos[activeStep]?.imageTitle && showInfo && (
                     <AppBar position="static" className={styles.photoFooter} sx={{ backgroundColor: 'black' }}>
                         <Typography sx={{ color: 'white' }}>
-                            {activePhoto.properties.description
-                                ? `Description: ${formatDate(activePhoto.properties.description)}`
-                                : `Description: - `}
-                        </Typography>
-                        <Typography sx={{ color: 'white' }}>
                             {activePhoto.properties.date
                                 ? `Date: ${formatDate(activePhoto.properties.date)}`
                                 : `Date: - `}
                         </Typography>
                         <Typography sx={{ color: 'white' }}>
-                            {activePhoto.properties.author
-                                ? `Author: ${formatDate(activePhoto.properties.author)}`
-                                : `Author: - `}
+                            {activePhoto.properties.author ? `Author: ${activePhoto.properties.author}` : `Author: - `}
                         </Typography>
                         {activePhoto.properties.license ? (
                             <Typography sx={{ color: 'white' }}>
@@ -202,6 +200,15 @@ export default function PhotosModal({ photos }) {
                         ) : (
                             <Typography sx={{ color: 'white' }}>License: -</Typography>
                         )}
+                        <Typography sx={{ color: 'white' }}>
+                            {activePhoto.properties.description
+                                ? `Description: ${
+                                      activePhoto.properties.description.length > 150
+                                          ? `${activePhoto.properties.description.substring(0, 150)}...`
+                                          : activePhoto.properties.description
+                                  }`
+                                : `Description: - `}
+                        </Typography>
                     </AppBar>
                 )}
             </Box>
