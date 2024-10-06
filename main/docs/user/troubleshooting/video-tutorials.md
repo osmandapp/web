@@ -15,7 +15,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## OsmAnd Video Resources
 
-We’ve curated an extensive collection of video tutorials and guides on our [official OsmAnd YouTube channel](https://www.youtube.com/@OsmAndMapsNavigation/playlists), specifically designed for our global user base. The playlists are conveniently organized by language, making it simple to find tutorials, feature overviews, and user-generated content in your preferred language. Whether you are looking to deepen your understanding of OsmAnd, learning new features, or discovering how the community uses OsmAnd, you will find something useful. The following sections provide direct links to the playlists available in different languages.
+We’ve curated an extensive collection of video tutorials and guides on our [official OsmAnd YouTube channel](https://www.youtube.com/@OsmAndMapsNavigation/playlists), specifically designed for our global user base. The playlists are conveniently organized by language, making it simple to find tutorials, feature overviews, and user-generated content in your preferred language. Whether you want to deepen your understanding of OsmAnd, learn new features, or discover how the community uses OsmAnd, you will find something useful. The following sections provide direct links to the playlists available in different languages.
 
 
 ### Playlists by Language
