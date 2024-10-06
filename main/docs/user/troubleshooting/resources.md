@@ -134,8 +134,12 @@ The following table lists various online map sources prepared by users, offering
 
 -->
 
-________________________________________
+## Engage with OsmAnd: Share, Suggest, and Connect
 
-<LinksSocial/>
-<LinksTelegram/>
-<AllStores/>
+If you have any suggestions for new map styles, plugins, or maybe you would like to contribute with your own creations to expand OsmAnd community resources, then please contact us. We appreciate and welcome your contributions to further develop OsmAnd database.
+
+- **Follow**: <LinksSocial/>  
+
+- **Join**: <LinksTelegram/>  
+
+- **Get**: <AllStores/>
