@@ -44,7 +44,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
         'SEARCH_HISTORY',
         'ITINERARY_GROUPS',
     ];
-    const settings = ['PROFILE', 'GLOBAL', 'QUICK_ACTIONS', 'AVOID_ROADS', 'POI_UI_FILTERS'];
+    const settings = ['PROFILE', 'GLOBAL', 'QUICK_ACTIONS', 'AVOID_ROADS', 'POI_UI_FILTERS', 'COLOR_DATA'];
     const resources = ['ONLINE_ROUTING_ENGINES'];
     const maps = ['MAP_SOURCES', 'FILE_MAPS', 'FILE_SRTM', 'FILE_ROADS', 'FILE_TILES', 'FILE_WIKI'];
     const menuType = ['My places', 'Settings', 'Resources', 'Maps'];
@@ -284,7 +284,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
                 setErrorBackup(`We couldn't create your backup. Please contact us at support@osmand.net`);
             });
 
-            if (resp.status === 200) {
+            if (resp?.status === 200) {
                 setLoadingBackup(false);
                 let name = resp.headers['content-disposition'].split('filename=')[1];
                 const url = document.createElement('a');
@@ -328,12 +328,19 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
 
     return (
         <Dialog
+            id={'se-download-backup-dialog'}
             classes={{ paper: classes.paper }}
             open={openDownloadBackupDialog}
             onClose={() => setOpenDownloadBackupDialog(false)}
         >
             {loadingBackup && !stopProgress && (
-                <LinearProgress sx={{ height: '8px' }} variant="determinate" value={progress} size={20} />
+                <LinearProgress
+                    id={'se-download-backup-progress'}
+                    sx={{ height: '8px' }}
+                    variant="determinate"
+                    value={progress}
+                    size={20}
+                />
             )}
             {loadingBackup && stopProgress && <LinearProgress sx={{ height: '8px' }} size={20} />}
             <Grid container spacing={2}>
@@ -394,9 +401,11 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
                         </React.Fragment>
                     );
                 })}
-                <Typography variant="caption" color="textSecondary">
-                    {errorBackup}
-                </Typography>
+                {errorBackup !== null && typeof errorBackup === 'string' && (
+                    <Alert id={'se-download-backup-error'} severity="error">
+                        {errorBackup}
+                    </Alert>
+                )}
             </DialogContent>
             <ToggleButtonGroup
                 color="primary"
@@ -406,14 +415,21 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
                 onChange={handleBackupType}
                 aria-label="Platform"
             >
-                <ToggleButton value={BACKUP_TYPE_ZIP}>ZIP</ToggleButton>
+                <ToggleButton id={'se-zip-backup'} value={BACKUP_TYPE_ZIP}>
+                    ZIP
+                </ToggleButton>
                 <ToggleButton value={BACKUP_TYPE_OSF}>OSF</ToggleButton>
             </ToggleButtonGroup>
             <DialogActions style={{ justifyContent: 'space-between' }}>
                 <Alert sx={{ backgroundColor: 'transparent !important' }} severity="info">
                     {backupData && getBackupTime()}
                 </Alert>
-                <Button variant="contained" disabled={!backupData} onClick={() => downloadBackup()}>
+                <Button
+                    id={'se-download-backup-btn'}
+                    variant="contained"
+                    disabled={!backupData}
+                    onClick={() => downloadBackup()}
+                >
                     {`Download backup`}
                     {backupData && ` (${getTypeSize(backupData?.size)})`}
                 </Button>

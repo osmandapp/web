@@ -107,7 +107,9 @@ export default function LoginDialog() {
                                         </Typography>
                                     </ListItemText>
                                 </MenuItem>
-                                <Button onClick={() => setOpenDownloadBackupDialog(true)}>Download backup</Button>
+                                <Button id={'se-download-backup'} onClick={() => setOpenDownloadBackupDialog(true)}>
+                                    Download backup
+                                </Button>
                             </>
                         )}
                         <Divider sx={{ mt: 1 }} />
