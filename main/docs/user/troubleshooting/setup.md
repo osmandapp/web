@@ -17,6 +17,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ### How to recover data
 
+To prevent data loss, ensure that your personal data, routes, and maps are backed up. OsmAnd offers options for exporting your data to various formats. In case of data loss or device change, follow [these steps](https://osmand.net/docs/user/personal/import-export/#preventing-data-loss) to restore your data from a backup.
+
+
 ### How to transfer Favorites and Tracks to a new device
 
 - The simplest method is to export a profile with the necessary data: *Menu → Settings → Export →* select the data that you want to export.
@@ -32,6 +35,22 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 No additional payment is required. If the paid features are not restored, go to your device's *Settings → Apps →* select the app store, clear the cache, restart your device, and try again. For further details, refer to [this article](../purchases/android.md#restore-purchases).
 
 
+### How to Buy and Restore OsmAnd in the Huawei AppGallery
+
+1. **Buy OsmAnd**:
+   - Open *Huawei AppGallery* on the [OsmAnd](https://appgallery.huawei.com/#/app/C101486545) page and download the app.
+   - You can only download the free version. To make a purchase, go to OsmAnd *Menu → Settings → Purchases* and select the required type.
+   - See more details [here](https://osmand.net/docs/user/purchases/android#install-application).
+
+2. **Restore purchase**:
+   - Log in to *Huawei AppGallery* with the same account where you purchased OsmAnd.
+   - Check your purchase in the [Huawei App Gallery order history](https://consumer.huawei.com/en/support/content/en-us00694318/).
+   - You may need to update *Huawei AppGallery* and clear the cache for it.
+   - To restore purchases, follow OsmAnd *Menu → Settings → Purchases → Restore Purchases*.
+   - For more information, see the article [Android Purchases](https://osmand.net/docs/user/purchases/android#restore-subscription--in-app).
+
+
+
 ### How to restore the Topography (formerly Contour lines) plugin purchase
 
 To restore the [Topography plugin](https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid):
@@ -44,6 +63,7 @@ To restore the [Topography plugin](https://play.google.com/store/apps/details?id
 ### How to identify if OsmAnd Unlimited is active
 
 Navigate to *Menu → Download maps* and tap the map counter (the field labeled *Free version. X downloads left*). If OsmAnd Unlimited is active, the display will show the remaining device storage instead of the number of free downloads.
+
 
 ### Can I get the full version of OsmAnd as a separate app for iOS?
 
