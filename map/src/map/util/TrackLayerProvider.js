@@ -183,6 +183,12 @@ function getPointGeoProfile(point, points) {
     }
 }
 
+export function getPointLatLon(point) {
+    let lat = point.lat ?? point.ext.lat;
+    let lon = point.lon ?? point.ext.lon;
+    return lat && lon ? { lat: lat, lon: lon } : null;
+}
+
 function parseWpt({ points, layers, ctx = null, data = null, map = null }) {
     points &&
         points.forEach((point) => {
@@ -212,6 +218,7 @@ function parseWpt({ points, layers, ctx = null, data = null, map = null }) {
             }
             opt.draggable = false;
             opt.wpt = true;
+            opt.color = point.color;
             let marker = new L.Marker(new L.LatLng(lat, lon), opt);
             if (ctx && map && data) {
                 marker.on('click', (e) => {

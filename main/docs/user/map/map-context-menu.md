@@ -111,7 +111,7 @@ To hide the context menu:
 
 </Tabs>
 
-In order to gain more details about object you need to tap the *Details* button in the Context menu or move the panel up.
+To gain more details about object, you need to tap the *Details* button in the Context menu or move the panel up.
 
 
 ### Object Info
@@ -170,7 +170,7 @@ OsmAnd displays **additional POI names** in the *Map Context menu*.
 
 In the Context menu, you can find [geographical coordinates](../search/search-coordinates.md#coordinate-format) of a point in various formats and also shareable OsmAnd and [OpenStreetMap Links](../map/map-context-menu.md#openstreetmap-link) (the last option is available only when the [OpenStreetMap editing plugin](../plugins/osm-editing.md) is enabled). If you expand coordinates section and long tap any line from the list, its values will be automatically copied to the clipboard (**Android**) or the *Copy* option becomes available in the pop-up message (**iOS**).  
 
-OsmAnd Web Link can be automatically recognized by OsmAnd (example: https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771). Both OsmAnd and [Openstreetmap links](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) are opened on corresponding sites with a pin mark to the place of interest.  
+OsmAnd Web Link can be automatically recognized by OsmAnd (example: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Both OsmAnd and [Openstreetmap links](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) are opened on corresponding sites with a pin mark to the place of interest.  
 
 
 ### Nearby POIs/ Wikipedia
@@ -315,9 +315,9 @@ It is a set of specific manipulations that can be performed on a point or object
 
 In the context menu there are options to **add** or to **edit** the selected point / object to the [favorites list](../personal/myplaces.md).
 
-- In order to **add**, you need to select a point / object, tap the *Star* icon (with signature Add) and enter all the necessary information.  
+- To **Add**, you need to select a point / object, tap the *Star* icon (with signature Add) and enter all the necessary information.  
 
-- In order to **edit** information about favorite point you need to turn on *Show on the map* (*Menu → Me places → Favorites*) then press on it and in the Context menu instead of *Star* icon will appear *Pancil icon* (with signature Edit).
+- To **Edit** information about favorite point, you need to turn on *Show on the map* (*Menu → Me places → Favorites*) then press on it and in the Context menu instead of *Star* icon will appear *Pancil icon* (with signature Edit).
 
 - [<Translate android="true" ids="add_edit_favorite"/>](../personal/myplaces.md)  - adds a selected point to the favorites list.
 
@@ -339,7 +339,7 @@ In the context menu there are options to **add** or to **edit** the selected poi
 
 </Tabs>
 
-It is possible to mark a point or an object in order to make it easier to plan navigation. You just need to tap the *flag* icon in the menu (Android), *arrow* (iOS) - displays direction and distance to the selected point from your current location.
+It is possible to mark a point or an object to make it easier to plan navigation. You just need to tap the *flag* icon in the menu (Android), *arrow* (iOS) - displays direction and distance to the selected point from your current location.
 
 Actions:
 
@@ -410,11 +410,11 @@ Available options to share the location:
 
 </Tabs>
 
-In order to start navigation or route planning, you need to select destination first with [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#directions). In case you already have a destination point, the menu will suggest you to replace the destnation point or to insert as another intermediate or start point.
+To start navigation or route planning, you need to select destination first with [<Translate android="true" ids="get_directions"/>](../widgets/map-buttons.md#directions). In case you already have a destination point, the menu will suggest you to replace the destnation point or to insert as another intermediate or start point.
 
 It is also possible to select *From* Destination first via Map context menu (<Translate android="true" ids="context_menu_item_directions_from"/>).
 
-**NOTE**. If you tap **Start navigation** - *From* point will be discarded as application enters in Navigation mode. In order to preserve a route, don't tap *Start navigation* and [swipe down](#hide-context-menu)  *Route preparation* menu.
+**NOTE**. If you tap **Start navigation** - *From* point will be discarded as application enters in Navigation mode. To preserve a route, don't tap *Start navigation* and [swipe down](#hide-context-menu)  *Route preparation* menu.
 
 Read more about [navigation](../navigation/setup/route-navigation.md) here.
 
@@ -577,7 +577,7 @@ In case there is no offline map present at selected location, for example map ob
 
 </Tabs>
 
-Any selected location on the map could be marked as [a parking position](../plugins/parking.md). In order to delete parking position, you can open context menu associated with parking location.
+Any selected location on the map could be marked as [a parking position](../plugins/parking.md). To delete parking position, you can open context menu associated with parking location.
 
 Requires [Parking position plugin](../plugins/parking.md).
 

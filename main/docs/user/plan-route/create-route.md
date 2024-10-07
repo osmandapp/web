@@ -165,7 +165,7 @@ If you open a track and see ***undefined*** profile icon, that means you can sel
 
 </Tabs>  
 
-In order to measure a distance or plan a trip, you need to add points at the *Pointer* location one by one and clicking *Add Point* button. By accessing **points list** below you can reorder points, delete or access to a specific [point context menu](#point-context-menu).
+To measure a distance or plan a trip, you need to add points at the *Pointer* location one by one and clicking *Add Point* button. By accessing **points list** below you can reorder points, delete or access to a specific [point context menu](#point-context-menu).
 
 :::note
 You can also **Undo**/**Redo** every action you made in plan route.

@@ -30,7 +30,13 @@ import { ReactComponent as DescriptionIcon } from '../../../assets/icons/ic_acti
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_dark.svg';
 import { ReactComponent as FavoritesIcon } from '../../../assets/menu/ic_action_favorite.svg';
 import { ReactComponent as WikiIcon } from '../../../assets/icons/ic_plugin_wikipedia.svg';
-import { cleanHtml, DEFAULT_ICON_COLOR, DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../../manager/PoiManager';
+import {
+    cleanHtml,
+    DEFAULT_ICON_COLOR,
+    DEFAULT_POI_COLOR,
+    DEFAULT_POI_SHAPE,
+    translateWithSplit,
+} from '../../../manager/PoiManager';
 import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
 import FavoritesManager, {
     getColorLocation,
@@ -72,7 +78,7 @@ import { Dialog } from '@material-ui/core';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
-import { getPropsFromSearchResultItem } from '../../../menu/search/search/SearchResultItem';
+import { getFirstSubstring, getPropsFromSearchResultItem } from '../../../menu/search/search/SearchResultItem';
 import { SEARCH_ICON_MAP_OBJ } from '../../../map/layers/SearchLayer';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
@@ -164,10 +170,11 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                         features: wikiCommons.files,
                     };
                 }
+                const pType = translateWithSplit(t, POI_PREFIX + poiOptions[TYPE_OSM_VALUE]);
                 result = {
                     type: type,
-                    poiType: t(POI_PREFIX + poiOptions[TYPE_OSM_VALUE]),
-                    name: poiOptions.title ? poiOptions.title : t(POI_PREFIX + poiOptions[TYPE_OSM_VALUE]),
+                    poiType: pType,
+                    name: poiOptions.title ?? pType,
                     latlon: { lat: latlng.lat, lon: latlng.lng },
                     background: DEFAULT_POI_SHAPE,
                     color: DEFAULT_POI_COLOR,
@@ -188,7 +195,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                 result = {
                     id: wikiObj?.properties.id,
                     type: type,
-                    poiType: t(`${POI_PREFIX}${wikiObj.properties?.poisubtype}`),
+                    poiType: translateWithSplit(t, `${POI_PREFIX}${wikiObj.properties?.poisubtype}`),
                     name: wikiObj?.properties.wikiTitle,
                     latlon: { lat: coords[1], lon: coords[0] },
                     wikiDesc: wikiObj?.properties.wikiDesc,
@@ -663,7 +670,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
             return (
                 <Typography className={styles.name}>
                     <Link href={wpt.osmUrl} target="_blank" underline="none">
-                        {wpt.name ? wpt.name : wpt.poiType}
+                        {wpt.name ?? getFirstSubstring(wpt.poiType)}
                     </Link>
                 </Typography>
             );
@@ -699,7 +706,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                         <WptName />
                                     </MenuItemWithLines>
                                     <Typography className={styles.type} noWrap>
-                                        {wpt?.poiType}
+                                        {getFirstSubstring(wpt?.poiType)}
                                     </Typography>
                                 </div>
                                 {wpt.icon && (

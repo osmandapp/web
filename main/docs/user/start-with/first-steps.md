@@ -24,7 +24,7 @@ Explore how to download maps, how to configure the application, how to use map a
 
 <TabItem value="android" label="Android">
 
-![Offline navigation Android](@site/static/img/settings/google_play_screen1_android.png) 
+![Offline navigation Android](@site/static/img/settings/google_play_screen1_android.png)
 
 </TabItem>
 
@@ -38,9 +38,10 @@ Explore how to download maps, how to configure the application, how to use map a
 
 
 ## Install OsmAnd
+
 OsmAnd is a mobile application for Maps and Navigation available for **Android** and **iOS**. You can download it on most popular Markets.
 
-**Android markets**: [Google play store](https://play.google.com/store/apps/details?id=net.osmand), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545), [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8/ref=sr_1_3?dchild=1&keywords=osmand&qid=1616685559&sr=8-3). 
+**Android markets**: [Google play store](https://play.google.com/store/apps/details?id=net.osmand), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545), [Amazon](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8/ref=sr_1_3?dchild=1&keywords=osmand&qid=1616685559&sr=8-3).
 
 <AndroidStore/>
 
@@ -54,6 +55,7 @@ OsmAnd is a mobile application for Maps and Navigation available for **Android**
 ## Welcome to OsmAnd
 
 Our goal is to create a fully functional map-oriented application that can be used for various purposes offline and online. The application has many features, so you won't have to switch between different apps, and everything will be at your fingertips.
+
 - View a Worldwide Map with a lot of detail displayed in [different map styles](../map/vector-maps.md).
 - Display, [search](../search/search-poi.md) and save various [Points of interest](../map/point-layers-on-map.md).
 - [Plan a route](../plan-route/create-route.md) by car, bicycle, foot and combine into multimodal routes.
@@ -67,7 +69,7 @@ Our goal is to create a fully functional map-oriented application that can be us
 
 ## Actions Guide
 
-### Permission to access the location  
+### Permission to Access the Location  
 
 <Tabs groupId="operating-systems">
 
@@ -87,13 +89,14 @@ Our goal is to create a fully functional map-oriented application that can be us
 
 We recommend that you grant OsmAnd permission to receive information about the precise location of your device. We do not collect, use or share your private information, so access to the precise geolocation is needed for correct offline work of search, navigation, and other OsmAnd functions.  
 
+
 ### How to download maps
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Show on the map](@site/static/img/steps/start_screen_download_andr.png) 
+![Show on the map](@site/static/img/steps/start_screen_download_andr.png)
 
 </TabItem>
 
@@ -314,7 +317,7 @@ OsmAnd allows you to make various marks on the Map for your personal needs. For 
 
 ### How to search by address
 
-OsmAnd provides many search capabilities including address search. By default it uses [OpenStreetMap data](https://nominatim.openstreetmap.org/ui/search.html) and should be able to find all addresses using Quick Search input. Also you can [search](../search/search-address.md) by city, street, postcode and coordinates. 
+OsmAnd provides many search capabilities including address search. By default it uses [OpenStreetMap data](https://nominatim.openstreetmap.org/ui/search.html) and should be able to find all addresses using Quick Search input. Also you can [search](../search/search-address.md) by city, street, postcode and coordinates.
 
 <Tabs groupId="operating-systems">
 
@@ -333,7 +336,7 @@ OsmAnd provides many search capabilities including address search. By default it
 </Tabs>
 
 :::note
-You need to download the map before searching for an address there. Also, if your current location is too far from your searching address you might need to increase the searching radius. 
+You need to download the map before searching for an address there. Also, if your current location is too far from your searching address you might need to increase the searching radius.
 :::
 
 [Read more](../search/search-address.md) about address search.
@@ -387,9 +390,9 @@ You need to download the map before searching for an address there. Also, if you
 
 ### How to edit maps
 
-OsmAnd powered by [OpenStreetMap](https://www.openstreetmap.org/) data. The maps are created by volunteer contributors, so they can have more or fewer details depending on how much work has been done at a certain part of the map. Anyone can register as a contributor and add or edit OSM maps. OsmAnd provides an editing plugin that helps to improve the OpenStreetMap. 
+OsmAnd powered by [OpenStreetMap](https://www.openstreetmap.org/) data. The maps are created by volunteer contributors, so they can have more or fewer details depending on how much work has been done at a certain part of the map. Anyone can register as a contributor and add or edit OSM maps. OsmAnd provides an editing plugin that helps to improve the OpenStreetMap.
 
-<Tabs groupId="operating-systems"> 
+<Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -410,7 +413,7 @@ OsmAnd powered by [OpenStreetMap](https://www.openstreetmap.org/) data. The maps
 
 ### How to close the app
 
-<Tabs groupId="operating-systems"> 
+<Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
@@ -438,7 +441,7 @@ You may need to perform the following steps before doing so, otherwise OsmAnd wi
 
 - [Cancel navigation](../navigation/setup/route-navigation.md)
 - [Stop map downloading and updating](../start-with/download-maps.md)
-- [Stop trip recording](../plugins/trip-recording.md#create-new-track) 
+- [Stop trip recording](../plugins/trip-recording.md#create-new-track)
 - [Stop audio/video note recording](../plugins/audio-video-notes.md)
 
 </TabItem>
@@ -446,7 +449,7 @@ You may need to perform the following steps before doing so, otherwise OsmAnd wi
 </Tabs>
 
 
-## App shortcuts
+## App Shortcuts
 
 <InfoAndroidOnly/>
 
@@ -470,14 +473,14 @@ Tapping to the action icon allows starting this action immediately.
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/steps/offline_help_screen_ios.png) 
+![Maps menu iOS](@site/static/img/steps/offline_help_screen_ios.png)
 
 </TabItem>
 
 </Tabs>
 
 In the *Help menu* you can find articles from our site [www.osmand.net/docs](https://osmand.net/docs/intro/). After initial download (Internet connection required), help articles are available offline.  
-The first subsection *Offline Help* contains the  **Most viewed** (or popular) articles among our users. **User guide** and **Troubleshooting** sections have the same structure as on the website.    
+The first subsection *Offline Help* contains the  **Most viewed** (or popular) articles among our users. **User guide** and **Troubleshooting** sections have the same structure as on the website.  
 In the *Help menu*, you can also find useful links to OsmAnd social networks, version information about your application, release notes, and support contacts. Through Help you can also send [logcat and crash logs](../troubleshooting/crash-logs.md#crash-and-logcat-logs).  
 
 ### Menu
@@ -492,7 +495,7 @@ In the *Help menu*, you can also find useful links to OsmAnd social networks, ve
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/steps/offline_help_menu_ios.png) 
+![Maps menu iOS](@site/static/img/steps/offline_help_menu_ios.png)
 
 </TabItem>
 
@@ -504,7 +507,7 @@ In the *Help menu*, you can also find useful links to OsmAnd social networks, ve
 - **Copy build version**. Enables users to quickly and accurately communicate the current version of the app to developers when reporting issues, simplifying the diagnostic and resolution process.
 
 
-### Most viewed
+### Most Viewed
 
 <Tabs groupId="operating-systems">
 
@@ -516,7 +519,7 @@ In the *Help menu*, you can also find useful links to OsmAnd social networks, ve
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/steps/offline_help_most_viewed_ios.png) 
+![Maps menu iOS](@site/static/img/steps/offline_help_most_viewed_ios.png)
 
 </TabItem>
 
@@ -525,7 +528,7 @@ In the *Help menu*, you can also find useful links to OsmAnd social networks, ve
 The Most viewed articles among our users refers to the articles in the app or on the site that have garnered the most views or user interactions. This metric helps identify content that is particularly interesting or useful to your users. It can provide valuable insights into user preferences and interests, allowing developers and content creators to tailor future content to better meet audience needs. Additionally, highlighting popular articles can help new users find valuable resources within the app.
 
 
-### User guide
+### User Guide
 
 <Tabs groupId="operating-systems">
 
@@ -537,7 +540,7 @@ The Most viewed articles among our users refers to the articles in the app or on
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/steps/guide_ios.png) 
+![Maps menu iOS](@site/static/img/steps/guide_ios.png)
 
 </TabItem>
 
@@ -558,7 +561,7 @@ The **User guide** section of the Help menu is a complete manual that follows th
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/steps/offline_help_troubleshooting_ios.png) 
+![Maps menu iOS](@site/static/img/steps/offline_help_troubleshooting_ios.png)
 
 </TabItem>
 
@@ -574,7 +577,7 @@ Solutions and tips for solving common problems. If you have a specific question,
 - [**Crash logs**](../troubleshooting/crash-logs.md). How to send crash logs to the OsmAnd team.
 - [**Android Auto**](../troubleshooting/android_auto.md) (*only for Android*). Auto navigation problems.
 
-### Contact us
+### Contact Us
 
 <Tabs groupId="operating-systems">
 
@@ -586,7 +589,7 @@ Solutions and tips for solving common problems. If you have a specific question,
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/steps/offline_help_contact_us_ios.png) 
+![Maps menu iOS](@site/static/img/steps/offline_help_contact_us_ios.png)
 
 </TabItem>
 
@@ -594,7 +597,7 @@ Solutions and tips for solving common problems. If you have a specific question,
 
 Gives you the opportunity to ask questions or make suggestions.
 
-### Report an issues
+### Report an Issues
 
 <Tabs groupId="operating-systems">
 
@@ -606,7 +609,7 @@ Gives you the opportunity to ask questions or make suggestions.
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/steps/offline_help_report_ios.png) 
+![Maps menu iOS](@site/static/img/steps/offline_help_report_ios.png)
 
 </TabItem>
 
@@ -628,7 +631,7 @@ Gives you the opportunity to ask questions or make suggestions.
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/steps/offline_about_ios.png) 
+![Maps menu iOS](@site/static/img/steps/offline_about_ios.png)
 
 </TabItem>
 
@@ -639,18 +642,20 @@ You can learn about our team, see the current version of the app and what's new,
 
 ## Privacy
 
-It is an [open source](https://github.com/osmandapp/osmand), ads-free / tracker-free privacy focused application. In order to preserve maximum privacy, OsmAnd offers Offline maps as a first place, so no interaction, geo information is leaked from your device. We are very attentive to what data is collected and what data is transferred by network, you can read more in our [Privacy policy](https://osmand.net/help-online/privacy-policy).  
+It is an [open source](https://github.com/osmandapp/osmand), ads-free / tracker-free privacy focused application. To preserve maximum privacy, OsmAnd offers Offline maps as a first place, so no interaction, geo information is leaked from your device. We are very attentive to what data is collected and what data is transferred by network, you can read more in our [Privacy policy](https://osmand.net/help-online/privacy-policy).  
 
 
 ## Permissions
 
-OsmAnd doesn't have any required permissions on iOS / Android version. 
+OsmAnd doesn't have any required permissions on iOS / Android version.
 
 **Essential**:
+
 - **Internet**. Initial download / update offline maps. Also could be needed to access online features such as [Street Level Imagery](../map/point-layers-on-map.md#-street-level-imagery), [Online photos](../map/map-context-menu.md#online-photos) or [Online maps](../map/raster-maps.md).
 - **GPS** / **GSM Network**. Determine your location, follow you in a navigation mode, record your trip (optional). This permission is asked when you click [my location button](../widgets/map-buttons.md#my-location--zoom) or when you [start navigation](../navigation/setup/route-navigation.md#start--stop-navigation).
 
 **Optional**:
+
 - **Camera/voice recording** (*Android*). Only used by [the Audio/Video notes](../plugins/audio-video-notes.md). This feature is packaged as plugin and by default disabled. It allows to quickly create location-related audio/video notes during a trip.
 
 

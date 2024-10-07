@@ -12,32 +12,34 @@ import Translate from '@site/src/components/Translate.js';
 
 # Troubleshooting
 
-Solutions and hints for frequently encountered issues.
+Solutions and hints for common problems.
 
 ### [Setup](./setup.md)
 
-Most typical issues encountered during application setup
+The most typical issues encountered when setting up the application.
 
 ### [Maps & Data](./maps-data.md)
 
-Issues related to maps, search and other data.
+Issues related to maps, search, and other data.
 
 ### [Navigation](./navigation.md)
 
-Most typical issues encountered in navigation mode.
+The most common problems encountered in navigation mode.
 
 ### [Track recording](./track-recording-issues.md)
 
-Common issues with track recording: Noise, gaps, and inaccuracies
+Common issues with track recording, such as noise, gaps, or inaccuracies.
 
 ### [General](./general.md)
 
-General issues related to various OsmAnd's features.
+General issues related to various OsmAnd features.
 
 ### [Crash logs](./crash-logs.md)
 
-How to send crash logs to OsmAnd team
+Description of how to send crash logs to the OsmAnd team.
 
 ### [Android Auto](android_auto.md)
+
+The most typical issues related to Android Auto.
 
 

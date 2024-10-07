@@ -22,9 +22,9 @@ Plugins significantly extend the functionality of OsmAnd. Each is designed to ad
 Plugins can be internal, activated in the OsmAnd application, or external, separately installed programs. Third-party plugins work through the OsmAnd API and can access OsmAnd data.
 
 
-## Configure a plugin
+## Configure Plugin
 
-In order to access a plugin's functionality, it must first be [enabled](#enable--disable), and some plugins require a [purchase](#purchase) before use. Then, in some cases, a specific map layer must be activated, or a user profile must be [configured](#plugin-settings).
+To access a plugin's functionality, it must first be [enabled](#enable--disable), and some plugins require a [purchase](#purchase) before use. Then, in some cases, a specific map layer must be activated, or a user profile must be [configured](#plugin-settings).
 
 
 ### Enable / Disable
