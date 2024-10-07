@@ -1,4 +1,4 @@
-import { apiPost } from '../util/HttpApi';
+import { apiGet } from '../util/HttpApi';
 import filters from '../resources/wiki_data_filters.json';
 import {
     MAIN_CATEGORY_KEY_NAME,
@@ -18,9 +18,8 @@ export async function fetchPhotoProperties(photo) {
         const lang = i18n.language;
         try {
             // Parse image info
-            const parseResponse = await apiPost(
+            const parseResponse = await apiGet(
                 `${process.env.REACT_APP_USER_API_SITE}/routing/search/parse-image-info`,
-                '',
                 {
                     params: {
                         lang: lang,
