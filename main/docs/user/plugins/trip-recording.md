@@ -55,14 +55,15 @@ With the Trip Recording plugin in OsmAnd, you can easily start recording your tr
 
 - Activate recording using the [Distance/Start-Stop widget](#distance-start-stop).
 - Select the **Trip recording** option from the main menu (*Android only*): *<Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/>*.
-- Tap the **<Translate android="true" ids="start_recording"/>** button located in the [My Places](../personal/myplaces.md#tracks) section of the main menu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.  
+- Tap the **<Translate android="true" ids="start_recording"/>** button located in the [My Places](../personal/myplaces.md#tracks) section of the main menu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.
+- Use the system [notification](#notifications) in the notification area of your device (*Android only*).
 - Use the [application launcher](#launcher-android) to start recording (*Android only*).  
 
 **Recommendations:**
 
 - For accurate track recording, ensure that OsmAnd has permission to access the [precise location](../start-with/first-steps.md#permission-to-access-the-location) of your device.
 - **Troubleshooting**. iOS devices may sometimes temporarily *suspend or stop apps* from running in the background, which could interrupt track recording. For more detailed troubleshooting tips, check out the [Track Recording issues](../troubleshooting/track-recording-issues.md#recorded-tracks-have-gaps) section of the documentation.
-- Adjust the **Location Source** settings in OsmAnd to choose the most suitable GPS provider for accurate recordings. [Learn more here](../personal/global-settings.md#location-source).
+- Adjust the **Location Source** (*Android only*) settings in OsmAnd to choose the most suitable GPS provider for accurate recordings. [Learn more here](../personal/global-settings.md#location-source).
 
 
 ### Start a Dialog
@@ -179,7 +180,7 @@ For more details, you can explore the [**Tracks Context Menu**](../map/tracks/tr
 
 </Tabs>
 
-Manage which tracks are visible on your map using one of two options. Head to *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>* *→* [*<Translate ios="true" ids="shared_string_gpx_tracks"/> tab*](../personal/myplaces.md#tracks) and enable the *Show on map* option for any track you want to display or hide. Alternatively, you can go to *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_gpx_files"/>* to quickly adjust the visibility of all your tracks in one place.
+Manage which tracks are visible on your map using one of two options. Head to *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>* *→* [*<Translate ios="true" ids="shared_string_gpx_tracks"/> tab*](../map/tracks/index.md#my-places) and enable the *Show on map* option for any track you want to display or hide. Alternatively, you can go to *<Translate android="true" ids="shared_string_menu,configure_map"/>* *→* [*<Translate android="true" ids="shared_string_gpx_files"/>*](../map/tracks/index.md#configure-map) to quickly adjust the visibility of all your tracks in one place.
 
 
 ### Recorded GPX File
@@ -293,14 +294,14 @@ If [Notification](#recording-settings) is enabled in the plugin settings, trip r
 - The notification area opens when you swipe down from the top of the screen and closes when swiping up. These messages notify you of actions like starting/stopping trip recording, especially when automatic recording is enabled during navigation.
 - Notifications remain visible regardless of whether the app is running in the foreground, background, or is closed. You can manually clear the old notification if it is no longer needed, but this will not stop the ongoing recording.
 
-#### Important note
+**Important note**.
 
 This behavior is required by Android for any foreground service, like trip recording, to remain visible to the user.
 
 - If the notification is removed, Android will automatically stop the recording. You can use the [*Prevent standalone logging*](#recording-settings) setting.
 - The **Notification** setting in OsmAnd affects whether the notification bar shows a shortcut to start a recording when no recording is active. It does **not** control the visibility of the notification during an active recording.
 
-#### Additional *Android* options
+**Additional *Android* options**.
 
 ![Trip Rec Notification](@site/static/img/plugins/trip-recording/trip_rec_notification_andr.png)
 
@@ -311,7 +312,9 @@ This behavior is required by Android for any foreground service, like trip recor
 - OsmAnd is not listed under **Privacy** *→* **Special Permissions** → **Alarms and reminders**.
 -->
 
-#### Badge notification
+**Badge notification**.
+
+![Trip Rec Notification](@site/static/img/plugins/trip-recording/trip_rec_notification_badge_andr.png)
 
 App icon badge appears next to the OsmAnd icon when track recording is active.
 
