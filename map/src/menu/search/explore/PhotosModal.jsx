@@ -110,7 +110,7 @@ export default function PhotosModal({ photos }) {
         }
         return format(date, 'd MMMM yyyy', { locale });
     };
-    console.log(activePhoto);
+
     return (
         <Drawer
             open={open}
