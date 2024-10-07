@@ -35,19 +35,14 @@ export default function PhotosModal({ photos }) {
             }
             setActiveStep(ctx.selectedPhotoInd);
             const currentPhoto = photos[ctx.selectedPhotoInd];
-            if (currentPhoto.properties.author && currentPhoto.properties.license) {
-                setShowInfo(true);
-                setActivePhoto(currentPhoto);
-            } else {
-                fetchPhotoProperties(currentPhoto).then((photo) => {
-                    if (hasFooterInfo(photo)) {
-                        setShowInfo(true);
-                        setActivePhoto(photo);
-                    } else {
-                        setShowInfo(false);
-                    }
-                });
-            }
+            fetchPhotoProperties(currentPhoto).then((photo) => {
+                if (hasFooterInfo(photo)) {
+                    setShowInfo(true);
+                    setActivePhoto(photo);
+                } else {
+                    setShowInfo(false);
+                }
+            });
         }
     }, [ctx.selectedPhotoInd]);
 
@@ -115,7 +110,7 @@ export default function PhotosModal({ photos }) {
         }
         return format(date, 'd MMMM yyyy', { locale });
     };
-
+    console.log(activePhoto);
     return (
         <Drawer
             open={open}
@@ -139,7 +134,13 @@ export default function PhotosModal({ photos }) {
             <Box sx={{ width: '100%', height: '100%', position: 'relative' }}>
                 <AppBar position="static" sx={{ backgroundColor: 'black' }}>
                     <Toolbar className={headerStyles.toolbar}>
-                        <IconButton variant="contained" type="button" sx={{ fill: 'white' }} onClick={handleClose}>
+                        <IconButton
+                            id={'se-close-photo'}
+                            variant="contained"
+                            type="button"
+                            sx={{ fill: 'white' }}
+                            onClick={handleClose}
+                        >
                             <CloseIcon />
                         </IconButton>
                         <Typography component="div" className={styles.singlePhotoTitle}>
@@ -164,6 +165,7 @@ export default function PhotosModal({ photos }) {
                         <BackIcon />
                     </Button>
                     <Button
+                        id={'se-next-photo'}
                         onClick={handleNext}
                         disabled={activeStep === photos.length - 1}
                         className={styles.iconsPrevNext}
@@ -173,16 +175,16 @@ export default function PhotosModal({ photos }) {
                 </Box>
                 {activePhoto !== null && activePhoto.imageTitle === photos[activeStep]?.imageTitle && showInfo && (
                     <AppBar position="static" className={styles.photoFooter} sx={{ backgroundColor: 'black' }}>
-                        <Typography sx={{ color: 'white' }}>
+                        <Typography id={'se-photo-date'} sx={{ color: 'white' }}>
                             {activePhoto.properties.date
                                 ? `Date: ${formatDate(activePhoto.properties.date)}`
                                 : `Date: - `}
                         </Typography>
-                        <Typography sx={{ color: 'white' }}>
+                        <Typography id={'se-photo-author'} sx={{ color: 'white' }}>
                             {activePhoto.properties.author ? `Author: ${activePhoto.properties.author}` : `Author: - `}
                         </Typography>
                         {activePhoto.properties.license ? (
-                            <Typography sx={{ color: 'white' }}>
+                            <Typography id={'se-photo-license'} sx={{ color: 'white' }}>
                                 License:{' '}
                                 {activePhoto.properties.license.startsWith('Q') ? (
                                     <a
@@ -200,7 +202,7 @@ export default function PhotosModal({ photos }) {
                         ) : (
                             <Typography sx={{ color: 'white' }}>License: -</Typography>
                         )}
-                        <Typography sx={{ color: 'white' }}>
+                        <Typography id={'se-photo-description'} sx={{ color: 'white' }}>
                             {activePhoto.properties.description
                                 ? `Description: ${
                                       activePhoto.properties.description.length > 150
@@ -233,6 +235,7 @@ function PhotoItem({ photo, index, getWidth, getHeight, activeStep }) {
 
     return (
         <div
+            id={`se-photo-modal-${photo.properties.mediaId}`}
             key={index}
             style={{
                 display: 'flex',

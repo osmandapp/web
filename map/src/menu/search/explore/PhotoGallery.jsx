@@ -59,7 +59,7 @@ export default function PhotoGallery({ photos }) {
     return (
         <>
             {filteredPhotos.length > 0 && (
-                <Box sx={{ width: '100%' }}>
+                <Box id={'se-wpt-photos'} sx={{ width: '100%' }}>
                     <MenuItem className={styles.photoTitle}>
                         <ListItemText>
                             <Typography className={styles.photoTitleText}>{t('online_photos')}</Typography>
@@ -70,6 +70,7 @@ export default function PhotoGallery({ photos }) {
                             <Grid item xs={12} sm={6} key={index}>
                                 {!error[index] && (
                                     <img
+                                        id={`se-photo-${photo.properties.mediaId}`}
                                         onLoad={handleImageLoad}
                                         onError={() => handleImageError(index)}
                                         onClick={() => handleImageClick(index)}

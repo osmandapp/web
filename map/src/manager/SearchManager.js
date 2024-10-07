@@ -13,48 +13,42 @@ import i18n from 'i18next';
 export const WIKI_IMAGE_BASE_URL = 'https://commons.wikimedia.org/wiki/Special:FilePath/';
 
 export async function fetchPhotoProperties(photo) {
-    if (!photo.properties.author || !photo.properties.license) {
-        const imageTitle = getPhotoTitle(photo);
-        const lang = i18n.language;
-        try {
-            // Parse image info
-            const parseResponse = await apiGet(
-                `${process.env.REACT_APP_USER_API_SITE}/routing/search/parse-image-info`,
-                {
-                    params: {
-                        lang: lang,
-                        imageTitle: imageTitle,
-                    },
-                    apiCache: true,
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                }
-            );
+    const imageTitle = getPhotoTitle(photo);
+    const lang = i18n.language;
+    try {
+        // Parse image info
+        const parseResponse = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/parse-image-info`, {
+            params: {
+                lang: lang,
+                imageTitle: imageTitle,
+            },
+            apiCache: true,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
 
-            const parsedData = parseResponse?.data;
+        const parsedData = parseResponse?.data;
 
-            if (!parsedData) {
-                return photo;
-            }
-
-            return {
-                ...photo,
-                properties: {
-                    ...photo.properties,
-                    date: parsedData.date !== 'Unknown' ? parsedData.date : photo.properties.date,
-                    author: parsedData.author !== 'Unknown' ? parsedData.author : photo.properties.author,
-                    license: parsedData.license !== 'Unknown' ? parsedData.license : photo.properties.license,
-                    description:
-                        parsedData.description !== 'Unknown' ? parsedData.description : photo.properties.description,
-                },
-            };
-        } catch (error) {
-            console.error('Failed to fetch photo properties:', error);
+        if (!parsedData) {
             return photo;
         }
+
+        return {
+            ...photo,
+            properties: {
+                ...photo.properties,
+                date: parsedData.date !== 'Unknown' ? parsedData.date : photo.properties.date,
+                author: parsedData.author !== 'Unknown' ? parsedData.author : photo.properties.author,
+                license: parsedData.license !== 'Unknown' ? parsedData.license : photo.properties.license,
+                description:
+                    parsedData.description !== 'Unknown' ? parsedData.description : photo.properties.description,
+            },
+        };
+    } catch (error) {
+        console.error('Failed to fetch photo properties:', error);
+        return photo;
     }
-    return photo;
 }
 
 /**
