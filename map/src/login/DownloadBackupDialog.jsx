@@ -46,7 +46,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
     ];
     const settings = ['PROFILE', 'GLOBAL', 'QUICK_ACTIONS', 'AVOID_ROADS', 'POI_UI_FILTERS', 'COLOR_DATA'];
     const resources = ['ONLINE_ROUTING_ENGINES'];
-    const maps = ['MAP_SOURCES', 'FILE_MAPS', 'FILE_SRTM', 'FILE_ROADS', 'FILE_TILES', 'FILE_WIKI'];
+    const maps = ['MAP_SOURCES', 'FILE_MAPS', 'FILE_SRTM', 'FILE_ROADS', 'FILE_TILES', 'FILE_WIKI', 'TERRAIN_DATA'];
     const menuType = ['My places', 'Settings', 'Resources', 'Maps'];
 
     const FILE_TYPE = 'FILE';
