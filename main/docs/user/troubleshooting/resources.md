@@ -24,7 +24,7 @@ This article collects links to custom user manuals, social media groups, plugins
 
 OsmAnd's official documentation is thorough, but the community has also produced an array of custom manuals to help users with specific features and use cases.  
 
-These manuals, available in multiple languages, often provide unique insights, tips, and tricks that might not be covered in the official guides. These resources are convenient additions to the official [OsmAnd User Guide](../docs/user/index.md), offering more information about the app's features.
+These manuals, available in multiple languages, often provide unique insights, tips, and tricks that might not be covered in the official guides. These resources are convenient additions to the official [OsmAnd User Guide](https://osmand.net/docs/user/), offering more information about the app's features.
 
 | Language | Description | Link |
 | :-- | :-- | :-- |
