@@ -277,7 +277,6 @@
     padding: 16px !important;
     background-color: black !important;
     position: absolute !important;
-    height: 88px !important;
 }
 .mainPhotoGallery {
     width: 148px !important;
@@ -359,4 +358,7 @@
     margin-left: 16px !important;
     margin-bottom: 0px !important;
     margin-top: 0px !important;
+}
+.metadata {
+    color: white !important;
 }

@@ -14,9 +14,12 @@ import { format } from 'date-fns';
 import * as locales from 'date-fns/locale';
 import i18n from 'i18next';
 import { getPhotoUrl } from './PhotoGallery';
+import MenuItemWithLines from '../../components/MenuItemWithLines';
+import { useTranslation } from 'react-i18next';
 
 export default function PhotosModal({ photos }) {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
     const [open, setOpen] = useState(true);
     const [activeStep, setActiveStep] = useState(ctx.selectedPhotoInd);
@@ -175,23 +178,23 @@ export default function PhotosModal({ photos }) {
                 </Box>
                 {activePhoto !== null && activePhoto.imageTitle === photos[activeStep]?.imageTitle && showInfo && (
                     <AppBar position="static" className={styles.photoFooter} sx={{ backgroundColor: 'black' }}>
-                        <Typography id={'se-photo-date'} sx={{ color: 'white' }}>
+                        <Typography id={'se-photo-date'} className={styles.metadata}>
                             {activePhoto.properties.date
                                 ? `Date: ${formatDate(activePhoto.properties.date)}`
                                 : `Date: - `}
                         </Typography>
-                        <Typography id={'se-photo-author'} sx={{ color: 'white' }}>
+                        <Typography id={'se-photo-author'} className={styles.metadata}>
                             {activePhoto.properties.author ? `Author: ${activePhoto.properties.author}` : `Author: - `}
                         </Typography>
                         {activePhoto.properties.license ? (
-                            <Typography id={'se-photo-license'} sx={{ color: 'white' }}>
+                            <Typography id={'se-photo-license'} className={styles.metadata}>
                                 License:{' '}
                                 {activePhoto.properties.license.startsWith('Q') ? (
                                     <a
                                         href={`https://www.wikidata.org/wiki/${activePhoto.properties.license}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        style={{ color: 'white' }}
+                                        className={styles.metadata}
                                     >
                                         {activePhoto.properties.license}
                                     </a>
@@ -200,17 +203,22 @@ export default function PhotosModal({ photos }) {
                                 )}
                             </Typography>
                         ) : (
-                            <Typography sx={{ color: 'white' }}>License: -</Typography>
+                            <Typography className={styles.metadata}>License: -</Typography>
                         )}
-                        <Typography id={'se-photo-description'} sx={{ color: 'white' }}>
-                            {activePhoto.properties.description
-                                ? `Description: ${
-                                      activePhoto.properties.description.length > 150
-                                          ? `${activePhoto.properties.description.substring(0, 150)}...`
-                                          : activePhoto.properties.description
-                                  }`
-                                : `Description: - `}
-                        </Typography>
+                        {activePhoto.properties.description ? (
+                            <MenuItemWithLines
+                                id={'se-photo-description'}
+                                compName={t('shared_string_description')}
+                                className={styles.metadata}
+                                name={`${t('shared_string_description')}: ${activePhoto.properties.description.trimStart()}`}
+                                maxLines={1}
+                                showMore={true}
+                            />
+                        ) : (
+                            <Typography
+                                className={styles.metadata}
+                            >{`${t('shared_string_description')}: -`}</Typography>
+                        )}
                     </AppBar>
                 )}
             </Box>
