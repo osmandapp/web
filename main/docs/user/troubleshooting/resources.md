@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 6
 title: Resources and Customizations
 ---
 
@@ -63,12 +63,12 @@ The list below provides converters for various data types supported by OsmAnd, a
 
 | Type | Description | Link |
 |-- | -- | --|
-| KMZ to GPX | Python script to convert _KMZ_ files to _GPX_ format, including icons. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
-| KML to GPX | Python script to convert _KML_ files to _GPX_ format with icons. Other tools available. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
+| KMZ to GPX | Python script to convert *KMZ* files to *GPX* format, including icons. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
+| KML to GPX | Python script to convert *KML* files to *GPX* format with icons. Other tools available. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
 | Garmin | Tool for converting Garmin Basecamp files to OsmAnd. | [GitHub](https://github.com/maurizioandreotti/GPX-Basecamp-2-OsmAnd)|
 | GeoPDF/Tiff, ozi to OsmAnd | Conversion of geoPDF, geoTiff, and ozi map formats to OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
-| GPX to KML | Tool to convert OsmAnd _GPX_ files to _KML_ format, preserving icons. | [GitHub](https://github.com/mariush444/osmand2kml) |
-| iOverlander GPX to OsmAnd | Python script to convert iOverlander _GPX_ files exported to OsmAnd with icons. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
+| GPX to KML | Tool to convert OsmAnd *GPX* files to *KML* format, preserving icons. | [GitHub](https://github.com/mariush444/osmand2kml) |
+| iOverlander GPX to OsmAnd | Python script to convert iOverlander *GPX* files exported to OsmAnd with icons. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
 
 
 ## Custom Plugins
@@ -99,7 +99,7 @@ The default [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/mast
 | UniMap | The repository is designed to provide custom map styles created by users for other users. |[UniMap from GitHub](https://github.com/basings/OsmAnd-custom-map-styles)|
 | OsmAndRailwayStyles | Offline map styles focused on railways, using a color scheme similar to [OpenRailwayMap](https://www.openrailwaymap.org/). |[OsmAndRailwayStyles GitHub](https://github.com/fuzzysolutions/OsmAndRailwayStyles)|
 | Highlighted Admin Boundaries | The map rendering style is based on the OsmAnd default, with more highlighted Administrative Boundaries for improved visibility. |[Highlighted Admin Boundaries](https://github.com/Max1234-Ita/GuidaOsmand/blob/main/risorse/rendering/en_highlighted_boundaries.md)|
-| Ope Fiets map | [The Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) is a cycling-focused map style, highlighting cycle lanes (in red), cycle routes (blue dashed), cycle paths (red dashed), and roads with limited vehicle traffic, such as bicycle streets (solid red borders).  |[OpenFietsMap-style GitHub](https://github.com/ligfietser/OFM_Osmand)|
+| Open Fiets map | [The Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) is a cycling-focused map style, highlighting cycle lanes (in red), cycle routes (blue dashed), cycle paths (red dashed), and roads with limited vehicle traffic, such as bicycle streets (solid red borders).  |[OpenFietsMap-style GitHub](https://github.com/ligfietser/OFM_Osmand)|
 
 
 ## Custom Offline Maps
