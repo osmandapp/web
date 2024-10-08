@@ -35,20 +35,21 @@ To prevent data loss, ensure that your personal data, routes, and maps are backe
 No additional payment is required. If the paid features are not restored, go to your device's *Settings → Apps →* select the app store, clear the cache, restart your device, and try again. For further details, refer to [this article](../purchases/android.md#restore-purchases).
 
 
-### How to Buy and Restore OsmAnd in the Huawei AppGallery
+### How to Buy and Restore OsmAnd in the Huawei AppGallery without Huawei Mobile Services
 
 1. **Buy OsmAnd**:
-   - Open *Huawei AppGallery* on the [OsmAnd](https://appgallery.huawei.com/#/app/C101486545) page and download the app.
-   - You can only download the free version. To make a purchase, go to OsmAnd *Menu → Settings → Purchases* and select the required type.
-   - See more details [here](https://osmand.net/docs/user/purchases/android#install-application).
+   - First, enable *Install from Unknown Sources* in your device's settings. You can usually find this option in **Settings → Security**.
+   - Install the [Huawei Mobile Services (HMS Core)](https://consumer.huawei.com/za/community/details/Download-the-latest-Huawei-HMS-Core-APK-5-3-0-312/topicId-142217/), which is essential for app compatibility.
+   - Next, open *Huawei AppGallery* on the [OsmAnd](https://appgallery.huawei.com/#/app/C101486545) page and download the app.
+   - Only the free version is available for download initially. To make a purchase, go to OsmAnd *Menu → Settings → Purchases* and select the required type.
+   - For further details, visit [this page](https://osmand.net/docs/user/purchases/android#install-application).
 
 2. **Restore purchase**:
-   - Log in to *Huawei AppGallery* with the same account where you purchased OsmAnd.
-   - Check your purchase in the [Huawei App Gallery order history](https://consumer.huawei.com/en/support/content/en-us00694318/).
-   - You may need to update *Huawei AppGallery* and clear the cache for it.
-   - To restore purchases, follow OsmAnd *Menu → Settings → Purchases → Restore Purchases*.
+   - To restore your purchase, log in to *Huawei AppGallery* using the same account associated with your OsmAnd purchase.
+   - Check your transaction history in the [Huawei App Gallery order history](https://consumer.huawei.com/en/support/content/en-us00694318/).
+   - You may need to update *Huawei AppGallery* and clear the cache to avoid issues.
+   - To restore your purchases, follow *Menu → Settings → Purchases → Restore Purchases* in OsmAnd.
    - For more information, see the article [Android Purchases](https://osmand.net/docs/user/purchases/android#restore-subscription--in-app).
-
 
 
 ### How to restore the Topography (formerly Contour lines) plugin purchase
