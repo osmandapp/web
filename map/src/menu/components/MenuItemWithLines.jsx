@@ -72,14 +72,16 @@ const MenuItemWithLines = forwardRef((props, ref) => {
                     children
                 )}
             </div>
-            <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
-                <DialogTitle>{compName}</DialogTitle>
-                <DialogContent>
-                    <Typography variant="body1">
-                        {makeLinksClickable(name?.replace(`${compName}:`, '').trim())}
-                    </Typography>
-                </DialogContent>
-            </Dialog>
+            {showMore && (
+                <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
+                    <DialogTitle>{compName}</DialogTitle>
+                    <DialogContent>
+                        <Typography variant="body1">
+                            {makeLinksClickable(name?.replace(`${compName}:`, '').trim())}
+                        </Typography>
+                    </DialogContent>
+                </Dialog>
+            )}
         </>
     );
 });
