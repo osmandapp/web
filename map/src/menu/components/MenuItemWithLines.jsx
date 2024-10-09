@@ -48,7 +48,7 @@ const MenuItemWithLines = forwardRef((props, ref) => {
         wordBreak: 'break-word',
         whiteSpace: 'pre-wrap',
         width: width ?? '100%',
-        cursor: showMore ? 'pointer' : 'default',
+        cursor: showMore && 'pointer',
     };
 
     const handleExpandClick = () => {

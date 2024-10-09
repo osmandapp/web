@@ -361,4 +361,10 @@
 }
 .metadata {
     color: white !important;
+    font-family: Roboto !important;
+}
+.metadatamulti {
+    line-height: 1.5 !important;
+    font-size: 16px !important;
+    letter-spacing: 0.00938em !important;
 }
