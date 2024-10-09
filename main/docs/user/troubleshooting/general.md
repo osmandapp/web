@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 3
 title:  General
 ---
 
@@ -16,7 +16,7 @@ General issues related to various OsmAnd's features.
 
 ## Battery Consumption
 
-### OsmAnd seems to to use up too much battery power
+### OsmAnd seems to use up too much battery power
 
 There have been user reports of OsmAnd consuming excessive battery power, with cases where OsmAnd was responsible for up to 90% of battery usage. However, we have performed many tests and could not reproduce such results.  
 

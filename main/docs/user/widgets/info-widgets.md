@@ -459,7 +459,7 @@ Trip recording widgets refer to [<Translate android="true" ids="record_plugin_na
 | | |
 |:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_monitoring"/>* |
-|   |  **iOS**: *Menu → Configure screen → Widgets → Left/Right/Top/Bottom panels → Track recording* |
+|   |  **iOS**: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="map_widget_monitoring"/>* |
 | By tapping | Starts/Stop track recording or View the graph. |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 
