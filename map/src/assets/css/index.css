@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
@@ -80,7 +81,9 @@ code {
     margin-bottom: 10px !important;
     flex-shrink: 0 !important;
     box-sizing: border-box !important;
-    font-size: 22px !important;
+    font-size: 1.5rem !important;
+    font-family: 'Material Symbols Outlined' !important;
+    font-weight: 400 !important;
 }
 .leaflet-control-zoom-in {
     margin-bottom: 8px !important;
@@ -88,7 +91,7 @@ code {
 
 .leaflet-control-zoom-in span,
 .leaflet-control-zoom-out span {
-    margin-bottom: 3px !important;
+    margin-bottom: 12px !important;
     margin-right: 1px !important;
 }
 
