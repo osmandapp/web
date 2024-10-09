@@ -81,7 +81,7 @@ code {
     margin-bottom: 10px !important;
     flex-shrink: 0 !important;
     box-sizing: border-box !important;
-    font-size: 1.5rem !important;
+    font-size: 30px !important;
     font-family: 'Material Symbols Outlined' !important;
     font-weight: 400 !important;
 }
@@ -91,7 +91,7 @@ code {
 
 .leaflet-control-zoom-in span,
 .leaflet-control-zoom-out span {
-    margin-bottom: 12px !important;
+    margin-bottom: 14px !important;
     margin-right: 1px !important;
 }
 
