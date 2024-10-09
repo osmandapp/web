@@ -56,6 +56,7 @@ With the Trip Recording plugin in OsmAnd, you can easily start recording your tr
 - Activate recording using the [Distance/Start-Stop widget](#distance-start-stop).
 - Select the **Trip recording** option from the main menu (*Android only*): *<Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/>*.
 - Tap the **<Translate android="true" ids="start_recording"/>** button located in the [My Places](../personal/myplaces.md#tracks) section of the main menu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> tab*.
+- Use the [Quick Action](../widgets/quick-action.md#add-and-delete-actions) buttons to start recording a trip. To do this, go to *Menu → Configure screen → Custom buttons → Quick action → Add action → My Places* and choose [Start / Pause: Trip recording](../widgets/quick-action.md#my-places).
 - Use the system [notification](#notifications) in the notification area of your device (*Android only*).
 - Use the [application launcher](#launcher-android) to start recording (*Android only*).  
 
@@ -113,9 +114,9 @@ For *Stop / Save / Pause*:
 
 - To stop the recording, tap the corresponding button in the [Distance/Start-Stop widget](#distance-start-stop) widget dialog box.
 - In the *Android version*, you can stop recording by tapping the *Trip recording* main menu item.
-- To stop or save a recording track, go to *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>* *→* [*<Translate android="true" ids="shared_string_gpx_files"/> tab*](../personal/myplaces.md#tracks) and tap the appropriate button in the **Currently recording track** field.  
-- In the *Android version*, you can pause or save a recording track using the system [notification](#notifications) in the notification area of your device.  
-    ![stop-save-pause](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
+- To stop or save a recording track, go to *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>* *→* [*<Translate android="true" ids="shared_string_gpx_files"/> tab*](../personal/myplaces.md#tracks) and tap the appropriate button in the **Currently recording track** field.
+- Use the [Quick Action](../widgets/quick-action.md#add-and-delete-actions) buttons to save, pause, start new segment, or finish recording a trip. Go to *Menu → Configure screen → Custom buttons → Quick action → Add action → [My Places](../widgets/quick-action.md#my-places)* and add one or more quick action buttons.
+- In the *Android version*, you can pause or save a recording track using the system [notification](#notifications) in the notification area of your device.<br/><br/> ![stop-save-pause](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
 
 
 ### Overview Screen

@@ -58,7 +58,7 @@ To use the Quick Action button you need to enable this widget first.
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → Tap Delete (Bin icon on the right top corner) → Select actions*
+*<Translate android="true" ids="shared_string_menu,layer_map_appearance,custom_buttons,configure_screen_quick_action"/> → Tap Delete (Bin icon on the right top corner) → Select actions*
 
 ![Quick action widget_android_add](@site/static/img/widgets/quick_action_widget_andr.png)  ![Custom button Android](@site/static/img/widgets/add_action_screen_andr.png)
 
@@ -66,7 +66,7 @@ To use the Quick Action button you need to enable this widget first.
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → Tap Edit (Pencil icon on the right top corner) → Select actions*
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,configure_screen_quick_action"/>  → Tap Edit (Pencil icon on the right top corner) → Select actions*
 
 ![Quick action widget_ios_add](@site/static/img/widgets/quick_action_widget_2_ios.png) ![Custom button Android](@site/static/img/widgets/add_action_screen_ios.png)
 
@@ -127,8 +127,8 @@ For some actions, you can assign a list of layers that will change in a circle w
 
 The button allows you to assign a single layer or a list of layers that change circularly when tapped or with an interim dialog.
 
-- **Show an interim dialog**: displays dialog with maps list
-- **Do not show an interim dialog**: map sources will be changed by defined order.
+- **Show an interim dialog**. Displays a dialog with a list of maps.
+- **Do not show an interim dialog**. The map sources change in a defined order..
 
 
 ### Change Position on the Map
@@ -199,17 +199,17 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 | Show / Hide <br/> [**Routes**](../map/vector-maps.md#routes) | You can select route types to enable or disable their display. <br/> Some routes have additional settings. By default, if you have not selected anything in the [Configure Map](../map/configure-map-menu.md) menu, the first route type from the list will be assigned, otherwise, a type of your choice will be assigned. You can read more in the [Routes](../map/routes.md) article. <br/> - ***Cycle routes***  &nbsp;(*Route*, *Node networks*) <br/> - ***Mountain bike routes***  &nbsp;(*MTB scale*, *IMBA*) <br/> - ***Hiking routes***  &nbsp;(*OSMC*, *Network affiliation*, *Node networks*) <br/> - ***Hiking trails difficulty grade***  &nbsp;(*SAC scale*, *CAI scale*) <br/> - ***Ski slopes*** <br/> - ***Horse routes*** <br/> - ***Whitewater sports*** <br/> - ***Running routes*** <br/> - ***Fitness trails*** <br/> - ***Travel routes***  &nbsp;(*Tracks*, *Travel books*, *Points*) <br/> |
 | Show / Hide <br/> [**Topography layers**](../plugins/topography.md#overview) | All topography data is presented as separate map layers. You can quickly switch the visibility of these layers with Quick Action. <br/> - ***Contour lines*** <br/> - ***Terrain***.  &nbsp;(*Depending on the layer selected in the [Configure Map](../map/configure-map-menu.md) menu*, *Hillshade*, *Slope*, or *Altitude* *will be displayed.*) |
 | Change <br/> [**Terrain color scheme**](../plugins/topography.md#color-scheme) | Allows you to select one or more palettes from a list of existing ones, which will change when you tap the button. |
-| Show / Hide <br/> [**Weather layers**](../plugins/weather.md#weather-layers) | All weather data is presented as separate map layers. With Quick Action, you can get quick access to switch the visibility of these layers on the map. <br/> - **Precipitation layer** <br/> - **Cloud layer** <br/> - **Pressure layer** <br/> - **Wind layer** <br/> - **Temperature laye*r* |
+| Show / Hide <br/> [**Weather layers**](../plugins/weather.md#weather-layers) | All weather data is presented as separate map layers. With Quick Action, you can get quick access to switch the visibility of these layers on the map. <br/> - ***Precipitation layer*** <br/> - ***Cloud layer*** <br/> - ***Pressure layer*** <br/> - ***Wind layer*** <br/> - ***Temperature layer*** |
 | Open <br/> [**Weather screen**](../plugins/weather.md) <br /> *Android only* | Opens the [*Weather* forecast screen](../plugins/weather.md#weather-forecast-screen) with the detailed information. |
 | Show / Hide <br/> [**Favourites**](../personal/favorites.md#view-on-the-map) | Show or hide the favourite points on the map. |
 | Show / Hide <br/> [**Tracks**](../personal/tracks/manage-tracks.md#show-tracks-on-map) | Show or hide the last visible tracks on the map. |
 | Show / Hide <br/> [**POIs**](../map/point-layers-on-map.md#points-of-interest-poi) | Enable or disable the display of POI layers with selected categories on the map.<br/>You can select multiple POI categories. The action replaces the POI categories from Configure Map selected without using Quick Actions.  |
 | Change <br/> [**Map mode**](../map/vector-maps.md#map-mode) | Quick access to switch between day and night modes. |
-| Change <br/> [**<Translate ios="true" ids="quick_action_map_source_title"/>**](../map/raster-maps.md) | The button allows you to assign a single map source or a list of source that change circularly when tapped or with an interim dialog. <br/> - **Show an interim dialog**. displays a dialog with maps list <br/> - **Do not show an interim dialog**: map sources will be changed by defined order. <br/> - Displayed Name - '**Map source >**'. '>' after the map name indicates what the currently selected map source is. <br/> - Displayed Name - '**> Next map source**'. '>' before the map name indicates what the next selected map source is if the action is executed. <br/> - **Note**: you could have 1 action to change source and select multiple map sources or many quick actions with 1 map source selected, so you could quickly select the map source just from the quick action list. |
-| Show / Hide <br /> [**Public transport**](../map/vector-maps.md#transport) | Enable or disable public transport map layer. <br /> - **Transport type** (on first tap): select one or many options from *Transport stops*, *Bus, trolleybus, and shuttle routes*, *Tram and train routes*, *Subway routes*. |
-| Change <br/> [**<Translate ios="true" ids="map_settings_over"/>**](../map/raster-maps.md) | Create a list of map sources as map overlay and cycle through them. <br /> Note, works similar to *Change* **<Translate ios="true" ids="quick_action_map_source_title"/>** |
-| Change <br/> [**<Translate ios="true" ids="map_settings_under"/>**](../map/raster-maps.md) |  Create a list of map sources as map underlay and cycle through them. <br /> Note, works similar to *Change* **<Translate ios="true" ids="quick_action_map_source_title"/>**  |
-| Change <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/vector-maps.md#default-map-styles) | Create a list of map styles for vector maps and cycle through them. <br /> Note: works similar to **<Translate ios="true" ids="quick_action_map_source_title"/>** (see above) |
+| Change <br/> [**<Translate ios="true" ids="quick_action_map_source_title"/>**](../map/raster-maps.md) | The button allows you to assign a single map source or a list of source that change circularly when tapped or with an interim dialog. <br/> - *Show an interim dialog*. Displays a dialog with a list of maps. <br/> - *Do not show an interim dialog*. The map sources change in a defined order. <br/> - *Displayed Name* - *Map source* >. ">" after the map name indicates which map source is currently selected. <br/> - *Displayed Name* - > *Next map source*. ">" before the map name indicates what the next selected map source is if the action is executed. <br/> - *Note*. To change map sources in OsmAnd, you can either set up single quick action that allows you to switch between multiple map sources, or create several separate quick actions, each for a specific map source. |
+| Show / Hide <br /> [**Public transport**](../map/vector-maps.md#transport) | Enable or disable the public transport map layer <br /> - *Transport type*. On the first tap, you can select one or multiple transport types, including: *Transport stops*, *Bus, trolleybus, and shuttle routes*, *Tram and train routes*, *Subway routes*. |
+| Change <br/> [**<Translate ios="true" ids="map_settings_over"/>**](../map/raster-maps.md) | Create a list of map sources as a map overlay and cycle through them. <br /> - *Note*. To change map overlays in OsmAnd, you can either set up single quick action that allows you to switch between multiple map overlays, or create several separate quick actions, each for a specific map overlay. |
+| Change <br/> [**<Translate ios="true" ids="map_settings_under"/>**](../map/raster-maps.md) | Create a list of map sources as a map underlay and cycle through them. <br /> - *Note*. To change map overlays in OsmAnd, you can either set up single quick action that allows you to switch between multiple map underlays, or create several separate quick actions, each for a specific map underlay.  |
+| Change <br/> [**<Translate android="true" ids="quick_action_map_style"/>**](../map/vector-maps.md#default-map-styles) | Create a list of map styles for vector maps and cycle through them. <br /> - *Note*. To change map styles in OsmAnd, you can either set up single quick action that allows you to switch between multiple map overlays, or create several separate quick actions, each for a specific map style. |
 | Show / Hide <br/> [**Mapillary layer**](../plugins/mapillary.md) | Allows you to view map layers with street-level imagery provided by Mapillary. |
 | Show / Hide <br/> [**<Translate android="true" ids="osm_notes"/>**](../plugins/osm-editing.md) | You can select to display or hide all OSM notes on the map with a single tap the button. |
 
@@ -231,14 +231,18 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 
 | Action | Description |
 |:-------------|:-------------|
-| Add <br/> [**Favorite**](../map/configure-map-menu.md#map-layers) | Adds favorite to a selected (center) map location. <br /> - **Show an interim dialog**: displays confirmation dialog <br /> - **Group**: adds favorite to a selected group <br /> - **Color**: adds favorite with a preselected color <br /> - **Name**: adds favorite with a given name prefix  |
-| Add <br/> [**Track waypoint**](../map/point-layers-on-map.md#track-waypoints) | Adds a new Track waypoint to [currently recording track](../plugins/trip-recording.md) or to [any track from My Places](../personal/tracks/manage-tracks.md). <br /> - **Show an interim dialog**: displays confirmation dialog <br /> - **Group**: adds favorite to a selected group <br /> - **Color**: adds favorite with a preselected color <br /> - **Name**: adds favorite with a given name prefix  |
+| Start / Pause <br/> [**Trip recording**](../plugins/trip-recording.md#new-track-recording) <br /> *Android only* | Begin a recording session of the current track or pause to temporarily stop without completing the trip. |
+| Start  <br/> [**New trip segment**](../plugins/trip-recording.md#overview-screen) <br /> *Android only* | Start a new segment of the trip without stopping the overall recording. |
+| Save <br/> [**Recorded Trip & Continue**](../plugins/trip-recording.md#current-track-recording) <br /> *Android only* | Save the current trip recording and continue recording without interruption. |
+| Finish <br/> [**Trip recording**](../plugins/trip-recording.md#current-track-recording) <br /> *Android only* | End the current trip recording session. |
+| Add <br/> [**Favorite**](../map/configure-map-menu.md#map-layers) | Adds a favorite to the selected (central) map location. <br /> - *Show an interim dialog*. Displays a confirmation dialog. <br /> - *Group*. Adds a favorite to the selected group. <br /> - *Color*. Adds a favorite with a preselected color <br /> - *Name*. Adds a favorite with the specified name prefix.  |
+| Add <br/> [**Track waypoint**](../map/point-layers-on-map.md#track-waypoints) | Adds a new Track waypoint to the [currently recording track](../plugins/trip-recording.md) or [any track in My Places](../personal/tracks/manage-tracks.md). <br /> - *Show an interim dialog*. Displays a confirmation dialog. <br /> - *Group*. Adds a favorite to the selected group. <br /> - *Color*. Adds a favorite with a preselected color <br /> - *Name*. Adds a favorite with the specified name prefix.  |
 | Add <br/> [**Map marker**](../map/configure-map-menu.md#map-layers) | Adds marker to a selected (center) map location. |
 | Add <br/> [**Parking place**](../plugins/parking.md) | Adds parking to a selected (center) map location. The old parking position is deleted. |
-| Add <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-poi) | Adds POI to a selected (center) map location map (same as context menu action). <br /> - **Show an interim dialog**: displays confirmation dialog <br /> - **POI type** (optional): preselect OSM type <br /> - **Tag/Value** (multiple): add [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_Features) tags / values |
-| Add <br/> [**OSM Note**](../plugins/osm-editing.md) | Adds [OSM note](https://wiki.openstreetmap.org/wiki/Notes)  <br /> - **Show an interim dialog**: displays confirmation dialog <br /> - **Message**: adds default message to the note |
+| Add <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-poi) | Adds POI to a selected (center) map location map (same as context menu action). <br /> - *Show an interim dialog*. Displays a confirmation dialog. <br /> - *POI Type* (optional). Preselects the OSM POI type. <br /> - *Tag/Value* (multiple). Adds [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_Features) tags / values |
+| Add <br/> [**OSM Note**](../plugins/osm-editing.md) | Adds [OSM note](https://wiki.openstreetmap.org/wiki/Notes)  <br /> - *Show an interim dialog*. Displays a confirmation dialog. <br /> - *Message*. Adds a default message to the note. |
 | Add <br/> [**Media notes**](../plugins/audio-video-notes.md) | Starts audio / photo / video note recording for a selected (center) map location. |
-| Create <br/> [**New route**](../plan-route/create-route.md) <br /> *Android only* | Opening of [Plan a route](../plan-route/create-route.md) tool and creation a route for a selected (center) map location. |
+| Create <br/> [**New route**](../plan-route/create-route.md) <br /> *Android only* | Opens the [Plan a route](../plan-route/create-route.md) tool and creats a route for thea selected (central) location on the map. |
 
 
 ### Navigation
@@ -248,7 +252,7 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 | Add <br/> [**<Translate android="true" ids="quick_action_first_intermediate"/>**](../navigation/setup/route-navigation.md#intermediate-destinations) | You can select the center of the map screen as the first intermediate point. The previous destination remains the same. |
 | Turn On / Off <br/> [**Voice prompts**](../navigation/guidance/voice-navigation.md) | Mute or unmute voice guidance during navigation. |
 | Set <br/> [**Start point**](../navigation/setup/route-navigation.md#set-destinations) | Mark a selected (center) map location as a point of departure. |
-| Set <br/> [**Destination**](../navigation/setup/route-navigation.md#set-destinations) | Add a selected (center) map location as a destination. The previous destination becomes the last intermediate point.  |
+| Set <br/> [**Destination**](../navigation/setup/route-navigation.md#set-destinations) | Add the selected (central) location on the map as a destination. The previous destination becomes the last intermediate point.  |
 | Replace <br/> [**Destination**](../navigation/setup/route-navigation.md#intermediate-destinations) | Set / Replace a selected (center) map location as a destination. The previous destination is deleted. |
 | Turn On /Off <br/> [**Auto-zoom map**](../map/interact-with-map.md) | Enable or disable map auto zoom during navigation. |
 | Start/stop <br/> [**Navigation**](../navigation/setup/route-navigation.md#start--stop-navigation) | Start navigation (if there is a destination point present) or stop navigation. |
@@ -261,9 +265,9 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 
 | Action | Description |
 |:-------------|:-------------|
-| Change <br/> [**App profile**](../personal/profiles.md) | Create a list of application profiles and cycle through them.  <br /> - **Show an interim dialog**: displays dialog with profiles list <br /> - **Do not show an interim dialog**: profiles will be changed by defined order. <br /> - **Note**: you could have 1 action with multiple profiles or many actions with 1 profile. |
-| Change <br/> [**App profile to next**](../personal/profiles.md) | - |
-| Change <br/> [**App profile to previous**](../personal/profiles.md) | - |
+| Change <br/> [**App profile**](../personal/profiles.md) | Create a list of application profiles and cycle through them.  <br /> - *Show an interim dialog*. Displays a dialog with a list of profiles. <br /> - *Do not show an interim dialog*. The profiles change in a defined order. <br /> - *Note*. You can customize a single action that allows you to switch between multiple profiles, or create several separate actions, each for a specific profile. |
+| Change <br/> [**App profile to next**](../personal/profiles.md) | Switches to the next profile in the list. |
+| Change <br/> [**App profile to previous**](../personal/profiles.md) | Switches to the previous profile in the list. |
 | Change <br/> [**<Translate android="true" ids="quick_action_display_position_in_center"/>**](../widgets/configure-screen.md#display-position-location-position-on-screen) <br /> *Android only*  | Allows you to set the placement of the *My Location* cursor on the map. Enables or disables the cursor to always be in the center of the screen. |
 | Change <br/> [**Location position on screen**](../widgets/configure-screen.md#display-position-location-position-on-screen) <br /> *iOS only*  | Allows you to enable or disable the display of the previously selected My Location cursor position on the map. |
 
@@ -288,4 +292,4 @@ Using the Quick Action tool's functionality, you can assign required actions to 
 - [Radius-ruler and Ruler](./radius-ruler.md)
 - [Marker widgets](./markers.md)
 
-> *This article was last updated in September 2024*
+> *This article was last updated in October 2024*
