@@ -12,7 +12,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-> *This article was last updated in June 2024.*
 
 ## Overview
 
@@ -21,7 +20,7 @@ The OsmAnd Boat routing engine also takes into account the characteristics of th
 
 <Tabs groupId="operating-systems">
 
-<TabItem value="android" label="Android"> 
+<TabItem value="android" label="Android">
 
 ![Boat Navigation screen Android](@site/static/img/navigation/boat/boat_navigation_android.png)
 
@@ -35,7 +34,7 @@ The OsmAnd Boat routing engine also takes into account the characteristics of th
 
 </Tabs>  
 
-## Route parameters - Boat
+## Route Parameters - Boat
 
 :::note
 By default, *Boat profile* is deactivated. To use this profile for routing, you need to switch it on in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
@@ -69,7 +68,7 @@ Typically, *Boat routing* is used with boat profile (the last one enabled togeth
 | *<Translate android="true" ids="routing_attr_allow_intermittent_name"/>* |  Turning this option on allows you to use intermittent waterways to navigate by boat.   | Tag [Intermittent](https://wiki.openstreetmap.org/wiki/Key:intermittent) is used to indicate that a waterway does not permanently contain water.  |
 
 
-## Other routing types for Boat
+## Other Routing Types for Boat
 
 [Boat routing](#route-parameters---boat) type is a default routing algorithm for Boat profile. Although you can choose another routing type, which is also suitable for boat navigation:  
 
@@ -81,7 +80,7 @@ It's important to note, that the *Direct-to-point* and *Straight line* routings 
 These routing types for the boat profile can be activated using the following path: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile"/> (<Translate android="true" ids="app_mode_boat"/> or another one) → <Translate android="true" ids="routing_settings_2,nav_type_hint"/>*.
 
 
-### Direct-to-point routing for Boat
+### Direct-to-Point Routing for Boat
 
 :::note
 When using Direct-to-point and Boat navigation types, you will need [Depth contours data](../../plugins/nautical-charts.md#nautical-map-style), which can be enabled and set in *Configure map*.
@@ -91,7 +90,8 @@ The [Direct-to-point routing type](./direct-to-point-routing.md) can be used wit
 
 ![Direct-to-point Navigation type Android](@site/static/img/navigation/boat/direct_navigation_type_android.png)
 
-### Straight line routing for Boat
+
+### Straight Line Routing for Boat
 
 The [Straight line routing type](./straight-line-routing) can be used with the boat profile when you want to navigate your boat in open water but prefer to follow a straight line rather than a curved route to your destination point. This can be useful when navigating to a distant point, that is visible on the horizon, for example.
 
@@ -109,3 +109,5 @@ The [Straight line routing type](./straight-line-routing) can be used with the b
 - *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* setting in the *iOS* version of OsmAnd is located in *Navigation settings → Route parameters* (for *Android*, in *Vehicle parameters → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). This setting is used on unknown roads without speed limits. This is most often the case when navigating a track or online route. It must be set according to the parameters of your vehicle.
 
 - *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Properly configuring the settings will help you avoid problems when creating a route. You can select the most appropriate route depending on the type of vehicle and road restrictions, as well as calculate the travel time.
+
+> *This article was last updated in June 2024.*

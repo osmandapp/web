@@ -13,16 +13,16 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-> *This article was last updated in June 2024*
 
 ## Overview
 
 Bicycle routing take into account factors such as the availability of bike paths, trails, and roads that are safe and legal for bicyclists. OsmAnd always uses elevation data when calculating the estimated time of arrival (time to cover the distance) according to [Naismith's rule](https://en.wikipedia.org/wiki/Naismith%27s_rule#Scarf's_equivalence_between_distance_and_climb). By default the fastest route is provided.  
-Bicycle routing can also be useful for [mountain biking](#mtb-routing-settings).  
+Bicycle routing can also be useful for [mountain biking](#mtb-routing-particularities).  
 
 You can configure *Bicycle routing* in the [Route parameters section](../guidance/navigation-settings.md/#route-parameters) of the Navigation settings.
 
-## Route parameters - Bicycle
+
+## Route Parameters - Bicycle
 
 OsmAnd's bicycle routing features allows cyclists to input a start and end point, and then generate a route that takes into account their preferences and local geography.  
 
@@ -67,3 +67,5 @@ The MTB (mountain biking) routing mechanism is the same as bicycle routing. Note
 - *[<Translate ios="true" ids="road_speeds"/>](../guidance/navigation-settings.md#road-speeds)* setting in the *iOS* version of OsmAnd is located in *Navigation settings → Route parameters* (for *Android*, in *Vehicle parameters → [<Translate android="true" ids="default_speed_setting_title"/>](../guidance/navigation-settings.md#default-speed--road-speeds)*). This setting is used on unknown roads without speed limits. This is most often the case when navigating a track or online route. It must be set according to the parameters of your vehicle.
 
 - *[<Translate ios="true" ids="vehicle_parameters"/>](../guidance/navigation-settings.md#vehicle-parameters)*. Properly configuring the settings will help you avoid problems when creating a route. You can select the most appropriate route depending on the type of vehicle and road restrictions, as well as calculate the travel time.
+
+> *This article was last updated in June 2024*
