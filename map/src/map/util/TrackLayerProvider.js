@@ -57,7 +57,7 @@ function parsePoints({ map, ctx, points, layers, draggable = false, hidden = fal
         let simplified = false;
         const zoom = map.getZoom();
         const mapBounds = map.getBounds();
-        if (points.length > 200 && zoom < 17) {
+        if (points.length > 1000 && zoom < 17) {
             simplified = true;
         }
 
