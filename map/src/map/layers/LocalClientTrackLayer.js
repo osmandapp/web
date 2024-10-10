@@ -45,6 +45,7 @@ export default function LocalClientTrackLayer() {
     const [startedRouterJobs, setStartedRouterJobs] = useState(0);
 
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
+    const [prevZoom, setPrevZoom] = useState(null);
     const [move, setMove] = useState(false);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
@@ -162,9 +163,13 @@ export default function LocalClientTrackLayer() {
     }, [ctxTrack]);
 
     useEffect(() => {
-        if (ctx.createTrack?.enable && ctxTrack) {
+        const needUpdate = move || zoom !== prevZoom;
+        if (needUpdate && ctx.createTrack?.enable && ctxTrack) {
             ctxTrack.layers = updateLayers(ctxTrack.points, ctxTrack.wpts, ctxTrack.layers, true);
             saveChanges(ctxTrack.points, ctxTrack.wpts, ctxTrack.layers);
+
+            setPrevZoom(zoom);
+            setMove(false);
         }
     }, [zoom, move]);
 
