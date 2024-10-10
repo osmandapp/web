@@ -54,9 +54,23 @@ function parsePoints({ map, ctx, points, layers, draggable = false, hidden = fal
     });
 
     if (hidden === false) {
-        points.forEach((p) => {
+        let simplified = false;
+        const zoom = map.getZoom();
+        const mapBounds = map.getBounds();
+        if (points.length > 200 && zoom < 17) {
+            simplified = true;
+        }
+
+        points.forEach((p, index) => {
             if (draggable || (!draggable && p.geometry !== undefined)) {
-                const marker = new L.Marker(new L.LatLng(p.lat, p.lng), {
+                if (simplified && index % 30 !== 0) {
+                    return;
+                }
+                const markerLatLng = new L.LatLng(p.lat, p.lng);
+                if (!mapBounds.contains(markerLatLng)) {
+                    return;
+                }
+                const marker = new L.Marker(markerLatLng, {
                     icon: MarkerOptions.options.route,
                     draggable: draggable,
                     isRoutePoint: true,

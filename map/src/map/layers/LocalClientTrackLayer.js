@@ -18,6 +18,7 @@ import TracksRoutingCache, {
     syncTrackWithCache,
 } from '../../context/TracksRoutingCache';
 import { saveTrackToLocalStorage } from '../../manager/track/SaveTrackManager';
+import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
@@ -42,6 +43,11 @@ export default function LocalClientTrackLayer() {
     const [triggerRefreshTrackWithRouting, setTriggerRefreshTrackWithRouting] = useState(0);
 
     const [startedRouterJobs, setStartedRouterJobs] = useState(0);
+
+    const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
+    const [move, setMove] = useState(false);
+
+    useZoomMoveMapHandlers(map, setZoom, setMove);
 
     let ctxTrack = ctx.selectedGpxFile;
 
@@ -154,6 +160,13 @@ export default function LocalClientTrackLayer() {
             }
         }
     }, [ctxTrack]);
+
+    useEffect(() => {
+        if (ctx.createTrack?.enable && ctxTrack) {
+            ctxTrack.layers = updateLayers(ctxTrack.points, ctxTrack.wpts, ctxTrack.layers, true);
+            saveChanges(ctxTrack.points, ctxTrack.wpts, ctxTrack.layers);
+        }
+    }, [zoom, move]);
 
     useEffect(() => {
         if (ctx.createTrack && ctxTrack) {
