@@ -20,6 +20,7 @@ export async function fetchPhotoProperties(photo) {
         const parseResponse = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/routing/search/parse-image-info`, {
             params: {
                 lang: lang,
+                pageId: photo.properties.mediaId,
                 imageTitle: imageTitle,
             },
             apiCache: true,
