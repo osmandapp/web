@@ -14,6 +14,8 @@ export const TEMP_LINE_STYLE = {
     // name: TEMP_LAYER_FLAG, // style.name was not used, instead of actual layer.options.name
 };
 export const WPT_SIMPLIFY_THRESHOLD = 500;
+export const POINTS_SIMPLIFY_THRESHOLD = 1000;
+export const POINTS_SIMPLIFY_ZOOM_THRESHOLD = 17;
 
 function createLayersByTrackData({ data, ctx, map, type = GPX_FILE_TYPE, simplifyWpts = false }) {
     let layers = [];
@@ -56,12 +58,9 @@ function parsePoints({ map, ctx, points, layers, draggable = false, hidden = fal
     });
 
     if (hidden === false) {
-        let simplified = false;
         const zoom = map.getZoom();
         const mapBounds = map.getBounds();
-        if (points.length > 1000 && zoom < 17) {
-            simplified = true;
-        }
+        const simplified = points.length > POINTS_SIMPLIFY_THRESHOLD && zoom < POINTS_SIMPLIFY_ZOOM_THRESHOLD;
 
         points.forEach((p, index) => {
             if (draggable || (!draggable && p.geometry !== undefined)) {
