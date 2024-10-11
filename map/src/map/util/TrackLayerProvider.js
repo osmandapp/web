@@ -1,9 +1,10 @@
 import L from 'leaflet';
-import MarkerOptions, { createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
+import MarkerOptions, { createPoiIcon, DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
 import _ from 'lodash';
 import TracksManager, { GPX_FILE_TYPE, isProtectedSegment } from '../../manager/track/TracksManager';
 import EditablePolyline from './EditablePolyline';
-import { createHoverMarker } from './Clusterizer';
+import { clusterMarkers, createHoverMarker } from './Clusterizer';
+import Utils from '../../util/Utils';
 
 export const TEMP_LAYER_FLAG = 'temp';
 export const TEMP_LINE_STYLE = {
@@ -12,8 +13,9 @@ export const TEMP_LINE_STYLE = {
     dashOffset: '0',
     // name: TEMP_LAYER_FLAG, // style.name was not used, instead of actual layer.options.name
 };
+export const WPT_SIMPLIFY_THRESHOLD = 500;
 
-function createLayersByTrackData({ data, ctx, map, type = GPX_FILE_TYPE }) {
+function createLayersByTrackData({ data, ctx, map, type = GPX_FILE_TYPE, simplifyWpts = false }) {
     let layers = [];
     data.tracks?.forEach((track) => {
         if (track.points?.length > 0) {
@@ -21,7 +23,7 @@ function createLayersByTrackData({ data, ctx, map, type = GPX_FILE_TYPE }) {
             addStartEnd(track.points, layers, res.coordsTrk, res.coordsAll);
         }
     });
-    parseWpt({ points: data.wpts, layers, ctx, data, map });
+    parseWpt({ points: data.wpts, layers, ctx, data, map, simplify: simplifyWpts });
 
     if (layers.length > 0) {
         let layersGroup = new L.FeatureGroup(layers);
@@ -203,7 +205,18 @@ export function getPointLatLon(point) {
     return lat && lon ? { lat: lat, lon: lon } : null;
 }
 
-function parseWpt({ points, layers, ctx = null, data = null, map = null }) {
+function parseWpt({ points, layers, ctx = null, data = null, map = null, simplify = false }) {
+    const zoom = map.getZoom();
+    const lat = map.getCenter().lat;
+    const clusters = simplify
+        ? clusterMarkers({
+              places: points,
+              zoom,
+              latitude: lat,
+              iconSize: DEFAULT_ICON_SIZE,
+              isFavorites: true,
+          })
+        : null;
     points &&
         points.forEach((point) => {
             let opt;
@@ -211,6 +224,7 @@ function parseWpt({ points, layers, ctx = null, data = null, map = null }) {
             let pInfo = point.ext;
             let lat = point.lat ? point.lat : pInfo.lat;
             let lon = point.lon ? point.lon : pInfo.lon;
+            let coords = new L.LatLng(lat, lon);
             if (icon) {
                 opt = { clickable: true, icon: icon };
                 if (pInfo?.time) {
@@ -233,7 +247,11 @@ function parseWpt({ points, layers, ctx = null, data = null, map = null }) {
             opt.draggable = false;
             opt.wpt = true;
             opt.color = point.color;
-            let marker = new L.Marker(new L.LatLng(lat, lon), opt);
+            let markerLayer = new L.Marker(coords, opt);
+            const marker = simplify ? getMarkerFromCluster(point, clusters, coords, opt, markerLayer) : markerLayer;
+            if (!marker) {
+                return;
+            }
             if (ctx && map && data) {
                 marker.on('click', (e) => {
                     const wpt = {
@@ -256,6 +274,30 @@ function parseWpt({ points, layers, ctx = null, data = null, map = null }) {
             }
             layers.push(marker);
         });
+}
+
+function getMarkerFromCluster(point, clusters, coords, opt, markerLayer) {
+    const isMainMarker = clusters.mainMarkers.some((mainMarker) => {
+        const mainLatLng = L.latLng(mainMarker.lat, mainMarker.lon);
+        return mainLatLng.equals(coords);
+    });
+    if (isMainMarker) {
+        return markerLayer;
+    }
+    const isSecondaryMarker = clusters.secondaryMarkers.some((secMarker) => {
+        const secLatLng = L.latLng(secMarker.lat, secMarker.lon);
+        return secLatLng.equals(coords);
+    });
+    if (isSecondaryMarker) {
+        const color = point.color ? Utils.hexToArgb(point.color) : DEFAULT_WPT_COLOR;
+        const customIcon = L.divIcon({
+            className: 'custom-circle-icon',
+            iconSize: [10, 10],
+            html: `<div style="background-color:${color};border-radius:50%;width:10px;height:10px;border:1px solid #ffffff;"></div>`,
+        });
+        markerLayer.setIcon(customIcon);
+        return markerLayer;
+    }
 }
 
 function addStartEndMarkers(points, layers) {
