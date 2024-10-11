@@ -2,7 +2,11 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { isLocalTrack, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
-import TrackLayerProvider, { redrawWptsOnLayer, TEMP_LAYER_FLAG } from '../util/TrackLayerProvider';
+import TrackLayerProvider, {
+    redrawWptsOnLayer,
+    TEMP_LAYER_FLAG,
+    WPT_SIMPLIFY_THRESHOLD,
+} from '../util/TrackLayerProvider';
 import TracksManager, { fitBoundsOptions, isEmptyTrack } from '../../manager/track/TracksManager';
 import _ from 'lodash';
 import EditablePolyline from '../util/EditablePolyline';
@@ -18,6 +22,7 @@ import TracksRoutingCache, {
     syncTrackWithCache,
 } from '../../context/TracksRoutingCache';
 import { saveTrackToLocalStorage } from '../../manager/track/SaveTrackManager';
+import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
@@ -42,6 +47,12 @@ export default function LocalClientTrackLayer() {
     const [triggerRefreshTrackWithRouting, setTriggerRefreshTrackWithRouting] = useState(0);
 
     const [startedRouterJobs, setStartedRouterJobs] = useState(0);
+
+    const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
+    const [prevZoom, setPrevZoom] = useState(null);
+    const [move, setMove] = useState(false);
+
+    useZoomMoveMapHandlers(map, setZoom, setMove);
 
     let ctxTrack = ctx.selectedGpxFile;
 
@@ -154,6 +165,17 @@ export default function LocalClientTrackLayer() {
             }
         }
     }, [ctxTrack]);
+
+    useEffect(() => {
+        const needUpdate = move || zoom !== prevZoom;
+        if (needUpdate && ctx.createTrack?.enable && ctxTrack) {
+            ctxTrack.layers = updateLayers(ctxTrack.points, ctxTrack.wpts, ctxTrack.layers, true);
+            saveChanges(ctxTrack.points, ctxTrack.wpts, ctxTrack.layers);
+
+            setPrevZoom(zoom);
+            setMove(false);
+        }
+    }, [zoom, move]);
 
     useEffect(() => {
         if (ctx.createTrack && ctxTrack) {
@@ -363,7 +385,12 @@ export default function LocalClientTrackLayer() {
         if (track.updated) {
             track.updated = false; // reset
         }
-        let layer = TrackLayerProvider.createLayersByTrackData({ data: track, ctx, map });
+        let layer = TrackLayerProvider.createLayersByTrackData({
+            data: track,
+            ctx,
+            map,
+            simplifyWpts: track?.wpts?.length >= WPT_SIMPLIFY_THRESHOLD,
+        });
         if (layer) {
             if (fitBounds) {
                 if (!_.isEmpty(layer.getBounds())) {
@@ -525,7 +552,12 @@ export default function LocalClientTrackLayer() {
         TracksManager.prepareTrack(file);
 
         file.tracks = [{ points, wpts }];
-        file.layers = TrackLayerProvider.createLayersByTrackData({ data: file, ctx, map });
+        file.layers = TrackLayerProvider.createLayersByTrackData({
+            data: file,
+            ctx,
+            map,
+            simplifyWpts: file?.wpts?.length >= WPT_SIMPLIFY_THRESHOLD,
+        });
 
         ctx.localTracks.push(file);
         ctx.setLocalTracks([...ctx.localTracks]);
@@ -611,7 +643,13 @@ export default function LocalClientTrackLayer() {
                 TrackLayerProvider.parsePoints({ map, ctx, points, layers, draggable: true });
             }
             if (wpts?.length > 0) {
-                TrackLayerProvider.parseWpt({ points: wpts, layers });
+                TrackLayerProvider.parseWpt({
+                    points: wpts,
+                    layers,
+                    map,
+                    ctx,
+                    simplify: wpts?.length >= WPT_SIMPLIFY_THRESHOLD,
+                });
             }
             layers = createEditableLayers(layers);
             if (deleteOld) {

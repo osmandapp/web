@@ -98,7 +98,7 @@ There are two possible ways to choose which roads to avoid when calculating a ro
 
 *Navigation button → Settings → Avoid roads*
 
-![Avoid road menu iOS](@site/static/img/navigation/routing/avoid_roads_menu_ios_2.png) 
+![Avoid road menu iOS](@site/static/img/navigation/routing/avoid_roads_menu_ios_2.png)
 
 </TabItem>
 
