@@ -154,12 +154,12 @@ This panel includes additional information about the object. This info could be 
 
 </Tabs>
 
-OsmAnd displays **additional POI names** in the *Map Context menu*.
+OsmAnd displays **additional POI names** in the *Map Context menu*, showing first the name in the [display language](../personal/global-settings.md#display-language) or from the system's preferred language list. If more translations are available, they are grouped into specific tags like *name, brand, operator,* or *nearby POIs*.
 
-- The name is first shown in the [display language](../personal/global-settings.md#display-language) or from the system's preferred language list.
-- Additional names are displayed in a drop-down menu (*Android*) and on a separate screen (*iOS*).
-- Access to the names depends on the availability of data about the object.
+- Any additional translations are available via a drop-down list.
 - Names are categorized into groups such as the *list of names in other languages*, *Regional*, *Local*, *National*, *International*, *Short*, *Old*, *Official*, and *Alternative* names.
+- Other categories include region-specific translation, or default settings.
+- If a specific translation is not available, OsmAnd defaults to the **local** option, ensuring consistency across multi-lingual regions.
 
 
 ### Coordinates

@@ -74,10 +74,6 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
 
     ![Search POI Android](@site/static/img/search/brand_search_andr.png)
 
-- **Managing POI translations:**  
-
-    OsmAnd groups translations for specific tags such as *name*, *brand*, *operator*, or *nearby POIs*. In the POI description view, the visible row displays a translation based on the user-selected language, region-specific translation, or default settings. Any additional translations are available via a drop-down list. If a specific translation is not available, OsmAnd defaults to the **local** option, ensuring consistency across multi-lingual regions.
-
 
 :::note
 To accomplish some of these tasks (locate addresses, POI) you will need to have the offline vector map file. Initially, the search is based on data located on the map in the visible area of the device screen. If you find nothing, OsmAnd proposes to increase the search radius.
