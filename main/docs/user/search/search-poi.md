@@ -20,16 +20,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 [OsmAnd Point of Interest](https://wiki.openstreetmap.org/wiki/Points_of_interest) (POI) functionality in OsmAnd provides accuracy, visibility, and convenience in finding interesting places and services near your current location or a selected area on the map.  
 
-The search bar allows you to enter keywords related to the places you are interested in. The POI search also presents a convenient list sorted by [category](#categories-poi-search) to help you quickly find what you are looking for, and the [filter](#save-new-custom-filters) allows you to select specific POI characteristics to display only relevant results.  
+The search bar allows you to enter keywords related to the places you are interested in. The POI search also presents a convenient list sorted by [category](#poi-search-by-categories) to help you quickly find what you are looking for, and the [filter](#save-new-custom-filters) allows you to select specific POI characteristics to display only relevant results.  
 
-[Custom Search](#custom-poi-search) complements the functionality by providing the ability to select categories and subcategories of POIs and save the [filters](#save-new-custom-filters) created for later use. This makes it easier to find POIs that match specific needs and preferences.
-
+[Custom Search](#custom-poi-search) enhances search functionality by allowing you to select categories and subcategories of Points of Interest (POIs). You can save created filters for future use, making it easier to quickly locate POIs that meet specific criteria or preferences. For more details, refer to the section on saving custom filters [here](#save-new-custom-filters).
 OsmAnd provides several ways to get to the Search tool where the **Categories search** section is located.
 
 - The [Search button](../widgets/map-buttons.md#search) is always displayed on the map, and tapping it will take you to the tool's [general screen](#how-to-use), where you can find the *Categories* tab.
-- Go to the main *Menu → Search → Categories tab* (Android version).
+- *Android*: Go to the main *Menu → Search → Categories tab*.
 - When preparing to start a route, tap [*Navigation → Set destination → Search field → Categories tab*](../navigation/setup/route-navigation.md#set-target-point).  
-- Go to the main Android [*Menu → Configure map → POI overlay → Search*](../map/point-layers-on-map.md#points-of-interest-poi).
+- *Android*: Go to the main [*Menu → Configure map → POI overlay → Search*](../map/point-layers-on-map.md#points-of-interest-poi).
 
 
 ## How to Use
@@ -53,19 +52,19 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
 *All POI types in OsmAnd you can find here:* [gitHub link](https://github.com/osmandapp/OsmAnd-resources/blob/dd575efb5aa4ec7e359bb50e8dc6de7c358ff258/poi/poi_types.xml).
 
 - **Point of Interest (POI) search:**
-    - Allows you to search for nearby or specific categories of points of interest (POI) such as restaurants, hotels, gas stations, stores, and other.
+    - Allows you to search for nearby or specific categories of points of interest (POI) such as restaurants, hotels, gas stations, stores, and others.
 
-    - Filters and sorting results by category, distance or rating are possible.
+    - Filters and sorting results by category, distance, or rating are possible.
 
-    - Search results show the location of the POI, its contact information, ratings and reviews.
+    - Search results show the location of the POI, its contact information, ratings, and reviews.
 
 - **Search POIs by category directly on the map**:
     - You need to select the required categories from the [**list**](../map/point-layers-on-map.md#points-of-interest-poi) in *Configure map → Show POI overlay...* and search by icons in the expected location.
 
-    - (*Android only*) You can start searching for POIs in *Menu → Search → Categories*.
+    - *Android*: You can start searching for POIs in *Menu → Search → Categories*.
 
 - **Brand search:**
-    - When entering a business venue or brand name (such as Audi, Starbucks, Aldi), the list of search results is ordered with priority by POI name and sorted by distance from the corresponding location.
+    - When entering a business venue or brand name (such as Audi, Starbucks, or Aldi), the list of search results is ordered with priority by POI name and sorted by distance from the corresponding location.
 
     - This type of search is convenient to use if a retail outlet specializes in selling goods or services of one brand or if the brand itself is better known and more recognizable than the name or category of the POI.
 
@@ -77,11 +76,11 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
 
 
 :::note
-To accomplish some of these tasks (locate addresses, POI) you will need to have the offline vector map file. Initially, the search is based on data located on the map in the visible area of the device screen. If you don't find nothing, OsmAnd propose to increase search radius.
+To accomplish some of these tasks (locate addresses, POI) you will need to have the offline vector map file. Initially, the search is based on data located on the map in the visible area of the device screen. If you find nothing, OsmAnd proposes to increase the search radius.
 :::  
 
 
-## Categories POI Search
+## POI Search by Categories
 
 <Tabs groupId="operating-systems">
 
@@ -99,20 +98,20 @@ To accomplish some of these tasks (locate addresses, POI) you will need to have 
 
 </Tabs>
 
-The **Search by POI Categories** tool provides you with the ability to quickly find locations of interest and objects classified into different categories. Each POI category has a unique set of characteristics, and this tool has filters that allow you to refine the search results by selecting different values for additional characteristics.
+The **POI Search by Categories** tool allows you to quickly find locations and objects of interest classified into different categories. Each POI category has a unique set of characteristics, and this tool has filters that allow you to refine the search results by selecting different values for additional characteristics.
 
 How it works:
 
-- *Category Selection.* You selects a POI category of interest, such as restaurants, hotels, stores, etc., from the provided list of categories.
-- *Characteristic Filters.* After selecting a POI category, the application shows additional characteristics that can be used to refine the search. For example, for the Restaurants category, the user can select filters such as cuisine type (Italian, Chinese, etc.), price range, rating, and parking availability.
-- *Applying Filters.* You selects the required values in the filters, then the application applies these filters to the search results to show only those properties that match the specified characteristics.
+- *Category Selection.* You select the POI category you are interested in, such as restaurants, hotels, stores, and others, from a suggested list of categories.
+- *Characteristic Filters.* After selecting a POI category, the application shows additional characteristics that can be used to refine the search. For example, for the Restaurants category, you can select filters such as cuisine type (Italian, Chinese, etc.), price range, rating, and parking availability.
+- *Applying Filters.* You select the required values in the filters, and then the application applies these filters to the search results to show only those properties that match the specified characteristics.
 - *Displaying results.* After applying filters, the application displays a list of POIs matching the category and characteristics set. The results are presented as a list with some information about each POI.
 
 Benefits:
 
-- *User Customization*. Feature filters allow users to customize searches to meet their specific needs and preferences.
+- *User Customization*. Feature filters allow you to customize searches to meet their specific needs and preferences.
 - *Refined results*. Filters help refine search results, making them more relevant and accurate.
-- *Multiple Categories*. The OpenStreetMap database has an extensive set of POI categories, allowing users to find sites of different types and categories.
+- *Multiple Categories*. The OpenStreetMap database has an extensive set of POI categories, allowing you to find sites of different types and categories.
 
 <!--
 POI category search allows you to quickly find and select places of interest based on your needs. It is a handy tool for traveling, finding nearby services or places of interest, and planning routes based on selected POI categories.  
@@ -189,7 +188,7 @@ A filter can consist of quite a number of items, the presence of which depends o
  13. **<Translate android="true" ids="poi_filter_parking"/>**. [Parking](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dparking) includes facilities used by the public, customers, or other authorized users to park vehicles such as cars and trucks, commonly known as a car park (British English) or parking lot (American English).  
         Includes *34* types of filters.
 
- 14. **Personal transport**. All [types of vehicles](https://wiki.openstreetmap.org/wiki/Pl:Key:amenity#Transport) that may be in the possession of the user.  
+ 14. **Personal transport**. All [types of vehicles](https://wiki.openstreetmap.org/wiki/Pl:Key:amenity#Transport) may be in the possession of the user.  
         Includes *38* types of filters.
 
  15. **<Translate android="true" ids="poi_filter_public_transport"/>**. It is a transportation system designed to carry people for public purposes, accessible to all residents and visitors to a city or region.  
@@ -256,11 +255,11 @@ Description and how to use:
 
 ![Search POI Android](@site/static/img/search/search_online_2_andr.png)  
 
-**Online Search** allows finding locations, addresses and points of interest in real-time. OsmAnd uses [Nominatim](https://nominatim.openstreetmap.org/ui/search.html), an online geocoder developed by OpenStreetMap that translates users' text queries into geographic coordinates and back ([*example*](#example-of-online-search-query)).  
+**Online Search** allows finding locations, addresses, and points of interest in real time. OsmAnd uses [Nominatim](https://nominatim.openstreetmap.org/ui/search.html), an online geocoder developed by OpenStreetMap that translates users' text queries into geographic coordinates and back ([*example*](#example-of-online-search-query)).  
 
 Online Search includes the following features:
 
-1. **Search by location**. You can enter the name of a city, street, neighbourhood, or other location and OsmAnd will provide results matching the query.
+1. **Search by location**. You can enter the name of a city, street, neighborhood, or other location and OsmAnd will provide results matching the query.
 2. **Geocoding**. Online search converts your text queries into geographic coordinates, allowing precise location.
 3. **Reverse geocoding**. You can enter geographic coordinates and Search will return the corresponding location as a city name, street name, or place on the map.
 4. **Search by Points of Interest**. Allows you to search for different points by name or category.
@@ -289,9 +288,9 @@ You can find out information about Online Navigation in [Online routing](../navi
 
 ## Custom POI Search
 
-Custom POI Search is an advanced search feature that allows you to find POIs from different categories and combine them for a more accurate and personalized search. Unlike the standard POI search, which is limited to some predefined categories, Custom POI search provides the flexibility to select and combine different types of POIs.  
+Custom POI Search is an advanced search feature that allows you to find POIs from different categories and combine them for a more accurate and personalized search. Unlike the standard POI search, which is limited to some predefined categories, the Custom POI search provides the flexibility to select and combine different types of POIs.  
 
-For example, a user can simultaneously search for restaurants and pharmacies to find the nearest place to have lunch and then take medicine. Or search for the nearest gas station and car service when there is a problem with the car.  
+For example, you can search restaurants and pharmacies simultaneously to find the nearest place to dine and then take your medicine. Or search for the nearest gas station and car service when you have a problem with your car.  
 
 This functionality is especially useful in various cases:  
 
@@ -323,21 +322,21 @@ This functionality is especially useful in various cases:
 
 *Custom POI filter* includes sets of amenity categories consisting of relevant values. OsmAnd allows you to collect and combine the required POI types from one or more suggested categories.  
 
-To create your own filters to find the places, you are looking for on the map, you need to select all the categories and subcategories of interest, [save](#save-new-custom-filters), and then [edit](#edit-an-existing-filter) if necessary. You may not save the filtered data, but only view it by tapping the *Show* button. But then, all your actions will be canceled when you switch to other searches or exit the search tool.  
+To create custom filters for finding places on the map, select relevant categories and subcategories of interest. You can [save](#save-new-custom-filters) these filters for later use or [edit](#edit-an-existing-filter) them if needed. Alternatively, you can view the filtered data without saving by tapping the *Show* button. However, note that if you don't save the filters, all selections will be canceled once you switch searches or exit the search tool.
 
 - Each amenity category contains a list of available generic values for POI types.
 - You have the option to select or deselect them individually by tapping the field of the type you are interested in.
 - *Select all* - to do this, select the toggle button.
-- And refine the list by excluding unnecessary ones - start typing the suggested name in the *Search for POI types* field.  
+- Refine the list by excluding unnecessary ones - start typing the suggested name in the *Search for POI types* field.  
 
 #### Categories and their Filters
 
-1. **<Translate android="true" ids="amenity_type_administrative"/>**. Includes 25 types: *Allotments, Atoll, Borough, City, City block, Country, Courthouse, Customs, Diplomatic office, Farm, Government, Hamlet, Island, Islet, Isolated dwelling, Locality, Neighbourhood, Police, Prison, Quarter, Residential area, Suburb, Town, Town hall, Village*.  
+1. **<Translate android="true" ids="amenity_type_administrative"/>**. Includes 25 types: *Allotments, Atoll, Borough, City, City block, Country, Courthouse, Customs, Diplomatic office, Farm, Government, Hamlet, Island, Islet, Isolated dwelling, Locality, Neighbourhood, Police, Prison, Quarter, Residential area, Suburb, Town, Townhall, Village*.  
 
 2. **Сhristmas**. Includes 5 types types of filters:  
     *Christmas event, Christmas market, Christmas pyramid, Christmas shop, Christmas tree*.
 
-3. **<Translate android="true" ids="amenity_type_education"/>**. Includes 16 types: *Allotments, Atoll, Borough, City, City block, Country, Courthouse, Customs, Diplomatic office, Farm, Government, Hamlet, Island,Islet, Isolated dwelling, Locality, Neighbourhood, Police, Prison, Quarter, Residential area, Suburb, Town, Town hall, Village*.  
+3. **<Translate android="true" ids="amenity_type_education"/>**. Includes 16 types: *Allotments, Atoll, Borough, City, City block, Country, Courthouse, Customs, Diplomatic office, Farm, Government, Hamlet, Island, Islet, Isolated dwelling, Locality, Neighbourhood, Police, Prison, Quarter, Residential area, Suburb, Town, Townhall, Village*.  
 
 4. **<Translate android="true" ids="amenity_type_emergency"/>**. Includes 14 types of filters.  
 
@@ -375,9 +374,9 @@ To create your own filters to find the places, you are looking for on the map, y
 
 21. **<Translate android="true" ids="amenity_type_transportation"/>**. Includes 97 types of filters.  
 
-22. **User defined**. Includes 1 types: *User Defined Other Postcode*.
+22. **User defined**. Includes 1 type: *User Defined Other Postcode*.
 
-23. **Wikipedia**. Includes 1 types: *Wikipedia*.  
+23. **Wikipedia**. Includes 1 type: *Wikipedia*.  
 
 
 ### Save New Custom Filters
@@ -401,13 +400,13 @@ To create your own filters to find the places, you are looking for on the map, y
 
 To **save** a custom filter, select filter types, and then:
 
-- Tap the *Show* button and select the *Save* button for iOS, or the button with the *icon indicating the save action* for Android.
+- Tap the *Show* button and select the *Save* button for iOS or the button with the *icon indicating the save action* for Android.
 - Enter a name for the new category.
 - Your filter will appear in the *Categories tab* list in the Search tool.  
 
 Another way to **save**:
 
-- Select *[category](#categories-poi-search) → [filter icon](#types-of-filters) →* select *types* of characteristics *→ three-dot menu → Save filter*.
+- Select *[category](#poi-search-by-categories) → [filter icon](#types-of-filters) →* select *types* of characteristics *→ three-dot menu → Save filter*.
 
 
 ### Edit an Existing Filter
@@ -432,7 +431,7 @@ From the main screen:
 
 - Tap the *Magnifying Glass* button in the upper left corner of the device screen to open the *Search* menu.
 - Select the *Categories* tab.
-- Select a saved custom category, the search results screen appears.
+- Select a saved custom category, and the search results screen appears.
 - Tap the *Filter* icon next to *Show on Map* to open the *Filters* screen.
 - Tap the *three-dot menu*.
 - In the drop-down menu, select **Edit filter**.
@@ -460,7 +459,7 @@ From the main screen:
 
 You can only delete categories that were created using filters or custom search.
 
-- Go to the [*Categories* tab](#categories-poi-search) and select the required one.
+- Go to the [*Categories* tab](#poi-search-by-categories) and select the required one.
 - In the field next to *Show on Map*, tap the icon representing the *filter*.
 - In the *Filters* menu, tap the *three-dot menu* ( &#8285; ) located in the upper right corner of the screen.
 - Select **Delete Filter**.
@@ -486,4 +485,4 @@ An additional option only for the iOS app is **Delete Custom Categories**.
 - [Search Coordinates](./search-coordinates.md)
 
 
-> *This article was last updated in July 2024*
+> *This article was last updated in October 2024*
