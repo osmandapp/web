@@ -700,7 +700,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     <Header />
                     {wpt !== null && (
                         <ListItemText id={getId()}>
-                            <Box className={styles.topContainer}>
+                            <Box id={'se-wpt-details'} className={styles.topContainer}>
                                 <div>
                                     <MenuItemWithLines maxLines={3} className={styles.name}>
                                         <WptName />

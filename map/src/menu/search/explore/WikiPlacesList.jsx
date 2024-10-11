@@ -8,7 +8,7 @@ export default function WikiPlacesList({ size, showAll = null, useOverflow = tru
 
     return (
         <Box
-            id={'se-wiki_places-items'}
+            id={'se-wiki-places-items'}
             sx={{
                 overflowY: useOverflow ? 'auto' : 'hidden',
                 overflowX: 'hidden',

@@ -81,7 +81,7 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
                         <>
                             <div>
                                 <MenuItem
-                                    id={`se-wiki_place-${item.properties?.id}`}
+                                    id={`se-wiki-place-${item.properties?.osmid}`}
                                     divider={index !== lastIndex}
                                     className={`${styles.placeItem} ${isHovered ? styles.hoverItem : ''}`}
                                     onClick={() => openInfo(item)}

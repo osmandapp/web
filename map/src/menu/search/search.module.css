@@ -277,7 +277,6 @@
     padding: 16px !important;
     background-color: black !important;
     position: absolute !important;
-    height: 88px !important;
 }
 .mainPhotoGallery {
     width: 148px !important;
@@ -359,4 +358,13 @@
     margin-left: 16px !important;
     margin-bottom: 0px !important;
     margin-top: 0px !important;
+}
+.metadata {
+    color: white !important;
+    font-family: Roboto !important;
+}
+.metadatamulti {
+    line-height: 1.5 !important;
+    font-size: 16px !important;
+    letter-spacing: 0.00938em !important;
 }
