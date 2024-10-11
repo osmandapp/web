@@ -5,6 +5,12 @@ import TrackLayerProvider, { redrawWptsOnLayer } from '../util/TrackLayerProvide
 import TracksManager, { fitBoundsOptions } from '../../manager/track/TracksManager';
 import { useMutator } from '../../util/Utils';
 import { MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
+import { clusterMarkers } from '../util/Clusterizer';
+import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
+import { processMarkers } from './FavoriteLayer';
+import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
+
+const WPT_SIMPLIFY_THRESHOLD = 500;
 
 function clickHandler({ ctx, file, layer }) {
     if (file.name !== ctx.selectedGpxFile.name || ctx.infoBlockWidth === MENU_INFO_CLOSE_SIZE) {
@@ -20,7 +26,7 @@ function clickHandler({ ctx, file, layer }) {
 }
 
 function addTrackToMap({ ctx, file, map, fit = false } = {}) {
-    const layer = TrackLayerProvider.createLayersByTrackData({ data: file, ctx, map });
+    let layer = TrackLayerProvider.createLayersByTrackData({ data: file, ctx, map });
     if (!layer) {
         return null;
     }
@@ -28,9 +34,89 @@ function addTrackToMap({ ctx, file, map, fit = false } = {}) {
 
     if (fit || file.zoomToTrack) {
         map.fitBounds(layer.getBounds(), fitBoundsOptions(ctx));
+        if (!(file.wpts?.length >= WPT_SIMPLIFY_THRESHOLD)) {
+            layer.addTo(map);
+            // otherwise, layer is added after zoom
+        }
+    } else {
+        // case for Make track visible
+        if (file.wpts?.length >= WPT_SIMPLIFY_THRESHOLD) {
+            layer = simplifyLayer({
+                layerGroup: layer,
+                wpts: file.wpts,
+                map,
+                ctx,
+                useMapBounds: true,
+            });
+        }
+        layer.addTo(map);
     }
-    layer.addTo(map);
     return layer;
+}
+
+function simplifyLayer({ layerGroup, wpts, map, ctx = null, useMapBounds = false }) {
+    const zoom = map.getZoom();
+    const center = map.getCenter();
+    const mapBounds = map.getBounds();
+    const { mainMarkers, secondaryMarkers } = clusterMarkers({
+        places: wpts,
+        zoom,
+        latitude: center.lat,
+        iconSize: DEFAULT_ICON_SIZE,
+        isFavorites: true,
+    });
+    const otherLayers = [];
+    const mainLayers = [];
+    const secondaryLayers = [];
+    let wptLayerGroup = [];
+    if (ctx) {
+        // parse wpts if layers already simplified
+        TrackLayerProvider.parseWpt({ points: wpts, layers: wptLayerGroup, ctx, map });
+    }
+    if (wptLayerGroup.length > 0) {
+        wptLayerGroup.forEach((layer) => {
+            const markerLatLng = layer.getLatLng();
+            if (useMapBounds && !mapBounds.contains(markerLatLng)) {
+                return;
+            }
+            processMarkers({
+                layer,
+                markerLatLng,
+                mainMarkers,
+                secondaryMarkers,
+                mainLayers,
+                secondaryLayers,
+            });
+        });
+    }
+    layerGroup.eachLayer((layer) => {
+        if (layer.options.wpt) {
+            if (wptLayerGroup.length === 0) {
+                const markerLatLng = layer.getLatLng();
+                if (useMapBounds && !mapBounds.contains(markerLatLng)) {
+                    return;
+                }
+                processMarkers({
+                    layer,
+                    markerLatLng,
+                    mainMarkers,
+                    secondaryMarkers,
+                    mainLayers,
+                    secondaryLayers,
+                });
+            } else {
+                map.removeLayer(layer);
+            }
+        } else {
+            otherLayers.push(layer);
+        }
+    });
+    layerGroup.clearLayers();
+    mainLayers.forEach((l) => layerGroup.addLayer(l));
+    secondaryLayers.forEach((l) => layerGroup.addLayer(l));
+    otherLayers.forEach((l) => layerGroup.addLayer(l));
+
+    return layerGroup;
 }
 
 function removeLayerFromMap(file, map) {
@@ -46,6 +132,44 @@ const CloudTrackLayer = () => {
     const [selectedPointMarker, setSelectedPointMarker] = useState(null);
 
     const map = useMap();
+
+    const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
+    const [prevZoom, setPrevZoom] = useState(null);
+    const [move, setMove] = useState(false);
+    const [alreadyUpdate, setAlreadyUpdate] = useState(false);
+
+    useZoomMoveMapHandlers(map, setZoom, setMove);
+
+    useEffect(() => {
+        const needUpdate = move || zoom !== prevZoom;
+        let processed = 0;
+        if (needUpdate) {
+            const newGpxFiles = { ...ctx.gpxFiles } ?? {};
+            Object.values(newGpxFiles).forEach((file) => {
+                if (file.url && file.gpx) {
+                    if (file.wpts.length >= WPT_SIMPLIFY_THRESHOLD) {
+                        const layer = simplifyLayer({
+                            layerGroup: file.gpx,
+                            wpts: file.wpts,
+                            map,
+                            ctx,
+                            useMapBounds: true,
+                        });
+                        layer.on('click', () => clickHandler({ ctx, file, layer }));
+                        file.gpx = layer;
+                        file.gpx.addTo(map);
+                        processed++;
+                    }
+                }
+            });
+            setPrevZoom(zoom);
+            setMove(false);
+            if (processed > 0) {
+                setAlreadyUpdate(true);
+                ctx.setGpxFiles(newGpxFiles);
+            }
+        }
+    }, [zoom, move]);
 
     function cleanupZombieLayers({ id, name }) {
         for (let x in allLayers) {
@@ -125,6 +249,11 @@ const CloudTrackLayer = () => {
     }, [ctx.createTrack?.enable]); // think about dep on ctx.gpxFiles
 
     useEffect(() => {
+        if (alreadyUpdate) {
+            // not to update after simplified layers
+            setAlreadyUpdate(false);
+            return;
+        }
         let processed = 0;
         const newGpxFiles = { ...ctx.gpxFiles } ?? {};
         Object.values(newGpxFiles).forEach((file) => {
