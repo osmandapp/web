@@ -16,6 +16,47 @@ import Utils from '../../util/Utils';
 import useZoomMoveMapHandlers from '../../util/hooks/useZoomMoveMapHandlers';
 import { updateMarkerZIndex } from './ExploreLayer';
 
+export function restoreOriginalIcon(layer) {
+    if (layer.options.originalIcon) {
+        if (layer.icon !== layer.options.originalIcon) {
+            layer.setIcon(layer.options.originalIcon);
+        }
+    }
+}
+
+export function processMarkers({ layer, markerLatLng, mainMarkers, secondaryMarkers, mainLayers, secondaryLayers }) {
+    if (!layer.options.originalIcon) {
+        layer.options.originalIcon = layer.options.icon;
+    }
+
+    const isMainMarker = mainMarkers.some((mainMarker) => {
+        const mainLatLng = L.latLng(mainMarker.lat, mainMarker.lon);
+        return mainLatLng.equals(markerLatLng);
+    });
+
+    const isSecondaryMarker = secondaryMarkers.some((secMarker) => {
+        const secLatLng = L.latLng(secMarker.lat, secMarker.lon);
+        return secLatLng.equals(markerLatLng);
+    });
+
+    if (isMainMarker) {
+        restoreOriginalIcon(layer);
+        mainLayers.push(layer);
+    }
+
+    if (isSecondaryMarker) {
+        const color = layer.options.color ? Utils.hexToArgb(layer.options.color) : DEFAULT_WPT_COLOR;
+        const customIcon = L.divIcon({
+            className: 'custom-circle-icon',
+            iconSize: [10, 10],
+            html: `<div style="background-color:${color};border-radius:50%;width:10px;height:10px;border:1px solid #ffffff;"></div>`,
+        });
+        // Replace the marker's icon with the custom circle-like icon
+        layer.setIcon(customIcon);
+        secondaryLayers.push(layer);
+    }
+}
+
 const FavoriteLayer = () => {
     const ctx = useContext(AppContext);
     const map = useMap();
@@ -123,36 +164,14 @@ const FavoriteLayer = () => {
                     }
                     layer.options.isFavorite = true;
 
-                    if (!layer.options.originalIcon) {
-                        layer.options.originalIcon = layer.options.icon;
-                    }
-
-                    const isMainMarker = mainMarkers.some((mainMarker) => {
-                        const mainLatLng = L.latLng(mainMarker.lat, mainMarker.lon);
-                        return mainLatLng.equals(markerLatLng);
+                    processMarkers({
+                        layer,
+                        markerLatLng,
+                        mainMarkers,
+                        secondaryMarkers,
+                        mainLayers,
+                        secondaryLayers,
                     });
-
-                    const isSecondaryMarker = secondaryMarkers.some((secMarker) => {
-                        const secLatLng = L.latLng(secMarker.lat, secMarker.lon);
-                        return secLatLng.equals(markerLatLng);
-                    });
-
-                    if (isMainMarker) {
-                        restoreOriginalIcon(layer);
-                        mainLayers.push(layer);
-                    }
-
-                    if (isSecondaryMarker) {
-                        const color = layer.options.color ? Utils.hexToArgb(layer.options.color) : DEFAULT_WPT_COLOR;
-                        const customIcon = L.divIcon({
-                            className: 'custom-circle-icon',
-                            iconSize: [10, 10],
-                            html: `<div style="background-color:${color};border-radius:50%;width:10px;height:10px;border:1px solid #ffffff;"></div>`,
-                        });
-                        // Replace the marker's icon with the custom circle-like icon
-                        layer.setIcon(customIcon);
-                        secondaryLayers.push(layer);
-                    }
                 });
                 markersToAdd.push(...mainLayers, ...secondaryLayers);
 
@@ -178,14 +197,6 @@ const FavoriteLayer = () => {
                 res.addTo(map).on('click', onClick);
                 updateMarkerZIndex(mainLayersGroup, 2000);
                 file.markersOnMap = res;
-            }
-        }
-    }
-
-    function restoreOriginalIcon(layer) {
-        if (layer.options.originalIcon) {
-            if (layer.icon !== layer.options.originalIcon) {
-                layer.setIcon(layer.options.originalIcon);
             }
         }
     }
