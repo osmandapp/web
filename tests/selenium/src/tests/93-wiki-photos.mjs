@@ -2,7 +2,8 @@ import actionOpenMap from '../actions/actionOpenMap.mjs';
 import actionLogIn from '../actions/actionLogIn.mjs';
 import actionFinish from '../actions/actionFinish.mjs';
 import { clickBy, matchInnerTextBy, waitBy, waitByRemoved } from '../lib.mjs';
-import { By } from 'selenium-webdriver';
+import { By, until } from 'selenium-webdriver';
+import { driver } from '../options.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -11,7 +12,11 @@ export default async function test() {
     await clickBy(By.id('se-show-main-menu'), { optional: true });
     await clickBy(By.id('se-show-menu-search'));
 
+    await waitByRemoved(By.id('se-wiki-place-progress'));
     await waitBy(By.id('se-wiki-places-items'));
+    await waitBy(By.id('se-show-all-wiki-place'));
+    await clickBy(By.id('se-show-all-wiki-place'));
+    await waitBy(By.id('se-wiki-place-171599273'));
     await clickBy(By.id('se-wiki-place-171599273'));
 
     await waitBy(By.id('se-wpt-details'));
@@ -22,7 +27,7 @@ export default async function test() {
 
     await matchInnerTextBy(By.id('se-photo-date'), 'Date: 5 August 2013');
     await matchInnerTextBy(By.id('se-photo-author'), 'Author: Tiia Monto');
-    await matchInnerTextBy(By.id('se-photo-license'), 'License: cc-by-sa-3.0, Tiia Monto');
+    await matchInnerTextBy(By.id('se-photo-license'), 'License: CC-BY-SA-3.0 - TIIA MONTO');
     await matchInnerTextBy(
         By.id('se-photo-description'),
         'Description: Maidan Nezalezhnosti square in Kyiv. The Independence monument in on the left.'
@@ -33,7 +38,7 @@ export default async function test() {
 
     await matchInnerTextBy(By.id('se-photo-date'), 'Date: 30 July 2013');
     await matchInnerTextBy(By.id('se-photo-author'), 'Author: Haidamac');
-    await matchInnerTextBy(By.id('se-photo-license'), 'License: cc-by-sa-4.0');
+    await matchInnerTextBy(By.id('se-photo-license'), 'License: SELF - CC-BY-SA-4.0');
     await matchInnerTextBy(By.id('se-photo-description'), 'Description: Монумент Независимости Украины, Киев');
 
     await clickBy(By.id('se-close-photo'));

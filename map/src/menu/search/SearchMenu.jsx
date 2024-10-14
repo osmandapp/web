@@ -298,6 +298,7 @@ export default function SearchMenu() {
                                                 useOverflow={false}
                                                 showAll={
                                                     <Button
+                                                        id={'se-show-all-wiki-place'}
                                                         className={styles.buttonShowAllExplore}
                                                         onClick={openExploreMenu}
                                                     >
