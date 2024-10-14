@@ -124,7 +124,7 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
                                         </div>
                                     )}
                                 </MenuItem>
-                                {ctx.loadingContextItem === item && <LinearProgress />}
+                                {ctx.loadingContextItem === item && <LinearProgress id={'se-wiki-place-progress'} />}
                             </div>
                         </>
                     )}
