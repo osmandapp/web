@@ -34,3 +34,25 @@ To start using data from external sensors, you need to make the following settin
 2. Make the necessary settings in the sensors settings.
 3. If needed, add [Vehicle Metrics widgets](#widgets) to the screen.
 4. Vehicle Metrics data can be recorded to a track in the [Trip recording plugin](#trip-recording).
+
+### Pair ODB-II scanner
+
+### Settings
+
+
+## Trip Recording
+
+### Data Analyze
+
+## Widgets
+
+### Widgets Settings
+
+
+## Related articles
+
+- [Interact with Map](../../user/map/interact-with-map.md)
+- [Global Settings](../../user/personal/global-settings.md)
+- [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
+
+> *This article was last updated in October 2024*

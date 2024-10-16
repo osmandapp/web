@@ -32,7 +32,7 @@ Thank you for your continued support of OsmAnd. Happy journey!
 
 **What's new**
 
-- Introduced Main Navigation widget,
+- Introduced [Main Navigation widget](#main-navigation-widget),
 - Added a full-screen [gallery viewer](#images-gallery) for Wikimedia images,
 - Introduced a new [plugin "Vehicle Metrics"](#vehicle-metrics) to monitor vehicle performance using the OBD-II protocol,
 - Added the ability to assign [activities to tracks and filter](#gpx-track-activities) them accordingly,
@@ -43,9 +43,10 @@ Thank you for your continued support of OsmAnd. Happy journey!
   - Implemented new quick actions for [trip recording](https://osmand.net/docs/user/plugins/trip-recording),
   - Quick action to [control visibility of OSM Edits](https://github.com/osmandapp/OsmAnd/issues/20711).
 - Added new route layer ["Dirt Bike trails"](https://github.com/osmandapp/OsmAnd/issues/18756),
-- Added information about surrounding areas for the selected point,
+- Added [information about surrounding areas](#surrounding-areas) for the selected point,
 - Separated visibility parameters for Terrain colorization options,
 - Added a tappable icon to display access or other road or path attributes,
+- [System font](#system-font) everywhere,
 - Fixed "Auto-record track during navigation",
 - Fixed issue with fliped coordinates in RTL,
 - Fixed missed sensor data for currently recording track,
@@ -64,6 +65,14 @@ Thank you for your continued support of OsmAnd. Happy journey!
 - Traffic (Germany and Netherlands).
 - Geographic grid.
 -->
+
+
+## Main Navigation widget
+
+Added The Main navigation widget for [Top panel](https://osmand.net/docs/user/widgets/configure-screen#top-and-bottom-panels): _Configure screen → Top panel → Route guidance: Next turn, Second next turn, Lanes_
+
+![Main Navigation widget](./img/main_nav_widget.png)
+
 
 ## Images Gallery
 
@@ -109,11 +118,27 @@ Added [new actions](https://osmand.net/docs/user/widgets/quick-action#action-typ
 
 ## Dirt Bike Trails
 
-Added new Route options  - [Dirt bike trails](https://osmand.net/docs/user/map/vector-maps#routes): _Menu → Configure map → Routes → Dirt bike routes_ 
+Added new Route options  - [Dirt bike trails](https://osmand.net/docs/user/map/vector-maps#routes): _Menu → Configure map → Routes → Dirt bike routes_ . Read more about [dirtbike tag](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
 
 Upon activation, display a colored route overlay for all paths marked with the dirtbike:scale tag, similar to the approach used for mtb:scale (Mountain bike).
 
-![Dirt Bike legend](./img/dirt_bike.png)
+![Dirt Bike legend](./img/dirt_bike.png) ![Dirt Bike legend](./img/dirt_bike_1.png)
+
+## Surrounding areas
+
+Show data information to [Map Context](https://osmand.net/docs/user/map/map-context-menu#details) menu about surrounding areas (polygons) after [**long tap**](https://osmand.net/docs/user/map/map-context-menu#select-any-point-long-tap) on the map:
+
+_Long tap on the map → Map Context menu → Details → Within_
+
+Sort by polygon size: from small to big. Show polygon type and name.
+
+![Poligon info](./img/areas_info.png)
+
+
+## System font
+
+[Use system font](https://github.com/osmandapp/OsmAnd/issues/19123) as font for OsmAnd menu
+
 ________________________________________
 
 <LinksSocial/>
