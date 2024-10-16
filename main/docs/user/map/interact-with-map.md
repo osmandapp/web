@@ -93,30 +93,7 @@ The *Map Magnifier* is a tool that enhances the map's visibility, similar to a m
 
 </Tabs>  
 
-The map orientation modes allow the user to select how the map is displayed on the device screen. Enabling each mode changes the way the map is oriented according to the selected option.  
-
-1. **<Translate android="true" ids="rotate_map_manual_opt"/>**. When this option is selected, the map is fixed in the current position and does not rotate automatically. You can change the orientation of the map manually using a [two-pointer gesture (two-finger touch and rotate)](../map/interact-with-map.md#gestures). The manual rotation mode is set by default.
-
-2. **<Translate android="true" ids="rotate_map_bearing_opt"/>**. The map rotates relative to the direction of your movement known from GPS data. For details, go to [*Rotate map by bearing*](../map/interact-with-map#rotate-map-by-bearing).
-
-3. **<Translate android="true" ids="rotate_map_compass_opt"/>**. The [icon on the button](../widgets/map-buttons.md/#compass) points to the actual North, and the map moves according to the compass orientation of your device. Your device should be in as horizontal a position as possible. If your device does not have a compass sensor, the orientation of the map remains unchanged.
-
-4. **<Translate android="true" ids="rotate_map_north_opt"/>**. The map is fixed in the direction of the North, which is the top edge of your device. The map does not have automatic rotation.
-   - for the **Android** version it has hard lock the North mode (without manual rotation with two-finger touch and rotate).
-   - for the **iOS** version you can rotate it manually with a [two-pointer gesture (two-finger touch and rotate)](../map/interact-with-map.md#gestures), and in this case, the map orientation mode will change to *Manually rotated*.
-
-**Settings for map orientation modes:**  
-
-- Map Orientation modes can be opened in the [Profile settings](../personal/profiles.md#appearance) as well as by long tapping the [Compass button](../widgets/map-buttons.md#compass).  
-
-- To quickly switch between map orientation modes:
-   - For **Android** version:  
-   ***Double tap*** the [Compass button](../widgets/map-buttons.md#compass) located in the upper left corner of the screen, if [visible](../widgets/map-buttons.md#display-options).
-
-   - For **iOS** version:  
-   ***Single tap*** the [Compass button](../widgets/map-buttons.md#compass) located in the upper left corner of the screen, if [visible](../widgets/map-buttons.md#display-options).
-
-- (*Android only*) A single tap of the [Compass button](../widgets/map-buttons.md#compass) rotates the map orientation to the North in all orientations. Even if it reverts after a second, such as in compass mode.
+*Map orientation modes* allow you to choose how the map is displayed on the device screen. OsmAnd offers modes such as **Manually Rotated**, **Movement Direction**, **Compass Direction**, and **North is Up**. Enabling each mode changes the way the map is oriented according to the selected option. For full details, see the [Map Buttons](../widgets/map-buttons.md#compass) article.
 
 
 ## Compass
@@ -125,7 +102,7 @@ The map orientation modes allow the user to select how the map is displayed on t
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,map_widget_compass"/>*
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_buttons,default_buttons,map_widget_compass"/>*
 
 ![Compass widget](@site/static/img/widgets/compass_widget.png)
   
@@ -133,7 +110,7 @@ The map orientation modes allow the user to select how the map is displayed on t
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_left,map_widget_compass"/>*
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,default_buttons,map_widget_compass"/>*
 
 ![Compass widget](@site/static/img/widgets/compass_widget.png)
 
@@ -141,12 +118,12 @@ The map orientation modes allow the user to select how the map is displayed on t
 
 </Tabs>
 
-The compass button shows how the [map is oriented](#map-orientation-modes). The red arrow, or the direction of the arrow in *Movement direction* mode, indicates the North. [The icon on the button](../widgets/map-buttons.md#compass) indicates the current map orientation mode. Double tap (Android), One tap (iOS) the compass button toggles through all modes in turn.
+The compass button shows how the [map is oriented](#map-orientation-modes). The *red arrow* on icons, or the direction of the arrow in *Movement direction* mode, indicates the North. [The icon on the compass button](../widgets/map-buttons.md#compass) indicates the current map orientation mode. The compass button widget offers three [interaction options](../widgets/map-buttons.md#compass-tapping-behavior): *Single Tap* rotates the map to the North, *Double Tap* alternates between all map orientation modes, and *Long Tap* opens the list of modes.
 
 
 ## Rotate Map by Bearing
 
-When the "rotate map by bearing" mode (rotation by [movement direction](#map-orientation-modes)) is enabled, the map is oriented so that your forward view aligns directly above the *My Location* icon. If there is no movement, the map will remain stationary.  
+When the **rotate map by bearing** mode (rotation by [movement direction](#map-orientation-modes)) is enabled, the map is oriented so that your forward view aligns directly above the *My Location* icon. If there is no movement, the map will remain stationary.  
 In this mode, the map's center is positioned slightly below the center of the screen, allowing you to see more map data ahead of your movement — especially helpful in navigation mode.  
 You can adjust the "rotate map by bearing" mode in the [Profile settings](../personal/profiles.md#appearance) or by tapping the [Compass](#compass).
 
@@ -174,7 +151,7 @@ Under the horizon, you can see so-called *haze* or *fog*. This area of the map i
 The use of fog is necessary since the display of remote objects on the map requires significant computing resources and is not always justified due to map [distortions](../plugins/development.md#comparison-with-a-satellite-imagery) at small viewing angles. So the visible distance on the OsmAnd map is currently limited to 35 tiles.  
 
 :::info
-Map tilt can be changed by a long tap the screen with two fingers and moving them up/down. You can also change the tilt by tapping on the [*My location*](#my-location-and-zoom) icon in the lower-right corner of the screen (only 45 and 90-degree positions are available).  
+Map tilt can be changed by a long tap on the screen with two fingers and moving them up/down. You can also change the tilt by tapping on the [*My location*](#my-location-and-zoom) icon in the lower-right corner of the screen (only 45 and 90-degree positions are available).  
 You can not change the Camera tilt when the old [map rendering engine](../personal/global-settings.md#map-rendering-engine) (version 1) is on.
 :::
 
@@ -322,4 +299,4 @@ You can delete multiple unnecessary actions using the **Edit button** (*pencil-s
 - [Public transport](./public-transport.md)
 
 
-> *This article was last updated in September 2024*
+> *This article was last updated in October 2024*

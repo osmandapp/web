@@ -141,7 +141,7 @@ The following plugins provide their own settings:
 
 ### [Wikipedia](./wikipedia.md)
 
-Having Wikipedia on your trip helps you learn more about the places you visit. It is available offline and shows Wikipedia articles in relation to the points of interest right on the map.
+Having Wikipedia on your trip helps you learn more about the places you visit. It is available offline and shows Wikipedia articles related to the points of interest right on the map.
 
 ### [Online maps](./online-map.md)
 

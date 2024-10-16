@@ -21,7 +21,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 The Wikipedia plugin is a paid feature of the OsmAnd app.  
 :::
 
-Having Wikipedia on your trip helps you learn more about the places you visit. It is available offline and shows Wikipedia articles in relation to the points of interest right on the map.  
+Having Wikipedia on your trip helps you learn more about the places you visit. It is available offline and shows Wikipedia articles related to the points of interest right on the map.  
 
 The Wikipedia plugin is a separate feature that can be enabled/disabled as needed. Once enabled, it allows you to upload Wikipedia data [downloaded](../personal/maps-resources.md#download-maps-maps) for each geographical region. The map has two kinds of uploaded knowledge from Wikipedia: a brief information and a full article.  
 
