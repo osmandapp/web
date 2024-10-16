@@ -1,5 +1,5 @@
 ---
-sidebar_position: 18
+sidebar_position: 16
 title:  Vehicle Metrics
 ---
 
@@ -34,3 +34,18 @@ To start using data from external sensors, you need to make the following settin
 2. Make the necessary settings in the sensors settings.
 3. If needed, add [Vehicle Metrics widgets](#widgets) to the screen.
 4. Vehicle Metrics data can be recorded to a track in the [Trip recording plugin](#trip-recording).
+
+
+## Trip Recording
+
+
+## Widgets
+
+
+## Related Articles
+
+- [Interact with Map](../../user/map/interact-with-map.md)
+- [Global Settings](../../user/personal/global-settings.md)
+- [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
+
+> *This article was last updated in October 2024*
