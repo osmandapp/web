@@ -13,7 +13,7 @@ export default async function test() {
 
     await waitBy(By.id('se-search-input'));
     await waitBy(By.id('se-default-search-categories'));
-    await waitBy(By.id('se-wiki_places-items'));
+    await waitBy(By.id('se-wiki-places-items'));
 
     await waitBy(By.id('se-search-input-close'));
     await clickBy(By.id('se-search-input-close'));

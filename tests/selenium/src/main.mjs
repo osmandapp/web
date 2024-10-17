@@ -50,6 +50,8 @@ async function runTest({ file, i, total }) {
                 if (e instanceof TestIgnored) {
                     console.log(`Test ${file} is ignored`);
                     return;
+                } else {
+                    error = e;
                 }
             }
 
