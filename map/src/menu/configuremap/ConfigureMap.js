@@ -44,6 +44,16 @@ export default function ConfigureMap() {
     const [openedTracks, setOpenedTracks] = useState(null);
     const [openPoiConfig, setOpenPoiConfig] = useState(false);
 
+    const heightmaps = ['hillshade', 'slope', 'height'];
+    const heightmapsLayers = heightmaps.map((item) => {
+        return {
+            key: item,
+            name: item,
+            url: `${process.env.REACT_APP_TILES_API_SITE}/heightmap/${item}/{z}/{x}/{y}.png`,
+            tileSize: 256,
+        };
+    });
+
     const handleFavoritesSwitchChange = () => {
         let newConfigureMap = cloneDeep(ctx.configureMapState);
         newConfigureMap.showFavorites = !ctx.configureMapState.showFavorites;
@@ -238,6 +248,28 @@ export default function ConfigureMap() {
                                             <Settings fontSize="small" />
                                         </IconButton>
                                     </MenuItem>
+                                    <FormControl sx={{ mx: '22px', mt: 1 }}>
+                                        <InputLabel>Heightmaps</InputLabel>
+                                        <Select
+                                            labelid="heightmaps-style-selector-label"
+                                            label={'Heightmaps'}
+                                            value={ctx.heightmap?.key || ''}
+                                            onChange={(e) => {
+                                                const selectedHeightmap = heightmapsLayers.find(
+                                                    (layer) => layer.key === e.target.value
+                                                );
+                                                ctx.setHeightmap(selectedHeightmap);
+                                            }}
+                                        >
+                                            {Object.values(heightmapsLayers).map((item) => {
+                                                return (
+                                                    <MenuItem key={item.key} value={item.key}>
+                                                        {item.name}
+                                                    </MenuItem>
+                                                );
+                                            })}
+                                        </Select>
+                                    </FormControl>
                                 </>
                             )}
                         </>

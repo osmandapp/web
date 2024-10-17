@@ -296,6 +296,7 @@ export const AppContextProvider = (props) => {
 
     const [tileURL, setTileURL] = useState(osmandTileURL);
     const [allTileURLs, setAllTileURLs] = useState({});
+    const [heightmap, setHeightmap] = useState(null);
 
     let pinInit;
     if (searchParams.get('pin')) {
@@ -511,6 +512,8 @@ export const AppContextProvider = (props) => {
                 tileURL,
                 setTileURL,
                 allTileURLs,
+                heightmap,
+                setHeightmap,
                 pinPoint,
                 setPinPoint,
                 trackRouter,

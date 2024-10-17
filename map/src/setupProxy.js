@@ -13,6 +13,7 @@ module.exports = function (app) {
     // yarn start:local
     let gpx = localProxy;
     let tile = localProxy;
+    let heightmap = localProxy;
     let mapapi = localProxy;
     let routing = localProxy;
     let weather = localProxy;
@@ -22,6 +23,7 @@ module.exports = function (app) {
     if (process.env.NODE_ENV === 'development' && !process.env.USE_LOCAL_API) {
         gpx = testProxy;
         tile = testProxy;
+        heightmap = testProxy;
         mapapi = testProxy;
         routing = testProxy;
         weather = testProxy;
@@ -32,6 +34,7 @@ module.exports = function (app) {
     if (process.env.USE_MAIN_API) {
         gpx = maptileProxy;
         tile = maptileProxy;
+        heightmap = maptileProxy;
         routing = maptileProxy;
         weather = maptileProxy;
         mapapi = mainProxy;
@@ -40,6 +43,7 @@ module.exports = function (app) {
 
     app.use('/gpx/', gpx);
     app.use('/tile/', tile);
+    app.use('/heightmap/', heightmap);
     app.use('/mapapi/', mapapi);
     app.use('/routing/', routing);
     app.use('/weather-api/', weather);
