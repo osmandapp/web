@@ -6,6 +6,7 @@ import L from 'leaflet';
 export default function HeightmapLayer() {
     const ctx = useContext(AppContext);
     const map = useMap();
+
     const tileLayerRef = useRef(null);
 
     useEffect(() => {
