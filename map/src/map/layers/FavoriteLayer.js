@@ -163,7 +163,7 @@ const FavoriteLayer = () => {
                         return;
                     }
                     layer.options.isFavorite = true;
-
+                    layer.on('click', onClick);
                     processMarkers({
                         layer,
                         markerLatLng,
@@ -194,7 +194,7 @@ const FavoriteLayer = () => {
                 const mainLayersGroup = new L.FeatureGroup(mainLayers);
                 const secLayersGroup = new L.FeatureGroup(secondaryLayers);
                 const res = new L.LayerGroup([secLayersGroup, mainLayersGroup]);
-                res.addTo(map).on('click', onClick);
+                res.addTo(map);
                 updateMarkerZIndex(mainLayersGroup, 2000);
                 file.markersOnMap = res;
             }
