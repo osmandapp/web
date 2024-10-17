@@ -426,8 +426,8 @@ Available six fuel types: ***Petrol, Diesel, LPG, CNG, Electric, Hybrid***.
 
 CO2 is a gas that is produced when fuel is burned in an engine. The amount of CO2 emitted by an engine depends on the type of fuel and its combustion efficiency.  
 
-- Internal combustion engines, such as ***patrol*** and ***diesel*** engines, calculate CO2 emissions based on the amount of fuel burned during combustion. In general, patrol engines emit less CO2 than diesel engines due to more efficient combustion.
-- Liquefied ***natural gas (LPG)*** and ***compressed natural gas (CNG)*** are also used to run internal combustion engines. They are considered more environmentally friendly than patrol or diesel because they emit less CO2 when burned.
+- Internal combustion engines, such as ***petrol*** and ***diesel*** engines, calculate CO2 emissions based on the amount of fuel burned during combustion. In general, petrol engines emit less CO2 than diesel engines due to more efficient combustion.
+- Liquefied ***natural gas (LPG)*** and ***compressed natural gas (CNG)*** are also used to run internal combustion engines. They are considered more environmentally friendly than petrol or diesel because they emit less CO2 when burned.
 - When ***electric*** motors are used, there are no CO2 emissions directly at the point of use. However, electricity can be produced from sources such as gas, coal or nuclear fuel, resulting in CO2 emissions during the electricity production phase.
 - ***Hybrid*** cars use both internal combustion engines and electric motors. CO2 emissions depend on which type of engine is used at the time.  
 

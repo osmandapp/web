@@ -27,34 +27,30 @@ To take advantage of these new features and improvements, visit Google Play or y
 
 Thank you for your continued support of OsmAnd. Happy journey!
 
-
-
-
 <!--truncate-->
 
 
 **What's new**
 
-- [Context menu for widgets](#widget-context-menu).
-- Key “D”, “N”, “S” on external keyboards.
-- Buttons Control on map.
-- Gallery / Places - Explore.
-
-
-- Added a full-screen gallery viewer for Wikimedia images
-- Introduced a new plugin "Vehicle Metrics" to monitor vehicle performance using the OBD-II protocol
-- Added the ability to assign activities to tracks and filter them accordingly
-- Implemented new quick actions for trip recording and touchscreen lock
-- Introduced customizable map button appearance and a precise grid
-- Added a context menu and a "Reset average speed" action to widgets
-- Added new route layer "Dirt Bike trails"
-- Fixed "Auto-record track during navigation" 
-- Fixed issue with fliped coordinates in RTL 
-- Fixed missed sensor data for currently recording track 
-- Added information about surrounding areas for the selected point
-- Added quick action to control visibility of OSM Edits
-- Separated visibility parameters for Terrain colorization options
-- Added a tappable icon to display access or other road or path attributes
+- Introduced [Main Navigation widget](#main-navigation-widget),
+- Added a full-screen [gallery viewer](#images-gallery) for Wikimedia images,
+- Introduced a new [plugin "Vehicle Metrics"](#vehicle-metrics) to monitor vehicle performance using the OBD-II protocol,
+- Added the ability to assign [activities to tracks and filter](#gpx-track-activities) them accordingly,
+- Introduced customizable map [button appearance and a precise grid](#customizable-map-buttons),
+- Added a [context menu](#widget-context-menu) and a "Reset average speed" action to widgets,
+- Added [new actions](#new-actions-for-qa) for Quick Action:
+  - Action for [touchscreen lock](https://github.com/osmandapp/OsmAnd/issues/20742),
+  - Implemented new quick actions for [trip recording](https://osmand.net/docs/user/plugins/trip-recording),
+  - Quick action to [control visibility of OSM Edits](https://github.com/osmandapp/OsmAnd/issues/20711).
+- Added new route layer ["Dirt Bike trails"](https://github.com/osmandapp/OsmAnd/issues/18756),
+- Added [information about surrounding areas](#surrounding-areas) for the selected point,
+- Separated visibility parameters for Terrain colorization options,
+- Added a tappable icon to display access or other road or path attributes,
+- [System font](#system-font) everywhere,
+- Fixed "Auto-record track during navigation",
+- Fixed issue with fliped coordinates in RTL,
+- Fixed missed sensor data for currently recording track,
+- [4.8 issue Key “D”, “N”, “S” doesn't work on external Keyboards is fixed](https://github.com/osmandapp/OsmAnd/issues/20636),
 
 
 <!-- 
@@ -71,24 +67,77 @@ Thank you for your continued support of OsmAnd. Happy journey!
 -->
 
 
+## Main Navigation widget
+
+Added The Main navigation widget for [Top panel](https://osmand.net/docs/user/widgets/configure-screen#top-and-bottom-panels): _Configure screen → Top panel → Route guidance: Next turn, Second next turn, Lanes_
+
+![Main Navigation widget](./img/main_nav_widget.png)
+
+
+## Images Gallery
+
+Added on [Map Contex menu](https://osmand.net/docs/user/map/map-context-menu#online-photos) full-screen gallery viewer for Wikimedia images.
+
+![Gallery](./img/gallery.png)
+
+## Vehicle Metrics
+
+The new Plugin - Vehricle Metrics was added to the [Plugins menu](https://osmand.net/docs/user/plugins/). It monitors key vehicle metrics using the [OBD-II protocol](https://en.wikipedia.org/wiki/OBD-II_PIDs). New widgets for this data were added too.
+
+![OBD](./img/obd.png) ![OBD](./img/obd_1.png)
+
+## GPX Track activities
+
+The new feature of adding **Activity** to a recorded GPX track improves navigation and track management (filter). This increases the convenience of working with track recordings.
+
+![3D track](./img/track_activity.png)
+
+## Customizable Map buttons
+
+No you can modify [the appearance of Quick Action buttons](https://osmand.net/docs/user/widgets/quick-action#quick-action-button-appearance) and Default buttons through the three-dot menu: Menu → Configure screen → Custom buttons or Default buttons → choose needed buttons → three-dot menu → Appearance (chagne icon, corner radius, size, background opacity).
+
+Added [grid for buttons](https://github.com/osmandapp/OsmAnd/issues/19164).
+
+![Button appearance](./img/button_appearance.png) ![Button appearance](./img/button_appearance_1.png)
+
+
 ## Widget Context Menu
+
+The [**Widget Context menu**](https://osmand.net/docs/user/widgets/configure-screen.md#panel-widgets-settings) allows you to manage and configure widgets directly from the map screen, providing *a quick way to organize panels*. You can access this menu by ***long tapping*** on any widget to customize the layout of widgets without leaving the map.
 
 ![Widget context menu](@site/static/img/widgets/widget_context_menu_andr.png)
 
-The [**widget context menu**](https://osmand.net/docs/user/widgets/configure-screen#panel-widgets-settings) allows you to manage and configure widgets directly from the map screen, providing *a quick way to organize panels*. You can access this menu by ***long tapping*** on any widget to customize the layout of widgets without leaving the map.
+## New actions for QA
+
+Added [new actions](https://osmand.net/docs/user/widgets/quick-action#action-types): 
+1. Action for Lock/Unlock screen: _Menu → Configure screen → Custom buttons → + → Add acton → Inteface → Lock screen_
+2. Actions for Trip recording: _Menu → Configure screen → Custom buttons → + → Add acton → My Places → Start/Pause - Trip recording, Start new trip segment, Finish Trip recording, Save Recorded Trip & Continue_
+3. Action for Show/Hide OSM edits: _Menu → Configure screen → Custom buttons → + → Add acton → My Places → Show/Hide OSM edits_
+
+![Quick actions](./img/quick_action.png)
+
+## Dirt Bike Trails
+
+Added new Route options  - [Dirt bike trails](https://osmand.net/docs/user/map/vector-maps#routes): _Menu → Configure map → Routes → Dirt bike routes_ . Read more about [dirtbike tag](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
+
+Upon activation, display a colored route overlay for all paths marked with the dirtbike:scale tag, similar to the approach used for mtb:scale (Mountain bike).
+
+![Dirt Bike legend](./img/dirt_bike.png) ![Dirt Bike legend](./img/dirt_bike_1.png)
+
+## Surrounding areas
+
+Show data information to [Map Context](https://osmand.net/docs/user/map/map-context-menu#details) menu about surrounding areas (polygons) after [**long tap**](https://osmand.net/docs/user/map/map-context-menu#select-any-point-long-tap) on the map:
+
+_Long tap on the map → Map Context menu → Details → Within_
+
+Sort by polygon size: from small to big. Show polygon type and name.
+
+![Poligon info](./img/areas_info.png)
 
 
-## Optional Updates
+## System font
 
-- One
-- Two
-...
-
-- Fixed:
-
-  - One
-  - Two
-  ...
+[Use system font](https://github.com/osmandapp/OsmAnd/issues/19123) as font for OsmAnd menu
 
 ________________________________________
 
