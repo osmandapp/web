@@ -123,9 +123,9 @@ The compass button shows how the [map is oriented](#map-orientation-modes). The 
 
 ## Rotate Map by Bearing
 
-When the **rotate map by bearing** mode (rotation by [movement direction](#map-orientation-modes)) is enabled, the map is oriented so that your forward view aligns directly above the *My Location* icon. If there is no movement, the map will remain stationary.  
-In this mode, the map's center is positioned slightly below the center of the screen, allowing you to see more map data ahead of your movement — especially helpful in navigation mode.  
-You can adjust the "rotate map by bearing" mode in the [Profile settings](../personal/profiles.md#appearance) or by tapping the [Compass](#compass).
+In the **rotate map by bearing** mode ([Movement direction](../widgets/map-buttons.md#compass)), the map automatically aligns with your direction of movement, so the area ahead of you is displayed at the top of the screen. This mode enhances navigation by shifting the map center slightly downward, showing more of the route ahead. If you are stationary, the map stays fixed.  
+
+You can activate this feature via *Menu → Settings → Profiles → General settings → Appearance → Map orientation* or by double tapping the [Compass button](../widgets/map-buttons.md#compass-tapping-behavior). For more details about bearing, see [here](../widgets/nav-widgets.md#bearing-widget).
 
 
 ## Map Tilt and Horizon
