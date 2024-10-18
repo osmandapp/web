@@ -409,7 +409,7 @@ The **Profile appearance** settings allow you to customize your profile's name a
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![My location Appearance](@site/static/img/personal/profiles/location_appearance_ios.png)
+![My location Appearance](@site/static/img/personal/profiles/location_appearance_2_ios.png)
 
 </TabItem>
 
