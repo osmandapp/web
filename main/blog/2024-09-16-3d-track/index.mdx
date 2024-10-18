@@ -19,70 +19,29 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Introduction
 
-OsmAnd’s 3D GPX track feature adds a new dimension to navigation, allowing users to visualize routes with elevation changes in a three-dimensional view. This paid feature enhances route planning and exploration, making it ideal for outdoor enthusiasts looking to better understand the terrain.
-
-<!--truncate-->
-
-## What is
-
-In OsmAnd, a 3D GPX track not only displays the route's elevation but also offers additional data visualization, including speed, altitude, slope, and heart rate. This comprehensive view helps users analyze their performance and better understand the dynamics of their route in a realistic 3D environment.
+OsmAnd’s [3D GPX track](https://osmand.net/docs/user/map/tracks/appearance#3d-track) feature adds a new dimension. It not only displays the route's elevation but also offers additional data visualization, including speed, altitude, slope, and heart rate ([sensors data](https://osmand.net/docs/user/plugins/external-sensors#trip-recording)). This comprehensive view helps users analyze their performance and better understand the dynamics of their route in a realistic 3D environment.
 
 ![3D Track](./img/3d_track.png)
 
 ## My experience
 
-Using OsmAnd for Cycling with Garmin: 3D Track and Route Analysis
+When I go on a bike ride, I use OsmAnd to record my track, while my heart rate is monitored through sensor. Throughout the ride, conditions are constantly changing—terrain, road surfaces, and weather all play a role in how the trip unfolds.
 
-![3D Track](./img/3d_track_analyze_2.png)
-
-
-When I go on a bike ride, I use OsmAnd to record my track, while my heart rate is monitored through my connected Garmin watch. Throughout the ride, conditions are constantly changing—terrain, road surfaces, and weather all play a role in how the trip unfolds.
-
-After the ride, I can analyze my trip in detail using the 3D track mode. The track is displayed in three dimensions, making it easier to study. The elevation of the track shows my heart rate changes, the color of the track walls represents the slope, and the color of the track itself reflects my speed. This detailed view helps me understand how my physical performance and the conditions changed throughout the ride, allowing me to improve my training efficiency and better plan future trips.
-
-![3D Track](./img/3d_track_analyze.png) ![3D Track](./img/3d_track_analyze_1.png)
-
-OsmAnd allows you to record track data from various sensors, like heart rate monitors or speed sensors, and then provides the ability to perform comprehensive analysis afterward. You can visualize how different aspects—such as heart rate, speed, and slope—interacted during your ride, all in one detailed 3D track view. It’s a powerful tool for those who want a deeper understanding of their performance and the ride conditions.
+![3D Track](./img/3d_track_analyze_3.png)
 
 
+After the ride, I can analyze my trip in detail using the [3D track mode](https://osmand.net/docs/user/map/tracks/appearance#3d-track). The track is displayed in three dimensions, making it easier to study:
+  - 3D track wall height shows my Heart rate changes,
+  - 3D track wall color represents the Slope,
+  - [track line color](https://osmand.net/docs/user/map/tracks/appearance#color) itself reflects my speed. 
 
-<!--
-The 3D GPX tracks feature in OsmAnd provides significant advantages for hikers, cyclists, and outdoor enthusiasts by offering a more detailed and immersive view of their routes. For hikers, the 3D visualization of elevation changes helps in understanding the difficulty of the terrain, allowing better preparation for steep climbs or descents. Cyclists benefit from seeing slope and altitude variations, aiding in route selection and pacing strategies. Outdoor enthusiasts, in general, can use the 3D view to assess the overall terrain and make informed decisions, enhancing safety and enjoyment during their activities. By visualizing additional data like speed and heart rate, users can also analyze performance and adjust their efforts to meet their goals. This makes the 3D GPX tracks in OsmAnd a valuable tool for anyone looking to optimize their outdoor adventures.
+![3D Track](./img/appearance_3d.png)
 
-The 3D GPX track appearance can be useful in the following cases:
+This detailed view helps me understand how my physical performance and the conditions changed throughout the ride, allowing me to improve my training efficiency and better plan future trips.
 
-- **Elevation Analysis**: For hiking, cycling, or any outdoor activity where elevation changes are significant, a 3D view helps users better understand the terrain.
+![3D Track](./img/3d-track.gif)
 
-**Trail Visualization**: Mountain biking, skiing, or other sports enthusiasts can see the difficulty and steepness of trails.
+OsmAnd allows you to record track data from [various sensors](https://osmand.net/docs/user/plugins/external-sensors#overview), like heart rate, temperature, bicycle power or speed sensors, and then provides the ability to perform comprehensive analysis afterward. You can visualize how different aspects—such as heart rate, speed, and slope—interacted during your ride, all in one detailed 3D track view. It’s a powerful tool for those who want a deeper understanding of their performance and the ride conditions.
 
-**Route Planning**: Helps users plan routes by visualizing inclines and declines, making it easier to assess the challenge of a path.
-
-**Training and Performance Tracking**: Athletes can use 3D views to review their performance on various elevations, aiding in training adjustments.
-
-**Scenic Visualization**: For tourism or scenic routes, a 3D view enhances the visualization experience, making it more engaging.
-
-**Navigation**: For advanced navigation systems, 3D visualization provides a clearer understanding of the landscape, aiding decision-making.
-
-## How to Access the 3D GPX Track Feature
-
-To access the 3D GPX track feature in OsmAnd, you need to have the **paid version** of the app, as this is a Pro subscription. Once you’ve upgraded, you can activate the 3D GPX track view by importing your GPX file into OsmAnd. Navigate to the map settings, and enable the 3D visualization option under the GPX track settings. You can then select the specific data you want to visualize, such as altitude, speed, or heart rate, and adjust the perspective to view your track in 3D. This setup allows you to fully utilize the enhanced features, providing a richer and more detailed navigation experience.
-
-
-## Using 3D GPX Tracks: A Step-by-Step Guide
-
-
-*<Translate android="true" ids="shared_string_menu,configure_map,show_gpx"/> →* **&#8942;** *→ <Translate android="true" ids="change_appearance"/>*
-
-1. *Visualize by Speed with 3D*. One common use case is utilizing 3D tracks to visualize speed variations. This allows you to pinpoint specific sections of the track where you slowed down or sped up. With Wall Color based on the Slope, you can also observe how the terrain, particularly hills and inclines, impacted your speed. This combination of speed and slope visualization provides a detailed understanding of performance throughout the activity.
-
-2. *Visualize by Heart sensor with 3D Relief*. Another insightful application is combining heart rate sensor data with 3D relief maps. This allows you to map heart rate fluctuations directly onto the terrain, giving you a comprehensive view of how altitude changes may have influenced your physical effort. The 3D relief feature, which exaggerates the altitude, works independently from the 3D track view. Two vertical exaggeration parameters can be adjusted to better understand the correlation between heart rate and terrain elevation.
-
-3. *Visualize Track height and Slope color line on a flat earth view*. When visualizing altitude data, using a flat earth view is recommended to avoid issues like GPS errors, which might cause sections of the track to appear underground. In this scenario, slope changes can be visualized separately along the track line, while Wall Color utilized to represent altitude. This method ensures that even with potential data inaccuracies, you still receive a clear and accurate visualization of slope and elevation.
-
-
-## Conclusion
-
-The 3D GPX track feature in OsmAnd offers a powerful way to visualize routes in a more realistic and informative manner. By incorporating elevation, speed, slope, and other data points into a 3D view, users gain a deeper understanding of the terrain and their performance, making it easier to plan and navigate routes effectively. Whether you’re a hiker, cyclist, or outdoor enthusiast, this feature enhances your experience, turning your maps into interactive tools that provide valuable insights and improve your overall journey.
--->
 
 ## Related articles

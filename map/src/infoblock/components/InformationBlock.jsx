@@ -101,7 +101,9 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
     }, [hasSegmentTurns({ track: ctx.selectedGpxFile })]);
 
     function isValidWeatherObj() {
-        return ctx.currentObjectType === OBJECT_TYPE_WEATHER && ctx.weatherDate;
+        const isWeatherValid = ctx.currentObjectType === OBJECT_TYPE_WEATHER && ctx.weatherDate;
+        setOpenWeatherForecastDetails(isWeatherValid);
+        return isWeatherValid;
     }
 
     useEffect(() => {
@@ -118,7 +120,6 @@ export default function InformationBlock({ showInfoBlock, setShowInfoBlock, setC
                 setPrevTrack(ctx.selectedGpxFile);
                 ctx.setUpdateInfoBlock(false);
                 if (isValidWeatherObj()) {
-                    setOpenWeatherForecastDetails(true);
                     setShowInfoBlock(true);
                 } else if (ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_ALONE) {
                     // don't display InfoBlock in Navigation menu until details requested
