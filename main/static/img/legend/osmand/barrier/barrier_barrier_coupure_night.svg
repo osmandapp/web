@@ -1,37 +1,37 @@
-<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
 <g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
 
  <path transform="matrix(.8 0 0 .8 1.6 1.6)" d="m4 1.6602a1.0069 1.0069 0 0 0-0.90039 0.55664l-2.666 5.334a1.0069 1.0069 0 0 0 0.90039 1.4551h4.3262v4.3281a1.0069 1.0069 0 0 0 1.0059 1.0059h2.668a1.0069 1.0069 0 0 0 1.0059-1.0059v-4.3281h4.3262a1.0069 1.0069 0 0 0 0.90039-1.4551l-2.666-5.334a1.0069 1.0069 0 0 0-0.90039-0.55664h-2.666a1.0069 1.0069 0 0 0-1.0059 1.0059v4.3281h-0.65625v-4.3281a1.0069 1.0069 0 0 0-1.0059-1.0059z" fill="#ebe7e4" opacity=".8" stop-color="#000000" stroke-width="1.25" style="-inkscape-stroke:none;font-variation-settings:normal"/>
 
 </g>%n%n
-<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
+<g transform="translate(138.000000, 8.000000) scale(2.000000 2.000000) "> 
 
-<path d="M12 8H20V24H4L12 8Z" fill="#444444"/>
-<path d="M12 8H20V24H4L12 8Z" fill="#444444"/>
-<path d="M12 8H20V24H4L12 8Z" fill="#444444"/>
-<path d="M12 8H20V24H4L12 8Z" fill="#444444"/>
-<path d="M12 8H20V24H4L12 8Z" fill="#444444"/>
-<path d="M12 8H20V24H4L12 8Z" fill="#444444"/>
-<path d="M36 8H28V24H44L36 8Z" fill="#444444"/>
-<path d="M36 8H28V24H44L36 8Z" fill="#444444"/>
-<path d="M36 8H28V24H44L36 8Z" fill="#444444"/>
-<path d="M36 8H28V24H44L36 8Z" fill="#444444"/>
-<path d="M36 8H28V24H44L36 8Z" fill="#444444"/>
-<path d="M36 8H28V24H44L36 8Z" fill="#444444"/>
-<path d="M20 24H28V40H20V24Z" fill="#444444" fill-opacity="0.7"/>
-<path d="M12 8H20V24H4L12 8Z" fill="#444444"/>
-<path d="M12 8H20V24H4L12 8Z" fill="#444444"/>
-<path d="M12 8H20V24H4L12 8Z" fill="#444444"/>
-<path d="M12 8H20V24H4L12 8Z" fill="#444444"/>
-<path d="M12 8H20V24H4L12 8Z" fill="#444444"/>
-<path d="M12 8H20V24H4L12 8Z" fill="#444444"/>
-<path d="M36 8H28V24H44L36 8Z" fill="#444444"/>
-<path d="M36 8H28V24H44L36 8Z" fill="#444444"/>
-<path d="M36 8H28V24H44L36 8Z" fill="#444444"/>
-<path d="M36 8H28V24H44L36 8Z" fill="#444444"/>
-<path d="M36 8H28V24H44L36 8Z" fill="#444444"/>
-<path d="M36 8H28V24H44L36 8Z" fill="#444444"/>
-<path d="M20 24H28V40H20V24Z" fill="#444444" fill-opacity="0.7"/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 3 2 L 5 2 L 5 6 L 1 6 Z M 3 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 3 2 L 5 2 L 5 6 L 1 6 Z M 3 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 3 2 L 5 2 L 5 6 L 1 6 Z M 3 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 3 2 L 5 2 L 5 6 L 1 6 Z M 3 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 3 2 L 5 2 L 5 6 L 1 6 Z M 3 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 3 2 L 5 2 L 5 6 L 1 6 Z M 3 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 9 2 L 7 2 L 7 6 L 11 6 Z M 9 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 9 2 L 7 2 L 7 6 L 11 6 Z M 9 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 9 2 L 7 2 L 7 6 L 11 6 Z M 9 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 9 2 L 7 2 L 7 6 L 11 6 Z M 9 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 9 2 L 7 2 L 7 6 L 11 6 Z M 9 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 9 2 L 7 2 L 7 6 L 11 6 Z M 9 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="0.7" d="M 5 6 L 7 6 L 7 10 L 5 10 Z M 5 6 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 3 2 L 5 2 L 5 6 L 1 6 Z M 3 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 3 2 L 5 2 L 5 6 L 1 6 Z M 3 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 3 2 L 5 2 L 5 6 L 1 6 Z M 3 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 3 2 L 5 2 L 5 6 L 1 6 Z M 3 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 3 2 L 5 2 L 5 6 L 1 6 Z M 3 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 3 2 L 5 2 L 5 6 L 1 6 Z M 3 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 9 2 L 7 2 L 7 6 L 11 6 Z M 9 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 9 2 L 7 2 L 7 6 L 11 6 Z M 9 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 9 2 L 7 2 L 7 6 L 11 6 Z M 9 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 9 2 L 7 2 L 7 6 L 11 6 Z M 9 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 9 2 L 7 2 L 7 6 L 11 6 Z M 9 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 9 2 L 7 2 L 7 6 L 11 6 Z M 9 2 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="0.7" d="M 5 6 L 7 6 L 7 10 L 5 10 Z M 5 6 "/>
 
 </g>%n%n</svg>

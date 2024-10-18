@@ -1,13 +1,13 @@
-<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
 <g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
 
  <path d="m4.3187 2.6636a1.0531 1.0531 0 0 0-0.57187 0.93592v4.2813h-1.0797a1.0531 1.0531 0 0 0-1.0531 1.0531v2.1328a1.0531 1.0531 0 0 0 1.0531 1.0531h10.666a1.0531 1.0531 0 0 0 1.0531-1.0531v-2.1328a1.0531 1.0531 0 0 0-1.0531-1.0531h-0.72813l-7.1922-5.1375a1.0531 1.0531 0 0 0-1.0938-0.079687z" fill="#ebe7e4" opacity=".8" stop-color="#000000" stroke-width="1.25" style="-inkscape-stroke:none;font-variation-settings:normal"/>
 
 </g>%n%n
-<g transform="translate(138.000000, 8.000000) scale(0.500000 0.500000) "> 
+<g transform="translate(138.000000, 8.000000) scale(2.000000 2.000000) "> 
 
-<path d="M4 28H44V36H4V28Z" fill="#444444"/>
-<path d="M12 8L40 28H12V8Z" fill="#444444" fill-opacity="0.7"/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="1" d="M 1 7 L 11 7 L 11 9 L 1 9 Z M 1 7 "/>
+<path fill-rule="nonzero" fill="rgb(26.666667%, 26.666667%, 26.666667%)" fill-opacity="0.7" d="M 3 2 L 10 7 L 3 7 Z M 3 2 "/>
 
 </g>%n%n</svg>
