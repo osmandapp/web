@@ -436,7 +436,7 @@ The [**My location**](../map/interact-with-map.md#my-location-and-zoom) **appear
     - `..osmand/models/icon_folder_name/custom_3d_file.obj`
   - Alternatively, directly copy the custom 3D files to the OsmAnd folder with the paths above.
 
-- With the [map orientation modes](../widgets/map-buttons.md#compass), you can control the display of **My location** and the behavior of the map during navigation. If you find that the location icon jiggles or rotates even when you are stationary, switch the mode from the *Movement direction* ([Rotate map by bearing](../map/interact-with-map.md#rotate-map-by-bearing)) to another mode that is more appropriate for you, or use the settings in the *Options* section (*Menu → Settings → App profiles → Profile appearance → Options*). You can read more about bearing [here](../widgets/nav-widgets#bearing-widget).
+- With the [map orientation modes](../widgets/map-buttons.md#compass), you can control the display of **My location** and the behavior of the map during navigation. If you find that the location icon jiggles or rotates even when you are stationary, switch the mode from the *Movement direction* ([Rotate map by bearing](../map/interact-with-map.md#rotate-map-by-bearing)) to another mode that is more appropriate for you, or use the settings in the *Options* section (*Menu → Settings → App profiles → Profile appearance → Options*). You can read more about *bearing* [here](../widgets/nav-widgets#bearing-widget).
 
 
 ## UI Customization
