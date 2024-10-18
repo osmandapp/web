@@ -18,15 +18,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 OsmAnd offers a variety of default profiles tailored for different activities, including driving, cycling, walking, and more specialized activities like skiing and boating. These profiles are designed to enhance your navigation experience according to the activity you are engaged in. Each profile includes configurable options, enabling you to adjust settings and incorporate additional plugins to match your preferences.
 
-Certain profiles, such as *Skiing* and *Boat*, have **additional features** that only become available when the corresponding plugins are enabled.
+- Certain profiles, such as *Skiing* and *Boat*, have **additional features** that become available only when the corresponding plugins are enabled.
 
-- Plugins can be activated by navigating to *Menu → Plugins → Ski map view* or *Nautical map view*.
-- Enabling the plugins allows the profiles to be provided with the essential features to meet the specific requirements of these activities.
+     - Plugins can be activated by navigating to *Menu → Plugins → Ski map view* or *Nautical map view*.
+     - Enabling the plugins provides the profiles with the essential features to meet the specific requirements of these activities.
 
-It's important to note that some profiles, such as **Truck**, **Motorcycle**, **Moped**, **Train**, **Aircraft**, **Boat** and **Horseback riding**, are not activated by default.
+- It's important to note that some profiles, such as **Truck**, **Motorcycle**, **Moped**, **Train**, **Aircraft**, **Boat**, and **Horseback riding**, are not activated by default.
 
-- To access and use these profiles, you need to manually enable them in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
-- This method helps maintain an organized and relevant list of profiles by activating only those required for specific activities.
+     - To access and use these profiles, you need to manually enable them in *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*.
+     - This method helps maintain an organized and relevant list of profiles by activating only those required for specific activities.
 
 <Tabs groupId="operating-systems">
 
@@ -165,7 +165,7 @@ This section contains settings for the application theme and compass button, map
 
 </Tabs>
 
-In the **Units and Formats** section, you can adjust measurement units and formats to align with your personal preferences and regional standards, ensuring all data is displayed in the most convenient and familiar way.
+In the **Units and Formats** section, you can adjust measurement units and formats to align with your personal preferences and regional standards, ensuring all data is displayed most conveniently and familiarly.
 
 
 <!--
@@ -390,7 +390,7 @@ The [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-s
 
 </Tabs>
 
-The **Profile appearance** settings allow you to customize your profile's name and visual representation. You can also modify the appearance of [**My location**](#my-location-appearance) here. While the *profile name* must be unique, *icons* and *colors* can be the same across different profiles. These changes will be applied across various parts of the application, such as the [*Route preparation*](../navigation/setup/route-navigation) menu.
+The **Profile appearance** settings allow you to customize your profile's name and visual representation. You can also modify the appearance of [**My location**](#my-location-appearance) here. While the *profile name* must be unique, *icons* and *colors* can be the same across different profiles. These changes will be applied across various parts of the application, such as the [*Route preparation*](../navigation/setup/route-navigation.md) menu.
 
 
 ### My Location Appearance
@@ -415,12 +415,12 @@ The **Profile appearance** settings allow you to customize your profile's name a
 
 </Tabs>
 
-The [**My location**](../map/interact-with-map.md#my-location-and-zoom) **appearance** settings allow you to customize how your location is displayed on the map, both when stationary and in motion. Motion is detected by the operating system when it provides a location update with a speed greater than 0.
+The [**My location**](../map/interact-with-map.md#my-location-and-zoom) **appearance** settings allow you to customize how your location is displayed on the map, both when stationary and in motion. Motion is detected by the operating system when it provides a location update with a speed greater than 0  speed.
 
-**Additional options** (*Android only*).  You can control how certain location-related visual elements appear on the map and apply them separately or both for the Resting and Navigation positions below the *my location* icon.
+- **Additional options**. You can control how certain location-related visual elements appear on the map and apply them separately or both for the Resting and Navigation positions below the *my location* icon.
 
-- **<Translate android="true" ids="view_angle"/>**. Displays a cone-shaped area that shows the direction you are currently facing.
-- **<Translate android="true" ids="location_radius"/>**. Shows a circular area around your icon, representing the accuracy of your current location.
+  - **<Translate android="true" ids="view_angle"/>**. Displays a cone-shaped area that shows the direction you are currently facing.
+  - **<Translate android="true" ids="location_radius"/>**. Shows a circular area around your icon, representing the accuracy of your current location.
 
 <!--
 **3D location icon**. You can select the appearance of your location icon in 3D or 2D, depending on the map rendering version you are using. *Map rendering* (*Android*). 3D icons are only available for [map rendering Version 2 (OpenGL)](../personal/global-settings.md#map-rendering-engine). If you are using [map rendering Version 1](../personal/global-settings.md#map-rendering-engine), the icons will appear in 2D.
@@ -428,13 +428,15 @@ The [**My location**](../map/interact-with-map.md#my-location-and-zoom) **appear
 ![My location Appearance](@site/static/img/personal/profiles/location_appearance_3d_icons.png)
 -->
 
-**Custom 3D Icons**. If you want to further personalize your map experience, you can create your own 3D icons and add them to the app. To do this, follow the steps below:
+- **Custom 3D Icons**. If you want to further personalize your map experience, you can create your own 3D icons and add them to the app. To do this, follow the steps below:
 
-- Create a custom 3D model in [MTL and OBJ formats](https://en.wikipedia.org/wiki/Wavefront_.obj_file).
-- [Create a custom plugin](../plugins/custom.md) by using [pluging example](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf) and include your 3D icons with the following paths:
-  - `..osmand/models/icon_folder_name/custom_3d_file.mtl`
-  - `..osmand/models/icon_folder_name/custom_3d_file.obj`
-- Alternatively, directly copy the custom 3D files to the OsmAnd folder with the paths above.
+  - Create a custom 3D model in [MTL and OBJ formats](https://en.wikipedia.org/wiki/Wavefront_.obj_file).
+  - [Create a custom plugin](../plugins/custom.md) by using [pluging example](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf) and include your 3D icons with the following paths:
+    - `..osmand/models/icon_folder_name/custom_3d_file.mtl`
+    - `..osmand/models/icon_folder_name/custom_3d_file.obj`
+  - Alternatively, directly copy the custom 3D files to the OsmAnd folder with the paths above.
+
+- With the [map orientation modes](../widgets/map-buttons.md#compass), you can control the display of **My location** and the behavior of the map during navigation. If you find that the location icon jiggles or rotates even when you are stationary, switch the mode from the *Movement direction* ([Rotate map by bearing](../map/interact-with-map.md#rotate-map-by-bearing)) to another mode that is more appropriate for you, or use the settings in the *Options* section (*Menu → Settings → App profiles → Profile appearance → Options*). You can read more about bearing [here](../widgets/nav-widgets#bearing-widget).
 
 
 ## UI Customization
@@ -511,11 +513,11 @@ Plugins unlock additional features of the application and can be either [paid or
 
 - **Weather**. Interactive [Weather](../plugins/weather.md#weather-settings) map layers allow you to monitor the temperature, air pressure, cloud coverage, wind speed, and precipitation in your city or any other location on a global map.
 
-- **Audio / Video Notes** (*Android only*). This item opens [audio-video plugin settings](../plugins/audio-video-notes.md#plugin-settings) for the selected profile. The *Audio/Video notes* plugin extends the functionality of OsmAnd by allowing you to create your notes in various formats such as photo, video, or audio and associate them with geographical location or current location.  
+- **Audio / Video Notes** (*Android only*). This item opens [audio-video plugin settings](../plugins/audio-video-notes.md#plugin-settings) for the selected profile. The *Audio/Video Notes* plugin extends the functionality of OsmAnd by allowing you to create your notes in various formats such as photo, video, or audio and associate them with geographical location or current location.  
 
 - **OpenStreetMap Editing**. This item opens the [OpenStreetMap editing plugin settings](../plugins/osm-editing.md#settings) for the selected profile. With OsmAnd and the OSM editing plugin, you can contribute to OpenStreetMap.org by creating or modifying POIs, adding or commenting on notes, and uploading recorded GPX tracks.
 
-- **External Sensors**. When you tap an item in the *Plugin Settings* section, the [settings of external sensors](../plugins/external-sensors.md#sensors-settings) for the selected profile are opened. The External sensors plugin allows you to read and record data from wireless external sensors and display it using widgets in the OsmAnd application.
+- **External Sensors**. When you tap an item in the *Plugin Settings* section, the [settings of external sensors](../plugins/external-sensors.md#sensors-settings) for the selected profile are opened. The External Sensors plugin allows you to read and record data from wireless external sensors and display it using widgets in the OsmAnd application.
 
 - **Accessibility** (*Android only*). This item opens [Accessibility plugin settings](../plugins/accessibility.md#plugin-settings) for the selected profile. The Accessibility plugin settings allow you to customize the application according to your needs. All settings relate to the navigation process and are set individually for each profile.
 
@@ -561,4 +563,4 @@ Actions with selected profile:
 - [Search History](../search/search-history.md#export-and-share)
 - [Color Palette Schemes](../personal/color-palette-schemes.md)
 
-> *This article was last updated in September 2024*
+> *This article was last updated in October 2024*
