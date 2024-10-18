@@ -196,7 +196,7 @@ export default function ExploreLayer() {
                 params: {
                     northWest: `${bbox.getNorthWest().lat},${bbox.getNorthWest().lng}`,
                     southEast: `${bbox.getSouthEast().lat},${bbox.getSouthEast().lng}`,
-                    zoom: api === API_GET_IMGS ? null : map.getZoom(),
+                    zoom: api === API_GET_IMGS ? null : Math.round(map.getZoom()),
                     lang: settings?.useWikiImages ? null : i18n.language,
                     filters: settings?.selectedFilters ? [...settings.selectedFilters] : null,
                 },
