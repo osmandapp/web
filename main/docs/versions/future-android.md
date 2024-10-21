@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 # Android 4.9 (beta)
 
-Android 4.8 is the latest release that introduces many new features and improvements to the OsmAnd app. This article describes all the key updates that represent meaningful changes for our users.
+Android 4.9 is the latest release that introduces many new features and improvements to the OsmAnd app. This article describes all the key updates that represent meaningful changes for our users.
 
 # Join Beta
 
@@ -31,31 +31,27 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 # What's new
 
+- [Real-Time Turn & Lane Indicators](#real-time-turn--lane-indicators). Added a group of widgets to the top and bottom panels for real-time updates on upcoming turns and lane info.
+- [Gallery viewer](#images-gallery). Full-screen view for Wikimedia images.
+- [Vehicle Metrics plugin](#vehicle-metrics). Monitor vehicle performance via OBD-II protocol.
+- [Track activities](#gpx-track-activities). Assign and filter tracks by activities.
+- [Customizable map buttons](#customizable-map-buttons). Adjust appearance with a precise grid.
+- [Widget Context menu](#widget-context-menu).
+    - Includes a [Reset average speed](#reset-average-speed) action.
+- [Quick Action updates](#new-actions-for-qa). Added new quick action for *touchscreen lock*, *trip recording*, and control the *visibility of OSM Edits*.
+- [Dirt Bike trails](#dirt-bike-trails). New route layer for off-road biking.
+- [Surrounding areas info](#surrounding-areas). Displays information about areas around a selected point.
+- [Terrain colorization visibility](#visibility-parameters-for-terrain). Separated parameters for enhanced control.
+- [Interactive access points](#tappable-access-actions). Display access or other road and path attributes with a single tap.
+- [Hiking trails difficulty](#hiking-trails). Renamed from *Difficulty classification*.
+- [Optional updates](#optional-updates). Additional updates and refinements for the release.
 
 
-- Introduced [Main Navigation widget](#main-navigation-widget),
-- Added a full-screen [gallery viewer](#images-gallery) for Wikimedia images,
-- Introduced a new [plugin "Vehicle Metrics"](#vehicle-metrics) to monitor vehicle performance using the OBD-II protocol,
-- Added the ability to assign [activities to tracks and filter](#gpx-track-activities) them accordingly,
-- Introduced customizable map [button appearance and a precise grid](#customizable-map-buttons),
-- Added a [Widget Context menu](#widget-context-menu) and a ["Reset average speed"](#reset-average-speed) action to widgets,
-- Added [new actions](#new-actions-for-qa) for Quick Action:
-  - Action for [touchscreen lock](https://github.com/osmandapp/OsmAnd/issues/20742),
-  - Implemented new quick actions for [trip recording](../user/plugins/trip-recording),
-  - Quick action to [control visibility of OSM Edits](https://github.com/osmandapp/OsmAnd/issues/20711).
-- Added new route layer ["Dirt Bike trails"](https://github.com/osmandapp/OsmAnd/issues/18756),
-- Added [information about surrounding areas](#surrounding-areas) for the selected point,
-- [System font](#system-font) everywhere,
-- Separated [visibility parameters](#visibility-parameters-for-terrain) for Terrain colorization options,
-- [Tappable icon](#tappable-access-actions) to display access or other road or path attributes,
-- [Renamed "Difficulty classification"](#hiking-trails) to "Hiking trails difficulty grade",
-- [Fixed issues](#fixed-issues)
+## Real-Time Turn & Lane Indicators
 
+We’re excited to introduce a new set of route guidance widgets to the [Top/Bottom widget panels](https://osmand.net/docs/user/widgets/configure-screen#top-and-bottom-panels) in OsmAnd's *Configure screen menu*. These widgets give you real-time navigation information, including the distance to the next turn, second next turn, lane guidance, road name, and current street name. Perfect for keeping track of your route at every step of your journey. The widgets are active during navigation, ensuring you never miss a turn!
 
-
-## Main Navigation widget
-
-Added The Main navigation widget for [Top panel](../user/widgets/configure-screen#top-and-bottom-panels): _Configure screen → Top panel → Route guidance: Next turn, Second next turn, Lanes_
+*Find them in: Menu → Configure screen → Top panel / Bottom panel → Route guidance: Next turn, Second next turn, Lanes*
 
 ![Main Navigation widget](../../blog/2024-09-13-android-4-9/img/main_nav_widget.png)
 
@@ -99,6 +95,7 @@ The [**Widget Context menu**](../user/widgets/configure-screen.md#panel-widgets-
 
 Added the "Reset average speed" action of the current value in Widget Context menu.
 
+
 ## New actions for QA
 
 Added [new actions](../user/widgets/quick-action#action-types): 
@@ -126,15 +123,11 @@ Sort by polygon size: from small to big. Show polygon type and name.
 
 ![Poligon info](../../blog/2024-09-13-android-4-9/img/areas_info.png)
 
-## System font
-
-[Use system font](https://github.com/osmandapp/OsmAnd/issues/19123) as font for OsmAnd menu:
-
-_Device settings → Display → Font size an style_
 
 ## Visibility parameters for Terrain
 
 Slope / Hillshade / Altitude have their own independant [Visibility setting](../user/plugins/topography#visibility).
+
 
 ## Tappable access actions
 
@@ -142,47 +135,42 @@ By tapping on _Barrier_, _Steps_, _Gate_ icons in the [Map Сontext menu](../use
 
 ![Barrier icons](../../blog/2024-09-13-android-4-9/img/icons.png)
 
+
 ## Hiking trails
 
 "Difficulty classification" was renamed to "Hiking trails difficulty grade":
 
 _Configure map → Routes → [Hiking trails difficulty grade](../user/map/routes#hiking-trails-difficulty-grade): SAC or CAI_
 
-## Change of graph toggle 
+
+## Change of graph toggle
 
 Changed [graph toggle](../user/plugins/trip-recording#overview-screen) (Recording track) to give the ability to select any available options for displaying on the graph.
 
 ![Graph](../../blog/2024-09-13-android-4-9/img/rectrack_graph_1.png) ![Graph](../../blog/2024-09-13-android-4-9/img/rectrack_graph.png)
 
 
-## Fixed issues
+## Optional updates
 
-  - ["Auto-record track](https://github.com/osmandapp/OsmAnd/issues/19905) during navigation",
-  - [Favorite search](https://github.com/osmandapp/OsmAnd/issues/19242),
-  - [Not visible Y-axis](https://github.com/osmandapp/OsmAnd/issues/20076) on graph,
-  - Showing [Wikipedia overlay](https://github.com/osmandapp/OsmAnd/issues/17944),
-  - [Samsung DeX](https://github.com/osmandapp/OsmAnd-Issues/issues/2590) sizes,
-  - [Water transport routes](https://github.com/osmandapp/OsmAnd/issues/20251) are not displayed when selecting a stop,
-  - [GPX track's name](https://github.com/osmandapp/OsmAnd/issues/20211) after saving,
-  - [Crash](https://github.com/osmandapp/OsmAnd/issues/20661) when deleting track from Smart folder, [applying a filter](https://github.com/osmandapp/OsmAnd/issues/20794).
-  - Active [Navigation mode](https://github.com/osmandapp/OsmAnd/issues/19168)(added "Continue navigation" action to the main menu) for Android Auto,
-  - Remembering [2D/3D setting](https://github.com/osmandapp/OsmAnd/issues/20779) for Android Auto,
-  - [Treshold](https://github.com/osmandapp/OsmAnd/issues/20494#issuecomment-2326033245) for free rotation mode,
-  - [No effect of keys “D”, “N”, “S”](https://github.com/osmandapp/OsmAnd/issues/20636) of [external Keyboards](../user/map/interact-with-map#external-input-devices),
-  - [Sun position widget](https://github.com/osmandapp/OsmAnd/issues/20447): not show sunrise tomorrow,
-  - [Slows down](https://github.com/osmandapp/OsmAnd/issues/20889) when turning on the track and coloring by speed and height,
-  - ["None" doesn't work](https://github.com/osmandapp/OsmAnd/issues/20503) for "Analyze by intervals",
-  - [Freezes in export list](https://github.com/osmandapp/OsmAnd/issues/20900),
-  - [3D track incorrectly work](https://github.com/osmandapp/OsmAnd/issues/20810),
-  - issue with fliped [coordinates in RTL](https://github.com/osmandapp/OsmAnd/issues/20595),
-  - [Missed sensor data](https://github.com/osmandapp/OsmAnd/issues/17937) for currently recording track,
-  - [Missed temperature](https://github.com/osmandapp/OsmAnd/issues/20829) for graph of "Analyze on map",
-  - Zoom for [Points in Plan Route](https://github.com/osmandapp/OsmAnd/issues/20722),
-
-
-
-
-
-
-
-
+- [System font applied](https://github.com/osmandapp/OsmAnd/issues/19123) integrates your device's system font throughout the app interface without additional configuration.
+- [Auto-record track](https://github.com/osmandapp/OsmAnd/issues/19905) simplifies navigation by automatically recording your path.
+- Improved [Favorite search](https://github.com/osmandapp/OsmAnd/issues/19242) allows you to quickly return to the list of search results.
+- Resolved [Y-axis graph display issue](https://github.com/osmandapp/OsmAnd/issues/20076) for improved data clarity.
+- Display [Wikipedia overlays](https://github.com/osmandapp/OsmAnd/issues/17944) as separate layer.
+- Optimized [Samsung DeX screen sizes](https://github.com/osmandapp/OsmAnd-Issues/issues/2590) for seamless performance.
+- Fixed missing [water transport routes](https://github.com/osmandapp/OsmAnd/issues/20251) when selecting stops.
+- Correctly save [GPX track names](https://github.com/osmandapp/OsmAnd/issues/20211) for future reference.
+- Fixed app crash issues when [deleting track from Smart folder](https://github.com/osmandapp/OsmAnd/issues/20661), and when trying [to apply a filter to a track](https://github.com/osmandapp/OsmAnd/issues/20794).
+- Added active [Navigation mode updates](https://github.com/osmandapp/OsmAnd/issues/19168)with Continue navigation in Android Auto's main menu.
+- [Remembere 2D/3D settings](https://github.com/osmandapp/OsmAnd/issues/20779) automatically in Android Auto.
+- [Added tresholds](https://github.com/osmandapp/OsmAnd/issues/20494#issuecomment-2326033245) for free rotation mode.
+- Fixed [keyboard input issue](https://github.com/osmandapp/OsmAnd/issues/20636) affecting [external devices](https://osmand.net/docs/user/map/interact-with-map#external-input-devices).
+- Updated [Sun position widget](https://github.com/osmandapp/OsmAnd/issues/20447)to hide the next day's sunrise.
+- Resolved [performance slowdowns](https://github.com/osmandapp/OsmAnd/issues/20889) when trying to display a track and colorize it by speed and height.
+- Corrected issue where [*None* setting](https://github.com/osmandapp/OsmAnd/issues/20503) for *Analyze by intervals* failed to work.
+- Fixed [export list freezes](https://github.com/osmandapp/OsmAnd/issues/20900) to prevent app lag.
+- [3D track issue](https://github.com/osmandapp/OsmAnd/issues/20810) now work correctly with path visualization.
+- Corrected [RTL coordinate flipping](https://github.com/osmandapp/OsmAnd/issues/20595) for right-to-left language displays.
+- Restored [missed sensor data](https://github.com/osmandapp/OsmAnd/issues/17937) for ongoing track recordings.
+- [Temperature data](https://github.com/osmandapp/OsmAnd/issues/20829) now visible in the *Analyze on map* graph.
+- Added zoom functionality for [route points](https://github.com/osmandapp/OsmAnd/issues/20722) in Plan a Route.
