@@ -145,6 +145,17 @@ On some Android devices (Xiaomi with Muiu 14), there is no option to set app lan
 :::
 
 
+### How to enable system fonts
+
+<InfoAndroidOnly/>
+
+Starting with the Android 4.9 version, OsmAnd fully integrates your device's system font into the application interface, optimizing its design by eliminating mixed font usage. The system font is automatically applied to all UI elements.
+
+- OsmAnd uses your device's default system font in all user interface elements.
+- Switching to the system font is automatic. You do not need to configure any settings in the application for this feature.
+- This feature does not affect the fonts displayed on the map.
+
+
 ### How to manage your settings
 
 You could manage application settings as [Global settings](../personal/global-settings.md) or as [Profile configuration](../personal/profiles.md) via [Main menu](../start-with/main-menu.md). Application comes with a predefined list of profiles that could be modified later. Each profile could be considered as a customized map application for specific purposes. By default profiles are being served only as different navigation modes.

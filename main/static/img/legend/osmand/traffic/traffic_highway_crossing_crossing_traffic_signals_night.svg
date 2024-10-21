@@ -1,14 +1,14 @@
-<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
 <g transform="translate(130.000000, 0.000000) scale(2.500000 2.500000) "> 
 
 <path d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V11C12 13.2091 10.2091 15 8 15C5.79086 15 4 13.2091 4 11V5Z" fill="#EBE7E4" fill-opacity="0.8"/>
 
 </g>%n%n
-<g transform="translate(139.000000, 9.000000) scale(0.458333 0.458333) "> 
+<g transform="translate(139.000000, 9.000000) scale(1.833333 1.833333) "> 
 
-<path d="M12 12C12 5.37258 17.3726 0 24 0C30.6274 0 36 5.37258 36 12V36C36 42.6274 30.6274 48 24 48C17.3726 48 12 42.6274 12 36V12Z" fill="black"/>
-<circle cx="24" cy="12" r="8" fill="#FF0000"/>
-<circle cx="24" cy="36" r="8" fill="#00E316"/>
+<path fill-rule="nonzero" fill="rgb(0%, 0%, 0%)" fill-opacity="1" d="M 3 3 C 3 1.34375 4.34375 0 6 0 C 7.65625 0 9 1.34375 9 3 L 9 9 C 9 10.65625 7.65625 12 6 12 C 4.34375 12 3 10.65625 3 9 Z M 3 3 "/>
+<path fill-rule="nonzero" fill="rgb(100%, 0%, 0%)" fill-opacity="1" d="M 8 3 C 8 4.105469 7.105469 5 6 5 C 4.894531 5 4 4.105469 4 3 C 4 1.894531 4.894531 1 6 1 C 7.105469 1 8 1.894531 8 3 Z M 8 3 "/>
+<path fill-rule="nonzero" fill="rgb(0%, 89.019608%, 8.627451%)" fill-opacity="1" d="M 8 9 C 8 10.105469 7.105469 11 6 11 C 4.894531 11 4 10.105469 4 9 C 4 7.894531 4.894531 7 6 7 C 7.105469 7 8 7.894531 8 9 Z M 8 9 "/>
 
 </g>%n%n</svg>

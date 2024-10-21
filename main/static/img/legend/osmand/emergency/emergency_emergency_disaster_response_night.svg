@@ -1,0 +1,23 @@
+<svg width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+
+<g transform="translate(130.000000, 0.000000) scale(2.000000 2.000000) "> 
+
+<g clip-path="url(#clip0)">
+<path opacity="0.953" d="M9.9994 1C14.9626 1 19 5.00182 19 10C19 14.9655 14.9626 19 9.9994 19C5.03739 19 1 14.9655 1 10C1 5.00182 5.03739 1 9.9994 1Z" fill="#EE6C99"/>
+<path opacity="0.95" fill-rule="evenodd" clip-rule="evenodd" d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19ZM10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="#E72B6C"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<path d="M0 0H20V20H0V0Z" fill="white"/>
+</clipPath>
+</defs>
+
+</g>%n%n
+<g transform="translate(138.000000, 8.000000) scale(2.000000 2.000000) "> 
+
+<g id="surface1">
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 1 10.5 C 1 10.222656 1.222656 10 1.5 10 L 11.5 10 C 11.777344 10 12 10.222656 12 10.5 C 12 10.777344 11.777344 11 11.5 11 L 1.5 11 C 1.222656 11 1 10.777344 1 10.5 Z M 1 10.5 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 8.976562 2.003906 C 9.632812 2.648438 10 3.519531 10 4.429688 L 10 9 L 3 9 L 3 4.429688 C 3 3.519531 3.367188 2.648438 4.023438 2.003906 C 4.679688 1.359375 5.570312 1 6.5 1 C 7.429688 1 8.320312 1.359375 8.976562 2.003906 Z M 7 5 L 7 3 L 6 3 L 6 5 L 4 5 L 4 6 L 6 6 L 6 8 L 7 8 L 7 6 L 9 6 L 9 5 Z M 7 5 "/>
+</g>
+
+</g>%n%n</svg>

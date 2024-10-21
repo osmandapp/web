@@ -29,6 +29,7 @@ export default function Render() {
         'Lifeguard base' : 'emergency/emergency_emergency_lifeguard',
         'Lifeguard tower' : 'emergency/emergency_emergency_lifeguard_lifeguard_tower',
         'Emergency bay' : 'emergency/emergency_highway_emergency_bay',
+        'Disaster responce station' : 'emergency/emergency_emergency_disaster_response',
     }});
 
 }

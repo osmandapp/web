@@ -200,12 +200,12 @@ Once you have made your choice, the following steps are provided:
 
 ![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
 
-OsmAnd provides a convenient option to sort tracks. This is especially useful if you have a lot of them or if you are searching by certain features.  
+OsmAnd provides a convenient option to sort tracks. This is especially useful if you have a lot of them or if you are searching for certain features.  
 Tap the *Sort by* button at the top of the list to open the track list sorting menu tool.  
 
 Sort menu:
 
-- **Nearest**. Shows tracks that are close to your location.
+- **Nearest**. Displays tracks that are close to your location.
 - **Last modified**. The tracks in the list are sorted by which ones have been changed recently.
 - **Name: A - Z**. Sorting tracks in the list by name from A to Z.
 - **<Translate android="true" ids="sort_name_descending"/>**. Sorting tracks in the list by name from Z to A.
@@ -219,7 +219,6 @@ Sort menu:
 :::note
 **In iOS,** you can use sorting using *Menu → Configure Map → Tracks*.
 :::
-
 
 
 ## Track Folder
@@ -255,15 +254,15 @@ Actions:
 - [**Move**](#track-folder). You can move the selected folder to another existing folder or create a new one.
 - [*Delete folder*](#delete-folder). Allow you to delete a folder. A warning message will appear on the display. The deletion will be irreversible.
 
-### Delete Folder
+### Folder Statistics
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> tab*
 
-![My Places with tracks in Android](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
+![My Places with tracks in Android](@site/static/img/personal/tracks/dashboard_andr.png)
 
 </TabItem>
 
@@ -271,24 +270,11 @@ Actions:
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
 
-![Context menu of a track in iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.png)
+![My Places with tracks in iOS](@site/static/img/personal/tracks/dashboard_ios.png)
 
 </TabItem>
 
-</Tabs>  
-
-You can delete a folder with all the tracks it contains. To do this:
-
-- Tap the three-dot menu of the folder you want to delete.
-- At the bottom of the menu, find the Delete Folder option.
-- **NOTE** that this action is irreversible.
-
-
-### Folder Statistics
-
-*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> tab*
-
-![My Places with tracks in Android](@site/static/img/personal/tracks/dashboard_andr.png)  
+</Tabs>
 
 At the bottom of the list in the *Tracks* tab, and below the list of tracks **in each of your folders**, there is an information section that allows you to view the overall summary statistics for the tracks in the selected folder. All values are displayed in the [units](../../personal/profiles.md#units--formats) you have selected.
 
@@ -319,7 +305,7 @@ At the bottom of the list in the *Tracks* tab, and below the list of tracks **in
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
 - [**Select**](#selection-mode). This menu item allows you to select the folders and routes you need to manage them further.  
 
@@ -331,6 +317,33 @@ At the bottom of the list in the *Tracks* tab, and below the list of tracks **in
 
 - [**Import**](#import). If you have tracks you want to add to OsmAnd, you can use the import function to upload files from your device.
 
+### Delete Folder
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="android" label="Android">
+
+*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+
+![My Places with tracks in Android](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
+
+![Context menu of a track in iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.png)
+
+</TabItem>
+
+</Tabs>  
+
+You can delete a folder with all the tracks it contains. To do this:
+
+- Tap the three-dot menu of the folder you want to delete.
+- At the bottom of the menu, find the Delete Folder option.
+- **NOTE** that this action is irreversible.
 
 
 ## Import / Export Track
@@ -397,4 +410,4 @@ There are several ways to export one or more track files to any messenger, email
 - [Navigation by track](../../navigation/setup/gpx-navigation.md)
 - [Trip recording](../../plugins/trip-recording.md)
 
-> *This article was last updated in September 2024*
+> *This article was last updated in October 2024*

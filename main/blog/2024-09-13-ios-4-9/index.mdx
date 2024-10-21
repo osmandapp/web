@@ -17,86 +17,115 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-Hello everyone!  
+Hello OsmAnd users!  
 
-We are excited to announce the release of OsmAnd version 4.8 update for iOS devices. This latest update introduces many new features and improvements to enhance your navigational experience.
+We're thrilled to unveil version 4.9 for iOS, packed with features that take navigation to a new level. From an upgraded compass to intuitive brand name searches, this update enhances both usability and performance. Whether you’re exploring the city, navigating off-road, or simply checking your track statistics, this release ensures you have everything you need at your fingertips.
 
 [🔄   **Update Now!**](https://itunes.apple.com/us/app/osmand-maps-travel-navigate/id934850257)
 
-To take advantage of the new features and improvements, visit the AppStore to download or update OsmAnd to version 4.8. This version includes new widgets, an improved user interface, and numerous performance upgrades to make OsmAnd better than ever.
+Download the update on the AppStore today and explore new quick actions, map improvements, and much more. Thank you for your continued trust in OsmAnd!
 
-Thank you for your continued support of OsmAnd. Have a safe journey!
+Happy exploring!
 
 ![IMG index iOS](./img/ios_4-9.png)
 
 <!--truncate-->
 
-**What's new**
+## What's new
 
-- Modified [compass behavior](#new-compass-behavior): a single tap rotates the map to North, while a double tap switches the orientation,
-- Added [search functionality](#search-by-brand-names) for the most popular brand names, 
-- Improved [graph appearance](#redesign-graphs): Y-axis labels no longer overlap with the graph, 
-- Added [total track statistics](#total-track-statistics) to each folder's footer, 
-- Introduced a [Map mode parameter](#updates-for-map-mode-menu) that now follows the App theme, 
-- [Grouped all tags](#grouped-tags) with translations into a single item in the context menu,
-- Improved [UI for selection of location icon](#profile-appearance-redesign), added options to disable location radius and view angle, 
-- Add [quick action](#quick-action-update) to change "Location position on screen",
-- CarPlay improvements: resolved an issue where the main navigation widget didn't update after route recalculations, and fixed the size of the arrows in the next turn widget, 
-- Fixed an issue where the POI category was missing from the context menu, 
-- Fixed an issue with the auto-detection of the voice prompt language, 
-- Fixed crash in Boat profile Route parameters,
+- [Updated Compass Behavior](#new-compass-behavior). Modified the interaction with the compass button. <!-- Now a single tap turns the map to the North, and a double tap switches the map orientation. -->
+- [Search by Brand Name](#search-by-brand-names). Now you can search for POIs using popular brand names.
+- [Redesigned Graphs Improved](#redesign-graphs). Improved appearance, preventing Y-axis label overlap with the graph. 
+- [Folder statistics tracks](#total-track-statistics). The overall statistics are now displayed at the bottom of the list in each of the track folders.
+- [Map mode follows app theme](#updates-for-map-mode-menu). Introduced a new map mode parameter that now corresponds to the app's light or dark theme settings.
+- [Grouped tags with translations](#grouped-tags). All tag translations are now conveniently grouped in the context menu.
+- [Location icon appearance](#profile-appearance-redesign). Improved the appearance of my location icon and added new visual elements to the settings.
+- [Quick Action feature](#quick-action-update). Added the ability to change the *Location position on screen* with a new quick action.
+- [CarPlay improvements](#carplay-improvements). Resolved issues with navigation widget updates. <!--Resolved issues with navigation widget updates after recalculations and adjusted arrow sizes in the turn widget.-->
+- [Optional updates](#optional-updates). Additional updates and refinement for this release.
 
-## New Compass behavior
 
-The compass button has received updates that improve its functionality. These changes make the compass more accurate and easier to use, and help you navigate better.
+## New Compass Behavior
 
-[**Compass button**](https://osmand.net/docs/user/map/interact-with-map/#map-orientation-and-compass): 
+The compass button has been updated to provide more intuitive and user-friendly functionality. These improvements make the compass easier to use, help you navigate better, and optimize map orientation control during navigation.
 
-- **Single tap**. Rotates the map orientation to the North in all orientations. Even if it rotates back in a second, such as in compass mode.
-- **Double tap**. Switches map orientations. This previously worked with a single tap.
-- **Long tap**. Opens a bottom sheet with a list of available orientations. This function remains unchanged.
+[Compass button](https://osmand.net/docs/user/map/interact-with-map/#map-orientation-and-compass): 
+
+- **Single tap**. Reorients the map *to the North* in all map orientation modes. If the map is in the *Compass direction* mode, it rotates for one moment and then returns to the dynamic orientation of this mode.
+- **Double tap**. Switch between map orientation modes, such as following the GPS direction or rotating with the device. *Until this update, you could switch modes using Single tap*.
+- **Long tap**. Opens a handy list with the names of all map orientation modes, allowing you to select the one you prefer.
+
 
 ## Search by Brand Names
 
-We added search and filtering by Brands that present in POI data.
+We are pleased to introduce a new [brand search](https://osmand.net/docs/user/search/search-poi#how-to-use) feature in OsmAnd that will allow you to find your favorite places faster. You can now filter POIs by specific brands, making it faster to find what you are looking for.  
+
+Whether you are interested to find your favorite coffee shop, hotel, or reliable supermarket, this update makes discovering nearby locations from your favorite brands easier. Enjoy a personalized and efficient search and optimize your travels with OsmAnd.
+
 
 ## Redesign Graphs
 
-Elevation graphs have been revamped to eliminate overlapping labels:
+Elevation graphs have been redesigned to prevent overlapping labels.
+
 
 ## Total Track Statistics
 
-Added folder [tracks statistics](https://osmand.net/docs/user/personal/tracks/manage-tracks#folder-statistics)
+The [overall statistics](https://osmand.net/docs/user/personal/tracks/manage-tracks#folder-statistics) are now displayed at the bottom of the list in each of the track folders.
+
 
 ## Updates for Map Mode Menu
 
 Added the new [Map mode](https://osmand.net/docs/user/map/vector-maps#map-mode). The map is displayed in light or dark theme according to the mode selected from the list of suggested ones.
 
-## Grouped tags
+
+## Grouped Tags
 
 POI's tag with any traslations have a single item on the [Context menu](https://osmand.net/docs/user/map/map-context-menu#details).
 
+
 ## Profile Appearance Redesign
 
-The [appearance of profiles](https://osmand.net/docs/user/personal/profiles#profile-appearance) has been improved to make them more interesting, recognizable, and usable. 
-
+The [appearance of profiles](https://osmand.net/docs/user/personal/profiles/#my-location-appearance) has been improved to make them more interesting, recognizable, and usable. 
+<!-- 
 The update includes:
 - New icon and color selection components.
 - Redesign of the location icon selection map.
-- Default 3D icons.
-- Added *Options* menu for 3D icons:
-  - **View angle**. Status: *Off*, &nbsp;*Resting position*, &nbsp;*Navigation position*, &nbsp;*Rest & navigation position*.  
-  Displays of the cone-shaped area you are currently in.
-  - **Location radius**. Status: *Off*, &nbsp;*Resting position*, &nbsp;*Navigation position*, &nbsp;*Rest & navigation position*.  
-  Displays a circular area that reflects the accuracy of your current location. 
-  
-##  Quick Action update
+- Default 3D icons.-->
+- Added visual elements for the Resting and Navigation positions below the my location icon:
 
-Added quick action to change ["Location position on screen"](https://osmand.net/docs/user/widgets/quick-action#settings)
+  - **View angle**. Displays a cone-shaped area that shows the direction you are currently facing.  
+  Status: *Off*, &nbsp;*Resting position*, &nbsp;*Navigation position*, &nbsp;*Rest & navigation position*.  
+
+  - **Location radius**. Shows a circular area around your icon, representing the accuracy of your current location.  
+  Status: *Off*, &nbsp;*Resting position*, &nbsp;*Navigation position*, &nbsp;*Rest & navigation position*.  
 
 
+##  Quick Action Update
 
-_________________________________________________
-<LinksSocial/>
-<LinksTelegram/>
-<AppleStore/>
+![Widget page](./img/conf_screen_display_position_ios.png)
+
+Added the ability to create a Quick Action button to change the [Location position on screen](https://osmand.net/docs/user/widgets/quick-action#settings). The setting allows you to enable or disable the display of the previously selected My Location cursor position on the map.
+
+
+## CarPlay improvements
+
+Resolved an issue that caused the main navigation widget to not refresh after a route recalculation, and fixed the size of the arrows in the next turn widget.
+
+
+## Optional Updates
+
+- Fixed a bug that caused POI category to be missing in the context menu. 
+- Fixed a problem with automatic language detection of voice prompts. 
+- Fixed a crash in boat profile route parameters.
+
+
+## Engage with OsmAnd: Share, Suggest, and Connect
+
+If you have any suggestions for improving the app on the iOS platform, please contact us. We appreciate and welcome your contributions to the further development of OsmAnd.
+
+
+- **Follow**: <LinksSocial/>  
+
+- **Join**: <LinksTelegram/>  
+
+- **Get**: &nbsp;<AppleStore/>

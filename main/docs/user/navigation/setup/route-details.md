@@ -165,8 +165,8 @@ If data is present you can select one of the following types:
    - [*Speed*](../../map/tracks/track-context-menu.md#speed).
    - Graphs with two types of data: *Altitude/Slope*, *Altitude/Speed*, *Slope/Speed*, *Animated zoom/Speed*.
 - *X-axis*:
-   - *Distance*. You can view the data for a route in relation to the route length.
-   - *Time*. You can view the data for a route in relation to the time calculated for that route.
+   - *Distance*. You can view route data that relates to the length of the route.
+   - *Time*. You can view route data that relates to the time calculated for that route
    - *Time of day*. You can view route data at certain time of day.
 
 
@@ -205,7 +205,7 @@ Road attributes are accessible in the Route Details and display segments related
 
 - [**Surface**](https://wiki.openstreetmap.org/wiki/Key:surface) - Road surfaces are the top layer of pavement that comes into contact with the wheels of vehicles. They can be of different types depending on their properties and functional purpose. For example, [asphalt](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) pavement provides good traction and noise insulation, and [concrete](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) pavement is more durable and has greater load capacity. Other materials such as gravel, crushed stone, wood boards, and others can also be used to create a road surface.  
 
-- [**Steepness**](https://wiki.openstreetmap.org/wiki/Key:incline#Common_&_extreme_inclines) - This is a measurement of the angle of the slope of the road, expressed as a percentage. It indicates how steeply the road is sloped up or down in relation to the horizon and is calculated by measuring the vertical change in road elevation by the horizontal distance and multiplying the resulting value by 100%. For example, if the steepness of the road is 10%, that means for every 100 meters of horizontal distance along the road, you are going up or down 10 meters. The steepness of the road can affect your vehicle's speed, braking, fuel consumption, and driving safety, especially on slippery roads in the winter.  
+- [**Steepness**](https://wiki.openstreetmap.org/wiki/Key:incline#Common_&_extreme_inclines) - This is a measurement of the angle of the slope of the road, expressed as a percentage. It indicates how steeply the road is sloped up or down relative to the horizon and is calculated by measuring the vertical change in road elevation by the horizontal distance and multiplying the resulting value by 100%. For example, if the steepness of the road is 10%, that means for every 100 meters of horizontal distance along the road, you are going up or down 10 meters. The steepness of the road can affect your vehicle's speed, braking, fuel consumption, and driving safety, especially on slippery roads in the winter.  
 
 - [**Surface firmness**](https://wiki.openstreetmap.org/wiki/Key:tracktype) - It is the ability of the road surface to recover from deformation or load. The higher the surface firmness, the less chance of damage to the vehicle and the more comfortable the road will be. Surface firmness can also affect vehicle speed and fuel consumption.  
 
