@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 The map context menu provides information about the selected object on the map. You can also use it to create a route to the selected location. To open the context menu, first, find the required location on the map, then select the object with a short tap or long tap when selecting any precise point on the map.
 
 
-### Select an Object (Short-tap)
+### Select an Object (single tap)
 
 <Tabs groupId="operating-systems">
 
@@ -38,9 +38,11 @@ The map context menu provides information about the selected object on the map. 
 
 </Tabs>
 
-The context menu appears when you **short tap** a marked object on the map. In this case, the context menu contains information about the object's name and icon (as it is marked on the map), address, distance, and direction from your current position. You can use this method to select *POI*, *Favorite*, *transportation stop*, *Marker*, or *map object*.
+The context menu appears when you **single tap** a marked object on the map. This context menu displays essential information about the selected object, including its name, icon (as represented on the map), address, distance, and direction from your current position. Users can select various types of map objects, such as *POIs*, *Favorites*, *transportation stops*, *Markers*, or other *map objects*.
 
-**NOTE**. The selected map objects are OpenStreetMap [nodes](https://wiki.openstreetmap.org/wiki/Node) or [ways](https://wiki.openstreetmap.org/wiki/Way).
+By tapping on icons for *Barrier*, *Steps*, or *Gate*, the context menu reveals additional details, including the name (POI type) and address associated with these features, or displays object type, if a name is not available.
+
+**NOTE**: The selected map objects correspond to OpenStreetMap [nodes](https://wiki.openstreetmap.org/wiki/Node) or [ways](https://wiki.openstreetmap.org/wiki/Way).
 
 
 ### Select Any Point (long tap)
