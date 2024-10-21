@@ -240,7 +240,7 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 | Add <br/> [**Map marker**](../map/configure-map-menu.md#map-layers) | Adds marker to a selected (center) map location. |
 | Add <br/> [**Parking place**](../plugins/parking.md) | Adds parking to a selected (center) map location. The old parking position is deleted. |
 | Add <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-poi) | Adds POI to a selected (center) map location map (same as context menu action). <br /> - *Show an interim dialog*. Displays a confirmation dialog. <br /> - *POI Type* (optional). Preselects the OSM POI type. <br /> - *Tag/Value* (multiple). Adds [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_Features) tags / values |
-| Add <br/> [**OSM Note**](../plugins/osm-editing.md) | Adds [OSM note](https://wiki.openstreetmap.org/wiki/Notes)  <br /> - *Show an interim dialog*. Displays a confirmation dialog. <br /> - *Message*. Adds a default message to the note. |
+| Add <br/> [**OSM Note**](../plugins/osm-editing.md#create--modify-osm-note) | Adds an [OSM note](https://wiki.openstreetmap.org/wiki/Notes)  <br /> - *Show an interim dialog*. Displays a confirmation dialog. <br /> - *Message*. Adds a default message to the note. |
 | Add <br/> [**Media notes**](../plugins/audio-video-notes.md) | Starts audio / photo / video note recording for a selected (center) map location. |
 | Create <br/> [**New route**](../plan-route/create-route.md) <br /> *Android only* | Opens the [Plan a route](../plan-route/create-route.md) tool and creats a route for thea selected (central) location on the map. |
 
