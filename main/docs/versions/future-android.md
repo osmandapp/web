@@ -104,8 +104,8 @@ We've added a convenient [Reset average speed](https://osmand.net/docs/user/widg
 Added [new actions](../user/widgets/quick-action#action-types):
 
 1. Action for Lock/Unlock screen: _Menu → Configure screen → Custom buttons → + → Add acton → Inteface → Lock screen_
-2. Actions for Trip recording: _Menu → Configure screen → Custom buttons → + → Add acton → My Places → Start/Pause - Trip recording, Start new trip segment, Finish Trip recording, Save Recorded Trip & Continue_
-3. Action for Show/Hide OSM edits: _Menu → Configure screen → Custom buttons → + → Add acton → My Places → Show/Hide OSM edits_
+2. Actions for Trip recording: _Menu → Configure screen → Custom buttons → + → Add action → My Places → Start/Pause - Trip recording, Start new trip segment, Finish Trip recording, Save Recorded Trip & Continue_
+3. Action for Show/Hide OSM edits: _Menu → Configure screen → Custom buttons → + → Add action → My Places → Show/Hide OSM edits_
 
 ![Quick actions](../../blog/2024-09-13-android-4-9/img/quick_action.png)
 
