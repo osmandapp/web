@@ -292,18 +292,16 @@ Widgets in the right and left panels can be grouped into **Pages**. To do this, 
 
 The **widget context menu** allows you to manage and configure widgets directly from the map screen, providing *a quick way to organize panels*. You can access this menu by ***long tapping*** on any widget to customize the layout of widgets without leaving the map.
 
-**Managing** widgets on **Top and Bottom** panels.
+- **Managing** widgets on **Top and Bottom** panels.  
+    *Add widget to the Right* / *Add widget to the Left*. Select one of these options to add a new widget next to an existing one. After selecting the required widget from the [*Available widgets*](#widgets-for-all-panels) list, it will be placed either to the right or left of the current widget, depending on your choice.
 
-*Add widget to the Right* / *Add widget to the Left*. Select one of these options to add a new widget next to an existing one. After selecting the required widget from the [*Available widgets*](#widgets-for-all-panels) list, it will be placed either to the right or left of the current widget, depending on your choice.
+- **Managing** widgets on **Left and Right** panels.  
+    *Add widget Above* / *Add widget Below*. Select one of these options to place the new widget above or below the current one. Available widgets will be displayed for selection, and the selected one will be added to the specified position.
 
-**Managing** widgets on **Left and Right** panels.
-
-*Add widget Above* / *Add widget Below*. Select one of these options to place the new widget above or below the current one. Available widgets will be displayed for selection, and the selected one will be added to the specified position.
-
-**General actions for all panels**.
-
-- *Settings*  (*displayed if the widget has settings*). Access the settings for the selected widget to customize its appearance or behavior.
-- *Delete*. Remove the selected widget from the panel. A confirmation message will appear to verify that you want to proceed with the deletion.
+- **General actions for all panels**.
+    - *Settings* (*displayed if the widget has settings*). Access the settings for the selected widget to customize its appearance or behavior.
+    - *Reset average speed* (*additional settings for the [Average Speed](../widgets/info-widgets.md#average-speed) information widget*). A long tap on the widget instantly resets the average speed value during a trip.
+    - *Delete*. Remove the selected widget from the panel. A confirmation message will appear to verify that you want to proceed with the deletion.
 
 
 ### Copies of Widgets
