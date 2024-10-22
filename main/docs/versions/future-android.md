@@ -32,7 +32,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 # What's new
 
 - [Real-Time Turn & Lane Indicators](#real-time-turn--lane-indicators). Added a group of widgets to the top and bottom panels for real-time updates on upcoming turns and lane info.
-- [Gallery viewer](#images-gallery). Full-screen view for Wikimedia images.
+- [Gallery viewer](#wikimedia-gallery-viewer). Full-screen view for Wikimedia images.
 - [Vehicle Metrics plugin](#vehicle-metrics). Monitor vehicle performance via OBD-II protocol.
 - [Track activities](#gpx-track-activities). Assign and filter tracks by activities.
 - [Customizable map buttons](#customizable-map-buttons). Adjust appearance with a precise grid.
@@ -42,68 +42,73 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 - [Dirt Bike trails](#dirt-bike-trails). New route layer for off-road biking.
 - [Surrounding areas info](#surrounding-areas). Displays information about areas around a selected point.
 - [Terrain colorization visibility](#visibility-parameters-for-terrain). Separated parameters for enhanced control.
-- [Interactive access points](#tappable-access-actions). Display access or other road and path attributes with a single tap.
+- [Interactive access points](#interactive-access-points). Display access or other road and path attributes with a single tap.
 - [Hiking trails difficulty](#hiking-trails). Renamed from *Difficulty classification*.
+- [Custom graph display for GPX tracks](#custom-graph-display-for-gpx-tracks). Improved the track graph, allowing you to select any available data type for the graph on the Trip recording screen.
 - [Optional updates](#optional-updates). Additional updates and refinements for the release.
 
 
 ## Real-Time Turn & Lane Indicators
 
-We’re excited to introduce a new set of route guidance widgets to the [Top/Bottom widget panels](https://osmand.net/docs/user/widgets/configure-screen#top-and-bottom-panels) in OsmAnd's *Configure screen menu*. These widgets give you real-time navigation information, including the distance to the next turn, second next turn, lane guidance, road name, and current street name. Perfect for keeping track of your route at every step of your journey. The widgets are active during navigation, ensuring you never miss a turn!
+The [Top/Bottom widget panels](../user/widgets/configure-screen.md#top-and-bottom-panels) in OsmAnd's *Configure screen menu* provides a new set of widgets for route guidance. These widgets give you real-time navigation information, including the distance to the next turn, second next turn, lane guidance, road name, and current street name. Perfect for keeping track of your route at every step of your journey.
 
 *Find them in: Menu → Configure screen → Top panel / Bottom panel → Route guidance: Next turn, Second next turn, Lanes*
 
 ![Main Navigation widget](../../blog/2024-09-13-android-4-9/img/main_nav_widget.png)
 
 
-## Images Gallery
+## Wikimedia Gallery Viewer
 
-Added on [Map Contex menu](../user/map/map-context-menu#online-photos) full-screen gallery viewer for Wikimedia images.
+Introducing a full-screen gallery viewer for Wikimedia images in the [Map Context menu](../user/map/map-context-menu.md#online-photos). The image block has been redesigned for easier browsing, allowing you to view and swipe through all images associated with a location. A dedicated screen displays a list of all available images, making it easier to explore related media. Tapping on an image opens it in a full-screen mode for a detailed view of the place or POI.
 
 ![Gallery](../../blog/2024-09-13-android-4-9/img/gallery.png)
 
+
 ## Vehicle Metrics
 
-The new Plugin - Vehricle Metrics was added to the [Plugins menu](../user/plugins/). It monitors key vehicle metrics using the [OBD-II protocol](https://en.wikipedia.org/wiki/OBD-II_PIDs). New widgets for this data were added too.
+The new *Vehicle Metrics* plugin has been added to the [Plugins menu](../user/plugins/index.md), enabling the monitoring of key vehicle performance data using the [OBD-II protocol](https://en.wikipedia.org/wiki/OBD-II_PIDs). This plugin offers real-time metrics, such as engine speed, fuel consumption, and coolant temperature, with dedicated widgets for easy access to this data. Whether you're tracking fuel efficiency or ensuring engine health, the *Vehicle Metrics* plugin brings valuable insights directly to your device.
 
 ![OBD](../../blog/2024-09-13-android-4-9/img/obd.png) ![OBD](../../blog/2024-09-13-android-4-9/img/obd_1.png)
 
-## GPX Track activities
 
-The new feature of [adding **Activity**](../user/plugins/trip-recording#recording-settings) to a recorded GPX track improves navigation and [track management (filter)](../user/personal/tracks/smart-folder#available-filters). This increases the convenience of working with track recordings.
+## GPX Track Activities
+
+A new feature allows you to assign **Activity** types (such as hiking or cycling) to your recorded GPX tracks, enhancing track management and organization. You can now easily [filter tracks](../user/personal/tracks/smart-folder.md#available-filters) by activity, making it more convenient to organize and analyze your trips.
 
 ![3D track](../../blog/2024-09-13-android-4-9/img/track_activity.png)
 
-## Customizable Map buttons
 
-No you can modify [the appearance of Quick Action buttons](../user/widgets/quick-action#quick-action-button-appearance) and Default buttons through the three-dot menu: _Menu → Configure screen → Custom buttons_ or _Default buttons → choose needed buttons → three-dot menu → Appearance_ (chagne icon, corner radius, size, background opacity).
+## Customizable Map Buttons
 
-Added [grid for buttons](https://github.com/osmandapp/OsmAnd/issues/19164).
-
-Added Custom buttons to [export/import settings](https://github.com/osmandapp/OsmAnd/issues/20867).
+Enhance your map screen with fully customizable [Quick Action and Default buttons](../user/widgets/quick-action.md#quick-action-button-appearance), including changes to icon, size, corner radius, and background opacity. Through the new grid layout, you can position buttons precisely for easy access. Button appearance settings can be adjusted via *Menu → Configure screen → Custom buttons* or *Default buttons → three-dot menu → Appearance*. Additionally, you can now export and import your custom button configurations, ensuring seamless transitions between devices.
 
 ![Button appearance](../../blog/2024-09-13-android-4-9/img/button_appearance.png) ![Button appearance](../../blog/2024-09-13-android-4-9/img/button_appearance_1.png)
 
 
 ## Widget Context Menu
 
-The [**Widget Context menu**](../user/widgets/configure-screen.md#panel-widgets-settings) allows you to manage and configure widgets directly from the map screen, providing *a quick way to organize panels*. You can access this menu by ***long tapping*** on any widget to customize the layout of widgets without leaving the map.
+The [**Widget Context menu**](../user/widgets/configure-screen#panel-widgets-settings) allows you to manage and configure widgets directly from the map screen, providing *a quick way to organize panels*. You can access this menu by ***long tapping*** on any widget to customize the layout of widgets without leaving the map.
 
 ![Widget context menu](@site/static/img/widgets/widget_context_menu_andr.png)
 
-### Reset average speed
 
-Added the "Reset average speed" action of the current value in Widget Context menu.
+### Reset Average Speed
+
+We've added a convenient [Reset average speed](https://osmand.net/docs/user/widgets/info-widgets#average-speed) action directly in the widget context menu. With just a long tap on the widget, you can instantly reset the average speed value during your trip. This feature makes it easier to track real-time performance on the go without navigating through multiple menus, giving you more control over your trip statistics with minimal effort.
+
+![Widget context menu - Average speed](@site/static/img/widgets/average_speed_widget_1_andr.png)  ![Widget context menu - Average speed](@site/static/img/widgets/average_speed_widget_2_andr.png)
 
 
 ## New actions for QA
 
-Added [new actions](../user/widgets/quick-action#action-types): 
+Added [new actions](../user/widgets/quick-action#action-types):
+
 1. Action for Lock/Unlock screen: _Menu → Configure screen → Custom buttons → + → Add acton → Inteface → Lock screen_
 2. Actions for Trip recording: _Menu → Configure screen → Custom buttons → + → Add acton → My Places → Start/Pause - Trip recording, Start new trip segment, Finish Trip recording, Save Recorded Trip & Continue_
 3. Action for Show/Hide OSM edits: _Menu → Configure screen → Custom buttons → + → Add acton → My Places → Show/Hide OSM edits_
 
 ![Quick actions](../../blog/2024-09-13-android-4-9/img/quick_action.png)
+
 
 ## Dirt Bike Trails
 
@@ -112,6 +117,7 @@ Added new Route options  - [Dirt bike trails](../user/map/vector-maps#routes): _
 Upon activation, display a colored route overlay for all paths marked with the dirtbike:scale tag, similar to the approach used for mtb:scale (Mountain bike).
 
 ![Dirt Bike legend](../../blog/2024-09-13-android-4-9/img/dirt_bike.png) ![Dirt Bike legend](../../blog/2024-09-13-android-4-9/img/dirt_bike_1.png)
+
 
 ## Surrounding areas
 
@@ -129,9 +135,11 @@ Sort by polygon size: from small to big. Show polygon type and name.
 Slope / Hillshade / Altitude have their own independant [Visibility setting](../user/plugins/topography#visibility).
 
 
-## Tappable access actions
+## Interactive Access Points
 
-By tapping on _Barrier_, _Steps_, _Gate_ icons in the [Map Сontext menu](../user/map/map-context-menu#overview) now displays the name (POI type) and address:
+When using OsmAnd, you can now interact with access-related icons such as *Barrier*, *Steps*, or *Gate* directly on the map. A simple tap on these icons will bring up detailed information, including the name of the POI, its type, and the address. This functionality enhances quick access to important navigation data for objects on your route, helping you understand restrictions or attributes of paths and roads at a glance. You can explore this via the [Map Context menu](https://osmand.net/docs/user/map/map-context-menu#overview).
+
+By tapping on icons for *Barrier*, *Steps*, or *Gate*, the context menu reveals additional details, including the name (POI type) and address associated with these features, or displays object type, if a name is not available.
 
 ![Barrier icons](../../blog/2024-09-13-android-4-9/img/icons.png)
 
@@ -143,9 +151,9 @@ By tapping on _Barrier_, _Steps_, _Gate_ icons in the [Map Сontext menu](../use
 _Configure map → Routes → [Hiking trails difficulty grade](../user/map/routes#hiking-trails-difficulty-grade): SAC or CAI_
 
 
-## Change of graph toggle
+## Custom Graph Display for GPX Tracks
 
-Changed [graph toggle](../user/plugins/trip-recording#overview-screen) (Recording track) to give the ability to select any available options for displaying on the graph.
+We have enhanced the [graph toggle](https://osmand.net/docs/user/plugins/trip-recording#overview-screen) for recorded tracks, allowing you to select specific data types, such as heart rate or other available options, and display them directly on the graph. This update lets you select any available data on the Trip recording screen, making it easier to view critical information during or after your trip, improving your overall analysis of recorded GPX data.
 
 ![Graph](../../blog/2024-09-13-android-4-9/img/rectrack_graph_1.png) ![Graph](../../blog/2024-09-13-android-4-9/img/rectrack_graph.png)
 
