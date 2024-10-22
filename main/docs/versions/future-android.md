@@ -55,20 +55,20 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 ## Main Navigation widget
 
-Added The Main navigation widget for [Top panel](../user/widgets/configure-screen#top-and-bottom-panels): _Configure screen → Top panel → Route guidance: Next turn, Second next turn, Lanes_
+Added the Main navigation widget for [Top panel](../user/widgets/configure-screen#top-and-bottom-panels): _Configure screen → Top panel → Route guidance: Next turn, Second next turn, Lanes_
 
 ![Main Navigation widget](../../blog/2024-09-13-android-4-9/img/main_nav_widget.png)
 
 
 ## Images Gallery
 
-Added on [Map Contex menu](../user/map/map-context-menu#online-photos) full-screen gallery viewer for Wikimedia images.
+Added on [Map Context menu](../user/map/map-context-menu#online-photos) full-screen gallery viewer for Wikimedia images.
 
 ![Gallery](../../blog/2024-09-13-android-4-9/img/gallery.png)
 
 ## Vehicle Metrics
 
-The new Plugin - Vehricle Metrics was added to the [Plugins menu](../user/plugins/). It monitors key vehicle metrics using the [OBD-II protocol](https://en.wikipedia.org/wiki/OBD-II_PIDs). New widgets for this data were added too.
+The new Plugin - Vehicle Metrics was added to the [Plugins menu](../user/plugins/). It monitors key vehicle metrics using the [OBD-II protocol](https://en.wikipedia.org/wiki/OBD-II_PIDs). New widgets for this data were added too.
 
 ![OBD](../../blog/2024-09-13-android-4-9/img/obd.png) ![OBD](../../blog/2024-09-13-android-4-9/img/obd_1.png)
 
@@ -103,8 +103,8 @@ Added the "Reset average speed" action of the current value in Widget Context me
 
 Added [new actions](../user/widgets/quick-action#action-types): 
 1. Action for Lock/Unlock screen: _Menu → Configure screen → Custom buttons → + → Add acton → Inteface → Lock screen_
-2. Actions for Trip recording: _Menu → Configure screen → Custom buttons → + → Add acton → My Places → Start/Pause - Trip recording, Start new trip segment, Finish Trip recording, Save Recorded Trip & Continue_
-3. Action for Show/Hide OSM edits: _Menu → Configure screen → Custom buttons → + → Add acton → My Places → Show/Hide OSM edits_
+2. Actions for Trip recording: _Menu → Configure screen → Custom buttons → + → Add action → My Places → Start/Pause - Trip recording, Start new trip segment, Finish Trip recording, Save Recorded Trip & Continue_
+3. Action for Show/Hide OSM edits: _Menu → Configure screen → Custom buttons → + → Add action → My Places → Show/Hide OSM edits_
 
 ![Quick actions](../../blog/2024-09-13-android-4-9/img/quick_action.png)
 
