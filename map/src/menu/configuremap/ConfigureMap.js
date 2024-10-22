@@ -250,38 +250,38 @@ export default function ConfigureMap() {
                                             <Settings fontSize="small" />
                                         </IconButton>
                                     </MenuItem>
-                                    <MenuItem className={gStyles.innerTitleItem}>
-                                        <Typography className={gStyles.innerTitleText} noWrap>
-                                            Terrain overlay
-                                        </Typography>
-                                        {ctx.processHeightmaps && <CircularProgress size={24} sx={{}} />}
-                                    </MenuItem>
-                                    <FormControl sx={{ mx: '22px', mt: 1 }}>
-                                        <InputLabel>Heightmaps</InputLabel>
-                                        <Select
-                                            labelid="heightmaps-style-selector-label"
-                                            label={'Heightmaps'}
-                                            defaultValue={'None'}
-                                            value={ctx.heightmap?.key || 'None'}
-                                            onChange={(e) => {
-                                                const selectedHeightmap = heightmapsLayers.find(
-                                                    (layer) => layer.key === e.target.value
-                                                );
-                                                ctx.setHeightmap(selectedHeightmap ?? 'none');
-                                            }}
-                                        >
-                                            <MenuItem value="None">None</MenuItem>
-                                            {Object.values(heightmapsLayers).map((item) => {
-                                                return (
-                                                    <MenuItem key={item.key} value={item.key}>
-                                                        {item.name}
-                                                    </MenuItem>
-                                                );
-                                            })}
-                                        </Select>
-                                    </FormControl>
                                 </>
                             )}
+                            <MenuItem className={gStyles.innerTitleItem}>
+                                <Typography className={gStyles.innerTitleText} noWrap>
+                                    Terrain overlay
+                                </Typography>
+                                {ctx.processHeightmaps && <CircularProgress size={24} sx={{}} />}
+                            </MenuItem>
+                            <FormControl sx={{ mx: '22px', mt: 1 }}>
+                                <InputLabel>Heightmaps</InputLabel>
+                                <Select
+                                    labelid="heightmaps-style-selector-label"
+                                    label={'Heightmaps'}
+                                    defaultValue={'None'}
+                                    value={ctx.heightmap?.key || 'None'}
+                                    onChange={(e) => {
+                                        const selectedHeightmap = heightmapsLayers.find(
+                                            (layer) => layer.key === e.target.value
+                                        );
+                                        ctx.setHeightmap(selectedHeightmap ?? 'none');
+                                    }}
+                                >
+                                    <MenuItem value="None">None</MenuItem>
+                                    {Object.values(heightmapsLayers).map((item) => {
+                                        return (
+                                            <MenuItem key={item.key} value={item.key}>
+                                                {item.name}
+                                            </MenuItem>
+                                        );
+                                    })}
+                                </Select>
+                            </FormControl>
                         </>
                     )}
                     {openSettings && <RenderingSettingsDialog setOpenSettings={setOpenSettings} />}
