@@ -53,7 +53,6 @@ export default function ConfigureMap() {
             key: item,
             name: capitalize(item),
             url: `${process.env.REACT_APP_TILES_API_SITE}/heightmap/${item}/{z}/{x}/{y}.png`,
-            tileSize: 256,
         };
     });
 
