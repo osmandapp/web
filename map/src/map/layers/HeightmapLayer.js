@@ -23,9 +23,9 @@ export default function HeightmapLayer() {
 
         if (ctx.heightmap) {
             tileLayerRef.current = L.tileLayer(ctx.heightmap.url, {
-                minZoom: 1,
-                maxNativeZoom: 20,
-                maxZoom: 20,
+                minZoom: 5,
+                maxNativeZoom: 14,
+                maxZoom: 14,
                 tileSize: ctx.heightmap.tileSize,
             });
 
