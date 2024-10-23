@@ -134,6 +134,6 @@ export function getPhotoTitle(photo) {
 }
 
 function parseLicense(l) {
-    const res = licenses.find((license) => license.item.endsWith(l));
-    return res ? res.value : l;
+    const res = licenses.results.bindings.find((license) => license.item.value.endsWith(l));
+    return res ? res.value.value : l;
 }
