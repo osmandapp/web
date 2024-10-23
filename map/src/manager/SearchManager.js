@@ -41,7 +41,7 @@ export async function fetchPhotoProperties(photo) {
                 ...photo.properties,
                 date: parsedData.date !== 'Unknown' ? parsedData.date : photo.properties.date,
                 author: parsedData.author !== 'Unknown' ? parsedData.author : photo.properties.author,
-                license: parsedData.license !== 'Unknown' ? parsedData.license : photo.properties.license,
+                license: photo.properties.license ?? (parsedData.license !== 'Unknown' ? parsedData.license : null),
                 description:
                     parsedData.description !== 'Unknown' ? parsedData.description : photo.properties.description,
             },
