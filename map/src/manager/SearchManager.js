@@ -9,6 +9,7 @@ import _ from 'lodash';
 import { formattingPoiType } from './PoiManager';
 import { getFirstSubstring } from '../menu/search/search/SearchResultItem';
 import i18n from 'i18next';
+import licenses from '../resources/wiki_data_licenses.json';
 
 export const WIKI_IMAGE_BASE_URL = 'https://commons.wikimedia.org/wiki/Special:FilePath/';
 
@@ -41,7 +42,7 @@ export async function fetchPhotoProperties(photo) {
                 ...photo.properties,
                 date: parsedData.date !== 'Unknown' ? parsedData.date : photo.properties.date,
                 author: parsedData.author !== 'Unknown' ? parsedData.author : photo.properties.author,
-                license: parsedData.license !== 'Unknown' ? parsedData.license : photo.properties.license,
+                license: photo.properties.license ? parseLicense(photo.properties.license) : parsedData.license,
                 description:
                     parsedData.description !== 'Unknown' ? parsedData.description : photo.properties.description,
             },
@@ -130,4 +131,9 @@ export function getPhotoTitle(photo) {
         return photo.properties.imageTitle.substring(WIKI_IMAGE_BASE_URL.length);
     }
     return photo.properties.imageTitle;
+}
+
+function parseLicense(l) {
+    const res = licenses.find((license) => license.item.endsWith(l));
+    return res ? res.value : l;
 }
