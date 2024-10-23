@@ -20,6 +20,7 @@ import { useWindowSize } from '../util/hooks/useWindowSize';
 import CustomTileLayer from './layers/CustomTileLayer';
 import ExploreLayer from './layers/ExploreLayer';
 import SearchLayer from './layers/SearchLayer';
+import HeightmapLayer from './layers/HeightmapLayer';
 
 const useStyles = makeStyles(() => ({
     root: (props) => ({
@@ -164,6 +165,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             <PoiLayer />
             <SearchLayer />
             <ExploreLayer />
+            <HeightmapLayer />
             <CustomTileLayer
                 ref={tileLayer}
                 attribution='OsmAnd Web Beta &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'

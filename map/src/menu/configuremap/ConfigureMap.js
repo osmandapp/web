@@ -13,6 +13,7 @@ import {
     Toolbar,
     Tooltip,
     Divider,
+    CircularProgress,
 } from '@mui/material';
 import { Settings } from '@mui/icons-material';
 import AppContext, { defaultConfigureMapStateValues, LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
@@ -32,6 +33,8 @@ import { INTERACTIVE_LAYER } from '../../map/layers/CustomTileLayer';
 import TracksManager from '../../manager/track/TracksManager';
 import SubTitle from '../components/SubTitle';
 import PoiCategoriesConfig from './PoiCategoriesConfig';
+import gStyles from '../gstylesmenu.module.css';
+import capitalize from 'lodash/capitalize';
 
 export const DYNAMIC_RENDERING = 'dynamic';
 export const VECTOR_GRID = 'vector_grid';
@@ -43,6 +46,15 @@ export default function ConfigureMap() {
     const [openSettings, setOpenSettings] = useState(false);
     const [openedTracks, setOpenedTracks] = useState(null);
     const [openPoiConfig, setOpenPoiConfig] = useState(false);
+
+    const heightmaps = ['hillshade', 'slope', 'height'];
+    const heightmapsLayers = heightmaps.map((item) => {
+        return {
+            key: item,
+            name: capitalize(item),
+            url: `${process.env.REACT_APP_TILES_API_SITE}/heightmap/${item}/{z}/{x}/{y}.png`,
+        };
+    });
 
     const handleFavoritesSwitchChange = () => {
         let newConfigureMap = cloneDeep(ctx.configureMapState);
@@ -215,7 +227,7 @@ export default function ConfigureMap() {
                                             <Select
                                                 labelid="rendering-style-selector-label"
                                                 label={t('map_widget_renderer')}
-                                                value={ctx.tileURL.key}
+                                                value={ctx.allTileURLs[ctx.tileURL.key] ? ctx.tileURL.key : ''}
                                                 onChange={(e) => {
                                                     ctx.setTileURL(ctx.allTileURLs[e.target.value]);
                                                     if (e.target.value === INTERACTIVE_LAYER) {
@@ -240,6 +252,36 @@ export default function ConfigureMap() {
                                     </MenuItem>
                                 </>
                             )}
+                            <MenuItem className={gStyles.innerTitleItem}>
+                                <Typography className={gStyles.innerTitleText} noWrap>
+                                    Terrain overlay
+                                </Typography>
+                                {ctx.processHeightmaps && <CircularProgress size={24} sx={{}} />}
+                            </MenuItem>
+                            <FormControl sx={{ mx: '22px', mt: 1 }}>
+                                <InputLabel>Heightmaps</InputLabel>
+                                <Select
+                                    labelid="heightmaps-style-selector-label"
+                                    label={'Heightmaps'}
+                                    defaultValue={'None'}
+                                    value={ctx.heightmap?.key || 'None'}
+                                    onChange={(e) => {
+                                        const selectedHeightmap = heightmapsLayers.find(
+                                            (layer) => layer.key === e.target.value
+                                        );
+                                        ctx.setHeightmap(selectedHeightmap ?? 'none');
+                                    }}
+                                >
+                                    <MenuItem value="None">None</MenuItem>
+                                    {Object.values(heightmapsLayers).map((item) => {
+                                        return (
+                                            <MenuItem key={item.key} value={item.key}>
+                                                {item.name}
+                                            </MenuItem>
+                                        );
+                                    })}
+                                </Select>
+                            </FormControl>
                         </>
                     )}
                     {openSettings && <RenderingSettingsDialog setOpenSettings={setOpenSettings} />}
