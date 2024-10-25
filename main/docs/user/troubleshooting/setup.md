@@ -122,6 +122,15 @@ Please note that other purchases, such as Maps+, cannot be transferred between b
 Read more about the [Topography plugin](../plugins/topography.md).
 
 
+## How to enable system fonts (Android)
+
+Starting with the Android 4.9 version, OsmAnd integrates your device's system font into the application interface, optimizing its design by eliminating mixed font usage. The system font is automatically applied to all UI elements.
+
+- OsmAnd uses your device's default system font in all user interface elements.
+- Switching to the system font is automatic. You do not need to configure any settings in the application for this feature.
+- This feature does not affect the fonts displayed on the map.
+
+
 ## OsmAnd 4.4 (iOS)
 
 OsmAnd 4.4 for iOS devices is not available for iOS versions older than iOS 15.

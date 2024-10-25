@@ -145,7 +145,6 @@ On some Android devices (Xiaomi with Muiu 14), there is no option to set app lan
 :::
 
 
-
 ### How to manage your settings
 
 You could manage application settings as [Global settings](../personal/global-settings.md) or as [Profile configuration](../personal/profiles.md) via [Main menu](../start-with/main-menu.md). Application comes with a predefined list of profiles that could be modified later. Each profile could be considered as a customized map application for specific purposes. By default profiles are being served only as different navigation modes.

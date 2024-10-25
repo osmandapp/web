@@ -36,7 +36,8 @@ You can configure filtering of some route types in [Configure Map](../map/config
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  
 ![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
 
-You can find more information in the [Map Legend](../map-legend/index.md) article.  
+You can find more information in the [Map Legend](../map-legend/index.md) article.
+
 
 ### Mountain bike routes
 
@@ -60,6 +61,16 @@ MTB routes have specific mapping in [OpenStreetMap](https://wiki.openstreetmap.o
 
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMCNodes_name"/>***.  Colors routes according to the type of [node network](https://wiki.openstreetmap.org/wiki/Node_Networks) (international, regional, or local).  
 ![Map routes - hiking node networks](@site/static/img/map/map-routes-hiking-node-networks.png)
+
+
+### Dirt Bike Trails
+
+The **Dirt Bike Trails** feature allows you to display dirt bike-specific routes on the map based on the `dirtbike:scale` tag. This scale highlights trails suitable for dirt biking, with a colored overlay showing difficulty levels.  
+
+You can activate this feature in *Menu → Configure map → Routes → Dirt bike routes*. The system functions similarly to the MTB scale, offering a visual representation of routes tailored to dirt biking. More about the [dirtbike tag can be found here](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
+
+![Map routes - Dirt Bike Trails](@site/static/img/map/map-routes-dirt-bike-trails.png)
+
 
 ### Hiking Trails Difficulty Grade
 

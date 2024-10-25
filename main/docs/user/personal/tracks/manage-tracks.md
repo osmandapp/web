@@ -353,7 +353,7 @@ You can delete a folder with all the tracks it contains. To do this:
 There are two primary methods for importing a track file into OsmAnd:
 
 1. **Direct File Import.**  
-    - You can import a track by directly tapping a GPX, KML, or KMZ file. This can be done from various sources such as messaging applications, email, Google Drive, or file managers. When tapped, the file is suggested to open in the OsmAnd app. Once imported, the track is saved in the **Import** folder in the *My Places* menu. The process is as follows: Tap the required GPX file and then open it in the OsmAnd app.
+    - You can import a track by directly tapping a GPX, KML, or KMZ file. This can be done from various sources such as messaging applications, email, Google Drive, or file managers. When tapped, the file is suggested to open in the OsmAnd app. Once imported, the track is saved in the **Import** folder in the *My Places* menu. The process is as follows - tap the required GPX file and then open it in the OsmAnd app.
 
 2. **Import using the *My Places* menu.**
     - Tracks can also be imported through the *My Places* menu in the OsmAnd app. Navigate to this menu and select the *Tracks* option to import your GPX files. Additionally:

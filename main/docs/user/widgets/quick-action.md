@@ -190,6 +190,16 @@ You can modify the appearance of Quick Action buttons through the three-dot menu
 For detailed customization settings, refer to the [Configure Screen](../widgets/configure-screen.md#button-appearance) article, where you can learn how to fine-tune each button's appearance to match your preferences.
 
 
+### Touch Screen Lock
+
+To prevent accidental taps or interactions during navigation, use the **Touch Screen Lock** feature. When the screen is locked, you need to tap the on-screen button to unlock it. If the lock is activated using an external button, such as *Volume Down*, press that button or tap the on-screen button to unlock. This feature is particularly useful in activities like cycling or hiking, where unintentional touches can disrupt navigation. To set up:
+
+1. Go to *Menu → Configure screen → Custom buttons*.
+2. Tap *+ → Add action → Interface → Touch Screen Lock*.
+
+A message will guide you when locking and unlocking the screen.
+
+
 ## Action Types
 
 ### Configure Map
@@ -214,6 +224,17 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 | Show / Hide <br/> [**<Translate android="true" ids="osm_notes"/>**](../plugins/osm-editing.md) | You can select to display or hide all OSM notes on the map with a single tap the button. |
 
 
+### Interface
+
+| Action | Description |
+|:-------------|:-------------|
+| Navigate <br/> **Previous screen** | A toggle to navigate to the previous screen. |
+| Show / Hide <br/> [**Navigation view**](../navigation/setup/route-navigation.md) | Toggles visibility of the navigation screen view. |
+| Show / Hide <br/> [**Search view**](../search/search-all.md) | Opens or closes the search view. |
+| Show / Hide <br/> [**Side menu**](../start-with/main-menu.md) | Toggles visibility of the main side menu for accessing core features. |
+| Turn On / Off <br/> [**Touch screen lock**](#touch-screen-lock) | Activates or deactivates touch screen locking to avoid unintended screen interactions. |
+
+
 ### Map Interactions
 
 | Action | Description |
@@ -222,7 +243,7 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 | Map <br/> [**Zoom out**](../map/interact-with-map.md) | Downscaling the map. It is convenient to use with [Developer widget - Zoom level](../widgets/info-widgets.md#developer-widgets). |
 | Move <br/> [**Map down**](../map/interact-with-map.md) | You can use the quick action button to move the map down.  |
 | Move <br/> [**Map up**](../map/interact-with-map.md) | When tapped, the map screen moves up. |
-| Move <br/> [**Map to the left**](../map/interact-with-map.md) | When you tap button map screen moves to the left |
+| Move <br/> [**Map to the left**](../map/interact-with-map.md) | When you tap button map screen moves to the left. |
 | Move <br/> [**Map to the right**](../map/interact-with-map.md) | With a quick action button you can move the map to the right. |
 | Move <br/> [**To My location**](../map/interact-with-map.md#my-location--zoom) | Moves the map to the *My location* position. |
 
@@ -240,7 +261,7 @@ For detailed customization settings, refer to the [Configure Screen](../widgets/
 | Add <br/> [**Map marker**](../map/configure-map-menu.md#map-layers) | Adds marker to a selected (center) map location. |
 | Add <br/> [**Parking place**](../plugins/parking.md) | Adds parking to a selected (center) map location. The old parking position is deleted. |
 | Add <br/> [**POI**](../map/point-layers-on-map.md#points-of-interest-poi) | Adds POI to a selected (center) map location map (same as context menu action). <br /> - *Show an interim dialog*. Displays a confirmation dialog. <br /> - *POI Type* (optional). Preselects the OSM POI type. <br /> - *Tag/Value* (multiple). Adds [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_Features) tags / values |
-| Add <br/> [**OSM Note**](../plugins/osm-editing.md) | Adds [OSM note](https://wiki.openstreetmap.org/wiki/Notes)  <br /> - *Show an interim dialog*. Displays a confirmation dialog. <br /> - *Message*. Adds a default message to the note. |
+| Add <br/> [**OSM Note**](../plugins/osm-editing.md#create--modify-osm-note) | Adds an [OSM note](https://wiki.openstreetmap.org/wiki/Notes)  <br /> - *Show an interim dialog*. Displays a confirmation dialog. <br /> - *Message*. Adds a default message to the note. |
 | Add <br/> [**Media notes**](../plugins/audio-video-notes.md) | Starts audio / photo / video note recording for a selected (center) map location. |
 | Create <br/> [**New route**](../plan-route/create-route.md) <br /> *Android only* | Opens the [Plan a route](../plan-route/create-route.md) tool and creats a route for thea selected (central) location on the map. |
 
