@@ -14,6 +14,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<InfoIncompleteArticle/>
 
 ## Overview
 
@@ -21,30 +22,56 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 The Vehicle Metrics plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.  
 :::
 
-The **Vehicle Metrics plugin** allows you to read and record data using OBD-II protocol.
-
-The OsmAnd Vehicle Metrics plugin accesses OBD-II and can read data such as Engine speed, Fuel consumptions...
-
+The **Vehicle Metrics plugin** enables you to read, record, and display real-time vehicle data on the screen using the OBD-II protocol. This plugin provides insights into various engine metrics, fuel efficiency, speed, and other critical performance indicators, helping users monitor their vehicle’s health directly from their device.
 
 ## Setup
 
-To start using data from external sensors, you need to make the following settings:  
+<InfoAndroidOnly/>
 
-1. [Enable](../plugins/index.md#enable--disable) Vehicle Metrics plugin in the Plugins section of the Main menu.
-2. Make the necessary settings in the sensors settings.
-3. If needed, add [Vehicle Metrics widgets](#widgets) to the screen.
-4. Vehicle Metrics data can be recorded to a track in the [Trip recording plugin](#trip-recording).
+To start using data from external sensors, follow these steps:
+
+1. [Enable](../plugins/index.md#enable--disable) the Vehicle Metrics plugin in the Plugins section of the main menu.
+2. Connect the OBD-II scanner to your vehicle's OBD-II port.
+3. If desired, add [Vehicle Metrics widgets](#widgets) to your screen for easy access to data.
+4. Data from Vehicle Metrics can be recorded as part of a track using the [Trip recording plugin](#trip-recording).
+
 
 ### Pair ODB-II scanner
 
+Ensure the OBD-II scanner is connected to the vehicle. Then, go to the Vehicle Metrics menu or Vehicle Plugin settings and add the OBD-II device:
+
+- _Menu → Plugins → Vehicle Metrics → Settings → Connect or +_
+- _Menu → Vehicle Metrics → Settings → Connect or +_ (if you added this section to the General menu)
+
+Select the OBD-II device from the list and connect to it.
+
+|  |  |
+|--|--|
+|![OBD connection](@site/static/img/plugins/obd/obd_connect.png)|![OBD connection](@site/static/img/plugins/obd/obd_connect_2.png)|
+
+
 ### Settings
 
+- _Menu → Plugins → Vehicle Metrics → OBD → Three dots_
+
+|  |  |
+|--|--|
+|![OBD settings](@site/static/img/plugins/obd/obd_settings.png)|![OBD settings](@site/static/img/plugins/obd/obd_settings_1.png)|
+
+- _Connect/Disconnect_
+- _Settings_
+- _Rename_
+- _Forget_
 
 ## Trip Recording
 
 ### Data Analyze
 
 ## Widgets
+
+_Menu → Configure screen → Widgets → Left/Right/Top/Bottom panels → Vehicle Metrics_
+
+![OBD settings](@site/static/img/plugins/obd/obd_widget.png)
 
 ### Widgets Settings
 
