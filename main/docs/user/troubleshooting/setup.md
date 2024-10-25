@@ -122,7 +122,7 @@ Please note that other purchases, such as Maps+, cannot be transferred between b
 Read more about the [Topography plugin](../plugins/topography.md).
 
 
-### How to enable system fonts (Android)
+## How to enable system fonts (Android)
 
 Starting with the Android 4.9 version, OsmAnd integrates your device's system font into the application interface, optimizing its design by eliminating mixed font usage. The system font is automatically applied to all UI elements.
 

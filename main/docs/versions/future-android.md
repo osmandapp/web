@@ -71,7 +71,7 @@ The new *Vehicle Metrics* plugin has been added to the [Plugins menu](../user/pl
 
 Whether you are tracking fuel efficiency or ensuring engine health, the *Vehicle Metrics* plugin brings valuable insights directly to your device.
 
-![OBD](../../blog/2024-09-13-android-4-9/img/obd.png) ![OBD](../../blog/2024-09-13-android-4-9/img/obd_1.png)
+![OBD](../../blog/2024-09-13-android-4-9/img/obd.png) ![OBD](../../blog/2024-09-13-android-4-9/img/obd_3.png)
 
 
 ## GPX Track Activities
@@ -136,11 +136,11 @@ We are excited to introduced **Dirt bike trails** to improve your off-road adven
 
 ## Discover Nearby Areas with OsmAnd Polygon Info
 
-These updates enhance **Polygon Information** by making data about surrounding areas accessible from the [Map Context menu](https://osmand.net/docs/user/map/map-context-menu#details) in OsmAnd.  
+These updates enhance **Polygon Information** by making data about surrounding areas accessible from the [Map Context menu](../user/map/map-context-menu.md#details) in OsmAnd.  
 
-Now, after a long tap on the map, you can view detailed information on nearby polygons, including type and name, sorted by size from smallest to largest. This feature is helpful for quickly identifying geographic or administrative areas within your location.
+Now, after a long tap on the map or a single tap a POI, you can view detailed information on nearby polygons, including type and name, sorted by size from smallest to largest. This feature is helpful for quickly identifying geographic or administrative areas within your location.
 
-*To access: [Long tap on map](https://osmand.net/docs/user/map/map-context-menu#select-any-point-long-tap) → Map Context menu → Details → Within*.
+*To access: Map Context menu → Details → [Within](../user/map/map-context-menu.md#polygon-information)*.
 
 ![Poligon info](../../blog/2024-09-13-android-4-9/img/areas_info.png)
 

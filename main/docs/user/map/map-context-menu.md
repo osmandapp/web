@@ -166,11 +166,9 @@ OsmAnd displays **additional POI names** in the *map context menu*, showing firs
 
 ### Polygon Information
 
-*Long tap on map → Map Context menu → Details → Within*
-
 ![Polygon Information Android](@site/static/img/map/polygon_information_andr.png)
 
-This feature provides detailed data on nearby polygons after a long tap on the map. In the **Within** section, you can view a list of surrounding areas by polygon size, from smallest to largest. Each entry shows the type and name of the polygon, making it easy to identify geographic features or administrative boundaries within proximity.
+This feature provides detailed data on nearby polygons on the map. In the **Within** section, you can view a list of surrounding areas by polygon size, from smallest to largest. Each entry shows the type and name of the polygon, making it easy to identify geographic features or administrative boundaries within proximity.
 
 
 ### Coordinates
