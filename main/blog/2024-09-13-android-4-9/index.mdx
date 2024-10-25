@@ -38,19 +38,18 @@ Get the update today and explore the latest improvements to elevate your experie
 - [Customizable map buttons](#customizable-map-buttons). Adjust appearance with a precise grid.
 - [Widget Context menu](#widget-context-menu).
     - Includes a [Reset average speed](#reset-average-speed) action.
-- [Quick Action updates](#new-actions-for-qa). Added new quick action for *touchscreen lock*, *trip recording*, and control the *visibility of OSM Edits*.
-- [Dirt Bike trails](#dirt-bike-trails). New route layer for off-road biking.
-- [Surrounding areas info](#surrounding-areas). Displays information about areas around a selected point.
-- [Terrain colorization visibility](#visibility-parameters-for-terrain). Separated parameters for enhanced control.
+- [Quick Action updates](#lock-screen-feature-for-seamless-navigation). Added new quick action for *touchscreen lock*, *trip recording*, and control the *visibility of OSM Edits*.
+- [Dirt Bike trails](#ride-like-a-pro-dirt-bike-trails-now-available). New route layer for off-road biking.
+- [Surrounding areas info](#discover-nearby-areas-with-osmand-polygon-info). Displays information about areas around a selected point.
 - [Interactive access points](#interactive-access-points). Display access or other road and path attributes with a single tap.
-- [Hiking trails difficulty](#hiking-trails). Renamed from *Difficulty classification*.
+- [Hiking trails difficulty grade](#introducing-hiking-trail-grades). Renamed from *Difficulty classification*.
 - [Custom graph display for GPX tracks](#custom-graph-display-for-gpx-tracks). Improved the track graph, allowing you to select any available data type for the graph on the Trip recording screen.
 - [Optional updates](#optional-updates). Additional updates and refinements for the release.
 
 
 ## Real-Time Turn & Lane Indicators
 
-We’re excited to introduce a new set of route guidance widgets to the [Top/Bottom widget panels](https://osmand.net/docs/user/widgets/configure-screen#top-and-bottom-panels) in OsmAnd's *Configure screen menu*. These widgets give you real-time navigation information, including the distance to the next turn, second next turn, lane guidance, road name, and current street name. Perfect for keeping track of your route at every step of your journey. The widgets are active during navigation, ensuring you never miss a turn!
+We are excited to introduce a new set of route guidance widgets to the [Top/Bottom widget panels](https://osmand.net/docs/user/widgets/configure-screen#top-and-bottom-panels) in OsmAnd's *Configure screen menu*. These widgets give you real-time navigation information, including the distance to the next turn, second next turn, lane guidance, road name, and current street name. Perfect for keeping track of your route at every step of your journey. The widgets are active during navigation, ensuring you never miss a turn!
 
 *Find them in: Menu → Configure screen → Top panel / Bottom panel → Route guidance: Next turn, Second next turn, Lanes*
 
@@ -59,14 +58,18 @@ We’re excited to introduce a new set of route guidance widgets to the [Top/Bot
 
 ## Wikimedia Gallery Viewer
 
-Introducing a full-screen gallery viewer for Wikimedia images in the [Map Context menu](https://osmand.net/docs/user/map/map-context-menu#online-photos). The image block has been redesigned for easier browsing, allowing you to view and swipe through all images associated with a location. A dedicated screen displays a list of all available images, making it easier to explore related media. Tapping on an image opens it in a full-screen mode for a detailed view of the place or POI.
+Introducing a full-screen gallery viewer for Wikimedia images in the [Map Context menu](https://osmand.net/docs/user/map/map-context-menu#online-photos). The image block has been redesigned for easier browsing, allowing you to view and swipe through all images associated with a location.  
+
+A dedicated screen displays a list of all available images, making it easier to explore related media. Tapping on an image opens it in a full-screen mode for a detailed view of the place or POI.
 
 ![Gallery](./img/gallery.png)
 
 
 ## Vehicle Metrics
 
-The new *Vehicle Metrics* plugin has been added to the [Plugins menu](https://osmand.net/docs/user/plugins/), enabling the monitoring of key vehicle performance data using the [OBD-II protocol](https://en.wikipedia.org/wiki/OBD-II_PIDs). This plugin offers real-time metrics, such as engine speed, fuel consumption, and coolant temperature, with dedicated widgets for easy access to this data. Whether you're tracking fuel efficiency or ensuring engine health, the *Vehicle Metrics* plugin brings valuable insights directly to your device.
+The new *Vehicle Metrics* plugin has been added to the [Plugins menu](https://osmand.net/docs/user/plugins/), enabling the monitoring of key vehicle performance data using the [OBD-II protocol](https://en.wikipedia.org/wiki/OBD-II_PIDs). This plugin offers real-time metrics, such as engine speed, fuel consumption, and coolant temperature, with dedicated widgets for easy access to this data.  
+
+Whether you are tracking fuel efficiency or ensuring engine health, the *Vehicle Metrics* plugin brings valuable insights directly to your device.
 
 ![OBD](./img/obd.png) ![OBD](./img/obd_1.png)
 
@@ -80,7 +83,9 @@ A new feature allows you to assign **Activity** types (such as hiking or cycling
 
 ## Customizable Map Buttons
 
-Enhance your map screen with fully customizable [Quick Action and Default buttons](https://osmand.net/docs/user/widgets/quick-action#quick-action-button-appearance), including changes to icon, size, corner radius, and background opacity. Through the new grid layout, you can position buttons precisely for easy access. Button appearance settings can be adjusted via *Menu → Configure screen → Custom buttons* or *Default buttons → three-dot menu → Appearance*. Additionally, you can now export and import your custom button configurations, ensuring seamless transitions between devices.
+Enhance your map screen with fully customizable [Quick Action and Default buttons](https://osmand.net/docs/user/widgets/quick-action#quick-action-button-appearance), including changes to icon, size, corner radius, and background opacity. Through the new grid layout, you can position buttons precisely for easy access.  
+
+Button appearance settings can be adjusted via *Menu → Configure screen → Custom buttons* or *Default buttons → three-dot menu → Appearance*. Additionally, you can now export and import your custom button configurations, ensuring seamless transitions between devices.
 
 ![Button appearance](./img/button_appearance.png) ![Button appearance](./img/button_appearance_1.png)
 
@@ -94,65 +99,77 @@ The [Widget Context menu](https://osmand.net/docs/user/widgets/configure-screen#
 
 ### Reset Average Speed
 
-We've added a convenient [Reset average speed](https://osmand.net/docs/user/widgets/info-widgets#average-speed) action directly in the widget context menu. With just a long tap on the widget, you can instantly reset the average speed value during your trip. This feature makes it easier to track real-time performance on the go without navigating through multiple menus, giving you more control over your trip statistics with minimal effort.
+We have added a convenient [Reset average speed](https://osmand.net/docs/user/widgets/info-widgets#average-speed) action directly in the widget context menu. With just a long tap on the widget, you can instantly reset the average speed value during your trip.  
 
-![Widget context menu - Average speed](@site/static/img/widgets/average_speed_widget_1_andr.png)  ![Widget context menu - Average speed](@site/static/img/widgets/average_speed_widget_2_andr.png)
+This feature makes it easier to track real-time performance on the go without navigating through multiple menus, giving you more control over your trip statistics with minimal effort.
+
+![Widget context menu - Average speed](./img/average_speed_widget_1_andr.png)  ![Widget context menu - Average speed](./img/average_speed_widget_2_andr.png)
 
 
-## New actions for QA
+## Lock Screen Feature for Seamless Navigation
 
-Added [new actions](https://osmand.net/docs/user/widgets/quick-action#action-types):
+We have added a *Touch screen lock* feature, similar to Garmin devices, allowing you to lock your screen while navigating, preventing accidental taps. This update also brings new quick actions for trip recording and managing the visibility of OSM edits, enhancing your navigation experience.
 
-1. Action for Lock/Unlock screen: _Menu → Configure screen → Custom buttons → + → Add acton → Inteface → Lock screen_
-2. Actions for Trip recording: _Menu → Configure screen → Custom buttons → + → Add acton → My Places → Start/Pause - Trip recording, Start new trip segment, Finish Trip recording, Save Recorded Trip & Continue_
-3. Action for Show/Hide OSM edits: _Menu → Configure screen → Custom buttons → + → Add acton → My Places → Show/Hide OSM edits_
+[New quick actions](https://osmand.net/docs/user/widgets/quick-action#action-types):
+
+- ***Lock/Unlock screen***. This option can be accessed using the Custom buttons:  
+*Menu → Configure screen → Custom buttons →* + *→ Add acton →* **Inteface**.  
+
+- ***Trip recording actions***. Start, pause, or finish your trip seamlessly:  
+*Menu → Configure screen → Custom buttons →* + *→ Add acton →* **My Places**.  
+
+- ***Show/Hide OSM edits and add an OSM note*** with one tap:  
+*Menu → Configure screen → Custom buttons →* + *→ Add acton →* **Configure Map** or **My Places**.
 
 ![Quick actions](./img/quick_action.png)
 
 
-## Dirt Bike Trails
+## Ride Like a Pro: Dirt Bike Trails Now Available
 
-Added new Route options  - [Dirt bike trails](https://osmand.net/docs/user/map/vector-maps#routes): _Menu → Configure map → Routes → Dirt bike routes_ . Read more about [dirtbike tag](https://wiki.openstreetmap.org/wiki/Key:dirtbike:scale).
+We are excited to introduced **Dirt bike trails** to improve your off-road adventures! Now you can activate colored overlays for dirt bike routes, based on the dirtbike, just like mountain biking routes.
 
-Upon activation, display a colored route overlay for all paths marked with the dirtbike:scale tag, similar to the approach used for mtb:scale (Mountain bike).
+- Find it in *Menu → Configure map → Routes → Dirt bike routes*.
+- Learn more in our [documentation](https://osmand.net/docs/user/map/routes#dirt-bike-trails).
 
 ![Dirt Bike legend](./img/dirt_bike.png) ![Dirt Bike legend](./img/dirt_bike_1.png)
 
 
-## Surrounding areas
+## Discover Nearby Areas with OsmAnd Polygon Info
 
-Show data information to [Map Context](https://osmand.net/docs/user/map/map-context-menu#details) menu about surrounding areas (polygons) after [**long tap**](https://osmand.net/docs/user/map/map-context-menu#select-any-point-long-tap) on the map:
+These updates enhance **Polygon Information** by making data about surrounding areas accessible from the [Map Context menu](https://osmand.net/docs/user/map/map-context-menu#details) in OsmAnd.  
 
-_Long tap on the map → Map Context menu → Details → Within_
+Now, after a long tap on the map, you can view detailed information on nearby polygons, including type and name, sorted by size from smallest to largest. This feature is helpful for quickly identifying geographic or administrative areas within your location.
 
-Sort by polygon size: from small to big. Show polygon type and name.
+*To access: [Long tap on map](https://osmand.net/docs/user/map/map-context-menu#select-any-point-long-tap) → Map Context menu → Details → Within*.
 
 ![Poligon info](./img/areas_info.png)
 
 
-## Visibility parameters for Terrain
-
-Slope / Hillshade / Altitude have their own independant [Visibility setting](https://osmand.net/docs/user/plugins/topography#visibility).
-
-
 ## Interactive Access Points
 
-When using OsmAnd, you can now interact with access-related icons such as *Barrier*, *Steps*, or *Gate* directly on the map. A simple tap on these icons will bring up detailed information, including the name of the POI, its type, and the address. This functionality enhances quick access to important navigation data for objects on your route, helping you understand restrictions or attributes of paths and roads at a glance. You can explore this via the [Map Context menu](https://osmand.net/docs/user/map/map-context-menu#overview).
+When using OsmAnd, you can now interact with access-related icons such as *Barrier*, *Steps*, or *Gate* directly on the map. A simple tap on these icons will bring up detailed information, including the name of the POI, its type, and the address.  
+
+This functionality enhances quick access to important navigation data for objects on your route, helping you understand restrictions or attributes of paths and roads at a glance. You can explore this via the [Map Context menu](https://osmand.net/docs/user/map/map-context-menu#overview).
 
 By tapping on icons for *Barrier*, *Steps*, or *Gate*, the context menu reveals additional details, including the name (POI type) and address associated with these features, or displays object type, if a name is not available.
 
 ![Barrier icons](./img/icons.png)
 
-## Hiking trails
 
-*Difficulty classification* was renamed to **Hiking trails difficulty grade**:
+## Introducing Hiking Trail Grades
 
-_Configure map → Routes → [Hiking trails difficulty grade](https://osmand.net/docs/user/map/routes#hiking-trails-difficulty-grade): SAC or CAI_
+We have renamed *Difficulty classification* to **Hiking Trails Difficulty Grade** for better clarity and ease of use.  
+
+This feature highlights trail difficulty for mountain routes, using either the SAC or CAI scales, ensuring you are well-prepared for your adventure. Both systems help identify the necessary skills and equipment for safe travel.
+
+Find the setting in *Configure map → Routes → [Hiking trails difficulty grade](https://osmand.net/docs/user/map/routes#hiking-trails-difficulty-grade): SAC or CAI*.
 
 
 ## Custom Graph Display for GPX Tracks
 
-We have enhanced the [graph toggle](https://osmand.net/docs/user/plugins/trip-recording#overview-screen) for recorded tracks, allowing you to select specific data types, such as heart rate or other available options, and display them directly on the graph. This update lets you select any available data on the Trip recording screen, making it easier to view critical information during or after your trip, improving your overall analysis of recorded GPX data.
+We have enhanced the [graph toggle](https://osmand.net/docs/user/plugins/trip-recording#overview-screen) for recorded tracks, allowing you to select specific data types, such as heart rate or other available options, and display them directly on the graph.  
+
+This update lets you select any available data on the Trip recording screen, making it easier to view critical information during or after your trip, improving your overall analysis of recorded GPX data.
 
 ![Graph](./img/rectrack_graph_1.png) ![Graph](./img/rectrack_graph.png)
 
@@ -160,6 +177,7 @@ We have enhanced the [graph toggle](https://osmand.net/docs/user/plugins/trip-re
 ## Optional updates
 
 - [System font applied](https://github.com/osmandapp/OsmAnd/issues/19123) integrates your device's system font throughout the app interface without additional configuration.
+- Fixed [visibility setting](https://github.com/osmandapp/OsmAnd/issues/20488) for terrain slope and hillshade color palettes.
 - [Auto-record track](https://github.com/osmandapp/OsmAnd/issues/19905) simplifies navigation by automatically recording your path.
 - Improved [Favorite search](https://github.com/osmandapp/OsmAnd/issues/19242) allows you to quickly return to the list of search results.
 - Resolved [Y-axis graph display issue](https://github.com/osmandapp/OsmAnd/issues/20076) for improved data clarity.
