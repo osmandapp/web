@@ -72,7 +72,7 @@ To use the offline navigation, you first need to [download maps](../../start-wit
 There are 3 ways to reach the navigation menu:
 
 - The [*Navigation button*](../../widgets/map-buttons.md#directions) on the map screen.  
-- *Direction to/from* in a [*Map Context menu*](../../map/map-context-menu.md#directions-to--from).  
+- *Direction to/from* in a [*map context menu*](../../map/map-context-menu.md#directions-to--from).  
 - Navigation section in the [*Main menu*](../../start-with/main-menu.md)  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 
 <Tabs groupId="operating-systems">
@@ -107,7 +107,7 @@ The cancel button at the bottom of the screen leads back to the main screen. [*S
   
 ### Select Starting Point
 
-As for the starting point, you can choose your current location, the location of a [Favorite point](../../map/point-layers-on-map.md#favorites), select a point on the map, or use [Search](../../search/index.md). You can also set a starting point in [Map Context menu](../../map/map-context-menu.md) by selecting the [Directions from](../../map/map-context-menu.md#directions-to--from) function.  
+As for the starting point, you can choose your current location, the location of a [Favorite point](../../map/point-layers-on-map.md#favorites), select a point on the map, or use [Search](../../search/index.md). You can also set a starting point in [map context menu](../../map/map-context-menu.md) by selecting the [Directions from](../../map/map-context-menu.md#directions-to--from) function.  
 
 
 ### Set Target Point

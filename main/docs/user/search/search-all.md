@@ -139,7 +139,7 @@ OsmAnd allows you to search for points displayed on a map on your device's scree
 
 ![Search Android](@site/static/img/search/search_all_near_location_andr.png)
 
-You can use the search in the vicinity of a specific location. To do this, select the required point [from the list in the search menu](#full-text-search) or select it directly on the map. In the [Map Context Menu](../map/map-context-menu.md#actions), select *Actions → Search nearby*.
+You can use the search in the vicinity of a specific location. To do this, select the required point [from the list in the search menu](#full-text-search) or select it directly on the map. In the [map context menu](../map/map-context-menu.md#actions), select *Actions → Search nearby*.
 
 
 ## Search Address

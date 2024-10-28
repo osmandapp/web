@@ -105,7 +105,7 @@ In [My Places *→* Tracks tab](../../personal/tracks/manage-tracks.md#manage-tr
 
 </Tabs>
 
-When you select a track on the map or open the [Track Context Menu](./track-context-menu.md) after recording or importing a track, you can control its visibility on the map. Simply use the *Show* or *Hide* buttons to display or remove the track from the map view.
+When you select a track on the map or open the [track context menu](./track-context-menu.md) after recording or importing a track, you can control its visibility on the map. Simply use the *Show* or *Hide* buttons to display or remove the track from the map view.
 
 
 ## Analyze Track on Map  

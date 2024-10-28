@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-The *Track context menu* provides information about the *[Track](../../personal/tracks/index.md)* in both text and [graphic](#altitude--speed-graphs) forms. It allows you to add information, make changes, edit and perform various other actions with the track. You can access *Track context menu* by simply tapping the needed track on the map or using *[My places](../../personal/myplaces.md)* menu (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). You may need to open track folder and select the desired track by tapping it.  
+The *Track context menu* provides information about the *[Track](../../personal/tracks/index.md)* in both text and [graphic](#altitude--speed-graphs) forms. It allows you to add information, make changes, edit and perform various other actions with the track. You can access *track context menu* by simply tapping the needed track on the map or using *[My places](../../personal/myplaces.md)* menu (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*). You may need to open track folder and select the desired track by tapping it.  
 
 <Tabs groupId="operating-systems">
 
@@ -337,7 +337,7 @@ Calculate elevation offline feature is only available for [**OsmAnd Pro subscrib
 This feature allows you to calculate elevation profile for GPX track offline for any terrain between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../../plugins/topography.md#how-to-download). *Terrain maps (3D) should be previously downloaded*.
 
 1. Download [Terrain maps(3D)](../../plugins/topography.md#download-maps) for the required region.
-2. If the track does not contain any altitude data, go to the track context menu (*Track Context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,get_altitude_data"/>*), select *Use Terrain maps*, and after the calculation you will get a track graph based on the terrain data.  
+2. If the track does not contain any altitude data, go to the track context menu (*Track context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,get_altitude_data"/>*), select *Use Terrain maps*, and after the calculation you will get a track graph based on the terrain data.  
   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 3. If you are creating a route with the [*Plan a route*](../../plan-route/create-route.md#graph) tool using the *Straight line* method and there is no elevation data on the graph, you need to:
     - Tap *Get elevation data*, then select *Use Terrain maps*.
@@ -376,8 +376,8 @@ In this *Points* tab:
 
 Waypoints can be added to the currently recorded track or to any track from your track collection [*My Places → Tracks list*](../../personal/tracks/manage-tracks.md):
 
-- Using the [Map Context Menu](../../map/map-context-menu.md#-add--edit--track-waypoint). Waypoints are automatically displayed if the selected track is enabled on the map. To create a waypoint use a [long tap](../../map/map-context-menu.md#select-any-point-long-tap) on the map at any chosen location. In the opened [Map Context Menu](../../map/map-context-menu.md#-add--edit--track-waypoint) you can set information about the waypoint.
-- Using [*Add Waypoint*](#points--waypoints) button of the Track Context menu.
+- Using the [map context menu](../../map/map-context-menu.md#-add--edit--track-waypoint). Waypoints are automatically displayed if the selected track is enabled on the map. To create a waypoint use a [long tap](../../map/map-context-menu.md#select-any-point-long-tap) on the map at any chosen location. In the opened [map context menu](../../map/map-context-menu.md#-add--edit--track-waypoint) you can set information about the waypoint.
+- Using [*Add Waypoint*](#points--waypoints) button of the track context menu.
 - You can also add a waypoint as a Quick action. Follow the [*Add track waypoint*](../../widgets/quick-action.md#create-items) to configure.
 
 When you tap to *Add Waypoint* button, the Creation point screen opens (this screen is familiar with [*Favorite Context menu*](../../personal/favorites.md#favorite-context-menu)).

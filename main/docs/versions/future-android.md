@@ -58,7 +58,7 @@ The [Top/Bottom widget panels](../user/widgets/configure-screen.md#top-and-botto
 
 ## Wikimedia Gallery Viewer
 
-Introducing a full-screen gallery viewer for Wikimedia images in the [Map Context menu](../user/map/map-context-menu.md#online-photos). The image block has been redesigned for easier browsing, allowing you to view and swipe through all images associated with a location.  
+Introducing a full-screen gallery viewer for Wikimedia images in the [map context menu](../user/map/map-context-menu.md#online-photos). The image block has been redesigned for easier browsing, allowing you to view and swipe through all images associated with a location.  
 
 A dedicated screen displays a list of all available images, making it easier to explore related media. Tapping on an image opens it in a full-screen mode for a detailed view of the place or POI.
 
@@ -136,11 +136,11 @@ We are excited to introduced **Dirt bike trails** to improve your off-road adven
 
 ## Discover Nearby Areas with OsmAnd Polygon Info
 
-These updates enhance **Polygon Information** by making data about surrounding areas accessible from the [Map Context menu](../user/map/map-context-menu.md#details) in OsmAnd.  
+These updates enhance **Polygon Information** by making data about surrounding areas accessible from the [map context menu](../user/map/map-context-menu.md#details) in OsmAnd.  
 
 Now, after a long tap on the map or a single tap a POI, you can view detailed information on nearby polygons, including type and name, sorted by size from smallest to largest. This feature is helpful for quickly identifying geographic or administrative areas within your location.
 
-*To access: Map Context menu → Details → [Within](../user/map/map-context-menu.md#polygon-information)*.
+*To access: Map context menu → Details → [Within](../user/map/map-context-menu.md#polygon-information)*.
 
 ![Poligon info](../../blog/2024-09-13-android-4-9/img/areas_info.png)
 
@@ -149,7 +149,7 @@ Now, after a long tap on the map or a single tap a POI, you can view detailed in
 
 When using OsmAnd, you can now interact with access-related icons such as *Barrier*, *Steps*, or *Gate* directly on the map. A simple tap on these icons will bring up detailed information, including the name of the POI, its type, and the address.  
 
-This functionality enhances quick access to important navigation data for objects on your route, helping you understand restrictions or attributes of paths and roads at a glance. You can explore this via the [Map Context menu](https://osmand.net/docs/user/map/map-context-menu#overview).
+This functionality enhances quick access to important navigation data for objects on your route, helping you understand restrictions or attributes of paths and roads at a glance. You can explore this via the [map context menu](https://osmand.net/docs/user/map/map-context-menu#overview).
 
 By tapping on icons for *Barrier*, *Steps*, or *Gate*, the context menu reveals additional details, including the name (POI type) and address associated with these features, or displays object type, if a name is not available.
 

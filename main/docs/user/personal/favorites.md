@@ -75,7 +75,7 @@ Favorites are grouped into one of the map layers. You can [show or hide](../map/
 
 </Tabs>
 
-To create a new Favorite point, you need to select a [POI](../map/point-layers-on-map.md#points-of-interest-poi) object with a short tap or a structure on the map with a long tap, and then select [Add (☆)](../map/map-context-menu.md#add--edit-favorite) from the [Map Context menu](../map/map-context-menu.md). If you select a point from OSM data, all information about that POI will be added to the newly selected point. You can also select any point on the map to add Favorite using [Long tap](../map/map-context-menu.md#select-any-point-long-tap).
+To create a new Favorite point, you need to select a [POI](../map/point-layers-on-map.md#points-of-interest-poi) object with a short tap or a structure on the map with a long tap, and then select [Add (☆)](../map/map-context-menu.md#add--edit-favorite) from the [map context menu](../map/map-context-menu.md). If you select a point from OSM data, all information about that POI will be added to the newly selected point. You can also select any point on the map to add Favorite using [long tap](../map/map-context-menu.md#select-any-point-long-tap).
 
 
 Following fields could be specified for a favorite point:
@@ -105,7 +105,7 @@ but could be changed uniquely per a favorite point.
 
 </Tabs>
 
-To edit a favorite point, [tap](../map/map-context-menu.md#select-an-object-short-tap) it on the map or access it via [My Favorites](#manage-favorites), then select the **Edit favorite** button from the [*Map Context menu*](../map/map-context-menu.md#add--edit-favorite).
+To edit a favorite point, [tap](../map/map-context-menu.md#select-an-object-short-tap) it on the map or access it via [My Favorites](#manage-favorites), then select the **Edit favorite** button from the [*map context menu*](../map/map-context-menu.md#add--edit-favorite).
 
 - You can edit all fields that were specified when **creating** the favorite point, such as name, icon, group, and more.
 - In this editor, there is a **Delete** button to remove the point from your list of Favorites. On *Android*, this option is also available in the upper right corner of the screen.

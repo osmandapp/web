@@ -323,7 +323,7 @@ After you add *Travel guides* to the map, *Travel articles* can be saved as a GP
 
 :::info
 *Points* are stored in a [GPX-file](../../technical/osmand-file-formats/osmand-gpx.md) (a commonly used format for tracks) as [Waypoints](../map/point-layers-on-map.md#track-waypoints). The number of points (waypoints) in the track contains is marked next to the icon &#128681; in the track field.  
-In *[Track Context menu](../map/tracks/track-context-menu.md)* of GPX-file you can find general information about the article to which this track belongs.  
+In *[track context menu](../map/tracks/track-context-menu.md)* of GPX-file you can find general information about the article to which this track belongs.  
 :::
 
 ## Combine with Wikipedia

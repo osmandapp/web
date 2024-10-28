@@ -395,7 +395,7 @@ There are two primary methods for importing a track file into OsmAnd:
 
 There are several ways to export one or more track files to any messenger, email, file manager, Drive, or app.  
 
-1. By [*Track Context menu → Share*](../../map/tracks/track-context-menu.md#options).
+1. By [*Track context menu → Share*](../../map/tracks/track-context-menu.md#options).
 2. By *My Places menu → Tracks → Folfer / Track menu*.
     - For [**single track export**](#track-menu), select the track to import as is.
     - For [**multi-track export**](#track-folder), select the required folder.

@@ -46,7 +46,7 @@ Coordinates can be entered in any available format, but the found location is di
 
 - To use the coordinates search, you can type them in each corresponding field individually, or paste previously copied coordinates into the search field or enter them in it. The application prompts you to select a suitable location.
 - Coordinate Search automatically converts one coordinate format to another when the specified format is changed in the field with their list.
-- Tap the suggested location and [Map Context menu](../map/map-context-menu.md#select-any-point-long-tap) opens.
+- Tap the suggested location and the [map context menu](../map/map-context-menu.md#select-any-point-long-tap) opens.
 - More information can be found here [Geographical coordingates](https://en.wikipedia.org/wiki/Geographic_coordinate_system).
 
 

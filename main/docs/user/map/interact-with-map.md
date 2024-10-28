@@ -48,7 +48,7 @@ The *My Location* button is a circular icon that indicates whether the map's cen
   - *Grey icon*. The location has not been found yet.
   - *Arrow icon*. 3D mode is activated.
 
-- **Long tap** (*Android*) on the *My Location* button opens the [Map Context menu](../map/map-context-menu.md), allowing you to share your location.
+- **Long tap** (*Android*) on the *My Location* button opens the [map context menu](../map/map-context-menu.md), allowing you to share your location.
 
 <br/>
 

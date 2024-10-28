@@ -194,7 +194,7 @@ With OsmAnd and the OSM editing plugin, you can contribute information to OpenSt
 
 ![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
 
-Audio, video, and photo notes are stored in the *My Places* menu and displayed in the **A/V notes tab**. The [Audio/video notes](../plugins/audio-video-notes.md) plugin allows you to create and manage notes in various formats, such as audio, video, and photo, associated with specific geographic locations. Notes are made using the [Audio/video notes widgets](../widgets/info-widgets.md#audiovideo-notes-widget) or the [Map Context menu](../plugins/audio-video-notes.md#create) and are automatically saved to **My Places** where they can be viewed, displayed, and managed.  
+Audio, video, and photo notes are stored in the *My Places* menu and displayed in the **A/V notes tab**. The [Audio/video notes](../plugins/audio-video-notes.md) plugin allows you to create and manage notes in various formats, such as audio, video, and photo, associated with specific geographic locations. Notes are made using the [Audio/video notes widgets](../widgets/info-widgets.md#audiovideo-notes-widget) or the [map context menu](../plugins/audio-video-notes.md#create) and are automatically saved to **My Places** where they can be viewed, displayed, and managed.  
 
 <br/>
 

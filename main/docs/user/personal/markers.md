@@ -42,7 +42,7 @@ Markers are special points marked on the map as flags that could be quickly crea
 
 <TabItem value="android" label="Android">
 
-Short or long tap the map and select the required action from the [Map Context menu](../map/map-context-menu.md#add--edit-marker).  
+Short or long tap the map and select the required action from the [map context menu](../map/map-context-menu.md#add--edit-marker).  
 
 ![Add Edit marker action Android](@site/static/img/map/add_marker_android.png) ![Pass marker action Android](@site/static/img/map/action_pass_marker_android.png)
 
@@ -50,7 +50,7 @@ Short or long tap the map and select the required action from the [Map Context m
 
 <TabItem value="ios" label="iOS">  
 
-Short or long tap the map and choose needed action in [Map Context menu](../map/map-context-menu.md#add--edit-marker).  
+Short or long tap the map and choose needed action in [map context menu](../map/map-context-menu.md#add--edit-marker).  
 
 ![Add Edit marker action iOS](@site/static/img/map/add_marker_ios.png)  ![Restore marker action Android](@site/static/img/map/action_restore_marker_android.png)
 

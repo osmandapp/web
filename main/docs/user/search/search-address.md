@@ -97,7 +97,7 @@ This way of searching makes it easy to find specific locations within a selected
 - In the list that opens, select the required locality. [Here](#full-text-search) describes the order in which search queries are displayed and what information is available about each item.
 - On the next screen, you can either continue to refine the address or select the *Show on the map* button below the search entry field.
 - To specify your search, you can enter all or only part of the name of the city, town, or village where the address you are looking for is located. This allows you to narrow your search and get a more accurate list.
-- Tapping the last item in the address, house number, or intersection name, opens the [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object.  
+- Tapping the last item in the address, house number, or intersection name, opens the [map context menu](../map/map-context-menu.md#select-an-object-short-tap) of the object.  
 
 **Searching by city offers the following benefits:**
 
@@ -162,7 +162,7 @@ Street search is performed in the locality where you are, or where you searched 
 **To use the *Postcode search*, you just need to enter the number**, which can consist even of a single digit, and the application offers a list of available relevant postcodes.
 
 - Select the required code and tap it.
-- You can use the *Show *postcode number* on the map* feature. This opens a [Map Context menu](../map/map-context-menu.md#select-an-object-short-tap) with the selected postcode without any additional information about the location.
+- You can use the *Show *postcode number* on the map* feature. This opens a [map context menu](../map/map-context-menu.md#select-an-object-short-tap) with the selected postcode without any additional information about the location.
 - You can refine your search by this code by first selecting the required street from the list and then the number.
 
 **Searching by postcode can be useful in the following cases:**

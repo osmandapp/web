@@ -107,7 +107,7 @@ Use *reload tile cache* if the selected images are not displayed.
 
 ## Map Context Menu
 
-You can also view nearby Mapillary photos (40 m radius) in the [Map Context menu](../map/map-context-menu.md#online-photos) of a selected point on the map.
+You can also view nearby Mapillary photos (40 m radius) in the [map context menu](../map/map-context-menu.md#online-photos) of a selected point on the map.
 
 <Tabs groupId="operating-systems">
 
@@ -129,7 +129,7 @@ You can also view nearby Mapillary photos (40 m radius) in the [Map Context menu
 
 ## Add Photos
 
-To add photos you will need to register in the [Mapillary application](https://www.mapillary.com/mobile-apps). You can also add photos in the Map Context menu by clicking on button "Add photos" in [Online photos](../map/map-context-menu.md#online-photos) of Map Context menu. Then the window of the Mapillary application will open.
+To add photos you will need to register in the [Mapillary application](https://www.mapillary.com/mobile-apps). You can also add photos in the map context menu by tapping on button *Add photos* in [Online photos](../map/map-context-menu.md#online-photos) of map context menu. Then the window of the Mapillary application will open.
 
 <Tabs groupId="operating-systems">
 
@@ -172,4 +172,4 @@ The [Mapillary widget](../widgets/info-widgets.md#mapillary-widget) is used to g
 
 </Tabs>
 
-> *This article was last updated in August 2023*
+> *This article was last updated in October 2024*

@@ -73,7 +73,7 @@ Avoid roads feature is global and affects all **[Routing types](#routing-types)*
 There are two possible ways to choose which roads to avoid when calculating a route:
 
 - Select road type in the [Route parameters](../guidance/navigation-settings.md#route-parameters) section of [Navigation settings](../guidance/navigation-settings.md). Description of this setting is provided in the articles about [Routing types](#routing-types) settings. As example, see [Car / Truck / Motorcycle](../routing/car-based-routing.md#route-parameters---car) routing type description.
-- You can also select specific roads that will not be used for routing using the *[Avoid roads](../../map/map-context-menu.md#avoid-road)* option through the *Map context menu* or using *[Avoid roads menu](#avoid-roads-menu)* (*<Translate android="true" ids="shared_string_menu,shared_string_navigation,impassable_road"/>*).
+- You can also select specific roads that will not be used for routing using the *[Avoid roads](../../map/map-context-menu.md#avoid-road)* option through the *map context menu* or using *[Avoid roads menu](#avoid-roads-menu)* (*<Translate android="true" ids="shared_string_menu,shared_string_navigation,impassable_road"/>*).
 
 :::note
 
@@ -108,7 +108,7 @@ In this menu, you can cancel the previous selection of the road that should be a
 
 Using *Select on map* option you can continue to mark roads as invalid for routing on the OsmAnd map.
 
-When you select a road to avoid using *Map context menu* or *Avoid roads menu*, the list of roads will be shown above map screen.  
+When you select a road to avoid using *map context menu* or *Avoid roads menu*, the list of roads will be shown above map screen.  
 
 <Tabs groupId="operating-systems">
 

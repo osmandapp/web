@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# MAP 
+# MAP
 
 The map is a core element of OsmAnd. In this section of User guide you can find useful information on how to interact with map, how to customize map view for trekking, cycling or navigating offroad, how to configure additional POI layers or enable street level imagery etc.
 
@@ -12,11 +12,11 @@ How to interact with map using buttons and gestures, so you could pan, rotate an
 
 ## [Map Context Menu](./map-context-menu.md)
 
-'Map Context menu' provides information of selected object on the map and allows to share, to edit, to move or to navigate to this place.
+Map context menu provides information of selected object on the map and allows to share, to edit, to move or to navigate to this place.
 
 ## [Configure Map](./configure-map-menu.md)
 
-The 'Configure map' menu is an important item on OsmAnd's main menu where you can customize the map display to suit your needs. You can highlight your favorite points, navigation markers, or special points of interest on the map; display specific routes or third-party GPX files; overlay terrain information, satellite imagery, or any other available bitmap images; display public transportation information; and change the map style.
+The Configure map menu is an important item on OsmAnd's main menu where you can customize the map display to suit your needs. You can highlight your favorite points, navigation markers, or special points of interest on the map; display specific routes or third-party GPX files; overlay terrain information, satellite imagery, or any other available bitmap images; display public transportation information; and change the map style.
 
 ## [Vector Maps (Map Styles)](./vector-maps.md)
 
@@ -28,7 +28,7 @@ Raster maps is an extensive addition to the offline OpenStreetMap Vector maps th
 
 ## [Points on the Map](./point-layers-on-map.md)
 
-On map you could display points such as Favorites, POI, Markers, Wikipedia, Search results, Audio Video Notes, OSM Edits and other
+On map you could display points such as Favorites, POI, Markers, Wikipedia, Search results, Audio Video Notes, OSM Edits and others.
 
 ## [Tracks](./tracks)
 
@@ -36,15 +36,15 @@ Tracks functionality lets you create and save routes so you can easily return to
 
 ### [Tracks Context Menu](./tracks/track-context-menu.md)
 
-Tracks Context menu is menu with actions and data of GPX-track.
+Tracks context menu is menu with actions and data of GPX-track.
 
 ### [Track Appearance](./tracks/appearance.md)
 
-Tracks Context menu is menu with actions and data of GPX-track.
+Tracks context menu is menu with actions and data of GPX-track.
 
 ## [Routes](./routes.md)
 
-OsmAnd has many powerful features to display various routes on the map. 
+OsmAnd has many powerful features to display various routes on the map.
 
 
 ## [Public Transport](./public-transport.md)
