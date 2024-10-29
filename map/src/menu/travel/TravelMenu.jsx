@@ -19,6 +19,9 @@ import { useTranslation } from 'react-i18next';
 import EmptyTravel from '../errors/EmptyTravel';
 import EmptyLogin from '../login/EmptyLogin';
 import TravelRoutesResult from './TravelRoutesResult';
+import capitalize from 'lodash/capitalize';
+
+export const ALL_YEARS = 'all';
 
 export default function TravelMenu() {
     const ctx = useContext(AppContext);
@@ -41,10 +44,13 @@ export default function TravelMenu() {
     }, [ctx.searchTravelRoutes?.res]);
 
     // Create years array
-    const years = Array.from({ length: 20 }, (_, i) => {
-        const year = new Date().getFullYear() - i;
-        return { id: year, label: `${year}` };
-    });
+    const years = [
+        { id: ALL_YEARS, label: capitalize(ALL_YEARS) },
+        ...Array.from({ length: 20 }, (_, i) => {
+            const year = new Date().getFullYear() - i;
+            return { id: year, label: `${year}` };
+        }),
+    ];
 
     // Create activities array
     const activitiesArr = useMemo(() => {

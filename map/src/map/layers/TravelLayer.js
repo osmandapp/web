@@ -4,6 +4,7 @@ import { useMap } from 'react-leaflet';
 import { apiGet } from '../../util/HttpApi';
 import L from 'leaflet';
 import { ZOOM_TO_MAP } from './SearchLayer';
+import { ALL_YEARS } from '../../menu/travel/TravelMenu';
 
 export default function TravelLayer() {
     const ctx = useContext(AppContext);
@@ -70,7 +71,7 @@ export default function TravelLayer() {
             apiCache: true,
             params: {
                 activity: activity,
-                year: year,
+                year: year !== ALL_YEARS ? year : undefined,
                 minlat: minLat,
                 maxlat: maxLat,
                 minlon: minLon,
