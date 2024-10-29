@@ -453,12 +453,11 @@ You may need to perform the following steps before doing so, otherwise OsmAnd wi
 
 <InfoAndroidOnly/>
 
-[App shortcuts](https://support.google.com/android/answer/9450271) are available for the OsmAnd icon. Just long tap the OsmAnd icon on your device screen to open App shortcuts menu.
-Here, you can tap short tap for choosing next actions: *Navigate to Home*, *Navigate to Work*, *Start Recording*, *Search*, *My places*, *Navigate to*. Long tape of the actions allows you to add new action icon to your device screen.
+[Application shortcuts](https://support.google.com/android/answer/9450271) are available for the OsmAnd icon. Just long tap the OsmAnd icon on your device screen to open application shortcuts menu. Here, you can short press to select the following actions: *Navigate to Home*, *Navigate to Work*, *Start Recording*, *Search*, *My places*, *Navigate to*. Long tap an action allows you to add new action icon to your device screen.
 
-Tapping to the action icon allows starting this action immediately.
+Tap an action icon to immediately start the application with the selected action.
 
-![Shortcuts](@site/static/img/shortcuts/shortcuts1.png) ![Shortcuts](@site/static/img/shortcuts/shortcuts2.png)
+![Shortcuts](@site/static/img/steps/shortcuts_3_andr.png) ![Shortcuts](@site/static/img/steps/shortcuts_4_andr.png)
 
 
 ## Offline Help
