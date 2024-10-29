@@ -27,6 +27,7 @@ export const OBJECT_EXPLORE = 'explore';
 export const OBJECT_SEARCH = 'search';
 export const OBJECT_GLOBAL_SETTINGS = 'global_settings';
 export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
+export const OBJECT_TRAVEL = 'travel';
 
 export const defaultConfigureMapStateValues = {
     showFavorites: true,
@@ -287,6 +288,9 @@ export const AppContextProvider = (props) => {
     const [searchResult, setSearchResult] = useState(null);
     const [processingSearch, setProcessingSearch] = useState(false);
     const [zoomToMapObj, setZoomToMapObj] = useState(false);
+    // travel
+    const [searchTravelRoutes, setSearchTravelRoutes] = useState(null);
+    const [selectedRoute, setSelectedRoute] = useState(null);
 
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
@@ -653,6 +657,10 @@ export const AppContextProvider = (props) => {
                 setLoginError,
                 favLoading,
                 setFavLoading,
+                searchTravelRoutes,
+                setSearchTravelRoutes,
+                selectedRoute,
+                setSelectedRoute,
             }}
         >
             {props.children}

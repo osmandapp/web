@@ -5236,5 +5236,6 @@
   "register_opr_create_new_account": "Create new account",
   "shared_string_author": "Author",
   "shared_string_license": "License",
-  "shared_string_date": "Date"
+  "shared_string_date": "Date",
+  "shared_string_reset": "Reset"
 }

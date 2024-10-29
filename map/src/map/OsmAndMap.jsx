@@ -21,6 +21,7 @@ import CustomTileLayer from './layers/CustomTileLayer';
 import ExploreLayer from './layers/ExploreLayer';
 import SearchLayer from './layers/SearchLayer';
 import HeightmapLayer from './layers/HeightmapLayer';
+import TravelLayer from './layers/TravelLayer';
 
 const useStyles = makeStyles(() => ({
     root: (props) => ({
@@ -159,6 +160,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             {routersReady && <CloudTrackLayer />}
             {routersReady && <LocalClientTrackLayer />}
             {routersReady && <RouteLayer geocodingData={geocodingData} region={regionData} />}
+            <TravelLayer />
             <FavoriteLayer />
             <WeatherLayer />
             <GraphLayer />

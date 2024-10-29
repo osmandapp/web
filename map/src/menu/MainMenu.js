@@ -17,6 +17,7 @@ import AppContext, {
     OBJECT_EXPLORE,
     OBJECT_GLOBAL_SETTINGS,
     OBJECT_SEARCH,
+    OBJECT_TRAVEL,
     OBJECT_TYPE_CLOUD_TRACK,
     OBJECT_TYPE_FAVORITE,
     OBJECT_TYPE_LOCAL_TRACK,
@@ -38,6 +39,7 @@ import { ReactComponent as NavigationIcon } from '../assets/menu/ic_action_navig
 import { ReactComponent as PlanRouteIcon } from '../assets/menu/ic_action_plan_route.svg';
 import { ReactComponent as ConfigureMapIcon } from '../assets/icons/ic_map_configure_map.svg';
 import { ReactComponent as SettingsIcon } from '../assets/icons/ic_action_settings_outlined.svg';
+import { ReactComponent as TravelIcon } from '../assets/icons/ic_action_activity.svg';
 import { ReactComponent as SearchIcon } from '../assets/icons/ic_action_search_dark.svg';
 import InformationBlock from '../infoblock/components/InformationBlock';
 import Weather from './weather/Weather';
@@ -64,12 +66,14 @@ import {
     SETTINGS_URL,
     TRACKS_URL,
     WEATHER_URL,
+    TRAVEL_URL,
 } from '../manager/GlobalManager';
 import { createUrlParams } from '../util/Utils';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import SearchMenu from './search/SearchMenu';
 import LoginButton from './login/LoginButton';
 import LoginMenu from './login/LoginMenu';
+import TravelMenu from './travel/TravelMenu';
 
 export default function MainMenu({
     size,
@@ -192,6 +196,15 @@ export default function MainMenu({
             show: true,
             id: 'se-show-menu-planroute',
             url: MAIN_URL_WITH_SLASH + PLANROUTE_URL,
+        },
+        {
+            name: 'Travel',
+            icon: TravelIcon,
+            component: <TravelMenu />,
+            type: OBJECT_TRAVEL,
+            show: true,
+            id: 'se-show-menu-travel',
+            url: MAIN_URL_WITH_SLASH + TRAVEL_URL,
         },
         {
             name: t('shared_string_settings'),
