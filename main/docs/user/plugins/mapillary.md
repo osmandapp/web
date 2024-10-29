@@ -17,7 +17,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 To get around faster, in OsmAnd you can use street-level views of your routes or places of interest provided by [Mapillary](https://www.mapillary.com/) (an internet connection is required).  
 
-[The Mapillary layer](https://www.mapillary.com/) brings street-level imagery straight into the OsmAnd app. So you can easily overview the surroundings of any place of interest or along the route you have planned. If imagery is missing, you can add it by yourself and others can make use of it. This feature has emerged from our collaboration with [the Mapillary team](https://www.mapillary.com/about) uniting the benefits of both apps.
+[The Mapillary layer](https://www.mapillary.com/) brings street-level imagery straight into the OsmAnd app, so you can easily overview the surroundings of any place of interest or along the route you have planned. If imagery is missing, you can add it yourself, and others can use it. This feature has emerged from our collaboration with [the Mapillary team](https://www.mapillary.com/about), uniting the benefits of both apps.
+
 
 ## Setup
 
@@ -29,7 +30,7 @@ To display street-level images on the OsmAnd map, you need to make the following
 
 ## Map Layer
 
-Map layer of street-level imagery is displayed on the OsmAnd map as rows of connected green dots. Mapillary user’s photos are attached to these green points. To open the street-view photo, you need to press on the green point and pictures of a selected place will be shown. You can create [a filter](../plugins/mapillary.md#filtering-the-data) and select what photos you would like to display on the map.
+A map layer of street-level imagery is displayed on the OsmAnd map as rows of connected green dots. Mapillary users’ photos are attached to these green points. To open the street-view photo, you need to press on the green point and pictures of a selected place will be shown. You can create [a filter](../plugins/mapillary.md#filtering-the-data) and choose the photos you want to display on the map.
 
 <Tabs groupId="operating-systems">
 
@@ -50,7 +51,7 @@ Map layer of street-level imagery is displayed on the OsmAnd map as rows of conn
 
 ### Enable Layer
 
-To display street-level imagery on the map, you need to enable layer first in [Configure Map](../map/configure-map-menu.md) section of Main menu: *<Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*.  
+To display street-level imagery on the map, you need to enable the layer first in the [Configure Map](../map/configure-map-menu.md) section of the main menu: *<Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*.  
 
 <Tabs groupId="operating-systems">
 
@@ -82,7 +83,7 @@ To display street-level imagery on the map, you need to enable layer first in [C
 
 ### Filtering the Data
 
-You can create a filter and select which photos you would like to display on the map, for example so you can view only newer images or only 360-degrees.  Go to *<Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*→ &#8230; .
+You can create a filter and select which photos you would like to display on the map, for example, you can view only newer images or only 360 degrees.  Go to *<Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*→ &#8230; .
 
 <Tabs groupId="operating-systems">
 
@@ -129,19 +130,19 @@ You can also view nearby Mapillary photos (40 m radius) in the [map context menu
 
 ## Add Photos
 
-To add photos you will need to register in the [Mapillary application](https://www.mapillary.com/mobile-apps). You can also add photos in the map context menu by tapping on button *Add photos* in [Online photos](../map/map-context-menu.md#online-photos) of map context menu. Then the window of the Mapillary application will open.
+To add photos, you have to register in the [Mapillary application](https://www.mapillary.com/mobile-apps). You can also add photos to the map context menu by tapping the button *Add photos* in [Online photos](../map/map-context-menu.md#online-photos) of the map context menu. Then the Mapillary application will open.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Mapillary plugin Map Conntext menu Android](@site/static/img/plugins/mapillary/mapillary_add_photo_android.png)
+![Mapillary plugin Map Context menu Android](@site/static/img/plugins/mapillary/mapillary_add_photo_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Mapillary plugin Map Conntext menu iOS](@site/static/img/plugins/mapillary/mapillary_add_photo_ios.png)
+![Mapillary plugin Map Context menu iOS](@site/static/img/plugins/mapillary/mapillary_add_photo_ios.png)
 
 </TabItem>
 
@@ -150,7 +151,7 @@ To add photos you will need to register in the [Mapillary application](https://w
 
 ## Mapillary Widget
 
-The [Mapillary widget](../widgets/info-widgets.md#mapillary-widget) is used to get quick access to the Mapillary application. The widget is added to the main screen automatically when the Mapillary plugin enabled. You can enable or disable the Mapillary widget and other widgets in the [Configure screen](../widgets/configure-screen.md) section of the Main Menu.
+The [Mapillary widget](../widgets/info-widgets.md#mapillary-widget) is used to get quick access to the Mapillary application. The widget is added to the main screen automatically when the Mapillary plugin is enabled. You can enable or disable the Mapillary widget and other widgets in the [Configure screen](../widgets/configure-screen.md) section of the main menu.
 
 <Tabs groupId="operating-systems">
 
@@ -158,7 +159,7 @@ The [Mapillary widget](../widgets/info-widgets.md#mapillary-widget) is used to g
 
 *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,mapillary"/>*  
 
-![Mapillary plugin Android](@site/static/img/plugins/mapillary/mapillary_widget_disable_android.png)  ![Mapillary plugin Map Conntext menu Android](@site/static/img/plugins/mapillary/mapillary_app_activation_android.png)
+![Mapillary plugin Android](@site/static/img/plugins/mapillary/mapillary_widget_disable_android.png)  ![Mapillary plugin Map Context menu Android](@site/static/img/plugins/mapillary/mapillary_app_activation_android.png)
 
 </TabItem>
 
@@ -166,10 +167,17 @@ The [Mapillary widget](../widgets/info-widgets.md#mapillary-widget) is used to g
 
 *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,mapillary"/>*
 
-![Mapillary plugin Map Conntext menu iOS](@site/static/img/plugins/mapillary/mapillary_app_activation_ios.png)
+![Mapillary plugin Map Context menu iOS](@site/static/img/plugins/mapillary/mapillary_app_activation_ios.png)
 
 </TabItem>
 
 </Tabs>
+
+
+## Related Articles
+
+- [Interact with Map](../../user/map/interact-with-map.md)
+- [Global Settings](../../user/personal/global-settings.md)
+- [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
 > *This article was last updated in October 2024*
