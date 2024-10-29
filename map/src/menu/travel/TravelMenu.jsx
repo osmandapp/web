@@ -144,15 +144,17 @@ export default function TravelMenu() {
                             </Typography>
                         </Toolbar>
                     </AppBar>
-                    <CustomSelect
-                        name="Activity"
-                        value={selectedActivityType}
-                        onChange={(value) => setSelectedActivityType(value)}
-                        options={updatedActivities}
-                        renderLabel={(option) => option?.label}
-                        renderIcon={(option) => option?.icon}
-                        handleSelect={(id) => handleActivitySelect(id)}
-                    />
+                    {updatedActivities?.length > 0 && (
+                        <CustomSelect
+                            name="Activity"
+                            value={selectedActivityType}
+                            onChange={(value) => setSelectedActivityType(value)}
+                            options={updatedActivities}
+                            renderLabel={(option) => option?.label}
+                            renderIcon={(option) => option?.icon}
+                            handleSelect={(id) => handleActivitySelect(id)}
+                        />
+                    )}
                     <CustomSelect
                         name="Year"
                         value={selectedYear}
