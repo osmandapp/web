@@ -42,7 +42,9 @@ The context menu appears when you **single tap** a marked object on the map. Thi
 
 By tapping on icons for *Barrier*, *Steps*, or *Gate*, the context menu reveals additional details, including the name (POI type) and address associated with these features, or displays object type, if a name is not available.
 
-**NOTE**: The selected map objects correspond to OpenStreetMap [nodes](https://wiki.openstreetmap.org/wiki/Node) or [ways](https://wiki.openstreetmap.org/wiki/Way).
+:::note
+The selected map objects correspond to OpenStreetMap [**nodes**](https://wiki.openstreetmap.org/wiki/Node) or [**ways**](https://wiki.openstreetmap.org/wiki/Way).
+:::
 
 
 ### Select Any Point (long tap)
