@@ -70,12 +70,6 @@ export default function ConfigureMap() {
         setOpenedTracks(savedVisible?.open?.length);
     }, [ctx.gpxFiles, ctx.visibleTracks]);
 
-    useEffect(() => {
-        if (ctx.configureMapState.terrain) {
-            ctx.setHeightmap(ctx.configureMapState.terrain);
-        }
-    }, [ctx.configureMapState.terrain]);
-
     const DEFAULT_CONFIGURE = () => {
         return (
             <>

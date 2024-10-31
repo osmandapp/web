@@ -29,7 +29,9 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
     const { t } = useTranslation();
 
     const [openMenu, setOpenMenu] = useState(false);
-    const [value, setValue] = useState(50);
+    const [value, setValue] = useState(ctx.heightmap?.capacity * 100);
+
+    const OPACITY_HEIGHTMAP = 'opacity_heightmap';
 
     const heightmaps = ['hillshade', 'slope', 'height'];
     const heightmapsLayers = heightmaps.map((item) => {
@@ -47,14 +49,34 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
             newConfigureMap.terrain = ctx.heightmap;
             localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(newConfigureMap));
             ctx.setConfigureMapState(newConfigureMap);
+            setValue(getCapacity(ctx.heightmap.key));
         }
     }, [ctx.heightmap]);
 
     const anchorEl = useRef(null);
 
     const handleSliderChange = (e, newValue) => {
+        ctx.setHeightmap({ ...ctx.heightmap, capacity: newValue / 100 });
+        saveCapacity(newValue, ctx.heightmap.key);
         setValue(newValue);
     };
+
+    function saveCapacity(value, key) {
+        let obj = JSON.parse(localStorage.getItem(OPACITY_HEIGHTMAP));
+        if (!obj) {
+            obj = {};
+        }
+        obj[key] = value;
+        localStorage.setItem(OPACITY_HEIGHTMAP, JSON.stringify(obj));
+    }
+
+    function getCapacity(key) {
+        const obj = JSON.parse(localStorage.getItem(OPACITY_HEIGHTMAP));
+        if (!obj) {
+            return 100;
+        }
+        return obj[key] ?? 100;
+    }
 
     function closeConfig() {
         setOpenTerrainConfig(false);
@@ -142,6 +164,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                                             const selectedHeightmap = heightmapsLayers.find(
                                                 (layer) => layer.key === item.key
                                             );
+                                            selectedHeightmap.capacity = getCapacity(selectedHeightmap.key) / 100;
                                             ctx.setHeightmap(selectedHeightmap ?? 'none');
                                             setOpenMenu(false);
                                         }}

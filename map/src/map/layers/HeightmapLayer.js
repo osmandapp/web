@@ -13,12 +13,22 @@ export default function HeightmapLayer() {
 
     useEffect(() => {
         if (!map) return;
-        if (tileLayerRef.current) {
-            map.removeLayer(tileLayerRef.current);
-        }
 
         if (ctx.heightmap === 'none') {
+            if (tileLayerRef.current) {
+                map.removeLayer(tileLayerRef.current);
+            }
             return;
+        }
+
+        if (tileLayerRef.current?._url === ctx.heightmap?.url && ctx.heightmap?.capacity) {
+            tileLayerRef.current.setOpacity(ctx.heightmap.capacity);
+            tileLayerRef.current.redraw();
+            return;
+        } else {
+            if (tileLayerRef.current) {
+                map.removeLayer(tileLayerRef.current);
+            }
         }
 
         if (ctx.heightmap) {
@@ -27,8 +37,9 @@ export default function HeightmapLayer() {
                 maxNativeZoom: 15,
                 maxZoom: 18,
                 tileSize: 256,
-                capacity: ctx.heightmap.capacity,
             });
+
+            tileLayerRef.current.setOpacity(ctx.heightmap.capacity);
 
             tileLayerRef.current.on('loading', () => {
                 setLoadingTiles(true);
@@ -50,8 +61,6 @@ export default function HeightmapLayer() {
                 tileLayerRef.current.off('loading');
                 tileLayerRef.current.off('load');
                 tileLayerRef.current.off('tileerror');
-                map.removeLayer(tileLayerRef.current);
-                tileLayerRef.current = null;
             }
         };
     }, [ctx.heightmap, map]);
