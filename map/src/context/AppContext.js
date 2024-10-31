@@ -32,6 +32,7 @@ export const defaultConfigureMapStateValues = {
     showFavorites: true,
     showPoi: false,
     showTracks: false,
+    terrain: 'none',
 };
 
 export const isLocalTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK;
@@ -390,8 +391,19 @@ export const AppContextProvider = (props) => {
     const [selectedSort, setSelectedSort] = useState({});
 
     function getConfigureMap() {
+        const TIME_UPDATE_CONFIGURE_MAP = 1730683492000;
         let savedConfigureMap = localStorage.getItem(LOCAL_STORAGE_CONFIGURE_MAP);
-        return savedConfigureMap ? JSON.parse(savedConfigureMap) : defaultConfigureMapStateValues;
+        if (savedConfigureMap) {
+            savedConfigureMap = JSON.parse(savedConfigureMap);
+            if (!savedConfigureMap.updateTime || savedConfigureMap.updateTime < TIME_UPDATE_CONFIGURE_MAP) {
+                savedConfigureMap.updateTime = TIME_UPDATE_CONFIGURE_MAP;
+                localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(savedConfigureMap));
+                return defaultConfigureMapStateValues;
+            }
+            setHeightmap(savedConfigureMap.terrain);
+            return savedConfigureMap;
+        }
+        return defaultConfigureMapStateValues;
     }
 
     useEffect(() => {

@@ -27,6 +27,7 @@ export default function HeightmapLayer() {
                 maxNativeZoom: 15,
                 maxZoom: 18,
                 tileSize: 256,
+                capacity: ctx.heightmap.capacity,
             });
 
             tileLayerRef.current.on('loading', () => {

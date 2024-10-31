@@ -13,8 +13,8 @@ import {
     Typography,
 } from '@mui/material';
 import styles from './configuremap.module.css';
-import AppContext from '../../context/AppContext';
-import React, { useContext, useRef, useState } from 'react';
+import AppContext, { LOCAL_STORAGE_CONFIGURE_MAP } from '../../context/AppContext';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import { useTranslation } from 'react-i18next';
@@ -22,6 +22,7 @@ import { ExpandMore } from '@mui/icons-material';
 import SubTitle from '../components/SubTitle';
 import ActionsMenu from '../actions/ActionsMenu';
 import capitalize from 'lodash/capitalize';
+import { cloneDeep } from 'lodash';
 
 export default function TerrainConfig({ setOpenTerrainConfig }) {
     const ctx = useContext(AppContext);
@@ -36,8 +37,18 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
             key: item,
             name: capitalize(item),
             url: `${process.env.REACT_APP_TILES_API_SITE}/heightmap/${item}/{z}/{x}/{y}.png`,
+            capacity: 1,
         };
     });
+
+    useEffect(() => {
+        if (ctx.heightmap) {
+            let newConfigureMap = cloneDeep(ctx.configureMapState);
+            newConfigureMap.terrain = ctx.heightmap;
+            localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(newConfigureMap));
+            ctx.setConfigureMapState(newConfigureMap);
+        }
+    }, [ctx.heightmap]);
 
     const anchorEl = useRef(null);
 
@@ -96,7 +107,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
                             <Typography variant="body2" className={styles.poiCategoriesInfo} noWrap>
-                                {capitalize(ctx.heightmap?.key) || 'None'}
+                                {capitalize(ctx.configureMapState.terrain?.key ?? ctx.configureMapState.terrain)}
                             </Typography>
                             <ExpandMore
                                 sx={{ color: 'var(--text-secondary)', ml: 1 }}

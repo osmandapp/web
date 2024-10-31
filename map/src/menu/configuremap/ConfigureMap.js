@@ -70,6 +70,12 @@ export default function ConfigureMap() {
         setOpenedTracks(savedVisible?.open?.length);
     }, [ctx.gpxFiles, ctx.visibleTracks]);
 
+    useEffect(() => {
+        if (ctx.configureMapState.terrain) {
+            ctx.setHeightmap(ctx.configureMapState.terrain);
+        }
+    }, [ctx.configureMapState.terrain]);
+
     const DEFAULT_CONFIGURE = () => {
         return (
             <>
@@ -191,7 +197,7 @@ export default function ConfigureMap() {
                                 </MenuItem>
                                 <Divider className={styles.dividerItem} />
                                 <MenuItem divider className={styles.item} onClick={() => setOpenTerrainConfig(true)}>
-                                    <ListItemIcon className={setIconStyles(ctx.heightmap?.key)}>
+                                    <ListItemIcon className={setIconStyles(ctx.configureMapState.terrain?.key)}>
                                         <TerrainIcon />
                                     </ListItemIcon>
                                     <ListItemText>
@@ -206,7 +212,11 @@ export default function ConfigureMap() {
                                                 {t('shared_string_terrain')}
                                             </Typography>
                                             <Typography variant="body2" className={styles.poiCategoriesInfo} noWrap>
-                                                {capitalize(ctx.heightmap?.key) || 'None'}
+                                                {capitalize(ctx.heightmap?.key) ||
+                                                    capitalize(
+                                                        ctx.configureMapState.terrain?.key ??
+                                                            ctx.configureMapState.terrain
+                                                    )}
                                             </Typography>
                                         </div>
                                     </ListItemText>
