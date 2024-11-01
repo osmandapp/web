@@ -126,7 +126,8 @@ When you select a road to avoid using *map context menu* or *Avoid roads menu*, 
 
 </Tabs>
 
-### Export / Import
+
+## Export / Import
 
 <Tabs groupId="operating-systems">
 
@@ -175,8 +176,10 @@ The most convenient way to synchronize roads to avoid between your devices is to
 
 ## Consider Temporary Limitations
 
+*<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,route_parameters"/>*
+
 *Consider temporary limitations* option allows taking into account temporary road restrictions when calculating routes. They may include things like road construction or road closures for some reason (an accident, road repairs, natural disasters). Enabling this option can help you avoid unexpected detours or delays. Please note that sometimes this information may be outdated.
-In OpenStreetMap, this information is usually marked with the tag '*[temporary](https://wiki.openstreetmap.org/wiki/Comparison_of_life_cycle_concepts#Opening_hours_time_range_and_Temporary_namespace_and_Conditional_restrictions)*'.  
+In OpenStreetMap, this information is usually marked with the tag [`temporary`](https://wiki.openstreetmap.org/wiki/Comparison_of_life_cycle_concepts#Opening_hours_time_range_and_Temporary_namespace_and_Conditional_restrictions).  
 
 
 ## Development Section

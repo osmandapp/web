@@ -24,13 +24,11 @@ To get around faster, in OsmAnd you can use street-level views of your routes or
 
 To display street-level images on the OsmAnd map, you need to make the following settings:
 
-1. Enable the [Mapillary plugin](../plugins/#enable--disable) in the Plugins section of the Main menu.
+1. Enable the [Mapillary plugin](../plugins/#enable--disable) in the *Plugins* section of the main menu.
 2. Display the [Street-level imagery](#enable-layer) on the map for the required profile in the Configure map menu.
 
 
 ## Map Layer
-
-A map layer of street-level imagery is displayed on the OsmAnd map as rows of connected green dots. Mapillary users’ photos are attached to these green points. To open the street-view photo, you need to press on the green point and pictures of a selected place will be shown. You can create [a filter](../plugins/mapillary.md#filtering-the-data) and choose the photos you want to display on the map.
 
 <Tabs groupId="operating-systems">
 
@@ -48,22 +46,21 @@ A map layer of street-level imagery is displayed on the OsmAnd map as rows of co
 
 </Tabs>
 
+The map layer with street images is displayed on the OsmAnd map as rows of connected green dots.
+
+- Mapillary users' photos are attached to these green dots.
+- Tap a green dot on the map to open a street view photo. Photos can also be selected from a list in the [map context menu](#map-context-menu), if available.
+- After selection, the application screen is divided into OsmAnd map and Mapillarystreet-level street images.
+- You can apply [filters](#data-filtering) to select the photos you want to display on the map.
+
 
 ### Enable Layer
-
-To display street-level imagery on the map, you need to enable the layer first in the [Configure Map](../map/configure-map-menu.md) section of the main menu: *<Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*.  
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Mapillary plugin Android](@site/static/img/plugins/mapillary/Mapilary_street_level_imagery_android.png) ![Mapillary plugin images Android](@site/static/img/plugins/mapillary/mapillary_plugin_images_android.png)
-
-:::note Mapillary Photo viewer
-
-- Tap &#8285; button to open chosen image in [Mapillary application](https://www.mapillary.com/mobile-apps).
-- Tap an arrow to move from image to image.
-:::
+![Mapillary plugin Android](@site/static/img/plugins/mapillary/mapilary_enable_layer_1_andr.png) ![Mapillary plugin images Android](@site/static/img/plugins/mapillary/mapilary_enable_layer_2_andr.png)
 
 </TabItem>
 
@@ -71,19 +68,22 @@ To display street-level imagery on the map, you need to enable the layer first i
 
 ![Mapillary plugin iOS](@site/static/img/plugins/mapillary/Mapilary_street_level_imagery_ios.png) ![Mapillary plugin images iOS](@site/static/img/plugins/mapillary/mapillary_plugin_images_ios.png)
 
-:::note Mapillary Photo viewer
-
-- Tap an arrow to move from image to image.
-:::
-
 </TabItem>
 
 </Tabs>
 
+To display Mapillary street-level imagery on the map, you need to enable this layer in the [Configure Map menu](../map/configure-map-menu.md) in the *Show* section.  
 
-### Filtering the Data
+*To access: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*.  
 
-You can create a filter and select which photos you would like to display on the map, for example, you can view only newer images or only 360 degrees.  Go to *<Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*→ &#8230; .
+:::note Mapillary Photo viewer
+
+- Tap the *three-dot menu* (&#8285;) button to open selected image in the [**Mapillary**](https://www.mapillary.com/mobile-apps) application.
+- Tap the arrow to move from image to image.
+:::
+
+
+### Data Filtering
 
 <Tabs groupId="operating-systems">
 
@@ -101,17 +101,18 @@ You can create a filter and select which photos you would like to display on the
 
 </Tabs>
 
+You can create a filter and select which photos you want to display on the map, for example, you can only view recent images or only 360 degrees images.  
+
+*To access: <Translate ids="shared_string_menu,configure_map,street_level_imagery"/>*→ &#8230;
+
 :::note Tile cash
-Use *reload tile cache* if the selected images are not displayed.
+If the selected images are not displayed, use **Reload** for the **Tile cache**.
 :::
 
 
 ## Map Context Menu
 
-You can also view nearby Mapillary photos (40 m radius) in the [map context menu](../map/map-context-menu.md#online-photos) of a selected point on the map.
-
 <Tabs groupId="operating-systems">
-
 
 <TabItem value="android" label="Android">
 
@@ -127,51 +128,53 @@ You can also view nearby Mapillary photos (40 m radius) in the [map context menu
 
 </Tabs>
 
+If the Mapillary plugin is enabled, you can view photos of streets available within a 40-meter radius of the selected point on the map. The photos are opened in the [map context menu](../map/map-context-menu.md#online-photos).
+
 
 ## Add Photos
-
-To add photos, you have to register in the [Mapillary application](https://www.mapillary.com/mobile-apps). You can also add photos to the map context menu by tapping the button *Add photos* in [Online photos](../map/map-context-menu.md#online-photos) of the map context menu. Then the Mapillary application will open.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Mapillary plugin Map Context menu Android](@site/static/img/plugins/mapillary/mapillary_add_photo_android.png)
+![Mapillary plugin Map Context menu Android](@site/static/img/plugins/mapillary/mapillary_add_photos_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Mapillary plugin Map Context menu iOS](@site/static/img/plugins/mapillary/mapillary_add_photo_ios.png)
+![Mapillary plugin Map Context menu iOS](@site/static/img/plugins/mapillary/mapillary_add_photos_ios.png)
 
 </TabItem>
 
 </Tabs>
 
+To add photos, you need to register in the [Mapillary app](https://www.mapillary.com/mobile-apps). You can also add photos to the map context menu by tapping the *Add photos* button in the [Online photos](../map/map-context-menu.md#online-photos) section of the map context menu. Then the Mapillary application will open.
+
 
 ## Mapillary Widget
-
-The [Mapillary widget](../widgets/info-widgets.md#mapillary-widget) is used to get quick access to the Mapillary application. The widget is added to the main screen automatically when the Mapillary plugin is enabled. You can enable or disable the Mapillary widget and other widgets in the [Configure screen](../widgets/configure-screen.md) section of the main menu.
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-*<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,mapillary"/>*  
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="mapillary"/>*
 
-![Mapillary plugin Android](@site/static/img/plugins/mapillary/mapillary_widget_disable_android.png)  ![Mapillary plugin Map Context menu Android](@site/static/img/plugins/mapillary/mapillary_app_activation_android.png)
+![Mapillary plugin Android](@site/static/img/plugins/mapillary/mapillary_widget_1_andr.png)  ![Mapillary plugin Map Context menu Android](@site/static/img/plugins/mapillary/mapillary_widget_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,mapillary"/>*
+*<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate ios="true" ids="mapillary"/>*
 
 ![Mapillary plugin Map Context menu iOS](@site/static/img/plugins/mapillary/mapillary_app_activation_ios.png)
 
 </TabItem>
 
 </Tabs>
+
+The [Mapillary widget](../widgets/info-widgets.md#mapillary-widget) is used to get quick access to the Mapillary application. The widget is added to the main screen automatically when the Mapillary plugin is enabled. You can enable or disable the Mapillary widget and other widgets in the [Configure screen](../widgets/configure-screen.md) menu.
 
 
 ## Related Articles

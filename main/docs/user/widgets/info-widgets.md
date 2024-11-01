@@ -508,8 +508,8 @@ Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widget
 
 ### Weather Widgets
 
-:::note  
-Weather widgets can only be added to the map screen when the OsmAnd [**Weather plugin**](../plugins/weather.md) is enabled.  
+:::note
+To add Weather widgets to the map screen, enable the OsmAnd [**Weather plugin**](../plugins/weather.md).
 :::
 
 <Tabs groupId="operating-systems">
@@ -547,8 +547,8 @@ Weather widgets display current weather information for a central point on the m
 
 ### Parking Widget
 
-:::note  
-The parking widget can be added to the map screen only when OsmAnd [**Parking position plugin**](../plugins/parking.md) is enabled.  
+:::note
+To add Parking widgets to the map screen, enable the OsmAnd [**Parking position plugin**](../plugins/parking.md).
 :::  
 
 ![Parking widget](@site/static/img/plugins/parking/parking_widget.png)  
@@ -567,12 +567,12 @@ This is a Parking plugin widget that shows the distance from the center of the s
 ### Mapillary Widget
 
 :::note  
-Mapillary widget can be added to the map screen only when OsmAnd [**Mapillary plugin**](../plugins/mapillary.md) is enabled.  
+To add the Mapillary widget to the map screen, enable the OsmAnd [**Mapillary plugin**](../plugins/mapillary.md).  
 :::  
 
 ![Mapillary widget](@site/static/img/widgets/mapillary_widget.png)
 
-This is a Mapillary plugin widget that provides quick access to the Mapillary app to add [*Street-Level imagery*](../plugins/mapillary.md#enable-layer).  
+This is a Mapillary plugin widget that provides quick access to the Mapillary application, which enables you to add [*street-level imagery*](../plugins/mapillary.md#enable-layer). The widget is added to the map automatically when the plugin is enabled.
 
 | | |
 |:------------|:------------|
@@ -586,8 +586,8 @@ This is a Mapillary plugin widget that provides quick access to the Mapillary ap
 
 <InfoAndroidOnly />
 
-:::note  
-Widgets can only be added to the map screen when the OsmAnd [**Audio/video notes plugin**](../plugins/audio-video-notes.md) is enabled.
+:::note
+To add Audio/Video Notes widgets to the map screen, enable the OsmAnd [**Audio/Video Notes plugin**](../plugins/audio-video-notes.md).
 :::
 
 ![Audio-video notes widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
@@ -612,8 +612,8 @@ You can configure which action is selected by default:
 
 <InfoAndroidOnly />
 
-:::note  
-Tracker widget can be added to the map screen only when [**OsmAnd Tracker plugin**](../plugins/osmand-tracker.md) is enabled.  
+:::note
+To add the Tracker widget to the map screen, enable the OsmAnd [Tracker plugin**](../plugins/osmand-tracker.md).
 :::  
 
 For the plugin and widget to work, you need to install [**OsmAnd Online GPS Tracker**](https://play.google.com/store/apps/details?id=net.osmand.telegram) from Google Play or other sources.  
@@ -630,8 +630,8 @@ This OsmAnd Tracker plugin widget is used to quickly access the OsmAnd Tracker a
 
 ### Developer Widgets
 
-:::note  
-Developer widgets can be added to the map screen only when [**OsmAnd development plugin**](../plugins/development.md) is enabled.  
+:::note
+To add Developer widgets to the map screen, enable the OsmAnd [**OsmAnd development plugin**](../plugins/development.md).
 :::
 
 Developer widgets are used to get map information [rendering speed](../plugins/development.md#fps-widget) and virtual camera position: [zoom level](../plugins/development.md#zoom-level), [distance](../plugins/development.md#distance-to-target) to map center, camera [elevation](../plugins/development.md#camera-elevation) and [incline](../plugins/development.md#camera-tilt).  
