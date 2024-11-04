@@ -57,11 +57,11 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
         }
 
         function sameHeightmap() {
-            return ctx.heightmap.key === ctx.configureMapState.terrain.key;
+            return ctx.heightmap?.key === ctx.configureMapState.terrain?.key;
         }
 
         function needUpdateOpacity() {
-            return ctx.heightmap.opacity !== ctx.configureMapState.terrain.opacity;
+            return ctx.heightmap?.opacity !== ctx.configureMapState.terrain?.opacity;
         }
     }, [ctx.heightmap]);
 
@@ -75,20 +75,14 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
 
     // save opacity for each heightmap to local storage
     function saveOpacity(value, key) {
-        let obj = JSON.parse(localStorage.getItem(OPACITY_HEIGHTMAP));
-        if (!obj) {
-            obj = {};
-        }
+        let obj = JSON.parse(localStorage.getItem(OPACITY_HEIGHTMAP)) ?? {};
         obj[key] = value;
         localStorage.setItem(OPACITY_HEIGHTMAP, JSON.stringify(obj));
     }
 
     // get opacity for each heightmap from local storage
     function getOpacity(key) {
-        const obj = JSON.parse(localStorage.getItem(OPACITY_HEIGHTMAP));
-        if (!obj) {
-            return 100;
-        }
+        const obj = JSON.parse(localStorage.getItem(OPACITY_HEIGHTMAP)) ?? {};
         return obj[key] ?? 100;
     }
 
