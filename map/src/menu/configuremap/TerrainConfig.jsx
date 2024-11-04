@@ -24,6 +24,8 @@ import ActionsMenu from '../actions/ActionsMenu';
 import capitalize from 'lodash/capitalize';
 import { cloneDeep } from 'lodash';
 
+export const NO_HEIGHTMAP = 'none';
+
 export default function TerrainConfig({ setOpenTerrainConfig }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
@@ -44,12 +46,22 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
     });
 
     useEffect(() => {
-        if (ctx.heightmap) {
+        if ((ctx.heightmap && !sameHeightmap()) || (sameHeightmap() && needUpdateCapacity())) {
+            // save selected terrain to local storage
             let newConfigureMap = cloneDeep(ctx.configureMapState);
             newConfigureMap.terrain = ctx.heightmap;
             localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(newConfigureMap));
             ctx.setConfigureMapState(newConfigureMap);
+            // set slider value
             setValue(getCapacity(ctx.heightmap.key));
+        }
+
+        function sameHeightmap() {
+            return ctx.heightmap.key === ctx.configureMapState.terrain.key;
+        }
+
+        function needUpdateCapacity() {
+            return ctx.heightmap.capacity !== ctx.configureMapState.terrain.capacity;
         }
     }, [ctx.heightmap]);
 
@@ -61,6 +73,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
         setValue(newValue);
     };
 
+    // save capacity for each heightmap to local storage
     function saveCapacity(value, key) {
         let obj = JSON.parse(localStorage.getItem(OPACITY_HEIGHTMAP));
         if (!obj) {
@@ -70,6 +83,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
         localStorage.setItem(OPACITY_HEIGHTMAP, JSON.stringify(obj));
     }
 
+    // get capacity for each heightmap from local storage
     function getCapacity(key) {
         const obj = JSON.parse(localStorage.getItem(OPACITY_HEIGHTMAP));
         if (!obj) {
@@ -100,7 +114,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                                     variant="contained"
                                     type="button"
                                     className={headerStyles.appBarIcon}
-                                    onClick={() => ctx.setHeightmap('none')}
+                                    onClick={() => ctx.setHeightmap(NO_HEIGHTMAP)}
                                 >
                                     <ResetIcon />
                                 </IconButton>
@@ -150,7 +164,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                             <MenuItem
                                 divider
                                 onClick={() => {
-                                    ctx.setHeightmap('none');
+                                    ctx.setHeightmap(NO_HEIGHTMAP);
                                     setOpenMenu(false);
                                 }}
                             >
@@ -165,7 +179,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                                                 (layer) => layer.key === item.key
                                             );
                                             selectedHeightmap.capacity = getCapacity(selectedHeightmap.key) / 100;
-                                            ctx.setHeightmap(selectedHeightmap ?? 'none');
+                                            ctx.setHeightmap(selectedHeightmap ?? NO_HEIGHTMAP);
                                             setOpenMenu(false);
                                         }}
                                     >
@@ -191,13 +205,15 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                             <Typography className={styles.terrainSliderTitle}>Visibility</Typography>
                             <Typography className={styles.terrainSliderValue}>{`${value}%`}</Typography>
                         </div>
-                        <Slider
-                            value={typeof value === 'number' ? value : 0}
-                            onChange={handleSliderChange}
-                            size="small"
-                            aria-label="Small"
-                            valueLabelDisplay="off"
-                        />
+                        {value && (
+                            <Slider
+                                value={typeof value === 'number' ? value : 0}
+                                onChange={handleSliderChange}
+                                size="small"
+                                aria-label="Small"
+                                valueLabelDisplay="off"
+                            />
+                        )}
                     </Box>
                 </>
             ) : (

@@ -2,6 +2,7 @@ import { useMap } from 'react-leaflet';
 import { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import L from 'leaflet';
+import { NO_HEIGHTMAP } from '../../menu/configuremap/TerrainConfig';
 
 export default function HeightmapLayer() {
     const ctx = useContext(AppContext);
@@ -14,18 +15,20 @@ export default function HeightmapLayer() {
     useEffect(() => {
         if (!map) return;
 
-        if (ctx.heightmap === 'none') {
+        if (ctx.heightmap === NO_HEIGHTMAP) {
             if (tileLayerRef.current) {
                 map.removeLayer(tileLayerRef.current);
+                tileLayerRef.current = null;
             }
             return;
         }
 
+        // update opacity
         if (tileLayerRef.current?._url === ctx.heightmap?.url && ctx.heightmap?.capacity) {
             tileLayerRef.current.setOpacity(ctx.heightmap.capacity);
-            tileLayerRef.current.redraw();
             return;
         } else {
+            // remove old layer
             if (tileLayerRef.current) {
                 map.removeLayer(tileLayerRef.current);
             }

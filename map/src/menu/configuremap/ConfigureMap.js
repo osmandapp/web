@@ -70,6 +70,18 @@ export default function ConfigureMap() {
         setOpenedTracks(savedVisible?.open?.length);
     }, [ctx.gpxFiles, ctx.visibleTracks]);
 
+    useEffect(() => {
+        if (ctx.configureMapState.terrain && ctx.configureMapState.terrain.key !== ctx.heightmap?.key) {
+            ctx.setHeightmap(ctx.configureMapState.terrain);
+        }
+    }, [ctx.configureMapState.terrain]);
+
+    function setDefaultConfigureMap() {
+        const defaultConfigureMap = defaultConfigureMapStateValues;
+        ctx.setConfigureMapState({ ...defaultConfigureMap });
+        localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(defaultConfigureMap));
+    }
+
     const DEFAULT_CONFIGURE = () => {
         return (
             <>
@@ -95,7 +107,7 @@ export default function ConfigureMap() {
                                         variant="contained"
                                         type="button"
                                         className={headerStyles.appBarIcon}
-                                        onClick={() => ctx.setConfigureMapState({ ...defaultConfigureMapStateValues })}
+                                        onClick={setDefaultConfigureMap}
                                     >
                                         <ResetIcon />
                                     </IconButton>
@@ -206,11 +218,9 @@ export default function ConfigureMap() {
                                                 {t('shared_string_terrain')}
                                             </Typography>
                                             <Typography variant="body2" className={styles.poiCategoriesInfo} noWrap>
-                                                {capitalize(ctx.heightmap?.key) ||
-                                                    capitalize(
-                                                        ctx.configureMapState.terrain?.key ??
-                                                            ctx.configureMapState.terrain
-                                                    )}
+                                                {capitalize(
+                                                    ctx.configureMapState.terrain?.key ?? ctx.configureMapState.terrain
+                                                )}
                                             </Typography>
                                         </div>
                                     </ListItemText>
