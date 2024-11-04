@@ -2,7 +2,6 @@ import { useMap } from 'react-leaflet';
 import { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import L from 'leaflet';
-import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
 
 export default function HeightmapLayer() {
     const ctx = useContext(AppContext);
@@ -13,7 +12,7 @@ export default function HeightmapLayer() {
     const tileLayerRef = useRef(null);
 
     useEffect(() => {
-        if (!map || !ctx.loginUser || ctx.loginUser === INIT_LOGIN_STATE) return;
+        if (!map) return;
         if (tileLayerRef.current) {
             map.removeLayer(tileLayerRef.current);
         }
@@ -58,5 +57,5 @@ export default function HeightmapLayer() {
 
     useEffect(() => {
         ctx.setProcessHeightmaps(loadingTiles);
-    }, [loadingTiles, ctx, ctx.loginUser]);
+    }, [loadingTiles, ctx]);
 }
