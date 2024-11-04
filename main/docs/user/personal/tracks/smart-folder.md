@@ -100,6 +100,10 @@ OsmAnd provides convenient track management tools. One of them is filtering in t
     - The filter allows you to search for tracks that pass close to specific cities or settlements.
     - Select one or more locations to find tracks passing through them or nearby.
 
+- **Type of activity**
+    - The *Type of activity* allows you to filter tracks by the [activities](../map/tracks/track-context-menu.md#track-information-activity) contained in the stored GPX files.
+    - Specify the required activity type to find tracks with these parameter.
+
 - **Country**
     - This filter allows you to search for tracks recorded in a specific country or region.
     - Select specific locations to find related tracks.  
@@ -156,7 +160,7 @@ Once created, the Smart folder is displayed with a special icon in the folder li
 - **Details**. Opens the entire list of tracks in this folder.
 - **Show all tracks on the map**. If there are many tracks in a folder, it is not recommended to map them all, it may take a long time.
 - **Rename**. Changing the folder name.
-- **Refresh**. Allows you to update the tracklist.
+- **Refresh**. Allows you to update the track list.
 - [**Edit filter**](#search-filter). You can change the track filter settings for the current Smart folder.
 - [**Export**](../../personal/import-export.md). You will go to the *Menu → Settings → Actions* tab, where you can export all tracks from the smart folder.
 - **Delete folder**. You can only delete the Smart folder, not the tracks. A warning message will appear on the display. The deletion will be irreversible.  
@@ -171,4 +175,4 @@ Once created, the Smart folder is displayed with a special icon in the folder li
 - [Navigation by track](../../navigation/setup/gpx-navigation.md)
 - [Trip recording](../../plugins/trip-recording.md)
 
-> *This article was last updated in July 2024*
+> *This article was last updated in November 2024*
