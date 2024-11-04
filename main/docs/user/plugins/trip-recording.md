@@ -115,7 +115,7 @@ For *Stop / Save / Pause*:
 - To stop the recording, tap the corresponding button in the [Distance/Start-Stop widget](#distance-start-stop) widget dialog box.
 - In the *Android version*, you can stop recording by tapping the *Trip recording* main menu item.
 - To stop or save a recording track, go to *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>* *→* [*<Translate android="true" ids="shared_string_gpx_files"/> tab*](../personal/myplaces.md#tracks) and tap the appropriate button in the **Currently recording track** field.
-- Use the [Quick Action](../widgets/quick-action.md#add-and-delete-actions) buttons to save, pause, start new segment, or finish recording a trip. Go to *Menu → Configure screen → Custom buttons → Quick action → Add action → [My Places](../widgets/quick-action.md#my-places)* and add one or more quick action buttons.
+- Use the [Quick Action](../widgets/quick-action.md#add-and-delete-actions) buttons to save, pause, start a new segment, or finish recording a trip. Go to *Menu → Configure screen → Custom buttons → Quick action → Add action → [My Places](../widgets/quick-action.md#my-places)* and add one or more quick action buttons.
 - In the *Android version*, you can pause or save a recording track using the system [notification](#notifications) in the notification area of your device.<br/><br/> ![stop-save-pause](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
 
 
@@ -189,7 +189,7 @@ Manage which tracks are visible on your map using one of two options. Head to *<
 OsmAnd captures your journey in a structured [GPX file](https://en.wikipedia.org/wiki/GPS_Exchange_Format), using a hierarchy of *file > track > segments > points*. Here's how it works:
 
 - **Points** represent individual moments of your recorded path, each marked with attributes like coordinates, speed, altitude, and heading.
-- These points are grouped together to form **tracks**, which represent your entire route.
+- These points are grouped to form **tracks**, which represent your entire route.
 - If there’s a gap in recording (for instance, if tracking was paused), the next point after the break starts a new **segment**, marking the separation in your journey.
 - Both **segments** and **tracks** are visually represented with *Start* and *Finish* icons on the map.
 
@@ -318,9 +318,9 @@ This behavior is required by Android for any foreground service, like trip recor
 
 ![Trip Rec Notification](@site/static/img/plugins/trip-recording/trip_rec_notification_badge_andr.png)
 
-App icon badge appears next to the OsmAnd icon when track recording is active.
+The app icon badge appears next to the OsmAnd icon when the track recording is active.
 
-- This icon disappears when track recording is complete. To check if a recording is active, you can go to *Menu → My Places → Tracks tab* or tap the widget to manage the recording.  
+- This icon disappears when the track recording is complete. To check if a recording is active, you can go to *Menu → My Places → Tracks tab* or tap the widget to manage the recording.  
 - If there is no recording in progress and the badge is still displayed, it may mean that a message from OsmAnd has been left in the device notification panel.  
 - To disable badges in Android settings, go to device *Settings → Apps → OsmAnd → Notifications* and disable the badge display option for this app.
 
@@ -329,7 +329,7 @@ App icon badge appears next to the OsmAnd icon when track recording is active.
 
 Widgets allow you to display key information about track recording directly on the screen, such as *Distance*, *Duration*, *Uphill*, and *Downhill*.
 
-To start using *Trip recording widgets*, you need to make all of the following settings:
+To start using *Trip recording widgets*, you need to make all the following settings:
 
 1. [Enable the plugin](../start-with/first-steps.md#how-to-configure-plugins).
 2. Configure trip recording settings for the required [profile](../personal/profiles.md).
@@ -438,6 +438,10 @@ If you have multiple widgets selected — *Duration*, *Uphill*, or *Downhill* �
 - [Analyze on Map](../map/tracks/index.md#analyze-track-on-map)
 - [Track Context menu](../map/tracks/track-context-menu.md)
 - [Navigation by track](../navigation/setup/gpx-navigation.md)
-- [Troubleshooting - Track recording](../troubleshooting/track-recording-issues.md)
+
+### Troubleshooting
+
+- [Recorded Tracks are Noisy](../troubleshooting/track-recording-issues.md#recorded-tracks-are-noisy)
+- [Recorded Tracks Have Gaps](../troubleshooting/track-recording-issues.md#recorded-tracks-have-gaps)
 
 > *This article was last updated in November 2024*
