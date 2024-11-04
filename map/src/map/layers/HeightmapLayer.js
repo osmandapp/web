@@ -24,8 +24,8 @@ export default function HeightmapLayer() {
         }
 
         // update opacity
-        if (tileLayerRef.current?._url === ctx.heightmap?.url && ctx.heightmap?.capacity) {
-            tileLayerRef.current.setOpacity(ctx.heightmap.capacity);
+        if (tileLayerRef.current?._url === ctx.heightmap?.url && ctx.heightmap?.opacity) {
+            tileLayerRef.current.setOpacity(ctx.heightmap.opacity);
             return;
         } else {
             // remove old layer
@@ -42,7 +42,7 @@ export default function HeightmapLayer() {
                 tileSize: 256,
             });
 
-            tileLayerRef.current.setOpacity(ctx.heightmap.capacity);
+            tileLayerRef.current.setOpacity(ctx.heightmap.opacity);
 
             tileLayerRef.current.on('loading', () => {
                 setLoadingTiles(true);

@@ -31,7 +31,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
     const { t } = useTranslation();
 
     const [openMenu, setOpenMenu] = useState(false);
-    const [value, setValue] = useState(ctx.heightmap?.capacity * 100);
+    const [value, setValue] = useState(ctx.heightmap?.opacity * 100);
 
     const OPACITY_HEIGHTMAP = 'opacity_heightmap';
 
@@ -41,40 +41,40 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
             key: item,
             name: capitalize(item),
             url: `${process.env.REACT_APP_TILES_API_SITE}/heightmap/${item}/{z}/{x}/{y}.png`,
-            capacity: 1,
+            opacity: 1,
         };
     });
 
     useEffect(() => {
-        if ((ctx.heightmap && !sameHeightmap()) || (sameHeightmap() && needUpdateCapacity())) {
+        if ((ctx.heightmap && !sameHeightmap()) || (sameHeightmap() && needUpdateOpacity())) {
             // save selected terrain to local storage
             let newConfigureMap = cloneDeep(ctx.configureMapState);
             newConfigureMap.terrain = ctx.heightmap;
             localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(newConfigureMap));
             ctx.setConfigureMapState(newConfigureMap);
             // set slider value
-            setValue(getCapacity(ctx.heightmap.key));
+            setValue(getOpacity(ctx.heightmap.key));
         }
 
         function sameHeightmap() {
             return ctx.heightmap.key === ctx.configureMapState.terrain.key;
         }
 
-        function needUpdateCapacity() {
-            return ctx.heightmap.capacity !== ctx.configureMapState.terrain.capacity;
+        function needUpdateOpacity() {
+            return ctx.heightmap.opacity !== ctx.configureMapState.terrain.opacity;
         }
     }, [ctx.heightmap]);
 
     const anchorEl = useRef(null);
 
     const handleSliderChange = (e, newValue) => {
-        ctx.setHeightmap({ ...ctx.heightmap, capacity: newValue / 100 });
-        saveCapacity(newValue, ctx.heightmap.key);
+        ctx.setHeightmap({ ...ctx.heightmap, opacity: newValue / 100 });
+        saveOpacity(newValue, ctx.heightmap.key);
         setValue(newValue);
     };
 
-    // save capacity for each heightmap to local storage
-    function saveCapacity(value, key) {
+    // save opacity for each heightmap to local storage
+    function saveOpacity(value, key) {
         let obj = JSON.parse(localStorage.getItem(OPACITY_HEIGHTMAP));
         if (!obj) {
             obj = {};
@@ -83,8 +83,8 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
         localStorage.setItem(OPACITY_HEIGHTMAP, JSON.stringify(obj));
     }
 
-    // get capacity for each heightmap from local storage
-    function getCapacity(key) {
+    // get opacity for each heightmap from local storage
+    function getOpacity(key) {
         const obj = JSON.parse(localStorage.getItem(OPACITY_HEIGHTMAP));
         if (!obj) {
             return 100;
@@ -178,7 +178,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                                             const selectedHeightmap = heightmapsLayers.find(
                                                 (layer) => layer.key === item.key
                                             );
-                                            selectedHeightmap.capacity = getCapacity(selectedHeightmap.key) / 100;
+                                            selectedHeightmap.opacity = getOpacity(selectedHeightmap.key) / 100;
                                             ctx.setHeightmap(selectedHeightmap ?? NO_HEIGHTMAP);
                                             setOpenMenu(false);
                                         }}
