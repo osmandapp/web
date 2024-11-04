@@ -67,3 +67,27 @@
 .poiCategoriesInfo {
     color: var(--text-secondary) !important;
 }
+.terrainInfo {
+    color: var(--text-secondary) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+.colorSchemeTitleText {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: var(--text-primary) !important;
+}
+.terrainSliderTitle {
+    color: var(--text-primary) !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+}
+.terrainSliderValue {
+    color: var(--text-secondary) !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+}
