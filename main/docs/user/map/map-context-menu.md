@@ -258,20 +258,28 @@ OpenStreetMap link provides direct link to the OpenStreetMap object where you ca
 
 <TabItem value="android" label="Android">  
 
-![Images nearby context menu Android](@site/static/img/map/images_nearby_andr_1.png)
+![Images nearby context menu Android](@site/static/img/map/images_nearby_1_andr.png)   ![Street-Level Imagery Android](@site/static/img/map/street_level_imagery_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Images nearby context menu iOS](@site/static/img/map/images_nearby_ios_1.png)
+![Images nearby context menu iOS](@site/static/img/map/images_nearby_1_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-In *Online photos* (iOS *Images nearby*) section of map context menu, you can view POI photos from various web sources. Such as [Mapillary](../plugins/mapillary.md) - provides the best and the closest photos from Street-Level view, [Wikimedia](https://www.wikimedia.org/) - displays images from OpenStreetMap with tags **image**, **wikimedia**.  
-You can swipe photos to the left to see more items. Tap the image to open it in full size, or [browse](../map/point-layers-on-map.md#street-level-imagery) street level photos on the map.
+- In the **Online photos** (*Android*) section of the map context menu, you can access photos of objects from [Wikimedia](https://www.wikimedia.org/), which offers media tagged with *"image"* or *"wikimedia"* from OpenStreetMap.
+
+    - With the *View all* button, the gallery opens in a full-screen view, allowing you to swipe through all images related to the selected location. Tapping a photo opens it in full screen mode with access to action such as *Share*, *Details*, *Open in browser*, and *Download*. You can also [browse](../map/point-layers-on-map.md#-street-level-imagery) street-level images on the map.  
+
+- In the **Images nearby** (*iOS*) section in the map context menu provides access to photos of Points of Interest from sources like [Wikimedia](https://www.wikimedia.org/) and [Mapillary](../plugins/mapillary.md). Mapillary offers nearby street-level images, while Wikimedia provides media tagged with *"image"* or *"wikimedia"* from OpenStreetMap. You can contribute your photos using the *Add Photos* button.
+
+- **Street-level imagery** (*Android*) integrates Mapillary’s extensive collection of real-world street views. You can access nearby, sequentially captured images of streets and paths. Also, Mapillary provides street-level images directly on the map view. You can read more in the article [Mapillary plugin](https://osmand.net/docs/user/plugins/mapillary).
+
+    - With *Add photos* button, you can share your own street-level imagery via Mapillary.
+    - Use *Explore* button to open Mapillary view with photos.
 
 
 ### * Audio/Video Note
