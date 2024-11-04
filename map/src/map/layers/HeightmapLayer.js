@@ -3,6 +3,7 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import L from 'leaflet';
 import { NO_HEIGHTMAP } from '../../menu/configuremap/TerrainConfig';
+import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
 
 export default function HeightmapLayer() {
     const ctx = useContext(AppContext);
@@ -13,7 +14,7 @@ export default function HeightmapLayer() {
     const tileLayerRef = useRef(null);
 
     useEffect(() => {
-        if (!map) return;
+        if (!map || !ctx.loginUser || ctx.loginUser === INIT_LOGIN_STATE) return;
 
         if (ctx.heightmap === NO_HEIGHTMAP) {
             if (tileLayerRef.current) {
@@ -66,7 +67,7 @@ export default function HeightmapLayer() {
                 tileLayerRef.current.off('tileerror');
             }
         };
-    }, [ctx.heightmap, map]);
+    }, [ctx.heightmap, map, ctx.loginUser]);
 
     useEffect(() => {
         ctx.setProcessHeightmaps(loadingTiles);
