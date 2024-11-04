@@ -101,7 +101,7 @@ OsmAnd provides convenient track management tools. One of them is filtering in t
     - Select one or more locations to find tracks passing through them or nearby.
 
 - **Type of activity**
-    - The *Type of activity* allows you to filter tracks by the [activities](../map/tracks/track-context-menu.md#track-information-activity) contained in the stored GPX files.
+    - The *Type of activity* allows you to filter tracks by the [activities](../../map/tracks/track-context-menu.md#track-information-activity) contained in the stored GPX files.
     - Specify the required activity type to find tracks with these parameter.
 
 - **Country**

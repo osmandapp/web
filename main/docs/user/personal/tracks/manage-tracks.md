@@ -189,7 +189,7 @@ Once you have made your choice, the following steps are provided:
 
 - **Move**. You can organize your data by moving selected tracks and folders to other folders.
 
-- [**Change activity**](../map/tracks/track-context-menu.md#track-information-activity) (*Android only*). This action allows you to change the activity type, for example to *Car*, *Adventure Motorsport*, *Backpacking* or others, for the selected track.
+- [**Change activity**](../../map/tracks/track-context-menu.md#track-information-activity) (*Android only*). This action allows you to change the activity type, for example to *Car*, *Adventure Motorsport*, *Backpacking* or others, for the selected track.
 
 - [**Change appearance**](../../map/tracks/appearance.md) (*Android only*). This option allows you to customize the appearance of selected tracks, making them more visible and recognizable on the map.
 
