@@ -240,7 +240,7 @@ Before you start tracking your trips, you need to properly configure the **Trip 
 
 <TabItem value="android" label="Android">  
 
-![Configuring Trip recording in Android](@site/static/img/plugins/trip-recording/recording_sett_1_andr.png)  ![Configuring Trip recording in Android](@site/static/img/plugins/trip-recording/recording_sett_2_andr.png)
+![Configuring Trip recording in Android](@site/static/img/plugins/trip-recording/recording_sett_1_andr.png)  ![Configuring Trip recording in Android](@site/static/img/plugins/trip-recording/recording_sett_3_andr.png)
 
 </TabItem>
 
@@ -265,6 +265,7 @@ Before you start tracking your trips, you need to properly configure the **Trip 
 | **Prevent standalone logging** (*Android*) | Pauses track recording when the OsmAnd app is killed (via *recent apps*). The background indication is not displayed in the Android notification panel. |
 | **Include heading** | Records the heading (direction of movement) for each point in the GPX file. The heading is the direction the device is facing, which can differ from the movement direction due to external factors like wind or skidding. |
 | **External sensors** | Data from [external sensors](../plugins/external-sensors.md#trip-recording) such as *<Translate android="true" ids="map_widget_ant_heart_rate"/>*, or *<Translate android="true" ids="map_widget_ant_bicycle_speed"/>* is logged to the GPX file. *Distance* data is not recorded on Android or iOS. Displayed only when the [External Sensors plugin](../plugins/external-sensors.md) is enabled. |
+| **Activity** (*Android*) | The option allows you to pre-select an [activity type](../map/tracks/track-context-menu.md#track-information-activity) for a profile, which is then automatically applied to all recorded tracks. |
 | **Track storage folder** (*Android*) | Defines where in *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* tab recorded tracks are stored. Options include storing all tracks in the Rec folder or organizing them by month, such as Rec/yyyyy-mm. |
 | **Notification** | Controls the display of a [trip recording](#notifications) system notification in the notification area of the device that allows you to start recording trips. |
 | **Online tracking** (*Android*) | Allows real-time tracking of your location by sending recorded points to a specified URL. The tracking interval determines how often points are sent, and the time buffer stores points when there’s no Internet connection.<details><summary>*Remark*</summary>If this option is enabled, and track recording is in progress, the Distance/Start-Stop (REC) widget turns **green** instead of **red**, indicating that each recorded point is being transmitted to a specified URL. The **Web address** field allows you to input the URL using the following parameter format:<ul><li>`lat={0}`: Latitude</li><li>`lon={1}`: Longitude</li><li>`timestamp={2}`: Timestamp (Unix time)</li><li>`hdop={3}`: Horizontal dilution of precision</li><li>`altitude={4}`: Altitude</li><li>`speed={5}`: Speed</li><li>`bearing={6}`: Bearing (direction of movement)</li><li>`eta={7}`: Estimated time of arrival (Unix time)</li><li>`etfa={8}`: Estimated time to the first intermediate point or finish point (Unix time)</li><li>`eda={9}`: Estimated distance to arrival or a marker (in meters)</li><li>`edfa={10}`: Estimated distance to the first intermediate point or finish point (in meters)</li></ul>You can set the **Tracking Interval** to specify how often location points are sent, with options ranging from 0 seconds to 5 minutes. Additionally, the **Time Buffer** parameter determines how long location points are stored if there is no Internet connection, ensuring data is saved and transmitted when the connection is restored.</details> |
@@ -322,7 +323,6 @@ App icon badge appears next to the OsmAnd icon when track recording is active.
 - This icon disappears when track recording is complete. To check if a recording is active, you can go to *Menu → My Places → Tracks tab* or tap the widget to manage the recording.  
 - If there is no recording in progress and the badge is still displayed, it may mean that a message from OsmAnd has been left in the device notification panel.  
 - To disable badges in Android settings, go to device *Settings → Apps → OsmAnd → Notifications* and disable the badge display option for this app.
-
 
 
 ## Widgets  
@@ -440,4 +440,4 @@ If you have multiple widgets selected — *Duration*, *Uphill*, or *Downhill* �
 - [Navigation by track](../navigation/setup/gpx-navigation.md)
 - [Troubleshooting - Track recording](../troubleshooting/track-recording-issues.md)
 
-> *This article was last updated in October 2024*
+> *This article was last updated in November 2024*
