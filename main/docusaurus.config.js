@@ -38,30 +38,30 @@ const config = {
       }),
     ],
   ],
-  plugins: [require.resolve('docusaurus-lunr-search'), 
+  plugins: [require.resolve('docusaurus-lunr-search'),
     [
     '@docusaurus/plugin-client-redirects',
     {
       redirects: [
         {
-          to: '/docs/user/map/tracks/track-context-menu',//new url
-          from: '/docs/user/map/track-context-menu',//old url
+          from: '/docs/user/map/track-context-menu', // old
+          to: '/docs/user/map/tracks/track-context-menu', // new
         },
         {
-          to: '/docs/user/navigation/setup/route-navigation',
           from: '/docs/user/navigation/route-navigation',
+          to: '/docs/user/navigation/setup/route-navigation',
         },
         {
-          to: '/docs/user/map/tracks/#display-tracks-on-the-map',
           from: '/docs/user/map/tracks-on-map',
+          to: '/docs/user/map/tracks',
         },
         {
-          to: '/docs/user/plugins/topography',
           from: '/docs/user/plugins/contour-lines',
+          to: '/docs/user/plugins/topography',
         },
         {
-          to: '/docs/user/personal/maps-resources',
           from: '/docs/user/personal/maps',
+          to: '/docs/user/personal/maps-resources',
         },
       ],
     },
