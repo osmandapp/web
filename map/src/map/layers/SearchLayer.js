@@ -138,6 +138,9 @@ export default function SearchLayer() {
     function filterDuplicates(data) {
         const seen = new Set();
         data.features = data.features.filter((feature) => {
+            if (!feature) {
+                return false;
+            }
             const id = getObjIdSearch(feature);
             const name = feature.properties[POI_NAME] ?? feature.properties[CATEGORY_NAME];
             const uniqueKey = `${id}-${name}`;
