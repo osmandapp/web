@@ -4,6 +4,7 @@
     "private": true,
     "homepage": "/map",
     "dependencies": {
+        "@docusaurus/plugin-client-redirects": "^3.6.0",
         "@emotion/react": "^11.9.0",
         "@emotion/styled": "^11.8.1",
         "@hello-pangea/dnd": "^15.0.0",
