@@ -31,20 +31,19 @@ const routes = [
     {
         type: 'osmand',
         profile: 'car',
-        A: '53.84158, 8.73546',
+        A: '53.68702, 9.16646',
         B: '55.67320, 12.56426',
         hasAttributes: false,
         strings: [
             'Points: 2',
-            /Car 506.\d\d km/,
-            /Route: 506.\d km, 5:5\d min/,
-            '-1 / 22 / 84 m', // ele
+            /Car 47[23].\d\d km/,
+            /Route: 47[23].\d km, 5:2\d min/,
+            '-1 / 24 / 84 m', // ele
         ],
         turns: [
-            /Go ahead onto B 73 and go 0.0 km/,
-            /Take 4 exit onto B 73 and go 0.8 km/,
-            /Take 3 exit onto Rendsburger Straße and go 6.4 km/,
-            /Turn left onto Bernstorffsgade and go 0.3 km/,
+            'Go ahead onto Gottlieb-Daimler-Straße and go 0.1 km',
+            'Keep left (+C|+C,TSLR) onto Sønderjyske Motorvej E 45 and go 74.0 km',
+            'Turn slightly left (+TSLL,C|C) onto Banegårdspladsen and go 0.3 km',
         ],
     },
 ];
