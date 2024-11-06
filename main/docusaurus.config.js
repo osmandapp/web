@@ -38,7 +38,34 @@ const config = {
       }),
     ],
   ],
-  plugins: [require.resolve('docusaurus-lunr-search')],
+  plugins: [require.resolve('docusaurus-lunr-search'),
+    [
+    '@docusaurus/plugin-client-redirects',
+    {
+      redirects: [
+        {
+          from: '/docs/user/map/track-context-menu', // old
+          to: '/docs/user/map/tracks/track-context-menu', // new
+        },
+        {
+          from: '/docs/user/navigation/route-navigation',
+          to: '/docs/user/navigation/setup/route-navigation',
+        },
+        {
+          from: '/docs/user/map/tracks-on-map',
+          to: '/docs/user/map/tracks',
+        },
+        {
+          from: '/docs/user/plugins/contour-lines',
+          to: '/docs/user/plugins/topography',
+        },
+        {
+          from: '/docs/user/personal/maps',
+          to: '/docs/user/personal/maps-resources',
+        },
+      ],
+    },
+  ]],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({

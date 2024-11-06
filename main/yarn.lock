@@ -2311,6 +2311,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@docusaurus/plugin-client-redirects@npm:0.0.0-5526":
+  version: 0.0.0-5526
+  resolution: "@docusaurus/plugin-client-redirects@npm:0.0.0-5526"
+  dependencies:
+    "@docusaurus/core": 0.0.0-5526
+    "@docusaurus/logger": 0.0.0-5526
+    "@docusaurus/utils": 0.0.0-5526
+    "@docusaurus/utils-common": 0.0.0-5526
+    "@docusaurus/utils-validation": 0.0.0-5526
+    eta: ^2.0.1
+    fs-extra: ^11.1.0
+    lodash: ^4.17.21
+    tslib: ^2.5.0
+  peerDependencies:
+    react: ^16.8.4 || ^17.0.0
+    react-dom: ^16.8.4 || ^17.0.0
+  checksum: 52754507b64dec1eb240fed23609f11928ed9c1c0462dd2cb42437ea5fd8e3d69e15d6bf9cbbe24dc443739b99ef0666a2304bef3959b021e393f05e4efadc62
+  languageName: node
+  linkType: hard
+
 "@docusaurus/plugin-content-blog@npm:0.0.0-5526":
   version: 0.0.0-5526
   resolution: "@docusaurus/plugin-content-blog@npm:0.0.0-5526"
@@ -9282,6 +9302,7 @@ __metadata:
   resolution: "osmand-web@workspace:."
   dependencies:
     "@docusaurus/core": 0.0.0-5526
+    "@docusaurus/plugin-client-redirects": 0.0.0-5526
     "@docusaurus/preset-classic": 0.0.0-5526
     "@emotion/react": ^11.9.0
     "@emotion/styled": ^11.8.1

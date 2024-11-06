@@ -80,6 +80,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import { getFirstSubstring, getPropsFromSearchResultItem } from '../../../menu/search/search/SearchResultItem';
 import { SEARCH_ICON_MAP_OBJ } from '../../../map/layers/SearchLayer';
+import capitalize from 'lodash/capitalize';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const iconSvg = icon === SEARCH_ICON_MAP_OBJ ? ctx.poiIconCache[SEARCH_ICON_MAP_OBJ] : null;
@@ -103,13 +104,26 @@ export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldS
         <div
             style={{ display: 'flex' }}
             dangerouslySetInnerHTML={{
-                __html: removeShadowFromIconWpt(iconHtml) + '',
+                __html: removeShadowFromIconWpt(iconHtml) + EMPTY_STRING,
             }}
         />
     );
 };
 
+export function getObjType(wpt) {
+    if (!wpt) {
+        return TYPE_NOT_FOUND;
+    }
+    let type = wpt?.poiType;
+    if (!wpt.name || wpt.name === EMPTY_STRING) {
+        type = wpt?.tags?.type ?? wpt?.poiType;
+    }
+    return capitalize(getFirstSubstring(type));
+}
+
 export const ADDRESS_NOT_FOUND = 'No data';
+export const TYPE_NOT_FOUND = 'No type';
+export const EMPTY_STRING = '';
 
 export default function WptDetails({ isDetails = false, setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
@@ -256,7 +270,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
         const WIKIMEDIA_FILE = 'File:';
         const WIKIMEDIA_CATEGORY = 'Category:';
 
-        if (wikimediaCommons && wikimediaCommons.trim() !== '') {
+        if (wikimediaCommons && wikimediaCommons.trim() !== EMPTY_STRING) {
             const commonsItems = wikimediaCommons.split(';').map((item) => item.trim());
 
             const files = [];
@@ -267,7 +281,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                     files.push({
                         type: 'Feature',
                         properties: {
-                            imageTitle: item.replace(WIKIMEDIA_FILE, ''),
+                            imageTitle: item.replace(WIKIMEDIA_FILE, EMPTY_STRING),
                         },
                         geometry: {
                             type: 'Point',
@@ -275,7 +289,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                         },
                     });
                 } else if (item.startsWith(WIKIMEDIA_CATEGORY)) {
-                    categories.push(item.replace(WIKIMEDIA_CATEGORY, ''));
+                    categories.push(item.replace(WIKIMEDIA_CATEGORY, EMPTY_STRING));
                 }
             });
 
@@ -351,7 +365,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
     function addFirstPhoto(wpt) {
         const mainPhotoName = wpt.type.isWikiPoi?.properties?.photoTitle;
-        if (!mainPhotoName || mainPhotoName === '') {
+        if (!mainPhotoName || mainPhotoName === EMPTY_STRING) {
             return wpt;
         }
         const mainPhoto = wpt.photos.features.find((photo) => photo.properties.imageTitle === mainPhotoName);
@@ -464,7 +478,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
 
     function formatTime(time) {
         const locale = locales[i18n.language] || locales.enUS;
-        return format(time, 'MMM dd, yyyy – HH:mm', { locale: locale }).replace(',', '');
+        return format(time, 'MMM dd, yyyy – HH:mm', { locale: locale }).replace(',', EMPTY_STRING);
     }
     const navigate = useNavigate();
     function addPointToFavorites() {
@@ -666,19 +680,15 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
     };
 
     const WptName = () => {
-        if (wpt.type?.isPoi || wpt.type?.isWikiPoi) {
+        let name = wpt.name;
+        if (!name) {
+            name = wpt.poiType ? getFirstSubstring(wpt.poiType) : 'No name';
+        }
+        if (wpt.type?.isPoi || wpt.type?.isWikiPoi || (wpt.type?.isSearch && wpt.osmUrl)) {
             return (
                 <Typography className={styles.name}>
                     <Link href={wpt.osmUrl} target="_blank" underline="none">
-                        {wpt.name ?? getFirstSubstring(wpt.poiType)}
-                    </Link>
-                </Typography>
-            );
-        } else if (wpt.type?.isSearch && wpt.osmUrl) {
-            return (
-                <Typography className={styles.name}>
-                    <Link href={wpt.osmUrl} target="_blank" underline="none">
-                        {wpt.name ?? 'No name'}
+                        {name}
                     </Link>
                 </Typography>
             );
@@ -706,7 +716,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                         <WptName />
                                     </MenuItemWithLines>
                                     <Typography className={styles.type} noWrap>
-                                        {getFirstSubstring(wpt?.poiType)}
+                                        {getObjType(wpt)}
                                     </Typography>
                                 </div>
                                 {wpt.icon && (
@@ -757,7 +767,7 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                                     </MenuItem>
                                     <div className={styles.descTextBlock}>
                                         <Typography className={styles.descText}>
-                                            {parse(cleanHtml(wpt?.wikiDesc || ''))}
+                                            {parse(cleanHtml(wpt?.wikiDesc || EMPTY_STRING))}
                                         </Typography>
                                     </div>
                                     <Button

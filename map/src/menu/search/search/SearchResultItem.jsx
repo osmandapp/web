@@ -26,15 +26,20 @@ export function getFirstSubstring(inputString) {
     return inputString;
 }
 
+export function preparedType(type, t) {
+    return _.capitalize(t(`amenity_type_${type}`, formattingPoiType(t(`poi_${type}`))));
+}
+
 export function getPropsFromSearchResultItem(props, t) {
     let type, name;
     if (props[CATEGORY_TYPE] === SEARCH_RESULT_TYPE_POI) {
         name = props[POI_NAME];
         type = props[POI_SUBTYPE] ?? props[POI_TYPE];
-        type = _.capitalize(t(`amenity_type_${type}`, formattingPoiType(t(`poi_${type}`))));
         if (name === '') {
-            name = type;
+            name = preparedType(type, t);
+            type = props[POI_TYPE];
         }
+        type = preparedType(type, t);
     } else {
         name = props[CATEGORY_NAME];
         if (props[CATEGORY_TYPE] === SEARCH_RESULT_TYPE_POI_CATEGORY) {

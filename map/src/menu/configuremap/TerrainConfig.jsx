@@ -199,7 +199,7 @@ export default function TerrainConfig({ setOpenTerrainConfig }) {
                             <Typography className={styles.terrainSliderTitle}>Visibility</Typography>
                             <Typography className={styles.terrainSliderValue}>{`${value}%`}</Typography>
                         </div>
-                        {value && (
+                        {value !== undefined && (
                             <Slider
                                 value={typeof value === 'number' ? value : 0}
                                 onChange={handleSliderChange}
