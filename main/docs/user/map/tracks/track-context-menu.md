@@ -344,7 +344,7 @@ If there is no elevation information on the route, you can add it in the followi
 
 <InfoAndroidOnly />
 
-:::note
+:::note OsmAnd Pro
 Calculate elevation offline feature is only available for [**OsmAnd Pro subscribers**](../../purchases/android.md#pro-features) <ProFeature />.
 :::
 
