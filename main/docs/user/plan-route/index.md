@@ -14,7 +14,9 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Overview
 
-Planning a route is an important aspect of any trip, whether it's a walking tour of a city or a road trip across the country. To make it as comfortable and safe as possible, you need to plan the route correctly and familiarize yourself in advance with information about the area and places of interest. OsmAnd offers a convenient and flexible tool for creating and using routes. With the app, you can create your own routes, use ready-made routes of other users, add your own routes to existing tracks, tie tracks to roads, and create points on the map using geographic coordinates. OsmAnd also provides the ability to use offline guides, which allows you to get important information about destinations as you travel.  
+Planning a route is an important aspect of any trip, whether it's a walking tour of a city or a road trip across the country. To make it as comfortable and safe as possible, you need to plan the route correctly and familiarize yourself in advance with information about the area and places of interest.  
+
+OsmAnd offers a convenient and flexible tool for creating and using routes. With the app, you can create your own routes, use ready-made routes of other users, add your own routes to existing tracks, tie tracks to roads, and create points on the map using geographic coordinates. OsmAnd also provides the ability to use offline guides, which allows you to get important information about destinations as you travel.  
 
 <!-- OsmAnd allows you to create your own routes and to use other user routes for trips.
 
@@ -34,4 +36,4 @@ Guides will help you see all the interesting places on the map and learn about t
 
 ## [Coordinate Input](./coordinate-input.md)
 
-Description of a simple and fast tool for creating points by specifying geographic coordinates.  
+Description of a simple and fast tool for creating points by specifying geographic coordinates.

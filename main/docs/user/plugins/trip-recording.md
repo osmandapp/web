@@ -140,7 +140,7 @@ For *Stop / Save / Pause*:
 In OsmAnd, the **Android** and **iOS** versions handle the track recording interface slightly differently. On Android, you will find a dedicated menu for the *Track recording* context, while on iOS, this is streamlined into the *Currently recording track* context menu.
 
 As you record a track, dynamic graphs are generated, providing real-time visual data about your journey. These graphs can reflect information for the entire route or just for a selected segment, depending on your zoom level.  
-Here is what you can find on the graphs:
+Here is what you can find on them:
 
 - **Data values**. Located on the right side for *Android* and the left for *iOS*, you will see the **highest, average, and lowest values** displayed clearly for easy reference.
 - **Tabs for key information**: *Overview* displays total distance and speed; *Altitude* shows elevation changes and the grade of the terrain; *Speed* provides the current speed at each point.
