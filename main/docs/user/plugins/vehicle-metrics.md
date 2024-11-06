@@ -63,6 +63,31 @@ Select the OBD-II device from the list and connect to it.
 - _Rename_
 - _Forget_
 
+### Vehicle Metrics
+
+List of visible vehicle metrics
+
+|Metrics Group |    Supported data     | Description |
+|-----------|-----------------------|-----------------------|
+|Temperature|                       |                      |
+|           | Intake temperature    |                      |
+|           | Ambient temperature   |                      |
+|           | Coolant temperature   |                      |
+|           | Engine Oil Temperature|                      |
+| Engine    |                       |                      |
+|           | Engine speed          |                      |
+|           | Engine Runtime        |                      |
+|           | Calculated Engine Load|                      |
+| Fuel      |                       |                      |
+|           |   Fuel pressure       |                      |
+|           |   Fuel consumption    |                      |
+|           |   Remaining fuel      |                      |
+| Other     |                       |                      |
+|           |     Battery level     |                      |
+|           |     Vehicle speed     |                      |
+|           |     Throttle Position |                      |
+|           |     VIN               |                      |
+
 ## Trip Recording
 
 ### Data Analyze
