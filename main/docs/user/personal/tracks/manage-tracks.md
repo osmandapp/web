@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-All tracks in OsmAnd are stored in the folder: *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. Track file is processed by OsmAnd in [GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format) format, however [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) & [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) could be imported and transformed to GPX. Read more about different types of tracks in [Tracks on map](../../map/tracks/index.md#types-of-tracks) article.
+All tracks in OsmAnd are stored in the folder: *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd processes the track file in [GPX format](https://en.wikipedia.org/wiki/GPS_Exchange_Format), but [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) & [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) can be imported and converted to GPX. Read more about different types of tracks in the article [Tracks on map](../../map/tracks/index.md#types-of-tracks.
 
 <Tabs groupId="operating-systems">
 
@@ -58,7 +58,7 @@ All tracks in OsmAnd are stored in the folder: *<Translate android="true" ids="s
 You can add tracks in OsmAnd in the following ways:
 
 1. **[Import](./manage-tracks.md#import--export-track)** a track from an external source.
-2. Create new track in the application using **[Plan a route](../../plan-route/create-route.md)** tool.
+2. Create a new track in the application using **[Plan a route](../../plan-route/create-route.md)** tool.
 3. Record track in the application using **[Trip recording](../../plugins/trip-recording.md)** plugin.
 4. Enter multiple points by coordinates and save them as a track using the **[Coordinate input](../../plan-route/coordinate-input.md)** tool.
 5. You can also add **Waypoints** to a new track via **[Context menu](../../map/map-context-menu.md#-add--edit--track-waypoint)**.
@@ -122,7 +122,7 @@ The menu provides the following actions:
 - [**Open**](../../map/tracks/index.md#configure-map) (*iOS*). This setting is available in the Configure Map menu. Located in the *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*, it allows you to access the [context menu of the selected track](../../map/tracks/track-context-menu.md) when tapped.
 - **Appearance** (*iOS*). Customize the [appearance of tracks](../../map/tracks/appearance.md) to suit your preferences.
 - **Navigation** (*iOS*). Initiates [navigation](../../navigation/setup/gpx-navigation.md) along the selected track.
-- **Analyze on map (Android) / Analyze (iOS)**. Opens the [Analyse on map](../../navigation/setup/route-details.md#analyse-on-map) tool within Route Details for further analysis.
+- **Analyze on map (Android) / Analyze (iOS)**. Opens the [Analyze on map](../../navigation/setup/route-details.md#analyse-on-map) tool within Route Details for further analysis.
 - **Share**. Enables sharing of the selected track with others.
 - **Upload modifications to OSM** (*iOS*). [Upload the changes](../../plugins/osm-editing.md#gps-track) you have made to the track directly to *OpenStreetMap*.
 - **Edit** (*iOS*). Use the [Plan a route](../../plan-route/create-route.md#modify-gpx-track) tool for making modifications to the track.
@@ -165,13 +165,13 @@ Available:
 
 <TabItem value="android" label="Android">
 
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_selection_2_andr.png)
+![My places tracks sort function Android](@site/static/img/personal/tracks/manage_tracks_selection_mode_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_selection_ios.png)
+![My places tracks iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_ios.png)
 
 </TabItem>
 
@@ -189,6 +189,8 @@ Once you have made your choice, the following steps are provided:
 
 - **Move**. You can organize your data by moving selected tracks and folders to other folders.
 
+- [**Change activity**](../../map/tracks/track-context-menu.md#track-information-activity) (*Android only*). This action allows you to change the activity type, for example to *Car*, *Adventure Motorsport*, *Backpacking* or others, for the selected track.
+
 - [**Change appearance**](../../map/tracks/appearance.md) (*Android only*). This option allows you to customize the appearance of selected tracks, making them more visible and recognizable on the map.
 
 - **Delete**. If the selected tracks or folders are no longer needed, the Delete function allows you to delete them, with the app providing confirmation options to avoid accidental deletion.
@@ -200,7 +202,7 @@ Once you have made your choice, the following steps are provided:
 
 ![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
 
-OsmAnd provides a convenient option to sort tracks. This is especially useful if you have a lot of them or if you are searching for certain features.  
+OsmAnd provides a convenient option for sorting tracks. This is especially useful if you have a lot of them or if you are searching for certain features.  
 Tap the *Sort by* button at the top of the list to open the track list sorting menu tool.  
 
 Sort menu:
@@ -353,7 +355,7 @@ You can delete a folder with all the tracks it contains. To do this:
 There are two primary methods for importing a track file into OsmAnd:
 
 1. **Direct File Import.**  
-    - You can import a track by directly tapping a GPX, KML, or KMZ file. This can be done from various sources such as messaging applications, email, Google Drive, or file managers. When tapped, the file is suggested to open in the OsmAnd app. Once imported, the track is saved in the **Import** folder in the *My Places* menu. The process is as follows - tap the required GPX file and then open it in the OsmAnd app.
+    - You can import a track by directly tapping a GPX, KML, or KMZ file. This can be done from various sources such as messaging applications, email, Google Drive, or file managers. When tapped, it is suggested that the file be opened in the OsmAnd app. Once imported, the track is saved in the **Import** folder in the *My Places* menu. The process follows: tap the required GPX file and then open it in the OsmAnd app.
 
 2. **Import using the *My Places* menu.**
     - Tracks can also be imported through the *My Places* menu in the OsmAnd app. Navigate to this menu and select the *Tracks* option to import your GPX files. Additionally:
@@ -393,10 +395,10 @@ There are two primary methods for importing a track file into OsmAnd:
 
 </Tabs>
 
-There are several ways to export one or more track files to any messenger, email, file manager, Drive, or app.  
+There are several ways to export one or more track files to any messenger, email, file manager, or app.  
 
 1. By [*Track context menu → Share*](../../map/tracks/track-context-menu.md#options).
-2. By *My Places menu → Tracks → Folfer / Track menu*.
+2. By *My Places menu → Tracks → Folder / Track menu*.
     - For [**single track export**](#track-menu), select the track to import as is.
     - For [**multi-track export**](#track-folder), select the required folder.
 3. By [*Local backup file*](../../personal/import-export.md#export-to-file). Exporting GPX tracks as OSF files.
@@ -410,4 +412,4 @@ There are several ways to export one or more track files to any messenger, email
 - [Navigation by track](../../navigation/setup/gpx-navigation.md)
 - [Trip recording](../../plugins/trip-recording.md)
 
-> *This article was last updated in October 2024*
+> *This article was last updated in November 2024*

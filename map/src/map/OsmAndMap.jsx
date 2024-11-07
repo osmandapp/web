@@ -167,7 +167,6 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
             <PoiLayer />
             <SearchLayer />
             <ExploreLayer />
-            <HeightmapLayer />
             <CustomTileLayer
                 ref={tileLayer}
                 attribution='OsmAnd Web Beta &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
@@ -175,6 +174,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 maxZoom={20}
                 maxNativeZoom={20}
             />
+            <HeightmapLayer />
             {hoverPoint && (
                 <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerGraph} />
             )}

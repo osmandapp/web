@@ -238,6 +238,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                             id={id ?? `se-cloud-track-${trackName}`}
                             onClick={() => {
                                 setOpenTrackInfo(true);
+                                setZoomToTrack(true);
                             }}
                             onMouseEnter={() => visible && setShowMenu(true)}
                             onMouseLeave={() => {
@@ -307,12 +308,7 @@ export default function CloudTrackItem({ id = null, file, visible = null, isLast
                     anchorEl={anchorEl}
                     setShowMenu={visible && setShowMenu}
                     actions={
-                        <TrackActions
-                            track={file}
-                            setDisplayTrack={setDisplayTrack}
-                            setZoomToTrack={setZoomToTrack}
-                            setOpenActions={setOpenActions}
-                        />
+                        <TrackActions track={file} setDisplayTrack={setDisplayTrack} setOpenActions={setOpenActions} />
                     }
                 />
                 {loadingTrack ? <LinearProgress /> : <></>}

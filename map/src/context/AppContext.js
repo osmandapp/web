@@ -11,6 +11,7 @@ import WeatherManager from '../manager/WeatherManager';
 import { getAccountInfo, INIT_LOGIN_STATE } from '../manager/LoginManager';
 import { cloneDeep, isEmpty } from 'lodash';
 import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
+import { NO_HEIGHTMAP } from '../menu/configuremap/TerrainConfig';
 
 export const OBJECT_TYPE_LOCAL_TRACK = 'local_track'; // track in localStorage
 export const OBJECT_TYPE_CLOUD_TRACK = 'cloud_track'; // track in OsmAnd Cloud
@@ -33,6 +34,7 @@ export const defaultConfigureMapStateValues = {
     showFavorites: true,
     showPoi: false,
     showTracks: false,
+    terrain: NO_HEIGHTMAP,
 };
 
 export const isLocalTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK;
@@ -394,8 +396,19 @@ export const AppContextProvider = (props) => {
     const [selectedSort, setSelectedSort] = useState({});
 
     function getConfigureMap() {
+        const TIME_UPDATE_CONFIGURE_MAP = 1730683492000;
         let savedConfigureMap = localStorage.getItem(LOCAL_STORAGE_CONFIGURE_MAP);
-        return savedConfigureMap ? JSON.parse(savedConfigureMap) : defaultConfigureMapStateValues;
+        if (savedConfigureMap) {
+            savedConfigureMap = JSON.parse(savedConfigureMap);
+            if (!savedConfigureMap.updateTime || savedConfigureMap.updateTime < TIME_UPDATE_CONFIGURE_MAP) {
+                savedConfigureMap.updateTime = TIME_UPDATE_CONFIGURE_MAP;
+                localStorage.setItem(LOCAL_STORAGE_CONFIGURE_MAP, JSON.stringify(savedConfigureMap));
+                return defaultConfigureMapStateValues;
+            }
+            setHeightmap(savedConfigureMap.terrain);
+            return savedConfigureMap;
+        }
+        return defaultConfigureMapStateValues;
     }
 
     useEffect(() => {

@@ -53,7 +53,7 @@ The [Top/Bottom widget panels](../user/widgets/configure-screen.md#top-and-botto
 
 *Find them in: Menu → Configure screen → Top panel / Bottom panel → Route guidance: Next turn, Second next turn, Lanes*
 
-![Main Navigation widget](../../blog/2024-09-13-android-4-9/img/main_nav_widget.png)
+![Main Navigation widget](../../blog/2024-10-31-android-4-9/img/main_nav_widget.png)
 
 
 ## Wikimedia Gallery Viewer
@@ -62,7 +62,7 @@ Introducing a full-screen gallery viewer for Wikimedia images in the [map contex
 
 A dedicated screen displays a list of all available images, making it easier to explore related media. Tapping on an image opens it in a full-screen mode for a detailed view of the place or POI.
 
-![Gallery](../../blog/2024-09-13-android-4-9/img/gallery.png)
+![Gallery](../../blog/2024-10-31-android-4-9/img/gallery.png)
 
 
 ## Vehicle Metrics
@@ -71,14 +71,14 @@ The new *Vehicle Metrics* plugin has been added to the [Plugins menu](../user/pl
 
 Whether you are tracking fuel efficiency or ensuring engine health, the *Vehicle Metrics* plugin brings valuable insights directly to your device.
 
-![OBD](../../blog/2024-09-13-android-4-9/img/obd.png) ![OBD](../../blog/2024-09-13-android-4-9/img/obd_3.png)
+![OBD](../../blog/2024-10-31-android-4-9/img/obd.png) ![OBD](../../blog/2024-10-31-android-4-9/img/obd_3.png)
 
 
 ## GPX Track Activities
 
 A new feature allows you to assign **Activity** types (such as hiking or cycling) to your recorded GPX tracks, enhancing track management and organization. You can now easily [filter tracks](../user/personal/tracks/smart-folder.md#available-filters) by activity, making it more convenient to organize and analyze your trips.
 
-![3D track](../../blog/2024-09-13-android-4-9/img/track_activity.png)
+![3D track](../../blog/2024-10-31-android-4-9/img/track_activity.png)
 
 
 ## Customizable Map Buttons
@@ -87,7 +87,7 @@ Enhance your map screen with fully customizable [Quick Action and Default button
 
 Button appearance settings can be adjusted via *Menu → Configure screen → Custom buttons* or *Default buttons → three-dot menu → Appearance*. Additionally, you can now export and import your custom button configurations, ensuring seamless transitions between devices.
 
-![Button appearance](../../blog/2024-09-13-android-4-9/img/button_appearance.png) ![Button appearance](../../blog/2024-09-13-android-4-9/img/button_appearance_1.png)
+![Button appearance](../../blog/2024-10-31-android-4-9/img/button_appearance.png) ![Button appearance](../../blog/2024-10-31-android-4-9/img/button_appearance_1.png)
 
 
 ## Widget Context Menu
@@ -103,7 +103,7 @@ We have added a convenient [Reset average speed](../user/widgets/info-widgets.md
 
 This feature makes it easier to track real-time performance on the go without navigating through multiple menus, giving you more control over your trip statistics with minimal effort.
 
-![Widget context menu - Average speed](../../blog/2024-09-13-android-4-9/img/average_speed_widget_1_andr.png)  ![Widget context menu - Average speed](../../blog/2024-09-13-android-4-9/img/average_speed_widget_2_andr.png)
+![Widget context menu - Average speed](../../blog/2024-10-31-android-4-9/img/average_speed_widget_1_andr.png)  ![Widget context menu - Average speed](../../blog/2024-10-31-android-4-9/img/average_speed_widget_2_andr.png)
 
 
 ## Lock Screen Feature for Seamless Navigation
@@ -131,7 +131,7 @@ We are excited to introduced **Dirt bike trails** to improve your off-road adven
 - Find it in *Menu → Configure map → Routes → Dirt bike routes*.
 - Learn more in our [documentation](../user/map/routes.md#dirt-bike-trails).
 
-![Dirt Bike legend](../../blog/2024-09-13-android-4-9/img/dirt_bike.png) ![Dirt Bike legend](../../blog/2024-09-13-android-4-9/img/dirt_bike_1.png)
+![Dirt Bike legend](../../blog/2024-10-31-android-4-9/img/dirt_bike.png) ![Dirt Bike legend](../../blog/2024-10-31-android-4-9/img/dirt_bike_1.png)
 
 
 ## Discover Nearby Areas with OsmAnd Polygon Info
@@ -142,7 +142,7 @@ Now, after a long tap on the map or a single tap a POI, you can view detailed in
 
 *To access: Map context menu → Details → [Within](../user/map/map-context-menu.md#polygon-information)*.
 
-![Poligon info](../../blog/2024-09-13-android-4-9/img/areas_info.png)
+![Poligon info](../../blog/2024-10-31-android-4-9/img/areas_info.png)
 
 
 ## Interactive Access Points
@@ -153,7 +153,7 @@ This functionality enhances quick access to important navigation data for object
 
 By tapping on icons for *Barrier*, *Steps*, or *Gate*, the context menu reveals additional details, including the name (POI type) and address associated with these features, or displays object type, if a name is not available.
 
-![Barrier icons](../../blog/2024-09-13-android-4-9/img/icons.png)
+![Barrier icons](../../blog/2024-10-31-android-4-9/img/icons.png)
 
 
 ## Introducing Hiking Trail Grades
@@ -171,7 +171,7 @@ We have enhanced the [graph toggle](https://osmand.net/docs/user/plugins/trip-re
 
 This update lets you select any available data on the Trip recording screen, making it easier to view critical information during or after your trip, improving your overall analysis of recorded GPX data.
 
-![Graph](../../blog/2024-09-13-android-4-9/img/rectrack_graph_1.png) ![Graph](../../blog/2024-09-13-android-4-9/img/rectrack_graph.png)
+![Graph](../../blog/2024-10-31-android-4-9/img/rectrack_graph_1.png) ![Graph](../../blog/2024-10-31-android-4-9/img/rectrack_graph.png)
 
 
 ## Optional updates

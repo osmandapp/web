@@ -24,6 +24,8 @@ import EmptyLogin from '../login/EmptyLogin';
 import useHashParams from '../../util/hooks/useHashParams';
 import { EXPLORE_MIN_ZOOM } from '../../map/layers/ExploreLayer';
 
+const DEFAULT_EXPLORE_POITYPES = ['tourism', 'leisure', 'entertainment'];
+
 export default function SearchMenu() {
     const ctx = useContext(AppContext);
     const navigate = useNavigate();
@@ -121,8 +123,7 @@ export default function SearchMenu() {
             //for explore layers
             ctx.setSearchSettings({ ...ctx.searchSettings, showOnMainSearch: true });
             if (!ctx.searchSettings.selectedFilters) {
-                const selectedFilters = ['tourism', 'leisure'];
-                addWikiPlacesDefaultFilters(ctx, true, selectedFilters);
+                addWikiPlacesDefaultFilters(ctx, true, DEFAULT_EXPLORE_POITYPES);
             }
         }
     }, [isMainSearchScreen, zoom]);

@@ -21,7 +21,10 @@ export default function WikiPlacesItem({ item, index, lastIndex }) {
     const { t } = useTranslation();
     const [isHovered, setIsHovered] = useState(false);
 
-    const name = item.properties?.wikiTitle;
+    const name =
+        item.properties?.wikiTitle && item.properties?.wikiTitle !== ''
+            ? item.properties.wikiTitle
+            : getType(item.properties?.poisubtype);
     const desc = item.properties?.wikiDesc ? parse(cleanHtml(item.properties?.wikiDesc)) : null;
     const imageTitle = item.properties?.photoTitle;
     const poiType = item.properties?.poitype;
