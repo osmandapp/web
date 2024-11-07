@@ -59,48 +59,65 @@ Select the OBD-II device from the list and connect to it.
 |--|--|
 |![OBD settings](@site/static/img/plugins/obd/obd_settings.png)|![OBD settings](@site/static/img/plugins/obd/obd_settings_1.png)|
 
-- _Connect/Disconnect_
-- _Settings_
-- _Rename_
-- _Forget_
+- _Connect/Disconnect_ - allows to connect or disconnect to OBD-II sensor.
+- _Settings_ - opens OBD settings screen, where you can connect/disconnect to OBD-II sensor and look at all available vehicle parametes.
+- _Rename_ - allows to rename sensor name.
+- _Forget_ - allows to forget OBD-II sensor, which was added before.
 
-### Vehicle Metrics
+### Metrics list
 
-List of visible vehicle metrics
+List of vehicle metrics
 
 |Metrics Group |    Supported data     | Description |
-|-----------|-----------------------|-----------------------|
+|-----------|-----------------------|----------------------|
 |Temperature|                       |                      |
-|           | Intake temperature    |                      |
-|           | Ambient temperature   |                      |
-|           | Coolant temperature   |                      |
-|           | Engine Oil Temperature|                      |
+|           | Intake Temperature    | Shows the temperature of the air entering the engine intake manifold.                     |
+|           | Ambient Temperature   | Shows the temperature outside the vehicle.                     |
+|           | Coolant Temperature   |Shows the temperature of the engine’s coolant                      |
+|           | Engine Oil Temperature| Shows the temperature of the engine oil.                     |
 | Engine    |                       |                      |
-|           | Engine speed          |                      |
-|           | Engine Runtime        |                      |
-|           | Calculated Engine Load|                      |
+|           | Engine speed          | Shows vehicle tachometer RPM over OBD sensor                     |
+|           | Engine Runtime        | Shows shows how long the engine has been running since it was started.                     |
+|           | Calculated Engine Load| Shows the percentage of the engine’s available power being used at a given moment.                     |
 | Fuel      |                       |                      |
-|           |   Fuel pressure       |                      |
-|           |   Fuel consumption    |                      |
-|           |   Remaining fuel      |                      |
+|           |   Fuel Pressure       | Shows the pressure within the fuel system                     |
+|           |   Fuel Consumption    |Shows vehicle fuel consumption rate based on calculations (l/h)                      |
+|           |   Remaining Fuel      | Shows vehicle fuel level over OBD sensor                     |
 | Other     |                       |                      |
-|           |     Battery level     |                      |
-|           |     Vehicle speed     |                      |
-|           |     Throttle Position |                      |
-|           |     VIN               |                      |
+|           |     Battery Level     | Shows the voltage level of the vehicle's battery                     |
+|           |     Vehicle Speed     | Shows speed from the Vehicle Speed Sensor (VSS).                     |
+|           |     Throttle Position | Shows the angle of the throttle plate in the throttle body.                     |
+|           |     VIN               |  A VIN is composed of 17 characters (digits and capital letters) that act as a unique identifier for the vehicle.                    |
 
 ## Trip Recording
 
-### Data Analyze
+*<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,record_obd_data"/>*
+
+Data from connected OBD-II sensor can be added to the GPX file using the [Trip recording plugin](../plugins/trip-recording.md#recording-settings).  
+
+- only metrics which were added [to widgets](#widgets) can be recorded to GPX file.
+  
+
+:::note
+OsmAnd uses [**track recording**](../plugins/trip-recording.md#recorded-gpx-file) with own *tag names* for vehicle metrics: `vm_eotemp`, `vm_fpress`, `vm_espeed` ...
+:::
+
 
 ## Widgets
 
 _Menu → Configure screen → Widgets → Left/Right/Top/Bottom panels → Vehicle Metrics_
 
+List of availabe widgets is [here](#metrics-list) (except "VIN").
+
 ![OBD settings](@site/static/img/plugins/obd/obd_widget.png)
 
 ### Widgets Settings
 
+*<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels → <Translate android="true" ids="obd_widget_group"/> → ⚙️ or <Translate android="true" ids="shared_string_settings"/>*
+
+Some widgets of Vehicle metrics have mode: "Instant" or "Average"
+- Instant - shows parameters now.
+- Average - shows average data with chosen interval (15 sec - 60 min)
 
 ## Related articles
 
