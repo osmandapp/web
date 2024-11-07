@@ -1,6 +1,7 @@
 ---
 sidebar_position: 16
 title:  Vehicle Metrics
+unlisted: true
 ---
 
 import Tabs from '@theme/Tabs';
