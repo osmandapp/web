@@ -19,7 +19,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 With OsmAnd and the OSM editing plugin, you can easily contribute your own information to OpenStreetMap.org, such as to create or modify [POIs](#create--modify-poi), add or comment [notes](#create--modify-osm-note), and upload recorded GPX [tracks](#upload-gps-track).
 
-## Setup
+## Required Setup Parameters
 
 To use the *OpenStreetMap editing* plugin, you have to make the following settings:
 

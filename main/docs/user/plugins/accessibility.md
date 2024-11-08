@@ -58,11 +58,11 @@ The iOS version of the OsmAnd app does not include an Accessibility plugin. Howe
 
 
 
-## Setup 
+## Required Setup Parameters 
 
 To activate device's accessibility features in OsmAnd, you need to make the following settings:  
 
-1. Enable the [Accessibility plugin](../plugins/index.md#enable--disable) in the Plugins section of the Main menu.  
+1. Enable the [Accessibility plugin](../plugins/index.md#enable--disable) in the Plugins section of the main menu.  
 2. Turn on accessibility mode on the Android system.   
 3. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).
 

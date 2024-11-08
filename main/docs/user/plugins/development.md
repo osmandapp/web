@@ -22,11 +22,11 @@ Test functions of the app are collected in the OsmAnd development plugin. Use th
 The OsmAnd development plugin allows you to try new features of the app or to configure OsmAnd for testing: simulate navigation routes, check the screen rendering performance, etc. Plugin is designed for *developers and experienced users* and not required for daily use of the application.  
 
 
-## Setup  
+## Required Setup Parameters  
 
 To activate special features for developers and testers:
 
-1. [Enable](../plugins/index.md#enable--disable) OsmAnd development plugin in the Plugins section of the Main menu.
+1. [Enable](../plugins/index.md#enable--disable) OsmAnd development plugin in the Plugins section of the main menu.
 2. Make the necessary settings in the plugin's [Settings menu](#plugin-settings).  
 3. Enable [developer widgets](#widgets) if necessary.  
 

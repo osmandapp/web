@@ -46,7 +46,7 @@ Log in using your Telegram registered phone number to enable the following:
 ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/My-location_1.png)     ![OsmAnd Tracker](@site/static/img/plugins/online-tracker/Live.png)
 
 
-## Setup
+## Required Setup Parameters
 
 Install OsmAnd Online GPS Tracker APK:
 

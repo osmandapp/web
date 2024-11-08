@@ -35,7 +35,7 @@ Brief information is provided by Wikipedia POIs (an abbreviation for "[point of 
 ![Wikipedia](@site/static/img/map/map-wikipedia.png)
 
 
-## Setup
+## Required Setup Parameters
 
 To display Wikipedia data on the map, you need to make the following settings:
 

@@ -18,12 +18,12 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 OsmAnd Online maps are an extensive addition to the OpenStreetMap database already present in the application. With this plugin, you can add layers to your map with information from a different source, beginning with the satellite or hiking routes view and ending with very specific data, such as the location of fire hydrants. You can also change the main source of the map from vector maps to online tiles.
 
 
-## Setup
+## Required Setup Parameters
  
 The ability to use Online maps is automatically enabled in iOS version of OsmAnd. To display Online maps in Android, you need to make the following settings:
  
-1. [Enable](../plugins/index.md#enable--disable) Online maps plugin in the Plugins section of the Main menu.
-2. Make the necessary settings in [Map source](#configure-map-source) section of the Configure map menu.  
+1. [Enable](../plugins/index.md#enable--disable) Online maps plugin in the Plugins section of the main menu.
+2. Make the necessary settings in [Map source](../map/raster-maps.md#select-raster-maps) section of the Configure map menu.  
 3. Download selected [Online map](#how-to-prepare-raster-maps) if needed.  
 
 ## Use Raster maps on device
@@ -33,7 +33,7 @@ Detailed information about raster maps visualisation and configuration is presen
 :::
 
 
-- [Select map as Main / Underlay / Overlay layer](../map/raster-maps.md#select-map-as-main--underlay--overlay-layer)
+- [Select map as Main / Underlay / Overlay layer](../map/raster-maps.md#select-raster-maps)
   * [Change layer parameters (transparency)](../map/raster-maps.md#change-layer-parameters-transparency)
 - [Prepare / copy raster maps to device](../map/raster-maps.md#prepare--copy-raster-maps-to-device)
   * [Add new online raster map source](../map/raster-maps.md#add-new-online-raster-map-source)

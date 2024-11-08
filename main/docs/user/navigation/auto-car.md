@@ -63,7 +63,7 @@ Android Auto displays the OsmAnd interface adapted to the vehicle multimedia sys
 - [*Compass*](../widgets/map-buttons.md#compass). Shows which of the four available map orientation modes on your device's screen is selected.
 
 
-## Setup
+## Required Setup Parameters
 
 ### Start navigation 
 
