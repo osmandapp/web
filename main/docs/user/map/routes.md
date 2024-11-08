@@ -199,7 +199,7 @@ Following information will be visible in context menu:
 
 [*Hiking, Cycle, Travel, and other routes*](#type-of-routes) are available for selection on the map, and marked with [OSMC symbols](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol). If you tap a *route symbol*, a list of the routes nearest to it is offered. Selecting one of them opens the [track context menu](../map/tracks/track-context-menu.md) of the route.  
 
-To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../map/tracks/track-context-menu.md#info-panel). This will open the [Quick actions](../map/tracks/track-context-menu.md#quick-actions) button panel where you will have access to track actions such as changing [*Appearance*](./tracks/appearance.md), [*Navigation*](../navigation/setup/route-navigation.md), or editing [*Plan a route*](../plan-route/create-route.md).
+To save the route as a *GPX file*, tap the **Save (Download)** button under [Info panel](../map/tracks/track-context-menu.md#info-panel). This will open the [Quick actions](../map/tracks/track-context-menu.md#track-actions) button panel where you will have access to track actions such as changing [*Appearance*](./tracks/appearance.md), [*Navigation*](../navigation/setup/route-navigation.md), or editing [*Plan a route*](../plan-route/create-route.md).
 
 
 ### Quick Actions

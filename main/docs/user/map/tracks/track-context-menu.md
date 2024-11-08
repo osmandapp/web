@@ -39,7 +39,7 @@ The *Track context menu* provides information about the *[Track](../../personal/
 
 ## Track Overview
 
-When you tap a track, the first screen opens of the *Track context menu* - *Overview tab*. On this tab, you can find a summary about the chosen track (*[Info panel](#info-panel)*) and make the most common actions with the track using *[Quick actions menu](#quick-actions)*. You can see [description and service information](#description-and-info) about your track if you pull the Overview tab up.
+When you tap a track, the first screen opens of the *Track context menu* - *Overview tab*. On this tab, you can find a summary about the chosen track (*[Info panel](#info-panel)*) and make the most common actions with the track using *[Track actions menu](#track-actions)*. You can see [description and service information](#description-and-info) about your track if you pull the Overview tab up.
 
 <!--
 You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-android) on the track on the map → <Translate android="true" ids="shared_string_overview"/> → click to "eye" button for not showing the track on the map. 
@@ -51,13 +51,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Info panel overview Android](@site/static/img/personal/tracks/track_context_overview_andr_2.png)
+![Info panel overview Android](@site/static/img/personal/tracks/track_context_info_panel_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Info panel overview iOS](@site/static/img/personal/tracks/track_context_overview_ios_2.png)
+![Info panel overview iOS](@site/static/img/personal/tracks/track_context_info_panel_ios.png)
 
 </TabItem>
 
@@ -75,26 +75,26 @@ The info panel also provides information about the following:
 If your track was created in OsmAnd or any other tracking app (so its points have [`time` and  `speed`](../../plugins/trip-recording#recorded-gpx-file) tags), the informational panel will also contain information about *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="shared_string_time_span"/>* (*Android*) or *<Translate ios="true" ids="total_time"/>* (*iOS*) (the length of time between the start and end points of the track), *<Translate android="true" ids="shared_string_time_moving"/>* (the sum of time while driving).
 :::  
 
-### Quick Actions
+### Track Actions
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Track context menu overview Android 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
+![Track context menu overview Android 3](@site/static/img/personal/tracks/track_context_actions_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track context menu overview iOS 3](@site/static/img/personal/tracks/track_context_overview_ios_3.png)
+![Track context menu overview iOS 3](@site/static/img/personal/tracks/track_context_actions_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-- [**Show / hide** buttons](./track-context-menu.md#quick-actions). Allows you to enable or disable the track display on the map.
-- [**Appearance**](../../map/tracks/appearance.md). Used to customize the appearance of your track.
+- **Show / hide** buttons. Allows you to enable or disable the track display on the map.
+- [**Appearance**](./appearance.md). Used to customize the appearance of your track.
 - **Edit track** (*Android*). Opens the track in [*Plan a route tool*](../../plan-route/create-route.md).
 - **Export** (*iOS*). Allows [to export a track](../../personal/tracks/manage-tracks.md#export).
 - **Directions**. Opens the track in *[Navigation](../../navigation/setup/gpx-navigation.md#start-gpx-navigation)* mode.
@@ -122,27 +122,27 @@ Menu *Options* allows manipulation with the chosen track.
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** - shows or not the track on the map.
 - **<Translate android="true" ids="shared_string_appearance"/>** - opens [Appearance menu](../tracks/appearance.md) for the track.
-- **<Translate android="true" ids="follow_track"/>** (*Android*) or **<Translate ios="true" ids="shared_string_navigation"/>** (*iOS*) - starts navigation by [Follow track option](../../navigation/setup/gpx-navigation.md).
+- **<Translate android="true" ids="follow_track"/>** (*Android*) or **<Translate ios="true" ids="shared_string_navigation"/>** (*iOS*) - starts navigation by [follow track option](../../navigation/setup/gpx-navigation.md).
 
 
 - **<Translate android="true" ids="join_segments"/>** (*Android*) - allows joining gaps of the track.
 - **<Translate android="true" ids="analyze_on_map"/>** - opens [Analyze on map function](../index.md#analyze-track-on-map).
-- **<Translate android="true" ids="analyze_by_intervals"/>** (*Android*) - [analyze the track by time or distance intervals](./track-context-menu.md#split-interval).
+- **<Translate android="true" ids="analyze_by_intervals"/>** (*Android*) - analyzes the track by time or distance [intervals](./track-context-menu.md#split-interval).
 
 
-- **<Translate android="true" ids="shared_string_share"/>** - export the chosen track.
-- **<Translate android="true" ids="upload_to_openstreetmap"/>** - [upload the chose track to OpenStreetMap](../../plugins/osm-editing.md#how-to-upload-gpx-track).
+- **<Translate android="true" ids="shared_string_share"/>** - exports the selected track.
+- **<Translate android="true" ids="upload_to_openstreetmap"/>** - [uploads](../../plugins/osm-editing.md#how-to-upload-gpx-track) the selected track to OpenStreetMap.
 
 
-- **<Translate android="true" ids="edit_track"/>** - open the chosen track in [Plan route tool](../../plan-route/create-route.md).
+- **<Translate android="true" ids="edit_track"/>** - opens the chosen track in [Plan route tool](../../plan-route/create-route.md).
 - **Duplicate track** (*iOS*) - allows you to make and save a copy of the track.
-- **<Translate android="true" ids="rename_track"/>** - change track name.
-- **<Translate android="true" ids="change_folder"/>** - select a folder and add a new one for the chosen track.
+- **<Translate android="true" ids="rename_track"/>** - changes track name.
+- **<Translate android="true" ids="change_folder"/>** - selects a folder and add a new one for the chosen track.
 
 
-- **<Translate android="true" ids="shared_string_gps_filter"/>** (*Android*) - allows [filtering points of the track](./track-context-menu.md#gps-filter).
-- **<Translate android="true" ids="altitude_correction"/>** (*Android*) - to [receive elevation data](./track-context-menu.md#calculate-elevation-offline), attach your track to the roads or calculate it offline (needed [Terrain maps](../../plugins/topography.md#download-maps)).
-- **<Translate android="true" ids="simulate_your_location"/>** (*Android*) - [simulate your position](../../plugins/development.md#gpx-track-simulation) using a GPX track.
+- **<Translate android="true" ids="shared_string_gps_filter"/>** (*Android*) - allows [filtering points of the track](#gps-filter).
+- **<Translate android="true" ids="altitude_correction"/>** (*Android*) - to [receive elevation data](#calculating-missing-elevation), attach your track to the roads or calculate it offline (needed [Terrain maps](../../plugins/topography.md#download-maps)).
+- **<Translate android="true" ids="simulate_your_location"/>** (*Android*) - [simulates your position](../../plugins/development.md#gpx-track-simulation) using a GPX track.
 
 
 - **<Translate android="true" ids="shared_string_delete"/>** - delete the track.
@@ -156,14 +156,11 @@ Menu *Options* allows manipulation with the chosen track.
 
 ![Description and Info Android](@site/static/img/personal/tracks/track_context_overview_1_andr.png)  ![Description and Info Android](@site/static/img/personal/tracks/track_context_overview_2_andr.png)
 
-<!-- ![Description of a track Android 1](@site/static/img/personal/tracks/track_context_overview_andr_4.png)  ![Description of a track Android 2](@site/static/img/personal/tracks/track_context_overview_andr_5.png)
-![Description of a track Android 2](@site/static/img/personal/tracks/track_context_overview_andr_5-1.png) ![Description of a track Android 2](@site/static/img/personal/tracks/track_context_overview_andr_5-2.png) -->
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Description of a track iOS](@site/static/img/personal/tracks/track_context_overview_ios_4-1.png)  <!-- ![Description of a track iOS](@site/static/img/personal/tracks/track_context_overview_ios_4.png) -->
+![Description of a track iOS](@site/static/img/personal/tracks/track_context_overview_ios_4-1.png)
 
 </TabItem>
 
@@ -236,6 +233,7 @@ The *Activity* feature in OsmAnd allows you to tag recorded GPX tracks with spec
 - [Manage activity types](../../personal/tracks/manage-tracks.md#selection-mode). You can change the activity type for selected folders or tracks using the selection mode in the Tracks tab of the My Places menu.
 - **Activity list**. The activity categories and groups are defined in OsmAnd's resources. For developers and contributors, the activity list is maintained in a structured format at [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), which details the available activity groups and types.
 
+
 ## Altitude / Speed Graphs
 
 On the *<Translate android="true" ids="shared_string_gpx_track"/>* tab, you can find information about the track in graphical form. Using the switch, you can choose which data to display on the graph: separate data on *[<Translate android="true" ids="altitude"/>](#altitude)*, about the *[Speed](#speed)* (this option is available only for recorded tracks) or display altogether (*[<Translate android="true" ids="shared_string_overview"/>](#overview-information)*).
@@ -273,7 +271,6 @@ Interaction with the graph:
 **Buttons**:
 
 - **<Translate android="true" ids="analyze_on_map"/>** button opens [Analyze track menu](../index.md#analyze-track-on-map) for the track.
-
 - **<Translate android="true" ids="shared_string_options"/>** button opens a menu with:
 
   - *Edit* opens the track in [Plan route tool](../../plan-route/index.md).
@@ -342,17 +339,19 @@ If there is no elevation information on the route, you can add it in the followi
 
 ### Calculating Missing Elevation
 
-<InfoAndroidOnly />
-
-:::note OsmAnd Pro
+:::note OsmAnd Pro subscription
 Calculate elevation offline feature is only available for [**OsmAnd Pro subscribers**](../../purchases/android.md#pro-features) <ProFeature />.
 :::
+
+<InfoAndroidOnly />
 
 This feature allows you to calculate the elevation profile for GPX track offline for any terrain between 70 degrees north latitude and 70 degrees south latitude, based on [Terrain map data](../../plugins/topography.md#how-to-download). *Terrain maps (3D) should be previously downloaded*.
 
 1. Download [Terrain maps(3D)](../../plugins/topography.md#download-maps) for the required region.
-2. If the track does not contain any altitude data, go to the track context menu (*Track context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,get_altitude_data"/>*), select *Use Terrain maps*, and after the calculation you will get a track graph based on the terrain data.  
+2. If the track does not contain any altitude data, go to the track context menu (*Track context menu → <Translate android="true" ids="shared_string_gpx_track,altitude,calculate_altitude"/>*), select *Use Terrain maps*, and after the calculation you will get a track graph based on the terrain data.  
+
   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
+
 3. If you are creating a route with the [*Plan a route*](../../plan-route/create-route.md#graph) tool using the *Straight line* method and there is no elevation data on the graph, you need to:
     - Tap *Get elevation data*, then select *Use Terrain maps*.
     - After the calculation, you will get a complete Altitude/Slope graph of your route based on terrain data.  
