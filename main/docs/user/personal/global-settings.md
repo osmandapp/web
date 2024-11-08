@@ -194,7 +194,7 @@ More information can be found in [*OsmAnd Privacy and Security Policy*](../../le
 
 **<Translate android="true" ids="analytics_pref_title"/>** (*Android*) or **<Translate ios="true" ids="send_anonymous_data"/>** (*iOS*) setting allows you the choice whether to provide anonymous data about *Downloaded Maps* and *Visited Screens* (*Android*).  
 
-:::info
+:::note
 Data about your location or the places you view on the map is not collected.
 :::  
 
@@ -236,12 +236,14 @@ A **UUID** (*Unique User Identifier*) is generated for each installation of the 
 
 </Tabs>  
 
-The application records the history of previously entered data (history) in the following categories: [Search](../search/search-history.md), [Navigation](../navigation/setup/route-navigation.md#history-of-previous-routes), [Map markers](../personal/markers.md#history). Using the switch on the appropriate tab, you can *Enable / Disable* logging for certain categories of entries. You can also [manage](#history-options) (view, delete, and share) previously recorded data.  
+The application records the history of previously entered data (history) in the following categories: [Search](../search/search-history.md), [Navigation](../navigation/setup/route-navigation.md#history-of-previous-routes), [Map markers](../personal/markers.md#history). Using the switch on the appropriate tab, you can *Enable / Disable* logging for certain categories of entries. You can also [manage](#history) (view, delete, and share) previously recorded data.  
 
 - ***Backup as file*** (*Android*) or ***Export*** (*iOS*) is used to make [a backup file](../personal/import-export.md#export) of your history.
-- ***Clear all history*** (*Android*) or ***Delete all history*** (*iOS*) is used to delete all history entries recorded up to the time of deletion.  
+- ***Clear all history*** (*Android*) or ***Delete all history*** (*iOS*) is used to delete all history entries recorded up to the time of deletion.
 
-#### History Options
+<br/>
+
+**Share and delete history.**
 
 <Tabs groupId="operating-systems">
 
@@ -329,9 +331,13 @@ OsmAnd provides you with a choice of services to determine your location. It is 
 
 ![General Settings notifications Android](@site/static/img/personal/profiles/auto_backup_2_andr.png)
 
-Android or OsmAnd Cloud can save your data and app settings.
+- Android or OsmAnd Cloud can save your data and app settings.
 
-By default, your *OsmAnd settings* and [*Favorites*](../personal/favorites.md) map markers are automatically backed up by the Android system. This allows you to restore them on new devices or after reinstalling the app. However, please note that the backup size is restricted to *25MB*.  
+- By default, your *OsmAnd settings* and [*Favorites*](../personal/favorites.md#automatic-favorites-backup) map markers are automatically backed up by the Android system. This allows you to restore them on new devices or after reinstalling the app.
+
+- Please note that the backup size is restricted to *25MB*.
+
+- To find the backup files, use the Android file manager: *Android → data → net.osmand → files → backup*.  
 
 **If you are using [*OsmAnd Cloud*](../personal/osmand-cloud.md), it's recommended to deactivate this default backup option to prevent any confusion during reinstallation.**
 
