@@ -506,6 +506,28 @@ Widgets refer to [External sensors plugin](../plugins/external-sensors.md#widget
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
 
 
+### Vehicle Metrics Widgets
+
+<InfoAndroidOnly />
+
+![Vehicle metrics widgets Android](@site/static/img/widgets/vehicle_metrics_1.png)
+
+
+Widgets refer to [Vehicle Metrics plugin](../plugins/vehicle-metrics.md#widgets). You can use them to view brief information from your OBD-II scanner, such as: Intake Temperature, Ambient Temperature, Coolant Temperature, Engine Oil Temperature, Engine Speed, Engine Runtime, Calculated Engine Load, Fuel Pressure, Fuel Consumption, Remaining Fuel, Battery Level, Vehicle Speed, Throttle Position.  
+
+- To add Vehicle Metrics widgets to the map screen, [enable](../plugins/index.md#enable--disable) **OsmAnd External sensors plugin**.
+- Widgets can be added even if there is no OBD-II scanner connected.
+- All added widgets are visible even if no OBD-II scanner is connected.
+- If a scanner has not been added or you need to edit the widget, tap the required widget field in the list and then on *Settings*, or directly on the *Settings icon* in the list.
+- The data displayed in widgets can be recorded using the [Trip recording plugin](../plugins/trip-recording.md#recording-settings). Note: only metrics which were added to widgets can be recorded to GPX file.  
+
+| | |
+|:------------|:------------|
+| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Left/Right/Top/Bottom panels →  <Translate android="true" ids="obd_widget_group"/>* |
+| By tapping | No changes |
+| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu). |
+
+
 ### Weather Widgets
 
 :::note
