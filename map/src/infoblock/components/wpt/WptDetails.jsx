@@ -48,11 +48,13 @@ import FavoritesManager, {
 import { ExpandLess, ExpandMore, Folder, LocationOn } from '@mui/icons-material';
 import WptDetailsButtons from './WptDetailsButtons';
 import WptTagsProvider, {
+    AMENITY_PREFIX,
     FINAL_POI_ICON_NAME,
     openWikivoyageContent,
     OSM_PREFIX,
     POI_OSM_URL,
     POI_PREFIX,
+    SUBTYPE,
     TYPE_OSM_VALUE,
     WIKIDATA,
     WIKIMEDIA_COMMONS,
@@ -184,7 +186,8 @@ export default function WptDetails({ isDetails = false, setOpenWptTab, setShowIn
                         features: wikiCommons.files,
                     };
                 }
-                const pType = translateWithSplit(t, POI_PREFIX + poiOptions[TYPE_OSM_VALUE]);
+                const selectedType = poiOptions[AMENITY_PREFIX + SUBTYPE] ?? poiOptions[TYPE_OSM_VALUE];
+                const pType = translateWithSplit(t, POI_PREFIX + selectedType);
                 result = {
                     type: type,
                     poiType: pType,
