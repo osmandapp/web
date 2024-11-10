@@ -142,7 +142,7 @@ The **Pro** subscription currently has the following features:
 | [Customise Route line](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Changing the color and width of the route line during navigation. |
 | [Elevation widget](../widgets/nav-widgets.md#elevation-widget) | Shows your location on the Elevation graph of the navigation route with additional info.  |
 | [Altitude Widgets - Elevation: Map Center](../widgets/info-widgets.md#elevation-map-center) | Allows you to find out the elevation of the current map center above sea level.  |
-| [Elevation correction (offline)](../map/tracks/track-context-menu.md#calculating-missing-elevation) | Allows you to calculate an altitude graph for your track ([Terrain map](../plugins/topography.md#how-to-download) required for chosen region). |
+| [Elevation correction (offline)](../map/tracks/track-context-menu.md#calculate-missing-elevation) | Allows you to calculate an altitude graph for your track ([Terrain map](../plugins/topography.md#how-to-download) required for chosen region). |
 
 
 ### How to Buy

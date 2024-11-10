@@ -141,7 +141,7 @@ Menu *Options* allows manipulation with the chosen track.
 
 
 - **<Translate android="true" ids="shared_string_gps_filter"/>** (*Android*) - allows [filtering points of the track](#gps-filter).
-- **<Translate android="true" ids="altitude_correction"/>** (*Android*) - to [receive elevation data](#calculating-missing-elevation), attach your track to the roads or calculate it offline (needed [Terrain maps](../../plugins/topography.md#download-maps)).
+- **<Translate android="true" ids="altitude_correction"/>** (*Android*) - to [receive elevation data](#calculate-missing-elevation), attach your track to the roads or calculate it offline (needed [Terrain maps](../../plugins/topography.md#download-maps)).
 - **<Translate android="true" ids="simulate_your_location"/>** (*Android*) - [simulates your position](../../plugins/development.md#gpx-track-simulation) using a GPX track.
 
 
@@ -263,14 +263,16 @@ Interaction with the graph:
 
 </Tabs>
 
-- *<Translate android="true" ids="distance"/>*. This is the sum of the total distance traveled on the track, or the length of the track itself.
-- *<Translate android="true" ids="shared_string_time_span"/>*. This is the time interval between the start and end points of the track.
-- *<Translate android="true" ids="shared_string_start_time"/>* This is the exact time when the recording of the track starts.
-- *<Translate android="true" ids="shared_string_end_time"/>*. This is the end time of the track recording.
+On the **Overview** tab, you can see parameters such as:
 
-**Buttons**:
+- *<Translate android="true" ids="distance"/>*. The sum of the total distance traveled on the track, or the length of the track itself.
+- *<Translate android="true" ids="shared_string_time_span"/>*. The time interval between the start and end points of the track.
+- *<Translate android="true" ids="shared_string_start_time"/>* The exact time when the recording of the track starts.
+- *<Translate android="true" ids="shared_string_end_time"/>*. The end time of the track recording.
 
-- **<Translate android="true" ids="analyze_on_map"/>** button opens [Analyze track menu](../index.md#analyze-track-on-map) for the track.
+The active **buttons** give access to actions such as:
+
+- **<Translate android="true" ids="analyze_on_map"/>** button opens [Analyze track menu](../tracks/index.md#analyze-track-on-map) for the track.
 - **<Translate android="true" ids="shared_string_options"/>** button opens a menu with:
 
   - *Edit* opens the track in [Plan route tool](../../plan-route/index.md).
@@ -280,27 +282,27 @@ Interaction with the graph:
 
 ### Speed
 
-:::note
-This tab can be visible only on recorded tracks (points of this track type have [< speed >](../../plugins/trip-recording#recorded-gpx-file) tags).
+:::note Only recorded tracks
+This tab can only be visible only on recorded tracks. Points on this type of track have **[`speed`](../../plugins/trip-recording#recorded-gpx-file)** tags.
 :::
 
 <Tabs groupId="operating-systems">
 
 <TabItem value="android" label="Android">
 
-![Track graph Speed Android](@site/static/img/personal/tracks/track_graph_speed_android.png)
+![Track graph Speed Android](@site/static/img/personal/tracks/track_graph_speed_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track graph Speed iOS](@site/static/img/personal/tracks/track_graph_speed_ios.png)
+![Track graph Speed iOS](@site/static/img/personal/tracks/track_graph_speed_1_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-The Speed graph shows:
+The **Speed** graph displays metrics such as:
 
 - *<Translate android="true" ids="average_speed"/>*. Indicates the average speed during the trip.
 - *<Translate android="true" ids="max_speed"/>*. Shows the maximum speed during the trip.
@@ -314,30 +316,33 @@ The Speed graph shows:
 
 <TabItem value="android" label="Android">
 
-![Track graph altitude Android](@site/static/img/personal/tracks/track_graph_altitude_android.png)
+![Track graph altitude Android](@site/static/img/personal/tracks/track_graph_altitude_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track graph altitude iOS](@site/static/img/personal/tracks/track_graph_altitude_ios.png)
+![Track graph altitude iOS](@site/static/img/personal/tracks/track_graph_altitude_1_ios.png)
 
 </TabItem>
 
 </Tabs>
+
+The **Altitude** graph displays metrics such as:
 
 - *<Translate android="true" ids="average_altitude"/>*. Indicates the average altitude above sea level on the route.
 - *<Translate android="true" ids="altitude_range"/>*. The highest and lowest altitude recorded on the route.
 - *<Translate android="true" ids="altitude_ascent"/>*. The cumulative gain in altitude above sea level along the route.
 - *<Translate android="true" ids="altitude_descent"/>*. The cumulative loss of altitude along the route.
 
-If there is no elevation information on the route, you can add it in the following ways:
+**Get elevation data.**  
+If there is *no elevation information* on the route, you can add it in the following ways:
 
 - *Calculate elevation button → [Use nearby roads](../../plan-route/create-route.md#use-nearby-roads)*. Utilizes an offline map to find nearby roads and elevation data. Allows you to customize the geometry of the track.
-- [*Use Terrain maps*](#calculating-missing-elevation). Utilizes terrain maps to obtain elevation data. The track geometry remains unchanged.
+- [*Use Terrain maps*](#calculate-missing-elevation). Utilizes terrain maps to obtain elevation data. The track geometry remains unchanged.
 
 
-### Calculating Missing Elevation
+### Calculate Missing Elevation
 
 :::note OsmAnd Pro subscription
 Calculate elevation offline feature is only available for [**OsmAnd Pro subscribers**](../../purchases/android.md#pro-features) <ProFeature />.

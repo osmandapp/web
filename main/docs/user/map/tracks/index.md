@@ -114,7 +114,7 @@ When you select a track on the map or open the [track context menu](./track-cont
 
 <TabItem value="android" label="Android">
 
-*Tap the track → [<Translate android="true" ids="shared_string_options"/>](../../map/tracks/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*  
+*Tap the track → <Translate android="true" ids="shared_string_options,analyze_on_map"/>*  
 
 ![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_on_map_menu_andr.png) ![Track menu analyze on the map distance Android](@site/static/img/personal/tracks/track_analyze_on_map_distance_android.png)
 
@@ -122,7 +122,7 @@ When you select a track on the map or open the [track context menu](./track-cont
 
 <TabItem value="ios" label="iOS">
 
-*Tap the track → [<Translate android="true" ids="shared_string_options"/>](../../map/tracks/track-context-menu.md#options) → <Translate android="true" ids="analyze_on_map"/>*  
+*Tap the track → <Translate android="true" ids="shared_string_options,analyze_on_map"/>*  
 
 ![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_1_ios.png)
 
@@ -130,7 +130,7 @@ When you select a track on the map or open the [track context menu](./track-cont
 
 </Tabs>
 
-This tool provides a detailed analysis of track data using graphs and maps.
+This tool provides a detailed analysis of [track](../../map/tracks/track-context-menu.md#options) data using graphs and maps.
 
 - **Graph data (Y-axis)**. Displays Altitude, Slope, Speed, [External sensor data](../../plugins/external-sensors.md), or a combination (if available for the track).
 - **Graph dimension (X-axis)**. Represents Distance, Time, or Time of day.

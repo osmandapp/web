@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview
 
-OsmAnd allows you to find the best route and explore all of its details. The app provides detailed information about the route such as distance, [travel time](#distance--time--co2), [surface type](#road-attributes), [elevation differences](#elevation-info), and [turn information](#turn-by-turn-information). You can also [analyze](#analyze-on-map) the route on the map, find out information about track segments, [print](#print) the route plan, [save](#share--export-actions) the route, and share it with others. With this functionality, you will always be aware of the route details and can plan your trip more efficiently.  
+OsmAnd allows you to find the best route and explore its details. The app provides detailed information about the route such as distance, [travel time](#distance--time--co2), [surface type](#road-attributes), [elevation differences](#elevation-info), and [turn information](#turn-by-turn-information). You can also [analyze](#analyze-on-map) the route on the map, find out information about track segments, [print](#print) the route plan, [save](#share--export-actions) the route, and share it with others. With this functionality, you will always know the route details and can plan your trip more efficiently.  
 
 
 <Tabs groupId="operating-systems">
@@ -46,7 +46,7 @@ There are three ways to access the *Route Details menu*.
 2. Tap the *Navigation* icon on the map screen, set the route, and tap the *Details* button.
 3. Go to the *My Places* menu, tap any available track in the list *Menu → My Places → Tracks*, select the *Navigation* icon in the track context menu in the *Overview* and tap *Details*.  
 
-Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../../navigation/routing/osmand-routing.md#routing-types), some route details may not be displayed. In addition, the route details are highly dependent on the *OpenStreetMap data coverage*.
+Depending on the selected [profile settings](../../personal/profiles.md) and the selected [routing type](../../navigation/routing/osmand-routing.md#routing-types), some route details may not be displayed. In addition, the route details depend highly on the *OpenStreetMap data coverage*.
 
 
 ## Distance / Time / CO2
@@ -73,7 +73,7 @@ Depending on the selected [profile settings](../../personal/profiles.md) and the
 
 - ***Estimated arrival time*** is calculated as a time from now in Local time of the origin using *Estimated travel time*.
 
-- ***CO2 footprint data*** provides a rough estimation of how much CO2 will be produced while following the route. You need to configure the [Fuel engine type](../guidance/navigation-settings.md#fuel-used-by-motor) in Vehicle parameters to get a more accurate approximation.
+- ***CO2 footprint data*** estimates roughly how much CO2 will be produced while following the route. You need to configure the [Fuel engine type](../guidance/navigation-settings.md#fuel-used-by-motor) in Vehicle parameters to get a more accurate approximation.
 
 
 ## Elevation Info
@@ -118,13 +118,13 @@ The altitude data on the map (between 70 degrees north latitude and 70 degrees s
 
 <TabItem value="android" label="Android">
 
-![Route details](@site/static/img/navigation/route/route_details_graph_andr.png)
+![Route details](@site/static/img/navigation/route/route_details_el_graph_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/route_details_graph_ios.png)
+![Navigation route iOS](@site/static/img/navigation/route/route_details_el_graph_ios.png)
 
 </TabItem>
 
@@ -143,7 +143,7 @@ The [graphs](../../map/tracks/track-context-menu.md#altitude--speed-graphs) visu
 
 <TabItem value="android" label="Android">
 
-![Route details Android](@site/static/img/navigation/route/navigation_route_android_analiz.png)  
+![Route details Android](@site/static/img/navigation/route/navigation_route_analiz_andr.png)  
 
 </TabItem>
 
@@ -162,7 +162,7 @@ If data is present, you can select one of the following types:
 - *Y-axis*:
    - [*Altitude*](../../map/tracks/track-context-menu.md#altitude). This is the [process](https://wiki.openstreetmap.org/wiki/Altitude) of obtaining height above a fixed level.
    - [*Slope*](https://wiki.openstreetmap.org/wiki/Key:incline). The [slope of the landform](https://en.wikipedia.org/wiki/Grade_(slope)) means the tangent of the angle of inclination of the surface to the horizontal.
-   - [*Speed*](../../map/tracks/track-context-menu.md#speed).
+   - [*Speed*](../../map/tracks/track-context-menu.md#speed). Speed values when driving on a track.
    - Graphs with two types of data: &nbsp;*Altitude/Slope*, &nbsp;*Altitude/Speed*, &nbsp;*Slope/Speed*, &nbsp;*Animated zoom/Speed*.
 - *X-axis*:
    - *Distance*. You can view route data that relates to the length of the route.
@@ -183,7 +183,7 @@ If data is present, you can select one of the following types:
 
 <TabItem value="android" label="Android">
 
-*[Menu → Navigation](#how-to-access) → Details*
+*<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_details"/>*
 
 ![Navigation route Android](@site/static/img/navigation/route/route_details_attributes_andr.png)
 
@@ -191,7 +191,7 @@ If data is present, you can select one of the following types:
 
 <TabItem value="ios" label="iOS">
 
-*[Menu → Navigation](#how-to-access) → Details → Analysis tab*
+*<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_details,shared_string_analysis"/> tab*
 
 ![Navigation route iOS](@site/static/img/navigation/route/route_details_attributes_ios.png)
 
@@ -199,13 +199,19 @@ If data is present, you can select one of the following types:
 
 </Tabs>
 
-Road attributes are accessible in the Route Details and display segment-related information from OpenStreetMap and Elevation data. The color indication is related to how specific attributes are rendered on the map (see [Map legend](../../map-legend/osmand.md#surface-smoothness)). The bar graphs are also interactive, and it's possible to see information at a specific location by tapping on the graph.
+Road attributes are accessible in the [Route Details](#how-to-access) and display segment-related information from OpenStreetMap and Elevation data. The color indication is related to how specific attributes are rendered on the map (see [Map legend](../../map-legend/osmand.md#surface-smoothness)). The bar graphs are also interactive, and it's possible to see information at a specific location by tapping on the graph.
 
-- [**Road type**](https://wiki.openstreetmap.org/wiki/Key:highway#Roads). The type of road is determined based on its functional purpose and characteristics, such as the number of lanes, speed limits, load capacity, the presence of pedestrian and bicycle paths, roadsides, and other parameters. Different types of roads may have different restrictions and traffic rules. For example, main [highways](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway) usually have a high-speed limit and can be divided into lanes, and [local roads](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential) can have a low-speed limit and one lane in each direction.  
+- [**Road type**](https://wiki.openstreetmap.org/wiki/Key:highway#Roads). The type of road is determined based on its functional purpose and characteristics, such as the number of lanes, speed limits, load capacity, the presence of pedestrian and bicycle paths, roadsides, and other parameters. Different types of roads may have different restrictions and traffic rules.  
 
-- [**Surface**](https://wiki.openstreetmap.org/wiki/Key:surface). Road surfaces are the top layer of pavement that comes into contact with the wheels of vehicles. They can be of different types depending on their properties and functional purpose. For example, [asphalt](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) pavement provides good traction and noise insulation, and [concrete](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) pavement is more durable and has a greater load capacity. Other materials such as gravel, crushed stone, wood boards, and others can also be utilized to create a road surface.  
+   For example, main [highways](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dmotorway) usually have a high-speed limit and can be divided into lanes, and [local roads](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential) can have a low-speed limit and one lane in each direction.  
 
-- [**Steepness**](https://wiki.openstreetmap.org/wiki/Key:incline#Common_&_extreme_inclines). This is a measurement of the angle of the slope of the road, expressed as a percentage. It indicates how steeply the road is sloped up or down relative to the horizon, and it is calculated by measuring the vertical change in road elevation by the horizontal distance and multiplying the resulting value by 100%. For example, if the steepness of the road is 10%, that means for every 100 meters of horizontal distance along the road, you are going up or down 10 meters. The steepness of the road can affect your vehicle's speed, braking, fuel consumption, and driving safety, especially on slippery roads in the winter.  
+- [**Surface**](https://wiki.openstreetmap.org/wiki/Key:surface). Road surfaces are the top layer of pavement that comes into contact with the wheels of vehicles. They can be of different types depending on their properties and functional purpose.  
+
+   For example, [asphalt](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt) pavement provides good traction and noise insulation, and [concrete](https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete) pavement is more durable and has a greater load capacity. Other materials such as gravel, crushed stone, wood boards, and others can also be utilized to create a road surface.  
+
+- [**Steepness**](https://wiki.openstreetmap.org/wiki/Key:incline#Common_&_extreme_inclines). This is a measurement of the angle of the slope of the road, expressed as a percentage. It indicates how steeply the road is sloped up or down relative to the horizon, and it is calculated by measuring the vertical change in road elevation by the horizontal distance and multiplying the resulting value by 100%.  
+
+   For example, if the steepness of the road is 10%, that means for every 100 meters of horizontal distance along the road, you are going up or down 10 meters. The steepness of the road can affect your vehicle's speed, braking, fuel consumption, and driving safety, especially on slippery roads in the winter.  
 
 - [**Surface firmness**](https://wiki.openstreetmap.org/wiki/Key:tracktype). The road surface can recover from deformation or load. The higher the surface firmness, the less chance of damage to the vehicle and the more comfortable the road will be. Surface firmness can also affect vehicle speed and fuel consumption.  
 
@@ -294,7 +300,9 @@ The angle between your destination (*[Bearing](https://en.wikipedia.org/w/index.
 
 The **Print** feature of a turn-by-turn route description can be useful if you prefer to have a physical copy of your route description instead of using electronic devices, or if you do not have access to navigation apps or GPS navigators, no Internet access, or if you need information for other people traveling with you.
 
-A printed route description provides detailed *turn-by-turn instructions* on how to navigate your route, including the distance to the next turn, driving direction, and street or trail names, as well as distance and travel time information. This information can be useful when you are planning a trip and want to estimate the time and distance between different points on the route and determine the expected time of arrival.
+A printed route description provides detailed *turn-by-turn instructions* on how to navigate your route, including the distance to the next turn, driving direction, and street or trail names, as well as distance and travel time information.  
+
+This information can be useful when you are planning a trip and want to estimate the time and distance between different points on the route and determine the expected time of arrival.
 
 The ability **to print** or **save** turn-by-turn information **in PDF format** is especially useful when traveling long distances or in unfamiliar places when you need to have a more detailed idea of the route and the time it takes to get there.
 
