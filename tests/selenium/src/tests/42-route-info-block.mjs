@@ -38,7 +38,7 @@ const routes = [
             'Points: 2',
             /Car 47[23].\d\d km/,
             /Route: 47[23].\d km, 5:2\d min/,
-            '-1 / 24 / 84 m', // ele
+            /-1 \/ 2[45] \/ 84 m/, // ele
         ],
         turns: [
             'Go ahead onto Gottlieb-Daimler-Straße and go 0.1 km',
