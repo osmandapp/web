@@ -163,7 +163,10 @@ const FavoriteLayer = () => {
                         return;
                     }
                     layer.options.isFavorite = true;
-                    layer.on('click', onClick);
+                    if (!layer.options.hasClickHandler) {
+                        layer.on('click', onClick);
+                        layer.options.hasClickHandler = true;
+                    }
                     processMarkers({
                         layer,
                         markerLatLng,
@@ -260,7 +263,11 @@ const FavoriteLayer = () => {
         if (ctx.selectedGpxFile?.markerCurrent?.layer) {
             // if the group is hidden, then only zoom to the group markers
             if (ctx.configureMapState.showFavorites && ctx.selectedGpxFile.file.hidden !== 'true') {
-                ctx.selectedGpxFile.markerCurrent.layer.addTo(map).on('click', onClick);
+                if (!map.hasLayer(ctx.selectedGpxFile.markerCurrent.layer)) {
+                    const layer = ctx.selectedGpxFile.markerCurrent.layer;
+                    layer.addTo(map).on('click', onClick);
+                    layer.options.hasClickHandler = true;
+                }
             }
             if (ctx.selectedGpxFile.zoom) {
                 map.setView(
