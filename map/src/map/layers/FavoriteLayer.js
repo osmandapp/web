@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
 import '../../assets/css/gpx.css';
 import { useMap } from 'react-leaflet';
@@ -163,7 +163,10 @@ const FavoriteLayer = () => {
                         return;
                     }
                     layer.options.isFavorite = true;
-                    layer.on('click', onClick);
+                    if (!layer.options.hasClickHandler) {
+                        layer.on('click', onClick);
+                        layer.options.hasClickHandler = true;
+                    }
                     processMarkers({
                         layer,
                         markerLatLng,
@@ -260,7 +263,11 @@ const FavoriteLayer = () => {
         if (ctx.selectedGpxFile?.markerCurrent?.layer) {
             // if the group is hidden, then only zoom to the group markers
             if (ctx.configureMapState.showFavorites && ctx.selectedGpxFile.file.hidden !== 'true') {
-                ctx.selectedGpxFile.markerCurrent.layer.addTo(map).on('click', onClick);
+                if (!map.hasLayer(ctx.selectedGpxFile.markerCurrent.layer)) {
+                    const layer = ctx.selectedGpxFile.markerCurrent.layer;
+                    layer.addTo(map).on('click', onClick);
+                    layer.options.hasClickHandler = true;
+                }
             }
             if (ctx.selectedGpxFile.zoom) {
                 map.setView(
@@ -278,23 +285,26 @@ const FavoriteLayer = () => {
         }
     }, [ctx.selectedGpxFile]);
 
-    function onClick(e) {
-        ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
-        ctx.selectedGpxFile = {};
-        ctx.selectedGpxFile.prevState = _.cloneDeep(selectedGpxFileRef.current);
-        ctx.selectedGpxFile.markerCurrent = {
-            title: e.sourceTarget.options.title,
-            icon: e.sourceTarget.options.icon.options.html,
-            layer: e.sourceTarget,
-        };
-        ctx.selectedGpxFile.name = ctx.selectedGpxFile.markerCurrent.title;
-        ctx.selectedGpxFile.nameGroup = e.sourceTarget.options.category
-            ? e.sourceTarget.options.category
-            : FavoritesManager.DEFAULT_GROUP_NAME;
-        ctx.selectedGpxFile.file = Object.assign({}, ctx.favorites.mapObjs[e.sourceTarget.options.category]);
-        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-        ctx.setSelectedWpt(ctx.selectedGpxFile);
-    }
+    const onClick = useCallback(
+        (e) => {
+            ctx.setCurrentObjectType(OBJECT_TYPE_FAVORITE);
+            ctx.selectedGpxFile = {};
+            ctx.selectedGpxFile.prevState = _.cloneDeep(selectedGpxFileRef.current);
+            ctx.selectedGpxFile.markerCurrent = {
+                title: e.sourceTarget.options.title,
+                icon: e.sourceTarget.options.icon.options.html,
+                layer: e.sourceTarget,
+            };
+            ctx.selectedGpxFile.name = ctx.selectedGpxFile.markerCurrent.title;
+            ctx.selectedGpxFile.nameGroup = e.sourceTarget.options.category
+                ? e.sourceTarget.options.category
+                : FavoritesManager.DEFAULT_GROUP_NAME;
+            ctx.selectedGpxFile.file = Object.assign({}, ctx.favorites.mapObjs[e.sourceTarget.options.category]);
+            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+            ctx.setSelectedWpt(ctx.selectedGpxFile);
+        },
+        [ctx, selectedGpxFileRef]
+    );
 
     function updateSelectedFavoriteOnMap(file) {
         Object.values(file?.markers._layers).forEach((marker) => {
