@@ -187,6 +187,10 @@ The Accessibility plugin makes the device's accessibility features directly avai
 
 Connect external sensors to display their data in OsmAnd and store the information in track recordings.  
 
+### [Vehicle Metrics](./vehicle-metrics.md)
+
+Connect OBD-II scanner to display vehicle data in OsmAnd and store the information in track recordings.  
+
 ### [Weather](./weather.md)
 
 Shows the hourly forecast for the current day and for 7 days ahead.  
