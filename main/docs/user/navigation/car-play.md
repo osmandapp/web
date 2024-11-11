@@ -39,8 +39,8 @@ While your device is connected to *CarPlay*, the map on the app screen is locked
 
 *CarPlay* displays the OsmAnd interface adapted to the vehicle multimedia system screen. Interaction with the map is limited to:  
 
-- [*My Location*](../widgets/map-buttons.md#my-location--zoom). Moves the visible part of the map so that your current location is in the center of the screen.
-- [*Zoom*](../widgets/map-buttons.md#my-location--zoom). Allows you to zoom in and out of the visible part of the map.
+- [*My Location*](../widgets/map-buttons.md#my-location-and-zoom). Moves the visible part of the map so that your current location is in the center of the screen.
+- [*Zoom*](../widgets/map-buttons.md#my-location-and-zoom). Allows you to zoom in and out of the visible part of the map.
 
 
 ## Setup

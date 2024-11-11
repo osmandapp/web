@@ -63,7 +63,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 </Tabs>
 
-At the top of the information panel, you can see the name of the track, as well as the symbol used to mark it (*Android only*). The track name can be changed using the rename function in [Options menu](#options). Some tracks (mostly *[Travel guides](../../plan-route/travel-guides.md#manage-as-gpx-track)*) may have a short *[description](#description-and-info)* and (or) a picture below the *Track name*. An arrow shows *Direction to the nearest point of the track* from [My location](../../map/interact-with-map#my-location--zoom).  
+At the top of the information panel, you can see the name of the track, as well as the symbol used to mark it (*Android only*). The track name can be changed using the rename function in [Options menu](#options). Some tracks (mostly *[Travel guides](../../plan-route/travel-guides.md#manage-as-gpx-track)*) may have a short *[description](#description-and-info)* and (or) a picture below the *Track name*. An arrow shows *Direction to the nearest point of the track* from [My location](../../map/interact-with-map#my-location-and-zoom).  
 
 The info panel also provides information about the following:
 
@@ -626,7 +626,7 @@ Split the track by distance or time interval.
 
 This filter allows you to improve your track statistics by excluding unnecessary or incorrect data. You can filter out track points that don't fit your track parameters, and as a result, get a more accurate graph and visual route line without distortion or recording noise. You can make changes with filters such as *Smoothing*, *Speed*, *Altitude*, and *GPS Precision*, which hide filtered points from the current track. Besides, in the *Statistics* menu, you can check how your changes are displayed on the graph before you save them. You can also *Reset to original* and *Save as a copy* of your track in this filter without saving the original one.  
 
-<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-location--zoom), [my location button](../../map/interact-with-map.md#my-location--zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
+<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-location-and-zoom), [my location button](../../map/interact-with-map.md#my-location-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 
 - "&#8285;"(Actions) button opens the "Actions" part of the "Filter" or "Statistics" menu.
 - "&#8634;" button allows you to reset the track to the original.

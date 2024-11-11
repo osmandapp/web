@@ -467,7 +467,7 @@ The *Button appearance* feature enables you fully customize the look of buttons 
 
 > *Location position on screen* is the name of this setting in the iOS version of OsmAnd.  
 
-Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location--zoom)* on the Osmand map. There are three options available:  
+Allows you to set the placement of the cursor *[My location](../map/interact-with-map.md#my-location-and-zoom)* on the Osmand map. There are three options available:  
 
 - **<Translate android="true" ids="position_on_map_center"/>**. The cursor is always positioned in the center of the screen.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. *My location* is placed slightly below the center of the screen. This mode allows you to see more map information ahead of your movement, which is useful during navigation.

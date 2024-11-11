@@ -58,8 +58,8 @@ Android Auto displays the OsmAnd interface adapted to the vehicle multimedia sys
 - [*OsmAnd menu*](#destination-points). Contains a list of available options for assigning a route endpoint or a free ride.
 - [*Settings*](#voice-prompts). This button is responsible for access to turn *voice promts* on or off when you are navigating the selected route.
 - [*Search*](#search). Tapping the button opens a screen with access to the search functions. 
-- [*My Location*](../widgets/map-buttons.md#my-location--zoom). Moves the visible part of the map so that your current location is in the center of the screen.
-- [*Zoom*](../widgets/map-buttons.md#my-location--zoom). Allows you to zoom in and out of the visible part of the map.
+- [*My Location*](../widgets/map-buttons.md#my-location-and-zoom). Moves the visible part of the map so that your current location is in the center of the screen.
+- [*Zoom*](../widgets/map-buttons.md#my-location-and-zoom). Allows you to zoom in and out of the visible part of the map.
 - [*Compass*](../widgets/map-buttons.md#compass). Shows which of the four available map orientation modes on your device's screen is selected.
 
 

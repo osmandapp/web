@@ -651,7 +651,7 @@ OsmAnd doesn't have any required permissions on iOS / Android version.
 **Essential**:
 
 - **Internet**. Initial download / update offline maps. Also could be needed to access online features such as [Street Level Imagery](../map/point-layers-on-map.md#-street-level-imagery), [Online photos](../map/map-context-menu.md#online-photos) or [Online maps](../map/raster-maps.md).
-- **GPS** / **GSM Network**. Determine your location, follow you in a navigation mode, record your trip (optional). This permission is asked when you click [my location button](../widgets/map-buttons.md#my-location--zoom) or when you [start navigation](../navigation/setup/route-navigation.md#start--stop-navigation).
+- **GPS** / **GSM Network**. Determine your location, follow you in a navigation mode, record your trip (optional). This permission is asked when you click [my location button](../widgets/map-buttons.md#my-location-and-zoom) or when you [start navigation](../navigation/setup/route-navigation.md#start--stop-navigation).
 
 **Optional**:
 

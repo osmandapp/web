@@ -174,7 +174,7 @@ If data is present, you can select one of the following types:
 
 - *Tap and Slide*. Tap the graph to display information about the track point and the movement along it. The graph highlights the location of the point on the map and displays information about it on the ruler.
 - *Scale*. Scale graph by [two fingers gesture](../../map/interact-with-map.md#gestures).
-- *Follow My location* (*Android only*). You can tap [My Location](../../map/interact-with-map.md#my-location--zoom) to synchronize the map view and graph with your location. As you move, the graph will shift from left to right, displaying information ahead of your path.  
+- *Follow My location* (*Android only*). You can tap [My Location](../../map/interact-with-map.md#my-location-and-zoom) to synchronize the map view and graph with your location. As you move, the graph will shift from left to right, displaying information ahead of your path.  
 
 
 ## Road Attributes

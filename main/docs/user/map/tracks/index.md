@@ -114,15 +114,15 @@ When you select a track on the map or open the [track context menu](./track-cont
 
 <TabItem value="android" label="Android">
 
-*Tap the track → <Translate android="true" ids="shared_string_options,analyze_on_map"/>*  
+*Tap the track → Track tab → <Translate android="true" ids="analyze_on_map"/>*  
 
-![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_on_map_menu_andr.png) ![Track menu analyze on the map distance Android](@site/static/img/personal/tracks/track_analyze_on_map_distance_android.png)
+![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_track_on_map_andr.png)    ![Track menu analyze on the map distance Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-*Tap the track → <Translate android="true" ids="shared_string_options,analyze_on_map"/>*  
+*Tap the track → Track tab → <Translate ios="true" ids="analyze_on_map"/>*  
 
 ![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_1_ios.png)
 
@@ -132,9 +132,9 @@ When you select a track on the map or open the [track context menu](./track-cont
 
 This tool provides a detailed analysis of [track](../../map/tracks/track-context-menu.md#options) data using graphs and maps.
 
-- **Graph data (Y-axis)**. Displays Altitude, Slope, Speed, [External sensor data](../../plugins/external-sensors.md), or a combination (if available for the track).
-- **Graph dimension (X-axis)**. Represents Distance, Time, or Time of day.
-- **Tap/slide interaction**. Tap the graph to display information about a specific track point. Sliding along the graph highlights the corresponding location on the map and shows details in the info bar.
+- **Graph data (Y-axis)** displays: *Altitude*, *Slope*, *Speed*, [*External sensor data*](../../plugins/external-sensors.md), and combinations of up to two options if contained in the track data.
+- **Graph dimension (X-axis)** represents: *Distance*, *Time*, and *Time of day*.
+- **Tap/slide interaction**. Tap a graph to display information about a specific point on the track. Sliding on the graph highlights the appropriate location on the map and shows details in the information bar.
 - **Scaling**. Use a [two-finger gesture](../../map/interact-with-map.md#gestures) to scale the graph for more detailed viewing.
 
 
@@ -150,13 +150,18 @@ This tool provides a detailed analysis of [track](../../map/tracks/track-context
 
 <TabItem value="ios" label="iOS">
 
-![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_2_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_3_ios.png)
+![Track menu analyze on map](@site/static/img/personal/tracks/track_follow_my_location_1_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_follow_my_location_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Tap the [My Location](../../map/interact-with-map.md#my-location--zoom) button to get the map view and graph synchronized with your location. In this case, the **graph scale** will remain the same, and the **bar information** will be fixed to 1/4 to the left. As you move, the **graph will slide** from left to right, displaying information ahead of your track. This feature is useful for hiking and cycling while navigating, although no other widgets are displayed on this screen.  
+Tap the [My Location](../../map/interact-with-map.md#my-location-and-zoom) button to synchronize the map view and graph with your location.
+
+- The **scale of the graph** remains the same, and the **bar information** is fixed 1/4 to the left side.
+- As you move, the **graph will slide** from left to right, displaying information ahead of your track.
+- No other widgets are displayed on this screen.
+- This feature is useful for hiking and cycling as you navigate the track.  
 
 
 ## Related Articles
