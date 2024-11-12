@@ -41,7 +41,7 @@ Two profiles are shown below: the one on the left is for skiing and the one on t
 </Tabs>
 
 
-## Setup
+## Required Setup Parameters
 
 The following setting makes the OsmAnd Ski Map appear on the screen:
 

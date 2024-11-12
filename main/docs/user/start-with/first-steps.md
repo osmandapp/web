@@ -147,7 +147,7 @@ On some Android devices (Xiaomi with Muiu 14), there is no option to set app lan
 
 ### How to manage your settings
 
-You could manage application settings as [Global settings](../personal/global-settings.md) or as [Profile configuration](../personal/profiles.md) via [Main menu](../start-with/main-menu.md). Application comes with a predefined list of profiles that could be modified later. Each profile could be considered as a customized map application for specific purposes. By default profiles are being served only as different navigation modes.
+You could manage application settings as [Global settings](../personal/global-settings.md) or as [Profile configuration](../personal/profiles.md) via [main menu](../start-with/main-menu.md). Application comes with a predefined list of profiles that could be modified later. Each profile could be considered as a customized map application for specific purposes. By default profiles are being served only as different navigation modes.
 
 <Tabs groupId="operating-systems">
 
@@ -173,7 +173,7 @@ You could manage application settings as [Global settings](../personal/global-se
 
 [Plugins](../plugins/index.md#configure-a-plugin) greatly extend application functionality. Almost all plugins have their own [Map Actions](../map/map-context-menu.md), [Map Layers](../map/configure-map-menu.md), [Map Downloads](../start-with/download-maps.md) and [Settings](../plugins/#plugin-settings).  
 
-You can enable / disable plugins via [Main menu](../start-with/main-menu.md) → [Plugins](../plugins/index.md#configure-a-plugin).  
+You can enable / disable plugins via [main menu](../start-with/main-menu.md) → [Plugins](../plugins/index.md#configure-a-plugin).  
 
 <Tabs groupId="operating-systems">
 

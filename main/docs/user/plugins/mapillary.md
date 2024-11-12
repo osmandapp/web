@@ -20,7 +20,7 @@ To get around faster, in OsmAnd you can use street-level views of your routes or
 [The Mapillary layer](https://www.mapillary.com/) brings street-level imagery straight into the OsmAnd app, so you can easily overview the surroundings of any place of interest or along the route you have planned. If imagery is missing, you can add it yourself, and others can use it. This feature has emerged from our collaboration with [the Mapillary team](https://www.mapillary.com/about), uniting the benefits of both apps.
 
 
-## Setup
+## Required Setup Parameters
 
 To display street-level images on the OsmAnd map, you need to make the following settings:
 

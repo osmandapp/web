@@ -43,7 +43,7 @@ While your device is connected to *CarPlay*, the map on the app screen is locked
 - [*Zoom*](../widgets/map-buttons.md#my-location-and-zoom). Allows you to zoom in and out of the visible part of the map.
 
 
-## Setup
+## Required Setup Parameters
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-select-point-1.png)
 

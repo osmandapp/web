@@ -89,13 +89,14 @@ The table below details the features included in both the free and paid packages
 |  | OsmAnd Free | [OsmAnd+](#osmand) <br/> [Maps+](#maps) (in&#8209;app & subscription) | [OsmAnd Pro](#osmand-pro) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Ad-free access** | ✔ | ✔ | ✔ |
+|  |  |  |  |
+| [Access without advertising](#free-and-paid-features) | Ad-free | Ad-free | Ad-free |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
+| [All Pro Features](#pro-features) | **-** | **-** | ✔ |
 | [3D Relief](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
-| [Pro Features](#pro-features) | **-** | **-** | ✔ |
 | [Unlimited map downloads](../start-with/download-maps.md) | <details><summary>**7 map downloads**</summary>  - Map download or update is meant only download-update of a country (region) map. <br/> - **World overview map**, **World altitude correction**, **Map fonts** and **Voice prompts** are not counted as 7 possibilities to download. </details> | ✔ | ✔ |
 | [Monthly map updates](../personal/maps-resources.md#update-maps)<br/>Once a month (with 2 days delay) | <details><summary>**7 map downloads**</summary> Map update counts as download.</details> | ✔ | ✔ |
-| [Hourly map updates](../personal/maps-resources.md#osmand-live)<br/>OsmAnd Live (1 hour delay) - [**](#-osmand-live) | **-** | **-** | ✔ |
+| [Hourly map updates](../personal/maps-resources.md#osmand-live)<br/>OsmAnd Live (1 hour delay) - [**](#-map-updates) | **-** | **-** | ✔ |
 | [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [External sensors support](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Topography data](../plugins/topography.md#setup)<br/>(Contour lines and Terrain) | **-** | ✔ | ✔ |
