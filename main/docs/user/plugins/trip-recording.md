@@ -36,7 +36,7 @@ With the *Trip Recording plugin*, you can create new tracks, display recorded on
 </Tabs>
 
 
-## Setup
+## Required Setup Parameters
 
 To start recording tracks, you need to make the following settings:
 

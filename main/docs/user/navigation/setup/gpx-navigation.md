@@ -65,10 +65,10 @@ Before using the *Navigation by track* option you need to [display track on the 
 
 </Tabs>
 
-Navigation on a track can be started using the quick action button in the [track context menu](../../map/tracks/track-context-menu.md#quick-actions) (opened by selecting one of the [highlighted tracks](./route-navigation.md#history-of-previous-routes) on the map or by tapping a track file in the [My Places](../../personal/myplaces.md) section of the Main menu) or from the navigation menu, which is opened by tapping:
+Navigation on a track can be started using the quick action button in the [track context menu](../../map/tracks/track-context-menu.md#quick-actions) (opened by selecting one of the [highlighted tracks](./route-navigation.md#history-of-previous-routes) on the map or by tapping a track file in the [My Places](../../personal/myplaces.md) section of the main menu) or from the navigation menu, which is opened by tapping:
 
 - [*Navigation button*](../../widgets/map-buttons.md#directions) on the map screen.  
-- *Navigation section* in the Main menu  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
+- *Navigation section* in the main menu  *(<Translate android="true" ids="shared_string_menu,shared_string_navigation"/>)*.
 - In the [*Navigation menu*](./route-navigation.md#navigation-menu) go to *<Translate android="true" ids="shared_string_settings,follow_track"/>*.  
 
 ### Choose Segments

@@ -56,13 +56,14 @@ In the list, there is information about prices of OsmAnd product for the US and 
 |  | OsmAnd Free | [OsmAnd Maps+](#maps)<br/>(in&#8209;app & subscription) | [OsmAnd Pro](#osmand-pro) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Ad-free access** | ✔ | ✔ | ✔ |
+|  |  |  |  |
+| [Access without advertising](#free-and-paid-features) | Ad-free | Ad-free | Ad-free |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | [Start](../personal/osmand-cloud.md#osmand-start) | [Start](../personal/osmand-cloud.md#osmand-start) | [Pro](../personal/osmand-cloud.md) |
+| [All Pro Features](#pro-features) | **-** | **-** | ✔ |
 | [Map downloads](../start-with/download-maps.md) |  <details><summary>**5 map downloads** <br /> (map update counts as download):</summary> <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - **World overview map**, **World altitude correction**, **Map fonts** and **Voice prompts** are not counted as 5 possibilities to download.</details> | ✔ | ✔ |
 | [Monthly map updates](../personal/maps-resources.md#update-maps) |  <details><summary>**Once a month** <br /> (with 2 days delay):</summary> * limited to 5 downloads (map update counts as download) </details> |  ✔ | ✔ |
 | [Hourly map updates](../personal/maps-resources.md#osmand-live)<br/>OsmAnd Live (1 hour delay) - [**](#-map-updates) | **-** | **-**| ✔ |
 | [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
-| [Pro Features](#pro-features) | **-** | **-** | ✔ |
 | [3D Relief](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Topography data](../plugins/topography.md#setup)<br/>(Contour lines and Terrain) | **-** | ✔ | ✔ |
 | [3D track visualization](../map/tracks/appearance.md) | **-** | ✔ | ✔ |
