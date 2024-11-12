@@ -83,7 +83,7 @@ At the bottom of the screen is the *weather toolbar*. You can use the day button
 
 <TabItem value="android" label="Android">
 
-*Enabled plugin → <Translate android="true" ids="shared_string_menu,shared_string_show,shared_string_weather"/>*
+*Enabled plugin → <Translate android="true" ids="shared_string_menu,quick_action_add_configure_map,shared_string_show,shared_string_weather"/>*
 
 ![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_customize_andr.png)  
 
@@ -91,7 +91,7 @@ At the bottom of the screen is the *weather toolbar*. You can use the day button
 
 <TabItem value="ios" label="iOS">
 
-*Enabled plugin → <Translate ios="true" ids="shared_string_menu,map_settings_overunder,shared_string_weather"/>*
+*Enabled plugin → <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,shared_string_weather"/>*
 
 ![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
 
@@ -110,16 +110,16 @@ In this menu, you can change the **visibility** and [settings](#weather-settings
 
 <TabItem value="android" label="Android">  
 
-- *Main menu → Plugins → Weather → Settings*.  
-- *Main menu → Settings → Profile → Weather*.  
+- *Main menu → Plugins → Weather → Settings* 
+- *Main menu → Settings → Profile → Plugin settings → Weather*
 
 ![Weather Settings Android](@site/static/img/plugins/weather/weather_settings_andr_1.png) ![Weather Settings 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.png)
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
+<TabItem value="ios" label="iOS"> 
 
-- *Main menu → Settings → Profile → Weather settings*.  
+- *Main menu → Settings → Profile → Plugins → Weather*
 
 ![Weather Settings iOS](@site/static/img/plugins/weather/weather_settings_ios.png) ![Weather Settings iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.png)
 
