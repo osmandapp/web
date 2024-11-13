@@ -386,7 +386,7 @@ You can export and import your favorites using the special buttons at the bottom
 
 Tap the **Three-dot menu** (*Android*) or the **Edit** button (*pencil icon on iOS*) to open the special features menu for a selected favorites folder. From this menu, choose the **Share** button to send the *Favorites.gpx* file to your device's memory or share it with friends via messaging apps.  
 
-*On iOS*, you can also long-tap a folder to open the context menu, then tap the **Share** button.
+*In the iOS*, you can also long tap the folder to open the context menu, then tap the **Share** button.
 
 
 ### Automatic Favorites Backup  

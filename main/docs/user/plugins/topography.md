@@ -63,12 +63,12 @@ For complete information, see the [License](https://github.com/osmandapp/OsmAnd/
 	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).</details>
 
 
-## Setup
+## Required Setup Parameters
 
 To display **Contour lines** and **Terrain (Hillshade, Slope)** data on the map:
 
 1. *Purchase*: [OsmAnd+, OsmAnd Maps+, or OsmAnd Pro purchase plan](../plugins/index.md#purchase)
-2. [*Enable*](../plugins/index.md#enable--disable) Topography plugin in the Plugins section of the Main menu.
+2. [*Enable*](../plugins/index.md#enable--disable) Topography plugin in the Plugins section of the main menu.
 3. [*Download*](#download-maps): Contour lines, Hillshade, Slope, or Terrain map (3D) maps.
 4. *Enable and adjust*: Contour lines, Hillshade, or Slope for the map view.
 5. You can also watch [YouTube tutorial](https://www.youtube.com/watch?v=z8kp_M3FKoc&feature=emb_logo&ab_channel=BartEisenberg).  
@@ -105,7 +105,7 @@ For stable work and to save resources, you can download a map not of the entire 
 
 </Tabs>
 
-You need to download **Terrain map (3D)** maps to display Hillshade, Slope, and 3D Relief. After downloading maps, you can display **Contour lines** and **Terrain** using the [Configure map](../map/configure-map-menu.md) section of the Main menu.
+You need to download **Terrain map (3D)** maps to display Hillshade, Slope, and 3D Relief. After downloading maps, you can display **Contour lines** and **Terrain** using the [Configure map](../map/configure-map-menu.md) section of the main menu.
 
 If the map displayed on the screen is not downloaded, then in *Menu → Configure map → Topography section → Terrain* at the bottom of the list of features the section *Download maps* with suggested additional maps will be displayed.
 

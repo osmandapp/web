@@ -50,7 +50,7 @@ All professional sailors are required to have official nautical charts on their 
 Based on [OpenSeaMap](https://wiki.openstreetmap.org/wiki/OpenSeaMap) data, OsmAnd Nautical maps are created by people who actually use them. Each map user can contribute to the map by adding information they find important and useful for themselves, thereby making the map more detailed and accurate, ideal for orienteering or route planning.  
 
 
-## Setup   
+## Required Setup Parameters   
 
 The following setup makes the Nautical map show up on the screen: 
 1. [Purchase](../plugins/index.md#purchase) and [Enable](../plugins/index.md#enable--disable) Nautical map view plugin.  

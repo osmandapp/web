@@ -31,7 +31,7 @@ Voice prompts also work while your device screen is turned off, so you can use t
 
 
 
-## Setup Voice Prompts
+## Required Setup Parameters Voice Prompts
 
 OsmAnd offers different types of voice prompt settings to help you follow your route. To set up voice prompts, you need to go to the appropriate section of the application.  
 

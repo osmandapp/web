@@ -483,7 +483,7 @@ With the UI customization feature, you can adjust the number of items in actions
 ## Plugin Settings
 
 :::caution Access to plugin settings
-To access the plugin's settings, you must first [**enable the plugin**](../plugins/index.md#enable--disable) in the *Plugin section of the Main menu*.
+To access the plugin's settings, you must first [**enable the plugin**](../plugins/index.md#enable--disable) in the *Plugin section of the main menu*.
 :::
 
 <Tabs groupId="operating-systems">

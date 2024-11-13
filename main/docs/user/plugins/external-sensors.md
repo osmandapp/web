@@ -18,24 +18,31 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Overview
 
 :::tip NOTE
-The External sensors plugin is a [paid feature](../purchases/index.md) of the OsmAnd app.  
+The External Sensors plugin is a [**paid feature**](../purchases/index.md) of the OsmAnd app.  
 :::
 
-The **External sensors plugin** allows you to read and record data from [wireless external sensors](https://en.wikipedia.org/wiki/Wireless_sensor_network) running on [**ANT+**](https://en.wikipedia.org/wiki/ANT_(network)) and [**BLE (Bluetooth Low Energy)**](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) technologies and display this data using [widgets](#widgets) in the OsmAnd application. This managed network is capable of collecting, transmitting, and storing sensor data. *iPhones and iPads* do not have the hardware to receive ANT+ signals.
+The **External Sensors plugin** allows you to read and record data from [wireless external sensors](https://en.wikipedia.org/wiki/Wireless_sensor_network) running on [**ANT+**](https://en.wikipedia.org/wiki/ANT_(network)) and [**BLE (Bluetooth Low Energy)**](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) technologies and display this data using [widgets](#widgets) in the OsmAnd application. This managed network is capable of collecting, transmitting, and storing sensor data. *iPhones and iPads* do not have the hardware to receive ANT+ signals.
 
 The OsmAnd External sensors plugin accesses external sensors and can read data such as *Heart Rate*, *Bicycle Power*, *Bicycle Cadence*, *Bicycle Speed*, *Bicycle Distance* and *Temperature*. For the plugin to work correctly, make sure that your device [is connected](#pair-new-sensor) to the appropriate sensors.
 
 
-## Setup
+## Required Setup Parameters
 
 To start using data from external sensors, you need to make the following settings:  
 
-1. [Enable](../plugins/index.md#enable--disable) External sensors plugin in the Plugins section of the Main menu.
-2. Make the necessary settings in the [sensors settings](#sensors-settings).
-3. If needed, add [External sensors widgets](#widgets) to the screen.
-4. You can use the tips for [ANT+ connect](https://www.thisisant.com/consumer/ant-101/ant-in-phones) to set up this type of sensors.
-5. To connect external **BLE sensors**, enable bluetooth on your device.
-6. Sensor data can be recorded to a track in the [Trip recording plugin](#trip-recording).
+**1.** [Purchase **OsmAnd Pro subscription**](../purchases/).  
+
+**2.** [Enable](../plugins/#enable--disable) the External Sensors plugin in the Plugins section of the main menu.  
+
+**3.** [Perform the **sensor settings**](#sensors-settings) adjustment.
+
+**4.** [Add **External sensors widgets**](#widgets) to the screen (not required).
+
+**5.** [Use the tips for **ANT+ connect**](https://www.thisisant.com/consumer/ant-101/ant-in-phones) to set up this type of sensors.
+
+**6.** **Enable** Bluetooth on your device to connect external **BLE sensors**.
+
+**7.** [Record](#trip-recording) sensor data to a track using the **Trip recording plugin**.
 
 
 ### Pair New Sensor
@@ -230,4 +237,4 @@ By default the widget shows the first currently connected sensor of this type. I
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-> *This article was last updated in August 2024*
+> *This article was last updated in November 2024*

@@ -24,7 +24,7 @@ The Vehicle Metrics plugin is a [paid feature](../purchases/index.md) of the Osm
 
 The **Vehicle Metrics plugin** allows users to read, record, and display real-time vehicle data on their screen using the OBD-II protocol. It offers insights into key engine metrics, fuel efficiency, speed, and other essential performance indicators, enabling users to monitor their vehicle’s health directly from their device.
 
-## Setup
+## Required Setup Parameters
 
 <InfoAndroidOnly/>
 
