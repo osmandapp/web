@@ -64,7 +64,17 @@ export default function GeneralInfo({ width }) {
     const DESC_MAX_HEIGHT = 150;
     const [descHeight, setDescHeight] = useState(0);
     const ref = useRef(null);
-    const preparedDesc = prepareDesc(ctx.selectedGpxFile?.metaData?.desc);
+    const preparedDesc = prepareDesc(getDesc(ctx.selectedGpxFile));
+
+    function getDesc(file) {
+        if (file?.metaData?.desc) {
+            return file.metaData.desc;
+        }
+        if (file?.description) {
+            return file.description;
+        }
+        return null;
+    }
 
     useEffect(() => {
         if (ref?.current) {

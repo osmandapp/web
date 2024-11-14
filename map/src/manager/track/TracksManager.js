@@ -467,6 +467,23 @@ export const downloadGpx = async (track) => {
     }
 };
 
+export const downloadTravelGpx = async (track) => {
+    const urlFile = `${process.env.REACT_APP_USER_API_SITE}/osmgpx/get-original-file`;
+    const qs = `?id=${track.id}`;
+    const oneGpxFile = {
+        url: urlFile + qs,
+        name: track.name,
+        type: 'GPX',
+    };
+    const data = await Utils.getFileData(oneGpxFile);
+    if (data) {
+        const url = document.createElement('a');
+        url.href = URL.createObjectURL(new Blob([data]));
+        url.download = `${TracksManager.prepareName(track.name)}.gpx`;
+        url.click();
+    }
+};
+
 export function updateMetadata({ file, name = null }) {
     if (!file.metaData) {
         file.metaData = {};

@@ -10,6 +10,10 @@ const TravelRoute = ({ route }) => {
     const { ref, inView } = useInView();
     const ctx = useContext(AppContext);
 
+    function openRouteInfo(route) {
+        ctx.setSelectedRoute({ route, show: true });
+    }
+
     return (
         <div ref={ref}>
             {!inView ? (
@@ -19,7 +23,7 @@ const TravelRoute = ({ route }) => {
                     className={styles.item}
                     id={`se-travel-route-${route.properties.id}`}
                     onClick={() => {
-                        ctx.setSelectedRoute({ route, show: true });
+                        openRouteInfo(route);
                     }}
                     onMouseEnter={() => {
                         ctx.setSelectedRoute({ route, hover: true });

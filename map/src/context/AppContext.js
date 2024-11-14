@@ -40,7 +40,8 @@ export const defaultConfigureMapStateValues = {
 export const isLocalTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK;
 export const isCloudTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK;
 export const isRouteTrack = (ctx) => ctx.currentObjectType === OBJECT_TYPE_NAVIGATION_TRACK;
-export const isTrack = (ctx) => isLocalTrack(ctx) || isCloudTrack(ctx) || isRouteTrack(ctx);
+export const isTravelTrack = (ctx) => ctx.currentObjectType === OBJECT_TRAVEL;
+export const isTrack = (ctx) => isLocalTrack(ctx) || isCloudTrack(ctx) || isRouteTrack(ctx) || isTravelTrack(ctx);
 
 const osmandTileURL = {
     uiname: 'Mapnik (tiles)',
@@ -291,6 +292,7 @@ export const AppContextProvider = (props) => {
     const [processingSearch, setProcessingSearch] = useState(false);
     const [zoomToMapObj, setZoomToMapObj] = useState(false);
     // travel
+    const [travelFilter, setTravelFilter] = useState(null);
     const [searchTravelRoutes, setSearchTravelRoutes] = useState(null);
     const [selectedRoute, setSelectedRoute] = useState(null);
 
@@ -674,6 +676,8 @@ export const AppContextProvider = (props) => {
                 setSearchTravelRoutes,
                 selectedRoute,
                 setSelectedRoute,
+                travelFilter,
+                setTravelFilter,
             }}
         >
             {props.children}

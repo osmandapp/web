@@ -43,6 +43,20 @@ export default function TravelMenu() {
         }
     }, [ctx.searchTravelRoutes?.res]);
 
+    useEffect(() => {
+        ctx.setTravelFilter({
+            activity: selectedActivityType,
+            year: selectedYear,
+        });
+    }, [selectedActivityType, selectedYear]);
+
+    useEffect(() => {
+        if (ctx.travelFilter) {
+            setSelectedActivityType(ctx.travelFilter.activity);
+            setSelectedYear(ctx.travelFilter.year);
+        }
+    }, []);
+
     // Create years array
     const years = [
         { id: ALL_YEARS, label: capitalize(ALL_YEARS) },
@@ -111,6 +125,9 @@ export default function TravelMenu() {
     function close() {
         ctx.setInfoBlockWidth(MENU_INFO_CLOSE_SIZE);
         ctx.setCurrentObjectType(null);
+        ctx.setSearchTravelRoutes({
+            clear: true,
+        });
     }
 
     function handleActivitySelect(activityId) {
@@ -131,7 +148,7 @@ export default function TravelMenu() {
     }
 
     function resetSearch() {
-        setTravelResult([]);
+        setTravelResult(null);
         setSelectedActivityType(DEFAULT_ACTIVITY);
         setSelectedYear(DEFAULT_YEAR);
     }
@@ -184,7 +201,7 @@ export default function TravelMenu() {
                         (travelResult?.features.length > 0 ? (
                             <>
                                 <Typography variant="body2" sx={{ mt: 2, ml: 2 }}>
-                                    Results: {travelResult?.features.length || 0}
+                                    Results: {travelResult?.features?.length || 0}
                                 </Typography>
                                 <TravelRoutesResult routes={travelResult.features} />
                             </>

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import AppContext from '../../context/AppContext';
+import AppContext, { OBJECT_TRAVEL } from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import { apiGet } from '../../util/HttpApi';
 import L from 'leaflet';
@@ -13,11 +13,15 @@ export default function TravelLayer() {
     const [travelRoutes, setTravelRoutes] = useState(null);
     const [selectedRouteId, setSelectedRouteId] = useState(null);
 
-    const ROUTE_COLOR = '#3871e2';
-    const SELECTED_ROUTE_COLOR = '#ff595d';
+    const ROUTE_COLOR = '#666666';
+    const SELECTED_ROUTE_COLOR = '#f8931d';
 
     useEffect(() => {
         if (!ctx.searchTravelRoutes) {
+            return;
+        }
+        if (ctx.searchTravelRoutes.clear) {
+            map.removeLayer(travelRoutes);
             return;
         }
         if (!ctx.searchTravelRoutes.res) {
@@ -28,8 +32,14 @@ export default function TravelLayer() {
         } else {
             let routes = [];
             ctx.searchTravelRoutes.res.features.forEach((route) => {
+                if (!route.properties.geo) {
+                    return;
+                }
                 const coordinates = route.properties.geo.map((point) => [point.latitude, point.longitude]);
                 const polyline = L.polyline(coordinates, { color: ROUTE_COLOR, weight: 3, id: route.properties.id });
+                polyline.on('click', (e) => openInfoBlock(e.target.options.id));
+                polyline.on('mouseover', () => ctx.setSelectedRoute({ route, hover: true }));
+                polyline.on('mouseout', () => ctx.setSelectedRoute({ route, hover: false }));
                 routes.push(polyline);
             });
             let layersGroup = new L.FeatureGroup(routes);
@@ -38,15 +48,51 @@ export default function TravelLayer() {
         }
     }, [ctx.searchTravelRoutes]);
 
+    async function openInfoBlock(id) {
+        const route = ctx.searchTravelRoutes.res.features.find((route) => route.properties.id === id);
+        if (!route) {
+            return;
+        }
+        const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/osmgpx/get-osm-route`, {
+            apiCache: true,
+            params: {
+                id,
+            },
+        });
+        if (response && response.data) {
+            route.track = response.data;
+            ctx.setCurrentObjectType(OBJECT_TRAVEL);
+            const file = {
+                id: route.properties.id,
+                name: route.properties.name,
+                description: route.properties.description,
+                date: route.properties.date,
+                user: route.properties.user,
+                type: 'GPX',
+                ...route.track['gpx_data'],
+            };
+            ctx.setSelectedGpxFile(file);
+            ctx.setUpdateInfoBlock(true);
+        }
+    }
+
     useEffect(() => {
         if (ctx.selectedRoute?.show) {
-            const start = ctx.selectedRoute.route.properties.geo[0];
+            const start = ctx.selectedRoute.route.properties?.geo[0];
+            if (!start) {
+                return; // no route
+            }
             map.setView([start.latitude, start.longitude], ZOOM_TO_MAP);
+            openInfoBlock(ctx.selectedRoute.route.properties.id).then();
         } else if (ctx.selectedRoute?.hover !== undefined) {
             const id = ctx.selectedRoute.route.properties.id;
             let layer = travelRoutes?.getLayers().find((layer) => layer.options.id === id);
             if (layer) {
-                layer.setStyle({ color: ctx.selectedRoute.hover ? SELECTED_ROUTE_COLOR : ROUTE_COLOR, weight: 3 });
+                layer.setStyle({
+                    color: ctx.selectedRoute.hover ? SELECTED_ROUTE_COLOR : ROUTE_COLOR,
+                    weight: 3,
+                });
+                layer.bringToFront();
                 if (id !== selectedRouteId) {
                     let layer = travelRoutes?.getLayers().find((layer) => layer.options.id === selectedRouteId);
                     if (layer) {
