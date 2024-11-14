@@ -172,7 +172,7 @@ Street search is performed in the locality where you are, or where you searched 
 - *Convenience and speed*. Searching by postcode allows you to find information quickly, especially if you know the postcode but are unsure of the address. Instead of entering the full address, you can enter just the code and get relevant results.  
 
 :::note
-For more information, read the **[United Kingdom Poscode data](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases)**.
+For more information, read the **[United Kingdom Postcode data](https://github.com/hvdwolf/OsmAnd-UKpostcodes/releases)**.
 :::
 
 
@@ -194,7 +194,7 @@ For more information, read the **[United Kingdom Poscode data](https://github.co
 
 </Tabs>
 
-[**Coordinate Search**](../search/search-coordinates.md) allows you to specify geographic coordinates, such as latitude and longitude, to find a specific location. It provides accurate locations on a map in different [coordinate formats](../search/search-coordinates.md#coordinates-search) and allows you to get related information. This feature can be useful when you do not have an address or exact name of a location and can make it easier to plan travel and navigate in unknown places.  
+[**Coordinate Search**](../search/search-coordinates.md) allows you to specify geographic coordinates, such as latitude and longitude, to find a specific location. It provides accurate locations on a map in different [coordinate formats](../search/search-coordinates.md#coordinates-search) and allows you to get related information. This feature can be useful when you do not have an address or exact name of a location, and can make it easier to plan travel and navigate in unknown places.  
 
 
 ## Related Articles

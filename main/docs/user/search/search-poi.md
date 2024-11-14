@@ -65,7 +65,9 @@ OsmAnd provides several ways to get to the Search tool where the **Categories se
     - *Android*: You can start searching for POIs in *Menu → Search → Categories*.
 
 - **Brand search:**
-    - When entering a business venue or brand name (such as Audi, Starbucks, or Aldi), the list of search results is ordered with priority by POI name and sorted by distance from the corresponding location. The name of the locality is displayed alongside each search result to help you identify the right location among others at a similar distance from you.
+    - When entering a business venue or brand name (such as Audi, Starbucks, or Aldi), the list of search results is ordered with priority by POI name and sorted by distance from the corresponding location.
+
+    - The name of the locality is displayed alongside each search result to help you identify the right location among others at a similar distance from you.
 
     - This type of search is convenient to use if a retail outlet specializes in selling goods or services of one brand or if the brand itself is better known and more recognizable than the name or category of the POI.
 
@@ -106,7 +108,7 @@ How it works:
 - *Category Selection.* You select the POI category you are interested in, such as restaurants, hotels, stores, and others, from a suggested list of categories.
 - *Characteristic Filters.* After selecting a POI category, the application shows additional characteristics that can be used to refine the search. For example, for the Restaurants category, you can select filters such as cuisine type (Italian, Chinese, etc.), price range, rating, and parking availability.
 - *Applying Filters.* You select the required values in the filters, and then the application applies these filters to the search results to show only those properties that match the specified characteristics.
-- *Displaying results.* After applying filters, the application displays a list of POIs matching the category and characteristics set. The results are presented as a list with some information about each POI.
+- *Displaying results.* After applying filters, the application displays a list of POIs matching the category and characteristics set. The results are presented as a list with brief information about each POI.
 
 Benefits:
 
