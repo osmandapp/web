@@ -18,7 +18,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview
 
-**Search** is a useful tool for quickly finding locations. You can use search to find a location by address, coordinates, points of interest (POIs), or previous searches. Search [*Address*](#search-address) allows you to enter the address you are looking for to get an exact location. [*Сoordinates*](#search-coordinates) search allows you to enter geographic coordinates such as latitude and longitude. Search [*POI*](#search-poi) allows you to search for nearby places in specific categories, such as cafes, hotels, or filling stations. And search [*History*](#search-history) saves past searches for quick access to previously found places. The search feature makes it easy to plan trips, navigate unknown terrain, and find places of interest nearby.
+**Search** is a useful tool for quickly finding locations. You can use search to find a location by address, coordinates, points of interest (POI), or previous searches. Search [*Address*](#search-address) allows you to enter the address you are looking for to get an exact location. [*Coordinates*](#search-coordinates)  search works with geographic coordinates such as latitude and longitude. With [*POI*](#search-poi) search you can search for nearby places in specific categories, such as cafés, hotels, or filling stations. And search [*History*](#search-history) saves past searches for quick access to previously found places. The search feature makes it easy to plan trips, navigate unknown terrain, and find places of interest nearby.
 
 
 ## How to Use
@@ -63,7 +63,7 @@ Important information:
     - City;
     - Postal Code, House Number;
     - Postal Code, Street, House Number.
-- Search POIs by name and by category with additional filters.
+- Search POI by name and by category with additional filters.
 - Search by Favorites and Waypoints.
 - Search by tracks.
 - Search by business venues and brand names.
@@ -100,12 +100,12 @@ You can find the required location on the map from the list of points that appea
 
 - Start typing the name or address in the search bar.
 - As you type, the list displays the points closest to the query, in roughly this order:
-    - POIs Categories
-    - Favorites, POIs, and Waypoints
+    - POI Categories
+    - Favorites, POI, and Waypoints
     - Tracks
     - Addresses
     - Maps to download
-- If you enter a brand name, the list will start with results by this name sorted by closest distance.
+- If you enter a [brand name](../search/search-poi.md#how-to-use), the list will start with results by this name, sorted by closest distance.
 
 
 ### Search on the Map
@@ -132,7 +132,7 @@ OsmAnd allows you to search for points displayed on a map on your device's scree
 - Start typing the name or address into the search box.
 - A box with the *Show on map* button will appear below the search input field.
 - Tap this button to go to the map.
-- At the top of the screen, you can continue typing your query.
+- You can continue typing your query at the top of the screen.
 
 
 ### Search Nearby
@@ -160,7 +160,7 @@ You can use the search in the vicinity of a specific location. To do this, selec
 
 </Tabs>
 
-**Search Address** uses OpenStreetMap data. This type of search allows you to find the location and direction to a specific address from a ready sorted list. Read more in the [Search Address](./search-address.md) article.
+**Search Address** uses OpenStreetMap data. This type of search allows you to find the location and direction to a specific address from a ready-sorted list. Read more in the [Search Address](./search-address.md) article.
 
 
 ## Search History
@@ -181,7 +181,7 @@ You can use the search in the vicinity of a specific location. To do this, selec
 
 </Tabs>
 
-You can use the **Search History** to search again for previously found places or addresses or frequently visited places without having to re-enter the query.More details can be found in the [Search History](./search-history.md) article.
+You can use the **Search History** to search again for previously found places or addresses or frequently visited places without having to re-enter the query. More details can be found in the [Search History](./search-history.md) article.
 
 
 ## Search POI
@@ -205,7 +205,7 @@ You can use the **Search History** to search again for previously found places o
 The **Search POI** is a list, sorted by category, with which you can easily find places and services near your current location or a selected area on the map.
 
 - [**Custom POI search**](./search-poi.md#custom-poi-search) allows you to combine different POI categories to simplify and personalize your search, for example, if you need to find several types of services in a certain area or on a certain section of a route.
-- OsmAnd provides an [**Online search**](./search-poi.md#online-search) that works in real time, giving you quick access to search results. It is convenient to use when maps of the region are not available, but a constant and stable Internet connection is required.
+- OsmAnd provides an [**Online search**](./search-poi.md#online-search) that works in real-time, giving you quick access to search results. It is convenient to use when maps of the region are unavailable, but a constant and stable Internet connection is required.
 - Read the [Search POI](./search-poi.md) article for more information.
 
 
@@ -227,7 +227,7 @@ The **Search POI** is a list, sorted by category, with which you can easily find
 
 </Tabs>
 
-Coordinate search provides an accurate location. You can enter precise coordinates obtained, for example, from other sources such as a map, GPS device or online services, which is particularly useful when it comes to places that do not have an exact address. For more information, see the [Search Coordinates](./search-coordinates.md) article.
+Coordinate search provides an accurate location. You can enter precise coordinates obtained, for example, from other sources such as a map, GPS device, or online services, which is particularly useful when it comes to places that do not have an exact address. For more information, see the [Search Coordinates](./search-coordinates.md) article.
 
 
 ## Related Articles
@@ -237,4 +237,4 @@ Coordinate search provides an accurate location. You can enter precise coordinat
 - [Search POI](./search-poi.md)
 - [Search Coordinates](./search-coordinates.md)
 
-> *This article was last updated in August 2024*
+> *This article was last updated in November 2024*
