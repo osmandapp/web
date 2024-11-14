@@ -14,6 +14,14 @@ const TravelRoute = ({ route }) => {
         ctx.setSelectedRoute({ route, show: true });
     }
 
+    function countPoints(route) {
+        let sum = 0;
+        route.forEach((segment) => {
+            sum += segment.length;
+        });
+        return sum;
+    }
+
     return (
         <div ref={ref}>
             {!inView ? (
@@ -41,7 +49,7 @@ const TravelRoute = ({ route }) => {
                             {`${(route.properties.distance / 1000).toFixed(2)} km`}
                             {' · '}
                             {route.properties.date.slice(0, 10)}
-                            {route.properties.geo && ` · ${route.properties.geo.length}`}
+                            {route.properties.geo && ` · ${countPoints(route.properties.geo)}`}
                         </Typography>
                     </ListItemText>
                 </MenuItem>

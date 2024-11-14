@@ -35,12 +35,23 @@ export default function TravelLayer() {
                 if (!route.properties.geo) {
                     return;
                 }
-                const coordinates = route.properties.geo.map((point) => [point.latitude, point.longitude]);
-                const polyline = L.polyline(coordinates, { color: ROUTE_COLOR, weight: 3, id: route.properties.id });
-                polyline.on('click', (e) => openInfoBlock(e.target.options.id));
-                polyline.on('mouseover', () => ctx.setSelectedRoute({ route, hover: true }));
-                polyline.on('mouseout', () => ctx.setSelectedRoute({ route, hover: false }));
-                routes.push(polyline);
+                const segments = route.properties.geo.map((segment) =>
+                    segment.map((point) => [point.latitude, point.longitude])
+                );
+                segments.forEach((segment) => {
+                    if (segment.length < 2) {
+                        return;
+                    }
+                    const polyline = new L.Polyline(segment, {
+                        color: ROUTE_COLOR,
+                        weight: 3,
+                        id: route.properties.id,
+                    });
+                    polyline.on('click', (e) => openInfoBlock(e.target.options.id));
+                    polyline.on('mouseover', () => ctx.setSelectedRoute({ route, hover: true }));
+                    polyline.on('mouseout', () => ctx.setSelectedRoute({ route, hover: false }));
+                    routes.push(polyline);
+                });
             });
             let layersGroup = new L.FeatureGroup(routes);
             setTravelRoutes(layersGroup);
@@ -78,7 +89,7 @@ export default function TravelLayer() {
 
     useEffect(() => {
         if (ctx.selectedRoute?.show) {
-            const start = ctx.selectedRoute.route.properties?.geo[0];
+            const start = ctx.selectedRoute.route.properties?.geo[0][0];
             if (!start) {
                 return; // no route
             }
